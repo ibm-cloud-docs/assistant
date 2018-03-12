@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-07"
+lastupdated: "2018-03-12"
 
 ---
 
@@ -76,7 +76,7 @@ An [*assistant*](assistants.html) is a cognitive bot to which you add skills tha
 1.  From the home page of the {{site.data.keyword.conversationshort}} tool, click the **Assistants** tab.
 1.  Click **Create new**.
 1.  Name the assistant `Watson Assistant tutorial`.
-1.  In the Description field, enter, `This is a sample assistant that I am creating to help me learn`.
+1.  In the Description field, enter `This is a sample assistant that I am creating to help me learn.`
 1.  **Optional**. If you want to create an assistant that communicates in a language other than English, then choose the appropriate language from the list.
 1.  Click **Create**.
 
@@ -89,7 +89,7 @@ A [*conversational skill*](create-convo-skill.html) is a container for the artif
 
     **Note**: If you created or were given developer role access to any workspaces that were built with the Watson Conversation service, you will see them listed on the Skills page as conversational skills.
 
-1.  Click **New skill**.
+1.  Click **Create new**.
 1.  Give your skill the name `Conversational skill tutorial`.
 1.  **Optional**. If the dialog you plan to build will use a language other than English, then choose the appropriate language from the list.
 1.  Click **Create**. Youʼll land on the **Intents** tab of your new skill.
@@ -126,11 +126,11 @@ You've created two intents, #hello and #goodbye, and provided example user input
 ## Step 5: Add intents from a content catalog
 {: #add-catalog}
 
-Add training data that was built by IBM to your workspace by adding intents from a content catalog. In particular, you will give your assistant access to the `Business Information` content catalog so your dialog can address user requests for company contact information.
+Add training data that was built by IBM to your workspace by adding intents from a content catalog. In particular, you will give your assistant access to the `eCommerce` content catalog so your dialog can address user requests to complete common online transactions.
 
 1.  In the {{site.data.keyword.conversationshort}} tool, click the **Content Catalog** tab.
-1.  Find **Business Information** in the list, and then click **Add to skill**.
-1.  Open the **Intents** tab to review the intents and associated example utterances that were added to your training data. You can recognize them because each intent name begins with the prefix `#Business_Information_`. You will add the `#Business_Information_Contact_Us` intent to your dialog in a later step.
+1.  Find **eCommerce** in the list, and then click **Add to skill**.
+1.  Open the **Intents** tab to review the intents and associated example utterances that were added to your training data. You can recognize them because each intent name begins with the prefix `#eCommerce_`. You will add the `#eCommerce_Cancel_Product_Order` intent to your dialog in a later step.
 
 You have successfully supplemented your training data with prebuilt content provided by IBM.
 
@@ -168,10 +168,10 @@ Now let's add nodes to handle our intents between the `Welcome` node and the `An
 1.  Type `#hello` in the **Enter a condition** field of this node. Then select the **#hello** option.
 1.  Add the response, `Good day to you.`
 1.  Click ![Close](images/close.png) to close the edit view.
-1.  Click the More icon ![More options](images/kabob.png) on this node, and then select **Add node below** to create a peer node. In the peer node, specify `#Business_Information_Contact_Us` as the condition.
+1.  Click the More icon ![More options](images/kabob.png) on this node, and then select **Add node below** to create a peer node. In the peer node, specify `#eCommerce_Cancel_Product_Order` as the condition.
 1.  Add the following text as the response.
 
-    `Call us at 800-426-4968 or give us your feedback at https://www.ibm.com/scripts/contact/contact/us/en.`
+    `I can help you cancel your order.`
 1.  Click the More icon ![More options](images/kabob.png) on this node, and then select **Add node below** to create another peer node. In the peer node, specify `#goodbye` as the condition, and `OK. See you later!` as the response.
 
 ### Testing intent recognition
@@ -187,7 +187,9 @@ You  built a simple dialog to recognize and respond to both hello and goodbye in
     - `good morning`
     - `sayonara`
 
-1.  Enter `Who can I call if I have questions?` and press Enter. The output indicates that the `#Business_Information_Contact_Us` intent was recognized, and the response that you added for it is displayed.
+1.  Enter `I want to cancel an order I placed.` and press Enter. The output indicates that the `#eCommerce_Cancel_Product_Order` intent was recognized, and the response that you added for it is displayed.
+
+  **Note**: In a dialog that is used by an assistant in production, you would likely add more child nodes that collect the order number and any other necessary information from the user, and then make a programmatic call to your order tracking backend service to cancel the order on the user's behalf.
 
 {{site.data.keyword.watson}} can recognize your intents even when your input doesn't exactly match the examples you included. The dialog uses intents to identify the purpose of the user's input regardless of the precise wording used, and then responds in the way you specify.
 
@@ -213,5 +215,4 @@ Now that you have an assistant that can participate in a simple conversational e
 This tutorial is built around a simple example. For a real application, you'll need to define some more interesting intents, some entities, and a more complex dialog that uses them both.
 
 - Complete follow-on tutorials that build more advanced dialogs. Add standard nodes with the [Building a complex dialog](tutorial.html) tutorial or learn about slots with the [Adding a node with slots](tutorial-slots.html) tutorial.
-- Review the sample **Car Dashboard** skill to see how its training data and dialog were built. From the Skills page, click the **Edit sample** button on the **Car Dashboard - Sample** tile.
 - Check out more [sample apps](sample-applications.html) to get ideas.
