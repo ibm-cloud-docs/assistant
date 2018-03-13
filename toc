@@ -81,6 +81,6 @@ Watson Assistant Beta
     {: .topicgroup}
     Developer community
         [StackOverflow](https://stackoverflow.com/questions/tagged/watson-conversation+or+watson-assistant)
-        [developerWorks Answers](https://developer.ibm.com/answers/search.html?f=&sort=relevance&q=%5Bwatson-conversation%5D+%5Bwatson-assistant%5D+%24)
+        [developerWorks Answers](https://developer.ibm.com/answers/search.html?f=&sort=relevance&q=[watson-conversation]+[watson-assistant]+%24)
         [WDC Slack channel](http://wdc-slack-inviter.mybluemix.net/)
     {: .navgroup-end}
