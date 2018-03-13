@@ -251,7 +251,7 @@ After you upgrade your conversational skill, you can [test input](#testing-your-
 
 If you have an intent, such as #off_topic, for those inputs that are out of scope or off topic, delete the intent and test your skill by marking the inputs as irrelevant.
 
-**Important**: Inputs that are marked as irrelevant are stored in the skill and are included as part of the training data. Be sure that you want to make this change.
+**Important**: Intents that are marked as irrelevant are saved as counterexamples in the JSON workspace, and are included as part of the training data. Be sure that you want to make any changes.
 
 - The inputs cannot be accessed or changed later in the tooling.
 - The only way to remove the **Irrelevant** tag is to use the same input in the *Try it out* pane, and then change the intent.
