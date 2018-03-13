@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-12"
+lastupdated: "2018-03-13"
 
 ---
 
@@ -50,20 +50,7 @@ You use the {{site.data.keyword.conversationshort}} tool to build skills. Follow
 
     **Note**: If you created or were given developer role access to any workspaces that were built with the Watson Conversation service, you will see them listed here as conversational skills.
 
-1.  Do one of the following things:
-    - To create a skill from scratch, click **Create**.
-    - To import a skill from a JSON file, click the ![Import skill](images/workspace_import.png) icon, and select the JSON file you want to import from.
-
-        **Important:**
-
-        - The imported JSON file must use UTF-8 encoding.
-        - The maximum size for a skill JSON file is 10MB. If you need to import a larger skill, consider importing the intents and entities separately after you have imported the skill. (You can also import larger skills using the REST API. For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/watson/developercloud/conversation/api/v1/#create_workspace){: new_window}.)
-        - The JSON cannot contain tabs, newlines, or carriage returns.
-
-        Specify the data you want to include:
-
-        - Select **Everything (Intents, Entities, and Dialog)** if you want to import a complete copy of the exported skill, including the dialog.
-        - Select **Intents and Entities** if you want to use the intents and entities from the exported skill, but you plan to build a new dialog.
+1.  Click **Create new**.
 
 1.  Specify the details for the new skill:
     - **Name**: A name no more than 64 characters in length that contains alphabetical characters (a-z), number characters (0-9), underscores (_), dashes (-) periods (.), and spaces. You cannot include an apostrophe in the name, for example. This value is required.

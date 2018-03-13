@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-12"
+lastupdated: "2018-03-13"
 
 ---
 
@@ -75,10 +75,14 @@ An [*assistant*](assistants.html) is a cognitive bot to which you add skills tha
 
 1.  From the home page of the {{site.data.keyword.conversationshort}} tool, click the **Assistants** tab.
 1.  Click **Create new**.
+
+    ![Create new button on the Assistant tab](images/gs-create-assistant.png)
 1.  Name the assistant `Watson Assistant tutorial`.
 1.  In the Description field, enter `This is a sample assistant that I am creating to help me learn.`
 1.  **Optional**. If you want to create an assistant that communicates in a language other than English, then choose the appropriate language from the list.
 1.  Click **Create**.
+
+    ![Finish creating the new assistant](images/gs-create-assistant-done.png)
 
 ## Step 3: Add a conversational skill to your assistant
 {: #add-skill}
@@ -87,12 +91,16 @@ A [*conversational skill*](create-convo-skill.html) is a container for the artif
 
 1.  From the new assistant page, click **Add skill**.
 
-    **Note**: If you created or were given developer role access to any workspaces that were built with the Watson Conversation service, you will see them listed on the Skills page as conversational skills.
+    **Note**: If you created or were given developer role access to any workspaces that were built with the {{site.data.keyword.ibmwatson}} Conversation service, you will see them listed on the Skills page as conversational skills.
+
+    ![Shows the Add skill button from the Assistant page](images/gs-add-skill.png)
 
 1.  Click **Create new**.
 1.  Give your skill the name `Conversational skill tutorial`.
 1.  **Optional**. If the dialog you plan to build will use a language other than English, then choose the appropriate language from the list.
-1.  Click **Create**. Youʼll land on the **Intents** tab of your new skill.
+1.  Click **Create**.
+
+    ![Finish creating the skill](images/gs-add-skill-done.png)
 
 ## Step 4: Create intents
 {: #create-intents}
@@ -101,7 +109,11 @@ An [intent](intents.html) represents the purpose of a user's input. You can thin
 
 For this example, we're going to keep things simple and define only two intents: one for saying hello, and one for saying goodbye.
 
-1.  Make sure you're on the Intents tab. (You should already be there, if you just created the skill.)
+1.  From the Skills page, find the tile for the `Conversational skill tutorial` that you just created, and click **Edit**.
+
+    You'll land on the Intents page of the tooling.
+
+    ![Landing on the intents page of the tooling](images/gs-add-skill-done2.png)
 1.  Click **Add intent**.
 1.  Name the intent `hello`, and then click **Create intent**.
 1.  Type `hello` into the **Add user example** field, and then press **Enter**.
@@ -114,6 +126,8 @@ For this example, we're going to keep things simple and define only two intents:
     - `howdy`
 
 1.  Click the **Close** ![Close arrow](images/close_arrow.png) icon to finish creating the #hello intent.
+
+    ![Adding a hello intent with examples](images/gs-hello-intent-done.png)
 1.  Create another intent named #goodbye with these five examples:
     - `bye`
     - `farewell`
@@ -121,7 +135,11 @@ For this example, we're going to keep things simple and define only two intents:
     - `I'm done`
     - `see you later`
 
+    ![Adding a goodbye intent with examples](images/gs-goodbye-intent-done.png)
+
 You've created two intents, #hello and #goodbye, and provided example user input to train {{site.data.keyword.watson}} to recognize these intents in your users' input.
+
+![Showing the created intents](images/gs-intents-done.png)
 
 ## Step 5: Add intents from a content catalog
 {: #add-catalog}
@@ -148,8 +166,11 @@ We'll create a simple dialog that handles our #hello and #goodbye intents, each 
     - **Welcome**: Contains a greeting that is displayed to your users when they first engage with the assistant.
     - **Anything else**: Contains phrases that are used to reply to users when their input is not recognized.
 
+    ![A new dialog with two builtin nodes](images/gs-new-dialog.png)
 1.  Click the **Welcome** node to open it in the edit view.
 1.  Replace the default response with the text, `Welcome to the Watson Assistant tutorial!`.
+
+    ![Editing the welcome node response](images/gs-edit-welcome.png)
 1.  Click ![Close](images/close.png) to close the edit view.
 
 You created a dialog node that is triggered by the `welcome` condition, which is a special condition that indicates that the user has started a new conversation. Your node specifies that when a new conversation starts, the system should respond with the welcome message.
@@ -158,7 +179,7 @@ You created a dialog node that is triggered by the `welcome` condition, which is
 
 You can test your dialog at any time to verify the dialog. Let's test it now.
 
-- Click the ![Ask Watson](images/ask_watson.png) icon to open the "Try it out" pane. You should see your welcome message.
+- Click the ![Try it](images/ask_watson.png) icon to open the "Try it out" pane. You should see your welcome message.
 
 ### Adding nodes to handle intents
 
@@ -167,18 +188,24 @@ Now let's add nodes to handle our intents between the `Welcome` node and the `An
 1.  Click the More icon ![More options](images/kabob.png) on the **Welcome** node, and then select **Add node below**.
 1.  Type `#hello` in the **Enter a condition** field of this node. Then select the **#hello** option.
 1.  Add the response, `Good day to you.`
+
+    ![Adding a hello node to the dialog between welcome and anything else](images/gs-add-hello-node.png)
 1.  Click ![Close](images/close.png) to close the edit view.
 1.  Click the More icon ![More options](images/kabob.png) on this node, and then select **Add node below** to create a peer node. In the peer node, specify `#eCommerce_Cancel_Product_Order` as the condition.
 1.  Add the following text as the response.
 
     `I can help you cancel your order.`
+
+    ![Adding a cancel order node after the hello node](images/gs-add-ecommerce-node.png)
 1.  Click the More icon ![More options](images/kabob.png) on this node, and then select **Add node below** to create another peer node. In the peer node, specify `#goodbye` as the condition, and `OK. See you later!` as the response.
+
+    ![Adding a goodbye node after the cancel order node and before anything else](images/gs-add-goodbye-node.png)
 
 ### Testing intent recognition
 
 You  built a simple dialog to recognize and respond to both hello and goodbye inputs. Let's see how well it works.
 
-1.  Click the ![Ask Watson](images/ask_watson.png) icon to open the "Try it out" pane. There's that reassuring welcome message.
+1.  Click the ![Try it](images/ask_watson.png) icon to open the "Try it out" pane. There's that reassuring welcome message.
 1.  At the bottom of the pane, type `Hello` and press Enter. The output indicates that the #hello intent was recognized, and the appropriate response (`Good day to you.`) appears.
 1.  Try the following input:
     - `bye`
@@ -190,6 +217,8 @@ You  built a simple dialog to recognize and respond to both hello and goodbye in
 1.  Enter `I want to cancel an order I placed.` and press Enter. The output indicates that the `#eCommerce_Cancel_Product_Order` intent was recognized, and the response that you added for it is displayed.
 
   **Note**: In a dialog that is used by an assistant in production, you would likely add more child nodes that collect the order number and any other necessary information from the user, and then make a programmatic call to your order tracking backend service to cancel the order on the user's behalf.
+
+![Testing the dialog in the Try it out pane](images/gs-test-dialog.gif)
 
 {{site.data.keyword.watson}} can recognize your intents even when your input doesn't exactly match the examples you included. The dialog uses intents to identify the purpose of the user's input regardless of the precise wording used, and then responds in the way you specify.
 
