@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-02-16"
+lastupdated: "2018-03-13"
 
 ---
 
@@ -25,6 +25,9 @@ Links to resources, videos, tutorials, and articles that can help you to get sta
 ## Developer resources
 
 - [IBM Code Bot Asset Exchange ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/code/exchanges/bots/){: new_window}
+
+## Developer resources for building conversational skills
+
 - [Retail chat app ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/code/journey/create-cognitive-retail-chatbot/){: new_window}
 - [Investment management chat app ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/code/journey/create-an-investment-management-chatbot/){: new_window}
 - [Cognitive Banking chatbot ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/code/journey/create-cognitive-banking-chatbot/){: new_window}
