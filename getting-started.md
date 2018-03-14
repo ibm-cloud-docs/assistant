@@ -24,10 +24,10 @@ lastupdated: "2018-03-14"
 In this short tutorial, we introduce the {{site.data.keyword.conversationshort}} tool and go through the process of creating your first assistant.
 {: shortdesc}
 
-## Step 1: Request to participate in the beta
+## Step 1: Request to participate in the Beta
 {: #launch-tool}
 
-From the bottom of the Workspaces page of your {{site.data.keyword.conversationshort}} instance, click the beta request button and fill out the form to ask to participate in the Beta. If you do not have a {{site.data.keyword.conversationshort}} instance, see [Getting started](https://console.bluemix.net/docs/services/conversation/getting-started.html) for information about how to get a free subscription to one.
+From the bottom of the Workspaces page of your {{site.data.keyword.conversationshort}} instance, click the Beta request button and fill out the form to ask to participate in the Beta. If you do not have a {{site.data.keyword.conversationshort}} instance, see [Getting started](https://console.bluemix.net/docs/services/conversation/getting-started.html) for information about how to get a free subscription to one.
 
 ## Step 2: Create an assistant
 {: #create-assistant}
