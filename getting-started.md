@@ -21,50 +21,13 @@ lastupdated: "2018-03-14"
 # Getting started tutorial
 {: #getting-started}
 
-In this short tutorial, we introduce the {{site.data.keyword.conversationshort}} tool and go through the process of creating your first conversation.
+In this short tutorial, we introduce the {{site.data.keyword.conversationshort}} tool and go through the process of creating your first assistant.
 {: shortdesc}
 
-## Before you begin
-{: #prerequisites}
-
-You'll need a service instance to start.
-
-<!-- Remove the text marked `download` after there's no g-s tab in the catalog dashboard -->
-
-You created your service instance. Click **Manage**, then **Launch Tool**. Go to Step 2.
-{: download tip}
-
-If you created a project with the {{site.data.keyword.conversationshort}} service, you're all set with these prerequisites. Go to Step 1.
-
-1.  Go to the {{site.data.keyword.watson}} Developer Console [Services ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.{DomainName}/developer/watson/services){: new_window} page.
-1.  Select {{site.data.keyword.conversationshort}}, click **Add Services**, and either sign up for a free {{site.data.keyword.Bluemix_notm}} account or log in.
-1.  Change the project name to `conversation-tutorial`, and then click **Create Project**.
-
-<!-- Remove this text after dedicated instances have the developer console: begin -->
-
-If you use {{site.data.keyword.Bluemix_dedicated_notm}}, create your service instance from the [{{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.{DomainName}/catalog/services/conversation/){: new_window} page in the Catalog.
-
-<!-- Remove this text after dedicated instances have the developer console: end -->
-
-## Step 1: Launch the tool
+## Step 1: Request to participate in the Beta
 {: #launch-tool}
 
-After you create a project that includes the {{site.data.keyword.conversationshort}} service, you'll land on the project details page. Launch the  {{site.data.keyword.conversationshort}} tool from here.
-
-Click **Launch Tool** for {{site.data.keyword.conversationshort}} under **Services**.
-
-<!-- To do: Add screenshot for developer console -->
-
-If you're prompted to log into the tool, provide your {{site.data.keyword.Bluemix_notm}} credentials.
-
-If you're not at a project details page for the {{site.data.keyword.conversationshort}} service, go to the {{site.data.keyword.watson}} Developer Console [Projects ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.{DomainName}/developer/watson/projects) page and select the project.
-{: tip}
-
-<!-- Remove this text after dedicated instances have the developer console: begin -->
-
-{{site.data.keyword.Bluemix_dedicated_notm}}: Select your service instance from the Dashboard to launch the tooling.
-
-<!-- Remove this text after dedicated instances have the Developer Console: end -->
+From the bottom of the Workspaces page of your {{site.data.keyword.conversationshort}} instance, click the Beta request button and fill out the form to ask to participate in the Beta. If you do not have a {{site.data.keyword.conversationshort}} instance, see [Getting started](https://console.bluemix.net/docs/services/conversation/getting-started.html) for information about how to get a free subscription to one.
 
 ## Step 2: Create an assistant
 {: #create-assistant}
