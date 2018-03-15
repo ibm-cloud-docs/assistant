@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-13"
+lastupdated: "2018-03-14"
 
 ---
 
@@ -33,7 +33,7 @@ Links to resources, videos, tutorials, and articles that can help you to get sta
 - [Cognitive Banking chatbot ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/code/journey/create-cognitive-banking-chatbot/){: new_window}
 - [Pizza ordering chatbot using slots ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/code/journey/assemble-a-pizza-ordering-chatbot-dialog/){: new_window}
 - [Building an Amazon Alexa Skill with {{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/IBM/alexa-skill-watson-conversation){: new_window}
-- [Adding a chatbot to Wordpress with Conversation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://wordpress.org/plugins/conversation-watson/){: new_window}
+- [Adding a chatbot to Wordpress with {{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://wordpress.org/plugins/conversation-watson/){: new_window}
 - [Tutorial: Build a database-driven Slackbot ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/tutorials/slack-chatbot-database-watson.html#build-a-database-driven-slackbot)
 
 ## Building with Watson videos
