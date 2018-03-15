@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2017
-lastupdated: "2017-12-06"
+  years: 2015, 2018
+lastupdated: "2018-03-15"
 
 ---
 
@@ -23,7 +23,7 @@ lastupdated: "2017-12-06"
 We value your opinion and want to hear it.
 {: shortdesc}
 
-- To share ideas or suggest new features for the {{site.data.keyword.conversationfull}} service, go to the [IBM Watson Ideas Portal ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm-watson.ideas.aha.io/?project=WCS){: new_window}.
+- To share ideas or suggest new features for the {{site.data.keyword.conversationfull}} service, go to the [IBM Watson Ideas Portal ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm-watson.ideas.aha.io/?project=ASSISTANT){: new_window}.
 
 - To provide feedback about the documentation, click the **FEEDBACK** button that is displayed along the edge of the page you are reading and want to comment about.
 
