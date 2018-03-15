@@ -10,7 +10,7 @@ Watson Assistant Beta
     assistants.md
     skills.md
     tool-overview.md
-    [Demo: Car Dashboard](https://conversation-demo.ng.bluemix.net/)
+    [Demo: Car Dashboard](https://watson-assistant-demo.ng.bluemix.net/)
     resources.md
     {: .navgroup-end}
 

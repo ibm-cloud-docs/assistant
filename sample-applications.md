@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-02-02"
+lastupdated: "2018-03-15"
 
 ---
 
@@ -32,7 +32,7 @@ The Node.js app shows how {{site.data.keyword.conversationshort}} uses intents i
 
 This Node.js app is a fully developed example of the type of app you can build with {{site.data.keyword.conversationshort}} that uses intents, entities, and dialog.
 
-[View the demo ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://conversation-demo.ng.bluemix.net/){: new_window}.
+[View the demo ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://watson-assistant-demo.ng.bluemix.net/){: new_window}.
 
 ## Text message weather bot
 
