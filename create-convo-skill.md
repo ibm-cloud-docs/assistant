@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-13"
+lastupdated: "2018-03-15"
 
 ---
 
@@ -57,4 +57,4 @@ You use the {{site.data.keyword.conversationshort}} tool to build skills. Follow
     - **Description**: A description no more than 128 characters in length.
     - **Language**: The language of the user input the skill will be trained to understand.
 
-After you create the skill, it appears as a tile on the Skills page. To put the conversation to work helping your users, integrate your assistant with a messaging platform or custom application. See [Adding integrations](add-integrations.html).
+After you create the skill, it appears as a tile on the Skills page. Now, you can start identifying the user goals that you want the assistant to address. See [Planning your intents and entities](intents-entities.html) for more details.

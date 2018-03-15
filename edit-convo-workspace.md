@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-07"
+lastupdated: "2018-03-15"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2018-03-07"
 # Accessing Watson Conversation workspaces
 {: #edit-convo-workspace}
 
-If you created a workspace with the legacy {{site.data.keyword.ibmwatson}} Conversation service, you can continue to use it.
+If you created a workspace with the legacy {{site.data.keyword.ibmwatson}} Conversation service, you can continue to use it with {{site.data.keyword.conversationfull}}.
 {: shortdesc}
 
 ## Changing the conversation
@@ -28,7 +28,7 @@ If you created a workspace with the legacy {{site.data.keyword.ibmwatson}} Conve
 
 To make changes to a legacy conversation, complete the following steps:
 
-1.  From the {{site.data.keyword.conversationfull}} home page, click **Skills**.
+1.  From the {{site.data.keyword.conversationshort}} home page, click **Skills**.
 
     Any workspaces that you created with the Watson Conversation service are displayed as conversational skill tiles.
 1.  Click the conversation skill that represents the workspace you want to edit.

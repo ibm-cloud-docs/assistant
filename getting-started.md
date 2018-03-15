@@ -27,9 +27,9 @@ In this short tutorial, we introduce the {{site.data.keyword.conversationshort}}
 ## Step 1: Request to participate in the Beta
 {: #launch-tool}
 
-From the bottom of the Workspaces page of your {{site.data.keyword.conversationshort}} instance, click **Request Beta**, and then fill out the form to ask to participate in the Beta. If you do not have a {{site.data.keyword.conversationshort}} instance, see [Getting started](https://console.bluemix.net/docs/services/conversation/getting-started.html) for information about how to get a free subscription to one.
+From the bottom of the Workspaces page of your {{site.data.keyword.conversationshort}} instance, click **Request Beta**, and then confirm that you accept terms and conditions for participating in the Beta. If you do not have a {{site.data.keyword.conversationshort}} instance, see [Getting started](https://console.bluemix.net/docs/services/conversation/getting-started.html) for information about how to get a free subscription to one.
 
-**Note**: If you are approved for Beta participation, it is the service instance where you request Beta access that will be upgraded. And every workspace in the service instance will be upgraded. Do not request Beta participation from an instance that you are actively using. To try out the Beta safely, you can create a new service instance, and then request access from it.
+**Note**: If you are approved for Beta participation, it is the service instance where you request Beta access that will be upgraded. And every workspace in that service instance will be upgraded. Do not request Beta participation from an instance with workspaces that you are actively using. To try out the Beta safely, you can create a new service instance, and then request access from it.
 
 ## Step 2: Create an assistant
 {: #create-assistant}
@@ -206,7 +206,7 @@ Now that you have an assistant that can participate in a simple conversational e
 ## Next steps
 {: #next-steps}
 
-This tutorial is built around a simple example. For a real application, you'll need to define some more interesting intents, some entities, and a more complex dialog that uses them both.
+This tutorial is built around a simple example. For a real application, you'll need to define some more interesting intents, some entities, and a more complex dialog that uses them both. As traffic increases, you can use the tools provided in the **Improve** tab to analyze real conversations between your assistant and users, and identify areas for improvement.
 
 - Complete follow-on tutorials that build more advanced dialogs. Add standard nodes with the [Building a complex dialog](tutorial.html) tutorial or learn about slots with the [Adding a node with slots](tutorial-slots.html) tutorial.
 - Check out more [sample apps](sample-applications.html) to get ideas.
