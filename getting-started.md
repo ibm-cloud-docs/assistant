@@ -56,7 +56,7 @@ A [*conversational skill*](create-convo-skill.html) is a container for the artif
 
 1.  From the new assistant page, click **Add skill**.
 
-    **Note**: If you created or were given developer role access to any workspaces that were built with the {{site.data.keyword.ibmwatson}} Conversation service, you will see them listed on the Skills page as conversational skills.
+    **Note**: If you created or were given developer role access to any workspaces that were built with the generally available version of the {{site.data.keyword.conversationshort}} service, you will see them listed on the Skills page as conversational skills.
 
     ![Shows the Add skill button from the Assistant page](images/gs-add-skill.png)
 
@@ -76,9 +76,9 @@ For this example, we're going to keep things simple and define only two intents:
 
 1.  From the Skills page, find the tile for the `Conversational skill tutorial` that you just created, and click **Edit**.
 
-    You'll land on the Intents page of the tooling.
+    You'll land on the Intents page of the tool.
 
-    ![Landing on the intents page of the tooling](images/gs-add-skill-done2.png)
+    ![Landing on the intents page of the tool](images/gs-add-skill-done2.png)
 1.  Click **Add intent**.
 1.  Name the intent `hello`, and then click **Create intent**.
 1.  Type `hello` into the **Add user example** field, and then press **Enter**.
