@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-12"
+lastupdated: "2018-03-15"
 
 ---
 
@@ -155,6 +155,8 @@ As you make changes to your dialog, you can test it at any time to see how it re
 If you determine that the wrong intents or entities are being recognized, you might need to modify your intent or entity definitions.
 
 If the correct intents and entities are being recognized, but the wrong nodes are being triggered in your dialog, make sure your conditions are written properly.
+
+If you are ready to put the conversation to work helping your users, integrate your assistant with a messaging platform or custom application. See [Adding integrations](add-integrations.html).
 
 ## Copying a dialog node
 {: #copy-node}
