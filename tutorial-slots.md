@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-02-14"
+lastupdated: "2018-03-15"
 
 ---
 
@@ -134,7 +134,7 @@ The node you add will collect the information required to make a reservation at 
 
 1.  As the response, specify `OK. I am making you a reservation for $guests on $date at $time.`
 
-    ![Shows what each slot and the response look like in the tooling when filled in as specified.](images/slots-simple-node.png)
+    ![Shows what each slot and the response look like in the tool when filled in as specified.](images/slots-simple-node.png)
 
 1.  Click ![Close](images/close.png) to close the node edit view.
 

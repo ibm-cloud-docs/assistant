@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-02-15"
+lastupdated: "2018-03-15"
 
 ---
 
@@ -182,7 +182,7 @@ To make a programmatic call from a dialog node, complete the following steps:
       ```
       {: codeblock}
 
-      While testing the dialog, you can temporarily set the `$private.my_credentials` context variable with your real {{site.data.keyword.openwhisk_short}} username and password values by clicking **Manage context** from the "Try it out" pane in the tooling.
+      While testing the dialog, you can temporarily set the `$private.my_credentials` context variable with your real {{site.data.keyword.openwhisk_short}} username and password values by clicking **Manage context** from the "Try it out" pane in the tool.
 
       ![Shows how the $private.my_credentials context variable is defined in the Try it out context management interface](images/testing-creds.png)
 
@@ -329,7 +329,7 @@ The following diagram illustrates how to call a {{site.data.keyword.openwhisk_sh
 
 To see a conversational skill with a dialog that is already set up to call the {{site.data.keyword.openwhisk_short}} built-in Echo action, complete the following steps:
 
-1.  Download the [CloudFunctionsEcho.json ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/community/raw/master/conversation/cloud-functions-echo.json){: new_window} file.
+1.  Download the [CloudFunctionsEcho.json ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/community/raw/master/watson-assistant/cloud-functions-echo.json){: new_window} file.
 1.  Import the JSON file as a new conversational skill.
 1.  Review the dialog to see how the call to the Echo action is specified.
 1.  From the "Try it out" pane, click **Manage context**, and then (temporarily) set the context variables to your {{site.data.keyword.openwhisk_short}} username and password.

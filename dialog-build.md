@@ -36,7 +36,7 @@ The number of dialog nodes you can create depends on your service plan.
 | Lite             |                     25,000 |
 {: caption="Service plan details" caption-side="top"}
 
-Tree depth limit: Service supports 2,000 dialog node descendants; tooling performs best with 20 or fewer.
+Tree depth limit: Service supports 2,000 dialog node descendants; the tool performs best with 20 or fewer.
 
 ## Procedure
 {: #dialog-procedure}
@@ -259,7 +259,7 @@ You might want to find the dialog node that is associated with a known node ID f
 
 To discover a node based on its node ID, complete the following steps:
 
-1.  From the Dialog tab of the tooling, select any node in your dialog tree.
+1.  From the Dialog tab of the tool, select any node in your dialog tree.
 1.  Close the edit view if it is open for the current node.
 1.  In your web browser's location field, a URL should display that has the following syntax:
 
@@ -268,6 +268,6 @@ To discover a node based on its node ID, complete the following steps:
 1.  Edit the URL by replacing the current `node-id` value with the ID of the node you want to find, and then submit the new URL.
 1.  If necessary, highlight the edited URL again, and resubmit it.
 
-The tooling refreshes, and shifts focus to the dialog node with the node ID that you specified. If the node ID is for a slot, a Found or Not found slot condition, a slot handler, or a conditional response, then the node in which the slot or conditional response is defined gets focus and the corresponding modal is displayed.
+The tool refreshes, and shifts focus to the dialog node with the node ID that you specified. If the node ID is for a slot, a Found or Not found slot condition, a slot handler, or a conditional response, then the node in which the slot or conditional response is defined gets focus and the corresponding modal is displayed.
 
 **Note**: If you still cannot find the node, you can export the conversational skill and use a JSON editor to search the skill JSON file.

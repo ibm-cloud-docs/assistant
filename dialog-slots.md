@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-02-27"
+lastupdated: "2018-03-15"
 
 ---
 
@@ -537,6 +537,6 @@ In the JSON editor for the Found condition, reset the value of the $animal conte
 
 ## Slots examples
 
-To access JSON files that implement different common slot usage scenarios, go to the community [conversation repo ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/community/tree/master/conversation){: new_window} in GitHub.
+To access JSON files that implement different common slot usage scenarios, go to the community [conversation repo ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/community/tree/master/watson-assistant){: new_window} in GitHub.
 
 To explore an example, download one of the example JSON files, and then import it as a new conversational skill. From the Dialog tab, you can review the dialog nodes to see how slots were implemented to address different use cases.
