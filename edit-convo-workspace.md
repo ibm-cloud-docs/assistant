@@ -17,10 +17,10 @@ lastupdated: "2018-03-15"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Accessing Watson Conversation workspaces
+# Accessing workspaces
 {: #edit-convo-workspace}
 
-If you created a workspace with the legacy {{site.data.keyword.ibmwatson}} Conversation service, you can continue to use it with {{site.data.keyword.conversationfull}}.
+If you created a workspace with the generally available version of the {{site.data.keyword.conversationshort}} service, you can continue to use it with {{site.data.keyword.conversationfull}} Beta.
 {: shortdesc}
 
 ## Changing the conversation
@@ -30,7 +30,7 @@ To make changes to a legacy conversation, complete the following steps:
 
 1.  From the {{site.data.keyword.conversationshort}} home page, click **Skills**.
 
-    Any workspaces that you created with the Watson Conversation service are displayed as conversational skill tiles.
+    Any workspaces that you created with the generally available version of the {{site.data.keyword.conversationshort}} service are displayed as conversational skill tiles.
 1.  Click the conversation skill that represents the workspace you want to edit.
 1.  Make any changes or additions to the training data or dialog that you want to make.
 1.  Save your changes.

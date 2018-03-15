@@ -48,7 +48,7 @@ You use the {{site.data.keyword.conversationshort}} tool to build skills. Follow
 
 1.  Click the **Skills** tab.
 
-    **Note**: If you created or were given developer role access to any workspaces that were built with the Watson Conversation service, you will see them listed here as conversational skills.
+    **Note**: If you created or were given developer role access to any workspaces that were built with the generally available version of the  {{site.data.keyword.conversationshort}} service, you will see them listed here as conversational skills.
 
 1.  Click **Create new**.
 
