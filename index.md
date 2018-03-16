@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-15"
+lastupdated: "2018-03-16"
 
 ---
 
@@ -37,7 +37,7 @@ This diagram shows the overall architecture:
   - A simple chat bot user interface that is hosted by IBM Cloud.
   - Custom application that you develop, such as a mobile app or a robot with a voice interface.
 
-- The **assistant** receives user input, uses natural language processing to interpret its meaning, and then routes the input to the appropriate skill.
+- The **assistant** receives user input and routes the input to the appropriate skill.
 
 - A conversational **skill** interprets the user input further, then directs the flow of the conversation and gathers any information that it needs to respond or perform a transaction on the user's behalf.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-05"
+lastupdated: "2018-03-16"
 
 ---
 
@@ -23,7 +23,7 @@ lastupdated: "2018-03-05"
 An assistant is a cognitive bot that you can customize for your business needs, and deploy across multiple channels to bring help to your customers where and when they need it.
 {: shortdesc}
 
-![Skills](images/skill-icon.png)  You customize the assistant by adding to it the skills it needs to satisfy your customers' goals. The assistant uses natural language processing technology to understand an initial user input and pass it to the right skill for the job.
+![Skills](images/skill-icon.png)  You customize the assistant by adding to it the skills it needs to satisfy your customers' goals. The assistant evaluates the initial user input and routes it to the right skill for the job.
 
 Skills you can add include conversational skills that can understand and address questions or requests that your customers typically need help with. You provide information about the subjects or tasks your users ask about, and how they ask about them, and the service dynamically builds a machine learning model that is tailored to understand the same and similar user requests.
 

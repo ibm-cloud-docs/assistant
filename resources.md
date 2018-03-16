@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-14"
+lastupdated: "2018-03-16"
 
 ---
 
@@ -25,9 +25,6 @@ Links to resources, videos, tutorials, and articles that can help you to get sta
 ## Developer resources
 
 - [IBM Code Bot Asset Exchange ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/code/exchanges/bots/){: new_window}
-
-## Developer resources for building conversational skills
-
 - [Retail chat app ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/code/journey/create-cognitive-retail-chatbot/){: new_window}
 - [Investment management chat app ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/code/journey/create-an-investment-management-chatbot/){: new_window}
 - [Cognitive Banking chatbot ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/code/journey/create-cognitive-banking-chatbot/){: new_window}
@@ -69,7 +66,9 @@ These videos are available in the documentation and on YouTube.
 
 ## IBM Watson Academy
 
-- [{{site.data.keyword.conversationshort}} courses ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.watson-academy.info/course/index.php?categoryid=29){: new_window}
+- [IBM Watson Conversation courses ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.watson-academy.info/course/index.php?categoryid=29){: new_window}
+
+  **Note**: No {{site.data.keyword.conversationshort}} courses are available yet. Many of the principles covered in these courses apply to conversational skills, and so continue to be useful.
 
 ## Simon Burns on Medium
 
