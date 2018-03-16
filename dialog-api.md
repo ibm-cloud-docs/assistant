@@ -37,19 +37,19 @@ A valid dialog always satisfies the following criteria:
 
   - `event_handler`: A handler that is defined for a frame node or an individual slot node.
 
-    From the tooling, you can define a frame node handler by clicking the **Manage handlers** link from a node with slots. (The tooling user interface does not expose the slot-level event handler, but you can define one through the API.)
+    From the tool, you can define a frame node handler by clicking the **Manage handlers** link from a node with slots. (The tool user interface does not expose the slot-level event handler, but you can define one through the API.)
 
   - `frame`: A node with one or more child nodes of type `slot`. Any child slot nodes that are required must be filled before the service can exit the frame node.
 
-    The frame node type is represented as a node with slots in the tooling. The node that contains the slots is represented as a node of type=`frame`. It is the parent node to each slot, which is represented as a child node of type `slot`.
+    The frame node type is represented as a node with slots in the tool. The node that contains the slots is represented as a node of type=`frame`. It is the parent node to each slot, which is represented as a child node of type `slot`.
 
   - `response_condition`: A conditional response.
 
-    In the tooling, you can add one or more conditional responses to a node. Each conditional response that you define is represented in the underlying JSON as an individual node of type=`response_condition`.
+    In the tool, you can add one or more conditional responses to a node. Each conditional response that you define is represented in the underlying JSON as an individual node of type=`response_condition`.
 
   - `slot`: A child node of a node of type `frame`.
 
-    This node type is represented in the tooling as being one of multiple slots added to a single node. That single node is represented in the JSON as a parent node of type `frame`.
+    This node type is represented in the tool as being one of multiple slots added to a single node. That single node is represented in the JSON as a parent node of type `frame`.
 
   - `standard`: A typical dialog node. This is the default type.
 
@@ -66,7 +66,7 @@ A valid dialog always satisfies the following criteria:
   - `input`: Updates the message context to include a context variable with the value that is collected from the user to fill the slot. A handler with this name must be present for each slot in the frame node.
   - `nomatch`: Defines what to do if the user's response to the slot prompt does not contain a valid value. A handler with this name is only present if a Not found condition is defined for the slot.
 
-  The following diagram illustrates where in the tooling user interface you define the code that is triggered for each named event.
+  The following diagram illustrates where in the tool user interface you define the code that is triggered for each named event.
 
   ![UI location where the code that is triggered by named event handlers is authored](images/api-event-handlers.png)
 

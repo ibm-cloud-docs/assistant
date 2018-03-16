@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-13"
+lastupdated: "2018-03-15"
 
 ---
 
@@ -54,7 +54,7 @@ Use the {{site.data.keyword.conversationshort}} tool to create intents.
         - `#pay_bill`
         - `#escalate_to_agent`
 
-    The tooling automatically includes the `#` character in the intent names, so you do not have to add one.
+    The tool automatically includes the `#` character in the intent names, so you do not have to add one.
     {: tip}
 
     Add a description of the intent in the **Description** field.
@@ -253,5 +253,5 @@ If you have an intent, such as #off_topic, for those inputs that are out of scop
 
 **Important**: Intents that are marked as irrelevant are saved as counterexamples in the JSON workspace, and are included as part of the training data. Be sure that you want to make any changes.
 
-- The inputs cannot be accessed or changed later in the tooling.
+- The inputs cannot be accessed or changed later in the tool.
 - The only way to remove the **Irrelevant** tag is to use the same input in the *Try it out* pane, and then change the intent.

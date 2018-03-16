@@ -51,7 +51,7 @@ Here's how you will implement your assistant:
 
   **Note**: Currently, you can add one **conversational skill** to the assistant.
 
-- **Configure the skill.** For a conversational skill, use the intuitive graphical tooling to define the training data and dialog for the conversation between your assistant and your customers.
+- **Configure the skill.** For a conversational skill, use the intuitive graphical tool to define the training data and dialog for the conversation between your assistant and your customers.
 
     The training data consists of the following artifacts:
 
@@ -71,7 +71,7 @@ Here's how you will implement your assistant:
 
 ## Browser support
 
-The {{site.data.keyword.conversationshort}} service tooling requires the same level of browser software as is required by {{site.data.keyword.Bluemix_notm}}. See the {{site.data.keyword.Bluemix_notm}} [Prerequisites ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/overview/prereqs.html#browsers){: new_window} topic for details.
+The {{site.data.keyword.conversationshort}} service tool requires the same level of browser software as is required by {{site.data.keyword.Bluemix_notm}}. See the {{site.data.keyword.Bluemix_notm}} [Prerequisites ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/overview/prereqs.html#browsers){: new_window} topic for details.
 
 ## Language support
 
