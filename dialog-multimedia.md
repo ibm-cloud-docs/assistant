@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-05"
+lastupdated: "2018-03-19"
 
 ---
 
@@ -47,15 +47,15 @@ You can specify interactive responses using a generic JSON format that supports 
         "options": [
           {
             "label": "Location 1",
-            "value:" "Location 1"
+            "value": "Location 1"
           },
           {
             "label": "Location 2",
-            "value:" "Location 2"
+            "value": "Location 2"
           },
           {
             "label": "Location 3",
-            "value:" "Location 3"
+            "value": "Location 3"
           }
         ]
       }
