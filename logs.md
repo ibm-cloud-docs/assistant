@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-08"
+lastupdated: "2018-03-19"
 
 ---
 
@@ -39,7 +39,6 @@ To understand how to use utterance data to make improvements across skills, it i
 * ***Conversation ID***: A unique identifier used to link related exchanges
 * ***Workspace ID:*** The unique identifier of a skill, that allows you to call your content
 * ***Deployment ID:*** Unique labels that are passed with user utterances to help identify the deployment environment that the utterances come from
-* ***Customer ID***: A unique label that can identify a specific user of your skill
 
 Creating a conversational skill is a very iterative process. While you develop your skill, you use the *Try it out* pane to verify that your skill recognizes the correct intents and entities in test inputs, and to make corrections as needed.
 
@@ -93,43 +92,3 @@ curl -X GET
 {: #codeblock}
 
 See the [Filter query reference](filter-reference.html) for additional details. -->
-
-## Deleting utterance data from specific users
-{: #customer_id}
-
-There might come a time when you want to completely remove a set of utterances between a specific user and your {{site.data.keyword.conversationshort}} instance. For example, under the European Union General Data Protection Regulation (GDPR), individuals are entitled to have their personal information, which may be included in utterances, removed upon request. Those utterances will then no longer be available when you [select a data source](logs_convo.html#select-source) to improve understanding.
-
-### Prerequisite
-To delete utterances which may contain personal information for one or more individuals, you first need to associate an utterance with a unique `Customer ID` for each individual that may have personal information in the utterance. To specify the `Customer ID` for any utterance sent using the `/message` API, include the `X-Watson-Metadata: customer_id` property in your header. You can pass multiple `Customer ID` entries with semicolon separated `field=value` pairs, using `customer_id`, as in the following example:
-
-```
-curl -X POST
- --user {username}:{password}
- --header
-   'Content-Type: application/json'
-   'Accept: application/json'
-   'X-Watson-Metadata: customer_id={first-customer-ID};customer_id={second-customer-ID}'
- --data '{"input":{"text":"hello"}}' 'https://gateway.watson.net/conversation/api/v1/workspaces/{workspaceID}/message?version=2017-05-26'
-```
-{: #codeblock}
-
-**Note**: The `customer_id` string cannot include the semicolon (`;`) or equal sign (`=`) characters.
-
-**Note**: You are responsible for managing `Customer ID` parameters, and ensuring that each parameter is unique across your customers.
-
-### Deleting data
-To delete utterances with personal information for one or more individuals, you provide the `customer_id` semicolon separated `field=value` pairs to the `user_data` parameter.
-
-**IMPORTANT**: Specifying a `customer_id` will delete *all* utterances with that `customer_id` across your entire {{site.data.keyword.conversationshort}} instance, not just within one skill.
-
-As an example, to delete user ABC's data and user XYZ's data from your {{site.data.keyword.conversationshort}} instance, send the following cURL command:
-
-```
-curl -X DELETE
- --user {username}:{password}
- --data 'https://gateway.watson.net/conversation/api/v1/user_data/customer_id=abc;customer_id=xyz?version=2017-05-26'
-```
-{: #codeblock}
-
-
-Each example returns an empty JSON object `{}`.
