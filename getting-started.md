@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-15"
+lastupdated: "2018-03-16"
 
 ---
 
@@ -27,7 +27,9 @@ In this short tutorial, we introduce the {{site.data.keyword.conversationshort}}
 ## Step 1: Request to participate in the Beta
 {: #launch-tool}
 
-From the bottom of the Workspaces page of your {{site.data.keyword.conversationshort}} instance, click **Request Beta**, and then confirm that you accept terms and conditions for participating in the Beta. If you do not have an instance of the generally available {{site.data.keyword.conversationshort}} service, see [Getting started](https://console.bluemix.net/docs/services/conversation/getting-started.html) for information about how to get a free subscription to one.
+From the bottom of the Workspaces page of your {{site.data.keyword.conversationshort}} instance, click **Request Beta**, and then confirm that you accept terms and conditions for participating in the Beta. 
+
+If you do not have a service instance, go to the [Getting started tutorial (for the generally available {{site.data.keyword.conversationshort}} service) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/conversation/getting-started.html) for information about how to get a free subscription to one.
 
 **Note**: If you are approved for Beta participation, it is the service instance where you request Beta access that will be upgraded. And every workspace in that service instance will be upgraded. Do not request Beta participation from an instance with workspaces that you are actively using. To try out the Beta safely, you can create a new service instance, and then request access from it.
 

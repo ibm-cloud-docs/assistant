@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-15"
+lastupdated: "2018-03-16"
 
 ---
 
@@ -118,7 +118,7 @@ To create a dialog, complete the following steps:
 
 As you make changes to your dialog, you can test it at any time to see how it responds to input.
 
-1.  From the Dialog tab, click the ![Ask Watson](images/ask_watson.png) icon.
+1.  From the Dialog tab, click the ![Try it](images/ask_watson.png) icon.
 1.  In the chat pane, type some text and then press Enter.
 
     Make sure the system has finished training on your most recent changes before you start to test the dialog. If the system is still training, a message is displayed in the *Try it out* pane:
