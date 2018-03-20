@@ -769,6 +769,11 @@ To disable digressions into a root node altogether, complete the following steps
 
 If you decide that you want to prevent digressions into several root nodes, but do not want to edit each one individually, you can add the nodes to a folder. From the *Customize* page of the folder, you can set the *Allow digressions into this node* toggle to **Off** to apply the configuration to all of the nodes at once. See [Organizing the dialog with folders](dialog-build.html#folders) for more information.
 
+### Digression tutorial
+{: #digression-tutorial}
+
+Follow the [tutorial](tutorial-digressions.html) to import a workspace that has a set of nodes already defined. You can walk through some exercises that illustrate how digressions work.
+
 ### Design considerations
 {: #digression-design-considerations}
 

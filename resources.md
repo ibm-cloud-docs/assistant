@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-16"
+lastupdated: "2018-03-20"
 
 ---
 
@@ -32,30 +32,30 @@ Links to resources, videos, tutorials, and articles that can help you to get sta
 - [Investment management chat app ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/code/journey/create-an-investment-management-chatbot/){: new_window}
 - [Cognitive Banking chatbot ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/code/journey/create-cognitive-banking-chatbot/){: new_window}
 - [Pizza ordering chatbot using slots ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/code/journey/assemble-a-pizza-ordering-chatbot-dialog/){: new_window}
-- [Building an Amazon Alexa Skill with {{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/IBM/alexa-skill-watson-conversation){: new_window}
-- [Adding a chatbot to Wordpress with {{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://wordpress.org/plugins/conversation-watson/){: new_window}
+- [Building an Amazon Alexa Skill with the service ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/IBM/alexa-skill-watson-conversation){: new_window}
+- [Adding a chatbot to Wordpress with the service ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://wordpress.org/plugins/conversation-watson/){: new_window}
 - [Tutorial: Build a database-driven Slackbot ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/tutorials/slack-chatbot-database-watson.html#build-a-database-driven-slackbot)
 
 ## Building with Watson videos
 
 From an IBM technical deep-dive series. These recordings provide step-by-step instructions and answers.
 
-- [Advanced integrations with {{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/0rnt54ONtQw){: new_window}
-- [Training {{site.data.keyword.conversationshort}} to detect user intent ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/uYw4Tv1Y5tc){: new_window}
+**Note**: Excuse the references to the legacy service name (IBM Watson Conversation) that these videos use to refer to the service. The principles described in them remain true for the process of building conversational skills with {{site.data.keyword.conversationshort}}.
+
+- [Advanced integrations ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/0rnt54ONtQw){: new_window}
+- [Training the service to detect user intent ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/uYw4Tv1Y5tc){: new_window}
 - [New tools for dialog scripting ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/QuR54--vD5o){: new_window}
 
 ## Other videos
 
-Additional videos created by IBMers.
+Additional videos created by IBMers. Again, these videos refer to the service by its former name, the Watson Conversation service. They remain relevant for {{site.data.keyword.conversationshort}} because they focus on conversational skill development.
 
-- [{{site.data.keyword.conversationshort}} Integrations Tutorial  ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.youtube.com/watch?v=O3silvVBaC8&t=3s){: new_window}: A 10-minute tutorial you can follow to connect {{site.data.keyword.conversationshort}} with Twilio using Botkit to create a SMS chatbot
 - [Show me how to use {{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/tUkLIUOm550){: new_window}: A 3-minute overview of the service
-- [Introducing {{site.data.keyword.conversationshort}} service ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/A96nLYSMltA){: new_window}: A 1-minute introduction
 - [Walkthrough of {{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/ELwWhJGE2P8){: new_window}: A 14-minute technical walkthrough
 
 ## Videos in the documentation
 
-These videos are available in the documentation and on YouTube.
+Videos are embedded in the following pages of the product documentation.
 
 - Navigation pane video: Tool overview for {{site.data.keyword.conversationshort}}
 - *Defining intents* page: [Working with intents](intents.html)
