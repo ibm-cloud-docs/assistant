@@ -127,7 +127,7 @@ You can configure a dialog node to not go back to the node that the service digr
 
     The service digresses away from the Job opportunities node to the Restaurant opening hours node to answer your question. The service responds with `The restaurant is open from 8:00 AM to 10:00 PM.`
 
-    Unlike in the previous test, this time the dialog does not pick up where it left off in the **Job opporutnities** node. The service does not return to the dialog that was in progress because you changed the setting on the **Restaurant opening hours** node to not return.
+    Unlike in the previous test, this time the dialog does not pick up where it left off in the **Job opportunities** node. The service does not return to the dialog that was in progress because you changed the setting on the **Restaurant opening hours** node to not return.
 
     ![Shows a conversation that does not return after a digression](images/tut-dig-noreturn.png)
 
