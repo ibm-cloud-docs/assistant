@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-08"
+lastupdated: "2018-03-20"
 
 ---
 
@@ -19,10 +19,10 @@ lastupdated: "2018-03-08"
 
 # The Overview page
 
-The Overview page of the **Improve** panel provides a summary of conversations between users and your conversational skill. You can view the amount of traffic for a given time period, as well as the intents and entities that were recognized most often in user conversations.
+The Overview page of the **Improve** panel provides a summary of interactions between users and your application/bot. You can view the amount of traffic for a given time period, as well as the intents and entities that were recognized most often in user conversations.
 {: shortdesc}
 
-The statistics that are displayed on the Overview page cover a longer period of time than the period for which logs of user conversations are retained. These statistics represent external traffic - users or API calls - that has interacted with your skill; they do not include interactions from the *Try it out* pane in the tool.
+The statistics that are displayed on the Overview page cover a longer period of time than the period for which logs of conversations are retained. These statistics represent external traffic - users or API calls - that has interacted with your bot; they do not include interactions from the *Try it out* pane in the tool.
 
 You can use the Overview page to answer questions like:
 
@@ -48,28 +48,32 @@ You can choose whether to view data for a single day, a week, a month, or a quar
 ## Graphs and statistics
 Several statistical scorecards provide log data for your application:
 
-* *Total conversations* - The total number of interactions over the selected time period, as shown in the corresponding graph.
+* *Total conversations* - The total number of conversations between active users and your application, during the selected time period, as shown in the corresponding graph.
 
-  **Note**: A 'conversation' is considered to be any interaction with an application/bot, so if there are interactions where the service starts by saying "Hi, how can I help you?", and then the user closes their browser without responding, that interaction is included in the total conversation count.
+  **Note**: A single conversation is a set of utterances consisting of the messages that an active user sends to your application, and the messages your application responds with.
 
-* *Avg. msg. per conversation* - The total messages received during the selected time period divided by the total conversations during the selected time period, as shown in the corresponding graph.
-* *Max. conversations* - The maximum number of interactions for a single data point within the selected time period.
+  **Important**: A 'conversation' is considered to be *any* set of utterances sent or received by an application/bot, so if the service starts by saying "Hi, how can I help you?", and then the user closes their browser without responding, that utterance is included in the total conversation count.
+
+* *Avg. msg. per conversation* - The total utterances received during the selected time period divided by the total conversations during the selected time period, as shown in the corresponding graph.
+* *Max. conversations* - The maximum number of conversations for a single data point within the selected time period.
 * *Weak understanding* - The number of individual utterances with weak understanding. These utterances are not classified by an intent, and do not contain any known entities. These can be useful in identifying potential dialog problems.
 
 Detailed graphs provide additional information:
 
-* *Total conversations* - The total number of interactions that took place.
+* *Total conversations* - The total number of conversations between active users and your application, during the selected time period.
 
   While viewing the ***Conversations*** graph, you can click on an individual data point to see the numeric value, as shown here:
 
   ![Single data point](images/oview-point.png)
 
-* *Avg. msg. per conversation* - The total messages received during the selected time period divided by the total conversations during the selected time period.
-* *Total messages* - The total number of interactions received from active users over the selected time period.
-* *Active users* - The number of [unique users](logs.html#customer_id) who have engaged with your application within the selected time period.
-* *Avg. conversations per user* - The total conversations during the selected time period divided by the total active users during the selected time period.
+* *Avg. msg. per conversation* - The total utterances received during the selected time period divided by the total conversations during the selected time period.
+* *Total messages* - The total number of utterances received from active users over the selected time period.
+* *Active users* - The number of unique users who have engaged with your application within the selected time period.
+* *Avg. conversations per user* - The total conversations during the selected time period divided by the total unique users during the selected time period.
 
-## Top intents and Top entities
+  **Note**: Statistics for *Active users* and *Avg. conversations per user* require a unique `user_id` parameter. See [Enabling user metrics](logs.html#user_id) for more information.
+
+## Top Intents and Top Entities
 
 You can also view the intents and entities that were recognized most often during the specified time period.
 

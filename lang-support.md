@@ -27,14 +27,14 @@ In the following table, the level of language and feature support is indicated b
 - **Beta** - The feature is supported only as a Beta release, and is still undergoing testing before it is made generally available in this language.
 - **Blank** - Absence of any code indicates that a feature is not available in this language.
 
-|                  | **[Defining intents](intents.html)**, **[entities](entities.html)**, and **[dialog](dialog-build.html)** | **[Absolute scoring and 'Mark as irrelevant'](intents.html#mark-irrelevant)** | **System entities ([number](system-entities.html#sys-number), [currency](system-entities.html#sys-currency), [percentage](system-entities.html#sys-percentage), [date, time](system-entities.html#sys-datetime))** | **[Entity fuzzy matching](entities.html#fuzzy-matching)** | **[Pattern-based entities](entities.html#pattern-entities)** |
+|                  | **[Defining intents](intents.html)**, **[entities](entities.html)**, and **[dialog](dialog-build.html)** | **[Absolute scoring and 'Mark as irrelevant'](intents.html#mark-irrelevant)** | **System entities ([number](system-entities.html#sys-number), [currency](system-entities.html#sys-currency), [percentage](system-entities.html#sys-percentage), [date, time](system-entities.html#sys-datetime))** | **[Entity fuzzy matching](entities.html#fuzzy-matching)** | **[Search intents](intents.html#searching-intents) and [entities](entities.html#searching-entities)**
 |:---|:---:|:---:|:---:|:---:|:---:|
-| **English (en)**                   | GA | GA | GA </br> Beta ([location](system-entities.html#sys-location), [person](system-entities.html#sys-person)) | Beta (Stemming, misspelling, and partial match) | Beta |
-| **Arabic (ar)**                    | GA | Beta | Beta | Beta (Misspelling only) | Beta |
+| **English (en)**                   | GA | GA | GA </br> Beta ([location](system-entities.html#sys-location), [person](system-entities.html#sys-person)) | Beta (Stemming, misspelling, and partial match) | GA |
+| **Arabic (ar)**                    | GA | Beta | Beta | Beta (Misspelling only) |
 | **Chinese (Simplified) (zh-cn)**   | Beta | Beta | Beta |  | Beta |
 | **Chinese (Traditional) (zh-tw)**  | Beta | Beta |  |  | Beta |
-| **Czech (cs)**                     | Beta | Beta | Beta | Beta (Misspelling only) | Beta
-| **Dutch (nl)**                     | Beta | Beta |  |  | Beta |
+| **Czech (cs)**                     | Beta | Beta | Beta | Beta (Misspelling only) | Beta |
+| **Dutch (nl)**                     | Beta | Beta | Beta |  | Beta |
 | **French (fr)**                    | GA | GA | GA | Beta (Misspelling only) | Beta |
 | **German (de)**                    | GA | GA | GA | Beta (Misspelling only) | Beta |
 | **Italian (it)**                   | GA | GA | GA | Beta (Misspelling only) | Beta |
