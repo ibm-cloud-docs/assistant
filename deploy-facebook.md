@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-20"
+lastupdated: "2018-03-21"
 
 ---
 
@@ -30,10 +30,10 @@ After you have configured your conversational skill and added it to an assistant
 
 1.  Follow the instructions that are provided to complete the integration process.
 
-## How users interact with the assistant
+## Chatting with the assistant
 
-To start chatting with the assistant, users can complete the following steps:
+To start a chat with the assistant, complete the following steps:
 
 1.  Open Facebook Messenger.
-1.  Type the name of the page you created.
-1.  After the page comes up, click it and start chatting with the assistant.
+1.  Type the name of the page you created earlier.
+1.  After the page comes up, click it, and then start chatting with the assistant.
