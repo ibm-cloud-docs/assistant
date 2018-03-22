@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-07"
+lastupdated: "2018-03-22"
 
 ---
 
@@ -51,8 +51,8 @@ Follow these steps to create an assistant:
 1.  Click **Create new**.
 
 1.  Specify the details for the new assistant:
-    - **Name**: A name no more than 64 characters in length that contains alphabetical characters (a-z), number characters (0-9), underscores (_), dashes (-) periods (.), and spaces. You cannot include an apostrophe in the name, for example. This value is required.
-    - **Description**: A description no more than 128 characters in length.
+    - **Name**: A name no more than 100 characters in length that contains alphabetical characters (a-z), number characters (0-9), underscores (_), dashes (-) periods (.), and spaces. You cannot include an apostrophe in the name, for example. This value is required.
+    - **Description**: A description no more than 200 characters in length.
     - **Language**: The language the assistant will use to communicate with your customers.
 
     After you create the assistant, it appears as a tile on the Assistants page.
