@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-15"
+lastupdated: "2018-03-22"
 
 ---
 
@@ -42,8 +42,6 @@ The number of skills you can create in a single service instance depends on your
 ## Creating skills
 {: #creating-skills}
 
-You can create a skill from scratch, use a sample skill that is provided by IBM, or import a skill from a JSON file.
-
 You use the {{site.data.keyword.conversationshort}} tool to build skills. Follow these steps to create a skill:
 
 1.  Click the **Skills** tab.
@@ -53,8 +51,8 @@ You use the {{site.data.keyword.conversationshort}} tool to build skills. Follow
 1.  Click **Create new**.
 
 1.  Specify the details for the new skill:
-    - **Name**: A name no more than 64 characters in length that contains alphabetical characters (a-z), number characters (0-9), underscores (_), dashes (-) periods (.), and spaces. You cannot include an apostrophe in the name, for example. This value is required.
-    - **Description**: A description no more than 128 characters in length.
+    - **Name**: A name no more than 100 characters in length that contains alphabetical characters (a-z), number characters (0-9), underscores (_), dashes (-) periods (.), and spaces. You cannot include an apostrophe in the name, for example. This value is required.
+    - **Description**: A description no more than 200 characters in length.
     - **Language**: The language of the user input the skill will be trained to understand.
 
 After you create the skill, it appears as a tile on the Skills page. Now, you can start identifying the user goals that you want the assistant to address. See [Planning your intents and entities](intents-entities.html) for more details.
