@@ -227,7 +227,7 @@ This is the array: onion;olives;ham;
 ```
 {: codeblock}
 
-If you define a variable that stores multiple values in a JSON array, you can return a subset of values from the array, and then use the join method to format them properly.
+If you define a variable that stores multiple values in a JSON array, you can return a subset of values from the array, and then use the join() method to format them properly.
 
 A `collection projection` SpEL expression extracts a subcollection from an array. The syntax for a collection projection is `array_that_contains_value_sets.![value_of_interest]`.
 
