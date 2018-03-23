@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-16"
+lastupdated: "2018-03-23"
 
 ---
 
@@ -17,6 +17,7 @@ lastupdated: "2018-03-16"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 {:download: .download}
+{:gif: data-image-type='gif'}
 
 # Getting started tutorial
 {: #getting-started}
@@ -185,7 +186,7 @@ You  built a simple dialog to recognize and respond to both hello and goodbye in
 
   **Note**: In a dialog that is used by an assistant in production, you would likely add more child nodes that collect the order number and any other necessary information from the user, and then make a programmatic call to your order tracking backend service to cancel the order on the user's behalf.
 
-![Testing the dialog in the Try it out pane](images/gs-test-dialog.gif)
+![Testing the dialog in the Try it out pane](images/gs-test-dialog.gif){: gif}
 
 {{site.data.keyword.watson}} can recognize your intents even when your input doesn't exactly match the examples you included. The dialog uses intents to identify the purpose of the user's input regardless of the precise wording used, and then responds in the way you specify.
 
