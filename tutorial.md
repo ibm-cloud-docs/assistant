@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-02-14"
+lastupdated: "2018-03-23"
 
 ---
 
@@ -16,6 +16,7 @@ lastupdated: "2018-02-14"
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
+{:gif: data-image-type='gif'}
 
 # Tutorial: Building a complex dialog
 {: #tutorial}
@@ -261,7 +262,7 @@ Now add a peer node that is triggered if the user does not specify a valid appli
 
     If the assistant fails to recognize the correct intent, you can retrain it directly from the chat window. Select the arrow next to the incorrect intent and choose the correct one from the list.
 
-    ![Shows choosing a different intent and retraining](images/tut-change-intent.gif)
+    ![Shows choosing a different intent and retraining](images/tut-change-intent.gif){: gif}
 
 Optionally, you can review the **Car Dashboard - Sample** skill to see this same use case fleshed out even more with a longer dialog and additional functionality.
 

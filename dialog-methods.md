@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-12"
+lastupdated: "2018-03-23"
 
 ---
 
@@ -227,7 +227,9 @@ This is the array: onion;olives;ham;
 ```
 {: codeblock}
 
-If you define a variable that stores multiple values in a JSON array, you can return a subset of values from the array and use the join method to format them properly.
+If you define a variable that stores multiple values in a JSON array, you can return a subset of values from the array, and then use the join() method to format them properly.
+
+A `collection projection` SpEL expression extracts a subcollection from an array. The syntax for a collection projection is `array_that_contains_value_sets.![value_of_interest]`.
 
 For example, the following context variable defines a JSON array that stores flight information. There are two data points per flight, the time and flight code.
 
@@ -249,14 +251,23 @@ For example, the following context variable defines a JSON array that stores fli
 ```
 {: codeblock}
 
-To return the flight codes only, use the following syntax in a response:
+To return the flight codes only, you can create a collection project expression by using the following syntax:
 
 ```
-The flights that fit your criteria are: <? T(String).join(",", $flights_found.![flight_code]) ?>.
+<? $flights_found.![flight_code] ?>
+```
+
+This expression returns an array of the `flight_code` values as `["OK123","LH421","TS4156"]`. See the [SpEL Collection projection documentation](https://docs.spring.io/spring/docs/3.0.x/reference/expressions.html) for more details.
+
+If you apply the `join()` method to the values in the returned array, the flight codes are displayed in a comma-separated list. For example, you can use the following syntax in a response:
+
+```
+The flights that fit your criteria are:
+  <? T(String).join(",", $flights_found.![flight_code]) ?>.
 ```
 {: codeblock}
 
-Result: `The flights that match your criteria are: OK123,LH421,TS4156.
+Result: `The flights that match your criteria are: OK123,LH421,TS4156.`
 
 ### JSONArray.remove(integer)
 
