@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-15"
+lastupdated: "2018-03-29"
 
 ---
 
@@ -21,27 +21,49 @@ lastupdated: "2018-03-15"
 The {{site.data.keyword.conversationshort}} service supports the languages listed. Individual features of the service are supported to a greater or lesser extent for each language.
 {: shortdesc}
 
-In the following table, the level of language and feature support is indicated by these codes:
+In the following tables, the level of language and feature support is indicated by these codes:
 
 - **GA** - The feature is generally available and supported for this language. Note that features may continue to be updated even after they are generally available.
 - **Beta** - The feature is supported only as a Beta release, and is still undergoing testing before it is made generally available in this language.
-- **Blank** - Absence of any code indicates that a feature is not available in this language.
+- **NA** - Indicates that a feature is not available in this language.
 
-|                  | **[Defining intents](intents.html)**, **[entities](entities.html)**, and **[dialog](dialog-build.html)** | **[Absolute scoring and 'Mark as irrelevant'](intents.html#mark-irrelevant)** | **System entities ([number](system-entities.html#sys-number), [currency](system-entities.html#sys-currency), [percentage](system-entities.html#sys-percentage), [date, time](system-entities.html#sys-datetime))** | **[Entity fuzzy matching](entities.html#fuzzy-matching)** | **[Search intents](intents.html#searching-intents) and [entities](entities.html#searching-entities)**
+The first table shows the level of support for all features, except those related to entities which are shown in the second table.
+
+**Table 1. Feature support details**
+| Language | **[Defining intents](intents.html)** and **[dialog](dialog-build.html)** | **[Absolute scoring and 'Mark as irrelevant'](intents.html#mark-irrelevant)** | **[Search intents](intents.html#searching-intents)** |
+|:---|:---:|:---:|:---:|
+| **English (en)**                   | GA | GA | GA |
+| **Arabic (ar)**                    | GA | Beta | NA |
+| **Chinese (Simplified) (zh-cn)**   | Beta | Beta | Beta |
+| **Chinese (Traditional) (zh-tw)**  | Beta | Beta | Beta |
+| **Czech (cs)**                     | Beta | Beta | Beta |
+| **Dutch (nl)**                     | Beta | Beta | Beta |
+| **French (fr)**                    | GA | GA | Beta |
+| **German (de)**                    | GA | GA | Beta |
+| **Italian (it)**                   | GA | GA | Beta |
+| **Japanese (ja)**                  | GA | GA | Beta |
+| **Korean (ko)**                    | GA | GA | Beta |
+| **Portuguese (Brazilian) (pt-br)** | GA | GA | Beta |
+| **Spanish (es)**                   | GA | GA | Beta ||
+{: caption="Feature support details" caption-side="top"}
+
+**Table 2. Entity feature support details**
+| Language | **[Defining entities](entities.html)** | **System entities ([number](system-entities.html#sys-number), [currency](system-entities.html#sys-currency), [percentage](system-entities.html#sys-percentage), [date, time](system-entities.html#sys-datetime))** | **[Entity fuzzy matching](entities.html#fuzzy-matching)** | **[Search entities](entities.html#searching-entities)** | **[Entity synonym recommendations](entities.html#creating-entities)** |
 |:---|:---:|:---:|:---:|:---:|:---:|
-| **English (en)**                   | GA | GA | GA </br> Beta ([location](system-entities.html#sys-location), [person](system-entities.html#sys-person)) | Beta (Stemming, misspelling, and partial match) | GA |
-| **Arabic (ar)**                    | GA | Beta | Beta | Beta (Misspelling only) |
-| **Chinese (Simplified) (zh-cn)**   | Beta | Beta | Beta |  | Beta |
-| **Chinese (Traditional) (zh-tw)**  | Beta | Beta |  |  | Beta |
-| **Czech (cs)**                     | Beta | Beta | Beta | Beta (Misspelling only) | Beta |
-| **Dutch (nl)**                     | Beta | Beta | Beta |  | Beta |
-| **French (fr)**                    | GA | GA | GA | Beta (Misspelling only) | Beta |
-| **German (de)**                    | GA | GA | GA | Beta (Misspelling only) | Beta |
-| **Italian (it)**                   | GA | GA | GA | Beta (Misspelling only) | Beta |
-| **Japanese (ja)**                  | GA | GA | GA | Beta (Misspelling only) | Beta |
-| **Korean (ko)**                    | GA | GA | GA | Beta (Misspelling only) | Beta |
-| **Portuguese (Brazilian) (pt-br)** | GA | GA | GA | Beta (Misspelling only) | Beta |
-| **Spanish (es)**                   | GA | GA | GA | Beta (Misspelling only) | Beta ||
+| **English (en)**                   | GA | GA, Beta [location]((system-entities.html#sys-location), [person]((system-entities.html#sys-person) | Beta (Stemming, misspelling, and partial match) | GA | GA |
+| **Arabic (ar)**  | GA | Beta | Beta (Misspelling only) | NA | NA |
+| **Chinese (Simplified) (zh-cn)**   | Beta | NA | Beta | NA | NA |
+| **Chinese (Traditional) (zh-tw)**  | Beta | NA | NA | Beta | NA |
+| **Czech (cs)**                     | Beta | Beta | Beta (Misspelling only) | Beta | NA |
+| **Dutch (nl)**                     | Beta | Beta | NA | Beta | NA |
+| **French (fr)**                    | GA | GA | Beta (Misspelling only) | Beta | NA |
+| **German (de)**                    | GA | GA | Beta (Misspelling only) | Beta | NA |
+| **Italian (it)**                   | GA | GA | Beta (Misspelling only) | Beta | NA |
+| **Japanese (ja)**                  | GA | GA | Beta (Misspelling only) | Beta | NA |
+| **Korean (ko)**                    | GA | GA | Beta (Misspelling only) | Beta | NA |
+| **Portuguese (Brazilian) (pt-br)** | GA | GA | Beta (Misspelling only) | Beta | NA |
+| **Spanish (es)**                   | GA | GA | Beta (Misspelling only) | Beta | NA ||
+{: caption="Entity feature support details" caption-side="top"}
 
 **Note:** The {{site.data.keyword.conversationshort}} service supports multiple languages as noted, but the tool interface itself (descriptions, labels, etc.) is in English. All supported languages can be input and trained through the English interface.
 
