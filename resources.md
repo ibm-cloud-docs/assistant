@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-20"
+lastupdated: "2018-03-27"
 
 ---
 
@@ -50,8 +50,8 @@ From an IBM technical deep-dive series. These recordings provide step-by-step in
 
 Additional videos created by IBMers. Again, these videos refer to the service by its former name, the Watson Conversation service. They remain relevant for {{site.data.keyword.conversationshort}} because they focus on conversational skill development.
 
-- [Show me how to use {{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/tUkLIUOm550){: new_window}: A 3-minute overview of the service
-- [Walkthrough of {{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/ELwWhJGE2P8){: new_window}: A 14-minute technical walkthrough
+- [Show me how to use the service ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/tUkLIUOm550){: new_window}: A 3-minute overview of the service
+- [Walkthrough of the service ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/ELwWhJGE2P8){: new_window}: A 14-minute technical walkthrough
 
 ## Videos in the documentation
 
