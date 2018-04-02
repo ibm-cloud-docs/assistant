@@ -30,6 +30,7 @@ In the following tables, the level of language and feature support is indicated 
 The first table shows the level of support for all features, except those related to entities which are shown in the second table.
 
 **Table 1. Feature support details**
+
 | Language | **[Defining intents](intents.html)** and **[dialog](dialog-build.html)** | **[Absolute scoring and 'Mark as irrelevant'](intents.html#mark-irrelevant)** | **[Search intents](intents.html#searching-intents)**
 |:---:|:---:|:---:|:---:|
 | **English (en)**                   | GA | GA | GA |
@@ -48,6 +49,7 @@ The first table shows the level of support for all features, except those relate
 {: caption="Feature support details" caption-side="top"}
 
 **Table 2. Entity feature support details**
+
 | Language | **[Defining entities](entities.html)** | **System entities ([number](system-entities.html#sys-number), [currency](system-entities.html#sys-currency), [percentage](system-entities.html#sys-percentage), [date, time](system-entities.html#sys-datetime))** | **[Entity fuzzy matching](entities.html#fuzzy-matching)** | **[Search entities](entities.html#searching-entities)** | **[Entity synonym recommendations](entities.html#creating-entities)**
 |:---|:---:|:---:|:---:|:---:|:---:|
 | **English (en)**                   | GA | GA, Beta [location]((system-entities.html#sys-location), [person]((system-entities.html#sys-person) | Beta (Stemming, misspelling, and partial match) | GA | GA |
