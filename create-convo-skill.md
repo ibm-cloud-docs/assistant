@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-22"
+lastupdated: "2018-04-02"
 
 ---
 
@@ -46,7 +46,7 @@ You use the {{site.data.keyword.conversationshort}} tool to build skills. Follow
 
 1.  Click the **Skills** tab.
 
-    **Note**: If you created or were given developer role access to any workspaces that were built with the generally available version of the  {{site.data.keyword.conversationshort}} service, you will see them listed here as conversational skills.
+    **Note**: If you created or were given developer role access to any workspaces that were built with the generally available version of the  {{site.data.keyword.conversationshort}} service (formerly Watson Conversation), you will see them listed here as conversational skills.
 
 1.  Click **Create new**.
 
@@ -56,3 +56,26 @@ You use the {{site.data.keyword.conversationshort}} tool to build skills. Follow
     - **Language**: The language of the user input the skill will be trained to understand.
 
 After you create the skill, it appears as a tile on the Skills page. Now, you can start identifying the user goals that you want the assistant to address. See [Planning your intents and entities](intents-entities.html) for more details.
+
+The conversational skill cannot be used to help customers until it is added to an assistant and the assistant is deployed. You must associate the skill with an assistant by configuring the assistant to use it; you cannot choose the assistant that will use the skill from within the skill settings. And one skill can be used by more than one assistant.
+
+## Deleting a conversational skill
+{: #delete-convo-skill}
+
+You cannot delete a conversational skill if it is being used by an assistant. Otherwise, you can delete any conversational skill that you can access.
+
+To delete a conversational skill, complete the following steps:
+
+1.  From the Skills tab, find the tile for the skill that you want to delete.
+
+    **Note**: The skill tile lists all of the assistants that currently use the skill.
+
+1.  If the skill you want to delete is associated with an assistant, then complete the following steps:
+
+    - Check with the owner of the assistant that is using the skill before you remove the skill from it.
+    - Open the Assistants tab, and then click to open the assistant tile.
+    - From the Skills section, find the tile for the skill that you want to delete. Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Remove**.
+    - Repeat the previous steps for any other assistants that are using the skill.
+    - Return to the Skills tab and find the tile for the skill that you want to delete.
+
+1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Delete**. Confirm the deletion.

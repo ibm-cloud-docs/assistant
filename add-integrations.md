@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-07"
+lastupdated: "2018-04-02"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2018-03-07"
 # Adding integrations
 {: #add-integrations}
 
-Add integrations to bring the assistant to your users where they are when they need help.
+Add integrations to bring the assistant to your customers where they are when they need help.
 {: shortdesc}
 
 ## Integration limits
@@ -38,7 +38,9 @@ The number of integrations you can create in a single service instance depends o
 ## Add an integration
 {: #add-integration}
 
-Follow these steps to add an integration to your assistant:
+After you add a conversational skill to an assistant, a test web site is provisioned for you automatically. It has a simple chat widget interface that you can use to interact with your assistant for testing purposes. You can also share the URL to the IBM-branded site with any teammembers who might want to try the assistant. The tile named **Shareable Link** that is displayed in the Integrations section represents this site.
+
+Follow these steps to add integrations to your assistant:
 
 1.  Click the **Assistants** tab.
 
@@ -46,11 +48,14 @@ Follow these steps to add an integration to your assistant:
 
 1.  In the Integrations section, click **Add integration**.
 
-1.  Choose the platform with which you want to integrate the assistant. The options include:
+1.  Click the **Select Integration** button for the platform with which you want to integrate the assistant. The options include:
 
     - Facebook Messenger
-    - Web link
+    - Slack
+    - Shareable Link
 
-1.  Follow the instructions that are provided to complete the integration process.
+1.  Click **Select Integration**.
+
+1.  Follow the instructions that are provided on the screen to complete the integration process.
 
 After you integrate the assistant, test it from the target platform to ensure that the assistant works as expected.
