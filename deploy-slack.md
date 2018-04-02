@@ -17,16 +17,16 @@ lastupdated: "2018-04-02"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Integrating with Facebook Messenger
-{: #deploy-facebook}
+# Integrating with Slack
+{: #deploy-slack}
 
-After you configure a conversational skill and add it to an assistant, you can integrate the assistant with Facebook Messenger.
+After you configure a conversational skill and add it to an assistant, you can integrate the assistant with Slack.
 
 1.  From the Assistants tab, click to open the assistant tile that you want to deploy.
 
 1.  From the Integrations section, click **Add integration**.
 
-1.  Click the **Select Integration** button for *Facebook Messenger*.
+1.  Click the **Select Integration** button for *Slack*.
 
 1.  Follow the instructions that are provided on the screen to complete the integration process.
 
@@ -34,6 +34,6 @@ After you configure a conversational skill and add it to an assistant, you can i
 
 To start a chat with the assistant, complete the following steps:
 
-1.  Open Facebook Messenger.
-1.  Type the name of the page you created earlier.
-1.  After the page comes up, click it, and then start chatting with the assistant.
+1.  Open Slack, and go to the workspace associated with your app.
+1.  Click the application that you created from the Apps section.
+1.  Chat with the assistant.

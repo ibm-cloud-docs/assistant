@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-22"
+lastupdated: "2018-04-02"
 
 ---
 
@@ -60,3 +60,14 @@ Follow these steps to create an assistant:
 1.  Add a skill to the assistant. See [Building a conversational skill](create-convo-skill.html) for details.
 
     **Note**: You must add a skill to the assistant for the creation of the assistant to be fully completed.
+
+## Deleting an assistant
+{: #delete-assistant}
+
+When you delete an assistant, any integrations that you defined for the assistant are automatically deleted also. Skills that you associated with the assistant are not deleted.
+
+To delete an assistant, follow these steps:
+
+1.  From the Assistant tab, find the assistant that you want to delete.
+
+1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Delete**. Confirm the deletion.

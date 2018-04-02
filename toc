@@ -37,8 +37,10 @@ Watson Assistant Beta
     {: .topicgroup}
     Integrations
         add-integrations.md
-        deploy-web-link.md
         deploy-facebook.md
+        deploy-slack.md
+        deploy-web-link.md
+        delete-integration.md
 
     {: .topicgroup}
     Improving understanding
