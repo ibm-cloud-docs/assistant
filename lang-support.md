@@ -31,8 +31,8 @@ The first table shows the level of support for all features, except those relate
 
 **Table 1. Feature support details**
 
-|Language | **[Defining intents](intents.html)** and **[dialog](dialog-build.html)** | **[Absolute scoring and 'Mark as irrelevant'](intents.html#mark-irrelevant)** | **[Search intents](intents.html#searching-intents)**
-|:---:|:---:|:---:|:---:|
+| Language | **[Defining intents](intents.html)** and **[dialog](dialog-build.html)** | **[Absolute scoring and 'Mark as irrelevant'](intents.html#mark-irrelevant)** | **[Search intents](intents.html#searching-intents)**
+|:---|:---:|:---:|:---:|
 | **English (en)**                   | GA | GA | GA |
 | **Arabic (ar)**                    | GA | Beta | NA |
 | **Chinese (Simplified) (zh-cn)**   | Beta | Beta | Beta |
@@ -46,6 +46,7 @@ The first table shows the level of support for all features, except those relate
 | **Korean (ko)**                    | GA | GA | Beta |
 | **Portuguese (Brazilian) (pt-br)** | GA | GA | Beta |
 | **Spanish (es)**                   | GA | GA | Beta ||
+
 {: caption="Feature support details" caption-side="top"}
 
 **Table 2. Entity feature support details**
@@ -65,6 +66,7 @@ The first table shows the level of support for all features, except those relate
 | **Korean (ko)**                    | GA | GA | Beta (Misspelling only) | Beta | NA |
 | **Portuguese (Brazilian) (pt-br)** | GA | GA | Beta (Misspelling only) | Beta | NA |
 | **Spanish (es)**                   | GA | GA | Beta (Misspelling only) | Beta | NA ||
+
 {: caption="Entity feature support details" caption-side="top"}
 
 **Note:** The {{site.data.keyword.conversationshort}} service supports multiple languages as noted, but the tool interface itself (descriptions, labels, etc.) is in English. All supported languages can be input and trained through the English interface.
