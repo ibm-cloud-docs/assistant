@@ -35,6 +35,6 @@ To test the assistant from the web-hosted chat widget, complete the following st
 
 1.  Click **Create shareable link**.
 
-1.  Click **View public link**.
+1.  Click **Visit public link**.
 
 1.  Submit a test utterance through the chat widget embedded in the web page to see how the assistant responds.
