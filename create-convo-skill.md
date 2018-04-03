@@ -62,7 +62,7 @@ The conversational skill cannot be used to help customers until it is added to a
 ## Deleting a skill
 {: #delete-convo-skill}
 
-You can delete any converational skill that you can access, unless it is being used by an assistant. If it is in use, you must remove it from the assistant that is using it before you can delete it.
+You can delete any conversational skill that you can access, unless it is being used by an assistant. If it is in use, you must remove it from the assistant that is using it before you can delete it.
 
 Be sure to check with anyone else who might be using the skill before you delete it.
 {: tip}
