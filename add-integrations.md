@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-02"
+lastupdated: "2018-04-03"
 
 ---
 
@@ -38,24 +38,24 @@ The number of integrations you can create in a single service instance depends o
 ## Add an integration
 {: #add-integration}
 
-After you add a conversational skill to an assistant, a test web site is provisioned for you automatically. It has a simple chat widget interface that you can use to interact with your assistant for testing purposes. You can also share the URL to the IBM-branded site with any teammembers who might want to try the assistant. The tile named **Shareable Link** that is displayed in the Integrations section represents this site.
-
 Follow these steps to add integrations to your assistant:
 
 1.  Click the **Assistants** tab.
 
 1.  Click to open the tile for the assistant that you want to integrate.
 
-1.  In the Integrations section, click **Add integration**.
+1.  Go to the Integrations section.
 
-1.  Click the **Select Integration** button for the platform with which you want to integrate the assistant. The options include:
+    **What is the Shareable Link integration?** After you add a conversational skill to an assistant, a test web site is provisioned for you automatically. It has a simple chat widget interface that you can use to interact with your assistant for testing purposes. You can also share the URL to this IBM-branded site with your teammembers. Click the **Shareable Link** tile to access the test web site.
 
-    - Facebook Messenger
-    - Slack
-    - Shareable Link
+1.  Click **Add integration**.
 
-1.  Click **Select Integration**.
+1.  Click the **Select Integration** button for the channel with which you want to integrate the assistant. The options include:
+
+    - [Facebook Messenger](deploy-facebook.html)
+    - [Slack](deploy-slack.html)
+    - [Shareable Link*](deploy-web-link.html)
 
 1.  Follow the instructions that are provided on the screen to complete the integration process.
 
-After you integrate the assistant, test it from the target platform to ensure that the assistant works as expected.
+After you integrate the assistant, test it from the target channel to ensure that the assistant works as expected.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-02"
+lastupdated: "2018-04-03"
 
 ---
 
@@ -28,7 +28,7 @@ The natural-language processing for the {{site.data.keyword.conversationshort}} 
 
 Currently, you can add one conversational skill to an assistant.
 
-The number of skills you can create in a single service instance depends on your {{site.data.keyword.conversationshort}} plan. The sample skills do not count toward your limit unless you edit or duplicate them:
+The number of skills you can create in a single service instance depends on your {{site.data.keyword.conversationshort}} plan. The sample skills do not count toward your limit unless you edit or duplicate them.
 
 | Service plan     | Skills per service instance |
 |------------------|----------------------------:|
@@ -39,10 +39,10 @@ The number of skills you can create in a single service instance depends on your
 
 *After 30 days of inactivity, an unused Lite skill might be deleted to free up space.
 
-## Creating skills
+## Creating a skill
 {: #creating-skills}
 
-You use the {{site.data.keyword.conversationshort}} tool to build skills. Follow these steps to create a skill:
+You use the {{site.data.keyword.conversationshort}} tool to build skills. Follow these steps to create a conversational skill:
 
 1.  Click the **Skills** tab.
 
@@ -59,18 +59,19 @@ After you create the skill, it appears as a tile on the Skills page. Now, you ca
 
 The conversational skill cannot be used to help customers until it is added to an assistant and the assistant is deployed. You must associate the skill with an assistant by configuring the assistant to use it; you cannot choose the assistant that will use the skill from within the skill settings. And one skill can be used by more than one assistant.
 
-## Deleting a conversational skill
+## Deleting a skill
 {: #delete-convo-skill}
 
-You cannot delete a conversational skill if it is being used by an assistant. Otherwise, you can delete any conversational skill that you can access.
+You can delete any converational skill that you can access, unless it is being used by an assistant. If it is in use, you must remove it from the assistant that is using it before you can delete it.
+
+Be sure to check with anyone else who might be using the skill before you delete it.
+{: tip}
 
 To delete a conversational skill, complete the following steps:
 
-1.  From the Skills tab, find the tile for the skill that you want to delete.
+1.  Find out whether the skill is being used by any assistants. From the Skills tab, find the tile for the skill that you want to delete. The **Assistants** field lists the assistants that currently use the skill.
 
-    **Note**: The skill tile lists all of the assistants that currently use the skill.
-
-1.  If the skill you want to delete is associated with an assistant, then complete the following steps:
+1.  If the skill you want to delete is associated with an assistant, then remove it from the assistant by completing the following steps:
 
     - Check with the owner of the assistant that is using the skill before you remove the skill from it.
     - Open the Assistants tab, and then click to open the assistant tile.
