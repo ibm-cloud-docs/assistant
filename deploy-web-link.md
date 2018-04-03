@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-02"
+lastupdated: "2018-04-03"
 
 ---
 
@@ -23,7 +23,7 @@ lastupdated: "2018-04-02"
 After you configure a conversational skill and add it to an assistant, it is automatically integrating into a simple IBM-branded web page.
 {: shortdesc}
 
-The assistant is implemented as a chat widget that is displayed along the side of the web page. You can test the conversational skill that you added to the assistant by entering text into the chat widget. You can also share the URL of the page with others to enlist help in testing and getting feedback about the assistant.
+The assistant is implemented as a chat widget that is displayed on the web page. You can test the conversational skill that you added to the assistant by entering text into the chat widget. You can also share the URL of the page with others to enlist help in testing and getting feedback about the assistant.
 
 To test the assistant from the web-hosted chat widget, complete the following steps:
 
@@ -33,7 +33,7 @@ To test the assistant from the web-hosted chat widget, complete the following st
 
 1.  **Optional**: Click the **Edit Integration name** ![Edit Integration](images/edit-integration.png) icon to change the integration name, and the **Edit Integration description** ![Edit Integration](images/edit-integration.png) icon to change the description.
 
-1.  Click **Create shareable link**.
+1.  Click **Create Shareable Link**.
 
 1.  Click **Visit public link**.
 

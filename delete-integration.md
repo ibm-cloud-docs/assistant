@@ -20,7 +20,7 @@ lastupdated: "2018-04-02"
 # Deleting an integration
 {: #delete-integration}
 
-To stop an assistant from being available to user in a certain channel, delete the integration to that channel.
+To stop an assistant from being available to users from a certain channel, delete the integration to that channel.
 
 1.  From the Assistants tab, click to open the assistant tile that you want to edit.
 
