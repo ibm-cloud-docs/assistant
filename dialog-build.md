@@ -158,6 +158,23 @@ If the correct intents and entities are being recognized, but the wrong nodes ar
 
 If you are ready to put the conversation to work helping your users, integrate your assistant with a messaging platform or custom application. See [Adding integrations](add-integrations.html).
 
+## Searching your dialog
+{: #search}
+
+You can search the dialog to find one or more dialog nodes that mention a given word or phrase.
+
+1.  Select the Search icon: ![Search icon](images/search_icon.png)
+
+1.  Enter a search term or phrase.
+
+    **Note**: The first time you search, an index is created. You might be asked to wait while the text in your dialog nodes is indexed.
+
+### Results
+
+Nodes containing your search term, with corresponding examples, are shown. Select any result to open it for editing.
+
+  ![Intent search return](images/search_dialog.png)
+
 ## Copying a dialog node
 {: #copy-node}
 
