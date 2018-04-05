@@ -170,7 +170,7 @@ To make a programmatic call from a dialog node, complete the following steps:
 
       **Attention**: Any charges that are incurred when the action runs are charged to the person who owns these credentials.
 
-      **Warning**: During Beta, there is no way to pass the credentials to the dialog. You must store them as context variable values in a dialog node that will be triggered before the programmatic call itself is made. As a result, the credentials will be visible in the JSON file that represents the skill, which can be downloaded by anyone with access to your skills. 
+      **Warning**: During Beta, there is no way to pass the credentials to the dialog. You must store them as context variable values in a dialog node that will be triggered before the programmatic call itself is made. As a result, the credentials will be visible in the JSON file that represents the skill, which can be downloaded by anyone with access to your skills.
 
       You can prevent the information from being captured in Watson logs by nesting your context variable within the $private section of the message context. For example: `$private.my_credentials`.
 
@@ -189,8 +189,6 @@ To make a programmatic call from a dialog node, complete the following steps:
       }
       ```
       {: codeblock}
-
-      Be sure to set the value of the `$private.my_credentials` context variable in a dialog node that will be triggered before the programmatic call itself is made.
 
 ## Creating a {{site.data.keyword.openwhisk_short}} action
 {: #create-action}
