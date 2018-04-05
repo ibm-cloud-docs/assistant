@@ -29,7 +29,7 @@ You can use an external service to validate information that you collected from 
 
 When you define the programmatic call, you choose one of the following types:
 
-- **client**: Defines a programmatic call in a standardized format that your external client application can use to perform the programmatic call or function, and return the result to the dialog. This type of call basically tells the dialog to pause here and let the client application go do something. The program that the client application runs can be anything that you choose. Just be sure to specify the call name and parameter details, as well as the error message variable name, according to the JSON formatting rules that is outlined below.
+- **client**: Defines a programmatic call in a standardized format that your external client application can use to perform the programmatic call or function, and return the result to the dialog. This type of call basically tells the dialog to pause here and let the client application go do something. The program that the client application runs can be anything that you choose. Just be sure to specify the call name and parameter details, as well as the error message variable name, according to the JSON formatting rules that are outlined later.
 - **server**: Calls an {{site.data.keyword.openwhisk_short}} action directly, and returns the result to the dialog.
 
     Currently, you can call a {{site.data.keyword.openwhisk_short}} action from {{site.data.keyword.conversationshort}} instances that are hosted in the US South or Germany regions.
