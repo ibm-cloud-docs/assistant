@@ -31,7 +31,7 @@ The first table shows the level of support for all features, except those relate
 
 **Table 1. Feature support details**
 
-| Language | **[Defining intents](intents.html)** and **[dialog](dialog-build.html)** | **[Absolute scoring and 'Mark as irrelevant'](intents.html#mark-irrelevant)** | **[Search intents](intents.html#searching-intents)**
+| Language | **[Defining intents](intents.html)** and **[dialog](dialog-build.html)** | **[Absolute scoring and 'Mark as irrelevant'](intents.html#mark-irrelevant)** | **Search**
 |:---|:---:|:---:|:---:|
 | **English (en)**                   | GA | GA | GA |
 | **Arabic (ar)**                    | GA | Beta | NA |
@@ -55,7 +55,7 @@ The first table shows the level of support for all features, except those relate
 |:---|:---:|:---:|:---:|:---:|:---:|
 | **English (en)**                   | GA | GA, Beta [location]((system-entities.html#sys-location), [person]((system-entities.html#sys-person) | Beta (Stemming, misspelling, and partial match) | GA | GA |
 | **Arabic (ar)**  | GA | Beta | Beta (Misspelling only) | NA | NA |
-| **Chinese (Simplified) (zh-cn)**   | Beta | NA | Beta | NA | NA |
+| **Chinese (Simplified) (zh-cn)**   | Beta | NA | Beta | Beta | NA |
 | **Chinese (Traditional) (zh-tw)**  | Beta | NA | NA | Beta | NA |
 | **Czech (cs)**                     | Beta | Beta | Beta (Misspelling only) | Beta | NA |
 | **Dutch (nl)**                     | Beta | Beta | NA | Beta | NA |
