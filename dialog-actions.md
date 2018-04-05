@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-15"
+lastupdated: "2018-04-05"
 
 ---
 
@@ -29,7 +29,7 @@ You can use an external service to validate information that you collected from 
 
 When you define the programmatic call, you choose one of the following types:
 
-- **client**: Defines a programmatic call in a standardized format that your external client application can use to perform the programmatic call or function, and return the result to the dialog.
+- **client**: Defines a programmatic call in a standardized format that your external client application can use to perform the programmatic call or function, and return the result to the dialog. This type of call basically tells the dialog to pause here and let the client application go do something. The program that the client application runs can be anything that you choose. Just be sure to specify the call name and parameter details, as well as the error message variable name, according to the JSON formatting rules that is outlined below.
 - **server**: Calls an {{site.data.keyword.openwhisk_short}} action directly, and returns the result to the dialog.
 
     Currently, you can call a {{site.data.keyword.openwhisk_short}} action from {{site.data.keyword.conversationshort}} instances that are hosted in the US South or Germany regions.
@@ -170,21 +170,27 @@ To make a programmatic call from a dialog node, complete the following steps:
 
       **Attention**: Any charges that are incurred when the action runs are charged to the person who owns these credentials.
 
-      To protect the credentials, do not store them in the skill. Instead, pass them from the client application as part of context. You can prevent the information from being stored in Watson logs by nesting your context variable within the $private section of the message context. For example: `$private.my_credentials`.
+      **Warning**: During Beta, there is no way to pass the credentials to the dialog. You must store them as context variable values in a dialog node that will be triggered before the programmatic call itself is made. As a result, the credentials will be visible in the JSON file that represents the skill, which can be downloaded by anyone with access to your skills. 
+
+      You can prevent the information from being captured in Watson logs by nesting your context variable within the $private section of the message context. For example: `$private.my_credentials`.
 
       The credentials object that you define must contain the parameters `user` and `password`.
 
       ```json
       {
-        "user":"5tj3b41j-bf3j-5d92-24g9-4a7769ab12af",
-        "password":"y65gqSTSRzqE..."
+        "context" : {
+         "private": {
+          "my_credentials": {
+            "user": "5tj3b41j-bf3j-5d92-24g9-4a7769ab12af",
+            "password": "y65gqSTSRzqE..."
+          }
+        }
+      }
       }
       ```
       {: codeblock}
 
-      While testing the dialog, you can temporarily set the `$private.my_credentials` context variable with your real {{site.data.keyword.openwhisk_short}} username and password values by clicking **Manage context** from the "Try it out" pane in the tool.
-
-      ![Shows how the $private.my_credentials context variable is defined in the Try it out context management interface](images/testing-creds.png)
+      Be sure to set the value of the `$private.my_credentials` context variable in a dialog node that will be triggered before the programmatic call itself is made.
 
 ## Creating a {{site.data.keyword.openwhisk_short}} action
 {: #create-action}
