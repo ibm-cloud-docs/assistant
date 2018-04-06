@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-03"
+lastupdated: "2018-04-06"
 
 ---
 
@@ -42,19 +42,21 @@ Follow these steps to add integrations to your assistant:
 
 1.  Click the **Assistants** tab.
 
-1.  Click to open the tile for the assistant that you want to integrate.
+1.  Click to open the tile for the assistant that you want to deploy.
 
 1.  Go to the Integrations section.
 
-    **What is the Shareable Link integration?** After you add a conversational skill to an assistant, a test web site is provisioned for you automatically. It has a simple chat widget interface that you can use to interact with your assistant for testing purposes. You can also share the URL to this IBM-branded site with your teammembers. Click the **Shareable Link** tile to access the test web site.
+    **What is the Shareable Link integration?** After you add a conversational skill to an assistant, a test web site is provisioned for you automatically. It has a simple chat widget interface that you can use to interact with your assistant for testing purposes. You can also share the URL to this IBM-branded site with your teammembers.
 
-1.  Click **Add integration**.
+1.  Click **Add Integration**.
 
 1.  Click the **Select Integration** button for the channel with which you want to integrate the assistant. The options include:
 
     - [Facebook Messenger](deploy-facebook.html)
     - [Slack](deploy-slack.html)
     - [Shareable Link*](deploy-web-link.html)
+
+      *One shareable link integration is already available. Only choose this option if you want to create another shareable link instance. To access the instance that was provisioned for you automatically, click the **Shareable Link** integration tile.
 
 1.  Follow the instructions that are provided on the screen to complete the integration process.
 

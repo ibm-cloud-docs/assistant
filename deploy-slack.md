@@ -24,7 +24,7 @@ After you configure a conversational skill and add it to an assistant, you can i
 
 1.  From the Assistants tab, click to open the assistant tile that you want to deploy.
 
-1.  From the Integrations section, click **Add integration**.
+1.  From the Integrations section, click **Add Integration**.
 
 1.  Click the **Select Integration** button for *Slack*.
 
@@ -37,3 +37,5 @@ To start a chat with the assistant, complete the following steps:
 1.  Open Slack, and go to the workspace associated with your app.
 1.  Click the application that you created from the Apps section.
 1.  Chat with the assistant.
+
+The dialog flow is restarted after 30 minutes of inactivity. Meaning any context variable values that were set during the previous conversation are reset to null or their default values.
