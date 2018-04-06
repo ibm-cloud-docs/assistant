@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-03"
+lastupdated: "2018-04-05"
 
 ---
 
@@ -57,7 +57,7 @@ You use the {{site.data.keyword.conversationshort}} tool to build skills. Follow
 
 After you create the skill, it appears as a tile on the Skills page. Now, you can start identifying the user goals that you want the assistant to address. See [Planning your intents and entities](intents-entities.html) for more details.
 
-The conversational skill cannot be used to help customers until it is added to an assistant and the assistant is deployed. You must associate the skill with an assistant by configuring the assistant to use it; you cannot choose the assistant that will use the skill from within the skill settings. And one skill can be used by more than one assistant.
+The conversational skill cannot interact with customers until it is added to an assistant and the assistant is deployed. You must open the assistant tile and add the skill to the assistant from the assistant configuration page; you cannot choose the assistant that will use the skill from within the skill configuration page. One skill can be used by more than one assistant.
 
 ## Deleting a skill
 {: #delete-convo-skill}

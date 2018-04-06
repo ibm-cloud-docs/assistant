@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-02"
+lastupdated: "2018-04-05"
 
 ---
 
@@ -53,7 +53,6 @@ Follow these steps to create an assistant:
 1.  Specify the details for the new assistant:
     - **Name**: A name no more than 100 characters in length that contains alphabetical characters (a-z), number characters (0-9), underscores (_), dashes (-) periods (.), and spaces. You cannot include an apostrophe in the name, for example. This value is required.
     - **Description**: A description no more than 200 characters in length.
-    - **Language**: The language the assistant will use to communicate with your customers.
 
     After you create the assistant, it appears as a tile on the Assistants page.
 
@@ -64,7 +63,7 @@ Follow these steps to create an assistant:
 ## Deleting an assistant
 {: #delete-assistant}
 
-When you delete an assistant, any integrations that you defined for the assistant are automatically deleted also. Skills that you associated with the assistant are not deleted.
+When you delete an assistant, any integrations that you defined for the assistant are automatically deleted also. Skills that you added to the assistant are not deleted.
 
 To delete an assistant, follow these steps:
 
