@@ -54,11 +54,11 @@ Follow these steps to create an assistant:
     - **Name**: A name no more than 100 characters in length that contains alphabetical characters (a-z), number characters (0-9), underscores (_), dashes (-) periods (.), and spaces. You cannot include an apostrophe in the name, for example. This value is required.
     - **Description**: A description no more than 200 characters in length.
 
-    After you create the assistant, it appears as a tile on the Assistants page.
+1.  Add a skill to the assistant by clicking **Add skill**. You can choose to add an existing skill or create a new one.
 
-1.  Add a skill to the assistant. See [Building a conversational skill](create-convo-skill.html) for details.
+    **Note**: If you created or were given developer role access to any workspaces that were built with the generally available version of the {{site.data.keyword.conversationshort}} service (formerly Watson Conversation), you will see them listed as existing conversational skills.
 
-    **Note**: You must add a skill to the assistant for the creation of the assistant to be fully completed.
+    See [Building a conversational skill](create-convo-skill.html) for more information about how to create a new skill.
 
 ## Deleting an assistant
 {: #delete-assistant}

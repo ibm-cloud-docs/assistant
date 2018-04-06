@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-13"
+lastupdated: "2018-04-06"
 
 ---
 
@@ -77,6 +77,7 @@ A node condition determines whether that node is used in the conversation. Respo
 - [Condition artifacts](dialog-overview.html#condition-artifacts)
 - [Condition syntax details](dialog-overview.html#condition-syntax)
 - [Condition usage tips](dialog-overview.html#condition-tips)
+- [Special conditions](dialog-overview.html#special-conditions)
 
 ### Condition artifacts
 {: #condition-artifacts}
@@ -109,16 +110,19 @@ You can use one or more of the following artifacts in any combination to define 
 
   For more information about intents, see [Defining intents](intents.html).
 
-- **Special condition**: Conditions that are provided with the service that you can use to perform common dialog functions.
+- **Special condition**: Conditions that are provided with the service that you can use to perform common dialog functions. See the **Special conditions** table in the next section for details.
+
+### Special conditions
+{: #special-conditions}
 
 | Condition syntax     | Description |
 |----------------------|-------------|
-| `anything_else`      | You can use this condition at the end of a dialog, to be processed when the user input does not match any other dialog nodes. The **Anything else** node is triggered by this condition. |
+| `anything_else`      | You can use this condition at the end of a dialog, to be processed when the user input does not match any other dialog nodes. The **Anything else** node is triggered by this condition. Do not use in dialog branches where you want digressions away to occur. |
 | `conversation_start` | Like **welcome**, this condition is evaluated as true during the first dialog turn. Unlike **welcome**, it is true whether or not the initial request from the application contains user input. A node with the **conversation_start** condition can be used to initialize context variables or perform other tasks at the beginning of the dialog. |
 | `false`              | This condition is always evaluated to false. You might use this at the start of a branch that is under development, to prevent it from being used, or as the condition for a node that provides a common function and is used only as the target of a **Jump to** action. |
 | `irrelevant`         | This condition will evaluate to true if the user’s input is determined to be irrelevant by the {{site.data.keyword.conversationshort}} service. |
 | `true`               | This condition is always evaluated to true. You can use it at the end of a list of nodes or responses to catch any responses that did not match any of the previous conditions. |
-| `welcome`            | This condition is evaluated as true during the first dialog turn (when the conversation starts), only if the initial request from the application does not contain any user input. It is evaluated as false in all subsequent dialog turns. The **Welcome** node is triggered by this condition. Typically, a node with this condition is used to greet the user, for example, to display a message such as `Welcome to our Pizza ordering app.`|
+| `welcome`            | This condition is evaluated as true during the first dialog turn (when the conversation starts), only if the initial request from the application does not contain any user input. It is evaluated as false in all subsequent dialog turns. The **Welcome** node is triggered by this condition. Typically, a node with this condition is used to greet the user, for example, to display a message such as `Welcome to our Pizza ordering app.` This node is never processed during interactions that occur through channels such as Facebook or Slack.|
 {: caption="Special conditions" caption-side="top"}
 
 ### Condition syntax details
