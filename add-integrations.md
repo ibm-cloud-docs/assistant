@@ -54,9 +54,7 @@ Follow these steps to add integrations to your assistant:
 
     - [Facebook Messenger](deploy-facebook.html)
     - [Slack](deploy-slack.html)
-    - [Shareable Link*](deploy-web-link.html)
-
-      *One shareable link integration is already available. Only choose this option if you want to create another shareable link instance. To access the instance that was provisioned for you automatically, click the **Shareable Link** integration tile.
+    - [Shareable Link](deploy-web-link.html): One shareable link integration is already available. Only choose this option if you want to create another shareable link instance. To access the instance that was provisioned for you automatically, click the **Shareable Link** integration tile.
 
 1.  Follow the instructions that are provided on the screen to complete the integration process.
 

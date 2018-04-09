@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-02"
+lastupdated: "2018-04-09"
 
 ---
 
@@ -38,4 +38,4 @@ To start a chat with the assistant, complete the following steps:
 1.  Click the application that you created from the Apps section.
 1.  Chat with the assistant.
 
-The dialog flow is restarted after 30 minutes of inactivity. Meaning any context variable values that were set during the previous conversation are reset to null or their default values.
+The dialog flow for the current session is restarted after 30 minutes of inactivity. Meaning if a user stops interacting with the assistant, after 30 minutes any context variable values that were set during the previous conversation are set to null or back to their default values.
