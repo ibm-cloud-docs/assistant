@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-05"
+lastupdated: "2018-04-09"
 
 ---
 
@@ -67,6 +67,6 @@ When you delete an assistant, any integrations that you defined for the assistan
 
 To delete an assistant, follow these steps:
 
-1.  From the Assistant tab, find the assistant that you want to delete.
+1.  From the Assistants tab, find the assistant that you want to delete.
 
 1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Delete**. Confirm the deletion.

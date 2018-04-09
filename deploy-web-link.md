@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-06"
+lastupdated: "2018-04-09"
 
 ---
 
@@ -39,4 +39,4 @@ To test the assistant from the web-hosted chat widget, complete the following st
 
 1.  Submit a test utterance to see how the assistant responds.
 
-The dialog flow is restarted after 30 minutes of inactivity. Meaning any context variable values that were set during the previous conversation are reset to null or their default values.
+The dialog flow is restarted after 30 minutes of inactivity. Meaning if you stop testing the assistant, after 30 minutes any context variable values that were set during the previous conversation are set to null or back to their default values.
