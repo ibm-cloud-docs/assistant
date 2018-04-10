@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-06"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -59,3 +59,11 @@ Follow these steps to add integrations to your assistant:
 1.  Follow the instructions that are provided on the screen to complete the integration process.
 
 After you integrate the assistant, test it from the target channel to ensure that the assistant works as expected.
+
+### Dialog initialization
+{: #dialog-start}
+
+The Welcome node of your dialog is never triggered. It is displayed in the 'Try it out' pane when you test the assistant within the tool. However, it is not triggered from channel integrations because nodes with the `welcome` special condition are skipped in dialog flows that are started by users. Deployed assistants typically wait for users to initiate conversations with them, not the other way around.
+
+If you need to set default values for context variables that are used later in your dialog, add a dialog node above the Welcome node. Set the `conversation_start` special condition as the node condition. You can then define your context variables, but do not define a text response for the node. If you do, the assistant will ignore the user's first input and return the text response no matter what the user says. Instead, configure the node to jump to the welcome node condition. When you do so, the welcome node's text response is displayed in deployments where the assistant starts the dialog flow. In deployments where the user starts the dialog flow, the user's first input is evaluated and then processed by the node that can provide the best response.
+{: tip}

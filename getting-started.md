@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-23"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -47,7 +47,6 @@ An [*assistant*](assistants.html) is a cognitive bot to which you add skills tha
     ![Create new button on the Assistant tab](images/gs-create-assistant.png)
 1.  Name the assistant `Watson Assistant tutorial`.
 1.  In the Description field, enter `This is a sample assistant that I am creating to help me learn.`
-1.  **Optional**. If you want to create an assistant that communicates in a language other than English, then choose the appropriate language from the list.
 1.  Click **Create**.
 
     ![Finish creating the new assistant](images/gs-create-assistant-done.png)
@@ -77,7 +76,7 @@ An [intent](intents.html) represents the purpose of a user's input. You can thin
 
 For this example, we're going to keep things simple and define only two intents: one for saying hello, and one for saying goodbye.
 
-1.  From the Skills page, find the tile for the `Conversational skill tutorial` that you just created, and click **Edit**.
+1.  From the Skills page, find the tile for the `Conversational skill tutorial` that you just created, and click to open it.
 
     You'll land on the Intents page of the tool.
 

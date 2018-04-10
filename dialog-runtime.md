@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-23"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -223,7 +223,11 @@ To define a context variable, complete the following steps:
 ## Common context variable tasks
 {: #context-common-tasks}
 
-To store the entire string that was provided by the user as input, use `input.text`:
+- If you need to set a default value for a context variable that you want to use or edit later in the dialog flow, then define the context variable in a dialog node that is always triggered.
+
+  **Note**: The Welcome node is not always triggered in deployed instances of the assistant. You can add a node that conditions on `conversation_start` and use it to set default values. See [Dialog initialization](add-integrations.html#dialog-start) for things to consider if you use this approach.
+
+- To store the entire string that was provided by the user as input, use `input.text`:
 
 | Variable | Value            |
 |----------|------------------|
@@ -238,7 +242,7 @@ To store the entire string that was provided by the user as input, use `input.te
 ```
 {: codeblock}
 
-To store the value of an entity in a context variable, use this syntax:
+- To store the value of an entity in a context variable, use this syntax:
 
 | Variable | Value            |
 |----------|------------------|
@@ -253,7 +257,7 @@ To store the value of an entity in a context variable, use this syntax:
 ```
 {: codeblock}
 
-You can add a JSON object to a context variable using either editor. The following expression defines a full_name object that contains a set of first and last values, which together form a person's full name.
+- You can add a JSON object to a context variable using either editor. The following expression defines a full_name object that contains a set of first and last values, which together form a person's full name.
 
 | Variable      | Value            |
 |---------------|------------------|
@@ -273,7 +277,7 @@ You can add a JSON object to a context variable using either editor. The followi
 
 If you specify `$full_name.first` in the response, `Paul` is displayed.
 
-To store the value of a string that you extract from the user's input, you can include a SpEL expression that uses the extract method to apply a regular expression to the user input. The following expression extracts a number from the user input, and saves it to the `$number` context variable.
+- To store the value of a string that you extract from the user's input, you can include a SpEL expression that uses the extract method to apply a regular expression to the user input. The following expression extracts a number from the user input, and saves it to the `$number` context variable.
 
 | Variable | Value                               |
 |----------|-------------------------------------|
@@ -291,7 +295,7 @@ To store the value of a string that you extract from the user's input, you can i
 When you define a regular expression in the JSON editor, you must escape any back slashes that you use in the expression with another back slash (`\\`). You do not need to escape back slashes in regular expressions that you define using the context variable editor.
 {: tip}
 
-To store the value of a pattern entity, append .literal to the entity name. Using this syntax ensures that the exact span of text from user input that matched the specified pattern is stored in the variable.
+- To store the value of a pattern entity, append .literal to the entity name. Using this syntax ensures that the exact span of text from user input that matched the specified pattern is stored in the variable.
 
 | Variable | Value            |
 |----------|------------------|
