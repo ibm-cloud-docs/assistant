@@ -26,4 +26,4 @@ The following new features and changes to the service are available.
 ### 11 April 2018
 {: #19March2018}
 
-- A group of select customers were given access to a private beta build of {{site.data.keyword.conversationfull}} for evaluation. The Beta introduces customers to a new approach to building assistants, one that manages the orchestration of information from one dialog call to the next, and that simplifies the process of publishing the assistant so it can start helping customers faster.
+- A group of select customers were given access to a private beta build of {{site.data.keyword.conversationfull}} for evaluation. The Beta introduces customers to a new way of building assistants, one that manages the orchestration of information from one dialog call to the next, and that simplifies the deployment process so the assistant can start helping customers faster.

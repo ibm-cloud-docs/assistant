@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-09"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -29,7 +29,7 @@ To test the assistant from the web-hosted chat widget, complete the following st
 
 1.  From the Assistants tab, click to open the assistant tile that you want to test.
 
-1.  From the Integrations section, click **Edit** on the *Shareable Link* tile.
+1.  From the Integrations section, click the *Shareable Link* tile.
 
 1.  **Optional**: Click the **Edit Integration name** ![Edit Integration](images/edit-integration.png) icon to change the integration name, and the **Edit Integration description** ![Edit Integration](images/edit-integration.png) icon to change the description.
 
