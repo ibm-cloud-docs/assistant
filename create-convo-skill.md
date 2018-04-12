@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-06"
+lastupdated: "2018-04-12"
 
 ---
 
@@ -42,13 +42,29 @@ The number of skills you can create in a single service instance depends on your
 ## Creating a skill
 {: #creating-skills}
 
-You use the {{site.data.keyword.conversationshort}} tool to build skills. Follow these steps to create a conversational skill:
+You can create a skill from scratch or import a skill from a JSON file.
+
+Follow these steps to create a conversational skill:
 
 1.  Click the **Skills** tab.
 
     **Note**: If you created or were given developer role access to any workspaces that were built with the generally available version of the  {{site.data.keyword.conversationshort}} service (formerly Watson Conversation), you will see them listed as conversational skills.
 
-1.  Click **Create new**.
+1.  Do one of the following things:
+
+    - To create a skill from scratch, click **Create new**.
+    - To import a skill from a JSON file, click the ![Import skill](images/workspace_import.png) icon, and select the JSON file you want to import from.
+
+      **Important:**
+
+      - The imported JSON file must use UTF-8 encoding.
+      - The maximum size for a skill JSON file is 10MB. If you need to import a larger skill, consider importing the intents and entities separately after you have imported the skill.
+      - The JSON cannot contain tabs, newlines, or carriage returns.
+
+      Specify the data you want to include:
+
+        - Select **Everything (Intents, Entities, and Dialog)** if you want to import a complete copy of the conversational skill, including the dialog.
+        - Select **Intents and Entities** if you want to use the intents and entities from the conversational skill, but you plan to build a new dialog.
 
 1.  Specify the details for the new skill:
     - **Name**: A name no more than 100 characters in length that contains alphabetical characters (a-z), number characters (0-9), underscores (_), dashes (-) periods (.), and spaces. You cannot include an apostrophe in the name, for example. This value is required.
