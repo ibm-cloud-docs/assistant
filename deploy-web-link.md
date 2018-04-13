@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-12"
+lastupdated: "2018-04-13"
 
 ---
 
@@ -31,7 +31,7 @@ To test the assistant from the web-hosted chat widget, complete the following st
 
 1.  From the Integrations section, click the *Shareable Link* tile.
 
-1.  **Optional**: Click the **Edit Integration name** ![Edit Integration](images/edit-integration.png) icon to change the integration name, and the **Edit Integration description** ![Edit Integration](images/edit-integration.png) icon to change the description.
+1.  **Optional**: Click the ![Edit integration name](images/edit-integration.png) icon to change the integration name, and the ![Edit integration description](images/edit-integration.png) icon to change the description.
 
 1.  Click **Create Shareable Link**.
 
@@ -41,4 +41,4 @@ To test the assistant from the web-hosted chat widget, complete the following st
 
 **Note**: The welcome message you defined for the Welcome node of your dialog is not displayed in this chat widget. It is displayed in the 'Try it out' pane when you test the assistant within the tool. However, it is not triggered from here because nodes with the `welcome` special condition are skipped in dialog flows that are started by users. The chat widget on this page waits for the user to initiate the conversation. If you need to set default values for context variables at the start of your conversation, see [Starting the dialog](add-integrations.html#dialog-start) for tips.
 
-The dialog flow is restarted after 60 minutes of inactivity. Meaning if you stop testing the assistant, after 60 minutes any context variable values that were set during the previous conversation are reset to null or to their default values.
+The dialog flow is restarted after 60 minutes of inactivity. Meaning if you stop testing the assistant, after 60 minutes, any context variable values that were set during the previous conversation are reset to null or to their default values.
