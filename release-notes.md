@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-09"
+lastupdated: "2018-04-12"
 ---
 
 {:shortdesc: .shortdesc}
@@ -23,7 +23,7 @@ lastupdated: "2018-04-09"
 
 The following new features and changes to the service are available.
 
-### 11 April 2018
-{: #19March2018}
+### 12 April 2018
+{: #12April2018}
 
 - A group of select customers were given access to a private beta build of {{site.data.keyword.conversationfull}} for evaluation. The Beta introduces customers to a new way of building assistants, one that manages the orchestration of information from one dialog call to the next, and that simplifies the deployment process so the assistant can start helping customers faster.
