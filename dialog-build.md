@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-10"
+lastupdated: "2018-04-13"
 
 ---
 
@@ -180,6 +180,30 @@ Nodes containing your search term, with corresponding examples, are shown. Selec
 
   ![Intent search return](images/search_dialog.png)
 
+## Finding a dialog node by its node ID
+{: #get-node-id}
+
+You can search for a dialog node by its node ID. Enter the full node ID into the search field. You might want to find the dialog node that is associated with a known node ID for any of the following reasons:
+
+- You are reviewing logs, and the log refers to a section of the dialog by its node ID.
+- You want to map the node IDs listed in the `nodes_visited` property of the API message output to nodes that you can see in your dialog tree.
+- A dialog runtime error message informs you about a syntax error, and uses a node ID to identify the node you need to fix.
+
+Another way to discover a node based on its node ID is by following these steps:
+
+1.  From the Dialog tab of the tool, select any node in your dialog tree.
+1.  Close the edit view if it is open for the current node.
+1.  In your web browser's location field, a URL should display that has the following syntax:
+
+    `https://watson-conversation.ng.bluemix.net/space/instance-id/workspaces/workspace-id/build/dialog#node=node-id`
+
+1.  Edit the URL by replacing the current `node-id` value with the ID of the node you want to find, and then submit the new URL.
+1.  If necessary, highlight the edited URL again, and resubmit it.
+
+The tool refreshes, and shifts focus to the dialog node with the node ID that you specified. If the node ID is for a slot, a Found or Not found slot condition, a slot handler, or a conditional response, then the node in which the slot or conditional response is defined gets focus and the corresponding modal is displayed.
+
+**Note**: If you still cannot find the node, you can export the conversational skill and use a JSON editor to search the skill JSON file.
+
 ## Copying a dialog node
 {: #copy-node}
 
@@ -269,27 +293,3 @@ To delete a folder, complete the following steps:
     - To delete the folder and all of the dialog nodes in it, click **Yes, delete it**.
 
 If you deleted the folder only, then the nodes that were in the folder are displayed in the dialog tree in the spot where the folder used be.
-
-## Finding a dialog node by its node ID
-{: #get-node-id}
-
-You might want to find the dialog node that is associated with a known node ID for any of the following reasons:
-
-- You are reviewing logs, and the log refers to a section of the dialog by its node ID.
-- You want to map the node IDs listed in the `nodes_visited` property of the API message output to nodes that you can see in your dialog tree.
-- A dialog runtime error message informs you about a syntax error, and uses a node ID to identify the node you need to fix.
-
-To discover a node based on its node ID, complete the following steps:
-
-1.  From the Dialog tab of the tool, select any node in your dialog tree.
-1.  Close the edit view if it is open for the current node.
-1.  In your web browser's location field, a URL should display that has the following syntax:
-
-    `https://watson-conversation.ng.bluemix.net/space/instance-id/workspaces/workspace-id/build/dialog#node=node-id`
-
-1.  Edit the URL by replacing the current `node-id` value with the ID of the node you want to find, and then submit the new URL.
-1.  If necessary, highlight the edited URL again, and resubmit it.
-
-The tool refreshes, and shifts focus to the dialog node with the node ID that you specified. If the node ID is for a slot, a Found or Not found slot condition, a slot handler, or a conditional response, then the node in which the slot or conditional response is defined gets focus and the corresponding modal is displayed.
-
-**Note**: If you still cannot find the node, you can export the conversational skill and use a JSON editor to search the skill JSON file.
