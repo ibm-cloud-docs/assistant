@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-13"
+lastupdated: "2018-04-20"
 
 ---
 
@@ -232,15 +232,14 @@ You can group dialog nodes together by adding them to a folder. There are lots o
 - To keep nodes that address a similar subject together to make them easier to find. For example, you might group nodes that address questions about user accounts in a *User account* folder and nodes that handle payment-related queries in a *Payment* folder.
 - To group together a set of nodes that you want the dialog to process only if a certain condition is met. Use a condition, such as `$isPlatinumMember`, for example, to group together nodes that offer extra services that should only be processed if the current user is entitled to receive the extra services.
 - To hide nodes from the runtime while you work on them. You can add the nodes to a folder with a `false` condition to prevent them from being processed.
-- To apply the same configuration settings for digressing into a node to multiple root nodes at once. See [Digressions](dialog-runtime.html#digressions) for more information.
 
 These characteristics of the folder impact how the nodes in a folder are processed:
 
-- Condition: If specified, the service first evaluates the folder condition to determine whether to process the nodes within it.
+- Condition: If no condition is specified, then the service processes the nodes within the folder directly. If a condition is specified, the service first evaluates the folder condition to determine whether to process the nodes within it.
 - Customizations: Any configuration settings that you apply to the folder are inherited by the nodes in the folder. If you change the digression settings of the folder, for example, the changes are inherited by all the nodes in the folder.
-- Tree hierarchy: Nodes in a folder are treated as root or child nodes based on whether the folder is added to the dialog tree at the root or child level. Any root level nodes that you add to a root level folder continue to function as root nodes; they do not become child nodes of the folder, for example. However, if you move root level nodes into a folder that is a child of another node, then the root nodes become children of that other node.
+- Tree hierarchy: Nodes in a folder are treated as root or child nodes based on whether the folder is added to the dialog tree at the root or child level. Any root level nodes that you add to a root level folder continue to function as root nodes; they do not become child nodes of the folder, for example. However, if you move a root level node into a folder that is a child of another node, then the root node becomes a child of that other node.
 
-Folders have no impact on the order in which nodes are evaluated. Nodes continue to be processed from first to last. As the service travels down the tree, when it encounters a folder, if the folder condition is true, it immediately processes the first node in the folder, and continues down the tree in order from there. If a folder does not have a folder condition, it is transparent to the service.
+Folders have no impact on the order in which nodes are evaluated. Nodes continue to be processed from first to last. As the service travels down the tree, when it encounters a folder, if the folder has no condition or its condition is true, it immediately processes the first node in the folder, and continues down the tree in order from there. If a folder does not have a folder condition, then the folder is transparent to the service, and each node in the folder is treated like any other individual node in the tree.
 
 ### Adding a folder
 {: #folders-add}
