@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-27"
+lastupdated: "2018-04-23"
 
 ---
 
@@ -34,7 +34,8 @@ Links to resources, videos, tutorials, and articles that can help you to get sta
 - [Pizza ordering chatbot using slots ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/code/journey/assemble-a-pizza-ordering-chatbot-dialog/){: new_window}
 - [Building an Amazon Alexa Skill with the service ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/IBM/alexa-skill-watson-conversation){: new_window}
 - [Adding a chatbot to Wordpress with the service ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://wordpress.org/plugins/conversation-watson/){: new_window}
-- [Tutorial: Build a database-driven Slackbot ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/tutorials/slack-chatbot-database-watson.html#build-a-database-driven-slackbot)
+- [Tutorial: Build a database-driven Slackbot ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/tutorials/slack-chatbot-database-watson.html){: new_window}
+- [Tutorial: Build a voice-enabled Android chatbot ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/tutorials/android-watson-chatbot.html){: new_window}
 
 ## Building with Watson videos
 
@@ -78,6 +79,7 @@ Videos are embedded in the following pages of the product documentation.
 A set of posts by Simon Burns, User Experience Developer at {{site.data.keyword.ibmwatson}}
 
 - [Getting Chatty with IBM Watson ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/@snrubnomis/getting-chatty-with-ibm-watson-1075c549ee9e#.vkt86reej){: new_window}
+- [Chatbot: Deconstructed ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/@snrubnomis/bot-deconstructed-995c18fe1262){: new_window}
 - [The Bots Are Coming ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/@snrubnomis/the-bots-are-coming-b0fa71475381#.jq8md0zg7){: new_window}
 - [Conversation Patterns with IBM Watson ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/@snrubnomis/conversation-patterns-with-ibm-watson-6c4be05e2fe5#.eorkk7crm){: new_window}
 - [Seriously, what do I need a bot for? ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/@snrubnomis/seriously-what-do-i-need-a-bot-for-8b91a5ffac1a#.ipvv6ixru){: new_window}
