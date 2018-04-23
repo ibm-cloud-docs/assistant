@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-23"
+lastupdated: "2018-04-23"
 
 ---
 
@@ -476,19 +476,20 @@ Several methods are available to work with date and time.
 
 For information about how to recognize and extract date and time information from user input, see [@sys-date and @sys-time entities](system-entities.html#sys-datetime).
 
-### .after(String date/time)
+### .after(String date or time)
 
-- Determines whether the date/time value is after the date/time argument.
-- Analogous to `.before()`.
+Determines whether the date/time value is after the date/time argument.
 
 ### .before(String date or time)
+Determines whether the date/time value is before the date/time argument.
 
-- For example:
+For example:
 - @sys-time.before('12:00:00')
 - @sys-date.before('2016-11-21')
-- Determines whether the date/time value is before the date/time argument.
+
 - If comparing different items, such as `time vs. date`, `date vs. time`, and `time vs. date and time`, the method returns false and an exception is printed in the response JSON log `output.log_messages`.
-    - For example, `@sys-date.before(@sys-time)`.
+
+  For example, `@sys-date.before(@sys-time)`.
 - If comparing `date and time vs. time` the method ignores the date and only compares times.
 
 ### now()
@@ -906,6 +907,64 @@ Use the following expression in the output to define a field that clears the obj
 {: codeblock}
 
 If you subsequently reference the $user context variable, it returns `{}` only.
+
+You can use the `clear()` method on the `context` or `output` JSON objects in the body of the API `/message` call.
+
+#### Clearing context
+{: #clearing_context}
+
+When you use the `clear()` method to clear the `context` object, it clears **all** variables except these ones:
+
+ - `context.conversation_id`
+ - `context.timezone`
+ - `context.system`
+
+**Warning**: All context variable values means:
+
+  - All default values that were set for variables in nodes that have been triggered during the current session.
+  - Any updates made to the default values with information provided by the user or external services during the current session.
+
+To use the method, you can specify it in an expression in a variable that you define in the output object. For example:
+
+```json
+{
+ "output": {
+  "text": {
+    "values": [
+      "Response for this node."
+    ],
+    "selection_policy": "sequential"
+  },
+  "context_eraser": "<? context.clear() ?>"
+ }
+}
+```
+
+#### Clearing output
+{: #clearing_output}
+
+When you use the `clear()` method to clear the `output` object, it clears all variables except the one you use to clear the output object and any text responses that you define in the current node. It also does not clear these variables:
+
+- `output.nodes_visited`
+- `output.nodes_visited_details`
+
+To use the method, you can specify it in an expression in a variable that you define in the output object. For example:
+
+```json
+{
+ "output": {
+   "text": {
+     "values": [
+       "Have a great day."
+     ],
+     "selection_policy": "sequential"
+   },
+   "output_eraser": "<? output.clear() ?>"
+ }
+}
+```
+
+If a node earlier in the tree defines a text response of `I'm happy to help.` and then jumps to a node with the JSON output object defined above, then  only `Have a great day.` is displayed as the response. The `I'm happy to help.` output is not displayed, because it is cleared and replaced with the text response from the node that is calling the `clear()` method.
 
 ### JSONObject.has(string)
 
