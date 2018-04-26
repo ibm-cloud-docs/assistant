@@ -49,8 +49,6 @@ Watson Assistant Beta
         logs_convo.md
         logs_recommend.md
 
-    upgrading.md
-
     {: .topicgroup}
     Tutorials
         tutorial.md
@@ -77,6 +75,7 @@ Watson Assistant Beta
     {: .navgroup id="help"}
     release-notes.md
     feedback.md
+    services-information.md
 
     {: .topicgroup}
     Developer community
