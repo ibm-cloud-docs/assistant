@@ -75,6 +75,19 @@ After you create the skill, it appears as a tile on the Skills page. Now, you ca
 
 The conversational skill cannot interact with customers until it is added to an assistant and the assistant is deployed. You must open the assistant tile and add the skill to the assistant from the assistant configuration page; you cannot choose the assistant that will use the skill from within the skill configuration page. One skill can be used by more than one assistant.
 
+## Downloading a skill
+{: #download-skill}
+
+You can download a skill in JSON format. You might want to download a skill if you want to use the same skill in a different instance of the {{site.data.keyword.conversationshort}} service, for example. You can download it from one instance and import it to another instance as a new skill.
+
+To download a skill, complete the following steps:
+
+1.  Find the skill tile on the Skills page or on the configuration page of an assistant that uses the skill.
+
+1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Download JSON**.
+
+1.  Specify a name for the JSON file and where to save it, and then click **Save**.
+
 ## Deleting a skill
 {: #delete-convo-skill}
 
