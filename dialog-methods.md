@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-23"
+lastupdated: "2018-04-30"
 
 ---
 
@@ -692,6 +692,24 @@ To reformat the time that is returned, you can use the following expression:
 {: codeblock}
 
 Result if it is 2:19 PM: `6 hours ago was 8:19 AM.`
+
+### Working with time spans
+{: #time-spans}
+
+To show a response based on whether today's date falls within a certain time frame, you can use a combination of time-related methods. For example, if you run a special offer during the holiday season every year, you can check whether today's date falls between November 25 and December 24 of this year. First, define the dates of interest as context variables.
+
+In the following start and end date context variable expressions, the date is being constructed by concatenating the dynamically-derived current year value with hard-coded month and day values.
+
+```json
+"context": {
+   "end_date": "<? now().reformatDateTime('Y') + '-12-24' ?>",
+   "start_date": "<? now().reformatDateTime('Y') + '-11-25' ?>"
+ }
+```
+
+In the response condition, you can indicate that you want to show the response only if the current date falls between the start and end dates that you defined as context variables.
+
+`now().after($start_date) && now().before($end_date)`
 
 ### java.util.Date support
 {: #java.util.Date}
