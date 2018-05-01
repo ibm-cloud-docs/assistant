@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-09"
+lastupdated: "2018-05-01"
 
 ---
 
@@ -51,8 +51,8 @@ Follow these steps to create an assistant:
 1.  Click **Create new**.
 
 1.  Specify the details for the new assistant:
-    - **Name**: A name no more than 100 characters in length that contains alphabetical characters (a-z), number characters (0-9), underscores (_), dashes (-) periods (.), and spaces. You cannot include an apostrophe in the name, for example. This value is required.
-    - **Description**: A description no more than 200 characters in length.
+    - **Name**: A name no more than 100 characters in length. A name is required.
+    - **Description**: An optional description no more than 200 characters in length.
 
 1.  Add a skill to the assistant by clicking **Add skill**. You can choose to add an existing skill or create a new one.
 

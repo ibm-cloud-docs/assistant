@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-12"
+lastupdated: "2018-05-01"
 
 ---
 
@@ -67,9 +67,9 @@ Follow these steps to create a conversational skill:
         - Select **Intents and Entities** if you want to use the intents and entities from the conversational skill, but you plan to build a new dialog.
 
 1.  Specify the details for the new skill:
-    - **Name**: A name no more than 100 characters in length that contains alphabetical characters (a-z), number characters (0-9), underscores (_), dashes (-) periods (.), and spaces. You cannot include an apostrophe in the name, for example. This value is required.
-    - **Description**: A description no more than 200 characters in length.
-    - **Language**: The language of the user input the skill will be trained to understand.
+    - **Name**: A name no more than 100 characters in length. A name is required.
+    - **Description**: An optional description no more than 200 characters in length.
+    - **Language**: The language of the user input the skill will be trained to understand. The default value is English.
 
 After you create the skill, it appears as a tile on the Skills page. Now, you can start identifying the user goals that you want the assistant to address. See [Planning your intents and entities](intents-entities.html) for more details.
 
