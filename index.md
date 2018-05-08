@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-16"
+lastupdated: "2018-05-08"
 
 ---
 
@@ -77,6 +77,7 @@ The {{site.data.keyword.conversationshort}} service tool requires the same level
 
 Language support by feature is detailed in the [Supported languages](lang-support.html) topic.
 
-## Next steps
+- [Get started](getting-started.html) with the service.
+- View the list of [SDKs ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/watson/developercloud/developer-tools.html){: new_window}.
 
-- [Get started](getting-started.html) with {{site.data.keyword.conversationshort}}
+Still have questions? Click the ![Help](images/help_icon.png) icon from the tooling header, and then click **Chat with support** or contact [IBM Sales ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-01.ibm.com/marketing/iwm/dre/signup?source=urx-20970){: new_window}.
