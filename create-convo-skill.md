@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-01"
+lastupdated: "2018-05-08"
 
 ---
 
@@ -42,7 +42,7 @@ The number of skills you can create in a single service instance depends on your
 ## Creating a skill
 {: #creating-skills}
 
-You can create a skill from scratch or import a skill from a JSON file.
+You can create a skill from scratch, use a sample skill that is provided by IBM, or import a skill from a JSON file.
 
 Follow these steps to create a conversational skill:
 
@@ -53,6 +53,9 @@ Follow these steps to create a conversational skill:
 1.  Do one of the following things:
 
     - To create a skill from scratch, click **Create new**.
+    - To add a sample skill that is provided with the service as a starting point for your own skill or as an example to explore before you create your own, click **Add a sample**.
+
+      The sample skill is added to your list of skills. It is not associated with any assistants. Skip the remaining steps in this procedure.
     - To import a skill from a JSON file, click the ![Import skill](images/workspace_import.png) icon, and select the JSON file you want to import from.
 
       **Important:**

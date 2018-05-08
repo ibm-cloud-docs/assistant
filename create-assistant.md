@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-01"
+lastupdated: "2018-05-08"
 
 ---
 
@@ -48,7 +48,14 @@ Follow these steps to create an assistant:
 
 1.  From the home page of the {{site.data.keyword.conversationshort}} tool, click the **Assistants** tab.
 
-1.  Click **Create new**.
+1.  Do one of the following things:
+
+    - To create an assistant that has a sample conversational skill associated with it already, click **Add a sample**, and then choose the sample assistant to create.
+
+      The sample assistant is added. You can skip the remaining steps in this procedure.
+
+      **Note**: The sample skill that is provided with the sample assistant is added to your list of skills. If you created a sample skill of the same type already, then the existing skill is associated with this new sample assistant automatically.
+    - To create an assistant from scratch, click **Create new**, and then complete the remaining steps in this procedure.
 
 1.  Specify the details for the new assistant:
     - **Name**: A name no more than 100 characters in length. A name is required.
