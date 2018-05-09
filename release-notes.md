@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-12"
+lastupdated: "2018-05-08"
 ---
 
 {:shortdesc: .shortdesc}
@@ -22,6 +22,11 @@ lastupdated: "2018-04-12"
 {: #change-log}
 
 The following new features and changes to the service are available.
+
+### 7 May 2018
+{: #7May2018}
+
+- You can now chat with a live IBM representative. Click the ![Help](images/help_icon.png) icon from the tooling header, and then click **Chat with support**.
 
 ### 12 April 2018
 {: #12April2018}
