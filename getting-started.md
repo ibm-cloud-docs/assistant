@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-10"
+lastupdated: "2018-05-09"
 
 ---
 
@@ -25,16 +25,16 @@ lastupdated: "2018-04-10"
 In this short tutorial, we introduce the {{site.data.keyword.conversationshort}} tool and go through the process of creating your first assistant.
 {: shortdesc}
 
-## Step 1: Request to participate in the Beta
-{: #launch-tool}
+## Before you begin
+{: #prereqs}
 
-From the bottom of the Workspaces page of your {{site.data.keyword.conversationshort}} instance, click **Request Beta**, and then confirm that you accept terms and conditions for participating in the Beta. 
+The information in this topic applies to {{site.data.keyword.conversationshort}} Beta only. To request participation in the Beta, from the bottom of the Workspaces page of your {{site.data.keyword.conversationshort}} instance, click **Request Beta**, and then confirm that you accept the terms and conditions for participating in the Beta.
 
 If you do not have a service instance, go to the [Getting started tutorial (for the generally available {{site.data.keyword.conversationshort}} service) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/conversation/getting-started.html) for information about how to get a free subscription to one.
 
-**Note**: If you are approved for Beta participation, it is the service instance where you request Beta access that will be upgraded. And every workspace in that service instance will be upgraded. Do not request Beta participation from an instance with workspaces that you are actively using. To try out the Beta safely, you can create a new service instance, and then request access from it.
+**Note**: If you are approved for Beta participation, it is the service instance where you request Beta access that will be upgraded. And every workspace in that service instance will be converted to a skill. You can read more about skills in [Step 2](#add-skill) below. Do not request Beta participation from an instance with workspaces that you are actively using. To try out the Beta safely, without impacting workspaces that you want to continue using, you can create a new service instance, and then request access from it.
 
-## Step 2: Create an assistant
+## Step 1: Create an assistant
 {: #create-assistant}
 
 Your first step in the {{site.data.keyword.conversationshort}} tool is to create an assistant.
@@ -51,7 +51,7 @@ An [*assistant*](assistants.html) is a cognitive bot to which you add skills tha
 
     ![Finish creating the new assistant](images/gs-create-assistant-done.png)
 
-## Step 3: Add a conversational skill to your assistant
+## Step 2: Add a conversational skill to your assistant
 {: #add-skill}
 
 A [*conversational skill*](create-convo-skill.html) is a container for the artifacts that define the flow of a conversation that your assistant can have with your customers.
@@ -69,7 +69,7 @@ A [*conversational skill*](create-convo-skill.html) is a container for the artif
 
     ![Finish creating the skill](images/gs-add-skill-done.png)
 
-## Step 4: Create intents
+## Step 3: Create intents
 {: #create-intents}
 
 An [intent](intents.html) represents the purpose of a user's input. You can think of intents as the actions your users might want to perform with your application.
@@ -108,7 +108,7 @@ You've created two intents, #hello and #goodbye, and provided example user input
 
 ![Showing the created intents](images/gs-intents-done.png)
 
-## Step 5: Add intents from a content catalog
+## Step 4: Add intents from a content catalog
 {: #add-catalog}
 
 Add training data that was built by IBM to your workspace by adding intents from a content catalog. In particular, you will give your assistant access to the `eCommerce` content catalog so your dialog can address user requests to complete common online transactions.
@@ -119,7 +119,7 @@ Add training data that was built by IBM to your workspace by adding intents from
 
 You have successfully supplemented your training data with prebuilt content provided by IBM.
 
-## Step 6: Build a dialog
+## Step 5: Build a dialog
 {: #build-dialog}
 
 A [dialog](dialog-overview.html) defines the flow of your conversation in the form of a logic tree. Each node of the tree has a condition that triggers it, based on user input.
@@ -193,7 +193,7 @@ You  built a simple dialog to recognize and respond to both hello and goodbye in
 
 That's it. You created a simple conversation with two intents and a dialog to recognize them.
 
-## Step 7: Integrate the assistant
+## Step 6: Integrate the assistant
 {: #integrate-assistant}
 
 Now that you have an assistant that can participate in a simple conversational exchange, publish it to the Facebook Messenger messaging channel to test it out.
@@ -208,7 +208,7 @@ Now that you have an assistant that can participate in a simple conversational e
 ## Next steps
 {: #next-steps}
 
-This tutorial is built around a simple example. For a real application, you'll need to define some more interesting intents, some entities, and a more complex dialog that uses them both. As traffic increases, you can use the tools provided in the **Improve** tab to analyze real conversations between your assistant and users, and identify areas for improvement.
+This tutorial is built around a simple example. For a real application, you'll need to define some more interesting intents, some entities, and a more complex dialog that uses them both. If you have a workspace that you built with the publicly-available version of the service, you can import it into your Beta instance as a new skill, and review how your existing training data and dialog function in the Beta environment. As traffic increases, you can use the tools provided in the **Improve** tab to analyze real conversations between your assistant and users, and identify areas for improvement.
 
 - Complete follow-on tutorials that build more advanced dialogs. Add standard nodes with the [Building a complex dialog](tutorial.html) tutorial or learn about slots with the [Adding a node with slots](tutorial-slots.html) tutorial.
 - Check out more [sample apps](sample-applications.html) to get ideas.
