@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-20"
+lastupdated: "2018-05-10"
 
 ---
 
@@ -19,10 +19,10 @@ lastupdated: "2018-03-20"
 
 # The Overview page
 
-The Overview page of the **Improve** panel provides a summary of interactions between users and your application/bot. You can view the amount of traffic for a given time period, as well as the intents and entities that were recognized most often in user conversations.
+The Overview page provides a summary of interactions between users and your application. You can view the amount of traffic for a given time period, as well as the intents and entities that were recognized most often in user conversations.
 {: shortdesc}
 
-The statistics that are displayed on the Overview page cover a longer period of time than the period for which logs of conversations are retained. These statistics represent external traffic - users or API calls - that has interacted with your bot; they do not include interactions from the *Try it out* pane in the tool.
+The statistics that are displayed on the Overview page cover a longer period of time than the period for which logs of conversations are retained. These statistics represent external traffic - users or API calls - that has interacted with your application; they do not include interactions from the *Try it out* pane in the tool.
 
 You can use the Overview page to answer questions like:
 
@@ -43,20 +43,24 @@ The top part of the page includes the following controls:
 
   ![Time period control](images/oview-time.png)
 
-You can choose whether to view data for a single day, a week, a month, or a quarter. In each case, the data points on the graph adjust to an appropriate measurement period. For example, when viewing a graph for a day, the data is presented in hourly values, but when viewing a graph for a week, the data is shown by day. A week always runs from Sunday through Saturday. You cannot create custom time periods, such as a week that runs from Thursday to the following Wednesday, or a month that begins on any date other than the first.
+  You can choose whether to view data for a single day, a week, a month, or a quarter. In each case, the data points on the graph adjust to an appropriate measurement period. For example, when viewing a graph for a day, the data is presented in hourly values, but when viewing a graph for a week, the data is shown by day. A week always runs from Sunday through Saturday. You cannot create custom time periods, such as a week that runs from Thursday to the following Wednesday, or a month that begins on any date other than the first.
+
+  **NOTE**: If you choose a single day view, for example, the time shown for each conversation is localized to reflect the time zone of your browser. This may differ from the timestamp shown if you review the same conversation log via an API call; API log calls are always shown in UTC.
+
+    ![Time period control](images/oview-time2.png)
 
 ## Graphs and statistics
 Several statistical scorecards provide log data for your application:
 
 * *Total conversations* - The total number of conversations between active users and your application, during the selected time period, as shown in the corresponding graph.
 
-  **Note**: A single conversation is a set of utterances consisting of the messages that an active user sends to your application, and the messages your application responds with.
+  **Note**: A single conversation is a set of messages consisting of the messages that an active user sends to your application, and the messages your application responds with.
 
-  **Important**: A 'conversation' is considered to be *any* set of utterances sent or received by an application/bot, so if the service starts by saying "Hi, how can I help you?", and then the user closes their browser without responding, that utterance is included in the total conversation count.
+  **Important**: A 'conversation' is considered to be *any* set of messages sent or received by an application/bot, so if the service starts by saying "Hi, how can I help you?", and then the user closes their browser without responding, that message is included in the total conversation count.
 
-* *Avg. msg. per conversation* - The total utterances received during the selected time period divided by the total conversations during the selected time period, as shown in the corresponding graph.
+* *Avg. msg. per conversation* - The total messages received during the selected time period divided by the total conversations during the selected time period, as shown in the corresponding graph.
 * *Max. conversations* - The maximum number of conversations for a single data point within the selected time period.
-* *Weak understanding* - The number of individual utterances with weak understanding. These utterances are not classified by an intent, and do not contain any known entities. These can be useful in identifying potential dialog problems.
+* *Weak understanding* - The number of individual messages with weak understanding. These messages are not classified by an intent, and do not contain any known entities. These can be useful in identifying potential dialog problems.
 
 Detailed graphs provide additional information:
 
@@ -66,8 +70,8 @@ Detailed graphs provide additional information:
 
   ![Single data point](images/oview-point.png)
 
-* *Avg. msg. per conversation* - The total utterances received during the selected time period divided by the total conversations during the selected time period.
-* *Total messages* - The total number of utterances received from active users over the selected time period.
+* *Avg. msg. per conversation* - The total messages received during the selected time period divided by the total conversations during the selected time period.
+* *Total messages* - The total number of messages received from active users over the selected time period.
 * *Active users* - The number of unique users who have engaged with your application within the selected time period.
 * *Avg. conversations per user* - The total conversations during the selected time period divided by the total unique users during the selected time period.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-07"
+lastupdated: "2018-05-10"
 
 ---
 
@@ -38,7 +38,7 @@ The length of time for which messages are retained depends on your {{site.data.k
   Premium                              | Last 90 days
   Standard                             | Last 30 days
   Lite                                 | Last 7 days
-  {: caption="Service plan details" caption-side="top"}
+{: caption="Service plan details" caption-side="top"}
 
 ## Selecting a data source
 {: #select-source}
@@ -47,24 +47,26 @@ By default, the **User conversations** page shows utterance data for the current
 
 When switching to another data source, the {{site.data.keyword.conversationshort}} service checks utterances for an element called `Deployment ID`. Deployment IDs are unique identifiers in the {{site.data.keyword.conversationshort}} service API that you add to your message API calls. For information about adding Deployment IDs to message calls, see [Improving across skills](logs.html#deploy_id).
 
-To populate the Improve section using utterances with a given Deployment ID:
+To populate the Improve section using messages with a given Deployment ID:
 
 1.  Select **Data source:**
+
     ![Data source link](images/data_source_1.png)
 1.  Select a deployment
+
     ![Data source link](images/data_source_2.png)
 1.  Click **View Data**
 
 The selected data source now displays.
 
-**Note:** While **Data source:** now shows the source of the utterances you are using to improve this skill, the top of the page still shows the skill you are applying changes to.
+**Note:** While **Data source:** now shows the source of the messages you are using to improve this skill, the top of the page still shows the skill you are applying changes to.
 
-In this example, the Improve page is populated with utterances that had the Deployment ID `HelpDesk-Production` included in their message API calls, but if the utterance *test input* is added to the intent **#No** by clicking **Save** then *test input* would be added as an example of `#No` in the skill `HelpDesk-Development`.
+In this example, the Improve page is populated with messages that had the Deployment ID `HelpDesk-Production` included in their message API calls, but if the message *test input* is added to the intent **#No** by clicking **Save** then *test input* would be added as an example of `#No` in the skill `HelpDesk-Development`.
 ![Data source link](images/data_source_3.png)
 
-## Filtering utterances
+## Filtering messages
 
-You can filter utterances by *Search user statements*, *Intents*, *Entities*, and *Last* n *days*:
+You can filter messages by *Search user statements*, *Intents*, *Entities*, and *Last* n *days*:
 
 *Search user statements* - Type a word in the search bar. This searches the users' inputs, but not your skill's replies.
 
@@ -76,14 +78,16 @@ You can filter utterances by *Search user statements*, *Intents*, *Entities*, an
 
 ![Entities drop-down menu](images/entities_filter.png)
 
-Utterances may take some time to update. Allow at least 30 minutes after a user's interaction with your skill before attempting to filter for that content.
+Messages may take some time to update. Allow at least 30 minutes after a user's interaction with your skill before attempting to filter for that content.
 
-## Viewing an individual utterance
-You can expand each utterance entry to see what the user said in the whole conversation, and how your skill answered. To do this, select **Open conversation**. You are automatically taken to the utterance you selected within that conversation.
+## Viewing an individual message
+You can expand each message entry to see what the user said in the whole conversation, and how your skill answered. To do this, select **Open conversation**. You are automatically taken to the message you selected within that conversation.
+
+**NOTE**: The time shown at the top of each conversation is localized to reflect the time zone of your browser. This may differ from the timestamp shown if you review the same conversation log via an API call; API log calls are always shown in UTC.
 
 ![Open conversation panel](images/open_convo.png)
 
-You can then choose to show the classification(s) for the utterance you selected.
+You can then choose to show the classification(s) for the message you selected.
 
 ![Open conversation panel with classifications](images/open_convo_classes.png)
 
@@ -92,14 +96,14 @@ You can then choose to show the classification(s) for the utterance you selected
 1.  To correct an intent, select the ![Edit](images/edit_icon.png) edit icon beside the chosen #intent.
 1.  From the list provided, select the correct intent for this input.
     - Begin typing in the entry field and the list of intents is filtered.
-    - You can also choose **Mark as irrelevant** from this menu. (For more information, see [Mark as irrelevant](intents.html#mark-irrelevant).) Or, you can choose **Do not train on intent**, which does not save this utterance as an example for training.
+    - You can also choose **Mark as irrelevant** from this menu. (For more information, see [Mark as irrelevant](intents.html#mark-irrelevant).) Or, you can choose **Do not train on intent**, which does not save this message as an example for training.
 
     ![Select intent](images/select_intent.png)
 1.  Select **Save**.
 
     ![Save intent](images/save_intent.png)
 
-    **Note**: The {{site.data.keyword.conversationshort}} service supports adding user input as an example to an intent *as-is*. If you are using @entity references as examples in your intent training data, and a user utterance that you want to save contains an entity value or synonym from your training data, then you must edit the utterance later. After you save it, edit the utterance from the Intents page to replace the entity that it references. For more information, see [Directly referencing an @Entity as an intent example](intents.html#entity-as-example).
+    **Note**: The {{site.data.keyword.conversationshort}} service supports adding user input as an example to an intent *as-is*. If you are using @entity references as examples in your intent training data, and a user message that you want to save contains an entity value or synonym from your training data, then you must edit the message later. After you save it, edit the message from the Intents page to replace the entity that it references. For more information, see [Directly referencing an @Entity as an intent example](intents.html#entity-as-example).
 
 ## Adding an entity value or synonym
 
