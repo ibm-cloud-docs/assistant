@@ -19,7 +19,7 @@ lastupdated: "2018-05-10"
 
 # The Overview page
 
-The Overview page provides a summary of interactions between users and your application/bot. You can view the amount of traffic for a given time period, as well as the intents and entities that were recognized most often in user conversations.
+The Overview page provides a summary of interactions between users and your application. You can view the amount of traffic for a given time period, as well as the intents and entities that were recognized most often in user conversations.
 {: shortdesc}
 
 The statistics that are displayed on the Overview page cover a longer period of time than the period for which logs of conversations are retained. These statistics represent external traffic - users or API calls - that has interacted with your application; they do not include interactions from the *Try it out* pane in the tool.
