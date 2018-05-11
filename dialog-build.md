@@ -94,7 +94,7 @@ To create a dialog, complete the following steps:
 1.  Enter a response.
     - Add the text that you want the service to display to the user as a response.
     - If you want to define different responses based on certain conditions, then click **Customize** and enable **Multiple responses**.
-    - For information about conditional responses or how to add variety to responses, see [Responses](dialog-overview.html##responses).
+    - For information about conditional responses or how to add variety to responses, see [Responses](dialog-overview.html#responses).
 
 1.  Specify what to do after the current node is processed. You can choose from the following options:
 

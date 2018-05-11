@@ -53,7 +53,7 @@ The first table shows the level of support for all features, except those relate
 
 | Language | **[Defining entities](entities.html)** | **System entities ([number](system-entities.html#sys-number), [currency](system-entities.html#sys-currency), [percentage](system-entities.html#sys-percentage), [date, time](system-entities.html#sys-datetime))** | **[Entity fuzzy matching](entities.html#fuzzy-matching)** | **[Search entities](entities.html#searching-entities)** | **[Entity synonym recommendations](entities.html#creating-entities)**
 |:---|:---:|:---:|:---:|:---:|:---:|
-| **English (en)**                   | GA | GA, Beta [location]((system-entities.html#sys-location), [person]((system-entities.html#sys-person) | Beta (Stemming, misspelling, and partial match) | GA | GA |
+| **English (en)**                   | GA | GA, Beta ([location](system-entities.html#sys-location), [person](system-entities.html#sys-person)) | Beta (Stemming, misspelling, and partial match) | GA | GA |
 | **Arabic (ar)**  | GA | Beta | Beta (Misspelling only) | NA | NA |
 | **Chinese (Simplified) (zh-cn)**   | Beta | NA | Beta | Beta | NA |
 | **Chinese (Traditional) (zh-tw)**  | Beta | NA | NA | Beta | NA |
