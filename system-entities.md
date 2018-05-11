@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-01-24"
+lastupdated: "2018-05-11"
 
 ---
 
@@ -264,11 +264,11 @@ You get equivalent results for other supported languages.
 ## @sys-person entity
 {: #sys-person}
 
-**BETA, for languages noted in the [Supported languages](lang-support.html) topic**: The @sys-person system entity extracts names from the user's input. Names are recognized individually, so that "Will" is not treated as "William", or vice versa. The value of the entity is not a system-standard value of the name.
+**BETA, for languages noted in the [Supported languages](lang-support.html) topic**: The @sys-person system entity extracts names from the user's input. Names are recognized individually, so that "Joe" is not treated as "Joseph", or vice versa. The value of the entity is not a system-standard value of the name.
 
 ### Recognized formats
 
-- Will
+- Ronald
 - Jane Doe
 - Vijay
 
