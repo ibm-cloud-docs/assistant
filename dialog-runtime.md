@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-12"
+lastupdated: "2018-05-11"
 
 ---
 
@@ -67,7 +67,7 @@ The body of the /message API call request and response includes the following ob
 
 You can learn more about the /message API call from the [API reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/watson/developercloud/conversation/api/v1/){: new_window}.
 
-## Retaining information across dialog turns
+### Retaining information across dialog turns
 {: #context}
 
 The dialog in a conversational skill is stateless, meaning that it does not retain information from one interaction with the user to the next. When you add a conversational skill to an assistant and deploy it, the assistant saves the context from one message call and then re-submits it on the next request throughout the current session. (The current session lasts for as long a user interacts with the assistant and then up to 60 minutes of inactivity.) If you do not add the conversational skill to an assistant, it is your responsibility as the custom application developer to maintain any continuing information that the application needs. The application must look for, and store the context object in the message API response, and pass it in the context object with the next /message API request that is made as part of the conversation flow.
@@ -75,6 +75,9 @@ The dialog in a conversational skill is stateless, meaning that it does not reta
 One way to retain the information yourself is to store the entire context object in memory in the client application, in a web browser, for example. As an application becomes more complex, or if it needs to pass and store personally identifiable information, then you can store and retrieve the information from a database. Of course, the simplest approach is one that prevents you from having to store context at all. To implement this approach, add the conversational skill to an assistant and let the assistant keep track of the context for you.
 
 The application can pass information to the dialog, and the dialog can update this information and pass it back to the application, or to a subsequent node. The dialog does so by using *context variables*.
+
+## Context variables
+{: #context-variables}
 
 A context variable is a variable that you define in a node, and optionally specify a default value for. Other nodes or application logic can subsequently set or change the value of the context variable.
 
@@ -105,106 +108,309 @@ In this example, the system entity @sys-person is used to extract the user's nam
 ## Defining a context variable
 {: #context-var-define}
 
-Define a context variable by defining a name and value pair for the variable in one of the following editors:
+Define a context variable by adding the variable name to the **Variable** field and adding a default value for it to the **Value** field in the node's edit view.
 
-- **Context editor**: Shows a **Variable** field and a corresponding **Value** field in the node edit view that you can fill with the context variable name and value information.
+1.  Click to open the dialog node to which you want to add a context variable.
 
-  **Note**: These fields are displayed automatically in nodes that you add. For nodes that were created with an earlier version of the service, you must open the context editor for the fields to be added.
+1.  Click the **Options**  ![Advanced response](images/kabob.png) icon that is associated with the node response, and then click **Open context editor**.
 
-- **JSON editor**: When opened, it provides a view into the underlying JSON content that is passed with the /message API request that is sent to the {{site.data.keyword.conversationshort}} service. You can define context variables by adding name and value pairs to the `"context":{}` section of the JSON body.
+      ![Shows how to access the JSON editor associated with a standard node response.](images/contextvar-json-response.png)
+
+      If the **Multiple responses** setting is **On** for the node, then you must first click the **Edit response** ![Edit response](images/edit-slot.png) icon for the response with which you want to associate the context variable.
+
+      ![Shows how to access the JSON editor associated with a standard node that has multiple conditional responses enabled for it.](images/contextvar-json-multi-response.png)
+
+1.  Add the variable name and value pair to the **Variable** and **Value** fields.
+
+    - The `name` can contain any upper- and lowercase alphabetic characters, numeric characters (0-9), and underscores.
+
+      You can include other characters, such as periods and hyphens, in the name. However, if you do, then you must specify the shorthand syntax `$(variable-name)` every time you subsequently reference the variable. See [Expressions for accessing objects](expression-language.html#shorthand-context) for more details.
+      {:tip}
+
+    - The `value` can be any supported JSON type, such as a simple string variable, a number, a JSON array, or a JSON object.
+
+The following table shows some examples of how to define name and value pairs for different types of values:
+
+| Variable       | Value                         | Value Type |
+|:---------------|-------------------------------|------------|
+| dessert        | "cake"                        | String     |
+| age            | 18                            | Number     |
+| toppings_array | ["onion","olives"]            | JSON Array |
+| full_name      | {"first":"John","last":"Doe"} | JSON Object |
+
+To subsequently refer to these context variables, use the syntax `$name` where *name* is the name of the context variable that you defined.
+
+For example, in a dialog response, you might include, `The customer, $age-year-old <? $full_name.first ?>, wants a pizza with <? $toppings_array.join(' and ') ?>, and then $dessert` which would be displayed as `The customer, 18-year-old John, wants a pizza with onion and olives, and then cake.`
+
+You can use the JSON editor to define context variables also. You might prefer to use the JSON editor if you want to add a complex expression as the variable value. See [Context variables in the JSON editor](dialog-runtime.html#context-var-json) for more details.
+
+## Common context variable tasks
+{: #context-common-tasks}
+
+To store the entire string that was provided by the user as input, use `input.text`:
+
+| Variable | Value            |
+|----------|------------------|
+| repeat   | `<?input.text?>` |
+
+For example, the user input is, `I want to order a device.` If the node response is, `You said: $repeat`, then the response would be displayed as, `You said: I want to order a device.`
+
+To store the value of an entity in a context variable, use this syntax:
+
+| Variable | Value            |
+|----------|------------------|
+| place    | `@place`         |
+
+For example, the user input is, `I want to go to Paris.` If your @place entity recognizes `Paris`, then the service saves `Paris` in the `$place` context variable.
+
+To store the value of a string that you extract from the user's input, you can include a SpEL expression that uses the `extract` method to apply a regular expression to the user input. The following expression extracts a number from the user input, and saves it to the `$number` context variable.
+
+| Variable | Value                               |
+|----------|-------------------------------------|
+| number   | `<?input.text.extract('[\d]+',0)?>` |
+
+To store the value of a pattern entity, append .literal to the entity name. Using this syntax ensures that the exact span of text from user input that matched the specified pattern is stored in the variable.
+
+| Variable | Value                  |
+|----------|------------------------|
+| email    | `<? @email.literal ?>` |
+
+For example, the user input is `Contact me at joe@example.com.` Your entity named `@email` recognizes the `name@domain.com` email format. By configuring the context variable to store `@email.literal`, you indicate that you want to store the part of the input that matched the pattern. If you omit the `.literal` property from the value expression, then the entity value name that you specified for the pattern is returned instead of the segment of user input that matched the pattern.
+
+Many of these value examples use methods to capture different parts of the user input. For more information about the methods available for you to use, see [Expression language methods](dialog-methods.html).
+
+## Deleting a context variable
+{: #context-delete}
+
+To delete a context variable, set the variable to null.
+
+| Variable   | Value            |
+|------------|------------------|
+| order_form | `null`           |
+
+Alternatively you can delete the context variable in your application logic. For information about how to remove the variable entirely, see [Deleting a context variable in JSON](dialog-runtime.html#context-delete-json).
+
+## Updating a context variable value
+{: #context-update}
+
+To update a context variable's value, define a context variable with the same name as the previous context variable, but this time, specify a different value for it.
+
+When more than one node sets the value of the same context variable, the value for the context variable can change over the course of a conversation with a user. Which value is applied at any given time depends on which node is being triggered by the user in the course of the conversation. The value specified for the context variable in the last node that is processed overwrites any values that were set for the variable by nodes that were processed previously.
+
+For information about how to update the value of a context variable when the value is a JSON object or JSON array data type, see [Updating a context variable value in JSON](dialog-runtime.html#context-update-json)
+
+### How context variables are processed
+{: #context-processing}
+
+Where you define the context variable matters. The context variable is not created and set to the value that you specify for it until the service processes the part of the dialog node where you defined the context variable. In most cases, you define the context variable as part of the node response. When you do so, the context variable is created and given the specified value when the service returns the node response.
+
+For a node with conditional responses, the context variable is created and set when the condition for a specific response is met and that response is processed. For example, if you define a context variable for conditional response #1 and the service processes conditional response #2 only, then the context variable that you defined for conditional response #1 is not created and set.
+
+For information about where to add context variables that you want the service to create and set as a user interacts with a node with slots, see [Adding context variables to a node with slots](dialog-runtime.html#context-var-slots).
+
+### Order of operation
+{: #context-order-of-ops}
+
+When you define multiple variables to be processed together, the order in which you define them does not determine the order in which they are evaluated by the service. The service evaluates the variables in random order. Do not set a value in the first context variable in the list and expect to be able to use it in the second variable in the list, because there is no guarantee that the first context variable will be executed before the second one. For example, do not use two context variables to implement logic that checks whether the user input contains the word `Yes` in it.
+
+| Variable        | Value            |
+|-----------------|------------------|
+| user_input      | <? input.text ?> |
+| contains_yes    | <? $user_input.contains('Yes') ?> |
+
+Instead, use a slightly more complex expression to avoid having to rely on the value of the first variable in your list (user_input) being evaluated before the second variable (contains_yes) is evaluated.
+
+| Variable      | Value            |
+|---------------|------------------|
+| contains_yes  | <? input.text.contains('Yes') ?> |
+
+### Adding context variables to a node with slots
+{: #context-var-slots}
+
+For more information about slots, see [Gathering information with slots](dialog-slots.html).
+
+1.  Open the node with slots in the edit view.
+
+    - To add a context variable that is processed after a response condition for a slot is met, perform the following steps:
+
+      1.  Click the **Edit slot** ![Edit response](images/edit-slot.png) icon.
+      1.  Click the **Options** ![Advanced response](images/kabob.png) icon, and then select **Enable conditional responses**.
+      1.  Click the **Edit response** ![Edit response](images/edit-slot.png) icon next to the response with which you want to associate the context variable.
+      1.  Click the **Options** ![Advanced response](images/kabob.png) icon in the response section, and then click **Open context editor**.
+      1.  Add the variable name and value pair to the **Variable** and **Value** fields.
+
+      ![Shows how to access the JSON editor associated with the conditional response for a slot.](images/contextvar-json-slot-multi-response.png)
+
+    - To add a context variable that is set or updated after a slot condition is met, complete the following steps:
+
+      1.  Click the **Edit slot** ![Edit response](images/edit-slot.png) icon.
+      1.  From the **Options** ![Advanced response](images/kabob.png) menu in the *Configure slot* view header, click **Open JSON editor**.
+      1.  Add the variable name and value pair in JSON format.
+
+          ```json
+          {
+            "time_of_day": "morning"
+          }
+          ```
+          {: codeblock}
+
+      **Note**: There is currently no way to use the context editor to define context variables that are set during this phase of dialog node evaluation. You must use the JSON editor instead. For more information about using the JSON editor, see [Context variables in the JSON editor](dialog-runtime.html#context-var-json).
+
+      ![Shows how to access the JSON editor associated with a slot condition.](images/contextvar-json-slot-condition.png)
+
+### Storing pattern entity values
+{: #context-pattern-entities}
+
+To store the value of a pattern entity in a context variable, append .literal to the entity name. Using this syntax ensures that the exact span of text from user input that matched the specified pattern is stored in the variable.
+
+| Variable   | Value               |
+|------------|---------------------|
+| email      | <? email.literal ?> |
+
+To store the text from a single group in a pattern entity with groups defined, specify the array number of the group that you want to store. For example, assume that the entity pattern is defined as follows for the @phone_number entity. (Remember, the parentheses denote pattern groups):
+
+`\b((958)|(555))-(\d{3})-(\d{4})\b`
+
+To store only the area code from the phone number that is specified in user input, you can use the following syntax:
+
+| Variable       | Value                         |
+|----------------|-------------------------------|
+| area_code      | <? @phone_number.groups[1] ?> |
+
+The groups are delimited by the regular expression that is used to define the group pattern. For example, if the user input that matches the pattern defined in the entity `@phone_number` is: `958-234-3456`, then the following groups are created:
+
+| Group number | Regex engine value  | Dialog value   | Explanation |
+|--------------|---------------------|----------------|-------------|
+| groups[0]    | `958-234-3456`      | `958-234-3456` | The first group is always the full matching string. |
+| groups[1]    | `((958)`l`(555))`   | `958`          | String that matches the regex for the first defined group, which is `((958)`l`(555))`. |
+| groups[2]    | `(958)`             | `958`          | Match against the group that is included as the first operand in the OR expression `((958)`l`(555))` |
+| groups[3]    | `(555)`             | `null`         | No match against the group that is included as the second operand in the OR expression `((958)`l`(555))` |
+| groups[4]    | `(\d{3})`           | `234`          | String that matches the regular expression that is defined for the group. |
+| groups[5]    | `(\d{4})`           | `3456`         | String that matches the regular expression that is defined for the group. |
+{: caption="Group details" caption-side="top"}
+
+To help you decipher which group number to use to capture the section of input you are interested in, you can extract information about all the groups at once. Use the following syntax to create a context variable that returns an array of all the grouped pattern entity matches:
+
+| Variable                 | Value                      |
+|--------------------------|----------------------------|
+| array_of_matched_groups  | <? @phone_number.groups ?> |
+
+Use the "Try it out" pane to enter some test phone number values. For the input `958-123-2345`, this expression sets `$array_of_matched_groups` to `["958-123-2345","958","958",null,"123","2345"]`.
+
+You can then count each value in the array starting with 0 to get the group number for it.
+
+| Array element value | Array element number |
+|---------------------|----------------------|
+| "958-123-2345"      | 0 |
+| "958"               | 1 |
+| "958"               | 2 |
+| null                | 3 |
+| "123"               | 4 |
+| "2345"              | 5 |
+{: caption="Array elements" caption-side="top"}
+
+From the result, you can determine that, to capture the last four digits of the phone number, you need group #5, for example.
+
+To return the JSONArray structure that is created to represent the grouped pattern entity, use the following syntax:
+
+| Variable             | Value                           |
+|----------------------|---------------------------------|
+| json_matched_groups  | <? @phone_number.groups_json ?> |
+
+This expression sets `$json_matched_groups` to the following JSON array:
+
+```json
+[
+  {"group": "group_0","location": [0, 12]},
+  {"group": "group_1","location": [0, 3]},
+  {"group": "group_2","location": [0, 3]},
+  {"group": "group_3"},
+  {"group": "group_4","location": [4, 7]},
+  {"group": "group_5","location": [8, 12]}
+]
+```
+{: codeblock}
+
+**Note**: `location` is a property of an entity that uses a zero-based character offset to indicate where the detected entity value begins and ends in the input text.
+
+If you expect two phone numbers to be supplied in the input, then you can check for two phone numbers. If present, use the following syntax to capture the area code of the second number, for example.
+
+| Variable         | Value                                       |
+|------------------|---------------------------------------------|
+| second_areacode  | <? entities['phone_number'][1].groups[1] ?> |
+
+If the input is `I want to change my phone number from 958-234-3456 to 555-456-5678`, then `$second_areacode` equals `555`.
+
+## Context variables in the JSON editor
+{: #context-var-json}
+
+You can also define a context variable in the JSON editor. You might want to use the JSON editor if you are defining a complex context variable and want to be able to see the full SpEL expression as you add or change it.
 
 The name and value pair must meet these requirements:
 
 - The `name` can contain any upper- and lowercase alphabetic characters, numeric characters (0-9), and underscores.
 
-  **Note**: You can include other characters, such as periods and hyphens, in the name. However, if you do, then you must use one of the following approaches every time you subsequently reference the variable:
+  You can include other characters, such as periods and hyphens, in the name. However, if you do, then you must specify the shorthand syntax `$(variable-name)` every time you subsequently reference the variable. See [Expressions for accessing objects](expression-language.html#shorthand-context) for more details.
+  {:tip}
 
-  - **context['variable-name']**
+- The `value` can be any supported JSON type, such as a simple string variable, a number, a JSON array, or a JSON object.
 
-      The full SpEL expression syntax.
-  - **$(variable-name)**
-
-      Shorthand syntax with the variable name enclosed in parentheses.
-    See [Accessing and evaluating objects](expression-language.html#shorthand-syntax-for-context-variables) for more details.
-
-- The `value` can be any supported JSON type, such as a simple string variable, a number, or a JSON array. When you define the context variable using the JSON editor, you can specify a JSON object as the value also.
-
-The following table shows how to define name and value pairs in context variable editor fields:
-
-| Variable       | Value              |
-|:---------------|--------------------|
-| dessert        | cake               |
-| toppings_array | ["onion","olives"] |
-| age            | 18                 |
-
-The following JSON sample defines values for the $dessert string, $toppings_array array, and $age number context variables:
+The following JSON sample defines values for the $dessert string, $toppings_array array, $age number, and $full_name object context variables:
 
 ```json
 {
   "context": {
     "dessert": "cake",
-    "toppings_array": ["onion", "olives"],
-    "age": 18
-  }
+    "toppings_array": [
+      "onions",
+      "olives"
+    ],
+    "age": 18,
+    "full_name": {
+      "first": "Jane",
+      "last": "Doe"
+    }
+  },
+  "output":{}
 }
 ```
 {: codeblock}
 
-To define a context variable, complete the following steps:
+To define a context variable in JSON format, complete the following steps:
 
-1.  Define the context variable in the section of the node that represents the time at which you want the variable to be set during dialog node evaluation.
+1.  Click to open the dialog node to which you want to add the context variable.
 
-    **Note**: Any existing context variable values that are defined for this node are displayed in a set of corresponding **Variable** and **Value** fields. If you do not want them to be displayed in the edit view of the node, you must close the context editor. You can close the editor from the same menu that is used to open it; the following steps describe how to access the menu.
+    **Note**: Any existing context variable values that are defined for this node are displayed in a set of corresponding **Variable** and **Value** fields. If you do not want them to be displayed in the edit view of the node, you must close the context editor. You can close the editor from the same menu that is used to open the JSON editor; the following steps describe how to access the menu.
 
-    - To add a context variable that is set or changed after the node response is processed, add the context variable into the response section.
+1.  Click the **Options**  ![Advanced response](images/kabob.png) icon that is associated with the response, and then click **Open JSON editor**.
 
-      Click the **Options**  ![Advanced response](images/kabob.png) icon that is associated with the response, and then choose an editor by selecting one of the following options:
+    ![Shows how to access the JSON editor associated with a standard node response.](images/contextvar-json-response.png)
 
-      - **Open JSON editor**
-      - **Open context editor**
+    If the **Multiple responses** setting is **On** for the node, then you must first click the **Edit response** ![Edit response](images/edit-slot.png) icon for the response with which you want to associate the context variable.
 
-      ![Shows how to access the JSON editor associated with a standard node response.](images/contextvar-json-response.png)
+    ![Shows how to access the JSON editor associated with a standard node that has multiple conditional responses enabled for it.](images/contextvar-json-multi-response.png)
 
-      If the **Multiple responses** setting is **On** for the node, then you must click the **Edit response** ![Edit response](images/edit-slot.png) icon first.
+1.  Add a `"context":{}` block if one is not present.
 
-      ![Shows how to access the JSON editor associated with a standard node that has multiple conditional responses enabled for it.](images/contextvar-json-multi-response.png)
+    ```json
+    {
+      "context":{},
+      "output":{}
+    }
+    ```
+    {: codeblock}
 
-    - To add a context variable that is set or updated after a slot condition is met, click the **Edit slot** ![Edit response](images/edit-slot.png) icon. From the **Options** ![Advanced response](images/kabob.png) menu in the *Configure slot* view header, click **Open JSON editor**. (For more information about slots, see [Gathering information with slots](dialog-slots.html).)
+1.  In the context block, add a `"name"` and `"value"` pair for each context variable that you want to define.
 
-      **Note**: There is currently no way to use the context editor to define context variables that are set during this phase of dialog node evaluation.
-
-      ![Shows how to access the JSON editor associated with a slot condition.](images/contextvar-json-slot-condition.png)
-
-    - To add a context variable that is processed after a response condition for a slot is met, click the **Edit slot** ![Edit response](images/edit-slot.png) icon. Click the **Options** ![Advanced response](images/kabob.png) icon, and then select **Enable conditional responses**. Click the **Edit response** ![Edit response](images/edit-slot.png) icon next to the response with which you want to associate the context variable. Click the **Options** ![Advanced response](images/kabob.png) icon in the response section, and then choose an editor by selecting one of the following options:
-
-      - **Open JSON editor**
-      - **Open context editor**
-
-      ![Shows how to access the JSON editor associated with the conditional response for a slot.](images/contextvar-json-slot-multi-response.png)
-1.  To define the context variable in the context editor, add the variable name and value pair to the **Variable** and **Value** fields.
-1.  To define the context variable in the JSON editor, complete these additional steps:
-
-    - Add a `"context":{}` block if one is not present.
-
-      ```json
-      {
-        "context":{},
-        "output":{}
-      }
-      ```
-      {: codeblock}
-
-    - In the context block, add a name and value pair for each context variable that you want to define.
-
-      ```json
-      {
-        "context":{
-          "name": "value"
-      },
-        "output": {}
-      }
-      ```
-      {: codeblock}
+    ```json
+    {
+      "context":{
+        "name": "value"
+    },
+      "output": {}
+    }
+    ```
+    {: codeblock}
 
     In this example, a variable named `new_variable` is added to a context block that already contains a variable.
 
@@ -220,98 +426,8 @@ To define a context variable, complete the following steps:
 
     To subsequently reference the context variable, use the syntax `$name` where *name* is the name of the context variable that you defined. For example, `$new_variable`.
 
-## Common context variable tasks
-{: #context-common-tasks}
-
-- If you need to set a default value for a context variable that you want to use or edit later in the dialog flow, then define the context variable in a dialog node that is always triggered.
-
-  **Note**: The Welcome node is not always triggered in deployed instances of the assistant. You can add a node that conditions on `conversation_start` and use it to set default values. See [Starting the dialog](add-integrations.html#dialog-start) for things to consider if you use this approach.
-
-- To store the entire string that was provided by the user as input, use `input.text`:
-
-| Variable | Value            |
-|----------|------------------|
-| repeat   | `<?input.text?>` |
-
-```json
-{
-  "context": {
-    "repeat": "<?input.text?>"
-  }
-}
-```
-{: codeblock}
-
-- To store the value of an entity in a context variable, use this syntax:
-
-| Variable | Value            |
-|----------|------------------|
-| place    | @place           |
-
-```json
-{
-  "context": {
-    "place": "@place"
-  }
-}
-```
-{: codeblock}
-
-- You can add a JSON object to a context variable using either editor. The following expression defines a full_name object that contains a set of first and last values, which together form a person's full name.
-
-| Variable      | Value            |
-|---------------|------------------|
-| full_name     | { "first":"Paul", "last":"Smith" } |
-
-```json
-{
-  "context": {
-    "full_name": {
-      "first":"Paul",
-      "last":"Smith"
-      }
-  }
-}
-```
-{: codeblock}
-
-If you specify `$full_name.first` in the response, `Paul` is displayed.
-
-- To store the value of a string that you extract from the user's input, you can include a SpEL expression that uses the extract method to apply a regular expression to the user input. The following expression extracts a number from the user input, and saves it to the `$number` context variable.
-
-| Variable | Value                               |
-|----------|-------------------------------------|
-| number   | `<?input.text.extract('[\d]+',0)?>` |
-
-```json
-{
-  "context": {
-     "number": "<?input.text.extract('[\\d]+',0)?>"
-  }
-}
-```
-{: codeblock}
-
-When you define a regular expression in the JSON editor, you must escape any back slashes that you use in the expression with another back slash (`\\`). You do not need to escape back slashes in regular expressions that you define using the context variable editor.
-{: tip}
-
-- To store the value of a pattern entity, append .literal to the entity name. Using this syntax ensures that the exact span of text from user input that matched the specified pattern is stored in the variable.
-
-| Variable | Value            |
-|----------|------------------|
-| email    | @email.literal   |
-
-```json
-{
-  "context": {
-    "email": "<? @email.literal ?>"
-  }
-}
-```
-{: codeblock}
-
-## Deleting a context variable
-{: #context-delete}
+## Deleting a context variable in JSON
+{: #context-delete-json}
 
 To delete a context variable, set the variable to null.
 
@@ -338,140 +454,10 @@ If you want to remove all trace of the context variable, you can use the JSONObj
 
 Alternatively you can delete the context variable in your application logic.
 
-### Order of operation
-{: #context-order-of-ops}
+## Updating a context variable value in JSON
+{: #context-update-json}
 
-The order in which you define the context variables does not determine the order in which they are evaluated by the service. The service evaluates the variables, which are defined as JSON name and value pairs, in random order. Do not set a value in the first context variable and expect to be able to use it in the second, because there is no guarantee that the first context variable in your list will be executed before the second one in your list. For example, do not use two context variables to implement logic that returns a random number between zero and some higher value that is passed to the node.
-
-```json
-"context": {
-    "upper": "<? @sys-number.numeric_value + 1?>",
-    "answer": "<? new Random().nextInt($upper) ?>"
-}
-```
-{: codeblock}
-
-Use a slightly more complex expression to avoid having to rely on the value of the $upper context variable being evaluated before the $answer context variable is evaluated.
-
-```json
-"context": {
-    "answer": "<? new Random().nextInt(@sys-number.numeric_value + 1) ?>"
-}
-```
-{: codeblock}
-
-### Storing pattern entity values
-{: #context-pattern-entities}
-
-To store the value of a pattern entity in a context variable, append .literal to the entity name. Using this syntax ensures that the exact span of text from user input that matched the specified pattern is stored in the variable.
-
-```json
-{
-  "context": {
-    "email": "<? @email.literal ?>"
-  }
-}
-```
-{: codeblock}
-
-To store the text from a single group in a pattern entity with groups defined, specify the array number of the group that you want to store. For example, assume that the entity pattern is defined as follows for the @phone_number entity. (Remember, the parentheses denote pattern groups):
-
-`\b((958)|(555))-(\d{3})-(\d{4})\b`
-
-To store only the area code from the phone number that is specified in user input, you can use the following syntax:
-
-```json
-{
-  "context": {
-    "area_code": "<? @phone_number.groups[1] ?>"
-  }
-}
-```
-{: codeblock}
-
-The groups are delimited by the regular expression that is used to define the group pattern. For example, if the user input that matches the pattern defined in the entity `@phone_number` is: `958-234-3456`, then the following groups are created:
-
-| Group number | Regex engine value  | Dialog value   | Explanation |
-|--------------|---------------------|----------------|-------------|
-| groups[0]    | `958-234-3456`      | `958-234-3456` | The first group is always the full matching string. |
-| groups[1]    | `((958)`l`(555))`   | `958`          | String that matches the regex for the first defined group, which is `((958)`l`(555))`. |
-| groups[2]    | `(958)`             | `958`          | Match against the group that is included as the first operand in the OR expression `((958)`l`(555))` |
-| groups[3]    | `(555)`             | `null`         | No match against the group that is included as the second operand in the OR expression `((958)`l`(555))` |
-| groups[4]    | `(\d{3})`           | `234`          | String that matches the regular expression that is defined for the group. |
-| groups[5]    | `(\d{4})`           | `3456`         | String that matches the regular expression that is defined for the group. |
-{: caption="Group details" caption-side="top"}
-
-To help you decipher which group number to use to capture the section of input you are interested in, you can extract information about all the groups at once. Use the following syntax to create a context variable that returns an array of all the grouped pattern entity matches:
-
-```json
-{
-  "context": {
-    "array_of_matched_groups": "<? @phone_number.groups ?>"
-  }
-}
-```
-{: codeblock}
-
-Use the "Try it out" pane to enter some test phone number values. For the input `958-123-2345`, this expression sets `$array_of_matched_groups` to `["958-123-2345","958","958",null,"123","2345"]`.
-
-You can then count each value in the array starting with 0 to get the group number for it.
-
-| Array element value | Array element number |
-|---------------------|----------------------|
-| "958-123-2345"      | 0 |
-| "958"               | 1 |
-| "958"               | 2 |
-| null                | 3 |
-| "123"               | 4 |
-| "2345"              | 5 |
-{: caption="Array elements" caption-side="top"}
-
-It is easy to determine that, to capture the last four digits of the phone number, you need group #5, for example.
-
-To return the JSONArray structure that is created to represent the grouped pattern entity, use the following syntax:
-
-```json
-{
-  "context": {
-    "json_matched_groups": "<? @phone_number.groups_json ?>"
-  }
-}
-```
-{: codeblock}
-
-This expression sets `$json_matched_groups` to the following JSON array:
-
-```json
-[
-  {"group": "group_0","location": [0, 12]},
-  {"group": "group_1","location": [0, 3]},
-  {"group": "group_2","location": [0, 3]},
-  {"group": "group_3"},
-  {"group": "group_4","location": [4, 7]},
-  {"group": "group_5","location": [8, 12]}
-]
-```
-{: codeblock}
-
-**Note**: `location` is a property of an entity that uses a zero-based character offset to indicate where the detected entity value begins and ends in the input text.
-
-If you expect two phone numbers to be supplied in the input, then you can check for two phone numbers. If present, use the following syntax to capture the area code of the second number, for example.
-
-```json
-{
-  "context": {
-    "second_areacode": "<? entities['phone_number'][1].groups[1] ?>"
-  }
-}
-```
-{: codeblock}
-
-If the input is `I want to change my phone number from 958-234-3456 to 555-456-5678`, then `$second_areacode` equals `555`.
-
-## Updating a context variable value
-{: #context-update}
-
-If a node sets the value of a context variable that is already set, then the previous value is overwritten.
+In general, if a node sets the value of a context variable that is already set, then the previous value is overwritten by the new value.
 
 ### Updating a complex JSON object
 
@@ -668,6 +654,29 @@ Choose one of these actions to update the array. In each case, we see the array 
         {: codeblock}
 
 See [Expression language methods](dialog-methods.html#arrays) for more information about methods you can perform on arrays.
+
+### Setting one context variable equal to another
+
+When you set one context variable equal to another context variable, you define a pointer from one to the other. If the value of one of the variables subsequently changes, then the value of the other variable is changed also.
+
+For example, if you specify a context variable as follows, then when the value of either `$var1` or `$var2` subsequently changes, the value of the other changes too.
+
+| Variable  | Value  |
+|-----------|--------|
+| var2      | var1   |
+
+Do not set one variable equal to another to capture a point in time value. When dealing with arrays, for example, if you want to capture an array value stored in a context variable at a certain point in the dialog to save it for later use, you can create a new variable based on the current value of the variable instead.
+
+For example, to create a copy of the values of an array at a certain point of the dialog flow, add a new array that is populated with the values for the existing array. To do so, you can use the following syntax:
+
+```json
+{
+"context": {
+   "var1": "<? output.var1?:new JsonArray().append($var2) ?>"
+ }
+ }
+ ```
+{: codeblock}
 
 ## Digressions
 {: #digressions}

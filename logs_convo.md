@@ -41,7 +41,7 @@ The length of time for which messages are retained depends on your {{site.data.k
   {: caption="Service plan details" caption-side="top"}
 
 ## Selecting a data source
-{: #select-source}
+{: #selecting-a-data-source}
 
 By default, the **User conversations** page shows utterance data for the current skill. However, there may be times when it is useful to improve a skill with utterances that were sent to other skills within your instance. For example, you may have multiple versions of production skills and development skills; you can use the same utterance data to improve any of these skills.
 
