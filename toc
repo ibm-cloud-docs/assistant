@@ -63,6 +63,7 @@ Watson Assistant Beta
     filter-reference.md
     sample-applications.md
     lang-support.md
+    information-security.md
 
     {: .topicgroup}
     System entities
