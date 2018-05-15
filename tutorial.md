@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-23"
+lastupdated: "2018-05-15"
 
 ---
 
@@ -273,4 +273,4 @@ Optionally, you can review the **Car Dashboard - Sample** skill to see this same
 ## Next steps
 {: #deploy}
 
-Now that you have built and tested your conversational skill, you can share it with customers. Deploy your skill by first connecting it to an assistant, and then deploying the assistant. There are several ways you can do this. See [Deployment overview](deploy.html) for more details.
+Now that you have built and tested your conversational skill, you can share it with customers. Deploy your skill by first connecting it to an assistant, and then deploying the assistant. There are several ways you can do this. See [Adding integrations](add-integrations.html) for more details.
