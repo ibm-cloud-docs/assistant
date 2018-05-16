@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-19"
+lastupdated: "2018-05-15"
 
 ---
 
@@ -36,7 +36,7 @@ This tutorial will take approximately 20 minutes to complete.
 
 ### Prerequisite
 
-If you do not have a {{site.data.keyword.conversationshort}} instance, complete the **Before you begin** step from the [Getting Started tutorial](getting-started.html#prerequisites) to create one.
+If you do not have a {{site.data.keyword.conversationshort}} instance, complete the **Before you begin** step from the [Getting Started tutorial](getting-started.html) to create one.
 
 ## Step 1: Import the Digressions showcase conversational skill
 {: #import-digression-json}

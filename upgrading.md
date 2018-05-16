@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-26"
+lastupdated: "2018-05-15"
 
 ---
 
@@ -49,10 +49,10 @@ An upgrade is only available for your conversational skill if the upgrade icon (
 
 To upgrade your conversational skill, complete the following steps:
 
-1.  [Duplicate your conversational skill](create-convo-skill.html#exporting-and-copying-skills).
-2.  Upgrade the duplicate conversational skill.
+1.  [Download a copy of your conversational skill](create-convo-skill.html#download-skill), and then import it as a new skill.
+2.  Upgrade the new copy of your conversational skill.
 
     When you upgrade your skill, the latest version of the API is enabled in the tool, and the "Try it out" pane begins to use the newest features.
 3.  Test the upgraded skill.
-4.  After evaluating the duplicate skill to understand how the upgrade will impact your application, apply the upgrade to your primary conversational skill.
+4.  After evaluating the upgraded skill to understand how the upgrade will impact your application, apply the upgrade to your primary conversational skill.
 5.  Upgrade your application. To do so, change the message API calls it uses to specify the latest API version. For API version details, see the [release notes](release-notes.html).

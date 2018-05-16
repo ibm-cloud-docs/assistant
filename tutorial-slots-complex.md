@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-02-16"
+lastupdated: "2018-05-15"
 
 ---
 
@@ -712,4 +712,4 @@ In this tutorial you tested a node with slots and made changes that optimize how
 ## Next steps
 {: #deploy}
 
-Deploy your conversational skill by first connecting it to an assistant, and then deploying the assistant. There are several ways you can do this. See [Deployment overview](deploy.html) for more details.
+Deploy your conversational skill by first connecting it to an assistant, and then deploying the assistant. There are several ways you can do this. See [Adding integrations](add-integrations.html) for more details.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-08"
+lastupdated: "2018-05-15"
 
 ---
 
@@ -42,7 +42,7 @@ Currently, you can connect one skill to your assistant. The number of skills you
 ## Create an assistant
 {: #create-assistant}
 
-If you have not done so, follow the [getting started](getting-started.html#prerequisites) steps to create a {{site.data.keyword.conversationshort}} service instance and launch the tool.
+If you have not done so, follow the [getting started](getting-started.html) steps to create a {{site.data.keyword.conversationshort}} service instance and launch the tool.
 
 Follow these steps to create an assistant:
 
