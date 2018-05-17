@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-11"
+lastupdated: "2018-05-17"
 
 ---
 
@@ -71,7 +71,7 @@ You get equivalent results for other supported languages and national currencies
 
 - Currency values are recognized as instances of @sys-number entities as well. If you are using separate conditions to check for both currency values and numbers, place the condition that checks for currency above the one that checks for a number.
 
-- If you use the @sys-currency entity as a node condition and the user specifies `$0` as the value, the value is recognized as a currency properly, but the condition is evaluated to the number zero, not the currency zero. As a result, it does not return the expected response. To check for currency values in a way that handles zeros properly, use the syntax `entities['sys-currency']` in the node condition instead.
+- If you use the @sys-currency entity as a node condition and the user specifies `$0` as the value, the value is recognized as a currency properly, but the condition is evaluated to the number zero, not the currency zero. As a result, it does not return the expected response. To check for currency values in a way that handles zeros properly, use the full SpEL expression syntax `entities['sys-currency']?.value` in the node condition instead.
 
 ## @sys-date and @sys-time entities
 {: #sys-datetime}
@@ -206,7 +206,7 @@ You get equivalent results for other supported languages.
 
 ### @system-number usage tips
 
-- If you use the @sys-number entity as a node condition and the user specifies zero as the value, the 0 value is recognized properly as a number, but the condition is evaluated to false and cannot return the associated response properly. To check for numbers in a way that handles zeros properly, use the syntax `entities['sys-number']` in the node condition instead.
+- If you use the @sys-number entity as a node condition and the user specifies zero as the value, the 0 value is recognized properly as a number, but the condition is evaluated to false and cannot return the associated response properly. To check for numbers in a way that handles zeros properly, use the full SpEL expression syntax `entities['sys-number']?.value` in the node condition instead.
 
 - If you use @sys-number to compare number values in a condition, be sure to separately include a check for the presence of a number itself. If no number is found, @sys-number evaluates to null, which might result in your comparison evaluating to true even when no number is present.
 
@@ -257,7 +257,7 @@ You get equivalent results for other supported languages.
 
 - Percentage values are recognized as instances of @sys-number entities as well. If you are using separate conditions to check for both percentage values and numbers, place the condition that checks for a percentage above the one that checks for a number.
 
-- If you use the @sys-percentage entity as a node condition and the user specifies `0%` as the value, the value is recognized as a percentage properly, but the condition is evaluated to the number zero not the percentage 0%. Therefore, it does not return the expected response. To check for percentages in a way that handles zero percentages properly, use the syntax `entities['sys-percentage']` in the node condition instead.
+- If you use the @sys-percentage entity as a node condition and the user specifies `0%` as the value, the value is recognized as a percentage properly, but the condition is evaluated to the number zero not the percentage 0%. Therefore, it does not return the expected response. To check for percentages in a way that handles zero percentages properly, use the full SpEL expression syntax `entities['sys-percentage']?.value` in the node condition instead.
 
 - If you input a value like `1-2%`, the values `1%` and `2%` are returned as system entities. The index will be the whole range between 1% and 2%, and both entities will have the same index.
 
