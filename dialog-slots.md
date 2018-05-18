@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-17"
+lastupdated: "2018-05-18"
 
 ---
 
@@ -176,7 +176,7 @@ Consider using these approaches for handling common tasks.
 - [Asking for everything at once](dialog-slots.html#slots-prompt-for-everything)
 - [Capturing multiple values](dialog-slots.html#slots-multiple-entity-values)
 - [Reformatting values](dialog-slots.html#slots-reformat-values)
-- [Dealing with zero](dialog-slots.html#slots-zero)
+- [Dealing with zeros](dialog-slots.html#slots-zero)
 - [Getting confirmation](dialog-slots.html#slots-get-confirmation)
 - [Replacing a slot context variable value](dialog-slots.html#slots-found-handler-event-properties)
 - [Avoiding number confusion](dialog-slots.html#slots-avoid-number-confusion)
@@ -241,27 +241,26 @@ For example, time values are saved in the `hh:mm:ss` format. You can use the JSO
 
 See [Methods to process values](dialog-methods.html) for other reformatting ideas.
 
-### Dealing with zero
+### Dealing with zeros
 {: #slots-zero}
 
-Using `@sys-number` in a slot condition is helpful for capturing any numbers that users specify in their input. However, when you use this shorthand syntax to specify the sys-number entity, it does not behave as expected when a user specifies the number zero (0). Instead of recognizing the zero as a valid number, it evaluates to false, and prompts the user for a number again. To avoid this problem, use the full SpEL expression syntax to specify the `@sys-number` condition.
+Using `@sys-number` in a slot condition is helpful for capturing any numbers that users specify in their input. However, when you use this shorthand syntax to specify the sys-number entity, it does not behave as expected when users specify the number zero (0). Instead of recognizing the zero as a valid number, it evaluates to false, and prompts the user for a number again. To avoid this problem, use the full SpEL expression syntax to specify the `@sys-number` condition.
+
+To ensure that a slot condition that checks for number mentions recognizes zeros, complete the following steps:
 
 1.  Add `@sys-number` to the slot condition field, and then provide the context variable name and text prompt.
-
 1.  Click the **Edit response** ![Edit response](images/edit-slot.png) icon.
-
 1.  Click the **More** ![More icon](images/kabob.png) menu, and then select **Open JSON editor**.
+1.  Update the context variable which now has a syntax like,  `"number":"@sys-number"`, to use the full SpEL expression syntax for the sys-number entity.
 
-1.  Update the context variable which now has a syntax like,  `"number":"@sys-number"`, to use the full SpEL expression syntax for the sys-number entity:
-
-  ```json
-  {
-    "context":{
-      "number":"<? entities['sys-number']?.value ?>"
+    ```json
+    {
+      "context":{
+        "number":"<? entities['sys-number']?.value ?>"
+      }
     }
-  }
-```
-{: codeblock}
+    ```
+    {: codeblock}
 
 If you do not want to accept a zero as the number value, then you can add a conditional response for the slot to check for zero, and tell the user that they must provide a number greater than zero. But, it is important for the slot condition to be able to recognize a zero when it it provided as input.
 

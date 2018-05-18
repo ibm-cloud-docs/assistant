@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-15"
+lastupdated: "2018-05-18"
 
 ---
 
@@ -151,7 +151,90 @@ In this step, you will learn how to prompt for everything at once.
 
 **Note**: If the user provides any one of the slot values in their initial input, then the prompt that asks for everything is not displayed. For example, the initial input from the user might be, `I want to make a reservation for this Friday night.` In this case, the initial prompt is skipped because you do not want to ask for information that the user already provided - the date (`Friday`), in this example. The dialog shows the prompt for the next empty slot instead.
 
-## Step 3: Validate user input
+## Step 3: Make sure the service can recognize zeros
+{: #recognize-zero}
+
+When you use the shorthand syntax to specify the number system entity in a slot condition, it does not deal with zeros properly. Instead of setting the context variable that you define for the slot to 0, the service sets the context variable to false. As a result, the slot does not think it is full and prompts the user for a number again and again until the user specifies a number other than zero.
+
+1.  Test the node so you can better understand the problem. Open the "Try it out" pane, and click **Clear** to delete the slot context variable values that you specified when you tested the node with slots earlier. To see the impact of the changes you made, use the following script:
+
+    <table>
+    <caption>Script details</caption>
+    <tr>
+      <th>Speaker</th>
+      <th>Utterance</th>
+    </tr>
+    <tr>
+      <td>You</td>
+      <td>i want to make a reservation</td>
+    </tr>
+    <tr>
+      <td>Watson</td>
+      <td>I can make a reservation for you. Just tell me the day and time of the reservation, and how many people it is for.</td>
+    </tr>
+    <tr>
+      <td>You</td>
+      <td>We want to dine May 23 at 8pm. There will be 0 guests.</td>
+    </tr>
+    <tr>
+      <td>Watson</td>
+      <td>How many people will be dining?</td>
+    </tr>
+    <tr>
+      <td>You</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Watson</td>
+      <td>How many people will be dining?</td>
+    </tr>
+    </table>
+
+    You will be stuck in this loop until you specify a number other than 0.
+
+1.  To ensure that the slot recognizes zeros, reformat the sys-number entity condition.
+
+1.  Click the **Edit response** ![Edit response](images/edit-slot.png) icon for the `@sys-number` slot.
+
+1.  From the **More** ![More icon](images/kabob.png) menu at the top of the page, select **Open JSON editor**, and then edit the JSON that defines the context variable. Use the full SpEL expression format to specify the value of the @sys-number entity. Change `"guests":"@sys-number"` to the following syntax:
+
+    ```json
+    {
+      "context": {
+        "guests": "<? entities['sys-number']?.value ?>"
+      }
+    }
+    ```
+    {: codeblock}
+
+1.  Click **Save**.
+
+1.  Test the node again. Open the "Try it out" pane, and click **Clear** to delete the slot context variable values that you specified when you tested the node with slots earlier. To see the impact of the changes you made, use the following script:
+
+    <table>
+    <caption>Script details</caption>
+    <tr>
+      <th>Speaker</th>
+      <th>Utterance</th>
+    </tr>
+    <tr>
+      <td>You</td>
+      <td>i want to make a reservation</td>
+    </tr>
+    <tr>
+      <td>Watson</td>
+      <td>I can make a reservation for you. Just tell me the day and time of the reservation, and how many people it is for.</td>
+    </tr>
+    <tr>
+      <td>You</td>
+      <td>We want to dine May 23 at 8pm. There will be 0 guests.</td>
+    </tr>
+
+    This time Watson responds with, `OK. I am making you a reservation for 0 on Wednesday, May 23 at 8:00 PM.`
+
+You have successfully formatted the number slot so that it can recognize zeros properly. Of course, you might not want the node to accept zero as a valid number of guests. You will learn how to validate values that are specified by users in the next step.
+
+## Step 4: Validate user input
 {: #slot-conditions}
 
 So far, we have assumed that the user will provide the appropriate value types for the slots. That is not always the case in reality. You can account for times when users might provide an invalid value by adding conditional responses to slots. In this step, you will use conditional slot responses to perform the following tasks:
@@ -159,6 +242,7 @@ So far, we have assumed that the user will provide the appropriate value types f
 - Ensure that the date requested is not in the past.
 - Check whether a requested reservation time falls within the seating time window.
 - Confirm the user's input.
+- Ensure that the number of guests provided is larger than zero.
 - Indicate that you are replacing one value with another.
 
 To validate user input, complete the following steps:
@@ -244,7 +328,14 @@ To validate user input, complete the following steps:
     </tr>
     </table>
 
-1.  Edit the @sys-number slot to anticipate and address the case when the user changes the number of guests. If, at any point while the node with slots is being processed, the user changes a slot value, the corresponding slot context variable value is updated. However, it can be useful to let the user know that the value is being replaced, both to give clear feedback to the user and to give the user a chance to rectify it if the change was not what she intended. From the edit view of the node with slots, click the **Edit slot** ![Edit slot](images/edit-slot.png) icon for the `@sys-number` slot.
+1.  Edit the @sys-number slot to validate the value provided by the user in the following ways:
+
+    - Check that the number of guests specified is larger than zero.
+    - Anticipate and address the case when the user changes the number of guests.
+
+      If, at any point while the node with slots is being processed, the user changes a slot value, the corresponding slot context variable value is updated. However, it can be useful to let the user know that the value is being replaced, both to give clear feedback to the user and to give the user a chance to rectify it if the change was not what she intended. 
+
+1.  From the edit view of the node with slots, click the **Edit slot** ![Edit slot](images/edit-slot.png) icon for the `@sys-number` slot.
 
 1.  From the **Options** ![More icon](images/kabob.png) menu in the *Configure slot 3* header, select **Enable conditional responses**.
 
@@ -258,6 +349,11 @@ To validate user input, complete the following steps:
       <th>Action</th>
     </tr>
     <tr>
+      <td>`entities['sys-number']?.value == 0`</td>
+      <td>Please specify a number that is larger than 0.</td>
+      <td>Clear slot and prompt again</td>
+    </tr>
+    <tr>
       <td>`(event.previous_value != null) && (event.previous_value != event.current_value)`</td>
       <td>Ok, updating the number of guests from `<? event.previous_value ?>` to `<? event.current_value ?>`.</td>
       <td>Move on</td>
@@ -269,7 +365,7 @@ To validate user input, complete the following steps:
     </tr>
     </table>
 
-## Step 4: Add a confirmation slot
+## Step 5: Add a confirmation slot
 {: #confirmation-slot}
 
 You might want to design your dialog to call an external reservation system and actually book a reservation for the user in the system. Before your application takes this action, you probably want to confirm with the user that the dialog has understood the details of the reservation correctly. You can do so by adding a confirmation slot to the node.
@@ -423,7 +519,7 @@ You might want to design your dialog to call an external reservation system and 
 
 If you add more slots later, you must edit these conditions to account for the associated context variables for the additional slots. If you do not include a confirmation slot, you can specify `!all_slots_filled` only, and it would remain valid no matter how many slots you add later.
 
-## Step 5: Reset the slot context variable values
+## Step 6: Reset the slot context variable values
 {: #reset-variables}
 
 You might have noticed that before each test, you must clear the context variable values that were created during the previous test. You must do so because the node with slots only prompts users for information that it considers to be missing. If the slot context variables are all filled with valid values, no prompts are displayed. The same is true for the dialog at run time. You must build into the dialog a mechanism by which you reset the slot context variables to null so that the slots can be filled anew by the next user. To do so, you are going to add a parent node to the node with slots that sets the context variables to null.
@@ -465,7 +561,7 @@ You might have noticed that before each test, you must clear the context variabl
 
     When a user input matches the `#reservation` intent, this node is triggered. The slot context variables are all set to null, and then the dialog jumps directly to the node with slots to process it.
 
-## Step 6: Give users a way to exit the process
+## Step 7: Give users a way to exit the process
 {: #handler}
 
 Adding a node with slots is powerful because it keeps users on track with providing the information you need to give them a meaningful response or perform an action on their behalf. However, there might be times when a user is in the middle of providing reservation details, but decides to not go through with placing the reservation. You must give users a way to exit the process gracefully. You can do so by adding a slot handler that can detect a user's desire to exit the process, and exit the node without saving any values that were collected.
@@ -573,7 +669,7 @@ Adding a node with slots is powerful because it keeps users on track with provid
     </tr>
     </table>
 
-## Step 7: Apply a valid value if the user fails to provide one after several attempts
+## Step 8: Apply a valid value if the user fails to provide one after several attempts
 
 In some cases, a user might not understand what you are asking for. They might respond again and again with the wrong types of values. To plan for this possibility, you can add a counter to the slot, and after 3 failed attempts by the user to provide a valid value, you can apply a value to the slot on the user's behalf and move on.
 
@@ -698,7 +794,7 @@ For the $time information, you will define a follow-up statement that is display
 | You     | purple |
 | Watson  | You seem to be having trouble choosing a time. I will make the reservation at 8PM for you.  How many people will be dining? |
 
-## Step 8: Connect to an external service
+## Step 9: Connect to an external service
 {: #action}
 
 Now that your dialog can collect and confirm a user's reservation details, you can call an external service to actually reserve a table in the restaurant's system or through a multi-restaurant online reservations service. See [Making programmatic calls from a dialog node](dialog-actions.html) for more details.
