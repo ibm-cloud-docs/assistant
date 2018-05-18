@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-19"
+lastupdated: "2018-05-18"
 
 ---
 
@@ -34,12 +34,6 @@ This Node.js app is a fully developed example of the type of app you can build w
 
 [View the demo ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://watson-assistant-demo.ng.bluemix.net/){: new_window}.
 
-## Text message weather bot
-
-This app demonstrates how {{site.data.keyword.conversationshort}} can be used with different bot kits, such as those from Facebook and Twilio, to enable users to have an intuitive and natural conversation with the bots. The demo integrates the WeatherInsights service to have an intuitive and natural conversation about the weather.
-
- [See the demo ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://text-bot.mybluemix.net/  ){: new_window} or [fork the code ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/text-bot-openwhisk){: new_window}.
-
 ## {{site.data.keyword.conversationshort}} and {{site.data.keyword.discoveryshort}}
 
 This app demonstrates the combination of {{site.data.keyword.conversationshort}} and {{site.data.keyword.discoveryshort}}. First, users pose questions to the {{site.data.keyword.conversationshort}} service. If {{site.data.keyword.conversationshort}} is not able to answer confidently, {{site.data.keyword.conversationshort}} Enhanced executes a call to {{site.data.keyword.discoveryshort}} to provide the user with a list of helpful answers.
@@ -49,5 +43,7 @@ This app demonstrates the combination of {{site.data.keyword.conversationshort}}
 ## {{site.data.keyword.conversationshort}} and {{site.data.keyword.toneanalyzershort}}
 
 {{site.data.keyword.toneanalyzerfull}} uses linguistic analysis to detect three types of tones from written text: emotions, social tendencies, and writing style. The Watson Food Coach app is an example of {{site.data.keyword.toneanalyzershort}} integrated with {{site.data.keyword.conversationshort}}. In this app, depending on the kind of food the user ate and how he or she is feeling about it, the automated agent provides an appropriate coaching response to encourage the user to make healthy choices.
+
+**Note**: The demo refers to {{site.data.keyword.conversationshort}} by its former name, Watson Conversation.
 
 [View the demo ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://food-coach.ng.bluemix.net/){: new_window} or [fork the code ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/food-coach){: new_window}
