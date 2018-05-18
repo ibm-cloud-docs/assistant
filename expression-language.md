@@ -130,14 +130,16 @@ For the user input, *Hello now*, the service recognizes the @sys-date and @sys-t
 
 ### When placement of entities in the input matters
 
-Use the full SpEL expression if placement of entities in the input matters. The condition, `entities['city']?.contains('Boston')` returns true when at least one 'Boston' city entity is found in all the @city entities, regardless of placement.
+When you use the shorthand expression, `@city.contains('Boston')`, in a condition, the dialog node returns true **only if** `Boston` is the first entity detected in the user input. Only use this syntax if the placement of entities in the input matters to you and you want to check the first mention only.
 
-For example, a user submits `"I want to go from Toronto to Boston."` The `@city:Toronto` and `@city:Boston` entities are detected and are represented in these entities:
+Use the full SpEL expression if you want the condition to return true any time the term is mentioned in the user input, regardless of the order in which the entities are mentioned. The condition, `entities['city']?.contains('Boston')` returns true when at least one 'Boston' city entity is found in all the @city entities, regardless of placement.
+
+For example, a user submits `"I want to go from Toronto to Boston."` The `@city:Toronto` and `@city:Boston` entities are detected and are represented in the array that is returned as follows:
 
 - `entities.city[0].value = 'Toronto'`
 - `entities.city[1].value = 'Boston'`
 
-The `@city.contains('Boston')` condition in a dialog node returns true even though Boston is the second entity detected.
+**Note**: The order of entities in the array that is returned matches the order in which they are mentioned in the user input.
 
 ### Entity properties
 
