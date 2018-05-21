@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-18"
+lastupdated: "2018-05-21"
 
 ---
 
@@ -244,25 +244,25 @@ See [Methods to process values](dialog-methods.html) for other reformatting idea
 ### Dealing with zeros
 {: #slots-zero}
 
-Using `@sys-number` in a slot condition is helpful for capturing any numbers that users specify in their input. However, when you use this shorthand syntax to specify the sys-number entity, it does not behave as expected when users specify the number zero (0). Instead of recognizing the zero as a valid number, it evaluates to false, and prompts the user for a number again. To avoid this problem, use the full SpEL expression syntax to specify the `@sys-number` condition.
+Using `@sys-number` in a slot condition is helpful for capturing any numbers that users specify in their input. However, it does not behave as expected when users specify the number zero (0). Instead of treating zero as a valid number, the condition is evaluated to false, and the service prompts the user for a number again. To prevent this behavior, check for `@sys-number` or `@sys-number:0` in the slot condition.
 
-To ensure that a slot condition that checks for number mentions recognizes zeros, complete the following steps:
+To ensure that a slot condition that checks for number mentions deals with zeros properly, complete the following steps:
 
-1.  Add `@sys-number` to the slot condition field, and then provide the context variable name and text prompt.
+1.  Add `@sys-number || @sys-number:0` to the slot condition field, and then provide the context variable name and text prompt.
 1.  Click the **Edit response** ![Edit response](images/edit-slot.png) icon.
 1.  Click the **More** ![More icon](images/kabob.png) menu, and then select **Open JSON editor**.
-1.  Update the context variable which now has a syntax like,  `"number":"@sys-number"`, to use the full SpEL expression syntax for the sys-number entity.
+1.  Update the context variable which now has the syntax,  `"number":"@sys-number || @sys-number:0"`, to specify `@sys-number` only.
 
     ```json
     {
       "context":{
-        "number":"<? entities['sys-number']?.value ?>"
+        "number":"@sys-number"
       }
     }
     ```
     {: codeblock}
 
-If you do not want to accept a zero as the number value, then you can add a conditional response for the slot to check for zero, and tell the user that they must provide a number greater than zero. But, it is important for the slot condition to be able to recognize a zero when it it provided as input.
+If you do not want to accept a zero as the number value, then you can add a conditional response for the slot to check for zero, and tell the user that they must provide a number greater than zero. But, it is important for the slot condition to be able to recognize a zero when it is provided as input.
 
 ### Getting confirmation
 {: #slots-get-confirmation}

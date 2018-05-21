@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-18"
+lastupdated: "2018-05-21"
 
 ---
 
@@ -151,12 +151,12 @@ In this step, you will learn how to prompt for everything at once.
 
 **Note**: If the user provides any one of the slot values in their initial input, then the prompt that asks for everything is not displayed. For example, the initial input from the user might be, `I want to make a reservation for this Friday night.` In this case, the initial prompt is skipped because you do not want to ask for information that the user already provided - the date (`Friday`), in this example. The dialog shows the prompt for the next empty slot instead.
 
-## Step 3: Make sure the service can recognize zeros
+## Step 3: Treat zeros properly
 {: #recognize-zero}
 
-When you use the shorthand syntax to specify the number system entity in a slot condition, it does not deal with zeros properly. Instead of setting the context variable that you define for the slot to 0, the service sets the context variable to false. As a result, the slot does not think it is full and prompts the user for a number again and again until the user specifies a number other than zero.
+When you use the `sys-number` system entity in a slot condition, it does not deal with zeros properly. Instead of setting the context variable that you define for the slot to 0, the service sets the context variable to false. As a result, the slot does not think it is full and prompts the user for a number again and again until the user specifies a number other than zero.
 
-1.  Test the node so you can better understand the problem. Open the "Try it out" pane, and click **Clear** to delete the slot context variable values that you specified when you tested the node with slots earlier. To see the impact of the changes you made, use the following script:
+1.  Test the node so you can better understand the problem. Open the "Try it out" pane, and click **Clear** to delete the slot context variable values that you specified when you tested the node with slots earlier. Use the following script:
 
     <table>
     <caption>Script details</caption>
@@ -192,16 +192,16 @@ When you use the shorthand syntax to specify the number system entity in a slot 
 
     You will be stuck in this loop until you specify a number other than 0.
 
-1.  To ensure that the slot recognizes zeros, reformat the sys-number entity condition.
+1.  To ensure that the slot treats zeros properly, change the slot condition from `@sys-number` to `@sys-number || @sys-number:0`.
 
-1.  Click the **Edit response** ![Edit response](images/edit-slot.png) icon for the `@sys-number` slot.
+1.  Click the **Edit response** ![Edit response](images/edit-slot.png) icon for the slot.
 
-1.  From the **More** ![More icon](images/kabob.png) menu at the top of the page, select **Open JSON editor**, and then edit the JSON that defines the context variable. Use the full SpEL expression format to specify the value of the @sys-number entity. Change `"guests":"@sys-number"` to the following syntax:
+1.  From the **More** ![More icon](images/kabob.png) menu at the top of the page, select **Open JSON editor**, and then edit the JSON that defines the context variable. Change the variable from `"guests":"@sys-number || @sys-number:0"` to use the following syntax:
 
     ```json
     {
       "context": {
-        "guests": "<? entities['sys-number']?.value ?>"
+        "guests": "@sys-number"
       }
     }
     ```
