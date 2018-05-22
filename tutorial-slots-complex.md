@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-21"
+lastupdated: "2018-05-22"
 
 ---
 
@@ -229,6 +229,7 @@ When you use the `sys-number` system entity in a slot condition, it does not dea
       <td>You</td>
       <td>We want to dine May 23 at 8pm. There will be 0 guests.</td>
     </tr>
+    </table>
 
     This time Watson responds with, `OK. I am making you a reservation for 0 on Wednesday, May 23 at 8:00 PM.`
 
