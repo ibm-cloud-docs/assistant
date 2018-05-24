@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-10"
+lastupdated: "2018-05-24"
 
 ---
 
@@ -37,6 +37,10 @@ To open the Overview page, select **Overview** in the navigation bar.
 
 ## Controls
 The top part of the page includes the following controls:
+
+* *Intents* and *Entities* filters - Use either of these drop-down filters to show data for a specific intent or entity in the skill.
+
+  **Important** - The intent and entities filters are populated by the intents and entities in the ***skill***, and not what is in the data source. If you have [selected a data source](logs.html#deploy_id) other than the skill, you might not see an intent or entity from your data source logs as an option in the filters, unless those intents and entities are also in the skill.
 
 * *Refresh data* - Allows you to refresh the Overview page statistics immediately. The Overview page shows when the data that it displays was last updated. You can select **Refresh data** if you think that newer data might be available.
 * Time period control - Use this control to choose the period for which data is displayed. This control affects all data shown on the page: not just the number of conversations displayed in the graph, but also the statistics displayed along with the graph, and the lists of top intents and entities.
