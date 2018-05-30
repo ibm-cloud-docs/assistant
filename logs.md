@@ -64,7 +64,7 @@ To specify the Deployment ID for an utterance sent using the `/message` API, inc
 }
 ```
 
-{: #codeblock}
+{: codeblock}
 
 ## Enabling user metrics
 {: #user_id}
@@ -80,4 +80,4 @@ To specify the `User ID` for an utterance sent using the `/message` API, include
   }
 }
 ```
-{: #codeblock}
+{: codeblock}
