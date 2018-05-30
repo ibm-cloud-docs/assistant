@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-17"
+lastupdated: "2018-05-30"
 
 ---
 
@@ -30,17 +30,20 @@ System entities are available for languages noted in the [Supported languages](l
 The @sys-currency system entity detects monetary currency values that are expressed in an utterance with a currency symbol or currency-specific terms. A numeric value is returned.
 
 ### Recognized formats
+{: #sys-currency-formats}
 
 - 20 cents
 - Five dollars
 - $10
 
 ### Metadata
+{: #sys-currency-metadata}
 
 - `.numeric_value`: the canonical numeric value as an integer or a double, in base units
 - `.unit`: the base unit currency code (for example, 'USD' or 'EUR')
 
 ### Returns
+{: #sys-currency-returns}
 
 For the input `twenty dollars` or `$1,234.56`, @sys-currency returns these values:
 
@@ -119,6 +122,7 @@ When the `$timezone` variable is provided, the values of relative @sys-date and 
 - 2 days from now
 
 ### Recognized formats
+{: #sys-datetime-formats}
 
 - November 21
 - 10:30
@@ -126,6 +130,7 @@ When the `$timezone` variable is provided, the values of relative @sys-date and 
 - this weekend
 
 ### Returns
+{: #sys-datetime-returns}
 
 For the input `November 21` @sys-date returns these values:
 
@@ -159,6 +164,7 @@ For information about processing date and time values, see the [Date and time](d
 **BETA, for languages noted in the [Supported languages](lang-support.html) topic**: The @sys-location system entity extracts place names (country, state/province, city, town, etc.) from the user's input. The value of the entity is not a system-standard value of the location.
 
 ### Recognized formats
+{: #sys-location-formats}
 
 - Boston
 - U.S.A.
@@ -173,16 +179,19 @@ For information about processing String values, see the [Strings](dialog-methods
 The @sys-number system entity detects numbers that are written using either numerals or words. In either case, a numeric value is returned.
 
 ### Recognized formats
+{: #sys-number-formats}
 
 - 21
 - twenty one
 - 3.13
 
 ### Metadata
+{: #sys-number-metadata}
 
 - `.numeric_value` - the canonical numeric value as an integer or a double
 
 ### Returns
+{: #sys-number-returns}
 
 For the input `twenty` or `1,234.56`, @sys-number returns these values:
 
@@ -223,15 +232,18 @@ For information about processing number values, see the [Numbers](dialog-methods
 The @sys-percentage system entity detects percentages that are expressed in an utterance with the percent symbol or written out using the word `percent`. In either case, a numeric value is returned.
 
 ### Recognized formats
+{: #sys-percentage-formats}
 
 - 15%
 - 10 percent
 
 ### Metadata
+{: #sys-percentage-metadata}
 
 `.numeric_value`: the canonical numeric value as an integer or a double
 
 ### Returns
+{: #sys-percentage-returns}
 
 For the input `1,234.56%`, @sys-percentage returns these values:
 
@@ -267,6 +279,7 @@ You get equivalent results for other supported languages.
 **BETA, for languages noted in the [Supported languages](lang-support.html) topic**: The @sys-person system entity extracts names from the user's input. Names are recognized individually, so that "Joe" is not treated as "Joseph", or vice versa. The value of the entity is not a system-standard value of the name.
 
 ### Recognized formats
+{: #sys-person-formats}
 
 - Ronald
 - Jane Doe

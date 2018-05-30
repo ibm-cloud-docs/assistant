@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-15"
+lastupdated: "2018-05-30"
 
 ---
 
@@ -264,11 +264,13 @@ Now add a peer node that is triggered if the user does not specify a valid appli
 
     ![Shows choosing a different intent and retraining](images/tut-change-intent.gif){: gif}
 
-Optionally, you can review the **Car Dashboard - Sample** skill to see this same use case fleshed out even more with a longer dialog and additional functionality.
+Optionally, you can review the **Customer Service - Sample** skill to see another use case with a longer dialog and additional functionality.
 
 1.  Click the **Back to skills** button ![Shows Back to skills button in menu](images/workspaces-button.png) from the navigation menu.
 
-1.  On the **Car Dashboard - Sample** tile, click **Edit sample**.
+1.  Click **Add a sample**.
+
+    The sample skill is added to your list of skills. It is not associated with any assistants.
 
 ## Next steps
 {: #deploy}
