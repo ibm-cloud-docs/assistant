@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-15"
+lastupdated: "2018-05-31"
 
 ---
 
@@ -93,7 +93,7 @@ Use the {{site.data.keyword.conversationshort}} tool to create entities.
 
       The {{site.data.keyword.conversationshort}} service can also recommend synonyms for your entity values. The recommender finds related synonyms based on contextual similarity extracted from a vast body of existing information, including large sources of written text, and uses natural language processing techniques to identify words similar to the existing synonyms in your entity value.
 
-    - Select `View recommendations`
+    - Select `Show recommendations`
 
       ![Synonym recommendation screen 1](images/synonym_1.png)
 
@@ -111,7 +111,7 @@ Use the {{site.data.keyword.conversationshort}} tool to create entities.
 
       **NOTE**: If you receive no additional synonym recommendations, it could be because your entity is already well defined, or it contains content that the recommender is not currently able to expand upon.
 
-      **NOTE**: If you choose not to select a recommended synonym, the system will treat that as a term you are not interested in, and will alter the next set of recommendations you see when you press `Add selected` or `Find more`.
+      **NOTE**: If you choose not to select a recommended synonym, the system will treat that as a term you are not interested in, and will alter the next set of recommendations you see when you press `Add selected` or `Next set`.
 
       ![Synonym recommendation screen 4](images/synonym_4.png)
 
