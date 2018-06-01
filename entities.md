@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-31"
+lastupdated: "2018-06-01"
 
 ---
 
@@ -188,6 +188,65 @@ Use the {{site.data.keyword.conversationshort}} tool to create entities.
 
 The entity you created is added to the **Entities** tab, and the system begins to train itself on the new data.
 
+## Defining annotations for entities (BETA)
+
+When you define specific values for an entity, the service finds entity mentions only when a term in the user input exactly matches (or closely matches if fuzzy matching is enabled) a value or synonym defined. When you define annotations for an entity, a model is trained on both the entity *value* and the *context* in which the entity is used in sentences that you annotate. This new entity context model enables the service to calculate a confidence score that identifies how likely a word or phrase is to be an instance of an entity, based on how it is used in the user input.
+
+**Note**: This feature is Beta only. This feature is currently available for English only.
+
+### Creating entity annotations from the **Intents** tab
+{: #create-open-entities}
+
+In order to train an annotated entity model, you can take advantage of your intent examples, which provide readily-available sentences to annotate. Using intent user examples to define entity annotations does not affect the classification of an intent.
+
+1.  In the {{site.data.keyword.conversationshort}} tool, open your skill and then click the **Intents** tab. If **Intents** is not visible, use the ![Menu](images/Menu_16.png) menu to open the page.
+
+1.  Select an intent. For this example, the intent `#place_order` defines the order function for an online retailer.
+
+    ![Select #place_order intent](images/oe-intent.png)
+
+1.  Review the intent examples for potential entity values. Highlight a potential entity value from the intent examples, in this case `computer`.
+
+    ![Review intent examples](images/oe-intent-review.png)
+
+    **Note**: To directly edit an intent example, select the Edit icon ![Edit icon](images/oe-intent-edit.png) instead of highlighting a value for annotation.
+
+1.  A Search box opens, allowing you to search for an appropriate entity for the highlighted entity value.
+
+    ![Search box initial state](images/oe-intent-search1.png)
+
+1.  In this example, searching `prod` brings up matches for both the `@product` entity, and for entity values `shirt` and `pens`. This is an important distinction - `@product` is an entity that can contain multiple entity values, in this case `@product:pencil`, `@product:shirt` and `@product:pens`
+
+    ![Search box with search parameter prod](images/oe-intent-search2.png)
+
+    You can also create a new entity by choosing `@(create new entity)`.
+
+1.  Select `@product` to add `computer` as a value for that entity.
+1.  Now, click the annotation you just created. A box will appear with the words `Go to: @product` at the bottom.  Clicking that link will take you directly to the entity.
+
+    ![Verify value computer for product entity](images/oe-verify-value.png)
+
+### Viewing annotations from the **Entities** tab
+{: #annotate-open-entities}
+
+To see the intent examples you have used in annotating your entities:
+
+1.  From the **Entities** tab, open an entity, for example, `@cuisine`.
+
+    ![Cuisine entity highlighted in list](images/oe-annotate1.png)
+
+1.  Select the *Annotation* view.
+
+    ![Annotation view selector highlighted](images/oe-annotate2.png)
+
+    If you have already [created annotated entities from the Intents tab](entities.html#create-open-entities), you will see a list of user examples with their associated intents.
+
+    If you want your entity model to understand additional values, values that you have not explicitly defined, turn on the `Value expansion` option. With this option, the system makes an educated guess about additional entity values from the user examples for the listed intents, and uses those values to train other entities. Any similar user examples are added to the *Annotation* view, so you can see how this option impacts training.
+
+    ![Examples and intents list](images/oe-annotate3a.png)
+
+    **Note**: You can also delete annotations from this view by selecting user examples, and choosing **Delete**.
+
 ## Editing entities
 
 You can click any entity in the list to open it for editing. You can rename or delete entities, and you can add, edit, or delete values, synonyms, or patterns.
@@ -195,8 +254,6 @@ You can click any entity in the list to open it for editing. You can rename or d
 > **Note**: If you change the entity type from `synonym` to `pattern`, or vice versa, the existing values are converted, but might not be useful as-is.
 
 ## Searching entities
-
-**BETA** The Searching entities feature described in this documentation is a beta feature that has been made available for your evaluation. Beta features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide, and are not intended for use in a production environment.
 
 Use the Search feature to find entity names, values and synonyms.
 

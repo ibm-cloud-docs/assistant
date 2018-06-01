@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-15"
+lastupdated: "2018-06-01"
 
 ---
 
@@ -74,6 +74,8 @@ Use the {{site.data.keyword.conversationshort}} tool to create intents.
 
     ![Screen capture showing intent definition](images/define_intent.png)
     {: #entity-as-example}
+
+    You can also add entity annotations directly from user examples. See [Creating entity annotations from the **Intents** tab](entities.html#create-open-entities).
 
     *Important*:
 
