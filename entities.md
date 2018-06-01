@@ -21,7 +21,7 @@ lastupdated: "2018-06-01"
 
 ***Entities*** represent a class of object or a data type that is relevant to a user's purpose. By recognizing the entities that are mentioned in the user's input, the {{site.data.keyword.conversationshort}} service can choose the specific actions to take to fulfill an intent.
 
-<iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/wyWgsF9eYc8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+<iframe class="embed-responsive-item" id="youtubeplayer" title="Working with entities" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/wyWgsF9eYc8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 ## Entity limits
 {: #entity-limits}
@@ -185,6 +185,7 @@ Use the {{site.data.keyword.conversationshort}} tool to create entities.
 1.  When you are finished adding entity values, select ![Close arrow](images/close_arrow.png) to finish creating the entity.
 
 ### Results
+{: #creating-entities-results}
 
 The entity you created is added to the **Entities** tab, and the system begins to train itself on the new data.
 
@@ -270,6 +271,7 @@ Use the Search feature to find entity names, values and synonyms.
     ![Entity search term](images/searchent_1.png)
 
 ### Results
+{: #searching-entities-results}
 
 Entities containing your search term, with corresponding examples, are shown.
 
@@ -321,6 +323,7 @@ If you have a large number of entities, you might find it easier to import them 
 1.  Click ![Import](images/importGA.png) and then drag a file, or browse to select a file from your computer. The file is validated and imported, and the system begins to train itself on the new data.
 
 ### Results
+{: #importing-entities-results}
 
 You can view the imported entities on the Entities tab. You might need to refresh the page to see the new entities.
 
@@ -367,5 +370,6 @@ System entities are centrally maintained, so any updates are available automatic
 1.  Click the toggle switch next to a system entity to enable or disable it.
 
 ### Results
+{: #enabling-system-entities-results}
 
 After you enable system entities, the {{site.data.keyword.conversationshort}} service begins retraining. After training is complete, you can use the entities.

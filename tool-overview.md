@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-13"
+lastupdated: "2018-05-30"
 
 ---
 
@@ -20,6 +20,6 @@ With the {{site.data.keyword.conversationshort}} tool, you can create and manage
 
 <p>
   <div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/h-u-5f8fZtc?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+    <iframe class="embed-responsive-item" id="youtubeplayer" title="Watson Assistant tool overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/h-u-5f8fZtc?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
   </div>
 </p>

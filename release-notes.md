@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-07"
+lastupdated: "2018-06-01"
 ---
 
 {:shortdesc: .shortdesc}
@@ -22,6 +22,13 @@ lastupdated: "2018-05-07"
 {: #change-log}
 
 The following new features and changes to the service are available.
+
+### 1 June 2018
+{: #1June2018}
+
+- You can now define rich responses types, such as buttons and images, in addition to text responses in your dialog. See for more details.
+
+- Create entity annotations by labeling entity mentions that occur in your intent user examples. The annotated sentence is stored as an entity annotation. These entity annotations are then used by the service to teach your model about the context in which the entity is used in a sentence. Entity annotations are currently supported for English-language skills only.
 
 ### 7 May 2018
 {: #7May2018}
