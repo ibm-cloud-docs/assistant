@@ -26,9 +26,9 @@ The following new features and changes to the service are available.
 ### 1 June 2018
 {: #1June2018}
 
-- You can now define rich responses types, such as buttons and images, in addition to text responses in your dialog. See for more details.
+- **Rich responses**: You can now add rich responses, that include elements such as images or buttons in addition to text, to your dialog. See [Rich responses](dialog-overview.html#multimedia) for more information.
 
-- Create entity annotations by labeling entity mentions that occur in your intent user examples. The annotated sentence is stored as an entity annotation. These entity annotations are then used by the service to teach your model about the context in which the entity is used in a sentence. Entity annotations are currently supported for English-language skills only.
+- **Entity annotations**: Entity annotations teach the service about the context in which entities are typically mentioned in speech. Add annotations by labeling entity mentions that occur in your intent user examples. This feature is currently available for English only.
 
 ### 7 May 2018
 {: #7May2018}
