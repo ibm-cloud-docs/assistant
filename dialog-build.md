@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-20"
+lastupdated: "2018-06-01"
 
 ---
 
@@ -92,9 +92,9 @@ To create a dialog, complete the following steps:
     For more information about how to test for values in conditions, see [Conditions](dialog-overview.html#conditions).
 1.  **Optional**: If you want to collect multiple pieces of information from the user in this node, then click **Customize** and enable **Slots**. See [Gathering information with slots](dialog-slots.html) for more details.
 1.  Enter a response.
-    - Add the text that you want the service to display to the user as a response.
+    - Add the text or multimedia elements that you want the service to display to the user as a response.
     - If you want to define different responses based on certain conditions, then click **Customize** and enable **Multiple responses**.
-    - For information about conditional responses or how to add variety to responses, see [Responses](dialog-overview.html#responses).
+    - For information about conditional responses, rich responses, or how to add variety to responses, see [Responses](dialog-overview.html#responses).
 
 1.  Specify what to do after the current node is processed. You can choose from the following options:
 

@@ -23,7 +23,7 @@ lastupdated: "2018-06-01"
 ***Intents*** are purposes or goals expressed in a customer's input, such as answering a question or processing a bill payment. By recognizing the intent expressed in a customer's input, the {{site.data.keyword.conversationshort}} service can choose the correct dialog flow for responding to it.
 {: shortdesc}
 
-<iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/WbXTZBq-Xlk" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+<iframe class="embed-responsive-item" id="youtubeplayer" title="Working with intents" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/WbXTZBq-Xlk" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 ## Intent limits
 {: #intent-limits}
@@ -110,6 +110,7 @@ Use the {{site.data.keyword.conversationshort}} tool to create intents.
 1.  When you have finished adding examples, select ![Close arrow](images/close_arrow.png) to finish creating the intent.
 
 ### Results
+{: #creating-intents-results}
 
 The intent you created is added to the Intents tab, and the system begins to train itself on the new data.
 
@@ -145,6 +146,7 @@ Use the Search feature to find user examples, intent names, and descriptions.
     ![Intent search term](images/searchint_1.png)
 
 ### Results
+{: #searching-intents-results}
 
 Intents containing your search term, with corresponding examples, are shown.
 
@@ -183,6 +185,7 @@ If you have a large number of intents and examples, you might find it easier to 
     > **Important:** The maximum CSV file size is 10MB. If your CSV file is larger, consider splitting it into multiple files and importing them separately.
 
 ### Results
+{: #importing-intents-results}
 
 You can view the imported intents and the corresponding examples on the **Intents** tab. You might need to refresh the page in order to see the new intents and examples.
 
