@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-01"
+lastupdated: "2018-06-04"
 
 ---
 
@@ -189,11 +189,9 @@ Use the {{site.data.keyword.conversationshort}} tool to create entities.
 
 The entity you created is added to the **Entities** tab, and the system begins to train itself on the new data.
 
-## Defining annotations for entities (BETA)
+## Defining annotations for entities
 
 When you define specific values for an entity, the service finds entity mentions only when a term in the user input exactly matches (or closely matches if fuzzy matching is enabled) a value or synonym defined. When you define annotations for an entity, a model is trained on both the entity *value* and the *context* in which the entity is used in sentences that you annotate. This new entity context model enables the service to calculate a confidence score that identifies how likely a word or phrase is to be an instance of an entity, based on how it is used in the user input.
-
-**Note**: This feature is Beta only. This feature is currently available for English only.
 
 ### Creating entity annotations from the **Intents** tab
 {: #create-open-entities}
@@ -242,7 +240,7 @@ To see the intent examples you have used in annotating your entities:
 
     If you have already [created annotated entities from the Intents tab](entities.html#create-open-entities), you will see a list of user examples with their associated intents.
 
-    If you want your entity model to understand additional values, values that you have not explicitly defined, turn on the `Value expansion` option. With this option, the system makes an educated guess about additional entity values from the user examples for the listed intents, and uses those values to train other entities. Any similar user examples are added to the *Annotation* view, so you can see how this option impacts training.
+    If you want your entities to understand values that you have not explicitly defined, turn on the `Value expansion` option. With this option, the system makes predictions about additional entity values based on how your user examples are annotated, and uses those values to train other entities. Any similar user examples are added to the *Annotation* view, so you can see how this option impacts training.
 
     ![Examples and intents list](images/oe-annotate3a.png)
 
