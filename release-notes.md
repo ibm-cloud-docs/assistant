@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-07"
+lastupdated: "2018-06-04"
 ---
 
 {:shortdesc: .shortdesc}
@@ -22,11 +22,6 @@ lastupdated: "2018-06-07"
 {: #change-log}
 
 The following new features and changes to the service are available.
-
-### 7 June 2018
-{: #7June2018}
-
-- **Pattern limit expanded**: When using the **Patterns** field to [define specific patterns for an entity value](entities.html#patterns), the pattern (regular expression) is now limited to 512 characters.
 
 ### 4 June 2018
 {: #4June2018}
