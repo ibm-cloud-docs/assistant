@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-01"
+lastupdated: "2018-06-05"
 
 ---
 
@@ -305,7 +305,7 @@ To store the value of a pattern entity in a context variable, append .literal to
 
 | Variable   | Value               |
 |------------|---------------------|
-| email      | <? email.literal ?> |
+| email      | <? @email.literal ?> |
 
 To store the text from a single group in a pattern entity with groups defined, specify the array number of the group that you want to store. For example, assume that the entity pattern is defined as follows for the @phone_number entity. (Remember, the parentheses denote pattern groups):
 
