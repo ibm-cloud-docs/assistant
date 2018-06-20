@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-05"
+lastupdated: "2018-06-11"
 
 ---
 
@@ -117,6 +117,19 @@ A context variable is a variable that you define in a node. You can specify a de
 
 You can condition against context variable values by referencing a context variable from a dialog node condition to determine whether to execute a node. You can also reference a context variable from dialog node response conditions to show different reponses depending on a value provided by an external service or by the user.
 
+Learn more:
+
+- [Passing context from the application](#context-from-app)
+- [Passing context from node to node](#context-node-to-node)
+- [Defining a context variable](#context-var-define)
+- [Common context variable tasks](#context-common-tasks)
+- [Deleting a context variable](#context-delete)
+- [Updating a context variable](#context-update)
+- [How context variables are processed](#context-processing)
+- [Order of operation](#context-order-of-ops)
+- [Adding context variables to a node with slots](#context-var-slots)
+- [Storing pattern entity values](#context-pattern-entities)
+
 ### Passing context from the application
 {: #context-from-app}
 
@@ -139,7 +152,7 @@ For example, in one node you might ask users for their name, and in a later node
 
 In this example, the system entity @sys-person is used to extract the user's name from the input if the user provides one. In the JSON editor, the username context variable is defined and set to the @sys-person value. In a subsequent node, the $username context variable is included in the response to address the user by name.
 
-## Defining a context variable
+### Defining a context variable
 {: #context-var-define}
 
 Define a context variable by adding the variable name to the **Variable** field and adding a default value for it to the **Value** field in the node's edit view.
@@ -184,7 +197,7 @@ The resulting output is displayed as follows:
 
 You can use the JSON editor to define context variables also. You might prefer to use the JSON editor if you want to add a complex expression as the variable value. See [Context variables in the JSON editor](dialog-runtime.html#context-var-json) for more details.
 
-## Common context variable tasks
+### Common context variable tasks
 {: #context-common-tasks}
 
 To store the entire string that was provided by the user as input, use `input.text`:
@@ -219,7 +232,7 @@ For example, the user input is `Contact me at joe@example.com.` Your entity name
 
 Many of these value examples use methods to capture different parts of the user input. For more information about the methods available for you to use, see [Expression language methods](dialog-methods.html).
 
-## Deleting a context variable
+### Deleting a context variable
 {: #context-delete}
 
 To delete a context variable, set the variable to null.
@@ -230,7 +243,7 @@ To delete a context variable, set the variable to null.
 
 Alternatively you can delete the context variable in your application logic. For information about how to remove the variable entirely, see [Deleting a context variable in JSON](dialog-runtime.html#context-delete-json).
 
-## Updating a context variable value
+### Updating a context variable value
 {: #context-update}
 
 To update a context variable's value, define a context variable with the same name as the previous context variable, but this time, specify a different value for it.
@@ -465,6 +478,12 @@ To define a context variable in JSON format, complete the following steps:
     {: codeblock}
 
     To subsequently reference the context variable, use the syntax `$name` where *name* is the name of the context variable that you defined. For example, `$new_variable`.
+
+Learn more:
+
+- [Deleting a context variable in JSON](#context-delete-json)
+- [Updating a context variable value in JSON](#context-update-json)
+- [Setting one context variable equal to another](#var-equals-var)
 
 ### Deleting a context variable in JSON
 {: #context-delete-json}
