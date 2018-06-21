@@ -265,7 +265,7 @@ You can select a number of intents for deletion.
 
 After you have finished creating new intents, you can test the system to see if it recognizes your intents as you expect.
 
-1.  In the {{site.data.keyword.conversationshort}} tool, select the ![Ask Watson](images/ask_watson.png) icon.
+1.  In the {{site.data.keyword.conversationshort}} tool, select the ![Try it](images/ask_watson.png) icon.
 
 1.  In the *Try it out* pane, enter a question or other text string and press Enter to see which intent is recognized. If the wrong intent is recognized, you can improve your model by adding this text as an example to the correct intent.
 
