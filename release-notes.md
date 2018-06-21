@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-12"
+lastupdated: "2018-06-20"
 ---
 
 {:shortdesc: .shortdesc}
@@ -22,6 +22,11 @@ lastupdated: "2018-06-12"
 {: #change-log}
 
 The following new features and changes to the service are available.
+
+### 20 June 2018
+{: #20June2018}
+
+- **Dismabiguation**: Enable disambiguation to allow your assistant to ask the user for help when it needs to decide between two or more viable dialog nodes to process for a response. See [Disambiguation](dialog-runtime.html#disambiguation) for more details.
 
 ### 12 June 2018
 {: #12June2018}
