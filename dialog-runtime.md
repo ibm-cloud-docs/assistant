@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-11"
+lastupdated: "2018-06-21"
 
 ---
 
@@ -879,3 +879,91 @@ Follow the [tutorial](tutorial-digressions.html) to import a workspace that has 
 - **When to use digressions instead of slot handlers**: For general questions that users might ask at any time, use a root node that allows digressions into it, processes the input, and then goes back to the flow that was in progress. For nodes with slots, try to anticipate the types of related questions users might want to ask while filling in the slots, and address them by adding handlers to the node.
 
   For example, if the node with slots collects the information required to fill out an insurance claim, then you might want to add handlers that address common questions about insurance. However, for questions about how to get help, or your stores locations, or the history of your company, use a root level node.
+
+## Disambiguation
+{: #disambiguation}
+
+When you enable disambiguation, you instruct the service to ask users for help when it finds that more than one dialog node can respond to their input. Instead of guessing which node to process, your assistant shares a list of the top node options with the user, and asks the user to pick the right one.
+
+![Shows a sample conversation between a user and the assistant, where the assistant asks for clarification from the user.](images/disambig-demo.png)
+
+If enabled, disambiguation is triggered when the following conditions are met:
+
+- The confidence score of runner-up node conditions is greater than 55% of the confidence score of the top node condition.
+- The confidence score of the top node condition is above 0.2.
+- Two or more of the candidate nodes have text in their *node purpose* fields.
+
+For example, you have a dialog that has two nodes with intent conditions that address cancellation requests. The conditions are:
+
+- #eCommerce_Cancel_Product_Order
+- #Customer_Care_Cancel_Account
+
+If the user input is `i must cancel it today`, then the following intents might be detected in the input:
+
+`[`
+`{"intent":"Customer_Care_Cancel_Account","confidence":0.6618281841278076},`
+`{"intent":"eCommerce_Cancel_Product_Order","confidence":0.4330700159072876},`
+`{"intent":"Customer_Care_Appointments","confidence":0.2902342438697815},`
+`{"intent":"Customer_Care_Store_Hours","confidence":0.2550420880317688},`
+`...]`
+
+The service is `.6618281841278076` (66%) confident that the user goal matches the `#Customer_Care_Cancel_Account` intent. If any other intent has a confidence score that is greater than 55% of 66%, then it fits the criteria for being a disambiguation candidate.
+
+`.66 x .55 = .36`
+
+Intents with a score that is greater than .36 are eligible.
+
+In our example, the `#eCommerce_Cancel_Product_Order` intent is over the threshold, with a confidence score of `.4330700159072876`.
+
+When the user input is `i must cancel it today`, both dialog nodes will be considered viable candidates to respond. To determine which dialog node to process, the assistant asks the user to pick one. And to help the user choose between them, the assistant provides a short summary of what each node does. The summary text it displays is extracted directly from the *node purpose* information that was specified for each node.
+
+![Service prompts the user to choose from a list of dialog options, including Cancel an account, Cancel a product order, and None of the above.](images/disambig-tryitout.png)
+
+### Enabling disambiguation
+{: #disambiguation-enable}
+
+To enable disambiguation, complete the following steps:
+
+1.  From the Dialogs page, click **Settings**.
+1.  Click **Disambiguation**.
+1.  In the *Enable disambiguation* section, switch the toggle to **On**.
+1.  In the prompt message field, add text to show before the list of dialog node options. For example, *What do you want to do?*
+1.  In the none of the above message field, add text to display as an additional option that users can pick if none of the other dialog nodes reflect what the user wants to do. Keep the message short, so it displays inline with the other options. For example, *None of the above*.
+1.  Click **Close**
+1.  Decide which dialog nodes you want the assistant to ask for help with.
+
+    **Note**: You can pick nodes that condition on intents, entities, special conditions, context variables, or any combination of these values.
+
+    For each node that you want to opt in to disambiguation, complete the following steps:
+
+    1.  Click to open the node in edit view.
+    1.  In the *node purpose* field, describe the user task that this dialog node is designed to handle. For example, *Open an account*.
+
+### Testing disambiguation
+{: #disambiguation-test}
+
+To test disambiguation, complete the following steps:
+
+1.  From the "Try it out" pane, enter a test utterance that you think is a good candidate for disambiguation, meaning two or more of your dialog nodes are configured to address utterances like it.
+
+1.  If the response does not contain a list of dialog node options for you to choose from as expected, first check that you added summary information to the node purpose field for each of the nodes.
+
+1.  It might be that the confidence scores for the nodes are not as close in value as you thought. You can check the confidence scores that are returned for the node conditions. How to test depends on the node condition type.
+
+    - To test confidence scores for nodes that condition on intents, you can temporarily add `<? intents ?>` to the end of your node response.
+
+      This SpEL expression shows the intents that were detected in the user input as an array. The array includes the intent name and the level of confidence that the service has that the intent reflects the user's intended goal.
+
+    - To see confidence score information for nodes with other types of conditions, you must inspect the API response.
+
+      Use the developer tools provided by your web browser to do so. From Chrome, for example, open the Network tool. In the Name section, click the message call for your test utterance, and then click the Response column to see the API response body. It lists the intents and entities that were recognized in the user input with their confidence scores, and the values of context variables at the time of the call.
+
+1.  Temporarily remove the description you added to the *node purpose* field for at least one of the nodes that you anticipate will be listed as a disambiguation option.
+
+1.  Enter the test utterance into the "Try it out" pane again.
+
+    If you added the `<? intents ?>` expression to the response, then the text returned includes a list of the intents that the service recognized in the test utterance, and includes the confidence score for each one.
+
+    ![Service returns an array of intents, including Customer_Care_Cancel_Account and eCommerce_Cancel_Product_Order.](images/disambig-show-intents.png)
+
+After you finish testing, remove any SpEL expressions that you added from the node responses, and repopulate any *node purpose* fields from which you removed text.
