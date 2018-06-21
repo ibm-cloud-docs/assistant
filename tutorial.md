@@ -206,7 +206,7 @@ That takes care of all the cases where the user asks to turn on the music.
 
 #### Test the dialog for music
 
-1.  Select the ![Ask Watson](images/ask_watson.png) icon to open the chat pane.
+1.  Select the ![Try it](images/ask_watson.png) icon to open the chat pane.
 1.  Type `Play music`.
     The assistant recognizes the #turn_on intent and the @appliance:music entity, and it responds by asking for a musical genre.
 
@@ -234,7 +234,7 @@ For the other values of @appliance, the assistant doesn't need to ask for any mo
 
 #### Test the dialog with other appliances
 
-1.  Select the ![Ask Watson](images/ask_watson.png) icon to open the chat pane.
+1.  Select the ![Try it](images/ask_watson.png) icon to open the chat pane.
 1.  Type `lights on`.
 
     The assistant recognizes the #turn_on intent and the @appliance:headlights entity, and it responds with `OK, turning on the headlights`.

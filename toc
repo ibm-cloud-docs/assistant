@@ -40,6 +40,7 @@ Watson Assistant Beta
         deploy-facebook.md
         deploy-slack.md
         deploy-web-link.md
+        dialog-start.md
         delete-integration.md
 
     {: .topicgroup}
