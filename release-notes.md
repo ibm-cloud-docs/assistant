@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-20"
+lastupdated: "2018-06-21"
 ---
 
 {:shortdesc: .shortdesc}
@@ -24,9 +24,11 @@ lastupdated: "2018-06-20"
 The following new features and changes to the service are available.
 
 ### 20 June 2018
-{: #20June2018}
+{: #21June2018}
 
-- **Dismabiguation**: Enable disambiguation to allow your assistant to ask the user for help when it needs to decide between two or more viable dialog nodes to process for a response. See [Disambiguation](dialog-runtime.html#disambiguation) for more details.
+- **Intent conflict resolution**: The {{site.data.keyword.conversationshort}} can now help you to resolve conflicts when two or more intent examples in separate intents are so similar that {{site.data.keyword.conversationshort}} is confused as to which intent to use. See [Resolving intent conflicts](intents.html#conflict-intents) for details.
+
+- **Disambiguation**: Enable disambiguation to allow your assistant to ask the user for help when it needs to decide between two or more viable dialog nodes to process for a response. See [Disambiguation](dialog-runtime.html#disambiguation) for more details.
 
 ### 12 June 2018
 {: #12June2018}

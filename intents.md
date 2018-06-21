@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-01"
+lastupdated: "2018-06-21"
 
 ---
 
@@ -197,6 +197,57 @@ You can export a number of intents to a CSV file, so you can then import and reu
 1.  On the Intents tab, select the intents you want from the list and choose *Export*.
 
     ![Export option](images/ExportIntent.png)
+
+## Resolving intent conflicts
+{: #conflict-intents}
+
+The {{site.data.keyword.conversationshort}} application detects a conflict when two or more intent examples in *separate* intents are so similar that {{site.data.keyword.conversationshort}} is confused as to which intent to use.
+
+To resolve conflicts:
+
+1.  On the **Intents** tab, review any intents with conflicts.
+
+    ![Conflicts in intent list](images/ConflictIntent1.png)
+
+    Toggle the *Show only conflicts* button to see a list of just your intents with conflicts.
+    {: tip}
+
+    ![Conflicts only view](images/ConflictIntent2.png)
+
+1.  Open an intent conflict. For the intent example that is causing the conflict, select the *Resolve conflict...* button.
+
+    ![Conflicting intent example](images/ConflictIntent3.png)
+
+1.  Now, you have the option to either move a conflicting example to another intent, or delete a conflicting example entirely.
+
+    In this case, the examples `Cancel my order` and `I want to cancel my order` appear in both the `#cancel` intent and in the `#eCommerce_Cancel_Product_Order` intent.
+
+    ![Conflicting intent example](images/ConflictIntent4.png)
+
+    **NOTE**: Similar examples are training examples that are not necessarily in conflict, but are similar to the examples in conflict. They are shown to provide context to help resolve the conflict.
+
+1.  Select the examples `Cancel  my order` and `I want to cancel my order`, and move them from the `#cancel` intent to the `#eCommerce_Cancel_Product_Order` intent:
+
+    ![Conflicting intent example](images/ConflictIntent5.png)
+
+1.  When deciding where to place an example, look for the intent that has synonymous, or nearly synonymous examples.
+
+    **NOTE**: Keep each intent as distinct and focused on one goal as possible. If you have two intents with multiple user examples that overlap, maybe you don't need two separate intents. You can move or delete user examples that don't directly overlap into one intent, and then delete the other.
+
+    Select the other examples in the `#cancel` intent, and delete them:
+
+    ![Conflicting intent example](images/ConflictIntent6.png)
+
+1.  Click the *Submit* button to resolve the conflicts:
+
+    ![Conflicting intent example](images/ConflictIntent7.png)
+
+    **NOTE**: The *Reset* option allows you to start over with moving the conflict example among intents. *Cancel* returns you to the intent page.
+
+### Results
+{: #resolving-intent-conflict-results}
+
+You have resolved a conflict, and can continue your review of other intents with conflicts.
 
 ## Deleting intents
 {: #delete_intents}
