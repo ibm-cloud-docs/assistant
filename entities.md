@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-12"
+lastupdated: "2018-06-26"
 
 ---
 
@@ -189,14 +189,14 @@ Use the {{site.data.keyword.conversationshort}} tool to create entities.
 
 The entity you created is added to the **Entities** tab, and the system begins to train itself on the new data.
 
-## Defining annotations for entities
+## Defining contextual entities
 
-When you define specific values for an entity, the service finds entity mentions only when a term in the user input exactly matches (or closely matches if fuzzy matching is enabled) a value or synonym defined. When you define annotations for an entity, a model is trained on both the entity *value* and the *context* in which the entity is used in sentences that you annotate. This new entity context model enables the service to calculate a confidence score that identifies how likely a word or phrase is to be an instance of an entity, based on how it is used in the user input.
+When you define specific values for an entity, the service finds entity mentions only when a term in the user input exactly matches (or closely matches if fuzzy matching is enabled) a value or synonym defined. When you define a contextual entity, a model is trained on both the entity *value* and the *context* in which the entity is used in sentences that you annotate. This new contextual entity model enables the service to calculate a confidence score that identifies how likely a word or phrase is to be an instance of an entity, based on how it is used in the user input.
 
-### Creating entity annotations from the **Intents** tab
+### Creating contextual entities from the **Intents** tab
 {: #create-open-entities}
 
-In order to train an annotated entity model, you can take advantage of your intent examples, which provide readily-available sentences to annotate. Using intent user examples to define entity annotations does not affect the classification of an intent.
+In order to train a contextual entity model, you can take advantage of your intent examples, which provide readily-available sentences to annotate. Using intent user examples to define contextual entities does not affect the classification of an intent.
 
 1.  In the {{site.data.keyword.conversationshort}} tool, open your skill and then click the **Intents** tab. If **Intents** is not visible, use the ![Menu](images/Menu_16.png) menu to open the page.
 
@@ -221,14 +221,33 @@ In order to train an annotated entity model, you can take advantage of your inte
     You can also create a new entity by choosing `@(create new entity)`.
 
 1.  Select `@product` to add `computer` as a value for that entity.
-1.  Now, click the annotation you just created. A box will appear with the words `Go to: @product` at the bottom.  Clicking that link will take you directly to the entity.
+
+    **NOTE**: You should create *at least* 10 annotations for each contextual entity; more annotations are recommended for production use.
+
+1.  Now, click the annotation you just created. A box will appear with the words `Go to: @product` at the bottom. Clicking that link will take you directly to the entity.
 
     ![Verify value computer for product entity](images/oe-verify-value.png)
+
+### Working with counterexamples
+
+If you have an intent example with an annotation, and a word in that example is part of your entity values, but the value is **not** annotated, it is considered a counterexample:
+
+1.  The `#Customer_Care_Appointments` intent includes two intent examples with the word `visit`.
+
+    ![Visit examples intent](images/oe-counter-1.png)
+
+1.  In the first example, you want to annotate the word `visit` as an entity value of the `@meeting` entity. This makes `visit` equivalent to other `@meeting` entity values such as `appointment`, as in "I'd like to make an appointment" or "I'd like to schedule a visit".
+
+    ![@meeting entity](images/oe-counter-2.png)
+
+1.  For the second example, the word `visit` is being used in a different context than a meeting. In this case, you can select the word `appointment` from the intent example, and annotate it as an entity value of the `@meeting` entity. Because the word `visit` in the same example is not annotated, it will serve as a counterexample.
+
+    ![Visit unselected](images/oe-counter-3.png)
 
 ### Viewing annotations from the **Entities** tab
 {: #annotate-open-entities}
 
-To see the intent examples you have used in annotating your entities:
+To see the intent examples you have used in annotating your contextual entities:
 
 1.  From the **Entities** tab, open an entity, for example, `@cuisine`.
 
@@ -240,11 +259,11 @@ To see the intent examples you have used in annotating your entities:
 
     If you have already [created annotated entities from the Intents tab](entities.html#create-open-entities), you will see a list of user examples with their associated intents.
 
-    If you want your entities to understand values that you have not explicitly defined, turn on the `Value expansion` option. With this option, the system makes predictions about additional entity values based on how your user examples are annotated, and uses those values to train other entities. Any similar user examples are added to the *Annotation* view, so you can see how this option impacts training.
+    **NOTE**: Contextual entities understand values that you have not explicitly defined. The system makes predictions about additional entity values based on how your user examples are annotated, and uses those values to train other entities. Any similar user examples are added to the *Annotation* view, so you can see how this option impacts training.
+
+    If you do not want your contextual entities to use this expanded understanding of entity values, select all the user examples in the *Annotation* view for that entity and choose **Delete**.
 
     ![Examples and intents list](images/oe-annotate3a.png)
-
-    **Note**: You can also delete annotations from this view by selecting user examples, and choosing **Delete**.
 
 ## Editing entities
 
