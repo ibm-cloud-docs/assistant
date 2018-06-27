@@ -24,7 +24,7 @@ lastupdated: "2018-06-21"
 The following new features and changes to the service are available.
 
 ### 20 June 2018
-{: #21June2018}
+{: #20June2018}
 
 - **Intent conflict resolution**: The {{site.data.keyword.conversationshort}} can now help you to resolve conflicts when two or more intent examples in separate intents are so similar that {{site.data.keyword.conversationshort}} is confused as to which intent to use. See [Resolving intent conflicts](intents.html#conflict-intents) for details.
 
