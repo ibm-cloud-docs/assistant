@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-08"
+lastupdated: "2018-06-29"
 
 ---
 
@@ -65,9 +65,11 @@ When you start to build the dialog, you must determine the branches to include, 
 
 When the service reaches the end of a branch, or cannot find a condition that evaluates to true from the current set of child nodes it is evaluating, it jumps back out to the base of the tree. And once again, the service processes the root nodes from first to the last. If none of the conditions evaluates to true, then the response from the last node in the tree, which typically has a special `anything_else` condition that always evaluates to true, is returned.
 
-You can disrupt the standard first-to-last flow by customizing what happens after a node is processed. For example, you can configure a node to jump directly to another node after it is processed, even if the other node is positioned earlier in the tree. See [Defining what to do next](dialog-overview.html#jump-to) for more details. You can also configure conditional responses that jump to other nodes. See [Conditional responses](dialog-overview.html#multiple) for more details about how to do so.
+You can disrupt the standard first-to-last flow in the following ways:
 
-How you configure digression settings for each node can also impact how users move through the nodes at run time. If you enable digressions away from most nodes and configure returns, users can jump from one node to another and back again more easily. See [Digressions](dialog-runtime.html#digressions) for more information.
+- By customizing what happens after a node is processed. For example, you can configure a node to jump directly to another node after it is processed, even if the other node is positioned earlier in the tree. See [Defining what to do next](dialog-overview.html#jump-to) for more information.
+- By configuring conditional responses to jump to other nodes. See [Conditional responses](dialog-overview.html#multiple) for more information.
+- By configuring digression settings for dialog nodes. Digressions can also impact how users move through the nodes at run time. If you enable digressions away from most nodes and configure returns, users can jump from one node to another and back again more easily. See [Digressions](dialog-runtime.html#digressions) for more information.
 
 ## Conditions
 {: #conditions}
