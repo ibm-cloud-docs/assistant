@@ -209,6 +209,8 @@ If you include one of these special characters in a text response, escape it by 
 | `#` | Intent | `We are the \#1 seller of lobster rolls in Maine.` |
 {: caption="Special characters to escape in responses" caption-side="top"}
 
+You can include a hypertext link in a response by using HTML syntax. For example: `Contact us at <a href="https://www.ibm.com>ibm.com</a>.` The HTML is rendered properly in the "Try it out" pane. However, be sure to test that any integration channels you use to deploy the assistant can render HTML syntax properly.
+
 Learn more about the following tasks:
 
 - [Adding multiple lines](dialog-overview.html#multiline)
