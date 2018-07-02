@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-22"
+lastupdated: "2018-06-29"
 
 ---
 
@@ -196,7 +196,7 @@ When you use the `sys-number` system entity in a slot condition, it does not dea
 
 1.  Click the **Edit response** ![Edit response](images/edit-slot.png) icon for the slot.
 
-1.  From the **More** ![More icon](images/kabob.png) menu at the top of the page, select **Open JSON editor**, and then edit the JSON that defines the context variable. Change the variable from `"guests":"@sys-number || @sys-number:0"` to use the following syntax:
+1.  When the context variable is created, it automatically uses the same expression that is specified for the slot condition. However, the context variable must save a number only. Edit the value that was saved as the context variable to remove the `OR` operator from it. From the **More** ![More icon](images/kabob.png) menu at the top of the page, select **Open JSON editor**, and then edit the JSON that defines the context variable. Change the variable from `"guests":"@sys-number || @sys-number:0"` to use the following syntax:
 
     ```json
     {
