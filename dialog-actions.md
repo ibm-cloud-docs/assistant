@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-30"
+lastupdated: "2018-07-03"
 
 ---
 
@@ -32,9 +32,11 @@ When you define the programmatic call, you choose one of the following types:
 - **client**: Defines a programmatic call in a standardized format that your external client application can use to perform the programmatic call or function, and return the result to the dialog. This type of call basically tells the dialog to pause here and let the client application go do something. The program that the client application runs can be anything that you choose. Just be sure to specify the call name and parameter details, as well as the error message variable name, according to the JSON formatting rules that are outlined later.
 - **server**: Calls an {{site.data.keyword.openwhisk_short}} action directly, and returns the result to the dialog.
 
-    Currently, you can call a {{site.data.keyword.openwhisk_short}} action from {{site.data.keyword.conversationshort}} instances that are hosted in the US South or Germany regions.
+    **Notes**:
 
-    **Note**: The {{site.data.keyword.openwhisk_short}} instance that is used is the one hosted in the same location (US South or Germany). Therefore, do not define an action in a {{site.data.keyword.openwhisk_short}} instance that is hosted in Germany if you plan to access it from a {{site.data.keyword.conversationshort}} service instance hosted in US South, for example.
+    - Currently, you can call a {{site.data.keyword.openwhisk_short}} action from {{site.data.keyword.conversationshort}} instances that are hosted in the US South or Germany regions only.
+    - The {{site.data.keyword.conversationshort}} service uses the {{site.data.keyword.openwhisk_short}} instance that is hosted in the same location only. It does not check {{site.data.keyword.openwhisk_short}} instances hosted in other regions. Therefore, do not call an action from a {{site.data.keyword.conversationshort}} service instance hosted in US South if the action is defined in a {{site.data.keyword.openwhisk_short}} instance that is hosted in Germany, for example.
+    - You cannot call IBM Cloud Functions web actions from a dialog currently.
 
     **Important**: Only use this method to make a call to a {{site.data.keyword.openwhisk_short}} action that you know can return in **under 5 seconds**. The request to {{site.data.keyword.openwhisk_short}} times out if an individual service call takes longer than that. And if your dialog makes more than one call to an external service, the total amount of time allowed for the calls to complete is 7 seconds. If the first three calls complete in 2 seconds each, and the fourth takes more than 1 second, then the fourth call is stopped, and the error message for the call indicates that the call was not completed. For less efficient services that you need to call, manage the call through your client application and pass the information to the dialog as a separate step.
 
@@ -106,6 +108,8 @@ To make a programmatic call from a dialog node, complete the following steps:
          - If you are calling a sequence of actions, then specify the `<sequence name>` in place of the `<action name>`.
          - The namespace for a user-defined action typically has the syntax: `<myIBMCloudOrganizationID>_<myIBMCloudSpace>`. For example: `/jdoeorg_prod10/search flights`
          - The actions that are provided with {{site.data.keyword.openwhisk_short}} often have the namespace: `whisk.system`, but you should always verify the namespace to be sure. For example: `/whisk.system/weather/forecast`
+
+           See the [IBM Cloud Functions naming guidelines ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/openwhisk/openwhisk_reference.html#openwhisk_entities) for more details.
 
     - `<type>`: Indicates the type of call to make. Choose from the following types:
 
