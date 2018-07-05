@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-02-16"
+lastupdated: "2018-07-05"
 
 ---
 
@@ -193,7 +193,7 @@ Each intent has one property only: the `confidence` property. The confidence pro
 While testing your dialog, you can see details of the intents that are recognized in user input by specifying this expression in a dialog node response:
 
 ```json
-<? intents ?>
+Intents: <? intents ?>
 ```
 {: codeblock}
 

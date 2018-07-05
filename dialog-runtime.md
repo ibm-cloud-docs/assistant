@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-21"
+lastupdated: "2018-07-05"
 
 ---
 
@@ -952,7 +952,7 @@ To test disambiguation, complete the following steps:
 
 1.  It might be that the confidence scores for the nodes are not as close in value as you thought. You can check the confidence scores that are returned for the node conditions. How to test depends on the node condition type.
 
-    - To test confidence scores for nodes that condition on intents, you can temporarily add `<? intents ?>` to the end of your node response.
+    - To test confidence scores for nodes that condition on intents, you can temporarily add `Intents: <? intents ?>` to the end of your node response.
 
       This SpEL expression shows the intents that were detected in the user input as an array. The array includes the intent name and the level of confidence that the service has that the intent reflects the user's intended goal.
 
@@ -964,7 +964,7 @@ To test disambiguation, complete the following steps:
 
 1.  Enter the test utterance into the "Try it out" pane again.
 
-    If you added the `<? intents ?>` expression to the response, then the text returned includes a list of the intents that the service recognized in the test utterance, and includes the confidence score for each one.
+    If you added the `Intents: <? intents ?>` expression to the response, then the text returned includes a list of the intents that the service recognized in the test utterance, and includes the confidence score for each one.
 
     ![Service returns an array of intents, including Customer_Care_Cancel_Account and eCommerce_Cancel_Product_Order.](images/disambig-show-intents.png)
 
