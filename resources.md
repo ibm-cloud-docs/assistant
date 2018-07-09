@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-23"
+lastupdated: "2018-07-09"
 
 ---
 
@@ -70,9 +70,7 @@ Videos are embedded in the following pages of the product documentation.
 
 ## IBM Watson Academy
 
-- [IBM Watson Conversation courses ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.watson-academy.info/course/index.php?categoryid=29){: new_window}
-
-  **Note**: No {{site.data.keyword.conversationshort}} courses are available yet. Many of the principles covered in these courses apply to conversational skills, and so continue to be useful.
+- [{{site.data.keyword.conversationshort}} Foundations ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.watson-academy.info/course/view.php?id=273){: new_window}
 
 ## Simon Burns on Medium
 
