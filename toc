@@ -30,6 +30,7 @@ Watson Assistant Beta
         dialog-overview.md
         dialog-runtime.md
         dialog-build.md
+        dialog-tips.md
         dialog-slots.md
         dialog-multimedia.md
         dialog-actions.md

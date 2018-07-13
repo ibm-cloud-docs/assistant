@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-05"
+lastupdated: "2018-07-13"
 
 ---
 
@@ -128,7 +128,6 @@ Learn more:
 - [How context variables are processed](#context-processing)
 - [Order of operation](#context-order-of-ops)
 - [Adding context variables to a node with slots](#context-var-slots)
-- [Storing pattern entity values](#context-pattern-entities)
 
 ### Passing context from the application
 {: #context-from-app}
@@ -310,89 +309,6 @@ For more information about slots, see [Gathering information with slots](dialog-
       **Note**: There is currently no way to use the context editor to define context variables that are set during this phase of dialog node evaluation. You must use the JSON editor instead. For more information about using the JSON editor, see [Context variables in the JSON editor](dialog-runtime.html#context-var-json).
 
       ![Shows how to access the JSON editor associated with a slot condition.](images/contextvar-json-slot-condition.png)
-
-### Storing pattern entity values
-{: #context-pattern-entities}
-
-To store the value of a pattern entity in a context variable, append .literal to the entity name. Using this syntax ensures that the exact span of text from user input that matched the specified pattern is stored in the variable.
-
-| Variable   | Value               |
-|------------|---------------------|
-| email      | <? @email.literal ?> |
-
-To store the text from a single group in a pattern entity with groups defined, specify the array number of the group that you want to store. For example, assume that the entity pattern is defined as follows for the @phone_number entity. (Remember, the parentheses denote pattern groups):
-
-`\b((958)|(555))-(\d{3})-(\d{4})\b`
-
-To store only the area code from the phone number that is specified in user input, you can use the following syntax:
-
-| Variable       | Value                         |
-|----------------|-------------------------------|
-| area_code      | <? @phone_number.groups[1] ?> |
-
-The groups are delimited by the regular expression that is used to define the group pattern. For example, if the user input that matches the pattern defined in the entity `@phone_number` is: `958-234-3456`, then the following groups are created:
-
-| Group number | Regex engine value  | Dialog value   | Explanation |
-|--------------|---------------------|----------------|-------------|
-| groups[0]    | `958-234-3456`      | `958-234-3456` | The first group is always the full matching string. |
-| groups[1]    | `((958)`l`(555))`   | `958`          | String that matches the regex for the first defined group, which is `((958)`l`(555))`. |
-| groups[2]    | `(958)`             | `958`          | Match against the group that is included as the first operand in the OR expression `((958)`l`(555))` |
-| groups[3]    | `(555)`             | `null`         | No match against the group that is included as the second operand in the OR expression `((958)`l`(555))` |
-| groups[4]    | `(\d{3})`           | `234`          | String that matches the regular expression that is defined for the group. |
-| groups[5]    | `(\d{4})`           | `3456`         | String that matches the regular expression that is defined for the group. |
-{: caption="Group details" caption-side="top"}
-
-To help you decipher which group number to use to capture the section of input you are interested in, you can extract information about all the groups at once. Use the following syntax to create a context variable that returns an array of all the grouped pattern entity matches:
-
-| Variable                 | Value                      |
-|--------------------------|----------------------------|
-| array_of_matched_groups  | <? @phone_number.groups ?> |
-
-Use the "Try it out" pane to enter some test phone number values. For the input `958-123-2345`, this expression sets `$array_of_matched_groups` to `["958-123-2345","958","958",null,"123","2345"]`.
-
-You can then count each value in the array starting with 0 to get the group number for it.
-
-| Array element value | Array element number |
-|---------------------|----------------------|
-| "958-123-2345"      | 0 |
-| "958"               | 1 |
-| "958"               | 2 |
-| null                | 3 |
-| "123"               | 4 |
-| "2345"              | 5 |
-{: caption="Array elements" caption-side="top"}
-
-From the result, you can determine that, to capture the last four digits of the phone number, you need group #5, for example.
-
-To return the JSONArray structure that is created to represent the grouped pattern entity, use the following syntax:
-
-| Variable             | Value                           |
-|----------------------|---------------------------------|
-| json_matched_groups  | <? @phone_number.groups_json ?> |
-
-This expression sets `$json_matched_groups` to the following JSON array:
-
-```json
-[
-  {"group": "group_0","location": [0, 12]},
-  {"group": "group_1","location": [0, 3]},
-  {"group": "group_2","location": [0, 3]},
-  {"group": "group_3"},
-  {"group": "group_4","location": [4, 7]},
-  {"group": "group_5","location": [8, 12]}
-]
-```
-{: codeblock}
-
-**Note**: `location` is a property of an entity that uses a zero-based character offset to indicate where the detected entity value begins and ends in the input text.
-
-If you expect two phone numbers to be supplied in the input, then you can check for two phone numbers. If present, use the following syntax to capture the area code of the second number, for example.
-
-| Variable         | Value                                       |
-|------------------|---------------------------------------------|
-| second_areacode  | <? entities['phone_number'][1].groups[1] ?> |
-
-If the input is `I want to change my phone number from 958-234-3456 to 555-456-5678`, then `$second_areacode` equals `555`.
 
 ## Context variables in the JSON editor
 {: #context-var-json}
@@ -952,7 +868,7 @@ To test disambiguation, complete the following steps:
 
 1.  It might be that the confidence scores for the nodes are not as close in value as you thought. You can check the confidence scores that are returned for the node conditions. How to test depends on the node condition type.
 
-    - To test confidence scores for nodes that condition on intents, you can temporarily add `Intents: <? intents ?>` to the end of your node response.
+    - To test confidence scores for nodes that condition on intents, you can temporarily add `<? intents ?>` to the end of your node response.
 
       This SpEL expression shows the intents that were detected in the user input as an array. The array includes the intent name and the level of confidence that the service has that the intent reflects the user's intended goal.
 
@@ -964,7 +880,7 @@ To test disambiguation, complete the following steps:
 
 1.  Enter the test utterance into the "Try it out" pane again.
 
-    If you added the `Intents: <? intents ?>` expression to the response, then the text returned includes a list of the intents that the service recognized in the test utterance, and includes the confidence score for each one.
+    If you added the `<? intents ?>` expression to the response, then the text returned includes a list of the intents that the service recognized in the test utterance, and includes the confidence score for each one.
 
     ![Service returns an array of intents, including Customer_Care_Cancel_Account and eCommerce_Cancel_Product_Order.](images/disambig-show-intents.png)
 
