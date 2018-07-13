@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-07-13"
 
 ---
 
@@ -77,9 +77,10 @@ You can disrupt the standard first-to-last flow in the following ways:
 A node condition determines whether that node is used in the conversation. Response conditions determine which response to return to a user.
 
 - [Condition artifacts](dialog-overview.html#condition-artifacts)
-- [Condition syntax details](dialog-overview.html#condition-syntax)
-- [Condition usage tips](dialog-overview.html#condition-tips)
 - [Special conditions](dialog-overview.html#special-conditions)
+- [Condition syntax details](dialog-overview.html#condition-syntax)
+
+For tips on performing more advanced actions in conditions, see [Condition usage tips](dialog-tips.html#condition-usage-tips).
 
 ### Condition artifacts
 {: #condition-artifacts}
@@ -119,7 +120,7 @@ You can use one or more of the following artifacts in any combination to define 
 
 | Condition syntax     | Description |
 |----------------------|-------------|
-| `anything_else`      | You can use this condition at the end of a dialog, to be processed when the user input does not match any other dialog nodes. The **Anything else** node is triggered by this condition. Do not use in dialog branches where you want digressions away to occur. |
+| `anything_else`      | You can use this condition at the end of a dialog, to be processed when the user input does not match any other dialog nodes. The **Anything else** node is triggered by this condition. |
 | `conversation_start` | Like **welcome**, this condition is evaluated as true during the first dialog turn. Unlike **welcome**, it is true whether or not the initial request from the application contains user input. A node with the **conversation_start** condition can be used to initialize context variables or perform other tasks at the beginning of the dialog. |
 | `false`              | This condition is always evaluated to false. You might use this at the start of a branch that is under development, to prevent it from being used, or as the condition for a node that provides a common function and is used only as the target of a **Jump to** action. |
 | `irrelevant`         | This condition will evaluate to true if the user’s input is determined to be irrelevant by the {{site.data.keyword.conversationshort}} service. |
@@ -137,41 +138,6 @@ Use one of these syntax options to create valid expressions in conditions:
 - Spring Expression (SpEL) language, which is an expression language that supports querying and manipulating an object graph at run time. See [Spring Expression Language (SpEL) language ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/expressions.html){: new_window} for more information.
 
 You can use regular expressions to check for values to condition against.  To find a matching string, for example, you can use the `String.find` method. See  [Methods](dialog-methods.html) for more details.
-
-### Condition usage tips
-{: #condition-tips}
-
-- **Checking for values with special characters**: If you want to check whether an entity or context variable contains a value, and the value includes a special character, such as an apostrophe ('), then you must surround the value that you want to check with parentheses. For example, to check if an entity or context variable contains the name `O'Reilly`, you must surround the name with parentheses.
-
-  `@person:(O'Reilly)` and `$person:(O'Reilly)`
-
-  The service converts these shorthand references into these full SpEL expressions:
-
-  `entities['person']?.contains('O''Reilly')` and `context['person'] == 'O''Reilly'`
-
-  **Note**: SpEL uses a second apostrophe to escape the single apostrophe in the name.
-
-- **Checking for multiple values**: If you want to check for more than one value, you can create a condition that uses OR operators (`||`) to list multiple values in the condition. For example, to define a condition that is true if the context variable `$state` contains the abbreviations for Massachusetts, Maine, or New Hampshire, you can use this expression:
-
-  `$state:MA || $state:ME || $state:NH`
-
-- **Checking for number values**: When using numeric variables, make sure the variables have values. If a variable does not have a value, it is treated as having a null value (0) in a numeric comparison.
-
-  For example, if you check the value of a variable with the condition `@price < 100`, and the @price entity is null, then the condition is evaluated as `true` because 0 is less than 100, even though the price was never set. To prevent the checking of null variables, use a condition such as `@price AND @price < 100`. If `@price` has no value, then this condition correctly returns false.
-
-- **Checking for intents with a specific intent name pattern**: You can use a condition that looks for intents that match a pattern. For example, to find any detected intents with intent names that start with 'User_', you can use a syntax like this in the condition:
-
-  `intents[0].intent.startsWith("User_")`
-
-  However, when you do so, all of the detected intents are considered, even those with a confidence lower than 0.2. Also check that intents which are considered irrelevant by Watson based on their confidence score are not returned. To do so, change the condition as follows:
-
-  `!irrelevant && intents[0].intent.startsWith("User_")`
-
-- **How fuzzy matching impacts entity recognition**: If you use an entity as the condition and fuzzy matching is enabled, then `@entity_name` evaluates to true only if the confidence of the match is greater than 30%. That is, only if `@entity_name.confidence > .3`.
-
-- **Handling multiple entities in input**: If you want to evaluate only the value of the first detected instance of an entity type, you can use the syntax  `@entity == 'specific-value'` instead of the `@entity:(specific-value)` format.
-
-  For example, when you use `@appliance == 'air conditioner'`, you are evaluating only the value of the first detected `@appliance` entity. But, using `@appliance:(air conditioner)` gets expanded to `entity['appliance'].contains('air conditioner')`, which matches whenever there is at least one `@appliance` entity of value 'air conditioner' detected in the user input.
 
 ## Responses
 {: #responses}
@@ -209,7 +175,7 @@ If you include one of these special characters in a text response, escape it by 
 | `#` | Intent | `We are the \#1 seller of lobster rolls in Maine.` |
 {: caption="Special characters to escape in responses" caption-side="top"}
 
-You can include a hypertext link in a response by using HTML syntax. For example: `Contact us at <a href="https://www.ibm.com>ibm.com</a>.` The HTML is rendered properly in the "Try it out" pane. However, be sure to test that any integration channels you use to deploy the assistant can render HTML syntax properly.
+You can include a hypertext link in a response by using HTML syntax. For example: `Contact us at <a href="https://www.ibm.com">ibm.com</a>.` The HTML is rendered properly in the "Try it out" pane. However, be sure to test that any integration channels you use to deploy the assistant can render HTML syntax properly.
 
 Learn more about the following tasks:
 
@@ -341,7 +307,7 @@ In addition to the default response type of **Text**, for which you specify the 
 
 - **Connect to human agent**: The dialog calls a service that you designate, typically a service that manages human agent support ticket queues, to pass off the conversation to a person. You can optionally include a message that summarizes the user's issue to be provided to the human agent. It is the responsibility of the external service to display a message that is shown to the user that explains that the conversation is being transferred. The dialog does not manage that communication itself. The dialog transfer does not occur when you are testing nodes with this response type in the "Try it out" pane. You must access a node that uses this response type from a test deployment to see how your users will experience it.
 
-  **Note**: This response type is supported with custom application integrations only.
+  ![Premium plan only](images/premium0.png)  This response type is only available for Premium plans.
 
 - **Image**: Embeds an image into the response. The source image file must be hosted somewhere and have a URL that you can use to reference it.
 - **Option**: Adds a list of one or more options. When a user clicks one of the options, an associated user input value is sent to the service. How options are rendered can differ depending on where you deploy the dialog. For example, in one integration channel the options might be displayed as clickable buttons, but in another they might be displayed as a dropdown list.
@@ -356,7 +322,7 @@ To add a rich response, complete the following steps:
 
     - **Connect to human agent**. You can optionally add a message to share with the human agent to whom the conversation is transferred.
 
-        **Note**: This response type is only supported with custom application integrations. You must program the client application to recognize when this respones type is triggered.
+      ![Premium plan only](images/premium0.png)  This response type is only available for Premium plans.
     - **Image**. Add the full URL to the hosted image file into the **Image source** field. The image must be in .jpg, .gif, or .png format.
 
         For example: `https://www.example.com/assets/common/logo.png`.
