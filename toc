@@ -17,13 +17,8 @@ Watson Assistant Beta
     {: .navgroup id="howto"}
     create-assistant.md
     create-convo-skill.md
-
-    {: .topicgroup}
-    Defining intents and entities
-        intents-entities.md
-        intents.md
-        entities.md
-        catalog.md
+    catalog.md
+    intents.md
 
     {: .topicgroup}
     Building a dialog
@@ -34,6 +29,8 @@ Watson Assistant Beta
         dialog-slots.md
         dialog-multimedia.md
         dialog-actions.md
+
+    entities.md
 
     {: .topicgroup}
     Integrations
