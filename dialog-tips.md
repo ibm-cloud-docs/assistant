@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-13"
+lastupdated: "2018-07-16"
 
 ---
 
@@ -24,12 +24,9 @@ lastupdated: "2018-07-13"
 Learn how to approach building a dialog and get some tips on completing more complex steps.
 {: shortdesc}
 
-## Dialog building tips
-{: #dialog-plan}
-
 Review these tips from experienced dialog designers.
 
-### Planning the overall dialog
+## Planning the overall dialog
 {: #tips-plan}
 
 - Plan out the design of the dialog that you want to build before you add a single dialog node in the tool. Sketch it out on paper, if necessary.
@@ -40,22 +37,22 @@ Review these tips from experienced dialog designers.
 - Never misrepresent the assistant as being a human. If users believe the assistant is a person, then find out it's not, they are likely to distrust it.
 - Not everything has to be a conversation. Sometimes a web form works better.
 
-### Adding nodes
+## Adding nodes
 {: #tips-nodes}
 
 - Add node descriptions.
 
   You know what the node does right now, but months from now you might not. Your future self and any team members will thank you for adding a description. And descriptions display in the logs, which can help you debug a conversation later.
-- To gather the information that is required to perform a task, try using a node with slots instead of a bunch of separate nodes to elicit the information from users. See [Gathering information with slots](dialog-slots.html#dialog-slots).
+- To gather the information that is required to perform a task, try using a node with slots instead of a bunch of separate nodes to elicit information from users. See [Gathering information with slots](dialog-slots.html#dialog-slots).
 - For a complex process flow, tell users about any information they will need to provide at the start of the process.
 - Understand how the service travels through the dialog tree and the impact that folders, branches, jump-tos, and digressions have on the route. See [Dialog flow](dialog-overview.html#dialog-flow).
 - Do not add jump-tos everywhere. They increase the complexity of the dialog flow, and make it harder to debug the dialog later.
 - To jump to a node in the same branch as the current node, use *Skip user input* instead of a *Jump-to*.
 
-  This choice prevents you from having to edit the current node's settings when you need to remove or reorder the child nodes being jumped to. See [Defining what to do next](dialog-overview.html#jump-to).
+  This choice prevents you from having to edit the current node's settings when you remove or reorder the child nodes being jumped to. See [Defining what to do next](dialog-overview.html#jump-to).
 - Before you enable digressions away from a node, test the most common user scenarios. And be sure that likely digressed-to nodes are configured to return. See [Digressions](dialog-runtime.html#digressions).
 
-### Adding responses
+## Adding responses
 {: #tips-responses}
 
 - Keep answers short and useful.
@@ -68,7 +65,7 @@ Review these tips from experienced dialog designers.
 - Word your responses carefully. You can change how someone reacts to your system based simply on how you phrase a response. Changing one line of text can prevent you from having to write multiple lines of code to implement a complex programmatic solution.
 - Back up your workspace frequently. See [Exporting and copying workspace](configure-workspace.html#exporting-and-copying-workspaces).
 
-### Tips for capturing information from user input
+## Tips for capturing information from user input
 {: #user-input-tips}
 
 It can be difficult to know the syntax to use in your dialog node to accurately capture the information you want to find in the user input. Here are some approaches you can use to address common goals.
@@ -83,13 +80,13 @@ It can be difficult to know the syntax to use in your dialog node to accurately 
 
   See [Expression language methods for String](dialog-methods.html#strings) to learn about more methods you can use.
 
-- **Dealing with multiple intents**: A user enters input that expresses a wish to complete two separate tasks. `I want to open a savings account and apply for a credit card.` How does the dialog recognize and address both of them? See the [Compound questions](https://sodoherty.ai/2017/02/06/compound-questions/){: new_window} entry from Simon O'Doherty's blog for strategies you can try. (Simon is a developer on the **{{site.data.keyword.conversationshort}} team.)
+- **Dealing with multiple intents**: A user enters input that expresses a wish to complete two separate tasks. `I want to open a savings account and apply for a credit card.` How does the dialog recognize and address both of them? See the [Compound questions](https://sodoherty.ai/2017/02/06/compound-questions/){: new_window} entry from Simon O'Doherty's blog for strategies you can try. (Simon is a developer on the {{site.data.keyword.conversationshort}} team.)
 
 - **Handling multiple entities in input**: If you want to evaluate only the value of the first detected instance of an entity type, you can use the syntax  `@entity == 'specific-value'` instead of the `@entity:(specific-value)` format.
 
   For example, when you use `@appliance == 'air conditioner'`, you are evaluating only the value of the first detected `@appliance` entity. But, using `@appliance:(air conditioner)` gets expanded to `entity['appliance'].contains('air conditioner')`, which matches whenever there is at least one `@appliance` entity of value 'air conditioner' detected in the user input.
 
-### Condition usage tips
+## Condition usage tips
 {: #condition-usage-tips}
 
 - **Checking for values with special characters**: If you want to check whether an entity or context variable contains a value, and the value includes a special character, such as an apostrophe ('), then you must surround the value that you want to check with parentheses. For example, to check if an entity or context variable contains the name `O'Reilly`, you must surround the name with parentheses.
@@ -120,7 +117,7 @@ It can be difficult to know the syntax to use in your dialog node to accurately 
 
 - **How fuzzy matching impacts entity recognition**: If you use an entity as the condition and fuzzy matching is enabled, then `@entity_name` evaluates to true only if the confidence of the match is greater than 30%. That is, only if `@entity_name.confidence > .3`.
 
-### Storing and recognizing entity pattern groups in input
+## Storing and recognizing entity pattern groups in input
 {: #get-pattern-groups}
 
 To store the value of a pattern entity in a context variable, append .literal to the entity name. Using this syntax ensures that the exact span of text from user input that matched the specified pattern is stored in the variable.
