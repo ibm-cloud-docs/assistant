@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-13"
+lastupdated: "2018-07-18"
 
 ---
 
@@ -796,7 +796,7 @@ Follow the [tutorial](tutorial-digressions.html) to import a workspace that has 
 
   For example, if the node with slots collects the information required to fill out an insurance claim, then you might want to add handlers that address common questions about insurance. However, for questions about how to get help, or your stores locations, or the history of your company, use a root level node.
 
-## Disambiguation
+## Disambiguation  ![Premium plan only](images/premium0.png)
 {: #disambiguation}
 
 When you enable disambiguation, you instruct the service to ask users for help when it finds that more than one dialog node can respond to their input. Instead of guessing which node to process, your assistant shares a list of the top node options with the user, and asks the user to pick the right one.
@@ -823,13 +823,13 @@ If the user input is `i must cancel it today`, then the following intents might 
 `{"intent":"Customer_Care_Store_Hours","confidence":0.2550420880317688},`
 `...]`
 
-The service is `.6618281841278076` (66%) confident that the user goal matches the `#Customer_Care_Cancel_Account` intent. If any other intent has a confidence score that is greater than 55% of 66%, then it fits the criteria for being a disambiguation candidate.
+The service is `0.6618281841278076` (66%) confident that the user goal matches the `#Customer_Care_Cancel_Account` intent. If any other intent has a confidence score that is greater than 55% of 66%, then it fits the criteria for being a disambiguation candidate.
 
-`.66 x .55 = .36`
+`0.66 x 0.55 = 0.36`
 
-Intents with a score that is greater than .36 are eligible.
+Intents with a score that is greater than 0.36 are eligible.
 
-In our example, the `#eCommerce_Cancel_Product_Order` intent is over the threshold, with a confidence score of `.4330700159072876`.
+In our example, the `#eCommerce_Cancel_Product_Order` intent is over the threshold, with a confidence score of `0.4330700159072876`.
 
 When the user input is `i must cancel it today`, both dialog nodes will be considered viable candidates to respond. To determine which dialog node to process, the assistant asks the user to pick one. And to help the user choose between them, the assistant provides a short summary of what each node does. The summary text it displays is extracted directly from the *external node name* information that was specified for each node.
 
@@ -872,9 +872,7 @@ To test disambiguation, complete the following steps:
 
       This SpEL expression shows the intents that were detected in the user input as an array. The array includes the intent name and the level of confidence that the service has that the intent reflects the user's intended goal.
 
-    - To see confidence score information for nodes with other types of conditions, you must inspect the API response.
-
-      Use the developer tools provided by your web browser to do so. From Chrome, for example, open the Network tool. In the Name section, click the message call for your test utterance, and then click the Response column to see the API response body. It lists the intents and entities that were recognized in the user input with their confidence scores, and the values of context variables at the time of the call.
+    - To see confidence score information for nodes with other types of conditions, you must inspect the API response. See [Viewing API call details](dialog-tips.html#inspect-api).
 
 1.  Temporarily remove the description you added to the *external node name* field for at least one of the nodes that you anticipate will be listed as a disambiguation option.
 
