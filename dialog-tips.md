@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-18"
+lastupdated: "2018-07-20"
 
 ---
 
@@ -203,8 +203,8 @@ If the input is `I want to change my phone number from 958-234-3456 to 555-456-5
 ## Viewing API call details
 {: #inspect-api}
 
-As you test your dialog with the "Try it out" pane, you might want to know what the underlying API calls look like that are being sent to the service. You can use the developer tools provided by your web browser to inspect them. 
+As you test your dialog with the "Try it out" pane, you might want to know what the underlying API calls look like that are being returned from the service. You can use the developer tools provided by your web browser to inspect them.
 
-From Chrome, for example, open the Network tool. In the Name section, click the message call for your test utterance, and then click the Response column to see the API response body. It lists the intents and entities that were recognized in the user input with their confidence scores, and the values of context variables at the time of the call.
+From Chrome, for example, open the Developer tools. Click the Network tool. The Name section lists multiple API calls. Click the message call associated with your test utterance, and then click the Response column to see the API response body. It lists the intents and entities that were recognized in the user input with their confidence scores, and the values of context variables at the time of the call. To view the response body in structured format, click the Preview column.
 
 ![Shows how to view the API call details by using Chrome web browser developer tools.](images/api-browser-dev.png)
