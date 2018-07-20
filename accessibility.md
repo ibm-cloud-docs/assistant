@@ -20,7 +20,7 @@ lastupdated: "2018-07-20"
 # Accessibility
 {: #accessibility}
 
-BM strives to provide products with usable access for everyone, regardless of age or ability.
+IBM strives to provide products with usable access for everyone, regardless of age or ability.
 {: shortdesc}
 
 The {{site.data.keyword.conversationfull}} tool uses standard Windows navigation keys.
