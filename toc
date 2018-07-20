@@ -57,6 +57,7 @@ Watson Assistant Beta
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
+    accessibility.md
     dialog-methods.md
     expression-language.md
     filter-reference.md
