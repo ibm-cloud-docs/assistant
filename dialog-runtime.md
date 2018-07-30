@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-18"
+lastupdated: "2018-07-30"
 
 ---
 
@@ -796,18 +796,22 @@ Follow the [tutorial](tutorial-digressions.html) to import a workspace that has 
 
   For example, if the node with slots collects the information required to fill out an insurance claim, then you might want to add handlers that address common questions about insurance. However, for questions about how to get help, or your stores locations, or the history of your company, use a root level node.
 
-## Disambiguation  ![Premium plan only](images/premium0.png)
+## Disambiguation ![Premium plan only](images/premium0.png)
 {: #disambiguation}
 
 When you enable disambiguation, you instruct the service to ask users for help when it finds that more than one dialog node can respond to their input. Instead of guessing which node to process, your assistant shares a list of the top node options with the user, and asks the user to pick the right one.
 
 ![Shows a sample conversation between a user and the assistant, where the assistant asks for clarification from the user.](images/disambig-demo.png)
 
-If enabled, disambiguation is triggered when the following conditions are met:
+If enabled, disambiguation is not triggered unless the following conditions are met:
 
-- The confidence score of runner-up node conditions is greater than 55% of the confidence score of the top node condition.
-- The confidence score of the top node condition is above 0.2.
-- Two or more of the candidate nodes have text in their *external node name* fields.
+- The confidence score of one or more of the runner-up intents detected in the user input is greater than 55% of the confidence score of the top intent.
+- The confidence score of the top intent is above 0.2.
+
+Even when these conditions are met, disambiguation does not occur unless two or more independent nodes in your dialog meet the following criteria:
+
+- The node condition includes one of the intents that triggered disambiguation. Or the node condition otherwise evaluates to true. For example, if the node checks for an entity type and the entity is mentioned in the user input, it is eligible.
+- There is text in the node's *external node name* field.
 
 For example, you have a dialog that has two nodes with intent conditions that address cancellation requests. The conditions are:
 
@@ -844,7 +848,9 @@ To enable disambiguation, complete the following steps:
 1.  Click **Disambiguation**.
 1.  In the *Enable disambiguation* section, switch the toggle to **On**.
 1.  In the prompt message field, add text to show before the list of dialog node options. For example, *What do you want to do?*
-1.  In the none of the above message field, add text to display as an additional option that users can pick if none of the other dialog nodes reflect what the user wants to do. Keep the message short, so it displays inline with the other options. For example, *None of the above*.
+1.  **Optional**: In the none of the above message field, add text to display as an additional option that users can pick if none of the other dialog nodes reflect what the user wants to do. Keep the message short, so it displays inline with the other options. For example, *None of the above*.
+
+    If a user chooses this option, it is equivalent to the user submitting an empty user input. This action typically triggers the anything else node in your dialog tree.
 1.  Click **Close**
 1.  Decide which dialog nodes you want the assistant to ask for help with.
 
@@ -853,7 +859,7 @@ To enable disambiguation, complete the following steps:
     For each node that you want to opt in to disambiguation, complete the following steps:
 
     1.  Click to open the node in edit view.
-    1.  In the *external node name* field, describe the user task that this dialog node is designed to handle. For example, *Open an account*.
+    1.  In the *external node name* field, describe the user task that this dialog node is designed to handle. For example, *Cancel an account*.
 
         ![Shows where to add the external node name information in the node edit view.](images/disambig-node-purpose.png)
 
@@ -866,13 +872,17 @@ To test disambiguation, complete the following steps:
 
 1.  If the response does not contain a list of dialog node options for you to choose from as expected, first check that you added summary information to the external node name field for each of the nodes.
 
-1.  It might be that the confidence scores for the nodes are not as close in value as you thought. You can check the confidence scores that are returned for the node conditions. How to test depends on the node condition type.
+1.  If disambiguation is still not triggered, it might be that the confidence scores for the nodes are not as close in value as you thought. You can get information about the intents, entities, and other properties that are returned for certain user inputs.
 
-    - To test confidence scores for nodes that condition on intents, you can temporarily add `<? intents ?>` to the end of your node response.
+    - To see the confidence scores of the intents that were detected in user input, temporarily add `<? intents ?>` to the end of the node response for a node that you know will be triggered.
 
       This SpEL expression shows the intents that were detected in the user input as an array. The array includes the intent name and the level of confidence that the service has that the intent reflects the user's intended goal.
 
-    - To see confidence score information for nodes with other types of conditions, you must inspect the API response. See [Viewing API call details](dialog-tips.html#inspect-api).
+    - To see which entities, if any, were detected in the user input, you can temporarily replace the current response with a single text response that contains the SpEL expression, `<? entities ?>`.
+
+      This SpEL expression shows the entities that were detected in the user input as an array. The array includes the entity name, location of the entity mention within the user input string, the entity mention string, and the level of confidence that the service has that the term is a mention of the entity type specified.
+
+    - To see details for all of the artifacts at once, including other properties, such as the value of a given context variable at the time of the call, you can inspect the entire API response. See [Viewing API call details](dialog-tips.html#inspect-api).
 
 1.  Temporarily remove the description you added to the *external node name* field for at least one of the nodes that you anticipate will be listed as a disambiguation option.
 
@@ -882,4 +892,4 @@ To test disambiguation, complete the following steps:
 
     ![Service returns an array of intents, including Customer_Care_Cancel_Account and eCommerce_Cancel_Product_Order.](images/disambig-show-intents.png)
 
-After you finish testing, remove any SpEL expressions that you added from the node responses, and repopulate any *external node name* fields from which you removed text.
+After you finish testing, remove any SpEL expressions that you appended to node responses, or add back any original responses that you replaced with expressions, and repopulate any *external node name* fields from which you removed text.
