@@ -848,7 +848,9 @@ To enable disambiguation, complete the following steps:
 1.  Click **Disambiguation**.
 1.  In the *Enable disambiguation* section, switch the toggle to **On**.
 1.  In the prompt message field, add text to show before the list of dialog node options. For example, *What do you want to do?*
-1.  In the none of the above message field, add text to display as an additional option that users can pick if none of the other dialog nodes reflect what the user wants to do. Keep the message short, so it displays inline with the other options. For example, *None of the above*.
+1.  **Optional**: In the none of the above message field, add text to display as an additional option that users can pick if none of the other dialog nodes reflect what the user wants to do. Keep the message short, so it displays inline with the other options. For example, *None of the above*.
+
+    If a user chooses this option, it is equivalent to the user submitting an empty user input. This action typically triggers the anything else node in your dialog tree.
 1.  Click **Close**
 1.  Decide which dialog nodes you want the assistant to ask for help with.
 
@@ -857,7 +859,7 @@ To enable disambiguation, complete the following steps:
     For each node that you want to opt in to disambiguation, complete the following steps:
 
     1.  Click to open the node in edit view.
-    1.  In the *external node name* field, describe the user task that this dialog node is designed to handle. For example, *Open an account*.
+    1.  In the *external node name* field, describe the user task that this dialog node is designed to handle. For example, *Cancel an account*.
 
         ![Shows where to add the external node name information in the node edit view.](images/disambig-node-purpose.png)
 
