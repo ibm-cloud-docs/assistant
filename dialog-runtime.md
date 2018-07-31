@@ -842,11 +842,11 @@ When the user input is `i must cancel it today`, both dialog nodes will be consi
 
 ![Service prompts the user to choose from a list of dialog options, including Cancel an account, Cancel a product order, and None of the above.](images/disambig-tryitout.png)
 
-Notice that the service recognizes the term `today` in the user input as a date, as a mention of the `@sys-date` entity. If your dialog tree contains a node that condition on the `@sys-date` entity, then it is also included in the list of disambiguation choices.
+Notice that the service recognizes the term `today` in the user input as a date, a mention of the `@sys-date` entity. If your dialog tree contains a node that condition on the `@sys-date` entity, then it is also included in the list of disambiguation choices.
 
 ![Service prompts the user to choose from a list of dialog options, including Capture date information.](images/disambig-tryitout-date.png)
 
-It is not only nodes that condition on intents that can be included in a disambiguation options list.
+It is not only nodes that condition on intents that can be included in the disambiguation options list.
 
 ### Enabling disambiguation
 {: #disambiguation-enable}
@@ -857,9 +857,20 @@ To enable disambiguation, complete the following steps:
 1.  Click **Disambiguation**.
 1.  In the *Enable disambiguation* section, switch the toggle to **On**.
 1.  In the prompt message field, add text to show before the list of dialog node options. For example, *What do you want to do?*
-1.  **Optional**: In the none of the above message field, add text to display as an additional option that users can pick if none of the other dialog nodes reflect what the user wants to do. Keep the message short, so it displays inline with the other options. For example, *None of the above*.
+1.  **Optional**: In the none of the above message field, add text to display as an additional option that users can pick if none of the other dialog nodes reflect what the user wants to do. Keep the message short, so it displays inline with the other options. For example, *None of the above*. The message must be less than 512 characters.
 
-    If a user chooses this option, it is equivalent to the user submitting an empty user input. This action typically triggers the anything else node in your dialog tree.
+    If a user chooses this option, the service strips the intents that were recognized in the user input from the message and submits it. This action typically triggers the anything else node in your dialog tree.
+
+    To customize the response that is returned in this situation, add a root node with a condition that checks for an input with no recognized intents (the intents were stripped from the input, remember) and contains a `suggestion_id` property. A `suggestion_id` property is added by the service when disambiguation is triggered. Add a root node with the following condition:
+    {: tip}
+
+      ```json
+      intents.size()==0 && input.suggestion_id
+      ```
+      {: screen}
+
+    This condition is met only by input that has triggered a set of disambiguation options and the user has indicated that none of them match the user's actual goal.
+
 1.  Click **Close**
 1.  Decide which dialog nodes you want the assistant to ask for help with.
 
