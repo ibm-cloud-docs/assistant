@@ -813,6 +813,9 @@ Even when these conditions are met, disambiguation does not occur unless two or 
 - The node condition includes one of the intents that triggered disambiguation. Or the node condition otherwise evaluates to true. For example, if the node checks for an entity type and the entity is mentioned in the user input, it is eligible.
 - There is text in the node's *external node name* field.
 
+### Disambiguation example
+{: #disambig-example}
+
 For example, you have a dialog that has two nodes with intent conditions that address cancellation requests. The conditions are:
 
 - eCommerce_Cancel_Product_Order
@@ -839,6 +842,12 @@ When the user input is `i must cancel it today`, both dialog nodes will be consi
 
 ![Service prompts the user to choose from a list of dialog options, including Cancel an account, Cancel a product order, and None of the above.](images/disambig-tryitout.png)
 
+Notice that the service recognizes the term `today` in the user input as a date, a mention of the `@sys-date` entity. If your dialog tree contains a node that condition on the `@sys-date` entity, then it is also included in the list of disambiguation choices.
+
+![Service prompts the user to choose from a list of dialog options, including Capture date information.](images/disambig-tryitout-date.png)
+
+It is not only nodes that condition on intents that can be included in the disambiguation options list.
+
 ### Enabling disambiguation
 {: #disambiguation-enable}
 
@@ -848,18 +857,27 @@ To enable disambiguation, complete the following steps:
 1.  Click **Disambiguation**.
 1.  In the *Enable disambiguation* section, switch the toggle to **On**.
 1.  In the prompt message field, add text to show before the list of dialog node options. For example, *What do you want to do?*
-1.  **Optional**: In the none of the above message field, add text to display as an additional option that users can pick if none of the other dialog nodes reflect what the user wants to do. Keep the message short, so it displays inline with the other options. For example, *None of the above*.
+1.  **Optional**: In the none of the above message field, add text to display as an additional option that users can pick if none of the other dialog nodes reflect what the user wants to do. Keep the message short, so it displays inline with the other options. For example, *None of the above*. The message must be less than 512 characters.
 
-    If a user chooses this option, it is equivalent to the user submitting an empty user input. This action typically triggers the anything else node in your dialog tree.
+    If a user chooses this option, the service strips the intents that were recognized in the user input from the message and submits it. This action typically triggers the anything else node in your dialog tree.
+
+    To customize the response that is returned in this situation, add a root node with a condition that checks for an input with no recognized intents (the intents were stripped from the input, remember) and contains a `suggestion_id` property. A `suggestion_id` property is added by the service when disambiguation is triggered. Add a root node with the following condition:
+    {: tip}
+
+      ```json
+      intents.size()==0 && input.suggestion_id
+      ```
+      {: screen}
+
+    This condition is met only by input that has triggered a set of disambiguation options and the user has indicated that none of them match the user's actual goal.
+
 1.  Click **Close**
 1.  Decide which dialog nodes you want the assistant to ask for help with.
 
     - You can pick nodes at any level of the tree hierarchy.
     - You can pick nodes that condition on intents, entities, special conditions, context variables, or any combination of these values.
 
-      **Note**: It is easiest to predict the behavior of nodes that condition on intents. If the service is highly confident that the intent that a node conditions on matches the user's intent, the node is included as a disambiguation option.
-
-      Nodes with boolean conditions, that are either true or false, can be less predictable. A node that conditions on an entity type, for example, is always included as a disambiguation option if the entity is mentioned in the input that triggers disambiguation. Avoid enabling disambiguation on nodes that check for common entities, such as `@yes`. Otherwise, the node might get included as a disambiguation option in cases where it is not a valid option.
+    See [Choosing nodes](#choose-nodes) for tips.
 
     For each node that you want to opt in to disambiguation, complete the following steps:
 
@@ -867,6 +885,25 @@ To enable disambiguation, complete the following steps:
     1.  In the *external node name* field, describe the user task that this dialog node is designed to handle. For example, *Cancel an account*.
 
         ![Shows where to add the external node name information in the node edit view.](images/disambig-node-purpose.png)
+
+### Choosing nodes
+{: #choose-nodes}
+
+Choose nodes that serve as the root of a distinct branch of the dialog to be disambiguation choices. The node can be a child of another node. But, if it conditions on some distinct value or values that distinguish it from everything else, it is probably a good candidate for disambiguation.
+
+Keep in mind:
+
+- How the disambiguation process will treat nodes that condition on intents is easier to predict than nodes that condition on other values. 
+
+  If the service is confident that the node's intent condition matches the user's intent (and meets the threshold levels explained earlier), then the node is included as a disambiguation option.
+- Nodes with boolean conditions, conditions that evaluate to either true or false, can be less predictable.
+
+  A node that conditions on an entity type, for example, is included as a disambiguation option if the entity is mentioned in the input that triggers disambiguation. **Unless** the entity is also referenced by a node that is not included in the disambiguation list for some reason. For example, the entity mention might trigger a node that is situated earlier in the dialog tree but is not enabled for disambiguation. If the same entity is used in a condition for a node that is enabled for disambiguation, but the node is situated lower in the tree, then it is not included in the disambiguation list. It matched against the earlier node, which was omitted, and so is later excluded from consideration.
+- The order of nodes in the tree hierarchy matters to disambiguation.
+
+  Look at the [scenario](#disambig-example) that is used earlier to introduce disambiguation, for example. If the node that conditions on `@sys-date` was placed higher in the dialog tree than the nodes that condition on the `#Customer_Care_Cancel_Account` and `#eCommerce_Cancel_Product_Order` intents, then disambiguation would never be triggered when a user enters, `i must cancel it today`. That's because the service would consider the date mention (`today`) to be more important than the intent references due to the placement of the corresponding nodes in the tree.
+
+For each node that you elect to be a disambiguation option, you must test scenarios in which you expect the node to be displayed as a disambiguation option. And then test some more.
 
 ### Testing disambiguation
 {: #disambiguation-test}
