@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-30"
+lastupdated: "2018-07-31"
 
 ---
 
@@ -854,7 +854,12 @@ To enable disambiguation, complete the following steps:
 1.  Click **Close**
 1.  Decide which dialog nodes you want the assistant to ask for help with.
 
-    **Note**: You can pick nodes that condition on intents, entities, special conditions, context variables, or any combination of these values.
+    - You can pick nodes at any level of the tree hierarchy.
+    - You can pick nodes that condition on intents, entities, special conditions, context variables, or any combination of these values.
+
+      **Note**: It is easiest to predict the behavior of nodes that condition on intents. If the service is highly confident that the intent that a node conditions on matches the user's intent, the node is included as a disambiguation option.
+
+      Nodes with boolean conditions, that are either true or false, can be less predictable. A node that conditions on an entity type, for example, is always included as a disambiguation option if the entity is mentioned in the input that triggers disambiguation. Avoid enabling disambiguation on nodes that check for common entities, such as `@yes`. Otherwise, the node might get included as a disambiguation option in cases where it is not a valid option.
 
     For each node that you want to opt in to disambiguation, complete the following steps:
 
