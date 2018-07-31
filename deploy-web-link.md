@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-01"
+lastupdated: "2018-07-30"
 
 ---
 
@@ -24,6 +24,8 @@ After you configure a conversational skill and add it to an assistant, the assis
 {: shortdesc}
 
 The assistant is implemented as a chat widget embedded in a simple IBM-branded web page automatically. You can test the conversational skill that you added to the assistant by entering text into the chat widget. You can also share the URL of the page with others to enlist help in testing and getting feedback about the assistant.
+
+Unlike when you test using the "Try it out" pane in the tool, any API calls that result from your interactions with the assistant hosted by the shareable URL do incur charges.
 
 To test the assistant from the web-hosted chat widget, complete the following steps:
 

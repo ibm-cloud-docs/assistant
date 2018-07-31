@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-29"
+lastupdated: "2018-07-30"
 
 ---
 
@@ -46,7 +46,7 @@ When the date and time system entity values are saved, they are converted into a
 
 1.  To reformat the $date context variable value, click the **Edit response** ![Edit response](images/edit-slot.png) icon for the @sys-date slot.
 
-1.  From the **More** ![More icon](images/kabob.png) menu at the top of the page, select **Open JSON editor**, and then edit the JSON that defines the context variable. Add a method that reformats the date so that it converts the `2017-12-29` value into a full day of the week, followed by the full month and day. Edit the JSON as follows:
+1.  From the **More** ![More icon](images/kabob.png) menu, select **Open JSON editor**, and then edit the JSON that defines the context variable. Add a method that reformats the date so that it converts the `2017-12-29` value into a full day of the week, followed by the full month and day. Edit the JSON as follows:
 
     ```json
     {
@@ -63,7 +63,7 @@ When the date and time system entity values are saved, they are converted into a
 
 1.  To change the format in which the time value is stored in the $time context variable to use the hour, minutes and indicate AM or PM, click the **Edit response** ![Edit response](images/edit-slot.png) icon for the @sys-time slot.
 
-1.  From the **More** ![More icon](images/kabob.png) menu at the top of the page, select **Open JSON editor**, and then edit the JSON that defines the context variable so that it reads as follows:
+1.  From the **More** ![More icon](images/kabob.png) menu, select **Open JSON editor**, and then edit the JSON that defines the context variable so that it reads as follows:
 
     ```json
     {
@@ -196,7 +196,7 @@ When you use the `sys-number` system entity in a slot condition, it does not dea
 
 1.  Click the **Edit response** ![Edit response](images/edit-slot.png) icon for the slot.
 
-1.  When the context variable is created, it automatically uses the same expression that is specified for the slot condition. However, the context variable must save a number only. Edit the value that was saved as the context variable to remove the `OR` operator from it. From the **More** ![More icon](images/kabob.png) menu at the top of the page, select **Open JSON editor**, and then edit the JSON that defines the context variable. Change the variable from `"guests":"@sys-number || @sys-number:0"` to use the following syntax:
+1.  When the context variable is created, it automatically uses the same expression that is specified for the slot condition. However, the context variable must save a number only. Edit the value that was saved as the context variable to remove the `OR` operator from it. From the **More** ![More icon](images/kabob.png) menu, select **Open JSON editor**, and then edit the JSON that defines the context variable. Change the variable from `"guests":"@sys-number || @sys-number:0"` to use the following syntax:
 
     ```json
     {
