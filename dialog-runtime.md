@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-31"
+lastupdated: "2018-08-01"
 
 ---
 
@@ -889,15 +889,17 @@ Choose nodes that serve as the root of a distinct branch of the dialog to be dis
 
 Keep in mind:
 
-- How the disambiguation process will treat nodes that condition on intents is easier to predict than nodes that condition on other values.
+- For nodes that condition on intents, if the service is confident that the node's intent condition matches the user's intent, then the node is included as a disambiguation option.
+- For nodes with boolean conditions (conditions that evaluate to either true or false), the node is included as a disambiguation option if the condition evaluates to true. For example, when the node conditions on an entity type, if the entity is mentioned in the input that triggers disambiguation, then the node is included.
+- The order of nodes in the tree hierarchy impacts disambiguation.
 
-  If the service is confident that the node's intent condition matches the user's intent, then the node is included as a disambiguation option.
-- How nodes with boolean conditions, conditions that evaluate to either true or false, are treated can be less predictable.
+  - It impacts whether disambiguation is triggered at all
+  
+    Look at the [scenario](#disambig-example) that is used earlier to introduce disambiguation, for example. If the node that conditions on `@sys-date` was placed higher in the dialog tree than the nodes that condition on the `#Customer_Care_Cancel_Account` and `#eCommerce_Cancel_Product_Order` intents, disambiguation would never be triggered when a user enters, `i must cancel it today`. That's because the service would consider the date mention (`today`) to be more important than the intent references due to the placement of the corresponding nodes in the tree.
 
-  A node that conditions on an entity type, for example, is included as a disambiguation option if the entity is mentioned in the input that triggers disambiguation. **Unless** the entity is also referenced by a node that is not eligible for inclusion in the disambiguation list for some reason. For example, the entity mention might trigger a node that is situated earlier in the dialog tree but is not enabled for disambiguation. If the same entity is the condition for a node that *is* enabled for disambiguation, but is situated lower in the tree, then it cannot be added as a disambiguation option because the service never reaches it. It matched against the earlier node and was omitted, and the service does not process the later node.
-- The order of nodes in the tree hierarchy matters to disambiguation.
-
-  Look at the [scenario](#disambig-example) that is used earlier to introduce disambiguation, for example. If the node that conditions on `@sys-date` was placed higher in the dialog tree than the nodes that condition on the `#Customer_Care_Cancel_Account` and `#eCommerce_Cancel_Product_Order` intents, then disambiguation would never be triggered when a user enters, `i must cancel it today`. That's because the service would consider the date mention (`today`) to be more important than the intent references due to the placement of the corresponding nodes in the tree.
+  - It impacts which nodes are included in the disambiguation list 
+  
+    Sometimes a node is not be listed as a disambiguation option as expected. This can happen if a condition value is also referenced by a node that is not eligible for inclusion in the disambiguation list for some reason. For example, an entity mention might trigger a node that is situated earlier in the dialog tree but is not enabled for disambiguation. If the same entity is the only condition for a node that *is* enabled for disambiguation, but is situated lower in the tree, then it is not added as a disambiguation option because the service never reaches it. It matched against the earlier node and was omitted, so the service does not process the later node.
 
 For each node that you elect to be a disambiguation option, test scenarios in which you expect the node to be displayed as a disambiguation option.
 
@@ -919,6 +921,8 @@ intents.size()==0 && input.suggestion_id
 This condition is met only by input that has triggered a set of disambiguation options of which the user has indicated none match her goal.
 
 Add a response that lets users know that you understand that none of the options that were suggested met their needs, and take appropriate action.
+
+Again, the placement of nodes in the tree matters. If a node that conditions on an entity type that is mentioned in the user input is higher in the tree than this node, its response is displayed instead.
 
 ### Testing disambiguation
 {: #disambiguation-test}
