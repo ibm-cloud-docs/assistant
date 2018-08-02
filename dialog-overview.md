@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-17"
+lastupdated: "2018-08-01"
 
 ---
 
@@ -87,29 +87,33 @@ For tips on performing more advanced actions in conditions, see [Condition usage
 
 You can use one or more of the following artifacts in any combination to define a condition:
 
-- **Context variable**: The node is used if the context variable expression that you specify is true. Use the syntax, `$variable_name:value` or `$variable_name == 'value'`. For example, `$city:Boston` checks whether the `$city` context variable contains the value, `Boston`. If so, the node or response is processed.
+- **Context variable**: The node is used if the context variable expression that you specify is true. Use the syntax, `$variable_name:value` or `$variable_name == 'value'`.
 
-  Do not define a node or response condition based on the value of a context variable in the same dialog node in which you set the context variable value.
+  For node conditions, this artifact type is typically used with an AND or OR operator and another condition value. That's because something in the user input must trigger the node; the context variable value being matched alone is not enough to trigger it. If the user input object sets the context variable value somehow, for example, then the node is triggered.
+
+  Do not define a node condition based on the value of a context variable in the same dialog node in which you set the context variable value.
   {: tip}
 
+  For response conditions, this artifact type can be used alone. You can change the response based on a specific context variable value. For example, `$city:Boston` checks whether the `$city` context variable contains the value, `Boston`. If so, the response is returned.
+  
   For more information about context variables, see [Context variables](dialog-runtime.html#context).
 
 - **Entity**: The node is used when any value or synonym for the entity is recognized in the user input. Use the syntax, `@entity_name`. For example, `@city` checks whether any of the city names that are defined for the @city entity were detected in the user input. If so, the node or response is processed.
 
-  Be sure to create a peer node to handle the case where none of the entity's values or synonyms are recognized.
+  Consider creating a peer node to handle the case where none of the entity's values or synonyms are recognized.
   {: tip}
 
   For more information about entities, see [Defining entities](entities.html).
 
 - **Entity value**: The node is used if the entity value is detected in the user input. Use the syntax, `@entity_name:value` and specify a defined value for the entity, not a synonym. For example: `@city:Boston` checks whether the specific city name, `Boston`, was detected in the user input.
 
-  If the entity is a pattern entity with capture groups, then you can check for a certain group value match. For example, you can use the syntax: `@us_phone.groups[1] == '617'`
-  See [Storing pattern entity values in context variables](dialog-runtime.html#context-pattern-entities) for more information.
-
   If you check for the presence of the entity, without specifying a particular value for it, in a peer node, be sure to position this node (which checks for a particular entity value) before the peer node that checks only for the presence of the entity. Otherwise, this node will never be evaluated.
   {: tip}
 
-- **Intent**: The simplest condition is a single intent. The node is used if the user's input maps to that intent. Use the syntax, `#intent_name`. For example, `#weather` checks if the intent detected in the user input is `weather`. If so, the node is processed.
+  If the entity is a pattern entity with capture groups, then you can check for a certain group value match. For example, you can use the syntax: `@us_phone.groups[1] == '617'`
+  See [Storing pattern entity values in context variables](dialog-runtime.html#context-pattern-entities) for more information.
+
+- **Intent**: The simplest condition is a single intent. The node is used if, after the service's natural language processing evaluates the user's input, it determines that the purpose of the user's input maps to the pre-defined intent. Use the syntax, `#intent_name`. For example, `#weather` checks if the user input is asking for a weather forecast. If so, the node with the `#weather` intent condition is processed.
 
   For more information about intents, see [Defining intents](intents.html).
 
@@ -177,10 +181,11 @@ If you include one of these special characters in a text response, escape it by 
 
 You can include a hypertext link in a response by using HTML syntax. For example: `Contact us at <a href="https://www.ibm.com">ibm.com</a>.` The HTML is rendered properly in the "Try it out" pane. However, be sure to test that any integration channels you use to deploy the assistant can render HTML syntax properly.
 
-Learn more about the following tasks:
+#### Learn more about simple responses
+{: #variety}
 
 - [Adding multiple lines](dialog-overview.html#multiline)
-- [Adding variety](dialog-overview.html#variety)
+- [Adding variety](dialog-overview.html#add-variety)
 
 #### Adding multiple lines
 {: #multiline}
@@ -215,7 +220,7 @@ How are you today?
 {: screen}
 
 #### Adding variety
-{: #variety}
+{: #add-variety}
 
 If your users return to your conversation service frequently, they might be bored to hear the same greetings and responses every time.  You can add *variations* to your responses so that your conversation can respond to the same condition in different ways.
 

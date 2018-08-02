@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-20"
+lastupdated: "2018-08-01"
 
 ---
 
@@ -81,6 +81,8 @@ It can be difficult to know the syntax to use in your dialog node to accurately 
   See [Expression language methods for String](dialog-methods.html#strings) to learn about more methods you can use.
 
 - **Dealing with multiple intents**: A user enters input that expresses a wish to complete two separate tasks. `I want to open a savings account and apply for a credit card.` How does the dialog recognize and address both of them? See the [Compound questions](https://sodoherty.ai/2017/02/06/compound-questions/){: new_window} entry from Simon O'Doherty's blog for strategies you can try. (Simon is a developer on the {{site.data.keyword.conversationshort}} team.)
+
+- **Dealing with ambiguous intents**: A user enters input that expresses a wish that is ambiguous enough that the service finds two or more nodes with intents that could potentially address it. How does the dialog know which dialog branch to follow? If you enable disambiguation, it can show users their options and ask the user to pick the right one. See [Disambiguation](dialog-runtime.html#disambiguation) for more details.
 
 - **Handling multiple entities in input**: If you want to evaluate only the value of the first detected instance of an entity type, you can use the syntax  `@entity == 'specific-value'` instead of the `@entity:(specific-value)` format.
 
