@@ -799,6 +799,9 @@ Follow the [tutorial](tutorial-digressions.html) to import a workspace that has 
 ## Disambiguation ![Premium plan only](images/premium0.png)
 {: #disambiguation}
 
+This feature is available only to Premium users.
+{: tip}
+
 When you enable disambiguation, you instruct the service to ask users for help when it finds that more than one dialog node can respond to their input. Instead of guessing which node to process, your assistant shares a list of the top node options with the user, and asks the user to pick the right one.
 
 ![Shows a sample conversation between a user and the assistant, where the assistant asks for clarification from the user.](images/disambig-demo.png)
@@ -842,11 +845,9 @@ When the user input is `i must cancel it today`, both dialog nodes will be consi
 
 ![Service prompts the user to choose from a list of dialog options, including Cancel an account, Cancel a product order, and None of the above.](images/disambig-tryitout.png)
 
-Notice that the service recognizes the term `today` in the user input as a date, a mention of the `@sys-date` entity. If your dialog tree contains a node that condition on the `@sys-date` entity, then it is also included in the list of disambiguation choices.
+Notice that the service recognizes the term `today` in the user input as a date, a mention of the `@sys-date` entity. If your dialog tree contains a node that conditions on the `@sys-date` entity, then it is also included in the list of disambiguation choices. This image shows it included in the list as the *Capture date information* option.
 
 ![Service prompts the user to choose from a list of dialog options, including Capture date information.](images/disambig-tryitout-date.png)
-
-It is not only nodes that condition on intents that can be included in the disambiguation options list.
 
 The following video provides an overview of disambiguation.
 
@@ -897,11 +898,11 @@ Keep in mind:
   
     Look at the [scenario](#disambig-example) that is used earlier to introduce disambiguation, for example. If the node that conditions on `@sys-date` was placed higher in the dialog tree than the nodes that condition on the `#Customer_Care_Cancel_Account` and `#eCommerce_Cancel_Product_Order` intents, disambiguation would never be triggered when a user enters, `i must cancel it today`. That's because the service would consider the date mention (`today`) to be more important than the intent references due to the placement of the corresponding nodes in the tree.
 
-  - It impacts which nodes are included in the disambiguation list 
+  - It impacts which nodes are included in the disambiguation options list
   
-    Sometimes a node is not be listed as a disambiguation option as expected. This can happen if a condition value is also referenced by a node that is not eligible for inclusion in the disambiguation list for some reason. For example, an entity mention might trigger a node that is situated earlier in the dialog tree but is not enabled for disambiguation. If the same entity is the only condition for a node that *is* enabled for disambiguation, but is situated lower in the tree, then it is not added as a disambiguation option because the service never reaches it. It matched against the earlier node and was omitted, so the service does not process the later node.
+    Sometimes a node is not listed as a disambiguation option as expected. This can happen if a condition value is also referenced by a node that is not eligible for inclusion in the disambiguation list for some reason. For example, an entity mention might trigger a node that is situated earlier in the dialog tree but is not enabled for disambiguation. If the same entity is the only condition for a node that *is* enabled for disambiguation, but is situated lower in the tree, then it is not added as a disambiguation option because the service never reaches it. It matched against the earlier node and was omitted, so the service does not process the later node.
 
-For each node that you elect to be a disambiguation option, test scenarios in which you expect the node to be displayed as a disambiguation option.
+For each node that you opt in to disambiguation, test scenarios in which you expect the node to be included in the disambiguation options list. Testing gives you a chance to make adjustments to the node order or other factors that might impact how well disambiguation works at run time.
 
 ### Handling none of the above
 {: #handle-none}
