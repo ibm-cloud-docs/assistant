@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-21"
+lastupdated: "2018-08-06"
 
 ---
 
@@ -248,6 +248,10 @@ To resolve conflicts:
 {: #resolving-intent-conflict-results}
 
 You have resolved a conflict, and can continue your review of other intents with conflicts.
+
+Watch this video to learn more.
+
+<iframe class="embed-responsive-item" id="youtubeplayer0" title="Intent conflict resolution overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/9gQtjCBxjdc?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 ## Deleting intents
 {: #delete_intents}

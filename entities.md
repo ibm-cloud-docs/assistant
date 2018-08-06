@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-20"
+lastupdated: "2018-08-06"
 
 ---
 
@@ -196,6 +196,8 @@ When you define specific values for an entity, the service finds entity mentions
 The following video demonstrates how to annotate entity mentions.
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Annotating entity mentions" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/3WjzJpLsnhQ" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
+To walk through a tutorial that shows you how to define contextual entities before you add your own, go to [Tutorial: Defining contextual entities ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/garage/demo/try-watson-assistant-contextual-entities){: new_window}.
 
 ### Creating contextual entities from the **Intents** tab
 {: #create-open-entities}

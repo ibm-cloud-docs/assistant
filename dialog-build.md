@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-13"
+lastupdated: "2018-08-06"
 
 ---
 
@@ -38,7 +38,7 @@ The number of dialog nodes you can create depends on your service plan.
 
 Tree depth limit: Service supports 2,000 dialog node descendants; the tool performs best with 20 or fewer.
 
-## Procedure
+## Building a dialog
 {: #dialog-procedure}
 
 To create a dialog, complete the following steps:
@@ -102,6 +102,9 @@ To create a dialog, complete the following steps:
     - **Skip user input**: The service jumps directly to the first child node. This option is only available if the current node has at least one child node.
     - **Jump to**: The service continues the dialog by processing the node you specify. You can choose whether the service should evaluate the target node's condition or skip directly to the target node's response. See [Configuring the Jump to action](dialog-overview.html#jump-to-config) for more details.
 
+1.  **Optional**: If you want this node to be considered when users are asked to disambiguate their meaning at run time, add a short description of the user goal handled by the node to the **node purpose** field. For example, *Place an order*.
+
+    See [Disambiguation](dialog-runtime.html#disambiguation) for more details.
 1.  **Optional**: Name the node.
 
     The dialog node name can contain letters (in Unicode), numbers, spaces, underscores, hyphens, and periods.
