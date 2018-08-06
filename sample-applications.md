@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-18"
+lastupdated: "2018-08-01"
 
 ---
 
@@ -38,7 +38,7 @@ This Node.js app is a fully developed example of the type of app you can build w
 
 This app demonstrates the combination of {{site.data.keyword.conversationshort}} and {{site.data.keyword.discoveryshort}}. First, users pose questions to the {{site.data.keyword.conversationshort}} service. If {{site.data.keyword.conversationshort}} is not able to answer confidently, {{site.data.keyword.conversationshort}} Enhanced executes a call to {{site.data.keyword.discoveryshort}} to provide the user with a list of helpful answers.
 
-[See the demo ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://assistant-with-discovery.ng.bluemix.net/dist/index.html){: new_window} or [fork the code ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/assistant-with-discovery){: new_window}.
+[See the demo ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://assistant-with-discovery-openwhisk-demo.ng.bluemix.net/){: new_window} or [fork the code ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/assistant-with-discovery-openwhisk){: new_window}.
 
 ## {{site.data.keyword.conversationshort}} and {{site.data.keyword.toneanalyzershort}}
 
