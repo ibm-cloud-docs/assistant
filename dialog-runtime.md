@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-03"
+lastupdated: "2018-08-07"
 
 ---
 
@@ -816,6 +816,14 @@ Even when these conditions are met, disambiguation does not occur unless two or 
 - The node condition includes one of the intents that triggered disambiguation. Or the node condition otherwise evaluates to true. For example, if the node checks for an entity type and the entity is mentioned in the user input, it is eligible.
 - There is text in the node's *node purpose* field.
 
+Learn more
+
+- [Disambiguation example](#disambig-example)
+- [Enabling disambiguation](#disambig-enable)
+- [Choosing nodes](#choose-nodes)
+- [Handling none of the above](#handle-none)
+- [Testing disambiguation](#disambig-test)
+
 ### Disambiguation example
 {: #disambig-example}
 
@@ -854,7 +862,7 @@ The following video provides an overview of disambiguation.
 <iframe class="embed-responsive-item" id="youtubeplayer0" title="Disambiguation overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/VVyklAXlmbA?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 ### Enabling disambiguation
-{: #disambiguation-enable}
+{: #disambig-enable}
 
 To enable disambiguation, complete the following steps:
 
@@ -926,7 +934,7 @@ Add a response that lets users know that you understand that none of the options
 Again, the placement of nodes in the tree matters. If a node that conditions on an entity type that is mentioned in the user input is higher in the tree than this node, its response is displayed instead.
 
 ### Testing disambiguation
-{: #disambiguation-test}
+{: #disambig-test}
 
 To test disambiguation, complete the following steps:
 
