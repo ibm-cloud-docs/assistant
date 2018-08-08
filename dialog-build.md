@@ -87,7 +87,7 @@ To create a dialog, complete the following steps:
     To define a node that triggers based on more than one condition, enter one condition, and then click the plus sign (+) icon next to it. If you want to apply an `OR` operator to the multiple conditions instead of `AND`, click the `and` that is displayed between the fields to change the operator type. AND operations are executed before OR operations, but you can change the order by using parentheses. For example:
     `$isMember:true AND ($memberlevel:silver OR $memberlevel:gold)`
 
-    The condition you define must be less than 500 characters in length.
+    The condition you define must be less than 2,048 characters in length.
 
     For more information about how to test for values in conditions, see [Conditions](dialog-overview.html#conditions).
 1.  **Optional**: If you want to collect multiple pieces of information from the user in this node, then click **Customize** and enable **Slots**. See [Gathering information with slots](dialog-slots.html) for more details.
