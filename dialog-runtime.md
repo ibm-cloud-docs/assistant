@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-07"
+lastupdated: "2018-08-10"
 
 ---
 
@@ -745,6 +745,22 @@ To change the digression behavior for an individual node, complete the following
     ![Shows the digressions away settings from a node with slots.](images/digress-into-cuisine-full.png)
 
 1.  Click **Apply**.
+
+1.  **Optional**: For any nodes where you enable returns from digressions away, consider specifying the text response using a syntax that supports adding a version of the response that can be shown to users who return to the node after a digression.
+
+    If you do not take action, the same text response is displayed a second time to let users know they have returned to the node they digressed away from. You can make it clearer to users that they have returned to the original conversation thread by specifying a unique message to be displayed upon their return. For example, if the original text response for the node is, `What's the order number?`, you might want to display a message like, `Now let's get back to where we left off. What is the order number?`, when users return to the node after completing a dialog branch that they digressed to.
+
+    To do so, use the following syntax to specify the node text response:
+
+    `<? (returning_from_digression)? "post-digression message" : "first-time message" ?>`
+
+    For example: `<? (returning_from_digression)? "Now, let's get back to where we left off. What is the order number?" : "What's the order number?" ?>`
+
+    **Note**: You cannot include SpEL expressions or shorthand syntax in the text responses that you add. In fact, you cannot use shorthand syntax at all. Instead, you must build the message by concatenating the text strings and full SpEL expression syntax together to form the full response. For example, use the following syntax to include a context variable in a text response that you would normally specify as, `What can I do for you, $username?`:
+
+    `<? (returning_from_digression)? "Where were we, " + context["username"] + "? Oh right, I was asking what can I do for you today." : "What can I do for you today, " + context["username"] + "?" ?>`
+
+    For full SpEL expression syntax details, see [Expression for accessing objects](expression-language.html#shorthand-syntax).
 
 1.  Use the "Try it out" pane to test the digression behavior.
 
