@@ -23,6 +23,13 @@ lastupdated: "2018-06-21"
 
 The following new features and changes to the service are available.
 
+### 6 August 2018
+{: #6August2018}
+
+- **Digression return message**: You can now specify text to display when the user returns to a node after a digression. The user will have seen the prompt for the node already. You can change the message slightly to let users know they are returning to where they left off. For example, specify a response like, `Where were we? Oh, yes...` See [Digressions](dialog-runtime.html#digressions) for more details.
+
+- **Jump-to fix**: Fixed a bug in the Dialogs tool which prevented you from being able to configure a jump-to that targets the response of a node with the `anything_else` special condition.
+
 ### 20 June 2018
 {: #20June2018}
 
