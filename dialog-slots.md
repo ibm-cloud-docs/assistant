@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-30"
+lastupdated: "2018-08-15"
 
 ---
 
@@ -508,6 +508,7 @@ Here's a sample of JSON that defines a handler for the pizza example. Note that,
 
 - Current slot level Found conditions.
 - Slot handlers in the order they are listed.
+- If digressions away are allowed, root level node conditions are checked for a match.
 - Current slot level Not found conditions.
 
 Be careful about adding conditions that always evaluate to true (such as the special conditions, `true` or `anything_else`) as slot handlers. Per slot, if the slot handler evaluates to true, then the Not found condition is skipped entirely. So, using a slot handler that always evaluates to true effectively prevents the Not found condition for every slot from being evaluated.

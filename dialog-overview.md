@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-01"
+lastupdated: "2018-08-16"
 
 ---
 
@@ -467,3 +467,5 @@ If you choose to jump to another node, specify when the target node is processed
 ## More information
 
 For information about the expression language used by dialog, plus methods, system entities, and other useful details, see the **Reference** section in the navigation pane.
+
+You can also use the API to add nodes or otherwise edit a dialog. See [Modifying a dialog using the API](dialog-api.html) for more information.
