@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-30"
+lastupdated: "2018-08-17"
 
 ---
 
@@ -49,24 +49,11 @@ From an IBM technical deep-dive series. These recordings provide step-by-step in
 
 ## Other videos
 
-Additional videos created by IBMers. Again, these videos refer to the service by its former name, the Watson Conversation service. They remain relevant for {{site.data.keyword.conversationshort}} because they focus on conversational skill development.
+Additional videos created by IBMers. Again, some of these videos refer to the service by its former name, the Watson Conversation service. However, they continue to be relevant for {{site.data.keyword.conversationshort}}.
 
-- [Show me how to use the service ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/tUkLIUOm550){: new_window}: A 3-minute overview of the service
-- [Walkthrough of the service ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/ELwWhJGE2P8){: new_window}: A 14-minute technical walkthrough
-
-## Videos in the documentation
-
-Videos are embedded in the following pages of the product documentation.
-
-- Navigation pane video: Tool overview for {{site.data.keyword.conversationshort}}
-- *Defining intents* page: [Working with intents](intents.html)
-- *Defining entities* page: [Working with entities](entities.html)
-- *Dialog overview* page:
-    - [Working with dialog](dialog-overview.html)
-    - [Working with conditional responses](dialog-overview.html#multiple)
-    - [Adding response variations](dialog-overview.html#variety)
-- *Gathering information with slots* page:
-    - [{{site.data.keyword.conversationshort}} Slots](dialog-slots.html)
+- [Digital Technical Enablement ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm-dte.mybluemix.net/ibm-watson-assistant){: new_window}: A collection of resources, including a product tour and hands-on lab.
+- [Show me how to use the service ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/tUkLIUOm550){: new_window}: A 3-minute overview of the service.
+- [Walkthrough of the service ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/ELwWhJGE2P8){: new_window}: A 14-minute technical walkthrough.
 
 ## IBM Watson Academy
 

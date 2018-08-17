@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-16"
+lastupdated: "2018-08-17"
 
 ---
 
@@ -111,7 +111,7 @@ You can use one or more of the following artifacts in any combination to define 
   {: tip}
 
   If the entity is a pattern entity with capture groups, then you can check for a certain group value match. For example, you can use the syntax: `@us_phone.groups[1] == '617'`
-  See [Storing pattern entity values in context variables](dialog-runtime.html#context-pattern-entities) for more information.
+  See [Storing and recognizing pattern entity groups in input](dialog-tips.html#get-pattern-groups) for more information.
 
 - **Intent**: The simplest condition is a single intent. The node is used if, after the service's natural language processing evaluates the user's input, it determines that the purpose of the user's input maps to the pre-defined intent. Use the syntax, `#intent_name`. For example, `#weather` checks if the user input is asking for a weather forecast. If so, the node with the `#weather` intent condition is processed.
 
@@ -179,7 +179,10 @@ If you include one of these special characters in a text response, escape it by 
 | `#` | Intent | `We are the \#1 seller of lobster rolls in Maine.` |
 {: caption="Special characters to escape in responses" caption-side="top"}
 
-You can include a hypertext link in a response by using HTML syntax. For example: `Contact us at <a href="https://www.ibm.com">ibm.com</a>.` The HTML is rendered properly in the "Try it out" pane. However, be sure to test that any integration channels you use to deploy the assistant can render HTML syntax properly.
+You can include a hypertext link in a response by using HTML syntax. For example: `Contact us at <a href="https://www.ibm.com">ibm.com</a>.` Do *not* try to escape the quotations mark (with a backslash `\"`, for example).
+
+The HTML is rendered properly in the "Try it out" pane. However, be sure to test that the client application you use to deploy the assistant can render HTML syntax properly.
+{: tip}
 
 #### Learn more about simple responses
 {: #variety}
@@ -314,7 +317,7 @@ In addition to the default response type of **Text**, for which you specify the 
 
   ![Premium plan only](images/premium0.png)  This response type is only available for Premium plans.
 
-- **Image**: Embeds an image into the response. The source image file must be hosted somewhere and have a URL that you can use to reference it.
+- **Image**: Embeds an image into the response. The source image file must be hosted somewhere and have a URL that you can use to reference it. It cannot be a file that is stored in a directory that is not publicly accessible.
 - **Option**: Adds a list of one or more options. When a user clicks one of the options, an associated user input value is sent to the service. How options are rendered can differ depending on where you deploy the dialog. For example, in one integration channel the options might be displayed as clickable buttons, but in another they might be displayed as a dropdown list.
 - **Pause**: Forces the application to wait for a specified number of milliseconds before continuing with processing. You can choose to show an indicator that the dialog is working on typing a response. Use this response type if you need to perform an action that might take some time. For example, a parent node makes a Cloud Function call and displays the result in a child node. You could use this response type as the response for the parent node to give the programmatic call time to complete, and then jump to the child node to show the result. This response type does not render in the "Try it out" pane. You must access a node that uses this response type from a test deployment to see how your users will experience it.
 
@@ -328,7 +331,7 @@ To add a rich response, complete the following steps:
     - **Connect to human agent**. You can optionally add a message to share with the human agent to whom the conversation is transferred.
 
       ![Premium plan only](images/premium0.png)  This response type is only available for Premium plans.
-    - **Image**. Add the full URL to the hosted image file into the **Image source** field. The image must be in .jpg, .gif, or .png format.
+    - **Image**. Add the full URL to the hosted image file into the **Image source** field. The image must be in .jpg, .gif, or .png format. The image file must be stored in a location that is publicly addressable by URL.
 
         For example: `https://www.example.com/assets/common/logo.png`.
 

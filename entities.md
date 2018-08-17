@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-06"
+lastupdated: "2018-08-17"
 
 ---
 
@@ -169,7 +169,7 @@ Use the {{site.data.keyword.conversationshort}} tool to create entities.
         ```
        {: screen}
 
-      For additional information about using capture groups in your dialog, see [Storing and recognizing entity pattern groups in input](dialog-tips.html#get-pattern-entities).
+      For additional information about using capture groups in your dialog, see [Storing and recognizing entity pattern groups in input](dialog-tips.html#get-pattern-groups).
 
       The pattern matching engine employed by the {{site.data.keyword.conversationshort}} service has some syntax limitations, which are necessary in order to avoid performance concerns which can occur when using other regular expression engines.
         - Entity patterns may not contain:
