@@ -29,7 +29,7 @@ lastupdated: "2018-05-08"
 
 This diagram shows the overall architecture:
 
-![Flow diagram of the service](images/assistant-arch-draft.png)
+![Flow diagram of the service](images/arch-overview.png)
 
 - Users interact with the assistant through one or more of these **integration** points:
 
