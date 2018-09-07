@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-09-07"
 
 ---
 
@@ -22,6 +22,26 @@ lastupdated: "2018-08-17"
 ***Entities*** represent a class of object or a data type that is relevant to a user's purpose. By recognizing the entities that are mentioned in the user's input, the {{site.data.keyword.conversationshort}} service can choose the specific actions to take to fulfill an intent.
 
 <iframe class="embed-responsive-item" id="youtubeplayer0" title="Working with entities" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/wyWgsF9eYc8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
+## Entity creation overview
+{: #entity-described}
+
+The key benefit of entities is that they make it possible for you to address a customer's goal in specific terms. For example, you might have a `#buy_something` intent. Obviously, you want to respond to a user's request differently depending on what the *something* is that the customer wants to buy. If you add a `@product` entity, you can use it to extract information from the user input about the product that the customer is interested in. (The `@` prepended to the entity name helps to clearly identify it as an entity.) You can then add multiple responses to your dialog tree with wording that differs based on the `@product` value that is detected.
+
+If intents represent verbs (the action a user wants to do), entities represent nouns (such as the object of, or the context for, that action).
+
+You can create the following types of entities:
+
+- **Synonym entity**: You define a category (`color`), and then one or more values in that category (`blue`), and specify several synonyms for that value (`aqua`, `navy`).
+
+    The service recognizes terms in the user input that exactly match the values or synonyms that you define for the entity category.
+- **Pattern entity**: You define a category (`contact_info`), and then one or more values in that category (`email`), and specify a regular expression that defines the textual pattern of mentions of that value type. For an `email` entity value, for example, you might want to define an expression that finds patterns such as, `text@text.com`.
+
+    The service looks for patterns that match the regular expression you define in the user input, and recognizes any matches as mentions of the entity category.
+- **Contextual entity**: First, you define a category (`product`), and optionally one or more values (`handbag`). Next, you go to the *Intents* page and mine your existing intent user examples to find and label any mentions of the entity category. For example, you go to the `#buy_something` intent, and find a user example that says, `I want to buy a Coach bag`. You label `Coach bag` as a mention of the `@product:handbag` entity.
+
+    The service looks for both terms that exactly match the mentions you identified, and the service evaluates the context in which the term is used. If the structure of the user input sentence that includes the term matches the structure of an intent user example sentence in which a mention is labeled, then the service identifies the term as an instance of the entity category. For example, the user input might include the utterance, `I want to buy a Gucci bag`. Due to the similarity of the structure of this sentence to the user example that you annotated, the service recognizes `Gucci bag` as an instance of the `@product:handbag` entity.
+- **System entity**: Entities that are prebuilt for you by IBM. They cover commonly used categories, such as numbers, dates, and times. You simply enable these system entities to start using them.
 
 ## Entity limits
 {: #entity-limits}
@@ -233,6 +253,8 @@ In order to train a contextual entity model, you can take advantage of your inte
 1.  Now, click the annotation you just created. A box will appear with the words `Go to: @product` at the bottom. Clicking that link will take you directly to the entity.
 
     ![Verify value computer for product entity](images/oe-verify-value.png)
+
+To see all of the mentions you annotated for a particular entity, from the entity's configuration page, click the **Annotations** tab.
 
 ### Working with counterexamples
 

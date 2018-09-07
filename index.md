@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-08"
+lastupdated: "2018-09-07"
 
 ---
 
@@ -69,6 +69,13 @@ Here's how you will implement your assistant:
 
   Your deployed assistant is hosted by {{site.data.keyword.cloud_notm}}, the IBM cloud computing platform. (See [Platform overview ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/overview/ibm-cloud.html#overview) for more information.)
 
+Read more about these implementation steps by following these links:
+
+- [Intent creation overview](intents.html#intent-described)
+- [Dialog overview](dialog-overview.html)
+- [Entity creation overview](entities.html#entity-described)
+- [Adding integrations](add-integrations.html)
+
 ## Browser support
 
 The {{site.data.keyword.conversationshort}} service tool requires the same level of browser software as is required by {{site.data.keyword.Bluemix_notm}}. See the {{site.data.keyword.Bluemix_notm}} [Prerequisites ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/overview/prereqs.html#browsers){: new_window} topic for details.
@@ -76,6 +83,8 @@ The {{site.data.keyword.conversationshort}} service tool requires the same level
 ## Language support
 
 Language support by feature is detailed in the [Supported languages](lang-support.html) topic.
+
+## Next steps
 
 - [Get started](getting-started.html) with the service.
 - View the list of [SDKs ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/watson/developercloud/developer-tools.html){: new_window}.
