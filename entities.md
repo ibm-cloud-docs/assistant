@@ -41,8 +41,6 @@ You can create the following types of entities:
 - **Contextual entity**: First, you define a category of terms as an entity (`product`), and then optionally one or more values (`handbag`). Next, you go to the *Intents* page and mine your existing intent user examples to find any mentions of the entity type, and label them as such. For example, you might go to the `#buy_something` intent, and find a user example that says, `I want to buy a Coach bag`. You can label `Coach bag` as a mention of the `@product:handbag` entity.
 
     At run time, the service evaluates the context in which the term is used in the sentence. If the structure of a user request that mentions the term matches the structure of a user example sentence in which a mention is labeled, then the service identifies the term as a mention of that entity. For example, the user input might include the utterance, `I want to buy a Gucci bag`. Due to the similarity of the structure of this sentence to the user example that you annotated (`I want to buy a Coach bag`), the service recognizes `Gucci bag` as a `@product:handbag` entity mention.
-
-    The service does *not* look for terms that exactly match the mentions you annotate.
 - **System entity**: Synonym entities that are prebuilt for you by IBM. They cover commonly used categories, such as numbers, dates, and times. You simply enable a system entity to start using it.
 
 ## Entity limits
@@ -213,7 +211,7 @@ The entity you created is added to the **Entities** tab, and the system begins t
 
 ## Defining contextual entities
 
-When you define specific values for an entity, the service finds entity mentions only when a term in the user input exactly matches (or closely matches if fuzzy matching is enabled) a value or synonym defined. When you define a contextual entity, a model is trained on both the entity *value* and the *context* in which the entity is used in sentences that you annotate. This new contextual entity model enables the service to calculate a confidence score that identifies how likely a word or phrase is to be an instance of an entity, based on how it is used in the user input.
+When you define specific values for an entity, the service finds entity mentions only when a term in the user input exactly matches (or closely matches if fuzzy matching is enabled) a value or synonym defined. When you define a contextual entity, a model is trained on both the *annotated term* and the *context* in which the term is used in sentences that you annotate. This new contextual entity model enables the service to calculate a confidence score that identifies how likely a word or phrase is to be an instance of an entity, based on how it is used in the user input.
 
 The following video demonstrates how to annotate entity mentions.
 
