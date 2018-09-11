@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-17"
+lastupdated: "2018-09-11"
 
 ---
 
@@ -54,7 +54,7 @@ An [*assistant*](assistants.html) is a cognitive bot to which you add skills tha
 ## Step 2: Add a conversational skill to your assistant
 {: #add-skill}
 
-A [*conversational skill*](create-convo-skill.html) is a container for the artifacts that define the flow of a conversation that your assistant can have with your customers.
+A [*conversational skill*](create-skill.html) is a container for the artifacts that define the flow of a conversation that your assistant can have with your customers.
 
 1.  From the new assistant page, click **Add skill**.
 

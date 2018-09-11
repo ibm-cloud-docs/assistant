@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-15"
+lastupdated: "2018-09-11"
 
 ---
 
@@ -49,7 +49,7 @@ An upgrade is only available for your conversational skill if the upgrade icon (
 
 To upgrade your conversational skill, complete the following steps:
 
-1.  [Download a copy of your conversational skill](create-convo-skill.html#download-skill), and then import it as a new skill.
+1.  [Download a copy of your conversational skill](create-skill.html#download-skill), and then import it as a new skill.
 2.  Upgrade the new copy of your conversational skill.
 
     When you upgrade your skill, the latest version of the API is enabled in the tool, and the "Try it out" pane begins to use the newest features.

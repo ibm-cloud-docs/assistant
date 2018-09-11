@@ -16,7 +16,7 @@ Watson Assistant Beta
 
     {: .navgroup id="howto"}
     create-assistant.md
-    create-convo-skill.md
+    create-skill.md
     catalog.md
     intents.md
 

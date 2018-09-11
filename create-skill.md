@@ -18,7 +18,7 @@ lastupdated: "2018-05-08"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Building a conversational skill
-{: #create-convo-skill}
+{: #create-skill}
 
 The natural-language processing for the {{site.data.keyword.conversationshort}} service is defined in a *conversational skill*, which is a container for all of the artifacts that define a conversation flow.
 {: shortdesc}

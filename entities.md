@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-07"
+lastupdated: "2018-09-11"
 
 ---
 
@@ -19,29 +19,31 @@ lastupdated: "2018-09-07"
 
 # Defining entities
 
-***Entities*** represent a class of object or a data type that is relevant to a user's purpose. By recognizing the entities that are mentioned in the user's input, the {{site.data.keyword.conversationshort}} service can choose the specific actions to take to fulfill an intent.
+***Entities*** represent a class of object or a data type that is relevant to a user's purpose.
+
+Recognizing entities in the user's input helps you to craft more useful, targeted responses. For example, you might have a `#buy_something` intent. When a user makes a request that triggers the `#buy_something` intent, the assistant's response should reflect an understanding of what the *something* is that the customer wants to buy. If you add a `@product` entity, then you can use it to extract information from the user input about the product that the customer is interested in. (The `@` prepended to the entity name helps to clearly identify it as an entity.) You can then add multiple responses to your dialog tree with wording that differs based on the `@product` value that is detected in the user's request.
+
+If intents represent verbs (the action a user wants to do), entities represent nouns (the object of, or the context for, that action).
 
 <iframe class="embed-responsive-item" id="youtubeplayer0" title="Working with entities" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/wyWgsF9eYc8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 ## Entity creation overview
 {: #entity-described}
 
-The key benefit of entities is that they make it possible for you to address a customer's goal in specific terms. For example, you might have a `#buy_something` intent. Obviously, you want to respond to a user's request differently depending on what the *something* is that the customer wants to buy. If you add a `@product` entity, you can use it to extract information from the user input about the product that the customer is interested in. (The `@` prepended to the entity name helps to clearly identify it as an entity.) You can then add multiple responses to your dialog tree with wording that differs based on the `@product` value that is detected.
-
-If intents represent verbs (the action a user wants to do), entities represent nouns (such as the object of, or the context for, that action).
-
 You can create the following types of entities:
 
-- **Synonym entity**: You define a category (`color`), and then one or more values in that category (`blue`), and specify several synonyms for that value (`aqua`, `navy`).
+- **Synonym entity**: You define a category of terms as an entity (`color`), and then one or more values in that category (`blue`). For each value you specify a bunch of synonyms (`aqua`, `navy`). You can also pick synonyms to add from recommendations made to you by the service.
 
-    The service recognizes terms in the user input that exactly match the values or synonyms that you define for the entity category.
-- **Pattern entity**: You define a category (`contact_info`), and then one or more values in that category (`email`), and specify a regular expression that defines the textual pattern of mentions of that value type. For an `email` entity value, for example, you might want to define an expression that finds patterns such as, `text@text.com`.
+    At run time, the service recognizes terms in the user input that exactly match (or, if fuzzy matching is enabled, closely match) the values or synonyms that you defined for the entity as mentions of that entity.
+- **Pattern entity**: You define a category of terms as an entity (`contact_info`), and then one or more values in that category (`email`). For each value, you specify a regular expression that defines the textual pattern of mentions of that value type. For an `email` entity value, you might want to define a pattern like, `text@text.com`, for example.
 
-    The service looks for patterns that match the regular expression you define in the user input, and recognizes any matches as mentions of the entity category.
-- **Contextual entity**: First, you define a category (`product`), and optionally one or more values (`handbag`). Next, you go to the *Intents* page and mine your existing intent user examples to find and label any mentions of the entity category. For example, you go to the `#buy_something` intent, and find a user example that says, `I want to buy a Coach bag`. You label `Coach bag` as a mention of the `@product:handbag` entity.
+    At run time, the service looks for patterns matching your regular expression in the user input, and identifies any matches as mentions of that entity.
+- **Contextual entity**: First, you define a category of terms as an entity (`product`), and then optionally one or more values (`handbag`). Next, you go to the *Intents* page and mine your existing intent user examples to find any mentions of the entity type, and label them as such. For example, you might go to the `#buy_something` intent, and find a user example that says, `I want to buy a Coach bag`. You can label `Coach bag` as a mention of the `@product:handbag` entity.
 
-    The service looks for both terms that exactly match the mentions you identified, and the service evaluates the context in which the term is used. If the structure of the user input sentence that includes the term matches the structure of an intent user example sentence in which a mention is labeled, then the service identifies the term as an instance of the entity category. For example, the user input might include the utterance, `I want to buy a Gucci bag`. Due to the similarity of the structure of this sentence to the user example that you annotated, the service recognizes `Gucci bag` as an instance of the `@product:handbag` entity.
-- **System entity**: Entities that are prebuilt for you by IBM. They cover commonly used categories, such as numbers, dates, and times. You simply enable these system entities to start using them.
+    At run time, the service evaluates the context in which the term is used in the sentence. If the structure of a user request that mentions the term matches the structure of a user example sentence in which a mention is labeled, then the service identifies the term as a mention of that entity. For example, the user input might include the utterance, `I want to buy a Gucci bag`. Due to the similarity of the structure of this sentence to the user example that you annotated (`I want to buy a Coach bag`), the service recognizes `Gucci bag` as a `@product:handbag` entity mention.
+
+    The service does *not* look for terms that exactly match the mentions you annotate.
+- **System entity**: Synonym entities that are prebuilt for you by IBM. They cover commonly used categories, such as numbers, dates, and times. You simply enable a system entity to start using it.
 
 ## Entity limits
 {: #entity-limits}
