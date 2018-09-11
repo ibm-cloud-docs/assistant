@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-15"
+lastupdated: "2018-09-11"
 
 ---
 
@@ -37,7 +37,7 @@ The number of assistants you can create in a single service instance depends on 
 
 *After 30 days of inactivity, an unused Lite assistant might be deleted to free up space.
 
-Currently, you can connect one skill to your assistant. The number of skills you can build differs depending on the plan you have. See [Skill limits](create-convo-skill.html#skill-limits) for more details.
+Currently, you can connect one skill to your assistant. The number of skills you can build differs depending on the plan you have. See [Skill limits](create-skill.html#skill-limits) for more details.
 
 ## Create an assistant
 {: #create-assistant}
@@ -65,7 +65,7 @@ Follow these steps to create an assistant:
 
     **Note**: If you created or were given developer role access to any workspaces that were built with the generally available version of the {{site.data.keyword.conversationshort}} service (formerly Watson Conversation), you will see them listed as existing conversational skills.
 
-    See [Building a conversational skill](create-convo-skill.html) for more information about how to create a new skill.
+    See [Building a conversational skill](create-skill.html) for more information about how to create a new skill.
 
 ## Deleting an assistant
 {: #delete-assistant}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-09-11"
 
 ---
 
@@ -63,7 +63,7 @@ Review these tips from experienced dialog designers.
 - Avoid overusing buttons. Encouraging users to pick predefined options from a set of buttons is less like a real conversation, and decreases your ability to learn what users really want to do. When you let real users ask for things in their own words, you can use the input to train the system and derive better intents.
 - Avoid using a bunch of nodes when one node will do. For example, add multiple conditional responses to a single node to return different responses depending on details provided by the user. See [Conditional responses](dialog-overview.html#multiple).
 - Word your responses carefully. You can change how someone reacts to your system based simply on how you phrase a response. Changing one line of text can prevent you from having to write multiple lines of code to implement a complex programmatic solution.
-- Back up your skill frequently. See [Downloading a skill](create-convo-skill.html#download-skill).
+- Back up your skill frequently. See [Downloading a skill](create-skill.html#download-skill).
 
 ## Tips for capturing information from user input
 {: #user-input-tips}

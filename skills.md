@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-14"
+lastupdated: "2018-09-11"
 
 ---
 
@@ -43,4 +43,4 @@ The *content catalog* contains prebuilt common intents and entities that you can
 
 As you add information, the conversational skill uses this unique data to build a machine learning model that can recognize these and similar user inputs. Each time you add or change the training data, the training process is triggered to ensure that the underlying model stays up-to-date as your customer needs and the topics they want to discuss change.
 
-For help creating a conversational skill, see [Building a conversational skill](create-convo-skill.html).
+For help creating a conversational skill, see [Building a conversational skill](create-skill.html).
