@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-30"
+lastupdated: "2018-09-14"
 
 ---
 
@@ -433,7 +433,6 @@ You might want to design your dialog to call an external reservation system and 
 
     ```json
     {
-      "conditions": "#no",
       "output":{
         "text": {
           "values": [
@@ -720,7 +719,6 @@ For the $time information, you will define a follow-up statement that is display
 
     ```json
     {
-      "conditions": "true",
       "output": {
         "text": {
           "values": [
@@ -762,7 +760,6 @@ For the $time information, you will define a follow-up statement that is display
 
     ```json
     {
-      "conditions": "$counter > 1",
       "output": {
         "text": {
           "values": [
