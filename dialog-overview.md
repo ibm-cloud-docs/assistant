@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-09-17"
 
 ---
 
@@ -226,8 +226,6 @@ How are you today?
 {: #add-variety}
 
 If your users return to your conversation service frequently, they might be bored to hear the same greetings and responses every time.  You can add *variations* to your responses so that your conversation can respond to the same condition in different ways.
-
-<iframe class="embed-responsive-item" id="youtubeplayer0" type="text/html" title="Adding response variations" width="640" height="390" src="https://www.youtube.com/embed/nAlIW3YPrAs?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 In this example, the answer that the service provides in response to questions about store locations differs from one interaction to the next:
 

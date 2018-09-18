@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-11"
+lastupdated: "2018-09-17"
 
 ---
 
@@ -19,11 +19,13 @@ lastupdated: "2018-09-11"
 
 # Defining entities
 
-***Entities*** represent a class of object or a data type that is relevant to a user's purpose.
+***Entities*** represent information in the user input that is relevant to the user's purpose.
 
-Recognizing entities in the user's input helps you to craft more useful, targeted responses. For example, you might have a `#buy_something` intent. When a user makes a request that triggers the `#buy_something` intent, the assistant's response should reflect an understanding of what the *something* is that the customer wants to buy. If you add a `@product` entity, then you can use it to extract information from the user input about the product that the customer is interested in. (The `@` prepended to the entity name helps to clearly identify it as an entity.) You can then add multiple responses to your dialog tree with wording that differs based on the `@product` value that is detected in the user's request.
+If intents represent verbs (the action a user wants to do), entities represent nouns (the object of, or the context for, that action). For example, when the *intent* is to get a weather forecast, the relevant location and date *entities* are required before the application can return an accurate forecast.
 
-If intents represent verbs (the action a user wants to do), entities represent nouns (the object of, or the context for, that action).
+Recognizing entities in the user's input helps you to craft more useful, targeted responses. For example, you might have a `#buy_something` intent. When a user makes a request that triggers the `#buy_something` intent, the assistant's response should reflect an understanding of what the *something* is that the customer wants to buy. You can add a `@product` entity, and then use it to extract information from the user input about the product that the customer is interested in. (The `@` prepended to the entity name helps to clearly identify it as an entity.)
+
+Finally, you can add multiple responses to your dialog tree with wording that differs based on the `@product` value that is detected in the user's request.
 
 <iframe class="embed-responsive-item" id="youtubeplayer0" title="Working with entities" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/wyWgsF9eYc8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
