@@ -38,8 +38,8 @@ IBM releases services, features, and language support for your evaluation that a
 
 The following new features and changes to the service are available.
 
-### 20 September 2018
-{: #20September2018}
+### 21 September 2018
+{: #21September2018}
 
 - **Intent recommendations**: You can upload a file that contains raw user inputs for the service to analyze and find candidate intent user examples. See [Adding examples from log files](intents.html#intent-recommendations).
 - **New major API version**: A V2 version of the API is available. This version introduces the following changes:

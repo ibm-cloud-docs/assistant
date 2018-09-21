@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-20"
+lastupdated: "2018-09-21"
 
 ---
 
@@ -53,9 +53,9 @@ Follow these steps to add integrations to your assistant:
 1.  Click the **Select Integration** button for the channel with which you want to integrate the assistant. The options include:
 
     - [Facebook Messenger](deploy-facebook.html)
-    - [Intercom](deploy-intercom.html)
     - [Slack](deploy-slack.html)
     - [Shareable Link](deploy-web-link.html): One shareable link integration is already available. Only choose this option if you want to create another shareable link instance. To access the instance that was provisioned for you automatically, click the **Shareable Link** integration tile.
+    - [Custom application](deploy-custom-app.html)
 
 1.  Follow the instructions that are provided on the screen to complete the integration process.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-17"
+lastupdated: "2018-09-217"
 
 ---
 
@@ -67,33 +67,33 @@ The first table shows the level of support for all features, except those relate
 | **Spanish (es)**                   | GA | GA | Beta (Misspelling only) | NA |
 {: caption="Entity feature support details" caption-side="top"}
 
-**Note:** The {{site.data.keyword.conversationshort}} service supports multiple languages as noted, but the tooling interface itself (descriptions, labels, etc.) is in English. All supported languages can be input and trained through the English interface.
+**Note:** The {{site.data.keyword.conversationshort}} service supports multiple languages as noted, but the tool interface itself (descriptions, labels, etc.) is in English. All supported languages can be input and trained through the English interface.
 
 **GB18030 compliance**: GB18030 is a Chinese standard that specifies an extended code page for use in the Chinese market. This code page standard is important for the software industry because the China National Information Technology Standardization Technical Committee has mandated that any software application that is released for the Chinese market after September 1, 2001, be enabled for GB18030. The {{site.data.keyword.conversationshort}} service supports this encoding, and is certified GB18030-compliant
 
-## Changing a workspace language
+## Changing a skill language
 
-Once a workspace has been created, its language cannot be modified. If it is necessary to change the supported language of a workspace, the user should download the workspace. Then, edit the resulting JSON file in a text editor, searching for a JSON property called `language`.
+Once a skill has been created, its language cannot be modified. If it is necessary to change the supported language of a skill, the user should download the skill. Then, edit the resulting JSON file in a text editor, searching for a JSON property called `language`.
 
-The `language` property should be set to the original language of the workspace; for example, English would be `en`. Modify the value of this property, changing it to the desired language (`fr` for French, `de` for German, etc.). Save the changes to the JSON file, and import the modified file into your {{site.data.keyword.conversationshort}} service instance.
+The `language` property should be set to the original language of the skill; for example, English would be `en`. Modify the value of this property, changing it to the desired language (`fr` for French, `de` for German, etc.). Save the changes to the JSON file, and import the modified file into your {{site.data.keyword.conversationshort}} service instance.
 
 ## Configuring bi-directional languages
 {: #configuring-bi-directional}
 
-For bi-directional languages, for example Arabic, you can change your workspace preferences accordingly. From your workspace tab, select the *Actions* drop-down menu, and select **Bidi preferences** (this option is only available for workspaces set to a bi-directional language):
+For bi-directional languages, for example Arabic, you can change your skill preferences accordingly. From your skill tile, select the *Actions* drop-down menu, and select **Bidi preferences** (this option is only available for skills set to a bi-directional language):
 
 ![Bidi preferences](images/bidi_prefs.png)
 
-Select from the following options for your workspace:
+Select from the following options for your skill:
 
 - **GUI Direction**: Specifies the layout direction of elements, such as buttons or menus, in the graphical user interface. Choose `LTR` (left-to-right) or `RTL` (right-to-left). If not specified, the tool follows the web browser GUI direction setting.
 - **Text Direction**: Specifies the direction of typed text. Choose `LTR` (left-to-right) or `RTL` (right-to-left), or select `Auto` which will automatically choose the text direction based on your system settings. The `None` option will display left-to-right text.
 - **Numeric Shaping**: Specifies which form of numerals to use when presenting regular digits. Choose from `Nominal`, `Arabic-Indic`, or `Arabic-European`. The `None` option will display Western numerals.
-- **Calendar Type**: Specifies how you choose filtering dates in the workspace UI. Choose `Islamic-Civil`, `Islamic-Tabular`, `Islamic-Umm al-Qura`, or `Gregorian`. **Note**: This setting does not apply to the "Try it out" panel.
+- **Calendar Type**: Specifies how you choose filtering dates in the skill UI. Choose `Islamic-Civil`, `Islamic-Tabular`, `Islamic-Umm al-Qura`, or `Gregorian`. **Note**: This setting does not apply to the "Try it out" panel.
 
 ![Bidi options](images/bidi_opts.png)
 
-When finished making selections, click **Update** to save and return to the workspace tab.
+When finished making selections, click **Update** to save and return to the skill tile.
 
 ## Working with accented characters
 {: #working-with-accents}
