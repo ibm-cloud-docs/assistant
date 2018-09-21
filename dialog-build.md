@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-09-20"
 
 ---
 
@@ -27,16 +27,18 @@ Use the {{site.data.keyword.conversationshort}} tool to create your dialog.
 ## Dialog node limits
 {: #dialog-node-limits}
 
-The number of dialog nodes you can create depends on your service plan.
+The number of dialog nodes you can create per skill depends on your service plan.
 
 | Service plan     | Dialog nodes per skill     |
 |------------------|---------------------------:|
 | Premium          |                    100,000 |
-| Standard         |                    100,000 |
-| Lite             |                     25,000 |
+| Standard         |                        500 |
+| Lite             |                        100 |
 {: caption="Service plan details" caption-side="top"}
 
-Tree depth limit: Service supports 2,000 dialog node descendants; the tool performs best with 20 or fewer.
+The welcome and anything_else dialog nodes that are prepopulated in the tree do count toward the total.
+
+Tree depth limit: The service supports 2,000 dialog node descendants; the tool performs best with 20 or fewer.
 
 ## Building a dialog
 {: #dialog-procedure}
@@ -53,7 +55,6 @@ To create a dialog, complete the following steps:
 
     - **Anything else**: The final node. It contains phrases that are used to reply to users when their input is not recognized. You can replace the responses that are provided or add more responses with a similar meaning to add variety to the conversation. You can also choose whether you want the service to return each response that is defined in turn or return them in random order.
 1.  To add more nodes to the dialog tree, click the **More** ![More icon](images/kabob.png) icon on the **Welcome** node, and then select **Add node below**.
-
 1.  Enter a condition that, when met, triggers the service to process the node.
 
     As you begin to define a condition, a box is displayed that shows you your options. You can enter one of the following characters, and then pick a value from the list of options that is displayed.
@@ -102,9 +103,10 @@ To create a dialog, complete the following steps:
     - **Skip user input**: The service jumps directly to the first child node. This option is only available if the current node has at least one child node.
     - **Jump to**: The service continues the dialog by processing the node you specify. You can choose whether the service should evaluate the target node's condition or skip directly to the target node's response. See [Configuring the Jump to action](dialog-overview.html#jump-to-config) for more details.
 
-1.  **Optional**: If you want this node to be considered when users are asked to disambiguate their meaning at run time, add a short description of the user goal handled by the node to the **node purpose** field. For example, *Place an order*.
+1.  **Optional**: If you want this node to be considered when users are shown a set of node choices at run time, and asked to pick the one that best matches their goal, then add a short description of the user goal handled by this node to the **node purpose** field. For example, *Place an order*.
 
-    See [Disambiguation](dialog-runtime.html#disambiguation) for more details.
+    ![Premium plan only](images/premium0.png) The *node purpose* field is only displayed to Premium plan users. See [Disambiguation](dialog-runtime.html#disambiguation) for more details.
+
 1.  **Optional**: Name the node.
 
     The dialog node name can contain letters (in Unicode), numbers, spaces, underscores, hyphens, and periods.
@@ -207,7 +209,7 @@ Another way to discover a node based on its node ID is by following these steps:
 
 The tool refreshes, and shifts focus to the dialog node with the node ID that you specified. If the node ID is for a slot, a Found or Not found slot condition, a slot handler, or a conditional response, then the node in which the slot or conditional response is defined gets focus and the corresponding modal is displayed.
 
-**Note**: If you still cannot find the node, you can export the conversational skill and use a JSON editor to search the skill JSON file.
+**Note**: If you still cannot find the node, you can export the dialog skill and use a JSON editor to search the skill JSON file.
 
 ## Copying a dialog node
 {: #copy-node}

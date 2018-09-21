@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-15"
+lastupdated: "2018-09-19"
 
 ---
 
@@ -38,7 +38,7 @@ This tutorial will take approximately 30 minutes to complete.
 
 Before you begin, complete the [Getting Started tutorial](getting-started.html). You will use the {{site.data.keyword.conversationshort}} tutorial skill that you created, and add nodes to the simple dialog that you built as part of the getting started exercise.
 
-**Note**: You can also start with a new conversational skill if you want. Just be sure to create the skill before you begin this tutorial.
+**Note**: You can also start with a new dialog skill if you want. Just be sure to create the skill before you begin this tutorial.
 
 ## Step 1: Add intents and examples
 {: #add-intent}
@@ -99,7 +99,7 @@ The node that you will add in this step is one that contains slots. Slots provid
 The node you add will collect the information required to make a reservation at a restaurant.
 
 1.  Click the **Dialogs** tab to open the dialog tree.
-1.  Click the More icon ![More options](images/kabob.png) on the **#greeting** node, and then select **Add node below**.
+1.  Click the More icon ![More options](images/kabob.png) on the **#General_Greetings** node, and then select **Add node below**.
 1.  Start typing `#reservation` in the condition field, and then select it from the list.
     This node will be evaluated if the user input matches the `#reservation` intent.
 1.  Click **Customize**, click the **Slots** toggle to turn it **on**, and then click **Apply**.
@@ -140,7 +140,7 @@ The node you add will collect the information required to make a reservation at 
 
 ## Step 4: Test the dialog
 
-1.  Select the ![Try it](images/ask_watson.png) icon to open the chat pane.
+1.  Select the ![Ask Watson](images/ask_watson.png) icon to open the chat pane.
 1.  Type `i want to make a reservation`.
 
     The assistant recognizes the #reservation intent, and it responds with the prompt for the first slot, `What day would you like to come in?`.

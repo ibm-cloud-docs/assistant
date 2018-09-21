@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-11"
+lastupdated: "2018-09-19"
 
 ---
 
@@ -28,103 +28,63 @@ In this short tutorial, we introduce the {{site.data.keyword.conversationshort}}
 ## Before you begin
 {: #prereqs}
 
-The information in this topic applies to {{site.data.keyword.conversationshort}} Beta only. To request participation in the Beta, from the bottom of the Workspaces page of your {{site.data.keyword.conversationshort}} instance, click **Request Beta**, and then confirm that you accept the terms and conditions for participating in the Beta.
+The information in this topic applies to {{site.data.keyword.conversationshort}} beta release only. To request access to the beta release, from the bottom of the Workspaces page of your {{site.data.keyword.conversationshort}} instance, click **Request Beta**, and then confirm that you accept the terms and conditions for participating in the beta program.
 
 If you do not have a service instance, go to the [Getting started tutorial (for the generally available {{site.data.keyword.conversationshort}} service) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/conversation/getting-started.html) for information about how to get a free subscription to one.
 
-**Note**: If you are approved for Beta participation, it is the service instance where you request Beta access that will be upgraded. And every workspace in that service instance will be converted to a skill. You can read more about skills in [Step 2](#add-skill) below. Do not request Beta participation from an instance with workspaces that you are actively using. To try out the Beta safely, without impacting workspaces that you want to continue using, you can create a new service instance, and then request access from it.
+**Note**: If you are approved for beta participation, it is the service instance where you request beta access that will be upgraded. And every workspace in that service instance will be converted to a skill. You can read more about skills in [Step 2](#add-skill) below. Do not request beta participation from an instance with workspaces that you are actively using. To try out the beta release safely, without impacting workspaces that you want to continue using, you can create a new service instance, and then request access from it.
 
-## Step 1: Create an assistant
-{: #create-assistant}
+## Step 1: Open the tool
+{: #launch-tool}
 
-Your first step in the {{site.data.keyword.conversationshort}} tool is to create an assistant.
+When you are accepted into the beta program, you are sent an email invitation that includes a link to the beta environment. Follow the link, and launch the {{site.data.keyword.conversationshort}} tool.
 
-An [*assistant*](assistants.html) is a cognitive bot to which you add skills that enable it to interact with your customers in useful ways.
-
-1.  From the home page of the {{site.data.keyword.conversationshort}} tool, click the **Assistants** tab.
-1.  Click **Create new**.
-
-    ![Create new button on the Assistant tab](images/gs-create-assistant.png)
-1.  Name the assistant `Watson Assistant tutorial`.
-1.  In the Description field, enter `This is a sample assistant that I am creating to help me learn.`
-1.  Click **Create**.
-
-    ![Finish creating the new assistant](images/gs-create-assistant-done.png)
-
-## Step 2: Add a conversational skill to your assistant
+## Step 2: Create a dialog skill
 {: #add-skill}
 
-A [*conversational skill*](create-skill.html) is a container for the artifacts that define the flow of a conversation that your assistant can have with your customers.
+Your first step in the {{site.data.keyword.conversationshort}} tool is to create a skill.
 
-1.  From the new assistant page, click **Add skill**.
+A [*dialog skill*](create-skill.html) is a container for the artifacts that define the flow of a conversation that your assistant can have with your customers.
 
-    **Note**: If you created or were given developer role access to any workspaces that were built with the generally available version of the {{site.data.keyword.conversationshort}} service, you will see them listed on the Skills page as conversational skills.
+1.  From the home page of the {{site.data.keyword.conversationshort}} tool, click **Create a Skill**.
 
-    ![Shows the Add skill button from the Assistant page](images/gs-add-skill.png)
+    **Note**: If you created or were given developer role access to any workspaces that were built with the generally available version of the {{site.data.keyword.conversationshort}} service, you will see them listed on the Skills page as dialog skills.
+
+    ![Shows the Add skill button from the Home page](images/gs-new-skill.png)
 
 1.  Click **Create new**.
+
+    ![Shows the Create new button from the Skills page](images/gs-click-create-new.png)
+
 1.  Give your skill the name `Conversational skill tutorial`.
 1.  **Optional**. If the dialog you plan to build will use a language other than English, then choose the appropriate language from the list.
 1.  Click **Create**.
 
     ![Finish creating the skill](images/gs-add-skill-done.png)
 
-## Step 3: Create intents
-{: #create-intents}
+You'll land on the Intents page of the tool.
 
-An [intent](intents.html) represents the purpose of a user's input. You can think of intents as the actions your users might want to perform with your application.
-
-For this example, we're going to keep things simple and define only two intents: one for saying hello, and one for saying goodbye.
-
-1.  From the Skills page, find the tile for the `Conversational skill tutorial` that you just created, and click to open it.
-
-    You'll land on the Intents page of the tool.
-
-    ![Landing on the intents page of the tool](images/gs-add-skill-done2.png)
-1.  Click **Add intent**.
-1.  Name the intent `hello`, and then click **Create intent**.
-1.  Type `hello` into the **Add user example** field, and then press **Enter**.
-
-   *Examples* tell the {{site.data.keyword.conversationshort}} service what kinds of user input you want to match to the intent. The more examples you provide, the more accurate the service can be at recognizing user intents.
-1.  Add four more examples:
-    - `good morning`
-    - `greetings`
-    - `hi`
-    - `howdy`
-
-1.  Click the **Close** ![Close arrow](images/close_arrow.png) icon to finish creating the #hello intent.
-
-    ![Adding a hello intent with examples](images/gs-hello-intent-done.png)
-1.  Create another intent named #goodbye with these five examples:
-    - `bye`
-    - `farewell`
-    - `goodbye`
-    - `I'm done`
-    - `see you later`
-
-    ![Adding a goodbye intent with examples](images/gs-goodbye-intent-done.png)
-
-You've created two intents, #hello and #goodbye, and provided example user input to train {{site.data.keyword.watson}} to recognize these intents in your users' input.
-
-![Showing the created intents](images/gs-intents-done.png)
-
-## Step 4: Add intents from a content catalog
+## Step 3: Add intents from a content catalog
 {: #add-catalog}
 
-Add training data that was built by IBM to your workspace by adding intents from a content catalog. In particular, you will give your assistant access to the `eCommerce` content catalog so your dialog can address user requests to complete common online transactions.
+Add training data that was built by IBM to your workspace by adding intents from a content catalog. In particular, you will give your assistant access to the **General** content catalog so your dialog can greet users, and end conversations with them.
 
 1.  In the {{site.data.keyword.conversationshort}} tool, click the **Content Catalog** tab.
-1.  Find **eCommerce** in the list, and then click **Add to skill**.
-1.  Open the **Intents** tab to review the intents and associated example utterances that were added to your training data. You can recognize them because each intent name begins with the prefix `#eCommerce_`. You will add the `#eCommerce_Cancel_Product_Order` intent to your dialog in a later step.
+1.  Find **General** in the list, and then click **Add to skill**.
 
-You have successfully supplemented your training data with prebuilt content provided by IBM.
+    ![Shows the Content Catalog and highlights the Add to skill button for the General catalog.](images/gs-add-general-catalog.png)
+1.  Open the **Intents** tab to review the intents and associated example utterances that were added to your training data. You can recognize them because each intent name begins with the prefix `#General_`. You will add the `#General_Greetings` and `#General_Ending` intents to your dialog in the next step.
 
-## Step 5: Build a dialog
+    ![Shows the intents that are displayed in the Intents tab after the General catalog is added.](images/gs-general-added.png)
+
+You have successfully started to build your training data by adding prebuilt content from IBM.
+
+## Step 4: Build a dialog
 {: #build-dialog}
 
 A [dialog](dialog-overview.html) defines the flow of your conversation in the form of a logic tree. It matches intents (what users say) to responses (what the bot says back). Each node of the tree has a condition that triggers it, based on user input.
 
-We'll create a simple dialog that handles our #hello and #goodbye intents, each with a single node.
+We'll create a simple dialog that handles greeting and ending intents, each with a single node.
 
 ### Adding a start node
 
@@ -133,11 +93,11 @@ We'll create a simple dialog that handles our #hello and #goodbye intents, each 
     - **Welcome**: Contains a greeting that is displayed to your users when they first engage with the assistant.
     - **Anything else**: Contains phrases that are used to reply to users when their input is not recognized.
 
-    ![A new dialog with two builtin nodes](images/gs-new-dialog.png)
+    ![A new dialog with two builtin nodes](images/gs-new-dialog0.png)
 1.  Click the **Welcome** node to open it in the edit view.
 1.  Replace the default response with the text, `Welcome to the Watson Assistant tutorial!`.
 
-    ![Editing the welcome node response](images/gs-edit-welcome.png)
+    ![Editing the welcome node response](images/gs-edit-welcome0.png)
 1.  Click ![Close](images/close.png) to close the edit view.
 
 You created a dialog node that is triggered by the `welcome` condition. (`welcome` is a special condition that functions like an intent, but does not begin with a `#`.) It is triggered when a new conversation starts. Your node specifies that when a new conversation starts, the system should respond with the welcome message that you add to the response section of this first node.
@@ -153,24 +113,21 @@ You can test your dialog at any time to verify the dialog. Let's test it now.
 Now let's add nodes to handle our intents between the `Welcome` node and the `Anything else` node.
 
 1.  Click the More icon ![More options](images/kabob.png) on the **Welcome** node, and then select **Add node below**.
-1.  Type `#hello` in the **Enter a condition** field of this node. Then select the **#hello** option.
-1.  Add the response, `Good day to you.`
-
-    ![Adding a hello node to the dialog between welcome and anything else](images/gs-add-hello-node.png)
+1.  Type `#General_Greetings` in the **Enter a condition** field of this node. Then select the **`#General_Greetings`** option.
+1.  Add the response, `Good day to you!`
 1.  Click ![Close](images/close.png) to close the edit view.
-1.  Click the More icon ![More options](images/kabob.png) on this node, and then select **Add node below** to create a peer node. In the peer node, specify `#eCommerce_Cancel_Product_Order` as the condition.
-1.  Add the following text as the response.
 
-    `I can help you cancel your order.`
+   ![A general greeting node was added to the dialog.](images/gs-add-greeting-node.png)
+1.  Click the More icon ![More options](images/kabob.png) on this node, and then select **Add node below** to create a peer node. In the peer node, specify `#General_Ending` as the condition, and `OK. See you later.` as the response.
 
-    ![Adding a cancel order node after the hello node](images/gs-add-ecommerce-node.png)
-1.  Click the More icon ![More options](images/kabob.png) on this node, and then select **Add node below** to create another peer node. In the peer node, specify `#goodbye` as the condition, and `OK. See you later!` as the response.
+   ![Adding an ending node to the dialog.](images/gs-add-ending-node.png)
+1.  Click ![Close](images/close.png) to close the edit view.
 
-    ![Adding a goodbye node after the cancel order node and before anything else](images/gs-add-goodbye-node.png)
+   ![Shows that a general ending node was also added to the dialog.](images/gs-ending-added.png)
 
 ### Testing intent recognition
 
-You  built a simple dialog to recognize and respond to both hello and goodbye inputs. Let's see how well it works.
+You built a simple dialog to recognize and respond to both greeting and ending inputs. Let's see how well it works.
 
 1.  Click the ![Try it](images/ask_watson.png) icon to open the "Try it out" pane. There's that reassuring welcome message.
 1.  At the bottom of the pane, type `Hello` and press Enter. The output indicates that the #hello intent was recognized, and the appropriate response (`Good day to you.`) appears.
@@ -181,11 +138,7 @@ You  built a simple dialog to recognize and respond to both hello and goodbye in
     - `good morning`
     - `sayonara`
 
-1.  Enter `I want to cancel an order I placed.` and press Enter. The output indicates that the `#eCommerce_Cancel_Product_Order` intent was recognized, and the response that you added for it is displayed.
-
-  **Note**: In a dialog that is used by an assistant in production, you would likely add more child nodes that collect the order number and any other necessary information from the user, and then make a programmatic call to your order tracking backend service to cancel the order on the user's behalf.
-
-![Testing the dialog in the Try it out pane](images/gs-test-dialog.gif){: gif}
+![Testing the dialog in the Try it out pane](images/gs-try-it.gif){: gif}
 
 {{site.data.keyword.watson}} can recognize your intents even when your input doesn't exactly match the examples you included. The dialog uses intents to identify the purpose of the user's input regardless of the precise wording used, and then responds in the way you specify.
 
@@ -193,22 +146,53 @@ You  built a simple dialog to recognize and respond to both hello and goodbye in
 
 That's it. You created a simple conversation with two intents and a dialog to recognize them.
 
-## Step 6: Integrate the assistant
+## Step 5: Create an assistant
+{: #create-assistant}
+
+An [*assistant*](assistants.html) is a cognitive bot to which you add a skill that enables it to interact with your customers in useful ways.
+
+1.  Click the **Assistants** tab.
+1.  Click **Create new**.
+
+    ![Create new button on the Assistant tab](images/gs-create-assistant.png)
+1.  Name the assistant `Watson Assistant tutorial`.
+1.  In the Description field, enter `This is a sample assistant that I am creating to help me learn.`
+1.  Click **Create**.
+
+    ![Finish creating the new assistant](images/gs-create-assistant-done0.png)
+
+## Step 6: Adding your skill to your assistant
+{: #add-skill-to-assistant}
+
+Add the dialog skill that you build to the assistant you created.
+
+1.  From the new assistant page, click **Add skill**.
+
+    **Note**: If you created or were given developer role access to any workspaces that were built with the generally available version of the {{site.data.keyword.conversationshort}} service, you will see them listed on the Skills page as conversational skills.
+
+    ![Shows the Add skill button from the Assistant page](images/gs-add-skill.png)
+1.  Choose to add the skill that you created earlier to the assistant.
+
+## Step 7: Integrate the assistant
 {: #integrate-assistant}
 
-Now that you have an assistant that can participate in a simple conversational exchange, publish it to the Facebook Messenger messaging channel to test it out.
+Now that you have an assistant that can participate in a simple conversational exchange, publish it to a public web page where you can test it out.
 
 1.  Click the **Assistants** tab, find the `Watson Assistant tutorial` assistant you created, and open it.
-1.  Click **Add integration**.
-1.  Choose **Facebook Messenger** as the channel integration.
-1.  Follow the instructions to complete the integration.
-1.  From the Facebook Messenger user interface, add the assistant as a contact.
-1.  Say `hello` to your assistant, and watch it respond.
+1.  From the *Integrations* area, click **Shareable Link**.
+
+    The Shareable Link integration is provisioned for you automatically.
+1.  Click the URL that is displayed on the page.
+
+    The page opens in a new tab.
+1.  Say `hello` to your assistant, and watch it respond. You can share the URL with others who might want to try out your assistant.
+
+    **Note**: Unlike when you send test utterances to the service from the "Try it out" pane, standard usage charges apply to API calls that result from utterances that are submited to the chat widget.
 
 ## Next steps
 {: #next-steps}
 
-This tutorial is built around a simple example. For a real application, you'll need to define some more interesting intents, some entities, and a more complex dialog that uses them both. If you have a workspace that you built with the publicly-available version of the service, you can import it into your Beta instance as a new skill, and review how your existing training data and dialog function in the Beta environment. As traffic increases, you can use the tools provided in the **Improve** tab to analyze real conversations between your assistant and users, and identify areas for improvement.
+This tutorial is built around a simple example. For a real application, you'll need to define some more interesting intents, some entities, and a more complex dialog that uses them both. When you have a polished version of the assistant, you can integrate it with channels that your customers use, such as Slack. As traffic increases between the assistant and your customers, you can use the tools provided in the **Improve** tab to analyze real conversations, and identify areas for improvement.
 
 - Complete follow-on tutorials that build more advanced dialogs. Add standard nodes with the [Building a complex dialog](tutorial.html) tutorial or learn about slots with the [Adding a node with slots](tutorial-slots.html) tutorial.
 - Check out more [sample apps](sample-applications.html) to get ideas.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-05"
+lastupdated: "2018-09-10"
 
 ---
 
@@ -23,7 +23,7 @@ lastupdated: "2018-06-05"
 Facebook Messenger is a mobile messaging application that helps businesses and customers communicate directly with one another.
 {: shortdesc}
 
-After you configure a conversational skill and add it to an assistant, you can integrate the assistant with Facebook Messenger.
+After you configure a dialog skill and add it to an assistant, you can integrate the assistant with Facebook Messenger.
 
 1.  From the Assistants tab, click to open the assistant tile that you want to deploy.
 
@@ -58,4 +58,4 @@ To start a chat with the assistant, complete the following steps:
 1.  Type the name of the page you created earlier.
 1.  After the page comes up, click it, and then start chatting with the assistant.
 
-The dialog flow for the current session is restarted after 60 minutes of inactivity. Meaning if a user stops interacting with the assistant, after 60 minutes, any context variable values that were set during the previous conversation are set to null or back to their default values.
+The dialog flow for the current session is restarted after 60 minutes of inactivity (5 minutes for Lite and Standard plans). This means that if a user stops interacting with the assistant, after 60 (or 5) minutes, any context variable values that were set during the previous conversation are set to null or back to their default values.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-20"
+lastupdated: "2018-09-04"
 
 ---
 
@@ -37,4 +37,3 @@ The accessibility features in this product documentation allow users to do the f
 - Operate specific or equivalent features by using only the keyboard.
 
 The documentation content is published in the IBM Cloud Docs site. For information about the accessibility of the site, see [Accessibility features for IBM Cloud](https://console.bluemix.net/docs/overview/accessibility/accessibility_features.html).
-

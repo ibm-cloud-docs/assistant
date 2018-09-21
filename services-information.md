@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-11"
+lastupdated: "2018-09-20"
 
 ---
 
@@ -23,6 +23,11 @@ lastupdated: "2018-09-11"
 The assistant is a fully hosted bot that is managed by IBM Cloud, which means you do not need to worry about setting up or maintaining infrastructure to support it.
 {: shortdesc}
 
+## Switching between service instances
+{: #switch-instance}
+
+If you have more than one service instance, you can check the page header to find out which instance you are currently using. If you are working in a skill, click the **Skills** breadcrumb link first. The banner displays the current instance name. To switch to a different service instance, click **change**, and then choose the appropriate instance.
+
 ## Service details
 {: #service-details}
 
@@ -40,13 +45,6 @@ For information about artifact limits per plan, see these topics:
 - [Integrations](add-integrations.html#integration-limits)
 - [Logs](logs_convo.html#log-limits)
 - [Skills](create-skill.html#skill-limits)
-
-### API call limits
-{: #api-limits}
-
-The number of API calls allowed per instance depends on your service plan. See your plan description for details.
-
-If you have a Lite plan and reach your API call limit, but the logs show that you have made fewer calls than expected, remember that the Lite plan stores log information for only 7 days.
 
 ## Terms and security
 {: #terms}
