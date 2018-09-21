@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-03"
+lastupdated: "2018-08-29"
 
 ---
 
@@ -110,7 +110,6 @@ To make a programmatic call from a dialog node, complete the following steps:
          - The actions that are provided with {{site.data.keyword.openwhisk_short}} often have the namespace: `whisk.system`, but you should always verify the namespace to be sure. For example: `/whisk.system/weather/forecast`
 
            See the [IBM Cloud Functions naming guidelines ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/openwhisk/openwhisk_reference.html#openwhisk_entities) for more details.
-
     - `<type>`: Indicates the type of call to make. Choose from the following types:
 
       - **client**: Sends a message response with programmatic call information in a standardized format that your external client application can use to perform the call or function, and get a result on behalf of the dialog. The JSON object in the response body specifies the service or function to call, any associated parameters to pass with the call, and how the result should be sent back.
@@ -174,25 +173,21 @@ To make a programmatic call from a dialog node, complete the following steps:
 
       **Attention**: Any charges that are incurred when the action runs are charged to the person who owns these credentials.
 
-      **Warning**: During Beta, there is no way to pass the credentials to the dialog. You must store them as context variable values in a dialog node that will be triggered before the programmatic call itself is made. As a result, the credentials will be visible in the JSON file that represents the skill, which can be downloaded by anyone with access to your skills.
-
-      You can prevent the information from being captured in Watson logs by nesting your context variable within the $private section of the message context. For example: `$private.my_credentials`.
+      To protect the credentials, do not store them in the skill. Instead, pass them from the client application as part of context. You can prevent the information from being stored in Watson logs by nesting your context variable within the $private section of the message context. For example: `$private.my_credentials`.
 
       The credentials object that you define must contain parameters named `user` and `password`.
 
       ```json
       {
-        "context" : {
-         "private": {
-          "my_credentials": {
-            "user": "5tj3b41j-bf3j-5d92-24g9-4a7769ab12af",
-            "password": "y65gqSTSRzqE..."
-          }
-        }
-      }
+        "user":"5tj3b41j-bf3j-5d92-24g9-4a7769ab12af",
+        "password":"y65gqSTSRzqE..."
       }
       ```
       {: codeblock}
+
+      While testing the dialog, you can temporarily set the `$private.my_credentials` context variable with your real {{site.data.keyword.openwhisk_short}} username and password values by clicking **Manage context** from the "Try it out" pane in the tool.
+
+      ![Shows how the $private.my_credentials context variable is defined in the Try it out context management interface](images/testing-creds.png)
 
 ## Creating a {{site.data.keyword.openwhisk_short}} action
 {: #create-action}
@@ -335,10 +330,10 @@ The following diagram illustrates how to call a {{site.data.keyword.openwhisk_sh
 
 ### Echo action example
 
-To see a conversational skill with a dialog that is already set up to call the {{site.data.keyword.openwhisk_short}} built-in Echo action, complete the following steps:
+To see a dialog skill with a dialog that is already set up to call the {{site.data.keyword.openwhisk_short}} built-in Echo action, complete the following steps:
 
 1.  Download the [CloudFunctionsEcho.json ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/community/raw/master/watson-assistant/cloud-functions-echo.json){: new_window} file.
-1.  Import the JSON file as a new conversational skill.
+1.  Import the JSON file as a new dialog skill.
 1.  Review the dialog to see how the call to the Echo action is specified.
 1.  From the "Try it out" pane, click **Manage context**, and then (temporarily) set the context variables to your {{site.data.keyword.openwhisk_short}} username and password.
 

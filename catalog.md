@@ -19,17 +19,17 @@ lastupdated: "2018-03-08"
 
 # Using content catalogs
 
-***Content Catalogs*** provide an easy way to add common intents to your {{site.data.keyword.conversationshort}} conversational skill.
+***Content Catalogs*** provide an easy way to add common intents to your {{site.data.keyword.conversationshort}} dialog skill.
 {: shortdesc}
 
 **IMPORTANT**: Content Catalog intents are meant to provide a starting point, and not meant to be fully built-out for production use. It is recommended that you review and expand on these intents, to make them better suited to how your application will use them.
 
-## Adding a content catalog to your conversational skill
+## Adding a content catalog to your dialog skill
 {: #add-catalog}
 
 Use the {{site.data.keyword.conversationshort}} tool to add content catalogs.
 
-1.  In the {{site.data.keyword.conversationshort}} tool, open your conversational skill and then select the **Content Catalog** tab in the navigation bar.
+1.  In the {{site.data.keyword.conversationshort}} tool, open your dialog skill and then select the **Content Catalog** tab in the navigation bar.
 
 1.  Select a content catalog, such as *Banking*, to see the intents that are provided with it.
 
@@ -43,17 +43,17 @@ Use the {{site.data.keyword.conversationshort}} tool to add content catalogs.
 
 1.  Select ![Close arrow](images/close_arrow.png) to return to the **Content Catalog** tab.
 
-1.  Next, add the *Banking* content catalog to your conversational skill by clicking the `Add to workspace` button. You will see a message indicating that the *Banking* intents have been added.
+1.  Next, add the *Banking* content catalog to your dialog skill by clicking the `Add to workspace` button. You will see a message indicating that the *Banking* intents have been added.
 
     ![Screen capture showing Add to workspace button](images/catalog_addtobot.png)
 
-1.  Now, select the **Intents** tab, and verify that the *Banking* intents have been added to your conversational skill.
+1.  Now, select the **Intents** tab, and verify that the *Banking* intents have been added to your dialog skill.
 
     ![Screen capture showing Banking intents listed on Intents tab](images/catalog_intents.png)
 
 ### Results
 
-The intents from the *Banking* content catalog have been added to the **Intents** tab of your conversational skill, and the system begins to train itself on the new data.
+The intents from the *Banking* content catalog have been added to the **Intents** tab of your dialog skill, and the system begins to train itself on the new data.
 
 ## Editing content catalog examples
 

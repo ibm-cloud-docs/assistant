@@ -233,7 +233,7 @@ When you use the `sys-number` system entity in a slot condition, it does not dea
 
     This time Watson responds with, `OK. I am making you a reservation for 0 on Wednesday, May 23 at 8:00 PM.`
 
-You have successfully formatted the number slot so that it can recognize zeros properly. Of course, you might not want the node to accept zero as a valid number of guests. You will learn how to validate values that are specified by users in the next step.
+You have successfully formatted the number slot so that it treats zeros properly. Of course, you might not want the node to accept a zero as a valid number of guests. You will learn how to validate values that are specified by users in the next step.
 
 ## Step 4: Validate user input
 {: #slot-conditions}
@@ -806,4 +806,4 @@ In this tutorial you tested a node with slots and made changes that optimize how
 ## Next steps
 {: #deploy}
 
-Deploy your conversational skill by first connecting it to an assistant, and then deploying the assistant. There are several ways you can do this. See [Adding integrations](add-integrations.html) for more details.
+Deploy your dialog skill by first connecting it to an assistant, and then deploying the assistant. There are several ways you can do this. See [Adding integrations](add-integrations.html) for more details.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-02-01"
+lastupdated: "2018-08-29"
 
 ---
 
@@ -86,6 +86,10 @@ Similarly, you can filter on intents or entities sent as part of the request, as
 
 `response.top_intent::goodbye`
 
+### Filtering by customer ID
+
+To filter by customer ID, use the special location `customer_id`. (For more information about labeling messages with a customer ID, see [Information security](/docs/services/conversation/information-security.html)).
+
 ### Filtering by other fields
 
 To filter on any other field in the log data, specify the location as a path identifying the levels of nested objects in the JSON response from the /logs API. Use dots (`.`) to specify successive levels of nesting in the JSON data. For example, the location `request.input.text` idenfities the user input text field as shown in the following JSON fragment:
@@ -107,6 +111,7 @@ The following examples illustrate various types of queries using this syntax.
 |---------|-----------|
 | The date of the response is in the month of July 2017. | `response_timestamp>=2017-07-01,response_timestamp<2017-08-01` |
 | The timestamp of the response is earlier than `2016-11-01T04:00:00.000Z`. | `response_timestamp<2016-11-01T04:00:00.000Z` |
+| The message is labeled with the customer ID `my_id`. | `customer_id::my_id` |
 | The user input text contains the word "order" or a grammatical variant (for example, `orders` or `ordering`. | `request.input.text:order` |
 | An intent name in the response exactly matches `place_order`. | `response.intents:intent::place_order` |
 | An entity name in the response exactly matches `beverage`.  | `response.entities:entity::beverage` |
@@ -121,3 +126,4 @@ The following examples illustrate various types of queries using this syntax.
 | An intent name in the response exactly matches either `hello` or `goodbye`. | <code>response.intents:intent::(hello&#124;goodbye)</code> |
 | An intent in the response has the name `hello` and a confidence value equal to or greater than 0.8. | `response.intents:(intent:hello,confidence>=0.8)` |
 | An intent name in the response exactly matches `order`, and an entity name in the response exactly matches `beverage`. | `[response.intents:intent::order,response.entities:entity::beverage]` |
+<!-- -->

@@ -24,7 +24,7 @@ lastupdated: "2018-09-17"
 The dialog uses the intents that are identified in the user's input, plus context from the application, to interact with the user and ultimately provide a useful response.
 {: shortdesc}
 
-It matches intents (what users say) to responses (what the bot says back). The response might be the answer to a question such as `Where can I get some gas?` or the execution of a command, such as turning on the radio. The intent and entity might be enough information to identify the correct response, or the dialog might ask the user for more input that is needed to respond correctly. For example, if a user asks, `Where can I get some food?` you might want to clarify whether they want a restaurant or a grocery store, to dine in or take out, and so on. You can ask for more details in a text response and create one or more child nodes to process the new input.
+The dialog matches intents (what users say) to responses (what the bot says back). The response might be the answer to a question such as `Where can I get some gas?` or the execution of a command, such as turning on the radio. The intent and entity might be enough information to identify the correct response, or the dialog might ask the user for more input that is needed to respond correctly. For example, if a user asks, `Where can I get some food?` you might want to clarify whether they want a restaurant or a grocery store, to dine in or take out, and so on. You can ask for more details in a text response and create one or more child nodes to process the new input.
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Dialog overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/DVqPvOI8clw?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
@@ -124,7 +124,7 @@ You can use one or more of the following artifacts in any combination to define 
 
 | Condition syntax     | Description |
 |----------------------|-------------|
-| `anything_else`      | You can use this condition at the end of a dialog, to be processed when the user input does not match any other dialog nodes. The **Anything else** node is triggered by this condition. |
+| `anything_else`      | You can use this condition at the end of a dialog, to be processed when the user input does not match any other dialog nodes. The **Anything else** node is triggered by this condition. Do not use in dialog branches where you want digressions away to occur.|
 | `conversation_start` | Like **welcome**, this condition is evaluated as true during the first dialog turn. Unlike **welcome**, it is true whether or not the initial request from the application contains user input. A node with the **conversation_start** condition can be used to initialize context variables or perform other tasks at the beginning of the dialog. |
 | `false`              | This condition is always evaluated to false. You might use this at the start of a branch that is under development, to prevent it from being used, or as the condition for a node that provides a common function and is used only as the target of a **Jump to** action. |
 | `irrelevant`         | This condition will evaluate to true if the user’s input is determined to be irrelevant by the {{site.data.keyword.conversationshort}} service. |
@@ -212,7 +212,7 @@ If you want a single text response to include multiple lines separated by carria
 
 1.  For the response variation setting, choose **multiline**.
 
-    **Note**: If you are using a conversational skill that was created before support for rich response types was added to the service, then you might not see the *multiline* option. Add a second text response type to the current node response. This action changes how the response is represented in the underlying JSON. As a result, the multiline option becomes available. Choose the multiline variation type. Now, you can delete the second text response type that you added to the response.
+    **Note**: If you are using a dialog skill that was created before support for rich response types was added to the service, then you might not see the *multiline* option. Add a second text response type to the current node response. This action changes how the response is represented in the underlying JSON. As a result, the multiline option becomes available. Choose the multiline variation type. Now, you can delete the second text response type that you added to the response.
 
 When the response is shown to the user, both response variations are displayed, one on each line, like this:
 
@@ -313,7 +313,7 @@ In addition to the default response type of **Text**, for which you specify the 
 
 - **Connect to human agent**: The dialog calls a service that you designate, typically a service that manages human agent support ticket queues, to pass off the conversation to a person. You can optionally include a message that summarizes the user's issue to be provided to the human agent. It is the responsibility of the external service to display a message that is shown to the user that explains that the conversation is being transferred. The dialog does not manage that communication itself. The dialog transfer does not occur when you are testing nodes with this response type in the "Try it out" pane. You must access a node that uses this response type from a test deployment to see how your users will experience it.
 
-  ![Premium plan only](images/premium0.png)  This response type is only available for Premium plans.
+  **Note**: This response type is supported with custom application integrations only.
 
 - **Image**: Embeds an image into the response. The source image file must be hosted somewhere and have a URL that you can use to reference it. It cannot be a file that is stored in a directory that is not publicly accessible.
 - **Option**: Adds a list of one or more options. When a user clicks one of the options, an associated user input value is sent to the service. How options are rendered can differ depending on where you deploy the dialog. For example, in one integration channel the options might be displayed as clickable buttons, but in another they might be displayed as a dropdown list.
@@ -328,7 +328,7 @@ To add a rich response, complete the following steps:
 
     - **Connect to human agent**. You can optionally add a message to share with the human agent to whom the conversation is transferred.
 
-      ![Premium plan only](images/premium0.png)  This response type is only available for Premium plans.
+        **Note**: This response type is only supported with custom application integrations. You must program the client application to recognize when this respones type is triggered.
     - **Image**. Add the full URL to the hosted image file into the **Image source** field. The image must be in .jpg, .gif, or .png format. The image file must be stored in a location that is publicly addressable by URL.
 
         For example: `https://www.example.com/assets/common/logo.png`.
@@ -453,6 +453,7 @@ If you choose to jump to another node, specify when the target node is processed
 - **Condition**: If the statement targets the condition section of the selected dialog node, the service checks first whether the condition of the targeted node evaluates to true.
     - If the condition evaluates to true, the system processes the target node immediately.
     - If the condition does not evaluate to true, the system moves to the next sibling node of the target node to evaluate its condition, and repeats this process until it finds a dialog node with a condition that evaluates to true.
+
     - If the system processes all the siblings and none of the conditions evaluate to true, the basic fallback strategy is used, and the dialog evaluates the nodes at the base level of the dialog tree.
 
     Targeting the condition is useful for chaining the conditions of dialog nodes. For example, you might want to first check whether the input contains an intent, such as `#turn_on`, and if it does, you might want to check whether the input contains entities, such as `@lights`, `@radio`, or `@wipers`. Chaining conditions helps to structure larger dialog trees.
@@ -469,4 +470,4 @@ If you choose to jump to another node, specify when the target node is processed
 
 For information about the expression language used by dialog, plus methods, system entities, and other useful details, see the **Reference** section in the navigation pane.
 
-You can also use the API to add nodes or otherwise edit a dialog. See [Modifying a dialog using the API](dialog-api.html) for more information.
+You can also use the API to add nodes or otherwise edit a dialog. See [Modifying a dialog using the API](api-dialog-modify.html) for more information.

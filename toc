@@ -7,15 +7,14 @@ Watson Assistant Beta
     {: .navgroup id="learn"}
     getting-started.md
     index.md
-    assistants.md
     skills.md
+    assistants.md
     tool-overview.md
     [Demo: Banking Assistant](https://watson-conversation-duo-dev.ng.bluemix.net/)
     resources.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    create-assistant.md
     create-skill.md
     catalog.md
     intents.md
@@ -27,10 +26,11 @@ Watson Assistant Beta
         dialog-build.md
         dialog-tips.md
         dialog-slots.md
-        dialog-multimedia.md
         dialog-actions.md
+        dialog-responses-json.md
 
     entities.md
+    create-assistant.md
 
     {: .topicgroup}
     Integrations
@@ -38,6 +38,7 @@ Watson Assistant Beta
         deploy-facebook.md
         deploy-slack.md
         deploy-web-link.md
+        deploy-custom-app.md
         dialog-start.md
         delete-integration.md
 
@@ -48,17 +49,29 @@ Watson Assistant Beta
         logs_convo.md
         logs_recommend.md
 
+    upgrading.md
+    edit-convo-workspace.md
+
     {: .topicgroup}
     Tutorials
         tutorial.md
         tutorial-slots.md
         tutorial-slots-complex.md
+        tutorial-car-dashboard.md
         tutorial-digressions.md
         [Tutorial: Defining contextual entities](https://www.ibm.com/cloud/garage/demo/try-watson-assistant-contextual-entities)
+    
+    {: .topicgroup}
+    Using the API
+        api-overview.md
+        api-methods.md
+        api-dialog-responses.md
+        api-dialog-modify.md 
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    accessibility.md
+    [v2 API reference](https://www.ibm.com/watson/developercloud/assistant/api/v2/)
+    [v1 API reference](https://www.ibm.com/watson/developercloud/assistant/api/v1/)
     dialog-methods.md
     expression-language.md
     filter-reference.md
@@ -82,6 +95,8 @@ Watson Assistant Beta
     {: .topicgroup}
     Developer community
         [StackOverflow](https://stackoverflow.com/questions/tagged/watson-conversation+or+watson-assistant)
-        [developerWorks Answers](https://developer.ibm.com/answers/search.html?f=&amp;sort=relevance&amp;q=%5Bwatson-conversation%5D+%5Bwatson-assistant%5D+%24)
+        [IBM Developer Answers](https://developer.ibm.com/answers/search.html?f=&amp;sort=relevance&amp;q=%5Bwatson-conversation%5D+%5Bwatson-assistant%5D+%24)
         [WDC Slack channel](http://wdc-slack-inviter.mybluemix.net/)
+
+    accessibility.md
     {: .navgroup-end}

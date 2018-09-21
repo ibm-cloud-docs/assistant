@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-17"
+lastupdated: "2018-08-20"
 ---
 
 {:shortdesc: .shortdesc}
@@ -18,10 +18,65 @@ lastupdated: "2018-08-17"
 
 # Release notes
 
+## Service API Versioning
+{: shortdesc}
+
+API requests require a version parameter that takes a date in the format `version=YYYY-MM-DD`. Whenever we change the API in a backwards-incompatible way, we release a new minor version of the API.
+
+Send the version parameter with every API request. The service uses the API version for the date you specify, or the most recent version before that date. Don't default to the current date. Instead, specify a date that matches a version that is compatible with your app, and don't change it until your app is ready for a later version.
+
+- The current version for V1 is `2018-09-20`.
+- The only supported version for V2 is `2018-09-20`.
+- The "Try it out" pane in the {{site.data.keyword.conversationshort}} tooling is using version `2018-07-10`.
+
+## Beta features
+
+IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment. Beta features are supported only on the [developerWorks Answers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/topics/watson-conversation/){: new_window}.
+
 ## Changes
 {: #change-log}
 
 The following new features and changes to the service are available.
+
+### 20 September 2018
+{: #20September2018}
+
+- **Intent recommendations**: You can upload a file that contains raw user inputs for the service to analyze and find candidate intent user examples. See [Adding examples from log files](intents.html#intent-recommendations).
+- **New major API version**: A V2 version of the API is available. This version introduces the following changes:
+
+  - Provides access to methods you can use to interact with an assistant at run time.
+  - The `errors[].path` attribute of the error object that is returned by the API is now expressed as a [JSON Pointer](https://tools.ietf.org/html/rfc6901) instead of in dot notation form.
+
+  See [API Overview](api-overview.html) for more details.
+
+- **New workflow**: The user interface was updated to encourage a new workflow that starts with creating a skill first, and then adding the skill to an assistant.
+- **New terminology**: The documentation was updated to use 'dialog skill' instead of 'conversational skill' when referring to skills.
+- **Dialog node limit changes**: The dialog node limit decreased for the following service plans:
+
+  <table>
+  <caption>Dialog node limit changes</caption>
+    <tr>
+      <th>Plan</th>
+      <th>Old limit</th>
+      <th>New limit</th>
+    </tr>
+    <tr>
+      <td>Standard</td>
+      <td>100,000</td>
+      <td>500</td>
+    </tr>
+    <tr>
+       <td>Lite</td>
+       <td>25,000</td>
+       <td>100</td>
+    </tr>
+  </table>
+
+    Users of dialogs that were created before the limit change have 6 months to upgrade, or edit the dialog to meet the new limit requirements. After the grace period ends, adding new nodes will be prohibited until the dialog complies with the limits. Existing nodes will not be removed.
+
+    See [Troubleshooting skill import issues](create-skill.html#import-errors) for information about how to edit workspaces or skills that you want to continue using.
+
+-  **Artifact changes**: The tool was re-architected to use the new V2 APIs. As a result, assistants that existing users created before today are impacted. Specifically, any skills that you added to assistants have been removed from them. Also, any integrations you created (Facebook or Slack, for example) have been removed. You must add skills to your assistants again, and recreate integrations for your assistants.
 
 ### 6 August 2018
 {: #6August2018}

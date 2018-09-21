@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-15"
+lastupdated: "2018-08-29"
 
 ---
 
@@ -36,17 +36,17 @@ This tutorial will take approximately 20 minutes to complete.
 
 ### Prerequisite
 
-If you do not have a {{site.data.keyword.conversationshort}} instance, complete the **Before you begin** step from the [Getting Started tutorial](getting-started.html) to create one.
+If you do not have a {{site.data.keyword.conversationshort}} instance, complete the **Before you begin** step from the [Getting Started tutorial](getting-started.html#prerequisites) to create one.
 
-## Step 1: Import the Digressions showcase conversational skill
+## Step 1: Import the Digressions showcase dialog skill
 {: #import-digression-json}
 
-First you will need to import the *Digression showcase* conversational skill into your {{site.data.keyword.conversationshort}} instance.
+First you will need to import the *Digression showcase* dialog skill into your {{site.data.keyword.conversationshort}} instance.
 
 1.  Download the [digression-showcase.json](https://github.com/watson-developer-cloud/community/raw/master/watson-assistant/digression-showcase.json) file.
 1.  In your {{site.data.keyword.conversationshort}} instance, click the ![Import](images/workspace_import.png) icon.
 1.  Click **Choose a file**, and then select the **digression-showcase.json** file that you downloaded earlier.
-1.  Click **Import** to finish importing the conversational skill.
+1.  Click **Import** to finish importing the dialog skill.
 
 ## Step 2: Temporarily digressing away from dialog
 {: #temporarily-digress-away}
