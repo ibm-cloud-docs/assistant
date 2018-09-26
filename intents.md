@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-21"
+lastupdated: "2018-09-26"
 
 ---
 
@@ -131,7 +131,7 @@ Use the {{site.data.keyword.conversationshort}} tool to create intents.
 
           `+ - = && || > < ! ( ) { } [ ] ^ " ~ * ? : \ /`
 
-          If you want to include one in a search term without it being processed as an operator, you must prefix it with a backslash (\).
+          If you want to include one in a search term without it being processed as an operator, you must prefix it with a backslash (`\`).
 
     ***Referencing entity values and synonyms in intent examples***
     {: #related-entities}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-20"
+lastupdated: "2018-09-26"
 
 ---
 
@@ -119,6 +119,8 @@ To download a skill, complete the following steps:
 1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Download JSON**.
 
 1.  Specify a name for the JSON file and where to save it, and then click **Save**.
+
+You can export a skill by using the API also. Include the `export=true` parameter with the request. See the [API reference](https://www.ibm.com/watson/developercloud/assistant/api/v1/curl.html?curl#get-workspace) for more details.
 
 ## Deleting a skill
 {: #delete-convo-skill}
