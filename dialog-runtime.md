@@ -791,9 +791,9 @@ This section describes solutions to situations that you might encounter when usi
 
 - **Preventing returns**: In some cases, you might want to prevent a return to the interrupted conversation flow based on a choice the user makes in the current dialog flow. You can use special syntax to prevent a return from a specific node.
 
-  For example, you might have a node that conditions on `#General_Connect_To_Agent` or a similar intent. When triggered, you get confirmation from users before you transfer them to an external service with a response such as, `Do you want me to transfer you to an agent now?` You can then add two child nodes that condition on `#yes` and `#no` respectively.
+  For example, you might have a node that conditions on `#General_Connect_To_Agent` or a similar intent. When triggered, if you want to get the user's confirmation before you transfer them to an external service, you might add a response such as, `Do you want me to transfer you to an agent now?` You could then add two child nodes that condition on `#yes` and `#no` respectively.
   
-  The best way to manage digressions for this branch is to set the root node to allow digression returns. However, on the `#yes` node, include the following SpEL expression `<? clearDialogStack() ?>` in the response. For example:
+  The best way to manage digressions for this type of branch is to set the root node to allow digression returns. However, on the `#yes` node, include the SpEL expression `<? clearDialogStack() ?>` in the response. For example:
   
     ```bash
   OK. I will transfer you now. <? clearDialogStack() ?>
