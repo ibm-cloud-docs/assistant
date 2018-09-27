@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-26"
+lastupdated: "2018-09-27"
 
 ---
 
@@ -671,6 +671,7 @@ Watch this video to learn more.
 
 - [Before you begin](dialog-runtime.html#prereqs)
 - [Customizing digressions](dialog-runtime.html#enable-digressions)
+- [Digression usage tips](#digress-tips)
 - [Disabling digressions into a root node](dialog-runtime.html#disable-digressions)
 - [Digression tutorial](dialog-runtime.html#digression-tutorial)
 - [Design considerations](dialog-runtime.html#digression-design-considerations)
@@ -754,10 +755,10 @@ The #reservation and #cuisine nodes represent two dialog branches that can parti
 
 ![Shows two dialogs, one that sets the digressions away from the reservation slots node and one that sets the digression into the cuisine node.](images/digression-settings.png)
 
-### Disambiguation usage tips
-{:disambig-tips}
+### Digression usage tips
+{: #digress-tips}
 
-This section describes solutions to situations that you might encounter when using disambiguation.
+This section describes solutions to situations that you might encounter when using digressions.
 
 - **Custom return message**: For any nodes where you enable returns from digressions away, consider adding wording that lets users know they are returning to where they left off in a previous dialog flow. In your text response, use a special syntax that lets you add two versions of the response.
 
