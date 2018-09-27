@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-20"
+lastupdated: "2018-09-26"
 
 ---
 
@@ -45,6 +45,15 @@ For information about artifact limits per plan, see these topics:
 - [Integrations](add-integrations.html#integration-limits)
 - [Logs](logs_convo.html#log-limits)
 - [Skills](create-skill.html#skill-limits)
+
+### Premium plan features
+{: #premium}
+
+The following features are available only to users of Premium plans.
+
+- [Disambiguation](dialog-runtime.html#disambiguation)
+- [Intent recommendations](intents.html#intent-recommendations)
+- [Recommended improvements](logs_recommend.html)
 
 ## Terms and security
 {: #terms}

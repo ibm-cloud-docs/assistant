@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-10"
+lastupdated: "2018-09-26"
 
 ---
 
@@ -746,22 +746,6 @@ To change the digression behavior for an individual node, complete the following
 
 1.  Click **Apply**.
 
-1.  **Optional**: For any nodes where you enable returns from digressions away, consider specifying the text response using a syntax that supports adding a version of the response that can be shown to users who return to the node after a digression.
-
-    If you do not take action, the same text response is displayed a second time to let users know they have returned to the node they digressed away from. You can make it clearer to users that they have returned to the original conversation thread by specifying a unique message to be displayed upon their return. For example, if the original text response for the node is, `What's the order number?`, you might want to display a message like, `Now let's get back to where we left off. What is the order number?`, when users return to the node after completing a dialog branch that they digressed to.
-
-    To do so, use the following syntax to specify the node text response:
-
-    `<? (returning_from_digression)? "post-digression message" : "first-time message" ?>`
-
-    For example: `<? (returning_from_digression)? "Now, let's get back to where we left off. What is the order number?" : "What's the order number?" ?>`
-
-    **Note**: You cannot include SpEL expressions or shorthand syntax in the text responses that you add. In fact, you cannot use shorthand syntax at all. Instead, you must build the message by concatenating the text strings and full SpEL expression syntax together to form the full response. For example, use the following syntax to include a context variable in a text response that you would normally specify as, `What can I do for you, $username?`:
-
-    `<? (returning_from_digression)? "Where were we, " + context["username"] + "? Oh right, I was asking what can I do for you today." : "What can I do for you today, " + context["username"] + "?" ?>`
-
-    For full SpEL expression syntax details, see [Expression for accessing objects](expression-language.html#shorthand-syntax).
-
 1.  Use the "Try it out" pane to test the digression behavior.
 
     Again, you cannot define the start and end of a digression. The user controls where and when digressions happen. You can only apply settings that determine how a single node participates in one. Because digressions are so unpredictable, it is hard to know how your configuration decisions will impact the overall conversation. To truly see the impact of the choices you made, you must test the dialog.
@@ -769,6 +753,53 @@ To change the digression behavior for an individual node, complete the following
 The #reservation and #cuisine nodes represent two dialog branches that can participate in a single user-directed digression. The digression settings that are configured for each individual node are what make this type of digression possible at run time.
 
 ![Shows two dialogs, one that sets the digressions away from the reservation slots node and one that sets the digression into the cuisine node.](images/digression-settings.png)
+
+### Disambiguation usage tips
+{:disambig-tips}
+
+This section describes solutions to situations that you might encounter when using disambiguation.
+
+- **Custom return message**: For any nodes where you enable returns from digressions away, consider adding wording that lets users know they are returning to where they left off in a previous dialog flow. In your text response, use a special syntax that lets you add two versions of the response.
+
+  If you do not take action, the same text response is displayed a second time to let users know they have returned to the node they digressed away from. You can make it clearer to users that they have returned to the original conversation thread by specifying a unique message to be displayed when they return.
+
+  For example, if the original text response for the node is, `What's the order number?`, then you might want to display a message like, `Now let's get back to where we left off. What is the order number?` when users return to the node.
+
+  To do so, use the following syntax to specify the node text response:
+
+  `<? (returning_from_digression)? "post-digression message" : "first-time message" ?>`
+
+  For example:
+
+  ```bash
+  <? (returning_from_digression)? "Now, let's get back to where we left off.
+  What is the order number?" : "What's the order number?" ?>
+  ```
+  {: codeblock}
+
+  **Note**: You cannot include SpEL expressions or shorthand syntax in the text responses that you add. In fact, you cannot use shorthand syntax at all. Instead, you must build the message by concatenating the text strings and full SpEL expression syntax together to form the full response. For example, use the following syntax to include a context variable in a text response that you would normally specify as, `What can I do for you, $username?`:
+
+  ```bash
+  <? (returning_from_digression)? "Where were we, " +
+  context["username"] + "? Oh right, I was asking what can I do
+  for you today." : "What can I do for you today, " +
+  context["username"] + "?" ?>
+  ```
+
+  For full SpEL expression syntax details, see [Expression for accessing objects](expression-language.html#shorthand-syntax).
+
+- **Preventing returns**: In some cases, you might want to prevent a return to the interrupted conversation flow based on a choice the user makes in the current dialog flow. You can use special syntax to prevent a return from a specific node.
+
+  For example, you might have a node that conditions on `#General_Connect_To_Agent` or a similar intent. When triggered, you get confirmation from users before you transfer them to an external service with a response such as, `Do you want me to transfer you to an agent now?` You can then add two child nodes that condition on `#yes` and `#no` respectively.
+  
+  The best way to manage digressions for this branch is to set the root node to allow digression returns. However, on the `#yes` node, include the following SpEL expression `<? clearDialogStack() ?>` in the response. For example:
+  
+    ```bash
+  OK. I will transfer you now. <? clearDialogStack() ?>
+  ```
+  {: codeblock}
+
+  This SpEL expression prevents the digression return from happening from this node. When a confirmation is requested, if the user says yes, the proper response is displayed, and the dialog flow that was interrupted is not resumed. If the user says no, then the user is returned to the flow that was interrupted.
 
 ### Disabling digressions into a root node
 {: #disable-digressions}
