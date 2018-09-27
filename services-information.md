@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-26"
+lastupdated: "2018-09-27"
 
 ---
 
@@ -52,6 +52,7 @@ For information about artifact limits per plan, see these topics:
 The following features are available only to users of Premium plans.
 
 - [Disambiguation](dialog-runtime.html#disambiguation)
+- [Intent conflict resolution](intents.html#conflict-intents)
 - [Intent recommendations](intents.html#intent-recommendations)
 - [Recommended improvements](logs_recommend.html)
 
