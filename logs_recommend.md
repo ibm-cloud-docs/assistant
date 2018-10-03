@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-29"
+lastupdated: "2018-10-03"
 
 ---
 
@@ -17,16 +17,17 @@ lastupdated: "2018-08-29"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Recommendations
+# Recommendations ![Premium plan only](images/premium0.png)
+{: #logs_recommend}
+
 This page presents recommendations for ways to improve your system.
 {: shortdesc}
 
 ![Recommendations tab](images/RecommendTop.png)
 
-This feature is Beta only.
-{: tip}
-
 This feature is available only to Premium users.
+
+This feature is Beta only.
 {: tip}
 
 By analyzing the conversations that users have had with your dialog skill, and taking into account your system's current training data and response certainty, you will be presented with actions you can take to easily and efficiently improve your skill.

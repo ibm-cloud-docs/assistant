@@ -43,7 +43,7 @@ For information about artifact limits per plan, see these topics:
 - [Entities](entities.html#entity-limits)
 - [Intents](intents.html#intent-limits)
 - [Integrations](add-integrations.html#integration-limits)
-- [Logs](logs_convo.html#log-limits)
+- [Logs](logs.html#log-limits)
 - [Skills](create-skill.html#skill-limits)
 
 ### Premium plan features

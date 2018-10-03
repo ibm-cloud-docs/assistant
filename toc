@@ -44,9 +44,9 @@ Watson Assistant Beta
 
     {: .topicgroup}
     Improving understanding
-        logs.md
+        logs_intro.md
         logs_oview.md
-        logs_convo.md
+        logs.md
         logs_recommend.md
 
     upgrading.md
