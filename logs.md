@@ -17,7 +17,7 @@ lastupdated: "2018-10-03"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Learning from conversations
+# Learn from conversations
 {: #logs}
 
 To open a list of messages between users and the assistant that uses this dialog skill, select **User conversations** in the navigation bar.
