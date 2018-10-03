@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-20"
+lastupdated: "2018-10-03"
 ---
 
 {:shortdesc: .shortdesc}
@@ -38,6 +38,11 @@ IBM releases services, features, and language support for your evaluation that a
 
 The following new features and changes to the service are available.
 
+### 3 October 2018
+{: #3October2018}
+
+- When reviewing logs for one skill, you can switch the data source to view metrics about message data from a different assistant and gain insights from it. You can make improvements to the current skill based on what you learn from the data. See [Improving across assistants](logs.html#deploy_id).
+
 ### 21 September 2018
 {: #21September2018}
 
@@ -50,6 +55,7 @@ The following new features and changes to the service are available.
   See [API Overview](api-overview.html) for more details.
 
 - **New workflow**: The user interface was updated to encourage a new workflow that starts with creating a skill first, and then adding the skill to an assistant.
+- **Web actions support**: You can now call {{site.data.keyword.openwhisk_short}} web actions from a dialog node. See [Making programmatic calls from a dialog node](dialog-actions.html) for more details.
 - **New terminology**: The documentation was updated to use 'dialog skill' instead of 'conversational skill' when referring to skills.
 - **Dialog node limit changes**: The dialog node limit decreased for the following service plans:
 
