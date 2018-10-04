@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-03"
+lastupdated: "2018-10-04"
 
 ---
 
@@ -31,12 +31,14 @@ When you define the programmatic call, you choose one of the following types:
 
 - **client**: Defines a programmatic call in a standardized format that your external client application can use to perform the programmatic call or function, and return the result to the dialog. This type of call basically tells the dialog to pause here and let the client application go do something. The program that the client application runs can be anything that you choose. Just be sure to specify the call name and parameter details, as well as the error message variable name, according to the JSON formatting rules that are outlined later.
 
-- **cloud_function**: Calls an {{site.data.keyword.openwhisk_short}} action directly, and returns the result to the dialog. For this type of action, the cost of activating the action is charged to the caller of the action, not the action owner. See [Pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/openwhisk/learn/pricing){: new_window} for more details. You must provide a {{site.data.keyword.openwhisk_short}} authentication key with the call. (This type used to be named **server**. The type **server** continues to be supported.)
+- **cloud_function**: Calls an {{site.data.keyword.openwhisk_short}} action directly, and returns the result to the dialog. You must provide a {{site.data.keyword.openwhisk_short}} authentication key with the call. (This type used to be named **server**. The type **server** continues to be supported.)
 
 - **web_action** : Calls a {{site.data.keyword.openwhisk_short}} web action. Web actions are annotated {{site.data.keyword.openwhisk_short}} actions that developers can use to program backend logic that a web application can access anonymously, without requiring a {{site.data.keyword.openwhisk_short}} authentication key. Although authentication is not required, web actions can be secured in the following ways:
 
   - With an authentication token that is specific to the web action, and can be revoked or changed by the action owner at any time
   - By passing your {{site.data.keyword.openwhisk_short}} credentials
+
+**Note**: All of the {{site.data.keyword.openwhisk_short}} action types (web_action and cloud_function or server) incur a cost. The cost of activating the action is charged to the person who owns the credentials that are specified in the action call. See [Pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/openwhisk/learn/pricing){: new_window} for more details. The {{site.data.keyword.openwhisk_short}} service does not distinguish between calls that are made from the "Try it out" pane during testing and calls that are made from an application in production. Therefore, calls made during testing might incur charges.
 
 ## Procedure
 {: #call-action}
@@ -100,7 +102,7 @@ To make a programmatic call from a dialog node, complete the following steps:
 
           For example: `calculateRate`
 
-       - For {{site.data.keyword.openwhisk_short}} (server) action types, use this syntax to provide the fully qualified name of the action: `/<namespace>/[<package-name>]/<action name>`
+       - For cloud_function (or server) and web_action types, use this syntax to provide the fully qualified name of the action: `/<namespace>/[<package-name>]/<action name>`
 
          - If a standard action is part of a package, then the `<package-name>` information is required. Otherwise, a package name is not required.
          - If a web action is part of a package, then the `<package-name>` information is required. Otherwise, the package name `default`, which is applied to web actions that do not have a package name, is required.
@@ -383,8 +385,6 @@ To see a dialog skill with a dialog that is already set up to call the {{site.da
 1.  Test the dialog by entering some input.
 
     The service will use the {{site.data.keyword.openwhisk_short}} Echo action to repeat whatever you enter back to you.
-
-    **Attention**: {{site.data.keyword.openwhisk_short}} does not distinguish between calls that are made from the "Try it out" pane during testing and calls that are made from an application in production. Some calls might incur charges.
 
 ## {{site.data.keyword.openwhisk_short}} web action call example
 {: #web-action-server-example}
