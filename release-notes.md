@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-03"
+lastupdated: "2018-10-11"
 ---
 
 {:shortdesc: .shortdesc}
@@ -37,6 +37,11 @@ IBM releases services, features, and language support for your evaluation that a
 {: #change-log}
 
 The following new features and changes to the service are available.
+
+### 11 October 2018
+{: #11October2018}
+
+- **Intercom integration**: You can now add your assistant as a teammate in Intercom and assign certain types of support requests to the assistant. See [Integrating with Intercom](deploy-intercom.html) for more details.
 
 ### 3 October 2018
 {: #3October2018}

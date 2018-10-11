@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-01"
+lastupdated: "2018-10-11"
 
 ---
 
@@ -256,7 +256,7 @@ In order to train a contextual entity model, you can take advantage of your inte
 
     ![Select #place_order intent](images/oe-intent.png)
 
-1.  Review the intent examples for potential entity values. Highlight a potential entity value from the intent examples. 
+1.  Review the intent examples for potential entity values. Highlight a potential entity value from the intent examples.
 
     In this case `computer`.
 
@@ -278,6 +278,9 @@ In order to train a contextual entity model, you can take advantage of your inte
 
     **NOTE**: You should create *at least* 10 annotations for each contextual entity; more annotations are recommended for production use.
 
+1.  Repeat this process for each entity mention that you want to annotate.
+
+    **Attention**: Be sure to annotate every mention of an entity type that occurs in any user examples that you edit. See [What you don't annotate matters](#entity-counter-examples) for more details.
 1.  Now, click the annotation you just created. A box opens that says, `Go to: @product`. Clicking that link takes you directly to the entity.
 
     ![Verify value computer for product entity](images/oe-verify-value.png)
@@ -301,6 +304,7 @@ The following video demonstrates how to annotate entity mentions.
 To walk through a tutorial that shows you how to define contextual entities before you add your own, go to [Tutorial: Defining contextual entities ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/garage/demo/try-watson-assistant-contextual-entities){: new_window}.
 
 ### What you don't annotate matters
+{: #entity-counter-examples}
 
 If you have an intent example with an annotation, and another word in that example matches the value or a synonym of the same entity, but the value is *not* annotated, that omission has impact. The model also learns from the context of the term you did not annotate. Therefore, if you label one term as a mention of an entity in a user example, be sure to label any other applicable mentions also.
 
