@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-21"
+lastupdated: "2018-10-12"
 
 ---
 
@@ -313,7 +313,7 @@ In addition to the default response type of **Text**, for which you specify the 
 
 - **Connect to human agent**: The dialog calls a service that you designate, typically a service that manages human agent support ticket queues, to pass off the conversation to a person. You can optionally include a message that summarizes the user's issue to be provided to the human agent. It is the responsibility of the external service to display a message that is shown to the user that explains that the conversation is being transferred. The dialog does not manage that communication itself. The dialog transfer does not occur when you are testing nodes with this response type in the "Try it out" pane. You must access a node that uses this response type from a test deployment to see how your users will experience it.
 
-  **Note**: This response type is supported with custom application integrations only.
+  **Note**: This response type is supported with Intercom or custom application integrations only.
 
 - **Image**: Embeds an image into the response. The source image file must be hosted somewhere and have a URL that you can use to reference it. It cannot be a file that is stored in a directory that is not publicly accessible.
 - **Option**: Adds a list of one or more options. When a user clicks one of the options, an associated user input value is sent to the service. How options are rendered can differ depending on where you deploy the dialog. For example, in one integration channel the options might be displayed as clickable buttons, but in another they might be displayed as a dropdown list.
@@ -328,7 +328,7 @@ To add a rich response, complete the following steps:
 
     - **Connect to human agent**. You can optionally add a message to share with the human agent to whom the conversation is transferred.
 
-        **Note**: This response type is only supported with custom application integrations. You must program the client application to recognize when this respones type is triggered.
+        **Note**: This response type is supported with Intercom and custom application integrations only. For custom applications, you must program the client application to recognize when this response type is triggered.
     - **Image**. Add the full URL to the hosted image file into the **Image source** field. The image must be in .jpg, .gif, or .png format. The image file must be stored in a location that is publicly addressable by URL.
 
         For example: `https://www.example.com/assets/common/logo.png`.
@@ -338,7 +338,7 @@ To add a rich response, complete the following steps:
 
       1.  Click **Add option**.
       1.  In the **List label** field, enter the option to display in the list.
-      1.  In the corresponding **Value** field, enter the user input to pass to the service when this option is selected. 
+      1.  In the corresponding **Value** field, enter the user input to pass to the service when this option is selected.
 
           Specify a value that you know will trigger the correct intent when it is submitted. For example, it might be a user example from the training data for the intent.
       1.  Repeat the previous steps to add more options to the list.
