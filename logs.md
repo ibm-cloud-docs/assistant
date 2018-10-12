@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-03"
+lastupdated: "2018-10-12"
 
 ---
 
@@ -36,7 +36,6 @@ The length of time for which messages are retained depends on your {{site.data.k
   Service plan                         | Chat message retention
   ------------------------------------ | ------------------------------------
   Premium                              | Last 90 days
-  Plus                                 | Last 90 days
   Standard                             | Last 30 days
   Lite                                 | Last 7 days
 

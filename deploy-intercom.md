@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-11"
+lastupdated: "2018-10-12"
 
 ---
 
@@ -139,6 +139,6 @@ Some rich responses that you add to a dialog are displayed differently within th
 
 | Response type | How displayed to Intercom users  |
 |---------------|---------------------------|
-| **option**    | The instruction, "Feel free to copy/paste one of the following replies that I would've used:" followed by a bulleted list. |
-| **image**     | The image title, description, and the image itself are rendered. |
+| **option**    | The options are displayed as a numbered list. In the **title** or **description** field, provide instructions that explain to the user how to choose an option from the list. |
+| **image**     | The image **title**, **description**, and the image itself are rendered. |
 | **pause**     | Whether or not you enable it, a typing indicator is not displayed during the pause. |
