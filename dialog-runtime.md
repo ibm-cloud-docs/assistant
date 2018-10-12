@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-27"
+lastupdated: "2018-10-11"
 
 ---
 
@@ -936,6 +936,8 @@ To enable disambiguation, complete the following steps:
     1.  In the *node purpose* field, describe the user task that this dialog node is designed to handle. For example, *Cancel an account*.
 
         ![Shows where to add the node purpose information in the node edit view.](images/disambig-node-purpose.png)
+
+        **Note**: The node purpose field is used to opt a node into Intercom integration also. If you add a node purpose summary to a root node and are using Intercom, and you do not want the default node settings to be applied to the node, then you must define a specific Intercom interaction for the node. See [Integrating with Intercom](deploy-intercom.html#config-interactions) for more details.
 
 ### Choosing nodes
 {: #choose-nodes}

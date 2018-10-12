@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-21"
+lastupdated: "2018-10-11"
 
 ---
 
@@ -52,10 +52,12 @@ Follow these steps to add integrations to your assistant:
 
 1.  Click the **Select Integration** button for the channel with which you want to integrate the assistant. The options include:
 
-    - [Facebook Messenger](deploy-facebook.html)
-    - [Slack](deploy-slack.html)
-    - [Shareable Link](deploy-web-link.html): One shareable link integration is already available. Only choose this option if you want to create another shareable link instance. To access the instance that was provisioned for you automatically, click the **Shareable Link** integration tile.
     - [Custom application](deploy-custom-app.html)
+    - [Facebook Messenger](deploy-facebook.html)
+    - [Intercom](deploy-intercom.html)  ![Premium plan only](images/premium0.png)
+    - [Shareable Link](deploy-web-link.html): One shareable link integration is already available. Only choose this option if you want to create another shareable link instance. To access the instance that was provisioned for you automatically, click the **Shareable Link** integration tile.
+    - [Slack](deploy-slack.html)
+    - [WordPress plug-in ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://wordpress.org/plugins/conversation-watson/){: new_window}
 
 1.  Follow the instructions that are provided on the screen to complete the integration process.
 
