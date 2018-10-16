@@ -66,6 +66,7 @@ Watson Assistant Beta
     Using the API
         api-overview.md
         api-methods.md
+        api-client.md
         api-dialog-responses.md
         api-dialog-modify.md 
     {: .navgroup-end}
