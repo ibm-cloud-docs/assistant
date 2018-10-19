@@ -44,8 +44,8 @@ The method used to authenticate with IAM service instances is different from the
 
 The following new features and changes to the service are available.
 
-### 19 October 2018
-{: #19October2018}
+### 22 October 2018
+{: #22October2018}
 
 - **Introducing search skills**: Add a search skill to your assistant that can connect to an {{site.data.keyword.discoveryfull}} data collection and retrieve information that is relevant to a user's query. See [Building a search skill](create-search-skill.html) for more details.
 
