@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-17"
+lastupdated: "2018-10-19"
 
 ---
 
@@ -36,7 +36,6 @@ The number of skills you can create in a single service instance depends on your
 | Service plan     | Skills per service instance |
 |------------------|----------------------------:|
 | Premium          |                         100 |
-| Plus             |                          50 |
 | Standard         |                          20 |
 | Lite*            |                           5 |
 {: caption="Service plan details" caption-side="top"}
