@@ -73,9 +73,9 @@ The remaining steps differ depending on whether you have access to an existing {
 
 1.  To create a {{site.data.keyword.discoveryshort}} service instance, click **Create new collection**.
 
-      An instance of the {{site.data.keyword.discoveryshort}} service is created for you, and a configuration page opens to the new {{site.data.keyword.discoveryshort}} service instance.
+    An instance of the {{site.data.keyword.discoveryshort}} service is created for you, and a configuration page opens to the new {{site.data.keyword.discoveryshort}} service instance.
 
-      **Attention**: A Lite plan instance of the service is provisioned in IBM Cloud, no matter what Watson Assistant service plan you use.
+    **Attention**: Currently, a Lite plan instance of {{site.data.keyword.discoveryshort}} cannot be provisioned automatically. Create a free Lite plan instance yourself from the [IBM Cloud Catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/catalog/services/discovery).
 
 1.  Review the terms and conditions for using the instance, and then click **Accept** to continue.
 

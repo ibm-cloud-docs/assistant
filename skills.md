@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-17"
+lastupdated: "2018-10-19"
 
 ---
 
@@ -53,5 +53,7 @@ The search skill interacts with the {{site.data.keyword.discoveryfull}} service 
 If you already use the {{site.data.keyword.discoveryshort}} service, you can mine your existing data collections for source material that you can share with customers to address common questions.
 
 However, you do not need to have a {{site.data.keyword.discoveryshort}} service instance. If you choose to create a search skill, a Lite plan instance is provisioned for you. You can then create a collection by choosing a data source, and the configuration to use to ingest documents from the data source into the collection. Lastly, configure your search skill to search this collection to find answers to queries that are typically asked by your customers.
+
+**Attention**: Currently, a Lite plan instance of {{site.data.keyword.discoveryshort}} cannot be provisioned automatically. Create a free Lite plan instance yourself from the [IBM Cloud Catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/catalog/services/discovery).
 
 For help creating a search skill, see [Building a search skill](create-search-skill.html).
