@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-12"
+lastupdated: "2018-10-19"
 
 ---
 
@@ -135,10 +135,12 @@ Submit test user queries through a client application that is associated with yo
 ## Dialog considerations
 {: #intercom-dialog}
 
-Some rich responses that you add to a dialog are displayed differently within the "Try it out" pane from how they are displayed in the Intercom users. The table below describes how the response types are treated by Intercom.
+Some rich responses that you add to a dialog are displayed differently within the "Try it out" pane from how they are displayed to Intercom users. The table below describes how the response types are treated by Intercom.
 
 | Response type | How displayed to Intercom users  |
 |---------------|---------------------------|
-| **option**    | The options are displayed as a numbered list. In the **title** or **description** field, provide instructions that explain to the user how to choose an option from the list. |
-| **image**     | The image **title**, **description**, and the image itself are rendered. |
-| **pause**     | Whether or not you enable it, a typing indicator is not displayed during the pause. |
+| **Option**    | The options are displayed as a numbered list. In the **title** or **description** field, provide instructions that explain to the user how to choose an option from the list. |
+| **Image**     | The image **title**, **description**, and the image itself are rendered. |
+| **Pause**     | Whether or not you enable it, a typing indicator is not displayed during the pause. |
+
+See [Rich responses](dialog-overview.html#multimedia) for more information about response types.

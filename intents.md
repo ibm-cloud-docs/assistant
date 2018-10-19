@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-26"
+lastupdated: "2018-10-12"
 
 ---
 
@@ -97,6 +97,7 @@ Use the {{site.data.keyword.conversationshort}} tool to create intents.
     - Remove any blank lines from the file.
 
       **Attention**: If your CSV file has blank lines, even at the end of the file, the upload will start but never complete.
+    - Do not include user utterances that exceed 1024 characters in length. Longer utterances are truncated.
     - If an utterance contains a comma, surround the utterance in quotation marks.
     - The CSV must include only one column.
     - Do not include human agent responses in the file.

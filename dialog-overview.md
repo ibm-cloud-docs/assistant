@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-12"
+lastupdated: "2018-10-19"
 
 ---
 
@@ -333,7 +333,7 @@ To add a rich response, complete the following steps:
 
         For example: `https://www.example.com/assets/common/logo.png`.
 
-        If you want to display an image title and description above the embedded image in the response, then add them in the fields provided. **Note**: Some integration channels do not display titles or descriptions for images.
+        If you want to display an image title and description above the embedded image in the response, then add them in the fields provided. **Note**: Slack integrations require a title. Other integration channels ignore titles or descriptions.
     - **Option**. Complete the following steps:
 
       1.  Click **Add option**.

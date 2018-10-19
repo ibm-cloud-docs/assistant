@@ -16,6 +16,8 @@ Watson Assistant Beta
 
     {: .navgroup id="howto"}
     create-skill.md
+    create-search-skill.md
+    create-dialog-skill.md
     catalog.md
     intents.md
 
