@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-11"
+lastupdated: "2018-10-19"
 
 ---
 
@@ -32,7 +32,7 @@ The number of integrations you can create in a single service instance depends o
 |------------------|---------------------------:|
 | Premium          |                        100 |
 | Standard         |                        100 |
-| Lite*            |                        100 |
+| Lite             |                        100 |
 {: caption="Service plan details" caption-side="top"}
 
 ## Add an integration
@@ -47,6 +47,8 @@ Follow these steps to add integrations to your assistant:
 1.  Go to the Integrations section.
 
     **What is the Shareable Link integration?** After you add a dialog skill to an assistant, a test web site is provisioned for you automatically. It has a simple chat widget interface that you can use to interact with your assistant for testing purposes. You can also share the URL to this IBM-branded site with your teammembers.
+
+    **Attention**: The shareable link integration does not work for assistants with a search skill currently.
 
 1.  Click **Add Integration**.
 

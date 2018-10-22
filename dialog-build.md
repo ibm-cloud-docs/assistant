@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-20"
+lastupdated: "2018-10-16"
 
 ---
 
@@ -126,7 +126,9 @@ To create a dialog, complete the following steps:
 ## Testing your dialog
 {: #test}
 
-As you make changes to your dialog, you can test it at any time to see how it responds to input.
+As you make changes to your dialog, you can test it at any time to see how the dialog responds to input.
+
+Queries you submit through the "Try it out" pane generate `/message` API calls, but they are not logged and do not incur charges.
 
 1.  From the Dialog tab, click the ![Try it](images/ask_watson.png) icon.
 1.  In the chat pane, type some text and then press Enter.

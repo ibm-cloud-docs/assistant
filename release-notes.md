@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-11"
+lastupdated: "2018-10-19"
 ---
 
 {:shortdesc: .shortdesc}
@@ -31,12 +31,23 @@ Send the version parameter with every API request. The service uses the API vers
 
 ## Beta features
 
-IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment. Beta features are supported only on the [developerWorks Answers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/topics/watson-conversation/){: new_window}.
+IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment. Beta features are supported only on the [IBM Developer Answers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/topics/watson-assistant/){: new_window}.
+
+## API authentication method will change on October 30
+
+(See [Authenticating with IAM tokens ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/watson/getting-started-iam.html) for more information.)
+
+The method used to authenticate with IAM service instances is different from the method used to authenticate with Cloud Foundry instances. Existing applications that use Cloud Foundry will continue to work. However, if you migrate a service instance or create a new service instance in a region that uses IAM, you must update the code that handles authentication.
 
 ## Changes
 {: #change-log}
 
 The following new features and changes to the service are available.
+
+### 22 October 2018
+{: #22October2018}
+
+- **Introducing search skills**: Add a search skill to your assistant that can connect to an {{site.data.keyword.discoveryfull}} data collection and retrieve information that is relevant to a user's query. See [Building a search skill](create-search-skill.html) for more details.
 
 ### 11 October 2018
 {: #11October2018}

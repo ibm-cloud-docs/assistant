@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-17"
+lastupdated: "2018-10-19"
 
 ---
 
@@ -22,6 +22,8 @@ lastupdated: "2018-09-17"
 
 After you configure a dialog skill and add it to an assistant, the assistant is immediately available for testing from a web page.
 {: shortdesc}
+
+**Attention**: The shareable link integration does not work for assistants with a search skill currently.
 
 The assistant is implemented as a chat widget embedded in a simple IBM-branded web page automatically. You can test the dialog skill that you added to the assistant by entering text into the chat widget. You can also share the URL of the page with others to enlist help in testing and getting feedback about the assistant.
 
@@ -57,11 +59,13 @@ To test the assistant from a web-hosted chat widget, complete the following step
 ## Dialog considerations
 {: #weblink-dialog}
 
-The rich responses that you add to a dialog behave in the following ways when they are displayed in the web-hosted chat widget:
+The rich responses that you add to a dialog are displayed in the web-hosted chat widget as expected, with the following exceptions:
 
 - **Connect to human agent**: This response type is ignored.
 
-- **pause**: This response type pauses the assistant's activity in the chat widget. However, activity does not resume after the pause until another response is triggered. Whenever you include a `pause` response type, add another, different response type, such as `text`, after it.
+- **Pause**: This response type pauses the assistant's activity in the chat widget. However, activity does not resume after the pause until another response is triggered. Whenever you include a `pause` response type, add another, different response type, such as `text`, after it.
+
+See [Rich responses](dialog-overview.html#multimedia) for more information about response types.
 
 ## Adding a shareable link integration
 {: #add-another-widget}
