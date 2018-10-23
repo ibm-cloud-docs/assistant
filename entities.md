@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-11"
+lastupdated: "2018-10-23"
 
 ---
 
@@ -27,7 +27,7 @@ Recognizing entities in the user's input helps you to craft more useful, targete
 
 Finally, you can add multiple responses to your dialog tree with wording that differs based on the `@product` value that is detected in the user's request.
 
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Working with entities" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/wyWgsF9eYc8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+<iframe class="embed-responsive-item" id="youtubeplayer" title="Working with entities" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/o-uhdw6bIyI" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 ## Entity evaluation overview
 {: #entity-described}

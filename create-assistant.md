@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-12"
+lastupdated: "2018-10-22"
 
 ---
 
@@ -31,7 +31,6 @@ The number of assistants you can create in a single service instance depends on 
 | Service plan     | Assistants per service instance | Integrations per assistant  |
 |------------------|--------------------------------:|----------------------------:|
 | Premium          |                             100 |                         100 |
-| Plus             |                             100 |                         100 |
 | Standard         |                             100 |                         100 |
 | Lite*            |                             100 |                         100 |
 {: caption="Service plan details" caption-side="top"}
@@ -62,15 +61,11 @@ Follow these steps to create an assistant:
 
 1.  Click **Create**.
 
-1.  Add a skill to the assistant by choosing one of these options:
+1.  Add a skill to the assistant by clicking **Add skill**. You can choose to add an existing skill or create a new one.
 
-    - **Add Dialog Skill**: Uses Watson natural language processing and machine learning technologies to understand user questions and requests, and respond to them with answers that are authored by you. 
+    **Note**: If you created or were given developer role access to any workspaces that were built with the generally available version of the {{site.data.keyword.conversationshort}} service (formerly Watson Conversation), you will see them listed as existing dialog skills.
 
-      **Note**: If you created or were given developer role access to any workspaces that were built with the generally available version of the {{site.data.keyword.conversationshort}} service (formerly Watson Conversation), you will see them listed as existing dialog skills that you can add to that assistant.
-
-    - **Add Search Skill**: For a given user query, uses the {{site.data.keyword.discoveryfull}} service to retrieve information from a data source that you identify and shares any relevant information that it finds as the response to the user.
-
-    See [Creating a skill](create-skill.html).
+    See [Creating a skill](create-skill.html) for more information about how to create a skill.
 
 ## Deleting an assistant
 {: #delete-assistant}
