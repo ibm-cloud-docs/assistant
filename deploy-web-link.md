@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-19"
+lastupdated: "2018-10-23"
 
 ---
 
@@ -22,8 +22,6 @@ lastupdated: "2018-10-19"
 
 After you configure a dialog skill and add it to an assistant, the assistant is immediately available for testing from a web page.
 {: shortdesc}
-
-**Attention**: The shareable link integration does not work for assistants with a search skill currently.
 
 The assistant is implemented as a chat widget embedded in a simple IBM-branded web page automatically. You can test the dialog skill that you added to the assistant by entering text into the chat widget. You can also share the URL of the page with others to enlist help in testing and getting feedback about the assistant.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-19"
+lastupdated: "2018-10-23"
 ---
 
 {:shortdesc: .shortdesc}
@@ -43,11 +43,6 @@ The method used to authenticate with IAM service instances is different from the
 {: #change-log}
 
 The following new features and changes to the service are available.
-
-### 22 October 2018
-{: #22October2018}
-
-- **Introducing search skills**: Add a search skill to your assistant that can connect to an {{site.data.keyword.discoveryfull}} data collection and retrieve information that is relevant to a user's query. See [Building a search skill](create-search-skill.html) for more details.
 
 ### 11 October 2018
 {: #11October2018}
@@ -99,6 +94,11 @@ The following new features and changes to the service are available.
     See [Troubleshooting skill import issues](create-skill.html#import-errors) for information about how to edit workspaces or skills that you want to continue using.
 
 -  **Artifact changes**: The tool was re-architected to use the new V2 APIs. As a result, assistants that existing users created before today are impacted. Specifically, any skills that you added to assistants have been removed from them. Also, any integrations you created (Facebook or Slack, for example) have been removed. You must add skills to your assistants again, and recreate integrations for your assistants.
+
+### 15 August 2018
+{: #15August2018}
+
+- **Entity fuzzy matching support improvements**: Fuzzy matching is fully supported for English entities, and the misspelling feature is no longer a Beta-only feature for many other languages. See [Supported languages](lang-support.html) for details.
 
 ### 6 August 2018
 {: #6August2018}

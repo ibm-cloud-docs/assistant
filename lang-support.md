@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-217"
+lastupdated: "2018-10-23"
 
 ---
 
@@ -50,21 +50,21 @@ The first table shows the level of support for all features, except those relate
 
 **Table 2. Entity feature support details**
 
-| Language | **[Defining entities](entities.html)** | **System entities ([number](system-entities.html#sys-number), [currency](system-entities.html#sys-currency), [percentage](system-entities.html#sys-percentage), [date, time](system-entities.html#sys-datetime))** | **[Entity fuzzy matching](entities.html#fuzzy-matching)** | **[Contextual entities](entities.html#defining-contextual-entities)** |
-|:---|:---:|:---:|:---:|:---:|
-| **English (en)**                   | GA | GA, Beta ([location](system-entities.html#sys-location), [person](system-entities.html#sys-person)) | Beta (Stemming, misspelling, and partial match) | Beta |
-| **Arabic (ar)**  | GA | Beta | Beta (Misspelling only) | NA |
-| **Chinese (Simplified) (zh-cn)**   | GA | GA | Beta (Misspelling only) | NA |
-| **Chinese (Traditional) (zh-tw)**  | Beta | Beta | Beta | NA |
-| **Czech (cs)**                     | Beta | Beta | Beta (Misspelling only) | NA |
-| **Dutch (nl)**                     | GA | GA | Beta (Misspelling only) | NA |
-| **French (fr)**                    | GA | GA | Beta (Misspelling only) | NA |
-| **German (de)**                    | GA | GA | Beta (Misspelling only) | NA |
-| **Italian (it)**                   | GA | GA | Beta (Misspelling only) | NA |
-| **Japanese (ja)**                  | GA | GA | Beta (Misspelling only) | NA |
-| **Korean (ko)**                    | GA | GA | Beta (Misspelling only) | NA |
-| **Portuguese (Brazilian) (pt-br)** | GA | GA | Beta (Misspelling only) | NA |
-| **Spanish (es)**                   | GA | GA | Beta (Misspelling only) | NA |
+| Language | **[Defining entities](entities.html)** | **System entities ([number](system-entities.html#sys-number), [currency](system-entities.html#sys-currency), [percentage](system-entities.html#sys-percentage), [date, time](system-entities.html#sys-datetime))** | **[Entity fuzzy matching](entities.html#fuzzy-matching)** | **[Contextual entities](entities.html#defining-contextual-entities)** | **[Synonym recommendations](entities.html#synonyms)**
+|:---|:---:|:---:|:---:|:---:|:---:|
+| **English (en)**                   | GA | GA, Beta ([location](system-entities.html#sys-location), [person](system-entities.html#sys-person)) | Beta (Stemming, misspelling, and partial match) | Beta | GA |
+| **Arabic (ar)**                    | GA | Beta | GA (Misspelling only) | NA | NA |
+| **Chinese (Simplified) (zh-cn)**   | GA | GA | NA | NA | NA |
+| **Chinese (Traditional) (zh-tw)**  | Beta | Beta | NA | NA | NA |
+| **Czech (cs)**                     | Beta | Beta | GA (Misspelling only) | NA | NA |
+| **Dutch (nl)**                     | GA | GA | GA (Misspelling only) | NA | NA |
+| **French (fr)**                    | GA | GA | GA (Misspelling only) | NA | NA |
+| **German (de)**                    | GA | GA | GA (Misspelling only) | NA | NA |
+| **Italian (it)**                   | GA | GA | GA (Misspelling only) | NA | NA |
+| **Japanese (ja)**                  | GA | GA | GA (Misspelling only) | NA | NA |
+| **Korean (ko)**                    | GA | GA | GA (Misspelling only) | NA | NA |
+| **Portuguese (Brazilian) (pt-br)** | GA | GA | GA (Misspelling only) | NA | NA |
+| **Spanish (es)**                   | GA | GA | GA (Misspelling only) | NA | NA |
 {: caption="Entity feature support details" caption-side="top"}
 
 **Note:** The {{site.data.keyword.conversationshort}} service supports multiple languages as noted, but the tool interface itself (descriptions, labels, etc.) is in English. All supported languages can be input and trained through the English interface.
