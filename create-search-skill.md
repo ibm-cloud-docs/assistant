@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-19"
+lastupdated: "2018-10-25"
 
 ---
 
@@ -121,6 +121,8 @@ Do not try to add the pre-enriched data source named *Watson Discovery News* to 
 
             No ongoing synchronization of uploaded documents is available. If you want to pick up changes made to a document, upload a later version of the document.
 
+Wait for the collection to be fully ingested before you return to {{site.data.keyword.conversationshort}}.
+
 ## Configure the search
 {: #configure}
 
@@ -152,7 +154,9 @@ Do not try to add the pre-enriched data source named *Watson Discovery News* to 
     </tr>
     </table>
 
-1.  Choose the {{site.data.keyword.discoveryshort}} collection fields that you want to extract text from. The fields that are available differ based on the data you ingested and the configuration you used to ingest it.
+1.  Choose the {{site.data.keyword.discoveryshort}} collection fields that you want to extract text from.
+
+    The fields that are available differ based on the data you ingested and the configuration you used to ingest it.
 
     Each search result can consist of these pieces of information:
 
@@ -169,6 +173,8 @@ Do not try to add the pre-enriched data source named *Watson Discovery News* to 
     See [Tips for collection field selection](#field-tips) for help.
   
     You must choose a value other than `None` for at least one of the options.
+
+    If no options are available from the drop-down fields, you might need to give {{site.data.keyword.discoveryshort}} more time to finish creating the collection. Otherwise, your collection might not contain any documents or might have ingestion errors that need to be addressed first.
 
 1.  In the preview pane, enter a test message to see the results that are returned when your configuration choices are applied to the search. Make adjustments as necessary.
 
@@ -211,3 +217,5 @@ One search skill can be used by more than one assistant.
     Click the skill that you want to add from the available skills that are displayed.
 
 Configure at least one test integration channel. Test the skill by entering queries that trigger the search. Ensure that the search is being triggered properly, and is returning relevant results.
+
+**Attention**: The shareable link integration does not work currently for assistants with a search skill.

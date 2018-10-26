@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-20"
+lastupdated: "2018-10-25"
 
 ---
 
@@ -82,6 +82,11 @@ The {{site.data.keyword.conversationshort}} service tool requires the same level
 ## Language support
 
 Language support by feature is detailed in the [Supported languages](lang-support.html) topic.
+
+## Terms and notices
+{: #notices}
+
+See [IBM Cloud Terms and Notices ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/overview/terms-of-use/notices.html) for information about the terms of service.
 
 ## Next steps
 

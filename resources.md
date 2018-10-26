@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-12"
+lastupdated: "2018-10-25"
 
 ---
 
@@ -28,6 +28,7 @@ Links to resources, videos, tutorials, and articles that can help you to get sta
 
 ## Developer resources for building conversational skills
 
+- [Codeless test automation for your assistant ![External link icon](../../icons/launch-glyph.svg "External link icon"](https://chatbotsmagazine.com/10-minutes-codeless-test-automation-for-ibm-watson-chatbots-d71eac9626d7){: new_window}
 - [Retail chat app ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/code/journey/create-cognitive-retail-chatbot/){: new_window}
 - [Investment management chat app ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/code/journey/create-an-investment-management-chatbot/){: new_window}
 - [Cognitive Banking chatbot ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/code/journey/create-cognitive-banking-chatbot/){: new_window}
@@ -59,8 +60,9 @@ Additional videos created by IBMers.
 
 - [{{site.data.keyword.conversationshort}} Foundations ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.watson-academy.info/course/view.php?id=273){: new_window}
 
-## Blogs by IBMers
+## Blogs
 
+- [Latest blogs on Medium ![External link icon](../../icons/launch-glyph.svg "External link icon"](https://medium.com/tag/watson-assistant/latest){: new_window}
 - [Simon Burns (IBM Watson developer) on Medium ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/@snrubnomis/conversational-directory-5a5531749295){: new_window}
 - [Simon O'Doherty (IBM Watson developer) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://sodoherty.ai/){: new_window}
 - [IBM Watson blog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/watson/){: new_window}
