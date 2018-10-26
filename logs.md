@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-12"
+lastupdated: "2018-10-26"
 
 ---
 
@@ -39,49 +39,6 @@ The length of time for which messages are retained depends on your {{site.data.k
   Standard                             | Last 30 days
   Lite                                 | Last 7 days
 
-## Improving across assistants
-{: #deploy_id}
-
-Creating a dialog skill is an iterative process. While you develop your skill, you use the *Try it out* pane to verify that the service recognizes the correct intents and entities in test inputs, and to make corrections as needed.
-
-In the **Improve** panel, you can view information about actual assistant interactions with your users, and make similar corrections to improve the accuracy with which intents and entities are recognized by your dialog skill. It is difficult to know exactly *how* your users will ask questions, or what random messages they might submit, so it is important to frequently visit the **Improve** panel, in order to improve your dialog skills.
-
-For a {{site.data.keyword.conversationshort}} instance that includes multiple assistants, there may be times when it is useful to use message data from the dialog skill of one assistant to improve the dialog skill used by another assistant within that same instance.
-
-![Premium plan only](images/premium0.png) If you are a {{site.data.keyword.conversationshort}} Premium user, your premium instances can optionally be configured to allow access to log data from assistants across your different premium instances.
-
-As an example, say you have a {{site.data.keyword.conversationshort}} instance named *HelpDesk*. You may have both a Production assistant and a Development assistant in your HelpDesk instance. When working in the dialog skill for the Development assistant, you can use logs from the Production assistant messages to improve the Development assistant's dialog skill.
-
-Any edits you then make within the dialog skill for the Development assistant will only affect the Development assistant's dialog skill, even though you’re using data from messages sent to the Production assistant.
-
-To populate the metrics with message data from a different assistant:
-
-1.  Click the **Data source** field to see if there are any assistants with data in this instance that you can use. See [*Show deployment IDs* explained](#deployment-id-explained) for more information about that option.
-
-1.  Choose a data source.
-
-Statistical information for the selected data source is displayed.
-
-**Note:** While **Data source** shows the source of the messages you are using to improve this dialog skill, the top of the page still shows the dialog skill you are applying changes to.
-
-### *Show deployment IDs* explained
-{: #deployment-id-explained}
-
-Applications that use the V1 version of the API must specify a deployment ID in each messages sent using the `/message` API. This ID identifies the deployed app that the call was made from. The Improve page can use this deployment ID to retrieve and display logs that are associated with a specific live application.
-
-For assistants or custom apps that use the V2 version of the API, the service automatically includes a system id and skill id with each /message call, so you can choose a data source by assistant name instead of using a deployment ID.
-
-To add the deployment ID, V1 API users include the deployment property inside the metadata of the [context ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/watson/developercloud/assistant/api/v1/curl.html?curl#message){: new_window}, as in this example:
-
-```
-"context" : {
-  "metadata" : {
-       "deployment": "HelpDesk-Production"
-  }
-}
-```
-{: codeblock}
-
 ## Filtering messages
 
 You can filter messages by *Search user statements*, *Intents*, *Entities*, and *Last* n *days*:
@@ -109,7 +66,63 @@ You can then choose to show the classification(s) for the message you selected.
 
 ![Open conversation panel with classifications](images/open_convo_classes.png)
 
-## Correcting an intent
+## Improving across assistants
+{: #deploy_id}
+
+Creating a dialog skill is an iterative process. While you develop your skill, you use the *Try it out* pane to verify that the service recognizes the correct intents and entities in test inputs, and to make corrections as needed.
+
+From the User conversations page, you can analyze actual interactions between the assistant you used to deploy the skill and your users. Based on those interactions, you can make corrections to improve the accuracy with which intents and entities are recognized by your dialog skill. It is difficult to know exactly *how* your users will ask questions, or what random messages they might submit, so it is important to frequently analyze real conversations to improve your dialog skills.
+
+For a {{site.data.keyword.conversationshort}} instance that includes multiple assistants, there may be times when it is useful to use message data from the dialog skill of one assistant to improve the dialog skill used by another assistant within that same instance.
+
+![Premium plan only](images/premium0.png) If you are a {{site.data.keyword.conversationshort}} Premium user, your premium instances can optionally be configured to allow access to log data from assistants across your different premium instances.
+
+As an example, say you have a {{site.data.keyword.conversationshort}} instance named *HelpDesk*. You may have both a Production assistant and a Development assistant in your HelpDesk instance. When working in the dialog skill for the Development assistant, you can use logs from the Production assistant messages to improve the Development assistant's dialog skill.
+
+Any edits you then make within the dialog skill for the Development assistant will only affect the Development assistant's dialog skill, even though you’re using data from messages sent to the Production assistant.
+
+### Picking a data source
+{: #pick-data-source}
+
+The term *data source* refers to the logs compiled from conversations between customers and the assistant or custom application by which a dialog skill was deployed.
+
+When you open the *Improve* tab, metrics are shown that were generated by user interactions with the current dialog skill. No metrics are shown if the current skill has not been deployed and used by customers.
+
+To populate the metrics with message data from a dialog skill that was added to a different assistant or custom application, one that has interacted with customers, complete these steps:
+
+1.  Click the **Data source** field to see a list of assistants with log data that you might want to use.
+
+    See [*Show deployment IDs* explained](#deployment-id-explained) for more information about that option.
+
+1.  Choose a data source.
+
+Statistical information for the selected data source is displayed.
+
+### *Show deployment IDs* explained
+{: #deployment-id-explained}
+
+Applications that use the V1 version of the API must specify a deployment ID in each messages sent using the `/message` API. This ID identifies the deployed app that the call was made from. The Improve page can use this deployment ID to retrieve and display logs that are associated with a specific live application.
+
+For assistants or custom apps that use the V2 version of the API, the service automatically includes a system id and skill id with each /message call, so you can choose a data source by assistant name instead of using a deployment ID.
+
+To add the deployment ID, V1 API users include the deployment property inside the metadata of the [context ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/watson/developercloud/assistant/api/v1/curl.html?curl#message){: new_window}, as in this example:
+
+```
+"context" : {
+  "metadata" : {
+       "deployment": "HelpDesk-Production"
+  }
+}
+```
+{: codeblock}
+
+## Making training data improvements
+
+Use insights from real user conversations to correct the model associated with your dialog skill.
+
+If you use data from another data source, any improvements you make to the model are applied to the current dialog skill only. The **Data source** field shows the source of the messages you are using to improve this dialog skill, and the top of the page shows the dialog skill you are applying changes to.
+
+### Correcting an intent
 
 1.  To correct an intent, select the ![Edit](images/edit_icon.png) edit icon beside the chosen #intent.
 1.  From the list provided, select the correct intent for this input.
@@ -123,7 +136,7 @@ You can then choose to show the classification(s) for the message you selected.
 
     **Note**: The {{site.data.keyword.conversationshort}} service supports adding user input as an example to an intent *as-is*. If you are using @entity references as examples in your intent training data, and a user message that you want to save contains an entity value or synonym from your training data, then you must edit the message later. After you save it, edit the message from the Intents page to replace the entity that it references. For more information, see [Directly referencing an @Entity as an intent example](intents.html#entity-as-example).
 
-## Adding an entity value or synonym
+### Adding an entity value or synonym
 
 1.  To add an entity value or synonym, select the ![Edit](images/edit_icon.png) edit icon beside the chosen @entity.
 1.  Select **Add entity**.
