@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-25"
+lastupdated: "2018-10-26"
 
 ---
 
@@ -26,7 +26,7 @@ Links to resources, videos, tutorials, and articles that can help you to get sta
 
 - [IBM Code Bot Asset Exchange ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/code/exchanges/bots/){: new_window}
 
-## Developer resources for building conversational skills
+## Developer resources for building assistants
 
 - [Codeless test automation for your assistant ![External link icon](../../icons/launch-glyph.svg "External link icon"](https://chatbotsmagazine.com/10-minutes-codeless-test-automation-for-ibm-watson-chatbots-d71eac9626d7){: new_window}
 - [Retail chat app ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/code/journey/create-cognitive-retail-chatbot/){: new_window}
