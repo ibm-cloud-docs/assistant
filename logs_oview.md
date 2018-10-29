@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-03"
+lastupdated: "2018-10-29"
 
 ---
 
@@ -116,14 +116,12 @@ There might come a time when you want to completely remove a set of your user's 
 ### Before you begin
 To delete messages for one or more individuals, you first need to associate a message with a unique **Customer ID** for each individual. To specify the **Customer ID** for any message sent using the `/message` API, include the `X-Watson-Metadata: customer_id` property in your header. You can pass multiple **Customer ID** entries with semicolon separated `field=value` pairs, using `customer_id`, as in the following example:
 
-```
-curl -X POST
- --user {username}:{password}
+```curl
+curl -X POST -u "apikey:3Df... ...Y7Pc9"
  --header
    'Content-Type: application/json'
-   'Accept: application/json'
    'X-Watson-Metadata: customer_id={first-customer-ID};customer_id={second-customer-ID}'
- --data '{"input":{"text":"hello"}}' 'https://gateway.watson.net/conversation/api/v1/workspaces/{workspaceID}/message?version=2017-05-26'
+ --data '{"input":{"text":"hello"}}' 'https://gateway-us-south.watsonplatform.net/assistant/api/v1/workspaces/{workspaceID}/message?version=2018-09-20'
 ```
 {: codeblock}
 
