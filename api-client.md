@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-16"
+lastupdated: "2018-10-30"
 
 ---
 
@@ -41,7 +41,7 @@ Before continuing with this example, you need to set up the required assistant:
 
 To access the {{site.data.keyword.conversationshort}} service REST APIs, your application needs to be able to authenticate with {{site.data.keyword.Bluemix}} and connect to the right assistant. You'll need to copy the service credentials and assistant ID and paste them into your application code.
 
-To access the service credentials and the assistant ID from the {{site.data.keyword.conversationshort}} tool, go to the **Assistants** tab and click the ![Menu](images/kabob-grey.png) menu for the assistant you want to connect to. Select **View API Details** to see the details for the assistant, including the assistant ID, username, and password.
+To access the service credentials and the assistant ID from the {{site.data.keyword.conversationshort}} tool, go to the **Assistants** tab and click the ![Menu](images/kabob-grey.png) menu for the assistant you want to connect to. Select **View API Details** to see the details for the assistant, including the assistant ID and API key.
 
 You can also access the service credentials from your {{site.data.keyword.Bluemix_short}} dashboard.
 
@@ -57,8 +57,7 @@ var AssistantV2 = require('watson-developer-cloud/assistant/v2');
 
 // Set up Assistant service wrapper.
 var service = new AssistantV2({
-  username: '{username}', // replace with service username
-  password: '{password}', // replace with service password
+  iam_apikey: '{apikey}', // replace with API key
   version: '2018-09-20'
 });
 
@@ -119,8 +118,7 @@ import watson_developer_cloud
 
 # Set up Assistant service.
 service = watson_developer_cloud.AssistantV2(
-    username = '{username}', # replace with service username
-    password = '{password}', # replace with service password
+    iam_apikey = '{apikey}', # replace with API key
     version = '2018-09-20'
 )
 
@@ -162,6 +160,7 @@ import com.ibm.watson.developer_cloud.assistant.v2.model.DeleteSessionOptions;
 import com.ibm.watson.developer_cloud.assistant.v2.model.MessageOptions;
 import com.ibm.watson.developer_cloud.assistant.v2.model.MessageResponse;
 import com.ibm.watson.developer_cloud.assistant.v2.model.SessionResponse;
+import com.ibm.watson.developer_cloud.service.security.IamOptions;
 import java.util.logging.LogManager;
 
 public class AssistantSimpleExample {
@@ -171,9 +170,8 @@ public class AssistantSimpleExample {
     LogManager.getLogManager().reset();
 
     // Set up Assistant service.
-    Assistant service = new Assistant("2018-09-20",
-                                      "{username}", // replace with service username
-                                      "{password}"); // replace with service password
+    IamOptions iamOptions = new IamOptions.Builder().apiKey("{apikey}").build();
+    Assistant service = new Assistant("2018-09-20", iamOptions);
     String assistantId = "{assistant_id}"; // replace with assistant ID
 
     // Create session.
@@ -227,7 +225,7 @@ Paste the example code into a file named `AssistantSimpleExample.java`. You can 
 **Note:** Make sure you have installed the Watson SDK for Python using `pip install --upgrade watson-developer-cloud` or `easy_install --upgrade watson-developer-cloud`.
 {: python}
 
-**Note:** Make sure you have installed the [Watson SDK for Java ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/java-sdk/blob/develop/README.md){: new_window}.
+**Note:** Make sure you have installed the [Watson SDK for Java ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/java-sdk/blob/master/README.md){: new_window}.
 {: java}
 
 Assuming everything works as expected, the assistant returns the output from the dialog, which is then printed to the console:
@@ -254,8 +252,7 @@ var AssistantV2 = require('watson-developer-cloud/assistant/v2');
 
 // Set up Assistant service wrapper.
 var service = new AssistantV2({
-  username: '{username}', // replace with service username
-  password: '{password}', // replace with service password
+  iam_apikey: '{apikey}', // replace with API key
   version: '2018-09-20'
 });
 
@@ -329,8 +326,7 @@ import watson_developer_cloud
 
 # Set up Assistant service.
 service = watson_developer_cloud.AssistantV2(
-    username = '{username}', # replace with service username
-    password = '{password}', # replace with service password
+    iam_apikey = '{apikey}', # replace with API key
     version = '2018-09-20'
 )
 
@@ -390,6 +386,7 @@ import com.ibm.watson.developer_cloud.assistant.v2.model.MessageOptions;
 import com.ibm.watson.developer_cloud.assistant.v2.model.MessageResponse;
 import com.ibm.watson.developer_cloud.assistant.v2.model.RuntimeIntent;
 import com.ibm.watson.developer_cloud.assistant.v2.model.SessionResponse;
+import com.ibm.watson.developer_cloud.service.security.IamOptions;
 import java.util.List;
 import java.util.logging.LogManager;
 
@@ -400,9 +397,8 @@ public class AssistantSimpleExample {
     LogManager.getLogManager().reset();
 
     // Set up Assistant service.
-    Assistant service = new Assistant("2018-09-20",
-                                      "{username}", // replace with service username
-                                      "{password}"); // replace with service password
+    IamOptions iamOptions = new IamOptions.Builder().apiKey("{apikey}").build();
+    Assistant service = new Assistant("2018-09-20", iamOptions);
     String assistantId = "{assistant_id}"; // replace with assistant ID
 
     // Create session.
@@ -493,8 +489,7 @@ var AssistantV2 = require('watson-developer-cloud/assistant/v2');
 
 // Set up Assistant service.
 var service = new AssistantV2({
-  username: '{username}', // replace with service username
-  password: '{password}', // replace with service password
+  iam_apikey: '{apikey}', // replace with API key
   version: '2018-09-20'
 });
 
@@ -581,8 +576,7 @@ import time
 
 # Set up Assistant service.
 service = watson_developer_cloud.AssistantV2(
-    username = '{username}', # replace with service username
-    password = '{password}', # replace with service password
+    iam_apikey = '{apikey}', # replace with API key
     version = '2018-09-20'
 )
 
@@ -651,6 +645,7 @@ import com.ibm.watson.developer_cloud.assistant.v2.model.MessageOptions;
 import com.ibm.watson.developer_cloud.assistant.v2.model.MessageResponse;
 import com.ibm.watson.developer_cloud.assistant.v2.model.RuntimeIntent;
 import com.ibm.watson.developer_cloud.assistant.v2.model.SessionResponse;
+import com.ibm.watson.developer_cloud.service.security.IamOptions;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -663,9 +658,8 @@ public class AssistantSimpleExample {
     LogManager.getLogManager().reset();
 
     // Set up Assistant service.
-    Assistant service = new Assistant("2018-09-20",
-                                      "{username}", // replace with service username
-                                      "{password}"); // replace with service password
+    IamOptions iamOptions = new IamOptions.Builder().apiKey("{apikey}").build();
+    Assistant service = new Assistant("2018-09-20", iamOptions);
     String assistantId = "{assistant_id}"; // replace with assistant ID
 
     // Create session.
