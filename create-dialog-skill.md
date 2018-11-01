@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-17"
+lastupdated: "2018-10-30"
 
 ---
 
@@ -120,3 +120,34 @@ To download a dialog skill, complete the following steps:
 1.  Specify a name for the JSON file and where to save it, and then click **Save**.
 
 You can export a skill by using the API also. Include the `export=true` parameter with the request. See the [API reference](https://www.ibm.com/watson/developercloud/assistant/api/v1/curl.html?curl#get-workspace) for more details.
+
+## Sharing a dialog skill with team members
+{: #invite-others}
+
+After you create the service instance, you can give other people access to it. Together, you can define the training data and build the dialog.
+
+**Important**: Only one person can edit an intent, entity, or a dialog node at a time. If multiple people work on the same item at the same time, then the changes made by the person who saves their changes last are the only changes applied. Changes that are made during the same time frame by someone else and are saved first are not retained. Coordinate the updates that you plan to make with your team members to prevent anyone from losing their work.
+
+To share a dialog skill with other people, you must give them access to the service instance that hosts the skill.
+
+**Note**: Older service instances created on IBM Cloud were managed by Cloud Foundry. If you are using a service instance that is managed by Cloud Foundry, then your steps will be slightly different from those described in the procedure below. For Cloud Foundry-managed instances, you must choose your organization from the *Cloud Foundry access* section, and then assign the person to the **Developer** space role.
+
+  If you are not sure which type of access management your instance uses, check the [Data centers](services-information.html#regions) to find out whether IAM or Cloud Foundry is being used in your location.
+
+1.  Go to the {{site.data.keyword.watson}} Developer Console [Dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/dashboard/apps/) page, and log in. Click **Manage > Account > Users** from the header menu.
+1.  Click **Invite users**, and then enter the email addresses of the people on your team to whom you want to give access.
+
+    If you gave someone access to a service instance in Cloud Foundry, then the person might be listed as an invited user already. Click the person's name to open the access management settings for the user. Click **Assign access**, and then choose **Assign access to resources**.
+1.  In the *Services* section, make the following selections at a minimum:
+
+    - **Services**: {{site.data.keyword.conversationshort}}
+    - **Assign platform access roles**: Operator
+
+    For more information about platform management roles, see [IAM access ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/iam/users_roles.html). (Service access roles are not leveraged by {{site.data.keyword.conversationshort}}.)
+1.  Click **Invite users**.
+
+    If you are editing access for an existing user, click **Assign access**.
+
+When the people you invite next log in to {{site.data.keyword.cloud_notm}}, your account will be included in their list of accounts. If they select your account, they can see your service instance, and open and edit your skills.
+
+With more people contributing to dialog skill development, unintended changes can occur, including skill deletions. Consider creating backup copies of your dialog skill on a regular basis, so you can roll back to an earlier version if necessary. To create a backup, simply [download the skill as a JSON file](#download-skill).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-25"
+lastupdated: "2018-10-30"
 
 ---
 
@@ -25,7 +25,7 @@ The *search skill* interacts with the {{site.data.keyword.discoveryfull}} servic
 
 You can add one search skill to an assistant. See [Skill limits](create-skill.html#skill-limits) for information about limits per plan.
 
-The search skill searches for information from a data collection that you create by using the {{site.data.keyword.discoveryshort}} service. To read more about {{site.data.keyword.discoveryshort}}, see the [product documentation](https://console.bluemix.net/docs/services/discovery/index.html).
+The search skill searches for information from a data collection that you create by using the {{site.data.keyword.discoveryshort}} service. To read more about {{site.data.keyword.discoveryshort}}, see the [product documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/discovery/index.html).
 
 The {{site.data.keyword.discoveryshort}} service is triggered when user input is submitted through one of the assistant's integration channels.
 
@@ -192,7 +192,7 @@ The search skill cannot interact with customers until it is added to an assistan
 ### Tips for collection field selection
 {: #field-tips}
 
-The appropriate collection fields to extract data from vary depending on your collection's data source and the configuration you used to ingest the data source. The following table provides collection fields you can try as you get started. They suggestions assume that you used the default configuration template when creating the collection.
+The appropriate collection fields to extract data from vary depending on your collection's data source and the configuration you used to ingest the data source. The following table provides collection fields you can try as you get started. These suggestions assume that you used the default configuration template when creating the collection.
 
 | Data source type   | Title | Body | Url |
 |--------------------|-------|------|-----|
