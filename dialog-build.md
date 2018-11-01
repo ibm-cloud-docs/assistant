@@ -300,4 +300,4 @@ To delete a folder, complete the following steps:
     - To delete the folder only, and keep the dialog nodes that are in the folder, deselect the **Delete the nodes inside the folder** checkbox, and then click **Yes, delete it**.
     - To delete the folder and all of the dialog nodes in it, click **Yes, delete it**.
 
-If you deleted the folder only, then the nodes that were in the folder are displayed in the dialog tree in the spot where the folder used be.
+If you deleted the folder only, then the nodes that were in the folder are displayed in the dialog tree in the spot where the folder used to be.

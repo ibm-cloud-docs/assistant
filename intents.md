@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-23"
+lastupdated: "2018-11-01"
 
 ---
 
@@ -111,7 +111,7 @@ Use the {{site.data.keyword.conversationshort}} tool to create intents.
     "first, i want to know if i am already registered."
     ```
 
-    **Note**: The file cannot be larger than 10 MB.
+    **Note**: The file cannot be larger than 20 MB.
 
     1.  From the intent configuration page, click **Show recommendations**.
     1.  **First time only**: Click **Upload files**, and then click **Choose a file** to browse for the CSV file you created earlier and select it.

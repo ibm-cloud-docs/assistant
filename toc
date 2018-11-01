@@ -16,6 +16,8 @@ Watson Assistant Beta
 
     {: .navgroup id="howto"}
     create-skill.md
+    create-search-skill.md
+    create-dialog-skill.md
     catalog.md
     intents.md
 
@@ -72,8 +74,8 @@ Watson Assistant Beta
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    [v2 API reference](https://www.ibm.com/watson/developercloud/assistant/api/v2/)
-    [v1 API reference](https://www.ibm.com/watson/developercloud/assistant/api/v1/)
+    [v2 API reference](https://console.bluemix.net/apidocs/assistant-v2)
+    [v1 API reference](https://console.bluemix.net/apidocs/assistant)
     dialog-methods.md
     expression-language.md
     filter-reference.md
