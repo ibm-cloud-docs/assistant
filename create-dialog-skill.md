@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-30"
+lastupdated: "2018-11-01"
 
 ---
 
@@ -132,7 +132,7 @@ To share a dialog skill with other people, you must give them access to the serv
 
 **Note**: Older service instances created on IBM Cloud were managed by Cloud Foundry. If you are using a service instance that is managed by Cloud Foundry, then your steps will be slightly different from those described in the procedure below. For Cloud Foundry-managed instances, you must choose your organization from the *Cloud Foundry access* section, and then assign the person to the **Developer** space role.
 
-  If you are not sure which type of access management your instance uses, check the [Data centers](services-information.html#regions) to find out whether IAM or Cloud Foundry is being used in your location.
+  If you are not sure which type of access management your instance uses, you can check. Make a note of the current instance name, which is displayed at the top of the current page. Click the User ![User](images/user-icon2.png) icon in the page header, and select **IBM Cloud Dashboard** from the drop-down. Click the current service instance. Check the Credentials section. If you see an API key and URL, then you are using IAM. If you see a URL, username, and password, then you are using Cloud Foundry.
 
 1.  Go to the {{site.data.keyword.watson}} Developer Console [Dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/dashboard/apps/) page, and log in. Click **Manage > Account > Users** from the header menu.
 1.  Click **Invite users**, and then enter the email addresses of the people on your team to whom you want to give access.
