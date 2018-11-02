@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-23"
+lastupdated: "2018-11-02"
 ---
 
 {:shortdesc: .shortdesc}
@@ -33,16 +33,29 @@ Send the version parameter with every API request. The service uses the API vers
 
 IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment. Beta features are supported only on the [IBM Developer Answers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/topics/watson-assistant/){: new_window}.
 
-## API authentication method will change on October 30
-
-(See [Authenticating with IAM tokens ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/watson/getting-started-iam.html) for more information.)
-
-The method used to authenticate with IAM service instances is different from the method used to authenticate with Cloud Foundry instances. Existing applications that use Cloud Foundry will continue to work. However, if you migrate a service instance or create a new service instance in a region that uses IAM, you must update the code that handles authentication.
-
 ## Changes
 {: #change-log}
 
 The following new features and changes to the service are available.
+
+### 30 October 2018
+{: #30October2018}
+
+- **New API authentication process**: The {{site.data.keyword.conversationshort}} service transitioned from using Cloud Foundry to using token-based Identity and Access Management (IAM) authentication in the following regions:
+
+  - Dallas (us-south)
+  - Frankfurt (eu-de)
+
+  For new service instances, you use IAM for authentication. You can pass either a bearer token or an API key. Tokens support authenticated requests without embedding service credentials in every call. API keys use basic authentication.
+
+  For all existing service instances, you continue to use service credentials (`{username}:{password}`) for authentication.
+
+  See [Authenticating API calls](services-information.html#authenticate-api-calls) for more information.
+
+### 25 October 2018
+{: #25October2018}
+
+- **Entity synonym recommendations are available in more languages**: Synonym recommendation support was added for the French, Japanese, and Spanish languages.
 
 ### 11 October 2018
 {: #11October2018}
