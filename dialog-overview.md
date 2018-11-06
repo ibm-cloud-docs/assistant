@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-23"
+lastupdated: "2018-11-01"
 
 ---
 
@@ -126,7 +126,7 @@ You can use one or more of the following artifacts in any combination to define 
 
 | Condition syntax     | Description |
 |----------------------|-------------|
-| `anything_else`      | You can use this condition at the end of a dialog, to be processed when the user input does not match any other dialog nodes. The **Anything else** node is triggered by this condition. |
+| `anything_else`      | You can use this condition at the end of a dialog, to be processed when the user input does not match any other dialog nodes. The **Anything else** node is triggered by this condition. Do not use in dialog branches where you want digressions away to occur.|
 | `conversation_start` | Like **welcome**, this condition is evaluated as true during the first dialog turn. Unlike **welcome**, it is true whether or not the initial request from the application contains user input. A node with the **conversation_start** condition can be used to initialize context variables or perform other tasks at the beginning of the dialog. |
 | `false`              | This condition is always evaluated to false. You might use this at the start of a branch that is under development, to prevent it from being used, or as the condition for a node that provides a common function and is used only as the target of a **Jump to** action. |
 | `irrelevant`         | This condition will evaluate to true if the user’s input is determined to be irrelevant by the {{site.data.keyword.conversationshort}} service. |
@@ -344,7 +344,8 @@ To add a rich response, complete the following steps:
 
           Specify a value that you know will trigger the correct intent when it is submitted. For example, it might be a user example from the training data for the intent.
       1.  Repeat the previous steps to add more options to the list.
-      1.  Optionally, add a list introduction in the **Title** field and additional information in the **Description** field. These values are displayed above the option list. **Note**: Some integration channels do not display titles or descriptions for button groups and dropdown lists.
+      1.  Add a list introduction in the **Title** field. The title can ask the user to pick from the list of options. **Note**: Some integration channels do not display the title.
+      1.  Optionally, add additional information in the **Description** field. If specified, the description is displayed after the title and before the option list. **Note**: Some integration channels do not display the description.
 
       For example, you can construct a response like this:
 

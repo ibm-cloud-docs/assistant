@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-19"
+lastupdated: "2018-10-01"
 
 ---
 
@@ -813,7 +813,7 @@ You can add a conditional response that conditions on and includes the user's na
 Now that you have built a more sophisticated version of the assistant, return to the public web page that you deployed as part of the previous tutorial, and then test the new capabilities you added.
 
 1.  Open the assistant.
-1.  From the *Integrations* area, click **Shareable Link**.
+1.  From the *Integrations* area, click **Preview Link**.
 1.  Click the URL that is displayed on the page.
 
     The page opens in a new tab.

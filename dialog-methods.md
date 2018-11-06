@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-12"
+lastupdated: "2018-10-23"
 
 ---
 
@@ -209,6 +209,25 @@ Result: `"ham is a great choice!"` or `"onion is a great choice!"` or `"olives i
 
 **Note:** The resulting output text is randomly chosen.
 
+### JSONArray.indexOf(String)
+{: #array-indexOf}
+
+This method returns the index number of the element in the array that matches the String value you specify as a parameter or `-1` if the String is not found in the array. The String must be an exact match and is case sensitive.
+
+This method can be useful for getting the index of an element in an intents array, for example. You can use a [collection projection](#collection-projection) to create an array of the intent names for the intents that are detected in a user's input with the syntax, `intents.![intent]`. Then, you can use the `indexOf` method with it to get the index number of a specific intent.
+
+```bash
+intents.![intent].indexOf("General_Greetings")
+```
+{: codeblock}
+
+If you want to know the confidence score for a specific intent, you can pass the expression above in as the index value to an expression with the syntax `intents[index].confidence`. For example:
+
+```bash
+intents[intents.![intent].indexOf("General_Greetings")].confidence
+```
+{: codeblock}
+
 ### JSONArray.join(string delimiter)
 
 This method joins all values in this array to a string. Values are converted to string and delimited by the input delimiter.
@@ -253,6 +272,9 @@ This is the array: onion;olives;ham;
 {: codeblock}
 
 If you define a variable that stores multiple values in a JSON array, you can return a subset of values from the array, and then use the join() method to format them properly.
+
+#### Collection projection
+{: #collection-projection}
 
 A `collection projection` SpEL expression extracts a subcollection from an array. The syntax for a collection projection is `array_that_contains_value_sets.![value_of_interest]`.
 

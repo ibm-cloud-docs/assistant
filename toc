@@ -16,8 +16,6 @@ Watson Assistant Beta
 
     {: .navgroup id="howto"}
     create-skill.md
-    create-search-skill.md
-    create-dialog-skill.md
     catalog.md
     intents.md
 
@@ -35,7 +33,7 @@ Watson Assistant Beta
     create-assistant.md
 
     {: .topicgroup}
-    Integrations
+    Deploying
         add-integrations.md
         deploy-custom-app.md
         deploy-facebook.md

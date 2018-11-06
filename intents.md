@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-01"
+lastupdated: "2018-11-02"
 
 ---
 
@@ -50,6 +50,7 @@ The number of intents and examples you can create depends on your {{site.data.ke
 | Service plan     | Intents per skill | Examples per skill |
 |------------------|------------------:|-------------------:|
 | Premium          |             2,000 |             25,000 |
+| Plus             |             2,000 |             25,000 |
 | Standard         |             2,000 |             25,000 |
 | Lite             |               100 |             25,000 |
 {: caption="Service plan details" caption-side="top"}
@@ -94,10 +95,10 @@ Use the {{site.data.keyword.conversationshort}} tool to create intents.
 
     **One-time prerequisite step**: Add the utterances to a comma-separated value (CSV) file, one user example per line. You do not need to associate the examples with intents. Simply provide the raw user utterances and let the service do the work of choosing the ones that are appropriate for the current intent. For every intent that you request recommendations for, the service uses this one file to find them. Follow these guidelines:
 
-    - Remove any blank lines from the file.
+    - Remove any personal data from the utterances that you include in the file.
 
-      **Attention**: If your CSV file has blank lines, even at the end of the file, the upload will start but never complete.
-    - Do not include user utterances that exceed 1024 characters in length. Longer utterances are truncated.
+      Personal data includes any information relating to an identifiable natural person including names, email addresses, customer IDs, and so on.
+    - Do not include user utterances that exceed 1,024 characters in length. Longer utterances are truncated.
     - If an utterance contains a comma, surround the utterance in quotation marks.
     - The CSV must include only one column.
     - Do not include human agent responses in the file.
@@ -114,13 +115,22 @@ Use the {{site.data.keyword.conversationshort}} tool to create intents.
     **Note**: The file cannot be larger than 20 MB.
 
     1.  From the intent configuration page, click **Show recommendations**.
+
+        User example source files are shared between the skills in a service instance. If your coworkers own skills in the same instance and upload files, then their files are added to your shared *User examples source files* collection.
+
     1.  **First time only**: Click **Upload files**, and then click **Choose a file** to browse for the CSV file you created earlier and select it.
 
         After the file is uploaded and processed by the service, recommended utterances are displayed. If no recommendations are made, then the file does not contain examples that are suitable for this intent.
 
-        If the file cannot provide useful recommendations for any of your intents, you can try a different set of utterances from another file. However, the service can evaluate only one file at a time. You must delete the current file before you can upload a different one. To delete the current CSV file, click **Next set** until you reach the end of the recommendations, and then click **Delete**. Be sure nobody else is using the file before you delete it.
+    1.  If the file cannot provide useful recommendations for any of your intents, you can try a different set of utterances from another file.
 
-    1.  Select the utterances that you want to add as user examples for this intent, and then click **Add**. Or click **Next set** to review more utterances.
+        Click **View Files** to see the *User example source files* collection for your instance. To add a file, click **Add Files**, and then browse for a file and select it.
+
+        To delete a file, you must remove all of the files that have been uploaded; you cannot delete only one file. First, make sure nobody else is using the files, then click **Delete All** to delete all of the uploaded files.
+
+        Close the *User example source files* page.
+
+    1.  After the service shows you recommendations, select the utterances that you want to add as user examples for this intent, and then click **Add**. Or click **Next set** to review more utterances.
     1.  If you want to search the content of the CSV file for user examples yourself, click the **Search Logs** tab, enter a keyword on which to base the search, and then press **Enter**.
 
         Follow these search query syntax guidelines:
@@ -223,7 +233,7 @@ You can export a number of intents to a CSV file, so you can then import and reu
 
 ## Importing intents and examples
 
-If you have a large number of intents and examples, you might find it easier to import them from a comma-separated value (CSV) file than to define them one by one in the {{site.data.keyword.conversationshort}} tool.
+If you have a large number of intents and examples, you might find it easier to import them from a comma-separated value (CSV) file than to define them one by one in the {{site.data.keyword.conversationshort}} tool. Be sure to remove any personal data from the user examples that you include in the file.
 
 Alternatively, you can upload a file with raw user utterances (from call center logs, for example) and let the service find candidates for user examples from the data. See [Adding examples from log files](#intent-recommendations) for more information. This feature is available to Premium plan users only.
 

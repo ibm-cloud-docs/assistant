@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-19"
+lastupdated: "2018-11-01"
 
 ---
 
@@ -26,29 +26,44 @@ In this short tutorial, we introduce the {{site.data.keyword.conversationshort}}
 {: shortdesc}
 
 ## Before you begin
-{: #prereqs}
+{: #prerequisites}
 
-The information in this topic applies to {{site.data.keyword.conversationshort}} beta release only. To request access to the beta release, from the bottom of the Workspaces page of your {{site.data.keyword.conversationshort}} instance, click **Request Beta**, and then confirm that you accept the terms and conditions for participating in the beta program.
+You'll need a service instance to start.
 
-If you do not have a service instance, go to the [Getting started tutorial (for the generally available {{site.data.keyword.conversationshort}} service) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/conversation/getting-started.html) for information about how to get a free subscription to one.
+<!-- Remove the text marked `download` after there's no g-s tab in the catalog dashboard -->
 
-**Note**: If you are approved for beta participation, it is the service instance where you request beta access that will be upgraded. And every workspace in that service instance will be converted to a skill. You can read more about skills in [Step 2](#add-skill) below. Do not request beta participation from an instance with workspaces that you are actively using. To try out the beta release safely, without impacting workspaces that you want to continue using, you can create a new service instance, and then request access from it.
+You created your service instance. Click **Manage**, then **Open tool**. Go to Step 2.
+{: download tip}
+
+If you created a {{site.data.keyword.conversationshort}} service instance, you're all set with these prerequisites. Go to [Step 1](#launch-tool).
+
+1.  Go to the [{{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/catalog/services/watson-assistant-formerly-conversation) page in the {{site.data.keyword.Bluemix_notm}} Catalog.
+1.  Sign up for a free {{site.data.keyword.Bluemix_notm}} account or log in.
+1.  Click **Create**.
 
 ## Step 1: Open the tool
 {: #launch-tool}
 
-When you are accepted into the beta program, you are sent an email invitation that includes a link to the beta environment. Follow the link, and launch the {{site.data.keyword.conversationshort}} tool.
+After you create a {{site.data.keyword.conversationshort}} service instance, you'll land on the **Manage** page of the service dashboard.
+
+On the **Manage** page, click **Launch tool**.
+
+If you're prompted to log into the tool, provide your {{site.data.keyword.Bluemix_notm}} credentials.
+
+<!-- Remove this text after dedicated instances have the developer console: begin -->
+
+{{site.data.keyword.Bluemix_dedicated_notm}}: Select your service instance from the Dashboard to launch the tooling.
+
+<!-- Remove this text after dedicated instances have the Developer Console: end -->
 
 ## Step 2: Create a dialog skill
 {: #add-skill}
 
 Your first step in the {{site.data.keyword.conversationshort}} tool is to create a skill.
 
-A [*dialog skill*](create-skill.html) is a container for the artifacts that define the flow of a conversation that your assistant can have with your customers.
+A *dialog skill* is a container for the artifacts that define the flow of a conversation that your assistant can have with your customers.
 
 1.  From the home page of the {{site.data.keyword.conversationshort}} tool, click **Create a Skill**.
-
-    **Note**: If you created or were given developer role access to any workspaces that were built with the generally available version of the {{site.data.keyword.conversationshort}} service, you will see them listed on the Skills page as dialog skills.
 
     ![Shows the Add skill button from the Home page](images/gs-new-skill.png)
 
@@ -176,12 +191,12 @@ Add the dialog skill that you build to the assistant you created.
 ## Step 7: Integrate the assistant
 {: #integrate-assistant}
 
-Now that you have an assistant that can participate in a simple conversational exchange, publish it to a public web page where you can test it out.
+Now that you have an assistant that can participate in a simple conversational exchange, publish it to a public web page where you can test it out. The services provides a built-in integration called a Preview Link. When you create this type of integration, it builds your assistant into a chat widget that is hosted by an IBM-branded web page. You can open the web page and chat with your assistant to test it out.
 
 1.  Click the **Assistants** tab, find the `Watson Assistant tutorial` assistant you created, and open it.
-1.  From the *Integrations* area, click **Shareable Link**.
+1.  From the *Integrations* area, click **Add integration**.
+1.  Find **Preview Link**, and click **Select integration**.
 
-    The Shareable Link integration is provisioned for you automatically.
 1.  Click the URL that is displayed on the page.
 
     The page opens in a new tab.

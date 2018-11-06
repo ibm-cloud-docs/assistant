@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-25"
+lastupdated: "2018-11-01"
 
 ---
 
@@ -23,7 +23,10 @@ lastupdated: "2018-10-25"
 {{site.data.keyword.conversationfull}} is a cognitive bot that you can customize for your business needs, and deploy across multiple channels to bring help to your customers where and when they need it.
 {: shortdesc}
 
-**BETA** The features described in this documentation are beta features that have been made available to a small group of users for evaluation. Beta features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment. Go [here](https://console.bluemix.net/docs/services/conversation/index.html) to see the product documentation for the generally available version of this service. Beta features are supported only on [IBM Developer Answers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/search.html?f=&sort=relevance&q=%5Bwatson-conversation%5D+%5Bwatson-assistant%5D+%24).
+## Where are my workspaces?
+{: #existing-customers}
+
+If you created a *workspace* in a previous version of the service, have no fear; you can still get to it. Workspaces are now called *skills*. To get to your workspace, click the **Skills** tab.
 
 ## How it works
 
@@ -53,9 +56,9 @@ Here's how you will implement your assistant:
 
     Or use prebuilt **content catalogs** provided by IBM to get started with data that addresses common customer goals.
 
-  - **Entities**: An entity represents a term or object that provides context for an intent. For example, an entity might be a city name that helps your dialog to distinguish which store the user wants to know store hours for.
-
     As you add training data, a natural language classifier is automatically added to the skill, and is trained to understand the types of requests that you have indicated the service should listen for and respond to.
+
+  - **Entities**: An entity represents a term or object that provides context for an intent. For example, an entity might be a city name that helps your dialog to distinguish which store the user wants to know store hours for.
 
   - **Dialog**: Use the dialog tool to build a dialog flow that incorporates your intents and entities. The dialog flow is represented graphically in the tool as a tree. You can add a branch to process each of the intents that you want the service to handle. You can then add branch nodes that handle the many possible permutations of a request based on other factors, such as the entities found in the user input or information that is passed to the service from an external service.
 

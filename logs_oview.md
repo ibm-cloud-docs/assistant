@@ -44,7 +44,7 @@ You can use the following controls to filter the information:
 
   The statistics represent external traffic (from users or API calls) that has interacted with your assistant; they do not include interactions from the *Try it out* pane in the tool.
 
-- *Time period control* - Use this control to choose the period for which data is displayed. This control affects all data shown on the page: not just the number of conversations displayed in the graph, but also the statistics displayed along with the graph, and the lists of top intents and entities.
+- *Time period control* - Use this control to choose the period for which data is displayed. This control affects all data shown on the page: not just the number of conversations displayed in the graph, but also the statistics displayed along with the graph, and the lists of top intents and entities. 
 
   **Note**: The statistics can cover a longer time period than the period for which logs of conversations are retained.
 
@@ -116,12 +116,12 @@ There might come a time when you want to completely remove a set of your user's 
 ### Before you begin
 To delete messages for one or more individuals, you first need to associate a message with a unique **Customer ID** for each individual. To specify the **Customer ID** for any message sent using the `/message` API, include the `X-Watson-Metadata: customer_id` property in your header. You can pass multiple **Customer ID** entries with semicolon separated `field=value` pairs, using `customer_id`, as in the following example:
 
-```curl
+```
 curl -X POST -u "apikey:3Df... ...Y7Pc9"
  --header
    'Content-Type: application/json'
    'X-Watson-Metadata: customer_id={first-customer-ID};customer_id={second-customer-ID}'
- --data '{"input":{"text":"hello"}}' 'https://gateway-us-south.watsonplatform.net/assistant/api/v1/workspaces/{workspaceID}/message?version=2018-09-20'
+ --data '{"input":{"text":"hello"}}' 'https:// gateway-us-south.watsonplatform.net/assistant/api/v1/workspaces/{workspaceID}/message?version=2018-09-20'
 ```
 {: codeblock}
 
