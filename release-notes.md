@@ -47,25 +47,6 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 The following new features and changes to the service are available.
 
-### 8 November 2018
-{: #8November2018}
-
-- **Major user interface revision**: The {{site.data.keyword.conversationshort}} service has a new look and added features.
-
-  This version of the service was made available to a select set of users who have been sharing useful feedback about it with IBM for the past few months.
-
-  - **Skills**: What you think of as a *workspace* is now called a *skill*. A *dialog skill* is a container for the natural language processing training data and artifacts that enable your assistant to understand user questions, and respond to them. (Any workspaces that you created previously are now listed in your service instance as skills.) See [Skills](skills.html).
-
-  - **Assistants**: You can now publish your skill in two steps. Add your skill to an assistant, and then set up one or more integrations with which to deploy your skill. The assistant adds a layer of function on top of your skill that enables the service to orchestrate and manage the flow of information for you. You do not need to build a custom front-end application and manage the conversation state from one call to the next. However, you can if you want to. See [Assistants](assistants.html).
-
-  - **Built-in integrations**: Instead of going to the **Deploy** tab to deploy your workspace, you add your dialog skill to an assistant, and add integrations to the assistant through which the skill is made available to your users. See [Adding integrations](add-integrations.html) for more information.
-
-  - **New major API version**: A V2 version of the API is available. This version provides access to methods you can use to interact with an assistant at run time. See [API Overview](api-overview.html) for more details.
-
-  - **Switching data sources**: It is now easier to improve the model in one skill with user conversation logs from a different skill. You do not need to rely on deployment IDs, but can simply pick the name of the assistant to which a skill was added and deployed to use its data. See [Improving across assistants](logs.html#deploy_id).
-
-- **Intent user example recommendations ![Premium plan only](images/premium0.png)**: You can upload a file that contains raw user inputs, such as user inquiries from a call center log, that the service can analyze and mine for intent user example candidates. See [Adding examples from log files](intents.html#intent-recommendations).
-
 ### 30 October 2018
 {: #30October2018}
 

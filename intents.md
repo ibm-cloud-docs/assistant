@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-02"
+lastupdated: "2018-11-06"
 
 ---
 
@@ -50,7 +50,6 @@ The number of intents and examples you can create depends on your {{site.data.ke
 | Service plan     | Intents per skill | Examples per skill |
 |------------------|------------------:|-------------------:|
 | Premium          |             2,000 |             25,000 |
-| Plus             |             2,000 |             25,000 |
 | Standard         |             2,000 |             25,000 |
 | Lite             |               100 |             25,000 |
 {: caption="Service plan details" caption-side="top"}

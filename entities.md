@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-23"
+lastupdated: "2018-11-06"
 
 ---
 
@@ -66,7 +66,6 @@ The number of entities, entity values, and synonyms that you can create depends 
 | Service plan      | Entities per skill | Entity values per skill | Entity synonyms per skill |
 |-------------------|-------------------:|------------------------:|--------------------------:|
 | Premium           |               1000 |                 100,000 |                   100,000 |
-| Plus              |               1000 |                 100,000 |                   100,000 |
 | Standard          |               1000 |                 100,000 |                   100,000 |
 | Lite              |                 25 |                 100,000 |                   100,000 |
 {: caption="Service plan details" caption-side="top"}
@@ -76,7 +75,6 @@ System entities that you enable for use count toward your plan usage totals.
 | Service plan | Contextual entities and annotations |
 |--------------|------------------------------------:|
 | Premium      |        30 contextual entities with 3000 annotations |
-| Plus         |        20 contextual entities with 2000 annotations |
 | Standard     |        20 contextual entities with 2000 annotations |
 | Lite         |        10 contextual entities with 1000 annotations |
 {: caption="Service plan details continued" caption-side="top"}
@@ -110,7 +108,7 @@ Use the {{site.data.keyword.conversationshort}} tool to create entities.
 
 1.  For this entity, choose whether you want the service to use a dictionary-based or context-based approach to find mentions of it, and then follow the appropriate procedure.
 
-    For each entity that you create, choose one entity type to use only. As soon as you add an annotation for an entity, the contextual model is initialized and becomes the primary approach for analyzing user input to find mentions of that entity. The context in which the mention is used in the user input takes precedence over any exact matches that might be present. See [Entity evaluation overview](#entity-described) for more information about how each type is evaluated.
+    **For each entity that you create, choose one entity type to use only.** As soon as you add an annotation for an entity, the contextual model is initialized and becomes the primary approach for analyzing user input to find mentions of that entity. The context in which the mention is used in the user input takes precedence over any exact matches that might be present. See [Entity evaluation overview](#entity-described) for more information about how each type is evaluated.
 
     - [Dictionary-based entities](#create-dictionary-based)
     - [Context-based entities](#create-annotation-based)
@@ -205,14 +203,10 @@ Dictionary-based entites are those for which you define specific terms, synonyms
 
       Imagine a case where you are asking a user for their email address. The dialog node condition will contain a condition similar to `@contactInfo:email`. In order to assign the user-entered email as a context variable, the following syntax can be used to capture the pattern match within the dialog node's response section:
 
-      ```json
-      {
-          "context" : {
-              "email": "<? @contactInfo.literal ?>"
-          }
-      }
-      ```
-      {: screen}
+      | Variable | Value            |
+      |----------|------------------|
+      |  email   | `<? @contactInfo.literal ?>` |
+
       {: #capture-group}
 
       *Capture groups* - For regular expressions, any part of a pattern inside a pair of normal parentheses will be captured as a group. For example, the entity value `fullUSphone` contains three captured groups:
@@ -225,14 +219,9 @@ Dictionary-based entites are those for which you define specific terms, synonyms
 
       In order to assign the user-entered area code as a context variable, the following syntax can be used to capture the group match within the dialog node's response section:
 
-        ```json
-        {
-            "context" : {
-                "area_code": "<? @fullUSphone.groups[1] ?>"
-            }
-        }
-        ```
-       {: screen}
+      | Variable     | Value            |
+      |--------------|------------------|
+      |  area_code   | `<? @fullUSphone.groups[1] ?>` |
 
       For additional information about using capture groups in your dialog, see [Storing and recognizing entity pattern groups in input](dialog-tips.html#get-pattern-groups).
 
