@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-30"
+lastupdated: "2018-11-01"
 
 ---
 
@@ -225,7 +225,7 @@ Paste the example code into a file named `AssistantSimpleExample.java`. You can 
 **Note:** Make sure you have installed the Watson SDK for Python using `pip install --upgrade watson-developer-cloud` or `easy_install --upgrade watson-developer-cloud`.
 {: python}
 
-**Note:** Make sure you have installed the [Watson SDK for Java ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/java-sdk/blob/master/README.md){: new_window}.
+**Note:** Make sure you have installed the [Watson SDK for Java ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/java-sdk/blob/develop/README.md){: new_window}.
 {: java}
 
 Assuming everything works as expected, the assistant returns the output from the dialog, which is then printed to the console:
@@ -736,11 +736,12 @@ OK! See you later.
 
 Success! The application now uses the {{site.data.keyword.conversationshort}} service to identify the intents in natural-language input, displays the appropriate responses, and implements the requested client actions.
 
-Of course, a real-world application would use a more sophisticated user interface, such as a web chat window. And it would implement more complex actions, possibly integrating with a customer database or other business systems. It would also need to send additional data to the assistant, such as a user ID to identify each unique user. (For more information, see the {{site.data.keyword.conversationshort}} [v2 API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/watson/developercloud/conversation/api/v2/){: new_window}.) But the basic principles of how the application interacts with the {{site.data.keyword.conversationshort}} service would remain the same.
+Of course, a real-world application would use a more sophisticated user interface, such as a web chat window. And it would implement more complex actions, possibly integrating with a customer database or other business systems. It would also need to send additional data to the assistant, such as a user ID to identify each unique user. (For more information, see the {{site.data.keyword.conversationshort}} [v2 API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.{DomainName}/apidocs/assistant-v2){: new_window}.) But the basic principles of how the application interacts with the {{site.data.keyword.conversationshort}} service would remain the same.
 
 For some more complex examples, see [Sample apps](sample-applications.html).
 
 ## Using the v1 API
+{: #v1-api}
 
 Using the v2 API is the recommended way to build a runtime client application that communicates with the {{site.data.keyword.conversationshort}} service. However, some older applications might still be using the v1 API, which includes a similar runtime method for sending messages to a dialog skill (called a *workspace* in v1).
 

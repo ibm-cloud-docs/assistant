@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-23"
+lastupdated: "2018-11-06"
 
 ---
 
@@ -344,7 +344,8 @@ To add a rich response, complete the following steps:
 
           Specify a value that you know will trigger the correct intent when it is submitted. For example, it might be a user example from the training data for the intent.
       1.  Repeat the previous steps to add more options to the list.
-      1.  Optionally, add a list introduction in the **Title** field and additional information in the **Description** field. These values are displayed above the option list. **Note**: Some integration channels do not display titles or descriptions for button groups and dropdown lists.
+      1.  Add a list introduction in the **Title** field. The title can ask the user to pick from the list of options. **Note**: Some integration channels do not display the title.
+      1.  Optionally, add additional information in the **Description** field. If specified, the description is displayed after the title and before the option list. **Note**: Some integration channels do not display the description.
 
       For example, you can construct a response like this:
 

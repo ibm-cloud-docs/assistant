@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-11"
+lastupdated: "2018-11-01"
 
 ---
 
@@ -99,7 +99,7 @@ In the resulting API /message response, the text response is formatted as follow
 
 There are response types other than a text response that you can define. See [Responses](dialog-overview.html#responses) for more details.
 
-You can learn more about the /message API call from the [API reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/watson/developercloud/conversation/api/v1/){: new_window}.
+You can learn more about the /message API call from the [API reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.{DomainName}/apidocs/assistant-v2){: new_window}.
 
 ### Retaining information across dialog turns
 {: #context}
@@ -992,7 +992,7 @@ To test disambiguation, complete the following steps:
 
 1.  If the response does not contain a list of dialog node options for you to choose from as expected, first check that you added summary information to the node purpose field for each of the nodes.
 
-1.  If disambiguation is still not triggered, it might be that the confidence scores for the nodes are not as close in value as you thought. 
+1.  If disambiguation is still not triggered, it might be that the confidence scores for the nodes are not as close in value as you thought.
 
     You can get information about the intents, entities, and other properties that are returned for certain user inputs.
 

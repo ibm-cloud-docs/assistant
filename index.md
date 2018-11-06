@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-25"
+lastupdated: "2018-11-06"
 
 ---
 
@@ -23,7 +23,10 @@ lastupdated: "2018-10-25"
 {{site.data.keyword.conversationfull}} is a cognitive bot that you can customize for your business needs, and deploy across multiple channels to bring help to your customers where and when they need it.
 {: shortdesc}
 
-**BETA** The features described in this documentation are beta features that have been made available to a small group of users for evaluation. Beta features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment. Go [here](https://console.bluemix.net/docs/services/conversation/index.html) to see the product documentation for the generally available version of this service. Beta features are supported only on [IBM Developer Answers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/search.html?f=&sort=relevance&q=%5Bwatson-conversation%5D+%5Bwatson-assistant%5D+%24).
+## Where are my workspaces?
+{: #existing-customers}
+
+If you created a *workspace* in a previous version of the service, have no fear; you can still get to it. Workspaces are now called *skills*. To get to your workspace, click the **Skills** tab.
 
 ## How it works
 

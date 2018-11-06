@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-23"
+lastupdated: "2018-11-06"
 
 ---
 
@@ -206,6 +206,7 @@ Dictionary-based entites are those for which you define specific terms, synonyms
       | Variable | Value            |
       |----------|------------------|
       |  email   | `<? @contactInfo.literal ?>` |
+
       {: #capture-group}
 
       *Capture groups* - For regular expressions, any part of a pattern inside a pair of normal parentheses will be captured as a group. For example, the entity value `fullUSphone` contains three captured groups:

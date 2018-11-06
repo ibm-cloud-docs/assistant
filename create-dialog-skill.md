@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-01"
+lastupdated: "2018-11-02"
 
 ---
 
@@ -128,13 +128,16 @@ After you create the service instance, you can give other people access to it. T
 
 **Important**: Only one person can edit an intent, entity, or a dialog node at a time. If multiple people work on the same item at the same time, then the changes made by the person who saves their changes last are the only changes applied. Changes that are made during the same time frame by someone else and are saved first are not retained. Coordinate the updates that you plan to make with your team members to prevent anyone from losing their work.
 
-To share a dialog skill with other people, you must give them access to the service instance that hosts the skill.
+To share a dialog skill with other people, you must give them access to the service instance that hosts the skill. Note that the person you invite will be able to access any skill that is hosted by this service instance.
 
-**Note**: Older service instances created on IBM Cloud were managed by Cloud Foundry. If you are using a service instance that is managed by Cloud Foundry, then your steps will be slightly different from those described in the procedure below. For Cloud Foundry-managed instances, you must choose your organization from the *Cloud Foundry access* section, and then assign the person to the **Developer** space role.
+1.  Make a note of the current instance name, which is displayed at the top of the current page.
+1.  Click the User ![User](images/user-icon2.png) icon in the page header, and select **IBM Cloud Dashboard** from the drop-down.
+1.  Click the current service instance.
 
-  If you are not sure which type of access management your instance uses, you can check. Make a note of the current instance name, which is displayed at the top of the current page. Click the User ![User](images/user-icon2.png) icon in the page header, and select **IBM Cloud Dashboard** from the drop-down. Click the current service instance. Check the Credentials section. If you see an API key and URL, then you are using IAM. If you see a URL, username, and password, then you are using Cloud Foundry.
+    Older service instances created on IBM Cloud were managed by Cloud Foundry. If you are using a service instance that is managed by Cloud Foundry, then your steps will be slightly different from those described in the procedure below. To determine whether your instance uses Cloud Foundry, check the *Credentials* section. If you see an API key and URL, then your instance uses IAM. If you see a URL, username, and password, then your instance uses Cloud Foundry.
 
-1.  Go to the {{site.data.keyword.watson}} Developer Console [Dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/dashboard/apps/) page, and log in. Click **Manage > Account > Users** from the header menu.
+1.  Select **Manage** > **Access** from the header menu.
+
 1.  Click **Invite users**, and then enter the email addresses of the people on your team to whom you want to give access.
 
     If you gave someone access to a service instance in Cloud Foundry, then the person might be listed as an invited user already. Click the person's name to open the access management settings for the user. Click **Assign access**, and then choose **Assign access to resources**.
@@ -144,6 +147,9 @@ To share a dialog skill with other people, you must give them access to the serv
     - **Assign platform access roles**: Operator
 
     For more information about platform management roles, see [IAM access ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/iam/users_roles.html). (Service access roles are not leveraged by {{site.data.keyword.conversationshort}}.)
+
+    **Note**: For Cloud Foundry-managed instances, you must expand the *Cloud Foundry access* section, choose your organization, and then assign the person to the **Developer** space role.
+
 1.  Click **Invite users**.
 
     If you are editing access for an existing user, click **Assign access**.

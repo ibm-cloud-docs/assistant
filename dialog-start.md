@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-21"
+lastupdated: "2018-11-02"
 
 ---
 
@@ -20,7 +20,12 @@ lastupdated: "2018-06-21"
 # Starting the dialog
 {: #dialog-start}
 
-You cannot use the built-in welcome node to start a dialog in the same way for all integrations. The response you define for the welcome node in the dialog is displayed in the 'Try it out' pane when you test the assistant within the tool. However, it is not displayed from channel integrations because nodes with the `welcome` special condition are skipped in dialog flows that are started by users. Deployed assistants typically wait for users to initiate conversations with them, not the other way around. The `conversation_start` special condition is always triggered at the start of a dialog. You can use a combination of nodes with these two special conditions to manage the start of your dialog in a consistent way.
+You cannot use the built-in welcome node to start a dialog in the same way for all integrations. Use this workaround instead.
+{: shortdesc}
+
+The response you define for the welcome node in the dialog is displayed to initiate a conversation from the "Try it out" pane within the tool, and from the chat widget in the Preview Link integration. However, it is not displayed from many of the other channel integrations because nodes with the `welcome` special condition are skipped in dialog flows that are started by users. And deployed assistants typically wait for users to initiate conversations with them, not the other way around.
+
+Unlike the `welcome` special condition, the `conversation_start` special condition is always triggered at the start of a dialog. You can use a combination of nodes with these two special conditions (`welcome` and `conversation_start`) to manage the start of your dialog in a consistent way.
 
 Complete the following steps to manage the dialog start:
 
@@ -39,5 +44,5 @@ Complete the following steps to manage the dialog start:
 This design results in a dialog that works like this:
 
 - Whatever the integration type, the `conversation_start` node is processed, which means any context variables that you define in it are initialized.
-- In deployments where the assistant starts the dialog flow, the `Welcome` node is triggered and its text response is displayed.
-- In deployments where the user starts the dialog flow, the user's first input is evaluated and then processed by the node that can provide the best response.
+- In integrations where the assistant starts the dialog flow, the `Welcome` node is triggered and its text response is displayed.
+- In integrations where the user starts the dialog flow, the user's first input is evaluated and then processed by the node that can provide the best response.
