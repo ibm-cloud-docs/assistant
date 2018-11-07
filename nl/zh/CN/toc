@@ -1,0 +1,94 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="watson-assistant" audience="service" href="/docs/services/conversation/getting-started.html"}
+Watson Assistant
+
+    {: .navgroup id="learn"}
+getting-started.md
+    index.md
+    tool-overview.md
+    [演示：汽车仪表板](https://conversation-demo.ng.bluemix.net/)
+    resources.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    configure-workspace.md
+
+    {: .topicgroup}
+    定义意向和实体
+        intents-entities.md
+        intents.md
+        entities.md
+        catalog.md
+
+    {: .topicgroup}
+    构建对话
+        dialog-overview.md
+        dialog-runtime.md
+        dialog-build.md
+        dialog-slots.md
+        dialog-actions.md
+        dialog-api.md
+
+    {: .topicgroup}
+    部署
+        deploy.md
+        conversation-connector.md
+        develop-app.md
+        integrations.md
+
+    {: .topicgroup}
+    改进理解
+        logs.md
+        logs_oview.md
+        logs_convo.md
+        logs_recommend.md
+
+    upgrading.md
+
+    {: .topicgroup}
+    教程
+        tutorial.md
+        tutorial-slots.md
+        tutorial-slots-complex.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    [API 参考](https://www.ibm.com/watson/developercloud/conversation/api/v1/)
+    dialog-methods.md
+    expression-language.md
+    filter-reference.md
+    sample-applications.md
+    lang-support.md
+
+    {: .topicgroup}
+    系统实体
+        system-entities.md
+        supported-timezones.md
+
+    {: .topicgroup}
+    Watson SDK
+        [Android SDK](https://github.com/watson-developer-cloud/android-sdk)
+        [Java SDK](https://github.com/watson-developer-cloud/java-sdk)
+        [Node.js SDK](https://github.com/watson-developer-cloud/node-sdk)
+        [Python SDK](https://github.com/watson-developer-cloud/python-sdk)
+        [.NET SDK](https://github.com/watson-developer-cloud/dotnet-standard-sdk)
+        [OpenWhisk SDK](https://github.com/watson-developer-cloud/openwhisk-sdk/)
+        [Salesforce SDK](https://github.com/watson-developer-cloud/salesforce-sdk)
+        [Swift SDK](https://github.com/watson-developer-cloud/swift-sdk)
+        [Unity SDK](https://github.com/watson-developer-cloud/unity-sdk)
+
+    [Watson GitHub 存储库](https://github.com/watson-developer-cloud/)
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    release-notes.md
+    feedback.md
+
+    {: .topicgroup}
+    开发者社区
+        [StackOverflow](http://stackoverflow.com/questions/tagged/watson-conversation)
+        [developerWorks Answers](https://developer.ibm.com/answers/topics/watson-conversation/)
+        [WDC Slack 通道](http://wdc-slack-inviter.mybluemix.net/)
+    {: .navgroup-end}
