@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-12"
+lastupdated: "2018-11-08"
 
 ---
 
@@ -87,7 +87,7 @@ The following table shows examples of the shorthand syntax that you can use when
 | `#help`                 | `intent == 'help'`  |
 | `! #help`               | `intent != 'help'`  |
 | `NOT #help`             | `intent != 'help'`  |
-| `#help` or `#i_am_lost` | <code>(intent == 'help' &#124;&#124; intent == 'I_am_lost')</code> |
+| `#help` or `#i_am_lost` | `(intent == 'help' || intent == 'I_am_lost')` |
 
 ## Built-in global variables
 {: #builtin-vars}
