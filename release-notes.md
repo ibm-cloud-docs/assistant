@@ -47,8 +47,8 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 The following new features and changes to the service are available.
 
-### 8 November 2018
-{: #8November2018}
+### 9 November 2018
+{: #9November2018}
 
 - **Major user interface revision**: The {{site.data.keyword.conversationshort}} service has a new look and added features.
 
@@ -71,6 +71,9 @@ The following new features and changes to the service are available.
   The following video provides a 2-minute overview of the updated {{site.data.keyword.conversationshort}} tool.
 
   <iframe class="embed-responsive-item" id="youtubeplayer" title="Product overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/OkW7gnHrw30?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
+### 8 November 2018
+{: #8November2018}
 
 - **Japanese data center**: You can now create {{site.data.keyword.conversationshort}} service instances that are hosted in the Tokyo data center. See [Data centers](services-information.html#regions) for more details.
 

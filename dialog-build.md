@@ -32,8 +32,8 @@ The number of dialog nodes you can create per skill depends on your service plan
 | Service plan     | Dialog nodes per skill     |
 |------------------|---------------------------:|
 | Premium          |                    100,000 |
-| Standard         |                        500 |
-| Lite             |                        100 |
+| Standard         |                    100,000 |
+| Lite             |                     25,000 |
 {: caption="Service plan details" caption-side="top"}
 
 The welcome and anything_else dialog nodes that are prepopulated in the tree do count toward the total.
