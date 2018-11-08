@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-01"
+lastupdated: "2018-11-07"
 
 ---
 
@@ -71,11 +71,12 @@ You can create {{site.data.keyword.conversationshort}} service instances that ar
 
 | Location    | Location code | Authentication type | IAM adoption date | Notes |
 |-------------|---------------|---------------------|-------------------|-------|
-| Sydney      | syd           | IAM                 | 7 May 2018 | Instances created before May 7 were syndicated to the US South data center |
-| Germany     | eu-de         | IAM                 | 30 October 2018 | N/A |
-| United Kingdom |  eu-gb     | N/A                 | N/A        | Instances are syndicated to US South |
-| US East     | us-east       | IAM                 | 14 June 2018 | N/A |
-| US South    | us-south      | IAM                 | 30 October 2018 | N/A |
+| Dallas      | us-south      | IAM                 | 30 October 2018 | N/A |
+| Frankfurt   | eu-de         | IAM                 | 30 October 2018 | N/A |
+| Sydney      | au-syd        | IAM                 | 7 May 2018 | Instances created before May 7 were syndicated to Dallas |
+| Tokyo       | au-syd        | IAM                 | 7 November 2018 | N/A |
+| United Kingdom |  eu-gb     | N/A                 | N/A        | Instances are syndicated to Dallas |
+| Washington DC  | us-east    | IAM                 | 14 June 2018 | N/A |
 {: caption="Data center locations" caption-side="top"}
 
 ## Authenticating API calls

@@ -1,0 +1,94 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="watson-assistant" audience="service" href="/docs/services/conversation/getting-started.html"}
+Watson Assistant
+
+    {: .navgroup id="learn"}
+    getting-started.md
+    index.md
+    tool-overview.md
+    [Demo: Painel do Carro](https://conversation-demo.ng.bluemix.net/)
+    resources.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    configure-workspace.md
+
+    {: .topicgroup}
+    Definindo intenções e entidades
+        intents-entities.md
+        intents.md
+        entities.md
+        catalog.md
+
+    {: .topicgroup}
+    Construindo um diálogo
+        dialog-overview.md
+        dialog-runtime.md
+        dialog-build.md
+        dialog-slots.md
+        dialog-actions.md
+        dialog-api.md
+
+    {: .topicgroup}
+    Implementando
+        deploy.md
+        conversation-connector.md
+        develop-app.md
+        integrations.md
+
+    {: .topicgroup}
+    Melhorando o entendimento
+        logs.md
+        logs_oview.md
+        logs_convo.md
+        logs_recommend.md
+
+    upgrading.md
+
+    {: .topicgroup}
+    Tutoriais
+        tutorial.md
+        tutorial-slots.md
+        tutorial-slots-complex.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    [Referência de API](https://www.ibm.com/watson/developercloud/conversation/api/v1/)
+    dialog-methods.md
+    expression-language.md
+    filter-reference.md
+    sample-applications.md
+    lang-support.md
+
+    {: .topicgroup}
+    Entidades do sistema
+        system-entities.md
+        supported-timezones.md
+
+    {: .topicgroup}
+    SDKs do Watson
+        [SDK do Android](https://github.com/watson-developer-cloud/android-sdk)
+        [SDK do Java](https://github.com/watson-developer-cloud/java-sdk)
+        [SDK do Node.js](https://github.com/watson-developer-cloud/node-sdk)
+        [SDK do Python](https://github.com/watson-developer-cloud/python-sdk)
+        [SDK do .NET](https://github.com/watson-developer-cloud/dotnet-standard-sdk)
+        [SDK do OpenWhisk](https://github.com/watson-developer-cloud/openwhisk-sdk/)
+        [SDK do Salesforce](https://github.com/watson-developer-cloud/salesforce-sdk)
+        [SDK do Swift](https://github.com/watson-developer-cloud/swift-sdk)
+        [SDK do Unity](https://github.com/watson-developer-cloud/unity-sdk)
+
+    [Repositórios do Watson GitHub](https://github.com/watson-developer-cloud/)
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    release-notes.md
+    feedback.md
+
+    {: .topicgroup}
+    Comunidade do desenvolvedor
+        [StackOverflow](http://stackoverflow.com/questions/tagged/watson-conversation)
+        [developerWorks Answers](https://developer.ibm.com/answers/topics/watson-conversation/)
+        [Canal WDC Slack](http://wdc-slack-inviter.mybluemix.net/)
+    {: .navgroup-end}
