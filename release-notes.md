@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-06"
+lastupdated: "2018-11-08"
 ---
 
 {:shortdesc: .shortdesc}
@@ -26,7 +26,7 @@ API requests require a version parameter that takes a date in the format `versio
 Send the version parameter with every API request. The service uses the API version for the date you specify, or the most recent version before that date. Don't default to the current date. Instead, specify a date that matches a version that is compatible with your app, and don't change it until your app is ready for a later version.
 
 - The current version for V1 is `2018-09-20`.
-- The only supported version for V2 is `2018-09-20`.
+- The only supported version for V2 is `2018-11-08`.
 - The "Try it out" pane in the {{site.data.keyword.conversationshort}} tooling is using version `2018-07-10`.
 
 ## Beta features
@@ -46,6 +46,33 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #change-log}
 
 The following new features and changes to the service are available.
+
+### 8 November 2018
+{: #8November2018}
+
+- **Major user interface revision**: The {{site.data.keyword.conversationshort}} service has a new look and added features.
+
+  This version of the tool was evaluated by beta program participants over the past several months.
+
+  - **Skills**: What you think of as a *workspace* is now called a *skill*. A *dialog skill* is a container for the natural language processing training data and artifacts that enable your assistant to understand user questions, and respond to them.
+
+    **Where are my workspaces?** Any workspaces that you created previously are now listed in your service instance as skills. Click the **Skills** tab to see them. For more information, see [Skills](skills.html).
+
+  - **Assistants**: You can now publish your skill in just two steps. Add your skill to an assistant, and then set up one or more integrations with which to deploy your skill. The assistant adds a layer of function on top of your skill that enables the service to orchestrate and manage the flow of information for you. See [Assistants](assistants.html).
+
+  - **Built-in integrations**: Instead of going to the **Deploy** tab to deploy your workspace, you add your dialog skill to an assistant, and add integrations to the assistant through which the skill is made available to your users. You do not need to build a custom front-end application and manage the conversation state from one call to the next. However, you can still do so if you want to. See [Adding integrations](add-integrations.html) for more information.
+
+  - **New major API version**: A V2 version of the API is available. This version provides access to methods you can use to interact with an assistant at run time.
+  
+    **Note**: What is presented in the tooling as a dialog skill is effectively a wrapper for a V1 workspace. There are currently no API methods for authoring skills and assistants with the V2 API. However, you can continue to use the V1 API for authoring workspaces. See [API Overview](api-overview.html) for more details.
+
+  - **Switching data sources**: It is now easier to improve the model in one skill with user conversation logs from a different skill. You do not need to rely on deployment IDs, but can simply pick the name of the assistant to which a skill was added and deployed to use its data. See [Improving across assistants](logs.html#deploy_id).
+
+  The following video provides a 2-minute overview of the updated {{site.data.keyword.conversationshort}} tool.
+
+  <iframe class="embed-responsive-item" id="youtubeplayer" title="Product overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/OkW7gnHrw30?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
+- **Japanese data center**: You can now create {{site.data.keyword.conversationshort}} service instances that are hosted in the Tokyo data center. See [Data centers](services-information.html#regions) for more details.
 
 ### 30 October 2018
 {: #30October2018}

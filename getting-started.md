@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-01"
+lastupdated: "2018-11-08"
 
 ---
 
@@ -24,6 +24,11 @@ lastupdated: "2018-11-01"
 
 In this short tutorial, we introduce the {{site.data.keyword.conversationshort}} tool and go through the process of creating your first assistant.
 {: shortdesc}
+
+## Where are my workspaces?
+{: #existing-customers}
+
+If you created a *workspace* in a previous version of the service, have no fear; you can still get to it. Workspaces are now called *skills*. You can get to your workspace from the **Skills** tab.
 
 ## Before you begin
 {: #prerequisites}

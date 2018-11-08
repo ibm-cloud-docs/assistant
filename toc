@@ -1,8 +1,8 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="assistant-beta" audience="service" href="/docs/services/assistant/getting-started.html"}
-Watson Assistant Beta
+{: .toc subcollection="watson-assistant" arm="969310" audience="service" href="/docs/services/assistant/getting-started.html" path="services/assistant"}
+Watson Assistant
 
     {: .navgroup id="learn"}
     getting-started.md
