@@ -1,14 +1,14 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="watson-assistant" audience="service" href="/docs/services/conversation/getting-started.html"}
+{: .toc subcollection="watson-assistant" audience="service" href="/docs/services/assistant/getting-started.html" path="services/assistant"}
 Watson Assistant
 
     {: .navgroup id="learn"}
     getting-started.md
     index.md
     tool-overview.md
-    [Demo: Dashboard automobile](https://conversation-demo.ng.bluemix.net/)
+    [Demo](https://watson-conversation-duo-dev.ng.bluemix.net/)
     resources.md
     {: .navgroup-end}
 
@@ -56,7 +56,7 @@ Watson Assistant
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    [Riferimento API](https://www.ibm.com/watson/developercloud/conversation/api/v1/)
+    [Riferimento API](https://console.bluemix.net/apidocs/assistant)
     dialog-methods.md
     expression-language.md
     filter-reference.md
@@ -90,6 +90,6 @@ Watson Assistant
     {: .topicgroup}
     Community di sviluppatori
         [StackOverflow](http://stackoverflow.com/questions/tagged/watson-conversation)
-        [developerWorks Answers](https://developer.ibm.com/answers/topics/watson-conversation/)
+        [IBM Developer Answers](https://developer.ibm.com/answers/topics/watson-conversation/)
         [Canale Slack WDC](http://wdc-slack-inviter.mybluemix.net/)
     {: .navgroup-end}
