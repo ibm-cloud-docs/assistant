@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-06"
+lastupdated: "2018-11-13"
 
 ---
 
@@ -172,7 +172,7 @@ Hello $user
 
 If the current user's name is `Norman`, then the response that is displayed to Norman is `Hello Norman`.
 
-If you include one of these special characters in a text response, escape it by adding a backslash (`\`) in front of it. Escaping the character prevents the service from misinterpreting it as being one of the following artifact types:
+If you include one of these special characters in a text response, escape it by adding a backslash (`\`) in front of it. If you are using the JSON editor, you need to use two backslashes to escape (`\\`). Escaping the character prevents the service from misinterpreting it as being one of the following artifact types:
 
 | Special character | Artifact | Example |
 |-------------------|----------|---------|
