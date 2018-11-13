@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-02"
+lastupdated: "2018-11-12"
 
 ---
 
@@ -43,6 +43,8 @@ To test the assistant from a web-hosted chat widget, complete the following step
 1.  Click the URL link that is displayed to open the test page.
 
     A separate web browser tab opens that contains a chat widget implementation of your assistant.
+
+    **Attention**: If your service instance is hosted in London, then you must edit the preview link URL. The URL includes a region code for the region where the instance is hosted. Because instances in London are syndicated to Dallas, you must replace the `eu-gb` reference in the URL with `us-south` for the web page to render properly.
 
 1.  Submit test utterances to see how the assistant responds.
 
