@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-02"
+lastupdated: "2018-11-13"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated: "2018-11-02"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Building a dialog skill
+# Building a dialog skill ![BETA](images/beta.png)
 {: #create-dialog-skill}
 
 The natural-language processing for the {{site.data.keyword.conversationshort}} service is defined in a *dialog skill*, which is a container for all of the artifacts that define a conversation flow.

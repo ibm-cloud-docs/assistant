@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-30"
+lastupdated: "2018-11-13"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated: "2018-10-30"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Building a search skill
+# Building a search skill ![BETA](images/beta.png)
 {: #create-skill}
 
 The *search skill* interacts with the {{site.data.keyword.discoveryfull}} service to extract information that is relevant to a customer query from a configured data source.
