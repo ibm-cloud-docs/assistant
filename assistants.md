@@ -35,7 +35,7 @@ The dialog skill itself is defined in text, but you can integrate it with Watson
 
 ![Out-of-the-box training data](images/oob.png)  If you want to get started quickly, add prebuilt training data to your dialog skill so your assistant can start helping your customers with the basics. The training data provided in prebuilt content catalogs was designed by machine learning and linguistics experts at IBM. The IBM team carefully crafted the training data and used it to iteratively train machine-learning classifiers to verify that the data can produce models that recognize and respond to any user input that matches a set of common customer goals.
 
-![IBM Cloud](images/cloud.png)  The assistant is a fully hosted bot that is managed by IBM Cloud, which means you do not need to worry about setting up or maintaining infrastructure to support it. The assistant also manages the state of the conversation. It passes contextual information from one dialog turn to the next, so you don't have to manage it yourself.
+![IBM Cloud](images/cloud.png)  The assistant is a fully hosted bot that is managed by {{site.data.keyword.cloud_notm}}, which means you do not need to worry about setting up or maintaining infrastructure to support it. The assistant also manages the state of the conversation. It passes contextual information from one dialog turn to the next, so you don't have to manage it yourself.
 
 | Integrations       | Channels  |
 |--------------------|:----------|

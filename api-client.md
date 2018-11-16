@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-01"
+lastupdated: "2018-11-16"
 
 ---
 
@@ -34,7 +34,7 @@ The example application we will create in this section implements several functi
 Before continuing with this example, you need to set up the required assistant:
 
 1.  Download the dialog skill <a target="_blank" href="https://watson-developer-cloud.github.io/doc-tutorial-downloads/assistant/assistant-simple-example.json" download="assistant-simple-example.json">JSON file</a>.
-1.  [Import the skill](create-skill.html#creating-skills) into an instance of the {{site.data.keyword.conversationshort}} service.
+1.  [Import the skill](create-skill.html) into an instance of the {{site.data.keyword.conversationshort}} service.
 1.  [Create an assistant](create-assistant.html#creating-assistants) and connect the skill you imported.
 
 ## Getting service information

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-16"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -32,6 +32,7 @@ The number of dialog nodes you can create per skill depends on your service plan
 | Service plan     | Dialog nodes per skill     |
 |------------------|---------------------------:|
 | Premium          |                    100,000 |
+| Plus             |                    100,000 |
 | Standard         |                    100,000 |
 | Lite             |                     25,000 |
 {: caption="Service plan details" caption-side="top"}
