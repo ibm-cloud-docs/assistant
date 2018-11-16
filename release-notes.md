@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-13"
+lastupdated: "2018-11-16"
 ---
 
 {:shortdesc: .shortdesc}
@@ -46,6 +46,75 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #change-log}
 
 The following new features and changes to the service are available.
+
+### 16 November 2018
+{: #16November2018}
+
+- **A new service plan, the Plus plan, is available**: The new plan offers premium-level features at a lower price point. Unlike previous plans, the Plus plan is a user-based billing plan. It measures usage by the number of unique users that interact with your assistant over a given time period. To get the most from the plan, if you build your own client application, design your app such that it defines a unique ID for each user, and passes the user ID with each /message API call. For the built-in integrations, the session ID is used to identify user interactions with the assistant. See [User-based plans](services-information.html#user-based-plans) for more information.
+
+  <table>
+  <caption>Plus plan limits</caption>
+    <tr>
+      <th>Artifact</th>
+      <th>Limit</th>
+    </tr>
+    <tr>
+      <td>Assistants</td>
+      <td>100</td>
+    </tr>
+    <tr>
+       <td>Contextual entities</td>
+       <td>20</td>
+    </tr>
+    <tr>
+       <td>Contextual entity annotations</td>
+       <td>2,000</td>
+    </tr>
+    <tr>
+       <td>Dialog nodes</td>
+       <td>100,000</td>
+    </tr>
+    <tr>
+       <td>Entities</td>
+       <td>1,000</td>
+    </tr>
+    <tr>
+       <td>Entity synonyms</td>
+       <td>100,000</td>
+    </tr>
+    <tr>
+       <td>Entity values</td>
+       <td>100,000</td>
+    </tr>
+    <tr>
+       <td>Intents</td>
+       <td>2,000</td>
+    </tr>
+    <tr>
+       <td>Intent user examples</td>
+       <td>25,000</td>
+    </tr>
+    <tr>
+       <td>Integrations</td>
+       <td>100</td>
+    </tr>
+    <tr>
+       <td>Logs</td>
+       <td>30 days</td>
+    </tr>
+    <tr>
+       <td>Skills</td>
+       <td>50</td>
+    </tr>
+  </table>
+
+- **User-based Premium plan**: The Premium plan now bases its billing on the number of active unique users. If you choose to use this plan, design any custom applications that you build to properly identify the users who generate /message API calls. See [User-based plans](services-information.html#user-based-plans) for more information.
+
+  **Note**: Existing Premium plan service instances are not impacted by this change; they continue to use API-based billing methods.
+
+  See {{site.data.keyword.conversationshort}} [service plan options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/catalog/services/watson-assistant-formerly-conversation){: new_window} for more information about all available service plans.
+
+- **Recommendations are discontinued**: The Recomendations section on the Improve tab was removed. Recommendations was a beta feature available to Premium plan users only. It recommended actions that users could take to improve their training data. Instead of consolidating recommendations in one place, recommendations are now being made available from the parts of the tool where you make actual training data changes. For example, while adding entity synonyms, you can now opt to see a list of terms that are recommended by the service.
 
 ### 9 November 2018
 {: #9November2018}
@@ -130,7 +199,7 @@ The following new features and changes to the service are available.
 
 - **Rich response types**: You can now add rich responses that include elements such as images or buttons in addition to text, to your dialog. See [Rich responses](dialog-overview.html#multimedia) for more information.
 
-- **Contextual entities (Beta)**: Contextual entities are entities that you define by labeling mentions of the entity type that occur in intent user examples. These entity types teach the service not only terms of interest, but also the context in which terms of interest typically appear in user utterances, enabling the service to recognize never-seen-before entity mentions based solely on how they are referenced in user input. For example, if you annotate the intent user example, "I want a flight to Boston" by labeling "Boston" as a @destination entity, then the service can recognize "Chicago" as a @destination in a user input that says, "I want a flight to Chicago." This feature is currently available for English only. See [Defining contextual entities](entities.html#defining-contextual-entities) for more information.
+- **Contextual entities (Beta)**: Contextual entities are entities that you define by labeling mentions of the entity type that occur in intent user examples. These entity types teach the service not only terms of interest, but also the context in which terms of interest typically appear in user utterances, enabling the service to recognize never-seen-before entity mentions based solely on how they are referenced in user input. For example, if you annotate the intent user example, "I want a flight to Boston" by labeling "Boston" as a @destination entity, then the service can recognize "Chicago" as a @destination in a user input that says, "I want a flight to Chicago." This feature is currently available for English only. See [Adding contextual entities](entities.html#create-annotation-based) for more information.
 
   **Note**: When you access the tool with an Internet Explorer web browser, you cannot label entity mentions in intent user examples nor edit user example text.
 
@@ -224,7 +293,7 @@ The following new features and changes to the service are available.
 
 - **Content catalogs**: The new [content catalogs](catalog.html#using-content-catalogs) contain a single category of prebuilt common intents and entities that you can add to your application. For example, most applications require a general #greeting-type intent that starts a dialog with the user. You can add it from the content catalog rather than building your own.
 
-- **Enhanced user metrics**: The [Improve component](logs.html#about-the-improve-component) has been enhanced with additional user metrics and logging statistics. For example, the [Overview page](logs_oview.html#the-overview-page) includes several new, detailed graphs that summarize interactions between users and your application, the amount of traffic for a given time period, and the intents and entities that were recognized most often in user conversations.
+- **Enhanced user metrics**: The Improve component has been enhanced with additional user metrics and logging statistics. For example, the Overview page includes several new, detailed graphs that summarize interactions between users and your application, the amount of traffic for a given time period, and the intents and entities that were recognized most often in user conversations.
 
 ### 12 March 2018
 {: #12March2018}
@@ -281,7 +350,7 @@ The following new features and changes to the service are available.
 ### 5 December 2017
 {: #5December2017}
 
-- **Redesigned UI for Intents and Entities**: The `Intents` and `Entities` tabs have been redesigned to provide an easier, more efficient workflow when creating and editing entities and intents. See [Defining intents](intents.html#defining-intents) and [Defining entities](entities.html#defining-entities) for information about working with these tabs.
+- **Redesigned UI for Intents and Entities**: The `Intents` and `Entities` tabs have been redesigned to provide an easier, more efficient workflow when creating and editing entities and intents. See [Defining intents](intents.html#creating-intents) and [Defining entities](entities.html#creating-entities) for information about working with these tabs.
 
 ### 30 November 2017
 {: #30November2017}
@@ -291,7 +360,7 @@ The following new features and changes to the service are available.
 ### 29 November 2017
 {: #29November2017}
 
-- **Improving understanding of user input across workspaces**: You can now improve a workspace with utterances that were sent to other workspaces within your instance. For example, you might have multiple versions of production workspaces and development workspaces; you can use the same utterance data to improve any of these workspaces. See [Improving across workspaces](logs.html#deploy_id) and [Selecting a data source](logs_convo.html#selecting-a-data-source) for additional information.
+- **Improving understanding of user input across workspaces**: You can now improve a workspace with utterances that were sent to other workspaces within your instance. For example, you might have multiple versions of production workspaces and development workspaces; you can use the same utterance data to improve any of these workspaces. See [Improving across workspaces](logs.html#deploy_id).
 
 ### 20 November 2017
 {: #20November2017}
@@ -308,7 +377,7 @@ The following new features and changes to the service are available.
 ### 8 November 2017
 {: #8November2017}
 
-- **{{site.data.keyword.conversationshort}} connector**: You can use the new {{site.data.keyword.conversationshort}} connector tool to connect your workspace to a Slack or Facebook Messenger app that you own, making it available as a chat bot that Slack or Facebook Messenger users can interact with. This tool is available only for the {{site.data.keyword.Bluemix_notm}} US South region. For more information, see [Deploying to a channel with the {{site.data.keyword.conversationshort}} connector](conversation-connector.html).
+- **{{site.data.keyword.conversationshort}} connector**: You can use the new {{site.data.keyword.conversationshort}} connector tool to connect your workspace to a Slack or Facebook Messenger app that you own, making it available as a chat bot that Slack or Facebook Messenger users can interact with. This tool is available only for the {{site.data.keyword.Bluemix_notm}} US South region.
 
 ### 3 November 2017
 {: #3November2017}
@@ -422,7 +491,7 @@ The following new features and changes to the service are available.
 ### 11 July 2017
 {: #11July2017}
 
-- **Test in Slack**: You can use the new **Test in Slack** tool to quickly deploy your workspace as a Slack bot user for testing purposes. This tool is available only for the {{site.data.keyword.Bluemix_notm}} US South region. For more information, see [Testing in Slack](test-deploy.html).
+- **Test in Slack**: You can use the new **Test in Slack** tool to quickly deploy your workspace as a Slack bot user for testing purposes. This tool is available only for the {{site.data.keyword.Bluemix_notm}} US South region.
 - **Updates to Arabic**: Arabic language support has been enhanced to include absolute scoring per intent, and the ability to mark intents as irrelevant; please see the [Supported languages](lang-support.html) topic for additional details. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied; see [Updated models](release-notes.html#updated-models) for more information.
 
 ### 23 June 2017
@@ -562,12 +631,7 @@ For more information, see the [API Reference ![External link icon](../../icons/l
 
 - We changed how intents are scored and added the ability to mark input as irrelevant to your application. For details, see [Defining intents](intents.html) and search for `Mark as irrelevant`.
 
-- This release introduced a major change to the workspace. To benefit from the changes, you must manually upgrade your workspace. To do so, complete the following steps:
-
-  1.  [Duplicate your workspace](configure-workspace.html#exporting-and-copying-workspaces).
-  1.  Upgrade the duplicate workspace by clicking the upgrade icon (![upgrade icon](images/upgrade.png)).
-  1.  Test the upgraded workspace.
-  1.  When testing is done and things are working as expected, apply the upgrade to your application by changing the message API call to use **2017-02-03** or later.
+- This release introduced a major change to the workspace. To benefit from the changes, you must manually upgrade your workspace.
 
 - The processing of **Jump to** actions changed to prevent loops that can occur under certain conditions. Previously, if you jumped to the condition of a node and neither that node nor any of its peer nodes had a condition that was evaluated as true, the system would jump to the root-level node and look for a node whose condition matched the input. In some situations this processing created a loop, which prevented the dialog from progressing.
 

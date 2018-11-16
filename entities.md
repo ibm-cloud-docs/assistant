@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-06"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -66,6 +66,7 @@ The number of entities, entity values, and synonyms that you can create depends 
 | Service plan      | Entities per skill | Entity values per skill | Entity synonyms per skill |
 |-------------------|-------------------:|------------------------:|--------------------------:|
 | Premium           |               1000 |                 100,000 |                   100,000 |
+| Plus              |               1000 |                 100,000 |                   100,000 |
 | Standard          |               1000 |                 100,000 |                   100,000 |
 | Lite              |                 25 |                 100,000 |                   100,000 |
 {: caption="Service plan details" caption-side="top"}
@@ -75,6 +76,7 @@ System entities that you enable for use count toward your plan usage totals.
 | Service plan | Contextual entities and annotations |
 |--------------|------------------------------------:|
 | Premium      |        30 contextual entities with 3000 annotations |
+| Plus         |        20 contextual entities with 2000 annotations |
 | Standard     |        20 contextual entities with 2000 annotations |
 | Lite         |        10 contextual entities with 1000 annotations |
 {: caption="Service plan details continued" caption-side="top"}

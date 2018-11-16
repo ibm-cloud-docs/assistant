@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-08"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -44,6 +44,10 @@ If you created a {{site.data.keyword.conversationshort}} service instance, you'r
 
 1.  Go to the [{{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/catalog/services/watson-assistant-formerly-conversation) page in the {{site.data.keyword.Bluemix_notm}} Catalog.
 1.  Sign up for a free {{site.data.keyword.Bluemix_notm}} account or log in.
+
+    The service instance will be created in the **default** resource group if you do not choose a different one, and it *cannot* be changed later. This group is sufficient for the purposes of trying out the service. 
+
+    If you're creating an instance for more robust use, then learn more about [resource groups![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/resources/bestpractice_rgs.html#bp_resourcegroups){: new_window}.
 1.  Click **Create**.
 
 ## Step 1: Open the tool

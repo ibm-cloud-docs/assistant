@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-06"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -31,6 +31,7 @@ The number of assistants you can create in a single service instance depends on 
 | Service plan     | Assistants per service instance | Integrations per assistant  |
 |------------------|--------------------------------:|----------------------------:|
 | Premium          |                             100 |                         100 |
+| Plus             |                             100 |                         100 |
 | Standard         |                             100 |                         100 |
 | Lite*            |                             100 |                         100 |
 {: caption="Service plan details" caption-side="top"}
@@ -103,3 +104,8 @@ You can add one skill to an assistant. If you want to change the skill that your
 1.  Click the ![open and close list of options](images/kabob-beta.png) icon on the skill tile, and then choose **Swap**.
 
 1.  Choose an existing skill to use instead or [create a skill](create-skill.html).
+
+### Switching between service instances
+{: #switch-instance}
+
+If you have more than one service instance, you can check the page header to find out which instance you are currently using. If you are working in a skill, click the **Skills** breadcrumb link first. The banner displays the current instance name. To switch to a different service instance, click **change**, and then choose the appropriate instance.

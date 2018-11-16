@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-01"
+lastupdated: "2018-11-16"
 
 ---
 
@@ -32,6 +32,12 @@ After you configure a dialog skill and add it to an assistant, you can integrate
 1.  Click the **Select Integration** button for *Slack*.
 
 1.  Follow the instructions that are provided on the screen to complete the integration process.
+
+If you want to follow along as someone else walks through the deployment steps, watch this video.
+
+<iframe class="embed-responsive-item" id="youtubeplayer" title="Walkthrough of the Slack deployment steps" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/87pOdlqEePA?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
+Duration: 9.5 minutes
 
 ## Dialog considerations
 {: #slack-dialog}

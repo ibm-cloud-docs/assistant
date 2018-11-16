@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-02"
+lastupdated: "2018-11-16"
 
 ---
 
@@ -50,7 +50,7 @@ The first table shows the level of support for all features, except those relate
 
 **Table 2. Intent feature support details**
 
-| Language | **[Absolute scoring and 'Mark as irrelevant'](intents.html#mark-irrelevant)** | **[Content Catalog](catalog.html)** | **[Intent recommendations](intents.html#intent-recommendations)** |
+| Language | **[Absolute scoring and 'Mark as irrelevant'](intents.html#mark-irrelevant)** | **[Content Catalog](catalog.html)** | **[User example recommendations](intents.html#intent-recommendations)** |
 |:---:|:---:|:---:|:---:|
 | **English (en)**                   | GA | GA | Beta |
 | **Arabic (ar)**                    | Beta | NA | NA |
@@ -69,7 +69,7 @@ The first table shows the level of support for all features, except those relate
 
 **Table 3. Entity feature support details**
 
-| Language | **System entities ([number](system-entities.html#sys-number), [currency](system-entities.html#sys-currency), [percentage](system-entities.html#sys-percentage), [date, time](system-entities.html#sys-datetime))** | **[Entity fuzzy matching](entities.html#fuzzy-matching)** | **[Contextual entities](entities.html#defining-contextual-entities)** | **[Synonym recommendations](entities.html#synonyms)**
+| Language | **System entities ([number](system-entities.html#sys-number), [currency](system-entities.html#sys-currency), [percentage](system-entities.html#sys-percentage), [date, time](system-entities.html#sys-datetime))** | **[Entity fuzzy matching](entities.html#fuzzy-matching)** | **[Contextual entities](entities.html#create-annotation-based)** | **[Synonym recommendations](entities.html#synonyms)**
 |:---|:---:|:---:|:---:|:---:|
 | **English (en)**                   | GA, Beta ([location](system-entities.html#sys-location), [person](system-entities.html#sys-person)) | Beta (Stemming, misspelling, and partial match) | Beta | GA |
 | **Arabic (ar)**                    | Beta | GA (Misspelling only) | NA | NA |

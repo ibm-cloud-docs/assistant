@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-01"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -43,3 +43,11 @@ Once training is completed, your updates are available to the custom application
 With the latest version of the service, you can continue to do everything you could do with the legacy service but with more flexibility. Maybe you created a workspace with an earlier version of the service and are calling it from an existing application that you do not want to replace? It already manages state and performs useful functions on individual dialog turns that you want to continue to control. You can still orchestrate between calls with the latest version of the /message API. The advantage is that you don't have to. In the latest version, you can support more than one integration channel at a time with the same underlying dialog skill.
 
 If you choose to skip the step of creating an assistant and adding your dialog skill to it, you will miss out on the simplicity that assistants provide. Namely, you **cannot** use a single conversation to interact with customers through multiple integration channels at once, and quickly expand or switch to new channels that become popular with users.
+
+## Skills and workspaces
+{: #names}
+
+What is presented in the tooling as a dialog skill is effectively a wrapper for a V1 workspace. While there are currently no API methods for authoring skills with the V2 API, you can continue to use the V1 API for authoring workspaces.
+
+- When you open the tool, any workspaces that you created before November 9 are shown as skills. The skill name is taken from the workspace name. However, if you subsequently change the skill name or description, these changes do not affect the workspace. Likewise, if you use the APIs to edit the workspace name or description, these changes do not affect the skill.
+- From the tool, the API details for the skill show you both the skill ID and the workspace ID.
