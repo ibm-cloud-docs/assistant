@@ -33,7 +33,7 @@ To understand how to use message data to make improvements across assistants, it
 - ***Assistant***: An application - sometimes referred to as a 'chat bot' - that implements your {{site.data.keyword.conversationshort}} content.
 - ***Conversation***: A set of messages consisting of the messages that an individual user sends to your assistant, and the messages your assistant sends back.
 - ***Conversation ID***: Unique identifier that is added to individual message calls to link related message exchanges together. App developers using the V1 version of the service API add this value to the message calls in a conversation by including the ID in the metadata of the context object.
-- ***Customer ID***: A unique label that can be used to identify and therefore supports the deletion of data associated with a specific customer should the customer request it.
+- ***Customer ID***: A unique ID that can be used to label customer data such that it can be subsequently deleted if the customer requests the removal of their data.
 - ***Deployment ID***: A unique label that app developers using the V1 version of the service API pass with each user message to help identify the deployment environment that produced the message.
 
 - ***Instance***: Your deployment of {{site.data.keyword.conversationshort}}, accessible with unique credentials. A {{site.data.keyword.conversationshort}} instance might contain multiple assistants.
