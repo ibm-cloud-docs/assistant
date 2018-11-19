@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-15"
+lastupdated: "2018-11-19"
 
 ---
 
@@ -140,7 +140,7 @@ The authentication mechanism used by your service instance impacts how you must 
 
 {{site.data.keyword.cloud_notm}} has a network of global data centers that provide performance benefits to its cloud services. See [{{site.data.keyword.cloud_notm}} global data centers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/data-centers/){: new_window} for more details.
 
-{{site.data.keyword.cloud_notm}} changed from managing user access with Cloud Foundry to using token-based Identity and Access Management (IAM) authentication. IAM was rolled out in different locations at different times.
+{{site.data.keyword.cloud_notm}} changed from managing user access with Cloud Foundry to using token-based Identity and Access Management (IAM) authentication. IAM was rolled out in different locations at different times. You can migrate a service instance to move it from its current Cloud Foundry org and space to a resource group. See [Migrating](migrating.html) for more details.
 
 You can create {{site.data.keyword.conversationshort}} service instances that are hosted in the following data center locations:
 
