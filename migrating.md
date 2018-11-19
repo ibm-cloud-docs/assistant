@@ -51,6 +51,12 @@ To migrate your service instance, complete these steps:
 
 1.  Click **Migrate**.
 
+    A message is displayed when the process is done. You can continue migrating other service instances or click **Done**.
+
+The old (Cloud Foundry-based) service instance that you migrated is now shown as an *alias* of the new (resource-based) version of the instance. You can still access the username and password credentials for the Cloud Foundry-based instance from the **Service credentials** page.
+
+Open the resource-based version of the service instance to access the tool. Note that the service credentials for the resource-based version of the service instance specify an API key instead of a username and password.
+
 For more information, see the [IBM Cloud migration documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/resources/instance_migration.html).
 
 ## Authentication
