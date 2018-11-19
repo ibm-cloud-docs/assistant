@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-02"
+lastupdated: "2018-11-19"
 
 ---
 
@@ -54,7 +54,6 @@ Follow these steps to add integrations to your assistant:
 
     - [Custom application](deploy-custom-app.html)
     - [Facebook Messenger](deploy-facebook.html)
-    - [Intercom](deploy-intercom.html)  ![Premium plan only](images/premium0.png)
     - [Preview Link](deploy-web-link.html)
     - [Slack](deploy-slack.html)
     - [WordPress plug-in ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://wordpress.org/plugins/conversation-watson/){: new_window}
