@@ -48,6 +48,7 @@ Watson Assistant
         logs_oview.md
         logs.md
 
+    migrating.md
     upgrading.md
     edit-convo-workspace.md
 
