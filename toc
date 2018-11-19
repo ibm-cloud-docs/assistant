@@ -37,7 +37,6 @@ Watson Assistant
         add-integrations.md
         deploy-custom-app.md
         deploy-facebook.md
-        deploy-intercom.md
         deploy-web-link.md
         deploy-slack.md
         dialog-start.md
