@@ -50,21 +50,21 @@ The first table shows the level of support for all features, except those relate
 
 **Table 2. Intent feature support details**
 
-| Language | **[Absolute scoring and 'Mark as irrelevant'](intents.html#mark-irrelevant)** | **[Content Catalog](catalog.html)** | **[User example recommendations](intents.html#intent-recommendations)** |
-|:---:|:---:|:---:|:---:|
-| **English (en)**                   | GA | GA | Beta |
-| **Arabic (ar)**                    | Beta | NA | NA |
-| **Chinese (Simplified) (zh-cn)**   | GA | NA | NA |
-| **Chinese (Traditional) (zh-tw)**  | Beta | NA | NA |
-| **Czech (cs)**                     | Beta | NA | NA |
-| **Dutch (nl)**                     | GA | NA | NA |
-| **French (fr)**                    | GA | GA | NA |
-| **German (de)**                    | GA | GA | NA |
-| **Italian (it)**                   | GA | GA | NA |
-| **Japanese (ja)**                  | GA | GA | NA |
-| **Korean (ko)**                    | GA | NA | NA |
-| **Portuguese (Brazilian) (pt-br)** | GA | GA | NA |
-| **Spanish (es)**                   | GA | GA | NA |
+| Language | **[Absolute scoring and 'Mark as irrelevant'](intents.html#mark-irrelevant)** | **[Content Catalog](catalog.html)** |
+|:---:|:---:|:---:|
+| **English (en)**                   | GA | GA |
+| **Arabic (ar)**                    | Beta | NA |
+| **Chinese (Simplified) (zh-cn)**   | GA | NA |
+| **Chinese (Traditional) (zh-tw)**  | Beta | NA |
+| **Czech (cs)**                     | Beta | NA |
+| **Dutch (nl)**                     | GA | NA |
+| **French (fr)**                    | GA | GA |
+| **German (de)**                    | GA | GA |
+| **Italian (it)**                   | GA | GA |
+| **Japanese (ja)**                  | GA | GA |
+| **Korean (ko)**                    | GA | NA |
+| **Portuguese (Brazilian) (pt-br)** | GA | GA |
+| **Spanish (es)**                   | GA | GA |
 {: caption="Intent feature support details" caption-side="top"}
 
 **Table 3. Entity feature support details**
