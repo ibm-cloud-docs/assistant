@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-01"
+lastupdated: "2018-11-19"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated: "2018-11-01"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Integrating with Intercom ![Premium plan only](images/premium0.png)
+# Integrating with Intercom ![BETA](images/beta.png) ![Premium plan only](images/premium0.png) 
 {: #deploy-intercom}
 
 Intercom is a customer service messaging platform that evaluates user support inquiries and routes them to the best human agent or team of agents to address the user's question or request.
