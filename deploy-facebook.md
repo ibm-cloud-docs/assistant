@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-02"
+lastupdated: "2018-11-20"
 
 ---
 
@@ -34,6 +34,12 @@ After you configure a dialog skill and add it to an assistant, you can integrate
 1.  Click the **Select Integration** button for *Facebook Messenger*.
 
 1.  Follow the instructions that are provided on the screen to complete the integration process.
+
+If you want to follow along as someone else walks through the deployment steps, watch this video.
+
+<iframe class="embed-responsive-item" id="youtubeplayer" title="Walkthrough of the Facebook deployment steps" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/8o-FFU5sYNM?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
+Duration: 8 minutes
 
 ## Dialog considerations
 {: #facebook-dialog}

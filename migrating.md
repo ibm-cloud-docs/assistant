@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-19"
+lastupdated: "2018-11-20"
 
 ---
 
@@ -53,15 +53,21 @@ To migrate your service instance, complete these steps:
 
     A message is displayed when the process is done. You can continue migrating other service instances or click **Done**.
 
-The old (Cloud Foundry-based) service instance that you migrated is now shown as an *alias* of the new (resource-based) version of the instance. You can still access the username and password credentials for the Cloud Foundry-based instance from the **Service credentials** page.
+The old (Cloud Foundry org-based) service instance that you migrated is now shown as an *alias* of the new (resource group-based) version of the instance.
 
-Open the resource-based version of the service instance to access the tool. Note that the service credentials for the resource-based version of the service instance specify an API key instead of a username and password.
+![Shows current service instance is now an alias of a resource-based instance](images/alias.png)
+
+For more information about aliases, see the [IBM Cloud Connections documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/resources/connecting_apps.html#what_is_alias).
+
+You must open the new, resource group-based version of the service instance to access the **Launch tool** button.
 
 For more information, see the [IBM Cloud migration documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/resources/instance_migration.html).
 
 ## Authentication
 {: #auth-support}
 
-If you have existing applications that use basic authentication to access the service, then they can continue to pass a username and password to authenticate with the service instance after it is migrated.
+If you have existing applications that use basic authentication to access the service, then they can continue to pass a username and password to authenticate with the service instance after it is migrated. You can see the credential information from the **Service credentials** page of the alias.
 
-Your new instance also supports authenticating with IBM Cloud Identity and Access Management (IAM), which is an enhanced mechanism that uses API keys instead of username and password credentials. Consider moving to using the new authentication method to take advantage of the improved security that it affords.
+Your new instance manages authentication with IBM Cloud Identity and Access Management (IAM), which is an enhanced mechanism that uses API keys instead of username and password credentials. You can see the API key information from the **Service credentials** page of the new service instance.
+
+Consider updating your applications such that they use the new authentication method to take advantage of the improved security that it affords. Any changes that you make to the dialog skills in the new instance are reflected in applications that use the basic authentication credentials associated with the alias also. After you update all of your apps to use the new API key approach, you will no longer need the alias, and can delete it.
