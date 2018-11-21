@@ -47,6 +47,7 @@ Watson Assistant
         logs_intro.md
         logs_oview.md
         logs.md
+        logs_resources.md
 
     migrating.md
     upgrading.md
