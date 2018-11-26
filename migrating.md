@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-21"
+lastupdated: "2018-11-26"
 
 ---
 
@@ -36,6 +36,8 @@ If you created service instances before November 2018, then depending on the loc
 {: #migrate-steps}
 
 If you want to learn more about the migration process before you begin, see the [IBM Cloud migration documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/resources/instance_migration.html).
+
+**Attention**: Only the person or group that created the instance or was given `Developer` role access to the instance can migrate it.
 
 To migrate your service instance, complete these steps:
 
