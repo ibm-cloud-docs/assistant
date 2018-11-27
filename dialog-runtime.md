@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-19"
+lastupdated: "2018-11-27"
 
 ---
 
@@ -844,10 +844,10 @@ Follow the [tutorial](tutorial-digressions.html) to import a workspace that has 
 
   For example, if the node with slots collects the information required to fill out an insurance claim, then you might want to add handlers that address common questions about insurance. However, for questions about how to get help, or your stores locations, or the history of your company, use a root level node.
 
-## Disambiguation ![Premium plan only](images/premium0.png)
+## Disambiguation ![Plus or Premium plan only](images/premium.png)
 {: #disambiguation}
 
-This feature is available only to Premium users.
+This feature is available only to Plus or Premium users.
 {: tip}
 
 When you enable disambiguation, you instruct the service to ask users for help when it finds that more than one dialog node can respond to their input. Instead of guessing which node to process, your assistant shares a list of the top node options with the user, and asks the user to pick the right one.

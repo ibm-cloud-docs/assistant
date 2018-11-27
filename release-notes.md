@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-21"
+lastupdated: "2018-11-27"
 ---
 
 {:shortdesc: .shortdesc}
@@ -46,6 +46,73 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #change-log}
 
 The following new features and changes to the service are available.
+
+### 27 November 2018
+{: #27November2018}
+
+- **A new service plan, the Plus plan, is available**: The new plan offers premium-level features at a lower price point. Unlike previous plans, the Plus plan is a user-based billing plan. It measures usage by the number of unique users that interact with your assistant over a given time period. To get the most from the plan, if you build your own client application, design your app such that it defines a unique ID for each user, and passes the user ID with each /message API call. For the built-in integrations, the session ID is used to identify user interactions with the assistant. See [User-based plans](services-information.html#user-based-plans) for more information.
+
+  <table>
+  <caption>Plus plan limits</caption>
+    <tr>
+      <th>Artifact</th>
+      <th>Limit</th>
+    </tr>
+    <tr>
+      <td>Assistants</td>
+      <td>100</td>
+    </tr>
+    <tr>
+       <td>Contextual entities</td>
+       <td>20</td>
+    </tr>
+    <tr>
+       <td>Contextual entity annotations</td>
+       <td>2,000</td>
+    </tr>
+    <tr>
+       <td>Dialog nodes</td>
+       <td>100,000</td>
+    </tr>
+    <tr>
+       <td>Entities</td>
+       <td>1,000</td>
+    </tr>
+    <tr>
+       <td>Entity synonyms</td>
+       <td>100,000</td>
+    </tr>
+    <tr>
+       <td>Entity values</td>
+       <td>100,000</td>
+    </tr>
+    <tr>
+       <td>Intents</td>
+       <td>2,000</td>
+    </tr>
+    <tr>
+       <td>Intent user examples</td>
+       <td>25,000</td>
+    </tr>
+    <tr>
+       <td>Integrations</td>
+       <td>100</td>
+    </tr>
+    <tr>
+       <td>Logs</td>
+       <td>30 days</td>
+    </tr>
+    <tr>
+       <td>Skills</td>
+       <td>50</td>
+    </tr>
+  </table>
+
+- **User-based Premium plan**: The Premium plan now bases its billing on the number of active unique users. If you choose to use this plan, design any custom applications that you build to properly identify the users who generate /message API calls. See [User-based plans](services-information.html#user-based-plans) for more information.
+
+  **Note**: Existing Premium plan service instances are not impacted by this change; they continue to use API-based billing methods.
+
+  See {{site.data.keyword.conversationshort}} [service plan options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/catalog/services/watson-assistant-formerly-conversation){: new_window} for more information about all available service plans.
 
 ### 20 November 2018
 {: #20November2018}
@@ -122,9 +189,9 @@ The following new features and changes to the service are available.
 ### 6 August 2018
 {: #6August2018}
 
-- **Intent conflict resolution ![Premium plan only](images/premium0.png)**: The tool can now help you to resolve conflicts when two or more user examples in separate intents are similar to one another. Non-distinct user examples can weaken the training data and make it harder for the service to map user input to the appropriate intent at run time. See [Resolving intent conflicts](intents.html#conflict-intents) for details.
+- **Intent conflict resolution ![Plus or Premium plan only](images/premium.png)**: The tool can now help you to resolve conflicts when two or more user examples in separate intents are similar to one another. Non-distinct user examples can weaken the training data and make it harder for the service to map user input to the appropriate intent at run time. See [Resolving intent conflicts](intents.html#conflict-intents) for details.
 
-- **Disambiguation** ![Premium plan only](images/premium0.png): Enable disambiguation to allow your assistant to ask the user for help when it needs to decide between two or more viable dialog nodes to process for a response. See [Disambiguation](dialog-runtime.html#disambiguation) for more details.
+- **Disambiguation** ![Plus or Premium plan only](images/premium.png): Enable disambiguation to allow your assistant to ask the user for help when it needs to decide between two or more viable dialog nodes to process for a response. See [Disambiguation](dialog-runtime.html#disambiguation) for more details.
 
 - **Jump-to fix**: Fixed a bug in the Dialogs tool which prevented you from being able to configure a jump-to that targets the response of a node with the `anything_else` special condition.
 
