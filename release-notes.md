@@ -110,7 +110,7 @@ The following new features and changes to the service are available.
 
 - **User-based Premium plan**: The Premium plan now bases its billing on the number of active unique users. If you choose to use this plan, design any custom applications that you build to properly identify the users who generate /message API calls. See [User-based plans](services-information.html#user-based-plans) for more information.
 
-  **Note**: Existing Premium plan service instances are not impacted by this change; they continue to use API-based billing methods. Existing Premium plan users only will see the API-based plan listed as the *Premium (API)* plan option.
+  **Note**: Existing Premium plan service instances are not impacted by this change; they continue to use API-based billing methods. Only existing Premium plan users will see the API-based plan listed as the *Premium (API)* plan option.
 
   See {{site.data.keyword.conversationshort}} [service plan options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/catalog/services/watson-assistant-formerly-conversation){: new_window} for more information about all available service plans.
 
