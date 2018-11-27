@@ -123,7 +123,7 @@ The following examples illustrate various types of queries using this syntax.
 | The user input text contains a string consisting of `comm`, followed by zero or more additional characters, followed by `s`. | `request.input.text:comm*s` |
 | The deployment ID in the context matches `my_app`. | `request.context.metadata.deployment::my_app` |
 | An entity in the response has a confidence value greater than 0.8. | `response.intents:confidence>0.8` |
-| An intent name in the response exactly matches either `hello` or `goodbye`. | `response.intents:intent::(hellolgoodbye)` |
+| An intent name in the response exactly matches either `hello` or `goodbye`. | <code>response.intents:intent::(hello&#124;goodbye)</code> |
 | An intent in the response has the name `hello` and a confidence value equal to or greater than 0.8. | `response.intents:(intent:hello,confidence>=0.8)` |
 | An intent name in the response exactly matches `order`, and an entity name in the response exactly matches `beverage`. | `[response.intents:intent::order,response.entities:entity::beverage]` |
 <!-- -->
