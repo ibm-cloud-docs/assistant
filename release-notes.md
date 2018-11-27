@@ -27,7 +27,7 @@ Send the version parameter with every API request. The service uses the API vers
 
 - The current version for V1 is `2018-09-20`.
 - The only supported version for V2 is `2018-11-08`.
-- The "Try it out" pane in the {{site.data.keyword.conversationshort}} tooling is using version `2018-07-10`.
+- The "Try it out" pane in the {{site.data.keyword.conversationshort}} tooling is using version `2018-09-20`.
 
 ## Beta features
 
@@ -113,6 +113,10 @@ The following new features and changes to the service are available.
   **Note**: Existing Premium plan service instances are not impacted by this change; they continue to use API-based billing methods.
 
   See {{site.data.keyword.conversationshort}} [service plan options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/catalog/services/watson-assistant-formerly-conversation){: new_window} for more information about all available service plans.
+
+- **Intent user example recommendations ![Plus or Premium plan only](images/premium.png)**: You can upload a file that contains raw user inputs, such as user inquiries from a call center log, that the service can analyze and mine for intent user example candidates. See [Adding examples from log files](intents.html#intent-recommendations).
+
+- **Try it out pane update**: The "Try it out" pane was updated to use API version `2018-09-20` instead of version `2018-07-10`.
 
 ### 20 November 2018
 {: #20November2018}
