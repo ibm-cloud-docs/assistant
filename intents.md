@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-16"
+lastupdated: "2018-11-27"
 
 ---
 
@@ -85,6 +85,73 @@ Use the {{site.data.keyword.conversationshort}} tool to create intents.
     - `I need to pay my bill.`
     - `Pay my account balance`
     - `make a payment`
+
+    ***Adding examples from log files*** ![Beta](images/beta.png) ![Plus or Premium only](images/premium.png)
+    {: #intent-recommendations}
+
+    This feature is available to Plus or Premium plan users and works with English language utterances only.
+    {: tip}
+
+    If you have access to real-world user utterances (from call center logs, for example), you can upload them to the service and let the service analyze the data and make user example recommendations for you. The file you upload can contain utterances for all types of intents. The service knows which intent you are working on and finds suitable examples to recommend for that specific intent.
+
+    The following video provides a 2-minute overview of recommendations.
+
+    <iframe class="embed-responsive-item" id="youtubeplayer" title="Intent user example recommendations" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/L3FI8KeZfsc?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
+    **One-time prerequisite step**: Add the utterances to a comma-separated value (CSV) file, one user example per line. You do not need to associate the examples with intents. Simply provide the raw user utterances and let the service do the work of choosing the ones that are appropriate for the current intent. For every intent that you request recommendations for, the service uses this one file to find them. Follow these guidelines:
+
+    - Remove any personal data from the utterances that you include in the file.
+
+      Personal data includes any information relating to an identifiable natural person including names, email addresses, customer IDs, and so on.
+    - Do not include user utterances that exceed 1,024 characters in length. Longer utterances are truncated.
+    - If an utterance contains a comma, surround the utterance in quotation marks.
+    - The CSV must include only one column.
+    - Do not include human agent responses in the file.
+
+    For example:
+
+    ```
+    What happens to my coverage if I trade in my car?
+    i'd like to buy a house.
+    How do I add a dependent to my plan?
+    "first, i want to know if i am already registered."
+    ```
+
+    **Note**: The file cannot be larger than 20 MB.
+
+    1.  Add at least 5 user examples that illustrate the full range of typical utterances that you anticipate users might say to trigger this intent.
+
+        These seed user examples teach the service about the kinds of utterances to look for in the files you upload.
+
+    1.  Click **Show recommendations**.
+
+        User example source files are shared between the skills in a service instance. If your coworkers own skills in the same instance and upload files, then their files are added to your shared *User examples source files* collection.
+
+    1.  **First time only**: Click **Upload files**, and then click **Choose a file** to browse for the CSV file you created earlier and select it.
+
+        After the file is uploaded and processed by the service, recommended utterances are displayed. If no recommendations are made, then the file does not contain examples that are suitable for this intent.
+
+    1.  If the file cannot provide useful recommendations for any of your intents, you can try a different set of utterances from another file.
+
+        Click **View Files** to see the *User example source files* collection for your instance. To add a file, click **Add Files**, and then browse for a file and select it.
+
+        To delete a file, you must remove all of the files that have been uploaded; you cannot delete only one file. First, make sure nobody else is using the files, then click **Delete All** to delete all of the uploaded files.
+
+        Close the *User example source files* page.
+
+    1.  After the service shows you recommendations, select the utterances that you want to add as user examples for this intent, and then click **Add**. Or click **Next set** to review more utterances.
+    1.  If you want to search the content of the CSV file for user examples yourself, click the **Search Logs** tab, enter a keyword on which to base the search, and then press **Enter**.
+
+        Follow these search query syntax guidelines:
+
+        - Boolean operators (such as `AND` and `OR`) are supported.
+        - Add quoted text to search for an exact text match ("thisstringmustbepresent").
+        - You can use regular expressions, such as `*ly` to find all terms that end with `ly`.
+        - The following characters are used as regular expression operators:
+
+          `+ - = && || > < ! ( ) { } [ ] ^ " ~ * ? : \ /`
+
+          If you want to include one in a search term without it being processed as an operator, you must prefix it with a backslash (`\`).
 
     ***Referencing entity values and synonyms in intent examples***
     {: #related-entities}
@@ -210,10 +277,10 @@ Alternatively, you can upload a file with raw user utterances (from call center 
 
 You can view the imported intents and the corresponding examples on the **Intents** tab. You might need to refresh the page in order to see the new intents and examples.
 
-## Resolving intent conflicts ![Premium only](images/premium0.png)
+## Resolving intent conflicts ![Plus or Premium only](images/premium.png)
 {: #conflict-intents}
 
-This feature is available only to Premium users.
+This feature is available only to Plus or Premium users.
 {: tip}
 
 The {{site.data.keyword.conversationshort}} application detects a conflict when two or more intent examples in *separate* intents are so similar that {{site.data.keyword.conversationshort}} is confused as to which intent to use.

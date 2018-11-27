@@ -76,7 +76,7 @@ From the User conversations page, you can analyze actual interactions between th
 
 For a {{site.data.keyword.conversationshort}} instance that includes multiple assistants, there may be times when it is useful to use message data from the dialog skill of one assistant to improve the dialog skill used by another assistant within that same instance.
 
-![Plus or Premium plan only](images/premium.png) If you are a {{site.data.keyword.conversationshort}} Plus or Premium user, your instances can optionally be configured to allow access to log data from assistants across your different plus or premium instances.
+![Premium plan only](images/premium0.png) If you are a {{site.data.keyword.conversationshort}} Premium user, your instances can optionally be configured to allow access to log data from assistants across your different premium instances.
 
 As an example, say you have a {{site.data.keyword.conversationshort}} instance named *HelpDesk*. You may have both a Production assistant and a Development assistant in your HelpDesk instance. When working in the dialog skill for the Development assistant, you can use logs from the Production assistant messages to improve the Development assistant's dialog skill.
 
