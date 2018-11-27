@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-19"
+lastupdated: "2018-11-27"
 
 ---
 
@@ -17,13 +17,16 @@ lastupdated: "2018-11-19"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Integrating with Intercom ![BETA](images/beta.png) ![Premium plan only](images/premium0.png) 
+# Integrating with Intercom ![BETA](images/beta.png) ![Plus or Premium plan only](images/premium.png)
 {: #deploy-intercom}
 
 Intercom is a customer service messaging platform that evaluates user support inquiries and routes them to the best human agent or team of agents to address the user's question or request.
 {: shortdesc}
 
 Intercom has partnered with IBM to add a new agent to the team, a virtual Watson Assistant. You can integrate your assistant with an Intercom application to enable the app to seamlessly pass user conversations between your assistant and human support agents.
+
+This integration is available only to Plus or Premium plan users.
+{: tip}
 
 If you integrate the assistant with Intercom, the Intercom application becomes the client application for your skill. All interactions with users are initiated through and managed by Intercom.
 

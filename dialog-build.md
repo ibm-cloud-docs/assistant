@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-15"
+lastupdated: "2018-11-27"
 
 ---
 
@@ -106,7 +106,7 @@ To create a dialog, complete the following steps:
 
 1.  **Optional**: If you want this node to be considered when users are shown a set of node choices at run time, and asked to pick the one that best matches their goal, then add a short description of the user goal handled by this node to the **node purpose** field. For example, *Place an order*.
 
-    ![Premium plan only](images/premium0.png) The *node purpose* field is only displayed to Premium plan users. See [Disambiguation](dialog-runtime.html#disambiguation) for more details.
+    ![Plus or Premium plan only](images/premium.png) The *node purpose* field is only displayed to Plus or Premium plan users. See [Disambiguation](dialog-runtime.html#disambiguation) for more details.
 
 1.  **Optional**: Name the node.
 
