@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-01"
+lastupdated: "2018-11-27"
 
 ---
 
@@ -28,7 +28,7 @@ The Node.js app shows how {{site.data.keyword.conversationshort}} uses intents i
 
 [See the demo ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://watson-assistant-simple.ng.bluemix.net/){: new_window} or [fork the code ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/assistant-simple){: new_window}.
 
-## {{site.data.keyword.conversationshort}} and car dashboard UI
+## {{site.data.keyword.conversationshort}} customer service demo
 
 This Node.js app is a fully developed example of the type of app you can build with {{site.data.keyword.conversationshort}} that uses intents, entities, and dialog.
 
