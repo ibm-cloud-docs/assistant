@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-19"
+lastupdated: "2018-11-27"
 
 ---
 
@@ -276,3 +276,5 @@ Optionally, you can review the **Customer Service - Sample** skill to see this s
 {: #deploy}
 
 Now that you have built and tested your dialog skill, you can share it with customers. Deploy your skill by first connecting it to an assistant, and then deploying the assistant. There are several ways you can do this. See [Adding integrations](add-integrations.html) for more details.
+
+You can access the source code for a full car dashboard sample application from [GitHub ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/car-dashboard).

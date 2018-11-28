@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-04"
+lastupdated: "2018-11-28"
 
 ---
 
@@ -215,7 +215,7 @@ To make a programmatic call from a dialog node, complete the following steps:
 
 If you choose to define an action or web action type programmatic call, then before you can call it from a dialog, you must create it in {{site.data.keyword.openwhisk}}. If you are defining a client type programmatic call, then skip this procedure.
 
-**Location restrictions**: Currently, you can call a {{site.data.keyword.openwhisk_short}} action from {{site.data.keyword.conversationshort}} instances that are hosted in the US South or Germany regions only. The {{site.data.keyword.conversationshort}} service uses the {{site.data.keyword.openwhisk_short}} instance that is hosted in the same location only. It does not check {{site.data.keyword.openwhisk_short}} instances hosted in other regions. Therefore, do not call an action from a {{site.data.keyword.conversationshort}} service instance hosted in US South if the action is defined in a {{site.data.keyword.openwhisk_short}} instance that is hosted in Germany, for example.
+**Location restrictions**: Currently, you can call a {{site.data.keyword.openwhisk_short}} action from {{site.data.keyword.conversationshort}} instances that are hosted in the Dallas or Frankfurt locations only. The {{site.data.keyword.conversationshort}} service uses the {{site.data.keyword.openwhisk_short}} instance that is hosted in the same location only. It does not check {{site.data.keyword.openwhisk_short}} instances hosted in other regions. Therefore, do not call an action from a {{site.data.keyword.conversationshort}} service instance hosted in Dallas if the action is defined in a {{site.data.keyword.openwhisk_short}} instance that is hosted in Frankfurt, for example.
 
 **Time limits**: Only use the **cloud_function**, **server**, and **web_action** types to make a call that you know can return in **under 5 seconds**. The request to {{site.data.keyword.openwhisk_short}} times out if an individual service call takes longer than that. And if your dialog makes more than one call to an external service, the total amount of time allowed for the calls to complete is 7 seconds. If the first three calls complete in 2 seconds each, and the fourth takes more than 1 second, then the fourth call is stopped, and the error message for the call indicates that the call was not completed. For less efficient services that you need to call, manage the call through your client application and pass the information to the dialog as a separate step.
 
