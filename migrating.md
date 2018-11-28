@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-26"
+lastupdated: "2018-11-28"
 
 ---
 
@@ -57,13 +57,13 @@ To migrate your service instance, complete these steps:
 
     A message is displayed when the process is done. If you have other service instances to migrate, you can continue migrating other service instances, or click **Done**.
 
-The old (Cloud Foundry org-based) service instance that you migrated is now shown as an *alias* of the new (resource group-based) version of the instance.
+The old (Cloud Foundry org-based) service instance that you migrated is listed in the Cloud Foundry Services section of the Dashboard, and is now shown as an *alias* of the new (resource group-based) version of the instance.
 
 ![Shows current service instance is now an alias of a resource-based instance](images/alias.png)
 
 For more information about aliases, see the [IBM Cloud Connections documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/resources/connecting_apps.html#what_is_alias).
 
-You must open the new, resource group-based version of the service instance to access the **Launch tool** button.
+You must open the new, resource group-based version of the service instance to access the **Launch tool** button. The new instance is listed in the Services section of the {{site.data.keyword.Bluemix_notm}} Dashboard.
 
 ## Authentication
 {: #auth-support}
