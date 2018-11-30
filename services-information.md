@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-28"
+lastupdated: "2018-11-29"
 
 ---
 
@@ -26,7 +26,7 @@ The assistant is a fully hosted bot that is managed by {{site.data.keyword.cloud
 ## Service plan information
 {: #plans}
 
-Explore the {{site.data.keyword.conversationshort}} [service plan options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/catalog/services/watson-assistant-formerly-conversation){: new_window}.
+Explore the {{site.data.keyword.conversationshort}} [service plan options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/watson-assistant/pricing/){: new_window}.
 
 Before you create a service instance, decide how you want to organize the resources in your {{site.data.keyword.cloud_notm}} account. If you do not define your own resource group, the **default** resource group is used, and you *cannot* change it later. See [Best practices for organizing resources in a resource group ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/resources/bestpractice_rgs.html#bp_resourcegroups){: new_window} for more details.
 

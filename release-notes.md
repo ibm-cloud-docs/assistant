@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-27"
+lastupdated: "2018-11-30"
 ---
 
 {:shortdesc: .shortdesc}
@@ -46,6 +46,34 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #change-log}
 
 The following new features and changes to the service are available.
+
+### 1 December 2018
+{: #1December2018}
+
+- **Dialog node limit changes**: The dialog node limit decreased for the following service plans:
+
+  <table>
+  <caption>Dialog node limit changes</caption>
+    <tr>
+      <th>Plan</th>
+      <th>Old limit</th>
+      <th>New limit</th>
+    </tr>
+    <tr>
+      <td>Standard</td>
+      <td>100,000</td>
+      <td>500</td>
+    </tr>
+    <tr>
+       <td>Lite</td>
+       <td>25,000</td>
+       <td>100</td>
+    </tr>
+  </table>
+
+    Users of service instances that were created before the limit change have 6 months (until 1 June 2019) to upgrade to a Plus or Premium plam, or edit the dialogs in the skills in the existing service instances to meet the new limit requirements. After the grace period ends, adding new dialog nodes to a dialog in a skill in an existing Lite or Standard plan service instance will be prohibited until the dialog complies with the limits. Existing dialog nodes will not be removed.
+
+    See [Troubleshooting skill import issues](create-skill.html#import-errors) for information about how to edit skills that you want to continue using.
 
 ### 27 November 2018
 {: #27November2018}
