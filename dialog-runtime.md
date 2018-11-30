@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-27"
+lastupdated: "2018-11-30"
 
 ---
 
@@ -104,7 +104,7 @@ You can learn more about the /message API call from the [API reference ![Externa
 ### Retaining information across dialog turns
 {: #context}
 
-The dialog in a dialog skill is stateless, meaning that it does not retain information from one interaction with the user to the next. When you add a dialog skill to an assistant and deploy it, the assistant saves the context from one message call and then re-submits it on the next request throughout the current session. (The current session lasts for as long a user interacts with the assistant and then up to 60 minutes of inactivity.) If you do not add the dialog skill to an assistant, it is your responsibility as the custom application developer to maintain any continuing information that the application needs. The application must look for, and store the context object in the message API response, and pass it in the context object with the next /message API request that is made as part of the conversation flow.
+The dialog in a dialog skill is stateless, meaning that it does not retain information from one interaction with the user to the next. When you add a dialog skill to an assistant and deploy it, the assistant saves the context from one message call and then re-submits it on the next request throughout the current session. The current session lasts for as long a user interacts with the assistant, and then up to 60 minutes of inactivity for Plus or Premium plans (5 minutes for Lite or Standard plans). If you do not add the dialog skill to an assistant, it is your responsibility as the custom application developer to maintain any continuing information that the application needs. The application must look for, and store the context object in the message API response, and pass it in the context object with the next /message API request that is made as part of the conversation flow.
 
 One way to retain the information yourself is to store the entire context object in memory in the client application, in a web browser, for example. As an application becomes more complex, or if it needs to pass and store personally identifiable information, then you can store and retrieve the information from a database. Of course, the simplest approach is one that prevents you from having to store context at all. To implement this approach, add the dialog skill to an assistant and let the assistant keep track of the context for you.
 

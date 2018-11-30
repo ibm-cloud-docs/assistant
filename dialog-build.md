@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-27"
+lastupdated: "2018-11-30"
 
 ---
 
@@ -33,13 +33,15 @@ The number of dialog nodes you can create per skill depends on your service plan
 |------------------|---------------------------:|
 | Premium          |                    100,000 |
 | Plus             |                    100,000 |
-| Standard         |                    100,000 |
-| Lite             |                     25,000 |
+| Standard         |                     500`*` |
+| Lite             |                     100`*` |
 {: caption="Service plan details" caption-side="top"}
 
 The welcome and anything_else dialog nodes that are prepopulated in the tree do count toward the total.
 
 Tree depth limit: The service supports 2,000 dialog node descendants; the tool performs best with 20 or fewer.
+
+`*` The limits changed from 100,000 to 500 for Standard plans and 25,000 to 100 for Lite plans on 1 December 2018. Users of service instances that were created before the limit change have until 1 June 2019 to upgrade to a Plus or Premium plan, or edit the dialogs in the skills in the existing service instances to meet the new limit requirements.
 
 ## Building a dialog
 {: #dialog-procedure}
