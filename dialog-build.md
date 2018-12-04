@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-30"
+lastupdated: "2018-12-04"
 
 ---
 
@@ -41,7 +41,18 @@ The welcome and anything_else dialog nodes that are prepopulated in the tree do 
 
 Tree depth limit: The service supports 2,000 dialog node descendants; the tool performs best with 20 or fewer.
 
-`*` The limits changed from 100,000 to 500 for Standard plans and 25,000 to 100 for Lite plans on 1 December 2018. Users of service instances that were created before the limit change have until 1 June 2019 to upgrade to a Plus or Premium plan, or edit the dialogs in the skills in the existing service instances to meet the new limit requirements.
+`*` The limits changed from 100,000 to 500 for Standard plans and 25,000 to 100 for Lite plans on 1 December 2018. Users of service instances that were created before the limit change have until 1 June 2019 to upgrade to a Plus or Premium plan, or edit the dialogs in the skills in the existing service instances to meet the new limit requirements. 
+
+To see the number of dialog nodes in a dialog skill, do one of the following things:
+
+- From the tool, if it is not associated with an assistant already, add the dialog skill to an assistant, and then view the skill tile from the main page of the assistant. The *trained data* section lists the number of dialog nodes.
+- Send a GET request to the /dialog_nodes API endpoint, and include the `include_count=true` parameter. For example:
+
+  ```curl
+  curl -u "apikey:{apikey}" "https://gateway.watsonplatform.net/assistant/api/v1/workspaces/{workspace_id}/dialog_nodes?version=2018-09-20&include_count=true"
+  ```
+
+  In the response, the `total` attribute in the `pagination` object contains the number of dialog nodes.
 
 ## Building a dialog
 {: #dialog-procedure}
