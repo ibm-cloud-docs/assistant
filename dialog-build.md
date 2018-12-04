@@ -45,7 +45,8 @@ Tree depth limit: The service supports 2,000 dialog node descendants; the tool p
 
 To see the number of dialog nodes in a dialog skill, do one of the following things:
 
-- From the tool, if it is not associated with an assistant already, add the dialog skill to an assistant, and then view the skill tile from the main page of the assistant. The *trained data* section lists the number of dialog nodes. - Send a GET request to the /dialog_nodes API endpoint, and include the `include_count=true` parameter. For example:
+- From the tool, if it is not associated with an assistant already, add the dialog skill to an assistant, and then view the skill tile from the main page of the assistant. The *trained data* section lists the number of dialog nodes.
+- Send a GET request to the /dialog_nodes API endpoint, and include the `include_count=true` parameter. For example:
 
   ```curl
   curl -u "apikey:{apikey}" "https://gateway.watsonplatform.net/assistant/api/v1/workspaces/{workspace_id}/dialog_nodes?version=2018-09-20&include_count=true"
