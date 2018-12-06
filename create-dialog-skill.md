@@ -2,12 +2,15 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-13"
+lastupdated: "2018-11-28"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -17,7 +20,7 @@ lastupdated: "2018-11-13"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Building a dialog skill ![BETA](images/beta.png)
+# Building a dialog skill
 {: #create-dialog-skill}
 
 The natural-language processing for the {{site.data.keyword.conversationshort}} service is defined in a *dialog skill*, which is a container for all of the artifacts that define a conversation flow.
@@ -131,12 +134,7 @@ After you create the service instance, you can give other people access to it. T
 To share a dialog skill with other people, you must give them access to the service instance that hosts the skill. Note that the person you invite will be able to access any skill that is hosted by this service instance.
 
 1.  Make a note of the current instance name, which is displayed at the top of the current page.
-1.  Click the User ![User](images/user-icon2.png) icon in the page header, and select **IBM Cloud Dashboard** from the drop-down.
-1.  Click the current service instance.
-
-    Older service instances created on IBM Cloud were managed by Cloud Foundry. If you are using a service instance that is managed by Cloud Foundry, then your steps will be slightly different from those described in the procedure below. To determine whether your instance uses Cloud Foundry, check the *Credentials* section. If you see an API key and URL, then your instance uses IAM. If you see a URL, username, and password, then your instance uses Cloud Foundry.
-
-1.  Select **Manage** > **Access** from the header menu.
+1.  Click the User ![User](images/user-icon2.png) icon in the page header, and select **Manage Users** from the drop-down.
 
 1.  Click **Invite users**, and then enter the email addresses of the people on your team to whom you want to give access.
 
@@ -146,9 +144,9 @@ To share a dialog skill with other people, you must give them access to the serv
     - **Services**: {{site.data.keyword.conversationshort}}
     - **Assign platform access roles**: Operator
 
-    For more information about platform management roles, see [IAM access ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/iam/users_roles.html). (Service access roles are not leveraged by {{site.data.keyword.conversationshort}}.)
+    For more information about platform management roles, see [IAM access ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/iam/users_roles.html). (Service access roles are not leveraged by {{site.data.keyword.conversationshort}} by default.)
 
-    **Note**: For Cloud Foundry-managed instances, you must expand the *Cloud Foundry access* section, choose your organization, and then assign the person to the **Developer** space role.
+    **Note**: For older instances that are managed by Cloud Foundry, you must expand the *Cloud Foundry access* section, choose your organization, and then assign the person to the **Developer** space role.
 
 1.  Click **Invite users**.
 
