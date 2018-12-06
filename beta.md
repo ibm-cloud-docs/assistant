@@ -22,7 +22,7 @@ IBM releases services, features, and language support for your evaluation that a
 
 ## Available beta features
 
-When these features are released, they will be a Plus or Premium plan only features.
+When these features are released, they will be available to Plus or Premium plan users only.
 
 - How you work with search skills has changed. You can now add one search skill and one dialog skill to the same assistant. When you add both, the search is triggered if the user input cannot be addressed by any of the nodes in the dialog of the dialog skill. You can learn more from the following topics:
   - [Search skill](create-search-skill.html)
