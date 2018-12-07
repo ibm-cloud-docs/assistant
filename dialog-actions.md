@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-12-06"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -119,7 +119,7 @@ To make a programmatic call from a dialog node, complete the following steps:
 
     - `<type>`: Indicates the type of call to make. Choose from the following types:
 
-      - **client**: Sends a message response with programmatic call information in a standardized format that your external client application understand. Your client application must use the provided information to run the programmatic call or function, and return the result to the dialog. The JSON object in the response body specifies the service or function to call, any associated parameters to pass with the call, and the format of the result to send back.
+      - **client**: Sends a message response with programmatic call information in a standardized format that your external client application understands. Your client application must use the provided information to run the programmatic call or function, and return the result to the dialog. The JSON object in the response body specifies the service or function to call, any associated parameters to pass with the call, and the format of the result to send back.
 
       - **cloud_function**: Calls a {{site.data.keyword.openwhisk_short}} action (one or more) directly. You must define the action itself separately by using {{site.data.keyword.openwhisk}}. For more information, see [Creating an action](dialog-actions.html#create-action). (This type used to be named **server**. The **server** type continues to be supported.)
 
@@ -127,7 +127,7 @@ To make a programmatic call from a dialog node, complete the following steps:
 
       Specifying the type is optional. The default value is `client`.
 
-    - `<action_parameters>`: Any parameters that are expected by the external program, which is specified as a JSON object. Parameters are only required if the external program requires them.
+    - `<action_parameters>`: Any parameters that are expected by the external program, which are specified as a JSON object. Parameters are only required if the external program requires them.
 
     - `<result_variable_name>`: The name to use to reference the JSON object that is returned by the external service or program. The result is added to the context section of the /message response. In other words, the result is stored as a context variable so it can be displayed in the node response or accessed by dialog nodes that are triggered later. Any existing value for the context variable is overwritten by the value that is returned by the action. You can specify the `result_variable_name` by using the following syntax:
 

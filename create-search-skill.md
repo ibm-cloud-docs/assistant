@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-12-03"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -26,7 +26,13 @@ lastupdated: "2018-12-03"
 The *search skill* interacts with the {{site.data.keyword.discoveryfull}} service to extract information that is relevant to a customer query from a configured data source.
 {: shortdesc}
 
-You can add one search skill to an assistant. See [Skill limits](create-skill.html#skill-limits) for information about limits per plan.
+If you already use the {{site.data.keyword.discoveryshort}} service, you can mine your existing data collections for source material that you can share with customers to address common questions.
+
+However, you do not need to have a {{site.data.keyword.discoveryshort}} service instance. If you choose to create a search skill, a Lite plan instance is provisioned for you. You can then create a collection by choosing a data source, and the configuration to use to ingest documents from the data source into the collection. Lastly, configure your search skill to search this collection to find answers to queries that are typically asked by your customers.
+
+**Attention**: A Lite plan instance of {{site.data.keyword.discoveryshort}} is provisioned. This is true and cannot be changed, even if you typically use Premium or Plus plan instances of Watson services.
+
+You can add one search skill to an assistant.
 
 The search skill searches for information from a data collection that you create by using the {{site.data.keyword.discoveryshort}} service. To read more about {{site.data.keyword.discoveryshort}}, see the [product documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/discovery/index.html).
 
@@ -202,7 +208,7 @@ The search skill cannot interact with customers until it is added to an assistan
 
 When you link both a dialog skill and search skill to an assistant, the search skill is automatically triggered if user input is processed by the dialog skill and cannot be addressed by any of its dialog nodes. Rather than replying with a generic response from the `anything_else` node, a search that uses the user input as its query string is initiated.
 
-If you want, you can define a specific search query to call in response to a particular node condition. To do so, add a search response type to the dialog node. See [Responses](dialog-overview.html#multimedia) for more details.
+If you want, you can define a specific search query to call in response to a particular node condition. To do so, add a search response type to the dialog node. See [Responses](create-dialog-skill.html#multimedia) for more details.
 
 If you initiate any type of search from your dialog skill, then test the dialog to ensure that the search is being triggered as expected. For example, if you are not using search response types, test that a search is triggered only when no existing dialog nodes can address the user input. And any time the search is triggered, ensure that it returns meaningful results.
 
