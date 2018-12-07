@@ -183,6 +183,6 @@ To add a rich response, complete the following steps:
 
     You might want to add multiple response types to a single response to provide a richer answer to a user query. For example, if a user asks for store locations, you could show a map and display a button for each store location that the user can click to get address details. To build that type of response, you can use a combination of image, options, and text response types. Another example is using a text response type before a pause response type so you can warn users before pausing the dialog.
 
-    **Note**: You cannot add more than 5 response types to a single response. Meaning, if you define three conditional responses for a dialog node, each conditional response can have no more than 5 response types added to it.
+    **Note**: You cannot add more than 5 response types to a single response. For example, if you define three conditional responses for a dialog node, each conditional response can have no more than 5 response types added to it.
 
 1.  If you added more than one response type, you can click the **Move** up or down arrows to arrange the response types in the order you want the service to process them.
