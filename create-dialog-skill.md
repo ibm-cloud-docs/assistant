@@ -2,12 +2,15 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-13"
+lastupdated: "2018-12-07"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -17,7 +20,7 @@ lastupdated: "2018-11-13"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Building a dialog skill ![BETA](images/beta.png)
+# Building a dialog skill
 {: #create-dialog-skill}
 
 The natural-language processing for the {{site.data.keyword.conversationshort}} service is defined in a *dialog skill*, which is a container for all of the artifacts that define a conversation flow.
@@ -131,12 +134,7 @@ After you create the service instance, you can give other people access to it. T
 To share a dialog skill with other people, you must give them access to the service instance that hosts the skill. Note that the person you invite will be able to access any skill that is hosted by this service instance.
 
 1.  Make a note of the current instance name, which is displayed at the top of the current page.
-1.  Click the User ![User](images/user-icon2.png) icon in the page header, and select **IBM Cloud Dashboard** from the drop-down.
-1.  Click the current service instance.
-
-    Older service instances created on IBM Cloud were managed by Cloud Foundry. If you are using a service instance that is managed by Cloud Foundry, then your steps will be slightly different from those described in the procedure below. To determine whether your instance uses Cloud Foundry, check the *Credentials* section. If you see an API key and URL, then your instance uses IAM. If you see a URL, username, and password, then your instance uses Cloud Foundry.
-
-1.  Select **Manage** > **Access** from the header menu.
+1.  Click the User ![User](images/user-icon2.png) icon in the page header, and select **Manage Users** from the drop-down.
 
 1.  Click **Invite users**, and then enter the email addresses of the people on your team to whom you want to give access.
 
@@ -146,9 +144,9 @@ To share a dialog skill with other people, you must give them access to the serv
     - **Services**: {{site.data.keyword.conversationshort}}
     - **Assign platform access roles**: Operator
 
-    For more information about platform management roles, see [IAM access ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/iam/users_roles.html). (Service access roles are not leveraged by {{site.data.keyword.conversationshort}}.)
+    For more information about platform management roles, see [IAM access ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/iam/users_roles.html). (Service access roles are not leveraged by {{site.data.keyword.conversationshort}} by default.)
 
-    **Note**: For Cloud Foundry-managed instances, you must expand the *Cloud Foundry access* section, choose your organization, and then assign the person to the **Developer** space role.
+    **Note**: For older instances that are managed by Cloud Foundry, you must expand the *Cloud Foundry access* section, choose your organization, and then assign the person to the **Developer** space role.
 
 1.  Click **Invite users**.
 
@@ -157,3 +155,34 @@ To share a dialog skill with other people, you must give them access to the serv
 When the people you invite next log in to {{site.data.keyword.cloud_notm}}, your account will be included in their list of accounts. If they select your account, they can see your service instance, and open and edit your skills.
 
 With more people contributing to dialog skill development, unintended changes can occur, including skill deletions. Consider creating backup copies of your dialog skill on a regular basis, so you can roll back to an earlier version if necessary. To create a backup, simply [download the skill as a JSON file](#download-skill).
+
+### Rich responses
+{: #multimedia}
+
+You can return responses with multimedia or interactive elements such as images or clickable buttons to simplify the interaction model of your application and enhance the user experience.
+
+In addition to the default response type of **Text**, for which you specify the text to return to the user as a response, the following response types are supported:
+
+- **Search skill**: Searches an external data source for relevant information to return to the user. The data source that is searched is a {{site.data.keyword.discoveryshort}} service data collection that you configure when you add a search skill to the assistant that uses this dialog skill.
+
+#### Adding rich responses
+{: #add-multimedia}
+
+To add a rich response, complete the following steps:
+
+1.  Click the drop-down menu in the response field to choose a response type, and then provide any required information:
+
+    - **Search skill**. Add the search query that you want to pass to the {{site.data.keyword.discoveryshort}} service by filling in the following fields:
+
+      - **Filter**: Optional. Specify a text string that defines information that must be present in any of the search results that are returned. For example, to indicate that you want to return only documents that the ingestion process identified as containing the entity `Boston, MA`, then you can specify a filter such as,  `enriched_text.entities.text:"Boston, MA"`.
+      - **Query**: Required. A query that is specified in natural language. For example, `What cities do you fly to?` This query string is passed to the {{site.data.keyword.discoveryshort}} service, which uses natural language understanding and information that was captured about the documents from analysis done when the documents were ingested, to find and return relevant passages. Alternatively, you can specify the query by using the [Discovery query language](https://console.bluemix.net/docs/services/discovery/query-operators.html#query-operators) syntax.
+
+      This response type only returns a valid response if the assistant associated with this dialog skill also has a search skill associated with it.
+
+1.  Click **Add response** to add another response type to the current response.
+
+    You might want to add multiple response types to a single response to provide a richer answer to a user query. For example, if a user asks for store locations, you could show a map and display a button for each store location that the user can click to get address details. To build that type of response, you can use a combination of image, options, and text response types. Another example is using a text response type before a pause response type so you can warn users before pausing the dialog.
+
+    **Note**: You cannot add more than 5 response types to a single response. For example, if you define three conditional responses for a dialog node, each conditional response can have no more than 5 response types added to it.
+
+1.  If you added more than one response type, you can click the **Move** up or down arrows to arrange the response types in the order you want the service to process them.

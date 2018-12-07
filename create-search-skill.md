@@ -2,12 +2,15 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-28"
+lastupdated: "2018-12-07"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -17,17 +20,27 @@ lastupdated: "2018-11-28"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Building a search skill ![BETA](images/beta.png)
+# Building a search skill
 {: #create-skill}
 
 The *search skill* interacts with the {{site.data.keyword.discoveryfull}} service to extract information that is relevant to a customer query from a configured data source.
 {: shortdesc}
 
-You can add one search skill to an assistant. See [Skill limits](create-skill.html#skill-limits) for information about limits per plan.
+If you already use the {{site.data.keyword.discoveryshort}} service, you can mine your existing data collections for source material that you can share with customers to address common questions.
+
+However, you do not need to have a {{site.data.keyword.discoveryshort}} service instance. If you choose to create a search skill, a Lite plan instance is provisioned for you. You can then create a collection by choosing a data source, and the configuration to use to ingest documents from the data source into the collection. Lastly, configure your search skill to search this collection to find answers to queries that are typically asked by your customers.
+
+**Attention**: A Lite plan instance of {{site.data.keyword.discoveryshort}} is provisioned. This is true and cannot be changed, even if you typically use Premium or Plus plan instances of Watson services.
+
+You can add one search skill to an assistant.
 
 The search skill searches for information from a data collection that you create by using the {{site.data.keyword.discoveryshort}} service. To read more about {{site.data.keyword.discoveryshort}}, see the [product documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/discovery/index.html).
 
-The {{site.data.keyword.discoveryshort}} service is triggered when user input is submitted through one of the assistant's integration channels.
+The {{site.data.keyword.discoveryfull}} service is triggered in the following ways:
+
+- **Anything else node**: Searches an external data source for a relevant answer when none of the dialog nodes can address the user's query. Instead of showing a standard message, such as `I don't know how to help you with that.` the assistant can say, `Maybe this information can help:` followed by the passage returned by the search. This type of search occurs whenever the `anything_else` node is processed if a search skill is linked to your assistant.
+- **Search response type**: If you add a search response type to a dialog node, then the service retrieves a passage from an external data source and returns it as the response to a particular question. This type of search occurs only when the individual dialog node is processed.
+- **Search skill only**: If only a search skill is linked to an assistant, without a dialog skill, then the {{site.data.keyword.discoveryshort}} service is triggered when any user input is submitted through one of the assistant's integration channels.
 
 ## Creating a search skill
 {: #creating-search-skill}
@@ -60,13 +73,17 @@ The remaining steps differ depending on whether you have access to an existing {
 
     Any {{site.data.keyword.discoveryshort}} service instances that you have access to are displayed in the list.
 
+    If you see a warning that some of your Discovery instances do not have credentials set, it means that there might be instances to which you have been given access, but have never accessed directly yourself from the {{site.data.keyword.cloud_notm}} dashboard, which will not be included in this list. You must access a service instance for credentials to be created for it. If {{site.data.keyword.conversationshort}} cannot get these credentials, then it cannot establish a connection to the {{site.data.keyword.discoveryshort}} service instance on your behalf.
+
 1.  Indicate the data collection to use, by doing one of the following things:
 
-    - Choose an existing data collection. Go to [Configure the search](#configure).
+    - Choose an existing data collection.
 
       You can click the *Open in Discovery* link to review the configuration of a data collection before you decide which one to use.
 
-    - If you do not want to use any of the data collections that are listed, click **create new collection** to add one, and then [create a data collection](#create-collection).
+      Go to [Configure the search](#configure).
+
+    - If you do not have a collection or do not want to use any of the data collections that are listed, click **create new collection** to add one. Follow the procedure in [Create a data collection](#create-collection).
 
 ## Create an instance
 {: #create}
@@ -75,7 +92,7 @@ The remaining steps differ depending on whether you have access to an existing {
 
     An instance of the {{site.data.keyword.discoveryshort}} service is created for you, and a configuration page opens to the new {{site.data.keyword.discoveryshort}} service instance.
 
-    **Attention**: Currently, a Lite plan instance of {{site.data.keyword.discoveryshort}} cannot be provisioned automatically. Create a free Lite plan instance yourself from the [IBM Cloud Catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/catalog/services/discovery).
+    **Attention**: A Lite plan instance of the service is provisioned in {{site.data.keyword.Bluemix_notm}}, no matter what {{site.data.keyword.conversationshort}} service plan you use.
 
 1.  Review the terms and conditions for using the instance, and then click **Accept** to continue.
 
@@ -84,7 +101,7 @@ The remaining steps differ depending on whether you have access to an existing {
 ## Create a data collection
 {: #create-collection}
 
-Do not try to add the pre-enriched data source named *Watson Discovery News* to your instance. It is not a data type that can be searched from {{site.data.keyword.conversationshort}}.
+**Attention**: Do not try to add the pre-enriched data source named *Watson Discovery News* to your instance. It is not a data type that can be searched from {{site.data.keyword.conversationshort}}.
 
 1.  To create a {{site.data.keyword.discoveryshort}} collection, do one of the following things:
 
@@ -189,10 +206,18 @@ After you create the skill, it appears as a tile on the Skills page.
 
 The search skill cannot interact with customers until it is added to an assistant and the assistant is deployed. See [Creating assistants](create-assistant.html).
 
+When you link both a dialog skill and search skill to an assistant, the search skill is automatically triggered if user input is processed by the dialog skill and cannot be addressed by any of its dialog nodes. Rather than replying with a generic response from the `anything_else` node, a search that uses the user input as its query string is initiated.
+
+If you want, you can define a specific search query to call in response to a particular node condition. To do so, add a search response type to the dialog node. See [Responses](create-dialog-skill.html#multimedia) for more details.
+
+If you initiate any type of search from your dialog skill, then test the dialog to ensure that the search is being triggered as expected. For example, if you are not using search response types, test that a search is triggered only when no existing dialog nodes can address the user input. And any time the search is triggered, ensure that it returns meaningful results.
+
 ### Tips for collection field selection
 {: #field-tips}
 
-The appropriate collection fields to extract data from vary depending on your collection's data source and the configuration you used to ingest the data source. The following table provides collection fields you can try as you get started. These suggestions assume that you used the default configuration template when creating the collection.
+The appropriate collection fields to extract data from vary depending on your collection's data source and the configuration you used to ingest the data source. To learn more about the structure of the documents in your collection, including the names of fields that contain information you might want to extract, open the collection in the {{site.data.keyword.discoveryshort}} tool, and then click **View data schema**.
+
+The following table provides collection fields you can try as you get started. These suggestions assume that you used the default configuration template when creating the collection.
 
 | Data source type   | Title | Body | Url |
 |--------------------|-------|------|-----|

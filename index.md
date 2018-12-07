@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-06"
+lastupdated: "2018-12-06"
 
 ---
 
@@ -96,4 +96,4 @@ See [IBM Cloud Terms and Notices ![External link icon](../../icons/launch-glyph.
 - [Get started](getting-started.html) with the service.
 - View the list of [SDKs ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/watson/developercloud/developer-tools.html){: new_window}.
 
-Still have questions? Click the ![Help](images/help_icon.png) icon from the tooling header, and then click **Chat with support** or contact [IBM Sales ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-01.ibm.com/marketing/iwm/dre/signup?source=urx-20970){: new_window}.
+Still have questions? Contact [IBM Sales ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-01.ibm.com/marketing/iwm/dre/signup?source=urx-20970){: new_window}.
