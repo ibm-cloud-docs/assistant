@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-16"
+lastupdated: "2018-12-07"
 
 ---
 
@@ -17,6 +17,9 @@ lastupdated: "2018-11-16"
 {:pre: .pre}
 {:codeblock: .codeblock}
 {:download: .download}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 
 # Building a client application
@@ -34,7 +37,7 @@ The example application we will create in this section implements several functi
 Before continuing with this example, you need to set up the required assistant:
 
 1.  Download the dialog skill <a target="_blank" href="https://watson-developer-cloud.github.io/doc-tutorial-downloads/assistant/assistant-simple-example.json" download="assistant-simple-example.json">JSON file</a>.
-1.  [Import the skill](create-skill.html) into an instance of the {{site.data.keyword.conversationshort}} service.
+1.  [Import the skill](create-skill.html#creating-skills) into an instance of the {{site.data.keyword.conversationshort}} service.
 1.  [Create an assistant](create-assistant.html#creating-assistants) and connect the skill you imported.
 
 ## Getting service information
@@ -736,15 +739,183 @@ OK! See you later.
 
 Success! The application now uses the {{site.data.keyword.conversationshort}} service to identify the intents in natural-language input, displays the appropriate responses, and implements the requested client actions.
 
-Of course, a real-world application would use a more sophisticated user interface, such as a web chat window. And it would implement more complex actions, possibly integrating with a customer database or other business systems. It would also need to send additional data to the assistant, such as a user ID to identify each unique user. (For more information, see the {{site.data.keyword.conversationshort}} [v2 API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.{DomainName}/apidocs/assistant-v2){: new_window}.) But the basic principles of how the application interacts with the {{site.data.keyword.conversationshort}} service would remain the same.
+Of course, a real-world application would use a more sophisticated user interface, such as a web chat window. And it would implement more complex actions, possibly integrating with a customer database or other business systems. It would also need to send additional data to the assistant, such as a user ID to identify each unique user. But the basic principles of how the application interacts with the {{site.data.keyword.conversationshort}} service would remain the same.
 
-For some more complex examples, see [Sample apps](sample-applications.html).
+For some more complex examples, see [Sample apps](/docs/services/assistant/sample-applications.html).
+
+## Accessing context
+
+The *context* is an object containing variables that persist throughout a conversation and can be shared by the dialog and the client application. If your application is using the v2 API, the context is automatically maintained by the assistant on a per-session basis. Both the dialog and the client application can read and write context variables. By default, the context is not returned to a client application, but you can optionally request that it be included in the response to each `/message` request.
+
+**Important:** One use of the context is to specify a unique user ID for each end user who interacts with the assistant. For user-based plans, this ID is used for billing purposes. (For more information, see [User-based plans](/docs/services/assistant/services-information.html#user-based-plans).)
+
+There are two types of context:
+
+- **Global context**: context variables that are shared by all skills used by an assistant, including internal system variables used to manage conversation flow.
+
+- **Skill-specific context**: context variables specific to a particular skill, including any user-defined variables needed by your application. Currently, only one skill (named `main skill`) is supported.
+
+The following example shows a `/message` request that includes both global and skill-specific context variables; it also specifies that the context should be returned with the response.
+
+```javascript
+service.message({
+  assistant_id: '{assistant_id}',
+  session_id: '{session_id}',
+  input: {
+    'message_type': 'text',
+    'text': 'Hello',
+    'options': {
+      'return_context': true
+    }
+  },
+  context: {
+    'global': {
+      'system': {
+        'user_id': 'my_user_id'
+      }
+    },
+    'skills': {
+      'main skill': {
+        'user_defined': {
+          'account_number': '123456'
+        }
+      }
+    }
+  }
+}, function(err, response) {
+  if (err)
+    console.log('error:', err);
+  else
+    console.log(JSON.stringify(response, null, 2));
+});
+```
+{: codeblock}
+{: javascript}
+
+```python
+response=service.message(
+    assistant_id='{assistant_id}',
+    session_id='{session_id}',
+    input={
+        'message_type': 'text',
+        'text': 'Hello',
+        'options': {
+            'return_context': True
+        }
+    },
+    context={
+        'global': {
+            'system': {
+                'user_id': 'my_user_id'
+            }
+        },
+        'skills': {
+            'main skill': {
+                'user_defined': {
+                    'account_number': '123456'
+                }
+            }
+        }
+    }
+).get_result()
+
+print(json.dumps(response, indent=2))
+```
+{: codeblock}
+{: python}
+
+```java
+    MessageInputOptions inputOptions = new MessageInputOptions();
+    inputOptions.setReturnContext(true);
+
+    MessageInput input = new MessageInput.Builder()
+      .messageType("text")
+      .text("Hello")
+      .options(inputOptions)
+      .build();
+
+    // create global context with user ID
+    MessageContextGlobalSystem system = new MessageContextGlobalSystem();
+    system.setUserId("my_user_id");
+    MessageContextGlobal globalContext = new MessageContextGlobal();
+    globalContext.setSystem(system);
+
+    // build user-defined context variables, put in skill-specific context for main skill
+    Map<String, String> userDefinedContext = new HashMap<>();
+    userDefinedContext.put("account_num","123456");
+    Map<String, Map> mainSkillContext = new HashMap<>();
+    mainSkillContext.put("user_defined", userDefinedContext);
+    MessageContextSkills skillsContext = new MessageContextSkills();
+    skillsContext.put("main skill", mainSkillContext);
+
+    MessageContext context = new MessageContext();
+    context.setGlobal(globalContext);
+    context.setSkills(skillsContext);
+
+    MessageOptions options = new MessageOptions.Builder("{assistant_id}", "{session_id}")
+      .input(input)
+      .context(context)
+      .build();
+
+    MessageResponse response = service.message(options).execute();
+
+    System.out.println(response);
+```
+{: codeblock}
+{: java}
+
+In this example request, the application specifies a value for `user_id` as part of the global context. In addition, it sets one user-defined context variable (`account_number`) as part of the skill-specific context for `main skill`.
+
+You can specify any variable name you want to use for a user-defined context variable. The values you specify are merged with the existing context:
+
+- If the specified variable already exists, it is overwritten with the new value.
+- If the specified variable does not already exist, it is added to the context and persists until you overwrite it (or the session is deleted).
+- Any other existing context variables are unchanged. (If you specify an empty `user_defined` object, no changes are made to the context.)
+
+The output from this request includes not only the usual output, but also the context, showing that the specified values have been added.
+
+```json
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "text",
+        "text": "Welcome to the Watson Assistant example!"
+      }
+    ],
+    "intents": [
+      {
+        "intent": "hello",
+        "confidence": 1
+      }
+    ],
+    "entities": []
+  },
+  "context": {
+    "global": {
+      "system": {
+        "turn_count": 1,
+        "user_id": "my_user_id"
+      }
+    },
+    "skills": {
+      "main skill": {
+        "user_defined": {
+          "account_number": "123456"
+        }
+      }
+    }
+  }
+}
+```
+
+For detailed information about how to access context variables in a client application, see the [v2 API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant-v2#send-user-input-to-assistant){: new_window}.) For information about using the context in your dialog, see [How the dialog is processed](https://{DomainName}/docs/services/assistant/dialog-runtime.html#dialog-runtime).
 
 ## Using the v1 API
 {: #v1-api}
 
-Using the v2 API is the recommended way to build a runtime client application that communicates with the {{site.data.keyword.conversationshort}} service. However, some older applications might still be using the v1 API, which includes a similar runtime method for sending messages to a dialog skill (called a *workspace* in v1).
+Using the v2 API is the recommended way to build a runtime client application that communicates with the {{site.data.keyword.conversationshort}} service. However, some older applications might still be using the v1 API, which includes a similar runtime method for sending messages to the workspace within a dialog skill.
 
-Note that if your app uses the v1 API, it communicates directly with the dialog skill, bypassing the orchestration and state-management capabilities of the assistant. This means that your application is responsible for maintaining state information. This is done using the *context*, an object that is passed back and forth between your application and the {{site.data.keyword.conversationshort}} service. Your application must maintain the context by saving the context received with each response and sending it back to the service with each new message request.
+Note that if your app uses the v1 API, it communicates directly with the workspace, bypassing the orchestration and state-management capabilities of the assistant. This means that your application is responsible for managing state information using the context. Your application must maintain the context by saving the context received with each response and sending it back to the service with each new message request. (The v1 `/message` method always returns the context with each response.)
 
-An application using the v2 API can also use the context to access and store persistent information, but the context is maintained automatically (on a per-session basis) by the assistant.
+For more information about the v1 `/message` method and context, see the [v1 API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/apidocs/assistant#get-response-to-user-input){: new_window}.
