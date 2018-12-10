@@ -61,19 +61,19 @@ Watson Assistant
         tutorial-car-dashboard.md
         tutorial-digressions.md
         [Tutorial: Defining contextual entities](https://www.ibm.com/cloud/garage/demo/try-watson-assistant-contextual-entities)
-    
+
     {: .topicgroup}
     Using the API
         api-overview.md
         api-methods.md
         api-client.md
         api-dialog-responses.md
-        api-dialog-modify.md 
+        api-dialog-modify.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    [v2 API reference](https://console.bluemix.net/apidocs/assistant-v2)
-    [v1 API reference](https://console.bluemix.net/apidocs/assistant)
+    [v2 API reference](https://cloud.ibm.com/apidocs/assistant-v2)
+    [v1 API reference](https://cloud.ibm.com/apidocs/assistant)
     dialog-methods.md
     expression-language.md
     filter-reference.md
