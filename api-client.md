@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-12-07"
+lastupdated: "2018-12-10"
 
 ---
 
@@ -755,7 +755,7 @@ There are two types of context:
 
 - **Skill-specific context**: context variables specific to a particular skill, including any user-defined variables needed by your application. Currently, only one skill (named `main skill`) is supported.
 
-The following example shows a `/message` request that includes both global and skill-specific context variables; it also specifies that the context should be returned with the response.
+The following example shows a `/message` request that includes both global and skill-specific context variables; it also uses the `options.return_context` property to request that the context be returned with the response.
 
 ```javascript
 service.message({
@@ -864,13 +864,9 @@ print(json.dumps(response, indent=2))
 {: codeblock}
 {: java}
 
-In this example request, the application specifies a value for `user_id` as part of the global context. In addition, it sets one user-defined context variable (`account_number`) as part of the skill-specific context for `main skill`.
+In this example request, the application specifies a value for `user_id` as part of the global context. In addition, it sets one user-defined context variable (`account_number`) as part of the skill-specific context. This context variable can be accessed by dialog nodes as `$account_number`. (For more information about using the context in your dialog, see [How the dialog is processed](https://{DomainName}/docs/services/assistant/dialog-runtime.html#dialog-runtime).)
 
-You can specify any variable name you want to use for a user-defined context variable. The values you specify are merged with the existing context:
-
-- If the specified variable already exists, it is overwritten with the new value.
-- If the specified variable does not already exist, it is added to the context and persists until you overwrite it (or the session is deleted).
-- Any other existing context variables are unchanged. (If you specify an empty `user_defined` object, no changes are made to the context.)
+You can specify any variable name you want to use for a user-defined context variable. If the specified variable already exists, it is overwritten with the new value; if not, a new variable is added to the context.
 
 The output from this request includes not only the usual output, but also the context, showing that the specified values have been added.
 
@@ -909,7 +905,7 @@ The output from this request includes not only the usual output, but also the co
 }
 ```
 
-For detailed information about how to access context variables in a client application, see the [v2 API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant-v2#send-user-input-to-assistant){: new_window}.) For information about using the context in your dialog, see [How the dialog is processed](https://{DomainName}/docs/services/assistant/dialog-runtime.html#dialog-runtime).
+For detailed information about how to access context variables using the API, see the [v2 API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant-v2#send-user-input-to-assistant){: new_window}.)
 
 ## Using the v1 API
 {: #v1-api}
