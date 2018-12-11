@@ -31,6 +31,7 @@ Watson Assistant
 
     entities.md
     create-assistant.md
+    open-skill.md
 
     {: .topicgroup}
     Deploying
@@ -110,7 +111,7 @@ Watson Assistant
     {: .topicgroup}
     Developer community
         [StackOverflow](https://stackoverflow.com/questions/tagged/watson-conversation+or+watson-assistant)
-        [IBM Developer Answers](https://developer.ibm.com/answers/search.html?f=&amp;sort=relevance&amp;q=%5Bwatson-conversation%5D+%5Bwatson-assistant%5D+%24)
+        [IBM Developer Answers](https://developer.ibm.com/answers/search.html?f=&sort=relevance&q=%5Bwatson-conversation%5D+%5Bwatson-assistant%5D+%24)
         [WDC Slack channel](http://wdc-slack-inviter.mybluemix.net/)
 
     accessibility.md
