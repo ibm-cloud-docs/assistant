@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-12-06"
+lastupdated: "2018-12-07"
 ---
 
 {:shortdesc: .shortdesc}
@@ -22,12 +22,14 @@ IBM releases services, features, and language support for your evaluation that a
 
 ## Available beta features
 
-When these features are released, they will be available to Plus or Premium plan users only.
-
 - How you work with search skills has changed. You can now add one search skill and one dialog skill to the same assistant. When you add both, the search is triggered if the user input cannot be addressed by any of the nodes in the dialog of the dialog skill. You can learn more from the following topics:
   - [Search skill](create-search-skill.html)
   - [Dialog skill](create-dialog-skill.html)
 
+  When this feature is released, it will be available to Plus or Premium plan users only.
+
 - [Intercom integration](deploy-intercom.html)
 
-<!-- - The user interface of the Dialog builder has been updated to use the React JavaScript library. Dialog functions are now provided in encapsulated components that manage their own state, which results in a more responsive user experience. -->
+  When this feature is released, it will be available to Plus or Premium plan users only.
+
+- The user interface of the Dialog builder has been updated to use the React JavaScript library. Dialog functions are now provided in encapsulated components that manage their own state, which results in a more responsive user experience.
