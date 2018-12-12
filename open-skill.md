@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-12-11"
+lastupdated: "2018-12-12"
 
 ---
 
@@ -23,7 +23,7 @@ lastupdated: "2018-12-11"
 # Opening assistants and skills
 {: #open-skill}
 
-Learn how to find and open assistants and skills that you created or have access.
+Learn how to find and open assistants and skills that you created or can access.
 {: shortdesc}
 
 Assistants and skills are created within a {{site.data.keyword.conversationshort}} service instance. To continue working with a skill or assistant, open the service instance that contains the skill or assistant. If you can't remember the service instance name, you can switch between instances from within the tool.
@@ -38,7 +38,7 @@ Assistants and skills are created within a {{site.data.keyword.conversationshort
 
 1.  Click **Launch tool** from the service instance details page.
 
-    The {{site.data.keyword.conversationshort}} tool opens in a new browser tab and displays the home page of the tool.
+    The {{site.data.keyword.conversationshort}} tool opens in a new browser tab and shows the home page of the tool.
 
 1.  Take one of the following steps:
 

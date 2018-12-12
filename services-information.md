@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-29"
+lastupdated: "2018-12-12"
 
 ---
 
@@ -33,7 +33,7 @@ Before you create a service instance, decide how you want to organize the resour
 ### Plan limits by artifact type
 {: #limits}
 
-For information about artifact limits per plan, see these topics:
+Information about the artifact limits per plan is available from the topics that describe how to create the artifacts, so you can refer to the limits when you need to know them. Here are links to the topics:
 
 - [Assistants](create-assistant.html#assistant-limits)
 - [Dialog nodes](dialog-build.html#dialog-node-limits)
