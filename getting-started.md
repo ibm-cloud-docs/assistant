@@ -2,12 +2,15 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-30"
+lastupdated: "2018-12-12"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -16,6 +19,7 @@ lastupdated: "2018-11-30"
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
+{:hide-dashboard: .hide-dashboard}
 {:download: .download}
 {:gif: data-image-type='gif'}
 
@@ -27,36 +31,30 @@ In this short tutorial, we introduce the {{site.data.keyword.conversationshort}}
 
 ## Before you begin
 {: #prerequisites}
+{: hide-dashboard}
 
-You'll need a service instance to start.
+You need a service instance to start.
+{: hide-dashboard}
 
-<!-- Remove the text marked `download` after there's no g-s tab in the catalog dashboard -->
+1.  {: hide-dashboard} Go to the [{{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/watson-assistant-formerly-conversation) page in the {{site.data.keyword.cloud_notm}} catalog.
 
-You created your service instance. Click **Manage**, then **Open tool**. Go to Step 2.
-{: download tip}
+    The service instance will be created in the **default** resource group if you do not choose a different one, and it *cannot* be changed later. This group is sufficient for the purposes of trying out the service.
 
-If you created a {{site.data.keyword.conversationshort}} service instance, you're all set with these prerequisites. Go to [Step 1](#launch-tool).
-
-1.  Go to the [{{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/catalog/services/watson-assistant-formerly-conversation) page in the {{site.data.keyword.Bluemix_notm}} Catalog.
-1.  Sign up for a free {{site.data.keyword.Bluemix_notm}} account or log in.
-
-    The service instance will be created in the **default** resource group if you do not choose a different one, and it *cannot* be changed later. This group is sufficient for the purposes of trying out the service. 
-
-    If you're creating an instance for more robust use, then learn more about [resource groups![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/resources/bestpractice_rgs.html#bp_resourcegroups){: new_window}.
-1.  Click **Create**.
+    If you're creating an instance for more robust use, then learn more about [resource groups![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/docs/resources/bestpractice_rgs.html#bp_resourcegroups){: new_window}.
+1.  {: hide-dashboard} Sign up for a free {{site.data.keyword.cloud_notm}} account or log in.
+1.  {: hide-dashboard} Click **Create**.
 
 ## Step 1: Open the tool
 {: #launch-tool}
 
-After you create a {{site.data.keyword.conversationshort}} service instance, you'll land on the **Manage** page of the service dashboard.
+After you create a {{site.data.keyword.conversationshort}} service instance, you land on the **Getting started** page of the service dashboard.
+{: hide-dashboard}
 
-On the **Manage** page, click **Launch tool**.
-
-If you're prompted to log into the tool, provide your {{site.data.keyword.Bluemix_notm}} credentials.
+1.  Click **Manage**, and then click **Launch tool**. If you're prompted to log in to the tool, provide your {{site.data.keyword.cloud_notm}} credentials.
 
 <!-- Remove this text after dedicated instances have the developer console: begin -->
 
-{{site.data.keyword.Bluemix_dedicated_notm}}: Select your service instance from the Dashboard to launch the tooling.
+{{site.data.keyword.Bluemix_dedicated_notm}}: Select your service instance from the Dashboard to launch the tool.
 
 <!-- Remove this text after dedicated instances have the Developer Console: end -->
 
@@ -69,7 +67,7 @@ A *dialog skill* is a container for the artifacts that define the flow of a conv
 
 1.  From the home page of the {{site.data.keyword.conversationshort}} tool, click **Create a Skill**.
 
-    ![Shows the Add skill button from the Home page](images/gs-new-skill.png)
+    ![Shows the Add skill button from the home page](images/gs-new-skill.png)
 
 1.  Click **Create new**.
 
@@ -81,7 +79,7 @@ A *dialog skill* is a container for the artifacts that define the flow of a conv
 
     ![Finish creating the skill](images/gs-add-skill-done.png)
 
-You'll land on the Intents page of the tool.
+You land on the Intents page of the tool.
 
 ## Step 3: Add intents from a content catalog
 {: #add-catalog}
@@ -96,23 +94,23 @@ Add training data that was built by IBM to your workspace by adding intents from
 
     ![Shows the intents that are displayed in the Intents tab after the General catalog is added.](images/gs-general-added.png)
 
-You have successfully started to build your training data by adding prebuilt content from IBM.
+You successfully started to build your training data by adding prebuilt content from {{site.data.keyword.IBM_notm}}.
 
 ## Step 4: Build a dialog
 {: #build-dialog}
 
-A [dialog](dialog-overview.html) defines the flow of your conversation in the form of a logic tree. It matches intents (what users say) to responses (what the bot says back). Each node of the tree has a condition that triggers it, based on user input.
+A [dialog](/docs/services/assistant/dialog-overview.html) defines the flow of your conversation in the form of a logic tree. It matches intents (what users say) to responses (what the bot says back). Each node of the tree has a condition that triggers it, based on user input.
 
 We'll create a simple dialog that handles greeting and ending intents, each with a single node.
 
 ### Adding a start node
 
 1.  In the {{site.data.keyword.conversationshort}} tool, click the **Dialog** tab.
-1.  Click **Create**. You'll see two nodes:
+1.  Click **Create**. You see two nodes:
     - **Welcome**: Contains a greeting that is displayed to your users when they first engage with the assistant.
     - **Anything else**: Contains phrases that are used to reply to users when their input is not recognized.
 
-    ![A new dialog with two builtin nodes](images/gs-new-dialog0.png)
+    ![A new dialog with two built-in nodes](images/gs-new-dialog0.png)
 1.  Click the **Welcome** node to open it in the edit view.
 1.  Replace the default response with the text, `Welcome to the Watson Assistant tutorial!`.
 
@@ -132,7 +130,7 @@ You can test your dialog at any time to verify the dialog. Let's test it now.
 Now let's add nodes to handle our intents between the `Welcome` node and the `Anything else` node.
 
 1.  Click the More icon ![More options](images/kabob.png) on the **Welcome** node, and then select **Add node below**.
-1.  Type `#General_Greetings` in the **Enter a condition** field of this node. Then select the **`#General_Greetings`** option.
+1.  Type `#General_Greetings` in the **Enter a condition** field of this node. Then, select the **`#General_Greetings`** option.
 1.  Add the response, `Good day to you!`
 1.  Click ![Close](images/close.png) to close the edit view.
 
@@ -159,7 +157,7 @@ You built a simple dialog to recognize and respond to both greeting and ending i
 
 ![Testing the dialog in the Try it out pane](images/gs-try-it.gif){: gif}
 
-{{site.data.keyword.watson}} can recognize your intents even when your input doesn't exactly match the examples you included. The dialog uses intents to identify the purpose of the user's input regardless of the precise wording used, and then responds in the way you specify.
+{{site.data.keyword.watson}} can recognize your intents even when your input doesn't exactly match the examples that you included. The dialog uses intents to identify the purpose of the user's input regardless of the precise wording used, and then responds in the way you specify.
 
 ### Result of building a dialog
 
@@ -168,7 +166,7 @@ That's it. You created a simple conversation with two intents and a dialog to re
 ## Step 5: Create an assistant
 {: #create-assistant}
 
-An [*assistant*](assistants.html) is a cognitive bot to which you add a skill that enables it to interact with your customers in useful ways.
+An [*assistant*](/docs/services/assistant/assistants.html) is a cognitive bot to which you add a skill that enables it to interact with your customers in useful ways.
 
 1.  Click the **Assistants** tab.
 1.  Click **Create new**.
@@ -180,14 +178,15 @@ An [*assistant*](assistants.html) is a cognitive bot to which you add a skill th
 
     ![Finish creating the new assistant](images/gs-create-assistant-done0.png)
 
-## Step 6: Adding your skill to your assistant
+## Step 6: Add your skill to your assistant
 {: #add-skill-to-assistant}
 
 Add the dialog skill that you build to the assistant you created.
 
 1.  From the new assistant page, click **Add skill**.
 
-    **Note**: If you created or were given developer role access to any workspaces that were built with the generally available version of the {{site.data.keyword.conversationshort}} service, you will see them listed on the Skills page as conversational skills.
+    If you created or were given developer role access to any workspaces that were built with the generally available version of the {{site.data.keyword.conversationshort}} service, you will see them listed on the Skills page as conversational skills.
+    {: tip}
 
     ![Shows the Add skill button from the Assistant page](images/gs-add-skill.png)
 1.  Choose to add the skill that you created earlier to the assistant.
@@ -195,9 +194,9 @@ Add the dialog skill that you build to the assistant you created.
 ## Step 7: Integrate the assistant
 {: #integrate-assistant}
 
-Now that you have an assistant that can participate in a simple conversational exchange, publish it to a public web page where you can test it out. The services provides a built-in integration called a Preview Link. When you create this type of integration, it builds your assistant into a chat widget that is hosted by an IBM-branded web page. You can open the web page and chat with your assistant to test it out.
+Now that you have an assistant that can participate in a simple conversational exchange, publish it to a public web page where you can test it out. The service provides a built-in integration that is called a Preview Link. When you create this type of integration, it builds your assistant into a chat widget that is hosted by an IBM-branded web page. You can open the web page and chat with your assistant to test it out.
 
-1.  Click the **Assistants** tab, find the `Watson Assistant tutorial` assistant you created, and open it.
+1.  Click the **Assistants** tab, find the `Watson Assistant tutorial` assistant that you created, and open it.
 1.  From the *Integrations* area, click **Add integration**.
 1.  Find **Preview Link**, and click **Select integration**.
 
@@ -206,12 +205,15 @@ Now that you have an assistant that can participate in a simple conversational e
     The page opens in a new tab.
 1.  Say `hello` to your assistant, and watch it respond. You can share the URL with others who might want to try out your assistant.
 
-    **Note**: Unlike when you send test utterances to the service from the "Try it out" pane, standard usage charges apply to API calls that result from utterances that are submited to the chat widget.
+    Unlike when you send test utterances to the service from the "Try it out" pane, standard usage charges apply to API calls that result from utterances that are submitted to the chat widget.
+    {: important}
 
 ## Next steps
 {: #next-steps}
 
-This tutorial is built around a simple example. For a real application, you'll need to define some more interesting intents, some entities, and a more complex dialog that uses them both. When you have a polished version of the assistant, you can integrate it with channels that your customers use, such as Slack. As traffic increases between the assistant and your customers, you can use the tools provided in the **Improve** tab to analyze real conversations, and identify areas for improvement.
+This tutorial is built around a simple example. For a real application, you need to define some more interesting intents, some entities, and a more complex dialog that uses them both. When you have a polished version of the assistant, you can integrate it with channels that your customers use, such as Slack. As traffic increases between the assistant and your customers, you can use the tools that are provided in the **Improve** tab to analyze real conversations, and identify areas for improvement.
 
-- Complete follow-on tutorials that build more advanced dialogs. Add standard nodes with the [Building a complex dialog](tutorial.html) tutorial or learn about slots with the [Adding a node with slots](tutorial-slots.html) tutorial.
-- Check out more [sample apps](sample-applications.html) to get ideas.
+- Complete follow-on tutorials that build more advanced dialogs:
+    - Add standard nodes with the [Building a complex dialog](/docs/services/assistant/tutorial.html) tutorial.
+    - Learn about slots with the [Adding a node with slots](/docs/services/assistant/tutorial-slots.html) tutorial.
+- Check out more [sample apps](/docs/services/assistant/sample-applications.html) to get ideas.
