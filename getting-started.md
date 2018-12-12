@@ -40,7 +40,7 @@ You need a service instance to start.
 
     The service instance will be created in the **default** resource group if you do not choose a different one, and it *cannot* be changed later. This group is sufficient for the purposes of trying out the service.
 
-    If you're creating an instance for more robust use, then learn more about [resource groups![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/docs/resources/bestpractice_rgs.html#bp_resourcegroups){: new_window}.
+    If you're creating an instance for more robust use, then learn more about [resource groups ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/docs/resources/bestpractice_rgs.html#bp_resourcegroups){: new_window}.
 1.  {: hide-dashboard} Sign up for a free {{site.data.keyword.cloud_notm}} account or log in.
 1.  {: hide-dashboard} Click **Create**.
 
