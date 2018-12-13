@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-21"
+lastupdated: "2018-12-13"
 
 ---
 
@@ -35,6 +35,8 @@ The following notebooks are available:
 - **Measure**: Gathers metrics that focus on coverage (how often the assistant is confident enough to respond to users) and effectiveness (when the assistant does respond, whether the the responses are satisying user needs).
 
 - **Effectiveness**: Performs a deeper analysis of your logs to help you understand the steps you can take to improve your assistant.
+
+The [Watson Assistant Continuous Improvement Best Practices Guide ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-01.ibm.com/common/ssi/cgi-bin/ssialias?htmlfid=54022554USEN&) describes how to get the most out of the notebooks.
 
 ### Using the notebooks with {{site.data.keyword.DSX}}
 {: #notebook-steps}

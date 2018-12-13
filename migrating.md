@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-28"
+lastupdated: "2018-12-13"
 
 ---
 
@@ -47,7 +47,7 @@ To migrate your service instance, complete these steps:
 
 1.  From the IBM Cloud Dashboard services list, click the migrate icon ![Migrate](images/migrate.svg) for the instance you want to migrate, and then click **Migrate** from the popup.
 
-    **Note**: Any service instances that were created in Sydney before 7 May 2018 were syndicated to Dallas. When you migrate a Sydney-based Cloud Foundry service instance, it will become a resource that is hosted in the Dallas data center. Any service instances created in Sydney on or after 7 May 2018 use resource groups already and do not need to be migrated.
+    **Note**: Any service instances that were created in Sydney region before 7 May 2018 or in the United Kingdom region before 13 December 2018 were syndicated to Dallas. When you migrate a Sydney- or United Kingdom-based Cloud Foundry service instance, it will become a resource that is hosted in the Dallas data center. Any service instances created in Sydney after 7 May 2018 or in London after 13 December 2018 use resource groups already and do not need to be migrated.
 
 1.  Click **Continue**, and then choose a resource group.
 

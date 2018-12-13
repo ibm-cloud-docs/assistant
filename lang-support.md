@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-27"
+lastupdated: "2018-12-13"
 
 ---
 
@@ -71,7 +71,7 @@ The first table shows the level of support for all features, except those relate
 
 | Language | **System entities ([number](system-entities.html#sys-number), [currency](system-entities.html#sys-currency), [percentage](system-entities.html#sys-percentage), [date, time](system-entities.html#sys-datetime))** | **[Entity fuzzy matching](entities.html#fuzzy-matching)** | **[Contextual entities](entities.html#create-annotation-based)** | **[Synonym recommendations](entities.html#synonyms)**
 |:---|:---:|:---:|:---:|:---:|
-| **English (en)**                   | GA, Beta ([location](system-entities.html#sys-location), [person](system-entities.html#sys-person)) | Beta (Stemming, misspelling, and partial match) | Beta | GA |
+| **English (en)**                   | GA, Beta ([location](system-entities.html#sys-location), [person](system-entities.html#sys-person)) | GA | Beta | GA |
 | **Arabic (ar)**                    | Beta | GA (Misspelling only) | NA | NA |
 | **Chinese (Simplified) (zh-cn)**   | GA | NA | NA | NA |
 | **Chinese (Traditional) (zh-tw)**  | Beta | NA | NA | NA |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-12-04"
+lastupdated: "2018-12-13"
 ---
 
 {:shortdesc: .shortdesc}
@@ -46,6 +46,11 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #change-log}
 
 The following new features and changes to the service are available.
+
+### 13 December 2018
+{: #13December2018}
+
+- **London data center**: You can now create {{site.data.keyword.conversationshort}} service instances that are hosted in the London data center without syndication. See [Data centers](services-information.html#regions) for more details.
 
 ### 1 December 2018
 {: #1December2018}
