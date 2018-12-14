@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-12-13"
+lastupdated: "2018-12-14"
 
 ---
 
@@ -139,7 +139,7 @@ The authentication mechanism used by your service instance impacts how you must 
 
         See [Authenticating with IAM tokens ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/watson/getting-started-iam.html){: new_window} for more information.
 
-    For examples, see  [Authentication ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.{DomainName}/apidocs/assistant-v2#authentication){: new_window} for your language in the API reference.
+    For examples, see  [Authentication ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant-v2#authentication){: new_window} for your language in the API reference.
 
 ### Data centers
 {: #regions}

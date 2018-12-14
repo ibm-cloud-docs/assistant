@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-30"
+lastupdated: "2018-12-14"
 
 ---
 
@@ -99,7 +99,7 @@ In the resulting API /message response, the text response is formatted as follow
 
 There are response types other than a text response that you can define. See [Responses](dialog-overview.html#responses) for more details.
 
-You can learn more about the /message API call from the [API reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.{DomainName}/apidocs/assistant-v2){: new_window}.
+You can learn more about the /message API call from the [API reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant-v2){: new_window}.
 
 ### Retaining information across dialog turns
 {: #context}

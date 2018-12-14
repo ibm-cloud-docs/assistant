@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-12-13"
+lastupdated: "2018-12-14"
 ---
 
 {:shortdesc: .shortdesc}
@@ -293,7 +293,7 @@ The following new features and changes to the service are available.
 
   For all new and existing service instances in other regions, you continue to use service credentials (`{username}:{password}`) for authentication.
 
-  When you use any of the Watson SDKs, you can pass the API key and let the SDK manage the lifecycle of the tokens. For more information and examples, see [Authentication ![External link icon](../../icons/launch-glyph.svg "External link icon")]https://console.{DomainName}/apidocs/assistant-v2#authentication){: new_window} in the API reference.
+  When you use any of the Watson SDKs, you can pass the API key and let the SDK manage the lifecycle of the tokens. For more information and examples, see [Authentication ![External link icon](../../icons/launch-glyph.svg "External link icon")]https://{DomainName}/apidocs/assistant-v2#authentication){: new_window} in the API reference.
 
   If you are not sure which type of authentication to use, view the service credentials by clicking the service instance on the [Dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/dashboard/apps?category=ai){: new_window}.
 
@@ -334,7 +334,7 @@ The following new features and changes to the service are available.
 
 - **Introducing {{site.data.keyword.conversationfull}}**: {{site.data.keyword.ibmwatson}} Conversation has been renamed. It is now called {{site.data.keyword.conversationfull}}. The name change reflects the fact that the service is expanding to provide prebuilt content and tools that help you more easily share the virtual assistants you build. Read [this blog post ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/watson/2018/03/the-future-of-watson-conversation-watson-assistant/) for more details.
 
-- **New REST APIs and SDKs are available for Watson Assistant**: The new APIs are functionally identical to the existing Conversation APIs, which continue to be supported. For more information about the Watson Assistant APIs, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.{DomainName}/apidocs/assistant){: new_window}.
+- **New REST APIs and SDKs are available for Watson Assistant**: The new APIs are functionally identical to the existing Conversation APIs, which continue to be supported. For more information about the Watson Assistant APIs, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant){: new_window}.
 
 - **Dialog enhancements**: The following features were added to the dialog tool:
 
@@ -360,7 +360,7 @@ The following new features and changes to the service are available.
 
 - **New API version**: The current API version is now `2018-02-16`. This version introduces the following changes:
 
-  - A new `include_audit` parameter is now supported on most GET requests. This is an optional boolean parameter that specifies whether the response should include the audit properties (`created` and `updated` timestamps). The default value is `false`. (If you are using an API version earlier than `2018-02-16`, the default value is `true`.) For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.{DomainName}/apidocs/assistant){: new_window}.
+  - A new `include_audit` parameter is now supported on most GET requests. This is an optional boolean parameter that specifies whether the response should include the audit properties (`created` and `updated` timestamps). The default value is `false`. (If you are using an API version earlier than `2018-02-16`, the default value is `true`.) For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant){: new_window}.
 
   - Responses from API calls using the new version include only properties with non-`null` values.
 
@@ -602,7 +602,7 @@ The following new features and changes to the service are available.
 {: #26May2017}
 
 - The current API version is now `2017-05-26`. This version introduces the following changes:
-    - The schema of ErrorResponse objects has changed. This change affects all endpoints and methods. For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.{DomainName}/apidocs/assistant){: new_window}.
+    - The schema of ErrorResponse objects has changed. This change affects all endpoints and methods. For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant){: new_window}.
     - The internal schema used to represent dialog nodes in exported workspace JSON has changed. If you use the `2017-05-26` API to import a workspace that was exported using an earlier version, some dialog nodes might not import correctly. For best results, always import a workspace using the same version that was used to export it.
 
 ### 25 May 2017
@@ -639,7 +639,7 @@ The following new features and changes to the service are available.
     - entity value synonyms
     - logs
 
-    For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.{DomainName}/apidocs/assistant){: new_window}.
+    For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant){: new_window}.
 - The behavior of the /messages `POST` method has changed the handling of entities and intents specified as part of the message input:
     - If you specify intents on input, the service uses the intents you specify, but uses natural language processing to detect entities in the user input.
     - If you specify entities on input, the service uses the entities you specify, but uses natural language processing to detect intents in the user input.
@@ -658,7 +658,7 @@ The {{site.data.keyword.conversationshort}} REST API now supports access to the 
 - examples
 - counterexamples
 
-For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.{DomainName}/apidocs/assistant){: new_window}.
+For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant){: new_window}.
 
 ### 7 March 2017
 {: #7March2017}
