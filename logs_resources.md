@@ -36,7 +36,7 @@ The following notebooks are available:
 
 - **Effectiveness**: Performs a deeper analysis of your logs to help you understand the steps you can take to improve your assistant.
 
-The [Watson Assistant Continuous Improvement Best Practices Guide ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-01.ibm.com/common/ssi/cgi-bin/ssialias?htmlfid=54022554USEN&) describes how to get the most out of the notebooks.
+The [Watson Assistant Continuous Improvement Best Practices Guide ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/common/ssi/cgi-bin/ssialias?htmlfid=54022554USEN&) describes how to get the most out of the notebooks.
 
 ### Using the notebooks with {{site.data.keyword.DSX}}
 {: #notebook-steps}
