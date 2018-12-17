@@ -156,7 +156,7 @@ You can create {{site.data.keyword.conversationshort}} service instances that ar
 | Frankfurt   | eu-de         | IAM                 | 30 October 2018 | N/A |
 | Sydney      | au-syd        | IAM                 | 7 May 2018 | Instances created before May 7 were syndicated to Dallas |
 | Tokyo       | jp-tok        | IAM                 | 8 November 2018 | N/A |
-| London      | lon           | IAM                 | 13 December 2018 | Instances that were created in the United Kingdom (eu-gb) region before December 13 were syndicated to the US South region |
+| London      | eu-gb, lon    | IAM                 | 13 December 2018 | Instances that were created in the United Kingdom region before December 13 were syndicated to the US South region |
 | Washington DC  | us-east    | IAM                 | 14 June 2018 | N/A |
 {: caption="Data center locations" caption-side="top"}
 
