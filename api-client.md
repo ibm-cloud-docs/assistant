@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-12-10"
+lastupdated: "2018-12-17"
 
 ---
 
@@ -914,4 +914,4 @@ Using the v2 API is the recommended way to build a runtime client application th
 
 Note that if your app uses the v1 API, it communicates directly with the workspace, bypassing the orchestration and state-management capabilities of the assistant. This means that your application is responsible for managing state information using the context. Your application must maintain the context by saving the context received with each response and sending it back to the service with each new message request. (The v1 `/message` method always returns the context with each response.)
 
-For more information about the v1 `/message` method and context, see the [v1 API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/apidocs/assistant#get-response-to-user-input){: new_window}.
+For more information about the v1 `/message` method and context, see the [v1 API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant#get-response-to-user-input){: new_window}.

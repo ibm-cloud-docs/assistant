@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-17"
+lastupdated: "2018-12-17"
 
 ---
 
@@ -49,7 +49,7 @@ It is the reponsibility of your client application to handle all response types 
 
 ## Response types
 
-Each element of a response is of one of the supported response types (currently `image`, `option`, `pause`, and `text`). Each response type is specified using a different set of JSON properties, so the properties included for each response will vary depending upon response type. For complete information about the response model of the /message API, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/watson/developercloud/conversation/api/v1/?curl#send_message){: new_window}.)
+Each element of a response is of one of the supported response types (currently `image`, `option`, `pause`, and `text`). Each response type is specified using a different set of JSON properties, so the properties included for each response will vary depending upon response type. For complete information about the response model of the /message API, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant?curl=#get-response-to-user-input){: new_window}.)
 
 This section describes the available response types and how they are represented in the /message API response JSON. (If you are using the Watson SDK, you can use the interfaces provided for your language to access the same objects.)
 
