@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-29"
+lastupdated: "2018-12-17"
 
 ---
 
@@ -25,7 +25,7 @@ The `filter` parameter is a cacheable query that limits the results to those mat
 
 To see examples of various kinds of filter queries, see [Examples](#examples).
 
-For more information about the /logs `GET` method and its response model, refer to the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/watson/developercloud/conversation/api/v1/#get_logs){: new_window}.
+For more information about the /logs `GET` method and its response model, refer to the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant?curl=#list-log-events-in-a-workspace){: new_window}.
 
 ## Filter query syntax
 

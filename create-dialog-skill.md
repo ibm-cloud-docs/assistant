@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-12-07"
+lastupdated: "2018-12-17"
 
 ---
 
@@ -57,7 +57,7 @@ You use the {{site.data.keyword.conversationshort}} tool to build skills. Follow
       **Important:**
 
       - The imported JSON file must use UTF-8 encoding.
-      - The maximum size for a skill JSON file is 10MB. If you need to import a larger skill, consider importing the intents and entities separately after you have imported the skill. (You can also import larger skills using the REST API. For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/watson/developercloud/conversation/api/v1/#create_workspace){: new_window}.)
+      - The maximum size for a skill JSON file is 10MB. If you need to import a larger skill, consider importing the intents and entities separately after you have imported the skill. (You can also import larger skills using the REST API. For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant?curl=#create-workspace){: new_window}.)
       - The JSON cannot contain tabs, newlines, or carriage returns.
 
       Specify the data you want to include:

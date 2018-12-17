@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-15"
+lastupdated: "2018-12-17"
 
 ---
 
@@ -28,12 +28,12 @@ Create an assistant with the skills it needs to address the business goals of yo
 
 The number of assistants you can create in a single service instance depends on your {{site.data.keyword.conversationshort}} plan.
 
-| Service plan     | Assistants per service instance | Integrations per assistant  |
-|------------------|--------------------------------:|----------------------------:|
-| Premium          |                             100 |                         100 |
-| Plus             |                             100 |                         100 |
-| Standard         |                             100 |                         100 |
-| Lite*            |                             100 |                         100 |
+| Service plan | Assistants per service instance | Integrations per assistant  | Chat session duration |
+|--------------|--------------------------------:|----------------------------:|-----------------:|
+| Premium      |                             100 |                         100 |       60 minutes |
+| Plus         |                             100 |                         100 |       60 minutes |
+| Standard     |                             100 |                         100 |        5 minutes |
+| Lite*        |                             100 |                         100 |        5 minutes |
 {: caption="Service plan details" caption-side="top"}
 
 *After 30 days of inactivity, an unused assistant in a Lite plan service instance might be deleted to free up space.

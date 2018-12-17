@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-27"
+lastupdated: "2018-12-17"
 
 ---
 
@@ -106,9 +106,9 @@ Applications that use the V1 version of the API must specify a deployment ID in 
 
 For assistants or custom apps that use the V2 version of the API, the service automatically includes a system id and skill id with each /message call, so you can choose a data source by assistant name instead of using a deployment ID.
 
-To add the deployment ID, V1 API users include the deployment property inside the metadata of the [context ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/watson/developercloud/assistant/api/v1/curl.html?curl#message){: new_window}, as in this example:
+To add the deployment ID, V1 API users include the deployment property inside the metadata of the [context ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant?curl=#get-response-to-user-input){: new_window}, as in this example:
 
-```
+```json
 "context" : {
   "metadata" : {
        "deployment": "HelpDesk-Production"
