@@ -52,9 +52,6 @@ The following new features and changes to the service are available.
 
 - **London data center**: You can now create {{site.data.keyword.conversationshort}} service instances that are hosted in the London data center without syndication. See [Data centers](services-information.html#regions) for more details.
 
-  **Note**: Integrations are not supported for this location at the moment.
-  
-
 ### 1 December 2018
 {: #1December2018}
 
