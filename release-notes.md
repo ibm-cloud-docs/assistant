@@ -57,7 +57,7 @@ The following new features and changes to the service are available.
 
 - **Dialog node limit changes**: The dialog node limit decreased from 25,000 to 100 for Lite plans.
 
-   Users of service instances that were created before the limit change have 6 months (until 1 June 2019) to upgrade their plan, or edit the dialogs in the skills in the existing service instances to meet the new limit requirements. After the grace period ends, adding new dialog nodes to a dialog in a skill in an existing Lite or Standard plan service instance will be prohibited until the dialog complies with the limits. Existing dialog nodes will not be removed.
+   Users of service instances that were created before the limit change have 6 months (until 1 June 2019) to upgrade their plan, or edit the dialogs in the skills in the existing service instances to meet the new limit requirements. After the grace period ends, adding new dialog nodes to a dialog in a skill in an existing Lite plan service instance will be prohibited until the dialog complies with the limits. Existing dialog nodes will not be removed.
 
    To determine the number of dialog nodes in a dialog skill, do one of the following things:
 
