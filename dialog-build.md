@@ -41,7 +41,7 @@ The welcome and anything_else dialog nodes that are prepopulated in the tree do 
 
 Tree depth limit: The service supports 2,000 dialog node descendants; the tool performs best with 20 or fewer.
 
-`*` The limits changed from 25,000 to 100 for Lite plans on 1 December 2018. Users of service instances that were created before the limit change have until 1 June 2019 to upgrade their plan, or edit the dialogs in the skills in the existing service instances to meet the new limit requirements.
+`*` The limits changed from 25,000 to 100 for Lite plans on 1 December 2018. Users of service instances that were created before the limit changed have until 1 June 2019 to upgrade their plan, or edit the dialogs in the skills in the existing service instances to meet the new limit requirements.
 
 To see the number of dialog nodes in a dialog skill, do one of the following things:
 
