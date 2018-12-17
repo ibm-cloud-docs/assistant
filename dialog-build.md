@@ -33,7 +33,7 @@ The number of dialog nodes you can create per skill depends on your service plan
 |------------------|---------------------------:|
 | Premium          |                    100,000 |
 | Plus             |                    100,000 |
-| Standard         |                     500`*` |
+| Standard         |                    100,000 |
 | Lite             |                     100`*` |
 {: caption="Service plan details" caption-side="top"}
 
@@ -41,7 +41,7 @@ The welcome and anything_else dialog nodes that are prepopulated in the tree do 
 
 Tree depth limit: The service supports 2,000 dialog node descendants; the tool performs best with 20 or fewer.
 
-`*` The limits changed from 100,000 to 500 for Standard plans and 25,000 to 100 for Lite plans on 1 December 2018. Users of service instances that were created before the limit change have until 1 June 2019 to upgrade to a Plus or Premium plan, or edit the dialogs in the skills in the existing service instances to meet the new limit requirements.
+`*` The limits changed from 25,000 to 100 for Lite plans on 1 December 2018. Users of service instances that were created before the limit change have until 1 June 2019 to upgrade their plan, or edit the dialogs in the skills in the existing service instances to meet the new limit requirements.
 
 To see the number of dialog nodes in a dialog skill, do one of the following things:
 
@@ -57,7 +57,7 @@ To see the number of dialog nodes in a dialog skill, do one of the following thi
 If the total seems larger than you expected, it might be because the dialog that you build in the tool is translated into a JSON object by the tool. Some fields that appear to be part of a single node are actually structured as separate dialog nodes in the underlying JSON object.
 
   - Each node and folder is represented as its own node.
-  - Each conditional response that is associated with a single dialog node is represented as an individual node. 
+  - Each conditional response that is associated with a single dialog node is represented as an individual node.
   - For a node with slots, each slot, slot found response, slot not found response, slot handler, and if set, the "prompt for everything" response is an individual node. In effect, one node with three slots might be equivalent to eleven dialog nodes.
 
 ## Building a dialog

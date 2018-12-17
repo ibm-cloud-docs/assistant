@@ -55,42 +55,23 @@ The following new features and changes to the service are available.
 ### 1 December 2018
 {: #1December2018}
 
-- **Dialog node limit changes**: The dialog node limit decreased for the following service plans:
+- **Dialog node limit changes**: The dialog node limit decreased from 25,000 to 100 for Lite plans.
 
-  <table>
-  <caption>Dialog node limit changes</caption>
-    <tr>
-      <th>Plan</th>
-      <th>Old limit</th>
-      <th>New limit</th>
-    </tr>
-    <tr>
-      <td>Standard</td>
-      <td>100,000</td>
-      <td>500</td>
-    </tr>
-    <tr>
-       <td>Lite</td>
-       <td>25,000</td>
-       <td>100</td>
-    </tr>
-  </table>
+   Users of service instances that were created before the limit change have 6 months (until 1 June 2019) to upgrade their plan, or edit the dialogs in the skills in the existing service instances to meet the new limit requirements. After the grace period ends, adding new dialog nodes to a dialog in a skill in an existing Lite or Standard plan service instance will be prohibited until the dialog complies with the limits. Existing dialog nodes will not be removed.
 
-    Users of service instances that were created before the limit change have 6 months (until 1 June 2019) to upgrade to a Plus or Premium plam, or edit the dialogs in the skills in the existing service instances to meet the new limit requirements. After the grace period ends, adding new dialog nodes to a dialog in a skill in an existing Lite or Standard plan service instance will be prohibited until the dialog complies with the limits. Existing dialog nodes will not be removed.
+   To determine the number of dialog nodes in a dialog skill, do one of the following things:
 
-    To determine the number of dialog nodes in a dialog skill, do one of the following things:
+   - From the tool, if it is not associated with an assistant already, add the dialog skill to an assistant, and then view the skill tile from the main page of the assistant. The *trained data* section lists the number of dialog nodes.
 
-    - From the tool, if it is not associated with an assistant already, add the dialog skill to an assistant, and then view the skill tile from the main page of the assistant. The *trained data* section lists the number of dialog nodes.
+   - Send a GET request to the /dialog_nodes API endpoint, and include the `include_count=true` parameter. For example:
 
-    - Send a GET request to the /dialog_nodes API endpoint, and include the `include_count=true` parameter. For example:
+     ```curl
+     curl -u "apikey:{apikey}" "https://gateway.watsonplatform.net/assistant/api/v1/workspaces/{workspace_id}/dialog_nodes?version=2018-09-20&include_count=true"
+     ```
 
-      ```curl
-      curl -u "apikey:{apikey}" "https://gateway.watsonplatform.net/assistant/api/v1/workspaces/{workspace_id}/dialog_nodes?version=2018-09-20&include_count=true"
-      ```
+     In the response, the `total` attribute in the `pagination` object contains the number of dialog nodes.
 
-      In the response, the `total` attribute in the `pagination` object contains the number of dialog nodes.
-
-    See [Troubleshooting skill import issues](create-skill.html#import-errors) for information about how to edit skills that you want to continue using.
+     See [Troubleshooting skill import issues](create-skill.html#import-errors) for information about how to edit skills that you want to continue using.
 
 ### 27 November 2018
 {: #27November2018}
