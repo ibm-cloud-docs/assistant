@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-17"
+  years: 2015, 2019
+lastupdated: "2018-12-21"
 
 ---
 
@@ -39,7 +39,8 @@ You use the {{site.data.keyword.conversationshort}} tool to build skills. Follow
 
 1.  Click the **Skills** tab.
 
-    **Note**: If you created or were given developer role access to any workspaces that were built with the generally available version of the  {{site.data.keyword.conversationshort}} service (formerly Watson Conversation), you will see them listed here as dialog skills.
+    If you created or were given developer role access to any workspaces that were built with the generally available version of the {{site.data.keyword.conversationshort}} service (formerly Watson Conversation), you will see them listed here as dialog skills.
+    {: note}
 
 1.  Click **Create new**.
 
@@ -107,7 +108,8 @@ You can add one skill to an assistant. You must open the assistant tile and add 
 
     Click the skill that you want to add from the available skills that are displayed.
 
-    **Note**: If you are adding an existing dialog skill and created or were given developer role access to any workspaces that were built with the generally available version of the  {{site.data.keyword.conversationshort}} service (formerly Watson Conversation), you will see them listed here as dialog skills.
+    If you are adding an existing dialog skill and created or were given developer role access to any workspaces that were built with the generally available version of the {{site.data.keyword.conversationshort}} service (formerly Watson Conversation), you will see them listed here as dialog skills.
+    {: note}
 
 ## Downloading a dialog skill
 {: #download-skill}
@@ -144,9 +146,10 @@ To share a dialog skill with other people, you must give them access to the serv
     - **Services**: {{site.data.keyword.conversationshort}}
     - **Assign platform access roles**: Operator
 
-    For more information about platform management roles, see [IAM access ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/iam/users_roles.html). (Service access roles are not leveraged by {{site.data.keyword.conversationshort}} by default.)
+    For more information about platform management roles, see [IAM access ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/iam/users_roles.html). (Service access roles are not leveraged by {{site.data.keyword.conversationshort}} by default.)
 
-    **Note**: For older instances that are managed by Cloud Foundry, you must expand the *Cloud Foundry access* section, choose your organization, and then assign the person to the **Developer** space role.
+    For older instances that are managed by Cloud Foundry, you must expand the *Cloud Foundry access* section, choose your organization, and then assign the person to the **Developer** space role.
+    {: note}
 
 1.  Click **Invite users**.
 
@@ -175,7 +178,7 @@ To add a rich response, complete the following steps:
     - **Search skill**. Add the search query that you want to pass to the {{site.data.keyword.discoveryshort}} service by filling in the following fields:
 
       - **Filter**: Optional. Specify a text string that defines information that must be present in any of the search results that are returned. For example, to indicate that you want to return only documents that the ingestion process identified as containing the entity `Boston, MA`, then you can specify a filter such as,  `enriched_text.entities.text:"Boston, MA"`.
-      - **Query**: Required. A query that is specified in natural language. For example, `What cities do you fly to?` This query string is passed to the {{site.data.keyword.discoveryshort}} service, which uses natural language understanding and information that was captured about the documents from analysis done when the documents were ingested, to find and return relevant passages. Alternatively, you can specify the query by using the [Discovery query language](https://console.bluemix.net/docs/services/discovery/query-operators.html#query-operators) syntax.
+      - **Query**: Required. A query that is specified in natural language. For example, `What cities do you fly to?` This query string is passed to the {{site.data.keyword.discoveryshort}} service, which uses natural language understanding and information that was captured about the documents from analysis done when the documents were ingested, to find and return relevant passages. Alternatively, you can specify the query by using the [Discovery query language](https://cloud.ibm.com/docs/services/discovery/query-operators.html#query-operators) syntax.
 
       This response type only returns a valid response if the assistant associated with this dialog skill also has a search skill associated with it.
 
@@ -183,6 +186,7 @@ To add a rich response, complete the following steps:
 
     You might want to add multiple response types to a single response to provide a richer answer to a user query. For example, if a user asks for store locations, you could show a map and display a button for each store location that the user can click to get address details. To build that type of response, you can use a combination of image, options, and text response types. Another example is using a text response type before a pause response type so you can warn users before pausing the dialog.
 
-    **Note**: You cannot add more than 5 response types to a single response. For example, if you define three conditional responses for a dialog node, each conditional response can have no more than 5 response types added to it.
+    You cannot add more than five response types to a single response. For example, if you define three conditional responses for a dialog node, each conditional response can have no more than five response types added to it.
+    {: note}
 
 1.  If you added more than one response type, you can click the **Move** up or down arrows to arrange the response types in the order you want the service to process them.

@@ -1,13 +1,16 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-06"
+  years: 2015, 2019
+lastupdated: "2018-12-21"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -71,7 +74,8 @@ To create a dialog, complete the following steps:
 
     - **Welcome**: The first node. It contains a greeting that is displayed to your users when they first engage with the service. You can edit the greeting.
 
-    **Note**: This node is not triggered in dialog flows that are initiated by users. For example, dialogs used in integrations with channels such as Facebook or Slack skip nodes with the `welcome` special condition. See [Dialog initialization](dialog-start.html) for more information.
+    This node is not triggered in dialog flows that are initiated by users. For example, dialogs used in integrations with channels such as Facebook or Slack skip nodes with the `welcome` special condition. See [Dialog initialization](dialog-start.html) for more information.
+    {: note}
 
     - **Anything else**: The final node. It contains phrases that are used to reply to users when their input is not recognized. You can replace the responses that are provided or add more responses with a similar meaning to add variety to the conversation. You can also choose whether you want the service to return each response that is defined in turn or return them in random order.
 1.  To add more nodes to the dialog tree, click the **More** ![More icon](images/kabob.png) icon on the **Welcome** node, and then select **Add node below**.
@@ -201,7 +205,8 @@ You can search the dialog to find one or more dialog nodes that mention a given 
 
 1.  Enter a search term or phrase.
 
-    **Note**: The first time you search, an index is created. You might be asked to wait while the text in your dialog nodes is indexed.
+    The first time you search, an index is created. You might be asked to wait while the text in your dialog nodes is indexed.
+    {: note}
 
 ### Results
 
@@ -231,7 +236,8 @@ Another way to discover a node based on its node ID is by following these steps:
 
 The tool refreshes, and shifts focus to the dialog node with the node ID that you specified. If the node ID is for a slot, a Found or Not found slot condition, a slot handler, or a conditional response, then the node in which the slot or conditional response is defined gets focus and the corresponding modal is displayed.
 
-**Note**: If you still cannot find the node, you can export the dialog skill and use a JSON editor to search the skill JSON file.
+If you still cannot find the node, you can export the dialog skill and use a JSON editor to search the skill JSON file.
+{: tip}
 
 ## Copying a dialog node
 {: #copy-node}

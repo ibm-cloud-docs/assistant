@@ -1,13 +1,16 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2015, 2019
 lastupdated: "2018-12-17"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -68,7 +71,7 @@ Here's how you will implement your assistant:
 
 - **Integrate your assistant.** Create a channel integration to deploy the configured assistant directly to a social media or messaging channel.
 
-  Your deployed assistant is hosted by {{site.data.keyword.cloud_notm}}, the IBM cloud computing platform. (See [Platform overview ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/overview/ibm-cloud.html#overview) for more information.)
+  Your deployed assistant is hosted by {{site.data.keyword.cloud_notm}}, the IBM cloud computing platform. (See [Platform overview ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/overview/ibm-cloud.html#overview) for more information.)
 
 Read more about these implementation steps by following these links:
 
@@ -80,7 +83,7 @@ Read more about these implementation steps by following these links:
 
 ## Browser support
 
-The {{site.data.keyword.conversationshort}} service tool requires the same level of browser software as is required by {{site.data.keyword.Bluemix_notm}}. See the {{site.data.keyword.Bluemix_notm}} [Prerequisites ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/overview/prereqs.html#browsers){: new_window} topic for details.
+The {{site.data.keyword.conversationshort}} service tool requires the same level of browser software as is required by {{site.data.keyword.Bluemix_notm}}. See the {{site.data.keyword.Bluemix_notm}} [Prerequisites ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/overview/prereqs.html#browsers){: new_window} topic for details.
 
 ## Language support
 
@@ -89,7 +92,7 @@ Language support by feature is detailed in the [Supported languages](lang-suppor
 ## Terms and notices
 {: #notices}
 
-See [IBM Cloud Terms and Notices ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/overview/terms-of-use/notices.html) for information about the terms of service.
+See [IBM Cloud Terms and Notices ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/overview/terms-of-use/notices.html) for information about the terms of service.
 
 ## Next steps
 

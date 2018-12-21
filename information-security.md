@@ -1,13 +1,16 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-17"
+  years: 2015, 2019
+lastupdated: "2018-12-21"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -30,8 +33,8 @@ The products, services, and other capabilities described herein are not suitable
 
 If you need to request GDPR support for {{site.data.keyword.cloud}} {{site.data.keyword.watson}} resources that are created
 
-- In the European Union, see [Requesting support for IBM Cloud Watson resources created in the European Union![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/watson/getting-started-gdpr-sar.html#request-EU){: new_window}.
-- Outside the European Union, see [Requesting support for resources outside the European Union![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/watson/getting-started-gdpr-sar.html#request-non-EU){: new_window}.
+- In the European Union, see [Requesting support for IBM Cloud Watson resources created in the European Union![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/services/watson/getting-started-gdpr-sar.html#request-EU){: new_window}.
+- Outside the European Union, see [Requesting support for resources outside the European Union![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/services/watson/getting-started-gdpr-sar.html#request-non-EU){: new_window}.
 
 ## European Union General Data Protection Regulation (GDPR)
 {: #gdpr}
@@ -65,11 +68,12 @@ curl -X POST -u "apikey:3Df... ...Y7Pc9"
 ```
 {: codeblock}
 
-**Note**: The `customer_id` string cannot include the semicolon (`;`) or equal sign (`=`) characters. You are responsible for ensuring that each `customer ID` property is unique across your customers.
+The `customer_id` string cannot include the semicolon (`;`) or equal sign (`=`) characters. You are responsible for ensuring that each `customer ID` property is unique across your customers.
+{: note}
 
 You can pass multiple **customer ID** values with semicolon-separated `customer_id={value}` pairs. For example: `'X-Watson-Metadata: customer_id=abc;customer_id=xyz'`
 
-If you add a search skill to an assistant, user input that is submitted to the assistant is passed to the {{site.data.keyword.discoveryshort}} service as a search query. If the {{site.data.keyword.conversationshort}} integration provides a customer ID, then the resulting /message API request includes the customer ID in the header, and the ID is passed through to the {{site.data.keyword.discoveryshort}} /query API request. To delete any query data that is associated with a specific customer, you must send a delete request directly to the {{site.data.keyword.discoveryshort}} service instance that is linked your the assistant. See the {{site.data.keyword.discoveryshort}} [information security](https://console.bluemix.net/docs/services/discovery/information-security.html#gdpr-discovery) topic for details.
+If you add a search skill to an assistant, user input that is submitted to the assistant is passed to the {{site.data.keyword.discoveryshort}} service as a search query. If the {{site.data.keyword.conversationshort}} integration provides a customer ID, then the resulting /message API request includes the customer ID in the header, and the ID is passed through to the {{site.data.keyword.discoveryshort}} /query API request. To delete any query data that is associated with a specific customer, you must send a delete request directly to the {{site.data.keyword.discoveryshort}} service instance that is linked your the assistant. See the {{site.data.keyword.discoveryshort}} [information security](https://cloud.ibm.com/docs/services/discovery/information-security.html#gdpr-discovery) topic for details.
 
 ### Querying user data
 {: #query_customer_id}

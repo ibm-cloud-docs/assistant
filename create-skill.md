@@ -1,13 +1,16 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-17"
+  years: 2015, 2019
+lastupdated: "2018-12-21"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -51,7 +54,8 @@ You use the {{site.data.keyword.conversationshort}} tool to build skills. Follow
 
 1.  Click the **Skills** tab.
 
-    **Note**: If you created or were given developer role access to any workspaces that were built with the generally available version of the  {{site.data.keyword.conversationshort}} service (formerly Watson Conversation), you will see them listed here as dialog skills.
+    If you created or were given developer role access to any workspaces that were built with the generally available version of the  {{site.data.keyword.conversationshort}} service (formerly Watson Conversation), you will see them listed here as dialog skills.
+    {: note}
 
 1.  Click **Create new**.
 
@@ -117,7 +121,8 @@ You can add one skill to an assistant. You must open the assistant tile and add 
 
     Click the skill that you want to add from the available skills that are displayed.
 
-    **Note**: If you are adding an existing dialog skill and created or were given developer role access to any workspaces that were built with the generally available version of the  {{site.data.keyword.conversationshort}} service (formerly Watson Conversation), you will see them listed here as dialog skills.
+    If you are adding an existing dialog skill and created or were given developer role access to any workspaces that were built with the generally available version of the {{site.data.keyword.conversationshort}} service (formerly Watson Conversation), you will see them listed here as dialog skills.
+    {: note}
 
 ## Downloading a dialog skill
 {: #download-skill}
@@ -177,9 +182,10 @@ To share a dialog skill with other people, you must give them access to the serv
     - **Services**: {{site.data.keyword.conversationshort}}
     - **Assign platform access roles**: Operator
 
-    For more information about platform management roles, see [IAM access ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/iam/users_roles.html). (Service access roles are not leveraged by {{site.data.keyword.conversationshort}} by default.)
+    For more information about platform management roles, see [IAM access ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/iam/users_roles.html). (Service access roles are not leveraged by {{site.data.keyword.conversationshort}} by default.)
 
-    **Note**: For older instances that are managed by Cloud Foundry, you must expand the *Cloud Foundry access* section, choose your organization, and then assign the person to the **Developer** space role.
+    For older instances that are managed by Cloud Foundry, you must expand the *Cloud Foundry access* section, choose your organization, and then assign the person to the **Developer** space role.
+    {: note}
 
 1.  Click **Invite users**.
 

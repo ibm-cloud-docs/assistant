@@ -1,13 +1,16 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-05"
+  years: 2015, 2019
+lastupdated: "2018-12-21"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -214,7 +217,8 @@ If you want a single text response to include multiple lines separated by carria
 
 1.  For the response variation setting, choose **multiline**.
 
-    **Note**: If you are using a dialog skill that was created before support for rich response types was added to the service, then you might not see the *multiline* option. Add a second text response type to the current node response. This action changes how the response is represented in the underlying JSON. As a result, the multiline option becomes available. Choose the multiline variation type. Now, you can delete the second text response type that you added to the response.
+    If you are using a dialog skill that was created before support for rich response types was added to the service, then you might not see the *multiline* option. Add a second text response type to the current node response. This action changes how the response is represented in the underlying JSON. As a result, the multiline option becomes available. Choose the multiline variation type. Now, you can delete the second text response type that you added to the response.
+    {: note}
 
 When the response is shown to the user, both response variations are displayed, one on each line, like this:
 
@@ -328,7 +332,11 @@ To add a rich response, complete the following steps:
 
         For example: `https://www.example.com/assets/common/logo.png`.
 
-        If you want to display an image title and description above the embedded image in the response, then add them in the fields provided. **Note**: Slack integrations require a title. Other integration channels ignore titles or descriptions.
+        If you want to display an image title and description above the embedded image in the response, then add them in the fields provided.
+
+        Slack integrations require a title. Other integration channels ignore titles or descriptions.
+        {: note}
+
     - **Option**. Complete the following steps:
 
       1.  Click **Add option**.
@@ -337,8 +345,15 @@ To add a rich response, complete the following steps:
 
           Specify a value that you know will trigger the correct intent when it is submitted. For example, it might be a user example from the training data for the intent.
       1.  Repeat the previous steps to add more options to the list.
-      1.  Add a list introduction in the **Title** field. The title can ask the user to pick from the list of options. **Note**: Some integration channels do not display the title.
-      1.  Optionally, add additional information in the **Description** field. If specified, the description is displayed after the title and before the option list. **Note**: Some integration channels do not display the description.
+      1.  Add a list introduction in the **Title** field. The title can ask the user to pick from the list of options.
+
+          Some integration channels do not display the title.
+          {: note}
+
+      1.  Optionally, add additional information in the **Description** field. If specified, the description is displayed after the title and before the option list.
+
+      Some integration channels do not display the description.
+      {: note}
 
       For example, you can construct a response like this:
 
@@ -389,7 +404,8 @@ To add a rich response, complete the following steps:
 
     You might want to add multiple response types to a single response to provide a richer answer to a user query. For example, if a user asks for store locations, you could show a map and display a button for each store location that the user can click to get address details. To build that type of response, you can use a combination of image, options, and text response types. Another example is using a text response type before a pause response type so you can warn users before pausing the dialog.
 
-    **Note**: You cannot add more than 5 response types to a single response. Meaning, if you define three conditional responses for a dialog node, each conditional response can have no more than 5 response types added to it.
+    You cannot add more than 5 response types to a single response. Meaning, if you define three conditional responses for a dialog node, each conditional response can have no more than 5 response types added to it.
+    {: note}
 
 1.  If you added more than one response type, you can click the **Move** up or down arrows to arrange the response types in the order you want the service to process them.
 
@@ -435,11 +451,13 @@ After making the specified response, you can instruct the service to do one of t
 - **Wait for user input**: The service waits for the user to provide new input that the response elicits. For example, the response might ask the user a yes or no question. The dialog will not progress until the user provides more input.
 - **Skip user input**:  Use this option when you want to bypass waiting for user input and go directly to the first child node of the current node instead.
 
-  **Note**: The current node must have at least one child node for this option to be available.
+  The current node must have at least one child node for this option to be available.
+  {: note}
 
 - **Jump to another dialog node**: Use this option when you want the conversation to go directly to an entirely different dialog node. You can use a *Jump to* action to route the flow to a common dialog node from multiple locations in the tree, for example.
 
-  **Note**: The target node that you want to jump to must exist before you can configure the jump to action to use it.
+  The target node that you want to jump to must exist before you can configure the jump to action to use it.
+  {: note}
 
 ### Configuring the Jump to action
 {: #jump-to-config}
@@ -454,7 +472,8 @@ If you choose to jump to another node, specify when the target node is processed
 
     Targeting the condition is useful for chaining the conditions of dialog nodes. For example, you might want to first check whether the input contains an intent, such as `#turn_on`, and if it does, you might want to check whether the input contains entities, such as `@lights`, `@radio`, or `@wipers`. Chaining conditions helps to structure larger dialog trees.
 
-    **Note**: Avoid choosing this option when configuring a jump-to from a conditional response that goes to a node situated above the current node in the dialog tree. Otherwise, you can create an infinite loop. If the service jumps to the earlier node and checks its condition, it is likely to return false because the same user input is being evaluated that triggered the current node last time through the dialog. The service will go to the next sibling or back to root to check the conditions on those nodes, and will likely end up triggering this node again, which means the process will repeat itself.
+    Avoid choosing this option when configuring a jump-to from a conditional response that goes to a node situated above the current node in the dialog tree. Otherwise, you can create an infinite loop. If the service jumps to the earlier node and checks its condition, it is likely to return false because the same user input is being evaluated that triggered the current node last time through the dialog. The service will go to the next sibling or back to root to check the conditions on those nodes, and will likely end up triggering this node again, which means the process will repeat itself.
+    {: note}
 
 - **Response**: If the statement targets the response section of the selected dialog node, it is run immediately. That is, the system does not evaluate the condition of the selected dialog node; it processes the response of the selected dialog node immediately.
 

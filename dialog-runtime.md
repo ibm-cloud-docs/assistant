@@ -1,13 +1,16 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-14"
+  years: 2015, 2019
+lastupdated: "2018-12-21"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -83,7 +86,8 @@ In the resulting API /message response, the text response is formatted as follow
 }
 ```
 
-**Note**: The following `output` object format is supported for backwards compatibility. Any workspaces that specify a text response by using this format will continue to function properly. With the introduction of rich response types, the `output.text` structure was augmented with the `output.generic` structure to facilitate supporting other types of responses in addition to text. Use the new format when you create new nodes to give yourself more flexibility, because you can subsequently change the response type, if needed.
+The following `output` object format is supported for backwards compatibility. Any workspaces that specify a text response by using this format will continue to function properly. With the introduction of rich response types, the `output.text` structure was augmented with the `output.generic` structure to facilitate supporting other types of responses in addition to text. Use the new format when you create new nodes to give yourself more flexibility, because you can subsequently change the response type, if needed.
+{: note}
 
   ```json
   {
@@ -306,7 +310,8 @@ For more information about slots, see [Gathering information with slots](dialog-
           ```
           {: codeblock}
 
-      **Note**: There is currently no way to use the context editor to define context variables that are set during this phase of dialog node evaluation. You must use the JSON editor instead. For more information about using the JSON editor, see [Context variables in the JSON editor](dialog-runtime.html#context-var-json).
+      There is currently no way to use the context editor to define context variables that are set during this phase of dialog node evaluation. You must use the JSON editor instead. For more information about using the JSON editor, see [Context variables in the JSON editor](dialog-runtime.html#context-var-json).
+      {: note}
 
       ![Shows how to access the JSON editor associated with a slot condition.](images/contextvar-json-slot-condition.png)
 
@@ -349,7 +354,8 @@ To define a context variable in JSON format, complete the following steps:
 
 1.  Click to open the dialog node to which you want to add the context variable.
 
-    **Note**: Any existing context variable values that are defined for this node are displayed in a set of corresponding **Variable** and **Value** fields. If you do not want them to be displayed in the edit view of the node, you must close the context editor. You can close the editor from the same menu that is used to open the JSON editor; the following steps describe how to access the menu.
+    Any existing context variable values that are defined for this node are displayed in a set of corresponding **Variable** and **Value** fields. If you do not want them to be displayed in the edit view of the node, you must close the context editor. You can close the editor from the same menu that is used to open the JSON editor; the following steps describe how to access the menu.
+    {: note}
 
 1.  Click the **Options**  ![Advanced response](images/kabob.png) icon that is associated with the response, and then click **Open JSON editor**.
 
@@ -778,7 +784,10 @@ This section describes solutions to situations that you might encounter when usi
   ```
   {: codeblock}
 
-  **Note**: You cannot include SpEL expressions or shorthand syntax in the text responses that you add. In fact, you cannot use shorthand syntax at all. Instead, you must build the message by concatenating the text strings and full SpEL expression syntax together to form the full response. For example, use the following syntax to include a context variable in a text response that you would normally specify as, `What can I do for you, $username?`:
+  You cannot include SpEL expressions or shorthand syntax in the text responses that you add. In fact, you cannot use shorthand syntax at all. Instead, you must build the message by concatenating the text strings and full SpEL expression syntax together to form the full response.
+  {: note}
+  
+  For example, use the following syntax to include a context variable in a text response that you would normally specify as, `What can I do for you, $username?`:
 
   ```bash
   <? (returning_from_digression)? "Where were we, " +
@@ -942,7 +951,8 @@ To enable disambiguation, complete the following steps:
 
 Choose nodes that serve as the root of a distinct branch of the dialog to be disambiguation choices. These can include nodes that are children of other nodes. The key is for the node to condition on some distinct value or values that distinguish it from everything else.
 
-**Note**: The tool can recognize intent conflicts, which occur when two or more intents have user examples that overlap. [Resolve any such conflicts](intents.html#conflict-intents) first to ensure that the intents themselves are as unique as possible, which helps the service attain better intent confidence scores.
+The tool can recognize intent conflicts, which occur when two or more intents have user examples that overlap. [Resolve any such conflicts](intents.html#conflict-intents) first to ensure that the intents themselves are as unique as possible, which helps the service attain better intent confidence scores.
+{: note}
 
 Keep in mind:
 

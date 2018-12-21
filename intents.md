@@ -1,13 +1,16 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-11-27"
+  years: 2015, 2019
+lastupdated: "2018-12-21"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -117,7 +120,8 @@ Use the {{site.data.keyword.conversationshort}} tool to create intents.
     "first, i want to know if i am already registered."
     ```
 
-    **Note**: The file cannot be larger than 20 MB.
+    The file cannot be larger than 20 MB.
+    {: note}
 
     1.  Add at least 5 user examples that illustrate the full range of typical utterances that you anticipate users might say to trigger this intent.
 
@@ -181,7 +185,8 @@ Use the {{site.data.keyword.conversationshort}} tool to create intents.
 
     ![Screen capture showing intent definition](images/define_intent_entity.png)
 
-    **Note**: Currently, you can only directly reference synonym entities that you define (pattern values are ignored). You cannot use [system entities](system-entities.html).
+    Currently, you can only directly reference synonym entities that you define (pattern values are ignored). You cannot use [system entities](system-entities.html).
+    {: note}
 
     **Important**: If you choose to reference an entity as an intent example (for example, `@PhoneModelName`) *anywhere* in your training data it cancels out the value of using a direct reference (for example, *Galaxy S8*) in an intent example anywhere else. All intents will then use the entity-as-an-intent-example approach. You cannot apply this approach for a specific intent only.
 
@@ -306,7 +311,7 @@ To resolve conflicts:
 
     ![Conflicting intent example](images/ConflictIntent4.png)
 
-    **NOTE**: Additional user examples are training examples that are not necessarily in conflict, but are similar to the examples in conflict. They are shown to provide context to help resolve the conflict.
+    Additional user examples are training examples that are not necessarily in conflict, but are similar to the examples in conflict. They are shown to provide context to help resolve the conflict.
 
 1.  Select the examples `Cancel  my order` and `I want to cancel my order`, and move them from the `#cancel` intent to the `#eCommerce_Cancel_Product_Order` intent:
 
@@ -314,7 +319,8 @@ To resolve conflicts:
 
 1.  When deciding where to place an example, look for the intent that has synonymous, or nearly synonymous examples.
 
-    **NOTE**: Keep each intent as distinct and focused on one goal as possible. If you have two intents with multiple user examples that overlap, maybe you don't need two separate intents. You can move or delete user examples that don't directly overlap into one intent, and then delete the other.
+    Keep each intent as distinct and focused on one goal as possible. If you have two intents with multiple user examples that overlap, maybe you don't need two separate intents. You can move or delete user examples that don't directly overlap into one intent, and then delete the other.
+    {: tip}
 
     Select the other examples in the `#cancel` intent, and delete them:
 
@@ -324,7 +330,7 @@ To resolve conflicts:
 
     ![Conflicting intent example](images/ConflictIntent7.png)
 
-    **NOTE**: The *Reset* option allows you to start over with moving the conflict example among intents. *Cancel* returns you to the intent page.
+    The *Reset* option allows you to start over with moving the conflict example among intents. *Cancel* returns you to the intent page.
 
 You have resolved a conflict, and can continue your review of other intents with conflicts.
 

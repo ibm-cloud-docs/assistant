@@ -1,13 +1,16 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-14"
+  years: 2015, 2019
+lastupdated: "2018-12-21"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -58,7 +61,7 @@ Using slots produces a more natural dialog flow between the user and the service
 
 1.  From the dialog node edit view, click **Customize**, and then click the toggle next to **Slots** to turn it **On**.
 
-    **Note**: For more information about the **Prompt for everything** checkbox, see [Asking for everything at once](dialog-slots.html#slots-prompt-for-everything).
+    For more information about the **Prompt for everything** checkbox, see [Asking for everything at once](dialog-slots.html#slots-prompt-for-everything).
 
 1.  **Add a slot for each unit of required information**. For each slot, specify these details:
 
@@ -68,7 +71,8 @@ Using slots produces a more natural dialog flow between the user and the service
 
       For example, if the entity has regular expression patterns defined for it, then after adding the entity name, append `.literal` to it. After you choose `@email` from the list of defined entities, for example, edit the **Check for** field to contain `@email.literal`. By adding the `.literal` property, you indicate that you want to capture the exact text that was entered by the user and was identified as an email address based on its pattern. Make this syntax change directly in the **Check for** field.
 
-      **Warning** If you want to apply a complex expression to the value before you save the value, then you can open the JSON editor to define the complex SpEL expression. However, the complex expression that you define in the JSON editor will not be reflected in the **Check for** field when you exit the JSON editor. And if you click the **Check for** field to give the field focus at any time after you define the complex expression for the field, then the expression is removed.
+      If you want to apply a complex expression to the value before you save the value, then you can open the JSON editor to define the complex SpEL expression. However, the complex expression that you define in the JSON editor will not be reflected in the **Check for** field when you exit the JSON editor. And if you click the **Check for** field to give the field focus at any time after you define the complex expression for the field, then the expression is removed.
+      {: important}
 
       Avoid checking for context variable values. Because the value you check for is also the value that is saved, when you use a context variable in the condition, it can lead to unexpected behavior when it gets used in the context. Do not try to use an optional slot to display a response only if a given context variable is set. If the variable is set, then the slot Found response that you define for the optional slot will be displayed along with the response that is returned by every other slot, over and over again.
       {: tip}

@@ -1,16 +1,16 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-07"
+  years: 2015, 2019
+lastupdated: "2018-12-21"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:note: .note}
 {:deprecated: .deprecated}
 {:important: .important}
-{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -30,11 +30,12 @@ If you already use the {{site.data.keyword.discoveryshort}} service, you can min
 
 However, you do not need to have a {{site.data.keyword.discoveryshort}} service instance. If you choose to create a search skill, a Lite plan instance is provisioned for you. You can then create a collection by choosing a data source, and the configuration to use to ingest documents from the data source into the collection. Lastly, configure your search skill to search this collection to find answers to queries that are typically asked by your customers.
 
-**Attention**: A Lite plan instance of {{site.data.keyword.discoveryshort}} is provisioned. This is true and cannot be changed, even if you typically use Premium or Plus plan instances of Watson services.
+A Lite plan instance of {{site.data.keyword.discoveryshort}} is provisioned. This is true and cannot be changed, even if you typically use Premium or Plus plan instances of Watson services.
+{: important}
 
 You can add one search skill to an assistant.
 
-The search skill searches for information from a data collection that you create by using the {{site.data.keyword.discoveryshort}} service. To read more about {{site.data.keyword.discoveryshort}}, see the [product documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/discovery/index.html).
+The search skill searches for information from a data collection that you create by using the {{site.data.keyword.discoveryshort}} service. To read more about {{site.data.keyword.discoveryshort}}, see the [product documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/services/discovery/index.html).
 
 The {{site.data.keyword.discoveryfull}} service is triggered in the following ways:
 
@@ -92,7 +93,8 @@ The remaining steps differ depending on whether you have access to an existing {
 
     An instance of the {{site.data.keyword.discoveryshort}} service is created for you, and a configuration page opens to the new {{site.data.keyword.discoveryshort}} service instance.
 
-    **Attention**: A Lite plan instance of the service is provisioned in {{site.data.keyword.Bluemix_notm}}, no matter what {{site.data.keyword.conversationshort}} service plan you use.
+    A Lite plan instance of the service is provisioned in {{site.data.keyword.Bluemix_notm}}, no matter what {{site.data.keyword.conversationshort}} service plan you use.
+    {: important}
 
 1.  Review the terms and conditions for using the instance, and then click **Accept** to continue.
 
@@ -101,7 +103,8 @@ The remaining steps differ depending on whether you have access to an existing {
 ## Create a data collection
 {: #create-collection}
 
-**Attention**: Do not try to add the pre-enriched data source named *Watson Discovery News* to your instance. It is not a data type that can be searched from {{site.data.keyword.conversationshort}}.
+Do not try to add the pre-enriched data source named *Watson Discovery News* to your instance. It is not a data type that can be searched from {{site.data.keyword.conversationshort}}.
+{: important}
 
 1.  To create a {{site.data.keyword.discoveryshort}} collection, do one of the following things:
 
@@ -110,7 +113,7 @@ The remaining steps differ depending on whether you have access to an existing {
         1.  Pick a data source type.
         1.  Provide the required information for the data source you choose, and then click **Connect**.
 
-            See [Connecting to data sources ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/discovery/connect.html#sources) for more details.
+            See [Connecting to data sources ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/services/discovery/connect.html#sources) for more details.
         1.  Indicate the frequency with which you want data from the data source to be synchronized with the collection you are creating in {{site.data.keyword.discoveryshort}}.
         1.  Specify the information that you want to extract from the data source and include in your {{site.data.keyword.discoveryshort}} collection.
 
@@ -130,11 +133,12 @@ The remaining steps differ depending on whether you have access to an existing {
         1.  First you define the collection, and then you upload the documents. Provide the following information:
 
             - Collection name. The name must be unique for this service instance.
-            - Configuration. You can choose to use a default configuration template or a saved configuration. See [Configuring your service ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/discovery/building.html) for more information about configurations.
-            - Language. Select the language of the files that you will add to this collection. See [Language support ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/discovery/language-support.html) for information about the languages supported by {{site.data.keyword.discoveryshort}}.
+            - Configuration. You can choose to use a default configuration template or a saved configuration. See [Configuring your service ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/services/discovery/building.html) for more information about configurations.
+            - Language. Select the language of the files that you will add to this collection. See [Language support ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/services/discovery/language-support.html) for information about the languages supported by {{site.data.keyword.discoveryshort}}.
         1.  Upload documents.
 
-            **Note**: Supported file types include PDF, HTML, JSON, and DOC files. See [Adding content ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/discovery/adding-content.html) for more details.
+            Supported file types include PDF, HTML, JSON, and DOC files. See [Adding content ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/services/discovery/adding-content.html) for more details.
+            {: note}
 
             No ongoing synchronization of uploaded documents is available. If you want to pick up changes made to a document, upload a later version of the document.
 
@@ -224,7 +228,7 @@ The following table provides collection fields you can try as you get started. T
 | Uploaded documents | enriched_text.concepts.text | text | None |
 | Box                | name | description | listing_url |
 
-See [Configuring your service > Adding enrichments ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/discovery/building.html#adding-enrichments) to understand where some of the collection fields, such as `enriched_text.concepts.text`, come from.
+See [Configuring your service > Adding enrichments ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/services/discovery/building.html#adding-enrichments) to understand where some of the collection fields, such as `enriched_text.concepts.text`, come from.
 
 ### Adding the skill to an assistant
 {: #add-search-to-assistant}
@@ -243,4 +247,5 @@ One search skill can be used by more than one assistant.
 
 Configure at least one test integration channel. Test the skill by entering queries that trigger the search. Ensure that the search is being triggered properly, and is returning relevant results.
 
-**Attention**: The shareable link integration does not work currently for assistants with a search skill.
+The shareable link integration does not work currently for assistants with a search skill.
+{: important}

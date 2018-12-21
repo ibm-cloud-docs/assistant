@@ -1,13 +1,16 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-17"
+  years: 2015, 2019
+lastupdated: "2018-12-21"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -82,7 +85,7 @@ Similarly, you can filter on intents or entities sent as part of the request, as
 
 `request.intents:intent::hello`
 
-**Note**: Filtering on intents operates on all detected intents. To filter only on the detected intent with the highest confidence, you can use the `response.top_intent` shorthand syntax, as in this example:
+Filtering on intents operates on all detected intents. To filter only on the detected intent with the highest confidence, you can use the `response.top_intent` shorthand syntax. For example:
 
 `response.top_intent::goodbye`
 

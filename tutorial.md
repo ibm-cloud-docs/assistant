@@ -1,13 +1,16 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-10-01"
+  years: 2015, 2019
+lastupdated: "2018-12-21"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -819,7 +822,8 @@ Now that you have built a more sophisticated version of the assistant, return to
     The page opens in a new tab.
 1.  Repeat a few of the test utterances that you submited to the "Try it out pane" to see how the assistant behaves in a real integration.
 
-    **Note**: Unlike when you send test utterances to the service from the "Try it out" pane, standard usage charges apply to API calls that result from utterances that are submited to the chat widget.
+    Unlike when you send test utterances to the service from the "Try it out" pane, standard usage charges apply to API calls that result from utterances that are submited to the chat widget.
+    {: note}
 
 ## Next steps
 {: #deploy}

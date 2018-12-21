@@ -1,12 +1,15 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-17"
+  years: 2015, 2019
+lastupdated: "2018-12-21"
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -52,12 +55,35 @@ The following new features and changes to the service are available.
 
 - **London data center**: You can now create {{site.data.keyword.conversationshort}} service instances that are hosted in the London data center without syndication. See [Data centers](services-information.html#regions) for more details.
 
+- **Dialog node limit change**: The dialog node limit was temporarily changed from 100,000 to 500 for new Standard plan instances. This limit has since been reversed. If you created a Standard plan instance between 10 December and 12 December 2018, the limits might continue to be in effect for the dialogs in your skills. The lower limits will be removed from all impacted instances in January. If you need to have the lower limit lifted before then, open a suppot ticket.
+
 ### 1 December 2018
 {: #1December2018}
 
-- **Dialog node limit changes**: The dialog node limit decreased from 25,000 to 100 for Lite plans.
+- **Dialog node limit changes**: The dialog node limit decreased for the following service plans:
 
-   Users of service instances that were created before the limit change have 6 months (until 1 June 2019) to upgrade their plan, or edit the dialogs in the skills in the existing service instances to meet the new limit requirements. After the grace period ends, adding new dialog nodes to a dialog in a skill in an existing Lite plan service instance will be prohibited until the dialog complies with the limits. Existing dialog nodes will not be removed.
+  <table>
+  <caption>Dialog node limit changes</caption>
+    <tr>
+      <th>Plan</th>
+      <th>Old limit</th>
+      <th>New limit</th>
+    </tr>
+    <tr>
+      <td>Standard</td>
+      <td>100,000</td>
+      <td>500</td>
+    </tr>
+    <tr>
+       <td>Lite</td>
+       <td>25,000</td>
+       <td>100</td>
+    </tr>
+  </table>
+
+    Users of service instances that were created before the limit change have 6 months to upgrade to a Plus or Premium plan, or edit the dialogs in the skills in the existing service instances to meet the new limit requirements. After the grace period ends, adding new dialog nodes to a dialog in a skill in an existing Lite or Standard plan service instance will be prohibited until the dialog complies with the limits. Existing dialog nodes will not be removed.
+
+    See [Troubleshooting skill import issues](create-skill.html#import-errors) for information about how to edit skills that you want to continue using.
 
    To determine the number of dialog nodes in a dialog skill, do one of the following things:
 
@@ -136,7 +162,8 @@ The following new features and changes to the service are available.
 
 - **User-based Premium plan**: The Premium plan now bases its billing on the number of active unique users. If you choose to use this plan, design any custom applications that you build to properly identify the users who generate /message API calls. See [User-based plans](services-information.html#user-based-plans) for more information.
 
-  **Note**: Existing Premium plan service instances are not impacted by this change; they continue to use API-based billing methods. Only existing Premium plan users will see the API-based plan listed as the *Premium (API)* plan option.
+  Existing Premium plan service instances are not impacted by this change; they continue to use API-based billing methods. Only existing Premium plan users will see the API-based plan listed as the *Premium (API)* plan option.
+  {: note}
 
   See {{site.data.keyword.conversationshort}} [service plan options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/catalog/services/watson-assistant-formerly-conversation){: new_window} for more information about all available service plans.
 
@@ -164,7 +191,8 @@ The following new features and changes to the service are available.
 
   - **New major API version**: A V2 version of the API is available. This version provides access to methods you can use to interact with an assistant at run time. No more passing context with each API call; the session state is managed for you as part of the assistant layer.
   
-    **Attention**: What is presented in the tooling as a dialog skill is effectively a wrapper for a V1 workspace. There are currently no API methods for authoring skills and assistants with the V2 API. However, you can continue to use the V1 API for authoring workspaces. See [API Overview](api-overview.html) for more details.
+    What is presented in the tooling as a dialog skill is effectively a wrapper for a V1 workspace. There are currently no API methods for authoring skills and assistants with the V2 API. However, you can continue to use the V1 API for authoring workspaces. See [API Overview](api-overview.html) for more details.
+    {: note}
 
   - **Switching data sources**: It is now easier to improve the model in one skill with user conversation logs from a different skill. You do not need to rely on deployment IDs, but can simply pick the name of the assistant to which a skill was added and deployed to use its data. See [Improving across assistants](logs.html#deploy_id).
 
@@ -232,7 +260,8 @@ The following new features and changes to the service are available.
 
 - **Contextual entities (Beta)**: Contextual entities are entities that you define by labeling mentions of the entity type that occur in intent user examples. These entity types teach the service not only terms of interest, but also the context in which terms of interest typically appear in user utterances, enabling the service to recognize never-seen-before entity mentions based solely on how they are referenced in user input. For example, if you annotate the intent user example, "I want a flight to Boston" by labeling "Boston" as a @destination entity, then the service can recognize "Chicago" as a @destination in a user input that says, "I want a flight to Chicago." This feature is currently available for English only. See [Adding contextual entities](entities.html#create-annotation-based) for more information.
 
-  **Note**: When you access the tool with an Internet Explorer web browser, you cannot label entity mentions in intent user examples nor edit user example text.
+  When you access the tool with an Internet Explorer web browser, you cannot label entity mentions in intent user examples nor edit user example text.
+  {: note}
 
 - **Entity recommendations**: The service can now recommend synonyms for your entity values. The recommender finds related synonyms based on contextual similarity extracted from a vast body of existing information, including large sources of written text, and uses natural language processing techniques to identify words similar to the existing synonyms in your entity value. For more information see [Synonyms](entities.html#synonyms).
 
@@ -288,7 +317,7 @@ The following new features and changes to the service are available.
 
   `Contact us at` [ibm.com](https://www.ibm.com){: new_window}.
 
-    **Note**: As before, you must use the appropriate type of syntax in your responses for the client application to which you will deploy the conversation. Only use HTML syntax if your client application can interpret it properly. Other integration channels might expect other formats.
+    Remember, you must use the appropriate type of syntax in your responses for the client application to which you will deploy the conversation. Only use HTML syntax if your client application can interpret it properly. Other integration channels might expect other formats.
 
 - **Deployment changes**: The **Test in Slack** option was removed.
 
@@ -403,7 +432,8 @@ The following new features and changes to the service are available.
 
 - **Intent examples can directly reference entities**: You can now specify an entity reference directly in an intent example. That entity reference, along with all its values or synonyms, is used by the {{site.data.keyword.conversationshort}} service classifier for training the intent. For more information, see [*Entity as example*](intents.html#entity-as-example) in the [Intents](intents.html) topic.
 
-  **Note**: Currently, you can only directly reference closed entities that you define. You cannot directly reference [pattern entities](entities.html#pattern-entities) or [system entities](system-entities.html).
+  Currently, you can only directly reference closed entities that you define. You cannot directly reference [pattern entities](entities.html#pattern-entities) or [system entities](system-entities.html).
+  {: note}
 
 ### 8 November 2017
 {: #8November2017}
@@ -423,7 +453,8 @@ The following new features and changes to the service are available.
 
     - The interface you use to add conditional responses to a node has been redesigned to make it easier to list each condition and its response. To add node-level conditional responses, click **Customize**, and then enable the **Multiple responses** option.
 
-     **Note**: The **Multiple responses** toggle sets the feature on or off for the node-level response only. It does not control the ability to define conditional responses for a slot. The slot multiple response setting is controlled separately.
+     The **Multiple responses** toggle sets the feature on or off for the node-level response only. It does not control the ability to define conditional responses for a slot. The slot multiple response setting is controlled separately.
+     {: note}
 
     - To keep the page where you edit a slot simple, you now select menu options to a.) add a condition that must be met for the slot to be processed, and b.) add conditional responses for the Found and Not found conditions for a slot. Unless you choose to add this extra functionality, the slot condition and multiple responses fields are not displayed, which declutters the page and makes it easier to use.
 
@@ -571,7 +602,11 @@ The following new features and changes to the service are available.
 - **Learn**: A new *Learn about {{site.data.keyword.conversationfull}}* page is available that provides getting started information and links to service documentation and other useful resources. To open the page, click the ![i for information.](images/info.png) icon in the page header.
 - **Bulk export and delete**: You can now simultaneously export a number of intents or entities to a CSV file, so you can then import and reuse them for another {{site.data.keyword.conversationshort}} application. You can also simultaneously select a number of entities or intents for deletion in bulk.
 - **Updates to Korean**: Korean tokenizers have been updated to address informal language support. IBM continues to work on improvements to entity recognition and classification.
-- **Emoji support**: Emojis added to intent examples, or as entity values, will now be correctly classified/extracted. **Note**: Only emojis that are included in your training data will be correctly and consistently identified; emoji support may not correctly classify similar emojis with different color tones or other variations.
+- **Emoji support**: Emojis added to intent examples, or as entity values, will now be correctly classified/extracted.
+
+  Only emojis that are included in your training data will be correctly and consistently identified; emoji support may not correctly classify similar emojis with different color tones or other variations.
+  {: note}
+
 - **Entity stemming (Beta - English only)**: The fuzzy matching beta feature recognizes entities and matches them based on the stem form of the entity value. For example, this feature correctly recognizes 'bananas' as being similar to 'banana', and 'run' being similar to 'running' as they share a common stem form. For more information, see [Fuzzy matching](entities.html#fuzzy-matching).
 - **Workspace import progress**: When you import a workspace from a JSON file, a tile for the workspace is displayed immediately, in which information about the progress of the import is displayed.
 - **Reduced training time**: Multiple models are now trained in parallel, which noticeably reduces the training time for large workspaces.
