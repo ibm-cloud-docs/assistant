@@ -1,13 +1,16 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-09-19"
+  years: 2015, 2019
+lastupdated: "2018-12-21"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -38,7 +41,8 @@ This tutorial will take approximately 30 minutes to complete.
 
 Before you begin, complete the [Getting Started tutorial](getting-started.html). You will use the {{site.data.keyword.conversationshort}} tutorial skill that you created, and add nodes to the simple dialog that you built as part of the getting started exercise.
 
-**Note**: You can also start with a new dialog skill if you want. Just be sure to create the skill before you begin this tutorial.
+You can also start with a new dialog skill if you want. Just be sure to create the skill before you begin this tutorial.
+{: note}
 
 ## Step 1: Add intents and examples
 {: #add-intent}

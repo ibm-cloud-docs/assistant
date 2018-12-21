@@ -1,13 +1,16 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-17"
+  years: 2015, 2019
+lastupdated: "2018-12-21"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -28,7 +31,7 @@ The assistant is a fully hosted bot that is managed by {{site.data.keyword.cloud
 
 Explore the {{site.data.keyword.conversationshort}} [service plan options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/watson-assistant/pricing/){: new_window}.
 
-Before you create a service instance, decide how you want to organize the resources in your {{site.data.keyword.cloud_notm}} account. If you do not define your own resource group, the **default** resource group is used, and you *cannot* change it later. See [Best practices for organizing resources in a resource group ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/resources/bestpractice_rgs.html#bp_resourcegroups){: new_window} for more details. All users must have a platform access role of Operator. (Service access roles are not leveraged by {{site.data.keyword.conversationshort}}.)
+Before you create a service instance, decide how you want to organize the resources in your {{site.data.keyword.cloud_notm}} account. If you do not define your own resource group, the **default** resource group is used, and you *cannot* change it later. See [Best practices for organizing resources in a resource group ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/resources/bestpractice_rgs.html#bp_resourcegroups){: new_window} for more details. All users must have a platform access role of Operator. (Service access roles are not leveraged by {{site.data.keyword.conversationshort}}.)
 
 ### Plan limits by artifact type
 {: #limits}
@@ -133,11 +136,12 @@ The authentication mechanism used by your service instance impacts how you must 
         ```
         {: codeblock}
 
-        **Note**: When you use any of the Watson SDKs, you can pass the API key and let the SDK manage the lifecycle of the tokens.
+        When you use any of the Watson SDKs, you can pass the API key and let the SDK manage the lifecycle of the tokens.
+        {: note}
 
-        IAM resources cannot be managed with the Cloud Foundry Command Line Interface (CLI). For example, Cloud Foundry CLI commands (beginning with `cf`) that create or manage service instances do not work with instances hosted in locations using IAM. Instead, you must use the {{site.data.keyword.cloud_notm}} CLI and its associated commands. See [Commands for managing resource groups and resources](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#commands-for-managing-resource-groups-and-resources) for more details.
+        IAM resources cannot be managed with the Cloud Foundry Command Line Interface (CLI). For example, Cloud Foundry CLI commands (beginning with `cf`) that create or manage service instances do not work with instances hosted in locations using IAM. Instead, you must use the {{site.data.keyword.cloud_notm}} CLI and its associated commands. See [Commands for managing resource groups and resources](https://cloud.ibm.com/docs/cli/reference/bluemix_cli/bx_cli.html#commands-for-managing-resource-groups-and-resources) for more details.
 
-        See [Authenticating with IAM tokens ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/services/watson/getting-started-iam.html){: new_window} for more information.
+        See [Authenticating with IAM tokens ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/services/watson/getting-started-iam.html){: new_window} for more information.
 
     For examples, see  [Authentication ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant-v2#authentication){: new_window} for your language in the API reference.
 
@@ -160,7 +164,7 @@ You can create {{site.data.keyword.conversationshort}} service instances that ar
 | Washington DC  | us-east    | IAM                 | 14 June 2018 | N/A |
 {: caption="Data center locations" caption-side="top"}
 
-For information about the data centers in which other {{site.data.keyword.cloud_notm}} services are hosted, see [Services by region ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/resources/services_region.html#services_region){: new_window}.
+For information about the data centers in which other {{site.data.keyword.cloud_notm}} services are hosted, see [Services by region ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/resources/services_region.html#services_region){: new_window}.
 
 ## Terms and security
 {: #terms}
@@ -171,7 +175,7 @@ To learn more about service terms and data security, read the following informat
 - [Data security and privacy ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/sla/sladb.nsf/sla/csdsp?OpenDocument){: new_window}
 - [Information security](information-security.html)
 
-See [Platform overview ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/overview/ibm-cloud.html#overview){: new_window} for more information about {{site.data.keyword.cloud_notm}}.
+See [Platform overview ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/overview/ibm-cloud.html#overview){: new_window} for more information about {{site.data.keyword.cloud_notm}}.
 
 ## Still have questions? 
 

@@ -1,13 +1,16 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-17"
+  years: 2015, 2019
+lastupdated: "2018-12-21"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -28,7 +31,7 @@ Create an assistant with the skills it needs to address the business goals of yo
 
 The number of assistants you can create in a single service instance depends on your {{site.data.keyword.conversationshort}} plan.
 
-| Service plan | Assistants per service instance | Integrations per assistant  | Chat session duration |
+| Service plan | Assistants per service instance | Integrations per assistant  | Chat session inactivity period |
 |--------------|--------------------------------:|----------------------------:|-----------------:|
 | Premium      |                             100 |                         100 |       60 minutes |
 | Plus         |                             100 |                         100 |       60 minutes |
@@ -53,7 +56,9 @@ Follow these steps to create an assistant:
 
       The sample assistant is added. You can skip the remaining steps in this procedure.
 
-      **Note**: A sample skill is provided with the sample assistant and is added to your list of skills. If you created a sample skill of the same type already, then the existing skill is associated with this new sample assistant automatically.
+      A sample skill is provided with the sample assistant and is added to your list of skills. If you created a sample skill of the same type already, then the existing skill is associated with this new sample assistant automatically.
+      {: note}
+
     - To create an assistant from scratch, click **Create new**, and then complete the remaining steps in this procedure.
 
 1.  Specify the details for the new assistant:
@@ -66,7 +71,8 @@ Follow these steps to create an assistant:
 
 1.  Add a skill to the assistant by clicking **Add skill**. You can choose to add an existing skill or create a new one.
 
-    **Note**: If you created or were given developer role access to any workspaces that were built with the generally available version of the {{site.data.keyword.conversationshort}} service (formerly Watson Conversation), you will see them listed as existing dialog skills.
+    If you created or were given developer role access to any workspaces that were built with the generally available version of the {{site.data.keyword.conversationshort}} service (formerly Watson Conversation), you will see them listed as existing dialog skills.
+    {: note}
 
     See [Creating a skill](create-skill.html) for more information about how to create a skill.
 

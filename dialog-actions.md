@@ -1,13 +1,16 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-07"
+  years: 2015, 2019
+lastupdated: "2018-12-21"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -43,7 +46,8 @@ When you define the programmatic call, you choose one of the following types:
   - With an authentication token that is specific to the web action, and can be revoked or changed by the action owner at any time
   - By passing your {{site.data.keyword.openwhisk_short}} credentials
 
-**Note**: All of the {{site.data.keyword.openwhisk_short}} action types (web_action and cloud_function or server) incur a cost. The cost of activating the action is charged to the person who owns the credentials that are specified in the action call. See [Pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/openwhisk/learn/pricing){: new_window} for more details. The {{site.data.keyword.openwhisk_short}} service does not distinguish between calls that are made from the "Try it out" pane during testing and calls that are made from an application in production. Therefore, calls made during testing might incur charges.
+All of the {{site.data.keyword.openwhisk_short}} action types (web_action and cloud_function or server) incur a cost. The cost of activating the action is charged to the person who owns the credentials that are specified in the action call. See [Pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/openwhisk/learn/pricing){: new_window} for more details. The {{site.data.keyword.openwhisk_short}} service does not distinguish between calls that are made from the "Try it out" pane during testing and calls that are made from an application in production. Therefore, calls made during testing might incur charges.
+{: note}
 
 ## Procedure
 {: #call-action}
@@ -115,7 +119,7 @@ To make a programmatic call from a dialog node, complete the following steps:
          - The namespace for a user-defined action typically has the syntax: `<myIBMCloudOrganizationID>_<myIBMCloudSpace>`. For example: `/jdoeorg_prod10/search flights`
          - The actions that are provided with {{site.data.keyword.openwhisk_short}} often have the namespace: `whisk.system`, but verify the namespace first to be sure. For example: `/whisk.system/weather/forecast`
 
-           See the [IBM Cloud Functions naming guidelines ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/openwhisk/openwhisk_reference.html#openwhisk_entities) for more details.
+           See the [IBM Cloud Functions naming guidelines ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/openwhisk/openwhisk_reference.html#openwhisk_entities) for more details.
 
     - `<type>`: Indicates the type of call to make. Choose from the following types:
 
@@ -184,9 +188,11 @@ To make a programmatic call from a dialog node, complete the following steps:
 
       1.  Click the **Show Auth Key** icon ![Show Auth Key](images/show-auth-icon.png) to show the credentials. The segment before the colon (:) is your user ID. The segment after the colon is your password.
 
-      **Attention**: Any charges that are incurred when the action runs are charged to the person who owns these credentials.
+      Any charges that are incurred when the action runs are charged to the person who owns these credentials.
+      {: note}
 
-      **Warning**: When you use built-in integrations to deploy the assistant, there is no way to pass the credentials to the dialog. You must store them as context variable values in a dialog node that will be triggered before the programmatic call itself is made. As a result, the credentials are visible in the JSON file that represents the skill, which can be downloaded by anyone with access to your skills. To protect your {{site.data.keyword.openwhisk_short}} credentials, consider using web actions with no authentication or authenticate the call with a token that is specific to the web action only.
+      When you use built-in integrations to deploy the assistant, there is no way to pass the credentials to the dialog. You must store them as context variable values in a dialog node that will be triggered before the programmatic call itself is made. As a result, the credentials are visible in the JSON file that represents the skill, which can be downloaded by anyone with access to your skills. To protect your {{site.data.keyword.openwhisk_short}} credentials, consider using web actions with no authentication or authenticate the call with a token that is specific to the web action only.
+      {: important}
 
       You can prevent the information from being stored in Watson logs by nesting your context variable within the $private section of the message context. For example: `$private.my_credentials`.
 
@@ -213,7 +219,8 @@ To make a programmatic call from a dialog node, complete the following steps:
 
       ![Shows how the $private.my_credentials context variable is defined in the Try it out context management interface](images/testing-creds.png)
 
-      **Attention**: {{site.data.keyword.openwhisk_short}} does not distinguish between calls that are made from the "Try it out" pane during testing and calls that are made from an application in production. Calls made during testing might incur charges.
+      {{site.data.keyword.openwhisk_short}} does not distinguish between calls that are made from the "Try it out" pane during testing and calls that are made from an application in production. Calls made during testing might incur charges.
+      {: note}
 
 ## Creating an action
 {: #create-action}
@@ -233,7 +240,7 @@ To create a {{site.data.keyword.openwhisk_short}} action, complete the following
 1.  Create one of the following types of actions:
 
     - **{{site.data.keyword.openwhisk_short}} action**: See [Creating and invoking actions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/docs/openwhisk/openwhisk_actions.html){: new_window} for details.
-    - **{{site.data.keyword.openwhisk_short}} web action**: See [Creating web actions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/openwhisk/openwhisk_webactions.html){: new_window} for details.
+    - **{{site.data.keyword.openwhisk_short}} web action**: See [Creating web actions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/openwhisk/openwhisk_webactions.html){: new_window} for details.
 
     Keep the following tips in mind:
 
@@ -321,7 +328,7 @@ The following diagram illustrates how you can use a client call to get weather f
 ## {{site.data.keyword.openwhisk_short}} action call example
 {: #action-server-example}
 
-The following example shows what a call to a {{site.data.keyword.openwhisk_short}} action might look like. This example shows how to use the {{site.data.keyword.openwhisk_short}} `echo` action that is defined in the [Utilities package ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/openwhisk/openwhisk_actions.html#openwhisk_create_action_sequence){: new_window} provided with the service. The action takes a text string, and returns it.
+The following example shows what a call to a {{site.data.keyword.openwhisk_short}} action might look like. This example shows how to use the {{site.data.keyword.openwhisk_short}} `echo` action that is defined in the [Utilities package ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/openwhisk/openwhisk_actions.html#openwhisk_create_action_sequence){: new_window} provided with the service. The action takes a text string, and returns it.
 
 ``` json
 {
@@ -521,7 +528,7 @@ The `$my_coordinates` context variable saves the two values that are returned by
 ```
 {: codeblock}
 
-This example shows how to use the {{site.data.keyword.openwhisk_short}} `forecast` action that is defined in the [Weather package ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/openwhisk/openwhisk_weather.html#openwhisk_catalog_weather){: new_window} provided with the {{site.data.keyword.openwhisk_short}} service. The action expects latitude and longitude coordinates, and a time period. It returns a JSON object with forecast information for the specified location over the specified time period. The coordinates, which are returned by the earlier action, are specified as `$my_coordinates.lat` and `$my_coordinates.long`.
+This example shows how to use the {{site.data.keyword.openwhisk_short}} `forecast` action that is defined in the [Weather package ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/openwhisk/openwhisk_weather.html#openwhisk_catalog_weather){: new_window} provided with the {{site.data.keyword.openwhisk_short}} service. The action expects latitude and longitude coordinates, and a time period. It returns a JSON object with forecast information for the specified location over the specified time period. The coordinates, which are returned by the earlier action, are specified as `$my_coordinates.lat` and `$my_coordinates.long`.
 
 ``` json
 {
@@ -544,7 +551,8 @@ This example shows how to use the {{site.data.keyword.openwhisk_short}} `forecas
 ```
 {: codeblock}
 
-**Note**: A username and a password are listed as parameters. These are only present because this particular action requires them; together they define the credentials required by the external Weather service that the provided action calls on the back end. They are different from the IBM Cloud Function account credentials. Take steps to keep these credentials private as well.
+A username and a password are listed as parameters. These are only present because this particular action requires them; together they define the credentials required by the external Weather service that the provided action calls on the back end. They are different from the IBM Cloud Function account credentials. Take steps to keep these credentials private as well.
+{: note}
 
 The output of the {{site.data.keyword.openwhisk_short}} action, which is stored in the `context.forecasts` variable, can now be accessed by subsequent dialog nodes.
 

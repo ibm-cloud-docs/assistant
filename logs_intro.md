@@ -1,13 +1,16 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-11-16"
+  years: 2015, 2019
+lastupdated: "2018-12-21"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -26,7 +29,7 @@ The Improve component of {{site.data.keyword.conversationshort}} provides a hist
 Sections of the **Improve** panel:
 
 * [Overview](logs_oview.html): A summary of conversations that users have had with your assistant.
-* [User conversations](logs.html): A list of individual user messages. You can directly edit your intents and entities based on insights you glean while reviewing individual user messages. **Note**: A single user conversation may consist of multiple messages.
+* [User conversations](logs.html): A list of individual user messages. You can directly edit your intents and entities based on insights you glean while reviewing individual user messages. A single user conversation may consist of multiple messages.
 
 To understand how to use message data to make improvements across assistants, it is helpful to review the following definitions associated with the {{site.data.keyword.conversationshort}} service:
 

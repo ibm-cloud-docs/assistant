@@ -1,13 +1,16 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-11-27"
+  years: 2015, 2019
+lastupdated: "2018-12-21"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -68,7 +71,8 @@ Complete the following steps before you add the Intercom integration. (These ste
 
 1.  Follow the instructions that are provided on the screen to complete the integration process.
 
-    **Note**: You are instructed to create an Intercom app. At a minimum, you need a subscription to the *Inbox* product from Intercom.
+    You are instructed to create an Intercom app. At a minimum, you need a subscription to the *Inbox* product from Intercom.
+    {: note}
 
 The instructions guide you through the steps required to invite team members and edit your profile. Click the Intercom profile icon in the navigation bar to access profile and workspace settings.
 
@@ -118,7 +122,8 @@ To edit the Intercom configuration, complete the following steps:
 
 1.  To define unique interaction settings for other dialog branches, click **Add interaction** again, and repeat the previous steps.
 
-    **Note**: If you added a *node purpose summary* to a root node in your dialog for the purpose of making the node eligible for disambiguation only, and do not want the node to be managed by the Intercom app, then you should explicitly add an interaction configuration for it, and specify the **No action** action type. Otherwise, the configuration that you define for all other nodes will be applied to it, which might specify an action type that you do not want applied to the node.
+    If you added a *node purpose summary* to a root node in your dialog for the purpose of making the node eligible for disambiguation only, and do not want the node to be managed by the Intercom app, then you should explicitly add an interaction configuration for it, and specify the **No action** action type. Otherwise, the configuration that you define for all other nodes will be applied to it, which might specify an action type that you do not want applied to the node.
+    {: note}
 
 1.  When you are done configuring interactions, click **Save**, and then close the Intercom integration page.
 

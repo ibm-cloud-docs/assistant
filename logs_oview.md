@@ -1,13 +1,16 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-12-17"
+  years: 2015, 2019
+lastupdated: "2018-12-21"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -44,15 +47,16 @@ You can use the following controls to filter the information:
 
   The statistics represent external traffic (from users or API calls) that has interacted with your assistant; they do not include interactions from the *Try it out* pane in the tool.
 
-- *Time period control* - Use this control to choose the period for which data is displayed. This control affects all data shown on the page: not just the number of conversations displayed in the graph, but also the statistics displayed along with the graph, and the lists of top intents and entities. 
+- *Time period control* - Use this control to choose the period for which data is displayed. This control affects all data shown on the page: not just the number of conversations displayed in the graph, but also the statistics displayed along with the graph, and the lists of top intents and entities.
 
-  **Note**: The statistics can cover a longer time period than the period for which logs of conversations are retained.
+  The statistics can cover a longer time period than the period for which logs of conversations are retained.
+  {: note}
 
   ![Time period control](images/oview-time.png)
 
   You can choose whether to view data for a single day, a week, a month, or a quarter. In each case, the data points on the graph adjust to an appropriate measurement period. For example, when viewing a graph for a day, the data is presented in hourly values, but when viewing a graph for a week, the data is shown by day. A week always runs from Sunday through Saturday. You cannot create custom time periods, such as a week that runs from Thursday to the following Wednesday, or a month that begins on any date other than the first.
 
-  **NOTE**: If you choose a single day view, for example, the time shown for each conversation is localized to reflect the time zone of your browser. This may differ from the timestamp shown if you review the same conversation log via an API call; API log calls are always shown in UTC.
+  If you choose a single day view, for example, the time shown for each conversation is localized to reflect the time zone of your browser. This may differ from the timestamp shown if you review the same conversation log via an API call; API log calls are always shown in UTC.
 
     ![Time period control](images/oview-time2.png)
 
@@ -61,7 +65,7 @@ Several statistical scorecards provide log data for your application:
 
 * *Total conversations* - The total number of conversations between active users and your application, during the selected time period, as shown in the corresponding graph.
 
-  **Note**: A single conversation is a set of messages consisting of the messages that an active user sends to your application, and the messages your application responds with.
+  A single conversation is a set of messages consisting of the messages that an active user sends to your application, and the messages your application responds with.
 
   **Important**: A 'conversation' is considered to be *any* set of messages sent or received by an application/bot, so if the service starts by saying "Hi, how can I help you?", and then the user closes their browser without responding, that message is included in the total conversation count.
 
@@ -82,7 +86,8 @@ Detailed graphs provide additional information:
 * *Active users* - The number of unique users who have engaged with your application within the selected time period.
 * *Avg. conversations per user* - The total conversations during the selected time period divided by the total unique users during the selected time period.
 
-  **Note**: Statistics for *Active users* and *Avg. conversations per user* require a unique `user_id` parameter. See [Enabling user metrics](#user_id) for more information.
+  Statistics for *Active users* and *Avg. conversations per user* require a unique `user_id` parameter. See [Enabling user metrics](#user_id) for more information.
+  {: important}
 
 ## Top Intents and Top Entities
 
@@ -125,6 +130,7 @@ curl -X POST -u "apikey:3Df... ...Y7Pc9"
 ```
 {: codeblock}
 
-**Note**: The `customer_id` string cannot include the semicolon (`;`) or equal sign (`=`) characters. You are responsible for ensuring that each `Customer ID` parameter is unique across your customers.
+The `customer_id` string cannot include the semicolon (`;`) or equal sign (`=`) characters. You are responsible for ensuring that each `Customer ID` parameter is unique across your customers.
+{: note}
 
 To delete messages using `customer_id` values, see the [Information security](information-security.html#gdpr-wa) topic.

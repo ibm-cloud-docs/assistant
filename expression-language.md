@@ -1,13 +1,16 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-11-08"
+  years: 2015, 2019
+lastupdated: "2018-12-21"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -139,7 +142,8 @@ For example, a user submits `"I want to go from Toronto to Boston."` The `@city:
 - `entities.city[0].value = 'Toronto'`
 - `entities.city[1].value = 'Boston'`
 
-**Note**: The order of entities in the array that is returned matches the order in which they are mentioned in the user input.
+The order of entities in the array that is returned matches the order in which they are mentioned in the user input.
+{: note}
 
 ### Entity properties
 

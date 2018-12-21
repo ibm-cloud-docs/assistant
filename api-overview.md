@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2015, 2019
 lastupdated: "2018-12-17"
 
 ---
@@ -17,6 +17,9 @@ lastupdated: "2018-12-17"
 {:pre: .pre}
 {:codeblock: .codeblock}
 {:download: .download}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}

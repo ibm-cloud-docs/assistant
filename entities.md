@@ -1,13 +1,16 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-11-15"
+  years: 2015, 2019
+lastupdated: "2018-12-21"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -137,9 +140,10 @@ Dictionary-based entites are those for which you define specific terms, synonyms
     - *Misspelling* - The feature is able to map user input to the appropriate corresponding entity despite the presence of misspellings or slight syntactical differences. For example, if you define *giraffe* as a synonym for an animal entity, and the user input contains the terms *giraffes* or *girafe*, the fuzzy match is able to map the term to the animal entity correctly.
     - *Partial match* - With partial matching, the feature automatically suggests substring-based synonyms present in the user-defined entities, and assigns a lower confidence score as compared to the exact entity match.
 
-    **Note** - For English, fuzzy matching prevents the capturing of some common, valid English words as fuzzy matches for a given entity. This feature uses standard English dictionary words. You can also define an English entity value/synonym, and fuzzy matching will match only your defined entity value/synonym. For example, fuzzy matching may match the term `unsure` with `insurance`; but if you have `unsure` defined as a value/synonym for an entity like `@option`, then `unsure` will always be matched to `@option`, and not to `insurance`.
+    For English, fuzzy matching prevents the capturing of some common, valid English words as fuzzy matches for a given entity. This feature uses standard English dictionary words. You can also define an English entity value/synonym, and fuzzy matching will match only your defined entity value/synonym. For example, fuzzy matching may match the term `unsure` with `insurance`; but if you have `unsure` defined as a value/synonym for an entity like `@option`, then `unsure` will always be matched to `@option`, and not to `insurance`.
+    {: note}
 
-    **Note**: Your fuzzy matching setting has no impact on synonym recommendations. Even if fuzzy matching is enabled, synonyms are suggested for the exact value you specify only, not the value and slight variations of the value.
+    Your fuzzy matching setting has no impact on synonym recommendations. Even if fuzzy matching is enabled, synonyms are suggested for the exact value you specify only, not the value and slight variations of the value.
 
 1.  Once you have entered a value name, you can then add any synonyms, or define specific patterns, for that entity value by selecting either `Synonyms` or `Patterns` from the *Type* drop-down menu.
 
@@ -162,21 +166,24 @@ Dictionary-based entites are those for which you define specific terms, synonyms
 
     - The {{site.data.keyword.conversationshort}} service will make several recommendations for synonyms. The terms are displayed in lowercase, but the service recognizes mentions of the synonyms whether they are specified in lowercase or uppercase.
 
-      **NOTE**: The more coherent your entity value synonyms are, the more relevant and better focused your recommendations will be. For example, if you have several words that are focused on a theme, you will get better suggestions than if you have one or two random words.
+      The more coherent your entity value synonyms are, the more relevant and better focused your recommendations will be. For example, if you have several words that are focused on a theme, you will get better suggestions than if you have one or two random words.
+      {: tip}
 
       ![Synonym recommendation screen 2](images/synonym_2.png)
 
     - Select any synonyms you want to include, and then click **Add selected**.
 
-      **Note**: You must click the **Add selected** button for any synonyms you selected to be added. If you move to the next set without clicking this button first, your selections are lost.
+      You must click the **Add selected** button for any synonyms you selected to be added. If you move to the next set without clicking this button first, your selections are lost.
 
       ![Synonym recommendation screen 3](images/synonym_3.png)
 
     - The {{site.data.keyword.conversationshort}} service adds those synonyms to your entity, and suggests additional synonyms.
 
-      **NOTE**: If you receive no additional synonym recommendations, it could be because your entity is already well defined, or it contains content that the recommender is not currently able to expand upon.
+      If you receive no additional synonym recommendations, it could be because your entity is already well defined, or it contains content that the recommender is not currently able to expand upon.
+      {: tip}
 
-      **NOTE**: If you choose not to select a recommended synonym, the system will treat that as a term you are not interested in, and will alter the next set of recommendations you see when you press `Add selected` or `Next set`. This inference only persists while you are choosing synonyms; information about skipped synonyms is not used for any other purpose by the service.
+      If you choose not to select a recommended synonym, the system will treat that as a term you are not interested in, and will alter the next set of recommendations you see when you press `Add selected` or `Next set`. This inference only persists while you are choosing synonyms; information about skipped synonyms is not used for any other purpose by the service.
+      {: note}
 
       ![Synonym recommendation screen 4](images/synonym_4.png)
 
@@ -249,7 +256,8 @@ Context-based entites are those for which you annotate occurrences of the entity
 
 In order to train a contextual entity model, you can take advantage of your intent examples, which provide readily-available sentences to annotate.
 
-**Note**: Using an intent's user examples to define contextual entities does not affect the classification of that intent in any way.
+Using an intent's user examples to define contextual entities does not affect the classification of that intent in any way.
+{: note}
 
 1.  In the {{site.data.keyword.conversationshort}} tool, open your skill and then click the **Intents** tab. If **Intents** is not visible, use the ![Menu](images/Menu_16.png) menu to open the page.
 
@@ -265,7 +273,7 @@ In order to train a contextual entity model, you can take advantage of your inte
 
     ![Review intent examples](images/oe-intent-review.png)
 
-    **Note**: To directly edit an intent example, click the Edit icon ![Edit icon](images/oe-intent-edit.png) instead of highlighting a value for annotation.
+    To directly edit an intent example, click the Edit icon ![Edit icon](images/oe-intent-edit.png) instead of highlighting a value for annotation.
 
 1.  A Search box opens, allowing you to search for an appropriate entity for the highlighted entity value.
 
@@ -279,11 +287,14 @@ In order to train a contextual entity model, you can take advantage of your inte
 
 1.  Select `@product` to add `computer` as a value for that entity.
 
-    **NOTE**: You should create *at least* 10 annotations for each contextual entity; more annotations are recommended for production use.
+    Create *at least* 10 annotations for each contextual entity; more annotations are recommended for production use.
+    {: important}
 
 1.  Repeat this process for each entity mention that you want to annotate.
 
-    **Attention**: Be sure to annotate every mention of an entity type that occurs in any user examples that you edit. See [What you don't annotate matters](#entity-counter-examples) for more details.
+    Be sure to annotate every mention of an entity type that occurs in any user examples that you edit. See [What you don't annotate matters](#entity-counter-examples) for more details.
+    {: important}
+
 1.  Now, click the annotation you just created. A box opens that says, `Go to: @product`. Clicking that link takes you directly to the entity.
 
     ![Verify value computer for product entity](images/oe-verify-value.png)
@@ -294,7 +305,8 @@ In order to train a contextual entity model, you can take advantage of your inte
 
     ![Annotation view selector highlighted](images/oe-annotate2.png)
 
-    **NOTE**: Contextual entities understand values that you have not explicitly defined. The system makes predictions about additional entity values based on how your user examples are annotated, and uses those values to train other entities. Any similar user examples are added to the *Annotation* view, so you can see how this option impacts training.
+    Contextual entities understand values that you have not explicitly defined. The system makes predictions about additional entity values based on how your user examples are annotated, and uses those values to train other entities. Any similar user examples are added to the *Annotation* view, so you can see how this option impacts training.
+    {: note}
 
     If you do not want your contextual entities to use this expanded understanding of entity values, select all the user examples in the *Annotation* view for that entity, and then click **Delete**.
 
@@ -327,7 +339,8 @@ If you have an intent example with an annotation, and another word in that examp
 
 You can click any entity in the list to open it for editing. You can rename or delete entities, and you can add, edit, or delete values, synonyms, or patterns.
 
-**Note**: If you change the entity type from `synonym` to `pattern`, or vice versa, the existing values are converted, but might not be useful as-is.
+If you change the entity type from `synonym` to `pattern`, or vice versa, the existing values are converted, but might not be useful as-is.
+{: note}
 
 ## Searching entities
 
@@ -337,7 +350,8 @@ Use the Search feature to find entity names, values, and synonyms.
 
     ![Entity tab overview](images/entity_oview.png)
 
-    **Note**: System entities are not searchable.
+    System entities are not searchable.
+    {: note}
 
 1.  Click the Search icon: ![Search icon](images/search_icon.png)
 
@@ -365,7 +379,8 @@ You can export a number of entities to a CSV file, so you can then import and re
 
 If you have a large number of entities, you might find it easier to import them from a comma-separated value (CSV) file than to define them one by one in the {{site.data.keyword.conversationshort}} tool.
 
-**Note**: Entity annotations are not included in the import of an entity CSV file. You must import the entire dialog skill to retain the associated annotations for a contextual entity in that skill. If you export and import entities only, then any contextual entities that you exported are treated as dictionary-based entities after you import them.
+Entity annotations are not included in the import of an entity CSV file. You must import the entire dialog skill to retain the associated annotations for a contextual entity in that skill. If you export and import entities only, then any contextual entities that you exported are treated as dictionary-based entities after you import them.
+{: note}
 
 1.  Collect the entities into a CSV file, or export them from a spreadsheet to a CSV file. The required format for each line in the file is as follows:
 

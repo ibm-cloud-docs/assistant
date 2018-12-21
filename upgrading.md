@@ -1,13 +1,16 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-11-27"
+  years: 2015, 2019
+lastupdated: "2018-12-21"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -27,7 +30,8 @@ Learn how to upgrade your service plan.
 
 You can explore the {{site.data.keyword.conversationshort}} [service plan options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/catalog/services/watson-assistant-formerly-conversation){: new_window} to decide which plan is best for you.
 
-**Attention**: You cannot upgrade a Cloud Foundry-based instance to a Plus plan. You must migrate the instance, so it is using a resource group before you can upgrade it. See [Migrating](migrating.html) for more details.
+You cannot upgrade a Cloud Foundry-based instance to a Plus plan. You must migrate the instance, so it is using a resource group before you can upgrade it. See [Migrating](migrating.html) for more details.
+{: note}
 
 To upgrade your plan, complete these steps:
 
@@ -45,7 +49,8 @@ The {{site.data.keyword.conversationshort}} service regularly adds and updates f
 
 An upgrade is only available for your dialog skill if the upgrade icon (![upgrade icon](images/upgrade.png)) is displayed.
 
-**Note**: After you upgrade a dialog skill, you cannot revert your skill to a previous version.
+After you upgrade a dialog skill, you cannot revert your skill to a previous version.
+{: note}
 
 To upgrade your dialog skill, complete the following steps:
 

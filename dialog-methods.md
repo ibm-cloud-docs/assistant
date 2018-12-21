@@ -1,13 +1,16 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-11-06"
+  years: 2015, 2019
+lastupdated: "2018-12-21"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -599,7 +602,8 @@ For example, this context variable definition creates a $time variable that save
 
 Format follows the Java [SimpleDateFormat ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html){: new_window} rules.
 
-**Note**: When trying to format time only, the date is treated as `1970-01-01`.
+When trying to format time only, the date is treated as `1970-01-01`.
+{: note}
 
 ### .sameMoment(String date/time)
 
@@ -1076,7 +1080,7 @@ When you use the `clear()` method to clear the `context` object, it clears **all
  - `context.timezone`
  - `context.system`
 
-**Warning**: All context variable values means:
+**Attention**: All context variable values means:
 
   - All default values that were set for variables in nodes that have been triggered during the current session.
   - Any updates made to the default values with information provided by the user or external services during the current session.

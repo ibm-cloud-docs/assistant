@@ -1,13 +1,16 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-09-21"
+  years: 2015, 2019
+lastupdated: "2018-12-21"
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -99,7 +102,8 @@ It can be difficult to know the syntax to use in your dialog node to accurately 
 
   `entities['person']?.contains('O''Reilly')` and `context['person'] == 'O''Reilly'`
 
-  **Note**: SpEL uses a second apostrophe to escape the single apostrophe in the name.
+  SpEL uses a second apostrophe to escape the single apostrophe in the name.
+  {: note}
 
 - **Checking for multiple values**: If you want to check for more than one value, you can create a condition that uses OR operators (`||`) to list multiple values in the condition. For example, to define a condition that is true if the context variable `$state` contains the abbreviations for Massachusetts, Maine, or New Hampshire, you can use this expression:
 
@@ -192,7 +196,8 @@ This expression sets `$json_matched_groups` to the following JSON array:
 ```
 {: codeblock}
 
-**Note**: `location` is a property of an entity that uses a zero-based character offset to indicate where the detected entity value begins and ends in the input text.
+`location` is a property of an entity that uses a zero-based character offset to indicate where the detected entity value begins and ends in the input text.
+{: note}
 
 If you expect two phone numbers to be supplied in the input, then you can check for two phone numbers. If present, use the following syntax to capture the area code of the second number, for example.
 
