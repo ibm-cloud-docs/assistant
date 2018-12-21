@@ -55,7 +55,7 @@ The following new features and changes to the service are available.
 
 - **London data center**: You can now create {{site.data.keyword.conversationshort}} service instances that are hosted in the London data center without syndication. See [Data centers](services-information.html#regions) for more details.
 
-- **Dialog node limit change**: The dialog node limit was temporarily changed from 100,000 to 500 for new Standard plan instances. This limit has since been reversed. If you created a Standard plan instance between 10 December and 12 December 2018, the limits might continue to be in effect for the dialogs in your skills. The lower limits will be removed from all impacted instances in January. If you need to have the lower limit lifted before then, open a suppot ticket.
+- **Dialog node limit change**: The dialog node limit was temporarily changed from 100,000 to 500 for new Standard plan instances. This limit has since been reversed. If you created a Standard plan instance between 10 December and 12 December 2018, the limits might continue to be in effect for the dialogs in your skills. The lower limits will be removed from all impacted instances in January. If you need to have the lower limit lifted before then, open a support ticket.
 
 ### 1 December 2018
 {: #1December2018}
