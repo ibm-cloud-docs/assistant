@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-01-07"
 
 ---
 
@@ -124,7 +124,7 @@ To download a dialog skill, complete the following steps:
 
 1.  Specify a name for the JSON file and where to save it, and then click **Save**.
 
-You can export a skill by using the API also. Include the `export=true` parameter with the request. See the [API reference](https://www.ibm.com/watson/developercloud/assistant/api/v1/curl.html?curl#get-workspace) for more details.
+You can export a skill by using the API also. Include the `export=true` parameter with the request. See the [API reference](https://cloud.ibm.com/apidocs/assistant#get-information-about-a-workspace) for more details.
 
 ## Sharing a dialog skill with team members
 {: #invite-others}

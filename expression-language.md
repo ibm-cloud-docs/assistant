@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-01-03"
 
 ---
 
@@ -85,12 +85,29 @@ If the entity value that you want to check for contains a `)` character, you can
 
 The following table shows examples of the shorthand syntax that you can use when referring to intents.
 
-| Shorthand syntax        | Full syntax in SpEL |
-|-------------------------|---------------------|
-| `#help`                 | `intent == 'help'`  |
-| `! #help`               | `intent != 'help'`  |
-| `NOT #help`             | `intent != 'help'`  |
-| `#help` or `#i_am_lost` | `(intent == 'help' || intent == 'I_am_lost')` |
+<table>
+  <caption>Intents shorthand syntax</caption>
+  <tr>
+    <th>Shorthand syntax</th>
+    <th>Full syntax in SpEL</th>
+  </tr>
+  <tr>
+    <td>`#help`</td>
+    <td>`intent == 'help'`</td>
+  </tr>
+  <tr>
+    <td>`! #help`</td>
+    <td>`intent != 'help'`</td>
+  </tr>
+  <tr>
+    <td>`NOT #help`</td>
+    <td>`intent != 'help'`</td>
+  </tr>
+  <tr>
+    <td>`#help` or `#i_am_lost`</td>
+    <td>`(intent == 'help' || intent == 'I_am_lost')`</td>
+  </tr>
+</table>
 
 ## Built-in global variables
 {: #builtin-vars}
