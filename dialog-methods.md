@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-01-08"
 
 ---
 
@@ -101,7 +101,7 @@ Use the following expression in the output to define a field that clears an arra
 
 If you subsequently reference the $toppings_array context variable, it returns '[]' only.
 
-### JSONArray.contains(object value)
+### JSONArray.contains(Object value)
 
 This method returns true if the input JSONArray contains the input value.
 
@@ -125,7 +125,204 @@ $toppings_array.contains('ham')
 
 Result: `True` because the array contains the element ham.
 
-### JSONArray.get(integer)
+### JSONArray.containsIntent(String intent_name, Integer score, [Integer top_n])
+{: #array-containsIntent}
+
+This method returns `true` if, specifically, the `intents` JSONArray contains the specified intent, and that intent has a confidence score that is equal to or higher than the specified score. Optionally, you can specify a number to indicate that the intent must be included within that number of top elements in the array.
+
+Returns `false` if the specified intent is not in the array, does not meet the required confidence score, or is lower in the array.
+
+The service automatically generates an `intents` array that lists the intents that the service detects in the input whenever user input is submitted. The array lists all intents that are detected by the service in order of highest confidence first.
+
+You can use this method in a node condition to not only check for the presence of an intent, but to set a confidence score threshold that must be met before the node can be processed and its response returned.
+
+For example, use the following expression in a node condition when you want to trigger the dialog node only when the following conditions are met:
+
+- The `#General_Ending` intent is present.
+- The confidence score of the `#General_Ending` intent is over 80%.
+- The `#General_Ending` intent is one of the top 2 intents in the intents array.
+
+```bash
+intents.containsIntent("General_Ending", 0.8, 2)
+```
+{: codeblock}
+
+### JSONArray.filter(temp, "temp.property operator comparison_value")
+{: #array-filter}
+
+Filters an array by comparing each array element value to a value you specify. This method is similar to a [collection projection](#collection-projection). A collection projection returns a filtered array based on a name in an array element name-value pair. The filter method returns a filtered array based on a value in an array element name-value pair.
+
+The filter expression consists of the following values:
+
+- `temp`: Name of a variable that is used temporarily as each array element is evaluated. For example, `city`.
+- `property`: Element property that you want to compare to the `comparison_value`. Specify the property as a property of the temporary variable that you name in the first parameter. Use the syntax: `temp.property`. For example, if `latitude` is a valid element name for a name-value pair in the array, specify the property as `city.latitude`.
+- `operator`: Operator to use to compare the property value to the `comparison_value`.
+
+    Supported operators are:
+
+    <table>
+    <caption>Supported filter operators</caption>
+    <tr>
+      <th>Operator</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>`==`</td>
+      <td>Is equal to</td>
+    </tr>
+    <tr>
+      <td>`>`</td>
+      <td>Is greater than</td>
+    </tr>
+    <tr>
+      <td>`<`</td>
+      <td>Is less than</td>
+    </tr>
+    <tr>
+      <td>`>=`</td>
+      <td>Is greater than or equal to</td>
+    </tr>
+    <tr>
+      <td>`<=`</td>
+      <td>Is less than or equal to</td>
+    </tr>
+    <tr>
+      <td>`!=`</td>
+      <td>Is not equal to</td>
+    </tr>
+    </table>
+
+- `comparison_value`: Value that you want to compare each array element property value against. To specify a value that can change depending on the user input, use a context variable or entity as the value. If you specify a value that can vary, add logic to guarantee that the `comparison_value` value is valid at evaluation time or an error will occur.
+
+#### Filter example 1
+
+For example, you can use the filter method to evaluate an array that contains a set of city names and their population numbers to return a smaller array that contains only cities with a population over 5 million.
+
+The following `$cities` context variable contains an array of objects. Each object contains a `name` and `population` property.
+
+```json
+[
+   {
+      "name":"Tokyo",
+      "population":9273000
+   },
+   {
+      "name":"Rome",
+      "population":2868104
+   },
+   {
+      "name":"Beijing",
+      "population":20693000
+   },
+   {
+      "name":"Paris",
+      "population":2241346
+   }
+]
+```
+{: codeblock}
+
+In the following example, the arbitrary temporary variable name is `city`. The SpEL expression filters the `$cities` array to include only cities with a population of over 5 million:
+
+```bash
+$cities.filter("city", "city.population > 5000000")
+```
+{: codeblock}
+
+The expression returns the following filtered array:
+
+```json
+[
+   {
+      "name":"Tokyo",
+      "population":9273000
+   },
+   {
+      "name":"Beijing",
+      "population":20693000
+   }
+]
+```
+{: codeblock}
+
+You can use a collection projection to create a new array that includes only the city names from the array returned by the filter method. You can then use the `join` method to display the two name element values from the array as a String, and separate the values with a comma and a space.
+
+```bash
+The cities with more than 5 million people include <?  T(String).join(", ",($cities.filter("city", "city.population > 5000000")).![name]) ?>.
+```
+{: codeblock}
+
+The resulting response is: `The cities with more than 5 million people include Tokyo, Beijing.`
+
+#### Filter example 2
+
+The power of the filter method is that you do not need to hard code the `comparison_value` value. In this example, the hard coded value of 5000000 is replaced with a context variable instead.
+
+In this example, the `$population_min` context variable contains the number `5000000`. The arbitrary temporary variable name is `city`. The SpEL expression filters the `$cities` array to include only cities with a population of over 5 million:
+
+```bash
+$cities.filter("city", "city.population > $population_min")
+```
+{: codeblock}
+
+The expression returns the following filtered array:
+
+```json
+[
+   {
+      "name":"Tokyo",
+      "population":9273000
+   },
+   {
+      "name":"Beijing",
+      "population":20693000
+   }
+]
+```
+{: codeblock}
+
+When comparing number values, be sure to set the context variable involved in the comparison to a valid number value. You can set the context variable to `0` when the dialog is initialized, for example, to ensure that it is never null.
+{: tip}
+
+You can use a dialog node response expression like this:
+
+```bash
+The cities with more than $population_min people include <?  T(String).join(", ",($cities.filter("city", "city.population > $population_min")).![name]) ?>.
+```
+{: codeblock}
+
+The resulting response is: `The cities with more than 5000000 people include Tokyo, Beijing.`
+
+#### Filter example 3
+
+In this example, an entity name is used as the `comparison_value`. The user input is, `What is the population of Tokyo?` The arbitrary temporary variable name is `y`. You created an entity named `@city` that recognizes city names, including `Tokyo`.
+
+```bash
+$cities.filter("y", "y.name == @city")
+```
+
+The expression returns the following array:
+
+```json
+[
+   {
+      "name":"Tokyo",
+      "population":9273000
+   }
+]
+```
+{: codeblock}
+
+You can use a collection project to get an array with only the population element from the original array, and then use the `get` method to return the value of the population element.
+
+```bash
+The population of @city is: <? ($cities.filter("x", "x.name == @city").![population]).get(0) ?>.
+```
+{: codeblock}
+
+The expression returns: `The population of Tokyo is 9273000.`
+
+### JSONArray.get(Integer)
 
 This method returns the input index from the JSONArray.
 
@@ -212,7 +409,46 @@ Result: `"ham is a great choice!"` or `"onion is a great choice!"` or `"olives i
 
 **Note:** The resulting output text is randomly chosen.
 
-### JSONArray.join(string delimiter)
+### JSONArray.indexOf(value)
+{: #array-indexOf}
+
+This method returns the index number of the element in the array that matches the value you specify as a parameter or `-1` if the value is not found in the array. The value can be a String (`"School"`), Integer(`8`), or Double (`9.1`). The value must be an exact match and is case sensitive.
+
+For example, the following context variables contain arrays:
+
+```json
+{
+  "context": {
+    "array1": ["Mary","Lamb","School"],
+    "array2": [8,9,10],
+    "array3": [8.1,9.1,10.1]
+  }
+}
+```
+
+The following expressions can be used to determine the array index at which the value is specified:
+
+```bash
+<? $array1.indexOf("Mary") ?> returns `0`
+<? $array2.indexOf(9) ?> returns `1`
+<? $array3.indexOf(10.1) ?> returns `2`
+```
+
+This method can be useful for getting the index of an element in an intents array, for example. You can apply the `indexOf` method to the array of intents generated each time user input is evaluated to determine the array index number of a specific intent.
+
+```bash
+intents.indexOf("General_Greetings")
+```
+{: codeblock}
+
+If you want to know the confidence score for a specific intent, you can pass the expression above in as the *`index`* value to an expression with the syntax `intents[`*`index`*`].confidence`. For example:
+
+```bash
+intents[intents.indexOf("General_Greetings")].confidence
+```
+{: codeblock}
+
+### JSONArray.join(String delimiter)
 
 This method joins all values in this array to a string. Values are converted to string and delimited by the input delimiter.
 
@@ -260,7 +496,7 @@ If you define a variable that stores multiple values in a JSON array, you can re
 #### Collection projection
 {: #collection-projection}
 
-A `collection projection` SpEL expression extracts a subcollection from an array. The syntax for a collection projection is `array_that_contains_value_sets.![value_of_interest]`.
+A `collection projection` SpEL expression extracts a subcollection from an array that contains objects. The syntax for a collection projection is `array_that_contains_value_sets.![value_of_interest]`.
 
 For example, the following context variable defines a JSON array that stores flight information. There are two data points per flight, the time and flight code.
 
@@ -282,7 +518,7 @@ For example, the following context variable defines a JSON array that stores fli
 ```
 {: codeblock}
 
-To return the flight codes only, you can create a collection project expression by using the following syntax:
+To return the flight codes only, you can create a collection projection expression by using the following syntax:
 
 ```
 <? $flights_found.![flight_code] ?>
@@ -300,7 +536,7 @@ The flights that fit your criteria are:
 
 Result: `The flights that match your criteria are: OK123,LH421,TS4156.`
 
-### JSONArray.remove(integer)
+### JSONArray.remove(Integer)
 
 This method removes the element in the index position from the JSONArray and returns the updated JSONArray.
 
@@ -374,7 +610,7 @@ Result:
 ```
 {: codeblock}
 
-### JSONArray.set(integer index, object value)
+### JSONArray.set(Integer index, Object value)
 
 This method sets the input index of the JSONArray to the input value and returns the modified JSONArray.
 
@@ -602,8 +838,7 @@ For example, this context variable definition creates a $time variable that save
 
 Format follows the Java [SimpleDateFormat ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html){: new_window} rules.
 
-When trying to format time only, the date is treated as `1970-01-01`.
-{: note}
+**Note**: When trying to format time only, the date is treated as `1970-01-01`.
 
 ### .sameMoment(String date/time)
 
@@ -1080,7 +1315,7 @@ When you use the `clear()` method to clear the `context` object, it clears **all
  - `context.timezone`
  - `context.system`
 
-**Attention**: All context variable values means:
+**Warning**: All context variable values means:
 
   - All default values that were set for variables in nodes that have been triggered during the current session.
   - Any updates made to the default values with information provided by the user or external services during the current session.
@@ -1138,7 +1373,7 @@ To use the method, you can specify it in an expression in a variable that you de
 
 If a node earlier in the tree defines a text response of `I'm happy to help.` and then jumps to a node with the JSON output object defined above, then  only `Have a great day.` is displayed as the response. The `I'm happy to help.` output is not displayed, because it is cleared and replaced with the text response from the node that is calling the `clear()` method.
 
-### JSONObject.has(string)
+### JSONObject.has(String)
 
 This method returns true if the complex JSONObject has a property of the input name.
 
@@ -1167,7 +1402,7 @@ Dialog node output:
 
 Result: The condition is true because the user object contains the property `first_name`.
 
-### JSONObject.remove(string)
+### JSONObject.remove(String)
 
 This method removes a property of the name from the input `JSONObject`. The `JSONElement` that is returned by this method is the `JSONElement` that is being removed.
 
@@ -1226,7 +1461,7 @@ For information about how to recognize and extract certain types of Strings, suc
 
 **Note:** For methods that involve regular expressions, see [RE2 Syntax reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/google/re2/wiki/Syntax){: new_window} for details about the syntax to use when you specify the regular expression.
 
-### String.append(object)
+### String.append(Object)
 
 This method appends an input object to the string as a string and returns a modified string.
 
@@ -1263,7 +1498,7 @@ Results in this output:
 ```
 {: codeblock}
 
-### String.contains(string)
+### String.contains(String)
 
 This method returns true if the string contains the input substring.
 
@@ -1280,7 +1515,7 @@ This syntax:
 
 Results: The condition is `true`.
 
-### String.endsWith(string)
+### String.endsWith(String)
 
 This method returns true if the string ends with the input substring.
 
@@ -1337,7 +1572,7 @@ Result:
 ```
 {: codeblock}
 
-### String.find(string regexp)
+### String.find(String regexp)
 
 This method returns true if any segment of the string matches the input regular expression.  You can call this method against a JSONArray or JSONObject element, and it will convert the array or object to a string before making the comparison.
 
@@ -1418,7 +1653,7 @@ Results in this output:
 ```
 {: codeblock}
 
-### String.matches(string regexp)
+### String.matches(String regexp)
 
 This method returns true if the string matches the input regular expression.
 
@@ -1440,7 +1675,7 @@ This syntax:
 
 Result: The condition is true because the input text matches the regular expression `\^Hello\$`.
 
-### String.startsWith(string)
+### String.startsWith(String)
 
 This method returns true if the string starts with the input substring.
 
@@ -1462,7 +1697,7 @@ This syntax:
 
 Results: The condition is `true`.
 
-### String.substring(int beginIndex, int endIndex)
+### String.substring(Integer beginIndex, Integer endIndex)
 
 This method gets a substring with the character at `beginIndex` and the last character set to index before `endIndex`.
 The endIndex character is not included.
