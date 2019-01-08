@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-12"
+lastupdated: "2019-01-08"
 
 ---
 
@@ -207,9 +207,6 @@ Now that you have an assistant that can participate in a simple conversational e
 
     The page opens in a new tab.
 1.  Say `hello` to your assistant, and watch it respond. You can share the URL with others who might want to try out your assistant.
-
-    Unlike when you send test utterances to the service from the "Try it out" pane, standard usage charges apply to API calls that result from utterances that are submitted to the chat widget.
-    {: important}
 
 ## Next steps
 {: #next-steps}

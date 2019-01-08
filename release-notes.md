@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-01-08"
 ---
 
 {:shortdesc: .shortdesc}
@@ -49,6 +49,19 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #change-log}
 
 The following new features and changes to the service are available.
+
+### 4 January 2019
+{: #4January2019}
+
+- **Added US East Cloud Functions support**: You can now make programmatic calls to IBM Cloud Functions from the dialog of an assistant in a service instance that is hosted in the Washington DC data center. See [Making programmatic calls from a dialog node](dialog-actions.html).
+
+- **New methods for working with arrays**: The following SpEL expression methods are available that make it easier to work with array values in your dialog:
+
+  - **JSONArray.filter**: Filters an array by comparing each value in the array to a value that can vary based on user input.
+  - **JSONArray.includesIntent**: Checks whether an `intents` array contains a particular intent.
+  - **JSONArray.indexOf**: Gets the index number of a specific value in an array.
+
+   See the [array method documentation](dialog-methods.html#arrays) for more details.
 
 ### 13 December 2018
 {: #13December2018}
