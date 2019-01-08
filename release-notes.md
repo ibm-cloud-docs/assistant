@@ -53,7 +53,7 @@ The following new features and changes to the service are available.
 ### 4 January 2019
 {: #4January2019}
 
-- **Added US East Cloud Functions support**: You can now make programmatic calls to IBM Cloud Functions from the dialog of an assistant in a service instance that is hosted in the Washington DC data center. See [Making programmatic calls from a dialog node](dialog-actions.html).
+- **IBM Cloud Functions in DC location**: You can now make programmatic calls to IBM Cloud Functions from the dialog of an assistant in a service instance that is hosted in the Washington, DC data center. See [Making programmatic calls from a dialog node](dialog-actions.html).
 
 - **New methods for working with arrays**: The following SpEL expression methods are available that make it easier to work with array values in your dialog:
 
