@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-01-09"
 
 ---
 
@@ -27,7 +27,6 @@ Define actions that can make programmatic calls to external applications or serv
 {: shortdesc}
 
 You can use an external service to do the following types of things:
-
 - Validate information that you collected from the user.
 - Do calculations or string manipulations on user input that are too complex for supported SpEL expression methods to handle.
 - Interact with an external web service to get information. For example, you might check on the expected arrival time for a flight from an air traffic service or get a forecast from a weather service.
@@ -73,7 +72,7 @@ To make a programmatic call from a dialog node, complete the following steps:
 
         ![Shows how to access the JSON editor associated with a slot condition.](images/contextvar-json-slot-condition.png)
 
-      - To make a programmatic call that runs after the slot is successfully filled, open the JSON editor that is associated with the Found response. To do so, from the **Options icon](images/kabob.png) menu for the slot, click **Enable conditional responses**. For the Found response, click the **Edit response** ![Edit response](images/edit-slot.png) icon. From the **Options** ![Options icon](images/kabob.png) menu for the Found response, click **Open JSON editor**.
+      - To make a programmatic call that runs after the slot is successfully filled, open the JSON editor that is associated with the Found response. To do so, from the **Options** ![Options icon](images/kabob.png) menu for the slot, click **Enable conditional responses**. For the Found response, click the **Edit response** ![Edit response](images/edit-slot.png) icon. From the **Options** ![Options icon](images/kabob.png) menu for the Found response, click **Open JSON editor**.
 
         ![Shows how to access the JSON editor associated with the conditional response for a slot.](images/contextvar-json-slot-multi-response.png)
 
@@ -127,7 +126,7 @@ To make a programmatic call from a dialog node, complete the following steps:
 
       - **cloud_function**: Calls a {{site.data.keyword.openwhisk_short}} action (one or more) directly. You must define the action itself separately by using {{site.data.keyword.openwhisk}}. For more information, see [Creating an action](dialog-actions.html#create-action). (This type used to be named **server**. The **server** type continues to be supported.)
 
-      - **web_action**: Calls a {{site.data.keyword.openwhisk_short}} web action (one or more) directly. You must define the web action itself separately by using {{site.data.keyword.openwhisk}}. For more information, see [Creating an action](dialog-actions.html#create-action).
+      - **web_action**: Calls a {{site.data.keyword.openwhisk_short}} web action (one or more) directly. You must define the web action itself separately by using {{site.data.keyword.openwhisk}}. For more information,  see [Creating an action](dialog-actions.html#create-action).
 
       Specifying the type is optional. The default value is `client`.
 
@@ -227,7 +226,8 @@ To make a programmatic call from a dialog node, complete the following steps:
 
 If you choose to define an action or web action type programmatic call, then before you can call it from a dialog, you must create it in {{site.data.keyword.openwhisk}}. If you are defining a client type programmatic call, then skip this procedure.
 
-**Location restrictions**: Currently, you can call a {{site.data.keyword.openwhisk_short}} action from {{site.data.keyword.conversationshort}} instances that are hosted in the Dallas or Frankfurt locations only. The {{site.data.keyword.conversationshort}} service uses the {{site.data.keyword.openwhisk_short}} instance that is hosted in the same location only. It does not check {{site.data.keyword.openwhisk_short}} instances hosted in other regions. Therefore, do not call an action from a {{site.data.keyword.conversationshort}} service instance hosted in Dallas if the action is defined in a {{site.data.keyword.openwhisk_short}} instance that is hosted in Frankfurt, for example.
+**Location restrictions**: Currently, you can call a {{site.data.keyword.openwhisk_short}} action from {{site.data.keyword.conversationshort}} service instances that are hosted in data centers in the Frankfurt, Dallas, and Washington DC locations only. The {{site.data.keyword.conversationshort}} service uses the {{site.data.keyword.openwhisk_short}} instance that is hosted in the same location only. It does not check {{site.data.keyword.openwhisk_short}} instances hosted in other locations. Therefore, do not call an action from a {{site.data.keyword.conversationshort}} service instance hosted in Dallas if the action is defined in a {{site.data.keyword.openwhisk_short}} instance that is hosted in Frankfurt, for example.
+{: important}
 
 **Time limits**: Only use the **cloud_function**, **server**, and **web_action** types to make a call that you know can return in **under 5 seconds**. The request to {{site.data.keyword.openwhisk_short}} times out if an individual service call takes longer than that. And if your dialog makes more than one call to an external service, the total amount of time allowed for the calls to complete is 7 seconds. If the first three calls complete in 2 seconds each, and the fourth takes more than 1 second, then the fourth call is stopped, and the error message for the call indicates that the call was not completed. For less efficient services that you need to call, manage the call through your client application and pass the information to the dialog as a separate step.
 
@@ -325,7 +325,7 @@ The following diagram illustrates how you can use a client call to get weather f
 
 ![Shows someone asking for a weather forecast, the dialog sending a request to a client app, which sends it to the external service](images/forecast.png)
 
-## {{site.data.keyword.openwhisk_short}} action call example
+## IBM Cloud Functions action call example
 {: #action-server-example}
 
 The following example shows what a call to a {{site.data.keyword.openwhisk_short}} action might look like. This example shows how to use the {{site.data.keyword.openwhisk_short}} `echo` action that is defined in the [Utilities package ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/openwhisk/openwhisk_actions.html#openwhisk_create_action_sequence){: new_window} provided with the service. The action takes a text string, and returns it.
@@ -398,7 +398,7 @@ To see a dialog skill with a dialog that is already set up to call the {{site.da
 
     The service will use the {{site.data.keyword.openwhisk_short}} Echo action to repeat whatever you enter back to you.
 
-## {{site.data.keyword.openwhisk_short}} web action call example
+## IBM Cloud Functions web action call example
 {: #web-action-server-example}
 
 The following example shows what a call to a web action might look like. This example shows how to pass a user name to a simple greeting service. The service returns a greeting that addresses the user by name.
@@ -489,7 +489,7 @@ The output of the web action, which is stored in the `context.greet_user` variab
 ```
 {: codeblock}
 
-## Advanced {{site.data.keyword.openwhisk_short}} action call example
+## Advanced IBM Cloud Functions action call example
 {: #advanced-action-server-example}
 
 You can call multiple actions from within a single dialog flow. In fact, you can call up to five actions within one `actions` JSON object in a single dialog node. However, any server type actions that are defined in an `actions` JSON array are all processed in parallel. Therefore, you cannot call one server type action and pass the result from it to a second server type action in the same `actions` block. The best way to call server actions in a specific order is to use a {{site.data.keyword.openwhisk_short}} sequence. At runtime, this approach is faster because the dialog only has to make one external call to complete multiple actions. To use a sequence, just reference the sequence name instead of an action name in the `actions` block definition. Alternatively, you can call the first server type action from one node and jump to a child node that calls the next server type action.
