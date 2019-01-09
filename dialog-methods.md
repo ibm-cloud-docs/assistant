@@ -316,7 +316,7 @@ The expression returns the following array:
 You can use a collection project to get an array with only the population element from the original array, and then use the `get` method to return the value of the population element.
 
 ```bash
-The population of @city is: <? ($cities.filter("x", "x.name == @city").![population]).get(0) ?>.
+The population of @city is: <? ($cities.filter("y", "y.name == @city").![population]).get(0) ?>.
 ```
 {: codeblock}
 
