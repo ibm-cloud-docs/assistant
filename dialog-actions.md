@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-08"
+lastupdated: "2019-01-09"
 
 ---
 
@@ -26,22 +26,27 @@ lastupdated: "2019-01-08"
 Define actions that can make programmatic calls to external applications or services and get back a result as part of the processing that occurs within a dialog turn.
 {: shortdesc}
 
-You can use an external service to validate information that you collected from the user, or perform calculations or string manipulations on the input which are too complex to be handled by using supported SpEL expressions and methods. Or you can interact with an external web service to get information, such as an air traffic service to check on a flight's expected arrival time or a weather service to get a forecast. You can even interact with an external application, such as a restaurant reservation site, to complete a simple transaction on the user's behalf.
+You can use an external service to do the following types of things:
+- Validate information that you collected from the user.
+- Do calculations or string manipulations on user input that are too complex for supported SpEL expression methods to handle.
+- Interact with an external web service to get information. For example, you might check on the expected arrival time for a flight from an air traffic service or get a forecast from a weather service.
+- Send requests to an external application, such as a restaurant reservation site, to complete a simple transaction on the user's behalf.
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Calling IBM Cloud Functions" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/y0A6X-KNoB8?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 When you define the programmatic call, you choose one of the following types:
 
-- **client**: Defines a programmatic call in a standardized format that your external client application can use to perform the programmatic call or function, and return the result to the dialog. This type of call basically tells the dialog to pause here and let the client application go do something. The program that the client application runs can be anything that you choose. Just be sure to specify the call name and parameter details, as well as the error message variable name, according to the JSON formatting rules that are outlined later.
+- **client**: Defines a programmatic call in a standardized format that your external client application can understand. Your client application must use the provided information to run the programmatic call or function, and return the result to the dialog. This type of call basically tells the dialog to pause here and wait for the client application go do something. The program that the client application runs can be anything that you choose. Be sure to specify the call name and parameter details, and the error message variable name, according to the JSON formatting rules that are outlined later.
 
 - **cloud_function**: Calls an {{site.data.keyword.openwhisk_short}} action directly, and returns the result to the dialog. You must provide a {{site.data.keyword.openwhisk_short}} authentication key with the call. (This type used to be named **server**. The type **server** continues to be supported.)
 
-- **web_action** : Calls a {{site.data.keyword.openwhisk_short}} web action. Web actions are annotated {{site.data.keyword.openwhisk_short}} actions that developers can use to program backend logic that a web application can access anonymously, without requiring a {{site.data.keyword.openwhisk_short}} authentication key. Although authentication is not required, web actions can be secured in the following ways:
+- **web_action**: Calls a {{site.data.keyword.openwhisk_short}} web action. Web actions are annotated {{site.data.keyword.openwhisk_short}} actions that developers can use to program backend logic that a web application can access anonymously, without requiring a {{site.data.keyword.openwhisk_short}} authentication key. Although authentication isn't required, web actions can be secured in the following ways:
 
   - With an authentication token that is specific to the web action, and can be revoked or changed by the action owner at any time
   - By passing your {{site.data.keyword.openwhisk_short}} credentials
 
-**Note**: All of the {{site.data.keyword.openwhisk_short}} action types (web_action and cloud_function or server) incur a cost. The cost of activating the action is charged to the person who owns the credentials that are specified in the action call. See [Pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/openwhisk/learn/pricing){: new_window} for more details. The {{site.data.keyword.openwhisk_short}} service does not distinguish between calls that are made from the "Try it out" pane during testing and calls that are made from an application in production. Therefore, calls made during testing might incur charges.
+All of the {{site.data.keyword.openwhisk_short}} action types (web_action and cloud_function or server) incur a cost. The cost of activating the action is charged to the person who owns the credentials that are specified in the action call. See [Pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/openwhisk/learn/pricing){: new_window} for more details. The {{site.data.keyword.openwhisk_short}} service does not distinguish between calls that are made from the "Try it out" pane during testing and calls that are made from an application in production. Therefore, calls made during testing might incur charges.
+{: note}
 
 ## Procedure
 {: #call-action}
@@ -50,24 +55,24 @@ To make a programmatic call from a dialog node, complete the following steps:
 
 1.  In the dialog node from which you want to make the programmatic call, open the JSON editor.
 
-    - To make a programmatic call that is executed after the response for a node is evaluated, open the JSON editor for the node response.
+    - To make a programmatic call that runs after the response for a node is evaluated, open the JSON editor for the node response.
 
       ![Shows how to access the JSON editor associated with a standard node response.](images/contextvar-json-response.png)
 
-      If the **Multiple responses** setting is **On** for the node, then you must click the **Edit response** ![Edit response](images/edit-slot.png) icon before the **Options**  ![Advanced response](images/kabob.png) menu will be visible.
+      If the **Multiple responses** setting is **On** for the node, then you must click the **Edit response** ![Edit response](images/edit-slot.png) icon for the **Options**  ![Advanced response](images/kabob.png) menu to be visible.
 
-      ![Shows how to access the JSON editor associated with a standard node that has multiple conditional responses enabled for it.](images/contextvar-json-multi-response.png)
+      ![Shows how to access the JSON editor that is associated with a standard node that has multiple conditional responses that are enabled for it.](images/contextvar-json-multi-response.png)
 
     If you want to display or further process the response from the external service within the same dialog turn, then you must add a second node that does so, and jump to it from this node.
     {: tip}
 
     - To make a call that can be used by an individual slot, click the **Edit slot** icon ![Edit slot icon](images/edit-slot.png) for the slot, and then do one of the following things:
 
-      - To make a programmatic call that is executed after the slot condition is evaluated to true, open the JSON editor that is associated with the slot condition.
+      - To make a programmatic call that runs after the slot condition is evaluated to true, open the JSON editor that is associated with the slot condition.
 
         ![Shows how to access the JSON editor associated with a slot condition.](images/contextvar-json-slot-condition.png)
 
-      - To make a programmatic call that is executed after the slot is successfully filled, open the JSON editor that is associated with the Found response. To do so, from the **Options** ![Options icon](images/kabob.png) menu for the slot, click **Enable conditional responses**. For the Found response, click the **Edit response** ![Edit response](images/edit-slot.png) icon. From the **Options** ![Options icon](images/kabob.png) menu for the Found response, click **Open JSON editor**.
+      - To make a programmatic call that runs after the slot is successfully filled, open the JSON editor that is associated with the Found response. To do so, from the **Options** ![Options icon](images/kabob.png) menu for the slot, click **Enable conditional responses**. For the Found response, click the **Edit response** ![Edit response](images/edit-slot.png) icon. From the **Options** ![Options icon](images/kabob.png) menu for the Found response, click **Open JSON editor**.
 
         ![Shows how to access the JSON editor associated with the conditional response for a slot.](images/contextvar-json-slot-multi-response.png)
 
@@ -97,7 +102,7 @@ To make a programmatic call from a dialog node, complete the following steps:
     ```
     {: codeblock}
 
-    The `actions` array specifies the programmatic calls to make from the dialog. It can define up to 5 separate programmatic calls. Specify the following name and value pairs in the JSON array:
+    The `actions` array specifies the programmatic calls to make from the dialog. It can define up to five separate programmatic calls. Specify the following name and value pairs in the JSON array:
 
     - `<actionName>`: Required. The name of the action or service to call. The name cannot be longer than 256 characters.
 
@@ -111,30 +116,30 @@ To make a programmatic call from a dialog node, complete the following steps:
          - If a web action is part of a package, then the `<package-name>` information is required. Otherwise, the package name `default`, which is applied to web actions that do not have a package name, is required.
          - If you are calling a sequence of actions, then specify the `<sequence name>` in place of the `<action name>`.
          - The namespace for a user-defined action typically has the syntax: `<myIBMCloudOrganizationID>_<myIBMCloudSpace>`. For example: `/jdoeorg_prod10/search flights`
-         - The actions that are provided with {{site.data.keyword.openwhisk_short}} often have the namespace: `whisk.system`, but you should always verify the namespace to be sure. For example: `/whisk.system/weather/forecast`
+         - The actions that are provided with {{site.data.keyword.openwhisk_short}} often have the namespace: `whisk.system`, but verify the namespace first to be sure. For example: `/whisk.system/weather/forecast`
 
            See the [IBM Cloud Functions naming guidelines ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/openwhisk/openwhisk_reference.html#openwhisk_entities) for more details.
 
     - `<type>`: Indicates the type of call to make. Choose from the following types:
 
-      - **client**: Sends a message response with programmatic call information in a standardized format that your external client application can use to perform the call or function, and get a result on behalf of the dialog. The JSON object in the response body specifies the service or function to call, any associated parameters to pass with the call, and how the result should be sent back.
+      - **client**: Sends a message response with programmatic call information in a standardized format that your external client application understands. Your client application must use the provided information to run the programmatic call or function, and return the result to the dialog. The JSON object in the response body specifies the service or function to call, any associated parameters to pass with the call, and the format of the result to send back.
 
-      - **cloud_function**: Calls a {{site.data.keyword.openwhisk_short}} action (one or more) directly. You must define the action itself separately by using {{site.data.keyword.openwhisk}}. For more information, see [Creating an action](dialog-actions.html#create-action) below. (This type used to be named **server**. The **server** type continues to be supported.)
+      - **cloud_function**: Calls a {{site.data.keyword.openwhisk_short}} action (one or more) directly. You must define the action itself separately by using {{site.data.keyword.openwhisk}}. For more information, see [Creating an action](dialog-actions.html#create-action). (This type used to be named **server**. The **server** type continues to be supported.)
 
-      - **web_action**: Calls a {{site.data.keyword.openwhisk_short}} web action (one or more) directly. You must define the web action itself separately by using {{site.data.keyword.openwhisk}}. For more information,  see [Creating an action](dialog-actions.html#create-action) below.
+      - **web_action**: Calls a {{site.data.keyword.openwhisk_short}} web action (one or more) directly. You must define the web action itself separately by using {{site.data.keyword.openwhisk}}. For more information,  see [Creating an action](dialog-actions.html#create-action).
 
       Specifying the type is optional. The default value is `client`.
 
-    - `<action_parameters>`: Any parameters that are expected by the external program, specified as a JSON object. Parameters are only required if the external program requires them.
+    - `<action_parameters>`: Any parameters that are expected by the external program, which are specified as a JSON object. Parameters are only required if the external program requires them.
 
     - `<result_variable_name>`: The name to use to reference the JSON object that is returned by the external service or program. The result is added to the context section of the /message response. In other words, the result is stored as a context variable so it can be displayed in the node response or accessed by dialog nodes that are triggered later. Any existing value for the context variable is overwritten by the value that is returned by the action. You can specify the `result_variable_name` by using the following syntax:
 
       - `my_result`
       - `$my_result`
 
-      The name cannot be longer than 64 characters. The variable name cannot contain the following characters: parentheses `()`, square brackets (`[]`), a single quote (`'`), a quotation mark (`"`), or a back slash (`\`).
+      The name cannot be longer than 64 characters. The variable name cannot contain the following characters: parentheses `()`, square brackets (`[]`), a single quotation mark (`'`), a quotation mark (`"`), or a backslash (`\`).
 
-      If you want to save the result to the output or input section of the /message response, then you can prepend one of the following location keywords to the `result_variable_name`:
+      If you want to save the result to the output or input section of the /message response, then you can add one of the following location keywords as a prefix to the `result_variable_name`:
 
        - `output.`: Adds the result to the output section of the /message response. For example, `output.my_result`.
        - `input.`: Adds the result to the input section of the /message response. For example, `input.my_result`.
@@ -182,9 +187,11 @@ To make a programmatic call from a dialog node, complete the following steps:
 
       1.  Click the **Show Auth Key** icon ![Show Auth Key](images/show-auth-icon.png) to show the credentials. The segment before the colon (:) is your user ID. The segment after the colon is your password.
 
-      **Attention**: Any charges that are incurred when the action runs are charged to the person who owns these credentials.
+      Any charges that are incurred when the action runs are charged to the person who owns these credentials.
+      {: note}
 
-      **Warning**: When you use built-in integrations to deploy the assistant, there is no way to pass the credentials to the dialog. You must store them as context variable values in a dialog node that will be triggered before the programmatic call itself is made. As a result, the credentials are visible in the JSON file that represents the skill, which can be downloaded by anyone with access to your skills. To protect your {{site.data.keyword.openwhisk_short}} credentials, consider using web actions with no authentication or authenticate the call with a token that is specific to the web action only.
+      When you use built-in integrations to deploy the assistant, there is no way to pass the credentials to the dialog. You must store them as context variable values in a dialog node that will be triggered before the programmatic call itself is made. As a result, the credentials are visible in the JSON file that represents the skill, which can be downloaded by anyone with access to your skills. To protect your {{site.data.keyword.openwhisk_short}} credentials, consider using web actions with no authentication or authenticate the call with a token that is specific to the web action only.
+      {: important}
 
       You can prevent the information from being stored in Watson logs by nesting your context variable within the $private section of the message context. For example: `$private.my_credentials`.
 
@@ -211,7 +218,8 @@ To make a programmatic call from a dialog node, complete the following steps:
 
       ![Shows how the $private.my_credentials context variable is defined in the Try it out context management interface](images/testing-creds.png)
 
-      **Attention**: {{site.data.keyword.openwhisk_short}} does not distinguish between calls that are made from the "Try it out" pane during testing and calls that are made from an application in production. Calls made during testing might incur charges.
+      {{site.data.keyword.openwhisk_short}} does not distinguish between calls that are made from the "Try it out" pane during testing and calls that are made from an application in production. Calls made during testing might incur charges.
+      {: note}
 
 ## Creating an action
 {: #create-action}
@@ -543,7 +551,8 @@ This example shows how to use the {{site.data.keyword.openwhisk_short}} `forecas
 ```
 {: codeblock}
 
-**Note**: A username and a password are listed as parameters. These are only present because this particular action requires them; together they define the credentials required by the external Weather service that the provided action calls on the back end. They are different from the IBM Cloud Function account credentials. Take steps to keep these credentials private as well.
+A username and a password are listed as parameters. These are only present because this particular action requires them; together they define the credentials required by the external Weather service that the provided action calls on the back end. They are different from the IBM Cloud Function account credentials. Take steps to keep these credentials private as well.
+{: note}
 
 The output of the {{site.data.keyword.openwhisk_short}} action, which is stored in the `context.forecasts` variable, can now be accessed by subsequent dialog nodes.
 
