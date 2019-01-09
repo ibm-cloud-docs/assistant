@@ -27,9 +27,6 @@ lastupdated: "2019-01-09"
 So you have a working dialog skill and an assistant that uses it. Now you want to develop a custom client application that will interact with your users and communicate with the {{site.data.keyword.conversationfull}} service.
 {: shortdesc}
 
-You can view this tutorial for Node.js, Python 3, or Java by clicking the language selector above. For details about all supported languages, refer to the {{site.data.keyword.watson}} [SDKs ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/watson/getting-started-sdks.html#sdks){: new_window}.
-{: tip }
-
 ## Setting up the {{site.data.keyword.conversationshort}} service
 
 The example application we will create in this section implements several functions of a cognitive personal assistant. The application code will connect to a {{site.data.keyword.conversationshort}} assistant, where the cognitive processing (such as the detection of user intents) takes place.
