@@ -20,9 +20,6 @@ lastupdated: "2019-01-09"
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
 {:tip: .tip}
 
 # Building a client application
