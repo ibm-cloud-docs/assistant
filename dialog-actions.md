@@ -59,7 +59,7 @@ To make a programmatic call from a dialog node, complete the following steps:
 
       ![Shows how to access the JSON editor associated with a standard node response.](images/contextvar-json-response.png)
 
-      If the **Multiple responses** setting is **On** for the node, then you must click the **Edit response** ![Edit response](images/edit-slot.png) icon for the **Options**  ![Advanced response](images/kabob.png) menu to be visible.
+      If the **Multiple responses** setting is **On** for the node, then you must click the **Edit response** ![Edit response](images/edit-slot.png) icon for the **Options** ![Advanced response](images/kabob.png) menu to be visible.
 
       ![Shows how to access the JSON editor that is associated with a standard node that has multiple conditional responses that are enabled for it.](images/contextvar-json-multi-response.png)
 
@@ -137,7 +137,7 @@ To make a programmatic call from a dialog node, complete the following steps:
       - `my_result`
       - `$my_result`
 
-      The name cannot be longer than 64 characters. The variable name cannot contain the following characters: parentheses `()`, square brackets (`[]`), a single quotation mark (`'`), a quotation mark (`"`), or a backslash (`\`).
+      The name cannot be longer than 64 characters. The variable name cannot contain the following characters: parentheses `()`, brackets (`[]`), a single quotation mark (`'`), a quotation mark (`"`), or a backslash (`\`).
 
       If you want to save the result to the output or input section of the /message response, then you can add one of the following location keywords as a prefix to the `result_variable_name`:
 
