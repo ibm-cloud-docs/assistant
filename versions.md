@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-09"
+lastupdated: "2019-01-10"
 
 ---
 
@@ -81,7 +81,7 @@ When you change the skill linked to an assistant from the assistant tile using t
 
 The only way to view a saved version is to overwrite the in-progress development version of the skill with the saved version. (But not before you have saved any work you have done in the current development version.)
 
-You cannot edit a saved version. To acheive the same goal, you can use a saved version as the basis for a new version in which you incorporate any changes you wanted to make to the saved version. To start development work from a saved version, overwrite the in-progress development version of the skill with the saved version.
+You cannot edit a saved version. To achieve the same goal, you can use a saved version as the basis for a new version in which you incorporate any changes you wanted to make to the saved version. To start development work from a saved version, overwrite the in-progress development version of the skill with the saved version.
 
 1.  Save any changes you made to the skill since the last time you created a version.
 
