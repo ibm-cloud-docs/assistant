@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-13"
+lastupdated: "2019-01-10"
 ---
 
 {:shortdesc: .shortdesc}
@@ -27,9 +27,7 @@ IBM releases services, features, and language support for your evaluation that a
 
 - You can now save multiple versions of a dialog skill.
 
-  To take a snapshot of the current training data and dialog, click **Save new version**. At version creation time, you can also choose to add the version to an assistant so you can deploy the skill version for testing.
-  
-  When you work with a dialog skill, you are always editing the `development` version. If you test a saved version and like the results, you can revert to it. First, decide if you want to retain any edits you made to the skill since the snapshot was taken. If you want to keep your interim changes, save the current development draft as a new version before you revert to the version you want to edit.
+  To take a snapshot of the current training data and dialog, click **Save new version**. See [Creating skill versions](versions.html) for more details.
 
 - How you work with search skills has changed. You can now add one search skill and one dialog skill to the same assistant. When you add both, the search is triggered if the user input cannot be addressed by any of the nodes in the dialog of the dialog skill. You can learn more from the following topics:
   - [Search skill](create-search-skill.html)
