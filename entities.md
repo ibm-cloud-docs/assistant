@@ -216,13 +216,14 @@ Dictionary-based entites are those for which you define specific terms, synonyms
       |----------|------------------|
       |  email   | `<? @contactInfo.literal ?>` |
 
+      ***Capture groups***
       {: #capture-group}
 
-      *Capture groups* - For regular expressions, any part of a pattern inside a pair of normal parentheses will be captured as a group. For example, the entity value `fullUSphone` contains three captured groups:
+      For regular expressions, any part of a pattern inside a pair of normal parentheses will be captured as a group. For example, the entity value `fullUSphone` contains three captured groups:
 
-        - `(\d{3})` - US area code
-        - `(\d{3})` - Prefix
-        - `(\d{4})` - Line number
+      - `(\d{3})` - US area code
+      - `(\d{3})` - Prefix
+      - `(\d{4})` - Line number
 
       Grouping can be helpful if, for example, you wanted the {{site.data.keyword.conversationshort}} service to ask users for their phone number, and then use only the area code of their provided number in a response.
 
@@ -235,11 +236,12 @@ Dictionary-based entites are those for which you define specific terms, synonyms
       For additional information about using capture groups in your dialog, see [Storing and recognizing entity pattern groups in input](dialog-tips.html#get-pattern-groups).
 
       The pattern matching engine employed by the {{site.data.keyword.conversationshort}} service has some syntax limitations, which are necessary in order to avoid performance concerns which can occur when using other regular expression engines.
-        - Entity patterns may not contain:
-          - Positive repetitions (for example `x*+`)
-          - Backreferences (for example `\g1`)
-          - Conditional branches (for example `(?(cond)true)`)
-        - When a pattern entity starts or ends with a Unicode character, and includes word boundaries, for example `\bš\b`, the pattern match does not match the word boundary correctly. In this example, for input `š zkouška`, the match returns `Group 0: 6-7 š` (`š zkou`_**`š`**_`ka`), instead of the correct `Group 0: 0-1 š` (_**`š`**_ `zkouška`).
+
+      - Entity patterns may not contain:
+        - Positive repetitions (for example `x*+`)
+        - Backreferences (for example `\g1`)
+        - Conditional branches (for example `(?(cond)true)`)
+      - When a pattern entity starts or ends with a Unicode character, and includes word boundaries, for example `\bš\b`, the pattern match does not match the word boundary correctly. In this example, for input `š zkouška`, the match returns `Group 0: 6-7 š` (`š zkou`_**`š`**_`ka`), instead of the correct `Group 0: 0-1 š` (_**`š`**_ `zkouška`).
 
       The regular expression engine is loosely based on the Java regular expression engine. The {{site.data.keyword.conversationshort}} service will produce an error if you try to upload an unsupported pattern, either via the API or from within the {{site.data.keyword.conversationshort}} service Tooling UI.
 

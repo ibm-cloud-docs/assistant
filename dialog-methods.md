@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-08"
+lastupdated: "2019-01-09"
 
 ---
 
@@ -281,7 +281,7 @@ The expression returns the following filtered array:
 ```
 {: codeblock}
 
-When comparing number values, be sure to set the context variable involved in the comparison to a valid number value. You can set the context variable to `0` when the dialog is initialized, for example, to ensure that it is never null.
+When comparing number values, be sure to set the context variable involved in the comparison to a valid number value.
 {: tip}
 
 You can use a dialog node response expression like this:
