@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-09"
+lastupdated: "2019-01-11"
 
 ---
 
@@ -281,7 +281,7 @@ The expression returns the following filtered array:
 ```
 {: codeblock}
 
-When comparing number values, be sure to set the context variable involved in the comparison to a valid number value.
+When comparing number values, be sure to set the context variable involved in the comparison to a valid value before the filter method is triggered. Note that `null` can be a valid value if the array element you are comparing it against might contain it. For example, if the population name and value pair for Tokyo is `"population":null`, and the comparison expression is `"city.population == $population_min"`, then `null` would be a valid value for the `$population_min` context variable.
 {: tip}
 
 You can use a dialog node response expression like this:
