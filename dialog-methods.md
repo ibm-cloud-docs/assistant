@@ -192,10 +192,7 @@ The filter expression consists of the following values:
     </tr>
     </table>
 
-- `comparison_value`: Value that you want to compare each array element property value against. To specify a value that can change depending on the user input, use a context variable or entity as the value. If you specify a value that can vary, add logic to guarantee that the `comparison_value` value is valid at evaluation time or an error will occur. 
-
-  `null` can be a valid value if the array element you are comparing it against might contain it.
-  {: note}
+- `comparison_value`: Value that you want to compare each array element property value against. To specify a value that can change depending on the user input, use a context variable or entity as the value. If you specify a value that can vary, add logic to guarantee that the `comparison_value` value is valid at evaluation time or an error will occur.
 
 #### Filter example 1
 
