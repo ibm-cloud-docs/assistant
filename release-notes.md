@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-08"
+lastupdated: "2019-01-11"
 ---
 
 {:shortdesc: .shortdesc}
@@ -68,35 +68,10 @@ The following new features and changes to the service are available.
 
 - **London data center**: You can now create {{site.data.keyword.conversationshort}} service instances that are hosted in the London data center without syndication. See [Data centers](services-information.html#regions) for more details.
 
-- **Dialog node limit change**: The dialog node limit was temporarily changed from 100,000 to 500 for new Standard plan instances. This limit has since been reversed. If you created a Standard plan instance between 10 December and 12 December 2018, the limits might continue to be in effect for the dialogs in your skills. The lower limits will be removed from all impacted instances in January. If you need to have the lower limit lifted before then, open a support ticket.
+- **Dialog node limit changes**: The dialog node limit was temporarily changed from 100,000 to 500 for new Standard plan instances. This limit change was later reversed. If you created a Standard plan instance during the time frame in which the limit was in effect, your dialogs might be impacted. The limit was in effect for skills created between 10 December and 12 December 2018. The lower limits will be removed from all impacted instances in January. If you need to have the lower limit lifted before then, open a support ticket.
 
 ### 1 December 2018
 {: #1December2018}
-
-- **Dialog node limit changes**: The dialog node limit decreased for the following service plans:
-
-  <table>
-  <caption>Dialog node limit changes</caption>
-    <tr>
-      <th>Plan</th>
-      <th>Old limit</th>
-      <th>New limit</th>
-    </tr>
-    <tr>
-      <td>Standard</td>
-      <td>100,000</td>
-      <td>500</td>
-    </tr>
-    <tr>
-       <td>Lite</td>
-       <td>25,000</td>
-       <td>100</td>
-    </tr>
-  </table>
-
-    Users of service instances that were created before the limit change have 6 months to upgrade to a Plus or Premium plan, or edit the dialogs in the skills in the existing service instances to meet the new limit requirements. After the grace period ends, adding new dialog nodes to a dialog in a skill in an existing Lite or Standard plan service instance will be prohibited until the dialog complies with the limits. Existing dialog nodes will not be removed.
-
-    See [Troubleshooting skill import issues](create-skill.html#import-errors) for information about how to edit skills that you want to continue using.
 
    To determine the number of dialog nodes in a dialog skill, do one of the following things:
 

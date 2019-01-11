@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-11-02"
+lastupdated: "2019-01-11"
 
 ---
 
@@ -32,9 +32,9 @@ Unlike the `welcome` special condition, the `conversation_start` special conditi
 
 Complete the following steps to manage the dialog start:
 
-1.  Add a dialog node above the Welcome node that is provided when you initially create the dialog.
+1.  Add a dialog node above the Welcome node that is automatically added to the top of the dialog tree when you create the dialog.
 
-1.  Set the `conversation_start` special condition as the node condition for this newly added node.
+1.  Set the node condition for this newly added node to `conversation_start`, which is a special condition as described earlier.
 
 1.  Define any context variables that you want to set with default values for the dialog in the `conversation_start` node.
 
