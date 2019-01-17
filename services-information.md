@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-01-17"
 
 ---
 
@@ -139,7 +139,7 @@ The authentication mechanism used by your service instance impacts how you must 
         When you use any of the Watson SDKs, you can pass the API key and let the SDK manage the lifecycle of the tokens.
         {: note}
 
-        IAM resources cannot be managed with the Cloud Foundry Command Line Interface (CLI). For example, Cloud Foundry CLI commands (beginning with `cf`) that create or manage service instances do not work with instances hosted in locations using IAM. Instead, you must use the {{site.data.keyword.cloud_notm}} CLI and its associated commands. See [Commands for managing resource groups and resources](https://cloud.ibm.com/docs/cli/reference/bluemix_cli/bx_cli.html#commands-for-managing-resource-groups-and-resources) for more details.
+        IAM resources cannot be managed with the Cloud Foundry Command Line Interface (CLI). For example, Cloud Foundry CLI commands (beginning with `cf`) that create or manage service instances do not work with instances hosted in locations using IAM. Instead, you must use the {{site.data.keyword.cloud_notm}} CLI and its associated commands. See [Working with resources and resource groups ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/cli/reference/ibmcloud/cli_resource_group.html) for more details.
 
         See [Authenticating with IAM tokens ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/services/watson/getting-started-iam.html){: new_window} for more information.
 
