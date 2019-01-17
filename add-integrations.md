@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-11-19"
+lastupdated: "2019-01-17"
 
 ---
 
@@ -34,6 +34,7 @@ The number of integrations you can create in a single service instance depends o
 | Service plan     | Integrations per assistant |
 |------------------|---------------------------:|
 | Premium          |                        100 |
+| Plus             |                        100 |
 | Standard         |                        100 |
 | Lite             |                        100 |
 {: caption="Service plan details" caption-side="top"}
@@ -59,7 +60,12 @@ Follow these steps to add integrations to your assistant:
     - [Facebook Messenger](deploy-facebook.html)
     - [Preview Link](deploy-web-link.html)
     - [Slack](deploy-slack.html)
+    - [Voice Agent (Telephony)  ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/catalog/services/voice-agent-with-watson){: new_window}
+
+      Opens the **Voice Agent with Watson** service overview page on {{site.data.keyword.cloud_notm}}.
     - [WordPress plug-in ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://wordpress.org/plugins/conversation-watson/){: new_window}
+
+      Opens the IBM Watson Assistant plug-in overview page on the WordPress site.
 
 1.  Follow the instructions that are provided on the screen to complete the integration process.
 

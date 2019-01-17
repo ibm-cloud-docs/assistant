@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-01-17"
 
 ---
 
@@ -55,11 +55,15 @@ The service looks for terms in the user input that match the values, synonyms, o
 
 When you define a contextual entity, a model is trained on both the *annotated term* and the *context* in which the term is used in the sentence you annotate. This new contextual entity model enables the service to calculate a confidence score that identifies how likely a word or phrase is to be an instance of an entity, based on how it is used in the user input.
 
-- **Contextual entity**: First, you define a category of terms as an entity (`product`), and then define one or more values in that category (`handbag`). Next, you go to the *Intents* page and mine your existing intent user examples to find any mentions of the entity, and label them as such. For example, you might go to the `#buy_something` intent, and find a user example that says, `I want to buy a Coach bag`. You can label `Coach bag` as a mention of the `@product:handbag` entity.
+- **Contextual entity**: First, you define a category of terms as an entity (`product`). Next, you go to the *Intents* page and mine your existing intent user examples to find any mentions of the entity, and label them as such. For example, you might go to the `#buy_something` intent, and find a user example that says, `I want to buy a Coach bag`. You can label `Coach bag` as a mention of the `@product` entity.
 
-    At run time, the service evaluates terms based on the context in which they are used in the sentence only. If the structure of a user request that mentions the term matches the structure of a user example sentence in which a mention is labeled, then the service interprets the term to be a mention of that entity type. For example, the user input might include the utterance, `I want to buy a Gucci bag`. Due to the similarity of the structure of this sentence to the user example that you annotated (`I want to buy a Coach bag`), the service recognizes `Gucci bag` as a `@product:handbag` entity mention.
+    For training purposes, the term you annotated, `Coach bag`, is added as a value of the `@product` entity.
 
-    When a contextual entity model is in use, the service does *not* look for exact text or pattern matches for the entity in the user input. The context-based approach replaces the dictionary-based approach.
+    At run time, the service evaluates terms based on the context in which they are used in the sentence only. If the structure of a user request that mentions the term matches the structure of a user example sentence in which a mention is labeled, then the service interprets the term to be a mention of that entity type. For example, the user input might include the utterance, `I want to buy a Gucci bag`. Due to the similarity of the structure of this sentence to the user example that you annotated (`I want to buy a Coach bag`), the service recognizes `Gucci bag` as a `@product` entity mention.
+
+    When a contextual entity model is used for an entity, the service does *not* look for exact text or pattern matches for the entity in the user input. The context-based approach replaces the dictionary-based approach for that entity.
+
+    If you choose to define entity values by using annotation, you must add more than 10 annotations for the entity for the resulting contextual entity model to be effective.
 
 ## Entity limits
 {: #entity-limits}
@@ -258,7 +262,7 @@ Context-based entites are those for which you annotate occurrences of the entity
 
 In order to train a contextual entity model, you can take advantage of your intent examples, which provide readily-available sentences to annotate.
 
-Using an intent's user examples to define contextual entities does not affect the classification of that intent in any way.
+Using an intent's user examples to define contextual entities does not affect the classification of that intent. However, entity mentions that you label are also added to that entity as synonyms. And intent classification does use synonym mentions in intent user examples to establish a weak reference between an intent and an entity.
 {: note}
 
 1.  In the {{site.data.keyword.conversationshort}} tool, open your skill and then click the **Intents** tab. If **Intents** is not visible, use the ![Menu](images/Menu_16.png) menu to open the page.
