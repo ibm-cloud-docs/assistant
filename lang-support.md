@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-01-17"
 
 ---
 
@@ -40,7 +40,7 @@ The first table shows the level of support for all features, except those relate
 | **Arabic (ar)**                    | GA | NA |
 | **Chinese (Simplified) (zh-cn)**   | GA | Beta |
 | **Chinese (Traditional) (zh-tw)**  | Beta | Beta |
-| **Czech (cs)**                     | Beta | Beta |
+| **Czech (cs)**                     | GA | Beta |
 | **Dutch (nl)**                     | GA | Beta |
 | **French (fr)**                    | GA | Beta |
 | **German (de)**                    | GA | Beta |
@@ -59,7 +59,7 @@ The first table shows the level of support for all features, except those relate
 | **Arabic (ar)**                    | Beta | NA | NA |
 | **Chinese (Simplified) (zh-cn)**   | GA | NA | NA |
 | **Chinese (Traditional) (zh-tw)**  | Beta | NA | NA |
-| **Czech (cs)**                     | Beta | NA | NA |
+| **Czech (cs)**                     | GA | NA | NA |
 | **Dutch (nl)**                     | GA | NA | NA |
 | **French (fr)**                    | GA | GA | NA |
 | **German (de)**                    | GA | GA | NA |
@@ -78,7 +78,7 @@ The first table shows the level of support for all features, except those relate
 | **Arabic (ar)**                    | Beta | GA (Misspelling only) | NA | NA |
 | **Chinese (Simplified) (zh-cn)**   | GA | NA | NA | NA |
 | **Chinese (Traditional) (zh-tw)**  | Beta | NA | NA | NA |
-| **Czech (cs)**                     | Beta | GA (Misspelling only) | NA | NA |
+| **Czech (cs)**                     | GA | GA (Misspelling only) | NA | NA |
 | **Dutch (nl)**                     | GA | GA (Misspelling only) | NA | NA |
 | **French (fr)**                    | GA | GA (Misspelling only) | NA | GA |
 | **German (de)**                    | GA | GA (Misspelling only) | NA | NA |

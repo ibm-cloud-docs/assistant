@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-11"
+lastupdated: "2019-01-17"
 ---
 
 {:shortdesc: .shortdesc}
@@ -49,6 +49,11 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #change-log}
 
 The following new features and changes to the service are available.
+
+### 17 January 2019
+{: #17January2019}
+
+- **Czech language support is generally available**: Support for the Czech language is no longer classified as beta; it is now generally available. See [Supported languages](lang-support.html) for more information.
 
 ### 4 January 2019
 {: #4January2019}
