@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-17"
+lastupdated: "2019-01-18"
 ---
 
 {:shortdesc: .shortdesc}
@@ -54,6 +54,11 @@ The following new features and changes to the service are available.
 {: #17January2019}
 
 - **Czech language support is generally available**: Support for the Czech language is no longer classified as beta; it is now generally available. See [Supported languages](lang-support.html) for more information.
+
+- **Language support improvements**: The language understanding components were updated to improve the following features:
+
+  - German and Korean system entities
+  - Intent classification tokenization for Arabic, Dutch, French, Italian, Japanese, Portuguese, and Spanish
 
 ### 4 January 2019
 {: #4January2019}
