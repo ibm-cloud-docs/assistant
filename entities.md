@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-17"
+lastupdated: "2019-01-18"
 
 ---
 
@@ -59,11 +59,11 @@ When you define a contextual entity, a model is trained on both the *annotated t
 
     For training purposes, the term you annotated, `Coach bag`, is added as a value of the `@product` entity.
 
-    At run time, the service evaluates terms based on the context in which they are used in the sentence only. If the structure of a user request that mentions the term matches the structure of a user example sentence in which a mention is labeled, then the service interprets the term to be a mention of that entity type. For example, the user input might include the utterance, `I want to buy a Gucci bag`. Due to the similarity of the structure of this sentence to the user example that you annotated (`I want to buy a Coach bag`), the service recognizes `Gucci bag` as a `@product` entity mention.
+    At run time, the service evaluates terms based on the context in which they are used in the sentence only. If the structure of a user request that mentions the term matches the structure of an intent user example in which a mention is labeled, then the service interprets the term to be a mention of that entity type. For example, the user input might include the utterance, `I want to buy a Gucci bag`. Due to the similarity of the structure of this sentence to the user example that you annotated (`I want to buy a Coach bag`), the service recognizes `Gucci bag` as a `@product` entity mention.
 
-    When a contextual entity model is used for an entity, the service does *not* look for exact text or pattern matches for the entity in the user input. The context-based approach replaces the dictionary-based approach for that entity.
+    When a contextual entity model is used for an entity, the service does *not* look for exact text or pattern matches for the entity in the user input, but focuses instead on the context of the sentence in which the entity is mentioned.
 
-    If you choose to define entity values by using annotation, you must add more than 10 annotations for the entity for the resulting contextual entity model to be effective.
+    If you choose to define entity values by using annotations, add at least 10 annotations per entity to give the contextual entity model enough data to be reliable.
 
 ## Entity limits
 {: #entity-limits}
@@ -216,9 +216,17 @@ Dictionary-based entites are those for which you define specific terms, synonyms
 
       Imagine a case where you are asking a user for their email address. The dialog node condition will contain a condition similar to `@contactInfo:email`. In order to assign the user-entered email as a context variable, the following syntax can be used to capture the pattern match within the dialog node's response section:
 
-      | Variable | Value            |
-      |----------|------------------|
-      |  email   | `<? @contactInfo.literal ?>` |
+      <table>
+      <caption>Saving a pattern</caption>
+        <tr>
+          <th>Variable</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td>email</td>
+          <td>`<? @contactInfo.literal ?>`</td>
+        </tr>
+      </table>
 
       ***Capture groups***
       {: #capture-group}
@@ -233,9 +241,17 @@ Dictionary-based entites are those for which you define specific terms, synonyms
 
       In order to assign the user-entered area code as a context variable, the following syntax can be used to capture the group match within the dialog node's response section:
 
-      | Variable     | Value            |
-      |--------------|------------------|
-      |  area_code   | `<? @fullUSphone.groups[1] ?>` |
+      <table>
+      <caption>Saving a capture group</caption>
+        <tr>
+          <th>Variable</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td>area_code</td>
+          <td>`<? @fullUSphone.groups[1] ?>`</td>
+        </tr>
+      </table>
 
       For additional information about using capture groups in your dialog, see [Storing and recognizing entity pattern groups in input](dialog-tips.html#get-pattern-groups).
 
