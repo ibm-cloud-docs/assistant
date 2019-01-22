@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-01-22"
 
 ---
 
@@ -28,7 +28,7 @@ Learn how to upgrade your service plan.
 ## Upgrading your plan
 {: #plan-upgrade}
 
-You can explore the {{site.data.keyword.conversationshort}} [service plan options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/catalog/services/watson-assistant-formerly-conversation){: new_window} to decide which plan is best for you.
+You can explore the {{site.data.keyword.conversationshort}} [service plan options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/watson-assistant/pricing/){: new_window} to decide which plan is best for you.
 
 You cannot upgrade a Cloud Foundry-based instance to a Plus plan. You must migrate the instance, so it is using a resource group before you can upgrade it. See [Migrating](migrating.html) for more details.
 {: note}
