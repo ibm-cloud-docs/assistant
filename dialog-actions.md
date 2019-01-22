@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-11"
+lastupdated: "2019-01-22"
 
 ---
 
@@ -36,7 +36,7 @@ You can use an external service to do the following types of things:
 
 When you define the programmatic call, you choose one of the following types:
 
-- **client**: Defines a programmatic call in a standardized format that your external client application can understand. Your client application must use the provided information to run the programmatic call or function, and return the result to the dialog. This type of call basically tells the dialog to pause here and wait for the client application go do something. The program that the client application runs can be anything that you choose. Be sure to specify the call name and parameter details, and the error message variable name, according to the JSON formatting rules that are outlined later.
+- **client**: Defines a programmatic call in a standardized format that your external client application can understand. Your client application must use the provided information to run the programmatic call or function, and return the result to the dialog. This type of call basically tells the dialog to pause here and wait for the client application to go do something. The program that the client application runs can be anything that you choose. Be sure to specify the call name and parameter details, and the error message variable name, according to the JSON formatting rules that are outlined later.
 
 - **cloud_function**: Calls an {{site.data.keyword.openwhisk_short}} action directly, and returns the result to the dialog. You must provide a {{site.data.keyword.openwhisk_short}} authentication key with the call. (This type used to be named **server**. The type **server** continues to be supported.)
 

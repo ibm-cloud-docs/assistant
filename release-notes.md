@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-18"
+lastupdated: "2019-01-22"
 ---
 
 {:shortdesc: .shortdesc}
@@ -163,7 +163,7 @@ The following new features and changes to the service are available.
   Existing Premium plan service instances are not impacted by this change; they continue to use API-based billing methods. Only existing Premium plan users will see the API-based plan listed as the *Premium (API)* plan option.
   {: note}
 
-  See {{site.data.keyword.conversationshort}} [service plan options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/catalog/services/watson-assistant-formerly-conversation){: new_window} for more information about all available service plans.
+  See {{site.data.keyword.conversationshort}} [service plan options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/watson-assistant/pricing/){: new_window} for more information about all available service plans.
 
 - **Intent user example recommendations ![Plus or Premium plan only](images/premium.png)**: You can upload a file that contains raw user inputs, such as user inquiries from a call center log, that the service can analyze and mine for intent user example candidates. See [Adding examples from log files](intents.html#intent-recommendations).
 
