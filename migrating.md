@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-01-21"
 
 ---
 
@@ -51,7 +51,7 @@ To migrate your service instance, complete these steps:
 
 1.  From the IBM Cloud Dashboard services list, click the migrate icon ![Migrate](images/migrate.svg) for the instance you want to migrate, and then click **Migrate** from the popup.
 
-    Any service instances that were created in Sydney region before 7 May 2018 or in the United Kingdom region before 13 December 2018 were syndicated to Dallas. When you migrate a Sydney- or United Kingdom-based Cloud Foundry service instance, it will become a resource that is hosted in the Dallas data center. Any service instances created in Sydney after 7 May 2018 or in London after 13 December 2018 use resource groups already and do not need to be migrated.
+    Any service instances that were created in the Sydney data center before 7 May 2018 or in the London data center before 13 December 2018 were syndicated to the Dallas data center. When you migrate a Sydney- or London-based Cloud Foundry service instance, it is converted to a resource that is hosted in Dallas.
     {: note}
 
 1.  Click **Continue**, and then choose a resource group.
@@ -62,7 +62,7 @@ To migrate your service instance, complete these steps:
 
     A message is displayed when the process is done. If you have other service instances to migrate, you can continue migrating other service instances, or click **Done**.
 
-The old (Cloud Foundry org-based) service instance that you migrated is listed in the Cloud Foundry Services section of the Dashboard, and is now shown as an *alias* of the new (resource group-based) version of the instance.
+The old (Cloud Foundry org-based) service instance that you migrated continues to be listed in the Cloud Foundry Services section of the Dashboard, and is now shown as an *alias* of the new (resource group-based) version of the instance.
 
 ![Shows current service instance is now an alias of a resource-based instance](images/alias.png)
 
@@ -77,4 +77,4 @@ If you have existing applications that use basic authentication to access the se
 
 Your new instance manages authentication with IBM Cloud Identity and Access Management (IAM), which is an enhanced mechanism that uses API keys instead of username and password credentials. You can see the API key information from the **Service credentials** page of the new service instance.
 
-Consider updating your applications such that they use the new authentication method to take advantage of the improved security that it affords. Any changes that you make to the dialog skills in the new instance are reflected in applications that use basic authentication credentials also. After you update all of your apps to use the new API key approach, you will no longer need the alias, and can delete it.
+Consider updating your existing custom applications such that they use the new authentication method to take advantage of the improved security that it affords. Any changes that you make to the dialog skills in the new instance are reflected in applications that use basic authentication credentials also. After you update all of your apps to use the new API key approach, you won't need the alias and can delete it.

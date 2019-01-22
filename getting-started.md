@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-08"
+lastupdated: "2019-01-22"
 
 ---
 
@@ -39,7 +39,7 @@ In this short tutorial, we introduce the {{site.data.keyword.conversationshort}}
 You need a service instance to start.
 {: hide-dashboard}
 
-1.  {: hide-dashboard} Go to the [{{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/watson-assistant-formerly-conversation) page in the {{site.data.keyword.cloud_notm}} catalog.
+1.  {: hide-dashboard} Go to the [{{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/catalog/services/watson-assistant) page in the {{site.data.keyword.cloud_notm}} catalog.
 
     The service instance will be created in the **default** resource group if you do not choose a different one, and it *cannot* be changed later. This group is sufficient for the purposes of trying out the service.
 
