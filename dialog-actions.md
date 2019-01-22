@@ -273,13 +273,13 @@ For a client type programmatic call, you can pass information about error proces
 ## Client call example
 {: #action-client-example}
 
-The following example shows what a call to an external weather service might look like. It is added to the JSON editor that is associated with the node response. By the time the node-level response is triggered, slots have collected and stored the date and location information from the user. This example assumes that the service that will be called has an endpoint named `/weather`, and that it takes `location` and `date` parameters, and returns a JSON object, `{"forecast": "<value>"}`.
+The following example shows what a call to an external weather service might look like. It is added to the JSON editor that is associated with the node response. By the time the node-level response is triggered, slots have collected and stored the date and location information from the user. This example assumes that the service that will be called has an endpoint named `/weather`, and that it takes `location` and `date` parameters, and returns a JSON object, `{"my_forecast": "<value>"}`.
 
  ``` json
 {
   "actions": [
     {
-      "name": "MyWeatherFunction",
+      "name": "https://yourweatherservice.mybluemix.net/weather",
       "type": "client",
       "parameters": {
         "date": "$date",
