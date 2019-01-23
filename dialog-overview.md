@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-22"
+lastupdated: "2019-01-23"
 
 ---
 
@@ -186,14 +186,14 @@ If you include one of these special characters in a text response, escape it by 
 
 The built-in integrations support the following Markdown syntax elements:
 
-| Output format | Syntax | Example |
+| Format | Syntax | Example |
 |------------|--------|---------|
 | Italics | `We're talking about *practice*.` | We're talking about *practice*. |
 | Bold | `There's **no** crying in baseball.` | There's **no** crying in baseball. |
 | Hypertext link | `Contact us at [ibm.com](https://www.ibm.com).` | Contact us at [ibm.com ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com). |
 {: caption="Supported markdown syntax" caption-side="top"}
 
-The "Try it out" pane does not support Markdown syntax currently. To include a link that is rendered in the "Try it out" pane and Preview link integration only, you can use HTML syntax. For example: `Contact us at <a href="https://www.ibm.com">ibm.com</a>.` (Do *not* try to escape the quotations mark with a backslash `\"`, for example.) However, HTML syntax is not rendered properly in any of the other integration types.
+The "Try it out" pane does not support Markdown syntax currently. To include a link that is rendered in the "Try it out" pane and Preview link integration only, you can use HTML syntax. For example: `Contact us at <a href="https://www.ibm.com">ibm.com</a>.` (Do *not* try to escape the quotations mark with a backslash `\"`, for example.) However, HTML syntax is not supported by any of the built-in integrations.
 {: note}
 
 #### Learn more about simple responses
