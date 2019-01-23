@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-17"
+lastupdated: "2019-01-23"
 
 ---
 
@@ -55,7 +55,7 @@ If you have a Lite plan and reach your API call limit, but the logs show that yo
 
 If you want to upgrade from one plan to another, see [Upgrading](upgrading.html).
 
-### Premium plan features
+### Plus and Premium plan features
 {: #premium}
 
 The following features are available only to users of Premium plans.
