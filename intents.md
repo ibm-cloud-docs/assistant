@@ -99,7 +99,7 @@ Use the {{site.data.keyword.conversationshort}} tool to create intents.
 
 1.  Click **Add example** to save the example.
 
-1.  Repeat the same process to add more examples. You can tab between each example. Provide at least 5 examples for each intent. The more examples you provide, the more accurate your application can be.
+1.  Repeat the same process to add more examples. You can tab between examples. Provide at least 5 examples for each intent. The more examples you provide, the more accurate your application can be.
 
 1.  When you have finished adding examples, click ![Close arrow](images/close_arrow.png) to finish creating the intent.
 
@@ -176,7 +176,7 @@ The following video provides a 2-minute overview of recommendations.
 ## How entity mentions in user examples are treated
 {: #entity-references}
 
-When you include an entity mention in a user example, the machine learning model (does* use that information. It uses the information in different way in these scenarios:
+When you include an entity mention in a user example, the machine learning model uses the information in different ways in these scenarios:
 
 - [Referencing entity values and synonyms in intent examples](#related-entities)
 - [Annotated mentions](#annotated-mentions)
