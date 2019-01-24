@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-01-24"
 
 ---
 
@@ -86,51 +86,15 @@ Detailed graphs provide additional information:
 * *Active users* - The number of unique users who have engaged with your application within the selected time period.
 * *Avg. conversations per user* - The total conversations during the selected time period divided by the total unique users during the selected time period.
 
-  Statistics for *Active users* and *Avg. conversations per user* require a unique `user_id` parameter. See [Enabling user metrics](#user_id) for more information.
+  Statistics for *Active users* and *Avg. conversations per user* require a unique `user_id` parameter. See [Enabling user metrics](logs_resources.html#user_id) for more information.
   {: important}
 
 ## Top Intents and Top Entities
 
 You can also view the intents and entities that were recognized most often during the specified time period.
 
-* *Top intents* - Intents are shown in a simple list. In addition to seeing the number of times an intent was recognized, you can select an intent to open the [User conversations](logs.html) page with the date range filtered to match the data you are viewing, and the intent filtered to match the selected intent.
+* *Top intents* - Intents are shown in a simple list. In addition to seeing the number of times an intent was recognized, you can select an intent to open the **User conversations** page with the date range filtered to match the data you are viewing, and the intent filtered to match the selected intent.
 
-* *Top entities* are also shown in a list. For each entity you can select from the **Values** column to see a list of the most common values that were identified for this entity during the time period. You can also select an entity to open the [User conversations](logs.html) page with the date range filtered to match the data you are viewing, and the entity filtered to match the selected entity.
+* *Top entities* are also shown in a list. For each entity you can select from the **Values** column to see a list of the most common values that were identified for this entity during the time period. You can also select an entity to open the **User conversations** page with the date range filtered to match the data you are viewing, and the entity filtered to match the selected entity.
 
-## Enabling user metrics
-{: #user_id}
-
-User metrics allow you to see, for example, the number of unique users who have engaged with your assistant, or the average number of conversations per user over a given time interval on the [Overview page](logs_oview.html). User metrics are enabled by using a unique `User ID` parameter.
-
-To specify the `User ID` for a message sent using the `/message` API, include the `user_id` property inside the metadata object in your [context ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant?curl=#get-response-to-user-input){: new_window}, as in this example::
-
-```
-"context" : {
-  "metadata" : {
-       "user_id": "{UserID}"
-  }
-}
-```
-{: codeblock}
-
-## Associating message data with a user for deletion
-{: #customer_id}
-
-There might come a time when you want to completely remove a set of your user's data from a {{site.data.keyword.conversationshort}} instance. When the delete feature is used, then the Overview metrics will no longer reflect those deleted messages; for example, they will have fewer Total Conversations.
-
-### Before you begin
-To delete messages for one or more individuals, you first need to associate a message with a unique **Customer ID** for each individual. To specify the **Customer ID** for any message sent using the `/message` API, include the `X-Watson-Metadata: customer_id` property in your header. You can pass multiple **Customer ID** entries with semicolon separated `field=value` pairs, using `customer_id`, as in the following example:
-
-```
-curl -X POST -u "apikey:3Df... ...Y7Pc9"
- --header
-   'Content-Type: application/json'
-   'X-Watson-Metadata: customer_id={first-customer-ID};customer_id={second-customer-ID}'
- --data '{"input":{"text":"hello"}}' 'https:// gateway-us-south.watsonplatform.net/assistant/api/v1/workspaces/{workspaceID}/message?version=2018-09-20'
-```
-{: codeblock}
-
-The `customer_id` string cannot include the semicolon (`;`) or equal sign (`=`) characters. You are responsible for ensuring that each `Customer ID` parameter is unique across your customers.
-{: note}
-
-To delete messages using `customer_id` values, see the [Information security](information-security.html#gdpr-wa) topic.
+See [Learn from conversations](logs.html) for tips on how to edit intents and entities based on discoveries you make by reviewing the intents and entities that the service recognizes.

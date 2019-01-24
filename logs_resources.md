@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-13"
+lastupdated: "2019-01-24"
 
 ---
 
@@ -20,11 +20,76 @@ lastupdated: "2018-12-13"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# More resources
+# Advanced tasks
 {: #logs_resources}
 
-Use other tools to help you gain insight from user conversation logs.
+Learn about APIs and other tools you can use to access and analyze log data.
 {: shortdesc}
+
+## API
+{: #api}
+
+You can use the `/logs` API to list events from the transcripts of conversations that occured between your users and your assistant. For detailed API reference documentation, see [List log events ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant#list-log-events-in-a-workspace).
+
+The number of days that logs are stored differs by service plan type. See [Log limits](logs.html#log-limits) for details.
+
+For a Python script you can run to export logs and convert them to CSV format, download the `export_logs.py` file from the [Watson Assistant GitHub ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/community/blob/master/watson-assistant/export_logs.py) repository.
+
+## Logs-related terminology
+
+First, review the definitions of terms that are associated with {{site.data.keyword.conversationshort}} logs:
+
+- ***Assistant***: An application - sometimes referred to as a 'chat bot' - that implements your {{site.data.keyword.conversationshort}} content.
+- ***Conversation***: A set of messages consisting of the messages that an individual user sends to your assistant, and the messages your assistant sends back.
+- ***Conversation ID***: Unique identifier that is added to individual message calls to link related message exchanges together. App developers using the V1 version of the service API add this value to the message calls in a conversation by including the ID in the metadata of the context object.
+- ***Customer ID***: A unique ID that can be used to label customer data such that it can be subsequently deleted if the customer requests the removal of their data.
+- ***Deployment ID***: A unique label that app developers using the V1 version of the service API pass with each user message to help identify the deployment environment that produced the message.
+- ***Instance***: Your deployment of {{site.data.keyword.conversationshort}}, accessible with unique credentials. A {{site.data.keyword.conversationshort}} instance might contain multiple assistants.
+- ***Message***: A message is a single utterance a user sends to the assistant.
+- ***Skill ID***: The unique identifier of a skill.
+- ***User***: A user is anyone who interacts with your assistant; often these are your customers.
+- ***User ID***: A unique label that is used to track the level of service usage of a specific user.
+- ***Workspace ID***: The unique identifier of a workspace. Although any workspaces that you created before November 9 are shown as skills in the tool, a skill and a workspace are not the same thing. A skill is effectively a wrapper for a V1 workspace.
+
+**Important**: The **User ID** property is *not* equivalent to the **Customer ID** property, though both can be passed to the service. The **User ID** field is used to track levels of usage for billing purposes, whereas the **Customer ID** field is used to support the labeling and subsequent deletion of messages that are associated with end users. Customer ID is used consistently across all Watson services and is specified in the `X-Watson-Metadata` header. User ID is used exclusively by the {{site.data.keyword.conversationshort}} service and is passed in the context object of each /message API call.
+
+## Enabling user metrics
+{: #user_id}
+
+User metrics allow you to see, for example, the number of unique users who have engaged with your assistant, or the average number of conversations per user over a given time interval on the [Overview page](logs_oview.html). User metrics are enabled by using a unique `User ID` parameter.
+
+To specify the `User ID` for a message sent using the `/message` API, include the `user_id` property inside the metadata object in your [context ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant?curl=#get-response-to-user-input){: new_window}, as in this example::
+
+```
+"context" : {
+  "metadata" : {
+       "user_id": "{UserID}"
+  }
+}
+```
+{: codeblock}
+
+## Associating message data with a user for deletion
+{: #customer_id}
+
+There might come a time when you want to completely remove a set of your user's data from a {{site.data.keyword.conversationshort}} instance. When the delete feature is used, then the Overview metrics will no longer reflect those deleted messages; for example, they will have fewer Total Conversations.
+
+### Before you begin
+To delete messages for one or more individuals, you first need to associate a message with a unique **Customer ID** for each individual. To specify the **Customer ID** for any message sent using the `/message` API, include the `X-Watson-Metadata: customer_id` property in your header. You can pass multiple **Customer ID** entries with semicolon separated `field=value` pairs, using `customer_id`, as in the following example:
+
+```
+curl -X POST -u "apikey:3Df... ...Y7Pc9"
+ --header
+   'Content-Type: application/json'
+   'X-Watson-Metadata: customer_id={first-customer-ID};customer_id={second-customer-ID}'
+ --data '{"input":{"text":"hello"}}' 'https:// gateway-us-south.watsonplatform.net/assistant/api/v1/workspaces/{workspaceID}/message?version=2018-09-20'
+```
+{: codeblock}
+
+The `customer_id` string cannot include the semicolon (`;`) or equal sign (`=`) characters. You are responsible for ensuring that each `Customer ID` parameter is unique across your customers.
+{: note}
+
+To delete messages using `customer_id` values, see the [Information security](information-security.html#gdpr-wa) topic.
 
 ## Jupyter notebooks
 {: jupyter-notebooks}
