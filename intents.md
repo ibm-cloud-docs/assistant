@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-01-24"
 
 ---
 
@@ -89,120 +89,142 @@ Use the {{site.data.keyword.conversationshort}} tool to create intents.
     - `Pay my account balance`
     - `make a payment`
 
-    ***Adding examples from log files*** ![Beta](images/beta.png) ![Plus or Premium only](images/premium.png)
-    {: #intent-recommendations}
+    To add user examples that are mined from real support requests made by your customers, see [Adding examples from log files](#intent-recommendations).
 
-    This feature is available to Plus or Premium plan users and works with English language utterances only.
+    To learn about the impact of including references to entities in your user examples, see [How entity references are treated](#entity-references).
     {: tip}
 
-    If you have access to real-world user utterances (from call center logs, for example), you can upload them to the service and let the service analyze the data and make user example recommendations for you. The file you upload can contain utterances for all types of intents. The service knows which intent you are working on and finds suitable examples to recommend for that specific intent.
-
-    The following video provides a 2-minute overview of recommendations.
-
-    <iframe class="embed-responsive-item" id="youtubeplayer" title="Intent user example recommendations" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/L3FI8KeZfsc?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
-
-    **One-time prerequisite step**: Add the utterances to a comma-separated value (CSV) file, one user example per line. You do not need to associate the examples with intents. Simply provide the raw user utterances and let the service do the work of choosing the ones that are appropriate for the current intent. For every intent that you request recommendations for, the service uses this one file to find them. Follow these guidelines:
-
-    - Remove any personal data from the utterances that you include in the file.
-
-      Personal data includes any information relating to an identifiable natural person including names, email addresses, customer IDs, and so on.
-    - Do not include user utterances that exceed 1,024 characters in length. Longer utterances are truncated.
-    - If an utterance contains a comma, surround the utterance in quotation marks.
-    - The CSV must include only one column.
-    - Do not include human agent responses in the file.
-
-    For example:
-
-    ```
-    What happens to my coverage if I trade in my car?
-    i'd like to buy a house.
-    How do I add a dependent to my plan?
-    "first, i want to know if i am already registered."
-    ```
-
-    The file cannot be larger than 20 MB.
-    {: note}
-
-    1.  Add at least 5 user examples that illustrate the full range of typical utterances that you anticipate users might say to trigger this intent.
-
-        These seed user examples teach the service about the kinds of utterances to look for in the files you upload.
-
-    1.  Click **Show recommendations**.
-
-        User example source files are shared between the skills in a service instance. If your coworkers own skills in the same instance and upload files, then their files are added to your shared *User examples source files* collection.
-
-    1.  **First time only**: Click **Upload files**, and then click **Choose a file** to browse for the CSV file you created earlier and select it.
-
-        After the file is uploaded and processed by the service, recommended utterances are displayed. If no recommendations are made, then the file does not contain examples that are suitable for this intent.
-
-    1.  If the file cannot provide useful recommendations for any of your intents, you can try a different set of utterances from another file.
-
-        Click **View Files** to see the *User example source files* collection for your instance. To add a file, click **Add Files**, and then browse for a file and select it.
-
-        To delete a file, you must remove all of the files that have been uploaded; you cannot delete only one file. First, make sure nobody else is using the files, then click **Delete All** to delete all of the uploaded files.
-
-        Close the *User example source files* page.
-
-    1.  After the service shows you recommendations, select the utterances that you want to add as user examples for this intent, and then click **Add**. Or click **Next set** to review more utterances.
-    1.  If you want to search the content of the CSV file for user examples yourself, click the **Search Logs** tab, enter a keyword on which to base the search, and then press **Enter**.
-
-        Follow these search query syntax guidelines:
-
-        - Boolean operators (such as `AND` and `OR`) are supported.
-        - Add quoted text to search for an exact text match ("thisstringmustbepresent").
-        - You can use regular expressions, such as `*ly` to find all terms that end with `ly`.
-        - The following characters are used as regular expression operators:
-
-          `+ - = && || > < ! ( ) { } [ ] ^ " ~ * ? : \ /`
-
-          If you want to include one in a search term without it being processed as an operator, you must prefix it with a backslash (`\`).
-
-    ***Referencing entity values and synonyms in intent examples***
-    {: #related-entities}
-
-    If you have defined, or plan to define, entities that are related to this intent, mention the entity values or synonyms in some of the examples. Doing so helps to establish a relationship between the intent and entities.
-
-    ![Screen capture showing intent definition](images/define_intent.png)
-    {: #entity-as-example}
-
-    You can also add entity annotations directly from user examples. See [Adding contextual entities](entities.html#create-annotation-based
-).
-
-    *Important*:
-
-      - Intent example data should be representative and typical of data that end users will provide. Examples can be collected from actual user data, or from people who are experts in your specific field. The representative and accurate nature of the data is important.
-      - Both training and test data (for evaluation purposes) should reflect the distribution of intents in real usage. Generally, more frequent intents have relatively more examples, and better response coverage.
-      - You can include punctuation in the example text, as long as it appears naturally. If you believe that some users will express their intents with examples that include punctuation, and some users will not, include both versions. Generally, the more coverage for various patterns, the better the response.
-
-    ***Directly referencing an entity name in an intent example***
-    {: #entity-as-example}
-
-    You may also choose to directly reference entities in your intent examples. For instance, say you have an entity called `@PhoneModelName`, which contains values *Galaxy S8*, *Moto Z2*, *LG G6*, and *Google Pixel 2*. When you create an intent, for example `#order_phone`, you could then provide training data as follows:
-    - Can I get a `@PhoneModelName`?
-    - Help me order a `@PhoneModelName`.
-    - Is the `@PhoneModelName` in stock?
-    - Add a `@PhoneModelName` to my order.
-
-    ![Screen capture showing intent definition](images/define_intent_entity.png)
-
-    Currently, you can only directly reference synonym entities that you define (pattern values are ignored). You cannot use [system entities](system-entities.html).
-    {: note}
-
-    **Important**: If you choose to reference an entity as an intent example (for example, `@PhoneModelName`) *anywhere* in your training data it cancels out the value of using a direct reference (for example, *Galaxy S8*) in an intent example anywhere else. All intents will then use the entity-as-an-intent-example approach. You cannot apply this approach for a specific intent only.
-
-    In practice, this means that if you have previously trained most of your intents based on direct references (*Galaxy S8*), and you now use entity references (`@PhoneModelName`) for just one intent, the change impacts your previous training. If you do choose to use `@Entity` references, you must replace all previous direct references with `@Entity` references.
-
-    Defining one example intent with an `@Entity` that has 10 values defined for it **does not** equate to specifying that example intent 10 times. The {{site.data.keyword.conversationshort}} service does not give that much weight to that one example intent syntax.
-
-    **Important**: Intent names and example text can be exposed in URLs when an application interacts with the service. Do not include sensitive or personal information in these artifacts.
+    Intent names and example text can be exposed in URLs when an application interacts with the service. Do not include sensitive or personal information in these artifacts.
+    {: important}
 
 1.  Click **Add example** to save the example.
 
-1.  Repeat the same process to add more examples. You can tab between each example. Provide at least 5 examples for each intent. The more examples you provide, the more accurate your application can be.
+1.  Repeat the same process to add more examples. You can tab between examples. Provide at least 5 examples for each intent. The more examples you provide, the more accurate your application can be.
 
 1.  When you have finished adding examples, click ![Close arrow](images/close_arrow.png) to finish creating the intent.
 
-The intent you created is added to the Intents tab, and the system begins to train itself on the new data.
+The system begins to train itself on the intent and user examples you added.
+
+### Adding examples from log files ![Beta](images/beta.png) ![Plus or Premium only](images/premium.png)
+{: #intent-recommendations}
+
+This feature is available to Plus or Premium plan users and works with English language utterances only.
+{: tip}
+
+If you have access to real-world user utterances (from call center logs, for example), you can upload them to the service and let the service analyze the data and make user example recommendations for you. The file you upload can contain utterances for all types of intents. The service knows which intent you are working on and finds suitable examples to recommend for that specific intent.
+
+The following video provides a 2-minute overview of recommendations.
+
+<iframe class="embed-responsive-item" id="youtubeplayer" title="Intent user example recommendations" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/L3FI8KeZfsc?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
+**One-time prerequisite step**: Add the utterances to a comma-separated value (CSV) file, one user example per line. You do not need to associate the examples with intents. Simply provide the raw user utterances and let the service do the work of choosing the ones that are appropriate for the current intent. For every intent that you request recommendations for, the service uses this one file to find them. Follow these guidelines:
+
+  - Remove any personal data from the utterances that you include in the file.
+
+    Personal data includes any information relating to an identifiable natural person including names, email addresses, customer IDs, and so on.
+  - Do not include user utterances that exceed 1,024 characters in length. Longer utterances are truncated.
+  - If an utterance contains a comma, surround the utterance in quotation marks.
+  - The CSV must include only one column.
+  - Do not include human agent responses in the file.
+
+  For example:
+
+  ```
+  What happens to my coverage if I trade in my car?
+  i'd like to buy a house.
+  How do I add a dependent to my plan?
+  "first, i want to know if i am already registered."
+  ```
+
+  The file cannot be larger than 20 MB.
+  {: note}
+
+1.  Add at least 5 user examples that illustrate the full range of typical utterances that you anticipate users might say to trigger this intent.
+
+    These seed user examples teach the service about the kinds of utterances to look for in the files you upload.
+
+1.  Click **Show recommendations**.
+
+    User example source files are shared between the skills in a service instance. If your coworkers own skills in the same instance and upload files, then their files are added to your shared *User examples source files* collection.
+
+1.  **First time only**: Click **Upload files**, and then click **Choose a file** to browse for the CSV file you created earlier and select it.
+
+    After the file is uploaded and processed by the service, recommended utterances are displayed. If no recommendations are made, then the file does not contain examples that are suitable for this intent.
+
+1.  If the file cannot provide useful recommendations for any of your intents, you can try a different set of utterances from another file.
+
+    Click **View Files** to see the *User example source files* collection for your instance. To add a file, click **Add Files**, and then browse for a file and select it.
+
+    To delete a file, you must remove all of the files that have been uploaded; you cannot delete only one file. First, make sure nobody else is using the files, then click **Delete All** to delete all of the uploaded files.
+
+    Close the *User example source files* page.
+
+1.  After the service shows you recommendations, select the utterances that you want to add as user examples for this intent, and then click **Add**. Or click **Next set** to review more utterances.
+1.  If you want to search the content of the CSV file for user examples yourself, click the **Search Logs** tab, enter a keyword on which to base the search, and then press **Enter**.
+
+    Follow these search query syntax guidelines:
+
+    - Boolean operators (such as `AND` and `OR`) are supported.
+    - Add quoted text to search for an exact text match ("thisstringmustbepresent").
+    - You can use regular expressions, such as `*ly` to find all terms that end with `ly`.
+    - The following characters are used as regular expression operators:
+
+      `+ - = && || > < ! ( ) { } [ ] ^ " ~ * ? : \ /`
+
+      If you want to include one in a search term without it being processed as an operator, you must prefix it with a backslash (`\`).
+
+## How entity mentions in user examples are treated
+{: #entity-references}
+
+When you include an entity mention in a user example, the machine learning model uses the information in different ways in these scenarios:
+
+- [Referencing entity values and synonyms in intent examples](#related-entities)
+- [Annotated mentions](#annotated-mentions)
+- [Directly referencing an entity name in an intent example](#entity-as-example)
+
+### Referencing entity values and synonyms in intent examples
+{: #related-entities}
+
+If you have defined, or plan to define, entities that are related to this intent, mention the entity values or synonyms in some of the examples. Doing so helps to establish a relationship between the intent and entities. It is a weak relationship, but it does inform the model.
+
+![Screen capture showing intent definition](images/define_intent.png)
+
+*Important*:
+
+  - Intent example data should be representative and typical of data that end users will provide. Examples can be collected from actual user data, or from people who are experts in your specific field. The representative and accurate nature of the data is important.
+  - Both training and test data (for evaluation purposes) should reflect the distribution of intents in real usage. Generally, more frequent intents have relatively more examples, and better response coverage.
+  - You can include punctuation in the example text, as long as it appears naturally. If you believe that some users will express their intents with examples that include punctuation, and some users will not, include both versions. Generally, the more coverage for various patterns, the better the response.
+
+### Annotated mentions
+{: #annotated-mentions}
+
+As you define entiities, you can annotate mentions of the entity directly from your existing intent user examples. A relationship that you identify in this way between the intent and the entity is *not* used by the intent classification model. However, entity mentions that you label are added to that entity as synonyms. And intent classification does use synonym mentions in intent user examples to establish a weak reference between an intent and an entity.
+
+See [Adding contextual entities](entities.html#create-annotation-based) for more information about contextual entities.
+
+### Directly referencing an entity name in an intent example
+{: #entity-as-example}
+
+This is an advanced approach that, if used, must be used consistently.
+{: note}
+
+You can choose to directly reference entities in your intent examples. For instance, say you have an entity called `@PhoneModelName`, which contains values *Galaxy S8*, *Moto Z2*, *LG G6*, and *Google Pixel 2*. When you create an intent, for example `#order_phone`, you could then provide training data as follows:
+
+- Can I get a `@PhoneModelName`?
+- Help me order a `@PhoneModelName`.
+- Is the `@PhoneModelName` in stock?
+- Add a `@PhoneModelName` to my order.
+
+![Screen capture showing intent definition](images/define_intent_entity.png)
+
+Currently, you can only directly reference synonym entities that you define (pattern values are ignored). You cannot use [system entities](system-entities.html).
+
+If you choose to reference an entity as an intent example (for example, `@PhoneModelName`) *anywhere* in your training data it cancels out the value of using a direct reference (for example, *Galaxy S8*) in an intent example anywhere else. All intents will then use the entity-as-an-intent-example approach. You cannot apply this approach for a specific intent only.
+{: important}
+
+In practice, this means that if you have previously trained most of your intents based on direct references (*Galaxy S8*), and you now use entity references (`@PhoneModelName`) for just one intent, the change impacts your previous training. If you do choose to use `@Entity` references, you must replace all previous direct references with `@Entity` references.
+
+Defining one example intent with an `@Entity` that has 10 values defined for it **does not** equate to specifying that example intent 10 times. The {{site.data.keyword.conversationshort}} service does not give that much weight to that one example intent syntax.
 
 ## Editing intents
 
