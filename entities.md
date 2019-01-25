@@ -308,14 +308,22 @@ Using an intent's user examples to define contextual entities does not affect th
 
     If the entity has any existing entity values, they are displayed for informational purposes only. You are adding the annotation to the entity, not to any specific entity value.
 
-1.  Select the entity that you want to which you want to add the annotation.
+    If you want to teach the model that the mention is synonymous with an existing entity value, you can associate it with a specific entity value.
+    {: important}
+
+    To associate the mention with a specific entity value, follow these steps:
+
+    1.  Type the full entity name and value into the search field. For example, type `@product:IT`.
+    1.  When the entity value is displayed in the drop-down menu, select it.
+
+1.  Select the entity to which you want to add the annotation.
 
     In this example, `computer` is being added as an annotation for the `@product` entity.
 
     Create *at least* 10 annotations for each contextual entity; more annotations are recommended for production use.
     {: important}
 
-1.  If none of the entities are appropriate, you can create a new entity by choosing @(create new entity).
+1.  If none of the entities are appropriate, you can create a new entity by choosing **@(create new entity)**.
 
 1.  Repeat this process for each entity mention that you want to annotate.
 
@@ -328,8 +336,8 @@ Using an intent's user examples to define contextual entities does not affect th
 
     The annotation is added to the entity you associated it with, and the system begins to train itself on the new data.
 
-    The term you annotated is also added to the entity as a new dictionary value.
-    {: note}
+    The term you annotated is added to the entity as a new dictionary value. If you associated the annotated term with an existing entity value, then the term is added as a synonym of that entity value instead of as an independent entity value.
+    {: important}
 
 1.  To see all of the mentions you annotated for a particular entity, from the entity's configuration page, click the **Annotation** tab.
 
