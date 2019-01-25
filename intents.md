@@ -173,7 +173,7 @@ The following video provides a 2-minute overview of recommendations.
 
       If you want to include one in a search term without it being processed as an operator, you must prefix it with a backslash (`\`).
 
-## How entity mentions in user examples are treated
+## How entity references are treated
 {: #entity-references}
 
 When you include an entity mention in a user example, the machine learning model uses the information in different ways in these scenarios:
@@ -225,6 +225,54 @@ If you choose to reference an entity as an intent example (for example, `@PhoneM
 In practice, this means that if you have previously trained most of your intents based on direct references (*Galaxy S8*), and you now use entity references (`@PhoneModelName`) for just one intent, the change impacts your previous training. If you do choose to use `@Entity` references, you must replace all previous direct references with `@Entity` references.
 
 Defining one example intent with an `@Entity` that has 10 values defined for it **does not** equate to specifying that example intent 10 times. The {{site.data.keyword.conversationshort}} service does not give that much weight to that one example intent syntax.
+
+## Testing your intents
+{: #testing-your-intents}
+
+After you have finished creating new intents, you can test the system to see if it recognizes your intents as you expect.
+
+1.  In the {{site.data.keyword.conversationshort}} tool, click the ![Ask Watson](images/ask_watson.png) icon.
+
+1.  In the *Try it out* pane, enter a question or other text string and press Enter to see which intent is recognized. If the wrong intent is recognized, you can improve your model by adding this text as an example to the correct intent.
+
+    If you have recently made changes in your skill, you might see a message indicating that the system is still retraining. If you see this message, wait until training completes before testing:
+    {: tip}
+
+    ![Screen capture showing retraining message](images/training.png)
+
+    The response indicates which intent was recognized from your input.
+
+    ![Screen capture of testing intents](images/test_intents.png)
+
+1.  If the system does not recognize the correct intent, you can correct it. To correct the recognized intent, select the displayed intent and then select the correct intent from the list. After your correction is submitted, the system automatically retrains itself to incorporate the new data.
+
+    ![Screen capture of correcting a recognized intent](images/correct_intent.png)
+
+1.  If the input is unrelated to any of the intents in your application, you can teach the service by selecting the displayed intent, and then clicking **Mark as irrelevant**.
+
+    ![Mark as irrelevant screen capture](images/irrelevant.png)
+
+    *Mark as irrelevant*
+    {: #mark-irrelevant}
+
+    The *Mark as irrelevant* option is not available in all languages. See [supported languages](lang-support.html) for details.
+
+    **Important**: Intents that are marked as irrelevant are saved as counterexamples in the JSON workspace, and are included as part of the training data. Be sure before you designate an input as irrelevant.
+
+      - The inputs cannot be accessed or changed later in the tool.
+      - The only way to reverse the identification of an input as being irrelevant is to use the same input in the *Try it out* pane again, and this time assign it to an intent.
+
+If your intents are not being correctly recognized, consider making the following kinds of changes:
+
+- Add the unrecognized text as an example to the correct intent.
+- Move existing examples from one intent to another.
+- Consider whether your intents are too similar, and redefine them as appropriate.
+
+## Absolute scoring
+
+The {{site.data.keyword.conversationshort}} service scores each intent’s confidence independently, not in relation to other intents. This approach adds flexibility; multiple intents can be detected in a single user input. It also means the system might not return an intent at all. If the top intent has a low confidence score (less than 0.2), the top intent is included in the intents array that is returned by the API, but any nodes that condition on the intent are not triggered. If you want to detect the case when no intents with good confidence scores were detected, use the `irrelevant` special condition in your dialog node. See [Special conditions](dialog-overview.html#special-conditions) for more information.
+
+As intent confidence scores change, your dialogs might need restructuring. For example, if a dialog node uses an intent in its condition, and the intent's confidence score starts to consistently drop below 0.2, the dialog node stops being processed. If the confidence score changes, the behavior of the dialog can also change.
 
 ## Editing intents
 
@@ -370,55 +418,3 @@ You can select a number of intents for deletion.
 1.  On the Intents tab, select the intents you want from the list and click **Delete**.
 
     ![Delete option](images/DeleteIntent.png)
-
-## Testing your intents
-{: #testing-your-intents}
-
-After you have finished creating new intents, you can test the system to see if it recognizes your intents as you expect.
-
-1.  In the {{site.data.keyword.conversationshort}} tool, click the ![Ask Watson](images/ask_watson.png) icon.
-
-1.  In the *Try it out* pane, enter a question or other text string and press Enter to see which intent is recognized. If the wrong intent is recognized, you can improve your model by adding this text as an example to the correct intent.
-
-    If you have recently made changes in your skill, you might see a message indicating that the system is still retraining. If you see this message, wait until training completes before testing:
-    {: tip}
-
-    ![Screen capture showing retraining message](images/training.png)
-
-    The response indicates which intent was recognized from your input.
-
-    ![Screen capture of testing intents](images/test_intents.png)
-
-1.  If the system does not recognize the correct intent, you can correct it. To correct the recognized intent, select the displayed intent and then select the correct intent from the list. After your correction is submitted, the system automatically retrains itself to incorporate the new data.
-
-    ![Screen capture of correcting a recognized intent](images/correct_intent.png)
-
-1.  If the input is unrelated to your application, you can indicate that. Select the displayed intent, and then click **Mark as irrelevant**.
-
-    ![Mark as irrelevant screen capture](images/irrelevant.png)
-
-If your intents are not being correctly recognized, consider making the following kinds of changes:
-
-- Add the unrecognized text as an example to the correct intent.
-- Move existing examples from one intent to another.
-- Consider whether your intents are too similar, and redefine them as appropriate.
-
-## Absolute scoring
-
-The {{site.data.keyword.conversationshort}} service now scores each intent’s confidence on its own, not in relation to other intents. This allows the flexibility to have multiple intents returned. It also means the system may not return an intent at all. If the top intent has low confidence that any intents relate to the user’s input (less than 0.2), it will still get included in the intents array output by the API, but conditioning on that #intent will return false. If you want to detect the case when no intents were detected with good confidence, you can condition on `irrelevant`.
-
-As intent confidence scores change, your dialogs may need restructuring. For example, if you conditioned your dialog with an intent that now has low confidence, the system’s response will no longer be correct.
-
-## Mark as irrelevant
-{: #mark-irrelevant}
-
-Refer to [supported languages](lang-support.html) for the availability of this feature.
-
-After you upgrade your dialog skill, you can [test input](#testing-your-intents) in the *Try it out* pane to see the changes. You can use **Mark as irrelevant** to indicate that the input is not related to your application.
-
-If you have an intent, such as #off_topic, for those inputs that are out of scope or off topic, delete the intent and test your skill by marking the inputs as irrelevant.
-
-**Important**: Intents that are marked as irrelevant are saved as counterexamples in the JSON workspace, and are included as part of the training data. Be sure that you want to make any changes.
-
-- The inputs cannot be accessed or changed later in the tool.
-- The only way to remove the **Irrelevant** tag is to use the same input in the *Try it out* pane, and then change the intent.
