@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-18"
+lastupdated: "2019-01-25"
 
 ---
 
@@ -289,41 +289,49 @@ Using an intent's user examples to define contextual entities does not affect th
 
     ![Select #place_order intent](images/oe-intent.png)
 
-1.  Review the intent examples for potential entity values. Highlight a potential entity value from the intent examples.
+1.  Review the intent examples for potential entity mentions. Highlight a potential entity mention from the intent examples.
 
-    In this case `computer`.
+    In this example, `computer` is the entity mention.
 
     ![Review intent examples](images/oe-intent-review.png)
 
-    To directly edit an intent example, click the Edit icon ![Edit icon](images/oe-intent-edit.png) instead of highlighting a value for annotation.
+    The Edit icon ![Edit icon](images/oe-intent-edit.png) is used to edit an intent user example; it is not related to adding annotations.
+    {: tip}
 
-1.  A Search box opens, allowing you to search for an appropriate entity for the highlighted entity value.
+1.  A Search box opens that you can use to search for the entity that the highlighted word or phrase is a mention of.
 
     ![Search box initial state](images/oe-intent-search1.png)
 
-1.  In this example, searching `prod` brings up matches for both the `@product` entity, and for entity values `shirt` and `pens`. This is an important distinction - `@product` is an entity that can contain multiple entity values, in this case `@product:pencil`, `@product:shirt` and `@product:pens`
+    In this example, searching `prod` brings up matches for the `@product` entity.
 
     ![Search box with search parameter prod](images/oe-intent-search2.png)
 
-    You can also create a new entity by choosing `@(create new entity)`.
+    If the entity has any existing entity values, they are displayed for informational purposes only. You are adding the annotation to the entity, not to any specific entity value.
 
-1.  Select `@product` to add `computer` as a value for that entity.
+1.  Select the entity that you want to which you want to add the annotation.
+
+    In this example, `computer` is being added as an annotation for the `@product` entity.
 
     Create *at least* 10 annotations for each contextual entity; more annotations are recommended for production use.
     {: important}
+
+1.  If none of the entities are appropriate, you can create a new entity by choosing @(create new entity).
 
 1.  Repeat this process for each entity mention that you want to annotate.
 
     Be sure to annotate every mention of an entity type that occurs in any user examples that you edit. See [What you don't annotate matters](#entity-counter-examples) for more details.
     {: important}
 
-1.  Now, click the annotation you just created. A box opens that says, `Go to: @product`. Clicking that link takes you directly to the entity.
+1.  Now, click the annotation you just created. A box opens that says, `Go to: <entity-name>`. Clicking that link takes you directly to the entity.
 
     ![Verify value computer for product entity](images/oe-verify-value.png)
 
     The annotation is added to the entity you associated it with, and the system begins to train itself on the new data.
 
-1.  To see all of the mentions you annotated for a particular entity, from the entity's configuration page, click the **Annotations** tab.
+    The term you annotated is also added to the entity as a new dictionary value.
+    {: note}
+
+1.  To see all of the mentions you annotated for a particular entity, from the entity's configuration page, click the **Annotation** tab.
 
     ![Annotation view selector highlighted](images/oe-annotate2.png)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-01-25"
 
 ---
 
@@ -67,17 +67,21 @@ Using slots produces a more natural dialog flow between the user and the service
 
     - **Check for**: Identify the type of information you want to extract from the user's response to the slot prompt. In most cases, you check for entity values. In fact, the condition builder that is displayed suggests entities that you can check for. However, you can also check for an intent; just type the intent name into the field. You can use AND and OR operators here to define more complex conditions.
 
-      **Important**: The *Check for* value is first used as a condition, but then becomes the value of the context variable that you name in the *Save as* field. If you want to change how the value is saved (reformat it, for example), then add the expression that reformats the value directly to the **Check for** field.
-
-      For example, if the entity has regular expression patterns defined for it, then after adding the entity name, append `.literal` to it. After you choose `@email` from the list of defined entities, for example, edit the **Check for** field to contain `@email.literal`. By adding the `.literal` property, you indicate that you want to capture the exact text that was entered by the user and was identified as an email address based on its pattern. Make this syntax change directly in the **Check for** field.
-
-      If you want to apply a complex expression to the value before you save the value, then you can open the JSON editor to define the complex SpEL expression. However, the complex expression that you define in the JSON editor will not be reflected in the **Check for** field when you exit the JSON editor. And if you click the **Check for** field to give the field focus at any time after you define the complex expression for the field, then the expression is removed.
+      The *Check for* value is first used as a condition, but then becomes the value of the context variable that you name in the *Save as* field. It specifies both **what to check for** and **what to save**. If you want to change how the value is saved, then add the expression that reformats the value to the *Check for* field.
       {: important}
 
-      Avoid checking for context variable values. Because the value you check for is also the value that is saved, when you use a context variable in the condition, it can lead to unexpected behavior when it gets used in the context. Do not try to use an optional slot to display a response only if a given context variable is set. If the variable is set, then the slot Found response that you define for the optional slot will be displayed along with the response that is returned by every other slot, over and over again.
-      {: tip}
+      For example, if the entity is a pattern entity, such as `@email`, then after adding the entity name, append `.literal` to it. Adding `.literal` indicates that you want to capture the exact text that was entered by the user and was identified as an email address based on its pattern.
 
-    - **Save as**: Provide a name for the context variable in which to store the value of interest from the user's response to the slot prompt. Do not specify a context variable that is used earlier in the dialog, and therefor might have a value. It is only when the context variable for the slot is null that the prompt for the slot is displayed.
+      In some cases, you might want to use an expression to capture the value, but not apply the expression to what is saved. In such cases, you can use one value in the *Check for* field to capture the value, and then open the JSON editor to change the value of the context variable, so it saves something else. See [Treat zeros properly](tutorial-slots-complex.html#recognize-zero) for an example.
+
+      Any edit you make to a slot's context variable value in the JSON editor is not reflected in the **Check for** field when you exit the JSON editor. And if you click the **Check for** field to give the field focus at any time after you use the JSON editor to edit the value, then the change you made is lost.
+      {: important}
+
+      Avoid checking for context variable values in the *Check for* field. Because the value you check for is also the value that is saved, using a context variable in the condition can lead to unexpected behavior.
+
+    - **Save as**: Provide a name for the context variable in which to store the value of interest from the user's response to the slot prompt.
+
+       Do not reuse a context variable that is used elsewhere in the dialog. If the context variable has a value already, then the slot's prompt is not displayed. It is only when the context variable for the slot is null that the prompt for the slot is displayed.
 
     - **Prompt**: Write a statement that elicits the piece of the information you need from the user. After displaying this prompt, the conversation pauses and the service waits for the user to respond.
 
