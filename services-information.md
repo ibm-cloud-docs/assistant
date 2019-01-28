@@ -53,7 +53,7 @@ The number of API calls allowed per instance depends on your service plan. See y
 
 If you have a Lite plan and reach your API call limit, but the logs show that you have made fewer calls than expected, remember that the Lite plan stores log information for only 7 days.
 
-If you want to upgrade from one plan to another, see [Upgrading](upgrading.html).
+If you want to upgrade from one plan to another, see [Upgrading](upgrade.html).
 
 ### Plus and Premium plan features
 {: #premium}
@@ -150,7 +150,7 @@ The authentication mechanism used by your service instance impacts how you must 
 
 {{site.data.keyword.cloud_notm}} has a network of global data centers that provide performance benefits to its cloud services. See [{{site.data.keyword.cloud_notm}} global data centers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/data-centers/){: new_window} for more details.
 
-{{site.data.keyword.cloud_notm}} changed from managing user access with Cloud Foundry to using token-based Identity and Access Management (IAM) authentication. IAM was rolled out in different locations at different times. You can migrate a service instance to move it from its current Cloud Foundry org and space to a resource group. See [Migrating](migrating.html) for more details.
+{{site.data.keyword.cloud_notm}} changed from managing user access with Cloud Foundry to using token-based Identity and Access Management (IAM) authentication. IAM was rolled out in different locations at different times. You can migrate a service instance to move it from its current Cloud Foundry org and space to a resource group. See [Migrating](migrate.html) for more details.
 
 You can create {{site.data.keyword.conversationshort}} service instances that are hosted in the following data center locations:
 

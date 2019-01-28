@@ -21,7 +21,7 @@ lastupdated: "2018-12-21"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Creating assistants
-{: #creating-assistants}
+{: #create-assistant}
 
 Create an assistant with the skills it needs to address the business goals of your customers.
 {: shortdesc}

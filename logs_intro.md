@@ -21,7 +21,7 @@ lastupdated: "2019-01-24"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Improve your skill
-{: #logs_intro}
+{: #logs-intro}
 
 The Improve component of {{site.data.keyword.conversationshort}} provides a history of conversations between users and a deployed assistant. You can use this history to improve how your assistants understand and respond to user requests.
 {: shortdesc}

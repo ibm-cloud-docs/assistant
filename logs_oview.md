@@ -21,6 +21,7 @@ lastupdated: "2019-01-24"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Metrics overview
+{: #logs-overview}
 
 The Overview page provides a summary of the interactions between users and your assistant. You can view the amount of traffic for a given time period, as well as the intents and entities that were recognized most often in user conversations.
 {: shortdesc}
@@ -86,7 +87,7 @@ Detailed graphs provide additional information:
 * *Active users* - The number of unique users who have engaged with your application within the selected time period.
 * *Avg. conversations per user* - The total conversations during the selected time period divided by the total unique users during the selected time period.
 
-  Statistics for *Active users* and *Avg. conversations per user* require a unique `user_id` parameter. See [Enabling user metrics](logs_resources.html#user_id) for more information.
+  Statistics for *Active users* and *Avg. conversations per user* require a unique `user_id` parameter. See [Enabling user metrics](logs-resources.html#user_id) for more information.
   {: important}
 
 ## Top Intents and Top Entities

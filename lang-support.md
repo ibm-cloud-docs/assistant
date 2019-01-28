@@ -21,6 +21,8 @@ lastupdated: "2019-01-17"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Supported languages
+{: #lang-support}
+
 The {{site.data.keyword.conversationshort}} service supports the languages listed. Individual features of the service are supported to a greater or lesser extent for each language.
 {: shortdesc}
 

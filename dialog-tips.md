@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-01-28"
 
 ---
 
@@ -22,7 +22,7 @@ lastupdated: "2018-12-21"
 {:gif: data-image-type='gif'}
 
 # Dialog building tips
-{: #dialog-advanced}
+{: #dialog-tips}
 
 Learn how to approach building a dialog and get some tips on completing more complex steps.
 {: shortdesc}
