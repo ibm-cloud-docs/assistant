@@ -21,6 +21,7 @@ lastupdated: "2018-05-30"
 {:swift: .ph data-hd-programlang='swift'}
 
 # System entity details
+{: #system-entities}
 
 This reference section provides complete information about the available system entities. For more information about system entities and how to use them, refer to [Defining entities](entities.html#enable_system_entities) and search for "Enabling system entities".
 {: shortdesc}

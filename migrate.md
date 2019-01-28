@@ -21,6 +21,7 @@ lastupdated: "2019-01-21"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Migrating
+{: #migrate}
 
 Migrate a {{site.data.keyword.conversationshort}} service instance to move it from its current Cloud Foundry org and space to a resource group.
 {: shortdesc}

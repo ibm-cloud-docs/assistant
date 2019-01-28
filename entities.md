@@ -21,6 +21,7 @@ lastupdated: "2019-01-25"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Defining entities
+{: #entities}
 
 ***Entities*** represent information in the user input that is relevant to the user's purpose.
 

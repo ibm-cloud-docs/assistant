@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-03-08"
+lastupdated: "2019-01-28"
 
 ---
 
@@ -21,6 +21,7 @@ lastupdated: "2018-03-08"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Using content catalogs
+{: #catalog}
 
 ***Content Catalogs*** provide an easy way to add common intents to your {{site.data.keyword.conversationshort}} dialog skill.
 {: shortdesc}

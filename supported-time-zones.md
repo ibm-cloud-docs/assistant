@@ -21,6 +21,7 @@ lastupdated: "2017-07-20"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Time zones supported by system entities
+{: #supported-time-zones}
 
 This list of supported time zones can be used with the time zone functions related to the [@sys-date and @sys-time entities](system-entities.html#sys-datetime).
 {: shortdesc}

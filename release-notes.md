@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-22"
+lastupdated: "2019-01-28"
 ---
 
 {:shortdesc: .shortdesc}
@@ -20,6 +20,7 @@ lastupdated: "2019-01-22"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Release notes
+{: #release-notes}
 
 ## Service API Versioning
 {: shortdesc}
@@ -70,6 +71,7 @@ The following new features and changes to the service are available.
   - **JSONArray.filter**: Filters an array by comparing each value in the array to a value that can vary based on user input.
   - **JSONArray.includesIntent**: Checks whether an `intents` array contains a particular intent.
   - **JSONArray.indexOf**: Gets the index number of a specific value in an array.
+  - **JSONArray.joinToArray**: Applies formatting to values that are returned from an array.
 
    See the [array method documentation](dialog-methods.html#arrays) for more details.
 
@@ -170,7 +172,7 @@ The following new features and changes to the service are available.
 ### 20 November 2018
 {: #20November2018}
 
-**Recommendations are discontinued**: The Recomendations section on the Improve tab was removed. Recommendations was a beta feature available to Premium plan users only. It recommended actions that users could take to improve their training data. Instead of consolidating recommendations in one place, recommendations are now being made available from the parts of the tool where you make actual training data changes. For example, while adding entity synonyms, you can now opt to see a list of synonymous terms that are recommended by the service. If you are looking for other ways to analyze your user conversation logs in more detail, consider using Jupyter notebooks. See [More resources](logs_resources.html) for more details.
+**Recommendations are discontinued**: The Recomendations section on the Improve tab was removed. Recommendations was a beta feature available to Premium plan users only. It recommended actions that users could take to improve their training data. Instead of consolidating recommendations in one place, recommendations are now being made available from the parts of the tool where you make actual training data changes. For example, while adding entity synonyms, you can now opt to see a list of synonymous terms that are recommended by the service. If you are looking for other ways to analyze your user conversation logs in more detail, consider using Jupyter notebooks. See [Advanced tasks](logs-resources.html) for more details.
 
 ### 9 November 2018
 {: #9November2018}

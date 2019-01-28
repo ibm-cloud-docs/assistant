@@ -21,6 +21,7 @@ lastupdated: "2019-01-03"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Expressions for accessing objects
+{: #expression-language}
 
 You can write expressions that access objects and properties of objects by using the Spring Expression (SpEL) language. For more information, see [Spring Expression Language (SpEL) ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/expressions.html){: new_window}.
 {: shortdesc}

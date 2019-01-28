@@ -48,11 +48,11 @@ Watson Assistant
         logs_intro.md
         logs_oview.md
         logs.md
-        logs_resources.md
+        logs-resources.md
 
-    migrating.md
+    migrate.md
     backup.md
-    upgrading.md
+    upgrade.md
     edit-convo-workspace.md
 
     {: .topicgroup}
@@ -79,14 +79,14 @@ Watson Assistant
     dialog-methods.md
     expression-language.md
     filter-reference.md
-    sample-applications.md
+    sample-apps.md
     lang-support.md
     information-security.md
 
     {: .topicgroup}
     System entities
         system-entities.md
-        supported-timezones.md
+        supported-time-zones.md
 
     {: .topicgroup}
     Watson SDKs

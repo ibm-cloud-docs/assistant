@@ -21,7 +21,7 @@ lastupdated: "2019-01-24"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Advanced tasks
-{: #logs_resources}
+{: #logs-resources}
 
 Learn about APIs and other tools you can use to access and analyze log data.
 {: shortdesc}

@@ -21,6 +21,7 @@ lastupdated: "2018-11-08"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Additional resources
+{: #resources}
 
 Links to resources, videos, tutorials, and articles that can help you to get started faster and go further.
 {: shortdesc}

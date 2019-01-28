@@ -21,6 +21,7 @@ lastupdated: "2018-12-17"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Defining responses using the JSON editor
+{: #dialog-responses-json}
 
 In some situations, you might need to define responses using the JSON editor. (For more information about dialog responses, see [Responses](dialog-overview.html#responses)). Editing the response JSON gives you direct access to the data that will be returned to the communication channel or custom application.
 

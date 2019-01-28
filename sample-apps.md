@@ -21,6 +21,7 @@ lastupdated: "2018-12-21"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Sample apps
+{: #sample-apps}
 
 Explore our sample applications to understand what you can develop with {{site.data.keyword.conversationshort}}.
 {: shortdesc}

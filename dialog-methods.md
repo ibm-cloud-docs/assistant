@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-11"
+lastupdated: "2019-01-28"
 
 ---
 
@@ -21,6 +21,7 @@ lastupdated: "2019-01-11"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Expression language methods
+{: #dialog-methods}
 
 You can process values extracted from user utterances that you want to reference in a context variable, condition, or elsewhere in the response.
 {: shortdesc}
@@ -535,6 +536,164 @@ The flights that fit your criteria are:
 {: codeblock}
 
 Result: `The flights that match your criteria are: OK123,LH421,TS4156.`
+
+### JSONArray.joinToArray(template)
+{: #joinToArray}
+
+This method applies the format that you define in a template to the array, and returns an array that is formatted according to your specifications. This method is useful for applying formatting to array values that you want to return in a dialog response, for example.
+
+The template can be specified as a String, JSON Object, or JSON Array. To reference values from the array that you are editing in the template, follow these syntax conventions:
+
+- `%`: Represents the start or end of an element or element property that you want to return from the array being edited.
+- `e`: Temporarily represents the array element to which you want to apply the formatting. This temporary variable name cannot be changed from `e`.
+
+For example, you have a context variable that contains an array with a list of flight details for three flights.
+
+```json
+"flights": [
+      {
+        "flight": "DL1040",
+        "origin": "JFK",
+        "carrier": "Alitalia",
+        "duration": 485,
+        "destination": "FCO",
+        "arrival_date": "2019-02-03",
+        "arrival_time": "07:00",
+        "departure_date": "2019-02-02",
+        "departure_time": "16:45"
+      },
+      {
+        "flight": "DL1710",
+        "origin": "JFK",
+        "carrier": "Delta",
+        "duration": 379,
+        "destination": "LAX",
+        "arrival_date": "2019-02-02",
+        "arrival_time": "10:19",
+        "departure_date": "2019-02-02",
+        "departure_time": "07:00"
+      },
+      {
+        "flight": "DL4379",
+        "origin": "BOS",
+        "carrier": "Virgin Atlantic",
+        "duration": 385,
+        "destination": "LHR",
+        "arrival_date": "2019-02-03",
+        "arrival_time": "09:05",
+        "departure_date": "2019-02-02",
+        "departure_time": "21:40"
+      }
+    ]
+```
+{: codeblock}
+
+You want to return just the list of flight codes. To extract only the value of the `flight` element from each array and return it in a list, you can use the following expression:
+
+```
+The available flights are <? $flights.joinToArray("%e.flight%"). ?>
+```
+{: codeblock}
+
+The dialog node response is `The available flights are ["DL1040","DL1710","DL4379"].`
+
+To display the array as text, use the `join` method in the expression like this:
+
+```
+The available flights are <? $flights.joinToArray("%e.flight%").join(", "). ?>
+```
+{: codeblock}
+
+The response is, `The available flights are DL1040, DL1710, DL4379.`
+
+#### Complex template
+{: #complex-template}
+
+To create a more complex template, instead of specifying the template details in the method parameter directly, you can create a context variable.
+
+This template context variable contains a subset of the array elements and adds labels in front of them, so the information will be displayed in a legible list in the response:
+
+```json
+"template": "<br/>Flight number: %e.flight% <br/> Airline: %e.carrier% <br/> Departure date: %e.departure_date% <br/> Departure time: %e.departure_time% <br/> Arrival time: %e.arrival_time% <br/>"
+```
+{: codeblock}
+
+The `<br/>` HTML tag for a line break is *not* rendered by some of the integration channels, including Facebook and Slack.
+{: note}
+
+Use this expression in the dialog node response to apply the template defined in `$template` to the array in `$flights`.
+
+```
+The flight info is <? $flights.joinToArray($template).join(" ") ?>
+```
+{: codeblock}
+
+The response looks like this:
+
+```
+The flight info is
+Flight number: DL1040
+Airline: Alitalia
+Departure date: 2019-02-02
+Departure time: 16:45
+Arrival time: 07:00
+
+Flight number: DL1710
+Airline: Delta
+Departure date: 2019-02-02
+Departure time: 07:00
+Arrival time: 10:19
+
+Flight number: DL4379
+Airline: Virgin Atlantic
+Departure date: 2019-02-02
+Departure time: 21:40
+Arrival time: 09:05
+```
+{: screen}
+
+The advantage of using this method is that it doesn't matter how often the values in the array change or whether the number of elements in the array increases. As long as each array element contains at least the subset of properties that are referenced by the template, then the expression works.
+
+#### JSON Object template example
+{: #object-template}
+
+In this example, the template context variable is defined as a JSON object that extracts the flight number, and arrival and departure dates and times from each of the flight elements specified in the array in the `$flights` context variable. You could use this approach to apply standard formatting to flight details for flights that are managed by two different carriers, and who format flight information differently in their web services, for example.
+
+```json
+"template": {
+      "departure": "Flight %e.flight% departs on %e.departure_date% at %e.departure_time%.",
+      "arrival": "Flight %e.flight% arrives on %e.arrival_date% at %e.arrival_time%."
+    }
+```
+{: codeblock}
+
+You might want to design your custom client application to read the objects from the returned array, and format the values properly for your chat bot's response. Your dialog node response can return the flight arrival details object as an array by using this expression:
+
+```
+<? $flights.joinToArray($template) ?>
+```
+{: screen}
+
+This is the dialog node response:
+
+```json
+[
+  {
+    "arrival":"Flight DL1040 arrives on 2019-02-03 at 07:00.",
+    "departure":"Flight DL1040 departs on 2019-02-02 at 16:45."
+    },
+  {
+    "arrival":"Flight DL1710 arrives on 2019-02-02 at 10:19.",
+    "departure":"Flight DL1710 departs on 2019-02-02 at 07:00."
+    },
+  {
+    "arrival":"Flight DL4379 arrives on 2019-02-03 at 09:05.",
+    "departure":"Flight DL4379 departs on 2019-02-02 at 21:40."
+    }
+  ]
+  ```
+
+Notice that the order of the `arrival` and `departure` elements is swapped in the response. The service typically reorders elements in a JSON Object. If you want the elements to be returned in a specific order, define the template by using a JSON Array or String value instead.
 
 ### JSONArray.remove(Integer)
 
