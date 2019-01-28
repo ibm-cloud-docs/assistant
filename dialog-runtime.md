@@ -44,7 +44,7 @@ The body of the /message API call request and response includes the following ob
   ```
   {: codeblock}
 
-  See [Retaining information across dialog turns](dialog-runtime.html#context) for more information.
+  See [Retaining information across dialog turns](#context) for more information.
 
 - `input`: The string of text that was submitted by the user. The text string can contain up to 2,048 characters.
 
@@ -198,7 +198,7 @@ The resulting output is displayed as follows:
 
 `The customer, 18-year-old John, wants a pizza with onions and olives, and then cake.`
 
-You can use the JSON editor to define context variables also. You might prefer to use the JSON editor if you want to add a complex expression as the variable value. See [Context variables in the JSON editor](dialog-runtime.html#context-var-json) for more details.
+You can use the JSON editor to define context variables also. You might prefer to use the JSON editor if you want to add a complex expression as the variable value. See [Context variables in the JSON editor](#context-var-json) for more details.
 
 ### Common context variable tasks
 {: #context-common-tasks}
@@ -244,7 +244,7 @@ To delete a context variable, set the variable to null.
 |------------|------------------|
 | order_form | `null`           |
 
-Alternatively you can delete the context variable in your application logic. For information about how to remove the variable entirely, see [Deleting a context variable in JSON](dialog-runtime.html#context-delete-json).
+Alternatively you can delete the context variable in your application logic. For information about how to remove the variable entirely, see [Deleting a context variable in JSON](#context-delete-json).
 
 ### Updating a context variable value
 {: #context-update}
@@ -253,7 +253,7 @@ To update a context variable's value, define a context variable with the same na
 
 When more than one node sets the value of the same context variable, the value for the context variable can change over the course of a conversation with a user. Which value is applied at any given time depends on which node is being triggered by the user in the course of the conversation. The value specified for the context variable in the last node that is processed overwrites any values that were set for the variable by nodes that were processed previously.
 
-For information about how to update the value of a context variable when the value is a JSON object or JSON array data type, see [Updating a context variable value in JSON](dialog-runtime.html#context-update-json)
+For information about how to update the value of a context variable when the value is a JSON object or JSON array data type, see [Updating a context variable value in JSON](#context-update-json)
 
 ### How context variables are processed
 {: #context-processing}
@@ -262,7 +262,7 @@ Where you define the context variable matters. The context variable is not creat
 
 For a node with conditional responses, the context variable is created and set when the condition for a specific response is met and that response is processed. For example, if you define a context variable for conditional response #1 and the service processes conditional response #2 only, then the context variable that you defined for conditional response #1 is not created and set.
 
-For information about where to add context variables that you want the service to create and set as a user interacts with a node with slots, see [Adding context variables to a node with slots](dialog-runtime.html#context-var-slots).
+For information about where to add context variables that you want the service to create and set as a user interacts with a node with slots, see [Adding context variables to a node with slots](#context-var-slots).
 
 ### Order of operation
 {: #context-order-of-ops}
@@ -310,7 +310,7 @@ For more information about slots, see [Gathering information with slots](dialog-
           ```
           {: codeblock}
 
-      There is currently no way to use the context editor to define context variables that are set during this phase of dialog node evaluation. You must use the JSON editor instead. For more information about using the JSON editor, see [Context variables in the JSON editor](dialog-runtime.html#context-var-json).
+      There is currently no way to use the context editor to define context variables that are set during this phase of dialog node evaluation. You must use the JSON editor instead. For more information about using the JSON editor, see [Context variables in the JSON editor](#context-var-json).
       {: note}
 
       ![Shows how to access the JSON editor associated with a slot condition.](images/contextvar-json-slot-condition.png)
@@ -675,15 +675,15 @@ Watch this video to learn more.
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Digressions overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/I3K7mQ46K3o?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
-- [Before you begin](dialog-runtime.html#prereqs)
-- [Customizing digressions](dialog-runtime.html#enable-digressions)
+- [Before you begin](#digression-prereqs)
+- [Customizing digressions](#enable-digressions)
 - [Digression usage tips](#digress-tips)
-- [Disabling digressions into a root node](dialog-runtime.html#disable-digressions)
-- [Digression tutorial](dialog-runtime.html#digression-tutorial)
-- [Design considerations](dialog-runtime.html#digression-design-considerations)
+- [Disabling digressions into a root node](#disable-digressions)
+- [Digression tutorial](#digression-tutorial)
+- [Design considerations](#digression-design-considerations)
 
 ### Before you begin
-{: #prereqs}
+{: #digression-prereqs}
 
 As you test your overall dialog, decide when and where it makes sense to allow digressions and returns from digressions to occur. The following digression controls are applied to the nodes automatically. Only take action if you want to change this default behavior.
 

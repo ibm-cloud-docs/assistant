@@ -208,8 +208,6 @@ You can search the dialog to find one or more dialog nodes that mention a given 
     The first time you search, an index is created. You might be asked to wait while the text in your dialog nodes is indexed.
     {: note}
 
-### Results
-
 Nodes containing your search term, with corresponding examples, are shown. Select any result to open it for editing.
 
   ![Intent search return](images/search_dialog.png)

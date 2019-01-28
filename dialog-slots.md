@@ -61,7 +61,7 @@ Using slots produces a more natural dialog flow between the user and the service
 
 1.  From the dialog node edit view, click **Customize**, and then click the toggle next to **Slots** to turn it **On**.
 
-    For more information about the **Prompt for everything** checkbox, see [Asking for everything at once](dialog-slots.html#slots-prompt-for-everything).
+    For more information about the **Prompt for everything** checkbox, see [Asking for everything at once](#slots-prompt-for-everything).
 
 1.  **Add a slot for each unit of required information**. For each slot, specify these details:
 
@@ -91,7 +91,7 @@ Using slots produces a more natural dialog flow between the user and the service
 
       - **Not found**: Displayed if the information provided by the user is not understood, or is not provided in the expected format. If the slot is filled successfully, or the user input is understood and handled by a slot handler, then this statement is never displayed.
 
-      For information about how to define conditions and associated actions for Found and Not found responses, see [Adding conditions to Found and Not found responses](dialog-slots.html#slot-handler-next-steps).
+      For information about how to define conditions and associated actions for Found and Not found responses, see [Adding conditions to Found and Not found responses](#slot-handler-next-steps).
 
     This table shows example slot values for a node that helps users place a pizza order by collecting two pieces of information, the pizza size and delivery time.
 
@@ -153,7 +153,7 @@ Using slots produces a more natural dialog flow between the user and the service
 
     After responding to the off-topic question, the prompt associated with the current empty slot is displayed.
 
-    This condition is triggered if the user provides input that matches the slot handler conditions at any time during the dialog node flow up until the node-level response is displayed. See [Handling requests to exit a process](dialog-slots.html#slots-node-level-handler) for more ways to use the slot handler.
+    This condition is triggered if the user provides input that matches the slot handler conditions at any time during the dialog node flow up until the node-level response is displayed. See [Handling requests to exit a process](#slots-node-level-handler) for more ways to use the slot handler.
 1.  **Add a node-level response**. The node-level response is not executed until after all of the required slots are filled. You can add a response that summarizes the information you collected. For example, `A $size pizza is scheduled for delivery at $time. Enjoy!`
 
     If you want to define different responses based on certain conditions, click **Customize**, and then click the **Multiple responses** toggle to turn it **On**. For information about conditional responses, see [Conditional responses](dialog-overview.html#multiple).
@@ -172,26 +172,26 @@ The following slot properties can help you check and set values in slot context 
 
 | Property name          | Description |
 |------------------------|-------------|
-| `all_slots_filled`     | Evaluates to true only if all of the context variables for all of the slots in the node have been set. See [Preventing a Found response from displaying when it is not needed](dialog-slots.html#slots-stifle-found-responses) for a usage example. |
-| `event.current_value`  | Current value of the context variable for this slot. See [Replacing a slot context variable value](dialog-slots.html#slots-found-handler-event-properties) for a usage example for this property and the event.previous_value property. |
+| `all_slots_filled`     | Evaluates to true only if all of the context variables for all of the slots in the node have been set. See [Preventing a Found response from displaying when it is not needed](#slots-stifle-found-responses) for a usage example. |
+| `event.current_value`  | Current value of the context variable for this slot. See [Replacing a slot context variable value](#slots-found-handler-event-properties) for a usage example for this property and the event.previous_value property. |
 | `event.previous_value` | Previous value of the context variable for this slot. |
-| `has_skipped_slots`    | True if any of the slots or slot handlers that are configured with a next step option that skips slots was processed. See [Adding conditions to Found and Not found responses](dialog-slots.html#slot-handler-next-steps) for more information about next step options for slots and [Handling requests to exit a process](dialog-slots.html#slots-node-level-handler) for information about next step options for slot handlers. |
-| `slot_in_focus`        | Forces the slot condition to be applied to the current slot only. See [Getting confirmation](dialog-slots.html#slots-get-confirmation) for more details. |
+| `has_skipped_slots`    | True if any of the slots or slot handlers that are configured with a next step option that skips slots was processed. See [Adding conditions to Found and Not found responses](#slot-handler-next-steps) for more information about next step options for slots and [Handling requests to exit a process](#slots-node-level-handler) for information about next step options for slot handlers. |
+| `slot_in_focus`        | Forces the slot condition to be applied to the current slot only. See [Getting confirmation](#slots-get-confirmation) for more details. |
 {: caption="Slot properties" caption-side="top"}
 
 Consider using these approaches for handling common tasks.
 
-- [Asking for everything at once](dialog-slots.html#slots-prompt-for-everything)
-- [Capturing multiple values](dialog-slots.html#slots-multiple-entity-values)
-- [Reformatting values](dialog-slots.html#slots-reformat-values)
-- [Dealing with zeros](dialog-slots.html#slots-zero)
-- [Getting confirmation](dialog-slots.html#slots-get-confirmation)
-- [Replacing a slot context variable value](dialog-slots.html#slots-found-handler-event-properties)
-- [Avoiding number confusion](dialog-slots.html#slots-avoid-number-confusion)
-- [Adding conditions to Found and Not found responses](dialog-slots.html#slot-handler-next-steps)
-- [Moving on after multiple failed attempts](dialog-slots.html#slots-stop-trying-after-3)
-- [Preventing a Found response from displaying when it is not needed](dialog-slots.html#slots-stifle-found-responses)
-- [Handling requests to exit a process](dialog-slots.html#slots-node-level-handler)
+- [Asking for everything at once](#slots-prompt-for-everything)
+- [Capturing multiple values](#slots-multiple-entity-values)
+- [Reformatting values](#slots-reformat-values)
+- [Dealing with zeros](#slots-zero)
+- [Getting confirmation](#slots-get-confirmation)
+- [Replacing a slot context variable value](#slots-found-handler-event-properties)
+- [Avoiding number confusion](#slots-avoid-number-confusion)
+- [Adding conditions to Found and Not found responses](#slot-handler-next-steps)
+- [Moving on after multiple failed attempts](#slots-stop-trying-after-3)
+- [Preventing a Found response from displaying when it is not needed](#slots-stifle-found-responses)
+- [Handling requests to exit a process](#slots-node-level-handler)
 
 ### Asking for everything at once
 {: #slots-prompt-for-everything}

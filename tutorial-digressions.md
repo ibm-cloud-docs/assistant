@@ -27,6 +27,7 @@ In this tutorial, you will see firsthand how digressions work.
 {: shortdesc}
 
 ## Learning objectives
+{: #digression-objectives}
 
 By the time you finish the tutorial, you will understand how:
 
@@ -35,9 +36,12 @@ By the time you finish the tutorial, you will understand how:
 - to test digression settings for a dialog
 
 ### Duration
+{: #digression-duration}
+
 This tutorial will take approximately 20 minutes to complete.
 
 ### Prerequisite
+{: #digression-prereqs}
 
 If you do not have a {{site.data.keyword.conversationshort}} instance, complete the **Before you begin** step from the [Getting Started tutorial](getting-started.html#prerequisites) to create one.
 
@@ -137,9 +141,11 @@ You can configure a dialog node to not go back to the node that the service digr
 Congratulations! You have successfully digressed away from a dialog without returning.
 
 ## Summary
+{: #digression-summary}
 
 In this tutorial you experienced how digressions work, and saw how individual dialog node settings can impact the digressions behavior.
 
 ## Next steps
+{: #digression-next-steps}
 
 For help as you configure digressions for your own dialog, see [Digressions](dialog-runtime.html#digressions).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-17"
+lastupdated: "2019-01-28"
 
 ---
 
@@ -95,6 +95,7 @@ Language support by feature is detailed in the [Supported languages](lang-suppor
 See [IBM Cloud Terms and Notices ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/overview/terms-of-use/notices.html) for information about the terms of service.
 
 ## Next steps
+{: #about-next-steps}
 
 - [Get started](getting-started.html) with the service.
 - View the list of [developer resources ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/watson/developer-resources/){: new_window}.
