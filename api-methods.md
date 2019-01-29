@@ -26,6 +26,7 @@ lastupdated: "2018-12-11"
 {:tip: .tip}
 
 # API methods summary
+{: #api-methods}
 
 The following tables list the methods that are available using the {{site.data.keyword.conversationshort}} APIs.
 
