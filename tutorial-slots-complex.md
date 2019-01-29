@@ -27,6 +27,7 @@ In this tutorial, you will enhance a simple node with slots that collects the in
 {: shortdesc}
 
 ## Learning objectives
+{: #slots-complex-objectives}
 
 By the time you finish the tutorial, you will understand how to:
 
@@ -36,9 +37,12 @@ By the time you finish the tutorial, you will understand how to:
 - Handle unexpected user responses
 
 ### Duration
+{: #slots-complex-duration}
+
 This tutorial will take approximately 2 to 3 hours to complete.
 
 ### Prerequisite
+{: #slots-complex-prereqs}
 
 Before you begin, complete the [Adding a node with slots to a dialog](tutorial-slots.html). You must complete the first slots tutorial before you begin this one because you will build on the node with slots that you create in the first tutorial.
 
@@ -805,10 +809,11 @@ Now that your dialog can collect and confirm a user's reservation details, you c
 In the logic that calls the reservation service, be sure to check for `has_skipped_slots` and do not continue with the reservation if it is present.
 
 ### Summary
+{: #slots-complex-summary}
 
 In this tutorial you tested a node with slots and made changes that optimize how it interacts with real users. For more information about this subject, see [Gathering information with slots](dialog-slots.html).
 
 ## Next steps
-{: #deploy}
+{: #slots-complex-deploy}
 
 Deploy your dialog skill by first connecting it to an assistant, and then deploying the assistant. There are several ways you can do this. See [Adding integrations](add-integrations.html) for more details.

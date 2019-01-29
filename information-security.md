@@ -55,6 +55,8 @@ If you need to remove a customer's message data from a {{site.data.keyword.conve
 **Note:** The Preview Link and automatic Facebook integration features do not support the labeling and therefore deletion of data based on customer ID. These features should not be used in a solution that requires the ability to delete based on customer ID.
 
 ### Before you begin
+{: #delete-user-data-prereqs}
+
 To be able to delete message data associated with a specific user, you must first associate all messages with a unique **customer ID** for each user. To specify the **customer ID** for any messages sent using the `/message` API, include the `X-Watson-Metadata: customer_id` property in your header. For example:
 
 ```

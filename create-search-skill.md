@@ -204,7 +204,7 @@ Wait for the collection to be fully ingested before you return to {{site.data.ke
 If you want to change the configuration later, open the search skill again, and make edits. You do not need to save changes as you make them; they are automatically applied. When you are happy with the search results, click **Save** to finish configuring the search skill.
 
 ## Next steps
-{: #next-steps}
+{: #search-skill-next-steps}
 
 After you create the skill, it appears as a tile on the Skills page.
 

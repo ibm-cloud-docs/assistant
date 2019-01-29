@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-01-28"
 
 ---
 
@@ -28,6 +28,7 @@ In this tutorial, you will use the {{site.data.keyword.conversationshort}} servi
 {: shortdesc}
 
 ## Learning objectives
+{: #complext-tut-objectives}
 
 By the time you finish the tutorial, you will understand how to:
 
@@ -39,15 +40,19 @@ By the time you finish the tutorial, you will understand how to:
 - Set and reference context variables
 
 ### Duration
+{: #complext-tut-duration}
+
 This tutorial will take approximately 2 to 3 hours to complete.
 
 ### Prerequisite
+{: #complext-tut-prereqs}
 
 Before you begin, complete the [Getting Started tutorial](getting-started.html).
 
 You will use the dialog skill that you created, and add nodes to the simple dialog that you built as part of the getting started exercise.
 
 ## Step 1: Plan the dialog
+{: #complext-tut-plan}
 
 You are building an assistant for a restaurant named *Truck Stop Gourmand* that has one location and a thriving cake-baking business. You want the simple assistant to answer user questions about the restaurant, its menu, and to cancel customer cake orders. Therefore, you need to create intents that handle inquiries related to the following subjects:
 
@@ -58,7 +63,7 @@ You are building an assistant for a restaurant named *Truck Stop Gourmand* that 
 You'll start by creating intents that represent these subjects, and then build a dialog that responds to user questions about them.
 
 ## Step 2: Answer questions about the restaurant
-{: #add-about-intent}
+{: #complex-tut-add-about-intent}
 
 Add an intent that recognizes when customers ask for details about the restaurant itself. An intent is the purpose or goal expressed in user input. The `#General_About_You` intent that is provided with the *General* content catalog serves a similar function, but its user examples are designed to focus on queries about the assistant as opposed to the business that is using the assistant to help its customers. So, you will add your own intent.
 
@@ -763,7 +768,7 @@ Now, add a dialog node that can recognize the user's interest in the bot, and re
 If, at run time, the user triggers this node and provides a name, then you will know the user's name. If you know it, you should use it! Add conditional responses to the greeting dialog node you added previously to include a conditional response that uses the user name, if it is known.
 
 ### Add the user name to the greeting
-{: #get-username}
+{: #add-username-to-greeting}
 
 If you know the user's name, you should include it in your greeting message. To do so, add conditional responses, and include a variation of the greeting that includes the user's name.
 
@@ -811,7 +816,7 @@ Test whether the service can recognize and save a user's name, and then refer to
 You can add a conditional response that conditions on and includes the user's name for any other responses where personalization would add value to the conversation.
 
 ## Step 6: Test the assistant from you web page integration
-{: #integrate-assistant}
+{: #complex-tut-integrate-assistant}
 
 Now that you have built a more sophisticated version of the assistant, return to the public web page that you deployed as part of the previous tutorial, and then test the new capabilities you added.
 
@@ -826,6 +831,6 @@ Now that you have built a more sophisticated version of the assistant, return to
     {: note}
 
 ## Next steps
-{: #deploy}
+{: #complex-tut-deploy}
 
 Now that you have built and tested your dialog skill, you can share it with customers. Deploy your skill by first connecting it to an assistant, and then deploying the assistant. There are several ways you can do this. See [Adding integrations](add-integrations.html) for more details.

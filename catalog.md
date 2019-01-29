@@ -55,8 +55,6 @@ Use the {{site.data.keyword.conversationshort}} tool to add content catalogs.
 
     ![Screen capture showing Banking intents listed on Intents tab](images/catalog_intents.png)
 
-### Results
-
 The intents from the *Banking* content catalog have been added to the **Intents** tab of your dialog skill, and the system begins to train itself on the new data.
 
 ## Editing content catalog examples

@@ -209,7 +209,7 @@ Now that you have an assistant that can participate in a simple conversational e
 1.  Say `hello` to your assistant, and watch it respond. You can share the URL with others who might want to try out your assistant.
 
 ## Next steps
-{: #next-steps}
+{: #gs-next-steps}
 
 This tutorial is built around a simple example. For a real application, you need to define some more interesting intents, some entities, and a more complex dialog that uses them both. When you have a polished version of the assistant, you can integrate it with channels that your customers use, such as Slack. As traffic increases between the assistant and your customers, you can use the tools that are provided in the **Improve** tab to analyze real conversations, and identify areas for improvement.
 
