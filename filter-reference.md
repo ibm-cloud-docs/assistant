@@ -40,14 +40,14 @@ The following example shows the general form of a filter query:
 
 - The _location_ identifies the field that you want to filter on (in this example, `request.input.text`).
 - The _query operator_, which specifies the type of matching you want to use (fuzzy matching or exact matching).
-- The _term_ specifies the expression or value you want to use to evaluate the field for matching. The term can contain literal text and operators, as described in the [next section](#operators).
+- The _term_ specifies the expression or value you want to use to evaluate the field for matching. The term can contain literal text and operators, as described in the [next section](#filter-operators).
 
 Filtering by intent or entity requires slightly different syntax from filtering on other fields. For more information, see [Filtering by intent or entity](#intent_entity_filter).
 
 **Note:** The filter query syntax uses some characters that are not allowed in HTTP queries. Make sure that all special characters, including spaces and quotation marks, are URL encoded when sent as part of an HTTP query. For example, the filter `response_timestamp<2016-11-01` would be specified as `response_timestamp%3C2016-11-01`.
 
 ## Operators
-<!-- {#operators} -->
+{: #filter-operators}
 
 You can use the following operators in your filter query.
 
@@ -67,7 +67,7 @@ You can use the following operators in your filter query.
 | `,` | Boolean _and_ operator. |
 
 ### Filtering by intent or entity
-<!-- {#intent_entity_filter} -->
+{: #intent_entity_filter}
 
 Because of differences in how intents and entities are stored internally, the syntax for filtering on a specific intent or entity is different from the syntax used for other fields in the returned JSON. To specify an `intent` or `entity` field within an `intents` or `entities` collection, you must use the `:` match operator instead of a dot.
 
@@ -107,6 +107,7 @@ To filter on any other field in the log data, specify the location as a path ide
 <!-- {data-copy=false} -->
 
 ## Examples
+{: #filter-examples}
 
 The following examples illustrate various types of queries using this syntax.
 

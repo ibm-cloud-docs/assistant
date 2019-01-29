@@ -23,6 +23,7 @@ lastupdated: "2019-01-09"
 {:tip: .tip}
 
 # Building a client application
+{: #api-client}
 
 So you have a working dialog skill and an assistant that uses it. Now you want to develop a custom client application that will interact with your users and communicate with the {{site.data.keyword.conversationfull}} service.
 {: shortdesc}
