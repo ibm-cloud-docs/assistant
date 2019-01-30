@@ -21,17 +21,18 @@ lastupdated: "2019-01-28"
 {:swift: .ph data-hd-programlang='swift'}
 
 # About
-{: #about}
+{: #index}
 
 {{site.data.keyword.conversationfull}} is a cognitive bot that you can customize for your business needs, and deploy across multiple channels to bring help to your customers where and when they need it.
 {: shortdesc}
 
 ## Where are my workspaces?
-{: #existing-customers}
+{: #index-existing-customers}
 
 If you created a *workspace* in a previous version of the service, have no fear; you can still get to it. Workspaces are now called *skills*. To get to your workspace, click the **Skills** tab.
 
 ## How it works
+{: #index-how-it-works}
 
 This diagram shows the overall architecture:
 
@@ -48,6 +49,7 @@ This diagram shows the overall architecture:
 - The dialog **skill** interprets the user input further, then directs the flow of the conversation and gathers any information that it needs to respond or perform a transaction on the user's behalf.
 
 ## Implementation
+{: #index-mplementation}
 
 Here's how you will implement your assistant:
 
@@ -82,20 +84,22 @@ Read more about these implementation steps by following these links:
 - [Adding integrations](add-integrations.html)
 
 ## Browser support
+{: #index-browser-support}
 
 The {{site.data.keyword.conversationshort}} service tool requires the same level of browser software as is required by {{site.data.keyword.Bluemix_notm}}. See the {{site.data.keyword.Bluemix_notm}} [Prerequisites ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/overview/prereqs.html#browsers){: new_window} topic for details.
 
 ## Language support
+{: #index-lang-support}
 
 Language support by feature is detailed in the [Supported languages](lang-support.html) topic.
 
 ## Terms and notices
-{: #notices}
+{: #index-notices}
 
 See [IBM Cloud Terms and Notices ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/overview/terms-of-use/notices.html) for information about the terms of service.
 
 ## Next steps
-{: #about-next-steps}
+{: #index-next-steps}
 
 - [Get started](getting-started.html) with the service.
 - View the list of [developer resources ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/watson/developer-resources/){: new_window}.
