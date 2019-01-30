@@ -44,7 +44,7 @@ The body of the /message API call request and response includes the following ob
   ```
   {: codeblock}
 
-  See [Retaining information across dialog turns](#runtime-runtime-context) for more information.
+  See [Retaining information across dialog turns](#runtime-context) for more information.
 
 - `input`: The string of text that was submitted by the user. The text string can contain up to 2,048 characters.
 
