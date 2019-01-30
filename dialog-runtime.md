@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2018-01-29"
 
 ---
 
@@ -28,7 +28,7 @@ Understand how your dialog is processed when a person interacts with your instan
 {: shortdesc}
 
 ## Anatomy of a dialog call
-{: message-anatomy}
+{: #runtime-message-anatomy}
 
 Each user utterance is passed to the dialog as a /message API call. This includes utterances that users make in reply to prompts from the dialog that ask them for more information. Some subscription plans include a set number of API calls, so it helps to understand what constitutes a call. A single /message API call is equivalent to a single dialog turn, which consists of an input from the user and a corresponding response from the dialog.
 
@@ -44,7 +44,7 @@ The body of the /message API call request and response includes the following ob
   ```
   {: codeblock}
 
-  See [Retaining information across dialog turns](#context) for more information.
+  See [Retaining information across dialog turns](#runtime-context) for more information.
 
 - `input`: The string of text that was submitted by the user. The text string can contain up to 2,048 characters.
 
@@ -106,7 +106,7 @@ There are response types other than a text response that you can define. See [Re
 You can learn more about the /message API call from the [API reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant-v2){: new_window}.
 
 ### Retaining information across dialog turns
-{: #context}
+{: #runtime-context}
 
 The dialog in a dialog skill is stateless, meaning that it does not retain information from one interaction with the user to the next. When you add a dialog skill to an assistant and deploy it, the assistant saves the context from one message call and then re-submits it on the next request throughout the current session. The current session lasts for as long a user interacts with the assistant, and then up to 60 minutes of inactivity for Plus or Premium plans (5 minutes for Lite or Standard plans). If you do not add the dialog skill to an assistant, it is your responsibility as the custom application developer to maintain any continuing information that the application needs. The application must look for, and store the context object in the message API response, and pass it in the context object with the next /message API request that is made as part of the conversation flow.
 
@@ -115,7 +115,7 @@ One way to retain the information yourself is to store the entire context object
 The application can pass information to the dialog, and the dialog can update this information and pass it back to the application, or to a subsequent node. The dialog does so by using *context variables*.
 
 ## Context variables
-{: #context-variables}
+{: #runtime-context-variables}
 
 A context variable is a variable that you define in a node. You can specify a default value for it. Other nodes, application logic, or user input can subsequently set or change the value of the context variable.
 
@@ -123,18 +123,18 @@ You can condition against context variable values by referencing a context varia
 
 Learn more:
 
-- [Passing context from the application](#context-from-app)
-- [Passing context from node to node](#context-node-to-node)
-- [Defining a context variable](#context-var-define)
-- [Common context variable tasks](#context-common-tasks)
-- [Deleting a context variable](#context-delete)
-- [Updating a context variable](#context-update)
-- [How context variables are processed](#context-processing)
-- [Order of operation](#context-order-of-ops)
-- [Adding context variables to a node with slots](#context-var-slots)
+- [Passing context from the application](#runtime-context-from-app)
+- [Passing context from node to node](#runtime-context-node-to-node)
+- [Defining a context variable](#runtime-context-var-define)
+- [Common context variable tasks](#runtime-context-common-tasks)
+- [Deleting a context variable](#runtime-context-delete)
+- [Updating a context variable](#runtime-context-update)
+- [How context variables are processed](#runtime-context-processing)
+- [Order of operation](#runtime-context-order-of-ops)
+- [Adding context variables to a node with slots](#runtime-context-var-slots)
 
 ### Passing context from the application
-{: #context-from-app}
+{: #runtime-context-from-app}
 
 Pass information from the application to the dialog by setting a context variable and passing the context variable to the dialog.
 
@@ -145,7 +145,7 @@ For example, your application can set a $time_of_day context variable, and pass 
 In this example, the dialog knows that the application sets the variable to one of these values: *morning*, *afternoon*, or *evening*. It can check for each value, and depending on which value is present, return the appropriate greeting. If the variable is not passed or has a value that does not match one of the expected values, then a more generic greeting is displayed to the user.
 
 ### Passing context from node to node
-{: #context-node-to-node}
+{: #runtime-context-node-to-node}
 
 The dialog can also add context variables to pass information from one node to another or to update the values of context variables. As the dialog asks for and gets information from the user, it can keep track of the information and reference it later in the conversation.
 
@@ -156,7 +156,7 @@ For example, in one node you might ask users for their name, and in a later node
 In this example, the system entity @sys-person is used to extract the user's name from the input if the user provides one. In the JSON editor, the username context variable is defined and set to the @sys-person value. In a subsequent node, the $username context variable is included in the response to address the user by name.
 
 ### Defining a context variable
-{: #context-var-define}
+{: #runtime-context-var-define}
 
 Define a context variable by adding the variable name to the **Variable** field and adding a default value for it to the **Value** field in the node's edit view.
 
@@ -198,10 +198,10 @@ The resulting output is displayed as follows:
 
 `The customer, 18-year-old John, wants a pizza with onions and olives, and then cake.`
 
-You can use the JSON editor to define context variables also. You might prefer to use the JSON editor if you want to add a complex expression as the variable value. See [Context variables in the JSON editor](#context-var-json) for more details.
+You can use the JSON editor to define context variables also. You might prefer to use the JSON editor if you want to add a complex expression as the variable value. See [Context variables in the JSON editor](#runtime-context-var-json) for more details.
 
 ### Common context variable tasks
-{: #context-common-tasks}
+{: #runtime-context-common-tasks}
 
 To store the entire string that was provided by the user as input, use `input.text`:
 
@@ -236,7 +236,7 @@ For example, the user input is `Contact me at joe@example.com.` Your entity name
 Many of these value examples use methods to capture different parts of the user input. For more information about the methods available for you to use, see [Expression language methods](dialog-methods.html).
 
 ### Deleting a context variable
-{: #context-delete}
+{: #runtime-context-delete}
 
 To delete a context variable, set the variable to null.
 
@@ -244,28 +244,28 @@ To delete a context variable, set the variable to null.
 |------------|------------------|
 | order_form | `null`           |
 
-Alternatively you can delete the context variable in your application logic. For information about how to remove the variable entirely, see [Deleting a context variable in JSON](#context-delete-json).
+Alternatively you can delete the context variable in your application logic. For information about how to remove the variable entirely, see [Deleting a context variable in JSON](#runtime-context-delete-json).
 
 ### Updating a context variable value
-{: #context-update}
+{: #runtime-context-update}
 
 To update a context variable's value, define a context variable with the same name as the previous context variable, but this time, specify a different value for it.
 
 When more than one node sets the value of the same context variable, the value for the context variable can change over the course of a conversation with a user. Which value is applied at any given time depends on which node is being triggered by the user in the course of the conversation. The value specified for the context variable in the last node that is processed overwrites any values that were set for the variable by nodes that were processed previously.
 
-For information about how to update the value of a context variable when the value is a JSON object or JSON array data type, see [Updating a context variable value in JSON](#context-update-json)
+For information about how to update the value of a context variable when the value is a JSON object or JSON array data type, see [Updating a context variable value in JSON](#runtime-context-update-json)
 
 ### How context variables are processed
-{: #context-processing}
+{: #runtime-context-processing}
 
 Where you define the context variable matters. The context variable is not created and set to the value that you specify for it until the service processes the part of the dialog node where you defined the context variable. In most cases, you define the context variable as part of the node response. When you do so, the context variable is created and given the specified value when the service returns the node response.
 
 For a node with conditional responses, the context variable is created and set when the condition for a specific response is met and that response is processed. For example, if you define a context variable for conditional response #1 and the service processes conditional response #2 only, then the context variable that you defined for conditional response #1 is not created and set.
 
-For information about where to add context variables that you want the service to create and set as a user interacts with a node with slots, see [Adding context variables to a node with slots](#context-var-slots).
+For information about where to add context variables that you want the service to create and set as a user interacts with a node with slots, see [Adding context variables to a node with slots](#runtime-context-var-slots).
 
 ### Order of operation
-{: #context-order-of-ops}
+{: #runtime-context-order-of-ops}
 
 When you define multiple variables to be processed together, the order in which you define them does not determine the order in which they are evaluated by the service. The service evaluates the variables in random order. Do not set a value in the first context variable in the list and expect to be able to use it in the second variable in the list, because there is no guarantee that the first context variable will be executed before the second one. For example, do not use two context variables to implement logic that checks whether the user input contains the word `Yes` in it.
 
@@ -281,7 +281,7 @@ Instead, use a slightly more complex expression to avoid having to rely on the v
 | contains_yes  | <? input.text.contains('Yes') ?> |
 
 ### Adding context variables to a node with slots
-{: #context-var-slots}
+{: #runtime-context-var-slots}
 
 For more information about slots, see [Gathering information with slots](dialog-slots.html).
 
@@ -310,13 +310,13 @@ For more information about slots, see [Gathering information with slots](dialog-
           ```
           {: codeblock}
 
-      There is currently no way to use the context editor to define context variables that are set during this phase of dialog node evaluation. You must use the JSON editor instead. For more information about using the JSON editor, see [Context variables in the JSON editor](#context-var-json).
+      There is currently no way to use the context editor to define context variables that are set during this phase of dialog node evaluation. You must use the JSON editor instead. For more information about using the JSON editor, see [Context variables in the JSON editor](#runtime-context-var-json).
       {: note}
 
       ![Shows how to access the JSON editor associated with a slot condition.](images/contextvar-json-slot-condition.png)
 
 ## Context variables in the JSON editor
-{: #context-var-json}
+{: #runtime-context-var-json}
 
 You can also define a context variable in the JSON editor. You might want to use the JSON editor if you are defining a complex context variable and want to be able to see the full SpEL expression as you add or change it.
 
@@ -403,12 +403,12 @@ To define a context variable in JSON format, complete the following steps:
 
 Learn more:
 
-- [Deleting a context variable in JSON](#context-delete-json)
-- [Updating a context variable value in JSON](#context-update-json)
-- [Setting one context variable equal to another](#var-equals-var)
+- [Deleting a context variable in JSON](#runtime-context-delete-json)
+- [Updating a context variable value in JSON](#runtime-context-update-json)
+- [Setting one context variable equal to another](#runtime-var-equals-var)
 
 ### Deleting a context variable in JSON
-{: #context-delete-json}
+{: #runtime-context-delete-json}
 
 To delete a context variable, set the variable to null.
 
@@ -436,7 +436,7 @@ If you want to remove all trace of the context variable, you can use the JSONObj
 Alternatively you can delete the context variable in your application logic.
 
 ### Updating a context variable value in JSON
-{: #context-update-json}
+{: #runtime-context-update-json}
 
 In general, if a node sets the value of a context variable that is already set, then the previous value is overwritten by the new value.
 
@@ -637,7 +637,7 @@ Choose one of these actions to update the array. In each case, we see the array 
 See [Expression language methods](dialog-methods.html#arrays) for more information about methods you can perform on arrays.
 
 ### Setting one context variable equal to another
-{: #var-equals-var}
+{: #runtime-var-equals-var}
 
 When you set one context variable equal to another context variable, you define a pointer from one to the other. If the value of one of the variables subsequently changes, then the value of the other variable is changed also.
 
@@ -661,7 +661,7 @@ For example, to create a copy of the values of an array at a certain point of th
 {: codeblock}
 
 ## Digressions
-{: #digressions}
+{: #runtime-digressions}
 
 A digression occurs when a user is in the middle of a dialog flow that is designed to address one goal, and abruptly switches topics to initiate a dialog flow that is designed to address a different goal. The dialog has always supported the user's ability to change subjects. If none of the nodes in the dialog branch that is being processed match the goal of the user's latest input, the conversation goes back out to the tree to check the root node conditions for an appropriate match. The digression settings that are available per node give you the ability to tailor this behavior even more.
 
@@ -675,15 +675,15 @@ Watch this video to learn more.
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Digressions overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/I3K7mQ46K3o?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
-- [Before you begin](#digression-prereqs)
-- [Customizing digressions](#enable-digressions)
-- [Digression usage tips](#digress-tips)
-- [Disabling digressions into a root node](#disable-digressions)
-- [Digression tutorial](#digression-tutorial)
-- [Design considerations](#digression-design-considerations)
+- [Before you begin](#runtime-digression-prereqs)
+- [Customizing digressions](#runtime-enable-digressions)
+- [Digression usage tips](#runtime-digress-tips)
+- [Disabling digressions into a root node](#runtime-disable-digressions)
+- [Digression tutorial](#runtime-digression-tutorial)
+- [Design considerations](#runtime-digression-design-considerations)
 
 ### Before you begin
-{: #digression-prereqs}
+{: #runtime-digression-prereqs}
 
 As you test your overall dialog, decide when and where it makes sense to allow digressions and returns from digressions to occur. The following digression controls are applied to the nodes automatically. Only take action if you want to change this default behavior.
 
@@ -699,7 +699,7 @@ As you test your overall dialog, decide when and where it makes sense to allow d
     The final step section of a node specifies what should happen after the node is processed. When the dialog is configured to jump directly to another node, it is often to ensure that a specific sequence is followed. And when the node is configured to skip user input, it is equivalent to forcing the dialog to process the first child node after the current node in succession. To prevent breaking existing dialog flow logic, digressions are not allowed in either of these cases. Before you can enable digressions away from this node, you must change what is specified in the final step section.
 
 ### Customizing digressions
-{: #enable-digressions}
+{: #runtime-enable-digressions}
 
 You do not define the start and end of a digression. The user is entirely in control of the digression flow at run time. You only specify how each node should or should not participate in a user-led digression. For each node, you configure whether:
 
@@ -743,7 +743,7 @@ To change the digression behavior for an individual node, complete the following
 
     You can make the following choices about how digressions into a node behave:
 
-    - Prevent users from being able to digress into the node. See [Disabling digressions into a root node](#diable-digressions) for more details.
+    - Prevent users from being able to digress into the node. See [Disabling digressions into a root node](#runtime-diable-digressions) for more details.
 
     - When digressions into the node are enabled, choose whether the dialog must go back to the dialog flow that it digressed away from. When selected, after the current node's branch is done being processed, the dialog flow goes back to the interrupted node. To make the dialog return afterwards, select **Return after digression**.
 
@@ -762,7 +762,7 @@ The #reservation and #cuisine nodes represent two dialog branches that can parti
 ![Shows two dialogs, one that sets the digressions away from the reservation slots node and one that sets the digression into the cuisine node.](images/digression-settings.png)
 
 ### Digression usage tips
-{: #digress-tips}
+{: #runtime-digress-tips}
 
 This section describes solutions to situations that you might encounter when using digressions.
 
@@ -812,7 +812,7 @@ This section describes solutions to situations that you might encounter when usi
   This SpEL expression prevents the digression return from happening from this node. When a confirmation is requested, if the user says yes, the proper response is displayed, and the dialog flow that was interrupted is not resumed. If the user says no, then the user is returned to the flow that was interrupted.
 
 ### Disabling digressions into a root node
-{: #disable-digressions}
+{: #runtime-disable-digressions}
 
 When a flow digresses into a root node, it follows the course of the dialog that is configured for that node. So, it might process a series of child nodes before it reaches the end of the node branch, and then, if configured to do so, goes back to the dialog flow that was interrupted. Through dialog testing, you might find that a root node is triggered too often, or at unexpected times, or that its dialog is too complex and leads the user too far off course to be a good candidate for a temporary digression. If you determine that you would rather not allow users to digress into it, you can configure the root node to not allow digressions in.
 
@@ -826,12 +826,12 @@ To disable digressions into a root node altogether, complete the following steps
 If you decide that you want to prevent digressions into several root nodes, but do not want to edit each one individually, you can add the nodes to a folder. From the *Customize* page of the folder, you can set the *Allow digressions into this node* toggle to **Off** to apply the configuration to all of the nodes at once. See [Organizing the dialog with folders](dialog-build.html#folders) for more information.
 
 ### Digression tutorial
-{: #digression-tutorial}
+{: #runtime-digression-tutorial}
 
 Follow the [tutorial](tutorial-digressions.html) to import a workspace that has a set of nodes already defined. You can walk through some exercises that illustrate how digressions work.
 
 ### Design considerations
-{: #digression-design-considerations}
+{: #runtime-digression-design-considerations}
 
 - **Avoid fallback node proliferation**: Many dialog designers include a node with a `true` or `anything_else` condition at the end of every dialog branch as a way to prevent users from getting stuck in the branch. This design returns a generic message if the user input does not match anything that you anticipated and included a specific dialog node to address. However, users cannot digress away from dialog flows that use this approach.
 
@@ -854,7 +854,7 @@ Follow the [tutorial](tutorial-digressions.html) to import a workspace that has 
   For example, if the node with slots collects the information required to fill out an insurance claim, then you might want to add handlers that address common questions about insurance. However, for questions about how to get help, or your stores locations, or the history of your company, use a root level node.
 
 ## Disambiguation ![Plus or Premium plan only](images/premium.png)
-{: #disambiguation}
+{: #runtime-disambiguation}
 
 This feature is available only to Plus or Premium users.
 {: tip}
@@ -875,14 +875,14 @@ Even when these conditions are met, disambiguation does not occur unless two or 
 
 Learn more
 
-- [Disambiguation example](#disambig-example)
-- [Enabling disambiguation](#disambig-enable)
-- [Choosing nodes](#choose-nodes)
-- [Handling none of the above](#handle-none)
-- [Testing disambiguation](#disambig-test)
+- [Disambiguation example](#runtime-disambig-example)
+- [Enabling disambiguation](#runtime-disambig-enable)
+- [Choosing nodes](#runtime-choose-nodes)
+- [Handling none of the above](#runtime-handle-none)
+- [Testing disambiguation](#runtime-disambig-test)
 
 ### Disambiguation example
-{: #disambig-example}
+{: #runtime-disambig-example}
 
 For example, you have a dialog that has two nodes with intent conditions that address cancellation requests. The conditions are:
 
@@ -919,7 +919,7 @@ The following video provides an overview of disambiguation.
 <iframe class="embed-responsive-item" id="youtubeplayer0" title="Disambiguation overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/VVyklAXlmbA?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 ### Enabling disambiguation
-{: #disambig-enable}
+{: #runtime-disambig-enable}
 
 To enable disambiguation, complete the following steps:
 
@@ -929,7 +929,7 @@ To enable disambiguation, complete the following steps:
 1.  In the prompt message field, add text to show before the list of dialog node options. For example, *What do you want to do?*
 1.  **Optional**: In the none of the above message field, add text to display as an additional option that users can pick if none of the other dialog nodes reflect what the user wants to do. For example, *None of the above*.
 
-    Keep the message short, so it displays inline with the other options. The message must be less than 512 characters. For information about what the service does if a user chooses this option, see [Handling none of the above](#handle-none).
+    Keep the message short, so it displays inline with the other options. The message must be less than 512 characters. For information about what the service does if a user chooses this option, see [Handling none of the above](#runtime-handle-none).
 
 1.  Click **Close**
 1.  Decide which dialog nodes you want the assistant to ask for help with.
@@ -937,7 +937,7 @@ To enable disambiguation, complete the following steps:
     - You can pick nodes at any level of the tree hierarchy.
     - You can pick nodes that condition on intents, entities, special conditions, context variables, or any combination of these values.
 
-    See [Choosing nodes](#choose-nodes) for tips.
+    See [Choosing nodes](#runtime-choose-nodes) for tips.
 
     For each node that you want to opt in to disambiguation, complete the following steps:
 
@@ -947,7 +947,7 @@ To enable disambiguation, complete the following steps:
         ![Shows where to add the node purpose information in the node edit view.](images/disambig-node-purpose.png)
 
 ### Choosing nodes
-{: #choose-nodes}
+{: #runtime-choose-nodes}
 
 Choose nodes that serve as the root of a distinct branch of the dialog to be disambiguation choices. These can include nodes that are children of other nodes. The key is for the node to condition on some distinct value or values that distinguish it from everything else.
 
@@ -962,7 +962,7 @@ Keep in mind:
 
   - It impacts whether disambiguation is triggered at all
   
-    Look at the [scenario](#disambig-example) that is used earlier to introduce disambiguation, for example. If the node that conditions on `@sys-date` was placed higher in the dialog tree than the nodes that condition on the `#Customer_Care_Cancel_Account` and `#eCommerce_Cancel_Product_Order` intents, disambiguation would never be triggered when a user enters, `i must cancel it today`. That's because the service would consider the date mention (`today`) to be more important than the intent references due to the placement of the corresponding nodes in the tree.
+    Look at the [scenario](#runtime-disambig-example) that is used earlier to introduce disambiguation, for example. If the node that conditions on `@sys-date` was placed higher in the dialog tree than the nodes that condition on the `#Customer_Care_Cancel_Account` and `#eCommerce_Cancel_Product_Order` intents, disambiguation would never be triggered when a user enters, `i must cancel it today`. That's because the service would consider the date mention (`today`) to be more important than the intent references due to the placement of the corresponding nodes in the tree.
 
   - It impacts which nodes are included in the disambiguation options list
   
@@ -971,7 +971,7 @@ Keep in mind:
 For each node that you opt in to disambiguation, test scenarios in which you expect the node to be included in the disambiguation options list. Testing gives you a chance to make adjustments to the node order or other factors that might impact how well disambiguation works at run time.
 
 ### Handling none of the above
-{: #handle-none}
+{: #runtime-handle-none}
 
 When a user clicks the *None of the above* option, the service strips the intents that were recognized in the user input from the message and submits it again. This action typically triggers the anything else node in your dialog tree.
 
@@ -992,7 +992,7 @@ Add a response that lets users know that you understand that none of the options
 Again, the placement of nodes in the tree matters. If a node that conditions on an entity type that is mentioned in the user input is higher in the tree than this node, its response is displayed instead.
 
 ### Testing disambiguation
-{: #disambig-test}
+{: #runtime-disambig-test}
 
 To test disambiguation, complete the following steps:
 
