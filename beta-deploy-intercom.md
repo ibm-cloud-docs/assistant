@@ -39,10 +39,34 @@ If you integrate the assistant with Intercom, the Intercom application becomes t
 
 There is currently no way to pass an ongoing conversation from one integration channel to another.
 
-## Before you begin
-{: #beta-deploy-intercom-prereq}
+## One-time agent creation
+{: #beta-deploy-intercom-account-prereq}
 
-Complete the following steps before you add the Intercom integration. (These steps duplicate tasks described in the checklist that is available from the integration configuration pages.)
+You or someone in your organziation must complete these one-time prerequisite steps before you add the Intercom integration to your assistant.
+
+1.  Create a functional email account for your assistant.
+
+    Each assistant must have a valid email address before it can be added to a team in Intercom.
+1.  From your Intercom workspace, add the assistant to your team as a new agent.
+
+    Go to the teammate settings page in your Intercom workspace, invite the assistant as a new agent by adding the email to the invite field.
+
+    If you don't have an Intercom workspace set up yet, create one at [www.intercom.com](https://www.intercom.com). At a minimum, you need a subscription to the *Inbox* product from Intercom to be able to create a workspace.
+
+1.  From the assistant email account you created earlier, find the email invitation sent by Intercom. Click the link in the email to join the team. Sign up using the assistant's functional email address. Join the team.
+
+1.  **Optional**: Update the profile for your assistant.
+
+    You can edit the name and profile picture for your assistant. This profile represents the assistant in private agent communications within your workspace, and in public interactions with customers through your Intercom apps. Create a profile that reflects your brand.
+
+    Click the Intercom profile icon in the navigation bar to access profile and workspace settings.
+
+    ![Screenshot of the Intercom Setting page.](images/intercom-settings.png)
+
+## Preparing the dialog
+{: #beta-deploy-intercom-dialog-prereq}
+
+Complete these steps in your dialog skill so the assistant can handle user requests, and can pass the conversation to a human agent when someone asks for one.
 
 1.  Add an intent to your skill that can recognize a user's request to speak to a human.
 
@@ -50,88 +74,114 @@ Complete the following steps before you add the Intercom integration. (These ste
 
 1.  Add a root node to your dialog that conditions on the intent that you created in the previous step. Choose **Connect to human agent** as the response type.
 
-1.  Decide which dialog branches you want the assistant to be able to handle on its own. For each branch, fill in the node purpose field of its root node by adding a summary of the purpose of the branch. For example, *Find a store*. Root nodes in folders are supported also.
+1.  Prepare each dialog branch to be triggered by the assistant from the Intercom app.
+
+    Every root dialog node in your dialog is available to the assistant from Intercom, including root nodes in folders. You will specify the action that should be taken for each dialog branch later when you configure the Intercom teammate interactions.
+
+    Fill in the following fields of the root node of each branch:
+
+    - **External node name**: Add a summary of the purpose of the dialog branch. For example, *Find a store*.
+
+      This information is shown to other agents on the assistant's team when the assistant offers to answer a user query. If there is more than one dialog node that can address the query, the assistant shares a list of response options with human agent teammates to get their advice about which response to use.
+    - **Node name**: Give the node a name. This name is how you will identify the node when you configure interactions for it later. If you don't add a name, you will have to choose the node based on its node ID instead.
 
     ![Screenshot of the field in the node edit view where you add the node purpose summary.](images/disambig-node-purpose.png)
 
-    Adding a value to the node purpose field opts the node in for consideration as a topic that can be assigned to a team or agent by the Intercom app. (You will assign each opted-in dialog node to an agent, be it human or virtual, later when you configure the Intercom teammate interactions.)
+    **Important**: Do **not** add an external node name to the root node that you created in the previous step. Identifying the node that the user interacted with just before asking to speak to a human is important. It can help the service identify nodes that need to be improved. To find these nodes, when an escalation occurs, the service looks for the node purpose summary for the most recently processed node. Including a summary for the root node that does no actual work, but only transfers users to human agents can hinder the service's ability to identify the last goal-oriented node that the user interacted with before requesting the escalation.
 
-    **Important**: Do **not** add a node purpose summary to the root node that you created in the previous step. Identifying the node that the user interacted with just before asking to speak to a human is important. It can help the service identify nodes that need to be improved. To find these nodes, when an escalation occurs, the service looks for the node purpose summary for the most recently processed node. Including a summary for the root node that does no actual work, but only transfers users to human agents can hinder the service's ability to identify the last goal-oriented node that the user interacted with before requesting the escalation.
+1.  If a child node in the branch conditions on a follow-up request or question that you do not want the assistant to handle, add a **Connect to human agent** response type to the node. For example, you might want to add this to nodes that cover sensitive issues only a human should handle or that track when an assistant repeatedly fails to understand a user.
 
-1.  If a child node in the branch conditions on a follow-up request or question that you do not want the assistant to handle, add a **Connect to human agent** response type to the node. At run time, if the conversation reaches this child node, the dialog is passed to a human agent at this point. (Later, when you set up the Intercom integration, you will choose a human agent as a backup for each topic that you assign to your assistant.)
+    At run time, if the conversation reaches this child node, the dialog is passed to a human agent at this point. (Later, when you set up the Intercom integration, you will choose a human agent as a backup for each topic that you assign to your assistant.)
 
-1.  Create a corporate email address for your assistant.
-
-    All agents must have valid email addresses before they can be added to a team in Intercom.
+Your dialog is now ready to support your assistant in Intercom.
 
 ## Adding an Intercom integration
-{: #beta-deploy-intercom-add-task}
+{: #add-intercom}
 
 1.  From the Assistants tab, click to open the assistant tile that you want to deploy.
 
 1.  From the Integrations section, click **Add Integration**.
 
-1.  Click the **Select Integration** button for *Intercom*.
+1.  Click **Intercom**.
 
 1.  Follow the instructions that are provided on the screen to complete the integration process.
 
-    **Note**: You are instructed to create an Intercom app. At a minimum, you need a subscription to the *Inbox* product from Intercom.
+    When you are instructed to connect your assistant to Intercom, be sure to log in to Intercom using the assistant's functional email address and password, not your own.
 
-The instructions guide you through the steps required to invite team members and edit your profile. Click the Intercom profile icon in the navigation bar to access profile and workspace settings.
+## Configuring message routing
+{: #beta-deploy-intercom-config-backup}
 
-![Screenshot of the Intercom Setting page.](images/intercom-settings.png)
+After you add your assistant as a teammate to an Intercom workspace, your assistant watches user interactions as they are logged in the Intercom workspace, specifically those that are routed to the *Unassigned* inbox. If the assistant sees a query that it is confident it can answer, it shows one of its human teammates a list of possible responses and gets the teammate's approval before it responds.
 
-## Configuring Intercom interactions
-{: #beta-deploy-intercom-config-interactions}
+Assign a human teammate as a backup for the assistant in case the assistant needs to transfer an in-progress conversation to a human. You can choose different teams or teammates for each dialog branch.
 
-After you add your assistant as a teammate to an Intercom workspace, your assistant watches user interactions as they are logged in the Intercom workspace, primarily those that surface in the Unassigned inbox. The assistant does not take any action, unless it has permission to do so. Even when it has permission to act, the assistant does not do so unless it is confident in its response.
+To set up routing assignments, complete the following steps:
 
-You decide which actions the assistant can take for each type of goal users want help with. As part of the initial integration process, you configure how you want each opted-in dialog branch to be managed. You can start conservatively, allowing the assistant only to assign interactions to other teammates, and over time give it more responsibility, including permission to address users directly. As you gain confidence in the capabilities of the assistant, and as your dialog changes, you will likely return again and again to the Intercom integration configuration page to make incremental changes.
+1.  From the assistant, click to open the tile for the Intercom integration you created earlier.
+
+1.  Click **It's ready** to confirm that you have prepared your dialog.
+
+1.  In the *Settings* section, click **Manage rules**.
+
+    If you make no changes, the assistant is configured to take no action and agent requests are unassigned.
+
+1.  Click **New rule** to define how you want a specific dialog branch to be routed to a human teammate, if necessary.
+
+1.  From the *Choose node* drop-down list, choose the node for the branch you want to configure.
+
+    Remember, branches are identified by their node name. If you did not specify a node name, then the node's ID is displayed instead.
+
+1.  Choose the team or human agent teammate responsible for responding to user inquiries that trigger this dialog branch.
+
+1.  To define routing rules for other dialog branches, click **New rule** again, and repeat the previous steps.
+
+1.  After adding rules, click **Return to overview** to exit the page.
+
+You can start incorporating the assistant into your Intercom team conservatively, allowing the assistant only to suggest responses for messages that it routes to other teammates. Over time, you can give it more responsibility, including permission to address users directly. When you think the assistant it ready to take on a bigger role, complete the next procedure.
+
+## Give the assistant permission to answer user queries
+{: #beta-deploy-intercom-config-action}
+
+The assistant does not take any action, unless it has permission to do so. Even when it has permission to act, the assistant does not do so unless it is confident in its response.
+
+You decide which actions the assistant can take for each type of goal users want help with. As part of the initial integration set up process, you configure how you want each dialog branch to be managed by defining rules.
 
 To edit the Intercom configuration, complete the following steps:
 
 1.  From the assistant, click to open the tile for the Intercom integration you created earlier.
 
-1.  In the *Intercom Configuration* section, find the *Teammate Interactions* table.
+1.  From the *Enable your assistant to monitor an inbox* section, click to switch it **On**.
+
+1.  In *Settings*, click **Manage rules**.
 
 1.  **Optional**: If you want to apply a single interaction configuration to all of the dialog branches at once, define an interaction for **All other nodes**.
 
     If you make no changes, the assistant is configured to take no action and agent requests are unassigned.
 
-1.  Click **Add Integration** to define a unique interaction pattern for a specific dialog branch.
+1.  Click **New rule** to define a unique interaction pattern for a specific dialog branch.
 
-1.  From the *Select a node* drop-down list, choose the node purpose summary for the branch you want to configure.
+1.  From the *Choose node* drop-down list, choose the node for the branch you want to configure.
 
-    Remember, branches are opted in for Intercom integration when you add a summary to the *node purpose* field on the root node of the branch. If you do not see a branch that you want the Intercom app to manage from the list of options, then you might have forgotten to add text to its *node purpose* field. Go to the dialog, open the branch's root node in the edit view, and add a summary of the branch's purpose to its *node purpose* field now. For example, *Place an order*. And then return here to pick it from the drop-down list and configure it.
+    Remember, branches are identified by their node name. If you did not specify a node name, then the node's ID is displayed instead.
 
 1.  Pick the type of action that you want the assistant to perform when this dialog node is triggered. The action type options are these:
 
-    - **No action**: The assistant is not involved in the response.
-    - **Route to agent**: The assistant evaluates the user input to determine its goal, and then routes it to the appropriate teammate.
-    - **Suggest to agent**: The assistant provides the teammate with suggestions for how to respond by sharing notes with the human agent through the internal Intercom app.
+    - **Do nothing**: The assistant is not involved in the response.
+    - **Send to team or teammate**: The assistant evaluates the user input to determine its goal, and then routes it to the appropriate teammate.
+    - **Suggest to team or teammate**: The assistant provides the teammate with suggestions for how to respond by sharing notes with the human agent through the internal Intercom app.
 
       - If the user input triggers a dialog branch, meaning a root dialog node with child nodes that represents a comprehensive interaction, then the assistant indicates that it is capable of addressing the request, and offers to do so. The human agent can decide whether or not to let the assistant take over.
       - If the user input triggers a root node with no children, then the assistant simply shares the programmed response from the node with the human agent, but does not respond directly to the user.
 
-    - **Take over**: The assistant responds to the user directly, without conferring with any other teammates.
+    - **Answer**: The assistant responds to the user directly, without conferring with any other teammates.
 
-1.  Choose the team or human agent responsible for responding to user inquiries that trigger this dialog branch.
+    Remember, some actions require teammate involvement. Be sure to go back and add a rule to assign the dialog node to the right person. An assignment is required for any nodes that you assign the *Send to team or teammate* action type, for example.
 
-    - An assignment is required for any nodes that are configured with the *Route to agent* action type.
-    - The team or human that you assign to nodes with a *Take over* action type only gets involved if the user requests an escalation or the course of the converation leads to a dialog node that has a *Connect to human agent* response type.
+1.  To define unique interaction settings for other dialog branches, click **New rule** again, and repeat the previous steps.
 
-    Click **Save** periodically, as you add interactions to the table.
-    {: tip}
+1.  After adding rules, click **Return to overview** to exit the page.
 
-1.  To define unique interaction settings for other dialog branches, click **Add interaction** again, and repeat the previous steps.
-
-    **Note**: If you added a *node purpose summary* to a root node in your dialog for the purpose of making the node eligible for disambiguation only, and do not want the node to be managed by the Intercom app, then you should explicitly add an interaction configuration for it, and specify the **No action** action type. Otherwise, the configuration that you define for all other nodes will be applied to it, which might specify an action type that you do not want applied to the node.
-
-1.  When you are done configuring interactions, click **Save**, and then close the Intercom integration page.
-
-If you subsequently want to change the integration name or description, or need to change Intercom workspace connection details, open the Intercom integration page, scroll down, and then click **Set up** to return to the integration settings page.
-
-![Screenshot of the Set up button.](images/setup.png)
+As you gain confidence in the capabilities of the assistant, and as your dialog changes, you will likely return again and again to the Intercom integration configuration page to make incremental changes.
 
 Interactions can also be assigned directly to your assistant either by Intercom's assignment rules, which can automatically assign inbound conversations to a teammate or team inbox based on some criteria, or by a manual reassignment made by a human agent at run time. Your dialog must be able to gracefully handle it if another Intercom agent mistakenly assigns a user interaction to the assistant that the assistant is not designed to handle.
 
@@ -140,7 +190,7 @@ Interactions can also be assigned directly to your assistant either by Intercom'
 
 To effectively test your Intercom integration from end-to-end, you must have access to an Intercom end-user application. You already created or edited an Intercom workspace. The workspace must have an associated user interface client. If it does not, see [Apps in Intercom ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.intercom.com/help/apps-in-intercom){: new_window} for help with setting one up.
 
-Submit test user queries through a client application that is associated with your Intercom workspace to see how the messages are handled by Intercom. Verify that messages that are meant to be taken over by the assistant are generating the appropriate responses, and that the assistant is not responding to messages that it is not configured to take over.
+Submit test user queries through a client application that is associated with your Intercom workspace to see how the messages are handled by Intercom. Verify that messages that are meant to be answered by the assistant are generating the appropriate responses, and that the assistant is not responding to messages that it is not configured to answer.
 
 ## Dialog considerations
 {: #beta-deploy-intercom-dialog}
@@ -153,4 +203,4 @@ Some rich responses that you add to a dialog are displayed differently within th
 | **Image**     | The image **title**, **description**, and the image itself are rendered. |
 | **Pause**     | Whether or not you enable it, a typing indicator is not displayed during the pause. |
 
-See [Rich responses](/docs/services/assistant?topic=assistant-dialog-overview#multimedia) for more information about response types.
+See [Rich responses](/docs/services/assistant/dialog-overview.html#multimedia) for more information about response types.
