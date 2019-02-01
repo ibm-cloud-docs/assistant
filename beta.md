@@ -27,6 +27,8 @@ lastupdated: "2019-02-01"
 ## Available beta features
 {: #beta-features}
 
+The following features are available for use by participants in the beta program only. To find out how to request access, see [Particpate in the beta program](feedback.html#feedback-beta).
+
 - You can now save multiple versions of a dialog skill.
 
   To take a snapshot of the current training data and dialog, click **Save new version**. See [Creating skill versions](beta-versions.html) for more details.
