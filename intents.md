@@ -255,7 +255,7 @@ After you have finished creating new intents, you can test the system to see if 
     *Mark as irrelevant*
     {: #intents-mark-irrelevant}
 
-    The *Mark as irrelevant* option is not available in all languages. See [supported languages](lang-support.html) for details.
+    The *Mark as irrelevant* option is not available in all languages. See [supported languages](language-support.html) for details.
 
     **Important**: Intents that are marked as irrelevant are saved as counterexamples in the JSON workspace, and are included as part of the training data. Be sure before you designate an input as irrelevant.
 

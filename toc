@@ -80,7 +80,7 @@ Watson Assistant
     expression-language.md
     filter-reference.md
     sample-apps.md
-    lang-support.md
+    language-support.md
     information-security.md
 
     {: .topicgroup}

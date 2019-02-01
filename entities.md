@@ -134,7 +134,7 @@ Dictionary-based entites are those for which you define specific terms, synonyms
 
 1.  If you want the service to recognize terms with syntax that is similar to the entity value and synonyms you specify, but without requiring an exact match, click the **Fuzzy Matching** toggle to turn it on.
 
-    This feature is available for languages noted in the [Supported languages](lang-support.html) topic.
+    This feature is available for languages noted in the [Supported languages](language-support.html) topic.
 
     **Fuzzy matching**
     {: #entities-fuzzy-matching}

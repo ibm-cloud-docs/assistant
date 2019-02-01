@@ -55,7 +55,7 @@ The following new features and changes to the service are available.
 ### 17 January 2019
 {: #17January2019}
 
-- **Czech language support is generally available**: Support for the Czech language is no longer classified as beta; it is now generally available. See [Supported languages](lang-support.html) for more information.
+- **Czech language support is generally available**: Support for the Czech language is no longer classified as beta; it is now generally available. See [Supported languages](language-support.html) for more information.
 
 - **Language support improvements**: The language understanding components were updated to improve the following features:
 
@@ -241,7 +241,7 @@ The following new features and changes to the service are available.
 ### 15 August 2018
 {: #15August2018}
 
-- **Entity fuzzy matching support improvements**: Fuzzy matching is fully supported for English entities, and the misspelling feature is no longer a Beta-only feature for many other languages. See [Supported languages](lang-support.html) for details.
+- **Entity fuzzy matching support improvements**: Fuzzy matching is fully supported for English entities, and the misspelling feature is no longer a Beta-only feature for many other languages. See [Supported languages](language-support.html) for details.
 
 ### 6 August 2018
 {: #6August2018}
@@ -283,7 +283,7 @@ The following new features and changes to the service are available.
 ### 21 June 2018
 {: #21June2018}
 
-- **Language updates for system entities**: Dutch and Simplified Chinese language support are now generally available. Dutch language support includes fuzzy matching for misspellings. Traditional Chinese language support includes the availability of [system entities](system-entities.html) in beta release. See [Supported languages](lang-support.html) for details.
+- **Language updates for system entities**: Dutch and Simplified Chinese language support are now generally available. Dutch language support includes fuzzy matching for misspellings. Traditional Chinese language support includes the availability of [system entities](system-entities.html) in beta release. See [Supported languages](language-support.html) for details.
 
 ### 14 June 2018
 {: #14June2018}
@@ -380,7 +380,7 @@ The following new features and changes to the service are available.
 ### 9 February 2018
 {: #9February2018}
 
-- **Dutch system entities (Beta)**: Dutch language support has been enhanced to include the availability of [System entities](system-entities.html) in beta release. See [Supported languages](lang-support.html) for details.
+- **Dutch system entities (Beta)**: Dutch language support has been enhanced to include the availability of [System entities](system-entities.html) in beta release. See [Supported languages](language-support.html) for details.
 
 ### 29 January 2018
 {: #29January2018}
@@ -527,7 +527,7 @@ The following new features and changes to the service are available.
 ### 3 August 2017
 {: #3August2017}
 
-- **Fuzzy matching for additional languages (Beta)**: Fuzzy matching for entities is now available for additional languages, as noted in the [Supported languages](lang-support.html) topic.
+- **Fuzzy matching for additional languages (Beta)**: Fuzzy matching for entities is now available for additional languages, as noted in the [Supported languages](language-support.html) topic.
 - **Partial match (Beta - English only)**: Fuzzy matching will now automatically suggest substring-based synonyms present in user-defined entities, and assign a lower confidence score as compared to the exact entity match. See [Fuzzy matching](entities.html#fuzzy-matching) for details.
 
 ### 28 July 2017
@@ -549,18 +549,18 @@ The following new features and changes to the service are available.
 ### 12 July 2017
 {: #12July2017}
 
-- **Support for Czech**: Czech language support has been introduced; please see the [Supported languages](lang-support.html) topic for additional details.
+- **Support for Czech**: Czech language support has been introduced; please see the [Supported languages](language-support.html) topic for additional details.
 
 ### 11 July 2017
 {: #11July2017}
 
 - **Test in Slack**: You can use the new **Test in Slack** tool to quickly deploy your workspace as a Slack bot user for testing purposes. This tool is available only for the {{site.data.keyword.Bluemix_notm}} US South region.
-- **Updates to Arabic**: Arabic language support has been enhanced to include absolute scoring per intent, and the ability to mark intents as irrelevant; please see the [Supported languages](lang-support.html) topic for additional details. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied; see [Updated models](#release-notes-updated-models) for more information.
+- **Updates to Arabic**: Arabic language support has been enhanced to include absolute scoring per intent, and the ability to mark intents as irrelevant; please see the [Supported languages](language-support.html) topic for additional details. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied; see [Updated models](#release-notes-updated-models) for more information.
 
 ### 23 June 2017
 {: #23June2017}
 
-- **Updates to Korean**: Korean language support has been enhanced; please see the [Supported languages](lang-support.html) topic for additional details. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied; see [Updated models](#release-notes-updated-models) for more information.
+- **Updates to Korean**: Korean language support has been enhanced; please see the [Supported languages](language-support.html) topic for additional details. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied; see [Updated models](#release-notes-updated-models) for more information.
 
 ### 22 June 2017
 {: #22June2017}
@@ -571,8 +571,8 @@ The following new features and changes to the service are available.
 ### 21 June 2017
 {: #21June2017}
 
-- **Arabic support**: Language support for Arabic is now generally available. For details, see [Configuring bi-directional languages](lang-support.html#configuring-bi-directional).
-- **Language updates**: The {{site.data.keyword.conversationshort}} service algorithms have been updated to improve overall language support. See the [Supported languages](lang-support.html) topic for details.
+- **Arabic support**: Language support for Arabic is now generally available. For details, see [Configuring bi-directional languages](language-support.html#configuring-bi-directional).
+- **Language updates**: The {{site.data.keyword.conversationshort}} service algorithms have been updated to improve overall language support. See the [Supported languages](language-support.html) topic for details.
 
 ### 16 June 2017
 {: #16June2017}
@@ -582,7 +582,7 @@ The following new features and changes to the service are available.
 ### 14 June 2017
 {: #14June2017}
 
-- **Fuzzy matching for additional languages (Beta)**: Fuzzy matching for entities is now available for additional languages, as noted in the [Supported languages](lang-support.html) topic. You can turn on fuzzy matching per entity to improve the ability of the service to recognize terms in user input with syntax that is similar to the entity, without requiring an exact match. The feature is able to map user input to the appropriate corresponding entity despite the presence of misspellings or slight syntactical differences. For example, if you define giraffe as a synonym for an animal entity, and the user input contains the terms giraffes or girafe, the fuzzy match is able to map the term to the animal entity correctly. See [Fuzzy matching](entities.html#fuzzy-matching) for details.
+- **Fuzzy matching for additional languages (Beta)**: Fuzzy matching for entities is now available for additional languages, as noted in the [Supported languages](language-support.html) topic. You can turn on fuzzy matching per entity to improve the ability of the service to recognize terms in user input with syntax that is similar to the entity, without requiring an exact match. The feature is able to map user input to the appropriate corresponding entity despite the presence of misspellings or slight syntactical differences. For example, if you define giraffe as a synonym for an animal entity, and the user input contains the terms giraffes or girafe, the fuzzy match is able to map the term to the animal entity correctly. See [Fuzzy matching](entities.html#fuzzy-matching) for details.
 
 ### 13 June 2017
 {: #13June2017}

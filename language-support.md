@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-02-01"
 
 ---
 
@@ -21,7 +21,7 @@ lastupdated: "2019-01-31"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Supported languages
-{: #lang-support}
+{: #language-support}
 
 The {{site.data.keyword.conversationshort}} service supports the languages listed. Individual features of the service are supported to a greater or lesser extent for each language.
 {: shortdesc}
@@ -96,14 +96,14 @@ The first table shows the level of support for all features, except those relate
 **GB18030 compliance**: GB18030 is a Chinese standard that specifies an extended code page for use in the Chinese market. This code page standard is important for the software industry because the China National Information Technology Standardization Technical Committee has mandated that any software application that is released for the Chinese market after September 1, 2001, be enabled for GB18030. The {{site.data.keyword.conversationshort}} service supports this encoding, and is certified GB18030-compliant
 
 ## Changing a skill language
-{: #lang-support-change-language}
+{: #language-support-change-language}
 
 Once a skill has been created, its language cannot be modified. If it is necessary to change the supported language of a skill, the user should download the skill. Then, edit the resulting JSON file in a text editor, searching for a JSON property called `language`.
 
 The `language` property should be set to the original language of the skill; for example, English would be `en`. Modify the value of this property, changing it to the desired language (`fr` for French, `de` for German, etc.). Save the changes to the JSON file, and import the modified file into your {{site.data.keyword.conversationshort}} service instance.
 
 ## Configuring bi-directional languages
-{: #lang-support-configure-bi-directional}
+{: #language-support-configure-bi-directional}
 
 For bi-directional languages, for example Arabic, you can change your skill preferences accordingly. From your skill tile, select the *Actions* drop-down menu, and select **Bidi preferences** (this option is only available for skills set to a bi-directional language):
 
@@ -124,7 +124,7 @@ Select from the following options for your skill:
 When finished making selections, click **Update** to save and return to the skill tile.
 
 ## Working with accented characters
-{: #lang-support-accents}
+{: #language-support-accents}
 
 In a conversational setting, users may or may not use accents while interacting with the {{site.data.keyword.conversationshort}} service. As such, both accented and non-accented versions of words may be treated the same for intent detection and entity recognition.
 

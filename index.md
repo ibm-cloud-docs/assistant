@@ -91,7 +91,7 @@ The {{site.data.keyword.conversationshort}} service tool requires the same level
 ## Language support
 {: #index-lang-support}
 
-Language support by feature is detailed in the [Supported languages](lang-support.html) topic.
+Language support by feature is detailed in the [Supported languages](language-support.html) topic.
 
 ## Terms and notices
 {: #index-notices}

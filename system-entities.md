@@ -26,7 +26,7 @@ lastupdated: "2018-05-30"
 This reference section provides complete information about the available system entities. For more information about system entities and how to use them, refer to [Defining entities](entities.html#enable_system_entities) and search for "Enabling system entities".
 {: shortdesc}
 
-System entities are available for languages noted in the [Supported languages](lang-support.html) topic.
+System entities are available for languages noted in the [Supported languages](language-support.html) topic.
 
 ## @sys-currency entity
 {: #system-entities-sys-currency}
@@ -171,7 +171,7 @@ For information about processing date and time values, see the [Date and time](d
 ## @sys-location entity
 {: #system-entities-sys-location}
 
-**BETA, for languages noted in the [Supported languages](lang-support.html) topic**: The @sys-location system entity extracts place names (country, state/province, city, town, etc.) from the user's input. The value of the entity is not a system-standard value of the location.
+**BETA, for languages noted in the [Supported languages](language-support.html) topic**: The @sys-location system entity extracts place names (country, state/province, city, town, etc.) from the user's input. The value of the entity is not a system-standard value of the location.
 
 ### Recognized formats
 {: #system-entities-sys-location-formats}
@@ -288,7 +288,7 @@ You get equivalent results for other supported languages.
 ## @sys-person entity
 {: #system-entities-sys-person}
 
-**BETA, for languages noted in the [Supported languages](lang-support.html) topic**: The @sys-person system entity extracts names from the user's input. Names are recognized individually, so that "Joe" is not treated as "Joseph", or vice versa. The value of the entity is not a system-standard value of the name.
+**BETA, for languages noted in the [Supported languages](language-support.html) topic**: The @sys-person system entity extracts names from the user's input. Names are recognized individually, so that "Joe" is not treated as "Joseph", or vice versa. The value of the entity is not a system-standard value of the name.
 
 ### Recognized formats
 {: #system-entities-sys-person-formats}
