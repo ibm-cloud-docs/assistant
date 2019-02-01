@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-08-30"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -21,10 +21,11 @@ lastupdated: "2018-08-30"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Modifying a dialog using the API
+{: #api-dialog-modify}
 
 The {{site.data.keyword.conversationshort}} REST API supports modifying your dialog programmatically, without using the {{site.data.keyword.conversationshort}} tool. You can use the /dialog_nodes API to create, delete, or modify dialog nodes.
 
-Remember that the dialog is a tree of interconnected nodes, and that it must conform to certain rules in order to be valid. This means that any change you make to a dialog node might have cascading effects on other nodes, or on the structure of your dialog. Before using the /dialog_nodes API to modify your dialog, make sure you understand how your changes will affect the rest of the dialog. You can make a backup copy of the current dialog by exporting the conversational skill in which it resides. See [Downloading a skill](create-skill.html#download-skill) for details.
+Remember that the dialog is a tree of interconnected nodes, and that it must conform to certain rules in order to be valid. This means that any change you make to a dialog node might have cascading effects on other nodes, or on the structure of your dialog. Before using the /dialog_nodes API to modify your dialog, make sure you understand how your changes will affect the rest of the dialog. You can make a backup copy of the current dialog by exporting the conversational skill in which it resides. See [Downloading a skill](skill-add.html#download-skill) for details.
 
 A valid dialog always satisfies the following criteria:
 
@@ -89,7 +90,7 @@ A valid dialog always satisfies the following criteria:
 The following examples show how various modifications might cause cascading changes.
 
 ## Creating a node
-{: #create-node}
+{: #api-dialog-modify-create-node}
 
 Consider the following simple dialog tree:
 
@@ -132,7 +133,7 @@ The resulting dialog looks like this:
 In addition to creating **node_9**, the service automatically updates the `previous_sibling` property of *node_6* so that it points to the new node.
 
 ## Moving a node to a different parent
-{: #change-parent}
+{: #api-dialog-modify-change-parent}
 
 Let's move **node_5** to a different parent by using the POST /dialog_nodes/node_5 method with the following body:
 
@@ -159,7 +160,7 @@ Several things have happened here:
 - The `previous_sibling` property of **node_9** was updated to `null`, because it is now the first sibling under **node_2**.
 
 ## Resequencing siblings
-{: #change-sibling}
+{: #api-dialog-modify-change-sibling}
 
 Now let's make **node_5** the second sibling instead of the first. We can do this by using the POST /dialog_nodes/node_5 method with the following body:
 
@@ -181,7 +182,7 @@ The structure changes as follows:
 Note that once again, **node_7** stays with its parent. In addition, **node_4** is modified so that its `previous_sibling` is `null`, because it is now the first sibling.
 
 ## Deleting a node
-{: #delete-node}
+{: #api-dialog-modify-delete-node}
 
 Now let's delete **node_1**, using the DELETE /dialog_nodes/node_1 method.
 
@@ -194,7 +195,7 @@ Note that **node_1**, **node_4**, **node_5**, and **node_7** were all deleted. W
 In addition, **node_2** is updated to point to **node_8** as its new previous sibling.
 
 ## Renaming a node
-{: #rename-node}
+{: #api-dialog-modify-rename-node}
 
 Finally, let's rename **node_2** using the POST /dialog_nodes/node_2 method with the following body:
 

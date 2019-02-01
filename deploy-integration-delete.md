@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-04-02"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -21,7 +21,7 @@ lastupdated: "2018-04-02"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Deleting an integration
-{: #delete-integration}
+{: #deploy-integration-delete}
 
 To stop an assistant from being available to users from a certain channel, delete the integration to that channel.
 
@@ -30,7 +30,5 @@ To stop an assistant from being available to users from a certain channel, delet
 1.  From the Integrations section, find the tile for the integration that you want to delete.
 
 1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Delete**. Confirm the deletion.
-
-## What to do next
 
 For Slack and Facebook Messenger integrations, the app that you created to connect to the assistant will no longer function properly. Be sure to update the app to connect to another assistant or delete it altogether.

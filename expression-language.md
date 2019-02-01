@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-03"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -27,6 +27,7 @@ You can write expressions that access objects and properties of objects by using
 {: shortdesc}
 
 ## Evaluation syntax
+{: #expression-language-long-syntax}
 
 To expand variable values inside other variables or invoke methods on properties and global objects, use the `<? expression ?>` expression syntax. For example:
 
@@ -37,16 +38,16 @@ To expand variable values inside other variables or invoke methods on properties
     - `"context":{"email": "<? @email.literal ?>"}`
 
 ## Shorthand syntax
-{: #shorthand-syntax}
+{: #expression-language-shorthand-syntax}
 
 Learn how to quickly reference the following objects by using the SpEL shorthand syntax:
 
-- [Context variables](expression-language.html#shorthand-context)
-- [Entities](expression-language.html#shorthand-entities)
-- [Intents](expression-language.html#shorthand-intents)
+- [Context variables](#expression-language-shorthand-context)
+- [Entities](#expression-language-shorthand-entities)
+- [Intents](#expression-language-shorthand-intents)
 
 ### Shorthand syntax for context variables
-{: #shorthand-context}
+{: #expression-language-shorthand-context}
 
 The following table shows examples of the shorthand syntax that you can use to write context variables in condition expressions.
 
@@ -64,7 +65,7 @@ You can include special characters, such as hyphens or periods, in context varia
 - Quotation marks "
 
 ### Shorthand syntax for entities
-{: #shorthand-entities}
+{: #expression-language-shorthand-entities}
 
 The following table shows examples of the shorthand syntax that you can use when referring to entities.
 
@@ -82,7 +83,7 @@ In SpEL, the question mark `(?)` prevents a null pointer exception from being tr
 If the entity value that you want to check for contains a `)` character, you cannot use the `:` operator for comparison.  For example, if you want to check whether the city entity is `Dublin (Ohio)`, you must use `@city == 'Dublin (Ohio)'` instead of `@city:(Dublin (Ohio))`.
 
 ### Shorthand syntax for intents
-{: #shorthand-intents}
+{: #expression-language-shorthand-intents}
 
 The following table shows examples of the shorthand syntax that you can use when referring to intents.
 
@@ -111,7 +112,7 @@ The following table shows examples of the shorthand syntax that you can use when
 </table>
 
 ## Built-in global variables
-{: #builtin-vars}
+{: #expression-language-builtin-vars}
 
 You can use the expression language to extract property information for the following global variables:
 
@@ -124,7 +125,7 @@ You can use the expression language to extract property information for the foll
 | *output*             | JSON object part of the processed conversation message. |
 
 ## Accessing entities
-{: #access-entity}
+{: #expression-language-access-entity}
 
 The entities array contains one or more entities that were recognized in user input.
 
@@ -150,6 +151,7 @@ For the user input, *Hello now*, the service recognizes the @sys-date and @sys-t
 {: codeblock}
 
 ### When placement of entities in the input matters
+{: #expression-language-placement-matters}
 
 When you use the shorthand expression, `@city.contains('Boston')`, in a condition, the dialog node returns true **only if** `Boston` is the first entity detected in the user input. Only use this syntax if the placement of entities in the input matters to you and you want to check the first mention only.
 
@@ -164,6 +166,7 @@ The order of entities in the array that is returned matches the order in which t
 {: note}
 
 ### Entity properties
+{: #expression-language-entity-props}
 
 Each entity has a set of properties associated with it. You can access information about an entity through its properties.
 
@@ -174,6 +177,8 @@ Each entity has a set of properties associated with it. You can access informati
 | *value*               | The entity value identified in the input. | This property returns the entity value as defined in the training data, even if the match was made against one of its associated synonyms. You can use `.values` to capture multiple occurrences of an entity that might be present in user input. |
 
 ### Entity property usage examples
+{: #expression-language-entity-props-example}
+
 In the following examples, the skill contains an airport entity that includes a value of JFK, and the synonym 'Kennedy Airport". The user input is *I want to go to Kennedy Aiport*.
 
 - To return a specific response if the 'JFK' entity is recognized in the user input, you could add this expression to the response condition:
@@ -206,7 +211,7 @@ In this example, the user input is *Are there places to exchange currency at JFK
   `You asked about these airports: JFK, Logan, O'Hare.`
 
 ## Accessing intents
-{: #access-intent}
+{: #expression-language-intent}
 
 The intents array contains one or more intents that were recognized in the user input, sorted in descending order of confidence.
 
@@ -236,11 +241,12 @@ The following examples show how to check for an intent value:
 `intent == 'help'` differs from `intents[0] == 'help'` because `intent == 'help'` does not throw an exception if no intent is detected. It is evaluated as true only if the intent confidence exceeds a threshold.  If you want to, you can specify a custom confidence level for a condition, for example, `intents.size() > 0 && intents[0] == 'help' && intents[0].confidence > 0.1`
 
 ## Accessing input
-{: #access-input}
+{: #expression-language-intent-props}
 
 The input JSON object contains one property only: the text property. The text property represents the text of the user input.
 
 ### Input property usage examples
+{: #expression-language-intent-props-example}
 
 The following example shows how to access input:
 

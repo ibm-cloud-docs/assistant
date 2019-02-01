@@ -14,7 +14,7 @@ lastupdated: "2018-05-30"
 {:table: .aria-labeledby="caption"}
 
 # Video: Tool overview
-{: #tool-video}
+{: #tool-overview}
 
 With the {{site.data.keyword.conversationshort}} tool, you can create and manage one or more assistants. Watch this video to learn more about the tool.
 

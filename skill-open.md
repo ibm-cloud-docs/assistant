@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-12"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -24,7 +24,7 @@ lastupdated: "2018-12-12"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Opening assistants and skills
-{: #open-skill}
+{: #skill-open}
 
 Learn how to find and open assistants and skills that you created or can access.
 {: shortdesc}

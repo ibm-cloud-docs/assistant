@@ -29,16 +29,18 @@ So you have a working dialog skill and an assistant that uses it. Now you want t
 {: shortdesc}
 
 ## Setting up the {{site.data.keyword.conversationshort}} service
+{: #api-client-setup}
 
 The example application we will create in this section implements several functions of a cognitive personal assistant. The application code will connect to a {{site.data.keyword.conversationshort}} assistant, where the cognitive processing (such as the detection of user intents) takes place.
 
 Before continuing with this example, you need to set up the required assistant:
 
 1.  Download the dialog skill <a target="_blank" href="https://watson-developer-cloud.github.io/doc-tutorial-downloads/assistant/assistant-simple-example.json" download="assistant-simple-example.json">JSON file</a>.
-1.  [Import the skill](create-skill.html#creating-skills) into an instance of the {{site.data.keyword.conversationshort}} service.
-1.  [Create an assistant](create-assistant.html#creating-assistants) and connect the skill you imported.
+1.  [Import the skill](skill-add.html#creating-skills) into an instance of the {{site.data.keyword.conversationshort}} service.
+1.  [Create an assistant](assistant-add.html#creating-assistants) and connect the skill you imported.
 
 ## Getting service information
+{: #api-client-get-info}
 
 To access the {{site.data.keyword.conversationshort}} service REST APIs, your application needs to be able to authenticate with {{site.data.keyword.Bluemix}} and connect to the right assistant. You'll need to copy the service credentials and assistant ID and paste them into your application code.
 
@@ -47,6 +49,7 @@ To access the service credentials and the assistant ID from the {{site.data.keyw
 You can also access the service credentials from your {{site.data.keyword.Bluemix_short}} dashboard.
 
 ## Communicating with the {{site.data.keyword.conversationshort}} service
+{: #api-client-communicate}
 
 Interacting with the {{site.data.keyword.conversationshort}} service is simple. Let's take a look at an example that connects to the service, sends a single message, and prints the output to the console:
 
@@ -239,6 +242,7 @@ Welcome to the Watson Assistant example!
 This output tells us that we have successfully communicated with the {{site.data.keyword.conversationshort}} service and received the welcome message specified by the conversation_start node in the dialog. Now we can add a user interface, making it possible to process user input.
 
 ## Processing user input to detect intents
+{: #api-client-process-input}
 
 To be able to process user input, we need to add a user interface to our client application. For this example, we'll keep things simple and use standard input and output.
 <span class="ph style-scope doc-content" data-hd-programlang="javascript">We can use the Node.js prompt-sync module to do this. (You can install prompt-sync using `npm install prompt-sync`.)</span>
@@ -477,6 +481,7 @@ Now we're making progress! The {{site.data.keyword.conversationshort}} service i
 However, nothing else is happening. When we ask for the time, we get no answer; and when we say goodbye, the conversation does not end. That's because those intents require additional actions to be taken by the app.
 
 ## Implementing app actions
+{: #api-client-implement-actions}
 
 In addition to the output text to be displayed to the user, our {{site.data.keyword.conversationshort}} dialog uses the `actions` array in the response JSON to signal when the application needs to carry out an action, based on the detected intents. When the dialog determines that the client application needs to do something, it returns an action object with a `type` of `client`. The `name` of the action indicates the specific action, either `display_time` or `end_conversation`. (Additional properties of the action can specify parameters, credentials, and other information related to the action, but for our example we don't need anything but the action name.)
 
@@ -742,6 +747,7 @@ Of course, a real-world application would use a more sophisticated user interfac
 For some more complex examples, see [Sample apps](/docs/services/assistant/sample-applications.html).
 
 ## Accessing context
+{: #api-client-get-context}
 
 The *context* is an object containing variables that persist throughout a conversation and can be shared by the dialog and the client application. If your application is using the v2 API, the context is automatically maintained by the assistant on a per-session basis. Both the dialog and the client application can read and write context variables. By default, the context is not returned to a client application, but you can optionally request that it be included in the response to each `/message` request.
 
@@ -906,7 +912,7 @@ The output from this request includes not only the usual output, but also the co
 For detailed information about how to access context variables using the API, see the [v2 API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant-v2#send-user-input-to-assistant){: new_window}.)
 
 ## Using the v1 API
-{: #v1-api}
+{: #api-client-v1-api}
 
 Using the v2 API is the recommended way to build a runtime client application that communicates with the {{site.data.keyword.conversationshort}} service. However, some older applications might still be using the v1 API, which includes a similar runtime method for sending messages to the workspace within a dialog skill.
 

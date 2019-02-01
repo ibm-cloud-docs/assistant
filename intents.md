@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-25"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -29,7 +29,7 @@ lastupdated: "2019-01-25"
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Working with intents" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/OPdOCUPGMIQ" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 ## Intent creation overview
-{: #intent-described}
+{: #intents-described}
 
 - Plan the intents for your application.
 
@@ -46,7 +46,7 @@ lastupdated: "2019-01-25"
 Start with a few intents, and test them as you iteratively expand the scope of the application.
 
 ## Intent limits
-{: #intent-limits}
+{: #intents-limits}
 
 The number of intents and examples you can create depends on your {{site.data.keyword.conversationshort}} service plan:
 
@@ -59,7 +59,7 @@ The number of intents and examples you can create depends on your {{site.data.ke
 {: caption="Service plan details" caption-side="top"}
 
 ## Creating intents
-{: #creating-intents}
+{: #intents-create-task}
 
 Use the {{site.data.keyword.conversationshort}} tool to create intents.
 
@@ -89,9 +89,9 @@ Use the {{site.data.keyword.conversationshort}} tool to create intents.
     - `Pay my account balance`
     - `make a payment`
 
-    To add user examples that are mined from real support requests made by your customers, see [Adding examples from log files](#intent-recommendations).
+    To add user examples that are mined from real support requests made by your customers, see [Adding examples from log files](#intents-intent-recommendations).
 
-    To learn about the impact of including references to entities in your user examples, see [How entity references are treated](#entity-references).
+    To learn about the impact of including references to entities in your user examples, see [How entity references are treated](#intents-entity-references).
     {: tip}
 
     Intent names and example text can be exposed in URLs when an application interacts with the service. Do not include sensitive or personal information in these artifacts.
@@ -106,7 +106,7 @@ Use the {{site.data.keyword.conversationshort}} tool to create intents.
 The system begins to train itself on the intent and user examples you added.
 
 ### Adding examples from log files ![Beta](images/beta.png) ![Plus or Premium only](images/premium.png)
-{: #intent-recommendations}
+{: #intents-intent-recommendations}
 
 This feature is available to Plus or Premium plan users and works with English language utterances only.
 {: tip}
@@ -174,16 +174,16 @@ The following video provides a 2-minute overview of recommendations.
       If you want to include one in a search term without it being processed as an operator, you must prefix it with a backslash (`\`).
 
 ## How entity references are treated
-{: #entity-references}
+{: #intents-entity-references}
 
 When you include an entity mention in a user example, the machine learning model uses the information in different ways in these scenarios:
 
-- [Referencing entity values and synonyms in intent examples](#related-entities)
-- [Annotated mentions](#annotated-mentions)
-- [Directly referencing an entity name in an intent example](#entity-as-example)
+- [Referencing entity values and synonyms in intent examples](#intents-related-entities)
+- [Annotated mentions](#intents-annotated-mentions)
+- [Directly referencing an entity name in an intent example](#intents-entity-as-example)
 
 ### Referencing entity values and synonyms in intent examples
-{: #related-entities}
+{: #intents-related-entities}
 
 If you have defined, or plan to define, entities that are related to this intent, mention the entity values or synonyms in some of the examples. Doing so helps to establish a relationship between the intent and entities. It is a weak relationship, but it does inform the model.
 
@@ -196,14 +196,14 @@ If you have defined, or plan to define, entities that are related to this intent
   - You can include punctuation in the example text, as long as it appears naturally. If you believe that some users will express their intents with examples that include punctuation, and some users will not, include both versions. Generally, the more coverage for various patterns, the better the response.
 
 ### Annotated mentions
-{: #annotated-mentions}
+{: #intents-annotated-mentions}
 
 As you define entiities, you can annotate mentions of the entity directly from your existing intent user examples. A relationship that you identify in this way between the intent and the entity is *not* used by the intent classification model. However, when you add the mention to the entity, it is also added to that entity as new value. And when you add the mention to an existing entity value, it is also added to that entity value as new synonym. Intent classification does use these types of dictionary references in intent user examples to establish a weak reference between an intent and an entity.
 
 See [Adding contextual entities](entities.html#create-annotation-based) for more information about contextual entities.
 
 ### Directly referencing an entity name in an intent example
-{: #entity-as-example}
+{: #intents-entity-as-example}
 
 This is an advanced approach that, if used, must be used consistently.
 {: note}
@@ -227,7 +227,7 @@ In practice, this means that if you have previously trained most of your intents
 Defining one example intent with an `@Entity` that has 10 values defined for it **does not** equate to specifying that example intent 10 times. The {{site.data.keyword.conversationshort}} service does not give that much weight to that one example intent syntax.
 
 ## Testing your intents
-{: #testing-your-intents}
+{: #intents-test}
 
 After you have finished creating new intents, you can test the system to see if it recognizes your intents as you expect.
 
@@ -253,9 +253,9 @@ After you have finished creating new intents, you can test the system to see if 
     ![Mark as irrelevant screen capture](images/irrelevant.png)
 
     *Mark as irrelevant*
-    {: #mark-irrelevant}
+    {: #intents-mark-irrelevant}
 
-    The *Mark as irrelevant* option is not available in all languages. See [supported languages](lang-support.html) for details.
+    The *Mark as irrelevant* option is not available in all languages. See [supported languages](language-support.html) for details.
 
     **Important**: Intents that are marked as irrelevant are saved as counterexamples in the JSON workspace, and are included as part of the training data. Be sure before you designate an input as irrelevant.
 
@@ -269,12 +269,14 @@ If your intents are not being correctly recognized, consider making the followin
 - Consider whether your intents are too similar, and redefine them as appropriate.
 
 ## Absolute scoring
+{: #intents-absolute-scoring}
 
 The {{site.data.keyword.conversationshort}} service scores each intent’s confidence independently, not in relation to other intents. This approach adds flexibility; multiple intents can be detected in a single user input. It also means the system might not return an intent at all. If the top intent has a low confidence score (less than 0.2), the top intent is included in the intents array that is returned by the API, but any nodes that condition on the intent are not triggered. If you want to detect the case when no intents with good confidence scores were detected, use the `irrelevant` special condition in your dialog node. See [Special conditions](dialog-overview.html#special-conditions) for more information.
 
 As intent confidence scores change, your dialogs might need restructuring. For example, if a dialog node uses an intent in its condition, and the intent's confidence score starts to consistently drop below 0.2, the dialog node stops being processed. If the confidence score changes, the behavior of the dialog can also change.
 
 ## Editing intents
+{: #intents-edit}
 
 You can click any intent in the list to open it for editing. You can make the following changes:
 
@@ -290,6 +292,7 @@ To move or delete an example, click the check box associated with it, and then c
   ![Screen capture showing how to move or delete an example](images/move_example.png)
 
 ## Searching intents
+{: #intents-search}
 
 Use the Search feature to find user examples, intent names, and descriptions.
 
@@ -308,7 +311,7 @@ Intents containing your search term, with corresponding examples, are shown.
   ![Intent search return](images/searchint_2.png)
 
 ## Exporting intents
-{: #export_intents}
+{: #intents-export}
 
 You can export a number of intents to a CSV file, so you can then import and reuse them for another {{site.data.keyword.conversationshort}} application.
 
@@ -317,10 +320,11 @@ You can export a number of intents to a CSV file, so you can then import and reu
     ![Export option](images/ExportIntent.png)
 
 ## Importing intents and examples
+{: #intents-import}
 
 If you have a large number of intents and examples, you might find it easier to import them from a comma-separated value (CSV) file than to define them one by one in the {{site.data.keyword.conversationshort}} tool. Be sure to remove any personal data from the user examples that you include in the file.
 
-Alternatively, you can upload a file with raw user utterances (from call center logs, for example) and let the service find candidates for user examples from the data. See [Adding examples from log files](#intent-recommendations) for more information. This feature is available to Plus or Premium plan users only.
+Alternatively, you can upload a file with raw user utterances (from call center logs, for example) and let the service find candidates for user examples from the data. See [Adding examples from log files](#intents-intent-recommendations) for more information. This feature is available to Plus or Premium plan users only.
 
 1.  Collect the intents and examples into a CSV file, or export them from a spreadsheet to a CSV file. The required format for each line in the file is as follows:
 
@@ -353,7 +357,7 @@ Alternatively, you can upload a file with raw user utterances (from call center 
 You can view the imported intents and the corresponding examples on the **Intents** tab. You might need to refresh the page in order to see the new intents and examples.
 
 ## Resolving intent conflicts ![Plus or Premium only](images/premium.png)
-{: #conflict-intents}
+{: #intents-resolve-conflicts}
 
 This feature is available only to Plus or Premium users.
 {: tip}
@@ -409,7 +413,7 @@ Watch this video to learn more.
 <iframe class="embed-responsive-item" id="youtubeplayer0" title="Intent conflict resolution overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/9gQtjCBxjdc?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 ## Deleting intents
-{: #delete_intents}
+{: #intents-delete}
 
 You can select a number of intents for deletion.
 

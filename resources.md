@@ -27,10 +27,12 @@ Links to resources, videos, tutorials, and articles that can help you to get sta
 {: shortdesc}
 
 ## Developer resources
+{: #resources-for-developers}
 
 - [IBM Code Bot Asset Exchange ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/code/exchanges/bots/){: new_window}
 
 ## Developer resources for building assistants
+{: #resources-for-bots}
 
 - [Codeless test automation for your assistant ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://chatbotsmagazine.com/10-minutes-codeless-test-automation-for-ibm-watson-chatbots-d71eac9626d7){: new_window}
 - [Retail chat app ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/code/journey/create-cognitive-retail-chatbot/){: new_window}
@@ -43,6 +45,7 @@ Links to resources, videos, tutorials, and articles that can help you to get sta
 - [Tutorial: Build a voice-enabled Android chatbot ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/tutorials/android-watson-chatbot.html){: new_window}
 
 ## Building with Watson videos
+{: #resources-videos}
 
 From an IBM technical deep-dive series. These recordings provide step-by-step instructions and answers.
 
@@ -51,6 +54,7 @@ From an IBM technical deep-dive series. These recordings provide step-by-step in
 - [New tools for dialog scripting ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/QuR54--vD5o){: new_window}
 
 ## Other videos
+{: #resources-other-videos}
 
 Additional videos created by IBMers.
 
@@ -61,10 +65,12 @@ Additional videos created by IBMers.
 - [Walkthrough of {{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/ELwWhJGE2P8){: new_window}: A 14-minute technical walkthrough.
 
 ## IBM Watson Academy
+{: #resources-academy}
 
 - [{{site.data.keyword.conversationshort}} Foundations ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.watson-academy.info/course/view.php?id=273){: new_window}
 
 ## Blogs
+{: #resources-blogs}
 
 - [Latest blogs on Medium ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/tag/watson-assistant/latest){: new_window}
 - [Simon Burns (IBM Watson developer) on Medium ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/@snrubnomis/conversational-directory-5a5531749295){: new_window}

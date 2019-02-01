@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-17"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -21,13 +21,13 @@ lastupdated: "2019-01-17"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Adding integrations
-{: #add-integrations}
+{: #deploy-integration-add}
 
 To deploy your skill, add it to an assistant, and then add integrations to the assistant that publish your bot to the channels where your customers go for help.
 {: shortdesc}
 
 ## Integration limits
-{: #integration-limits}
+{: #deploy-integration-add-limits}
 
 The number of integrations you can create in a single service instance depends on your {{site.data.keyword.conversationshort}} plan.
 
@@ -40,7 +40,7 @@ The number of integrations you can create in a single service instance depends o
 {: caption="Service plan details" caption-side="top"}
 
 ## Add an integration
-{: #add-integration}
+{: #deploy-integration-add-task}
 
 Follow these steps to add integrations to your assistant:
 

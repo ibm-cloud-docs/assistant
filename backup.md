@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-18"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -37,7 +37,7 @@ You cannot export the following data:
 - Assistant, including any configured integrations
 
 ## Retaining logs
-{: #retain-logs}
+{: #backup-retain-logs}
 
 If you want to store logs of conversations that users have had with your assistant, you can use the `/logs` API to export your log data. See [API reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant#list-log-events-in-a-workspace) for details.
 
@@ -49,7 +49,7 @@ Logs are stored for a different amount of time depending on your service plan. F
 You cannot import logs from one skill into another skill.
 
 ## Exporting a dialog skill
-{: #export-skill}
+{: #backup-export-skill}
 
 To back up dialog skill data, export the skill as a JSON file, and store the JSON file.
 
@@ -62,7 +62,7 @@ To back up dialog skill data, export the skill as a JSON file, and store the JSO
 Alternatively, you can use the `/workspaces` API to export a dialog skill. Include the `export=true` parameter with the GET workspace request. See the [API reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant#get-information-about-a-workspace) for more details.
 
 ## Importing a dialog skill
-{: #import-skill}
+{: #backup-import-skill}
 
 To reinstate a backup copy of a dialog skill that you exported from another service instance or environment, create a new dialog skill by importing the JSON file of the dialog skill you exported.
 
@@ -85,7 +85,7 @@ If the {{site.data.keyword.conversationshort}} service changes between the time 
 
     Click **Import**.
 
-    If you have trouble importing a skill, see [Troubleshooting skill import issues](create-skill.html#import-errors).
+    If you have trouble importing a skill, see [Troubleshooting skill import issues](skill-add.html#import-errors).
 
 1.  Specify the details for the skill:
 
@@ -96,14 +96,14 @@ If the {{site.data.keyword.conversationshort}} service changes between the time 
 After you create the skill, it appears as a tile on the Skills page.
 
 ## Recreating your assistant
-{: #recreate-assistant}
+{: #backup-recreate-assistant}
 
 You can now recreate your assistant. You can then link your imported dialog skill to the assistant, and configure integrations for it.
 
-See [Creating assistants](create-assistant.html) and [Adding integrations](add-integrations.html#add-integrations) for more details.
+See [Creating assistants](assistant-add.html) and [Adding integrations](deploy-integration-add.html#add-integrations) for more details.
 
 ## Update your client applications
-{: #update-api}
+{: #backup-update-api}
 
 When you import a dialog skill that you exported, a new skill is created. The new skill has a new workspace ID. If you have existing client applications that use the v1 API to access this skill, then you must update any workspace ID references to use the new worskpace ID instead.
 

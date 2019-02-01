@@ -27,7 +27,7 @@ Learn how to upgrade your service plan.
 {: shortdesc}
 
 ## Upgrading your plan
-{: #plan-upgrade}
+{: #upgrade-plan}
 
 You can explore the {{site.data.keyword.conversationshort}} [service plan options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/watson-assistant/pricing/){: new_window} to decide which plan is best for you.
 
@@ -55,7 +55,7 @@ After you upgrade a dialog skill, you cannot revert your skill to a previous ver
 
 To upgrade your dialog skill, complete the following steps:
 
-1.  [Download a copy of your dialog skill](create-skill.html#download-skill), and then import it as a new skill.
+1.  [Download a copy of your dialog skill](skill-add.html#download-skill), and then import it as a new skill.
 2.  Upgrade the new copy of your dialog skill.
 
     When you upgrade your skill, the latest version of the API is enabled in the tool, and the "Try it out" pane begins to use the newest features.

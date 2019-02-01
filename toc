@@ -15,7 +15,7 @@ Watson Assistant
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    create-skill.md
+    skill-add.md
     catalog.md
     intents.md
 
@@ -30,23 +30,23 @@ Watson Assistant
         dialog-responses-json.md
 
     entities.md
-    create-assistant.md
-    open-skill.md
+    assistant-add.md
+    skill-open.md
 
     {: .topicgroup}
     Deploying
-        add-integrations.md
+        deploy-integration-add.md
         deploy-custom-app.md
         deploy-facebook.md
         deploy-web-link.md
         deploy-slack.md
         dialog-start.md
-        delete-integration.md
+        deploy-integration-delete.md
 
     {: .topicgroup}
     Improving understanding
-        logs_intro.md
-        logs_oview.md
+        logs-intro.md
+        logs-overview.md
         logs.md
         logs-resources.md
 
@@ -80,13 +80,13 @@ Watson Assistant
     expression-language.md
     filter-reference.md
     sample-apps.md
-    lang-support.md
+    language-support.md
     information-security.md
 
     {: .topicgroup}
     System entities
         system-entities.md
-        supported-time-zones.md
+        time-zones.md
 
     {: .topicgroup}
     Watson SDKs
@@ -108,6 +108,7 @@ Watson Assistant
     release-notes.md
     feedback.md
     services-information.md
+	dialog-depiction.md
 
     {: .topicgroup}
     Developer community

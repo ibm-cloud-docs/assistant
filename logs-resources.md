@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -27,7 +27,7 @@ Learn about APIs and other tools you can use to access and analyze log data.
 {: shortdesc}
 
 ## API
-{: #api}
+{: #logs-resources-api}
 
 You can use the `/logs` API to list events from the transcripts of conversations that occured between your users and your assistant. For detailed API reference documentation, see [List log events ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant#list-log-events-in-a-workspace).
 
@@ -36,6 +36,7 @@ The number of days that logs are stored differs by service plan type. See [Log l
 For a Python script you can run to export logs and convert them to CSV format, download the `export_logs.py` file from the [Watson Assistant GitHub ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/community/blob/master/watson-assistant/export_logs.py) repository.
 
 ## Logs-related terminology
+{: #logs-resources-terminology}
 
 First, review the definitions of terms that are associated with {{site.data.keyword.conversationshort}} logs:
 
@@ -54,9 +55,9 @@ First, review the definitions of terms that are associated with {{site.data.keyw
 **Important**: The **User ID** property is *not* equivalent to the **Customer ID** property, though both can be passed to the service. The **User ID** field is used to track levels of usage for billing purposes, whereas the **Customer ID** field is used to support the labeling and subsequent deletion of messages that are associated with end users. Customer ID is used consistently across all Watson services and is specified in the `X-Watson-Metadata` header. User ID is used exclusively by the {{site.data.keyword.conversationshort}} service and is passed in the context object of each /message API call.
 
 ## Enabling user metrics
-{: #user_id}
+{: #logs-resources-user-id}
 
-User metrics allow you to see, for example, the number of unique users who have engaged with your assistant, or the average number of conversations per user over a given time interval on the [Overview page](logs_oview.html). User metrics are enabled by using a unique `User ID` parameter.
+User metrics allow you to see, for example, the number of unique users who have engaged with your assistant, or the average number of conversations per user over a given time interval on the [Overview page](logs-overview.html). User metrics are enabled by using a unique `User ID` parameter.
 
 To specify the `User ID` for a message sent using the `/message` API, include the `user_id` property inside the metadata object in your [context ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant?curl=#get-response-to-user-input){: new_window}, as in this example::
 
@@ -70,12 +71,12 @@ To specify the `User ID` for a message sent using the `/message` API, include th
 {: codeblock}
 
 ## Associating message data with a user for deletion
-{: #customer_id}
+{: #logs-resources-customer_id}
 
 There might come a time when you want to completely remove a set of your user's data from a {{site.data.keyword.conversationshort}} instance. When the delete feature is used, then the Overview metrics will no longer reflect those deleted messages; for example, they will have fewer Total Conversations.
 
 ### Before you begin
-{: #delete-customer-id-prereqs}
+{: #logs-resources-delete-customer-id-prereqs}
 
 To delete messages for one or more individuals, you first need to associate a message with a unique **Customer ID** for each individual. To specify the **Customer ID** for any message sent using the `/message` API, include the `X-Watson-Metadata: customer_id` property in your header. You can pass multiple **Customer ID** entries with semicolon separated `field=value` pairs, using `customer_id`, as in the following example:
 
@@ -94,7 +95,7 @@ The `customer_id` string cannot include the semicolon (`;`) or equal sign (`=`) 
 To delete messages using `customer_id` values, see the [Information security](information-security.html#gdpr-wa) topic.
 
 ## Jupyter notebooks
-{: jupyter-notebooks}
+{: #logs-resources-jupyter-notebooks}
 
 IBM created Jupyter notebooks that you can use to analyze your log data in more detail. A Jupyter notebook is a web-based environment for interactive computing. You can run small pieces of code that process your data, and you can immediately view the results of your computation.
 
@@ -109,7 +110,7 @@ The following notebooks are available:
 The [Watson Assistant Continuous Improvement Best Practices Guide ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/common/ssi/cgi-bin/ssialias?htmlfid=54022554USEN&) describes how to get the most out of the notebooks.
 
 ### Using the notebooks with {{site.data.keyword.DSX}}
-{: #notebook-steps}
+{: #logs-resources-notebooks-studio}
 
 If you choose to use the notebooks that are designed for use with {{site.data.keyword.DSX}}, at a high level, the steps are:
 
@@ -127,6 +128,7 @@ If you choose to use the notebooks that are designed for use with {{site.data.ke
 This process helps you to understand the steps you can take to improve your assistant. There is no way to automatically apply what you learn back to your service instance. Keep track of any changes you make to improve the system, so you can subsequently apply them to the training data of your dialog skill directly.
 
 ### Using the notebooks with standard Python tools
+{: #logs-resources-notebooks-python}
 
 If you choose to use standard Python tools to run the notebooks, you can get the notebooks from the [IBM GitHub repository](https://github.com/watson-developer-cloud/assistant-improve-recommendations-notebook/tree/master/notebook). Be sure to run them in the following order:
 

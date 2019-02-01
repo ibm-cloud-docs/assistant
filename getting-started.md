@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-22"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -33,7 +33,7 @@ In this short tutorial, we introduce the {{site.data.keyword.conversationshort}}
 {: shortdesc}
 
 ## Before you begin
-{: #gs-prerequisites}
+{: #getting-started-prerequisites}
 {: hide-dashboard}
 
 You need a service instance to start.
@@ -48,7 +48,7 @@ You need a service instance to start.
 1.  {: hide-dashboard} Click **Create**.
 
 ## Step 1: Open the tool
-{: #gs-launch-tool}
+{: #getting-started-launch-tool}
 
 After you create a {{site.data.keyword.conversationshort}} service instance, you land on the **Getting started** page of the service dashboard.
 {: hide-dashboard}
@@ -62,7 +62,7 @@ After you create a {{site.data.keyword.conversationshort}} service instance, you
 <!-- Remove this text after dedicated instances have the Developer Console: end -->
 
 ## Step 2: Create a dialog skill
-{: #gs-add-skill}
+{: #getting-started-add-skill}
 
 Your first step in the {{site.data.keyword.conversationshort}} tool is to create a skill.
 
@@ -85,7 +85,7 @@ A *dialog skill* is a container for the artifacts that define the flow of a conv
 You land on the Intents page of the tool.
 
 ## Step 3: Add intents from a content catalog
-{: #gs-add-catalog}
+{: #getting-started-add-catalog}
 
 Add training data that was built by IBM to your workspace by adding intents from a content catalog. In particular, you will give your assistant access to the **General** content catalog so your dialog can greet users, and end conversations with them.
 
@@ -100,7 +100,7 @@ Add training data that was built by IBM to your workspace by adding intents from
 You successfully started to build your training data by adding prebuilt content from {{site.data.keyword.IBM_notm}}.
 
 ## Step 4: Build a dialog
-{: #gs-build-dialog}
+{: #getting-started-build-dialog}
 
 A [dialog](/docs/services/assistant/dialog-overview.html) defines the flow of your conversation in the form of a logic tree. It matches intents (what users say) to responses (what the bot says back). Each node of the tree has a condition that triggers it, based on user input.
 
@@ -167,7 +167,7 @@ You built a simple dialog to recognize and respond to both greeting and ending i
 That's it. You created a simple conversation with two intents and a dialog to recognize them.
 
 ## Step 5: Create an assistant
-{: #gs-create-assistant}
+{: #getting-started-create-assistant}
 
 An [*assistant*](/docs/services/assistant/assistants.html) is a cognitive bot to which you add a skill that enables it to interact with your customers in useful ways.
 
@@ -182,7 +182,7 @@ An [*assistant*](/docs/services/assistant/assistants.html) is a cognitive bot to
     ![Finish creating the new assistant](images/gs-create-assistant-done0.png)
 
 ## Step 6: Add your skill to your assistant
-{: #gs-add-skill-to-assistant}
+{: #getting-started-add-skill-to-assistant}
 
 Add the dialog skill that you build to the assistant you created.
 
@@ -195,7 +195,7 @@ Add the dialog skill that you build to the assistant you created.
 1.  Choose to add the skill that you created earlier to the assistant.
 
 ## Step 7: Integrate the assistant
-{: #gs-integrate-assistant}
+{: #getting-started-integrate-assistant}
 
 Now that you have an assistant that can participate in a simple conversational exchange, publish it to a public web page where you can test it out. The service provides a built-in integration that is called a Preview Link. When you create this type of integration, it builds your assistant into a chat widget that is hosted by an IBM-branded web page. You can open the web page and chat with your assistant to test it out.
 
@@ -209,7 +209,7 @@ Now that you have an assistant that can participate in a simple conversational e
 1.  Say `hello` to your assistant, and watch it respond. You can share the URL with others who might want to try out your assistant.
 
 ## Next steps
-{: #gs-next-steps}
+{: #getting-started-next-steps}
 
 This tutorial is built around a simple example. For a real application, you need to define some more interesting intents, some entities, and a more complex dialog that uses them both. When you have a polished version of the assistant, you can integrate it with channels that your customers use, such as Slack. As traffic increases between the assistant and your customers, you can use the tools that are provided in the **Improve** tab to analyze real conversations, and identify areas for improvement.
 

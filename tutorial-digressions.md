@@ -27,7 +27,7 @@ In this tutorial, you will see firsthand how digressions work.
 {: shortdesc}
 
 ## Learning objectives
-{: #digression-objectives}
+{: #tutorial-digressions-objectives}
 
 By the time you finish the tutorial, you will understand how:
 
@@ -36,17 +36,17 @@ By the time you finish the tutorial, you will understand how:
 - to test digression settings for a dialog
 
 ### Duration
-{: #digression-duration}
+{: #tutorial-digressions-duration}
 
 This tutorial will take approximately 20 minutes to complete.
 
 ### Prerequisite
-{: #digression-prereqs}
+{: #tutorial-digressions-prereqs}
 
 If you do not have a {{site.data.keyword.conversationshort}} instance, complete the **Before you begin** step from the [Getting Started tutorial](getting-started.html#prerequisites) to create one.
 
 ## Step 1: Import the Digressions showcase dialog skill
-{: #import-digression-json}
+{: #tutorial-digressions-import-json}
 
 First you will need to import the *Digression showcase* dialog skill into your {{site.data.keyword.conversationshort}} instance.
 
@@ -56,7 +56,7 @@ First you will need to import the *Digression showcase* dialog skill into your {
 1.  Click **Import** to finish importing the dialog skill.
 
 ## Step 2: Temporarily digressing away from dialog
-{: #temporarily-digress-away}
+{: #tutorial-digressions-temporarily-digress-away}
 
 Digressions allow for the user to break away from a dialog branch in order to temporarily change the topic before returning to the original dialog flow. In this step, you will start to book a restaurant reservation, then digress away to ask for the restaurant's hours. After providing the opening hours information, the service will return back to the restaurant booking dialog flow.
 
@@ -84,6 +84,7 @@ Digressions allow for the user to break away from a dialog branch in order to te
 Congratulations! You have successfully digressed away from and returned to a dialog flow.
 
 ## Step 3: Disabling slot digressions
+{: #tutorial-digressions-disable-slot}
 
 In this step, you will edit the digression settting for the restaurant booking node to prevent users from digressing away from it, and see how the setting change impacts the dialog flow.
 
@@ -114,7 +115,7 @@ In this step, you will edit the digression settting for the restaurant booking n
 You successfully prevented the user from digressing away from the restaurant booking process.
 
 ## Step 4: Digressing to a node that does not return
-{: #digress-without-return}
+{: #tutorial-digressions-digress-without-return}
 
 You can configure a dialog node to not go back to the node that the service digressed away from for the current node to be processed. To demonstrate this, you will change the digression setting for the restaurant hours node. In Step 2, you saw that after digressing away from the restaurant booking node to go to the restaurant opening hours node, the service went back to the restaurant booking node to continue with the reservation process. In this exercise, after you change the setting, you will digress away from the **Job opportunities** dialog to ask about restaurant opening hours and see that the service does not return to where it left off.
 
@@ -141,11 +142,11 @@ You can configure a dialog node to not go back to the node that the service digr
 Congratulations! You have successfully digressed away from a dialog without returning.
 
 ## Summary
-{: #digression-summary}
+{: #tutorial-digressions-summary}
 
 In this tutorial you experienced how digressions work, and saw how individual dialog node settings can impact the digressions behavior.
 
 ## Next steps
-{: #digression-next-steps}
+{: #tutorial-digressions-next-steps}
 
 For help as you configure digressions for your own dialog, see [Digressions](dialog-runtime.html#digressions).

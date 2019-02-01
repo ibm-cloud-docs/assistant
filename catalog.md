@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-28"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -29,7 +29,7 @@ lastupdated: "2019-01-28"
 **IMPORTANT**: Content Catalog intents are meant to provide a starting point, and not meant to be fully built-out for production use. It is recommended that you review and expand on these intents, to make them better suited to how your application will use them.
 
 ## Adding a content catalog to your dialog skill
-{: #add-catalog}
+{: #catalog-add}
 
 Use the {{site.data.keyword.conversationshort}} tool to add content catalogs.
 
@@ -58,6 +58,7 @@ Use the {{site.data.keyword.conversationshort}} tool to add content catalogs.
 The intents from the *Banking* content catalog have been added to the **Intents** tab of your dialog skill, and the system begins to train itself on the new data.
 
 ## Editing content catalog examples
+{: #catalog-edit-content}
 
 Like any other intent, once the *Banking* content catalog intents have been added, you can make the following changes:
 

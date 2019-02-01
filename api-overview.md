@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-17"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -26,6 +26,7 @@ lastupdated: "2018-12-17"
 {:tip: .tip}
 
 # {{site.data.keyword.conversationshort}} API overview
+{: #api-overview}
 
 You can use the {{site.data.keyword.conversationshort}} REST APIs, and the corresponding SDKs, to develop applications that interact with the service. There are two versions of the {{site.data.keyword.conversationshort}} API, each supporting a different set of functions: v1 and v2. The API you should use depends on the type of methods your application requires:
 

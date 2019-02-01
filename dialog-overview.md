@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -36,6 +36,7 @@ Note: The video is 15 minutes in duration; the first 5 minutes cover how to add 
 The dialog is represented graphically in the {{site.data.keyword.conversationshort}} tool as a tree. Create a branch to process each intent that you want your conversation to handle. A branch is composed of multiple nodes.
 
 ## Dialog nodes
+{: #dialog-overview-nodes}
 
 Each dialog node contains, at a minimum, a condition and a response.
 
@@ -55,6 +56,7 @@ A single node with one condition and response can handle simple user requests. B
 ![Shows that the first node in the dialog asks which type of cupcake the user wants, gluten-free or regular, and has two child nodes that provide a different response depending on the user's answer.](images/node1-children.png)
 
 ## Dialog flow
+{: #dialog-overview-flow}
 
 The dialog that you create is processed by the service from the first node in the tree to the last.
 
@@ -72,23 +74,23 @@ When the service reaches the end of a branch, or cannot find a condition that ev
 
 You can disrupt the standard first-to-last flow in the following ways:
 
-- By customizing what happens after a node is processed. For example, you can configure a node to jump directly to another node after it is processed, even if the other node is positioned earlier in the tree. See [Defining what to do next](dialog-overview.html#jump-to) for more information.
-- By configuring conditional responses to jump to other nodes. See [Conditional responses](dialog-overview.html#multiple) for more information.
+- By customizing what happens after a node is processed. For example, you can configure a node to jump directly to another node after it is processed, even if the other node is positioned earlier in the tree. See [Defining what to do next](#dialog-overview-jump-to) for more information.
+- By configuring conditional responses to jump to other nodes. See [Conditional responses](#dialog-overview-multiple) for more information.
 - By configuring digression settings for dialog nodes. Digressions can also impact how users move through the nodes at run time. If you enable digressions away from most nodes and configure returns, users can jump from one node to another and back again more easily. See [Digressions](dialog-runtime.html#digressions) for more information.
 
 ## Conditions
-{: #conditions}
+{: #dialog-overview-conditions}
 
 A node condition determines whether that node is used in the conversation. Response conditions determine which response to return to a user.
 
-- [Condition artifacts](dialog-overview.html#condition-artifacts)
-- [Special conditions](dialog-overview.html#special-conditions)
-- [Condition syntax details](dialog-overview.html#condition-syntax)
+- [Condition artifacts](#dialog-overview-condition-artifacts)
+- [Special conditions](#dialog-overview-special-conditions)
+- [Condition syntax details](#dialog-overview-condition-syntax)
 
 For tips on performing more advanced actions in conditions, see [Condition usage tips](dialog-tips.html#condition-usage-tips).
 
 ### Condition artifacts
-{: #condition-artifacts}
+{: #dialog-overview-condition-artifacts}
 
 You can use one or more of the following artifacts in any combination to define a condition:
 
@@ -125,7 +127,7 @@ You can use one or more of the following artifacts in any combination to define 
 - **Special condition**: Conditions that are provided with the service that you can use to perform common dialog functions. See the **Special conditions** table in the next section for details.
 
 ### Special conditions
-{: #special-conditions}
+{: #dialog-overview-special-conditions}
 
 | Condition syntax     | Description |
 |----------------------|-------------|
@@ -138,7 +140,7 @@ You can use one or more of the following artifacts in any combination to define 
 {: caption="Special conditions" caption-side="top"}
 
 ### Condition syntax details
-{: #condition-syntax}
+{: #dialog-overview-condition-syntax}
 
 Use one of these syntax options to create valid expressions in conditions:
 
@@ -149,7 +151,7 @@ Use one of these syntax options to create valid expressions in conditions:
 You can use regular expressions to check for values to condition against.  To find a matching string, for example, you can use the `String.find` method. See  [Methods](dialog-methods.html) for more details.
 
 ## Responses
-{: #responses}
+{: #dialog-overview-responses}
 
 The dialog response defines how to reply to the user.
 
@@ -160,7 +162,7 @@ You can reply in the following ways:
 - [Conditional responses](#multiple)
 
 ### Simple text response
-{: #simple-text}
+{: #dialog-overview-simple-text}
 
 If you want to provide a text response, simply enter the text that you want the service to display to the user.
 
@@ -197,13 +199,13 @@ The "Try it out" pane does not support Markdown syntax currently. To include a l
 {: note}
 
 #### Learn more about simple responses
-{: #variety}
+{: #dialog-overview-variety}
 
-- [Adding multiple lines](dialog-overview.html#multiline)
-- [Adding variety](dialog-overview.html#add-variety)
+- [Adding multiple lines](#dialog-overview-multiline)
+- [Adding variety](#dialog-overview-add-variety)
 
 #### Adding multiple lines
-{: #multiline}
+{: #dialog-overview-multiline}
 
 If you want a single text response to include multiple lines separated by carriage returns, then follow these steps:
 
@@ -236,7 +238,7 @@ How are you today?
 {: screen}
 
 #### Adding variety
-{: #add-variety}
+{: #dialog-overview-add-variety}
 
 If your users return to your conversation service frequently, they might be bored to hear the same greetings and responses every time.  You can add *variations* to your responses so that your conversation can respond to the same condition in different ways.
 
@@ -318,7 +320,7 @@ To change the sequence in which individual text responses are returned, complete
         {: screen}
 
 ### Rich responses
-{: #multimedia}
+{: #dialog-overview-multimedia}
 
 You can return responses with multimedia or interactive elements such as images or clickable buttons to simplify the interaction model of your application and enhance the user experience.
 
@@ -329,7 +331,7 @@ In addition to the default response type of **Text**, for which you specify the 
 - **Pause**: Forces the application to wait for a specified number of milliseconds before continuing with processing. You can choose to show an indicator that the dialog is working on typing a response. Use this response type if you need to perform an action that might take some time. For example, a parent node makes a Cloud Function call and displays the result in a child node. You could use this response type as the response for the parent node to give the programmatic call time to complete, and then jump to the child node to show the result. This response type does not render in the "Try it out" pane. You must access a node that uses this response type from a test deployment to see how your users will experience it.
 
 #### Adding rich responses
-{: #add-multimedia}
+{: #dialog-overview-multimedia-add}
 
 To add a rich response, complete the following steps:
 
@@ -405,7 +407,7 @@ To add a rich response, complete the following steps:
         Add another response type, such as a text response type, after the pause to clearly denote that the pause is over.
         {: tip}
 
-    - **Text**. Add the text to return to the user in the text field. Optionally, choose a variation setting for the text response. See [Simple text response](dialog-overview.html#simple-text) for more details.
+    - **Text**. Add the text to return to the user in the text field. Optionally, choose a variation setting for the text response. See [Simple text response](#dialog-overview-simple-text) for more details.
 
 1.  Click **Add response** to add another response type to the current response.
 
@@ -417,7 +419,7 @@ To add a rich response, complete the following steps:
 1.  If you added more than one response type, you can click the **Move** up or down arrows to arrange the response types in the order you want the service to process them.
 
 ### Conditional responses
-{: #multiple}
+{: #dialog-overview-multiple}
 
 A single dialog node can provide different responses, each one triggered by a different condition.  Use this approach to address multiple scenarios in a single node.
 
@@ -442,7 +444,7 @@ To add conditional responses to a node, complete the following steps:
 
     - **Update context**. To change the value of a context variable when the response is triggered, specify the context value in the context editor. You update context for each individual conditional response; there is no common context editor or JSON editor for all conditional responses.
     - **Add rich responses**. To add more than one text response or to add response types other than text responses to a single conditional response, you must open the edit response view.
-    - **Configure a jump**. To instruct the service to jump to a different node after this conditional response is processed, select **Jump to** from the *And finally* section of the response edit view. Identify the node that you want the service to process next. See [Configuring the Jump to action](dialog-overview.html#jump-to-config) for more information.
+    - **Configure a jump**. To instruct the service to jump to a different node after this conditional response is processed, select **Jump to** from the *And finally* section of the response edit view. Identify the node that you want the service to process next. See [Configuring the Jump to action](#dialog-overview-jump-to-config) for more information.
 
       A **Jump to** action that is configured for the node is not processed until all of the conditional responses are processed. Therefore, if a conditional response is configured to jump to another node, and the conditional response is triggered, then the jump configured for the node is never processed, and so does not occur.
 
@@ -451,7 +453,7 @@ To add conditional responses to a node, complete the following steps:
 The conditions within a node are evaluated in order, just as nodes are.  Be sure that your conditional responses are listed in the correct order.  If you need to change the order, select a condition and response pair and move it up or down in the list using the arrows that are displayed.
 
 ## Defining what to do next
-{: #jump-to}
+{: #dialog-overview-jump-to}
 
 After making the specified response, you can instruct the service to do one of the following things:
 
@@ -467,7 +469,7 @@ After making the specified response, you can instruct the service to do one of t
   {: note}
 
 ### Configuring the Jump to action
-{: #jump-to-config}
+{: #dialog-overview-jump-to-config}
 
 If you choose to jump to another node, specify when the target node is processed by choosing one of the following options:
 
