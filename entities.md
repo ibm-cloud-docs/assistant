@@ -34,12 +34,12 @@ Finally, you can add multiple responses to your dialog tree with wording that di
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Working with entities" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/o-uhdw6bIyI" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 ## Entity evaluation overview
-{: #entity-described}
+{: #entities-described}
 
 The service detects entities in the user input by using one of the following evaluation methods:
 
 ### Dictionary-based method
-{: #dictionary-overview}
+{: #entities-dictionary-overview}
 
 The service looks for terms in the user input that match the values, synonyms, or patterns you define for the entity.
 
@@ -52,7 +52,7 @@ The service looks for terms in the user input that match the values, synonyms, o
 - **System entity**: Synonym entities that are prebuilt for you by IBM. They cover commonly used categories, such as numbers, dates, and times. You simply enable a system entity to start using it.
 
 ### Context-based method
-{: #annotations-overview}
+{: #entities-annotations-overview}
 
 When you define a contextual entity, a model is trained on both the *annotated term* and the *context* in which the term is used in the sentence you annotate. This new contextual entity model enables the service to calculate a confidence score that identifies how likely a word or phrase is to be an instance of an entity, based on how it is used in the user input.
 
@@ -67,7 +67,7 @@ When you define a contextual entity, a model is trained on both the *annotated t
     If you choose to define entity values by using annotations, add at least 10 annotations per entity to give the contextual entity model enough data to be reliable.
 
 ## Entity limits
-{: #entity-limits}
+{: #entities-limits}
 
 The number of entities, entity values, and synonyms that you can create depends on your {{site.data.keyword.conversationshort}} service plan:
 
@@ -90,7 +90,7 @@ System entities that you enable for use count toward your plan usage totals.
 {: caption="Service plan details continued" caption-side="top"}
 
 ## Creating entities
-{: #creating-entities}
+{: #entities-creating-task}
 
 Use the {{site.data.keyword.conversationshort}} tool to create entities.
 
@@ -98,7 +98,7 @@ Use the {{site.data.keyword.conversationshort}} tool to create entities.
 
 1.  Click **Add entity**.
 
-    You can also click **Use System Entities** to select from a list of common entities, provided by {{site.data.keyword.IBM_notm}}, that can be applied to any use case. See [Enabling system entities](#enable_system_entities) for more detail.
+    You can also click **Use System Entities** to select from a list of common entities, provided by {{site.data.keyword.IBM_notm}}, that can be applied to any use case. See [Enabling system entities](#entities-enable-system-entities) for more detail.
 
 1.  In the **Entity name** field, type a descriptive name for the entity.
 
@@ -118,13 +118,13 @@ Use the {{site.data.keyword.conversationshort}} tool to create entities.
 
 1.  For this entity, choose whether you want the service to use a dictionary-based or context-based approach to find mentions of it, and then follow the appropriate procedure.
 
-    **For each entity that you create, choose one entity type to use only.** As soon as you add an annotation for an entity, the contextual model is initialized and becomes the primary approach for analyzing user input to find mentions of that entity. The context in which the mention is used in the user input takes precedence over any exact matches that might be present. See [Entity evaluation overview](#entity-described) for more information about how each type is evaluated.
+    **For each entity that you create, choose one entity type to use only.** As soon as you add an annotation for an entity, the contextual model is initialized and becomes the primary approach for analyzing user input to find mentions of that entity. The context in which the mention is used in the user input takes precedence over any exact matches that might be present. See [Entity evaluation overview](#entities-described) for more information about how each type is evaluated.
 
-    - [Dictionary-based entities](#create-dictionary-based)
-    - [Context-based entities](#create-annotation-based)
+    - [Dictionary-based entities](#entities-create-dictionary-based)
+    - [Context-based entities](#entities-create-annotation-based)
 
 ## Adding dictionary-based entities
-{: #create-dictionary-based}
+{: #entities-create-dictionary-based}
 
 Dictionary-based entites are those for which you define specific terms, synonyms, or patterns. At run time, the service finds entity mentions only when a term in the user input exactly matches (or closely matches if fuzzy matching is enabled) the value or one of its synonyms.
 
@@ -137,7 +137,7 @@ Dictionary-based entites are those for which you define specific terms, synonyms
     This feature is available for languages noted in the [Supported languages](lang-support.html) topic.
 
     **Fuzzy matching**
-    {: #fuzzy-matching}
+    {: #entities-fuzzy-matching}
 
     Fuzzy matching has these components:
 
@@ -157,7 +157,7 @@ Dictionary-based entites are those for which you define specific terms, synonyms
     **Note:** You can add *either* synonyms or patterns for a single entity value, not both.
 
     ***Synonyms***
-    {: #synonyms}
+    {: #entities-synonyms}
 
     - In the **Synonyms** field, type any synonym for the entity value. A synonym can be any string up to 64 characters in length.
 
@@ -195,7 +195,7 @@ Dictionary-based entites are those for which you define specific terms, synonyms
       Continue adding synonyms as desired. When you're finished accepting recommendations, click the **X** to close.
 
     ***Patterns***
-    {: #patterns}
+    {: #entities-patterns}
 
     - The **Patterns** field lets you define specific patterns for an entity value. A pattern **must** be entered as a regular expression in the field.
 
@@ -203,7 +203,7 @@ Dictionary-based entites are those for which you define specific terms, synonyms
       - Each pattern (regular expression) is limited to 512 characters.
 
       ![Screen capture of defining a pattern entity](images/patternents1.png)
-      {: #pattern-entities}
+      {: #entities-pattern-entities}
 
       As in this example, for entity *ContactInfo*, the patterns for phone, email, and website values can be defined as follows:
       - Phone
@@ -230,7 +230,7 @@ Dictionary-based entites are those for which you define specific terms, synonyms
       </table>
 
       ***Capture groups***
-      {: #capture-group}
+      {: #entities-capture-group}
 
       For regular expressions, any part of a pattern inside a pair of normal parentheses will be captured as a group. For example, the entity value `fullUSphone` contains three captured groups:
 
@@ -273,7 +273,7 @@ Dictionary-based entites are those for which you define specific terms, synonyms
 The entity you created is added to the **Entities** tab, and the system begins to train itself on the new data.
 
 ## Adding contextual entities
-{: #create-annotation-based}
+{: #entities-create-annotation-based}
 
 Context-based entites are those for which you annotate occurrences of the entity in sample sentences to teach the service about the context in which the entity is typically used.
 
@@ -328,7 +328,7 @@ Using an intent's user examples to define contextual entities does not affect th
 
 1.  Repeat this process for each entity mention that you want to annotate.
 
-    Be sure to annotate every mention of an entity type that occurs in any user examples that you edit. See [What you don't annotate matters](#entity-counter-examples) for more details.
+    Be sure to annotate every mention of an entity type that occurs in any user examples that you edit. See [What you don't annotate matters](#entities-counter-examples) for more details.
     {: important}
 
 1.  Now, click the annotation you just created. A box opens that says, `Go to: <entity-name>`. Clicking that link takes you directly to the entity.
@@ -358,7 +358,7 @@ The following video demonstrates how to annotate entity mentions.
 To walk through a tutorial that shows you how to define contextual entities before you add your own, go to [Tutorial: Defining contextual entities ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/garage/demo/try-watson-assistant-contextual-entities){: new_window}.
 
 ### What you don't annotate matters
-{: #entity-counter-examples}
+{: #entities-counter-examples}
 
 If you have an intent example with an annotation, and another word in that example matches the value or a synonym of the same entity, but the value is *not* annotated, that omission has impact. The model also learns from the context of the term you did not annotate. Therefore, if you label one term as a mention of an entity in a user example, be sure to label any other applicable mentions also.
 
@@ -374,7 +374,29 @@ If you have an intent example with an annotation, and another word in that examp
 
     ![Visit unselected](images/oe-counter-3.png)
 
+## Enabling system entities
+{: #entities-enable-system-entities}
+
+The {{site.data.keyword.conversationshort}} service provides a number of *system entities*, which are common entities that you can use for any application. Enabling a system entity makes it possible to quickly populate your skill with training data that is common to many use cases.
+
+System entities can be used to recognize a broad range of values for the object types they represent. For example, the `@sys-number` system entity matches any numerical value, including whole numbers, decimal fractions, or even numbers written out as words.
+
+System entities are centrally maintained, so any updates are available automatically. You cannot modify system entities.
+
+1.  On the Entities tab, click **System entities**.
+
+    ![Screen capture of "System entities" tab](images/system_entities_1.png)
+
+1.  Browse through the list of system entities to choose the ones that are useful for your application.
+    - To see more information about a system entity, including examples of matching input, click the entity in the list.
+    - For details about the available system entities, see [System entities](system-entities.html).
+
+1.  Click the toggle switch next to a system entity to enable or disable it.
+
+After you enable system entities, the {{site.data.keyword.conversationshort}} service begins retraining. After training is complete, you can use the entities.
+
 ## Editing entities
+{: #entities-edit}
 
 You can click any entity in the list to open it for editing. You can rename or delete entities, and you can add, edit, or delete values, synonyms, or patterns.
 
@@ -382,6 +404,7 @@ If you change the entity type from `synonym` to `pattern`, or vice versa, the ex
 {: note}
 
 ## Searching entities
+{: #entities-search}
 
 Use the Search feature to find entity names, values, and synonyms.
 
@@ -403,7 +426,7 @@ Entities containing your search term, with corresponding examples, are shown.
   ![Entity search return](images/searchent_2.png)
 
 ## Exporting entities
-{: #export_entities}
+{: #entities-export}
 
 You can export a number of entities to a CSV file, so you can then import and reuse them for another {{site.data.keyword.conversationshort}} application.
 
@@ -415,6 +438,7 @@ You can export a number of entities to a CSV file, so you can then import and re
     ![Export entity button](images/ExportEntity.png)
 
 ## Importing entities
+{: #entities-import}
 
 If you have a large number of entities, you might find it easier to import them from a comma-separated value (CSV) file than to define them one by one in the {{site.data.keyword.conversationshort}} tool.
 
@@ -465,7 +489,7 @@ Entity annotations are not included in the import of an entity CSV file. You mus
 You can view the imported entities on the Entities tab. You might need to refresh the page to see the new entities.
 
 ## Deleting entities
-{: #delete_entities}
+{: #entities-delete}
 
 You can select a number of entities for deletion.
 
@@ -474,24 +498,3 @@ You can select a number of entities for deletion.
 1.  Select the entities you want to delete, then click **Delete**.
 
     ![Delete entity button](images/DeleteEntity.png)
-
-## Enabling system entities
-{: #enable_system_entities}
-
-The {{site.data.keyword.conversationshort}} service provides a number of *system entities*, which are common entities that you can use for any application. Enabling a system entity makes it possible to quickly populate your skill with training data that is common to many use cases.
-
-System entities can be used to recognize a broad range of values for the object types they represent. For example, the `@sys-number` system entity matches any numerical value, including whole numbers, decimal fractions, or even numbers written out as words.
-
-System entities are centrally maintained, so any updates are available automatically. You cannot modify system entities.
-
-1.  On the Entities tab, click **System entities**.
-
-    ![Screen capture of "System entities" tab](images/system_entities_1.png)
-
-1.  Browse through the list of system entities to choose the ones that are useful for your application.
-    - To see more information about a system entity, including examples of matching input, click the entity in the list.
-    - For details about the available system entities, see [System entities](system-entities.html).
-
-1.  Click the toggle switch next to a system entity to enable or disable it.
-
-After you enable system entities, the {{site.data.keyword.conversationshort}} service begins retraining. After training is complete, you can use the entities.

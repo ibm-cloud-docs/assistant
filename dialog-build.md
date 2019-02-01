@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -64,7 +64,7 @@ If the total seems larger than you expected, it might be because the dialog that
   - For a node with slots, each slot, slot found response, slot not found response, slot handler, and if set, the "prompt for everything" response is an individual node. In effect, one node with three slots might be equivalent to eleven dialog nodes.
 
 ## Building a dialog
-{: #dialog-procedure}
+{: #dialog-build-task}
 
 To create a dialog, complete the following steps:
 
@@ -148,7 +148,7 @@ To create a dialog, complete the following steps:
    See [Testing your dialog](#test) for more information.
 
 ## Testing your dialog
-{: #test}
+{: #dialog-build-test}
 
 As you make changes to your dialog, you can test it at any time to see how the dialog responds to input.
 
@@ -187,6 +187,7 @@ Queries you submit through the "Try it out" pane generate `/message` API calls, 
     - To remove prior test utterances from the chat pane and start over, click the **Clear** link. Not only are the test utterances and responses removed, but this action also clears the values of any context variables that were set as a result of your interactions with the dialog. Context variable values that you explicitly set or change are not cleared.
 
 ### What to do next
+{: #dialog-build-next-steps}
 
 If you determine that the wrong intents or entities are being recognized, you might need to modify your intent or entity definitions.
 
@@ -194,10 +195,10 @@ If the correct intents and entities are being recognized, but the wrong nodes ar
 
 See [Dialog building tips](dialog-tips.html) for tips that might help you as you get started.
 
-If you are ready to put the conversation to work helping your users, integrate your assistant with a messaging platform or custom application. See [Adding integrations](add-integrations.html).
+If you are ready to put the conversation to work helping your users, integrate your assistant with a messaging platform or custom application. See [Adding integrations](deploy-integration-add.html).
 
 ## Searching your dialog
-{: #search}
+{: #dialog-build-search}
 
 You can search the dialog to find one or more dialog nodes that mention a given word or phrase.
 
@@ -213,7 +214,7 @@ Nodes containing your search term, with corresponding examples, are shown. Selec
   ![Intent search return](images/search_dialog.png)
 
 ## Finding a dialog node by its node ID
-{: #get-node-id}
+{: #dialog-build-get-node-id}
 
 You can search for a dialog node by its node ID. Enter the full node ID into the search field. You might want to find the dialog node that is associated with a known node ID for any of the following reasons:
 
@@ -238,7 +239,7 @@ If you still cannot find the node, you can export the dialog skill and use a JSO
 {: tip}
 
 ## Copying a dialog node
-{: #copy-node}
+{: #dialog-build-copy-node}
 
 You can duplicate a node to create an exact copy of it as a peer node directly below it in the dialog tree. The copied node itself is given the same name as the original node, but with `- copy`*`n`* appended to it, where *`n`* is a number that starts with 1. If you duplicate the same node more than once, then the *`n`* in the name increments by one for each copy to help you distinguish the copies from one another. If the node has no name, it is given the name `copy`*`n`*.
 
@@ -248,7 +249,7 @@ When you duplicate a node that has child nodes, the child nodes are duplicated a
 1.  Consider renaming the copied nodes or editing their conditions to make them distinct.
 
 ## Moving a dialog node
-{: #move-node}
+{: #dialog-build-move-node}
 
 Each node that you create can be moved elsewhere in the dialog tree.
 
@@ -258,7 +259,7 @@ You might want to move a previously created node to another area of the flow to 
 1.  Select a target node that is located in the tree near where you want to move this node. Choose whether to place this node before or after the target node, or to make it a child of the target node.
 
 ## Organizing the dialog with folders
-{: #folders}
+{: #dialog-build-folders}
 
 You can group dialog nodes together by adding them to a folder. There are lots of reasons to group nodes, including:
 
@@ -275,7 +276,7 @@ These characteristics of the folder impact how the nodes in a folder are process
 Folders have no impact on the order in which nodes are evaluated. Nodes continue to be processed from first to last. As the service travels down the tree, when it encounters a folder, if the folder has no condition or its condition is true, it immediately processes the first node in the folder, and continues down the tree in order from there. If a folder does not have a folder condition, then the folder is transparent to the service, and each node in the folder is treated like any other individual node in the tree.
 
 ### Adding a folder
-{: #folders-add}
+{: #dialog-build-folders-add}
 
 To add a folder to a dialog tree, complete the following steps:
 
@@ -309,7 +310,7 @@ To add a folder to a dialog tree, complete the following steps:
       The dialog node is added to the end of the dialog tree within the folder.
 
 ### Deleting a folder
-{: #folders-delete}
+{: #dialog-build-folders-delete}
 
 You can delete either a folder alone or the folder and all of the dialog nodes in it.
 

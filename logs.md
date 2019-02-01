@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -29,10 +29,10 @@ To open a list of messages between users and the assistant that uses this dialog
 When you open the **User conversations** page, the default view lists results for the last day, with the newest results first. The top intent (#intent) and any recognized entity (@entity) values used in a message, and the message text are available. For intents that are not recognized, the value shown is *Irrelevant*. If an entity is not recognized, or has not been provided, the value shown is *No entities found*.
 ![Logs default page](images/logs_page1.png)
 
-It is important to note that the **User conversations** page displays the total number of *messages* between users and your application. A message is a single utterance the user sends to the application. Each conversation may be made up of multiple messages. Thus, the number of results on this **User conversations** page is different than the number of conversations shown on the [Overview](logs_oview.html) page.
+It is important to note that the **User conversations** page displays the total number of *messages* between users and your application. A message is a single utterance the user sends to the application. Each conversation may be made up of multiple messages. Thus, the number of results on this **User conversations** page is different than the number of conversations shown on the [Overview](logs-overview.html) page.
 
 ## Log limits
-{: #log-limits}
+{: #logs-limits}
 
 The length of time for which messages are retained depends on your {{site.data.keyword.conversationshort}} service plan:
 
@@ -44,6 +44,7 @@ The length of time for which messages are retained depends on your {{site.data.k
   Lite                                 | Last 7 days
 
 ## Filtering messages
+{: #logs-filter-messages}
 
 You can filter messages by *Search user statements*, *Intents*, *Entities*, and *Last* n *days*:
 
@@ -60,6 +61,8 @@ You can filter messages by *Search user statements*, *Intents*, *Entities*, and 
 Messages may take some time to update. Allow at least 30 minutes after a user's interaction with your application before attempting to filter for that content.
 
 ## Viewing an individual message
+{: #logs-see-message}
+
 You can expand each message entry to see what the user said in the whole conversation, and how your application answered. To do this, select **Open conversation**. You are automatically taken to the message you selected within that conversation.
 
 The time shown at the top of each conversation is localized to reflect the time zone of your browser. This may differ from the timestamp shown if you review the same conversation log via an API call; API log calls are always shown in UTC.
@@ -71,7 +74,7 @@ You can then choose to show the classification(s) for the message you selected.
 ![Open conversation panel with classifications](images/open_convo_classes.png)
 
 ## Improving across assistants
-{: #deploy_id}
+{: #logs-deploy-id}
 
 Creating a dialog skill is an iterative process. While you develop your skill, you use the *Try it out* pane to verify that the service recognizes the correct intents and entities in test inputs, and to make corrections as needed.
 
@@ -86,7 +89,7 @@ As an example, say you have a {{site.data.keyword.conversationshort}} instance n
 Any edits you then make within the dialog skill for the Development assistant will only affect the Development assistant's dialog skill, even though you’re using data from messages sent to the Production assistant.
 
 ### Picking a data source
-{: #pick-data-source}
+{: #logs-pick-data-source}
 
 The term *data source* refers to the logs compiled from conversations between customers and the assistant or custom application by which a dialog skill was deployed.
 
@@ -96,14 +99,14 @@ To populate the metrics with message data from a dialog skill that was added to 
 
 1.  Click the **Data source** field to see a list of assistants with log data that you might want to use.
 
-    See [*Show deployment IDs* explained](#deployment-id-explained) for more information about that option.
+    See [*Show deployment IDs* explained](#logs-deployment-id-explained) for more information about that option.
 
 1.  Choose a data source.
 
 Statistical information for the selected data source is displayed.
 
 ### *Show deployment IDs* explained
-{: #deployment-id-explained}
+{: #logs-deployment-id-explained}
 
 Applications that use the V1 version of the API must specify a deployment ID in each messages sent using the `/message` API. This ID identifies the deployed app that the call was made from. The Improve page can use this deployment ID to retrieve and display logs that are associated with a specific live application.
 
@@ -121,12 +124,14 @@ To add the deployment ID, V1 API users include the deployment property inside th
 {: codeblock}
 
 ## Making training data improvements
+{: #logs-fix-data}
 
 Use insights from real user conversations to correct the model associated with your dialog skill.
 
 If you use data from another data source, any improvements you make to the model are applied to the current dialog skill only. The **Data source** field shows the source of the messages you are using to improve this dialog skill, and the top of the page shows the dialog skill you are applying changes to.
 
 ### Correcting an intent
+{: #logs-correct-intent}
 
 1.  To correct an intent, select the ![Edit](images/edit_icon.png) edit icon beside the chosen #intent.
 1.  From the list provided, select the correct intent for this input.
@@ -142,6 +147,7 @@ If you use data from another data source, any improvements you make to the model
     {: tip}
 
 ### Adding an entity value or synonym
+{: #logs-add-entity}
 
 1.  To add an entity value or synonym, select the ![Edit](images/edit_icon.png) edit icon beside the chosen @entity.
 1.  Select **Add entity**.

@@ -22,7 +22,7 @@ lastupdated: "2019-01-28"
 {:gif: data-image-type='gif'}
 
 # Tutorial: Building a car dashboard dialog
-{: #tutorial}
+{: #tutorial-car-dashboard}
 
 In this tutorial, you will use the {{site.data.keyword.conversationshort}} service to create a dialog that helps users interact with a cognitive car dashboard.
 {: shortdesc}
@@ -37,19 +37,19 @@ By the time you finish the tutorial, you will understand how to:
 - Use node and response conditions in a dialog
 
 ### Duration
-{: #car-dashboard-duration}
+{: #tutorial-car-dashboard-duration}
 
 This tutorial will take approximately 2 to 3 hours to complete.
 
 ### Prerequisite
-{: #car-dashboard-prereqs}
+{: #tutorial-car-dashboard-prereqs}
 
 Before you begin, complete the [Getting Started tutorial](getting-started.html).
 
 You will use the {{site.data.keyword.conversationshort}} tutorial skill that you created, and add nodes to the simple dialog that you built as part of the getting started exercise.
 
 ## Step 1: Add intents and examples
-{: #car-dashboard-add-intents}
+{: #tutorial-car-dashboard-add-intents}
 
 Add an intent on the Intents tab. An intent is the purpose or goal expressed in user input.
 
@@ -86,7 +86,7 @@ Add an intent on the Intents tab. An intent is the purpose or goal expressed in 
 You now have three intents, the `#turn_on` intent that you just added, and the `#hello` and `#goodbye` intents that were added in the *Getting started tutorial* that you completed as a prerequisite step. Each intent has a set of example utterances that help train Watson to recognize the intents in user input.
 
 ## Step 2: Add entities
-{: #car-dashboard-add-entities}
+{: #tutorial-car-dashboard-add-entities}
 
 An entity definition includes a set of entity *values* that can be used to trigger different responses. Each entity value can have multiple *synonyms*, which define different ways that the same value might be specified in user input.
 
@@ -138,11 +138,13 @@ You defined two entities: `@appliance` (representing an appliance the assistant 
 When the user's input is received, the {{site.data.keyword.conversationshort}} service identifies both the intents and entities. You can now define a dialog that uses intents and entities to choose the correct response.
 
 ## Step 3: Create a complex dialog
-{: #car-dashboard-complex-dialog}
+{: #tutorial-car-dashboard-complex-dialog}
 
 In this complex dialog, you will create dialog branches that handle the #turn_on intent you defined earlier.
 
 ### Add a root node for #turn_on
+{: #tutorial-car-dashboard-add-turn-on}
+
 Create a dialog branch to respond to the #turn_on intent. Start by creating the root node:
 
 1.  Click the More icon ![More options](images/kabob.png) on the **#hello** node, and then select **Add node below**.
@@ -151,6 +153,8 @@ Create a dialog branch to respond to the #turn_on intent. Start by creating the 
 1.  Do not enter a response in this node. Click ![Close](images/close.png) to close the node edit view.
 
 ### Scenarios
+{: #tutorial-car-dashboard-scenarios}
+
 The dialog needs to determine which appliance the user wants to turn on. To handle this, create multiple responses based on additional conditions.
 
 There are three possible scenarios, based on the intents and entities that you defined:
@@ -164,10 +168,12 @@ There are three possible scenarios, based on the intents and entities that you d
 Add nodes that check these scenario conditions in this order so the dialog evaluates the most specific condition first.
 
 ### Address Scenario 1
+{: #tutorial-car-dashboard-address-scenario1}
 
 Add nodes that address scenario 1, which is that the user wants to turn on the music. In response, the assistant must ask for the music genre.
 
 #### Add a child node that checks whether the appliance type is music
+{: #tutorial-car-dashboard-add-music-check}
 
 1.  Click the More icon ![More options](images/kabob.png) on the **#turn_on** node, and select **Add child node**.
 1.  In the condition field, enter `@appliance:radio`.
@@ -177,6 +183,7 @@ Add nodes that address scenario 1, which is that the user wants to turn on the m
 1.  Click ![Close](images/close.png) to close the node edit view.
 
 #### Add a jump from the #turn_on node to the Music node
+{: #tutorial-car-dashboard-add-jump-to-music}
 
 Jump directly from the `#turn on` node to the `Music` node without asking for any more user input. To do this, you can use a **Jump to** action.
 
@@ -192,6 +199,7 @@ After you create the Jump to relationship, you see a new entry in the tree:
 ![Jump to after](images/tut-dialog-jump2.png)
 
 #### Add a child node that checks the music genre
+{: #tutorial-car-dashboard-check-genre}
 
 Now add a node to process the type of music that the user requests.
 
@@ -201,6 +209,7 @@ Now add a node to process the type of music that the user requests.
 1.  Enter `OK! Playing @genre.` as the response. This response reiterates the genre value that the user provides.
 
 #### Add a node that handles unrecognized genre types in user responses
+{: #tutorial-car-dashboard-catch-genre}
 
 Add a node to respond when the user does not specify a recognized value for @genre.
 
@@ -212,6 +221,7 @@ Add a node to respond when the user does not specify a recognized value for @gen
 That takes care of all the cases where the user asks to turn on the music.
 
 #### Test the dialog for music
+{: #tutorial-car-dashboard-test-music}
 
 1.  Select the ![Ask Watson](images/ask_watson.png) icon to open the chat pane.
 1.  Type `Play music`.
@@ -225,10 +235,12 @@ That takes care of all the cases where the user asks to turn on the music.
 1.  Type `Play music` again, but this time specify an invalid response for the genre. The assistant responds that it does not understand.
 
 ### Address Scenario 2
+{: #tutorial-car-dashboard-address-scenario2}
 
 We will add nodes that address scenario 2, which is that the user wants to turn on another valid appliance. In this case, the assistant echos the name of the requested appliance in a message that indicates it is being turned on.
 
 #### Add a child node that checks for any appliance
+{: #tutorial-car-dashboard-check-applicance}
 
 Add a node that is triggered when any other valid value for @appliance is provided by the user.
 For the other values of @appliance, the assistant doesn't need to ask for any more input. It just returns a positive response.
@@ -240,6 +252,7 @@ For the other values of @appliance, the assistant doesn't need to ask for any mo
     This response reiterates the appliance value that the user provided.
 
 #### Test the dialog with other appliances
+{: #tutorial-car-dashboard-test-other-appliances}
 
 1.  Select the ![Ask Watson](images/ask_watson.png) icon to open the chat pane.
 1.  Type `lights on`.
@@ -255,6 +268,7 @@ For the other values of @appliance, the assistant doesn't need to ask for any mo
 1.  Try variations on all of the supported commands based on the example utterances and entity synonyms you defined.
 
 ### Address Scenario 3
+{: #tutorial-car-dashboard-address-scenario3}
 
 Now add a peer node that is triggered if the user does not specify a valid appliance type.
 
@@ -264,6 +278,7 @@ Now add a peer node that is triggered if the user does not specify a valid appli
 1.  Enter `I'm sorry, I'm not sure I understood you. I can turn on music, headlights, or air conditioning.` as the response.
 
 #### Test some more
+{: #tutorial-car-dashboard-test-more}
 
 1.  Try more utterance variations to test the dialog.
 
@@ -280,8 +295,8 @@ Optionally, you can review the **Customer Service - Sample** skill to see this s
     The sample skill is added to your list of skills. It is not associated with any assistants.
 
 ## Next steps
-{: #car-dashboard-deploy}
+{: #tutorial-car-dashboard-deploy}
 
-Now that you have built and tested your dialog skill, you can share it with customers. Deploy your skill by first connecting it to an assistant, and then deploying the assistant. There are several ways you can do this. See [Adding integrations](add-integrations.html) for more details.
+Now that you have built and tested your dialog skill, you can share it with customers. Deploy your skill by first connecting it to an assistant, and then deploying the assistant. There are several ways you can do this. See [Adding integrations](deploy-integration-add.html) for more details.
 
 You can access the source code for a full car dashboard sample application from [GitHub ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/car-dashboard).

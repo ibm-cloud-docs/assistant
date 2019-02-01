@@ -21,13 +21,13 @@ lastupdated: "2018-12-21"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Creating assistants
-{: #create-assistant}
+{: #assistant-add}
 
 Create an assistant with the skills it needs to address the business goals of your customers.
 {: shortdesc}
 
 ## Assistant limits
-{: #assistant-limits}
+{: #assistant-add-limits}
 
 The number of assistants you can create in a single service instance depends on your {{site.data.keyword.conversationshort}} plan.
 
@@ -41,10 +41,10 @@ The number of assistants you can create in a single service instance depends on 
 
 *After 30 days of inactivity, an unused assistant in a Lite plan service instance might be deleted to free up space.
 
-You can connect one skill to your assistant. The number of skills you can build differs depending on the plan you have. See [Skill limits](create-skill.html#skill-limits) for more details.
+You can connect one skill to your assistant. The number of skills you can build differs depending on the plan you have. See [Skill limits](skill-add.html#skill-limits) for more details.
 
 ## Create an assistant
-{: #create-assistant}
+{: #assistant-add-task}
 
 Follow these steps to create an assistant:
 
@@ -74,10 +74,10 @@ Follow these steps to create an assistant:
     If you created or were given developer role access to any workspaces that were built with the generally available version of the {{site.data.keyword.conversationshort}} service (formerly Watson Conversation), you will see them listed as existing dialog skills.
     {: note}
 
-    See [Creating a skill](create-skill.html) for more information about how to create a skill.
+    See [Creating a skill](skill-add.html) for more information about how to create a skill.
 
 ## Deleting an assistant
-{: #delete-assistant}
+{: #assistant-add-delete}
 
 When you delete an assistant, any integrations that you defined for the assistant are automatically deleted also. Skills that you added to the assistant are not deleted.
 
@@ -88,7 +88,7 @@ To delete an assistant, follow these steps:
 1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Delete**. Confirm the deletion.
 
 ## Renaming an assistant
-{: #rename-assistant}
+{: #assistant-add-rename-task}
 
 You can change the name of an assistant and its associated description after you create the assistant.
 
@@ -101,7 +101,7 @@ To rename an assistant, follow these steps:
 1.  Edit the name, and then click **Rename** to save your changes.
 
 ### Changing the skill that is associated with the assistant
-{: #swap-skill}
+{: #assistant-add-swap-skill}
 
 You can add one skill to an assistant. If you want to change the skill that your assistant uses, you can swap one skill for another skill.
 
@@ -109,9 +109,9 @@ You can add one skill to an assistant. If you want to change the skill that your
 
 1.  Click the ![open and close list of options](images/kabob-beta.png) icon on the skill tile, and then choose **Swap**.
 
-1.  Choose an existing skill to use instead or [create a skill](create-skill.html).
+1.  Choose an existing skill to use instead or [create a skill](skill-add.html).
 
 ### Switching between service instances
-{: #switch-instance}
+{: #assistant-add-switch-instance}
 
 If you have more than one service instance, you can check the page header to find out which instance you are currently using. If you are working in a skill, click the **Skills** breadcrumb link first. The banner displays the current instance name. To switch to a different service instance, click **change**, and then choose the appropriate instance.

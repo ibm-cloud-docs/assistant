@@ -816,4 +816,4 @@ In this tutorial you tested a node with slots and made changes that optimize how
 ## Next steps
 {: #slots-complex-deploy}
 
-Deploy your dialog skill by first connecting it to an assistant, and then deploying the assistant. There are several ways you can do this. See [Adding integrations](add-integrations.html) for more details.
+Deploy your dialog skill by first connecting it to an assistant, and then deploying the assistant. There are several ways you can do this. See [Adding integrations](deploy-integration-add.html) for more details.

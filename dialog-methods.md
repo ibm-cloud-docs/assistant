@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-28"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -37,14 +37,14 @@ To expand variable values inside other variables, or apply methods to output tex
 
 The following sections describe methods you can use to process values. They are organized by data type:
 
-- [Arrays](dialog-methods.html#arrays)
-- [Date and Time](dialog-methods.html#date-time)
-- [Numbers](dialog-methods.html#numbers)
-- [Objects](dialog-methods.html#objects)
-- [Strings](dialog-methods.html#strings)
+- [Arrays](#dialog-methods-arrays)
+- [Date and Time](#dialog-methods-date-time)
+- [Numbers](#dialog-methods-numbers)
+- [Objects](#dialog-methods-objects)
+- [Strings](#dialog-methods-strings)
 
 ## Arrays
-{: #arrays}
+{: #dialog-methods-arrays}
 
 You cannot use these methods to check for a value in an array in a node condition or response condition within the same node in which you set the array values.
 
@@ -127,7 +127,7 @@ $toppings_array.contains('ham')
 Result: `True` because the array contains the element ham.
 
 ### JSONArray.containsIntent(String intent_name, Integer score, [Integer top_n])
-{: #array-containsIntent}
+{: #dialog-methods-array-containsIntent}
 
 This method returns `true` if, specifically, the `intents` JSONArray contains the specified intent, and that intent has a confidence score that is equal to or higher than the specified score. Optionally, you can specify a number to indicate that the intent must be included within that number of top elements in the array.
 
@@ -149,7 +149,7 @@ intents.containsIntent("General_Ending", 0.8, 2)
 {: codeblock}
 
 ### JSONArray.filter(temp, "temp.property operator comparison_value")
-{: #array-filter}
+{: #dialog-methods-array-filter}
 
 Filters an array by comparing each array element value to a value you specify. This method is similar to a [collection projection](#collection-projection). A collection projection returns a filtered array based on a name in an array element name-value pair. The filter method returns a filtered array based on a value in an array element name-value pair.
 
@@ -411,7 +411,7 @@ Result: `"ham is a great choice!"` or `"onion is a great choice!"` or `"olives i
 **Note:** The resulting output text is randomly chosen.
 
 ### JSONArray.indexOf(value)
-{: #array-indexOf}
+{: #dialog-methods-array-indexOf}
 
 This method returns the index number of the element in the array that matches the value you specify as a parameter or `-1` if the value is not found in the array. The value can be a String (`"School"`), Integer(`8`), or Double (`9.1`). The value must be an exact match and is case sensitive.
 
@@ -495,7 +495,7 @@ This is the array: onion;olives;ham;
 If you define a variable that stores multiple values in a JSON array, you can return a subset of values from the array, and then use the join() method to format them properly.
 
 #### Collection projection
-{: #collection-projection}
+{: #dialog-methods-collection-projection}
 
 A `collection projection` SpEL expression extracts a subcollection from an array that contains objects. The syntax for a collection projection is `array_that_contains_value_sets.![value_of_interest]`.
 
@@ -538,7 +538,7 @@ The flights that fit your criteria are:
 Result: `The flights that match your criteria are: OK123,LH421,TS4156.`
 
 ### JSONArray.joinToArray(template)
-{: #joinToArray}
+{: #dialog-methods-joinToArray}
 
 This method applies the format that you define in a template to the array, and returns an array that is formatted according to your specifications. This method is useful for applying formatting to array values that you want to return in a dialog response, for example.
 
@@ -607,7 +607,7 @@ The available flights are <? $flights.joinToArray("%e.flight%").join(", "). ?>
 The response is, `The available flights are DL1040, DL1710, DL4379.`
 
 #### Complex template
-{: #complex-template}
+{: #dialog-methods-complex-template}
 
 To create a more complex template, instead of specifying the template details in the method parameter directly, you can create a context variable.
 
@@ -655,7 +655,7 @@ Arrival time: 09:05
 The advantage of using this method is that it doesn't matter how often the values in the array change or whether the number of elements in the array increases. As long as each array element contains at least the subset of properties that are referenced by the template, then the expression works.
 
 #### JSON Object template example
-{: #object-template}
+{: #dialog-methods-object-template}
 
 In this example, the template context variable is defined as a JSON object that extracts the flight number, and arrival and departure dates and times from each of the flight elements specified in the array in the `$flights` context variable. You could use this approach to apply standard formatting to flight details for flights that are managed by two different carriers, and who format flight information differently in their web services, for example.
 
@@ -877,7 +877,7 @@ Results in this output:
 {: codeblock}
 
 ### com.google.gson.JsonArray support
-{: #com.google.gson.JsonArray}
+{: #dialog-methods-com.google.gson.JsonArray}
 
 In addition to the built-in methods, you can use standard methods of the `com.google.gson.JsonArray` class.
 
@@ -896,7 +896,7 @@ To define a new array that will be filled in with values that are provided by us
 {: codeblock}
 
 ## Date and Time
-{: #date-time}
+{: #dialog-methods-date-time}
 
 Several methods are available to work with date and time.
 
@@ -1211,7 +1211,7 @@ To reformat the time that is returned, you can use the following expression:
 Result if it is 2:19 PM: `6 hours ago was 8:19 AM.`
 
 ### Working with time spans
-{: #time-spans}
+{: #dialog-methods-time-spans}
 
 To show a response based on whether today's date falls within a certain time frame, you can use a combination of time-related methods. For example, if you run a special offer during the holiday season every year, you can check whether today's date falls between November 25 and December 24 of this year. First, define the dates of interest as context variables.
 
@@ -1229,7 +1229,7 @@ In the response condition, you can indicate that you want to show the response o
 `now().after($start_date) && now().before($end_date)`
 
 ### java.util.Date support
-{: #java.util.Date}
+{: #dialog-methods-java.util.Date}
 
 In addition to the built-in methods, you can use standard methods of the `java.util.Date` class.
 
@@ -1276,7 +1276,7 @@ The following expression calculates the time 3 hours from now.
 The `(60*60*1000L)` value represents an hour in milliseconds. This expression adds 3 hours to the current time. It then recalculates the time from a UTC time zone to EST time zone by subtracting 5 hours from it. It also reformats the date values to include hours and minutes AM or PM.
 
 ## Numbers
-{: #numbers}
+{: #dialog-methods-numbers}
 
 These methods help you get and reformat number values.
 
@@ -1284,7 +1284,7 @@ For information about system entities that can recognize and extract numbers fro
 
 If you want the service to recognize specific number formats in user input, such as order number references, consider creating a pattern entity to capture it. See [Creating entities](entities.html#creating-entities) for more details.
 
-If you want to change the decimal placement for a number, to reformat a number as a currency value, for example, see the [String format() method](dialog-methods.html#java.lang.String).
+If you want to change the decimal placement for a number, to reformat a number as a currency value, for example, see the [String format() method](#dialog-methods-java.lang.String).
 
 ### toDouble()
 
@@ -1301,7 +1301,7 @@ If you want to change the decimal placement for a number, to reformat a number a
   If you specify a Long number type in a SpEL expression, you must append an `L` to the number to identify it as such. For example, `5000000000L`. This syntax is required for any numbers that do not fit into the 32-bit Integer type. For example, numbers that are greater than 2^31 (2,147,483,648) or lower than -2^31 (-2,147,483,648) are considered Long number types. Long number types have a minimum value of -2^63 and a maximum value of 2^63-1.
 
 ### Java number support
-{: #java.lang.Number}
+{: #dialog-methods-java.lang.Number}
 
 ### java.lang.Math()
 
@@ -1430,7 +1430,7 @@ You can use standard methods of the following classes also:
 - `java.lang.Float`
 
 ## Objects
-{: #objects}
+{: #dialog-methods-objects}
 
 ### JSONObject.clear()
 
@@ -1466,7 +1466,7 @@ If you subsequently reference the $user context variable, it returns `{}` only.
 You can use the `clear()` method on the `context` or `output` JSON objects in the body of the API `/message` call.
 
 #### Clearing context
-{: #clearing_context}
+{: #dialog-methods-clearing_context}
 
 When you use the `clear()` method to clear the `context` object, it clears **all** variables except these ones:
 
@@ -1502,7 +1502,7 @@ To use the method, you can specify it in an expression in a variable that you de
 ```
 
 #### Clearing output
-{: #clearing_output}
+{: #dialog-methods-clearing_output}
 
 When you use the `clear()` method to clear the `output` object, it clears all variables except the one you use to clear the output object and any text responses that you define in the current node. It also does not clear these variables:
 
@@ -1607,7 +1607,7 @@ Result:
 {: codeblock}
 
 ### com.google.gson.JsonObject support
-{: #com.google.gson.JsonObject}
+{: #dialog-methods-com.google.gson.JsonObject}
 
 In addition to the built-in methods, you can use standard methods of the `com.google.gson.JsonObject` class.
 

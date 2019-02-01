@@ -80,8 +80,8 @@ Read more about these implementation steps by following these links:
 - [Intent creation overview](intents.html#intent-described)
 - [Dialog overview](dialog-overview.html)
 - [Entity creation overview](entities.html#entity-described)
-- [Assistant overview](create-assistant.html)
-- [Adding integrations](add-integrations.html)
+- [Assistant overview](assistant-add.html)
+- [Adding integrations](deploy-integration-add.html)
 
 ## Browser support
 {: #index-browser-support}

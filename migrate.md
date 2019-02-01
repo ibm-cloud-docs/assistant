@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-21"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -37,7 +37,7 @@ Resource groups offer these benefits over Cloud Foundry:
 If you created service instances before November 2018, then depending on the location in which your instance is hosted, it might be using Cloud Foundry instead of resource groups. See [Data centers](services-information.html#regions) for information about when each location started to use IAM with new instances.
 
 ## Migrating a service instance
-{: #migrate-steps}
+{: #migrate-task}
 
 If you want to learn more about the migration process before you begin, see the [IBM Cloud migration documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/resources/instance_migration.html).
 
@@ -72,7 +72,7 @@ For more information about aliases, see the [IBM Cloud Connections documentation
 You must open the new, resource group-based version of the service instance to access the **Launch tool** button. The new instance is listed in the Services section of the {{site.data.keyword.Bluemix_notm}} Dashboard.
 
 ## Authentication
-{: #auth-support}
+{: #migrate-auth-support}
 
 If you have existing applications that use basic authentication to access the service, then they can continue to pass a username and password to authenticate with the service instance after it is migrated. You can see the credential information from the **Service credentials** page of the alias.
 

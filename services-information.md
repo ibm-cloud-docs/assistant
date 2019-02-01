@@ -27,27 +27,27 @@ The assistant is a fully hosted bot that is managed by {{site.data.keyword.cloud
 {: shortdesc}
 
 ## Service plan information
-{: #plans}
+{: #services-information-plans}
 
 Explore the {{site.data.keyword.conversationshort}} [service plan options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/watson-assistant/pricing/){: new_window}.
 
 Before you create a service instance, decide how you want to organize the resources in your {{site.data.keyword.cloud_notm}} account. If you do not define your own resource group, the **default** resource group is used, and you *cannot* change it later. See [Best practices for organizing resources in a resource group ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/resources/bestpractice_rgs.html#bp_resourcegroups){: new_window} for more details. All users must have a platform access role of Operator. (Service access roles are not leveraged by {{site.data.keyword.conversationshort}}.)
 
 ### Plan limits by artifact type
-{: #limits}
+{: #services-information-limits}
 
 Information about the artifact limits per plan is available from the topics that describe how to create the artifacts, so you can refer to the limits when you need to know them. Here are links to the topics:
 
-- [Assistants](create-assistant.html#assistant-limits)
-- [Dialog nodes](dialog-build.html#dialog-node-limits)
-- [Entities](entities.html#entity-limits)
-- [Intents](intents.html#intent-limits)
-- [Integrations](add-integrations.html#integration-limits)
-- [Logs](logs.html#log-limits)
-- [Skills](create-skill.html#skill-limits)
+- [Assistants](assistant-add.html#assistant-add-limits)
+- [Dialog nodes](dialog-build.html#dialog-build-node-limits)
+- [Entities](entities.html#entities-limits)
+- [Intents](intents.html#intents-limits)
+- [Integrations](integration-add.html#deploy-integration-add-limits)
+- [Logs](logs.html#logs-limits)
+- [Skills](skill-add.html#skill-add-limits)
 
 ### API call limits
-{: #api-limits}
+{: #services-information-api-limits}
 
 The number of API calls allowed per instance depends on your service plan. See your plan description for details.
 
@@ -56,7 +56,7 @@ If you have a Lite plan and reach your API call limit, but the logs show that yo
 If you want to upgrade from one plan to another, see [Upgrading](upgrade.html).
 
 ### Plus and Premium plan features
-{: #premium}
+{: #services-information-premium}
 
 The following features are available only to users of Premium plans.
 
@@ -65,7 +65,7 @@ The following features are available only to users of Premium plans.
 - [Intent user example recommendations](intents.html#intent-recommendations)
 
 ### User-based plans
-{: #user-based-plans}
+{: #services-information-user-based-plans}
 
 Unlike API-based plans, which measure usage by the number of API calls made during a specified timeframe, the new Plus plan and updated Premium plan use user-based billing. They measure usage by the number of unique users who interacted with the assistant during a specified timeframe.
 
@@ -83,7 +83,7 @@ The service checks for the following information from API requests in this order
 To get the most benefit from the new user-based service plans, design any custom applications that you use to deploy your assistant to capture a unique user ID or session ID and pass the information to the service.
 
 ## Authenticating API calls
-{: #authenticate-api-calls}
+{: #services-information-authenticate-api-calls}
 
 The authentication mechanism used by your service instance impacts how you must provide credentials when making an API call.
 
@@ -146,7 +146,7 @@ The authentication mechanism used by your service instance impacts how you must 
     For examples, see  [Authentication ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant-v2#authentication){: new_window} for your language in the API reference.
 
 ### Data centers
-{: #regions}
+{: #services-information-regions}
 
 {{site.data.keyword.cloud_notm}} has a network of global data centers that provide performance benefits to its cloud services. See [{{site.data.keyword.cloud_notm}} global data centers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/data-centers/){: new_window} for more details.
 
@@ -167,7 +167,7 @@ You can create {{site.data.keyword.conversationshort}} service instances that ar
 For information about the data centers in which other {{site.data.keyword.cloud_notm}} services are hosted, see [Services by region ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/resources/services_region.html#services_region){: new_window}.
 
 ## Terms and security
-{: #terms}
+{: #services-information-terms}
 
 To learn more about service terms and data security, read the following information:
 
@@ -178,5 +178,6 @@ To learn more about service terms and data security, read the following informat
 See [Platform overview ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/overview/ibm-cloud.html#overview){: new_window} for more information about {{site.data.keyword.cloud_notm}}.
 
 ## Still have questions? 
+{: #services-information-sales}
 
 Contact [IBM Sales ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-01.ibm.com/marketing/iwm/dre/signup?source=urx-20970){: new_window}.

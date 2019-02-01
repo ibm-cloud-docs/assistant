@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-30"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -49,7 +49,7 @@ All of the {{site.data.keyword.openwhisk_short}} action types (web_action and cl
 {: note}
 
 ## Procedure
-{: #call-action}
+{: #dialog-actions-call}
 
 To make a programmatic call from a dialog node, complete the following steps:
 
@@ -124,9 +124,9 @@ To make a programmatic call from a dialog node, complete the following steps:
 
       - **client**: Sends a message response with programmatic call information in a standardized format that your external client application understands. Your client application must use the provided information to run the programmatic call or function, and return the result to the dialog. The JSON object in the response body specifies the service or function to call, any associated parameters to pass with the call, and the format of the result to send back.
 
-      - **cloud_function**: Calls a {{site.data.keyword.openwhisk_short}} action (one or more) directly. You must define the action itself separately by using {{site.data.keyword.openwhisk}}. For more information, see [Creating an action](dialog-actions.html#create-action). (This type used to be named **server**. The **server** type continues to be supported.)
+      - **cloud_function**: Calls a {{site.data.keyword.openwhisk_short}} action (one or more) directly. You must define the action itself separately by using {{site.data.keyword.openwhisk}}. For more information, see [Creating an action](#create-action). (This type used to be named **server**. The **server** type continues to be supported.)
 
-      - **web_action**: Calls a {{site.data.keyword.openwhisk_short}} web action (one or more) directly. You must define the web action itself separately by using {{site.data.keyword.openwhisk}}. For more information,  see [Creating an action](dialog-actions.html#create-action).
+      - **web_action**: Calls a {{site.data.keyword.openwhisk_short}} web action (one or more) directly. You must define the web action itself separately by using {{site.data.keyword.openwhisk}}. For more information,  see [Creating an action](#create-action).
 
       Specifying the type is optional. The default value is `client`.
 
@@ -222,7 +222,7 @@ To make a programmatic call from a dialog node, complete the following steps:
       {: note}
 
 ## Creating an action
-{: #create-action}
+{: #dialog-actions-create}
 
 If you choose to define an action or web action type programmatic call, then before you can call it from a dialog, you must create it in {{site.data.keyword.openwhisk}}. If you are defining a client type programmatic call, then skip this procedure.
 
@@ -253,6 +253,7 @@ To create a {{site.data.keyword.openwhisk_short}} action, complete the following
     {: tip}
 
 ## Handling errors
+{: #dialog-actions-handle-errors
 
 If the {{site.data.keyword.openwhisk_short}} action encounters an error, the error message is returned to the dialog and is stored as a property of the response variable named `cloud_functions_call_error`. The error might occur if your {{site.data.keyword.openwhisk_short}} action cannot get a response from an external service, or if the Cloud Function action fails, for example. If the Cloud Function credentials are not provided or are incorrect, an error is returned. This context variable is used for server actions only; in your client application, consider creating a similar object that captures error information and returns it to the dialog as a context variable.
 
@@ -271,7 +272,7 @@ For a client type programmatic call, you can pass information about error proces
 {: codeblock}
 
 ## Client call example
-{: #action-client-example}
+{: #dialog-actions-client-example}
 
 The following example shows what a call to an external weather service might look like. It is added to the JSON editor that is associated with the node response. By the time the node-level response is triggered, slots have collected and stored the date and location information from the user. This example assumes that the service that will be called has an endpoint named `/weather`, and that it takes `location` and `date` parameters, and returns a JSON object, `{"forecast": "<value>"}`.
 
@@ -326,7 +327,7 @@ The following diagram illustrates how you can use a client call to get weather f
 ![Shows someone asking for a weather forecast, the dialog sending a request to a client app, which sends it to the external service](images/forecast.png)
 
 ## IBM Cloud Functions action call example
-{: #action-server-example}
+{: #dialog-actions-server-example}
 
 The following example shows what a call to a {{site.data.keyword.openwhisk_short}} action might look like. This example shows how to use the {{site.data.keyword.openwhisk_short}} `echo` action that is defined in the [Utilities package ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/openwhisk/openwhisk_actions.html#openwhisk_create_action_sequence){: new_window} provided with the service. The action takes a text string, and returns it.
 
@@ -367,6 +368,7 @@ The following diagram illustrates how to call a {{site.data.keyword.openwhisk_sh
 ![Shows someone entering text, and the dialog sending the request to the service, then returning the text to the dialog.](images/echo-via-cf.png)
 
 ### Echo action example
+{: #dialog-actions-echo-example}
 
 To see a dialog skill with a dialog that is already set up to call the {{site.data.keyword.openwhisk_short}} built-in Echo action, complete the following steps:
 
@@ -399,7 +401,7 @@ To see a dialog skill with a dialog that is already set up to call the {{site.da
     The service will use the {{site.data.keyword.openwhisk_short}} Echo action to repeat whatever you enter back to you.
 
 ## IBM Cloud Functions web action call example
-{: #web-action-server-example}
+{: #dialog-actions-web-action-example}
 
 The following example shows what a call to a web action might look like. This example shows how to pass a user name to a simple greeting service. The service returns a greeting that addresses the user by name.
 
@@ -490,7 +492,7 @@ The output of the web action, which is stored in the `context.greet_user` variab
 {: codeblock}
 
 ## Advanced IBM Cloud Functions action call example
-{: #advanced-action-server-example}
+{: #dialog-actions-advanced-example}
 
 You can call multiple actions from within a single dialog flow. In fact, you can call up to five actions within one `actions` JSON object in a single dialog node. However, any server type actions that are defined in an `actions` JSON array are all processed in parallel. Therefore, you cannot call one server type action and pass the result from it to a second server type action in the same `actions` block. The best way to call server actions in a specific order is to use a {{site.data.keyword.openwhisk_short}} sequence. At runtime, this approach is faster because the dialog only has to make one external call to complete multiple actions. To use a sequence, just reference the sequence name instead of an action name in the `actions` block definition. Alternatively, you can call the first server type action from one node and jump to a child node that calls the next server type action.
 

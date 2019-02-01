@@ -26,6 +26,7 @@ lastupdated: "2018-12-17"
 In some situations, you might need to define responses using the JSON editor. (For more information about dialog responses, see [Responses](dialog-overview.html#responses)). Editing the response JSON gives you direct access to the data that will be returned to the communication channel or custom application.
 
 ## Generic JSON format
+{: #dialog-responses-json-generic}
 
 The generic JSON format for responses is used to specify responses that are intended for any channel. This format can accommodate various response types that are supported by Slack and Facebook integrations, and can also be implemented by a custom client application. (This is the format that is used by default for dialog responses defined using the {{site.data.keyword.conversationshort}} tool.)
 
@@ -95,6 +96,7 @@ If you are using the {{site.data.keyword.conversationshort}} connector, the resp
 If you are building your own client application, your app must implement each response type as appropriate. For more information, see [Implementing responses](api-dialog-responses.html).
 
 ## Native JSON format
+{: #dialog-responses-json-native}
 
 In addition to the generic JSON format, the dialog node JSON also supports channel-specific responses written using the native Slack and Facebook Messenger formats. These formats are also supported by the {{site.data.keyword.conversationshort}} connector. You might want to use the native JSON formats if you know your workspace will only be integrated with one channel type, and you need to specify a response type that is not currently supported by the generic JSON format.
 
@@ -105,15 +107,17 @@ You can specify native JSON for Slack or Facebook using the appropriate field in
 - `output.facebook`: insert any JSON you want included in the `message.attachment.payload` field of the Facebook response. For more information about the Facebook JSON format, see the Facebook [documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developers.facebook.com/docs/messenger-platform/send-messages/templates){: new_window}.
 
 ## Response types
+{: #dialog-responses-json-response-types}
 
 The following response types are supported by the generic JSON format.
 
 ### Image
+{: #dialog-responses-json-image}
 
 Displays an image specified by a URL.
 
 #### Fields
-{: #image-fields}
+{: #{: #dialog-responses-json-image-fields}
 
 | Name          | Type   | Description                        | Required? |
 |---------------|--------|------------------------------------|-----------|
@@ -123,7 +127,7 @@ Displays an image specified by a URL.
 | description   | string | The text of the description that accompanies the image. | N |
 
 #### Example
-{: #image-example}
+{: #dialog-responses-json-image-example}
 
 This example displays an image with a title and descriptive text.
 
@@ -143,11 +147,12 @@ This example displays an image with a title and descriptive text.
 ```
 
 ### Option
+{: #dialog-responses-json-option}
 
 Displays a set of buttons or a drop-down list users can use to choose an option. The specified value is then sent to the workspace as user input.
 
 #### Fields
-{: #option-fields}
+{: #dialog-responses-json-option-fields}
 
 | Name          | Type   | Description                         | Required? |
 |---------------|--------|-------------------------------------|-----------|
@@ -162,7 +167,7 @@ Displays a set of buttons or a drop-down list users can use to choose an option.
 | options[].value.input.text | string | The text that will be sent to the service for the option. | N |
 
 #### Example
-{: #option-example}
+{: #dialog-responses-json-option-example}
 
 This example displays two options:
 
@@ -208,11 +213,12 @@ This example displays two options:
 ```
 
 ### Pause
+{: #dialog-responses-json-pause}
 
 Pauses before sending the next message to the channel, and optionally sends a "user is typing" event (for channels that support it).
 
 #### Fields
-{: #pause-fields}
+{: #dialog-responses-json-pause-fields}
 
 | Name          | Type   | Description        | Required? |
 |---------------|--------|--------------------|-----------|
@@ -221,7 +227,7 @@ Pauses before sending the next message to the channel, and optionally sends a "u
 | typing        | boolean | Whether to send the "user is typing" event during the pause. Ignored if the channel does not support this event. | N |
 
 #### Example
-{: #pause-example}
+{: #dialog-responses-json-pause-example}
 
 This examples sends the "user is typing" event while pausing for 5 seconds.
 
@@ -240,11 +246,12 @@ This examples sends the "user is typing" event while pausing for 5 seconds.
 ```
 
 ### Text
+{: #dialog-responses-json-text}
 
 Displays text. To add variety, you can specify multiple alternative text responses. If you specify multiple responses, you can choose to rotate sequentially through the list, choose a response randomly, or output all specified responses.
 
 #### Fields
-{: #text-fields}
+{: #dialog-responses-json-text-fields}
 
 | Name          | Type   | Description        | Required? |
 |---------------|--------|--------------------|-----------|
@@ -255,7 +262,7 @@ Displays text. To add variety, you can specify multiple alternative text respons
 | delimiter     | string | The delimiter to output as a separator between responses. Used only when `selection_policy`=`multiline`. The default delimiter is newline (`\n`). | N |
 
 #### Example
-{: #text-example}
+{: #dialog-responses-json-text-example}
 
 This examples displays a greeting message to the user.
 

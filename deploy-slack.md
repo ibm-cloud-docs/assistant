@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -43,7 +43,7 @@ If you want to follow along as someone else walks through the deployment steps, 
 Duration: 9.5 minutes
 
 ## Dialog considerations
-{: #slack-dialog}
+{: #deploy-slack-dialog}
 
 The rich responses that you add to a dialog are displayed in a Slack channel as expected, with the following exceptions:
 
@@ -62,6 +62,7 @@ The rich responses that you add to a dialog are displayed in a Slack channel as 
 See [Rich responses](dialog-overview.html#multimedia) for more information about response types.
 
 ## Chatting with the assistant
+{: #deploy-slack-try}
 
 To start a chat with the assistant, complete the following steps:
 

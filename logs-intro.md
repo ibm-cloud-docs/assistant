@@ -28,7 +28,7 @@ The Improve component of {{site.data.keyword.conversationshort}} provides a hist
 
 Use the tool to do the following things:
 
-- View metrics that provide insights into the quality of the conversations. See [Metrics overview](logs_oview.html) for more information.
+- View metrics that provide insights into the quality of the conversations. See [Metrics overview](logs-overview.html) for more information.
 - Review the individual user messages from a conversation transcript. You can directly edit your intents and entities based on what you learn as you review individual user messages. A single user conversation typically consists of multiple messages. See [Learn from conversations](logs.html) for more information.
 
 <!-- ### Querying data

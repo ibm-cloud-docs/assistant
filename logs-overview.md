@@ -38,6 +38,8 @@ To see metrics information, select **Overview** in the navigation bar.
   ![Overview page](images/oview.png)
 
 ## Controls
+{: #logs-overview-controls}
+
 You can use the following controls to filter the information:
 
 - *Intents* and *Entities* filters - Use either of these drop-down filters to show data for a specific intent or entity in your skill.
@@ -62,6 +64,8 @@ You can use the following controls to filter the information:
     ![Time period control](images/oview-time2.png)
 
 ## Graphs and statistics
+{: #logs-overview-graphs}
+
 Several statistical scorecards provide log data for your application:
 
 * *Total conversations* - The total number of conversations between active users and your application, during the selected time period, as shown in the corresponding graph.
@@ -91,6 +95,7 @@ Detailed graphs provide additional information:
   {: important}
 
 ## Top Intents and Top Entities
+{: #logs-overview-tops}
 
 You can also view the intents and entities that were recognized most often during the specified time period.
 

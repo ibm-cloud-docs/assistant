@@ -44,4 +44,4 @@ The dialog skill itself is defined in text, but you can integrate it with Watson
 |--------------------|:----------|
 | You can deploy the assistant through multiple interfaces, including existing messaging channels, such as Slack and Facebook Messenger, in just a few, easy-to-follow steps. You can give your users access to the assistant through a simple chat widget that you publish to a web site or add to an existing company web page. And if you want to design a custom application that incorporates it, you can make direct calls to the underlying APIs to do so. | ![Integration methods including Slack, Facebook Messenger, a web application or human agent integration](images/integrations.png) |
 
-See [Creating assistants](create-assistant.html) to get started.
+See [Creating assistants](assistant-add.html) to get started.

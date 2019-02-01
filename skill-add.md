@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-07"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -21,13 +21,13 @@ lastupdated: "2019-01-07"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Creating a skill
-{: #create-skill}
+{: #skill-add}
 
 The natural-language processing for the {{site.data.keyword.conversationshort}} service is defined in a *dialog skill*, which is a container for all of the artifacts that define a conversation flow.
 {: shortdesc}
 
 ## Skill limits
-{: #skill-limits}
+{: #skill-add-limits}
 
 The number of skills you can create in a single service instance depends on your {{site.data.keyword.conversationshort}} plan. Any sample dialog skills that are available in your service instance do not count toward your limit unless you edit or duplicate them.
 
@@ -42,7 +42,7 @@ The number of skills you can create in a single service instance depends on your
 *After 30 days of inactivity, an unused skill in a Lite plan service instance might be deleted to free up space.
 
 ## Creating a skill
-{: #create-a-skill}
+{: #skill-add-task}
 
 You can add one skill to an assistant.
 
@@ -81,7 +81,7 @@ You use the {{site.data.keyword.conversationshort}} tool to build skills. Follow
 
       Click **Import**.
 
-      If you have trouble importing a skill, see [Troubleshooting skill import issues](#import-errors).
+      If you have trouble importing a skill, see [Troubleshooting skill import issues](#skill-add-import-errors).
 
 1.  Specify the details for the skill:
 
@@ -94,10 +94,10 @@ After you create the skill, it appears as a tile on the Skills page. Now, you ca
 - To add prebuilt intents to your skill, see [Using content catalogs](catalog.html).
 - To define your own intents, see [Intents](intents.html).
 
-The dialog skill cannot interact with customers until it is added to an assistant and the assistant is deployed. See [Creating assistants](create-assistant.html).
+The dialog skill cannot interact with customers until it is added to an assistant and the assistant is deployed. See [Creating assistants](assistant-add.html).
 
 ### Troubleshooting skill import issues
-{: #import-errors}
+{: #skill-add-import-errors}
 
 If you receive a message that says the skill contains artifacts that exceed the limits imposed by your service plan, complete the following steps to import the skill successfully:
 
@@ -109,7 +109,7 @@ If you receive a message that says the skill contains artifacts that exceed the 
 1.  Try again to import the edited skill into the original service instance on the plan you want.
 
 ### Adding the skill to an assistant
-{: #add-dialog-to-assistant}
+{: #skill-add-to-assistant}
 
 You can add one skill to an assistant. You must open the assistant tile and add the skill to the assistant from the assistant configuration page; you cannot choose the assistant that will use the skill from within the skill configuration page. One dialog skill can be used by more than one assistant.
 
@@ -125,7 +125,7 @@ You can add one skill to an assistant. You must open the assistant tile and add 
     {: note}
 
 ## Downloading a dialog skill
-{: #download-skill}
+{: #skill-add-download}
 
 You can download a dialog skill in JSON format. You might want to download a skill if you want to use the same dialog skill in a different instance of the {{site.data.keyword.conversationshort}} service, for example. You can download it from one instance and import it to another instance as a new dialog skill.
 
@@ -140,7 +140,7 @@ To download a dialog skill, complete the following steps:
 You can export a skill by using the API also. Include the `export=true` parameter with the request. See the [API reference](https://cloud.ibm.com/apidocs/assistant#get-information-about-a-workspace) for more details.
 
 ## Deleting a skill
-{: #delete-skill}
+{: #skill-add-delete}
 
 You can delete any skill that you can access, unless it is being used by an assistant. If it is in use, you must remove it from the assistant that is using it before you can delete it.
 
@@ -162,7 +162,7 @@ To delete a skill, complete the following steps:
 1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Delete**. Confirm the deletion.
 
 ## Sharing a dialog skill with team members
-{: #invite-others}
+{: #skill-add-invite-others}
 
 After you create the service instance, you can give other people access to it. Together, you can define the training data and build the dialog.
 
@@ -193,4 +193,4 @@ To share a dialog skill with other people, you must give them access to the serv
 
 When the people you invite next log in to {{site.data.keyword.cloud_notm}}, your account will be included in their list of accounts. If they select your account, they can see your service instance, and open and edit your skills.
 
-With more people contributing to dialog skill development, unintended changes can occur, including skill deletions. Consider creating backup copies of your dialog skill on a regular basis, so you can roll back to an earlier version if necessary. To create a backup, simply [download the skill as a JSON file](#download-skill).
+With more people contributing to dialog skill development, unintended changes can occur, including skill deletions. Consider creating backup copies of your dialog skill on a regular basis, so you can roll back to an earlier version if necessary. To create a backup, simply [download the skill as a JSON file](#skill-add-download-skill).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -31,7 +31,7 @@ The assistant is implemented as a chat widget embedded in a simple IBM-branded w
 Unlike when you test using the "Try it out" pane in the tool, any API calls that result from your interactions with the assistant hosted by the Preview Link URL do incur charges.
 
 ## Using the Preview Link integration to test your assistant
-{: #use-provided-widget}
+{: #deploy-web-link-test}
 
 To test the assistant from a web-hosted chat widget, complete the following steps:
 
@@ -61,7 +61,7 @@ To test the assistant from a web-hosted chat widget, complete the following step
 1.  From the tool, click **Save Changes** to save any edits you made to the preview link integration and close the page, or click **X** to close the page without saving.
 
 ## Dialog considerations
-{: #weblink-dialog}
+{: #deploy-web-link-dialog}
 
 The rich responses that you add to a dialog are displayed in the web-hosted chat widget as expected, with the following exceptions:
 
@@ -72,7 +72,7 @@ The rich responses that you add to a dialog are displayed in the web-hosted chat
 See [Rich responses](dialog-overview.html#multimedia) for more information about response types.
 
 ## Adding a Preview Link integration
-{: #add-another-widget}
+{: #deploy-web-link-add-more}
 
 If you accidentally deleted the preview link integration that is created automatically for you or want to create another, separate public web page, you can add a preview link integration.
 

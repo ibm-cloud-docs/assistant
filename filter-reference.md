@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-07"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -21,16 +21,18 @@ lastupdated: "2019-01-07"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Filter query reference
+{: #filter-reference}
 
 The {{site.data.keyword.conversationshort}} service REST API offers powerful log search capabilities through filter queries. You can use the /logs API `filter` parameter to search your skill log for events that match a specified query.
 
 The `filter` parameter is a cacheable query that limits the results to those matching the specified filter. You can filter on any object that is part of the JSON response model (for example, the user input text, the detected intents and entities, or the confidence score).
 
-To see examples of various kinds of filter queries, see [Examples](#examples).
+To see examples of various kinds of filter queries, see [Examples](#filter-reference-examples).
 
 For more information about the /logs `GET` method and its response model, refer to the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant?curl=#list-log-events-in-a-workspace){: new_window}.
 
 ## Filter query syntax
+{: #filter-reference-syntax}
 
 The following example shows the general form of a filter query:
 
@@ -40,14 +42,14 @@ The following example shows the general form of a filter query:
 
 - The _location_ identifies the field that you want to filter on (in this example, `request.input.text`).
 - The _query operator_, which specifies the type of matching you want to use (fuzzy matching or exact matching).
-- The _term_ specifies the expression or value you want to use to evaluate the field for matching. The term can contain literal text and operators, as described in the [next section](#filter-operators).
+- The _term_ specifies the expression or value you want to use to evaluate the field for matching. The term can contain literal text and operators, as described in the [next section](#filter-reference-operators).
 
-Filtering by intent or entity requires slightly different syntax from filtering on other fields. For more information, see [Filtering by intent or entity](#intent_entity_filter).
+Filtering by intent or entity requires slightly different syntax from filtering on other fields. For more information, see [Filtering by intent or entity](#filter-reference-intent-entity).
 
 **Note:** The filter query syntax uses some characters that are not allowed in HTTP queries. Make sure that all special characters, including spaces and quotation marks, are URL encoded when sent as part of an HTTP query. For example, the filter `response_timestamp<2016-11-01` would be specified as `response_timestamp%3C2016-11-01`.
 
 ## Operators
-{: #filter-operators}
+{: #filter-reference-operators}
 
 You can use the following operators in your filter query.
 
@@ -67,7 +69,7 @@ You can use the following operators in your filter query.
 | `,` | Boolean _and_ operator. |
 
 ### Filtering by intent or entity
-{: #intent_entity_filter}
+{: #filter-reference-intent-entity}
 
 Because of differences in how intents and entities are stored internally, the syntax for filtering on a specific intent or entity is different from the syntax used for other fields in the returned JSON. To specify an `intent` or `entity` field within an `intents` or `entities` collection, you must use the `:` match operator instead of a dot.
 
@@ -90,10 +92,12 @@ Filtering on intents operates on all detected intents. To filter only on the det
 `response.top_intent::goodbye`
 
 ### Filtering by customer ID
+{: #filter-reference-customer-id}
 
 To filter by customer ID, use the special location `customer_id`. (For more information about labeling messages with a customer ID, see [Information security](/docs/services/conversation/information-security.html)).
 
 ### Filtering by other fields
+{: #filter-reference-fields}
 
 To filter on any other field in the log data, specify the location as a path identifying the levels of nested objects in the JSON response from the /logs API. Use dots (`.`) to specify successive levels of nesting in the JSON data. For example, the location `request.input.text` idenfities the user input text field as shown in the following JSON fragment:
 
@@ -107,7 +111,7 @@ To filter on any other field in the log data, specify the location as a path ide
 <!-- {data-copy=false} -->
 
 ## Examples
-{: #filter-examples}
+{: #filter-reference-examples}
 
 The following examples illustrate various types of queries using this syntax.
 

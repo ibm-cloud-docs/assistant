@@ -37,14 +37,14 @@ If you need to request GDPR support for {{site.data.keyword.cloud}} {{site.data.
 - Outside the European Union, see [Requesting support for resources outside the European Union![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/services/watson/getting-started-gdpr-sar.html#request-non-EU){: new_window}.
 
 ## European Union General Data Protection Regulation (GDPR)
-{: #gdpr}
+{: #information-security-gdpr}
 
 IBM is committed to providing our clients and partners with innovative data privacy, security and governance solutions to assist them on their journey to GDPR compliance.
 
 Learn more about IBM's own GDPR readiness journey and our GDPR capabilities and offerings to support your compliance journey [here ![External link icon](../../icons/launch-glyph.svg "External link icon")](../../icons/launch-glyph.svg "External link icon")](http://www.ibm.com/gdpr){: new_window}.
 
 ## Labeling and deleting data in {{site.data.keyword.conversationshort}}
-{: #gdpr-wa}
+{: #information-security-gdpr-wa}
 
 Do not add personal data to the training data (entities and intents, including user examples) that you create. In particular, be sure to remove any personally-identifiable information from files that contain real user utterances that you upload to mine for user example recommendations.
 
@@ -55,7 +55,7 @@ If you need to remove a customer's message data from a {{site.data.keyword.conve
 **Note:** The Preview Link and automatic Facebook integration features do not support the labeling and therefore deletion of data based on customer ID. These features should not be used in a solution that requires the ability to delete based on customer ID.
 
 ### Before you begin
-{: #delete-user-data-prereqs}
+{: #information-security-delete-user-data-prereqs}
 
 To be able to delete message data associated with a specific user, you must first associate all messages with a unique **customer ID** for each user. To specify the **customer ID** for any messages sent using the `/message` API, include the `X-Watson-Metadata: customer_id` property in your header. For example:
 
@@ -78,7 +78,7 @@ You can pass multiple **customer ID** values with semicolon-separated `customer_
 If you add a search skill to an assistant, user input that is submitted to the assistant is passed to the {{site.data.keyword.discoveryshort}} service as a search query. If the {{site.data.keyword.conversationshort}} integration provides a customer ID, then the resulting /message API request includes the customer ID in the header, and the ID is passed through to the {{site.data.keyword.discoveryshort}} /query API request. To delete any query data that is associated with a specific customer, you must send a delete request directly to the {{site.data.keyword.discoveryshort}} service instance that is linked your the assistant. See the {{site.data.keyword.discoveryshort}} [information security](https://cloud.ibm.com/docs/services/discovery/information-security.html#gdpr-discovery) topic for details.
 
 ### Querying user data
-{: #query_customer_id}
+{: #information-security-query-customer-id}
 
 Use the v1 `/logs` method `filter` parameter to search an application log for specific user data. For example, to search for data specific to a `customer_id` that matches `my_best_customer`, the query might be:
 
@@ -91,6 +91,8 @@ curl -X GET -u "apikey:3Df... ...Y7Pc9"
 See the [Filter query reference](filter-reference.html) for additional details.
 
 ### Deleting data
+{: #information-security-delete-data}
+
 To delete any message log data associated with a specific user that the service might have stored, use the `DELETE /user_data` v1 API method. Specify the customer ID of the user by passing a `customer_id` parameter with the request.
 
 Only data that was added by using the `POST /message` API endpoint with an associated customer ID can be deleted using this delete method. Data that was added by other methods cannot be deleted based on customer ID. For example, entities and intents that were added from customer conversations, cannot be deleted in this way. Personal Data is not supported for those methods.

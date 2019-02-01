@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-28"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -30,7 +30,7 @@ Learn how to approach building a dialog and get some tips on completing more com
 Review these tips from experienced dialog designers.
 
 ## Planning the overall dialog
-{: #tips-plan}
+{: #dialog-tips-plan}
 
 - Plan out the design of the dialog that you want to build before you add a single dialog node in the tool. Sketch it out on paper, if necessary.
 - Whenever possible, base your design decisions on data from real-world evidence and behaviors. Do not add nodes to handle a situation that someone *thinks* might occur.
@@ -41,7 +41,7 @@ Review these tips from experienced dialog designers.
 - Not everything has to be a conversation. Sometimes a web form works better.
 
 ## Adding nodes
-{: #tips-nodes}
+{: #dialog-tips-nodes}
 
 - Add a node name that describes the purpose of the node.
 
@@ -56,7 +56,7 @@ Review these tips from experienced dialog designers.
 - Before you enable digressions away from a node, test the most common user scenarios. And be sure that likely digressed-to nodes are configured to return. See [Digressions](dialog-runtime.html#digressions).
 
 ## Adding responses
-{: #tips-responses}
+{: #dialog-tips-responses}
 
 - Keep answers short and useful.
 - Reflect the user's intent in the response.
@@ -66,10 +66,10 @@ Review these tips from experienced dialog designers.
 - Avoid overusing buttons. Encouraging users to pick predefined options from a set of buttons is less like a real conversation, and decreases your ability to learn what users really want to do. When you let real users ask for things in their own words, you can use the input to train the system and derive better intents.
 - Avoid using a bunch of nodes when one node will do. For example, add multiple conditional responses to a single node to return different responses depending on details provided by the user. See [Conditional responses](dialog-overview.html#multiple).
 - Word your responses carefully. You can change how someone reacts to your system based simply on how you phrase a response. Changing one line of text can prevent you from having to write multiple lines of code to implement a complex programmatic solution.
-- Back up your skill frequently. See [Downloading a skill](create-skill.html#download-skill).
+- Back up your skill frequently. See [Downloading a skill](skill-add.html#download-skill).
 
 ## Tips for capturing information from user input
-{: #user-input-tips}
+{: #dialog-tips-user-input}
 
 It can be difficult to know the syntax to use in your dialog node to accurately capture the information you want to find in the user input. Here are some approaches you can use to address common goals.
 
@@ -92,7 +92,7 @@ It can be difficult to know the syntax to use in your dialog node to accurately 
   For example, when you use `@appliance == 'air conditioner'`, you are evaluating only the value of the first detected `@appliance` entity. But, using `@appliance:(air conditioner)` gets expanded to `entity['appliance'].contains('air conditioner')`, which matches whenever there is at least one `@appliance` entity of value 'air conditioner' detected in the user input.
 
 ## Condition usage tips
-{: #condition-usage-tips}
+{: #dialog-tips-condition-usage}
 
 - **Checking for values with special characters**: If you want to check whether an entity or context variable contains a value, and the value includes a special character, such as an apostrophe ('), then you must surround the value that you want to check with parentheses. For example, to check if an entity or context variable contains the name `O'Reilly`, you must surround the name with parentheses.
 
@@ -124,7 +124,7 @@ It can be difficult to know the syntax to use in your dialog node to accurately 
 - **How fuzzy matching impacts entity recognition**: If you use an entity as the condition and fuzzy matching is enabled, then `@entity_name` evaluates to true only if the confidence of the match is greater than 30%. That is, only if `@entity_name.confidence > .3`.
 
 ## Storing and recognizing entity pattern groups in input
-{: #get-pattern-groups}
+{: #dialog-tips-get-pattern-groups}
 
 To store the value of a pattern entity in a context variable, append .literal to the entity name. Using this syntax ensures that the exact span of text from user input that matched the specified pattern is stored in the variable.
 
@@ -208,7 +208,7 @@ If you expect two phone numbers to be supplied in the input, then you can check 
 If the input is `I want to change my phone number from 958-234-3456 to 555-456-5678`, then `$second_areacode` equals `555`.
 
 ## Viewing API call details
-{: #inspect-api}
+{: #dialog-tips-inspect-api}
 
 As you test your dialog with the "Try it out" pane, you might want to know what the underlying API calls look like that are being returned from the service. You can use the developer tools provided by your web browser to inspect them.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-11"
+lastupdated: "2019-01-31"
 
 ---
 
@@ -31,6 +31,7 @@ lastupdated: "2018-12-11"
 The following tables list the methods that are available using the {{site.data.keyword.conversationshort}} APIs.
 
 ## Runtime methods
+{: #api-methods-runtime}
 
 | Method | Description | API ver | Reference |
 |:-------|:------------|:-------:|:---------:|
@@ -40,6 +41,7 @@ The following tables list the methods that are available using the {{site.data.k
 | **Get response to user input** | Send user input to a workspace and receive a response. | v1 | [cURL](https://{DomainName}/apidocs/assistant#get-response-to-user-input){: new_window} [node](https://{DomainName}/apidocs/assistant?language=node#get-response-to-user-input){: new_window} [java](https://{DomainName}/apidocs/assistant?language=java#get-response-to-user-input){: new_window} [python](https://{DomainName}/apidocs/assistant?language=python#get-response-to-user-input){: new_window} |
 
 ## Authoring methods
+{: #api-methods-authoring}
 
 | Method | Description | API ver | Reference |
 |:-------|:------------|:-------:|:---------:|
