@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-02-04"
 
 ---
 
@@ -216,4 +216,4 @@ This tutorial is built around a simple example. For a real application, you need
 - Complete follow-on tutorials that build more advanced dialogs:
     - Add standard nodes with the [Building a complex dialog](/docs/services/assistant/tutorial.html) tutorial.
     - Learn about slots with the [Adding a node with slots](/docs/services/assistant/tutorial-slots.html) tutorial.
-- Check out more [sample apps](/docs/services/assistant/sample-applications.html) to get ideas.
+- Check out more [sample apps](/docs/services/assistant/sample-apps.html) to get ideas.
