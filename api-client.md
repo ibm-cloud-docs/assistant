@@ -744,7 +744,7 @@ Success! The application now uses the {{site.data.keyword.conversationshort}} se
 
 Of course, a real-world application would use a more sophisticated user interface, such as a web chat window. And it would implement more complex actions, possibly integrating with a customer database or other business systems. It would also need to send additional data to the assistant, such as a user ID to identify each unique user. But the basic principles of how the application interacts with the {{site.data.keyword.conversationshort}} service would remain the same.
 
-For some more complex examples, see [Sample apps](/docs/services/assistant/sample-applications.html).
+For some more complex examples, see [Sample apps](/docs/services/assistant/sample-apps.html).
 
 ## Accessing context
 {: #api-client-get-context}
