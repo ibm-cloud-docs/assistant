@@ -82,7 +82,7 @@ You get equivalent results for other supported languages and national currencies
 - If you use the @sys-currency entity as a node condition and the user specifies `$0` as the value, the value is recognized as a currency properly, but the condition is evaluated to the number zero, not the currency zero. As a result, it does not return the expected response. To check for currency values in a way that handles zeros properly, use the full SpEL expression syntax `entities['sys-currency']?.value` in the node condition instead.
 
 ## @sys-date and @sys-time entities
-{: #system-entities-sys-datetime}
+{: #system-entities-sys-date-time}
 
 The `@sys-date` system entity extracts mentions such as `Friday`, `today`, or `November 1`. The value of this entity stores the corresponding inferred date as a string in the format "yyyy-MM-dd" e.g. "2016-11-21". The system augments missing elements of a date (such as the year for "November 21") with the current date values.
 
@@ -123,7 +123,7 @@ Optionally, the REST API client can add the local timezone as the context variab
 When the `$timezone` variable is provided, the values of relative @sys-date and @sys-time mentions are computed based on the client time zone instead of UTC.
 
 #### Examples of mentions relative to time zones
-{: #system-entities-time-zone-examples
+{: #system-entities-time-zone-examples}
 
 - now
 - in two hours

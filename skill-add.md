@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-02-05"
 
 ---
 
@@ -48,9 +48,20 @@ You can add one skill to an assistant.
 
 You can create a skill from scratch, use a sample skill that is provided by IBM, or import a skill from a JSON file.
 
-If you have not done so, complete the prerequisite steps in the [getting started tutorial](getting-started.html#prerequisites) to create a {{site.data.keyword.conversationshort}} service instance and launch the tool.
+1.  If you have not created a {{site.data.keyword.conversationshort}} service instance, perform this one-time procedure first. Otherwise, skip this step.
 
-You use the {{site.data.keyword.conversationshort}} tool to build skills. Follow these steps to create a dialog skill:
+    1.  Go to the [{{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/watson-assistant) page in the {{site.data.keyword.cloud_notm}} catalog.
+
+    1.  Sign up for an {{site.data.keyword.cloud_notm}} account or log in.
+
+        The service instance will be created in the **default** resource group if you do not choose a different one, and it *cannot* be changed later. Learn more about [resource groups ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/docs/resources?topic=resources-bp_resourcegroups#bp_resourcegroups){: new_window}.
+
+        You can use one service instance to develop, test, and deploy an assistant, so do not give the resource group a name that represents a single deployment environment.
+        {:tip}
+
+    1.  Click **Create resource**.
+
+    1.  Click **Launch tool**. If you're prompted to log in to the tool, provide your {{site.data.keyword.cloud_notm}} credentials.
 
 1.  Click the **Skills** tab.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-05"
 
 ---
 
@@ -62,7 +62,7 @@ The following features are available only to users of Premium plans.
 
 - [Disambiguation](dialog-runtime.html#disambiguation)
 - [Intent conflict resolution](intents.html#conflict-intents)
-- [Intent user example recommendations](intents.html#intent-recommendations)
+- [Intent user example recommendations](/docs/services/assistant/intent-recommendations.html)
 
 ### User-based plans
 {: #services-information-user-based-plans}
