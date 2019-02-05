@@ -17,7 +17,11 @@ Watson Assistant
     {: .navgroup id="howto"}
     skill-add.md
     catalog.md
-    intents.md
+
+    {: .topicgroup}
+    Defining intents
+        intents.md
+        intent-recommendations.md
 
     {: .topicgroup}
     Building a dialog
