@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-25"
+lastupdated: "2019-02-06"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2019-01-25"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Defining entities
+# Creating entities
 {: #entities}
 
 ***Entities*** represent information in the user input that is relevant to the user's purpose.

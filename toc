@@ -19,12 +19,12 @@ Watson Assistant
     catalog.md
 
     {: .topicgroup}
-    Defining intents
+    Creating intents
         intents.md
         intent-recommendations.md
 
     {: .topicgroup}
-    Building a dialog
+    Creating a dialog
         dialog-overview.md
         dialog-runtime.md
         dialog-build.md
