@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-02-06"
 
 ---
 
@@ -21,7 +21,7 @@ lastupdated: "2019-01-31"
 {:swift: .ph data-hd-programlang='swift'}
 {:table: .aria-labeledby="caption"}
 
-# Creating a dialog
+# Building a dialog
 {: #dialog-build}
 
 Use the {{site.data.keyword.conversationshort}} tool to create your dialog.
