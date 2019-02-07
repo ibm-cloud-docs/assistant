@@ -27,6 +27,7 @@ You can process values extracted from user utterances that you want to reference
 {: shortdesc}
 
 ## Evaluation syntax
+{: #dialog-methods-evaluation-syntax}
 
 To expand variable values inside other variables, or apply methods to output text or context variables, use the `<? expression ?>` expression syntax. For example:
 
@@ -1045,6 +1046,7 @@ Example of a dialog node with `today()` used in the output field:
 Result: `Today's date is 2018-03-09.`
 
 ## Date and time calculations
+{: #dialog-methods-calculations}
 
 Use the following methods to calculate a date.
 
@@ -1466,7 +1468,7 @@ If you subsequently reference the $user context variable, it returns `{}` only.
 You can use the `clear()` method on the `context` or `output` JSON objects in the body of the API `/message` call.
 
 #### Clearing context
-{: #dialog-methods-clearing_context}
+{: #dialog-methods-clearing-context}
 
 When you use the `clear()` method to clear the `context` object, it clears **all** variables except these ones:
 
@@ -1502,7 +1504,7 @@ To use the method, you can specify it in an expression in a variable that you de
 ```
 
 #### Clearing output
-{: #dialog-methods-clearing_output}
+{: #dialog-methods-clearing-output}
 
 When you use the `clear()` method to clear the `output` object, it clears all variables except the one you use to clear the output object and any text responses that you define in the current node. It also does not clear these variables:
 
@@ -1612,7 +1614,7 @@ Result:
 In addition to the built-in methods, you can use standard methods of the `com.google.gson.JsonObject` class.
 
 ## Strings
-{: #strings}
+{: #dialog-methods-strings}
 
 There methods help you work with text.
 
@@ -2029,6 +2031,7 @@ To change the decimal placement for a number, use the following syntax:
 For example, if the $number variable that needs to be formatted in US dollars is `4.5`, then a response such as, `Your total is $<? T(String).format('%.2f',$number) ?>` returns `Your total is $4.50.`
 
 ## Indirect data type conversion
+{: #dialog-methods-indirect-type-conversion}
 
 When you include an expression within text, as part of a node response, for example, the value is rendered as a String. If you want the expression to be rendered in its original data type, then do not surround it with text.
 

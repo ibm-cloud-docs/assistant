@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-02-06"
 
 ---
 
@@ -54,12 +54,12 @@ You can create a skill from scratch, use a sample skill that is provided by IBM,
 
     1.  Sign up for an {{site.data.keyword.cloud_notm}} account or log in.
 
-        The service instance will be created in the **default** resource group if you do not choose a different one, and it *cannot* be changed later. Learn more about [resource groups ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/docs/resources?topic=resources-bp_resourcegroups#bp_resourcegroups){: new_window}.
+        The service instance will be created in the **default** resource group if you do not choose a different one, and it *cannot* be changed later. *Default* is typically sufficient. But, if you want to learn more about resource groups, see the [IBM Cloud documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/docs/resources?topic=resources-bp_resourcegroups#bp_resourcegroups){: new_window}.
 
-        You can use one service instance to develop, test, and deploy an assistant, so do not give the resource group a name that represents a single deployment environment.
+        You can use one service instance to develop, test, and deploy an assistant, so do not create distinct resource groups for different types of deployment environments.
         {:tip}
 
-    1.  Click **Create resource**.
+    1.  Click **Create**.
 
     1.  Click **Launch tool**. If you're prompted to log in to the tool, provide your {{site.data.keyword.cloud_notm}} credentials.
 

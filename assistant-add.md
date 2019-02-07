@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-02-06"
 
 ---
 
@@ -88,7 +88,7 @@ To delete an assistant, follow these steps:
 1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Delete**. Confirm the deletion.
 
 ## Renaming an assistant
-{: #assistant-add-rename-task}
+{: #assistant-add-rename}
 
 You can change the name of an assistant and its associated description after you create the assistant.
 

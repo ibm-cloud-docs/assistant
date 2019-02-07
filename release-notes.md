@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-02-06"
 ---
 
 {:shortdesc: .shortdesc}
@@ -23,7 +23,7 @@ lastupdated: "2019-01-31"
 {: #release-notes}
 
 ## Service API Versioning
-{: shortdesc}
+{: #release-notes-api-version}
 
 API requests require a version parameter that takes a date in the format `version=YYYY-MM-DD`. Whenever we change the API in a backwards-incompatible way, we release a new minor version of the API.
 

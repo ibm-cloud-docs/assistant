@@ -42,7 +42,7 @@ This 2 1/2 minute video describes how using versions can help you.
 ## Skill version limits
 {: #beta-versions-limits}
 
-A skill version does not count as a skill. The number of skill versions you can create in a single service instance depends on your {{site.data.keyword.conversationshort}} plan.
+The number of versions you can create for a skill depends on your {{site.data.keyword.conversationshort}} plan.
 
 | Service plan     | Skills per service instance |
 |------------------|----------------------------:|

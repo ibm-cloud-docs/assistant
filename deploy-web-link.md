@@ -31,7 +31,7 @@ The assistant is implemented as a chat widget embedded in a simple IBM-branded w
 Unlike when you test using the "Try it out" pane in the tool, any API calls that result from your interactions with the assistant hosted by the Preview Link URL do incur charges.
 
 ## Using the Preview Link integration to test your assistant
-{: #deploy-web-link-test}
+{: #deploy-web-link-try}
 
 To test the assistant from a web-hosted chat widget, complete the following steps:
 

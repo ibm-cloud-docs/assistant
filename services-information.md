@@ -60,8 +60,8 @@ If you want to upgrade from one plan to another, see [Upgrading](upgrade.html).
 
 The following features are available only to users of Premium plans.
 
-- [Disambiguation](dialog-runtime.html#disambiguation)
-- [Intent conflict resolution](intents.html#conflict-intents)
+- [Disambiguation](dialog-runtime.html#dialog-runtime-disambiguation)
+- [Intent conflict resolution](intents.html#intents-resolve-conflicts)
 - [Intent user example recommendations](/docs/services/assistant/intent-recommendations.html)
 
 ### User-based plans
