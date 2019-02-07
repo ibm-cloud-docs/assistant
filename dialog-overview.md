@@ -87,7 +87,7 @@ A node condition determines whether that node is used in the conversation. Respo
 - [Special conditions](#dialog-overview-special-conditions)
 - [Condition syntax details](#dialog-overview-condition-syntax)
 
-For tips on performing more advanced actions in conditions, see [Condition usage tips](dialog-tips.html#condition-usage-tips).
+For tips on performing more advanced actions in conditions, see [Condition usage tips](dialog-tips.html#dialog-tips-condition-usage-tips).
 
 ### Condition artifacts
 {: #dialog-overview-condition-artifacts}
@@ -103,7 +103,7 @@ You can use one or more of the following artifacts in any combination to define 
 
   For response conditions, this artifact type can be used alone. You can change the response based on a specific context variable value. For example, `$city:Boston` checks whether the `$city` context variable contains the value, `Boston`. If so, the response is returned.
   
-  For more information about context variables, see [Context variables](dialog-runtime.html#context).
+  For more information about context variables, see [Context variables](dialog-runtime.html#dialog-runtime-context).
 
 - **Entity**: The node is used when any value or synonym for the entity is recognized in the user input. Use the syntax, `@entity_name`. For example, `@city` checks whether any of the city names that are defined for the @city entity were detected in the user input. If so, the node or response is processed.
 
@@ -118,7 +118,7 @@ You can use one or more of the following artifacts in any combination to define 
   {: tip}
 
   If the entity is a pattern entity with capture groups, then you can check for a certain group value match. For example, you can use the syntax: `@us_phone.groups[1] == '617'`
-  See [Storing and recognizing pattern entity groups in input](dialog-tips.html#get-pattern-groups) for more information.
+  See [Storing and recognizing pattern entity groups in input](dialog-tips.html#dialog-tips-get-pattern-groups) for more information.
 
 - **Intent**: The simplest condition is a single intent. The node is used if, after the service's natural language processing evaluates the user's input, it determines that the purpose of the user's input maps to the pre-defined intent. Use the syntax, `#intent_name`. For example, `#weather` checks if the user input is asking for a weather forecast. If so, the node with the `#weather` intent condition is processed.
 
@@ -157,9 +157,9 @@ The dialog response defines how to reply to the user.
 
 You can reply in the following ways:
 
-- [Simple text response](#simple-text)
-- [Rich responses](#multimedia)
-- [Conditional responses](#multiple)
+- [Simple text response](#dialog-overview-simple-text)
+- [Rich responses](#dialog-overview-multimedia)
+- [Conditional responses](#dialog-overview-multiple)
 
 ### Simple text response
 {: #dialog-overview-simple-text}

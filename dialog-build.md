@@ -28,7 +28,7 @@ Use the {{site.data.keyword.conversationshort}} tool to create your dialog.
 {: shortdesc}
 
 ## Dialog node limits
-{: #dialog-node-limits}
+{: #dialog-build-node-limits}
 
 The number of dialog nodes you can create per skill depends on your service plan.
 

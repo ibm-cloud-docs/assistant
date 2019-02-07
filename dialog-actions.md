@@ -253,7 +253,7 @@ To create a {{site.data.keyword.openwhisk_short}} action, complete the following
     {: tip}
 
 ## Handling errors
-{: #dialog-actions-handle-errors
+{: #dialog-actions-handle-errors}
 
 If the {{site.data.keyword.openwhisk_short}} action encounters an error, the error message is returned to the dialog and is stored as a property of the response variable named `cloud_functions_call_error`. The error might occur if your {{site.data.keyword.openwhisk_short}} action cannot get a response from an external service, or if the Cloud Function action fails, for example. If the Cloud Function credentials are not provided or are incorrect, an error is returned. This context variable is used for server actions only; in your client application, consider creating a similar object that captures error information and returns it to the dialog as a context variable.
 

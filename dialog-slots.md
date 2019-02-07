@@ -29,7 +29,7 @@ Add slots to a dialog node to gather multiple pieces of information from a user 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Adding slots to a node" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/kMLyKfmO9wI?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 ## Why add slots?
-{: #dialog-slots-why-add-slots}
+{: #dialog-slots-why}
 
 Use slots to get the information you need before you can respond accurately to the user. For example, if users ask about operating hours, but the hours differ by store location, you could ask a follow-up question about which store location they plan to visit before you answer. You can then add response conditions that take the provided location information into account.
 
@@ -379,7 +379,7 @@ In logic that is unique to the slots feature, when two entities are recognized i
 {: tip}
 
 ### Adding conditions to Found and Not found responses
-{: #slot-handler-next-steps}
+{: #dialog-slots-handler-next-steps}
 
 For each slot, you can use conditional responses with associated actions to help you extract the information you need from the user. To do so, follow these steps:
 
@@ -570,6 +570,7 @@ In the JSON editor for the Found condition, reset the value of the $animal conte
 {: codeblock}
 
 ## Slots examples
+{: #dialog-slots-examples}
 
 To access JSON files that implement different common slot usage scenarios, go to the community [conversation repo ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/community/tree/master/watson-assistant){: new_window} in GitHub.
 
