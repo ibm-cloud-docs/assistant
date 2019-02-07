@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-06"
+lastupdated: "2019-02-07"
 
 ---
 
@@ -65,29 +65,6 @@ When you define a contextual entity, a model is trained on both the *annotated t
     When a contextual entity model is used for an entity, the service does *not* look for exact text or pattern matches for the entity in the user input, but focuses instead on the context of the sentence in which the entity is mentioned.
 
     If you choose to define entity values by using annotations, add at least 10 annotations per entity to give the contextual entity model enough data to be reliable.
-
-## Entity limits
-{: #entities-limits}
-
-The number of entities, entity values, and synonyms that you can create depends on your {{site.data.keyword.conversationshort}} service plan:
-
-| Service plan      | Entities per skill | Entity values per skill | Entity synonyms per skill |
-|-------------------|-------------------:|------------------------:|--------------------------:|
-| Premium           |               1000 |                 100,000 |                   100,000 |
-| Plus              |               1000 |                 100,000 |                   100,000 |
-| Standard          |               1000 |                 100,000 |                   100,000 |
-| Lite              |                 25 |                 100,000 |                   100,000 |
-{: caption="Service plan details" caption-side="top"}
-
-System entities that you enable for use count toward your plan usage totals.
-
-| Service plan | Contextual entities and annotations |
-|--------------|------------------------------------:|
-| Premium      |        30 contextual entities with 3000 annotations |
-| Plus         |        20 contextual entities with 2000 annotations |
-| Standard     |        20 contextual entities with 2000 annotations |
-| Lite         |        10 contextual entities with 1000 annotations |
-{: caption="Service plan details continued" caption-side="top"}
 
 ## Creating entities
 {: #entities-creating-task}
@@ -394,6 +371,29 @@ System entities are centrally maintained, so any updates are available automatic
 1.  Click the toggle switch next to a system entity to enable or disable it.
 
 After you enable system entities, the {{site.data.keyword.conversationshort}} service begins retraining. After training is complete, you can use the entities.
+
+## Entity limits
+{: #entities-limits}
+
+The number of entities, entity values, and synonyms that you can create depends on your {{site.data.keyword.conversationshort}} service plan:
+
+| Service plan      | Entities per skill | Entity values per skill | Entity synonyms per skill |
+|-------------------|-------------------:|------------------------:|--------------------------:|
+| Premium           |               1000 |                 100,000 |                   100,000 |
+| Plus              |               1000 |                 100,000 |                   100,000 |
+| Standard          |               1000 |                 100,000 |                   100,000 |
+| Lite              |                 25 |                 100,000 |                   100,000 |
+{: caption="Service plan details" caption-side="top"}
+
+System entities that you enable for use count toward your plan usage totals.
+
+| Service plan | Contextual entities and annotations |
+|--------------|------------------------------------:|
+| Premium      |        30 contextual entities with 3000 annotations |
+| Plus         |        20 contextual entities with 2000 annotations |
+| Standard     |        20 contextual entities with 2000 annotations |
+| Lite         |        10 contextual entities with 1000 annotations |
+{: caption="Service plan details continued" caption-side="top"}
 
 ## Editing entities
 {: #entities-edit}

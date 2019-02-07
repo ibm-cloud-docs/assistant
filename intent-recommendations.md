@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-02-07"
 
 ---
 
@@ -92,6 +92,8 @@ The files you upload do not need to associate the examples with intents. You sim
       `+ - = && || > < ! ( ) { } [ ] ^ " ~ * ? : \ /`
 
       If you want to include one in a search term without it being processed as an operator, you must prefix it with a backslash (`\`).
+
+The user examples that you add in this way do count toward your intent user example totals for which there are limits per plan. See [Intent limits](/docs/services/assistant/intents.html#intents-limits) for more details.
 
 ## Managing uploaded files
 {: #intent-recommendations-manage-files}

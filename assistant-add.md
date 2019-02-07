@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-06"
+lastupdated: "2019-02-07"
 
 ---
 
@@ -25,23 +25,6 @@ lastupdated: "2019-02-06"
 
 Create an assistant with the skills it needs to address the business goals of your customers.
 {: shortdesc}
-
-## Assistant limits
-{: #assistant-add-limits}
-
-The number of assistants you can create in a single service instance depends on your {{site.data.keyword.conversationshort}} plan.
-
-| Service plan | Assistants per service instance | Integrations per assistant  | Chat session inactivity period |
-|--------------|--------------------------------:|----------------------------:|-----------------:|
-| Premium      |                             100 |                         100 |       60 minutes |
-| Plus         |                             100 |                         100 |       60 minutes |
-| Standard     |                             100 |                         100 |        5 minutes |
-| Lite*        |                             100 |                         100 |        5 minutes |
-{: caption="Service plan details" caption-side="top"}
-
-*After 30 days of inactivity, an unused assistant in a Lite plan service instance might be deleted to free up space.
-
-You can connect one skill to your assistant. The number of skills you can build differs depending on the plan you have. See [Skill limits](skill-add.html#skill-limits) for more details.
 
 ## Create an assistant
 {: #assistant-add-task}
@@ -75,6 +58,23 @@ Follow these steps to create an assistant:
     {: note}
 
     See [Creating a skill](skill-add.html) for more information about how to create a skill.
+
+## Assistant limits
+{: #assistant-add-limits}
+
+The number of assistants you can create in a single service instance depends on your {{site.data.keyword.conversationshort}} plan.
+
+| Service plan | Assistants per service instance | Integrations per assistant  | Chat session inactivity period |
+|--------------|--------------------------------:|----------------------------:|-----------------:|
+| Premium      |                             100 |                         100 |       60 minutes |
+| Plus         |                             100 |                         100 |       60 minutes |
+| Standard     |                             100 |                         100 |        5 minutes |
+| Lite*        |                             100 |                         100 |        5 minutes |
+{: caption="Service plan details" caption-side="top"}
+
+*After 30 days of inactivity, an unused assistant in a Lite plan service instance might be deleted to free up space.
+
+You can connect one skill to your assistant. The number of skills you can build differs depending on the plan you have. See [Skill limits](skill-add.html#skill-limits) for more details.
 
 ## Deleting an assistant
 {: #assistant-add-delete}
