@@ -26,19 +26,6 @@ lastupdated: "2019-01-31"
 To deploy your skill, add it to an assistant, and then add integrations to the assistant that publish your bot to the channels where your customers go for help.
 {: shortdesc}
 
-## Integration limits
-{: #deploy-integration-add-limits}
-
-The number of integrations you can create in a single service instance depends on your {{site.data.keyword.conversationshort}} plan.
-
-| Service plan     | Integrations per assistant |
-|------------------|---------------------------:|
-| Premium          |                        100 |
-| Plus             |                        100 |
-| Standard         |                        100 |
-| Lite             |                        100 |
-{: caption="Service plan details" caption-side="top"}
-
 ## Add an integration
 {: #deploy-integration-add-task}
 
@@ -72,3 +59,16 @@ Follow these steps to add integrations to your assistant:
 After you integrate the assistant, test it from the target channel to ensure that the assistant works as expected.
 
 For tips on how to start the dialog in a consistent way across all integration types, see [Starting the dialog](dialog-start.html).
+
+## Integration limits
+{: #deploy-integration-add-limits}
+
+The number of integrations you can create in a single service instance depends on your {{site.data.keyword.conversationshort}} plan.
+
+| Service plan     | Integrations per assistant |
+|------------------|---------------------------:|
+| Premium          |                        100 |
+| Plus             |                        100 |
+| Standard         |                        100 |
+| Lite             |                        100 |
+{: caption="Service plan details" caption-side="top"}

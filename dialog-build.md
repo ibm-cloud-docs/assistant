@@ -27,42 +27,6 @@ lastupdated: "2019-02-06"
 Use the {{site.data.keyword.conversationshort}} tool to create your dialog.
 {: shortdesc}
 
-## Dialog node limits
-{: #dialog-build-node-limits}
-
-The number of dialog nodes you can create per skill depends on your service plan.
-
-| Service plan     | Dialog nodes per skill     |
-|------------------|---------------------------:|
-| Premium          |                    100,000 |
-| Plus             |                    100,000 |
-| Standard         |                    100,000 |
-| Lite             |                     100`*` |
-{: caption="Service plan details" caption-side="top"}
-
-The welcome and anything_else dialog nodes that are prepopulated in the tree do count toward the total.
-
-Tree depth limit: The service supports 2,000 dialog node descendants; the tool performs best with 20 or fewer.
-
-`*` The limits changed from 25,000 to 100 for Lite plans on 1 December 2018. Users of service instances that were created before the limit changed have until 1 June 2019 to upgrade their plan, or edit the dialogs in the skills in the existing service instances to meet the new limit requirements.
-
-To see the number of dialog nodes in a dialog skill, do one of the following things:
-
-- From the tool, if it is not associated with an assistant already, add the dialog skill to an assistant, and then view the skill tile from the main page of the assistant. The *trained data* section lists the number of dialog nodes.
-- Send a GET request to the /dialog_nodes API endpoint, and include the `include_count=true` parameter. For example:
-
-  ```curl
-  curl -u "apikey:{apikey}" "https://gateway.watsonplatform.net/assistant/api/v1/workspaces/{workspace_id}/dialog_nodes?version=2018-09-20&include_count=true"
-  ```
-
-  In the response, the `total` attribute in the `pagination` object contains the number of dialog nodes.
-
-If the total seems larger than you expected, it might be because the dialog that you build in the tool is translated into a JSON object by the tool. Some fields that appear to be part of a single node are actually structured as separate dialog nodes in the underlying JSON object.
-
-  - Each node and folder is represented as its own node.
-  - Each conditional response that is associated with a single dialog node is represented as an individual node.
-  - For a node with slots, each slot, slot found response, slot not found response, slot handler, and if set, the "prompt for everything" response is an individual node. In effect, one node with three slots might be equivalent to eleven dialog nodes.
-
 ## Building a dialog
 {: #dialog-build-task}
 
@@ -196,6 +160,42 @@ If the correct intents and entities are being recognized, but the wrong nodes ar
 See [Dialog building tips](dialog-tips.html) for tips that might help you as you get started.
 
 If you are ready to put the conversation to work helping your users, integrate your assistant with a messaging platform or custom application. See [Adding integrations](deploy-integration-add.html).
+
+## Dialog node limits
+{: #dialog-build-node-limits}
+
+The number of dialog nodes you can create per skill depends on your service plan.
+
+| Service plan     | Dialog nodes per skill     |
+|------------------|---------------------------:|
+| Premium          |                    100,000 |
+| Plus             |                    100,000 |
+| Standard         |                    100,000 |
+| Lite             |                     100`*` |
+{: caption="Service plan details" caption-side="top"}
+
+The welcome and anything_else dialog nodes that are prepopulated in the tree do count toward the total.
+
+Tree depth limit: The service supports 2,000 dialog node descendants; the tool performs best with 20 or fewer.
+
+`*` The limits changed from 25,000 to 100 for Lite plans on 1 December 2018. Users of service instances that were created before the limit changed have until 1 June 2019 to upgrade their plan, or edit the dialogs in the skills in the existing service instances to meet the new limit requirements.
+
+To see the number of dialog nodes in a dialog skill, do one of the following things:
+
+- From the tool, if it is not associated with an assistant already, add the dialog skill to an assistant, and then view the skill tile from the main page of the assistant. The *trained data* section lists the number of dialog nodes.
+- Send a GET request to the /dialog_nodes API endpoint, and include the `include_count=true` parameter. For example:
+
+  ```curl
+  curl -u "apikey:{apikey}" "https://gateway.watsonplatform.net/assistant/api/v1/workspaces/{workspace_id}/dialog_nodes?version=2018-09-20&include_count=true"
+  ```
+
+  In the response, the `total` attribute in the `pagination` object contains the number of dialog nodes.
+
+If the total seems larger than you expected, it might be because the dialog that you build in the tool is translated into a JSON object by the tool. Some fields that appear to be part of a single node are actually structured as separate dialog nodes in the underlying JSON object.
+
+  - Each node and folder is represented as its own node.
+  - Each conditional response that is associated with a single dialog node is represented as an individual node.
+  - For a node with slots, each slot, slot found response, slot not found response, slot handler, and if set, the "prompt for everything" response is an individual node. In effect, one node with three slots might be equivalent to eleven dialog nodes.
 
 ## Searching your dialog
 {: #dialog-build-search}

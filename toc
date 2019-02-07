@@ -54,6 +54,7 @@ Watson Assistant
         logs.md
         logs-resources.md
 
+    dev-process.md
     migrate.md
     backup.md
     upgrade.md

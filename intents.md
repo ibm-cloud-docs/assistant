@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-02-07"
 
 ---
 
@@ -44,19 +44,6 @@ lastupdated: "2019-02-05"
   The examples you provide are used by the service to build a machine learning model that can recognize the same and similar types of utterances and map them to the appropriate intent.
 
 Start with a few intents, and test them as you iteratively expand the scope of the application.
-
-## Intent limits
-{: #intents-limits}
-
-The number of intents and examples you can create depends on your {{site.data.keyword.conversationshort}} service plan:
-
-| Service plan     | Intents per skill | Examples per skill |
-|------------------|------------------:|-------------------:|
-| Premium          |             2,000 |             25,000 |
-| Plus             |             2,000 |             25,000 |
-| Standard         |             2,000 |             25,000 |
-| Lite             |               100 |             25,000 |
-{: caption="Service plan details" caption-side="top"}
 
 ## Creating intents
 {: #intents-create-task}
@@ -208,6 +195,19 @@ If your intents are not being correctly recognized, consider making the followin
 The {{site.data.keyword.conversationshort}} service scores each intent’s confidence independently, not in relation to other intents. This approach adds flexibility; multiple intents can be detected in a single user input. It also means the system might not return an intent at all. If the top intent has a low confidence score (less than 0.2), the top intent is included in the intents array that is returned by the API, but any nodes that condition on the intent are not triggered. If you want to detect the case when no intents with good confidence scores were detected, use the `irrelevant` special condition in your dialog node. See [Special conditions](dialog-overview.html#special-conditions) for more information.
 
 As intent confidence scores change, your dialogs might need restructuring. For example, if a dialog node uses an intent in its condition, and the intent's confidence score starts to consistently drop below 0.2, the dialog node stops being processed. If the confidence score changes, the behavior of the dialog can also change.
+
+## Intent limits
+{: #intents-limits}
+
+The number of intents and examples you can create depends on your {{site.data.keyword.conversationshort}} service plan:
+
+| Service plan     | Intents per skill | Examples per skill |
+|------------------|------------------:|-------------------:|
+| Premium          |             2,000 |             25,000 |
+| Plus             |             2,000 |             25,000 |
+| Standard         |             2,000 |             25,000 |
+| Lite             |               100 |             25,000 |
+{: caption="Service plan details" caption-side="top"}
 
 ## Editing intents
 {: #intents-edit}
