@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-01"
+lastupdated: "2019-02-08"
 
 ---
 
@@ -58,7 +58,7 @@ The first table shows the level of support for all features, except those relate
 | Language | **[Absolute scoring and 'Mark as irrelevant'](intents.html#mark-irrelevant)** | **[Content Catalog](catalog.html)** | **[User example recommendations](intents.html#intent-recommendations)** |
 |:---:|:---:|:---:|:---:|
 | **English (en)**                   | GA | GA | Beta |
-| **Arabic (ar)**                    | Beta | NA | NA |
+| **Arabic (ar)**                    | Beta | GA | NA |
 | **Chinese (Simplified) (zh-cn)**   | GA | NA | NA |
 | **Chinese (Traditional) (zh-tw)**  | Beta | NA | NA |
 | **Czech (cs)**                     | GA | NA | NA |
