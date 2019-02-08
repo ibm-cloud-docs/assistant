@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-02-07"
 
 ---
 
@@ -115,7 +115,6 @@ The [Watson Assistant Continuous Improvement Best Practices Guide ![External lin
 If you choose to use the notebooks that are designed for use with {{site.data.keyword.DSX}}, at a high level, the steps are:
 
 1.  Create a {{site.data.keyword.DSX}} account, [create a project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://dataplatform.cloud.ibm.com/docs/content/getting-started/projects.html?context=analytics){:new_window}, and add a Cloud Object Storage account to it.
-1.  Give Object Storage access to your service instance logs from conversations that users have had with your assistant (by providing the workspace id and credentials).
 1.  From the {{site.data.keyword.DSX}} community, get the [Measure Watson Assistant Performance notebook ![External link icon](../../icons/launch-glyph.svg "External link icon")]( https://dataplatform.cloud.ibm.com/exchange/public/entry/view/133dfc4cd1480bbe4eaa78d3f635e568).
 1   Follow the step-by-step instructions provided with the notebook to analyze a subset of the dialog exchanges from the logs.
 
@@ -132,5 +131,5 @@ This process helps you to understand the steps you can take to improve your assi
 
 If you choose to use standard Python tools to run the notebooks, you can get the notebooks from the [IBM GitHub repository](https://github.com/watson-developer-cloud/assistant-improve-recommendations-notebook/tree/master/notebook). Be sure to run them in the following order:
 
-1.  Measure Notebook.jpynb
-1.  Effectiveness Notebook.jpynb
+1.  Measure Notebook.ipynb
+1.  Effectiveness Notebook.ipynb

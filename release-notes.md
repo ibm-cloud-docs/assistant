@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-06"
+lastupdated: "2019-02-08"
 ---
 
 {:shortdesc: .shortdesc}
@@ -51,6 +51,15 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #release-notes-change-log}
 
 The following new features and changes to the service are available.
+
+### 8 February 2019
+{: #8February2019}
+
+<!--- **Integrate with Intercom**: Intercom, a leading customer service messaging platform, has partnered with IBM to add a new agent to the team, a virtual Watson Assistant. You can integrate your assistant with an Intercom application to enable the app to seamlessly pass user conversations between your assistant and human support agents. See [Integrating with Intercom](/docs/services/assistant/deploy-intercom.html) for more details.
+-->
+- **Version your skills**: You can now capture a snapshot of the the intents, entities, dialog, and configuration settings for a skill at key points during the development process. With versions, it's safe to get creative. You can deploy new design approaches in a test environment to validate them before you apply any updates to a production deployment of your assistant. See [Creating skill versions](/docs/services/assistant/versions.html) for more details.
+
+- **Arabic content catalog**: Users of Arabic-language skills can now add prebuilt intents to their dialogs. See [Using content catalogs](/docs/services/assistant/catalog.html) for more information.
 
 ### 17 January 2019
 {: #17January2019}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-02-07"
 
 ---
 
@@ -45,9 +45,11 @@ Want to stay informed about new features that will be added to the product? Want
 
 To request participation in the beta program, you must first create a new {{site.data.keyword.conversationshort}} service instance that you will dedicate to beta evaluation purposes only. *Do not add an existing instance that you are using to do any real work to the beta program.*
 
-1.  Create a free (Lite plan) {{site.data.keyword.conversationshort}} service resource from the [{{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/watson-assistant) page in the {{site.data.keyword.cloud_notm}} catalog.
+1.  Create a {{site.data.keyword.conversationshort}} service  resource from the [{{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/watson-assistant) page in the {{site.data.keyword.cloud_notm}} catalog.
 
-    The service instance will be created in the **default** resource group, which is sufficient for the purposes of the beta.
+    The service instance can be part of a free (Lite) or Standard plan, and must be deployed to the **Dallas** location.
+
+    Unless you change it, the service instance will be created in the **default** resource group, which is sufficient for the purposes of the beta.
 
 1.  After the instance is created, click **Launch tool** to open the {{site.data.keyword.conversationshort}} tool.
 1.  Click the **Skills** tab.
