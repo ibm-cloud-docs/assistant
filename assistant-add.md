@@ -20,7 +20,7 @@ lastupdated: "2019-02-08"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Creating assistants
+# Creating an assistant
 {: #assistant-add}
 
 Create an assistant with the skills it needs to address the business goals of your customers.
