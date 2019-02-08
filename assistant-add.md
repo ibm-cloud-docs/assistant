@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-07"
+lastupdated: "2019-02-08"
 
 ---
 
@@ -53,6 +53,8 @@ Follow these steps to create an assistant:
 1.  Click **Create**.
 
 1.  Add a skill to the assistant by clicking **Add skill**. You can choose to add an existing skill or create a new one.
+
+    When you add a skill from here, you get the development version. If you want to add a specific skill version, add it from the skill's *Version History* tab instead.
 
     If you created or were given developer role access to any workspaces that were built with the generally available version of the {{site.data.keyword.conversationshort}} service (formerly Watson Conversation), you will see them listed as existing dialog skills.
     {: note}
@@ -107,7 +109,7 @@ You can add one skill to an assistant. If you want to change the skill that your
 
 1.  From the Assistants tab, click to open the tile for the assistant for which you want to change the skill.
 
-1.  Click the ![open and close list of options](images/kabob-beta.png) icon on the skill tile, and then choose **Swap**.
+1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Swap skill**. To swap the current skill for a different version of the skill, choose **Change skill version**.
 
 1.  Choose an existing skill to use instead or [create a skill](skill-add.html).
 

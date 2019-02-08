@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-07"
+lastupdated: "2019-02-08"
 
 ---
 
@@ -25,6 +25,8 @@ lastupdated: "2019-02-07"
 
 Use the {{site.data.keyword.conversationshort}} tool to leverage AI as you build, deploy, and incrementally improve a converational assistant.
 {: shortdesc}
+
+![Shows the flow of development steps starting with developing training data and ending with deploying to production](images/dev-process.png)
 
 ## Workflow
 {: #dev-process-workflow}
@@ -50,7 +52,7 @@ The typical workflow for an assistant project includes the following steps:
 
 1.  After you build an effective assistant, take a snapshot of the dialog skill and save it as a version.
 
-    Saving a version when you reach a development milestone gives you something you can go back to if subsequent changes you make to the skill decrease its effectiveness. <!--See [Creating skill versions](/docs/services/assistant/versions.html).-->
+    Saving a version when you reach a development milestone gives you something you can go back to if subsequent changes you make to the skill decrease its effectiveness. See [Creating skill versions](/docs/services/assistant/versions.html).
 1.  Deploy the version of the assistant into a test environment, and test it.
 
     If you use the web-hosted chat widget, you can share the URL with others to get their help with testing.

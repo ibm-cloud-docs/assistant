@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-22"
+lastupdated: "2019-02-08"
 
 ---
 
@@ -46,12 +46,9 @@ Still have questions? Contact [IBM Sales ![External link icon](../../icons/launc
 ## Upgrading a dialog skill
 {: #upgrade-skill}
 
-The {{site.data.keyword.conversationshort}} service regularly adds and updates features. While some of these changes are automatically applied to your dialog skills, updates that have a large impact do require a manual update.
+The {{site.data.keyword.conversationshort}} service regularly adds and updates features. While some of these changes are automatically applied to your dialog skills, updates that have a large impact do require a manual update to the machine learning model that is used by your skill.
 
 An upgrade is only available for your dialog skill if the upgrade icon (![upgrade icon](images/upgrade.png)) is displayed.
-
-After you upgrade a dialog skill, you cannot revert your skill to a previous version.
-{: note}
 
 To upgrade your dialog skill, complete the following steps:
 

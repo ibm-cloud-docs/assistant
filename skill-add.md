@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-06"
+lastupdated: "2019-02-08"
 
 ---
 
@@ -25,21 +25,6 @@ lastupdated: "2019-02-06"
 
 The natural-language processing for the {{site.data.keyword.conversationshort}} service is defined in a *dialog skill*, which is a container for all of the artifacts that define a conversation flow.
 {: shortdesc}
-
-## Skill limits
-{: #skill-add-limits}
-
-The number of skills you can create in a single service instance depends on your {{site.data.keyword.conversationshort}} plan. Any sample dialog skills that are available in your service instance do not count toward your limit unless you edit or duplicate them.
-
-| Service plan     | Skills per service instance |
-|------------------|----------------------------:|
-| Premium          |                          50 |
-| Plus             |                          50 |
-| Standard         |                          20 |
-| Lite*            |                           5 |
-{: caption="Service plan details" caption-side="top"}
-
-*After 30 days of inactivity, an unused skill in a Lite plan service instance might be deleted to free up space.
 
 ## Creating a skill
 {: #skill-add-task}
@@ -132,8 +117,22 @@ You can add one skill to an assistant. You must open the assistant tile and add 
 
     Click the skill that you want to add from the available skills that are displayed.
 
-    If you are adding an existing dialog skill and created or were given developer role access to any workspaces that were built with the generally available version of the {{site.data.keyword.conversationshort}} service (formerly Watson Conversation), you will see them listed here as dialog skills.
-    {: note}
+    When you add a skill from here, you get the development version. If you want to add a specific skill version, add it from the skill's *Version History* tab instead.
+
+## Skill limits
+{: #skill-add-limits}
+
+The number of skills you can create in a single service instance depends on your {{site.data.keyword.conversationshort}} plan. Any sample dialog skills that are available in your service instance do not count toward your limit unless you edit or duplicate them.
+
+| Service plan     | Skills per service instance |
+|------------------|----------------------------:|
+| Premium          |                          50 |
+| Plus             |                          50 |
+| Standard         |                          20 |
+| Lite*            |                           5 |
+{: caption="Service plan details" caption-side="top"}
+
+*After 30 days of inactivity, an unused skill in a Lite plan service instance might be deleted to free up space.
 
 ## Downloading a dialog skill
 {: #skill-add-download}
