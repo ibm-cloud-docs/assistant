@@ -69,12 +69,12 @@ Keep track of when this version is deployed to an assistant and for how long. It
 
 The number of versions you can create for a single skill depends on your {{site.data.keyword.conversationshort}} plan.
 
-| Service plan     | Skills per service instance |
-|------------------|----------------------------:|
-| Premium          |                          50 |
-| Plus             |                          10 |
-| Standard         |                          10 |
-| Lite             |                           0 |
+| Service plan     | Versions per skill |
+|------------------|-------------------:|
+| Premium          |                 50 |
+| Plus             |                 10 |
+| Standard         |                 10 |
+| Lite             |                  0 |
 {: caption="Service plan details" caption-side="top"}
 
 ## Swapping skills
