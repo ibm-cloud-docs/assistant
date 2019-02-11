@@ -34,7 +34,7 @@ You can use the {{site.data.keyword.conversationshort}} REST APIs, and the corre
 
   The {{site.data.keyword.conversationshort}} v2 API provides access to methods you can use to interact with an assistant at run time (such as `/message`). This is the preferred API to use for developing new client applications. For details about the v2 API, see the {{site.data.keyword.conversationshort}} [v2 API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant-v2){: new_window}.
 
-  The {{site.data.keyword.conversationshort}} v1 API includes a `/message` method that sends user input directly to the workspace used by a dialog skill, bypassing the assistant. The v1 runtime API is supported primarily for backward compatibility purposes. If you use the v1 `/message` method, your app cannot take advantage of the orchestration and state-management capabilities of an assistant. For more information, see [Using the v1 runtime API](api-client.html#v1-api).
+  The {{site.data.keyword.conversationshort}} v1 API includes a `/message` method that sends user input directly to the workspace used by a dialog skill, bypassing the assistant. The v1 runtime API is supported primarily for backward compatibility purposes. If you use the v1 `/message` method, your app cannot take advantage of the orchestration and state-management capabilities of an assistant. For more information, see [Using the v1 runtime API](/docs/services/assistant/api-client.html#v1-api).
 
 - **Authoring methods**: Methods that enable an application to create or modify dialog skills, as an alternative to building a skill graphically using the {{site.data.keyword.conversationshort}} tool. An authoring application uses various methods to create and modify skills, intents, entities, dialog nodes, and other artifacts that make up a dialog skill.
 
@@ -42,4 +42,4 @@ You can use the {{site.data.keyword.conversationshort}} REST APIs, and the corre
 
   **Note:** The v1 authoring methods interact with workspaces rather than skills. A workspace is a container for the dialog and training data (such as intents and entities) within a dialog skill. For most purposes, when using the API you can think of workspaces and dialog skills as interchangeable; for example, if you create a new workspace using the API, it will appear as a new dialog skill in the {{site.data.keyword.conversationshort}} tool.
 
-For a list of the available API methods, see [API methods summary](api-methods.html).
+For a list of the available API methods, see [API methods summary](/docs/services/assistant/api-methods.html).

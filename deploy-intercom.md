@@ -29,7 +29,7 @@ Intercom is a customer service messaging platform that evaluates user support in
 Intercom has partnered with IBM to add a new agent to the team, a virtual Watson Assistant. You can integrate your assistant with an Intercom application to enable the app to seamlessly pass user conversations between your assistant and human support agents.
 
 ![Beta](images/beta.png)  This integration is a beta feature that is available only to Plus or Premium plan users.
-{: tip}
+{: note}
 
 If you integrate the assistant with Intercom, the Intercom application becomes the client application for your skill. All interactions with users are initiated through and managed by Intercom.
 
@@ -219,4 +219,4 @@ Some rich responses that you add to a dialog are displayed differently within th
 | **Image**     | The image **title**, **description**, and the image itself are rendered. |
 | **Pause**     | Whether or not you enable it, a typing indicator is not displayed during the pause. |
 
-See [Rich responses](/docs/services/assistant/dialog-overview.html#multimedia) for more information about response types.
+See [Rich responses](/docs/services/assistant/dialog-overview.html#dialog-overview-multimedia) for more information about response types.

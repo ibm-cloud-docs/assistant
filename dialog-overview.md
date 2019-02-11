@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-02-11"
 
 ---
 
@@ -42,8 +42,8 @@ Each dialog node contains, at a minimum, a condition and a response.
 
 ![Shows user input going to a box that contains the statement If: CONDITION, Then: RESPONSE](images/node1-empty.png)
 
-- Condition: Specifies the information that must be present in the user input for this node in the dialog to be triggered. The information is typically a specific intent. It might also be an entity type, an entity value, or a context variable value. See [Conditions](#conditions) for more information.
-- Response: The utterance that the service uses to respond to the user. The response can also be configured to show an image or a list of options, or to trigger programmatic actions. See [Responses](#responses) for more information.
+- Condition: Specifies the information that must be present in the user input for this node in the dialog to be triggered. The information is typically a specific intent. It might also be an entity type, an entity value, or a context variable value. See [Conditions](#dialog-overview-conditions) for more information.
+- Response: The utterance that the service uses to respond to the user. The response can also be configured to show an image or a list of options, or to trigger programmatic actions. See [Responses](#dialog-overview-responses) for more information.
 
 You can think of the node as having an if/then construction: if this condition is true, then return this response.
 
@@ -76,7 +76,7 @@ You can disrupt the standard first-to-last flow in the following ways:
 
 - By customizing what happens after a node is processed. For example, you can configure a node to jump directly to another node after it is processed, even if the other node is positioned earlier in the tree. See [Defining what to do next](#dialog-overview-jump-to) for more information.
 - By configuring conditional responses to jump to other nodes. See [Conditional responses](#dialog-overview-multiple) for more information.
-- By configuring digression settings for dialog nodes. Digressions can also impact how users move through the nodes at run time. If you enable digressions away from most nodes and configure returns, users can jump from one node to another and back again more easily. See [Digressions](dialog-runtime.html#digressions) for more information.
+- By configuring digression settings for dialog nodes. Digressions can also impact how users move through the nodes at run time. If you enable digressions away from most nodes and configure returns, users can jump from one node to another and back again more easily. See [Digressions](/docs/services/assistant/dialog-runtime.html#dialog-runtime-digressions) for more information.
 
 ## Conditions
 {: #dialog-overview-conditions}
@@ -87,7 +87,7 @@ A node condition determines whether that node is used in the conversation. Respo
 - [Special conditions](#dialog-overview-special-conditions)
 - [Condition syntax details](#dialog-overview-condition-syntax)
 
-For tips on performing more advanced actions in conditions, see [Condition usage tips](dialog-tips.html#dialog-tips-condition-usage-tips).
+For tips on performing more advanced actions in conditions, see [Condition usage tips](/docs/services/assistant/dialog-tips.html#dialog-tips-condition-usage-tips).
 
 ### Condition artifacts
 {: #dialog-overview-condition-artifacts}
@@ -103,14 +103,14 @@ You can use one or more of the following artifacts in any combination to define 
 
   For response conditions, this artifact type can be used alone. You can change the response based on a specific context variable value. For example, `$city:Boston` checks whether the `$city` context variable contains the value, `Boston`. If so, the response is returned.
   
-  For more information about context variables, see [Context variables](dialog-runtime.html#dialog-runtime-context).
+  For more information about context variables, see [Context variables](/docs/services/assistant/dialog-runtime.html#dialog-runtime-context).
 
 - **Entity**: The node is used when any value or synonym for the entity is recognized in the user input. Use the syntax, `@entity_name`. For example, `@city` checks whether any of the city names that are defined for the @city entity were detected in the user input. If so, the node or response is processed.
 
   Consider creating a peer node to handle the case where none of the entity's values or synonyms are recognized.
   {: tip}
 
-  For more information about entities, see [Defining entities](entities.html).
+  For more information about entities, see [Defining entities](/docs/services/assistant/entities.html).
 
 - **Entity value**: The node is used if the entity value is detected in the user input. Use the syntax, `@entity_name:value` and specify a defined value for the entity, not a synonym. For example: `@city:Boston` checks whether the specific city name, `Boston`, was detected in the user input.
 
@@ -118,11 +118,11 @@ You can use one or more of the following artifacts in any combination to define 
   {: tip}
 
   If the entity is a pattern entity with capture groups, then you can check for a certain group value match. For example, you can use the syntax: `@us_phone.groups[1] == '617'`
-  See [Storing and recognizing pattern entity groups in input](dialog-tips.html#dialog-tips-get-pattern-groups) for more information.
+  See [Storing and recognizing pattern entity groups in input](/docs/services/assistant/dialog-tips.html#dialog-tips-get-pattern-groups) for more information.
 
 - **Intent**: The simplest condition is a single intent. The node is used if, after the service's natural language processing evaluates the user's input, it determines that the purpose of the user's input maps to the pre-defined intent. Use the syntax, `#intent_name`. For example, `#weather` checks if the user input is asking for a weather forecast. If so, the node with the `#weather` intent condition is processed.
 
-  For more information about intents, see [Defining intents](intents.html).
+  For more information about intents, see [Defining intents](/docs/services/assistant/intents.html).
 
 - **Special condition**: Conditions that are provided with the service that you can use to perform common dialog functions. See the **Special conditions** table in the next section for details.
 
@@ -144,11 +144,11 @@ You can use one or more of the following artifacts in any combination to define 
 
 Use one of these syntax options to create valid expressions in conditions:
 
-- Shorthand notations to refer to intents, entities, and context variables. See [Accessing and evaluating objects](expression-language.html).
+- Shorthand notations to refer to intents, entities, and context variables. See [Accessing and evaluating objects](/docs/services/assistant/expression-language.html).
 
 - Spring Expression (SpEL) language, which is an expression language that supports querying and manipulating an object graph at run time. See [Spring Expression Language (SpEL) language ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/expressions.html){: new_window} for more information.
 
-You can use regular expressions to check for values to condition against.  To find a matching string, for example, you can use the `String.find` method. See  [Methods](dialog-methods.html) for more details.
+You can use regular expressions to check for values to condition against.  To find a matching string, for example, you can use the `String.find` method. See  [Methods](/docs/services/assistant/dialog-methods.html) for more details.
 
 ## Responses
 {: #dialog-overview-responses}
@@ -168,7 +168,7 @@ If you want to provide a text response, simply enter the text that you want the 
 
 ![Shows a node that shows a user ask, Where are you located, and the dialog response is, We have no brick and mortar stores! But, with an internet connection, you can shop us from anywhere.](images/response-simple.png)
 
-To include a context variable value in the response, use the syntax `$variable_name` to specify it. See [Context variables](dialog-runtime.html#context) for more information. For example, if you know that the $user context variable is set to the current user's name before a node is processed, then you can refer to it in the text response of the node like this:
+To include a context variable value in the response, use the syntax `$variable_name` to specify it. See [Context variables](/docs/services/assistant/dialog-runtime.html#dialog-runtime-context) for more information. For example, if you know that the $user context variable is set to the current user's name before a node is processed, then you can refer to it in the text response of the node like this:
 
 ```
 Hello $user
@@ -440,7 +440,7 @@ A single dialog node can provide different responses, each one triggered by a di
 
 The node still has a main condition, which is the condition for using the node and processing the conditions and responses that it contains.
 
-In this example, the service uses information that it collected earlier about the user's location to tailor its response, and provide information about the store nearest the user. See [Context variables](dialog-runtime.html#context) for more information about how to store information collected from the user.
+In this example, the service uses information that it collected earlier about the user's location to tailor its response, and provide information about the store nearest the user. See [Context variables](/docs/services/assistant/dialog-runtime.html#dialog-runtime-context) for more information about how to store information collected from the user.
 
 ![Shows a node that shows a user ask, Where are you located, and the dialog has three different responses depending on conditions that use info from the $state context variable to specify locations in those states.](images/multiple-responses.png)
 
@@ -507,4 +507,4 @@ If you choose to jump to another node, specify when the target node is processed
 
 For information about the expression language used by dialog, plus methods, system entities, and other useful details, see the **Reference** section in the navigation pane.
 
-You can also use the API to add nodes or otherwise edit a dialog. See [Modifying a dialog using the API](api-dialog-modify.html) for more information.
+You can also use the API to add nodes or otherwise edit a dialog. See [Modifying a dialog using the API](/docs/services/assistant/api-dialog-modify.html) for more information.

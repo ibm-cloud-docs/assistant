@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-01"
+lastupdated: "2019-02-11"
 
 ---
 
@@ -24,7 +24,7 @@ lastupdated: "2019-02-01"
 # Correcting user input
 {: #beta-spell-check}
 
-This feature is available for use by participants in the beta program only. To find out how to request access, see [Particpate in the beta program](feedback.html#feedback-beta).
+This feature is available for use by participants in the beta program only. To find out how to request access, see [Particpate in the beta program](/docs/services/assistant/feedback.html#feedback-beta).
 
 ![Beta](images/beta.png) IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment. 
 
@@ -49,32 +49,13 @@ To enable the spell check feature, complete the following steps:
 1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose  **Settings**.
 1.  From the *Spell Check* settings page, turn on **Spell check auto-correction**.
 
-## Testing spelling correction
+### Testing spelling correction
 {: #beta-spell-check-test}
 
-Use the "Try it out" pane to see how misspelled words in utterances that you submit are corrected.
+1.  From the "Try it out" pane, submit an utterance that includes some misspelled words.
 
-Normally, user input is saved as-is in the `text` field of the `input` object of the message. If, and only if the user input is corrected in some way, a new field is created in the `input` object, called `original_text`. This field stores the user's original input that includes any misspelled words in it. And the corrected text is added to the `input.text` field.
-
-To test spell check behavior for certain inputs, follow these steps:
-
-1.  Add a dialog node for testing purposes.
-1.  In the dialog node condition, add an intent that you can easily trigger, such as the `#General_Greetings` intent from the **General** content catalog.
-1.  Enable conditional responses for the node.
-1.  In the first conditional response, add the condition `original_text`, and then specify an expression like this as the response:
-
-    `You said: <? input.original_text ?>. You meant: <? input.text ?>.`
-
-    By conditioning on `original_text`, you indicate that you want this response to be displayed only if a spell correction has occurred, since the field does not exist if no change is made to the input.
-1.  In the second conditional response, specify just this response:
-
-    `You said: <? input.text ?>.`
-
-    Again, the `input.text` expression returns the user's text *after* it is corrected. The `input.original_text` field is created only if the input is corrected. The user's misspelled input is stored in it.
-
-1.  In the "Try it out" pane, enter text that starts with `Hello` or some other greeting, followed by some misspelled words.
-
-    The response should include your original text and the corrected text.
+    If words in your input are misspelled, they are corrected automatically, and an ![auto-correct](images/auto-correct.png) icon is displayed. The corrected utterance is underlined.
+1.  Hover over the underlined utterance to see the original wording.
 
 If there are misspelled terms that you expected the service to correct, but it did not, then review the rules that the service uses to decide whether to correct a word to see if the word falls into the category of words that the service intentionally does not change.
 
@@ -91,9 +72,14 @@ To avoid overcorrection, the service does not correct the spelling of the follow
 
 If the word that is not corrected is not obviously one of these types of input, then it might be worth checking whether the entity has fuzzy matching enabled for it.
 
-### How is spelling correction related to fuzzy matching?
+#### How is spelling correction related to fuzzy matching?
 {: #beta-spell-check-vs-fuzzy-matching}
 
 Fuzzy matching helps the service recognize dictionary-based entity mentions in user input. It uses a dictionary lookup approach to match a word from the user input to an existing entity value or synonym in the skill's training data. For example, if the user enters `books`, and your training data contains the entity synonym `book`, fuzzy matching recognizes that these two terms mean the same thing.
 
 When you enable both spell check and fuzzy matching, the fuzzy matching function runs before spell check is triggered. If it finds a term that it can match to an existing dictionary entity value or synonym, it adds the term to the list of words that *belong* to the skill, and therefore are not to be corrected. Likewise, if a user enters a sentence like `I want to buy a boook`, fuzzy matching recognizes that the term `boook` means the same thing as your entity synonym `book`, and adds it to the protected words list. As a result, the service does *not* correct the spelling of `boook`.
+
+#### How it works
+{: #beta-spell-check-how-it-works}
+
+Normally, user input is saved as-is in the `text` field of the `input` object of the message. If, and only if the user input is corrected in some way, a new field is created in the `input` object, called `original_text`. This field stores the user's original input that includes any misspelled words in it. And the corrected text is added to the `input.text` field.

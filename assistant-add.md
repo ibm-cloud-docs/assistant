@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-08"
+lastupdated: "2019-02-11"
 
 ---
 
@@ -59,7 +59,7 @@ Follow these steps to create an assistant:
     If you created or were given developer role access to any workspaces that were built with the generally available version of the {{site.data.keyword.conversationshort}} service (formerly Watson Conversation), you will see them listed as existing dialog skills.
     {: note}
 
-    See [Creating a skill](skill-add.html) for more information about how to create a skill.
+    See [Creating a skill](/docs/services/assistant/skill-add.html) for more information about how to create a skill.
 
 ## Assistant limits
 {: #assistant-add-limits}
@@ -76,7 +76,7 @@ The number of assistants you can create in a single service instance depends on 
 
 *After 30 days of inactivity, an unused assistant in a Lite plan service instance might be deleted to free up space.
 
-You can connect one skill to your assistant. The number of skills you can build differs depending on the plan you have. See [Skill limits](skill-add.html#skill-limits) for more details.
+You can connect one skill to your assistant. The number of skills you can build differs depending on the plan you have. See [Skill limits](/docs/services/assistant/skill-add.html#skill-add-limits) for more details.
 
 ## Deleting an assistant
 {: #assistant-add-delete}
@@ -111,7 +111,7 @@ You can add one skill to an assistant. If you want to change the skill that your
 
 1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Swap skill**. To swap the current skill for a different version of the skill, choose **Change skill version**.
 
-1.  Choose an existing skill to use instead or [create a skill](skill-add.html).
+1.  Choose an existing skill to use instead or [create a skill](/docs/services/assistant/skill-add.html).
 
 ### Switching between service instances
 {: #assistant-add-switch-instance}

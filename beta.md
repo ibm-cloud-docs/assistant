@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-01"
+lastupdated: "2019-02-11"
 ---
 
 {:shortdesc: .shortdesc}
@@ -27,22 +27,14 @@ lastupdated: "2019-02-01"
 ## Available beta features
 {: #beta-features}
 
-The following features are available for use by participants in the beta program only. To find out how to request access, see [Particpate in the beta program](feedback.html#feedback-beta).
-
-- You can now save multiple versions of a dialog skill.
-
-  To take a snapshot of the current training data and dialog, click **Save new version**. See [Creating skill versions](beta-versions.html) for more details.
+The following features are available for use by participants in the beta program only. To find out how to request access, see [Particpate in the beta program](/docs/services/assistant/feedback.html#feedback-beta).
 
 - How you work with search skills has changed. You can now add one search skill and one dialog skill to the same assistant. When you add both, the search is triggered if the user input cannot be addressed by any of the nodes in the dialog of the dialog skill. You can learn more from the following topics:
-  - [Search skill](beta-skill-search-add.html)
-  - [Dialog skill](beta-skill-dialog-add.html)
-
-  When this feature is released, it will be available to Plus or Premium plan users only.
-
-- [Intercom integration](beta-deploy-intercom.html)
+  - [Search skill](/docs/services/assistant/beta-skill-search-add.html)
+  - [Dialog skill](/docs/services/assistant/beta-skill-dialog-add.html)
 
   When this feature is released, it will be available to Plus or Premium plan users only.
 
 - The user interface of the Dialog builder has been updated to use the React JavaScript library. Dialog functions are now provided in encapsulated components that manage their own state, which results in a more responsive user experience.
 
-- You can configure a skill to correct misspellings in user input. See [Correcting user input](beta-spell-check.html) for more details.
+- You can configure a skill to correct misspellings in user input. See [Correcting user input](/docs/services/assistant/beta-spell-check.html) for more details.

@@ -315,7 +315,7 @@ The following new features and changes to the service are available.
 
   When you use any of the Watson SDKs, you can pass the API key and let the SDK manage the lifecycle of the tokens. For more information and examples, see [Authentication ![External link icon](../../icons/launch-glyph.svg "External link icon")]https://{DomainName}/apidocs/assistant-v2#authentication){: new_window} in the API reference.
 
-  If you are not sure which type of authentication to use, view the service credentials by clicking the service instance on the [Dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/dashboard/apps?category=ai){: new_window}.
+  If you are not sure which type of authentication to use, view the service credentials by clicking the service instance on the [Dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/dashboard/apps?category=ai){: new_window}.
 
 ### 25 May 2018
 {: #25May2018}

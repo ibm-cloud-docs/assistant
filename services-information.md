@@ -90,7 +90,7 @@ The authentication mechanism used by your service instance impacts how you must 
 
 1.  Get the service credentials.
 
-    - Click the service instance on the [Dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/dashboard/apps?category=ai){: new_window}.
+    - Click the service instance on the [Dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/dashboard/apps?category=ai){: new_window}.
 
     - Click to open your service instance, click **Service credentials**, and then click **View credentials**.
 

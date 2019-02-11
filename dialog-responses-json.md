@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-17"
+lastupdated: "2019-02-11"
 
 ---
 
@@ -23,14 +23,14 @@ lastupdated: "2018-12-17"
 # Defining responses using the JSON editor
 {: #dialog-responses-json}
 
-In some situations, you might need to define responses using the JSON editor. (For more information about dialog responses, see [Responses](dialog-overview.html#responses)). Editing the response JSON gives you direct access to the data that will be returned to the communication channel or custom application.
+In some situations, you might need to define responses using the JSON editor. (For more information about dialog responses, see [Responses](/docs/services/assistant/dialog-overview.html#dialog-overview-responses)). Editing the response JSON gives you direct access to the data that will be returned to the communication channel or custom application.
 
 ## Generic JSON format
 {: #dialog-responses-json-generic}
 
 The generic JSON format for responses is used to specify responses that are intended for any channel. This format can accommodate various response types that are supported by Slack and Facebook integrations, and can also be implemented by a custom client application. (This is the format that is used by default for dialog responses defined using the {{site.data.keyword.conversationshort}} tool.)
 
-For information about how to open the JSON editor for a dialog node response from the tool, see [Context variables in the JSON editor](dialog-runtime.html#context-var-json).
+For information about how to open the JSON editor for a dialog node response from the tool, see [Context variables in the JSON editor](/docs/services/assistant/dialog-runtime.html#dialog-runtime-context-var-json).
 
 To specify an interactive response in the generic JSON format, insert the appropriate JSON objects into the `output.generic` field of the dialog node response. The following example shows how you might send a response containing multiple response types (text, an image, and clickable options):
 
@@ -87,13 +87,13 @@ To specify an interactive response in the generic JSON format, insert the approp
 }
 ```
 
-For more information about how to specify each supported response type using JSON objects, see [Response types](#response-types).
+For more information about how to specify each supported response type using JSON objects, see [Response types](#dialog-responses-json-response-types).
 
 If you are using the {{site.data.keyword.conversationshort}} connector, the response is converted at run time into the format expected by the channel (Slack or Facebook Messenger). If the response contains multiple media types or attachments, the generic response is converted into a series of separate message payloads as needed. The connector then sends each message payload to the channel in a separate message.
 
 **Note:** When a response is split into multiple messages, the {{site.data.keyword.conversationshort}} connector sends these messages to the channel in sequence. It is the responsibility of the channel to deliver these messages to the end user; this can be affected by network or server issues.
 
-If you are building your own client application, your app must implement each response type as appropriate. For more information, see [Implementing responses](api-dialog-responses.html).
+If you are building your own client application, your app must implement each response type as appropriate. For more information, see [Implementing responses](/docs/services/assistant/api-dialog-responses.html).
 
 ## Native JSON format
 {: #dialog-responses-json-native}

@@ -43,12 +43,12 @@ Follow these steps to add integrations to your assistant:
 
 1.  Click the tile for the channel with which you want to integrate the assistant. The options include:
 
-    - [Custom application](deploy-custom-app.html)
-    - [Facebook Messenger](deploy-facebook.html)
-    - [Intercom](deploy-intercom.html) ![Beta](images/beta.png) 
-    - [Preview Link](deploy-web-link.html)
-    - [Slack](deploy-slack.html)
-    - [Voice Agent (Telephony)  ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/catalog/services/voice-agent-with-watson){: new_window}
+    - [Custom application](/docs/services/assistant/deploy-custom-app.html)
+    - [Facebook Messenger](/docs/services/assistant/deploy-facebook.html)
+    - [Intercom](/docs/services/assistant/deploy-intercom.html) ![Beta](images/beta.png) 
+    - [Preview Link](/docs/services/assistant/deploy-web-link.html)
+    - [Slack](/docs/services/assistant/deploy-slack.html)
+    - [Voice Agent (Telephony)  ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/voice-agent-with-watson){: new_window}
 
       Opens the **Voice Agent with Watson** service overview page on {{site.data.keyword.cloud_notm}}.
     - [WordPress plug-in ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://wordpress.org/plugins/conversation-watson/){: new_window}
@@ -59,7 +59,7 @@ Follow these steps to add integrations to your assistant:
 
 After you integrate the assistant, test it from the target channel to ensure that the assistant works as expected.
 
-For tips on how to start the dialog in a consistent way across all integration types, see [Starting the dialog](dialog-start.html).
+For tips on how to start the dialog in a consistent way across all integration types, see [Starting the dialog](/docs/services/assistant/dialog-start.html).
 
 ## Integration limits
 {: #deploy-integration-add-limits}

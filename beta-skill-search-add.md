@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-30"
+lastupdated: "2019-02-11"
 
 ---
 
@@ -26,13 +26,13 @@ lastupdated: "2019-01-30"
 An assistant uses a *search skill* to route complex customer inquiries to the {{site.data.keyword.discoveryfull}} service. {{site.data.keyword.discoveryshort}} treats the user input as a search query. It finds information that is relevant to the query from an external data source and returns it to the assistant.
 {: shortdesc}
 
-This feature is available for use by participants in the beta program only. To find out how to request access, see [Particpate in the beta program](feedback.html#feedback-beta).
+This feature is available for use by participants in the beta program only. To find out how to request access, see [Particpate in the beta program](/docs/services/assistant/feedback.html#feedback-beta).
 
-![Beta](images/beta.png) IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment. 
+![Beta](images/beta.png) IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment.
 
 You can add one search skill to an assistant. See [Skill limits](/docs/services/assistant/skill-add.html#skill-add-limits) for information about limits per plan.
 
-The search skill searches for information from a data collection that you create by using the {{site.data.keyword.discoveryshort}} service. {{site.data.keyword.discoveryshort}} is a service that crawls, converts, and normalizes your unstructured data. The service applies data analysis and cognitive intuition to enrich your data such that you can more easily find and retrieve meaningful information from it later. To read more about {{site.data.keyword.discoveryshort}}, see the [product documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/services/discovery/aboutlhtml).
+The search skill searches for information from a data collection that you create by using the {{site.data.keyword.discoveryshort}} service. {{site.data.keyword.discoveryshort}} is a service that crawls, converts, and normalizes your unstructured data. The service applies data analysis and cognitive intuition to enrich your data such that you can more easily find and retrieve meaningful information from it later. To read more about {{site.data.keyword.discoveryshort}}, see the [product documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/services/discovery/index.html).
 
 The {{site.data.keyword.discoveryfull}} service is triggered in the following ways:
 
@@ -81,9 +81,9 @@ The remaining steps differ depending on whether you have access to an existing {
 
       You can click the *Open in Discovery* link to review the configuration of a data collection before you decide which one to use.
 
-      Go to [Configure the search](#search-skill-configure).
+      Go to [Configure the search](#beta-search-skill-add-configure).
 
-    - If you do not have a collection or do not want to use any of the data collections that are listed, click **Create a new collection** to add one. Follow the procedure in [Create a data collection](#search-skill-create-discovery-collection).
+    - If you do not have a collection or do not want to use any of the data collections that are listed, click **Create a new collection** to add one. Follow the procedure in [Create a data collection](#beta-search-skill-add-create-discovery-collection).
 
       The **Create a new collection** button is not displayed if you have reached the limit to the number of collections you are allowed to create based on your {{site.data.keyword.discoveryshort}} service plan. See [{{site.data.keyword.discoveryshort}} pricing plans ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/services/discovery/discovery-pricing-plans.html) for plan limit details.
 
@@ -94,7 +94,7 @@ The remaining steps differ depending on whether you have access to an existing {
 
     An instance of the {{site.data.keyword.discoveryshort}} service is created for you, and a configuration page opens to the new {{site.data.keyword.discoveryshort}} service instance.
 
-    A Lite plan instance of the service is provisioned in {{site.data.keyword.Bluemix_notm}}, no matter what {{site.data.keyword.conversationshort}} service plan you use. If you want to create the {{site.data.keyword.discoveryshort}} service instance as part of a different plan, stop here. Create the service instance directly from the [{{site.data.keyword.Bluemix_notm}} catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/catalog/services/discovery), and follow the [Connect to an existing {{site.data.keyword.discoveryshort}} service instance ](#beta-skill-search-add-connect-discovery) procedure instead.
+    A Lite plan instance of the service is provisioned in {{site.data.keyword.Bluemix_notm}}, no matter what {{site.data.keyword.conversationshort}} service plan you use. If you want to create the {{site.data.keyword.discoveryshort}} service instance as part of a different plan, stop here. Create the service instance directly from the [{{site.data.keyword.Bluemix_notm}} catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/discovery), and follow the [Connect to an existing {{site.data.keyword.discoveryshort}} service instance ](#beta-skill-search-add-connect-discovery) procedure instead.
     {: important}
 
 1.  Review the terms and conditions for using the instance, and then click **Accept** to continue.
@@ -213,7 +213,7 @@ The search skill cannot interact with customers until it is added to an assistan
 
 When you link both a dialog skill and search skill to an assistant, the search skill is automatically triggered if user input is processed by the dialog skill and cannot be addressed by any of its dialog nodes. Rather than replying with a generic response from the `anything_else` node, a search that uses the user input as its query string is initiated.
 
-If you want, you can define a specific search query to call in response to a particular node condition. To do so, add a search response type to the dialog node. See [Responses](/docs/services/assistant/dialog-overview.html#multimedia) for more details.
+If you want, you can define a specific search query to call in response to a particular node condition. To do so, add a search response type to the dialog node. See [Responses](/docs/services/assistant/dialog-overview.html#dialog-overview-multimedia) for more details.
 
 If you initiate any type of search from your dialog skill, test the dialog to ensure that the search is being triggered as expected. For example, if you are not using search response types, test that a search is triggered only when no existing dialog nodes can address the user input. And any time a search is triggered, ensure that it returns meaningful results.
 

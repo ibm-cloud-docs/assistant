@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-02-11"
 
 ---
 
@@ -26,7 +26,8 @@ lastupdated: "2019-01-31"
 ***Content Catalogs*** provide an easy way to add common intents to your {{site.data.keyword.conversationshort}} dialog skill.
 {: shortdesc}
 
-**IMPORTANT**: Content Catalog intents are meant to provide a starting point, and not meant to be fully built-out for production use. It is recommended that you review and expand on these intents, to make them better suited to how your application will use them.
+Content Catalog intents are meant to provide a starting point, and not meant to be fully built-out for production use. Add to or edit the catalog intents to tailor them for your use case.
+{: important}
 
 ## Adding a content catalog to your dialog skill
 {: #catalog-add}
@@ -39,36 +40,31 @@ Use the {{site.data.keyword.conversationshort}} tool to add content catalogs.
 
     ![Screen capture showing available catalogs](images/catalog_overview.png)
 
-    You will see information about the intents that are defined in the *Banking* category.
+    You will see information about the intents that are included in the catalog.
 
     ![Screen capture showing Banking category intents](images/catalog_open.png)
 
-    Intents that are added from a content catalog are distinguishable from other intents by their naming convention; in this case, `#Banking_ . . .`
+    Intents that are added from a content catalog are distinguishable from other intents by their names. Each intent name is prepended with the content catalog name.
 
 1.  Select ![Close arrow](images/close_arrow.png) to return to the **Content Catalog** tab.
 
-1.  Next, add the *Banking* content catalog to your dialog skill by clicking the `Add to workspace` button. You will see a message indicating that the *Banking* intents have been added.
+1.  Next, add a content catalog to your dialog skill by clicking the `Add to skill` button.
 
-    ![Screen capture showing Add to workspace button](images/catalog_addtobot.png)
-
-1.  Now, select the **Intents** tab, and verify that the *Banking* intents have been added to your dialog skill.
+1.  Now, select the **Intents** tab, and verify that the intents from the catalog were added and are available.
 
     ![Screen capture showing Banking intents listed on Intents tab](images/catalog_intents.png)
 
-The intents from the *Banking* content catalog have been added to the **Intents** tab of your dialog skill, and the system begins to train itself on the new data.
+The system begins to train itself on the new data.
+
+After you add a catalog to your skill, the intents become part of your training data. If IBM makes subsequent updates to a content catalog, the changes are not automatically applied to any intents you added from a catalog.
+{: note}
 
 ## Editing content catalog examples
 {: #catalog-edit-content}
 
-Like any other intent, once the *Banking* content catalog intents have been added, you can make the following changes:
+Like any other intent, after you add content catalog intents to your skill, you can make the following changes to them:
 
 - Rename the intent.
 - Delete the intent.
 - Add, edit, or delete examples.
 - Move an example to a different intent.
-
-You can tab from the intent name to each example, editing the examples if you choose.
-
-To move or delete an example, select the example by selecting the check box and then select **Move** or **Delete**.
-
-  ![Screen capture showing how to move or delete an example](images/catalog_edit.png)
