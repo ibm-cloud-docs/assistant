@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-05"
+lastupdated: "2019-02-08"
 
 ---
 
@@ -60,9 +60,10 @@ If you want to upgrade from one plan to another, see [Upgrading](upgrade.html).
 
 The following features are available only to users of Premium plans.
 
-- [Disambiguation](dialog-runtime.html#dialog-runtime-disambiguation)
-- [Intent conflict resolution](intents.html#intents-resolve-conflicts)
+- [Disambiguation](/docs/services/assistant/dialog-runtime.html#dialog-runtime-disambiguation)
+- [Intent conflict resolution](/docs/services/assistant/intents.html#intents-resolve-conflicts)
 - [Intent user example recommendations](/docs/services/assistant/intent-recommendations.html)
+- [Intercom integration](/docs/services/assistant/deploy-intercom.html)
 
 ### User-based plans
 {: #services-information-user-based-plans}
