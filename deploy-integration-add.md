@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-02-11"
 
 ---
 
@@ -45,6 +45,7 @@ Follow these steps to add integrations to your assistant:
 
     - [Custom application](deploy-custom-app.html)
     - [Facebook Messenger](deploy-facebook.html)
+    - [Intercom](deploy-intercom.html) ![Beta](images/beta.png) 
     - [Preview Link](deploy-web-link.html)
     - [Slack](deploy-slack.html)
     - [Voice Agent (Telephony)  ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/catalog/services/voice-agent-with-watson){: new_window}

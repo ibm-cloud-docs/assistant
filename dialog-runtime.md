@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-01-31"
+lastupdated: "2018-02-07"
 
 ---
 
@@ -871,7 +871,7 @@ If enabled, disambiguation is not triggered unless the following conditions are 
 Even when these conditions are met, disambiguation does not occur unless two or more independent nodes in your dialog meet the following criteria:
 
 - The node condition includes one of the intents that triggered disambiguation. Or the node condition otherwise evaluates to true. For example, if the node checks for an entity type and the entity is mentioned in the user input, it is eligible.
-- There is text in the node's *node purpose* field.
+- There is text in the node's *external node name* field.
 
 Learn more
 
@@ -906,7 +906,7 @@ Intents with a score that is greater than 0.36 are eligible.
 
 In our example, the `#eCommerce_Cancel_Product_Order` intent is over the threshold, with a confidence score of `0.4330700159072876`.
 
-When the user input is `i must cancel it today`, both dialog nodes will be considered viable candidates to respond. To determine which dialog node to process, the assistant asks the user to pick one. And to help the user choose between them, the assistant provides a short summary of what each node does. The summary text it displays is extracted directly from the *node purpose* information that was specified for each node.
+When the user input is `i must cancel it today`, both dialog nodes will be considered viable candidates to respond. To determine which dialog node to process, the assistant asks the user to pick one. And to help the user choose between them, the assistant provides a short summary of what each node does. The summary text it displays is extracted directly from the *external node name* information that was specified for each node.
 
 ![Service prompts the user to choose from a list of dialog options, including Cancel an account, Cancel a product order, and None of the above.](images/disambig-tryitout.png)
 
@@ -942,9 +942,9 @@ To enable disambiguation, complete the following steps:
     For each node that you want to opt in to disambiguation, complete the following steps:
 
     1.  Click to open the node in edit view.
-    1.  In the *node purpose* field, describe the user task that this dialog node is designed to handle. For example, *Cancel an account*.
+    1.  In the *external node name* field, describe the user task that this dialog node is designed to handle. For example, *Cancel an account*.
 
-        ![Shows where to add the node purpose information in the node edit view.](images/disambig-node-purpose.png)
+        ![Shows where to add the external node name information in the node edit view.](images/disambig-node-purpose.png)
 
 ### Choosing nodes
 {: #dialog-runtime-choose-nodes}
@@ -998,7 +998,7 @@ To test disambiguation, complete the following steps:
 
 1.  From the "Try it out" pane, enter a test utterance that you think is a good candidate for disambiguation, meaning two or more of your dialog nodes are configured to address utterances like it.
 
-1.  If the response does not contain a list of dialog node options for you to choose from as expected, first check that you added summary information to the node purpose field for each of the nodes.
+1.  If the response does not contain a list of dialog node options for you to choose from as expected, first check that you added summary information to the external node name field for each of the nodes.
 
 1.  If disambiguation is still not triggered, it might be that the confidence scores for the nodes are not as close in value as you thought.
 
@@ -1014,7 +1014,7 @@ To test disambiguation, complete the following steps:
 
     - To see details for all of the artifacts at once, including other properties, such as the value of a given context variable at the time of the call, you can inspect the entire API response. See [Viewing API call details](dialog-tips.html#inspect-api).
 
-1.  Temporarily remove the description you added to the *node purpose* field for at least one of the nodes that you anticipate will be listed as a disambiguation option.
+1.  Temporarily remove the description you added to the *external node name* field for at least one of the nodes that you anticipate will be listed as a disambiguation option.
 
 1.  Enter the test utterance into the "Try it out" pane again.
 
@@ -1022,4 +1022,4 @@ To test disambiguation, complete the following steps:
 
     ![Service returns an array of intents, including Customer_Care_Cancel_Account and eCommerce_Cancel_Product_Order.](images/disambig-show-intents.png)
 
-After you finish testing, remove any SpEL expressions that you appended to node responses, or add back any original responses that you replaced with expressions, and repopulate any *node purpose* fields from which you removed text.
+After you finish testing, remove any SpEL expressions that you appended to node responses, or add back any original responses that you replaced with expressions, and repopulate any *external node name* fields from which you removed text.
