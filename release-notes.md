@@ -55,7 +55,7 @@ The following new features and changes to the service are available.
 ### 11 February 2019
 {: #11February2019}
 
-**Integrate with Intercom**: Intercom, a leading customer service messaging platform, has partnered with IBM to add a new agent to the team, a virtual Watson Assistant. You can integrate your assistant with an Intercom application to enable the app to seamlessly pass user conversations between your assistant and human support agents. See [Integrating with Intercom](/docs/services/assistant/deploy-intercom.html) for more details.
+**Integrate with Intercom**: Intercom, a leading customer service messaging platform, has partnered with IBM to add a new agent to the team, a virtual Watson Assistant. You can integrate your assistant with an Intercom application to enable the app to seamlessly pass user conversations between your assistant and human support agents. This integration is a beta feature available to Plus and Premium plan users only. See [Integrating with Intercom](/docs/services/assistant/deploy-intercom.html) for more details.
 
 ### 8 February 2019
 {: #8February2019}
