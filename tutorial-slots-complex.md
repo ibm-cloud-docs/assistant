@@ -27,7 +27,7 @@ In this tutorial, you will enhance a simple node with slots that collects the in
 {: shortdesc}
 
 ## Learning objectives
-{: #slots-complex-objectives}
+{: #tutorial-slots-complex-objectives}
 
 By the time you finish the tutorial, you will understand how to:
 
@@ -37,17 +37,17 @@ By the time you finish the tutorial, you will understand how to:
 - Handle unexpected user responses
 
 ### Duration
-{: #slots-complex-duration}
+{: #tutorial-slots-complex-duration}
 
 This tutorial will take approximately 2 to 3 hours to complete.
 
 ### Prerequisite
-{: #slots-complex-prereqs}
+{: #tutorial-slots-complex-prereqs}
 
 Before you begin, complete the [Adding a node with slots to a dialog](tutorial-slots.html). You must complete the first slots tutorial before you begin this one because you will build on the node with slots that you create in the first tutorial.
 
 ## Step 1: Improve the format of the responses
-{: #fix-format}
+{: #tutorial-slots-complex-fix-format}
 
 When the date and time system entity values are saved, they are converted into a standardized format. This standardized format is useful for performing calculations on the values, but you might not want to expose this reformatting to users. In this step, you will reformat the date (`2017-12-29`) and time (`17:00:00`) values that are referenced by the dialog.
 
@@ -126,7 +126,7 @@ When the date and time system entity values are saved, they are converted into a
 You have successfully improved the format that the dialog uses when it references context variable values in its responses. The dialog now uses `Friday, December 29` instead of the more technical, `2017-12-29`. And it uses `5:00 PM` instead of `17:00:00`. To learn about other SpEL methods you can use with date and time values, see [Methods to process values](dialog-methods.html#date-time).
 
 ## Step 2: Ask for everything at once
-{: #ask-for-everything}
+{: #tutorial-slots-complex-ask-for-everything}
 
 Now that you have tested the dialog more than once, you might have noticed that it can be annoying to have to answer one slot prompt at a time. To prevent users from having to provide one piece of information at a time, you can ask for every piece of information that you need up front. Doing so gives the user a chance to provide all or some of the information in a single input.
 
@@ -160,7 +160,7 @@ If the user provides any one of the slot values in their initial input, then the
 {: note}
 
 ## Step 3: Treat zeros properly
-{: #recognize-zero}
+{: #tutorial-slots-complex-recognize-zero}
 
 When you use the `sys-number` system entity in a slot condition, it does not deal with zeros properly. Instead of setting the context variable that you define for the slot to 0, the service sets the context variable to false. As a result, the slot does not think it is full and prompts the user for a number again and again until the user specifies a number other than zero.
 
@@ -244,7 +244,7 @@ When you use the `sys-number` system entity in a slot condition, it does not dea
 You have successfully formatted the number slot so that it treats zeros properly. Of course, you might not want the node to accept a zero as a valid number of guests. You will learn how to validate values that are specified by users in the next step.
 
 ## Step 4: Validate user input
-{: #slot-conditions}
+{: #tutorial-slots-complex-slot-conditions}
 
 So far, we have assumed that the user will provide the appropriate value types for the slots. That is not always the case in reality. You can account for times when users might provide an invalid value by adding conditional responses to slots. In this step, you will use conditional slot responses to perform the following tasks:
 
@@ -375,7 +375,7 @@ To validate user input, complete the following steps:
     </table>
 
 ## Step 5: Add a confirmation slot
-{: #confirmation-slot}
+{: #tutorial-slots-complex-confirmation-slot}
 
 You might want to design your dialog to call an external reservation system and actually book a reservation for the user in the system. Before your application takes this action, you probably want to confirm with the user that the dialog has understood the details of the reservation correctly. You can do so by adding a confirmation slot to the node.
 
@@ -528,7 +528,7 @@ You might want to design your dialog to call an external reservation system and 
 If you add more slots later, you must edit these conditions to account for the associated context variables for the additional slots. If you do not include a confirmation slot, you can specify `!all_slots_filled` only, and it would remain valid no matter how many slots you add later.
 
 ## Step 6: Reset the slot context variable values
-{: #reset-variables}
+{: #tutorial-slots-complex-reset-variables}
 
 You might have noticed that before each test, you must clear the context variable values that were created during the previous test. You must do so because the node with slots only prompts users for information that it considers to be missing. If the slot context variables are all filled with valid values, no prompts are displayed. The same is true for the dialog at run time. You must build into the dialog a mechanism by which you reset the slot context variables to null so that the slots can be filled anew by the next user. To do so, you are going to add a parent node to the node with slots that sets the context variables to null.
 
@@ -570,7 +570,7 @@ You might have noticed that before each test, you must clear the context variabl
     When a user input matches the `#reservation` intent, this node is triggered. The slot context variables are all set to null, and then the dialog jumps directly to the node with slots to process it.
 
 ## Step 7: Give users a way to exit the process
-{: #handler}
+{: #tutorial-slots-complex-handler}
 
 Adding a node with slots is powerful because it keeps users on track with providing the information you need to give them a meaningful response or perform an action on their behalf. However, there might be times when a user is in the middle of providing reservation details, but decides to not go through with placing the reservation. You must give users a way to exit the process gracefully. You can do so by adding a slot handler that can detect a user's desire to exit the process, and exit the node without saving any values that were collected.
 
@@ -802,18 +802,18 @@ For the $time information, you will define a follow-up statement that is display
 | Watson  | You seem to be having trouble choosing a time. I will make the reservation at 8PM for you.  How many people will be dining? |
 
 ## Step 9: Connect to an external service
-{: #action}
+{: #tutorial-slots-complex-action}
 
 Now that your dialog can collect and confirm a user's reservation details, you can call an external service to actually reserve a table in the restaurant's system or through a multi-restaurant online reservations service. See [Making programmatic calls from a dialog node](dialog-actions.html) for more details.
 
 In the logic that calls the reservation service, be sure to check for `has_skipped_slots` and do not continue with the reservation if it is present.
 
 ### Summary
-{: #slots-complex-summary}
+{: #tutorial-slots-complex-summary}
 
 In this tutorial you tested a node with slots and made changes that optimize how it interacts with real users. For more information about this subject, see [Gathering information with slots](dialog-slots.html).
 
 ## Next steps
-{: #slots-complex-deploy}
+{: #tutorial-slots-complex-deploy}
 
 Deploy your dialog skill by first connecting it to an assistant, and then deploying the assistant. There are several ways you can do this. See [Adding integrations](deploy-integration-add.html) for more details.

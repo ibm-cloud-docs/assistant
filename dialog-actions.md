@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-02-11"
 
 ---
 
@@ -45,7 +45,7 @@ When you define the programmatic call, you choose one of the following types:
   - With an authentication token that is specific to the web action, and can be revoked or changed by the action owner at any time
   - By passing your {{site.data.keyword.openwhisk_short}} credentials
 
-All of the {{site.data.keyword.openwhisk_short}} action types (web_action and cloud_function or server) incur a cost. The cost of activating the action is charged to the person who owns the credentials that are specified in the action call. See [Pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/openwhisk/learn/pricing){: new_window} for more details. The {{site.data.keyword.openwhisk_short}} service does not distinguish between calls that are made from the "Try it out" pane during testing and calls that are made from an application in production. Therefore, calls made during testing might incur charges.
+All of the {{site.data.keyword.openwhisk_short}} action types (web_action and cloud_function or server) incur a cost. The cost of activating the action is charged to the person who owns the credentials that are specified in the action call. See [Pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/openwhisk/learn/pricing){: new_window} for more details. The {{site.data.keyword.openwhisk_short}} service does not distinguish between calls that are made from the "Try it out" pane during testing and calls that are made from an application in production. Therefore, calls made during testing might incur charges.
 {: note}
 
 ## Procedure
@@ -124,9 +124,9 @@ To make a programmatic call from a dialog node, complete the following steps:
 
       - **client**: Sends a message response with programmatic call information in a standardized format that your external client application understands. Your client application must use the provided information to run the programmatic call or function, and return the result to the dialog. The JSON object in the response body specifies the service or function to call, any associated parameters to pass with the call, and the format of the result to send back.
 
-      - **cloud_function**: Calls a {{site.data.keyword.openwhisk_short}} action (one or more) directly. You must define the action itself separately by using {{site.data.keyword.openwhisk}}. For more information, see [Creating an action](#create-action). (This type used to be named **server**. The **server** type continues to be supported.)
+      - **cloud_function**: Calls a {{site.data.keyword.openwhisk_short}} action (one or more) directly. You must define the action itself separately by using {{site.data.keyword.openwhisk}}. For more information, see [Creating an action](#dialog-actions-create). (This type used to be named **server**. The **server** type continues to be supported.)
 
-      - **web_action**: Calls a {{site.data.keyword.openwhisk_short}} web action (one or more) directly. You must define the web action itself separately by using {{site.data.keyword.openwhisk}}. For more information,  see [Creating an action](#create-action).
+      - **web_action**: Calls a {{site.data.keyword.openwhisk_short}} web action (one or more) directly. You must define the web action itself separately by using {{site.data.keyword.openwhisk}}. For more information,  see [Creating an action](#dialog-actions-create).
 
       Specifying the type is optional. The default value is `client`.
 
@@ -180,7 +180,7 @@ To make a programmatic call from a dialog node, complete the following steps:
       These credentials are used to access the {{site.data.keyword.openwhisk_short}} instance on which the action runs. These are not your {{site.data.keyword.Bluemix_notm}} credentials.
 
       To discover the credentials, complete the following steps:
-      1.  Go to the [{{site.data.keyword.openwhisk_short}} API key ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/openwhisk/learn/api-key){: new_window} page.
+      1.  Go to the [{{site.data.keyword.openwhisk_short}} API key ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/openwhisk/learn/api-key){: new_window} page.
 
           - If you have not yet created an account, do so.
           - If you are not logged in, log in.
@@ -233,18 +233,18 @@ If you choose to define an action or web action type programmatic call, then bef
 
 To create a {{site.data.keyword.openwhisk_short}} action, complete the following steps:
 
-1.  Go to the [online {{site.data.keyword.openwhisk_short}} editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/openwhisk/create){: new_window}, where you can write your code directly in your browser.
+1.  Go to the [online {{site.data.keyword.openwhisk_short}} editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/openwhisk/create){: new_window}, where you can write your code directly in your browser.
 
-    There is also a [command line interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/openwhisk/learn/cli){: new_window} you can install that enables you to define an action using code you write locally.
+    There is also a [command line interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/openwhisk/learn/cli){: new_window} you can install that enables you to define an action using code you write locally.
 
 1.  Create one of the following types of actions:
 
-    - **{{site.data.keyword.openwhisk_short}} action**: See [Creating and invoking actions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/docs/openwhisk/openwhisk_actions.html){: new_window} for details.
+    - **{{site.data.keyword.openwhisk_short}} action**: See [Creating and invoking actions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/openwhisk/openwhisk_actions.html){: new_window} for details.
     - **{{site.data.keyword.openwhisk_short}} web action**: See [Creating web actions ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/openwhisk/openwhisk_webactions.html){: new_window} for details.
 
     Keep the following tips in mind:
 
-    - Refer to the [example of a {{site.data.keyword.openwhisk_short}} action ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/docs/openwhisk/openwhisk_actions.html#openwhisk_apicall_action){: new_window} to see how to call an external service.
+    - Refer to the [example of a {{site.data.keyword.openwhisk_short}} action ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/openwhisk/openwhisk_actions.html#openwhisk_apicall_action){: new_window} to see how to call an external service.
     - To make a call to a Watson service, use the [Watson Developer Cloud SDK ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud){: new_window} for the language you want to use.
     - Make sure your {{site.data.keyword.openwhisk_short}} action accepts any input parameters as a JSON object, and returns any output as a JSON object.
     - If you are using Node.js to write your {{site.data.keyword.openwhisk_short}} action, make sure you use `Promise` for asynchronous processing. Also make sure you return the final result from the `main` function.

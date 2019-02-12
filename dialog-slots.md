@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-25"
+lastupdated: "2019-02-11"
 
 ---
 
@@ -43,7 +43,7 @@ The user might provide values for mutliple slots at once. For example, the input
 
 ![Shows that two slots are filled, and the service prompts for the remaining one.](images/pass-in-info.png)
 
-Slots make it possible for the service to answer follow-up questions without having to re-establish the user's goal. For example, a user might ask for a weather forecast, then ask a follow-up question about weather in another location or on a different day. If you save the required forecast variables, such as location and day, in slots, then if a user asks a follow-up question with new variable values, you can overwrite the slot values with the new values provided, and give a response that reflects the new information. (For more information about how to call an external service from a dialog, see [Making programmatic calls from a dialog node](dialog-actions.html)).
+Slots make it possible for the service to answer follow-up questions without having to re-establish the user's goal. For example, a user might ask for a weather forecast, then ask a follow-up question about weather in another location or on a different day. If you save the required forecast variables, such as location and day, in slots, then if a user asks a follow-up question with new variable values, you can overwrite the slot values with the new values provided, and give a response that reflects the new information. (For more information about how to call an external service from a dialog, see [Making programmatic calls from a dialog node](/docs/services/assistant/dialog-actions.html)).
 
 ![Shows someone asking for a weather forecast, and then following up with a question about weather for a different location and time.](images/follow-up.png)
 
@@ -57,7 +57,7 @@ Using slots produces a more natural dialog flow between the user and the service
     - Delivery time
     - Size
 
-1.  If you have not started to create a dialog, follow the instructions in [Creating a dialog](dialog-build.html) to create one.
+1.  If you have not started to create a dialog, follow the instructions in [Creating a dialog](/docs/services/assistant/dialog-build.html) to create one.
 
 1.  From the dialog node edit view, click **Customize**, and then click the toggle next to **Slots** to turn it **On**.
 
@@ -72,7 +72,7 @@ Using slots produces a more natural dialog flow between the user and the service
 
       For example, if the entity is a pattern entity, such as `@email`, then after adding the entity name, append `.literal` to it. Adding `.literal` indicates that you want to capture the exact text that was entered by the user and was identified as an email address based on its pattern.
 
-      In some cases, you might want to use an expression to capture the value, but not apply the expression to what is saved. In such cases, you can use one value in the *Check for* field to capture the value, and then open the JSON editor to change the value of the context variable, so it saves something else. See [Treat zeros properly](tutorial-slots-complex.html#recognize-zero) for an example.
+      In some cases, you might want to use an expression to capture the value, but not apply the expression to what is saved. In such cases, you can use one value in the *Check for* field to capture the value, and then open the JSON editor to change the value of the context variable, so it saves something else. See [Treat zeros properly](/docs/services/assistant/tutorial-slots-complex.html#tutorial-slots-complex-recognize-zero) for an example.
 
       Any edit you make to a slot's context variable value in the JSON editor is not reflected in the **Check for** field when you exit the JSON editor. And if you click the **Check for** field to give the field focus at any time after you use the JSON editor to edit the value, then the change you made is lost.
       {: important}
@@ -91,7 +91,7 @@ Using slots produces a more natural dialog flow between the user and the service
 
       - **Not found**: Displayed if the information provided by the user is not understood, or is not provided in the expected format. If the slot is filled successfully, or the user input is understood and handled by a slot handler, then this statement is never displayed.
 
-      For information about how to define conditions and associated actions for Found and Not found responses, see [Adding conditions to Found and Not found responses](#slot-handler-next-steps).
+      For information about how to define conditions and associated actions for Found and Not found responses, see [Adding conditions to Found and Not found responses](#dialog-slots-handler-next-steps).
 
     This table shows example slot values for a node that helps users place a pizza order by collecting two pieces of information, the pizza size and delivery time.
 
@@ -156,14 +156,14 @@ Using slots produces a more natural dialog flow between the user and the service
     This condition is triggered if the user provides input that matches the slot handler conditions at any time during the dialog node flow up until the node-level response is displayed. See [Handling requests to exit a process](#dialog-slots-node-level-handler) for more ways to use the slot handler.
 1.  **Add a node-level response**. The node-level response is not executed until after all of the required slots are filled. You can add a response that summarizes the information you collected. For example, `A $size pizza is scheduled for delivery at $time. Enjoy!`
 
-    If you want to define different responses based on certain conditions, click **Customize**, and then click the **Multiple responses** toggle to turn it **On**. For information about conditional responses, see [Conditional responses](dialog-overview.html#multiple).
+    If you want to define different responses based on certain conditions, click **Customize**, and then click the **Multiple responses** toggle to turn it **On**. For information about conditional responses, see [Conditional responses](/docs/services/assistant/dialog-overview.html#dialog-overview-multiple).
 1.  **Add logic that resets the slot context variables**. As you collect answers from the user per slot, they are saved in context variables. You can use the context variables to pass the information to another node or to an application or external service for use. However, after passing the information, you must set the context variables to null to reset the node so it can start collecting information again. You cannot null the context variables within the current node because the service will not exit the node until the required slots are filled. Instead, consider using one of the following methods:
 
     - Add processing to the external application that nulls the variables.
     - Add a child node that nulls the variables.
     - Insert a parent node that nulls the variables, and then jumps to the node with slots.
 
-Give it a try! Follow the step-by-step [tutorial](tutorial-slots.html).
+Give it a try! Follow the step-by-step [tutorial](/docs/services/assistant/tutorial-slots.html).
 
 ## Slots usage tips
 {: #dialog-slots-tips}
@@ -188,7 +188,7 @@ Consider using these approaches for handling common tasks.
 - [Getting confirmation](#dialog-slots-get-confirmation)
 - [Replacing a slot context variable value](#dialog-slots-found-handler-event-properties)
 - [Avoiding number confusion](#dialog-slots-avoid-number-confusion)
-- [Adding conditions to Found and Not found responses](#slot-handler-next-steps)
+- [Adding conditions to Found and Not found responses](#dialog-slots-handler-next-steps)
 - [Moving on after multiple failed attempts](#dialog-slots-stop-trying-after-3)
 - [Preventing a Found response from displaying when it is not needed](#dialog-slots-stifle-found-responses)
 - [Handling requests to exit a process](#dialog-slots-node-level-handler)
@@ -247,7 +247,7 @@ For example, time values are saved in the `hh:mm:ss` format. You can use the JSO
 ```
 {: codeblock}
 
-See [Methods to process values](dialog-methods.html) for other reformatting ideas.
+See [Expression language methods](/docs/services/assistant/dialog-methods.html) for other reformatting ideas.
 
 ### Dealing with zeros
 {: #dialog-slots-zero}

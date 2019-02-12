@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-02-07"
+lastupdated: "2018-02-11"
 
 ---
 
@@ -101,7 +101,7 @@ The following `output` object format is supported for backwards compatibility. A
   ```
   {: codeblock}
 
-There are response types other than a text response that you can define. See [Responses](dialog-overview.html#responses) for more details.
+There are response types other than a text response that you can define. See [Responses](/docs/services/assistant/dialog-overview.html#dialog-overview-responses) for more details.
 
 You can learn more about the /message API call from the [API reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant-v2){: new_window}.
 
@@ -174,7 +174,7 @@ Define a context variable by adding the variable name to the **Variable** field 
 
     - The `name` can contain any upper- and lowercase alphabetic characters, numeric characters (0-9), and underscores.
 
-      You can include other characters, such as periods and hyphens, in the name. However, if you do, then you must specify the shorthand syntax `$(variable-name)` every time you subsequently reference the variable. See [Expressions for accessing objects](expression-language.html#shorthand-context) for more details.
+      You can include other characters, such as periods and hyphens, in the name. However, if you do, then you must specify the shorthand syntax `$(variable-name)` every time you subsequently reference the variable. See [Expressions for accessing objects](/docs/services/assistant/expression-language.html#expression-language-shorthand-context) for more details.
       {:tip}
 
     - The `value` can be any supported JSON type, such as a simple string variable, a number, a JSON array, or a JSON object.
@@ -233,7 +233,7 @@ To store the value of a pattern entity, append .literal to the entity name. Usin
 
 For example, the user input is `Contact me at joe@example.com.` Your entity named `@email` recognizes the `name@domain.com` email format. By configuring the context variable to store `@email.literal`, you indicate that you want to store the part of the input that matched the pattern. If you omit the `.literal` property from the value expression, then the entity value name that you specified for the pattern is returned instead of the segment of user input that matched the pattern.
 
-Many of these value examples use methods to capture different parts of the user input. For more information about the methods available for you to use, see [Expression language methods](dialog-methods.html).
+Many of these value examples use methods to capture different parts of the user input. For more information about the methods available for you to use, see [Expression language methods](/docs/services/assistant/dialog-methods.html).
 
 ### Deleting a context variable
 {: #dialog-runtime-context-delete}
@@ -283,7 +283,7 @@ Instead, use a slightly more complex expression to avoid having to rely on the v
 ### Adding context variables to a node with slots
 {: #dialog-runtime-context-var-slots}
 
-For more information about slots, see [Gathering information with slots](dialog-slots.html).
+For more information about slots, see [Gathering information with slots](/docs/services/assistant/dialog-slots.html).
 
 1.  Open the node with slots in the edit view.
 
@@ -324,7 +324,7 @@ The name and value pair must meet these requirements:
 
 - The `name` can contain any upper- and lowercase alphabetic characters, numeric characters (0-9), and underscores.
 
-  You can include other characters, such as periods and hyphens, in the name. However, if you do, then you must specify the shorthand syntax `$(variable-name)` every time you subsequently reference the variable. See [Expressions for accessing objects](expression-language.html#shorthand-context) for more details.
+  You can include other characters, such as periods and hyphens, in the name. However, if you do, then you must specify the shorthand syntax `$(variable-name)` every time you subsequently reference the variable. See [Expressions for accessing objects](/docs/services/assistant/expression-language.html#expression-lanaguage-shorthand-context) for more details.
   {:tip}
 
 - The `value` can be any supported JSON type, such as a simple string variable, a number, a JSON array, or a JSON object.
@@ -484,7 +484,7 @@ The result is this context:
 ```
 {: codeblock}
 
-See [Expression language methods](dialog-methods.html#objects) for more information about methods you can perform on objects.
+See [Expression language methods](/docs/services/assistant/dialog-methods.html#dialog-methods-objects) for more information about methods you can perform on objects.
 
 #### Updating arrays
 
@@ -634,7 +634,7 @@ Choose one of these actions to update the array. In each case, we see the array 
         ```
         {: codeblock}
 
-See [Expression language methods](dialog-methods.html#arrays) for more information about methods you can perform on arrays.
+See [Expression language methods](/docs/services/assistant/dialog-methods.html#dialog-methods-arrays) for more information about methods you can perform on arrays.
 
 ### Setting one context variable equal to another
 {: #dialog-runtime-var-equals-var}
@@ -729,7 +729,7 @@ To change the digression behavior for an individual node, complete the following
 
     - **Nodes with slots**: Choose whether you want to allow users to digress away from the node before all of the slots are filled. Set the *Allow digressions away while slot filling* toggle to **Yes** to enable digressions away.
 
-      If enabled, when the conversation returns from the digression, the prompt for the next unfilled slot is displayed to encourage the user to continue providing information. If disabled, then any inputs that the user submits which do not contain a value that can fill a slot are ignored. However, you can address unsolicited questions that you anticipate your users might ask while they interact with the node by defining slot handlers. See [Adding slots](dialog-slots.html#add-slots) for more information.
+      If enabled, when the conversation returns from the digression, the prompt for the next unfilled slot is displayed to encourage the user to continue providing information. If disabled, then any inputs that the user submits which do not contain a value that can fill a slot are ignored. However, you can address unsolicited questions that you anticipate your users might ask while they interact with the node by defining slot handlers. See [Adding slots](/docs/services/assistant/dialog-slots.html#dialog-slots-add) for more information.
 
       The following image shows you how digressions away from the #reservation node with slots (shown in the earlier illustration) are configured.
 
@@ -743,7 +743,7 @@ To change the digression behavior for an individual node, complete the following
 
     You can make the following choices about how digressions into a node behave:
 
-    - Prevent users from being able to digress into the node. See [Disabling digressions into a root node](#dialog-runtime-diable-digressions) for more details.
+    - Prevent users from being able to digress into the node. See [Disabling digressions into a root node](#dialog-runtime-disable-digressions) for more details.
 
     - When digressions into the node are enabled, choose whether the dialog must go back to the dialog flow that it digressed away from. When selected, after the current node's branch is done being processed, the dialog flow goes back to the interrupted node. To make the dialog return afterwards, select **Return after digression**.
 
@@ -796,7 +796,7 @@ This section describes solutions to situations that you might encounter when usi
   context["username"] + "?" ?>
   ```
 
-  For full SpEL expression syntax details, see [Expression for accessing objects](expression-language.html#shorthand-syntax).
+  For full SpEL expression syntax details, see [Expression for accessing objects](/docs/services/assistant/expression-language.html#expression-language-shorthand-syntax).
 
 - **Preventing returns**: In some cases, you might want to prevent a return to the interrupted conversation flow based on a choice the user makes in the current dialog flow. You can use special syntax to prevent a return from a specific node.
 
@@ -823,12 +823,12 @@ To disable digressions into a root node altogether, complete the following steps
 1.  Set the *Allow digressions into this node* toggle to **Off**.
 1.  Click **Apply**.
 
-If you decide that you want to prevent digressions into several root nodes, but do not want to edit each one individually, you can add the nodes to a folder. From the *Customize* page of the folder, you can set the *Allow digressions into this node* toggle to **Off** to apply the configuration to all of the nodes at once. See [Organizing the dialog with folders](dialog-build.html#folders) for more information.
+If you decide that you want to prevent digressions into several root nodes, but do not want to edit each one individually, you can add the nodes to a folder. From the *Customize* page of the folder, you can set the *Allow digressions into this node* toggle to **Off** to apply the configuration to all of the nodes at once. See [Organizing the dialog with folders](/docs/services/assistant/dialog-build.html#dialog-build-folders) for more information.
 
 ### Digression tutorial
 {: #dialog-runtime-digression-tutorial}
 
-Follow the [tutorial](tutorial-digressions.html) to import a workspace that has a set of nodes already defined. You can walk through some exercises that illustrate how digressions work.
+Follow the [tutorial](/docs/services/assistant/tutorial-digressions.html) to import a workspace that has a set of nodes already defined. You can walk through some exercises that illustrate how digressions work.
 
 ### Design considerations
 {: #dialog-runtime-digression-design-considerations}
@@ -951,7 +951,7 @@ To enable disambiguation, complete the following steps:
 
 Choose nodes that serve as the root of a distinct branch of the dialog to be disambiguation choices. These can include nodes that are children of other nodes. The key is for the node to condition on some distinct value or values that distinguish it from everything else.
 
-The tool can recognize intent conflicts, which occur when two or more intents have user examples that overlap. [Resolve any such conflicts](intents.html#conflict-intents) first to ensure that the intents themselves are as unique as possible, which helps the service attain better intent confidence scores.
+The tool can recognize intent conflicts, which occur when two or more intents have user examples that overlap. [Resolve any such conflicts](/docs/services/assistant/intents.html#intents-resolve-conflicts) first to ensure that the intents themselves are as unique as possible, which helps the service attain better intent confidence scores.
 {: note}
 
 Keep in mind:
@@ -1012,7 +1012,7 @@ To test disambiguation, complete the following steps:
 
       This SpEL expression shows the entities that were detected in the user input as an array. The array includes the entity name, location of the entity mention within the user input string, the entity mention string, and the level of confidence that the service has that the term is a mention of the entity type specified.
 
-    - To see details for all of the artifacts at once, including other properties, such as the value of a given context variable at the time of the call, you can inspect the entire API response. See [Viewing API call details](dialog-tips.html#inspect-api).
+    - To see details for all of the artifacts at once, including other properties, such as the value of a given context variable at the time of the call, you can inspect the entire API response. See [Viewing API call details](/docs/services/assistant/dialog-tips.html#dialog-tips-inspect-api).
 
 1.  Temporarily remove the description you added to the *external node name* field for at least one of the nodes that you anticipate will be listed as a disambiguation option.
 

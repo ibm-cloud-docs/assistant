@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-08-29"
+lastupdated: "2019-02-11"
 
 ---
 
@@ -32,7 +32,7 @@ Add a dialog skill that can understand and address questions or requests that yo
 
 | Dialog tree | Graphical user interface |
 |-------------|-------------------------:|
-| You can use graphical tools to create a dialog for your assistant to read from when interacting with your users, a dialog that simulates a real conversation. The dialog keys off the common customer goals that you teach it to recognize, and provides useful responses. The types of responses you can provide range from returning a simple text response, to including an image, or showing a list of options the user can choose from. The dialog can even make programmatic calls that perform business transactions on the user's behalf. | ![A sample dialog tree with example content](images/dialog-depiction.png) [View larger version](dialog-depiction.html) |
+| You can use graphical tools to create a dialog for your assistant to read from when interacting with your users, a dialog that simulates a real conversation. The dialog keys off the common customer goals that you teach it to recognize, and provides useful responses. The types of responses you can provide range from returning a simple text response, to including an image, or showing a list of options the user can choose from. The dialog can even make programmatic calls that perform business transactions on the user's behalf. | ![A sample dialog tree with example content](images/dialog-depiction.png) [View larger version](/docs/services/assistant/dialog-depiction.html) |
 
 The dialog skill itself is defined in text, but you can integrate it with Watson Speech to Text and Watson Text to Speech services that enable users to interact with your assistant verbally. In fact, you can put all of the Watson services to work. For example, integrate your assistant with the Watson Tone Analyzer service to monitor the customer's level of satisfation during the conversational exchange, and change its responses accordingly.
 
@@ -44,4 +44,4 @@ The dialog skill itself is defined in text, but you can integrate it with Watson
 |--------------------|:----------|
 | You can deploy the assistant through multiple interfaces, including existing messaging channels, such as Slack and Facebook Messenger, in just a few, easy-to-follow steps. You can give your users access to the assistant through a simple chat widget that you publish to a web site or add to an existing company web page. And if you want to design a custom application that incorporates it, you can make direct calls to the underlying APIs to do so. | ![Integration methods including Slack, Facebook Messenger, a web application or human agent integration](images/integrations.png) |
 
-See [Creating assistants](assistant-add.html) to get started.
+See [Creating assistants](/docs/services/assistant/assistant-add.html) to get started.

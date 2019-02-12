@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-02-11"
 
 ---
 
@@ -44,7 +44,7 @@ If you want to store logs of conversations that users have had with your assista
 To get the workspace ID for a skill, from the skill tile, click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **View API Details**.
 {: tip}
 
-Logs are stored for a different amount of time depending on your service plan. For example, Lite plans provide logs from the past 7 days only. See [Log limits](logs.html#log-limits) for more information.
+Logs are stored for a different amount of time depending on your service plan. For example, Lite plans provide logs from the past 7 days only. See [Log limits](/docs/services/assistant/logs.html#logs-limits) for more information.
 
 You cannot import logs from one skill into another skill.
 
@@ -78,14 +78,14 @@ If the {{site.data.keyword.conversationshort}} service changes between the time 
     **Important:**
 
     - The imported JSON file must use UTF-8 encoding.
-    - The maximum size for a skill JSON file is 10MB. If you need to import a larger skill, consider importing the intents and entities separately after you have imported the skill. (You can also import larger skills using the REST API. For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/watson/developercloud/conversation/api/v1/#create_workspace){: new_window}.)
-    - The JSON cannot contain tabs, newlines, or carriage returns.
+    - The maximum size for a skill JSON file is 10MB. If you need to import a larger skill, consider importing the intents and entities separately after you have imported the skill. (You can also import larger skills using the REST API. For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant#create-workspace){: new_window}.)
+    - The JSON file cannot contain tabs, newlines, or carriage returns.
 
     Select **Everything (Intents, Entities, and Dialog)** to import a complete copy of the exported skill.
 
     Click **Import**.
 
-    If you have trouble importing a skill, see [Troubleshooting skill import issues](skill-add.html#import-errors).
+    If you have trouble importing a skill, see [Troubleshooting skill import issues](/docs/services/assistant/skill-add.html#skill-add-import-errors).
 
 1.  Specify the details for the skill:
 
@@ -100,7 +100,7 @@ After you create the skill, it appears as a tile on the Skills page.
 
 You can now recreate your assistant. You can then link your imported dialog skill to the assistant, and configure integrations for it.
 
-See [Creating assistants](assistant-add.html) and [Adding integrations](deploy-integration-add.html#add-integrations) for more details.
+See [Creating assistants](/docs/services/assistant/assistant-add.html) and [Adding integrations](/docs/services/assistant/deploy-integration-add.html#deploy-integration-add-task) for more details.
 
 ## Update your client applications
 {: #backup-update-api}
