@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-07"
+lastupdated: "2019-02-12"
 
 ---
 
@@ -31,7 +31,7 @@ Learn about APIs and other tools you can use to access and analyze log data.
 
 You can use the `/logs` API to list events from the transcripts of conversations that occured between your users and your assistant. For detailed API reference documentation, see [List log events ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant#list-log-events-in-a-workspace).
 
-The number of days that logs are stored differs by service plan type. See [Log limits](logs.html#log-limits) for details.
+The number of days that logs are stored differs by service plan type. See [Log limits](/docs/services/assistant/logs.html#logs-limits) for details.
 
 For a Python script you can run to export logs and convert them to CSV format, download the `export_logs.py` file from the [Watson Assistant GitHub ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/community/blob/master/watson-assistant/export_logs.py) repository.
 
@@ -57,7 +57,7 @@ First, review the definitions of terms that are associated with {{site.data.keyw
 ## Enabling user metrics
 {: #logs-resources-user-id}
 
-User metrics allow you to see, for example, the number of unique users who have engaged with your assistant, or the average number of conversations per user over a given time interval on the [Overview page](logs-overview.html). User metrics are enabled by using a unique `User ID` parameter.
+User metrics allow you to see, for example, the number of unique users who have engaged with your assistant, or the average number of conversations per user over a given time interval on the [Overview page](/docs/services/assistant/logs-overview.html). User metrics are enabled by using a unique `User ID` parameter.
 
 To specify the `User ID` for a message sent using the `/message` API, include the `user_id` property inside the metadata object in your [context ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant?curl=#get-response-to-user-input){: new_window}, as in this example::
 
@@ -92,7 +92,7 @@ curl -X POST -u "apikey:3Df... ...Y7Pc9"
 The `customer_id` string cannot include the semicolon (`;`) or equal sign (`=`) characters. You are responsible for ensuring that each `Customer ID` parameter is unique across your customers.
 {: note}
 
-To delete messages using `customer_id` values, see the [Information security](information-security.html#gdpr-wa) topic.
+To delete messages using `customer_id` values, see the [Information security](/docs/services/assistant/information-security.html#information-security-gdpr-wa) topic.
 
 ## Jupyter notebooks
 {: #logs-resources-jupyter-notebooks}

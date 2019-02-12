@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-08"
+lastupdated: "2019-02-12"
 
 ---
 
@@ -38,13 +38,13 @@ Before you create a service instance, decide how you want to organize the resour
 
 Information about the artifact limits per plan is available from the topics that describe how to create the artifacts, so you can refer to the limits when you need to know them. Here are links to the topics:
 
-- [Assistants](assistant-add.html#assistant-add-limits)
-- [Dialog nodes](dialog-build.html#dialog-build-node-limits)
-- [Entities](entities.html#entities-limits)
-- [Intents](intents.html#intents-limits)
-- [Integrations](integration-add.html#deploy-integration-add-limits)
-- [Logs](logs.html#logs-limits)
-- [Skills](skill-add.html#skill-add-limits)
+- [Assistants](/docs/services/assistant/assistant-add.html#assistant-add-limits)
+- [Dialog nodes](/docs/services/assistant/dialog-build.html#dialog-build-node-limits)
+- [Entities](/docs/services/assistant/entities.html#entities-limits)
+- [Intents](/docs/services/assistant/intents.html#intents-limits)
+- [Integrations](/docs/services/assistant/deploy-integration-add.html#deploy-integration-add-limits)
+- [Logs](/docs/services/assistant/logs.html#logs-limits)
+- [Skills](/docs/services/assistant/skill-add.html#skill-add-limits)
 
 ### API call limits
 {: #services-information-api-limits}
@@ -53,7 +53,7 @@ The number of API calls allowed per instance depends on your service plan. See y
 
 If you have a Lite plan and reach your API call limit, but the logs show that you have made fewer calls than expected, remember that the Lite plan stores log information for only 7 days.
 
-If you want to upgrade from one plan to another, see [Upgrading](upgrade.html).
+If you want to upgrade from one plan to another, see [Upgrading](/docs/services/assistant/upgrade.html).
 
 ### Plus and Premium plan features
 {: #services-information-premium}
@@ -90,7 +90,7 @@ The authentication mechanism used by your service instance impacts how you must 
 
 1.  Get the service credentials.
 
-    - Click the service instance on the [Dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/dashboard/apps?category=ai){: new_window}.
+    - Find and click the service instance in the [{{site.data.keyword.Bluemix_notm}}  Resource List ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources){: new_window}.
 
     - Click to open your service instance, click **Service credentials**, and then click **View credentials**.
 
@@ -151,7 +151,7 @@ The authentication mechanism used by your service instance impacts how you must 
 
 {{site.data.keyword.cloud_notm}} has a network of global data centers that provide performance benefits to its cloud services. See [{{site.data.keyword.cloud_notm}} global data centers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/data-centers/){: new_window} for more details.
 
-{{site.data.keyword.cloud_notm}} changed from managing user access with Cloud Foundry to using token-based Identity and Access Management (IAM) authentication. IAM was rolled out in different locations at different times. You can migrate a service instance to move it from its current Cloud Foundry org and space to a resource group. See [Migrating](migrate.html) for more details.
+{{site.data.keyword.cloud_notm}} changed from managing user access with Cloud Foundry to using token-based Identity and Access Management (IAM) authentication. IAM was rolled out in different locations at different times. You can migrate a service instance to move it from its current Cloud Foundry org and space to a resource group. See [Migrating](/docs/services/assistant/migrate.html) for more details.
 
 You can create {{site.data.keyword.conversationshort}} service instances that are hosted in the following data center locations:
 
@@ -174,9 +174,9 @@ To learn more about service terms and data security, read the following informat
 
 - [Service terms ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/sla/home?OpenDocument){: new_window}
 - [Data security and privacy ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/sla/sladb.nsf/sla/csdsp?OpenDocument){: new_window}
-- [Information security](information-security.html)
+- [Information security](/docs/services/assistant/information-security.html)
 
-See [Platform overview ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/overview/ibm-cloud.html#overview){: new_window} for more information about {{site.data.keyword.cloud_notm}}.
+See [Platform overview ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/overview/ibm-cloud.html){: new_window} for more information about {{site.data.keyword.cloud_notm}}.
 
 ## Still have questions? 
 {: #services-information-sales}

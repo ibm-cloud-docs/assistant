@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-08"
+lastupdated: "2019-02-12"
 
 ---
 
@@ -36,7 +36,7 @@ The first table shows the level of support for all features, except those relate
 
 **Table 1. Feature support details**
 
-| Language | **Defining [intents](intents.html)**, **[entities](entities.html)**, and **[dialog](dialog-build.html)** | **Search** |
+| Language | **Defining [intents](/docs/services/assistant/intents.html)**, **[entities](/docs/services/assistant/entities.html)**, and **[dialog](/docs/services/assistant/dialog-build.html)** | **Search** |
 |:---:|:---:|:---:|
 | **English (en)**                   | GA | GA |
 | **Arabic (ar)**                    | GA | NA |
@@ -55,7 +55,7 @@ The first table shows the level of support for all features, except those relate
 
 **Table 2. Intent feature support details**
 
-| Language | **[Absolute scoring and 'Mark as irrelevant'](intents.html#mark-irrelevant)** | **[Content Catalog](catalog.html)** | **[User example recommendations](intents.html#intent-recommendations)** |
+| Language | **[Absolute scoring and 'Mark as irrelevant'](/docs/services/assistant/intents.html#intents-mark-irrelevant)** | **[Content Catalog](/docs/services/assistant/catalog.html)** | **[User example recommendations](/docs/services/assistant/intent-recommendations.html#intent-recommendations-get-example-recommendations)** |
 |:---:|:---:|:---:|:---:|
 | **English (en)**                   | GA | GA | Beta |
 | **Arabic (ar)**                    | Beta | GA | NA |
@@ -74,9 +74,9 @@ The first table shows the level of support for all features, except those relate
 
 **Table 3. Entity feature support details**
 
-| Language | **System entities ([number](system-entities.html#sys-number), [currency](system-entities.html#sys-currency), [percentage](system-entities.html#sys-percentage), [date, time](system-entities.html#sys-datetime))** | **[Entity fuzzy matching](entities.html#fuzzy-matching)** | **[Contextual entities](entities.html#create-annotation-based)** | **[Synonym recommendations](entities.html#synonyms)**
+| Language | **System entities ([number](/docs/services/assistant/system-entities.html#system-entities-sys-number), [currency](/docs/services/assistant/system-entities.html#system-entities-sys-currency), [percentage](/docs/services/assistant/system-entities.html#system-entities-sys-percentage), [date, time](/docs/services/assistant/system-entities.html#system-entities-sys-date-time))** | **[Entity fuzzy matching](/docs/services/assistant/entities.html#entities-fuzzy-matching)** | **[Contextual entities](/docs/services/assistant/entities.html#entities-create-annotation-based)** | **[Synonym recommendations](/docs/services/assistant/entities.html#entities-synonyms)**
 |:---|:---:|:---:|:---:|:---:|
-| **English (en)**                   | GA, Beta ([location](system-entities.html#sys-location), [person](system-entities.html#sys-person)) | GA | Beta | GA |
+| **English (en)**                   | GA, Beta ([location](/docs/services/assistant/system-entities.html#system-entities-sys-location), [person](/docs/services/assistant/system-entities.html#system-entities-sys-person)) | GA | Beta | GA |
 | **Arabic (ar)**                    | Beta | GA (Misspelling only) | NA | NA |
 | **Chinese (Simplified) (zh-cn)**   | GA | NA | NA | NA |
 | **Chinese (Traditional) (zh-tw)**  | Beta | NA | NA | NA |

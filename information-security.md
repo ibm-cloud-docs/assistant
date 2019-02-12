@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-02-12"
 
 ---
 
@@ -88,7 +88,7 @@ curl -X GET -u "apikey:3Df... ...Y7Pc9"
 ```
 {: codeblock}
 
-See the [Filter query reference](filter-reference.html) for additional details.
+See the [Filter query reference](/docs/services/assistant/filter-reference.html) for additional details.
 
 ### Deleting data
 {: #information-security-delete-data}

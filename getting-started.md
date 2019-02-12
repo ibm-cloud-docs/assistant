@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-02-12"
 
 ---
 
@@ -138,9 +138,11 @@ Now let's add nodes to handle our intents between the `Welcome` node and the `An
 1.  Click ![Close](images/close.png) to close the edit view.
 
    ![A general greeting node was added to the dialog.](images/gs-add-greeting-node.png)
+
 1.  Click the More icon ![More options](images/kabob.png) on this node, and then select **Add node below** to create a peer node. In the peer node, specify `#General_Ending` as the condition, and `OK. See you later.` as the response.
 
    ![Adding an ending node to the dialog.](images/gs-add-ending-node.png)
+
 1.  Click ![Close](images/close.png) to close the edit view.
 
    ![Shows that a general ending node was also added to the dialog.](images/gs-ending-added.png)

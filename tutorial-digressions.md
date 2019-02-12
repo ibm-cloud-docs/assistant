@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-08-29"
+lastupdated: "2019-02-12"
 
 ---
 
@@ -43,7 +43,7 @@ This tutorial will take approximately 20 minutes to complete.
 ### Prerequisite
 {: #tutorial-digressions-prereqs}
 
-If you do not have a {{site.data.keyword.conversationshort}} instance, complete the **Before you begin** step from the [Getting Started tutorial](getting-started.html#prerequisites) to create one.
+If you do not have a {{site.data.keyword.conversationshort}} instance, complete the **Before you begin** step from the [Getting Started tutorial](/docs/services/assistant/getting-started.html#getting-started-prerequisites) to create one.
 
 ## Step 1: Import the Digressions showcase dialog skill
 {: #tutorial-digressions-import-json}
@@ -149,4 +149,4 @@ In this tutorial you experienced how digressions work, and saw how individual di
 ## Next steps
 {: #tutorial-digressions-next-steps}
 
-For help as you configure digressions for your own dialog, see [Digressions](dialog-runtime.html#digressions).
+For help as you configure digressions for your own dialog, see [Digressions](/docs/services/assistant/dialog-runtime.html#dialog-runtime-digressions).

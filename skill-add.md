@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-08"
+lastupdated: "2019-02-12"
 
 ---
 
@@ -26,7 +26,7 @@ lastupdated: "2019-02-08"
 The natural-language processing for the {{site.data.keyword.conversationshort}} service is defined in a *dialog skill*, which is a container for all of the artifacts that define a conversation flow.
 {: shortdesc}
 
-## Creating a skill
+## Adding a skill
 {: #skill-add-task}
 
 You can add one skill to an assistant.
@@ -39,7 +39,7 @@ You can create a skill from scratch, use a sample skill that is provided by IBM,
 
     1.  Sign up for an {{site.data.keyword.cloud_notm}} account or log in.
 
-        The service instance will be created in the **default** resource group if you do not choose a different one, and it *cannot* be changed later. *Default* is typically sufficient. But if you want to learn more about resource groups, see the [IBM Cloud documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/docs/resources?topic=resources-bp_resourcegroups#bp_resourcegroups){: new_window}.
+        The service instance will be created in the **default** resource group if you do not choose a different one, and it *cannot* be changed later. *Default* is typically sufficient. But if you want to learn more about resource groups, see the [{{site.data.keyword.Bluemix_notm}} documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/docs/resources?topic=resources-bp_resourcegroups#bp_resourcegroups){: new_window}.
 
         You can use one service instance to develop, test, and deploy an assistant, so do not create distinct resource groups for different types of deployment environments.
         {:tip}
@@ -66,7 +66,7 @@ You can create a skill from scratch, use a sample skill that is provided by IBM,
 
       **Important:**
 
-      - The imported JSON file must use UTF-8 encoding.
+      - The imported JSON file must use UTF-8 encoding, without byte order mark (BOM) encoding.
       - The maximum size for a skill JSON file is 10MB. If you need to import a larger skill, consider importing the intents and entities separately after you have imported the skill. (You can also import larger skills using the REST API. For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant?curl=#create-workspace){: new_window}.)
       - The JSON cannot contain tabs, newlines, or carriage returns.
 
@@ -87,10 +87,10 @@ You can create a skill from scratch, use a sample skill that is provided by IBM,
 
 After you create the skill, it appears as a tile on the Skills page. Now, you can start identifying the user goals that you want the dialog skill to address.
 
-- To add prebuilt intents to your skill, see [Using content catalogs](catalog.html).
-- To define your own intents, see [Intents](intents.html).
+- To add prebuilt intents to your skill, see [Using content catalogs](/docs/services/assistant/catalog.html).
+- To define your own intents, see [Intents](/docs/services/assistant/intents.html).
 
-The dialog skill cannot interact with customers until it is added to an assistant and the assistant is deployed. See [Creating assistants](assistant-add.html).
+The dialog skill cannot interact with customers until it is added to an assistant and the assistant is deployed. See [Creating assistants](/docs/services/assistant/assistant-add.html).
 
 ### Troubleshooting skill import issues
 {: #skill-add-import-errors}
