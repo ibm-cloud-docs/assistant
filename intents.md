@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-07"
+lastupdated: "2019-02-12"
 
 ---
 
@@ -121,7 +121,7 @@ If you have defined, or plan to define, entities that are related to this intent
 
 As you define entiities, you can annotate mentions of the entity directly from your existing intent user examples. A relationship that you identify in this way between the intent and the entity is *not* used by the intent classification model. However, when you add the mention to the entity, it is also added to that entity as new value. And when you add the mention to an existing entity value, it is also added to that entity value as new synonym. Intent classification does use these types of dictionary references in intent user examples to establish a weak reference between an intent and an entity.
 
-See [Adding contextual entities](entities.html#create-annotation-based) for more information about contextual entities.
+See [Adding contextual entities](/docs/services/assistant/entities.html#entities-create-annotation-based) for more information about contextual entities.
 
 ### Directly referencing an entity name in an intent example
 {: #intents-entity-as-example}
@@ -138,7 +138,7 @@ You can choose to directly reference entities in your intent examples. For insta
 
 ![Screen capture showing intent definition](images/define_intent_entity.png)
 
-Currently, you can only directly reference synonym entities that you define (pattern values are ignored). You cannot use [system entities](system-entities.html).
+Currently, you can only directly reference synonym entities that you define (pattern values are ignored). You cannot use [system entities](/docs/services/assistant/system-entities.html).
 
 If you choose to reference an entity as an intent example (for example, `@PhoneModelName`) *anywhere* in your training data it cancels out the value of using a direct reference (for example, *Galaxy S8*) in an intent example anywhere else. All intents will then use the entity-as-an-intent-example approach. You cannot apply this approach for a specific intent only.
 {: important}
@@ -176,7 +176,7 @@ After you have finished creating new intents, you can test the system to see if 
     *Mark as irrelevant*
     {: #intents-mark-irrelevant}
 
-    The *Mark as irrelevant* option is not available in all languages. See [supported languages](language-support.html) for details.
+    The *Mark as irrelevant* option is not available in all languages. See [supported languages](/docs/services/assistant/language-support.html) for details.
 
     **Important**: Intents that are marked as irrelevant are saved as counterexamples in the JSON workspace, and are included as part of the training data. Be sure before you designate an input as irrelevant.
 
@@ -192,7 +192,7 @@ If your intents are not being correctly recognized, consider making the followin
 ## Absolute scoring
 {: #intents-absolute-scoring}
 
-The {{site.data.keyword.conversationshort}} service scores each intent’s confidence independently, not in relation to other intents. This approach adds flexibility; multiple intents can be detected in a single user input. It also means the system might not return an intent at all. If the top intent has a low confidence score (less than 0.2), the top intent is included in the intents array that is returned by the API, but any nodes that condition on the intent are not triggered. If you want to detect the case when no intents with good confidence scores were detected, use the `irrelevant` special condition in your dialog node. See [Special conditions](dialog-overview.html#special-conditions) for more information.
+The {{site.data.keyword.conversationshort}} service scores each intent’s confidence independently, not in relation to other intents. This approach adds flexibility; multiple intents can be detected in a single user input. It also means the system might not return an intent at all. If the top intent has a low confidence score (less than 0.2), the top intent is included in the intents array that is returned by the API, but any nodes that condition on the intent are not triggered. If you want to detect the case when no intents with good confidence scores were detected, use the `irrelevant` special condition in your dialog node. See [Special conditions](/docs/services/assistant/dialog-overview.html#dialog-overview-special-conditions) for more information.
 
 As intent confidence scores change, your dialogs might need restructuring. For example, if a dialog node uses an intent in its condition, and the intent's confidence score starts to consistently drop below 0.2, the dialog node stops being processed. If the confidence score changes, the behavior of the dialog can also change.
 
@@ -258,7 +258,7 @@ You can export a number of intents to a CSV file, so you can then import and reu
 
 If you have a large number of intents and examples, you might find it easier to import them from a comma-separated value (CSV) file than to define them one by one in the {{site.data.keyword.conversationshort}} tool. Be sure to remove any personal data from the user examples that you include in the file.
 
-Alternatively, you can upload a file with raw user utterances (from call center logs, for example) and let the service find candidates for user examples from the data. See [Adding examples from log files](#intents-intent-recommendations) for more information. This feature is available to Plus or Premium plan users only.
+Alternatively, you can upload a file with raw user utterances (from call center logs, for example) and let the service find candidates for user examples from the data. See [Adding examples from log files](/docs/services/assistant/intent-recommendations.html#intent-recommendations-get-example-recommendations) for more information. This feature is available to Plus or Premium plan users only.
 
 1.  Collect the intents and examples into a CSV file, or export them from a spreadsheet to a CSV file. The required format for each line in the file is as follows:
 

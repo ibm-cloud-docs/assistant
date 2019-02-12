@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-08"
+lastupdated: "2019-02-12"
 
 ---
 
@@ -31,7 +31,7 @@ Learn how to upgrade your service plan.
 
 You can explore the {{site.data.keyword.conversationshort}} [service plan options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/watson-assistant/pricing/){: new_window} to decide which plan is best for you.
 
-You cannot upgrade a Cloud Foundry-based instance to a Plus plan. You must migrate the instance, so it is using a resource group before you can upgrade it. See [Migrating](migrate.html) for more details.
+You cannot upgrade a Cloud Foundry-based instance to a Plus plan. You must migrate the instance, so it is using a resource group before you can upgrade it. See [Migrating](/docs/services/assistant/migrate.html) for more details.
 {: note}
 
 To upgrade your plan, complete these steps:
@@ -52,10 +52,10 @@ An upgrade is only available for your dialog skill if the upgrade icon (![upgrad
 
 To upgrade your dialog skill, complete the following steps:
 
-1.  [Download a copy of your dialog skill](skill-add.html#download-skill), and then import it as a new skill.
+1.  [Download a copy of your dialog skill](/docs/services/assistant/skill-add.html#skill-add-download-skill), and then import it as a new skill.
 2.  Upgrade the new copy of your dialog skill.
 
     When you upgrade your skill, the latest version of the API is enabled in the tool, and the "Try it out" pane begins to use the newest features.
 3.  Test the upgraded skill.
 4.  After evaluating the upgraded skill to understand how the upgrade will impact your application, apply the upgrade to your primary dialog skill.
-5.  Upgrade your application. To do so, change the message API calls it uses to specify the latest API version. For API version details, see the [release notes](release-notes.html).
+5.  Upgrade your application. To do so, change the message API calls it uses to specify the latest API version. For API version details, see the [release notes](/docs/services/assistant/release-notes.html).

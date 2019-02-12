@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-07"
+lastupdated: "2019-02-12"
 
 ---
 
@@ -111,7 +111,7 @@ Dictionary-based entites are those for which you define specific terms, synonyms
 
 1.  If you want the service to recognize terms with syntax that is similar to the entity value and synonyms you specify, but without requiring an exact match, click the **Fuzzy Matching** toggle to turn it on.
 
-    This feature is available for languages noted in the [Supported languages](language-support.html) topic.
+    This feature is available for languages noted in the [Supported languages](/docs/services/assistant/language-support.html) topic.
 
     **Fuzzy matching**
     {: #entities-fuzzy-matching}
@@ -190,7 +190,7 @@ Dictionary-based entites are those for which you define specific terms, synonyms
       - `email`: `\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b`, e.g. name@ibm.com
       - `website`: `(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$`, e.g. https://www.ibm.com
 
-      Often when using pattern entities, it will be necessary to store the text that matches the pattern in a context variable (or action variable), from within your dialog tree. For additional information, see [Defining a context variable](dialog-runtime.html#context-var-define).
+      Often when using pattern entities, it will be necessary to store the text that matches the pattern in a context variable (or action variable), from within your dialog tree. For additional information, see [Defining a context variable](/docs/services/assistant/dialog-runtime.html#dialog-runtime-context-var-define).
 
       Imagine a case where you are asking a user for their email address. The dialog node condition will contain a condition similar to `@contactInfo:email`. In order to assign the user-entered email as a context variable, the following syntax can be used to capture the pattern match within the dialog node's response section:
 
@@ -231,7 +231,7 @@ Dictionary-based entites are those for which you define specific terms, synonyms
         </tr>
       </table>
 
-      For additional information about using capture groups in your dialog, see [Storing and recognizing entity pattern groups in input](dialog-tips.html#get-pattern-groups).
+      For additional information about using capture groups in your dialog, see [Storing and recognizing entity pattern groups in input](/docs/services/assistant/dialog-tips.html#dialog-tips-get-pattern-groups).
 
       The pattern matching engine employed by the {{site.data.keyword.conversationshort}} service has some syntax limitations, which are necessary in order to avoid performance concerns which can occur when using other regular expression engines.
 
@@ -366,7 +366,7 @@ System entities are centrally maintained, so any updates are available automatic
 
 1.  Browse through the list of system entities to choose the ones that are useful for your application.
     - To see more information about a system entity, including examples of matching input, click the entity in the list.
-    - For details about the available system entities, see [System entities](system-entities.html).
+    - For details about the available system entities, see [System entities](/docs/services/assistant/system-entities.html).
 
 1.  Click the toggle switch next to a system entity to enable or disable it.
 

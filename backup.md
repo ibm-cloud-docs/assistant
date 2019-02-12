@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-11"
+lastupdated: "2019-02-12"
 
 ---
 
@@ -77,7 +77,7 @@ If the {{site.data.keyword.conversationshort}} service changes between the time 
 
     **Important:**
 
-    - The imported JSON file must use UTF-8 encoding.
+    - The imported JSON file must use UTF-8 encoding, without byte order mark (BOM) encoding.
     - The maximum size for a skill JSON file is 10MB. If you need to import a larger skill, consider importing the intents and entities separately after you have imported the skill. (You can also import larger skills using the REST API. For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant#create-workspace){: new_window}.)
     - The JSON file cannot contain tabs, newlines, or carriage returns.
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2017
-lastupdated: "2017-07-20"
+  years: 2015, 2019
+lastupdated: "2019-02-12"
 
 ---
 
@@ -23,7 +23,7 @@ lastupdated: "2017-07-20"
 # Time zones supported by system entities
 {: #time-zones}
 
-This list of supported time zones can be used with the time zone functions related to the [@sys-date and @sys-time entities](system-entities.html#sys-datetime).
+This list of supported time zones can be used with the time zone functions related to the [@sys-date and @sys-time entities](/docs/services/assistant/system-entities.html#system-entities-sys-date-time).
 {: shortdesc}
 
 |            Time zone           |             Time zone            |

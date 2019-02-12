@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-05-30"
+lastupdated: "2019-02-12"
 
 ---
 
@@ -23,10 +23,10 @@ lastupdated: "2018-05-30"
 # System entity details
 {: #system-entities}
 
-This reference section provides complete information about the available system entities. For more information about system entities and how to use them, refer to [Defining entities](entities.html#enable_system_entities) and search for "Enabling system entities".
+This reference section provides complete information about the available system entities. For more information about system entities and how to use them, refer to [Defining entities](/docs/services/assistant/entities.html#entities-enable-system-entities) and search for "Enabling system entities".
 {: shortdesc}
 
-System entities are available for languages noted in the [Supported languages](language-support.html) topic.
+System entities are available for languages noted in the [Supported languages](/docs/services/assistant/language-support.html) topic.
 
 ## @sys-currency entity
 {: #system-entities-sys-currency}
@@ -118,7 +118,7 @@ For time phrases like "for the last 3 days" or "in the next 4 hours", the logic 
 
 Mentions of a date or time that are relative to the current time are resolved with respect to a chosen time zone. By default, this is UTC (GMT). This means that by default, REST API clients located in time zones different from UTC will observe the value of `now` extracted according to the current UTC time.
 
-Optionally, the REST API client can add the local timezone as the context variable `$timezone`. This context variable should be sent with every client request. For example, the `$timezone` value should be `America/Los_Angeles`, `EST`, or `UTC`. For a full list of supported time zones, see [Supported time zones](time-zones.html).
+Optionally, the REST API client can add the local timezone as the context variable `$timezone`. This context variable should be sent with every client request. For example, the `$timezone` value should be `America/Los_Angeles`, `EST`, or `UTC`. For a full list of supported time zones, see [Supported time zones](/docs/services/assistant/time-zones.html).
 
 When the `$timezone` variable is provided, the values of relative @sys-date and @sys-time mentions are computed based on the client time zone instead of UTC.
 
@@ -165,13 +165,13 @@ For the input `at 6 pm` @sys-time returns these values:
 
 - @sys-time always returns the time in this format: HH:mm:ss.
 
-For information about processing date and time values, see the [Date and time](dialog-methods.html#date-time) method reference.
+For information about processing date and time values, see the [Date and time](/docs/services/assistant/dialog-methods.html#dialog-methods-date-time) method reference.
 {: tip}
 
 ## @sys-location entity
 {: #system-entities-sys-location}
 
-**BETA, for languages noted in the [Supported languages](language-support.html) topic**: The @sys-location system entity extracts place names (country, state/province, city, town, etc.) from the user's input. The value of the entity is not a system-standard value of the location.
+**BETA, for languages noted in the [Supported languages](/docs/services/assistant/language-support.html) topic**: The @sys-location system entity extracts place names (country, state/province, city, town, etc.) from the user's input. The value of the entity is not a system-standard value of the location.
 
 ### Recognized formats
 {: #system-entities-sys-location-formats}
@@ -180,7 +180,7 @@ For information about processing date and time values, see the [Date and time](d
 - U.S.A.
 - New South Wales
 
-For information about processing String values, see the [Strings](dialog-methods.html#strings) method reference.
+For information about processing String values, see the [Strings](/docs/services/assistant/dialog-methods.html#dialog-methods-strings) method reference.
 {: tip}
 
 ## @sys-number entity
@@ -234,7 +234,7 @@ You get equivalent results for other supported languages.
 
   Use `@sys-number AND @sys-number<4` instead. If no number is present, the first condition evaluates to false, which appropriately results in the whole condition evaluating to false.
 
-For information about processing number values, see the [Numbers](dialog-methods.html#numbers) method reference.
+For information about processing number values, see the [Numbers](/docs/services/assistant/dialog-methods.html#dialog-methods-numbers) method reference.
 {: tip}
 
 ## @sys-percentage entity
@@ -288,7 +288,7 @@ You get equivalent results for other supported languages.
 ## @sys-person entity
 {: #system-entities-sys-person}
 
-**BETA, for languages noted in the [Supported languages](language-support.html) topic**: The @sys-person system entity extracts names from the user's input. Names are recognized individually, so that "Joe" is not treated as "Joseph", or vice versa. The value of the entity is not a system-standard value of the name.
+**BETA, for languages noted in the [Supported languages](/docs/services/assistant/language-support.html) topic**: The @sys-person system entity extracts names from the user's input. Names are recognized individually, so that "Joe" is not treated as "Joseph", or vice versa. The value of the entity is not a system-standard value of the name.
 
 ### Recognized formats
 {: #system-entities-sys-person-formats}
@@ -297,5 +297,5 @@ You get equivalent results for other supported languages.
 - Jane Doe
 - Vijay
 
-For information about processing String values, see the [Strings](dialog-methods.html#strings) method reference.
+For information about processing String values, see the [Strings](/docs/services/assistant/dialog-methods.html#dialog-methods-strings) method reference.
 {: tip}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-28"
+lastupdated: "2019-02-12"
 
 ---
 
@@ -77,11 +77,11 @@ Here's how you will implement your assistant:
 
 Read more about these implementation steps by following these links:
 
-- [Intent creation overview](intents.html#intent-described)
-- [Dialog overview](dialog-overview.html)
-- [Entity creation overview](entities.html#entity-described)
-- [Assistant overview](assistant-add.html)
-- [Adding integrations](deploy-integration-add.html)
+- [Intent creation overview](/docs/services/assistant/intents.html#intents-described)
+- [Dialog overview](/docs/services/assistant/dialog-overview.html)
+- [Entity creation overview](/docs/services/assistant/entities.html#entities-described)
+- [Assistant overview](/docs/services/assistant/assistant-add.html)
+- [Adding integrations](/docs/services/assistant/deploy-integration-add.html)
 
 ## Browser support
 {: #index-browser-support}
@@ -91,7 +91,7 @@ The {{site.data.keyword.conversationshort}} service tool requires the same level
 ## Language support
 {: #index-lang-support}
 
-Language support by feature is detailed in the [Supported languages](language-support.html) topic.
+Language support by feature is detailed in the [Supported languages](/docs/services/assistant/language-support.html) topic.
 
 ## Terms and notices
 {: #index-notices}
@@ -101,7 +101,7 @@ See [IBM Cloud Terms and Notices ![External link icon](../../icons/launch-glyph.
 ## Next steps
 {: #index-next-steps}
 
-- [Get started](getting-started.html) with the service.
+- [Get started](/docs/services/assistant/getting-started.html) with the service.
 - View the list of [developer resources ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/watson/developer-resources/){: new_window}.
 
 Still have questions? Contact [IBM Sales ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-01.ibm.com/marketing/iwm/dre/signup?source=urx-20970){: new_window}.

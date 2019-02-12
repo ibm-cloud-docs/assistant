@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-12"
 
 ---
 
@@ -44,7 +44,7 @@ You can use the following controls to filter the information:
 
 - *Intents* and *Entities* filters - Use either of these drop-down filters to show data for a specific intent or entity in your skill.
 
-  **Important** - The intent and entities filters are populated by the intents and entities in the ***skill***, and not what is in the data source. If you have [selected a data source](logs.html#deploy_id) other than the skill, you might not see an intent or entity from your data source logs as an option in the filters, unless those intents and entities are also in the skill.
+  **Important** - The intent and entities filters are populated by the intents and entities in the ***skill***, and not what is in the data source. If you have [selected a data source](/docs/services/assistant/logs.html#logs-deploy-id) other than the skill, you might not see an intent or entity from your data source logs as an option in the filters, unless those intents and entities are also in the skill.
 
 - *Refresh data* - Allows you to refresh the Overview page statistics immediately. The Overview page shows when the data that it displays was last updated. You can select **Refresh data** if you think that newer data might be available.
 
@@ -91,7 +91,7 @@ Detailed graphs provide additional information:
 * *Active users* - The number of unique users who have engaged with your application within the selected time period.
 * *Avg. conversations per user* - The total conversations during the selected time period divided by the total unique users during the selected time period.
 
-  Statistics for *Active users* and *Avg. conversations per user* require a unique `user_id` parameter. See [Enabling user metrics](logs-resources.html#user_id) for more information.
+  Statistics for *Active users* and *Avg. conversations per user* require a unique `user_id` parameter. See [Enabling user metrics](/docs/services/assistant/logs-resources.html#logs-resources-user-id) for more information.
   {: important}
 
 ## Top Intents and Top Entities
@@ -103,4 +103,4 @@ You can also view the intents and entities that were recognized most often durin
 
 * *Top entities* are also shown in a list. For each entity you can select from the **Values** column to see a list of the most common values that were identified for this entity during the time period. You can also select an entity to open the **User conversations** page with the date range filtered to match the data you are viewing, and the entity filtered to match the selected entity.
 
-See [Learn from conversations](logs.html) for tips on how to edit intents and entities based on discoveries you make by reviewing the intents and entities that the service recognizes.
+See [Learn from conversations](/docs/services/assistant/logs.html) for tips on how to edit intents and entities based on discoveries you make by reviewing the intents and entities that the service recognizes.
