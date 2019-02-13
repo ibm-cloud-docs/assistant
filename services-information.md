@@ -45,6 +45,7 @@ Information about the artifact limits per plan is available from the topics that
 - [Integrations](/docs/services/assistant/deploy-integration-add.html#deploy-integration-add-limits)
 - [Logs](/docs/services/assistant/logs.html#logs-limits)
 - [Skills](/docs/services/assistant/skill-add.html#skill-add-limits)
+- [Versions](/docs/services/assistant/versions.html#versions-limits)
 
 ### API call limits
 {: #services-information-api-limits}

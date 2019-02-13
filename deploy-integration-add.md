@@ -45,7 +45,7 @@ Follow these steps to add integrations to your assistant:
 
     - [Custom application](/docs/services/assistant/deploy-custom-app.html)
     - [Facebook Messenger](/docs/services/assistant/deploy-facebook.html)
-    - [Intercom](/docs/services/assistant/deploy-intercom.html) 
+    - [Intercom](/docs/services/assistant/deploy-intercom.html)  ![Plus or Premium plan only](images/premium.png)
     - [Preview Link](/docs/services/assistant/deploy-web-link.html)
     - [Slack](/docs/services/assistant/deploy-slack.html)
     - [Voice Agent (Telephony)  ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/voice-agent-with-watson){: new_window}
