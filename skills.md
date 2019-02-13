@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-02-13"
 
 ---
 
@@ -38,3 +38,9 @@ A dialog skill contains the following types of artifacts:
 As you add information, the skill uses this unique data to build a machine learning model that can recognize these and similar user inputs. Each time you add or change the training data, the training process is triggered to ensure that the underlying model stays up-to-date as your customer needs and the topics they want to discuss change.
 
 For help creating a dialog skill, see [Creating a skill](/docs/services/assistant/skill-add.html).
+
+Here are some examples.
+
+![Diagram of a basic implementation that uses intent and dialog only.](images/basic-impl.png)
+
+![Diagram of a more complex implementation that uses intent, entity, and dialog.](images/complex-impl.png)
