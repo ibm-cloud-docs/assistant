@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-02-14"
 
 ---
 
@@ -43,6 +43,8 @@ You can create a skill from scratch, use a sample skill that is provided by IBM,
 
         You can use one service instance to develop, test, and deploy an assistant, so do not create distinct resource groups for different types of deployment environments.
         {:tip}
+
+        With a Premium plan, you can create multiple instances. The instances must all be created in the same resource group.
 
     1.  Click **Create**.
 
