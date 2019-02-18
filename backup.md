@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-02-18"
 
 ---
 
@@ -95,10 +95,10 @@ If the {{site.data.keyword.conversationshort}} service changes between the time 
 
 After you create the skill, it appears as a tile on the Skills page.
 
-## Recreating your assistant
+## Re-creating your assistant
 {: #backup-recreate-assistant}
 
-You can now recreate your assistant. You can then link your imported dialog skill to the assistant, and configure integrations for it.
+You can now re-create your assistant. You can then link your imported dialog skill to the assistant, and configure integrations for it.
 
 See [Creating assistants](/docs/services/assistant/assistant-add.html) and [Adding integrations](/docs/services/assistant/deploy-integration-add.html#deploy-integration-add-task) for more details.
 
@@ -107,4 +107,4 @@ See [Creating assistants](/docs/services/assistant/assistant-add.html) and [Addi
 
 When you import a dialog skill that you exported, a new skill is created. The new skill has a new workspace ID. If you have existing client applications that use the v1 API to access this skill, then you must update any workspace ID references to use the new worskpace ID instead.
 
-When you recreate your assistant, it is given a new assistant ID. If you have existing client applications that use the v2 API to access the assistant, then you must update any assistant ID references to use the new assistant ID instead.
+When you re-create your assistant, it is given a new assistant ID. If you have existing client applications that use the v2 API to access the assistant, then you must update any assistant ID references to use the new assistant ID instead.
