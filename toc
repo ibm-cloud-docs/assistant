@@ -33,6 +33,7 @@ Watson Assistant
         dialog-slots.md
         dialog-actions.md
         dialog-responses-json.md
+        dialog-depiction.md
 
     entities.md
     versions.md
@@ -115,7 +116,6 @@ Watson Assistant
     release-notes.md
     feedback.md
     services-information.md
-	dialog-depiction.md
 
     {: .topicgroup}
     Developer community
