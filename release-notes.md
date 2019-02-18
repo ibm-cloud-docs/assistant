@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-02-18"
 ---
 
 {:shortdesc: .shortdesc}
@@ -772,3 +772,8 @@ To take advantage of the changes in a new version, change the value of the `vers
 {: #18May2016}
 
 - This Experimental release of the {{site.data.keyword.conversationshort}} introduces the user interface and enables you to work with workspaces, intents, and examples.
+
+## Back to top
+{: #release-notes-back-to-top}
+
+Go [back to the top](#release-notes-change-log) of the change log.
