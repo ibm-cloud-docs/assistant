@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-02-19"
 
 ---
 
@@ -130,7 +130,7 @@ You can test your dialog at any time to verify the dialog. Let's test it now.
 
 ### Adding nodes to handle intents
 
-Now let's add nodes to handle our intents between the `Welcome` node and the `Anything else` node.
+Now let's add nodes between the `Welcome` node and the `Anything else` node that handle our intents.
 
 1.  Click the More icon ![More options](images/kabob.png) on the **Welcome** node, and then select **Add node below**.
 1.  Type `#General_Greetings` in the **Enter a condition** field of this node. Then, select the **`#General_Greetings`** option.
