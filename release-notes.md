@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-18"
+lastupdated: "2019-02-19"
 ---
 
 {:shortdesc: .shortdesc}
@@ -47,7 +47,7 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
-The following new features and changes to the service are available.
+The following new features and changes to the service are available. Check out our [blog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/assistant/home) to find in-depth information about how the newest features can benefit your business.
 
 ## 11 February 2019
 {: #11February2019}

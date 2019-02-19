@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-11"
+lastupdated: "2019-02-19"
 
 ---
 
@@ -190,10 +190,16 @@ To make a programmatic call from a dialog node, complete the following steps:
       Any charges that are incurred when the action runs are charged to the person who owns these credentials.
       {: note}
 
-      When you use built-in integrations to deploy the assistant, there is no way to pass the credentials to the dialog. You must store them as context variable values in a dialog node that will be triggered before the programmatic call itself is made. As a result, the credentials are visible in the JSON file that represents the skill, which can be downloaded by anyone with access to your skills. To protect your {{site.data.keyword.openwhisk_short}} credentials, consider using web actions with no authentication or authenticate the call with a token that is specific to the web action only.
+      When you use built-in integrations to deploy the assistant, there is no way to pass the credentials to the dialog. You must store them as context variable values in a dialog node that will be triggered before the programmatic call itself is made. As a result, the credentials are visible in the JSON file that represents the skill, which can be downloaded by anyone with access to your skills.
       {: important}
 
-      You can prevent the information from being stored in Watson logs by nesting your context variable within the $private section of the message context. For example: `$private.my_credentials`.
+      You can prevent the information from being stored in Watson logs by nesting your context variable within the $private section of the message context. For example: `$private.my_credentials`. However, storing the credentials in the private object hides them from the logs only. The information is still stored in the underlying JSON object. Do not allow this information to be exposed to the client application.
+
+      Consider using one of these approaches to protect credentials:
+
+      - If using a custom client application, implement an architecture that prevents the client application from calling the API directly. For example, use an app server that calls the {{site.data.keyword.conversationshort}} API REST endpoint and passes only the JSON output object from your app server to your client application.
+      - Use web actions with no authentication.
+      - Limit exposure by authenticating the call with a token that is specific to the web action only.
 
       The credentials object that you define must contain valid {{site.data.keyword.openwhisk_short}} credentials. How you specify them varies depending on the location in which the service is hosted and the authentication method used by instances in that location. The methods include:
 
