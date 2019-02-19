@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-13"
+lastupdated: "2019-02-18"
 
 ---
 
@@ -32,7 +32,7 @@ A dialog skill contains the following types of artifacts:
 
   A *content catalog* is provided that contains prebuilt common intents you can add to your application rather than building your own. For example, most applications require a greeting intent that starts a dialog with the user. You can add the **General** content catalog to add an intent that greets the user and does other useful things, like end the conversation.
 
-- [**Dialog**](/docs/services/assistant/dialog-build.html): A *dialog* is a branching conversation flow that defines how your application responds when it recognizes the defined intents and entities. You use the dialog builder in the tool to create conversations with users, providing responses based on the intents and entities that you recognize in their input.
+- [**Dialog**](/docs/services/assistant/dialog-build.html): A *dialog* is a branching conversation flow that defines how your application responds when it recognizes the defined intents and entities. You use the dialog editor in the tool to create conversations with users, providing responses based on the intents and entities that you recognize in their input.
 
   ![Diagram of a basic implementation that uses intent and dialog only.](images/basic-impl.png)
 

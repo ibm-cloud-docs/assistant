@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-11"
+lastupdated: "2019-02-18"
 
 ---
 
@@ -34,7 +34,7 @@ To create a dialog, complete the following steps:
 
 1.  Open the **Build** page from the navigation bar, click the **Dialog** tab, and then click **Create**.
 
-    When you open the dialog builder for the first time, the following nodes are created for you:
+    When you open the dialog editor for the first time, the following nodes are created for you:
 
     - **Welcome**: The first node. It contains a greeting that is displayed to your users when they first engage with the service. You can edit the greeting.
 
