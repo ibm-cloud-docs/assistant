@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-14"
+lastupdated: "2019-02-21"
 
 ---
 
@@ -26,12 +26,9 @@ lastupdated: "2019-02-14"
 The natural-language processing for the {{site.data.keyword.conversationshort}} service is defined in a *dialog skill*, which is a container for all of the artifacts that define a conversation flow.
 {: shortdesc}
 
-## Adding a skill
-{: #skill-add-task}
-
 You can add one skill to an assistant.
 
-You can create a skill from scratch, use a sample skill that is provided by IBM, or import a skill from a JSON file.
+You can create a skill from scratch, use a sample skill that is provided by IBM, or import a skill from a JSON file. To add a skill, complete the following steps:
 
 1.  If you have not created a {{site.data.keyword.conversationshort}} service instance, perform this one-time procedure first. Otherwise, skip this step.
 
@@ -90,9 +87,9 @@ You can create a skill from scratch, use a sample skill that is provided by IBM,
 After you create the skill, it appears as a tile on the Skills page. Now, you can start identifying the user goals that you want the dialog skill to address.
 
 - To add prebuilt intents to your skill, see [Using content catalogs](/docs/services/assistant/catalog.html).
-- To define your own intents, see [Intents](/docs/services/assistant/intents.html).
+- To define your own intents, see [Defining intents](/docs/services/assistant/intents.html).
 
-The dialog skill cannot interact with customers until it is added to an assistant and the assistant is deployed. See [Creating assistants](/docs/services/assistant/assistant-add.html).
+The dialog skill cannot interact with customers until it is added to an assistant and the assistant is deployed. See [Creating an assistant](/docs/services/assistant/assistant-add.html).
 
 ### Troubleshooting skill import issues
 {: #skill-add-import-errors}
@@ -205,4 +202,4 @@ To share a dialog skill with other people, you must give them access to the serv
 
 When the people you invite next log in to {{site.data.keyword.cloud_notm}}, your account will be included in their list of accounts. If they select your account, they can see your service instance, and open and edit your skills.
 
-With more people contributing to dialog skill development, unintended changes can occur, including skill deletions. Consider creating backup copies of your dialog skill on a regular basis, so you can roll back to an earlier version if necessary. To create a backup, simply [download the skill as a JSON file](#skill-add-download-skill).
+With more people contributing to dialog skill development, unintended changes can occur, including skill deletions. Consider creating backup copies of your dialog skill on a regular basis, so you can roll back to an earlier version if necessary. To create a backup, simply [download the skill as a JSON file](#skill-add-download).

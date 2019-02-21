@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-11"
+lastupdated: "2019-02-21"
 
 ---
 
@@ -25,9 +25,6 @@ lastupdated: "2019-02-11"
 
 Create an assistant with the skills it needs to address the business goals of your customers.
 {: shortdesc}
-
-## Create an assistant
-{: #assistant-add-task}
 
 Follow these steps to create an assistant:
 

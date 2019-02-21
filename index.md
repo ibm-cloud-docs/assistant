@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-02-21"
 
 ---
 
@@ -25,11 +25,6 @@ lastupdated: "2019-02-12"
 
 {{site.data.keyword.conversationfull}} is a cognitive bot that you can customize for your business needs, and deploy across multiple channels to bring help to your customers where and when they need it.
 {: shortdesc}
-
-## Where are my workspaces?
-{: #index-existing-customers}
-
-If you created a *workspace* in a previous version of the service, have no fear; you can still get to it. Workspaces are now called *skills*. To get to your workspace, click the **Skills** tab.
 
 ## How it works
 {: #index-how-it-works}
@@ -61,11 +56,11 @@ Here's how you will implement your assistant:
 
     Or use prebuilt **content catalogs** provided by IBM to get started with data that addresses common customer goals.
 
-  - **Entities**: An entity represents a term or object that provides context for an intent. For example, an entity might be a city name that helps your dialog to distinguish which store the user wants to know store hours for.
+  - **Dialog**: Use the dialog tool to build a dialog flow that incorporates your intents. The dialog flow is represented graphically in the tool as a tree. You can add a branch to process each of the intents that you want the service to handle.
+
+  - **Entities**: An entity represents a term or object that provides context for an intent. For example, an entity might be a city name that helps your dialog to distinguish which store the user wants to know store hours for. After adding entities, update your dialog to use them. Add dialog nodes that handle the many possible permutations of a request based on the entities found in the user input.
 
     As you add training data, a natural language classifier is automatically added to the skill, and is trained to understand the types of requests that you have indicated the service should listen for and respond to.
-
-  - **Dialog**: Use the dialog tool to build a dialog flow that incorporates your intents and entities. The dialog flow is represented graphically in the tool as a tree. You can add a branch to process each of the intents that you want the service to handle. You can then add branch nodes that handle the many possible permutations of a request based on other factors, such as the entities found in the user input or information that is passed to the service from an external service.
 
 - **Create an assistant**.
 
@@ -82,6 +77,11 @@ Read more about these implementation steps by following these links:
 - [Entity creation overview](/docs/services/assistant/entities.html#entities-described)
 - [Assistant overview](/docs/services/assistant/assistant-add.html)
 - [Adding integrations](/docs/services/assistant/deploy-integration-add.html)
+
+## Where are my workspaces?
+{: #index-existing-customers}
+
+If you created a *workspace* in a previous version of the service, have no fear; you can still get to it. Workspaces are now called *skills*. To get to your workspace, click the **Skills** tab.
 
 ## Browser support
 {: #index-browser-support}

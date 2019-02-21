@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-18"
+lastupdated: "2019-02-21"
 
 ---
 
@@ -100,7 +100,7 @@ After you create the skill, it appears as a tile on the Skills page.
 
 You can now re-create your assistant. You can then link your imported dialog skill to the assistant, and configure integrations for it.
 
-See [Creating assistants](/docs/services/assistant/assistant-add.html) and [Adding integrations](/docs/services/assistant/deploy-integration-add.html#deploy-integration-add-task) for more details.
+See [Creating an assistant](/docs/services/assistant/assistant-add.html) and [Adding integrations](/docs/services/assistant/deploy-integration-add.html#deploy-integration-add-task) for more details.
 
 ## Update your client applications
 {: #backup-update-api}
