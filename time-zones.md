@@ -23,7 +23,7 @@ lastupdated: "2019-02-12"
 # Time zones supported by system entities
 {: #time-zones}
 
-This list of supported time zones can be used with the time zone functions related to the [@sys-date and @sys-time entities](/docs/services/assistant/system-entities.html#system-entities-sys-date-time).
+This list of supported time zones can be used with the time zone functions related to the [@sys-date and @sys-time entities](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-date-time).
 {: shortdesc}
 
 |            Time zone           |             Time zone            |

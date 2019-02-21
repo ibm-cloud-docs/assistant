@@ -61,7 +61,7 @@ The following video provides a 2-minute overview of how to get intent user examp
 
 The files you upload do not need to associate the examples with intents. You simply provide the raw user utterances and let the service do the work of choosing the ones that are appropriate for the current intent. For every intent, the service analyzes the same data to find user examples that are appropriate for that intent.
 
-1.  Follow the steps in [Creating intents](/docs/services/assistant/intents.html#intents-creating-intents-task) to create an intent.
+1.  Follow the steps in [Creating intents](/docs/services/assistant?topic=assistant-intents#intents-creating-intents-task) to create an intent.
 
 1.  Add at least 5 user examples that illustrate the full range of typical utterances that you anticipate users might say to trigger this intent.
 
@@ -93,7 +93,7 @@ The files you upload do not need to associate the examples with intents. You sim
 
       If you want to include one in a search term without it being processed as an operator, you must prefix it with a backslash (`\`).
 
-The user examples that you add in this way do count toward your intent user example totals for which there are limits per plan. See [Intent limits](/docs/services/assistant/intents.html#intents-limits) for more details.
+The user examples that you add in this way do count toward your intent user example totals for which there are limits per plan. See [Intent limits](/docs/services/assistant?topic=assistant-intents#intents-limits) for more details.
 
 ## Managing uploaded files
 {: #intent-recommendations-manage-files}

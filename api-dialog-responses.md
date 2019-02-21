@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-11"
+lastupdated: "2019-02-21"
 
 ---
 
@@ -23,7 +23,7 @@ lastupdated: "2019-02-11"
 # Implementing responses
 {: #dialog-api-responses}
 
-A dialog node can respond to users with a response that includes text, images, or interactive elements such as clickable options. If you are building your own client application, you must implement the correct display of all response types returned by your dialog. (For more information about dialog responses, see [Responses](/docs/services/assistant/dialog-overview.html#responses)).
+A dialog node can respond to users with a response that includes text, images, or interactive elements such as clickable options. If you are building your own client application, you must implement the correct display of all response types returned by your dialog. (For more information about dialog responses, see [Responses](/docs/services/assistant?topic=assistant-dialog-overview#responses)).
 
 ## Response output format
 {: #dialog-api-responses-output}
@@ -59,7 +59,7 @@ Each element of a response is of one of the supported response types (currently 
 
 This section describes the available response types and how they are represented in the /message API response JSON. (If you are using the Watson SDK, you can use the interfaces provided for your language to access the same objects.)
 
-**Note:** The examples in this section show the format of the JSON data returned from the /message API at run time. Keep in mind that this is different from the JSON format used to define responses within a dialog node. For more information, see [Defining responses using the JSON editor](/docs/services/assistant/dialog-responses-json.html).
+**Note:** The examples in this section show the format of the JSON data returned from the /message API at run time. Keep in mind that this is different from the JSON format used to define responses within a dialog node. For more information, see [Defining responses using the JSON editor](/docs/services/assistant?topic=assistant-dialog-responses-json).
 
 ### Image
 {: #dialog-api-responses-image}

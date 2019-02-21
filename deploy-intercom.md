@@ -219,4 +219,4 @@ Some rich responses that you add to a dialog are displayed differently within th
 | **Image**     | The image **title**, **description**, and the image itself are rendered. |
 | **Pause**     | Whether or not you enable it, a typing indicator is not displayed during the pause. |
 
-See [Rich responses](/docs/services/assistant/dialog-overview.html#dialog-overview-multimedia) for more information about response types.
+See [Rich responses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more information about response types.

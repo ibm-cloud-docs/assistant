@@ -44,7 +44,7 @@ If you want to store logs of conversations that users have had with your assista
 To get the workspace ID for a skill, from the skill tile, click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **View API Details**.
 {: tip}
 
-Logs are stored for a different amount of time depending on your service plan. For example, Lite plans provide logs from the past 7 days only. See [Log limits](/docs/services/assistant/logs.html#logs-limits) for more information.
+Logs are stored for a different amount of time depending on your service plan. For example, Lite plans provide logs from the past 7 days only. See [Log limits](/docs/services/assistant?topic=assistant-logs#logs-limits) for more information.
 
 You cannot import logs from one skill into another skill.
 
@@ -85,7 +85,7 @@ If the {{site.data.keyword.conversationshort}} service changes between the time 
 
     Click **Import**.
 
-    If you have trouble importing a skill, see [Troubleshooting skill import issues](/docs/services/assistant/skill-add.html#skill-add-import-errors).
+    If you have trouble importing a skill, see [Troubleshooting skill import issues](/docs/services/assistant?topic=assistant-skill-add#skill-add-import-errors).
 
 1.  Specify the details for the skill:
 
@@ -100,7 +100,7 @@ After you create the skill, it appears as a tile on the Skills page.
 
 You can now re-create your assistant. You can then link your imported dialog skill to the assistant, and configure integrations for it.
 
-See [Creating an assistant](/docs/services/assistant/assistant-add.html) and [Adding integrations](/docs/services/assistant/deploy-integration-add.html#deploy-integration-add-task) for more details.
+See [Creating an assistant](/docs/services/assistant?topic=assistant-assistant-add) and [Adding integrations](/docs/services/assistant?topic=assistant-deploy-integration-add#deploy-integration-add-task) for more details.
 
 ## Update your client applications
 {: #backup-update-api}

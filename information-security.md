@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-02-21"
 
 ---
 
@@ -33,8 +33,8 @@ The products, services, and other capabilities described herein are not suitable
 
 If you need to request GDPR support for {{site.data.keyword.cloud}} {{site.data.keyword.watson}} resources that are created
 
-- In the European Union, see [Requesting support for IBM Cloud Watson resources created in the European Union![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/services/watson/getting-started-gdpr-sar.html#request-EU){: new_window}.
-- Outside the European Union, see [Requesting support for resources outside the European Union![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/services/watson/getting-started-gdpr-sar.html#request-non-EU){: new_window}.
+- In the European Union, see [Requesting support for IBM Cloud Watson resources created in the European Union![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/services/watson/getting-started-gdpr-sar#request-EU){: new_window}.
+- Outside the European Union, see [Requesting support for resources outside the European Union![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/services/watson/getting-started-gdpr-sar#request-non-EU){: new_window}.
 
 ## European Union General Data Protection Regulation (GDPR)
 {: #information-security-gdpr}
@@ -75,7 +75,7 @@ The `customer_id` string cannot include the semicolon (`;`) or equal sign (`=`) 
 
 You can pass multiple **customer ID** values with semicolon-separated `customer_id={value}` pairs. For example: `'X-Watson-Metadata: customer_id=abc;customer_id=xyz'`
 
-If you add a search skill to an assistant, user input that is submitted to the assistant is passed to the {{site.data.keyword.discoveryshort}} service as a search query. If the {{site.data.keyword.conversationshort}} integration provides a customer ID, then the resulting /message API request includes the customer ID in the header, and the ID is passed through to the {{site.data.keyword.discoveryshort}} /query API request. To delete any query data that is associated with a specific customer, you must send a delete request directly to the {{site.data.keyword.discoveryshort}} service instance that is linked your the assistant. See the {{site.data.keyword.discoveryshort}} [information security](https://cloud.ibm.com/docs/services/discovery/information-security.html#gdpr-discovery) topic for details.
+If you add a search skill to an assistant, user input that is submitted to the assistant is passed to the {{site.data.keyword.discoveryshort}} service as a search query. If the {{site.data.keyword.conversationshort}} integration provides a customer ID, then the resulting /message API request includes the customer ID in the header, and the ID is passed through to the {{site.data.keyword.discoveryshort}} /query API request. To delete any query data that is associated with a specific customer, you must send a delete request directly to the {{site.data.keyword.discoveryshort}} service instance that is linked your the assistant. See the {{site.data.keyword.discoveryshort}} [information security](https://cloud.ibm.com/docs/services/discovery/information-security#gdpr-discovery) topic for details.
 
 ### Querying user data
 {: #information-security-query-customer-id}
@@ -88,7 +88,7 @@ curl -X GET -u "apikey:3Df... ...Y7Pc9"
 ```
 {: codeblock}
 
-See the [Filter query reference](/docs/services/assistant/filter-reference.html) for additional details.
+See the [Filter query reference](/docs/services/assistant?topic=assistant-filter-reference) for additional details.
 
 ### Deleting data
 {: #information-security-delete-data}

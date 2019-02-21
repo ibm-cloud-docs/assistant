@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-11"
+lastupdated: "2019-02-21"
 
 ---
 
@@ -23,14 +23,14 @@ lastupdated: "2019-02-11"
 # Defining responses using the JSON editor
 {: #dialog-responses-json}
 
-In some situations, you might need to define responses using the JSON editor. (For more information about dialog responses, see [Responses](/docs/services/assistant/dialog-overview.html#dialog-overview-responses)). Editing the response JSON gives you direct access to the data that will be returned to the communication channel or custom application.
+In some situations, you might need to define responses using the JSON editor. (For more information about dialog responses, see [Responses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-responses)). Editing the response JSON gives you direct access to the data that will be returned to the communication channel or custom application.
 
 ## Generic JSON format
 {: #dialog-responses-json-generic}
 
 The generic JSON format for responses is used to specify responses that are intended for any channel. This format can accommodate various response types that are supported by Slack and Facebook integrations, and can also be implemented by a custom client application. (This is the format that is used by default for dialog responses defined using the {{site.data.keyword.conversationshort}} tool.)
 
-For information about how to open the JSON editor for a dialog node response from the tool, see [Context variables in the JSON editor](/docs/services/assistant/dialog-runtime.html#dialog-runtime-context-var-json).
+For information about how to open the JSON editor for a dialog node response from the tool, see [Context variables in the JSON editor](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-context-var-json).
 
 To specify an interactive response in the generic JSON format, insert the appropriate JSON objects into the `output.generic` field of the dialog node response. The following example shows how you might send a response containing multiple response types (text, an image, and clickable options):
 
@@ -93,7 +93,7 @@ If you are using the {{site.data.keyword.conversationshort}} connector, the resp
 
 **Note:** When a response is split into multiple messages, the {{site.data.keyword.conversationshort}} connector sends these messages to the channel in sequence. It is the responsibility of the channel to deliver these messages to the end user; this can be affected by network or server issues.
 
-If you are building your own client application, your app must implement each response type as appropriate. For more information, see [Implementing responses](/docs/services/assistant/api-dialog-responses.html).
+If you are building your own client application, your app must implement each response type as appropriate. For more information, see [Implementing responses](/docs/services/assistant?topic=assistant-api-dialog-responses).
 
 ## Native JSON format
 {: #dialog-responses-json-native}

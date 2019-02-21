@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-02-21"
 
 ---
 
@@ -43,11 +43,11 @@ Follow these steps to add integrations to your assistant:
 
 1.  Click the tile for the channel with which you want to integrate the assistant. The options include:
 
-    - [Custom application](/docs/services/assistant/deploy-custom-app.html)
-    - [Facebook Messenger](/docs/services/assistant/deploy-facebook.html)
-    - [Intercom](/docs/services/assistant/deploy-intercom.html)  ![Plus or Premium plan only](images/premium.png)
-    - [Preview Link](/docs/services/assistant/deploy-web-link.html)
-    - [Slack](/docs/services/assistant/deploy-slack.html)
+    - [Custom application](/docs/services/assistant?topic=assistant-deploy-custom-app)
+    - [Facebook Messenger](/docs/services/assistant?topic=assistant-deploy-facebook)
+    - [Intercom](/docs/services/assistant?topic=assistant-deploy-intercom)  ![Plus or Premium plan only](images/premium.png)
+    - [Preview Link](/docs/services/assistant?topic=assistant-deploy-web-link)
+    - [Slack](/docs/services/assistant?topic=assistant-deploy-slack)
     - [Voice Agent (Telephony)  ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/voice-agent-with-watson){: new_window}
 
       Opens the **Voice Agent with Watson** service overview page on {{site.data.keyword.cloud_notm}}.
@@ -59,7 +59,7 @@ Follow these steps to add integrations to your assistant:
 
 After you integrate the assistant, test it from the target channel to ensure that the assistant works as expected.
 
-For tips on how to start the dialog in a consistent way across all integration types, see [Starting the dialog](/docs/services/assistant/dialog-start.html).
+For tips on how to start the dialog in a consistent way across all integration types, see [Starting the dialog](/docs/services/assistant?topic=assistant-dialog-start).
 
 ## Integration limits
 {: #deploy-integration-add-limits}

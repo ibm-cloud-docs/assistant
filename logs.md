@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-02-21"
 
 ---
 
@@ -29,7 +29,7 @@ To open a list of messages between users and the assistant that uses this dialog
 When you open the **User conversations** page, the default view lists results for the last day, with the newest results first. The top intent (#intent) and any recognized entity (@entity) values used in a message, and the message text are available. For intents that are not recognized, the value shown is *Irrelevant*. If an entity is not recognized, or has not been provided, the value shown is *No entities found*.
 ![Logs default page](images/logs_page1.png)
 
-It is important to note that the **User conversations** page displays the total number of *messages* between users and your application. A message is a single utterance the user sends to the application. Each conversation may be made up of multiple messages. Thus, the number of results on this **User conversations** page is different than the number of conversations shown on the [Overview](/docs/services/assistant/logs-overview.html) page.
+It is important to note that the **User conversations** page displays the total number of *messages* between users and your application. A message is a single utterance the user sends to the application. Each conversation may be made up of multiple messages. Thus, the number of results on this **User conversations** page is different than the number of conversations shown on the [Overview](/docs/services/assistant?topic=assistant-logs-overview) page.
 
 ## Log limits
 {: #logs-limits}
@@ -140,14 +140,14 @@ If you use data from another data source, any improvements you make to the model
 1.  To correct an intent, select the ![Edit](images/edit_icon.png) edit icon beside the chosen #intent.
 1.  From the list provided, select the correct intent for this input.
     - Begin typing in the entry field and the list of intents is filtered.
-    - You can also choose **Mark as irrelevant** from this menu. (For more information, see [Mark as irrelevant](/docs/services/assistant/intents.html#intents-mark-irrelevant).) Or, you can choose **Do not train on intent**, which does not save this message as an example for training.
+    - You can also choose **Mark as irrelevant** from this menu. (For more information, see [Mark as irrelevant](/docs/services/assistant?topic=assistant-intents#intents-mark-irrelevant).) Or, you can choose **Do not train on intent**, which does not save this message as an example for training.
 
     ![Select intent](images/select_intent.png)
 1.  Select **Save**.
 
     ![Save intent](images/save_intent.png)
 
-    The {{site.data.keyword.conversationshort}} service supports adding user input as an example to an intent *as-is*. If you are using @entity references as examples in your intent training data, and a user message that you want to save contains an entity value or synonym from your training data, then you must edit the message later. After you save it, edit the message from the Intents page to replace the entity that it references. For more information, see [Directly referencing an @Entity as an intent example](/docs/services/assistant/intents.html#intents-entity-as-example).
+    The {{site.data.keyword.conversationshort}} service supports adding user input as an example to an intent *as-is*. If you are using @entity references as examples in your intent training data, and a user message that you want to save contains an entity value or synonym from your training data, then you must edit the message later. After you save it, edit the message from the Intents page to replace the entity that it references. For more information, see [Directly referencing an @Entity as an intent example](/docs/services/assistant?topic=assistant-intents#intents-entity-as-example).
     {: tip}
 
 ### Adding an entity value or synonym

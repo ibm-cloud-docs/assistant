@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-02-21"
 
 ---
 
@@ -94,7 +94,7 @@ Filtering on intents operates on all detected intents. To filter only on the det
 ### Filtering by customer ID
 {: #filter-reference-customer-id}
 
-To filter by customer ID, use the special location `customer_id`. (For more information about labeling messages with a customer ID, see [Information security](/docs/services/conversation/information-security.html)).
+To filter by customer ID, use the special location `customer_id`. (For more information about labeling messages with a customer ID, see [Information security](/docs/services/assistant?topic=assistant-information-security)).
 
 ### Filtering by other fields
 {: #filter-reference-fields}

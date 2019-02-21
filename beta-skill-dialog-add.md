@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-11"
+lastupdated: "2019-02-21"
 
 ---
 
@@ -26,18 +26,18 @@ lastupdated: "2019-02-11"
 The natural-language processing for the {{site.data.keyword.conversationshort}} service is defined in a *dialog skill*, which is a container for all of the artifacts that define a conversation flow.
 {: shortdesc}
 
-This feature is available for use by participants in the beta program only. To find out how to request access, see [Particpate in the beta program](/docs/services/assistant/feedback.html#feedback-beta).
+This feature is available for use by participants in the beta program only. To find out how to request access, see [Participate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
 
 ![Beta](images/beta.png) IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment. 
 
-You can add one dialog skill to an assistant. See [Skill limits](/docs/services/assistant/skill-add.html#skill-add-limits) for information about limits per plan.
+You can add one dialog skill to an assistant. See [Skill limits](/docs/services/assistant?topic=assistant-skill-add#skill-add-limits) for information about limits per plan.
 
 ## Creating a dialog skill
 {: #beta-skill-dialog-add-task}
 
 You can create a skill from scratch, use a sample skill that is provided by IBM, or import a skill from a JSON file.
 
-If you have not done so, complete the prerequisite steps in the [getting started tutorial](/docs/services/assistant/getting-started.html#getting-started-prerequisites) to create a {{site.data.keyword.conversationshort}} service instance and launch the tool.
+If you have not done so, complete the prerequisite steps in the [getting started tutorial](/docs/services/assistant?topic=assistant-getting-started#getting-started-prerequisites) to create a {{site.data.keyword.conversationshort}} service instance and launch the tool.
 
 You use the {{site.data.keyword.conversationshort}} tool to build skills. Follow these steps to create a dialog skill:
 
@@ -82,10 +82,10 @@ You use the {{site.data.keyword.conversationshort}} tool to build skills. Follow
 
 After you create the skill, it appears as a tile on the Skills page. Now, you can start identifying the user goals that you want the dialog skill to address.
 
-- To add prebuilt intents to your skill, see [Using content catalogs](/docs/services/assistant/catalog.html).
-- To define your own intents, see [Intents](/docs/services/assistant/intents.html).
+- To add prebuilt intents to your skill, see [Using content catalogs](/docs/services/assistant?topic=assistant-catalog).
+- To define your own intents, see [Intents](/docs/services/assistant?topic=assistant-intents).
 
-The dialog skill cannot interact with customers until it is added to an assistant and the assistant is deployed. See [Creating assistants](/docs/services/assistant/assistant-add.html).
+The dialog skill cannot interact with customers until it is added to an assistant and the assistant is deployed. See [Creating assistants](/docs/services/assistant?topic=assistant-assistant-add).
 
 ### Troubleshooting skill import issues
 {: #beta-skill-dialog-add-import-errors}
@@ -151,7 +151,7 @@ To share a dialog skill with other people, you must give them access to the serv
     - **Services**: {{site.data.keyword.conversationshort}}
     - **Assign platform access roles**: Operator
 
-    For more information about platform management roles, see [IAM access ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/iam/users_roles.html). (Service access roles are not leveraged by {{site.data.keyword.conversationshort}} by default.)
+    For more information about platform management roles, see [IAM access ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/iam?topic=iam-userroles). (Service access roles are not leveraged by {{site.data.keyword.conversationshort}} by default.)
 
     For older instances that are managed by Cloud Foundry, you must expand the *Cloud Foundry access* section, choose your organization, and then assign the person to the **Developer** space role.
     {: note}

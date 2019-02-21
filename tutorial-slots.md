@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-02-21"
 
 ---
 
@@ -43,7 +43,7 @@ This tutorial will take approximately 30 minutes to complete.
 ### Prerequisite
 {: #tutorial-slots-prereqs}
 
-Before you begin, complete the [Getting Started tutorial](/docs/services/assistant/getting-started.html). You will use the {{site.data.keyword.conversationshort}} tutorial skill that you created, and add nodes to the simple dialog that you built as part of the getting started exercise.
+Before you begin, complete the [Getting Started tutorial](/docs/services/assistant?topic=assistant-getting-started). You will use the {{site.data.keyword.conversationshort}} tutorial skill that you created, and add nodes to the simple dialog that you built as part of the getting started exercise.
 
 You can also start with a new dialog skill if you want. Just be sure to create the skill before you begin this tutorial.
 {: note}
@@ -100,9 +100,9 @@ You have successfully enabled the @sys-date, @sys-time, and @sys-number system e
 ## Step 3: Add a dialog node with slots
 {: #tutorial-slots-add-dialog-with-slots}
 
-A dialog node represents the start of a thread of dialog between the service and the user. It contains a condition that must be met for the node to be processed by the service. At a minimum, it also contains a response. For example, a node condition might look for the `#hello` intent in user input, and respond with, `Hi. How can I help you?` This example is the simplest form of a dialog node, one that contains a single condition and a single response. You can define complex dialogs by adding conditional responses to a single node, adding child nodes that prolong the exchange with the user, and much more. (If you want to learn more about complex dialogs, you can complete the [Building a complex dialog](/docs/services/assistant/tutorial.html) tutorial.)
+A dialog node represents the start of a thread of dialog between the service and the user. It contains a condition that must be met for the node to be processed by the service. At a minimum, it also contains a response. For example, a node condition might look for the `#hello` intent in user input, and respond with, `Hi. How can I help you?` This example is the simplest form of a dialog node, one that contains a single condition and a single response. You can define complex dialogs by adding conditional responses to a single node, adding child nodes that prolong the exchange with the user, and much more. (If you want to learn more about complex dialogs, you can complete the [Building a complex dialog](/docs/services/assistant?topic=assistant-tutorial) tutorial.)
 
-The node that you will add in this step is one that contains slots. Slots provide a structured format through which you can ask for and save multiple pieces of information from a user within a single node. They are most useful when you have a specific task in mind and need key pieces of information from the user before you can perform it. See [Gathering information with slots](/docs/services/assistant/dialog-slots.html) for more information.
+The node that you will add in this step is one that contains slots. Slots provide a structured format through which you can ask for and save multiple pieces of information from a user within a single node. They are most useful when you have a specific task in mind and need key pieces of information from the user before you can perform it. See [Gathering information with slots](/docs/services/assistant?topic=assistant-dialog-slots) for more information.
 
 The node you add will collect the information required to make a reservation at a restaurant.
 
@@ -178,4 +178,4 @@ In this tutorial you created a node with slots that can capture the information 
 ## Next steps
 {: #tutorial-slots-next-steps}
 
-Improve the experience of users who interact with the node. Complete the follow-on tutorial, [Improving a node with slots](/docs/services/assistant/tutorial-slots-complex.html). It covers simple improvements, such as how to reformat the date (2017-12-28) and time (17:00:00) values that are returned by the system. It also covers more complex tasks, such as what to do if the user does not provide the type of value that your dialog expects for a slot.
+Improve the experience of users who interact with the node. Complete the follow-on tutorial, [Improving a node with slots](/docs/services/assistant?topic=assistant-tutorial-slots-complex). It covers simple improvements, such as how to reformat the date (2017-12-28) and time (17:00:00) values that are returned by the system. It also covers more complex tasks, such as what to do if the user does not provide the type of value that your dialog expects for a slot.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-02-21"
 
 ---
 
@@ -901,7 +901,7 @@ To define a new array that will be filled in with values that are provided by us
 
 Several methods are available to work with date and time.
 
-For information about how to recognize and extract date and time information from user input, see [@sys-date and @sys-time entities](system-entities.html#sys-datetime).
+For information about how to recognize and extract date and time information from user input, see [@sys-date and @sys-time entities](system-entities#sys-datetime).
 
 ### .after(String date or time)
 
@@ -1282,9 +1282,9 @@ The `(60*60*1000L)` value represents an hour in milliseconds. This expression ad
 
 These methods help you get and reformat number values.
 
-For information about system entities that can recognize and extract numbers from user input, see [@sys-number entity](system-entities.html#sys-number).
+For information about system entities that can recognize and extract numbers from user input, see [@sys-number entity](system-entities#sys-number).
 
-If you want the service to recognize specific number formats in user input, such as order number references, consider creating a pattern entity to capture it. See [Creating entities](entities.html#creating-entities) for more details.
+If you want the service to recognize specific number formats in user input, such as order number references, consider creating a pattern entity to capture it. See [Creating entities](entities#creating-entities) for more details.
 
 If you want to change the decimal placement for a number, to reformat a number as a currency value, for example, see the [String format() method](#dialog-methods-java.lang.String).
 
@@ -1618,7 +1618,7 @@ In addition to the built-in methods, you can use standard methods of the `com.go
 
 There methods help you work with text.
 
-For information about how to recognize and extract certain types of Strings, such as people names and locations, from user input, see [System entities](system-entities.html).
+For information about how to recognize and extract certain types of Strings, such as people names and locations, from user input, see [System entities](/docs/services/assistant?topic=assistant-system-entities).
 
 **Note:** For methods that involve regular expressions, see [RE2 Syntax reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/google/re2/wiki/Syntax){: new_window} for details about the syntax to use when you specify the regular expression.
 
@@ -2006,7 +2006,7 @@ In addition to the built-in methods, you can use standard methods of the `java.l
 
 #### java.lang.String.format()
 
-You can apply the standard Java String `format()` method to text. See [java.util.formatter reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax){: new_window} for information about the syntax to use to specify the format details.
+You can apply the standard Java String `format()` method to text. See [java.util.formatter reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter#syntax){: new_window} for information about the syntax to use to specify the format details.
 
 For example, the following expression takes three decimal integers (1, 1, and 2) and adds them to a sentence.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-02-21"
 
 ---
 
@@ -28,8 +28,8 @@ The Improve component of {{site.data.keyword.conversationshort}} provides a hist
 
 Use the tool to do the following things:
 
-- View metrics that provide insights into the quality of the conversations. See [Metrics overview](/docs/services/assistant/logs-overview.html) for more information.
-- Review the individual user messages from a conversation transcript. You can directly edit your intents and entities based on what you learn as you review individual user messages. A single user conversation typically consists of multiple messages. See [Learn from conversations](/docs/services/assistant/logs.html) for more information.
+- View metrics that provide insights into the quality of the conversations. See [Metrics overview](/docs/services/assistant?topic=assistant-logs-overview) for more information.
+- Review the individual user messages from a conversation transcript. You can directly edit your intents and entities based on what you learn as you review individual user messages. A single user conversation typically consists of multiple messages. See [Learn from conversations](/docs/services/assistant?topic=assistant-logs) for more information.
 
 <!-- ### Querying data
 Use the `/logs` API `filter` parameter to search an assistant log for specific user data. For example, to search for data specific to a `User ID` that matches `my_best_customer`, the query might be:
@@ -41,4 +41,4 @@ curl -X GET
 ```
 {: codeblock}
 
-See the [Filter query reference](/docs/services/assistant/filter-reference.html) for additional details. -->
+See the [Filter query reference](/docs/services/assistant?topic=assistant-filter-reference) for additional details. -->

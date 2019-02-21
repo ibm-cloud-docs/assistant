@@ -26,7 +26,7 @@ lastupdated: "2019-02-12"
 If you have existing enterprise customer support chat transcript data, let Watson analyze that data to understand the customer needs that your support team spends most of its time addressing.
 {: shortdesc}
 
-This feature is available for use by participants in the beta program only. To find out how to request access, see [Particpate in the beta program](/docs/services/assistant/feedback.html#feedback-beta).
+This feature is available for use by participants in the beta program only. To find out how to request access, see [Participate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
 
 ![Beta](images/beta.png) IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment.
 
@@ -100,7 +100,7 @@ To get intent recommendations, complete the following steps:
     - To add the recommended intent with the selected utterances as user examples, click **Create intent**.
     - To add the selected utterances from the recommended intent to one of your existing intents as user examples instead, click **Add to existing intent**, choose the intent, and then click **Add**.
 
-The intents and intent user examples that you add in this way do count toward your intent and intent user example totals for which there are limits per plan. See [Intent limits](/docs/services/assistant/intents.html#intents-limits) for more details.
+The intents and intent user examples that you add in this way do count toward your intent and intent user example totals for which there are limits per plan. See [Intent limits](/docs/services/assistant?topic=assistant-intents#intents-limits) for more details.
 
 ## Get intent user example recommendations
 {: #beta-intent-recommendations-get-example-recommendations}
@@ -111,7 +111,7 @@ The following video provides a 2-minute overview of how to get intent user examp
 
 To get user examples for existing intents, you can use the same files you uploaded earlier. You do not need to associate the examples with intents. You simply provide the raw user utterances and let the service do the work of choosing the ones that are appropriate for the current intent. For every intent, the service analyzes the same data to find user examples that are appropriate for that intent.
 
-1.  Follow the steps in [Creating intents](/docs/services/assistant/intents.html#intents-creating-intents-task) to create an intent.
+1.  Follow the steps in [Creating intents](/docs/services/assistant?topic=assistant-intents#intents-creating-intents-task) to create an intent.
 
 1.  Add at least 5 user examples that illustrate the full range of typical utterances that you anticipate users might say to trigger this intent.
 
@@ -143,7 +143,7 @@ To get user examples for existing intents, you can use the same files you upload
 
       If you want to include one in a search term without it being processed as an operator, you must prefix it with a backslash (`\`).
 
-The user examples that you add in this way do count toward your intent user example totals for which there are limits per plan. See [Intent limits](/docs/services/assistant/intents.html#intents-limits) for more details.
+The user examples that you add in this way do count toward your intent user example totals for which there are limits per plan. See [Intent limits](/docs/services/assistant?topic=assistant-intents#intents-limits) for more details.
 
 ## Managing uploaded files
 {: #beta-intent-recommendations-manage-files}

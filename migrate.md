@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-02-21"
 
 ---
 
@@ -34,12 +34,12 @@ Resource groups offer these benefits over Cloud Foundry:
 - Ability to connect service instances to apps and service across different regions
 - Simplifies the capture of usage data per group
 
-If you created service instances before November 2018, then depending on the location in which your instance is hosted, it might be using Cloud Foundry instead of resource groups. See [Data centers](/docs/services/assistant/services-information.html#services-information-regions) for information about when each location started to use IAM with new instances.
+If you created service instances before November 2018, then depending on the location in which your instance is hosted, it might be using Cloud Foundry instead of resource groups. See [Data centers](/docs/services/assistant?topic=assistant-services-information#services-information-regions) for information about when each location started to use IAM with new instances.
 
 ## Migrating a service instance
 {: #migrate-task}
 
-If you want to learn more about the migration process before you begin, see the [IBM Cloud migration documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/resources/instance_migration.html).
+If you want to learn more about the migration process before you begin, see the [IBM Cloud migration documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/resources?topic=resources-migrate).
 
 Only the person or group that created the instance or was given `Developer` role access to the instance can migrate it.
 {: note}
@@ -48,7 +48,7 @@ To migrate your service instance, complete these steps:
 
 1.  Determine which resource group you want to move the service instance to first.
 
-    See [Best practices for organizing resource in a resource group ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/resources/bestpractice_rgs.html) for tips.
+    See [Best practices for organizing resource in a resource group ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/resources?topic=resources-bp_resourcegroups) for tips.
 
 1.  From the IBM Cloud Dashboard services list, click the migrate icon ![Migrate](images/migrate.svg) for the instance you want to migrate, and then click **Migrate** from the popup.
 
@@ -67,7 +67,7 @@ The old (Cloud Foundry org-based) service instance that you migrated continues t
 
 ![Shows current service instance is now an alias of a resource-based instance](images/alias.png)
 
-For more information about aliases, see the [IBM Cloud Connections documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/resources/connecting_apps.html#what_is_alias).
+For more information about aliases, see the [IBM Cloud Connections documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/resources/connecting_apps#what_is_alias).
 
 You must open the new, resource group-based version of the service instance to access the **Launch tool** button. The new instance is listed in the Services section of the {{site.data.keyword.Bluemix_notm}} Dashboard.
 

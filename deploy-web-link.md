@@ -69,7 +69,7 @@ The rich responses that you add to a dialog are displayed in the web-hosted chat
 
 - **Pause**: This response type pauses the assistant's activity in the chat widget. However, activity does not resume after the pause until another response is triggered. Whenever you include a `pause` response type, add another, different response type, such as `text`, after it.
 
-See [Rich responses](/docs/services/assistant/dialog-overview.html#dialog-overview-multimedia) for more information about response types.
+See [Rich responses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more information about response types.
 
 ## Adding a Preview Link integration
 {: #deploy-web-link-add-more}
