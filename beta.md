@@ -27,7 +27,7 @@ lastupdated: "2019-02-21"
 ## Available beta features
 {: #beta-features}
 
-The following features are available for use by participants in the beta program only. To find out how to request access, see [Particpate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
+The following features are available for use by participants in the beta program only. To find out how to request access, see [Participate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
 
 - How you work with search skills has changed. You can now add one search skill and one dialog skill to the same assistant. When you add both, the search is triggered if the user input cannot be addressed by any of the nodes in the dialog of the dialog skill. You can learn more from the following topics:
 

@@ -38,7 +38,7 @@ To provide feedback about the documentation, click the **FEEDBACK** button that 
 
   **Note**: The **FEEDBACK** button is not available when you access the documentation site from mobile devices.
 
-## Particpate in the beta program
+## Participate in the beta program
 {: #feedback-beta}
 
 Want to stay informed about new features that will be added to the product? Want to share your feedback about the feature function and direction? Join the beta program!

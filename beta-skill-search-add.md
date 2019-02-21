@@ -26,7 +26,7 @@ lastupdated: "2019-02-21"
 An assistant uses a *search skill* to route complex customer inquiries to the {{site.data.keyword.discoveryfull}} service. {{site.data.keyword.discoveryshort}} treats the user input as a search query. It finds information that is relevant to the query from an external data source and returns it to the assistant.
 {: shortdesc}
 
-This feature is available for use by participants in the beta program only. To find out how to request access, see [Particpate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
+This feature is available for use by participants in the beta program only. To find out how to request access, see [Participate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
 
 ![Beta](images/beta.png) IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment.
 
