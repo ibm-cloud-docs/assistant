@@ -68,15 +68,15 @@ Here's how you will implement your assistant:
 
 - **Integrate your assistant.** Create a channel integration to deploy the configured assistant directly to a social media or messaging channel.
 
-  Your deployed assistant is hosted by {{site.data.keyword.cloud_notm}}, the IBM cloud computing platform. (See [Platform overview ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/overview/ibm-cloud.html#overview) for more information.)
+  Your deployed assistant is hosted by {{site.data.keyword.cloud_notm}}, the IBM cloud computing platform. (See [Platform overview ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/overview/ibm-cloud#overview) for more information.)
 
 Read more about these implementation steps by following these links:
 
-- [Intent creation overview](/docs/services/assistant/intents.html#intents-described)
-- [Dialog overview](/docs/services/assistant/dialog-overview.html)
-- [Entity creation overview](/docs/services/assistant/entities.html#entities-described)
-- [Assistant overview](/docs/services/assistant/assistant-add.html)
-- [Adding integrations](/docs/services/assistant/deploy-integration-add.html)
+- [Intent creation overview](/docs/services/assistant?topic=assistant-intents#intents-described)
+- [Dialog overview](/docs/services/assistant?topic=assistant-dialog-overview)
+- [Entity creation overview](/docs/services/assistant?topic=assistant-entities#entities-described)
+- [Assistant overview](/docs/services/assistant?topic=assistant-assistant-add)
+- [Adding integrations](/docs/services/assistant?topic=assistant-deploy-integration-add)
 
 ## Where are my workspaces?
 {: #index-existing-customers}
@@ -86,22 +86,22 @@ If you created a *workspace* in a previous version of the service, have no fear;
 ## Browser support
 {: #index-browser-support}
 
-The {{site.data.keyword.conversationshort}} service tool requires the same level of browser software as is required by {{site.data.keyword.Bluemix_notm}}. See the {{site.data.keyword.Bluemix_notm}} [Prerequisites ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/overview/prereqs.html#browsers){: new_window} topic for details.
+The {{site.data.keyword.conversationshort}} service tool requires the same level of browser software as is required by {{site.data.keyword.Bluemix_notm}}. See the {{site.data.keyword.Bluemix_notm}} [Prerequisites ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/overview/prereqs#browsers){: new_window} topic for details.
 
 ## Language support
 {: #index-lang-support}
 
-Language support by feature is detailed in the [Supported languages](/docs/services/assistant/language-support.html) topic.
+Language support by feature is detailed in the [Supported languages](/docs/services/assistant?topic=assistant-language-support) topic.
 
 ## Terms and notices
 {: #index-notices}
 
-See [IBM Cloud Terms and Notices ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/overview/terms-of-use/notices.html) for information about the terms of service.
+See [IBM Cloud Terms and Notices ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/overview/terms-of-use?topic=overview-terms) for information about the terms of service.
 
 ## Next steps
 {: #index-next-steps}
 
-- [Get started](/docs/services/assistant/getting-started.html) with the service.
+- [Get started](/docs/services/assistant?topic=assistant-getting-started) with the service.
 - View the list of [developer resources ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/watson/developer-resources/){: new_window}.
 
 Still have questions? Contact [IBM Sales ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-01.ibm.com/marketing/iwm/dre/signup?source=urx-20970){: new_window}.

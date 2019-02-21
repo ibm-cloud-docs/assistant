@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-11"
+lastupdated: "2019-02-21"
 
 ---
 
@@ -36,8 +36,8 @@ The example application we will create in this section implements several functi
 Before continuing with this example, you need to set up the required assistant:
 
 1.  Download the dialog skill <a target="_blank" href="https://watson-developer-cloud.github.io/doc-tutorial-downloads/assistant/assistant-simple-example.json" download="assistant-simple-example.json">JSON file</a>.
-1.  [Import the skill](/docs/services/assistant/skill-add.html#creating-skills) into an instance of the {{site.data.keyword.conversationshort}} service.
-1.  [Create an assistant](/docs/services/assistant/assistant-add.html#creating-assistants) and connect the skill you imported.
+1.  [Import the skill](/docs/services/assistant?topic=assistant-skill-add#creating-skills) into an instance of the {{site.data.keyword.conversationshort}} service.
+1.  [Create an assistant](/docs/services/assistant?topic=assistant-assistant-add#creating-assistants) and connect the skill you imported.
 
 ## Getting service information
 {: #api-client-get-info}
@@ -744,14 +744,14 @@ Success! The application now uses the {{site.data.keyword.conversationshort}} se
 
 Of course, a real-world application would use a more sophisticated user interface, such as a web chat window. And it would implement more complex actions, possibly integrating with a customer database or other business systems. It would also need to send additional data to the assistant, such as a user ID to identify each unique user. But the basic principles of how the application interacts with the {{site.data.keyword.conversationshort}} service would remain the same.
 
-For some more complex examples, see [Sample apps](/docs/services/assistant/sample-apps.html).
+For some more complex examples, see [Sample apps](/docs/services/assistant?topic=assistant-sample-apps.
 
 ## Accessing context
 {: #api-client-get-context}
 
 The *context* is an object containing variables that persist throughout a conversation and can be shared by the dialog and the client application. If your application is using the v2 API, the context is automatically maintained by the assistant on a per-session basis. Both the dialog and the client application can read and write context variables. By default, the context is not returned to a client application, but you can optionally request that it be included in the response to each `/message` request.
 
-**Important:** One use of the context is to specify a unique user ID for each end user who interacts with the assistant. For user-based plans, this ID is used for billing purposes. (For more information, see [User-based plans](/docs/services/assistant/services-information.html#user-based-plans).)
+**Important:** One use of the context is to specify a unique user ID for each end user who interacts with the assistant. For user-based plans, this ID is used for billing purposes. (For more information, see [User-based plans](/docs/services/assistant?topic=assistant-services-information#user-based-plans).)
 
 There are two types of context:
 
@@ -868,7 +868,7 @@ print(json.dumps(response, indent=2))
 {: codeblock}
 {: java}
 
-In this example request, the application specifies a value for `user_id` as part of the global context. In addition, it sets one user-defined context variable (`account_number`) as part of the skill-specific context. This context variable can be accessed by dialog nodes as `$account_number`. (For more information about using the context in your dialog, see [How the dialog is processed](/docs/services/assistant/dialog-runtime.html).)
+In this example request, the application specifies a value for `user_id` as part of the global context. In addition, it sets one user-defined context variable (`account_number`) as part of the skill-specific context. This context variable can be accessed by dialog nodes as `$account_number`. (For more information about using the context in your dialog, see [How the dialog is processed](/docs/services/assistant?topic=assistant-dialog-runtime).)
 
 You can specify any variable name you want to use for a user-defined context variable. If the specified variable already exists, it is overwritten with the new value; if not, a new variable is added to the context.
 

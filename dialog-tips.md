@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-11"
+lastupdated: "2019-02-21"
 
 ---
 
@@ -46,14 +46,14 @@ Review these tips from experienced dialog designers.
 - Add a node name that describes the purpose of the node.
 
   You know what the node does right now, but months from now you might not. Your future self and any team members will thank you for adding a descriptive node name. And the node name is displayed in the log, which can help you debug a conversation later.
-- To gather the information that is required to perform a task, try using a node with slots instead of a bunch of separate nodes to elicit information from users. See [Gathering information with slots](/docs/services/assistant/dialog-slots.html).
+- To gather the information that is required to perform a task, try using a node with slots instead of a bunch of separate nodes to elicit information from users. See [Gathering information with slots](/docs/services/assistant?topic=assistant-dialog-slots).
 - For a complex process flow, tell users about any information they will need to provide at the start of the process.
-- Understand how the service travels through the dialog tree and the impact that folders, branches, jump-tos, and digressions have on the route. See [Dialog flow](/docs/services/assistant/dialog-overview.html#dialog-overview-flow).
+- Understand how the service travels through the dialog tree and the impact that folders, branches, jump-tos, and digressions have on the route. See [Dialog flow](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-flow).
 - Do not add jump-tos everywhere. They increase the complexity of the dialog flow, and make it harder to debug the dialog later.
 - To jump to a node in the same branch as the current node, use *Skip user input* instead of a *Jump-to*.
 
-  This choice prevents you from having to edit the current node's settings when you remove or reorder the child nodes being jumped to. See [Defining what to do next](/docs/services/assistant/dialog-overview.html#dialog-overview-jump-to).
-- Before you enable digressions away from a node, test the most common user scenarios. And be sure that likely digressed-to nodes are configured to return. See [Digressions](/docs/services/assistant/dialog-runtime.html#dialog-runtime-digressions).
+  This choice prevents you from having to edit the current node's settings when you remove or reorder the child nodes being jumped to. See [Defining what to do next](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-jump-to).
+- Before you enable digressions away from a node, test the most common user scenarios. And be sure that likely digressed-to nodes are configured to return. See [Digressions](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-digressions).
 
 ## Adding responses
 {: #dialog-tips-responses}
@@ -64,9 +64,9 @@ Review these tips from experienced dialog designers.
   Doing so assures users that the bot is understanding them, or if it is not, gives users a chance to correct a misunderstanding right away.
 - Only include links to external sites in responses if the answer depends on data that changes frequently.
 - Avoid overusing buttons. Encouraging users to pick predefined options from a set of buttons is less like a real conversation, and decreases your ability to learn what users really want to do. When you let real users ask for things in their own words, you can use the input to train the system and derive better intents.
-- Avoid using a bunch of nodes when one node will do. For example, add multiple conditional responses to a single node to return different responses depending on details provided by the user. See [Conditional responses](/docs/services/assistant/dialog-overview.html#dialog-overview-multiple).
+- Avoid using a bunch of nodes when one node will do. For example, add multiple conditional responses to a single node to return different responses depending on details provided by the user. See [Conditional responses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multiple).
 - Word your responses carefully. You can change how someone reacts to your system based simply on how you phrase a response. Changing one line of text can prevent you from having to write multiple lines of code to implement a complex programmatic solution.
-- Back up your skill frequently. See [Downloading a skill](/docs/services/assistant/skill-add.html#skill-add-download).
+- Back up your skill frequently. See [Downloading a skill](/docs/services/assistant?topic=assistant-skill-add#skill-add-download).
 
 ## Tips for capturing information from user input
 {: #dialog-tips-user-input}
@@ -81,11 +81,11 @@ It can be difficult to know the syntax to use in your dialog node to accurately 
 
   `input.text.split(' ').size()`
 
-  See [Expression language methods for String](/docs/services/assistant/dialog-methods.html#dialog-methods-strings) to learn about more methods you can use.
+  See [Expression language methods for String](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings) to learn about more methods you can use.
 
 - **Dealing with multiple intents**: A user enters input that expresses a wish to complete two separate tasks. `I want to open a savings account and apply for a credit card.` How does the dialog recognize and address both of them? See the [Compound questions](https://sodoherty.ai/2017/02/06/compound-questions/){: new_window} entry from Simon O'Doherty's blog for strategies you can try. (Simon is a developer on the {{site.data.keyword.conversationshort}} team.)
 
-- **Dealing with ambiguous intents**: A user enters input that expresses a wish that is ambiguous enough that the service finds two or more nodes with intents that could potentially address it. How does the dialog know which dialog branch to follow? If you enable disambiguation, it can show users their options and ask the user to pick the right one. See [Disambiguation](/docs/services/assistant/dialog-runtime.html#dialog-runtime-disambiguation) for more details.
+- **Dealing with ambiguous intents**: A user enters input that expresses a wish that is ambiguous enough that the service finds two or more nodes with intents that could potentially address it. How does the dialog know which dialog branch to follow? If you enable disambiguation, it can show users their options and ask the user to pick the right one. See [Disambiguation](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation) for more details.
 
 - **Handling multiple entities in input**: If you want to evaluate only the value of the first detected instance of an entity type, you can use the syntax  `@entity == 'specific-value'` instead of the `@entity:(specific-value)` format.
 

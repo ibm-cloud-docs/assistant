@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-02-21"
 
 ---
 
@@ -31,21 +31,21 @@ The assistant is a fully hosted bot that is managed by {{site.data.keyword.cloud
 
 Explore the {{site.data.keyword.conversationshort}} [service plan options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/watson-assistant/pricing/){: new_window}.
 
-Before you create a service instance, decide how you want to organize the resources in your {{site.data.keyword.cloud_notm}} account. If you do not define your own resource group, the **default** resource group is used, and you *cannot* change it later. See [Best practices for organizing resources in a resource group ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/resources/bestpractice_rgs.html#bp_resourcegroups){: new_window} for more details. All users must have a platform access role of Operator. (Service access roles are not leveraged by {{site.data.keyword.conversationshort}}.)
+Before you create a service instance, decide how you want to organize the resources in your {{site.data.keyword.cloud_notm}} account. If you do not define your own resource group, the **default** resource group is used, and you *cannot* change it later. See [Best practices for organizing resources in a resource group ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/resources/bestpractice_rgs#bp_resourcegroups){: new_window} for more details. All users must have a platform access role of Operator. (Service access roles are not leveraged by {{site.data.keyword.conversationshort}}.)
 
 ### Plan limits by artifact type
 {: #services-information-limits}
 
 Information about the artifact limits per plan is available from the topics that describe how to create the artifacts, so you can refer to the limits when you need to know them. Here are links to the topics:
 
-- [Assistants](/docs/services/assistant/assistant-add.html#assistant-add-limits)
-- [Dialog nodes](/docs/services/assistant/dialog-build.html#dialog-build-node-limits)
-- [Entities](/docs/services/assistant/entities.html#entities-limits)
-- [Intents](/docs/services/assistant/intents.html#intents-limits)
-- [Integrations](/docs/services/assistant/deploy-integration-add.html#deploy-integration-add-limits)
-- [Logs](/docs/services/assistant/logs.html#logs-limits)
-- [Skills](/docs/services/assistant/skill-add.html#skill-add-limits)
-- [Versions](/docs/services/assistant/versions.html#versions-limits)
+- [Assistants](/docs/services/assistant?topic=assistant-assistant-add#assistant-add-limits)
+- [Dialog nodes](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-node-limits)
+- [Entities](/docs/services/assistant?topic=assistant-entities#entities-limits)
+- [Intents](/docs/services/assistant?topic=assistant-intents#intents-limits)
+- [Integrations](/docs/services/assistant?topic=assistant-deploy-integration-add#deploy-integration-add-limits)
+- [Logs](/docs/services/assistant?topic=assistant-logs#logs-limits)
+- [Skills](/docs/services/assistant?topic=assistant-skill-add#skill-add-limits)
+- [Versions](/docs/services/assistant?topic=assistant-versions#versions-limits)
 
 ### API call limits
 {: #services-information-api-limits}
@@ -54,17 +54,17 @@ The number of API calls allowed per instance depends on your service plan. See y
 
 If you have a Lite plan and reach your API call limit, but the logs show that you have made fewer calls than expected, remember that the Lite plan stores log information for only 7 days.
 
-If you want to upgrade from one plan to another, see [Upgrading](/docs/services/assistant/upgrade.html).
+If you want to upgrade from one plan to another, see [Upgrading](/docs/services/assistant?topic=assistant-upgrade).
 
 ### Plus and Premium plan features
 {: #services-information-premium}
 
 The following features are available only to users of Premium plans.
 
-- [Disambiguation](/docs/services/assistant/dialog-runtime.html#dialog-runtime-disambiguation)
-- [Intent conflict resolution](/docs/services/assistant/intents.html#intents-resolve-conflicts)
-- [Intent user example recommendations](/docs/services/assistant/intent-recommendations.html)
-- [Intercom integration](/docs/services/assistant/deploy-intercom.html)
+- [Disambiguation](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation)
+- [Intent conflict resolution](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts)
+- [Intent user example recommendations](/docs/services/assistant?topic=assistant-intent-recommendations)
+- [Intercom integration](/docs/services/assistant?topic=assistant-deploy-intercom)
 
 ### User-based plans
 {: #services-information-user-based-plans}
@@ -141,9 +141,9 @@ The authentication mechanism used by your service instance impacts how you must 
         When you use any of the Watson SDKs, you can pass the API key and let the SDK manage the lifecycle of the tokens.
         {: note}
 
-        IAM resources cannot be managed with the Cloud Foundry Command Line Interface (CLI). For example, Cloud Foundry CLI commands (beginning with `cf`) that create or manage service instances do not work with instances hosted in locations using IAM. Instead, you must use the {{site.data.keyword.cloud_notm}} CLI and its associated commands. See [Working with resources and resource groups ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/cli/reference/ibmcloud/cli_resource_group.html) for more details.
+        IAM resources cannot be managed with the Cloud Foundry Command Line Interface (CLI). For example, Cloud Foundry CLI commands (beginning with `cf`) that create or manage service instances do not work with instances hosted in locations using IAM. Instead, you must use the {{site.data.keyword.cloud_notm}} CLI and its associated commands. See [Working with resources and resource groups ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_resource) for more details.
 
-        See [Authenticating with IAM tokens ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/services/watson/getting-started-iam.html){: new_window} for more information.
+        See [Authenticating with IAM tokens ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/watson?topic=watson-iam){: new_window} for more information.
 
     For examples, see  [Authentication ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant-v2#authentication){: new_window} for your language in the API reference.
 
@@ -152,7 +152,7 @@ The authentication mechanism used by your service instance impacts how you must 
 
 {{site.data.keyword.cloud_notm}} has a network of global data centers that provide performance benefits to its cloud services. See [{{site.data.keyword.cloud_notm}} global data centers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/data-centers/){: new_window} for more details.
 
-{{site.data.keyword.cloud_notm}} changed from managing user access with Cloud Foundry to using token-based Identity and Access Management (IAM) authentication. IAM was rolled out in different locations at different times. You can migrate a service instance to move it from its current Cloud Foundry org and space to a resource group. See [Migrating](/docs/services/assistant/migrate.html) for more details.
+{{site.data.keyword.cloud_notm}} changed from managing user access with Cloud Foundry to using token-based Identity and Access Management (IAM) authentication. IAM was rolled out in different locations at different times. You can migrate a service instance to move it from its current Cloud Foundry org and space to a resource group. See [Migrating](/docs/services/assistant?topic=assistant-migrate) for more details.
 
 You can create {{site.data.keyword.conversationshort}} service instances that are hosted in the following data center locations:
 
@@ -166,7 +166,7 @@ You can create {{site.data.keyword.conversationshort}} service instances that ar
 | Washington DC  | us-east    | IAM                 | 14 June 2018 | N/A |
 {: caption="Data center locations" caption-side="top"}
 
-For information about the data centers in which other {{site.data.keyword.cloud_notm}} services are hosted, see [Services by region ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/resources/services_region.html#services_region){: new_window}.
+For information about the data centers in which other {{site.data.keyword.cloud_notm}} services are hosted, see [Services by region ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/resources/services_region#services_region){: new_window}.
 
 ## Terms and security
 {: #services-information-terms}
@@ -175,9 +175,9 @@ To learn more about service terms and data security, read the following informat
 
 - [Service terms ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/sla/home?OpenDocument){: new_window}
 - [Data security and privacy ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/sla/sladb.nsf/sla/csdsp?OpenDocument){: new_window}
-- [Information security](/docs/services/assistant/information-security.html)
+- [Information security](/docs/services/assistant?topic=assistant-information-security)
 
-See [Platform overview ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/overview/ibm-cloud.html){: new_window} for more information about {{site.data.keyword.cloud_notm}}.
+See [Platform overview ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/overview?topic=overview-whatis-platform){: new_window} for more information about {{site.data.keyword.cloud_notm}}.
 
 ## Still have questions? 
 {: #services-information-sales}

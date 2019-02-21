@@ -43,7 +43,7 @@ You need a service instance to start.
 
     The service instance will be created in the **default** resource group if you do not choose a different one, and it *cannot* be changed later. This group is sufficient for the purposes of trying out the service.
 
-    If you're creating an instance for more robust use, then learn more about [resource groups ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/docs/resources/bestpractice_rgs.html#bp_resourcegroups){: new_window}.
+    If you're creating an instance for more robust use, then learn more about [resource groups ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/docs/resources/bestpractice_rgs#bp_resourcegroups){: new_window}.
 1.  {: hide-dashboard} Sign up for a free {{site.data.keyword.cloud_notm}} account or log in.
 1.  {: hide-dashboard} Click **Create**.
 
@@ -102,7 +102,7 @@ You successfully started to build your training data by adding prebuilt content 
 ## Step 4: Build a dialog
 {: #getting-started-build-dialog}
 
-A [dialog](/docs/services/assistant/dialog-overview.html) defines the flow of your conversation in the form of a logic tree. It matches intents (what users say) to responses (what the bot says back). Each node of the tree has a condition that triggers it, based on user input.
+A [dialog](/docs/services/assistant?topic=assistant-dialog-overview) defines the flow of your conversation in the form of a logic tree. It matches intents (what users say) to responses (what the bot says back). Each node of the tree has a condition that triggers it, based on user input.
 
 We'll create a simple dialog that handles greeting and ending intents, each with a single node.
 
@@ -171,7 +171,7 @@ That's it. You created a simple conversation with two intents and a dialog to re
 ## Step 5: Create an assistant
 {: #getting-started-create-assistant}
 
-An [*assistant*](/docs/services/assistant/assistants.html) is a cognitive bot to which you add a skill that enables it to interact with your customers in useful ways.
+An [*assistant*](/docs/services/assistant?topic=assistant-assistants) is a cognitive bot to which you add a skill that enables it to interact with your customers in useful ways.
 
 1.  Click the **Assistants** tab.
 1.  Click **Create new**.
@@ -216,6 +216,6 @@ Now that you have an assistant that can participate in a simple conversational e
 This tutorial is built around a simple example. For a real application, you need to define some more interesting intents, some entities, and a more complex dialog that uses them both. When you have a polished version of the assistant, you can integrate it with channels that your customers use, such as Slack. As traffic increases between the assistant and your customers, you can use the tools that are provided in the **Improve** tab to analyze real conversations, and identify areas for improvement.
 
 - Complete follow-on tutorials that build more advanced dialogs:
-    - Add standard nodes with the [Building a complex dialog](/docs/services/assistant/tutorial.html) tutorial.
-    - Learn about slots with the [Adding a node with slots](/docs/services/assistant/tutorial-slots.html) tutorial.
-- Check out more [sample apps](/docs/services/assistant/sample-apps.html) to get ideas.
+    - Add standard nodes with the [Building a complex dialog](/docs/services/assistant?topic=assistant-tutorial) tutorial.
+    - Learn about slots with the [Adding a node with slots](/docs/services/assistant?topic=assistant-tutorial-slots) tutorial.
+- Check out more [sample apps](/docs/services/assistant?topic=assistant-sample-apps) to get ideas.
