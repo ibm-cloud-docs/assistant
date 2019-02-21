@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-19"
+lastupdated: "2019-02-21"
 
 ---
 
@@ -50,10 +50,10 @@ You need a service instance to start.
 ## Step 1: Open the tool
 {: #getting-started-launch-tool}
 
-After you create a {{site.data.keyword.conversationshort}} service instance, you land on the **Getting started** page of the service dashboard.
+After you create a {{site.data.keyword.conversationshort}} service instance, you land on the **Manage** page of the service dashboard.
 {: hide-dashboard}
 
-1.  Click **Manage**, and then click **Launch tool**. If you're prompted to log in to the tool, provide your {{site.data.keyword.cloud_notm}} credentials.
+1.  Click **Launch tool**. If you're prompted to log in to the tool, provide your {{site.data.keyword.cloud_notm}} credentials.
 
 <!-- Remove this text after dedicated instances have the developer console: begin -->
 

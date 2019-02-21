@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-11"
+lastupdated: "2019-02-21"
 
 ---
 
@@ -26,8 +26,7 @@ lastupdated: "2019-02-11"
 ***Content Catalogs*** provide an easy way to add common intents to your {{site.data.keyword.conversationshort}} dialog skill.
 {: shortdesc}
 
-Content Catalog intents are meant to provide a starting point, and not meant to be fully built-out for production use. Add to or edit the catalog intents to tailor them for your use case.
-{: important}
+Intents you add from the catalog are meant to provide a starting point. Add to or edit the catalog intents to tailor them for your use case.
 
 ## Adding a content catalog to your dialog skill
 {: #catalog-add}

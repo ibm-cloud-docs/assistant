@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-07"
+lastupdated: "2019-02-21"
 
 ---
 
@@ -55,7 +55,7 @@ Any files you upload are shared across all of the skills in the current service 
 ## Get intent user example recommendations
 {: #intent-recommendations-get-example-recommendations}
 
-The following video provides a 2-minute overview of how to get intent user examples recommendations.
+The following video provides a 2-minute overview of how to get intent user example recommendations.
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Intent user example recommendations" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/L3FI8KeZfsc?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 

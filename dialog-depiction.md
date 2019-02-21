@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-18"
+lastupdated: "2019-02-21"
 
 ---
 
@@ -23,7 +23,7 @@ lastupdated: "2019-02-18"
 # Dialog depiction
 {: #dialog-depiction}
 
-![A sample dialog tree with example content](images/dialog-depiction.png)
+![A sample dialog tree with example content](images/dialog-depiction-full.png)
 
 This diagram shows a mockup of a dialog tree that is built with the graphical user interface dialog editor tool. It contains two root dialog nodes. A typical dialog tree would likely have many more nodes, but this depiction provides a glimpse of what a subset of nodes might look like.
 
