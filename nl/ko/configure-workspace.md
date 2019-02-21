@@ -18,6 +18,7 @@ lastupdated: "2018-02-15"
 {:swift: .ph data-hd-programlang='swift'}
 
 # {{site.data.keyword.conversationshort}} 작업공간 구성
+{: #skill-add}
 
 {{site.data.keyword.conversationshort}} 서비스의 자연어 처리는 애플리케이션의 대화 플로우를 정의하는 모든 아티팩트에 대한 컨테이너인 *작업공간* 내에서 이루어집니다.
 {: shortdesc}

@@ -18,6 +18,7 @@ lastupdated: "2018-01-26"
 {:swift: .ph data-hd-programlang='swift'}
 
 # 製品情報
+{: #index}
 
 {{site.data.keyword.conversationfull}} サービスを使用すると、自然言語の入力を理解し、機械学習を使用して人間同士の会話を模した方法でお客様に応答するソリューションを構築できます。
 {: shortdesc}

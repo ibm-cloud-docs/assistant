@@ -18,6 +18,7 @@ lastupdated: "2018-01-30"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Definindo entidades
+{: #entities}
 
 ***Entidades*** representam uma classe de objeto ou um tipo de dados que é relevante para o propósito de um usuário. Ao reconhecer as entidades mencionadas na entrada do usuário, o serviço {{site.data.keyword.conversationshort}} pode escolher as ações específicas a serem tomadas para cumprir uma intenção.
 

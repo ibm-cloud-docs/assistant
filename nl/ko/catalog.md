@@ -18,6 +18,7 @@ lastupdated: "2018-02-13"
 {:swift: .ph data-hd-programlang='swift'}
 
 # 카탈로그 사용
+{: #catalog}
 
 ***카탈로그***는 {{site.data.keyword.conversationshort}} 서비스 작업공간에 공통 인텐트를 추가하는 쉬운 방법을 제공합니다.
 {: shortdesc}

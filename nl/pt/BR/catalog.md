@@ -18,6 +18,7 @@ lastupdated: "2018-02-13"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Usando catálogos
+{: #catalog}
 
 Os ***Catálogos*** fornecem uma maneira fácil de incluir intenções comuns em sua área de trabalho do serviço {{site.data.keyword.conversationshort}}.
 {: shortdesc}

@@ -18,6 +18,7 @@ lastupdated: "2018-02-15"
 {:swift: .ph data-hd-programlang='swift'}
 
 # 配置 {{site.data.keyword.conversationshort}} 工作空间
+{: #skill-add}
 
 {{site.data.keyword.conversationshort}} 服务的自然语言处理是在*工作空间*中进行的；工作空间是包含定义应用程序会话流的所有工件的容器。
 {: shortdesc}

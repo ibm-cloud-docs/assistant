@@ -19,7 +19,7 @@ lastupdated: "2018-02-16"
 {:download: .download}
 
 # Lernprogramm 'Einführung'
-{: #gettingstarted}
+{: #getting-started}
 
 In diesem kurzen Lernprogramm stellen wir Ihnen das {{site.data.keyword.conversationshort}}-Tool vor und führen Sie durch die Erstellung Ihres ersten Dialogs.
 {: shortdesc}

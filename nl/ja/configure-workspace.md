@@ -18,6 +18,7 @@ lastupdated: "2018-02-15"
 {:swift: .ph data-hd-programlang='swift'}
 
 # {{site.data.keyword.conversationshort}} ワークスペースの構成
+{: #skill-add}
 
 {{site.data.keyword.conversationshort}} サービスの自然言語処理は*ワークスペース* 内で行われます。ワークスペースはアプリケーションの会話フローを定義するすべての成果物のコンテナーです。
 {: shortdesc}

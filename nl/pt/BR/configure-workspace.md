@@ -18,6 +18,7 @@ lastupdated: "2018-02-15"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Configurando uma área de trabalho do {{site.data.keyword.conversationshort}}
+{: #skill-add}
 
 O processamento de língua natural para o serviço {{site.data.keyword.conversationshort}} acontece dentro de uma *área de trabalho*, que é um contêiner para todos os artefatos que definem o fluxo de conversa para um aplicativo.
 {: shortdesc}

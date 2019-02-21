@@ -19,7 +19,7 @@ lastupdated: "2018-02-16"
 {:download: .download}
 
 # 概説チュートリアル
-{: #gettingstarted}
+{: #getting-started}
 
 この簡潔なチュートリアルでは、{{site.data.keyword.conversationshort}} ツールを紹介し、最初の会話を作成するプロセスを示します。
 {: shortdesc}

@@ -18,6 +18,7 @@ lastupdated: "2018-02-13"
 {:swift: .ph data-hd-programlang='swift'}
 
 # カタログの使用
+{: #catalog}
 
 ***カタログ***を使用すると、一般的なインテントを {{site.data.keyword.conversationshort}} サービス・ワークスペースに簡単に追加できます。
 {: shortdesc}

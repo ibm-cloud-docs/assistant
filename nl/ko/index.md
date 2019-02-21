@@ -18,6 +18,7 @@ lastupdated: "2018-01-26"
 {:swift: .ph data-hd-programlang='swift'}
 
 # 정보
+{: #index}
 
 {{site.data.keyword.conversationfull}} 서비스를 사용하면 자연어 입력을 이해하고 머신 러닝을 사용하여 인간 간의 대화를 시뮬레이션하는 방식으로 고객에게 응답하는 솔루션을 빌드할 수 있습니다.
 {: shortdesc}

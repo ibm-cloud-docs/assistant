@@ -18,6 +18,7 @@ lastupdated: "2018-01-30"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Definindo intenções
+{: #intents}
 
 ***Intenções*** são propósitos ou objetivos expressos em uma entrada do cliente, como responder a uma pergunta ou processar um pagamento de conta. Ao reconhecer a intenção expressa na entrada de um cliente, o serviço {{site.data.keyword.conversationshort}} pode escolher o fluxo de diálogo correto para responder a isso.
 {: shortdesc}

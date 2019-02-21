@@ -19,7 +19,7 @@ lastupdated: "2018-02-16"
 {:download: .download}
 
 # Tutorial de introdução
-{: #gettingstarted}
+{: #getting-started}
 
 Neste tutorial curto, introduzimos a ferramenta do {{site.data.keyword.conversationshort}} e passamos pelo processo de criação de sua primeira conversa.
 {: shortdesc}

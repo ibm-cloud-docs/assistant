@@ -18,6 +18,7 @@ lastupdated: "2018-02-15"
 {:swift: .ph data-hd-programlang='swift'}
 
 # {{site.data.keyword.conversationshort}}-Arbeitsbereich konfigurieren
+{: #skill-add}
 
 Die Verarbeitung natürlicher Sprache für den Service '{{site.data.keyword.conversationshort}}' findet in einem *Arbeitsbereich* statt. Ein Arbeitsbereich ist ein Container für alle Artefakte, die den Dialogablauf für eine Anwendung definieren.
 {: shortdesc}

@@ -19,7 +19,7 @@ lastupdated: "2018-02-16"
 {:download: .download}
 
 # 튜토리얼 시작하기
-{: #gettingstarted}
+{: #getting-started}
 
 이 짧은 튜토리얼에서 {{site.data.keyword.conversationshort}} 도구를 소개하고 첫 번째 대화 작성 프로세스를 살펴봅니다.
 {: shortdesc}

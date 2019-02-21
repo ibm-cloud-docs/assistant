@@ -84,7 +84,7 @@ Watson Assistant
     Beta features
         beta.md
         beta-skill-dialog-add.md
-        beta-skill-search-add.md
+        skill-search-add.md
         beta-intent-recommendations.md
         beta-spell-check.md	
     {: .navgroup-end}

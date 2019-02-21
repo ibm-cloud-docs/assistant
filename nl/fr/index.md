@@ -18,6 +18,7 @@ lastupdated: "2018-01-26"
 {:swift: .ph data-hd-programlang='swift'}
 
 # A propos de
+{: #index}
 
 Le service {{site.data.keyword.conversationfull}} vous permet de créer une solution qui comprend les entrées en langage naturel et utilise l'apprentissage automatique pour répondre aux clients en simulant une conversion entre des humains.
 {: shortdesc}

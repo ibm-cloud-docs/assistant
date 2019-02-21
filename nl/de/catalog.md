@@ -18,6 +18,7 @@ lastupdated: "2018-02-13"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Kataloge verwenden
+{: #catalog}
 
 ***Kataloge*** bieten eine einfache Möglichkeit zum Hinzufügen gängiger Absichten im Arbeitsbereich Ihres Service '{{site.data.keyword.conversationshort}}'.
 {: shortdesc}

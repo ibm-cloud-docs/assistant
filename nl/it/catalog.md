@@ -18,6 +18,7 @@ lastupdated: "2018-02-13"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Utilizzo dei cataloghi
+{: #catalog}
 
 I ***cataloghi*** forniscono un modo veloce per aggiungere gli intenti comuni al tuo spazio di lavoro di servizio {{site.data.keyword.conversationshort}}.
 {: shortdesc}

@@ -18,6 +18,7 @@ lastupdated: "2018-01-26"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Informationen
+{: #index}
 
 Mit dem Service '{{site.data.keyword.conversationfull}}' können Sie eine Lösung erstellen, die Eingabe in natürlicher Sprache versteht und mittels maschinellem Lernen auf Kunden in einer Weise reagiert, die einen Dialog zwischen Personen simuliert.
 {: shortdesc}

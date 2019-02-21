@@ -18,6 +18,7 @@ lastupdated: "2018-01-30"
 {:swift: .ph data-hd-programlang='swift'}
 
 # 定義實體
+{: #entities}
 
 ***實體*** 代表與使用者用途相關的物件類別或資料類型。藉由辨識使用者輸入中提及的實體，{{site.data.keyword.conversationshort}} 服務可以選擇達成目的所要採取的特定動作。
 
