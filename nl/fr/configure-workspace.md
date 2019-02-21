@@ -18,6 +18,7 @@ lastupdated: "2018-02-15"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Configuration d'un espace de travail {{site.data.keyword.conversationshort}}
+{: #skill-add}
 
 Le traitement automatique du langage naturel pour le service {{site.data.keyword.conversationshort}} a lieu au sein d'un *espace de travail*. Il s'agit du conteneur de tous les artefacts qui définissent le flux de conversation d'une application.
 {: shortdesc}

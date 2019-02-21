@@ -18,6 +18,7 @@ lastupdated: "2018-02-15"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Configuración de un espacio de trabajo de {{site.data.keyword.conversationshort}}
+{: #skill-add}
 
 El proceso de lenguaje natural para el servicio {{site.data.keyword.conversationshort}} ocurre dentro de un *espacio de trabajo*, que es un contenedor para todos los artefactos que definen el flujo de conversación para una aplicación.
 {: shortdesc}

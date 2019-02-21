@@ -18,6 +18,7 @@ lastupdated: "2018-01-26"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Acerca de
+{: #index}
 
 Con el servicio {{site.data.keyword.conversationfull}}, puede crear una solución que comprenda la entrada en lenguaje natural y utilice el aprendizaje de máquina para responder a los clientes de modo que simule una conversación entre humanos.
 {: shortdesc}

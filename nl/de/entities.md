@@ -18,6 +18,7 @@ lastupdated: "2018-01-30"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Entitäten definieren
+{: #entities}
 
 ***Entitäten*** stellen eine Objektklasse oder einen Datentyp dar, die/der für den Zweck eines Benutzers relevant ist. Durch die Erkennung der Entitäten, die in der Benutzereingabe erwähnt werden, kann der Service '{{site.data.keyword.conversationshort}}' die entsprechenden Aktionen auswählen, die zur Erfüllung einer Absicht erforderlich sind.
 

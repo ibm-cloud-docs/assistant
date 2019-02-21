@@ -18,6 +18,7 @@ lastupdated: "2018-02-15"
 {:swift: .ph data-hd-programlang='swift'}
 
 # 配置 {{site.data.keyword.conversationshort}} 工作區
+{: #skill-add}
 
 {{site.data.keyword.conversationshort}} 服務的自然語言處理發生於*工作區* 內部，這是適用於定義應用程式交談流程之所有構件的容器。
 {: shortdesc}

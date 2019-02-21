@@ -18,6 +18,7 @@ lastupdated: "2018-01-26"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Informazioni
+{: #index}
 
 Con il servizio {{site.data.keyword.conversationfull}}, puoi creare una soluzione in grado di comprendere l'input in linguaggio naturale e utilizzare il machine learning per rispondere ai clienti in modo da simulare una conversazione tra gli esseri umani.
 {: shortdesc}

@@ -18,6 +18,7 @@ lastupdated: "2018-02-13"
 {:swift: .ph data-hd-programlang='swift'}
 
 # 使用型錄
+{: #catalog}
 
 ***型錄*** 提供一種簡單的方式，將一般目的新增至 {{site.data.keyword.conversationshort}} 服務工作區。
 {: shortdesc}

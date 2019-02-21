@@ -19,7 +19,7 @@ lastupdated: "2018-02-16"
 {:download: .download}
 
 # 入门教程
-{: #gettingstarted}
+{: #getting-started}
 
 在本简短教程中，我们将介绍 {{site.data.keyword.conversationshort}} 工具，并完成创建第一个会话的过程。
 {: shortdesc}

@@ -18,6 +18,7 @@ lastupdated: "2018-01-26"
 {:swift: .ph data-hd-programlang='swift'}
 
 # 关于
+{: #index}
 
 通过 {{site.data.keyword.conversationfull}} 服务，可以构建一个解决方案，用于理解自然语言输入，并使用机器学习如何以模拟人类会话的方式对客户进行响应。
 {: shortdesc}

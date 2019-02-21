@@ -18,6 +18,7 @@ lastupdated: "2018-01-30"
 {:swift: .ph data-hd-programlang='swift'}
 
 # インテントの定義
+{: #intents}
 
 ***インテント*** とは、質問に対する回答や請求書の支払処理などの顧客の入力に表現される目的または目標のことです。 顧客の入力で表現されたインテントを認識することによって、{{site.data.keyword.conversationshort}} サービスは、そのインテントに応答するための正しいダイアログ・フローを選択することができます。
 {: shortdesc}

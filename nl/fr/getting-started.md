@@ -19,7 +19,7 @@ lastupdated: "2018-02-16"
 {:download: .download}
 
 # Tutoriel d'initiation
-{: #gettingstarted}
+{: #getting-started}
 
 Ce tutoriel rapide vous présente l'outil {{site.data.keyword.conversationshort}} et vous accompagne dans le processus de création de votre première conversation.
 {: shortdesc}

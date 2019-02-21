@@ -18,6 +18,7 @@ lastupdated: "2018-02-13"
 {:swift: .ph data-hd-programlang='swift'}
 
 # 使用目录
+{: #catalog}
 
 通过***目录***，可轻松将常见意向添加到 {{site.data.keyword.conversationshort}} 服务工作空间。
 {: shortdesc}

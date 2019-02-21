@@ -18,6 +18,7 @@ lastupdated: "2018-01-30"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Definizione di intenti
+{: #intents}
 
 Gli ***Intenti*** sono scopi o obiettivi espressi nell'input di un cliente, come rispondere a una domanda o elaborare un pagamento di una fattura. Riconoscendo l'intento espresso nell'input di un cliente, il servizio {{site.data.keyword.conversationshort}} può scegliere il flusso di dialogo corretto per rispondere.
 {: shortdesc}

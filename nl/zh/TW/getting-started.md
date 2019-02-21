@@ -19,7 +19,7 @@ lastupdated: "2018-02-16"
 {:download: .download}
 
 # 入門指導教學
-{: #gettingstarted}
+{: #getting-started}
 
 在這份簡短的指導教學中，我們會介紹 {{site.data.keyword.conversationshort}} 工具，並逐步完成建立第一次交談的處理程序。
 {: shortdesc}

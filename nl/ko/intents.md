@@ -18,6 +18,7 @@ lastupdated: "2018-01-30"
 {:swift: .ph data-hd-programlang='swift'}
 
 # 인텐트 정의
+{: #intents}
 
 ***인텐트***는 고객 입력에 표현된 목적입니다(예: 질문에 응답 또는 요금 지불 처리). {{site.data.keyword.conversationshort}} 서비스는 고객 입력에 표현된 인텐트를 인식하여 응답을 위한 올바른 대화 상자 플로우를 선택할 수 있습니다.
 {: shortdesc}

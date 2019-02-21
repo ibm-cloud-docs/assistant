@@ -18,6 +18,7 @@ lastupdated: "2018-01-30"
 {:swift: .ph data-hd-programlang='swift'}
 
 # 엔티티 정의
+{: #entities}
 
 ***엔티티*** 사용자의 목적에 관련된 데이터 유형 또는 오브젝트의 클래스를 나타냅니다. 사용자 입력에 언급된 엔티티를 인식하여 {{site.data.keyword.conversationshort}} 서비스가 인텐트를 충족시키기 위해 수행할 특정 조치를 선택할 수 있습니다.
 

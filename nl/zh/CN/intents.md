@@ -18,6 +18,7 @@ lastupdated: "2018-01-30"
 {:swift: .ph data-hd-programlang='swift'}
 
 # 定义意向
+{: #intents}
 
 ***意向***是在客户输入中表达的目的或目标，例如回答问题或处理帐单支付。通过识别客户输入中表达的意向，{{site.data.keyword.conversationshort}} 服务可以选择正确的对话流来对其进行响应。
 {: shortdesc}

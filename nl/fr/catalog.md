@@ -18,6 +18,7 @@ lastupdated: "2018-02-13"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Utilisation des catalogues
+{: #catalog}
 
 **Les *catalogues*** vous permettent d'ajouter facilement des intentions courantes à votre espace de travail de service {{site.data.keyword.conversationshort}}.
 {: shortdesc}

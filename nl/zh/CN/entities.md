@@ -18,6 +18,7 @@ lastupdated: "2018-01-30"
 {:swift: .ph data-hd-programlang='swift'}
 
 # 定义实体
+{: #entities}
 
 ***实体***表示对象类或与用户目的相关的数据类型。通过识别用户输入中提及的实体，{{site.data.keyword.conversationshort}} 服务可以选择执行特定操作来实现意向。
 

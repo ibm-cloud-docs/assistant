@@ -19,7 +19,7 @@ lastupdated: "2018-02-16"
 {:download: .download}
 
 # Esercitazione introduttiva
-{: #gettingstarted}
+{: #getting-started}
 
 In questa breve esercitazione, viene presentato lo strumento {{site.data.keyword.conversationshort}} e viene descritto il processo per creare la tua prima conversazione.
 {: shortdesc}

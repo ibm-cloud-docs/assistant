@@ -19,7 +19,7 @@ lastupdated: "2018-02-16"
 {:download: .download}
 
 # Guía de aprendizaje de iniciación
-{: #gettingstarted}
+{: #getting-started}
 
 En esta breve guía de aprendizaje presentamos una introducción a la herramienta {{site.data.keyword.conversationshort}} y al proceso de crear la primera conversación.
 {: shortdesc}
