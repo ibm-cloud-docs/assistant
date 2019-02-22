@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-02-22"
 
 ---
 
@@ -2006,7 +2006,7 @@ In addition to the built-in methods, you can use standard methods of the `java.l
 
 #### java.lang.String.format()
 
-You can apply the standard Java String `format()` method to text. See [java.util.formatter reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter#syntax){: new_window} for information about the syntax to use to specify the format details.
+You can apply the standard Java String `format()` method to text. See [java.util.formatter reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax){: new_window} for information about the syntax to use to specify the format details.
 
 For example, the following expression takes three decimal integers (1, 1, and 2) and adds them to a sentence.
 
