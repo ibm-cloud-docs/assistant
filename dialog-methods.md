@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-02-26"
 
 ---
 
@@ -127,12 +127,12 @@ $toppings_array.contains('ham')
 
 Result: `True` because the array contains the element ham.
 
-### JSONArray.containsIntent(String intent_name, Integer score, [Integer top_n])
+### JSONArray.containsIntent(String intent_name, Double min_score, [Integer top_n])
 {: #dialog-methods-array-containsIntent}
 
-This method returns `true` if, specifically, the `intents` JSONArray contains the specified intent, and that intent has a confidence score that is equal to or higher than the specified score. Optionally, you can specify a number to indicate that the intent must be included within that number of top elements in the array.
+This method returns `true` if the `intents` JSONArray specifically contains the specified intent, and that intent has a confidence score that is equal to or higher than the specified minimum score. Optionally, you can specify a number to indicate that the intent must be included within that number of top elements in the array.
 
-Returns `false` if the specified intent is not in the array, does not meet the required confidence score, or is lower in the array.
+Returns `false` if the specified intent is not in the array, does not have a confidence score that is equal to or higher than the minimum confidence score, or the intent is lower in the array than the specified index location.
 
 The service automatically generates an `intents` array that lists the intents that the service detects in the input whenever user input is submitted. The array lists all intents that are detected by the service in order of highest confidence first.
 
