@@ -52,7 +52,7 @@ The following new features and changes to the service are available. Check out o
 ## 25 February 2019
 {: #25February2019}
 
-**Slack integration enhancement**: You can now choose the type of event that triggers your assistant in a Slack channel. You can either interact with user through direct messages, as you could before. Or, you can now configure the assistant to listen for mentions, and respond when mentioned in another channel. You can choose one or both event types as the mechanism through which your assistant interacts with users.
+**Slack integration enhancement**: You can now choose the type of event that triggers your assistant in a Slack channel. Previously, when you integrated your assistant with Slack, the assistant interacted with users through a direct message channel. Now, you can configure the assistant to listen for mentions, and respond when it is mentioned in other channels. You can choose to use one or both event types as the mechanism through which your assistant interacts with users.
 
 ## 11 February 2019
 {: #11February2019}
