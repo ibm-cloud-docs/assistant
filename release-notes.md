@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-02-26"
 ---
 
 {:shortdesc: .shortdesc}
@@ -48,6 +48,11 @@ Existing models that you have trained will not be immediately impacted, but expi
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
 The following new features and changes to the service are available. Check out our [blog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/assistant/home) to find in-depth information about how the newest features can benefit your business.
+
+## 25 February 2019
+{: #25February2019}
+
+**Slack integration enhancement**: You can now choose the type of event that triggers your assistant in a Slack channel. You can either interact with user through direct messages, as you could before. Or, you can now configure the assistant to listen for mentions, and respond when mentioned in another channel. You can choose one or both event types as the mechanism through which your assistant interacts with users.
 
 ## 11 February 2019
 {: #11February2019}
