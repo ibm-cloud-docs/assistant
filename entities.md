@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-02-28"
 
 ---
 
@@ -209,7 +209,7 @@ Dictionary-based entites are those for which you define specific terms, synonyms
       ***Capture groups***
       {: #entities-capture-group}
 
-      For regular expressions, any part of a pattern inside a pair of normal parentheses will be captured as a group. For example, the entity value `fullUSphone` contains three captured groups:
+      For regular expressions, any part of a pattern inside a pair of normal parentheses will be captured as a group. For example, the entity `@ContactInfo` has a pattern value named `fullUSphone` that contains three captured groups:
 
       - `(\d{3})` - US area code
       - `(\d{3})` - Prefix
@@ -227,7 +227,7 @@ Dictionary-based entites are those for which you define specific terms, synonyms
         </tr>
         <tr>
           <td>area_code</td>
-          <td>`<? @fullUSphone.groups[1] ?>`</td>
+          <td>`<? @ContactInfo.groups[1] ?>`</td>
         </tr>
       </table>
 
