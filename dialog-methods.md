@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-26"
+lastupdated: "2019-02-28"
 
 ---
 
@@ -901,7 +901,7 @@ To define a new array that will be filled in with values that are provided by us
 
 Several methods are available to work with date and time.
 
-For information about how to recognize and extract date and time information from user input, see [@sys-date and @sys-time entities](system-entities#sys-datetime).
+For information about how to recognize and extract date and time information from user input, see [@sys-date and @sys-time entities](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-date-time).
 
 ### .after(String date or time)
 
@@ -1282,9 +1282,9 @@ The `(60*60*1000L)` value represents an hour in milliseconds. This expression ad
 
 These methods help you get and reformat number values.
 
-For information about system entities that can recognize and extract numbers from user input, see [@sys-number entity](system-entities#sys-number).
+For information about system entities that can recognize and extract numbers from user input, see [@sys-number entity](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-number).
 
-If you want the service to recognize specific number formats in user input, such as order number references, consider creating a pattern entity to capture it. See [Creating entities](entities#creating-entities) for more details.
+If you want the service to recognize specific number formats in user input, such as order number references, consider creating a pattern entity to capture it. See [Creating entities](/docs/services/assistant?topic=assistant-entities) for more details.
 
 If you want to change the decimal placement for a number, to reformat a number as a currency value, for example, see the [String format() method](#dialog-methods-java.lang.String).
 
