@@ -144,8 +144,6 @@ Dictionary-based entites are those for which you define specific terms, synonyms
 
     - Click **Show recommendations**.
 
-      ![Synonym recommendation screen 1](images/synonym_1.png)
-
     - The {{site.data.keyword.conversationshort}} service will make several recommendations for synonyms. The terms are displayed in lowercase, but the service recognizes mentions of the synonyms whether they are specified in lowercase or uppercase.
 
       The more coherent your entity value synonyms are, the more relevant and better focused your recommendations will be. For example, if you have several words that are focused on a theme, you will get better suggestions than if you have one or two random words.
@@ -326,8 +324,6 @@ Using an intent's user examples to define contextual entities does not affect th
 
     If you do not want your contextual entities to use this expanded understanding of entity values, select all the user examples in the *Annotation* view for that entity, and then click **Delete**.
 
-    ![Examples and intents list](images/oe-annotate3a.png)
-
 The following video demonstrates how to annotate entity mentions.
 
 <iframe class="embed-responsive-item" id="youtubeplayer0" title="Annotating entity mentions" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/3WjzJpLsnhQ" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
@@ -408,14 +404,12 @@ If you change the entity type from `synonym` to `pattern`, or vice versa, the ex
 
 Use the Search feature to find entity names, values, and synonyms.
 
-1.  Click the **Entities** tab in the navigation bar, then *My Entities*.
+1.  From the **Entities** page, click the Search icon.
 
-    ![Entity tab overview](images/entity_oview.png)
+    ![Search icon in the Intents page header](images/header-search-icon.png)
 
     System entities are not searchable.
     {: note}
-
-1.  Click the Search icon: ![Search icon](images/search_icon.png)
 
 1.  Enter a search term or phrase.
 

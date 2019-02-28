@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-02-28"
 
 ---
 
@@ -53,7 +53,7 @@ You will use the {{site.data.keyword.conversationshort}} tutorial skill that you
 
 Add an intent on the Intents tab. An intent is the purpose or goal expressed in user input.
 
-1.  On the Intents page of the {{site.data.keyword.conversationshort}} tutorial skill, click **Add intent**.
+1.  From the **Intents** page of the {{site.data.keyword.conversationshort}} tutorial skill, click **Add intent**.
 1.  Add the following intent name, and then click **Create intent**:
 
     ```

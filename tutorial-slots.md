@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-02-28"
 
 ---
 
@@ -53,7 +53,7 @@ You can also start with a new dialog skill if you want. Just be sure to create t
 
 Add an intent on the Intents tab. An intent is the purpose or goal that is expressed in user input. You will add a #reservation intent that recognizes user input that indicates that the user wants to make a restaurant reservation.
 
-1.  On the Intents page of the tutorial skill, click **Add intent**.
+1.  From the **Intents** page of the tutorial skill, click **Add intent**.
 1.  Add the following intent name, and then click **Create intent**:
 
     ```json

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-02-28"
 
 ---
 
@@ -32,7 +32,7 @@ Use the {{site.data.keyword.conversationshort}} tool to create your dialog.
 
 To create a dialog, complete the following steps:
 
-1.  Open the **Build** page from the navigation bar, click the **Dialog** tab, and then click **Create**.
+1.  Click the **Dialog** tab, and then click **Create**.
 
     When you open the dialog editor for the first time, the following nodes are created for you:
 

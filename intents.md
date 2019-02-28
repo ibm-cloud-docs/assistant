@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-02-28"
 
 ---
 
@@ -50,7 +50,7 @@ Start with a few intents, and test them as you iteratively expand the scope of t
 
 Use the {{site.data.keyword.conversationshort}} tool to create intents.
 
-1.  In the {{site.data.keyword.conversationshort}} tool, open your dialog skill and then click the **Intents** tab in the navigation bar. If **Intents** is not visible, use the ![Menu](images/Menu_16.png) menu to open the page.
+1.  In the {{site.data.keyword.conversationshort}} tool, open your dialog skill. The skill opens to the **Intents** page.
 
 1.  Select **Create new**.
 
@@ -230,11 +230,9 @@ To move or delete an example, click the check box associated with it, and then c
 
 Use the Search feature to find user examples, intent names, and descriptions.
 
-1.  Select the **Intents** tab in the navigation bar.
+1.  From the **Intents** page, click the Search icon.
 
-    ![Intent tab overview](images/intent_oview.png)
-
-1.  Select the Search icon: ![Search icon](images/search_icon.png)
+    ![Search icon in the Intents page header](images/header-search-icon.png)
 
 1.  Enter a search term or phrase.
 
@@ -249,7 +247,7 @@ Intents containing your search term, with corresponding examples, are shown.
 
 You can export a number of intents to a CSV file, so you can then import and reuse them for another {{site.data.keyword.conversationshort}} application.
 
-1.  On the Intents tab, select the intents you want from the list and click **Export**.
+1.  From the **Intents** page, select the intents you want from the list and click **Export**.
 
     ![Export option](images/ExportIntent.png)
 
@@ -280,13 +278,13 @@ Alternatively, you can upload a file with raw user utterances (from call center 
 
     **Important:** Save the CSV file with UTF-8 encoding and no byte order mark (BOM).
 
-1.  In the {{site.data.keyword.conversationshort}} tool, open your dialog skill and then click the **Intents** tab in the navigation bar. If **Intents** is not visible, use the ![Menu](images/Menu_16.png) menu to open the page.
-
-1.  Select the *Import* icon ![Import icon](images/importGA.png). Then, drag a file or browse to select a file from your computer. The file is validated and imported, and the system begins to train itself on the new data.
+1.  From the **Intents** page, click the *Import* icon ![Import icon](images/importGA.png), and then drag a file or browse to select a file from your computer.
 
     ![Import option](images/ImportIntent.png)
 
     **Important:** The maximum CSV file size is 10MB. If your CSV file is larger, consider splitting it into multiple files and importing them separately.
+
+    The file is validated and imported, and the system begins to train itself on the new data.
 
 You can view the imported intents and the corresponding examples on the **Intents** tab. You might need to refresh the page in order to see the new intents and examples.
 
@@ -300,7 +298,7 @@ The {{site.data.keyword.conversationshort}} application detects a conflict when 
 
 To resolve conflicts:
 
-1.  On the **Intents** tab, review any intents with conflicts.
+1.  From the **Intents** page, review any intents with conflicts.
 
     ![Conflicts in intent list](images/ConflictIntent1.png)
 
@@ -334,7 +332,7 @@ To resolve conflicts:
 
     ![Conflicting intent example](images/ConflictIntent6.png)
 
-1.  Click the *Submit* button to resolve the conflicts:
+1.  Click the **Submit** button to resolve the conflicts:
 
     ![Conflicting intent example](images/ConflictIntent7.png)
 
@@ -353,6 +351,6 @@ You can select a number of intents for deletion.
 
 **IMPORTANT**: By deleting intents you are also deleting all associated examples, and these items cannot be retrieved later. All dialog nodes that reference these intents must be updated manually to no longer reference the deleted content.
 
-1.  On the Intents tab, select the intents you want from the list and click **Delete**.
+1.  From the **Intents** page, select the intents you want from the list and click **Delete**.
 
     ![Delete option](images/DeleteIntent.png)
