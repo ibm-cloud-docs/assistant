@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-02-28"
 
 ---
 
@@ -375,8 +375,10 @@ You might have two slots that store the same type of value, such as an arrival d
 
 In addition, the service can recognize multiple entity types in a single user input. For example, when a user provides a currency, it is recognized as both a @sys-currency and @sys-number entity type. Do some testing in the *Try it out* pane to understand how the system will interpret different user inputs, and build logic into your conditions to prevent possible misinterpretations.
 
-In logic that is unique to the slots feature, when two entities are recognized in a single user input, the one with the larger span is used. For example, if the user enters *May 2*, even though the {{site.data.keyword.conversationshort}} service recognizes both @sys-date (05022017) and @sys-number (2) entities in the text, only the entity with the longer span (@sys-date) is registered and applied to a slot.
+In logic that is unique to the slots feature, when two system entities are recognized in a single user input, the one with the larger span is used. For example, if the user enters *May 2*, even though the {{site.data.keyword.conversationshort}} service recognizes both @sys-date (05022017) and @sys-number (2) entities in the text, only the system entity with the longer span (@sys-date) is registered and applied to a slot.
 {: tip}
+
+For each entity that is recognized in user input, only one slot can be filled. Therefore, if you have two slots that are looking for similar values, position them such that the slot that captures the longer string is above the slot that captures the shorter string. For example, if one slot captures a product ID (`@id`) with a syntax like `GR1234` and another slot captures a number (`@number`), such as `1234`, then place the slot that captures the ID above the slot that captures the number. Otherwise, when the user input contains an ID, such as `BR3344`, the `@number` slot might claim it as a number reference and fill the `$number` context variable with `3344`. However, the value is more likely a product ID reference that should be saved in the `$id` context variable of the `@id` slot as `BR3344`.
 
 ### Adding conditions to Found and Not found responses
 {: #dialog-slots-handler-next-steps}
