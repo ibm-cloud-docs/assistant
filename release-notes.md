@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-03-04"
 ---
 
 {:shortdesc: .shortdesc}
@@ -49,8 +49,8 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 The following new features and changes to the service are available. Check out our [blog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/assistant/home) to find in-depth information about how the newest features can benefit your business.
 
-## 1 March 2019
-{: #1March2019}
+## 4 March 2019
+{: #4March2019}
 
 - **Simplified navigation**: The sidebar navigation with separate *Build*,  *Improve*, and *Deploy* tabs has been removed. Now, you can get to all the tools you need to build a dialog skill from the main skill page.
 
