@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-03-01"
 
 ---
 
@@ -87,7 +87,7 @@ You land on the Intents page of the tool.
 ## Step 3: Add intents from a content catalog
 {: #getting-started-add-catalog}
 
-Add training data that was built by IBM to your workspace by adding intents from a content catalog. In particular, you will give your assistant access to the **General** content catalog so your dialog can greet users, and end conversations with them.
+Add training data that was built by IBM to your skill by adding intents from a content catalog. In particular, you will give your assistant access to the **General** content catalog so your dialog can greet users, and end conversations with them.
 
 1.  In the {{site.data.keyword.conversationshort}} tool, click the **Content Catalog** tab.
 1.  Find **General** in the list, and then click **Add to skill**.
@@ -113,11 +113,11 @@ We'll create a simple dialog that handles greeting and ending intents, each with
     - **Welcome**: Contains a greeting that is displayed to your users when they first engage with the assistant.
     - **Anything else**: Contains phrases that are used to reply to users when their input is not recognized.
 
-    ![A new dialog with two built-in nodes](images/gs-new-dialog0.png)
+    ![A new dialog with two built-in nodes](images/gs-new-dialog.png)
 1.  Click the **Welcome** node to open it in the edit view.
 1.  Replace the default response with the text, `Welcome to the Watson Assistant tutorial!`.
 
-    ![Editing the welcome node response](images/gs-edit-welcome0.png)
+    ![Editing the welcome node response](images/gs-edit-welcome.png)
 1.  Click ![Close](images/close.png) to close the edit view.
 
 You created a dialog node that is triggered by the `welcome` condition. (`welcome` is a special condition that functions like an intent, but does not begin with a `#`.) It is triggered when a new conversation starts. Your node specifies that when a new conversation starts, the system should respond with the welcome message that you add to the response section of this first node.
@@ -213,7 +213,7 @@ Now that you have an assistant that can participate in a simple conversational e
 ## Next steps
 {: #getting-started-next-steps}
 
-This tutorial is built around a simple example. For a real application, you need to define some more interesting intents, some entities, and a more complex dialog that uses them both. When you have a polished version of the assistant, you can integrate it with channels that your customers use, such as Slack. As traffic increases between the assistant and your customers, you can use the tools that are provided in the **Improve** tab to analyze real conversations, and identify areas for improvement.
+This tutorial is built around a simple example. For a real application, you need to define some more interesting intents, some entities, and a more complex dialog that uses them both. When you have a polished version of the assistant, you can integrate it with channels that your customers use, such as Slack. As traffic increases between the assistant and your customers, you can use the tools that are provided in the **Analytics** tab to analyze real conversations, and identify areas for improvement.
 
 - Complete follow-on tutorials that build more advanced dialogs:
     - Add standard nodes with the [Building a complex dialog](/docs/services/assistant?topic=assistant-tutorial) tutorial.

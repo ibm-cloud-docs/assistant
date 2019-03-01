@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-02-28"
 
 ---
 
@@ -70,8 +70,7 @@ Add an intent that recognizes when customers ask for details about the restauran
 ### Add the #about_restaurant intent
 {: #tutorial-add-about-restaurant}
 
-1.  Click the **Intents** tab.
-1.  Click **Add intent**.
+1.  From the **Intents** tab, click **Add intent**.
 
     ![Shows the the Add Intent button on the Intents page.](images/gs-ass-intent-add.png)
 1.  Enter `about_restaurant` in the *Intent name* field, and then click **Create intent**.

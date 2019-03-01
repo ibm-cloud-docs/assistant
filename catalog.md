@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-02-28"
 
 ---
 
@@ -33,7 +33,7 @@ Intents you add from the catalog are meant to provide a starting point. Add to o
 
 Use the {{site.data.keyword.conversationshort}} tool to add content catalogs.
 
-1.  In the {{site.data.keyword.conversationshort}} tool, open your dialog skill and then select the **Content Catalog** tab in the navigation bar.
+1.  In the {{site.data.keyword.conversationshort}} tool, open your dialog skill and then click the **Content Catalog** tab.
 
 1.  Select a content catalog, such as *Banking*, to see the intents that are provided with it.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-08"
+lastupdated: "2019-02-28"
 
 ---
 
@@ -61,7 +61,7 @@ A snapshot is taken of the current skill and saved as a new version. You remain 
     A list of assistants to which you can link this version is displayed. The list is limited to those assistants that don't have any skills associated with them, or that are associated with a different version of this skill.
 1.  Click the checkbox for one or more of the assistants, and then click **Assign**.
 
-Keep track of when this version is deployed to an assistant and for how long. It is likely that you will want to analyze user conversations that occur between users and this specific version of the skill. You can get this information from the Improve tab. However, when you pick a data source, versions are not listed. You must choose the name of the assistant to which you deployed this version. You can then filter the metrics data to show only those conversations that occurred between the start and end dates of the time frame during which this skill version was deployed to the assistant.
+Keep track of when this version is deployed to an assistant and for how long. It is likely that you will want to analyze user conversations that occur between users and this specific version of the skill. You can get this information from the **Analytics** page. However, when you pick a data source, versions are not listed. You must choose the name of the assistant to which you deployed this version. You can then filter the metrics data to show only those conversations that occurred between the start and end dates of the time frame during which this skill version was deployed to the assistant.
 {: important}
 
 ## Skill version limits
