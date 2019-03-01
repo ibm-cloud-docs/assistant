@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-03-01"
 
 ---
 
@@ -87,7 +87,7 @@ You land on the Intents page of the tool.
 ## Step 3: Add intents from a content catalog
 {: #getting-started-add-catalog}
 
-Add training data that was built by IBM to your workspace by adding intents from a content catalog. In particular, you will give your assistant access to the **General** content catalog so your dialog can greet users, and end conversations with them.
+Add training data that was built by IBM to your skill by adding intents from a content catalog. In particular, you will give your assistant access to the **General** content catalog so your dialog can greet users, and end conversations with them.
 
 1.  In the {{site.data.keyword.conversationshort}} tool, click the **Content Catalog** tab.
 1.  Find **General** in the list, and then click **Add to skill**.
