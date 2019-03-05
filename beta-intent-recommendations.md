@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-03-05"
 
 ---
 
@@ -26,18 +26,7 @@ lastupdated: "2019-02-12"
 If you have existing enterprise customer support chat transcript data, let Watson analyze that data to understand the customer needs that your support team spends most of its time addressing.
 {: shortdesc}
 
-This feature is available for use by participants in the beta program only. To find out how to request access, see [Participate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
-
-![Beta](images/beta.png) IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment.
-
-When released, this feature will be available to Plus or Premium plan users and will work with English language utterances only.
-{: tip}
-
-Customer needs are represented in {{site.data.keyword.conversationshort}} as *intents*. If you have not defined intents yet, you can get started faster by asking Watson for help. Upload files with user utterances from call center transcripts for the {{site.data.keyword.conversationshort}} service to analyze. Based on the insights it uncovers, the service recommends a base set of intents you should build to cover the most commonly occurring needs of your customers.
-
-As the subjects that your customers want to discuss change, you can use the intent user example recommendations feature to help keep your intents up-to-date and revelant over time.
-
-Mine your existing data to perform one of the following tasks:
+Mine your existing data to do one of the following things:
 
 - [Get intent recommendations](#beta-intent-recommendations-get-intent-recommendations)
 - [Get intent user example recommendations](#beta-intent-recommendations-get-example-recommendations)
@@ -72,9 +61,16 @@ Any files you upload are shared across all of the skills in the current service 
 ## Get intent recommendations from Watson
 {: #beta-intent-recommendations-get-intent-recommendations}
 
-Get started quickly by letting the service analyze your call center chat transcripts and recommend some initial intents for you to start with. If you already created some intents, let the service analyze your logs and compare its findings with your existing intents to identify gaps in your training data and suggest new intents to fill them in.
+This feature is available for use by participants in the beta program only. To find out how to request access, see [Participate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
 
-To use this feature, upload one or more files that contain the utterances that are submitted by real users when they ask for help. The file might list user requests that are extracted from call center logs, for example. The service evaluates these utterances and identifies common problem areas that customer mention frequently. The {{site.data.keyword.conversationshort}} tool then displays a set of discrete intents that capture these trending user needs. You can review each recommended intent and its corresponding user examples to choose the ones you want to add to your training data.
+![Beta](images/beta.png) IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment.
+
+Get started quickly by letting the service analyze your call center chat transcripts to find similar user utterances that occur frequently. Based on the patterns it finds, the service recommends some initial intents for you to start with. If you already created some intents, the service will analyze your logs and compare its findings with your existing intents to identify gaps in your training data and suggest new intents to fill them.
+
+To use this feature, upload one or more files that contain the utterances that are submitted by real users when they ask for help. The service evaluates these utterances and identifies common problem areas that customer mention frequently. The {{site.data.keyword.conversationshort}} tool then roups these utterances to create sets of discrete intents that capture trending user needs. You can review each recommended intent and its corresponding user examples to choose the ones you want to add to your training data.
+
+When released, this feature will be available to Plus or Premium plan users and will work with English language utterances only.
+{: tip}
 
 ## Getting intent recommendations
 {: #beta-intent-recommendations-get-intent-recommendations-task}
@@ -91,19 +87,30 @@ To get intent recommendations, complete the following steps:
 
 1.  Review the intents that are recommended by the service.
 
-    The most frequently occurring customer needs are captured in the intents that are listed first.  You can hover over an intent to see a few examples of its associated utterances. If you want to see a list of all of the intent groupings, click **Show all recommendations**.
+    The intent recommendations are ordered by:
 
-1.  Click an intent to see the full set of user examples that are associated with it, and to take one of the following actions:
+    1.  Intents with the most frequently occuring utterances. The frequency of the utterances associated with these intents suggests they identify the most common customer pain points.
+    1.  How different the intents are from intents you have already added to your skill. Their uniqueness suggests that they can address user needs that are not being met currently.
+    1.  How similar the user examples in the intent are to one another, which indicates the strength of the intent.
 
-    Deselect any utterances that you do not want to add as user examples.
+    You can hover over an intent to see a few examples of its associated utterances. If you want to see a list of all of the intent groupings, click **Show all recommendations**.
+
+1.  Click an intent to see the user examples that are associated with it.
+
+    The twenty most similar user examples for the intent are shown. Deselect any utterances that you do not want to add as user examples, and then take one of the following actions:
 
     - To add the recommended intent with the selected utterances as user examples, click **Create intent**.
     - To add the selected utterances from the recommended intent to one of your existing intents as user examples instead, click **Add to existing intent**, choose the intent, and then click **Add**.
 
 The intents and intent user examples that you add in this way do count toward your intent and intent user example totals for which there are limits per plan. See [Intent limits](/docs/services/assistant?topic=assistant-intents#intents-limits) for more details.
 
+As the subjects that your customers want to discuss change, you can use the intent user example recommendations feature to help keep your intents up-to-date and revelant over time.
+
 ## Get intent user example recommendations
 {: #beta-intent-recommendations-get-example-recommendations}
+
+This feature is already available to users with Plus or Premium plans. For information about language support, see [Supported languages](/docs/services/assistant?topic=assistant-language-support).
+{: tip}
 
 The following video provides a 2-minute overview of how to get intent user examples recommendations.
 

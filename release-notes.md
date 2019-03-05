@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-04"
+lastupdated: "2019-03-05"
 ---
 
 {:shortdesc: .shortdesc}
@@ -55,6 +55,11 @@ The following new features and changes to the service are available. Check out o
 - **Simplified navigation**: The sidebar navigation with separate *Build*,  *Improve*, and *Deploy* tabs has been removed. Now, you can get to all the tools you need to build a dialog skill from the main skill page.
 
 - **Improve page is now called Analytics**: The informational metrics that the service generates from conversations between your users and your assistant moved from the *Improve* tab of the sidebar to a new tab on the main skill page called **Analytics**.
+
+## 1 March 2019
+{: #1March2019}
+
+- **Japanese intent user example recommendations ![Plus or Premium plan only](images/premium.png)**: You can now upload a file that contains raw user inputs in Japanese, such as user inquiries from a call center log, that the service can analyze and mine for intent user example candidates. See [Adding examples from log files](intent-recommendations#intent-recommendations-get-example-recommendations).
 
 ## 28 February 2019
 {: #28February2019}
