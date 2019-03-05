@@ -67,7 +67,7 @@ This feature is available for use by participants in the beta program only. To f
 
 Get started quickly by letting the service analyze your call center chat transcripts to find similar user utterances that occur frequently. Based on the patterns it finds, the service recommends some initial intents for you to start with. If you already created some intents, the service will analyze your logs and compare its findings with your existing intents to identify gaps in your training data and suggest new intents to fill them.
 
-To use this feature, upload one or more files that contain the utterances that are submitted by real users when they ask for help. The service evaluates these utterances and identifies common problem areas that customer mention frequently. The {{site.data.keyword.conversationshort}} tool then roups these utterances to create sets of discrete intents that capture trending user needs. You can review each recommended intent and its corresponding user examples to choose the ones you want to add to your training data.
+To use this feature, upload one or more files that contain the utterances that are submitted by real users when they ask for help. The service evaluates these utterances and identifies common problem areas that customer mention frequently. The {{site.data.keyword.conversationshort}} tool then groups these utterances to create sets of discrete intents that capture trending user needs. You can review each recommended intent and its corresponding user examples to choose the ones you want to add to your training data.
 
 When released, this feature will be available to Plus or Premium plan users and will work with English language utterances only.
 {: tip}
