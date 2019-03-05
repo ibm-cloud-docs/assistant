@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-03-05"
 
 ---
 
@@ -105,12 +105,30 @@ Your dialog is now ready to support your assistant in Intercom.
 
     Follow the instructions that are provided on the screen. The following sections help you with the steps.
 
+The following 4-minute video illustrates the steps.
+
+<iframe class="embed-responsive-item" id="youtubeplayer" title="Quick Setup" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/SkbFWNScueU" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
 ## Connecting the assistant to Intercom
 {: #deploy-intercom-connect}
 
 As soon as you give Intercom permission to use the assistant, the assistant becomes a viable member of the Intercom team.
 
-Human agents can assign messages to the assistant by using Intercom's assignment rules, which can automatically assign inbound conversations to a teammate or team inbox based on some criteria, or by a manual reassignment made by a human agent at run time. See the [Intercom documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.intercom.com/help/support-and-retain-customers/work-as-a-team/assign-conversations-to-teammates-and-teams) for more details.
+Human agents can assign messages to the assistant by using Intercom's assignment rules. Messages can be assigned to the assistant in the following ways:
+
+- Automatic assignment of inbound conversations to a teammate or team inbox based on some criteria
+
+  The following 1 1/2-minute video illustrates the steps.
+
+  <iframe class="embed-responsive-item" id="youtubeplayer2" title="Auto Assign" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/4M9wu8NHxcY" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
+- Manual reassignment made by a human agent at run time.
+
+  The following under 3-minute video illustrates the steps.
+
+  <iframe class="embed-responsive-item" id="youtubeplayer3" title="Manual Assign" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/jAnolyUJAIA" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
+See the [Intercom documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.intercom.com/help/support-and-retain-customers/work-as-a-team/assign-conversations-to-teammates-and-teams) for more details.
 
 1.  When your dialog is ready, click **Connect now**.
 1.  Click **Access Intercom** to be redirected to the Intercom site.
@@ -153,6 +171,10 @@ To set up routing assignments for escalations from the assistant to a human, com
     Don't forget to set up an assignment for any root nodes that have a *Connect to human agent* response type in a child node in their branch. If you do not transfer the associated root node to a specific person or team, a sensitive matter can be transferred to the *Unassigned* inbox.
 
 1.  After adding rules, click **Return to overview** to exit the page.
+
+The following 3-minute video illustrates the steps.
+
+<iframe class="embed-responsive-item" id="youtubeplayer0" title="Topic-based escalation routing" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/dTwJZOqdzII" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 ## Give the assistant permission to monitor and answer user queries
 {: #deploy-intercom-config-action}
@@ -200,6 +222,10 @@ To configure how you want the assistant to handle specific dialog branches, defi
 1.  After adding rules, click **Return to overview** to exit the page.
 
 As your dialog changes, you will likely return to the Intercom integration page to make incremental changes to these rules.
+
+The following 3-minute video illustrates the steps.
+
+<iframe class="embed-responsive-item" id="youtubeplayer1" title="Inbox Monitoring" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/fFKjWUfIftw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 ## Testing the integration
 {: #deploy-intercom-try}

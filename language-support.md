@@ -66,7 +66,7 @@ The first table shows the level of support for all features, except those relate
 | **French (fr)**                    | GA | GA | NA |
 | **German (de)**                    | GA | GA | NA |
 | **Italian (it)**                   | GA | GA | NA |
-| **Japanese (ja)**                  | GA | GA | NA |
+| **Japanese (ja)**                  | GA | GA | Beta |
 | **Korean (ko)**                    | GA | NA | NA |
 | **Portuguese (Brazilian) (pt-br)** | GA | GA | NA |
 | **Spanish (es)**                   | GA | GA | NA |

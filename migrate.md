@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-03-04"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2019-02-21"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Migrating
+# Migrating from Cloud Foundry
 {: #migrate}
 
 Migrate a {{site.data.keyword.conversationshort}} service instance to move it from its current Cloud Foundry org and space to a resource group.
