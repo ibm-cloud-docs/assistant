@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-05"
+lastupdated: "2019-03-06"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2019-03-05"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Get help from Watson ![Beta](images/beta.png) ![Plus or Premium plan only](images/premium.png)
+# Get help from Watson ![Plus or Premium plan only](images/premium.png)
 {: #intent-recommendations}
 
 If you have chat log transcripts, from a customer support center, for example, that contain real-world user utterances, let the service mine your existing data for intent user example candidates.

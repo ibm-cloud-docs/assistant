@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-03-05"
 
 ---
 
@@ -187,7 +187,7 @@ Consider using these approaches for handling common tasks.
 - [Dealing with zeros](#dialog-slots-zero)
 - [Getting confirmation](#dialog-slots-get-confirmation)
 - [Replacing a slot context variable value](#dialog-slots-found-handler-event-properties)
-- [Avoiding number confusion](#dialog-slots-avoid-number-confusion)
+- [Avoiding number confusion](#dialog-slots-avoid-slot-confusion)
 - [Adding conditions to Found and Not found responses](#dialog-slots-handler-next-steps)
 - [Moving on after multiple failed attempts](#dialog-slots-stop-trying-after-3)
 - [Preventing a Found response from displaying when it is not needed](#dialog-slots-stifle-found-responses)
@@ -366,19 +366,28 @@ Response: Ok, destination is $destination.
 
 This slot configuration enables your dialog to react to the user's change in destination by saying, `Ok, updating the destination from Paris to Madrid.`
 
-### Avoiding number confusion
-{: #dialog-slots-avoid-number-confusion}
+### Avoiding slot filling confusion
+{: #dialog-slots-avoid-slot-confusion}
 
-Some values that are provided by users can be identified as more than one entity type.
+When a user input is evaluated, the slot with the first slot condition to match it is filled only. Test for the following possible causes of misinterpretation, and address them:
 
-You might have two slots that store the same type of value, such as an arrival date and departure date, for example. Build logic into your slot conditions to distinguish such similar values from one another.
+- **Problem**: The same entity is used in more than one slot. 
 
-In addition, the service can recognize multiple entity types in a single user input. For example, when a user provides a currency, it is recognized as both a @sys-currency and @sys-number entity type. Do some testing in the *Try it out* pane to understand how the system will interpret different user inputs, and build logic into your conditions to prevent possible misinterpretations.
+    For example, `@sys-date` is used to capture the departure date in one slot and arrival date in another.
 
-In logic that is unique to the slots feature, when two system entities are recognized in a single user input, the one with the larger span is used. For example, if the user enters *May 2*, even though the {{site.data.keyword.conversationshort}} service recognizes both @sys-date (05022017) and @sys-number (2) entities in the text, only the system entity with the longer span (@sys-date) is registered and applied to a slot.
-{: tip}
+    **Solution**: Use slot found conditions that get clarification from the user about which date you are saving in a slot before you save it.
 
-For each entity that is recognized in user input, only one slot can be filled. Therefore, if you have two slots that are looking for similar values, position them such that the slot that captures the longer string is above the slot that captures the shorter string. For example, if one slot captures a product ID (`@id`) with a syntax like `GR1234` and another slot captures a number (`@number`), such as `1234`, then place the slot that captures the ID above the slot that captures the number. Otherwise, when the user input contains an ID, such as `BR3344`, the `@number` slot might claim it as a number reference and fill the `$number` context variable with `3344`. However, the value is more likely a product ID reference that should be saved in the `$id` context variable of the `@id` slot as `BR3344`.
+- **Problem**: A term fully or partially matches the entities in more than one slot condition.
+
+    For example, if one slot captures a product ID (`@id`) with a syntax like `GR1234` and another slot captures a number (`@number`), such as `1234`, then user input that contains an ID, such as `BR3344` might get claimed by the `@number` slot as a number reference and fill the `$number` context variable with `3344`.
+
+    **Solution**: Place the slot with the entity condition that captures the longer pattern (@id) higher in the list of slots than the condition that captures the shorter pattern (@number).
+
+- **Problem**: A term is recognized as more than one system entity type.
+
+    For example, if the user enters *May 2*, then the service recognizes both the `@sys-date` (2017-05-02) and `@sys-number` (2) entities.
+
+    **Solution**: In logic that is unique to the slots feature, when two system entities are recognized in a single user input, the one with the larger span is used. Therefore, even though the service recognizes both system entities in the text, only the system entity with the longer span (`@sys-date` with `2017-05-02`) is registered and applied to the slot.
 
 ### Adding conditions to Found and Not found responses
 {: #dialog-slots-handler-next-steps}

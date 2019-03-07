@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-04"
+lastupdated: "2019-03-06"
 
 ---
 
@@ -49,6 +49,11 @@ To migrate your service instance, complete these steps:
 1.  Determine which resource group you want to move the service instance to first.
 
     See [Best practices for organizing resource in a resource group ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/resources?topic=resources-bp_resourcegroups) for tips.
+
+    You can use one service instance to develop, test, and deploy an assistant, so do not create distinct resource groups for different types of deployment environments.
+    {:tip}
+
+    With a Premium plan, you can create multiple instances. The instances must all be created in the same resource group.
 
 1.  From the IBM Cloud Dashboard services list, click the migrate icon ![Migrate](images/migrate.svg) for the instance you want to migrate, and then click **Migrate** from the popup.
 

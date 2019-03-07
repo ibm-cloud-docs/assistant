@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-05"
+lastupdated: "2019-03-07"
 
 ---
 
@@ -20,8 +20,8 @@ lastupdated: "2019-03-05"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Get help building intents ![Beta](images/beta.png) ![Plus or Premium only](images/premium.png)
-{: #beta-intent-recommendations}
+# Beta: Get help building intents ![Plus or Premium only](images/premium.png)
+{: #intent-recommendations-get-intent-recommendations}
 
 If you have existing enterprise customer support chat transcript data, let Watson analyze that data to understand the customer needs that your support team spends most of its time addressing.
 {: shortdesc}
