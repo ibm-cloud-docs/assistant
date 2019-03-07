@@ -86,7 +86,8 @@ Watson Assistant
         beta-skill-dialog-add.md
         skill-search-add.md
         beta-intent-recommendations.md
-        beta-spell-check.md	
+        beta-spell-check.md
+        beta-system-entities.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
