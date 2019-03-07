@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-03-06"
 
 ---
 
@@ -57,7 +57,7 @@ The first table shows the level of support for all features, except those relate
 
 | Language | **[Absolute scoring and 'Mark as irrelevant'](/docs/services/assistant?topic=assistant-intents#intents-mark-irrelevant)** | **[Content Catalog](/docs/services/assistant?topic=assistant-catalog)** | **[User example recommendations](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations)** |
 |:---:|:---:|:---:|:---:|
-| **English (en)**                   | GA | GA | Beta |
+| **English (en)**                   | GA | GA | GA |
 | **Arabic (ar)**                    | Beta | GA | NA |
 | **Chinese (Simplified) (zh-cn)**   | GA | NA | NA |
 | **Chinese (Traditional) (zh-tw)**  | Beta | NA | NA |
@@ -66,7 +66,7 @@ The first table shows the level of support for all features, except those relate
 | **French (fr)**                    | GA | GA | NA |
 | **German (de)**                    | GA | GA | NA |
 | **Italian (it)**                   | GA | GA | NA |
-| **Japanese (ja)**                  | GA | GA | Beta |
+| **Japanese (ja)**                  | GA | GA | GA |
 | **Korean (ko)**                    | GA | NA | NA |
 | **Portuguese (Brazilian) (pt-br)** | GA | GA | NA |
 | **Spanish (es)**                   | GA | GA | NA |

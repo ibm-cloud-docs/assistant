@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-11"
+lastupdated: "2019-03-07"
 
 ---
 
@@ -21,8 +21,8 @@ lastupdated: "2019-02-11"
 {:swift: .ph data-hd-programlang='swift'}
 {:gif: data-image-type='gif'}
 
-# Correcting user input
-{: #beta-spell-check}
+# Beta: Correcting user input
+{: #dialog-runtime-spell-check}
 
 This feature is available for use by participants in the beta program only. To find out how to request access, see [Participate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
 
@@ -45,9 +45,9 @@ When the service evaluates whether to correct the spelling of a word, it does no
 
 To enable the spell check feature, complete the following steps:
 
-1.  From the Skills page, find your skill.
-1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose  **Settings**.
-1.  From the *Spell Check* settings page, turn on **Spell check auto-correction**.
+1.  From the Skills page, open your skill.
+1.  Click the **Options** tab.
+1.  From the *Spell Check* page, turn on **Spell check auto-correction**.
 
 ### Testing spelling correction
 {: #beta-spell-check-test}

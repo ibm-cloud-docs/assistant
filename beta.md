@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-03-07"
 ---
 
 {:shortdesc: .shortdesc}
@@ -32,12 +32,14 @@ The following features are available for use by participants in the beta program
 - How you work with search skills has changed. You can now add one search skill and one dialog skill to the same assistant. When you add both, the search is triggered if the user input cannot be addressed by any of the nodes in the dialog of the dialog skill. You can learn more from the following topics:
 
   - [Search skill](/docs/services/assistant?topic=assistant-skill-search-add)
-  - [Dialog skill](/docs/services/assistant?topic=assistant-beta-skill-dialog-add)
+  - [Dialog skill](/docs/services/assistant?topic=assistant-skill-dialog-add)
 
   When this feature is released, it will be available to Plus or Premium plan users only.
 
 - The user interface of the Dialog builder has been updated to use the React JavaScript library. Dialog functions are now provided in encapsulated components that manage their own state, which results in a more responsive user experience.
 
-- You can configure a skill to correct misspellings in user input. See [Correcting user input](/docs/services/assistant?topic=assistant-beta-spell-check) for more details.
+- You can configure a skill to correct misspellings in user input. See [Correcting user input](/docs/services/assistant?topic=assistant-dialog-runtime-spell-check) for more details.
 
-- Leverage existing customer support chat transcripts to find the appropriate set of intents and user examples to use to train your assistant. See [Get help building intents](/docs/services/assistant?topic=assistant-beta-intent-recommendations) for more details.
+- Leverage existing customer support chat transcripts to find the appropriate set of intents and user examples to use to train your assistant. See [Get help building intents](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-intent-recommendations) for more details.
+
+- Try out the new system entities. The number-based system entities have been revised to be better able to recognize date, time, and number mentions. See [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities) for more information.
