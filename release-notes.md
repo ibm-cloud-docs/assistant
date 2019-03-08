@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-08"
 
 subcollection: assistant
 
@@ -62,7 +62,7 @@ The following new features and changes to the service are available. Check out o
 ## 1 March 2019
 {: #1March2019}
 
-- **Japanese intent user example recommendations ![Plus or Premium plan only](images/premium.png)**: You can now upload a file that contains raw user inputs in Japanese, such as user inquiries from a call center log, that the service can analyze and mine for intent user example candidates. See [Adding examples from log files](intent-recommendations#intent-recommendations-get-example-recommendations).
+- **Japanese intent user example recommendations ![Plus or Premium plan only](images/premium.png)**: You can now upload a file that contains raw user inputs in Japanese, such as user inquiries from a call center log, that the service can analyze and mine for intent user example candidates. See [Adding examples from log files](/docs/services/assistant?topic=assistant-intent-recommendations).
 
 ## 28 February 2019
 {: #28February2019}
@@ -205,14 +205,14 @@ The following new features and changes to the service are available. Check out o
     </tr>
   </table>
 
-- **User-based Premium plan**: The Premium plan now bases its billing on the number of active unique users. If you choose to use this plan, design any custom applications that you build to properly identify the users who generate /message API calls. See [User-based plans](services-information#user-based-plans) for more information.
+- **User-based Premium plan**: The Premium plan now bases its billing on the number of active unique users. If you choose to use this plan, design any custom applications that you build to properly identify the users who generate /message API calls. See [User-based plans](/docs/services/assistant?topic=assistant-services-information#services-information-user-based-plans) for more information.
 
   Existing Premium plan service instances are not impacted by this change; they continue to use API-based billing methods. Only existing Premium plan users will see the API-based plan listed as the *Premium (API)* plan option.
   {: note}
 
   See {{site.data.keyword.conversationshort}} [service plan options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/watson-assistant/pricing/){: new_window} for more information about all available service plans.
 
-- **Intent user example recommendations ![Plus or Premium plan only](images/premium.png)**: You can upload a file that contains raw user inputs, such as user inquiries from a call center log, that the service can analyze and mine for intent user example candidates. See [Adding examples from log files](intent-recommendations#intent-recommendations-get-example-recommendations).
+- **Intent user example recommendations ![Plus or Premium plan only](images/premium.png)**: You can upload a file that contains raw user inputs, such as user inquiries from a call center log, that the service can analyze and mine for intent user example candidates. See [Adding examples from log files](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations).
 
 ## 20 November 2018
 {: #20November2018}
@@ -296,7 +296,7 @@ The following new features and changes to the service are available. Check out o
 
 - **Jump-to fix**: Fixed a bug in the Dialogs tool which prevented you from being able to configure a jump-to that targets the response of a node with the `anything_else` special condition.
 
-- **Digression return message**: You can now specify text to display when the user returns to a node after a digression. The user will have seen the prompt for the node already. You can change the message slightly to let users know they are returning to where they left off. For example, specify a response like, `Where were we? Oh, yes...` See [Digressions](dialog-runtime#digressions) for more details.
+- **Digression return message**: You can now specify text to display when the user returns to a node after a digression. The user will have seen the prompt for the node already. You can change the message slightly to let users know they are returning to where they left off. For example, specify a response like, `Where were we? Oh, yes...` See [Digressions](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-digressions) for more details.
 
 ## 12 July 2018
 {: #12July2018}
@@ -315,7 +315,7 @@ The following new features and changes to the service are available. Check out o
   - The content of the /message `output` object changed from being a `text` JSON object to being a `generic` array that supports multiple rich response types, including `image`, `option`, `pause`, and `text`.
   - Support for contextual entities was added.
 
-- **Overview page date filter**: Use the new date filters to choose the period for which data is displayed. These filters affect all data shown on the page: not just the number of conversations displayed in the graph, but also the statistics displayed along with the graph, and the lists of top intents and entities. See [Controls](logs-overview#controls) for more information.
+- **Overview page date filter**: Use the new date filters to choose the period for which data is displayed. These filters affect all data shown on the page: not just the number of conversations displayed in the graph, but also the statistics displayed along with the graph, and the lists of top intents and entities. See [Controls](/docs/services/assistant?topic=assistant-logs-overview#logs-overview-controls) for more information.
 
 - **Pattern limit expanded**: When using the **Patterns** field to [define specific patterns for an entity value](/docs/services/assistant?topic=assistant-entities#entities-patterns), the pattern (regular expression) is now limited to 512 characters.
 
@@ -347,7 +347,7 @@ The following new features and changes to the service are available. Check out o
 
   When you use any of the Watson SDKs, you can pass the API key and let the SDK manage the lifecycle of the tokens. For more information and examples, see [Authentication ![External link icon](../../icons/launch-glyph.svg "External link icon")]https://{DomainName}/apidocs/assistant-v2#authentication){: new_window} in the API reference.
 
-  If you are not sure which type of authentication to use, view the service credentials by clicking the service instance on the [{{site.data.keyword.Bluemix_notm}} Resource List ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources){: new_window}.
+  If you are not sure which type of authentication to use, view the service credentials by clicking the service instance on the [{{site.data.keyword.Bluemix_notm}} Resource List ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com){: new_window}.
 
 ## 25 May 2018
 {: #25May2018}
@@ -391,10 +391,10 @@ The following new features and changes to the service are available. Check out o
 - **Dialog enhancements**: The following features were added to the dialog tool:
 
   - Simple variable name and value fields are now available that you can use to add context variables or update context variable values. You do not need to open the JSON editor unless you want to. See [Defining a context variable](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-context-var-define) for more details.
-  - Organize your dialog by using folders to group together related dialog nodes. See [Organizing the dialog with folders](dialog-build#folders) for more details.
-  - Support was added for customizing how each dialog node participates in user-initiated digressions away from the designated dialog flow. See [Digressions](dialog-runtime#digressions) for more details.
+  - Organize your dialog by using folders to group together related dialog nodes. See [Organizing the dialog with folders](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-folders) for more details.
+  - Support was added for customizing how each dialog node participates in user-initiated digressions away from the designated dialog flow. See [Digressions](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-digressions) for more details.
 
-- **Search intents and entities**: A new search feature has been added that allows you to [search intents](intents#searching-intents) for user examples, intent names, or descriptions, or to [search entity](/docs/services/assistant?topic=assistant-entities#entities-search) values and synonyms.
+- **Search intents and entities**: A new search feature has been added that allows you to [search intents](/docs/services/assistant?topic=assistant-intents#intents-search) for user examples, intent names, or descriptions, or to [search entity](/docs/services/assistant?topic=assistant-entities#entities-search) values and synonyms.
 
 - **Content catalogs**: The new [content catalogs](/docs/services/assistant?topic=assistant-catalog#catalog-add) contain a single category of prebuilt common intents and entities that you can add to your application. For example, most applications require a general #greeting-type intent that starts a dialog with the user. You can add it from the content catalog rather than building your own.
 
@@ -443,19 +443,19 @@ The following new features and changes to the service are available. Check out o
 
 - **Log data access across instances (Premium users only)**: If you are a {{site.data.keyword.conversationshort}} Premium user, your premium instances can optionally be configured to allow access to log data from workspaces across your different premium instances.
 
-- **Copy nodes**: You can now duplicate a node to make a copy of it and its children. This feature is helpful if you build a node with useful logic that you want to reuse elsewhere in your dialog. See [Copying a dialog node](dialog-build#copy-node) for more information.
+- **Copy nodes**: You can now duplicate a node to make a copy of it and its children. This feature is helpful if you build a node with useful logic that you want to reuse elsewhere in your dialog. See [Copying a dialog node](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-copy-node) for more information.
 
 - **Capture groups in pattern entities**: You can identify groups in the regular expression pattern that you define for an entity. Identifying groups is useful if you want to be able to refer to a subsection of the pattern later. For example, your entity might have a regex pattern that captures US phone numbers. If you identify the area code segment of the number pattern as a group, then you can subsequently refer to that group to access just the area code segment of a phone number. See [Defining entities](/docs/services/assistant?topic=assistant-entities#entities-creating-task) for more information.
 
 ## 6 December 2017
 {: #6December2017}
 
-- **{{site.data.keyword.openwhisk}} integration (Beta)**: Call {{site.data.keyword.openwhisk}} (formerly IBM OpenWhisk) actions directly from a dialog node. This feature enables you to, for example, call an action to retrieve weather information from within a dialog node, and then condition on the returned information in the dialog response. Currently, you can call an action from a {{site.data.keyword.openwhisk_short}} instance that is hosted in the US South region from {{site.data.keyword.conversationshort}} instances that are hosted in the US South region. See [Making programmatic calls from a dialog node](/doc/services/assistant?topic=assistant-dialog-actions) for more details.
+- **{{site.data.keyword.openwhisk}} integration (Beta)**: Call {{site.data.keyword.openwhisk}} (formerly IBM OpenWhisk) actions directly from a dialog node. This feature enables you to, for example, call an action to retrieve weather information from within a dialog node, and then condition on the returned information in the dialog response. Currently, you can call an action from a {{site.data.keyword.openwhisk_short}} instance that is hosted in the US South region from {{site.data.keyword.conversationshort}} instances that are hosted in the US South region. See [Making programmatic calls from a dialog node](/docs/services/assistant?topic=assistant-dialog-actions) for more details.
 
 ## 5 December 2017
 {: #5December2017}
 
-- **Redesigned UI for Intents and Entities**: The `Intents` and `Entities` tabs have been redesigned to provide an easier, more efficient workflow when creating and editing entities and intents. See [Defining intents](intents#creating-intents) and [Defining entities](/docs/services/assistant?topic=assistant-entities#entities-creating-task) for information about working with these tabs.
+- **Redesigned UI for Intents and Entities**: The `Intents` and `Entities` tabs have been redesigned to provide an easier, more efficient workflow when creating and editing entities and intents. See [Defining intents](/docs/services/assistant?topic=assistant-intents-create-task) and [Defining entities](/docs/services/assistant?topic=assistant-entities#entities-creating-task) for information about working with these tabs.
 
 ## 30 November 2017
 {: #30November2017}

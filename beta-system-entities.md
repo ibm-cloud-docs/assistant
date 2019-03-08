@@ -75,7 +75,7 @@ The following table summarizes the new properties that were added. To see the pr
 | `sys-time` | `datetime_link` | If present, indicates that the user's input mentions a date and time together, which implies that the date and time are related to one another. The start and end index values of the string that includes the date and time are saved as part of the link name. For example, if the input is, `Are you open today at 5?`, then `today` is recognized as a date reference at location `[13,18]` and `at 5` is recognized as a time reference at location `[19,23]`. A location value of `[13,23]`, which spans both the date and time mentions, is appended to the resulting datetime_link. It is named `datetime_link_13_23` and it is included in the output of the `@sys-date` and `@sys-time` system entities that participate in the relationship.  |
 | `@sys-time` | `part_of_day` | Recognizes terms that represent the time of day, such as `morning`, `afternoon`, `evening`, `night`, or `now`. Also sets arbitrary times, such as `9:00:00` for morning, `15:00:00` for afternoon, `18:00:00` for evening, and `22:00:00` for night. |
 | `@sys-time` | `range_link` | If present, indicates that the user's input contains syntax that suggests a time range is specified. For example, the input might be `Are you open from 9AM to 11AM`. Each of the two `@sys-time` system entities that are detected have a `range_link` property in their output. Additional information is provided, including the role that each `@sys-time` plays in the range relationship. For example, the start time has a role type of `time_from` and the end time has a role type of `time_to`. To check a role value, you can use the syntax `@sys-time.role?.type == 'time_from'`. |
-| `@sys-time` | `relative_hour`, `relative_minute`, `relative_second` | Recognizes relative mentions of time, such as `five hours ago` (`relative_hour = -5`), `in two minutes`(`relative_minute = 2`), or `in a second` (`relative_second = 1`). |
+| `@sys-time` | `relative_hour`, `relative_minute`, `relative_second` | Recognizes relative mentions of time, such as `in two minutes`(`relative_minute = 2`), or `in a second` (`relative_second = 1`). |
 | @sys-time | `specific_hour`, `specific_minute`, `specific_second` | Recognizes specific mentions of time, such as `at 5 o'clock` (`specific_hour = 5`), `at 2:30`(`specific_minute = 30`), or `23:30:22` (`specific_second = 22`). |
 
 ### Usage examples
@@ -102,4 +102,6 @@ and examples:
 | @sys-date.specific_day_of_week == 'monday' | Gets confirmation from the user that the date the system assumed the user meant (next Monday), is the Monday they are asking about by using the detected alternative value, which in this case is last Monday's date. | Do you mean `@sys-date` or `<? @sys-date.alternatives[0].value ?>`? |
 
 | `@sys-time` | `granularity` | Recognizes mentions of time frames, such as `now` (=`instant`) or `noon` (= `hour`). Options are `hour`, `minute`, `second` and `instant`. |
+
+removed from sys-time | relative | `five hours ago` (`relative_hour = -5`),
 -->
