@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-03-08"
 
 subcollection: assistant
 
@@ -70,7 +70,7 @@ To avoid overcorrection, the service does not correct the spelling of the follow
 - Numbers and units of measurement or time
 - Proper nouns, such as common first names or company names
 - Text within quotation marks
-- Words containing special characters, such as hyphens (-), asterisks (*), and ampersands (&)
+- Words containing special characters, such as hyphens (-), asterisks (*), ampersands (&), or at signs (@), including those used in email addresses or URLs.
 - Words that *belong* in this skill, meaning words that have implied significance because they occur in entity values, entity synonyms, or intent user examples.
 
 If the word that is not corrected is not obviously one of these types of input, then it might be worth checking whether the entity has fuzzy matching enabled for it.
