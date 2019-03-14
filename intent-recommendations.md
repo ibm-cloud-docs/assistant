@@ -45,7 +45,7 @@ Mine your existing data to do one of the following things:
 ## Creating a user example source file
 {: #intent-recommendations-log-files-add}
 
-Before the service can analyze your data, you must provide it with your data. Create a comma-separated value (CSV) file with one customer utterance per line. Ideally, the utterances are short phrases which are extracted from your call center transcripts that contain real-world customer questions and requests. Each user example source file can be a maximum size of 20 MB.
+Before the service can analyze your data, you must provide the data in the correct format. Create a comma-separated value (CSV) file with one customer utterance per line. Ideally, the utterances are short phrases which are extracted from your call center transcripts that contain real-world customer questions and requests. Each user example source file can be a maximum size of 20 MB.
 
 Follow these additional guidelines:
 
