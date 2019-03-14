@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-14"
 
 subcollection: assistant
-
 
 ---
 
@@ -58,21 +57,21 @@ The first table shows the level of support for all features, except those relate
 
 **Table 2. Intent feature support details**
 
-| Language | **[Absolute scoring and 'Mark as irrelevant'](/docs/services/assistant?topic=assistant-intents#intents-mark-irrelevant)** | **[Content Catalog](/docs/services/assistant?topic=assistant-catalog)** | **[User example recommendations](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations)** |
-|:---:|:---:|:---:|:---:|
-| **English (en)**                   | GA | GA | GA |
-| **Arabic (ar)**                    | Beta | GA | NA |
-| **Chinese (Simplified) (zh-cn)**   | GA | NA | NA |
-| **Chinese (Traditional) (zh-tw)**  | Beta | NA | NA |
-| **Czech (cs)**                     | GA | NA | NA |
-| **Dutch (nl)**                     | GA | NA | NA |
-| **French (fr)**                    | GA | GA | NA |
-| **German (de)**                    | GA | GA | NA |
-| **Italian (it)**                   | GA | GA | NA |
-| **Japanese (ja)**                  | GA | GA | GA |
-| **Korean (ko)**                    | GA | NA | NA |
-| **Portuguese (Brazilian) (pt-br)** | GA | GA | NA |
-| **Spanish (es)**                   | GA | GA | NA |
+| Language | **[Absolute scoring and 'Mark as irrelevant'](/docs/services/assistant?topic=assistant-intents#intents-mark-irrelevant)** | **[Content Catalog](/docs/services/assistant?topic=assistant-catalog)** | **[User example recommendations](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations)** | **[Intent recommendations](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-intent-recommendations)** |
+|:---:|:---:|:---:|:---:|:---:|
+| **English (en)**                   | GA | GA | GA | GA |
+| **Arabic (ar)**                    | Beta | GA | NA | NA |
+| **Chinese (Simplified) (zh-cn)**   | GA | NA | NA | NA |
+| **Chinese (Traditional) (zh-tw)**  | Beta | NA | NA | NA |
+| **Czech (cs)**                     | GA | NA | NA | NA |
+| **Dutch (nl)**                     | GA | NA | NA | NA |
+| **French (fr)**                    | GA | GA | NA | NA |
+| **German (de)**                    | GA | GA | NA | NA |
+| **Italian (it)**                   | GA | GA | NA | NA |
+| **Japanese (ja)**                  | GA | GA | GA | NA |
+| **Korean (ko)**                    | GA | NA | NA | NA |
+| **Portuguese (Brazilian) (pt-br)** | GA | GA | NA | NA |
+| **Spanish (es)**                   | GA | GA | NA | NA |
 {: caption="Intent feature support details" caption-side="top"}
 
 **Table 3. Entity feature support details**

@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-03-14"
 
 subcollection: assistant
-
 
 ---
 
@@ -23,29 +22,41 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Get help from Watson ![Plus or Premium plan only](images/premium.png)
+# Get help building intents ![Plus or Premium plan only](images/premium.png)
 {: #intent-recommendations}
 
-If you have chat log transcripts, from a customer support center, for example, that contain real-world user utterances, let the service mine your existing data for intent user example candidates.
+If you have existing enterprise customer support chat transcript data, let Watson analyze that data to understand the customer needs that your support team spends most of its time addressing. Watson can then recommend intents and user examples you can use to train your assistant so it can recognize the same and similar requests in future.
 {: shortdesc}
+
+This feature is available to Plus or Premium plan users.
+{: note}
 
 See [Supported languages](/docs/services/assistant?topic=assistant-language-support) for information about the language support for this feature.
 
-## Upload your files
+Customer needs are represented in {{site.data.keyword.conversationshort}} as *intents*. If you have not defined intents yet, you can get started faster by asking Watson for help. Upload files with customer utterances from call center transcripts for the {{site.data.keyword.conversationshort}} service to analyze. Based on the insights it uncovers, the service recommends a base set of intents you should build to cover the most commonly occurring needs of your customers.
+
+As the subjects that your customers want to discuss change, you can use the intent user example recommendations feature to help keep your intents up-to-date and relevant over time.
+
+Mine your existing data to do one of the following things:
+
+- [Get intent recommendations](#intent-recommendations-get-intent-recommendations)
+- [Get intent user example recommendations](#intent-recommendations-get-example-recommendations)
+
+## Creating a user example source file
 {: #intent-recommendations-log-files-add}
 
-Before you begin, create a file to provide to the service. The file must be a comma-separated value (CSV) file, with one user utterance per line. Ideally, the utterances are short phrases which are extracted from your call center transcripts that contain real-world customer questions and requests. Each user utterance file can be a maximum size of 20 MB.
+Before the service can analyze your data, you must provide the data in the correct format. Create a comma-separated value (CSV) file with one customer utterance per line. Ideally, the utterances are short phrases which are extracted from your call center transcripts that contain real-world customer questions and requests. Each user example source file can be a maximum size of 20 MB.
 
 Follow these additional guidelines:
 
   - Remove any sensitive data from the utterances that you include in the file.
 
     Sensitive data includes any information relating to an identifiable natural person such as names, email addresses, and customer IDs, and regulated data such as protected health information.
-  - Do not include user utterances that exceed 1,024 characters in length. Longer utterances are truncated.
+  - Do not include utterances that exceed 1,024 characters in length. Longer utterances are truncated.
   - The file must contain at least 100 utterances; a file with 500 or more utterances will give you better results.
   - If an utterance contains a comma, surround the utterance in quotation marks.
   - The CSV must include only one column.
-  - Remove everything that is not a user-generated utterance, including any human agent responses or notes.
+  - Remove everything that is not a customer-generated utterance, including any human agent responses or notes.
 
   For example:
 
@@ -56,7 +67,50 @@ Follow these additional guidelines:
   "first, i want to know if i am already registered."
   ```
 
-Any files you upload are shared across all of the skills in the current service instance. The utterances from all of the available files are mined when you ask for intent user example recommendations.
+Any files you upload are shared across all of the skills in the current service instance. The utterances from all of the available files are mined when you ask for both intent recommendations and intent user example recommendations.
+
+## Get intent recommendations from Watson
+{: #intent-recommendations-get-intent-recommendations}
+
+Let the service analyze your call center chat transcripts and recommend some initial intents for you to start with. If you already created some intents, let the service analyze your logs and compare its findings with your existing intents to identify gaps in your training data and suggest new intents that can fill them in.
+
+To use this feature, upload a file with customer utterances. The service evaluates these utterances and identifies common problem areas that customers mention frequently. The {{site.data.keyword.conversationshort}} tool then displays a set of discrete intents that capture the trending customer needs. You can review each recommended intent and its corresponding user examples to choose the ones you want to add to your training data.
+
+## Getting intent recommendations
+{: #intent-recommendations-get-intent-recommendations-task}
+
+Before you begin, create a CSV file with your data. See [Creating a user example source file](#intent-recommendations-log-files-add).
+
+To get intent recommendations, complete the following steps:
+
+1.  In the {{site.data.keyword.conversationshort}} tool, open your dialog skill. The skill opens to the **Intents** page.
+
+1.  Click **Get recommendations**.
+
+1.  **First time only**: Click **Add file**, and then click **Choose a file** to browse for the CSV file you created earlier and select it.
+
+    Give the service time to analyze your data and group the utterances.
+
+1.  Review the intents that are recommended by the service.
+
+    The intent recommendations are ordered by:
+
+    1.  Intents with the most frequently occuring utterances. The frequency of the utterances associated with these intents suggests they identify the most common customer pain points.
+    1.  How different the intents are from intents you have already added to your skill. Their uniqueness suggests that they can address customer needs that are not being met currently.
+    1.  How similar the user examples in the intent are to one another, which indicates the strength of the intent.
+
+    You can hover over an intent to see a few examples of its associated utterances. If you want to see a list of all of the intent groupings, click **Show all recommendations**.
+
+1.  Click an intent to see the full set of user examples that are associated with it, and to take one of the following actions:
+
+    Deselect any utterances that you do not want to add as user examples.
+
+    - To add the recommended intent with the selected utterances as user examples, click **Create intent**.
+    - To add the selected utterances from the recommended intent to one of your existing intents as user examples instead, click **Add to existing intent**, choose the intent, and then click **Add**.
+
+The intents and intent user examples that you add in this way do count toward your intent and intent user example totals for which there are limits per plan. See [Intent limits](/docs/services/assistant?topic=assistant-intents#intents-limits) for more details.
+
+As the subjects that your customers want to discuss change, you can use the intent user example recommendations feature to help keep your intents up-to-date and revelant over time.
 
 ## Get intent user example recommendations
 {: #intent-recommendations-get-example-recommendations}
@@ -65,11 +119,13 @@ The following video provides a 2-minute overview of how to get intent user examp
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Intent user example recommendations" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/L3FI8KeZfsc?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
-The files you upload do not need to associate the examples with intents. You simply provide the raw user utterances and let the service do the work of choosing the ones that are appropriate for the current intent. For every intent, the service analyzes the same data to find user examples that are appropriate for that intent.
+The data you provide to the service for it to find intent user examples does not need to associate the examples with intents. You simply provide the raw customer utterances and let the service do the work of choosing the ones that are appropriate for the current intent. For every intent, the service analyzes the same data to find user examples that are appropriate for that intent.
+
+Before you begin, create a CSV file with your data. See [Creating a user example source file](#intent-recommendations-log-files-add).
 
 1.  Follow the steps in [Creating intents](/docs/services/assistant?topic=assistant-intents#intents-creating-intents-task) to create an intent.
 
-1.  Add at least 5 user examples that illustrate the full range of typical utterances that you anticipate users might say to trigger this intent.
+1.  Add at least 5 user examples that illustrate the full range of typical utterances that you anticipate customers might say to trigger this intent.
 
     These seed user examples teach the service about the kinds of utterances to look for in the files you upload.
 
@@ -107,6 +163,8 @@ The user examples that you add in this way do count toward your intent user exam
 After you upload at least one file, you can open the *User example source files* collection to manage your files. Uploaded files are added to a file collection that is shared across the current {{site.data.keyword.conversationshort}} service instance.
 
 1.  To access the collection, click to open an intent, click **Show recommendations**, and then click **View Files** from the sidebar.
+
+    If you don't have any intents added yet, from the main Intents page, expand the *Intent recommendations* section, click **Get recommendations**, click **Show all recommendations**, and then click **View Files**.
 
 1.  You can take the following actions:
 

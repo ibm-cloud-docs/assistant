@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-03-14"
 
 subcollection: assistant
-
 
 ---
 
@@ -35,6 +34,12 @@ The assistant is a fully hosted bot that is managed by {{site.data.keyword.cloud
 Explore the {{site.data.keyword.conversationshort}} [service plan options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/watson-assistant/pricing/){: new_window}.
 
 Before you create a service instance, decide how you want to organize the resources in your {{site.data.keyword.cloud_notm}} account. If you do not define your own resource group, the **default** resource group is used, and you *cannot* change it later. See [Best practices for organizing resources in a resource group ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/resources/bestpractice_rgs#bp_resourcegroups){: new_window} for more details. All users must have a platform access role of Operator. (Service access roles are not leveraged by {{site.data.keyword.conversationshort}}.)
+
+To find out the service plan to which your current instance belongs, complete these steps:
+
+1.  Make a note of the name of the instance you are currently using. (You can find and change the instance from the main Skills or Assistants pages.)
+1.  Go to the [IBM Cloud Resource list ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources) page.
+1.  Expand the **Services** section, find the instance name that you noted earlier, and click it to see the associated plan information.
 
 ### Plan limits by artifact type
 {: #services-information-limits}
@@ -66,7 +71,7 @@ The following features are available only to users of Premium plans.
 
 - [Disambiguation](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation)
 - [Intent conflict resolution](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts)
-- [Intent user example recommendations](/docs/services/assistant?topic=assistant-intent-recommendations)
+- [Intent recommendations and intent user example recommendations](/docs/services/assistant?topic=assistant-intent-recommendations)
 - [Intercom integration](/docs/services/assistant?topic=assistant-deploy-intercom)
 
 ### User-based plans
