@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-03-14"
 
 subcollection: assistant
-
 
 ---
 
@@ -47,6 +46,8 @@ subcollection: assistant
   The examples you provide are used by the service to build a machine learning model that can recognize the same and similar types of utterances and map them to the appropriate intent.
 
 Start with a few intents, and test them as you iteratively expand the scope of the application.
+
+![Plus or Premium plan only](images/premium.png): If you already have chat transcripts from a call center or customer inquiries that you've collected from an online application, put that data to work for you. Share the real customer utterances with Watson and let Watson recommend the best intents and intent user examples for your needs. See [Get help building intents](/docs/services/assistant?topic=assistant-intent-recommendations) for more details.
 
 ## Creating intents
 {: #intents-create-task}
