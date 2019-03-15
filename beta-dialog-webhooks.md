@@ -27,13 +27,13 @@ This feature is available for use by participants in the beta program only. To f
 
 ![Beta](images/beta.png) IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment.
 
-Define a webhook that sends a POST request to an external application to perform a programmatic function. You can then invoke the webhook from one or more dialog nodes.
+Define a webhook that sends a POST request callout to an external application to perform a programmatic function. You can then invoke the webhook from one or more dialog nodes.
 
 A webhook is basically a user-defined HTTP callback or a code snippet that is linked to a web application. When a webhook is triggered by an event, it collects data, and sends it to the URL of the external application as an HTTP request that asks for a programmatic action to occur.
 
-When used in your dialog skill, the webhook is triggered when a node that calls a webhook is processed. The webhook collects data that you specify or that you collect from the user during the conversation and save in context variables, and sends the data to the Webhook request URL as an HTTP POST request. The URL that receives the webhook is the listener. It performs a predefined action using any information that is provided by the webhook, and can optionally return a response.
+When used in your dialog skill, a webhook is triggered when the node that has a webhook enabled is processed. The webhook collects data that you specify or that you collect from the user during the conversation and save in context variables, and sends the data to the Webhook request URL as an HTTP POST request. The URL that receives the webhook is the listener. It performs a predefined action using the information that is provided by the webhook as specified in the webhook definition, and can optionally return a response.
 
-You can use an external service to do the following types of things:
+You can use a webhook to do the following types of things:
 
 - Validate information that you collected from the user.
 - Do calculations or string manipulations on user input that are too complex for supported SpEL expression methods to handle.
@@ -55,9 +55,7 @@ Before you can invoke a webhook, you must provide details about the external ser
 
 1.  Click **Webhooks**.
 
-1.  In the **Request URL** field, add the URL for the external application to which you want to send HTTP POST requests.
-
-    **Web action**
+1.  In the **Request URL** field, add the URL for the external application to which you want to send HTTP POST request callouts.
 
     For example, to call a {{site.data.keyword.openwhisk_short}} web action, specify the URL for the public web action. For example:
 
@@ -66,29 +64,7 @@ Before you can invoke a webhook, you must provide details about the external ser
     ```
     {: codeblock}
 
-    **Synchronous action**
-
-    To call a {{site.data.keyword.openwhisk_short}} action (not a web action), specify the URL for the action. You must append a `?blocking=true` parameter to the action URL to force a synchronous call to be made.
-
-    This syntax sends a synchronous request:
-
-    ```bash
-    https://us-south.functions.cloud.ibm.com/api/v1/namespaces/my_org_dev/actions/Hello%20World?blocking=true
-    ```
-    {: codeblock}
-
-    When you call an action, you must provide the API Key that is associated with the action as a header, which is described in the next step.
-
-    The webhook implementation does not support asynchronous calls to {{site.data.keyword.openwhisk_short}} actions because when you send an asynchronous request, an activation ID is returned first. You must send a `GET` request with this activition ID to trigger the action and potentially get data back. However, the webhook implementation supports sending `POST` requests only.
-    {: note}
-
 1.  If the external service requires that you pass authentication credentials or other parameters with the POST request, then add them as headers.
-
-    For example, if you call a {{site.data.keyword.openwhisk_short}} action, then you must add an authorization header for the request.
-
-    1.  Get the API Key. From the {{site.data.keyword.openwhisk_short}} Endpoint page, find the CURL section and click the eye icon to show the key details. Copy the `user ID:password` key that is listed after the `-u` parameter in the curl command.
-    1.  Convert the `user ID:password` key into a base64-encoded String. You can use a basic authentication header generator tool to encode it, for example.
-    1.  Pass the encoded key as an Authorization header by using the following syntax:
 
     <table>
     <caption>Header example</caption>
@@ -102,16 +78,16 @@ Before you can invoke a webhook, you must provide details about the external ser
       </tr>
     </table>
 
-    ![Shows the Request URL field and Headers section of the Options page.](images/webhook-to-cfaction.png)
+Your webhook details are saved automatically.
 
 ## Adding a webhook callout to a dialog node
 {: #dialog-webhooks-dialog-node-callout}
 
-To send a callout to a Webhook from a dialog node, you must enable Webhooks on the node, and then add details for the callout.
+To use a webhook from a dialog node, you must enable webhooks on the node, and then add details for the callout.
 
 1.  Click the **Dialog** tab.
 
-1.  Find the dialog node where you want to add a callout, click to open it, and then click **Customize**.
+1.  Find the dialog node where you want to add a callout, click to open the dialog node, and then click **Customize**.
 
 1.  Scroll down to the *Webhooks* section, and switch the toggle to **On**, and then click **Apply**.
 
@@ -160,9 +136,9 @@ To send a callout to a Webhook from a dialog node, you must enable Webhooks on t
       </tr>
     </table>
 
-1.  Any response made by the application that you call is saved to the return variable. You can rename this variable.
+1.  Any response made by the callout is saved to the return variable. You can rename the variable that is automatically added to the **Return variable** field for you.
 
-    The variable name has the syntax `webhook_result_n`, where the appended `_n` is incremented each time you add a webhook callout to a dialog node to ensure that context variable names are unique across the dialog skill. If you change the name, be sure to use a unique name.
+    The generated variable name has the syntax `webhook_result_n`, where the appended `_n` is incremented each time you add a webhook callout to a dialog node to ensure that context variable names are unique across the dialog skill. If you change the name, be sure to use a unique name.
 
 1.  In the conditional responses section, two response conditions are added automatically, one response to show when the webhook callout is successful and a return variable is sent back. And one response to show when the callout fails. You can edit these responses, and add more conditional responses to the node.
 
@@ -184,29 +160,83 @@ To send a callout to a Webhook from a dialog node, you must enable Webhooks on t
       </tr>
     </table>
 
-    If you make a {{site.data.keyword.openwhisk_short}} action call, then the JSON object that is returned contains lots of information that you don't need to share with the user. You can use this expression in the response text to access only the message from the response: `$webhook_result.response.result.message`.
-
 1.  When you are done, click the X to close the node. Your changes are automatically saved.
 
 ## Testing webhooks
 {: #dialog-webhooks-test}
 
-When you first add a callout, it can be useful to see exactly what is returned in the response from the external application, the data and its format. Add this expression as the text response for the successful callout conditional response: `$webhook_result_n` where `n` is the appropriate number for the webhook you are testing.
+When you first add a webhook callout, it can be useful to see exactly what is returned in the response from the external application, the data and its format. To do this, add this expression as the text response for the successful callout conditional response: `$webhook_result_n` where `n` is the appropriate number for the webhook you are testing.
 
-This response returns the full context variable, so you can see if the external application is sending back a JSON Object or a JSON Array that includes information you don't need to share with the user. You can then use the methods documented in [Expression language methods](/docs/services/assistant?topic=assistant-dialog-methods) to extract only the information you care about from the response.
+This response returns the full body of the return variable, so you can see what the callout is sending back and decide what to share with the user. You can then use the methods documented in [Expression language methods](/docs/services/assistant?topic=assistant-dialog-methods) to extract only the information you care about from the response.
 
-Be sure to test whether certain user inputs can generate errors in the external application, and build in ways to handle those situations. Any errors generated by the external application are stored in `output.webhook_error.<result_variable>`. You can use a conditional response like this while you are testing to capture such errors in the external application:
+Test whether certain user inputs can generate errors in the callout, and build in ways to handle those situations. Errors generated by the external application are stored in `output.webhook_error.<result_variable>`. You can use a conditional response like this while you are testing to capture such errors:
 
 | Condition | Response |
 |-----------|----------|
-| output.webhook_error | The external application generated this error: <? output.webhook_error.webhook_result_1 ?>. |
+| output.webhook_error | The callout generated this error: <? output.webhook_error.webhook_result_1 ?>. |
 
-For example, you might not be authenticating the request properly (401), or you might be trying to pass a parameter with a name that is already in use by the external application. You can discover and fix these types of errors before you deploy the webhook.
+For example, you might not be authenticating the request properly (401), or you might be trying to pass a parameter with a name that is already in use by the external application. Test the webhook to discover and fix these types of errors before you deploy the webhook.
+
+## Defining a {{site.data.keyword.openwhisk_short}} action webhook
+{: #dialog-webhooks-cf-action}
+
+Typically, you use a webhook to make a standard POST request to a REST HTTP endpoint. However, if you want to use a webhook to call a {{site.data.keyword.openwhisk_short}} action, and not a {{site.data.keyword.openwhisk_short}} web action, then you can do so.
+
+You must make a synchronous call to the {{site.data.keyword.openwhisk_short}} action. The webhook implementation does not support asynchronous calls to {{site.data.keyword.openwhisk_short}} actions because when you send an asynchronous request, an activation ID is returned first. You must send a `GET` request with this activition ID to trigger the action and get data back. However, the webhook implementation supports sending `POST` requests only.
+
+To make a synchronous call to a {{site.data.keyword.openwhisk_short}} action, complete the following steps:
+
+1.  From the skill where you want to add the webhook, click the **Options** tab.
+
+1.  Click **Webhooks**.
+
+1.  In the **Request URL** field, specify the URL for the action. You must append a `?blocking=true` parameter to the action URL to force a synchronous call to be made.
+
+    This syntax sends a synchronous request:
+
+    ```bash
+    https://us-south.functions.cloud.ibm.com/api/v1/namespaces/my_org_dev/actions/Hello%20World?blocking=true
+    ```
+    {: codeblock}
+
+    When you call an action, you must provide the API Key that is associated with the action as a header, which is described in the next step.
+
+1.  If the external service requires that you pass authentication credentials or other parameters with the POST request, then add them as headers.
+
+    To add an authorization header for the request, complete these steps:
+
+    1.  Get the API Key. From the {{site.data.keyword.openwhisk_short}} Endpoint page, find the CURL section and click the eye icon to show the key details. Copy the `user ID:password` key that is listed after the `-u` parameter in the curl command.
+    1.  Convert the `user ID:password` key into a base64-encoded String. You can use a basic authentication header generator tool to encode it, for example.
+    1.  Pass the encoded key as an Authorization header.
+
+    ![Shows the Request URL field and Headers section of the Options page.](images/webhook-to-cfaction.png)
+
+    Your webhook details are saved automatically.
+
+1.  Follow the [same steps](#dialog-webhooks-dialog-node-callout) to add a webhook callout from a dialog node.
+
+    You can edit the conditional response that is shown when the webhook callout is successful to limit what is shown to users. Use an expression with the syntax `$webhook_result.response.result.message` to extract the returned message only.
+
+    <table>
+    <caption>Conditional responses example</caption>
+      <tr>
+        <th>Condition</th>
+        <th>Response</th>
+      </tr>
+      <tr>
+        <td>$webhook_result_1</td>
+        <td>The application returned "$webhook_result.response.result.message".</td>
+      </tr>
+      <tr>
+        <td>anything_else</td>
+        <td>The call to the external application failed. Please try again later.</td>
+      </tr>
+    </table>
 
 ## Removing a webhook
 {: #dialog-webhooks-delete}
 
-If you decide you do not want to make a webhook call from a dialog node, open the node's Customize page, and then switch Webhooks **Off**.
+If you decide you do not want to make a webhook call from a dialog node, open the node's *Customize* page, and then switch Webhooks **Off**.
 
 The *Parameters* section and the **Return variable** field are removed from the dialog node editor. However, any conditional responses that were added for you or that you added yourself remain.
 
