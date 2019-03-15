@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-03-15"
 
 subcollection: assistant
 
@@ -43,6 +43,6 @@ The following features are available for use by participants in the beta program
 
 - You can configure a skill to correct misspellings in user input. See [Correcting user input](/docs/services/assistant?topic=assistant-dialog-runtime-spell-check) for more details.
 
-- Leverage existing customer support chat transcripts to find the appropriate set of intents and user examples to use to train your assistant. See [Get help building intents](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-intent-recommendations) for more details.
-
 - Try out the new system entities. The number-based system entities have been revised to be better able to recognize date, time, and number mentions. See [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities) for more information.
+
+- Add webhooks to dialog nodes so you can make programmatic calls out to external applications as part of the conversational flow. See [Adding a webhook callout to a dialog node](/docs/services/assistant?topic=assistant-dialog-webhooks)

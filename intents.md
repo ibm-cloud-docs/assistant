@@ -47,7 +47,7 @@ subcollection: assistant
 
 Start with a few intents, and test them as you iteratively expand the scope of the application.
 
-![Plus or Premium plan only](images/premium.png): If you already have chat transcripts from a call center or customer inquiries that you've collected from an online application, put that data to work for you. Share the real customer utterances with Watson and let Watson recommend the best intents and intent user examples for your needs. See [Get help building intents](/docs/services/assistant?topic=assistant-intent-recommendations) for more details.
+![Plus or Premium plan only](images/premium.png) If you already have chat transcripts from a call center or customer inquiries that you've collected from an online application, put that data to work for you. Share the real customer utterances with Watson and let Watson recommend the best intents and intent user examples for your needs. See [Get help building intents](/docs/services/assistant?topic=assistant-intent-recommendations) for more details.
 
 ## Creating intents
 {: #intents-create-task}
@@ -80,8 +80,6 @@ Use the {{site.data.keyword.conversationshort}} tool to create intents.
     - `Pay my account balance`
     - `make a payment`
 
-    To add user examples that are mined from real support requests made by your customers, see [Adding examples from log files](#intents-intent-recommendations).
-
     To learn about the impact of including references to entities in your user examples, see [How entity references are treated](#intents-entity-references).
     {: tip}
 
@@ -92,7 +90,7 @@ Use the {{site.data.keyword.conversationshort}} tool to create intents.
 
 1.  Repeat the same process to add more examples. You can tab between examples. Provide at least 5 examples for each intent. The more examples you provide, the more accurate your application can be.
 
-    To get help with user example creation, see [Get intent user example recommendations](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations).
+    ![Plus or Premium plan only](images/premium.png) To get help with user example creation, see [Get intent user example recommendations](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations).
 
 1.  When you have finished adding examples, click ![Close arrow](images/close_arrow.png) to finish creating the intent.
 
