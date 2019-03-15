@@ -29,9 +29,7 @@ This feature is available for use by participants in the beta program only. To f
 
 Define a webhook that sends a POST request callout to an external application to perform a programmatic function. You can then invoke the webhook from one or more dialog nodes.
 
-A webhook is basically a user-defined HTTP callback or a code snippet that is linked to a web application. When a webhook is triggered by an event, it collects data, and sends it to the URL of the external application as an HTTP request that asks for a programmatic action to occur.
-
-When used in your dialog skill, a webhook is triggered when the node that has a webhook enabled is processed. The webhook collects data that you specify or that you collect from the user during the conversation and save in context variables, and sends the data to the Webhook request URL as an HTTP POST request. The URL that receives the webhook is the listener. It performs a predefined action using the information that is provided by the webhook as specified in the webhook definition, and can optionally return a response.
+A webhook is a mechanism that allows you to call out to an external program based on something happening in your program. When used in a dialog skill, a webhook is triggered when the assistant processes a node that has a webhook enabled. The webhook collects data that you specify or that you collect from the user during the conversation and save in context variables, and sends the data to the Webhook request URL as an HTTP POST request. The URL that receives the webhook is the listener. It performs a predefined action using the information that is provided by the webhook as specified in the webhook definition, and can optionally return a response.
 
 You can use a webhook to do the following types of things:
 
