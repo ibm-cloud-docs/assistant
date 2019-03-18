@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-15"
+lastupdated: "2019-03-18"
 
 ---
 
@@ -40,14 +40,20 @@ You can use a webhook to do the following types of things:
 - Trigger a SMS notification
 - Trigger a {{site.data.keyword.openwhisk_short}} action or web action.
 
-You can define one webhook for a dialog skill, and then call the webhook from one or more dialog nodes.
-
-**Time limits**: Only make a call that you know can return in **under 5 seconds**. If your dialog makes more than one webhook call, the total amount of time allowed for the calls to complete is 7 seconds. If the first three calls complete in 2 seconds each, and the fourth takes more than 1 second, then the fourth call is stopped, and the error message for the call indicates that the call was not completed. For less efficient services that you need to call, manage the call through your client application and pass the information to the dialog as a separate step.
-
 ## Defining the webhook
 {: #dialog-webhooks-create}
 
-Before you can invoke a webhook, you must provide details about the external service that you want to call. To add the webhook details, complete the following steps:
+You can define one webhook for a dialog skill, and then call the webhook from one or more dialog nodes.
+
+The programmatic call to the external service must meet these requirements:
+
+- The call must be a POST HTTP request.
+- The format of the request and response must be in JSON.
+- Only make a call that you know can return in **under 5 seconds**.
+
+  For less efficient services that you need to call, manage the call through your client application and pass the information to the dialog as a separate step.
+
+To add the webhook details, complete the following steps:
 
 1.  From the skill where you want to add the webhook, click the **Options** tab.
 
