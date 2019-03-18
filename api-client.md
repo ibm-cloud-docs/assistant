@@ -2,10 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
-
-subcollection: assistant
-
+lastupdated: "2019-03-18"
 
 ---
 
@@ -39,8 +36,8 @@ The example application we will create in this section implements several functi
 Before continuing with this example, you need to set up the required assistant:
 
 1.  Download the dialog skill <a target="_blank" href="https://watson-developer-cloud.github.io/doc-tutorial-downloads/assistant/assistant-simple-example.json" download="assistant-simple-example.json">JSON file</a>.
-1.  [Import the skill](/docs/services/assistant?topic=assistant-skill-add#creating-skills) into an instance of the {{site.data.keyword.conversationshort}} service.
-1.  [Create an assistant](/docs/services/assistant?topic=assistant-assistant-add#creating-assistants) and connect the skill you imported.
+1.  [Import the skill](/docs/services/assistant?topic=assistant-skill-dialog-add#skill-dialog-add-task) into an instance of the {{site.data.keyword.conversationshort}} service.
+1.  [Create an assistant](/docs/services/assistant?topic=assistant-assistant-add) and connect the skill you imported.
 
 ## Getting service information
 {: #api-client-get-info}
@@ -232,7 +229,7 @@ Paste the example code into a file named `AssistantSimpleExample.java`. You can 
 **Note:** Make sure you have installed the Watson SDK for Python using `pip install --upgrade watson-developer-cloud` or `easy_install --upgrade watson-developer-cloud`.
 {: python}
 
-**Note:** Make sure you have installed the [Watson SDK for Java ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/java-sdk/blob/develop/README.md){: new_window}.
+**Note:** Make sure you have installed the [Watson SDK for Java ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/java-sdk/blob/master/README.md){: new_window}.
 {: java}
 
 Assuming everything works as expected, the assistant returns the output from the dialog, which is then printed to the console:
@@ -747,7 +744,7 @@ Success! The application now uses the {{site.data.keyword.conversationshort}} se
 
 Of course, a real-world application would use a more sophisticated user interface, such as a web chat window. And it would implement more complex actions, possibly integrating with a customer database or other business systems. It would also need to send additional data to the assistant, such as a user ID to identify each unique user. But the basic principles of how the application interacts with the {{site.data.keyword.conversationshort}} service would remain the same.
 
-For some more complex examples, see [Sample apps](/docs/services/assistant?topic=assistant-sample-apps.
+For some more complex examples, see [Sample apps](/docs/services/assistant?topic=assistant-sample-apps).
 
 ## Accessing context
 {: #api-client-get-context}
