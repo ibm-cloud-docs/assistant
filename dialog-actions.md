@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-03-19"
 
 subcollection: assistant
 
@@ -418,7 +418,7 @@ The following example shows what a call to a web action might look like. This ex
   {
     "actions": [
       {
-        "name": "jdoe@example.com_sales/default/hello",
+        "name": "jdoe@example.com_sales/default/hello.json",
         "type":"web_action",
         "parameters": {
           "name": "<? context['name'] ?>"
