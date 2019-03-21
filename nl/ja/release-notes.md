@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2015, 2019
 lastupdated: "2018-02-20"
 
 ---
@@ -18,6 +18,7 @@ lastupdated: "2018-02-20"
 {:swift: .ph data-hd-programlang='swift'}
 
 # リリース・ノート
+{: #release-notes}
 
 ## サービス API のバージョン管理
 {: shortdesc}

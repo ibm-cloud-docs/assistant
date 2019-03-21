@@ -18,6 +18,7 @@ lastupdated: "2018-01-24"
 {:swift: .ph data-hd-programlang='swift'}
 
 # システム・エンティティーの詳細
+{: #system-entities}
 
 このリファレンス・セクションでは、使用可能なシステム・エンティティーの完全な情報を示しています。 システム・エンティティーの詳細情報と使用法については、[Defining entities](entities.html#enable_system_entities) を参照して、『Enabling system entities』を検索してください。
 {: shortdesc}

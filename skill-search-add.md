@@ -23,7 +23,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Beta: Building a search skill
+# Beta: Building a search skill 
 {: #skill-search-add}
 
 An assistant uses a *search skill* to route complex customer inquiries to the {{site.data.keyword.discoveryfull}} service. {{site.data.keyword.discoveryshort}} treats the user input as a search query. It finds information that is relevant to the query from an external data source and returns it to the assistant.
@@ -48,19 +48,21 @@ The {{site.data.keyword.discoveryfull}} service is triggered in the following wa
 
 If you have not done so, complete the prerequisite steps in the [getting started tutorial](/docs/services/assistant?topic=assistant-getting-started#getting-started-prerequisites) to create a {{site.data.keyword.conversationshort}} service instance and launch the {{site.data.keyword.conversationshort}} tool.
 
-You use the {{site.data.keyword.conversationshort}} tool to create skills. Follow these steps to create a search skill:
+If you do not have a {{site.data.keyword.discoveryshort}} service instance, then a Lite plan instance will be provisioned for you as part of this process. If you have an existing {{site.data.keyword.discoveryshort}} service instance, you are expected to connect to it; you will not have the opportunity to create a new instance as part of this process.
 
 1.  Click the **Skills** tab.
 
 1.  Click **Create new**.
 
-1.  Click **Add** to create a *search skill*.
+    For Premium or Plus plan users only, a page is displayed where you can choose the type of skill you want to create.
+
+1.  Click the *Search skill* option, and then click **Next**.
 
 1.  Specify the details for the new skill:
     - **Name**: A name no more than 100 characters in length. A name is required.
     - **Description**: An optional description no more than 200 characters in length.
 
-1.  Click **Create**.
+1.  Click **Continue**.
 
 The remaining steps differ depending on whether you have access to an existing {{site.data.keyword.discoveryshort}} service instance with collections created or not. Follow the appropriate procedure for your situation:
 
@@ -97,7 +99,7 @@ The remaining steps differ depending on whether you have access to an existing {
 
     An instance of the {{site.data.keyword.discoveryshort}} service is created for you, and a configuration page opens to the new {{site.data.keyword.discoveryshort}} service instance.
 
-    A Lite plan instance of the service is provisioned in {{site.data.keyword.Bluemix_notm}}, no matter what {{site.data.keyword.conversationshort}} service plan you use. If you want to create the {{site.data.keyword.discoveryshort}} service instance as part of a different plan, stop here. Create the service instance directly from the [{{site.data.keyword.Bluemix_notm}} catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/discovery), and follow the [Connect to an existing {{site.data.keyword.discoveryshort}} service instance](#skill-search-add-connect-discovery) procedure instead.
+    A Lite plan instance of the service is provisioned in {{site.data.keyword.Bluemix_notm}}, no matter what {{site.data.keyword.conversationshort}} service plan you use.
     {: important}
 
 1.  Review the terms and conditions for using the instance, and then click **Accept** to continue.
@@ -107,14 +109,12 @@ The remaining steps differ depending on whether you have access to an existing {
 ## Create a data collection
 {: #skill-search-add-create-discovery-collection}
 
-Do not try to add the pre-enriched data source named *Watson Discovery News* to your instance. It is not a data type that can be searched from {{site.data.keyword.conversationshort}}.
-{: important}
+If you have a Discovery service Lite plan, you are given an opporunity to upgrade your plan. If you don't want to upgrade right now, click **Let's get started**.
 
 1.  To create a {{site.data.keyword.discoveryshort}} collection, do one of the following things:
 
-      - To create a collection from data that is stored in a type of data source for which  {{site.data.keyword.discoveryshort}} provides built-in support, click **Connect to data source**.
+      - To create a collection from data that is stored in a type of data source for which {{site.data.keyword.discoveryshort}} provides built-in support, pick a data source type.
 
-        1.  Pick a data source type.
         1.  Provide the required information for the data source you choose, and then click **Connect**.
 
             See [Connecting to data sources ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-sources) for more details.
@@ -132,7 +132,7 @@ Do not try to add the pre-enriched data source named *Watson Discovery News* to 
             The data collection is created. After the process completes, a summary page is displayed in the {{site.data.keyword.discoveryshort}} tool in a separate web browser tab.
         1.  Click **Configure your skill in {{site.data.keyword.conversationshort}}** to return to the {{site.data.keyword.conversationshort}} tool.
 
-      - To create a collection by uploading documents, click **Upload your own data**.
+      - To create a collection by uploading documents, click **Upload documents**.
 
         1.  First you define the collection, and then you upload the documents. Provide the following information:
 

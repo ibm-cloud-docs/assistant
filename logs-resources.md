@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-03-20"
 
 subcollection: assistant
-
 
 ---
 
@@ -122,7 +121,7 @@ If you choose to use the notebooks that are designed for use with {{site.data.ke
 1   Follow the step-by-step instructions provided with the notebook to analyze a subset of the dialog exchanges from the logs.
 
     The insights are visualized in ways that make it easier to understand the assistant's coverage and effectiveness.
-1.  Export a sample set of the logs underlying visualizations from ineffective conversations, and then analyze and annotate them.
+1.  Export a sample set of the logs from ineffective conversations, and then analyze and annotate them.
 
     For example, indicate whether a response is correct. If correct, mark whether it is helpful. If a response is incorrect, then identify the root cause, the wrong intent or entity was detected, for example, or the wrong dialog node was triggered. After identifying the root cause, indicate what the correct choice would have been.
 1.  Feed the annotated spreadsheet to the [Analyze Watson Assistant Effectiveness notebook](https://dataplatform.cloud.ibm.com/exchange/public/entry/view/133dfc4cd1480bbe4eaa78d3f636921c).

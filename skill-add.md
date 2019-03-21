@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-03-20"
 
 subcollection: assistant
-
 
 ---
 
@@ -94,7 +93,7 @@ After you create the skill, it appears as a tile on the Skills page. Now, you ca
 
 The dialog skill cannot interact with customers until it is added to an assistant and the assistant is deployed. See [Creating an assistant](/docs/services/assistant?topic=assistant-assistant-add).
 
-### Troubleshooting skill import issues
+## Troubleshooting skill import issues
 {: #skill-add-import-errors}
 
 If you receive a message that says the skill contains artifacts that exceed the limits imposed by your service plan, complete the following steps to import the skill successfully:
@@ -106,7 +105,7 @@ If you receive a message that says the skill contains artifacts that exceed the 
 1.  Export the edited skill by downloading it.
 1.  Try again to import the edited skill into the original service instance on the plan you want.
 
-### Adding the skill to an assistant
+## Adding the skill to an assistant
 {: #skill-add-to-assistant}
 
 You can add one skill to an assistant. You must open the assistant tile and add the skill to the assistant from the assistant configuration page; you cannot choose the assistant that will use the skill from within the skill configuration page. One dialog skill can be used by more than one assistant.

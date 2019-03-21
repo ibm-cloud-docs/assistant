@@ -18,6 +18,7 @@ lastupdated: "2018-08-16"
 {:swift: .ph data-hd-programlang='swift'}
 
 # サンプル・アプリ
+{: #sample-applications}
 
 サンプル・アプリケーションを探索し、{{site.data.keyword.conversationshort}} で何が開発できるかを理解しましょう。
 {: shortdesc}

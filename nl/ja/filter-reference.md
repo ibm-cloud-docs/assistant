@@ -18,6 +18,7 @@ lastupdated: "2017-09-18"
 {:swift: .ph data-hd-programlang='swift'}
 
 # フィルター照会のリファレンス
+{: #filter-reference}
 
 {{site.data.keyword.conversationshort}} サービスの REST API は、フィルター照会を使用する、強力なログ検索機能を提供しています。 /logs API の `filter` パラメーターを使用すると、ワークスペース・ログで、指定した照会に一致するイベントを検索することができます。
 

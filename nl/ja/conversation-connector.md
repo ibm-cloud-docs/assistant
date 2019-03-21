@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2015, 2019
 lastupdated: "2018-02-09"
 
 ---
@@ -18,6 +18,7 @@ lastupdated: "2018-02-09"
 {:swift: .ph data-hd-programlang='swift'}
 
 # {{site.data.keyword.conversationshort}} コネクターを使用したチャネルへのデプロイ
+{: #conversation-connector}
 
 ワークスペースを開発し終えたら、{{site.data.keyword.conversationshort}} コネクターを使用して、Slack や Facebook Messenger などの通信チャネルにすぐにワークスペースを接続できます。{{site.data.keyword.conversationshort}} コネクターは、{{site.data.keyword.openwhisk}} ワークスペースと Slack アプリや Facebook アプリとの間の通信を仲介し、セッション・データを Cloudant データベースに保管する、{{site.data.keyword.conversationshort}} コンポーネントのセットです。
 

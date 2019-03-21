@@ -18,6 +18,7 @@ lastupdated: "2018-02-09"
 {:swift: .ph data-hd-programlang='swift'}
 
 # アップグレード
+{: #upgrading}
 
 サービス・プランをアップグレードする方法について説明します。
 {: shortdesc}
