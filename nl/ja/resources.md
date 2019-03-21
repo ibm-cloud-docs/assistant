@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2015, 2019
 lastupdated: "2018-02-16"
 
 ---
@@ -18,6 +18,7 @@ lastupdated: "2018-02-16"
 {:swift: .ph data-hd-programlang='swift'}
 
 # その他の参照情報
+{: #resources}
 
 リソース、ビデオ、チュートリアル、記事へのリンク。製品を速やかに利用し始め、理解を深めるのに役立ちます。
 {: shortdesc}

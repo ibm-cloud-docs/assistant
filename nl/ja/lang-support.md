@@ -18,6 +18,8 @@ lastupdated: "2018-02-07"
 {:swift: .ph data-hd-programlang='swift'}
 
 # サポートされる言語
+{: #lang-support}
+
 {{site.data.keyword.conversationshort}} サービスでサポートされる言語をリストします。 サービスの各機能は、どの言語についても多かれ少なかれサポートされます。
 {: shortdesc}
 

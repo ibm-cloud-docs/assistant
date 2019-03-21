@@ -68,7 +68,7 @@ To add the webhook details, complete the following steps:
     ```
     {: codeblock}
 
-1.  If the external service requires that you pass authentication credentials or other parameters with the POST request, then add them as headers.
+1.  If the external service requires that you pass authentication credentials or other parameters with the POST request, then add them as headers. ({{site.data.keyword.openwhisk_short}} web actions typically do not require that you pass an API key.)
 
     <table>
     <caption>Header example</caption>

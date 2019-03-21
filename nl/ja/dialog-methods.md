@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2015, 2019
 lastupdated: "2018-02-05"
 
 ---
@@ -18,6 +18,7 @@ lastupdated: "2018-02-05"
 {:swift: .ph data-hd-programlang='swift'}
 
 # 式言語のメソッド
+{: #dialog-methods}
 
 ユーザー発話から抽出した値を処理して、応答の中のコンテキスト変数や条件などで参照することができます。
 {: shortdesc}

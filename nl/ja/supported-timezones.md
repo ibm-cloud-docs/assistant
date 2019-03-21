@@ -18,6 +18,7 @@ lastupdated: "2017-07-03"
 {:swift: .ph data-hd-programlang='swift'}
 
 # システム・エンティティーでサポートされるタイム・ゾーン
+{: #supported-timezones}
 
 サポートされるタイム・ゾーンのこのリストは、[@sys-date および @sys-time の各エンティティー](system-entities.html#sys-datetime)に関連したタイム・ゾーン関数で使用することができます。
 {: shortdesc}

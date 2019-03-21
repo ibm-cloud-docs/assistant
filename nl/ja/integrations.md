@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2015, 2017
+  years: 2015, 2019
 lastupdated: "2017-07-11"
 
 ---
@@ -18,6 +18,7 @@ lastupdated: "2017-07-11"
 {:swift: .ph data-hd-programlang='swift'}
 
 # BotKit を使用したボットの作成
+{: #integrations}
 
 顧客がソーシャル・メディアやメッセージング・チャネルを通じて、作成したワークスペースとやり取りできるようにしたい場合、[Botkit ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://howdy.ai/botkit){: new_window} ミドルウェア・プラグインを使用することができます。
 
