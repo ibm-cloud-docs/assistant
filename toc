@@ -17,6 +17,8 @@ Watson Assistant
     {: .navgroup id="howto"}
     dev-process.md
     skill-add.md
+    skill-search-add.md
+    skill-dialog-add.md
     catalog.md
 
     {: .topicgroup}
@@ -38,6 +40,7 @@ Watson Assistant
     entities.md
     versions.md
     assistant-add.md
+    assistant-settings.md
     skill-open.md
 
     {: .topicgroup}
@@ -84,7 +87,6 @@ Watson Assistant
     Beta features
         beta.md
         beta-skill-dialog-add.md
-        skill-search-add.md
         beta-spell-check.md
         beta-system-entities.md
         beta-dialog-webhooks.md

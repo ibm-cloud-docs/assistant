@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-03-22"
 
 subcollection: assistant
-
 
 ---
 
@@ -336,6 +335,10 @@ In addition to the default response type of **Text**, for which you specify the 
 - **Image**: Embeds an image into the response. The source image file must be hosted somewhere and have a URL that you can use to reference it. It cannot be a file that is stored in a directory that is not publicly accessible.
 - **Option**: Adds a list of one or more options. When a user clicks one of the options, an associated user input value is sent to the service. How options are rendered can differ depending on where you deploy the dialog. For example, in one integration channel the options might be displayed as clickable buttons, but in another they might be displayed as a dropdown list.
 - **Pause**: Forces the application to wait for a specified number of milliseconds before continuing with processing. You can choose to show an indicator that the dialog is working on typing a response. Use this response type if you need to perform an action that might take some time. For example, a parent node makes a Cloud Function call and displays the result in a child node. You could use this response type as the response for the parent node to give the programmatic call time to complete, and then jump to the child node to show the result. This response type does not render in the "Try it out" pane. You must access a node that uses this response type from a test deployment to see how your users will experience it.
+- **Search skill**: Searches an external data source for relevant information to return to the user. The data source that is searched is a {{site.data.keyword.discoveryshort}} service data collection that you configure when you add a search skill to the assistant that uses this dialog skill.
+
+  This response type is only visible in service instances for a Plus or Premium plan.
+  {: note}
 
 #### Adding rich responses
 {: #dialog-overview-multimedia-add}
@@ -420,6 +423,18 @@ To add a rich response, complete the following steps:
         {: tip}
 
     - **Text**. Add the text to return to the user in the text field. Optionally, choose a variation setting for the text response. See [Simple text response](#dialog-overview-simple-text) for more details.
+    - **Search skill**. Add the search query that you want to pass to the {{site.data.keyword.discoveryshort}} service by filling in the following fields:
+
+      - **Query**: Required if no filter is specified. A query that is specified in natural language. For example, `What cities do you fly to?` This query string is passed to the {{site.data.keyword.discoveryshort}} service, which uses natural language understanding and information that was captured about the documents from analysis done when the documents were ingested, to find and return relevant passages.
+
+        You can include specific information provided by the user by referencing entities in the query. For example, `Tell me about @product`. To pass the user's input as-is, specify `<? input.text ?>`.
+
+        See [Discovery query operators ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-query-operators) for more information about supported syntax.
+      - **Filter**: Optional. Specify a text string that defines information that must be present in any of the search results that are returned. For example, to indicate that you want to return only documents with positive sentiment detected, specify `enriched_text.sentiment.document.label:positive`. To filter results to includes only documents that the ingestion process identified as containing the entity `Boston, MA`, then specify `enriched_text.entities.text:"Boston, MA"`. To use a city name provided by the customer as the filter parameter, you can specify `enriched_text.entities.text:@city`.
+
+      If you specify both, then the filter parameter is applied first to filter and cache its results. The query parameter then ranks the results. See [Query parameters ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-query-parameters) for more details.
+
+      This response type only returns a valid response if the assistant associated with this dialog skill also has a search skill associated with it.
 
 1.  Click **Add response** to add another response type to the current response.
 
@@ -428,7 +443,7 @@ To add a rich response, complete the following steps:
     You cannot add more than 5 response types to a single response. Meaning, if you define three conditional responses for a dialog node, each conditional response can have no more than 5 response types added to it.
     {: note}
 
-    A single dialog node cannot have more than one **Connect to human agent** response.
+    A single dialog node cannot have more than one **Connect to human agent** or more than one **Search skill** response.
     {: note}
 
 1.  If you added more than one response type, you can click the **Move** up or down arrows to arrange the response types in the order you want the service to process them.

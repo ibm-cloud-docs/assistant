@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-03-22"
 
 subcollection: assistant
-
 
 ---
 
@@ -168,7 +167,7 @@ For the input `at 6 pm` @sys-time returns these values:
 
 - @sys-time always returns the time in this format: HH:mm:ss.
 
-For information about processing date and time values, see the [Date and time](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-date-time) method reference.
+For information about processing date and time values, see the [Date and time method reference](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-date-time).
 {: tip}
 
 ## @sys-location entity
@@ -183,7 +182,7 @@ For information about processing date and time values, see the [Date and time](/
 - U.S.A.
 - New South Wales
 
-For information about processing String values, see the [Strings](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings) method reference.
+For information about processing String values, see the [Strings method reference](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings).
 {: tip}
 
 ## @sys-number entity
@@ -237,7 +236,7 @@ You get equivalent results for other supported languages.
 
   Use `@sys-number AND @sys-number<4` instead. If no number is present, the first condition evaluates to false, which appropriately results in the whole condition evaluating to false.
 
-For information about processing number values, see the [Numbers](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-numbers) method reference.
+For information about processing number values, see the [Numbers method reference](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-numbers).
 {: tip}
 
 ## @sys-percentage entity
@@ -300,5 +299,5 @@ You get equivalent results for other supported languages.
 - Jane Doe
 - Vijay
 
-For information about processing String values, see the [Strings](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings) method reference.
+For information about processing String values, see the [Strings method reference](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings).
 {: tip}

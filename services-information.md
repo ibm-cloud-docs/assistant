@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-03-22"
 
 subcollection: assistant
 
@@ -49,6 +49,7 @@ Information about the artifact limits per plan is available from the topics that
 - [Assistants](/docs/services/assistant?topic=assistant-assistant-add#assistant-add-limits)
 - [Dialog nodes](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-node-limits)
 - [Entities](/docs/services/assistant?topic=assistant-entities#entities-limits)
+- [Inactivity timeout](/docs/services/assistant?topic=assistant-assistant-settings#assistant-settings-session-limits)
 - [Intents](/docs/services/assistant?topic=assistant-intents#intents-limits)
 - [Integrations](/docs/services/assistant?topic=assistant-deploy-integration-add#deploy-integration-add-limits)
 - [Logs](/docs/services/assistant?topic=assistant-logs#logs-limits)
@@ -73,6 +74,7 @@ The following features are available only to users of Premium plans.
 - [Intent conflict resolution](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts)
 - [Intent recommendations and intent user example recommendations](/docs/services/assistant?topic=assistant-intent-recommendations)
 - [Intercom integration](/docs/services/assistant?topic=assistant-deploy-intercom)
+- [Search skill](/docs/services/assistant?topic=assistant-skill-search-add)
 
 ### User-based plans
 {: #services-information-user-based-plans}

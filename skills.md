@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-03-22"
 
 subcollection: assistant
-
 
 ---
 
@@ -26,10 +25,26 @@ subcollection: assistant
 # Skills
 {: #skills}
 
-A dialog skill contains the training data and logic that enables an assistant to help your customers.
+A skill is a container for the artificial intelligence that enables an assistant to help your customers.
 {: shortdesc}
 
-A dialog skill contains the following types of artifacts:
+An assistant directs requests down the optimal path for solving a customer problem. Add skills so your assistant can provide a direct answer to a common question or reference more generalized search results for something more complex.
+
+## Skill types
+{: #skills-types}
+
+You can add the following type of skill to your assistant:
+
+- **[Dialog skill](#skills-dialog-skill)**: Understands typical questions or requests from users and answers or fulfills them by following a dialog that is scripted by you.
+
+![Plus or Premium plan only](images/premium.png) If you are a Plus or Premium plan user, you can also create this type of skill:
+
+- **[Search skill](#skills-search-skill)**: Answers a user's question by searching for relevant information from an external data source, extracting the passage, and returning it as the assistant's response.
+
+### Dialog skill
+{: #skills-dialog-skill}
+
+A dialog skill contains the training data and logic that enables an assistant to help your customers. It contains the following types of artifacts:
 
 - [**Intents**](/docs/services/assistant?topic=assistant-intents): An *intent* represents the purpose of a user's input, such as a question about business locations or a bill payment. You define an intent for each type of user request you want your application to support. In the tool, the name of an intent is always prefixed with the `#` character. To train the dialog skill to recognize your intents, you supply lots of examples of user input and indicate which intents they map to.
 
@@ -49,4 +64,15 @@ To enable your dialog skill to handle more nuanced questions, define entities an
 
 As you add information, the skill uses this unique data to build a machine learning model that can recognize these and similar user inputs. Each time you add or change the training data, the training process is triggered to ensure that the underlying model stays up-to-date as your customer needs and the topics they want to discuss change.
 
-For help creating a dialog skill, see [Creating a skill](/docs/services/assistant?topic=assistant-skill-add).
+For help creating a dialog skill, see [Creating a dialog skill](/docs/services/assistant?topic=assistant-skill-dialog-add).
+
+### Search skill ![Plus or Premium plan only](images/premium.png)
+{: #skills-search-skill}
+
+When Watson Assistant doesn't have an explicit solution to a problem, it routes the user question to a search skill to find an answer from across your disparate sources of self-service content. The search skill interacts with the {{site.data.keyword.discoveryfull}} service to extract this information from a configured data collection.
+
+If you already use the {{site.data.keyword.discoveryshort}} service, you can mine your existing data collections for source material that you can share with customers to address their questions.
+
+However, you do not need to have a {{site.data.keyword.discoveryshort}} service instance. If you choose to create a search skill, a free instance of {{site.data.keyword.discoveryshort}} is provisioned for you. You can then create a collection from a data source and configure your search skill to search this collection to find answers to customer queries.
+
+For help creating a search skill, see [Creating a search skill](/docs/services/assistant?topic=assistant-skill-search-add).
