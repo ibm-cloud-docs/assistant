@@ -203,13 +203,14 @@ If you upload a JSON file that contains repeating name values, then only the fir
     - **Body**: Search result description. Use an abstract, summary, or highlight field from the collection as the search result body.
 
       Something other than `None` must be selected for the Facebook and Slack integrations to display the response at all.
-    - **URL**: This field can be populated with any footer content that you want to include at the end of the search result. For example, you might want to include a hypertext link to the original data object in its native data source. Most online data sources provide self-referencing public URLs for objects in the store to support direct access.
-
-      The resulting URL must be valid and reachable for the Slack integration to include the URL in the response and for the Facebook integration to display the response at all. `None` is an acceptable selection for the Facebook and Slack integrations.
-
-    See [Tips for collection field selection](#skill-search-add-field-tips) for help.
+    - **URL**: This field can be populated with any footer content that you want to include at the end of the search result. 
+    
+       For example, you might want to include a hypertext link to the original data object in its native data source. Most online data sources provide self-referencing public URLs for objects in the store to support direct access. If you add a URL, it must be valid and reachable for the Slack integration to include the URL in the response and for the Facebook integration to display the response at all. `None` is an acceptable selection for the Facebook and Slack integrations.
   
     You must choose a value other than `None` for at least one of the options.
+    {: important}
+
+    See [Tips for collection field selection](#skill-search-add-field-tips) for help.
 
     If no options are available from the drop-down fields, you might need to give {{site.data.keyword.discoveryshort}} more time to finish creating the collection. Otherwise, your collection might not contain any documents or might have ingestion errors that need to be addressed first.
 
@@ -252,21 +253,7 @@ If you upload a JSON file that contains repeating name values, then only the fir
 If you want to change the configuration later, open the search skill again, and make edits. You do not need to save changes as you make them; they are automatically applied. When you are happy with the search results, click **Save** to finish configuring the search skill.
 
 If you decide you want to connect to a different {{site.data.keyword.discoveryshort}} service instance or data collection, then create a new search skill and configure it to connect to the other instance. You **cannot** change the service instance or data collection details for a search skill after you create it.
-
-## Next steps
-{: #skill-search-add-next-steps}
-
-After you create the skill, it appears as a tile on the Skills page.
-
-The search skill cannot interact with customers until it is added to an assistant and the assistant is deployed. See [Creating assistants](/docs/services/assistant?topic=assistant-assistant-add).
-
-You can add one search skill to an assistant. See [Skill limits](/docs/services/assistant?topic=assistant-skill-add#skill-add-limits) for information about limits per plan.
-
-When you link both a dialog skill and search skill to an assistant, the search skill is automatically triggered if user input is processed by the dialog skill and cannot be addressed by any of its dialog nodes. Rather than replying with a generic response from the `anything_else` node, a search that uses the user input as its query string is initiated.
-
-If you want, you can define a specific search query to call in response to a particular node condition. To do so, add a search response type to the dialog node. See [Responses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more details.
-
-If you initiate any type of search from your dialog skill, test the dialog to ensure that the search is being triggered as expected. For example, if you are not using search response types, test that a search is triggered only when no existing dialog nodes can address the user input. And any time a search is triggered, ensure that it returns meaningful results.
+{: note}
 
 ### Tips for collection field selection
 {: #skill-search-add-field-tips}
@@ -283,6 +270,13 @@ The following table provides collection fields you can try as you get started.
 
 The collection fields are created when the collection is created. To learn more about fields that are generated for you, such as `enriched_text.concepts.text`, see [Configuring your service > Adding enrichments ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-configservice#adding-enrichments){: new_window}.
 
+## Next steps
+{: #skill-search-add-next-steps}
+
+After you create the skill, it appears as a tile on the Skills page.
+
+The search skill cannot interact with customers until it is added to an assistant and the assistant is deployed. See [Creating assistants](/docs/services/assistant?topic=assistant-assistant-add).
+
 ### Adding the skill to an assistant
 {: #skill-search-add-to-assistant}
 
@@ -298,11 +292,9 @@ One search skill can be used by more than one assistant.
 
     Click the skill that you want to add from the available skills that are displayed.
 
-Configure at least one test integration channel. You cannot test the search skill from the Try it out pane. Test the skill from an integration channel by entering queries that trigger the search. Ensure that the search is being triggered properly, and is returning relevant results.
+Configure at least one integration channel to test the search skill. In the channel, enter queries that trigger the search. Ensure that the search is being triggered properly, and is returning relevant results.
 
-To learn how to include search results in a response from an individual dialog node, see [Responses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia).
-
-## Search trigger
+## Search triggers
 {: #skill-search-add-trigger}
 
 The search skill is triggered in the following ways:
@@ -317,10 +309,19 @@ After you add a search skill to an assistant, it is automatically enabled for th
 
 - If the assistant has both a dialog skill and a search skill, any user input triggers the dialog skill first. The dialog addresses any user input that it has a high confidence it can answer correctly, and any queries that would otherwise trigger the `anything_else` node in the dialog tree trigger the search skill instead.
 
+- If you want a specific search query to be triggered for specific questions, add a search skill response type to the appropriate dialog node. See [Responses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more details.
+
+If you initiate any type of search from your dialog skill, test the dialog to ensure that the search is being triggered as expected. For example, if you are not using search response types, test that a search is triggered only when no existing dialog nodes can address the user input. And any time a search is triggered, ensure that it returns meaningful results.
+
+You cannot test the search skill from the "Try it out" pane in the dialog skill editor. To best replicate how users will interact with your assistant, test from one of the integration channels configured for the assistant.
+{: important}
+
 ### Disabling search
 {: #search-skill-add-disable}
 
-You can disable the search skill from being triggered. You might want to do so temporarily, while you are setting up the integration. Or you might want to only ever trigger a search for specific user queries that you can identify within the dialog, and use a search skill response type to answer.
+You can disable the search skill from being triggered. 
+
+You might want to do so temporarily, while you are setting up the integration. Or you might want to only ever trigger a search for specific user queries that you can identify within the dialog, and use a search skill response type to answer.
 
 To prevent the search skill from being triggered, complete the following steps:
 
