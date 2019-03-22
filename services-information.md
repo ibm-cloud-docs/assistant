@@ -49,6 +49,7 @@ Information about the artifact limits per plan is available from the topics that
 - [Assistants](/docs/services/assistant?topic=assistant-assistant-add#assistant-add-limits)
 - [Dialog nodes](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-node-limits)
 - [Entities](/docs/services/assistant?topic=assistant-entities#entities-limits)
+- [Inactivity timeout](/docs/services/assistant?topic=assistant-assistant-settings#assistant-settings-session-limits)
 - [Intents](/docs/services/assistant?topic=assistant-intents#intents-limits)
 - [Integrations](/docs/services/assistant?topic=assistant-deploy-integration-add#deploy-integration-add-limits)
 - [Logs](/docs/services/assistant?topic=assistant-logs#logs-limits)
