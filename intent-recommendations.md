@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-03-22"
 
 subcollection: assistant
 
@@ -31,16 +31,20 @@ If you have existing enterprise customer support chat transcript data, let Watso
 This feature is available to Plus or Premium plan users.
 {: note}
 
-See [Supported languages](/docs/services/assistant?topic=assistant-language-support) for information about the language support for this feature.
-
 Customer needs are represented in {{site.data.keyword.conversationshort}} as *intents*. If you have not defined intents yet, you can get started faster by asking Watson for help. Upload files with customer utterances from call center transcripts for the {{site.data.keyword.conversationshort}} service to analyze. Based on the insights it uncovers, the service recommends a base set of intents you should build to cover the most commonly occurring needs of your customers.
 
 As the subjects that your customers want to discuss change, you can use the intent user example recommendations feature to help keep your intents up-to-date and relevant over time.
+
+The following video provides a 3 1/2-minute overview of intent and intent user example recommendations.
+
+<iframe class="embed-responsive-item" id="youtubeplayer" title="Intent recommendations overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/64h59KqDY98?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 Mine your existing data to do one of the following things:
 
 - [Get intent recommendations](#intent-recommendations-get-intent-recommendations)
 - [Get intent user example recommendations](#intent-recommendations-get-example-recommendations)
+
+See [Supported languages](/docs/services/assistant?topic=assistant-language-support) for information about the language support for this feature.
 
 ## Creating a user example source file
 {: #intent-recommendations-log-files-add}
@@ -114,10 +118,6 @@ As the subjects that your customers want to discuss change, you can use the inte
 
 ## Get intent user example recommendations
 {: #intent-recommendations-get-example-recommendations}
-
-The following video provides a 2-minute overview of how to get intent user example recommendations.
-
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Intent user example recommendations" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/L3FI8KeZfsc?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 The data you provide to the service for it to find intent user examples does not need to associate the examples with intents. You simply provide the raw customer utterances and let the service do the work of choosing the ones that are appropriate for the current intent. For every intent, the service analyzes the same data to find user examples that are appropriate for that intent.
 

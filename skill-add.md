@@ -36,7 +36,7 @@ You can create the following type of skill:
 
 - **Search skill**: For a given user query, uses the {{site.data.keyword.discoveryfull}} service to search a data source of your self-service content and return an answer.
 
-  Typically, you create a skill of each type first. Then, as you build a dialog for dialog skill, you decide when to initiate the search skill. For some questions or requests, a hard-coded or programmatically-derived response (that is defined in the dialog skill) is sufficient. For others, you might want to provide a more robust response by returning a full passage of related information (that is extracted from an external data source by using the search skill).
+  Typically, you create a skill of each type first. Then, as you build a dialog for the dialog skill, you decide when to initiate the search skill. For some questions or requests, a hard-coded or programmatically-derived response (that is defined in the dialog skill) is sufficient. For others, you might want to provide a more robust response by returning a full passage of related information (that is extracted from an external data source by using the search skill).
 
 ## Create the skill
 {: #skill-add-task}
