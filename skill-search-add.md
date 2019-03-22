@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-21"
+lastupdated: "2019-03-22"
 
 subcollection: assistant
 
@@ -295,9 +295,11 @@ The search skill is triggered in the following ways:
 - **Search response type**: If you add a search response type to a dialog node, then the service retrieves a passage from an external data source and returns it as the response to a particular question. This type of search occurs only when the individual dialog node is processed. This approach is useful if you have want to narrow down a user query before you perform a search. For example, the dialog branch might collect information about the type of device the customer wants to buy. When you know the make and model, you can then send a model keyword in the query that is submitted to the search skill, and get better results.
 - **Search skill only**: If only a search skill is linked to an assistant, and no dialog skill is linked to the assistant, then a search query is submitted to the {{site.data.keyword.discoveryshort}} service when any user input is received from one of the assistant's integration channels.
 
-After you add a search skill to an assistant, it is automatically enabled for the assistant, meaning when user input is submitted to one of the assistant's integration channels, the search skill is triggered.
+After you add a search skill to an assistant, it is automatically enabled for the assistant as follows:
 
-Unless the assistant has a dialog skill also. If the assistant has both a dialog skill and a search skill, then the dialog skill is triggered first. It addresses any user input that it has a high confidence it can answer correctly. For any other queries (that would otherwise trigger the `anything_else` node in the dialog tree), the search skill is triggered.
+- If the assistant has only a search skill, any user input that is submitted to one of the assistant's integration channels triggers the search skill.
+
+- If the assistant has both a dialog skill and a search skill, any user input triggers the dialog skill first. The dialog addresses any user input that it has a high confidence it can answer correctly, and any queries that would otherwise trigger the `anything_else` node in the dialog tree trigger the search skill instead.
 
 The following diagram illustrates how user input is processed when both a dialog skill and a search skill are configured for an assistant.
 
