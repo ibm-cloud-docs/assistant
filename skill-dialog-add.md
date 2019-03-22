@@ -41,9 +41,9 @@ To add a skill, complete the following steps:
 
 1.  Click the **Skills** tab, and then click **Create new**.
 
-    - ![Plus or Premium plan only](images/premium.png) Only if you have a Plus or Premium plan, a page is displayed that gives you a choice of the type of skill to create: a dialog skill or a search skill. Select the dialog skill tile, and then click **Next**.
+1.  ![Plus or Premium plan only](images/premium.png) If you are a Plus or Premium plan user, select the dialog skill tile, and then click **Next**.
 
-    - If you have a Lite or Standard plan, you will not see a page that gives you the option of skill types to create. Click **Add** to create a *dialog skill*.
+    If you are a Lite or Standard plan user, skip this step.
 
 1.  Take one of the following actions:
 

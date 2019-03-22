@@ -71,7 +71,7 @@ Follow these steps to create an assistant:
 
 The number of assistants you can create in a single service instance depends on your {{site.data.keyword.conversationshort}} plan.
 
-| Service plan | Assistants per service instance | 
+| Service plan | Assistants per service instance |
 |--------------|--------------------------------:|
 | Premium      |                             100 |
 | Plus         |                             100 |
@@ -114,9 +114,9 @@ To rename an assistant, follow these steps:
 
 You can add one skill of each skill type to an assistant. If you want to change a skill that your assistant is using, you can swap one skill for another skill.
 
-1.  From the Assistants tab, click to open the tile for the assistant for which you want to change the skill.
+1.  From the Assistants tab, open the assistant.
 
-1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Swap skill**.
+1.  Click the ![open and close list of options](images/kabob-beta.png) icon for the skill you want to swap, and then choose **Swap skill**.
 
     To swap the current dialog skill for a different version of the skill, choose **Change skill version**.
 

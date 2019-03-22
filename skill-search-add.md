@@ -144,10 +144,9 @@ If you have a Discovery service Lite plan, you are given an opporunity to upgrad
             - For a Sharepoint data source, you specify paths.
             - For file repositories, you specify directories or files.
 
-        1.  Click **Save and sync data**.
+        1.  Click **Save and sync objects**.
 
             The data collection is created. After the process completes, a summary page is displayed in the {{site.data.keyword.discoveryshort}} tool in a separate web browser tab.
-        1.  Click **Configure your skill in {{site.data.keyword.conversationshort}}** to return to the {{site.data.keyword.conversationshort}} tool.
 
       - To create a collection by uploading documents, click **Upload documents**.
 
@@ -189,25 +188,27 @@ If you upload a JSON file that contains repeating name values, then only the fir
 
 1.  From the {{site.data.keyword.discoveryshort}} instance, click **Finish setup in Watson Assistant**.
 
-1.  From the {{site.data.keyword.conversationshort}} search skill page, click **Configure**.
+1.  On the {{site.data.keyword.conversationshort}} search skill page, click **Configure**.
 
-1.  Choose the {{site.data.keyword.discoveryshort}} collection fields that you want to extract text from.
+1.  Choose the {{site.data.keyword.discoveryshort}} collection fields from which you want to extract text to include in the search result that is returned to the user.
 
     The fields that are available differ based on the data you ingested.
 
-    Each search result can consist of these pieces of information:
+    Each search result can consist of these sections:
 
     - **Title**: Search result title. Use the title, name, or similar type of field from the collection as the search result title.
 
-      Something other than `None` must be selected for the Facebook and Slack integrations to display the response at all.
+      You must select something for this section or the Facebook and Slack integrations will not display the search result response.
     - **Body**: Search result description. Use an abstract, summary, or highlight field from the collection as the search result body.
 
-      Something other than `None` must be selected for the Facebook and Slack integrations to display the response at all.
-    - **URL**: This field can be populated with any footer content that you want to include at the end of the search result. 
-    
-       For example, you might want to include a hypertext link to the original data object in its native data source. Most online data sources provide self-referencing public URLs for objects in the store to support direct access. If you add a URL, it must be valid and reachable for the Slack integration to include the URL in the response and for the Facebook integration to display the response at all. `None` is an acceptable selection for the Facebook and Slack integrations.
+       You must select something for this section or the Facebook and Slack integrations will not display the search result response.
+    - **URL**: This field can be populated with any footer content that you want to include at the end of the search result.
+
+       For example, you might want to include a hypertext link to the original data object in its native data source. Most online data sources provide self-referencing public URLs for objects in the store to support direct access. If you add a URL, it must be valid and reachable for the Slack integration to include the URL in the response, and for the Facebook integration to display the search result response at all.
+
+       The Facebook and Slack integrations can successfully display the search result response when this section is empty.
   
-    You must choose a value other than `None` for at least one of the options.
+    You must choose a value for at least one of the search result sections.
     {: important}
 
     See [Tips for collection field selection](#skill-search-add-field-tips) for help.
@@ -218,7 +219,7 @@ If you upload a JSON file that contains repeating name values, then only the fir
 
     ![Shows the Title, Shortdesc, and url fields have been selected and the preview search card is populated with information from those fields](images/search-skill-configure-fields.png)
 
-    As you add field mappings, a preview of the search result is displayed with information from the corresponding fields of your data collection. This preview lets you see what gets included in the result that will be returned to users.
+    As you add field mappings, a preview of the search result is displayed with information from the corresponding fields of your data collection. This preview lets you see what gets included in the search result response that will be returned to users.
 
 1.  Draft different messages to share with users depending on the successfulness of the search.
 
@@ -250,23 +251,23 @@ If you upload a JSON file that contains repeating name values, then only the fir
 
 1.  Click **Create**.
 
-If you want to change the configuration later, open the search skill again, and make edits. You do not need to save changes as you make them; they are automatically applied. When you are happy with the search results, click **Save** to finish configuring the search skill.
+If you want to change the configuration of the search result card later, open the search skill again, and make edits. You do not need to save changes as you make them; they are automatically applied. When you are happy with the search results, click **Save** to finish configuring the search skill.
 
 If you decide you want to connect to a different {{site.data.keyword.discoveryshort}} service instance or data collection, then create a new search skill and configure it to connect to the other instance. You **cannot** change the service instance or data collection details for a search skill after you create it.
-{: note}
+{: important}
 
 ### Tips for collection field selection
 {: #skill-search-add-field-tips}
 
-The appropriate collection fields to extract data from vary depending on your collection's data source and the data source has been enriched. To learn more about the structure of the documents in your collection, including the names of fields that contain information you might want to extract, open the collection in the {{site.data.keyword.discoveryshort}} tool, and then click the View data schema icon ![View data schema icon](images/icon-view-data-schema.png).
+The appropriate collection fields to extract data from vary depending on your collection's data source and how the data source has been enriched. To learn more about the structure of the documents in your collection, including the names of fields that contain information you might want to extract, open the collection in the {{site.data.keyword.discoveryshort}} tool, and then click the View data schema icon ![View data schema icon](images/icon-view-data-schema.png).
 
 The following table provides collection fields you can try as you get started.
 
 | Data source type   | Title | Body | URL |
 |--------------------|-------|------|-----|
-| Uploaded PDF documents | enriched_text.concepts.text | text | None |
-| Box                | name | description | listing_url |
-| HTML               | extracted_metadata.title | text | extracted_metadata.filename |
+| Box data source | name | description | listing_url |
+| Uploaded PDF document | enriched_text.concepts.text | text | None |
+| Uploaded HTML file | extracted_metadata.title | text | extracted_metadata.filename |
 
 The collection fields are created when the collection is created. To learn more about fields that are generated for you, such as `enriched_text.concepts.text`, see [Configuring your service > Adding enrichments ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-configservice#adding-enrichments){: new_window}.
 
