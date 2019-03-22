@@ -57,6 +57,8 @@ The following new features and changes to the service are available. Check out o
 
 - **Introducing search skill ![Plus or Premium plan only](images/premium.png)**: A search skill helps you to make your assistant useful to customers faster. Customer inquiries that you did not anticipate and so have not built dialog logic to handle can be met with useful responses. Instead of saying it can't help, the assistant can query an external data collection to find relevant information to share in its response. Over time, you can build dialog responses to answer questions that require follow-up questions to clarify the user's meaning or for which a short and clear response is suitable. And you can use search skill responses to address more open-ended customer queries that require a longer explanation. This beta feature is available to users of Premium and Plus service plans only. See [Building a search skill](/docs/services/assistant?topic=assistant-skill-search-add) for more details.
 
+  In some cases, adding a search skill to the assistant can cause the web preview integration to stop responding.
+
 ## 14 March 2019
 {: #14March2019}
 
