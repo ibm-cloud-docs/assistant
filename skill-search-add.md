@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-03-22"
 
 subcollection: assistant
-
 
 ---
 
@@ -23,7 +22,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Beta: Building a search skill 
+# Beta: Building a search skill
 {: #skill-search-add}
 
 An assistant uses a *search skill* to route complex customer inquiries to the {{site.data.keyword.discoveryfull}} service. {{site.data.keyword.discoveryshort}} treats the user input as a search query. It finds information that is relevant to the query from an external data source and returns it to the assistant.
@@ -33,22 +32,24 @@ This feature is available for use by participants in the beta program only. To f
 
 ![Beta](images/beta.png) IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment.
 
-You can add one search skill to an assistant. See [Skill limits](/docs/services/assistant?topic=assistant-skill-add#skill-add-limits) for information about limits per plan.
+Add a search skill to your assistant to prevent the assistant from having to say things like, `I'm sorry. I can't help you with that.` Instead, the assistant can query existing company documents or data to see if any useful information can be found and shared with the customer.
+
+![Shows a search result being returned in the preview link integration](images/search-skill-preview-link.png)
 
 The search skill searches for information from a data collection that you create by using the {{site.data.keyword.discoveryshort}} service. {{site.data.keyword.discoveryshort}} is a service that crawls, converts, and normalizes your unstructured data. The service applies data analysis and cognitive intuition to enrich your data such that you can more easily find and retrieve meaningful information from it later. To read more about {{site.data.keyword.discoveryshort}}, see the [product documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-about).
 
-The {{site.data.keyword.discoveryfull}} service is triggered in the following ways:
+The following 4-minute video provides an overview of the search skill.
 
-- **Anything else node**: Searches an external data source for a relevant answer when none of the dialog nodes can address the user's query. Instead of showing a standard message, such as `I don't know how to help you with that.` the assistant can say, `Maybe this information can help:` followed by the passage returned by the search. If a search skill is linked to your assistant, then whenever the `anything_else` node is triggered, rather than displaying the node response, a search is performed instead. The assistant passes the user input as the query to your search skill, and returns the search results as the response.
-- **Search response type**: If you add a search response type to a dialog node, then the service retrieves a passage from an external data source and returns it as the response to a particular question. This type of search occurs only when the individual dialog node is processed. This approach is useful if you have want to narrow down a user query before you perform a search. For example, the dialog branch might collect information about the type of device the customer wants to buy. When you know the make and model, you can then send a model keyword in the query that is submitted to the search skill, and get better results.
-- **Search skill only**: If only a search skill is linked to an assistant, and no dialog skill is linked to the assistant, then a search query is submitted to the {{site.data.keyword.discoveryshort}} service when any user input is received from one of the assistant's integration channels.
+<iframe class="embed-responsive-item" id="youtubeplayer" title="Search skill overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/ZcgGf8J2Cfw?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 ## Creating a search skill
 {: #skill-search-add-task}
 
 If you have not done so, complete the prerequisite steps in the [getting started tutorial](/docs/services/assistant?topic=assistant-getting-started#getting-started-prerequisites) to create a {{site.data.keyword.conversationshort}} service instance and launch the {{site.data.keyword.conversationshort}} tool.
 
-If you do not have a {{site.data.keyword.discoveryshort}} service instance, then a Lite plan instance will be provisioned for you as part of this process. If you have an existing {{site.data.keyword.discoveryshort}} service instance, you are expected to connect to it; you will not have the opportunity to create a new instance as part of this process.
+If you do not have a {{site.data.keyword.discoveryshort}} service instance, then a Lite plan instance will be provisioned for you as part of this process. If you have an existing {{site.data.keyword.discoveryshort}} service instance, you are expected to connect to it; you are not asked to create a new instance as part of this process.
+
+If you create a Discovery instance first, do not add the pre-enriched data source named *Watson Discovery News* to your instance. It is not a data type that can be searched from {{site.data.keyword.conversationshort}}.
 
 1.  Click the **Skills** tab.
 
@@ -137,8 +138,9 @@ If you have a Discovery service Lite plan, you are given an opporunity to upgrad
         1.  First you define the collection, and then you upload the documents. Provide the following information:
 
             - Collection name. The name must be unique for this service instance.
-            - Configuration. You can choose to use a default configuration template or a saved configuration. See [Configuring your service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-configservice) for more information about configurations.
             - Language. Select the language of the files that you will add to this collection. See [Language support ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-language-support) for information about the languages supported by {{site.data.keyword.discoveryshort}}.
+
+              If you are uploading a PDF document and want to extract party, nature, and category information from it, then expand the **Advanced** section and click **Use the Default Contract Configuration with this collection**. See [Collection requirements ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-element-classification#element-collection) for more details.
         1.  Upload documents.
 
             Supported file types include PDF, HTML, JSON, and DOC files. See [Adding content ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-addcontent) for more details.
@@ -148,10 +150,58 @@ If you have a Discovery service Lite plan, you are given an opporunity to upgrad
 
 Wait for the collection to be fully ingested before you return to {{site.data.keyword.conversationshort}}.
 
+### Data collection creation example
+{: #search-skill-add-json-collection-example}
+
+For example, you might have a JSON file like this:
+
+```bash
+{
+  "Title": "About",
+  "Shortdesc": "IBM Watson Assistant is a cognitive bot that you can customize for your business needs, and deploy across multiple channels to bring help to your customers where and when they need it.",
+  "Topics": "overview",
+  "url": "https://cloud.ibm.com/docs/services/assistant?topic=assistant-index"
+}
+```
+{: codeblock}
+
+If you upload a JSON file that contains repeating name values, then only the first occurrence of the name and value pair will be indexed and returned by search. Break up the file into multiple JSON files and upload the set.
+{: tip}
+
 ## Configure the search
 {: #skill-search-add-configure}
 
+1.  From the {{site.data.keyword.discoveryshort}} instance, click **Finish setup in Watson Assistant**.
+
 1.  From the {{site.data.keyword.conversationshort}} search skill page, click **Configure**.
+
+1.  Choose the {{site.data.keyword.discoveryshort}} collection fields that you want to extract text from.
+
+    The fields that are available differ based on the data you ingested.
+
+    Each search result can consist of these pieces of information:
+
+    - **Title**: Search result title. Use the title, name, or similar type of field from the collection as the search result title.
+
+      Something other than `None` must be selected for the Facebook and Slack integrations to display the response at all.
+    - **Body**: Search result description. Use an abstract, summary, or highlight field from the collection as the search result body.
+
+      Something other than `None` must be selected for the Facebook and Slack integrations to display the response at all.
+    - **URL**: This field can be populated with any footer content that you want to include at the end of the search result. For example, you might want to include a hypertext link to the original data object in its native data source. Most online data sources provide self-referencing public URLs for objects in the store to support direct access.
+
+      The resulting URL must be valid and reachable for the Slack integration to include the URL in the response and for the Facebook integration to display the response at all. `None` is an acceptable selection for the Facebook and Slack integrations.
+
+    See [Tips for collection field selection](#skill-search-add-field-tips) for help.
+  
+    You must choose a value other than `None` for at least one of the options.
+
+    If no options are available from the drop-down fields, you might need to give {{site.data.keyword.discoveryshort}} more time to finish creating the collection. Otherwise, your collection might not contain any documents or might have ingestion errors that need to be addressed first.
+
+    To continue the [example of the uploaded JSON file](#search-skill-add-json-collection-example), a good mapping is to use the *Title*, *Shortdesc*, and *url* fields.
+
+    ![Shows the Title, Shortdesc, and url fields have been selected and the preview search card is populated with information from those fields](images/search-skill-configure-fields.png)
+
+    As you add field mappings, a preview of the search result is displayed with information from the corresponding fields of your data collection. This preview lets you see what gets included in the result that will be returned to users.
 
 1.  Draft different messages to share with users depending on the successfulness of the search.
 
@@ -179,33 +229,13 @@ Wait for the collection to be fully ingested before you return to {{site.data.ke
     </tr>
     </table>
 
-1.  Choose the {{site.data.keyword.discoveryshort}} collection fields that you want to extract text from.
-
-    The fields that are available differ based on the data you ingested and the configuration you used to ingest it.
-
-    Each search result can consist of these pieces of information:
-
-    - **Title**: Search result title. Use the title, name, or similar type of field from the collection as the search result title.
-
-      Something other than `None` must be selected for the Facebook and Slack integrations to display the response at all.
-    - **Body**: Search result description. Use an abstract, summary, or highlight field from the collection as the search result body.
-
-      Something other than `None` must be selected for the Facebook and Slack integrations to display the response at all.
-    - **Url**: A hypertext link to the original data object in its native data source. Most online data sources provide self-referencing public URLs for objects in the store to support direct access.
-
-      The resulting URL must be valid and reachable for the Slack integration to include the URL in the response and for the Facebook integration to display the response at all. `None` is an acceptable selection for the Facebook and Slack integrations.
-
-    See [Tips for collection field selection](#skill-search-add-field-tips) for help.
-  
-    You must choose a value other than `None` for at least one of the options.
-
-    If no options are available from the drop-down fields, you might need to give {{site.data.keyword.discoveryshort}} more time to finish creating the collection. Otherwise, your collection might not contain any documents or might have ingestion errors that need to be addressed first.
-
-1.  In the preview pane, enter a test message to see the results that are returned when your configuration choices are applied to the search. Make adjustments as necessary.
+1.  Click **Try it** to open the "Try it out" pane for testing. Enter a test message to see the results that are returned when your configuration choices are applied to the search. Make adjustments as necessary.
 
 1.  Click **Create**.
 
 If you want to change the configuration later, open the search skill again, and make edits. You do not need to save changes as you make them; they are automatically applied. When you are happy with the search results, click **Save** to finish configuring the search skill.
+
+If you decide you want to connect to a different {{site.data.keyword.discoveryshort}} service instance or data collection, then create a new search skill and configure it to connect to the other instance. You **cannot** change the service instance or data collection details for a search skill after you create it.
 
 ## Next steps
 {: #skill-search-add-next-steps}
@@ -213,6 +243,8 @@ If you want to change the configuration later, open the search skill again, and 
 After you create the skill, it appears as a tile on the Skills page.
 
 The search skill cannot interact with customers until it is added to an assistant and the assistant is deployed. See [Creating assistants](/docs/services/assistant?topic=assistant-assistant-add).
+
+You can add one search skill to an assistant. See [Skill limits](/docs/services/assistant?topic=assistant-skill-add#skill-add-limits) for information about limits per plan.
 
 When you link both a dialog skill and search skill to an assistant, the search skill is automatically triggered if user input is processed by the dialog skill and cannot be addressed by any of its dialog nodes. Rather than replying with a generic response from the `anything_else` node, a search that uses the user input as its query string is initiated.
 
@@ -223,16 +255,17 @@ If you initiate any type of search from your dialog skill, test the dialog to en
 ### Tips for collection field selection
 {: #skill-search-add-field-tips}
 
-The appropriate collection fields to extract data from vary depending on your collection's data source and the configuration you used to ingest the data source. To learn more about the structure of the documents in your collection, including the names of fields that contain information you might want to extract, open the collection in the {{site.data.keyword.discoveryshort}} tool, and then click **View data schema**.
+The appropriate collection fields to extract data from vary depending on your collection's data source and the data source has been enriched. To learn more about the structure of the documents in your collection, including the names of fields that contain information you might want to extract, open the collection in the {{site.data.keyword.discoveryshort}} tool, and then click the View data schema icon ![View data schema icon](images/icon-view-data-schema.png).
 
-The following table provides collection fields you can try as you get started. These suggestions assume that you used the default configuration template when creating the collection.
+The following table provides collection fields you can try as you get started.
 
-| Data source type   | Title | Body | Url |
+| Data source type   | Title | Body | URL |
 |--------------------|-------|------|-----|
 | Uploaded PDF documents | enriched_text.concepts.text | text | None |
 | Box                | name | description | listing_url |
+| HTML               | extracted_metadata.title | text | extracted_metadata.filename |
 
-The collection fields are created when the collection is created. To learn more about fields that are generated when you use the default configuration template for ingestion, such as `enriched_text.concepts.text`, see [Configuring your service > Adding enrichments ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-configservice#adding-enrichments).
+The collection fields are created when the collection is created. To learn more about fields that are generated for you, such as `enriched_text.concepts.text`, see [Configuring your service > Adding enrichments ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-configservice#adding-enrichments).
 
 ### Adding the skill to an assistant
 {: #skill-search-add-to-assistant}
@@ -251,5 +284,33 @@ One search skill can be used by more than one assistant.
 
 Configure at least one test integration channel. You cannot test the search skill from the Try it out pane. Test the skill from an integration channel by entering queries that trigger the search. Ensure that the search is being triggered properly, and is returning relevant results.
 
-The shareable link integration does not work currently for assistants with a search skill.
-{: important}
+To learn how to include search results in a response from an individual dialog node, see [Responses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia).
+
+## Search trigger
+{: #skill-search-add-trigger}
+
+The search skill is triggered in the following ways:
+
+- **Anything else node**: Searches an external data source for a relevant answer when none of the dialog nodes can address the user's query. Instead of showing a standard message, such as `I don't know how to help you with that.` the assistant can say, `Maybe this information can help:` followed by the passage returned by the search. If a search skill is linked to your assistant, then whenever the `anything_else` node is triggered, rather than displaying the node response, a search is performed instead. The assistant passes the user input as the query to your search skill, and returns the search results as the response.
+- **Search response type**: If you add a search response type to a dialog node, then the service retrieves a passage from an external data source and returns it as the response to a particular question. This type of search occurs only when the individual dialog node is processed. This approach is useful if you have want to narrow down a user query before you perform a search. For example, the dialog branch might collect information about the type of device the customer wants to buy. When you know the make and model, you can then send a model keyword in the query that is submitted to the search skill, and get better results.
+- **Search skill only**: If only a search skill is linked to an assistant, and no dialog skill is linked to the assistant, then a search query is submitted to the {{site.data.keyword.discoveryshort}} service when any user input is received from one of the assistant's integration channels.
+
+After you add a search skill to an assistant, it is automatically enabled for the assistant as follows:
+
+- If the assistant has only a search skill, any user input that is submitted to one of the assistant's integration channels triggers the search skill.
+
+- If the assistant has both a dialog skill and a search skill, any user input triggers the dialog skill first. The dialog addresses any user input that it has a high confidence it can answer correctly, and any queries that would otherwise trigger the `anything_else` node in the dialog tree trigger the search skill instead.
+
+The following diagram illustrates how user input is processed when both a dialog skill and a search skill are configured for an assistant.
+
+![Diagram that shows how some user input is answered by dialog and other questions are answered by search.](images/search-skill-diagram.png)
+
+### Disabling search
+{: #search-skill-add-disable}
+
+You can disable the search skill from being triggered. You might want to do so temporarily, while you are setting up the integration. Or you might want to only ever trigger a search for specific user queries that you can identify within the dialog, and use a search skill response type to answer.
+
+To prevent the search skill from being triggered, complete the following steps:
+
+1.  From the **Assistants** page, click the menu for your assistant, and then choose **Settings**.
+1.  Open the *Search Skill* page, and then click to switch the toggle to **Disabled**.
