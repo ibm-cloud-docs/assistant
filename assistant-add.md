@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-19"
+lastupdated: "2019-03-22"
 
 subcollection: assistant
 
@@ -51,31 +51,39 @@ Follow these steps to create an assistant:
 
 1.  Click **Create**.
 
-1.  Add a skill to the assistant by clicking **Add skill**. You can choose to add an existing skill or create a new one.
+1.  Add a skill to the assistant by choosing one of the following skill types to add.
 
-    When you add a skill from here, you get the development version. If you want to add a specific skill version, add it from the skill's *Version History* tab instead.
+    **Note**: You can choose to add an existing skill or create a new one.
 
-    If you created or were given developer role access to any workspaces that were built with the generally available version of the {{site.data.keyword.conversationshort}} service (formerly Watson Conversation), you will see them listed as existing dialog skills.
-    {: note}
+    - **Add Dialog Skill**: Uses Watson natural language processing and machine learning technologies to understand user questions and requests, and respond to them with answers that are authored by you.
 
-    See [Creating a skill](/docs/services/assistant?topic=assistant-skill-add) for more information about how to create a skill.
+      When you add a dialog skill from here, you get the development version. If you want to add a specific dialog skill version, add it from the skill's *Version History* tab instead.
+
+    - **Add Search Skill** ![Plus or Premium plan only](images/premium.png): For a given user query, uses the {{site.data.keyword.discoveryfull}} service to retrieve information from a data source that you identify and shares any relevant information that it finds as the response to the user.
+
+      This option is only visible if you are a Plus or Premium plan user.
+      {: note}
+
+    See [Creating a skill](/docs/services/assistant?topic=assistant-skill-add).
 
 ## Assistant limits
 {: #assistant-add-limits}
 
 The number of assistants you can create in a single service instance depends on your {{site.data.keyword.conversationshort}} plan.
 
-| Service plan | Assistants per service instance | Integrations per assistant  | Chat session inactivity period |
-|--------------|--------------------------------:|----------------------------:|-----------------:|
-| Premium      |                             100 |                         100 |       60 minutes |
-| Plus         |                             100 |                         100 |       60 minutes |
-| Standard     |                             100 |                         100 |        5 minutes |
-| Lite*        |                             100 |                         100 |        5 minutes |
+| Service plan | Assistants per service instance | 
+|--------------|--------------------------------:|
+| Premium      |                             100 |
+| Plus         |                             100 |
+| Standard     |                             100 |
+| Lite*        |                             100 |
 {: caption="Service plan details" caption-side="top"}
 
 *After 30 days of inactivity, an unused assistant in a Lite plan service instance might be deleted to free up space.
 
-You can connect one skill to your assistant. The number of skills you can build differs depending on the plan you have. See [Skill limits](/docs/services/assistant?topic=assistant-skill-add#skill-add-limits) for more details.
+See [Changing the inactivity timeout setting](/docs/services/assistant?topic=assistant-activity-settings) for more information on the subject.
+
+You can connect one skill of each type to your assistant. The number of skills you can build differs depending on the plan you have. See [Skill limits](/docs/services/assistant?topic=assistant-skill-add#skill-add-limits) for more details.
 
 ## Deleting an assistant
 {: #assistant-add-delete}
@@ -104,11 +112,13 @@ To rename an assistant, follow these steps:
 ### Changing the skill that is associated with the assistant
 {: #assistant-add-swap-skill}
 
-You can add one skill to an assistant. If you want to change the skill that your assistant uses, you can swap one skill for another skill.
+You can add one skill of each skill type to an assistant. If you want to change a skill that your assistant is using, you can swap one skill for another skill.
 
 1.  From the Assistants tab, click to open the tile for the assistant for which you want to change the skill.
 
-1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Swap skill**. To swap the current skill for a different version of the skill, choose **Change skill version**.
+1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Swap skill**.
+
+    To swap the current dialog skill for a different version of the skill, choose **Change skill version**.
 
 1.  Choose an existing skill to use instead or [create a skill](/docs/services/assistant?topic=assistant-skill-add).
 

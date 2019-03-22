@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-03-22"
 
 subcollection: assistant
 
@@ -73,6 +73,7 @@ The following features are available only to users of Premium plans.
 - [Intent conflict resolution](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts)
 - [Intent recommendations and intent user example recommendations](/docs/services/assistant?topic=assistant-intent-recommendations)
 - [Intercom integration](/docs/services/assistant?topic=assistant-deploy-intercom)
+- [Search skill](/docs/services/assistant?topic=assistant-skill-search-add)
 
 ### User-based plans
 {: #services-information-user-based-plans}

@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-03-22"
 
 subcollection: assistant
-
 
 ---
 
@@ -23,37 +22,30 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Beta: Building a dialog skill
+# Creating a dialog skill
 {: #skill-dialog-add}
 
 The natural-language processing for the {{site.data.keyword.conversationshort}} service is defined in a *dialog skill*, which is a container for all of the artifacts that define a conversation flow.
 {: shortdesc}
 
-This feature is available for use by participants in the beta program only. To find out how to request access, see [Participate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
-
-![Beta](images/beta.png) IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment. 
-
 You can add one dialog skill to an assistant. See [Skill limits](/docs/services/assistant?topic=assistant-skill-add#skill-add-limits) for information about limits per plan.
 
-## Creating a dialog skill
-{: #beta-skill-dialog-add-task}
+## Create the dialog skill
+{: #skill-dialog-add-task}
 
 You can create a skill from scratch, use a sample skill that is provided by IBM, or import a skill from a JSON file.
 
-If you have not done so, complete the prerequisite steps in the [getting started tutorial](/docs/services/assistant?topic=assistant-getting-started#getting-started-prerequisites) to create a {{site.data.keyword.conversationshort}} service instance and launch the tool.
+To add a skill, complete the following steps:
 
-You use the {{site.data.keyword.conversationshort}} tool to build skills. Follow these steps to create a dialog skill:
+1.  If you have not done so, complete the prerequisite steps in [Creating a skill](/docs/services/assistant?topic=assistant-skill-add).
 
-1.  Click the **Skills** tab.
+1.  Click the **Skills** tab, and then click **Create new**.
 
-    If you created or were given developer role access to any workspaces that were built with the generally available version of the {{site.data.keyword.conversationshort}} service (formerly Watson Conversation), you will see them listed here as dialog skills.
-    {: note}
+    - ![Plus or Premium plan only](images/premium.png) Only if you have a Plus or Premium plan, a page is displayed that gives you a choice of the type of skill to create: a dialog skill or a search skill. Select the dialog skill tile, and then click **Next**.
 
-1.  Click **Create new**.
+    - If you have a Lite or Standard plan, you will not see a page that gives you the option of skill types to create. Click **Add** to create a *dialog skill*.
 
-1.  Click **Add** to create a *dialog skill*.
-
-1.  Do one of the following things:
+1.  Take one of the following actions:
 
     - To create a skill from scratch, click **Create skill**.
     - To add a sample skill that is provided with the service as a starting point for your own skill or as an example to explore before you create one yourself, click **Use sample skill**, and then click the sample you want to use.
@@ -64,8 +56,8 @@ You use the {{site.data.keyword.conversationshort}} tool to build skills. Follow
 
       **Important:**
 
-      - The imported JSON file must use UTF-8 encoding.
-      - The maximum size for a skill JSON file is 10MB. If you need to import a larger skill, consider importing the intents and entities separately after you have imported the skill. (You can also import larger skills using the REST API. For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/watson/developercloud/conversation/api/v1/#create_workspace){: new_window}.)
+      - The imported JSON file must use UTF-8 encoding, without byte order mark (BOM) encoding.
+      - The maximum size for a skill JSON file is 10MB. If you need to import a larger skill, consider importing the intents and entities separately after you have imported the skill. (You can also import larger skills using the REST API. For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant?curl=#create-workspace){: new_window}.)
       - The JSON cannot contain tabs, newlines, or carriage returns.
 
       Specify the data you want to include:
@@ -75,7 +67,7 @@ You use the {{site.data.keyword.conversationshort}} tool to build skills. Follow
 
       Click **Import**.
 
-      If you have trouble importing a skill, see [Troubleshooting skill import issues](#beta-skill-dialog-add-import-errors).
+      If you have trouble importing a skill, see [Troubleshooting skill import issues](#skill-dialog-add-import-errors).
 
 1.  Specify the details for the skill:
 
@@ -86,12 +78,12 @@ You use the {{site.data.keyword.conversationshort}} tool to build skills. Follow
 After you create the skill, it appears as a tile on the Skills page. Now, you can start identifying the user goals that you want the dialog skill to address.
 
 - To add prebuilt intents to your skill, see [Using content catalogs](/docs/services/assistant?topic=assistant-catalog).
-- To define your own intents, see [Intents](/docs/services/assistant?topic=assistant-intents).
+- To define your own intents, see [Defining intents](/docs/services/assistant?topic=assistant-intents).
 
-The dialog skill cannot interact with customers until it is added to an assistant and the assistant is deployed. See [Creating assistants](/docs/services/assistant?topic=assistant-assistant-add).
+The dialog skill cannot interact with customers until it is added to an assistant and the assistant is deployed. See [Creating an assistant](/docs/services/assistant?topic=assistant-assistant-add).
 
 ### Troubleshooting skill import issues
-{: #beta-skill-dialog-add-import-errors}
+{: #skill-dialog-add-import-errors}
 
 If you receive a message that says the skill contains artifacts that exceed the limits imposed by your service plan, complete the following steps to import the skill successfully:
 
@@ -103,7 +95,7 @@ If you receive a message that says the skill contains artifacts that exceed the 
 1.  Try again to import the edited skill into the original service instance on the plan you want.
 
 ### Adding the skill to an assistant
-{: #beta-skill-dialog-add-to-assistant}
+{: #skill-dialog-add-to-assistant}
 
 You can add one skill to an assistant. You must open the assistant tile and add the skill to the assistant from the assistant configuration page; you cannot choose the assistant that will use the skill from within the skill configuration page. One dialog skill can be used by more than one assistant.
 
@@ -115,11 +107,10 @@ You can add one skill to an assistant. You must open the assistant tile and add 
 
     Click the skill that you want to add from the available skills that are displayed.
 
-    If you are adding an existing dialog skill and created or were given developer role access to any workspaces that were built with the generally available version of the {{site.data.keyword.conversationshort}} service (formerly Watson Conversation), you will see them listed here as dialog skills.
-    {: note}
+When you add a skill from here, you get the development version. If you want to add a specific skill version, add it from the skill's *Version History* tab instead.
 
 ## Downloading a dialog skill
-{: #beta-skill-dialog-add-download}
+{: #skill-dialog-add-download}
 
 You can download a dialog skill in JSON format. You might want to download a skill if you want to use the same dialog skill in a different instance of the {{site.data.keyword.conversationshort}} service, for example. You can download it from one instance and import it to another instance as a new dialog skill.
 
@@ -134,7 +125,7 @@ To download a dialog skill, complete the following steps:
 You can export a skill by using the API also. Include the `export=true` parameter with the request. See the [API reference](https://cloud.ibm.com/apidocs/assistant#get-information-about-a-workspace) for more details.
 
 ## Sharing a dialog skill with team members
-{: #beta-skill-dialog-add-invite-others}
+{: #skill-dialog-add-invite-others}
 
 After you create the service instance, you can give other people access to it. Together, you can define the training data and build the dialog.
 
@@ -148,13 +139,13 @@ To share a dialog skill with other people, you must give them access to the serv
 
 1.  Click **Invite users**, and then enter the email addresses of the people on your team to whom you want to give access.
 
-    If you gave someone access to a service instance in Cloud Foundry, then the person might be listed as an invited user already. Click the person's name to open the access management settings for the user. Click **Assign access**, and then choose **Assign access to resources**.
+    If you gave someone access to a service instance when it was managed by Cloud Foundry, then the person might be listed as an invited user already. Click the person's name to open the access management settings for the user. Click **Assign access**, and then choose **Assign access to resources**.
 1.  In the *Services* section, make the following selections at a minimum:
 
     - **Services**: {{site.data.keyword.conversationshort}}
     - **Assign platform access roles**: Operator
 
-    For more information about platform management roles, see [IAM access ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/iam?topic=iam-userroles). (Service access roles are not leveraged by {{site.data.keyword.conversationshort}} by default.)
+    For more information about platform management roles, see [IAM access ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/iam?topic=iam-userroles). (Service access roles are not leveraged by {{site.data.keyword.conversationshort}} by default.)
 
     For older instances that are managed by Cloud Foundry, you must expand the *Cloud Foundry access* section, choose your organization, and then assign the person to the **Developer** space role.
     {: note}
@@ -165,4 +156,4 @@ To share a dialog skill with other people, you must give them access to the serv
 
 When the people you invite next log in to {{site.data.keyword.cloud_notm}}, your account will be included in their list of accounts. If they select your account, they can see your service instance, and open and edit your skills.
 
-With more people contributing to dialog skill development, unintended changes can occur, including skill deletions. Consider creating backup copies of your dialog skill on a regular basis, so you can roll back to an earlier version if necessary. To create a backup, simply [download the skill as a JSON file](#beta-skill-dialog-add-download).
+With more people contributing to dialog skill development, unintended changes can occur, including skill deletions. Consider creating backup copies of your dialog skill on a regular basis, so you can roll back to an earlier version if necessary. To create a backup, simply [download the skill as a JSON file](#skill-dialog-add-download).

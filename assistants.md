@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-03-22"
 
 subcollection: assistant
-
 
 ---
 
@@ -29,9 +28,12 @@ subcollection: assistant
 An assistant is a cognitive bot that you can customize for your business needs, and deploy across multiple channels to bring help to your customers where and when they need it.
 {: shortdesc}
 
-![Skills](images/skill-icon.png)  You customize the assistant by adding to it the skills it needs to satisfy your customers' goals.
+![Skills](images/skill-icon.png)  An assistant routes your customer queries to a skill, which then provides the appropriate response. Dialog skills return responses that are authored by you to answer common questions, while search skills search for and return passages from existing self-service content to answer more complex inquiries.
 
-Add a dialog skill that can understand and address questions or requests that your customers typically need help with. You provide information about the subjects or tasks your users ask about, and how they ask about them, and the service dynamically builds a machine learning model that is tailored to understand the same and similar user requests.
+## Dialog skill
+{: #assistants-dialog-skill}
+
+A dialog skill that can understand and address questions or requests that your customers typically need help with. You provide information about the subjects or tasks your users ask about, and how they ask about them, and the service dynamically builds a machine learning model that is tailored to understand the same and similar user requests.
 
 | Dialog tree | Graphical user interface |
 |-------------|-------------------------:|
@@ -41,10 +43,18 @@ The dialog skill itself is defined in text, but you can integrate it with Watson
 
 ![Out-of-the-box training data](images/oob.png)  If you want to get started quickly, add prebuilt training data to your dialog skill so your assistant can start helping your customers with the basics.
 
-![IBM Cloud](images/cloud.png)  The assistant is a fully hosted bot that is managed by {{site.data.keyword.cloud_notm}}, which means you do not need to worry about setting up or maintaining infrastructure to support it.
+## Search skill ![Plus or Premium plan only](images/premium.png)
+{: #assistants-search-skill}
+
+Search skill is available to Plus or Premiums users only.
+{: note}
+
+A search skill leverages information from existing corporate knowledge bases or other collections of content authored by subject matter experts to address unanticipated or more nuanced customer inquiries.
+
+![IBM Cloud](images/cloud.png)  The assistant is a fully hosted bot that is managed by {{site.data.keyword.Bluemix_notm}}, which means you do not need to worry about setting up or maintaining infrastructure to support it.
 
 | Integrations       | Channels  |
 |--------------------|:----------|
 | You can deploy the assistant through multiple interfaces, including existing messaging channels, such as Slack and Facebook Messenger, in just a few steps. Or, if you want to design a custom application that incorporates it, you can make direct calls to the underlying APIs to do so. | ![Integration methods including Slack, Facebook Messenger, a web application or human agent integration](images/integrations.png) |
 
-See [Creating an assistant](/docs/services/assistant?topic=assistant-assistant-add) to get started.
+See [Creating assistants](/docs/services/assistant?topic=assistant-assistant-add) to get started.

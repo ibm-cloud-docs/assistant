@@ -22,40 +22,55 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Beta: Building a search skill
+# Creating a search skill ![Plus or Premium plan only](images/premium.png) ![Beta](images/beta.png)
 {: #skill-search-add}
 
 An assistant uses a *search skill* to route complex customer inquiries to the {{site.data.keyword.discoveryfull}} service. {{site.data.keyword.discoveryshort}} treats the user input as a search query. It finds information that is relevant to the query from an external data source and returns it to the assistant.
 {: shortdesc}
 
-This feature is available for use by participants in the beta program only. To find out how to request access, see [Participate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
-
-![Beta](images/beta.png) IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment.
+This beta feature is available to Plus or Premium plan users.
+{: note}
 
 Add a search skill to your assistant to prevent the assistant from having to say things like, `I'm sorry. I can't help you with that.` Instead, the assistant can query existing company documents or data to see if any useful information can be found and shared with the customer.
 
 ![Shows a search result being returned in the preview link integration](images/search-skill-preview-link.png)
 
-The search skill searches for information from a data collection that you create by using the {{site.data.keyword.discoveryshort}} service. {{site.data.keyword.discoveryshort}} is a service that crawls, converts, and normalizes your unstructured data. The service applies data analysis and cognitive intuition to enrich your data such that you can more easily find and retrieve meaningful information from it later. To read more about {{site.data.keyword.discoveryshort}}, see the [product documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-about).
-
 The following 4-minute video provides an overview of the search skill.
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Search skill overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/ZcgGf8J2Cfw?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
-## Creating a search skill
-{: #skill-search-add-task}
+## How it works
+{: #skill-search-add-how}
+
+The search skill searches for information from a data collection that you create by using the {{site.data.keyword.discoveryshort}} service.
+
+{{site.data.keyword.discoveryshort}} is a service that crawls, converts, and normalizes your unstructured data. The service applies data analysis and cognitive intuition to enrich your data such that you can more easily find and retrieve meaningful information from it later. To read more about {{site.data.keyword.discoveryshort}}, see the [product documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-about){: new_window}.
+
+ Typically, the type of data collection you will want to add to the {{site.data.keyword.discoveryshort}}  service and access from your assistant contains information that is owned by your company and can be mined to find answers to customer questions, such as FAQs, sales collateral, technical manuals, or papers written by subject matter experts.
+
+The following diagram illustrates how user input is processed when both a dialog skill and a search skill are added to an assistant.
+
+![Diagram that shows how some user input is answered by dialog and other questions are answered by search.](images/search-skill-diagram.png)
+
+## Before you begin
+{: #skill-search-add-prereqs}
 
 If you have not done so, complete the prerequisite steps in the [getting started tutorial](/docs/services/assistant?topic=assistant-getting-started#getting-started-prerequisites) to create a {{site.data.keyword.conversationshort}} service instance and launch the {{site.data.keyword.conversationshort}} tool.
 
-If you do not have a {{site.data.keyword.discoveryshort}} service instance, then a Lite plan instance will be provisioned for you as part of this process. If you have an existing {{site.data.keyword.discoveryshort}} service instance, you are expected to connect to it; you are not asked to create a new instance as part of this process.
+If you do not have a {{site.data.keyword.discoveryshort}} service instance, then a free Lite plan instance will be provisioned for you as part of this process. If you have an existing {{site.data.keyword.discoveryshort}} service instance, you are expected to connect to it; you are not asked to create a new instance as part of this process.
 
 If you create a Discovery instance first, do not add the pre-enriched data source named *Watson Discovery News* to your instance. It is not a data type that can be searched from {{site.data.keyword.conversationshort}}.
+{: tip}
 
-1.  Click the **Skills** tab.
+## Create the search skill
+{: #skill-search-add-task}
 
-1.  Click **Create new**.
+1.  If you have not done so, complete the prerequisite steps in [Creating a skill](/docs/services/assistant?topic=assistant-skill-add).
 
-    For Premium or Plus plan users only, a page is displayed where you can choose the type of skill you want to create.
+1.  Click the **Skills** tab, and then click **Create new**.
+
+    For Premium or Plus plan users only, a page is displayed where you can choose the type of skill you want to create. If you have a Lite or Standard service plan type, you will not see this page.
+    {: note}
 
 1.  Click the *Search skill* option, and then click **Next**.
 
@@ -79,6 +94,7 @@ The remaining steps differ depending on whether you have access to an existing {
     Any {{site.data.keyword.discoveryshort}} service instances that you have access to are displayed in the list.
 
     If you see a warning that some of your {{site.data.keyword.discoveryshort}} service instances do not have credentials set, it means that you have access to at least one instance that you have never opened from the {{site.data.keyword.cloud_notm}} dashboard directly yourself. You must access a service instance for credentials to be created for it. And credentials must exist before {{site.data.keyword.conversationshort}} can establish a connection to the {{site.data.keyword.discoveryshort}} service instance on your behalf. If you think a {{site.data.keyword.discoveryshort}} service instance should be listed that is not, open the instance from the {{site.data.keyword.cloud_notm}} dashboard directly to generate credentials for it.
+    {: note}
 
 1.  Indicate the data collection to use, by doing one of the following things:
 {: #pick-data-collection}
@@ -87,21 +103,21 @@ The remaining steps differ depending on whether you have access to an existing {
 
       You can click the *Open in Discovery* link to review the configuration of a data collection before you decide which one to use.
 
-      Go to [Configure the search](#beta-search-skill-add-configure).
+      Go to [Configure the search](#search-skill-add-configure).
 
-    - If you do not have a collection or do not want to use any of the data collections that are listed, click **Create a new collection** to add one. Follow the procedure in [Create a data collection](#beta-search-skill-add-create-discovery-collection).
+    - If you do not have a collection or do not want to use any of the data collections that are listed, click **Create a new collection** to add one. Follow the procedure in [Create a data collection](#search-skill-add-create-discovery-collection).
 
-      The **Create a new collection** button is not displayed if you have reached the limit to the number of collections you are allowed to create based on your {{site.data.keyword.discoveryshort}} service plan. See [{{site.data.keyword.discoveryshort}} pricing plans ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery/discovery-about?topic=discovery-discovery-pricing-plans) for plan limit details.
+      The **Create a new collection** button is not displayed if you have reached the limit to the number of collections you are allowed to create based on your {{site.data.keyword.discoveryshort}} service plan. See [{{site.data.keyword.discoveryshort}} pricing plans ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery/discovery-about?topic=discovery-discovery-pricing-plans){: new_window} for plan limit details.
 
 ## Create a Watson Discovery service instance
 {: #skill-search-add-create-discovery}
 
 1.  To create a {{site.data.keyword.discoveryshort}} service instance, click **Create new collection**.
 
-    An instance of the {{site.data.keyword.discoveryshort}} service is created for you, and a configuration page opens to the new {{site.data.keyword.discoveryshort}} service instance.
+    If you do not have an existing {{site.data.keyword.discoveryshort}} service instance, a free instance of the {{site.data.keyword.discoveryshort}} service is created for you.
 
-    A Lite plan instance of the service is provisioned in {{site.data.keyword.Bluemix_notm}}, no matter what {{site.data.keyword.conversationshort}} service plan you use.
-    {: important}
+    A Lite plan instance of the service is provisioned in {{site.data.keyword.Bluemix_notm}}, no matter what type of {{site.data.keyword.conversationshort}} service plan you have.
+    {: note}
 
 1.  Review the terms and conditions for using the instance, and then click **Accept** to continue.
 
@@ -118,7 +134,7 @@ If you have a Discovery service Lite plan, you are given an opporunity to upgrad
 
         1.  Provide the required information for the data source you choose, and then click **Connect**.
 
-            See [Connecting to data sources ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-sources) for more details.
+            See [Connecting to data sources ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-sources){: new_window} for more details.
         1.  Indicate the frequency with which you want data from the data source to be synchronized with the collection you are creating in {{site.data.keyword.discoveryshort}}.
         1.  Specify the information that you want to extract from the data source and include in your {{site.data.keyword.discoveryshort}} collection.
 
@@ -138,12 +154,12 @@ If you have a Discovery service Lite plan, you are given an opporunity to upgrad
         1.  First you define the collection, and then you upload the documents. Provide the following information:
 
             - Collection name. The name must be unique for this service instance.
-            - Language. Select the language of the files that you will add to this collection. See [Language support ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-language-support) for information about the languages supported by {{site.data.keyword.discoveryshort}}.
+            - Language. Select the language of the files that you will add to this collection. See [Language support ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-language-support){: new_window} for information about the languages supported by {{site.data.keyword.discoveryshort}}.
 
-              If you are uploading a PDF document and want to extract party, nature, and category information from it, then expand the **Advanced** section and click **Use the Default Contract Configuration with this collection**. See [Collection requirements ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-element-classification#element-collection) for more details.
+              If you are uploading a PDF document and want to extract party, nature, and category information from it, then expand the **Advanced** section and click **Use the Default Contract Configuration with this collection**. See [Collection requirements ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-element-classification#element-collection){: new_window} for more details.
         1.  Upload documents.
 
-            Supported file types include PDF, HTML, JSON, and DOC files. See [Adding content ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-addcontent) for more details.
+            Supported file types include PDF, HTML, JSON, and DOC files. See [Adding content ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-addcontent){: new_window} for more details.
             {: note}
 
             No ongoing synchronization of uploaded documents is available. If you want to pick up changes made to a document, upload a later version of the document.
@@ -265,7 +281,7 @@ The following table provides collection fields you can try as you get started.
 | Box                | name | description | listing_url |
 | HTML               | extracted_metadata.title | text | extracted_metadata.filename |
 
-The collection fields are created when the collection is created. To learn more about fields that are generated for you, such as `enriched_text.concepts.text`, see [Configuring your service > Adding enrichments ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-configservice#adding-enrichments).
+The collection fields are created when the collection is created. To learn more about fields that are generated for you, such as `enriched_text.concepts.text`, see [Configuring your service > Adding enrichments ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-configservice#adding-enrichments){: new_window}.
 
 ### Adding the skill to an assistant
 {: #skill-search-add-to-assistant}
@@ -300,10 +316,6 @@ After you add a search skill to an assistant, it is automatically enabled for th
 - If the assistant has only a search skill, any user input that is submitted to one of the assistant's integration channels triggers the search skill.
 
 - If the assistant has both a dialog skill and a search skill, any user input triggers the dialog skill first. The dialog addresses any user input that it has a high confidence it can answer correctly, and any queries that would otherwise trigger the `anything_else` node in the dialog tree trigger the search skill instead.
-
-The following diagram illustrates how user input is processed when both a dialog skill and a search skill are configured for an assistant.
-
-![Diagram that shows how some user input is answered by dialog and other questions are answered by search.](images/search-skill-diagram.png)
 
 ### Disabling search
 {: #search-skill-add-disable}

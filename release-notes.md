@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-03-22"
 
 subcollection: assistant
 
@@ -51,6 +51,11 @@ Existing models that you have trained will not be immediately impacted, but expi
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
 The following new features and changes to the service are available. Check out our [blog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/assistant/home) to find in-depth information about how the newest features can benefit your business.
+
+## 22 March 2019
+{: #22March2019}
+
+- **Introducing search skill ![Plus or Premium plan only](images/premium.png)**: A search skill helps you to make your assistant useful to customers faster. Customer inquiries that you did not anticipate and so have not built dialog logic to handle can be met with useful responses. Instead of saying it can't help, the assistant can query an external data collection to find relevant information to share in its response. Over time, you can build dialog responses to answer questions that require follow-up questions to clarify the user's meaning or for which a short and clear response is suitable. And you can use search skill responses to address more open-ended customer queries that require a longer explanation. This beta feature is available to users of Premium and Plus service plans only. See [Building a search skill](/docs/services/assistant?topic=assistant-skill-search-add) for more details.
 
 ## 14 March 2019
 {: #14March2019}
