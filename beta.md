@@ -38,4 +38,6 @@ The following features are available for use by participants in the beta program
 
 - Try out the new system entities. The number-based system entities have been revised to be better able to recognize date, time, and number mentions. See [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities) for more information.
 
-- Add webhooks to dialog nodes so you can make programmatic calls out to external applications as part of the conversational flow. See [Adding a webhook callout to a dialog node](/docs/services/assistant?topic=assistant-dialog-webhooks)
+- Add webhooks to dialog nodes so you can make programmatic calls out to external applications as part of the conversational flow. See [Adding a webhook callout to a dialog node](/docs/services/assistant?topic=assistant-dialog-webhooks).
+
+- Add your assistant as a Zendesk Chat agent. See [Integrating with Zendesk Chat](/docs/services/assistant?topic=assistant-deploy-zendesk).

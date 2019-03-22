@@ -90,6 +90,7 @@ Watson Assistant
         beta-spell-check.md
         beta-system-entities.md
         beta-dialog-webhooks.md
+        beta-deploy-zendesk.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
