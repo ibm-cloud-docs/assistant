@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-05"
+lastupdated: "2019-03-25"
 
 subcollection: assistant
-
 
 ---
 
@@ -96,6 +95,19 @@ Complete these steps in your dialog skill so the assistant can handle user reque
     At run time, if the conversation reaches this child node, the dialog is passed to a human agent at that point. Later, when you set up the Intercom integration, you can choose a human agent as a backup for each branch.
 
 Your dialog is now ready to support your assistant in Intercom.
+
+### Dialog considerations
+{: #deploy-intercom-dialog}
+
+Some rich responses that you add to a dialog are displayed differently within the "Try it out" pane from how they are displayed to Intercom users. The table below describes how the response types are treated by Intercom.
+
+| Response type | How displayed to Intercom users  |
+|---------------|---------------------------|
+| **Option**    | The options are displayed as a numbered list. In the **title** or **description** field, provide instructions that explain to the user how to choose an option from the list. |
+| **Image**     | The image **title**, **description**, and the image itself are rendered. |
+| **Pause**     | Whether or not you enable it, a typing indicator is not displayed during the pause. |
+
+See [Rich responses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more information about response types.
 
 ## Adding an Intercom integration
 {: #deploy-intercom-add-intercom}
@@ -236,16 +248,3 @@ The following 3-minute video illustrates the steps.
 To effectively test your Intercom integration from end-to-end, you must have access to an Intercom end-user application. You already created or edited an Intercom workspace. The workspace must have an associated user interface client. If it does not, see [Apps in Intercom ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.intercom.com/help/apps-in-intercom){: new_window} for help with setting one up.
 
 Submit test user queries through a client application that is associated with your Intercom workspace to see how the messages are handled by Intercom. Verify that messages that are meant to be answered by the assistant are generating the appropriate responses, and that the assistant is not responding to messages that it is not configured to answer.
-
-## Dialog considerations
-{: #deploy-intercom-dialog}
-
-Some rich responses that you add to a dialog are displayed differently within the "Try it out" pane from how they are displayed to Intercom users. The table below describes how the response types are treated by Intercom.
-
-| Response type | How displayed to Intercom users  |
-|---------------|---------------------------|
-| **Option**    | The options are displayed as a numbered list. In the **title** or **description** field, provide instructions that explain to the user how to choose an option from the list. |
-| **Image**     | The image **title**, **description**, and the image itself are rendered. |
-| **Pause**     | Whether or not you enable it, a typing indicator is not displayed during the pause. |
-
-See [Rich responses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more information about response types.
