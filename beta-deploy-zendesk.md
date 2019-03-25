@@ -204,7 +204,7 @@ To set up routing assignments for escalations from the assistant to a human, com
 
 1.  To define routing rules for other dialog branches, click **New rule** again, and repeat the previous steps.
 
-    Don't forget to set up an assignment for any root node that has a *Connect to human agent* response type in a child node in its branch. If you do not transfer the associated root node to a specific person or department, a sensitive matter might be transferred to the department that has only the assistant as a member.
+    Don't forget to set up an assignment for any root node that has a *Connect to human agent* response type in a child node in its branch, so the assistant can transfer it to a human. If you don't, the assistant will not know that it needs to transfer the conversation and sensitive matters might not be handled properly.
 
 1.  After adding rules, click **Return to overview** to exit the page.
 
