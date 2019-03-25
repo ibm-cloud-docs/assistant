@@ -113,7 +113,7 @@ Complete these steps in your dialog skill so the assistant can handle user reque
     - **Node name**: Give the node a name. This name is how you will identify the node when you configure interactions for it later. If you don't add a name, you will have to choose the node based on its node ID instead.
     - **External node name**: Add a summary of the purpose of the dialog branch. For example, *Find a store*.
 
-      This information is shown to other agents on the assistant's team when the assistant offers to answer a user query. If there is more than one dialog node that can address the query, the assistant shares a list of response options with human agents to get their advice about which response to use.
+      This information is shown to human agents when the assistant offers to answer a user query. If there is more than one dialog node that can address the query, the assistant shares a list of response options with human agents to get their advice about which response to use.
 
       ![Screenshot of the field in the node edit view where you add the node purpose summary.](images/disambig-node-purpose.png)
 
@@ -195,7 +195,7 @@ To set up routing assignments for escalations from the assistant to a human, com
 
 1.  To define routing rules for other dialog branches, click **New rule** again, and repeat the previous steps.
 
-    Don't forget to set up an assignment for any root nodes that have a *Connect to human agent* response type in a child node in their branch. If you do not transfer the associated root node to a specific person or team, a sensitive matter can be transferred to the default department you specified earlier.
+    Don't forget to set up an assignment for any root node that has a *Connect to human agent* response type in a child node in its branch. If you do not transfer the associated root node to a specific person or department, a sensitive matter can be transferred to the default department you specified earlier.
 
 1.  After adding rules, click **Return to overview** to exit the page.
 
@@ -208,7 +208,7 @@ When you enable monitoring, your assistant starts to monitor queries that are ro
 
 When the assistant is confident that it knows how to answer a user query, the assistant responds to the user directly. (The assistant is confident when the top intent identified by the service has a confidence score of 0.75 or higher.)
 
-If you do not want the assistant to directly answer certain types of user queries, then you can add rules to specify other actions for the assistant to take per dialog branch. For example, you might want to start incorporating the assistant into the Zendesk team more conservatively, allowing the assistant only to suggest responses as it transfers user messages to other departments for human agents to answer. Over time, after the assistant proves itself, you can give it more responsibility.
+If you do not want the assistant to directly answer certain types of user queries, then you can add rules to specify other actions for the assistant to take per dialog branch. For example, you might want to start incorporating the assistant into the Zendesk support team more conservatively, allowing the assistant only to suggest responses as it transfers user messages to other departments for human agents to answer. Over time, after the assistant proves itself, you can give it more responsibility.
 
 1.  From the Zendesk integration page, in the *Enable your assistant to monitor incoming visitor requests* section, switch monitoring **On**.
 
@@ -220,7 +220,7 @@ If you do not want the assistant to directly answer certain types of user querie
 
 1.  From the *Choose node* drop-down list, choose the node for the branch you want to configure.
 
-    Remember, branches are identified by their node name. If you did not specify a node name, then the node's ID is displayed instead.
+    Remember, a branch is identified by its node name. If you did not specify a node name, then the node's ID is displayed instead.
 
 1.  Pick the type of action that you want the assistant to perform when this dialog node is triggered. The action type options are these:
 
@@ -245,7 +245,7 @@ As your dialog changes, you will likely return to the Zendesk integration page t
 ## Testing the integration
 {: #deploy-zendesk-try}
 
-To effectively test your Zendesk integration from end-to-end, you must have access to an Zendesk end-user application. Submit test user queries through a client application that is integrated with your Zendesk account to see how the messages are handled by Zendesk. Verify that messages that are meant to be answered by the assistant are generating the appropriate responses, and that the assistant is not responding to messages that it is not configured to answer.
+To effectively test your Zendesk integration from end to end, you must have access to an Zendesk end-user application. Submit test user queries through a client application that is integrated with your Zendesk account to see how the messages are handled by Zendesk. Verify that messages that are meant to be answered by the assistant are generating the appropriate responses, and that the assistant is not responding to messages that it is not configured to answer.
 
 ## Dialog considerations
 {: #deploy-zendesk-dialog}
