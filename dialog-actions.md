@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-19"
+lastupdated: "2019-03-25"
 
 subcollection: assistant
-
 
 ---
 
@@ -121,8 +120,6 @@ To make a programmatic call from a dialog node, complete the following steps:
          - The namespace for a user-defined action typically has the syntax: `<myIBMCloudOrganizationID>_<myIBMCloudSpace>`. For example: `/jdoeorg_prod10/search flights`
          - The actions that are provided with {{site.data.keyword.openwhisk_short}} often have the namespace: `whisk.system`, but verify the namespace first to be sure. For example: `/whisk.system/weather/forecast`
 
-           See the [IBM Cloud Functions naming guidelines ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/openwhisk/openwhisk_reference#openwhisk_entities) for more details.
-
     - `<type>`: Indicates the type of call to make. Choose from the following types:
 
       - **client**: Sends a message response with programmatic call information in a standardized format that your external client application understands. Your client application must use the provided information to run the programmatic call or function, and return the result to the dialog. The JSON object in the response body specifies the service or function to call, any associated parameters to pass with the call, and the format of the result to send back.
@@ -183,7 +180,7 @@ To make a programmatic call from a dialog node, complete the following steps:
       These credentials are used to access the {{site.data.keyword.openwhisk_short}} instance on which the action runs. These are not your {{site.data.keyword.Bluemix_notm}} credentials.
 
       To discover the credentials, complete the following steps:
-      1.  Go to the [{{site.data.keyword.openwhisk_short}} API key ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/openwhisk/learn/api-key){: new_window} page.
+      1.  Go to the [{{site.data.keyword.openwhisk_short}} API key ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/openwhisk/api-key){: new_window} page.
 
           - If you have not yet created an account, do so.
           - If you are not logged in, log in.
@@ -253,7 +250,6 @@ To create a {{site.data.keyword.openwhisk_short}} action, complete the following
 
     Keep the following tips in mind:
 
-    - Refer to the [example of a {{site.data.keyword.openwhisk_short}} action ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/openwhisk/openwhisk_actions#openwhisk_apicall_action){: new_window} to see how to call an external service.
     - To make a call to a Watson service, use the [Watson Developer Cloud SDK ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud){: new_window} for the language you want to use.
     - Make sure your {{site.data.keyword.openwhisk_short}} action accepts any input parameters as a JSON object, and returns any output as a JSON object.
     - If you are using Node.js to write your {{site.data.keyword.openwhisk_short}} action, make sure you use `Promise` for asynchronous processing. Also make sure you return the final result from the `main` function.
@@ -338,7 +334,7 @@ The following diagram illustrates how you can use a client call to get weather f
 ## IBM Cloud Functions action call example
 {: #dialog-actions-server-example}
 
-The following example shows what a call to a {{site.data.keyword.openwhisk_short}} action might look like. This example shows how to use the {{site.data.keyword.openwhisk_short}} `echo` action that is defined in the [Utilities package ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/openwhisk/openwhisk_actions#openwhisk_create_action_sequence){: new_window} provided with the service. The action takes a text string, and returns it.
+The following example shows what a call to a {{site.data.keyword.openwhisk_short}} action might look like. This example shows how to use the {{site.data.keyword.openwhisk_short}} `echo` action that is defined in the [Utilities package ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/openwhisk?topic=cloud-functions-openwhisk_create_action_sequence){: new_window} provided with the service. The action takes a text string, and returns it.
 
 ``` json
 {
@@ -539,7 +535,7 @@ The `$my_coordinates` context variable saves the two values that are returned by
 ```
 {: codeblock}
 
-This example shows how to use the {{site.data.keyword.openwhisk_short}} `forecast` action that is defined in the [Weather package ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/openwhisk/openwhisk_weather#openwhisk_catalog_weather){: new_window} provided with the {{site.data.keyword.openwhisk_short}} service. The action expects latitude and longitude coordinates, and a time period. It returns a JSON object with forecast information for the specified location over the specified time period. The coordinates, which are returned by the earlier action, are specified as `$my_coordinates.lat` and `$my_coordinates.long`.
+This example shows how to use the {{site.data.keyword.openwhisk_short}} `forecast` action that is defined in the [Weather package ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/openwhisk/openwhisk_weather?topic=cloud-functions-openwhisk_catalog_weather){: new_window} provided with the {{site.data.keyword.openwhisk_short}} service. The action expects latitude and longitude coordinates, and a time period. It returns a JSON object with forecast information for the specified location over the specified time period. The coordinates, which are returned by the earlier action, are specified as `$my_coordinates.lat` and `$my_coordinates.long`.
 
 ``` json
 {
