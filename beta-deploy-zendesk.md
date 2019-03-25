@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-22"
+lastupdated: "2019-03-25"
 
 ---
 
@@ -46,7 +46,7 @@ You must have a Zendesk Support account (Enterprise or Chat Professional plan re
 
 If you don't have a Zendesk account, go to [www.zendesk.com ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.zendesk.com) to create one.
 
-When you create an account, you specify a subdomain. Afterwards, your zendesk console is available from a URL with the syntax: `<subdomain>.zendesk.com`. For example: `ibm.zendesk.com`
+When you create an account, you specify a subdomain. Afterwards, your Zendesk console is available from a URL with the syntax: `<subdomain>.zendesk.com`. For example: `ibm.zendesk.com`
 
 Set up Zendesk Chat. See [Setting up Zendesk Chat in Zendesk Support ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.zendesk.com/hc/en-us/articles/203661666-Setting-up-Zopim-Chat-in-Zendesk).
 
@@ -187,7 +187,7 @@ To set up routing assignments for escalations from the assistant to a human, com
 
 1.  From the *Choose node* drop-down list, choose the node for the dialog branch that you want to make a special assignment for.
 
-    Remember, branches are identified by their node name. If you did not specify a node name, then the node's ID is displayed instead.
+    Remember, a branch is identified by its node name. If you did not specify a node name, then the node's ID is displayed instead.
 
 1.  Choose a department with human agents to be the backup contact for this dialog branch.
 
