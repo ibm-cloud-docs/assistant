@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-18"
+lastupdated: "2019-03-25"
 
 ---
 
@@ -68,7 +68,14 @@ To add the webhook details, complete the following steps:
     ```
     {: codeblock}
 
-1.  If the external service requires that you pass authentication credentials or other parameters with the POST request, then add them as headers. ({{site.data.keyword.openwhisk_short}} web actions typically do not require that you pass an API key.)
+    If the external application that you call returns a response, it must be able to send back a response in JSON format.
+
+    Notice the request URL in this example ends in `.json`. By specifying this extension, you take advantage of a feature of web actions that lets you specify the desired content type of the response. Specifying this extension type ensures that, if the web actions can return responses in more than one format, a JSON response will be returned. See [Extra features](/docs/openwhisk/openwhisk_webactions.html#extra-features){: new_window} for more details.
+    {: tip}
+
+1.  If the external service requires that you pass authentication credentials or other parameters with the POST request, then add them as headers.
+
+({{site.data.keyword.openwhisk_short}} web actions typically do not require that you pass an API key.)
 
     <table>
     <caption>Header example</caption>
@@ -114,6 +121,9 @@ To use a webhook from a dialog node, you must enable webhooks on the node, and t
       </tr>
     </table>
 
+    If you are calling a {{site.data.keyword.openwhisk_short}} web action, you cannot pass parameters with the same key as parameters that are defined as part of the web action. See [Protected parameters](https://console.bluemix.net/docs/openwhisk/openwhisk_webactions.html#openwhisk_webactions_protected){: new_window} for more details.
+    {: note}
+
     In more complex use cases, you might collect information during a conversation with a user about their travel plans, for example. You can collect dates and destination information and save it in context variables that you can pass to an external application as parameters.
 
     <table>
@@ -146,7 +156,7 @@ To use a webhook from a dialog node, you must enable webhooks on the node, and t
 
 1.  In the conditional responses section, two response conditions are added automatically, one response to show when the webhook callout is successful and a return variable is sent back. And one response to show when the callout fails. You can edit these responses, and add more conditional responses to the node.
 
-    For example, to show the message returned by the Hello World {{site.data.keyword.openwhisk_short}} web action, you might specify the following conditional responses:
+    If the callout returns a response, and you know the format of the JSON response, then you can edit the dialog node response to include only the section of the response that you want to share with users. For example, the Hello World {{site.data.keyword.openwhisk_short}} web action includes a message name and value pair in its response, along with other information. To show only the content of the message, you can use `<response>.message` syntax to extract the message section only from the response object.
 
     <table>
     <caption>Conditional responses example</caption>
@@ -218,6 +228,8 @@ To make a synchronous call to a {{site.data.keyword.openwhisk_short}} action, co
     Your webhook details are saved automatically.
 
 1.  Follow the [same steps](#dialog-webhooks-dialog-node-callout) to add a webhook callout from a dialog node.
+
+    When you call a {{site.data.keyword.openwhisk_short}} action, you *can* pass parameters with the same key as parameters that are defined as part of the action. The parameters are not reserved like they are for web actions.
 
     You can edit the conditional response that is shown when the webhook callout is successful to limit what is shown to users. Use an expression with the syntax `$webhook_result.response.result.message` to extract the returned message only.
 
