@@ -62,6 +62,7 @@ Watson Assistant
         logs-resources.md
 
     migrate.md
+    recovery.md
     backup.md
     upgrade.md
     edit-convo-workspace.md
