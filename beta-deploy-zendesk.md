@@ -87,7 +87,7 @@ You or someone in your organziation must complete these one-time prerequisite st
 
     Chats with customers are routed to departments. You need to create a department with only your assistant as a member, so that you can route customer chats to your assistant in a later step.
 
-    See [Creating agents and departments ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://chat.zendesk.com/hc/en-us/articles/212015708-Creating-agents-and-departments).
+    For more details, see [Creating agents and departments ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://chat.zendesk.com/hc/en-us/articles/212015708-Creating-agents-and-departments).
 
 1.  Create at least one more department. Add members to it who are human agents that can address customer questions.
 
@@ -182,7 +182,7 @@ An application is provided by the {{site.data.keyword.conversationshort}} servic
 
 1.  Upload the application to Zendesk Chat as a new private app. When credentials are requested, paste the app credentials that you copied earlier.
 
-    See [Private apps ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://chat.zendesk.com/hc/en-us/articles/115010754368-Managing-your-installed-apps-in-Zendesk-Chat).
+    For more details, see [Private apps ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://chat.zendesk.com/hc/en-us/articles/115010754368-Managing-your-installed-apps-in-Zendesk-Chat).
 
 ### Configuring message routing
 {: #deploy-zendesk-config-backup}
@@ -216,7 +216,7 @@ To set up routing assignments for escalations from the assistant to a human, com
 
 1.  After adding rules, click **Return to overview** to exit the page.
 
-### Give the assistant permission to monitor and answer user queries
+### Giving the assistant permission to monitor and answer user queries
 {: #deploy-zendesk-config-action}
 
 When you want the assistant to start answering visitor questions, turn on monitoring.
@@ -284,7 +284,7 @@ To test the assistant, temporarily route all incoming chats to the assistant's d
 
     From the widget configuration page, enable integrated chat.
 
-    ![Shows the chat widget preferences and that integrated chat is enbaled.](images/zendesk-setup-for-testing-trigger-always.png)
+    ![Shows the chat widget preferences and that integrated chat is enbaled.](images/zendesk-integrated-chat-enable.png)
 
 1.  Submit test queries through the chat widget.
 
@@ -294,7 +294,7 @@ To test the assistant, temporarily route all incoming chats to the assistant's d
 
     If you see **Missing topic** where the node's purpose information should be displayed, then it means that the root node in the branch that was triggered does not have an external node name specified for it. No name makes it harder for the human agent to understand whether the assistant's suggested response is a good one. To address this omission, return to the {{site.data.keyword.conversationshort}} tool. Open the dialog editor and add external node names for any nodes that can be accessed by Zendesk Chat, especially those for which the *Suggest to agent or department* action is configured.
 
-### Routing incoming messages to the assistant
+## Routing incoming messages to the assistant
 {: #deploy-zendesk-route-to-assistant}
 
 After you test the integration, and feel confident that the assistant is ready to start answering user queries, you can route incoming visitor chats to the assistant.
@@ -304,7 +304,7 @@ After you test the integration, and feel confident that the assistant is ready t
 1.  Create a new trigger that routes specific types of messages to the department you created for the assistant.
 
     For more details, see [Automatically route chats to departments ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://chat.zendesk.com/hc/en-us/articles/212679657-Automatically-route-chats-to-departments).
-1.  If you have not done so, set up reassignments that will reroute messages that your assistant does not reply to in under 20 seconds to a department monitored by human agents.
+1.  Set up reassignments that will reroute messages that your assistant does not reply to in under 20 seconds to a department monitored by human agents.
 
     For more details, see [Configuring reassignment ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://chat.zendesk.com/hc/en-us/articles/217777918-Setting-up-chat-routing).
 
