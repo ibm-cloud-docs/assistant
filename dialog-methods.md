@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-11"
+lastupdated: "2019-03-25"
 
 subcollection: assistant
-
 
 ---
 
@@ -493,6 +492,13 @@ Result:
 
 ```json
 This is the array: onion;olives;ham;
+```
+{: codeblock}
+
+If a user input mentions multiple toppings, and you defined an entity named `@toppings` that can recognize topping mentions, you could use the following expression in the response to list the toppings that were mentioned:
+
+```json
+So, you'd like <? @toppings.values.join(',') ?>.
 ```
 {: codeblock}
 

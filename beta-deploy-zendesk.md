@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-25"
+lastupdated: "2019-03-26"
 
 subcollection: assistant
 
@@ -25,7 +25,7 @@ subcollection: assistant
 # Beta: Integrating with Zendesk Chat ![Plus or Premium plan only](images/premium.png)
 {: #deploy-zendesk}
 
-Zendesk Support puts all your customer support interactions in one place, so communication is seamless, personal, and efficient, which means more productive agents and satisfied customers.
+Zendesk Chat lets you help customers in real time, which increases customer satisfaction. And satisfied customers are happier customers.
 {: shortdesc}
 
 This feature is available for use by participants in the beta program only. To find out how to request access, see [Participate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
@@ -37,16 +37,16 @@ Zendesk has partnered with IBM to add a new agent to the Zendesk support team, a
 This integration is available only to Plus or Premium plan users.
 {: tip}
 
-If you integrate the assistant with Zendesk Chat, the Zendesk Chat app becomes the client application for your skill. All interactions with users are initiated through Zendesk Chat and managed by Zendesk Support.
+If you integrate the assistant with Zendesk Chat, the Zendesk Chat app becomes the client application for your assistant. All interactions with users are initiated through Zendesk Chat and managed by Zendesk.
 
 There is currently no way to pass an ongoing conversation from one integration channel to another.
 
 ## One-time setup steps
 {: #deploy-zendesk-account-prereq}
 
-You must have a Zendesk Support account (Enterprise or Chat Professional plan recommended) created.
+Zendesk Chat is an add-on to Zendesk Support. Zendesk Support puts all your customer support interactions in one place, so communication is seamless, personal, and efficient, which means more productive agents and satisfied customers.
 
-If you don't have a Zendesk account, go to [www.zendesk.com ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.zendesk.com) to create one.
+You must have a Zendesk account. If not, go to [www.zendesk.com ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.zendesk.com) to create one. An Enterprise or Chat Professional plan is recommended.
 
 When you create an account, you specify a subdomain. Afterwards, your Zendesk console is available from a URL with the syntax: `<subdomain>.zendesk.com`. For example: `ibm.zendesk.com`
 
@@ -67,32 +67,36 @@ You or someone in your organziation must complete these one-time prerequisite st
 
     The sender name on the email is your Zendesk account name. Click the link in the email to accept the invitation and create an account for the assistant.
 
-1.  Create a user name and password for the assistant, and then get started.
+1.  Create a user name and password for the assistant.
 
-1.  Follow the instructions to set up a support email address, such as `watson@ibm.zendesk.com`. Each email that is sent to this address becomes a support ticket in Zendesk Support.
+    This user name is part of the profile for your assistant. The profile you create represents the assistant in private agent communications within Zendesk, and in public interactions with customers through Zendesk Chat. Create a profile that reflects your brand.
 
-1.  Customize your Guide Help Center by adding an image to represent the assistant when users chat with it, and a logo.
+1.  Edit your user profile to upload a new photo.
 
-    The profile you create for the assistant represents the assistant in private agent communications within Zendesk, and in public interactions with customers through Zendesk Chat. Create a profile that reflects your brand.
+    ![Shows a WatsonBot agent example where the profile is being edited to add a new photo.](images/zendesk-upload-agent-photo.png)
 
 1.  Log out of your assistant account in Zendesk and log back in with a user ID with the Administrator role.
 
 1.  Grant your assistant access to Zendesk Chat by turning on chat permissions for your assistant.
 
-    See [Setting up agents' chat permissions![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.zendesk.com/hc/en-us/articles/203661666-Setting-up-Zopim-Chat-in-Zendesk).
+    ![Shows a profile being edited to be given access to Zendesk Chat](images/zendesk-enable-chat.png)
 
-1.  From Zenhub Chat, create a department, and then add your assistant as the only department member.
+    For more details, see [Setting up agents' chat permissions![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.zendesk.com/hc/en-us/articles/203661666-Setting-up-Zopim-Chat-in-Zendesk) in the Zendesk documentation.
+
+1.  From Zendesk Chat, create a department, and then add your assistant as the only department member.
+
+    Chats with customers are routed to departments. You need to create a department with only your assistant as a member, so that you can route customer chats to your assistant in a later step.
 
     See [Creating agents and departments ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://chat.zendesk.com/hc/en-us/articles/212015708-Creating-agents-and-departments).
 
-1.  Create at least one more department with human agents who can address customer questions as members.
+1.  Create at least one more department. Add members to it who are human agents that can address customer questions.
 
     Later, you will configure the assistant to transfer chats that it cannot handle on its own to one of these departments.
 
 ## Preparing the dialog
 {: #deploy-zendesk-dialog-prereq}
 
-Complete these steps in your dialog skill so the assistant can handle user requests, and can pass the conversation to a human agent when a customer asks for one.
+Complete these steps in your dialog skill in {{site.data.keyword.conversationshort}} so the assistant can handle user requests, and can pass the conversation to a human agent when a customer asks for one.
 
 1.  Add an intent to your skill that can recognize a user's request to speak to a human.
 
@@ -127,6 +131,8 @@ Your dialog is now ready to support your assistant in Zendesk.
 ### Dialog considerations
 {: #deploy-zendesk-dialog}
 
+If there are rich responses in the dialog nodes that Zendesk will access, then you must configure the Zendesk Chat widget to support rich responses. See [Testing the integration](#deploy-zendesk-try) for more details.
+
 Some rich responses that you add to a dialog are displayed differently within the "Try it out" pane from how they are displayed to Zendesk users. The table below describes how the response types are treated by Zendesk.
 
 | Response type | How displayed to Zendesk users  |
@@ -140,7 +146,7 @@ See [Rich responses](/docs/services/assistant?topic=assistant-dialog-overview#mu
 ## Adding a Zendesk integration
 {: #deploy-zendesk-add-zendesk}
 
-1.  From the Assistants tab, click to open the assistant tile that you want to deploy.
+1.  From the Assistants tab in the {{site.data.keyword.conversationshort}} tool, click to open the assistant tile that you want to deploy.
 
 1.  From the Integrations section, click **Add Integration**.
 
@@ -158,17 +164,17 @@ The following sections help you with the setup steps.
 
     You are redirected to the Zendesk site.
 
-    Log in to Zendesk using the assistant's functional email address and password, not your own. You want to establish the connection to a functional ID that is shared by more than one person in your organization.
-     {: important}
+    Log in to Zendesk using the assistant's functional email address and password, not your own. You want to establish the connection to a functional email that can be used by more than one person in your organization.
+    {: important}
 
 1.  Click **Allow** to allow your assistant to access your Zendesk Chat account.
 
-### Setting up a private app
+### Setting up the app
 {: #deploy-zendesk-private-app}
 
-The private app enables your human agents to communicate with your assistant. For example, if the assistant knows an answer, it can suggest the answer to a human agent, who can approve it before it is shared with a visitor.
+An application is provided by the {{site.data.keyword.conversationshort}} service that you can install in Zendesk Chat to enable your human agents to communicate with your assistant. For example, if the assistant knows an answer, it can suggest the answer to a human agent, who can approve it before it is shared with a visitor.
 
-1.  Download the private application.
+1.  Download the private application from the Zendesk Chat integration configuration page in {{site.data.keyword.conversationshort}}.
 
 1.  Copy the app credentials. You will need them in a later step.
 
@@ -192,7 +198,7 @@ To set up routing assignments for escalations from the assistant to a human, com
 
 1.  In the *Settings* section, click **Choose department**.
 
-    Choose a department with human agents who can answer the types of questions that are initially routed to the assistant. Whenever your assistant cannot answer, the chat is routed to this department by default.
+    Choose a department with human agents who can answer the types of questions that are initially routed to the assistant. Whenever your assistant cannot answer, the chat is routed to this department by default. This department will likely be the one you created in the last step of the [One-time setup steps](#deploy-zendesk-account-prereq) procedure that you completed earlier.
 
 1.  If you want to add special assignments to route certain types of questions to specific departments, click **New rule**.
 
@@ -206,7 +212,7 @@ To set up routing assignments for escalations from the assistant to a human, com
 
 1.  To define routing rules for other dialog branches, click **New rule** again, and repeat the previous steps.
 
-    Don't forget to set up an assignment for any root node that has a *Connect to human agent* response type in a child node in its branch, so the assistant can transfer it to a human. If you don't, the assistant will not know that it needs to transfer the conversation and sensitive matters might not be handled properly.
+    Don't forget to set up an assignment for any root node that has a *Connect to human agent* response type in a child node in its branch that needs special handling. If you don't, the assistant will transfer the conversation to the department that you specified as the default department earlier in this procedure. In some cases the default department will be fine. But, for sensitive matters, be sure to route the dialog node to the appropriate department so the matter can be handled promptly and by the right people.
 
 1.  After adding rules, click **Return to overview** to exit the page.
 
@@ -245,7 +251,7 @@ You might want to start incorporating the assistant into the Zendesk support tea
 
       In every case, the human agent decides whether to let the assistant take over.
 
-    For all other dialog nodes, the assistant responds to the user directly, without conferring with any other human agents.
+    For all other dialog nodes, the assistant responds to the user directly, without conferring with any human agents.
 
 1.  To define unique interaction settings for other dialog branches, click **New rule** again, and repeat the previous steps.
 
@@ -253,19 +259,53 @@ You might want to start incorporating the assistant into the Zendesk support tea
 
 As your dialog changes, you will likely return to the Zendesk integration page to make incremental changes to these rules.
 
-### Routing incoming messages to that assistant
-{: #deploy-zendesk-route-to-assistant}
-
-Now that the assistant's dialog is ready to answer user queries, you have set up a department for the assistant and departments for humans working with the assistant, and you have configured how you want specific dialog branches to be handled, you can start to route incoming visitor chats to the assistant.
-
-1.  Create a trigger that routes messages to the department you created for the assistant.
-
-    See [Automatically route chats to departments ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://chat.zendesk.com/hc/en-us/articles/212679657-Automatically-route-chats-to-departments).
-1.  Set up reassignments that will reroute messages that your assistant does not reply to in under 20 seconds to a department monitored by human agents.
-
-    See [Configuring reassignment ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://chat.zendesk.com/hc/en-us/articles/217777918-Setting-up-chat-routing).
-
 ## Testing the integration
 {: #deploy-zendesk-try}
 
-To effectively test your Zendesk integration from end to end, you must have access to an Zendesk Chat application. Submit test user queries through the Zendesk Chat app to see how the messages are handled. Verify that messages that are meant to be answered by the assistant are generating the appropriate responses, and that the assistant is not responding to messages that it is not meant to answer.
+To test the assistant, temporarily route all incoming chats to the assistant's department. Embed your Zendesk Chat widget into a test web page, where you and other team members can submit inquiries. Then, submit test user queries to see how the messages are handled.
+
+1.  Create a trigger that routes all messages to the department you created for the assistant.
+
+    When logged in to Zendesk Support as an administrator, go to the Settings page. Go to Triggers and create a trigger that routes all messages to your assistant's department.
+
+    ![Shows the Zendesk UI Settings page where you can define a trigger that always routes messages to an assistant](images/zendesk-setup-for-testing-trigger-always.png)
+
+    For more details, see [Automatically route chats to departments ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://chat.zendesk.com/hc/en-us/articles/212679657-Automatically-route-chats-to-departments) from the Zendesk documentation.
+
+1.  Create a chat widget to embed in a test web page.
+
+    From Settings, go to the Widget page. Follow the instructions to copy the web widget script and paste it into your test web page.
+
+    ![Shows the web widget script that you copy and paste into a web page to embed the chat.](images/zendesk-embed-chat-widget.png)
+
+    In the script you copy, your subdomain will be referenced in place of `d3v-ibm-test9`.
+
+1.  If there are rich responses in the dialog nodes that Zendesk will access, then you must configure the Zendesk Chat widget to support rich responses.
+
+    From the widget configuration page, enable integrated chat.
+
+    ![Shows the chat widget preferences and that integrated chat is enbaled.](images/zendesk-setup-for-testing-trigger-always.png)
+
+1.  Submit test queries through the chat widget.
+
+    Verify that messages that are meant to be answered by the assistant are generating the appropriate responses, and that the assistant is not responding to messages that it is not meant to answer.
+
+1.  For nodes that are configured with the *Suggest to agent or department* action, step through the workflow that is provided by the private app, in which the assistant suggests a response and waits for a human agent to approve or reject the suggestion.
+
+    If you see **Missing topic** where the node's purpose information should be displayed, then it means that the root node in the branch that was triggered does not have an external node name specified for it. No name makes it harder for the human agent to understand whether the assistant's suggested response is a good one. To address this omission, return to the {{site.data.keyword.conversationshort}} tool. Open the dialog editor and add external node names for any nodes that can be accessed by Zendesk Chat, especially those for which the *Suggest to agent or department* action is configured.
+
+### Routing incoming messages to the assistant
+{: #deploy-zendesk-route-to-assistant}
+
+After you test the integration, and feel confident that the assistant is ready to start answering user queries, you can route incoming visitor chats to the assistant.
+
+1.  Disable the trigger you created earlier that temporarily routes all customer chats to the assistant's department.
+
+1.  Create a new trigger that routes specific types of messages to the department you created for the assistant.
+
+    For more details, see [Automatically route chats to departments ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://chat.zendesk.com/hc/en-us/articles/212679657-Automatically-route-chats-to-departments).
+1.  If you have not done so, set up reassignments that will reroute messages that your assistant does not reply to in under 20 seconds to a department monitored by human agents.
+
+    For more details, see [Configuring reassignment ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://chat.zendesk.com/hc/en-us/articles/217777918-Setting-up-chat-routing).
+
+1.  Embed the chat widget in a production web site to make it available to your customers.

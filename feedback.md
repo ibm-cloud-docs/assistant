@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-07"
+lastupdated: "2019-03-26"
 
 subcollection: assistant
-
 
 ---
 
@@ -50,7 +49,7 @@ To request participation in the beta program, you must first create a new {{site
 
 1.  Create a {{site.data.keyword.conversationshort}} service  resource from the [{{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/watson-assistant) page in the {{site.data.keyword.cloud_notm}} catalog.
 
-    The service instance can be part of a free (Lite) or Standard plan, and must be deployed to the **Dallas** location.
+    The service instance can be part of a free (Lite) or Standard plan, and must be deployed to the **Dallas** location. The service instance must be managed by a resource group, not Cloud Foundry.
 
     Unless you change it, the service instance will be created in the **default** resource group, which is sufficient for the purposes of the beta.
 
