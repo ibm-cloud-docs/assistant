@@ -1,13 +1,18 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-02-16"
+  years: 2015, 2019
+lastupdated: "2019-02-28"
+
+subcollection: assistant
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -23,10 +28,10 @@ lastupdated: "2018-02-16"
 
 Inclua intervalos em um nó de diálogo para reunir várias partes de informações de um usuário dentro desse nó. Os intervalos coletam informações no ritmo dos usuários. Detalhes que o usuário fornece inicialmente são salvos e o serviço pede apenas os detalhes não fornecidos.
 
-<iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/ES4GHcDsSCI?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+<iframe class="embed-responsive-item" id="youtubeplayer" title="Incluindo intervalos em um nó" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/kMLyKfmO9wI?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 ## Por que incluir intervalos?
-{: #why-add-slots}
+{: #dialog-slots-why}
 
 Use intervalos para obter as informações de que precisa antes de poder responder com precisão ao usuário. Por exemplo, se os usuários perguntarem sobre as horas de funcionamento, mas as horas diferirem por localização da loja, você poderá fazer uma pergunta complementar sobre qual local da loja eles planejam visitar antes de responder. Em seguida, será possível incluir condições de resposta que considerem as informações de local fornecidas.
 
@@ -40,50 +45,55 @@ O usuário pode fornecer valores para vários intervalos de uma vez. Por exemplo
 
 ![Mostra que dois intervalos foram preenchidos e o serviço solicita o restante.](images/pass-in-info.png)
 
-Os intervalos tornam possível para o serviço responder às perguntas complementares sem precisar restabelecer o objetivo do usuário. Por exemplo, um usuário pode solicitar uma previsão do tempo, então fazer uma pergunta complementar sobre o clima em outro local ou em um dia diferente. Se você salvar as variáveis de previsão necessárias, como local e dia, em intervalos, se um usuário fizer uma pergunta complementar com novos valores de variáveis, você poderá sobrescrever os valores de intervalo com os novos valores fornecidos, e dar uma resposta que reflita as novas informações. (Para obter mais informações sobre como chamar um serviço externo por meio de um diálogo, veja [Fazendo chamadas programáticas por meio de um nó de diálogo](dialog-actions.html)).
+Os intervalos tornam possível para o serviço responder às perguntas complementares sem precisar restabelecer o objetivo do usuário. Por exemplo, um usuário pode solicitar uma previsão do tempo, então fazer uma pergunta complementar sobre o clima em outro local ou em um dia diferente. Se você salvar as variáveis de previsão necessárias, como local e dia, em intervalos, se um usuário fizer uma pergunta complementar com novos valores de variáveis, você poderá sobrescrever os valores de intervalo com os novos valores fornecidos, e dar uma resposta que reflita as novas informações. (Para obter mais informações sobre como chamar um serviço externo por meio de um diálogo, veja [Fazendo chamadas programáticas por meio de um nó de diálogo](/docs/services/assistant?topic=assistant-dialog-actions)).
 
 ![Mostra alguém solicitando uma previsão do tempo e, em seguida, complementando com uma pergunta sobre o clima para um local ou horário diferente.](images/follow-up.png)
 
 O uso de intervalos produz um fluxo de diálogo mais natural entre o usuário e o serviço e é mais fácil para você gerenciar do que tentar coletar as informações usando muitos nós separados.
 
 ## Incluindo intervalos
-{: #add-slots}
+{: #dialog-slots-add}
 
 1.  Identifique as unidades de informações que deseja coletar. Por exemplo, para pedir uma pizza para alguém, você pode desejar coletar as informações a seguir:
 
     - Horário da entrega
     - Tamanho
 
-1.  Se você não começou a criar um diálogo, siga as instruções em [Criando um diálogo](dialog-build.html) para criar um.
+1.  Se você não começou a criar um diálogo, siga as instruções em [Criando um diálogo](/docs/services/assistant?topic=assistant-dialog-build) para criar um.
 
 1.  Na visualização de edição do nó de diálogo, clique em **Customizar** e, em seguida, clique na alternância próxima a **Intervalos** para **Ativar**.
 
-    **Nota**: para obter mais informações sobre a caixa de seleção **Solicitar tudo**, veja [Perguntando tudo de uma vez](dialog-slots.html#slots-prompt-for-everything).
+    Para obter mais informações sobre a caixa de seleção **Solicitar tudo**, consulte [Solicitando tudo de uma vez](#dialog-slots-prompt-for-everything).
 
 1.  **Inclua um intervalo para cada unidade de informações necessárias**. Para cada intervalo, especifique estes detalhes:
 
     - **Verificar**: identifique o tipo de informações que deseja extrair da resposta do usuário para o prompt do intervalo. Na maioria dos casos, você verifica os valores de entidade. Na verdade, o construtor de condição que é exibido sugere entidades que você pode procurar. No entanto, também é possível verificar uma intenção; apenas digite o nome da intenção no campo. É possível usar os operadores AND e OR aqui para definir condições mais complexas.
 
-      **Importante**: o valor em *Verificar* é usado primeiro como uma condição, mas depois torna-se o valor da variável de contexto que você nomeia no campo *Salvar como*. Se você deseja mudar como o valor é salvo, reformate-o, por exemplo, inclua a expressão que formata o valor diretamente no campo **Verificar**.
+      O valor *Verificar* é usado primeiro como uma condição, mas depois se torna o valor da variável de contexto que você nomeia no campo *Salvar como*. Ele especifica **o que verificar** e **o que salvar**. Se você desejar mudar como o valor é salvo, inclua a expressão que reformata o valor para o campo *Verificar*.
+      {: important}
 
-      Por exemplo, se há padrões de expressão regular definidos para a entidade, depois de incluir o nome da entidade, anexe `.literal` a ele. Depois de escolher `@email` na lista de entidades definidas, por exemplo, edite o campo **Verificar** para conter `@email.literal`. Incluindo a propriedade `.literal`, você indica que deseja capturar o texto exato que foi inserido pelo usuário e foi identificado como um endereço de e-mail com base em seu padrão. Faça essa mudança de sintaxe diretamente no campo **Verificar**.
+      Por exemplo, se a entidade for uma entidade padrão, tal como `@email`, depois de incluir o nome da entidade, anexe `.literal` a ele. A inclusão de `.literal` indica que você deseja capturar o texto exato que foi inserido pelo usuário e foi identificado como um endereço de e-mail com base em seu padrão.
 
-      **Aviso** se você deseja aplicar uma expressão complexa ao valor antes de salvá-lo, é possível abrir o editor JSON para definir a expressão SpEL complexa. No entanto, a expressão complexa definida no editor JSON não é refletida no campo **Verificar** quando você sai do editor JSON. E se você clica no campo **Verificar** para dar o foco a ele a qualquer momento depois de definir a expressão complexa, a expressão é removida.
+      Em alguns casos, você pode desejar usar uma expressão para capturar o valor, mas não aplicar a expressão ao que está salvo. Nesses casos, é possível usar um valor no campo *Verificar* para capturar o valor e, em seguida, abrir o editor JSON para mudar o valor da variável de contexto, assim ele salva algo mais. Consulte [Tratar zeros adequadamente](/docs/services/assistant?topic=assistant-tutorial-slots-complex#tutorial-slots-complex-recognize-zero) para obter um exemplo.
 
-      Evite verificar os valores das variáveis de contexto. Como o valor que você verifica também é o valor salvo, ao usar uma variável de contexto na condição, isso pode levar a um comportamento inesperado quando ela é usada no contexto. Não tente usar um intervalo opcional para exibir uma resposta somente se uma dada variável de contexto estiver configurada. Se a variável estiver configurada, a resposta Localizado do intervalo que você definir para o intervalo opcional será exibida juntamente com a resposta retornada por todos os outros intervalos, repetidamente.
-      {: tip}
+      Qualquer edição que for feita no valor da variável de contexto de um intervalo no editor JSON não será refletida no campo **Verificar** quando você sair do editor JSON. E, se você clicar no campo **Verificar** para focar o campo a qualquer momento depois de usar o editor JSON para editar o valor, a mudança feita será perdida.
+      {: important}
 
-    - **Salvar como**: forneça um nome para a variável de contexto na qual armazenar o valor de interesse da resposta do usuário no prompt do intervalo. Não especifique uma variável de contexto que foi usada anteriormente no diálogo e, portanto, pode ter um valor. Somente quando a variável de contexto para o intervalo é nula que o prompt para o intervalo é exibido.
+      Evite verificar os valores das variáveis de contexto no campo *Verificar*. Como o valor verificado é também o valor que é salvo, o uso de uma variável de contexto na condição pode levar a um comportamento inesperado.
+
+    - **Salvar como**: forneça um nome para a variável de contexto na qual armazenar o valor de interesse da resposta do usuário no prompt do intervalo.
+
+       Não reutilize uma variável de contexto que é usada em outro lugar no diálogo. Se a variável de contexto já tiver um valor, o prompt do intervalo não será exibido. Somente quando a variável de contexto para o intervalo é nula que o prompt para o intervalo é exibido.
 
     - **Prompt**: grave uma instrução que extraia a parte das informações que você precisa do usuário. Após exibir esse prompt, a conversa pausa e o serviço aguarda o usuário responder.
 
-    - Se você deseja que diferentes instruções de acompanhamento sejam mostradas com base em se o usuário fornece as informações necessárias em resposta ao prompt do intervalo inicial, é possível editar o intervalo (clicando no ícone **Editar intervalo** ![Editar intervalo](images/edit-slot.png)) e defini-las:
+    - Se você desejar que diferentes instruções de acompanhamento sejam mostradas com base no fato de o usuário fornecer as informações necessárias em resposta ao prompt de intervalo inicial, será possível editar o intervalo (clicando no ícone **Editar intervalo** ![Editar intervalo](images/edit-slot.png)) e definir as instruções de acompanhamento:
 
       - **Localizado**: exibido após o usuário fornecer as informações esperadas.
 
       - **Não localizado**: exibido se as informações fornecidas pelo usuário não são compreendidas ou não são fornecidas no formato esperado. Se o intervalo é preenchido com êxito ou a entrada do usuário é compreendida e manipulada por um manipulador de intervalo, essa instrução nunca é exibida.
 
-      Para obter informações sobre como definir condições e ações associadas para respostas Localizado e Não localizado, veja [Incluindo condições em respostas Localizado e Não localizado](dialog-slots.html#slot-handler-next-steps).
+      Para obter informações sobre como definir condições e ações associadas para respostas Localizado e Não localizado, veja [Incluindo condições em respostas Localizado e Não localizado](#dialog-slots-handler-next-steps).
 
     Esta tabela mostra valores de intervalo de exemplo para um nó que ajuda os usuários a fazerem um pedido de pizza coletando duas informações, o tamanho da pizza e o horário da entrega.
 
@@ -135,7 +145,7 @@ O uso de intervalos produz um fluxo de diálogo mais natural entre o usuário e 
 
     - **Condicional**: se você deseja que um intervalo seja ativado apenas sob determinadas condições, é possível incluir uma condição para isso. Por exemplo, se o intervalo 1 pede um horário de início de reunião, o intervalo 2 captura a duração da reunião e o intervalo 3 captura o horário de encerramento, você pode desejar ativar o intervalo 3 (e pedir o horário de encerramento de reunião) somente se um valor para o intervalo 2 não é fornecido. Para tornar um intervalo condicional, edite o intervalo e, em seguida, no menu **Mais** ![Ícone Mais](images/kabob.png), selecione **Ativar condição**. Defina a condição que deve ser atendida para que o intervalo seja ativado.
 
-      É possível condicionar no valor de uma variável de contexto de um intervalo anterior porque a ordem na qual os intervalos são listados é a ordem na qual eles são avaliados. No entanto, condicione somente em um valor da variável de contexto de intervalo que você possa estar certo de que existirá quando esse intervalo for avaliado. Certifique-se de que o intervalo anterior seja necessário, por exemplo.
+      É possível condicionar o valor de uma variável de contexto de um intervalo anterior porque a ordem na qual os intervalos são listados é a ordem na qual eles são avaliados. No entanto, somente a condição em uma variável de contexto de intervalo confiável conterá um valor quando esse intervalo for avaliado. O intervalo anterior deve ser um intervalo necessário, por exemplo.
     {: tip}
 1.  **Mantenha os usuários no trilho**. É possível opcionalmente definir manipuladores de intervalo que fornecem respostas às perguntas que os usuários podem fazer durante a interação que são tangenciais ao propósito do nó.
 
@@ -145,47 +155,48 @@ O uso de intervalos produz um fluxo de diálogo mais natural entre o usuário e 
 
     Depois de responder à pergunta fora do tópico, o prompt associado ao intervalo vazio atual é exibido.
 
-    Essa condição é acionada se o usuário fornece entrada que corresponde às condições do manipulador de intervalo a qualquer momento durante o fluxo do nó de diálogo até que a resposta no nível do nó seja exibida. Veja [Manipulando solicitações para sair de um processo](dialog-slots.html#slots-node-level-handler) para obter mais maneiras de usar o manipulador de intervalo.
+    Essa condição é acionada se o usuário fornece entrada que corresponde às condições do manipulador de intervalo a qualquer momento durante o fluxo do nó de diálogo até que a resposta no nível do nó seja exibida. Veja [Manipulando solicitações para sair de um processo](#dialog-slots-node-level-handler) para obter mais maneiras de usar o manipulador de intervalo.
 1.  **Incluir uma resposta no nível do nó**. A resposta no nível do nó não é executada até que todos os intervalos necessários sejam preenchidos. É possível incluir uma resposta que resuma as informações que você coletou. Por exemplo, `A $size pizza is scheduled for delivery at $time. Enjoy!`
 
-    Se você deseja definir respostas diferentes com base em determinadas condições, clique em **Customizar** e, em seguida, clique na alternância **Múltiplas respostas** para **Ativar**. Para obter informações sobre respostas condicionais, veja [Respostas condicionais](dialog-overview.html#multiple).
+    Se você deseja definir respostas diferentes com base em determinadas condições, clique em **Customizar** e, em seguida, clique na alternância **Múltiplas respostas** para **Ativar**. Para obter informações sobre respostas condicionais, veja [Respostas condicionais](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multiple).
 1.  **Incluir lógica que reconfigura as variáveis de contexto do intervalo**. À medida que você coleta respostas do usuário por intervalo, elas são salvas em variáveis de contexto. É possível usar as variáveis de contexto para passar as informações para outro nó ou para um aplicativo ou serviço externo para uso. No entanto, após passar as informações, deve-se configurar as variáveis de contexto para nulo para reconfigurar o nó para que ele possa começar a coletar informações novamente. Não é possível anular as variáveis de contexto dentro do nó atual porque o serviço não sairá do nó até que os intervalos necessários sejam preenchidos. Em vez disso, considere usar um dos métodos a seguir:
 
     - Inclua processamento para o aplicativo externo que anule as variáveis.
     - Inclua um nó filho que anule as variáveis.
     - Insira um nó pai que anule as variáveis e, em seguida, vá para o nó com os intervalos.
 
-Experimente! Siga o [tutorial](tutorial-slots.html) passo a passo.
+Experimente! Siga o [tutorial](/docs/services/assistant?topic=assistant-tutorial-slots) passo a passo.
 
 ## Dicas de uso de intervalo
-{: #slots-tips}
+{: #dialog-slots-tips}
 
 As propriedades de intervalo a seguir podem ajudá-lo a verificar e configurar os valores das variáveis de contexto de intervalo.
 
 | Nome da propriedade          | Descrição |
 |------------------------|-------------|
-| `all_slots_filled`     | Avalia como true somente se todas as variáveis de contexto para todos os intervalos no nó foram configuradas. Veja [Evitando que uma resposta Localizado seja exibida quando ela não é necessária](dialog-slots.html#slots-stifle-found-responses) para um exemplo de uso. |
-| `event.current_value`  | O valor atual da variável de contexto para esse intervalo. Veja [Substituindo um valor da variável de contexto de intervalo](dialog-slots.html#slots-found-handler-event-properties) para um exemplo de uso para essa propriedade e a propriedade event.previous_value. |
+| `all_slots_filled`     | Avalia como true somente se todas as variáveis de contexto para todos os intervalos no nó foram configuradas. Veja [Evitando que uma resposta Localizado seja exibida quando ela não é necessária](#dialog-slots-stifle-found-responses) para um exemplo de uso. |
+| `event.current_value`  | O valor atual da variável de contexto para esse intervalo. Veja [Substituindo um valor da variável de contexto de intervalo](#dialog-slots-found-handler-event-properties) para um exemplo de uso para essa propriedade e a propriedade event.previous_value. |
 | `event.previous_value` | O valor anterior da variável de contexto para esse intervalo. |
-| `has_skipped_slots`    | True se algum dos intervalos ou manipuladores de intervalo configurados com uma opção de próxima etapa que ignora intervalos foi processado. Veja [Incluindo condições em respostas Localizado e Não localizado](dialog-slots.html#slot-handler-next-steps) para obter mais informações sobre opções de próxima etapa para intervalos e [Manipulando solicitações para sair de um processo](dialog-slots.html#slots-node-level-handler) para obter informações sobre as próximas opções de etapa para manipuladores de intervalo. |
-| `slot_in_focus`        | Força a condição do intervalo ser aplicada somente ao intervalo atual. Veja [Obtendo confirmação](dialog-slots.html#slots-get-confirmation) para obter mais detalhes. |
+| `has_skipped_slots`    | True se algum dos intervalos ou manipuladores de intervalo configurados com uma opção de próxima etapa que ignora intervalos foi processado. Veja [Incluindo condições em respostas Localizado e Não localizado](#slot-handler-next-steps) para obter mais informações sobre opções de próxima etapa para intervalos e [Manipulando solicitações para sair de um processo](#dialog-slots-node-level-handler) para obter informações sobre as próximas opções de etapa para manipuladores de intervalo. |
+| `slot_in_focus`        | Força a condição do intervalo ser aplicada somente ao intervalo atual. Veja [Obtendo confirmação](#dialog-slots-get-confirmation) para obter mais detalhes. |
 {: caption="Propriedades de intervalo" caption-side="top"}
 
 Considere usar essas abordagens para manipular tarefas comuns.
 
-- [Pedindo tudo de uma vez](dialog-slots.html#slots-prompt-for-everything)
-- [Capturando diversos valores](dialog-slots.html#slots-multiple-entity-values)
-- [Reformatando valores](dialog-slots.html#slots-reformat-values)
-- [Obtendo confirmação](dialog-slots.html#slots-get-confirmation)
-- [Substituindo um valor de variável de contexto do intervalo](dialog-slots.html#slots-found-handler-event-properties)
-- [Evitar confusão de números](dialog-slots.html#slots-avoid-number-confusion)
-- [Incluindo condições para respostas Localizado e Não Localizado](dialog-slots.html#slot-handler-next-steps)
-- [Movendo-se após múltiplas tentativas com falha](dialog-slots.html#slots-stop-trying-after-3)
-- [Evitando que uma resposta Found seja exibida quando ela não é necessária](dialog-slots.html#slots-stifle-found-responses)
-- [Manipulando solicitações para sair de um processo](dialog-slots.html#slots-node-level-handler)
+- [Pedindo tudo de uma vez](#dialog-slots-prompt-for-everything)
+- [Capturando diversos valores](#dialog-slots-multiple-entity-values)
+- [Reformatando valores](#dialog-slots-reformat-values)
+- [ Traficando com zeros ](#dialog-slots-zero)
+- [Obtendo confirmação](#dialog-slots-get-confirmation)
+- [Substituindo um valor de variável de contexto do intervalo](#dialog-slots-found-handler-event-properties)
+- [Evitar confusão de números](#dialog-slots-avoid-number-confusion)
+- [Incluindo condições para respostas Localizado e Não Localizado](#dialog-slots-handler-next-steps)
+- [Movendo-se após múltiplas tentativas com falha](#dialog-slots-stop-trying-after-3)
+- [Evitando que uma resposta Found seja exibida quando ela não é necessária](#dialog-slots-stifle-found-responses)
+- [Manipulando solicitações para sair de um processo](#dialog-slots-node-level-handler)
 
 ### Pedindo tudo de uma vez
-{: #slots-prompt-for-everything}
+{: #dialog-slots-prompt-for-everything}
 
 Inclua um prompt inicial para o nó inteiro que informe claramente aos usuários quais unidades de informações você deseja que eles forneçam. Exibir esse prompt primeiro dá aos usuários a oportunidade de fornecer todos os detalhes de uma vez e de não precisar esperar a solicitação de cada parte da informação uma de cada vez.
 
@@ -196,7 +207,7 @@ Se o usuário fornecer uma parte dessas informações em seu pedido inicial, o p
 Na área de janela Customizar na qual você ativou o recurso Intervalos, selecione a caixa de seleção **Solicitar tudo** para ativar o prompt inicial. Essa configuração inclui o campo **Se nenhum intervalo foi preenchido previamente, solicitar isso primeiro** no nó, em que é possível especificar o texto que solicita tudo ao usuário.
 
 ### Capturando diversos valores
-{: #slots-multiple-entity-values}
+{: #dialog-slots-multiple-entity-values}
 
 É possível solicitar uma lista de itens e salvá-los em um intervalo.
 
@@ -223,7 +234,7 @@ Por exemplo, você pode desejar perguntar aos usuários se eles querem cobertura
 Para referenciar as coberturas especificadas pelo usuário mais tarde, use a sintaxe `<? $entity-name.join(',') ?>` para listar cada item na matriz de coberturas e separar os valores com uma vírgula. Por exemplo, `I am ordering you a $size pizza with <? $toppings.join(',') ?> for delivery by $time.`
 
 ### Reformatando valores
-{: #slots-reformat-values}
+{: #dialog-slots-reformat-values}
 
 Como você está pedindo informações do usuário e precisa referenciar suas entradas nas respostas, considere reformatar os valores para que possa exibi-los em um formato mais amigável.
 
@@ -238,10 +249,33 @@ Por exemplo, os valores de horário são salvos no formato `hh:mm:ss`. É possí
 ```
 {: codeblock}
 
-Consulte [Métodos para processar valores](dialog-methods.html) para obter outras ideias de reformatação.
+Consulte [Métodos de linguagem de expressão](/docs/services/assistant?topic=assistant-dialog-methods) para outras ideias de reformatação.
+
+### Lidando com zeros
+{: #dialog-slots-zero}
+
+O uso de `@sys-number` em uma condição do intervalo é útil para capturar quaisquer números que os usuários especificam em suas entradas. No entanto, ele não se comporta conforme esperado quando os usuários especificam o número zero (0). Em vez de tratar zero como um número válido, a condição é avaliada como false e o serviço solicita um número novamente ao usuário. Para evitar esse comportamento, verifique `@sys-number` ou `@sys-number:0` na condição do intervalo.
+
+Para assegurar que uma condição do intervalo que verifica menções de número lide com zeros adequadamente, conclua as etapas a seguir:
+
+1.  Inclua `@sys-number || @sys-number:0` no campo de condição do intervalo e, em seguida, forneça o nome de variável de contexto e o prompt de texto.
+1.  Clique no ícone **Editar resposta** ![Editar resposta](images/edit-slot.png).
+1.  Clique no menu **Mais** ![Ícone Mais](images/kabob.png) e, em seguida, selecione **Abrir editor JSON**.
+1.  Atualize a variável de contexto que tem agora a sintaxe `"number":"@sys-number || @sys-number:0"` para especificar somente `@sys-number`.
+
+    ```json
+    {
+      "context":{
+        "number":"@sys-number"
+      }
+    }
+    ```
+    {: codeblock}
+
+Se você não desejar aceitar um zero como o valor numérico, será possível incluir uma resposta condicional para o intervalo para verificar um zero e informar ao usuário que ele deve fornecer um número maior que zero. Mas, é importante que a condição do intervalo seja capaz de reconhecer um zero quando ele é fornecido como entrada.
 
 ### Obtendo confirmação
-{: #slots-get-confirmation}
+{: #dialog-slots-get-confirmation}
 
 Inclua um intervalo após os outros que peça ao usuário para confirmar que as informações coletadas estão precisas e completas. O intervalo pode procurar respostas que correspondam à intenção #yes ou #no.
 
@@ -310,7 +344,7 @@ No prompt **Localizado**, inclua uma condição que verifique uma resposta Não 
 {: codeblock}
 
 ### Substituindo um valor de variável de contexto do intervalo
-{: #slots-found-handler-event-properties}
+{: #dialog-slots-found-handler-event-properties}
 
 Se, a qualquer momento antes de o usuário sair de um nó com intervalos, o usuário fornecer um novo valor para um intervalo, o novo valor será salvo na variável de contexto do intervalo, substituindo o valor especificado anteriormente. Seu diálogo pode reconhecer explicitamente que essa substituição ocorreu usando propriedades especiais que são definidas para a condição Localizado:
 
@@ -333,7 +367,7 @@ Response: Ok, destination is $destination.
 Essa configuração do intervalo permite que seu diálogo reaja à mudança do usuário no destino dizendo: `Ok, updating the destination from Paris to Madrid.`
 
 ### Evitar confusão de números
-{: #slots-avoid-number-confusion}
+{: #dialog-slots-avoid-number-confusion}
 
 Alguns valores que são fornecidos pelos usuários podem ser identificados como mais de um tipo de entidade.
 
@@ -341,11 +375,13 @@ Alguns valores que são fornecidos pelos usuários podem ser identificados como 
 
 Além disso, o serviço pode reconhecer vários tipos de entidade em uma única entrada do usuário. Por exemplo, quando um usuário fornece uma moeda, ela é reconhecida como um tipo de entidade @sys-currency e @sys-number. Faça um teste na área de janela *Experimente* para entender como o sistema interpretará diferentes entradas do usuário e construa a lógica em suas condições para evitar possíveis interpretações errôneas.
 
-Na lógica que é exclusiva para o recurso de intervalos, quando duas entidades são reconhecidas em uma única entrada do usuário, aquela com a maior extensão é usada. Por exemplo, se o usuário insere *2 de maio*, embora o serviço {{site.data.keyword.conversationshort}} reconheça ambas as entidades @sys-date (05022017) e @sys-number (2) no texto, somente a entidade com o maior período (@sys-date) é registrada e aplicada a um intervalo.
+Na lógica que é exclusiva para o recurso de intervalos, quando duas entidades do sistema são reconhecidas em uma única entrada do usuário, aquela com o período maior é usada. Por exemplo, se o usuário inserir *2 de maio*, mesmo que o serviço {{site.data.keyword.conversationshort}} reconheça as entidades @sys-date (05022017) e @sys-number (2) no texto, somente a entidade do sistema com o período mais longo (@sys-date) será registrada e aplicada a um intervalo.
 {: tip}
 
+Para cada entidade que é reconhecida na entrada do usuário, somente um intervalo pode ser preenchido. Portanto, se você tiver dois intervalos que estejam procurando valores semelhantes, posicione-os de forma que o intervalo que captura a sequência mais longa esteja acima do intervalo que captura a sequência mais curta. Por exemplo, se um intervalo capturar um ID do produto (`@id`) com uma sintaxe como `GR1234` e outro intervalo capturar um número (`@number`), como `1234`, coloque o intervalo que captura o ID acima do intervalo que captura o número. Caso contrário, quando a entrada do usuário contiver um ID, como `BR3344`, o intervalo `@number` poderá solicitar isso como uma referência de número e preencher a variável de contexto `$number` com `3344`. No entanto, o valor será mais provavelmente uma referência de ID do produto que deve ser salva na variável de contexto `$id` do intervalo `@id` como `BR3344`.
+
 ### Incluindo condições em respostas Localizado e Não localizado
-{: #slot-handler-next-steps}
+{: #dialog-slots-handler-next-steps}
 
 Para cada intervalo, é possível usar respostas condicionais com ações associadas para ajudar você a extrair as informações necessárias do usuário. Para fazer isso, siga estas etapas:
 
@@ -362,8 +398,8 @@ Para cada intervalo, é possível usar respostas condicionais com ações associ
     Para respostas Localizado (que são exibidas quando o usuário fornece um valor que corresponde ao tipo de valor especificado no campo Verificar), é possível escolher uma destas ações para executar em seguida:
 
       - **Mover-se (padrão)**: instrui o serviço a mover-se para o próximo intervalo vazio depois de exibir a resposta. Na resposta associada, assegure ao usuário que sua entrada foi compreendida. Por exemplo, *Ok. Você deseja planejar isso para $date.*
-      - **Limpar intervalo e solicitar novamente**: se você está usando uma entidade no campo *Verificar* que possa escolher o valor errado, inclua condições que capturem qualquer provável interpretação errônea e use essa ação para limpar o valor do intervalo atual e solicitar o valor correto.
-      - **Ignorar para resposta**: se não for mais necessário preencher qualquer um dos intervalos restantes neste nó quando a condição que você definir for atendida, escolha essa ação para ignorar os intervalos restantes e vá diretamente para a próxima resposta no nível do nó. Por exemplo, você poderia incluir uma condição que verifica se a idade do usuário é abaixo de 16. Se sim, você pode ignorar os intervalos restantes que fazem perguntas sobre registro de condução do usuário.
+      - **Limpar intervalo e solicitar novamente**: se você está usando uma entidade no campo *Verificar* que possa assimilar o valor errado, inclua condições que capturem qualquer provável interpretação errônea e use essa ação para limpar o valor do intervalo atual e solicitar o valor correto.
+      - **Ir para resposta**: se não for mais necessário preencher qualquer um dos intervalos restantes neste nó quando a condição que você definir for atendida, escolha essa ação para ignorar os intervalos restantes e ir diretamente para a resposta no nível do nó em seguida. Por exemplo, você poderia incluir uma condição que verifica se a idade do usuário é abaixo de 16. Se sim, você pode ignorar os intervalos restantes que fazem perguntas sobre registro de condução do usuário.
 
     Para respostas Não localizado (que são exibidas quando o usuário não fornece um valor válido), é possível escolher uma destas ações para executar:
 
@@ -384,21 +420,22 @@ Para cada intervalo, é possível usar respostas condicionais com ações associ
 1.  Clique em **Salvar** para salvar suas mudanças, fechar a visualização de edição do intervalo e retornar à visualização de edição do nó.
 
 ### Movendo-se após múltiplas tentativas com falha
-{: #slots-stop-trying-after-3}
+{: #dialog-slots-stop-trying-after-3}
 
 É possível fornecer aos usuários uma maneira de sair de um intervalo se eles não podem responder a ele corretamente depois de várias tentativas usando respostas condicionais Não localizado. Na resposta catchall, abra o editor JSON para incluir uma variável de contexto de contador que acompanhará o número de vezes que a resposta Não localizado for retornada. Em um nó anterior, certifique-se de configurar o valor da variável de contexto de contador inicial para 0.
 
-Neste exemplo, o serviço pergunta o tamanho da pizza. Isso permite que o usuário responda incorretamente 3 vezes antes de aplicar um tamanho (médio) à variável. (É possível incluir um intervalo de confirmação em que os usuários podem sempre corrigir o tamanho quando eles são perguntados para confirmar as informações do pedido.)
+Neste exemplo, o serviço pergunta o tamanho da pizza. Ele permite que o usuário responda à pergunta incorretamente 3 vezes antes de aplicar um tamanho (médio) à variável para o usuário. (É possível incluir um intervalo de confirmação em que os usuários podem sempre corrigir o tamanho quando eles são perguntados para confirmar as informações do pedido.)
+
+Verificar: @size
+Salvar como: $size
+Condição de depósito não localizado:
 
 ```json
-Check for: @size
-Save as: $size
-Catchall Not found condition:
 {
   "output": {
     "text": {
       "values": [
-        "Qual tamanho você quer? Temos pequeno, médio e grande."
+        "What size did you want? We have small, medium, and large."
       ],
       "selection_policy": "sequential"
     }
@@ -426,10 +463,10 @@ Para responder de forma diferente após 3 tentativas, inclua outra condição N�
   ```
   {: codeblock}
 
-Essa condição é mais precisa do que a condição verdadeira da resposta catchall, então deve-se mover essa resposta para que venha antes da resposta condicional original ou ela nunca será acionada. Selecione a resposta condicional e use a seta para cima para movê-la para cima.
+Essa condição Não localizado é mais precisa do que a condição Depósito não localizado, que é padronizada para `true`. Portanto, deve-se mover essa resposta para que ela venha antes da resposta condicional original ou ela nunca será acionada. Selecione a resposta condicional e use a seta para cima para movê-la para cima.
 
 ### Evitando que uma resposta Found seja exibida quando ela não é necessária
-{: #slots-stifle-found-responses}
+{: #dialog-slots-stifle-found-responses}
 
 Se você especificar respostas Found para múltiplos intervalos, se um usuário fornecer valores para múltiplos intervalos de uma vez, a resposta Found para pelo menos um dos intervalos será exibida. Você provavelmente deseja que a resposta Found para todos eles ou nenhum deles seja retornada.
 
@@ -439,11 +476,11 @@ Para evitar que as respostas Found sejam exibidas, é possível executar um dos 
 - Inclua a condição `!all_slots_filled` na resposta. Essa configuração evita que a resposta seja exibida se todos os intervalos forem preenchidos. Não use essa abordagem se você estiver incluindo um intervalo de confirmação. O intervalo de confirmação também é um intervalo e você geralmente deseja evitar que respostas Found sejam exibidas antes do próprio intervalo de confirmação ser preenchido.
 
 ### Manipulando solicitações para sair de um processo
-{: #slots-node-level-handler}
+{: #dialog-slots-node-level-handler}
 
 Inclua pelo menos um manipulador de intervalo que possa reconhecer quando um usuário deseja sair do nó.
 
-Por exemplo, em um nó que coleta informações para planejar um compromisso de banho de animal de estimação, é possível incluir um manipulador de intervalo que condicione na intenção #cancel, que reconheça elocuções como: <q>Esqueça. Eu mudei de ideia.</q>
+Por exemplo, em um nó que coleta informações para planejar um compromisso de banho e tosa de animais de estimação, é possível incluir um manipulador que condicione na intenção #cancel, que reconheça elocuções como <q>Esqueça. Eu mudei de ideia.</q>
 
 1.  No editor JSON para o manipulador, preencha todas as variáveis de contexto do intervalo com valores simulados para evitar que o nó continue pedindo alguma que esteja ausente. E na resposta do manipulador, inclua uma mensagem como `Ok, we´ll stop there. No appointment will be scheduled.`
 1.  Escolha qual ação você deseja que o serviço tome em seguida dentre as opções a seguir:
@@ -454,7 +491,7 @@ Por exemplo, em um nó que coleta informações para planejar um compromisso de 
 
 1.  Na resposta no nível do nó, inclua uma condição que verifique se há um valor simulado em uma das variáveis de contexto do intervalo. Se localizado, mostre uma mensagem final como `If you decide to make an appointment later, I'm here to help.` Se não localizado, ele exibe a mensagem de resumo padrão para o nó, como `I am making a grooming appointment for your $animal at $time on $date.`
 
-Aqui está uma amostra de JSON que define um manipulador de intervalo para o exemplo de pizza. Observe que, conforme descrito anteriormente, as variáveis de contexto estão sendo configuradas com valores simulados. Na verdade, a variável de contexto `$size` está sendo configurada para `dummy`. Esse valor $size aciona a resposta no nível do nó para mostrar a mensagem apropriada e sair do nó de intervalos.
+Aqui está uma amostra de JSON que define um manipulador para o exemplo de pizza. Observe que, conforme descrito anteriormente, as variáveis de contexto estão sendo configuradas com valores simulados. Na verdade, a variável de contexto `$size` está sendo configurada para `dummy`. Esse valor $size aciona a resposta no nível do nó para mostrar a mensagem apropriada e sair do nó de intervalos.
 
 ```json
 {
@@ -476,11 +513,13 @@ Aqui está uma amostra de JSON que define um manipulador de intervalo para o exe
 ```
 {: codeblock}
 
-**Importante**: leve em conta a lógica usada em condições que são avaliadas antes desta para que seja possível construir condições distintas nelas. Quando uma entrada do usuário é recebida, as condições são avaliadas na ordem a seguir:
+**Importante**: leve em consideração a lógica usada em condições que são avaliadas antes dessa condição para que seja possível construir condições distintas. Quando uma entrada do usuário é recebida, as condições são avaliadas na ordem a seguir:
 
 - Condições Localizado de nível de intervalo atual.
 - Manipuladores de intervalo na ordem em que estão listados.
+- Se as digressões fora forem permitidas, as condições do nó de nível raiz serão verificadas para uma correspondência (exceto o nó final `anything else` na raiz da árvore de diálogo ou em uma pasta raiz).
 - Condições Não localizado de nível de intervalo atual.
+- Condição final de  ` qualquer outra coisa `  nó do nó.
 
 Tenha cuidado com a inclusão de condições que sempre são avaliadas como true (como as condições especiais, `true` ou `anything_else`) como manipuladores de intervalo. Por intervalo, se o manipulador de intervalo é avaliado como true, a condição Não localizado é completamente ignorada. Portanto, usar um manipulador de intervalo que sempre é avaliado como true evita efetivamente que a condição Não localizado seja avaliada para cada intervalo.
 {: tip}
@@ -532,7 +571,8 @@ No editor JSON para a condição Found, reconfigure o valor da variável de cont
 {: codeblock}
 
 ## Exemplos de intervalos
+{: #dialog-slots-examples}
 
-Para acessar arquivos JSON que implementam diferentes cenários de uso de intervalo comum, acesse a comunidade [repositório de conversa ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/watson-developer-cloud/community/tree/master/conversation){: new_window} no GitHub.
+Para acessar arquivos JSON que implementam diferentes cenários de uso de intervalo comum, acesse a comunidade [repositório de conversa ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/watson-developer-cloud/community/tree/master/watson-assistant){: new_window} no GitHub.
 
-Para explorar um exemplo, faça download de um dos arquivos JSON de exemplo e, em seguida, importe-o como uma nova área de trabalho. Na guia Diálogo, é possível revisar os nós de diálogo para ver como os intervalos foram implementados para direcionar diferentes casos de uso.
+Para explorar um exemplo, faça download de um dos arquivos JSON de exemplo e, em seguida, importe-o como uma nova qualificação de diálogo. Na guia Diálogo, é possível revisar os nós de diálogo para ver como os intervalos foram implementados para direcionar diferentes casos de uso.

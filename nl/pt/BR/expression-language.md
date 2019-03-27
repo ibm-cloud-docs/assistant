@@ -1,13 +1,18 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-02-16"
+  years: 2015, 2019
+lastupdated: "2019-02-21"
+
+subcollection: assistant
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -18,11 +23,13 @@ lastupdated: "2018-02-16"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Expressões para acessar objetos
+{: #expression-language}
 
 É possível escrever expressões que acessam objetos e propriedades de objetos usando a linguagem Spring Expression (SpEL). Para obter mais informações, veja [Spring Expression Language (SpEL) ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/expressions.html){: new_window}.
 {: shortdesc}
 
 ## Sintaxe de avaliação
+{: #expression-language-long-syntax}
 
 Para expandir os valores de variáveis dentro de outras variáveis ou chamar métodos em propriedades e objetos globais, use a sintaxe de expressão `<? expression ?>`. Por exemplo:
 
@@ -33,20 +40,20 @@ Para expandir os valores de variáveis dentro de outras variáveis ou chamar mé
     - `"context":{"email": "<? @email.literal ?>"}`
 
 ## Sintaxe de abreviação
-{: #shorthand-syntax}
+{: #expression-language-shorthand-syntax}
 
 Saiba como referenciar rapidamente os objetos a seguir usando a sintaxe abreviada de SpEL:
 
-- [Variáveis de contexto](expression-language.html#shorthand-context)
-- [Entidades](expression-language.html#shorthand-entities)
-- [Intenções](expression-language.html#shorthand-intents)
+- [Variáveis de contexto](#expression-language-shorthand-context)
+- [Entidades ](#expression-language-shorthand-entities)
+- [Intents](#expression-language-shorthand-intents)
 
 ### Sintaxe abreviada para variáveis de contexto
-{: #shorthand-context}
+{: #expression-language-shorthand-context}
 
 A tabela a seguir mostra exemplos da sintaxe abreviada que você pode utilizar para gravar variáveis de contexto em expressões de condição.
 
-| Sintaxe de abreviação           | Sintaxe integral em SpEL                     |
+| Sintaxe de abreviação           | Sintaxe completa em SpEL                     |
 |----------------------------|-----------------------------------------|
 | `$card_type`               | `context['card_type']`                  |
 | `$(card-type)`             | `context['card-type']`                  |
@@ -60,7 +67,7 @@ A tabela a seguir mostra exemplos da sintaxe abreviada que você pode utilizar p
 - Aspas "
 
 ### Sintaxe abreviada para entidades
-{: #shorthand-entities}
+{: #expression-language-shorthand-entities}
 
 A tabela a seguir mostra exemplos de sintaxe abreviada que podem ser usados ao se referir a entidades.
 
@@ -79,19 +86,36 @@ Se o valor da entidade que você deseja verificar contiver um caractere `)`, nã
 em vez de `@city:(Dublin (Ohio))`.
 
 ### Sintaxe abreviada para intenções
-{: #shorthand-intents}
+{: #expression-language-shorthand-intents}
 
 A tabela a seguir mostra exemplos de sintaxe abreviada que você pode usar ao se referir a intenções.
 
-| Sintaxe de abreviação        | Sintaxe completa em SpEL |
-|-------------------------|---------------------|
-| `#help`                 | `intent == 'help'`  |
-| `! #help`               | `intent != 'help'`  |
-| `NOT #help`             | `intent != 'help'`  |
-| `#help` or `#i_am_lost` | <code>(intent == 'help' \|\| intent == 'I_am_lost')</code> |
+<table>
+  <caption>Sintaxe de Intents Shorthand</caption>
+  <tr>
+    <th>Sintaxe de abreviação</th>
+    <th>Sintaxe integral em SpEL</th>
+  </tr>
+  <tr>
+    <td>`#help`</td>
+    <td>`intent == 'help'`</td>
+  </tr>
+  <tr>
+    <td>`! #help`</td>
+    <td>`intent != 'help'`</td>
+  </tr>
+  <tr>
+    <td>`NOT #help`</td>
+    <td>`intent != 'help'`</td>
+  </tr>
+  <tr>
+    <td>`#help` or `#i_am_lost`</td>
+    <td>`(intent == 'help' || intent == 'I_am_lost')`</td>
+  </tr>
+</table>
 
 ## Variáveis globais integradas
-{: #builtin-vars}
+{: #expression-language-builtin-vars}
 
 É possível usar a linguagem de expressão para extrair informações de propriedade para as variáveis globais a seguir:
 
@@ -104,7 +128,7 @@ A tabela a seguir mostra exemplos de sintaxe abreviada que você pode usar ao se
 | *output*             | Parte de objeto JSON da mensagem de conversa processada. |
 
 ## Acessando entidades
-{: #access-entity}
+{: #expression-language-access-entity}
 
 A matriz de entidades contém uma ou mais entidades que foram reconhecidas na entrada do usuário.
 
@@ -130,17 +154,22 @@ Para a entrada do usuário *Hello now*, o serviço reconhece as entidades de sis
 {: codeblock}
 
 ### Quando o posicionamento de entidades na entrada importa
+{: #expression-language-placement-matters}
 
-Use a expressão SpEL completa se o posicionamento de entidades na entrada importar. A condição `entities['city']?.contains('Boston')` retorna verdadeiro quando pelo menos uma entidade city 'Boston' é encontrada em todas as entidades @city, independentemente do posicionamento.
+Quando você usar a expressão abreviada `@city.contains('Boston')` em uma condição, o nó de diálogo retornará true **somente se** `Boston` for a primeira entidade detectada na entrada do usuário. Use essa sintaxe somente se o posicionamento de entidades na entrada importar e você desejar verificar somente a primeira menção.
 
-Por exemplo, um usuário envia `"I want to go from Toronto to Boston."`. As entidades `@city:Toronto` e `@city:Boston` são detectadas e representadas nessas entidades:
+Use a expressão SpEL integral se você desejar que a condição retorne true sempre que o termo for mencionado na entrada do usuário, independentemente da ordem na qual as entidades são mencionadas. A condição `entities['city']?.contains('Boston')` retorna verdadeiro quando pelo menos uma entidade city 'Boston' é encontrada em todas as entidades @city, independentemente do posicionamento.
+
+Por exemplo, um usuário envia `"I want to go from Toronto to Boston."`. As entidades `@city:Toronto` e `@city:Boston` são detectadas e são representadas na matriz que é retornada, conforme a seguir:
 
 - `entities.city[0].value = 'Toronto'`
 - `entities.city[1].value = 'Boston'`
 
-A condição `@city.contains('Boston')` em um nó de diálogo retorna verdadeiro apesar de Boston ser a segunda entidade detectada.
+A ordem das entidades na matriz que é retornada corresponde à ordem na qual elas são mencionadas na entrada do usuário.
+{: note}
 
 ### Propriedades da entidade
+{: #expression-language-entity-props}
 
 Cada entidade possui um conjunto de propriedades associadas a ela. É possível acessar informações sobre uma entidade através de suas propriedades.
 
@@ -151,7 +180,9 @@ Cada entidade possui um conjunto de propriedades associadas a ela. É possível 
 | *valor*               | O valor da entidade identificado na entrada. | Essa propriedade retorna o valor da entidade conforme definido nos dados de treinamento, mesmo se a correspondência foi feita contra um de seus sinônimos associados. É possível usar `.values` para capturar várias ocorrências de uma entidade que podem estar presentes na entrada do usuário. |
 
 ### Exemplos de uso da propriedade da entidade
-Nos exemplos a seguir, a área de trabalho contém uma entidade aeroporto que inclui um valor de JFK e o sinônimo "Kennedy Airport". A entrada do usuário é *Eu quero ir para o aeroporto Kennedy*.
+{: #expression-language-entity-props-example}
+
+Nos exemplos a seguir, a qualificação contém uma entidade de aeroporto que inclui um valor de JFK e o sinônimo "Kennedy Airport". A entrada do usuário é *Eu quero ir para o aeroporto Kennedy*.
 
 - Para retornar uma resposta específica se a entidade 'JFK' for reconhecida na entrada do usuário, você poderia incluir essa expressão para a condição de resposta: `entities.airport[0].value == 'JFK'` ou `@airport = "JFK"`
 - Para retornar o nome da entidade como foi especificado pelo usuário na resposta do diálogo, use a propriedade .literal:
@@ -180,9 +211,9 @@ Nesse exemplo, a entrada do usuário é *Há lugares para troca de moeda no JFK,
 `You asked about these airports: JFK, Logan, O'Hare.`
 
 ## Acessando intenções
-{: #access-intent}
+{: #expression-language-intent}
 
-A matriz de intenções contém uma ou mais intenções que foram reconhecidas na entrada do usuário, classificadas em ordem decrescente de confiança. 
+A matriz de intenções contém uma ou mais intenções que foram reconhecidas na entrada do usuário, classificadas em ordem decrescente de confiança.
 
 Cada intenção tem somente uma propriedade: a propriedade `confidence`. A propriedade confiança é uma porcentagem decimal que representa a confiança do serviço na intenção reconhecida.
 
@@ -210,18 +241,19 @@ Os exemplos a seguir mostram como verificar um valor de intenção:
 `intent == 'help` difere de `intents[0] == 'help'` porque `intent == 'help'` não lança uma exceção se nenhuma intenção for detectada. Ela é avaliada como verdadeira somente se a confiança na intenção exceder um limite.  Se você quiser, será possível especificar um nível de confiança customizado para uma condição, por exemplo, `intents.size() > 0 && intents[0] == 'help' && intents[0].confidence > 0.1`
 
 ## Acessando a entrada
-{: #access-input}
+{: #expression-language-intent-props}
 
 O objeto JSON de entrada contém uma única propriedade: a propriedade de texto. A propriedade de texto representa o texto da entrada do usuário.
 
 ### Exemplos de uso da propriedade de entrada
+{: #expression-language-intent-props-example}
 
 O exemplo a seguir mostra como acessar a entrada:
 
 - Para executar um nó se a entrada do usuário for "Sim", inclua essa expressão para a condição nó:
 `input.text == 'Yes'`
 
-É possível usar qualquer [Método de sequência](/docs/services/conversation/dialog-methods.html#strings) para avaliar ou manipular texto da entrada do usuário. Por exemplo:
+É possível usar qualquer [Método de sequência](/docs/services/conversation/dialog-methods#dialog-methods-strings) para avaliar ou manipular texto da entrada do usuário. Por exemplo:
 
 - Para verificar se a entrada do usuário contém "Yes", use: `input.text.contains( 'Yes' )`.
 - Retorna verdadeiro se a entrada do usuário for um número: `input.text.matches( '[0-9]+' )`.

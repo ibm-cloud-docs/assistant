@@ -1,94 +1,123 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="assistant" audience="service" href="/docs/services/assistant/getting-started.html" path="services/assistant"}
-Watson Assistant
+{: .toc subcollection="assistant" audience="service" href="/docs/services/assistant?topic=assistant-getting-started" path="services/assistant"}
+Assistente do Watson
 
     {: .navgroup id="learn"}
     getting-started.md
     index.md
+    skills.md
+    assistants.md
     tool-overview.md
-    [Demo](https://watson-conversation-duo-dev.ng.bluemix.net/)
+    [Demo: assistente financeiro](https://watson-conversation-duo-dev.ng.bluemix.net/)
     resources.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    configure-workspace.md
+    dev-process.md
+    skill-add.md
+    catalog.md
 
     {: .topicgroup}
-    Definindo intenções e entidades
-        intents-entities.md
+    Criando intenções
         intents.md
-        entities.md
-        catalog.md
+        intent-recommendations.md
 
     {: .topicgroup}
-    Construindo um diálogo
+    Criando um diálogo
         dialog-overview.md
         dialog-runtime.md
         dialog-build.md
+        dialog-tips.md
         dialog-slots.md
         dialog-actions.md
-        dialog-api.md
+        dialog-responses-json.md
+        dialog-depiction.md
+
+    entities.md
+    versions.md
+    assistant-add.md
+    skill-open.md
 
     {: .topicgroup}
     Implementando
-        deploy.md
-        conversation-connector.md
-        develop-app.md
-        integrations.md
+        deploy-integration-add.md
+        deploy-custom-app.md
+        deploy-facebook.md
+        deploy-intercom.md
+        deploy-web-link.md
+        deploy-slack.md
+        dialog-start.md
+        deploy-integration-delete.md
 
     {: .topicgroup}
     Melhorando o entendimento
+        logs-intro.md
+        logs-overview.md
         logs.md
-        logs_oview.md
-        logs_convo.md
-        logs_recommend.md
+        logs-resources.md
 
-    upgrading.md
+    migrate.md
+    backup.md
+    upgrade.md
+    edit-convo-workspace.md
 
     {: .topicgroup}
     Tutoriais
         tutorial.md
         tutorial-slots.md
         tutorial-slots-complex.md
+        tutorial-car-dashboard.md
+        tutorial-digressions.md
+        [Tutorial: definindo entidades contextuais](https://www.ibm.com/cloud/garage/demo/try-watson-assistant-contextual-entities)
+
+    {: .topicgroup}
+    Usando a API
+        api-overview.md
+        api-methods.md
+        api-client.md
+        api-dialog-responses.md
+        api-dialog-modify.md
+
+    {: .topicgroup}
+    Recursos beta
+        beta.md
+        beta-skill-dialog-add.md
+        skill-search-add.md
+        beta-intent-recommendations.md
+        beta-spell-check.md	
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    [Referência de API](https://console.bluemix.net/apidocs/assistant)
+    [Referência de API v2](https://cloud.ibm.com/apidocs/assistant-v2)
+    [Referência de API v1](https://cloud.ibm.com/apidocs/assistant)
     dialog-methods.md
     expression-language.md
     filter-reference.md
-    sample-applications.md
-    lang-support.md
+    sample-apps.md
+    language-support.md
+    information-security.md
 
     {: .topicgroup}
     Entidades do sistema
         system-entities.md
-        supported-timezones.md
+        time-zones.md
 
-    {: .topicgroup}
-    SDKs do Watson
-        [SDK do Android](https://github.com/watson-developer-cloud/android-sdk)
-        [SDK do Java](https://github.com/watson-developer-cloud/java-sdk)
-        [SDK do Node.js](https://github.com/watson-developer-cloud/node-sdk)
-        [SDK do Python](https://github.com/watson-developer-cloud/python-sdk)
-        [SDK do .NET](https://github.com/watson-developer-cloud/dotnet-standard-sdk)
-        [SDK do OpenWhisk](https://github.com/watson-developer-cloud/openwhisk-sdk/)
-        [SDK do Salesforce](https://github.com/watson-developer-cloud/salesforce-sdk)
-        [SDK do Swift](https://github.com/watson-developer-cloud/swift-sdk)
-        [SDK do Unity](https://github.com/watson-developer-cloud/unity-sdk)
-
-    [Repositórios do Watson GitHub](https://github.com/watson-developer-cloud/)
+    /watson/watson-using-sdks
+    [Repositório GitHub do Watson](https://github.com/watson-developer-cloud/)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
     release-notes.md
     feedback.md
+    services-information.md
 
     {: .topicgroup}
     Comunidade do desenvolvedor
-        [StackOverflow](http://stackoverflow.com/questions/tagged/watson-conversation)
-        [IBM Developer Answers](https://developer.ibm.com/answers/topics/watson-conversation/)
-        [Canal WDC Slack](http://wdc-slack-inviter.mybluemix.net/)
+        [StackOverflow](https://stackoverflow.com/questions/tagged/watson-conversation+or+watson-assistant)
+        [IBM Developer Answers](https://developer.ibm.com/answers/search.html?f=&sort=relevance&q=%5Bwatson-conversation%5D+%5Bwatson-assistant%5D+%24)
+        [Canal Slack do WDC](http://wdc-slack-inviter.mybluemix.net/)
+
+    accessibility.md
     {: .navgroup-end}

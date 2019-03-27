@@ -1,13 +1,18 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-01-24"
+  years: 2015, 2019
+lastupdated: "2019-02-21"
+
+subcollection: assistant
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -18,29 +23,33 @@ lastupdated: "2018-01-24"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Detalhes da entidade do sistema
+{: #system-entities}
 
-Essa seção de referência fornece informações completas sobre as entidades do sistema disponíveis. Para obter mais informações sobre entidades do sistema e como usá-las, consulte [Definindo entidades](entities.html#enable_system_entities) e procure por "Ativando entidades do sistema".
+Essa seção de referência fornece informações completas sobre as entidades do sistema disponíveis. Para obter mais informações sobre entidades do sistema e como usá-las, consulte [Definindo entidades](/docs/services/assistant?topic=assistant-entities#entities-enable-system-entities) e procure por "Ativando entidades do sistema".
 {: shortdesc}
 
-As entidades do sistema estão disponíveis para idiomas anotados no tópico [Idiomas suportados](lang-support.html).
+As entidades do sistema estão disponíveis para idiomas anotados no tópico [Idiomas suportados](/docs/services/assistant?topic=assistant-language-support).
 
 ## Entidade @sys-currency
-{: #sys-currency}
+{: #system-entities-sys-currency}
 
 A entidade do sistema @sys-currency detecta valores monetários que são expressos em uma elocução com um símbolo monetário ou termos específicos da moeda. Um valor numérico é retornado.
 
 ### Formatos reconhecidos
+{: #system-entities-sys-currency-formats}
 
 - 20 centavos
 - Cinco dólares
 - $10
 
 ### Metadados
+{: #system-entities-sys-currency-metadata}
 
 - `.numeric_value`: o valor numérico canônico como um número inteiro ou um duplo, em unidades base
 - `.unit`: o código de moeda de unidade base (por exemplo, 'USD' ou 'EUR')
 
 ### Retorna
+{: #system-entities-sys-currency-returns}
 
 Para a entrada `twenty dollars` ou `$ 1,234.56`, @sys-currency retorna esses valores:
 
@@ -68,13 +77,14 @@ Para a entrada `veinte euro` ou <code>&euro;1,234.56</code>, em espanhol, @sys-c
 Você obtém resultados equivalentes para outros idiomas e moedas nacionais suportados.
 
 ### Dicas de uso de @system-currency
+{: #system-entities-currencty-usage-tips}
 
 - Os valores de moeda também são reconhecidos como instâncias de entidades @sys-number. Se você estiver usando condições separadas para verificar os valores de moeda e os números, coloque a condição que verifica a moeda acima daquela que verifica um número.
 
-- Se você usar a entidade @sys-currency como uma condição de nó e o usuário especificar `$0` como o valor, o valor será reconhecido como uma moeda corretamente, mas a condição será avaliada para o número zero, não a moeda zero. Como resultado, ela não retorna a resposta esperada. Para procurar valores de moeda de uma maneira que manipule zeros corretamente, use a sintaxe `entities['sys-currency']` na condição do nó.
+- Se você usar a entidade @sys-currency como uma condição de nó e o usuário especificar `$0` como o valor, o valor será reconhecido como uma moeda corretamente, mas a condição será avaliada para o número zero, não a moeda zero. Como resultado, ela não retorna a resposta esperada. Para verificar os valores de moeda de uma maneira que manipule os zeros adequadamente, use a sintaxe de expressão SpEL integral `entities['sys-currency']?.value` na condição do nó.
 
 ## Entidades @sys-date e @sys-time
-{: #sys-datetime}
+{: #system-entities-sys-date-time}
 
 A entidade do sistema `@sys-date` extrai menções como `Friday`, `today` ou `November 1`. O valor dessa entidade armazena a data inferida correspondente como uma sequência no formato "aaaa-MM-dd", por exemplo, "2016-11-21". O sistema aumenta elementos ausentes de uma data (como o ano para "21 de novembro") com os valores de data atuais.
 
@@ -83,16 +93,19 @@ A entidade do sistema `@sys-date` extrai menções como `Friday`, `today` ou `No
 A entidade do sistema `@sys-time` extrai menções como `2pm`, `at 4` ou `15:30`. O valor dessa entidade armazena a hora como uma sequência no formato "HH :mm:ss". Por exemplo, "13:00:00."
 
 ### Menções de data/hora
+{: #system-entities-date-time-mentions}
 
 Menções de data e hora, como `now` ou `two hours from now` são extraídas como duas menções de entidade separadas - uma `@sys-date` e uma `@sys-time`. Essas duas menções não estão vinculadas uma com a outra, exceto que elas compartilham a mesma sequência literal que estende a menção de data/hora completa.
 
 Menções com várias palavras, data e hora como `on Monday at 4pm` também são extraídas como duas menções @sys-date e @sys-time. Quando mencionadas juntas consecutivamente, elas também compartilham uma única sequência literal que abrange a menção de data/hora completa.
 
 ### Intervalos de data e hora
+{: #system-entities-date-time-ranges}
 
 Menções de um intervalo de data, como `the weekend`, `next week` ou `from Monday to Friday` são extraídas como um par de menções de entidade `@sys-date` que mostram o início e o término do intervalo. Da mesma forma, menções de intervalos de tempo como `from 2 to 3` são extraídos como duas entidades `@sys-time`, mostrando os horários de início e de encerramento. As duas entidades no par compartilham uma sequência literal que corresponde à menção do intervalo de data ou hora integral.
 
 ### `Last` e `Next` datas e horas
+{: #system-entities-last-next}
 
 Em alguns códigos de idioma, uma frase como "na segunda-feira passada" é usada para especificar a segunda-feira da semana anterior apenas. Em contraste, outros códigos de idioma usar "na segunda-feira passada" para especificar o último dia que foi uma segunda-feira, mas que pode ter sido na mesma semana ou na semana anterior.
 
@@ -103,14 +116,16 @@ O serviço {{site.data.keyword.conversationshort}} trata "última" e "próxima" 
 Para frases de tempo como "nos últimos 3 dias" ou "nas próximas 4 horas", a lógica é equivalente. Por exemplo, no caso de "nas próximas 4 horas", isso resulta em duas entidades `@sys-time`: uma do horário atual e uma das quatro horas posteriores à hora atual.
 
 ### Fusos horários
+{: #system-entities-time-zones}
 
 Menções de uma data ou hora que são relativas ao horário atual são resolvidas com relação a um fuso horário escolhido. Por padrão, este é UTC (GMT). Isso significa que, por padrão, os clientes da API de REST localizados em fusos horários diferentes de UTC observarão o valor de `now` extraído de acordo com o horário UTC atual.
 
-Opcionalmente, o cliente da API de REST pode incluir o fuso horário local como a variável de contexto `$timezone`. Essa variável de contexto deve ser enviada com cada solicitação do cliente. Por exemplo, o valor `$timezone` deve ser `America/Los_Angeles`, `EST` ou `UTC`. Para obter uma lista completa de fusos horários suportados, consulte [Fusos horários suportados](supported-timezones.html).
+Opcionalmente, o cliente da API de REST pode incluir o fuso horário local como a variável de contexto `$timezone`. Essa variável de contexto deve ser enviada com cada solicitação do cliente. Por exemplo, o valor `$timezone` deve ser `America/Los_Angeles`, `EST` ou `UTC`. Para obter uma lista completa de fusos horários suportados, consulte [Fusos horários suportados](/docs/services/assistant?topic=assistant-time-zones).
 
 Quando a variável `$timezone` é fornecida, os valores das menções @sys-date e @sys-time relativas são calculadas com base no fuso horário do cliente em vez de UTC.
 
 #### Exemplos de menções relativas aos fusos horários
+{: #system-entities-time-zone-examples}
 
 - agora
 - em duas horas
@@ -119,6 +134,7 @@ Quando a variável `$timezone` é fornecida, os valores das menções @sys-date 
 - 2 dias a partir de agora
 
 ### Formatos reconhecidos
+{: #system-entities-sys-date-time-formats}
 
 - 21 de novembro
 - 10h30
@@ -126,6 +142,7 @@ Quando a variável `$timezone` é fornecida, os valores das menções @sys-date 
 - nesse fim de semana
 
 ### Retorna
+{: #system-entities-sys-date-time-returns}
 
 Para a entrada `November 21` @sys-date retorna esses valores:
 
@@ -150,39 +167,43 @@ Para a entrada `at 6 pm` @sys-time retorna esses valores:
 
 - @sys-time sempre retorna o horário neste formato: HH:mm:ss.
 
-Para obter informações sobre o processamento de valores de data e hora, consulte a referência do método [Data e hora](dialog-methods.html#date-time).
+Para obter informações sobre o processamento de valores de data e hora, consulte a referência do método [Data e hora](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-date-time).
 {: tip}
 
 ## Entidade @sys-location
-{: #sys-location}
+{: #system-entities-sys-location}
 
-**BETA, para idiomas observados no tópico [Idiomas Suportados](lang-support.html)**: a entidade do sistema @sys-location extrai nomes de locais (país, estado/município, cidade, etc). da entrada dos usuários. O valor da entidade não é um valor padrão do sistema para o local.
+**BETA, para idiomas anotados no tópico [Idiomas suportados](/docs/services/assistant?topic=assistant-language-support)**: a entidade do sistema @sys-location extrai nomes de locais (país, estado/município, cidade, município, etc.) da entrada dos usuários. O valor da entidade não é um valor padrão do sistema para o local.
 
 ### Formatos reconhecidos
+{: #system-entities-sys-location-formats}
 
 - Boston
 - EUA
 - Nova Gales do Sul
 
-Para obter informações sobre o processamento de valores de sequência, veja a referência de método de [Sequências](dialog-methods.html#strings).
+Para obter informações sobre o processamento de valores de sequência, veja a referência de método de [Sequências](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings).
 {: tip}
 
 ## Entidade @sys-number
-{: #sys-number}
+{: #system-entities-sys-number}
 
 A entidade do sistema @sys-number detecta números que são gravados usando numerais ou palavras. Seja qual for o caso, um valor numérico será retornado.
 
 ### Formatos reconhecidos
+{: #system-entities-sys-number-formats}
 
 - 21
 - vinte e um
 - 3,13
 
 ### Metadados
+{: #system-entities-sys-number-metadata}
 
 - `.numeric_value` - o valor numérico canônico como um número inteiro ou um duplo
 
 ### Retorna
+{: #system-entities-sys-number-returns}
 
 Para a entrada `twenty` ou `1,234.56`, @sys-number retorna esses valores:
 
@@ -205,8 +226,9 @@ Para a entrada `veinte` ou `1.234,56`, em espanhol, @sys-number retorna esses va
 Você obtém resultados equivalentes para outros idiomas suportados.
 
 ### Dicas de uso de @system-number
+{: #system-entities-sys-number-usage-tips}
 
-- Se você usar a entidade @sys-number como uma condição de nó e o usuário especificar zero como o valor, o valor 0 será reconhecido corretamente como um número, mas a condição será avaliada como false e não poderá retornar a resposta associada corretamente. Para procurar números de uma maneira que manipule os zeros corretamente, use a sintaxe `entities['sys-number']` na condição do nó.
+- Se você usar a entidade @sys-number como uma condição de nó e o usuário especificar zero como o valor, o valor 0 será reconhecido corretamente como um número, mas a condição será avaliada como false e não poderá retornar a resposta associada corretamente. Para verificar os números de uma maneira que manipule os zeros adequadamente, use a sintaxe de expressão SpEL integral `entities['sys-number']?.value` na condição do nó.
 
 - Se você usar @sys-number para comparar valores numéricos em uma condição, certifique-se de incluir separadamente uma verificação para a presença de um número em si. Se nenhum número for localizado, @sys-number será avaliado como nulo, o que pode resultar em sua comparação sendo avaliada como verdadeira mesmo quando nenhum número está presente.
 
@@ -214,24 +236,27 @@ Você obtém resultados equivalentes para outros idiomas suportados.
 
   Use `@sys-number AND @sys-number<4` em vez disso. Se nenhum número estiver presente, a primeira condição será avaliada como falsa, o que resulta adequadamente na condição inteira sendo avaliada como falsa.
 
-Para obter informações sobre o processamento de valores numéricos, consulte a referência de método [Números](dialog-methods.html#numbers).
+Para obter informações sobre o processamento de valores numéricos, consulte a referência de método [Números](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-numbers).
 {: tip}
 
 ## Entidade @sys-percentage
-{: #sys-percentage}
+{: #system-entities-sys-percentage}
 
 A entidade do sistema @sys-percentage detecta porcentagens expressas em uma elocução com o símbolo percentual ou escrita usando a palavra `percent`. Seja qual for o caso, um valor numérico será retornado.
 
 ### Formatos reconhecidos
+{: #system-entities-sys-percentage-formats}
 
 - 15%
 - 10 por cento
 
 ### Metadados
+{: #system-entities-sys-percentage-metadata}
 
 `.numeric_value`: o valor numérico canônico como um número inteiro ou um duplo
 
 ### Retorna
+{: #system-entities-sys-percentage-returns}
 
 Para a entrada `1,234.56%`, @sys-percentage retorna esses valores:
 
@@ -254,24 +279,26 @@ Para a entrada `1.234,56%`, em espanhol, @sys-currency retorna esses valores:
 Você obtém resultados equivalentes para outros idiomas suportados.
 
 ### Dicas de uso @system-percentage
+{: #system-entities-sys-percentage-usage-tips}
 
 - Os valores de porcentagem também são reconhecidos como instâncias de entidades @sys-number. Se você estiver usando condições separadas para verificar os valores de porcentagem e números, coloque a condição que verifica uma porcentagem acima daquela que verifica um número.
 
 - Se você usar a entidade @sys-percentage como um nó de
-condição e o usuário especificar `0%` como o valor, o valor será reconhecido como uma porcentagem corretamente, mas a condição será avaliada para o número zero, não a porcentagem 0%. Portanto, ela não retornará a resposta esperada. Para verificar as porcentagens de forma que manipule nenhuma porcentagem corretamente, use a sintaxe `entities['sys-percentage']` na condição de nó.
+condição e o usuário especificar `0%` como o valor, o valor será reconhecido como uma porcentagem corretamente, mas a condição será avaliada para o número zero, não a porcentagem 0%. Portanto, ela não retornará a resposta esperada. Para verificar as porcentagens de uma maneira que manipule as porcentagens zero adequadamente, use a sintaxe de expressão SpEL integral `entities['sys-percentage']?.value` na condição do nó.
 
 - Se você inserir um valor como `1-2%`, os valores `1%` e `2%` serão retornados como entidades do sistema. O índice será o intervalo inteiro entre 1% e 2%, e ambas as entidades terão o mesmo índice.
 
 ## Entidade @sys-person
-{: #sys-person}
+{: #system-entities-sys-person}
 
-**BETA, para idiomas observados no tópico [Idiomas Suportados](lang-support.html)**: a entidade do sistema @sys-person extrai os nomes da entrada do usuário. Os nomes são reconhecidos individualmente, para que "Will" não seja tratado como "William" ou vice-versa. O valor da entidade não é um valor padrão do sistema para o nome.
+**BETA, para idiomas anotados no tópico [Idiomas suportados](/docs/services/assistant?topic=assistant-language-support)**: a entidade do sistema @sys-person extrai nomes da entrada do usuário. Os nomes são reconhecidos individualmente, para que "Joe" não seja tratado como "Joseph" ou vice-versa. O valor da entidade não é um valor padrão do sistema para o nome.
 
 ### Formatos reconhecidos
+{: #system-entities-sys-person-formats}
 
-- Will
+- Ronald.
 - Jane Doe
 - Vijay
 
-Para obter informações sobre o processamento de valores de sequência, veja a referência de método de [Sequências](dialog-methods.html#strings).
+Para obter informações sobre o processamento de valores de sequência, veja a referência de método de [Sequências](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings).
 {: tip}

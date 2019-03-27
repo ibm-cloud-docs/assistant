@@ -1,9 +1,10 @@
-
 ---
 
 copyright:
-  years: 2015, 2017
-lastupdated: "2017-07-06"
+  years: 2015, 2019
+lastupdated: "2018-05-30"
+
+subcollection: assistant
 
 ---
 
@@ -14,13 +15,13 @@ lastupdated: "2017-07-06"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 
-# Vídeo: visão geral da ferramenta para {{site.data.keyword.conversationshort}}
-{: #tool-video}
+# Vídeo: Visão Geral da
+{: #tool-overview}
 
-Com a ferramenta {{site.data.keyword.conversationshort}}, é possível criar e gerenciar sua área de trabalho do {{site.data.keyword.conversationshort}}. Assista a esse vídeo para aprender sobre diferentes áreas da ferramenta.
+Com a ferramenta {{site.data.keyword.conversationshort}}, é possível criar e gerenciar um ou mais assistentes. Assista a este vídeo para saber mais sobre a ferramenta.
 
 <p>
   <div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/sSfTcxDrmSI?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+    <iframe class="embed-responsive-item" id="youtubeplayer" title="Visão geral da ferramenta Watson Assistant" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/h-u-5f8fZtc?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
   </div>
 </p>
