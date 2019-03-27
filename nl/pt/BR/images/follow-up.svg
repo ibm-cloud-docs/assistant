@@ -15,7 +15,7 @@
    viewBox="0 0 744.09448819 1052.3622047"
    id="svg3622"
    version="1.1"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="follow-up.svg">
   <defs
      id="defs3624" />
@@ -28,12 +28,12 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
      inkscape:cx="320.56999"
-     inkscape:cy="804.53384"
+     inkscape:cy="804.02876"
      inkscape:document-units="px"
-     inkscape:current-layer="layer23"
+     inkscape:current-layer="layer25"
      showgrid="false"
-     inkscape:window-width="1280"
-     inkscape:window-height="737"
+     inkscape:window-width="1600"
+     inkscape:window-height="848"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1" />
@@ -45,7 +45,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -63,10 +63,11 @@
        width="750" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="263.92264"
        y="111.30228"
        id="text3355-1"
+       sodipodi:linespacing="125%"
        inkscape:transform-center-x="-151.42857"
        inkscape:transform-center-y="-113.57143"><tspan
          sodipodi:role="line"
@@ -76,10 +77,11 @@
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Bold';text-align:start;writing-mode:lr-tb;text-anchor:start">Prompt</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="382.1167"
        y="246.29863"
-       id="text3379-7"><tspan
+       id="text3379-7"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3381-6"
          x="382.1167"
@@ -92,20 +94,19 @@
      inkscape:label="saveas1-value2">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="380.14285"
        y="269.93362"
-       id="text3573"><tspan
+       id="text3573"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3575"
          x="380.14285"
-         y="269.93362"
-         style="font-size:15px;line-height:1.25">@sys-location =</tspan><tspan
+         y="269.93362">@sys-location =</tspan><tspan
          sodipodi:role="line"
          x="380.14285"
          y="288.68362"
-         id="tspan3577"
-         style="font-size:15px;line-height:1.25">New York, NY</tspan></text>
+         id="tspan3577">New York, NY</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -113,15 +114,15 @@
      inkscape:label="saveas2-value2">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="379.57144"
        y="326.64792"
-       id="text3580"><tspan
+       id="text3580"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3582"
          x="379.57144"
-         y="326.64792"
-         style="font-size:15px;line-height:1.25">@sys-date = tomorrow</tspan></text>
+         y="326.64792">@sys-date = tomorrow</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -129,15 +130,15 @@
      inkscape:label="slot1-value1">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="174.42857"
        y="136.50507"
-       id="text3441"><tspan
+       id="text3441"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3443"
          x="174.42857"
-         y="136.50507"
-         style="font-size:15px;line-height:1.25">Localização</tspan></text>
+         y="136.50507">Localização</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -145,15 +146,15 @@
      inkscape:label="slot1-value2">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="173.73953"
        y="271.92868"
-       id="text3441-3"><tspan
+       id="text3441-3"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3443-3"
          x="173.73953"
-         y="271.92868"
-         style="font-size:15px;line-height:1.25">Localização</tspan></text>
+         y="271.92868">Localização</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -165,25 +166,23 @@
      inkscape:label="prompt1-value1">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="263.14285"
        y="134.3622"
-       id="text3446"><tspan
+       id="text3446"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3448"
          x="263.14285"
-         y="134.3622"
-         style="font-size:15px;line-height:1.25">Para qual cidade</tspan><tspan
+         y="134.3622">Para qual cidade</tspan><tspan
          sodipodi:role="line"
          x="263.14285"
          y="153.1122"
-         id="tspan3450"
-         style="font-size:15px;line-height:1.25">você deseja uma </tspan><tspan
+         id="tspan3450">você deseja uma </tspan><tspan
          sodipodi:role="line"
          x="263.14285"
          y="171.8622"
-         id="tspan3452"
-         style="font-size:15px;line-height:1.25">previsão?</tspan></text>
+         id="tspan3452">previsão?</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -191,25 +190,23 @@
      inkscape:label="prompt1-value2">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="262.76096"
        y="269.46439"
-       id="text3446-8"><tspan
+       id="text3446-8"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3547"
          x="262.76096"
-         y="269.46439"
-         style="font-size:15px;line-height:1.25">Para qual cidade </tspan><tspan
+         y="269.46439">Para qual cidade </tspan><tspan
          sodipodi:role="line"
          id="tspan3549"
          x="262.76096"
-         y="288.21439"
-         style="font-size:15px;line-height:1.25">você deseja </tspan><tspan
+         y="288.21439">você deseja </tspan><tspan
          sodipodi:role="line"
          id="tspan3551"
          x="262.76096"
-         y="306.96439"
-         style="font-size:15px;line-height:1.25">uma previsão?</tspan></text>
+         y="306.96439">uma previsão?</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -217,15 +214,15 @@
      inkscape:label="saveas1-value1">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="387.28571"
        y="136.79079"
-       id="text3455"><tspan
+       id="text3455"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3457"
          x="387.28571"
-         y="136.79079"
-         style="font-size:15px;line-height:1.25">(padrão: Boston, MA)</tspan></text>
+         y="136.79079">(padrão: Boston, MA)</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -233,26 +230,26 @@
      inkscape:label="slot2-value1">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="175.14285"
        y="193.50507"
-       id="text3460"><tspan
+       id="text3460"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3462"
          x="175.14285"
-         y="193.50507"
-         style="font-size:15px;line-height:1.25">Data</tspan></text>
+         y="193.50507">Data</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="173.88672"
        y="326.92868"
-       id="text3460-6"><tspan
+       id="text3460-6"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3462-1"
          x="173.88672"
-         y="326.92868"
-         style="font-size:15px;line-height:1.25">Data</tspan></text>
+         y="326.92868">Data</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -260,15 +257,15 @@
      inkscape:label="prompt2-value1">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="261.71429"
        y="192.93362"
-       id="text3465"><tspan
+       id="text3465"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3467"
          x="261.71429"
-         y="192.93362"
-         style="font-size:15px;line-height:1.25">Que dia?</tspan></text>
+         y="192.93362">Que dia?</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -276,15 +273,15 @@
      inkscape:label="prompt2-value2">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="262.98672"
        y="326.95831"
-       id="text3465-6"><tspan
+       id="text3465-6"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3467-4"
          x="262.98672"
-         y="326.95831"
-         style="font-size:15px;line-height:1.25">Que dia?</tspan></text>
+         y="326.95831">Que dia?</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -292,15 +289,15 @@
      inkscape:label="saveas2-value1">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="386.57144"
        y="192.21935"
-       id="text3470"><tspan
+       id="text3470"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3472"
          x="386.57144"
-         y="192.21935"
-         style="font-size:15px;line-height:1.25">(padrão: hoje)</tspan></text>
+         y="192.21935">(padrão: hoje)</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -308,15 +305,15 @@
      inkscape:label="request">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="549.57141"
        y="183.3622"
-       id="text3585"><tspan
+       id="text3585"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3587"
          x="549.57141"
-         y="183.3622"
-         style="font-size:15px;line-height:1.25">GET /weather</tspan></text>
+         y="183.3622">GET /weather</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -324,25 +321,19 @@
      inkscape:label="service">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="662.49762"
-       y="193.87122"
-       id="text3590"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="666.28571"
+       y="208.07649"
+       id="text3590"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3592"
-         x="662.49762"
-         y="193.87122"
-         style="font-size:15px;line-height:1.25">Serviço</tspan><tspan
+         x="666.28571"
+         y="208.07649">Serviço</tspan><tspan
          sodipodi:role="line"
-         x="662.49762"
-         y="212.62122"
-         id="tspan3594"
-         style="font-size:15px;line-height:1.25">meteoro-</tspan><tspan
-         sodipodi:role="line"
-         x="662.49762"
-         y="231.37122"
-         style="font-size:15px;line-height:1.25"
-         id="tspan96">lógico</tspan></text>
+         x="666.28571"
+         y="226.82649"
+         id="tspan3594">meteorológico</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -350,15 +341,15 @@
      inkscape:label="response">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="595.57141"
        y="246.3622"
-       id="text3597"><tspan
+       id="text3597"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3599"
          x="595.57141"
-         y="246.3622"
-         style="font-size:15px;line-height:1.25">previsão</tspan></text>
+         y="246.3622">previsão</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -366,20 +357,19 @@
      inkscape:label="output1">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="47.285713"
        y="148.79079"
-       id="text3602"><tspan
+       id="text3602"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3604"
          x="47.285713"
-         y="148.79079"
-         style="font-size:15px;line-height:1.25">Fará sol</tspan><tspan
+         y="148.79079">Fará sol</tspan><tspan
          sodipodi:role="line"
          x="47.285713"
          y="167.54079"
-         id="tspan3606"
-         style="font-size:15px;line-height:1.25">hoje em Boston.</tspan></text>
+         id="tspan3606">hoje em Boston.</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -387,20 +377,19 @@
      inkscape:label="input2">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="25.142857"
        y="227.79079"
-       id="text3609"><tspan
+       id="text3609"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3611"
          x="25.142857"
-         y="227.79079"
-         style="font-size:15px;line-height:1.25">Como será </tspan><tspan
+         y="227.79079">Como será </tspan><tspan
          sodipodi:role="line"
          x="25.142857"
          y="246.54079"
-         id="tspan3613"
-         style="font-size:15px;line-height:1.25">amanhã em NYC?</tspan></text>
+         id="tspan3613">amanhã em NYC?</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -408,20 +397,19 @@
      inkscape:label="output2">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="38.285713"
        y="315.07648"
-       id="text3616"><tspan
+       id="text3616"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3618"
          x="38.285713"
-         y="315.07648"
-         style="font-size:15px;line-height:1.25">Amanhã em NYC</tspan><tspan
+         y="315.07648">Amanhã em NYC</tspan><tspan
          sodipodi:role="line"
          x="38.285713"
          y="333.82648"
-         id="tspan3620"
-         style="font-size:15px;line-height:1.25">será chuvoso.</tspan></text>
+         id="tspan3620">será chuvoso.</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -429,10 +417,11 @@
      inkscape:label="slot2-header2">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="263.28857"
        y="245.53706"
        id="text3355-1-9"
+       sodipodi:linespacing="125%"
        inkscape:transform-center-x="-151.42857"
        inkscape:transform-center-y="-113.57143"><tspan
          sodipodi:role="line"
@@ -451,10 +440,11 @@
      inkscape:label="slot3-header">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="390.71429"
        y="111.64792"
-       id="text3379"><tspan
+       id="text3379"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3381"
          x="390.71429"
@@ -471,20 +461,19 @@
      inkscape:label="input">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="27.285713"
        y="53.790775"
-       id="text3343"><tspan
+       id="text3343"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3345"
          x="27.285713"
-         y="53.790775"
-         style="font-size:15px;line-height:1.25">Qual é a </tspan><tspan
+         y="53.790775">Qual é a </tspan><tspan
          sodipodi:role="line"
          x="27.285713"
          y="72.540771"
-         id="tspan3347"
-         style="font-size:15px;line-height:1.25">previsão do tempo?</tspan></text>
+         id="tspan3347">previsão do tempo?</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -492,15 +481,15 @@
      inkscape:label="condition">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="170"
        y="81.362206"
-       id="text3350"><tspan
+       id="text3350"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3352"
          x="170"
-         y="81.362206"
-         style="font-size:15px;line-height:1.25">Condição: #weather</tspan></text>
+         y="81.362206">Condição: #weather</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -508,10 +497,11 @@
      inkscape:label="slot1-header">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="175.28571"
        y="111.21935"
-       id="text3355"><tspan
+       id="text3355"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3357"
          x="175.28571"
@@ -519,10 +509,11 @@
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Bold';text-align:start;writing-mode:lr-tb;text-anchor:start">Slot</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="174.21962"
        y="247.72719"
-       id="text3355-6"><tspan
+       id="text3355-6"
+       sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3357-53"
          x="174.21962"

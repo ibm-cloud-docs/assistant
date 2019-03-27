@@ -1,13 +1,18 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-02-16"
+  years: 2015, 2019
+lastupdated: "2018-02-21"
+
+subcollection: assistant
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -16,6 +21,7 @@ lastupdated: "2018-02-16"
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
+{:gif: data-image-type='gif'}
 
 # Como o diálogo é processado
 {: #dialog-runtime}
@@ -24,7 +30,7 @@ Entenda como seu diálogo é processado quando uma pessoa interage com sua inst�
 {: shortdesc}
 
 ## Anatomia de uma chamada de diálogo
-{: message-anatomy}
+{: #dialog-runtime-message-anatomy}
 
 Cada elocução do usuário é passada para o diálogo como uma chamada de API /message. Isso inclui elocuções que os usuários fazem em resposta a prompts do diálogo que fazem perguntas a eles para obter mais informações. Alguns planos de assinatura incluem um número configurado de chamadas API, assim isso ajuda a entender o que constitui uma chamada. Uma única chamada API /message é equivalente a uma única rodada de diálogo, que consiste em uma entrada do usuário e uma resposta correspondente do diálogo.
 
@@ -40,46 +46,97 @@ O corpo da solicitação e resposta de chamada API /message inclui os objetos a 
   ```
   {: codeblock}
 
-  Veja [Retendo informações em rodadas de diálogo](dialog-runtime.html#context) para obter mais informações.
+  Veja [Retendo informações em rodadas de diálogo](#dialog-runtime-context) para obter mais informações.
 
 - `input`: a sequência de texto que foi enviada pelo usuário. A sequência de texto pode conter até 2.048 caracteres.
 
   ```json
   {
-    "input": {
+    "input" : {
       "text" : "Where's your nearest store?"
     }
   ```
   {: codeblock}
 
-- `output`: a resposta de diálogo a ser exibida para o usuário. É possível usar esta seção para definir objetos, como variáveis, que não se destinam a ser persistidos. Por exemplo, se você deseja excluir permanentemente uma variável de contexto nomeada `temp` que foi definida em outro lugar no diálogo, é possível usar a expressão a seguir para fazer isso.
+- `output`: a resposta de diálogo para retornar ao usuário.
 
   ```json
   {
   "output": {
-    "texto" : {}, "deleted_variable" : "<? context.remove('temp') ?>"
+    "generic": [
+      {
+        "values": [
+          {
+            "text": "This is my response text."
+          }
+        ],
+        "response_type": "text",
+        "selection_policy": "sequential"
+      }
+    ]
+  }
+  }
   ```
   {: codeblock}
 
-  Veja [Uma resposta complexa](dialog-overview.html#complex) para obter mais informações sobre o objeto de saída.
+Na resposta /message da API resultante, a resposta de texto é formatada conforme a seguir:
 
-É possível aprender mais sobre a chamada de API /message na [Referência de API ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.ibm.com/watson/developercloud/conversation/api/v1/){: new_window}.
+```json
+{
+   "text": "This is my response text.",
+   "response_type": "text"
+}
+```
 
-## Retendo informações em rodadas de diálogo
-{: #context}
+O formato de objeto `output` a seguir é suportado para compatibilidade com versões anteriores. Quaisquer áreas de trabalho que especificarem uma resposta de texto usando esse formato continuarão a funcionar adequadamente. Com a introdução de tipos de resposta rica, a estrutura `output.text` foi aumentada com a estrutura `output.generic` para facilitar o suporte a outros tipos de respostas, além do texto. Use o novo formato quando você criar novos nós para dar a si mesmo mais flexibilidade, porque será possível mudar posteriormente o tipo de resposta, se necessário.
+{: note}
 
-O diálogo é stateless, significando que ele não retém informações de uma interação com o usuário para a próxima. É responsabilidade do desenvolvedor de aplicativos manter quaisquer informações contínuas que o aplicativo precisa. O aplicativo deve procurar e armazenar o objeto de contexto na resposta da API da mensagem e passá-lo no objeto de contexto com a próxima solicitação de API /message que for feita como parte do fluxo de conversa.
+  ```json
+  {
+  "output": {
+    "text": {
+      "values": [
+        "This is my response text."
+      ]
+    }
+  }
+  ```
+  {: codeblock}
 
-A maneira mais simples de reter as informações é armazenar o objeto de contexto inteiro na memória no aplicativo cliente, um navegador da web, por exemplo. Conforme um aplicativo se torna mais complexo ou se ele precisa passar e armazenar informações pessoalmente identificáveis, é possível armazenar e recuperar as informações de um banco de dados.
+Há tipos de resposta diferentes de uma resposta de texto que podem ser definidos. Consulte  [ Respostas ](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-responses)  para obter mais detalhes.
 
-O aplicativo pode passar informações para o diálogo e o diálogo pode atualizar essas informações e passá-las de volta para o aplicativo ou para um nó subsequente. O diálogo faz isso usando variáveis de contexto.
+É possível aprender mais sobre a chamada de API /message na [Referência de API ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://{DomainName}/apidocs/assistant-v2){: new_window}.
 
-Uma variável de contexto é uma variável que você define em um nó e, opcionalmente, para a qual especifica um valor padrão. Outros nós ou lógicas de aplicativo podem posteriormente configurar ou mudar o valor da variável de contexto.
+### Retendo informações em rodadas de diálogo
+{: #dialog-runtime-context}
 
-É possível condicionar com relação aos valores das variáveis de contexto referenciando uma variável de contexto de uma condição de nó de diálogo para determinar se deve executar um nó. E você pode referenciar uma variável de contexto de condições de resposta do nó de diálogo para mostrar diferentes respostas, dependendo de um valor fornecido por um serviço externo ou pelo usuário.
+O diálogo em uma qualificação de diálogo é stateless, o que significa que ele não retém informações de uma interação com o usuário para a seguinte. Quando você inclui uma qualificação de diálogo em um assistente e implementa-a, o assistente salva o contexto de uma chamada de mensagem e, então, envia-a novamente na próxima solicitação durante a sessão atual. A sessão atual dura pelo tempo que um usuário interage com o assistente e, em seguida, até 60 minutos de inatividade para planos Plus ou Premium (5 minutos para os planos Lite ou Padrão). Se você não incluir a qualificação de diálogo em um assistente, será sua responsabilidade como desenvolvedor de aplicativos customizados manter quaisquer informações contínuas que o aplicativo precisar. O aplicativo deve procurar e armazenar o objeto de contexto na resposta da API da mensagem e passá-lo no objeto de contexto com a próxima solicitação de API /message que for feita como parte do fluxo de conversa.
+
+Uma maneira de reter as informações em si mesmo é armazenar o objeto de contexto inteiro na memória no aplicativo cliente, em um navegador da web, por exemplo. Conforme um aplicativo se torna mais complexo ou se ele precisa passar e armazenar informações pessoalmente identificáveis, é possível armazenar e recuperar as informações de um banco de dados. Obviamente, a abordagem mais simples é aquela que evita que você tenha que armazenar o contexto. Para implementar essa abordagem, inclua a qualificação do diálogo em um assistente e permita que o assistente mantenha o controle do contexto para você.
+
+O aplicativo pode passar informações para o diálogo e o diálogo pode atualizar essas informações e passá-las de volta para o aplicativo ou para um nó subsequente. O diálogo faz isso usando *variáveis de contexto*.
+
+## Variáveis de contexto
+{: #dialog-runtime-context-variables}
+
+Uma variável de contexto é aquela que você define em um nó. É possível especificar um valor padrão para ela. Outros nós, lógica de aplicativo ou entrada do usuário podem configurar ou mudar subsequentemente o valor da variável de contexto.
+
+É possível condicionar com relação aos valores das variáveis de contexto referenciando uma variável de contexto de uma condição de nó de diálogo para determinar se deve executar um nó. Também é possível referenciar uma variável de contexto de condições de resposta do nó de diálogo para mostrar diferentes respostas, dependendo de um valor fornecido por um serviço externo ou pelo usuário.
+
+Saiba mais:
+
+- [Transmitindo o contexto do aplicativo](#dialog-runtime-context-from-app)
+- [Transmitindo o contexto de nó para nó](#dialog-runtime-context-node-to-node)
+- [Definindo uma variável de contexto](#dialog-runtime-context-var-define)
+- [Tarefas comuns de variável de contexto](#dialog-runtime-context-common-tasks)
+- [Excluindo uma variável de contexto](#dialog-runtime-context-delete)
+- [ Atualizando uma variável de contexto ](#dialog-runtime-context-update)
+- [ Como as variáveis de contexto são processadas ](#dialog-runtime-context-processing)
+- [Ordem de operação](#dialog-runtime-context-order-of-ops)
+- [Incluindo variáveis de contexto em um nó com intervalos](#dialog-runtime-context-var-slots)
 
 ### Transmitindo o contexto do aplicativo
-{: #context-from-app}
+{: #dialog-runtime-context-from-app}
 
 Transmita informações do aplicativo para o diálogo configurando uma variável de contexto e transmitindo a variável de contexto para o diálogo.
 
@@ -90,7 +147,7 @@ Por exemplo, seu aplicativo pode configurar uma variável de contexto $time_of_d
 Neste exemplo, o diálogo sabe que o aplicativo configura a variável com um destes valores: *manhã*, *tarde* ou *noite*. Ele pode verificar cada valor e, dependendo de qual valor estiver presente, retornar a saudação apropriada. Se a variável não for transmitida ou possuir um valor que não corresponde a um dos valores esperados, uma saudação mais genérica será exibida para o usuário.
 
 ### Transmitindo o contexto de nó para nó
-{: #context-node-to-node}
+{: #dialog-runtime-context-node-to-node}
 
 O diálogo também pode incluir variáveis de contexto para transmitir informações de um nó para outro ou para atualizar os valores de variáveis de contexto. Conforme o diálogo pede e obtém informações do usuário, ele pode rastrear as informações e fazer referência a elas mais tarde na conversa.
 
@@ -100,107 +157,237 @@ Por exemplo, em um nó você pode perguntar o nome dos usuários e, em um nó po
 
 Neste exemplo, a entidade do sistema @sys-person será usada para extrair o nome do usuário da entrada, se o usuário fornecer um. No editor JSON, a variável de contexto username é definida e configurada com o valor @sys-person. Em um nó subsequente, a variável de contexto $username é incluída na resposta para tratar o usuário pelo nome.
 
-## Definindo uma variável de contexto
-{: #context-var-define}
+### Definindo uma variável de contexto
+{: #dialog-runtime-context-var-define}
 
-Defina uma variável de contexto definindo um par de nome e valor para a variável em um dos editores a seguir:
+Defina uma variável de contexto incluindo o nome da variável no campo **Variável** e incluindo um valor padrão para ela no campo **Valor** na visualização de edição do nó.
 
-- **Editor de contexto**: mostra um campo **Variável** e um campo **Valor** correspondente na visualização de edição do nó que é possível preencher com as informações de nome e valor da variável de contexto.
+1.  Clique para abrir o nó de diálogo no qual você deseja incluir uma variável de contexto.
 
-  **Nota**: esses campos são exibidos automaticamente nos nós que você inclui. Para os nós que foram criados com uma versão anterior do serviço, deve-se abrir o editor de contexto para os campos a serem incluídos.
+1.  Clique no ícone **Opções** ![Resposta avançada](images/kabob.png) que está associado à resposta do nó e, em seguida, clique em **Abrir o editor de contexto**.
 
-- **Editor JSON**: quando aberto, ele fornece uma visualização para o conteúdo JSON subjacente que é passado com a solicitação de API /message enviada ao serviço {{site.data.keyword.conversationshort}}. É possível definir variáveis de contexto incluindo pares de nome e valor para a seção `"context":{}` do corpo JSON.
+      ![Mostra como acessar o editor da JSON associado com uma resposta de nó padrão.](images/contextvar-json-response.png)
+
+      Caso a configuração de **Múltiplas respostas** esteja **Ativa** para o nó, deve-se primeiramente clicar no ícone **Editar resposta** ![Editar resposta](images/edit-slot.png) da resposta à qual você deseja associar a variável de contexto.
+
+      ![Mostra como acessar o editor da JSON associado com um nó padrão que tem múltiplas respostas condicionais ativadas para ele.](images/contextvar-json-multi-response.png)
+
+1.  Inclua o nome da variável e o par de valores nos campos **Variável** e **Valor**.
+
+    - O `name` pode conter quaisquer caracteres alfabéticos em maiúsculas e minúsculas, caracteres numéricos (0-9) e sublinhados.
+
+      É possível incluir outros caracteres, como pontos e hifens, no nome. No entanto, em caso positivo, deve-se especificar a sintaxe abreviada `$(variable-name)` sempre que a variável for referenciada subsequentemente. Consulte [Expressões para acessar objetos](/docs/services/assistant?topic=assistant-expression-language#expression-language-shorthand-context) para obter mais detalhes.
+      {:tip}
+
+    - O `value` pode ser qualquer tipo JSON suportado, tal como uma variável de sequência simples, um número, uma matriz JSON ou um objeto JSON.
+
+A tabela a seguir mostra alguns exemplos de como definir pares de nome e valor para diferentes tipos de valores:
+
+| Variável       | Valor                         | Tipo de Valor |
+|:---------------|-------------------------------|------------|
+| dessert        | "Bolo"                        | Sequência     |
+| age            | 18                            | Número     |
+| toppings_array | ["onions","olives"]            | Matriz JSON |
+| full_name      | {"first":"John","last":"Doe"} | Objeto JSON |
+
+Para referir-se subsequentemente a essas variáveis de contexto, use a sintaxe `$name`, em que *name* é o nome da variável de contexto que você definiu.
+
+Por exemplo, você pode especificar a expressão a seguir como a resposta de diálogo:
+
+`The customer, $age-year-old <? $full_name.first ?>, wants a pizza with <? $toppings_array.join(' and ') ?>, and then $dessert.`
+
+A saída resultante é exibida conforme a seguir:
+
+`The customer, 18-year-old John, wants a pizza with onions and olives, and then cake.`
+
+É possível usar o editor JSON para definir variáveis de contexto também. Você poderá preferir usar o editor JSON se desejar incluir uma expressão complexa como o valor da variável. Consulte [Variáveis de contexto no editor JSON](#dialog-runtime-context-var-json) para obter mais detalhes.
+
+### Tarefas comuns de variável de contexto
+{: #dialog-runtime-context-common-tasks}
+
+Para armazenar a sequência inteira que foi fornecida pelo usuário como entrada, use `input.text`:
+
+| Variável | Valor            |
+|----------|------------------|
+| repeat   | `<?input.text?>` |
+
+Por exemplo, a entrada do usuário é `I want to order a device.` Se a resposta do nó for `You said: $repeat`, a resposta será exibida como `You said: I want to order a device.`
+
+Para armazenar o valor de uma entidade em uma variável de contexto, use esta sintaxe:
+
+| Variável | Valor            |
+|----------|------------------|
+| place    | `@place`         |
+
+Por exemplo, a entrada do usuário é `I want to go to Paris.` Se a sua entidade @place reconhecer `Paris`, o serviço salvará `Paris` na variável de contexto `$place`.
+
+Para armazenar o valor de uma sequência que você extrai da entrada do usuário, é possível incluir uma expressão SpEL que usa o método `extract` para aplicar uma expressão regular à entrada do usuário. A expressão a seguir extrai um número da entrada do usuário e o salva na variável de contexto `$number`.
+
+| Variável | Valor                               |
+|----------|-------------------------------------|
+| número   | `<?input.text.extract('[\d]+',0)?>` |
+
+Para armazenar o valor de uma entidade padrão, anexe .literal ao nome da entidade. O uso desta sintaxe assegura que a extensão exata de texto da entrada do usuário que correspondeu ao padrão especificado seja armazenada na variável.
+
+| Variável | Valor                  |
+|----------|------------------------|
+| email    | `<? @email.literal ?>` |
+
+Por exemplo, a entrada do usuário é `Contact me at joe@example.com.` Sua entidade denominada `@email` reconhece o formato de e-mail `name@domain.com`. Configurando a variável de contexto para armazenar `@email.literal`, você indica que deseja armazenar a parte da entrada que correspondeu ao padrão. Se você omitir a propriedade `.literal` da expressão de valor, o nome do valor da entidade especificado para o padrão será retornado no lugar do segmento de entrada do usuário que correspondeu ao padrão.
+
+Muitos desses exemplos de valor usam métodos para capturar diferentes partes da entrada do usuário. Para obter mais informações sobre os métodos disponíveis para você usar, consulte [Métodos de linguagem de expressão](/docs/services/assistant?topic=assistant-dialog-methods).
+
+### Excluindo uma variável de contexto
+{: #dialog-runtime-context-delete}
+
+Para excluir uma variável de contexto, configure a variável para nulo.
+
+| Variável   | Valor            |
+|------------|------------------|
+| order_form | `null`           |
+
+Como alternativa, é possível excluir a variável de contexto na sua lógica de aplicativo. Para obter informações sobre como remover a variável inteiramente, consulte [Excluindo uma variável de contexto em JSON](#dialog-runtime-context-delete-json).
+
+### Atualizando um valor da variável de contexto
+{: #dialog-runtime-context-update}
+
+Para atualizar o valor de uma variável de contexto, defina uma variável de contexto com o mesmo nome que a variável de contexto anterior, mas, desta vez, especifique um valor diferente para ela.
+
+Quando mais de um nó configura o valor da mesma variável de contexto, o valor para a variável de contexto pode mudar durante o curso de uma conversa com um usuário. O valor que é aplicado em um determinado momento depende de qual nó está sendo acionado pelo usuário no curso da conversa. O valor especificado para a variável de contexto no último nó que é processado sobrescreve quaisquer valores que foram configurados para a variável por nós que foram processados anteriormente.
+
+Para obter informações sobre como atualizar o valor de uma variável de contexto quando o valor for um objeto JSON ou um tipo de dados da matriz JSON, consulte [Atualizando um valor da variável de contexto em JSON](#dialog-runtime-context-update-json)
+
+### Como as variáveis de contexto são processadas
+{: #dialog-runtime-context-processing}
+
+Onde você define a variável de contexto importa. A variável de contexto não é criada e configurada para o valor especificado para ela até que o serviço processe a parte do nó de diálogo em que a variável de contexto foi definida. Na maioria dos casos, você define a variável de contexto como parte da resposta do nó. Quando isso é feito, a variável de contexto é criada e designada ao valor especificado quando o serviço retorna a resposta do nó.
+
+Para um nó com respostas condicionais, a variável de contexto é criada e configurada quando a condição para uma resposta específica é atendida e essa resposta é processada. Por exemplo, se você definir uma variável de contexto para a resposta condicional nº 1 e o serviço processar somente a resposta condicional nº 2, a variável de contexto que você definiu para a resposta condicional nº 1 não será criada e configurada.
+
+Para obter informações sobre onde incluir variáveis de contexto que você deseja que o serviço crie e configure à medida que um usuário interage com um nó com intervalos, consulte [Incluindo variáveis de contexto em um nó com intervalos](#dialog-runtime-context-var-slots).
+
+### Ordem de operação
+{: #dialog-runtime-context-order-of-ops}
+
+Quando você define múltiplas variáveis para serem processadas juntas, a ordem na qual elas são definidas não determina a ordem na qual elas são avaliadas pelo serviço. O serviço avalia as variáveis em ordem aleatória. Não configure um valor na primeira variável de contexto na lista e espere ser capaz de usá-lo na segunda variável na lista, porque não há garantia de que a primeira variável de contexto será executada antes da segunda. Por exemplo, não use duas variáveis de contexto para implementar a lógica que verifica se a entrada do usuário contém a palavra `Yes` nela.
+
+| Variável        | Valor            |
+|-----------------|------------------|
+| user_input      | <? input.text ?> |
+| contains_yes    | <? $user_input.contains('Yes') ?> |
+
+Em vez disso, use uma expressão um pouco mais complexa para evitar precisar depender do valor da primeira variável em sua lista (user_input) que está sendo avaliada antes que a segunda variável (contains_yes) seja avaliada.
+
+| Variável      | Valor            |
+|---------------|------------------|
+| contains_yes  | <? input.text.contains('Yes') ?> |
+
+### Incluindo variáveis de contexto em um nó com intervalos
+{: #dialog-runtime-context-var-slots}
+
+Para obter mais informações sobre intervalos, consulte [Reunindo informações com intervalos](/docs/services/assistant?topic=assistant-dialog-slots).
+
+1.  Abra o nó com intervalos na visualização de edição.
+
+    - Para incluir uma variável de contexto que é processada após uma condição de resposta para um intervalo ser atendida, execute as etapas a seguir:
+
+      1.  Clique no ícone **Editar slot** ![Editar resposta](images/edit-slot.png).
+      1.  Clique no ícone **Opções** ![Resposta avançada](images/kabob.png) e, em seguida, selecione **Ativar respostas condicionais**.
+      1.  Clique no ícone **Editar resposta** ![Editar resposta](images/edit-slot.png) ao lado da resposta com a qual você deseja associar a variável de contexto.
+      1.  Clique no ícone **Opções** ![Resposta avançada](images/kabob.png) na seção de resposta e, em seguida, clique em **Abrir editor de contexto**.
+      1.  Inclua o nome da variável e o par de valores nos campos **Variável** e **Valor**.
+
+      ![Mostra como acessar o editor da JSON associado com a resposta condicional para um intervalo.](images/contextvar-json-slot-multi-response.png)
+
+    - Para incluir uma variável de contexto que é configurada ou atualizada depois que uma condição de intervalo é atendida, conclua as etapas a seguir:
+
+      1.  Clique no ícone **Editar slot** ![Editar resposta](images/edit-slot.png).
+      1.  No menu **Opções** ![Resposta avançada](images/kabob.png) no cabeçalho de visualização *Configurar intervalo*, clique em **Abrir editor JSON**.
+      1.  Inclua o nome da variável e o par de valores no formato JSON.
+
+          ```json
+          {
+            "time_of_day": "morning"
+          }
+          ```
+          {: codeblock}
+
+      Atualmente, não há como usar o editor de contexto para definir as variáveis de contexto que são configuradas durante essa fase de avaliação do nó de diálogo. Deve-se usar o editor JSON no lugar. Para obter mais informações sobre como usar o editor JSON, consulte [Variáveis de contexto no editor JSON](#dialog-runtime-context-var-json).
+      {: note}
+
+      ![Mostra como acessar o editor da JSON associado com uma condição do intervalo.](images/contextvar-json-slot-condition.png)
+
+## Variáveis de contexto no editor JSON
+{: #dialog-runtime-context-var-json}
+
+Também é possível definir uma variável de contexto no editor JSON. Você poderá desejar usar o editor JSON se estiver definindo uma variável de contexto complexa e desejar ser capaz de ver a expressão SpEL integral à medida que incluir ou mudá-la.
 
 O par de nome e valor deve atender a estes requisitos:
 
 - O `name` pode conter quaisquer caracteres alfabéticos em maiúsculas e minúsculas, caracteres numéricos (0-9) e sublinhados.
 
-  **Nota**: é possível incluir outros caracteres, como pontos e hifens, no nome. No entanto, caso faça isso, deve-se usar uma das abordagens a seguir cada vez que referenciar subsequentemente a variável:
+  É possível incluir outros caracteres, como pontos e hifens, no nome. No entanto, em caso positivo, deve-se especificar a sintaxe abreviada `$(variable-name)` sempre que a variável for referenciada subsequentemente. Consulte [Expressões para acessar objetos](/docs/services/assistant?topic=assistant-expression-language#expression-lanaguage-shorthand-context) para obter mais detalhes.
+  {:tip}
 
-  - **context['variable-name']**
+- O `value` pode ser qualquer tipo JSON suportado, tal como uma variável de sequência simples, um número, uma matriz JSON ou um objeto JSON.
 
-      A sintaxe da expressão SpEL integral.
-  - **$(variable-name)**
-
-      Sintaxe abreviada com o nome de variável entre parênteses.
-    Consulte [Acessando e avaliando objetos](expression-language.html#shorthand-syntax-for-context-variables) para obter mais detalhes.
-
-- O `value` pode ser qualquer tipo JSON suportado, tal como uma variável de sequencia de caracteres simples, um número ou uma matriz JSON. Quando você define a variável de contexto usando o editor JSON, também é possível especificar um objeto JSON como o valor.
-
-A tabela a seguir mostra como definir pares de nome e valor em campos do editor de variável de contexto:
-
-| Variável       | Valor              |
-|:---------------|--------------------|
-| dessert        | cake               |
-| toppings_array | ["onion","olives"] |
-| age            | 18                 |
-
-A amostra JSON a seguir define valores para a sequência $dessert, a matriz $toppings_array e as variáveis de contexto numéricas $age:
+A amostra JSON a seguir define valores para as variáveis de contexto de sequência $dessert, matriz $toppings_array, número $age e objeto $full_name:
 
 ```json
 {
   "context": {
     "dessert": "cake",
-    "toppings_array": ["onion", "olives"],
-    "age": 18
-  }
+    "toppings_array": [
+      "onions",
+      "olives"
+    ],
+    "age": 18,
+    "full_name": {
+      "first": "Jane",
+      "last": "Doe"
+    }
+  },
+  "output":{}
 }
 ```
 {: codeblock}
 
-Para definir uma variável de contexto, conclua as etapas a seguir:
+Para definir uma variável de contexto no formato JSON, conclua as etapas a seguir:
 
-1.  Defina a variável de contexto na seção do nó que representa o horário em que você deseja que a variável seja configurada durante a avaliação do nó de diálogo.
+1.  Clique para abrir o nó de diálogo no qual você deseja incluir a variável de contexto.
 
-    **Nota**: quaisquer valores das variáveis de contexto existentes que estão definidos para esse nó são exibidos em um conjunto de campos **Variável** e **Valor** correspondentes. Se você não deseja que eles sejam exibidos na visualização de edição do nó, deve-se fechar o editor de contexto. É possível fechar o editor no mesmo menu que é usado para abri-lo; as etapas a seguir descrevem como acessar o menu.
+    Quaisquer valores de variáveis de contexto existentes que estão definidos para esse nó são exibidos em um conjunto de campos **Variável** e **Valor** correspondentes. Se você não deseja que eles sejam exibidos na visualização de edição do nó, deve-se fechar o editor de contexto. É possível fechar o editor por meio do mesmo menu que é usado para abrir o editor JSON; as etapas a seguir descrevem como acessar o menu.
+    {: note}
 
-    - Para incluir uma variável de contexto que é configurada ou mudada após a resposta do nó ser processada, inclua a variável de contexto na seção de resposta.
+1.  Clique no ícone **Opções** ![Resposta avançada](images/kabob.png) que está associado à resposta e, em seguida, clique em **Abrir editor JSON**.
 
-      Clique no ícone **Opções** ![Resposta avançada](images/kabob.png) que está associado com a resposta e, em seguida, escolha um editor selecionando uma das opções a seguir:
+    ![Mostra como acessar o editor da JSON associado com uma resposta de nó padrão.](images/contextvar-json-response.png)
 
-      - **Abrir o editor da JSON**
-      - **Abrir o editor de contexto**
+    Caso a configuração de **Múltiplas respostas** esteja **Ativa** para o nó, deve-se primeiramente clicar no ícone **Editar resposta** ![Editar resposta](images/edit-slot.png) da resposta à qual você deseja associar a variável de contexto.
 
-      ![Mostra como acessar o editor da JSON associado com uma resposta de nó padrão.](images/contextvar-json-response.png)
+    ![Mostra como acessar o editor da JSON associado com um nó padrão que tem múltiplas respostas condicionais ativadas para ele.](images/contextvar-json-multi-response.png)
 
-      Se a configuração **Múltiplas respostas** é **Ativado** para o nó, deve-se clicar primeiro no ícone **Editar resposta** ![Editar resposta](images/edit-slot.png).
+1.  Inclua um bloco `"context":{}` se um não estiver presente.
 
-      ![Mostra como acessar o editor da JSON associado com um nó padrão que tem múltiplas respostas condicionais ativadas para ele.](images/contextvar-json-multi-response.png)
-
-    - Para incluir uma variável de contexto que é configurada ou atualizada após uma condição do intervalo ser atendida, clique no ícone **Editar intervalo** ![Editar resposta](images/edit-slot.png). No menu **Opções** ![Resposta avançada](images/kabob.png) no cabeçalho de visualização *Configurar intervalo*, clique em **Abrir editor JSON**. (Para obter mais informações sobre intervalos, veja [Reunindo informações com intervalos](dialog-slots.html).)
-
-      **Nota**: atualmente não há como usar o editor de contexto para definir as variáveis de contexto configuradas durante esta fase de avaliação do nó de diálogo.
-
-      ![Mostra como acessar o editor da JSON associado com uma condição do intervalo.](images/contextvar-json-slot-condition.png)
-
-    - Para incluir uma variável de contexto que é processada após uma condição de resposta para um intervalo ser atendida, clique no ícone **Editar intervalo** ![Editar resposta](images/edit-slot.png). Clique no ícone **Opções** ![Resposta avançada](images/kabob.png) e, em seguida, selecione **Ativar respostas condicionais**. Clique no ícone **Editar resposta** ![Editar resposta](images/edit-slot.png) ao lado da resposta com a qual você deseja associar a variável de contexto. Clique no ícone **Opções** ![Resposta avançada](images/kabob.png) na seção de resposta e, em seguida, escolha um editor selecionando uma das opções a seguir:
-
-      - **Abrir o editor da JSON**
-      - **Abrir o editor de contexto**
-
-      ![Mostra como acessar o editor JSON associado à resposta condicional para um intervalo.](images/contextvar-json-slot-multi-response.png)
-1.  Para definir a variável de contexto no editor de contexto, inclua o par de nome e valor de variável nos campos **Variável** e **Valor**.
-1.  Para definir a variável de contexto no editor JSON, conclua estas etapas adicionais:
-
-    - Inclua um bloco `"context":{}` se um não estiver presente.
-
-      ```json
-      {
-        "context":{},
+    ```json
+    {
+      "context":{},
       "output":{}
     }
-      ```
-      {: codeblock}
+    ```
+    {: codeblock}
 
-    - No bloco de contexto, inclua um par de nome e valor para cada variável de contexto que você deseja definir.
+1.  No bloco de contexto, inclua um par `"name"` e `"value"` para cada variável de contexto que você deseja definir.
 
-      ```json
-      {
-        "context":{
-          "name": "value"
-      }, "output": {} }
-      ```
-      {: codeblock}
+    ```json
+    {
+      "context":{
+        "name": "value"
+    },
+      "output": {}
+    }
+    ```
+    {: codeblock}
 
     Neste exemplo, uma variável nomeada `new_variable` é incluída em um bloco de contexto que já contém uma variável.
 
@@ -216,94 +403,14 @@ Para definir uma variável de contexto, conclua as etapas a seguir:
 
     Para referenciar a variável de contexto subsequentemente, use a sintaxe `$name` em que *name* é o nome da variável de contexto que você definiu. Por exemplo, `$new_variable`.
 
-## Tarefas comuns de variável de contexto
-{: #context-common-tasks}
+Saiba mais:
 
-Para armazenar a sequência inteira que foi fornecida pelo usuário como entrada, use `input.text`:
+- [ Excluindo uma variável de contexto em JSON ](#dialog-runtime-context-delete-json)
+- [Atualizando um valor da variável de contexto em JSON](#dialog-runtime-context-update-json)
+- [Configurando uma variável de contexto igual à outra](#dialog-runtime-var-equals-var)
 
-| Variável | Valor            |
-|----------|------------------|
-| repeat   | `<?input.text?>` |
-
-```json
-{
-  "context": {
-    "repeat": "<?input.text?>"
-      }
-}
-```
-{: codeblock}
-
-Para armazenar o valor de uma entidade em uma variável de contexto, use esta sintaxe:
-
-| Variável | Valor            |
-|----------|------------------|
-| place    | @place           |
-
-```json
-{
-  "context": {
-    "place": "@place"
-  }
-}
-```
-{: codeblock}
-
-É possível incluir um objeto JSON em uma variável de contexto usando um ou outro editor. A expressão a seguir define um objeto full_name que contém um conjunto de primeiro e último valores, que juntos formam o nome completo de uma pessoa.
-
-| Variável      | Valor            |
-|---------------|------------------|
-| full_name     | { "first":"Paul", "last":"Smith" } |
-
-```json
-{
-  "context": {
-    "full_name": {
-      "first":"Paul",
-      "last":"Smith"
-      }
-  }
-}
-```
-{: codeblock}
-
-Se você especifica `$full_name.first` na resposta, `Paul` é exibido.
-
-Para armazenar o valor de uma sequência extraída da entrada do usuário, é possível incluir uma expressão SpEL que usa o método de extração para aplicar uma expressão regular à entrada do usuário. A expressão a seguir extrai um número da entrada do usuário e o salva na variável de contexto `$number`.
-
-| Variável | Valor                               |
-|----------|-------------------------------------|
-| número   | `<?input.text.extract('[\d]+',0)?>` |
-
-```json
-{
-  "context": {
-     "number": "<?input.text.extract('[\\d]+',0)?>"
-  }
-}
-```
-{: codeblock}
-
-Quando você define uma expressão regular no editor JSON, deve-se escapar quaisquer barras invertidas usadas na expressão com outra barra invertida (`\\`). Você não precisa escapar as barras invertidas em expressões regulares definidas usando o editor de variável de contexto.
-{: tip}
-
-Para armazenar o valor de uma entidade padrão, anexe .literal ao nome da entidade. O uso desta sintaxe assegura que a extensão exata de texto da entrada do usuário que correspondeu ao padrão especificado seja armazenada na variável.
-
-| Variável | Valor            |
-|----------|------------------|
-| email    | @email.literal   |
-
-```json
-{
-  "context": {
-    "e-mail": "<? @email.literal?>"
-  }
-}
-```
-{: codeblock}
-
-## Excluindo uma variável de contexto
-{: #context-delete}
+### Excluindo uma variável de contexto no JSON
+{: #dialog-runtime-context-delete-json}
 
 Para excluir uma variável de contexto, configure a variável para nulo.
 
@@ -321,7 +428,8 @@ Se você deseja remover todo rastreio da variável de contexto, é possível usa
 ```json
 {
   "output": {
-    "texto" : {}, "deleted_variable" : "<? context.remove('order_form') ?>"
+    "text" : {},
+    "deleted_variable" : "<? context.remove('order_form') ?>"
   }
 }
 ```
@@ -329,142 +437,12 @@ Se você deseja remover todo rastreio da variável de contexto, é possível usa
 
 Como alternativa, é possível excluir a variável de contexto na sua lógica de aplicativo.
 
-### Ordem de operação
-{: #context-order-of-ops}
+### Atualizando um valor da variável de contexto em JSON
+{: #dialog-runtime-context-update-json}
 
-A ordem na qual você define as variáveis de contexto não determina a ordem na qual elas são avaliadas pelo serviço. O serviço avalia as variáveis, que são definidas como pares de nome e valor JSON, em ordem aleatória. Não configure um valor na primeira variável de contexto e espere ser capaz de usá-lo na segunda, porque não há garantia de que a primeira variável de contexto em sua lista será executada antes da segunda em sua lista. Por exemplo, não use duas variáveis de contexto para implementar a lógica que retorna um número aleatório entre zero e algum valor mais alto que é transmitido ao nó.
+Em geral, se um nó configura o valor de uma variável de contexto que já está configurado, o valor anterior é sobrescrito pelo novo valor.
 
-```json
-"context": {
-    "upper": "<? @sys-number.numeric_value + 1?>",
-    "answer": "<? new Random().nextInt($upper) ?>"
-}
-```
-{: codeblock}
-
-Use uma expressão um pouco mais complexa para evitar ter que depender do valor da variável de contexto $upper ser avaliado antes da variável de contexto $answer ser avaliada.
-
-```json
-"context": {
-    "answer": "<? new Random().nextInt(@sys-number.numeric_value + 1) ?>"
-}
-```
-{: codeblock}
-
-### Armazenando valores de entidade padrão
-{: #context-pattern-entities}
-
-Para armazenar o valor de uma entidade padrão em uma variável de contexto, anexe .literal ao nome da entidade. O uso desta sintaxe assegura que a extensão exata de texto da entrada do usuário que correspondeu ao padrão especificado seja armazenada na variável.
-
-```json
-{
-  "context": {
-    "e-mail": "<? @email.literal?>"
-  }
-}
-```
-{: codeblock}
-
-Para armazenar o texto de um único grupo em uma entidade padrão com grupos definidos, especifique o número da matriz do grupo que você deseja armazenar. Por exemplo, suponha que o padrão de entidade seja definido como a seguir para a entidade @phone_number. (Lembre-se, os parênteses denotam grupos padrão):
-
-`\b((958)|(555))-(\d{3})-(\d{4})\b`
-
-Para armazenar somente o código de área do número do telefone especificado na entrada do usuário, é possível usar a sintaxe a seguir:
-
-```json
-{
-  "context": {
-    "area_code": "<? @phone_number.groups[1] ?>"
-  }
-}
-```
-{: codeblock}
-
-Os grupos são delimitados pela expressão regular que é usada para definir o padrão de grupo. Por exemplo, se a entrada do usuário que corresponde ao padrão definido na entidade `@phone_number` é: `958-234-3456`, os grupos a seguir são criados:
-
-| Número do grupo | Valor do mecanismo Regex  | Valor do diálogo   | Explicação |
-|--------------|---------------------|----------------|-------------|
-| groups[0]    | `958-234-3456`      | `958-234-3456` | O primeiro grupo é sempre a sequência de correspondência total. |
-| groups[1]    | `((958)`l`(555))`   | `958`          | A sequência que corresponde ao regex para o primeiro grupo definido, que é `((958)`l`(555))`. |
-| groups[2]    | `(958)`             | `958`          | Correspondência com relação ao grupo incluído como o primeiro operando na expressão OR `((958)`l`(555))` |
-| groups[3]    | `(555)`             | `null`         | Nenhuma correspondência com relação ao grupo que é incluído como o segundo operando na expressão OR `((958)`l`(555))` |
-| groups[4]    | `(\d{3})`           | `234`          | Sequência que corresponde à expressão regular que está definida para o grupo. |
-| groups[5]    | `(\d{4})`           | `3456`         | Sequência que corresponde à expressão regular que está definida para o grupo. |
-{: caption="Detalhes do grupo" caption-side="top"}
-
-Para ajudá-lo a decifrar qual número de grupo usar para capturar a seção de entrada em que você está interessado, é possível extrair informações sobre todos os grupos de uma vez. Use a sintaxe a seguir para criar uma variável de contexto que retorna uma matriz de todas as correspondências de entidade padrão agrupadas:
-
-```json
-{
-  "context": {
-    "array_of_matched_groups": "<? @phone_number.groups ?>"
-  }
-}
-```
-{: codeblock}
-
-Use a área de janela "Experimente" para inserir alguns valores de número de telefone de teste. Para a entrada `958-123-2345`, essa expressão configura `$array_of_matched_groups` para `["958-123-2345","958","958",null,"123","2345"]`.
-
-É possível então contar cada valor na matriz iniciando com 0 para obter o número do grupo para ele.
-
-| Valor do elemento de matriz | Número do elemento de matriz |
-|---------------------|----------------------|
-| "958-123-2345"      | 0 |
-| "958"               | 1 |
-| "958"               | 2 |
-| null                | 3 |
-| "123"               | 4 |
-| "2345"              | 5 |
-{: caption="Elementos de matriz" caption-side="top"}
-
-É fácil determinar que, para capturar os últimos quatro dígitos do número de telefone, você precisa do grupo #5, por exemplo.
-
-Para retornar a estrutura JSONArray que é criada para representar a entidade padrão agrupada, use a sintaxe a seguir:
-
-```json
-{
-  "context": {
-    "json_matched_groups": "<? @phone_number.groups_json ?>"
-  }
-}
-```
-{: codeblock}
-
-Essa expressão configura `$json_matched_groups` para a matriz JSON a seguir:
-
-```json
-[
-  {"group": "group_0","location": [0, 12]},
-  {"group": "group_1","location": [0, 3]},
-  {"group": "group_2","location": [0, 3]},
-  {"group": "group_3"},
-  {"group": "group_4","location": [4, 7]},
-  {"group": "group_5","location": [8, 12]}
-]
-```
-{: codeblock}
-
-**Nota**: `local` é uma propriedade de uma entidade que usa um deslocamento de caractere baseado em zero para indicar onde o valor de entidade detectado inicia e termina no texto de entrada.
-
-Se você espera que dois números de telefone sejam fornecidos na entrada, é possível verificar dois números de telefone. Se presentes, use a sintaxe a seguir para capturar o código de área do segundo número, por exemplo.
-
-```json
-{
-  "context": {
-    "second_areacode": "<? entities['phone_number'][1].groups[1] ?>"
-  }
-}
-```
-{: codeblock}
-
-Se a entrada é `I want to change my phone number from 958-234-3456 to 555-456-5678`, `$second_areacode` é igual a `555`.
-
-## Atualizando um valor da variável de contexto
-{: #context-update}
-
-Se um nó configura o valor de uma variável de contexto que já foi configurado, o valor anterior é sobrescrito.
-
-### Atualizando um objeto JSON complexo
+#### Atualizando um objeto JSON complexo
 
 Os valores anteriores são sobrescritos para todos os tipos de JSON, exceto um objeto JSON. Se a variável de contexto é um tipo complexo tal como o objeto JSON, um procedimento de mesclagem JSON é usado para atualizar a variável. A operação de mesclagem inclui quaisquer propriedades recém-definidas e sobrescreve quaisquer propriedades existentes do objeto.
 
@@ -508,9 +486,9 @@ O resultado é este contexto:
 ```
 {: codeblock}
 
-Veja [Métodos de linguagem de expressão](dialog-methods.html#objects) para obter mais informações sobre os métodos que podem ser executados em objetos.
+Veja [Métodos de linguagem de expressão](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-objects) para obter mais informações sobre os métodos que podem ser executados em objetos.
 
-### Atualizando matrizes
+#### Atualizando matrizes
 
 Se seus dados de contexto de diálogo contiverem uma matriz de valores, você poderá atualizar a matriz anexando valores, removendo um valor ou substituindo todos os valores.
 
@@ -658,20 +636,56 @@ Escolha uma dessas ações para atualizar a matriz. Em cada caso, vemos a matriz
         ```
         {: codeblock}
 
-Veja [Métodos de linguagem de expressão](dialog-methods.html#arrays) para obter mais informações sobre os métodos que podem ser executados em matrizes.
+Veja [Métodos de linguagem de expressão](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-arrays) para obter mais informações sobre os métodos que podem ser executados em matrizes.
+
+### Configurando uma variável de contexto igual à outra
+{: #dialog-runtime-var-equals-var}
+
+Ao configurar uma variável de contexto igual à outra variável de contexto, você define um ponteiro de uma para a outra. Se o valor de uma das variáveis mudar subsequentemente, o valor da outra variável também mudará.
+
+Por exemplo, se você especificar uma variável de contexto como a seguir, quando o valor de `$var1` ou `$var2` mudar subsequentemente, o valor das outras mudará também.
+
+| Variável  | Valor  |
+|-----------|--------|
+| var2      | var1   |
+
+Não configure uma variável igual à outra para capturar um valor de momento. Ao lidar com matrizes, por exemplo, se você desejar capturar um valor de matriz armazenado em uma variável de contexto em um determinado ponto no diálogo para salvá-lo para uso posterior, será possível criar uma nova variável com base no valor atual da variável.
+
+Por exemplo, para criar uma cópia dos valores de uma matriz em um determinado ponto do fluxo de diálogo, inclua uma nova matriz que seja preenchida com os valores para a matriz existente. Para fazer isso, é possível usar a sintaxe a seguir:
+
+```json
+{
+"context": {
+   "var2": "<? output.var2?:new JsonArray().append($var1) ?>"
+ }
+ }
+ ```
+{: codeblock}
 
 ## Digressões
-{: #digressions}
+{: #dialog-runtime-digressions}
 
 Uma digressão ocorre quando um usuário está no meio de um fluxo de diálogo projetado para endereçar um objetivo e alterna abruptamente os tópicos para iniciar um fluxo de diálogo projetado para endereçar um objetivo diferente. O diálogo sempre suportou a capacidade do usuário de mudar assuntos. Se nenhum dos nós na ramificação de diálogo que está sendo processada corresponde ao objetivo da entrada mais recente do usuário, a conversa volta para a árvore para verificar as condições do nó raiz para uma correspondência apropriada. As configurações de digressão que estão disponíveis por nó fornecem a capacidade de customizar esse comportamento ainda mais.
 
 Com as configurações de digressão, é possível permitir que a conversa retorne para o fluxo de diálogo que foi interrompido quando a digressão ocorreu. Por exemplo, o usuário pode estar pedindo um novo telefone, mas alterna os tópicos para perguntar sobre tablets. Seu diálogo pode responder à pergunta sobre tablets e depois levar o usuário de volta para onde ele parou no processo de pedir um telefone. Permitir que digressões ocorram e retornem fornece a seus usuários mais controle sobre o fluxo da conversa no tempo de execução. Eles podem mudar tópicos, seguir um fluxo de diálogo sobre o tópico não relacionado até seu término e, em seguida, retornar para onde estavam antes. O resultado é um fluxo de diálogo que simula mais estritamente uma conversa entre humanos.
 
-A imagem a seguir usa um modelo da interface com o usuário da árvore de diálogo para ilustrar o conceito de uma digressão. Ela mostra como um usuário interage com os nós de diálogo que são configurados para permitir digressões que retornam ao fluxo de diálogo que estava em andamento. O usuário começa a fornecer as informações necessárias para fazer uma reserva de jantar. No meio de preenchimento de intervalos no nó #reservation, o usuário faz uma pergunta sobre as opções de menu vegetariano. O diálogo responde à nova pergunta do usuário localizando um nó que a endereça entre os nós raiz (um nó que condiciona na intenção #cuisine). Em seguida, retorna à conversa que estava em andamento mostrando o prompt para o próximo intervalo vazio do nó de diálogo original.
+![Mostra alguém que está fornecendo detalhes sobre uma reserva de jantar perguntar a respeito de opções vegetarianas, obter uma resposta e então retornar para fornecer detalhes de reserva.](images/digression.gif){: gif}
 
-![Mostra alguém que está fornecendo detalhes sobre uma reserva de jantar perguntar a respeito de opções vegetarianas, obter uma resposta e então retornar para fornecer detalhes de reserva.](images/digression.gif)
+A imagem animada usa um protótipo da interface com o usuário da árvore de diálogo para ilustrar o conceito de uma digressão. Ela mostra como um usuário interage com os nós de diálogo que são configurados para permitir digressões que retornam ao fluxo de diálogo que estava em andamento. O usuário começa a fornecer as informações necessárias para fazer uma reserva de jantar. No meio de preenchimento de intervalos no nó #reservation, o usuário faz uma pergunta sobre as opções de menu vegetariano. O diálogo responde à nova pergunta do usuário localizando um nó que a endereça entre os nós raiz (um nó que condiciona na intenção #cuisine). Em seguida, retorna à conversa que estava em andamento mostrando o prompt para o próximo intervalo vazio do nó de diálogo original.
+
+Assista a este vídeo para aprender mais.
+
+<iframe class="embed-responsive-item" id="youtubeplayer" title="Visão geral de digressões" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/I3K7mQ46K3o?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
+- [Antes de iniciar](#dialog-runtime-digression-prereqs)
+- [Customizando digressões](#dialog-runtime-enable-digressions)
+- [ Dicas de uso de Digressão ](#dialog-runtime-digress-tips)
+- [Desativando digressões em um nó raiz](#dialog-runtime-disable-digressions)
+- [ Tutorial de Digressão ](#dialog-runtime-digression-tutorial)
+- [Considerações de design](#dialog-runtime-digression-design-considerations)
 
 ### Antes de iniciar
+{: #dialog-runtime-digression-prereqs}
 
 Ao testar seu diálogo geral, decida quando e onde faz sentido permitir que digressões e devoluções de digressões ocorram. Os controles de digressão a seguir são aplicados aos nós automaticamente. Tome a ação somente se desejar mudar esse comportamento padrão.
 
@@ -687,7 +701,7 @@ Ao testar seu diálogo geral, decida quando e onde faz sentido permitir que digr
     A seção de etapa final de um nó especifica o que deve acontecer após o nó ser processado. Quando o diálogo é configurado para ir diretamente para outro nó, é frequentemente para assegurar que uma sequência específica seja seguida. E quando o nó é configurado para ignorar entrada do usuário, é equivalente a forçar o diálogo para processar o primeiro nó-filho após o nó atual sucessivamente. Para evitar a quebra da lógica do fluxo de diálogo existente, as digressões não são permitidas em qualquer um desses casos. Antes de poder ativar as digressões fora desse nó, deve-se mudar o que é especificado na seção de etapa final.
 
 ### Customizando digressões
-{: #enable-digressions}
+{: #dialog-runtime-enable-digressions}
 
 Você não define o início e o término de uma digressão. O usuário está inteiramente no controle do fluxo de digressão no tempo de execução. Você somente especifica como cada nó deve ou não deve participar em uma digressão liderada pelo usuário. Para cada nó, você configura se:
 
@@ -717,7 +731,7 @@ Para mudar o comportamento de digressão para um nó individual, conclua as etap
 
     - **Nós com intervalos**: escolha se você deseja permitir aos usuários digressionar fora do nó antes de todos os intervalos serem preenchidos. Configure a alternância *Permitir digressões fora durante o preenchimento de intervalo* para **Sim** para ativar digressões fora.
 
-      Se ativado, quando a conversa retorna da digressão, o prompt para o próximo intervalo vazio é exibido para encorajar o usuário a continuar fornecendo informações. Se desativado, quaisquer entradas enviadas pelo usuário que não contêm um valor que possa preencher um intervalo são ignoradas. No entanto, é possível direcionar questões não solicitadas que você prevê que os usuários podem perguntar enquanto interagem com o nó definindo manipuladores de intervalos. Consulte [Incluindo intervalos](dialog-slots.html#add-slots) para obter mais informações.
+      Se ativado, quando a conversa retorna da digressão, o prompt para o próximo intervalo vazio é exibido para encorajar o usuário a continuar fornecendo informações. Se desativado, quaisquer entradas enviadas pelo usuário que não contêm um valor que possa preencher um intervalo são ignoradas. No entanto, é possível direcionar questões não solicitadas que você prevê que os usuários podem perguntar enquanto interagem com o nó definindo manipuladores de intervalos. Consulte [Incluindo intervalos](/docs/services/assistant?topic=assistant-dialog-slots#dialog-slots-add) para obter mais informações.
 
       A imagem a seguir mostra como as digressões fora do nó #reservation com intervalos (mostrados na ilustração anterior) são configuradas.
 
@@ -731,7 +745,7 @@ Para mudar o comportamento de digressão para um nó individual, conclua as etap
 
     É possível fazer as opções a seguir sobre como as digressões em um nó se comportam:
 
-    - Evitar que os usuários possam digressionar no nó. Veja [Desativando digressões em um nó raiz](#diable-digressions) para obter mais detalhes.
+    - Evitar que os usuários possam digressionar no nó. Veja [Desativando digressões em um nó raiz](#dialog-runtime-disable-digressions) para obter mais detalhes.
 
     - Quando as digressões no nó são ativadas, escolha se o diálogo deve voltar para o fluxo de diálogo do qual ele é digressionado. Quando selecionado, após a ramificação do nó atual terminar de ser processada, o fluxo de diálogo volta para o nó interrompido. Para fazer o diálogo retornar depois disso, selecione **Retornar após digressão**.
 
@@ -749,39 +763,265 @@ Os nós #reservation e #cuisine representam duas ramificações de diálogo que 
 
 ![Mostra dois diálogos, um que configura as digressões fora do nó de intervalos de reserva e um que configura a digressão no nó cuisine.](images/digression-settings.png)
 
-### Desativando digressões em um nó raiz
-{: #disable-digressions}
+### Dicas de uso de Digressão
+{: #dialog-runtime-digress-tips}
 
-Quando um fluxo digressiona em um nó raiz, ele segue o caminho do diálogo que está configurado para esse nó. Em seguida, ele pode processar uma série de nós-filhos antes de atingir o final da ramificação de nós e, então, se configurado para fazer isso, volta para o fluxo de diálogo que foi interrompido. Por meio do teste de diálogo, você pode achar que um nó raiz é acionado com muita frequência, ou em horários inesperados, ou que seu diálogo é muito complexo e leva o usuário muito longe do curso para ser um bom candidato a uma digressão provisória. Se você determina que prefere não permitir que usuários digressionem nele, é possível configurar o nó raiz para não permitir digressões dentro dele.
+Esta seção descreve soluções para situações que você pode encontrar ao usar digressões.
+
+- **Mensagem de retorno customizada**: para quaisquer nós em que você ativar retornos de digressões fora, considere incluir texto que permita que os usuários saibam que estão retornando para o ponto em que eles pararam em um fluxo de diálogo anterior. Em sua resposta de texto, use uma sintaxe especial que permita incluir duas versões da resposta.
+
+  Se você não tomar uma ação, a mesma resposta de texto será exibida uma segunda vez para permitir que os usuários saibam que eles retornaram para o nó do qual eles digressionaram. É possível tornar mais claro para os usuários que eles retornaram ao encadeamento de conversa original, especificando uma mensagem exclusiva para ser exibida quando eles retornarem.
+
+  Por exemplo, se a resposta de texto original para o nó é `What's the order number?`, você pode desejar exibir uma mensagem como `Now let's get back to where we left off. What is the order number?` quando os usuários retornam para o nó.
+
+  Para fazer isso, use a sintaxe a seguir para especificar a resposta de texto do nó:
+
+  `<? (returning_from_digression)? "post-digression message" : "first-time message" ?>`
+
+  Por exemplo:
+
+  ```bash
+  <? (returning_from_digression)? "Now, let's get back to where we left off.
+  What is the order number?" : "What's the order number?" ?>
+  ```
+  {: codeblock}
+
+  Não é possível incluir expressões SpEL ou sintaxe abreviada nas respostas de texto que você inclui. De fato, não é possível usar a sintaxe abreviada. Em vez disso, deve-se construir a mensagem concatenando as sequências de texto e a sintaxe de expressão SpEL integral para formar a resposta integral.
+  {: note}
+  
+  Por exemplo, use a sintaxe a seguir para incluir uma variável de contexto em uma resposta de texto que você normalmente especificaria como `What can I do for you, $username?`:
+
+  ```bash
+  <? (returning_from_digression)? "Where were we, " +
+  context["username"] + "? Oh right, I was asking what can I do
+  for you today." : "What can I do for you today, " +
+  context["username"] + "?" ?>
+  ```
+
+  Para obter detalhes da sintaxe de expressão SpEL integral, consulte [Expressão para acessar objetos](/docs/services/assistant?topic=assistant-expression-language#expression-language-shorthand-syntax).
+
+- **Evitando retornos**: em alguns casos, você pode desejar evitar um retorno para o fluxo de conversa interrompido com base em uma opção que o usuário faz no fluxo de diálogo atual. É possível usar a sintaxe especial para evitar um retorno de um nó específico.
+
+  Por exemplo, você pode ter um nó que condicione `#General_Connect_To_Agent` ou uma intenção semelhante. Quando acionado, se desejar obter a confirmação do usuário antes de transferi-los para um serviço externo, você poderá incluir uma resposta como `Do you want me to transfer you to an agent now?` Em seguida, será possível incluir dois nós-filhos que condicionam `#yes` e `#no`, respectivamente.
+  
+  A melhor maneira de gerenciar digressões para esse tipo de ramificação é configurar o nó raiz para permitir retornos de digressão. No entanto, no nó `#yes`, inclua a expressão SpEL `<? clearDialogStack() ?>` na resposta. Por exemplo:
+  
+    ```bash
+  OK. Vou transferir você agora. <? clearDialogStack() ?>
+  ```
+  {: codeblock}
+
+  Essa expressão SpEL evita que o retorno de digressão ocorra nesse nó. Quando uma confirmação for solicitada, se o usuário disser sim, a resposta adequada será exibida e o fluxo de diálogo que foi interrompido não será continuado. Se o usuário disser não, ele será retornado para o fluxo que foi interrompido.
+
+### Desativando as digressões em um nó raiz
+{: #dialog-runtime-disable-digressions}
+
+Quando um fluxo digressiona em um nó raiz, ele segue o curso do diálogo que está configurado para esse nó. Em seguida, ele pode processar uma série de nós-filhos antes de atingir o final da ramificação de nós e, então, se configurado para fazer isso, volta para o fluxo de diálogo que foi interrompido. Por meio do teste de diálogo, você pode achar que um nó raiz é acionado com muita frequência, ou em horários inesperados, ou que seu diálogo é muito complexo e leva o usuário muito longe do curso para ser um bom candidato a uma digressão provisória. Se você determina que prefere não permitir que usuários digressionem nele, é possível configurar o nó raiz para não permitir digressões dentro dele.
 
 Para desativar completamente as digressões em um nó raiz, conclua as etapas a seguir:
 
 1.  Clique para abrir o nó raiz que você deseja editar.
 1.  Clique em **Customizar** e, em seguida, clique na guia **Digressões**.
-1.  Configure a alternância *Permitir digressões neste nó* para **Desativado**.
-1.  Clique em **Aplicar**.
+1.  Configure a alternância *Permitir digressões neste nó* como **Desativado**.
+1.  Clique em ** Apply**.
 
-Se você decide que deseja evitar digressões em vários nós raiz, mas não deseja editar cada um individualmente, é possível incluir os nós em uma pasta. Na página *Customizar* da pasta, é possível configurar a alternância *Permitir digressões neste nó* para **Desativado** para aplicar a configuração a todos os nós de uma vez. Veja [Organizando o diálogo com pastas](dialog-build.html#folders) para obter mais informações.
+Se você decide que deseja evitar digressões em vários nós raiz, mas não deseja editar cada um individualmente, é possível incluir os nós em uma pasta. Na página *Customizar* da pasta, é possível configurar a opção *Permitir digressões neste nó* como **Off** para aplicar a configuração a todos os nós de uma vez. Consulte [Organizando o diálogo com pastas](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-folders) para obter mais informações.
+
+### Tutorial de digressão
+{: #dialog-runtime-digression-tutorial}
+
+Siga o [tutorial](/docs/services/assistant?topic=assistant-tutorial-digressions) para importar uma área de trabalho que tenha um conjunto de nós já definidos. É possível percorrer alguns exercícios que ilustram como as digressões funcionam.
 
 ### Considerações de design
-{: #digression-design-considerations}
+{: #dialog-runtime-digression-design-considerations}
 
-- **Evite proliferação do nó de fallback**: muitos designers de diálogo incluem um nó com uma condição `true` ou `anything_else` no término de cada ramificação de diálogo como uma maneira de evitar que os usuários fiquem presos na ramificação. Esse design retorna uma mensagem genérica se a entrada do usuário não corresponde nada que você previu e incluiu um nó de diálogo específico para direcionar. No entanto, os usuários não podem digressionar fora de fluxos de diálogo que usam essa abordagem.
+- **Evite a proliferação de nó de fallback**: muitos designers de diálogo incluem um nó com uma condição `true` ou `anything_else` no final de cada ramificação de diálogo como uma maneira de evitar que os usuários fiquem presos na ramificação. Esse design retorna uma mensagem genérica se a entrada do usuário não corresponde nada que você previu e incluiu um nó de diálogo específico para direcionar. No entanto, os usuários não podem digressionar fora de fluxos de diálogo que usam essa abordagem.
 
-  Avalie as ramificações que usam essa abordagem para determinar se seria melhor permitir digressões fora da ramificação. Se a entrada do usuário não corresponde nada que você previu, ela pode localizar uma correspondência com relação a um fluxo de diálogo totalmente diferente em sua árvore. Em vez de responder com uma mensagem genérica, é possível colocar efetivamente o resto do diálogo para trabalhar para tentar direcionar a entrada do usuário. Além disso, o nó `Anything else` de nível raiz pode sempre responder à entrada que nenhum dos outros nós raiz pode direcionar.
+  Avalie as ramificações que usam essa abordagem para determinar se seria melhor permitir digressões fora da ramificação. Se a entrada do usuário não corresponde nada que você previu, ela pode localizar uma correspondência com relação a um fluxo de diálogo totalmente diferente em sua árvore. Em vez de responder com uma mensagem genérica, é possível colocar efetivamente o resto do diálogo para trabalhar para tentar direcionar a entrada do usuário. E o nó "Anything else" do nível raiz sempre pode responder à entrada que nenhum dos outros nós raiz pode direcionar.
 
-- **Reconsidere saltos para um nó de fechamento**: muitos diálogos são projetados para fazer uma pergunta de fechamento padrão, como `Did I answer your question today?` Os usuários não podem digressionar fora dos nós que estão configurados para ir para outro nó. Então, se você configura todos os nós de ramificação final para ir para um nó de fechamento comum, as digressões não podem ocorrer. Considere rastrear a satisfação do usuário por meio de métricas ou algum outro meio.
+- **Reconsidere saltos para um nó de fechamento**: muitos diálogos são projetados para fazer uma pergunta de fechamento padrão, como: `Did I answer your question today?` Os usuários não podem digressionar de nós que estão configurados para ir para outro nó. Então, se você configura todos os nós de ramificação final para ir para um nó de fechamento comum, as digressões não podem ocorrer. Considere rastrear a satisfação do usuário por meio de métricas ou algum outro meio.
 
-- **Teste possíveis cadeias de digressão**: se um usuário digressiona fora do nó atual para outro nó que permite digressões fora, o usuário pode potencialmente digressionar fora daquele outro nó e repetir esse padrão uma ou mais vezes novamente. Se todos os nós na cadeia de digressão forem configurados para retornar após a digressão, o usuário será eventualmente trazido de volta ao nó de diálogo atual. No entanto, teste os cenários que digressionam múltiplas vezes para determinar se os nós individuais funcionam conforme o esperado.
+- **Teste as cadeias de digressão possíveis**: se um usuário digressionar do nó atual para outro nó que permita digressões, o usuário poderá potencialmente digressionar desse outro nó e repetir esse padrão uma ou mais vezes novamente. Se o nó inicial na cadeia de digressão estiver configurado para retornar após a digressão, o usuário eventualmente será trazido de volta para o nó de diálogo atual. Na verdade, quaisquer nós subsequentes na cadeia que estiverem configurados para não retornar serão excluídos de serem considerados como destinos de digressão. Teste os cenários que digressionam múltiplas vezes para determinar se os nós individuais funcionam conforme o esperado.
 
-- **Lembre-se de que o nó atual tem prioridade**: lembre-se de que os nós fora do fluxo atual somente são considerados como destinos de digressão se o fluxo atual não pode direcionar a entrada do usuário. É ainda mais importante em um nó com intervalos que permite digressões fora, em particular, deixar claro aos usuários quais informações são necessárias deles e incluir instruções de confirmação que são exibidas após o usuário fornecer um valor.
+- **Lembre-se de que o nó atual tem prioridade**: lembre-se de que os nós fora do fluxo atual somente serão considerados como destinos de digressão se o fluxo atual não puder direcionar a entrada do usuário. É ainda mais importante em um nó com intervalos que permite digressões fora, em particular, deixar claro aos usuários quais informações são necessárias deles e incluir instruções de confirmação que são exibidas após o usuário fornecer um valor.
 
-  Qualquer intervalo pode ser preenchido durante o processo de preenchimento de intervalo. Portanto, um intervalo pode capturar entrada do usuário inesperadamente. Por exemplo, talvez você tenha um nó com intervalos que coleta as informações necessárias para fazer uma reserva de jantar. Um dos intervalos coleta informações de data. Ao fornecer os detalhes de reserva, o usuário pode perguntar `What's the weather meant to be tomorrow?` Você pode ter um nó raiz que condiciona em #forecast o que pode responder ao usuário. No entanto, como a entrada do usuário inclui a palavra `tomorrow` e o nó de reserva com intervalos está sendo processado, o serviço presume que o usuário está fornecendo ou atualizando a data de reserva. *O nó atual sempre tem prioridade.* Se você define uma instrução de confirmação clara, como `Ok, setting the reservation date to tomorrow,` é mais provável que o usuário perceba que houve um erro de comunicação e o corrige.
+  Qualquer intervalo pode ser preenchido durante o processo de preenchimento de intervalo. Portanto, um intervalo pode capturar entrada do usuário inesperadamente. Por exemplo, talvez você tenha um nó com intervalos que coleta as informações necessárias para fazer uma reserva de jantar. Um dos intervalos coleta informações de data. Ao fornecer os detalhes da reserva, o usuário pode perguntar `What's the weather meant to be tomorrow`. Você pode ter um nó raiz que condicione #forecast que pode responder ao usuário. No entanto, como a entrada do usuário inclui a palavra `tomorrow` e o nó de reserva com intervalos está sendo processado, o serviço supõe que o usuário está fornecendo ou atualizando a data de reserva. *O nó atual sempre tem prioridade.* Se você define uma instrução de confirmação clara, como `Ok, setting the reservation date to tomorrow`, é mais provável que o usuário perceba que houve um erro de comunicação e o corrija.
 
   Por outro lado, enquanto preenche os intervalos, se o usuário fornece um valor que não é esperado por nenhum dos intervalos, há uma chance que ele corresponderá com relação a um nó raiz completamente não relacionado para o qual o usuário nunca pretendeu digressionar.
 
   Certifique-se de fazer vários testes enquanto você configura o comportamento de digressão.
 
-- **Ao usar digressões em vez de manipuladores de intervalos**: para perguntas gerais que os usuários podem fazer a qualquer momento, use um nó raiz que permita digressões nele, processe a entrada e depois volte para o fluxo que estava em andamento. Para os nós com intervalos, tente prever os tipos de perguntas relacionadas que os usuários podem desejar fazer ao preencher os intervalos e direcione-os incluindo manipuladores no nó.
+- **Quando usar digressões em vez de manipuladores de intervalo**: para perguntas gerais que os usuários podem perguntar a qualquer momento, use um nó raiz que permita digressões nele, processe a entrada e, em seguida, volte para o fluxo que estava em andamento. Para os nós com intervalos, tente prever os tipos de perguntas relacionadas que os usuários podem desejar fazer ao preencher os intervalos e direcione-os incluindo manipuladores no nó.
 
   Por exemplo, se o nó com intervalos coleta as informações necessárias para preencher uma solicitação de seguro, você pode desejar incluir manipuladores que direcionam perguntas comuns sobre o seguro. No entanto, para perguntas sobre como obter ajuda, ou seus locais de lojas ou o histórico de sua empresa, use um nó de nível raiz.
+
+## Desambiguação ![Apenas ou plano Premium apenas](images/premium.png)
+{: #dialog-runtime-disambiguation}
+
+Esse recurso está disponível somente para usuários do Plus ou Premium.
+{: tip}
+
+Ao ativar a desambiguação, você instrui o serviço a solicitar ajuda aos usuários quando ele descobre que mais de um nó de diálogo pode responder à sua entrada. Em vez de adivinhar qual nó processar, seu assistente compartilha uma lista das opções do nó superior com o usuário e solicita que o usuário selecione a correta.
+
+![Mostra uma conversa de amostra entre um usuário e o assistente, em que o assistente solicita esclarecimentos do usuário.](images/disambig-demo.png)
+
+Se ativado, a desambiguação não será acionada, a menos que as condições a seguir sejam atendidas:
+
+- A pontuação de confiança de uma ou mais das intenções de preparação detectadas na entrada do usuário é maior que 55% da pontuação de confiança da intenção superior.
+- A pontuação de confiança da intenção superior está acima de 0,2.
+
+Mesmo quando essas condições são atendidas, a desambiguação não ocorre a menos que dois ou mais nós independentes em seu diálogo atendam aos critérios a seguir:
+
+- A condição do nó inclui uma das intenções que acionaram a desambiguação. Ou a condição do nó é avaliada de outra forma como true. Por exemplo, se o nó verifica um tipo de entidade e a entidade é mencionada na entrada do usuário, ela é elegível.
+- Há texto no campo *nome do nó externo* do nó.
+
+Saiba mais
+
+- [Exemplo de desambiguação](#dialog-runtime-disambig-example)
+- [Ativando a desambiguação](#dialog-runtime-disambig-enable)
+- [Escolhendo nós](#dialog-runtime-choose-nodes)
+- [Manipulando nenhum dos acima](#dialog-runtime-handle-none)
+- [Testando a desambiguação](#dialog-runtime-disambig-test)
+
+### Exemplo de desambiguação
+{: #dialog-runtime-disambig-example}
+
+Por exemplo, você tem um diálogo que tem dois nós com condições de intenção que direcionam solicitações de cancelamento. As condições são:
+
+- eCommerce_Cancel_Product_Order
+- Customer_Care_Cancel_Account
+
+Se a entrada do usuário for `i must cancel it today`, as intenções a seguir poderão ser detectadas na entrada:
+
+`[`
+`{"intent":"Customer_Care_Cancel_Account","confidence":0.6618281841278076},`
+`{"intent":"eCommerce_Cancel_Product_Order","confidence":0.4330700159072876},`
+`{"intent":"Customer_Care_Appointments","confidence":0.2902342438697815},`
+`{"intent":"Customer_Care_Store_Hours","confidence":0.2550420880317688},`
+`...]`
+
+O serviço é `0.6618281841278076` (66%) confiante de que o objetivo do usuário corresponde à intenção `#Customer_Care_Cancel_Account`. Se qualquer outra intenção tiver uma pontuação de confiança maior que 55% de 66%, ela se ajustará aos critérios para ser uma candidata à desambiguação.
+
+`0.66 x 0.55 = 0.36`
+
+As intenções com uma pontuação maior que 0,36 são elegíveis.
+
+Em nosso exemplo, a intenção `#eCommerce_Cancel_Product_Order` está acima do limite, com uma pontuação de confiança de `0.4330700159072876`.
+
+Quando a entrada do usuário for `i must cancel it today`, ambos os nós de diálogo serão considerados candidatos viáveis para responder. Para determinar qual nó de diálogo deve ser processado, o assistente solicita que o usuário selecione um. E para ajudar o usuário a escolher entre eles, o assistente fornece um resumo curto do que cada nó faz. O texto de resumo que ele exibe é extraído diretamente das informações de *nome do nó externo* que foram especificadas para cada nó.
+
+![O serviço solicita que o usuário selecione dentre uma lista de opções de diálogo, incluindo Cancelar uma conta, Cancelar uma ordem de produto e Nenhuma das acima.](images/disambig-tryitout.png)
+
+Observe que o serviço reconhece o termo `today` na entrada do usuário como uma data, uma menção da entidade `@sys-date`. Se a árvore de diálogo contiver um nó que condicione a entidade `@sys-date`, ela também será incluída na lista de opções de desambiguação. Essa imagem mostra-a incluída na lista como a opção *Capturar informações de data*.
+
+![O serviço solicita que o usuário escolha dentre uma lista de opções de diálogo, incluindo informações de data de captura.](images/disambig-tryitout-date.png)
+
+O vídeo a seguir fornece uma visão geral da desambiguação.
+
+<iframe class="embed-responsive-item" id="youtubeplayer0" title="Visão geral da desambiguação" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/VVyklAXlmbA?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
+### Ativando a desambiguação
+{: #dialog-runtime-disambig-enable}
+
+Para ativar a desambiguação, conclua as etapas a seguir:
+
+1.  Na página Diálogos, clique em ** Configurações**.
+1.  Clique em ** Desambiguação**.
+1.  Na seção *Ativar desambiguação*, faça a alternância para **Ativado**.
+1.  No campo da mensagem de prompt, inclua o texto a ser mostrado antes da lista de opções do nó de diálogo. Por exemplo, *O que você deseja fazer?*
+1.  **Opcional**: no campo da mensagem Nenhuma das acima, inclua texto para ser exibido como uma opção adicional que os usuários poderão escolher se nenhum dos outros nós de diálogo refletirem o que o usuário deseja fazer. Por exemplo, *None of the acima *.
+
+    Mantenha a mensagem curta, assim ela é exibida em sequencial com as outras opções. A mensagem deve ter menos que 512 caracteres. Para obter informações sobre o que o serviço faz se um usuário escolhe essa opção, consulte [Manipulando nenhuma das acima](#dialog-runtime-handle-none).
+
+1.  Clique em **Fechar**
+1.  Decida com quais nós de diálogo você deseja que o assistente solicite ajuda.
+
+    - É possível selecionar nós em qualquer nível da hierarquia em árvore.
+    - É possível selecionar nós que condicionam intenções, entidades, condições especiais, variáveis de contexto ou qualquer combinação desses valores.
+
+    Consulte [Escolhendo nós](#dialog-runtime-choose-nodes) para obter dicas.
+
+    Para cada nó que você deseja inscrever para a desambiguação, conclua as etapas a seguir:
+
+    1.  Clique para abrir o nó na visualização de edição.
+    1.  No campo *nome do nó externo*, descreva a tarefa do usuário que esse nó de diálogo foi projetado para manipular. Por exemplo, *Cancelar uma conta *.
+
+        ![Mostra onde incluir as informações de nome do nó externo na visualização de edição do nó.](images/disambig-node-purpose.png)
+
+### Escolhendo nós
+{: #dialog-runtime-choose-nodes}
+
+Escolha nós que sirvam como a raiz de uma ramificação distinta do diálogo para serem opções de desambiguação. Eles podem incluir nós que são filhos de outros nós. A chave é para o nó condicionar algum valor ou valores distintos que o distinguem de todo o resto.
+
+A ferramenta pode reconhecer conflitos de intenção, que ocorrem quando duas ou mais intenções têm exemplos do usuário que se sobrepõem. [Resolva quaisquer conflitos](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts) primeiro para assegurar que as próprias intenções sejam as mais exclusivas possíveis, o que ajuda o serviço a atingir pontuações melhores de confiança de intenção.
+{: note}
+
+Tenha em mente:
+
+- Para nós que condicionam intenções, se o serviço estiver confiante de que a condição de intenção do nó corresponde à intenção do usuário, o nó será incluído como uma opção de desambiguação.
+- Para nós com condições booleanas (condições que são avaliadas como true ou false), o nó será incluído como uma opção de desambiguação se a condição for avaliada como true. Por exemplo, quando o nó condicionar um tipo de entidade, se a entidade for mencionada na entrada que aciona a desambiguação, o nó será incluído.
+- A ordem de nós na hierarquia em árvore afeta a desambiguação.
+
+  - Isso afeta se a desambiguação é acionada
+
+    Consulte o [cenário](#dialog-runtime-disambig-example) que foi usado anteriormente para introduzir a desambiguação, por exemplo. Se o nó que condiciona `@sys-date` foi colocado mais alto na árvore de diálogo do que os nós que condicionam as intenções `#Customer_Care_Cancel_Account` e `#eCommerce_Cancel_Product_Order`, a desambiguação nunca será acionada quando um usuário inserir `i must cancel it today`. Isso é porque o serviço consideraria a menção de data (`today`) como mais importante do que as referências de intenção devido ao posicionamento dos nós correspondentes na árvore.
+
+  - Isso afeta quais nós são incluídos na lista de opções de desambiguação
+
+    Às vezes, um nó não é listado como uma opção de desambiguação conforme o esperado. Isso poderá acontecer se um valor da condição também for referenciado por um nó que não é elegível para inclusão na lista de desambiguação por alguma razão. Por exemplo, uma menção de entidade pode acionar um nó que está situado antes na árvore de diálogo, mas não está ativado para a desambiguação. Se a mesma entidade for a única condição para um nó que *está* ativado para a desambiguação, mas está situado mais baixo na árvore, ele não será incluído como uma opção de desambiguação porque o serviço nunca o atingirá. Ele correspondeu ao nó anterior e foi omitido, portanto, o serviço não processa o nó posterior.
+
+Para cada nó que você inscreve para a desambiguação, teste os cenários nos quais você espera que o nó seja incluído na lista de opções de desambiguação. O teste fornece a você uma chance de fazer ajustes na ordem de nós ou outros fatores que podem afetar o quão bem a desambiguação funciona no tempo de execução.
+
+### Manipulando nenhuma das acima
+{: #dialog-runtime-handle-none}
+
+Quando um usuário clica na opção *Nenhuma das acima*, o serviço remove as intenções que foram reconhecidas na entrada do usuário da mensagem e a envia novamente. Essa ação geralmente aciona o nó Anything else em sua árvore de diálogo.
+
+Para customizar a resposta retornada nessa situação, é possível incluir um nó raiz com uma condição que verifica uma entrada do usuário sem intenções reconhecidas (as intenções são removidas, lembre-se) e contém uma propriedade `suggestion_id`. Uma propriedade `suggestion_id` é incluída pelo serviço quando a desambiguação é acionada.
+{: tip}
+
+Inclua um nó raiz com a condição a seguir:
+
+```json
+intents.size()==0 && input.suggestion_id
+```
+{: codeblock}
+
+Essa condição é atendida somente por entrada que acionou um conjunto de opções de desambiguação das quais o usuário indicou que nenhuma corresponde ao seu objetivo.
+
+Inclua uma resposta que permita que os usuários saibam que você entende que nenhuma das opções que foi sugerida atende às suas necessidades e tome a ação apropriada.
+
+Novamente, o posicionamento de nós na árvore importa. Se um nó que condiciona um tipo de entidade que é mencionado na entrada do usuário estiver mais alto na árvore do que esse nó, sua resposta será exibida no lugar.
+
+### Testando a desambiguação
+{: #dialog-runtime-disambig-test}
+
+Para testar a desambiguação, conclua as etapas a seguir:
+
+1.  Na área de janela "Experimente", insira uma elocução de teste que você acha que seja uma boa candidata para a desambiguação, o que significa que dois ou mais de seus nós de diálogo estão configurados para direcionar elocuções como ela.
+
+1.  Se a resposta não contiver uma lista de opções de nó de diálogo para você escolher, conforme o esperado, primeiro verifique se informações de resumo foram incluídas no campo de nome do nó externo para cada um dos nós.
+
+1.  Se a desambiguação ainda não for acionada, poderá ser que as pontuações de confiança para os nós não são tão próximas em valor quanto você pensou.
+
+    É possível obter informações sobre as intenções, entidades e outras propriedades que são retornadas para determinadas entradas do usuário.
+
+    - Para ver as pontuações de confiança das intenções que foram detectadas na entrada do usuário, inclua temporariamente `<? intents ?>` no final da resposta do nó para um nó que você sabe que será acionado.
+
+      Essa expressão SpEL mostra as intenções que foram detectadas na entrada do usuário como uma matriz. A matriz inclui o nome da intenção e o nível de confiança que o serviço tem para essa intenção reflete o objetivo desejado do usuário.
+
+    - Para ver quais entidades, se houver alguma, foram detectadas na entrada do usuário, é possível substituir temporariamente a resposta atual por uma única resposta de texto que contém a expressão SpEL `<? entities? > `.
+
+      Essa expressão SpEL mostra as entidades que foram detectadas na entrada do usuário como uma matriz. A matriz inclui o nome da entidade, local da menção de entidade dentro da sequência de entrada do usuário, a sequência de menção de entidade e o nível de confiança que o serviço tem para o termo é uma menção do tipo de entidade especificado.
+
+    - Para ver detalhes de todos os artefatos de uma vez, incluindo outras propriedades, como o valor de uma determinada variável de contexto no momento da chamada, é possível inspecionar a resposta da API inteira. Consulte [ Visualizando Detalhes da Chamada de API ] (/docs/services/assistant?topic=Assistant-dialog-tips#dialog-tips-inspect-api).
+
+1.  Remova temporariamente a descrição incluída no campo *nome do nó externo* para pelo menos um dos nós que você prevê que será listado como uma opção de desambiguação.
+
+1.  Insira a elocução de teste na área de janela "Experimente" novamente.
+
+    Se você incluiu a expressão `<? intents ?>` na resposta, o texto retornado inclui uma lista das intenções que o serviço reconheceu na elocução de teste e inclui a pontuação de confiança para cada uma.
+
+    ![O serviço retorna uma matriz de intenções, incluindo Customer_Care_Cancel_Account e eCommerce_Cancel_Product_Order.](images/disambig-show-intents.png)
+
+Depois de concluir o teste, remova quaisquer expressões SpEL anexadas às respostas do nó ou inclua novamente quaisquer respostas originais que foram substituídas por expressões e preencha novamente quaisquer campos *nome do nó externo* dos quais o texto foi removido.

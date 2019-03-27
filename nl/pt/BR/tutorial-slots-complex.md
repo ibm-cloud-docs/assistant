@@ -1,13 +1,18 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-02-16"
+  years: 2015, 2019
+lastupdated: "2019-02-21"
+
+subcollection: assistant
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -24,6 +29,7 @@ Neste tutorial, você aprimorará um nó simples com intervalos que coletam as i
 {: shortdesc}
 
 ## Objetivos do aprendizado
+{: #tutorial-slots-complex-objectives}
 
 Quando terminar o tutorial, você entenderá como:
 
@@ -33,20 +39,23 @@ Quando terminar o tutorial, você entenderá como:
 - Manipular respostas inesperadas do usuário
 
 ### Duração
+{: #tutorial-slots-complex-duration}
+
 Este tutorial levará aproximadamente de 2 a 3 horas para ser concluído.
 
 ### Pré-requisito
+{: #tutorial-slots-complex-prereqs}
 
-Antes de iniciar, conclua [Incluindo um nó com intervalos em um diálogo](tutorial-slots.html). Deve-se concluir o primeiro tutorial de intervalos antes de iniciar este porque você construirá o nó com intervalos criados no primeiro tutorial.
+Antes de iniciar, conclua [Incluindo um nó com intervalos em um diálogo](/docs/services/assistant?topic=assistant-tutorial-slots). Deve-se concluir o primeiro tutorial de intervalos antes de iniciar este porque você construirá o nó com intervalos criados no primeiro tutorial.
 
 ## Etapa 1: melhorar o formato das respostas
-{: #fix-format}
+{: #tutorial-slots-complex-fix-format}
 
 Quando os valores de entidade do sistema de data e hora são salvos, eles são convertidos em um formato padronizado. Esse formato padronizado é útil para executar cálculos nos valores, mas você pode não desejar expor essa reformatação para usuários. Nesta etapa, você reformatará os valores de data (`2017-12-29`) e horário (`17:00:00`) que são referenciados pelo diálogo.
 
 1.  Para reformatar o valor da variável de contexto $date, clique no ícone **Editar resposta** ![Editar resposta](images/edit-slot.png) para o intervalo @sys-date.
 
-1.  No menu **Mais** ![Ícone Mais](images/kabob.png) na parte superior da página, selecione **Abrir editor JSON** e, em seguida, edite o JSON que define a variável de contexto. Inclua um método que reformate a data de modo que converta o valor `2017-12-29` para um dia integral da semana, seguido pelo mês e dia integrais. Edite o JSON como a seguir:
+1.  No menu **Mais** ![Ícone Mais](images/kabob.png), selecione **Abrir o editor JSON** e, em seguida, edite o JSON que define a variável de contexto. Inclua um método que reformate a data de modo que converta o valor `2017-12-29` para um dia integral da semana, seguido pelo mês e dia integrais. Edite o JSON como a seguir:
 
     ```json
     {
@@ -63,7 +72,7 @@ Quando os valores de entidade do sistema de data e hora são salvos, eles são c
 
 1.  Para mudar o formato no qual o valor de horário é armazenado na variável de contexto $time para usar a hora, os minutos e indicar AM ou PM, clique no ícone **Editar resposta** ![Editar resposta](images/edit-slot.png) para o intervalo @sys-time.
 
-1.  No menu **Mais** ![Ícone Mais](images/kabob.png) na parte superior da página, selecione **Abrir editor JSON**e, em seguida, edite o JSON que define a variável de contexto para que ele seja lido conforme a seguir:
+1.  No menu **Mais** ![Mais ícone](images/kabob.png), selecione **Abrir editor de JSON** e, em seguida, edite o JSON que define a variável de contexto para que ela seja interpretada como a seguir:
 
     ```json
     {
@@ -116,10 +125,10 @@ Quando os valores de entidade do sistema de data e hora são salvos, eles são c
 
     Desta vez o Watson responde com `OK. I am making you a reservation for 6 on Friday, December 29 at 5:00 PM.`
 
-Você melhorou com êxito o formato que o diálogo usa quando ele referencia valores das variáveis de contexto em suas respostas. O diálogo agora usa `Friday, December 29` em vez do mais técnico, `2017-12-29`. E ele usa `5:00 PM` em vez de `17:00:00`. Para aprender sobre outros métodos SpEL que podem ser usados com os valores de data e hora, veja [Métodos para processar valores](dialog-methods.html#date-time).
+Você melhorou com êxito o formato que o diálogo usa quando ele referencia valores das variáveis de contexto em suas respostas. O diálogo agora usa `Friday, December 29` em vez do mais técnico, `2017-12-29`. E ele usa `5:00 PM` em vez de `17:00:00`. Para aprender sobre outros métodos SpEL que podem ser usados com os valores de data e hora, veja [Métodos para processar valores](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-date-time).
 
 ## Etapa 2: perguntar tudo de uma vez
-{: #ask-for-everything}
+{: #tutorial-slots-complex-ask-for-everything}
 
 Agora que você testou o diálogo mais de uma vez, talvez tenha notado que ele pode ser chato por ter que responder um prompt de intervalo de cada vez. Para evitar que os usuários tenham que fornecer cada uma das informações por vez, é possível pedir todas as informações necessárias antecipadamente. Fazer isso fornece ao usuário uma chance de fornecer todas ou algumas das informações em uma única entrada.
 
@@ -149,16 +158,102 @@ Nesta etapa, você aprenderá como solicitar tudo de uma vez.
 
     ![Mostra a área de janela Experimente quando o usuário fornece tudo em uma entrada.](images/slots-everything-tested.png)
 
-**Nota**: se o usuário fornece qualquer um dos valores de intervalo na entrada inicial, o prompt que pergunta tudo não é exibido. Por exemplo, a entrada inicial do usuário pode ser `I want to make a reservation for this Friday night.` Nesse caso, o prompt inicial é ignorado porque você não deseja perguntar informações que o usuário já forneceu - a data (`Friday`), neste exemplo. O diálogo mostra o prompt para o próximo intervalo vazio.
+Se o usuário fornece qualquer um dos valores de intervalo na entrada inicial, o prompt que pergunta tudo não é exibido. Por exemplo, a entrada inicial do usuário pode ser `I want to make a reservation for this Friday night.` Nesse caso, o prompt inicial é ignorado porque você não deseja perguntar informações que o usuário já forneceu - a data (`Friday`), neste exemplo. O diálogo mostra o prompt para o próximo intervalo vazio.
+{: note}
 
-## Etapa 3: validar a entrada do usuário
-{: #slot-conditions}
+## Etapa 3: Tratar zeros corretamente
+{: #tutorial-slots-complex-recognize-zero}
+
+Quando você usa a entidade do sistema `sys-number` em uma condição do intervalo, ela não lida com zeros adequadamente. Em vez de configurar a variável de contexto que você define para o intervalo como 0, o serviço configura a variável de contexto como false. Como resultado, o intervalo não acha que ele está cheio e solicita um número para o usuário novamente até que o usuário especifique um número diferente de zero.
+
+1.  Teste o nó para que seja possível entender melhor o problema. Abra a área de janela "Experimente" e clique em **Limpar** para excluir os valores das variáveis de contexto de intervalo que você especificou quando testou o nó com os intervalos antes. Use o script a seguir:
+
+    <table>
+    <caption>Detalhes do script</caption>
+    <tr>
+      <th>Alto-falante</th>
+      <th>Elocução</th>
+    </tr>
+    <tr>
+      <td>Você</td>
+      <td>quero fazer uma reserva</td>
+    </tr>
+    <tr>
+      <td>Watson</td>
+      <td>Eu posso fazer uma reserva para você. Basta informar o dia e a hora da reserva e para quantas pessoas ela é.</td>
+    </tr>
+    <tr>
+      <td>Você</td>
+      <td>Queremos jantar em 23 de maio às 20h. Haverá 0 convidados.</td>
+    </tr>
+    <tr>
+      <td>Watson</td>
+      <td>Quantas pessoas estarão jantando?</td>
+    </tr>
+    <tr>
+      <td>Você</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Watson</td>
+      <td>Quantas pessoas estarão jantando?</td>
+    </tr>
+    </table>
+
+    Você ficará preso nesse loop até especificar um número diferente de 0.
+
+1.  Para assegurar que o intervalo trate zeros adequadamente, mude a condição do intervalo de `@sys-number` para `@sys-number || @sys-number:0`.
+
+1.  Clique no ícone **Editar resposta** ![Editar resposta](images/edit-slot.png) para o intervalo.
+
+1.  Quando a variável de contexto é criada, ela usa automaticamente a mesma expressão que é especificada para a condição do intervalo. No entanto, a variável de contexto deve salvar somente um número. Edite o valor que foi salvo como a variável de contexto para remover o operador `OR` dele. No menu **Mais** ![Ícone Mais](images/kabob.png), selecione **Abrir o editor JSON** e, em seguida, edite o JSON que define a variável de contexto. Mude a variável de `"guests":"@sys-number | | @sys-number:0"` para usar a sintaxe a seguir:
+
+    ```json
+    {
+      "context": {
+        "guests": "@sys-number"
+      }
+    }
+    ```
+    {: codeblock}
+
+1.  Clique em **Salvar**.
+
+1.  Teste o nó novamente. Abra a área de janela "Experimente" e clique em **Limpar** para excluir os valores das variáveis de contexto de intervalo que você especificou quando testou o nó com os intervalos antes. Para ver o impacto das mudanças feitas, use o script a seguir:
+
+    <table>
+    <caption>Detalhes do script</caption>
+    <tr>
+      <th>Alto-falante</th>
+      <th>Elocução</th>
+    </tr>
+    <tr>
+      <td>Você</td>
+      <td>quero fazer uma reserva</td>
+    </tr>
+    <tr>
+      <td>Watson</td>
+      <td>Eu posso fazer uma reserva para você. Basta informar o dia e a hora da reserva e para quantas pessoas ela é.</td>
+    </tr>
+    <tr>
+      <td>Você</td>
+      <td>Queremos jantar em 23 de maio às 20h. Haverá 0 convidados.</td>
+    </tr>
+    </table>
+
+    Desta vez o Watson responde com `OK. I am making you a reservation for 0 on Wednesday, May 23 at 8:00 PM.`
+
+Você formatou com êxito o intervalo de número para que ele trate os zeros adequadamente. É claro, você pode não querer que o nó aceite um zero como um número válido de convidados. Você aprenderá a validar valores que são especificados pelos usuários na próxima etapa.
+
+## Etapa 4: validar a entrada do usuário
+{: #tutorial-slots-complex-slot-conditions}
 
 Até agora, temos considerado que o usuário fornecerá os tipos de valores apropriados para os intervalos. Na verdade, esse nem sempre é o caso. É possível considerar as vezes em que os usuários podem fornecer um valor inválido incluindo respostas condicionais em intervalos. Nesta etapa, você usará as respostas condicionais de intervalo para executar as tarefas a seguir:
 
 - Assegure-se de que a data solicitada não esteja no passado.
 - Verifique se um horário de reserva solicitado cai dentro do espaço de tempo de assento.
 - Confirme a entrada do usuário.
+- Assegure-se de que o número de convidados fornecidos seja maior que zero.
 - Indique que você está substituindo um valor por outro.
 
 Para validar a entrada do usuário, conclua as etapas a seguir:
@@ -244,7 +339,14 @@ Para validar a entrada do usuário, conclua as etapas a seguir:
     </tr>
     </table>
 
-1.  Edite o intervalo @sys-number para prever e direcionar o caso quando o usuário muda o número de convidados. Se, em algum ponto enquanto o nó com intervalos está sendo processado, o usuário muda um valor de intervalo, o valor da variável de contexto de intervalo correspondente é atualizado. No entanto, isso pode ser útil para permitir que o usuário saiba que o valor está sendo substituído, tanto para dar um feedback claro ao usuário quanto para dar ao usuário uma chance de retificar isso se a mudança não era o que se pretendia. Na visualização de edição do nó com intervalos, clique no ícone **Editar intervalo** ![Edit intervalo](images/edit-slot.png) para o intervalo `@sys-number`.
+1.  Edite o intervalo de @sys-number para validar o valor fornecido pelo usuário das maneiras a seguir:
+
+    - Verifique se o número de convidados especificado é maior que zero.
+    - Preveja e direcione o caso quando o usuário mudar o número de convidados.
+
+      Se, em algum ponto enquanto o nó com intervalos está sendo processado, o usuário muda um valor de intervalo, o valor da variável de contexto de intervalo correspondente é atualizado. No entanto, isso pode ser útil para permitir que o usuário saiba que o valor está sendo substituído, tanto para dar um feedback claro ao usuário quanto para dar ao usuário uma chance de retificar isso se a mudança não era o que se pretendia. 
+
+1.  Na visualização de edição do nó com intervalos, clique no ícone **Editar intervalo** ![Edit intervalo](images/edit-slot.png) para o intervalo `@sys-number`.
 
 1.  No menu **Opções** ![Ícone Mais](images/kabob.png) no cabeçalho *Configurar intervalo 3*, selecione **Ativar respostas condicionais**.
 
@@ -258,6 +360,11 @@ Para validar a entrada do usuário, conclua as etapas a seguir:
       <th>Ação</th>
     </tr>
     <tr>
+      <td>` entidades [ 'sys-number' ] ?.value == 0 `</td>
+      <td>Especifique um número que seja maior que 0.</td>
+      <td>Limpar o intervalo e o prompt novamente</td>
+    </tr>
+    <tr>
       <td>`(event.previous_value != null) && (event.previous_value != event.current_value)`</td>
       <td>Ok, atualizando o número de convidados de `<? event.previous_value ?>` para `<? event.current_value ?>`.</td>
       <td>Ir em frente</td>
@@ -269,8 +376,8 @@ Para validar a entrada do usuário, conclua as etapas a seguir:
     </tr>
     </table>
 
-## Etapa 4: incluir um intervalo de confirmação
-{: #confirmation-slot}
+## Etapa 5: Incluir um intervalo de confirmação
+{: #tutorial-slots-complex-confirmation-slot}
 
 Você pode desejar projetar seu diálogo para chamar um sistema de reserva externa e realmente fazer uma reserva para o usuário no sistema. Antes que seu aplicativo tome essa ação, você provavelmente deseja confirmar com o usuário que o diálogo entendeu os detalhes da reserva corretamente. É possível fazer isso incluindo um intervalo de confirmação para o nó.
 
@@ -336,7 +443,7 @@ Você pode desejar projetar seu diálogo para chamar um sistema de reserva exter
 
     ```json
     {
-      "condições": "#no", "output":{
+      "output":{
         "text": {
           "values": [
             "Alright. Let's start over. I'll try to keep up this time."
@@ -422,8 +529,8 @@ Você pode desejar projetar seu diálogo para chamar um sistema de reserva exter
 
 Se você inclui mais intervalos posteriormente, deve-se editar essas condições para considerar as variáveis de contexto associadas para os intervalos adicionais. Se você não inclui um intervalo de confirmação, é possível especificar somente `!all_slots_filled` e isso permaneceria válido não importando quantos intervalos são incluídos mais tarde.
 
-## Etapa 5: reconfigurar os valores das variáveis de contexto de intervalo
-{: #reset-variables}
+## Etapa 6: reconfigurar os valores das variáveis de contexto do intervalo
+{: #tutorial-slots-complex-reset-variables}
 
 Você pode ter observado que, antes de cada teste, deve-se limpar os valores das variáveis de contexto que foram criados durante o teste anterior. Deve-se fazer isso porque o nó com intervalos somente solicita aos usuários as informações que ele considera ausentes. Se as variáveis de contexto de intervalo são todas preenchidas com valores válidos, nenhum prompt é exibido. O mesmo é verdadeiro para o diálogo no tempo de execução. Deve-se construir no diálogo um mecanismo pelo qual você reconfigura as variáveis de contexto de intervalo para nulo para que os intervalos possam ser preenchidos novamente pelo próximo usuário. Para fazer isso, você vai incluir um nó pai no nó com intervalos que configura as variáveis de contexto para nulo.
 
@@ -464,8 +571,8 @@ Você pode ter observado que, antes de cada teste, deve-se limpar os valores das
 
     Quando uma entrada do usuário corresponde à intenção `#reservation`, esse nó é acionado. As variáveis de contexto de intervalo são todas configuradas para nulo e, então, o diálogo vai diretamente para o nó com intervalos para processá-lo.
 
-## Etapa 6: fornecer aos usuários uma maneira de sair do processo
-{: #handler}
+## Etapa 7: fornecer aos usuários uma maneira de sair do processo
+{: #tutorial-slots-complex-handler}
 
 A inclusão de um nó com intervalos é poderosa, pois mantém os usuários controlando o fornecimento das informações necessárias para dar a eles uma resposta significativa ou executar uma ação em seu nome. No entanto, pode haver momentos em que um usuário está no meio do fornecimento dos detalhes de reserva, mas decide não continuar a fazer a reserva. Deve-se fornecer aos usuários uma maneira de sair do processo com êxito. É possível fazer isso incluindo um manipulador de intervalo que possa detectar o desejo de um usuário de sair do processo e sair do nó sem salvar nenhum valor coletado.
 
@@ -534,7 +641,8 @@ A inclusão de um nó com intervalos é poderosa, pois mantém os usuários cont
 
     A condição `has_skipped_slots` verifica as propriedades do nó de intervalos para ver se algum dos intervalos foi ignorado. O manipulador `#exit` ignora todos os intervalos restantes para ir diretamente para a resposta do nó. Então, quando a propriedade `has_skipped_slots` está presente, você sabe que a intenção `#exit` foi acionada e o diálogo pode exibir uma resposta alternativa.
 
-    **Nota**: se você configura mais de um intervalo para ignorar outros intervalos ou configura outro manipulador de eventos no nível do nó para ignorar intervalos, deve-se usar uma abordagem diferente para verificar se a intenção #exit foi acionada. Veja [Manipulando solicitações para sair de um processo](dialog-slots.html#slots-node-level-handler) para obter uma maneira alternativa de fazer isso.
+    Se você configura mais de um intervalo para ignorar outros intervalos ou configura outro manipulador de eventos no nível do nó para ignorar intervalos, deve-se usar uma abordagem diferente para verificar se a intenção #exit foi acionada. Veja [Manipulando solicitações para sair de um processo](/docs/services/assistant?topic=assistant-dialog-slots#dialog-slots-node-level-handler) para obter uma maneira alternativa de fazer isso.
+    {: note}
 
 1.  Você deseja que o serviço verifique a propriedade `has_skipped_slots` antes que ela exiba a resposta no nível do nó padrão. Mova a resposta condicional `has_skipped_slots` para cima para que ela seja processada antes da resposta condicional original ou ela nunca será acionada. Para fazer isso, clique na resposta que você acabou de incluir, use a **seta para cima** para movê-la para cima e, em seguida, clique em **Salvar**.
 
@@ -560,7 +668,7 @@ A inclusão de um nó com intervalos é poderosa, pois mantém os usuários cont
     </tr>
     <tr>
       <td>Watson</td>
-      <td>Ok. A reserva é para 5 convidados. Que dia você gostaria de vir?</td>
+      <td>Ok. A reserva é para 5 convidados.  Que dia você gostaria de vir?</td>
     </tr>
     <tr>
       <td>Você</td>
@@ -572,7 +680,7 @@ A inclusão de um nó com intervalos é poderosa, pois mantém os usuários cont
     </tr>
     </table>
 
-## Etapa 7: aplicar um valor válido se o usuário falha em fornecer um após várias tentativas
+## Etapa 8: aplicar um valor válido se o usuário falhar em fornecer um após várias tentativas
 
 Em alguns casos, um usuário pode não entender o que você está perguntando. Ele pode responder várias vezes com os tipos de valores errados. Para planejar-se para esta possibilidade, é possível incluir um contador no intervalo e, após 3 tentativas com falha pelo usuário em fornecer um valor válido, é possível aplicar um valor ao intervalo em nome do usuário e seguir em frente.
 
@@ -620,7 +728,6 @@ Para as informações de $time, você definirá uma instrução de acompanhament
 
     ```json
     {
-      "conditions": "true",
       "output": {
         "text": {
           "values": [
@@ -662,7 +769,7 @@ Para as informações de $time, você definirá uma instrução de acompanhament
 
     ```json
     {
-      "condições": "$counter > 1", "output": {
+      "output": {
         "text": {
           "values": [
             "You seem to be having trouble choosing a time.
@@ -686,7 +793,7 @@ Para as informações de $time, você definirá uma instrução de acompanhament
 | Você     | quero fazer uma reserva |
 | Watson  | Eu posso fazer uma reserva para você. Basta informar o dia e a hora da reserva e para quantas pessoas ela é. |
 | Você     | amanhã |
-| Watson  | É sexta-feira, 29 de dezembro. Para qual horário você deseja que a reserva seja feita? |
+| Watson  | É sexta-feira, 29 de dezembro.  Para qual horário você deseja que a reserva seja feita? |
 | Você     | laranja |
 | Watson  | Especifique o horário no qual você deseja comer. O restaurante acomoda as pessoas entre as 9h e as 21h. |
 | Você     | rosa |
@@ -694,18 +801,19 @@ Para as informações de $time, você definirá uma instrução de acompanhament
 | Você     | púrpura |
 | Watson  | Parece que você está tendo problemas para escolher o horário. Eu farei a reserva para as 20h para você.  Quantas pessoas estarão jantando? |
 
-## Etapa 8: conectar-se a um serviço externo
-{: #action}
+## Etapa 9: conectar-se a um serviço externo
+{: #tutorial-slots-complex-action}
 
-Agora que seu diálogo pode coletar e confirmar detalhes de reserva de um usuário, é possível chamar um serviço externo para realmente reservar uma mesa no sistema do restaurante ou por meio de um serviço de reservas on-line de múltiplos restaurantes. Veja [Fazendo chamadas programáticas de um nó de diálogo](dialog-actions.html) para obter mais detalhes.
+Agora que seu diálogo pode coletar e confirmar detalhes de reserva de um usuário, é possível chamar um serviço externo para realmente reservar uma mesa no sistema do restaurante ou por meio de um serviço de reservas on-line de múltiplos restaurantes. Veja [Fazendo chamadas programáticas de um nó de diálogo](/docs/services/assistant?topic=assistant-dialog-actions) para obter mais detalhes.
 
 Na lógica que chama o serviço reserva, certifique-se de verificar `has_skipped_slots` e não continue com a reserva se ele estiver presente.
 
 ### Resumo
+{: #tutorial-slots-complex-summary}
 
-Neste tutorial, você testou um nó com intervalos e fez mudanças que otimizam como ele interage com usuários reais. Para obter mais informações sobre este assunto, veja [Reunindo informações com intervalos](dialog-slots.html).
+Neste tutorial, você testou um nó com intervalos e fez mudanças que otimizam como ele interage com usuários reais. Para obter mais informações sobre este assunto, veja [Reunindo informações com intervalos](/docs/services/assistant?topic=assistant-dialog-slots).
 
 ## Próximas etapas
-{: #deploy}
+{: #tutorial-slots-complex-deploy}
 
-Implemente sua área de trabalho conectando-a com uma interface com o usuário. Há várias maneiras de fazer isso. Veja [Visão geral de implementação](deploy.html) para obter mais detalhes.
+Implemente sua qualificação de diálogo conectando-a primeiro a um assistente e, em seguida, implementando o assistente. Há várias maneiras de fazer isso. Consulte  [ Incluindo Integrações ](/docs/services/assistant?topic=assistant-deploy-integration-add)  para obter mais detalhes.

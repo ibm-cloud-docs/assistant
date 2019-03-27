@@ -1,13 +1,18 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-02-13"
+  years: 2015, 2019
+lastupdated: "2019-02-28"
+
+subcollection: assistant
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -17,54 +22,50 @@ lastupdated: "2018-02-13"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Usando catálogos
+# Usando catálogos de conteúdo
 {: #catalog}
 
-Os ***Catálogos*** fornecem uma maneira fácil de incluir intenções comuns em sua área de trabalho do serviço {{site.data.keyword.conversationshort}}.
+Os ***Catálogos de conteúdo*** fornecem uma maneira fácil de incluir intenções comuns em sua qualificação de diálogo do {{site.data.keyword.conversationshort}}.
 {: shortdesc}
 
-## Incluindo um catálogo em sua área de trabalho
-{: #add-catalog}
+As intenções que você inclui do catálogo são destinadas a fornecer um ponto de início. Inclua ou edite as intenções do catálogo para customizá-las para seu caso de uso.
 
-Use a ferramenta {{site.data.keyword.conversationshort}} para incluir catálogos.
+## Incluindo um catálogo de conteúdo em sua qualificação de diálogo
+{: #catalog-add}
 
-1.  Na ferramenta {{site.data.keyword.conversationshort}}, abra a sua área de trabalho e, em seguida, selecione a guia **Catálogo** na barra de navegação. Se **Catálogo** não estiver visível, use o menu ![Menu](images/Menu_16.png) para abrir a página.
+Use a ferramenta {{site.data.keyword.conversationshort}} para incluir catálogos de conteúdo.
 
-1.  Selecione um catálogo, como *Faturamento*, para ver as intenções que são fornecidas com ele.
+1.  Na ferramenta {{site.data.keyword.conversationshort}}, abra sua qualificação de diálogo e, em seguida, clique na guia **Catálogo de conteúdo**.
+
+1.  Selecione um catálogo de conteúdo, como *Financeiro*, para ver as intenções que são fornecidas com ele.
 
     ![Captura de tela mostrando os catálogos disponíveis](images/catalog_overview.png)
 
-    Você verá informações sobre as intenções que estão definidas na categoria *Faturamento*.
+    Você verá informações sobre as intenções que estão incluídas no catálogo.
 
-    ![Captura de tela mostrando as intenções da categoria Faturamento](images/catalog_open.png)
+    ![Screen capture showing Banking category intents](images/catalog_open.png)
 
-    As intenções que são incluídas de um catálogo são distinguíveis de outras intenções pela convenção de nomenclatura; nesse caso, `#Billing_. . .`
+    As intenções que são incluídas de um catálogo de conteúdo são distinguíveis de outras intenções por seus nomes. Cada nome de intenção é pré-anexado com o nome do catálogo de conteúdo.
 
-1.  Selecione ![Seta de fechamento](images/close_arrow.png) para retornar à guia **Catálogo**.
+1.  Selecione ![Seta de fechamento](images/close_arrow.png) para retornar à guia **Catálogo de conteúdo**.
 
-1.  Em seguida, inclua o catálogo *Faturamento* em sua área de trabalho clicando no botão `Add to Bot`. Você verá uma mensagem indicando que as intenções de *Faturamento* foram incluídas em sua área de trabalho.
+1.  Em seguida, inclua um catálogo de conteúdo em sua qualificação de diálogo, clicando no botão `Add to skill`.
 
-    ![Captura de tela mostrando o botão Add to Bot](images/catalog_addtobot.png)
+1.  Agora, selecione a guia **Intenções** e verifique se as intenções do catálogo foram incluídas e estão disponíveis.
 
-1.  Agora, selecione a guia **Intenções** e verifique se as intenções de *Faturamento* foram incluídas em sua área de trabalho.
+    ![Captura de tela mostrando as intenções de Financeiro listadas na guia Intenções](images/catalog_intents.png)
 
-    ![Captura de tela mostrando as intenções de Faturamento listadas na guia Intenções](images/catalog_intents.png)
+O sistema começa a treinar-se sobre os novos dados.
 
-### Resultados
+Depois de incluir um catálogo em sua qualificação, as intenções tornam-se parte de seus dados de treinamento. Se a IBM faz atualizações subsequentes em um catálogo de conteúdo, as mudanças não são aplicadas automaticamente a nenhuma intenção que você incluiu de um catálogo.
+{: note}
 
-Os intentos do catálogo *Faturamento* foram incluídas na guia **Intenções** de sua área de trabalho e o sistema inicia o próprio treinamento com os novos dados.
+## Editando exemplos do catálogo de conteúdo
+{: #catalog-edit-content}
 
-## Editando exemplos do catálogo
-
-Como qualquer outra intenção, uma vez que as intenções do catálogo *Faturamento* foram incluídas em sua área de trabalho, é possível fazer as mudanças a seguir:
+Como qualquer outra intenção, depois de incluir as intenções do catálogo de conteúdo em sua qualificação, é possível fazer as mudanças a seguir nelas:
 
 - Renomear a intenção.
 - Excluir a intenção.
 - Incluir, editar ou excluir exemplos.
 - Mover um exemplo para uma intenção diferente.
-
-É possível usar a tecla tab do nome da intenção para cada exemplo, editando os exemplos, se você escolher.
-
-Para mover ou excluir um exemplo, selecione o exemplo marcando a caixa de seleção e, em seguida, selecione **Mover** ou **Excluir**.
-
-  ![Captura de tela mostrando como mover ou excluir um exemplo](images/catalog_edit.png)
