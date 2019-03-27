@@ -26,11 +26,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="223.1612"
-     inkscape:cy="898.54735"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="375"
+     inkscape:cy="814.79857"
      inkscape:document-units="px"
-     inkscape:current-layer="layer58"
+     inkscape:current-layer="layer61"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1027"
@@ -100,20 +100,21 @@
      inkscape:label="response -condition1">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="176.7767"
-       y="122.98123"
-       id="text4076"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.09528446px;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.92460704px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="191.19116"
+       y="113.70931"
+       id="text4076"
+       transform="scale(0.92460705,1.0815405)"><tspan
          sodipodi:role="line"
          id="tspan4078"
-         x="176.7767"
-         y="122.98123"
-         style="font-size:15px;line-height:1.25">If: $state == &quot;MA&quot;</tspan><tspan
+         x="191.19116"
+         y="113.70931"
+         style="font-size:13.86910534px;line-height:1.25;stroke-width:0.92460704px">If: $state == &quot;MA&quot;</tspan><tspan
          sodipodi:role="line"
-         x="176.7767"
-         y="141.73123"
+         x="191.19116"
+         y="131.0457"
          id="tspan4080"
-         style="font-size:15px;line-height:1.25"> &quot;Our flagship store is at 20 State St. in Boston.&quot;</tspan></text>
+         style="font-size:13.86910534px;line-height:1.25;stroke-width:0.92460704px"> &quot;Il nostro negozio principale si trova al 20 State St. a Boston.&quot;</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -134,7 +135,7 @@
          x="176.7767"
          y="183.1881"
          id="tspan4087"
-         style="font-size:15px;line-height:1.25"> &quot;You'll find us in the Pheasant Lane Mall in Nashua.&quot;</tspan></text>
+         style="font-size:15px;line-height:1.25"> &quot;Ci troverai al Pheasant Lane Mall a Nashua.&quot;</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -155,7 +156,7 @@
          x="177.78685"
          y="228.64496"
          id="tspan4094"
-         style="font-size:15px;line-height:1.25"> &quot;We are located at 200 Commercial St. in Portland.&quot;</tspan></text>
+         style="font-size:15px;line-height:1.25"> &quot;Ci troviamo al 200 Commercial St. a Portland.&quot;</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -171,12 +172,12 @@
          id="tspan4099"
          x="177.78685"
          y="260.40259"
-         style="font-size:15px;line-height:1.25">Anche:</tspan><tspan
+         style="font-size:15px;line-height:1.25">Else:</tspan><tspan
          sodipodi:role="line"
          x="177.78685"
          y="279.15259"
          id="tspan4101"
-         style="font-size:15px;line-height:1.25"> &quot;We have store locations throughout New England.&quot;</tspan></text>
+         style="font-size:15px;line-height:1.25"> &quot;Abbiamo negozi in tutto il New England.&quot;</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -192,11 +193,11 @@
          id="tspan4061"
          x="57.355339"
          y="46.148724"
-         style="font-size:15px;line-height:1.25">Qual è la tua</tspan><tspan
+         style="font-size:15px;line-height:1.25">Dove vi </tspan><tspan
          sodipodi:role="line"
          x="57.355339"
          y="64.898727"
          id="tspan4063"
-         style="font-size:15px;line-height:1.25">posizione?</tspan></text>
+         style="font-size:15px;line-height:1.25">trovate?</tspan></text>
   </g>
 </svg>
