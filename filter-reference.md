@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-03-29"
 
 subcollection: assistant
-
 
 ---
 
@@ -28,9 +27,9 @@ subcollection: assistant
 
 The {{site.data.keyword.conversationshort}} service REST API offers powerful log search capabilities through filter queries. You can use the /logs API `filter` parameter to search your skill log for events that match a specified query.
 
-The `filter` parameter is a cacheable query that limits the results to those matching the specified filter. You can filter on any object that is part of the JSON response model (for example, the user input text, the detected intents and entities, or the confidence score).
+The `filter` parameter is a cacheable query that limits the results to those matching the specified filter. You can filter on various objects that are part of the JSON response model (for example, the user input text, the detected intents and entities, or the confidence score).
 
-To see examples of various kinds of filter queries, see [Examples](#filter-reference-examples).
+To see examples of filter queries, see [Examples](#filter-reference-examples).
 
 For more information about the /logs `GET` method and its response model, refer to the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant?curl=#list-log-events-in-a-workspace){: new_window}.
 
@@ -102,7 +101,7 @@ To filter by customer ID, use the special location `customer_id`. (For more info
 ### Filtering by other fields
 {: #filter-reference-fields}
 
-To filter on any other field in the log data, specify the location as a path identifying the levels of nested objects in the JSON response from the /logs API. Use dots (`.`) to specify successive levels of nesting in the JSON data. For example, the location `request.input.text` idenfities the user input text field as shown in the following JSON fragment:
+To filter on another field in the log data, specify the location as a path identifying the levels of nested objects in the JSON response from the /logs API. Use dots (`.`) to specify successive levels of nesting in the JSON data. For example, the location `request.input.text` idenfities the user input text field as shown in the following JSON fragment:
 
 ```json
   "request": {
@@ -112,6 +111,18 @@ To filter on any other field in the log data, specify the location as a path ide
   }
 ```
 <!-- {data-copy=false} -->
+
+Filtering is not available for all fields. You can filter on the following fields:
+
+- request.context.metadata.deployment
+- request.input.text
+- response.entities
+- response.input.text
+- response.intents
+- response.top_intent
+- meta.message.entities_count
+
+Filtering on other fields is not currently supported.
 
 ## Examples
 {: #filter-reference-examples}
