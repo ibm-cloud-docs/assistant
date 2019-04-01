@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-20"
+lastupdated: "2019-03-28"
 
 subcollection: assistant
 
@@ -114,7 +114,7 @@ The [Watson Assistant Continuous Improvement Best Practices Guide ![External lin
 ### Using the notebooks with {{site.data.keyword.DSX}}
 {: #logs-resources-notebooks-studio}
 
-If you choose to use the notebooks that are designed for use with {{site.data.keyword.DSX}}, at a high level, the steps are:
+If you choose to use the notebooks that are designed for use with {{site.data.keyword.DSX}}, the steps are roughly these:
 
 1.  Create a {{site.data.keyword.DSX}} account, [create a project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://dataplatform.cloud.ibm.com/docs/content/getting-started/projects.html?context=analytics){:new_window}, and add a Cloud Object Storage account to it.
 1.  From the {{site.data.keyword.DSX}} community, get the [Measure Watson Assistant Performance notebook ![External link icon](../../icons/launch-glyph.svg "External link icon")]( https://dataplatform.cloud.ibm.com/exchange/public/entry/view/133dfc4cd1480bbe4eaa78d3f635e568).

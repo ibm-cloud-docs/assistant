@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-01"
 
 subcollection: assistant
-
 
 ---
 
@@ -45,6 +44,11 @@ If you need to request GDPR support for {{site.data.keyword.cloud}} {{site.data.
 IBM is committed to providing our clients and partners with innovative data privacy, security and governance solutions to assist them on their journey to GDPR compliance.
 
 Learn more about IBM's own GDPR readiness journey and our GDPR capabilities and offerings to support your compliance journey [here ![External link icon](../../icons/launch-glyph.svg "External link icon")](../../icons/launch-glyph.svg "External link icon")](http://www.ibm.com/gdpr){: new_window}.
+
+## Health Insurance Portability and Accountability Act (HIPAA)
+{: #information-security-hipaa}
+
+Do not add personal health information (PHI) to the training data (entities and intents, including user examples) that you create. In particular, be sure to remove any PHI from files that contain real user utterances that you upload to mine for intent user example recommendations.
 
 ## Labeling and deleting data in {{site.data.keyword.conversationshort}}
 {: #information-security-gdpr-wa}

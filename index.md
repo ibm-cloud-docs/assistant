@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-01"
 
 subcollection: assistant
-
 
 ---
 
@@ -100,6 +99,8 @@ Language support by feature is detailed in the [Supported languages](/docs/servi
 {: #index-notices}
 
 See [IBM Cloud Terms and Notices ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/overview/terms-of-use?topic=overview-terms) for information about the terms of service.
+
+US Health Insurance Portability and Accountability Act (HIPAA) support is available for Premium plans created on or after 1 April 2019. See [Enabling EU and HIPAA supported settings ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/account?topic=account-eu-hipaa-supported#eu-hipaa-supported) for more information.
 
 ## Next steps
 {: #index-next-steps}
