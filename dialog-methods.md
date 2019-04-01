@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-25"
+lastupdated: "2019-04-01"
 
 subcollection: assistant
 
@@ -154,7 +154,7 @@ intents.containsIntent("General_Ending", 0.8, 2)
 ### JSONArray.filter(temp, "temp.property operator comparison_value")
 {: #dialog-methods-array-filter}
 
-Filters an array by comparing each array element value to a value you specify. This method is similar to a [collection projection](#collection-projection). A collection projection returns a filtered array based on a name in an array element name-value pair. The filter method returns a filtered array based on a value in an array element name-value pair.
+Filters an array by comparing each array element value to a value you specify. This method is similar to a [collection projection](#dialog-methods-collection-projection). A collection projection returns a filtered array based on a name in an array element name-value pair. The filter method returns a filtered array based on a value in an array element name-value pair.
 
 The filter expression consists of the following values:
 
@@ -1295,7 +1295,7 @@ For information about system entities that can recognize and extract numbers fro
 
 If you want the service to recognize specific number formats in user input, such as order number references, consider creating a pattern entity to capture it. See [Creating entities](/docs/services/assistant?topic=assistant-entities) for more details.
 
-If you want to change the decimal placement for a number, to reformat a number as a currency value, for example, see the [String format() method](#dialog-methods-java.lang.String).
+If you want to change the decimal placement for a number, to reformat a number as a currency value, for example, see the [String format() method](#java.lang.String).
 
 ### toDouble()
 
@@ -1392,7 +1392,7 @@ You can use the the Class methods, including these:
 ```
 {: codeblock}
 
-See the [java.lang.Math reference documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html) for information about other methods.
+See the [java.lang.Math reference documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html) for information about other methods.
 
 ### java.util.Random()
 
