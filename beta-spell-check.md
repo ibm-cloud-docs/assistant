@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-04-01"
 
 subcollection: assistant
-
 
 ---
 
@@ -72,6 +71,9 @@ To avoid overcorrection, the service does not correct the spelling of the follow
 - Text within quotation marks
 - Words containing special characters, such as hyphens (-), asterisks (*), ampersands (&), or at signs (@), including those used in email addresses or URLs.
 - Words that *belong* in this skill, meaning words that have implied significance because they occur in entity values, entity synonyms, or intent user examples.
+
+   Mentions of a contextual entity can be corrected inadvertently. That's because terms that function as contextual entity mentions are fluid; they cannot be predetermined and avoided by the spell checker function in the way a list of dictionary-based terms can be. If, after testing, you find that mentions are being overcorrected for a certain contextual entity, consider using a dictionary-based entity in its place.
+   {: note}
 
 If the word that is not corrected is not obviously one of these types of input, then it might be worth checking whether the entity has fuzzy matching enabled for it.
 

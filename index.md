@@ -25,7 +25,7 @@ subcollection: assistant
 # About
 {: #index}
 
-{{site.data.keyword.conversationfull}} is a cognitive bot that you can customize for your business needs, and deploy across multiple channels to bring help to your customers where and when they need it.
+Use {{site.data.keyword.conversationfull}} to build your own branded assistant into any device, application, or channel. Your assistant connects to the customer engagement resources you already use to deliver an engaging, unified problem-solving experience to your customers.
 {: shortdesc}
 
 ## How it works
@@ -43,26 +43,26 @@ This diagram shows the overall architecture:
 
 - The **assistant** receives user input and routes it to the dialog skill.
 
-- The dialog **skill** interprets the user input further, then directs the flow of the conversation and gathers any information that it needs to respond or perform a transaction on the user's behalf.
+- The dialog **skill** interprets the user input further, then directs the flow of the conversation. The dialog gathers any information it needs to respond or perform a transaction on the user's behalf.
 
 ## Implementation
 {: #index-mplementation}
 
-Here's how you will implement your assistant:
+Here's how you implement your assistant:
 
 - **Create a dialog skill**. Use the intuitive graphical tool to define the training data and dialog for the conversation between your assistant and your customers.
 
   The training data consists of the following artifacts:
 
-  - **Intents**: Goals that you anticipate your users will have when they interact with the service. Define one intent for each goal that can be identified in a user's input. For example, you might define an intent named *store_hours* that answers questions about store hours. For each intent, you add sample utterances that reflect the input customers might use to ask for the information they need, such as, `What time do you open?`
+  - **Intents**: Goals that you anticipate your users have when they interact with the service. Define one intent for each goal that can be identified in a user's input. For example, you might define an intent that is named *store_hours* that answers questions about store hours. For each intent, you add sample utterances that reflect the input customers might use to ask for the information they need, such as, `What time do you open?`
 
-    Or use prebuilt **content catalogs** provided by IBM to get started with data that addresses common customer goals.
+    Or use prebuilt **content catalogs** that are provided by IBM to get started with data that addresses common customer goals.
 
   - **Dialog**: Use the dialog tool to build a dialog flow that incorporates your intents. The dialog flow is represented graphically in the tool as a tree. You can add a branch to process each of the intents that you want the service to handle.
 
-  - **Entities**: An entity represents a term or object that provides context for an intent. For example, an entity might be a city name that helps your dialog to distinguish which store the user wants to know store hours for. After adding entities, update your dialog to use them. Add dialog nodes that handle the many possible permutations of a request based on the entities found in the user input.
+  - **Entities**: An entity represents a term or object that provides context for an intent. For example, an entity might be a city name that helps your dialog to distinguish which store the user wants to know store hours for. After you add entities, update your dialog to use them. Add dialog nodes that handle the many possible permutations of a request based on the entities that are found in the user input.
 
-    As you add training data, a natural language classifier is automatically added to the skill, and is trained to understand the types of requests that you have indicated the service should listen for and respond to.
+    As you add training data, a natural language classifier is automatically added to the skill. The classifier model is trained to understand the types of requests that you teach the service to listen for and respond to.
 
 - **Create an assistant**.
 
@@ -70,7 +70,7 @@ Here's how you will implement your assistant:
 
 - **Integrate your assistant.** Create a channel integration to deploy the configured assistant directly to a social media or messaging channel.
 
-  Your deployed assistant is hosted by {{site.data.keyword.cloud_notm}}, the IBM cloud computing platform. (See [Platform overview ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/overview/ibm-cloud#overview) for more information.)
+  Your deployed assistant is hosted by {{site.data.keyword.cloud_notm}}, the IBM cloud computing platform. (For more information, see [Platform overview ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/overview/ibm-cloud#overview){: new_window}.)
 
 Read more about these implementation steps by following these links:
 
@@ -80,15 +80,10 @@ Read more about these implementation steps by following these links:
 - [Assistant overview](/docs/services/assistant?topic=assistant-assistant-add)
 - [Adding integrations](/docs/services/assistant?topic=assistant-deploy-integration-add)
 
-## Where are my workspaces?
-{: #index-existing-customers}
-
-If you created a *workspace* in a previous version of the service, have no fear; you can still get to it. Workspaces are now called *skills*. To get to your workspace, click the **Skills** tab.
-
 ## Browser support
 {: #index-browser-support}
 
-The {{site.data.keyword.conversationshort}} service tool requires the same level of browser software as is required by {{site.data.keyword.Bluemix_notm}}. See the {{site.data.keyword.Bluemix_notm}} [Prerequisites ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/overview/prereqs#browsers){: new_window} topic for details.
+The {{site.data.keyword.conversationshort}} service tool requires the same level of browser software as is required by {{site.data.keyword.Bluemix_notm}}. For more information, see {{site.data.keyword.Bluemix_notm}} [Prerequisites ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/overview/prereqs#browsers){: new_window}.
 
 ## Language support
 {: #index-lang-support}
@@ -98,9 +93,9 @@ Language support by feature is detailed in the [Supported languages](/docs/servi
 ## Terms and notices
 {: #index-notices}
 
-See [IBM Cloud Terms and Notices ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/overview/terms-of-use?topic=overview-terms) for information about the terms of service.
+See [IBM Cloud Terms and Notices ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/overview/terms-of-use?topic=overview-terms){: new_window} for information about the terms of service.
 
-US Health Insurance Portability and Accountability Act (HIPAA) support is available for Premium plans created on or after 1 April 2019. See [Enabling EU and HIPAA supported settings ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/account?topic=account-eu-hipaa-supported#eu-hipaa-supported) for more information.
+US Health Insurance Portability and Accountability Act (HIPAA) support is available for Premium plans created on or after 1 April 2019. For more information, see [Enabling EU and HIPAA supported settings ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/account?topic=account-eu-hipaa-supported#eu-hipaa-supported){: new_window}.
 
 ## Next steps
 {: #index-next-steps}
@@ -108,4 +103,4 @@ US Health Insurance Portability and Accountability Act (HIPAA) support is availa
 - [Get started](/docs/services/assistant?topic=assistant-getting-started) with the service.
 - View the list of [developer resources ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/watson/developer-resources/){: new_window}.
 
-Still have questions? Contact [IBM Sales ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-01.ibm.com/marketing/iwm/dre/signup?source=urx-20970){: new_window}.
+Have questions? Contact [IBM Sales ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-01.ibm.com/marketing/iwm/dre/signup?source=urx-20970){: new_window}.
