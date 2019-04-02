@@ -85,7 +85,7 @@ To migrate your service instance, complete these steps:
       ```
       {: codeblock}
 
-      The response shows the ID of the resourc group. For more information about the CLI command, see [Working with resources and resource groups ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/cli?topic=cloud-cli-ibmcloud_commands_resource#ibmcloud_commands_resource).
+      The response shows the ID of the resource group. For more information about the CLI command, see [Working with resources and resource groups ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/cli?topic=cloud-cli-ibmcloud_commands_resource#ibmcloud_commands_resource).
 
       Give the support team up to 24 hours from the time you submit the case to complete the work they need to perform to support the Premium plan migration. There is no disruption of service during the migration process.
 
