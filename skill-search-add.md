@@ -335,7 +335,7 @@ Follow this procedure to raise the bar for when the dialog can respond by resett
 
     `intents[0].confidence > 0.5`
 
-    This condition is applied to all of the nodes in the folder. The condition tells the service to process the nodes in the folder only if the service is over 50% confident that it knows the user's intent.
+    This condition is applied to all of the nodes in the folder. The condition tells the service to process the nodes in the folder only if the service is at least 50% confident that it knows the user's intent.
 
 1.  Move any dialog nodes that you do not want the service to process often into the folder.
 
