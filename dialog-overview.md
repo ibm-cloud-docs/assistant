@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-22"
+lastupdated: "2019-04-02"
 
 subcollection: assistant
 
@@ -425,12 +425,25 @@ To add a rich response, complete the following steps:
     - **Text**. Add the text to return to the user in the text field. Optionally, choose a variation setting for the text response. See [Simple text response](#dialog-overview-simple-text) for more details.
     - **Search skill**. Add the search query that you want to pass to the {{site.data.keyword.discoveryshort}} service by filling in the following fields:
 
-      - **Query**: Required if no filter is specified. A query that is specified in natural language. For example, `What cities do you fly to?` This query string is passed to the {{site.data.keyword.discoveryshort}} service, which uses natural language understanding and information that was captured about the documents from analysis done when the documents were ingested, to find and return relevant passages.
+      - **Query**: Required if no filter is specified. A query that is specified in natural language.
 
-        You can include specific information provided by the user by referencing entities in the query. For example, `Tell me about @product`. To pass the user's input as-is, specify `<? input.text ?>`.
+        You can specify `What cities do you fly to?`, for example. This query string is passed to the {{site.data.keyword.discoveryshort}} service, which uses natural language understanding and information that was captured about the documents from analysis done when the documents were ingested, to find and return relevant passages.
+
+        You can include specific information provided by the user by referencing entities in the query. For example, `Tell me about @product`.
+
+        To pass the user's exact words as the query value, specify `<? input.text ?>`.
 
         See [Discovery query operators ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-query-operators) for more information about supported syntax.
-      - **Filter**: Optional. Specify a text string that defines information that must be present in any of the search results that are returned. For example, to indicate that you want to return only documents with positive sentiment detected, specify `enriched_text.sentiment.document.label:positive`. To filter results to includes only documents that the ingestion process identified as containing the entity `Boston, MA`, then specify `enriched_text.entities.text:"Boston, MA"`. To use a city name provided by the customer as the filter parameter, you can specify `enriched_text.entities.text:@city`.
+
+      - **Filter**: Optional. Specify a text string that defines information that must be present in any of the search results that are returned.
+
+        To indicate that you want to return only documents with positive sentiment detected, for example, specify `enriched_text.sentiment.document.label:positive`.
+
+        To filter results to includes only documents that the ingestion process identified as containing the entity `Boston, MA`, then specify `enriched_text.entities.text:"Boston, MA"`.
+
+        To filter results to includes only documents that the ingestion process identified as containing a city name provided by the customer, you can specify `enriched_text.entities.text:@city`.
+
+        To filter results to includes only documents that the ingestion process identified as containing a city name that you saved in a context variable named `$city`, you can specify `enriched_text.entities.text:$city`.
 
       If you specify both, then the filter parameter is applied first to filter and cache its results. The query parameter then ranks the results. See [Query parameters ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-query-parameters) for more details.
 
