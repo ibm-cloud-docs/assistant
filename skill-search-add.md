@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-22"
+lastupdated: "2019-04-02"
 
 subcollection: assistant
 
@@ -143,6 +143,9 @@ If you have a Discovery service Lite plan, you are given an opporunity to upgrad
             - For a Salesforce data source, you select the object types that you want to extract from the source documents. You might select a [Case object type ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_case.htm#!) that represents a *case*, which is a customer issue or problem, for example.
             - For a Sharepoint data source, you specify paths.
             - For file repositories, you specify directories or files.
+            - For a web crawl, specify the base URL of the site you want to crawl.
+
+              For a Lite plan, you cannot crawl more than 2,000 web pages. To limit the pages that are crawled, you can specify a subdomain in the base URL or, in the web crawl settings, limit the number of hops or add subdomains to exclude.
 
         1.  Click **Save and sync objects**.
 
@@ -317,10 +320,31 @@ If you initiate any type of search from your dialog skill, test the dialog to en
 You cannot test the search skill from the "Try it out" pane in the dialog skill editor. To best replicate how users will interact with your assistant, test from one of the integration channels configured for the assistant.
 {: important}
 
-### Disabling search
+## Sending more requests to the search skill
+{: #search-skill-add-increase-flow}
+
+If you want the dialog skill to respond less often and to send more queries to the search skill instead, you can configure the dialog to do so. Be sure to add both a dialog skill and search skill to your assistant.
+
+Follow this procedure to raise the bar for when the dialog can respond by resetting the confidence level threshold from the default setting of 0.2 to 0.5.
+
+1.  From the *Dialog* page of your dialog skill, make sure the last node in the dialog tree has an `anything_else` condition.
+
+    Whenever this node is processed, the search skill will be triggered.
+
+1.  Add a folder to the dialog. Position the folder above the first dialog node that you want to de-emphasize. Add the following condition to the folder:
+
+    `intents[0].confidence > 0.5`
+
+    This condition is applied to all of the nodes in the folder. The condition tells the service to process the nodes in the folder only if the service is at least 50% confident that it knows the user's intent.
+
+1.  Move any dialog nodes that you do not want the service to process often into the folder.
+
+After changing the dialog, test the assistant to make sure the search skill is triggered as often as you want it to be.
+
+## Disabling search
 {: #search-skill-add-disable}
 
-You can disable the search skill from being triggered. 
+You can disable the search skill from being triggered.
 
 You might want to do so temporarily, while you are setting up the integration. Or you might want to only ever trigger a search for specific user queries that you can identify within the dialog, and use a search skill response type to answer.
 

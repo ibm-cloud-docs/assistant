@@ -70,7 +70,7 @@ To migrate your service instance, complete these steps:
 
     A message is displayed when the process is done. If you have other service instances to migrate, you can continue migrating other service instances, or click **Done**.
 
-1.  **Premium plan only**: If you are migrating a service instance that was created as part of a Premium plan, create a case from [IBM Cloud Support ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/unifiedsupport/supportcenter) to inform the service team that you are migrating a Premium plan instance.
+1.  **Premium plan one-time step**: If the service instance you are migrating was created as part of a Premium plan, you must inform the service team that you are migrating a Premium plan instance. To do so, create a case from [IBM Cloud Support ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/unifiedsupport/supportcenter){: new_window}.
 
     There are some additional steps that the service team needs to take on your behalf. Add the following information to the case:
 
@@ -88,6 +88,9 @@ To migrate your service instance, complete these steps:
       The response shows the ID of the resource group. For more information about the CLI command, see [Working with resources and resource groups ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/cli?topic=cloud-cli-ibmcloud_commands_resource#ibmcloud_commands_resource).
 
       Give the support team up to 24 hours from the time you submit the case to complete the work they need to perform to support the Premium plan migration. There is no disruption of service during the migration process.
+
+      You only need to perform this step the first time you migrate a service instance for the Premium plan. When you click *Migrate* for other service instances that belong to the same plan, they will be migrated to the same resource group without requiring any involvement from the service team.
+      {: important}
 
 The old (Cloud Foundry org-based) service instance that you migrated continues to be listed in the Cloud Foundry Services section of the Dashboard, and is now shown as an *alias* of the new (resource group-based) version of the instance.
 
