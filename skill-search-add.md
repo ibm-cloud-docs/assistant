@@ -337,14 +337,14 @@ Follow this procedure to raise the bar for when the dialog can respond by resett
 
     This condition is applied to all of the nodes in the folder. The condition tells the service to process the nodes in the folder only if the service is over 50% confident that it knows the user's intent.
 
-1.  Move any dialog nodes that you want to prevent from responding often into the folder.
+1.  Move any dialog nodes that you do not want the service to process often into the folder.
 
 After changing the dialog, test the assistant to make sure the search skill is triggered as often as you want it to be.
 
 ## Disabling search
 {: #search-skill-add-disable}
 
-You can disable the search skill from being triggered. 
+You can disable the search skill from being triggered.
 
 You might want to do so temporarily, while you are setting up the integration. Or you might want to only ever trigger a search for specific user queries that you can identify within the dialog, and use a search skill response type to answer.
 
