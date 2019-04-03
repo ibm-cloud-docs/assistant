@@ -100,9 +100,10 @@ Watson Assistant
     dialog-methods.md
     expression-language.md
     filter-reference.md
+    services-information.md
+    information-security.md
     sample-apps.md
     language-support.md
-    information-security.md
 
     {: .topicgroup}
     System entities
@@ -115,8 +116,6 @@ Watson Assistant
 
     {: .navgroup id="help"}
     release-notes.md
-    feedback.md
-    services-information.md
 
     {: .topicgroup}
     Developer community
@@ -124,5 +123,7 @@ Watson Assistant
         [IBM Developer Answers](https://developer.ibm.com/answers/search.html?f=&sort=relevance&q=%5Bwatson-conversation%5D+%5Bwatson-assistant%5D+%24)
         [WDC Slack channel](http://wdc-slack-inviter.mybluemix.net/)
 
+    feedback.md
+    troubleshoot.md
     accessibility.md
     {: .navgroup-end}

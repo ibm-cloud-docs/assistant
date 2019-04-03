@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-25"
+lastupdated: "2019-04-03"
 
 ---
 
@@ -75,17 +75,17 @@ To add the webhook details, complete the following steps:
 
 1.  If the external service requires that you pass authentication credentials or other parameters with the POST request, then add them as headers.
 
-({{site.data.keyword.openwhisk_short}} web actions typically do not require that you pass an API key.)
+    ({{site.data.keyword.openwhisk_short}} web actions typically do not require that you pass an API key.)
 
     <table>
     <caption>Header example</caption>
       <tr>
-        <th>Header name</th>
-        <th>Header value</th>
+      <th>Header name</th>
+      <th>Header value</th>
       </tr>
       <tr>
-        <td>Authorization</td>
-        <td>Basic `<encoded-api-key>`</td>
+      <td>Authorization</td>
+      <td>Basic `<encoded-api-key>`</td>
       </tr>
     </table>
 
