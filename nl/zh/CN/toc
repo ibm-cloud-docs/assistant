@@ -1,94 +1,123 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="assistant" audience="service" href="/docs/services/assistant/getting-started.html" path="services/assistant"}
+{: .toc subcollection="assistant" audience="service" href="/docs/services/assistant?topic=assistant-getting-started" path="services/assistant"}
 Watson Assistant
 
     {: .navgroup id="learn"}
-getting-started.md
+    getting-started.md
     index.md
+    skills.md
+    assistants.md
     tool-overview.md
-    [演示](https://watson-conversation-duo-dev.ng.bluemix.net/)
+    [演示：银行助手](https://watson-conversation-duo-dev.ng.bluemix.net/)
     resources.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    configure-workspace.md
+    dev-process.md
+    skill-add.md
+    catalog.md
 
     {: .topicgroup}
-    定义意向和实体
-        intents-entities.md
+    创建意向
         intents.md
-        entities.md
-        catalog.md
+        intent-recommendations.md
 
     {: .topicgroup}
-    构建对话
+    创建对话
         dialog-overview.md
         dialog-runtime.md
         dialog-build.md
+        dialog-tips.md
         dialog-slots.md
         dialog-actions.md
-        dialog-api.md
+        dialog-responses-json.md
+        dialog-depiction.md
+
+    entities.md
+    versions.md
+    assistant-add.md
+    skill-open.md
 
     {: .topicgroup}
     部署
-        deploy.md
-        conversation-connector.md
-        develop-app.md
-        integrations.md
+        deploy-integration-add.md
+        deploy-custom-app.md
+        deploy-facebook.md
+        deploy-intercom.md
+        deploy-web-link.md
+        deploy-slack.md
+        dialog-start.md
+        deploy-integration-delete.md
 
     {: .topicgroup}
     改进理解
+        logs-intro.md
+        logs-overview.md
         logs.md
-        logs_oview.md
-        logs_convo.md
-        logs_recommend.md
+        logs-resources.md
 
-    upgrading.md
+    migrate.md
+    backup.md
+    upgrade.md
+    edit-convo-workspace.md
 
     {: .topicgroup}
     教程
         tutorial.md
         tutorial-slots.md
         tutorial-slots-complex.md
+        tutorial-car-dashboard.md
+        tutorial-digressions.md
+        [教程：定义上下文实体](https://www.ibm.com/cloud/garage/demo/try-watson-assistant-contextual-entities)
+
+    {: .topicgroup}
+    使用 API
+        api-overview.md
+        api-methods.md
+        api-client.md
+        api-dialog-responses.md
+        api-dialog-modify.md
+
+    {: .topicgroup}
+    Beta 功能
+        beta.md
+        beta-skill-dialog-add.md
+        skill-search-add.md
+        beta-intent-recommendations.md
+        beta-spell-check.md	
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    [API 参考](https://console.bluemix.net/apidocs/assistant)
+    [V2 API 参考](https://cloud.ibm.com/apidocs/assistant-v2)
+    [V1 API 参考](https://cloud.ibm.com/apidocs/assistant)
     dialog-methods.md
     expression-language.md
     filter-reference.md
-    sample-applications.md
-    lang-support.md
+    sample-apps.md
+    language-support.md
+    information-security.md
 
     {: .topicgroup}
     系统实体
         system-entities.md
-        supported-timezones.md
+        time-zones.md
 
-    {: .topicgroup}
-    Watson SDK
-        [Android SDK](https://github.com/watson-developer-cloud/android-sdk)
-        [Java SDK](https://github.com/watson-developer-cloud/java-sdk)
-        [Node.js SDK](https://github.com/watson-developer-cloud/node-sdk)
-        [Python SDK](https://github.com/watson-developer-cloud/python-sdk)
-        [.NET SDK](https://github.com/watson-developer-cloud/dotnet-standard-sdk)
-        [OpenWhisk SDK](https://github.com/watson-developer-cloud/openwhisk-sdk/)
-        [Salesforce SDK](https://github.com/watson-developer-cloud/salesforce-sdk)
-        [Swift SDK](https://github.com/watson-developer-cloud/swift-sdk)
-        [Unity SDK](https://github.com/watson-developer-cloud/unity-sdk)
-
+    /watson/watson-using-sdks
     [Watson GitHub 存储库](https://github.com/watson-developer-cloud/)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
     release-notes.md
     feedback.md
+    services-information.md
 
     {: .topicgroup}
     开发者社区
-        [StackOverflow](http://stackoverflow.com/questions/tagged/watson-conversation)
-        [IBM Developer Answers](https://developer.ibm.com/answers/topics/watson-conversation/)
+        [StackOverflow](https://stackoverflow.com/questions/tagged/watson-conversation+or+watson-assistant)
+        [IBM Developer Answers](https://developer.ibm.com/answers/search.html?f=&sort=relevance&q=%5Bwatson-conversation%5D+%5Bwatson-assistant%5D+%24)
         [WDC Slack 通道](http://wdc-slack-inviter.mybluemix.net/)
+
+    accessibility.md
     {: .navgroup-end}

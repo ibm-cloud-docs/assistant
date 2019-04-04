@@ -1,13 +1,18 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-02-16"
+  years: 2015, 2019
+lastupdated: "2019-02-28"
+
+subcollection: assistant
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -23,10 +28,10 @@ lastupdated: "2018-02-16"
 
 向对话节点添加槽可从该节点内的用户那里收集多条信息。槽会按用户的速度收集信息。将保存用户在前面提供过的详细信息，并且服务仅要求用户提供其未提供过的详细信息。
 
-<iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/ES4GHcDsSCI?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+<iframe class="embed-responsive-item" id="youtubeplayer" title="向节点添加槽" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/kMLyKfmO9wI?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 ## 为什么要添加槽？
-{: #why-add-slots}
+{: #dialog-slots-why}
 
 使用槽可获取所需的信息，然后可以准确响应用户。例如，如果用户询问营业时间，但营业时间因门店位置而异，那么在回答用户之前，可询问有关用户计划访问的门店位置的跟进问题。然后，可以添加将提供的位置信息考虑在内的响应条件。
 
@@ -40,50 +45,55 @@ lastupdated: "2018-02-16"
 
 ![显示两个槽已填充，然后服务提示为其余的槽提供信息。](images/pass-in-info.png)
 
-槽使服务能够回答跟进问题，而无需重新确定用户的目标。例如，用户可能会询问天气预报，然后询问有关其他位置或其他日期天气情况的跟进问题。如果在槽中保存必需的预测变量（例如，位置和日期），那么如果用户使用新的变量值询问跟进问题，就可以使用所提供的新值来覆盖槽值，并给出反映新信息的响应。（有关如何从对话调用外部服务的更多信息，请参阅[从对话节点发起程序化调用](dialog-actions.html)）。
+槽使服务能够回答跟进问题，而无需重新确定用户的目标。例如，用户可能会询问天气预报，然后询问有关其他位置或其他日期天气情况的跟进问题。如果在槽中保存必需的预测变量（例如，位置和日期），那么如果用户使用新的变量值询问跟进问题，就可以使用所提供的新值来覆盖槽值，并给出反映新信息的响应。（有关如何从对话调用外部服务的更多信息，请参阅[从对话节点发起程序化调用](/docs/services/assistant?topic=assistant-dialog-actions)）。
 
 ![显示有人询问天气预报，然后跟进询问其他位置和时间的天气情况。](images/follow-up.png)
 
 使用槽可在用户和服务之间生成更自然的对话流，而且相比尝试使用许多单独的节点来收集信息，管理起来也更方便。
 
 ## 添加槽
-{: #add-slots}
+{: #dialog-slots-add}
 
 1.  确定要收集的信息单元。例如，要为某人订披萨，您可能希望收集以下信息：
 
     - 送餐时间
     - 尺寸
 
-1.  如果您尚未开始创建对话，请按照[创建对话](dialog-build.html)中的指示信息来创建对话。
+1.  如果您尚未开始创建对话，请按照[创建对话](/docs/services/assistant?topic=assistant-dialog-build)中的指示信息来创建对话。
 
 1.  在对话节点编辑视图中，单击**定制**，然后单击**槽**旁边的切换开关以将其**开启**。
 
-    **注**：有关**提示提供所有信息**复选框的更多信息，请参阅[一次询问所有信息](dialog-slots.html#slots-prompt-for-everything)。
+    有关**提示提供所有信息**复选框的更多信息，请参阅[一次询问所有信息](#dialog-slots-prompt-for-everything)。
 
 1.  **为每个所需信息单元添加槽**。对于每个槽，请指定以下详细信息：
 
     - **检查对象**：确定要从用户对槽提示的响应中抽取的信息类型。在大多数情况下，检查实体值。事实上，显示的条件构建器会建议可以检查的实体。但是，还可以检查意向；只需在字段中输入意向名称即可。在此可以使用 AND 和 OR 运算符来定义更复杂的条件。
 
-      **重要信息**：*检查对象*值首先用作条件，但接着成为在*另存为*字段中指定的上下文变量的值。如果要更改值的保存方式（例如，重新设置值的格式），然后将用于重新设置值格式的表达式直接添加到**检查对象**字段。
+      *检查对象*值首先用作条件，然后成为在*另存为*字段中指定的上下文变量的值。它指定**要检查的对象**和**要保存的对象**。如果要更改值的保存方式，请将用于重新设置值格式的表达式添加到*检查对象*字段。
+      {: important}
 
-      例如，如果实体定义了正则表达式模式，那么在添加实体名称后，请向该名称附加 `.literal`。例如，从已定义实体的列表中选择 `@email` 后，编辑**检查对象**字段以包含 `@email.literal`。通过添加 `.literal` 属性，可以指示要捕获由用户输入并基于其模式标识为电子邮件地址的确切文本。请直接在**检查对象**字段中进行此语法更改。
+      例如，如果实体是模式实体（例如，`@email`），那么在添加实体名称后，请向该名称附加 `.literal`。通过添加 `.literal`，即指示您要捕获的是由用户输入并基于其模式标识为电子邮件地址的确切文本。
 
-      **警告**：如果希望在保存值之前，先将复杂表达式应用于该值，那么可以打开 JSON 编辑器来定义复杂的 SpEL 表达式。但是，退出 JSON 编辑器时，在 JSON 编辑器中定义的复杂表达式不会反映在**检查对象**字段中。此外，如果在为其定义复杂表达式后的任何时候单击**检查对象**字段以使其获得焦点，将除去该表达式。
+      在某些情况下，您可能希望使用表达式来捕获值，但不将表达式应用于保存的内容。在这种情况下，可以使用*检查对象*字段中的一个值来捕获值，然后打开 JSON 编辑器来更改上下文变量的值，这样就可以保存其他内容。有关示例，请参阅[正确处理零](/docs/services/assistant?topic=assistant-tutorial-slots-complex#tutorial-slots-complex-recognize-zero) 。
 
-      避免检查上下文变量值。因为检查的值也是保存的值，所以如果在条件中使用上下文变量，那么在相应上下文中使用时，可能会导致意外的行为。如果设置了给定的上下文变量，不要尝试使用可选槽来仅显示响应。如果设置了该变量，那么为可选槽定义的槽“已找到”响应将与其他每个槽返回的响应一起反复显示。
-      {: tip}
+      退出 JSON 编辑器时，在 JSON 编辑器中对槽的上下文变量值进行的任何编辑都不会反映在**检查对象**字段中。在使用 JSON 编辑器编辑值后，如果在任何时间单击**检查对象**字段以使该字段获得焦点，您所做的更改都会丢失。
+      {: important}
 
-    - **另存为**：提供上下文变量的名称，以存储用户对槽提示的响应中相关的值。不要指定在对话中先前使用过的上下文变量，这些变量可能具有值。仅当槽的上下文变量为空时，才会显示该槽的提示。
+      避免在*检查对象*字段中检查上下文变量值。因为检查的值也是保存的值，所以在条件中使用上下文变量可能会导致意外的行为。
+
+    - **另存为**：提供上下文变量的名称，以存储用户对槽提示的响应中相关的值。
+
+       不要复用在对话中其他位置使用的上下文变量。如果上下文变量已具有值，那么不会显示槽的提示。仅当槽的上下文变量为空时，才会显示该槽的提示。
 
     - **提示**：编写语句，以引导用户提供所需的信息。显示此提示后，对话会暂停，服务会等待用户进行响应。
 
-    - 如果希望根据用户是否在对初始槽提示的响应中提供了您需要的信息，从而显示不同的跟进语句，那么可以编辑槽（通过单击**编辑槽** ![编辑槽](images/edit-slot.png) 图标）并对跟进语句进行定义：
+    - 如果希望根据用户在响应初始槽提示时是否提供了您需要的信息，从而显示不同的跟进语句，那么可以编辑槽（通过单击**编辑槽** ![编辑槽](images/edit-slot.png) 图标）并定义跟进语句：
 
       - **已找到**：在用户提供期望的信息后显示。
 
       - **找不到**：在用户提供的信息不可理解或未以所需的格式提供时显示。如果成功填充了槽，或者槽处理程序理解并处理了用户输入，那么绝不会显示此语句。
 
-      有关如何针对“已找到”和“找不到”响应定义条件和关联操作的信息，请参阅[向“已找到”和“找不到”响应添加条件](dialog-slots.html#slot-handler-next-steps)。
+      有关如何针对“已找到”和“找不到”响应定义条件和关联操作的信息，请参阅[向“已找到”和“找不到”响应添加条件](#dialog-slots-handler-next-steps)。
 
     下表显示了节点的示例槽值，通过收集两条信息（披萨尺寸和送货时间）来帮助用户订购披萨。
 
@@ -135,7 +145,7 @@ lastupdated: "2018-02-16"
 
     - **条件**：如果希望槽仅在特定条件下启用，那么可以向其添加条件。例如，如果槽 1 要求提供会议开始时间，槽 2 捕获会议持续时间，槽 3 捕获结束时间，那么您可能希望仅当未提供槽 2 的值时才启用槽 3（并要求提供会议结束时间）。要使槽有条件，请编辑槽，然后从**更多** ![“更多”图标](images/kabob.png) 菜单中选择**启用条件**。定义要启用该槽必须满足的条件。
 
-      您能以先前槽中的上下文变量值为条件，因为列出槽的顺序即是对其求值的顺序。但是，请仅以您在对槽求值时确信存在的槽上下文变量值为条件。例如，确保先前的槽是必需的。
+      您能以先前槽中的上下文变量值为条件，因为列出槽的顺序即是对其求值的顺序。但是，请仅以您确信在对此槽求值时将包含值的槽上下文变量为条件。例如，先前的槽必须是必填槽。
     {: tip}
 1.  **不让用户跑题**。可以选择定义槽处理程序，用于对用户在交互期间可能会询问的与节点用途不太相关的问题提供响应。
 
@@ -145,47 +155,48 @@ lastupdated: "2018-02-16"
 
     响应跑题的问题后，将显示与当前空槽关联的提示。
 
-    如果用户在对话节点流期间一直到显示节点级别响应之前的任意时间，提供与槽处理程序条件匹配的输入，都会触发此条件。有关使用槽处理程序的更多方式，请参阅[处理请求以退出过程](dialog-slots.html#slots-node-level-handler)。
+    如果用户在对话节点流期间一直到显示节点级别响应之前的任意时间，提供与槽处理程序条件匹配的输入，都会触发此条件。有关使用槽处理程序的更多方式，请参阅[处理请求以退出过程](#dialog-slots-node-level-handler)。
 1.  **添加节点级别响应**。填充所有必需槽后，才会执行节点级别的响应。可以添加用于汇总所收集信息的响应。例如，`一个$size 披萨，预计$time 送达。祝您用餐愉快！`
 
-    如果要基于特定条件定义其他响应，请单击**定制**，然后单击**多个响应**切换开关以将其**开启**。有关条件响应的信息，请参阅[条件响应](dialog-overview.html#multiple)。
+    如果要基于特定条件定义其他响应，请单击**定制**，然后单击**多个响应**切换开关以将其**开启**。有关条件响应的信息，请参阅[条件响应](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multiple)。
 1.  **添加用于重置槽上下文变量的逻辑**。从每个槽中收集用户的回答时，这些回答会保存在上下文变量中。可以使用上下文变量将信息传递到其他节点、应用程序或外部服务以供使用。但是，传递信息后，必须将上下文变量设置为空以重置节点，这样该节点才能再次开始收集信息。不能将当前节点中的上下文变量设置为空，因为在填充必需的槽之前，服务不会退出节点。请考虑使用以下某种方法：
 
     - 将处理添加到将变量设置为空的外部应用程序。
     - 添加将变量设置为空的子节点。
     - 插入将变量设置为空的父节点，然后跳转至使用槽的节点。
 
-试试看！遵循分步[教程](tutorial-slots.html)。
+试试看！遵循分步[教程](/docs/services/assistant?topic=assistant-tutorial-slots)。
 
 ## 槽用法提示
-{: #slots-tips}
+{: #dialog-slots-tips}
 
 以下槽属性可以帮助您检查和设置槽上下文变量的值。
 
-| 属性名称| 描述|
+|属性名称|描述|
 |------------------------|-------------|
-| `all_slots_filled`| 仅当已为节点中的所有槽设置所有上下文变量时，才会求值为 true。有关用法示例，请参阅[阻止在不需要时显示“已找到”响应](dialog-slots.html#slots-stifle-found-responses)。|
-| `event.current_value`| 此槽的上下文变量的当前值。有关此属性和 event.previous_value 属性的用法示例，请参阅[替换槽上下文变量值](dialog-slots.html#slots-found-handler-event-properties)。|
-| `event.previous_value`| 此槽的上下文变量的先前值。|
-| `has_skipped_slots`| 如果处理了任何配置有下一步选项（用于跳过槽）的槽或槽处理程序，那么值为 true。有关槽的下一步选项的更多信息，请参阅[向“已找到”和“找不到”响应添加条件](dialog-slots.html#slot-handler-next-steps)，有关槽处理程序的下一步选项的信息，请参阅[处理请求以退出过程](dialog-slots.html#slots-node-level-handler)。|
-| `slot_in_focus`| 强制将槽条件仅应用于当前槽。有关更多详细信息，请参阅[获取确认](dialog-slots.html#slots-get-confirmation)。|
+|`all_slots_filled`|仅当已为节点中的所有槽设置所有上下文变量时，才会求值为 true。有关用法示例，请参阅[阻止在不需要时显示“已找到”响应](#dialog-slots-stifle-found-responses)。|
+|`event.current_value`|此槽的上下文变量的当前值。有关此属性和 event.previous_value 属性的用法示例，请参阅[替换槽上下文变量值](#dialog-slots-found-handler-event-properties)。|
+|`event.previous_value`|此槽的上下文变量的先前值。|
+|`has_skipped_slots`|如果处理了任何配置有下一步选项（用于跳过槽）的槽或槽处理程序，那么值为 true。有关槽的下一步选项的更多信息，请参阅[向“已找到”和“找不到”响应添加条件](#slot-handler-next-steps)，有关槽处理程序的下一步选项的信息，请参阅[处理请求以退出过程](#dialog-slots-node-level-handler)。|
+|`slot_in_focus`|强制将槽条件仅应用于当前槽。有关更多详细信息，请参阅[获取确认](#dialog-slots-get-confirmation)。|
 {: caption="槽属性" caption-side="top"}
 
 请考虑使用以下方法来处理常见任务。
 
-- [一次询问所有信息](dialog-slots.html#slots-prompt-for-everything)
-- [捕获多个值](dialog-slots.html#slots-multiple-entity-values)
-- [重新设置值的格式](dialog-slots.html#slots-reformat-values)
-- [获取确认](dialog-slots.html#slots-get-confirmation)
-- [替换槽上下文变量值](dialog-slots.html#slots-found-handler-event-properties)
-- [避免数字混淆](dialog-slots.html#slots-avoid-number-confusion)
-- [向“已找到”和“找不到”响应添加条件](dialog-slots.html#slot-handler-next-steps)
-- [多次失败尝试后离开](dialog-slots.html#slots-stop-trying-after-3)
-- [阻止在不需要时显示“已找到”响应](dialog-slots.html#slots-stifle-found-responses)
-- [处理请求以退出过程](dialog-slots.html#slots-node-level-handler)
+- [一次询问所有信息](#dialog-slots-prompt-for-everything)
+- [捕获多个值](#dialog-slots-multiple-entity-values)
+- [重新设置值的格式](#dialog-slots-reformat-values)
+- [处理零](#dialog-slots-zero)
+- [获取确认](#dialog-slots-get-confirmation)
+- [替换槽上下文变量值](#dialog-slots-found-handler-event-properties)
+- [避免数字混淆](#dialog-slots-avoid-number-confusion)
+- [向“已找到”和“找不到”响应添加条件](#dialog-slots-handler-next-steps)
+- [多次失败尝试后离开](#dialog-slots-stop-trying-after-3)
+- [阻止在不需要时显示“已找到”响应](#dialog-slots-stifle-found-responses)
+- [处理请求以退出过程](#dialog-slots-node-level-handler)
 
 ### 一次询问所有信息
-{: #slots-prompt-for-everything}
+{: #dialog-slots-prompt-for-everything}
 
 包括整个节点的初始提示，以明确告诉用户您希望他们提供哪些信息单元。显示此提示首先使用户有机会一次提供所有详细信息，而不必等待提示，一次提供一条信息。
 
@@ -196,7 +207,7 @@ lastupdated: "2018-02-16"
 在启用了“槽”功能的“定制”窗格中，选中**提示提供所有信息**复选框以启用初始提示。此设置会向节点添加**如果未预填充任何槽，请首先询问此问题**字段，在其中可以指定提示用户提供所有信息的文本。
 
 ### 捕获多个值
-{: #slots-multiple-entity-values}
+{: #dialog-slots-multiple-entity-values}
 
 可以要求提供项列表，并将其保存在一个槽中。
 
@@ -223,7 +234,7 @@ lastupdated: "2018-02-16"
 要稍后引用用户指定的馅料，请使用 `<? $entity-name.join(',') ?>` 语法，以列出馅料数组中的每个项，并使用逗号分隔各值。例如，`我要订一个$size 披萨，加<? $toppings.join(',') ?> 送餐时间是$time。`
 
 ### 重新设置值的格式
-{: #slots-reformat-values}
+{: #dialog-slots-reformat-values}
 
 由于您会要求用户提供信息，并且需要在响应中引用其输入，因此请考虑重新设置值的格式，以便可以使用更友好的格式来显示这些值。
 
@@ -231,17 +242,40 @@ lastupdated: "2018-02-16"
 
 ```json
 {
-  "context":{
-    "time": "<? @sys-time.reformatDateTime('h:mm a') ?>"
+      "context":{
+      "time": "<? @sys-time.reformatDateTime('h:mm a') ?>"
   }
 }
 ```
 {: codeblock}
 
-有关其他重新设置格式的构想，请参阅[值处理方法](dialog-methods.html)。
+有关其他重新设置格式的构想，请参阅[表达式语言方法](/docs/services/assistant?topic=assistant-dialog-methods)。
+
+### 处理零
+{: #dialog-slots-zero}
+
+在槽条件中使用 `@sys-number` 有助于捕获用户在其输入中指定的任何数字。但是，当用户指定的数字为零 (0) 时，此条件的行为与预期不符。此条件不会将零作为有效数字进行处理，而是会求值为 false，并且服务将再次提示用户输入数字。为了避免此行为，请检查槽条件中是否有 `@sys-number` 或 `@sys-number:0`。
+
+要确保用于检查数字提及项的槽条件正确处理零，请完成以下步骤：
+
+1.  将 `@sys-number || @sys-number:0` 添加到槽条件字段，然后提供上下文变量名称和文本提示。
+1.  单击**编辑响应** ![编辑响应](images/edit-slot.png) 图标。
+1.  单击**更多** ![“更多”图标](images/kabob.png) 图标，然后选择**打开 JSON 编辑器**。
+1.  更新上下文变量（其现在的语法为 `"number":"@sys-number || @sys-number:0"`），以仅指定 `@sys-number`。
+
+    ```json
+    {
+          "context":{
+      "number":"@sys-number"
+      }
+    }
+    ```
+    {: codeblock}
+
+如果您不希望接受 0 作为数字值，那么可以为槽添加条件响应以用于检查是否存在 0，并指示用户必须提供大于零的数字。但是，务必注意的是，将槽条件作为输入提供时，它必须能够识别 0。
 
 ### 获取确认
-{: #slots-get-confirmation}
+{: #dialog-slots-get-confirmation}
 
 在其他槽后面添加一个槽，用于要求用户确认所收集的信息是否准确且完整。该槽可以查找与 #yes 或 #no 意向相匹配的响应。
 
@@ -280,7 +314,7 @@ lastupdated: "2018-02-16"
   "output":{
                 "text": {
       "values": [
-        "回答“是”指示您希望按原样下单，回答“否”指示您不希望按原样下单。"
+        "回答“是”指示您希望按原样下订单，回答“否”指示您不希望按原样下单。"
       ]
     }
   }
@@ -310,7 +344,7 @@ lastupdated: "2018-02-16"
 {: codeblock}
 
 ### 替换槽上下文变量值
-{: #slots-found-handler-event-properties}
+{: #dialog-slots-found-handler-event-properties}
 
 如果节点有槽，而用户在退出该节点之前为槽提供了新值，那么新值会保存在槽上下文变量中，并替换先前指定的值。对话可以使用为“已找到”条件定义的特殊属性来明确确认已发生此替换：
 
@@ -333,7 +367,7 @@ lastupdated: "2018-02-16"
 通过此槽配置，对话能够对用户的目的地更改做出反应，回答：`好，更新目的地，巴黎改为马德里。`
 
 ### 避免数字混淆
-{: #slots-avoid-number-confusion}
+{: #dialog-slots-avoid-number-confusion}
 
 用户提供的一些值可以识别为多个实体类型。
 
@@ -341,11 +375,13 @@ lastupdated: "2018-02-16"
 
 此外，服务可以识别单个用户输入中的多个实体类型。例如，用户提供货币时，货币会识别为 @sys-currency 和 @@sys-number 实体类型。在*试用*窗格中进行一些测试，以了解系统将如何解释不同的用户输入，然后在条件中构建逻辑以防止可能的错误解释。
 
-在槽功能的唯一逻辑中，当在单个用户输入中识别到两个实体时，将使用其中一个具有较大范围的实体。例如，如果用户输入 *5 月 2 日*，那么即便 {{site.data.keyword.conversationshort}} 服务识别到文本中的 @sys-date (05022017) 和 @sys-number (2) 实体，也只会注册范围较长 (@sys-date) 的实体并将其应用于槽。
+在对槽功能唯一的逻辑中，当在单个用户输入中识别到两个系统实体时，将使用其中一个具有较大范围的实体。例如，如果用户输入 *5 月 2 日*，那么即便 {{site.data.keyword.conversationshort}} 服务识别到文本中的 @sys-date (05022017) 和 @sys-number (2) 实体，也只会注册范围较长 (@sys-date) 的系统实体并将其应用于槽。
 {: tip}
 
+对于在用户输入中识别到的每个实体，只能填充一个槽。因此，如果有两个槽正在查找类似的值，请调整槽的位置，以便捕获较长字符串的槽位于捕获较短字符串的槽上方。例如，如果一个槽使用类似 `GR1234` 的语法来捕获产品标识 (`@id`)，另一个槽捕获数字 (`@number`)，例如 `1234`，那么请将捕获标识的槽放在捕获数字的槽上方。否则，当用户输入包含标识（例如，`BR3344`）时，`@number` 槽可能会将其声明为数字引用，并使用 `3344` 来填充 `$number` 上下文变量。但是，该值更可能是产品标识引用，应该作为 `BR3344` 保存在 `@id` 槽的 `$id` 上下文变量中。
+
 ### 向“已找到”和“找不到”响应添加条件
-{: #slot-handler-next-steps}
+{: #dialog-slots-handler-next-steps}
 
 对于每个槽，可以使用具有关联操作的条件响应来帮助您从用户那里提取所需的信息。为此，请执行以下步骤：
 
@@ -384,16 +420,17 @@ lastupdated: "2018-02-16"
 1.  单击**保存**以保存更改，关闭槽的编辑视图，并返回到节点的编辑视图。
 
 ### 多次失败尝试后离开
-{: #slots-stop-trying-after-3}
+{: #dialog-slots-stop-trying-after-3}
 
 您可以使用“找不到”条件响应，让用户在多次尝试后仍然无法正确回答问题时退出槽。在万能型响应中，打开 JSON 编辑器以添加计数器上下文变量，该变量将跟踪“找不到”响应的返回次数。在较早的节点中，请确保将初始计数器上下文变量值设置为 0。
 
-在此示例中，服务要求提供披萨尺寸。服务在用户错误回答该问题 3 次后，会将尺寸（中号）应用于该变量。（您可以包含确认槽，在要求用户确认订单信息时，用户始终可以在该槽中更正尺寸。）
+在此示例中，服务要求提供披萨尺寸。服务在用户错误回答该问题 3 次后，会将尺寸（中号）应用于用户的该变量。（您可以包含确认槽，在要求用户确认订单信息时，用户始终可以在该槽中更正尺寸。）
+
+检查对象：@size
+另存为：$size
+“找不到”万能型条件：
 
 ```json
-Check for: @size
-Save as: $size
-Catchall Not found condition:
 {
   "output": {
     "text": {
@@ -426,10 +463,10 @@ Catchall Not found condition:
   ```
   {: codeblock}
 
-这个条件比万能型响应的 true 条件更精确，因此您必须移动此响应，使其位于原始条件响应之前，否则此响应将永远不会触发。选择条件响应并使用向上箭头将其上移。
+此“找不到”条件比“找不到”万能型条件（缺省值为 `true`）更精确。因此，您必须移动此响应，使其位于原始条件响应之前，否则此响应将永远不会触发。选择条件响应并使用向上箭头将其上移。
 
 ### 阻止在不需要时显示“已找到”响应
-{: #slots-stifle-found-responses}
+{: #dialog-slots-stifle-found-responses}
 
 如果为多个槽指定“已找到”响应，那么当用户同时为多个槽提供值时，将显示至少一个槽的“已找到”响应。您可能希望返回所有这些槽的“已找到”响应，或者不返回任何“已找到”响应。
 
@@ -439,11 +476,11 @@ Catchall Not found condition:
 - 将 `!all_slots_filled` 条件添加到响应。如果填充了所有槽，那么此设置将阻止显示响应。如果要包含确认槽，请不要使用此方法。确认槽也是一个槽，您通常希望在填充确认槽本身之前，阻止显示“已找到”响应。
 
 ### 处理请求以退出过程
-{: #slots-node-level-handler}
+{: #dialog-slots-node-level-handler}
 
 添加至少一个槽处理程序，用于识别用户要退出节点的情况。
 
-例如，在收集信息以安排宠物美容预约的节点中，可以添加一个槽处理程序，用于以 #cancel 意向为条件，此处理程序会识别诸如“算了，我改变主意了。”之类的发声。
+例如，在收集信息以安排宠物美容预约的节点中，可以添加一个以 #cancel 意向为条件的处理程序，此处理程序会识别诸如“算了，我改变主意了。”之类的发声。
 
 1.  在处理程序的 JSON 编辑器中，使用哑元值填充所有槽上下文变量，以阻止节点继续要求提供任何缺少的信息。此外，在处理程序响应中，添加一条消息，例如：`好，停止预约。我们不会为您安排预约。`
 1.  从以下选项中选择希望服务执行的下一个操作：
@@ -454,7 +491,7 @@ Catchall Not found condition:
 
 1.  在节点级别响应中，添加一个条件，用于检查其中一个槽上下文变量中是否有哑元值。如果找到哑元值，将显示最终消息，例如：`如果您决定稍后再预约，我随时恭候。`如果找不到哑元值，那么将显示该节点的标准摘要消息，例如：`我会为您安排$animal的美容预约，时间是 $date $time。`
 
-下面是为披萨示例定义槽处理程序的 JSON 样本。请注意，如前所述，上下文变量全部都设置为哑元值。实际上，`$size` 上下文变量设置为 `dummy`。此 $size 值触发节点级别的响应，以显示相应的消息并退出槽节点。
+下面是为披萨示例定义处理程序的 JSON 样本。请注意，如前所述，上下文变量全部都设置为哑元值。实际上，`$size` 上下文变量设置为 `dummy`。此 $size 值触发节点级别的响应，以显示相应的消息并退出槽节点。
 
 ```json
 {
@@ -476,11 +513,13 @@ Catchall Not found condition:
 ```
 {: codeblock}
 
-**重要信息**：考虑在此节之前求值的条件中所使用的逻辑，以便您可以在其中构建不同的条件。收到用户输入时，将按以下顺序对条件求值：
+**重要信息**：考虑在此条件之前求值的条件中所使用的逻辑，以便您可以构建不同的条件。收到用户输入时，将按以下顺序对条件求值：
 
 - 当前槽级别“已找到”条件。
 - 槽处理程序，按其列出顺序执行。
+- 如果允许离题，那么将检查根级别节点条件是否有匹配项（对话树根或根文件夹中的最后一个`其他任何内容`节点除外）。
 - 当前槽级别“找不到”条件。
+- 最后一个`其他任何内容`节点条件。
 
 将始终求值为 true 的条件（例如，特殊条件 `true` 或 `anything_else`）添加为槽处理程序时务必谨慎。对于每个槽，如果槽处理程序求值为 true，那么将完全跳过“找不到”条件。因此，使用始终求值为 true 的槽处理程序实际上会阻止对每个槽的“找不到”条件求值。
 {: tip}
@@ -532,7 +571,8 @@ Catchall Not found condition:
 {: codeblock}
 
 ## 槽示例
+{: #dialog-slots-examples}
 
-要访问实现不同常用槽使用方案的 JSON 文件，请转至 GitHub 中的社区 [conversation repo ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/watson-developer-cloud/community/tree/master/conversation){: new_window}。
+要访问实现不同常用槽使用方案的 JSON 文件，请转至 GitHub 中的社区 [conversation repo ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/watson-developer-cloud/community/tree/master/watson-assistant){: new_window}。
 
-要试用示例，请下载某个示例 JSON 文件，然后将其作为新的工作空间导入。在“对话”选项卡中，可以查看对话节点以了解如何实现槽来解决不同用例。
+要探索示例，请下载某个示例 JSON 文件，然后将其作为新的对话技能导入。在“对话”选项卡中，可以查看对话节点以了解如何实现槽来解决不同用例。
