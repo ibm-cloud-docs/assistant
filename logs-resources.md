@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-28"
+lastupdated: "2019-04-04"
 
 subcollection: assistant
 
@@ -102,6 +102,8 @@ To delete messages using `customer_id` values, see the [Information security](/d
 IBM created Jupyter notebooks that you can use to analyze your log data in more detail. A Jupyter notebook is a web-based environment for interactive computing. You can run small pieces of code that process your data, and you can immediately view the results of your computation.
 
 There is a set of notebooks that you can use with standard Python tools and a set that is designed for optimal use with {{site.data.keyword.DSX_full}}. {{site.data.keyword.DSX_short}} is a product that provides an environment in which you can pick and choose the tools you need to analyze and visualize data, to cleanse and shape data, to ingest streaming data, or to create, train, and deploy machine learning models. See the [product documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://dataplatform.cloud.ibm.com/docs/content/getting-started/welcome-main.html){:new_window} for more details.
+
+To learn more about how notebooks can help you improve your assistant, [read this blog post ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/continuously-improve-your-watson-assistant-with-jupiter-notebooks-60231df4f01f).
 
 The following notebooks are available:
 

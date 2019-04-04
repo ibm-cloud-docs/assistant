@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-04"
 
 subcollection: assistant
-
 
 ---
 
@@ -28,6 +27,8 @@ subcollection: assistant
 
 To deploy your skill, add it to an assistant, and then add integrations to the assistant that publish your bot to the channels where your customers go for help.
 {: shortdesc}
+
+To learn more about how service desk integrations with your assistant can benefit your business, [read this blog post ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/contact-center-post-394dff427c8).
 
 ## Add an integration
 {: #deploy-integration-add-task}
