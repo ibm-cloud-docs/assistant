@@ -222,7 +222,7 @@
          sodipodi:role="line"
          id="tspan3457"
          x="387.28571"
-         y="136.79079">（預設：Boston, MA）</tspan></text>
+         y="136.79079">(default: Boston, MA)</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -297,7 +297,7 @@
          sodipodi:role="line"
          id="tspan3472"
          x="386.57144"
-         y="192.21935">（預設：today）</tspan></text>
+         y="192.21935">(default: today)</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -328,10 +328,10 @@
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3592"
-         x="666.28571"
+         x="680"
          y="208.07649">天氣</tspan><tspan
          sodipodi:role="line"
-         x="666.28571"
+         x="680"
          y="226.82649"
          id="tspan3594">服務</tspan></text>
   </g>
@@ -473,7 +473,7 @@
          sodipodi:role="line"
          x="27.285713"
          y="72.540771"
-         id="tspan3347">是什麼？</tspan></text>
+         id="tspan3347">如何？</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"

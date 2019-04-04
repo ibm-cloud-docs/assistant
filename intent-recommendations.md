@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-22"
+lastupdated: "2019-04-04"
 
 subcollection: assistant
 
@@ -38,6 +38,8 @@ As the subjects that your customers want to discuss change, you can use the inte
 The following video provides a 3 1/2-minute overview of intent and intent user example recommendations.
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Intent recommendations overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/64h59KqDY98?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
+To learn more about how intent recommendations can help you build a useful bot faster, [read this blog post ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/let-watson-train-your-virtual-assistant-57bd53b12bc3).
 
 Mine your existing data to do one of the following things:
 

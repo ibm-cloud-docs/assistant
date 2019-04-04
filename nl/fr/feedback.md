@@ -1,13 +1,18 @@
 ---
 
 copyright:
-  years: 2015, 2017
-lastupdated: "2017-12-06"
+  years: 2015, 2019
+lastupdated: "2019-02-07"
+
+subcollection: assistant
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -23,8 +28,33 @@ lastupdated: "2017-12-06"
 Votre avis compte et nous voulons le connaître.
 {: shortdesc}
 
-- Pour partager des idées ou suggérer de nouvelles fonctionnalités pour le service {{site.data.keyword.conversationfull}}, accédez au site [IBM Watson Ideas Portal ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://ibm-watson.ideas.aha.io/?project=WCS){: new_window}.
+## Partagez vos idées
+{: #feedback-ideas-portal}
 
-- Pour nous faire part de vos commentaires sur la documentation, cliquez sur le bouton **FEEDBACK** affiché le long du bord de la page que vous êtes en train de lire et que vous souhaitez commenter. 
+Pour partager des idées ou suggérer de nouvelles fonctionnalités pour le service {{site.data.keyword.conversationfull}}, accédez au site [IBM Watson Ideas Portal ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://ibm-watson.ideas.aha.io/?project=ASSISTANT){: new_window}.
 
-  **Remarque** : le bouton **FEEDBACK** n'est pas disponible lorsque vous accédez au site de documentation à partir d'appareils mobiles. 
+## La documentation vous a-t-elle aidé ? 
+{: #feedback-doc}
+
+Pour nous faire part de vos commentaires sur la documentation, cliquez sur le bouton **FEEDBACK** affiché le long du bord de la page que vous êtes en train de lire et que vous souhaitez commenter.
+
+  **Remarque** : le bouton **FEEDBACK** n'est pas disponible lorsque vous accédez au site de documentation à partir d'appareils mobiles.
+
+## Participer au programme bêta
+{: #feedback-beta}
+
+Vous souhaitez rester informé des nouvelles fonctionnalités qui seront ajoutées au produit ? Vous souhaitez partager vos commentaires sur la finalité et l'orientation des fonctionnalités ? Rejoignez le programme bêta ! 
+
+Pour demander la participation au programme bêta, vous devez d'abord créer une instance de service {{site.data.keyword.conversationshort}} que vous consacrerez uniquement à des fins d'évaluation bêta. *N'ajoutez pas d'instance existante que vous utilisez pour effectuer un travail réel sur le programme bêta.*
+
+1.  Créez une ressource de service {{site.data.keyword.conversationshort}} dans la page [{{site.data.keyword.conversationshort}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://{DomainName}/catalog/services/watson-assistant) du catalogue {{site.data.keyword.cloud_notm}}.
+
+    L'instance de service peut faire partie d'un forfait gratuit (Lite) ou Standard et doit être déployée à l'emplacement **Dallas**.
+
+    A moins que vous ne la modifiiez, l'instance de service sera créée dans le groupe de ressources **par défaut**, ce qui est suffisant pour les besoins du programme bêta.
+
+1.  Une fois l'instance créée, cliquez sur **Launch tool** pour ouvrir l'outil {{site.data.keyword.conversationshort}}.
+1.  Cliquez sur l'onglet **Skills**.
+1.  Au bas de la page, cliquez sur **Request Beta**, puis confirmez que vous acceptez les conditions de participation au programme bêta.
+
+Si votre participation au programme bêta est approuvée, l'instance de service à partir de laquelle vous demandez l'accès bêta est mise à niveau pour inclure les fonctionnalités bêta. 

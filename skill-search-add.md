@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-02"
+lastupdated: "2019-04-04"
 
 subcollection: assistant
 
@@ -38,6 +38,8 @@ Add a search skill to your assistant to prevent the assistant from having to say
 The following 4-minute video provides an overview of the search skill.
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Search skill overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/ZcgGf8J2Cfw?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
+To learn more about how search skill can benefit your business, [read this blog post ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/adding-search-to-watson-assistant-99e4e81839e5).
 
 ## How it works
 {: #skill-search-add-how}

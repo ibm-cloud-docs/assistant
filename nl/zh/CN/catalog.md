@@ -1,13 +1,18 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-02-13"
+  years: 2015, 2019
+lastupdated: "2019-02-28"
+
+subcollection: assistant
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -17,54 +22,50 @@ lastupdated: "2018-02-13"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# 使用目录
+# 使用内容目录
 {: #catalog}
 
-通过***目录***，可轻松将常见意向添加到 {{site.data.keyword.conversationshort}} 服务工作空间。
+通过***内容目录***，可轻松将常见意向添加到 {{site.data.keyword.conversationshort}} 对话技能。
 {: shortdesc}
 
-## 向工作空间添加目录
-{: #add-catalog}
+从目录添加的意向旨在用作起点。添加或编辑目录意向，以针对您的用例对这些意向进行定制。
 
-使用 {{site.data.keyword.conversationshort}} 工具来添加目录。
+## 向对话技能添加内容目录
+{: #catalog-add}
 
-1.  在 {{site.data.keyword.conversationshort}} 工具中，打开工作空间，然后选择导航栏中的**目录**选项卡。如果**目录**未显示，请使用 ![菜单](images/Menu_16.png) 菜单来打开该页面。
+使用 {{site.data.keyword.conversationshort}} 工具来添加内容目录。
 
-1.  选择目录（如*帐单*）以查看随该目录一起提供的意向。
+1.  在 {{site.data.keyword.conversationshort}} 工具中，打开对话技能，然后单击**内容目录**选项卡。
+
+1.  选择内容目录（如*银行*）以查看随该目录一起提供的意向。
 
     ![显示可用目录的截屏](images/catalog_overview.png)
 
-    您将看到有关在*帐单*类别中定义的意向的信息。
+    您将看到有关该目录中包含的意向的信息。
 
-    ![显示“帐单”类别意向的截屏](images/catalog_open.png)
+    ![显示“银行”类别意向的截屏](images/catalog_open.png)
 
-    从目录添加的意向可以通过其命名约定与其他意向区分开来；在本例中为 `#Billing_ . . .`
+    从内容目录添加的意向可以通过其名称与其他意向区分开来。每个意向名称的开头都会附加有内容目录名称。
 
-1.  选择 ![关闭箭头](images/close_arrow.png) 以返回到**目录**选项卡。
+1.  选择 ![关闭箭头](images/close_arrow.png) 以返回到**内容目录**选项卡。
 
-1.  接下来，通过单击`添加到机器人`按钮将*帐单*目录添加到工作空间。您将看到一条消息，指示*帐单*意向已添加到工作空间。
+1.  接下来，通过单击`添加到技能`按钮将内容目录添加到对话技能。
 
-    ![显示“添加到机器人”按钮的截屏](images/catalog_addtobot.png)
+1.  现在，选择**意向**选项卡，并验证该目录中的意向是否已添加并可用。
 
-1.  现在，选择**意向**选项卡，并验证*帐单*意向是否已添加到工作空间。
+    ![显示“意向”选项卡上列出的“银行”意向的截屏](images/catalog_intents.png)
 
-    ![显示“意向”选项卡上列出的“帐单”意向的截屏](images/catalog_intents.png)
+系统会开始对新数据进行自我训练。
 
-### 结果
+将目录添加到技能后，意向会成为训练数据的一部分。如果 IBM 后续对内容目录进行更新，这些更改不会自动应用于从目录添加的任何意向。
+{: note}
 
-*帐单*目录中的意向已添加到工作空间的**意向**选项卡，系统会开始针对新数据进行自我培训。
+## 编辑内容目录示例
+{: #catalog-edit-content}
 
-## 编辑目录示例
-
-与其他任何意向一样，将*帐单*目录意向添加到工作空间后，即可进行以下更改：
+与其他任何意向一样，将内容目录意向添加到技能后，可以对其进行以下更改：
 
 - 重命名意向。
 - 删除意向。
 - 添加、编辑或删除示例。
 - 将示例移至其他意向。
-
-可以通过 Tab 键从意向名称切换到每个示例，并根据需要编辑示例。
-
-要移动或删除示例，请通过选中示例的对应复选框来选择该示例，然后选择**移动**或**删除**。
-
-  ![显示如何移动或删除示例的截屏](images/catalog_edit.png)

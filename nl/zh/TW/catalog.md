@@ -1,13 +1,18 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-02-13"
+  years: 2015, 2019
+lastupdated: "2019-02-28"
+
+subcollection: assistant
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -17,54 +22,50 @@ lastupdated: "2018-02-13"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# 使用型錄
+# 使用內容型錄
 {: #catalog}
 
-***型錄*** 提供一種簡單的方式，將一般目的新增至 {{site.data.keyword.conversationshort}} 服務工作區。
+***內容型錄*** 提供一種簡單的方式，將一般目的新增至 {{site.data.keyword.conversationshort}} 對話技能。
 {: shortdesc}
 
-## 將型錄新增至工作區
-{: #add-catalog}
+您從型錄中新增的目的是用來提供起點。新增或編輯型錄目的，以針對您的使用案例進行修改。
 
-使用 {{site.data.keyword.conversationshort}} 工具來新增型錄。
+## 將內容型錄新增至對話技能
+{: #catalog-add}
 
-1.  在 {{site.data.keyword.conversationshort}} 工具中，開啟工作區，然後選取導覽列中的**型錄**標籤。如果看不到**型錄**，請使用 ![功能表](images/Menu_16.png) 功能表來開啟頁面。
+使用 {{site.data.keyword.conversationshort}} 工具來新增內容型錄。
 
-1.  選取型錄（例如*計費*），以查看與它一起提供的目的。
+1.  在 {{site.data.keyword.conversationshort}} 工具中，開啟對話技能，然後按一下**內容型錄**標籤。
+
+1.  選取內容型錄（例如*銀行業*），以查看與它一起提供的目的。
 
     ![顯示可用型錄的畫面擷取](images/catalog_overview.png)
 
-    您將會看到*計費* 種類中所定義之目的的相關資訊。
+    您將會看到型錄中所含目的的相關資訊。
 
-    ![顯示「計費」種類目的的畫面擷取](images/catalog_open.png)
+    ![顯示「銀行業」種類目的的畫面擷取](images/catalog_open.png)
 
-    從型錄新增的目的會依其命名慣例來與其他目的區分；在此案例為 `#Billing_ . . .`
+    從內容型錄中新增的目的會依其名稱來與其他目的區分。每個目的名稱前面都會加上內容型錄名稱。
 
-1.  選取 ![關閉箭頭](images/close_arrow.png)，以回到**型錄**標籤。
+1.  選取 ![關閉箭頭](images/close_arrow.png)，以回到**內容型錄**標籤。
 
-1.  接下來，請按一下`新增至機器人`按鈕，以將*計費* 型錄新增至工作區。您將會看到一則指出已將*計費* 目的新增至工作區的訊息。
+1.  接下來，按一下`新增至技能`按鈕，以將內容型錄新增至對話技能。
 
-    ![顯示「新增至機器人」按鈕的畫面擷取](images/catalog_addtobot.png)
+1.  現在，選取**目的**標籤，並驗證已新增且可以使用來自型錄的目的。
 
-1.  接下來，請選取**目的**標籤，並驗證已將*計費* 目的新增至工作區。
+    ![顯示「目的」標籤上列出之「銀行業」目的的畫面擷取](images/catalog_intents.png)
 
-    ![顯示「目的」標籤上所列「計費」目的的畫面擷取](images/catalog_intents.png)
+系統會開始根據新資料自行訓練。
 
-### 結果
+在您將型錄新增至技能之後，這些目的會變成訓練資料的一部分。如果 IBM 對內容型錄進行後續更新，則這些變更不會自動套用至您從型錄中新增的任何目的。
+{: note}
 
-*計費* 型錄中的目的已新增至工作區的**目的**標籤，而且系統會開始利用新資料來進行自我訓練。
+## 編輯內容型錄範例
+{: #catalog-edit-content}
 
-## 編輯型錄範例
-
-與任何其他目的類似，將*計費* 型錄目的新增至工作區之後，您即可進行下列變更：
+如同任何其他目的，在將內容型錄目的新增至您的技能之後，您可以對它們進行下列變更：
 
 - 重新命名目的。
 - 刪除目的。
 - 新增、編輯或刪除範例。
 - 將範例移至不同的目的。
-
-您可以按 Tab 鍵從目的名稱移至每一個範例，並在選擇時編輯範例。
-
-若要移動或刪除範例，請藉由選取此勾選框來選取範例，然後選取**移動**或**刪除**。
-
-  ![顯示如何移動或刪除範例的畫面擷取](images/catalog_edit.png)

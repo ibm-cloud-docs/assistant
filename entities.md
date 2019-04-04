@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-04-04"
 
 subcollection: assistant
-
 
 ---
 
@@ -68,6 +67,8 @@ When you define a contextual entity, a model is trained on both the *annotated t
     When a contextual entity model is used for an entity, the service does *not* look for exact text or pattern matches for the entity in the user input, but focuses instead on the context of the sentence in which the entity is mentioned.
 
     If you choose to define entity values by using annotations, add at least 10 annotations per entity to give the contextual entity model enough data to be reliable.
+
+To learn more about contextual entities, [read this blog post ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/contextual-entities-with-ibm-watson-assistant-f41b2e0ca82e).
 
 ## Creating entities
 {: #entities-creating-task}
