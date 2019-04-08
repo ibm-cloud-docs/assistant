@@ -15,11 +15,11 @@
    viewBox="0 0 744.09448819 1052.3622047"
    id="svg3972"
    version="1.1"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="variety.svg"
-   inkscape:export-filename="F:\jordiserratosa\IBM\BM120\ABD147\S002\spa\parapaquete\images\variety.png"
-   inkscape:export-xdpi="84.800003"
-   inkscape:export-ydpi="84.800003">
+   inkscape:export-filename="F:\jordiserratosa\IBM\BM140\ABD147\S001\spa\SP\assistant\images\variety.png"
+   inkscape:export-xdpi="151"
+   inkscape:export-ydpi="151">
   <defs
      id="defs3974" />
   <sodipodi:namedview
@@ -30,15 +30,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="453.93878"
+     inkscape:cx="446.06997"
      inkscape:cy="799.99768"
      inkscape:document-units="px"
      inkscape:current-layer="layer57"
      showgrid="false"
-     inkscape:window-width="1616"
+     inkscape:window-width="1614"
      inkscape:window-height="1027"
-     inkscape:window-x="56"
-     inkscape:window-y="-8"
+     inkscape:window-x="58"
+     inkscape:window-y="5"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata3977">
@@ -79,17 +79,17 @@
          id="tspan4025"
          x="190.91882"
          y="133.12337"
-         style="font-size:15px;line-height:1.25">1. &quot;No tenemos tienda física, pero, con una </tspan><tspan
+         style="font-size:15px;line-height:1.25">1. &quot;No tenemos tiendas físicas. Pero con una </tspan><tspan
          sodipodi:role="line"
          x="190.91882"
          y="151.87337"
          style="font-size:15px;line-height:1.25"
-         id="tspan39">conexión a internet, puede comprar nuestros </tspan><tspan
+         id="tspan35">conexión a internet, puede comprar en nosotros </tspan><tspan
          sodipodi:role="line"
          x="190.91882"
          y="170.62337"
          style="font-size:15px;line-height:1.25"
-         id="tspan41">productos desde donde quiera.&quot;</tspan></text>
+         id="tspan37">desde cualquier lugar.&quot;</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -105,7 +105,12 @@
          x="192.93913"
          y="207.87465"
          id="tspan4037"
-         style="font-size:15px;line-height:1.25">3. &quot;Búsquenos en su red social favorita.&quot;</tspan></text>
+         style="font-size:15px;line-height:1.25">3. &quot;Nos encontrará en sus redes sociales </tspan><tspan
+         sodipodi:role="line"
+         x="192.93913"
+         y="226.62465"
+         style="font-size:15px;line-height:1.25"
+         id="tspan41">favoritas.&quot;</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -121,7 +126,7 @@
          id="tspan4030"
          x="191.92899"
          y="190.70206"
-         style="font-size:15px;line-height:1.25">2. &quot;Puede encontrarnos en internet.&quot;</tspan></text>
+         style="font-size:15px;line-height:1.25">2. &quot;Puede encontrarnos en Internet.&quot;</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -174,6 +179,6 @@
          id="tspan4000"
          x="62.48732"
          y="68.919022"
-         style="font-size:15px;line-height:1.25">encuentran?</tspan></text>
+         style="font-size:15px;line-height:1.25">encuentra?</tspan></text>
   </g>
 </svg>

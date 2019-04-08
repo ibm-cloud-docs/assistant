@@ -15,12 +15,12 @@
    viewBox="0 0 744.09448819 1052.3622047"
    id="svg3573"
    version="1.1"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    enable-background="new"
    sodipodi:docname="node-flow-down.svg"
-   inkscape:export-filename="F:\jordiserratosa\IBM\BM120\ABD147\S002\spa\parapaquete\images\node-flow-down.png"
-   inkscape:export-xdpi="81.940002"
-   inkscape:export-ydpi="81.940002">
+   inkscape:export-filename="F:\jordiserratosa\IBM\BM140\ABD147\S001\spa\SP\assistant\images\node-flow-down.png"
+   inkscape:export-xdpi="151"
+   inkscape:export-ydpi="151">
   <defs
      id="defs3575" />
   <sodipodi:namedview
@@ -34,12 +34,12 @@
      inkscape:cx="200.74869"
      inkscape:cy="824.66584"
      inkscape:document-units="px"
-     inkscape:current-layer="layer29"
+     inkscape:current-layer="layer20"
      showgrid="false"
-     inkscape:window-width="1616"
+     inkscape:window-width="1614"
      inkscape:window-height="1027"
-     inkscape:window-x="56"
-     inkscape:window-y="-8"
+     inkscape:window-x="58"
+     inkscape:window-y="5"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata3578">
@@ -73,12 +73,12 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="84.852814"
+       x="82.977814"
        y="75.422836"
        id="text3601"><tspan
          sodipodi:role="line"
          id="tspan3603"
-         x="84.852814"
+         x="82.977814"
          y="75.422836"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start">entrada del usuario</tspan></text>
   </g>
@@ -185,14 +185,14 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="240.91315"
+       x="239.03815"
        y="118.94062"
        id="text3676"><tspan
          sodipodi:role="line"
-         x="240.91315"
+         id="tspan3678"
+         x="239.03815"
          y="118.94062"
-         style="font-size:15px;line-height:1.25"
-         id="tspan38">Entonces: RESPUESTA</tspan></text>
+         style="font-size:15px;line-height:1.25">Entonces: RESPUESTA</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -201,12 +201,12 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="240.30258"
+       x="238.42758"
        y="257.02875"
        id="text3676-0"><tspan
          sodipodi:role="line"
          id="tspan3678-2"
-         x="240.30258"
+         x="238.42758"
          y="257.02875"
          style="font-size:15px;line-height:1.25">Entonces: RESPUESTA</tspan></text>
   </g>
@@ -218,12 +218,12 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="240.53101"
+       x="238.65601"
        y="391.84094"
        id="text3676-2"><tspan
          sodipodi:role="line"
          id="tspan3678-5"
-         x="240.53101"
+         x="238.65601"
          y="391.84094"
          style="font-size:15px;line-height:1.25">Entonces: RESPUESTA</tspan></text>
   </g>

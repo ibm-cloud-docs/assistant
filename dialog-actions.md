@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-25"
+lastupdated: "2019-04-04"
 
 subcollection: assistant
 
@@ -230,7 +230,7 @@ To make a programmatic call from a dialog node, complete the following steps:
 ## Creating an action
 {: #dialog-actions-create}
 
-If you choose to define an action or web action type programmatic call, then before you can call it from a dialog, you must create it in {{site.data.keyword.openwhisk}}. If you are defining a client type programmatic call, then skip this procedure.
+If you choose to define a {{site.data.keyword.openwhisk_short}} action or web action type programmatic call, then before you can call it from a dialog, you must create it in {{site.data.keyword.openwhisk}}. If you are defining a client type programmatic call, then skip this procedure.
 
 **Location restrictions**: Currently, you can call a {{site.data.keyword.openwhisk_short}} action from {{site.data.keyword.conversationshort}} service instances that are hosted in data centers in the Dallas, Frankfurt, London, and Washington DC locations only. The {{site.data.keyword.conversationshort}} service uses the {{site.data.keyword.openwhisk_short}} instance that is hosted in the same location only. It does not check {{site.data.keyword.openwhisk_short}} instances hosted in other locations. Therefore, do not call an action from a {{site.data.keyword.conversationshort}} service instance hosted in Dallas if the action is defined in a {{site.data.keyword.openwhisk_short}} instance that is hosted in Washington, DC, for example. Keep in mind that {{site.data.keyword.conversationshort}} service instances that were created in London before December 13, 2018 were syndicated to the Dallas data center. Such instances can only find {{site.data.keyword.openwhisk_short}} actions that are also hosted in Dallas.
 {: important}

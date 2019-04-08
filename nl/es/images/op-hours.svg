@@ -15,11 +15,11 @@
    viewBox="0 0 744.09448819 1052.3622047"
    id="svg2"
    version="1.1"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="op-hours.svg"
-   inkscape:export-filename="F:\jordiserratosa\IBM\BM120\ABD147\S002\spa\parapaquete\images\op-hours.png"
-   inkscape:export-xdpi="120"
-   inkscape:export-ydpi="120">
+   inkscape:export-filename="F:\jordiserratosa\IBM\BM140\ABD147\S001\spa\SP\assistant\images\op-hours.png"
+   inkscape:export-xdpi="151"
+   inkscape:export-ydpi="151">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -29,16 +29,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="363.44374"
-     inkscape:cy="960.01341"
+     inkscape:zoom="1.979899"
+     inkscape:cx="317.97573"
+     inkscape:cy="992.96295"
      inkscape:document-units="px"
-     inkscape:current-layer="layer8"
+     inkscape:current-layer="layer9"
      showgrid="false"
-     inkscape:window-width="1616"
+     inkscape:window-width="1614"
      inkscape:window-height="1027"
-     inkscape:window-x="56"
-     inkscape:window-y="-8"
+     inkscape:window-x="58"
+     inkscape:window-y="5"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
@@ -79,17 +79,17 @@
          id="tspan3400"
          x="177.85715"
          y="219.07649"
-         style="font-size:15px;line-height:1.25">$location == &quot;mall&quot;</tspan><tspan
+         style="font-size:15px;line-height:1.25">$location == &quot;centro comercial&quot;</tspan><tspan
          sodipodi:role="line"
          x="177.85715"
          y="237.82649"
          id="tspan3404"
-         style="font-size:15px;line-height:1.25">&quot;La tienda tiene el mismo horario que el centro </tspan><tspan
+         style="font-size:15px;line-height:1.25">&quot;Nuestra tienda del centro comercial abre de 9</tspan><tspan
          sodipodi:role="line"
          x="177.85715"
          y="256.57648"
          style="font-size:15px;line-height:1.25"
-         id="tspan58">comercial, de 9h a 21h.&quot;</tspan></text>
+         id="tspan42">a 21 h.&quot;</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -121,12 +121,12 @@
          id="tspan3393"
          x="178.28571"
          y="178.3622"
-         style="font-size:15px;line-height:1.25">$location == &quot;downtown&quot;</tspan><tspan
+         style="font-size:15px;line-height:1.25">$location == &quot;centro ciudad&quot;</tspan><tspan
          sodipodi:role="line"
          x="178.28571"
          y="197.1122"
          id="tspan3395"
-         style="font-size:15px;line-height:1.25">&quot;Abrimos de 8h a 20h todos los días de la semana.&quot;</tspan></text>
+         style="font-size:15px;line-height:1.25">&quot;Abrimos de 8 a 20 h, todos los días de la semana.&quot;</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -139,15 +139,15 @@
        y="114.21935"
        id="text3379"><tspan
          sodipodi:role="line"
+         id="tspan3381"
          x="264.42856"
          y="114.21935"
-         id="tspan3383"
-         style="font-size:15px;line-height:1.25">¿Va a visitar nuestra tienda de centro </tspan><tspan
+         style="font-size:15px;line-height:1.25">¿Está en nuestra tienda de centro</tspan><tspan
          sodipodi:role="line"
          x="264.42856"
          y="132.96936"
-         style="font-size:15px;line-height:1.25"
-         id="tspan54">ciudad o la del centro comercial?</tspan></text>
+         id="tspan3383"
+         style="font-size:15px;line-height:1.25">ciudad o en la del centro comercial?</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -211,7 +211,7 @@
          id="tspan3376"
          x="184.42857"
          y="116.21935"
-         style="font-size:15px;line-height:1.25">Location</tspan></text>
+         style="font-size:15px;line-height:1.25">Ubicación</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -224,14 +224,14 @@
        y="36.362206"
        id="text3348"><tspan
          sodipodi:role="line"
+         id="tspan3350"
          x="62.142857"
          y="36.362206"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start"
-         id="tspan3352">¿A qué hora </tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start">¿A qué hora</tspan><tspan
          sodipodi:role="line"
          x="62.142857"
          y="55.112206"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start"
-         id="tspan42">  abren?</tspan></text>
+         id="tspan3352">abren?</tspan></text>
   </g>
 </svg>

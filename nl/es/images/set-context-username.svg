@@ -15,11 +15,11 @@
    viewBox="0 0 744.09448819 1052.3622047"
    id="svg4174"
    version="1.1"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="set-context-username.svg"
-   inkscape:export-filename="F:\jordiserratosa\IBM\BM120\ABD147\S002\spa\parapaquete\images\set-context-username.png"
-   inkscape:export-xdpi="125.6"
-   inkscape:export-ydpi="125.6">
+   inkscape:export-filename="F:\jordiserratosa\IBM\BM140\ABD147\S001\spa\SP\assistant\images\set-context-username.png"
+   inkscape:export-xdpi="151"
+   inkscape:export-ydpi="151">
   <defs
      id="defs4176" />
   <sodipodi:namedview
@@ -30,15 +30,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="268.14166"
+     inkscape:cx="219.10431"
      inkscape:cy="838.1504"
      inkscape:document-units="px"
-     inkscape:current-layer="layer79"
+     inkscape:current-layer="layer80"
      showgrid="false"
-     inkscape:window-width="1616"
+     inkscape:window-width="1614"
      inkscape:window-height="1027"
-     inkscape:window-x="56"
-     inkscape:window-y="-8"
+     inkscape:window-x="58"
+     inkscape:window-y="5"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata4179">
@@ -110,13 +110,13 @@
          sodipodi:role="line"
          x="54.857143"
          y="202.07648"
-         style="font-size:12.5px;line-height:1.25"
-         id="tspan52">Quiero </tspan><tspan
+         id="tspan4251"
+         style="font-size:12.5px;line-height:1.25">Quiero</tspan><tspan
          sodipodi:role="line"
          x="54.857143"
          y="217.70148"
-         style="font-size:12.5px;line-height:1.25"
-         id="tspan56">comprar algo.</tspan></text>
+         id="tspan4255"
+         style="font-size:12.5px;line-height:1.25">comprar algo.</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -148,7 +148,7 @@
          id="tspan4208"
          x="146.28571"
          y="75.076469"
-         style="font-size:12.5px;line-height:1.25">Entonces: &quot;Me llamo</tspan><tspan
+         style="font-size:12.5px;line-height:1.25">Entonces: &quot;Me llamo </tspan><tspan
          sodipodi:role="line"
          x="146.28571"
          y="90.701469"
@@ -185,17 +185,17 @@
          id="tspan4239"
          x="323.28571"
          y="74.505035"
-         style="font-size:12.5px;line-height:1.25">Entonces: &quot;Encantado de conocerle, </tspan><tspan
+         style="font-size:12.5px;line-height:1.25">Entonces: &quot;Encantado de hablar con </tspan><tspan
          sodipodi:role="line"
          id="tspan4241"
          x="323.28571"
          y="90.130035"
-         style="font-size:12.5px;line-height:1.25">@sys-person.literal. ¿Qué puedo hacer </tspan><tspan
+         style="font-size:12.5px;line-height:1.25">usted, @sys-person.literal. ¿En qué </tspan><tspan
          sodipodi:role="line"
          id="tspan4243"
          x="323.28571"
          y="105.75504"
-         style="font-size:12.5px;line-height:1.25">por usted?&quot;</tspan></text>
+         style="font-size:12.5px;line-height:1.25">puedo ayudarle?&quot;</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -211,7 +211,7 @@
          id="tspan4233"
          x="349.14285"
          y="118.07647"
-         style="font-size:12.5px;line-height:1.25">Adición editor JSON:</tspan><tspan
+         style="font-size:12.5px;line-height:1.25">Adición del editor de JSON:</tspan><tspan
          sodipodi:role="line"
          x="349.14285"
          y="133.70148"
@@ -234,14 +234,14 @@
        y="38.219322"
        id="text4194"><tspan
          sodipodi:role="line"
+         id="tspan4196"
          x="50"
          y="38.219322"
-         id="tspan4198"
-         style="font-size:12.5px;line-height:1.25">¿Cómo te </tspan><tspan
+         style="font-size:12.5px;line-height:1.25">¿Cómo te</tspan><tspan
          sodipodi:role="line"
          x="50"
          y="53.844322"
-         style="font-size:12.5px;line-height:1.25"
-         id="tspan44">llamas?</tspan></text>
+         id="tspan4198"
+         style="font-size:12.5px;line-height:1.25">llamas?</tspan></text>
   </g>
 </svg>
