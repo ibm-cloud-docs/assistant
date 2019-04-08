@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-08"
 
 subcollection: assistant
 
@@ -93,7 +93,7 @@ Depois que a qualificação é criada, ela aparece como um quadro na página Qua
 
 A qualificação do diálogo não pode interagir com os clientes até que seja incluída em um assistente e o assistente seja implementado. Consulte  [ Criando um assistente ](/docs/services/assistant?topic=assistant-assistant-add).
 
-### Resolução de problemas de importação de habilidades
+## Resolução de problemas de importação de habilidades
 {: #skill-add-import-errors}
 
 Se você receber uma mensagem informando que a qualificação contém artefatos que excedem os limites impostos por seu plano de serviço, conclua as etapas a seguir para importar a qualificação com êxito:
@@ -105,7 +105,7 @@ Se você receber uma mensagem informando que a qualificação contém artefatos 
 1.  Exporte a qualificação editada fazendo download dela.
 1.  Tente novamente importar a qualificação editada para a instância de serviço original no plano desejado.
 
-### Incluindo a habilidade em um assistente
+## Incluindo a habilidade em um assistente
 {: #skill-add-to-assistant}
 
 É possível incluir uma qualificação em um assistente. Deve-se abrir o quadro de assistente e incluir a qualificação no assistente por meio da página de configuração do assistente; não é possível escolher o assistente que usará a qualificação na página de configuração de qualificação. Uma qualificação de diálogo pode ser usada por mais de um assistente.

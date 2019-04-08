@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-04-08"
 
 subcollection: assistant
-
 
 ---
 
@@ -39,7 +38,7 @@ The typical workflow for an assistant project includes the following steps:
 1.  Define a narrow set of key customer needs that you want the assistant to address on your behalf, including any business processes that it can initiate or complete for your customers.
 1.  Create intents that represent the customer needs you identified in the previous step. For example, intents such as `About_company` or `#Place_order`.
 
-    Use the intent example recommendation feature to mine your existing call center logs to find optimal intent user examples.
+    ![Plus or Premium plan only](images/premium.png) Use the intent recommendations feature to mine your existing call center logs to find the optimal intents for your use case. See [Get help defining intents](/docs/services/assistant?topic=assistant-intent-recommendations) for more details.
     {: tip}
 
 1.  Build a dialog that detects the defined intents and addresses them, either with simple responses or with a dialog flow that collects more information first.

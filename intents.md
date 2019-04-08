@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-08"
 
 subcollection: assistant
 
@@ -47,7 +47,7 @@ subcollection: assistant
 
 Start with a few intents, and test them as you iteratively expand the scope of the application.
 
-![Plus or Premium plan only](images/premium.png) If you already have chat transcripts from a call center or customer inquiries that you've collected from an online application, put that data to work for you. Share the real customer utterances with Watson and let Watson recommend the best intents and intent user examples for your needs. See [Get help building intents](/docs/services/assistant?topic=assistant-intent-recommendations) for more details.
+![Plus or Premium plan only](images/premium.png) If you already have chat transcripts from a call center or customer inquiries that you've collected from an online application, put that data to work for you. Share the real customer utterances with Watson and let Watson recommend the best intents and intent user examples for your needs. See [Get help defining intents](/docs/services/assistant?topic=assistant-intent-recommendations) for more details.
 
 ## Creating intents
 {: #intents-create-task}

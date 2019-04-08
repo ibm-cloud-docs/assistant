@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-08"
 
 subcollection: assistant
 
@@ -93,7 +93,7 @@ subcollection: assistant
 
 除非將對話技能新增至助理並部署助理，否則此對話技能無法與客戶互動。請參閱[建立助理](/docs/services/assistant?topic=assistant-assistant-add)。
 
-### 疑難排解技能匯入問題
+## 疑難排解技能匯入問題
 {: #skill-add-import-errors}
 
 如果您收到一則訊息，指出技能所包含的構件超過服務方案所強加的限制，請完成下列步驟來順利匯入技能：
@@ -105,7 +105,7 @@ subcollection: assistant
 1.  藉由下載來匯出已編輯的技能。
 1.  再試一次，將已編輯的技能匯入至您想要方案上的原始服務實例。
 
-### 將技能新增至助理
+## 將技能新增至助理
 {: #skill-add-to-assistant}
 
 您可以將某種技能新增至助理。您必須開啟助理磚，然後將技能從助理配置頁面新增至助理；您無法從技能配置頁面內選擇將使用技能的助理。多個助理可以使用一個對話技能。
