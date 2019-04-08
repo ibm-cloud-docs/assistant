@@ -1,13 +1,18 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-02-13"
+  years: 2015, 2019
+lastupdated: "2019-02-28"
+
+subcollection: assistant
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -17,54 +22,50 @@ lastupdated: "2018-02-13"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Utilización de catálogos
+# Utilización de catálogos de contenido
 {: #catalog}
 
-Los ***catálogos*** proporcionan una manera fácil de agregar intenciones comunes al espacio de trabajo del servicio {{site.data.keyword.conversationshort}}.
+Los ***catálogos de contenido*** ofrecen un método sencillo para añadir intenciones comunes al conocimiento de diálogo de {{site.data.keyword.conversationshort}}.
 {: shortdesc}
 
-## Adición de un catálogo al espacio de trabajo
-{: #add-catalog}
+Las intenciones que añade desde el catálogo están pensadas para proporcionar un punto de partida. Añada o edite intenciones de catálogo para adaptarlas a su caso de uso.
 
-Utilice la herramienta de {{site.data.keyword.conversationshort}} para añadir catálogos.
+## Adición de un catálogo de contenido al conocimiento de diálogo
+{: #catalog-add}
 
-1.  En la herramienta de {{site.data.keyword.conversationshort}}, abra el espacio de trabajo y seleccione el separador **Catálogo** en la barra de navegación. Si no ve **Catálogo**, utilice el menú ![Menú](images/Menu_16.png) para abrir la página. 
+Utilice la herramienta {{site.data.keyword.conversationshort}} para añadir catálogos de contenido.
 
-1.  Seleccione un catálogo como, por ejemplo, *Billing*, para ver las intenciones que se proporcionan con dicho catálogo. 
+1.  En la herramienta {{site.data.keyword.conversationshort}}, abra el conocimiento de diálogo y luego pulse el separador **Catálogo de contenido**.
 
-    ![Captura de pantalla mostrando los catálogos disponibles](images/catalog_overview.png)
+1.  Seleccione un catálogo de contenido, como por ejemplo *Banking*, para ver las intenciones que se proporcionan con el mismo.
 
-    Verá información sobre las intenciones definidas en la categoría *Billing*. 
+    ![Captura de pantalla que muestra los catálogos disponibles](images/catalog_overview.png)
 
-    ![Captura de pantalla mostrando las intenciones de la categoría Billing.](images/catalog_open.png)
+    Verá información sobre las intenciones que se incluyen en el catálogo.
 
-    Es posible distinguir las intenciones que se añaden desde un catálogo de otras intenciones gracias a la convención de denominación, en este caso, `#Billing_ . . .`
+    ![Captura de pantalla que muestra las intenciones de la categoría Banking](images/catalog_open.png)
 
-1.  Seleccione ![Flecha de cierre](images/close_arrow.png) para volver al separador **Catálogo**. 
+    Es posible distinguir las intenciones que se añaden desde un catálogo de contenido de otras intenciones por sus nombres. Cada nombre de intención viene precedida del nombre del catálogo de contenido.
 
-1.  A continuación, añada el catálogo *Billing* a su espacio de trabajo pulsando el botón `Añadir a bot`. Verá un mensaje indicando que las intenciones de *Billing* se han añadido a su espacio de trabajo. 
+1.  Seleccione ![Flecha de cierre](images/close_arrow.png) para volver al separador **Catálogo de contenido**.
 
-    ![Captura de pantalla que muestra el botón Añadir a bot.](images/catalog_addtobot.png)
+1.  A continuación, añada un catálogo de contenido a su conocimiento de diálogo pulsando el botón `Añadir a conocimiento`.
 
-1.  Ahora, seleccione el separador **Intenciones**, y verifique que las intenciones de *Billing* se han añadido a su espacio de trabajo. 
+1.  Luego seleccione el separador **Intenciones** y verifique que las intenciones del catálogo se han añadido y están disponibles.
 
-    ![Captura de pantalla que muestra las intenciones de Billing listadas en el separador Intenciones. ](images/catalog_intents.png)
+    ![Captura de pantalla que muestras las intenciones de la categoría Banking en el separador Intenciones](images/catalog_intents.png)
 
-### Resultados
+El sistema empieza a formarse a sí mismo con los nuevos datos.
 
-Las intenciones del catálogo *Billing* se habrán añadido al separador **Intenciones** para su espacio de trabajo. El sistema empieza a entrenar por sí mismo con los nuevos datos. 
+Después de añadir un catálogo a su conocimiento, las intenciones pasan a formar parte de los datos de entrenamiento. Si IBM realiza actualizaciones posteriores en un catálogo de contenido, los cambios no se aplican automáticamente a las intenciones que haya añadido de un catálogo.
+{: note}
 
-## Edición de ejemplos de catálogo
+## Edición de ejemplos de catálogo de contenido
+{: #catalog-edit-content}
 
-Como con cualquier otra intención, una vez se hayan añadido las intenciones del catálogo *Billing* al espacio de trabajo, podría realizar los siguientes cambios: 
+Al igual que cualquier otra intención, después de añadir intenciones del catálogo de contenido a su conocimiento, puede realizar los cambios siguientes en las mismas:
 
 - Cambiar el nombre de la intención.
 - Suprimir la intención.
 - Añadir, editar o suprimir ejemplos.
 - Mover un ejemplo a otra intención.
-
-Puede tabular desde el nombre de la intención a cada ejemplo, editando los ejemplos si así lo desea.
-
-Para mover o suprimir un ejemplo, seleccione el ejemplo seleccionando el recuadro de selección y, a continuación, seleccione **Mover** o **Suprimir**. 
-
-  ![Captura de pantalla que muestra cómo mover o suprimir un ejemplo](images/catalog_edit.png)

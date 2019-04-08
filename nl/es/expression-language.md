@@ -1,13 +1,18 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-02-16"
+  years: 2015, 2019
+lastupdated: "2019-02-21"
+
+subcollection: assistant
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -18,11 +23,13 @@ lastupdated: "2018-02-16"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Expresiones para acceder a objetos
+{: #expression-language}
 
 Puede escribir expresiones que accedan a objetos y propiedades de objetos mediante el lenguaje Spring Expression (SpEL). Para obtener más información, consulte el [Lenguaje Spring Expression (SpEL)![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/expressions.html){: new_window}.
 {: shortdesc}
 
 ## Sintaxis de evaluación
+{: #expression-language-long-syntax}
 
 Para expandir valores de variables dentro de otras variables o para invocar a métodos en propiedades y objetos globales, utilice la sintaxis de expresión `<? expression ?>`. Por ejemplo:
 
@@ -32,17 +39,17 @@ Para expandir valores de variables dentro de otras variables o para invocar a m�
 - **Invocación de métodos en propiedades de objetos globales**
     - `"context":{"email": "<? @email.literal ?>"}`
 
-## Sintaxis abreviada    
-{: #shorthand-syntax}
+## Sintaxis abreviada
+{: #expression-language-shorthand-syntax}
 
-Aprenda con rapidez a hacer referencia a los siguientes objetos utilizando la sintaxis abreviada SpEL: 
+Aprenda con rapidez a hacer referencia a los siguientes objetos utilizando la sintaxis abreviada SpEL:
 
-- [Variables de contexto](expression-language.html#shorthand-context)
-- [Entidades](expression-language.html#shorthand-entities)
-- [Intenciones](expression-language.html#shorthand-intents)
+- [Variables de contexto](#expression-language-shorthand-context)
+- [Entidades](#expression-language-shorthand-entities)
+- [Intenciones](#expression-language-shorthand-intents)
 
 ### Sintaxis abreviada de las variables de contexto
-{: #shorthand-context}
+{: #expression-language-shorthand-context}
 
 En la tabla siguiente se muestran ejemplos de la sintaxis abreviada que puede utilizar para escribir variables de contexto en expresiones de condición.
 
@@ -60,7 +67,7 @@ Puede incluir caracteres especiales, como guiones o puntos, en los nombres de la
 - Comillas dobles "
 
 ### Sintaxis abreviada de las entidades
-{: #shorthand-entities}
+{: #expression-language-shorthand-entities}
 
 En la tabla siguiente se muestran ejemplos de la sintaxis abreviada que puede utilizar cuando haga referencia a entidades.
 
@@ -78,21 +85,38 @@ En SpEL, el signo de interrogación `(?)` impide que se active una excepción de
 Si el valor de entidad que desea comprobar contiene un carácter `)`, no puede utilizar el operador `:` para la comparación.  Por ejemplo, si desea comprobar si la entidad city es `Dublin (Ohio)`, debe utilizar `@city == 'Dublin (Ohio)'` en lugar de `@city:(Dublin (Ohio))`.
 
 ### Sintaxis abreviada de las intenciones
-{: #shorthand-intents}
+{: #expression-language-shorthand-intents}
 
 En la tabla siguiente se muestran ejemplos de la sintaxis abreviada que puede utilizar cuando haga referencia a intenciones.
 
-| Sintaxis abreviada        | Sintaxis completa en SpEL |
-|-------------------------|---------------------|
-| `#help`                 | `intent == 'help'`  |
-| `! #help`               | `intent != 'help'`  |
-| `NOT #help`             | `intent != 'help'`  |
-| `#help` or `#i_am_lost` | <code>(intent == 'help' \|\| intent == 'I_am_lost')</code> |
+<table>
+  <caption>Sintaxis abreviada de intenciones</caption>
+  <tr>
+    <th>Sintaxis abreviada</th>
+    <th>Sintaxis completa en SpEL</th>
+  </tr>
+  <tr>
+    <td>`#help`</td>
+    <td>`intent == 'help'`</td>
+  </tr>
+  <tr>
+    <td>`! #help`</td>
+    <td>`intent != 'help'`</td>
+  </tr>
+  <tr>
+    <td>`NOT #help`</td>
+    <td>`intent != 'help'`</td>
+  </tr>
+  <tr>
+    <td>`#help` or `#i_am_lost`</td>
+    <td>`(intent == 'help' || intent == 'I_am_lost')`</td>
+  </tr>
+</table>
 
 ## Variables globales incorporadas
-{: #builtin-vars}
+{: #expression-language-builtin-vars}
 
-Utilice el lenguaje de expresiones para extraer información de propiedades para las siguientes variables globales: 
+Utilice el lenguaje de expresiones para extraer información de propiedades para las siguientes variables globales:
 
 | Variable global      | Definición |
 |----------------------|------------|
@@ -103,9 +127,9 @@ Utilice el lenguaje de expresiones para extraer información de propiedades para
 | *output*             | Parte del objeto JSON del mensaje de la conversación procesada. |
 
 ## Acceso a entidades
-{: #access-entity}
+{: #expression-language-access-entity}
 
-La matriz de entidades contiene una o varias entidades reconocidas en la entrada del usuario. 
+La matriz de entidades contiene una o varias entidades reconocidas en la entrada del usuario.
 
 Cuando se prueba el diálogo, puede ver los detalles de las entidades que se reconocen en la entrada del usuario especificando esta expresión en una respuesta del nodo del diálogo:
 
@@ -129,17 +153,22 @@ Para la entrada de usuario, *Hello now*, el servicio reconoce las entidades @sys
 {: codeblock}
 
 ### Cuando es importante colocar entidades en la entrada
+{: #expression-language-placement-matters}
 
-Utilice la expresión SpEL completa si es importante colocar entidades en la entrada. La condición `entities['city']?.contains('Boston')` devuelve true cuando se encuentra al menos una entidad city 'Boston' en todas las entidades @city, independientemente de su colocación.
+Cuando utilice la expresión abreviada, `@city.contains('Boston')`, en una condición, el nodo de diálogo devuelve true **únicamente si** `Boston` es la primera entidad detectada en la entrada del usuario. Utilice esta sintaxis solo si la ubicación de las entidades en la entrada es importante para usted y solo desea comprobar la primera mención.
 
-Por ejemplo, supongamos que un usuario envía `"I want to go from Toronto to Boston."` Las entidades `@city:Toronto` y `@city:Boston` se detectan y se representan en estas entidades:
+Utilice la expresión completa de SpEL si desea que la condición devuelva true cada vez que se mencione el término en la entrada del usuario, independientemente del orden en el que se mencionen las entidades. La condición `entities['city']?.contains('Boston')` devuelve true cuando se encuentra al menos una entidad city 'Boston' en todas las entidades @city, independientemente de su colocación.
+
+Por ejemplo, supongamos que un usuario envía `"I want to go from Toronto to Boston."` Las entidades `@city:Toronto` y `@city:Boston` se detectan y se representan en la matriz devuelva del siguiente modo:
 
 - `entities.city[0].value = 'Toronto'`
 - `entities.city[1].value = 'Boston'`
 
-La condición `@city.contains('Boston')` en un nodo de diálogo devuelve true aunque Boston sea la segunda entidad detectada.
+El orden de las entidades de la matriz que se devuelve coincide con el orden en el que se mencionan en la entrada del usuario.
+{: note}
 
 ### Propiedades de una entidad
+{: #expression-language-entity-props}
 
 Cada entidad tiene un conjunto de propiedades asociadas. Puede acceder a información sobre una entidad a través de sus propiedades.
 
@@ -150,7 +179,9 @@ Cada entidad tiene un conjunto de propiedades asociadas. Puede acceder a informa
 | *value*               | La entidad value identificada en la entrada. | Esta propiedad devuelve el valor de entidad tal como está definido en los datos de entrenamiento, aunque la comparación se haya realizado sobre uno de los sinónimos asociados. Puede utilizar `.values` para capturar varias apariciones de una entidad que pueda estar presente en la entrada de usuario. |
 
 ### Ejemplos de uso de propiedades de entidades
-En los ejemplos siguientes, el espacio contiene una entidad airport que incluye el valor JFK y el sinónimo "Kennedy Airport". La entrada del usuario es *I want to go to Kennedy Aiport*.
+{: #expression-language-entity-props-example}
+
+En los ejemplos siguientes, el conocimiento contiene una entidad airport que incluye el valor JFK y el sinónimo "Kennedy Airport". La entrada del usuario es *I want to go to Kennedy Aiport*.
 
 - Para devolver una respuesta específica si se reconoce la entidad 'JFK' en la entrada del usuario, podría añadir esta expresión a la condición de respuesta: `entities.airport[0].value == 'JFK'`
   o
@@ -179,9 +210,9 @@ En este ejemplo, la entrada del usuario es *Are there places to exchange currenc
   `You asked about these airports: JFK, Logan, O'Hare.`
 
 ## Acceso a intenciones
-{: #access-intent}
+{: #expression-language-intent}
 
-La matriz de intenciones contiene una o varias intenciones que se han reconocido en la entrada del usuario, clasificadas en orden descendente de confianza.  
+La matriz de intenciones contiene una o varias intenciones que se han reconocido en la entrada del usuario, clasificadas en orden descendente de confianza.
 
 Cada intención tiene una única propiedad: la propiedad `confidence`. La propiedad confidence es un porcentaje decimal que representa la confianza del servicio en la intención reconocida.
 
@@ -192,7 +223,7 @@ Cuando se prueba el diálogo, puede ver los detalles de las intenciones que se r
 ```
 {: codeblock}
 
-Para la entrada de usuario, *Hello now*, el servicio encuentra una coincidencia exacta con la intención #greeting. Por lo tanto, lista en primer lugar los detalles del objeto de intención #greeting. La respuesta también incluye las otras 10 primeras intenciones definidas en el conocimiento independientemente de su puntuación de confianza. (En este ejemplo, su confianza en las otras intenciones se establece en 0 porque la primera intención es una coincidencia exacta). Se devuelven las otras 10 primeras intenciones porque el panel "Pruébalo" envía el parámetro `alternate_intents:true` con su solicitud. Si está utilizando directamente la API y desea ver los primeros 10 resultados, asegúrese de especificar este parámetro en su llamada. Si `alternate_intents` es false, el valor predeterminado, únicamente se devolverán en la matriz las intenciones con una confianza por encima de 0,2. 
+Para la entrada de usuario, *Hello now*, el servicio encuentra una coincidencia exacta con la intención #greeting. Por lo tanto, lista en primer lugar los detalles del objeto de intención #greeting. La respuesta también incluye las otras 10 primeras intenciones definidas en el conocimiento independientemente de su puntuación de confianza. (En este ejemplo, su confianza en las otras intenciones se establece en 0 porque la primera intención es una coincidencia exacta). Se devuelven las otras 10 primeras intenciones porque el panel "Pruébelo" envía el parámetro `alternate_intents:true` con su solicitud. Si está utilizando directamente la API y desea ver los primeros 10 resultados, asegúrese de especificar este parámetro en su llamada. Si `alternate_intents` es false, el valor predeterminado, únicamente se devolverán en la matriz las intenciones con una confianza por encima de 0,2.
 
 ```json
 [{"intent":"greeting","confidence":1},
@@ -209,17 +240,18 @@ En los ejemplos siguientes se muestra cómo comprobar el valor de una intención
 `intent == 'help'` difiere de `intents[0] == 'help'` porque `intent == 'help'` no genera una excepción si no se detecta ninguna intención. Solo se evalúa como true si la confianza de la intención supera un umbral.  Si lo desea, puede especificar un nivel de confianza personalizado para una condición, por ejemplo `intents.size() > 0 && intents[0] == 'help' && intents[0].confidence > 0.1`
 
 ## Acceso de la entrada
-{: #access-input}
+{: #expression-language-intent-props}
 
 El objeto JSON de entrada solo contiene una propiedad: la propiedad text. La propiedad text representa el texto de la entrada del usuario.
 
 ### Ejemplos de uso de propiedades de entrada
+{: #expression-language-intent-props-example}
 
 En el ejemplo siguiente se muestra cómo acceder a la entrada:
 
 - Para ejecutar un nodo si la entrada del usuario es "Yes", añada esta expresión a la condición del nodo: `input.text == 'Yes'`
 
-Puede utilizar cualquiera de los [métodos String](/docs/services/conversation/dialog-methods.html#strings) para evaluar o manipular texto de la entrada del usuario. Por ejemplo:
+Puede utilizar cualquiera de los [métodos String](/docs/services/conversation/dialog-methods#dialog-methods-strings) para evaluar o manipular texto de la entrada del usuario. Por ejemplo:
 
 - Para comprobar si la entrada del usuario contiene "Yes", utilice: `input.text.contains( 'Yes' )`.
 - Devuelve true si la entrada del usuario es un número: `input.text.matches( '[0-9]+' )`.

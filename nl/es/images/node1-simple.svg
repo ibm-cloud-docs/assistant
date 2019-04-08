@@ -15,11 +15,11 @@
    viewBox="0 0 744.09448819 1052.3622047"
    id="svg3379"
    version="1.1"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="node1-simple.svg"
-   inkscape:export-filename="F:\jordiserratosa\IBM\BM120\ABD147\S002\spa\parapaquete\images\node1-simple.png"
-   inkscape:export-xdpi="109.92"
-   inkscape:export-ydpi="109.92">
+   inkscape:export-filename="F:\jordiserratosa\IBM\BM140\ABD147\S001\spa\SP\assistant\images\node1-simple.png"
+   inkscape:export-xdpi="151"
+   inkscape:export-ydpi="151">
   <defs
      id="defs3381" />
   <sodipodi:namedview
@@ -30,14 +30,14 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="348.99047"
+     inkscape:cx="366.07143"
      inkscape:cy="780.26315"
      inkscape:document-units="px"
      inkscape:current-layer="layer9"
      showgrid="false"
-     inkscape:window-width="1616"
-     inkscape:window-height="1027"
-     inkscape:window-x="56"
+     inkscape:window-width="1280"
+     inkscape:window-height="1001"
+     inkscape:window-x="1672"
      inkscape:window-y="-8"
      inkscape:window-maximized="1" />
   <metadata
@@ -72,24 +72,19 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="64.64286"
-       y="62.987175"
+       x="44.01786"
+       y="72.362175"
        id="text3399"><tspan
          sodipodi:role="line"
-         x="64.64286"
-         y="62.987175"
-         id="tspan3403"
+         id="tspan3401"
+         x="44.01786"
+         y="72.362175"
          style="font-size:15px;line-height:1.25">¿Qué sabores</tspan><tspan
          sodipodi:role="line"
-         x="64.64286"
-         y="81.737175"
-         style="font-size:15px;line-height:1.25"
-         id="tspan30">de magdalenas</tspan><tspan
-         sodipodi:role="line"
-         x="64.64286"
-         y="100.48717"
-         style="font-size:15px;line-height:1.25"
-         id="tspan32">tienen?</tspan></text>
+         x="44.01786"
+         y="91.112175"
+         id="tspan3403"
+         style="font-size:15px;line-height:1.25">de cupcake tienen?</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -130,18 +125,13 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="212.53571"
-       y="129.18361"
+       x="201.28571"
+       y="132.93361"
        id="text3416"><tspan
          sodipodi:role="line"
-         x="212.53571"
-         y="129.18361"
-         style="font-size:15px;line-height:1.25"
-         id="tspan24">Entonces: &quot;Tenemos magdalenas de </tspan><tspan
-         sodipodi:role="line"
-         x="212.53571"
-         y="147.93361"
-         style="font-size:15px;line-height:1.25"
-         id="tspan26">vainilla, de moka y de frutas del bosque.&quot;</tspan></text>
+         id="tspan3426"
+         x="201.28571"
+         y="132.93361"
+         style="font-size:15px;line-height:1.25">Entonces: &quot;Tenemos vainilla, moca y fresa.&quot;</tspan></text>
   </g>
 </svg>

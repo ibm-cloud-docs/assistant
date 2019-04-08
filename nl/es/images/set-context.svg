@@ -15,11 +15,11 @@
    viewBox="0 0 744.09448819 1052.3622047"
    id="svg4103"
    version="1.1"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="set-context.svg"
-   inkscape:export-filename="F:\jordiserratosa\IBM\BM120\ABD147\S002\spa\parapaquete\images\set-context.png"
-   inkscape:export-xdpi="89.279999"
-   inkscape:export-ydpi="89.279999">
+   inkscape:export-filename="F:\jordiserratosa\IBM\BM140\ABD147\S001\spa\SP\assistant\images\set-context.png"
+   inkscape:export-xdpi="151"
+   inkscape:export-ydpi="151">
   <defs
      id="defs4105" />
   <sodipodi:namedview
@@ -29,16 +29,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="200.74869"
-     inkscape:cy="755.59499"
+     inkscape:zoom="1.4"
+     inkscape:cx="315.27973"
+     inkscape:cy="803.52516"
      inkscape:document-units="px"
-     inkscape:current-layer="layer68"
+     inkscape:current-layer="layer71"
      showgrid="false"
-     inkscape:window-width="1616"
+     inkscape:window-width="1614"
      inkscape:window-height="1027"
-     inkscape:window-x="56"
-     inkscape:window-y="-8"
+     inkscape:window-x="58"
+     inkscape:window-y="5"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata4108">
@@ -122,19 +122,17 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="189.88837"
        y="136.13351"
-       id="text4138"
-       inkscape:export-xdpi="185.8"
-       inkscape:export-ydpi="185.8"><tspan
+       id="text4138"><tspan
          sodipodi:role="line"
          id="tspan4140"
          x="189.88837"
          y="136.13351"
-         style="font-size:15px;line-height:1.25">Si $time_of_day == &quot;morning&quot;</tspan><tspan
+         style="font-size:15px;line-height:1.25">Si $time_of_day == &quot;mañana&quot;</tspan><tspan
          sodipodi:role="line"
          x="189.88837"
          y="154.88351"
          id="tspan4142"
-         style="font-size:15px;line-height:1.25"> &quot;¿Cómo puedo ayudarle esta mañana?&quot;</tspan></text>
+         style="font-size:15px;line-height:1.25"> &quot;¿En qué puedo ayudarle esta mañana?&quot;</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -150,12 +148,12 @@
          id="tspan4147"
          x="188.89853"
          y="184.64114"
-         style="font-size:15px;line-height:1.25">Si $time_of_day == &quot;afternoon&quot;</tspan><tspan
+         style="font-size:15px;line-height:1.25">Si $time_of_day == &quot;tarde&quot;</tspan><tspan
          sodipodi:role="line"
          x="188.89853"
          y="203.39114"
          id="tspan4149"
-         style="font-size:15px;line-height:1.25"> &quot;¿Cómo puedo ayudarle esta tarde?&quot;</tspan></text>
+         style="font-size:15px;line-height:1.25"> &quot;¿En qué puedo ayudarle esta tarde?&quot;</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -171,12 +169,12 @@
          id="tspan4154"
          x="190.91882"
          y="236.15894"
-         style="font-size:15px;line-height:1.25">Si $time_of_day == &quot;evening&quot;</tspan><tspan
+         style="font-size:15px;line-height:1.25">Si $time_of_day == &quot;noche&quot;</tspan><tspan
          sodipodi:role="line"
          x="190.91882"
          y="254.90894"
          id="tspan4156"
-         style="font-size:15px;line-height:1.25"> &quot;¿Cómo puedo ayudarle esta noche?&quot;</tspan></text>
+         style="font-size:15px;line-height:1.25"> &quot;¿En qué puedo ayudarle esta noche?&quot;</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -192,6 +190,6 @@
          id="tspan4161"
          x="190.91882"
          y="288.68686"
-         style="font-size:15px;line-height:1.25">&quot;¿Cómo puedo ayudarle?&quot;</tspan></text>
+         style="font-size:15px;line-height:1.25">&quot;¿En qué puedo ayudarle?&quot;</tspan></text>
   </g>
 </svg>

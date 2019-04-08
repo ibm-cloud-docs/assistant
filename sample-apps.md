@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-04-08"
 
 subcollection: assistant
-
 
 ---
 
@@ -41,7 +40,7 @@ The Node.js app shows how {{site.data.keyword.conversationshort}} uses intents i
 
 This Node.js app is a fully developed example of the type of app you can build with {{site.data.keyword.conversationshort}} that uses intents, entities, and dialog.
 
-[View the demo ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://watson-assistant-demo.ng.bluemix.net/){: new_window}.
+[See the demo ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://watson-assistant-demo.ng.bluemix.net/){: new_window} or [fork the code ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/assistant-demo){: new_window}.
 
 ## {{site.data.keyword.conversationshort}} and {{site.data.keyword.discoveryshort}}
 {: #sample-apps-with-discovery}

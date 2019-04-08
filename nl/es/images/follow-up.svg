@@ -15,11 +15,11 @@
    viewBox="0 0 744.09448819 1052.3622047"
    id="svg3622"
    version="1.1"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="follow-up.svg"
-   inkscape:export-filename="F:\jordiserratosa\IBM\BM120\ABD147\S002\spa\parapaquete\images\follow-up.png"
-   inkscape:export-xdpi="88.559998"
-   inkscape:export-ydpi="88.559998">
+   inkscape:export-filename="F:\jordiserratosa\IBM\BM140\ABD147\S001\spa\SP\assistant\images\follow-up.png"
+   inkscape:export-xdpi="151"
+   inkscape:export-ydpi="151">
   <defs
      id="defs3624" />
   <sodipodi:namedview
@@ -29,16 +29,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="364.55822"
-     inkscape:cy="813.18683"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="375.42127"
+     inkscape:cy="804.02876"
      inkscape:document-units="px"
-     inkscape:current-layer="layer27"
+     inkscape:current-layer="layer23"
      showgrid="false"
-     inkscape:window-width="1616"
+     inkscape:window-width="1614"
      inkscape:window-height="1027"
-     inkscape:window-x="56"
-     inkscape:window-y="-8"
+     inkscape:window-x="58"
+     inkscape:window-y="5"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata3627">
@@ -108,7 +108,7 @@
          x="380.14285"
          y="288.68362"
          id="tspan3577"
-         style="font-size:15px;line-height:1.25">New York, NY</tspan></text>
+         style="font-size:15px;line-height:1.25">Nueva York, NY</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -140,7 +140,7 @@
          id="tspan3443"
          x="174.42857"
          y="136.50507"
-         style="font-size:15px;line-height:1.25">Location</tspan></text>
+         style="font-size:15px;line-height:1.25">Ubicación</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -156,7 +156,7 @@
          id="tspan3443-3"
          x="173.73953"
          y="271.92868"
-         style="font-size:15px;line-height:1.25">Location</tspan></text>
+         style="font-size:15px;line-height:1.25">Ubicación</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -173,20 +173,20 @@
        y="134.3622"
        id="text3446"><tspan
          sodipodi:role="line"
-         id="tspan3448"
          x="263.14285"
          y="134.3622"
-         style="font-size:15px;line-height:1.25">¿Para qué ciudad</tspan><tspan
+         style="font-size:15px;line-height:1.25"
+         id="tspan96">¿Para qué</tspan><tspan
          sodipodi:role="line"
          x="263.14285"
          y="153.1122"
-         style="font-size:15px;line-height:1.25"
-         id="tspan118">desea conocer el </tspan><tspan
+         id="tspan3450"
+         style="font-size:15px;line-height:1.25">ciudad desea la</tspan><tspan
          sodipodi:role="line"
          x="263.14285"
          y="171.8622"
          id="tspan3452"
-         style="font-size:15px;line-height:1.25">pronóstico?</tspan></text>
+         style="font-size:15px;line-height:1.25">previsión?</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -202,17 +202,17 @@
          id="tspan3551"
          x="262.76096"
          y="269.46439"
-         style="font-size:15px;line-height:1.25">¿Para qué </tspan><tspan
+         style="font-size:15px;line-height:1.25">¿Para qué</tspan><tspan
          sodipodi:role="line"
          x="262.76096"
          y="288.21439"
          style="font-size:15px;line-height:1.25"
-         id="tspan133">ciudad desea el </tspan><tspan
+         id="tspan105">ciudad desea la</tspan><tspan
          sodipodi:role="line"
          x="262.76096"
          y="306.96439"
          style="font-size:15px;line-height:1.25"
-         id="tspan135">pronóstico?</tspan></text>
+         id="tspan107">previsión?</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -228,12 +228,7 @@
          id="tspan3457"
          x="387.28571"
          y="136.79079"
-         style="font-size:15px;line-height:1.25">(predeterminado: </tspan><tspan
-         sodipodi:role="line"
-         x="387.28571"
-         y="155.54079"
-         style="font-size:15px;line-height:1.25"
-         id="tspan126"> Boston, MA)</tspan></text>
+         style="font-size:15px;line-height:1.25">(predet.: Boston, MA)</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -249,7 +244,7 @@
          id="tspan3462"
          x="175.14285"
          y="193.50507"
-         style="font-size:15px;line-height:1.25">Date</tspan></text>
+         style="font-size:15px;line-height:1.25">Fecha</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -260,7 +255,7 @@
          id="tspan3462-1"
          x="173.88672"
          y="326.92868"
-         style="font-size:15px;line-height:1.25">Date</tspan></text>
+         style="font-size:15px;line-height:1.25">Fecha</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -308,7 +303,7 @@
          id="tspan3472"
          x="386.57144"
          y="192.21935"
-         style="font-size:15px;line-height:1.25">(predeterminado: hoy)</tspan></text>
+         style="font-size:15px;line-height:1.25">(predet: hoy)</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -317,19 +312,14 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="551.44641"
-       y="168.3622"
+       x="549.57141"
+       y="183.3622"
        id="text3585"><tspan
          sodipodi:role="line"
          id="tspan3587"
-         x="551.44641"
-         y="168.3622"
-         style="font-size:15px;line-height:1.25">OBTENER</tspan><tspan
-         sodipodi:role="line"
-         x="551.44641"
-         y="187.1122"
-         style="font-size:15px;line-height:1.25"
-         id="tspan147">   /weather</tspan></text>
+         x="549.57141"
+         y="183.3622"
+         style="font-size:15px;line-height:1.25">GET /weather</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -338,24 +328,26 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="666.28571"
-       y="196.82649"
-       id="text3590"><tspan
+       x="664.41071"
+       y="198.70149"
+       id="text3590"
+       inkscape:export-xdpi="151"
+       inkscape:export-ydpi="151"><tspan
          sodipodi:role="line"
          id="tspan3592"
-         x="666.28571"
-         y="196.82649"
+         x="664.41071"
+         y="198.70149"
          style="font-size:15px;line-height:1.25">Servicio</tspan><tspan
          sodipodi:role="line"
-         x="666.28571"
-         y="215.57649"
+         x="664.41071"
+         y="217.45149"
          id="tspan3594"
          style="font-size:15px;line-height:1.25">meteoro-</tspan><tspan
          sodipodi:role="line"
-         x="666.28571"
-         y="234.32649"
+         x="664.41071"
+         y="236.20149"
          style="font-size:15px;line-height:1.25"
-         id="tspan145">lógico</tspan></text>
+         id="tspan109">lógico</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -364,14 +356,14 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="582.44641"
+       x="595.57141"
        y="246.3622"
        id="text3597"><tspan
          sodipodi:role="line"
          id="tspan3599"
-         x="582.44641"
+         x="595.57141"
          y="246.3622"
-         style="font-size:15px;line-height:1.25">pronóstico</tspan></text>
+         style="font-size:15px;line-height:1.25">forecast</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -392,7 +384,7 @@
          x="47.285713"
          y="167.54079"
          id="tspan3606"
-         style="font-size:15px;line-height:1.25">hará sol.</tspan></text>
+         style="font-size:15px;line-height:1.25">estará soleado.</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -405,15 +397,15 @@
        y="227.79079"
        id="text3609"><tspan
          sodipodi:role="line"
+         id="tspan3611"
          x="25.142857"
          y="227.79079"
-         id="tspan3613"
-         style="font-size:15px;line-height:1.25">¿Y mañana </tspan><tspan
+         style="font-size:15px;line-height:1.25">¿Y mañana en</tspan><tspan
          sodipodi:role="line"
          x="25.142857"
          y="246.54079"
-         style="font-size:15px;line-height:1.25"
-         id="tspan106">en Nueva YorK?</tspan></text>
+         id="tspan3613"
+         style="font-size:15px;line-height:1.25">Nueva York?</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -426,20 +418,15 @@
        y="315.07648"
        id="text3616"><tspan
          sodipodi:role="line"
+         id="tspan3618"
          x="38.285713"
          y="315.07648"
-         id="tspan3620"
-         style="font-size:15px;line-height:1.25">Mañana será </tspan><tspan
+         style="font-size:15px;line-height:1.25">En Nueva York</tspan><tspan
          sodipodi:role="line"
          x="38.285713"
          y="333.82648"
-         style="font-size:15px;line-height:1.25"
-         id="tspan114">lluvioso en Nueva</tspan><tspan
-         sodipodi:role="line"
-         x="38.285713"
-         y="352.57648"
-         style="font-size:15px;line-height:1.25"
-         id="tspan116">York.</tspan></text>
+         id="tspan3620"
+         style="font-size:15px;line-height:1.25">mañana lloverá.</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -494,15 +481,15 @@
        y="53.790775"
        id="text3343"><tspan
          sodipodi:role="line"
+         id="tspan3345"
          x="27.285713"
          y="53.790775"
-         style="font-size:15px;line-height:1.25"
-         id="tspan98">¿Cuál es el pronóstico </tspan><tspan
+         style="font-size:15px;line-height:1.25">¿Cuál es la previsión</tspan><tspan
          sodipodi:role="line"
          x="27.285713"
          y="72.540771"
-         style="font-size:15px;line-height:1.25"
-         id="tspan102">del tiempo?</tspan></text>
+         id="tspan3347"
+         style="font-size:15px;line-height:1.25">meteorológica?</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"

@@ -15,11 +15,11 @@
    viewBox="0 0 744.09448819 1052.3622047"
    id="svg3454"
    version="1.1"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="node1-children.svg"
-   inkscape:export-filename="F:\jordiserratosa\IBM\BM120\ABD147\S002\spa\parapaquete\images\node1-children.png"
-   inkscape:export-xdpi="122.88"
-   inkscape:export-ydpi="122.88">
+   inkscape:export-filename="F:\jordiserratosa\IBM\BM140\ABD147\S001\spa\SP\assistant\images\node1-children.png"
+   inkscape:export-xdpi="151"
+   inkscape:export-ydpi="151">
   <defs
      id="defs3456" />
   <sodipodi:namedview
@@ -30,15 +30,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="198.63034"
+     inkscape:cx="363.98748"
      inkscape:cy="955.13889"
      inkscape:document-units="px"
-     inkscape:current-layer="layer10"
+     inkscape:current-layer="layer19"
      showgrid="false"
-     inkscape:window-width="1616"
+     inkscape:window-width="1614"
      inkscape:window-height="1027"
-     inkscape:window-x="56"
-     inkscape:window-y="-8"
+     inkscape:window-x="58"
+     inkscape:window-y="5"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata3459">
@@ -71,15 +71,12 @@
      inkscape:label="node1-condition">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="110.08929"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-size:12.00000051px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
+       x="115.71429"
        y="66.076462"
        id="text3492"><tspan
          sodipodi:role="line"
-         id="tspan3494"
-         x="110.08929"
-         y="66.076462"
-         style="font-size:12.5px;line-height:1.25">Si: #cupcake_menu</tspan></text>
+         id="tspan49">Si: #cupcake_menu</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -88,24 +85,19 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="133.66072"
-       y="83.165756"
+       x="124.28571"
+       y="88.790756"
        id="text3497"><tspan
          sodipodi:role="line"
          id="tspan3499"
-         x="133.66072"
-         y="83.165756"
-         style="font-size:12.5px;line-height:1.25">Entonces: &quot;¿Desea </tspan><tspan
+         x="124.28571"
+         y="88.790756"
+         style="font-size:12.5px;line-height:1.25">Entonces: &quot;¿Desea los</tspan><tspan
          sodipodi:role="line"
-         x="133.66072"
-         y="98.790756"
+         x="124.28571"
+         y="104.41576"
          id="tspan3501"
-         style="font-size:12.5px;line-height:1.25">magdalenas normales </tspan><tspan
-         sodipodi:role="line"
-         x="133.66072"
-         y="114.41576"
-         style="font-size:12.5px;line-height:1.25"
-         id="tspan63">o sin gluten?</tspan></text>
+         style="font-size:12.5px;line-height:1.25">cupcakes sin gluten?&quot;</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -153,17 +145,17 @@
          id="tspan3536"
          x="354.28571"
          y="83.076469"
-         style="font-size:12.5px;line-height:1.25">Entonces: &quot;Tenemos unas</tspan><tspan
+         style="font-size:12.5px;line-height:1.25">Entonces: &quot;Tenemos unos</tspan><tspan
          sodipodi:role="line"
+         id="tspan3538"
          x="354.28571"
          y="98.701469"
-         style="font-size:12.5px;line-height:1.25"
-         id="tspan65">magdalenas de vainilla sin </tspan><tspan
+         style="font-size:12.5px;line-height:1.25">cupcakes de vainilla sin gluten</tspan><tspan
          sodipodi:role="line"
          id="tspan3540"
          x="354.28571"
          y="114.32647"
-         style="font-size:12.5px;line-height:1.25">gluten deliciosas.&quot;</tspan></text>
+         style="font-size:12.5px;line-height:1.25">muy populares.&quot;</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -174,7 +166,7 @@
          id="tspan3534"
          x="405.71429"
          y="114.50504"
-         style="font-size:12.5px;line-height:1.25"> </tspan></text>
+         style="font-size:12.5px;line-height:1.25"> </tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -182,15 +174,12 @@
      inkscape:label="child2">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-size:12.00000051px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"
        x="338.71429"
        y="149.07648"
        id="text3543"><tspan
          sodipodi:role="line"
-         id="tspan3545"
-         x="338.71429"
-         y="149.07648"
-         style="font-size:12.5px;line-height:1.25">NODO HIJO 2</tspan></text>
+         id="tspan47">NODO HIJO 2</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -215,24 +204,24 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="362.14285"
+       x="354.64285"
        y="188.07648"
        id="text3553"><tspan
          sodipodi:role="line"
-         x="362.14285"
+         id="tspan3567"
+         x="354.64285"
          y="188.07648"
-         style="font-size:12.5px;line-height:1.25"
-         id="tspan85">Entonces: &quot;Tenemos </tspan><tspan
+         style="font-size:12.5px;line-height:1.25">Entonces: &quot;Tenemos cupcakes </tspan><tspan
+         sodipodi:role="line"
+         id="tspan3569"
+         x="354.64285"
+         y="203.70148"
+         style="font-size:12.5px;line-height:1.25">de vanilla, de moca y de</tspan><tspan
          sodipodi:role="line"
          id="tspan3571"
-         x="362.14285"
-         y="203.70148"
-         style="font-size:12.5px;line-height:1.25">magdalenas de vainilla, de </tspan><tspan
-         sodipodi:role="line"
-         x="362.14285"
+         x="354.64285"
          y="219.32648"
-         style="font-size:12.5px;line-height:1.25"
-         id="tspan99">moka y de frutas del bosque.&quot;</tspan></text>
+         style="font-size:12.5px;line-height:1.25">fresa.&quot;</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -241,21 +230,21 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="18.25"
+       x="22"
        y="24.647896"
        id="text3474"><tspan
          sodipodi:role="line"
          id="tspan3476"
-         x="18.25"
+         x="22"
          y="24.647896"
          style="font-size:12.5px;line-height:1.25">¿Qué sabores</tspan><tspan
          sodipodi:role="line"
-         x="18.25"
+         x="22"
          y="40.272896"
-         style="font-size:12.5px;line-height:1.25"
-         id="tspan47">de magdalenas</tspan><tspan
+         id="tspan3478"
+         style="font-size:12.5px;line-height:1.25">de cupcake </tspan><tspan
          sodipodi:role="line"
-         x="18.25"
+         x="22"
          y="55.897896"
          id="tspan3480"
          style="font-size:12.5px;line-height:1.25">tienen?</tspan></text>
