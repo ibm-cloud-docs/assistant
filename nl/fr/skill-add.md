@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-08"
 
 subcollection: assistant
 
@@ -93,8 +93,7 @@ Une fois la compétence créée, elle apparaît sous la forme d'une vignette sur
 
 La compétence de dialogue ne peut pas interagir avec les clients tant qu'elle n'est pas ajoutée à un assistant et que celui-ci n'est pas déployé. Reportez-vous à la rubrique [Création d'un assistant](/docs/services/assistant?topic=assistant-assistant-add).
 
-
-### Traitement des incidents liés à l'importation de compétences 
+## Traitement des incidents liés à l'importation de compétences 
 {: #skill-add-import-errors}
 
 Si vous recevez un message indiquant que la compétence contient des artefacts dépassant les limites imposées par votre forfait de service, procédez comme suit pour importer la compétence : 
@@ -106,7 +105,7 @@ Si vous recevez un message indiquant que la compétence contient des artefacts d
 1.  Exportez la compétence modifiée en la téléchargeant. 
 1.  Réessayez d'importer la compétence modifiée dans l'instance de service d'origine du forfait souhaité. 
 
-### Ajout de la compétence à un assistant  
+## Ajout de la compétence à un assistant  
 {: #skill-add-to-assistant}
 
 Vous pouvez ajouter une compétence à un assistant. Vous devez ouvrir la vignette de l’assistant et ajouter la compétence à l’assistant à partir de la page de configuration de l’assistant ; vous ne pouvez pas choisir l'assistant qui utilisera la compétence dans la page de configuration de la compétence. Une compétence de dialogue peut être utilisée par plusieurs assistants.

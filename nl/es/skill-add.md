@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-08"
 
 subcollection: assistant
 
@@ -95,7 +95,7 @@ Después de crear el conocimiento, aparece como un mosaico en la página Conocim
 
 El conocimiento de diálogo no puede interactuar con los clientes hasta que se añada a un asistente y este se despliegue. Consulte [Creación de un asistente](/docs/services/assistant?topic=assistant-assistant-add).
 
-### Resolución de problemas de importación de conocimientos
+## Resolución de problemas de importación de conocimientos
 {: #skill-add-import-errors}
 
 Si recibe un mensaje que indica que el conocimiento contiene artefactos que superan los límites impuestos por el plan de servicio, siga estos pasos para importar correctamente el conocimiento:
@@ -107,7 +107,7 @@ Si recibe un mensaje que indica que el conocimiento contiene artefactos que supe
 1.  Exporte el conocimiento editado descargándolo.
 1.  Intente de nuevo importar el conocimiento en la instancia de servicio original en el plan que desee.
 
-### Adición del conocimiento a un asistente
+## Adición del conocimiento a un asistente
 {: #skill-add-to-assistant}
 
 Puede añadir un conocimiento a un asistente. Debe abrir el mosaico del asistente y añadir el conocimiento al asistente desde la página de configuración del asistente; no puede elegir el asistente que utilizará el conocimiento desde dentro de la página de configuración del conocimiento. Un conocimiento de diálogo puede ser utilizado por más de un asistente.

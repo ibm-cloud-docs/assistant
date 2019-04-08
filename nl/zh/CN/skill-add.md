@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-08"
 
 subcollection: assistant
 
@@ -93,7 +93,7 @@ subcollection: assistant
 
 在将对话技能添加到助手并部署助手之前，对话技能无法与客户交互。请参阅[创建助手](/docs/services/assistant?topic=assistant-assistant-add)。
 
-### 有关技能导入问题的故障诊断
+## 有关技能导入问题的故障诊断
 {: #skill-add-import-errors}
 
 如果您收到一条消息，指示技能包含的工件数超过服务套餐所施加的限制，请完成以下步骤以成功导入技能：
@@ -105,7 +105,7 @@ subcollection: assistant
 1.  通过下载已编辑的技能来导出该技能。
 1.  重试将已编辑的技能导入到所需套餐中的原始服务实例。
 
-### 向助手添加技能
+## 向助手添加技能
 {: #skill-add-to-assistant}
 
 您可以向一个助手添加一个技能。必须打开助手磁贴，并在助手配置页面中向该助手添加技能；无法在技能配置页面中选择将使用该技能的助手。一个对话技能可以由多个助手使用。

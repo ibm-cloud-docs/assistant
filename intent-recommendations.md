@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-04-08"
 
 subcollection: assistant
 
@@ -22,7 +22,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Get help building intents ![Plus or Premium plan only](images/premium.png)
+# Get help defining intents ![Plus or Premium plan only](images/premium.png)
 {: #intent-recommendations}
 
 If you have existing enterprise customer support chat transcript data, let Watson analyze that data to understand the customer needs that your support team spends most of its time addressing. Watson can then recommend intents and user examples you can use to train your assistant so it can recognize the same and similar requests in future.

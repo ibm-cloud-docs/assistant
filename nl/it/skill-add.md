@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-08"
 
 subcollection: assistant
 
@@ -93,7 +93,7 @@ Una volta creata la capacità, comparirà come un tile nella pagina Skills. Ora,
 
 La capacità di dialogo non può interagire con i clienti fino a quando non viene aggiunta a un assistente e quest'ultimo viene distribuito. Vedi [Creazione di un assistente](/docs/services/assistant?topic=assistant-assistant-add).
 
-### Risoluzione dei problemi di importazione della capacità 
+## Risoluzione dei problemi di importazione della capacità 
 {: #skill-add-import-errors}
 
 Se ricevi un messaggio indicante che la capacità contiene risorse che superano i limiti imposti dal tuo piano di servizio, completa i seguenti passi per importare correttamente la capacità: 
@@ -105,7 +105,7 @@ Se ricevi un messaggio indicante che la capacità contiene risorse che superano 
 1.  Esporta la capacità modificata scaricandola. 
 1.  Riprova ad importare la capacità modificare nell'istanza del servizio originale nel piano che desideri. 
 
-### Aggiunta della capacità a un assistente 
+## Aggiunta della capacità a un assistente 
 {: #skill-add-to-assistant}
 
 Puoi aggiungere una capacità a un assistente. Devi aprire il tile dell'assistente e aggiungere la capacità all'assistente dalla pagina di configurazione dell'assistente; non puoi scegliere l'assistente che utilizzerà la capacità dalla pagina di configurazione della capacità. Una capacità di dialogo può essere utilizzata da più di un assistente. 

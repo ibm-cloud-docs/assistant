@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-22"
+lastupdated: "2019-04-08"
 
 subcollection: assistant
 
@@ -62,7 +62,7 @@ The following new features and changes to the service are available. Check out o
 ## 14 March 2019
 {: #14March2019}
 
-- **Have Watson help you build intents**: Use Watson machine learning technology to help you choose the right intents for your assistant. Watson analyzes your existing call center log data to identify the customer questions and requests that occur most often. It then recommends intents and user examples you can use to train your assistant so it can recognize the same and similar requests in future. Once you determine the right intents to use, you can augment them and keep them up-to-date over time using the intent user example recommendations functionality, which is already available. For more information, see [Get help building intents](/docs/services/assistant?topic=assistant-intent-recommendations).
+- **Have Watson help you build intents**: Use Watson machine learning technology to help you choose the right intents for your assistant. Watson analyzes your existing call center log data to identify the customer questions and requests that occur most often. It then recommends intents and user examples you can use to train your assistant so it can recognize the same and similar requests in future. Once you determine the right intents to use, you can augment them and keep them up-to-date over time using the intent user example recommendations functionality, which is already available. For more information, see [Get help defining intents](/docs/services/assistant?topic=assistant-intent-recommendations).
 
 ## 4 March 2019
 {: #4March2019}
