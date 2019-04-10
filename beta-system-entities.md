@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-15"
+lastupdated: "2019-04-09"
 
 subcollection: assistant
 
@@ -48,7 +48,7 @@ To enable the new system entities, complete the following steps:
 1.  From the Skills page, open your skill.
 1.  Click the **Options** tab.
 1.  From the *System entities* page, choose **Try beta**.
-1.  Click the **Entities** tab to open the *Entities* page, and then click the **System Entities** tab.
+1.  Click the **Entities** tab to open the *Entities* page, and then click the **System entities** tab.
 1.  Turn on the system entitites that you want to use in your dialog.
 
 Test the new system entities by adding one or more of them to dialog node conditions or in the condition of a dialog node's conditional responses. Then, from the "Try it out" pane, submit user utterances that trigger the nodes you added.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-04-09"
 
 subcollection: assistant
 
@@ -53,10 +53,10 @@ The service looks for terms in the user input that match the values, synonyms, o
     At run time, the service looks for patterns matching your regular expression in the user input, and identifies any matches as mentions of that entity.
 - **System entity**: Synonym entities that are prebuilt for you by IBM. They cover commonly used categories, such as numbers, dates, and times. You simply enable a system entity to start using it.
 
-### Context-based method
+### Annotation-based method
 {: #entities-annotations-overview}
 
-When you define a contextual entity, a model is trained on both the *annotated term* and the *context* in which the term is used in the sentence you annotate. This new contextual entity model enables the service to calculate a confidence score that identifies how likely a word or phrase is to be an instance of an entity, based on how it is used in the user input.
+When you define an annotation-based, or contextual entity, a model is trained on both the *annotated term* and the *context* in which the term is used in the sentence you annotate. This new contextual entity model enables the service to calculate a confidence score that identifies how likely a word or phrase is to be an instance of an entity, based on how it is used in the user input.
 
 - **Contextual entity**: First, you define a category of terms as an entity (`product`). Next, you go to the *Intents* page and mine your existing intent user examples to find any mentions of the entity, and label them as such. For example, you might go to the `#buy_something` intent, and find a user example that says, `I want to buy a Coach bag`. You can label `Coach bag` as a mention of the `@product` entity.
 
@@ -77,9 +77,9 @@ Use the {{site.data.keyword.conversationshort}} tool to create entities.
 
 1.  In the {{site.data.keyword.conversationshort}} tool, open your dialog skill and then click the **Entities** tab. If **Entities** is not visible, use the ![Menu](images/Menu_16.png) menu to open the page.
 
-1.  Click **Add entity**.
+1.  Click **Create entity**.
 
-    You can also click **Use System Entities** to select from a list of common entities, provided by {{site.data.keyword.IBM_notm}}, that can be applied to any use case. See [Enabling system entities](#entities-enable-system-entities) for more detail.
+    You can also click **System entities** to select from a list of common entities, provided by {{site.data.keyword.IBM_notm}}, that can be applied to any use case. See [Enabling system entities](#entities-enable-system-entities) for more detail.
 
 1.  In the **Entity name** field, type a descriptive name for the entity.
 
@@ -97,12 +97,12 @@ Use the {{site.data.keyword.conversationshort}} tool to create entities.
 
     ![Screen capture of creating an entity](images/create_entity.png)
 
-1.  For this entity, choose whether you want the service to use a dictionary-based or context-based approach to find mentions of it, and then follow the appropriate procedure.
+1.  For this entity, choose whether you want the service to use a dictionary-based or annotation-based approach to find mentions of it, and then follow the appropriate procedure.
 
     **For each entity that you create, choose one entity type to use only.** As soon as you add an annotation for an entity, the contextual model is initialized and becomes the primary approach for analyzing user input to find mentions of that entity. The context in which the mention is used in the user input takes precedence over any exact matches that might be present. See [Entity evaluation overview](#entities-described) for more information about how each type is evaluated.
 
     - [Dictionary-based entities](#entities-create-dictionary-based)
-    - [Context-based entities](#entities-create-annotation-based)
+    - [Annotation-based entities](#entities-create-annotation-based)
 
 ## Adding dictionary-based entities
 {: #entities-create-dictionary-based}
@@ -254,14 +254,14 @@ The entity you created is added to the **Entities** tab, and the system begins t
 ## Adding contextual entities
 {: #entities-create-annotation-based}
 
-Context-based entites are those for which you annotate occurrences of the entity in sample sentences to teach the service about the context in which the entity is typically used.
+Annotation-based entites are those for which you annotate occurrences of the entity in sample sentences to teach the service about the context in which the entity is typically used.
 
 In order to train a contextual entity model, you can take advantage of your intent examples, which provide readily-available sentences to annotate.
 
 Using an intent's user examples to define contextual entities does not affect the classification of that intent. However, entity mentions that you label are also added to that entity as synonyms. And intent classification does use synonym mentions in intent user examples to establish a weak reference between an intent and an entity.
 {: note}
 
-1.  In the {{site.data.keyword.conversationshort}} tool, open your skill and then click the **Intents** tab. If **Intents** is not visible, use the ![Menu](images/Menu_16.png) menu to open the page.
+1.  From your dialog skill, click the **Intents** tab.
 
 1.  Click an intent to open it.
 
@@ -360,7 +360,7 @@ System entities can be used to recognize a broad range of values for the object 
 
 System entities are centrally maintained, so any updates are available automatically. You cannot modify system entities.
 
-1.  On the Entities tab, click **System entities**.
+1.  On the Entities page, click **System entities**.
 
     ![Screen capture of "System entities" tab](images/system_entities_1.png)
 

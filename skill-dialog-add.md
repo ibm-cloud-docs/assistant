@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-22"
+lastupdated: "2019-04-09"
 
 subcollection: assistant
 
@@ -39,7 +39,7 @@ To add a skill, complete the following steps:
 
 1.  If you have not done so, complete the prerequisite steps in [Creating a skill](/docs/services/assistant?topic=assistant-skill-add).
 
-1.  Click the **Skills** tab, and then click **Create new**.
+1.  Click the **Skills** tab, and then click **Create skill**.
 
 1.  ![Plus or Premium plan only](images/premium.png) If you are a Plus or Premium plan user, select the dialog skill tile, and then click **Next**.
 
@@ -75,7 +75,7 @@ To add a skill, complete the following steps:
     - **Description**: An optional description no more than 200 characters in length.
     - **Language**: The language of the user input the skill will be trained to understand. The default value is English.
 
-After you create the skill, it appears as a tile on the Skills page. Now, you can start identifying the user goals that you want the dialog skill to address.
+After you create the dialog skill, it appears as a tile on the Skills page. Now, you can start identifying the user goals that you want the dialog skill to address.
 
 - To add prebuilt intents to your skill, see [Using content catalogs](/docs/services/assistant?topic=assistant-catalog).
 - To define your own intents, see [Defining intents](/docs/services/assistant?topic=assistant-intents).
@@ -107,7 +107,7 @@ You can add one skill to an assistant. You must open the assistant tile and add 
 
     Click the skill that you want to add from the available skills that are displayed.
 
-When you add a skill from here, you get the development version. If you want to add a specific skill version, add it from the skill's *Version History* tab instead.
+When you add a dialog skill from here, you get the development version. If you want to add a specific skill version, add it from the skill's *Versions* tab instead.
 
 ## Downloading a dialog skill
 {: #skill-dialog-add-download}

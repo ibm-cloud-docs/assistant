@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-04-09"
 
 subcollection: assistant
 
@@ -25,13 +25,15 @@ subcollection: assistant
 # Learn from conversations
 {: #logs}
 
-To open a list of messages between users and the assistant that uses this dialog skill, select **User conversations** in the navigation bar.
+To open a list of individual messages between customers and the assistant that uses this dialog skill, select **User conversations** in the navigation bar.
 {: shortdesc}
 
-When you open the **User conversations** page, the default view lists results for the last day, with the newest results first. The top intent (#intent) and any recognized entity (@entity) values used in a message, and the message text are available. For intents that are not recognized, the value shown is *Irrelevant*. If an entity is not recognized, or has not been provided, the value shown is *No entities found*.
+When you open the **User conversations** page, the default view lists inputs that were submitted to the assistant for the last day, with the newest results first. The top intent (#intent) and any recognized entity (@entity) values used in a message, and the message text are available. For intents that are not recognized, the value shown is *Irrelevant*. If an entity is not recognized, or has not been provided, the value shown is *No entities found*.
+
 ![Logs default page](images/logs_page1.png)
 
-It is important to note that the **User conversations** page displays the total number of *messages* between users and your application. A message is a single utterance the user sends to the application. Each conversation may be made up of multiple messages. Thus, the number of results on this **User conversations** page is different than the number of conversations shown on the [Overview](/docs/services/assistant?topic=assistant-logs-overview) page.
+The User conversations page displays the total number of *messages* between customers and your assistant. A message is a single utterance that a user sends to the assistant. A conversation typically consists of multiple messages. Therefore, the number of results on the **User conversations** page is different from the number of conversations that are shown on the **Overview** page.
+{: important}
 
 ## Log limits
 {: #logs-limits}
@@ -48,9 +50,9 @@ The length of time for which messages are retained depends on your {{site.data.k
 ## Filtering messages
 {: #logs-filter-messages}
 
-You can filter messages by *Search user statements*, *Intents*, *Entities*, and *Last* n *days*:
+You can filter messages by *Search user statements*, *Intents*, *Entities*, and *Last n days*.
 
-*Search user statements* - Type a word in the search bar. This searches the users' inputs, but not your application's replies.
+*Search user statements* - Type a word in the search bar. This searches the users' inputs, but not your assistant's replies.
 
 *Intents* - Select the drop-down menu and type an intent in the input field, or choose from the populated list. You can select more than one intent, which filters the results using any of the selected intents, including *Irrelevant*.
 
@@ -60,12 +62,12 @@ You can filter messages by *Search user statements*, *Intents*, *Entities*, and 
 
 ![Entities drop-down menu](images/entities_filter.png)
 
-Messages may take some time to update. Allow at least 30 minutes after a user's interaction with your application before attempting to filter for that content.
+Messages may take some time to update. Allow at least 30 minutes after a user's interaction with your assistant before attempting to filter for that content.
 
-## Viewing an individual message
+## Viewing individual messages
 {: #logs-see-message}
 
-You can expand each message entry to see what the user said in the whole conversation, and how your application answered. To do this, select **Open conversation**. You are automatically taken to the message you selected within that conversation.
+For any user input entry, click **Open conversation** to see the user input and the response made to it by the assistant within the context of the full conversation.
 
 The time shown at the top of each conversation is localized to reflect the time zone of your browser. This may differ from the timestamp shown if you review the same conversation log via an API call; API log calls are always shown in UTC.
 
@@ -74,6 +76,10 @@ The time shown at the top of each conversation is localized to reflect the time 
 You can then choose to show the classification(s) for the message you selected.
 
 ![Open conversation panel with classifications](images/open_convo_classes.png)
+
+If the spell check feature is enabled for the skill, then any user utterances that were corrected are highlighted by the Auto-correct icon. The term that was corrected is underlined. You can hover over the underlined term to see the user's original input.
+
+![Open conversation panel that shows the original text for a term to which spelling correction logic was applied](images/open_convo_spellchecked.jpg)
 
 ## Improving across assistants
 {: #logs-deploy-id}

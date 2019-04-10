@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-22"
+lastupdated: "2019-04-09"
 
 subcollection: assistant
 
@@ -32,9 +32,7 @@ subcollection: assistant
 
 The following features are available for use by participants in the beta program only. To find out how to request access, see [Participate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
 
-- The user interface of the Dialog builder has been updated to use the React JavaScript library. Dialog functions are now provided in encapsulated components that manage their own state, which results in a more responsive user experience.
-
-- You can configure a skill to correct misspellings in user input. See [Correcting user input](/docs/services/assistant?topic=assistant-dialog-runtime-spell-check) for more details.
+- The user interface of the tool has been updated to use the React JavaScript library. Functions are now provided in encapsulated components that manage their own state, which results in a more responsive user experience.
 
 - Try out the new system entities. The number-based system entities have been revised to be better able to recognize date, time, and number mentions. See [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities) for more information.
 

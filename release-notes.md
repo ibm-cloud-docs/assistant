@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-08"
+lastupdated: "2019-04-09"
 
 subcollection: assistant
 
@@ -51,6 +51,11 @@ Existing models that you have trained will not be immediately impacted, but expi
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
 The following new features and changes to the service are available. Check out our [blog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/assistant/home) to find in-depth information about how the newest features can benefit your business.
+
+## 10 April 2019
+{: #10April2019}
+
+- **Spell check is available ![Beta](images/beta.png)**: Spell check auto-correction is a beta feature that helps your assistant understand what your customers want. It corrects misspellings in the input that customers submit before the input is evaluated. With more precise input, the service can more easily recognize entity mentions and understand the customer's intent. See [Correcting user input](/docs/services/assistant?topic=assistant-dialog-runtime-spell-check) for more details.
 
 ## 22 March 2019
 {: #22March2019}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-04-09"
 
 subcollection: assistant
 
@@ -37,7 +37,7 @@ This 2 1/2 minute video describes how using versions can help you.
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Creating skill versions" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/FDolnBxvcZ8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
-To learn more about how versions can improve the workflow you use to build an assistant, [read this blog post ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/watson-assistant-versions-announcement-d60869b1f5f).
+To learn more about how versions can improve the workflow you use to build an assistant, [read this blog post ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/watson-assistant-versions-announcement-d60869b1f5f){: new_window}.
 
 ## Creating a version
 {: #versions-create}
@@ -54,12 +54,12 @@ To create a dialog skill version, follow these steps:
 
 1.  Click **Save**.
 
-A snapshot is taken of the current skill and saved as a new version. You remain in the development version of the skill. Any changes you make continue to be applied to the development version, not the version you saved. To access the version you saved, go to the **Version History** page.
+A snapshot is taken of the current skill and saved as a new version. You remain in the development version of the skill. Any changes you make continue to be applied to the development version, not the version you saved. To access the version you saved, go to the **Versions** page.
 
 ## Deploying a skill version
 {: #versions-deploy}
 
-1.  From the header of the skill, click the **Version History** tab.
+1.  From the header of the skill, click the **Versions** tab.
 1.  Click the ![Click to view actions](images/kebab-react.png) icon from the version you want to deploy, and then choose **Assign to assistant**.
 
     A list of assistants to which you can link this version is displayed. The list is limited to those assistants that don't have any skills associated with them, or that are associated with a different version of this skill.

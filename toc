@@ -55,7 +55,7 @@ Watson Assistant
         deploy-integration-delete.md
 
     {: .topicgroup}
-    Improving understanding
+    Analytics
         logs-intro.md
         logs-overview.md
         logs.md
@@ -87,8 +87,6 @@ Watson Assistant
     {: .topicgroup}
     Beta features
         beta.md
-        beta-skill-dialog-add.md
-        beta-spell-check.md
         beta-system-entities.md
         beta-dialog-webhooks.md
         beta-deploy-zendesk.md

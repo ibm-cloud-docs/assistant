@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-08"
+lastupdated: "2019-04-09"
 
 subcollection: assistant
 
@@ -56,7 +56,7 @@ Use the {{site.data.keyword.conversationshort}} tool to create intents.
 
 1.  In the {{site.data.keyword.conversationshort}} tool, open your dialog skill. The skill opens to the **Intents** page.
 
-1.  Select **Create new**.
+1.  Select **Create intent**.
 
 1.  In the **Intent name** field, type a name for the intent.
     - The intent name can contain letters (in Unicode), numbers, underscores, hyphens, and periods.
@@ -66,16 +66,16 @@ Use the {{site.data.keyword.conversationshort}} tool to create intents.
         - `#pay_bill`
         - `#escalate_to_agent`
 
-    The tool automatically includes the `#` character in the intent names, so you do not have to add one.
+    The tool automatically includes the `#` character in the intent name, so you do not have to add one.
     {: tip}
 
-    Add a description of the intent in the **Description** field.
+    Optionally add a description of the intent in the **Description** field.
 
 1.  Select **Create intent** to save your intent name.
 
     ![Screen capture showing new intent definition](images/create_intent.png)
 
-1.  Next, in the **Add user examples** field, type the text of a user example for the intent. An example can be any string up to 1024 characters in length. The following might be examples for the `#pay_bill` intent:
+1.  Next, in the **Add user example** field, type the text of a user example for the intent. An example can be any string up to 1024 characters in length. The following might be examples for the `#pay_bill` intent:
     - `I need to pay my bill.`
     - `Pay my account balance`
     - `make a payment`
@@ -86,9 +86,12 @@ Use the {{site.data.keyword.conversationshort}} tool to create intents.
     Intent names and example text can be exposed in URLs when an application interacts with the service. Do not include sensitive or personal information in these artifacts.
     {: important}
 
-1.  Click **Add example** to save the example.
+1.  Click **Add example** to save the user example.
 
-1.  Repeat the same process to add more examples. You can tab between examples. Provide at least 5 examples for each intent. The more examples you provide, the more accurate your application can be.
+1.  Repeat the same process to add more examples.
+
+    Provide at least 5 examples for each intent.
+    {: important}
 
     ![Plus or Premium plan only](images/premium.png) To get help with user example creation, see [Get intent user example recommendations](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations).
 

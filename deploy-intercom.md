@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-25"
+lastupdated: "2019-04-09"
 
 subcollection: assistant
 
@@ -114,7 +114,7 @@ See [Rich responses](/docs/services/assistant?topic=assistant-dialog-overview#di
 
 1.  From the Assistants tab, click to open the assistant tile that you want to deploy.
 
-1.  From the Integrations section, click **Add Integration**.
+1.  From the Integrations section, click **Add integration**.
 
 1.  Click **Intercom**.
 
