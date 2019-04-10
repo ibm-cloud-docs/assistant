@@ -16,10 +16,7 @@
    id="svg4174"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="set-context-username.svg"
-   inkscape:export-filename="S:\PUB\ABD147\ART\WORK\ship1\images\set-context-username.png"
-   inkscape:export-xdpi="125.6"
-   inkscape:export-ydpi="125.6">
+   sodipodi:docname="set-context-username.svg">
   <defs
      id="defs4176" />
   <sodipodi:namedview
@@ -29,14 +26,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.8210101"
-     inkscape:cx="372.04724"
-     inkscape:cy="526.1811"
+     inkscape:zoom="1.4"
+     inkscape:cx="229.83003"
+     inkscape:cy="838.1504"
      inkscape:document-units="px"
      inkscape:current-layer="layer77"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1015"
+     inkscape:window-height="1017"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1" />
@@ -202,7 +199,7 @@
          id="tspan4233"
          x="349.14285"
          y="118.07647">JSON <tspan
-   style="-inkscape-font-specification:'Gulim, Normal';font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12.5px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
+   style="-inkscape-font-specification:Gulim;font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
    id="tspan4168">편집기 추가</tspan>:</tspan><tspan
          sodipodi:role="line"
          x="349.14285"

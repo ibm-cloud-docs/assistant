@@ -17,7 +17,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="node1-children.svg"
-   inkscape:export-filename="S:\PUB\ABD147\ART\WORK\ship1\images\node1-children.png"
+   inkscape:export-filename="V:\PUB\ABD147\ART\WORK\ship1\node1-children.png"
    inkscape:export-xdpi="122.88"
    inkscape:export-ydpi="122.88">
   <defs
@@ -29,14 +29,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="79.558913"
-     inkscape:cy="955.13889"
+     inkscape:zoom="2.2666667"
+     inkscape:cx="297.84664"
+     inkscape:cy="923.99999"
      inkscape:document-units="px"
      inkscape:current-layer="layer17"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1015"
+     inkscape:window-height="1017"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1" />
@@ -116,7 +116,7 @@
          id="tspan3506"
          x="339.28571"
          y="40.647896"><tspan
-   style="-inkscape-font-specification:'Gulim, Normal';font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12.5px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
+   style="-inkscape-font-specification:Gulim;font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
    id="tspan4175">하위 노드</tspan> 1</tspan></text>
   </g>
   <g
@@ -185,7 +185,7 @@
          id="tspan3545"
          x="338.71429"
          y="149.07648"><tspan
-   style="-inkscape-font-specification:'Gulim, Normal';font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12.5px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
+   style="-inkscape-font-specification:Gulim;font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
    id="tspan4177">하위 노드</tspan> 2</tspan></text>
   </g>
   <g
@@ -261,7 +261,7 @@
          id="tspan3489"
          x="111.42857"
          y="39.933609"><tspan
-   style="-inkscape-font-specification:'Gulim, Normal';font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12.5px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
+   style="-inkscape-font-specification:Gulim;font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
    id="tspan4173">노드</tspan> 1</tspan></text>
   </g>
 </svg>

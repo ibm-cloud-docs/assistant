@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-11"
+lastupdated: "2019-04-09"
 
 subcollection: assistant
-
 
 ---
 
@@ -42,7 +41,7 @@ To test the assistant from a web-hosted chat widget, complete the following step
 
 1.  From the *Integrations* section, click the **Preview Link** tile.
 
-    If you did not enable the preview link when you created the assistant, then click **Add integration**, click the **Preview Link** integration tile, and then click **Create**.
+    If you did not enable the preview link when you created the assistant, then click **Add integration**, and then click the **Preview Link** integration tile.
 
 1.  **Optional**: Change the preview web page name and description.
 
@@ -81,7 +80,7 @@ If you accidentally deleted the preview link integration that is created automat
 
 1.  From the Assistant tab, click to open the tile for the assistant that you want to deploy.
 
-1.  Go to the **Integrations** section, and then click **Add Integration**.
+1.  Go to the **Integrations** section, and then click **Add integration**.
 
 1.  Click the **Preview Link** integration tile.
 

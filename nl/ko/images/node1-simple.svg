@@ -16,10 +16,7 @@
    id="svg3379"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="node1-simple.svg"
-   inkscape:export-filename="S:\PUB\ABD147\ART\WORK\ship1\images\node1-simple.png"
-   inkscape:export-xdpi="109.92"
-   inkscape:export-ydpi="109.92">
+   sodipodi:docname="node1-simple.svg">
   <defs
      id="defs3381" />
   <sodipodi:namedview
@@ -30,13 +27,13 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="210.35714"
+     inkscape:cx="267.5"
      inkscape:cy="780.26315"
      inkscape:document-units="px"
      inkscape:current-layer="layer8"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1015"
+     inkscape:window-height="1017"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1" />
@@ -116,7 +113,7 @@
          id="tspan3413"
          x="187.85715"
          y="72.790756"><tspan
-   style="-inkscape-font-specification:'Gulim, Normal';font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:15px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
+   style="-inkscape-font-specification:Gulim;font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
    id="tspan4148">노드</tspan> 1</tspan></text>
   </g>
   <g

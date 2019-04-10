@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-01"
+lastupdated: "2019-04-09"
 
 subcollection: assistant
-
 
 ---
 
@@ -33,9 +32,9 @@ After you configure a dialog skill and add it to an assistant, you can integrate
 
 1.  From the Assistants tab, click to open the assistant tile that you want to deploy.
 
-1.  From the Integrations section, click **Add Integration**.
+1.  From the Integrations section, click **Add integration**.
 
-1.  Click the **Select Integration** button for *Slack*.
+1.  Click **Slack**.
 
 1.  Follow the instructions that are provided on the screen to complete the integration process.
 

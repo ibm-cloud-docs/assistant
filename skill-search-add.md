@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-04-09"
 
 subcollection: assistant
 
@@ -39,7 +39,7 @@ The following 4-minute video provides an overview of the search skill.
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Search skill overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/ZcgGf8J2Cfw?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
-To learn more about how search skill can benefit your business, [read this blog post ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/adding-search-to-watson-assistant-99e4e81839e5).
+To learn more about how search skill can benefit your business, [read this blog post ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/adding-search-to-watson-assistant-99e4e81839e5){: new_window}.
 
 ## How it works
 {: #skill-search-add-how}
@@ -48,7 +48,7 @@ The search skill searches for information from a data collection that you create
 
 {{site.data.keyword.discoveryshort}} is a service that crawls, converts, and normalizes your unstructured data. The service applies data analysis and cognitive intuition to enrich your data such that you can more easily find and retrieve meaningful information from it later. To read more about {{site.data.keyword.discoveryshort}}, see the [product documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-about){: new_window}.
 
- Typically, the type of data collection you will want to add to the {{site.data.keyword.discoveryshort}}  service and access from your assistant contains information that is owned by your company and can be mined to find answers to customer questions, such as FAQs, sales collateral, technical manuals, or papers written by subject matter experts.
+Typically, the type of data collection you will want to add to the {{site.data.keyword.discoveryshort}}  service and access from your assistant contains information that is owned by your company and can be mined to find answers to customer questions, such as FAQs, sales collateral, technical manuals, or papers written by subject matter experts.
 
 The following diagram illustrates how user input is processed when both a dialog skill and a search skill are added to an assistant.
 
@@ -69,7 +69,7 @@ If you create a Discovery instance first, do not add the pre-enriched data sourc
 
 1.  If you have not done so, complete the prerequisite steps in [Creating a skill](/docs/services/assistant?topic=assistant-skill-add).
 
-1.  Click the **Skills** tab, and then click **Create new**.
+1.  Click the **Skills** tab, and then click **Create skill**.
 
     For Premium or Plus plan users only, a page is displayed where you can choose the type of skill you want to create. If you have a Lite or Standard service plan type, you will not see this page.
     {: note}

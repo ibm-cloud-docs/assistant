@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-22"
+lastupdated: "2019-04-09"
 
 subcollection: assistant
 
@@ -64,7 +64,7 @@ To create a skill, complete the following steps:
 
         If you're prompted to log in to the tool, provide your {{site.data.keyword.cloud_notm}} credentials.
 
-1.  Click the **Skills** tab, and then click **Create new**.
+1.  Click the **Skills** tab, and then click **Create skill**.
 
     - ![Plus or Premium plan only](images/premium.png) Only if you are a Plus or Premium plan user, a page is displayed that gives you a choice of the type of skill to create: a dialog skill or a search skill. Select the dialog skill tile, and then click **Next**.
 

@@ -17,10 +17,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    enable-background="new"
-   sodipodi:docname="node-flow-down.svg"
-   inkscape:export-filename="S:\PUB\ABD147\ART\WORK\ship1\images\node-flow-down.png"
-   inkscape:export-xdpi="81.941422"
-   inkscape:export-ydpi="81.941422">
+   sodipodi:docname="node-flow-down.svg">
   <defs
      id="defs3575" />
   <sodipodi:namedview
@@ -31,13 +28,13 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="142.15984"
+     inkscape:cx="222.97204"
      inkscape:cy="824.66584"
      inkscape:document-units="px"
      inkscape:current-layer="layer29"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1015"
+     inkscape:window-height="1017"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1" />
@@ -72,7 +69,7 @@
      inkscape:label="input">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Gulim;-inkscape-font-specification:'Gulim, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="84.852814"
        y="75.422836"
        id="text3601"
@@ -81,7 +78,7 @@
          id="tspan3603"
          x="84.852814"
          y="75.422836"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Gulim;-inkscape-font-specification:'Gulim, Normal';text-align:start;writing-mode:lr;text-anchor:start;">사용자 입력</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Gulim;-inkscape-font-specification:Gulim;text-align:start;writing-mode:lr-tb;text-anchor:start">사용자 입력</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -98,7 +95,7 @@
          id="tspan3608"
          x="223.24371"
          y="51.199486"><tspan
-   style="-inkscape-font-specification:'Gulim, Normal';font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:15px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
+   style="-inkscape-font-specification:Gulim;font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
    id="tspan4164">노드</tspan> 1</tspan></text>
   </g>
   <g
@@ -114,7 +111,7 @@
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3629"><tspan
-   style="-inkscape-font-specification:'Gulim, Normal';font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:15px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
+   style="-inkscape-font-specification:Gulim;font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
    id="tspan4170">노드</tspan> 2</tspan></text>
   </g>
   <g
@@ -130,8 +127,8 @@
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3640"><tspan
-   style="-inkscape-font-specification:'Gulim, Normal';font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:15px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
-   id="tspan4174">노드</tspan> 3</tspan></text>
+   style="-inkscape-font-specification:Gulim;font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
+   id="tspan4176">노드</tspan> 3</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -148,7 +145,7 @@
          id="tspan3645"
          x="235.36554"
          y="88.554825">If: <tspan
-   style="-inkscape-font-specification:'Gulim, Normal';font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:15px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
+   style="-inkscape-font-specification:Gulim;font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
    id="tspan4166">조건</tspan></tspan></text>
   </g>
   <g
@@ -166,7 +163,7 @@
          id="tspan3645-4"
          x="232.32759"
          y="226.37897">If: <tspan
-   style="-inkscape-font-specification:'Gulim, Normal';font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:15px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
+   style="-inkscape-font-specification:Gulim;font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
    id="tspan4172">조건</tspan></tspan></text>
   </g>
   <g
@@ -184,8 +181,8 @@
          id="tspan3645-6"
          x="229.25653"
          y="360.72925">If: <tspan
-   style="-inkscape-font-specification:'Gulim, Normal';font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:15px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
-   id="tspan4176">조건</tspan></tspan></text>
+   style="-inkscape-font-specification:Gulim;font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
+   id="tspan4178">조건</tspan></tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -202,7 +199,7 @@
          id="tspan3678"
          x="246.53815"
          y="118.94062">Then: <tspan
-   style="-inkscape-font-specification:'Gulim, Normal';font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:15px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
+   style="-inkscape-font-specification:Gulim;font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
    id="tspan4168">응답</tspan></tspan></text>
   </g>
   <g
@@ -211,7 +208,7 @@
      inkscape:label="node2-response">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Gulim;-inkscape-font-specification:'Gulim, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="245.92758"
        y="257.02875"
        id="text3676-0"
@@ -219,7 +216,9 @@
          sodipodi:role="line"
          id="tspan3678-2"
          x="245.92758"
-         y="257.02875">Then: 응답</tspan></text>
+         y="257.02875">Then: <tspan
+   style="-inkscape-font-specification:Gulim;font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
+   id="tspan4174">응답</tspan></tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -237,7 +236,7 @@
          id="tspan3678-5"
          x="246.15601"
          y="391.84094">Then: <tspan
-   style="-inkscape-font-specification:'Gulim, Normal';font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:15px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
-   id="tspan4178">응답</tspan></tspan></text>
+   style="-inkscape-font-specification:Gulim;font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
+   id="tspan4180">응답</tspan></tspan></text>
   </g>
 </svg>

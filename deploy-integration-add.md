@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-04-09"
 
 subcollection: assistant
 
@@ -28,8 +28,6 @@ subcollection: assistant
 To deploy your skill, add it to an assistant, and then add integrations to the assistant that publish your bot to the channels where your customers go for help.
 {: shortdesc}
 
-To learn more about how service desk integrations with your assistant can benefit your business, [read this blog post ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/contact-center-post-394dff427c8).
-
 ## Add an integration
 {: #deploy-integration-add-task}
 
@@ -41,9 +39,9 @@ Follow these steps to add integrations to your assistant:
 
 1.  Go to the Integrations section.
 
-    **What is the Preview Link integration?** When you create an assistant, a test web site is provisioned for you automatically (unless you disable it). It has a simple chat widget interface that you can use to interact with your assistant for testing purposes. You can also share the URL to this IBM-branded site with your teammembers.
+    **What is the Preview Link integration?** When you create an assistant, a test web site is provisioned for you automatically (unless you choose not to enable the preview link). It has a simple chat widget interface that you can use to interact with your assistant for testing purposes. You can also share the URL to this IBM-branded site with your teammembers.
 
-1.  Click **Add Integration**.
+1.  Click **Add integration**.
 
 1.  Click the tile for the channel with which you want to integrate the assistant. The options include:
 
@@ -64,6 +62,8 @@ Follow these steps to add integrations to your assistant:
 After you integrate the assistant, test it from the target channel to ensure that the assistant works as expected.
 
 For tips on how to start the dialog in a consistent way across all integration types, see [Starting the dialog](/docs/services/assistant?topic=assistant-dialog-start).
+
+To learn about how service desk integrations with your assistant can benefit your business, [read this blog post ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/contact-center-post-394dff427c8){: new_window}.
 
 ## Integration limits
 {: #deploy-integration-add-limits}

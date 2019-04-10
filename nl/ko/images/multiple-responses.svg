@@ -16,10 +16,7 @@
    id="svg4039"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="multiple-responses.svg"
-   inkscape:export-filename="S:\PUB\ABD147\ART\WORK\ship1\images\multiple-responses.png"
-   inkscape:export-xdpi="161.12"
-   inkscape:export-ydpi="161.12">
+   sodipodi:docname="multiple-responses.svg">
   <defs
      id="defs4041" />
   <sodipodi:namedview
@@ -29,14 +26,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="142.15984"
-     inkscape:cy="814.79857"
+     inkscape:zoom="2.2666667"
+     inkscape:cx="334.54832"
+     inkscape:cy="879.42859"
      inkscape:document-units="px"
      inkscape:current-layer="layer60"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1015"
+     inkscape:window-height="1017"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1" />
@@ -80,7 +77,7 @@
          id="tspan4068"
          x="176.83762"
          y="78.473602"><tspan
-   style="-inkscape-font-specification:'Gulim, Normal';font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:15px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
+   style="-inkscape-font-specification:Gulim;font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
    id="tspan4160">조건</tspan>: #store_locations</tspan></text>
   </g>
   <g
@@ -98,7 +95,7 @@
          id="tspan4073"
          x="176.7767"
          y="102.75787"><tspan
-   style="-inkscape-font-specification:'Gulim, Normal';font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:15px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
+   style="-inkscape-font-specification:Gulim;font-family:Gulim;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
    id="tspan4162">응답</tspan>:</tspan></text>
   </g>
   <g

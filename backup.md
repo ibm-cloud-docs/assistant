@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-09"
 
 subcollection: assistant
 
@@ -74,7 +74,9 @@ If the {{site.data.keyword.conversationshort}} service changes between the time 
 
 1.  Click the **Skills** tab.
 
-1.  Click **Create new**.
+1.  Click **Create skill**.
+
+1.  If you are given the option of more than one skill type, choose to create a dialog skill.
 
 1.  Click **Import skill**, and then click **Choose JSON File**, and select the JSON file you want to import.
 
@@ -96,7 +98,7 @@ If the {{site.data.keyword.conversationshort}} service changes between the time 
     - **Description**: An optional description no more than 200 characters in length.
     - **Language**: The language of the user input the skill will be trained to understand. The default value is English.
 
-After you create the skill, it appears as a tile on the Skills page.
+After you create the dialog skill, it appears as a tile on the Skills page.
 
 ## Re-creating your assistant
 {: #backup-recreate-assistant}

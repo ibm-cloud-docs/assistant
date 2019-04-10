@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-22"
+lastupdated: "2019-04-09"
 
 subcollection: assistant
 
@@ -41,7 +41,7 @@ Follow these steps to create an assistant:
       A sample skill is provided with the sample assistant and is added to your list of skills. If you created a sample skill of the same type already, then the existing skill is associated with this new sample assistant automatically.
       {: note}
 
-    - To create an assistant from scratch, click **Create new**, and then complete the remaining steps in this procedure.
+    - To create an assistant from scratch, click **Create assistant**, and then complete the remaining steps in this procedure.
 
 1.  Specify the details for the new assistant:
     - **Name**: A name no more than 100 characters in length. A name is required.
@@ -49,7 +49,7 @@ Follow these steps to create an assistant:
 
     An IBM-branded public web page is created for you automatically that you and your team can use to test your assistant. If you do not want the preview web page to be created, deselect the **Enable Preview Link** checkbox.
 
-1.  Click **Create**.
+1.  Click **Create assistant**.
 
 1.  Add a skill to the assistant by choosing one of the following skill types to add.
 
@@ -57,7 +57,7 @@ Follow these steps to create an assistant:
 
     - **Add Dialog Skill**: Uses Watson natural language processing and machine learning technologies to understand user questions and requests, and respond to them with answers that are authored by you.
 
-      When you add a dialog skill from here, you get the development version. If you want to add a specific dialog skill version, add it from the skill's *Version History* tab instead.
+      When you add a dialog skill from here, you get the development version. If you want to add a specific dialog skill version, add it from the skill's *Versions* page instead.
 
     - **Add Search Skill** ![Plus or Premium plan only](images/premium.png): For a given user query, uses the {{site.data.keyword.discoveryfull}} service to retrieve information from a data source that you identify and shares any relevant information that it finds as the response to the user.
 
@@ -125,4 +125,4 @@ You can add one skill of each skill type to an assistant. If you want to change 
 ### Switching between service instances
 {: #assistant-add-switch-instance}
 
-If you have more than one service instance, you can check the page header to find out which instance you are currently using. If you are working in a skill, click the **Skills** breadcrumb link first. The banner displays the current instance name. To switch to a different service instance, click **change**, and then choose the appropriate instance.
+If you have more than one service instance, you can check the page header to find out which instance you are currently using. If you are working in a skill, click the **Skills** breadcrumb link first. The banner displays the current instance name. To switch to a different service instance, click **Change**, and then choose the appropriate instance.

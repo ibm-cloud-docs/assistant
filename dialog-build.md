@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-04-09"
 
 subcollection: assistant
-
 
 ---
 
@@ -35,7 +34,7 @@ Use the {{site.data.keyword.conversationshort}} tool to create your dialog.
 
 To create a dialog, complete the following steps:
 
-1.  Click the **Dialog** tab, and then click **Create**.
+1.  Click the **Dialog** tab, and then click **Create dialog**.
 
     When you open the dialog editor for the first time, the following nodes are created for you:
 
