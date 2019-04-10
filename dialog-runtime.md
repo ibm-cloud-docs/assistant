@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-04-09"
+lastupdated: "2018-04-10"
 
 subcollection: assistant
 
@@ -858,28 +858,28 @@ Follow the [tutorial](/docs/services/assistant?topic=assistant-tutorial-digressi
 ## Correcting user input ![Beta](images/beta.png)
 {: #dialog-runtime-spell-check}
 
-Enable the *spell check* beta feature to fix misspellings that users make in the utterances that they submit as user input. When spell check is enabled, the misspelled words are automatically corrected. And it is the corrected words that are used to evaluate the input. When given more precise input, the service can more often recognize entity mentions and understand the user's intent.
+Enable the *Autocorrection* beta feature to fix misspellings that users make in the utterances that they submit as user input. When autocorrection is enabled, the misspelled words are automatically corrected. And it is the corrected words that are used to evaluate the input. When given more precise input, the service can more often recognize entity mentions and understand the user's intent.
 
 Currently, this setting can be enabled for English-language dialog skills only.
 {: note}
 
-With spell check enabled, user input is corrected in the following way:
+With Autocorrection enabled, user input is corrected in the following way:
 
 - Orignal input: `letme applt for a memberdhip`
 - Corrected input: `let me apply for a membership`
 
 When the service evaluates whether to correct the spelling of a word, it does not rely on a simple dictionary lookup process. Instead, it uses a combination of Natural Language Processing and probabalistic models to assess whether a term is, in fact, misspelled and should be corrected.
 
-### Enabling spell check
+### Enabling autocorrection
 {: #dialog-runtime-spell-check-enable}
 
-To enable the spell check feature, complete the following steps:
+To enable the autocorrection feature, complete the following steps:
 
 1.  From the Skills page, open your skill.
 1.  Click the **Options** tab.
-1.  From the *Spell Check* page, turn on **Spell check auto-correction**.
+1.  Turn on **Autocorrection**.
 
-### Testing spelling correction
+### Testing autocorrection
 {: #dialog-runtime-spell-check-test}
 
 1.  From the "Try it out" pane, submit an utterance that includes some misspelled words.
@@ -905,14 +905,14 @@ To avoid overcorrection, the service does not correct the spelling of the follow
 
 If the word that is not corrected is not obviously one of these types of input, then it might be worth checking whether the entity has fuzzy matching enabled for it.
 
-#### How is spelling correction related to fuzzy matching?
+#### How is spelling autocorrection related to fuzzy matching?
 {: #dialog-runtime-spell-check-vs-fuzzy-matching}
 
 Fuzzy matching helps the service recognize dictionary-based entity mentions in user input. It uses a dictionary lookup approach to match a word from the user input to an existing entity value or synonym in the skill's training data. For example, if the user enters `books`, and your training data contains the entity synonym `book`, fuzzy matching recognizes that these two terms mean the same thing.
 
-When you enable both spell check and fuzzy matching, the fuzzy matching function runs before spell check is triggered. If it finds a term that it can match to an existing dictionary entity value or synonym, it adds the term to the list of words that *belong* to the skill, and therefore are not to be corrected. Likewise, if a user enters a sentence like `I want to buy a boook`, fuzzy matching recognizes that the term `boook` means the same thing as your entity synonym `book`, and adds it to the protected words list. As a result, the service does *not* correct the spelling of `boook`.
+When you enable both autocorrection and fuzzy matching, the fuzzy matching function runs before autocorrection is triggered. If it finds a term that it can match to an existing dictionary entity value or synonym, it adds the term to the list of words that *belong* to the skill, and therefore are not to be corrected. Likewise, if a user enters a sentence like `I want to buy a boook`, fuzzy matching recognizes that the term `boook` means the same thing as your entity synonym `book`, and adds it to the protected words list. As a result, the service does *not* correct the spelling of `boook`.
 
-#### How spelling correction works
+#### How autocorrection works
 {: #dialog-runtime-spell-check-how-it-works}
 
 Normally, user input is saved as-is in the `text` field of the `input` object of the message. If, and only if the user input is corrected in some way, a new field is created in the `input` object, called `original_text`. This field stores the user's original input that includes any misspelled words in it. And the corrected text is added to the `input.text` field.

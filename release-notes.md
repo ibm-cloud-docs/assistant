@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-09"
+lastupdated: "2019-04-10"
 
 subcollection: assistant
 
@@ -55,7 +55,7 @@ The following new features and changes to the service are available. Check out o
 ## 10 April 2019
 {: #10April2019}
 
-- **Autocorrection is now available ![Beta](images/beta.png)**: Spell check autocorrection is a beta feature that helps your assistant understand what your customers want. It corrects misspellings in the input that customers submit before the input is evaluated. With more precise input, the service can more easily recognize entity mentions and understand the customer's intent. See [Correcting user input](/docs/services/assistant?topic=assistant-dialog-runtime-spell-check) for more details.
+- **Autocorrection is now available ![Beta](images/beta.png)**: Autocorrection is a beta feature that helps your assistant understand what your customers want. It corrects misspellings in the input that customers submit before the input is evaluated. With more precise input, the service can more easily recognize entity mentions and understand the customer's intent. See [Correcting user input](/docs/services/assistant?topic=assistant-dialog-runtime-spell-check) for more details.
 
 ## 22 March 2019
 {: #22March2019}
