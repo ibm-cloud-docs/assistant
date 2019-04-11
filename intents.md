@@ -204,15 +204,15 @@ As intent confidence scores change, your dialogs might need restructuring. For e
 ## Intent limits
 {: #intents-limits}
 
-The number of intents and examples you can create depends on your {{site.data.keyword.conversationshort}} service plan:
+The number of intents and examples you can create depends on your {{site.data.keyword.conversationshort}} plan type:
 
-| Service plan     | Intents per skill | Examples per skill |
+| Plan     | Intents per skill | Examples per skill |
 |------------------|------------------:|-------------------:|
 | Premium          |             2,000 |             25,000 |
 | Plus             |             2,000 |             25,000 |
 | Standard         |             2,000 |             25,000 |
 | Lite             |               100 |             25,000 |
-{: caption="Service plan details" caption-side="top"}
+{: caption="Plan details" caption-side="top"}
 
 ## Editing intents
 {: #intents-edit}

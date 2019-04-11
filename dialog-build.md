@@ -166,15 +166,15 @@ If you are ready to put the conversation to work helping your users, integrate y
 ## Dialog node limits
 {: #dialog-build-node-limits}
 
-The number of dialog nodes you can create per skill depends on your service plan.
+The number of dialog nodes you can create per skill depends on your plan type.
 
-| Service plan     | Dialog nodes per skill     |
+| Plan     | Dialog nodes per skill     |
 |------------------|---------------------------:|
 | Premium          |                    100,000 |
 | Plus             |                    100,000 |
 | Standard         |                    100,000 |
 | Lite             |                     100`*` |
-{: caption="Service plan details" caption-side="top"}
+{: caption="Plan details" caption-side="top"}
 
 The welcome and anything_else dialog nodes that are prepopulated in the tree do count toward the total.
 

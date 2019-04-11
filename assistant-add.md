@@ -61,9 +61,9 @@ Follow these steps to create an assistant:
 ## Assistant limits
 {: #assistant-add-limits}
 
-The number of assistants you can create depends on your {{site.data.keyword.conversationshort}} plan.
+The number of assistants you can create depends on your {{site.data.keyword.conversationshort}} plan type.
 
-| Service plan | Assistants per service instance |
+| Plan | Assistants per service instance |
 |--------------|--------------------------------:|
 | Premium      |                             100 |
 | Plus         |                             100 |
