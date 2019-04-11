@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-09"
+lastupdated: "2019-04-11"
 
 subcollection: assistant
 
@@ -201,7 +201,7 @@ Add the dialog skill that you built to the assistant you created.
 ## Step 7: Integrate the assistant
 {: #getting-started-integrate-assistant}
 
-Now that you have an assistant that can participate in a simple conversational exchange, test it. The service provides a built-in integration that is called a Preview Link. When you create an assistant, this type of integration is created for you automatically. The Preview Link integration builds your assistant into a chat widget that is hosted by an IBM-branded web page. You can open the web page and chat with your assistant to test it out.
+Now that you have an assistant that can participate in a simple conversational exchange, test it. The product provides a built-in integration that is called a Preview Link. When you create an assistant, this type of integration is created for you automatically. The Preview Link integration builds your assistant into a chat widget that is hosted by an IBM-branded web page. You can open the web page and chat with your assistant to test it out.
 
 1.  Click the **Assistants** tab, find the `Watson Assistant tutorial` assistant that you created, and open it.
 1.  From the *Integrations* area, click to open the **Preview Link** integration.

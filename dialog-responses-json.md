@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-11"
 
 subcollection: assistant
-
 
 ---
 
@@ -167,7 +166,7 @@ Displays a set of buttons or a drop-down list users can use to choose an option.
 | options[].label | string | The user-facing label for the option. | Y     |
 | options[].value | object | An object defining the response that will be sent to the {{site.data.keyword.conversationshort}} service if the user selects the option. | Y |
 | options[].value.input | object | An input object that includes the input text corresponding to the option. | N |
-| options[].value.input.text | string | The text that will be sent to the service for the option. | N |
+| options[].value.input.text | string | The text that will be sent to your assistant for the option. | N |
 
 #### Example
 {: #dialog-responses-json-option-example}

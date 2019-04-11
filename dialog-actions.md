@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-04-11"
 
 subcollection: assistant
 
@@ -171,7 +171,7 @@ To make a programmatic call from a dialog node, complete the following steps:
 
       If multiple actions in a single JSON action array add the result of their programmatic call to the same context variable, then the order in which the context is updated matters:
 
-      1.  If you have a combination of server (cloud_function or web_action) and client actions in the array, the service processes the server type (cloud_function or web_action) actions first. As a result, the value that is calculated for the context variable by the last client type action in the array overwrites the value calculated for it by any server type actions.
+      1.  If you have a combination of server (cloud_function or web_action) and client actions in the array, your assistant processes the server type (cloud_function or web_action) actions first. As a result, the value that is calculated for the context variable by the last client type action in the array overwrites the value calculated for it by any server type actions.
 
       1.  Per action type, the order in which the actions are defined in the array determines the order in which the context variable's value is set. The context variable value returned by the last action in the array overwrites the values calculated by any other actions.
 
@@ -269,7 +269,7 @@ You can condition the dialog node response to first check for errors. For exampl
 ```
 {: codeblock}
 
-For a client type programmatic call, you can pass information about error processing by defining a context variable, such as `action_error`. You can pass it back to the service as part of the result variable. Then, you can display a response only if no errors were encountered by defining a response condition like this:
+For a client type programmatic call, you can pass information about error processing by defining a context variable, such as `action_error`. You can pass it back to your assistant as part of the result variable. Then, you can display a response only if no errors were encountered by defining a response condition like this:
 
 ```bash
   $forecast_result.action_error == null
@@ -298,7 +298,7 @@ The following example shows what a call to an external weather service might loo
 ```
 {: codeblock}
 
-Normally, the service only returns to the client from a POST /message request when new user input is required, such as after executing a parent and before executing one of its child nodes. However, if you add a client action to a node, then after evaluation, the service always returns to the client so that the result of the action call can be returned. To prevent waiting for user input when it should not, such as for a node that is configured to jump directly to a child node, the service adds the following value to the message context:
+Normally, your assistant only returns to the client from a POST /message request when new user input is required, such as after executing a parent and before executing one of its child nodes. However, if you add a client action to a node, then after evaluation, your assistant always returns to the client so that the result of the action call can be returned. To prevent waiting for user input when it should not, such as for a node that is configured to jump directly to a child node, your assistant adds the following value to the message context:
 
 ```json
   {
@@ -311,7 +311,7 @@ Normally, the service only returns to the client from a POST /message request wh
 
 If you want the client to perform an action, but not get user input, then you can follow the same convention, and add the `skip_user_input` context variable to the parent node to communicate that to the client application.
 
-Your client application should always check for the `skip_user_input` variable on context. If present, then it knows not to request new input from the user, but instead execute the action, add its result into the message, and pass it back to the service. The new POST message request should include the message returned by the previous POST message response (namely, the context, input, intents, entities, and optionally the output section) and, instead of the JSON object that defines the programmatic call to make, it should include the result that was returned from the programmatic call.
+Your client application should always check for the `skip_user_input` variable on context. If present, then it knows not to request new input from the user, but instead execute the action, add its result into the message, and pass it back to your assistant. The new POST message request should include the message returned by the previous POST message response (namely, the context, input, intents, entities, and optionally the output section) and, instead of the JSON object that defines the programmatic call to make, it should include the result that was returned from the programmatic call.
 
 In a child node that you jump to after this node, add the response to show the user:
 
@@ -403,7 +403,7 @@ To see a dialog skill with a dialog that is already set up to call the {{site.da
 
 1.  Test the dialog by entering some input.
 
-    The service will use the {{site.data.keyword.openwhisk_short}} Echo action to repeat whatever you enter back to you.
+    Your assistant will use the {{site.data.keyword.openwhisk_short}} Echo action to repeat whatever you enter back to you.
 
 ## IBM Cloud Functions web action call example
 {: #dialog-actions-web-action-example}

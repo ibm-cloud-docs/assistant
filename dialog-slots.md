@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-05"
+lastupdated: "2019-04-11"
 
 subcollection: assistant
-
 
 ---
 
@@ -27,7 +26,7 @@ subcollection: assistant
 # Gathering information with slots
 {: #dialog-slots}
 
-Add slots to a dialog node to gather multiple pieces of information from a user within that node. Slots collect information at the users' pace. Details the user provides upfront are saved, and the service asks only for the details they do not.
+Add slots to a dialog node to gather multiple pieces of information from a user within that node. Slots collect information at the users' pace. Details the user provides upfront are saved, and your assistant asks only for the details they do not.
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Adding slots to a node" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/kMLyKfmO9wI?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
@@ -42,15 +41,15 @@ Slots can help you to collect multiple pieces of information that you need to co
 
 ![Shows four slots that prompt for the information needed to make a dinner reservation.](images/reservation.png)
 
-The user might provide values for mutliple slots at once. For example, the input might include the information, `There will be 6 of us dining at 7 PM.` This one input contains two of the missing required values: the number of guests and time of the reservation. The service recognizes and stores both of them, each one in its corresponding slot. It then displays the prompt that is associated with the next empty slot.
+The user might provide values for mutliple slots at once. For example, the input might include the information, `There will be 6 of us dining at 7 PM.` This one input contains two of the missing required values: the number of guests and time of the reservation. Your assistant recognizes and stores both of them, each one in its corresponding slot. It then displays the prompt that is associated with the next empty slot.
 
 ![Shows that two slots are filled, and the service prompts for the remaining one.](images/pass-in-info.png)
 
-Slots make it possible for the service to answer follow-up questions without having to re-establish the user's goal. For example, a user might ask for a weather forecast, then ask a follow-up question about weather in another location or on a different day. If you save the required forecast variables, such as location and day, in slots, then if a user asks a follow-up question with new variable values, you can overwrite the slot values with the new values provided, and give a response that reflects the new information. (For more information about how to call an external service from a dialog, see [Making programmatic calls from a dialog node](/docs/services/assistant?topic=assistant-dialog-actions)).
+Slots make it possible for your assistant to answer follow-up questions without having to re-establish the user's goal. For example, a user might ask for a weather forecast, then ask a follow-up question about weather in another location or on a different day. If you save the required forecast variables, such as location and day, in slots, then if a user asks a follow-up question with new variable values, you can overwrite the slot values with the new values provided, and give a response that reflects the new information. (For more information about how to call an external service from a dialog, see [Making programmatic calls from a dialog node](/docs/services/assistant?topic=assistant-dialog-actions)).
 
 ![Shows someone asking for a weather forecast, and then following up with a question about weather for a different location and time.](images/follow-up.png)
 
-Using slots produces a more natural dialog flow between the user and the service, and is easier for you to manage than trying to collect the information by using many separate nodes.
+Using slots produces a more natural dialog flow between the user and your assistant, and is easier for you to manage than trying to collect the information by using many separate nodes.
 
 ## Adding slots
 {: #dialog-slots-add}
@@ -86,7 +85,7 @@ Using slots produces a more natural dialog flow between the user and the service
 
        Do not reuse a context variable that is used elsewhere in the dialog. If the context variable has a value already, then the slot's prompt is not displayed. It is only when the context variable for the slot is null that the prompt for the slot is displayed.
 
-    - **Prompt**: Write a statement that elicits the piece of the information you need from the user. After displaying this prompt, the conversation pauses and the service waits for the user to respond.
+    - **Prompt**: Write a statement that elicits the piece of the information you need from the user. After displaying this prompt, the conversation pauses and your assistant waits for the user to respond.
 
     - If you want different follow-up statements to be shown based on whether the user provides the information you need in response to the initial slot prompt, you can edit the slot (by clicking the **Edit slot** ![Edit slot](images/edit-slot.png) icon) and define the follow-up statements:
 
@@ -125,7 +124,7 @@ Using slots produces a more natural dialog flow between the user and the service
 
 1.  **Make a slot optional or disable it under certain conditions**. You can optionally configure a slot in these ways:
 
-    - **Optional**: To make a slot optional, add a slot without a prompt. The service does not ask the user for the information, but it does look for the information in the user input, and saves the value if the user provides it. For example, you might add a slot that captures dietary restriction informations in case the user specifies any. However, you don't want to ask all users for dietary information since it is irrelevant in most cases.
+    - **Optional**: To make a slot optional, add a slot without a prompt. Your assistant does not ask the user for the information, but it does look for the information in the user input, and saves the value if the user provides it. For example, you might add a slot that captures dietary restriction informations in case the user specifies any. However, you don't want to ask all users for dietary information since it is irrelevant in most cases.
 
        <table>
        <caption>Optional slot</caption>
@@ -160,7 +159,7 @@ Using slots produces a more natural dialog flow between the user and the service
 1.  **Add a node-level response**. The node-level response is not executed until after all of the required slots are filled. You can add a response that summarizes the information you collected. For example, `A $size pizza is scheduled for delivery at $time. Enjoy!`
 
     If you want to define different responses based on certain conditions, click **Customize**, and then click the **Multiple responses** toggle to turn it **On**. For information about conditional responses, see [Conditional responses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multiple).
-1.  **Add logic that resets the slot context variables**. As you collect answers from the user per slot, they are saved in context variables. You can use the context variables to pass the information to another node or to an application or external service for use. However, after passing the information, you must set the context variables to null to reset the node so it can start collecting information again. You cannot null the context variables within the current node because the service will not exit the node until the required slots are filled. Instead, consider using one of the following methods:
+1.  **Add logic that resets the slot context variables**. As you collect answers from the user per slot, they are saved in context variables. You can use the context variables to pass the information to another node or to an application or external service for use. However, after passing the information, you must set the context variables to null to reset the node so it can start collecting information again. You cannot null the context variables within the current node because your assistant will not exit the node until the required slots are filled. Instead, consider using one of the following methods:
 
     - Add processing to the external application that nulls the variables.
     - Add a child node that nulls the variables.
@@ -203,7 +202,7 @@ Include an initial prompt for the whole node that clearly tells users which unit
 
 For example, when the node is triggered because a customer wants to order a pizza, you can respond with the preliminary prompt, `I can take your pizza order. Tell me what size pizza you want and the time that you want it delivered.`
 
-If the user provides even one piece of this information in their initial request, then the prompt is not displayed. For example, the initial input might be, `I want to order a large pizza.` When the service analyzes the input, it recognizes `large` as the pizza size and fills the **Size** slot with the value provided. Because one of the slots is filled, it skips displaying the initial prompt to avoid asking for the pizza size information again. Instead, it displays the prompts for any remaining slots with missing information.
+If the user provides even one piece of this information in their initial request, then the prompt is not displayed. For example, the initial input might be, `I want to order a large pizza.` When your assistant analyzes the input, it recognizes `large` as the pizza size and fills the **Size** slot with the value provided. Because one of the slots is filled, it skips displaying the initial prompt to avoid asking for the pizza size information again. Instead, it displays the prompts for any remaining slots with missing information.
 
 From the Customize pane where you enabled the Slots feature, select the **Prompt for everything** checkbox to enable the intial prompt. This setting adds the **If no slots are pre-filled, ask this first** field to the node, where you can specify the text that prompts the user for everything.
 
@@ -255,7 +254,7 @@ See [Expression language methods](/docs/services/assistant?topic=assistant-dialo
 ### Dealing with zeros
 {: #dialog-slots-zero}
 
-Using `@sys-number` in a slot condition is helpful for capturing any numbers that users specify in their input. However, it does not behave as expected when users specify the number zero (0). Instead of treating zero as a valid number, the condition is evaluated to false, and the service prompts the user for a number again. To prevent this behavior, check for `@sys-number` or `@sys-number:0` in the slot condition.
+Using `@sys-number` in a slot condition is helpful for capturing any numbers that users specify in their input. However, it does not behave as expected when users specify the number zero (0). Instead of treating zero as a valid number, the condition is evaluated to false, and your assistant prompts the user for a number again. To prevent this behavior, check for `@sys-number` or `@sys-number:0` in the slot condition.
 
 To ensure that a slot condition that checks for number mentions deals with zeros properly, complete the following steps:
 
@@ -388,9 +387,9 @@ When a user input is evaluated, the slot with the first slot condition to match 
 
 - **Problem**: A term is recognized as more than one system entity type.
 
-    For example, if the user enters *May 2*, then the service recognizes both the `@sys-date` (2017-05-02) and `@sys-number` (2) entities.
+    For example, if the user enters *May 2*, then your assistant recognizes both the `@sys-date` (2017-05-02) and `@sys-number` (2) entities.
 
-    **Solution**: In logic that is unique to the slots feature, when two system entities are recognized in a single user input, the one with the larger span is used. Therefore, even though the service recognizes both system entities in the text, only the system entity with the longer span (`@sys-date` with `2017-05-02`) is registered and applied to the slot.
+    **Solution**: In logic that is unique to the slots feature, when two system entities are recognized in a single user input, the one with the larger span is used. Therefore, even though your assistant recognizes both system entities in the text, only the system entity with the longer span (`@sys-date` with `2017-05-02`) is registered and applied to the slot.
 
 ### Adding conditions to Found and Not found responses
 {: #dialog-slots-handler-next-steps}
@@ -409,25 +408,25 @@ For each slot, you can use conditional responses with associated actions to help
 
     For Found responses (that are displayed when the user provides a value that matches the value type specified in the Check for field), you can choose one of these actions to perform next:
 
-      - **Move on (Default)**: Instructs the service to move on to the next empty slot after displaying the response. In the associated response, assure the user that their input was understood. For example, *Ok. You want to schedule it for $date.*
+      - **Move on (Default)**: Instructs your assistant to move on to the next empty slot after displaying the response. In the associated response, assure the user that their input was understood. For example, *Ok. You want to schedule it for $date.*
       - **Clear slot and prompt again**: If you are using an entity in the *Check for* field that could pick up the wrong value, add conditions that catch any likely misinterpretations, and use this action to clear the current slot value and prompt for the correct value.
       - **Skip to response**: If, when the condition you define is met, you no longer need to fill any of the remaining slots in this node, choose this action to skip the remaining slots and go directly to the node-level response next. For example, you could add a condition that checks whether the user's age is under 16. If so, you might skip the remaining slots which ask questions about the user's driving record.
 
     For Not found responses (that are displayed when the user does not provide a valid value), you can choose one of these actions to perform:
 
-      - **Wait for user input (Default)**: Pauses the conversation and the service waits for the user to respond. In the simplest case, the text you specify here can more explicitly state the type of information you need the user to provide. If you use this action with a conditional response, be sure to word the conditional response such that you clearly state what was wrong with the user's answer and what you expect them to provide instead.
-      - **Prompt again**: After displaying the Not found response, the service repeats the slot prompt again and waits for the user to respond. If you use this action with a conditional response, the response can merely explain what was wrong about the answer the user provided. It does not need to reiterate the type of information you want the user to provide because the slot prompt typically explains that.
+      - **Wait for user input (Default)**: Pauses the conversation and your assistant waits for the user to respond. In the simplest case, the text you specify here can more explicitly state the type of information you need the user to provide. If you use this action with a conditional response, be sure to word the conditional response such that you clearly state what was wrong with the user's answer and what you expect them to provide instead.
+      - **Prompt again**: After displaying the Not found response, your assistant repeats the slot prompt again and waits for the user to respond. If you use this action with a conditional response, the response can merely explain what was wrong about the answer the user provided. It does not need to reiterate the type of information you want the user to provide because the slot prompt typically explains that.
 
         If you choose this option, consider adding at least one variation of the Not found response so that the user does not see the exact same text more than once. Take the opportunity to use different wording to explain to the user what information you need them to provide and in what format.
         {: tip}
 
-      - **Skip this slot**: Instructs the service to stop trying to fill the current slot, and instead, move on to the prompt for the next empty slot. This option is useful in a slot where you want to both make the slot optional and to display a prompt that asks the user for information. For example, you might have a @seating entity that captures restaurant seating preferences, such as *outside*, *near the fireplace*, *private*, and so on. You can add a slot that prompts the user with, *Do you have any seating preferences?* and checks for `@seating.values`. If a valid response is provided, it saves the preference information to `$seating_preferences`. However, by choosing this action as the Not found response next step, you instruct the service to stop trying to fill this slot if the user does not provide a valid value for it.
+      - **Skip this slot**: Instructs your assistant to stop trying to fill the current slot, and instead, move on to the prompt for the next empty slot. This option is useful in a slot where you want to both make the slot optional and to display a prompt that asks the user for information. For example, you might have a @seating entity that captures restaurant seating preferences, such as *outside*, *near the fireplace*, *private*, and so on. You can add a slot that prompts the user with, *Do you have any seating preferences?* and checks for `@seating.values`. If a valid response is provided, it saves the preference information to `$seating_preferences`. However, by choosing this action as the Not found response next step, you instruct your assistant to stop trying to fill this slot if the user does not provide a valid value for it.
       - **Skip to response**: If, when the condition you define is met, you no longer need to fill any of the remaining slots in this node, choose this action to skip the remaining slots and go directly to the node-level response next. For example, if after capturing the one-way flight information, the slot prompt is, *Are you buying round trip tickets?* the Not found condition can check for #No. If #No is found, use this option to skip the remaining slots that capture information about the return flight, and go straight to the node-level response instead.
 
     Click **Back** to return to the edit view of the slot.
 1.  To add another conditional response, click **Add a response**, and then enter the condition and the response to display if the condition is met.
 
-    Be sure to add at least one response that will be displayed no matter what. You can leave the condition field blank for this catch all response. The service automatically populates the empty condition field with the `true` special condition.
+    Be sure to add at least one response that will be displayed no matter what. You can leave the condition field blank for this catch all response. Your assistant automatically populates the empty condition field with the `true` special condition.
 
 1.  Click **Save** to save your changes, close the edit view of the slot, and return to the edit view of the node.
 
@@ -436,7 +435,7 @@ For each slot, you can use conditional responses with associated actions to help
 
 You can provide users with a way to exit a slot if they cannot answer it correctly after several attempts by using Not found conditional responses. In the catchall response, open the JSON editor to add a counter context variable that will keep track of the number of times the Not found response is returned. In an earlier node, be sure to set the initial counter context variable value to 0.
 
-In this example, the service asks for the pizza size. It lets the user answer the question incorrectly 3 times before applying a size (medium) to the variable for the user. (You can include a confirmation slot where users can always correct the size when they are asked to confirm the order information.)
+In this example, your assistant asks for the pizza size. It lets the user answer the question incorrectly 3 times before applying a size (medium) to the variable for the user. (You can include a confirmation slot where users can always correct the size when they are asked to confirm the order information.)
 
 Check for: @size
 Save as: $size
@@ -496,10 +495,10 @@ Add at least one slot handler that can recognize it when a user wants to exit th
 For example, in a node that collects information to schedule a pet grooming appointment, you can add a handler that conditions on the #cancel intent, which recognizes utterances such as, <q>Forget it. I changed my mind.</q>
 
 1.  In the JSON editor for the handler, fill all of the slot context variables with dummy values to prevent the node from continuing to ask for any that are missing. And in the handler response, add a message such as, `Ok, we'll stop there. No appointment will be scheduled.`
-1.  Choose what action you want the service to take next from the following options:
+1.  Choose what action you want your assistant to take next from the following options:
 
     - **Prompt again (Default)**: Displays the prompt for the slot that the user was working with just before asking the off-topic question.
-    - **Skip current slot**: Displays the prompt associated with the slot that comes after the slot that the user was working with just before asking the off-topic question. And the service makes not further attempts to fill the skipped slot.
+    - **Skip current slot**: Displays the prompt associated with the slot that comes after the slot that the user was working with just before asking the off-topic question. And your assistant makes no further attempts to fill the skipped slot.
     - **Skip to response**: Skips the prompts for all remaining empty slots including the slot the user was working with just before asking the off-topic question.
 
 1.  In the node-level response, add a condition that checks for a dummy value in one of the slot context variables. If found, show a final message such as, `If you decide to make an appointment later, I'm here to help.` If not found, it displays the standard summary message for the node, such as `I am making a grooming appointment for your $animal at $time on $date.`
