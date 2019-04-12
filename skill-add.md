@@ -78,15 +78,15 @@ To create a skill, complete the following steps:
 ## Skill limits
 {: #skill-add-limits}
 
-The number of skills you can create in a single service instance depends on your {{site.data.keyword.conversationshort}} plan. Any sample dialog skills that are available in your service instance do not count toward your limit unless you edit or duplicate them. A skill version does not count as a skill.
+The number of skills you can create depends on your {{site.data.keyword.conversationshort}} plan type. Any sample dialog skills that are available for you to use do not count toward your limit unless you use them. A skill version does not count as a skill.
 
-| Service plan     | Skills per service instance |
+| Plan     | Skills per service instance |
 |------------------|----------------------------:|
 | Premium          |                          50 |
 | Plus             |                          50 |
 | Standard         |                          20 |
 | Lite*            |                           5 |
-{: caption="Service plan details" caption-side="top"}
+{: caption="Plan details" caption-side="top"}
 
 *After 30 days of inactivity, an unused skill in a Lite plan service instance might be deleted to free up space.
 

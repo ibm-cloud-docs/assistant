@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-02"
+lastupdated: "2019-04-11"
 
 subcollection: assistant
 
@@ -45,34 +45,34 @@ Each dialog node contains, at a minimum, a condition and a response.
 ![Shows user input going to a box that contains the statement If: CONDITION, Then: RESPONSE](images/node1-empty.png)
 
 - Condition: Specifies the information that must be present in the user input for this node in the dialog to be triggered. The information is typically a specific intent. It might also be an entity type, an entity value, or a context variable value. See [Conditions](#dialog-overview-conditions) for more information.
-- Response: The utterance that the service uses to respond to the user. The response can also be configured to show an image or a list of options, or to trigger programmatic actions. See [Responses](#dialog-overview-responses) for more information.
+- Response: The utterance that your assistant uses to respond to the user. The response can also be configured to show an image or a list of options, or to trigger programmatic actions. See [Responses](#dialog-overview-responses) for more information.
 
 You can think of the node as having an if/then construction: if this condition is true, then return this response.
 
-For example, the following node is triggered if the natural language processing function of the service determines that the user input contains the `#cupcake-menu` intent. As a result of the node being triggered, the service responds with an appropriate answer.
+For example, the following node is triggered if the natural language processing function of your assistant determines that the user input contains the `#cupcake-menu` intent. As a result of the node being triggered, your assistant responds with an appropriate answer.
 
 ![Shows the user asking about cupcake flavors. the If condition is #cupcake-menu and the Then response is a list of cupcake flavors.](images/node1-simple.png)
 
-A single node with one condition and response can handle simple user requests. But, more often than not, users have more sophisticated questions or want help with more complex tasks. You can add child nodes that ask the user to provide any additional information that the service needs.
+A single node with one condition and response can handle simple user requests. But, more often than not, users have more sophisticated questions or want help with more complex tasks. You can add child nodes that ask the user to provide any additional information that your assistant needs.
 
 ![Shows that the first node in the dialog asks which type of cupcake the user wants, gluten-free or regular, and has two child nodes that provide a different response depending on the user's answer.](images/node1-children.png)
 
 ## Dialog flow
 {: #dialog-overview-flow}
 
-The dialog that you create is processed by the service from the first node in the tree to the last.
+The dialog that you create is processed by your assistant from the first node in the tree to the last.
 
 ![Arrow points down next to 3 nodes to show that dialog flows from the first node to the last](images/node-flow-down.png)
 
-As it travels down the tree, if the service finds a condition that is met, it triggers that node. It then moves along the triggered node to check the user input against any child node conditions. As it checks the child nodes it moves again from the first child node to the last.
+As it travels down the tree, if your assistant finds a condition that is met, it triggers that node. It then moves along the triggered node to check the user input against any child node conditions. As it checks the child nodes it moves again from the first child node to the last.
 
-The services continues to work its way through the dialog tree from first to last node, along each triggered node, then from first to last child node, and along each triggered child node until it reaches the last node in the branch it is following.
+Your assistant continues to work its way through the dialog tree from first to last node, along each triggered node, then from first to last child node, and along each triggered child node until it reaches the last node in the branch it is following.
 
 ![Shows arrow 1 pointing from the first root node to the last, arrow 2 pointing from along the length of a triggered node, and arrow 3 pointing from the first to the last child nodes of the triggered node.](images/node-flow.png)
 
 When you start to build the dialog, you must determine the branches to include, and where to place them. The order of the branches is important because nodes are evaluated from first to last. The first root node whose condition matches the input is used; any nodes that come later in the tree are not triggered.
 
-When the service reaches the end of a branch, or cannot find a condition that evaluates to true from the current set of child nodes it is evaluating, it jumps back out to the base of the tree. And once again, the service processes the root nodes from first to the last. If none of the conditions evaluates to true, then the response from the last node in the tree, which typically has a special `anything_else` condition that always evaluates to true, is returned.
+When your assistant reaches the end of a branch, or cannot find a condition that evaluates to true from the current set of child nodes it is evaluating, it jumps back out to the base of the tree. And once again, your assistant processes the root nodes from first to the last. If none of the conditions evaluates to true, then the response from the last node in the tree, which typically has a special `anything_else` condition that always evaluates to true, is returned.
 
 You can disrupt the standard first-to-last flow in the following ways:
 
@@ -122,11 +122,11 @@ You can use one or more of the following artifacts in any combination to define 
   If the entity is a pattern entity with capture groups, then you can check for a certain group value match. For example, you can use the syntax: `@us_phone.groups[1] == '617'`
   See [Storing and recognizing pattern entity groups in input](/docs/services/assistant?topic=assistant-dialog-tips#dialog-tips-get-pattern-groups) for more information.
 
-- **Intent**: The simplest condition is a single intent. The node is used if, after the service's natural language processing evaluates the user's input, it determines that the purpose of the user's input maps to the pre-defined intent. Use the syntax, `#intent_name`. For example, `#weather` checks if the user input is asking for a weather forecast. If so, the node with the `#weather` intent condition is processed.
+- **Intent**: The simplest condition is a single intent. The node is used if, after your assistant's natural language processing evaluates the user's input, it determines that the purpose of the user's input maps to the pre-defined intent. Use the syntax, `#intent_name`. For example, `#weather` checks if the user input is asking for a weather forecast. If so, the node with the `#weather` intent condition is processed.
 
   For more information about intents, see [Defining intents](/docs/services/assistant?topic=assistant-intents).
 
-- **Special condition**: Conditions that are provided with the service that you can use to perform common dialog functions. See the **Special conditions** table in the next section for details.
+- **Special condition**: Conditions that are provided with the product that you can use to perform common dialog functions. See the **Special conditions** table in the next section for details.
 
 ### Special conditions
 {: #dialog-overview-special-conditions}
@@ -166,7 +166,7 @@ You can reply in the following ways:
 ### Simple text response
 {: #dialog-overview-simple-text}
 
-If you want to provide a text response, simply enter the text that you want the service to display to the user.
+If you want to provide a text response, simply enter the text that you want your assistant to display to the user.
 
 ![Shows a node that shows a user ask, Where are you located, and the dialog response is, We have no brick and mortar stores! But, with an internet connection, you can shop us from anywhere.](images/response-simple.png)
 
@@ -179,7 +179,7 @@ Hello $user
 
 If the current user's name is `Norman`, then the response that is displayed to Norman is `Hello Norman`.
 
-If you include one of these special characters in a text response, escape it by adding a backslash (`\`) in front of it. If you are using the JSON editor, you need to use two backslashes to escape (`\\`). Escaping the character prevents the service from misinterpreting it as being one of the following artifact types:
+If you include one of these special characters in a text response, escape it by adding a backslash (`\`) in front of it. If you are using the JSON editor, you need to use two backslashes to escape (`\\`). Escaping the character prevents your assistant from misinterpreting it as being one of the following artifact types:
 
 | Special character | Artifact | Example |
 |-------------------|----------|---------|
@@ -227,7 +227,7 @@ If you want a single text response to include multiple lines separated by carria
 
 1.  For the response variation setting, choose **multiline**.
 
-    If you are using a dialog skill that was created before support for rich response types was added to the service, then you might not see the *multiline* option. Add a second text response type to the current node response. This action changes how the response is represented in the underlying JSON. As a result, the multiline option becomes available. Choose the multiline variation type. Now, you can delete the second text response type that you added to the response.
+    If you are using a dialog skill that was created before support for rich response types was added to the product, then you might not see the *multiline* option. Add a second text response type to the current node response. This action changes how the response is represented in the underlying JSON. As a result, the multiline option becomes available. Choose the multiline variation type. Now, you can delete the second text response type that you added to the response.
     {: note}
 
 When the response is shown to the user, both response variations are displayed, one on each line, like this:
@@ -243,7 +243,7 @@ How are you today?
 
 If your users return to your conversation service frequently, they might be bored to hear the same greetings and responses every time.  You can add *variations* to your responses so that your conversation can respond to the same condition in different ways.
 
-In this example, the answer that the service provides in response to questions about store locations differs from one interaction to the next:
+In this example, the answer that your assistant provides in response to questions about store locations differs from one interaction to the next:
 
 ![Shows a node that shows a user ask, Where are you located, and the dialog has three different responses defined.](images/variety.png)
 
@@ -333,7 +333,7 @@ In addition to the default response type of **Text**, for which you specify the 
   {: note}
 
 - **Image**: Embeds an image into the response. The source image file must be hosted somewhere and have a URL that you can use to reference it. It cannot be a file that is stored in a directory that is not publicly accessible.
-- **Option**: Adds a list of one or more options. When a user clicks one of the options, an associated user input value is sent to the service. How options are rendered can differ depending on where you deploy the dialog. For example, in one integration channel the options might be displayed as clickable buttons, but in another they might be displayed as a dropdown list.
+- **Option**: Adds a list of one or more options. When a user clicks one of the options, an associated user input value is sent to your assistant. How options are rendered can differ depending on where you deploy the dialog. For example, in one integration channel the options might be displayed as clickable buttons, but in another they might be displayed as a dropdown list.
 - **Pause**: Forces the application to wait for a specified number of milliseconds before continuing with processing. You can choose to show an indicator that the dialog is working on typing a response. Use this response type if you need to perform an action that might take some time. For example, a parent node makes a Cloud Function call and displays the result in a child node. You could use this response type as the response for the parent node to give the programmatic call time to complete, and then jump to the child node to show the result. This response type does not render in the "Try it out" pane. You must access a node that uses this response type from a test deployment to see how your users will experience it.
 - **Search skill**: Searches an external data source for relevant information to return to the user. The data source that is searched is a {{site.data.keyword.discoveryshort}} service data collection that you configure when you add a search skill to the assistant that uses this dialog skill.
 
@@ -365,7 +365,7 @@ To add a rich response, complete the following steps:
 
       1.  Click **Add option**.
       1.  In the **List label** field, enter the option to display in the list. The label must be less than 64 characters in length.
-      1.  In the corresponding **Value** field, enter the user input to pass to the service when this option is selected. The value must be less than 2,048 characters in length. (A current limitation applies a 64-character limit, but is being addressed.)
+      1.  In the corresponding **Value** field, enter the user input to pass to your assistant when this option is selected. The value must be less than 2,048 characters in length. (A current limitation applies a 64-character limit, but is being addressed.)
 
           Specify a value that you know will trigger the correct intent when it is submitted. For example, it might be a user example from the training data for the intent.
       1.  Repeat the previous steps to add more options to the list.
@@ -433,6 +433,9 @@ To add a rich response, complete the following steps:
 
         To pass the user's exact words as the query value, specify `<? input.text ?>`.
 
+        If autocorrection is on, and you want to return the user's original input before it was corrected, you can use `<? input.original_text ?>`. But, be sure to use a response condition that checks whether the original_text field exists first.
+        {: tip}
+
         See [Discovery query operators ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-query-operators) for more information about supported syntax.
 
       - **Filter**: Optional. Specify a text string that defines information that must be present in any of the search results that are returned.
@@ -459,7 +462,7 @@ To add a rich response, complete the following steps:
     A single dialog node cannot have more than one **Connect to human agent** or more than one **Search skill** response.
     {: note}
 
-1.  If you added more than one response type, you can click the **Move** up or down arrows to arrange the response types in the order you want the service to process them.
+1.  If you added more than one response type, you can click the **Move** up or down arrows to arrange the response types in the order you want your assistant to process them.
 
 ### Conditional responses
 {: #dialog-overview-multiple}
@@ -470,7 +473,7 @@ A single dialog node can provide different responses, each one triggered by a di
 
 The node still has a main condition, which is the condition for using the node and processing the conditions and responses that it contains.
 
-In this example, the service uses information that it collected earlier about the user's location to tailor its response, and provide information about the store nearest the user. See [Context variables](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-context) for more information about how to store information collected from the user.
+In this example, your assistant uses information that it collected earlier about the user's location to tailor its response, and provide information about the store nearest the user. See [Context variables](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-context) for more information about how to store information collected from the user.
 
 ![Shows a node that shows a user ask, Where are you located, and the dialog has three different responses depending on conditions that use info from the $state context variable to specify locations in those states.](images/multiple-responses.png)
 
@@ -487,7 +490,7 @@ To add conditional responses to a node, complete the following steps:
 
     - **Update context**. To change the value of a context variable when the response is triggered, specify the context value in the context editor. You update context for each individual conditional response; there is no common context editor or JSON editor for all conditional responses.
     - **Add rich responses**. To add more than one text response or to add response types other than text responses to a single conditional response, you must open the edit response view.
-    - **Configure a jump**. To instruct the service to jump to a different node after this conditional response is processed, select **Jump to** from the *And finally* section of the response edit view. Identify the node that you want the service to process next. See [Configuring the Jump to action](#dialog-overview-jump-to-config) for more information.
+    - **Configure a jump**. To instruct your assistant to jump to a different node after this conditional response is processed, select **Jump to** from the *And finally* section of the response edit view. Identify the node that you want your assistant to process next. See [Configuring the Jump to action](#dialog-overview-jump-to-config) for more information.
 
       A **Jump to** action that is configured for the node is not processed until all of the conditional responses are processed. Therefore, if a conditional response is configured to jump to another node, and the conditional response is triggered, then the jump configured for the node is never processed, and so does not occur.
 
@@ -498,9 +501,9 @@ The conditions within a node are evaluated in order, just as nodes are.  Be sure
 ## Defining what to do next
 {: #dialog-overview-jump-to}
 
-After making the specified response, you can instruct the service to do one of the following things:
+After making the specified response, you can instruct your assistant to do one of the following things:
 
-- **Wait for user input**: The service waits for the user to provide new input that the response elicits. For example, the response might ask the user a yes or no question. The dialog will not progress until the user provides more input.
+- **Wait for user input**: Your assistant waits for the user to provide new input that the response elicits. For example, the response might ask the user a yes or no question. The dialog will not progress until the user provides more input.
 - **Skip user input**:  Use this option when you want to bypass waiting for user input and go directly to the first child node of the current node instead.
 
   The current node must have at least one child node for this option to be available.
@@ -516,7 +519,7 @@ After making the specified response, you can instruct the service to do one of t
 
 If you choose to jump to another node, specify when the target node is processed by choosing one of the following options:
 
-- **Condition**: If the statement targets the condition section of the selected dialog node, the service checks first whether the condition of the targeted node evaluates to true.
+- **Condition**: If the statement targets the condition section of the selected dialog node, your assistant checks first whether the condition of the targeted node evaluates to true.
     - If the condition evaluates to true, the system processes the target node immediately.
     - If the condition does not evaluate to true, the system moves to the next sibling node of the target node to evaluate its condition, and repeats this process until it finds a dialog node with a condition that evaluates to true.
 
@@ -524,7 +527,7 @@ If you choose to jump to another node, specify when the target node is processed
 
     Targeting the condition is useful for chaining the conditions of dialog nodes. For example, you might want to first check whether the input contains an intent, such as `#turn_on`, and if it does, you might want to check whether the input contains entities, such as `@lights`, `@radio`, or `@wipers`. Chaining conditions helps to structure larger dialog trees.
 
-    Avoid choosing this option when configuring a jump-to from a conditional response that goes to a node situated above the current node in the dialog tree. Otherwise, you can create an infinite loop. If the service jumps to the earlier node and checks its condition, it is likely to return false because the same user input is being evaluated that triggered the current node last time through the dialog. The service will go to the next sibling or back to root to check the conditions on those nodes, and will likely end up triggering this node again, which means the process will repeat itself.
+    Avoid choosing this option when configuring a jump-to from a conditional response that goes to a node situated above the current node in the dialog tree. Otherwise, you can create an infinite loop. If your assistant jumps to the earlier node and checks its condition, it is likely to return false because the same user input is being evaluated that triggered the current node last time through the dialog. Your assistant will go to the next sibling or back to root to check the conditions on those nodes, and will likely end up triggering this node again, which means the process will repeat itself.
     {: note}
 
 - **Response**: If the statement targets the response section of the selected dialog node, it is run immediately. That is, the system does not evaluate the condition of the selected dialog node; it processes the response of the selected dialog node immediately.

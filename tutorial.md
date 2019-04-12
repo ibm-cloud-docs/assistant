@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
-
 
 ---
 
@@ -102,7 +101,7 @@ You added an intent and provided examples of utterances that real users might en
 ### Add a dialog node that is triggered by the #about_restaurant intent
 {: #tutorial-trigger-about-intent}
 
-Add a dialog node that recognizes when the user input maps to the intent that you created in the previous step, meaning its condition checks whether the service recognized the `#about_restaurant` intent from the user input.
+Add a dialog node that recognizes when the user input maps to the intent that you created in the previous step, meaning its condition checks whether your assistant recognized the `#about_restaurant` intent from the user input.
 
 1.  Click the **Dialogs** tab.
 1.  Find the `#General_Greetings` node in the dialog tree.
@@ -132,13 +131,13 @@ Add a dialog node that recognizes when the user input maps to the intent that yo
 ### Test the #about_restaurant dialog node
 {: #tutorial-test-about-intent}
 
-Test the intent by checking whether user utterances that are similar to, but not exactly the same as, the examples you added to the training data have successfully trained the service to recognize input with an `#about_restaurant` intent.
+Test the intent by checking whether user utterances that are similar to, but not exactly the same as, the examples you added to the training data have successfully trained your assistant to recognize input with an `#about_restaurant` intent.
 
 1.  Click the ![Try it](images/ask_watson.png) icon to open the "Try it out" pane.
 
 1.  Enter, `I want to learn more about your restaurant.`
 
-    The service indicates that the `#about_restaurant` intent is recognized, and returns a response with the image and text that you specified for the dialog node.
+    Your assistant indicates that the `#about_restaurant` intent is recognized, and returns a response with the image and text that you specified for the dialog node.
 
     ![Shows the Try it out pane recognizing the #about_restaurant intent and showing the image and text response.](images/gs-ass-test-about-restaurant.png)
 
@@ -195,7 +194,7 @@ A key question from potential restaurant customers is about the menu. The Truck 
 ### Add a dialog node that is triggered by the #menu intent
 {: #tutorial-trigger-menu-intent}
 
-Add a dialog node that recognizes when the user input maps to the intent that you created in the previous step, meaning its condition checks whether the service recognized the `#menu` intent from the user input.
+Add a dialog node that recognizes when the user input maps to the intent that you created in the previous step, meaning its condition checks whether your assistant recognized the `#menu` intent from the user input.
 
 1.  Click the **Dialogs** tab.
 1.  Find the `#about_restaurant` node in the dialog tree.
@@ -228,7 +227,7 @@ Add a dialog node that recognizes when the user input maps to the intent that yo
 
 1.  In the **Label** field, add `Standard`. The text you add as the label is displayed in the response to the user as a selectable option.
 
-1.  In the **Value** field, add `standard menu`. The text you specify as the value is what gets sent to the service as new user input when a user chooses this option from the list, and clicks it.
+1.  In the **Value** field, add `standard menu`. The text you specify as the value is what gets sent to your assistant as new user input when a user chooses this option from the list, and clicks it.
 
 1.  Repeat the previous two steps to add label and value information for the remaining menu types:
 
@@ -373,12 +372,12 @@ Test the dialog nodes that you added to recognize menu questions.
 
 1.  Enter, `What type of food do you serve?`
 
-    The service indicates that the `#menu` intent is recognized, and displays the list of menu options for the user to choose from.
+    Your assistant indicates that the `#menu` intent is recognized, and displays the list of menu options for the user to choose from.
 
     ![Shows the Try it out pane when the user input triggers the #menu intent and the options response.](images/gs-ass-test-menu-intent.png)
 1.  Click the `Cake shop` option.
 
-    The service recognizes the `#menu` intent and `@menu:cake` entity reference, and displays the response, `To see our cake shop menu, go to the cake shop page on our website.`
+    Your assistant recognizes the `#menu` intent and `@menu:cake` entity reference, and displays the response, `To see our cake shop menu, go to the cake shop page on our website.`
 
     ![Shows the Try it out pane after the user picks the cake shop option.](images/gs-ass-pick-cake-menu.png)
 1.  Click the *cake shop* hyperlink in the response.
@@ -448,7 +447,7 @@ You want the assistant to recognize order numbers, so you will create a pattern 
 ### Add a yes intent
 {: #tutorial-yes-intent}
 
-Before you perform an action on the user's behalf, you must get confirmation that you are taking the proper action. Add a #yes intent to the dialog that can recognize when a user agrees with what the service is proposing.
+Before you perform an action on the user's behalf, you must get confirmation that you are taking the proper action. Add a #yes intent to the dialog that can recognize when a user agrees with what your assistant is proposing.
 
 1.  Click the **Intents** tab.
 1.  Click **Add intent**.
@@ -620,28 +619,28 @@ Now, add a dialog node that can handle requests to cancel a cake order.
 ### Test order cancelations
 {: #tutorial-test-cancel-order}
 
-Test whether the service can recognize character patterns that match the pattern used for product order numbers in user input.
+Test whether your assistant can recognize character patterns that match the pattern used for product order numbers in user input.
 
 1.  Click the ![Try it](images/ask_watson.png) icon to open the "Try it out" pane.
 
 1.  Enter, `i want to cancel my order number TW12345.`
 
-    The service recognizes both the `#cancel_order` intent and the `@order_number` entity. It responds with, `If the pickup time is more than 48 hours from now, you can cancel your order. Just to confirm, you want to cancel order TW12345?`
+    Your assistant recognizes both the `#cancel_order` intent and the `@order_number` entity. It responds with, `If the pickup time is more than 48 hours from now, you can cancel your order. Just to confirm, you want to cancel order TW12345?`
 
 1.  Enter, `Yes`.
 
-    The service recognizes the `#yes` intent and responds with, `Ok. The order TW12345 is canceled. We hope we get the opportunity to bake a cake for you sometime soon.`
+    Your assistant recognizes the `#yes` intent and responds with, `Ok. The order TW12345 is canceled. We hope we get the opportunity to bake a cake for you sometime soon.`
 
     ![Shows the Try it out pane test of the cancel order number node when the user provides the order number in the initial input.](images/gs-ass-test-cancel-order-number-provided.png)
 
     Now, try it when you don't know the order number.
 1.  Click **Clear** in the "Try it out" pane to start over. Enter, `I want to cancel my order.`
 
-    The service recognizes the `#cancel_order` intent, and responds with, `If the pickup time is more than 48 hours from now, you can cancel your order. What is the order number?`
+    Your assistant recognizes the `#cancel_order` intent, and responds with, `If the pickup time is more than 48 hours from now, you can cancel your order. What is the order number?`
 
 1.  Enter, `I don't know.`
 
-    The service responds with, `I need the order number to cancel the order for you. If you don't know the order number, please call us at 958-234-3456 to cancel over the phone.`
+    Your assistant responds with, `I need the order number to cancel the order for you. If you don't know the order number, please call us at 958-234-3456 to cancel over the phone.`
 
     ![Shows the Try it out pane test of the cancel order number node when the user doesn't know the order number.](images/gs-ass-test-cancel-order-number-unknown.png)
 
@@ -699,12 +698,12 @@ Another way you can address this type of scenario is to add a node with slots. S
 
 If the user shows interest in the bot itself, you want the virtual assistant to recognize that curiosity and engage with the user in a more personal way. You might remember the `#General_About_You` intent, which is provided with the *General* content catalog, that we considered using earlier, before you added your own custom `#about_restaurant` intent. It is built to recognize just such questions from the user. Add a node that condition on this intent. In your response, you can ask for the user's name and save it to a $username variable that you can use elsewhere in the dialog, if available.
 
-First, you need to make sure the service will recognize a name if the user provides one. So, you can enable the `@sys-person` entity, which is designed to recognize common first and last names (in English).
+First, you need to make sure your assistant will recognize a name if the user provides one. So, you can enable the `@sys-person` entity, which is designed to recognize common first and last names (in English).
 
 ### Add a person system entity
 {: #tutorial-add-person-entity}
 
-The service provides a number of *system entities*, which are common entities that you can use for any application.
+Your assistant provides a number of *system entities*, which are common entities that you can use for any application.
 
 1.  Click the **Entities** tab, and then click **System entities**.
 
@@ -803,7 +802,7 @@ If you know the user's name, you should include it in your greeting message. To 
 ### Test personalization
 {: #tutorial-test-personalize}
 
-Test whether the service can recognize and save a user's name, and then refer to the user by it later.
+Test whether your assistant can recognize and save a user's name, and then refer to the user by it later.
 
 1.  Click the ![Try it](images/ask_watson.png) icon to open the "Try it out" pane.
 
@@ -811,13 +810,13 @@ Test whether the service can recognize and save a user's name, and then refer to
 
 1.  Enter, `Who are you?`
 
-    The service recognizes the `#General_About_You` intent. Its response ends with the question, `What's your name?`
+    Your assistant recognizes the `#General_About_You` intent. Its response ends with the question, `What's your name?`
 1.  Enter, `I am Jane Doe.`
 
-    The service recognizes `Jane Doe` as an `@sys-person` entity mention. It comments on your name, and then asks how it can help you.
+    Your assistant recognizes `Jane Doe` as an `@sys-person` entity mention. It comments on your name, and then asks how it can help you.
 1.  Enter, `Hello.`
 
-    The service recognizes the `#General_Greetings` intent and says, `Good day to you, Jane Doe!` It uses the conditional response that includes the user's name because the `$username` context variable contains a value at the time that the greeting node is triggered.
+    Your assistant recognizes the `#General_Greetings` intent and says, `Good day to you, Jane Doe!` It uses the conditional response that includes the user's name because the `$username` context variable contains a value at the time that the greeting node is triggered.
 
     ![Shows the Try it out pane where the user asks Who are you, provides the name Jane Doe, says hello and is greeted by name.](images/gs-ass-test-personalization.png)
 
@@ -835,7 +834,7 @@ Now that you have built a more sophisticated version of the assistant, return to
     The page opens in a new tab.
 1.  Repeat a few of the test utterances that you submited to the "Try it out pane" to see how the assistant behaves in a real integration.
 
-    Unlike when you send test utterances to the service from the "Try it out" pane, standard usage charges apply to API calls that result from utterances that are submited to the chat widget.
+    Unlike when you send test utterances to your assistant from the "Try it out" pane, standard usage charges apply to API calls that result from utterances that are submited to the chat widget.
     {: note}
 
 ## Next steps

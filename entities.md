@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-09"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
 
@@ -38,33 +38,33 @@ Finally, you can add multiple responses to your dialog tree with wording that di
 ## Entity evaluation overview
 {: #entities-described}
 
-The service detects entities in the user input by using one of the following evaluation methods:
+Your assistant detects entities in the user input by using one of the following evaluation methods:
 
 ### Dictionary-based method
 {: #entities-dictionary-overview}
 
-The service looks for terms in the user input that match the values, synonyms, or patterns you define for the entity.
+Your assistant looks for terms in the user input that match the values, synonyms, or patterns you define for the entity.
 
-- **Synonym entity**: You define a category of terms as an entity (`color`), and then one or more values in that category (`blue`). For each value you specify a bunch of synonyms (`aqua`, `navy`). You can also pick synonyms to add from recommendations made to you by the service.
+- **Synonym entity**: You define a category of terms as an entity (`color`), and then one or more values in that category (`blue`). For each value you specify a bunch of synonyms (`aqua`, `navy`). You can also pick synonyms to add from recommendations made to you by Watson.
 
-    At run time, the service recognizes terms in the user input that exactly match the values or synonyms that you defined for the entity as mentions of that entity.
+    At run time, your assistant recognizes terms in the user input that exactly match the values or synonyms that you defined for the entity as mentions of that entity.
 - **Pattern entity**: You define a category of terms as an entity (`contact_info`), and then one or more values in that category (`email`). For each value, you specify a regular expression that defines the textual pattern of mentions of that value type. For an `email` entity value, you might want to specify a regular expression that defines a `text@text.com` pattern.
 
-    At run time, the service looks for patterns matching your regular expression in the user input, and identifies any matches as mentions of that entity.
+    At run time, your assistant looks for patterns matching your regular expression in the user input, and identifies any matches as mentions of that entity.
 - **System entity**: Synonym entities that are prebuilt for you by IBM. They cover commonly used categories, such as numbers, dates, and times. You simply enable a system entity to start using it.
 
 ### Annotation-based method
 {: #entities-annotations-overview}
 
-When you define an annotation-based entity, which is also referred to as a contextual entity, a model is trained on both the *annotated term* and the *context* in which the term is used in the sentence you annotate. This new contextual entity model enables the service to calculate a confidence score that identifies how likely a word or phrase is to be an instance of an entity, based on how it is used in the user input.
+When you define an annotation-based entity, which is also referred to as a contextual entity, a model is trained on both the *annotated term* and the *context* in which the term is used in the sentence you annotate. This new contextual entity model enables your assistant to calculate a confidence score that identifies how likely a word or phrase is to be an instance of an entity, based on how it is used in the user input.
 
 - **Contextual entity**: First, you define a category of terms as an entity (`product`). Next, you go to the *Intents* page and mine your existing intent user examples to find any mentions of the entity, and label them as such. For example, you might go to the `#buy_something` intent, and find a user example that says, `I want to buy a Coach bag`. You can label `Coach bag` as a mention of the `@product` entity.
 
     For training purposes, the term you annotated, `Coach bag`, is added as a value of the `@product` entity.
 
-    At run time, the service evaluates terms based on the context in which they are used in the sentence only. If the structure of a user request that mentions the term matches the structure of an intent user example in which a mention is labeled, then the service interprets the term to be a mention of that entity type. For example, the user input might include the utterance, `I want to buy a Gucci bag`. Due to the similarity of the structure of this sentence to the user example that you annotated (`I want to buy a Coach bag`), the service recognizes `Gucci bag` as a `@product` entity mention.
+    At run time, your assistant evaluates terms based on the context in which they are used in the sentence only. If the structure of a user request that mentions the term matches the structure of an intent user example in which a mention is labeled, then your assistant interprets the term to be a mention of that entity type. For example, the user input might include the utterance, `I want to buy a Gucci bag`. Due to the similarity of the structure of this sentence to the user example that you annotated (`I want to buy a Coach bag`), your assistant recognizes `Gucci bag` as a `@product` entity mention.
 
-    When a contextual entity model is used for an entity, the service does *not* look for exact text or pattern matches for the entity in the user input, but focuses instead on the context of the sentence in which the entity is mentioned.
+    When a contextual entity model is used for an entity, your assistant does *not* look for exact text or pattern matches for the entity in the user input, but focuses instead on the context of the sentence in which the entity is mentioned.
 
     If you choose to define entity values by using annotations, add at least 10 annotations per entity to give the contextual entity model enough data to be reliable.
 
@@ -97,7 +97,7 @@ Use the {{site.data.keyword.conversationshort}} tool to create entities.
 
     ![Screen capture of creating an entity](images/create_entity.png)
 
-1.  For this entity, choose whether you want the service to use a dictionary-based or annotation-based approach to find mentions of it, and then follow the appropriate procedure.
+1.  For this entity, choose whether you want your assistant to use a dictionary-based or annotation-based approach to find mentions of it, and then follow the appropriate procedure.
 
     **For each entity that you create, choose one entity type to use only.** As soon as you add an annotation for an entity, the contextual model is initialized and becomes the primary approach for analyzing user input to find mentions of that entity. The context in which the mention is used in the user input takes precedence over any exact matches that might be present. See [Entity evaluation overview](#entities-described) for more information about how each type is evaluated.
 
@@ -107,13 +107,13 @@ Use the {{site.data.keyword.conversationshort}} tool to create entities.
 ## Adding dictionary-based entities
 {: #entities-create-dictionary-based}
 
-Dictionary-based entites are those for which you define specific terms, synonyms, or patterns. At run time, the service finds entity mentions only when a term in the user input exactly matches (or closely matches if fuzzy matching is enabled) the value or one of its synonyms.
+Dictionary-based entites are those for which you define specific terms, synonyms, or patterns. At run time, your assistant finds entity mentions only when a term in the user input exactly matches (or closely matches if fuzzy matching is enabled) the value or one of its synonyms.
 
 1.  In the **Value name** field, type the text of a possible value for the entity and hit the `Enter` key. An entity value can be any string up to 64 characters in length.
 
     **Important:** Don't include sensitive or personal information in entity names or values. The names and values can be exposed in URLs in an app.
 
-1.  If you want the service to recognize terms with syntax that is similar to the entity value and synonyms you specify, but without requiring an exact match, click the **Fuzzy Matching** toggle to turn it on.
+1.  If you want your assistant to recognize terms with syntax that is similar to the entity value and synonyms you specify, but without requiring an exact match, click the **Fuzzy Matching** toggle to turn it on.
 
     This feature is available for languages noted in the [Supported languages](/docs/services/assistant?topic=assistant-language-support) topic.
 
@@ -148,7 +148,7 @@ Dictionary-based entites are those for which you define specific terms, synonyms
 
     - Click **Show recommendations**.
 
-    - The {{site.data.keyword.conversationshort}} service will make several recommendations for synonyms. The terms are displayed in lowercase, but the service recognizes mentions of the synonyms whether they are specified in lowercase or uppercase.
+    - The {{site.data.keyword.conversationshort}} service will make several recommendations for synonyms. The terms are displayed in lowercase, but your assistant recognizes mentions of the synonyms whether they are specified in lowercase or uppercase.
 
       The more coherent your entity value synonyms are, the more relevant and better focused your recommendations will be. For example, if you have several words that are focused on a theme, you will get better suggestions than if you have one or two random words.
       {: tip}
@@ -166,7 +166,7 @@ Dictionary-based entites are those for which you define specific terms, synonyms
       If you receive no additional synonym recommendations, it could be because your entity is already well defined, or it contains content that the recommender is not currently able to expand upon.
       {: tip}
 
-      If you choose not to select a recommended synonym, the system will treat that as a term you are not interested in, and will alter the next set of recommendations you see when you press `Add selected` or `Next set`. This inference only persists while you are choosing synonyms; information about skipped synonyms is not used for any other purpose by the service.
+      If you choose not to select a recommended synonym, the system will treat that as a term you are not interested in, and will alter the next set of recommendations you see when you press `Add selected` or `Next set`. This inference only persists while you are choosing synonyms; information about skipped synonyms is not used for any other purpose by your assistant.
       {: note}
 
       ![Synonym recommendation screen 4](images/synonym_4.png)
@@ -254,7 +254,7 @@ The entity you created is added to the **Entities** tab, and the system begins t
 ## Adding contextual entities
 {: #entities-create-annotation-based}
 
-Annotation-based entites are those for which you annotate occurrences of the entity in sample sentences to teach the service about the context in which the entity is typically used.
+Annotation-based entites are those for which you annotate occurrences of the entity in sample sentences to teach your assistant about the context in which the entity is typically used.
 
 In order to train a contextual entity model, you can take advantage of your intent examples, which provide readily-available sentences to annotate.
 

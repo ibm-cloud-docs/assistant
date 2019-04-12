@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-11"
 
 subcollection: assistant
-
 
 ---
 
@@ -51,7 +50,7 @@ Review these tips from experienced dialog designers.
   You know what the node does right now, but months from now you might not. Your future self and any team members will thank you for adding a descriptive node name. And the node name is displayed in the log, which can help you debug a conversation later.
 - To gather the information that is required to perform a task, try using a node with slots instead of a bunch of separate nodes to elicit information from users. See [Gathering information with slots](/docs/services/assistant?topic=assistant-dialog-slots).
 - For a complex process flow, tell users about any information they will need to provide at the start of the process.
-- Understand how the service travels through the dialog tree and the impact that folders, branches, jump-tos, and digressions have on the route. See [Dialog flow](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-flow).
+- Understand how your assistant travels through the dialog tree and the impact that folders, branches, jump-tos, and digressions have on the route. See [Dialog flow](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-flow).
 - Do not add jump-tos everywhere. They increase the complexity of the dialog flow, and make it harder to debug the dialog later.
 - To jump to a node in the same branch as the current node, use *Skip user input* instead of a *Jump-to*.
 
@@ -80,6 +79,9 @@ It can be difficult to know the syntax to use in your dialog node to accurately 
 
   `You said: <? input.text ?>.`
 
+  If autocorrection is on, and you want to return the user's original input before it was corrected, you can use `<? input.original_text ?>`. But, be sure to use a response condition that checks whether the `original_text` field exists first.
+  {: note}
+
 - **Determining the number of words in user input**: You can perform any of the supported String methods on the input.text object. For example, you can find out how many words there are in a user utterance by using the following SpEL expression:
 
   `input.text.split(' ').size()`
@@ -88,7 +90,7 @@ It can be difficult to know the syntax to use in your dialog node to accurately 
 
 - **Dealing with multiple intents**: A user enters input that expresses a wish to complete two separate tasks. `I want to open a savings account and apply for a credit card.` How does the dialog recognize and address both of them? See the [Compound questions](https://sodoherty.ai/2017/02/06/compound-questions/){: new_window} entry from Simon O'Doherty's blog for strategies you can try. (Simon is a developer on the {{site.data.keyword.conversationshort}} team.)
 
-- **Dealing with ambiguous intents**: A user enters input that expresses a wish that is ambiguous enough that the service finds two or more nodes with intents that could potentially address it. How does the dialog know which dialog branch to follow? If you enable disambiguation, it can show users their options and ask the user to pick the right one. See [Disambiguation](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation) for more details.
+- **Dealing with ambiguous intents**: A user enters input that expresses a wish that is ambiguous enough that your assistant finds two or more nodes with intents that could potentially address it. How does the dialog know which dialog branch to follow? If you enable disambiguation, it can show users their options and ask the user to pick the right one. See [Disambiguation](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation) for more details.
 
 - **Handling multiple entities in input**: If you want to evaluate only the value of the first detected instance of an entity type, you can use the syntax  `@entity == 'specific-value'` instead of the `@entity:(specific-value)` format.
 
@@ -101,7 +103,7 @@ It can be difficult to know the syntax to use in your dialog node to accurately 
 
   `@person:(O'Reilly)` and `$person:(O'Reilly)`
 
-  The service converts these shorthand references into these full SpEL expressions:
+  Your assistant converts these shorthand references into these full SpEL expressions:
 
   `entities['person']?.contains('O''Reilly')` and `context['person'] == 'O''Reilly'`
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-09"
+lastupdated: "2019-04-11"
 
 subcollection: assistant
 
@@ -38,14 +38,14 @@ To create a dialog, complete the following steps:
 
     When you open the dialog editor for the first time, the following nodes are created for you:
 
-    - **Welcome**: The first node. It contains a greeting that is displayed to your users when they first engage with the service. You can edit the greeting.
+    - **Welcome**: The first node. It contains a greeting that is displayed to your users when they first engage with your assistant. You can edit the greeting.
 
     This node is not triggered in dialog flows that are initiated by users. For example, dialogs used in integrations with channels such as Facebook or Slack skip nodes with the `welcome` special condition. See [Dialog initialization](/docs/services/assistant?topic=assistant-dialog-start) for more information.
     {: note}
 
-    - **Anything else**: The final node. It contains phrases that are used to reply to users when their input is not recognized. You can replace the responses that are provided or add more responses with a similar meaning to add variety to the conversation. You can also choose whether you want the service to return each response that is defined in turn or return them in random order.
+    - **Anything else**: The final node. It contains phrases that are used to reply to users when their input is not recognized. You can replace the responses that are provided or add more responses with a similar meaning to add variety to the conversation. You can also choose whether you want your assistant to return each response that is defined in turn or return them in random order.
 1.  To add more nodes to the dialog tree, click the **More** ![More icon](images/kabob.png) icon on the **Welcome** node, and then select **Add node below**.
-1.  Enter a condition that, when met, triggers the service to process the node.
+1.  Enter a condition that, when met, triggers your assistant to process the node.
 
     As you begin to define a condition, a box is displayed that shows you your options. You can enter one of the following characters, and then pick a value from the list of options that is displayed.
 
@@ -83,15 +83,15 @@ To create a dialog, complete the following steps:
     For more information about how to test for values in conditions, see [Conditions](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-conditions).
 1.  **Optional**: If you want to collect multiple pieces of information from the user in this node, then click **Customize** and enable **Slots**. See [Gathering information with slots](/docs/services/assistant?topic=assistant-dialog-slots) for more details.
 1.  Enter a response.
-    - Add the text or multimedia elements that you want the service to display to the user as a response.
+    - Add the text or multimedia elements that you want your assistant to display to the user as a response.
     - If you want to define different responses based on certain conditions, then click **Customize** and enable **Multiple responses**.
     - For information about conditional responses, rich responses, or how to add variety to responses, see [Responses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-responses).
 
 1.  Specify what to do after the current node is processed. You can choose from the following options:
 
-    - **Wait for user input**: The service pauses until new input is provided by the user.
-    - **Skip user input**: The service jumps directly to the first child node. This option is only available if the current node has at least one child node.
-    - **Jump to**: The service continues the dialog by processing the node you specify. You can choose whether the service should evaluate the target node's condition or skip directly to the target node's response. See [Configuring the Jump to action](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-jump-to-config) for more details.
+    - **Wait for user input**: Your assistant pauses until new input is provided by the user.
+    - **Skip user input**: Your assistant jumps directly to the first child node. This option is only available if the current node has at least one child node.
+    - **Jump to**: Your assistant continues the dialog by processing the node you specify. You can choose whether your assistant should evaluate the target node's condition or skip directly to the target node's response. See [Configuring the Jump to action](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-jump-to-config) for more details.
 
 1.  **Optional**: If you want this node to be considered when users are shown a set of node choices at run time, and asked to pick the one that best matches their goal, then add a short description of the user goal handled by this node to the **external node name** field. For example, *Place an order*.
 
@@ -134,7 +134,7 @@ Queries you submit through the "Try it out" pane generate `/message` API calls, 
     ![Screen capture of test dialog output](images/test_dialog_output.png)
 1.  If you want to know which node in the dialog tree triggered a response, click the **Location** ![Location](images/location.png) icon next to it. If you are not already in the Dialog tab, open it.
 
-    The source node is given focus and the route that the service traversed through the tree to get to it is highlighted. It remains highlighted until you perform another action, such as entering a new test input.
+    The source node is given focus and the route that your assistant traversed through the tree to get to it is highlighted. It remains highlighted until you perform another action, such as entering a new test input.
 1.  To check or set the value of a context variable, click the **Manage context** link.
 
     Any context variables that you defined in the dialog are displayed.
@@ -166,19 +166,19 @@ If you are ready to put the conversation to work helping your users, integrate y
 ## Dialog node limits
 {: #dialog-build-node-limits}
 
-The number of dialog nodes you can create per skill depends on your service plan.
+The number of dialog nodes you can create per skill depends on your plan type.
 
-| Service plan     | Dialog nodes per skill     |
+| Plan     | Dialog nodes per skill     |
 |------------------|---------------------------:|
 | Premium          |                    100,000 |
 | Plus             |                    100,000 |
 | Standard         |                    100,000 |
 | Lite             |                     100`*` |
-{: caption="Service plan details" caption-side="top"}
+{: caption="Plan details" caption-side="top"}
 
 The welcome and anything_else dialog nodes that are prepopulated in the tree do count toward the total.
 
-Tree depth limit: The service supports 2,000 dialog node descendants; the tool performs best with 20 or fewer.
+Tree depth limit: The dialog supports 2,000 dialog node descendants; the tool performs best with 20 or fewer.
 
 `*` The limits changed from 25,000 to 100 for Lite plans on 1 December 2018. Users of service instances that were created before the limit changed have until 1 June 2019 to upgrade their plan, or edit the dialogs in the skills in the existing service instances to meet the new limit requirements.
 
@@ -271,11 +271,11 @@ You can group dialog nodes together by adding them to a folder. There are lots o
 
 These characteristics of the folder impact how the nodes in a folder are processed:
 
-- Condition: If no condition is specified, then the service processes the nodes within the folder directly. If a condition is specified, the service first evaluates the folder condition to determine whether to process the nodes within it.
+- Condition: If no condition is specified, then your assistant processes the nodes within the folder directly. If a condition is specified, your assistant first evaluates the folder condition to determine whether to process the nodes within it.
 - Customizations: Any configuration settings that you apply to the folder are inherited by the nodes in the folder. If you change the digression settings of the folder, for example, the changes are inherited by all the nodes in the folder.
 - Tree hierarchy: Nodes in a folder are treated as root or child nodes based on whether the folder is added to the dialog tree at the root or child level. Any root level nodes that you add to a root level folder continue to function as root nodes; they do not become child nodes of the folder, for example. However, if you move a root level node into a folder that is a child of another node, then the root node becomes a child of that other node.
 
-Folders have no impact on the order in which nodes are evaluated. Nodes continue to be processed from first to last. As the service travels down the tree, when it encounters a folder, if the folder has no condition or its condition is true, it immediately processes the first node in the folder, and continues down the tree in order from there. If a folder does not have a folder condition, then the folder is transparent to the service, and each node in the folder is treated like any other individual node in the tree.
+Folders have no impact on the order in which nodes are evaluated. Nodes continue to be processed from first to last. As your assistant travels down the tree, when it encounters a folder, if the folder has no condition or its condition is true, it immediately processes the first node in the folder, and continues down the tree in order from there. If a folder does not have a folder condition, then the folder is transparent to your assistant, and each node in the folder is treated like any other individual node in the tree.
 
 ### Adding a folder
 {: #dialog-build-folders-add}

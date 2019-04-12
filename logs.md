@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-09"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
 
@@ -62,14 +62,14 @@ You can filter messages by *Search user statements*, *Intents*, *Entities*, and 
 
 ![Entities drop-down menu](images/entities_filter.png)
 
-Messages may take some time to update. Allow at least 30 minutes after a user's interaction with your assistant before attempting to filter for that content.
+Messages might take some time to update. Allow at least 30 minutes after a user's interaction with your assistant before attempting to filter for that content.
 
 ## Viewing individual messages
 {: #logs-see-message}
 
 For any user input entry, click **Open conversation** to see the user input and the response made to it by the assistant within the context of the full conversation.
 
-The time shown at the top of each conversation is localized to reflect the time zone of your browser. This may differ from the timestamp shown if you review the same conversation log via an API call; API log calls are always shown in UTC.
+The time shown at the top of each conversation is localized to reflect the time zone of your browser. This time might differ from the timestamp shown if you review the same conversation log via an API call; API log calls are always shown in UTC.
 
 ![Open conversation panel](images/open_convo.png)
 
@@ -84,15 +84,15 @@ If the spell check feature is enabled for the skill, then any user utterances th
 ## Improving across assistants
 {: #logs-deploy-id}
 
-Creating a dialog skill is an iterative process. While you develop your skill, you use the *Try it out* pane to verify that the service recognizes the correct intents and entities in test inputs, and to make corrections as needed.
+Creating a dialog skill is an iterative process. While you develop your skill, you use the *Try it out* pane to verify that your assistant recognizes the correct intents and entities in test inputs, and to make corrections as needed.
 
 From the User conversations page, you can analyze actual interactions between the assistant you used to deploy the skill and your users. Based on those interactions, you can make corrections to improve the accuracy with which intents and entities are recognized by your dialog skill. It is difficult to know exactly *how* your users will ask questions, or what random messages they might submit, so it is important to frequently analyze real conversations to improve your dialog skills.
 
-For a {{site.data.keyword.conversationshort}} instance that includes multiple assistants, there may be times when it is useful to use message data from the dialog skill of one assistant to improve the dialog skill used by another assistant within that same instance.
+For a {{site.data.keyword.conversationshort}} instance that includes multiple assistants, there might be times when it is useful to use message data from the dialog skill of one assistant to improve the dialog skill used by another assistant within that same instance.
 
 ![Premium plan only](images/premium0.png) If you are a {{site.data.keyword.conversationshort}} Premium user, your instances can optionally be configured to allow access to log data from assistants across your different premium instances.
 
-As an example, say you have a {{site.data.keyword.conversationshort}} instance named *HelpDesk*. You may have both a Production assistant and a Development assistant in your HelpDesk instance. When working in the dialog skill for the Development assistant, you can use logs from the Production assistant messages to improve the Development assistant's dialog skill.
+As an example, say you have a {{site.data.keyword.conversationshort}} instance named *HelpDesk*. You might have both a Production assistant and a Development assistant in your HelpDesk instance. When working in the dialog skill for the Development assistant, you can use logs from the Production assistant messages to improve the Development assistant's dialog skill.
 
 Any edits you then make within the dialog skill for the Development assistant will only affect the Development assistant's dialog skill, even though you’re using data from messages sent to the Production assistant.
 
@@ -122,7 +122,7 @@ Notice the list does not include skill versions. To get data that is associated 
 
 Applications that use the V1 version of the API must specify a deployment ID in each messages sent using the `/message` API. This ID identifies the deployed app that the call was made from. The Analytics page can use this deployment ID to retrieve and display logs that are associated with a specific live application.
 
-For assistants or custom apps that use the V2 version of the API, the service automatically includes a system id and skill id with each /message call, so you can choose a data source by assistant name instead of using a deployment ID.
+For assistants or custom apps that use the V2 version of the API, your assistant automatically includes a system id and skill id with each /message call, so you can choose a data source by assistant name instead of using a deployment ID.
 
 To add the deployment ID, V1 API users include the deployment property inside the metadata of the [context ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant?curl=#get-response-to-user-input){: new_window}, as in this example:
 

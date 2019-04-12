@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-09"
+lastupdated: "2019-04-11"
 
 subcollection: assistant
 
@@ -32,18 +32,10 @@ Follow these steps to create an assistant:
 
 1.  Click the **Assistants** tab.
 
-1.  Do one of the following things:
+1.  Click **Create assistant**.
 
-    - To create a sample assistant that you can review and learn from, click **Add a sample**, and then choose the sample assistant to create.
+1.  Add details about the new assistant:
 
-      The sample assistant is added. You can skip the remaining steps in this procedure.
-
-      A sample skill is provided with the sample assistant and is added to your list of skills. If you created a sample skill of the same type already, then the existing skill is associated with this new sample assistant automatically.
-      {: note}
-
-    - To create an assistant from scratch, click **Create assistant**, and then complete the remaining steps in this procedure.
-
-1.  Specify the details for the new assistant:
     - **Name**: A name no more than 100 characters in length. A name is required.
     - **Description**: An optional description no more than 200 characters in length.
 
@@ -69,15 +61,15 @@ Follow these steps to create an assistant:
 ## Assistant limits
 {: #assistant-add-limits}
 
-The number of assistants you can create in a single service instance depends on your {{site.data.keyword.conversationshort}} plan.
+The number of assistants you can create depends on your {{site.data.keyword.conversationshort}} plan type.
 
-| Service plan | Assistants per service instance |
+| Plan | Assistants per service instance |
 |--------------|--------------------------------:|
 | Premium      |                             100 |
 | Plus         |                             100 |
 | Standard     |                             100 |
 | Lite*        |                             100 |
-{: caption="Service plan details" caption-side="top"}
+{: caption="Plan details" caption-side="top"}
 
 *After 30 days of inactivity, an unused assistant in a Lite plan service instance might be deleted to free up space.
 

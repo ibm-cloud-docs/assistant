@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-04-10"
+lastupdated: "2018-04-11"
 
 subcollection: assistant
 
@@ -219,7 +219,7 @@ To store the value of an entity in a context variable, use this syntax:
 |----------|------------------|
 | place    | `@place`         |
 
-For example, the user input is, `I want to go to Paris.` If your @place entity recognizes `Paris`, then the service saves `Paris` in the `$place` context variable.
+For example, the user input is, `I want to go to Paris.` If your `@place` entity recognizes `Paris`, then your assistant saves `Paris` in the `$place` context variable.
 
 To store the value of a string that you extract from the user's input, you can include a SpEL expression that uses the `extract` method to apply a regular expression to the user input. The following expression extracts a number from the user input, and saves it to the `$number` context variable.
 
@@ -260,16 +260,16 @@ For information about how to update the value of a context variable when the val
 ### How context variables are processed
 {: #dialog-runtime-context-processing}
 
-Where you define the context variable matters. The context variable is not created and set to the value that you specify for it until the service processes the part of the dialog node where you defined the context variable. In most cases, you define the context variable as part of the node response. When you do so, the context variable is created and given the specified value when the service returns the node response.
+Where you define the context variable matters. The context variable is not created and set to the value that you specify for it until your assistant processes the part of the dialog node where you defined the context variable. In most cases, you define the context variable as part of the node response. When you do so, the context variable is created and given the specified value when your assistant returns the node response.
 
-For a node with conditional responses, the context variable is created and set when the condition for a specific response is met and that response is processed. For example, if you define a context variable for conditional response #1 and the service processes conditional response #2 only, then the context variable that you defined for conditional response #1 is not created and set.
+For a node with conditional responses, the context variable is created and set when the condition for a specific response is met and that response is processed. For example, if you define a context variable for conditional response #1 and your assistant processes conditional response #2 only, then the context variable that you defined for conditional response #1 is not created and set.
 
-For information about where to add context variables that you want the service to create and set as a user interacts with a node with slots, see [Adding context variables to a node with slots](#dialog-runtime-context-var-slots).
+For information about where to add context variables that you want your assistant to create and set as a user interacts with a node with slots, see [Adding context variables to a node with slots](#dialog-runtime-context-var-slots).
 
 ### Order of operation
 {: #dialog-runtime-context-order-of-ops}
 
-When you define multiple variables to be processed together, the order in which you define them does not determine the order in which they are evaluated by the service. The service evaluates the variables in random order. Do not set a value in the first context variable in the list and expect to be able to use it in the second variable in the list, because there is no guarantee that the first context variable will be executed before the second one. For example, do not use two context variables to implement logic that checks whether the user input contains the word `Yes` in it.
+When you define multiple variables to be processed together, the order in which you define them does not determine the order in which they are evaluated by your assistant. Your assistant evaluates the variables in random order. Do not set a value in the first context variable in the list and expect to be able to use it in the second variable in the list, because there is no guarantee that the first context variable will be executed before the second one. For example, do not use two context variables to implement logic that checks whether the user input contains the word `Yes` in it.
 
 | Variable        | Value            |
 |-----------------|------------------|
@@ -845,7 +845,7 @@ Follow the [tutorial](/docs/services/assistant?topic=assistant-tutorial-digressi
 
 - **Remember that the current node gets priority**: Remember that nodes outside the current flow are only considered as digression targets if the current flow cannot address the user input. It is even more important in a node with slots that allows digressions away, in particular, to make it clear to users what information is needed from them, and to add confirmation statements that are displayed after the user provides a value.
 
-  Any slot can be filled during the slot-filling process. So, a slot might capture user input unexpectedly. For example, you might have a node with slots that collects the information necessary to make a dinner reservation. One of the slots collects date information. While providing the reservation details, the user might ask, `What's the weather meant to be tomorrow?` You might have a root node that conditions on #forecast which could answer the user. However, because the user's input includes the word `tomorrow` and the reservation node with slots is being processed, the service assumes the user is providing or updating the reservation date instead. *The current node always gets priority.* If you define a clear confirmation statement, such as, `Ok, setting the reservation date to tomorrow,` the user is more likely to realize there was a miscommunication and correct it.
+  Any slot can be filled during the slot-filling process. So, a slot might capture user input unexpectedly. For example, you might have a node with slots that collects the information necessary to make a dinner reservation. One of the slots collects date information. While providing the reservation details, the user might ask, `What's the weather meant to be tomorrow?` You might have a root node that conditions on #forecast which could answer the user. However, because the user's input includes the word `tomorrow` and the reservation node with slots is being processed, your assistant assumes the user is providing or updating the reservation date instead. *The current node always gets priority.* If you define a clear confirmation statement, such as, `Ok, setting the reservation date to tomorrow,` the user is more likely to realize there was a miscommunication and correct it.
 
   Conversely, while filling slots, if the user provides a value that is not expected by any of the slots, there is a chance it will match against a completely unrelated root node that the user never intended to digress to.
 
@@ -858,7 +858,7 @@ Follow the [tutorial](/docs/services/assistant?topic=assistant-tutorial-digressi
 ## Correcting user input ![Beta](images/beta.png)
 {: #dialog-runtime-spell-check}
 
-Enable the *Autocorrection* beta feature to fix misspellings that users make in the utterances that they submit as user input. When autocorrection is enabled, the misspelled words are automatically corrected. And it is the corrected words that are used to evaluate the input. When given more precise input, the service can more often recognize entity mentions and understand the user's intent.
+Enable the *Autocorrection* beta feature to fix misspellings that users make in the utterances that they submit as user input. When autocorrection is enabled, the misspelled words are automatically corrected. And it is the corrected words that are used to evaluate the input. When given more precise input, your assistant can more often recognize entity mentions and understand the user's intent.
 
 Currently, this setting can be enabled for English-language dialog skills only.
 {: note}
@@ -868,7 +868,7 @@ With Autocorrection enabled, user input is corrected in the following way:
 - Orignal input: `letme applt for a memberdhip`
 - Corrected input: `let me apply for a membership`
 
-When the service evaluates whether to correct the spelling of a word, it does not rely on a simple dictionary lookup process. Instead, it uses a combination of Natural Language Processing and probabalistic models to assess whether a term is, in fact, misspelled and should be corrected.
+When your assistant evaluates whether to correct the spelling of a word, it does not rely on a simple dictionary lookup process. Instead, it uses a combination of Natural Language Processing and probabalistic models to assess whether a term is, in fact, misspelled and should be corrected.
 
 ### Enabling autocorrection
 {: #dialog-runtime-spell-check-enable}
@@ -887,9 +887,9 @@ To enable the autocorrection feature, complete the following steps:
     If words in your input are misspelled, they are corrected automatically, and an ![auto-correct](images/auto-correct.png) icon is displayed. The corrected utterance is underlined.
 1.  Hover over the underlined utterance to see the original wording.
 
-If there are misspelled terms that you expected the service to correct, but it did not, then review the rules that the service uses to decide whether to correct a word to see if the word falls into the category of words that the service intentionally does not change.
+If there are misspelled terms that you expected your assistant to correct, but it did not, then review the rules that your assistant uses to decide whether to correct a word to see if the word falls into the category of words that your assistant intentionally does not change.
 
-To avoid overcorrection, the service does not correct the spelling of the following types of input:
+To avoid overcorrection, your assistant does not correct the spelling of the following types of input:
 
 - Capitalized words
 - Emojis
@@ -908,11 +908,11 @@ If the word that is not corrected is not obviously one of these types of input, 
 #### How is spelling autocorrection related to fuzzy matching?
 {: #dialog-runtime-spell-check-vs-fuzzy-matching}
 
-Fuzzy matching helps the service recognize dictionary-based entity mentions in user input. It uses a dictionary lookup approach to match a word from the user input to an existing entity value or synonym in the skill's training data. For example, if the user enters `boook`, and your training data contains a `@reading_material` entity with a `book` value, then fuzzy matching recognizes that the two terms (`boook` and `book`) mean the same thing.
+Fuzzy matching helps your assistant recognize dictionary-based entity mentions in user input. It uses a dictionary lookup approach to match a word from the user input to an existing entity value or synonym in the skill's training data. For example, if the user enters `boook`, and your training data contains a `@reading_material` entity with a `book` value, then fuzzy matching recognizes that the two terms (`boook` and `book`) mean the same thing.
 
 When you enable both autocorrection and fuzzy matching, the fuzzy matching function runs before autocorrection is triggered. If it finds a term that it can match to an existing dictionary entity value or synonym, it adds the term to the list of words that *belong* to the skill, and does not correct it.
 
-For example, if a user enters a sentence like `I wnt to buy a boook`, fuzzy matching recognizes that the term `boook` means the same thing as your entity value `book`, and adds it to the protected words list. The service corrects the input to be, `I want to buy a boook`. Notice that it corrects `wnt` but does *not* correct the spelling of `boook`. If you see this type of result when you are testing your dialog, you might think the service is misbehaving. However, the service is not. Thanks to fuzzy matching, it correctly identifies `boook` as a `@reading_material` entity mention. And thanks to autocorrection revising the term to `want`, the service is able to map the input to your `#buy_something` intent. Each feature does its part to help the service understand the meaning of the user input.
+For example, if a user enters a sentence like `I wnt to buy a boook`, fuzzy matching recognizes that the term `boook` means the same thing as your entity value `book`, and adds it to the protected words list. Your assistant corrects the input to be, `I want to buy a boook`. Notice that it corrects `wnt` but does *not* correct the spelling of `boook`. If you see this type of result when you are testing your dialog, you might think your assistant is misbehaving. However, your assistant is not. Thanks to fuzzy matching, it correctly identifies `boook` as a `@reading_material` entity mention. And thanks to autocorrection revising the term to `want`, your assistant is able to map the input to your `#buy_something` intent. Each feature does its part to help your assistant understand the meaning of the user input.
 
 #### How autocorrection works
 {: #dialog-runtime-spell-check-how-it-works}
@@ -925,7 +925,7 @@ Normally, user input is saved as-is in the `text` field of the `input` object of
 This feature is available only to Plus or Premium users.
 {: tip}
 
-When you enable disambiguation, you instruct the service to ask users for help when it finds that more than one dialog node can respond to their input. Instead of guessing which node to process, your assistant shares a list of the top node options with the user, and asks the user to pick the right one.
+When you enable disambiguation, you instruct your assistant to ask users for help when it finds that more than one dialog node can respond to their input. Instead of guessing which node to process, your assistant shares a list of the top node options with the user, and asks the user to pick the right one.
 
 ![Shows a sample conversation between a user and the assistant, where the assistant asks for clarification from the user.](images/disambig-demo.png)
 
@@ -964,7 +964,7 @@ If the user input is `i must cancel it today`, then the following intents might 
 `{"intent":"Customer_Care_Store_Hours","confidence":0.2550420880317688},`
 `...]`
 
-The service is `0.6618281841278076` (66%) confident that the user goal matches the `#Customer_Care_Cancel_Account` intent. If any other intent has a confidence score that is greater than 55% of 66%, then it fits the criteria for being a disambiguation candidate.
+Your assistant is `0.6618281841278076` (66%) confident that the user goal matches the `#Customer_Care_Cancel_Account` intent. If any other intent has a confidence score that is greater than 55% of 66%, then it fits the criteria for being a disambiguation candidate.
 
 `0.66 x 0.55 = 0.36`
 
@@ -976,7 +976,7 @@ When the user input is `i must cancel it today`, both dialog nodes will be consi
 
 ![Service prompts the user to choose from a list of dialog options, including Cancel an account, Cancel a product order, and None of the above.](images/disambig-tryitout.png)
 
-Notice that the service recognizes the term `today` in the user input as a date, a mention of the `@sys-date` entity. If your dialog tree contains a node that conditions on the `@sys-date` entity, then it is also included in the list of disambiguation choices. This image shows it included in the list as the *Capture date information* option.
+Notice that your assistant recognizes the term `today` in the user input as a date, a mention of the `@sys-date` entity. If your dialog tree contains a node that conditions on the `@sys-date` entity, then it is also included in the list of disambiguation choices. This image shows it included in the list as the *Capture date information* option.
 
 ![Service prompts the user to choose from a list of dialog options, including Capture date information.](images/disambig-tryitout-date.png)
 
@@ -995,7 +995,7 @@ To enable disambiguation, complete the following steps:
 1.  In the prompt message field, add text to show before the list of dialog node options. For example, *What do you want to do?*
 1.  **Optional**: In the none of the above message field, add text to display as an additional option that users can pick if none of the other dialog nodes reflect what the user wants to do. For example, *None of the above*.
 
-    Keep the message short, so it displays inline with the other options. The message must be less than 512 characters. For information about what the service does if a user chooses this option, see [Handling none of the above](#dialog-runtime-handle-none).
+    Keep the message short, so it displays inline with the other options. The message must be less than 512 characters. For information about what your assistant does if a user chooses this option, see [Handling none of the above](#dialog-runtime-handle-none).
 
 1.  Click **Close**
 1.  Decide which dialog nodes you want the assistant to ask for help with.
@@ -1017,31 +1017,31 @@ To enable disambiguation, complete the following steps:
 
 Choose nodes that serve as the root of a distinct branch of the dialog to be disambiguation choices. These can include nodes that are children of other nodes. The key is for the node to condition on some distinct value or values that distinguish it from everything else.
 
-The tool can recognize intent conflicts, which occur when two or more intents have user examples that overlap. [Resolve any such conflicts](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts) first to ensure that the intents themselves are as unique as possible, which helps the service attain better intent confidence scores.
+The tool can recognize intent conflicts, which occur when two or more intents have user examples that overlap. [Resolve any such conflicts](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts) first to ensure that the intents themselves are as unique as possible, which helps your assistant attain better intent confidence scores.
 {: note}
 
 Keep in mind:
 
-- For nodes that condition on intents, if the service is confident that the node's intent condition matches the user's intent, then the node is included as a disambiguation option.
+- For nodes that condition on intents, if your assistant is confident that the node's intent condition matches the user's intent, then the node is included as a disambiguation option.
 - For nodes with boolean conditions (conditions that evaluate to either true or false), the node is included as a disambiguation option if the condition evaluates to true. For example, when the node conditions on an entity type, if the entity is mentioned in the input that triggers disambiguation, then the node is included.
 - The order of nodes in the tree hierarchy impacts disambiguation.
 
   - It impacts whether disambiguation is triggered at all
   
-    Look at the [scenario](#dialog-runtime-disambig-example) that is used earlier to introduce disambiguation, for example. If the node that conditions on `@sys-date` was placed higher in the dialog tree than the nodes that condition on the `#Customer_Care_Cancel_Account` and `#eCommerce_Cancel_Product_Order` intents, disambiguation would never be triggered when a user enters, `i must cancel it today`. That's because the service would consider the date mention (`today`) to be more important than the intent references due to the placement of the corresponding nodes in the tree.
+    Look at the [scenario](#dialog-runtime-disambig-example) that is used earlier to introduce disambiguation, for example. If the node that conditions on `@sys-date` was placed higher in the dialog tree than the nodes that condition on the `#Customer_Care_Cancel_Account` and `#eCommerce_Cancel_Product_Order` intents, disambiguation would never be triggered when a user enters, `i must cancel it today`. That's because your assistant would consider the date mention (`today`) to be more important than the intent references due to the placement of the corresponding nodes in the tree.
 
   - It impacts which nodes are included in the disambiguation options list
   
-    Sometimes a node is not listed as a disambiguation option as expected. This can happen if a condition value is also referenced by a node that is not eligible for inclusion in the disambiguation list for some reason. For example, an entity mention might trigger a node that is situated earlier in the dialog tree but is not enabled for disambiguation. If the same entity is the only condition for a node that *is* enabled for disambiguation, but is situated lower in the tree, then it is not added as a disambiguation option because the service never reaches it. It matched against the earlier node and was omitted, so the service does not process the later node.
+    Sometimes a node is not listed as a disambiguation option as expected. This can happen if a condition value is also referenced by a node that is not eligible for inclusion in the disambiguation list for some reason. For example, an entity mention might trigger a node that is situated earlier in the dialog tree but is not enabled for disambiguation. If the same entity is the only condition for a node that *is* enabled for disambiguation, but is situated lower in the tree, then it is not added as a disambiguation option because your assistant never reaches it. It matched against the earlier node and was omitted, so your assistant does not process the later node.
 
 For each node that you opt in to disambiguation, test scenarios in which you expect the node to be included in the disambiguation options list. Testing gives you a chance to make adjustments to the node order or other factors that might impact how well disambiguation works at run time.
 
 ### Handling none of the above
 {: #dialog-runtime-handle-none}
 
-When a user clicks the *None of the above* option, the service strips the intents that were recognized in the user input from the message and submits it again. This action typically triggers the anything else node in your dialog tree.
+When a user clicks the *None of the above* option, your assistant strips the intents that were recognized in the user input from the message and submits it again. This action typically triggers the anything else node in your dialog tree.
 
-To customize the response that is returned in this situation, you can add a root node with a condition that checks for a user input with no recognized intents (the intents are stripped, remember) and contains a `suggestion_id` property. A `suggestion_id` property is added by the service when disambiguation is triggered.
+To customize the response that is returned in this situation, you can add a root node with a condition that checks for a user input with no recognized intents (the intents are stripped, remember) and contains a `suggestion_id` property. A `suggestion_id` property is added by your assistant when disambiguation is triggered.
 {: tip}
 
 Add a root node with the following condition:
@@ -1072,11 +1072,11 @@ To test disambiguation, complete the following steps:
 
     - To see the confidence scores of the intents that were detected in user input, temporarily add `<? intents ?>` to the end of the node response for a node that you know will be triggered.
 
-      This SpEL expression shows the intents that were detected in the user input as an array. The array includes the intent name and the level of confidence that the service has that the intent reflects the user's intended goal.
+      This SpEL expression shows the intents that were detected in the user input as an array. The array includes the intent name and the level of confidence that your assistant has that the intent reflects the user's intended goal.
 
     - To see which entities, if any, were detected in the user input, you can temporarily replace the current response with a single text response that contains the SpEL expression, `<? entities ?>`.
 
-      This SpEL expression shows the entities that were detected in the user input as an array. The array includes the entity name, location of the entity mention within the user input string, the entity mention string, and the level of confidence that the service has that the term is a mention of the entity type specified.
+      This SpEL expression shows the entities that were detected in the user input as an array. The array includes the entity name, location of the entity mention within the user input string, the entity mention string, and the level of confidence that your assistant has that the term is a mention of the entity type specified.
 
     - To see details for all of the artifacts at once, including other properties, such as the value of a given context variable at the time of the call, you can inspect the entire API response. See [Viewing API call details](/docs/services/assistant?topic=assistant-dialog-tips#dialog-tips-inspect-api).
 
@@ -1084,7 +1084,7 @@ To test disambiguation, complete the following steps:
 
 1.  Enter the test utterance into the "Try it out" pane again.
 
-    If you added the `<? intents ?>` expression to the response, then the text returned includes a list of the intents that the service recognized in the test utterance, and includes the confidence score for each one.
+    If you added the `<? intents ?>` expression to the response, then the text returned includes a list of the intents that your assistant recognized in the test utterance, and includes the confidence score for each one.
 
     ![Service returns an array of intents, including Customer_Care_Cancel_Account and eCommerce_Cancel_Product_Order.](images/disambig-show-intents.png)
 

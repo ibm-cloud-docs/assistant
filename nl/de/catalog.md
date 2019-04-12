@@ -1,13 +1,18 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-02-13"
+  years: 2015, 2019
+lastupdated: "2019-02-28"
+
+subcollection: assistant
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -17,56 +22,50 @@ lastupdated: "2018-02-13"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Kataloge verwenden
+# Inhaltskataloge verwenden
 {: #catalog}
 
-***Kataloge*** bieten eine einfache Möglichkeit zum Hinzufügen gängiger Absichten im Arbeitsbereich Ihres Service '{{site.data.keyword.conversationshort}}'.
+***Inhaltskataloge*** sind eine einfache Methode, häufig vorkommende Absichten zu Ihrem {{site.data.keyword.conversationshort}}-Dialogskill hinzuzufügen.
 {: shortdesc}
 
-## Katalog zum Arbeitsbereich hinzufügen
-{: #add-catalog}
+Aus dem Katalog hinzugefügte Absichten sind als Ausgangspunkt für angepasste Ansichten gedacht. Bearbeiten Sie die hinzugefügten Katalogabsichten, um sie an Ihren Anwendungsfall anzupassen. 
 
-Zum Hinzufügen von Katalogen verwenden Sie das {{site.data.keyword.conversationshort}}-Tool.
+## Inhaltskatalog zu Ihrem Dialogskill hinzufügen
+{: #catalog-add}
 
-1.  Öffnen Sie Ihren Arbeitsbereich im {{site.data.keyword.conversationshort}}-Tool und wählen Sie
-dann die Registerkarte **Katalog** in der Navigationsleiste aus. Falls die Registerkarte **Katalog**
-nicht angezeigt wird, öffnen Sie die Seite über das Menü ![Menü](images/Menu_16.png).
+Zum Hinzufügen von Inhaltskatalogen verwenden Sie das {{site.data.keyword.conversationshort}}-Tool. 
 
-1.  Wählen Sie einen Katalog (z. B. *Abrechnung*) aus, um die darin bereitgestellten Absichten anzuzeigen.
+1.  Öffnen Sie Ihren Dialogskill im {{site.data.keyword.conversationshort}}-Tool und klicken Sie anschließend auf die Registerkarte **Inhaltskatalog**.
+
+1.  Wählen Sie einen Inhaltskatalog aus (z. B. *Banking*), um die darin bereitgestellten Absichten anzuzeigen.
 
     ![Screenshot mit den verfügbaren Katalogen](images/catalog_overview.png)
 
-    Hier finden Sie Informationen zu den Absichten, die in der Kategorie *Abrechnung* definiert sind.
+    Hier finden Sie Informationen zu den Absichten, die in dem Katalog enthalten sind. 
 
-    ![Screenshot mit Absichten aus der Kategorie 'Abrechnung'](images/catalog_open.png)
+    ![Screenshot mit Absichten der Kategorie 'Banking'](images/catalog_open.png)
 
-    Aus einem Katalog hinzugefügte Absichten können anhand der Namenskonvention (im vorliegenden Beispiel (`#Billing_) von Absichten aus anderen Quellen unterschieden werden. . .`
+    Aus einem Inhaltskatalog hinzugefügte Absichten können anhand der Namenskonvention von Absichten aus anderen Quellen unterschieden werden. Jedem Absichtsnamen ist der Name des Inhaltskatalogs als Präfix vorangestellt. 
 
-1.  Klicken Sie auf den ![Pfeil 'Schließen'](images/close_arrow.png), um zur Registerkarte **Katalog** zurückzukehren.
+1.  Klicken Sie auf den ![Pfeil 'Schließen'](images/close_arrow.png), um zur Registerkarte **Inhaltskatalog** zurückzukehren.
 
-1.  Fügen Sie als Nächstes den Katalog *Abrechnung* zu Ihrem Arbeitsbereich hinzu, indem Sie auf die Schaltfläche `Zu Bot hinzufügen` klicken. Eine Nachricht weist darauf hin, dass die Absichten aus der Kategorie *Abrechnung* zu Ihrem Arbeitsbereich hinzugefügt wurden.
+1.  Fügen Sie als nächstes einen Inhaltskatalog zu Ihrem Dialogskill hinzu, indem Sie auf die Schaltfläche `Zu Skill hinzufügen` klicken.
 
-    ![Screenshot der Schaltfläche 'Zu Bot hinzufügen'](images/catalog_addtobot.png)
+1.  Wählen Sie nun die Registerkarte **Absichten** aus und überprüfen Sie, dass die Absichten aus dem Katalog hinzugefügt wurden und verfügbar sind. 
 
-1.  Wählen Sie nun die Registerkarte **Absichten** aus und überprüfen Sie, dass die Absichten des Katalogs *Abrechnung* zu Ihrem Arbeitsbereich hinzugefügt wurden.
+    ![Screenshot mit einer Auflistung von Absichten der Kategorie 'Banking' auf der Registerkarte 'Absichten'](images/catalog_intents.png)
 
-    ![Screenshot der Registerkarte 'Absichten' mit aufgelisteten Absichten des Katalogs 'Abrechnung'](images/catalog_intents.png)
+Das System beginnt damit, sich selbst mit den neuen Daten zu trainieren. 
 
-### Ergebnisse
+Durch das Hinzufügen eines Katalogs zu Ihrem Skill werden die zugehörigen Absichten ein Bestandteil Ihrer Trainingsdaten. Wenn ein Inhaltskatalog später von IBM geändert wird, werden die Änderungen nicht automatisch auf Absichten angewendet, Sie aus dem Katalog hinzugefügt haben.
+{: note}
 
-Die Absichten aus dem Katalog *Abrechnung* wurden zur Registerkarte **Absichten** in Ihrem Arbeitsbereich hinzugefügt. Das System beginnt nun, sich selbst mit den neuen Daten zu trainieren.
+## Beispiele aus Inhaltskatalog bearbeiten
+{: #catalog-edit-content}
 
-## Beispiele aus Katalogen bearbeiten
-
-Sie können an den hinzugefügten Absichten aus dem Katalog *Abrechnung* (wie an anderen Absichten) nun folgende Änderungen vornehmen:
+Wie jede andere Absicht können Sie auch die aus Inhaltskatalogen zu einem Skill hinzugefügten Absichten wie folgt bearbeiten:
 
 - Sie können die Absicht umbenennen.
 - Sie können die Absicht löschen.
 - Sie können Beispiele hinzufügen, bearbeiten oder löschen.
 - Sie können ein Beispiel in eine andere Absicht verschieben.
-
-Mit der Tabulatortaste können Sie vom Namen der Absicht zu den einzelnen Beispielen springen und die Beispiele bei Bedarf bearbeiten.
-
-Um ein Beispiel zu verschieben oder zu löschen, wählen Sie es mithilfe des Kontrollkästchens aus und wählen Sie dann **Verschieben** oder **Löschen** aus.
-
-  ![Screenshot, der das Verschieben oder Löschen eines Beispiels zeigt](images/catalog_edit.png)

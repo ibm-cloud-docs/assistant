@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-09"
+lastupdated: "2019-04-11"
 
 subcollection: assistant
 
@@ -46,7 +46,7 @@ To learn more about how search skill can benefit your business, [read this blog 
 
 The search skill searches for information from a data collection that you create by using the {{site.data.keyword.discoveryshort}} service.
 
-{{site.data.keyword.discoveryshort}} is a service that crawls, converts, and normalizes your unstructured data. The service applies data analysis and cognitive intuition to enrich your data such that you can more easily find and retrieve meaningful information from it later. To read more about {{site.data.keyword.discoveryshort}}, see the [product documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-about){: new_window}.
+{{site.data.keyword.discoveryshort}} is a service that crawls, converts, and normalizes your unstructured data. The product applies data analysis and cognitive intuition to enrich your data such that you can more easily find and retrieve meaningful information from it later. To read more about {{site.data.keyword.discoveryshort}}, see the [product documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-about){: new_window}.
 
 Typically, the type of data collection you will want to add to the {{site.data.keyword.discoveryshort}}  service and access from your assistant contains information that is owned by your company and can be mined to find answers to customer questions, such as FAQs, sales collateral, technical manuals, or papers written by subject matter experts.
 
@@ -247,7 +247,7 @@ If you upload a JSON file that contains repeating name values, then only the fir
     </tr>
     <tr>
       <td>Error message</td>
-      <td>The service was unable to perform the search for some reason</td>
+      <td>I could not complete the search for some reason</td>
       <td>I might have information that could help address your query, but am unable to search my knowledge base at the moment.</td>
     </tr>
     </table>
@@ -306,7 +306,7 @@ Configure at least one integration channel to test the search skill. In the chan
 The search skill is triggered in the following ways:
 
 - **Anything else node**: Searches an external data source for a relevant answer when none of the dialog nodes can address the user's query. Instead of showing a standard message, such as `I don't know how to help you with that.` the assistant can say, `Maybe this information can help:` followed by the passage returned by the search. If a search skill is linked to your assistant, then whenever the `anything_else` node is triggered, rather than displaying the node response, a search is performed instead. The assistant passes the user input as the query to your search skill, and returns the search results as the response.
-- **Search response type**: If you add a search response type to a dialog node, then the service retrieves a passage from an external data source and returns it as the response to a particular question. This type of search occurs only when the individual dialog node is processed. This approach is useful if you have want to narrow down a user query before you perform a search. For example, the dialog branch might collect information about the type of device the customer wants to buy. When you know the make and model, you can then send a model keyword in the query that is submitted to the search skill, and get better results.
+- **Search response type**: If you add a search response type to a dialog node, then your assistant retrieves a passage from an external data source and returns it as the response to a particular question. This type of search occurs only when the individual dialog node is processed. This approach is useful if you have want to narrow down a user query before you perform a search. For example, the dialog branch might collect information about the type of device the customer wants to buy. When you know the make and model, you can then send a model keyword in the query that is submitted to the search skill, and get better results.
 - **Search skill only**: If only a search skill is linked to an assistant, and no dialog skill is linked to the assistant, then a search query is submitted to the {{site.data.keyword.discoveryshort}} service when any user input is received from one of the assistant's integration channels.
 
 After you add a search skill to an assistant, it is automatically enabled for the assistant as follows:
@@ -337,9 +337,9 @@ Follow this procedure to raise the bar for when the dialog can respond by resett
 
     `intents[0].confidence > 0.5`
 
-    This condition is applied to all of the nodes in the folder. The condition tells the service to process the nodes in the folder only if the service is at least 50% confident that it knows the user's intent.
+    This condition is applied to all of the nodes in the folder. The condition tells your assistant to process the nodes in the folder only if your assistant is at least 50% confident that it knows the user's intent.
 
-1.  Move any dialog nodes that you do not want the service to process often into the folder.
+1.  Move any dialog nodes that you do not want your assistant to process often into the folder.
 
 After changing the dialog, test the assistant to make sure the search skill is triggered as often as you want it to be.
 

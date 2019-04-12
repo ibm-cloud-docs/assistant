@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
-
 
 ---
 
@@ -89,7 +88,7 @@ Add an intent on the Intents tab. An intent is the purpose or goal that is expre
 ## Step 2: Add entities
 {: #tutorial-slots-add-entity}
 
-An entity definition includes a set of entity *values* that represent vocabulary that is often used in the context of a given intent. By defining entities, you can help the service identify references in the user input that are related to intents of interest. In this step, you will enable system entities that can recognize references to time, date, and numbers.
+An entity definition includes a set of entity *values* that represent vocabulary that is often used in the context of a given intent. By defining entities, you can help your assistant identify references in the user input that are related to intents of interest. In this step, you will enable system entities that can recognize references to time, date, and numbers.
 
 1.  Click **Entities** to open the Entities page.
 1.  Enable system entities that can recognize date, time, and number references in user input. Click the **System entities** tab, and then turn on these entities:
@@ -103,7 +102,7 @@ You have successfully enabled the @sys-date, @sys-time, and @sys-number system e
 ## Step 3: Add a dialog node with slots
 {: #tutorial-slots-add-dialog-with-slots}
 
-A dialog node represents the start of a thread of dialog between the service and the user. It contains a condition that must be met for the node to be processed by the service. At a minimum, it also contains a response. For example, a node condition might look for the `#hello` intent in user input, and respond with, `Hi. How can I help you?` This example is the simplest form of a dialog node, one that contains a single condition and a single response. You can define complex dialogs by adding conditional responses to a single node, adding child nodes that prolong the exchange with the user, and much more. (If you want to learn more about complex dialogs, you can complete the [Building a complex dialog](/docs/services/assistant?topic=assistant-tutorial) tutorial.)
+A dialog node represents the start of a thread of dialog between your assistant and the user. It contains a condition that must be met for the node to be processed by your assistant. At a minimum, it also contains a response. For example, a node condition might look for the `#hello` intent in user input, and respond with, `Hi. How can I help you?` This example is the simplest form of a dialog node, one that contains a single condition and a single response. You can define complex dialogs by adding conditional responses to a single node, adding child nodes that prolong the exchange with the user, and much more. (If you want to learn more about complex dialogs, you can complete the [Building a complex dialog](/docs/services/assistant?topic=assistant-tutorial) tutorial.)
 
 The node that you will add in this step is one that contains slots. Slots provide a structured format through which you can ask for and save multiple pieces of information from a user within a single node. They are most useful when you have a specific task in mind and need key pieces of information from the user before you can perform it. See [Gathering information with slots](/docs/services/assistant?topic=assistant-dialog-slots) for more information.
 

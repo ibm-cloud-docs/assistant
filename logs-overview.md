@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
 
@@ -62,7 +62,7 @@ You can use the following controls to filter the information:
 
   You can choose whether to view data for a single day, a week, a month, or a quarter. In each case, the data points on the graph adjust to an appropriate measurement period. For example, when viewing a graph for a day, the data is presented in hourly values, but when viewing a graph for a week, the data is shown by day. A week always runs from Sunday through Saturday. You cannot create custom time periods, such as a week that runs from Thursday to the following Wednesday, or a month that begins on any date other than the first.
 
-  If you choose a single day view, for example, the time shown for each conversation is localized to reflect the time zone of your browser. This may differ from the timestamp shown if you review the same conversation log via an API call; API log calls are always shown in UTC.
+  If you choose a single day view, for example, the time shown for each conversation is localized to reflect the time zone of your browser. This might differ from the timestamp shown if you review the same conversation log via an API call; API log calls are always shown in UTC.
 
     ![Time period control](images/oview-time2.png)
 
@@ -75,7 +75,7 @@ Several statistical scorecards provide log data for your application:
 
   A single conversation is a set of messages consisting of the messages that an active user sends to your application, and the messages your application responds with.
 
-  **Important**: A 'conversation' is considered to be *any* set of messages sent or received by an application/bot, so if the service starts by saying "Hi, how can I help you?", and then the user closes their browser without responding, that message is included in the total conversation count.
+  **Important**: A 'conversation' is considered to be *any* set of messages sent or received by an application/bot, so if your assistant starts by saying "Hi, how can I help you?", and then the user closes their browser without responding, that message is included in the total conversation count.
 
 * *Avg. msg. per conversation* - The total messages received during the selected time period divided by the total conversations during the selected time period, as shown in the corresponding graph.
 * *Max. conversations* - The maximum number of conversations for a single data point within the selected time period.
@@ -106,4 +106,4 @@ You can also view the intents and entities that were recognized most often durin
 
 * *Top entities* are also shown in a list. For each entity you can select from the **Values** column to see a list of the most common values that were identified for this entity during the time period. You can also select an entity to open the **User conversations** page with the date range filtered to match the data you are viewing, and the entity filtered to match the selected entity.
 
-See [Learn from conversations](/docs/services/assistant?topic=assistant-logs) for tips on how to edit intents and entities based on discoveries you make by reviewing the intents and entities that the service recognizes.
+See [Learn from conversations](/docs/services/assistant?topic=assistant-logs) for tips on how to edit intents and entities based on discoveries you make by reviewing the intents and entities that your assistant recognizes.

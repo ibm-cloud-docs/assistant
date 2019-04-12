@@ -1,13 +1,18 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-01-26"
+  years: 2015, 2019
+lastupdated: "2019-02-21"
+
+subcollection: assistant
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -17,59 +22,88 @@ lastupdated: "2018-01-26"
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Informationen
+# Produktinfo
 {: #index}
 
-Mit dem Service '{{site.data.keyword.conversationfull}}' können Sie eine Lösung erstellen, die Eingabe in natürlicher Sprache versteht und mittels maschinellem Lernen auf Kunden in einer Weise reagiert, die einen Dialog zwischen Personen simuliert.
+{{site.data.keyword.conversationfull}} ist ein kognitiver Bot, den Sie an Ihre Geschäftsandorderungen anpassen und in mehreren Kanälen bereitstellen können, um Ihren Kunden nach Bedarf kontextbezogene Hilfe anzubieten.
 {: shortdesc}
 
 ## Funktionsweise
+{: #index-how-it-works}
 
-Das folgende Diagramm zeigt die Gesamtarchitektur einer vollständigen Lösung:![Ablaufdiagramm des Service](images/conversation_arch_overview.png)
+Das folgende Diagramm zeigt die Gesamtarchitektur: 
 
-- Benutzer interagieren mit Ihrer Anwendung über die von Ihnen implementierte **Benutzerschnittstelle**. Dies kann beispielsweise ein einfaches Chatfenster oder eine mobile App, aber auch ein Roboter mit einer Sprachschnittstelle sein.
+![Ablaufdiagramm für den Service](images/arch-overview.png)
 
-- Die **Anwendung** sendet die Benutzereingabe an den Service '{{site.data.keyword.conversationshort}}'.
-    - Die Anwendung stellt eine Verbindung zu einem *Arbeitsbereich* her. Dies ist ein Container für den Dialogmodulablauf und die Trainingsdaten.
-    - Der Service interpretiert die Benutzereingabe, steuert den Ablauf des Dialogs und erfasst die benötigten Informationen.
-    - Sie können Verbindungen zu weiteren {{site.data.keyword.watson}}-Services herstellen, um die Benutzereingabe zu analysieren, beispielsweise zum Service '{{site.data.keyword.toneanalyzershort}}' oder '{{site.data.keyword.speechtotextshort}}'.
+- Benutzer interagieren über mindestens einen der folgenden **Integrationspunkte** mit dem Assistenten:
 
-- Die Anwendung kann mit Ihren **Back-End-Systemen** auf der Grundlage der Benutzerabsicht und weiterer Informationen interagieren. Beispiele hierfür sind die Beantwortung von Fragen, die Erstellung von Tickets, die Aktualisierung von Kontoinformationen oder die Aufgabe von Bestellungen. Ihre Möglichkeiten sind hier unbegrenzt.
+  - Chat-Bot, den Sie direkt in einer Messaging-Plattform der Social Media wie Slack oder Facebook Messenger veröffentlichen
+  - Einfache Chat-Bot-Benutzerschnittstelle, die in IBM Cloud gehostet wird
+  - Von Ihnen entwickelte, angepasste Anwendung (z. B. eine mobile App oder ein Roboter mit Sprachschnittstelle)
+
+- Der **Assistent** empfängt Benutzereingaben und leitet sie zum Dialogskill weiter.
+
+- Der **Dialogskill** interpretierte die Benutzereingabe, steuert den Ablauf des Dialogs und erfasst die erforderlichen Informationen zum Antworten oder zum Ausführen einer Transaktion im Auftrag des Benutzers.
 
 ## Implementierung
+{: #index-mplementation}
 
-So implementieren Sie Ihren Dialog:
+So implementieren Sie Ihren Assistenten: 
 
-- **Konfigurieren Sie einen Arbeitsbereich.** Hierzu richten Sie in der komfortablen grafischen Umgebung die Trainingsdaten und das Dialogmodul für Ihren Dialog ein.
+- **Erstellen Sie einen Dialogskill**. Definieren Sie mithilfe des intuitiven Grafiktools die Trainingsdaten und das Dialogmodul für den Datenaustausch zwischen Ihrem Assistenten und Ihren Kunden. 
 
-    Die Trainingsdaten bestehen aus den folgenden Artefakten:
-    - **Absichten**: Dies sind die Ziele, die Sie für die Benutzer antizipieren, die mit dem Service interagieren. Definieren Sie eine Absicht pro Zielsetzung, die in der Eingabe eines Benutzers ermittelt werden kann. Sie können beispielsweise eine Absicht namens *öffnungszeiten* erstellen, die Fragen zu Ladenöffnungszeiten beantwortet. Für jede Absicht fügen Sie Beispieläußerungen hinzu, die von Kunden zum Fragen nach den benötigten Informationen eingegeben werden könnten (z. B. `Wann öffnen Sie?`).
-    - **Entitäten**: Eine Entität stellt einen Term oder ein Objekt dar, der/das Kontext für eine Absicht bereitstellt. Eine Entität könnte beispielsweise ein Ortsname sein, mit dem in Ihrem Dialogmodul ermittelt wird, für welches Geschäft ein Benutzer die Öffnungszeiten wissen möchte.
+  Die Trainingsdaten bestehen aus den folgenden Artefakten:
 
-      Wenn Sie Trainingsdaten hinzufügen, wird automatisch ein Klassifikationsmerkmal für natürliche Sprache zum Arbeitsbereich hinzugefügt und trainiert, um die Arten von Anforderungen zu verstehen, die der Service überwachen und beantworten soll.
+  - **Absichten**: Dies sind die Ziele, die Sie für die Benutzer antizipieren, die mit dem Service interagieren. Definieren Sie eine Absicht pro Zielsetzung, die in der Eingabe eines Benutzers ermittelt werden kann. Sie können beispielsweise eine Absicht namens *öffnungszeiten* erstellen, die Fragen zu Ladenöffnungszeiten beantwortet. Für jede Absicht fügen Sie Beispieläußerungen hinzu, die von Kunden zum Fragen nach den benötigten Informationen eingegeben werden könnten (z. B. `Wann öffnen Sie?`).
 
-    Mit dem Dialogmodultool erstellen Sie einen Dialogmodulablauf, der Ihre Absichten und Entitäten enthält. Der Dialogmodulablauf wird im Tool grafisch als Baumstruktur dargestellt. Durch das Hinzufügen von Verzweigungen können Sie alle Absichten verarbeiten, die der Service abwickeln soll. Anschließend können Sie Verzweigungsknoten hinzufügen, die die vielen möglichen Permutationen einer Anforderung auf der Grundlage von weiteren Faktoren verarbeiten, z. B. den in der Benutzereingabe gefundenen Entitäten oder den von einer Anwendung bzw. einem anderen externen Service an Ihren Service übergebenen Informationen.
+    Alternativ können Sie die vordefinierten **Inhaltskataloge** von IBM als Ausgangspunkt verwenden, die Daten für häufig geäußerte Kundenwünsche bereitstellen. 
 
-- **Stellen Sie Ihren Arbeitsbereich bereit.** Zur Bereitstellung Ihres konfigurierten Arbeitsbereichs verbinden Sie ihn mit einer Front-End-Benutzerschnittstelle, einer Social-Media-Plattform oder einem Nachrichtenkanal. Ihre bereitgestellte Instanz des Service '{{site.data.keyword.conversationshort}}' wird von der IBM Cloud-Computing-Plattform {{site.data.keyword.cloud_notm}} gehostet. (Weitere Informationen finden Sie unter [Übersicht über die Plattform![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.bluemix.net/docs/overview/ibm-cloud.html#overview).)
+  - **Dialogmodul**: Erstellen Sie mit dem Dialogmodultool einen Dialogmodulablauf, der Ihre Absichten enthält. Der Dialogmodulablauf wird im Tool grafisch als Baumstruktur dargestellt. Durch das Hinzufügen von Verzweigungen können Sie alle Absichten verarbeiten, die der Service abwickeln soll.
+
+  - **Entitäten**: Eine Entität stellt einen Term oder ein Objekt dar, der/das Kontext für eine Absicht bereitstellt. Eine Entität könnte beispielsweise ein Ortsname sein, mit dem in Ihrem Dialogmodul ermittelt wird, für welches Geschäft ein Benutzer die Öffnungszeiten wissen möchte. Aktualisieren Sie Ihr Dialogmodul nach dem Hinzufügen von Entitäten so, dass die Entitäten verwendet werden. Fügen Sie Dialogmodulknoten hinzu, um die zahlreichen möglichen Permutationen einer Anfrage basierend auf den in der Benutzereingabe gefundenen Entitäten zu verarbeiten. 
+
+    Wenn Sie Trainingsdaten hinzufügen, wird automatisch ein Klassifikationsmerkmal für natürliche Sprache zum Skill hinzugefügt und trainiert, um die Arten von Anfragen zu verstehen, die der Service überwachen und beantworten soll.
+
+- **Erstellen Sie einen Assistenten**.
+
+- **Fügen Sie den Dialogskill zu Ihrem Assistenten hinzu**.
+
+- **Integrieren Sie Ihren Assistenten**. Erstellen Sie eine Kanalintegration, um den konfigurierten Assistenten direkt in einem Social-Media- oder Nachrichtenkanal bereitzustellen. 
+
+  Ihr bereitgestellter Assistent wird in {{site.data.keyword.cloud_notm}}, der Cloud-Computing-Plattform von IBM gehostet. (Weitere Informationen finden Sie unter [Übersicht über die Plattform![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://cloud.ibm.com/docs/overview/ibm-cloud#overview).)
 
 Weitere Informationen zu diesen Implementierungsschritten finden Sie über die folgenden Links:
 
-- [Absichten und Entitäten planen](intents-entities.html#planning-your-entities)
-- [Dialogmodule im Überblick](dialog-overview.html)
-- [Bereitstellung im Überblick](deploy.html)
+- [Absichtserstellung im Überblick](/docs/services/assistant?topic=assistant-intents#intents-described)
+- [Dialogmodule im Überblick](/docs/services/assistant?topic=assistant-dialog-overview)
+- [Entitätserstellung im Überblick](/docs/services/assistant?topic=assistant-entities#entities-described)
+- [Assistenten im Überblick](/docs/services/assistant?topic=assistant-assistant-add)
+- [Integrationen hinzufügen](/docs/services/assistant?topic=assistant-deploy-integration-add)
+
+## Wo sind meine Arbeitsbereiche?
+{: #index-existing-customers}
+
+Wenn Sie mit einer früheren Version des Service einen *Arbeitsbereich* erstellt haben, können Sie unbesorgt sein: der Arbeitsbereich bleibt für Sie erreichbar. Arbeitsbereiche werden jetzt als *Skills* bezeichnet. Um Ihren Arbeitsbereich aufzurufen, klicken Sie auf die Registerkarte **Skills**.
 
 ## Browserunterstützung
+{: #index-browser-support}
 
-Für das Tool des Service '{{site.data.keyword.conversationshort}}'  ist der gleiche Versionsstand der Browsersoftware erforderlich wie für {{site.data.keyword.Bluemix_notm}}. Weitere Details enthält der Abschnitt {{site.data.keyword.Bluemix_notm}} [Voraussetzungen ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.bluemix.net/docs/overview/prereqs.html#browsers){: new_window}.
+Für das Tool des {{site.data.keyword.conversationshort}}-Service ist der gleiche Versionsstand der Browsersoftware erforderlich wie für {{site.data.keyword.Bluemix_notm}}. Weitere Details enthält der Abschnitt {{site.data.keyword.Bluemix_notm}} [Voraussetzungen ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://cloud.ibm.com/docs/overview/prereqs#browsers){: new_window}.
 
 ## Sprachunterstützung
+{: #index-lang-support}
 
-Die Sprachunterstützung für die einzelnen Features ist detailliert im Abschnitt [Unterstützte Sprachen](lang-support.html) erläutert.
+Die Sprachunterstützung für die einzelnen Features ist detailliert im Abschnitt [Unterstützte Sprachen](/docs/services/assistant?topic=assistant-language-support) erläutert.
+
+## Nutzungsbedingungen
+{: #index-notices}
+
+Informationen zu den Nutzungsbedingungen für den Service finden Sie unter [IBM Cloud - Bedingungen und Bemerkungen ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](/docs/overview/terms-of-use?topic=overview-terms).
 
 ## Nächste Schritte
+{: #index-next-steps}
 
-- Lesen Sie die [Einführung](getting-started.html) in den Service.
-- Probieren Sie einige [Demos](sample-applications.html) aus.
-- Rufen Sie die Liste der [SDKs ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/watson/developercloud/developer-tools.html){: new_window} auf.
+- [Einführung](/docs/services/assistant?topic=assistant-getting-started) in den Service.
+- Rufen Sie die Liste der [Entwicklerressourcen ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/watson/developer-resources/){: new_window} auf.
 
 Sie haben noch Fragen? Wenden Sie sich an [IBM Sales ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www-01.ibm.com/marketing/iwm/dre/signup?source=urx-20970){: new_window}.

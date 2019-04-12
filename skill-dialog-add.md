@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-09"
+lastupdated: "2019-04-11"
 
 subcollection: assistant
 
@@ -48,7 +48,7 @@ To add a skill, complete the following steps:
 1.  Take one of the following actions:
 
     - To create a skill from scratch, click **Create skill**.
-    - To add a sample skill that is provided with the service as a starting point for your own skill or as an example to explore before you create one yourself, click **Use sample skill**, and then click the sample you want to use.
+    - To add a sample skill that is provided with the product as a starting point for your own skill or as an example to explore before you create one yourself, click **Use sample skill**, and then click the sample you want to use.
 
       The sample skill is added to your list of skills. It is not associated with any assistants. Skip the remaining steps in this procedure.
 

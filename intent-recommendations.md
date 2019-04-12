@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-09"
+lastupdated: "2019-04-11"
 
 subcollection: assistant
 
@@ -31,7 +31,7 @@ If you have existing enterprise customer support chat transcript data, let Watso
 This feature is available to Plus or Premium plan users.
 {: note}
 
-Customer needs are represented in {{site.data.keyword.conversationshort}} as *intents*. If you have not defined intents yet, you can get started faster by asking Watson for help. Upload files with customer utterances from call center transcripts for the {{site.data.keyword.conversationshort}} service to analyze. Based on the insights it uncovers, the service recommends a base set of intents you should build to cover the most commonly occurring needs of your customers.
+Customer needs are represented in {{site.data.keyword.conversationshort}} as *intents*. If you have not defined intents yet, you can get started faster by asking Watson for help. Upload files with customer utterances from call center transcripts for the {{site.data.keyword.conversationshort}} service to analyze. Based on the insights it uncovers, Watson recommends a base set of intents you should build to cover the most commonly occurring needs of your customers.
 
 As the subjects that your customers want to discuss change, you can use the intent user example recommendations feature to help keep your intents up-to-date and relevant over time.
 
@@ -51,7 +51,7 @@ See [Supported languages](/docs/services/assistant?topic=assistant-language-supp
 ## Creating a user example source file
 {: #intent-recommendations-log-files-add}
 
-Before the service can analyze your data, you must provide the data in the correct format. Create a comma-separated value (CSV) file with one customer utterance per line. Ideally, the utterances are short phrases which are extracted from your call center transcripts that contain real-world customer questions and requests. Each user example source file can be a maximum size of 20 MB.
+Before Watson can analyze your data, you must provide the data in the correct format. Create a comma-separated value (CSV) file with one customer utterance per line. Ideally, the utterances are short phrases which are extracted from your call center transcripts that contain real-world customer questions and requests. Each user example source file can be a maximum size of 20 MB.
 
 Follow these additional guidelines:
 
@@ -78,9 +78,9 @@ Any files you upload are shared across all of the skills in the current service 
 ## Get intent recommendations from Watson
 {: #intent-recommendations-get-intent-recommendations}
 
-Let the service analyze your call center chat transcripts and recommend some initial intents for you to start with. If you already created some intents, let the service analyze your logs and compare its findings with your existing intents to identify gaps in your training data and suggest new intents that can fill them in.
+Let Watson analyze your call center chat transcripts and recommend some initial intents for you to start with. If you already created some intents, let Watson analyze your logs and compare its findings with your existing intents to identify gaps in your training data and suggest new intents that can fill them in.
 
-To use this feature, upload a file with customer utterances. The service evaluates these utterances and identifies common problem areas that customers mention frequently. The {{site.data.keyword.conversationshort}} tool then displays a set of discrete intents that capture the trending customer needs. You can review each recommended intent and its corresponding user examples to choose the ones you want to add to your training data.
+To use this feature, upload a file with customer utterances. Watson evaluates these utterances and identifies common problem areas that customers mention frequently. The {{site.data.keyword.conversationshort}} tool then displays a set of discrete intents that capture the trending customer needs. You can review each recommended intent and its corresponding user examples to choose the ones you want to add to your training data.
 
 ## Getting intent recommendations
 {: #intent-recommendations-get-intent-recommendations-task}
@@ -95,9 +95,9 @@ To get intent recommendations, complete the following steps:
 
 1.  **First time only**: Click **Add file**, and then click **Choose a file** to browse for the CSV file you created earlier and select it.
 
-    Give the service time to analyze your data and group the utterances.
+    Give Watson time to analyze your data and group the utterances.
 
-1.  Review the intents that are recommended by the service.
+1.  Review the intents that are recommended by Watson.
 
     The intent recommendations are ordered by:
 
@@ -121,7 +121,7 @@ As the subjects that your customers want to discuss change, you can use the inte
 ## Get intent user example recommendations
 {: #intent-recommendations-get-example-recommendations}
 
-The data you provide to the service for it to find intent user examples does not need to associate the examples with intents. You simply provide the raw customer utterances and let the service do the work of choosing the ones that are appropriate for the current intent. For every intent, the service analyzes the same data to find user examples that are appropriate for that intent.
+The data you provide to Watson for it to find intent user examples does not need to associate the examples with intents. You simply provide the raw customer utterances and let Watson do the work of choosing the ones that are appropriate for the current intent. For every intent, Watson analyzes the same data to find user examples that are appropriate for that intent.
 
 Before you begin, create a CSV file with your data. See [Creating a user example source file](#intent-recommendations-log-files-add).
 
@@ -129,7 +129,7 @@ Before you begin, create a CSV file with your data. See [Creating a user example
 
 1.  Add at least 5 user examples that illustrate the full range of typical utterances that you anticipate customers might say to trigger this intent.
 
-    These seed user examples teach the service about the kinds of utterances to look for in the files you upload.
+    These seed user examples teach Watson about the kinds of utterances to look for in the files you upload.
 
 1.  Click **Show recommendations**.
 
@@ -137,13 +137,13 @@ Before you begin, create a CSV file with your data. See [Creating a user example
 
 1.  **First time only**: Click **Upload files**, and then click **Choose a file** to browse for the CSV file you created earlier and select it.
 
-    It's fine if the file you uploaded contains utterances for all types of intents. The service knows which intent you are working on and finds suitable examples to recommend for this specific intent.
+    It's fine if the file you uploaded contains utterances for all types of intents. Watson knows which intent you are working on and finds suitable examples to recommend for this specific intent.
 
-    After the file is uploaded and processed by the service, recommended utterances are displayed. If no recommendations are made, then the file does not contain examples that are suitable for this intent.
+    After the file is uploaded and processed by Watson, recommended utterances are displayed. If no recommendations are made, then the file does not contain examples that are suitable for this intent.
 
 1.  If the file cannot provide useful recommendations for any of your intents, you can try a different set of utterances by uploading another file. See [Managing uploaded files](#intent-recommendations-manage-files) for more details.
 
-1.  After the service shows you recommendations, select the utterances that you want to add as user examples for this intent, and then click **Add**. Or click **Next set** to review more utterances.
+1.  After Watson shows you recommendations, select the utterances that you want to add as user examples for this intent, and then click **Add**. Or click **Next set** to review more utterances.
 1.  If you want to search the content of the CSV file for user examples yourself, click the **Search Logs** tab, enter a keyword on which to base the search, and then press **Enter**.
 
     Follow these search query syntax guidelines:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-09"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
 
@@ -43,7 +43,7 @@ subcollection: assistant
   
   Ideally, find real-world user utterance examples that you can extract from existing business processes. The user examples should be tailored to your specific business. For example, if you are an insurance company, your user examples might look more like this, `I want to buy a new XYZ insurance plan.`
   
-  The examples you provide are used by the service to build a machine learning model that can recognize the same and similar types of utterances and map them to the appropriate intent.
+  The examples you provide are used by your assistant to build a machine learning model that can recognize the same and similar types of utterances and map them to the appropriate intent.
 
 Start with a few intents, and test them as you iteratively expand the scope of the application.
 
@@ -83,7 +83,7 @@ Use the {{site.data.keyword.conversationshort}} tool to create intents.
     To learn about the impact of including references to entities in your user examples, see [How entity references are treated](#intents-entity-references).
     {: tip}
 
-    Intent names and example text can be exposed in URLs when an application interacts with the service. Do not include sensitive or personal information in these artifacts.
+    Intent names and example text can be exposed in URLs when an application interacts with {{site.data.keyword.conversationshort}}. Do not include sensitive or personal information in these artifacts.
     {: important}
 
 1.  Click **Add example** to save the user example.
@@ -174,7 +174,7 @@ After you have finished creating new intents, you can test the system to see if 
 
     ![Screen capture of correcting a recognized intent](images/correct_intent.png)
 
-1.  If the input is unrelated to any of the intents in your application, you can teach the service by selecting the displayed intent, and then clicking **Mark as irrelevant**.
+1.  If the input is unrelated to any of the intents in your application, you can teach your assistant that by selecting the displayed intent, and then clicking **Mark as irrelevant**.
 
     ![Mark as irrelevant screen capture](images/irrelevant.png)
 
@@ -204,15 +204,15 @@ As intent confidence scores change, your dialogs might need restructuring. For e
 ## Intent limits
 {: #intents-limits}
 
-The number of intents and examples you can create depends on your {{site.data.keyword.conversationshort}} service plan:
+The number of intents and examples you can create depends on your {{site.data.keyword.conversationshort}} plan type:
 
-| Service plan     | Intents per skill | Examples per skill |
+| Plan     | Intents per skill | Examples per skill |
 |------------------|------------------:|-------------------:|
 | Premium          |             2,000 |             25,000 |
 | Plus             |             2,000 |             25,000 |
 | Standard         |             2,000 |             25,000 |
 | Lite             |               100 |             25,000 |
-{: caption="Service plan details" caption-side="top"}
+{: caption="Plan details" caption-side="top"}
 
 ## Editing intents
 {: #intents-edit}
@@ -261,7 +261,7 @@ You can export a number of intents to a CSV file, so you can then import and reu
 
 If you have a large number of intents and examples, you might find it easier to import them from a comma-separated value (CSV) file than to define them one by one in the {{site.data.keyword.conversationshort}} tool. Be sure to remove any personal data from the user examples that you include in the file.
 
-Alternatively, you can upload a file with raw user utterances (from call center logs, for example) and let the service find candidates for user examples from the data. See [Adding examples from log files](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations) for more information. This feature is available to Plus or Premium plan users only.
+Alternatively, you can upload a file with raw user utterances (from call center logs, for example) and let Watson find candidates for user examples from the data. See [Adding examples from log files](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations) for more information. This feature is available to Plus or Premium plan users only.
 
 1.  Collect the intents and examples into a CSV file, or export them from a spreadsheet to a CSV file. The required format for each line in the file is as follows:
 

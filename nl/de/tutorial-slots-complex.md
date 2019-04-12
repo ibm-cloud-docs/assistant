@@ -1,13 +1,18 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-02-16"
+  years: 2015, 2019
+lastupdated: "2019-02-21"
+
+subcollection: assistant
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -24,6 +29,7 @@ In diesem Lernprogramm verbessern Sie einen einfachen Knoten mit Slots zum Erfas
 {: shortdesc}
 
 ## Lernziele
+{: #tutorial-slots-complex-objectives}
 
 Sobald Sie dieses Lernprogramm abgeschlossen haben, wissen Sie, wie Sie Folgendes ausführen:
 
@@ -33,20 +39,23 @@ Sobald Sie dieses Lernprogramm abgeschlossen haben, wissen Sie, wie Sie Folgende
 - Nicht erwartete Benutzerantworten verarbeiten
 
 ### Dauer
+{: #tutorial-slots-complex-duration}
+
 Für dieses Lernprogramm benötigen Sie ungefähr zwei bis drei Stunden.
 
 ### Voraussetzung
+{: #tutorial-slots-complex-prereqs}
 
-Arbeiten Sie das Lernprogramm [Knoten mit Slots zu einem Dialogmodul hinzufügen](tutorial-slots.html) durch, bevor Sie mit diesem Lernprogramm beginnen. Sie müssen die erste Lerneinheit für Slots abschließen, bevor Sie mit diesem Lernprogramm beginnen, da es den Knoten mit Slots verwendet, den Sie in der ersten Lerneinheit erstellen. 
+Arbeiten Sie das Lernprogramm [Knoten mit Slots zu einem Dialogmodul hinzufügen](/docs/services/assistant?topic=assistant-tutorial-slots) durch, bevor Sie mit diesem Lernprogramm beginnen. Sie müssen die erste Lerneinheit für Slots abschließen, bevor Sie mit diesem Lernprogramm beginnen, da es den Knoten mit Slots verwendet, den Sie in der ersten Lerneinheit erstellen.
 
 ## Schritt 1: Das Format der Antworten optimieren
-{: #fix-format}
+{: #tutorial-slots-complex-fix-format}
 
 Die Werte der Systementitäten für Datum und Uhrzeit werden beim Speichern in ein Standardformat umgewandelt. Dieses Standardformat vereinfacht das Durchführen von Berechnungen für diese Werte. Der Umwandlungsvorgang soll jedoch für die Benutzer nicht sichtbar sein. In diesem Schritt ändern Sie das Format für das Datum (`2017-12-29`) und die Uhrzeit (`17:00:00`) die im Dialogmodul referenziert werden.
 
 1.  Um den Wert der Kontextvariablen '$date' neu zu formatieren, klicken Sie auf das Symbol **Antwort bearbeiten** ![Antwort bearbeiten](images/edit-slot.png) für den Slot '@sys-date'.
 
-1.  Wählen Sie oben auf der Seite im Menü **Mehr** ![Symbol 'Mehr'](images/kabob.png) die Option **JSON-Editor öffnen** aus und bearbeiten Sie anschließend den JSON-Code, der die Kontextvariable definiert. Fügen Sie eine Umwandlungsmethode für das Datum hinzu, die den Wert `2017-12-29` in den Namen des Wochentags, gefolgt von der Angabe des Monats und des Tages umwandelt. Bearbeiten Sie den JSON-Code wie folgt:
+1.  Wählen Sie im Menü **Mehr** ![Symbol 'Mehr'](images/kabob.png) die Option **JSON-Editor öffnen** aus und bearbeiten Sie anschließend den JSON-Code, der die Kontextvariable definiert. Fügen Sie eine Umwandlungsmethode für das Datum hinzu, die den Wert `2017-12-29` in den Namen des Wochentags, gefolgt von der Angabe des Monats und des Tages umwandelt. Bearbeiten Sie den JSON-Code wie folgt:
 
     ```json
     {
@@ -63,7 +72,7 @@ Die Werte der Systementitäten für Datum und Uhrzeit werden beim Speichern in e
 
 1.  Um das Format zum Speichern der Uhrzeit in der Kontextvariablen '$time' so zu ändern, dass Stunde, Minuten und AM oder PM angegeben werden, klicken Sie auf das Symbol **Antwort bearbeiten** ![Antwort bearbeiten](images/edit-slot.png) für den Slot '@sys-time'.
 
-1.  Wählen Sie oben auf der Seite im Menü **Mehr** ![Symbol 'Mehr'](images/kabob.png) die Option **JSON-Editor öffnen** aus und ändern Sie den JSON-Code, der die Kontextvariable definiert, wie folgt:
+1.  Wählen Sie im Menü **Mehr** ![Symbol 'Mehr'](images/kabob.png) die Option **JSON-Editor öffnen** aus und bearbeiten Sie anschließend den JSON-Code, der die Kontextvariable definiert so, dass er wie folgt lautet: 
 
     ```json
     {
@@ -116,10 +125,10 @@ Die Werte der Systementitäten für Datum und Uhrzeit werden beim Speichern in e
 
     An dieser Stelle antwortet Watson mit `OK. Ich erstelle Ihre Reservierung für 6 Personen am Freitag, 29. Dezember, um 17:00 Uhr.`
 
-Sie haben das Format des Dialogmoduls beim Verweisen auf Kontextvariablenwerte in den Dialogantworten erfolgreich verbessert. Im Dialogmodul wird jetzt `Freitag, 29. Dezember` anstelle des technischen Ausdrucks `2017-12-29` verwendet. Außerdem wird als Uhrzeit nicht `5:00 Uhr nachmittags` angegeben, sondern `17:00 Uhr`. Informationen zu weiteren SpEL-Methoden, die für Datums- und Uhrzeitwerte verwendet werden können, finden Sie unter [Verarbeitungsmethoden für Werte](dialog-methods.html#date-time).
+Sie haben das Format des Dialogmoduls beim Verweisen auf Kontextvariablenwerte in den Dialogantworten erfolgreich verbessert. Im Dialogmodul wird jetzt `Freitag, 29. Dezember` anstelle des technischen Ausdrucks `2017-12-29` verwendet. Außerdem wird als Uhrzeit nicht `5:00 Uhr nachmittags` angegeben, sondern `17:00 Uhr`. Informationen zu weiteren SpEL-Methoden, die für Datums- und Uhrzeitwerte verwendet werden können, finden Sie unter [Verarbeitungsmethoden für Werte](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-date-time).
 
 ## Schritt 2: Alle Angaben auf einmal abfragen
-{: #ask-for-everything}
+{: #tutorial-slots-complex-ask-for-everything}
 
 Beim Testen des Dialogmoduls dürfte Ihnen aufgefallen sein, dass es lästig werden kann, die Slotabfragen einzeln nacheinander zu beantworten. Damit die Benutzer die einzelnen Informationen nicht separat bereitstellen müssen, können Sie die Informationen vorab gesammelt abfragen. Dadurch bekommt der Benutzer die Möglichkeit, mehrere oder alle benötigten Informationen auf einmal einzugeben.
 
@@ -149,16 +158,102 @@ In diesem Schritt erfahren Sie, wie alle Angaben auf einmal abgefragt werden kö
 
     ![Zeigt die Anzeige 'Ausprobieren', wenn der Benutzer alle Angaben in einer einzigen Eingabe bereitstellt.](images/slots-everything-tested.png)
 
-**Hinweis**: Wenn der Benutzer alle Angaben für die Slotwerte in der ersten Eingabe bereitstellt, wird die Abfrage für die Einzelinformationen nicht angezeigt. Angenommen, die Anfangseingabe des Benutzers lautet wie folgt: `Ich möchte für diesen Freitagabend reservieren.` In diesem Fall wird die Anfangsabfrage ausgelassen, da bereits angegebene Informationen (in diesem Beispiel der Tag `Freitag`) nicht erneut abgefragt werden müssen. Das Dialogmodul zeigt stattdessen die Abfrage für den nächsten leeren Slot an.
+Wenn der Benutzer einen der Slotwerte schon in der ersten Eingabe angibt, wird die Abfrage für die Einzelinformatioen nicht angezeigt. Angenommen, die Anfangseingabe des Benutzers lautet wie folgt: `Ich möchte für diesen Freitagabend reservieren.` In diesem Fall wird die Anfangsabfrage ausgelassen, da bereits angegebene Informationen (in diesem Beispiel der Tag `Freitag`) nicht erneut abgefragt werden müssen. Das Dialogmodul zeigt stattdessen die Abfrage für den nächsten leeren Slot an.
+{: note}
 
-## Schritt 3: Benutzereingabe prüfen
-{: #slot-conditions}
+## Schritt 3: Nullen ordnungsgemäß behandeln
+{: #tutorial-slots-complex-recognize-zero}
+
+Wenn Sie die Systementität `sys-number` in einer Slotbedingung verwenden, werden Nullen nicht ordnungsgemäß behandelt. Anstatt die Kontextvariable, die Sie für den Slot definieren, auf 0 zu setzen, setzt der Service die Kontextvariable auf 'false'. Daher wird der Slot nicht als gefüllt eingestuft und der Benutzer wird wiederholt aufgefordert, eine Zahl einzugeben, bis der Benutzer eine andere Zahl als Null angibt.
+
+1.  Testen Sie den Knoten, damit Sie das Problem besser verstehen können. Öffnen Sie die Anzeige 'Ausprobieren' und klicken Sie auf **Löschen**, um die Werte der Slot-Kontextvariablen zu löschen, die Sie beim vorherigen Testen des Knotens mit Slots angegeben hatten. Verwenden Sie das folgende Script:
+
+    <table>
+    <caption>Scriptdetails</caption>
+    <tr>
+      <th>Sprecher</th>
+      <th>Äußerung</th>
+    </tr>
+    <tr>
+      <td>Sie</td>
+      <td>Ich möchte einen Tisch reservieren.</td>
+    </tr>
+    <tr>
+      <td>Watson</td>
+      <td>Ich kann eine Reservierung für Sie vornehmen. Sagen Sie mir nur, an welchem Tag, um welche Zeit und für wie viele Personen Sie reservieren möchten.</td>
+    </tr>
+    <tr>
+      <td>Sie</td>
+      <td>Wir möchten am 23. Mai um 20 Uhr zu Abend essen. Es werden 0 Gäste sein.</td>
+    </tr>
+    <tr>
+      <td>Watson</td>
+      <td>Wie viele Personen werden zum Essen kommen?</td>
+    </tr>
+    <tr>
+      <td>Sie</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Watson</td>
+      <td>Wie viele Personen werden zum Essen kommen?</td>
+    </tr>
+    </table>
+
+    Diese Schleife wird wiederholt, bis Sie eine andere Zahl als 0 angeben.
+
+1.  Um sicherzustellen, dass Nullen in dem Slot ordnungsgemäß behandelt werden, ändern Sie die Slotbedingung von `@sys-number` in `@sys-number || @sys-number:0`.
+
+1.  Klicken Sie auf das Symbol **Antwort bearbeiten** ![Antwort bearbeiten](images/edit-slot.png) für den Slot.
+
+1.  Wenn die Kontextvariable erstellt wird, verwendet sie automatisch denselben Ausdruck, der für die Slotbedingung angegeben ist. Die Kontextvariable muss jedoch nur eine Zahl speichern. Bearbeiten Sie den Wert, der als Kontextvariable gespeichert wurde, um den Operator `OR` aus dem Wert zu entfernen. Wählen Sie im Menü **Mehr** ![Symbol 'Mehr'](images/kabob.png) die Option **JSON-Editor öffnen** aus und bearbeiten Sie anschließend den JSON-Code, der die Kontextvariable definiert. Ändern Sie den Variablenwert von `"guests":"@sys-number || @sys-number:0"` so, dass die folgende Syntax verwendet wird: 
+
+    ```json
+    {
+      "context": {
+        "guests": "@sys-number"
+      }
+    }
+    ```
+    {: codeblock}
+
+1.  Klicken Sie auf **Speichern**.
+
+1.  Testen Sie den Knoten erneut. Öffnen Sie die Anzeige 'Ausprobieren' und klicken Sie auf **Löschen**, um die Werte der Slot-Kontextvariablen zu löschen, die Sie beim vorherigen Testen des Knotens mit Slots angegeben hatten. Verwenden Sie das folgende Script, um die Wirkung Ihrer Änderungen anzuzeigen:
+
+    <table>
+    <caption>Scriptdetails</caption>
+    <tr>
+      <th>Sprecher</th>
+      <th>Äußerung</th>
+    </tr>
+    <tr>
+      <td>Sie</td>
+      <td>Ich möchte einen Tisch reservieren.</td>
+    </tr>
+    <tr>
+      <td>Watson</td>
+      <td>Ich kann eine Reservierung für Sie vornehmen. Sagen Sie mir nur, an welchem Tag, um welche Zeit und für wie viele Personen Sie reservieren möchten.</td>
+    </tr>
+    <tr>
+      <td>Sie</td>
+      <td>Wir möchten am 23. Mai um 20 Uhr zu Abend essen. Es werden 0 Gäste sein.</td>
+    </tr>
+    </table>
+
+    An dieser Stelle antwortet Watson mit `OK. Ich erstelle eine Reservierung für 0 Personen am Mittwoch, 23. Mai um 20:00 Uhr.`
+
+Sie haben den Slot 'number' erfolgreich so formatiert, dass Nullen ordnungsgemäß behandelt werden. Natürlich kann es gewünscht sein, dass der Knoten eine Null nicht als gültigen Wert für die Gästeanzahl akzeptieren soll. Die Vorgehensweise zum Überprüfen der von Benutzern angegebenen Werte wird im nächsten Schritt erläutert. 
+
+## Schritt 4: Benutzereingabe überprüfen
+{: #tutorial-slots-complex-slot-conditions}
 
 Bislang wurde angenommen, dass der Benutzer die entsprechenden Werttypen für die Slots angibt. In der Realität trifft dies nicht immer zu. Um auf ungültige Eingabewerte des Benutzers zu reagieren, können Sie bedingte Antworten für Slots hinzufügen. In diesem Schritt verwenden Sie bedingte Slotantworten für die folgenden Aufgaben:
 
 - Sicherstellen, dass das angefragte Datum nicht in der Vergangenheit liegt
 - Prüfen, ob die angefragte Uhrzeit im Zeitfenster für Tischreservierungen liegt
 - Die Eingabe des Benutzers bestätigen
+- Sicherstellen, dass die angegebene Gästeanzahl größer als null ist.
 - Angeben, dass ein Wert durch einen anderen ersetzt wird
 
 So überprüfen Sie die Eingabe des Benutzers:
@@ -239,12 +334,19 @@ So überprüfen Sie die Eingabe des Benutzers:
     </tr>
     <tr>
       <td>`true`</td>
-      <td>OK, Sie möchten für $time reservieren.</td>
+      <td>OK. Sie möchten für $time reservieren.</td>
       <td>Fortfahren</td>
     </tr>
     </table>
 
-1.  Bearbeiten Sie den Slot '@sys-number', um die Möglichkeit zu berücksichtigen, dass der Benutzer die Gästeanzahl ändern möchte. Wenn der Benutzer während der Verarbeitung des aktuellen Knotens mit Slots einen Slotwert ändert, wird die zugehörige Slotkontextvariable aktualisiert. Es kann hilfreich sein, dem Benutzer mitzuteilen, dass der Wert ersetzt wird. So erhält der Benutzer nicht nur eine Rückmeldung über die Änderung, sondern kann gegebenenfalls die Angabe korrigieren, wenn sie nicht seinen Wünschen entspricht. Klicken Sie in der Bearbeitungsansicht des Knotens mit Slots auf das Symbol **Slot bearbeiten** ![Slot bearbeiten](images/edit-slot.png) für den Slot `@sys-number`.
+1.  Bearbeiten Sie den Slot '@sys-number', um den vom Benutzer angegebenen Wert wie folgt zu überprüfen:
+
+    - Überprüfen, dass die angegebene Gästeanzahl größer als null ist.
+    - Die Möglichkeit berücksichtigen, dass der Benutzer die Gästeanzahl ändern möchte.
+
+      Wenn der Benutzer während der Verarbeitung des aktuellen Knotens mit Slots einen Slotwert ändert, wird die zugehörige Slotkontextvariable aktualisiert. Es kann hilfreich sein, dem Benutzer mitzuteilen, dass der Wert ersetzt wird. So erhält der Benutzer nicht nur eine Rückmeldung über die Änderung, sondern kann gegebenenfalls die Angabe korrigieren, wenn sie nicht seinen Wünschen entspricht. 
+
+1.  Klicken Sie in der Bearbeitungsansicht des Knotens mit Slots auf das Symbol **Slot bearbeiten** ![Slot bearbeiten](images/edit-slot.png) für den Slot `@sys-number`.
 
 1.  Wählen Sie im Menü **Optionen** ![Symbol 'Mehr'](images/kabob.png) im Header *Slot 3 konfigurieren* die Option **Bedingte Antworten aktivieren** aus.
 
@@ -258,8 +360,13 @@ So überprüfen Sie die Eingabe des Benutzers:
       <th>Aktion</th>
     </tr>
     <tr>
+      <td>`entities['sys-number']?.value == 0`</td>
+      <td>Geben Sie eine Zahl an, die größer als 0 ist.</td>
+      <td>Slot löschen und Abfrage wiederholen</td>
+    </tr>
+    <tr>
       <td>`(event.previous_value != null) && (event.previous_value != event.current_value)`</td>
-      <td>OK, die Anzahl der Gäste wird von `<? event.previous_value ?>` in `<? event.current_value ?>`geändert.</td>
+      <td>OK, die Anzahl der Gäste wird von `<? event.previous_value ?>` in `<? event.current_value ?>`.</td>
       <td>Fortfahren</td>
     </tr>
     <tr>
@@ -269,8 +376,8 @@ So überprüfen Sie die Eingabe des Benutzers:
     </tr>
     </table>
 
-## Schritt 4: Slot für Bestätigung hinzufügen
-{: #confirmation-slot}
+## Schritt 5: Slot für Bestätigung hinzufügen
+{: #tutorial-slots-complex-confirmation-slot}
 
 Sie können das Dialogmodul so gestalten, dass ein externes Reservierungssystem aufgerufen und ein Termin für den Benutzer in dem System reserviert wird. Bevor Ihre Anwendung diesen Reservierungsschritt ausführt, sollte der Benutzer noch bestätigen, dass die Details für die Reservierung im Dialogmodul korrekt erfasst wurden. Zu diesem Zweck können Sie einen Bestätigungsslot im Knoten hinzufügen.
 
@@ -336,7 +443,6 @@ Sie können das Dialogmodul so gestalten, dass ein externes Reservierungssystem 
 
     ```json
     {
-      "conditions": "#no",
       "output":{
         "text": {
           "values": [
@@ -384,7 +490,7 @@ Sie können das Dialogmodul so gestalten, dass ein externes Reservierungssystem 
     </tr>
     <tr>
       <td>`!($time && $guests)`</td>
-      <td>Der Termin $date stimmt</td>
+      <td>Das Datum ist $date</td>
       <td>Fortfahren</td>
     </tr>
     </table>
@@ -423,8 +529,8 @@ Sie können das Dialogmodul so gestalten, dass ein externes Reservierungssystem 
 
 Wenn Sie später weitere Slots hinzufügen, müssen Sie diese Bedingungen anpassen, um die zugehörigen Kontextvariablen für die zusätzlichen Slots zu berücksichtigen. Wenn Sie keinen Bestätigungsslot einbeziehen, können Sie nur `!all_slots_filled` angeben. Diese Angabe bleibt gültig, unabhängig davon, wie viele Slots Sie später hinzufügen.
 
-## Schritt 5: Werte der Slotkontextvariablen zurücksetzen
-{: #reset-variables}
+## Schritt 6: Werte der Slotkontextvariablen zurücksetzen
+{: #tutorial-slots-complex-reset-variables}
 
 Wie bereits erläutert, müssen Sie vor jedem Test die Werte der bei dem vorherigen Test erstellten Kontextvariablen löschen. Dies ist erforderlich, da der Knoten mit Slots nur dann Benutzereingaben abfragt, wenn noch keine entsprechenden Informationen vorliegen. Wenn die Slotkontextvariablen bereits gültige Werte enthalten, werden keine Anfragen angezeigt. Dies gilt auch für das Dialogmodul während der Laufzeit. Sie müssen im Dialogmodul eine Methode zum Zurücksetzen der Slotkontextvariablen vorsehen, damit die Slots vom nächsten Benutzer neu gefüllt werden können. Zu diesem Zweck fügen Sie für den Knoten mit Slots einen übergeordneten Knoten hinzu, der die Kontextvariablen auf null setzt.
 
@@ -465,8 +571,8 @@ Wie bereits erläutert, müssen Sie vor jedem Test die Werte der bei dem vorheri
 
     Wenn eine Benutzereingabe mit der Absicht `#reservation` übereinstimmt, wird dieser Knoten ausgelöst. Alle Slotkontextvariablen werden auf null gesetzt und danach springt das Dialogmodul direkt zu dem Knoten mit Slots, um ihn zu verarbeiten.
 
-## Schritt 6: Möglichkeit zum Beenden des Prozesses für die Benutzer bereitstellen
-{: #handler}
+## Schritt 7: Benutzern die Möglichkeit zum Beenden des Prozesses geben
+{: #tutorial-slots-complex-handler}
 
 Das Hinzufügen eines Knotens mit Slots ist ein leistungsfähiges Werkzeug, um die Benutzereingaben anzufordern, die Sie benötigen, um eine sinnvolle Antwort an die Benutzer zurückzugeben oder eine Aktion im Namen der Benutzer auszuführen. Es kann jedoch vorkommen, dass der Benutzer bei der Eingabe von Reservierungsdetails beschließt, keine Reservierung vorzunehmen, Sie müssen eine Möglichkeit zum schnellen und sauberen Beenden des Prozesses bereitstellen. Zu diesem Zweck können Sie einen Slot-Handler hinzufügen, der erkennen kann, wenn der Benutzer den Prozess beenden und den Knoten verlassen möchte, ohne die erfassten Werte zu speichern.
 
@@ -535,7 +641,8 @@ Das Hinzufügen eines Knotens mit Slots ist ein leistungsfähiges Werkzeug, um d
 
     Die Bedingung `has_skipped_slots` prüft die Eigenschaften des Knotens mit Slots und stellt fest, ob Slots übersprungen wurden. Der Handler `#exit` lässt alle übrigen Slots aus und springt direkt zur Antwort des Knotens. Dies bedeutet: Wenn die Eigenschaft `has_skipped_slots` vorhanden ist, wurde die Absicht `#exit` ausgelöst und das Dialogmodul kann eine andere Antwort anzeigen.
 
-    **Hinweis**: Wenn Sie mehr als einen Slot konfigurieren, um andere Slots zu überspringen, oder wenn Sie einen anderen Handler auf Knotenebene konfigurieren, der Slots überspringt, dann müssen Sie auf andere Art prüfen, ob die Absicht '#exit' ausgelöst wurde. Informationen zu einer anderen Prüfmethode finden Sie unter [Anforderungen zur Prozessbeendigung verarbeiten](dialog-slots.html#slots-node-level-handler).
+    Wenn Sie mehr als einen Slot konfigurieren, um andere Slots zu überspringen, oder wenn sie einen anderen Ereignishandler auf Knotenebene konfigurieren, der Slots überspringt, dann müssen Sie auf andere Weise überprüfen, ob die Absicht '#exit' ausgelöst wurde. Informationen zu einer anderen Prüfmethode finden Sie unter [Anforderungen zur Prozessbeendigung verarbeiten](/docs/services/assistant?topic=assistant-dialog-slots#dialog-slots-node-level-handler).
+    {: note}
 
 1.  Der Service soll prüfen, ob die Eigenschaft `has_skipped_slots` vorhanden ist, bevor die Standardantwort auf Knotenebene angezeigt wird. Verschieben Sie die bedingte Antwort `has_skipped_slots` nach oben, sodass sie vor der ursprünglichen bedingten Antwort verarbeitet wird (andernfalls würde sie nie ausgelöst). Klicken Sie zu diesem Zweck auf die Antwort, die Sie gerade hinzugefügt haben und versetzen Sie sie mit dem **Aufwärtspfeil** nach oben. Klicken Sie dann auf **Speichern**.
 
@@ -561,7 +668,7 @@ Das Hinzufügen eines Knotens mit Slots ist ein leistungsfähiges Werkzeug, um d
     </tr>
     <tr>
       <td>Watson</td>
-      <td>OK, die Reservierung gilt für 5 Gäste. An welchem Tag möchten Sie reservieren?</td>
+      <td>OK, die Reservierung gilt für 5 Gäste.  An welchem Tag möchten Sie reservieren?</td>
     </tr>
     <tr>
       <td>Sie</td>
@@ -569,11 +676,11 @@ Das Hinzufügen eines Knotens mit Slots ist ein leistungsfähiges Werkzeug, um d
     </tr>
     <tr>
       <td>Watson</td>
-      <td>Gut, wir hören hier auf. Es wird kein Tisch reserviert. Ich hoffe, Ihnen bald wieder bei einer Reservierung helfen zu können. Einen schönen Tag noch.</td>
+      <td>Gut, wir hören hier auf. Es wird kein Tisch reserviert.  Ich hoffe, Ihnen bald wieder bei einer Reservierung helfen zu können. Einen schönen Tag noch.</td>
     </tr>
     </table>
 
-## Schritt 7: Einen gültigen Wert angeben, nachdem der Benutzer dies mehrmals vergeblich versucht hat
+## Schritt 8: Gültigen Wert angeben, wenn der Benutzer dies mehrmals vergeblich versucht hat
 
 Es kann vorkommen, dass ein Benutzer nicht versteht, wonach Sie fragen. Der Benutzer gibt als Antwort immer wieder ungültige Werte ein. Um diese Möglichkeit einzubeziehen, können Sie einen Zähler für den Slot hinzufügen und nach 3 Fehlversuchen des Benutzers einen gültigen Wert angeben, damit der Vorgang fortgesetzt werden kann.
 
@@ -623,8 +730,7 @@ Für die Zeitangabe '$time' definieren Sie eine Folgenachricht, die angezeigt wi
 
     ```json
     {
-      "conditions": "true",
-      "output": {
+      "output":{
         "text": {
           "values": [
             "Bitte geben Sie an, um welche Zeit Sie speisen möchten.
@@ -665,8 +771,7 @@ Für die Zeitangabe '$time' definieren Sie eine Folgenachricht, die angezeigt wi
 
     ```json
     {
-      "conditions": "$counter > 1",
-      "output": {
+      "output":{
         "text": {
           "values": [
             "Sie wissen nicht genau, für welche Uhrzeit Sie reservieren möchten?
@@ -690,26 +795,27 @@ Für die Zeitangabe '$time' definieren Sie eine Folgenachricht, die angezeigt wi
 | Sie     | Ich möchte einen Tisch reservieren. |
 | Watson  | Ich kann eine Reservierung für Sie vornehmen. Sagen Sie mir nur, an welchem Tag, um welche Zeit und für wie viele Personen Sie reservieren möchten. |
 | Sie     | Morgen |
-| Watson  | Also Freitag, der 29. Dezember. Für welche Uhrzeit möchten Sie reservieren? |
+| Watson  | Also Freitag, der 29. Dezember.  Für welche Uhrzeit möchten Sie reservieren? |
 | Sie     | Orange |
-| Watson  | Bitte geben Sie an, um welche Zeit Sie speisen möchten. In dem Restaurant können von 9:00 Uhr bis 21:00 Tische reserviert werden.|
+| Watson  | Bitte geben Sie an, um welche Zeit Sie speisen möchten. In dem Restaurant können von 9:00 Uhr bis 21:00 Tische reserviert werden. |
 | Sie     | Rosa |
-| Watson  | Bitte geben Sie an, um welche Zeit Sie speisen möchten. In dem Restaurant können von 9:00 Uhr bis 21:00 Tische reserviert werden.|
+| Watson  | Bitte geben Sie an, um welche Zeit Sie speisen möchten. In dem Restaurant können von 9:00 Uhr bis 21:00 Tische reserviert werden. |
 | Sie     | Lila |
-| Watson  | Sie wissen nicht genau, für welche Uhrzeit Sie reservieren möchten? Ich reserviere um 20:00 Uhr einen Tisch für Sie. Wie viele Personen werden zum Essen kommen?|
+| Watson  | Sie wissen nicht genau, für welche Uhrzeit Sie reservieren möchten? Ich reserviere um 20:00 Uhr einen Tisch für Sie.  Wie viele Personen werden zum Essen kommen? |
 
-## Schritt 8: Mit einem externen Service verbinden
-{: #action}
+## Schritt 9: Mit einem externen Service verbinden
+{: #tutorial-slots-complex-action}
 
-Ihr Dialogmodul ist jetzt in der Lage, die Reservierungsdetails beim Benutzer abzufragen und zu erfassen. Sie können nun einen externen Service aufrufen, um im Reservierungssystem des Restaurants oder über ein Online-Reservierungssystem für mehrere Restaurants einen Tisch zu reservieren. Weitere Informationen finden Sie unter [Programmgesteuerte Aufrufe über einen Dialogmodulknoten absetzen](dialog-actions.html).
+Ihr Dialogmodul ist jetzt in der Lage, die Reservierungsdetails beim Benutzer abzufragen und zu erfassen. Sie können nun einen externen Service aufrufen, um im Reservierungssystem des Restaurants oder über ein Online-Reservierungssystem für mehrere Restaurants einen Tisch zu reservieren. Weitere Details enthält der Abschnitt [Programmgesteuerte Aufrufe über einen Dialogmodulknoten absetzen](/docs/services/assistant?topic=assistant-dialog-actions).
 
 Fügen Sie in der Logik zum Aufrufen des Reservierungsservice unbedingt eine Prüfung auf `has_skipped_slots` ein und sorgen Sie dafür, dass der Reservierungsvorgang nicht fortgesetzt wird, wenn diese Variable vorhanden ist.
 
 ### Zusammenfassung
+{: #tutorial-slots-complex-summary}
 
-In diesem Lernprogramm haben Sie einen Knoten mit Slots getestet und Änderungen vorgenommen, um die Interaktion mit echten Benutzern zu optimieren. Weitere Informationen zu diesem Thema finden Sie unter [Informationen mit Slots erfassen](dialog-slots.html).
+In diesem Lernprogramm haben Sie einen Knoten mit Slots getestet und Änderungen vorgenommen, um die Interaktion mit echten Benutzern zu optimieren. Weitere Informationen zu diesem Thema finden Sie unter [Informationen mit Slots erfassen](/docs/services/assistant?topic=assistant-dialog-slots).
 
 ## Nächste Schritte
-{: #deploy}
+{: #tutorial-slots-complex-deploy}
 
-Stellen Sie Ihren Arbeitsbereich bereit, indem Sie ihn mit einer Benutzerschnittstelle verbinden. Hierzu stehen Ihnen verschiedene Verfahren zur Verfügung. Weitere Details enthält der Abschnitt [Bereitstellung im Überblick](deploy.html).
+Stellen Sie Ihren Dialogskill bereit, indem Sie ihn zunächst mit einem Assistenten verbinden und anschließend den Assistenten bereitstellen. Hierzu stehen Ihnen verschiedene Verfahren zur Verfügung. Weitere Details enthält der Abschnitt [Integrationen hinzufügen](/docs/services/assistant?topic=assistant-deploy-integration-add).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-04-11"
 
 subcollection: assistant
 
@@ -54,15 +54,15 @@ Here's how you implement your assistant:
 
   The training data consists of the following artifacts:
 
-  - **Intents**: Goals that you anticipate your users have when they interact with the service. Define one intent for each goal that can be identified in a user's input. For example, you might define an intent that is named *store_hours* that answers questions about store hours. For each intent, you add sample utterances that reflect the input customers might use to ask for the information they need, such as, `What time do you open?`
+  - **Intents**: Goals that you anticipate your users have when they interact with your assistant. Define one intent for each goal that can be identified in a user's input. For example, you might define an intent that is named *store_hours* that answers questions about store hours. For each intent, you add sample utterances that reflect the input customers might use to ask for the information they need, such as, `What time do you open?`
 
     Or use prebuilt **content catalogs** that are provided by IBM to get started with data that addresses common customer goals.
 
-  - **Dialog**: Use the dialog tool to build a dialog flow that incorporates your intents. The dialog flow is represented graphically in the tool as a tree. You can add a branch to process each of the intents that you want the service to handle.
+  - **Dialog**: Use the dialog tool to build a dialog flow that incorporates your intents. The dialog flow is represented graphically in the tool as a tree. You can add a branch to process each of the intents that you want your assistant to handle.
 
   - **Entities**: An entity represents a term or object that provides context for an intent. For example, an entity might be a city name that helps your dialog to distinguish which store the user wants to know store hours for. After you add entities, update your dialog to use them. Add dialog nodes that handle the many possible permutations of a request based on the entities that are found in the user input.
 
-    As you add training data, a natural language classifier is automatically added to the skill. The classifier model is trained to understand the types of requests that you teach the service to listen for and respond to.
+    As you add training data, a natural language classifier is automatically added to the skill. The classifier model is trained to understand the types of requests that you teach your assistant to listen for and respond to.
 
 - **Create an assistant**.
 
@@ -100,7 +100,7 @@ US Health Insurance Portability and Accountability Act (HIPAA) support is availa
 ## Next steps
 {: #index-next-steps}
 
-- [Get started](/docs/services/assistant?topic=assistant-getting-started) with the service.
+- [Get started](/docs/services/assistant?topic=assistant-getting-started) with the product.
 - View the list of [developer resources ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/watson/developer-resources/){: new_window}.
 
 Have questions? Contact [IBM Sales ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-01.ibm.com/marketing/iwm/dre/signup?source=urx-20970){: new_window}.
