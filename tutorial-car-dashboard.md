@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
-
 
 ---
 
@@ -128,7 +127,7 @@ Create entities that might occur in user input that has the #turn_on intent to r
     - Value: `air conditioning`. Synonyms: `air` and `AC`.
 
 1.  Click the toggle to turn fuzzy matching **On** for the `@appliance` entity.
-    This setting helps the service recognize references to entities in user input even when the entity is specified in a way that does not exactly match the syntax you use here.
+    This setting helps your assistant recognize references to entities in user input even when the entity is specified in a way that does not exactly match the syntax you use here.
 1.  Click the **Close** ![Close arrow](images/close_arrow.png) icon to finish adding the `@appliance` entity.
 1.  Repeat Steps 2-8 to create the `@genre` entity with fuzzy matching on, and these values and synonyms:
 

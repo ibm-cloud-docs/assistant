@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
 
@@ -43,7 +43,7 @@ You need a service instance to start.
 
 1.  {: hide-dashboard} Go to the [{{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/watson-assistant) page in the {{site.data.keyword.cloud_notm}} catalog.
 
-    The service instance will be created in the **default** resource group if you do not choose a different one, and it *cannot* be changed later. This group is sufficient for the purposes of trying out the service.
+    The service instance will be created in the **default** resource group if you do not choose a different one, and it *cannot* be changed later. This group is sufficient for the purposes of trying out the product.
 
     If you're creating an instance for more robust use, then learn more about [resource groups ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/docs/resources/bestpractice_rgs#bp_resourcegroups){: new_window}.
 1.  {: hide-dashboard} Sign up for a free {{site.data.keyword.cloud_notm}} account or log in.
@@ -52,7 +52,7 @@ You need a service instance to start.
 ## Step 1: Open the tool
 {: #getting-started-launch-tool}
 
-After you create a {{site.data.keyword.conversationshort}} service instance, you land on the **Manage** page of the service dashboard.
+After you create a {{site.data.keyword.conversationshort}} service instance, you land on the **Manage** page of the {{site.data.keyword.conversationshort}} dashboard.
 {: hide-dashboard}
 
 1.  Click **Launch tool**. If you're prompted to log in to the tool, provide your {{site.data.keyword.cloud_notm}} credentials.

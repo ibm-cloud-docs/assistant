@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-22"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
 
@@ -81,7 +81,7 @@ The following features are available only to users of Premium plans.
 
 Unlike API-based plans, which measure usage by the number of API calls made during a specified timeframe, the new Plus plan and updated Premium plan use user-based billing. They measure usage by the number of unique users who interacted with the assistant during a specified timeframe.
 
-The service checks for the following information from API requests in this order for billing purposes:
+{{site.data.keyword.conversationshort}} checks for the following information from API requests in this order for billing purposes:
 
   1.  **user_id**: A property defined in the API that is sent in the context object of a /message API call. Using this property is the best way to ensure that you accurately attribute /message API calls to unique users. For more information about the user ID property, see the API reference documentation:
   
@@ -92,7 +92,7 @@ The service checks for the following information from API requests in this order
 
   1.  **conversation_id**: A property defined in the v1 API that is stored in the context object of a /message API call. This property can be used to identify multiple /message API calls that are associated with a single conversational exchange with one user. However, the same ID is only used if you explicitly retain the ID and pass it back with each request that is made as part of the same conversation. Otherwise, a new ID is generated for each new /message API call.
 
-To get the most benefit from the new user-based service plans, design any custom applications that you use to deploy your assistant to capture a unique user ID or session ID and pass the information to the service.
+To get the most benefit from the new user-based service plans, design any custom applications that you use to deploy your assistant to capture a unique user ID or session ID and pass the information to {{site.data.keyword.conversationshort}}.
 
 ## Authenticating API calls
 {: #services-information-authenticate-api-calls}

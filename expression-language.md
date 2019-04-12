@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
-
 
 ---
 
@@ -139,7 +138,7 @@ While testing your dialog, you can see details of the entities that are recogniz
 ```
 {: codeblock}
 
-For the user input, *Hello now*, the service recognizes the @sys-date and @sys-time system entities, so the response contains these entity objects:
+For the user input, *Hello now*, your assistant recognizes the @sys-date and @sys-time system entities, so the response contains these entity objects:
 
 ```json
 [
@@ -175,7 +174,7 @@ Each entity has a set of properties associated with it. You can access informati
 
 | Property              | Definition | Usage tips |
 |-----------------------|------------|------------|
-| *confidence*          | A decimal percentage that represents the service's confidence in the recognized entity. The confidence of an entity is either 0 or 1, unless you have activated fuzzy matching of entities. When fuzzy matching is enabled, the default confidence level threshold is 0.3. Whether or not fuzzy matching is enabled, system entities always have a confidence level of 1.0. | You can use this property in a condition to have it return false if the confidence level is not higher than a percent you specify. |
+| *confidence*          | A decimal percentage that represents your assistant's confidence in the recognized entity. The confidence of an entity is either 0 or 1, unless you have activated fuzzy matching of entities. When fuzzy matching is enabled, the default confidence level threshold is 0.3. Whether or not fuzzy matching is enabled, system entities always have a confidence level of 1.0. | You can use this property in a condition to have it return false if the confidence level is not higher than a percent you specify. |
 | *location*            | A zero-based character offsets that indicates where the detected entity values begin and end in the input text. | Use `.literal` to extract the span of text between start and end index values that are stored in the location property. |
 | *value*               | The entity value identified in the input. | This property returns the entity value as defined in the training data, even if the match was made against one of its associated synonyms. You can use `.values` to capture multiple occurrences of an entity that might be present in user input. |
 
@@ -196,7 +195,7 @@ In the following examples, the skill contains an airport entity that includes a 
   Both formats evaluate to `So you want to go to Kennedy Airport...' in the response.
 
 - Expressions like `@airport:(JFK)` or `@airport.contains('JFK')` always refer to the **value** of the entity (`JFK` in this example).
-- To be more restrictive about which terms are identified as airports in the input when fuzzy matching is enabled, you can specify this expression in a node condition, for example: `@airport && @airport.confidence > 0.7`. The node will only execute if the service is 70% confident that the input text contains an airport reference.
+- To be more restrictive about which terms are identified as airports in the input when fuzzy matching is enabled, you can specify this expression in a node condition, for example: `@airport && @airport.confidence > 0.7`. The node will only execute if your assistant is 70% confident that the input text contains an airport reference.
 
 In this example, the user input is *Are there places to exchange currency at JFK, Logan, and O'Hare?*
 
@@ -218,7 +217,7 @@ In this example, the user input is *Are there places to exchange currency at JFK
 
 The intents array contains one or more intents that were recognized in the user input, sorted in descending order of confidence.
 
-Each intent has one property only: the `confidence` property. The confidence property is a decimal percentage that represents the service's confidence in the recognized intent.
+Each intent has one property only: the `confidence` property. The confidence property is a decimal percentage that represents your assistant's confidence in the recognized intent.
 
 While testing your dialog, you can see details of the intents that are recognized in user input by specifying this expression in a dialog node response:
 
@@ -227,7 +226,7 @@ While testing your dialog, you can see details of the intents that are recognize
 ```
 {: codeblock}
 
-For the user input, *Hello now*, the service finds an exact match with the #greeting intent. Therefore, it lists the #greeting intent object details first. The response also includes the top 10 other intents that are defined in the skill regardless of their confidence score. (In this example, its confidence in the other intents is set to 0 because the first intent is an exact match.) The top 10 intents are returned because the "Try it out" pane sends the `alternate_intents:true` parameter with its request. If you are using the API directly and want to see the top 10 results, be sure to specify this parameter in your call. If `alternate_intents` is false, which is the default value, only intents with a confidence above 0.2 are returned in the array.
+For the user input, *Hello now*, your assistant finds an exact match with the #greeting intent. Therefore, it lists the #greeting intent object details first. The response also includes the top 10 other intents that are defined in the skill regardless of their confidence score. (In this example, its confidence in the other intents is set to 0 because the first intent is an exact match.) The top 10 intents are returned because the "Try it out" pane sends the `alternate_intents:true` parameter with its request. If you are using the API directly and want to see the top 10 results, be sure to specify this parameter in your call. If `alternate_intents` is false, which is the default value, only intents with a confidence above 0.2 are returned in the array.
 
 ```json
 [{"intent":"greeting","confidence":1},

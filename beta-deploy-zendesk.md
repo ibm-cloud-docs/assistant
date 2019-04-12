@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-09"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
 
@@ -117,7 +117,7 @@ Complete these steps in your dialog skill in {{site.data.keyword.conversationsho
 
       ![Screenshot of the field in the node edit view where you add the node purpose summary.](images/disambig-node-purpose.png)
 
-      Do **not** add an external node name to the root node that you created in Step 2. When an escalation occurs, the service looks at the external node name of the last processed node to learn which user goal was not met successfully. If you include an external node name in the node with the connect to human agent intent, then you will prevent the service from learning the last real, goal-oriented node that the user interacted with before escalating the issue.
+      Do **not** add an external node name to the root node that you created in Step 2. When an escalation occurs, your assistant looks at the external node name of the last processed node to learn which user goal was not met successfully. If you include an external node name in the node with the connect to human agent intent, then you will prevent your assistant from learning the last real, goal-oriented node that the user interacted with before escalating the issue.
       {: tip}
 
 1.  If a child node in the branch conditions on a follow-up request or question that you do not want the assistant to handle, add a **Connect to human agent** response type to the node.
@@ -221,7 +221,7 @@ To set up routing assignments for escalations from the assistant to a human, com
 
 When you want the assistant to start answering visitor questions, turn on monitoring.
 
-When the assistant is confident that it knows how to answer a user query, the assistant responds to the user directly. (The assistant is confident when the top intent identified by the service has a confidence score of 0.75 or higher.)
+When the assistant is confident that it knows how to answer a user query, the assistant responds to the user directly. (The assistant is confident when the top intent identified by your assistant has a confidence score of 0.75 or higher.)
 
 If you do not want the assistant to directly answer certain types of user queries, then you can add rules to specify other actions for the assistant to take per dialog branch.
 

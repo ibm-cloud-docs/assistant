@@ -1,9 +1,10 @@
-
 ---
 
 copyright:
-  years: 2015, 2017
-lastupdated: "2017-07-06"
+  years: 2015, 2019
+lastupdated: "2018-05-30"
+
+subcollection: assistant
 
 ---
 
@@ -14,13 +15,13 @@ lastupdated: "2017-07-06"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 
-# Video: {{site.data.keyword.conversationshort}}-Tool im Überblick
-{: #tool-video}
+# Video: Tool im Überblick
+{: #tool-overview}
 
-Mit dem {{site.data.keyword.conversationshort}}-Tool können Sie Ihren {{site.data.keyword.conversationshort}}-Arbeitsbereich erstellen und verwalten. Dieses Video stellt die verschiedenen Bereich des Tools vor.
+Mit dem {{site.data.keyword.conversationshort}}-Tool können Sie einen oder mehrere virtuelle Assistenten erstellen und verwalten. In diesem Video erfahren Sie mehr über das Tool.
 
 <p>
   <div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" id="youtubeplayer" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/sSfTcxDrmSI?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+    <iframe class="embed-responsive-item" id="youtubeplayer" title="Watson Assistant-Tool im Überblick" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/h-u-5f8fZtc?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
   </div>
 </p>

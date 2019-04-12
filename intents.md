@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
 
@@ -83,7 +83,7 @@ Use the {{site.data.keyword.conversationshort}} tool to create intents.
     To learn about the impact of including references to entities in your user examples, see [How entity references are treated](#intents-entity-references).
     {: tip}
 
-    Intent names and example text can be exposed in URLs when an application interacts with the service. Do not include sensitive or personal information in these artifacts.
+    Intent names and example text can be exposed in URLs when an application interacts with {{site.data.keyword.conversationshort}}. Do not include sensitive or personal information in these artifacts.
     {: important}
 
 1.  Click **Add example** to save the user example.

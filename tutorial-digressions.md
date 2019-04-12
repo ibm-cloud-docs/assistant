@@ -2,10 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
-
 
 ---
 
@@ -61,25 +60,25 @@ First you will need to import the *Digression showcase* dialog skill into your {
 ## Step 2: Temporarily digressing away from dialog
 {: #tutorial-digressions-temporarily-digress-away}
 
-Digressions allow for the user to break away from a dialog branch in order to temporarily change the topic before returning to the original dialog flow. In this step, you will start to book a restaurant reservation, then digress away to ask for the restaurant's hours. After providing the opening hours information, the service will return back to the restaurant booking dialog flow.
+Digressions allow for the user to break away from a dialog branch in order to temporarily change the topic before returning to the original dialog flow. In this step, you will start to book a restaurant reservation, then digress away to ask for the restaurant's hours. After providing the opening hours information, your assistant will return back to the restaurant booking dialog flow.
 
 1.  Click **Dialog** to switch from the page with intents to a view of the dialog tree.
 
 1.  Click the ![Try it](images/ask_watson.png) icon to open the "Try it out" pane.
 1.  Type `Book me a restaurant` into the text field.
 
-    The service responds with a prompt for the day to reserve, `When do you want to go?`
+    Your assistant responds with a prompt for the day to reserve, `When do you want to go?`
 
 1.  Click the **Location** ![Location](images/location.png) icon next to the response to highlight the node that triggered the response, the **Restaurant booking** node, in the dialog tree.
 
     ![Shows the Restaurant booking node highlighted and the dialog in progress in the Try it out pane.](images/tut-dig-location.png)
 1.  Type `Tomorrow`.
 
-    The service responds with a prompt for the time to reserve, `What time do you want to go?`
+    Your assistant responds with a prompt for the time to reserve, `What time do you want to go?`
 
 1.  You do not know when the restaurant closes, so you ask, `What time do you close?`
 
-    The bot digresses away from the restaurant booking node to process the **Restaurant opening hours** node. It responds with, `The restaurant is open from 8:00 AM to 10:00 PM.` The service then returns to the restaurant booking node, and prompts you again for the reservation time.
+    The bot digresses away from the restaurant booking node to process the **Restaurant opening hours** node. It responds with, `The restaurant is open from 8:00 AM to 10:00 PM.` Your assistant then returns to the restaurant booking node, and prompts you again for the reservation time.
 
     ![Shows the digression happening in the Try it out pane.](images/tut-dig-digression.png)
 1.  **Optional**: To complete the dialog flow, type `8pm` for the reservation time and `2` for the number of guests.
@@ -105,22 +104,22 @@ In this step, you will edit the digression settting for the restaurant booking n
 
 1.  Type `Book me a restaurant`.
 
-    The service responds with a prompt for the day to reserve, `When do you want to go?`
+    Your assistant responds with a prompt for the day to reserve, `When do you want to go?`
 
 1.  Type `Tomorrow`.
 
-    The service responds with a prompt for the time to reserve, `What time do you want to go?`
+    Your assistant responds with a prompt for the time to reserve, `What time do you want to go?`
 
 1.  Ask, `What time do you close?`
 
-    The service recognizes that the question triggers the #restaurant_opening_hours intent, but ignores it and displays the prompt associated with the @sys-time slot again instead.
+    Your assistant recognizes that the question triggers the #restaurant_opening_hours intent, but ignores it and displays the prompt associated with the @sys-time slot again instead.
 
 You successfully prevented the user from digressing away from the restaurant booking process.
 
 ## Step 4: Digressing to a node that does not return
 {: #tutorial-digressions-digress-without-return}
 
-You can configure a dialog node to not go back to the node that the service digressed away from for the current node to be processed. To demonstrate this, you will change the digression setting for the restaurant hours node. In Step 2, you saw that after digressing away from the restaurant booking node to go to the restaurant opening hours node, the service went back to the restaurant booking node to continue with the reservation process. In this exercise, after you change the setting, you will digress away from the **Job opportunities** dialog to ask about restaurant opening hours and see that the service does not return to where it left off.
+You can configure a dialog node to not go back to the node that your assistant digressed away from for the current node to be processed. To demonstrate this, you will change the digression setting for the restaurant hours node. In Step 2, you saw that after digressing away from the restaurant booking node to go to the restaurant opening hours node, your assistant went back to the restaurant booking node to continue with the reservation process. In this exercise, after you change the setting, you will digress away from the **Job opportunities** dialog to ask about restaurant opening hours and see that your assistant does not return to where it left off.
 
 1.  Click to open the **Restaurant opening hours** node.
 
@@ -132,13 +131,13 @@ You can configure a dialog node to not go back to the node that the service digr
 
 1.  To engage the **Job opportunities** dialog node, type `I'm looking for a job`.
 
-    The service responds by saying, `We are always looking for talented people to add to our team. What type of job are you interested in?`
+    Your assistant responds by saying, `We are always looking for talented people to add to our team. What type of job are you interested in?`
 
 1.  Instead of answering this question, ask the bot an unrelated question. Type `What time do you open?`
 
-    The service digresses away from the Job opportunities node to the Restaurant opening hours node to answer your question. The service responds with `The restaurant is open from 8:00 AM to 10:00 PM.`
+    Your assistant digresses away from the Job opportunities node to the Restaurant opening hours node to answer your question. Your assistant responds with `The restaurant is open from 8:00 AM to 10:00 PM.`
 
-    Unlike in the previous test, this time the dialog does not pick up where it left off in the **Job opportunities** node. The service does not return to the dialog that was in progress because you changed the setting on the **Restaurant opening hours** node to not return.
+    Unlike in the previous test, this time the dialog does not pick up where it left off in the **Job opportunities** node. Your assistant does not return to the dialog that was in progress because you changed the setting on the **Restaurant opening hours** node to not return.
 
     ![Shows a conversation that does not return after a digression](images/tut-dig-noreturn.png)
 

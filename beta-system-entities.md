@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-09"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
 
@@ -35,7 +35,7 @@ Enable the new system entities to check out the improvements that have been made
 Currently, this setting can be enabled for English-language dialog skills only.
 {: note}
 
-The new system entities can recognize more nuanced mentions in user input. For example, `@sys-date` can calculate the date of a national holiday that is mentioned by name, such as `Thanksgiving`, or can recognize when a year is specified as part of a date mentioned in the user's input. The improvements also make it easier for the service to distinguish among the many number-based system entities. For example, a date mention that is recognized as a `@sys-date` is not also identified as a `@sys-number` mention.
+The new system entities can recognize more nuanced mentions in user input. For example, `@sys-date` can calculate the date of a national holiday that is mentioned by name, such as `Thanksgiving`, or can recognize when a year is specified as part of a date mentioned in the user's input. The improvements also make it easier for your assistant to distinguish among the many number-based system entities. For example, a date mention that is recognized as a `@sys-date` is not also identified as a `@sys-number` mention.
 
 The `@sys-location` and `@sys-person` system entities have not been changed.
 {: note}

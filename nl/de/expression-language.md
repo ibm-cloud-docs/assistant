@@ -1,13 +1,18 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-02-16"
+  years: 2015, 2019
+lastupdated: "2019-02-21"
+
+subcollection: assistant
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -18,11 +23,13 @@ lastupdated: "2018-02-16"
 {:swift: .ph data-hd-programlang='swift'}
 
 # Ausdrücke für Objektzugriff
+{: #expression-language}
 
 Zum Schreiben von Ausdrücken für den Zugriff auf Objekte und Objekteigenschaften können Sie die Ausdruckssprache SpEL (Spring Expression Language) verwenden. Weitere Informationen finden Sie unter [Spring Expression Language (SpEL) ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/expressions.html){: new_window}.
 {: shortdesc}
 
 ## Auswertungssyntax
+{: #expression-language-long-syntax}
 
 Um Variablenwerte innerhalb anderer Variablen zu erweitern oder um Methoden für Eigenschaften und globale Objekte aufzurufen, verwenden Sie die Ausdruckssyntax `<? expression ?>`. Beispiel:
 
@@ -33,16 +40,16 @@ Um Variablenwerte innerhalb anderer Variablen zu erweitern oder um Methoden für
     - `"context":{"email": "<? @email.literal ?>"}`
 
 ## Kurzformsyntax
-{: #shorthand-syntax}
+{: #expression-language-shorthand-syntax}
 
 Erfahren Sie, wie mit der Kurzformsyntax SpEL schnell auf die folgenden Objekte verwiesen werden kann:
 
-- [Kontextvariablen](expression-language.html#shorthand-context)
-- [Entitäten](expression-language.html#shorthand-entities)
-- [Absichten](expression-language.html#shorthand-intents)
+- [Kontextvariablen](#expression-language-shorthand-context)
+- [Entitäten](#expression-language-shorthand-entities)
+- [Absichten](#expression-language-shorthand-intents)
 
 ### Kurzformsyntax für Kontextvariablen
-{: #shorthand-context}
+{: #expression-language-shorthand-context}
 
 In der folgenden Tabelle sind Beispiele für die Kurzformsyntax aufgeführt, die Sie zum Schreiben von Kontextvariablen in Bedingungsausdrücken verwenden können.
 
@@ -60,7 +67,7 @@ In den Namen von Kontextvariablen können Sie Sonderzeichen wie Bindestriche ode
 - Anführungszeichen "
 
 ### Kurzformsyntax für Entitäten
-{: #shorthand-entities}
+{: #expression-language-shorthand-entities}
 
 In der folgenden Tabelle sind Beispiele für die Kurzformsyntax aufgeführt, die Sie zum Referenzieren von Entitäten verwenden können:
 
@@ -78,19 +85,36 @@ In SpEL verhindert das Fragezeichen `(?)` das Auslösen einer Nullzeigerausnahme
 Falls der Entitätswert, den Sie überprüfen wollen, ein Zeichen `)` enthält, können Sie nicht den Operator `:` für Vergleiche verwenden.  Falls Sie beispielsweise prüfen wollen, ob die Entität 'city' den Wert `Dublin (Ohio)` besitzt, müssen Sie `@city == 'Dublin (Ohio)'` anstelle von `@city:(Dublin (Ohio))` verwenden.
 
 ### Kurzformsyntax für Absichten
-{: #shorthand-intents}
+{: #expression-language-shorthand-intents}
 
 In der folgenden Tabelle sind Beispiele für die Kurzformsyntax aufgeführt, die Sie zum Referenzieren von Absichten verwenden können:
 
-| Kurzformsyntax        | Vollständige Syntax in SpEL |
-|-------------------------|---------------------|
-| `#help`                 | `intent == 'help'`  |
-| `! #help`               | `intent != 'help'`  |
-| `NOT #help`             | `intent != 'help'`  |
-| `#help` oder `#i_am_lost` | <code>(intent == 'help' \|\| intent == 'I_am_lost')</code> |
+<table>
+  <caption>Kurzformsyntax für Absichten</caption>
+  <tr>
+    <th>Kurzformsyntax</th>
+    <th>Vollständige Syntax in SpEL</th>
+  </tr>
+  <tr>
+    <td>`#help`</td>
+    <td>`intent == 'help'`</td>
+  </tr>
+  <tr>
+    <td>`! #help`</td>
+    <td>`intent != 'help'`</td>
+  </tr>
+  <tr>
+    <td>`NOT #help`</td>
+    <td>`intent != 'help'`</td>
+  </tr>
+  <tr>
+    <td>`#help` oder `#i_am_lost`</td>
+    <td>`(intent == 'help' || intent == 'I_am_lost')`</td>
+  </tr>
+</table>
 
 ## Integrierte globale Variablen
-{: #builtin-vars}
+{: #expression-language-builtin-vars}
 
 Mit der Ausdruckssprache können Sie Eigenschaftsinformationen für die folgenden globalen Variablen extrahieren:
 
@@ -103,7 +127,7 @@ Mit der Ausdruckssprache können Sie Eigenschaftsinformationen für die folgende
 | *output*             | Der Teil der verarbeiteten Dialognachricht mit dem JSON-Objekt. |
 
 ## Auf Entitäten zugreifen
-{: #access-entity}
+{: #expression-language-access-entity}
 
 Das Entitätsarray enthält eine oder mehrere Entitäten, die in der Benutzereingabe erkannt wurden.
 
@@ -129,17 +153,22 @@ Für die Benutzereingabe *Hello now* erkennt der Service die Systementitäten '@
 {: codeblock}
 
 ### Relevanz der Position von Entitäten in der Eingabe
+{: #expression-language-placement-matters}
 
-Verwenden Sie den vollständigen SpEL-Ausdruck, wenn die Position von Entitäten in der Eingabe von Bedeutung ist. Die Bedingung `entities['city']?.contains('Boston')` gibt 'true' zurück, wenn mindestens eine Entität 'city' mit dem Wert 'Boston' unter allen Entitäten '@city' gefunden wird, wobei die Platzierung irrelevant ist.
+Wenn Sie die Kurzform des Ausdrucks `@city.contains('Boston')` in einer Bedingung verwenden, gibt der Dialogmodulknoten **nur dann** 'true' zurück, wenn `Boston` als erste Entität in der Benutzereingabe erkannt wurde. Verwenden Sie diese Syntax nur, wenn die Platzierung der Entitäten in der Eingabe von Bedeutung ist und nur die erste Erwähnung überprüft werden soll.
 
-Beispiel: Ein Benutzer übergibt `"I want to go from Toronto to Boston."` Die Entitäten `@city:Toronto` und `@city:Boston` werden erkannt und in den folgenden Entitäten dargestellt:
+Verwenden Sie den vollständigen SpEL-Ausdruck, wenn die Bedingung für jede Erwähnung des Begriffs in der Benutzereingabe 'true' zurückgeben soll, unabhängig von der Reihenfolge der Entitätserwähnungen. Die Bedingung `entities['city']?.contains('Boston')` gibt 'true' zurück, wenn mindestens eine Entität 'city' mit dem Wert 'Boston' unter allen Entitäten '@city' gefunden wird, wobei die Platzierung irrelevant ist.
+
+Beispiel: Ein Benutzer übergibt `"I want to go from Toronto to Boston."` Die Entitäten `@city:Toronto` und `@city:Boston` werden erkannt und in dem zurückgegebenen Array wie folgt dargestellt:
 
 - `entities.city[0].value = 'Toronto'`
 - `entities.city[1].value = 'Boston'`
 
-Die Bedingung `@city.contains('Boston')` in einem Dialogmodulknoten gibt 'true' zurück, obwohl 'Boston' die zweite erkannte Entität ist.
+Die Reihenfolge der Entitäten in dem zurückgegebenen Array entspricht der Reihenfolge ihrer Erwähnung in der Benutzereingabe.
+{: note}
 
 ### Entitätseigenschaften
+{: #expression-language-entity-props}
 
 Jeder Entität sind eine Reihe von Eigenschaften zugeordnet. Über die Eigenschaften können Sie auf Informationen zu einer Entität zugreifen.
 
@@ -150,7 +179,9 @@ Jeder Entität sind eine Reihe von Eigenschaften zugeordnet. Über die Eigenscha
 | *value*               | Der in der Eingabe ermittelte Entitätswert. | Diese Eigenschaft gibt den Entitätswert so zurück, wie er in den Trainingsdaten definiert ist, und zwar auch dann, wenn die Übereinstimmung mit einem der zugehörigen Synonyme vorlag. Mit `.values` können Sie mehrere Vorkommen einer Entität erfassen, die möglicherweise in der Benutzereingabe enthalten sind. |
 
 ### Verwendungsbeispiele für Entitätseigenschaften
-In den folgenden Beispielen enthält der Arbeitsbereich eine Entität 'airport', die den Wert 'JFK' und das Synonym 'Kennedy Airport' umfasst. Die Benutzereingabe lautet *I want to go to Kennedy Aiport*.
+{: #expression-language-entity-props-example}
+
+In den folgenden Beispielen enthält der Skill eine Entität 'airport', die den Wert 'JFK' und das Synonym 'Kennedy Airport' enthält. Die Benutzereingabe lautet *I want to go to Kennedy Aiport*.
 
 - Um eine bestimmte Antwort zurückzugeben, falls die Entität 'JFK' in der Benutzereingabe erkannt wird, könnten Sie den folgenden Ausdruck zur Antwortbedingung hinzufügen:
   `entities.airport[0].value == 'JFK'`
@@ -182,9 +213,9 @@ Im Beispiel lautet die Benutzereingabe *Are there places to exchange currency at
   `You asked about these airports: JFK, Logan, O'Hare.`
 
 ## Auf Absichten zugreifen
-{: #access-intent}
+{: #expression-language-intent}
 
-Das Absichtenarray enthält eine oder mehrere Absichten, die in der Benutzereingabe erkannt wurden und die in absteigender Reihenfolge gemäß ihrer Konfidenz sortiert sind. 
+Das Absichtenarray enthält eine oder mehrere Absichten, die in der Benutzereingabe erkannt wurden und die in absteigender Reihenfolge gemäß ihrer Konfidenz sortiert sind.
 
 Jede Absicht besitzt nur eine einzige Eigenschaft, nämlich die Eigenschaft `confidence`. Die Eigenschaft 'confidence' gibt einen als Dezimalzahl ausgedrückten Prozentsatz an, der die Konfidenz des Service bezüglich der erkannten Absicht darstellt.
 
@@ -212,18 +243,19 @@ Die folgenden Beispiele zeigen, wie Sie die Eingabe auf einen Absichtswert über
 `intent == 'help'` unterscheidet sich von `intents[0] == 'help'`, weil `intent == 'help'` keine Ausnahmebedingung auslöst, wenn keine Absicht erkannt wird. Eine Auswertung mit 'true' findet nur dann statt, wenn die Konfidenz der Absicht einen Schwellenwert überschreitet.  Wenn Sie wollen, können Sie ein angepasstes Konfidenzniveau für eine Bedingung angeben, z. B. `intents.size() > 0 && intents[0] == 'help' && intents[0].confidence > 0.1`.
 
 ## Auf Eingabe zugreifen
-{: #access-input}
+{: #expression-language-intent-props}
 
 Das JSON-Eingabeobjekt enthält eine einzige Eigenschaft, nämlich die Eigenschaft 'text'. Die Eigenschaft 'text' stellt den Text der Benutzereingabe dar.
 
 ### Verwendungsbeispiele für Eingabeeigenschaften
+{: #expression-language-intent-props-example}
 
 Das folgende Beispiel zeigt, wie auf die Eingabe zugegriffen wird:
 
 - Um einen Knoten auszuführen, wenn die Benutzereingabe 'Yes' lautet, wird der folgende Ausdruck zur Knotenbedingung hinzugefügt:
   `input.text == 'Yes'`
 
-Zur Auswertung oder Bearbeitung von Text aus der Benutzereingabe können Sie jede der [Methoden für Zeichenfolgen](/docs/services/conversation/dialog-methods.html#strings) verwenden. Beispiel:
+Zur Auswertung oder Bearbeitung von Text aus der Benutzereingabe können Sie jede der [Methoden für Zeichenfolgen](/docs/services/conversation/dialog-methods#dialog-methods-strings) verwenden. Beispiel:
 
 - Um zu überprüfen, ob die Benutzereingabe 'Yes' enthält, verwenden Sie `input.text.contains( 'Yes' )`.
 - Um 'true' zurückzugeben, wenn die Benutzereingabe eine Zahl ist, verwenden Sie `input.text.matches( '[0-9]+' )`.

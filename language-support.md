@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-14"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
 
@@ -25,12 +25,12 @@ subcollection: assistant
 # Supported languages
 {: #language-support}
 
-The {{site.data.keyword.conversationshort}} service supports the languages listed. Individual features of the service are supported to a greater or lesser extent for each language.
+The {{site.data.keyword.conversationshort}} service supports the languages listed. Individual features are supported to a greater or lesser extent for each language.
 {: shortdesc}
 
 In the following tables, the level of language and feature support is indicated by these codes:
 
-- **GA** - The feature is generally available and supported for this language. Note that features may continue to be updated even after they are generally available.
+- **GA** - The feature is generally available and supported for this language. Note that features might continue to be updated even after they are generally available.
 - **Beta** - The feature is supported only as a Beta release, and is still undergoing testing before it is made generally available in this language.
 - **NA** - Indicates that a feature is not available in this language.
 
@@ -128,11 +128,11 @@ When finished making selections, click **Update** to save and return to the skil
 ## Working with accented characters
 {: #language-support-accents}
 
-In a conversational setting, users may or may not use accents while interacting with the {{site.data.keyword.conversationshort}} service. As such, both accented and non-accented versions of words may be treated the same for intent detection and entity recognition.
+In a conversational setting, users might or might not use accents while interacting with the {{site.data.keyword.conversationshort}} service. As such, both accented and non-accented versions of words might be treated the same for intent detection and entity recognition.
 
-However for some languages, like Spanish, some accents can alter the meaning of the entity. Thus, for entity detection, although the original entity may implicitly have an accent, the service can also match the non-accented version of the same entity, but with a slightly lower confidence score.
+However for some languages, like Spanish, some accents can alter the meaning of the entity. Thus, for entity detection, although the original entity might implicitly have an accent, your assistant can also match the non-accented version of the same entity, but with a slightly lower confidence score.
 
-For example, for the word "barrió", which has an accent and corresponds to the past tense of the verb "barrer" (to sweep), the service can also match the word "barrio" (neighborhood), but with a slightly lower confidence.
+For example, for the word "barrió", which has an accent and corresponds to the past tense of the verb "barrer" (to sweep), your assistant can also match the word "barrio" (neighborhood), but with a slightly lower confidence.
 
 The system will provide the highest confidence scores in entities with exact matches. For example, `barrio` will not be detected if `barrió` is in the training set; and `barrió` will not be detected if `barrio` is in the training set.
 
