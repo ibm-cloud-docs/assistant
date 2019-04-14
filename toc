@@ -61,7 +61,7 @@ Watson Assistant
         logs.md
         logs-resources.md
 
-    migrate.md
+    /watson/watson-migrate
     recovery.md
     backup.md
     upgrade.md
