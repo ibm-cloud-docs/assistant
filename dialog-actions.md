@@ -241,7 +241,7 @@ To create a {{site.data.keyword.openwhisk_short}} action, complete the following
 
 1.  Go to the [online {{site.data.keyword.openwhisk_short}} editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/openwhisk/create){: new_window}, where you can write your code directly in your browser.
 
-    There is also a [command line interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/openwhisk/learn/cli){: new_window} you can install that enables you to define an action using code you write locally.
+    There is also a [command-line interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/openwhisk/learn/cli){: new_window} you can install that enables you to define an action using code you write locally.
 
 1.  Create one of the following types of actions:
 
