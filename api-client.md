@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-18"
+lastupdated: "2019-04-16"
 
 ---
 
@@ -54,60 +54,67 @@ You can also access the service credentials from your {{site.data.keyword.Bluemi
 Interacting with the {{site.data.keyword.conversationshort}} service is simple. Let's take a look at an example that connects to the service, sends a single message, and prints the output to the console:
 
 ```javascript
-// Example 1: sets up service wrapper, sends initial message, and 
+// Example 1: sets up service wrapper, sends initial message, and
 // receives response.
 
-var AssistantV2 = require('watson-developer-cloud/assistant/v2');
+const AssistantV2 = require('watson-developer-cloud/assistant/v2');
 
 // Set up Assistant service wrapper.
-var service = new AssistantV2({
+const service = new AssistantV2({
   iam_apikey: '{apikey}', // replace with API key
-  version: '2018-09-20'
+  version: '2019-02-28',
 });
 
-var assistantId = '{assistant_id}'; // replace with assistant ID
-var sessionId;
+const assistantId = '{assistant_id}'; // replace with assistant ID
+let sessionId;
 
 // Create session.
-service.createSession({
-  assistant_id: assistantId
-}, function(err, result) {
-  if (err) {
-    console.error(err); // something went wrong
-    return;
-  }
-  sessionId = result.session_id;
-  sendMessage(); // start conversation with empty message
-});
+service
+  .createSession({
+    assistant_id: assistantId,
+  })
+  .then(res => {
+    sessionId = res.session_id;
+    sendMessage(''); // start conversation with empty message
+  })
+  .catch(err => {
+    console.log(err); // something went wrong
+  });
 
 // Send message to assistant.
-function sendMessage() {
-  service.message({
-    assistant_id: assistantId,
-    session_id: sessionId
-  }, processResponse);
+function sendMessage(messageText) {
+  service
+    .message({
+      assistant_id: assistantId,
+      session_id: sessionId,
+      input: {
+        message_type: 'text',
+        text: messageText,
+      }
+    })
+    .then(res => {
+      processResponse(res);
+    })
+    .catch(err => {
+      console.log(err); // something went wrong
+    });
 }
 
 // Process the response.
-function processResponse(err, response) {
-  if (err) {
-    console.error(err); // something went wrong
-    return;
-  }
-
+function processResponse(response) {
   // Display the output from assistant, if any. Assumes a single text response.
-  if (response.output.generic.length != 0) {
-      console.log(response.output.generic[0].text);
+  if (response.output.generic.length > 0) {
+    console.log(response.output.generic[0].text);
   }
 
-  // We're done, so we close the session
-  service.deleteSession({
+// We're done, so we close the session.
+service
+  .deleteSession({
     assistant_id: assistantId,
-    session_id: sessionId
-  }, function(err, result) {
-    if (err) {
-      console.error(err); // something went wrong
-    }
+    session_id: sessionId,
+  })
+  .catch(err => {
+    console.log(err); // something went wrong
   });
 }
 ```
@@ -252,72 +259,75 @@ To be able to process user input, we need to add a user interface to our client 
 ```javascript
 // Example 2: adds user input and detects intents.
 
-var prompt = require('prompt-sync')();
-var AssistantV2 = require('watson-developer-cloud/assistant/v2');
+const prompt = require('prompt-sync')();
+const AssistantV2 = require('watson-developer-cloud/assistant/v2');
 
 // Set up Assistant service wrapper.
-var service = new AssistantV2({
+const service = new AssistantV2({
   iam_apikey: '{apikey}', // replace with API key
-  version: '2018-09-20'
+  version: '2019-02-28',
 });
 
-var assistantId = '{assistant_id}'; // replace with assistant ID
-var sessionId;
+const assistantId = '{assistant_id}'; // replace with assistant ID
+let sessionId;
 
 // Create session.
-service.createSession({
-  assistant_id: assistantId
-}, function(err, result) {
-  if (err) {
-    console.error(err); // something went wrong
-    return;
-  }
-  sessionId = result.session_id;
-  sendMessage(); // start conversation with empty message
-});
+service
+  .createSession({
+    assistant_id: assistantId,
+  })
+  .then(res => {
+    sessionId = res.session_id;
+    sendMessage(''); // start conversation with empty message
+  })
+  .catch(err => {
+    console.log(err); // something went wrong
+  });
 
 // Send message to assistant.
 function sendMessage(messageText) {
-  service.message({
-    assistant_id: assistantId,
-    session_id: sessionId,
-    input: {
-      message_type: 'text',
-      text: messageText
-    }
-  }, processResponse);
+  service
+    .message({
+      assistant_id: assistantId,
+      session_id: sessionId,
+      input: {
+        message_type: 'text',
+        text: messageText,
+      }
+    })
+    .then(res => {
+      processResponse(res);
+    })
+    .catch(err => {
+      console.log(err); // something went wrong
+    });
 }
 
 // Process the response.
-function processResponse(err, response) {
-  if (err) {
-    console.error(err); // something went wrong
-    return;
-  }
-
+function processResponse(response) {
   // If an intent was detected, log it out to the console.
   if (response.output.intents.length > 0) {
     console.log('Detected intent: #' + response.output.intents[0].intent);
   }
 
   // Display the output from assistant, if any. Assumes a single text response.
-  if (response.output.generic.length != 0) {
+  if (response.output.generic.length > 0) {
     console.log(response.output.generic[0].text);
   }
 
   // Prompt for the next round of input.
-  var newMessageFromUser = prompt('>> ');
-    if (newMessageFromUser === 'quit') {
-      service.deleteSession({
+  const newMessageFromUser = prompt('>> ');
+  if (newMessageFromUser === 'quit') {
+    service
+      .deleteSession({
         assistant_id: assistantId,
-        session_id: sessionId
-      }, function(err, result) {
-        if (err) {
-          console.error(err); // something went wrong
-        }
+        session_id: sessionId,
+      })
+      .catch(err => {
+        console.log(err); // something went wrong
       });
-      return;
-    }
+    return;
+  }
   sendMessage(newMessageFromUser);
 }
 ```
@@ -490,50 +500,54 @@ We know that our dialog will never request more than one action at a time, so ou
 ```javascript
 // Example 3: implements app actions.
 
-var prompt = require('prompt-sync')();
-var AssistantV2 = require('watson-developer-cloud/assistant/v2');
+const prompt = require('prompt-sync')();
+const AssistantV2 = require('watson-developer-cloud/assistant/v2');
 
-// Set up Assistant service.
-var service = new AssistantV2({
+// Set up Assistant service wrapper.
+const service = new AssistantV2({
   iam_apikey: '{apikey}', // replace with API key
-  version: '2018-09-20'
+  version: '2019-02-28',
 });
 
-var assistantId = '{assistant_id}'; // replace with assistant ID
-var sessionId;
+const assistantId = '{assistant_id}'; // replace with assistant ID
+let sessionId;
 
 // Create session.
-service.createSession({
-  assistant_id: assistantId
-}, function(err, result) {
-  if (err) {
-    console.error(err); // something went wrong
-    return;
-  }
-  sessionId = result.session_id;
-  sendMessage(''); // start conversation with empty message
-});
+service
+  .createSession({
+    assistant_id: assistantId,
+  })
+  .then(res => {
+    sessionId = res.session_id;
+    sendMessage(''); // start conversation with empty message
+  })
+  .catch(err => {
+    console.log(err); // something went wrong
+  });
 
 // Send message to assistant.
 function sendMessage(messageText) {
-  service.message({
-    assistant_id: assistantId,
-    session_id: sessionId,
-    input: {
-      message_type: 'text',
-      text: messageText
-    }
-  }, processResponse);
+  service
+    .message({
+      assistant_id: assistantId,
+      session_id: sessionId,
+      input: {
+        message_type: 'text',
+        text: messageText,
+      }
+    })
+    .then(res => {
+      processResponse(res);
+    })
+    .catch(err => {
+      console.log(err); // something went wrong
+    });
 }
 
 // Process the response.
-function processResponse(err, response) {
-  if (err) {
-    console.error(err); // something went wrong
-    return;
-  }
+function processResponse(response) {
 
-  var endConversation = false;
+  let endConversation = false;
 
   // Check for client actions requested by the assistant.
   if (response.output.actions) {
@@ -549,25 +563,27 @@ function processResponse(err, response) {
     }
   } else {
     // Display the output from assistant, if any. Assumes a single text response.
-    if (response.output.generic.length != 0) {
+    if (response.output.generic.length > 0) {
       console.log(response.output.generic[0].text);
     }
   }
 
   // If we're not done, prompt for the next round of input.
   if (!endConversation) {
-    var newMessageFromUser = prompt('>> ');
+    const newMessageFromUser = prompt('>> ');
     sendMessage(newMessageFromUser);
   } else {
-    service.deleteSession({
-      assistant_id: assistantId,
-      session_id: sessionId
-    }, function(err, result) {
-      if (err) {
-        console.error(err); // something went wrong
-      }
-    });
-    return;
+    service
+      .deleteSession({
+        assistant_id: assistantId,
+        session_id: sessionId,
+      })
+      .then(res => {
+        return;
+      })
+      .catch(err => {
+        console.log(err); // something went wrong
+      });
   }
 }
 ```
@@ -762,36 +778,38 @@ There are two types of context:
 The following example shows a `/message` request that includes both global and skill-specific context variables; it also uses the `options.return_context` property to request that the context be returned with the response.
 
 ```javascript
-service.message({
-  assistant_id: '{assistant_id}',
-  session_id: '{session_id}',
-  input: {
-    'message_type': 'text',
-    'text': 'Hello',
-    'options': {
-      'return_context': true
-    }
-  },
-  context: {
-    'global': {
-      'system': {
-        'user_id': 'my_user_id'
+service
+  .message({
+    assistant_id: '{assistant_id}',
+    session_id: '{session_id}',
+    input: {
+      message_type: 'text',
+      text: 'Hello',
+      options: {
+        'return_context': true
       }
     },
-    'skills': {
-      'main skill': {
-        'user_defined': {
-          'account_number': '123456'
+    context: {
+      'global': {
+        'system': {
+          'user_id': 'my_user_id'
+        }
+      },
+      'skills': {
+        'main skill': {
+          'user_defined': {
+            'account_number': '123456'
+          }
         }
       }
     }
-  }
-}, function(err, response) {
-  if (err)
-    console.log('error:', err);
-  else
-    console.log(JSON.stringify(response, null, 2));
-});
+  })
+  .then(res => {
+    console.log(JSON.stringify(res, null, 2));
+  })
+  .catch(err => {
+    console.log(err);
+  });
 ```
 {: codeblock}
 {: javascript}
