@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-16"
+lastupdated: "2019-04-22"
 
 ---
 
@@ -165,13 +165,13 @@ service.delete_session(
  * receives response.
  */
 
-import com.ibm.watson.developer_cloud.assistant.v2.Assistant;
-import com.ibm.watson.developer_cloud.assistant.v2.model.CreateSessionOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.DeleteSessionOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageResponse;
-import com.ibm.watson.developer_cloud.assistant.v2.model.SessionResponse;
-import com.ibm.watson.developer_cloud.service.security.IamOptions;
+import com.ibm.watson.assistant.v2.Assistant;
+import com.ibm.watson.assistant.v2.model.CreateSessionOptions;
+import com.ibm.watson.assistant.v2.model.DeleteSessionOptions;
+import com.ibm.watson.assistant.v2.model.MessageOptions;
+import com.ibm.watson.assistant.v2.model.MessageResponse;
+import com.ibm.watson.assistant.v2.model.SessionResponse;
+import com.ibm.cloud.sdk.core.service.security.IamOptions;
 import java.util.logging.LogManager;
 
 public class AssistantSimpleExample {
@@ -182,17 +182,18 @@ public class AssistantSimpleExample {
 
     // Set up Assistant service.
     IamOptions iamOptions = new IamOptions.Builder().apiKey("{apikey}").build();
-    Assistant service = new Assistant("2018-09-20", iamOptions);
+    Assistant service = new Assistant("2019-02-28", iamOptions);
     String assistantId = "{assistant_id}"; // replace with assistant ID
 
     // Create session.
     CreateSessionOptions createSessionOptions = new CreateSessionOptions.Builder(assistantId).build();
-    SessionResponse session = service.createSession(createSessionOptions).execute();
+    SessionResponse session = service.createSession(createSessionOptions).execute().getResult();
     String sessionId = session.getSessionId();
 
     // Start conversation with empty message.
-    MessageOptions messageOptions = new MessageOptions.Builder(assistantId, sessionId).build();
-    MessageResponse response = service.message(messageOptions).execute();
+    MessageOptions messageOptions = new MessageOptions.Builder(assistantId,
+                                                        sessionId).build();
+    MessageResponse response = service.message(messageOptions).execute().getResult();
 
     // Print the output from dialog, if any. Assumes a single text response.
     System.out.println(response.getOutput().getGeneric().get(0).getText());
@@ -392,16 +393,16 @@ service.delete_session(
  * Example 2: adds user input and detects intents.
  */
 
-import com.ibm.watson.developer_cloud.assistant.v2.Assistant;
-import com.ibm.watson.developer_cloud.assistant.v2.model.CreateSessionOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.DeleteSessionOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.DialogRuntimeResponseGeneric;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageInput;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageResponse;
-import com.ibm.watson.developer_cloud.assistant.v2.model.RuntimeIntent;
-import com.ibm.watson.developer_cloud.assistant.v2.model.SessionResponse;
-import com.ibm.watson.developer_cloud.service.security.IamOptions;
+import com.ibm.watson.assistant.v2.Assistant;
+import com.ibm.watson.assistant.v2.model.CreateSessionOptions;
+import com.ibm.watson.assistant.v2.model.DeleteSessionOptions;
+import com.ibm.watson.assistant.v2.model.DialogRuntimeResponseGeneric;
+import com.ibm.watson.assistant.v2.model.MessageInput;
+import com.ibm.watson.assistant.v2.model.MessageOptions;
+import com.ibm.watson.assistant.v2.model.MessageResponse;
+import com.ibm.watson.assistant.v2.model.RuntimeIntent;
+import com.ibm.watson.assistant.v2.model.SessionResponse;
+import com.ibm.cloud.sdk.core.service.security.IamOptions;
 import java.util.List;
 import java.util.logging.LogManager;
 
@@ -413,12 +414,12 @@ public class AssistantSimpleExample {
 
     // Set up Assistant service.
     IamOptions iamOptions = new IamOptions.Builder().apiKey("{apikey}").build();
-    Assistant service = new Assistant("2018-09-20", iamOptions);
+    Assistant service = new Assistant("2019-02-28", iamOptions);
     String assistantId = "{assistant_id}"; // replace with assistant ID
 
     // Create session.
     CreateSessionOptions createSessionOptions = new CreateSessionOptions.Builder(assistantId).build();
-    SessionResponse session = service.createSession(createSessionOptions).execute();
+    SessionResponse session = service.createSession(createSessionOptions).execute().getResult();
     String sessionId = session.getSessionId();
 
     // Initialize with empty value to start the conversation.
@@ -431,7 +432,7 @@ public class AssistantSimpleExample {
       MessageOptions messageOptions = new MessageOptions.Builder(assistantId, sessionId)
                                                   .input(input)
                                                   .build();
-      MessageResponse response = service.message(messageOptions).execute();
+      MessageResponse response = service.message(messageOptions).execute().getResult();
 
       // If an intent was detected, print it to the console.
       List<RuntimeIntent> responseIntents = response.getOutput().getIntents();
@@ -657,17 +658,17 @@ service.delete_session(
  * Example 3: implements app actions.
  */
 
-import com.ibm.watson.developer_cloud.assistant.v2.Assistant;
-import com.ibm.watson.developer_cloud.assistant.v2.model.CreateSessionOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.DeleteSessionOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.DialogNodeAction;
-import com.ibm.watson.developer_cloud.assistant.v2.model.DialogRuntimeResponseGeneric;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageInput;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageResponse;
-import com.ibm.watson.developer_cloud.assistant.v2.model.RuntimeIntent;
-import com.ibm.watson.developer_cloud.assistant.v2.model.SessionResponse;
-import com.ibm.watson.developer_cloud.service.security.IamOptions;
+import com.ibm.watson.assistant.v2.Assistant;
+import com.ibm.watson.assistant.v2.model.CreateSessionOptions;
+import com.ibm.watson.assistant.v2.model.DeleteSessionOptions;
+import com.ibm.watson.assistant.v2.model.DialogNodeAction;
+import com.ibm.watson.assistant.v2.model.DialogRuntimeResponseGeneric;
+import com.ibm.watson.assistant.v2.model.MessageInput;
+import com.ibm.watson.assistant.v2.model.MessageOptions;
+import com.ibm.watson.assistant.v2.model.MessageResponse;
+import com.ibm.watson.assistant.v2.model.RuntimeIntent;
+import com.ibm.watson.assistant.v2.model.SessionResponse;
+import com.ibm.cloud.sdk.core.service.security.IamOptions;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -681,12 +682,12 @@ public class AssistantSimpleExample {
 
     // Set up Assistant service.
     IamOptions iamOptions = new IamOptions.Builder().apiKey("{apikey}").build();
-    Assistant service = new Assistant("2018-09-20", iamOptions);
+    Assistant service = new Assistant("2019-02-28", iamOptions);
     String assistantId = "{assistant_id}"; // replace with assistant ID
 
     // Create session.
     CreateSessionOptions createSessionOptions = new CreateSessionOptions.Builder(assistantId).build();
-    SessionResponse session = service.createSession(createSessionOptions).execute();
+    SessionResponse session = service.createSession(createSessionOptions).execute().getResult();
     String sessionId = session.getSessionId();
 
     // Initialize with empty values to start the conversation.
@@ -703,7 +704,7 @@ public class AssistantSimpleExample {
       MessageOptions messageOptions = new MessageOptions.Builder(assistantId, sessionId)
                                                   .input(input)
                                                   .build();
-      MessageResponse response = service.message(messageOptions).execute();
+      MessageResponse response = service.message(messageOptions).execute().getResult();
 
       // Print the output from dialog, if any. Assumes a single text response.
       List<DialogRuntimeResponseGeneric> responseGeneric = response.getOutput().getGeneric();
@@ -847,41 +848,41 @@ print(json.dumps(response, indent=2))
 {: python}
 
 ```java
-    MessageInputOptions inputOptions = new MessageInputOptions();
-    inputOptions.setReturnContext(true);
+MessageInputOptions inputOptions = new MessageInputOptions();
+inputOptions.setReturnContext(true);
 
-    MessageInput input = new MessageInput.Builder()
-      .messageType("text")
-      .text("Hello")
-      .options(inputOptions)
-      .build();
+MessageInput input = new MessageInput.Builder()
+  .messageType("text")
+  .text("Hello")
+  .options(inputOptions)
+  .build();
 
-    // create global context with user ID
-    MessageContextGlobalSystem system = new MessageContextGlobalSystem();
-    system.setUserId("my_user_id");
-    MessageContextGlobal globalContext = new MessageContextGlobal();
-    globalContext.setSystem(system);
+// create global context with user ID
+MessageContextGlobalSystem system = new MessageContextGlobalSystem();
+system.setUserId("my_user_id");
+MessageContextGlobal globalContext = new MessageContextGlobal();
+globalContext.setSystem(system);
+  
+// build user-defined context variables, put in skill-specific context for main skill
+Map<String, String> userDefinedContext = new HashMap<>();
+userDefinedContext.put("account_num","123456");
+Map<String, Map> mainSkillContext = new HashMap<>();
+mainSkillContext.put("user_defined", userDefinedContext);
+MessageContextSkills skillsContext = new MessageContextSkills();
+skillsContext.put("main skill", mainSkillContext);
 
-    // build user-defined context variables, put in skill-specific context for main skill
-    Map<String, String> userDefinedContext = new HashMap<>();
-    userDefinedContext.put("account_num","123456");
-    Map<String, Map> mainSkillContext = new HashMap<>();
-    mainSkillContext.put("user_defined", userDefinedContext);
-    MessageContextSkills skillsContext = new MessageContextSkills();
-    skillsContext.put("main skill", mainSkillContext);
+MessageContext context = new MessageContext();
+context.setGlobal(globalContext);
+context.setSkills(skillsContext);
 
-    MessageContext context = new MessageContext();
-    context.setGlobal(globalContext);
-    context.setSkills(skillsContext);
+MessageOptions options = new MessageOptions.Builder("{assistant_id}", "{session_id}")
+  .input(input)
+  .context(context)
+  .build();
 
-    MessageOptions options = new MessageOptions.Builder("{assistant_id}", "{session_id}")
-      .input(input)
-      .context(context)
-      .build();
+MessageResponse response = service.message(options).execute().getResult();
 
-    MessageResponse response = service.message(options).execute();
-
-    System.out.println(response);
+System.out.println(response);
 ```
 {: codeblock}
 {: java}
