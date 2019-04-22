@@ -1,13 +1,21 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-02-16"
+  years: 2015, 2019
+lastupdated: "2019-03-01"
+
+subcollection: assistant
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -16,49 +24,38 @@ lastupdated: "2018-02-16"
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
+{:hide-dashboard: .hide-dashboard}
 {:download: .download}
+{:gif: data-image-type='gif'}
 
 # 概説チュートリアル
 {: #getting-started}
 
-この簡潔なチュートリアルでは、{{site.data.keyword.conversationshort}} ツールを紹介し、最初の会話を作成するプロセスを示します。
+この簡潔なチュートリアルでは、{{site.data.keyword.conversationshort}} ツールを紹介し、最初のアシスタントを作成するプロセスを示します。
 {: shortdesc}
 
 ## 始める前に
-{: #prerequisites}
+{: #getting-started-prerequisites}
+{: hide-dashboard}
 
 開始するにはサービス・インスタンスが必要です。
+{: hide-dashboard}
 
-<!-- Remove the text marked `download` after there's no g-s tab in the catalog dashboard -->
+1.  {: hide-dashboard}{{site.data.keyword.cloud_notm}} カタログの [{{site.data.keyword.conversationshort}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://cloud.ibm.com/catalog/services/watson-assistant) ページに移動します。
 
-サービス・インスタンスは作成済みです。**「管理」**、**「ツールの起動 (Launch Tool)」**の順にクリックします。 ステップ 2 に進みます。
-{: download tip}
+    サービス・インスタンスは、別のリソース・グループが選択されない限り、**デフォルト**のリソース・グループで作成されます。後で変更することは*できません*。サービスを試す目的では、このグループで十分です。
 
-{{site.data.keyword.conversationshort}} サービスでプロジェクトを作成した場合、これらの前提条件はすべて設定されています。ステップ 1 に進みます。
+    より堅牢性が必要な用途のインスタンスを作成する場合は、[リソース・グループ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://{DomainName}/docs/resources/bestpractice_rgs#bp_resourcegroups){: new_window} について学習してください。
+1.  {: hide-dashboard} 無料の {{site.data.keyword.cloud_notm}} アカウントを登録するか、ログインします。
+1.  {: hide-dashboard} **「作成」**をクリックします。
 
-1.  {{site.data.keyword.watson}} Developer Console の[サービス ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://console.{DomainName}/developer/watson/services){: new_window} のページに移動します。
-1.  {{site.data.keyword.conversationshort}} を選択し、**「サービスの追加」**をクリックし、無料の {{site.data.keyword.Bluemix_notm}} アカウントに登録するか、ログインします。
-1.  プロジェクト名を `conversation-tutorial` に変更してから、**「プロジェクトの作成 (Create Project)」**をクリックします。
+## ステップ 1: ツールを開く
+{: #getting-started-launch-tool}
 
-<!-- Remove this text after dedicated instances have the developer console: begin -->
+{{site.data.keyword.conversationshort}} サービス・インスタンスを作成したら、サービス・ダッシュボードの**「管理」**ページが表示されます。
+{: hide-dashboard}
 
-{{site.data.keyword.Bluemix_dedicated_notm}} を使用する場合、カタログの [{{site.data.keyword.conversationshort}} ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://console.{DomainName}/catalog/services/conversation/){: new_window} ページからサービス・インスタンスを作成します。
-
-<!-- Remove this text after dedicated instances have the developer console: end -->
-
-## ステップ 1: ツールを起動する
-{: #launch-tool}
-
-{{site.data.keyword.conversationshort}} サービスを含むプロジェクトを作成すると、プロジェクトの詳細ページが表示されます。ここから  {{site.data.keyword.conversationshort}} ツールを起動します。
-
-**「サービス」**の下で、{{site.data.keyword.conversationshort}} の**「ツールの起動 (Launch Tool)」**をクリックします。
-
-<!-- To do: Add screenshot for developer console -->
-
-ツールへのログインを求めるプロンプトが出されたら、{{site.data.keyword.Bluemix_notm}} の資格情報を入力します。
-
-{{site.data.keyword.conversationshort}} サービスのプロジェクトの詳細ページが表示されていない場合は、{{site.data.keyword.watson}} Developer Console の[プロジェクト ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://console.{DomainName}/developer/watson/projects) のページに移動して、該当するプロジェクトを選択します。
-{: tip}
+1.  **「Launch tool (ツールの起動)」**をクリックします。 ツールへのログインを求めるプロンプトが出されたら、{{site.data.keyword.cloud_notm}} の資格情報を入力します。
 
 <!-- Remove this text after dedicated instances have the developer console: begin -->
 
@@ -66,112 +63,97 @@ lastupdated: "2018-02-16"
 
 <!-- Remove this text after dedicated instances have the Developer Console: end -->
 
-## ステップ 2: ワークスペースを作成する
-{: #create-workspace}
+## ステップ 2: ダイアログ・スキルの作成
+{: #getting-started-add-skill}
 
-{{site.data.keyword.conversationshort}} ツールでの最初のステップとして、ワークスペースを作成します。
+{{site.data.keyword.conversationshort}} ツールでの最初のステップとして、スキルを作成します。
 
-[*ワークスペース*](configure-workspace.html) とは、会話フローを定義する成果物のコンテナーです。
+*ダイアログ・スキル* とは、アシスタントで可能なお客様との会話のフローを定義する成果物のコンテナーです。
 
-1.  {{site.data.keyword.conversationshort}} ツールで**「Create」**をクリックします。
-1.  ワークスペースに `{{site.data.keyword.conversationshort}} tutorial` という名前を付けます。作成しようとしているダイアログで英語以外の言語を使用する場合は、リストから該当する言語を選択します。**「Create」**をクリックします。 新規ワークスペースの**「Intents」**タブが表示されます。
+1.  {{site.data.keyword.conversationshort}} ツールのホーム・ページから、**「スキルの作成 (Create a Skill)」**をクリックします。
 
-![ユーザーが {{site.data.keyword.conversationshort}} チュートリアル・ワークスペースを作成するアニメーションが表示されています。](images/gs-create-workspace-animated.gif)
+    ![ホーム・ページの「スキルの追加 (Add skill)」ボタンが示されています](images/gs-new-skill.png)
 
-## ステップ 3: インテントを作成する
-{: #create-intents}
+1.  **「新規作成 (Create new)」**をクリックします。
 
-[インテント](intents.html)は、ユーザーの入力の目的を表します。 インテントは、ユーザーがアプリケーションを使用して実行したいアクションと見なすことができます。
+    ![「スキル (Skills)」ページの「新規作成 (Create new)」ボタンが示されています](images/gs-click-create-new.png)
 
-この例では、分かりやすくするために 2 つのインテントのみを定義します。「こんにちは」と言うインテントと、「さようなら」と言うインテントです。
+1.  スキルに `Conversational skill tutorial` という名前を付けます。
+1.  **オプション**。 作成しようとしているダイアログで英語以外の言語を使用する場合は、リストから該当する言語を選択します。
+1.  **「作成」**をクリックします。
 
-1.  「Intents」タブが表示されていることを確認します。 (ワークスペースを作成したところであれば、既に表示されているはずです。)
-1.  **「インテントの追加 (Add intent)」**をクリックします。
-1.  インテントに `hello` という名前を付けてから、**「インテントの作成 (Create intent)」**をクリックします。
-1.  **「ユーザー例の追加 (Add user example)」**フィールドに「`こんにちは (hello)`」と入力して、**Enter** キーを押します。
+    ![スキルの作成の完了](images/gs-add-skill-done.png)
 
-   *サンプル* によって、どのようなユーザー入力をインテントと一致させるのかを {{site.data.keyword.conversationshort}} サービスに指示します。 サンプルが多ければ多いほど、サービスはユーザーのインテントをいっそう正確に認識できるようになります。
-1.  以下の 4 つの例をさらに追加します。
-    - `おはよう`
-    - `おはようございます`
-    - `こんにちは`
-    - `やあ`
+ツールの「インテント (Intents)」ページが表示されます。
 
-1.  **「閉じる」** ![閉じる矢印](images/close_arrow.png) アイコンをクリックして、#hello インテントの作成を終了します。
-1.  以下の 5 つのサンプルを追加して、#goodbye という名前の別のインテントを作成します。
-    - `バイバイ`
-    - `元気でね`
-    - `さようなら`
-    - `終わりました`
-    - `またね`
+## ステップ 3: コンテンツ・カタログからインテントを追加する
+{: #getting-started-add-catalog}
 
-ここまでで、#hello と #goodbye という 2 つのインテントを作成し、ユーザー入力サンプルを提供することで、ユーザーの入力に含まれるインテントを認識できるように {{site.data.keyword.watson}} がトレーニングされるようにしました。
+コンテンツ・カタログからインテントを追加して、IBM によって作成されたトレーニング・データをスキルに追加します。 特に、**「一般 (General)」**コンテンツ・カタログへのアクセス権をアシスタントに付与して、ダイアログでユーザーにあいさつして、そのユーザーとの会話を終了できるようにします。
 
-![#goodbye インテントと #hello インテントがリストされた「Intents」ページを表示](images/gs-add-intents-result.png)
+1.  {{site.data.keyword.conversationshort}} ツールで、**「コンテンツ・カタログ (Content Catalog)」**タブをクリックします。
+1.  リスト内で**「一般 (General)」**を見つけて、**「スキルに追加 (Add to skill)」**をクリックします。
 
-## ステップ 4: カタログからインテントを追加する
-{: #add-catalog}
+    ![「コンテンツ・カタログ (Content Catalog)」が示されて、「一般 (General)」カタログの「スキルに追加 (Add to skill)」ボタンが強調表示されています。](images/gs-add-general-catalog.png)
+1.  **「インテント (Intents)」**タブを開き、トレーニング・データに追加されたインテントと、関連付けられている発話例を確認します。 各インテント名の先頭は接頭部 `#General_` なので、それらを認識することができます。 次のステップで `#General_Greetings` インテントと `#General_Ending` インテントをダイアログに追加します。
 
-カタログからインテントを追加して、IBM によって作成されたトレーニング・データをワークスペースに追加します。特に、`「ビジネス情報 (Business Information)」`カタログへのアクセス権をアシスタントに付与して、会社の連絡先情報を求めるユーザーの要求にダイアログが対応できるようにします。
+    ![「一般 (General)」カタログが追加された後で「インテント (Intents)」タブに表示されるインテントが示されています。](images/gs-general-added.png)
 
-1.  {{site.data.keyword.conversationshort}} ツールで、**「カタログ (Catalog)」**タブをクリックします。
-1.  リスト内で**「ビジネス情報 (Business Information)」**を見つけて、**「ボットに追加 (Add to bot)」**をクリックします。
-1.  **「インテント (Intents)」**タブを開き、トレーニング・データに追加されたインテントと、関連付けられている発話例を確認します。各インテント名の先頭は接頭部 `#Business_Information_` なので、それらを認識することができます。後のステップで、`#Business_Information_Contact_Us` インテントをダイアログに追加します。
+{{site.data.keyword.IBM_notm}} からの事前作成されているコンテンツが追加されて、トレーニング・データの作成が正常に開始されました。
 
-IBM が提供している事前作成済みのコンテンツを使用して、トレーニング・データを正常に補足しました。
+## ステップ 4: 対話を作成する
+{: #getting-started-build-dialog}
 
-## ステップ 5: 対話を作成する
-{: #build-dialog}
+[対話](/docs/services/assistant?topic=assistant-dialog-overview)とは、論理ツリー形式で会話の流れを定義したものです。 インテント (ユーザーの発言) が応答 (ボットの回答) にマッチングされます。ツリーの各ノードには、ユーザーの入力に基づいてトリガーとなる、条件があります。
 
-[対話](dialog-build.html)とは、論理ツリー形式で会話の流れを定義したものです。 ツリーの各ノードには、ユーザーの入力に基づいてトリガーとなる、条件があります。
-
-これから、#hello インテントと #goodbye インテントを処理するシンプルな対話を作成します。それぞれのインテントにはノードが 1 つだけあります。
+これから、あいさつのインテントと終了のインテントを処理するシンプルなダイアログを作成します。それぞれのインテントにはノードが 1 つだけあります。
 
 ### 開始ノードの追加
 
 1.  {{site.data.keyword.conversationshort}} ツールで、**「Dialog」**タブをクリックします。
-1.  **「Create」**をクリックします。 2 つのノードが表示されます。
-    - **Welcome**: ユーザーがボットとのやり取りを開始するときに表示される、あいさつが入ります。
+1.  **「作成」**をクリックします。 2 つのノードが表示されます。
+    - **Welcome**: ユーザーがアシスタントとのやり取りを開始するときに表示される、あいさつが入ります。
     - **Anything else**: ユーザーの入力が認識されないときにユーザーへの応答に使用するフレーズが入ります。
 
-    ![Welcome ノードと Anything else ノードからなる対話ツリーを表示](images/gs-add-dialog-node-animated-cover.png)
+    ![2 つのノードが組み込まれた新しいダイアログ](images/gs-new-dialog.png)
 1.  **Welcome** ノードをクリックして、編集ビューで開きます。
-1.  デフォルトの応答を、`{{site.data.keyword.conversationshort}} チュートリアルへようこそ!` というテキストに置き換えます。
+1.  デフォルトの応答を、`Welcome to the Watson Assistant tutorial!` というテキストに置き換えます。
 
-    ![編集ビューで開いた Welcome ノードを表示](images/gs-edit-welcome-node.png)
+    ![Welcome ノードの応答の編集](images/gs-edit-welcome.png)
 1.  ![Close](images/close.png) をクリックして、編集ビューを閉じます。
 
-`welcome` 条件がトリガーとなる対話ノードを作成しました。この条件は、ユーザーが新規会話を開始したことを示す特別な条件です。 このノードは、新規会話が開始されたらシステムがウェルカム・メッセージを使用して応答するよう指定しています。
+`welcome` 条件がトリガーとなるダイアログ・ノードを作成しました。(`welcome` は、インテントのように機能しますが、先頭に `#` が付かない特別な条件です。)新規会話が開始するとトリガーされます。このノードは、新規会話が開始されたら、この最初のノードの応答セクションに追加したウェルカム・メッセージを使用してシステムが応答するよう指定しています。
 
 ### 開始ノードのテスト
 
 いつでも対話をテストして、対話を検証することができます。 これからテストします。
 
-- ![Ask Watson](images/ask_watson.png) アイコンをクリックして、「Try it out」ペインを開きます。 作成したウェルカム・メッセージが表示されるはずです。
-
-    ![対話ノードのテスト](images/gs-tryitout-welcome-node.png)
+- ![「試行する (Try it)」](images/ask_watson.png) アイコンをクリックして、「試行する (Try it out)」ペインを開きます。作成したウェルカム・メッセージが表示されるはずです。
 
 ### インテントを処理するノードの追加
 
-`Welcome` ノードと `Anything else` ノードの間に、インテントを処理するためのノードを追加します。
+ここで、`Welcome` ノードと `Anything else` ノードの間に、インテントを処理するためのノードを追加しましょう。
 
 1.  **Welcome** ノードの詳細アイコン ![詳細オプション](images/kabob.png) をクリックし、**「Add node below」**を選択します。
-1.  このノードの **「Enter a condition」**フィールドに `#hello` と入力します。 それから、**#hello** オプションを選択します。
-1.  応答として `良い一日を。` を追加します。
+1.  このノードの **「Enter a condition」**フィールドに `#General_Greetings` と入力します。 それから、**`#General_Greetings`** オプションを選択します。
+1.  応答として `Good day to you!` を追加します。
 1.  ![Close](images/close.png) をクリックして、編集ビューを閉じます。
 
-   ![ユーザーが hello ノードを対話に追加するアニメーションを表示。](images/gs-add-dialog-node-animated.gif)
-1.  このノードの詳細アイコン ![詳細オプション](images/kabob.png) をクリックし、**「Add node below」**を選択してピア・ノードを作成します。 ピア・ノードで、`#Business_Information_Contact_Us` を条件として指定します。
-1.  次のテキストを応答として追加します。
+   ![一般的なあいさつノードがダイアログに追加されました。](images/gs-add-greeting-node.png)
 
-    ` 800-426-4968 にお電話いただくか、https://www.ibm.com/scripts/contact/contact/ja/jp にご意見をお寄せください。`
-1.  このノードの「詳細 (More)」アイコン ![詳細 (More) オプション](images/kabob.png) をクリックし、**「下記のノードを追加 (Add node below)」**を選択して別のピア・ノードを作成します。ピア・ノードで、`#goodbye` を条件に指定し、`またお会いしましょう!` を応答に指定します。
+1.  このノードの詳細アイコン ![詳細オプション](images/kabob.png) をクリックし、**「Add node below」**を選択してピア・ノードを作成します。 ピア・ノードで、`#General_Ending` を条件に指定し、`OK. See you later.` を応答に指定します。
+
+   ![終了ノードをダイアログに追加します。](images/gs-add-ending-node.png)
+
+1.  ![Close](images/close.png) をクリックして、編集ビューを閉じます。
+
+   ![一般的な終了ノードもダイアログに追加されたことが示されています。](images/gs-ending-added.png)
 
 ### インテントの認識のテスト
 
-hello 入力と goodbye 入力の両方を認識して応答する、単純な対話を作成しました。 これから、正しく機能することを確認します。
+あいさつと終了の両方の入力を認識して応答する、単純なダイアログを作成しました。これから、正しく機能することを確認します。
 
-1.  ![Ask Watson](images/ask_watson.png) アイコンをクリックして、「Try it out」ペインを開きます。 例のウェルカム・メッセージが表示されます。
+1.  ![「試行する (Try it)」](images/ask_watson.png) アイコンをクリックして、「試行する (Try it out)」ペインを開きます。例のウェルカム・メッセージが表示されます。
 1.  ペインの下部で `こんにちは` と入力し、Enter キーを押します。 #hello インテントが認識されたことが出力に示され、該当する応答 (`良い一日を。`) が表示されます。
 1.  以下の入力を試してください。
     - `バイバイ`
@@ -180,8 +162,7 @@ hello 入力と goodbye 入力の両方を認識して応答する、単純な�
     - `おはよう`
     - `さよなら`
 
-   ![ユーザーが「試行する (Try it out)」ペインで対話をテストするアニメーションが表示されています。](images/gs-test-dialog-animated.gif)
-1.  「`質問がある場合の電話連絡先 (Who can I call if I have questions?)`」と入力して、Enter キーを押します。`#Business_Information_Contact_Us` インテントが認識されたことが出力に示され、このインテント用に追加した応答が表示されます。
+![「試行する (Try it out)」ペインでのダイアログのテスト](images/gs-try-it.gif){: gif}
 
 {{site.data.keyword.watson}} は、入力内容が、提供されていたサンプルと完全に一致していなくても、インテントを認識できます。 対話ではインテントにより、使用される厳密な言葉遣いに関係なくユーザーの入力の目的を識別します。そして、指定された方法で応答します。
 
@@ -189,22 +170,54 @@ hello 入力と goodbye 入力の両方を認識して応答する、単純な�
 
 これで完了です。 2 つのインテントとそれらを認識する対話からなる、単純な会話を作成しました。
 
-## ステップ 6: サンプル・ワークスペースを確認する
-{: #review-sample-workspace}
+## ステップ 5: アシスタントの作成
+{: #getting-started-create-assistant}
 
-サンプル・ワークスペースを開いて、先ほど作成したのと同様のインテントや、その他多数のインテントを参照し、それらが複雑な対話でどのように使用されているかを確認します。
+[*アシスタント*](/docs/services/assistant?topic=assistant-assistants) は、便利な方法でお客様との対話を可能にするスキルを追加する対象の、コグニティブ・ボットです。
 
-1.  「Workspaces」ページに戻ります。
-   ナビゲーション・メニューから ![「Back to workspaces」ボタン](images/workspaces-button.png) ボタンをクリックすることができます。
-1.  **「Car Dashboard - Sample」**ワークスペース・タイルで、**「Edit sample」**ボタンをクリックします。
+1.  **「アシスタント (Assistants)」**タブをクリックします。
+1.  **「新規作成 (Create new)」**をクリックします。
 
-    ![「Workspaces」ページで車のダッシュボード・サンプルを表示](images/gs-workspace-car-sample.png)
+    ![「アシスタント (Assistants)」タブの「新規作成 (Create new)」ボタン](images/gs-create-assistant.png)
+1.  アシスタントに `Watson Assistant tutorial` と名前を付けます。
+1.  「説明 (Description)」フィールドに、`This is a sample assistant that I am creating to help me learn.` と入力します。
+1.  **「作成」**をクリックします。
+
+    ![新しいアシスタントの作成の完了](images/gs-create-assistant-done0.png)
+
+## ステップ 6: アシスタントへのスキルの追加
+{: #getting-started-add-skill-to-assistant}
+
+作成したダイアログ・スキルを、作成したアシスタントに追加します。
+
+1.  新しいアシスタント・ページから、**「スキルの追加 (Add skill)」**をクリックします。
+
+    {{site.data.keyword.conversationshort}} サービスの一般出荷可能バージョンを使用してワークスペースを作成したか、作成されたワークスペースの開発者役割のアクセス権が付与されている場合は、それらのワークスペースが会話型スキルとして「スキル (Skills)」ページにリストされます。
+    {: tip}
+
+    ![「アシスタント (Assistant)」ページの「スキルの追加 (Add skill)」ボタンが示されています](images/gs-add-skill.png)
+1.  以前に作成したスキルをアシスタントに追加するように選択します。
+
+## ステップ 7: アシスタントの統合
+{: #getting-started-integrate-assistant}
+
+これで、アシスタントで単純な会話のやり取りに参加し、それをパブリックの Web ページに公開してテストできるようになりました。サービスでは、プレビュー・リンクと呼ばれる組み込みの統合が用意されています。このタイプの統合を作成すると、IBM ブランドの Web ページでホストされるチャット・ウィジェットにアシスタントが組み込まれます。Web ページを開き、アシスタントとチャットしてテストできます。
+
+1.  **「アシスタント (Assistants)」**タブをクリックして、作成した `Watson Assistant tutorial` アシスタントを見つけて開きます。
+1.  *「統合」*領域で、**「統合の追加 (Add integration)」**をクリックします。
+1.  **「プレビュー・リンク (Preview Link)」**を見つけて、**「統合の選択 (Select integration)」**をクリックします。
+
+1.  ページに表示される URL をクリックします。
+
+    新しいタブにページが開きます。
+1.  アシスタントに `hello` と言い、応答を監視します。アシスタントを試行する必要がある他のユーザーと URL を共有できます。
 
 ## 次のステップ
-{: #next-steps}
+{: #getting-started-next-steps}
 
-ここで示したチュートリアルは、単純なサンプルで作成されています。 実際のアプリケーションの場合は、より興味深いインテント、いくつかのエンティティー、より複雑な対話を定義する必要があります。
+ここで示したチュートリアルは、単純なサンプルで作成されています。 実際のアプリケーションの場合は、より興味深いインテント、いくつかのエンティティー、およびその両方を使用するより複雑なダイアログを定義する必要があります。改善されたバージョンのアシスタントを使用すると、Slack などのお客様が使用するチャネルと統合できます。アシスタントとお客様の間のトラフィックが増えた場合は、**「分析 (Analytics)」**タブで提供されるツールを使用して実際の会話を分析し、改善できる領域を識別できます。
 
-- 上級の[チュートリアル](tutorial.html)を試用して、エンティティーを追加し、ユーザーの目的を明確化します。
-- ワークスペースをフロントエンド・ユーザー・インターフェース、ソーシャル・メディア、またはメッセージング・チャネルに接続して[デプロイ](deploy.html)します。
-- [サンプル・アプリ](sample-applications.html)をチェックアウトします。
+- より高度なダイアログを作成する後続のチュートリアルを完了してください。
+    - [複雑なダイアログの作成](/docs/services/assistant?topic=assistant-tutorial)のチュートリアルを参照して標準ノードを追加します。
+    - [スロットを含むノードをダイアログに追加する](/docs/services/assistant?topic=assistant-tutorial-slots)のチュートリアルを参照してスロットについて学習します。
+- アイデアを得るために、他の[サンプル・アプリ](/docs/services/assistant?topic=assistant-sample-apps)をチェックアウトします。

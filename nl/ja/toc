@@ -1,94 +1,123 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="assistant" audience="service" href="/docs/services/assistant/getting-started.html" path="services/assistant"}
+{: .toc subcollection="assistant" audience="service" href="/docs/services/assistant?topic=assistant-getting-started" path="services/assistant"}
 Watson Assistant
 
     {: .navgroup id="learn"}
     getting-started.md
     index.md
+    skills.md
+    assistants.md
     tool-overview.md
-    [デモ](https://watson-conversation-duo-dev.ng.bluemix.net/)
+    [デモ: バンキング・アシスタント](https://watson-conversation-duo-dev.ng.bluemix.net/)
     resources.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    configure-workspace.md
+    dev-process.md
+    skill-add.md
+    catalog.md
 
     {: .topicgroup}
-    インテントとエンティティーの定義
-        intents-entities.md
+    インテントの作成
         intents.md
-        entities.md
-        catalog.md
+        intent-recommendations.md
 
     {: .topicgroup}
     ダイアログの作成
         dialog-overview.md
         dialog-runtime.md
         dialog-build.md
+        dialog-tips.md
         dialog-slots.md
         dialog-actions.md
-        dialog-api.md
+        dialog-responses-json.md
+        dialog-depiction.md
+
+    entities.md
+    versions.md
+    assistant-add.md
+    skill-open.md
 
     {: .topicgroup}
     デプロイ
-        deploy.md
-        conversation-connector.md
-        develop-app.md
-        integrations.md
+        deploy-integration-add.md
+        deploy-custom-app.md
+        deploy-facebook.md
+        deploy-intercom.md
+        deploy-web-link.md
+        deploy-slack.md
+        dialog-start.md
+        deploy-integration-delete.md
 
     {: .topicgroup}
     理解の向上
+        logs-intro.md
+        logs-overview.md
         logs.md
-        logs_oview.md
-        logs_convo.md
-        logs_recommend.md
+        logs-resources.md
 
-    upgrading.md
+    migrate.md
+    backup.md
+    upgrade.md
+    edit-convo-workspace.md
 
     {: .topicgroup}
     チュートリアル
         tutorial.md
         tutorial-slots.md
         tutorial-slots-complex.md
+        tutorial-car-dashboard.md
+        tutorial-digressions.md
+        [チュートリアル: コンテキスト・エンティティーの定義](https://www.ibm.com/cloud/garage/demo/try-watson-assistant-contextual-entities)
+
+    {: .topicgroup}
+    API の使用
+        api-overview.md
+        api-methods.md
+        api-client.md
+        api-dialog-responses.md
+        api-dialog-modify.md
+
+    {: .topicgroup}
+    ベータ機能
+        beta.md
+        beta-skill-dialog-add.md
+        skill-search-add.md
+        beta-intent-recommendations.md
+        beta-spell-check.md	
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    [API リファレンス](https://console.bluemix.net/apidocs/assistant)
+    [v2 API リファレンス](https://cloud.ibm.com/apidocs/assistant-v2)
+    [v1 API リファレンス](https://cloud.ibm.com/apidocs/assistant)
     dialog-methods.md
     expression-language.md
     filter-reference.md
-    sample-applications.md
-    lang-support.md
+    sample-apps.md
+    language-support.md
+    information-security.md
 
     {: .topicgroup}
     システム・エンティティー
         system-entities.md
-        supported-timezones.md
+        time-zones.md
 
-    {: .topicgroup}
-    Watson SDK
-        [Android SDK](https://github.com/watson-developer-cloud/android-sdk)
-        [Java SDK](https://github.com/watson-developer-cloud/java-sdk)
-        [Node.js SDK](https://github.com/watson-developer-cloud/node-sdk)
-        [Python SDK](https://github.com/watson-developer-cloud/python-sdk)
-        [.NET SDK](https://github.com/watson-developer-cloud/dotnet-standard-sdk)
-        [OpenWhisk SDK](https://github.com/watson-developer-cloud/openwhisk-sdk/)
-        [Salesforce SDK](https://github.com/watson-developer-cloud/salesforce-sdk)
-        [Swift SDK](https://github.com/watson-developer-cloud/swift-sdk)
-        [Unity SDK](https://github.com/watson-developer-cloud/unity-sdk)
-
+    /watson/watson-using-sdks
     [Watson GitHub リポジトリー](https://github.com/watson-developer-cloud/)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
     release-notes.md
     feedback.md
+    services-information.md
 
     {: .topicgroup}
     開発者コミュニティー
-        [StackOverflow](http://stackoverflow.com/questions/tagged/watson-conversation)
-        [IBM Developer の回答](https://developer.ibm.com/answers/topics/watson-conversation/)
-        [WDC Slack チャネル](http://wdc-slack-inviter.mybluemix.net/)
+        [StackOverflow](https://stackoverflow.com/questions/tagged/watson-conversation+or+watson-assistant)
+        [IBM Developer Answers](https://developer.ibm.com/answers/search.html?f=&sort=relevance&q=%5Bwatson-conversation%5D+%5Bwatson-assistant%5D+%24)
+        [WDC Slack channel](http://wdc-slack-inviter.mybluemix.net/)
+
+    accessibility.md
     {: .navgroup-end}
