@@ -1,13 +1,18 @@
 ---
 
 copyright:
-  years: 2015, 2018
-lastupdated: "2018-02-16"
+  years: 2015, 2019
+lastupdated: "2019-02-21"
+
+subcollection: assistant
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -20,12 +25,13 @@ lastupdated: "2018-02-16"
 # オブジェクトにアクセスするための式
 {: #expression-language}
 
-Spring Expression (SpEL) 言語を使用して、オブジェクトやオブジェクトのプロパティーにアクセスする式を作成できます。詳しくは、[Spring Expression Language (SpEL) ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/expressions.html){: new_window} を参照してください。
+Spring Expression (SpEL) 言語を使用して、オブジェクトやオブジェクトのプロパティーにアクセスする式を作成できます。 詳しくは、[Spring Expression Language (SpEL) ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/expressions.html){: new_window} を参照してください。
 {: shortdesc}
 
 ## 評価構文
+{: #expression-language-long-syntax}
 
-変数値を他の変数内で展開するか、またはプロパティーやグローバル・オブジェクトに対するメソッドを呼び出すには、`<? expression ?>` 式構文を使用します。例えば次のようにします。
+変数値を他の変数内で展開するか、またはプロパティーやグローバル・オブジェクトに対するメソッドを呼び出すには、`<? expression ?>` 式構文を使用します。 次に例を示します。
 
 - **プロパティーの展開**
     - `"output":{"text":"Your name is <? context.userName ?>"}`
@@ -34,16 +40,16 @@ Spring Expression (SpEL) 言語を使用して、オブジェクトやオブジ�
     - `"context":{"email": "<? @email.literal ?>"}`
 
 ## 省略表現構文
-{: #shorthand-syntax}
+{: #expression-language-shorthand-syntax}
 
 SpEL 省略表現構文を使用して以下のオブジェクトを素早く参照する方法について説明します。
 
-- [コンテキスト変数](expression-language.html#shorthand-context)
-- [エンティティー](expression-language.html#shorthand-entities)
-- [インテント](expression-language.html#shorthand-intents)
+- [コンテキスト変数](#expression-language-shorthand-context)
+- [エンティティー](#expression-language-shorthand-entities)
+- [インテント](#expression-language-shorthand-intents)
 
 ### コンテキスト変数の省略表現構文
-{: #shorthand-context}
+{: #expression-language-shorthand-context}
 
 条件式でコンテキスト変数を記述するために使用できる、省略表現構文の例を次の表に示します。
 
@@ -61,7 +67,7 @@ SpEL 省略表現構文を使用して以下のオブジェクトを素早く参
 - 引用符 "
 
 ### エンティティーの省略表現構文
-{: #shorthand-entities}
+{: #expression-language-shorthand-entities}
 
 エンティティーを参照するときに使用できる、省略表現構文の例を次の表に示します。
 
@@ -79,19 +85,36 @@ SpEL では、疑問符 `(?)` を使用することで、エンティティー�
 検査するエンティティー値に `)` 文字が含まれる場合、比較のための `:` 演算子を使用できません。  例えば、city エンティティーが `Dublin (Ohio)` かどうかを検査する場合、`@city:(Dublin (Ohio))` ではなく、`@city == 'Dublin (Ohio)'` を使用する必要があります。
 
 ### インテントの省略表現構文
-{: #shorthand-intents}
+{: #expression-language-shorthand-intents}
 
 インテントを参照するときに使用できる、省略表現構文の例を次の表に示します。
 
-| 省略表現構文        | SpEL での完全構文 |
-|-------------------------|---------------------|
-| `#help`                 | `intent == 'help'`  |
-| `! #help`               | `intent != 'help'`  |
-| `NOT #help`             | `intent != 'help'`  |
-| `#help` または `#i_am_lost` | <code>(intent == 'help' \|\| intent == 'I_am_lost')</code> |
+<table>
+  <caption>インテントの省略表現構文</caption>
+  <tr>
+    <th>省略表現構文</th>
+    <th>SpEL での完全構文</th>
+  </tr>
+  <tr>
+    <td>`#help`</td>
+    <td>`intent == 'help'`</td>
+  </tr>
+  <tr>
+    <td>`! #help`</td>
+    <td>`intent != 'help'`</td>
+  </tr>
+  <tr>
+    <td>`NOT #help`</td>
+    <td>`intent != 'help'`</td>
+  </tr>
+  <tr>
+    <td>`#help` または `#i_am_lost`</td>
+    <td>`(intent == 'help' || intent == 'I_am_lost')`</td>
+  </tr>
+</table>
 
 ## 組み込みグローバル変数
-{: #builtin-vars}
+{: #expression-language-builtin-vars}
 
 式言語を使用して、以下のグローバル変数に関するプロパティー情報を抽出できます。
 
@@ -104,7 +127,7 @@ SpEL では、疑問符 `(?)` を使用することで、エンティティー�
 | *output*             | 処理される会話メッセージの JSON オブジェクト部分。 |
 
 ## エンティティーへのアクセス
-{: #access-entity}
+{: #expression-language-access-entity}
 
 エンティティー配列には、ユーザー入力内で認識された 1 つ以上のエンティティーが含まれます。
 
@@ -130,17 +153,22 @@ SpEL では、疑問符 `(?)` を使用することで、エンティティー�
 {: codeblock}
 
 ### 入力でエンティティーの配置が重要な場合
+{: #expression-language-placement-matters}
 
-入力でエンティティーの配置が重要な場合は、完全な SpEL 式を使用してください。 `entities['city']?.contains('Boston')` という条件では、すべての @city エンティティーで、配置にかかわらず、少なくとも 1 つの「Boston」city エンティティーが検出されると true が戻されます。
+条件に省略表現の式 `@city.contains('Boston')` を使用すると、`Boston` がユーザー入力で最初に検出されるエンティティーの**場合にのみ**、ダイアログ・ノードで true が返されます。入力のエンティティーの配置が重要であり、最初の言及のみをチェックする場合にのみ、この構文を使用します。
 
-例えば、ユーザーが`「Toronto から Boston に行きたい」`を送信するとします。 `@city:Toronto` エンティティーと `@city:Boston` エンティティーが検出され、以下のエンティティーで表されます。
+エンティティーが言及される順序に関係なく、ユーザー入力で用語が言及されたときは常に条件で true を返すようにする場合は、完全な SpEL 式を使用します。`entities['city']?.contains('Boston')` という条件では、すべての @city エンティティーで、配置にかかわらず、少なくとも 1 つの「Boston」city エンティティーが検出されると true が戻されます。
+
+例えば、ユーザーが`「Toronto から Boston に行きたい」`を送信するとします。 `@city:Toronto` エンティティーと `@city:Boston` エンティティーが検出され、次のように返される配列で表されます。
 
 - `entities.city[0].value = 'Toronto'`
 - `entities.city[1].value = 'Boston'`
 
-対話ノードに `@city.contains('Boston')` 条件があると、Boston が 2 番目に検出されたエンティティーであっても true が戻されます。
+返される配列のエンティティーの順序は、ユーザー入力で言及された順序と一致します。
+{: note}
 
 ### エンティティー・プロパティー
+{: #expression-language-entity-props}
 
 各エンティティーには、一連のプロパティーが関連付けられています。 エンティティーに関する情報は、そのプロパティーから取得できます。
 
@@ -151,7 +179,9 @@ SpEL では、疑問符 `(?)` を使用することで、エンティティー�
 | *value*               | 入力で識別されたエンティティー値。 | このプロパティーによって、トレーニング・データで定義されているようにエンティティー値が戻されます。関連付けられた同義語のいずれかとマッチングした場合もそうなります。 `.values` を使用すると、ユーザー入力に存在するエンティティーの、複数のオカレンスを収集できます。 |
 
 ### エンティティー・プロパティーの使用例
-以下の例では、ワークスペースに airport エンティティーが存在し、その値として JFK と、同義語「Kennedy Airport」が含まれます。 ユーザー入力は *Kennedy Aiport に行きたい*です。
+{: #expression-language-entity-props-example}
+
+以下の例では、スキルに airport エンティティーが存在し、その値として JFK と、同義語「Kennedy Airport」が含まれます。 ユーザー入力は *Kennedy Aiport に行きたい*です。
 
 - ユーザー入力で「JFK」エンティティーが認識された場合に特定の応答を返すには、次の式を応答条件に追加することができます。
   `entities.airport[0].value == 'JFK'`
@@ -183,9 +213,9 @@ SpEL では、疑問符 `(?)` を使用することで、エンティティー�
   `JFK、Logan、O'Hare の空港についてお尋ねですね。`
 
 ## インテントへのアクセス
-{: #access-intent}
+{: #expression-language-intent}
 
-インテント配列には、ユーザー入力で認識された 1 つ以上のインテントが、信頼度の降順でソートされて入っています。 
+インテント配列には、ユーザー入力で認識された 1 つ以上のインテントが、信頼度の降順でソートされて入っています。
 
 各インテントにはプロパティーが 1 つだけあります。それは `confidence` プロパティーです。 confidence プロパティーは、認識されたインテントの、サービスの信頼度を表す、小数で示す割合です。
 
@@ -196,7 +226,7 @@ SpEL では、疑問符 `(?)` を使用することで、エンティティー�
 ```
 {: codeblock}
 
-「*こんにちは (Hello now)*」というユーザー入力の場合、サービスは #greeting インテントとの完全一致を検索します。したがって、#greeting インテント・オブジェクトの詳細を最初にリストします。また信頼度にかかわらず、スキルに定義されているその他のインテントの上位 10 件も応答に含められます。(この例では、最初のインテントが完全一致なので、他のインテントの信頼度は 0 に設定されます。) 上位 10 件のインテントが返されるのは、「試行する (Try it out)」ペインで要求と共に `alternate_intents:true` パラメーターが送信されているためです。直接 API を使用している場合に上位 10 件の結果を表示するには、呼び出し内でこのパラメーターを指定していることを確認してください。`alternate_intents` が false (デフォルト値) の場合、信頼度が 0.2 を超えているインテントのみが配列として返されます。
+「*こんにちは (Hello now)*」というユーザー入力の場合、サービスは #greeting インテントとの完全一致を検索します。 したがって、#greeting インテント・オブジェクトの詳細を最初にリストします。 また信頼度にかかわらず、スキルに定義されているその他のインテントの上位 10 件も応答に含められます。 (この例では、最初のインテントが完全一致なので、他のインテントの信頼度は 0 に設定されます。) 上位 10 件のインテントが返されるのは、「試行する (Try it out)」ペインで要求と共に `alternate_intents:true` パラメーターが送信されているためです。 直接 API を使用している場合に上位 10 件の結果を表示するには、呼び出し内でこのパラメーターを指定していることを確認してください。 `alternate_intents` が false (デフォルト値) の場合、信頼度が 0.2 を超えているインテントのみが配列として返されます。
 
 ```json
 [{"intent":"greeting","confidence":1},
@@ -213,18 +243,19 @@ SpEL では、疑問符 `(?)` を使用することで、エンティティー�
 `intent == 'help'` は `intents[0] == 'help'` と異なります。なぜなら、`intent == 'help'` は、インテントが検出されない場合でも例外をスローしないためです。 インテントの信頼度がしきい値を上回る場合にのみ、true に評価されます。  必要に応じて、カスタム信頼度レベルを条件に指定できます。例えば、次のようにします。`intents.size() > 0 && intents[0] == 'help' && intents[0].confidence > 0.1`
 
 ## 入力へのアクセス
-{: #access-input}
+{: #expression-language-intent-props}
 
 入力 JSON オブジェクトに含まれるプロパティーは 1 つだけで、それは text プロパティーです。 text プロパティーはユーザー入力のテキストを表します。
 
 ### 入力プロパティーの使用例
+{: #expression-language-intent-props-example}
 
 次の例は、入力へのアクセス方法を示しています。
 
 - ユーザー入力が「Yes」の場合にノードを実行するには、次の式をノード条件に追加します。
   `input.text == 'Yes'`
 
-いずれかの[ストリング・メソッド](/docs/services/conversation/dialog-methods.html#strings)を使用して、ユーザー入力のテキストを評価または操作することができます。 例えば次のようにします。
+いずれかの[ストリング・メソッド](/docs/services/conversation/dialog-methods#dialog-methods-strings)を使用して、ユーザー入力のテキストを評価または操作することができます。 次に例を示します。
 
 - ユーザー入力に「Yes」が含まれるかどうかを検査するには、次を使用します。`input.text.contains( 'Yes' )`。
 - 次を使用すると、ユーザー入力が数値の場合に true を返します。`input.text.matches( '[0-9]+' )`。

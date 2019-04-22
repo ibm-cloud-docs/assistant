@@ -15,11 +15,11 @@
    viewBox="0 0 744.09448819 1052.3622047"
    id="svg3379"
    version="1.1"
-   inkscape:version="0.91 r13725"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="node1-simple.svg"
-   inkscape:export-filename="D:\_IBM1_Local\BM120\BM120ABD147_002\UT_kumi\01_work\BM120ABD147_jpn_002\images\node1-simple.png"
-   inkscape:export-xdpi="106.66669"
-   inkscape:export-ydpi="106.66669">
+   inkscape:export-filename="D:\_work\IBM\BM140\BM140ABD147_001\UT_kumi\01_work\BM140ABD147_jpn_001\assistant\images\node1-simple.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
   <defs
      id="defs3381" />
   <sodipodi:namedview
@@ -29,11 +29,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.2737778"
-     inkscape:cx="282.8572"
-     inkscape:cy="934.28568"
+     inkscape:zoom="1.4"
+     inkscape:cx="137.14286"
+     inkscape:cy="780.26315"
      inkscape:document-units="px"
-     inkscape:current-layer="layer6"
+     inkscape:current-layer="layer9"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
@@ -55,8 +55,7 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1"
-     style="display:inline">
+     id="layer1">
     <image
        y="4.1702704"
        x="1.6071951"
@@ -72,26 +71,20 @@
      inkscape:label="input">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:'MS UI Gothic';-inkscape-font-specification:'MS UI Gothic, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="55.14286"
-       y="66.362175"
-       id="text3399"
-       sodipodi:linespacing="125%"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:'MS UI Gothic';-inkscape-font-specification:'MS UI Gothic, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="57.14286"
+       y="72.362175"
+       id="text3399"><tspan
          sodipodi:role="line"
          id="tspan3401"
-         x="55.14286"
-         y="66.362175"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:125%;font-family:'MS UI Gothic';-inkscape-font-specification:'MS UI Gothic, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start">カップケーキの</tspan><tspan
+         x="57.14286"
+         y="72.362175"
+         style="font-size:15px;line-height:1.25">カップケーキのフレーバーは</tspan><tspan
          sodipodi:role="line"
-         x="55.14286"
-         y="81.987175"
+         x="57.14286"
+         y="91.112175"
          id="tspan3403"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:125%;font-family:'MS UI Gothic';-inkscape-font-specification:'MS UI Gothic, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start">フレーバーは何が</tspan><tspan
-         sodipodi:role="line"
-         x="55.14286"
-         y="97.612175"
-         id="tspan4152"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:125%;font-family:'MS UI Gothic';-inkscape-font-specification:'MS UI Gothic, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start">ありますか?</tspan></text>
+         style="font-size:15px;line-height:1.25">何がありますか?</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -99,15 +92,15 @@
      inkscape:label="condition">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:'MS UI Gothic';-inkscape-font-specification:'MS UI Gothic, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:'MS UI Gothic';-inkscape-font-specification:'MS UI Gothic, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="194.28571"
        y="106.07647"
-       id="text3406"
-       sodipodi:linespacing="125%"><tspan
+       id="text3406"><tspan
          sodipodi:role="line"
          id="tspan3408"
          x="194.28571"
-         y="106.07647">If: #cupcake_menu</tspan></text>
+         y="106.07647"
+         style="font-size:15px;line-height:1.25">If: #cupcake_menu</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -115,15 +108,15 @@
      inkscape:label="node title">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:'MS UI Gothic';-inkscape-font-specification:'MS UI Gothic, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:'MS UI Gothic';-inkscape-font-specification:'MS UI Gothic, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="187.85715"
        y="72.790756"
-       id="text3411"
-       sodipodi:linespacing="125%"><tspan
+       id="text3411"><tspan
          sodipodi:role="line"
          id="tspan3413"
          x="187.85715"
-         y="72.790756">ノード 1</tspan></text>
+         y="72.790756"
+         style="font-size:15px;line-height:1.25">ノード 1</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -131,18 +124,19 @@
      inkscape:label="response">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:'MS UI Gothic';-inkscape-font-specification:'MS UI Gothic, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:'MS UI Gothic';-inkscape-font-specification:'MS UI Gothic, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="201.28571"
        y="132.93361"
-       id="text3416"
-       sodipodi:linespacing="125%"><tspan
+       id="text3416"><tspan
          sodipodi:role="line"
          id="tspan3424"
          x="201.28571"
-         y="132.93361">Then: &quot;バニラ、モカ、レッド・ベルベット</tspan><tspan
+         y="132.93361"
+         style="font-size:15px;line-height:1.25">Then: &quot;バニラ、モカ、レッド・ベルベット</tspan><tspan
          sodipodi:role="line"
          id="tspan3426"
          x="201.28571"
-         y="151.68361">があります。&quot;</tspan></text>
+         y="151.68361"
+         style="font-size:15px;line-height:1.25">があります。&quot;</tspan></text>
   </g>
 </svg>
