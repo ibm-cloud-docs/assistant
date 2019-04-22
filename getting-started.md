@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-12"
+lastupdated: "2019-04-22"
 
 subcollection: assistant
 
@@ -183,7 +183,7 @@ An [*assistant*](/docs/services/assistant?topic=assistant-assistants) is a cogni
 1.  In the Description field, enter `This is a sample assistant that I am creating to help me learn.`
 1.  Click **Create assistant**.
 
-    ![Finish creating the new assistant](images/gs-create-assistant-done0.png)
+    ![Finish creating the new assistant](images/gs-create-assistant-done.png)
 
 ## Step 6: Add your skill to your assistant
 {: #getting-started-add-skill-to-assistant}
