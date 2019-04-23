@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-04-11"
+lastupdated: "2018-04-23"
 
 subcollection: assistant
 
@@ -36,7 +36,7 @@ Each user utterance is passed to the dialog as a /message API call. This include
 
 The body of the /message API call request and response includes the following objects:
 
-- `context`: Contains variables that are meant to be persisted. To pass information from one call to the next, the application developer must pass the previous API call's response context in with each subsequent API call. For example, the dialog can collect the user's name and then refer to the user by name in subsequent nodes.
+- `context`: Contains variables that are meant to be persisted. To pass information from one call to the next, the application developer must pass the previous API call's response context in with each subsequent API call. For example, the dialog can collect the user's name and then refer to the user by name in subsequent nodes. The following example shows how the context object is represented in the dialog JSON editor:
 
   ```json
   {
@@ -48,7 +48,7 @@ The body of the /message API call request and response includes the following ob
 
   See [Retaining information across dialog turns](#dialog-runtime-context) for more information.
 
-- `input`: The string of text that was submitted by the user. The text string can contain up to 2,048 characters.
+- `input`: The string of text that was submitted by the user. The text string can contain up to 2,048 characters. The following example shows how the input object is represented in the dialog JSON editor:
 
   ```json
   {
@@ -58,7 +58,7 @@ The body of the /message API call request and response includes the following ob
   ```
   {: codeblock}
 
-- `output`: The dialog response to return to the user.
+- `output`: The dialog response to return to the user. The following example shows how the output object is represented in the dialog JSON editor:
 
   ```json
   {
@@ -88,7 +88,7 @@ In the resulting API /message response, the text response is formatted as follow
 }
 ```
 
-The following `output` object format is supported for backwards compatibility. Any workspaces that specify a text response by using this format will continue to function properly. With the introduction of rich response types, the `output.text` structure was augmented with the `output.generic` structure to facilitate supporting other types of responses in addition to text. Use the new format when you create new nodes to give yourself more flexibility, because you can subsequently change the response type, if needed.
+The following `output` object JSON format is supported for backwards compatibility. Any workspaces that specify a text response by using this format will continue to function properly. With the introduction of rich response types, the `output.text` structure was augmented with the `output.generic` structure to facilitate supporting other types of responses in addition to text. Use the new format when you create new nodes to give yourself more flexibility, because you can subsequently change the response type, if needed.
 {: note}
 
   ```json
