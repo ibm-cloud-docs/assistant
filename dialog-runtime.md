@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-04-11"
+lastupdated: "2018-04-24"
 
 subcollection: assistant
 
@@ -36,7 +36,7 @@ Each user utterance is passed to the dialog as a /message API call. This include
 
 The body of the /message API call request and response includes the following objects:
 
-- `context`: Contains variables that are meant to be persisted. To pass information from one call to the next, the application developer must pass the previous API call's response context in with each subsequent API call. For example, the dialog can collect the user's name and then refer to the user by name in subsequent nodes.
+- `context`: Contains variables that are meant to be persisted. To pass information from one call to the next, the application developer must pass the previous API call's response context in with each subsequent API call. For example, the dialog can collect the user's name and then refer to the user by name in subsequent nodes. The following example shows how the context object is represented in the dialog JSON editor:
 
   ```json
   {
@@ -48,7 +48,7 @@ The body of the /message API call request and response includes the following ob
 
   See [Retaining information across dialog turns](#dialog-runtime-context) for more information.
 
-- `input`: The string of text that was submitted by the user. The text string can contain up to 2,048 characters.
+- `input`: The string of text that was submitted by the user. The text string can contain up to 2,048 characters. The following example shows how the input object is represented in the dialog JSON editor:
 
   ```json
   {
@@ -58,7 +58,7 @@ The body of the /message API call request and response includes the following ob
   ```
   {: codeblock}
 
-- `output`: The dialog response to return to the user.
+- `output`: The dialog response to return to the user. The following example shows how the output object is represented in the dialog JSON editor:
 
   ```json
   {
@@ -88,7 +88,7 @@ In the resulting API /message response, the text response is formatted as follow
 }
 ```
 
-The following `output` object format is supported for backwards compatibility. Any workspaces that specify a text response by using this format will continue to function properly. With the introduction of rich response types, the `output.text` structure was augmented with the `output.generic` structure to facilitate supporting other types of responses in addition to text. Use the new format when you create new nodes to give yourself more flexibility, because you can subsequently change the response type, if needed.
+The following `output` object JSON format is supported for backwards compatibility. Any workspaces that specify a text response by using this format will continue to function properly. With the introduction of rich response types, the `output.text` structure was augmented with the `output.generic` structure to facilitate supporting other types of responses in addition to text. Use the new format when you create new nodes to give yourself more flexibility, because you can subsequently change the response type, if needed.
 {: note}
 
   ```json
@@ -1068,9 +1068,20 @@ To test disambiguation, complete the following steps:
 
 1.  If disambiguation is still not triggered, it might be that the confidence scores for the nodes are not as close in value as you thought.
 
-    You can get information about the intents, entities, and other properties that are returned for certain user inputs.
+    - To get a list of the intents that meet the disambiguation threshold for a given user input, you can use the following SpEL expression in the text response of a node.
 
-    - To see the confidence scores of the intents that were detected in user input, temporarily add `<? intents ?>` to the end of the node response for a node that you know will be triggered.
+      ```json
+      The following intents meet the disambiguation threshold: <? intents.filter("x", "x.confidence > intents[0].confidence * 0.55") ?>
+      ```
+      {: codeblock}
+
+      This expression gets the confidence score of the first intent in the array of intents that are recognized in the user input. It then multiplies the confidence score of the top intent by 0.55 to get the confidence threshold that must be met by other intents in the array for disambiguation to occur. Lastly, it filters the intents array to include only those intents with confidence scores above the threshold.
+
+      The array that is returned by this expression gives you an idea of which and how many intents would be included as disambiguation options if each intent were used in a dialog node condition of a node that was enabled for disambiguation. Add the expression to a node that you know will be triggered by your test input.
+
+      For more details about the `JSONArray.filter` method used in the expression, see [Expression language methods](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-array-filter).
+
+    - To see the confidence scores of all the intents that are detected in the user input, temporarily add `<? intents ?>` to the end of the node response for a node that you know will be triggered.
 
       This SpEL expression shows the intents that were detected in the user input as an array. The array includes the intent name and the level of confidence that your assistant has that the intent reflects the user's intended goal.
 
