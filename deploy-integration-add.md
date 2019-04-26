@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-09"
+lastupdated: "2019-04-26"
 
 subcollection: assistant
 
@@ -27,6 +27,15 @@ subcollection: assistant
 
 To deploy your skill, add it to an assistant, and then add integrations to the assistant that publish your bot to the channels where your customers go for help.
 {: shortdesc}
+
+## How service desk platform integrations work
+{: #deploy-integration-service-desk-integrations}
+
+Watson this 3-minute video to learn more about integrating your assistant with a service desk platform, such as Intercom.
+
+<iframe class="embed-responsive-item" id="youtubeplayer" title="Overview of how service desk integrations work" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/pJSCZLQVgCY?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
+To learn about how service desk integrations with your assistant can benefit your business, [read this blog post ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/contact-center-post-394dff427c8){: new_window}.
 
 ## Add an integration
 {: #deploy-integration-add-task}
@@ -62,8 +71,6 @@ Follow these steps to add integrations to your assistant:
 After you integrate the assistant, test it from the target channel to ensure that the assistant works as expected.
 
 For tips on how to start the dialog in a consistent way across all integration types, see [Starting the dialog](/docs/services/assistant?topic=assistant-dialog-start).
-
-To learn about how service desk integrations with your assistant can benefit your business, [read this blog post ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/contact-center-post-394dff427c8){: new_window}.
 
 ## Integration limits
 {: #deploy-integration-add-limits}
