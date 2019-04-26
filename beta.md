@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-09"
+lastupdated: "2019-04-26"
 
 subcollection: assistant
 
@@ -32,10 +32,10 @@ subcollection: assistant
 
 The following features are available for use by participants in the beta program only. To find out how to request access, see [Participate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
 
-- The user interface of the tool has been updated to use the React JavaScript library. Functions are now provided in encapsulated components that manage their own state, which results in a more responsive user experience.
+- The user interface of the tool was updated to use a new JavaScript library that increases the page responsiveness. As a result, the look of some graphical user interface elements, such as buttons, changed slightly, but the function did not.
 
-- Try out the new system entities. The number-based system entities have been revised to be better able to recognize date, time, and number mentions. See [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities) for more information.
+- Try out the new system entities. The number-based system entities were revised to be better able to recognize date, time, and number mentions. For more information, see [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities).
 
-- Add webhooks to dialog nodes so you can make programmatic calls out to external applications as part of the conversational flow. See [Adding a webhook callout to a dialog node](/docs/services/assistant?topic=assistant-dialog-webhooks).
+- Add webhooks to dialog nodes so you can make programmatic calls out to external applications as part of the conversational flow. For more information, see [Adding a webhook callout to a dialog node](/docs/services/assistant?topic=assistant-dialog-webhooks).
 
 - Add your assistant as a Zendesk Chat agent. See [Integrating with Zendesk Chat](/docs/services/assistant?topic=assistant-deploy-zendesk).
