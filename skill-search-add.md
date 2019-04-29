@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-26"
+lastupdated: "2019-04-29"
 
 subcollection: assistant
 
@@ -300,7 +300,7 @@ One search skill can be used by more than one assistant.
 
     Click the skill that you want to add from the available skills that are displayed.
 
-Configure at least one integration channel to test the search skill. In the channel, enter queries that trigger the search. Ensure that the search is being triggered properly, and that is returns relevant results.
+Configure at least one integration channel to test the search skill. In the channel, enter queries that trigger the search. Ensure that the search is being triggered properly, and that it returns relevant results.
 
 ## Search triggers
 {: #skill-search-add-trigger}
