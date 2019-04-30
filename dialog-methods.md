@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-01"
+lastupdated: "2019-04-30"
 
 subcollection: assistant
 
@@ -28,15 +28,23 @@ subcollection: assistant
 You can process values extracted from user utterances that you want to reference in a context variable, condition, or elsewhere in the response.
 {: shortdesc}
 
-## Evaluation syntax
+## Where to use the evaluation syntax
 {: #dialog-methods-evaluation-syntax}
 
 To expand variable values inside other variables, or apply methods to output text or context variables, use the `<? expression ?>` expression syntax. For example:
 
-- **Incrementing a numeric property**
-    - `"output":{"number":"<? output.number + 1 ?>"}`
-- **Invoking a method on an object**
-    - `"context":{"toppings": "<? context.toppings.append( 'onions' ) ?>"}`
+- **Referencing a user's input in a dialog node text response**
+    `You said <? input.text ?>.`
+- **Adding an element to a context variable array from the context editor**
+    `toppings | <? context.toppings.append( 'onions' ) ?>`
+- **Incrementing a numeric property from the JSON editor**
+    `"output":{"number":"<? output.number + 1 ?>"}`
+
+You can use SpEL expressions in dialog node conditions and dialog node response conditions also. When an expression is used in a condition, you do not need to surround it with the `<? ?>` syntax.
+
+- **Checking for a specific entity value**
+  `@sys-date.after(today())`
+  `@city.toLowerCase() == 'paris'`
 
 The following sections describe methods you can use to process values. They are organized by data type:
 

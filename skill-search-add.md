@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-29"
+lastupdated: "2019-04-30"
 
 subcollection: assistant
 
@@ -147,7 +147,7 @@ If you have a Discovery service Lite plan, you are given an opportunity to upgra
             - For file repositories, you specify directories or files.
             - For a web crawl data source, specify the base URL of a website that you want to crawl. The web page that you specify and any pages that it links to are crawled and a document is created per web page.
 
-              For a Lite plan, you cannot create more than 1,000 documents. To limit a crawl to collect only pages you care about, specify a subdomain of the base URL. Or, in the web crawl settings, limit the number of hops that Watson can make from the original page. You can specify subdomains to explicitly exclude from the crawl also.
+              For a {{site.data.keyword.discoveryshort}} Lite plan, you cannot create more than 1,000 documents. To limit a crawl to collect only pages you care about, specify a subdomain of the base URL. Or, in the web crawl settings, limit the number of hops that Watson can make from the original page. You can specify subdomains to explicitly exclude from the crawl also.
 
               Give Watson a few minutes to start creating documents. If no documents are listed after a few minutes and a page refresh, then make sure that the content you want to ingest is available from the URL's page source. Some web page content is dynamically generated and therefore cannot be crawled.
 
