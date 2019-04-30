@@ -40,11 +40,12 @@ To expand variable values inside other variables, or apply methods to output tex
 - **Incrementing a numeric property from the JSON editor**
     `"output":{"number":"<? output.number + 1 ?>"}`
 
-You can use SpEL expressions in dialog node conditions and dialog node response conditions also. When an expression is used in a condition, you do not need to surround it with the `<? ?>` syntax.
+You can use SpEL expressions in dialog node conditions and dialog node response conditions also. When an expression is used in a condition, the surrounding `<? ?>` syntax is not required.
 
-- **Checking for a specific entity value**
-  `@sys-date.after(today())`
+- **Checking for a specific entity value from a dialog node condition**
   `@city.toLowerCase() == 'paris'`
+- **Checking for a specific date range from a dialog node response condition**
+  `@sys-date.after(today())`
 
 The following sections describe methods you can use to process values. They are organized by data type:
 
