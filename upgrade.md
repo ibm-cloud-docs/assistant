@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-13"
+lastupdated: "2019-04-30"
 
 subcollection: assistant
 
@@ -33,15 +33,18 @@ Learn how to upgrade your service plan.
 
 You can explore the {{site.data.keyword.conversationshort}} [service plan options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/watson-assistant/pricing/){: new_window} to decide which plan is best for you.
 
-You cannot upgrade a Cloud Foundry-based instance to a Plus plan. You must migrate the instance, so it is using a resource group before you can upgrade it. See [Migrating](/docs/services/watson?topic=watson-migrate) for more details.
+You cannot upgrade a Cloud Foundry-based instance to a Plus plan. You must migrate the instance, so it is using a resource group before you can upgrade it. See [Migrating from Cloud Foundry](/docs/services/watson?topic=watson-migrate) for more details.
 {: note}
 
 To upgrade your plan, complete these steps:
 
-1.  From the {{site.data.keyword.Bluemix_notm}} menu, select **Upgrade Plan**.
-    From here, you can see your current plan and other available plan options, and make changes.
+1.  From the {{site.data.keyword.cloud_notm}} menu, select **Upgrade Plan**.
+    From here, you can see your current plan and other available plan options. Depending on the plan type, you can make changes yourself or inform IBM that you want to change your plan.
 
-For answers to common questions about subscriptions, see the [Managing billing and usage ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/billing-usage?topic=billing-usage-charges){: new_window}.
+    Currently, you cannot upgrade from a Lite or Standard plan to a Plus plan. Instead, you can purchase the Plus plan and then export skills from an instance in your existing plan and then import them to an instance in the Plus plan. To start the process of provisioning a Plus plan, provide your information by using [this form ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm.biz/contact-WA-plus).
+    {: note}
+
+For answers to common questions about subscriptions, see the [How you're charged ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/billing-usage?topic=billing-usage-charges){: new_window}.
 
 Still have questions? Contact [IBM Sales ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-01.ibm.com/marketing/iwm/dre/signup?source=urx-20970){: new_window}.
 
