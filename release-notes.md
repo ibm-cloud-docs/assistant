@@ -104,7 +104,7 @@ The following new features and changes to {{site.data.keyword.conversationshort}
 ## 12 February 2019
 {: #12February2019}
 
-**A Plus Trial plan is available**: You can use the free Plus Trial plan to try out the features of the Plus plan as you make a purchasing decision. The trial lasts for 30 days. After the trial period, if you do not upgrade to a Plus plan, your Plus Trial instance is converted to a Lite plan instance, which has fewer features.
+**A Plus Trial plan is available**: You can use the free Plus Trial plan to try out the features of the Plus plan as you make a purchasing decision. The trial lasts for 30 days. After the trial period ends, if you do not upgrade to a Plus plan, your Plus Trial instance is converted to a Lite plan instance.
 
 ## 11 February 2019
 {: #11February2019}
