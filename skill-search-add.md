@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-30"
+lastupdated: "2019-05-02"
 
 subcollection: assistant
 
@@ -329,7 +329,7 @@ You cannot test the search skill from the "Try it out" pane in the dialog skill 
 
 If you want the dialog skill to respond less often and to send more queries to the search skill instead, you can configure the dialog to do so. Be sure to add both a dialog skill and search skill to your assistant.
 
-Follow this procedure to make it less likely that the dialog will respond by resetting the confidence level threshold from the default setting of 0.2 to 0.5.
+Follow this procedure to make it less likely that the dialog will respond by resetting the confidence level threshold from the default setting of 0.2 to 0.5. Changing the confidence level threshold to 0.5 instructs your assistant to not respond with an answer from the dialog unless the assistant is more than 50% confident that the dialog can understand the user's intent and can address it.
 
 1.  From the *Dialog* page of your dialog skill, make sure that the last node in the dialog tree has an `anything_else` condition.
 
