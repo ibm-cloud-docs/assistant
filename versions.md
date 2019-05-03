@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-09"
+lastupdated: "2019-05-02"
 
 subcollection: assistant
 
@@ -77,6 +77,7 @@ The number of versions you can create for a single skill depends on your {{site.
 |------------------|-------------------:|
 | Premium          |                 50 |
 | Plus             |                 10 |
+| Plus Trial       |                 10 |
 | Standard         |                 10 |
 | Lite             |                  0 |
 {: caption="Service plan details" caption-side="top"}

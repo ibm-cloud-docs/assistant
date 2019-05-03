@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-12"
+lastupdated: "2019-05-02"
 
 subcollection: assistant
 
@@ -100,6 +100,11 @@ The following new features and changes to {{site.data.keyword.conversationshort}
 {: #25February2019}
 
 **Slack integration enhancement**: You can now choose the type of event that triggers your assistant in a Slack channel. Previously, when you integrated your assistant with Slack, the assistant interacted with users through a direct message channel. Now, you can configure the assistant to listen for mentions, and respond when it is mentioned in other channels. You can choose to use one or both event types as the mechanism through which your assistant interacts with users.
+
+## 12 February 2019
+{: #12February2019}
+
+**A Plus Trial plan is available**: You can use the free Plus Trial plan to try out the features of the Plus plan as you make a purchasing decision. The trial lasts for 30 days. After the trial period ends, if you do not upgrade to a Plus plan, your Plus Trial instance is converted to a Lite plan instance.
 
 ## 11 February 2019
 {: #11February2019}

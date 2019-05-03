@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-12"
+lastupdated: "2019-05-02"
 
 subcollection: assistant
 
@@ -211,7 +211,7 @@ The number of intents and examples you can create depends on your {{site.data.ke
 | Premium          |             2,000 |             25,000 |
 | Plus             |             2,000 |             25,000 |
 | Standard         |             2,000 |             25,000 |
-| Lite             |               100 |             25,000 |
+| Lite, Plus Trial |               100 |             25,000 |
 {: caption="Plan details" caption-side="top"}
 
 ## Editing intents

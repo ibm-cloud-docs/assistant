@@ -41,7 +41,7 @@ To upgrade your plan, complete these steps:
 1.  From the {{site.data.keyword.cloud_notm}} menu, select **Upgrade Plan**.
     From here, you can see your current plan and other available plan options. Depending on the plan type, you can make changes yourself or inform IBM that you want to change your plan.
 
-    Currently, you cannot upgrade from a Lite or Standard plan to a Plus plan. Instead, you can purchase the Plus plan and then export skills from an instance in your existing plan and then import them to an instance in the Plus plan. To start the process of provisioning a Plus plan, provide your information by using [this form ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm.biz/contact-WA-plus).
+    Currently, you cannot upgrade from a Lite or Standard plan to a Plus plan. Instead, purchase the Plus plan first. Export skills from an instance in your existing plan and then import them to an instance in the Plus plan. To start the process of provisioning a Plus plan, fill out [this form ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm.biz/contact-WA-plus).
     {: note}
 
 For answers to common questions about subscriptions, see the [How you're charged ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/billing-usage?topic=billing-usage-charges){: new_window}.

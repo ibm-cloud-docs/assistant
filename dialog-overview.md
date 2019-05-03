@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-30"
+lastupdated: "2019-05-03"
 
 subcollection: assistant
 
@@ -329,7 +329,7 @@ In addition to the default response type of **Text**, for which you specify the 
 
 - **Connect to human agent**: ![Plus or Premium plan only](images/premium.png) The dialog calls a service that you designate, typically a service that manages human agent support ticket queues, to pass off the conversation to a person. You can optionally include a message that summarizes the user's issue to be provided to the human agent. It is the responsibility of the external service to display a message that is shown to the user that explains that the conversation is being transferred. The dialog does not manage that communication itself. The dialog transfer does not occur when you are testing nodes with this response type in the "Try it out" pane. You must access a node that uses this response type from a test deployment to see how your users will experience it.
 
-  This response type is only visible in service instances for a Plus or Premium plan, and is supported with Intercom or custom application integrations only.
+  This response type is available to Plus or Premium plan users only, and is supported with Intercom or custom application integrations only.
   {: note}
 
 - **Image**: Embeds an image into the response. The source image file must be hosted somewhere and have a URL that you can use to reference it. It cannot be a file that is stored in a directory that is not publicly accessible.
@@ -337,7 +337,7 @@ In addition to the default response type of **Text**, for which you specify the 
 - **Pause**: Forces the application to wait for a specified number of milliseconds before continuing with processing. You can choose to show an indicator that the dialog is working on typing a response. Use this response type if you need to perform an action that might take some time. For example, a parent node makes a Cloud Function call and displays the result in a child node. You could use this response type as the response for the parent node to give the programmatic call time to complete, and then jump to the child node to show the result. This response type does not render in the "Try it out" pane. You must access a node that uses this response type from a test deployment to see how your users will experience it.
 - **Search skill**: ![Plus or Premium plan only](images/premium.png) Searches an external data source for relevant information to return to the user. The data source that is searched is a {{site.data.keyword.discoveryshort}} service data collection that you configure when you add a search skill to the assistant that uses this dialog skill. For more information, see [Creating a search skill](/docs/services/assistant?topic=assistant-skill-search-add).
 
-  This response type is only visible in service instances for a Plus or Premium plan.
+  This response type is available to users of Plus or Premium plans only.
   {: note}
 
 #### Adding rich responses
@@ -426,30 +426,32 @@ To add a rich response, complete the following steps:
 
     - **Search skill**. ![Plus or Premium plan only](images/premium.png) Indicates that you want to search an external data source for a relevant response.
 
-      This option is only available to Plus or Premium plan users.
+      This response type is only visible to Plus or Premium plan users.
       {: note}
 
       To edit the search query to pass to the {{site.data.keyword.discoveryshort}} service, click **Customize**, and then fill in the following fields:
 
         - **Query**: Optional. You can specify a specific query in natural language to pass to {{site.data.keyword.discoveryshort}}. If you do not add a query, then the customer's exact input text is passed as the query.
 
-          You can specify `What cities do you fly to?`, for example. This query string is passed to {{site.data.keyword.discoveryshort}}. {{site.data.keyword.discoveryshort}} uses natural language understanding to understand the query and to find an answer or relevant information about the subject in the data collection that is configured for the search skill.
+          For example, you can specify `What cities do you fly to?`. This query value is passed to {{site.data.keyword.discoveryshort}} as a search query. {{site.data.keyword.discoveryshort}} uses natural language understanding to understand the query and to find an answer or relevant information about the subject in the data collection that is configured for the search skill.
 
-          You can include specific information provided by the user by referencing entities that were detected in the user's input as part of the query. For example, `Tell me about @product`. Or you can reference a context variable, such as `Do you have flights to $destination`. Just be sure to design your dialog such that the search is not triggered unless any entities or context variables that you reference in the query contain a value.
+          You can include specific information provided by the user by referencing entities that were detected in the user's input as part of the query. For example, `Tell me about @product`. Or you can reference a context variable, such as `Do you have flights to $destination?`. Just be sure to design your dialog such that the search is not triggered unless any entities or context variables that you reference in the query have been set to valid values.
 
-          For more information about the query syntax that is supported by {{site.data.keyword.discoveryshort}}, see [Query operators ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-query-operators).
+          This field is equivalent to the {{site.data.keyword.discoveryshort}} `natural_language_query` parameter. For more information, see [Query parameters ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-query-parameters#nlq){: new_window}.
 
         - **Filter**: Optional. Specify a text string that defines information that must be present in any of the search results that are returned.
 
-          To indicate that you want to return only documents with positive sentiment detected, for example, specify `enriched_text.sentiment.document.label:positive`.
+          - To indicate that you want to return only documents with positive sentiment detected, for example, specify `enriched_text.sentiment.document.label:positive`.
 
-          To filter results to includes only documents that the ingestion process identified as containing the entity `Boston, MA`, specify `enriched_text.entities.text:"Boston, MA"`.
+          - To filter results to includes only documents that the ingestion process identified as containing the entity `Boston, MA`, specify `enriched_text.entities.text:"Boston, MA"`.
 
-          To filter results to includes only documents that the ingestion process identified as containing a product name provided by the customer, you can specify `enriched_text.entities.text:@product`.
+          - To filter results to includes only documents that the ingestion process identified as containing a product name provided by the customer, you can specify `enriched_text.entities.text:@product`.
 
-          To filter results to includes only documents that the ingestion process identified as containing a city name that you saved in a context variable named `$destination`, you can specify `enriched_text.entities.text:$destination`.
+          - To filter results to includes only documents that the ingestion process identified as containing a city name that you saved in a context variable named `$destination`, you can specify `enriched_text.entities.text:$destination`.
 
-        If you add both a query and a filter value, then the filter parameter is applied first to filter the data collection documents and cache the results. The query parameter then ranks the cached results. For more details about how {{site.data.keyword.discoveryshort}} handles query parameters, see [Query parameters ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-query-parameters).
+        If you add both a query and a filter value, then the filter parameter is applied first to filter the data collection documents and cache the results. The query parameter then ranks the cached results. 
+
+        This field is equivalent to the {{site.data.keyword.discoveryshort}} `filter` parameter. For more information, see [Query parameters ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-query-parameters#filter){: new_window}.
 
       This response type only returns a valid response if the assistant to which you added this dialog skill also has a search skill associated with it.
 

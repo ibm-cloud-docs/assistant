@@ -28,24 +28,46 @@ subcollection: assistant
 You can process values extracted from user utterances that you want to reference in a context variable, condition, or elsewhere in the response.
 {: shortdesc}
 
-## Where to use the evaluation syntax
+## Where to use the expression syntax
 {: #dialog-methods-evaluation-syntax}
 
 To expand variable values inside other variables, or apply methods to output text or context variables, use the `<? expression ?>` expression syntax. For example:
 
-- **Referencing a user's input in a dialog node text response**
-    `You said <? input.text ?>.`
+- **Referencing a user's input from a dialog node text response**
+
+  ```bash
+  You said <? input.text ?>.
+  ```
+  {: screen}
+  
 - **Adding an element to a context variable array from the context editor**
-    `toppings | <? context.toppings.append( 'onions' ) ?>`
+
+| Context variable name | Context variable value |
+|-----------------------|------------------------|
+| `toppings` | `<? context.toppings.append( 'onions' ) ?>` |
+
 - **Incrementing a numeric property from the JSON editor**
-    `"output":{"number":"<? output.number + 1 ?>"}`
+
+    ```json
+    "output":{"number":"<? output.number + 1 ?>"}
+    ```
+    {: screen}
 
 You can use SpEL expressions in dialog node conditions and dialog node response conditions also. When an expression is used in a condition, the surrounding `<? ?>` syntax is not required.
 
 - **Checking for a specific entity value from a dialog node condition**
-  `@city.toLowerCase() == 'paris'`
+
+  ```bash
+  @city.toLowerCase() == 'paris'
+  ```
+  {: screen}
+
 - **Checking for a specific date range from a dialog node response condition**
-  `@sys-date.after(today())`
+
+  ```bash
+  @sys-date.after(today())
+  ```
+  {: screen}
 
 The following sections describe methods you can use to process values. They are organized by data type:
 
