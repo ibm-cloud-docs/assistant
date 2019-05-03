@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-02"
+lastupdated: "2019-05-03"
 
 subcollection: assistant
 
@@ -300,29 +300,43 @@ One search skill can be used by more than one assistant.
 
     Click the skill that you want to add from the available skills that are displayed.
 
-Configure at least one integration channel to test the search skill. In the channel, enter queries that trigger the search. Ensure that the search is being triggered properly, and that it returns relevant results.
-
-## Search triggers
-{: #skill-search-add-trigger}
-
-The search skill is triggered in the following ways:
-
-- **Anything else node**: Searches an external data source for a relevant answer when none of the dialog nodes can address the user's query. Instead of showing a standard message, such as `I don't know how to help you with that.` the assistant can say, `Maybe this information can help:` followed by the passage returned by the search. If a search skill is linked to your assistant, then whenever the `anything_else` node is triggered, rather than displaying the node response, a search occurs instead. The assistant passes the user input as the query to your search skill, and returns the search results as the response.
-- **Search response type**: If you add a search response type to a dialog node, then your assistant retrieves a passage from an external data source and returns it as the response to a particular question. This type of search occurs only when the individual dialog node is processed. This approach is useful if you want to narrow down a user query before you trigger a search. For example, the dialog branch might collect information about the type of device the customer wants to buy. When you know the make and model, you can then send a model keyword in the query that is submitted to the search skill, and get better results.
-- **Search skill only**: If only a search skill is linked to an assistant, and no dialog skill is linked to the assistant, then a search query is sent to the {{site.data.keyword.discoveryshort}} service when any user input is received from one of the assistant's integration channels.
-
 After you add a search skill to an assistant, it is automatically enabled for the assistant as follows:
 
 - If the assistant has only a search skill, any user input that is submitted to one of the assistant's integration channels triggers the search skill.
 
 - If the assistant has both a dialog skill and a search skill, any user input triggers the dialog skill first. The dialog addresses any user input that it has a high confidence it can answer correctly. Any queries that would normally trigger the `anything_else` node in the dialog tree are sent to the search skill instead.
 
+  You can prevent the search from being triggered from the `anything_else` node by following the steps in [Disabling search](#search-skill-add-disable).
+  {: note}
+
 - If you want a specific search query to be triggered for specific questions, add a search skill response type to the appropriate dialog node. See [Responses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more details.
 
-If you initiate any type of search from your dialog skill, test the dialog to ensure that the search is triggered as expected. For example, if you are not using search response types, test that a search is triggered only when no existing dialog nodes can address the user input. And any time a search is triggered, ensure that it returns meaningful results.
+## Search triggers
+{: #skill-search-add-trigger}
+
+The search skill is triggered in the following ways:
+
+- **Anything else node**: Searches an external data source for a relevant answer when none of the dialog nodes can address the user's query.
+
+  Instead of showing a standard message, such as `I don't know how to help you with that.` the assistant can say, `Maybe this information can help:` followed by the passage returned by the search. If a search skill is linked to your assistant, then whenever the `anything_else` node is triggered, rather than displaying the node response, a search occurs instead. The assistant passes the user input as the query to your search skill, and returns the search results as the response.
+
+  You can prevent the search from being triggered from the `anything_else` node by following the steps in [Disabling search](#search-skill-add-disable).
+  {: note}
+
+- **Search response type**: If you add a search response type to a dialog node, then your assistant retrieves a passage from an external data source and returns it as the response to a particular question. This type of search occurs only when the individual dialog node is processed.
+
+  This approach is useful if you want to narrow down a user query before you trigger a search. For example, the dialog branch might collect information about the type of device the customer wants to buy. When you know the make and model, you can then send a model keyword in the query that is submitted to the search skill, and get better results.
+- **Search skill only**: If only a search skill is linked to an assistant, and no dialog skill is linked to the assistant, then a search query is sent to the {{site.data.keyword.discoveryshort}} service when any user input is received from one of the assistant's integration channels.
+
+## Test the search skill
+{: #search-skill-add-test}
+
+Configure at least one integration channel to test the search skill. In the channel, enter queries that trigger the search. Ensure that the search is being triggered properly, and that it returns relevant results.
 
 You cannot test the search skill from the "Try it out" pane in the dialog skill editor. To best replicate how users will interact with your assistant, test from one of the integration channels configured for the assistant.
 {: important}
+
+If you initiate any type of search from your dialog, test the dialog to ensure that the search is triggered as expected. If you are not using search response types, test that a search is triggered only when no existing dialog nodes can address the user input. And any time a search is triggered, ensure that it returns meaningful results.
 
 ## Sending more requests to the search skill
 {: #search-skill-add-increase-flow}
