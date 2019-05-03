@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-30"
+lastupdated: "2019-05-03"
 
 subcollection: assistant
 
@@ -38,20 +38,20 @@ To expand variable values inside other variables, or apply methods to output tex
   ```bash
   You said <? input.text ?>.
   ```
-  {: screen}
-  
-- **Adding an element to a context variable array from the context editor**
-
-| Context variable name | Context variable value |
-|-----------------------|------------------------|
-| `toppings` | `<? context.toppings.append( 'onions' ) ?>` |
+  {: codeblock}
 
 - **Incrementing a numeric property from the JSON editor**
 
     ```json
     "output":{"number":"<? output.number + 1 ?>"}
     ```
-    {: screen}
+    {: codeblock}
+
+- **Adding an element to a context variable array from the context editor**
+
+| Context variable name | Context variable value |
+|-----------------------|------------------------|
+| `toppings` | `<? context.toppings.append( 'onions' ) ?>` |
 
 You can use SpEL expressions in dialog node conditions and dialog node response conditions also. When an expression is used in a condition, the surrounding `<? ?>` syntax is not required.
 
@@ -60,14 +60,14 @@ You can use SpEL expressions in dialog node conditions and dialog node response 
   ```bash
   @city.toLowerCase() == 'paris'
   ```
-  {: screen}
+  {: codeblock}
 
 - **Checking for a specific date range from a dialog node response condition**
 
   ```bash
   @sys-date.after(today())
   ```
-  {: screen}
+  {: codeblock}
 
 The following sections describe methods you can use to process values. They are organized by data type:
 
