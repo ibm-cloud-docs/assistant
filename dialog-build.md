@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-02"
+lastupdated: "2019-05-10"
 
 subcollection: assistant
 
@@ -45,7 +45,7 @@ To create a dialog, complete the following steps:
 
     - **Anything else**: The final node. It contains phrases that are used to reply to users when their input is not recognized. You can replace the responses that are provided or add more responses with a similar meaning to add variety to the conversation. You can also choose whether you want your assistant to return each response that is defined in turn or return them in random order.
 1.  To add more nodes to the dialog tree, click the **More** ![More icon](images/kabob.png) icon on the **Welcome** node, and then select **Add node below**.
-1.  Enter a condition that, when met, triggers your assistant to process the node.
+1.  In the **If assistant recognizes** field, enter a condition that, when met, triggers your assistant to process the node.
 
     As you begin to define a condition, a box is displayed that shows you your options. You can enter one of the following characters, and then pick a value from the list of options that is displayed.
 

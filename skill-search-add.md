@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-03"
+lastupdated: "2019-05-09"
 
 subcollection: assistant
 
@@ -266,17 +266,13 @@ If you decide you want to connect to a different {{site.data.keyword.discoverysh
 ### Tips for collection field selection
 {: #skill-search-add-field-tips}
 
-The appropriate collection fields to extract data from vary depending on your collection's data source and how the data source was enriched. To learn more about the structure of the documents in your collection, including the names of fields that contain information you might want to extract, open the collection in the {{site.data.keyword.discoveryshort}} tool, and then click the View data schema icon ![View data schema icon](images/icon-view-data-schema.png).
+The appropriate collection fields to extract data from vary depending on your collection's data source and how the data source was enriched. When you choose a data collection to search, the collection fields are prepopulated with fields that are the most likely to contain useful information given the data source type for the collection. However, you know your data better than anyone. You can change the source fields to fields that contain the best information for your needs.
 
-The following table provides collection fields that you can try as you get started.
-
-| Data source type   | Title | Body | URL |
-|--------------------|-------|------|-----|
-| Box data source | name | description | listing_url |
-| Uploaded PDF document | enriched_text.concepts.text | text | None |
-| Uploaded HTML file | extracted_metadata.title | text | extracted_metadata.filename |
+To learn more about the structure of the documents in your collection, including the names of fields that contain information you might want to extract, open the collection in the {{site.data.keyword.discoveryshort}} tool, and then click the View data schema icon ![View data schema icon](images/icon-view-data-schema.png).
 
 The collection fields are created when the collection is created. To learn more about fields that are generated for you, such as `enriched_text.concepts.text`, see [Configuring your service > Adding enrichments ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-configservice#adding-enrichments){: new_window}.
+
+If you are using a collection of uploaded documents and cannot get the right search results or the results are not concise enough, consider using *Smart Document Understanding* when you create the data collections. This feature enables you to annotate documents based on text formatting. For example, you can teach {{site.data.keyword.discoveryshort}} that any text in 28pt bold font is a document title. If you apply this information to the collection when you ingest it, you can later use the *title* field as the source for the title section of your search result. You can also split up large documents into segments that are easier to search. For more information, see the the [Smart Document Understanding ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-sdu) topic in the {{site.data.keyword.discoveryshort}} documentation.
 
 ## Next steps
 {: #skill-search-add-next-steps}
@@ -331,17 +327,21 @@ The search skill is triggered in the following ways:
 ## Test the search skill
 {: #search-skill-add-test}
 
-Configure at least one integration channel to test the search skill. In the channel, enter queries that trigger the search. Ensure that the search is being triggered properly, and that it returns relevant results.
+After you configure the search, you can send test queries to see what search results get returned from {{site.data.keyword.discoveryshort}} by using the "Try it out" pane of the search skill.
 
-You cannot test the search skill from the "Try it out" pane in the dialog skill editor. To best replicate how users will interact with your assistant, test from one of the integration channels configured for the assistant.
+To test the full experience that customers have when they ask questions and the question either hits a dialog node with a search skill response type or hits the anything_else node, use a channel integration.
+
+You cannot test the full end-to-end user experience from the dialog "Try it out" pane. The search is configured and attached to an assistant; the dialog skill does not know the details of the search, so cannot show search results in its "Try it out" pane.
 {: important}
 
-If you initiate any type of search from your dialog, test the dialog to ensure that the search is triggered as expected. If you are not using search response types, test that a search is triggered only when no existing dialog nodes can address the user input. And any time a search is triggered, ensure that it returns meaningful results.
+Configure at least one integration channel to test the search skill. In the channel, enter queries that trigger the search. If you initiate any type of search from your dialog, test the dialog to ensure that the search is triggered as expected. If you are not using search response types, test that a search is triggered only when no existing dialog nodes can address the user input. And any time a search is triggered, ensure that it returns meaningful results.
 
 ## Sending more requests to the search skill
 {: #search-skill-add-increase-flow}
 
-If you want the dialog skill to respond less often and to send more queries to the search skill instead, you can configure the dialog to do so. Be sure to add both a dialog skill and search skill to your assistant.
+If you want the dialog skill to respond less often and to send more queries to the search skill instead, you can configure the dialog to do so.
+
+You must add both a dialog skill and search skill to your assistant for this approach to work.
 
 Follow this procedure to make it less likely that the dialog will respond by resetting the confidence level threshold from the default setting of 0.2 to 0.5. Changing the confidence level threshold to 0.5 instructs your assistant to not respond with an answer from the dialog unless the assistant is more than 50% confident that the dialog can understand the user's intent and can address it.
 
@@ -358,6 +358,8 @@ Follow this procedure to make it less likely that the dialog will respond by res
 1.  Move any dialog nodes that you do not want your assistant to process often into the folder.
 
 After changing the dialog, test the assistant to make sure the search skill is triggered as often as you want it to be.
+
+An alternative approach is to teach the dialog about topics to ignore. To do so, you can add utterances that you want the assistant to send to the search skill immediately as test utterances in the dialog skill's "Try it out" pane. You can then select the **Mark as irrevlant** option within the "Try it out" pane to teach the dialog not to respond to this utterance or others like it. For more information, see [Teaching your assistant about topics to ignore](/docs/services/assistant?topic=assistant-logs#logs-mark-irrelevant).
 
 ## Disabling search
 {: #search-skill-add-disable}

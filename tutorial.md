@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-12"
+lastupdated: "2019-05-10"
 
 subcollection: assistant
 
@@ -60,7 +60,7 @@ You are building an assistant for a restaurant named *Truck Stop Gourmand* that 
 
 - Restaurant information
 - Menu details
-- Order cancelations
+- Order cancellations
 
 You'll start by creating intents that represent these subjects, and then build a dialog that responds to user questions about them.
 
@@ -72,9 +72,9 @@ Add an intent that recognizes when customers ask for details about the restauran
 ### Add the #about_restaurant intent
 {: #tutorial-add-about-restaurant}
 
-1.  From the **Intents** tab, click **Add intent**.
+1.  From the **Intents** tab, click **Create intent**.
 
-    ![Shows the the Add Intent button on the Intents page.](images/gs-ass-intent-add.png)
+    ![Shows the the Create intent button on the Intents page.](images/gs-ass-intent-add.png)
 1.  Enter `about_restaurant` in the *Intent name* field, and then click **Create intent**.
 
     ![Shows the #about_restaurant intent being added.](images/gs-ass-add-intent.png)
@@ -103,7 +103,7 @@ You added an intent and provided examples of utterances that real users might en
 
 Add a dialog node that recognizes when the user input maps to the intent that you created in the previous step, meaning its condition checks whether your assistant recognized the `#about_restaurant` intent from the user input.
 
-1.  Click the **Dialogs** tab.
+1.  Click the **Dialog** tab.
 1.  Find the `#General_Greetings` node in the dialog tree.
 
     You will add a node that checks for questions about the restaurant below this initial greeting node to reflect the flow you might expect to encounter in a normal conversation. For example, `Hello.` then `Tell me about yourself.`
@@ -111,8 +111,10 @@ Add a dialog node that recognizes when the user input maps to the intent that yo
 1.  Click the **More** ![More options](images/kabob.png) icon on the `#General_Greetings` node, and then select **Add node below**.
 
     ![Shows the Add node below menu opened from the #General_Greetings dialog node.](images/gs-ass-dialog-add-about-restaurant.png)
-1.  Start to type `#about_restaurant` into the **Enter a condition** field of this node. Then select the `#about_restaurant` option.
-1.  Add the following text as the response:
+1.  Start to type `#about_restaurant` into the **If assistant recognizes** field of this node. Then select the `#about_restaurant` option.
+1.  Add the following text as the response.
+
+   To copy the text, click the copy icon that is associated with the text block ![Indicates you can copy the code block.](images/cloud-copy.png):
 
     ```
     Truck Stop Gourmand is the brain child of Gloria and Fred Smith. What started out as a food truck in 2004 has expanded into a thriving restaurant. We now have one brick and mortar restaurant in downtown Portland. The bigger kitchen brought with it new chefs, but each one is faithful to the philosophy that made the Smith food truck so popular to begin with: deliver fresh, local produce in inventive and delicious ways. Join us for lunch or dinner seven days a week. Or order a cake from our bakery.
@@ -164,9 +166,9 @@ A key question from potential restaurant customers is about the menu. The Truck 
 {: #tutorial-add-menu-intent}
 
 1.  Click the **Intents** tab.
-1.  Click **Add intent**.
+1.  Click **Create intent**.
 
-    ![Shows the the Add Intent button on the Intents page.](images/gs-ass-intent-add.png)
+    ![Shows the the Create intent button on the Intents page.](images/gs-ass-intent-add.png)
 
 1.  Enter `menu` in the *Intent name* field, and then click **Create intent**.
 
@@ -196,7 +198,7 @@ A key question from potential restaurant customers is about the menu. The Truck 
 
 Add a dialog node that recognizes when the user input maps to the intent that you created in the previous step, meaning its condition checks whether your assistant recognized the `#menu` intent from the user input.
 
-1.  Click the **Dialogs** tab.
+1.  Click the **Dialog** tab.
 1.  Find the `#about_restaurant` node in the dialog tree.
 
     You will add a node that checks for questions about the menu below this node.
@@ -205,7 +207,7 @@ Add a dialog node that recognizes when the user input maps to the intent that yo
 
     ![Shows a dialog node being added below the #about_restaurant node.](images/gs-ass-dialog-add-menu.png)
 
-1.  Start to type `#menu` into the **Enter a condition** field of this node. Then select the `#menu` option.
+1.  Start to type `#menu` into the **If assistant recognizes** field of this node. Then select the `#menu` option.
 
     ![Shows the #menu intent being added as the condition for a dialog node.](images/gs-ass-menu-add.png)
 
@@ -225,7 +227,7 @@ Add a dialog node that recognizes when the user input maps to the intent that yo
 
 1.  Click **Add option**.
 
-1.  In the **Label** field, add `Standard`. The text you add as the label is displayed in the response to the user as a selectable option.
+1.  In the **List label** field, add `Standard`. The text you add as the label is displayed in the response to the user as a selectable option.
 
 1.  In the **Value** field, add `standard menu`. The text you specify as the value is what gets sent to your assistant as new user input when a user chooses this option from the list, and clicks it.
 
@@ -234,7 +236,7 @@ Add a dialog node that recognizes when the user input maps to the intent that yo
     <table>
     <caption>Option response type details</caption>
     <tr>
-      <th>Label</th>
+      <th>List label</th>
       <th>Value</th>
     </tr>
     <tr>
@@ -254,13 +256,13 @@ Add a dialog node that recognizes when the user input maps to the intent that yo
 ### Add a @menu entity
 {: #tutorial-add-menu-entity}
 
-To recognize the different types of menus that customers indicate they want to see, you will add a `@menu` entity. Entities represent a class of object or a data type that is relevant to a user's purpose. By checking for the presence of specific entities in the user input, you can add more responses, each one tailored to address a distinct user request. In this case, you will add a `@menu` entity that can distinguish between different menu types.
+To recognize the different types of menus that customers indicate they want to see, you will add a `@menu` entity. Entities represent a class of object or a data type that is relevant to a user's purpose. By checking for the presence of specific entities in the user input, you can add more responses, each one tailored to address a distinct user request. In this case, you will add a `@menu` entity that can distinguish among different menu types.
 
 1.  Click the **Entities** tab.
 
-    ![Shows the empty entities page with the Add entity button.](images/gs-ass-add-entity.png)
+    ![Shows the empty entities page with the Create entity button.](images/gs-ass-add-entity.png)
 
-1.  Click **Add entity**.
+1.  Click **Create entity**.
 
 1.  Enter `menu` into the entity name field.
 
@@ -268,7 +270,7 @@ To recognize the different types of menus that customers indicate they want to s
 
 1.  Click **Create entity**.
 
-1.  Add `standard` to the *Value name* field, and then add `standard menu` to the **Synonyms** field, and press Enter.
+1.  Add `standard` to the **Value name** field, and then add `standard menu` to the **Synonyms** field, and press Enter.
 
 1.  Add the following additional synonyms:
 
@@ -280,9 +282,9 @@ To recognize the different types of menus that customers indicate they want to s
 
 1.  Click **Add value** to add the `@menu:standard` value.
 
-1.  Add `vegetarian` to the *Value name* field, and then add `vegetarian menu` to the **Synonyms** field, and press Enter.
+1.  Add `vegetarian` to the **Value name** field, and then add `vegetarian menu` to the **Synonyms** field, and press Enter.
 
-1.  Click **Show recommendations**, and then click the checkboxes for *meatless diet*, *meatless*, and *vegan diet*.
+1.  Click **Show recommendations**, and then click the checkbox for *vegan diet*.
 
 1.  Click **Add selected**.
 
@@ -295,7 +297,7 @@ To recognize the different types of menus that customers indicate they want to s
 
 1.  Click **Add value** to add the `@menu:vegetarian` value.
 
-1.  Add `cake` to the *Value name* field, and then add `cake menu` to the **Synonyms** field, and press Enter.
+1.  Add `cake` to the **Value name** field, and then add `cake menu` to the **Synonyms** field, and press Enter.
 
 1.  Add the following additional synonyms:
 
@@ -314,7 +316,7 @@ To recognize the different types of menus that customers indicate they want to s
 
 In this step, you will add child nodes to the dialog node that checks for the `#menu` intent. Each child node will show a different response depending on the `@menu` entity type the user chooses from the options list.
 
-1.  Click the **Dialogs** tab.
+1.  Click the **Dialog** tab.
 1.  Find the `#menu` node in the dialog tree.
 
     You will add a child node to handle each menu type option that you added to the `#menu` node.
@@ -323,7 +325,7 @@ In this step, you will add child nodes to the dialog node that checks for the `#
 
     ![Shows a child node being added to the #menu dialog node.](images/gs-ass-add-child-node.png)
 
-1.  Start to type `@menu:standard` into the **Enter a condition** field of this node. Then select the `@menu:standard` option.
+1.  Start to type `@menu:standard` into the **If assistant recognizes** field of this node. Then select the `@menu:standard` option.
 
 1.  Add the following message in the response text field, `To see our menu, go to the <a href="https://www.example.com/menu.html" target="blank">menu</a> page on our website.`
 
@@ -333,7 +335,7 @@ In this step, you will add child nodes to the dialog node that checks for the `#
 
 1.  Click the **More** ![More options](images/kabob.png) icon on the `@menu:standard` node, and then select **Add node below**.
 
-1.  Start to type `@menu:vegetarian` into the **Enter a condition** field of this node. Then select the `@menu:vegetarian` option.
+1.  Start to type `@menu:vegetarian` into the **If assistant recognizes** field of this node. Then select the `@menu:vegetarian` option.
 
 1.  Add the following message in the response text field, `To see our vegetarian menu, go to the <a href="https://www.example.com/vegetarian-menu.html" target="blank">vegetarian menu</a> page on our website.`
 
@@ -343,7 +345,7 @@ In this step, you will add child nodes to the dialog node that checks for the `#
 
 1.  Click the **More** ![More options](images/kabob.png) icon on the `@menu:vegetarian` node, and then select **Add node below**.
 
-1.  Start to type `@menu:cake` into the **Enter a condition** field of this node. Then select the `@menu:cake` option.
+1.  Start to type `@menu:cake` into the **If assistant recognizes** field of this node. Then select the `@menu:cake` option.
 
 1.  Add the following message in the response text field, `To see our cake shop menu, go to the <a href="https://www.example.com/menu.html" target="blank">cake shop menu</a> page on our website.`
 
@@ -351,9 +353,9 @@ In this step, you will add child nodes to the dialog node that checks for the `#
 
 1.  Click ![Close](images/close.png) to close the edit view.
 
-1.  The standard menu is likely to be requested most often, so move it to the bottom of the child nodes list. Placing it last can help prevent it from being triggered accidentally when someone asks for a specialty menu instead the standard menu.
+1.  The standard menu is likely to be requested most often, so move it to the bottom of the child nodes list. Placing it last can help prevent it from being triggered accidentally when someone asks for a specialty menu instead the standard menu. 
 
-1.  Click the **More** ![More options](images/kabob.png) icon on the `@menu:standard` node, and then select **Move**.
+    Click the **More** ![More options](images/kabob.png) icon on the `@menu:standard` node, and then select **Move**.
 
     ![Shows the @menu:standard node being moved to come after the @menu:cake node.](images/gs-ass-move-standard-menu-node.png)
 
@@ -384,7 +386,7 @@ Test the dialog nodes that you added to recognize menu questions.
 
     A new web browser page opens and displays the example.com website.
 
-1.  Close the web browser page.
+1.  Close the example.com web page.
 
 Well done. You have succesfully added an intent and entity that can recognize user requests for menu details, and can direct users to the appropriate menu.
 
@@ -401,7 +403,7 @@ Customers place orders in person, over the phone, or by using the order form on 
 You want the assistant to recognize order numbers, so you will create a pattern entity to recognize the unique format that the restaurant uses to identify its orders. The syntax of order numbers used by the restaurant's bakery is 2 upper-case letters followed by 5 numbers. For example, `YR34663`. Add an entity that can recognize this character pattern.
 
 1.  Click the **Entities** tab.
-1.  Click **Add entity**.
+1.  Click **Create entity**.
 1.  Enter `order_number` into the entity name field.
 1.  Click **Create entity**.
 
@@ -411,7 +413,7 @@ You want the assistant to recognize order numbers, so you will create a pattern 
     ![Shows the user choosing to add a pattern for the entity.](images/gs-ass-add-pattern.png)
 1.  Add the following regular expression to the Pattern field: `[A-Z]{2}\d{5}`
 
-    ![Shows that one pattern has been specified for the @order-number entity.](images/gs-ass-entity-added-pattern.png)
+    ![Shows that one pattern has been specified for the @order_number entity.](images/gs-ass-entity-added-pattern.png)
 
 1.  Click **Add value**.
 
@@ -425,7 +427,7 @@ You want the assistant to recognize order numbers, so you will create a pattern 
 {: #tutorial-cancel-order-intent}
 
 1.  Click the **Intents** tab.
-1.  Click **Add intent**.
+1.  Click **Create intent**.
 1.  Enter `cancel_order` in the *Intent name* field, and then click **Create intent**.
 1.  Add the following user examples:
 
@@ -450,7 +452,7 @@ You want the assistant to recognize order numbers, so you will create a pattern 
 Before you perform an action on the user's behalf, you must get confirmation that you are taking the proper action. Add a #yes intent to the dialog that can recognize when a user agrees with what your assistant is proposing.
 
 1.  Click the **Intents** tab.
-1.  Click **Add intent**.
+1.  Click **Create intent**.
 1.  Enter `yes` in the *Intent name* field, and then click **Create intent**.
 1.  Add the following user examples:
 
@@ -478,7 +480,7 @@ Now, add a dialog node that can handle requests to cancel a cake order.
 
 1.  Click the **Dialog** tab.
 1.  Find the `#menu` node. Click the **More** ![More options](images/kabob.png) icon on the `#menu` node, and then select **Add node below**.
-1.  Start to type `#cancel_order` into the **Enter a condition** field of this node. Then select the `#cancel_order` option.
+1.  Start to type `#cancel_order` into the **If assistant recognizes** field of this node. Then select the `#cancel_order` option.
 1.  Add the following message in the response text field:
 
     ```
@@ -490,7 +492,7 @@ Now, add a dialog node that can handle requests to cancel a cake order.
 
     Before you can actually cancel the order, you need to know the order number. The user might specify the order number in the original request. So, to avoid asking for the order number again, check for a number with the order number pattern in the original input. To do so, define a context variable that would save the order number if it is specified.
 
-1.  Open the context editor. Click the **More** ![More options](images/kabob.png) icon, and select **Open context editor**.
+1.  You define a context variable in the context editor. From the response section of the node, click the **More** ![More options](images/kabob.png) icon, and then select **Open context editor**.
 
     ![Shows the Open context editor menu option from the node edit view.](images/gs-ass-open-context-editor.png)
 1.  Enter the following context variable name and value pair:
@@ -517,7 +519,7 @@ Now, add a dialog node that can handle requests to cancel a cake order.
 1.  Click the **More** ![More options](images/kabob.png) icon on the `#cancel_order` node, and then select **Add child node**.
 
     ![Shows the menu on the #cancel_order node with the Add child node menu option selected.](images/gs-ass-add-child-to-cancel.png)
-1.  Add a label to the node to distinguish it from other child nodes you will be adding. In the name field, add `Ask for order number`. Type `true` into the **Enter a condition** field of this node.
+1.  Add a label to the node to distinguish it from other child nodes you will be adding. In the name field, add `Ask for order number`. Type `true` into the **If assistant recognizes** field of this node.
 
 1.  Add the following message in the response text field:
 
@@ -531,7 +533,7 @@ Now, add a dialog node that can handle requests to cancel a cake order.
 
     Now, add another child node that informs the user that you are canceling the order.
 1.  Click the **More** ![More options](images/kabob.png) icon on the `Ask for order number` node, and then select **Add child node**.
-1.  Type `@order_number` into the **Enter a condition** field of this node.
+1.  Type `@order_number` into the **If assistant recognizes** field of this node.
 1.  Open the context editor. Click the **More** ![More options](images/kabob.png) icon, and select **Open context editor**.
 1.  Enter the following context variable name and value pair:
 
@@ -559,7 +561,7 @@ Now, add a dialog node that can handle requests to cancel a cake order.
     ![Shows the order number child node details.](images/gs-ass-order-number-child.png)
 1.  Click ![Close](images/close.png) to close the edit view.
 1.  Add another node to capture the case where a user provides a number, but it is not a valid order number. Click the **More** ![More options](images/kabob.png) icon on the `@order_number` node, and then select **Add node below**.
-1.  Type `true` into the **Enter a condition** field of this node.
+1.  Type `true` into the **If assistant recognizes** field of this node.
 1.  Add the following message in the response text field:
 
     ```
@@ -570,8 +572,8 @@ Now, add a dialog node that can handle requests to cancel a cake order.
     ![Shows the node that responds when the user does not provide a valid order number.](images/gs-ass-cant-help-you.png)
 1.  Click ![Close](images/close.png) to close the edit view.
 
-1.  Add a node below the initial order cancelation request node that responds in the case where the user provides the order number in the initial request, so you don't have to ask for it again. Click the **More** ![More options](images/kabob.png) icon on the `#cancel_order` node, and then select **Add child node**.
-1.  Add a label to the node to distinguish it from other child nodes. In the name field, add `Number provided`. Type `@order_number` into the **Enter a condition** field of this node.
+1.  Add a node below the initial order cancellation request node that responds in the case where the user provides the order number in the initial request, so you don't have to ask for it again. Click the **More** ![More options](images/kabob.png) icon on the `#cancel_order` node, and then select **Add child node**.
+1.  Add a label to the node to distinguish it from other child nodes. In the name field, add `Number provided`. Type `@order_number` into the **If assistant recognizes** field of this node.
 1.  Add the following message in the response text field:
 
     ```
@@ -584,7 +586,7 @@ Now, add a dialog node that can handle requests to cancel a cake order.
 
     You must add child nodes that check for the user's response to your confirmation question.
 1.  Click the **More** ![More options](images/kabob.png) icon on the `Number provided` node, and then select **Add child node**.
-1.  Type `#yes` into the **Enter a condition** field of this node.
+1.  Type `#yes` into the **If assistant recognizes** field of this node.
 
 1.  Add the following message in the response text field:
 
@@ -598,16 +600,16 @@ Now, add a dialog node that can handle requests to cancel a cake order.
 
 1.  Click the **More** ![More options](images/kabob.png) icon on the `#yes` node, and then select **Add node below**.
 
-1.  Type `true` into the **Enter a condition** field of this node.
+1.  Type `true` into the **If assistant recognizes** field of this node.
 
     Do not add a response. Instead, you will redirect users to the branch that asks for the order number details that you created earlier.
 
-1.  In the *And finally* section, choose **Jump-to**.
+1.  In the *And finally* section, choose **Jump to**.
 
-    ![Shows a true node that has no response, but has the jump-to menu option selected.](images/gs-ass-true-jump-to.png)
+    ![Shows a true node that has no response, but has the jump to menu option selected.](images/gs-ass-true-jump-to.png)
 1.  Select the *Ask for order number* node's condition.
 
-    ![Shows choosing the Ask for order number node condition as the jump-to target.](images/gs-ass-true-jump-to-destination.png)
+    ![Shows choosing the Ask for order number node condition as the jump to target.](images/gs-ass-true-jump-to-destination.png)
 1.  Click ![Close](images/close.png) to close the edit view.
 1.  Move the *Number provided* node above the *Ask for order number* node. Click the **More** ![More options](images/kabob.png) icon on the `Number provided` node, and then select **Move**. Select the *Ask for order number* node, and then click **Above node**.
 
@@ -616,7 +618,7 @@ Now, add a dialog node that can handle requests to cancel a cake order.
 
     ![Shows setting the cancel order node being set to skip user input.](images/gs-ass-skip-user-input.png)
 
-### Test order cancelations
+### Test order cancellations
 {: #tutorial-test-cancel-order}
 
 Test whether your assistant can recognize character patterns that match the pattern used for product order numbers in user input.
@@ -644,18 +646,21 @@ Test whether your assistant can recognize character patterns that match the patt
 
     ![Shows the Try it out pane test of the cancel order number node when the user doesn't know the order number.](images/gs-ass-test-cancel-order-number-unknown.png)
 
+### Add nodes to clarify order number format
+{: #tutorial-clarify-order-number format}
+
 If you do more testing, you might find that the dialog isn't very helpful in scenarios where the user does not remember the order number format. The user might include only the numbers or the letters too, but forget that they are meant to be uppercase. So, it would be a nice touch to give them a hint in such cases, right? If you want to be kind, add another node to the dialog tree that checks for numbers in the user input.
 
-1.  Find the `@order-number` node that is a child of the *Ask order number* node.
+1.  Find the `@order_number` node that is a child of the *Ask order number* node.
 
-1.  Click the **More** ![More options](images/kabob.png) icon on the `@order-number` node, and then select **Add node below**.
+1.  Click the **More** ![More options](images/kabob.png) icon on the `@order_number` node, and then select **Add node below**.
 
 1.  In the condition field, add `input.text.find('\d')`, which is a SpEL expression that says if you find one or more numbers in the user input, trigger this response.
 
 1.  In the text response field, add the following response:
 
     ```
-    The correct format for our order numbers is AAnnnnn. The A's represents 2 upper-case letters, and the n's represents 5 numbers. Do you have an order number in that format?
+    The correct format for our order numbers is AAnnnnn. The A's represents 2 uppercase letters, and the n's represent 5 numbers. Do you have an order number in that format?
     ```
     {: codeblock}
 
@@ -663,13 +668,13 @@ If you do more testing, you might find that the dialog isn't very helpful in sce
 
 1.  Click the **More** ![More options](images/kabob.png) icon on the `input.text.find('\d')` node, and then select **Add child node**.
 
-1.  Type `true` into the **Enter a condition** field of this node.
+1.  Type `true` into the **If assistant recognizes** field of this node.
 
-1.  Enable conditional responses by clicking **Customize**, and then switching the *Multiple responses* toggle to **on**.
+1.  Enable conditional responses by clicking **Customize**, scrolling down, and then switching the *Multiple responses* toggle to **On**.
 
 1.  Click **Apply**.
 
-1.  In the newly-added *If bot recognizes* field, type `@order_number`, and in the *Respond with* field, type:
+1.  In the newly-added *If assistant recognizes* field, type `@order_number`, and in the *Respond with* field, type:
 
     ```
     Ok. The order $ordernumber is canceled. We hope we get the opportunity to bake a cake for you sometime soon.
@@ -678,7 +683,7 @@ If you do more testing, you might find that the dialog isn't very helpful in sce
 
 1.  Click **Add response**.
 
-1.  In the *If bot recognizes* field, type `true`, and in the *Respond with* field, type:
+1.  In the *If assistant recognizes* field, type `true`, and in the *Respond with* field, type:
 
     ```
     I need the order number to cancel the order for you. If you don't know the order number, please call us at 958-234-3456 to cancel over the phone.
@@ -696,9 +701,9 @@ Another way you can address this type of scenario is to add a node with slots. S
 ## Step 5: Add the personal touch
 {: #tutorial-get-username}
 
-If the user shows interest in the bot itself, you want the virtual assistant to recognize that curiosity and engage with the user in a more personal way. You might remember the `#General_About_You` intent, which is provided with the *General* content catalog, that we considered using earlier, before you added your own custom `#about_restaurant` intent. It is built to recognize just such questions from the user. Add a node that condition on this intent. In your response, you can ask for the user's name and save it to a $username variable that you can use elsewhere in the dialog, if available.
+If the user shows interest in the bot itself, you want the virtual assistant to recognize that curiosity and engage with the user in a more personal way. You might remember the `#General_About_You` intent, which is provided with the *General* content catalog, that we considered using earlier, before you added your own custom `#about_restaurant` intent. It is built to recognize just such questions from the user. Add a node that conditions on this intent. In your response, you can ask for the user's name and save it to a $username variable that you can use elsewhere in the dialog, if available.
 
-First, you need to make sure your assistant will recognize a name if the user provides one. So, you can enable the `@sys-person` entity, which is designed to recognize common first and last names (in English).
+First, you need to make sure your assistant will recognize a name if the user provides one. To do so, enable the `@sys-person` entity, which is designed to recognize common first and last names (in English).
 
 ### Add a person system entity
 {: #tutorial-add-person-entity}
@@ -716,10 +721,10 @@ Your assistant provides a number of *system entities*, which are common entities
 
 Now, add a dialog node that can recognize the user's interest in the bot, and respond.
 
-1.  Click the **Dialogs** tab.
+1.  Click the **Dialog** tab.
 1.  Find the `Welcome` node in the dialog tree.
 1.  Click the **More** ![More options](images/kabob.png) icon on the `Welcome` node, and then select **Add node below**.
-1.  Start to type `#General_About_You` into the **Enter a condition** field of this node. Then select the `#General_About_You` option.
+1.  Start to type `#General_About_You` into the **If assistant recognizes** field of this node. Then select the `#General_About_You` option.
 1.  Add the following message in the response text field:
 
     ```
@@ -730,11 +735,11 @@ Now, add a dialog node that can recognize the user's interest in the bot, and re
     ![Shows the #General_About_You node being added.](images/gs-ass-add-about-you-node.png)
 1.  Click ![Close](images/close.png) to close the edit view.
 1.  Click the **More** ![More options](images/kabob.png) icon on the `#General_About_You` node, and then select **Add child node**.
-1.  Start to type `@sys-person` into the **Enter a condition** field of this node. Then select the `@sys-person` option.
+1.  Start to type `@sys-person` into the **If assistant recognizes** field of this node. Then select the `@sys-person` option.
 1.  Add the following message in the response text field:
 
     ```
-    Hello, <? @sys-person.literal ?>! It's lovely to meet you. How can I help you today.
+    Hello, <? @sys-person.literal ?>! It's lovely to meet you. How can I help you today?
     ```
     {: codeblock}
 
@@ -761,7 +766,7 @@ Now, add a dialog node that can recognize the user's interest in the bot, and re
 1.  Click the **More** ![More options](images/kabob.png) icon on the `@sys-person` node, and then select **Add node below**.
 
     You will add a node to capture user responses that do not include a name. If the user chooses not to share it, you want the bot to keep the conversation going anyhow.
-1.  Type `true` into the **Enter a condition** field of this node.
+1.  Type `true` into the **If assistant recognizes** field of this node.
 1.  Add the following message in the response text field:
 
     ```
@@ -780,14 +785,14 @@ If, at run time, the user triggers this node and provides a name, then you will 
 If you know the user's name, you should include it in your greeting message. To do so, add conditional responses, and include a variation of the greeting that includes the user's name.
 
 1.  Find the `#General_Greetings` node in the dialog tree, and click to open it in the edit view.
-1.  Click **Customize**, and then switch the *Multiple responses* toggle to **on**.
+1.  Click **Customize**, scroll down, and then switch the *Multiple responses* toggle to **On**.
 
     ![Shows that the conditional responses setting has been enabled.](images/gs-ass-turn-on-mcr.png)
 1.  Click **Apply**.
 
     ![Shows the existing response is now part of a table of responses.](images/gs-ass-mcr-add-response.png)
 1.  Click **Add response**.
-1.  In the *If bot recognizes* field, type `$username`, and in the *Respond with* field, type:
+1.  In the *If assistant recognizes* field, type `$username`, and in the *Respond with* field, add a new response:
 
     ```
     Good day to you, $username!
@@ -822,7 +827,7 @@ Test whether your assistant can recognize and save a user's name, and then refer
 
 You can add a conditional response that conditions on and includes the user's name for any other responses where personalization would add value to the conversation.
 
-## Step 6: Test the assistant from you web page integration
+## Step 6: Test the assistant from your web page integration
 {: #tutorial-integrate-assistant}
 
 Now that you have built a more sophisticated version of the assistant, return to the public web page that you deployed as part of the previous tutorial, and then test the new capabilities you added.
@@ -832,7 +837,7 @@ Now that you have built a more sophisticated version of the assistant, return to
 1.  Click the URL that is displayed on the page.
 
     The page opens in a new tab.
-1.  Repeat a few of the test utterances that you submited to the "Try it out pane" to see how the assistant behaves in a real integration.
+1.  Repeat a few of the test utterances that you submited to the "Try it out" pane to see how the assistant behaves in a real integration.
 
     Unlike when you send test utterances to your assistant from the "Try it out" pane, standard usage charges apply to API calls that result from utterances that are submited to the chat widget.
     {: note}

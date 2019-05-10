@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-02"
+lastupdated: "2019-05-08"
 
 subcollection: assistant
 
@@ -51,6 +51,11 @@ Existing models that you have trained will not be immediately impacted, but expi
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
 The following new features and changes to {{site.data.keyword.conversationshort}} are available. Check out our [blog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/assistant/home) to find in-depth information about how the newest features can benefit your business.
+
+## 8 May 2019
+{: #8May2019}
+
+- **Numeric system entities ugprade ![Beta](images/beta.png)**: New system entities are available as a beta feature that you can enable in dialog skills that are written in English and German. The revised system entities offer better date and time understanding. They can recognize date and number spans, national holiday references, and classify mentions with more precision. For example, a date mention that is recognized to be a `@sys-date` is not also identified as a possible `@sys-number` mention.
 
 ## 10 April 2019
 {: #10April2019}

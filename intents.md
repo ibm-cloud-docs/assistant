@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-02"
+lastupdated: "2019-05-09"
 
 subcollection: assistant
 
@@ -178,15 +178,7 @@ After you have finished creating new intents, you can test the system to see if 
 
     ![Mark as irrelevant screen capture](images/irrelevant.png)
 
-    *Mark as irrelevant*
-    {: #intents-mark-irrelevant}
-
-    The *Mark as irrelevant* option is not available in all languages. See [supported languages](/docs/services/assistant?topic=assistant-language-support) for details.
-
-    **Important**: Intents that are marked as irrelevant are saved as counterexamples in the JSON workspace, and are included as part of the training data. Be sure before you designate an input as irrelevant.
-
-      - The inputs cannot be accessed or changed later in the tool.
-      - The only way to reverse the identification of an input as being irrelevant is to use the same input in the *Try it out* pane again, and this time assign it to an intent.
+    For more information about this action, see [Teaching your assistant about topics to ignore](/docs/services/assistant?topic=assistant-logs#logs-mark-irrelevant).
 
 If your intents are not being correctly recognized, consider making the following kinds of changes:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-22"
+lastupdated: "2019-05-10"
 
 subcollection: assistant
 
@@ -31,7 +31,7 @@ subcollection: assistant
 # Getting started tutorial
 {: #getting-started}
 
-In this short tutorial, we introduce the {{site.data.keyword.conversationshort}} tool and go through the process of creating your first assistant.
+In this short tutorial, we introduce {{site.data.keyword.conversationshort}} and walk you through the process of creating your first assistant.
 {: shortdesc}
 
 ## Before you begin
@@ -49,28 +49,28 @@ You need a service instance to start.
 1.  {: hide-dashboard} Sign up for a free {{site.data.keyword.cloud_notm}} account or log in.
 1.  {: hide-dashboard} Click **Create**.
 
-## Step 1: Open the tool
+## Step 1: Open Watson Assistant
 {: #getting-started-launch-tool}
 
 After you create a {{site.data.keyword.conversationshort}} service instance, you land on the **Manage** page of the {{site.data.keyword.conversationshort}} dashboard.
 {: hide-dashboard}
 
-1.  Click **Launch tool**. If you're prompted to log in to the tool, provide your {{site.data.keyword.cloud_notm}} credentials.
+1.  Click **Launch Watson Assistant**. If you're prompted to log in, provide your {{site.data.keyword.cloud_notm}} credentials.
 
 <!-- Remove this text after dedicated instances have the developer console: begin -->
 
-{{site.data.keyword.Bluemix_dedicated_notm}}: Select your service instance from the Dashboard to launch the tool.
+{{site.data.keyword.Bluemix_dedicated_notm}}: Select your service instance from the Dashboard to launch Watson Assistant.
 
 <!-- Remove this text after dedicated instances have the Developer Console: end -->
 
 ## Step 2: Create a dialog skill
 {: #getting-started-add-skill}
 
-Your first step in the {{site.data.keyword.conversationshort}} tool is to create a dialog skill.
+Your first step is to create a dialog skill.
 
 A *dialog skill* is a container for the artifacts that define the flow of a conversation that your assistant can have with your customers.
 
-1.  From the home page of the {{site.data.keyword.conversationshort}} tool, click **Create a Skill**.
+1.  From the home page, click **Create a Skill**.
 
     ![Shows the Add skill button from the home page](images/gs-new-skill.png)
 
@@ -80,18 +80,18 @@ A *dialog skill* is a container for the artifacts that define the flow of a conv
 
 1.  Give your skill the name `Conversational skill tutorial`.
 1.  **Optional**. If the dialog you plan to build will use a language other than English, then choose the appropriate language from the list.
-1.  Click **Create skill**.
+1.  Click **Create dialog skill**.
 
     ![Finish creating the skill](images/gs-add-skill-done.png)
 
-You land on the Intents page of the tool.
+You land on the Intents page.
 
 ## Step 3: Add intents from a content catalog
 {: #getting-started-add-catalog}
 
 Add training data that was built by IBM to your skill by adding intents from a content catalog. In particular, you will give your assistant access to the **General** content catalog so your dialog can greet users, and end conversations with them.
 
-1.  In the {{site.data.keyword.conversationshort}} tool, click the **Content Catalog** tab.
+1.  Click the **Content Catalog** tab.
 1.  Find **General** in the list, and then click **Add to skill**.
 
     ![Shows the Content Catalog and highlights the Add to skill button for the General catalog.](images/gs-add-general-catalog.png)
@@ -110,7 +110,7 @@ We'll create a simple dialog that handles greeting and ending intents, each with
 
 ### Adding a start node
 
-1.  In the {{site.data.keyword.conversationshort}} tool, click the **Dialog** tab.
+1.  Click the **Dialog** tab.
 1.  Click **Create dialog**. You see two nodes:
     - **Welcome**: Contains a greeting that is displayed to your users when they first engage with the assistant.
     - **Anything else**: Contains phrases that are used to reply to users when their input is not recognized.
@@ -135,13 +135,13 @@ You can test your dialog at any time to verify the dialog. Let's test it now.
 Now let's add nodes between the `Welcome` node and the `Anything else` node that handle our intents.
 
 1.  Click the More icon ![More options](images/kabob.png) on the **Welcome** node, and then select **Add node below**.
-1.  Type `#General_Greetings` in the **Enter a condition** field of this node. Then, select the **`#General_Greetings`** option.
-1.  Add the response, `Good day to you!`
+1.  In the **If assistant recognizes** field of this node, start to type `#General_Greetings`. Then, select the **`#General_Greetings`** option.
+1.  Add the response text, `Good day to you!`
 1.  Click ![Close](images/close.png) to close the edit view.
 
    ![A general greeting node was added to the dialog.](images/gs-add-greeting-node.png)
 
-1.  Click the More icon ![More options](images/kabob.png) on this node, and then select **Add node below** to create a peer node. In the peer node, specify `#General_Ending` as the condition, and `OK. See you later.` as the response.
+1.  Click the More icon ![More options](images/kabob.png) on this node, and then select **Add node below** to create a peer node. In the peer node, specify `#General_Ending` in the **If assistant recognizes** field, and `OK. See you later.` as the response text.
 
    ![Adding an ending node to the dialog.](images/gs-add-ending-node.png)
 
@@ -154,7 +154,7 @@ Now let's add nodes between the `Welcome` node and the `Anything else` node that
 You built a simple dialog to recognize and respond to both greeting and ending inputs. Let's see how well it works.
 
 1.  Click the ![Try it](images/ask_watson.png) icon to open the "Try it out" pane. There's that reassuring welcome message.
-1.  At the bottom of the pane, type `Hello` and press Enter. The output indicates that the #hello intent was recognized, and the appropriate response (`Good day to you.`) appears.
+1.  At the bottom of the pane, type `Hello` and press Enter. The output indicates that the `#General_Greetings` intent was recognized, and the appropriate response (`Good day to you.`) is displayed.
 1.  Try the following input:
     - `bye`
     - `howdy`

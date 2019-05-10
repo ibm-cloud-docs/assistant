@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-08"
 
 subcollection: assistant
 
@@ -74,9 +74,9 @@ Using slots produces a more natural dialog flow between the user and your assist
 
       For example, if the entity is a pattern entity, such as `@email`, then after adding the entity name, append `.literal` to it. Adding `.literal` indicates that you want to capture the exact text that was entered by the user and was identified as an email address based on its pattern.
 
-      In some cases, you might want to use an expression to capture the value, but not apply the expression to what is saved. In such cases, you can use one value in the *Check for* field to capture the value, and then open the JSON editor to change the value of the context variable, so it saves something else. See [Treat zeros properly](/docs/services/assistant?topic=assistant-tutorial-slots-complex#tutorial-slots-complex-recognize-zero) for an example.
+      In some cases, you might want to use an expression to capture the value, but not apply the expression to what is saved. In such cases, you can use one value in the *Check for* field to capture the value, and then open the JSON editor to change the value of the context variable, so it saves something else.
 
-      Any edit you make to a slot's context variable value in the JSON editor is not reflected in the **Check for** field when you exit the JSON editor. And if you click the **Check for** field to give the field focus at any time after you use the JSON editor to edit the value, then the change you made is lost.
+      Any edit you make to a slot's context variable value in the JSON editor is not reflected in the **Check for** field after you exit the JSON editor. And if you click the **Check for** field to give the field focus at any time after you use the JSON editor to edit the value, then the change you made is lost.
       {: important}
 
       Avoid checking for context variable values in the *Check for* field. Because the value you check for is also the value that is saved, using a context variable in the condition can lead to unexpected behavior.
@@ -254,23 +254,11 @@ See [Expression language methods](/docs/services/assistant?topic=assistant-dialo
 ### Dealing with zeros
 {: #dialog-slots-zero}
 
-Using `@sys-number` in a slot condition is helpful for capturing any numbers that users specify in their input. However, it does not behave as expected when users specify the number zero (0). Instead of treating zero as a valid number, the condition is evaluated to false, and your assistant prompts the user for a number again. To prevent this behavior, check for `@sys-number` or `@sys-number:0` in the slot condition.
+Using `@sys-number` in a slot condition is helpful for capturing any numbers that users specify in their input. However, it does not behave as expected when users specify the number zero (0). Instead of treating zero as a valid number, the condition is evaluated to false, and your assistant prompts the user for a number again. To prevent this behavior, check for an `@sys-number` mention that is greater than or equal to zero in the slot condition.
 
-To ensure that a slot condition that checks for number mentions deals with zeros properly, complete the following steps:
+To ensure that a slot condition that checks for number mentions deals with zeros properly, complete the following step:
 
-1.  Add `@sys-number || @sys-number:0` to the slot condition field, and then provide the context variable name and text prompt.
-1.  Click the **Edit response** ![Edit response](images/edit-slot.png) icon.
-1.  Click the **More** ![More icon](images/kabob.png) menu, and then select **Open JSON editor**.
-1.  Update the context variable which now has the syntax,  `"number":"@sys-number || @sys-number:0"`, to specify `@sys-number` only.
-
-    ```json
-    {
-      "context":{
-        "number":"@sys-number"
-      }
-    }
-    ```
-    {: codeblock}
+1.  Add `@sys-number >= 0` to the slot condition field, and then provide the context variable name and text prompt.
 
 If you do not want to accept a zero as the number value, then you can add a conditional response for the slot to check for zero, and tell the user that they must provide a number greater than zero. But, it is important for the slot condition to be able to recognize a zero when it is provided as input.
 
@@ -390,6 +378,9 @@ When a user input is evaluated, the slot with the first slot condition to match 
     For example, if the user enters *May 2*, then your assistant recognizes both the `@sys-date` (2017-05-02) and `@sys-number` (2) entities.
 
     **Solution**: In logic that is unique to the slots feature, when two system entities are recognized in a single user input, the one with the larger span is used. Therefore, even though your assistant recognizes both system entities in the text, only the system entity with the longer span (`@sys-date` with `2017-05-02`) is registered and applied to the slot.
+
+    This workaround is not necessary if you are using the revised system entities. With the updated entities, a date reference is considered to be a `@sys-date` mention only, and is not also treated as a `@sys-number` mention. For more details, see [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities).
+  {: note}
 
 ### Adding conditions to Found and Not found responses
 {: #dialog-slots-handler-next-steps}

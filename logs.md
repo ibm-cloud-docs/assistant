@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-02"
+lastupdated: "2019-05-09"
 
 subcollection: assistant
 
@@ -177,3 +177,23 @@ If you use data from another data source, any improvements you make to the model
 1.  Select **Save**.
 
     ![Save entity](images/add_entity_save.png)
+
+### Teaching your assistant about topics to ignore
+{: #logs-mark-irrelevant}
+
+It is important to help your assistant stay focused on the types of customer questions and business transactions you have designed it to handle. You can use information collected from real customer conversations to highlight subjects that you do not want your assitant to even attempt to address.
+
+To teach your assistant about subjects it should ignore, mark utterances that discuss these off-topic subjects as irrelevant.
+
+The **Mark as irrelevant** option is not available in all languages. See [supported languages](/docs/services/assistant?topic=assistant-language-support) for details.
+
+Intents that are marked as irrelevant are saved as counterexamples in the JSON workspace, and are included as part of the training data. They teach your assistant to explicitly not answer utterances of this type.
+
+Be sure before you designate an input as irrelevant.
+
+- There is no way to access or change the inputs later in the tool.
+- The only way to reverse the identification of an input as being irrelevant is to use the same input in a test integration channel, and then explicitly assign it to an intent.
+
+You can mark an intent as irrelevant directly from the *Try it out* pane also.
+
+  ![Mark as irrelevant screen capture](images/irrelevant.png)

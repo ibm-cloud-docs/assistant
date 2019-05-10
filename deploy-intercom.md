@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-12"
+lastupdated: "2019-05-08"
 
 subcollection: assistant
 
@@ -63,6 +63,11 @@ You or someone in your organziation must complete these one-time prerequisite st
 
 ## Preparing the dialog
 {: #deploy-intercom-dialog-prereq}
+
+If you do not have a dialog skill associated with your assistant, create one or add one to your assistant now. See [Building a dialog](/docs/services/assistant?topic=assistant-dialog-build) for more details.
+
+You cannot currently trigger a search from Intercom by adding a search skill to the assistant that uses this integration type.
+{: note}
 
 Complete these steps in your dialog skill so the assistant can handle user requests, and can pass the conversation to a human agent when a customer asks for one.
 

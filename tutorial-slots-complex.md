@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-12"
+lastupdated: "2019-05-07"
 
 subcollection: assistant
 
@@ -202,22 +202,7 @@ When you use the `sys-number` system entity in a slot condition, it does not dea
 
     You will be stuck in this loop until you specify a number other than 0.
 
-1.  To ensure that the slot treats zeros properly, change the slot condition from `@sys-number` to `@sys-number || @sys-number:0`.
-
-1.  Click the **Edit response** ![Edit response](images/edit-slot.png) icon for the slot.
-
-1.  When the context variable is created, it automatically uses the same expression that is specified for the slot condition. However, the context variable must save a number only. Edit the value that was saved as the context variable to remove the `OR` operator from it. From the **More** ![More icon](images/kabob.png) menu, select **Open JSON editor**, and then edit the JSON that defines the context variable. Change the variable from `"guests":"@sys-number || @sys-number:0"` to use the following syntax:
-
-    ```json
-    {
-      "context": {
-        "guests": "@sys-number"
-      }
-    }
-    ```
-    {: codeblock}
-
-1.  Click **Save**.
+1.  To ensure that the slot treats zeros properly, change the slot condition from `@sys-number` to `@sys-number >= 0`.
 
 1.  Test the node again. Open the "Try it out" pane, and click **Clear** to delete the slot context variable values that you specified when you tested the node with slots earlier. To see the impact of the changes you made, use the following script:
 
@@ -344,7 +329,7 @@ To validate user input, complete the following steps:
     - Check that the number of guests specified is larger than zero.
     - Anticipate and address the case when the user changes the number of guests.
 
-      If, at any point while the node with slots is being processed, the user changes a slot value, the corresponding slot context variable value is updated. However, it can be useful to let the user know that the value is being replaced, both to give clear feedback to the user and to give the user a chance to rectify it if the change was not what she intended. 
+      If, at any point while the node with slots is being processed, the user changes a slot value, the corresponding slot context variable value is updated. However, it can be useful to let the user know that the value is being replaced, both to give clear feedback to the user and to give the user a chance to rectify it if the change was not what she intended.
 
 1.  From the edit view of the node with slots, click the **Edit slot** ![Edit slot](images/edit-slot.png) icon for the `@sys-number` slot.
 
@@ -360,7 +345,7 @@ To validate user input, complete the following steps:
       <th>Action</th>
     </tr>
     <tr>
-      <td>`entities['sys-number']?.value == 0`</td>
+      <td>`@sys-number == 0`</td>
       <td>Please specify a number that is larger than 0.</td>
       <td>Clear slot and prompt again</td>
     </tr>
