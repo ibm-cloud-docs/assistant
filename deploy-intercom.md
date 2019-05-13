@@ -66,7 +66,7 @@ You or someone in your organziation must complete these one-time prerequisite st
 
 If you do not have a dialog skill associated with your assistant, create one or add one to your assistant now. See [Building a dialog](/docs/services/assistant?topic=assistant-dialog-build) for more details.
 
-You cannot currently trigger a search from Intercom by adding a search skill to the assistant that uses this integration type.
+Triggering a search through a search skill is not currently supported from an Intercom integration.
 {: note}
 
 Complete these steps in your dialog skill so the assistant can handle user requests, and can pass the conversation to a human agent when a customer asks for one.
