@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-12"
+lastupdated: "2019-05-08"
 
 subcollection: assistant
 
@@ -95,6 +95,11 @@ You or someone in your organziation must complete these one-time prerequisite st
 
 ## Preparing the dialog
 {: #deploy-zendesk-dialog-prereq}
+
+If you do not have a dialog skill associated with your assistant, create one or add one to your assistant now. See [Building a dialog](/docs/services/assistant?topic=assistant-dialog-build) for more details.
+
+Triggering a search through a search skill is not currently supported from a Zendesk integration.
+{: note}
 
 Complete these steps in your dialog skill in {{site.data.keyword.conversationshort}} so the assistant can handle user requests, and can pass the conversation to a human agent when a customer asks for one.
 
