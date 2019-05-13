@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-09"
+lastupdated: "2019-05-13"
 
 subcollection: assistant
 
@@ -76,21 +76,21 @@ The first table shows the level of support for all features, except those relate
 
 **Table 3. Entity feature support details**
 
-| Language | **System entities ([number](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-number), [currency](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-currency), [percentage](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-percentage), [date, time](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-date-time))** | **[Entity fuzzy matching](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Contextual entities](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based)** | **[Synonym recommendations](/docs/services/assistant?topic=assistant-entities#entities-synonyms)** | [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities) |
-|:---|:---:|:---:|:---:|:---:|:---:|
-| **English (en)**                   | GA, Beta ([location](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-location), [person](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-person)) | GA | Beta | GA | Beta |
-| **Arabic (ar)**                    | Beta | GA (Misspelling only) | NA | NA | NA |
-| **Chinese (Simplified) (zh-cn)**   | GA | NA | NA | NA | NA |
-| **Chinese (Traditional) (zh-tw)**  | Beta | NA | NA | NA | NA |
-| **Czech (cs)**                     | GA | GA (Misspelling only) | NA | NA | NA |
-| **Dutch (nl)**                     | GA | GA (Misspelling only) | NA | NA | NA |
-| **French (fr)**                    | GA | GA (Misspelling only) | NA | GA | NA |
-| **German (de)**                    | GA | GA (Misspelling only) | NA | NA | Beta |
-| **Italian (it)**                   | GA | GA (Misspelling only) | NA | NA | NA |
-| **Japanese (ja)**                  | GA | GA (Misspelling only) | NA | GA | NA |
-| **Korean (ko)**                    | GA | GA (Misspelling only) | NA | NA | NA |
-| **Portuguese (Brazilian) (pt-br)** | GA | GA (Misspelling only) | NA | NA | NA |
-| **Spanish (es)**                   | GA | GA (Misspelling only) | NA | GA | NA |
+| Language | **System entities ([number](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-number), [currency](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-currency), [percentage](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-percentage), [date, time](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-date-time))** | **[Entity fuzzy matching](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Contextual entities](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based)** | **[Synonym recommendations](/docs/services/assistant?topic=assistant-entities#entities-synonyms)** |
+|:---|:---:|:---:|:---:|:---:|
+| **English (en)**                   | GA, Beta ([location](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-location), [person](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-person)) | GA | Beta | GA |
+| **Arabic (ar)**                    | Beta | GA (Misspelling only) | NA | NA |
+| **Chinese (Simplified) (zh-cn)**   | GA | NA | NA | NA |
+| **Chinese (Traditional) (zh-tw)**  | Beta | NA | NA | NA |
+| **Czech (cs)**                     | GA | GA (Misspelling only) | NA | NA |
+| **Dutch (nl)**                     | GA | GA (Misspelling only) | NA | NA |
+| **French (fr)**                    | GA | GA (Misspelling only) | NA | GA |
+| **German (de)**                    | GA | GA (Misspelling only) | NA | NA |
+| **Italian (it)**                   | GA | GA (Misspelling only) | NA | NA |
+| **Japanese (ja)**                  | GA | GA (Misspelling only) | NA | GA |
+| **Korean (ko)**                    | GA | GA (Misspelling only) | NA | NA |
+| **Portuguese (Brazilian) (pt-br)** | GA | GA (Misspelling only) | NA | NA |
+| **Spanish (es)**                   | GA | GA (Misspelling only) | NA | GA |
 {: caption="Entity feature support details" caption-side="top"}
 
 **Note:** The {{site.data.keyword.conversationshort}} service supports multiple languages as noted, but the tool interface itself (descriptions, labels, etc.) is in English. All supported languages can be input and trained through the English interface.
