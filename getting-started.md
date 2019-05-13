@@ -55,11 +55,11 @@ You need a service instance to start.
 After you create a {{site.data.keyword.conversationshort}} service instance, you land on the **Manage** page of the {{site.data.keyword.conversationshort}} dashboard.
 {: hide-dashboard}
 
-1.  Click **Launch Watson Assistant**. If you're prompted to log in, provide your {{site.data.keyword.cloud_notm}} credentials.
+1.  Click **Launch the tool**. If you're prompted to log in, provide your {{site.data.keyword.cloud_notm}} credentials.
 
 <!-- Remove this text after dedicated instances have the developer console: begin -->
 
-{{site.data.keyword.Bluemix_dedicated_notm}}: Select your service instance from the Dashboard to launch Watson Assistant.
+{{site.data.keyword.Bluemix_dedicated_notm}}: Select your service instance from the Dashboard to launch the tool.
 
 <!-- Remove this text after dedicated instances have the Developer Console: end -->
 
