@@ -181,7 +181,7 @@ If you use data from another data source, any improvements you make to the model
 ### Teaching your assistant about topics to ignore
 {: #logs-mark-irrelevant}
 
-It is important to help your assistant stay focused on the types of customer questions and business transactions you have designed it to handle. You can use information collected from real customer conversations to highlight subjects that you do not want your assitant to even attempt to address.
+It is important to help your assistant stay focused on the types of customer questions and business transactions you have designed it to handle. You can use information collected from real customer conversations to highlight subjects that you do not want your assistant to even attempt to address.
 
 To teach your assistant about subjects it should ignore, mark utterances that discuss these off-topic subjects as irrelevant.
 
