@@ -2,7 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-22"
+lastupdated: "2019-05-13"
+
+subcollection: assistant
+
 
 ---
 
@@ -57,7 +60,7 @@ Interacting with the {{site.data.keyword.conversationshort}} service is simple. 
 // Example 1: sets up service wrapper, sends initial message, and
 // receives response.
 
-const AssistantV2 = require('watson-developer-cloud/assistant/v2');
+const AssistantV2 = require('ibm-watson/assistant/v2');
 
 // Set up Assistant service wrapper.
 const service = new AssistantV2({
@@ -75,22 +78,22 @@ service
   })
   .then(res => {
     sessionId = res.session_id;
-    sendMessage(''); // start conversation with empty message
+    sendMessage({
+      message_type: 'text',
+      text: '' // start conversation with empty message
+    });
   })
   .catch(err => {
     console.log(err); // something went wrong
   });
 
 // Send message to assistant.
-function sendMessage(messageText) {
+function sendMessage(messageInput) {
   service
     .message({
       assistant_id: assistantId,
       session_id: sessionId,
-      input: {
-        message_type: 'text',
-        text: messageText,
-      }
+      input: messageInput
     })
     .then(res => {
       processResponse(res);
@@ -102,10 +105,16 @@ function sendMessage(messageText) {
 
 // Process the response.
 function processResponse(response) {
-  // Display the output from assistant, if any. Assumes a single text response.
-  if (response.output.generic.length > 0) {
-    console.log(response.output.generic[0].text);
+  // Display the output from assistant, if any. Supports only a single
+  // text response.
+  if (response.output.generic) {
+    if (response.output.generic.length > 0) {
+      if (response.output.generic[0].response_type === 'text') {
+        console.log(response.output.generic[0].text);
+      }
+    }
   }
+
 
 // We're done, so we close the session.
 service
@@ -125,12 +134,12 @@ service
 # Example 1: sets up service wrapper, sends initial message, and
 # receives response.
 
-import watson_developer_cloud
+import ibm_watson
 
 # Set up Assistant service.
-service = watson_developer_cloud.AssistantV2(
+service = ibm_watson.AssistantV2(
     iam_apikey = '{apikey}', # replace with API key
-    version = '2018-09-20'
+    version = '2019-02-28'
 )
 
 assistant_id = '{assistant_id}' # replace with assistant ID
@@ -146,9 +155,11 @@ response = service.message(
     session_id
 ).get_result()
 
-# Print the output from dialog, if any. Assumes a single text response.
+# Print the output from dialog, if any. Supports only a single
+# text response.
 if response['output']['generic']:
-    print(response['output']['generic'][0]['text'])
+    if response['output']['generic'][0]['response_type'] == 'text':
+        print(response['output']['generic'][0]['text'])
 
 # We're done, so we delete the session.
 service.delete_session(
@@ -261,7 +272,7 @@ To be able to process user input, we need to add a user interface to our client 
 // Example 2: adds user input and detects intents.
 
 const prompt = require('prompt-sync')();
-const AssistantV2 = require('watson-developer-cloud/assistant/v2');
+const AssistantV2 = require('ibm-watson/assistant/v2');
 
 // Set up Assistant service wrapper.
 const service = new AssistantV2({
@@ -279,22 +290,22 @@ service
   })
   .then(res => {
     sessionId = res.session_id;
-    sendMessage(''); // start conversation with empty message
+    sendMessage({
+      message_type: 'text',
+      text: ''
+    }); // start conversation with empty message
   })
   .catch(err => {
     console.log(err); // something went wrong
   });
 
 // Send message to assistant.
-function sendMessage(messageText) {
+function sendMessage(messageInput) {
   service
     .message({
       assistant_id: assistantId,
       session_id: sessionId,
-      input: {
-        message_type: 'text',
-        text: messageText,
-      }
+      input: messageInput
     })
     .then(res => {
       processResponse(res);
@@ -306,14 +317,20 @@ function sendMessage(messageText) {
 
 // Process the response.
 function processResponse(response) {
+
   // If an intent was detected, log it out to the console.
   if (response.output.intents.length > 0) {
     console.log('Detected intent: #' + response.output.intents[0].intent);
   }
 
-  // Display the output from assistant, if any. Assumes a single text response.
-  if (response.output.generic.length > 0) {
-    console.log(response.output.generic[0].text);
+  // Display the output from assistant, if any. Supports only a single
+  // text response.
+  if (response.output.generic) {
+    if (response.output.generic.length > 0) {
+      if (response.output.generic[0].response_type === 'text') {
+        console.log(response.output.generic[0].text);
+      }
+    }
   }
 
   // Prompt for the next round of input.
@@ -329,7 +346,11 @@ function processResponse(response) {
       });
     return;
   }
-  sendMessage(newMessageFromUser);
+  newMessageInput = {
+    message_type: 'text',
+    text: newMessageFromUser
+  }
+  sendMessage(newMessageInput);
 }
 ```
 {: codeblock}
@@ -338,12 +359,12 @@ function processResponse(response) {
 ```python
 # Example 2: adds user input and detects intents.
 
-import watson_developer_cloud
+import ibm_watson
 
 # Set up Assistant service.
-service = watson_developer_cloud.AssistantV2(
+service = ibm_watson.AssistantV2(
     iam_apikey = '{apikey}', # replace with API key
-    version = '2018-09-20'
+    version = '2019-02-28'
 )
 
 assistant_id = '{assistant_id}' # replace with assistant ID
@@ -354,30 +375,36 @@ session_id = service.create_session(
 ).get_result()['session_id']
 
 # Initialize with empty value to start the conversation.
-user_input = ''
+message_input = {
+    'message_type:': 'text',
+    'text': ''
+    }
 
 # Main input/output loop
-while user_input != 'quit':
+while message_input['text'] != 'quit':
 
     # Send message to assistant.
     response = service.message(
         assistant_id,
         session_id,
-        input = {
-            'text': user_input
-        }
+        input = message_input
     ).get_result()
 
     # If an intent was detected, print it to the console.
     if response['output']['intents']:
         print('Detected intent: #' + response['output']['intents'][0]['intent'])
 
-    # Print the output from dialog, if any. Assumes a single text response.
+    # Print the output from dialog, if any. Supports only a single
+    # text response.
     if response['output']['generic']:
-        print(response['output']['generic'][0]['text'])
+        if response['output']['generic'][0]['response_type'] == 'text':
+            print(response['output']['generic'][0]['text'])
 
     # Prompt for next round of input.
     user_input = input('>> ')
+    message_input = {
+        'text': user_input
+    }
 
 # We're done, so we delete the session.
 service.delete_session(
@@ -502,7 +529,7 @@ We know that our dialog will never request more than one action at a time, so ou
 // Example 3: implements app actions.
 
 const prompt = require('prompt-sync')();
-const AssistantV2 = require('watson-developer-cloud/assistant/v2');
+const AssistantV2 = require('ibm-watson/assistant/v2');
 
 // Set up Assistant service wrapper.
 const service = new AssistantV2({
@@ -520,22 +547,22 @@ service
   })
   .then(res => {
     sessionId = res.session_id;
-    sendMessage(''); // start conversation with empty message
+    sendMessage({
+      message_type: 'text',
+      text: ''  // start conversation with empty message
+    });
   })
   .catch(err => {
     console.log(err); // something went wrong
   });
 
 // Send message to assistant.
-function sendMessage(messageText) {
+function sendMessage(messageInput) {
   service
     .message({
       assistant_id: assistantId,
       session_id: sessionId,
-      input: {
-        message_type: 'text',
-        text: messageText,
-      }
+      input: messageInput
     })
     .then(res => {
       processResponse(res);
@@ -564,15 +591,23 @@ function processResponse(response) {
     }
   } else {
     // Display the output from assistant, if any. Assumes a single text response.
-    if (response.output.generic.length > 0) {
-      console.log(response.output.generic[0].text);
+    if (response.output.generic) {
+      if (response.output.generic.length > 0) {
+        if (response.output.generic[0].response_type === 'text') {
+          console.log(response.output.generic[0].text);
+        }
+      }
     }
   }
 
   // If we're not done, prompt for the next round of input.
   if (!endConversation) {
     const newMessageFromUser = prompt('>> ');
-    sendMessage(newMessageFromUser);
+    newMessageInput = {
+      message_type: 'text',
+      text: newMessageFromUser
+    }
+    sendMessage(newMessageInput);
   } else {
     service
       .deleteSession({
@@ -594,13 +629,13 @@ function processResponse(response) {
 ```python
 # Example 3: Implements app actions.
 
-import watson_developer_cloud
+import ibm_watson
 import time
 
 # Set up Assistant service.
-service = watson_developer_cloud.AssistantV2(
+service = ibm_watson.AssistantV2(
     iam_apikey = '{apikey}', # replace with API key
-    version = '2018-09-20'
+    version = '2019-02-28'
 )
 
 assistant_id = '{assistant_id}' # replace with assistant ID
@@ -611,7 +646,7 @@ session_id = service.create_session(
 ).get_result()['session_id']
 
 # Initialize with empty values to start the conversation.
-user_input = ''
+message_input = {'text': ''}
 current_action = ''
 
 # Main input/output loop
@@ -623,14 +658,14 @@ while current_action != 'end_conversation':
     response = service.message(
         assistant_id,
         session_id,
-        input = {
-            'text': user_input
-        }
+        input = message_input
     ).get_result()
 
-    # Print the output from dialog, if any. Assumes a single text response.
+    # Print the output from dialog, if any. Supports only a single
+    # text response.
     if response['output']['generic']:
-        print(response['output']['generic'][0]['text'])
+        if response['output']['generic'][0]['response_type'] == 'text':
+            print(response['output']['generic'][0]['text'])
 
     # Check for client actions requested by the assistant.
     if 'actions' in response['output']:
@@ -643,6 +678,9 @@ while current_action != 'end_conversation':
     # If we're not done, prompt for next round of input.
     if current_action != 'end_conversation':
         user_input = input('>> ')
+        message_input = {
+            'text': user_input
+        }
 
 # We're done, so we delete the session.
 service.delete_session(
@@ -762,173 +800,6 @@ Success! The application now uses the {{site.data.keyword.conversationshort}} se
 Of course, a real-world application would use a more sophisticated user interface, such as a web chat window. And it would implement more complex actions, possibly integrating with a customer database or other business systems. It would also need to send additional data to the assistant, such as a user ID to identify each unique user. But the basic principles of how the application interacts with the {{site.data.keyword.conversationshort}} service would remain the same.
 
 For some more complex examples, see [Sample apps](/docs/services/assistant?topic=assistant-sample-apps).
-
-## Accessing context
-{: #api-client-get-context}
-
-The *context* is an object containing variables that persist throughout a conversation and can be shared by the dialog and the client application. If your application is using the v2 API, the context is automatically maintained by the assistant on a per-session basis. Both the dialog and the client application can read and write context variables. By default, the context is not returned to a client application, but you can optionally request that it be included in the response to each `/message` request.
-
-**Important:** One use of the context is to specify a unique user ID for each end user who interacts with the assistant. For user-based plans, this ID is used for billing purposes. (For more information, see [User-based plans](/docs/services/assistant?topic=assistant-services-information#user-based-plans).)
-
-There are two types of context:
-
-- **Global context**: context variables that are shared by all skills used by an assistant, including internal system variables used to manage conversation flow.
-
-- **Skill-specific context**: context variables specific to a particular skill, including any user-defined variables needed by your application. Currently, only one skill (named `main skill`) is supported.
-
-The following example shows a `/message` request that includes both global and skill-specific context variables; it also uses the `options.return_context` property to request that the context be returned with the response.
-
-```javascript
-service
-  .message({
-    assistant_id: '{assistant_id}',
-    session_id: '{session_id}',
-    input: {
-      message_type: 'text',
-      text: 'Hello',
-      options: {
-        'return_context': true
-      }
-    },
-    context: {
-      'global': {
-        'system': {
-          'user_id': 'my_user_id'
-        }
-      },
-      'skills': {
-        'main skill': {
-          'user_defined': {
-            'account_number': '123456'
-          }
-        }
-      }
-    }
-  })
-  .then(res => {
-    console.log(JSON.stringify(res, null, 2));
-  })
-  .catch(err => {
-    console.log(err);
-  });
-```
-{: codeblock}
-{: javascript}
-
-```python
-response=service.message(
-    assistant_id='{assistant_id}',
-    session_id='{session_id}',
-    input={
-        'message_type': 'text',
-        'text': 'Hello',
-        'options': {
-            'return_context': True
-        }
-    },
-    context={
-        'global': {
-            'system': {
-                'user_id': 'my_user_id'
-            }
-        },
-        'skills': {
-            'main skill': {
-                'user_defined': {
-                    'account_number': '123456'
-                }
-            }
-        }
-    }
-).get_result()
-
-print(json.dumps(response, indent=2))
-```
-{: codeblock}
-{: python}
-
-```java
-MessageInputOptions inputOptions = new MessageInputOptions();
-inputOptions.setReturnContext(true);
-
-MessageInput input = new MessageInput.Builder()
-  .messageType("text")
-  .text("Hello")
-  .options(inputOptions)
-  .build();
-
-// create global context with user ID
-MessageContextGlobalSystem system = new MessageContextGlobalSystem();
-system.setUserId("my_user_id");
-MessageContextGlobal globalContext = new MessageContextGlobal();
-globalContext.setSystem(system);
-  
-// build user-defined context variables, put in skill-specific context for main skill
-Map<String, String> userDefinedContext = new HashMap<>();
-userDefinedContext.put("account_num","123456");
-Map<String, Map> mainSkillContext = new HashMap<>();
-mainSkillContext.put("user_defined", userDefinedContext);
-MessageContextSkills skillsContext = new MessageContextSkills();
-skillsContext.put("main skill", mainSkillContext);
-
-MessageContext context = new MessageContext();
-context.setGlobal(globalContext);
-context.setSkills(skillsContext);
-
-MessageOptions options = new MessageOptions.Builder("{assistant_id}", "{session_id}")
-  .input(input)
-  .context(context)
-  .build();
-
-MessageResponse response = service.message(options).execute().getResult();
-
-System.out.println(response);
-```
-{: codeblock}
-{: java}
-
-In this example request, the application specifies a value for `user_id` as part of the global context. In addition, it sets one user-defined context variable (`account_number`) as part of the skill-specific context. This context variable can be accessed by dialog nodes as `$account_number`. (For more information about using the context in your dialog, see [How the dialog is processed](/docs/services/assistant?topic=assistant-dialog-runtime).)
-
-You can specify any variable name you want to use for a user-defined context variable. If the specified variable already exists, it is overwritten with the new value; if not, a new variable is added to the context.
-
-The output from this request includes not only the usual output, but also the context, showing that the specified values have been added.
-
-```json
-{
-  "output": {
-    "generic": [
-      {
-        "response_type": "text",
-        "text": "Welcome to the Watson Assistant example!"
-      }
-    ],
-    "intents": [
-      {
-        "intent": "hello",
-        "confidence": 1
-      }
-    ],
-    "entities": []
-  },
-  "context": {
-    "global": {
-      "system": {
-        "turn_count": 1,
-        "user_id": "my_user_id"
-      }
-    },
-    "skills": {
-      "main skill": {
-        "user_defined": {
-          "account_number": "123456"
-        }
-      }
-    }
-  }
-}
-```
-
-For detailed information about how to access context variables using the API, see the [v2 API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant-v2#send-user-input-to-assistant){: new_window}.)
 
 ## Using the v1 API
 {: #api-client-v1-api}
