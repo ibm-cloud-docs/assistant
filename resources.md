@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-14"
 
 subcollection: assistant
 
@@ -66,10 +66,11 @@ Additional videos created by IBMers.
 - [Introducing {{site.data.keyword.conversationshort}} service ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/A96nLYSMltA){: new_window}: A 1-minute introduction.
 - [Walkthrough of {{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/ELwWhJGE2P8){: new_window}: A 14-minute technical walkthrough.
 
-## IBM Watson Academy
+## Educational materials
 {: #resources-academy}
 
 - [Watson Academy ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm.com/training/watsonacademy){: new_window}
+- [Coursera: Building AI Powered Chatbots Without Programming ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.coursera.org/learn/building-ai-powered-chatbots)
 
 ## Blogs
 {: #resources-blogs}

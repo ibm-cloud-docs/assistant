@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-13"
+lastupdated: "2019-05-14"
 
 subcollection: assistant
 
@@ -26,7 +26,7 @@ subcollection: assistant
 # Implementing responses
 {: #api-dialog-responses}
 
-A dialog node can respond to users with a response that includes text, images, or interactive elements such as clickable options. If you are building your own client application, you must implement the correct display of all response types returned by your dialog. (For more information about dialog responses, see [Responses](/docs/services/assistant?topic=assistant-dialog-overview#responses)).
+A dialog node can respond to users with a response that includes text, images, or interactive elements such as clickable options. If you are building your own client application, you must implement the correct display of all response types returned by your dialog. (For more information about dialog responses, see [Responses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-responses)).
 
 ## Response output format
 {: #api-dialog-responses-output}
@@ -272,12 +272,12 @@ The `suggestion` response type is used by the disambiguation feature to suggest 
 
 Note that the structure of a `suggestion` response is very similar to the structure of an `option` response. As with options, each suggestion includes a `label` that can be displayed to the user and a `value` specifying the input that should be sent back to the assistant if the user chooses the corresponding suggestion. To implement `suggestion` responses in your application, you can use the same approach that you would use for `option` responses.
 
-For more information about the disambiguation feature, see [Disambiguation](/docs/services/assistant?topic=assistant-dialog-runtime##dialog-runtime-disambiguation).
+For more information about the disambiguation feature, see [Disambiguation](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
 
 ## Example: Implementing option responses
 {: #api-dialog-option-example}
 
-To show how a client application might handle option responses, which prompt the user to select from a list of choices, we can extend the client example described in [Building a client application](/docs/services/assistant?topic=api-client#api-client). This is a simplified client app that uses standard input and output to handle three intents (sending a greeting, showing the current time, and exiting from the app):
+To show how a client application might handle option responses, which prompt the user to select from a list of choices, we can extend the client example described in [Building a client application](/docs/services/assistant?topic=assistant-api-client). This is a simplified client app that uses standard input and output to handle three intents (sending a greeting, showing the current time, and exiting from the app):
 
 ```
 Welcome to the {{site.data.keyword.conversationshort}} example!
@@ -290,7 +290,7 @@ OK! See you later.
 ```
 {: screen}
 
-If you want to try the example code shown in this topic, you should first set up the required workspace and obtain the API details you will need. For more information, see [Building a client application](/docs/services/assistant?topic=api-client#api-client).
+If you want to try the example code shown in this topic, you should first set up the required workspace and obtain the API details you will need. For more information, see [Building a client application](/docs/services/assistant?topic=assistant-api-client).
 {: note}
 
 ### Receiving an option response
@@ -675,4 +675,4 @@ OK! See you later.
 
 We can now access all of the functions of the assistant either by making natural-language requests or by selecting from a menu of options.
 
-Note that the same approach is used for `suggestion` responses as well. If your plan supports the disambiguation feature, you can use similar logic to prompt users to select from a list when it isn't clear which of several possible options is correct. For more information about the disambiguation feature, see [Disambiguation](/docs/services/assistant?topic=assistant-dialog-runtime##dialog-runtime-disambiguation).
+Note that the same approach is used for `suggestion` responses as well. If your plan supports the disambiguation feature, you can use similar logic to prompt users to select from a list when it isn't clear which of several possible options is correct. For more information about the disambiguation feature, see [Disambiguation](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
