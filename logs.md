@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-09"
+lastupdated: "2019-05-13"
 
 subcollection: assistant
 
@@ -149,7 +149,7 @@ If you use data from another data source, any improvements you make to the model
 1.  To correct an intent, select the ![Edit](images/edit_icon.png) edit icon beside the chosen #intent.
 1.  From the list provided, select the correct intent for this input.
     - Begin typing in the entry field and the list of intents is filtered.
-    - You can also choose **Mark as irrelevant** from this menu. (For more information, see [Mark as irrelevant](/docs/services/assistant?topic=assistant-intents#intents-mark-irrelevant).) Or, you can choose **Do not train on intent**, which does not save this message as an example for training.
+    - You can also choose **Mark as irrelevant** from this menu. (For more information, see [Teaching your assistant about topics to ignore](#logs-mark-irrelevant).) Or, you can choose **Do not train on intent**, which does not save this message as an example for training.
 
     ![Select intent](images/select_intent.png)
 1.  Select **Save**.
