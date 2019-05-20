@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-13"
+lastupdated: "2019-05-20"
 
 subcollection: assistant
 
@@ -55,23 +55,42 @@ The first table shows the level of support for all features, except those relate
 | **Spanish (es)**                   | GA | Beta |
 {: caption="Feature support details" caption-side="top"}
 
-**Table 2. Intent feature support details**
+**Table 2a. Intent feature support details**
 
-| Language | **[Absolute scoring](/docs/services/assistant?topic=assistant-intents#intents-absolute-scoring)** and **'Mark as irrelevant'](/docs/services/assistant?topic=assistant-logs#logs-mark-irrelevant)** | **[Content Catalog](/docs/services/assistant?topic=assistant-catalog)** | **[User example recommendations](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations)** | **[Intent recommendations](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-intent-recommendations)** |
-|:---:|:---:|:---:|:---:|:---:|
-| **English (en)**                   | GA | GA | GA | GA |
-| **Arabic (ar)**                    | Beta | GA | NA | NA |
-| **Chinese (Simplified) (zh-cn)**   | GA | NA | NA | NA |
-| **Chinese (Traditional) (zh-tw)**  | Beta | NA | NA | NA |
-| **Czech (cs)**                     | GA | NA | NA | NA |
-| **Dutch (nl)**                     | GA | NA | NA | NA |
-| **French (fr)**                    | GA | GA | NA | NA |
-| **German (de)**                    | GA | GA | NA | NA |
-| **Italian (it)**                   | GA | GA | NA | NA |
-| **Japanese (ja)**                  | GA | GA | GA | NA |
-| **Korean (ko)**                    | GA | NA | NA | NA |
-| **Portuguese (Brazilian) (pt-br)** | GA | GA | NA | NA |
-| **Spanish (es)**                   | GA | GA | NA | NA |
+| Language | **[Absolute scoring](/docs/services/assistant?topic=assistant-intents#intents-absolute-scoring)** and **[Mark as irrelevant](/docs/services/assistant?topic=assistant-logs#logs-mark-irrelevant)** | **[Content Catalog](/docs/services/assistant?topic=assistant-catalog)** |
+|:---:|:---:|:---:|
+| **English (en)**                   | GA | GA |
+| **Arabic (ar)**                    | Beta | GA |
+| **Chinese (Simplified) (zh-cn)**   | GA | NA |
+| **Chinese (Traditional) (zh-tw)**  | Beta | NA |
+| **Czech (cs)**                     | GA | NA |
+| **Dutch (nl)**                     | GA | NA |
+| **French (fr)**                    | GA | GA |
+| **German (de)**                    | GA | GA |
+| **Italian (it)**                   | GA | GA |
+| **Japanese (ja)**                  | GA | GA |
+| **Korean (ko)**                    | GA | NA |
+| **Portuguese (Brazilian) (pt-br)** | GA | GA |
+| **Spanish (es)**                   | GA | GA |
+{: caption="Intent feature support details" caption-side="top"}
+
+**Table 2b. Intent feature support details**
+
+| Language | **[User example recommendations](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations)** | **[Intent recommendations](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-intent-recommendations)** |
+|:---:|:---:|
+| **English (en)**                   | GA | GA |
+| **Arabic (ar)**                    | NA | NA |
+| **Chinese (Simplified) (zh-cn)**   | NA | NA |
+| **Chinese (Traditional) (zh-tw)**  | NA | NA |
+| **Czech (cs)**                     | NA | NA |
+| **Dutch (nl)**                     | NA | NA |
+| **French (fr)**                    | NA | NA |
+| **German (de)**                    | NA | NA |
+| **Italian (it)**                   | NA | NA |
+| **Japanese (ja)**                  | GA | NA |
+| **Korean (ko)**                    | NA | NA |
+| **Portuguese (Brazilian) (pt-br)** | NA | NA |
+| **Spanish (es)**                   | NA | NA |
 {: caption="Intent feature support details" caption-side="top"}
 
 **Table 3. Entity feature support details**
