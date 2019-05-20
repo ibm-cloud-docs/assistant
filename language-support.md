@@ -74,7 +74,7 @@ The first table shows the level of support for all features, except those relate
 | **Spanish (es)**                   | GA | GA |
 {: caption="Intent feature support details" caption-side="top"}
 
-**Table 2b. Intent feature support details**
+**Table 2b. Intent feature support details continued**
 
 | Language | **[User example recommendations](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations)** | **[Intent recommendations](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-intent-recommendations)** |
 |:---:|:---:|
@@ -91,7 +91,7 @@ The first table shows the level of support for all features, except those relate
 | **Korean (ko)**                    | NA | NA |
 | **Portuguese (Brazilian) (pt-br)** | NA | NA |
 | **Spanish (es)**                   | NA | NA |
-{: caption="Intent feature support details" caption-side="top"}
+{: caption="Intent feature support details continued" caption-side="top"}
 
 **Table 3. Entity feature support details**
 
