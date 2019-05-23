@@ -16,6 +16,7 @@ Watson Assistant
 
     {: .navgroup id="howto"}
     dev-process.md
+    assistant-add.md
     skill-add.md
     skill-search-add.md
     skill-dialog-add.md
@@ -39,8 +40,6 @@ Watson Assistant
 
     entities.md
     versions.md
-    assistant-add.md
-    assistant-settings.md
     skill-open.md
 
     {: .topicgroup}
@@ -53,6 +52,8 @@ Watson Assistant
         deploy-slack.md
         dialog-start.md
         deploy-integration-delete.md
+
+    assistant-settings.md
 
     {: .topicgroup}
     Analytics
