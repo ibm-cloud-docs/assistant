@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-23"
 
 subcollection: assistant
 
@@ -220,33 +220,3 @@ As you test your dialog with the "Try it out" pane, you might want to know what 
 From Chrome, for example, open the Developer tools. Click the Network tool. The Name section lists multiple API calls. Click the message call associated with your test utterance, and then click the Response column to see the API response body. It lists the intents and entities that were recognized in the user input with their confidence scores, and the values of context variables at the time of the call. To view the response body in structured format, click the Preview column.
 
 ![Shows how to view the API call details by using Chrome web browser developer tools.](images/api-browser-dev.png)
-
-# Reviewing logs to find usage problems
-{: #dialog-tips-inspect-logs}
-
-Review logs of the conversations that the assistant has had with real users to identify areas where the dialog is not behaving as expected.
-
-1.  Export the logs.
-
-    You can use the API to export logs. For example, the following command gets English-language logs and exports them to the `english_logs.json` file.
-
-    ```curl
-    curl -u "{username}":"{password}"
-    "https://gateway.watsonplatform.net/assistant/api/v1/logs?
-    version=2018-07-10
-    &filter=(language::en)" >english_logs.json
-    ```
-    {: codeblock}
-
-    See the [API reference](https://www.ibm.com/watson/developercloud/assistant/api/v1/curl.html?curl#list-all-logs) for more details.
-
-1.  Search the JSON file for properties that give you information about the order of nodes that the user interacted with. The properties described in the following table can often provide useful information.
-
-| Property | Description |
-|----------|-------------|
-| output.nodes_visited | |
-| output.nodes_visited_details | |
-| context.system.branch_exited | |
-| context.system.branch_exited_reason | |
-| context.system.dialog_turn_counter | |
-| context.system.dialog_request_counter | |
