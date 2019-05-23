@@ -52,6 +52,23 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 The following new features and changes to {{site.data.keyword.conversationshort}} are available. Check out our [blog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/assistant/home) to find in-depth information about how the newest features can benefit your business.
 
+## 23 May 2019
+{: #23May2019}
+
+The following updates are available in all locations except Dallas currently.
+{: important}
+
+- **Updated navigation**: The home page was removed, and the order of the Assistants and Skills tabs was reversed. The new tab order encourages you to start your development work by creating an assistant, and then a skill. 
+
+- **Disambiguation settings have moved**: The toggle to enable disamibugation, which is a feature that is available to Plus and Premium plan users only, has moved. The **Settings** button was removed from the **Dialog** page. You can now enable disambiguation and configure it from the skill's **Options** tab.
+
+- **An introductory tour is now available**: A short product tour is now displayed when a new service instance is created. Brand new users are also given help as they start development. A new assistant is created for them automatically. Informational popups are displayed to introduce the product user interface features, and guide the new user toward taking the key first step of creating a dialog skill. 
+
+- **Numeric system entities ugprade ![Beta](images/beta.png)**: New system entities are available as a beta feature that you can enable in dialog skills that are written in English or German. The revised system entities offer better date and time understanding. They can recognize date and number spans, national holiday references, and classify mentions with more precision. For example, a date such as `May 15` is recognized as a date mention(`@sys-date:2019-05-15`), and is *not* also identified as a number mention (`@sys-number:15`). See [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities)
+
+  You cannot try out these system entities in instances hosted in Dallas currently, unless you are part of the beta program. For more information about how to join the beta program, see [Participate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta). 
+  {: note}
+
 ## 10 April 2019
 {: #10April2019}
 
@@ -100,11 +117,6 @@ The following new features and changes to {{site.data.keyword.conversationshort}
 {: #25February2019}
 
 **Slack integration enhancement**: You can now choose the type of event that triggers your assistant in a Slack channel. Previously, when you integrated your assistant with Slack, the assistant interacted with users through a direct message channel. Now, you can configure the assistant to listen for mentions, and respond when it is mentioned in other channels. You can choose to use one or both event types as the mechanism through which your assistant interacts with users.
-
-## 12 February 2019
-{: #12February2019}
-
-**A Plus Trial plan is available**: You can use the free Plus Trial plan to try out the features of the Plus plan as you make a purchasing decision. The trial lasts for 30 days. After the trial period ends, if you do not upgrade to a Plus plan, your Plus Trial instance is converted to a Lite plan instance.
 
 ## 11 February 2019
 {: #11February2019}

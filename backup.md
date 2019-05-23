@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-09"
+lastupdated: "2019-05-20"
 
 subcollection: assistant
 
@@ -36,7 +36,7 @@ You can export the following data from a {{site.data.keyword.conversationshort}}
 
 You cannot export the following data:
 
-<!--- Search skill -->
+- Search skill
 - Assistant, including any configured integrations
 
 ## Retaining logs

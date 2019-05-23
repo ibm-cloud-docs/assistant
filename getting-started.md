@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-10"
+lastupdated: "2019-05-23"
 
 subcollection: assistant
 
@@ -55,7 +55,7 @@ You need a service instance to start.
 After you create a {{site.data.keyword.conversationshort}} service instance, you land on the **Manage** page of the {{site.data.keyword.conversationshort}} dashboard.
 {: hide-dashboard}
 
-1.  Click **Launch the tool**. If you're prompted to log in, provide your {{site.data.keyword.cloud_notm}} credentials.
+1.  Click **Launch tool**. If you're prompted to log in, provide your {{site.data.keyword.cloud_notm}} credentials.
 
 <!-- Remove this text after dedicated instances have the developer console: begin -->
 
@@ -63,30 +63,53 @@ After you create a {{site.data.keyword.conversationshort}} service instance, you
 
 <!-- Remove this text after dedicated instances have the Developer Console: end -->
 
-## Step 2: Create a dialog skill
-{: #getting-started-add-skill}
+If you are a brand new user, an assistant named *My first assistant* is create for you automatically. You can skip the next step. 
 
-Your first step is to create a dialog skill.
+    ![Create new button on the Assistant tab](images/gs-ass-created-for-me.png)
+
+If available in your location, a tour begins that you can step through to learn about the product. Follow the tour; it overlaps with these tutorial steps, so you can resume this tutorial after the tour ends.
+{: tip}
+
+An [*assistant*](/docs/services/assistant?topic=assistant-assistants) is a cognitive bot to which you add a skill that enables it to interact with your customers in useful ways.
+
+Otherwise, your first step is to create an assistant.
+
+## Step 2: Create an assistant
+{: #getting-started-create-assistant}
+
+1.  Click **Create assistant**.
+
+    ![Create new button on the Assistant tab](images/gs-create-assistant.png)
+1.  Name the assistant `My first assistant`.
+1.  Click **Create assistant**.
+
+    ![Finish creating the new assistant](images/gs-create-assistant-done.png)
+
+## Step 3: Create a dialog skill
+{: #getting-started-add-skill}
 
 A *dialog skill* is a container for the artifacts that define the flow of a conversation that your assistant can have with your customers.
 
-1.  From the home page, click **Create a Skill**.
+1.  If the assistant was created for you, click the *My first assistant* tile to open the assistant.
+
+1.  Click **Add dialog skill**.
 
     ![Shows the Add skill button from the home page](images/gs-new-skill.png)
 
-1.  Click **Create skill**.
-
-    ![Shows the Create new button from the Skills page](images/gs-click-create-new.png)
-
 1.  Give your skill the name `Conversational skill tutorial`.
 1.  **Optional**. If the dialog you plan to build will use a language other than English, then choose the appropriate language from the list.
-1.  Click **Create dialog skill**.
 
     ![Finish creating the skill](images/gs-add-skill-done.png)
 
+1.  Click **Create dialog skill**.
+
+    ![Finish creating the skill](images/gs-skill-added.png)
+
+1.  Click to open the skill you just created.
+
 You land on the Intents page.
 
-## Step 3: Add intents from a content catalog
+## Step 4: Add intents from a content catalog
 {: #getting-started-add-catalog}
 
 Add training data that was built by IBM to your skill by adding intents from a content catalog. In particular, you will give your assistant access to the **General** content catalog so your dialog can greet users, and end conversations with them.
@@ -101,7 +124,7 @@ Add training data that was built by IBM to your skill by adding intents from a c
 
 You successfully started to build your training data by adding prebuilt content from {{site.data.keyword.IBM_notm}}.
 
-## Step 4: Build a dialog
+## Step 5: Build a dialog
 {: #getting-started-build-dialog}
 
 A [dialog](/docs/services/assistant?topic=assistant-dialog-overview) defines the flow of your conversation in the form of a logic tree. It matches intents (what users say) to responses (what the bot says back). Each node of the tree has a condition that triggers it, based on user input.
@@ -170,45 +193,25 @@ You built a simple dialog to recognize and respond to both greeting and ending i
 
 That's it. You created a simple conversation with two intents and a dialog to recognize them.
 
-## Step 5: Create an assistant
-{: #getting-started-create-assistant}
-
-An [*assistant*](/docs/services/assistant?topic=assistant-assistants) is a cognitive bot to which you add a skill that enables it to interact with your customers in useful ways.
-
-1.  Click the **Assistants** tab.
-1.  Click **Create assistant**.
-
-    ![Create new button on the Assistant tab](images/gs-create-assistant.png)
-1.  Name the assistant `Watson Assistant tutorial`.
-1.  In the Description field, enter `This is a sample assistant that I am creating to help me learn.`
-1.  Click **Create assistant**.
-
-    ![Finish creating the new assistant](images/gs-create-assistant-done.png)
-
-## Step 6: Add your skill to your assistant
-{: #getting-started-add-skill-to-assistant}
-
-Add the dialog skill that you built to the assistant you created.
-
-1.  From the new assistant page, click **Add dialog skill**.
-
-    If you created or were given developer role access to any workspaces that were built with the generally available version of the {{site.data.keyword.conversationshort}} service, you will see them listed on the Skills page as conversational skills.
-    {: tip}
-
-    ![Shows the Add skill button from the Assistant page](images/gs-add-skill.png)
-1.  Choose to add the skill that you created earlier to the assistant.
-
-## Step 7: Integrate the assistant
+## Step 5: Integrate the assistant
 {: #getting-started-integrate-assistant}
 
-Now that you have an assistant that can participate in a simple conversational exchange, test it. The product provides a built-in integration that is called a Preview Link. When you create an assistant, this type of integration is created for you automatically. The Preview Link integration builds your assistant into a chat widget that is hosted by an IBM-branded web page. You can open the web page and chat with your assistant to test it out.
+Now that you have an assistant that can participate in a simple conversational exchange, test it.
 
-1.  Click the **Assistants** tab, find the `Watson Assistant tutorial` assistant that you created, and open it.
-1.  From the *Integrations* area, click to open the **Preview Link** integration.
+1.  Click the **Assistants** tab, find the *My first assistant* assistant, and open it.
+1.  Do one of the following things to test your assistant with a preview link integration. 
+
+    The preview link integration builds your assistant into a chat widget that is hosted by an IBM-branded web page. You can open the web page and chat with your assistant to test it out.
+
+    - If the assistant was created for you, you must add a preview link integration. From the *Integrations* area, click **Add integration**, and then click **Preview Link**.
+
+    - If you created the assistant yourself, then click the preview link integration tile to open it. 
+    
+      When you create an assistant yourself, a preview link integration is created for you automatically.
 
 1.  Click the URL that is displayed on the page.
 
-    The page opens in a new tab.
+    The test web page opens in a new tab.
 1.  Say `hello` to your assistant, and watch it respond. You can share the URL with others who might want to try out your assistant.
 
 ## Next steps

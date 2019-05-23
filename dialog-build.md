@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-10"
+lastupdated: "2019-05-23"
 
 subcollection: assistant
 
@@ -172,7 +172,6 @@ The number of dialog nodes you can create per skill depends on your plan type.
 |------------------|---------------------------:|
 | Premium          |                    100,000 |
 | Plus             |                    100,000 |
-| Plus Trial       |                     25,000 |
 | Standard         |                    100,000 |
 | Lite             |                     100`*` |
 {: caption="Plan details" caption-side="top"}
