@@ -63,16 +63,16 @@ After you create a {{site.data.keyword.conversationshort}} service instance, you
 
 <!-- Remove this text after dedicated instances have the Developer Console: end -->
 
-If you are a brand new user, an assistant named *My first assistant* is create for you automatically. You can skip the next step. 
+If you are a brand new user, an assistant named *My first assistant* is created for you automatically. Skip the next step. 
 
 ![Shows that an assistant was automatically added to Assistants page](images/gs-ass-created-for-me.png)
 
 If available in your location, a tour begins that you can step through to learn about the product. Follow the tour; it overlaps with these tutorial steps, so you can resume this tutorial after the tour ends.
-{: tip}
+  {: tip}
 
 An [*assistant*](/docs/services/assistant?topic=assistant-assistants) is a cognitive bot to which you add a skill that enables it to interact with your customers in useful ways.
 
-Otherwise, your first step is to create an assistant.
+If an assistant is not created automatically, your first step is to create an assistant.
 
 ## Step 2: Create an assistant
 {: #getting-started-create-assistant}
@@ -212,7 +212,11 @@ Now that you have an assistant that can participate in a simple conversational e
 1.  Click the URL that is displayed on the page.
 
     The test web page opens in a new tab.
-1.  Say `hello` to your assistant, and watch it respond. You can share the URL with others who might want to try out your assistant.
+1.  Type `hello` into the text field, and watch your assistant respond. 
+
+    ![The widget in the preview link integration showing a single dialog exchange.](images/gs-test-from-preview-link.png)
+
+You can share the URL with others who might want to try out your assistant.
 
 ## Next steps
 {: #getting-started-next-steps}
