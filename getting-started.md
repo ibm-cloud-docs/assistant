@@ -203,7 +203,7 @@ Now that you have an assistant that can participate in a simple conversational e
 
     The preview link integration builds your assistant into a chat widget that is hosted by an IBM-branded web page. You can open the web page and chat with your assistant to test it out.
 
-    - If the assistant was created for you, you must add a preview link integration. From the *Integrations* area, click **Add integration**, and then click **Preview Link**.
+    - If the assistant was created for you, you must add a preview link integration. From the *Integrations* area, click **Add integration**, and then click **Preview Link**. Click **Create**.
 
     - If you created the assistant yourself, then click the preview link integration tile to open it. 
     
@@ -216,7 +216,9 @@ Now that you have an assistant that can participate in a simple conversational e
 
     ![The widget in the preview link integration showing a single dialog exchange.](images/gs-test-from-preview-link.png)
 
-You can share the URL with others who might want to try out your assistant.
+    You can share the URL with others who might want to try out your assistant.
+
+1.  After testing, close the web page. Click the **X** to close the preview link integration page.
 
 ## Next steps
 {: #getting-started-next-steps}
