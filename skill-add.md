@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-02"
+lastupdated: "2019-05-23"
 
 subcollection: assistant
 
@@ -85,7 +85,7 @@ The number of skills you can create depends on your {{site.data.keyword.conversa
 | Premium          |                          50 |
 | Plus             |                          50 |
 | Standard         |                          20 |
-| Lite*, Plus Trial |                          5 |
+| Lite* |                          5 |
 {: caption="Plan details" caption-side="top"}
 
 *After 30 days of inactivity, an unused skill in a Lite plan service instance might be deleted to free up space.

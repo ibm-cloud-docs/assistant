@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-03"
+lastupdated: "2019-05-23"
 
 subcollection: assistant
 
@@ -382,7 +382,7 @@ The number of entities, entity values, and synonyms that you can create depends 
 | Premium | 1,000 | 100,000 | 100,000 |
 | Plus | 1,000 | 100,000 |                   100,000 |
 | Standard | 1,000 | 100,000 | 100,000 |
-| Lite, Plus Trial | 25 | 100,000 | 100,000 |
+| Lite | 25 | 100,000 | 100,000 |
 {: caption="Service plan details" caption-side="top"}
 
 System entities that you enable for use count toward your plan usage totals.
@@ -392,7 +392,7 @@ System entities that you enable for use count toward your plan usage totals.
 | Premium      |        30 contextual entities with 3000 annotations |
 | Plus         |        20 contextual entities with 2000 annotations |
 | Standard     |        20 contextual entities with 2000 annotations |
-| Lite, Plus Trial |    10 contextual entities with 1000 annotations |
+| Lite |    10 contextual entities with 1000 annotations |
 {: caption="Service plan details continued" caption-side="top"}
 
 ## Editing entities
