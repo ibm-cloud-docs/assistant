@@ -67,7 +67,7 @@ If you are a brand new user, an assistant named *My first assistant* is create f
 
     ![Create new button on the Assistant tab](images/gs-ass-created-for-me.png)
 
-If available in your location, a tour begins that you can step through to learn about the product. Follow the tour; it overlaps with these tutorial steps, so you can pick up the steps in this tutorial where the tour ends.
+If available in your location, a tour begins that you can step through to learn about the product. Follow the tour; it overlaps with these tutorial steps, so you can resume this tutorial after the tour ends.
 {: tip}
 
 An [*assistant*](/docs/services/assistant?topic=assistant-assistants) is a cognitive bot to which you add a skill that enables it to interact with your customers in useful ways.
