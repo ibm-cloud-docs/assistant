@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-04-24"
+lastupdated: "2018-05-20"
 
 subcollection: assistant
 
@@ -989,23 +989,23 @@ The following video provides an overview of disambiguation.
 
 To enable disambiguation, complete the following steps:
 
-1.  From the Dialogs page, click **Settings**.
-1.  Click **Disambiguation**.
-1.  In the *Enable disambiguation* section, switch the toggle to **On**.
-1.  In the prompt message field, add text to show before the list of dialog node options. For example, *What do you want to do?*
-1.  **Optional**: In the none of the above message field, add text to display as an additional option that users can pick if none of the other dialog nodes reflect what the user wants to do. For example, *None of the above*.
+1.  Open the **Options** tab for the dialog skill where you want to enable disabmiguation.
+1.  In the *Disambiguation* section, switch the toggle to **On**.
+1.  In the **Disambiguation message** field, add text to show before the list of dialog node options. For example, *What do you want to do?*
+1.  In the **Anything else** field, add text to display as an additional option that users can pick if none of the other dialog node options reflect what the user wants to do. For example, *None of the above*.
 
     Keep the message short, so it displays inline with the other options. The message must be less than 512 characters. For information about what your assistant does if a user chooses this option, see [Handling none of the above](#dialog-runtime-handle-none).
 
-1.  Click **Close**
-1.  Decide which dialog nodes you want the assistant to ask for help with.
+    Your changes are automatically saved.
+
+1.  Now, click the **Dialog** tab. Review your dialog to decide which dialog nodes you want the assistant to ask for help with.
 
     - You can pick nodes at any level of the tree hierarchy.
     - You can pick nodes that condition on intents, entities, special conditions, context variables, or any combination of these values.
 
     See [Choosing nodes](#dialog-runtime-choose-nodes) for tips.
 
-    For each node that you want to opt in to disambiguation, complete the following steps:
+    For each node that you want to make available from the disambiguation options list, complete the following steps:
 
     1.  Click to open the node in edit view.
     1.  In the *external node name* field, describe the user task that this dialog node is designed to handle. For example, *Cancel an account*.

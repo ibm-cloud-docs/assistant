@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-20"
 
 subcollection: assistant
 
@@ -46,9 +46,11 @@ This diagram shows the overall architecture:
 - The dialog **skill** interprets the user input further, then directs the flow of the conversation. The dialog gathers any information it needs to respond or perform a transaction on the user's behalf.
 
 ## Implementation
-{: #index-mplementation}
+{: #index-implementation}
 
 Here's how you implement your assistant:
+
+- **Create an assistant**.
 
 - **Create a dialog skill**. Use the intuitive graphical tool to define the training data and dialog for the conversation between your assistant and your customers.
 
@@ -63,8 +65,6 @@ Here's how you implement your assistant:
   - **Entities**: An entity represents a term or object that provides context for an intent. For example, an entity might be a city name that helps your dialog to distinguish which store the user wants to know store hours for. After you add entities, update your dialog to use them. Add dialog nodes that handle the many possible permutations of a request based on the entities that are found in the user input.
 
     As you add training data, a natural language classifier is automatically added to the skill. The classifier model is trained to understand the types of requests that you teach your assistant to listen for and respond to.
-
-- **Create an assistant**.
 
 - **Add the dialog skill to your assistant.**
 
