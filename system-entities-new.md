@@ -63,6 +63,8 @@ To improve the system entities, new properties were added to the entity objects 
 
 The following table summarizes the new properties that were added. To see the properties that are associated with the current system entities, see [System entity details](/docs/services/assistant?topic=assistant-system-entities).
 
+Table 1. New system entity properties
+
 | System entity | Property | Description |
 |---------------|----------|-------------|
 | `@sys-date` | `alternatives` | Captures dates other than the one saved as the `@sys-date` value that the user might have meant when the date is not clearly indicated. For example, if today's date is 10 March 2019, and the user enters `on March 1`, then the March 1st date for next year is saved as the `@sys-date` (`2020-03-01`). However, the user might have meant March 1st of 2019. The system also saves this year's date (`2019-03-01`) as an alternative date value. The alternative values are saved as an object that contains a value and confidence for each alternative date and is stored in a JSON Array. To get an alternative value, use the syntax: `@sys-date.alternative`. In most cases, the date of the future date is saved as the `@sys-date` value, and the past date is saved as the alternative. This is true for weekdays when the weekday is specified without a preposition such as `on` or an adjective such as `this` or `next`. For example, `Are you open Monday?`. However, if a user specifies a weekday as part of a phrase such as `on Monday` or `next Monday`, then the date is assumed to be a future date, and no alternative date is created for it. For example, if today is Tuesday and a user enters, `this Tuesday` or `next Tuesday`, then `@sys-date` is set to the date of Tuesday of next week and no alternative dates are created. |
@@ -87,11 +89,14 @@ The following table summarizes the new properties that were added. To see the pr
 | `@sys-time` | `range_link` | If present, indicates that the user's input contains syntax that suggests a time range is specified. For example, the input might be `Are you open from 9AM to 11AM`. Each of the two `@sys-time` system entities that are detected has a `range_link` property in its output. Additional information is provided, including the role that each `@sys-time` plays in the range relationship. For example, the start time has a role type of `time_from` and the end time has a role type of `time_to`. To check a role value, you can use the syntax `@sys-time.role?.type == 'time_from'`. If the user input implies a range, but only one time is specified, then the `range_link` property is not returned, but one role type is returned. For example, if the user asks, `Are you open until 9PM`, 9PM is recognized as the `@sys-time` mention, and a role of type `time_to` is returned for it. A `range_modifier` that identifies the word in the input that triggers the identification of a range is also returned. In this example, the modifier is `until`. |
 | `@sys-time` | `relative_hour`, `relative_minute`, `relative_second` | Recognizes relative mentions of time, such as `5 hours ago` (`relative_hour = -5`),`in two minutes`(`relative_minute = 2`), or `in a second` (`relative_second = 1`). |
 | `@sys-time` | `specific_hour`, `specific_minute`, `specific_second` | Recognizes specific mentions of time, such as `at 5 o'clock` (`specific_hour = 5`), `at 2:30`(`specific_minute = 30`), or `23:30:22` (`specific_second = 22`). |
+{: caption="New system entity properties" caption-side="top"}
 
 ### Usage examples
 {: #beta-system-entities-examples}
 
-1.  You can use the following types of expressions to take advantage of the new properties in the improved system entities. The table shows the results are returned when a user mentions the date `4 July 2019` and time `3:30:10 PM`. You can use these expressions in dialog text responses without surrounding them in `<? ?>` syntax.
+You can use the following types of expressions to take advantage of the new properties in the improved system entities. The table shows the results are returned when a user mentions the date `4 July 2019` and time `3:30:10 PM`. You can use these expressions in dialog text responses without surrounding them in `<? ?>` syntax.
+
+Table 2. Using new system entities to get date and time details
 
 | SpEL expression syntax | Result |
 |------------------------|---------|
@@ -102,8 +107,14 @@ The following table summarizes the new properties that were added. To see the pr
 | `@sys-time.hour` | Returns `15`. |
 | `@sys-time.minute` | Returns `30`. |
 | `@sys-time.second` | Returns `10`. |
+{: caption="Use the new system entities to get data and time details" caption-side="top"}
 
-1.  In a node that conditions on the `#Customer_Care_Store_Hours` intent, you can add conditional responses that use new system entity properties to provide slightly different answers about store hours depending on what the user asks. (You probably do not want to use all of these conditional responses in a real dialog; they are described here merely to illustrate what's possible.)
+In a node that conditions on the `#Customer_Care_Store_Hours` intent, you can add conditional responses that use new system entity properties to provide slightly different answers about store hours depending on what the user asks. 
+
+You probably do not want to use all of these conditional responses in a real dialog; they are described here merely to illustrate what's possible.
+{: tip}
+
+Table 3. Using new system entities in conditional responses
 
 | Conditional response condition syntax | Description | Example response text |
 |--------------------------------|-------------|----------|
@@ -116,3 +127,4 @@ The following table summarizes the new properties that were added. To see the pr
 | `@sys-date.day_of_week == 'sunday'` | Checks whether a specific date that the user is asking about falls on a Sunday. | We are closed on Sundays. |
 | `@sys-date.specific_day_of_week == 'monday' && @sys-date.alternatives` | Checks whether the user mentioned the weekday `Monday` in their query. For example, `Are you open Monday`. The condition also checks whether any alternative dates were stored. Alternative dates are created when your assistant isn't entirely sure which Monday the user means, so it stores the dates of alternative Mondays also. When a user specifies a weekday, your assistant assumes that the user means the future occurrence of the day (the coming Monday). You can add a response that double checks the intended date, by using the detected alternative value. In this case, the alternative date is the previous Monday's date. | Do you mean `@sys-date` or `@sys-date.alternative`? |
 | `true` | Responds to any other requests for store hour information. | We're open from 9AM to 9PM Monday through Saturday. |
+{: caption="Use the new system entities in conditional responses" caption-side="top"}

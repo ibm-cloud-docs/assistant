@@ -65,7 +65,7 @@ After you create a {{site.data.keyword.conversationshort}} service instance, you
 
 If you are a brand new user, an assistant named *My first assistant* is create for you automatically. You can skip the next step. 
 
-    ![Create new button on the Assistant tab](images/gs-ass-created-for-me.png)
+![Shows that an assistant was automatically added to Assistants page](images/gs-ass-created-for-me.png)
 
 If available in your location, a tour begins that you can step through to learn about the product. Follow the tour; it overlaps with these tutorial steps, so you can resume this tutorial after the tour ends.
 {: tip}
@@ -79,7 +79,7 @@ Otherwise, your first step is to create an assistant.
 
 1.  Click **Create assistant**.
 
-    ![Create new button on the Assistant tab](images/gs-create-assistant.png)
+    ![Create assistant button on the Assistants page.](images/gs-create-assistant.png)
 1.  Name the assistant `My first assistant`.
 1.  Click **Create assistant**.
 
