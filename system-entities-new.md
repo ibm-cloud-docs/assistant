@@ -31,6 +31,9 @@ Enable the new system entities to take advantage of improvements that were made 
 Currently, this setting can be enabled for dialog skills that are written in English or German only.
 {: note}
 
+You cannot try out these system entities in instances hosted in Dallas currently, unless you are part of the beta program. For more information about how to join the beta program, see [Participate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta) 
+{: important}
+
 The new system entities can recognize more nuanced mentions in user input. For example, `@sys-date` can calculate the date of a national holiday, such as `Thanksgiving`, when it is mentioned by name. And `@sys-date` can recognize when a year is specified as part of a date mentioned in the user's input. The improvements also make it easier for your assistant to distinguish among the many number-based system entities. For example, a date mention, such as `May 10`, that is recognized to be a `@sys-date` is not also identified as a `@sys-number` mention.
 
 The `@sys-location` and `@sys-person` system entities did not change.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-20"
+lastupdated: "2019-05-23"
 
 subcollection: assistant
 
@@ -52,7 +52,7 @@ Here's how you implement your assistant:
 
 - **Create an assistant**.
 
-- **Create a dialog skill**. Use the intuitive graphical tool to define the training data and dialog for the conversation between your assistant and your customers.
+- **Add a dialog skill to your assistant**. Use the intuitive graphical tool to define the training data and dialog for the conversation between your assistant and your customers.
 
   The training data consists of the following artifacts:
 
@@ -66,18 +66,16 @@ Here's how you implement your assistant:
 
     As you add training data, a natural language classifier is automatically added to the skill. The classifier model is trained to understand the types of requests that you teach your assistant to listen for and respond to.
 
-- **Add the dialog skill to your assistant.**
-
 - **Integrate your assistant.** Create a channel integration to deploy the configured assistant directly to a social media or messaging channel.
 
   Your deployed assistant is hosted by {{site.data.keyword.cloud_notm}}, the IBM cloud computing platform. (For more information, see [Platform overview ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/overview/ibm-cloud#overview){: new_window}.)
 
 Read more about these implementation steps by following these links:
 
+- [Assistant overview](/docs/services/assistant?topic=assistant-assistants)
 - [Intent creation overview](/docs/services/assistant?topic=assistant-intents#intents-described)
 - [Dialog overview](/docs/services/assistant?topic=assistant-dialog-overview)
 - [Entity creation overview](/docs/services/assistant?topic=assistant-entities#entities-described)
-- [Assistant overview](/docs/services/assistant?topic=assistant-assistant-add)
 - [Adding integrations](/docs/services/assistant?topic=assistant-deploy-integration-add)
 
 ## Browser support
