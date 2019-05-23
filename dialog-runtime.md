@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-05-20"
+lastupdated: "2018-05-23"
 
 subcollection: assistant
 
@@ -990,6 +990,10 @@ The following video provides an overview of disambiguation.
 To enable disambiguation, complete the following steps:
 
 1.  Open the **Options** tab for the dialog skill where you want to enable disabmiguation.
+
+    If your application is hosted in Dallas, to enable disambiguation, click **Settings** from the **Dialog** page.
+    {: note}
+
 1.  In the *Disambiguation* section, switch the toggle to **On**.
 1.  In the **Disambiguation message** field, add text to show before the list of dialog node options. For example, *What do you want to do?*
 1.  In the **Anything else** field, add text to display as an additional option that users can pick if none of the other dialog node options reflect what the user wants to do. For example, *None of the above*.
