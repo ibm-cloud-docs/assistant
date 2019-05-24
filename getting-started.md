@@ -193,7 +193,7 @@ You built a simple dialog to recognize and respond to both greeting and ending i
 
 That's it. You created a simple conversation with two intents and a dialog to recognize them.
 
-## Step 5: Integrate the assistant
+## Step 6: Integrate the assistant
 {: #getting-started-integrate-assistant}
 
 Now that you have an assistant that can participate in a simple conversational exchange, test it.

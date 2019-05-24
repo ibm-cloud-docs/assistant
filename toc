@@ -7,8 +7,8 @@ Watson Assistant
     {: .navgroup id="learn"}
     getting-started.md
     index.md
-    skills.md
     assistants.md
+    skills.md
     tool-overview.md
     [Demo: Banking Assistant](https://watson-conversation-duo-dev.ng.bluemix.net/)
     resources.md
@@ -89,6 +89,7 @@ Watson Assistant
     {: .topicgroup}
     Beta features
         beta.md
+        beta-system-entities.md
         beta-dialog-webhooks.md
         beta-deploy-zendesk.md
     {: .navgroup-end}
