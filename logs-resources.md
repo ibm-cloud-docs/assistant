@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-12"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -52,7 +52,7 @@ First, review the definitions of terms that are associated with {{site.data.keyw
 - ***Skill ID***: The unique identifier of a skill.
 - ***User***: A user is anyone who interacts with your assistant; often these are your customers.
 - ***User ID***: A unique label that is used to track the level of service usage of a specific user.
-- ***Workspace ID***: The unique identifier of a workspace. Although any workspaces that you created before November 9 are shown as skills in the tool, a skill and a workspace are not the same thing. A skill is effectively a wrapper for a V1 workspace.
+- ***Workspace ID***: The unique identifier of a workspace. Although any workspaces that you created before November 9 are shown as skills in the product user interface, a skill and a workspace are not the same thing. A skill is effectively a wrapper for a V1 workspace.
 
 **Important**: The **User ID** property is *not* equivalent to the **Customer ID** property, though both can be passed with the message. The **User ID** field is used to track levels of usage for billing purposes, whereas the **Customer ID** field is used to support the labeling and subsequent deletion of messages that are associated with end users. Customer ID is used consistently across all Watson services and is specified in the `X-Watson-Metadata` header. User ID is used exclusively by the {{site.data.keyword.conversationshort}} service and is passed in the context object of each /message API call.
 

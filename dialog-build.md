@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-23"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -26,7 +26,7 @@ subcollection: assistant
 # Building a dialog
 {: #dialog-build}
 
-Use the {{site.data.keyword.conversationshort}} tool to create your dialog.
+The dialog defines what your assistant says in response to customers, based on what it believes the customer wants.
 {: shortdesc}
 
 ## Building a dialog
@@ -45,7 +45,9 @@ To create a dialog, complete the following steps:
 
     - **Anything else**: The final node. It contains phrases that are used to reply to users when their input is not recognized. You can replace the responses that are provided or add more responses with a similar meaning to add variety to the conversation. You can also choose whether you want your assistant to return each response that is defined in turn or return them in random order.
 1.  To add more nodes to the dialog tree, click the **More** ![More icon](images/kabob.png) icon on the **Welcome** node, and then select **Add node below**.
-1.  In the **If assistant recognizes** field, enter a condition that, when met, triggers your assistant to process the node.
+1.  In the **If assistant recognizes** field, enter a condition that, when met, triggers your assistant to process the node. 
+
+    To start off, you typically want to add an intent as the condition. For example, if you add `#open_account` here, it means that you want the response that you will specify in this node to be returned to the user if the user input indicates that the user wants to open an account.
 
     As you begin to define a condition, a box is displayed that shows you your options. You can enter one of the following characters, and then pick a value from the list of options that is displayed.
 
@@ -93,7 +95,7 @@ To create a dialog, complete the following steps:
     - **Skip user input**: Your assistant jumps directly to the first child node. This option is only available if the current node has at least one child node.
     - **Jump to**: Your assistant continues the dialog by processing the node you specify. You can choose whether your assistant should evaluate the target node's condition or skip directly to the target node's response. See [Configuring the Jump to action](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-jump-to-config) for more details.
 
-1.  **Optional**: If you want this node to be considered when users are shown a set of node choices at run time, and asked to pick the one that best matches their goal, then add a short description of the user goal handled by this node to the **external node name** field. For example, *Place an order*.
+1.  **Optional**: If you want this node to be considered when users are shown a set of node choices at run time, and asked to pick the one that best matches their goal, then add a short description of the user goal handled by this node to the **external node name** field. For example, *Open an account*.
 
     ![Plus or Premium plan only](images/premium.png) The *external node name* field is only displayed to Plus or Premium plan users. See [Disambiguation](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation) for more details.
 
@@ -178,13 +180,13 @@ The number of dialog nodes you can create per skill depends on your plan type.
 
 The welcome and anything_else dialog nodes that are prepopulated in the tree do count toward the total.
 
-Tree depth limit: The dialog supports 2,000 dialog node descendants; the tool performs best with 20 or fewer.
+Tree depth limit: The dialog supports 2,000 dialog node descendants; the dialog performs best with 20 or fewer.
 
 `*` The limits changed from 25,000 to 100 for Lite plans on 1 December 2018. Users of service instances that were created before the limit changed have until 1 June 2019 to upgrade their plan, or edit the dialogs in the skills in the existing service instances to meet the new limit requirements.
 
 To see the number of dialog nodes in a dialog skill, do one of the following things:
 
-- From the tool, if it is not associated with an assistant already, add the dialog skill to an assistant, and then view the skill tile from the main page of the assistant. The *trained data* section lists the number of dialog nodes.
+- If it is not associated with an assistant already, add the dialog skill to an assistant, and then view the skill tile from the main page of the assistant. The *trained data* section lists the number of dialog nodes.
 - Send a GET request to the /dialog_nodes API endpoint, and include the `include_count=true` parameter. For example:
 
   ```curl
@@ -193,7 +195,7 @@ To see the number of dialog nodes in a dialog skill, do one of the following thi
 
   In the response, the `total` attribute in the `pagination` object contains the number of dialog nodes.
 
-If the total seems larger than you expected, it might be because the dialog that you build in the tool is translated into a JSON object by the tool. Some fields that appear to be part of a single node are actually structured as separate dialog nodes in the underlying JSON object.
+If the total seems larger than you expected, it might be because the dialog that you build from the application is translated into a JSON object. Some fields that appear to be part of a single node are actually structured as separate dialog nodes in the underlying JSON object.
 
   - Each node and folder is represented as its own node.
   - Each conditional response that is associated with a single dialog node is represented as an individual node.
@@ -226,7 +228,7 @@ You can search for a dialog node by its node ID. Enter the full node ID into the
 
 Another way to discover a node based on its node ID is by following these steps:
 
-1.  From the Dialog tab of the tool, select any node in your dialog tree.
+1.  From the Dialog tab, select any node in your dialog tree.
 1.  Close the edit view if it is open for the current node.
 1.  In your web browser's location field, a URL should display that has the following syntax:
 
@@ -235,7 +237,7 @@ Another way to discover a node based on its node ID is by following these steps:
 1.  Edit the URL by replacing the current `node-id` value with the ID of the node you want to find, and then submit the new URL.
 1.  If necessary, highlight the edited URL again, and resubmit it.
 
-The tool refreshes, and shifts focus to the dialog node with the node ID that you specified. If the node ID is for a slot, a Found or Not found slot condition, a slot handler, or a conditional response, then the node in which the slot or conditional response is defined gets focus and the corresponding modal is displayed.
+The page refreshes, and shifts focus to the dialog node with the node ID that you specified. If the node ID is for a slot, a Found or Not found slot condition, a slot handler, or a conditional response, then the node in which the slot or conditional response is defined gets focus and the corresponding modal is displayed.
 
 If you still cannot find the node, you can export the dialog skill and use a JSON editor to search the skill JSON file.
 {: tip}

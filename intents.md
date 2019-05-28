@@ -52,9 +52,7 @@ Start with a few intents, and test them as you iteratively expand the scope of t
 ## Creating intents
 {: #intents-create-task}
 
-Use the {{site.data.keyword.conversationshort}} tool to create intents.
-
-1.  In the {{site.data.keyword.conversationshort}} tool, open your dialog skill. The skill opens to the **Intents** page.
+1.  Open your dialog skill. The skill opens to the **Intents** page.
 
 1.  Select **Create intent**.
 
@@ -66,7 +64,7 @@ Use the {{site.data.keyword.conversationshort}} tool to create intents.
         - `#pay_bill`
         - `#escalate_to_agent`
 
-    The tool automatically includes the `#` character in the intent name, so you do not have to add one.
+    A number sign `#` is prepended to the intent name automatically to help identify the term as an intent. You do not need to add it.
     {: tip}
 
     Optionally add a description of the intent in the **Description** field.
@@ -157,9 +155,9 @@ Defining one example intent with an `@Entity` that has 10 values that are define
 
 After you have finished creating new intents, you can test the system to see if it recognizes your intents as you expect.
 
-1.  In the {{site.data.keyword.conversationshort}} tool, click the ![Ask Watson](images/ask_watson.png) icon.
+1.  Click the ![Ask Watson](images/ask_watson.png) icon.
 
-1.  In the *Try it out* pane, enter a question or other text string and press Enter to see which intent is recognized. If the wrong intent is recognized, you can improve your model by adding this text as an example to the correct intent.
+1.  In the "Try it out" pane, enter a question or other text string and press Enter to see which intent is recognized. If the wrong intent is recognized, you can improve your model by adding this text as an example to the correct intent.
 
     If you have recently made changes in your skill, you might see a message that indicates that the system is still retraining. If you see this message, wait until training completes before testing:
     {: tip}
@@ -251,7 +249,7 @@ You can export a number of intents to a CSV file, so you can then import and reu
 ## Importing intents and examples
 {: #intents-import}
 
-If you have a large number of intents and examples, you might find it easier to import them from a comma-separated value (CSV) file than to define them one by one in the {{site.data.keyword.conversationshort}} tool. Be sure to remove any personal data from the user examples that you include in the file.
+If you have a large number of intents and examples, you might find it easier to import them from a comma-separated value (CSV) file than to define them one by one. Be sure to remove any personal data from the user examples that you include in the file.
 
 Alternatively, you can upload a file with raw user utterances (from call center logs, for example) and let Watson find candidates for user examples from the data. See [Adding examples from log files](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations) for more information. This feature is available to Plus or Premium plan users only.
 

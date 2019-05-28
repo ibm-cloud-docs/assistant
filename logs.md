@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-23"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -22,11 +22,13 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Learn from conversations
+# Improve your skill
 {: #logs}
 
-To open a list of individual messages between customers and the assistant that uses this dialog skill, select **User conversations** in the navigation bar.
+The Analytics page of {{site.data.keyword.conversationshort}} provides a history of conversations between users and a deployed assistant. You can use this history to improve how your assistants understand and respond to user requests.
 {: shortdesc}
+
+To open a list of individual messages between customers and the assistant that uses this dialog skill, select **User conversations** in the navigation bar.
 
 When you open the **User conversations** page, the default view lists inputs that were submitted to the assistant for the last day, with the newest results first. The top intent (#intent) and any recognized entity (@entity) values used in a message, and the message text are available. For intents that are not recognized, the value shown is *Irrelevant*. If an entity is not recognized, or has not been provided, the value shown is *No entities found*.
 
@@ -190,7 +192,7 @@ Intents that are marked as irrelevant are saved as counterexamples in the JSON w
 
 Be sure before you designate an input as irrelevant.
 
-- There is no way to access or change the inputs later in the tool.
+- There is no way to access or change the inputs from the user interface later.
 - The only way to reverse the identification of an input as being irrelevant is to use the same input in a test integration channel, and then explicitly assign it to an intent.
 
 You can mark an intent as irrelevant directly from the *Try it out* pane also.

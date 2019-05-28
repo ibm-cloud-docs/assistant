@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-30"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -47,20 +47,3 @@ To upgrade your plan, complete these steps:
 For answers to common questions about subscriptions, see the [How you're charged ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/billing-usage?topic=billing-usage-charges){: new_window}.
 
 Still have questions? Contact [IBM Sales ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-01.ibm.com/marketing/iwm/dre/signup?source=urx-20970){: new_window}.
-
-## Upgrading a dialog skill
-{: #upgrade-skill}
-
-The {{site.data.keyword.conversationshort}} service regularly adds and updates features. While some of these changes are automatically applied to your dialog skills, updates that have a large impact do require a manual update to the machine learning model that is used by your skill.
-
-An upgrade is only available for your dialog skill if the upgrade icon (![upgrade icon](images/upgrade.png)) is displayed.
-
-To upgrade your dialog skill, complete the following steps:
-
-1.  [Download a copy of your dialog skill](/docs/services/assistant?topic=assistant-skill-add#skill-add-download-skill), and then import it as a new skill.
-2.  Upgrade the new copy of your dialog skill.
-
-    When you upgrade your skill, the latest version of the API is enabled in the tool, and the "Try it out" pane begins to use the newest features.
-3.  Test the upgraded skill.
-4.  After evaluating the upgraded skill to understand how the upgrade will impact your application, apply the upgrade to your primary dialog skill.
-5.  Upgrade your application. To do so, change the message API calls it uses to specify the latest API version. For API version details, see the [release notes](/docs/services/assistant?topic=assistant-release-notes).

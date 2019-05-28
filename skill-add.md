@@ -60,9 +60,9 @@ To create a skill, complete the following steps:
 
     1.  Click **Create**.
 
-    1.  Click **Launch tool**.
+    1.  Click **Launch {{site.data.keyword.conversationshort}}**.
 
-        If you're prompted to log in to the tool, provide your {{site.data.keyword.cloud_notm}} credentials.
+        If you're prompted to log in to the product, provide your {{site.data.keyword.cloud_notm}} credentials.
 
 1.  Click the **Skills** tab, and then click **Create skill**.
 

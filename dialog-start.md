@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-11"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -29,7 +29,7 @@ subcollection: assistant
 You cannot use the built-in welcome node to start a dialog in the same way for all integrations. Use this workaround instead.
 {: shortdesc}
 
-The response you define for the welcome node in the dialog is displayed to initiate a conversation from the "Try it out" pane within the tool, and from the chat widget in the Preview Link integration. However, it is not displayed from many of the other channel integrations because nodes with the `welcome` special condition are skipped in dialog flows that are started by users. And deployed assistants typically wait for users to initiate conversations with them, not the other way around.
+The response you define for the welcome node in the dialog is displayed to initiate a conversation from the "Try it out" pane, and from the chat widget in the Preview Link integration. However, it is not displayed from many of the other channel integrations because nodes with the `welcome` special condition are skipped in dialog flows that are started by users. And deployed assistants typically wait for users to initiate conversations with them, not the other way around.
 
 Unlike the `welcome` special condition, the `conversation_start` special condition is always triggered at the start of a dialog. You can use a combination of nodes with these two special conditions (`welcome` and `conversation_start`) to manage the start of your dialog in a consistent way.
 
