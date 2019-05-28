@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -80,7 +80,7 @@ Any files you upload are shared across all of the skills in the current service 
 
 Let Watson analyze your call center chat transcripts and recommend some initial intents for you to start with. If you already created some intents, let Watson analyze your logs and compare its findings with your existing intents to identify gaps in your training data and suggest new intents that can fill them in.
 
-To use this feature, upload a file with customer utterances. Watson evaluates these utterances and identifies common problem areas that customers mention frequently. The {{site.data.keyword.conversationshort}} tool then displays a set of discrete intents that capture the trending customer needs. You can review each recommended intent and its corresponding user examples to choose the ones you want to add to your training data.
+To use this feature, upload a file with customer utterances. Watson evaluates these utterances and identifies common problem areas that customers mention frequently. {{site.data.keyword.conversationshort}} then displays a set of discrete intents that capture the trending customer needs. You can review each recommended intent and its corresponding user examples to choose the ones you want to add to your training data.
 
 ## Getting intent recommendations
 {: #intent-recommendations-get-intent-recommendations-task}
@@ -89,7 +89,7 @@ Before you begin, create a CSV file with your data. See [Creating a user example
 
 To get intent recommendations, complete the following steps:
 
-1.  In the {{site.data.keyword.conversationshort}} tool, open your dialog skill. The skill opens to the **Intents** page.
+1.  Open your dialog skill. The skill opens to the **Intents** page.
 
 1.  Click **Get recommendations**.
 

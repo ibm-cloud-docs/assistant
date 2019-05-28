@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-23"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -73,9 +73,7 @@ To learn more about contextual entities, [read this blog post ![External link ic
 ## Creating entities
 {: #entities-creating-task}
 
-Use the {{site.data.keyword.conversationshort}} tool to create entities.
-
-1.  In the {{site.data.keyword.conversationshort}} tool, open your dialog skill and then click the **Entities** tab. If **Entities** is not visible, use the ![Menu](images/Menu_16.png) menu to open the page.
+1.  Open your dialog skill and then click the **Entities** tab. If **Entities** is not visible, use the ![Menu](images/Menu_16.png) menu to open the page.
 
 1.  Click **Create entity**.
 
@@ -90,7 +88,7 @@ Use the {{site.data.keyword.conversationshort}} tool to create entities.
 
     Do not include spaces in the name. The name cannot be longer than 64 characters. Do not begin the name with the string `sys-` because it is reserved for system entities.
 
-    The tool automatically includes the @ character in the entity name, so you do not have to add one.
+    The at sign `@` is prepended to the entity name automatically to identify the term as an entity. You do not need to add it.
     {: tip}
 
 1.  Click **Create entity**.
@@ -243,7 +241,7 @@ Dictionary-based entites are those for which you define specific terms, synonyms
         - Conditional branches (for example `(?(cond)true)`)
       - When a pattern entity starts or ends with a Unicode character, and includes word boundaries, for example `\bš\b`, the pattern match does not match the word boundary correctly. In this example, for input `š zkouška`, the match returns `Group 0: 6-7 š` (`š zkou`_**`š`**_`ka`), instead of the correct `Group 0: 0-1 š` (_**`š`**_ `zkouška`).
 
-      The regular expression engine is loosely based on the Java regular expression engine. The {{site.data.keyword.conversationshort}} service will produce an error if you try to upload an unsupported pattern, either via the API or from within the {{site.data.keyword.conversationshort}} service Tooling UI.
+      The regular expression engine is loosely based on the Java regular expression engine. The {{site.data.keyword.conversationshort}} service will produce an error if you try to upload an unsupported pattern, either via the API or from within the {{site.data.keyword.conversationshort}} user interface.
 
 1.  Click **Add value** and repeat the process to add more entity values.
 
@@ -438,7 +436,7 @@ You can export a number of entities to a CSV file, so you can then import and re
 ## Importing entities
 {: #entities-import}
 
-If you have a large number of entities, you might find it easier to import them from a comma-separated value (CSV) file than to define them one by one in the {{site.data.keyword.conversationshort}} tool.
+If you have a large number of entities, you might find it easier to import them from a comma-separated value (CSV) file than to define them one by one.
 
 Entity annotations are not included in the import of an entity CSV file. You must import the entire dialog skill to retain the associated annotations for a contextual entity in that skill. If you export and import entities only, then any contextual entities that you exported are treated as dictionary-based entities after you import them.
 {: note}
@@ -479,7 +477,7 @@ Entity annotations are not included in the import of an entity CSV file. You mus
     ```
     {: screen}
 
-    Save the CSV file with UTF-8 encoding and no byte order mark (BOM). The maximum CSV file size is 10MB. If your CSV file is larger, consider splitting it into multiple files and importing them separately.  In the {{site.data.keyword.conversationshort}} tool, open your dialog skill and then click the **Entities** tab.
+    Save the CSV file with UTF-8 encoding and no byte order mark (BOM). The maximum CSV file size is 10MB. If your CSV file is larger, consider splitting it into multiple files and importing them separately.  Open your dialog skill and then click the **Entities** tab.
     {: tip}
 
 1.  Click ![Import](images/importGA.png) and then drag a file, or browse to select a file from your computer. The file is validated and imported, and the system begins to train itself on the new data.

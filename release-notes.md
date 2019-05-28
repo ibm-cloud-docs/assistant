@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-24"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -810,7 +810,7 @@ Several changes make the dialog editor easier and more intuitive to use:
 {: #21October2016}
 
 - The {{site.data.keyword.conversationshort}} service now provides system entities, which are common entities that can be used across any use case. For details, see [Defining entities](/docs/services/assistant?topic=assistant-entities) and search for `Enabling system entities`.
-- You can now view a history of conversations with users on the Improve page. You can use this to understand your bot's behavior. For details, see [Improving your skill](/docs/services/assistant?topic=assistant-logs-intro).
+- You can now view a history of conversations with users on the Improve page. You can use this to understand your bot's behavior. For details, see [Improving your skill](/docs/services/assistant?topic=assistant-logs).
 - You can now import entities from a comma-separated value (CSV) file, which helps with when you have a large number of entities. For details, see [Defining entities](/docs/services/assistant?topic=assistant-entities) and search for `Importing entities`.
 
 ## 20 September 2016
@@ -827,7 +827,7 @@ To take advantage of the changes in a new version, change the value of the `vers
 
 - You can move dialog nodes from one branch to another, as siblings or peers. For details, see [Moving a dialog node](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-move-node).
 - You can expand the JSON editor window.
-- You can view chat logs of your bot's conversations to help you understand it's behavior. You can filter by intents, entities, date, and time. For details, see [Improving your skill](/docs/services/assistant?topic=assistant-logs-intro)
+- You can view chat logs of your bot's conversations to help you understand it's behavior. You can filter by intents, entities, date, and time. For details, see [Improving your skill](/docs/services/assistant?topic=assistant-logs)
 
 ## 11 July 2016
 {: #21July2016}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-23"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -52,7 +52,7 @@ Here's how you implement your assistant:
 
 - **Create an assistant**.
 
-- **Add a dialog skill to your assistant**. Use the intuitive graphical tool to define the training data and dialog for the conversation between your assistant and your customers.
+- **Add a dialog skill to your assistant**. Use the intuitive graphical product to define the training data and dialog for the conversation between your assistant and your customers.
 
   The training data consists of the following artifacts:
 
@@ -60,7 +60,7 @@ Here's how you implement your assistant:
 
     Or use prebuilt **content catalogs** that are provided by IBM to get started with data that addresses common customer goals.
 
-  - **Dialog**: Use the dialog tool to build a dialog flow that incorporates your intents. The dialog flow is represented graphically in the tool as a tree. You can add a branch to process each of the intents that you want your assistant to handle.
+  - **Dialog**: Use the dialog editor to build a dialog flow that incorporates your intents. The dialog flow is represented graphically as a tree. You can add a branch to process each of the intents that you want your assistant to handle.
 
   - **Entities**: An entity represents a term or object that provides context for an intent. For example, an entity might be a city name that helps your dialog to distinguish which store the user wants to know store hours for. After you add entities, update your dialog to use them. Add dialog nodes that handle the many possible permutations of a request based on the entities that are found in the user input.
 
@@ -81,7 +81,7 @@ Read more about these implementation steps by following these links:
 ## Browser support
 {: #index-browser-support}
 
-The {{site.data.keyword.conversationshort}} service tool requires the same level of browser software as is required by {{site.data.keyword.Bluemix_notm}}. For more information, see {{site.data.keyword.Bluemix_notm}} [Prerequisites ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/overview?topic=overview-prereqs-platform#browsers-platform){: new_window}.
+{{site.data.keyword.conversationshort}} requires the same level of browser software as is required by {{site.data.keyword.Bluemix_notm}}. For more information, see {{site.data.keyword.Bluemix_notm}} [Prerequisites ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/overview?topic=overview-prereqs-platform#browsers-platform){: new_window}.
 
 ## Language support
 {: #index-lang-support}

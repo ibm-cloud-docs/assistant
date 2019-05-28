@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-09"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -30,7 +30,7 @@ If you do not disable the preview link, then the assistant is immediately availa
 
 The assistant is implemented as a chat widget embedded in a simple IBM-branded web page automatically. You can test the dialog skill that you added to the assistant by entering text into the chat widget. You can also share the URL of the page with others to enlist help in testing and getting feedback about the assistant.
 
-Unlike when you test using the "Try it out" pane in the tool, any API calls that result from your interactions with the assistant hosted by the Preview Link URL do incur charges.
+Unlike when you test using the "Try it out" pane, any API calls that result from your interactions with the assistant hosted by the Preview Link URL do incur charges.
 
 ## Using the Preview Link integration to test your assistant
 {: #deploy-web-link-try}
@@ -60,7 +60,7 @@ To test the assistant from a web-hosted chat widget, complete the following step
 
 1.  After testing, you can close the browser tab to exit the public web page.
 
-1.  From the tool, click **Save Changes** to save any edits you made to the preview link integration and close the page, or click **X** to close the page without saving.
+1.  Click **Save Changes** to save any edits you made to the preview link integration and close the page, or click **X** to close the page without saving.
 
 ## Dialog considerations
 {: #deploy-web-link-dialog}

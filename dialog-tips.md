@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-23"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -34,7 +34,7 @@ Review these tips from experienced dialog designers.
 ## Planning the overall dialog
 {: #dialog-tips-plan}
 
-- Plan out the design of the dialog that you want to build before you add a single dialog node in the tool. Sketch it out on paper, if necessary.
+- Plan out the design of the dialog that you want to build before you add a single dialog node. Sketch it out on paper, if necessary.
 - Whenever possible, base your design decisions on data from real-world evidence and behaviors. Do not add nodes to handle a situation that someone *thinks* might occur.
 - Avoid copying business processes as-is. They are rarely conversational.
 - If people already use a process, examine how they approach it. People typically optimize the process from a conversational perspective.

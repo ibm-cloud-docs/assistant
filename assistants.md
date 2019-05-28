@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -37,7 +37,7 @@ A dialog skill that can understand and address questions or requests that your c
 
 | Dialog tree | Graphical user interface |
 |-------------|-------------------------:|
-| You can use graphical tools to create a dialog for your assistant to read from when interacting with your users, a dialog that simulates a real conversation. The dialog keys off the common customer goals that you teach it to recognize, and provides useful responses. | ![A sample dialog tree with example content](images/dialog-depiction.png) |
+| You can use the graphical dialog editor to create a script of sorts for your assistant to read from when it interacts with your customers. The result is a dialog that simulates a real conversation. The dialog keys off the common customer goals that you teach it to recognize, and provides useful responses. | ![A sample dialog tree with example content](images/dialog-depiction.png) |
 
 The dialog skill itself is defined in text, but you can integrate it with Watson Speech to Text and Watson Text to Speech services that enable users to interact with your assistant verbally.
 

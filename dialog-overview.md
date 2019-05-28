@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-03"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -35,7 +35,7 @@ The dialog matches intents (what users say) to responses (what the bot says back
 
 Note: The video is 15 minutes in duration; the first 5 minutes cover how to add a node.
 
-The dialog is represented graphically in the {{site.data.keyword.conversationshort}} tool as a tree. Create a branch to process each intent that you want your conversation to handle. A branch is composed of multiple nodes.
+The dialog is represented graphically in {{site.data.keyword.conversationshort}} as a tree. Create a branch to process each intent that you want your conversation to handle. A branch is composed of multiple nodes.
 
 ## Dialog nodes
 {: #dialog-overview-nodes}

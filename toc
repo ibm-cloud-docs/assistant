@@ -57,7 +57,6 @@ Watson Assistant
 
     {: .topicgroup}
     Analytics
-        logs-intro.md
         logs-overview.md
         logs.md
         logs-resources.md

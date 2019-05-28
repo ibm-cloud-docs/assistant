@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-23"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -42,7 +42,7 @@ To learn more about how versions can improve the workflow you use to build an as
 ## Creating a version
 {: #versions-create}
 
-You can use the {{site.data.keyword.conversationshort}} tool to edit only one version of the dialog skill at a time. The in-progress version is called the *development* version.
+You can edit only one version of the dialog skill at a time. The in-progress version is called the *development* version.
 
 When you save a version, any skill settings that you applied to the development version are saved also.
 

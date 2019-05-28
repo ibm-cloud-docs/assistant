@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-30"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -25,7 +25,7 @@ subcollection: assistant
 # Development process
 {: #dev-process}
 
-Use the {{site.data.keyword.conversationshort}} tool to leverage AI as you build, deploy, and incrementally improve a converational assistant.
+Use {{site.data.keyword.conversationshort}} to leverage AI as you build, deploy, and incrementally improve a converational assistant.
 {: shortdesc}
 
 ![Shows the flow of development steps starting with developing training data and ending with deploying to production](images/dev-process.png)
@@ -35,7 +35,7 @@ Use the {{site.data.keyword.conversationshort}} tool to leverage AI as you build
 
 The typical workflow for an assistant project includes the following steps:
 
-1.  Define a narrow set of key customer needs that you want the assistant to address on your behalf, including any business processes that it can initiate or complete for your customers.
+1.  Define a narrow set of key customer needs that you want the assistant to address on your behalf, including any business processes that it can initiate or complete for your customers. Start small.
 1.  Create intents that represent the customer needs you identified in the previous step. For example, intents such as `#about_company` or `#place_order`.
 
     ![Plus or Premium plan only](images/premium.png) Use the intent recommendations feature to mine your existing call center logs to find the optimal intents for your use case. See [Get help defining intents](/docs/services/assistant?topic=assistant-intent-recommendations) for more details.

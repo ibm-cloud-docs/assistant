@@ -52,7 +52,7 @@ If you choose to skip the step of creating an assistant and adding your dialog s
 ## Skills and workspaces
 {: #edit-convo-workspace-names}
 
-What is presented in the tooling as a dialog skill is effectively a wrapper for a V1 workspace. While there are currently no API methods for authoring skills with the V2 API, you can continue to use the V1 API for authoring workspaces.
+What is presented in the product user interface as a dialog skill is effectively a wrapper for a V1 workspace. While there are currently no API methods for authoring skills with the V2 API, you can continue to use the V1 API for authoring workspaces.
 
-- When you open the tool, any workspaces that you created before November 9 are shown as skills. The skill name is taken from the workspace name. However, if you subsequently change the skill name or description, these changes do not affect the workspace. Likewise, if you use the APIs to edit the workspace name or description, these changes do not affect the skill.
-- From the tool, the API details for the skill show you both the skill ID and the workspace ID.
+- When you open the product user interface, any workspaces that you created before 9 November 2018 are shown as skills. The skill name is taken from the workspace name. However, if you subsequently change the skill name or description, these changes do not affect the workspace. Likewise, if you use the APIs to edit the workspace name or description, these changes do not affect the skill.
+- From the product user interface, the API details for the skill show you both the skill ID and the workspace ID.

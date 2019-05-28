@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-09"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -56,8 +56,6 @@ The following diagram illustrates how user input is processed when both a dialog
 
 ## Before you begin
 {: #skill-search-add-prereqs}
-
-If you did not complete the prerequisite steps in the [getting started tutorial](/docs/services/assistant?topic=assistant-getting-started#getting-started-prerequisites), complete them now to create a {{site.data.keyword.conversationshort}} service instance and open the {{site.data.keyword.conversationshort}} tool.
 
 If you do not have a {{site.data.keyword.discoveryshort}} service instance, then a free Lite plan instance is provisioned for you as part of this process. If you have an existing {{site.data.keyword.discoveryshort}} service instance, connect to it; you are not asked to create a new instance as part of this process.
 
@@ -153,7 +151,7 @@ If you have a Discovery service Lite plan, you are given an opportunity to upgra
 
         1.  Click **Save and sync objects**.
 
-            The data collection is created. After the process completes, a summary page is displayed in the {{site.data.keyword.discoveryshort}} tool in a separate web browser tab.
+            The data collection is created. After the process completes, a summary page is displayed in {{site.data.keyword.discoveryshort}}, which is hosted in a separate web browser tab.
 
       - To create a collection by uploading documents, click **Upload documents**.
 
@@ -268,7 +266,7 @@ If you decide you want to connect to a different {{site.data.keyword.discoverysh
 
 The appropriate collection fields to extract data from vary depending on your collection's data source and how the data source was enriched. After you choose a data collection type, the collection field values are prepopulated with source fields that are considered most likely to contain useful information given the collection's data source type. However, you know your data better than anyone. You can change the source fields to ones that contain the best information to meet your needs.
 
-To learn more about the structure of the documents in your collection, including the names of fields that contain information you might want to extract, open the collection in the {{site.data.keyword.discoveryshort}} tool, and then click the View data schema icon ![View data schema icon](images/icon-view-data-schema.png).
+To learn more about the structure of the documents in your collection, including the names of fields that contain information you might want to extract, open the collection in {{site.data.keyword.discoveryshort}}, and then click the View data schema icon ![View data schema icon](images/icon-view-data-schema.png).
 
 The source fields are created when the collection is created. To learn more about fields that are generated for you, such as `enriched_text.concepts.text`, see [Configuring your service > Adding enrichments ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-configservice#adding-enrichments){: new_window}.
 
