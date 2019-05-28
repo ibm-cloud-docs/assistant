@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-23"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -55,11 +55,11 @@ You need a service instance to start.
 After you create a {{site.data.keyword.conversationshort}} service instance, you land on the **Manage** page of the {{site.data.keyword.conversationshort}} dashboard.
 {: hide-dashboard}
 
-1.  Click **Launch tool**. If you're prompted to log in, provide your {{site.data.keyword.cloud_notm}} credentials.
+1.  Click **Launch {{site.data.keyword.conversationshort}}**. If you're prompted to log in, provide your {{site.data.keyword.cloud_notm}} credentials.
 
 <!-- Remove this text after dedicated instances have the developer console: begin -->
 
-{{site.data.keyword.Bluemix_dedicated_notm}}: Select your service instance from the Dashboard to launch the tool.
+{{site.data.keyword.Bluemix_dedicated_notm}}: Select your service instance from the Dashboard to launch the product.
 
 <!-- Remove this text after dedicated instances have the Developer Console: end -->
 
