@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-13"
+lastupdated: "2019-05-29"
 
 subcollection: assistant
 
@@ -47,7 +47,7 @@ Before continuing with this example, you need to set up the required assistant:
 
 To access the {{site.data.keyword.conversationshort}} service REST APIs, your application needs to be able to authenticate with {{site.data.keyword.Bluemix}} and connect to the right assistant. You'll need to copy the service credentials and assistant ID and paste them into your application code.
 
-To access the service credentials and the assistant ID from the {{site.data.keyword.conversationshort}} tool, go to the **Assistants** tab and click the ![Menu](images/kabob-grey.png) menu for the assistant you want to connect to. Select **View API Details** to see the details for the assistant, including the assistant ID and API key.
+To access the service credentials and the assistant ID from the {{site.data.keyword.conversationshort}} tool, go to the **Assistants** tab and click the ![Menu](images/kebab-react.png) menu for the assistant you want to connect to. Select **View API Details** to see the details for the assistant, including the assistant ID and API key.
 
 You can also access the service credentials from your {{site.data.keyword.Bluemix_short}} dashboard.
 
