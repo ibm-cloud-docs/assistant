@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-28"
+lastupdated: "2019-05-29"
 
 subcollection: assistant
 
@@ -30,6 +30,11 @@ Slack is a cloud-based messaging application that helps people collaborate with 
 
 After you configure a dialog skill and add it to an assistant, you can integrate the assistant with Slack.
 
+When integrated, depending on the events that you configure the assistant to support, your assistant can respond to questions that are asked in direct messages or in channels where the assistant is directly mentioned. 
+
+## Adding the Slack integration
+{: #deploy-slack-task}
+
 1.  From the Assistants tab, click to open the assistant tile that you want to deploy.
 
 1.  From the Integrations section, click **Add integration**.
@@ -37,6 +42,11 @@ After you configure a dialog skill and add it to an assistant, you can integrate
 1.  Click **Slack**.
 
 1.  Follow the instructions that are provided on the screen to complete the integration process.
+
+    Choose one or more of the following subscription events to support:
+
+    - `message.im`: The assistant responds when someone starts a direct message with the assistant.
+    - `app_mentions`: The assistant responds when someone mentions the assistant by name in a channel.
 
 If you want to follow along as someone else walks through the deployment steps, watch this video.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-23"
+lastupdated: "2019-05-29"
 
 subcollection: assistant
 
@@ -43,26 +43,7 @@ You can create the following type of skill:
 
 You can add one skill of each skill type to an assistant.
 
-To create a skill, complete the following steps:
-
-1.  If you have not created a {{site.data.keyword.conversationshort}} service instance, do so first. Otherwise, skip this step.
-
-    1.  Go to the [{{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/watson-assistant) page in the {{site.data.keyword.cloud_notm}} catalog.
-
-    1.  Sign up for a {{site.data.keyword.cloud_notm}} account or log in.
-
-        The service instance will be created in the **default** resource group if you do not choose a different one, and it *cannot* be changed later. Learn more about [resource groups ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/resources?topic=resources-bp_resourcegroups#bp_resourcegroups){: new_window}.
-
-        You can use one service instance to test and deploy an assistant, so do not use a resource name that represents a single deployment environment.
-        {:tip}
-
-        With a Premium plan, you can create multiple instances. The instances must all be created in the same resource group.
-
-    1.  Click **Create**.
-
-    1.  Click **Launch {{site.data.keyword.conversationshort}}**.
-
-        If you're prompted to log in to the product, provide your {{site.data.keyword.cloud_notm}} credentials.
+To create a skill, complete the following step:
 
 1.  Click the **Skills** tab, and then click **Create skill**.
 
