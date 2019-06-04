@@ -287,7 +287,7 @@ Review this information for help with performing common tasks.
 
 - **Configuring search results for uploaded documents**: If you are using a collection of uploaded documents and cannot get the right search results or the results are not concise enough, consider using *Smart Document Understanding* when you create the data collection. 
 
-  This feature enables you to annotate documents based on text formatting. For example, you can teach {{site.data.keyword.discoveryshort}} that any text in 28 PT bold font is a document title. If you apply this information to the collection when you ingest it, you can later use the *title* field as the source for the title section of your search result. 
+  This feature enables you to annotate documents based on text formatting. For example, you can teach {{site.data.keyword.discoveryshort}} that any text in 28-point bold font is a document title. If you apply this information to the collection when you ingest it, you can later use the *title* field as the source for the title section of your search result. 
   
   You can also use Smart Document Understanding to split up large documents into segments that are easier to search. For more information, see the the [Smart Document Understanding ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-sdu) topic in the {{site.data.keyword.discoveryshort}} documentation.
 
