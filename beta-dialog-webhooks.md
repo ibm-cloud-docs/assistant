@@ -70,7 +70,7 @@ To add the webhook details, complete the following steps:
 
     If the external application that you call returns a response, it must be able to send back a response in JSON format.
 
-    Notice the request URL in this example ends in `.json`. By specifying this extension, you take advantage of a feature of web actions that lets you specify the desired content type of the response. Specifying this extension type ensures that, if the web actions can return responses in more than one format, a JSON response will be returned. See [Extra features](/docs/openwhisk/openwhisk_webactions.html#extra-features){: new_window} for more details.
+    Notice the request URL in this example ends in `.json`. By specifying this extension, you take advantage of a feature of web actions that lets you specify the desired content type of the response. Specifying this extension type ensures that, if the web actions can return responses in more than one format, a JSON response will be returned. See [Extra features](/docs/openwhisk?topic=cloud-functions-actions_web#actions_web_extra){: new_window} for more details.
     {: tip}
 
 1.  If the external service requires that you pass authentication credentials or other parameters with the POST request, then add them as headers.
@@ -121,7 +121,7 @@ To use a webhook from a dialog node, you must enable webhooks on the node, and t
       </tr>
     </table>
 
-    If you are calling a {{site.data.keyword.openwhisk_short}} web action, you cannot pass parameters with the same key as parameters that are defined as part of the web action. See [Protected parameters](https://console.bluemix.net/docs/openwhisk/openwhisk_webactions.html#openwhisk_webactions_protected){: new_window} for more details.
+    If you are calling a {{site.data.keyword.openwhisk_short}} web action, you cannot pass parameters with the same key as parameters that are defined as part of the web action. See [Protected parameters](/docs/openwhisk?topic=cloud-functions-actions_web#actions_web_protect){: new_window} for more details.
     {: note}
 
     In more complex use cases, you might collect information during a conversation with a user about their travel plans, for example. You can collect dates and destination information and save it in context variables that you can pass to an external application as parameters.

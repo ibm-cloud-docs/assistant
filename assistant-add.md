@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-29"
+lastupdated: "2019-06-03"
 
 subcollection: assistant
 
@@ -92,7 +92,7 @@ The number of assistants you can create depends on your {{site.data.keyword.conv
 
 *After 30 days of inactivity, an unused assistant in a Lite plan service instance might be deleted to free up space.
 
-See [Changing the inactivity timeout setting](/docs/services/assistant?topic=assistant-activity-settings) for more information on the subject.
+See [Changing the inactivity timeout setting](/docs/services/assistant?topic=assistant-assistant-settings) for more information on the subject.
 
 You can connect one skill of each type to your assistant. The number of skills you can build differs depending on the plan you have. See [Skill limits](/docs/services/assistant?topic=assistant-skill-add#skill-add-limits) for more details.
 

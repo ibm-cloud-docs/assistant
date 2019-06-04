@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-28"
+lastupdated: "2019-06-04"
 
 subcollection: assistant
 
@@ -63,11 +63,6 @@ The following updates are available in all locations except Dallas currently.
 - **Disambiguation settings have moved**: The toggle to enable disamibugation, which is a feature that is available to Plus and Premium plan users only, has moved. The **Settings** button was removed from the **Dialog** page. You can now enable disambiguation and configure it from the skill's **Options** tab.
 
 - **An introductory tour is now available**: A short product tour is now displayed when a new service instance is created. Brand new users are also given help as they start development. A new assistant is created for them automatically. Informational popups are displayed to introduce the product user interface features, and guide the new user toward taking the key first step of creating a dialog skill. 
-
-- **Numeric system entities ugprade ![Beta](images/beta.png)**: New system entities are available as a beta feature that you can enable in dialog skills that are written in English or German. The revised system entities offer better date and time understanding. They can recognize date and number spans, national holiday references, and classify mentions with more precision. For example, a date such as `May 15` is recognized as a date mention(`@sys-date:2019-05-15`), and is *not* also identified as a number mention (`@sys-number:15`). See [New system entities](/docs/services/assistant?topic=assistant-beta-new-system-entities)
-
-  You cannot try out these system entities in instances hosted in Dallas currently, unless you are part of the beta program. For more information about how to join the beta program, see [Participate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta). 
-  {: note}
 
 ## 10 April 2019
 {: #10April2019}
