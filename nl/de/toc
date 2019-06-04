@@ -102,6 +102,7 @@ Watson Assistant
     {: .topicgroup}
     Systementitäten
         system-entities.md
+        system-entities-new.md
         time-zones.md
 
     /watson/watson-using-sdks
