@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-28"
+lastupdated: "2019-06-04"
 
 subcollection: assistant
 
@@ -108,6 +108,7 @@ The remaining steps differ depending on whether you have access to an existing {
     - If you do not have a collection or do not want to use any of the data collections that are listed, click **Create a new collection** to add one. Follow the procedure in [Create a data collection](#search-skill-add-create-discovery-collection).
 
       The **Create a new collection** button is not displayed if you have reached the limit to the number of collections you are allowed to create based on your {{site.data.keyword.discoveryshort}} service plan. See [{{site.data.keyword.discoveryshort}} pricing plans ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery/discovery-about?topic=discovery-discovery-pricing-plans){: new_window} for plan limit details.
+      {: note}
 
 ## Create a Watson Discovery service instance
 {: #skill-search-add-create-discovery}
@@ -145,9 +146,9 @@ If you have a Discovery service Lite plan, you are given an opportunity to upgra
             - For file repositories, you specify directories or files.
             - For a web crawl data source, specify the base URL of a website that you want to crawl. The web page that you specify and any pages that it links to are crawled and a document is created per web page.
 
-              For a {{site.data.keyword.discoveryshort}} Lite plan, you cannot create more than 1,000 documents. To limit a crawl to collect only pages you care about, specify a subdomain of the base URL. Or, in the web crawl settings, limit the number of hops that Watson can make from the original page. You can specify subdomains to explicitly exclude from the crawl also.
-
-              Give Watson a few minutes to start creating documents. If no documents are listed after a few minutes and a page refresh, then make sure that the content you want to ingest is available from the URL's page source. Some web page content is dynamically generated and therefore cannot be crawled.
+            Give Watson a few minutes to start creating documents. As soon as the source starts to be ingested, the number of documents displayed on the {{site.data.keyword.discoveryshort}} details page increases. You might need to refresh the page. 
+            
+            To get help with creating data sources, see [Troubleshooting](#skill-search-add-troubleshoot).
 
         1.  Click **Save and sync objects**.
 
@@ -171,7 +172,7 @@ If you have a Discovery service Lite plan, you are given an opportunity to upgra
 Wait for the collection to be fully ingested before you return to {{site.data.keyword.conversationshort}}.
 
 ### Data collection creation example
-{: #search-skill-add-json-collection-example}
+{: #skill-search-add-json-collection-example}
 
 For example, you might have a JSON file like this one:
 
@@ -220,11 +221,13 @@ If you upload a JSON file that contains repeating name values, then only the fir
 
     If no options are available from the drop-down fields, give {{site.data.keyword.discoveryshort}} more time to finish creating the collection. After waiting, if the collection is not created, then your collection might not contain any documents or might have ingestion errors that you need to address first.
 
-    To continue the [example of the uploaded JSON file](#search-skill-add-json-collection-example), a good mapping is to use the *Title*, *Shortdesc*, and *url* fields.
+    To continue the [example of the uploaded JSON file](#skill-search-add-json-collection-example), a good mapping is to use the *Title*, *Shortdesc*, and *url* fields.
 
     ![Shows that the Title, Shortdesc, and url fields are selected and the preview search card is populated with information from those fields](images/search-skill-configure-fields.png)
 
     As you add field mappings, a preview of the search result is displayed with information from the corresponding fields of your data collection. This preview shows you what gets included in the search result response that is returned to users.
+
+    To get help with configuring the search, see [Troubleshooting](#skill-search-add-troubleshoot).
 
 1.  Draft different messages to share with users based on the successfulness of the search.
 
@@ -270,7 +273,33 @@ To learn more about the structure of the documents in your collection, including
 
 The source fields are created when the collection is created. To learn more about fields that are generated for you, such as `enriched_text.concepts.text`, see [Configuring your service > Adding enrichments ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-configservice#adding-enrichments){: new_window}.
 
-If you are using a collection of uploaded documents and cannot get the right search results or the results are not concise enough, consider using *Smart Document Understanding* when you create the data collection. This feature enables you to annotate documents based on text formatting. For example, you can teach {{site.data.keyword.discoveryshort}} that any text in 28pt bold font is a document title. If you apply this information to the collection when you ingest it, you can later use the *title* field as the source for the title section of your search result. You can also use Smart Document Understanding to split up large documents into segments that are easier to search. For more information, see the the [Smart Document Understanding ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-sdu) topic in the {{site.data.keyword.discoveryshort}} documentation.
+## Troubleshooting
+{: #skill-search-add-troubleshoot}
+
+Review this information for help with performing common tasks.
+
+- **Creating a Web crawl data collection**: Things to know when you create a web crawl data source:
+
+    - For a {{site.data.keyword.discoveryshort}} Lite plan, you cannot create more than 1,000 documents. 
+    - To increase the number of documents that are available to the data collection, click add a URL group where you can list the URLs for pages that you want to crawl but that are not linked to from the initial seed URL.
+    - To decreate the number of documents that are available to the data collection, specify a subdomain of the base URL. Or, in the web crawl settings, limit the number of hops that Watson can make from the original page. You can specify subdomains to explicitly exclude from the crawl also.
+    - If no documents are listed after a few minutes and a page refresh, then make sure that the content you want to ingest is available from the URL's page source. Some web page content is dynamically generated and therefore cannot be crawled.
+
+- **Configuring search results for uploaded documents**: If you are using a collection of uploaded documents and cannot get the right search results or the results are not concise enough, consider using *Smart Document Understanding* when you create the data collection. 
+
+  This feature enables you to annotate documents based on text formatting. For example, you can teach {{site.data.keyword.discoveryshort}} that any text in 28-point bold font is a document title. If you apply this information to the collection when you ingest it, you can later use the *title* field as the source for the title section of your search result. 
+  
+  You can also use Smart Document Understanding to split up large documents into segments that are easier to search. For more information, see the the [Smart Document Understanding ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-sdu) topic in the {{site.data.keyword.discoveryshort}} documentation.
+
+- **Improve search results**: If you don't like the results you are seeing, review this information for help.
+
+  - Call the search skill from a dialog node, and specify filter details. 
+
+    From a dialog node search skill response, you can specify a full {{site.data.keyword.discoveryshort}} query syntax filter to help narrow the results. 
+    
+    For example, you can define a filter that filters out any documents in the data collection that do not mention an intent in the document title or some other metadata field. Or the filter can filter out documents that do not identify an entity as a known entity in the data collection's metadata or that don't mention the entity anywhere in the full text of the document. For details about how to add a search skill response type, see [Adding rich responses](https://cloud.ibm.com/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia-add).
+
+    For more tips about improving results, read the [Improve your natural language query results from Watson Discovery ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/blogs/improving-your-natural-language-query-results-from-watson-discovery/) blog post.
 
 ## Next steps
 {: #skill-search-add-next-steps}

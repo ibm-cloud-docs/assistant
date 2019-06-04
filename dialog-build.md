@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-28"
+lastupdated: "2019-06-04"
 
 subcollection: assistant
 
@@ -232,7 +232,7 @@ Another way to discover a node based on its node ID is by following these steps:
 1.  Close the edit view if it is open for the current node.
 1.  In your web browser's location field, a URL should display that has the following syntax:
 
-    `https://watson-conversation.ng.bluemix.net/space/instance-id/workspaces/workspace-id/build/dialog#node=node-id`
+    `https://assistant-location.watsonplatform.net/location/instance-id/workspaces/workspace-id/build/dialog#node=node-id`
 
 1.  Edit the URL by replacing the current `node-id` value with the ID of the node you want to find, and then submit the new URL.
 1.  If necessary, highlight the edited URL again, and resubmit it.
