@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-26"
+lastupdated: "2019-06-05"
 
 subcollection: assistant
 
@@ -53,7 +53,7 @@ To request participation in the beta program, you must first create a new {{site
 
     Unless you change it, the service instance will be created in the **default** resource group, which is sufficient for the purposes of the beta.
 
-1.  After the instance is created, click **Launch tool** to open the {{site.data.keyword.conversationshort}} tool.
+1.  After the instance is created, click **Launch {{site.data.keyword.conversationshort}}** to open {{site.data.keyword.conversationshort}}.
 1.  Click the **Skills** tab.
 1.  From the bottom of the page, click **Request Beta**, and then confirm that you accept the terms and conditions for participating in the beta program.
 
