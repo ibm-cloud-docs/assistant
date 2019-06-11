@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-11"
 
 subcollection: assistant
 
@@ -29,7 +29,7 @@ subcollection: assistant
 IBM strives to provide products with usable access for everyone, regardless of age or ability.
 {: shortdesc}
 
-{{site.data.keyword.conversationfull}}uses standard Windows navigation keys.
+{{site.data.keyword.conversationfull}} uses standard Windows navigation keys.
 
 ## Accessibility features in the product documentation
 {: #accessibility-in-doc}
