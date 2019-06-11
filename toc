@@ -118,8 +118,8 @@ Watson Assistant
 
     {: .topicgroup}
     Developer community
-        [StackOverflow](https://stackoverflow.com/questions/tagged/watson-conversation+or+watson-assistant)
-        [IBM Developer Answers](https://developer.ibm.com/answers/search.html?f=&sort=relevance&q=%5Bwatson-conversation%5D+%5Bwatson-assistant%5D+%24)
+        [StackOverflow](https://stackoverflow.com/questions/tagged/watson-assistant+or+ibm-cloud-private-for-data)
+        [IBM Developer Answers](https://developer.ibm.com/answers/topics/watson-assistant/)
         [WDC Slack channel](http://wdc-slack-inviter.mybluemix.net/)
 
     feedback.md
