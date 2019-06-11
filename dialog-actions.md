@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-28"
+lastupdated: "2019-06-11"
 
 subcollection: assistant
 
@@ -180,7 +180,7 @@ To make a programmatic call from a dialog node, complete the following steps:
       These credentials are used to access the {{site.data.keyword.openwhisk_short}} instance on which the action runs. These are not your {{site.data.keyword.Bluemix_notm}} credentials.
 
       To discover the credentials, complete the following steps:
-      1.  Go to the [{{site.data.keyword.openwhisk_short}} API key ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/openwhisk/api-key){: new_window} page.
+      1.  Go to the [{{site.data.keyword.openwhisk_short}} API key ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/openwhisk/namespace-settings){: new_window} page.
 
           - If you have not yet created an account, do so.
           - If you are not logged in, log in.

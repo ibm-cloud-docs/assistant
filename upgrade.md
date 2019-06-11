@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-29"
+lastupdated: "2019-06-11"
 
 subcollection: assistant
 
@@ -49,4 +49,4 @@ To upgrade your plan, complete these steps:
 
 For answers to common questions about subscriptions, see the [How you're charged ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/billing-usage?topic=billing-usage-charges){: new_window}.
 
-Still have questions? Contact [IBM Sales ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-01.ibm.com/marketing/iwm/dre/signup?source=urx-20970){: new_window}.
+Still have questions? Contact [IBM Sales ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/account/reg/us-en/subscribe?formid=urx-20970){: new_window}.

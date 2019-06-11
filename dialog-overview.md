@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-28"
+lastupdated: "2019-06-07"
 
 subcollection: assistant
 
@@ -369,6 +369,8 @@ To add a rich response, complete the following steps:
 
           Specify a value that you know will trigger the correct intent when it is submitted. For example, it might be a user example from the training data for the intent.
       1.  Repeat the previous steps to add more options to the list.
+
+          You can add up to 20 options.
       1.  Add a list introduction in the **Title** field. The title can ask the user to pick from the list of options.
 
           Some integration channels do not display the title.

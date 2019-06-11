@@ -60,7 +60,7 @@ From an IBM technical deep-dive series. These recordings provide step-by-step in
 
 Additional videos created by IBMers.
 
-- [Digital Technical Enablement ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm-dte.mybluemix.net/ibm-watson-assistant){: new_window}: A collection of resources, including a product tour and hands-on lab.
+- [Digital Technical Enablement ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm-dte.mybluemix.net/watson-assistant){: new_window}: A collection of resources, including a product tour and hands-on lab.
 - [{{site.data.keyword.conversationshort}} Integrations Tutorial  ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.youtube.com/watch?v=O3silvVBaC8&t=3s){: new_window}: A 10-minute tutorial you can follow to connect {{site.data.keyword.conversationshort}} with Twilio using Botkit to create a SMS chatbot.
 - [Show me how to use {{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/tUkLIUOm550){: new_window}: A 3-minute overview of the product.
 - [Introducing {{site.data.keyword.conversationshort}} service ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/A96nLYSMltA){: new_window}: A 1-minute introduction.

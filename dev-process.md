@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-28"
+lastupdated: "2019-06-07"
 
 subcollection: assistant
 
@@ -25,7 +25,7 @@ subcollection: assistant
 # Development process
 {: #dev-process}
 
-Use {{site.data.keyword.conversationshort}} to leverage AI as you build, deploy, and incrementally improve a converational assistant.
+Use {{site.data.keyword.conversationshort}} to leverage AI as you build, deploy, and incrementally improve a conversational assistant.
 {: shortdesc}
 
 ![Shows the flow of development steps starting with developing training data and ending with deploying to production](images/dev-process.png)
