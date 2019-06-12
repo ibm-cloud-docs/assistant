@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-28"
+lastupdated: "2019-06-12"
 
 subcollection: assistant
 
@@ -390,7 +390,7 @@ System entities that you enable for use count toward your plan usage totals.
 | Premium      |        30 contextual entities with 3000 annotations |
 | Plus         |        20 contextual entities with 2000 annotations |
 | Standard     |        20 contextual entities with 2000 annotations |
-| Lite |    10 contextual entities with 1000 annotations |
+| Lite, Plus Trial |    10 contextual entities with 1000 annotations |
 {: caption="Service plan details continued" caption-side="top"}
 
 ## Editing entities

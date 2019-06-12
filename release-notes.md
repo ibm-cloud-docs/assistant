@@ -52,6 +52,16 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 The following new features and changes to {{site.data.keyword.conversationshort}} are available. Check out our [blog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/assistant/home) to find in-depth information about how the newest features can benefit your business.
 
+## 12 June 2019
+{: #12June2019}
+
+- **Numeric system entities ugprade ![Beta](images/beta.png)**: New system entities are available as a beta feature that you can enable in dialog skills that are written in English or German. The revised system entities offer better date and time understanding. They can recognize date and number spans, national holiday references, and classify mentions with more precision. For example, a date such as `May 15` is recognized as a date mention(`@sys-date:2019-05-15`), and is *not* also identified as a number mention (`@sys-number:15`). See [New system entities](/docs/services/assistant?topic=assistant-beta-new-system-entities)
+
+  You cannot try out these system entities in instances hosted in Dallas currently, unless you are part of the beta program. For more information about how to join the beta program, see [Participate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta). 
+  {: note}
+
+**A Plus Trial plan is available**: You can use the free Plus Trial plan to try out the features of the Plus plan as you make a purchasing decision. The trial lasts for 30 days. After the trial period ends, if you do not upgrade to a Plus plan, your Plus Trial instance is converted to a Lite plan instance.
+
 ## 23 May 2019
 {: #23May2019}
 
