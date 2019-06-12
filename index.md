@@ -69,7 +69,7 @@ Here's how you implement your assistant:
 
 - **Integrate your assistant.** Create a channel integration to deploy the configured assistant directly to a social media or messaging channel.
 
-  Your deployed assistant is hosted by {{site.data.keyword.cloud_notm}}, the IBM cloud computing platform. (For more information, see [Platform overview](https://cloud.ibm.com/docs/overview/ibm-cloud#overview){: external}.)
+  Your deployed assistant is hosted by {{site.data.keyword.cloud_notm}}, the IBM cloud computing platform. (For more information, see [Platform overview](/docs/overview/ibm-cloud#overview){: external}.)
 
 Read more about these implementation steps by following these links:
 
@@ -82,7 +82,7 @@ Read more about these implementation steps by following these links:
 ## Browser support
 {: #index-browser-support}
 
-{{site.data.keyword.conversationshort}} requires the same level of browser software as is required by {{site.data.keyword.Bluemix_notm}}. For more information, see {{site.data.keyword.Bluemix_notm}} [Prerequisites ![External link icon](images/external-link.svg "External link icon")](/docs/overview?topic=overview-prereqs-platform#browsers-platform){: external}.
+{{site.data.keyword.conversationshort}} requires the same level of browser software as is required by {{site.data.keyword.Bluemix_notm}}. For more information, see {{site.data.keyword.Bluemix_notm}} [Prerequisites](/docs/overview?topic=overview-prereqs-platform#browsers-platform){: external}.
 
 ## Language support
 {: #index-lang-support}

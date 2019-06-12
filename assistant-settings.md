@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-23"
+lastupdated: "2019-06-12"
 
 subcollection: assistant
 
@@ -40,6 +40,7 @@ The length allowed for an inactivity timeout differs by service instance plan ty
 | Premium      |                      60 minutes |                    24 hours |
 | Plus         |                      60 minutes |                    24 hours |
 | Standard     |                       5 minutes |                   5 minutes |
+| Plus Trial   |                       5 minutes |                   5 minutes |
 | Lite*        |                       5 minutes |                   5 minutes |
 {: caption="Service plan details" caption-side="top"}
 
