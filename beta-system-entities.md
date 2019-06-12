@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-12"
+lastupdated: "2019-06-12"
 
 subcollection: assistant
 
@@ -24,7 +24,7 @@ subcollection: assistant
 {:gif: data-image-type='gif'}
 
 # Beta: New system entities
-{: #beta-system-entities}
+{: #new-system-entities}
 
 This feature is available for use by participants in the beta program only. To find out how to request access, see [Participate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
 
@@ -41,7 +41,7 @@ The `@sys-location` and `@sys-person` system entities have not been changed.
 {: note}
 
 ## Enabling the new system entities
-{: #beta-system-entities-enable}
+{: #new-system-entities-enable}
 
 To enable the new system entities, complete the following steps:
 
@@ -54,7 +54,7 @@ To enable the new system entities, complete the following steps:
 Test the new system entities by adding one or more of them to dialog node conditions or in the condition of a dialog node's conditional responses. Then, from the "Try it out" pane, submit user utterances that trigger the nodes you added.
 
 ### New system entity properties
-{: #beta-system-entities-props}
+{: #new-system-entities-props}
 
 To improve the system entities, new properties were added to the entity objects for certain system entity types.
 
@@ -79,7 +79,7 @@ The following table summarizes the new properties that were added. To see the pr
 | @sys-time | `specific_hour`, `specific_minute`, `specific_second` | Recognizes specific mentions of time, such as `at 5 o'clock` (`specific_hour = 5`), `at 2:30`(`specific_minute = 30`), or `23:30:22` (`specific_second = 22`). |
 
 ### Usage examples
-{: #beta-system-entities-examples}
+{: #new-system-entities-examples}
 
 You can use the following types of conditions to take advantage of the new and improved system entities.
 

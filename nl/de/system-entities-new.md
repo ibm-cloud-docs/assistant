@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-04"
+lastupdated: "2019-06-12"
 
 subcollection: assistant
 
@@ -24,7 +24,7 @@ subcollection: assistant
 {:gif: data-image-type='gif'}
 
 # New system entities ![Beta](images/beta.png)
-{: #beta-new-system-entities}
+{: #beta-system-entities}
 
 Enable the new system entities to take advantage of improvements that were made to the number-based system entities provided by IBM.
 

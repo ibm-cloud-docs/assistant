@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-04"
+lastupdated: "2019-06-12"
 
 subcollection: assistant
 
@@ -65,14 +65,12 @@ If you create a Discovery instance first, do not add the pre-enriched data sourc
 ## Create the search skill
 {: #skill-search-add-task}
 
-1.  If you did not complete the prerequisite steps in [Creating a skill](/docs/services/assistant?topic=assistant-skill-add), complete them now.
-
 1.  Click the **Skills** tab, and then click **Create skill**.
 
     For Premium or Plus plan users only, a page is displayed where you can choose the type of skill you want to create. If you have a Lite or Standard service plan type, the page is not displayed.
     {: note}
 
-1.  Click the *Search skill* option, and then click **Next**.
+1.  Click the *Search skill* tile, and then click **Next**.
 
 1.  Specify the details for the new skill:
     - **Name**: A name no more than 100 characters in length. A name is required.

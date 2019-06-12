@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-06-12"
 
 subcollection: assistant
 
@@ -37,11 +37,9 @@ You can create a skill from scratch, use a sample skill that is provided by IBM,
 
 To add a skill, complete the following steps:
 
-1.  If you have not done so, complete the prerequisite steps in [Creating a skill](/docs/services/assistant?topic=assistant-skill-add).
-
 1.  Click the **Skills** tab, and then click **Create skill**.
 
-1.  ![Plus or Premium plan only](images/premium.png) If you are a Plus or Premium plan user, select the dialog skill tile, and then click **Next**.
+1.  ![Plus or Premium plan only](images/premium.png) If you are a Plus or Premium plan user, select the *Dialog skill* tile, and then click **Next**.
 
     If you are a Lite or Standard plan user, skip this step.
 
@@ -97,7 +95,7 @@ If you receive a message that says the skill contains artifacts that exceed the 
 ### Adding the skill to an assistant
 {: #skill-dialog-add-to-assistant}
 
-You can add one skill to an assistant. You must open the assistant tile and add the skill to the assistant from the assistant configuration page; you cannot choose the assistant that will use the skill from within the skill configuration page. One dialog skill can be used by more than one assistant.
+You can add one dialog skill to an assistant. You must open the assistant tile and add the skill to the assistant from the assistant configuration page; you cannot choose the assistant that will use the skill from within the skill configuration page. One dialog skill can be used by more than one assistant.
 
 1.  From the Assistants tab, click to open the tile for the assistant to which you want to add the skill.
 
