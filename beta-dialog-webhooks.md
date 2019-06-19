@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-17"
+lastupdated: "2019-06-19"
 
 ---
 
@@ -89,7 +89,7 @@ To add the webhook details, complete the following steps:
       </tr>
     </table>
 
-    If you are calling a {{site.data.keyword.openwhisk_short}} action that is managed by IBM Cloud Identity and Access Management (IAM) instead of CLoud Foundry, then you must provide an IAM bearer token to authenticate the request. Follow the instructions in [Passing an IBM Cloud IAM token to authenticate with a service's API](/docs/iam?topic=iam-iamapikeysforservices#token_auth). To pass the IAM bearer token, use a header like this:
+    If you are calling a {{site.data.keyword.openwhisk_short}} action that is managed by IBM Cloud Identity and Access Management (IAM) instead of Cloud Foundry, then you must provide an IAM bearer token to authenticate the request. Follow the instructions in [Passing an IBM Cloud IAM token to authenticate with a service's API](/docs/iam?topic=iam-iamapikeysforservices#token_auth). To pass the IAM bearer token, use a header like this:
 
     <table>
     <caption>Header example</caption>
