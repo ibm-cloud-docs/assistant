@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-04"
+lastupdated: "2019-06-18"
 
 subcollection: assistant
 
@@ -60,7 +60,7 @@ The following new features and changes to {{site.data.keyword.conversationshort}
   You cannot try out these system entities in instances hosted in Dallas currently, unless you are part of the beta program. For more information about how to join the beta program, see [Participate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta). 
   {: note}
 
-**A Plus Trial plan is available**: You can use the free Plus Trial plan to try out the features of the Plus plan as you make a purchasing decision. The trial lasts for 30 days. After the trial period ends, if you do not upgrade to a Plus plan, your Plus Trial instance is converted to a Lite plan instance.
+- **A Plus Trial plan is available**: You can use the free Plus Trial plan to try out the features of the Plus plan as you make a purchasing decision. The trial lasts for 30 days. After the trial period ends, if you do not upgrade to a Plus plan, your Plus Trial instance is converted to a Lite plan instance.
 
 ## 23 May 2019
 {: #23May2019}

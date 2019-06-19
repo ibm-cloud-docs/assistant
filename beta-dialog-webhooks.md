@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-03"
+lastupdated: "2019-06-19"
 
 ---
 
@@ -86,6 +86,20 @@ To add the webhook details, complete the following steps:
       <tr>
       <td>Authorization</td>
       <td>Basic `<encoded-api-key>`</td>
+      </tr>
+    </table>
+
+    If you are calling a {{site.data.keyword.openwhisk_short}} action that is managed by IBM Cloud Identity and Access Management (IAM) instead of Cloud Foundry, then you must provide an IAM bearer token to authenticate the request. Follow the instructions in [Passing an IBM Cloud IAM token to authenticate with a service's API](/docs/iam?topic=iam-iamapikeysforservices#token_auth). To pass the IAM bearer token, use a header like this:
+
+    <table>
+    <caption>Header example</caption>
+      <tr>
+      <th>Header name</th>
+      <th>Header value</th>
+      </tr>
+      <tr>
+      <td>Authorization</td>
+      <td>Bearer `<IAM token>`</td>
       </tr>
     </table>
 
