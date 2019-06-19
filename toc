@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="assistant" arm="969310" audience="service" href="/docs/services/assistant?topic=assistant-getting-started" path="services/assistant"}
+{: .toc subcollection="assistant" arm="969310" category="ai" audience="service" href="/docs/services/assistant?topic=assistant-getting-started" path="services/assistant"}
 Watson Assistant
 
     {: .navgroup id="learn"}
@@ -119,7 +119,7 @@ Watson Assistant
 
     {: .topicgroup}
     Developer community
-        [StackOverflow](https://stackoverflow.com/questions/tagged/watson-assistant+or+ibm-cloud-private-for-data)
+        [StackOverflow](https://stackoverflow.com/questions/tagged/watson-conversation+or+watson-assistant)
         [IBM Developer Answers](https://developer.ibm.com/answers/topics/watson-assistant/)
         [WDC Slack channel](http://wdc-slack-inviter.mybluemix.net/)
 
