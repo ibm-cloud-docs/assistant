@@ -260,6 +260,32 @@ To ensure that a slot condition that checks for number mentions deals with zeros
 
 1.  Add `@sys-number >= 0` to the slot condition field, and then provide the context variable name and text prompt.
 
+    What you check for in the input is also what is saved in the slot context variable. However, in this case, you want only the number (such as `5`) to be saved. You do not want to save `5 > = 0`. To change what is saved, you must edit the value of the context variable.
+
+1.  Open the slot to edit it by clicking the **Edit slot** ![Edit slot](images/edit-slot.png) icon. From the **Options** ![More icon](images/kabob.png) menu, open the JSON editor.
+
+1.  Change the context variable value.
+
+    The value will look like this:
+
+    {
+      "context": {
+        "number": "@sys-number >= 0"
+      }
+    }
+
+    Change it to look like this:
+
+    {
+      "context": {
+        "number": "@sys-number"
+      }
+    }
+
+1.  Save your changes. 
+
+The change you made to the context variable value is not reflected in the Check for field, which is appropriate. Do not edit the value of the Check for field or even click in the field. If you do, the change you made to the JSON will be lost. 
+
 If you do not want to accept a zero as the number value, then you can add a conditional response for the slot to check for zero, and tell the user that they must provide a number greater than zero. But, it is important for the slot condition to be able to recognize a zero when it is provided as input.
 
 ### Getting confirmation

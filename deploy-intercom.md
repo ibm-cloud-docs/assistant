@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-08"
+lastupdated: "2019-06-27"
 
 subcollection: assistant
 
@@ -30,7 +30,7 @@ Intercom is a customer messaging platform that helps drive business growth throu
 
 Intercom has partnered with IBM to add a new agent to the customer support team, a virtual Watson Assistant. You can integrate your assistant with an Intercom application to enable the app to seamlessly pass user conversations between your assistant and human agents. Read the [Watson blog post ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/@blakemcgregor/contact-center-post-394dff427c8) to learn more about the integration.
 
-This integration is available only to Plus or Premium plan users.
+This integration is available only to Plus or Premium plan users. If you want to give it a try, you can sign up for a free Plus Trial plan. [Get Plus Trial](https://cloud.ibm.com/registration?target=%2Fdeveloper%2Fwatson%2Flaunch-tool%2Fconversation%3Fplan%3Dplus-trial&cm_mmc=OSocial_Voicestorm-_-Watson+AI_Watson+Core+-+Conversation-_-WW_WW-_-Intercom+Trial+Registration+Link&cm_mmca1=000027BD&cm_mmca2=10004432).
 {: note}
 
 If you integrate the assistant with Intercom, the Intercom application becomes the client-facing application for your skill. All interactions with users are initiated through and managed by Intercom.
