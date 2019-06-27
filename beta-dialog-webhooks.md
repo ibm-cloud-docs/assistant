@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-21"
+lastupdated: "2019-06-27"
 
 ---
 
@@ -39,6 +39,9 @@ You can use a webhook to do the following types of things:
 - Send requests to an external application, such as a restaurant reservation site, to complete a simple transaction on the user's behalf.
 - Trigger a SMS notification
 - Trigger a {{site.data.keyword.openwhisk_short}} action or web action.
+
+You cannot use a webhook to call a {{site.data.keyword.openwhisk_short}} action that uses token-based Identity and Access Management (IAM) authentication.
+{: note}
 
 ## Defining the webhook
 {: #dialog-webhooks-create}
@@ -210,7 +213,7 @@ For example, you might not be authenticating the request properly (401), or you 
 ## Defining a {{site.data.keyword.openwhisk_short}} action webhook
 {: #dialog-webhooks-cf-action}
 
-Typically, you use a webhook to make a standard POST request to a REST HTTP endpoint. However, if you want to use a webhook to call a {{site.data.keyword.openwhisk_short}} action, and not a {{site.data.keyword.openwhisk_short}} web action, then you can do so.
+Typically, you use a webhook to make a standard POST request to a REST HTTP endpoint. However, if you want to use a webhook to call a {{site.data.keyword.openwhisk_short}} action, and not a {{site.data.keyword.openwhisk_short}} web action, then you can do so. However, you can only make a call to an action that is hosted by Cloud Foundry, and does not use token-based Identity and Access Management (IAM) authentication.
 
 You must make a synchronous call to the {{site.data.keyword.openwhisk_short}} action. The webhook implementation does not support asynchronous calls to {{site.data.keyword.openwhisk_short}} actions because when you send an asynchronous request, an activation ID is returned first. You must send a `GET` request with this activition ID to trigger the action and get data back. However, the webhook implementation supports sending `POST` requests only.
 
