@@ -44,7 +44,7 @@ Follow these steps to add integrations to your assistant:
 
 1.  Click the **Assistants** tab.
 
-    If you are working with a skill, you must click the **Skills** tab before you can see the **Assistants** tab.
+    If you don't see the **Assistants** tab, click the breadcrumb menu link at the top of the page.
     {: note}
 
 1.  Click to open the tile for the assistant that you want to deploy.
