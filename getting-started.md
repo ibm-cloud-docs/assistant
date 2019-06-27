@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-28"
+lastupdated: "2019-06-26"
 
 subcollection: assistant
 
@@ -169,8 +169,6 @@ Now let's add nodes between the `Welcome` node and the `Anything else` node that
    ![Adding an ending node to the dialog.](images/gs-add-ending-node.png)
 
 1.  Click ![Close](images/close.png) to close the edit view.
-
-   ![Shows that a general ending node was also added to the dialog.](images/gs-ending-added.png)
 
 ### Testing intent recognition
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-06-24"
 
 subcollection: assistant
 
@@ -34,7 +34,8 @@ Send the version parameter with every API request. {{site.data.keyword.conversat
 
 - The current version for V1 is `2019-02-28`.
 - The current version for V2 is `2019-02-28`.
-- The "Try it out" pane in the {{site.data.keyword.conversationshort}} tooling is using version `2018-07-10`.
+- The dialog skill "Try it out" pane uses version `2018-07-10`.
+- The search skill "Try it out" pane uses {{site.data.keyword.discoveryshort}} API version `2018-12-03`.
 
 ## Beta features
 {: #release-notes-beta}

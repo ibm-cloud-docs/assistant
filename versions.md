@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-12"
+lastupdated: "2019-06-24"
 
 subcollection: assistant
 
@@ -69,7 +69,7 @@ Keep track of when this version is deployed to an assistant and for how long. It
 {: important}
 
 ## Skill version limits
-{: #skill-version-limits}
+{: #versions-limits}
 
 The number of versions you can create for a single skill depends on your {{site.data.keyword.conversationshort}} plan.
 
