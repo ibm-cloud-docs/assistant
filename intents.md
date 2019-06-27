@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-12"
+lastupdated: "2019-06-27"
 
 subcollection: assistant
 
@@ -172,7 +172,7 @@ After you have finished creating new intents, you can test the system to see if 
 
     ![Screen capture of correcting a recognized intent](images/correct_intent.png)
 
-1.  If the input is unrelated to any of the intents in your application, you can teach your assistant that by selecting the displayed intent, and then clicking **Mark as irrelevant**.
+1.  {: #intents-mark-irrelevant}If the input is unrelated to any of the intents in your application, you can teach your assistant that by selecting the displayed intent, and then clicking **Mark as irrelevant**.
 
     ![Mark as irrelevant screen capture](images/irrelevant.png)
 
