@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-07"
+lastupdated: "2019-06-27"
 
 subcollection: assistant
 
@@ -203,6 +203,28 @@ When you use the `sys-number` system entity in a slot condition, it does not dea
     You will be stuck in this loop until you specify a number other than 0.
 
 1.  To ensure that the slot treats zeros properly, change the slot condition from `@sys-number` to `@sys-number >= 0`.
+
+1.  Open the slot to edit it by clicking the **Edit slot** ![Edit slot](images/edit-slot.png) icon. From the **Options** ![More icon](images/kabob.png) menu, open the JSON editor.
+
+1.  Change the context variable value.
+
+    The value will look like this:
+
+    {
+      "context": {
+        "number": "@sys-number >= 0"
+      }
+    }
+
+    Change it to look like this:
+
+    {
+      "context": {
+        "number": "@sys-number"
+      }
+    }
+
+1.  Save your changes. 
 
 1.  Test the node again. Open the "Try it out" pane, and click **Clear** to delete the slot context variable values that you specified when you tested the node with slots earlier. To see the impact of the changes you made, use the following script:
 
