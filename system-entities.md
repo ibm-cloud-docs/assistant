@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-07"
+lastupdated: "2019-07-01"
 
 subcollection: assistant
 
@@ -233,7 +233,7 @@ You get equivalent results for other supported languages.
 ### @system-number usage tips
 {: #system-entities-sys-number-usage-tips}
 
-- If you use the @sys-number entity as a node condition and the user specifies zero as the value, the 0 value is recognized properly as a number, but the null in the condition is evaluated to equal false. As a result, the node is not processed. To check for numbers in a way that handles zeros properly, use the expression `@sys-number >= 0` in the node condition instead. (Ignore any messages about an incorrect entity operator; the operator works.)
+- If you use the @sys-number entity as a node condition and the user specifies zero as the value, the 0 value is recognized properly as a number. However, the 0 is interpreted as a `null` value for the condition, which results in the node not being processed. To check for numbers in a way that handles zeros properly, use the expression `@sys-number >= 0` in the node condition instead. (Ignore any messages about an incorrect entity operator; the operator works.)
 
 - If you use @sys-number to compare number values in a condition, be sure to separately include a check for the presence of a number itself. If no number is found, @sys-number evaluates to null, which might result in your comparison evaluating to true even when no number is present.
 

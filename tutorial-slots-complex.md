@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-27"
+lastupdated: "2019-07-01"
 
 subcollection: assistant
 
@@ -204,25 +204,33 @@ When you use the `sys-number` system entity in a slot condition, it does not dea
 
 1.  To ensure that the slot treats zeros properly, change the slot condition from `@sys-number` to `@sys-number >= 0`.
 
+    Ignore any messages about an incorrect entity operator; the operator works.
+
 1.  Open the slot to edit it by clicking the **Edit slot** ![Edit slot](images/edit-slot.png) icon. From the **Options** ![More icon](images/kabob.png) menu, open the JSON editor.
 
 1.  Change the context variable value.
 
     The value will look like this:
 
+    ```json
     {
       "context": {
         "number": "@sys-number >= 0"
       }
     }
+    ```
+    {: codeblock}
 
     Change it to look like this:
 
+    ```json
     {
       "context": {
         "number": "@sys-number"
       }
     }
+    ```
+    {: codeblock}
 
 1.  Save your changes. 
 
