@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-07-08"
 
 subcollection: assistant
 
@@ -203,8 +203,6 @@ When you use the `sys-number` system entity in a slot condition, it does not dea
     You will be stuck in this loop until you specify a number other than 0.
 
 1.  To ensure that the slot treats zeros properly, change the slot condition from `@sys-number` to `@sys-number >= 0`.
-
-    Ignore any messages about an incorrect entity operator; the operator works.
 
 1.  Open the slot to edit it by clicking the **Edit slot** ![Edit slot](images/edit-slot.png) icon. From the **Options** ![More icon](images/kabob.png) menu, open the JSON editor.
 

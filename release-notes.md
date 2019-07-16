@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-24"
+lastupdated: "2019-07-15"
 
 subcollection: assistant
 
@@ -52,6 +52,16 @@ Existing models that you have trained will not be immediately impacted, but expi
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
 The following new features and changes to {{site.data.keyword.conversationshort}} are available. Check out our [blog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/assistant/home) to find in-depth information about how the newest features can benefit your business.
+
+<!--## 10 July 2019
+{: #10July2019}
+
+- **Premium plan maximum inactivity period increases**: The maximum time that a session can persist after a user stops interacting with the assistant increased from 1 day to 7 days (168 hours).
+-->
+## 15 July 2019
+{: #15July2019}
+
+- **Numeric system entities ugprade available in Dallas ![Beta](images/beta.png)**: The new system entities are now also available as a beta feature for instances that are hosted in Dallas. See [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities)
 
 ## 12 June 2019
 {: #12June2019}
