@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-11"
+lastupdated: "2019-07-16"
 
 keywords: omnichannel
 
@@ -40,9 +40,8 @@ This diagram shows the overall architecture:
 
 - Users interact with the assistant through one or more of these **integration** points:
 
-  - A chat bot that you publish directly to an existing social media messaging platform, such as Slack or Facebook Messenger.
-  - A simple chat bot user interface that is hosted by IBM Cloud.
-  - Custom application that you develop, such as a mobile app or a robot with a voice interface.
+  - A virtual assistant that you publish directly to an existing social media messaging platform, such as Slack or Facebook Messenger.
+  - A custom application that you develop, such as a mobile app or a robot with a voice interface.
 
 - The **assistant** receives user input and routes it to the dialog skill.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-07-08"
 
 subcollection: assistant
 
@@ -86,7 +86,7 @@ You get equivalent results for other supported languages and national currencies
   This workaround is not necessary if you are using the revised system entities. For more details, see [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities).
   {: note}
 
-- If you use the @sys-currency entity as a node condition and the user specifies `$0` as the value, the value is recognized as a currency properly, but the condition is evaluated to the number zero, not the currency zero. As a result, the `null` in the condition is evaluated to false and the node is not processed. To check for currency values in a way that handles zeros properly, use expression `@sys-currency >=0` in the node condition instead. (Ignore any messages about an incorrect entity operator; the operator works.)
+- If you use the @sys-currency entity as a node condition and the user specifies `$0` as the value, the value is recognized as a currency properly, but the condition is evaluated to the number zero, not the currency zero. As a result, the `null` in the condition is evaluated to false and the node is not processed. To check for currency values in a way that handles zeros properly, use expression `@sys-currency >=0` in the node condition instead.
 
 ## @sys-date and @sys-time entities
 {: #system-entities-sys-date-time}
@@ -233,7 +233,7 @@ You get equivalent results for other supported languages.
 ### @system-number usage tips
 {: #system-entities-sys-number-usage-tips}
 
-- If you use the @sys-number entity as a node condition and the user specifies zero as the value, the 0 value is recognized properly as a number. However, the 0 is interpreted as a `null` value for the condition, which results in the node not being processed. To check for numbers in a way that handles zeros properly, use the expression `@sys-number >= 0` in the node condition instead. (Ignore any messages about an incorrect entity operator; the operator works.)
+- If you use the @sys-number entity as a node condition and the user specifies zero as the value, the 0 value is recognized properly as a number. However, the 0 is interpreted as a `null` value for the condition, which results in the node not being processed. To check for numbers in a way that handles zeros properly, use the expression `@sys-number >= 0` in the node condition instead.
 
 - If you use @sys-number to compare number values in a condition, be sure to separately include a check for the presence of a number itself. If no number is found, @sys-number evaluates to null, which might result in your comparison evaluating to true even when no number is present.
 
@@ -291,7 +291,7 @@ You get equivalent results for other supported languages.
   This workaround is not necessary if you are using the revised system entities. For more details, see [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities).
   {: note}
 
-- If you use the @sys-percentage entity as a node condition and the user specifies `0%` as the value, the value is recognized as a percentage properly, but the condition is evaluated to the number zero not the percentage 0%. As a result, the `null` in the condition is evaluated to false and the node is not processed. To check for percentages in a way that handles zero percentages properly, use the expression `@sys-percentage >= 0` in the node condition instead. (Ignore any messages about an incorrect entity operator; the operator works.)
+- If you use the @sys-percentage entity as a node condition and the user specifies `0%` as the value, the value is recognized as a percentage properly, but the condition is evaluated to the number zero not the percentage 0%. As a result, the `null` in the condition is evaluated to false and the node is not processed. To check for percentages in a way that handles zero percentages properly, use the expression `@sys-percentage >= 0` in the node condition instead.
 
 - If you input a value like `1-2%`, the values `1%` and `2%` are returned as system entities. The index will be the whole range between 1% and 2%, and both entities will have the same index.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-03"
+lastupdated: "2019-07-16"
 
 subcollection: assistant
 
@@ -708,7 +708,7 @@ In this example, the template context variable is defined as a JSON object that 
 ```
 {: codeblock}
 
-You might want to design your custom client application to read the objects from the returned array, and format the values properly for your chat bot's response. Your dialog node response can return the flight arrival details object as an array by using this expression:
+You might want to design your custom client application to read the objects from the returned array, and format the values properly for your assistant's response. Your dialog node response can return the flight arrival details object as an array by using this expression:
 
 ```
 <? $flights.joinToArray($template) ?>
