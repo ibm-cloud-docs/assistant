@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-07-08"
 
 subcollection: assistant
 
@@ -259,8 +259,6 @@ Using `@sys-number` in a slot condition is helpful for capturing any numbers tha
 To ensure that a slot condition that checks for number mentions deals with zeros properly, complete the following step:
 
 1.  Add `@sys-number >= 0` to the slot condition field, and then provide the context variable name and text prompt.
-
-    Ignore any messages about an incorrect entity operator; the operator works.
     
     What you check for in the input is also what is saved in the slot context variable. However, in this case, you want only the number (such as `5`) to be saved. You do not want to save `5 > = 0`. To change what is saved, you must edit the value of the context variable.
 

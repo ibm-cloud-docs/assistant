@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-28"
+lastupdated: "2019-07-15"
 
 subcollection: assistant
 
@@ -923,7 +923,7 @@ Normally, user input is saved as-is in the `text` field of the `input` object of
 {: #dialog-runtime-disambiguation}
 
 This feature is available only to Plus or Premium users.
-{: tip}
+{: note}
 
 When you enable disambiguation, you instruct your assistant to ask users for help when it finds that more than one dialog node can respond to their input. Instead of guessing which node to process, your assistant shares a list of the top node options with the user, and asks the user to pick the right one.
 
@@ -999,6 +999,8 @@ To enable disambiguation, complete the following steps:
 1.  In the **Anything else** field, add text to display as an additional option that users can pick if none of the other dialog node options reflect what the user wants to do. For example, *None of the above*.
 
     Keep the message short, so it displays inline with the other options. The message must be less than 512 characters. For information about what your assistant does if a user chooses this option, see [Handling none of the above](#dialog-runtime-handle-none).
+
+1.  If you want to limit the number of disambiguation options that can be displayed to a user, then in the **Maximum number of suggestions** field, specify a number between 2 and 5. 
 
     Your changes are automatically saved.
 
