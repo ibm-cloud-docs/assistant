@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-12"
+lastupdated: "2019-07-19"
 
 subcollection: assistant
 
@@ -22,13 +22,13 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Creating a search skill ![Plus or Premium plan only](images/premium.png) ![Beta](images/beta.png)
+# Creating a search skill ![Plus or Premium plan only](images/plus.png) ![Beta](images/beta.png)
 {: #skill-search-add}
 
 An assistant uses a *search skill* to route complex customer inquiries to the {{site.data.keyword.discoveryfull}} service. {{site.data.keyword.discoveryshort}} treats the user input as a search query. It finds information that is relevant to the query from an external data source and returns it to the assistant.
 {: shortdesc}
 
-This beta feature is available to Plus or Premium plan users.
+This beta feature is available only to Plus or Premium plan users.
 {: note}
 
 Add a search skill to your assistant to prevent the assistant from having to say things like, `I'm sorry. I can't help you with that`. Instead, the assistant can query existing company documents or data to see whether any useful information can be found and shared with the customer.

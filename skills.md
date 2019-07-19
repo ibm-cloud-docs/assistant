@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-28"
+lastupdated: "2019-07-19"
 
 subcollection: assistant
 
@@ -37,7 +37,7 @@ You can add the following type of skill to your assistant:
 
 - **[Dialog skill](#skills-dialog-skill)**: Understands typical questions or requests from users and answers or fulfills them by following a dialog that is scripted by you.
 
-![Plus or Premium plan only](images/premium.png) If you are a Plus or Premium plan user, you can also create this type of skill:
+![Plus or Premium plan only](images/plus.png) If you are a Plus or Premium plan user, you can also create this type of skill:
 
 - **[Search skill](#skills-search-skill)**: Answers a user's question by searching for relevant information from an external data source, extracting the passage, and returning it as the assistant's response.
 
@@ -66,7 +66,7 @@ As you add information, the skill uses this unique data to build a machine learn
 
 For help creating a dialog skill, see [Creating a dialog skill](/docs/services/assistant?topic=assistant-skill-dialog-add).
 
-### Search skill ![Plus or Premium plan only](images/premium.png)
+### Search skill ![Plus or Premium plan only](images/plus.png)
 {: #skills-search-skill}
 
 When Watson Assistant doesn't have an explicit solution to a problem, it routes the user question to a search skill to find an answer from across your disparate sources of self-service content. The search skill interacts with the {{site.data.keyword.discoveryfull}} service to extract this information from a configured data collection.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-27"
+lastupdated: "2019-07-19"
 
 subcollection: assistant
 
@@ -47,7 +47,7 @@ subcollection: assistant
 
 Start with a few intents, and test them as you iteratively expand the scope of the application.
 
-![Plus or Premium plan only](images/premium.png) If you already have chat transcripts from a call center or customer inquiries that you collected from an online application, put that data to work for you. Share the real customer utterances with Watson and let Watson recommend the best intents and intent user examples for your needs. See [Get help defining intents](/docs/services/assistant?topic=assistant-intent-recommendations) for more details.
+![Plus or Premium plan only](images/plus.png) If you already have chat transcripts from a call center or customer inquiries that you collected from an online application, put that data to work for you. Share the real customer utterances with Watson and let Watson recommend the best intents and intent user examples for your needs. See [Get help defining intents](/docs/services/assistant?topic=assistant-intent-recommendations) for more details.
 
 ## Creating intents
 {: #intents-create-task}
@@ -91,7 +91,7 @@ Start with a few intents, and test them as you iteratively expand the scope of t
     Provide at least five examples for each intent.
     {: important}
 
-    ![Plus or Premium plan only](images/premium.png) To get help with user example creation, see [Get intent user example recommendations](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations).
+    ![Plus or Premium plan only](images/plus.png) To get help with user example creation, see [Get intent user example recommendations](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations).
 
 1.  When you are done adding examples, click ![Close arrow](images/close_arrow.png) to finish creating the intent.
 
@@ -283,11 +283,11 @@ Alternatively, you can upload a file with raw user utterances (from call center 
 
 You can view the imported intents and the corresponding examples on the **Intents** tab. You might need to refresh the page to see the new intents and examples.
 
-## Resolving intent conflicts ![Plus or Premium only](images/premium.png)
+## Resolving intent conflicts ![Plus or Premium only](images/plus.png)
 {: #intents-resolve-conflicts}
 
 This feature is available only to Plus or Premium users.
-{: tip}
+{: note}
 
 The {{site.data.keyword.conversationshort}} application detects a conflict when two or more intent examples in *separate* intents are so similar that {{site.data.keyword.conversationshort}} is confused as to which intent to use.
 

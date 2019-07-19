@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-28"
+lastupdated: "2019-07-19"
 
 subcollection: assistant
 
@@ -43,7 +43,7 @@ The dialog skill itself is defined in text, but you can integrate it with Watson
 
 ![Out-of-the-box training data](images/oob.png)  If you want to get started quickly, add prebuilt training data to your dialog skill so your assistant can start helping your customers with the basics.
 
-## Search skill ![Plus or Premium plan only](images/premium.png)
+## Search skill ![Plus or Premium plan only](images/plus.png)
 {: #assistants-search-skill}
 
 Search skill is available to Plus or Premiums users only.

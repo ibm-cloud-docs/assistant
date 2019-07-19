@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-13"
+lastupdated: "2019-07-19"
 
 subcollection: assistant
 
@@ -65,10 +65,10 @@ If you have a Lite plan and reach your API call limit, but the logs show that yo
 
 If you want to upgrade from one plan to another, see [Upgrading](/docs/services/assistant?topic=assistant-upgrade).
 
-### Plus and Premium plan features
+### Plus and Premium plan features ![Plus or Premium plan only](images/plus.png)
 {: #services-information-premium}
 
-The following features are available only to users of Premium plans.
+The following features are available only to users of Plus or Premium plans only.
 
 - [Disambiguation](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation)
 - [Intent conflict resolution](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts)

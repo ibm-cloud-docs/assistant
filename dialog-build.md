@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-12"
+lastupdated: "2019-07-19"
 
 subcollection: assistant
 
@@ -97,7 +97,7 @@ To create a dialog, complete the following steps:
 
 1.  **Optional**: If you want this node to be considered when users are shown a set of node choices at run time, and asked to pick the one that best matches their goal, then add a short description of the user goal handled by this node to the **external node name** field. For example, *Open an account*.
 
-    ![Plus or Premium plan only](images/premium.png) The *external node name* field is only displayed to Plus or Premium plan users. See [Disambiguation](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation) for more details.
+    ![Plus or Premium plan only](images/plus.png) The *external node name* field is only displayed to Plus or Premium plan users. See [Disambiguation](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation) for more details.
 
 1.  **Optional**: Name the node.
 

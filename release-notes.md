@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-17"
+lastupdated: "2019-07-19"
 
 subcollection: assistant
 
@@ -56,7 +56,11 @@ The following new features and changes to {{site.data.keyword.conversationshort}
 ## 17 July 2019
 {: #17July2019}
 
-- **Disambiguation choice limit**: You can now set the maximum number of options to show to users when the assistant asks them to clarify what they want to do. 
+- **Disambiguation choice limit**: You can now set the maximum number of options to show to users when the assistant asks them to clarify what they want to do. For more information about disambiguation, see [Disambiguation](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
+
+- **Dialog search**: In some dialog skills, the Search function is not working in the Dialog page. This issue is impacting skills where a new user interface library has not been enabled. The library is being rolled out to existing service instances in phases. However, due to this search issue, the roll out is being expedited. When the new library is enabled in all instances, dialog search will function properly.
+
+- **Missing skills**: In some cases, workspaces that were created through the API only are not being displayed when you open the {{site.data.keyword.conversationshort}} user interface. Normally, these workspaces are displayed as dialog skills. If you do not see your skills from the UI, don't worry; they are not gone. Contact support to report the issue, so the team can address the mismatch and enable the workspaces to be displayed properly.
 
 <!--- **Premium plan maximum inactivity period increases**: The maximum time that a session can persist after a user stops interacting with the assistant increased from 1 day to 7 days (168 hours).
 -->
@@ -95,7 +99,7 @@ The following updates are available in all locations except Dallas currently.
 ## 22 March 2019
 {: #22March2019}
 
-- **Introducing search skill ![Beta](images/beta.png)**: A search skill helps you to make your assistant useful to customers faster. Customer inquiries that you did not anticipate and so have not built dialog logic to handle can be met with useful responses. Instead of saying it can't help, the assistant can query an external data source to find relevant information to share in its response. Over time, you can build dialog responses to answer customer queries that require follow-up questions to clarify the user's meaning or for which a short and clear response is suitable. And you can use search skill responses to address more open-ended customer queries that require a longer explanation. This beta feature is available to users of Premium and Plus service plans only. ![Plus or Premium plan only](images/premium.png)
+- **Introducing search skill ![Beta](images/beta.png)**: A search skill helps you to make your assistant useful to customers faster. Customer inquiries that you did not anticipate and so have not built dialog logic to handle can be met with useful responses. Instead of saying it can't help, the assistant can query an external data source to find relevant information to share in its response. Over time, you can build dialog responses to answer customer queries that require follow-up questions to clarify the user's meaning or for which a short and clear response is suitable. And you can use search skill responses to address more open-ended customer queries that require a longer explanation. This beta feature is available to users of Premium and Plus service plans only. ![Plus or Premium plan only](images/plus.png)
 
   See [Building a search skill](/docs/services/assistant?topic=assistant-skill-search-add) for more details.
 
@@ -114,7 +118,7 @@ The following updates are available in all locations except Dallas currently.
 ## 1 March 2019
 {: #1March2019}
 
-- **Japanese intent user example recommendations ![Plus or Premium plan only](images/premium.png)**: You can now upload a file that contains raw user inputs in Japanese, such as user inquiries from a call center log, that Watson can analyze and mine for intent user example candidates. See [Adding examples from log files](/docs/services/assistant?topic=assistant-intent-recommendations).
+- **Japanese intent user example recommendations ![Plus or Premium plan only](images/plus.png)**: You can now upload a file that contains raw user inputs in Japanese, such as user inquiries from a call center log, that Watson can analyze and mine for intent user example candidates. See [Adding examples from log files](/docs/services/assistant?topic=assistant-intent-recommendations).
 
 ## 28 February 2019
 {: #28February2019}
@@ -264,7 +268,7 @@ The following updates are available in all locations except Dallas currently.
 
   See {{site.data.keyword.conversationshort}} [service plan options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/watson-assistant/pricing/){: new_window} for more information about all available service plans.
 
-- **Intent user example recommendations ![Plus or Premium plan only](images/premium.png)**: You can upload a file that contains raw user inputs, such as user inquiries from a call center log, that Watson can analyze and mine for intent user example candidates. See [Adding examples from log files](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations).
+- **Intent user example recommendations ![Plus or Premium plan only](images/plus.png)**: You can upload a file that contains raw user inputs, such as user inquiries from a call center log, that Watson can analyze and mine for intent user example candidates. See [Adding examples from log files](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations).
 
 ## 20 November 2018
 {: #20November2018}
@@ -342,9 +346,9 @@ The following updates are available in all locations except Dallas currently.
 ## 6 August 2018
 {: #6August2018}
 
-- **Intent conflict resolution ![Plus or Premium plan only](images/premium.png)**: The tool can now help you to resolve conflicts when two or more user examples in separate intents are similar to one another. Non-distinct user examples can weaken the training data and make it harder for your assistant to map user input to the appropriate intent at run time. See [Resolving intent conflicts](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts) for details.
+- **Intent conflict resolution ![Plus or Premium plan only](images/plus.png)**: The tool can now help you to resolve conflicts when two or more user examples in separate intents are similar to one another. Non-distinct user examples can weaken the training data and make it harder for your assistant to map user input to the appropriate intent at run time. See [Resolving intent conflicts](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts) for details.
 
-- **Disambiguation** ![Plus or Premium plan only](images/premium.png): Enable disambiguation to allow your assistant to ask the user for help when it needs to decide between two or more viable dialog nodes to process for a response. See [Disambiguation](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation) for more details.
+- **Disambiguation** ![Plus or Premium plan only](images/plus.png): Enable disambiguation to allow your assistant to ask the user for help when it needs to decide between two or more viable dialog nodes to process for a response. See [Disambiguation](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation) for more details.
 
 - **Jump-to fix**: Fixed a bug in the Dialogs tool which prevented you from being able to configure a jump-to that targets the response of a node with the `anything_else` special condition.
 
@@ -366,6 +370,7 @@ The following updates are available in all locations except Dallas currently.
 
   - The content of the /message `output` object changed from being a `text` JSON object to being a `generic` array that supports multiple rich response types, including `image`, `option`, `pause`, and `text`.
   - Support for contextual entities was added.
+  - You can no longer add user-defined properties in `context.metadata`. However, you can add them directly to `context`.
 
 - **Overview page date filter**: Use the new date filters to choose the period for which data is displayed. These filters affect all data shown on the page: not just the number of conversations displayed in the graph, but also the statistics displayed along with the graph, and the lists of top intents and entities. See [Controls](/docs/services/assistant?topic=assistant-logs-overview#logs-overview-controls) for more information.
 
