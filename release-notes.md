@@ -67,12 +67,12 @@ The following new features and changes to {{site.data.keyword.conversationshort}
 ## 15 July 2019
 {: #15July2019}
 
-- **Numeric system entities ugprade available in Dallas ![Beta](images/beta.png)**: The new system entities are now also available as a beta feature for instances that are hosted in Dallas. See [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities)
+- **Numeric system entities upgrade available in Dallas ![Beta](images/beta.png)**: The new system entities are now also available as a beta feature for instances that are hosted in Dallas. See [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities)
 
 ## 12 June 2019
 {: #12June2019}
 
-- **Numeric system entities ugprade ![Beta](images/beta.png)**: New system entities are available as a beta feature that you can enable in dialog skills that are written in English or German. The revised system entities offer better date and time understanding. They can recognize date and number spans, national holiday references, and classify mentions with more precision. For example, a date such as `May 15` is recognized as a date mention(`@sys-date:2019-05-15`), and is *not* also identified as a number mention (`@sys-number:15`). See [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities)
+- **Numeric system entities upgrade ![Beta](images/beta.png)**: New system entities are available as a beta feature that you can enable in dialog skills that are written in English or German. The revised system entities offer better date and time understanding. They can recognize date and number spans, national holiday references, and classify mentions with more precision. For example, a date such as `May 15` is recognized as a date mention(`@sys-date:2019-05-15`), and is *not* also identified as a number mention (`@sys-number:15`). See [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities)
 
   You cannot try out these system entities in instances hosted in Dallas currently, unless you are part of the beta program. For more information about how to join the beta program, see [Participate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta). 
   {: note}
