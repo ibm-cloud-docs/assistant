@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-27"
+lastupdated: "2019-07-19"
 
 subcollection: assistant
 
@@ -22,7 +22,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Integrating with Intercom ![Plus or Premium plan only](images/premium.png)
+# Integrating with Intercom ![Plus or Premium plan only](images/plus.png)
 {: #deploy-intercom}
 
 Intercom is a customer messaging platform that helps drive business growth through better relationships throughout the customer lifecycle.

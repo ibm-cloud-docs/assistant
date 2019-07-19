@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-27"
+lastupdated: "2019-07-19"
 
 subcollection: assistant
 
@@ -70,7 +70,7 @@ Follow these steps to create an assistant:
 
       When you add a dialog skill from here, you get the development version. If you want to add a specific dialog skill version, add it from the skill's *Versions* page instead.
 
-    - **Add Search Skill** ![Plus or Premium plan only](images/premium.png): For a given user query, uses the {{site.data.keyword.discoveryfull}} service to retrieve information from a data source that you identify and shares any relevant information that it finds as the response to the user.
+    - **Add Search Skill** ![Plus or Premium plan only](images/plus.png): For a given user query, uses the {{site.data.keyword.discoveryfull}} service to retrieve information from a data source that you identify and shares any relevant information that it finds as the response to the user.
 
       This option is only visible if you are a Plus or Premium plan user.
       {: note}

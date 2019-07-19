@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-12"
+lastupdated: "2019-07-19"
 
 subcollection: assistant
 
@@ -32,7 +32,7 @@ You can create the following type of skill:
 
 - **Dialog skill**: Uses Watson natural language processing and machine learning technologies to understand user questions and requests, and respond to them with answers that are authored by you.
 
-![Plus or Premium plan only](images/premium.png) If you are a Plus or Premium plan user, you can also create this type of skill:
+![Plus or Premium plan only](images/plus.png) If you are a Plus or Premium plan user, you can also create this type of skill:
 
 - **Search skill**: For a given user query, uses the {{site.data.keyword.discoveryfull}} service to search a data source of your self-service content and return an answer.
 
@@ -47,7 +47,7 @@ To create a skill, complete the following step:
 
 1.  Click the **Skills** tab, and then click **Create skill**.
 
-    - ![Plus or Premium plan only](images/premium.png) Only if you are a Plus or Premium plan user, a page is displayed that gives you a choice of the type of skill to create: a dialog skill or a search skill. Select the dialog skill tile, and then click **Next**.
+    - ![Plus or Premium plan only](images/plus.png) Only if you are a Plus or Premium plan user, a page is displayed that gives you a choice of the type of skill to create: a dialog skill or a search skill. Select the dialog skill tile, and then click **Next**.
 
     - If you have a Lite or Standard plan, you will not see a page that gives you the option of skill types to create.
 

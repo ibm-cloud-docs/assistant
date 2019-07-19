@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-15"
+lastupdated: "2019-07-19"
 
 subcollection: assistant
 
@@ -919,7 +919,7 @@ For example, if a user enters a sentence like `I wnt to buy a boook`, fuzzy matc
 
 Normally, user input is saved as-is in the `text` field of the `input` object of the message. If, and only if the user input is corrected in some way, a new field is created in the `input` object, called `original_text`. This field stores the user's original input that includes any misspelled words in it. And the corrected text is added to the `input.text` field.
 
-## Disambiguation ![Plus or Premium plan only](images/premium.png)
+## Disambiguation ![Plus or Premium plan only](images/plus.png)
 {: #dialog-runtime-disambiguation}
 
 This feature is available only to Plus or Premium users.

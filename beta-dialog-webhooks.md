@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-27"
+lastupdated: "2019-07-18"
 
 ---
 
@@ -12,6 +12,7 @@ lastupdated: "2019-06-27"
 {:important: .important}
 {:note: .note}
 {:tip: .tip}
+{:preview: .preview}
 {:pre: .pre}
 {:codeblock: .codeblock}
 {:screen: .screen}
@@ -23,11 +24,13 @@ lastupdated: "2019-06-27"
 # Beta: Adding a webhook callout to a dialog node
 {: #dialog-webhooks}
 
+Define a webhook that sends a POST request callout to an external application to perform a programmatic function. You can then invoke the webhook from one or more dialog nodes.
+{: shortdesc}
+
 This feature is available for use by participants in the beta program only. To find out how to request access, see [Participate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
+{: preview}
 
 ![Beta](images/beta.png) IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment.
-
-Define a webhook that sends a POST request callout to an external application to perform a programmatic function. You can then invoke the webhook from one or more dialog nodes.
 
 A webhook is a mechanism that allows you to call out to an external program based on something happening in your program. When used in a dialog skill, a webhook is triggered when the assistant processes a node that has a webhook enabled. The webhook collects data that you specify or that you collect from the user during the conversation and save in context variables, and sends the data to the Webhook request URL as an HTTP POST request. The URL that receives the webhook is the listener. It performs a predefined action using the information that is provided by the webhook as specified in the webhook definition, and can optionally return a response.
 

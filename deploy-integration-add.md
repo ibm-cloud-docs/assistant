@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-27"
+lastupdated: "2019-07-19"
 
 subcollection: assistant
 
@@ -59,7 +59,7 @@ Follow these steps to add integrations to your assistant:
 
     - [Custom application](/docs/services/assistant?topic=assistant-deploy-custom-app)
     - [Facebook Messenger](/docs/services/assistant?topic=assistant-deploy-facebook)
-    - [Intercom](/docs/services/assistant?topic=assistant-deploy-intercom)  ![Plus or Premium plan only](images/premium.png)
+    - [Intercom](/docs/services/assistant?topic=assistant-deploy-intercom)  ![Plus or Premium plan only](images/plus.png)
     - [Preview Link](/docs/services/assistant?topic=assistant-deploy-web-link)
     - [Slack](/docs/services/assistant?topic=assistant-deploy-slack)
     - [Voice Agent (Telephony)  ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/voice-agent-with-watson){: new_window}
