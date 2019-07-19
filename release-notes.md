@@ -58,9 +58,9 @@ The following new features and changes to {{site.data.keyword.conversationshort}
 
 - **Disambiguation choice limit**: You can now set the maximum number of options to show to users when the assistant asks them to clarify what they want to do. For more information about disambiguation, see [Disambiguation](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
 
-- **Dialog search**: In some dialog skills, the Search function is not working in the Dialog page. This issue is impacting skills where a new user interface library has not been enabled. The library is being rolled out to existing service instances in phases. However, due to this search issue, the roll out is being expedited. When the new library is enabled in all instances, dialog search will function properly.
+- **Dialog search**: In some skills, the search function is not working in the Dialog page. This issue is impacting dialog skills where a new user interface library is not yet enabled. The library is being rolled out to existing service instances in phases. However, due to this search issue, the roll out is being expedited. When the new library is enabled in all instances, dialog search will function properly.
 
-- **Missing skills**: In some cases, workspaces that were created through the API only are not being displayed when you open the {{site.data.keyword.conversationshort}} user interface. Normally, these workspaces are displayed as dialog skills. If you do not see your skills from the UI, don't worry; they are not gone. Contact support to report the issue, so the team can address the mismatch and enable the workspaces to be displayed properly.
+- **Missing skills**: In some cases, workspaces that were created through the API only are not being displayed when you open the {{site.data.keyword.conversationshort}} user interface. Normally, these workspaces are displayed as dialog skills. If you do not see your skills from the UI, don't worry; they are not gone. Contact support to report the issue, so the team can enable the workspaces to be displayed properly.
 
 <!--- **Premium plan maximum inactivity period increases**: The maximum time that a session can persist after a user stops interacting with the assistant increased from 1 day to 7 days (168 hours).
 -->
