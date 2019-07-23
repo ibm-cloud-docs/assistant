@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-07-23"
 
 subcollection: assistant
 
@@ -53,12 +53,17 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 The following new features and changes to {{site.data.keyword.conversationshort}} are available. Check out our [blog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/assistant/home) to find in-depth information about how the newest features can benefit your business.
 
+## 23 July 2019
+{: #23July2019}
+
+- **Dialog search fixed**: In some skills, the search function was not working in the Dialog page. The issue is now fixed.
+
 ## 17 July 2019
 {: #17July2019}
 
 - **Disambiguation choice limit**: You can now set the maximum number of options to show to users when the assistant asks them to clarify what they want to do. For more information about disambiguation, see [Disambiguation](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
 
-- **Dialog search**: In some skills, the search function is not working in the Dialog page. This issue affects dialog skills where a new user interface library is not yet enabled. The library, which increases the page responsiveness, is being rolled out to existing service instances in phases. However, due to this search issue, the roll out is being expedited. When the new library is enabled in all instances, dialog search will function properly.
+- **Dialog search issue**: In some skills, the search function is not working in the Dialog page. A new user interface library, which increases the page responsiveness, is being rolled out to existing service instances in phases. This search issue affects only dialog skills for which the new library is not yet enabled.
 
 - **Missing skills**: In some cases, workspaces that were created through the API only are not being displayed when you open the {{site.data.keyword.conversationshort}} user interface. Normally, these workspaces are displayed as dialog skills. If you do not see your skills from the UI, don't worry; they are not gone. Contact support to report the issue, so the team can enable the workspaces to be displayed properly.
 
