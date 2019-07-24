@@ -38,7 +38,7 @@ You cannot upgrade a Cloud Foundry-based instance to a Plus plan. You must migra
 
 To upgrade your plan, complete these steps:
 
-1.  From the {{site.data.keyword.cloud_notm}} menu, select **Upgrade Plan**.
+1.  From the {{site.data.keyword.cloud}} menu, select **Upgrade Plan**.
     From here, you can see your current plan and other available plan options. Depending on the plan type, you can make changes yourself or inform IBM that you want to change your plan.
 
     For a Premium plan, all of the instances in the plan must be part of the same resource group.

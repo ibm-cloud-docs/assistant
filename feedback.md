@@ -49,7 +49,7 @@ Want to stay informed about new features that will be added to the product? Want
 
 To request participation in the beta program, you must first create a new {{site.data.keyword.conversationshort}} service instance that you will dedicate to beta evaluation purposes only. *Do not add an existing instance that you are using to do any real work to the beta program.*
 
-1.  Create a {{site.data.keyword.conversationshort}} service  resource from the [{{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/watson-assistant) page in the {{site.data.keyword.cloud_notm}} catalog.
+1.  Create a {{site.data.keyword.conversationshort}} service  resource from the [{{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/watson-assistant) page in the {{site.data.keyword.cloud}} catalog.
 
     The service instance can be part of a free (Lite) or Standard plan, and must be deployed to the **Dallas** location. The service instance must be managed by a resource group, not Cloud Foundry.
 

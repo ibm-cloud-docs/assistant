@@ -39,5 +39,5 @@ The following table describes known error messages and how you can resolve them.
 
 | Problem | Cause | Solution |
 |---------|-------|----------|
-| Getting the message, `Assistants could not be loaded at this time. Unable to fetch access token for account.` | Your {{site.data.keyword.cloud_notm}} refresh tokens might have expired. | Log out and then log back in to {{site.data.keyword.cloud_notm}} to generate fresh tokens. |
+| Getting the message, `Assistants could not be loaded at this time. Unable to fetch access token for account.` | Your {{site.data.keyword.cloud}} refresh tokens might have expired. | Log out and then log back in to {{site.data.keyword.cloud_notm}} to generate fresh tokens. |
 {: caption="Error messages" caption-side="top"}

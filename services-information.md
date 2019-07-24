@@ -25,7 +25,7 @@ subcollection: assistant
 # IBM Cloud services information
 {: #services-information}
 
-The assistant is a fully hosted bot that is managed by {{site.data.keyword.cloud_notm}}, which means you do not need to worry about setting up or maintaining infrastructure to support it.
+The assistant is a fully hosted bot that is managed by {{site.data.keyword.cloud}}, which means you do not need to worry about setting up or maintaining infrastructure to support it.
 {: shortdesc}
 
 ## Service plan information
