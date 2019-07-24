@@ -64,7 +64,7 @@ Follow these steps to add integrations to your assistant:
     - [Slack](/docs/services/assistant?topic=assistant-deploy-slack)
     - [Voice Agent (Telephony)  ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/voice-agent-with-watson){: new_window}
 
-      Opens the **Voice Agent with Watson** service overview page on {{site.data.keyword.cloud_notm}}.
+      Opens the **Voice Agent with Watson** service overview page on {{site.data.keyword.cloud}}.
     - [WordPress plug-in ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://wordpress.org/plugins/conversation-watson/){: new_window}
 
       Opens the IBM Watson Assistant plug-in overview page on the WordPress site.

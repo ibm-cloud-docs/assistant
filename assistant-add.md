@@ -32,7 +32,7 @@ Follow these steps to create an assistant:
 
 1.  If you have not created a {{site.data.keyword.conversationshort}} service instance, do so first. Otherwise, skip this step.
 
-    1.  Go to the [{{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/watson-assistant) page in the {{site.data.keyword.cloud_notm}} catalog.
+    1.  Go to the [{{site.data.keyword.conversationshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/watson-assistant) page in the {{site.data.keyword.cloud}} catalog.
 
     1.  Sign up for a {{site.data.keyword.cloud_notm}} account or log in.
 

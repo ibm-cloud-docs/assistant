@@ -152,6 +152,6 @@ To share a dialog skill with other people, you must give them access to the serv
 
     If you are editing access for an existing user, click **Assign access**.
 
-When the people you invite next log in to {{site.data.keyword.cloud_notm}}, your account will be included in their list of accounts. If they select your account, they can see your service instance, and open and edit your skills.
+When the people you invite next log in to {{site.data.keyword.cloud}}, your account will be included in their list of accounts. If they select your account, they can see your service instance, and open and edit your skills.
 
 With more people contributing to dialog skill development, unintended changes can occur, including skill deletions. Consider creating backup copies of your dialog skill on a regular basis, so you can roll back to an earlier version if necessary. To create a backup, simply [download the skill as a JSON file](#skill-dialog-add-download).

@@ -401,7 +401,7 @@ The following updates are available in all locations except Dallas currently.
   - Washington, DC (us-east) as of 14 June 2018
   - Sydney, Australia (au-syd) as of 7 May 2018
 
-  {{site.data.keyword.cloud_notm}} is migrating to token-based Identity and Access Management (IAM) authentication.
+  {{site.data.keyword.cloud}} is migrating to token-based Identity and Access Management (IAM) authentication.
 
   For new service instances in the regions listed above, you use IAM for authentication. You can pass either a bearer token or an API key. Tokens support authenticated requests without embedding service credentials in every call. API keys use basic authentication.
 
