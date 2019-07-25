@@ -367,7 +367,7 @@ To add a rich response, complete the following steps:
 
       1.  Click **Add option**.
       1.  In the **List label** field, enter the option to display in the list. The label must be less than 64 characters in length.
-      1.  In the corresponding **Value** field, enter the user input to pass to your assistant when this option is selected. The value must be less than 2,048 characters in length. (A current limitation applies a 64-character limit, but is being addressed.)
+      1.  In the corresponding **Value** field, enter the user input to pass to your assistant when this option is selected. The value must be less than 2,048 characters in length.
 
           Specify a value that you know will trigger the correct intent when it is submitted. For example, it might be a user example from the training data for the intent.
       1.  Repeat the previous steps to add more options to the list.
@@ -457,7 +457,7 @@ To add a rich response, complete the following steps:
 
         This field is equivalent to the {{site.data.keyword.discoveryshort}} `filter` parameter. For more information, see [Query parameters ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-query-parameters#filter){: new_window}.
 
-      This response type only returns a valid response if the assistant to which you added this dialog skill also has a search skill associated with it.
+      This response type only returns a valid response if the assistant to which you added this dialog skill also has a search skill associated with it. Test this response type from the preview link or another assistant-level integration. You cannot test it from the dialog skill's "Try it out" pane.
 
 1.  Click **Add response** to add another response type to the current response.
 
