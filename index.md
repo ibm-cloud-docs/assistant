@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-16"
+lastupdated: "2019-07-24"
 
 keywords: omnichannel
 
@@ -95,7 +95,7 @@ Language support by feature is detailed in the [Supported languages](/docs/servi
 
 See [IBM Cloud Terms and Notices](/docs/overview/terms-of-use?topic=overview-terms){: external} for information about the terms of service.
 
-US Health Insurance Portability and Accountability Act (HIPAA) support is available for Premium plans created on or after 1 April 2019. For more information, see [Enabling EU and HIPAA supported settings](/docs/account?topic=account-eu-hipaa-supported#eu-hipaa-supported){: external}.
+US Health Insurance Portability and Accountability Act (HIPAA) support is available for Premium plans that are hosted in the Washington, DC location created on or after 1 April 2019. For more information, see [Enabling EU and HIPAA supported settings](/docs/account?topic=account-eu-hipaa-supported#eu-hipaa-supported){: external}.
 
 ## Next steps
 {: #index-next-steps}
