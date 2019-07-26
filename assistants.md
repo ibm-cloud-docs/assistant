@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-07-26"
 
 subcollection: assistant
 
@@ -33,7 +33,7 @@ An assistant is a cognitive bot that you can customize for your business needs, 
 ## Dialog skill
 {: #assistants-dialog-skill}
 
-A dialog skill that can understand and address questions or requests that your customers typically need help with. You provide information about the subjects or tasks your users ask about, and how they ask about them, and the product dynamically builds a machine learning model that is tailored to understand the same and similar user requests.
+A dialog skill can understand and address questions or requests that your customers typically need help with. You provide information about the subjects or tasks your users ask about, and how they ask about them, and the product dynamically builds a machine learning model that is tailored to understand the same and similar user requests.
 
 | Dialog tree | Graphical user interface |
 |-------------|-------------------------:|

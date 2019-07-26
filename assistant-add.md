@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-25"
+lastupdated: "2019-07-26"
 
 subcollection: assistant
 
@@ -27,6 +27,8 @@ subcollection: assistant
 
 Create an assistant with the skills it needs to address the business goals of your customers.
 {: shortdesc}
+
+To learn more about what an assistant is first, see [Assistants](/docs/services/assistant?topic=assistant-assistants).
 
 Follow these steps to create an assistant:
 
