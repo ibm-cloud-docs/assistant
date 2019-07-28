@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-16"
+lastupdated: "2019-07-26"
 
 subcollection: assistant
 
@@ -83,6 +83,7 @@ The following sections describe methods you can use to process values. They are 
 You cannot use these methods to check for a value in an array in a node condition or response condition within the same node in which you set the array values.
 
 ### JSONArray.append(object)
+{: #dialog-methods-arrays-append}
 
 This method appends a new value to the JSONArray and returns the modified JSONArray.
 
@@ -120,6 +121,7 @@ Result:
 {: codeblock}
 
 ### JSONArray.clear()
+{: #dialog-methods-arrays-clear}
 
 This method clears all values from the array and returns null.
 
@@ -137,6 +139,7 @@ Use the following expression in the output to define a field that clears an arra
 If you subsequently reference the $toppings_array context variable, it returns '[]' only.
 
 ### JSONArray.contains(Object value)
+{: #dialog-methods-arrays-contains}
 
 This method returns true if the input JSONArray contains the input value.
 
@@ -161,7 +164,7 @@ $toppings_array.contains('ham')
 Result: `True` because the array contains the element ham.
 
 ### JSONArray.containsIntent(String intent_name, Double min_score, [Integer top_n])
-{: #dialog-methods-array-containsIntent}
+{: #dialog-methods-arrays-containsIntent}
 
 This method returns `true` if the `intents` JSONArray specifically contains the specified intent, and that intent has a confidence score that is equal to or higher than the specified minimum score. Optionally, you can specify a number to indicate that the intent must be included within that number of top elements in the array.
 
@@ -183,7 +186,7 @@ intents.containsIntent("General_Ending", 0.8, 2)
 {: codeblock}
 
 ### JSONArray.filter(temp, "temp.property operator comparison_value")
-{: #dialog-methods-array-filter}
+{: #dialog-methods-arrays-filter}
 
 Filters an array by comparing each array element value to a value you specify. This method is similar to a [collection projection](#dialog-methods-collection-projection). A collection projection returns a filtered array based on a name in an array element name-value pair. The filter method returns a filtered array based on a value in an array element name-value pair.
 
@@ -358,6 +361,7 @@ The population of @city is: <? ($cities.filter("y", "y.name == @city").![populat
 The expression returns: `The population of Tokyo is 9273000.`
 
 ### JSONArray.get(Integer)
+{: #dialog-methods-arrays-get}
 
 This method returns the input index from the JSONArray.
 
@@ -405,6 +409,7 @@ Response:
 {: codeblock}
 
 ### JSONArray.getRandomItem()
+{: #dialog-methods-arrays-getRandom}
 
 This method returns a random item from the input JSONArray.
 
@@ -445,7 +450,7 @@ Result: `"ham is a great choice!"` or `"onion is a great choice!"` or `"olives i
 **Note:** The resulting output text is randomly chosen.
 
 ### JSONArray.indexOf(value)
-{: #dialog-methods-array-indexOf}
+{: #dialog-methods-arrays-indexOf}
 
 This method returns the index number of the element in the array that matches the value you specify as a parameter or `-1` if the value is not found in the array. The value can be a String (`"School"`), Integer(`8`), or Double (`9.1`). The value must be an exact match and is case sensitive.
 
@@ -484,6 +489,7 @@ intents[intents.indexOf("General_Greetings")].confidence
 {: codeblock}
 
 ### JSONArray.join(String delimiter)
+{: #dialog-methods-arrays-join}
 
 This method joins all values in this array to a string. Values are converted to string and delimited by the input delimiter.
 
@@ -579,7 +585,7 @@ The flights that fit your criteria are:
 Result: `The flights that match your criteria are: OK123,LH421,TS4156.`
 
 ### JSONArray.joinToArray(template)
-{: #dialog-methods-joinToArray}
+{: #dialog-methods-arrays-joinToArray}
 
 This method applies the format that you define in a template to the array, and returns an array that is formatted according to your specifications. This method is useful for applying formatting to array values that you want to return in a dialog response, for example.
 
@@ -737,6 +743,7 @@ This is the dialog node response:
 Notice that the order of the `arrival` and `departure` elements is swapped in the response. The service typically reorders elements in a JSON Object. If you want the elements to be returned in a specific order, define the template by using a JSON Array or String value instead.
 
 ### JSONArray.remove(Integer)
+{: #dialog-methods-arrays-remove}
 
 This method removes the element in the index position from the JSONArray and returns the updated JSONArray.
 
@@ -774,6 +781,7 @@ Result:
 {: codeblock}
 
 ### JSONArray.removeValue(object)
+{: #dialog-methods-arrays-removeValue}
 
 This method removes the first occurrence of the value from the JSONArray and returns the updated JSONArray.
 
@@ -811,6 +819,7 @@ Result:
 {: codeblock}
 
 ### JSONArray.set(Integer index, Object value)
+{: #dialog-methods-arrays-set}
 
 This method sets the input index of the JSONArray to the input value and returns the modified JSONArray.
 
@@ -848,6 +857,7 @@ Result:
 {: codeblock}
 
 ### JSONArray.size()
+{: #dialog-methods-arrays-size}
 
 This method returns the size of the JSONArray as an integer.
 
@@ -885,6 +895,7 @@ Result:
 {: codeblock}
 
 ### JSONArray split(String regexp)
+{: #dialog-methods-arrays-split}
 
 This method splits the input string by using the input regular expression. The result is a JSONArray of strings.
 
@@ -918,11 +929,12 @@ Results in this output:
 {: codeblock}
 
 ### com.google.gson.JsonArray support
-{: #dialog-methods-com.google.gson.JsonArray}
+{: #dialog-methods-arrays-com-google-gson-JsonArray}
 
 In addition to the built-in methods, you can use standard methods of the `com.google.gson.JsonArray` class.
 
 #### New array
+{: #dialog-methods-arrays-new}
 
 new JsonArray().append('value')
 
@@ -944,10 +956,13 @@ Several methods are available to work with date and time.
 For information about how to recognize and extract date and time information from user input, see [@sys-date and @sys-time entities](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-date-time).
 
 ### .after(String date or time)
+{: #dialog-methods-dates-after}
 
 Determines whether the date/time value is after the date/time argument.
 
 ### .before(String date or time)
+{: #dialog-methods-dates-before}
+
 Determines whether the date/time value is before the date/time argument.
 
 For example:
@@ -960,6 +975,7 @@ For example:
 - If comparing `date and time vs. time` the method ignores the date and only compares times.
 
 ### now()
+{: #dialog-methods-dates-now}
 
 Returns a string with the current date and time in the format `yyyy-MM-dd HH:mm:ss`.
 
@@ -1012,6 +1028,7 @@ Example of `now()` in node's conditions (to decide if it is still morning):
 {: codeblock}
 
 ### .reformatDateTime(String format)
+{: #dialog-methods-dates-reformatDateTime}
 
 Formats date and time strings to the format desired for user output.
 
@@ -1041,19 +1058,23 @@ Format follows the Java [SimpleDateFormat ![External link icon](../../icons/laun
 **Note**: When trying to format time only, the date is treated as `1970-01-01`.
 
 ### .sameMoment(String date/time)
+{: #dialog-methods-dates-sameMoment}
 
 - Determines whether the date/time value is the same as the date/time argument.
 
 ### .sameOrAfter(String date/time)
+{: #dialog-methods-dates-sameOrAfter}
 
 - Determines whether the date/time value is after or the same as the date/time argument.
 - Analogous to `.after()`.
 
 ### .sameOrBefore(String date/time)
+{: #dialog-methods-dates-sameOrBefore}
 
 - Determines whether the date/time value is before or the same as the date/time argument.
 
 ### today()
+{: #dialog-methods-dates-today}
 
 Returns a string with the current date in the format `yyyy-MM-dd`.
 
@@ -1086,7 +1107,7 @@ Example of a dialog node with `today()` used in the output field:
 Result: `Today's date is 2018-03-09.`
 
 ## Date and time calculations
-{: #dialog-methods-calculations}
+{: #dialog-methods-date-time-calculations}
 
 Use the following methods to calculate a date.
 
@@ -1271,7 +1292,7 @@ In the response condition, you can indicate that you want to show the response o
 `now().after($start_date) && now().before($end_date)`
 
 ### java.util.Date support
-{: #dialog-methods-java.util.Date}
+{: #dialog-methods-dates-java-util-date}
 
 In addition to the built-in methods, you can use standard methods of the `java.util.Date` class.
 
@@ -1329,23 +1350,27 @@ If you want the service to recognize specific number formats in user input, such
 If you want to change the decimal placement for a number, to reformat a number as a currency value, for example, see the [String format() method](#java.lang.String).
 
 ### toDouble()
+{: #dialog-methods-numbers-toDouble}
 
   Converts the object or field to the Double number type. You can call this method on any object or field. If the conversion fails, *null* is returned.
 
 ### toInt()
+{: #dialog-methods-numbers-toInt}
 
   Converts the object or field to the Integer number type. You can call this method on any object or field. If the conversion fails, *null* is returned.
 
 ### toLong()
+{: #dialog-methods-numbers-toLong}
 
   Converts the object or field to the Long number type. You can call this method on any object or field. If the conversion fails, *null* is returned.
 
   If you specify a Long number type in a SpEL expression, you must append an `L` to the number to identify it as such. For example, `5000000000L`. This syntax is required for any numbers that do not fit into the 32-bit Integer type. For example, numbers that are greater than 2^31 (2,147,483,648) or lower than -2^31 (-2,147,483,648) are considered Long number types. Long number types have a minimum value of -2^63 and a maximum value of 2^63-1.
 
 ### Java number support
-{: #dialog-methods-java.lang.Number}
+{: #dialog-methods-numbers-java}
 
 ### java.lang.Math()
+{: #dialog-methods-numbers-java-lang-math}
 
 Performs basic numeric operations.
 
@@ -1426,6 +1451,7 @@ You can use the the Class methods, including these:
 See the [java.lang.Math reference documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html) for information about other methods.
 
 ### java.util.Random()
+{: #dialog-methods-numbers-java-util-random}
 
 Returns a random number. You can use one of the following syntax options:
 
@@ -1475,6 +1501,7 @@ You can use standard methods of the following classes also:
 {: #dialog-methods-objects}
 
 ### JSONObject.clear()
+{: #dialog-methods-objects-jsonobject-clear}
 
 This method clears all values from the JSON object and returns null.
 
@@ -1575,6 +1602,7 @@ To use the method, you can specify it in an expression in a variable that you de
 If a node earlier in the tree defines a text response of `I'm happy to help.` and then jumps to a node with the JSON output object defined above, then  only `Have a great day.` is displayed as the response. The `I'm happy to help.` output is not displayed, because it is cleared and replaced with the text response from the node that is calling the `clear()` method.
 
 ### JSONObject.has(String)
+{: #dialog-methods-objects-jsonobject-has}
 
 This method returns true if the complex JSONObject has a property of the input name.
 
@@ -1604,6 +1632,7 @@ Dialog node output:
 Result: The condition is true because the user object contains the property `first_name`.
 
 ### JSONObject.remove(String)
+{: #dialog-methods-objects-jsonobject-remove}
 
 This method removes a property of the name from the input `JSONObject`. The `JSONElement` that is returned by this method is the `JSONElement` that is being removed.
 
@@ -1649,7 +1678,7 @@ Result:
 {: codeblock}
 
 ### com.google.gson.JsonObject support
-{: #dialog-methods-com.google.gson.JsonObject}
+{: #dialog-methods-objects-com-google-gson-JsonObject}
 
 In addition to the built-in methods, you can use standard methods of the `com.google.gson.JsonObject` class.
 
@@ -1663,6 +1692,7 @@ For information about how to recognize and extract certain types of Strings, suc
 **Note:** For methods that involve regular expressions, see [RE2 Syntax reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/google/re2/wiki/Syntax){: new_window} for details about the syntax to use when you specify the regular expression.
 
 ### String.append(Object)
+{: #dialog-methods-strings-append}
 
 This method appends an input object to the string as a string and returns a modified string.
 
@@ -1700,6 +1730,7 @@ Results in this output:
 {: codeblock}
 
 ### String.contains(String)
+{: #dialog-methods-strings-contains}
 
 This method returns true if the string contains the input substring.
 
@@ -1717,6 +1748,7 @@ This syntax:
 Results: The condition is `true`.
 
 ### String.endsWith(String)
+{: #dialog-methods-strings-endsWith}
 
 This method returns true if the string ends with the input substring.
 
@@ -1739,41 +1771,43 @@ This syntax:
 Results: The condition is `true`.
 
 ### String.extract(String regexp, Integer groupIndex)
+{: #dialog-methods-strings-extract}
 
-This method returns a string extracted by specified group index of the input regular expression.
+This method returns a string from the input that matches the regular expression group pattern that you specify. It returns an empty string if no match is found.
 
-For this input:
+This method is designed to extract matches for different regex pattern groups, not different matches for a single regex pattern. 
+{: note}
 
-```
-"Hello 123456".
-```
-{: codeblock}
-
-This syntax:
+In this example, the context variable is saving a string that matches the regex pattern group that you specify. In the expression, two regex patterns groups are defined, each one enclosed in parentheses. There is an inherent third group that is comprised of the two groups together. This is the first (groupIndex 0) regex group; it matches with a string that contains the full number group and text group together. The second regex group (groupIndex 1) matches with the first occurrence of a number group. The third group (groupIndex 2) matches with the first occurrence of a text group after a number group.
 
 ```json
 {
   "context": {
-    "number_extract": "<? input.text.extract('[\\d]+',0) ?>"
+    "number_extract": "<? input.text.extract('([\\d]+)(\\b [A-Za-z]+)',n) ?>"
   }
 }
 ```
 {: codeblock}
 
-  **Important:** To process `\\d` as the regular expression, you have to escape both the backslashes by adding another `\\`: `\\\\d`
+When you specify the regex in JSON, you must provide two backslashes (\\). If you specify this expression in a node response, you need one backslash only. For example: 
+
+`<? input.text.extract('([\d]+)(\b [A-Za-z]+)',n) ?>`
+
+Input:
+
+```
+"Hello 123 this is 456".
+```
+{: codeblock}
 
 Result:
 
-```json
-{
-  "context": {
-    "number_extract": "123456"
-  }
-}
-```
-{: codeblock}
+- When n=`0`, the value is `123 this`.
+- When n=`1`, the value is `123`.
+- When n=`2`, the value is `this`.
 
 ### String.find(String regexp)
+{: #dialog-methods-strings-find}
 
 This method returns true if any segment of the string matches the input regular expression.  You can call this method against a JSONArray or JSONObject element, and it will convert the array or object to a string before making the comparison.
 
@@ -1796,6 +1830,7 @@ This syntax:
 Result: The condition is true because the numeric portion of the input text matches the regular expression `^[^\d]*[\d]{6}[^\d]*$`.
 
 ### String.isEmpty()
+{: #dialog-methods-strings-isEmpty}
 
 This method returns true if the string is an empty string, but not null.
 
@@ -1822,6 +1857,7 @@ This syntax:
 Results: The condition is `true`.
 
 ### String.length()
+{: #dialog-methods-strings-length}
 
 This method returns the character length of the string.
 
@@ -1855,6 +1891,7 @@ Results in this output:
 {: codeblock}
 
 ### String.matches(String regexp)
+{: #dialog-methods-strings-matches}
 
 This method returns true if the string matches the input regular expression.
 
@@ -1877,6 +1914,7 @@ This syntax:
 Result: The condition is true because the input text matches the regular expression `\^Hello\$`.
 
 ### String.startsWith(String)
+{: #dialog-methods-strings-startsWith}
 
 This method returns true if the string starts with the input substring.
 
@@ -1899,6 +1937,7 @@ This syntax:
 Results: The condition is `true`.
 
 ### String.substring(Integer beginIndex, Integer endIndex)
+{: #dialog-methods-strings-substring}
 
 This method gets a substring with the character at `beginIndex` and the last character set to index before `endIndex`.
 The endIndex character is not included.
@@ -1937,6 +1976,7 @@ Results in this output:
 {: codeblock}
 
 ### String.toLowerCase()
+{: #dialog-methods-strings-toLowerCase}
 
 This method returns the original String converted to lowercase letters.
 
@@ -1970,6 +2010,7 @@ Results in this output:
 {: codeblock}
 
 ### String.toUpperCase()
+{: #dialog-methods-strings-toUpperCase}
 
 This method returns the original String converted to upper case letters.
 
@@ -2003,6 +2044,7 @@ Results in this output:
 {: codeblock}
 
 ### String.trim()
+{: #dialog-methods-strings-trim}
 
 This method trims any spaces at the beginning and the end of the string and returns the modified string.
 
@@ -2040,11 +2082,12 @@ Results in this output:
 {: codeblock}
 
 ### java.lang.String support
-{: #java.lang.String}
+{: #dialog-methods-strings-java-lang-String-format}
 
 In addition to the built-in methods, you can use standard methods of the `java.lang.String` class.
 
 #### java.lang.String.format()
+{: #dialog-methods-strings-java-lang-String-format}
 
 You can apply the standard Java String `format()` method to text. See [java.util.formatter reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax){: new_window} for information about the syntax to use to specify the format details.
 

@@ -358,7 +358,7 @@ To add a rich response, complete the following steps:
 
         If you want to display an image title and description above the embedded image in the response, then add them in the fields provided.
 
-        To access an image that is stored in {{site.data.keyword.cloud}} {{site.data.keyword.cos_short}}, enable public access to the individual image storage object, and then reference it by using an href with syntax like this: `https://s3.eu.cloud-object-storage.appdomain.cloud/your-bucket-name/image-name.png` 
+        To access an image that is stored in {{site.data.keyword.cloud}} {{site.data.keyword.cos_short}}, enable public access to the individual image storage object, and then reference it by specifying the image source with syntax like this: `https://s3.eu.cloud-object-storage.appdomain.cloud/your-bucket-name/image-name.png`.
 
         Slack integrations require a title. Other integration channels ignore titles or descriptions.
         {: note}
