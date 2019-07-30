@@ -66,7 +66,7 @@ The v2 runtime API sends messages to an assistant, which routes the messages to 
 
 After you have created an assistant, you can update your client application to use the v2 runtime API instead of the v1 runtime API.
 
-1. Before sending the first message in a conversation, use the v2 [**Create a session** ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant-v2#create-a-session) method to create a session. Save the returned session ID:
+1. Before sending the first message in a conversation, use the v2 [**Create a session**](https://cloud.ibm.com/apidocs/assistant-v2#create-a-session){: external} method to create a session. Save the returned session ID:
 
   ```javascript
   service
@@ -96,7 +96,7 @@ After you have created an assistant, you can update your client application to u
   {: codeblock}
   {: java}
 
-1. Use the v2 [**Send user input to assistant** ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant-v2#send-user-input-to-assistant) method to send user input to the assistant. Instead of specifying the workspace ID as you did with the v1 API, instead you specify the assistant ID and the session ID:
+1. Use the v2 [**Send user input to assistant**](https://cloud.ibm.com/apidocs/assistant-v2#send-user-input-to-assistant){: external} method to send user input to the assistant. Instead of specifying the workspace ID as you did with the v1 API, you specify the assistant ID and the session ID:
 
   ```javascript
   service
@@ -133,7 +133,7 @@ After you have created an assistant, you can update your client application to u
 
   The basic message structure has not changed; in particular, the user input is still sent as `input.text`.
 
-1. After a conversation ends, use the v2 [**Delete session** ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant-v2#delete-session) method to delete the session.
+1. After a conversation ends, use the v2 [**Delete session**](https://cloud.ibm.com/apidocs/assistant-v2#delete-session){: external} method to delete the session.
 
   ```javascript
   service
@@ -168,7 +168,7 @@ To see examples of the v2 APIs in the context of a simple client application, se
 
 ## Handle the v2 response format
 
-Your application might need to be updated to handle the v2 runtime response format. This depends on which parts of the response your application needs to access:
+Your application might need to be updated to handle the v2 runtime response format, depending on which parts of the response your application needs to access:
 
 - Output for all response types (such as `text` and `option`) are still returned in the `output.generic` object. Application code for handling these responses should work without modification.
 
@@ -182,7 +182,7 @@ Your application might need to be updated to handle the v2 runtime response form
 
   However, keep in mind that state data, including conversation context, is now maintained by the assistant, so your application might not need to access the context at all (see [Let the assistant maintain state](#api-migration-state)).
 
-Refer to the v2 [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant-v2#send-user-input-to-assistant) for complete documentation of the v2 response format.
+Refer to the v2 [API Reference ](https://cloud.ibm.com/apidocs/assistant-v2#send-user-input-to-assistant){: external} for complete documentation of the v2 response format.
 
 ## Let the assistant maintain state
 {: #api-migration-state}
