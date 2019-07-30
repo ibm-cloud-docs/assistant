@@ -81,6 +81,7 @@ Watson Assistant
         api-overview.md
         api-methods.md
         api-client.md
+        api-migration.md
         api-context.md
         api-dialog-responses.md
         api-dialog-modify.md
