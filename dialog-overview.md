@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-25"
+lastupdated: "2019-07-31"
 
 subcollection: assistant
 
@@ -459,14 +459,14 @@ To add a rich response, complete the following steps:
 
       This response type only returns a valid response if the assistant to which you added this dialog skill also has a search skill associated with it. Test this response type from the preview link or another assistant-level integration. You cannot test it from the dialog skill's "Try it out" pane.
 
-1.  Click **Add response** to add another response type to the current response.
+1.  Click **Add response type** to add another response type to the current response.
 
     You might want to add multiple response types to a single response to provide a richer answer to a user query. For example, if a user asks for store locations, you could show a map and display a button for each store location that the user can click to get address details. To build that type of response, you can use a combination of image, options, and text response types. Another example is using a text response type before a pause response type so you can warn users before pausing the dialog.
 
     You cannot add more than 5 response types to a single response. Meaning, if you define three conditional responses for a dialog node, each conditional response can have no more than 5 response types added to it.
     {: note}
 
-    A single dialog node cannot have more than one **Connect to human agent** or more than one **Search skill** response.
+    A single dialog node cannot have more than one **Connect to human agent** or more than one **Search skill** response type.
     {: note}
 
 1.  If you added more than one response type, you can click the **Move** up or down arrows to arrange the response types in the order you want your assistant to process them.

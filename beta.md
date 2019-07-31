@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-07-31"
 
 subcollection: assistant
 
@@ -37,5 +37,9 @@ The following features are available for use by participants in the beta program
 - The user interface of the tool was updated to use a new JavaScript library that increases the page responsiveness. As a result, the look of some graphical user interface elements, such as buttons, changed slightly, but the function did not.
 
 - Add webhooks to dialog nodes so you can make programmatic calls out to external applications as part of the conversational flow. For more information, see [Adding a webhook callout to a dialog node](/docs/services/assistant?topic=assistant-dialog-webhooks).
+
+- Add rich response types to dialog node slot prompts. For example, you can display a list of options for a user to choose from as the prompt for the slot. See [Adding rich responses to slots](dialog-slots-multimedia).
+
+- Try out the new irrelevant topic detection feature. When enabled, a supplemental model is used to help identify utterances that are irrelevant and should not be answered by the dialog skill. This new model is especially beneficial for skills that have not been trained on what subjects to ignore. For more information, see [Adding a webhook callout to a dialog node](/docs/services/assistant?topic=assistant-irrelevance-detection).
 
 - Add your assistant as a Zendesk Chat agent. See [Integrating with Zendesk Chat](/docs/services/assistant?topic=assistant-deploy-zendesk).

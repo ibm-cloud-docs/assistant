@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-07-30"
 
 subcollection: assistant
 
@@ -855,12 +855,12 @@ Follow the [tutorial](/docs/services/assistant?topic=assistant-tutorial-digressi
 
   For example, if the node with slots collects the information required to fill out an insurance claim, then you might want to add handlers that address common questions about insurance. However, for questions about how to get help, or your stores locations, or the history of your company, use a root level node.
 
-## Correcting user input ![Beta](images/beta.png)
+## Correcting user input
 {: #dialog-runtime-spell-check}
 
-Enable the *Autocorrection* beta feature to fix misspellings that users make in the utterances that they submit as user input. When autocorrection is enabled, the misspelled words are automatically corrected. And it is the corrected words that are used to evaluate the input. When given more precise input, your assistant can more often recognize entity mentions and understand the user's intent.
+Enable the *Autocorrection* feature to fix misspellings that users make in the utterances that they submit as user input. When autocorrection is enabled, the misspelled words are automatically corrected. And it is the corrected words that are used to evaluate the input. When given more precise input, your assistant can more often recognize entity mentions and understand the user's intent.
 
-Currently, this setting can be enabled for English-language dialog skills only.
+You can enable this setting for English-language dialog skills only. It is enabled automatically for new English-language dialog skills.
 {: note}
 
 With Autocorrection enabled, user input is corrected in the following way:

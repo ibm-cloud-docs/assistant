@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-07-29"
 
 subcollection: assistant
 
@@ -131,12 +131,16 @@ Queries you submit through the "Try it out" pane generate `/message` API calls, 
     ![Screen capture of training message](images/training.png)
 1.  Check the response to see if the dialog correctly interpreted your input and chose the appropriate response.
 
-    The chat window indicates what intents and entities were recognized in the input:
+    The chat window indicates what intents and entities were recognized in the input.
 
     ![Screen capture of test dialog output](images/test_dialog_output.png)
+
+    If you want to edit an entity that is recognized from the input, click the entity name to open it in the Entities page. If the wrong intent is recognized, you can click the arrow next to the intent name to correct it or mark the topic as irrelevant. For more information, see [Making training data improvements](/docs/services/assistant?topic=assistant-logs#logs-fix-data).
+
 1.  If you want to know which node in the dialog tree triggered a response, click the **Location** ![Location](images/location.png) icon next to it. If you are not already in the Dialog tab, open it.
 
     The source node is given focus and the route that your assistant traversed through the tree to get to it is highlighted. It remains highlighted until you perform another action, such as entering a new test input.
+
 1.  To check or set the value of a context variable, click the **Manage context** link.
 
     Any context variables that you defined in the dialog are displayed.
@@ -152,7 +156,7 @@ Queries you submit through the "Try it out" pane generate `/message` API calls, 
 
 1.  Continue to interact with the dialog to see how the conversation flows through it.
     - To find and resubmit a test utterance, you can press the Up key to cycle through your recent inputs.
-    - To remove prior test utterances from the chat pane and start over, click the **Clear** link. Not only are the test utterances and responses removed, but this action also clears the values of any context variables that were set as a result of your interactions with the dialog. Context variable values that you explicitly set or change are not cleared.
+    - To remove prior test utterances from the chat pane and start over, click the **Clear** link. Not only are the test utterances and responses removed, but this action also clears the values of any context variables that were set as a result of your interactions with the dialog.
 
 ### What to do next
 {: #dialog-build-next-steps}

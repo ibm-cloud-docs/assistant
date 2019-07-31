@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-07-29"
 
 subcollection: assistant
 
@@ -135,15 +135,22 @@ To share a dialog skill with other people, you must give them access to the serv
 1.  Make a note of the current instance name, which is displayed at the top of the current page.
 1.  Click the User ![User](images/user-icon2.png) icon in the page header, and select **Manage Users** from the drop-down.
 
-1.  Click **Invite users**, and then enter the email addresses of the people on your team to whom you want to give access.
+1.  From the navigation pane, click **Users**.
 
-    If you gave someone access to a service instance when it was managed by Cloud Foundry, then the person might be listed as an invited user already. Click the person's name to open the access management settings for the user. Click **Assign access**, and then choose **Assign access to resources**.
-1.  In the *Services* section, make the following selections at a minimum:
+    If you gave someone access to a service instance previously, then the person might be listed as an invited user already. To change the person's level of access to the instance, click the menu next to their name, choose **Assign access**, and then click **Assign access to resources**.
+    
+1.  Click **Invite users**. 
 
-    - **Services**: {{site.data.keyword.conversationshort}}
-    - **Assign platform access roles**: Operator
+1.  In the *Services* section, choose the {{site.data.keyword.conversationshort}} service.
 
-    For more information about platform management roles, see [IAM access ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/iam?topic=iam-userroles). (Service access roles are not leveraged by {{site.data.keyword.conversationshort}} by default.)
+1.  Select at least one region and at least one service instance to share with this user.
+
+1.  Give this user the following assignments at a minimum:
+ 
+    - **Platform access roles**: Operator
+    - **Service access roles**: Writer
+
+    For more information about roles, see [IAM access ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/iam?topic=iam-userroles).
 
     For older instances that are managed by Cloud Foundry, you must expand the *Cloud Foundry access* section, choose your organization, and then assign the person to the **Developer** space role.
     {: note}
