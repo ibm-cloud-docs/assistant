@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-08"
+lastupdated: "2019-07-31"
 
 subcollection: assistant
 
@@ -26,7 +26,7 @@ subcollection: assistant
 # Gathering information with slots
 {: #dialog-slots}
 
-Add slots to a dialog node to gather multiple pieces of information from a user within that node. Slots collect information at the users' pace. Details the user provides upfront are saved, and your assistant asks only for the details they do not.
+Add slots to a dialog node to gather multiple pieces of information from a user within that node. Slots collect information at the user's pace. Details that a user provides up front are saved, and your assistant asks only for the missing details it needs to fulfill the request.
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Adding slots to a node" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/kMLyKfmO9wI?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 

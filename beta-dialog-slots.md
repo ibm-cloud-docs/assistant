@@ -26,7 +26,7 @@ subcollection: assistant
 # Adding rich responses to slots
 {: #dialog-slots-multimedia}
 
-Add slots to a dialog node to gather multiple pieces of information from a user within that node. Slots collect information at the users' pace. Details that users provide upfront are saved, and your assistant asks only for the missing details it needs to fulfill the request. 
+Add slots to a dialog node to gather multiple pieces of information from a user within that node. Slots collect information at the user's pace. Details that a user provides up front are saved, and your assistant asks only for the missing details it needs to fulfill the request. 
 
 This feature is available for use by participants in the beta program only. To find out how to request access, see [Participate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
 {: preview}

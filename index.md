@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-30"
+lastupdated: "2019-07-31"
 
 keywords: omnichannel
 
@@ -74,7 +74,7 @@ Here's how you implement your assistant:
 
   - **Add a search skill**. ![Plus or Premium plan only](images/plus.png)
 
-    Leverage data collections that you create in {{site.data.keyword.discoveryfull}} to provide answers to customer questions. When a customer asks a question that the dialog is not designed to answer, your assistant can search for relevant information from the configured data sources, extract the information, and return it as the assistant's response.
+    Take advantage of data collections that you create in {{site.data.keyword.discoveryfull}} to provide answers to customer questions. When a customer asks a question that the dialog is not designed to answer, your assistant can search for relevant information from the configured data sources, extract the information, and return it as the assistant's response.
 
 - **Integrate your assistant.** Create a channel integration to deploy the configured assistant directly to a social media or messaging channel.
 

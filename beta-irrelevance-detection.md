@@ -26,7 +26,7 @@ subcollection: assistant
 # Beta: New irrelevant topic detection
 {: #irrelevance-detection}
 
-Enable the new irrelevant topic detection feature to help your dialog skill recognize when a user asks about topics that it is not designed to answer. And do so with confidence earlier in the development process.
+Enable the new irrelevant topic detection feature to help your dialog skill recognize when a user asks about topics that it is not designed to answer, and to do so with confidence earlier in the development process.
 {: shortdesc}
 
 This feature is available for use by participants in the beta program only. To find out how to request access, see [Participate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
