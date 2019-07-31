@@ -36,7 +36,7 @@ Use {{site.data.keyword.conversationfull}} to build your own branded assistant i
 
 This diagram shows the overall architecture:
 
-![Flow diagram of the service](images/arch-overview-search.png)
+![Flow diagram of the service](images/arch-overview-search0.png)
 
 - Users interact with the assistant through one or more of these **integration** points:
 
