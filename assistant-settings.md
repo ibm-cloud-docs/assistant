@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-12"
+lastupdated: "2019-07-29"
 
 subcollection: assistant
 
@@ -22,7 +22,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Changing the inactivity timeout setting ![Plus or Premium plan only](images/premium.png)
+# Changing the inactivity timeout setting ![Plus or Premium plan only](images/plus.png)
 {: #assistant-settings}
 
 When a user interacts with your assistant through one of the built-in integrations, the chat session ends after a specific period of time passes in which the user does not interact with the assistant. You can specify the amount of time to wait before a chat session is reset by changing the inactivity timeout setting.

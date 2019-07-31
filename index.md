@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-24"
+lastupdated: "2019-07-30"
 
 keywords: omnichannel
 
@@ -36,7 +36,7 @@ Use {{site.data.keyword.conversationfull}} to build your own branded assistant i
 
 This diagram shows the overall architecture:
 
-![Flow diagram of the service](images/arch-overview.png)
+![Flow diagram of the service](images/arch-overview-search.png)
 
 - Users interact with the assistant through one or more of these **integration** points:
 
@@ -54,19 +54,27 @@ Here's how you implement your assistant:
 
 - **Create an assistant**.
 
-- **Add a dialog skill to your assistant**. Use the intuitive graphical product to define the training data and dialog for the conversation between your assistant and your customers.
+- **Add a skill to your assistant**.
 
-  The training data consists of the following artifacts:
+  Depending on your service plan, you can add the following types of skills:
 
-  - **Intents**: Goals that you anticipate your users have when they interact with your assistant. Define one intent for each goal that can be identified in a user's input. For example, you might define an intent that is named *store_hours* that answers questions about store hours. For each intent, you add sample utterances that reflect the input customers might use to ask for the information they need, such as, `What time do you open?`
+  - **Add a dialog skill**.  
+  
+    Use the intuitive graphical product to define the training data and dialog for the conversation between your assistant and your customers. The training data consists of the following artifacts:
 
-    Or use prebuilt **content catalogs** that are provided by IBM to get started with data that addresses common customer goals.
+    - **Intents**: Goals that you anticipate your users have when they interact with your assistant. Define one intent for each goal that can be identified in a user's input. For example, you might define an intent that is named *store_hours* that answers questions about store hours. For each intent, you add sample utterances that reflect the input customers might use to ask for the information they need, such as, `What time do you open?`
 
-  - **Dialog**: Use the dialog editor to build a dialog flow that incorporates your intents. The dialog flow is represented graphically as a tree. You can add a branch to process each of the intents that you want your assistant to handle.
+      Or use prebuilt **content catalogs** that are provided by IBM to get started with data that addresses common customer goals.
 
-  - **Entities**: An entity represents a term or object that provides context for an intent. For example, an entity might be a city name that helps your dialog to distinguish which store the user wants to know store hours for. After you add entities, update your dialog to use them. Add dialog nodes that handle the many possible permutations of a request based on the entities that are found in the user input.
+    - **Dialog**: Use the dialog editor to build a dialog flow that incorporates your intents. The dialog flow is represented graphically as a tree. You can add a branch to process each of the intents that you want your assistant to handle.
+
+    - **Entities**: An entity represents a term or object that provides context for an intent. For example, an entity might be a city name that helps your dialog to distinguish which store the user wants to know store hours for. After you add entities, update your dialog to use them. Add dialog nodes that handle the many possible permutations of a request based on the entities that are found in the user input.
 
     As you add training data, a natural language classifier is automatically added to the skill. The classifier model is trained to understand the types of requests that you teach your assistant to listen for and respond to.
+
+  - **Add a search skill**. ![Plus or Premium plan only](images/plus.png)
+
+    Leverage data collections that you create in {{site.data.keyword.discoveryfull}} to provide answers to customer questions. When a customer asks a question that the dialog is not designed to answer, your assistant can search for relevant information from the configured data sources, extract the information, and return it as the assistant's response.
 
 - **Integrate your assistant.** Create a channel integration to deploy the configured assistant directly to a social media or messaging channel.
 
@@ -75,6 +83,7 @@ Here's how you implement your assistant:
 Read more about these implementation steps by following these links:
 
 - [Assistant overview](/docs/services/assistant?topic=assistant-assistants)
+- [Search skill overview](/docs/services/assistant?topic=assistant-skill-add-search)
 - [Intent creation overview](/docs/services/assistant?topic=assistant-intents#intents-described)
 - [Dialog overview](/docs/services/assistant?topic=assistant-dialog-overview)
 - [Entity creation overview](/docs/services/assistant?topic=assistant-entities#entities-described)
