@@ -144,7 +144,7 @@ After you have created an assistant, you can update your client application to u
     })
   ```
   {: codeblock}
-  {: java}
+  {: javascript}
 
   ```python
   service.delete_session(
