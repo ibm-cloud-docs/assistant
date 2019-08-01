@@ -56,9 +56,6 @@ The following new features and changes to {{site.data.keyword.conversationshort}
 ## 31 July 2019
 {: #31July2019}
 
-The following updates are available in all locations except Dallas currently.
-{: important}
-
 - **Search skill and autocorrection are generally available**: The search skill and spelling autocorrection features, which were previously available as beta features, are now generally available. 
 
   - Search skills can be created by users of Plus or Premium plans only. 
