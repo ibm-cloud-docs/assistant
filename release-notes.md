@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-08-01"
 
 subcollection: assistant
 
@@ -63,8 +63,6 @@ The following updates are available in all locations except Dallas currently.
 
   - Search skills can be created by users of Plus or Premium plans only. 
   - You can enable autocorrection for English-language dialog skills only. It is enabled automatically for new English-language dialog skills.
-
-- **Improved dialog page responsiveness**: In all service instances, the user interface of the Dialog page was updated to use a new JavaScript library that increases the page responsiveness. As a result, the look of some graphical user interface elements, such as buttons, changed slightly, but the function did not.
 
 ## 26 July 2019
 {: #26July2019}

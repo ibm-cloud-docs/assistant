@@ -90,7 +90,6 @@ Watson Assistant
     Beta features
         beta.md
         beta-dialog-webhooks.md
-        beta-irrelevance-detection.md
         beta-deploy-zendesk.md
     {: .navgroup-end}
 
