@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-08-01"
 
 keywords: omnichannel
 
@@ -36,7 +36,7 @@ Use {{site.data.keyword.conversationfull}} to build your own branded assistant i
 
 This diagram shows the overall architecture:
 
-![Flow diagram of the service](images/arch-overview-search0.png)
+![Flow diagram of the service](images/arch-overview-search.png)
 
 - Users interact with the assistant through one or more of these **integration** points:
 

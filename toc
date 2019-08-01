@@ -34,7 +34,8 @@ Watson Assistant
         dialog-build.md
         dialog-tips.md
         dialog-slots.md
-        dialog-actions.md
+        dialog-webhooks.md
+        dialog-actions-client.md
         dialog-responses-json.md
         dialog-depiction.md
 
