@@ -53,6 +53,16 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 The following new features and changes to {{site.data.keyword.conversationshort}} are available. Check out our [blog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/assistant/home) to find in-depth information about how the newest features can benefit your business.
 
+## 1 August 2019
+{: #1August2019}
+
+The following updates are available in all locations except Dallas currently.
+{: important}
+
+- **Webhook callouts are available ![Beta](images/beta.png)**: Add webhooks to dialog nodes to make programmatic calls to an external application as part of the conversational flow. The new Webhook support is a beta feature that simplifies the callout implementation process. (No more `action` JSON objects required.) For more information, see [Making a programmatic call from a dialog node](/docs/services/assistant?topic=assistant-dialog-webhooks).
+
+- **Improved dialog page responsiveness**: In all service instances, the user interface of the Dialog page was updated to use a new JavaScript library that increases the page responsiveness. As a result, the look of some graphical user interface elements, such as buttons, changed slightly, but the function did not.
+
 ## 31 July 2019
 {: #31July2019}
 
