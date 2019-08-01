@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-08"
+lastupdated: "2019-08-01"
 
 subcollection: assistant
 
@@ -44,7 +44,7 @@ The following diagram illustrates how you can use a client call to get weather f
 
 ![Shows someone asking for a weather forecast, the dialog sending a request to a client app, which sends it to the external service](images/forecast.png)
 
-Note that the client action calls the `MyWeatherFunction` program, which is a program that the client application runs. The client application makes the call to the external web service (`/weather`) to get the actual forecast information. The client application then returns the response to the dialog. When you add a client action to a dialog, a client application must exist that either does the processing itself or that passes information between your dialog and any external backend services that you want to use.
+Note that the client action calls the `MyWeatherFunction` program, which is a program that the client application runs. The client application makes the call to the external web service (`/weather`) to get the actual forecast information. The client application then returns the response to the dialog. When you add a client action to a dialog, a client application must exist that either does the processing itself or that passes information between your dialog and any external back-end services that you want to use.
 
 ## Procedure
 {: #dialog-actions-client-call}
