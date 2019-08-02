@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-08-02"
 
 subcollection: assistant
 
@@ -187,8 +187,6 @@ If you include one of these special characters in a text response, escape it by 
 | `@` | Entity | `Send us your feedback at feedback\@example.com.` |
 {: caption="Special characters to escape in responses" caption-side="top"}
 
-HTML syntax is not supported in responses. 
-
 The built-in integrations support the following Markdown syntax elements:
 
 | Format | Syntax | Example |
@@ -198,8 +196,9 @@ The built-in integrations support the following Markdown syntax elements:
 | Hypertext link | `Contact us at [ibm.com](https://www.ibm.com).` | Contact us at [ibm.com](https://www.ibm.com). |
 {: caption="Supported markdown syntax" caption-side="top"}
 
-The "Try it out" pane does not support Markdown syntax currently. You can test the dialog from the Preview link integration to see how the Markdown syntax is rendered.
-{: note}
+The "Try it out" pane does not support Markdown syntax currently. The Preview link integration does, so you can test the dialog in the preview web page to see how the Markdown syntax is rendered.
+
+The "Try it out" pane and Preview link integration support HTML syntax. The Slack and Facebook integrations do not. 
 
 #### Learn more about simple responses
 {: #dialog-overview-variety}
