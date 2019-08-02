@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-08-02"
 
 subcollection: assistant
 
@@ -74,5 +74,9 @@ When Watson Assistant doesn't have an explicit solution to a problem, it routes 
 If you already use the {{site.data.keyword.discoveryshort}} service, you can mine your existing data collections for source material that you can share with customers to address their questions.
 
 However, you do not need to have a {{site.data.keyword.discoveryshort}} service instance. If you choose to create a search skill, a free instance of {{site.data.keyword.discoveryshort}} is provisioned for you. You can then create a collection from a data source and configure your search skill to search this collection to find answers to customer queries.
+
+The following diagram illustrates how user input is processed when both a dialog skill and a search skill are added to an assistant. Any questions that the dialog is not designed to answer are sent to the search skill, which finds a relevant response from a {{site.data.keyword.discoveryshort}} data collection.
+
+![Diagram of how a question gets routed to the search skill.](images/search-skill-diagram.png)
 
 For help creating a search skill, see [Creating a search skill](/docs/services/assistant?topic=assistant-skill-search-add).
