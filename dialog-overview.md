@@ -198,7 +198,7 @@ The built-in integrations support the following Markdown syntax elements:
 | Hypertext link | `Contact us at [ibm.com](https://www.ibm.com).` | Contact us at [ibm.com](https://www.ibm.com). |
 {: caption="Supported markdown syntax" caption-side="top"}
 
-The "Try it out" pane does not render Markdown syntax currently.
+The "Try it out" pane does not support Markdown syntax currently. You can test the dialog from the Preview link integration to see how the markdown syntax is rendered.
 {: note}
 
 #### Learn more about simple responses
