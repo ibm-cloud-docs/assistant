@@ -34,8 +34,10 @@ subcollection: assistant
 The following features are available for use by participants in the beta program only. To find out how to request access, see [Participate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
 {: preview}
 
-- The user interface of the tool was updated to use a new JavaScript library that increases the page responsiveness. As a result, the look of some graphical user interface elements, such as buttons, changed slightly, but the function did not.
+- The user interface of the Entities page was updated to use a new JavaScript library that increases the page responsiveness. As a result, the look of some graphical user interface elements, such as buttons, changed slightly, but the function did not.
 
-- Add webhooks to dialog nodes so you can make programmatic calls out to external applications as part of the conversational flow. For more information, see [Adding a webhook callout to a dialog node](/docs/services/assistant?topic=assistant-dialog-webhooks).
+- Add webhooks to dialog nodes so you can make programmatic calls out to external applications as part of the conversational flow. For more information, see [Adding a webhook callout to a dialog node](/docs/services/assistant?topic=assistant-dialog-webhooks). This feature is in closed beta only for instances hosted in Dallas.
 
 - Add your assistant as a Zendesk Chat agent. See [Integrating with Zendesk Chat](/docs/services/assistant?topic=assistant-deploy-zendesk).
+
+- Try out the new irrelevant topic detection feature. When enabled, a supplemental model is used to help identify utterances that are irrelevant and should not be answered by the dialog skill. This new model is especially beneficial for skills that have not been trained on what subjects to ignore. For more information, see [Adding a webhook callout to a dialog node](/docs/services/assistant?topic=assistant-irrelevance-detection).

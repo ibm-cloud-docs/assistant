@@ -22,7 +22,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Calling a client application from a dialog node ![BETA](images/beta.png)
+# Calling a client application ![BETA](images/beta.png)
 {: #dialog-actions-client}
 
 Add a client action to your dialog node that pauses the dialog so a client-side process can run and return a result as part of the processing that occurs within a dialog turn.
