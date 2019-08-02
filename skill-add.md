@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-08-02"
 
 subcollection: assistant
 
@@ -32,10 +32,10 @@ You can create the following type of skill:
 
 - **Dialog skill**: Uses Watson natural language processing and machine learning technologies to understand user questions and requests, and respond to them with answers that are authored by you.
 
-![Plus or Premium plan only](images/plus.png) If you are a Plus or Premium plan user, you can also create this type of skill:
+- **Search skill** ![Plus or Premium plan only](images/plus.png): For a given user query, uses the {{site.data.keyword.discoveryfull}} service to search a data source of your self-service content and return an answer.
 
-- **Search skill**: For a given user query, uses the {{site.data.keyword.discoveryfull}} service to search a data source of your self-service content and return an answer.
-
+  Only users of Plus or Premium plans can create this type of skill.
+  
   Typically, you create a skill of each type first. Then, as you build a dialog for the dialog skill, you decide when to initiate the search skill. For some questions or requests, a hard-coded or programmatically-derived response (that is defined in the dialog skill) is sufficient. For others, you might want to provide a more robust response by returning a full passage of related information (that is extracted from an external data source by using the search skill).
 
 ## Create the skill
@@ -47,9 +47,7 @@ To create a skill, complete the following step:
 
 1.  Click the **Skills** tab, and then click **Create skill**.
 
-    - ![Plus or Premium plan only](images/plus.png) Only if you are a Plus or Premium plan user, a page is displayed that gives you a choice of the type of skill to create: a dialog skill or a search skill. Select the dialog skill tile, and then click **Next**.
-
-    - If you have a Lite or Standard plan, you will not see a page that gives you the option of skill types to create.
+1.  Choose the type of skill to create, and then click **Next**.
 
     Follow the remaining steps in the appropriate procedure to complete the skill creation process.
 

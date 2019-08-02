@@ -30,8 +30,8 @@ Watson Assistant
     {: .topicgroup}
     Creating a dialog
         dialog-overview.md
-        dialog-runtime.md
         dialog-build.md
+        dialog-runtime.md
         dialog-tips.md
         dialog-slots.md
         dialog-webhooks.md
