@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-29"
+lastupdated: "2019-08-02"
 
 subcollection: assistant
 
@@ -39,9 +39,7 @@ To add a skill, complete the following steps:
 
 1.  Click the **Skills** tab, and then click **Create skill**.
 
-1.  ![Plus or Premium plan only](images/plus.png) If you are a Plus or Premium plan user, select the *Dialog skill* tile, and then click **Next**.
-
-    If you are a Lite or Standard plan user, skip this step.
+1.  Click the *Dialog skill* tile, and then click **Next**.
 
 1.  Take one of the following actions:
 

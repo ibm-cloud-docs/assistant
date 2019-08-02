@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-30"
+lastupdated: "2019-08-02"
 
 subcollection: assistant
 
@@ -67,10 +67,10 @@ If you create a Discovery instance first, do not add the pre-enriched data sourc
 
 1.  Click the **Skills** tab, and then click **Create skill**.
 
-    For Premium or Plus plan users only, a page is displayed where you can choose the type of skill you want to create. If you have a Lite or Standard service plan type, the page is not displayed.
-    {: note}
-
 1.  Click the *Search skill* tile, and then click **Next**.
+
+    You can only select the Search skill if you are a Plus or Premium plan user.
+    {: note}
 
 1.  Specify the details for the new skill:
     - **Name**: A name no more than 100 characters in length. A name is required.
