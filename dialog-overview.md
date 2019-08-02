@@ -187,16 +187,18 @@ If you include one of these special characters in a text response, escape it by 
 | `@` | Entity | `Send us your feedback at feedback\@example.com.` |
 {: caption="Special characters to escape in responses" caption-side="top"}
 
+HTML syntax is not supported in responses. 
+
 The built-in integrations support the following Markdown syntax elements:
 
 | Format | Syntax | Example |
 |------------|--------|---------|
 | Italics | `We're talking about *practice*.` | We're talking about *practice*. |
 | Bold | `There's **no** crying in baseball.` | There's **no** crying in baseball. |
-| Hypertext link | `Contact us at [ibm.com](https://www.ibm.com).` | Contact us at [ibm.com ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com). |
+| Hypertext link | `Contact us at [ibm.com](https://www.ibm.com).` | Contact us at [ibm.com](https://www.ibm.com). |
 {: caption="Supported markdown syntax" caption-side="top"}
 
-The "Try it out" pane does not support Markdown syntax currently. To include a link that is rendered in the "Try it out" pane and Preview link integration only, you can use HTML syntax. For example: `Contact us at <a href="https://www.ibm.com">ibm.com</a>.` (Do *not* try to escape the quotations mark with a backslash `\"`, for example.) However, HTML syntax is not supported by any of the other built-in integrations.
+The "Try it out" pane does not render Markdown syntax currently.
 {: note}
 
 #### Learn more about simple responses
