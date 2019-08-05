@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-01"
+lastupdated: "2019-08-05"
 
 subcollection: assistant
 
@@ -59,7 +59,7 @@ The following new features and changes to {{site.data.keyword.conversationshort}
 The following updates are available in all locations except Dallas currently.
 {: important}
 
-- **Webhook callouts are available: Add webhooks to dialog nodes to make programmatic calls to an external application as part of the conversational flow. The new Webhook support simplifies the callout implementation process. (No more `action` JSON objects required.) For more information, see [Making a programmatic call from a dialog node](/docs/services/assistant?topic=assistant-dialog-webhooks).
+- **Webhook callouts are available**: Add webhooks to dialog nodes to make programmatic calls to an external application as part of the conversational flow. The new Webhook support simplifies the callout implementation process. (No more `action` JSON objects required.) For more information, see [Making a programmatic call from a dialog node](/docs/services/assistant?topic=assistant-dialog-webhooks).
 
 - **Improved dialog page responsiveness**: In all service instances, the user interface of the Dialog page was updated to use a new JavaScript library that increases the page responsiveness. As a result, the look of some graphical user interface elements, such as buttons, changed slightly, but the function did not.
 
