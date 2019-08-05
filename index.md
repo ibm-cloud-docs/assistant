@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-01"
+lastupdated: "2019-08-05"
 
 keywords: omnichannel
 
@@ -34,9 +34,9 @@ Use {{site.data.keyword.conversationfull}} to build your own branded assistant i
 ## How it works
 {: #index-how-it-works}
 
-This diagram shows the overall architecture:
+This diagram illustrates how the product works:
 
-![Flow diagram of the service](images/arch-overview-search.png)
+![Flow diagram of the service](images/simple-overview.png)
 
 - Users interact with the assistant through one or more of these **integration** points:
 
@@ -45,7 +45,9 @@ This diagram shows the overall architecture:
 
 - The **assistant** receives user input and routes it to the dialog skill.
 
-- The dialog **skill** interprets the user input further, then directs the flow of the conversation. The dialog gathers any information it needs to respond or perform a transaction on the user's behalf.
+- The **dialog skill** interprets the user input further, then directs the flow of the conversation. The dialog gathers any information it needs to respond or perform a transaction on the user's behalf.
+
+- Any questions that cannot be answered by the dialog skill are sent to the **search skill**, which finds relevant answers by searching the company knowledge bases that you configure for the purpose.
 
 ## Implementation
 {: #index-implementation}
@@ -79,6 +81,10 @@ Here's how you implement your assistant:
 - **Integrate your assistant.** Create a channel integration to deploy the configured assistant directly to a social media or messaging channel.
 
   Your deployed assistant is hosted by {{site.data.keyword.cloud}}, the IBM cloud computing platform. (For more information, see [Platform overview](/docs/overview/ibm-cloud#overview){: external}.)
+
+This diagram shows the implementation in more detail:
+
+![Flow diagram of the service](images/arch-overview-search.png)
 
 Read more about these implementation steps by following these links:
 
