@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-02"
+lastupdated: "2019-08-06"
+
+keywords: import workspace, import JSON, export JSON
 
 subcollection: assistant
 

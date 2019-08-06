@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-08"
+lastupdated: "2019-08-06"
+
+keywords: system entity, sys-number, sys-date, sys-time
 
 subcollection: assistant
 
@@ -25,12 +27,14 @@ subcollection: assistant
 # System entity details
 {: #system-entities}
 
-This reference section provides complete information about the available system entities. For more information about how to use them, see [Creating entities](/docs/services/assistant?topic=assistant-entities#entities-enable-system-entities).
+Learn about system entities that are provided by IBM for you to use out of the box. These built-in utility entities help your assistant recognize terms and references that are commonly used by customers in conversation, such as numbers and dates. 
 {: shortdesc}
 
 System entities are available for languages noted in the [Supported languages](/docs/services/assistant?topic=assistant-language-support) topic.
 
 If your dialog skill is in English or German, you can try out the updated system entities. For more details, see [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities).
+
+For more information about how to use them, see [Creating entities](/docs/services/assistant?topic=assistant-entities#entities-enable-system-entities).
 
 ## @sys-currency entity
 {: #system-entities-sys-currency}

@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-30"
+lastupdated: "2019-08-06"
+
+keywords: context, context variable, digression, disambiguation, autocorrection, spelling correction, spell check, confidence 
 
 subcollection: assistant
 
