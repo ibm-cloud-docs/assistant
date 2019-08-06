@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-08-06"
+
+keywords: slot, slots
 
 subcollection: assistant
 

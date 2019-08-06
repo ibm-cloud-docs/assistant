@@ -4,7 +4,7 @@ copyright:
   years: 2015, 2019
 lastupdated: "2019-08-06"
 
-keywords: assistant
+keywords: assistant, omnichannel, virtual agent, virtual assistant, chatbot, conversation, watson assistant, watson conversation
 
 subcollection: assistant
 
@@ -33,7 +33,7 @@ subcollection: assistant
 # Getting started with {{site.data.keyword.conversationshort}}
 {: #getting-started}
 
-In this short tutorial, we introduce {{site.data.keyword.conversationshort}} and walk you through the process of creating your first assistant.
+In this short tutorial, we introduce {{site.data.keyword.conversationfull}} and walk you through the process of creating your first assistant.
 {: shortdesc}
 
 ## Before you begin
