@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-08"
+lastupdated: "2019-08-06"
 
 ---
 
@@ -26,9 +26,6 @@ lastupdated: "2019-07-08"
 To make a programmatic call, define a webhook that sends a POST request callout to an external application that performs a programmatic function. You can then invoke the webhook from one or more dialog nodes.
 
 A webhook is a mechanism that allows you to call out to an external program based on something happening in your program. When used in a dialog skill, a webhook is triggered when the assistant processes a node that has a webhook enabled. The webhook collects data that you specify or that you collect from the user during the conversation and save in context variables. It sends the data as part of a HTTP POST request to the URL that you specify as part of your webhook definition. The URL that receives the webhook is the listener. It performs a predefined action using the information that you pass to it as specified in the webhook definition, and can optionally return a response.
-
-This feature is not available in service instances that are hosted in Dallas currently. But, you can join the beta program to try them out. See [Participate in the beta program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
-{: note}
 
 You can use a webhook to do the following types of things:
 
