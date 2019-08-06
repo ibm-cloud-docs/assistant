@@ -2,9 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-05"
+lastupdated: "2019-08-06"
 
-keywords: omnichannel
+keywords: omnichannel, virtual agent, virtual assistant, chatbot, conversation
 
 subcollection: assistant
 
@@ -52,6 +52,10 @@ This diagram illustrates how the product works:
 ## Implementation
 {: #index-implementation}
 
+This diagram shows the implementation in more detail:
+
+![Flow diagram of the service](images/arch-overview-search.png)
+
 Here's how you implement your assistant:
 
 - **Create an assistant**.
@@ -78,13 +82,9 @@ Here's how you implement your assistant:
 
     Take advantage of data collections that you create in {{site.data.keyword.discoveryfull}} to provide answers to customer questions. When a customer asks a question that the dialog is not designed to answer, your assistant can search for relevant information from the configured data sources, extract the information, and return it as the assistant's response.
 
-- **Integrate your assistant.** Create a channel integration to deploy the configured assistant directly to a social media or messaging channel.
+- **Integrate your assistant.** Add a built-in channel integration to deploy the configured assistant directly to a social media or messaging channel. Or build your own client application as the user interface for the assistant.
 
   Your deployed assistant is hosted by {{site.data.keyword.cloud}}, the IBM cloud computing platform. (For more information, see [Platform overview](/docs/overview/ibm-cloud#overview){: external}.)
-
-This diagram shows the implementation in more detail:
-
-![Flow diagram of the service](images/arch-overview-search.png)
 
 Read more about these implementation steps by following these links:
 
