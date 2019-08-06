@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-05"
+lastupdated: "2019-08-06"
 
 subcollection: assistant
 
@@ -52,6 +52,11 @@ Existing models that you have trained will not be immediately impacted, but expi
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
 The following new features and changes to {{site.data.keyword.conversationshort}} are available. Check out our [blog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/assistant/home) to find in-depth information about how the newest features can benefit your business.
+
+## 6 August 2019
+{: #6August2019}
+
+- Webhook callouts and Dialog page improvements are available in Dallas.
 
 ## 1 August 2019
 {: #1August2019}
