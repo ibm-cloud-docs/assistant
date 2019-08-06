@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-24"
+lastupdated: "2019-08-05"
 
 subcollection: assistant
 
@@ -101,7 +101,7 @@ You cannot edit a saved version. To achieve the same goal, you can use a saved v
     Save a version of the skill now. Otherwise, your work will be lost when you follow these steps.
     {: important}
 
-1.  From the version you want to edit, click the **Skill actions** ![Skill actions](images/kebab-react.png) icon, and then choose **Copy to development** and confirm the action.
+1.  From the version you want to edit, click the **Skill actions** ![Skill actions](images/kebab-react.png) icon, and then choose **Revert to this version** and confirm the action.
 
     The page refreshes to revert to the state that the skill was in when the version was created.
 
