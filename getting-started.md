@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-26"
+lastupdated: "2019-08-06"
+
+keywords: assistant
 
 subcollection: assistant
 
@@ -28,7 +30,7 @@ subcollection: assistant
 {:download: .download}
 {:gif: data-image-type='gif'}
 
-# Getting started tutorial
+# Getting started with {{site.data.keyword.conversationshort}}
 {: #getting-started}
 
 In this short tutorial, we introduce {{site.data.keyword.conversationshort}} and walk you through the process of creating your first assistant.

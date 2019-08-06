@@ -38,6 +38,6 @@ The following features are available for use by participants in the beta program
 
 - Add your assistant as a Zendesk Chat agent. See [Integrating with Zendesk Chat](/docs/services/assistant?topic=assistant-deploy-zendesk).
 
-- Try out the new irrelevant topic detection feature. When enabled, a supplemental model is used to help identify utterances that are irrelevant and should not be answered by the dialog skill. This new model is especially beneficial for skills that have not been trained on what subjects to ignore. For more information, see [Adding a webhook callout to a dialog node](/docs/services/assistant?topic=assistant-irrelevance-detection).
+- Try out the new irrelevant topic detection feature. When enabled, a supplemental model is used to help identify utterances that are irrelevant and should not be answered by the dialog skill. This new model is especially beneficial for skills that have not been trained on what subjects to ignore. For more information, see [New irrelevant topic detection](/docs/services/assistant?topic=assistant-irrelevance-detection).
 
 - Add rich response types to dialog node slot prompts. For example, you can display a list of options for a user to choose from as the prompt for the slot. See [Adding rich responses to slots](dialog-slots-multimedia).
