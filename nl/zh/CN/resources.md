@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-11-08"
+lastupdated: "2018-08-07"
 
 subcollection: assistant
 
@@ -69,7 +69,7 @@ IBM 员工创建的其他视频。
 ## IBM Watson 学院
 {: #resources-academy}
 
-- [{{site.data.keyword.conversationshort}} Foundations ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.watson-academy.info/course/view.php?id=273){: new_window}
+- [{{site.data.keyword.conversationshort}} Foundations ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://ibm.com/training/watsonacademy){: new_window}
 
 ## 博客
 {: #resources-blogs}

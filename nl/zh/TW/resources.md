@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-11-08"
+lastupdated: "2018-08-07"
 
 subcollection: assistant
 
@@ -69,7 +69,7 @@ subcollection: assistant
 ## IBM Watson Academy
 {: #resources-academy}
 
-- [{{site.data.keyword.conversationshort}} 基礎 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.watson-academy.info/course/view.php?id=273){: new_window}
+- [{{site.data.keyword.conversationshort}} 基礎 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://ibm.com/training/watsonacademy){: new_window}
 
 ## 部落格
 {: #resources-blogs}

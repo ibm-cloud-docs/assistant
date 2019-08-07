@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-11-08"
+lastupdated: "2018-08-07"
 
 subcollection: assistant
 
@@ -69,7 +69,7 @@ Video aggiuntivi creati da dipendenti IBM.
 ## IBM Watson Academy
 {: #resources-academy}
 
-- [{{site.data.keyword.conversationshort}} Foundations ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www.watson-academy.info/course/view.php?id=273){: new_window}
+- [{{site.data.keyword.conversationshort}} Foundations ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://ibm.com/training/watsonacademy){: new_window}
 
 ## Blog 
 {: #resources-blogs}
