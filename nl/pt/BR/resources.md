@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-11-08"
+lastupdated: "2018-08-07"
 
 subcollection: assistant
 
@@ -69,7 +69,7 @@ Vídeos adicionais criados por IBMistas.
 ## IBM Watson Academy
 {: #resources-academy}
 
-- [Bases do {{site.data.keyword.conversationshort}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.watson-academy.info/course/view.php?id=273){: new_window}
+- [Bases do {{site.data.keyword.conversationshort}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://ibm.com/training/watsonacademy){: new_window}
 
 ## Blogs
 {: #resources-blogs}

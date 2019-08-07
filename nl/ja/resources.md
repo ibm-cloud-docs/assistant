@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-11-08"
+lastupdated: "2018-08-07"
 
 subcollection: assistant
 
@@ -69,7 +69,7 @@ IBMer が作成したその他のビデオ。
 ## IBM Watson アカデミー
 {: #resources-academy}
 
-- [{{site.data.keyword.conversationshort}}Foundations ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.watson-academy.info/course/view.php?id=273){: new_window}
+- [{{site.data.keyword.conversationshort}}Foundations ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://ibm.com/training/watsonacademy){: new_window}
 
 ## ブログ
 {: #resources-blogs}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-11-08"
+lastupdated: "2018-08-07"
 
 subcollection: assistant
 
@@ -69,7 +69,7 @@ IBM 기술 심층 시리즈에서 이러한 레코딩은 단계별 지시사항�
 ## IBM Watson 아카데미
 {: #resources-academy}
 
-- [{{site.data.keyword.conversationshort}} Foundations ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.watson-academy.info/course/view.php?id=273){: new_window}
+- [{{site.data.keyword.conversationshort}} Foundations ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://ibm.com/training/watsonacademy){: new_window}
 
 ## 블로그
 {: #resources-blogs}
