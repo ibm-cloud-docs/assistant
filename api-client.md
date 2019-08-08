@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-29"
+lastupdated: "2019-08-08"
 
 subcollection: assistant
 
@@ -242,10 +242,10 @@ Use the `python3 <filename.py>` command to run the example application.
 Paste the example code into a file named `AssistantSimpleExample.java`. You can then compile and run it.
 {: java}
 
-**Note:** Make sure you have installed the Watson SDK for Node.js using `npm install watson-developer-cloud`.
+**Note:** Make sure you have installed the Watson SDK for Node.js using `npm install ibm-watson`.
 {: javascript}
 
-**Note:** Make sure you have installed the Watson SDK for Python using `pip install --upgrade watson-developer-cloud` or `easy_install --upgrade watson-developer-cloud`.
+**Note:** Make sure you have installed the Watson SDK for Python using `pip install --upgrade ibm-watson` or `easy_install --upgrade ibm-watson`.
 {: python}
 
 **Note:** Make sure you have installed the [Watson SDK for Java ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/java-sdk/blob/master/README.md){: new_window}.
