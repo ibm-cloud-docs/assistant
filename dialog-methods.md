@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-26"
+lastupdated: "2019-08-12"
 
 subcollection: assistant
 
@@ -1775,7 +1775,7 @@ Results: The condition is `true`.
 
 This method returns a string from the input that matches the regular expression group pattern that you specify. It returns an empty string if no match is found.
 
-This method is designed to extract matches for different regex pattern groups, not different matches for a single regex pattern. 
+This method is designed to extract matches for different regex pattern groups, not different matches for a single regex pattern. To find different matches, see the [getMatch](#dialog-methods-strings-getMatch) method.
 {: note}
 
 In this example, the context variable is saving a string that matches the regex pattern group that you specify. In the expression, two regex patterns groups are defined, each one enclosed in parentheses. There is an inherent third group that is comprised of the two groups together. This is the first (groupIndex 0) regex group; it matches with a string that contains the full number group and text group together. The second regex group (groupIndex 1) matches with the first occurrence of a number group. The third group (groupIndex 2) matches with the first occurrence of a text group after a number group.
@@ -1828,6 +1828,45 @@ This syntax:
 {: codeblock}
 
 Result: The condition is true because the numeric portion of the input text matches the regular expression `^[^\d]*[\d]{6}[^\d]*$`.
+
+### String.getMatch(String regexp, Integer matchIndex)
+{: #dialog-methods-strings-getMatch}
+
+This method returns a string from the input that matches the occurrence of the regular expression pattern that you specify. For example, if you enter a text string with three words that match the specified pattern, you can return the first, second, or third match only by specifying its index value. This method returns an empty string if no match is found.
+
+As matches are found, they are added to what you can think of as a *matches array*. If you want to return the third match, because the array element count starts at 0, specify 2 as the `matchIndex` value. 
+
+In the following expression, you are looking for a group of numbers in the input. This expression saves the second pattern-matching string into the `$second_number` context variable because the index value 1 is specified.
+
+```json
+{
+  "context": {
+    "second_number": "<? input.text.getMatch('([\\d]+)',1) ?>"
+  }
+}
+```
+{: codeblock}
+
+If you specify the expression in JSON syntax, you must provide two backslashes (\\). If you specify the expression in a node response, you need one backslash only. 
+
+For example: 
+
+`<? input.text.getMatch('([\d]+)',1) ?>`
+
+- User input:
+
+  ```
+  "hello 123 i said 456 and 8910".
+  ```
+  {: codeblock}
+
+- Result: `456`
+
+In this example the expression looks for the third block of text in the input.
+
+`<? input.text.getMatch('(\b [A-Za-z]+)',2) ?>`
+
+For the same user input, this expression returns `and`.
 
 ### String.isEmpty()
 {: #dialog-methods-strings-isEmpty}

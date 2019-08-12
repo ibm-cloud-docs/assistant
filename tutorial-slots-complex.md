@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-08"
+lastupdated: "2019-08-12"
 
 subcollection: assistant
 
@@ -819,7 +819,7 @@ For the $time information, you will define a follow-up statement that is display
 ## Step 9: Connect to an external service
 {: #tutorial-slots-complex-action}
 
-Now that your dialog can collect and confirm a user's reservation details, you can call an external service to actually reserve a table in the restaurant's system or through a multi-restaurant online reservations service. See [Making programmatic calls from a dialog node](/docs/services/assistant?topic=assistant-dialog-actions) for more details.
+Now that your dialog can collect and confirm a user's reservation details, you can call an external service to actually reserve a table in the restaurant's system or through a multi-restaurant online reservations service. See [Making programmatic calls from a dialog node](/docs/services/assistant?topic=assistant-dialog-webhooks) for more details.
 
 In the logic that calls the reservation service, be sure to check for `has_skipped_slots` and do not continue with the reservation if it is present.
 
