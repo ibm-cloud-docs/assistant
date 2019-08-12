@@ -1832,9 +1832,9 @@ Result: The condition is true because the numeric portion of the input text matc
 ### String.getMatch(String regexp, Integer matchIndex)
 {: #dialog-methods-strings-getMatch}
 
-This method returns a string from the input that matches the occurrence of the regular expression pattern that you specify. For example, if you enter a text string with three words that match the specified pattern, you can return the first, second, or third match only by specifying its index value. This method returns an empty string if no match is found.
+This method returns a string from the input that matches the occurrence of the regular expression pattern that you specify. This method returns an empty string if no match is found.
 
-As matches are found, they are added to what you can think of as a *matches array*. If you want to return the third match, because the array element count starts at 0, specify 2 as the `matchIndex` value. 
+As matches are found, they are added to what you can think of as a *matches array*. If you want to return the third match, because the array element count starts at 0, specify 2 as the `matchIndex` value. For example, if you enter a text string with three words that match the specified pattern, you can return the first, second, or third match only by specifying its index value.
 
 In the following expression, you are looking for a group of numbers in the input. This expression saves the second pattern-matching string into the `$second_number` context variable because the index value 1 is specified.
 
