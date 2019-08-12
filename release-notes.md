@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-06"
+lastupdated: "2019-08-12"
 
 subcollection: assistant
 
@@ -52,6 +52,16 @@ Existing models that you have trained will not be immediately impacted, but expi
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
 The following new features and changes to {{site.data.keyword.conversationshort}} are available. Check out our [blog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/assistant/home) to find in-depth information about how the newest features can benefit your business.
+
+## 12 August 2019
+{: #12August2019}
+
+- **New dialog method**: The `getMatch` method was added. You can use this method to extract a specific occurrence of a regular expression pattern that recurs in user input. For more details, see the [dialog methods](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings-getMatch) topic.
+
+## 9 August 2019
+{: #9August2019}
+
+- **Introductory product tour**: For some first-time users, a new introductory product tour is shown that the user can choose to follow to perform the initial steps of creating an assistant.
 
 ## 6 August 2019
 {: #6August2019}
@@ -198,7 +208,7 @@ The following updates are available in all locations except Dallas currently.
 ## 4 January 2019
 {: #4January2019}
 
-- **IBM Cloud Functions in DC and London locations**: You can now make programmatic calls to IBM Cloud Functions from the dialog of an assistant in a service instance that is hosted in the London and Washington, DC data centers. See [Making programmatic calls from a dialog node](/docs/services/assistant?topic=assistant-dialog-actions).
+- **IBM Cloud Functions in DC and London locations**: You can now make programmatic calls to IBM Cloud Functions from the dialog of an assistant in a service instance that is hosted in the London and Washington, DC data centers. See [Making programmatic calls from a dialog node](/docs/services/assistant?topic=assistant-dialog-actions-client).
 
 - **New methods for working with arrays**: The following SpEL expression methods are available that make it easier to work with array values in your dialog:
 
@@ -369,7 +379,7 @@ The following updates are available in all locations except Dallas currently.
 {: #21September2018}
 
 - **New API version**: The current API version is now `2018-09-20`. In this version, the `errors[].path` attribute of the error object that is returned by the API is expressed as a [JSON Pointer ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://tools.ietf.org/html/rfc6901) instead of in dot notation form.
-- **Web actions support**: You can now call {{site.data.keyword.openwhisk_short}} web actions from a dialog node. See [Making programmatic calls from a dialog node](/docs/services/assistant?topic=assistant-dialog-actions) for more details.
+- **Web actions support**: You can now call {{site.data.keyword.openwhisk_short}} web actions from a dialog node. See [Making programmatic calls from a dialog node](/docs/services/assistant?topic=assistant-dialog-actions-client) for more details.
 
 ## 15 August 2018
 {: #15August2018}
@@ -540,7 +550,7 @@ The following updates are available in all locations except Dallas currently.
 ## 6 December 2017
 {: #6December2017}
 
-- **{{site.data.keyword.openwhisk}} integration (Beta)**: Call {{site.data.keyword.openwhisk}} (formerly IBM OpenWhisk) actions directly from a dialog node. This feature enables you to, for example, call an action to retrieve weather information from within a dialog node, and then condition on the returned information in the dialog response. Currently, you can call an action from a {{site.data.keyword.openwhisk_short}} instance that is hosted in the US South region from {{site.data.keyword.conversationshort}} instances that are hosted in the US South region. See [Making programmatic calls from a dialog node](/docs/services/assistant?topic=assistant-dialog-actions) for more details.
+- **{{site.data.keyword.openwhisk}} integration (Beta)**: Call {{site.data.keyword.openwhisk}} (formerly IBM OpenWhisk) actions directly from a dialog node. This feature enables you to, for example, call an action to retrieve weather information from within a dialog node, and then condition on the returned information in the dialog response. Currently, you can call an action from a {{site.data.keyword.openwhisk_short}} instance that is hosted in the US South region from {{site.data.keyword.conversationshort}} instances that are hosted in the US South region. See [Making programmatic calls from a dialog node](/docs/services/assistant?topic=assistant-dialog-actions-client) for more details.
 
 ## 5 December 2017
 {: #5December2017}

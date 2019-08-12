@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-08"
+lastupdated: "2019-08-09"
 
 ---
 
@@ -143,7 +143,7 @@ To use a webhook from a dialog node, you must enable webhooks on the node, and t
       </tr>
       <tr>
         <td>model_id</td>
-        <td>"en_es"</td>
+        <td>"en-es"</td>
         <th>Identifies the input and output languages. In this example, the request is for text in English (en) to be translated into Spanish (es).</th>
       </tr>
       <tr>
@@ -179,7 +179,7 @@ To use a webhook from a dialog node, you must enable webhooks on the node, and t
       </tr>
     </table>
 
-1.  Any response made by the callout is saved to the return variable. You can rename the variable that is automatically added to the **Return variable** field for you.
+1.  Any response made by the callout is saved to the return variable. You can rename the variable that is automatically added to the **Return variable** field for you. If the callout results in an error, this variable is set to `null`.
 
     The generated variable name has the syntax `webhook_result_n`, where the appended `_n` is incremented each time you add a webhook callout to a dialog node. This naming convention ensures that context variable names are unique across the dialog skill. If you change the name, be sure to use a unique name.
 
