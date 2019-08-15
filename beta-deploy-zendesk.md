@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-13"
+lastupdated: "2019-08-15"
 
 subcollection: assistant
 
@@ -10,6 +10,7 @@ subcollection: assistant
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
@@ -32,7 +33,7 @@ Zendesk Chat lets you help customers in real time, which increases customer sati
 This feature is available for use by participants in the early access program only. To find out how to request access, see [Participate in the early access program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
 {: preview}
 
-IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment.
+When you participate in the early access program, IBM gives you early access to features for your evaluation. These features are classified as beta, which means they might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment. Beta features are supported only on the [IBM Developer Answers](https://developer.ibm.com/answers/topics/watson-assistant/){: external}.
 
 Zendesk has partnered with IBM to add a new agent to the Zendesk support team, a virtual Watson Assistant. You can integrate your assistant with Zendesk Chat to enable the Zendesk Chat app to seamlessly pass user conversations between your assistant and its human support agents. Zendesk Chat enables customers to initiate live chat with an agent. Chat sessions become tickets that agents can update after the chat session. You can add Zendesk Chat to any website or Help Center. Agents can also chat with other agents, either one-on-one or by pulling them into a conversation with a visitor.
 

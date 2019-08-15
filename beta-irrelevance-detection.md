@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-13"
+lastupdated: "2019-08-15"
 
 subcollection: assistant
 
@@ -10,6 +10,7 @@ subcollection: assistant
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
@@ -33,7 +34,7 @@ Enable the new irrelevant topic detection feature to help your dialog skill reco
 This feature is available for use by participants in the early access program only. To find out how to request access, see [Participate in the early access program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
 {: preview}
 
-IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment.
+When you participate in the early access program, IBM gives you early access to features for your evaluation. These features are classified as beta, which means they might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment. Beta features are supported only on the [IBM Developer Answers](https://developer.ibm.com/answers/topics/watson-assistant/){: external}.
 
 This feature helps your dialog skill recognize subjects that you do not want it to address, even if you haven't explicitly taught it about what to ignore by marking specific user utterances as irrelevant.
 

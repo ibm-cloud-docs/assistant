@@ -10,6 +10,7 @@ subcollection: assistant
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
@@ -26,7 +27,7 @@ subcollection: assistant
 # Early access program
 {: #beta}
 
-IBM gives you early access to services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment. Beta features are supported only on the [IBM Developer Answers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/topics/watson-assistant/){: new_window}.
+When you participate in the early access program, IBM gives you early access to features for your evaluation. These features are classified as beta, which means they might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment. Beta features are supported only on the [IBM Developer Answers](https://developer.ibm.com/answers/topics/watson-assistant/){: external}.
 
 ## Available beta features
 {: #beta-features}
@@ -42,7 +43,7 @@ The following features are available for use by participants in the early access
 
 - Add rich response types to dialog node slot prompts. For example, you can display a list of options for a user to choose from as the prompt for the slot. See [Adding rich responses to slots](dialog-slots-multimedia).
 
-- You can test out how your assistant would work if you chose to publish it as a \[24\]7.ai chatbot. See [Testing a \[24\]7.ai chatbot integration](/docs/services/assistant?topic=assistant-deploy-247ai).
+- You can test out pubishing your assistant as a \[24\]7.ai chatbot. See [Testing a \[24\]7.ai chatbot integration](/docs/services/assistant?topic=assistant-deploy-247ai).
 
 ## Tell us what you think
 
