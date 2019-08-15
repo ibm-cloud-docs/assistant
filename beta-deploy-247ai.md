@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-13"
+lastupdated: "2019-08-15"
 
 subcollection: assistant
 
@@ -14,6 +14,7 @@ subcollection: assistant
 {:important: .important}
 {:note: .note}
 {:tip: .tip}
+{:preview: .preview}
 {:pre: .pre}
 {:codeblock: .codeblock}
 {:screen: .screen}
@@ -22,7 +23,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Testing a [24]7.ai chatbot integration ![Plus or Premium plan only](images/premium.png)
+# Testing a [24]7.ai chatbot integration ![Plus or Premium plan only](images/plus.png)
 {: #deploy-247ai}
 
 \[24\]7.ai is redefining the way companies interact with consumers. \[24\]7.ai helps businesses attract and retain customers, and makes it possible to create a personalized, predictive and effortless customer experience.
@@ -36,7 +37,7 @@ subcollection: assistant
 This feature is available for use by participants in the early access program only. To find out how to request access, see [Participate in the early access program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
 {: preview}
 
-![Beta](images/beta.png) IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment.
+IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment.
 
 For example, your deployed assistant might look like this:
 

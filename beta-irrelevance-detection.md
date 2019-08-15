@@ -15,6 +15,7 @@ subcollection: assistant
 {:note: .note}
 {:tip: .tip}
 {:pre: .pre}
+{:preview: .preview}
 {:codeblock: .codeblock}
 {:screen: .screen}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -30,8 +31,9 @@ Enable the new irrelevant topic detection feature to help your dialog skill reco
 {: shortdesc}
 
 This feature is available for use by participants in the early access program only. To find out how to request access, see [Participate in the early access program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
+{: preview}
 
-![Beta](images/beta.png) IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment.
+IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment.
 
 This feature helps your dialog skill recognize subjects that you do not want it to address, even if you haven't explicitly taught it about what to ignore by marking specific user utterances as irrelevant.
 
