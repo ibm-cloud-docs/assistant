@@ -84,12 +84,3 @@ To add the assistant to a web page on your company website, complete the followi
 1.  Click **Save changes** to save the web chat name and description information that you added and close the integration page. Alternatively, you can click the **X** to close the page. 
 
     The web chat integration instance is created as soon as you click the *Create* button, and does not need to be saved.
-
-## Dialog considerations
-{: #deploy-web-chat-dialog}
-
-The rich responses that you add to a dialog are displayed in the web chat widget as expected, with the following exception:
-
-- **Pause**: This response type pauses the assistant's activity in the chat widget. However, activity does not resume after the pause until another response is triggered. Whenever you include a `pause` response type, add another response type, such as `text`, after it.
-
-See [Rich responses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more information about response types.
