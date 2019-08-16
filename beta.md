@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-15"
+lastupdated: "2019-08-20"
 
 subcollection: assistant
 
@@ -44,6 +44,8 @@ The following features are available for use by participants in the early access
 - Add rich response types to dialog node slot prompts. For example, you can display a list of options for a user to choose from as the prompt for the slot. See [Adding rich responses to slots](dialog-slots-multimedia).
 
 - You can test out pubishing your assistant as a \[24\]7.ai chatbot. See [Testing a \[24\]7.ai chatbot integration](/docs/services/assistant?topic=assistant-deploy-247ai).
+
+- Deploy your assistant in minutes. Create a web chat integration to generate an HTML script element that you can copy and paste into a page on your website to embed the assistant as a chat widget. See [Integrating with your own website](/docs/services/assistant?topic=assistant-deploy-web-chat).
 
 ## Tell us what you think
 
