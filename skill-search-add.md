@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-02"
+lastupdated: "2019-08-21"
 
 subcollection: assistant
 
@@ -372,7 +372,7 @@ Follow this procedure to make it less likely that the dialog will respond by res
 
 1.  From the *Dialog* page of your dialog skill, make sure that the last node in the dialog tree has an `anything_else` condition.
 
-    Whenever this node is processed. The search skill is triggered.
+    Whenever this node is processed, the search skill is triggered.
 
 1.  Add a folder to the dialog. Position the folder above the first dialog node that you want to de-emphasize. Add the following condition to the folder:
 
