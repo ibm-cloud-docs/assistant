@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -23,18 +23,18 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:gif: data-image-type='gif'}
 
-# 对话构建提示
+# 对话构建技巧
 {: #dialog-tips}
 
-了解如何构建对话的方法，并获取有关完成更复杂步骤的一些提示。
+了解如何构建对话，并通过学习一些技巧来完成更复杂的步骤。
 {: shortdesc}
 
-从有经验的对话设计人员处查看这些提示。
+以下是富有经验的对话设计者提供的技巧。
 
 ## 规划总体对话
 {: #dialog-tips-plan}
 
-- 在工具中添加单个对话节点之前，请规划要构建的对话的设计。根据需要，用纸笔草拟设计。
+- 在添加单个对话节点之前，请规划要构建的对话的设计。根据需要，用纸笔草拟设计。
 - 尽可能将设计决策基于来自现实世界证据和行为的数据。不要添加节点来处理有人*认为*可能发生的情况。
 - 避免按原样复制业务流程。这些很少是会话式流程。
 - 如果人们已使用流程，请检查他们是如何处理流程的。人们通常从会话角度来优化流程。
@@ -50,7 +50,7 @@ subcollection: assistant
   您现在知道节点的用途，但过几个月后，很可能就不会记得了。添加描述性节点名后，未来无论对您自己还是对任何团队成员都有益。节点名会显示在日志中，这可帮助您日后调试会话。
 - 要收集执行任务所需的信息，请尝试使用带槽的节点，而不要使用大量单独的节点来从用户探取信息。请参阅[使用槽收集信息](/docs/services/assistant?topic=assistant-dialog-slots)。
 - 对于复杂的流程，请在流程开始时指示用户需要提供的任何信息。
-- 了解服务如何遍历对话树，以及文件夹、分支、“跳转至”和离题对路径的影响。请参阅[对话流](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-flow)。
+- 了解助手如何遍历对话树，以及文件夹、分支、“跳转至”和离题对路径的影响。请参阅[对话流](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-flow)。
 - 不要在所有位置添加“跳转至”。“跳转至”会增加对话流的复杂性，并增加日后调试对话的难度。
 - 要跳转至当前节点所在分支中的节点，请使用*跳过用户输入*，而不要使用*跳转至*。
 
@@ -70,16 +70,19 @@ subcollection: assistant
 - 认真对响应进行措辞。您可以仅仅根据响应的措辞方式就改变人们对系统的反应方式。更改一行文本可能会使您不必编写多行代码来实施复杂的程序化解决方案。
 - 频繁备份技能。请参阅[下载技能](/docs/services/assistant?topic=assistant-skill-add#skill-add-download)。
 
-## 有关从用户输入中捕获信息的提示
+## 从用户输入中捕获信息的技巧
 {: #dialog-tips-user-input}
 
 很难知道在对话节点中使用什么语法，才能准确捕获要在用户输入中查找的信息。下面是可用于处理常见目标的一些方法。
 
 - **返回用户的输入**：可以捕获用户所说的准确文本，并在响应中返回这些文本。在响应中使用以下 SpEL 表达式以在响应中复述用户指定的文本：
 
-  `您表示：<? input.text ?>.`
+  `You said: <? input.text ?>.`
 
-- **确定用户输入中的字数**：可以对 input.text 对象执行任何支持的 String 方法。例如，可以使用以下 SpEL 表达式来了解用户发声中的字数：
+  如果自动更正已开启，但希望返回用户的未经更正的原始输入，那么可以使用 `<? input.original_text ?>`。但是，请确保使用响应条件首先检查 `original_text` 字段是否存在。
+  {: note}
+
+- **确定用户输入中的字数**：可以对 input.text 对象执行任何支持的 String 方法。例如，可以使用以下 SpEL 表达式来了解用户话语中的字数：
 
   `input.text.split(' ').size()`
 
@@ -87,7 +90,7 @@ subcollection: assistant
 
 - **处理多个意向**：用户输入的内容表示希望完成两个单独的任务。`我要开立储蓄帐户并申请信用卡。`对话如何识别并处理这两个任务呢？有关可以试用的策略，请参阅 Simon O'Doherty 博客中的 [Compound questions](https://sodoherty.ai/2017/02/06/compound-questions/){: new_window} 部分。（Simon 是 {{site.data.keyword.conversationshort}} 团队的开发者。）
 
-- **处理不明确意向**：用户输入的内容表示的意愿不够明确，因此服务发现两个或更多节点具有潜在解决此问题的意向。对话如何知道该执行哪个对话分支呢？如果启用了消歧，那么可以向用户显示其选项，并要求用户选取正确的选项。有关更多详细信息，请参阅[消歧](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation)。
+- **处理不明确意向**：用户输入的内容表示的意愿不够明确，因此助手发现两个或更多节点具有潜在处理此情况的意向。对话如何知道该执行哪个对话分支呢？如果启用了消歧，那么可以向用户显示其选项，并要求用户选取正确的选项。有关更多详细信息，请参阅[消歧](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation)。
 
 - **处理输入中的多个实体**：如果要仅对实体类型的检测到的第一个实例值求值，那么可以使用语法 `@entity == 'specific-value'`，而不使用 `@entity:(specific-value)` 格式。
 
@@ -100,7 +103,7 @@ subcollection: assistant
 
   `@person:(O'Reilly)` 和 `$person:(O'Reilly)`
 
-  服务会将这些简写引用转换为以下完整的 SpEL 表达式：
+  助手会将这些简写引用转换为以下完整的 SpEL 表达式：
 
   `entities['person']?.contains('O''Reilly')` 和 `context['person'] == 'O''Reilly'`
 
@@ -113,7 +116,7 @@ subcollection: assistant
 
 - **检查数字值**：比较数字时，首先确保要检查的实体或变量具有值。如果实体或变量没有数字值，那么在数字比较中，会将其视为空值 (0)。
 
-  例如，您希望检查用户在其输入中指定的美元值是否小于 100。如果使用条件 `@price < 100`，但 `@price` 实体为空，那么条件会求值为 `true`，因为 0 小于 100，虽然从未设置过价格。要避免此类型的不准确结果，请使用诸如 `@price AND @price < 100` 之类的条件。如果 `@price` 没有值，那么此条件会正确返回 false。
+  例如，您希望检查用户在其输入中指定的美元值是否小于 100。如果使用条件 `@price < 100`，但 `@price` 实体为空，那么该条件会求值为 `true`，因为 0 小于 100，尽管从未设置过价格。要避免此类型的不准确结果，请使用诸如 `@price AND @price < 100` 之类的条件。如果 `@price` 没有值，那么此条件会正确返回 false。
 
 - **检查具有特定意图名称模式的意向**：可以使用用于查找与模式相匹配的意向的条件。例如，要查找意向名称以“User_”开头的任何检测到的意向，可以在条件中使用类似以下内容的语法：
 
@@ -214,6 +217,6 @@ subcollection: assistant
 
 使用“试用”窗格测试对话时，您可能希望了解从服务返回的底层 API 调用的内容。可以使用 Web 浏览器提供的开发者工具来检查这些内容。
 
-例如，在 Chrome 中，打开开发者工具。单击 Network 工具。Name 部分列出了多个 API 调用。单击与测试发声关联的消息调用，然后单击 Response 列以查看 API 响应主体。其中会列出在用户输入中识别到的意向和实体及其置信度分数，以及调用时上下文变量的值。要以结构化格式查看响应主体，请单击 Preview 列。
+例如，在 Chrome 中，打开开发者工具。单击 Network 工具。Name 部分列出了多个 API 调用。单击与测试话语关联的消息调用，然后单击 Response 列以查看 API 响应主体。其中会列出在用户输入中识别到的意向和实体及其置信度分数，以及调用时上下文变量的值。要以结构化格式查看响应主体，请单击 Preview 列。
 
 ![显示如何使用 Chrome Web 浏览器开发者工具查看 API 调用详细信息。](images/api-browser-dev.png)

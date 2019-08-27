@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-05-30"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
+
 
 ---
 
@@ -15,13 +16,13 @@ subcollection: assistant
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 
-# Video: panoramica dello strumento 
+# Video: panoramica del prodotto
 {: #tool-overview}
 
-Con lo strumento {{site.data.keyword.conversationshort}}, puoi creare e gestire uno o più assistenti. Guarda questo video per ulteriori informazioni sullo strumento.
+Con {{site.data.keyword.conversationshort}}, puoi creare e gestire uno o più assistenti. Guarda questo video per ulteriori informazioni sul prodotto.
 
 <p>
   <div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" id="youtubeplayer" title="Panoramica dello strumento Watson Assistant" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/h-u-5f8fZtc?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+    <iframe class="embed-responsive-item" id="youtubeplayer" title="Panoramica del prodotto Watson Assistant" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/h-u-5f8fZtc?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
   </div>
 </p>

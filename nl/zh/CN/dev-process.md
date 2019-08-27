@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-07-19"
 
 subcollection: assistant
 
@@ -25,7 +25,7 @@ subcollection: assistant
 # 开发流程
 {: #dev-process}
 
-构建和部署会话助手以及通过增量方式对其进行改进时，可通过 {{site.data.keyword.conversationshort}} 工具来利用 AI。
+构建和部署会话助手以及通过增量方式对其进行改进时，可通过 {{site.data.keyword.conversationshort}} 来利用 AI。
 {: shortdesc}
 
 ![显示从开发训练数据开始一直到部署至生产环境结束的开发步骤流程](images/dev-process.png)
@@ -35,10 +35,10 @@ subcollection: assistant
 
 助手项目的典型工作流程包括以下步骤：
 
-1.  定义希望助手代表您处理的一系列范围狭窄的关键客户需求，包括助手可以为客户启动或完成的任何业务流程。
-1.  创建意向，用于表示在上一步中识别到的客户需求。例如，`About_company` 或 `#Place_order` 等意向。
+1.  定义希望助手代表您处理的一系列范围狭窄的关键客户需求，包括助手可以为客户启动或完成的任何业务流程。一开始定义的内容不要太多。
+1.  创建意向，用于表示在上一步中识别到的客户需求。例如，`#about_company` 或 `#place_order` 等意向。
 
-    使用意向示例建议功能来挖掘现有呼叫中心日志，以查找最佳意向用户示例。
+    ![仅限增强版或高端套餐](images/plus.png) 使用意向建议功能来挖掘现有呼叫中心日志，以查找适合您用例的最佳意向。有关更多详细信息，请参阅[获取定义意向的帮助](/docs/services/assistant?topic=assistant-intent-recommendations)。
     {: tip}
 
 1.  构建一个对话，用于检测定义的意向并对其进行处理，对话可具有简单的响应，或具有可收集更多信息的对话流。
@@ -52,9 +52,9 @@ subcollection: assistant
 1.  在“试用”窗格中，对于向助手添加的每个功能，请一边添加功能，一边以递增方式对其进行测试。
 1.  拥有能够成功处理关键任务的有效助手后，添加用于将该助手部署到开发环境的集成。测试部署的助手并进行优化。
 
-1.  构建有效的助手后，创建对话技能的快照，并将其另存为版本。
+1.  构建有效的助手后，创建对话技能的快照，并将其另存为一个版本。
 
-    通过在达到开发里程碑时保存一个版本，让您可以在对技能进行的后续更改降低了其有效性时，恢复为原先较好的内容。请参阅[创建技能版本](/docs/services/assistant?topic=assistant-versions)。
+    在达到开发里程碑时保存一个版本，这样就可以在技能因后续更改而降低了有效性时，恢复为原先较好的内容。请参阅[创建技能版本](/docs/services/assistant?topic=assistant-versions)。
 1.  将助手版本部署到测试环境中，并对其进行测试。
 
     如果使用的是 Web 托管的交谈窗口小部件，那么可以与他人共享 URL，由他们帮助进行测试。

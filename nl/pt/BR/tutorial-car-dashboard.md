@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
 
@@ -127,7 +127,7 @@ Crie entidades que podem ocorrer na entrada do usuário que tem a intenção #tu
     - Valor: `air conditioning`. Sinônimos: `air` e `AC`.
 
 1.  Clique na alternância para que a correspondência difusa seja **Ativada** para a entidade `@appliance`.
-    Essa configuração ajuda o serviço a reconhecer referências a entidades na entrada do usuário mesmo quando a entidade é especificada de uma maneira que não corresponde exatamente à sintaxe usada aqui.
+    Essa configuração ajuda seu assistente a reconhecer referências a entidades na entrada do usuário, mesmo quando a entidade é especificada de uma maneira que não corresponde exatamente à sintaxe usada aqui.
 1.  Clique no ícone **Fechar** ![Seta de fechamento](images/close_arrow.png) para concluir a inclusão da entidade `@appliance`.
 1.  Repita as Etapas 2-8 para criar a entidade `@genre` com a correspondência difusa ativa e estes valores e sinônimos:
 

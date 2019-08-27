@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-07-31"
 
 subcollection: assistant
 
@@ -10,6 +10,7 @@ subcollection: assistant
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
@@ -29,9 +30,9 @@ IBM si impegna a fornire ai nostri clienti e partner soluzioni innovative per la
 {: shortdesc}
 
 **Avviso:**
-È responsabilità dei clienti garantire la propria conformità alle varie leggi e normative, incluso il Regolamento generale sulla protezione dei dati (GDPR) dell'Unione Europea. È responsabilità esclusiva dei clienti richiedere una consulenza legale qualificata per identificare e interpretare normative e regolamenti importanti che potrebbero influenzare le attività di business dei clienti ed eventuali azioni che i clienti dovranno intraprendere per rispettare la conformità a tali normative e regolamenti. 
+È responsabilità dei clienti garantire la propria conformità alle varie leggi e normative, incluso il Regolamento generale sulla protezione dei dati (GDPR) dell'Unione Europea. È responsabilità esclusiva dei clienti richiedere una consulenza legale qualificata per identificare e interpretare normative e regolamenti importanti che potrebbero influenzare le attività di business dei clienti ed eventuali azioni che i clienti dovranno intraprendere per rispettare la conformità a tali normative e regolamenti.
 
-I prodotti, i servizi e le altre funzionalità qui descritti non sono adatti per tutte le situazioni dei clienti e potrebbero avere una disponibilità limitata. IBM non fornisce consulenza legale, contabile o di controllo né dichiara o garantisce che i propri servizi o prodotti assicureranno che i clienti siano conformi ad eventuali norme di legge o regolamentari. 
+I prodotti, i servizi e le altre funzionalità qui descritti non sono adatti per tutte le situazioni dei clienti e potrebbero avere una disponibilità limitata. IBM non fornisce consulenza legale, contabile o di controllo né dichiara o garantisce che i propri servizi o prodotti assicureranno che i clienti siano conformi ad eventuali norme di legge o regolamentari.
 
 Se hai bisogno di richiedere il supporto GDPR per le risorse {{site.data.keyword.cloud}} {{site.data.keyword.watson}} che vengono create
 
@@ -41,20 +42,27 @@ Se hai bisogno di richiedere il supporto GDPR per le risorse {{site.data.keyword
 ## Regolamento generale sulla protezione dei dati dell'Unione europea (GDPR)
 {: #information-security-gdpr}
 
-IBM si impegna a offrire ai nostri clienti e partner soluzioni innovative per la privacy, la sicurezza e la governance dei dati per assisterli nel loro percorso verso la conformità GDPR. 
+IBM si impegna a offrire ai nostri clienti e partner soluzioni innovative per la privacy, la sicurezza e la governance dei dati per assisterli nel loro percorso verso la conformità GDPR.
 
 È possibile trovare ulteriori informazioni sul percorso di preparazione verso la disponibilità e sulle nostre funzionalità e offerte GDPR che supportano il tuo percorso di conformità [qui ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](../../icons/launch-glyph.svg "Icona link esterno")](http://www.ibm.com/gdpr){: new_window}.
 
-## Etichettatura ed eliminazione dei dati in {{site.data.keyword.conversationshort}}
+## HIPAA (Health Insurance Portability and Accountability Act)
+{: #information-security-hipaa}
+
+Il supporto HIPAA (Health Insurance Portability and Accountability Act) degli Stati Uniti è disponibile per i piani Premium ospitati nell'ubicazione Washington DC creati il 1° aprile 2019 o successivamente. Per ulteriori informazioni, vedi [Abilitazione delle impostazioni supportate da UE e HIPAA](/docs/account?topic=account-eu-hipaa-supported#eu-hipaa-supported){: external}.
+
+Non aggiungere informazioni sanitarie personali (PHI) ai dati di apprendimento (entità e intenti, inclusi gli esempi utente) che hai creato. In particolare, assicurati di rimuovere qualsiasi PHI dai file che contengono le espressioni utente reali che hai caricato per ricavare i consigli utente di esempio. 
+
+## Etichettatura ed eliminazione dei dati in Watson Assistant
 {: #information-security-gdpr-wa}
 
-Non aggiungere dati personali ai dati di formazione (entità e intenti, inclusi gli esempi utente) che hai creato. In particolare, assicurati di rimuovere tutte le informazioni d'identificazione personale dai file che contengono le espressioni utente reali che hai caricato per ricavare i consigli utente di esempio. 
+Non aggiungere dati personali ai dati di apprendimento (entità e intenti, inclusi gli esempi utente) che hai creato. In particolare, assicurati di rimuovere tutte le informazioni d'identificazione personale dai file che contengono le espressioni utente reali che hai caricato per ricavare i consigli utente di esempio.
 
-**Nota:** le funzioni sperimentale e beta non sono destinate per essere utilizzate con un ambiente di produzione e quindi non è garantito che funzionino come previsto quando si etichettano ed eliminano i dati. Le funzioni sperimentale e beta non dovrebbero essere utilizzate durante l'implementazione di una soluzione che richiede l'etichettatura e l'eliminazione dei dati. 
+**Nota:** le funzioni sperimentale e beta non sono destinate per essere utilizzate con un ambiente di produzione e quindi non è garantito che funzionino come previsto quando si etichettano ed eliminano i dati. Le funzioni sperimentale e beta non dovrebbero essere utilizzate durante l'implementazione di una soluzione che richiede l'etichettatura e l'eliminazione dei dati.
 
-Se devi rimuovere i dati di un cliente da un'istanza {{site.data.keyword.conversationshort}}, puoi farlo basandoti sull'ID del cliente finché associ il messaggio a un ID cliente quando il messaggio viene inviato al servizio. 
+Se devi rimuovere i dati del messaggio di un cliente da un'istanza {{site.data.keyword.conversationshort}}, puoi farlo basandoti sull'ID del cliente finché associ il messaggio a un ID cliente quando il messaggio viene inviato a {{site.data.keyword.conversationshort}}.
 
-**Nota:** le funzioni di integrazione di Preview Link e di Facebook automatica non supportano l'etichettatura e quindi l'eliminazione dei dati si basa sull'ID cliente. Queste funzioni non devono essere utilizzate in una soluzione che richiede la capacità di eseguire l'eliminazione basata sull'ID cliente. 
+**Nota:** le funzioni di integrazione di Preview Link e di Facebook automatica non supportano l'etichettatura e quindi l'eliminazione dei dati si basa sull'ID cliente. Queste funzioni non devono essere utilizzate in una soluzione che richiede la capacità di eseguire l'eliminazione basata sull'ID cliente.
 
 ### Prima di iniziare
 {: #information-security-delete-user-data-prereqs}
@@ -90,16 +98,16 @@ curl -X GET -u "apikey:3Df... ...Y7Pc9"
 ```
 {: codeblock}
 
-Per ulteriori dettagli, vedi [Riferimento alla query di filtro](/docs/services/assistant?topic=assistant-filter-reference). 
+Per ulteriori dettagli, vedi [Riferimento alla query di filtro](/docs/services/assistant?topic=assistant-filter-reference).
 
 ### Eliminazione dei dati
 {: #information-security-delete-data}
 
-Per eliminare i dati di log del messaggio associati a uno specifico utente che potrebbero essere stati memorizzati dal servizio, utilizza il metodo API `DELETE /user_data` v1. Specifica l'ID cliente dell'utente passando un parametro `customer_id` con la richiesta. 
+Per eliminare i dati di log del messaggio associati a uno specifico utente che potrebbero essere stati archiviati dal tuo assistente, utilizza il metodo API `DELETE /user_data` v1. Specifica l'ID cliente dell'utente passando un parametro `customer_id` con la richiesta.
 
-Solo i dati aggiunti utilizzando l'endpoint API `POST /message` con un ID cliente associato possono essere eliminati utilizzando questo metodo di eliminazione. I dati aggiunti da altri metodi non possono essere eliminati in base all'ID cliente. Ad esempio, le entità e gli intenti aggiunti dalle conversazioni del cliente, non possono essere eliminati in questo modo. I dati personali non sono supportati per tali metodi. 
+Solo i dati aggiunti utilizzando l'endpoint API `POST /message` con un ID cliente associato possono essere eliminati utilizzando questo metodo di eliminazione. I dati aggiunti da altri metodi non possono essere eliminati in base all'ID cliente. Ad esempio, le entità e gli intenti aggiunti dalle conversazioni del cliente, non possono essere eliminati in questo modo. I dati personali non sono supportati per tali metodi.
 
-**IMPORTANTE**: se specifichi un `customer_id`, verranno eliminati *tutti* i messaggi con tale `customer_id` ricevuti prima della richiesta di eliminazione, in tutta la tua istanza {{site.data.keyword.conversationshort}}, non solo all'interno di una capacità. 
+**IMPORTANTE**: se specifichi un `customer_id`, verranno eliminati *tutti* i messaggi con tale `customer_id` ricevuti prima della richiesta di eliminazione, in tutta la tua istanza {{site.data.keyword.conversationshort}}, non solo all'interno di una capacità.
 
 Ad esempio, per eliminare i dati del messaggio associati a un utente con ID cliente `abc` dalla tua istanza {{site.data.keyword.conversationshort}}, invia il seguente comando cURL:
 
@@ -111,6 +119,6 @@ curl -X DELETE -u "apikey:3Df... ...Y7Pc9"
 
 Viene restituito un oggetto JSON `{}` vuoto.
 
-Per ulteriori informazioni, vedi [Riferimento API](https://cloud.ibm.com/apidocs/assistant?curl=#delete-labeled-data).
+Per ulteriori informazioni, vedi la [Guida di riferimento API](https://cloud.ibm.com/apidocs/assistant?curl=#delete-labeled-data).
 
-**Nota:** le richieste di eliminazione vengono elaborate in batch e il completamento può richiedere fino a 24 ore. 
+**Nota:** le richieste di eliminazione vengono elaborate in batch e il completamento può richiedere fino a 24 ore.

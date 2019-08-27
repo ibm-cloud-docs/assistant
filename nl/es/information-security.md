@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-07-31"
 
 subcollection: assistant
 
@@ -10,6 +10,7 @@ subcollection: assistant
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
@@ -44,14 +45,21 @@ IBM se ha comprometido a proporcionar a nuestros clientes y socios soluciones in
 
 Obtenga más información sobre la implantación del GDPR en IBM y las prestaciones y las ofertas de GDPR para ayudarle a cumplirlo [aquí ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](../../icons/launch-glyph.svg "Icono de enlace externo")](http://www.ibm.com/gdpr){: new_window}.
 
-## Cómo etiquetar y suprimir datos en {{site.data.keyword.conversationshort}}
+## Ley de Responsabilidad y Portabilidad de Seguro Médico (HIPAA)
+{: #information-security-hipaa}
+
+Hay soporte para la Ley de Portabilidad y Responsabilidad de Seguro Sanitario de los Estados Unidos (Health Insurance Portability and Accountability Act, HIPAA) para los planes Premium alojados en la ubicación de Washington, DC creada el 1 de abril de 2019 o después de éste. Para obtener más información, consulte [Habilitación de valores admitidos en la UE e HIPAA](/docs/account?topic=account-eu-hipaa-supported#eu-hipaa-supported){: external}.
+
+No incluya información sanitaria personal (PHI) en los datos de entrenamiento (entidades e intenciones, incluidos ejemplos de usuario) que cree. En particular, asegúrese de eliminar cualquier archivo PHI de los archivos que contengan datos de usuarios reales que sube para minería para recomendaciones de intento o de ejemplo de usuario de intento.
+
+## Etiquetado y supresión de datos en Watson Assistant
 {: #information-security-gdpr-wa}
 
 No incluya datos personales en los datos de entrenamiento (entidades e intenciones, incluidos ejemplos de usuario) que cree. En particular, asegúrese de eliminar cualquier información de identificación personal de los archivos que contengan expresiones de usuario reales que cargue para que se examinen a fin de generar recomendaciones de ejemplos de usuario.
 
 **Nota:** Las características experimentales y beta no están pensadas para su uso en un entorno de producción y, por lo tanto, no se garantiza que funcionen como se espera al etiquetar y suprimir datos. Las características experimentales y beta no deben utilizarse al implementar una solución que requiera el etiquetado y supresión de datos.
 
-Si tiene que eliminar datos de mensajes de un cliente de una instancia de {{site.data.keyword.conversationshort}}, puede hacerlo basándose en el ID del cliente, siempre que asocie el mensaje con un ID de cliente cuando el mensaje se envíe al servicio.
+Si tiene que eliminar datos de mensajes de un cliente de una instancia de {{site.data.keyword.conversationshort}}, puede hacerlo basándose en el ID del cliente, siempre que asocie el mensaje con un ID de cliente cuando el mensaje se envíe a {{site.data.keyword.conversationshort}}.
 
 **Nota:** el enlace de vista previa y las características de integración automática de Facebook no dan soporte al etiquetado y, por lo tanto, a la supresión de datos en función del ID de cliente. Estas características no se deben utilizar en una solución que requiera la posibilidad de suprimir basándose en el ID de cliente.
 
@@ -94,7 +102,7 @@ Revise el tema sobre [Filtrado de consultas](/docs/services/assistant?topic=assi
 ### Supresión de datos
 {: #information-security-delete-data}
 
-Para suprimir los datos de registros de mensajes asociados con un usuario específico que el servicio puede haber guardado, utilice el método de la API v1 `DELETE /user_data`. Especifique el ID de cliente del usuario pasando un parámetro `customer_id` con la solicitud.
+Para suprimir los datos de registros de mensajes asociados con un usuario específico que su asistente puede haber guardado, utilice el método de la API v1 `DELETE /user_data`. Especifique el ID de cliente del usuario pasando un parámetro `customer_id` con la solicitud.
 
 Con este método de supresión solo se pueden suprimir los datos que se han añadido utilizando el punto final de API `POST /message` con un ID de cliente asociado. Los datos añadidos mediante otros métodos no se pueden suprimir en función del ID de cliente. Por ejemplo, las entidades y las intenciones añadidas de conversaciones de clientes no se pueden suprimir con este método. No se da soporte a datos personales para estos métodos.
 

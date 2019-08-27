@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
 
@@ -23,7 +23,7 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:gif: data-image-type='gif'}
 
-# Tutoriel : Création d'un dialogue de tableau de bord de voiture 
+# Tutoriel : Création d'un dialogue de tableau de bord de voiture
 {: #tutorial-car-dashboard}
 
 Dans ce tutoriel, vous allez utiliser le service {{site.data.keyword.conversationshort}} pour créer un dialogue qui permettra aux utilisateurs d'interagir avec un tableau de bord de voiture intelligente.
@@ -48,7 +48,7 @@ Ce tutoriel dure environ 2 à 3 heures.
 
 Avant de commencer, exécutez le [tutoriel d'initiation](/docs/services/assistant?topic=assistant-getting-started).
 
-Vous utiliserez la compétence du tutoriel {{site.data.keyword.conversationshort}} que vous avez créée et ajouterez des noeuds au dialogue simple que vous avez créé dans le cadre de l'exercice d'initiation. 
+Vous utiliserez la compétence du tutoriel {{site.data.keyword.conversationshort}} que vous avez créée et ajouterez des noeuds au dialogue simple que vous avez créé dans le cadre de l'exercice d'initiation.
 
 ## Etape 1 : Ajout d'intentions et d'exemples
 {: #tutorial-car-dashboard-add-intents}
@@ -127,7 +127,7 @@ Créez des entités pouvant apparaître dans l'entrée utilisateur qui comporte 
     - Valeur : `air conditioning`. Synonymes : `air` et `AC`.
 
 1.  Cliquez sur le bouton à bascule afin d'activer (**on**) la fonction Fuzzy Matching pour l'entité `@appliance`.
-    Ce paramétrage permettra au service de reconnaître les références aux entités dans l'entrée utilisateur même si la façon dont les entités sont spécifiées ne correspond pas exactement à la syntaxe que vous utilisez ici.
+    Ce paramétrage permettra à l'assistant de reconnaître les références aux entités dans l'entrée utilisateur même si la façon dont les entités sont spécifiées ne correspond pas exactement à la syntaxe que vous utilisez ici.
 1.  Cliquez sur l'icône de **Fermeture** (![icône en forme de flèche](images/close_arrow.png)) pour terminer l'ajout de l'entité `@appliance`.
 1.  Répétez les étapes 2 à 8 pour créer l'entité `@genre` avec la fonction Fuzzy Matching activée, ainsi que les valeurs et les synonymes ci-dessous :
 
@@ -288,17 +288,17 @@ A présent, ajoutez un noeud homologue qui se déclenche si l'utilisateur ne sp�
 
     ![Animation illustrant le choix d'une autre intention et la relance du processus d'entraînement](images/tut-change-intent.gif){: gif}
 
-Vous pouvez éventuellement passer en revue la compétence **Customer Service - Sample** pour voir ce même scénario d'utilisation enrichi par un dialogue plus long et des fonctionnalités supplémentaires. 
+Vous pouvez éventuellement passer en revue la compétence **Customer Service - Sample** pour voir ce même scénario d'utilisation enrichi par un dialogue plus long et des fonctionnalités supplémentaires.
 
 1.  Cliquez sur le bouton **Back to skills** ![Illustration du bouton Back to skills](images/workspaces-button.png) dans le menu de navigation.
 
 1.  Cliquez sur **Add a sample**.
 
-    L'exemple de compétence est ajoutée à la liste de vos compétences. Il n'est pas associé à des assistants. 
+    L'exemple de compétence est ajoutée à la liste de vos compétences. Il n'est pas associé à des assistants.
 
 ## Etapes suivantes
 {: #tutorial-car-dashboard-deploy}
 
-Maintenant que vous avez développé et testé votre compétence de dialogue, vous pouvez la partager avec vos clients. Déployez votre compétence en la connectant d’abord à un assistant, puis en déployant l’assistant. Cette opération peut s'effectuer de plusieurs manières. Pour plus d'informations, reportez-vous à la rubrique [Ajout d'intégrations](/docs/services/assistant?topic=assistant-deploy-integration-add). 
+Maintenant que vous avez développé et testé votre compétence de dialogue, vous pouvez la partager avec vos clients. Déployez votre compétence en la connectant d’abord à un assistant, puis en déployant l’assistant. Cette opération peut s'effectuer de plusieurs manières. Pour plus d'informations, reportez-vous à la rubrique [Ajout d'intégrations](/docs/services/assistant?topic=assistant-deploy-integration-add).
 
 Vous pouvez accéder au code source d'un exemple d'application de tableau de bord de voiture complet à partir de [GitHub ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/watson-developer-cloud/car-dashboard).

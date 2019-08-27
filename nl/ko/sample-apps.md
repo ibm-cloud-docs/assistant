@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-04-08"
 
 subcollection: assistant
 
@@ -40,7 +40,7 @@ Node.js 앱은 {{site.data.keyword.conversationshort}}가 단순 대화 인터�
 
 이 Node.js 앱은 인텐트, 엔티티 및 대화를 사용하는 {{site.data.keyword.conversationshort}}을 사용하여 빌드할 수 있는 앱 유형의 완전히 개발된 예제입니다.
 
-[데모 보기 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://watson-assistant-demo.ng.bluemix.net/){: new_window}.
+[데모 보기 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://watson-assistant-demo.ng.bluemix.net/){: new_window} 또는 [코드 포크 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/watson-developer-cloud/assistant-demo){: new_window}.
 
 ## {{site.data.keyword.conversationshort}} 및 {{site.data.keyword.discoveryshort}}
 {: #sample-apps-with-discovery}

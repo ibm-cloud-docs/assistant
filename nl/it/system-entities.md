@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-08-06"
+
+keywords: system entity, sys-number, sys-date, sys-time
 
 subcollection: assistant
 
@@ -25,10 +27,14 @@ subcollection: assistant
 # Dettagli delle entità di sistema
 {: #system-entities}
 
-Questa sezione di riferimento fornisce informazioni complete sulle entità di sistema disponibili. Per ulteriori informazioni sulle entità di sistema e su come utilizzarle, consulta [Definizione di entità](/docs/services/assistant?topic=assistant-entities#entities-enable-system-entities) e cerca "Abilitazione delle entità di sistema".
+Informazioni sulle entità di sistema fornite da IBM per l'utilizzo predefinito. Queste entità del programma di utilità integrate aiutano il tuo assistente a riconoscere i termini e i riferimenti che sono più comunemente utilizzati dai clienti nella conversazione, come i numeri e le date.
 {: shortdesc}
 
 Le entità di sistema sono disponibili per le lingue indicate nell'argomento [Lingue supportate](/docs/services/assistant?topic=assistant-language-support).
+
+Se la tua capacità di dialogo è in inglese o tedesco, puoi provare le entità di sistema aggiornate. Per ulteriori dettagli, vedi [Nuove entità di sistema](/docs/services/assistant?topic=assistant-beta-system-entities).
+
+Per ulteriori informazioni su come utilizzarle, vedi [Creazione di entità](/docs/services/assistant?topic=assistant-entities#entities-enable-system-entities).
 
 ## Entità @sys-currency
 {: #system-entities-sys-currency}
@@ -81,7 +87,10 @@ Ottieni risultati equivalenti per altre lingue supportate e valute nazionali.
 
 - I valori di valuta vengono riconosciuti anche come istanze delle entità @sys-number. Se utilizzi condizioni separate per controllare sia i valori di valuta che i numeri, inserisci la condizione che controlla la valuta sopra quella che controlla un numero.
 
-- Se utilizzi l'entità @sys-currency come condizione del nodo e l'utente specifica `$0` come valore, il valore viene riconosciuto correttamente come valuta, ma la condizione viene valutata sul numero zero, non sulla valuta zero. Di conseguenza, non restituisce la risposta prevista. Per controllare i valori di valuta in modo da gestire correttamente gli zeri, nella condizione del nodo utilizza la sintassi dell'espressione SpEL completa `entities['sys-currency']?.value`.
+  Questa soluzione temporanea non è necessaria se stai utilizzando le entità di sistema revisionate. Per ulteriori dettagli, vedi [Nuove entità di sistema](/docs/services/assistant?topic=assistant-beta-system-entities).
+  {: note}
+
+- Se utilizzi l'entità @sys-currency come condizione del nodo e l'utente specifica `$0` come valore, il valore viene riconosciuto correttamente come valuta, ma la condizione viene valutata sul numero zero, non sulla valuta zero. Di conseguenza, `null` nella condizione viene valutato con false e il nodo non viene elaborato. Per controllare i valori di valuta in modo da gestire correttamente gli zeri, nella condizione del nodo utilizza invece l'espressione `@sys-currency >=0`.
 
 ## Entità @sys-date e @sys-time
 {: #system-entities-sys-date-time}
@@ -228,7 +237,7 @@ Ottieni risultati equivalenti per le altre lingue supportate.
 ### Suggerimenti sull'utilizzo di @system-number
 {: #system-entities-sys-number-usage-tips}
 
-- Se utilizzi l'entità @sys-number come condizione del nodo e l'utente specifica zero come valore, il valore 0 viene riconosciuto correttamente come numero, ma la condizione viene valutata su false e non può restituire correttamente la risposta associata. Per controllare i numeri in modo da gestire correttamente gli zeri, nella condizione del nodo utilizza la sintassi dell'espressione SpEL completa `entities['sys-number']?.value`.
+- Se utilizzi l'entità @sys-number come condizione del nodo e l'utente specifica zero come valore, il valore 0 viene riconosciuto correttamente come un numero. Tuttavia, lo 0 viene interpretato come un valore `null` per la condizione, il che implica che il nodo non viene elaborato. Per controllare i numeri in modo da gestire correttamente gli zeri, nella condizione del nodo utilizza invece l'espressione `@sys-number >= 0`.
 
 - Se utilizzi @sys-number per confrontare i valori di numero in una condizione, assicurati di includere separatamente un controllo per la presenza di un numero stesso. Se non viene trovato alcun numero, @sys-number viene valutato come null, il che potrebbe comportare che il confronto venga valutato come true anche se non è presente alcun numero.
 
@@ -283,7 +292,10 @@ Ottieni risultati equivalenti per le altre lingue supportate.
 
 - I valori di percentuale vengono riconosciuti anche come istanze delle entità @sys-number. Se utilizzi condizioni separate per controllare sia i valori di percentuale che i numeri, inserisci la condizione che controlla una percentuale sopra quella che controlla un numero.
 
-- Se utilizzi l'entità @sys-percentage come condizione del nodo e l'utente specifica `0%`  come valore, il valore viene riconosciuto correttamente come percentuale, ma la condizione viene valutata sul numero zero, non sulla percentuale 0%. Pertanto, non restituisce la risposta prevista. Per controllare le percentuali in modo da gestire correttamente le percentuali di zero, nella condizione del nodo utilizza la sintassi dell'espressione SpEL completa `entities['sys-percentage']?.value`.
+  Questa soluzione temporanea non è necessaria se stai utilizzando le entità di sistema revisionate. Per ulteriori dettagli, vedi [Nuove entità di sistema](/docs/services/assistant?topic=assistant-beta-system-entities).
+  {: note}
+
+- Se utilizzi l'entità @sys-percentage come condizione del nodo e l'utente specifica `0%` come valore, il valore viene riconosciuto correttamente come percentuale, ma la condizione viene valutata sul numero zero, non sulla percentuale 0%. Pertanto, `null` nella condizione viene valutato con false e il nodo non viene elaborato. Per controllare le percentuali in modo da gestire correttamente le percentuali di zero, nella condizione del nodo utilizza invece l'espressione `@sys-percentage >= 0`.
 
 - Se immetti un valore come `1-2%`, i valori `1%` e `2%` vengono restituiti come entità di sistema. L'indice sarà l'intero intervallo tra 1% e 2%, ed entrambe le entità avranno lo stesso indice.
 

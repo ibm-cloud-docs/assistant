@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-04-08"
 
 subcollection: assistant
 
@@ -40,7 +40,7 @@ La app Node.js muestra cómo {{site.data.keyword.conversationshort}} utiliza int
 
 Esta app Node.js es un ejemplo completamente desarrollado del tipo de app que puede crear con {{site.data.keyword.conversationshort}} que utiliza intenciones, entidades y diálogo.
 
-[Consulte la demo ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://watson-assistant-demo.ng.bluemix.net/){: new_window}.
+[Consulte la demo ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://watson-assistant-demo.ng.bluemix.net/){: new_window} o [bifurque el código ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://github.com/watson-developer-cloud/assistant-demo){: new_window}.
 
 ## {{site.data.keyword.conversationshort}} y {{site.data.keyword.discoveryshort}}
 {: #sample-apps-with-discovery}

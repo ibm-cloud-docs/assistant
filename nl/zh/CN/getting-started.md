@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-01"
+lastupdated: "2019-08-06"
+
+keywords: assistant, omnichannel, virtual agent, virtual assistant, chatbot, conversation, watson assistant, watson conversation
 
 subcollection: assistant
 
@@ -28,10 +30,10 @@ subcollection: assistant
 {:download: .download}
 {:gif: data-image-type='gif'}
 
-# 入门教程
+# {{site.data.keyword.conversationshort}} 入门
 {: #getting-started}
 
-在本简短教程中，我们将介绍 {{site.data.keyword.conversationshort}} 工具，并完成创建第一个助手的过程。
+在本简短教程中，我们将介绍 {{site.data.keyword.conversationfull}}，并逐步引导您完成创建第一个助手的过程。
 {: shortdesc}
 
 ## 开始之前
@@ -41,67 +43,90 @@ subcollection: assistant
 首先，您需要一个服务实例。
 {: hide-dashboard}
 
-1.  {: hide-dashboard}转至 {{site.data.keyword.cloud_notm}}“目录”中的 [{{site.data.keyword.conversationshort}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/catalog/services/watson-assistant) 页面。
+1.  {: hide-dashboard}转至 {{site.data.keyword.cloud}}“目录”中的 [{{site.data.keyword.conversationshort}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/catalog/services/watson-assistant) 页面。
 
-    如果未选择其他资源组，服务实例将在**缺省**资源组中创建，并且日后*不能*更改。此组足以满足试用服务的目的。
+    如果未选择其他资源组，服务实例将在**缺省**资源组中创建，并且日后*不能*更改。此组足以满足试用产品的目的。
 
     如果要创建实例以用于更稳健的用途，请了解有关[资源组 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://{DomainName}/docs/resources/bestpractice_rgs#bp_resourcegroups){: new_window} 的更多信息。
 1.  {: hide-dashboard}注册免费的 {{site.data.keyword.cloud_notm}} 帐户或登录。
 1.  {: hide-dashboard}单击**创建**。
 
-## 步骤 1：打开工具
+## 步骤 1：打开 Watson Assistant
 {: #getting-started-launch-tool}
 
-创建 {{site.data.keyword.conversationshort}} 服务实例后，您将转至服务仪表板的**管理**页面。
+创建 {{site.data.keyword.conversationshort}} 服务实例后，您会转至 {{site.data.keyword.conversationshort}} 仪表板的**管理**页面。
 {: hide-dashboard}
 
-1.  单击**启动工具**。如果系统提示您登录到该工具，请提供您的 {{site.data.keyword.cloud_notm}} 凭证。
+1.  单击**启动 {{site.data.keyword.conversationshort}}**。如果系统提示您登录，请提供您的 {{site.data.keyword.cloud_notm}} 凭证。
 
 <!-- Remove this text after dedicated instances have the developer console: begin -->
 
-{{site.data.keyword.Bluemix_dedicated_notm}}：从仪表板中选择服务实例以启动工具。
+{{site.data.keyword.Bluemix_dedicated_notm}}：从仪表板中选择服务实例以启动该产品。
 
 <!-- Remove this text after dedicated instances have the Developer Console: end -->
 
-## 步骤 2：创建对话技能
-{: #getting-started-add-skill}
+如果您是全新用户，那么会自动为您创建一个助手，名为*我的第一个助手*。请跳过下一步。 
 
-在 {{site.data.keyword.conversationshort}} 工具中的第一步是创建技能。
+![显示助手已自动添加到“助手”页面](images/gs-ass-created-for-me.png)
+
+如果导览教程在您的位置可用，那么会启动该教程，您可以通过该教程逐步了解产品。学习导览教程；导览教程与以下教程步骤重叠，因此您可以在导览教程结束后继续学习本教程。
+  {: tip}
+
+[*助手*](/docs/services/assistant?topic=assistant-assistants)是一种认知机器人，可以向其添加技能，使其能够以有用的方式与客户进行交互。
+
+如果未自动创建助手，那么第一步是创建助手。
+
+## 步骤 2：创建助手
+{: #getting-started-create-assistant}
+
+1.  单击**创建助手**。
+
+    ![在“助手”页面上创建助手按钮。](images/gs-create-assistant.png)
+1.  将助手命名为`我的第一个助手`。
+1.  单击**创建助手**。
+
+    ![完成创建新助手](images/gs-create-assistant-done.png)
+
+## 步骤 3：创建对话技能
+{: #getting-started-add-skill}
 
 *对话技能*是一个工件容器，工件用于定义助手可以与客户之间进行的会话流。
 
-1.  在 {{site.data.keyword.conversationshort}} 工具的主页中，单击**创建技能**。
+1.  如果已为您创建助手，请单击*我的第一个助手*磁贴以打开助手。
+
+1.  单击**添加对话技能**。
 
     ![显示主页中的“添加技能”按钮](images/gs-new-skill.png)
 
-1.  单击**新建**。
-
-    ![显示“技能”页面中的“新建”按钮](images/gs-click-create-new.png)
-
 1.  将技能命名为 `Conversational skill tutorial`。
 1.  **可选**。如果计划构建的对话将使用英语以外的语言，请从列表中选择相应的语言。
-1.  单击**创建**。
 
     ![完成创建技能](images/gs-add-skill-done.png)
 
-您会转至工具的“意向”页面上。
+1.  单击**创建对话技能**。
 
-## 步骤 3：从内容目录添加意向
+    ![完成创建技能](images/gs-skill-added.png)
+
+1.  单击以打开刚刚创建的技能。
+
+您会转至“意向”页面上。
+
+## 步骤 4：从内容目录添加意向
 {: #getting-started-add-catalog}
 
 通过从内容目录添加意向，向技能添加由 IBM 构建的训练数据。特别是，您将授予助手对**常规**内容目录的访问权，以便对话可以对用户进行问候以及结束与用户的会话。
 
-1.  在 {{site.data.keyword.conversationshort}} 工具中，单击**内容目录**选项卡。
+1.  单击**内容目录**选项卡。
 1.  在列表中找到**常规**，然后单击**添加到技能**。
 
     ![显示“内容目录”，并突出显示“常规”目录的“添加到技能”按钮。](images/gs-add-general-catalog.png)
-1.  打开**意向**选项卡以查看已添加到训练数据中的意向和关联的示例发声。您可以识别出这些意向，因为每个意向名称都以前缀 `#General_` 开头。在下一步中，您将向对话添加 `#General_Greetings` 和 `#General_Ending` 意向。
+1.  打开**意向**选项卡以查看已添加到训练数据中的意向和关联的示例话语。您可以识别出这些意向，因为每个意向名称都以前缀 `#General_` 开头。在下一步中，您将向对话添加 `#General_Greetings` 和 `#General_Ending` 意向。
 
     ![显示在添加“常规”目录后，在“意向”选项卡中显示的意向。](images/gs-general-added.png)
 
 您已通过从 {{site.data.keyword.IBM_notm}} 添加预构建的内容，成功地开始构建训练数据。
 
-## 步骤 4：构建对话
+## 步骤 5：构建对话
 {: #getting-started-build-dialog}
 
 [对话](/docs/services/assistant?topic=assistant-dialog-overview)以逻辑树的形式定义会话流。对话会将意向（用户说的内容）与响应（机器人回复的内容）相匹配。树的每个节点都有一个根据用户输入进行触发的条件。
@@ -110,8 +135,8 @@ subcollection: assistant
 
 ### 添加开始节点
 
-1.  在 {{site.data.keyword.conversationshort}} 工具中，单击**对话**选项卡。
-1.  单击**创建**。您将看到两个节点：
+1.  单击**对话**选项卡。
+1.  单击**创建对话**。您将看到两个节点：
     - **欢迎**：包含用户首次与助手进行交互时向用户显示的问候语。
     - **其他**：包含用于在无法识别用户输入时对用户进行回复的短语。
 
@@ -128,33 +153,31 @@ subcollection: assistant
 
 可以随时测试对话以验证对话。现在我们将测试对话。
 
-- 单击 ![试用](images/ask_watson.png) 图标以打开“试用”窗格。您应该会看到欢迎消息。
+- 单击 ![试用](images/ask_watson.png) 图标，以打开“试用”窗格。您应该会看到欢迎消息。
 
 ### 添加节点以处理意向
 
 现在，在`欢迎`节点和`其他`节点之间添加节点，用于处理意向。
 
 1.  单击**欢迎**节点上的“更多”图标 ![“更多”选项](images/kabob.png)，然后选择**在下方添加节点**。
-1.  在此节点的**输入条件**字段中输入 `#General_Greetings`。然后选择 **`#General_Greetings`** 选项。
-1.  添加响应：`您好！`
+1.  在此节点的**如果助手识别到**字段中，开始输入 `#General_Greetings`。然后选择 **`#General_Greetings`** 选项。
+1.  添加响应文本：`您好！`
 1.  单击 ![关闭](images/close.png) 以关闭编辑视图。
 
    ![已向对话添加常规问候节点。](images/gs-add-greeting-node.png)
 
-1.  单击此节点上的“更多”图标 ![“更多”选项](images/kabob.png)，然后选择**在下方添加节点**以创建对等节点。在对等节点中，指定 `#General_Ending` 作为条件，指定`好的，再会。`作为响应。
+1.  单击此节点上的“更多”图标 ![“更多”选项](images/kabob.png)，然后选择**在下方添加节点**以创建对等节点。在对等节点的**如果助手识别到**字段中，指定 `#General_Ending`，然后指定 `好的，再会。`作为响应文本。
 
    ![向对话添加结束节点。](images/gs-add-ending-node.png)
 
 1.  单击 ![关闭](images/close.png) 以关闭编辑视图。
 
-   ![显示还向对话添加了常规结束节点。](images/gs-ending-added.png)
-
 ### 测试意向识别
 
 您已构建了一个简单的对话来识别并响应问候和结束输入。下面我们来看看效果如何。
 
-1.  单击 ![试用](images/ask_watson.png) 图标以打开“试用”窗格。将再次显示欢迎消息。
-1.  在窗格的底部，输入 `Hello`，然后按 Enter 键。输出指示已识别到 #hello 意向，并显示相应的响应（`您好。`）。
+1.  单击 ![试用](images/ask_watson.png) 图标，以打开“试用”窗格。将再次显示欢迎消息。
+1.  在窗格的底部，输入 `Hello`，然后按 Enter 键。输出指示已识别到 `#General_Greetings` 意向，并显示相应的响应（`您好。`）。
 1.  请尝试进行以下输入：
     - `bye`
     - `howdy`
@@ -170,47 +193,32 @@ subcollection: assistant
 
 好了。您已创建具有两个意向的简单会话，并创建了一个对话来识别这两个意向。
 
-## 步骤 5：创建助手
-{: #getting-started-create-assistant}
-
-[*助手*](/docs/services/assistant?topic=assistant-assistants)是一种认知机器人，可以向其添加技能，使其能够以有用的方式与客户进行交互。
-
-1.  单击**助手**选项卡。
-1.  单击**新建**。
-
-    ![“助手”选项卡上的“新建”按钮](images/gs-create-assistant.png)
-1.  将助手命名为 `Watson Assistant 教程`。
-1.  在“描述”字段中，输入`这是我要创建的样本助手，用于帮助我学习。`
-1.  单击**创建**。
-
-    ![完成创建新助手](images/gs-create-assistant-done0.png)
-
-## 步骤 6：向助手添加技能
-{: #getting-started-add-skill-to-assistant}
-
-向已创建的助手添加构建的对话技能。
-
-1.  在新助手页面中，单击**添加技能**。
-
-    对于使用 {{site.data.keyword.conversationshort}} 服务的一般可用版本构建的任何工作空间，如果已创建或已被授予其开发者角色访问权，那么将看到这些工作空间在“技能”页面上作为会话技能列出。
-    {: tip}
-
-    ![显示“助手”页面中的“添加技能”按钮](images/gs-add-skill.png)
-1.  选择向助手添加早先创建的技能。
-
-## 步骤 7：集成助手
+## 步骤 6：集成助手
 {: #getting-started-integrate-assistant}
 
-既然您有一个可以参与简单会话交流的助手，请将其发布到公共 Web 页面，在此页面中可以对其进行测试。服务提供了称为“预览链接”的内置集成。创建此类型的集成时，它会将助手构建成由 IBM 品牌的 Web 页面托管的交谈窗口小部件。可以打开该 Web 页面并与助手交谈以进行测试。
+既然您有了一个可以参与简单会话交流的助手，请对其进行测试。
 
-1.  单击**助手**选项卡，找到已创建的助手 `Watson Assistant 教程`，然后将其打开。
-1.  在*集成*区域中，单击**添加集成**。
-1.  找到**预览链接**，然后单击**选择集成**。
+1.  单击**助手**选项卡，找到*我的第一个助手*，然后打开该助手。
+1.  执行下列其中一个操作以使用预览链接集成来测试助手。 
+
+    预览链接集成将助手构建成由 IBM 品牌的 Web 页面托管的交谈窗口小部件。可以打开该 Web 页面并与助手交谈以进行测试。
+
+    - 如果已为您创建助手，那么必须添加预览链接集成。在*集成*区域中，单击**添加集成**，然后单击**预览链接**。单击**创建**。
+
+    - 如果是您自己创建了助手，请单击预览链接集成磁贴以将其打开。 
+    
+      您自己创建助手时，系统会自动为您创建预览链接集成。
 
 1.  单击页面上显示的 URL。
 
-    这将在新选项卡中打开该页面。
-1.  对助手说`您好`，并观察助手的响应。您可以与可能希望试用您的助手的其他人共享该 URL。
+    这将在新选项卡中打开测试 Web 页面。
+1.  在文本字段中输入`您好`，并观察助手响应。 
+
+    ![显示了单个对话交流的预览链接集成中的窗口小部件。](images/gs-test-from-preview-link.png)
+
+    您可以与可能希望试用您的助手的其他人共享该 URL。
+
+1.  测试之后，请关闭 Web 页面。单击 **X** 以关闭预览链接集成页面。
 
 ## 后续步骤
 {: #getting-started-next-steps}

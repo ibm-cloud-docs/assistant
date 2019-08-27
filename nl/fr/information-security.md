@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-07-31"
 
 subcollection: assistant
 
@@ -10,6 +10,7 @@ subcollection: assistant
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
@@ -22,7 +23,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Sécurité des informations 
+# Sécurité des informations
 {: #information-security}
 
 IBM se donne pour mission de fournir à ses clients et partenaires des solutions innovantes de confidentialité, de sécurité et de gouvernance des données.
@@ -45,16 +46,23 @@ IBM se donne pour mission de fournir à ses clients et partenaires des solutions
 
 Pour en savoir plus sur le parcours préparatoire au RGPD d'IBM ainsi que sur nos session proposées et offres liées au RGPD pour la prise en charge de votre parcours de conformité, cliquez sur [ici ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](../../icons/launch-glyph.svg "Icône de lien externe")](http://www.ibm.com/gdpr){: new_window}.
 
-## Etiquetage et suppression de données dans {{site.data.keyword.conversationshort}}
+## Health Insurance Portability and Accountability Act (HIPAA)
+{: #information-security-hipaa}
+
+La prise en charge de la loi américaine HIPAA (Health Insurance Portability and Accountability Act ) est disponible pour les forfaits Premium hébergés à Washington, DC, créés le ou après le 1er avril 2019. Pour plus d'informations, reportez-vous à la rubrique [Activation des paramètres pris en charge dans l'Union Européenne et pour la loi HIPAA](/docs/account?topic=account-eu-hipaa-supported#eu-hipaa-supported){: external}.
+
+N'ajoutez pas de renseignements personnels sur la santé aux données d'apprentissage (entités et intentions, y compris les exemples utilisateur) que vous créez. En particulier, veillez à supprimer tout renseignement personnel sur la santé des fichiers contenant de véritables énoncés utilisateur que vous téléchargez pour rechercher des recommandations d’intention ou d’exemple utilisateur d’intention. 
+
+## Etiquetage et suppression de données dans Watson Assistant
 {: #information-security-gdpr-wa}
 
-N'ajoutez pas de données personnelles aux données d'apprentissage (entités et intentions, y compris les exemples utilisateur) que vous créez. En particulier, veillez à supprimer toutes les informations personnellement identifiables des fichiers contenant des énoncés utilisateur réels que vous téléchargez pour y rechercher les recommandations d'exemples utilisateur. 
+N'ajoutez pas de données personnelles aux données d'apprentissage (entités et intentions, y compris les exemples utilisateur) que vous créez. En particulier, veillez à supprimer toutes les informations personnellement identifiables des fichiers contenant des énoncés utilisateur réels que vous téléchargez pour y rechercher les recommandations d'exemples utilisateur.
 
 **Remarque :** les fonctions expérimentales et bêta ne sont pas destinées à un usage en environnement de production. Il n'est donc pas garanti qu'elles fonctionnent comme prévu lors de l'utilisation de l'étiquetage et de la suppression de données. Les fonctions expérimentales et bêta ne doivent pas être utilisées lors de l'implémentation d'une solution nécessitant l'étiquetage et la suppression de données.
 
-Si vous devez supprimer les données d'un message de client dans une instance {{site.data.keyword.conversationshort}}, vous pouvez le faire en fonction de l'ID du client, à condition d'associer le message à un ID client lorsque le message est envoyé au service.
+Si vous devez supprimer les données d'un message de client dans une instance {{site.data.keyword.conversationshort}}, vous pouvez le faire en fonction de l'ID du client, à condition d'associer le message à un ID client lorsque le message est envoyé à {{site.data.keyword.conversationshort}}. 
 
-**Remarque :** les fonctions Preview Link et d'intégration automatique de Facebook ne prennent pas en charge l'étiquetage et donc la suppression des données en fonction de l'ID client. Ces fonctions ne doivent pas être utilisées dans une solution qui nécessite la capacité à supprimer en fonction de l'ID client.  
+**Remarque :** les fonctions Preview Link et d'intégration automatique de Facebook ne prennent pas en charge l'étiquetage et donc la suppression des données en fonction de l'ID client. Ces fonctions ne doivent pas être utilisées dans une solution qui nécessite la capacité à supprimer en fonction de l'ID client.
 
 ### Avant de commencer
 {: #information-security-delete-user-data-prereqs}
@@ -79,7 +87,7 @@ Vous pouvez transmettre plusieurs valeurs **ID client** avec des paires `custome
 
 Si vous ajoutez une compétence de recherche à un assistant, l'entrée utilisateur soumise à cet assistant est transmise au service {{site.data.keyword.discoveryshort}} en tant que requête de recherche. Si l'intégration {{site.data.keyword.conversationshort}} fournit un ID client, l'en-tête de la demande d'API /message obtenue inclut cet ID client, lequel est transmis à la demande d'API /query {{site.data.keyword.discoveryshort}}. Pour supprimer les données de requête associées à un client spécifique, vous devez envoyer une demande de suppression directement à l'instance de service {{site.data.keyword.discoveryshort}} associée à votre assistant. Pour plus d'informations, reportez-vous à la rubrique sur la [sécurité des informations](https://cloud.ibm.com/docs/services/discovery/information-security#gdpr-discovery) {{site.data.keyword.discoveryshort}}.
 
-###  Interrogation des données utilisateur 
+### Interrogation des données utilisateur
 {: #information-security-query-customer-id}
 
 Utilisez le paramètre `filter` de la méthode v1 `/logs` pour rechercher des données utilisateur spécifiques dans le journal des applications. Par exemple, pour rechercher des données spécifiques d'un ID client (`customer_id`) correspondant au meilleur client (`my_best_customer`), la requête peut être :
@@ -95,9 +103,9 @@ Pour plus d'informations, reportez-vous à la rubrique [Référence pour la requ
 ### Suppression de données
 {: #information-security-delete-data}
 
-Pour supprimer les données du journal des messages associées à un utilisateur spécifique que le service a pu stocker, utilisez la méthode d'API v1 `DELETE /user_data`. Spécifiez l'ID client de l'utilisateur en transmettant le paramètre `customer_id` avec la demande.
+Pour supprimer les données du journal des messages associées à un utilisateur spécifique que l'assistant a pu stocker, utilisez la méthode d'API v1 `DELETE /user_data`. Spécifiez l'ID client de l'utilisateur en transmettant le paramètre `customer_id` avec la demande.
 
-Seules les données ajoutées à l'aide du noeud final de l'API `POST /message` et dotées d'un ID client associé peuvent être supprimées à l'aide de cette méthode. Les données ajoutées par d'autres méthodes ne peuvent pas être supprimées en fonction de l'ID client. Par exemple, les entités et les intentions qui ont été ajoutées à partir des conversations client ne peuvent pas être supprimées de cette manière. Les données personnelles ne sont pas prises en charge pour ces méthodes. 
+Seules les données ajoutées à l'aide du noeud final de l'API `POST /message` et dotées d'un ID client associé peuvent être supprimées à l'aide de cette méthode. Les données ajoutées par d'autres méthodes ne peuvent pas être supprimées en fonction de l'ID client. Par exemple, les entités et les intentions qui ont été ajoutées à partir des conversations client ne peuvent pas être supprimées de cette manière. Les données personnelles ne sont pas prises en charge pour ces méthodes.
 
 **IMPORTANT** : la spécification d'un `customer_id` supprimera *tous* les messages contenant ce paramètre `customer_id`, qui ont été reçus avant la demande de suppression, dans l’ensemble de votre instance {{site.data.keyword.conversationshort}}, et pas uniquement dans le cadre d’une compétence.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
 
@@ -88,7 +88,7 @@ Añada una intención en el separador Intenciones. Una intención es la finalida
 ## Paso 2: Añadir entidades
 {: #tutorial-slots-add-entity}
 
-Una definición de entidad incluye un conjunto de *valores* de entidad que representan vocabulario que se utiliza a menudo en el contexto de una determinada intención. Al definir entidades, ayuda al servicio a identificar referencias en la entrada de usuario que están relacionadas con las intenciones de interés. En este paso, habilitará las entidades del sistema que permiten reconocer referencias a horas, fechas y números.
+Una definición de entidad incluye un conjunto de *valores* de entidad que representan vocabulario que se utiliza a menudo en el contexto de una determinada intención. Al definir entidades, ayuda a su asistente a identificar referencias en la entrada de usuario que están relacionadas con las intenciones de interés. En este paso, habilitará las entidades del sistema que permiten reconocer referencias a horas, fechas y números.
 
 1.  Pulse **Entidades** para abrir la página de Entidades.
 1.  Habilite las entidades del sistema que permiten reconocer referencias a fechas, horas y números en la entrada de usuario. Pulse el separador **Entidades del sistema** y, a continuación active estas entidades:
@@ -102,7 +102,7 @@ Habrá habilitado de forma satisfactoria las entidades de sistema @sys-date, @sy
 ## Paso 3: Añadir un nodo de diálogo con ranuras
 {: #tutorial-slots-add-dialog-with-slots}
 
-Un nodo de diálogo representa el inicio de una hebra del diálogo entre el servicio y el usuario. Contiene una condición que debe cumplirse para que el servicio procese el nodo. Como mínimo, también contiene una respuesta. Por ejemplo, una condición de nodo podría buscar la intención `#hello` en la entrada del usuario, y responder con, `Hi. How can I help you?` (Hola. ¿Cómo puedo ayudarle). Este ejemplo representa la forma más simple de un nodo de diálogo, donde el nodo posee una única condición y una única respuesta. Es posible definir diálogos más complejos añadiendo respuestas condicionales a un nodo individual o añadiendo nodos hijo que prolongan el intercambio con el usuario (entre otras opciones). (Si desea obtener más información sobre diálogos complejos, complete la guía de aprendizaje [Creación de un diálogo complejo](/docs/services/assistant?topic=assistant-tutorial)).
+Un nodo de diálogo representa el inicio de una hebra del diálogo entre su asistente y el usuario. Contiene una condición que debe cumplirse para que su asistente procese el nodo. Como mínimo, también contiene una respuesta. Por ejemplo, una condición de nodo podría buscar la intención `#hello` en la entrada del usuario, y responder con, `Hi. How can I help you?` (Hola. ¿Cómo puedo ayudarle). Este ejemplo representa la forma más simple de un nodo de diálogo, donde el nodo posee una única condición y una única respuesta. Es posible definir diálogos más complejos añadiendo respuestas condicionales a un nodo individual o añadiendo nodos hijo que prolongan el intercambio con el usuario (entre otras opciones). (Si desea obtener más información sobre diálogos complejos, complete la guía de aprendizaje [Creación de un diálogo complejo](/docs/services/assistant?topic=assistant-tutorial)).
 
 El nodo que añadirá en este paso es uno que contendrá ranuras. Las ranuras proporcionan un formato estructurado a través del cual es posible solicitar y guardar varios tipos de información desde un usuario dentro de un nodo individual. Son más útiles cuando tiene en mente una tarea específica y necesita por parte del usuario elementos clave de información para poder realizar dicha tarea. Consulte [Obtención de información con ranuras](/docs/services/assistant?topic=assistant-dialog-slots) para obtener más información.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-08-12"
 
 subcollection: assistant
 
@@ -164,7 +164,7 @@ Se o usuário fornece qualquer um dos valores de intervalo na entrada inicial, o
 ## Etapa 3: Tratar zeros corretamente
 {: #tutorial-slots-complex-recognize-zero}
 
-Quando você usa a entidade do sistema `sys-number` em uma condição do intervalo, ela não lida com zeros adequadamente. Em vez de configurar a variável de contexto que você define para o intervalo como 0, o serviço configura a variável de contexto como false. Como resultado, o intervalo não acha que ele está cheio e solicita um número para o usuário novamente até que o usuário especifique um número diferente de zero.
+Quando você usa a entidade do sistema `sys-number` em uma condição do intervalo, ela não lida com zeros adequadamente. Em vez de configurar a variável de contexto definida para o slot como 0, seu assistente a configura como false. Como resultado, o intervalo não acha que ele está cheio e solicita um número para o usuário novamente até que o usuário especifique um número diferente de zero.
 
 1.  Teste o nó para que seja possível entender melhor o problema. Abra a área de janela "Experimente" e clique em **Limpar** para excluir os valores das variáveis de contexto de intervalo que você especificou quando testou o nó com os intervalos antes. Use o script a seguir:
 
@@ -202,22 +202,34 @@ Quando você usa a entidade do sistema `sys-number` em uma condição do interva
 
     Você ficará preso nesse loop até especificar um número diferente de 0.
 
-1.  Para assegurar que o intervalo trate zeros adequadamente, mude a condição do intervalo de `@sys-number` para `@sys-number || @sys-number:0`.
+1.  Para garantir que o slot trate os zeros corretamente, mude a condição do slot de `@sys-number` para `@sys-number >= 0`.
 
-1.  Clique no ícone **Editar resposta** ![Editar resposta](images/edit-slot.png) para o intervalo.
+1.  Abra o intervalo para editá-lo, clicando no ícone **Editar intervalo** ![Editar intervalo](images/edit-slot.png). No menu **Opções** ![Ícone Mais](images/kabob.png), abra o editor de JSON.
 
-1.  Quando a variável de contexto é criada, ela usa automaticamente a mesma expressão que é especificada para a condição do intervalo. No entanto, a variável de contexto deve salvar somente um número. Edite o valor que foi salvo como a variável de contexto para remover o operador `OR` dele. No menu **Mais** ![Ícone Mais](images/kabob.png), selecione **Abrir o editor JSON** e, em seguida, edite o JSON que define a variável de contexto. Mude a variável de `"guests":"@sys-number | | @sys-number:0"` para usar a sintaxe a seguir:
+1.  Mude o valor da variável de contexto.
+
+    O valor será semelhante a este:
 
     ```json
     {
       "context": {
-        "guests": "@sys-number"
+        "number": "@sys-number >= 0" }
+    }
+    ```
+    {: codeblock}
+
+    Mude-o para ser semelhante a este:
+
+    ```json
+    {
+      "context": {
+        "number":"@sys-number"
       }
     }
     ```
     {: codeblock}
 
-1.  Clique em **Salvar**.
+1.  Salve suas mudanças. 
 
 1.  Teste o nó novamente. Abra a área de janela "Experimente" e clique em **Limpar** para excluir os valores das variáveis de contexto de intervalo que você especificou quando testou o nó com os intervalos antes. Para ver o impacto das mudanças feitas, use o script a seguir:
 
@@ -344,7 +356,7 @@ Para validar a entrada do usuário, conclua as etapas a seguir:
     - Verifique se o número de convidados especificado é maior que zero.
     - Preveja e direcione o caso quando o usuário mudar o número de convidados.
 
-      Se, em algum ponto enquanto o nó com intervalos está sendo processado, o usuário muda um valor de intervalo, o valor da variável de contexto de intervalo correspondente é atualizado. No entanto, isso pode ser útil para permitir que o usuário saiba que o valor está sendo substituído, tanto para dar um feedback claro ao usuário quanto para dar ao usuário uma chance de retificar isso se a mudança não era o que se pretendia. 
+      Se, em algum ponto enquanto o nó com intervalos está sendo processado, o usuário muda um valor de intervalo, o valor da variável de contexto de intervalo correspondente é atualizado. No entanto, isso pode ser útil para permitir que o usuário saiba que o valor está sendo substituído, tanto para dar um feedback claro ao usuário quanto para dar ao usuário uma chance de retificar isso se a mudança não era o que se pretendia.
 
 1.  Na visualização de edição do nó com intervalos, clique no ícone **Editar intervalo** ![Edit intervalo](images/edit-slot.png) para o intervalo `@sys-number`.
 
@@ -360,13 +372,13 @@ Para validar a entrada do usuário, conclua as etapas a seguir:
       <th>Ação</th>
     </tr>
     <tr>
-      <td>` entidades [ 'sys-number' ] ?.value == 0 `</td>
+      <td>`@sys-number == 0`</td>
       <td>Especifique um número que seja maior que 0.</td>
       <td>Limpar o intervalo e o prompt novamente</td>
     </tr>
     <tr>
       <td>`(event.previous_value != null) && (event.previous_value != event.current_value)`</td>
-      <td>Ok, atualizando o número de convidados de `<? event.previous_value ?>` para `<? event.current_value ?>`.</td>
+      <td>Ok, atualizando o número de guests de `<? event.previous_value ?>` para `<? event.current_value ?>`.</td>
       <td>Ir em frente</td>
     </tr>
     <tr>
@@ -644,7 +656,7 @@ A inclusão de um nó com intervalos é poderosa, pois mantém os usuários cont
     Se você configura mais de um intervalo para ignorar outros intervalos ou configura outro manipulador de eventos no nível do nó para ignorar intervalos, deve-se usar uma abordagem diferente para verificar se a intenção #exit foi acionada. Veja [Manipulando solicitações para sair de um processo](/docs/services/assistant?topic=assistant-dialog-slots#dialog-slots-node-level-handler) para obter uma maneira alternativa de fazer isso.
     {: note}
 
-1.  Você deseja que o serviço verifique a propriedade `has_skipped_slots` antes que ela exiba a resposta no nível do nó padrão. Mova a resposta condicional `has_skipped_slots` para cima para que ela seja processada antes da resposta condicional original ou ela nunca será acionada. Para fazer isso, clique na resposta que você acabou de incluir, use a **seta para cima** para movê-la para cima e, em seguida, clique em **Salvar**.
+1.  Você deseja que seu assistente verifique a propriedade `has_skipped_slots` antes de exibir a resposta de nível de nó padrão. Mova a resposta condicional `has_skipped_slots` para cima para que ela seja processada antes da resposta condicional original ou ela nunca será acionada. Para fazer isso, clique na resposta que você acabou de incluir, use a **seta para cima** para movê-la para cima e, em seguida, clique em **Salvar**.
 
 1.  Teste essa mudança usando o script a seguir na área de janela "Experimente".
 
@@ -804,7 +816,7 @@ Para as informações de $time, você definirá uma instrução de acompanhament
 ## Etapa 9: conectar-se a um serviço externo
 {: #tutorial-slots-complex-action}
 
-Agora que seu diálogo pode coletar e confirmar detalhes de reserva de um usuário, é possível chamar um serviço externo para realmente reservar uma mesa no sistema do restaurante ou por meio de um serviço de reservas on-line de múltiplos restaurantes. Veja [Fazendo chamadas programáticas de um nó de diálogo](/docs/services/assistant?topic=assistant-dialog-actions) para obter mais detalhes.
+Agora que seu diálogo pode coletar e confirmar detalhes de reserva de um usuário, é possível chamar um serviço externo para realmente reservar uma mesa no sistema do restaurante ou por meio de um serviço de reservas on-line de múltiplos restaurantes. Veja [Fazendo chamadas programáticas de um nó de diálogo](/docs/services/assistant?topic=assistant-dialog-webhooks) para obter mais detalhes.
 
 Na lógica que chama o serviço reserva, certifique-se de verificar `has_skipped_slots` e não continue com a reserva se ele estiver presente.
 

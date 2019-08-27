@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-04-08"
 
 subcollection: assistant
 
@@ -35,12 +35,12 @@ L'applicazione Node.js mostra in che modo {{site.data.keyword.conversationshort}
 
 [Vedi la demo ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://watson-assistant-simple.ng.bluemix.net/){: new_window} o [duplica il codice ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://github.com/watson-developer-cloud/assistant-simple){: new_window}.
 
-## Demo del servizio clienti di {{site.data.keyword.conversationshort}} 
+## Demo del servizio clienti di {{site.data.keyword.conversationshort}}
 {: #sample-apps-customer-service}
 
 Questa applicazione Node.js è un esempio interamente sviluppato del tipo di applicazione che puoi creare con {{site.data.keyword.conversationshort}} che utilizza intenti, entità e dialogo.
 
-[Visualizza la demo ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://watson-assistant-demo.ng.bluemix.net/){: new_window}.
+[Vedi la demo ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://watson-assistant-demo.ng.bluemix.net/){: new_window} o [duplica il codice ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://github.com/watson-developer-cloud/assistant-demo){: new_window}.
 
 ## {{site.data.keyword.conversationshort}} e {{site.data.keyword.discoveryshort}}
 {: #sample-apps-with-discovery}

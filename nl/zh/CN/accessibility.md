@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-06-11"
 
 subcollection: assistant
+
 
 ---
 
@@ -28,7 +29,7 @@ subcollection: assistant
 IBM 致力于为每个人提供可访问的产品，无论年龄或能力。
 {: shortdesc}
 
-{{site.data.keyword.conversationfull}} 工具使用标准 Windows 导航键。
+{{site.data.keyword.conversationfull}} 使用标准 Windows 导航键。
 
 ## 产品文档中的辅助功能
 {: #accessibility-in-doc}
@@ -41,4 +42,4 @@ IBM 致力于为每个人提供可访问的产品，无论年龄或能力。
 - 使用屏幕放大器来放大屏幕上显示的内容。
 - 仅使用键盘来操作特定功能或等效功能。
 
-文档内容在 IBM Cloud Docs 站点中发布。有关站点辅助功能的信息，请参阅 [IBM Cloud 的辅助功能](/docs/overview/accessibility?topic=overview-accessibility-platform)。
+文档内容在 IBM Cloud 文档站点中发布。有关站点辅助功能的信息，请参阅 [IBM Cloud 的辅助功能](/docs/overview/accessibility?topic=overview-accessibility-platform)。

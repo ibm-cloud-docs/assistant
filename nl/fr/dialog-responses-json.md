@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-11"
 
 subcollection: assistant
 
@@ -22,10 +22,10 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Définition de réponses à l'aide de l'éditeur JSON  
+# Définition de réponses à l'aide de l'éditeur JSON
 {: #dialog-responses-json}
 
-Dans certaines situations, vous devrez peut-être définir les réponses à l'aide de l'éditeur JSON. (Pour plus d'informations sur les réponses de dialogue, reportez-vous à la rubrique [Réponses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-responses)). La modification de la réponse au format JSON vous donne un accès direct aux données qui seront renvoyées au canal de communication ou à l'application personnalisée. 
+Dans certaines situations, vous devrez peut-être définir les réponses à l'aide de l'éditeur JSON. (Pour plus d'informations sur les réponses de dialogue, reportez-vous à la rubrique [Réponses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-responses)). La modification de la réponse au format JSON vous donne un accès direct aux données qui seront renvoyées au canal de communication ou à l'application personnalisée.
 
 ## Format JSON générique
 {: #dialog-responses-json-generic}
@@ -100,7 +100,7 @@ Si vous créez votre propre application client, elle doit mettre en oeuvre chaqu
 ## Format JSON natif
 {: #dialog-responses-json-native}
 
-Outre le format JSON générique, le noeud de dialogue JSON prend également en charge les réponses spécifiques aux canaux écrites à l'aide des formats natifs Slack et Facebook Messenger. Ces formats sont également pris en charge par le connecteur {{site.data.keyword.conversationshort}}. Vous souhaiterez peut-être utiliser les formats JSON natifs si vous savez que votre espace de travail ne sera intégré qu'avec un seul type de canal et si vous devez spécifier un type de réponse qui n'est actuellement pas pris en charge par le format JSON générique. 
+Outre le format JSON générique, le noeud de dialogue JSON prend également en charge les réponses spécifiques aux canaux écrites à l'aide des formats natifs Slack et Facebook Messenger. Ces formats sont également pris en charge par le connecteur {{site.data.keyword.conversationshort}}. Vous souhaiterez peut-être utiliser les formats JSON natifs si vous savez que votre espace de travail ne sera intégré qu'avec un seul type de canal et si vous devez spécifier un type de réponse qui n'est actuellement pas pris en charge par le format JSON générique.
 
 Vous pouvez spécifier le format JSON natif pour Slack ou Facebook à l'aide de la zone appropriée dans la réponse de noeud de dialogue :
 
@@ -166,7 +166,7 @@ Affiche un ensemble de boutons ou une liste déroulante à partir desquels les u
 | options[].label | Chaîne | Libellé de l'option tourné vers l'utilisateur. | O     |
 | options[].value | objet | Objet définissant la réponse qui sera envoyée au service {{site.data.keyword.conversationshort}} si l'utilisateur sélectionne l'option. | O |
 | options[].value.input | objet | Objet d'entrée contenant le texte d'entrée correspondant à l'option. | N |
-| options[].value.input.text | Chaîne | Texte qui sera envoyé au service pour l'option. | N |
+| options[].value.input.text | Chaîne | Texte qui sera envoyé à l'assistant pour l'option. | N |
 
 #### Exemple
 {: #dialog-responses-json-option-example}
@@ -217,7 +217,7 @@ Cet exemple affiche deux options :
 ### Pause
 {: #dialog-responses-json-pause}
 
-Effectue une pause avant d’envoyer le message suivant au canal et envoie éventuellement un événement "l'utilisateur est en train d'écrire" (pour les canaux qui prennent en charge cette fonction). 
+Effectue une pause avant d’envoyer le message suivant au canal et envoie éventuellement un événement "l'utilisateur est en train d'écrire" (pour les canaux qui prennent en charge cette fonction).
 
 #### Zones
 {: #dialog-responses-json-pause-fields}
@@ -231,7 +231,7 @@ Effectue une pause avant d’envoyer le message suivant au canal et envoie éven
 #### Exemple
 {: #dialog-responses-json-pause-example}
 
-Cet exemple envoie l'événement "l'utilisateur est en train d'écrire" en mettant en pause pendant 5 secondes. 
+Cet exemple envoie l'événement "l'utilisateur est en train d'écrire" en mettant en pause pendant 5 secondes.
 
 ```json
 {
@@ -250,7 +250,7 @@ Cet exemple envoie l'événement "l'utilisateur est en train d'écrire" en metta
 ### Texte
 {: #dialog-responses-json-text}
 
-Affiche un texte. Pour diversifier les réponses, vous pouvez spécifier plusieurs réponses textuelles alternatives. Si vous spécifiez plusieurs réponses, vous pouvez choisir d'effectuer une rotation séquentielle dans la liste, de choisir une réponse au hasard ou de générer toutes les réponses spécifiées. 
+Affiche un texte. Pour diversifier les réponses, vous pouvez spécifier plusieurs réponses textuelles alternatives. Si vous spécifiez plusieurs réponses, vous pouvez choisir d'effectuer une rotation séquentielle dans la liste, de choisir une réponse au hasard ou de générer toutes les réponses spécifiées.
 
 #### Zones
 {: #dialog-responses-json-text-fields}
@@ -260,13 +260,13 @@ Affiche un texte. Pour diversifier les réponses, vous pouvez spécifier plusieu
 | response_type | Enum   | `text`             | O         |
 | values        | liste   | Liste d'un ou plusieurs objets définissant la réponse textuelle. | O |
 | values.[_n_].text   | Chaîne | Texte d'une réponse. Peut inclure des caractères de retour à la ligne (`\n`) et du balisage Markdown, si le canal le permet. (Tout formatage non pris en charge par le canal est ignoré.) | N |
-| selection_policy | Chaîne | La manière dont une réponse est sélectionnée dans la liste, si plusieurs réponses sont spécifiéee. Les valeurs possibles sont `sequential`, `random` et `multiline`. | N |
+| selection_policy | Chaîne | La manière dont une réponse est sélectionnée dans la liste, si plusieurs réponses sont spécifiées. Les valeurs possibles sont `sequential`, `random` et `multiline`. | N |
 | délimiteur     | Chaîne | Délimiteur à utiliser comme séparateur entre les réponses. Utilisé uniquement lorsque `selection_policy`=`multiline`. Le délimiteur par défaut est le retour à la ligne (`\n`). | N |
 
 #### Exemple
 {: #dialog-responses-json-text-example}
 
-Cet exemple affiche un message d'accueil à l'utilisateur. 
+Cet exemple affiche un message d'accueil à l'utilisateur.
 
 ```json
 {

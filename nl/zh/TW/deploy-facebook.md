@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-01"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
+
 
 ---
 
@@ -37,7 +38,7 @@ Facebook Messenger 是一種行動傳訊應用程式，可協助企業及客戶�
 
 1.  從「整合」區段中，按一下**新增整合**。
 
-1.  按一下 *Facebook Messenger* 的**選取整合**按鈕。
+1.  按一下 **Facebook Messenger**。
 
 1.  遵循畫面上提供的指示來完成整合處理程序。
 
@@ -75,7 +76,7 @@ Facebook Messenger 是一種行動傳訊應用程式，可協助企業及客戶�
 1.  鍵入您先前建立的頁面名稱。
 1.  在頁面出現之後，請按一下該頁面，然後開始與助理進行會談。
 
-Facebook Messenger 整合不會處理對話的 Welcome 節點。歡迎訊息不會顯示在 Facebook 會談中，好像它是在工具內的「試用」窗格中，或是在「預覽鏈結」整合網頁中。不會從這裡觸發它，因為在使用者所啟動的對話流程中，會跳過含 `welcome` 特殊條件的節點。Facebook Messenger 會等待使用者起始交談。如果您需要在交談開始時設定環境定義變數的預設值，請不要在 Welcom 節點中設定它們。如需相關資訊，請參閱[啟動對話](/docs/services/assistant?topic=assistant-dialog-start)。
+Facebook Messenger 整合不會處理對話的 Welcome 節點。歡迎訊息不會顯示在 Facebook 會談中，好像它是在「試用」窗格中，或是在「預覽鏈結」整合網頁中。不會從這裡觸發它，因為在使用者所啟動的對話流程中，會跳過含 `welcome` 特殊條件的節點。Facebook Messenger 會等待使用者起始交談。如果您需要在交談開始時設定環境定義變數的預設值，請不要在 Welcom 節點中設定它們。如需相關資訊，請參閱[啟動對話](/docs/services/assistant?topic=assistant-dialog-start)。
 {: note}
 
 在閒置 60 分鐘（「精簡」及「標準」方案則為 5 分鐘）之後，現行階段作業的對話流程會重新啟動。這表示，如果使用者停止與助理互動，則在 60（或 5）分鐘之後，前一次交談期間設定的任何環境定義變數值都會設為空值或設回其預設值。

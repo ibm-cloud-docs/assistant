@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-08-12"
 
 subcollection: assistant
 
@@ -60,7 +60,7 @@ subcollection: assistant
     ```json
     {
       "context": {
-   "date": "<? @sys-date.reformatDateTime('EEEE, MMMM d') ?>"
+        "date": "<? @sys-date.reformatDateTime('EEEE, MMMM d') ?>"
       }
     }
     ```
@@ -77,7 +77,7 @@ subcollection: assistant
     ```json
     {
       "context": {
-   "time": "<? @sys-time.reformatDateTime('h:mm a') ?>"
+        "time": "<? @sys-time.reformatDateTime('h:mm a') ?>"
       }
     }
     ```
@@ -150,7 +150,7 @@ subcollection: assistant
 
 1.  輸入 `i'd like to make a reservation.`
 
-    對話現在會回應 `I can make a reservation for you. Just tell me the day and time of the reservation, and how many people it is for.`
+    現在，對話會回應：`我可以為您訂位。請告訴我預訂的日期和時間，以及有幾位。`
 
 1.  輸入 `it's for Saturday. There will be 2 of us coming in at 8pm`
 
@@ -164,7 +164,7 @@ subcollection: assistant
 ## 步驟 3：正確處理零
 {: #tutorial-slots-complex-recognize-zero}
 
-當您在空位條件中使用 `sys-number` 系統實體時，它不會正確處理零。該服務會將環境定義變數設為 false，而不是將您對空位定義的環境定義變數設為 0。因此，該空位不會認為它已滿，而會一再提示使用者輸入數字，直到使用者指定零以外的數字為止。
+當您在空位條件中使用 `sys-number` 系統實體時，它不會正確處理零。助理會將環境定義變數設為 false，而不是將您對空位定義的環境定義變數設為 0。因此，該空位不會認為它已滿，而會一再提示使用者輸入數字，直到使用者指定零以外的數字為止。
 
 1.  測試節點，以更充分瞭解問題。開啟「試用」窗格，然後按一下**清除**，以刪除您在先前測試含空位的節點時所指定的空位環境定義變數值。請使用下列 Script：
 
@@ -202,22 +202,35 @@ subcollection: assistant
 
     您將卡在此迴圈中，直到您指定 0 以外的數字為止。
 
-1.  為了確保空位能正確處理零，請將空位條件從 `@sys-number` 變更為 `@sys-number ||@sys-number:0`。
+1.  為了確保空位能正確處理零，請將空位條件從 `@sys-number` 變更為 `@sys-number >= 0`。
 
-1.  按一下空位的**編輯回應** ![編輯回應](images/edit-slot.png) 圖示。
+1.  按一下**編輯空位** ![編輯空位](images/edit-slot.png) 圖示，以開啟空位進行編輯。從**選項** ![「其他」圖示](images/kabob.png) 功能表，開啟 JSON 編輯器。
 
-1.  建立環境定義變數時，它會自動使用針對空位條件指定的相同表示式。不過，環境定義變數只能儲存一個數字。請編輯已儲存作為環境定義變數的值，從其中移除 `OR` 運算子。從**其他** ![「其他」圖示](images/kabob.png) 功能表中，選取**開啟 JSON 編輯器**，然後編輯定義該環境定義變數的 JSON。將變數從 `"guests":"@sys-number || @sys-number:0"` 變更為使用下列語法：
+1.  變更 context 變數值。
+
+    值將看起來像這樣：
 
     ```json
     {
       "context": {
-   "guests": "@sys-number"
+        "number": "@sys-number >= 0"
       }
     }
     ```
     {: codeblock}
 
-1.  按一下**儲存**。
+    將它變成看起來像這樣：
+
+    ```json
+    {
+      "context": {
+        "number": "@sys-number"
+      }
+    }
+    ```
+    {: codeblock}
+
+1.  儲存變更。 
 
 1.  重新測試節點。開啟「試用」窗格，然後按一下**清除**，以刪除您在先前測試含空位的節點時所指定的空位環境定義變數值。若要查看所做變更的影響，請使用下列 Script：
 
@@ -344,7 +357,7 @@ subcollection: assistant
     - 請確認指定的來賓數目大於零。
     - 預測及處理使用者變更來賓數目的情況。
 
-      在處理含空位的節點時的任何時間點，如果使用者變更空位值，則會更新對應的空位環境定義變數值。不過，讓使用者知道該值已被取代很有幫助，不僅可提供清楚的回饋給使用者，也能讓使用者可以在變更不是她想要結果的時候加以更正。 
+      在處理含空位的節點時的任何時間點，如果使用者變更空位值，則會更新對應的空位環境定義變數值。不過，讓使用者知道該值已被取代很有幫助，不僅可提供清楚的回饋給使用者，也能讓使用者可以在變更不是她想要結果的時候加以更正。
 
 1.  從含空位的節點的編輯視圖中，按一下 `@sys-number` 空位的**編輯空位** ![編輯空位](images/edit-slot.png) 圖示。
 
@@ -360,7 +373,7 @@ subcollection: assistant
       <th>動作</th>
     </tr>
     <tr>
-      <td>`entities['sys-number']?.value == 0`</td>
+      <td>`@sys-number == 0`</td>
       <td>請指定大於 0 的數字。</td>
       <td>清除空位並重新提示</td>
     </tr>
@@ -371,7 +384,7 @@ subcollection: assistant
     </tr>
     <tr>
       <td>`true`</td>
-      <td>確定，預約 $guests 位來賓。</td>
+      <td>Ok. 預約 $guests 位來賓。</td>
       <td>繼續</td>
     </tr>
     </table>
@@ -522,7 +535,7 @@ subcollection: assistant
     </tr>
     <tr>
       <td>`!($date && $time)`</td>
-      <td>Ok. The reservation is for $guests guests.</td>
+      <td>Ok. 預約 $guests 位來賓。</td>
       <td>繼續</td>
     </tr>
     </table>
@@ -543,7 +556,7 @@ subcollection: assistant
     ```json
     {
       "context": {
-   "date": null,
+        "date": null,
         "time": null,
         "guests": null,
         "confirmation": null
@@ -644,7 +657,7 @@ subcollection: assistant
     如果您配置多個空位來跳過其他空位，或配置另一個節點層次事件處理程式來跳過空位，則必須使用不同的方式來檢查是否已觸發 #exit 目的。請參閱[處理結束處理程序的要求](/docs/services/assistant?topic=assistant-dialog-slots#dialog-slots-node-level-handler)，以取得這樣做的替代方式。
     {: note}
 
-1.  您想要服務先檢查 `has_skipped_slots` 內容，再顯示標準節點層次回應。將 `has_skipped_slots` 條件式回應上移，以在原始條件式回應之前處理它，或永遠不予觸發。若要這樣做，請按一下您剛才新增的回應，使用**上移鍵**將它上移，然後按一下**儲存**。
+1.  您要助理先檢查 `has_skipped_slots` 內容，再顯示標準節點層次回應。將 `has_skipped_slots` 條件式回應上移，以在原始條件式回應之前處理它，或永遠不予觸發。若要這樣做，請按一下您剛才新增的回應，使用**上移鍵**將它上移，然後按一下**儲存**。
 
 1.  在「試用」窗格中使用下列 Script 來測試這項變更。
 
@@ -806,7 +819,7 @@ subcollection: assistant
 ## 步驟 9：連接至外部服務
 {: #tutorial-slots-complex-action}
 
-既然您的對話可以收集及確認使用者的預約詳細資料，您就可以呼叫外部服務或透過多餐廳線上預約服務，在餐廳系統中實際進行訂位。如需詳細資料，請參閱[從對話節點進行程式化呼叫](/docs/services/assistant?topic=assistant-dialog-actions)。
+既然您的對話可以收集及確認使用者的預約詳細資料，您就可以呼叫外部服務或透過多餐廳線上預約服務，在餐廳系統中實際進行訂位。如需詳細資料，請參閱[從對話節點進行程式化呼叫](/docs/services/assistant?topic=assistant-dialog-webhooks)。
 
 在呼叫預約服務的邏輯中，請務必檢查 `has_skipped_slots`，而且不要繼續進行已存在的預約。
 

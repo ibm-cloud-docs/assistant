@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-08-12"
 
 subcollection: assistant
 
@@ -30,11 +30,12 @@ subcollection: assistant
 
 Le richieste API richiedono un parametro di versione che utilizza una data nel formato `version=YYYY-MM-DD`. Ogni volta che modifichiamo l'API in modo incompatibile con le versioni precedenti, rilasciamo una nuova versione secondaria dell'API.
 
-Invia il parametro di versione con ogni richiesta API. Il servizio utilizza la versione dell'API per la data da te specificata o la versione più recente prima di tale data. Non impostare come predefinita la data corrente. Specifica invece una data che corrisponda a una versione compatibile con la tua applicazione e non modificarla finché l'applicazione non è pronta per una versione successiva.
+Invia il parametro di versione con ogni richiesta API. {{site.data.keyword.conversationshort}} utilizza la versione dell'API per la data da te specificata o la versione più recente prima di tale data. Non impostare come predefinita la data corrente. Specifica invece una data che corrisponda a una versione compatibile con la tua applicazione e non modificarla finché l'applicazione non è pronta per una versione successiva.
 
 - La versione corrente per V1 è `2019-02-28`.
 - La versione corrente per V2 è `2019-02-28`.
-- Il riquadro "Provalo" negli strumenti {{site.data.keyword.conversationshort}} utilizza la versione `2018-07-10`.
+- Il riquadro "Try it out" della capacità di dialogo utilizza la versione `2018-07-10`.
+- Il riquadro "Try it out" della capacità di ricerca utilizza la versione API {{site.data.keyword.discoveryshort}} `2018-12-03`.
 
 ## Funzioni beta
 {: #release-notes-beta}
@@ -50,14 +51,117 @@ I modelli esistenti che hai addestrato non saranno immediatamente interessati, m
 
 **Nota:** questa istruzione di aggiornamento si applica solo alle lingue e alle funzioni genericamente disponibili (GA).
 
-Sono disponibili le seguenti nuove funzioni e modifiche al servizio. Controlla il nostro [blog ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://medium.com/ibm-watson/assistant/home) per trovare informazioni approfondite su come le ultime funzioni possono offrire dei benefici al tuo business.
+Sono disponibili le seguenti nuove funzioni e modifiche a {{site.data.keyword.conversationshort}}. Controlla il nostro [blog ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://medium.com/ibm-watson/assistant/home) per trovare informazioni approfondite su come le ultime funzioni possono offrire dei benefici al tuo business.
+
+## 12 agosto 2019
+{: #12August2019}
+
+- **Nuovo metodo di dialogo**: è stato aggiunto il metodo `getMatch`. Puoi utilizzare questo metodo per estrarre una ricorrenza specifica di un modello di espressione regolare che si ripete nell'input utente. Per ulteriori dettagli, vedi l'argomento [metodi di dialogo](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings-getMatch).
+
+## 9 agosto 2019
+{: #9August2019}
+
+- **Tour del prodotto introduttivo**: per alcuni nuovi utenti, viene mostrato un nuovo tour introduttivo in modo che l'utente può scegliere di seguire per eseguire la procedura iniziale di creazione di un assistente.
+
+## 6 agosto 2019
+{: #6August2019}
+
+- Miglioramenti ai callout webhook e alla pagina di dialogo disponibili in Dallas.
+
+## 1 agosto 2019
+{: #1August2019}
+
+I seguenti aggiornamenti sono disponibili in tutte le ubicazioni ad eccezione attualmente di Dallas.
+{: important}
+
+- **Sono disponibili i callout webhook**: aggiungi dei webhook ai nodi di dialogo per effettuare chiamate in modo programmatico a un'applicazione esterna come parte del flusso di conversazione. Il nuovo supporto webhook semplifica il processo di implementazione di callout. (Non sono più necessari degli oggetti JSON `action`.) Per ulteriori informazioni, vedi [Esecuzione di una chiamata programmatica da un nodo di dialogo](/docs/services/assistant?topic=assistant-dialog-webhooks).
+
+- **Risposta della pagina di dialogo migliorata**: in tutte le istanze del servizio, l'interfaccia utente della pagina di dialogo è stata aggiornata in modo da utilizzare una nuova libreria JavaScript che aumenta la velocità di risposta della pagina. Di conseguenza, l'aspetto di alcuni elementi dell'interfaccia utente grafica, ad esempio i pulsanti, è leggermente cambiato ma non lo è la funzione.
+
+## 31 luglio 2019
+{: #31July2019}
+
+- **La capacità di ricerca e la correzione automatica sono generalmente disponibili**: le funzioni di capacità di ricerca e correzione ortografica automatica, che erano prima disponibili come funzioni beta, ora sono generalmente disponibili. 
+
+  - Le capacità di ricerca possono essere create solo dagli utenti dei piani Plus o Premium. 
+  - Puoi abilitare la correzione automatica solo per le capacità di dialogo in lingua inglese. Viene abilitata automaticamente per le nuove capacità di dialogo in lingua inglese.
+
+## 26 luglio 2019
+{: #26July2019}
+
+- **È stato risolto il problema delle capacità mancanti**: in alcuni casi, gli spazi di lavoro creati solo tramite l'API non venivano visualizzati quando aprivi l'interfaccia utente {{site.data.keyword.conversationshort}}. Questo problema è stato risolto. Tutti gli spazi di lavoro che crei utilizzando l'API vengono visualizzati come capacità di dialogo quando apri l'interfaccia utente.
+
+## 23 luglio 2019
+{: #23July2019}
+
+- **La ricerca nel dialogo è stata corretta**: in alcune capacità, la funzione di ricerca non funzionava nella pagina di dialogo. Il problema è stato ora corretto.
+
+## 17 luglio 2019
+{: #17July2019}
+
+- **Limite nelle scelte di disambiguazione**: puoi ora impostare il numero massimo di opzioni da mostrare agli utenti quando l'assistente gli chiede di chiarire cosa vogliono fare. Per ulteriori informazioni sulla disambiguazione, vedi [Disambiguazione](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
+
+- **Problema con la ricerca nel dialogo**: in alcune capacità, la funzione di ricerca non funziona nella pagina di dialogo. Una nuova libreria dell'interfaccia utente, che aumenta la velocità di risposta della pagina, viene distribuita alle istanze del servizio esistenti in fasi. Questo problema con la ricerca interessa solo le capacità di dialogo per cui non è ancora abilitata la nuova libreria.
+
+- **Problema delle capacità mancanti**: in alcuni casi, gli spazi di lavoro creati solo tramite l'API non vengono visualizzati quando apri l'interfaccia utente {{site.data.keyword.conversationshort}}. Normalmente, questi spazi di lavoro vengono visualizzati come capacità di dialogo. Se non visualizzi le tue capacità dall'IU, non ti preoccupare; non sono sparite. Contatta il supporto per notificare il problema in modo che il team possa fare in modo che gli spazi di lavoro vengano visualizzati correttamente.
+
+<!--- **Premium plan maximum inactivity period increases**: The maximum time that a session can persist after a user stops interacting with the assistant increased from 1 day to 7 days (168 hours).
+-->
+## 15 luglio 2019
+{: #15July2019}
+
+- **Upgrade delle entità di sistema numeriche disponibile in Dallas ![Beta](images/beta.png)**: le nuove entità di sistema sono ora disponibili anche come una funzione beta per le istanze ospitate in Dallas. Vedi [Nuove entità di sistema](/docs/services/assistant?topic=assistant-beta-system-entities)
+
+## 12 giugno 2019
+{: #12June2019}
+
+- **Upgrade delle entità di sistema numeriche ![Beta](images/beta.png)**: le nuove entità di sistema sono disponibili come una funzione beta che puoi abilitare nelle capacità di dialogo scritte in inglese e tedesco. Le entità di sistema revisionate offrono una migliore comprensione di data e ora. Possono riconoscere suddivisioni di date e numeri, riferimenti a festività nazionali e classificare le citazioni con maggiore precisione. Ad esempio, una data come `May 15` viene riconosciuta come una citazione di data(`@sys-date:2019-05-15`) e *non* viene identificata anche come una citazione numerica (`@sys-number:15`). Vedi [Nuove entità di sistema](/docs/services/assistant?topic=assistant-beta-system-entities)
+
+  Al momento non puoi provare queste entità di sistema nelle istanze ospitate in Dallas, a meno che tu non faccia parte del programma beta. Per ulteriori informazioni su come partecipare al programma beta, vedi [Partecipa al programma beta](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
+  {: note}
+
+- **È disponibile un piano Plus Trial**: puoi utilizzare il piano gratuito Plus Trial per provare le funzioni del piano Plus quando fai una scelta d'acquisto. La prova dura 30 giorni. Dopo il termine del periodo di prova, se non esegui l'upgrade a un piano Plus, la tua istanza Plus Trial viene convertita in un'istanza del piano Lite.
+
+## 23 maggio 2019
+{: #23May2019}
+
+I seguenti aggiornamenti sono disponibili in tutte le ubicazioni ad eccezione attualmente di Dallas.
+{: important}
+
+- **Navigazione aggiornata**: l'home page è stata rimossa e l'ordine delle schede di assistenti e capacità è stato invertito. Il nuovo ordine delle schede ti incoraggia ad iniziare il tuo lavoro di sviluppo creando un assistente e poi una capacità. 
+
+- **Le impostazioni della disambiguazione sono state spostate**: l'interruttore per abilitare la disambiguazione, che è una funzione disponibile solo per gli utenti dei piani Plus e Premium, è stato spostato. Il pulsante **Settings** è stato rimosso dalla pagina **Dialog**. Puoi ora abilitare la disambiguazione e configurarla dalla scheda **Options** della capacità.
+
+- **È ora disponibile un tour introduttivo**: viene ora visualizzato un breve tour del prodotto quando viene creata una nuova istanza del servizio. Ai nuovi utenti viene fornito aiuto quando iniziano lo sviluppo. Un nuovo assistente viene creato per loro automaticamente. Vengono visualizzate delle finestre a comparsa informative per introdurre le funzioni dell'interfaccia utente del prodotto che guidano il nuovo utente su come effettuare il primo passo chiave nella creazione di una capacità di dialogo. 
+
+## 10 aprile 2019
+{: #10April2019}
+
+- **La correzione automatica è ora disponibile ![Beta](images/beta.png)**: la correzione automatica è una funzione beta che aiuta il tuo assistente a comprendere cosa vogliono i clienti. Corregge gli errori ortografici nell'input che i clienti inviano prima che venga valutato. Con un input più preciso, il tuo assistente può riconoscere più facilmente le citazioni di entità e comprendere gli intenti del cliente. Per ulteriori dettagli, vedi [Correzione dell'input utente](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check).
+
+## 22 marzo 2019
+{: #22March2019}
+
+- **Introduzione della capacità di ricerca ![Beta](images/beta.png)**: una capacità di ricerca ti aiuta a rendere il tuo assistente utile ai clienti più velocemente. Le richieste del cliente che non hai previsto e che quindi non sono state compilate nella logica di dialogo che deve essere gestita, possono essere soddisfate con risposte utili. Invece di dire che non è possibile fornire aiuto, l'assistente può interrogare un'origine dati esterna per trovare delle informazioni pertinenti da condividere nelle sue risposte. Nel tempo, puoi creare delle risposte di dialogo per rispondere a domande del cliente che richiedono domande supplementari per chiarire l'intenzione dell'utente o per cui è adatta una risposta breve e chiara. E puoi utilizzare le risposte della capacità di ricerca per rispondere alle domande del cliente con più ampio significato che richiedono una lunga spiegazione. Questa funzione beta è disponibile solo per gli utenti dei piani del servizio Premium e Plus. ![Solo piano Plus o Premium](images/plus.png)
+
+  Per ulteriori dettagli, vedi [Creazione di una capacità di ricerca](/docs/services/assistant?topic=assistant-skill-search-add).
+
+## 14 marzo 2019
+{: #14March2019}
+
+- **Fai in modo che Watson ti aiuti a creare gli intenti**: utilizza la tecnologia di machine learning di Watson per aiutarti a scegliere gli intenti corretti per il tuo assistente. Watson analizza i tuoi dati di log del call center esistenti per identificare le domande e le richieste del cliente che si verificano più spesso. Quindi ti consiglia degli intenti e degli esempi utente che puoi utilizzare per addestrare il tuo assistente in modo che possa riconoscere richieste uguali e simili in futuro. Dopo aver determinato gli intenti corretti da utilizzare, puoi aumentarli e mantenerli aggiornati nel tempo utilizzando la funzionalità dei consigli sull'esempio utente dell'intento, che è già disponibile. Per ulteriori informazioni, vedi [Ottieni supporto definendo gli intenti](/docs/services/assistant?topic=assistant-intent-recommendations).
+
+## 4 marzo 2019
+{: #4March2019}
+
+- **Navigazione semplificata**: la navigazione della barra laterale con le schede *Crea*,  *Migliora* e *Distribuisci* è stata rimossa. Ora, puoi ottenere tutti gli strumenti di cui hai bisogno per creare una capacità di dialogo dalla pagina della capacità principale.
+
+- **La pagina Migliora è ora denominata Analisi**: le metriche informative che Watson genera dalle conversazioni tra i tuoi utenti e il tuo assistente sono state spostate dalla scheda *Migliora* della barra laterale a una nuova scheda nella pagina della capacità principale denominata **Analisi**.
 
 ## 1 marzo 2019
 {: #1March2019}
 
-- **Navigazione semplificata**: la navigazione della barra laterale con le schede *Crea*,  *Migliora* e *Distribuisci* è stata rimossa. Ora, puoi ottenere tutti gli strumenti di cui hai bisogno per creare una capacità di dialogo dalla pagina della capacità principale.
-
-- **La pagina Migliora è ora denominata Analisi**: le metriche informative che il servizio genera dalle conversazioni tra i tuoi utenti e il tuo assistente sono state spostate dalla scheda *Migliora* della barra laterale a una nuova scheda nella pagina della capacità principale denominata **Analisi**.
+- **Consigli sull'esempio utente dell'intento in giapponese ![Solo piano Plus o Premium](images/plus.png)**: puoi ora caricare un file che contiene input utente non elaborati in giapponese, come ad esempio le domande utente da un log del call center, che Watson può analizzare ed utilizzare per estrarre dei candidati sull'esempio utente dell'intento Vedi [Aggiunta di esempi dai file di log](/docs/services/assistant?topic=assistant-intent-recommendations).
 
 ## 28 febbraio 2019
 {: #28February2019}
@@ -68,7 +172,7 @@ Sono disponibili le seguenti nuove funzioni e modifiche al servizio. Controlla i
 
     - Le stringhe che iniziano con un simbolo cancelletto (#) negli oggetti `context` o `output` di un messaggio, non vengono più trattate come riferimenti di intenti.
   
-      Precedentemente, queste stringhe venivano trattate come intenti in automatico. Ad esempio, se hai specificato una variabile di ambiente, come `"color":"#FFFFFF"`, il codice colore esadecimale (#FFFFFF) sarebbe stato trattato come un intento. Il servizio avrebbe controllato se un intento denominato #FFFFFF era stato rilevato nell'input dell'utente e in caso negativo, avrebbe sostituito #FFFFFF con `false`. Questa sostituzione non si verifica più.
+      Precedentemente, queste stringhe venivano trattate come intenti in automatico. Ad esempio, se hai specificato una variabile di ambiente, come `"color":"#FFFFFF"`, il codice colore esadecimale (#FFFFFF) sarebbe stato trattato come un intento. Il tuo assistente avrebbe controllato se un intento denominato #FFFFFF era stato rilevato nell'input dell'utente e in caso negativo, avrebbe sostituito #FFFFFF con `false`. Questa sostituzione non si verifica più.
   
       Allo stesso modo, se includevi un simbolo cancelletto (#) nella stringa di testo in una risposta del nodo, dovevi ignorarla facendola precedere da una barra rovesciata (`\`). Ad esempio, `Siamo i venditori \#1 di panini all'astice nel Maine.` Non hai più bisogno di ignorare il simbolo `#` nella risposta di testo.
 
@@ -104,7 +208,7 @@ Sono disponibili le seguenti nuove funzioni e modifiche al servizio. Controlla i
 ## 4 gennaio 2019
 {: #4January2019}
 
-- **IBM Cloud Functions nelle ubicazioni di Londra e Washington DC**: puoi ora effettuare chiamate programmatiche a IBM Cloud Functions dal dialogo di un assistente in un'istanza del servizio ospitata nei data center di Londra e Washington DC. Vedi [Esecuzione di chiamate programmatiche da un nodo di dialogo](/docs/services/assistant?topic=assistant-dialog-actions).
+- **IBM Cloud Functions nelle ubicazioni di Londra e Washington DC**: puoi ora effettuare chiamate programmatiche a IBM Cloud Functions dal dialogo di un assistente in un'istanza del servizio ospitata nei data center di Londra e Washington DC. Vedi [Esecuzione di chiamate programmatiche da un nodo di dialogo](/docs/services/assistant?topic=assistant-dialog-actions-client).
 
 - **Nuovi metodi per utilizzare gli array**: i seguenti metodi dell'espressione SpEL disponibili, rendono più semplice utilizzare i valori dell'array nel tuo dialogo:
 
@@ -127,7 +231,7 @@ Sono disponibili le seguenti nuove funzioni e modifiche al servizio. Controlla i
 
    Per determinare il numero di nodi di dialogo in una capacità di dialogo, effettua una delle seguenti operazioni:
 
-   - Dallo strumento, se non è già associata a un assistente, aggiungi la capacità di dialogo a un assistente e poi visualizza il tile della capacità dalla pagina principale dell'assistente. La sezione relativa ai *dati di addestramento* elenca il numero di nodi di dialogo. 
+   - Dallo strumento, se non è già associata a un assistente, aggiungi la capacità di dialogo a un assistente e poi esamina il tile della capacità dalla pagina principale dell'assistente. La sezione relativa ai *dati di addestramento* elenca il numero di nodi di dialogo.
 
    - Invia una richiesta GET all'endpoint dell'API /dialog_nodes e includi il parametro `include_count=true`. Ad esempio:
 
@@ -135,7 +239,7 @@ Sono disponibili le seguenti nuove funzioni e modifiche al servizio. Controlla i
      curl -u "apikey:{apikey}" "https://gateway.watsonplatform.net/assistant/api/v1/workspaces/{workspace_id}/dialog_nodes?version=2018-09-20&include_count=true"
      ```
 
-     Nella risposta, l'attributo `total` nell'oggetto `pagination` contiene il numero di nodi di dialogo. 
+     Nella risposta, l'attributo `total` nell'oggetto `pagination` contiene il numero di nodi di dialogo.
 
      Vedi [Risoluzione dei problemi di importazione della capacità](/docs/services/assistant?topic=assistant-skill-add#skill-add-import-errors) per informazioni su come modificare le capacità che vuoi continuare ad utilizzare.
 
@@ -200,19 +304,19 @@ Sono disponibili le seguenti nuove funzioni e modifiche al servizio. Controlla i
     </tr>
   </table>
 
-- **Piano Premium basato sull'utente**: il piano Premium ora basa la sua fatturazione sul numero di utenti univoci attivi. Se scegli di utilizzare questo piano, progetta tutte le applicazioni personalizzate che crei per identificare in modo appropriato gli utenti che generano le chiamate API /message. Per ulteriori informazioni, vedi [Piani basati sull'utente](services-information#user-based-plans).
+- **Piano Premium basato sull'utente**: il piano Premium ora basa la sua fatturazione sul numero di utenti univoci attivi. Se scegli di utilizzare questo piano, progetta tutte le applicazioni personalizzate che crei per identificare in modo appropriato gli utenti che generano le chiamate API /message. Per ulteriori informazioni, vedi [Piani basati sull'utente](/docs/services/assistant?topic=assistant-services-information#services-information-user-based-plans).
 
   Le istanze del servizio del piano Premium esistenti non sono influenzate da questa modifica; continuano ad utilizzare i metodi di fatturazione basati sull'API. Solo gli utenti del piano Premium esistenti vedranno il piano basato sull'API elencato come un'opzione di piano *Premium (API)*.
   {: note}
 
   Vedi le {{site.data.keyword.conversationshort}} [opzioni di piano del servizio ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www.ibm.com/cloud/watson-assistant/pricing/){: new_window} per ulteriori informazioni su tutti i piani di servizio disponibili.
 
-- **Consigli sull'esempio utente dell'intento ![Solo piano Plus o Premium](images/premium.png)**: puoi caricare un file che contiene input utente non elaborati, come ad esempio le domande utente da un log del call center, che il servizio può analizzare ed utilizzare per estrarre dei candidati sull'esempio utente dell'intento Vedi [Aggiunta di esempi dai file di log](intent-recommendations#intent-recommendations-get-example-recommendations).
+- **Consigli sull'esempio utente dell'intento ![Solo piano Plus o Premium](images/plus.png)**: puoi caricare un file che contiene input utente non elaborati, come ad esempio le domande utente da un log del call center, che Watson può analizzare ed utilizzare per estrarre dei candidati sull'esempio utente dell'intento Vedi [Aggiunta di esempi dai file di log](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations).
 
 ## 20 novembre 2018
 {: #20November2018}
 
-**I consigli sono stati sospesi**: la sezione Consigli nella scheda Migliora è stata rimossa. I consigli erano una funzione beta disponibile solo per gli utenti del piano Premium. Consigliavano le azioni che gli utenti potevano effettuare per migliorare i propri dati di apprendimento. Invece di consolidare i consigli in un unico posto, sono stati ora resi disponibili dalle parti dello strumento in cui apporti delle modifiche ai dati di apprendimento reali. Ad esempio, mentre aggiungi i sinonimi di entità, puoi ora facoltativamente visualizzare un elenco di sinonimi consigliati dal servizio. Se stai cercando altri modi per analizzare più dettagliatamente i tuoi log di conversazione utente, prendi in considerazione l'utilizzo dei notebook Jupyter. Per ulteriori dettagli, vedi [Attività avanzate](/docs/services/assistant?topic=assistant-logs-resources).
+**I consigli sono stati sospesi**: la sezione Consigli nella scheda Migliora è stata rimossa. I consigli erano una funzione beta disponibile solo per gli utenti del piano Premium. Consigliavano le azioni che gli utenti potevano effettuare per migliorare i propri dati di apprendimento. Invece di consolidare i consigli in un unico posto, sono stati ora resi disponibili dalle parti dello strumento in cui apporti delle modifiche ai dati di apprendimento reali. Ad esempio, mentre aggiungi i sinonimi di entità, puoi ora facoltativamente visualizzare un elenco di sinonimi consigliati da Watson. Se stai cercando altri modi per analizzare più dettagliatamente i tuoi log di conversazione utente, prendi in considerazione l'utilizzo dei notebook Jupyter. Per ulteriori dettagli, vedi [Attività avanzate](/docs/services/assistant?topic=assistant-logs-resources).
 
 ## 9 novembre 2018
 {: #9November2018}
@@ -225,13 +329,13 @@ Sono disponibili le seguenti nuove funzioni e modifiche al servizio. Controlla i
 
     **Dove sono i miei spazi di lavoro?** Tutti gli spazi di lavoro che hai creato precedentemente sono ora elencati nella tua istanza del servizio come capacità. Fai clic sulla scheda **Capacità** per visualizzarli. Per ulteriori informazioni, vedi [Capacità](/docs/services/assistant?topic=assistant-skills).
 
-  - **Assistenti**: puoi ora pubblicare la tua capacità in solo due passi. Aggiungi la tua capacità a un assistente e configura una o più integrazioni con cui distribuire la tua capacità. L'assistente aggiunge un livello funzionale alla tua capacità che consente al servizio di orchestrare e gestire il flusso di informazioni al tuo posto. Vedi [Assistenti](/docs/services/assistant?topic=assistant-assistants).
+  - **Assistenti**: puoi ora pubblicare la tua capacità in solo due passi. Aggiungi la tua capacità a un assistente e configura una o più integrazioni con cui distribuire la tua capacità. L'assistente aggiunge un livello funzionale alla tua capacità che consente a {{site.data.keyword.conversationshort}} di orchestrare e gestire il flusso di informazioni al tuo posto. Vedi [Assistenti](/docs/services/assistant?topic=assistant-assistants).
 
   - **Integrazioni predefinite**: Invece di passare alla scheda **Distribuisci** per distribuire il tuo spazio di lavoro, aggiungi la tua capacità di dialogo a un assistente e aggiungi le integrazioni all'assistente tramite le quali la capacità viene resa disponibile ai tuoi utenti. Non devi creare un'applicazione di frontend personalizzata e gestire lo stato della conversazione da una chiamata alla successiva. Tuttavia, puoi ancora farlo se lo desideri. Per ulteriori informazioni, vedi [Aggiunta delle integrazioni](/docs/services/assistant?topic=assistant-deploy-integration-add).
 
   - **Nuova versione API principale**: è disponibile una versione V2 dell'API. Questa versione fornisce l'accesso ai metodi che puoi utilizzare per interagire con un assistente nel runtime. Non è più necessario passare del contesto con ogni chiamata API; lo stato della sessione viene gestito al tuo posto come parte del livello di assistente.
   
-    Quella che viene presentata nella strumentazione come una capacità di dialogo è essenzialmente un wrapper per uno spazio di lavoro V1. Non esistono al momento metodi API per la creazione di capacità e assistenti con l'API V2. Tuttavia, puoi continuare ad utilizzare l'API V1 per la creazione di spazi di lavoro. Per ulteriori dettagli, vedi [Panoramica sull'API](/docs/services/assistant?topic=assistant-api-overview).
+    Ciò che viene presentato negli strumenti come capacità di dialogo è effettivamente un wrapper per uno spazio di lavoro V1. Non esistono al momento metodi API per la creazione di capacità e assistenti con l'API V2. Tuttavia, puoi continuare ad utilizzare l'API V1 per la creazione di spazi di lavoro. Per ulteriori dettagli, vedi [Panoramica sull'API](/docs/services/assistant?topic=assistant-api-overview).
     {: note}
 
   - **Passaggio tra le origini dati**: è ora più facile migliorare il modello in una capacità con i log di conversazione utente da una capacità diversa. Non devi basarti sugli ID distribuzione, ma puoi semplicemente selezionare il nome dell'assistente a cui è stata aggiunta e distribuita una capacità per utilizzarne i dati. Vedi [Miglioramento tra gli assistenti](/docs/services/assistant?topic=assistant-logs#logs-deploy-id).
@@ -275,7 +379,7 @@ Sono disponibili le seguenti nuove funzioni e modifiche al servizio. Controlla i
 {: #21September2018}
 
 - **Nuova versione API**: la versione API corrente è ora la `2018-09-20`. In questa versione, l'attributo `errors[].path` dell'oggetto errore restituito dall'API viene espresso come un [JSON Pointer ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://tools.ietf.org/html/rfc6901) invece di un formato di notazione del punto.
-- **Supporto per azioni web**: puoi ora richiamare le azioni web {{site.data.keyword.openwhisk_short}} da un nodo di dialogo. Per ulteriori dettagli, vedi [Esecuzione di chiamate programmatiche da un nodo di dialogo](/docs/services/assistant?topic=assistant-dialog-actions).
+- **Supporto per azioni web**: puoi ora richiamare le azioni web {{site.data.keyword.openwhisk_short}} da un nodo di dialogo. Per ulteriori dettagli, vedi [Esecuzione di chiamate programmatiche da un nodo di dialogo](/docs/services/assistant?topic=assistant-dialog-actions-client).
 
 ## 15 agosto 2018
 {: #15August2018}
@@ -285,32 +389,33 @@ Sono disponibili le seguenti nuove funzioni e modifiche al servizio. Controlla i
 ## 6 agosto 2018
 {: #6August2018}
 
-- **Risoluzione del conflitto degli intenti ![Solo piano Plus o Premium](images/premium.png)**: lo strumento può ora aiutarti a risolvere i conflitti di quando due o più esempi utente in intenti separati sono simili tra loro. Gli esempi utente non distinti possono indebolire i dati di apprendimento e rendere più difficile per il servizio associare l'input utente all'intento appropriato nel runtime. Per i dettagli, vedi [Risoluzione dei conflitti degli intenti](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts).
+- **Risoluzione del conflitto degli intenti ![Solo piano Plus o Premium](images/plus.png)**: lo strumento può ora aiutarti a risolvere i conflitti di quando due o più esempi utente in intenti separati sono simili tra loro. Gli esempi utente non distinti possono indebolire i dati di addestramento e rendere più difficile per il tuo assistente associare l'input utente all'intento appropriato nel runtime. Per i dettagli, vedi [Risoluzione dei conflitti degli intenti](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts).
 
-- **Disambiguazione** ![Solo piano Plus o Premium](images/premium.png): abilita la disambiguazione per consentire al tuo assistente di chiedere aiuto all'utente quando deve decidere tra due o più nodi di dialogo validi per elaborare una risposta. Per ulteriori dettagli, vedi [Disambiguazione](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
+- **Disambiguazione** ![Solo piano Plus o Premium](images/plus.png): abilita la disambiguazione per consentire al tuo assistente di chiedere aiuto all'utente quando deve decidere tra due o più nodi di dialogo validi per elaborare una risposta. Per ulteriori dettagli, vedi [Disambiguazione](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
 
 - **Passa alla correzione**: è stato corretto un bug nello strumento dei dialoghi che ti impediva di configurare un'azione passa a che indirizzava la risposta di un nodo alla condizione speciale `anything_else`.
 
-- **Messaggio di ritorno dalla digressione**: puoi ora specificare del testo da visualizzare quando l'utente ritorna a un nodo dopo una digressione. L'utente avrà già visualizzato il prompt per il nodo. Puoi modificare leggermente il messaggio per far sapere agli utenti che stanno ritornando dove avevano lasciato. Ad esempio, specifica una risposta come, `Where were we? Oh, yes...` Per ulteriori dettagli, vedi [Digressioni](dialog-runtime#digressions).
+- **Messaggio di ritorno dalla digressione**: puoi ora specificare del testo da visualizzare quando l'utente ritorna a un nodo dopo una digressione. L'utente avrà già visualizzato il prompt per il nodo. Puoi modificare leggermente il messaggio per far sapere agli utenti che stanno ritornando dove avevano lasciato. Ad esempio, specifica una risposta come, `Where were we? Oh, yes...` Per ulteriori dettagli, vedi [Digressioni](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-digressions).
 
 ## 12 luglio 2018
 {: #12July2018}
 
 - **Tipi di risposta esauriente**: puoi ora aggiungere al tuo dialogo delle risposte esaurienti che includono elementi come immagini o pulsanti in aggiunta al testo. Per ulteriori informazioni, vedi [Risposte esaurienti](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia).
 
-- **Entità contestuali (Beta)**: le entità contestuali sono entità che definisci etichettando le citazioni del tipo di entità che si verificano negli esempi utente di intento. Questi tipi di entità istruiscono non solo sui termini di interesse, ma anche sul contesto in cui i termini di interesse normalmente sono presenti nelle espressioni utente, consentendo al servizio di riconoscere le citazioni di entità mai viste prima in base unicamente a come gli viene fatto riferimento nell'input utente. Ad esempio, se annoti l'esempio utente di intento, "I want a flight to Boston" etichettando "Boston" come un'entità @destination, il servizio può riconoscere "Chicago" come @destination in un input utente, "I want a flight to Chicago." Questa funzione è al momento disponibile solo per l'inglese. Per ulteriori informazioni, vedi [Aggiunta di entità contestuali](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based).
+- **Entità contestuali (Beta)**: le entità contestuali sono entità che definisci etichettando le citazioni del tipo di entità che si verificano negli esempi utente di intento. Questi tipi di entità istruiscono non solo sui termini di interesse, ma anche sul contesto in cui i termini di interesse normalmente sono presenti nelle espressioni utente, consentendo al tuo assistente di riconoscere le citazioni di entità mai viste prima in base unicamente a come gli viene fatto riferimento nell'input utente. Ad esempio, se annoti l'esempio utente di intento, "I want a flight to Boston" etichettando "Boston" come un'entità @destination, il tuo assistente può riconoscere "Chicago" come @destination in un input utente, "I want a flight to Chicago." Questa funzione è al momento disponibile solo per l'inglese. Per ulteriori informazioni, vedi [Aggiunta di entità contestuali](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based).
 
   Quando accedi allo strumento con un browser web Internet Explorer, non puoi etichettare le citazioni di entità negli esempi utente di intento o modificare il testo di esempio dell'utente.
   {: note}
 
-- **Consigli di entità**: il servizio può ora consigliare dei sinonimi per i tuoi valori di entità. La funzione di suggerimento trova i sinonimi correlati in base alla somiglianza contestuale estratta da un gran numero di informazioni esistenti, incluse grandi origini di testo scritto e utilizza le tecniche di elaborazione del linguaggio naturale per identificare delle parole simili ai sinonimi esistenti nel tuo valore di entità. Per ulteriori informazioni, vedi [Sinonimi](/docs/services/assistant?topic=assistant-entities#entities-synonyms).
+- **Consigli di entità**: Watson può ora consigliare dei sinonimi per i tuoi valori di entità. La funzione di suggerimento trova i sinonimi correlati in base alla somiglianza contestuale estratta da un gran numero di informazioni esistenti, incluse grandi origini di testo scritto e utilizza le tecniche di elaborazione del linguaggio naturale per identificare delle parole simili ai sinonimi esistenti nel tuo valore di entità. Per ulteriori informazioni, vedi [Sinonimi](/docs/services/assistant?topic=assistant-entities#entities-synonyms).
 
 - **Nuova versione API**: la versione API corrente è ora la `2018-07-10`. Questa versione introduce le seguenti modifiche:
 
   - Il contesto dell'oggetto `output` /message è stato modificato da un oggetto JSON `text` a un array `generic` che supporta più tipi di risposta esauriente, inclusi `image`, `option`, `pause` e `text`.
   - È stato aggiunto il supporto per le entità contestuali.
+  - Non puoi più aggiungere delle proprietà definite dall'utente in `context.metadata`. Tuttavia, puoi aggiungerle direttamente a `context`.
 
-- **Filtro per data nella pagina della panoramica**: utilizza i nuovi filtri per data per scegliere il periodo in cui vengono visualizzati i dati. Questi filtri interessano tutti i dati visualizzati nella pagina: non solo il numero di conversazioni visualizzate nel grafico, ma anche le statistiche visualizzate insieme al grafico e gli elenchi di intenti ed entità principali. Per ulteriori informazioni, vedi [Controlli](logs-overview#controls).
+- **Filtro per data nella pagina della panoramica**: utilizza i nuovi filtri per data per scegliere il periodo in cui vengono visualizzati i dati. Questi filtri interessano tutti i dati visualizzati nella pagina: non solo il numero di conversazioni visualizzate nel grafico, ma anche le statistiche visualizzate insieme al grafico e gli elenchi di intenti ed entità principali. Per ulteriori informazioni, vedi [Controlli](/docs/services/assistant?topic=assistant-logs-overview#logs-overview-controls).
 
 - **Limite del modello espanso**: quando utilizzi il campo **Modelli** per [definire dei modelli specifici per un valore di entità](/docs/services/assistant?topic=assistant-entities#entities-patterns), il modello (espressione regolare) è ora limitato a 512 caratteri.
 
@@ -334,7 +439,7 @@ Sono disponibili le seguenti nuove funzioni e modifiche al servizio. Controlla i
   - Washington, DC (us-east) a partire dal 14 giugno 2018
   - Sydney, Australia (au-syd) a partire dal 7 maggio 2018
 
-  {{site.data.keyword.cloud_notm}} sta eseguendo la migrazione all'autenticazione Identity and Access Management (IAM) basata sul token.
+  {{site.data.keyword.cloud}} sta eseguendo la migrazione all'autenticazione Identity and Access Management (IAM) basata sul token.
 
   Per le nuove istanze del servizio nelle regioni precedentemente elencate, utilizza IAM per l'autenticazione. Puoi passare un token di connessione o una chiave API. I token supportano le richieste autenticate senza le credenziali del servizio incorporate in ogni chiamata. Le chiavi API utilizzano l'autenticazione di base.
 
@@ -342,14 +447,14 @@ Sono disponibili le seguenti nuove funzioni e modifiche al servizio. Controlla i
 
   Quando utilizzi uno degli SDK Watson, puoi passare la chiave API e lasciare che l'SDK gestisca il ciclo di vita dei token. Per ulteriori informazioni ed esempi, vedi [Autenticazione ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")]https://{DomainName}/apidocs/assistant-v2#authentication){: new_window} nella guida di riferimento API.
 
-  Se non sei sicuro di quale tipo di autenticazione utilizzare, visualizza le credenziali del servizio facendo clic sull'istanza del servizio sull'[Elenco delle risorse {{site.data.keyword.Bluemix_notm}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/resources){: new_window}.
+  Se non sei sicuro di quale tipo di autenticazione utilizzare, visualizza le credenziali di {{site.data.keyword.conversationshort}} facendo clic sull'istanza del servizio dalla sezione dei servizi dell'[Elenco risorse{{site.data.keyword.Bluemix_notm}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com){: new_window}.
 
 ## 25 maggio 2018
 {: #25May2018}
 
 - **Nuovo spazio di lavoro di esempio**: è stato modificato lo spazio di lavoro di esempio che ti viene fornito per l'esplorazione o da utilizzare come punto di partenza per il tuo spazio di lavoro. L'esempio **Dashboard automobile** è stato sostituito da un esempio **Servizio clienti**. Il nuovo esempio illustra come utilizzare gli intenti del catalogo di contenuto e altre funzioni più recenti per creare un bot. Può rispondere a domande comuni, come le richieste sugli orari e le sedi del negozio e illustra come utilizzare un nodo con slot per pianificare gli appuntamenti in negozio.
 
-- **È stato aggiunto il rendering HTML al riquadro Provalo**: il riquadro "Provalo" ora esegue il rendering della formattazione HTML inclusa nel testo della risposta. Precedentemente, se includevi un collegamento ipertestuale come una tag di ancoraggio HTML in una risposta di testo, avresti visualizzato l'origine HTML nel riquadro "Provalo" durante il test. Prima era simile a:
+- **È stato aggiunto il rendering HTML al riquadro Try it out**: il riquadro "Try it out" ora esegue il rendering della formattazione HTML inclusa nel testo della risposta. Precedentemente, se includevi un collegamento ipertestuale come una tag di ancoraggio HTML in una risposta di testo, avresti visualizzato l'origine HTML nel riquadro "Try it out" durante il test. Prima era simile a:
 
   `Contact us at <a href="https://www.ibm.com">ibm.com</a>.`
 
@@ -379,17 +484,17 @@ Sono disponibili le seguenti nuove funzioni e modifiche al servizio. Controlla i
 ## 15 marzo 2018
 {: #15March2018}
 
-- **Introduzione a {{site.data.keyword.conversationfull}}**: {{site.data.keyword.ibmwatson}} Conversation è stato ridenominato. Viene ora denominato {{site.data.keyword.conversationfull}}. La modifica al nome rispecchia il fatto che il servizio si sta espandendo per fornire contenuti e strumenti predefiniti che ti rendono più facile condividere gli assistenti virtuali che crei. Per ulteriori dettagli, leggi [questo post di blog ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www.ibm.com/blogs/watson/2018/03/the-future-of-watson-conversation-watson-assistant/).
+- **Introduzione a {{site.data.keyword.conversationfull}}**: {{site.data.keyword.ibmwatson}} Conversation è stato ridenominato. Viene ora denominato {{site.data.keyword.conversationfull}}. La modifica al nome rispecchia il fatto che {{site.data.keyword.conversationshort}} si sta espandendo per fornire contenuti e strumenti predefiniti che ti rendono più facile condividere gli assistenti virtuali che crei. Per ulteriori dettagli, leggi [questo post di blog ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www.ibm.com/blogs/watson/2018/03/the-future-of-watson-conversation-watson-assistant/).
 
 - **Nuovi API REST e SDK sono disponibili per Watson Assistant**: le nuove API sono funzionalmente identiche alle API Conversation esistenti, che continuano ad essere supportate. Per ulteriori informazioni sulle API Watson Assistant, vedi la [Guida di riferimento API ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://{DomainName}/apidocs/assistant){: new_window}.
 
 - **Miglioramenti al dialogo**: sono state aggiunte le seguenti funzioni allo strumento di dialogo:
 
   - I campi valore e nome variabile semplice sono ora disponibili e puoi utilizzarli per aggiungere variabili di contesto o aggiornare i valori della variabile di contesto. Non devi aprire l'editor JSON a meno che non voglia farlo. Per ulteriori dettagli, vedi [Definizione di una variabile di contesto](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-context-var-define).
-  - Organizza il tuo dialogo utilizzando delle cartelle per raggruppare insieme i nodi di dialogo correlati. Per ulteriori dettagli, vedi [Organizzazione del dialogo utilizzando le cartelle](dialog-build#folders).
-  - È stato aggiunto il supporto per la personalizzazione di come ogni nodo di dialogo partecipa alla generazione di digressioni avviate dall'utente dal flusso di dialogo designato. Per ulteriori dettagli, vedi [Digressioni](dialog-runtime#digressions).
+  - Organizza il tuo dialogo utilizzando delle cartelle per raggruppare insieme i nodi di dialogo correlati. Per ulteriori dettagli, vedi [Organizzazione del dialogo utilizzando le cartelle](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-folders).
+  - È stato aggiunto il supporto per la personalizzazione di come ogni nodo di dialogo partecipa alla generazione di digressioni avviate dall'utente dal flusso di dialogo designato. Per ulteriori dettagli, vedi [Digressioni](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-digressions).
 
-- **Ricerca di intenti e entità**: è stata aggiunta una nuova funzione di ricerca che ti consente di [cercare gli intenti](intents#searching-intents) per esempi utente, nomi di intento o descrizioni o per [cercare le entità](/docs/services/assistant?topic=assistant-entities#entities-search) per valori e sinonimi.
+- **Ricerca di intenti e entità**: è stata aggiunta una nuova funzione di ricerca che ti consente di [cercare gli intenti](/docs/services/assistant?topic=assistant-intents#intents-search) per esempi utente, nomi di intento o descrizioni o per [cercare le entità](/docs/services/assistant?topic=assistant-entities#entities-search) per valori e sinonimi.
 
 - **Cataloghi di contenuto**: i nuovi [cataloghi di contenuto](/docs/services/assistant?topic=assistant-catalog#catalog-add) contengono una singola categoria di intenti e entità comuni predefiniti che puoi aggiungere alla tua applicazione. Ad esempio, la maggior parte delle applicazioni richiedono un intento #greeting-type generale che avvia un dialogo con un utente. Puoi aggiungerlo dal catalogo di contenuto invece di crearne uno tuo.
 
@@ -403,7 +508,7 @@ Sono disponibili le seguenti nuove funzioni e modifiche al servizio. Controlla i
 ## 16 febbraio 2018
 {: #16February2018}
 
-- **Traccia nodo di dialogo**: quando utilizzi il riquadro "Provalo" per verificare un dialogo, viene visualizzata un'icona di posizione accanto a ciascuna risposta. Puoi fare clic sull'icona per evidenziare il percorso utilizzato dal servizio nella struttura ad albero di dialogo per arrivare alla risposta. Per dettagli, vedi [Creazione di un dialogo](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-test).
+- **Traccia nodo di dialogo**: quando utilizzi il riquadro "Try it out" per verificare un dialogo, viene visualizzata un'icona di posizione accanto a ciascuna risposta. Puoi fare clic sull'icona per evidenziare il percorso utilizzato dal tuo assistente nella struttura ad albero di dialogo per arrivare alla risposta. Per dettagli, vedi [Creazione di un dialogo](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-test).
 
 - **Nuova versione API**: ora la versione API corrente è `2018-02-16`. Questa versione introduce le seguenti modifiche:
 
@@ -438,19 +543,19 @@ Sono disponibili le seguenti nuove funzioni e modifiche al servizio. Controlla i
 
 - **Accesso ai dati di log tra istanze (solo utenti Premium)**: se sei un utente {{site.data.keyword.conversationshort}} Premium, le tue istanze premium possono essere facoltativamente configurate per consentire l'accesso ai dati di log dagli spazi di lavoro tra diverse istanze premium.
 
-- **Copia nodi**: ora puoi duplicare un nodo per creare una copia sua e dei suoi figli. Questa funzione è utile se crei un nodo con una logica utile che desideri riutilizzare altrove nel dialogo. Per ulteriori informazioni, vedi [Copia di un nodo di dialogo](dialog-build#copy-node).
+- **Copia nodi**: ora puoi duplicare un nodo per creare una copia sua e dei suoi figli. Questa funzione è utile se crei un nodo con una logica utile che desideri riutilizzare altrove nel dialogo. Per ulteriori informazioni, vedi [Copia di un nodo di dialogo](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-copy-node).
 
 - **Gruppi di acquisizione in entità modello**: puoi identificare i gruppi nel modello di espressione regolare che definisci per un'entità. L'identificazione dei gruppi è utile se desideri poter fare riferimento ad una sottosezione del modello in un secondo momento. Ad esempio, la tua entità potrebbe avere un modello regex che acquisisce numeri di telefono statunitensi. Se identifichi il segmento del prefisso del modello di numero come un gruppo, puoi successivamente fare riferimento a tale gruppo per accedere solo al segmento del prefisso di un numero di telefono. Per ulteriori informazioni, vedi [Definizione di entità](/docs/services/assistant?topic=assistant-entities#entities-creating-task).
 
 ## 6 dicembre 2017
 {: #6December2017}
 
-- **Integrazione {{site.data.keyword.openwhisk}} (Beta)**: chiamata delle azioni {{site.data.keyword.openwhisk}} (in precedenza IBM OpenWhisk) direttamente da un nodo di dialogo. Questa funzione ti consente, ad esempio, di richiamare un'azione per recuperare le informazioni meteo da un nodo di dialogo e quindi creare una condizione sulle informazioni restituite nella risposta di dialogo. Attualmente, puoi richiamare un'azione da un'istanza {{site.data.keyword.openwhisk_short}} che è ospitata nella regione Stati Uniti del Sud dalle istanze {{site.data.keyword.conversationshort}} ospitate nella regione Stati Uniti del Sud. Per ulteriori dettagli, vedi [Esecuzione di chiamate programmatiche da un nodo di dialogo](/doc/services/assistant?topic=assistant-dialog-actions).
+- **Integrazione {{site.data.keyword.openwhisk}} (Beta)**: chiamata delle azioni {{site.data.keyword.openwhisk}} (in precedenza IBM OpenWhisk) direttamente da un nodo di dialogo. Questa funzione ti consente, ad esempio, di richiamare un'azione per recuperare le informazioni meteo da un nodo di dialogo e quindi creare una condizione sulle informazioni restituite nella risposta di dialogo. Attualmente, puoi richiamare un'azione da un'istanza {{site.data.keyword.openwhisk_short}} che è ospitata nella regione Stati Uniti del Sud dalle istanze {{site.data.keyword.conversationshort}} ospitate nella regione Stati Uniti del Sud. Per ulteriori dettagli, vedi [Esecuzione di chiamate programmatiche da un nodo di dialogo](/docs/services/assistant?topic=assistant-dialog-actions-client).
 
 ## 5 dicembre 2017
 {: #5December2017}
 
-- **IU riprogettata per Intenti ed Entità**: le schede `Intenti` ed `Entità` sono state riprogettate per fornire un flusso di lavoro più semplice e più efficiente quando crei e modifichi entità e intenti. Vedi [Definizione di intenti](intents#creating-intents) e [Definizione di entità](/docs/services/assistant?topic=assistant-entities#entities-creating-task) per informazioni su come utilizzare queste schede.
+- **IU riprogettata per Intenti ed Entità**: le schede `Intenti` ed `Entità` sono state riprogettate per fornire un flusso di lavoro più semplice e più efficiente quando crei e modifichi entità e intenti. Vedi [Definizione di intenti](/docs/services/assistant?topic=assistant-intents-create-task) e [Definizione di entità](/docs/services/assistant?topic=assistant-entities#entities-creating-task) per informazioni su come utilizzare queste schede.
 
 ## 30 novembre 2017
 {: #30November2017}
@@ -487,9 +592,9 @@ Sono disponibili le seguenti nuove funzioni e modifiche al servizio. Controlla i
 
     - Puoi aggiungere una condizione ad uno slot per renderlo obbligatorio solo se vengono soddisfatte determinate condizioni. Ad esempio, puoi creare uno slot che richieda il nome di una sposa obbligatorio solo se uno slot precedente (obbligatorio) che richiede lo stato civile indica che l'utente è sposato.
 
-    - Ora puoi scegliere **Ignora input utente** come passo successivo per un nodo. Quando scegli questa opzione, dopo aver elaborato il nodo corrente, il servizio passa direttamente al primo nodo figlio del nodo corrente. Questa opzione è simile all'opzione del passo successivo *Passa a* esistente, ad eccezione del fatto che consente una maggiore flessibilità. Non devi specificare il nodo esatto a cui passare. Nel runtime, il servizio passa sempre ad un qualunque nodo che sia il primo nodo figlio, anche se i nodi figlio sono stati riordinati oppure sono stati aggiunti nuovi nodi dopo aver definito il comportamento del passo successivo.
+    - Ora puoi scegliere **Ignora input utente** come passo successivo per un nodo. Quando scegli questa opzione, dopo aver elaborato il nodo corrente, il tuo assistente passa direttamente al primo nodo figlio del nodo corrente. Questa opzione è simile all'opzione del passo successivo *Passa a* esistente, ad eccezione del fatto che consente una maggiore flessibilità. Non devi specificare il nodo esatto a cui passare. Nel runtime, il tuo assistente passa sempre ad un qualunque nodo che sia il primo nodo figlio, anche se i nodi figlio sono stati riordinati oppure sono stati aggiunti nuovi nodi dopo aver definito il comportamento del passo successivo.
 
-    - Puoi aggiungere risposte condizionali per gli slot. Per le risposte Trovato e Non trovato, puoi personalizzare come risponde il servizio a seconda del fatto che vengano soddisfatte determinate condizioni. Questa funzione ti consente di controllare la presenza di possibili errori di interpretazione e di correggerli prima di salvare il valore fornito dall'utente nella variabile di contesto dello slot. Ad esempio, se lo slot salva l'età dell'utente e utilizza `@sys-number` nel campo *Controlla* per acquisirla, puoi aggiungere una condizione che controlli i numeri superiori a 100 e risponda con una frase simile a *Specifica un'età valida in anni.* Per ulteriori dettagli, vedi [Aggiunta di condizioni alle risposte Trovato e Non trovato](/docs/services/assistant?topic=assistant-dialog-slots#dialog-slots-handler-next-steps).
+    - Puoi aggiungere risposte condizionali per gli slot. Per le risposte Trovato e Non trovato, puoi personalizzare come risponde il tuo assistente a seconda del fatto che vengano soddisfatte determinate condizioni. Questa funzione ti consente di controllare la presenza di possibili errori di interpretazione e di correggerli prima di salvare il valore fornito dall'utente nella variabile di contesto dello slot. Ad esempio, se lo slot salva l'età dell'utente e utilizza `@sys-number` nel campo *Controlla* per acquisirla, puoi aggiungere una condizione che controlli i numeri superiori a 100 e risponda con una frase simile a *Specifica un'età valida in anni.* Per ulteriori dettagli, vedi [Aggiunta di condizioni alle risposte Trovato e Non trovato](/docs/services/assistant?topic=assistant-dialog-slots#dialog-slots-handler-next-steps).
 
     - L'interfaccia che utilizzi per aggiungere le risposte condizionali a un nodo è stata riprogettata per rendere più semplice elencare ciascuna condizione e la relativa risposta. Per aggiungere risposte condizionali a livello di nodo, fai clic su **Personalizza** e quindi abilita l'opzione **Risposte multiple**.
 
@@ -542,9 +647,9 @@ Sono disponibili le seguenti nuove funzioni e modifiche al servizio. Controlla i
 
 - **Normalizzazione degli accenti**: in un contesto di conversazione, gli utenti possono utilizzare o meno accenti durante l'interazione con il servizio {{site.data.keyword.conversationshort}}. Di conseguenza, è stato effettuato un aggiornamento all'algoritmo in modo che le versioni accentate e non accentate delle parole siano trattate allo stesso modo per il rilevamento degli intenti e il riconoscimento delle entità.
 
-  Tuttavia per alcune lingue, come lo spagnolo, alcuni accenti possono modificare il significato dell'entità. Pertanto, per il rilevamento di entità, sebbene l'entità originale possa implicitamente avere un accento, il servizio può anche abbinare la versione non accentata della stessa entità, ma con un punteggio di affidabilità leggermente inferiore.
+  Tuttavia per alcune lingue, come lo spagnolo, alcuni accenti possono modificare il significato dell'entità. Pertanto, per il rilevamento di entità, sebbene l'entità originale può implicitamente avere un accento, il tuo assistente può anche abbinare la versione non accentata della stessa entità, ma con un punteggio di affidabilità leggermente inferiore.
 
-  Ad esempio, per la parola `barrió`, che ha un accento e corrisponde al passato del verbo `barrer` (spazzare), il servizio può abbinare anche la parola `barrio` (quartiere), ma con una affidabilità leggermente inferiore.
+  Ad esempio, per la parola `barrió`, che ha un accento e corrisponde al passato del verbo `barrer` (spazzare), il tuo assistente può abbinare anche la parola `barrio` (quartiere), ma con una affidabilità leggermente inferiore.
 
   Il sistema fornirà punteggi di affidabilità più alti nelle entità con corrispondenze esatte. Ad esempio, `barrio` non verrà rilevato se `barrió` è nel set di addestramento e `barrió` non verrà rilevato se `barrio` è nel set di addestramento.
 
@@ -621,7 +726,7 @@ Sono disponibili le seguenti nuove funzioni e modifiche al servizio. Controlla i
 ## 14 giungo 2017
 {: #14June2017}
 
-- **Corrispondenza fuzzy per altre lingue (Beta)**: la corrispondenza fuzzy per le entità è ora disponibile per altre lingue, come indicato nell'argomento [Lingue supportate](/docs/services/assistant?topic=assistant-language-support). Puoi attivare la corrispondenza fuzzy per entità per migliorare la capacità del servizio di riconoscere i termini nell'input utente con una sintassi simile all'entità, senza richiedere una corrispondenza esatta. La funzione è in grado di associare l'input utente all'entità corrispondente adeguata nonostante la presenza di errori di ortografia o lievi differenze sintattiche. Ad esempio, se definisci giraffa come sinonimo di un'entità animale e l'input utente contiene i termini giraffe o giraffa, la corrispondenza fuzzy è in grado di associare correttamente il termine all'entità animale. Per i dettagli, vedi [Corrispondenza fuzzy](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching).
+- **Corrispondenza fuzzy per altre lingue (Beta)**: la corrispondenza fuzzy per le entità è ora disponibile per altre lingue, come indicato nell'argomento [Lingue supportate](/docs/services/assistant?topic=assistant-language-support). Puoi attivare la corrispondenza fuzzy per entità per migliorare la capacità del tuo assistente di riconoscere i termini nell'input utente con una sintassi simile all'entità, senza richiedere una corrispondenza esatta. La funzione è in grado di associare l'input utente all'entità corrispondente adeguata nonostante la presenza di errori di ortografia o lievi differenze sintattiche. Ad esempio, se definisci giraffa come sinonimo di un'entità animale e l'input utente contiene i termini giraffe o giraffa, la corrispondenza fuzzy è in grado di associare correttamente il termine all'entità animale. Per i dettagli, vedi [Corrispondenza fuzzy](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching).
 
 ## 13 giungo 2017
 {: #13June2017}
@@ -661,7 +766,7 @@ Sono disponibili le seguenti nuove funzioni e modifiche al servizio. Controlla i
 ## 25 maggio 2017
 {: #25May2017}
 
-- Puoi ora gestire le variabili di contesto nel riquadro "Provalo". Fai clic sul link **Gestisci contesto** per aprire un nuovo riquadro in cui puoi impostare e controllare i valori delle variabili di contesto durante il test del dialogo. Per ulteriori informazioni, vedi [Test del dialogo](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-test).
+- Puoi ora gestire le variabili di contesto nel riquadro "Try it out". Fai clic sul link **Gestisci contesto** per aprire un nuovo riquadro in cui puoi impostare e controllare i valori delle variabili di contesto durante il test del dialogo. Per ulteriori informazioni, vedi [Test del dialogo](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-test).
 
 ## 16 maggio 2017
 {: #16May2017}
@@ -669,7 +774,7 @@ Sono disponibili le seguenti nuove funzioni e modifiche al servizio. Controlla i
 - Quando apri lo strumento, è ora disponibile uno spazio di lavoro di esempio **Dashboard automobile**. Per utilizzare l'esempio come punto di partenza per il tuo spazio di lavoro, modifica lo spazio di lavoro. Se vuoi utilizzarlo per più spazi di lavoro, dovrai invece duplicarlo. Lo spazio di lavoro di esempio non viene conteggiato nel totale di spazi di lavoro della sottoscrizione a meno che non lo utilizzi.
 - Ora è più semplice navigare nello strumento. Le opzioni del menu di navigazione sono disponibili dal lato della pagina principale anziché dalla parte superiore. Nella parte superiore della pagina, vengono visualizzati i link di navigazione che mostrano dove ti trovi. Puoi ora passare tra le istanze del servizio dalla pagina Spazi di lavoro. Per arrivarci rapidamente, fai clic su **Torna a spazi di lavoro** dal menu di navigazione. Se hai più istanze del servizio, viene visualizzato il nome dell'istanza corrente. Puoi fare clic sul link **Cambia** accanto ad esso per scegliere un'altra istanza.
 - Quando crei un dialogo, vengono ora aggiunti automaticamente due nodi: 1) un nodo **Benvenuto** nella parte superiore della struttura ad albero di dialogo che contiene il messaggio iniziale da visualizzare all'utente e 2) un nodo **Altro** nella parte inferiore della struttura ad albero che cattura qualsiasi richiesta utente non riconosciuta dagli altri nodi nel dialogo e risponde a esse. Per ulteriori dettagli, vedi [Creazione di un dialogo](/docs/services/assistant?topic=assistant-dialog-build).
-- Quando testi un dialogo nel riquadro "Provalo", puoi ora trovare e inviare nuovamente un'istruzione di test recente premendo il tasto Su per scorrere i tuoi input precedenti.
+- Quando testi un dialogo nel riquadro "Try it out", puoi ora trovare e inviare nuovamente un'istruzione di test recente premendo il tasto Su per scorrere i tuoi input precedenti.
 - È ora disponibile il supporto sperimentale per la lingua coreana per 5 entità di sistema (`@sys-date`, `@sys-time`, `@sys-currency`, `@sys-number`, `@sys-percentage`). Esistono problemi noti per alcune entità numeriche e un supporto limitato per l'input in lingua informale.
 - Dalla scheda Migliora è disponibile una pagina Panoramica. La pagina fornisce un riepilogo delle interazioni con il tuo bot. Puoi visualizzare la quantità di traffico per un determinato periodo di tempo, nonché gli intenti e le entità che sono stati riconosciuti più spesso nelle conversazioni degli utenti. Per ulteriori informazioni, vedi [Utilizzo della pagina Panoramica](/docs/services/assistant?topic=assistant-logs-overview).
 
@@ -681,7 +786,7 @@ Sono disponibili le seguenti nuove funzioni e modifiche al servizio. Controlla i
     - sys-person: riconosce i riferimenti ai nomi delle persone, nomi e cognomi, nelle espressioni dell'utente.
 
     Per ulteriori informazioni, vedi [Riferimento alle entità di sistema](/docs/services/assistant?topic=assistant-system-entities).
-- La corrispondenza fuzzy per le entità è una funzione beta ora disponibile in inglese. Puoi attivare la corrispondenza fuzzy per entità per migliorare la capacità del servizio di riconoscere i termini nell'input utente con una sintassi simile all'entità, senza richiedere una corrispondenza esatta. La funzione è in grado di associare l'input utente all'entità corrispondente adeguata nonostante la presenza di errori di ortografia o lievi differenze sintattiche. Ad esempio, se definisci **giraffe** come sinonimo di un'entità animale e l'input utente contiene i termini *giraffes* o *girafe*, la corrispondenza fuzzy è in grado di associare correttamente il termine all'entità animale. Per i dettagli, vedi [Definizione di entità](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching) e cerca `Corrispondenza fuzzy`.
+- La corrispondenza fuzzy per le entità è una funzione beta ora disponibile in inglese. Puoi attivare la corrispondenza fuzzy per entità per migliorare la capacità del tuo assistente di riconoscere i termini nell'input utente con una sintassi simile all'entità, senza richiedere una corrispondenza esatta. La funzione è in grado di associare l'input utente all'entità corrispondente adeguata nonostante la presenza di errori di ortografia o lievi differenze sintattiche. Ad esempio, se definisci **giraffe** come sinonimo di un'entità animale e l'input utente contiene i termini *giraffes* o *girafe*, la corrispondenza fuzzy è in grado di associare correttamente il termine all'entità animale. Per i dettagli, vedi [Definizione di entità](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching) e cerca `Corrispondenza fuzzy`.
 
 ## 18 aprile 2017
 {: #18April2017}
@@ -694,12 +799,12 @@ Sono disponibili le seguenti nuove funzioni e modifiche al servizio. Controlla i
 
     Per ulteriori informazioni, vedi il [Riferimento API ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://{DomainName}/apidocs/assistant){: new_window}.
 - Il comportamento del metodo `POST` /messages ha modificato la gestione delle entità e degli intenti specificati come parte dell'input del messaggio:
-    - Se specifichi gli intenti sull'input, il servizio utilizza gli intenti specificati, ma utilizza l'elaborazione del linguaggio naturale per rilevare le entità nell'input utente.
-    - Se specifichi le entità sull'input, il servizio utilizza le entità specificate, ma utilizza l'elaborazione del linguaggio naturale per rilevare gli intenti nell'input utente.
+    - Se specifichi gli intenti sull'input, il tuo assistente utilizza gli intenti specificati, ma utilizza l'elaborazione del linguaggio naturale per rilevare le entità nell'input utente.
+    - Se specifichi le entità sull'input, il tuo assistente utilizza le entità specificate, ma utilizza l'elaborazione del linguaggio naturale per rilevare gli intenti nell'input utente.
 
         Il comportamento non è cambiato per i messaggi che specificano sia intenti che entità o per i messaggi che non specificano nessuno dei due.
 - L'opzione per contrassegnare l'input dell'utente come irrilevante è ora disponibile per tutte le lingue supportate. Questa è una funzione beta.
-- Una nuova scheda Credenziali fornisce un singolo luogo in cui puoi trovare tutte le informazioni necessarie per connettere la tua applicazione a uno spazio di lavoro (come le credenziali del servizio e l'ID spazio di lavoro), nonché altre opzioni di distribuzione. Per accedere alla scheda Credenziali per il tuo spazio di lavoro, fai clic sull'icona ![Menu](images/Menu_16.png) e seleziona **Credenziali**.
+- Una nuova scheda Credenziali fornisce un singolo luogo in cui puoi trovare tutte le informazioni necessarie per connettere la tua applicazione a uno spazio di lavoro (come le credenziali di {{site.data.keyword.conversationshort}} e l'ID spazio di lavoro), nonché altre opzioni di distribuzione. Per accedere alla scheda Credenziali per il tuo spazio di lavoro, fai clic sull'icona ![Menu](images/Menu_16.png) e seleziona **Credenziali**.
 
 ## 9 marzo 2017
 {: #9March2017}
@@ -771,7 +876,7 @@ Diverse modifiche rendono l'editor di dialoghi più semplice e intuitivo:
 {: #21October2016}
 
 - Il servizio {{site.data.keyword.conversationshort}} fornisce ora entità di sistema, che sono entità comuni che possono essere utilizzate in qualsiasi caso di utilizzo. Per i dettagli, vedi [Definizione di entità](/docs/services/assistant?topic=assistant-entities) e cerca `Abilitazione delle entità di sistema`.
-- Puoi ora visualizzare una cronologia delle conversazioni con gli utenti nella pagina Migliora. Puoi utilizzarla per comprendere il comportamento del tuo bot. Per i dettagli, vedi [Miglioramento della tua capacità](/docs/services/assistant?topic=assistant-logs-intro).
+- Puoi ora visualizzare una cronologia delle conversazioni con gli utenti nella pagina Migliora. Puoi utilizzarla per comprendere il comportamento del tuo bot. Per i dettagli, vedi [Miglioramento della tua capacità](/docs/services/assistant?topic=assistant-logs).
 - Puoi ora importare le entità da un file CSV (comma-separated value), che ti aiuta quando hai un gran numero di entità. Per i dettagli, vedi [Definizione di entità](/docs/services/assistant?topic=assistant-entities) e cerca `Importazione di entità`.
 
 ## 20 settembre 2016
@@ -788,7 +893,7 @@ Per usufruire delle modifiche in una nuova versione, cambia il valore del parame
 
 - Puoi spostare i nodi di dialogo da un ramo all'altro, come nodi di pari livello o peer. Per i dettagli, vedi [Spostamento di un nodo di dialogo](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-move-node).
 - Puoi espandere la finestra dell'editor JSON.
-- Puoi visualizzare i log di chat delle conversazioni del tuo bot per aiutarti a comprendere il suo comportamento. Puoi filtrare per intenti, entità, data e ora. Per i dettagli, vedi [Miglioramento della tua capacità](/docs/services/assistant?topic=assistant-logs-intro)
+- Puoi visualizzare i log di chat delle conversazioni del tuo bot per aiutarti a comprendere il suo comportamento. Puoi filtrare per intenti, entità, data e ora. Per i dettagli, vedi [Miglioramento della tua capacità](/docs/services/assistant?topic=assistant-logs)
 
 ## 11 luglio 2016
 {: #21July2016}

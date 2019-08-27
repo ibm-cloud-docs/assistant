@@ -6,6 +6,7 @@ lastupdated: "2019-01-31"
 
 subcollection: assistant
 
+
 ---
 
 {:curl: #curl .ph data-hd-programlang='curl'}
@@ -27,12 +28,12 @@ subcollection: assistant
 {:note: .note}
 {:tip: .tip}
 
-# Récapitulatif des méthodes d'API 
+# Récapitulatif des méthodes d'API
 {: #api-methods}
 
 Les tableaux suivants répertorient les méthodes disponibles à l'aide des API {{site.data.keyword.conversationshort}}.
 
-## Méthodes d’exécution 
+## Méthodes d’exécution
 {: #api-methods-runtime}
 
 | Méthode | Description | Ver API | Référence |
@@ -42,7 +43,7 @@ Les tableaux suivants répertorient les méthodes disponibles à l'aide des API 
 | **Envoyer une entrée utilisateur à l'assistant** | Envoi d'une entrée utilisateur à un assistant et réception d'une réponse. | v2 | [cURL](https://{DomainName}/apidocs/assistant-v2#send-user-input-to-assistant){: new_window} [node](https://{DomainName}/apidocs/assistant-v2?language=node#send-user-input-to-assistant){: new_window} [java](https://{DomainName}/apidocs/assistant-v2?language=java#send-user-input-to-assistant){: new_window} [python](https://{DomainName}/apidocs/assistant-v2?language=python#send-user-input-to-assistant){: new_window} |
 | **Obtenir une réponse à l'entrée utilisateur** | Envoi d'une entrée utilisateur à un espace de travail et réception d'une réponse. | v1 | [cURL](https://{DomainName}/apidocs/assistant#get-response-to-user-input){: new_window} [node](https://{DomainName}/apidocs/assistant?language=node#get-response-to-user-input){: new_window} [java](https://{DomainName}/apidocs/assistant?language=java#get-response-to-user-input){: new_window} [python](https://{DomainName}/apidocs/assistant?language=python#get-response-to-user-input){: new_window} |
 
-## Méthodes de création 
+## Méthodes de création
 {: #api-methods-authoring}
 
 | Méthode | Description | Ver API | Référence |
@@ -90,4 +91,4 @@ Les tableaux suivants répertorient les méthodes disponibles à l'aide des API 
 | **Supprimer un noeud de dialogue** | Suppression d'un noeud de dialogue dans un espace de travail. | v1 | [cURL](https://{DomainName}/apidocs/assistant#delete-dialog-node){: new_window} [node](https://{DomainName}/apidocs/assistant?language=node#delete-dialog-node){: new_window} [java](https://{DomainName}/apidocs/assistant?language=java#delete-dialog-node){: new_window} [python](https://{DomainName}/apidocs/assistant?language=python#delete-dialog-node){: new_window} |
 | **Répertorier les événements de journal dans un espace de travail** | Liste des événements issus du journal d'un espace de travail spécifique. | v1 | [cURL](https://{DomainName}/apidocs/assistant#list-log-events-in-a-workspace){: new_window} [node](https://{DomainName}/apidocs/assistant?language=node#list-log-events-in-a-workspace){: new_window} [java](https://{DomainName}/apidocs/assistant?language=java#list-log-events-in-a-workspace){: new_window} [python](https://{DomainName}/apidocs/assistant?language=python#list-log-events-in-a-workspace){: new_window} |
 | **Répertorier les événements de journal dans tous les espaces de travail** | Liste des événements issus des journaux de tous les espaces de travail dans l'instance de service. | v1 | [cURL](https://{DomainName}/apidocs/assistant#list-log-events-in-all-workspaces){: new_window} [node](https://{DomainName}/apidocs/assistant?language=node#list-log-events-in-all-workspaces){: new_window} [java](https://{DomainName}/apidocs/assistant?language=java#list-log-events-in-all-workspaces){: new_window} [python](https://{DomainName}/apidocs/assistant?language=python#list-log-events-in-all-workspaces){: new_window} |
-| **Supprimer les données libellées** | Suppression de toutes les données associées à un ID client spécifié. La méthode n'a aucun effet si aucune donnée n'est associée à l'ID client. | v1 | [cURL](https://{DomainName}/apidocs/assistant#delete-labeled-data){: new_window} [node](https://{DomainName}/apidocs/assistant?language=node#delete-labeled-data){: new_window} [java](https://{DomainName}/apidocs/assistant?language=java#delete-labeled-data){: new_window} [python](https://{DomainName}/apidocs/assistant?language=python#delete-labeled-data){: new_window} |
+| **Supprimer les données libellées** | Suppression de toutes les données associées à un ID client spécifié. La méthode n'a aucun effet si aucune donnée n'est associée à l'ID client.  | v1 | [cURL](https://{DomainName}/apidocs/assistant#delete-labeled-data){: new_window} [node](https://{DomainName}/apidocs/assistant?language=node#delete-labeled-data){: new_window} [java](https://{DomainName}/apidocs/assistant?language=java#delete-labeled-data){: new_window} [python](https://{DomainName}/apidocs/assistant?language=python#delete-labeled-data){: new_window} |

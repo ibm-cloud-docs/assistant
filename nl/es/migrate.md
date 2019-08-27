@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-02"
 
 subcollection: assistant
 
@@ -22,7 +22,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Migración
+# Migración desde Cloud Foundry
 {: #migrate}
 
 Migre a una instancia de servicio de {{site.data.keyword.conversationshort}} para que pase de su organización y espacio actuales de Cloud Foundry a un grupo de recursos.
@@ -52,6 +52,11 @@ Para migrar la instancia de servicio, siga estos pasos:
 
     Consulte las [Prácticas recomendadas para organizar recursos en un grupo de recursos ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](/docs/resources?topic=resources-bp_resourcegroups) para ver sugerencias.
 
+    Puede utilizar una instancia de servicio para desarrollar, probar y desplegar un asistente, de modo que no cree grupos de recursos distintos para distintos tipos de entornos de despliegue.
+    {:tip}
+
+    Con un plan Premium, puede crear varias instancias. No obstante, todas las instancias se deben crear en el mismo grupo de recursos.
+
 1.  En la lista de servicios del panel de control de IBM Cloud, pulse el icono de migración ![Migrar](images/migrate.svg) para ver la instancia que desea migrar y luego pulse **Migrar** en la ventana emergente.
 
     Las instancias de servicio creadas en el centro de datos de Sídney antes del 7 de mayo de 2018 o en el centro de datos de Londres antes del 13 de diciembre de 2018 se han sindicado con el centro de datos de Dallas. Si migra una instancia de servicio de Cloud Foundry alojada en Sídney o en Londres, se convierte en un recurso alojado en Dallas.
@@ -64,6 +69,28 @@ Para migrar la instancia de servicio, siga estos pasos:
 1.  Pulse **Migrar**.
 
     Se muestra un mensaje cuando finaliza el proceso. Si tiene que migrar otras instancias de servicio, puede seguir migrando otras instancias de servicio o bien puede pulsar **Listo**.
+
+1.  **Paso único del plan Premium**: si la instancia de servicio que está migrando se ha creado como parte de un plan Premium, debe informar al equipo de servicio que está migrando una instancia de plan Premium. Para ello, cree un caso desde [IBM Cloud Support ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com/unifiedsupport/supportcenter){: new_window}.
+
+    Hay algunos pasos adicionales que el equipo de servicio tiene que tomar de parte suya. Añada la siguiente información al caso:
+
+    - Región en la que se aloja la instancia de servicio como, por ejemplo, Almería o Salamanca.
+    - Nombre del grupo de recursos
+    - ID de grupo de recursos
+
+      Si no conoce el ID, abra la herramienta de la interfaz de línea de mandatos (CLI) de IBM Cloud y especifique el mandato siguiente:
+
+      ```bash
+      ibmcloud resource groups
+      ```
+      {: codeblock}
+
+      La respuesta muestra el ID del grupo de recursos. Para obtener más información sobre el mandato de CLI, consulte [Trabajar con recursos y grupos de recursos ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com/docs/cli?topic=cloud-cli-ibmcloud_commands_resource#ibmcloud_commands_resource).
+
+      Proporcione el equipo de soporte hasta 24 horas desde el momento en que envía el caso hasta completar el trabajo que se debe realizar para dar soporte a la migración del plan Premium. No hay interrupciones en el servicio durante el proceso de migración.
+
+      Sólo es necesario que realice este paso la primera vez que migre una instancia de servicio para el plan Premium. Cuando pulsa *Migrar* para otras instancias de servicio que pertenecen al mismo plan, se migrarán al mismo grupo de recursos sin necesidad de ninguna implicación del equipo de servicio.
+      {: important}
 
 La instancia de servicio antigua (basada en organización de Cloud Foundry) que ha migrado se sigue mostrando en la lista de la sección de servicios de Cloud Foundry en el panel de control, y ahora se muestra como un *alias* de la nueva versión (basada en grupos de recursos) de la instancia.
 

@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-07-16"
 
 subcollection: assistant
+
 
 ---
 
@@ -22,26 +23,35 @@ subcollection: assistant
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
 {:tip: .tip}
 
 # Panoramica sull'API {{site.data.keyword.conversationshort}}
 {: #api-overview}
 
-Puoi utilizzare le API REST {{site.data.keyword.conversationshort}}, e gli SDK corrispondenti, per sviluppare le applicazioni che interagiscono con il servizio. Esistono due versioni dell'API {{site.data.keyword.conversationshort}}, ognuna delle quali supporta una diversa serie di funzioni: v1 e v2. L'API che devi utilizzare dipende dal tipo di metodi di cui necessita la tua applicazione: 
+Puoi utilizzare le API REST {{site.data.keyword.conversationshort}}, e gli SDK corrispondenti, per sviluppare le applicazioni che interagiscono con il servizio.
 
-- **Metodi di runtime**: metodi che consentono a un'applicazione client di interagire con una competenza o un assistente esistente (ma non di modificarla/o). Puoi utilizzare questi metodi per sviluppare un client rivolto all'utente che può essere distribuito per un utilizzo di produzione, un'applicazione che agisce da broker per la comunicazione tra un assistente e un altro servizio (ad esempio un servizio chat o un servizio di backend) o un'applicazione di test.
+## Applicazioni client
 
-  L'API v2 {{site.data.keyword.conversationshort}} fornisce l'accesso ai metodi che puoi utilizzare per interagire con un assistente nel runtime (ad esempio `/message`). Si tratta dell'API preferita da utilizzare per sviluppare le nuove applicazioni client. Per i dettagli sull'API v2, vedi il {{site.data.keyword.conversationshort}} [Riferimento API v2 ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://{DomainName}/apidocs/assistant-v2){: new_window}.
+Per creare un assistente virtuale o un'altra applicazione client che comunica con un assistente nel runtime, utilizza la nuova API v2. Utilizzando questa API, puoi sviluppare un client rivolto all'utente che può essere distribuito per un utilizzo di produzione, un'applicazione che agisce da broker per la comunicazione tra un assistente e un altro servizio (ad esempio un servizio chat o un servizio di backend) o un'applicazione di test. 
 
-  L'API v1 {{site.data.keyword.conversationshort}} include un metodo `/message` che invia l'input utente direttamente allo spazio di lavoro utilizzato da una capacità di dialogo, escludendo l'assistente. L'API runtime v1 è supportata principalmente a scopo di compatibilità con le versioni precedenti. Se utilizzi il metodo v1 `/message`, la tua applicazione non potrà trarre vantaggio dalle capacità di orchestrazione e gestione dello stato di un assistente. Per ulteriori informazioni, vedi [Utilizzo dell'API runtime v1](/docs/services/assistant?topic=assistant-api-client#v1-api).
+Utilizzando l'API runtime v2 per comunicare con il tuo assistente, la tua applicazione può trarre vantaggio dalle seguenti funzioni: 
 
-- **Metodi di creazione**: metodi che consentono ad un'applicazione di creare o modificare le capacità di dialogo, come alternativa alla creazione grafica di una capacità utilizzando lo strumento {{site.data.keyword.conversationshort}}. Un'applicazione di creazione utilizza diversi metodi per creare e modificare capacità, intenti, entità, nodi di dialogo e altre risorse che compongono una capacità di dialogo. 
+- **Gestione automatica dello stato.** L'API runtime v2 gestisce ogni sessione con un utente finale, archiviando e conservando tutti i dati di contesto di cui ha bisogno il tuo assistente per una conversazione completa. 
 
-  Per creare un'applicazione di creazione, utilizza l'API v1. Per ulteriori informazioni, vedi il [Riferimento API v1 ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://{DomainName}/apidocs/assistant){: new_window}.
+- **Facilità di distribuzione utilizzando gli assistenti.** Oltre a supportare i client personalizzati, un assistente può essere distribuito facilmente ai canali di messaggistica popolari come Slack e Facebook Messenger.
 
-  **Nota:** i metodi di creazione v1 interagiscono con gli spazi di lavoro piuttosto che con le capacità. Uno spazio di lavoro è un contenitore per il dialogo e i dati di addestramento (ad esempio intenti e entità) all'interno di una capacità di dialogo. Per la maggior parte degli scopi, quando utilizzi l'API, puoi considerare gli spazi di lavoro e le capacità di dialogo come interscambiabili; ad esempio, se crei un nuovo spazio di lavoro utilizzando l'API, comparirà come una nuova capacità di dialogo nello strumento {{site.data.keyword.conversationshort}}.
+- **Controllo della versione.** Con il controllo della versione della capacità di dialogo, puoi salvare un'istantanea della tua capacità e collegare il tuo assistente a quella specifica versione. Puoi quindi continuare ad aggiornare la tua versione di sviluppo senza influire sull'assistente di produzione. 
+
+- **Funzionalità di ricerca.** L'API runtime v2 può essere utilizzata per ricevere le risposte sia dalle capacità di dialogo che da quelle di ricerca. Quando viene inoltrata una query a cui il tuo dialogo non può rispondere, l'assistente può utilizzare una capacità di ricerca per trovare la risposta migliore dalle origini dati configurate. (Le capacità di ricerca sono funzioni beta disponibili solo per gli utenti con piano Plus o Premium.)
+
+Per i dettagli sull'API v2, vedi la {{site.data.keyword.conversationshort}} [Guida di riferimento API v2 ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://{DomainName}/apidocs/assistant-v2){: new_window}.
+
+**Nota**: l'API v1 {{site.data.keyword.conversationshort}} supporta ancora il metodo `/message` legacy che invia l'input utente direttamente allo spazio di lavoro utilizzato da una capacità di dialogo. L'API runtime v1 è supportata principalmente a scopo di compatibilità con le versioni precedenti. Se usi il metodo v1 `/message`, devi implementare la tua gestione dello stato e non puoi usufruire del controllo della versione o di qualsiasi altra funzione di un assistente. 
+
+## Applicazioni di creazione
+
+L'API v1 fornisce i metodi che consentono ad un'applicazione di creare o modificare le capacità di dialogo, come alternativa alla creazione grafica di una capacità utilizzando l'interfaccia utente {{site.data.keyword.conversationshort}}. Un'applicazione di creazione utilizza l'API per creare e modificare capacità, intenti, entità, nodi di dialogo e altre risorse che compongono una capacità di dialogo. Per ulteriori informazioni, vedi la [Guida di riferimento API v1 ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://{DomainName}/apidocs/assistant){: new_window}.
+
+  **Nota:** i metodi di creazione v1 creano e modificano gli spazi di lavoro invece delle capacità. Uno spazio di lavoro è un contenitore per il dialogo e i dati di addestramento (ad esempio intenti e entità) all'interno di una capacità di dialogo. Se crei un nuovo spazio di lavoro utilizzando l'API, comparirà come una nuova capacità di dialogo nell'interfaccia utente {{site.data.keyword.conversationshort}}.
 
 Per un elenco dei metodi API disponibili, vedi [Riepilogo dei metodi API](/docs/services/assistant?topic=assistant-api-methods).

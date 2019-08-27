@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-05-20"
 
 subcollection: assistant
+
 
 ---
 
@@ -35,7 +36,7 @@ Faça backup e restaure seus dados exportando e, em seguida, importando os dados
 
 Não é possível exportar os dados a seguir:
 
-<!--- Search skill -->
+- Qualificação de procura
 - Assistente, incluindo quaisquer integrações configuradas
 
 ## Retendo logs
@@ -73,7 +74,9 @@ Se o serviço {{site.data.keyword.conversationshort}} mudar entre o momento em q
 
 1.  Clique na guia **Qualificações**.
 
-1.  Clique em **Criar novo**.
+1.  Clique em **Criar qualificação**.
+
+1.  Se tiver a opção de escolher entre mais de um tipo de qualificação, escolha criar uma qualificação de diálogo.
 
 1.  Clique em **Importar qualificação** e, em seguida, clique em **Escolher arquivo JSON** e selecione o arquivo JSON que você deseja importar.
 
@@ -95,7 +98,7 @@ Se o serviço {{site.data.keyword.conversationshort}} mudar entre o momento em q
     - **Descrição**: uma descrição opcional com não mais de 200 caracteres de comprimento.
     - **Linguagem**: a linguagem da entrada do usuário com a qual a qualificação será treinada para entender. O valor padrão é inglês.
 
-Depois que a qualificação é criada, ela aparece como um quadro na página Qualificações.
+Depois de criar a qualificação de diálogo, ela aparece como um bloco na página Qualificações.
 
 ## Reccriando seu assistente
 {: #backup-recreate-assistant}

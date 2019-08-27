@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-11"
 
 subcollection: assistant
 
@@ -100,7 +100,7 @@ Se stai creando una tua applicazione client, la tua applicazione deve implementa
 ## Formato JSON nativo
 {: #dialog-responses-json-native}
 
-Oltre al formato JSON generico, il JSON del nodo di dialogo supporta anche risposte specifiche del canale scritte utilizzando i formati Slack e Facebook Messenger nativi. Questi formati sono supportati anche dal connettore {{site.data.keyword.conversationshort}}. Potresti voler utilizzare i formati JSON nativi se sai che il tuo spazio di lavoro verrà integrato solo con un tipo di canale e devi specificare un tipo di risposta che attualmente non è supportato dal formato JSON generico. 
+Oltre al formato JSON generico, il JSON del nodo di dialogo supporta anche risposte specifiche del canale scritte utilizzando i formati Slack e Facebook Messenger nativi. Questi formati sono supportati anche dal connettore {{site.data.keyword.conversationshort}}. Potresti voler utilizzare i formati JSON nativi se sai che il tuo spazio di lavoro verrà integrato solo con un tipo di canale e devi specificare un tipo di risposta che attualmente non è supportato dal formato JSON generico.
 
 Puoi specificare il JSON nativo per Slack o Facebook utilizzando il campo appropriato nella risposta del nodo di dialogo:
 
@@ -166,7 +166,7 @@ Visualizza una serie di pulsanti o un elenco a discesa che gli utenti possono ut
 | options[].label | stringa | L'etichetta rivolta all'utente per l'opzione. | S     |
 | options[].value | oggetto | Un oggetto che definisce la risposta che verrà inviata al servizio {{site.data.keyword.conversationshort}} se l'utente seleziona l'opzione. | S |
 | options[].value.input | oggetto | Un oggetto di input che include il testo di input corrispondente all'opzione. | N |
-| options[].value.input.text | stringa | Il testo che verrà inviato al servizio per l'opzione. | N |
+| options[].value.input.text | stringa | Il testo che verrà inviato al tuo assistente per l'opzione. | N |
 
 #### Esempio
 {: #dialog-responses-json-option-example}
@@ -174,7 +174,7 @@ Visualizza una serie di pulsanti o un elenco a discesa che gli utenti possono ut
 Questo esempio visualizza due opzioni:
 
 - L'Opzione 1 (etichettata `Buy something`) invia un messaggio stringa semplice (`Place order`), che viene inviato allo spazio di lavoro come testo di input.
-- L'Opzione 2 (etichettata `Exit`) invia un messaggio complesso che include sia il testo di input che un array degli intenti. La risposta può includere qualsiasi campo che costituisca una parte valida di un messaggio {{site.data.keyword.conversationshort}}. (Per ulteriori informazioni sulla struttura dell'input del messaggio, vedi [Riferimento API ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/apidocs/assistant?curl=#get-response-to-user-input){: new_window}.)
+- L'Opzione 2 (etichettata `Exit`) invia un messaggio complesso che include sia il testo di input che un array degli intenti. La risposta può includere qualsiasi campo che costituisca una parte valida di un messaggio {{site.data.keyword.conversationshort}}. (Per ulteriori informazioni sulla struttura dell'input del messaggio, vedi la [Guida di riferimento API ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/apidocs/assistant?curl=#get-response-to-user-input){: new_window}.)
 
 ```json
 {
@@ -250,7 +250,7 @@ Questo esempio invia l'evento "user is typing" durante una pausa di 5 secondi.
 ### Testo
 {: #dialog-responses-json-text}
 
-Visualizza il testo. Per aggiungere varietà, puoi specificare più risposte di testo alternative. Se specifichi più risposte, puoi scegliere di ruotare l'elenco in sequenza, scegliere una risposta in modo casuale oppure generare l'output di tutte le risposte specificate. 
+Visualizza il testo. Per aggiungere varietà, puoi specificare più risposte di testo alternative. Se specifichi più risposte, puoi scegliere di ruotare l'elenco in sequenza, scegliere una risposta in modo casuale oppure generare l'output di tutte le risposte specificate.
 
 #### Campi
 {: #dialog-responses-json-text-fields}
@@ -266,7 +266,7 @@ Visualizza il testo. Per aggiungere varietà, puoi specificare più risposte di 
 #### Esempio
 {: #dialog-responses-json-text-example}
 
-Questo esempio visualizza il messaggio di benvenuto all'utente. 
+Questo esempio visualizza il messaggio di benvenuto all'utente.
 
 ```json
 {

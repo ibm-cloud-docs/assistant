@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-08-12"
 
 subcollection: assistant
 
@@ -30,16 +30,17 @@ subcollection: assistant
 
 API 请求需要采用 `version=YYYY-MM-DD` 格式的日期的 version 参数。每当我们以向后不兼容方式更改 API 时，都会发布次要版本的新 API。
 
-version 参数随每个 API 请求一起发送。服务会将该 API 版本用于您指定的日期，或使用该日期之前的最新版本。不要缺省使用当前日期。请改为指定与应用程序兼容的版本匹配的日期，但在应用程序准备好用于更高版本之前，不要对其进行更改。
+version 参数随每个 API 请求一起发送。{{site.data.keyword.conversationshort}} 会将该 API 版本用于您指定的日期，或使用该日期之前的最新版本。不要缺省使用当前日期。请改为指定与应用程序兼容的版本匹配的日期，但在应用程序准备好用于更高版本之前，不要对其进行更改。
 
 - V1 的当前版本为 `2019-02-28`。
 - V2 的当前版本为 `2019-02-28`。
-- {{site.data.keyword.conversationshort}} 工具中的“试用”窗格使用的是版本 `2018-07-10`。
+- 对话技能的“试用”窗格使用的是版本 `2018-07-10`。
+- 搜索技能的“试用”窗格使用的是 {{site.data.keyword.discoveryshort}} API 版本 `2018-12-03`。
 
 ## Beta 功能
 {: #release-notes-beta}
 
-IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些功能可能不太稳定，可能经常会更改，还可能会临时通知中断使用。此外，Beta 功能可能无法提供与一般可用功能所提供级别相同的性能或兼容性，并且 Beta 功能不适用于生产环境。Beta 功能仅在 [IBM Developer Answers ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://developer.ibm.com/answers/topics/watson-assistant/){: new_window} 上受支持。
+IBM 会发布归类为 Beta 的服务、功能和语言支持供您评估。这些功能可能不太稳定，可能经常会更改，还可能会临时通知中断使用。此外，Beta 功能可能无法提供与正式发布功能所提供级别相同的性能或兼容性，并且 Beta 功能不适用于生产环境。Beta 功能仅在 [IBM Developer Answers ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://developer.ibm.com/answers/topics/watson-assistant/){: new_window} 上受支持。
 
 ## 更新的模型
 {: #release-notes-updated-models}
@@ -48,16 +49,119 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
 
 您已训练的现有模型不会立即受到影响，但在新模型可用 60 天之后，到期模型会更新到当前模型（如果尚未这样做）。
 
-**注：**此更新声明仅适用于一般可用性 (GA) 语言和功能。
+**注：**此更新声明仅适用于正式发布 (GA) 的语言和功能。
 
-为服务提供了以下新功能和更改。请查看我们的[博客 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://medium.com/ibm-watson/assistant/home)，以深入了解有关最新功能如何使您的企业受益的信息。
+提供了 {{site.data.keyword.conversationshort}} 的以下新功能和更改。请查看我们的[博客 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://medium.com/ibm-watson/assistant/home)，以深入了解有关最新功能如何使您的企业受益的信息。
+
+## 2019 年 8 月 12 日
+{: #12August2019}
+
+- **新增对话方法**：添加了 `getMatch` 方法。可以使用此方法来抽取用户输入中重复出现的正则表达式模式的特定出现。有关更多详细信息，请参阅[对话方法](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings-getMatch)主题。
+
+## 2019 年 8 月 9 日
+{: #9August2019}
+
+- **入门产品教程**：对于某些首次使用的用户，将显示一个新的入门产品教程，用户可以选择遵循此教程来执行创建助手的初始步骤。
+
+## 2019 年 8 月 6 日
+{: #6August2019}
+
+- Webhook 调出和“对话”页面改进功能在达拉斯可用。
+
+## 2019 年 8 月 1 日
+{: #1August2019}
+
+目前，以下更新在除达拉斯以外的其他所有位置都可用。
+{: important}
+
+- **Webhook 调出可用**：将 Webhook 添加到对话节点，以作为会话流的一部分对外部应用程序发出程序化调用。新的 Webhook 支持功能简化了调出实现过程。（不再需要 `action` JSON 对象。）有关更多信息，请参阅[通过对话节点发出程序化调用](/docs/services/assistant?topic=assistant-dialog-webhooks)。
+
+- **改进了对话页面响应性**：所有服务实例中“对话”页面的用户界面均更新为使用新的 JavaScript 库，提高了页面响应能力。因此，某些图形用户界面元素（如按钮）的外观略有更改，但功能不变。
+
+## 2019 年 7 月 31 日
+{: #31July2019}
+
+- **搜索技能和自动更正功能已正式发布**：先前作为 Beta 功能提供的搜索技能和拼写自动更正功能现在已正式发布。 
+
+  - 只有增强版或高端套餐用户可以创建搜索技能。 
+  - 只能对英语对话技能启用自动更正。对于新的英语对话技能，会自动启用此功能。
+
+## 2019 年 7 月 26 日
+{: #26July2019}
+
+- **解决了缺少技能问题**：在某些情况下，打开 {{site.data.keyword.conversationshort}} 用户界面时，不会显示通过 API 创建的工作空间。此问题已得到解决。现在打开用户界面时，使用 API 创建的所有工作空间都将显示为对话技能。
+
+## 2019 年 7 月 23 日
+{: #23July2019}
+
+- **修正了对话搜索**：在某些技能中，搜索功能在“对话”页面中无效。此问题已得到修正。
+
+## 2019 年 7 月 17 日
+{: #17July2019}
+
+- **消歧选项限制**：现在，可以设置在助手要求用户说明自己的意图时，要向用户显示的最大选项数。有关消歧的更多信息，请参阅[消歧](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation)。
+
+- **对话搜索问题**：在某些技能中，搜索功能在“对话”页面中无效。新的用户界面库正在分阶段应用于现有服务实例，此库可提高页面响应能力。此搜索问题仅影响尚未启用新库的对话技能。
+
+- **缺少技能问题**：在某些情况下，打开 {{site.data.keyword.conversationshort}} 用户界面时，不会显示仅通过 API 创建的工作空间。通常，这些工作空间显示为对话技能。如果您在 UI 中看不到自己的技能，别担心，这些技能并未消失。请联系支持人员报告此问题，以便团队能使这些工作空间正确显示。
+
+<!--- **Premium plan maximum inactivity period increases**: The maximum time that a session can persist after a user stops interacting with the assistant increased from 1 day to 7 days (168 hours).
+-->
+## 2019 年 7 月 15 日
+{: #15July2019}
+
+- **数字系统实体升级在达拉斯可用 ![Beta](images/beta.png)**：现在，新的系统实体还作为 Beta 功能可用于在达拉斯托管的实例。请参阅[新系统实体](/docs/services/assistant?topic=assistant-beta-system-entities)。
+
+## 2019 年 6 月 12 日
+{: #12June2019}
+
+- **数字系统实体升级 ![Beta](images/beta.png)**：新的系统实体作为 Beta 功能提供，可以在以英语或德语编写的对话技能中启用此功能。已修改的系统实体能更好地理解日期和时间。这些实体可以识别日期和数字范围以及国定假日引用，并以更精确的方式对提及项进行分类。例如，日期（如 `May 15`）会识别为日期提及项 (`@sys-date:2019-05-15`)，而*不会*识别为数字提及项 (`@sys-number:15`)。请参阅[新系统实体](/docs/services/assistant?topic=assistant-beta-system-entities)。
+
+  除非您加入 Beta 计划，否则目前无法在达拉斯托管的实例中试用这些系统实体。有关如何加入 Beta 计划的更多信息，请参阅[参与 Beta 计划](/docs/services/assistant?topic=assistant-feedback#feedback-beta)。
+  {: note}
+
+- **增强试用版套餐可用**：在做出购买决定时，可以使用免费增强试用版套餐来试用增强版套餐的功能。试用期为 30 天。试用期结束后，如果未升级到增强版套餐，那么增强试用版实例会转换为轻量套餐实例。
+
+## 2019 年 5 月 23 日
+{: #23May2019}
+
+目前，以下更新在除达拉斯以外的其他所有位置都可用。
+{: important}
+
+- **更新了导航**：除去了主页，并且颠倒了“助手”和“技能”选项卡的顺序。新的选项卡顺序有利于您按先创建助手，再创建技能的顺序来开始开发工作。 
+
+- **移动了消歧设置**：移动了用于启用消歧的切换控件，这是仅可供增强版和高端套餐用户使用的功能。从**对话**页面中除去了**设置**按钮。现在，可以在技能的**选项**选项卡中启用消歧，并对其进行配置。
+
+- **入门教程现在可用**：现在，在创建新的服务实例时，将显示一个简短的产品教程。对于着手进行开发工作的新用户，此教程也很有帮助。系统将自动为新用户创建新的助手。这将显示信息弹出窗口，用于介绍产品用户界面功能，并指导新用户执行关键的第一步：创建对话技能。 
+
+## 2019 年 4 月 10 日
+{: #10April2019}
+
+- **自动更正功能现在可用 ![Beta](images/beta.png)**：自动更正是一个 Beta 功能，用于帮助助手理解客户的意图。此功能会更正客户提交的输入中的拼写错误，然后再对输入求值。输入越精确，助手就能越轻松地识别实体提及项并理解客户的意向。有关更多详细信息，请参阅[更正用户输入](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check)。
+
+## 2019 年 3 月 22 日 
+{: #22March2019}
+
+- **引入了搜索技能 ![Beta](images/beta.png)**：通过搜索技能，有助于使助手能更快地向客户提供有用的回复。对于因在意料之外而未构建相应处理对话逻辑的客户查询，通过搜索技能可以提供有用的响应。助手可以查询外部数据源来查找相关信息以在其响应中共享，而不是表示无能为力。您可以逐渐构建对话响应来应答客户查询，这些响应需要使用跟进问题来澄清用户的意图，或确定简短、明确的响应是否合适。您可以使用搜索技能响应来处理需要更长时间说明的开放式客户查询。此 Beta 功能仅可供增强版和高端服务套餐用户使用。![仅限增强版或高端服务套餐](images/plus.png)
+
+  有关更多详细信息，请参阅[构建搜索技能](/docs/services/assistant?topic=assistant-skill-search-add)。
+
+## 2019 年 3 月 14 日 
+{: #14March2019}
+
+- **让 Watson 帮助您构建意向**：使用 Watson 机器学习技术来帮助您为助手选择正确的意向。Watson 会分析现有呼叫中心日志数据，以识别最常出现的客户问题和请求。然后，Watson 会建议可以用于训练助手的意向和用户示例，以便助手未来可识别到相同和类似的请求。确定要使用的正确意向后，可以使用已可用的意向用户示例建议功能来逐渐对其进行扩充，使其始终保持最新。有关更多信息，请参阅[获取定义意向的帮助](/docs/services/assistant?topic=assistant-intent-recommendations)。
+
+## 2019 年 3 月 4 日
+{: #4March2019}
+
+- **简化了导航**：除去了包含单独的*构建*、*改进*和*部署*选项卡的侧边栏导航。现在，在主技能页面中就能获取构建对话技能所需的全部工具。
+
+- **“改进”页面现在称为“分析”**：Watson 根据用户与助手之间的会话生成的参考度量值已从侧边栏的*改进*选项卡移至主技能页面上名为**分析**的新选项卡。
 
 ## 2019 年 3 月 1 日
 {: #1March2019}
 
-- **简化了导航**：除去了包含单独的*构建*、*改进*和*部署*选项卡的侧边栏导航。现在，在主技能页面中就能获取构建对话技能所需的全部工具。
-
-- **“改进”页面现在称为“分析”**：服务根据用户与助手之间的会话生成的参考度量值已从侧边栏的*改进*选项卡移至主技能页面上名为**分析**的新选项卡。
+- **日语意向用户示例建议 ![仅限增强版或高端套餐](images/plus.png)**：现在，可以上传包含日语原始用户输入（例如，呼叫中心日志的用户查询）的文件，Watson 可以分析和挖掘这些输入，以获取意向用户示例候选项。请参阅[通过日志文件添加示例](/docs/services/assistant?topic=assistant-intent-recommendations)。
 
 ## 2019 年 2 月 28 日
 {: #28February2019}
@@ -68,7 +172,7 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
 
     - 在消息的 `context` 或 `output` 对象中，以井号 (#) 开头的字符串不再视为意向引用。
   
-      先前，这些字符串会自动视为意向。例如，如果指定了上下文变量，如 `"color":"#FFFFFF"`，那么十六进制颜色代码 (#FFFFFF) 将视为意向。服务会检查是否在用户的输入中检测到名为 #FFFFFF 的意向，如果没有检测到，那么会将 #FFFFFF 替换为 `false`。现在，不会再发生此替换。
+      先前，这些字符串会自动视为意向。例如，如果指定了上下文变量，如 `"color":"#FFFFFF"`，那么十六进制颜色代码 (#FFFFFF) 将视为意向。助手会检查是否在用户的输入中检测到名为 #FFFFFF 的意向，如果没有检测到，那么会将 #FFFFFF 替换为 `false`。现在，不会再发生此替换。
   
       与此类似，如果在节点响应的文本字符串中包含井号 (#)，以前必须在其前面加反斜杠 (`\`) 以对其进行转义。例如，`我们是缅因州排名第一 (\#1) 的龙虾卷销售商。`现在，您不再需要对文本响应中的 `#` 号进行转义。
 
@@ -94,7 +198,7 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
 ## 2019 年 1 月 17 日
 {: #17January2019}
 
-- **捷克语语言支持一般可用**：对捷克语语言的支持不再分类为 Beta；现在此支持已一般可用。有关更多信息，请参阅[支持的语言](/docs/services/assistant?topic=assistant-language-support)。
+- **捷克语的语言支持已正式发布**：对捷克语的语言支持不再归类为 Beta，此支持现已正式发布。有关更多信息，请参阅[支持的语言](/docs/services/assistant?topic=assistant-language-support)。
 
 - **语言支持改进**：更新了语言理解组件，以改进以下功能：
 
@@ -104,7 +208,7 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
 ## 2019 年 1 月 4 日
 {: #4January2019}
 
-- **华盛顿和伦敦位置的 IBM Cloud Functions**：现在，可以从在伦敦和华盛顿数据中心托管的服务实例中的助手对话，对 IBM Cloud Functions 发起程序化调用。请参阅[从对话节点发起程序化调用](/docs/services/assistant?topic=assistant-dialog-actions)。
+- **华盛顿和伦敦位置的 IBM Cloud Functions**：现在，可以从在伦敦和华盛顿数据中心托管的服务实例中的助手对话，对 IBM Cloud Functions 发起程序化调用。请参阅[从对话节点发起程序化调用](/docs/services/assistant?topic=assistant-dialog-actions-client)。
 
 - **使用数组的新方法**：可以使用以下 SpEL 表达式方法来更轻松地在对话中使用数组值：
 
@@ -142,7 +246,7 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
 ## 2018 年 11 月 27 日
 {: #27November2018}
 
-- **新的服务套餐（增强版套餐）可用**：新套餐以更低的价格点提供了高端级别的功能。与先前的套餐不同的是，增强版套餐是基于用户的收费套餐。它会根据在给定时间段内与助手进行交互的唯一用户数来度量使用情况。为了最充分地利用套餐，如果您构建自己的客户机应用程序，请将应用程序设计为能为每个用户定义唯一标识，并在每个 /message API 调用中传递用户标识。对于内置集成，将使用会话标识来标识用户与助手的交互。有关更多信息，请参阅[基于用户的套餐](/docs/services/assistant?topic=assistant-services-information#services-information-user-based-plans)。
+- **提供了新的服务套餐（增强版套餐）**：新套餐以更低的价格点提供了高端级别的功能。与先前的套餐不同的是，增强版套餐是基于用户的收费套餐。它会根据在给定时间段内与助手进行交互的唯一用户数来度量使用量。为了最充分地利用套餐，如果您构建自己的客户机应用程序，请将应用程序设计为能为每个用户定义唯一标识，并在每个 /message API 调用中传递用户标识。对于内置集成，将使用会话标识来标识用户与助手的交互。有关更多信息，请参阅[基于用户的套餐](/docs/services/assistant?topic=assistant-services-information#services-information-user-based-plans)。
 
   <table>
   <caption>增强版套餐限制</caption>
@@ -200,32 +304,32 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
     </tr>
   </table>
 
-- **基于用户的高端套餐**：现在，高端套餐基于活动的唯一用户数进行计费。如果选择使用此套餐，请将您构建的任何定制应用程序设计为能正确识别生成 /message API 调用的用户。有关更多信息，请参阅[基于用户的套餐](services-information#user-based-plans)。
+- **基于用户的高端套餐**：现在，高端套餐基于活动的唯一用户数进行计费。如果选择使用此套餐，请将您构建的任何定制应用程序设计为能正确识别生成 /message API 调用的用户。有关更多信息，请参阅[基于用户的套餐](/docs/services/assistant?topic=assistant-services-information#services-information-user-based-plans)。
 
   现有高端套餐服务实例不受此更改的影响；这些实例将继续使用基于 API 的计费方法。仅现有高端套餐用户会看到基于 API 的套餐作为*高端 (API)* 套餐选项列出。
   {: note}
 
   有关所有可用服务套餐的更多信息，请参阅 {{site.data.keyword.conversationshort}} [服务套餐选项 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/cloud/watson-assistant/pricing/){: new_window}。
 
-- **意向用户示例建议 ![仅限增强版或高端套餐](images/premium.png)**：可以上传包含原始用户输入的文件（例如，呼叫中心日志的用户查询），服务可以分析和挖掘这些输入，以获取意向用户示例候选项。请参阅[通过日志文件添加示例](intent-recommendations#intent-recommendations-get-example-recommendations)。
+- **意向用户示例建议 ![仅限增强版或高端套餐](images/plus.png)**：可以上传包含原始用户输入（例如，呼叫中心日志的用户查询）的文件，Watson 可以分析和挖掘这些输入，以获取意向用户示例候选项。请参阅[通过日志文件添加示例](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations)。
 
 ## 2018 年 11 月 20 日
 {: #20November2018}
 
-**停止提供建议**：除去了“改进”选项卡上的“建议”部分。建议是仅可供高端套餐用户使用的 Beta 功能。它建议用户可执行哪些操作来改进其训练数据。现在，是在工具中实际更改训练数据的部分中提供建议，而不是将建议合并到一个位置。例如，在添加实体同义词时，现在可以选择查看服务建议的同义词列表。如果您要寻找其他方法来更详细地分析用户会话日志，请考虑使用 Jupyter 笔记本。有关更多详细信息，请参阅[高级任务](/docs/services/assistant?topic=assistant-logs-resources)。
+**停止提供建议**：除去了“改进”选项卡上的“建议”部分。建议是仅可供高端套餐用户使用的 Beta 功能。它建议用户可执行哪些操作来改进其训练数据。现在，是在工具中实际更改训练数据的部分中提供建议，而不是将建议合并到一个位置。例如，在添加实体同义词时，现在可以选择查看 Watson 建议的同义词列表。如果您要寻找其他方法来更详细地分析用户会话日志，请考虑使用 Jupyter 笔记本。有关更多详细信息，请参阅[高级任务](/docs/services/assistant?topic=assistant-logs-resources)。
 
 ## 2018 年 11 月 9 日
 {: #9November2018}
 
 - **主用户界面修订版**：{{site.data.keyword.conversationshort}} 服务采用了新的外观并新增了功能。
 
-  此版本的工具在过去几个月内由 Beta 程序参与者进行了评估。
+  此版本的工具在过去几个月内由 Beta 计划的参与者进行了评估。
 
   - **技能**：您视为*工作空间*的内容现在称为*技能*。*对话技能*是用于自然语言处理训练数据和工件的容器，使助手能够了解用户问题，并对其进行响应。
 
     **我的工作空间在哪里？**您先前创建的任何工作空间现在都作为技能在服务实例中列出。单击**技能**选项卡可进行查看。有关更多信息，请参阅[技能](/docs/services/assistant?topic=assistant-skills)。
 
-  - **助手**：现在，您只需执行两个步骤就能发布技能。第一步是将技能添加到助手，第二步是设置一个或多个用于部署技能的集成。助手在技能的基础上添加了一个功能层，使服务能够编排和管理信息流。请参阅[助手](/docs/services/assistant?topic=assistant-assistants)。
+  - **助手**：现在，您只需执行两个步骤就能发布技能。第一步是将技能添加到助手，第二步是设置一个或多个用于部署技能的集成。助手在技能的基础上添加了一个功能层，使 {{site.data.keyword.conversationshort}} 能够编排和管理信息流。请参阅[助手](/docs/services/assistant?topic=assistant-assistants)。
 
   - **内置集成**：您不用转至**部署**选项卡来部署工作空间，只要将对话技能添加到助手，然后再将集成添加到使技能可供用户使用所经由的助手即可。您无需构建定制前端应用程序，也无需管理从一个调用到下一个调用的会话状态。但是，如果您愿意，也仍然可以执行这些操作。有关更多信息，请参阅[添加集成](/docs/services/assistant?topic=assistant-deploy-integration-add)。
 
@@ -275,7 +379,7 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
 {: #21September2018}
 
 - **新 API 版本**：现在，当前 API 版本为 `2018-09-20`。在此版本中，API 返回的错误对象的 `errors[].path` 属性表示为 [JSON 指针 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://tools.ietf.org/html/rfc6901)，而不是采用点表示法形式。
-- **Web 操作支持**：现在，可以从对话节点调用 {{site.data.keyword.openwhisk_short}} Web 操作。有关更多详细信息，请参阅[从对话节点发起程序化调用](/docs/services/assistant?topic=assistant-dialog-actions)。
+- **Web 操作支持**：现在，可以从对话节点调用 {{site.data.keyword.openwhisk_short}} Web 操作。有关更多详细信息，请参阅[从对话节点发起程序化调用](/docs/services/assistant?topic=assistant-dialog-actions-client)。
 
 ## 2018 年 8 月 15 日
 {: #15August2018}
@@ -285,32 +389,33 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
 ## 2018 年 8 月 6 日
 {: #6August2018}
 
-- **意向冲突解决 ![仅限增强版或高端套餐](images/premium.png)**：现在，不同意向中的两个或多个用户示例彼此类似时，工具可以帮助您解决冲突。类似的用户示例可能会削弱训练数据，并使服务在运行时更难将用户输入映射到相应的意向。有关详细信息，请参阅[解决意向冲突](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts)。
+- **意向冲突解决 ![仅限增强版或高端套餐](images/plus.png)**：现在，不同意向中的两个或多个用户示例彼此类似时，工具可以帮助您解决冲突。类似的用户示例可能会削弱训练数据，并使助手在运行时更难将用户输入映射到相应的意向。有关详细信息，请参阅[解决意向冲突](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts)。
 
-- **消歧** ![仅限增强版或高端套餐](images/premium.png)：启用消歧，以允许助手在需要从两个或多个可行的对话节点中做出选择以用于处理响应时，向用户请求帮助。有关更多详细信息，请参阅[消歧](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation)。
+- **消歧** ![仅限增强版或高端套餐](images/plus.png)：启用消歧，以允许助手在需要从两个或多个可行的对话节点中做出选择以用于处理响应时，向用户请求帮助。有关更多详细信息，请参阅[消歧](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation)。
 
 - **“跳转至”修订**：修复了“对话”工具中的错误，此错误使您无法配置以具有 `anything_else` 特殊条件的节点的响应为目标的“跳转至”。
 
-- **离题返回消息**：现在，可以指定用户在离题后返回到节点时要显示的文本。届时用户已看到该节点的提示。您可以对消息略作更改，以便让用户知道他们将返回到上次离开的位置。例如，指定类似下面的响应：`Where were we? Oh, yes...` 有关更多详细信息，请参阅[离题](dialog-runtime#digressions)。
+- **离题返回消息**：现在，可以指定用户在离题后返回到节点时要显示的文本。届时用户已看到该节点的提示。您可以对消息略作更改，以便让用户知道他们将返回到上次离开的位置。例如，指定类似下面的响应：`Where were we? Oh, yes...` 有关更多详细信息，请参阅[离题](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-digressions)。
 
 ## 2018 年 7 月 12 日
 {: #12July2018}
 
 - **富文本响应类型**：现在，除了文本外，还可以向对话添加包含图像或按钮等元素的富文本响应。有关更多信息，请参阅[富文本响应](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia)。
 
-- **上下文实体 (Beta)**：上下文实体是通过标注在意向用户示例中出现的实体类型的提及项而定义的实体。这些实体类型不仅会指导服务学习相关项，还会指导服务学习在用户发声中通常显示相关项的上下文，使服务能够仅基于在用户输入中引用实体提及项的方式，就识别出从未见过的实体提及项。例如，如果通过将“Boston”标记为 @destination 实体来注释意向用户示例“I want a flight to Boston”，那么服务就可以将用户输入“I want a flight to Chicago.”中的“Chicago”识别为 @destination。此功能目前仅可用于英语。有关更多信息，请参阅[添加上下文实体](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based)。
+- **上下文实体 (Beta)**：上下文实体是通过标注在意向用户示例中出现的实体类型的提及项而定义的实体。这些实体类型不仅会指导助手学习相关项，还会指导助手学习在用户话语中通常显示相关项的上下文，使助手能够仅基于在用户输入中引用实体提及项的方式，就识别出从未见过的实体提及项。例如，如果通过将“Boston”标记为 @destination 实体来注释意向用户示例“I want a flight to Boston”，那么助手就可以将用户输入“I want a flight to Chicago.”中的“Chicago”识别为 @destination。此功能目前仅可用于英语。有关更多信息，请参阅[添加上下文实体](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based)。
 
   使用 Internet Explorer Web 浏览器访问工具时，无法对意向用户示例中的实体提及项进行标注，也无法编辑用户示例文本。
   {: note}
 
-- **实体建议**：现在，服务可以为实体值建议同义词。建议者基于从大量现有信息（包括大量书面文本来源）中抽取的上下文相似度来查找相关同义词，然后使用自然语言处理技术来识别与实体值中现有同义词类似的词。有关更多信息，请参阅[同义词](/docs/services/assistant?topic=assistant-entities#entities-synonyms)。
+- **实体建议**：现在，Watson 可以为实体值建议同义词。建议者基于从大量现有信息（包括大量书面文本来源）中抽取的上下文相似度来查找相关同义词，然后使用自然语言处理技术来识别与实体值中现有同义词类似的词。有关更多信息，请参阅[同义词](/docs/services/assistant?topic=assistant-entities#entities-synonyms)。
 
 - **新 API 版本**：现在，当前 API 版本为 `2018-07-10`。此版本引入了以下更改：
 
   - /message `output` 对象的内容已从 `text` JSON 对象更改为支持多种富文本响应类型（包括 `image`、`option`、`pause` 和 `text`）的 `generic` 数组。
   - 添加了对上下文实体的支持。
+  - 无法再在 `context.metadata` 中添加用户定义的属性。但是，可以将这些属性直接添加到 `context`。
 
-- **概述页面的日期过滤器**：使用新的日期过滤器来选择要显示其中数据的时间段。这些过滤器会影响页面上显示的所有数据：不仅仅是图形中显示的会话数，还会影响与图形一起显示的统计信息以及最热门意向和实体的列表。有关更多信息，请参阅[控件](logs-overview#controls)。
+- **概述页面的日期过滤器**：使用新的日期过滤器来选择要显示其中数据的时间段。这些过滤器会影响页面上显示的所有数据：不仅仅是图形中显示的会话数，还会影响与图形一起显示的统计信息以及最热门意向和实体的列表。有关更多信息，请参阅[控件](/docs/services/assistant?topic=assistant-logs-overview#logs-overview-controls)。
 
 - **扩展了模式限制**：使用**模式**字段[为实体值定义特定模式](/docs/services/assistant?topic=assistant-entities#entities-patterns)时，现在模式（正则表达式）限制为 512 个字符。
 
@@ -322,7 +427,7 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
 ## 2018 年 6 月 21 日
 {: #21June2018}
 
-- **系统实体的语言更新**：现在，荷兰语和简体中文语言支持已一般可用。荷兰语语言支持包括用于拼写错误检查的模糊匹配。繁体中文语言支持在 Beta 发行版中提供了[系统实体](/docs/services/assistant?topic=assistant-system-entities)。有关详细信息，请参阅[支持的语言](/docs/services/assistant?topic=assistant-language-support)。
+- **系统实体的语言更新**：现在，荷兰语和简体中文语言支持已正式发布。荷兰语语言支持包括用于拼写错误检查的模糊匹配。繁体中文语言支持在 Beta 发行版中提供了[系统实体](/docs/services/assistant?topic=assistant-system-entities)。有关详细信息，请参阅[支持的语言](/docs/services/assistant?topic=assistant-language-support)。
 
 ## 2018 年 6 月 14 日
 {: #14June2018}
@@ -334,7 +439,7 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
   - 华盛顿 (us-east)，自 2018 年 6 月 14 日起
   - 澳大利亚悉尼 (au-syd)，自 2018 年 5 月 7 日起
 
-  {{site.data.keyword.cloud_notm}} 将迁移到基于令牌的 Identity and Access Management (IAM) 认证。
+  {{site.data.keyword.cloud}} 将迁移到基于令牌的 Identity and Access Management (IAM) 认证。
 
   对于上面所列区域中的新服务实例，将使用 IAM 进行认证。您可以传递不记名令牌或 API 密钥。令牌支持已认证的请求，而无需在每次调用中都嵌入服务凭证。API 密钥使用基本认证。
 
@@ -342,7 +447,7 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
 
   使用任何 Watson SDK 时，可以传递 API 密钥，并让 SDK 来管理令牌的生命周期。有关更多信息和示例，请参阅 API 参考中的[认证 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")]https://{DomainName}/apidocs/assistant-v2#authentication){: new_window}。
 
-  如果不确定要使用哪种类型的认证，请通过单击 [{{site.data.keyword.Bluemix_notm}} 资源列表 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/resources){: new_window} 上的服务实例来查看服务凭证。
+  如果不确定要使用哪种类型的认证，请通过单击 [{{site.data.keyword.Bluemix_notm}} 资源列表 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com){: new_window} 的“服务”部分中的服务实例来查看 {{site.data.keyword.conversationshort}} 凭证。
 
 ## 2018 年 5 月 25 日
 {: #25May2018}
@@ -379,17 +484,17 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
 ## 2018 年 3 月 15 日
 {: #15March2018}
 
-- **引入 {{site.data.keyword.conversationfull}}**：{{site.data.keyword.ibmwatson}} Conversation 已重命名。现在，它名为 {{site.data.keyword.conversationfull}}。该名称更改反映了服务在不断扩展，以提供预构建的内容和工具，帮助您更轻松地共享构建的虚拟助手。有关更多详细信息，请参阅[此博客帖子 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/blogs/watson/2018/03/the-future-of-watson-conversation-watson-assistant/)。
+- **引入 {{site.data.keyword.conversationfull}}**：{{site.data.keyword.ibmwatson}} Conversation 已重命名。现在，它名为 {{site.data.keyword.conversationfull}}。该名称更改反映了 {{site.data.keyword.conversationshort}} 在不断扩展，以提供预构建的内容和工具，帮助您更轻松地共享构建的虚拟助手。有关更多详细信息，请参阅[此博客帖子 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/blogs/watson/2018/03/the-future-of-watson-conversation-watson-assistant/)。
 
 - **新的 REST API 和 SDK 可用于 Watson Assistant**：新的 API 在功能上与现有会话 API 完全相同，这些 API 将继续受支持。有关 Watson Assistant API 的更多信息，请参阅 [API 参考 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://{DomainName}/apidocs/assistant){: new_window}。
 
 - **对话增强功能**：向对话工具添加了以下功能：
 
   - 现在，提供了简单变量名称和值字段，可用于添加上下文变量或更新上下文变量值。您无需打开 JSON 编辑器，除非您希望这样做。有关更多详细信息，请参阅[定义上下文变量](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-context-var-define)。
-  - 通过使用文件夹将相关对话节点分组在一起来组织对话。有关更多详细信息，请参阅[使用文件夹组织对话](dialog-build#folders)。
-  - 添加了对以下功能的支持：定制每个对话节点如何参与用户启动的从指定对话流执行的离题。有关更多详细信息，请参阅[离题](dialog-runtime#digressions)。
+  - 通过使用文件夹将相关对话节点分组在一起来组织对话。有关更多详细信息，请参阅[使用文件夹组织对话](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-folders)。
+  - 添加了对以下功能的支持：定制每个对话节点如何参与用户启动的从指定对话流执行的离题。有关更多详细信息，请参阅[离题](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-digressions)。
 
-- **搜索意向和实体**：添加了新的搜索功能，支持[搜索意向](intents#searching-intents)以查找用户示例、意向名称或描述，或者[搜索实体](/docs/services/assistant?topic=assistant-entities#entities-search)值和同义词。
+- **搜索意向和实体**：添加了新的搜索功能，支持[搜索意向](/docs/services/assistant?topic=assistant-intents#intents-search)以查找用户示例、意向名称或描述，或者[搜索实体](/docs/services/assistant?topic=assistant-entities#entities-search)值和同义词。
 
 - **内容目录**：新的[内容目录](/docs/services/assistant?topic=assistant-catalog#catalog-add)包含可以添加到应用程序的单个类别的预构建通用意向和实体。例如，大多数应用程序需要一个常规 #greeting-type 意向，用于启动与用户的对话。您可以从内容目录进行添加，而不用构建自己的意向。
 
@@ -403,7 +508,7 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
 ## 2018 年 2 月 16 日
 {: #16February2018}
 
-- **对话节点跟踪**：使用“试用”窗格测试对话时，每个响应旁边会显示一个“位置”图标。可以单击该图标来突出显示服务在对话树中遍历至该响应的路径。有关详细信息，请参阅[构建对话](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-test)。
+- **对话节点跟踪**：使用“试用”窗格测试对话时，每个响应旁边会显示一个“位置”图标。可以单击该图标来突出显示助手在对话树中遍历至该响应的路径。有关详细信息，请参阅[构建对话](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-test)。
 
 - **新 API 版本**：现在，当前 API 版本为 `2018-02-16`。此版本引入了以下更改：
 
@@ -438,19 +543,19 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
 
 - **跨实例日志数据访问（仅限高级用户）**：如果您是 {{site.data.keyword.conversationshort}} 高级用户，那么可以选择将高级实例配置为允许访问跨不同高级实例的工作空间中的日志数据。
 
-- **复制节点**：现在，可以复制节点以生成该节点及其子代的副本。如果使用有用的逻辑构建了节点，并且希望在对话中的其他位置复用该逻辑，那么此功能非常有用。有关更多信息，请参阅[复制对话节点](dialog-build#copy-node)。
+- **复制节点**：现在，可以复制节点以生成该节点及其子代的副本。如果使用有用的逻辑构建了节点，并且希望在对话中的其他位置复用该节点，那么此功能很有用。有关更多信息，请参阅[复制对话节点](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-copy-node)。
 
-- **捕获模式实体中的组**：您可以标识为实体定义的正则表达式模式中的组。如果希望日后能够引用模式的子部分，那么标识组非常有用。例如，实体可能有一个用于捕获美国电话号码的正则表达式模式。如果将号码模式的区号分段标识为一个组，那么后续可以引用该组来访问电话号码的该区号分段。有关更多信息，请参阅[定义实体](/docs/services/assistant?topic=assistant-entities#entities-creating-task)。
+- **捕获模式实体中的组**：您可以标识为实体定义的正则表达式模式中的组。如果希望日后能够引用模式的子部分，那么标识组会很有用。例如，实体可能有一个用于捕获美国电话号码的正则表达式模式。如果将号码模式的区号分段标识为一个组，那么后续可以引用该组来访问电话号码的该区号分段。有关更多信息，请参阅[定义实体](/docs/services/assistant?topic=assistant-entities#entities-creating-task)。
 
 ## 2017 年 12 月 6 日
 {: #6December2017}
 
-- **{{site.data.keyword.openwhisk}} 集成 (Beta)**：直接从对话节点调用 {{site.data.keyword.openwhisk}}（以前称为 IBM OpenWhisk）操作。例如，此功能支持调用操作以在对话节点中检索天气信息，然后以对话响应中返回的信息为条件。目前，可以从美国南部区域中托管的 {{site.data.keyword.openwhisk_short}} 实例调用操作。有关更多详细信息，请参阅[从对话节点发起程序化调用](/doc/services/assistant?topic=assistant-dialog-actions)。
+- **{{site.data.keyword.openwhisk}} 集成 (Beta)**：直接从对话节点调用 {{site.data.keyword.openwhisk}}（以前称为 IBM OpenWhisk）操作。例如，此功能支持调用操作以在对话节点中检索天气信息，然后以对话响应中返回的信息为条件。目前，可以从美国南部区域中托管的 {{site.data.keyword.openwhisk_short}} 实例调用操作。有关更多详细信息，请参阅[从对话节点发起程序化调用](/docs/services/assistant?topic=assistant-dialog-actions-client)。
 
 ## 2017 年 12 月 5 日
 {: #5December2017}
 
-- **重新设计了用于意向和实体的 UI**：`意向`和`实体`选项卡已经过重新设计，可在创建和编辑实体和意向时，提供更轻松、更高效的工作流程。有关使用这两个选项卡的信息，请参阅[定义意向](intents#creating-intents)和[定义实体](/docs/services/assistant?topic=assistant-entities#entities-creating-task)。
+- **重新设计了用于意向和实体的 UI**：`意向`和`实体`选项卡已经过重新设计，可在创建和编辑实体和意向时，提供更轻松、更高效的工作流程。有关使用这两个选项卡的信息，请参阅[定义意向](/docs/services/assistant?topic=assistant-intents-create-task)和[定义实体](/docs/services/assistant?topic=assistant-entities#entities-creating-task)。
 
 ## 2017 年 11 月 30 日
 {: #30November2017}
@@ -460,7 +565,7 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
 ## 2017 年 11 月 29 日
 {: #29November2017}
 
-- **提高了对跨工作空间的用户输入的理解**：现在，可以使用发送到实例中的其他工作空间的发声来改进工作空间。例如，您可能有多个版本的生产工作空间和开发工作空间；可以使用相同的发声数据来改进其中任一工作空间。请参阅[跨工作空间进行改进](/docs/services/assistant?topic=assistant-logs#logs-deploy-id)。
+- **提高了对跨工作空间的用户输入的理解**：现在，可以使用发送到实例中的其他工作空间的话语来改进工作空间。例如，您可能有多个版本的生产工作空间和开发工作空间；可以使用相同的话语数据来改进其中任一工作空间。请参阅[跨工作空间进行改进](/docs/services/assistant?topic=assistant-logs#logs-deploy-id)。
 
 ## 2017 年 11 月 20 日
 {: #20November2017}
@@ -487,9 +592,9 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
 
     - 可以向槽添加条件，使该槽仅在满足特定条件时才为必需。例如，仅当要求提供婚姻状况的先前（必需）槽指示用户已婚时，才能使要求提供配偶姓名的槽为必需。
 
-    - 现在，可以选择**跳过用户输入**作为节点的下一步。选择此选项时，在处理当前节点之后，服务会直接跳转至当前节点的第一个子节点。此选项与现有的*跳转至*下一步选项类似，不同之处在于前者的灵活性更高。您无需指定要跳转至的确切节点。在运行时，即便在定义下一步行为之后对子节点重新排序或添加了新节点，服务也始终会跳转至作为第一个子节点的任何节点。
+    - 现在，可以选择**跳过用户输入**作为节点的下一步。选择此选项时，在处理当前节点之后，助手会直接跳转至当前节点的第一个子节点。此选项与现有的*跳转至*下一步选项类似，不同之处在于前者的灵活性更高。您无需指定要跳转至的确切节点。在运行时，即便在定义下一步行为之后对子节点重新排序或添加了新节点，助手也始终会跳转至作为第一个子节点的任何节点。
 
-    - 可以为槽添加条件响应。对于“已找到”和“找不到”响应，都可以定制服务根据是否满足特定条件的响应方式。此功能支持在将用户提供的值保存在槽的上下文变量中之前，检查是否存在可能的错误解释并进行更正。例如，如果槽保存了用户的年龄，并使用*检查对象*字段中的 `@sys-number` 来捕获此信息，那么可以添加条件来检查是否有超过 100 的数字，然后用类似*请提供有效年龄（岁）*的内容予以响应。有关更多详细信息，请参阅[向“已找到”和“找不到”响应添加条件](/docs/services/assistant?topic=assistant-dialog-slots#dialog-slots-handler-next-steps)。
+    - 可以为槽添加条件响应。对于“已找到”和“找不到”响应，都可以定制助手根据是否满足特定条件而进行响应的方式。此功能支持在将用户提供的值保存在槽的上下文变量中之前，检查是否存在可能的错误解释并进行更正。例如，如果槽保存了用户的年龄，并使用*检查对象*字段中的 `@sys-number` 来捕获此信息，那么可以添加条件来检查是否有超过 100 的数字，然后用类似*请提供有效年龄（岁）*的内容予以响应。有关更多详细信息，请参阅[向“已找到”和“找不到”响应添加条件](/docs/services/assistant?topic=assistant-dialog-slots#dialog-slots-handler-next-steps)。
 
     - 用于向节点添加条件响应的界面已经过重新设计，能更轻松地列出每个条件及其响应。要添加节点级别的条件响应，请单击**定制**，然后启用**多个响应**选项。
 
@@ -542,9 +647,9 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
 
 - **重音符规范化**：在会话式设置中，用户在与 {{site.data.keyword.conversationshort}} 服务进行交互时，有可能会使用重音符。因此，更新了算法，现在对于意向检测和实体识别，对单词的有重音和无重音版本进行相同的处理。
 
-  但是，对于某些语言（例如，西班牙语），一些重音符可以改变实体的含义。因此，对于实体检测，尽管原始实体可能隐式具有重音符，但服务还是可以与同一实体的无重音版本相匹配，但置信度分数略低。
+  但是，对于某些语言（例如，西班牙语），一些重音符可以改变实体的含义。因此，对于实体检测，尽管原始实体可能隐式具有重音符，但助手还是可以与同一实体的无重音版本相匹配，但置信度分数略低。
 
-  例如，对于单词 `barrió`（该词具有重音符，并且对应于动词 `barrer`（打扫）的过去时），服务还可能匹配单词 `barrio`（邻居），但置信度略低。
+  例如，对于单词 `barrió`（该词具有重音符，并且对应于动词 `barrer`（打扫）的过去时），助手还可能匹配单词 `barrio`（邻居），但置信度略低。
 
   系统将在具有完全匹配项的实体中提供最高置信度分数。例如，如果训练集内有 `barrió`，那么不会检测到 `barrio`；如果训练集内有 `barrio`，那么不会检测到 `barrió`。
 
@@ -588,7 +693,7 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
 ## 2017 年 7 月 12 日
 {: #12July2017}
 
-- **支持捷克语**：引入了捷克语语言支持；有关其他详细信息，请参阅[支持的语言](/docs/services/assistant?topic=assistant-language-support)主题。
+- **支持捷克语**：引入了捷克语的语言支持；有关其他详细信息，请参阅[支持的语言](/docs/services/assistant?topic=assistant-language-support)主题。
 
 ## 2017 年 7 月 11 日
 {: #11July2017}
@@ -610,7 +715,7 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
 ## 2017 年 6 月 21 日
 {: #21June2017}
 
-- **支持阿拉伯语**：现在，对阿拉伯语的语言支持已一般可用。有关详细信息，请参阅[配置双向语言](/docs/services/assistant?topic=assistant-language-support#language-support-configuring-bi-directional)。
+- **支持阿拉伯语**：现在，对阿拉伯语的语言支持已正式发布。有关详细信息，请参阅[配置双向语言](/docs/services/assistant?topic=assistant-language-support#language-support-configuring-bi-directional)。
 - **更新了语言**：更新了 {{site.data.keyword.conversationshort}} 服务算法，以改进总体语言支持。有关详细信息，请参阅[支持的语言](/docs/services/assistant?topic=assistant-language-support)主题。
 
 ## 2017 年 6 月 16 日
@@ -621,7 +726,7 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
 ## 2017 年 6 月 14 日
 {: #14June2017}
 
-- **其他语言的模糊匹配 (Beta)**：现在，实体模糊匹配可用于其他语言，如[支持的语言](/docs/services/assistant?topic=assistant-language-support)主题中所注明。可以启用按实体模糊匹配来提高服务识别用户输入中语法类似于实体，但不需要完全匹配的项的能力。此功能可将用户输入映射到对应的正确实体，就算存在拼写错误或语法方面略有差异也能正确映射。例如，如果将 giraffe 定义为动物实体的同义词，而用户输入包含词汇 giraffes 或 girafe，那么模糊匹配能够正确地将该词汇映射到动物实体。有关详细信息，请参阅[模糊匹配](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching)。
+- **其他语言的模糊匹配 (Beta)**：现在，实体模糊匹配可用于其他语言，如[支持的语言](/docs/services/assistant?topic=assistant-language-support)主题中所注明。可以启用按实体模糊匹配，这样无需完全匹配，通过类似于实体的语法就能提高助手识别用户输入中的项的能力。此功能可将用户输入映射到对应的正确实体，即使存在拼写错误或语法方面略有差异也能正确映射。例如，如果将 giraffe 定义为动物实体的同义词，而用户输入包含词汇 giraffes 或 girafe，那么模糊匹配能够正确地将该词汇映射到动物实体。有关详细信息，请参阅[模糊匹配](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching)。
 
 ## 2017 年 6 月 13 日
 {: #13June2017}
@@ -632,7 +737,7 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
 ## 2017 年 6 月 12 日
 {: #12June2017}
 
-- 可以使用 **Lite** 套餐（以前称为“免费套餐”）创建的最大工作空间数已从 3 个更改为 5 个。
+- 可以使用**轻量**套餐（以前称为“免费套餐”）创建的最大工作空间数已从 3 个更改为 5 个。
 - 现在，可以为对话节点指定任何名称；名称不必唯一。而且随后可以更改节点名，而不影响节点在内部的引用方式。指定的名称会视为别名，而系统使用其自己的内部标识来引用节点。
 - 通过编辑工作空间详细信息来创建工作空间后，即无法再更改该工作空间的语言。如果需要更改语言，可以将工作空间导出为 JSON 文件，更新 language 属性，然后将 JSON 文件作为新的工作空间导入。
 
@@ -669,7 +774,7 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
 - 现在，打开工具时，提供了**汽车仪表板**样本工作空间。要将此样本用作自己工作空间的起始点，请编辑此工作空间。如果要将其用于多个工作空间，请改为复制样本。除非使用样本工作空间，否则样本工作空间不会计入工作空间总计。
 - 现在，浏览工具更轻松。导航菜单选项在主页的侧面（而不是顶部）提供。在页面顶部，会显示面包屑链接，表明您所在的位置。现在，可以在“工作空间”页面中切换服务实例。要快速访问该页面，请单击导航菜单中的**返回到工作空间**。如果有多个服务实例，那么将显示当前实例的名称。可以单击其旁边的**更改**链接来选择其他实例。
 - 现在，创建对话时，将添加两个节点：1) 对话树顶部的**欢迎**节点，用于包含要向用户显示的问候语，以及 2)**其他**节点，用于捕获对话中其他节点无法识别的任何用户查询并对其做出响应。有关更多详细信息，请参阅[创建对话](/docs/services/assistant?topic=assistant-dialog-build)。
-- 现在，在“试用”窗格中测试对话时，可以通过按“向上”键来循环浏览先前的输入，以找到并重新提交最近的测试发声。
+- 现在，在“试用”窗格中测试对话时，可以通过按“向上”键来循环浏览先前的输入，以找到并重新提交最近的测试话语。
 - 现在，为 5 个系统实体（`@sys-date`、`@sys-time`、`@sys-currency`、`@sys-number` 和 `@sys-percentage`）提供了试验性韩国语语言支持。某些数字实体存在已知问题，并且对非正式语言输入的支持有限。
 - “改进”选项卡中提供了“概述”页面。该页面提供与机器人的交互摘要。可以查看给定时间段内的流量以及在用户会话中最常识别到的意向和实体。
 有关其他信息，请参阅[使用“概述”页面](/docs/services/assistant?topic=assistant-logs-overview)。
@@ -678,11 +783,11 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
 {: #27April2017}
 
 - 现在，以下系统实体仅作为英文环境中的 Beta 功能提供：
-    - sys-location：识别用户发声中对位置（例如，城镇、城市和国家/地区）的引用。
-    - sys-person：识别用户发声中对人员姓名（名字和姓氏）的引用。
+    - sys-location：识别用户话语中对位置（例如，城镇、城市和国家/地区）的引用。
+    - sys-person：识别用户话语中对人员姓名（名字和姓氏）的引用。
 
 有关更多信息，请参阅[系统实体引用](/docs/services/assistant?topic=assistant-system-entities)。
-- 实体的模糊匹配是 Beta 功能，目前在英语环境中可用。可以启用按实体模糊匹配来提高服务识别用户输入中语法类似于实体，但不需要完全匹配的项的能力。此功能可将用户输入映射到对应的正确实体，就算存在拼写错误或语法方面略有差异也能正确映射。例如，如果将 **giraffe** 定义为动物实体的同义词，而用户输入包含词汇 *giraffes* 或 *girafe*，那么模糊匹配能够正确地将该词汇映射到动物实体。有关详细信息，请参阅[定义实体](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching)并搜索`模糊匹配`。
+- 实体的模糊匹配是 Beta 功能，目前在英语环境中可用。可以启用按实体模糊匹配，这样无需完全匹配，通过类似于实体的语法就能提高助手识别用户输入中的项的能力。此功能可将用户输入映射到对应的正确实体，即使存在拼写错误或语法方面略有差异也能正确映射。例如，如果将 **giraffe** 定义为动物实体的同义词，而用户输入包含词汇 *giraffes* 或 *girafe*，那么模糊匹配能够正确地将该词汇映射到动物实体。有关详细信息，请参阅[定义实体](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching)并搜索`模糊匹配`。
 
 ## 2017 年 4 月 18 日
 {: #18April2017}
@@ -695,12 +800,12 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
 
     有关更多信息，请参阅 [API 参考 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://{DomainName}/apidocs/assistant){: new_window}。
 - /messages `POST` 方法的行为更改了处理实体和意向的方式（实体和意向是作为消息输入一部分指定的）。
-    - 如果在输入上指定意向，那么服务将使用指定的意向，但会使用自然语言处理来检测用户输入中的实体。
-    - 如果在输入上指定实体，那么服务将使用指定的实体，但会使用自然语言处理来检测用户输入中的意向。
+    - 如果在输入上指定意向，那么助手将使用指定的意向，但会使用自然语言处理来检测用户输入中的实体。
+    - 如果在输入上指定实体，那么助手将使用指定的实体，但会使用自然语言处理来检测用户输入中的意向。
 
          对于同时指定意向和实体的消息，或者这两项均未指定的消息，行为尚未更改。
 - 现在，用于将用户输入标记为不相关的选项可用于所有支持的语言。这是 Beta 功能。
-- 新的“凭证”选项卡提供了单一位置，在其中可以找到将应用程序连接到工作空间（例如，服务凭证和工作空间标识）所需的所有信息以及其他部署选项。要访问工作空间的“凭证”选项卡，请单击 ![菜单](images/Menu_16.png) 图标，然后选择**凭证**。
+- 新的“凭证”选项卡提供了单一位置，在其中可以找到将应用程序连接到工作空间所需的所有信息（例如，{{site.data.keyword.conversationshort}} 凭证和工作空间标识）以及其他部署选项。要访问工作空间的“凭证”选项卡，请单击 ![菜单](images/Menu_16.png) 图标，然后选择**凭证**。
 
 ## 2017 年 3 月 9 日
 {: #9March2017}
@@ -772,7 +877,7 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
 {: #21October2016}
 
 - 现在，{{site.data.keyword.conversationshort}} 服务提供了系统实体，这些是可以在任何用例中使用的公共实体。有关详细信息，请参阅[定义实体](/docs/services/assistant?topic=assistant-entities)并搜索`启用系统实体`。
-- 现在，可以在“改进”页面上查看与用户的会话历史记录。可以借此来了解机器人的行为。有关详细信息，请参阅[改进技能](/docs/services/assistant?topic=assistant-logs-intro)。
+- 现在，可以在“改进”页面上查看与用户的会话历史记录。可以借此来了解机器人的行为。有关详细信息，请参阅[改进技能](/docs/services/assistant?topic=assistant-logs)。
 - 现在，可以通过逗号分隔值 (CSV) 文件导入实体，如果您有大量实体，此功能会很有用。有关详细信息，请参阅[定义实体](/docs/services/assistant?topic=assistant-entities)并搜索`导入实体`。
 
 ## 2016 年 9 月 20 日
@@ -789,7 +894,7 @@ IBM 发布分类为 Beta 的服务、功能和语言支持供您评估。这些�
 
 - 可以将对话节点从一个分支移至另一个分支以作为同代或同级。有关详细信息，请参阅[移动对话节点](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-move-node)。
 - 可以展开 JSON 编辑器窗口。
-- 可以查看机器人会话的交谈日志，以帮助了解其行为。可以按意向、实体、日期和时间进行过滤。有关详细信息，请参阅[改进技能](/docs/services/assistant?topic=assistant-logs-intro)。
+- 可以查看机器人会话的交谈日志，以帮助了解其行为。可以按意向、实体、日期和时间进行过滤。有关详细信息，请参阅[改进技能](/docs/services/assistant?topic=assistant-logs)。
 
 ## 2016 年 7 月 11 日
 {: #21July2016}

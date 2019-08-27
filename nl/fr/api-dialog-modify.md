@@ -6,6 +6,7 @@ lastupdated: "2019-02-11"
 
 subcollection: assistant
 
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -43,7 +44,7 @@ Un dialogue valide est toujours conforme aux critères suivants :
 
   - `event_handler` : gestionnaire qui est défini pour un noeud de trame ou pour un noeud d'attribut individuel.
 
-    A partir de l'outil, vous pouvez définir un gestionnaire de noeud de trame en cliquant sur le lien **Manage handlers** à partir d'un noeud comportant des attributs. (L'interface utilisateur de l'outil n'expose pas le gestionnaire d'événements de niveau attribut, mais vous pouvez en définir un via l'API.) 
+    A partir de l'outil, vous pouvez définir un gestionnaire de noeud de trame en cliquant sur le lien **Manage handlers** à partir d'un noeud comportant des attributs. (L'interface utilisateur de l'outil n'expose pas le gestionnaire d'événements de niveau attribut, mais vous pouvez en définir un via l'API.)
 
   - `frame` : noeud comportant un ou plusieurs noeuds enfant de type `slot`. Tout noeud d'attribut enfant requis doit être renseigné pour que le service puisse quitter le noeud de trame.
 
@@ -72,7 +73,7 @@ Un dialogue valide est toujours conforme aux critères suivants :
   - `input` : met à jour le contexte de message afin d'inclure une variable contextuelle avec la valeur qui est collectée auprès de l'utilisateur pour renseigner l'attribut. Un gestionnaire portant ce nom doit être présent pour chaque attribut dans le noeud de trame.
   - `nomatch` : définit ce qu'il convient de faire si la réponse d'un utilisateur à la demande d'attribut ne contient pas une valeur valide. Un gestionnaire portant ce nom est présent uniquement si une condition Not found est définie pour l'attribut.
 
-  Le diagramme suivant illustre l'emplacement dans l'interface utilisateur de l'outil où vous devez définir le code qui est déclenché pour chaque événement nommé. 
+  Le diagramme suivant illustre l'emplacement dans l'interface utilisateur de l'outil où vous devez définir le code qui est déclenché pour chaque événement nommé.
 
   ![Emplacement dans l'interface utilisateur où le code qui est déclenché par des gestionnaires d'événements nommés est créé](images/api-event-handlers.png)
 

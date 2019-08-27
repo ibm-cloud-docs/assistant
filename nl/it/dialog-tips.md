@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -29,29 +29,29 @@ subcollection: assistant
 Apprendi come approcciarti alla creazione di un dialogo e come ottenere alcuni suggerimenti per completare passi più complessi.
 {: shortdesc}
 
-Esamina questi suggerimenti di designer del dialogo esperti. 
+Esamina questi suggerimenti di designer del dialogo esperti.
 
 ## Pianificazione dell'intero dialogo
 {: #dialog-tips-plan}
 
-- Pianifica la progettazione del dialogo che desideri creare prima di aggiungere un singolo nodo di dialogo nello strumento. Abbozzalo su carta se necessario. 
-- Quando possibile, basa le tue decisioni di progettazione su dati provenienti da prove e comportamenti reali. Non aggiungere nodi per gestire una situazione che qualcuno *pensa* possa verificarsi. 
-- Evita di copiare processi aziendali così come sono. Raramente sono discorsivi. 
-- Se delle persone utilizzano già un processo, esamina il modo in cui vi si approcciano. Di norma, le persone ottimizzano il processo da una prospettiva colloquiale. 
-- Decidi il tono, la personalità e il posizionamento del tuo assistente. Queste scelte devono riflettersi coerentemente nel dialogo che hai creato. 
-- Non far apparire mai l'assistente come una persona. Se gli utenti credono che l'assistente è una persona e poi si rendono conto che non lo è, è probabile che non si fidino. 
-- Non tutto può essere considerato una conversazione. A volte un formato web funziona meglio. 
+- Pianifica la progettazione del dialogo che desideri creare prima di aggiungere un singolo nodo di dialogo. Abbozzalo su carta se necessario.
+- Quando possibile, basa le tue decisioni di progettazione su dati provenienti da prove e comportamenti reali. Non aggiungere nodi per gestire una situazione che qualcuno *pensa* possa verificarsi.
+- Evita di copiare processi aziendali così come sono. Raramente sono discorsivi.
+- Se delle persone utilizzano già un processo, esamina il modo in cui vi si approcciano. Di norma, le persone ottimizzano il processo da una prospettiva colloquiale.
+- Decidi il tono, la personalità e il posizionamento del tuo assistente. Queste scelte devono riflettersi coerentemente nel dialogo che hai creato.
+- Non far apparire mai l'assistente come una persona. Se gli utenti credono che l'assistente è una persona e poi si rendono conto che non lo è, è probabile che non si fidino.
+- Non tutto può essere considerato una conversazione. A volte un formato web funziona meglio.
 
 ## Aggiunta di nodi
 {: #dialog-tips-nodes}
 
-- Aggiungi un nome nodo che descrive lo scopo del nodo. 
+- Aggiungi un nome nodo che descrive lo scopo del nodo.
 
-  Al momento sai quali operazioni vengono svolte dal tuo nodo, ma tra alcuni mesi potresti non saperlo. Il tuo io futuro e i membri del tuo team ti ringrazieranno per avere aggiunto un nome nodo descrittivo. E il nome nodo viene visualizzato nel log, ciò può esserti utile per eseguire il debug di una conversazione in un secondo momento. 
+  Al momento sai quali operazioni vengono svolte dal tuo nodo, ma tra alcuni mesi potresti non saperlo. Il tuo io futuro e i membri del tuo team ti ringrazieranno per avere aggiunto un nome nodo descrittivo. E il nome nodo viene visualizzato nel log, ciò può esserti utile per eseguire il debug di una conversazione in un secondo momento.
 - Per raccogliere le informazioni necessarie per eseguire un'attività, prova a utilizzare un nodo con slot invece di un bel po' di nodi separati per carpire le informazioni agli utenti. Vedi [Raccolta di informazioni con gli slot](/docs/services/assistant?topic=assistant-dialog-slots).
-- Per un flusso del processo complesso, indica agli utenti quali informazioni devono fornire all'inizio del processo. 
-- Comprendi in che modo il servizio passa attraverso la struttura ad albero di dialogo e l'impatto che cartelle, rami, passaggi e digressioni hanno sulla rotta. Vedi [Flusso di dialogo](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-flow).
-- Non aggiungere passaggi ovunque. Aumentano la complessità del flusso di dialogo e rendono più difficile eseguire il debug del dialogo in un secondo momento. 
+- Per un flusso del processo complesso, indica agli utenti quali informazioni devono fornire all'inizio del processo.
+- Comprendi in che modo il tuo assistente passa attraverso la struttura ad albero di dialogo e l'impatto che cartelle, rami, passaggi e digressioni hanno sulla rotta. Vedi [Flusso di dialogo](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-flow).
+- Non aggiungere passaggi ovunque. Aumentano la complessità del flusso di dialogo e rendono più difficile eseguire il debug del dialogo in un secondo momento.
 - Per passare a un nodo nello stesso ramo del nodo corrente, utilizza *Ignora input utente* invece di *Passa a*.
 
   Questa scelta ti evita di dover modificare le impostazioni del nodo corrente quando rimuovi o riordini i nodi figlio a cui passare. Vedi [Definizione delle operazioni successive](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-jump-to).
@@ -60,34 +60,37 @@ Esamina questi suggerimenti di designer del dialogo esperti.
 ## Aggiunta di risposte
 {: #dialog-tips-responses}
 
-- Utilizza risposte brevi e utili. 
-- Nella risposta, rifletti l'intento dell'utente. 
+- Utilizza risposte brevi e utili.
+- Nella risposta, rifletti l'intento dell'utente.
 
-  In questo modo, assicuri agli utenti che il bot li sta comprendendo oppure, se non lo sta facendo, dai loro la possibilità di risolvere subito l'incomprensione. 
-- Includi solo link a siti esterni nelle risposte se la risposta dipende da dati che cambiano di frequente. 
-- Evita di utilizzare eccessivamente i pulsanti. Incoraggiare gli utenti a scegliere le opzioni predefinite da una serie di pulsanti rende meno reale la conversazione e riduce la tua capacità di capire cosa vogliono veramente fare gli utenti. Quando consenti agli utenti di porre domande con parole loro, puoi utilizzare l'input per addestrare il sistema e ricavare intenti migliori. 
+  In questo modo, assicuri agli utenti che il bot li sta comprendendo oppure, se non lo sta facendo, dai loro la possibilità di risolvere subito l'incomprensione.
+- Includi solo link a siti esterni nelle risposte se la risposta dipende da dati che cambiano di frequente.
+- Evita di utilizzare eccessivamente i pulsanti. Incoraggiare gli utenti a scegliere le opzioni predefinite da una serie di pulsanti rende meno reale la conversazione e riduce la tua capacità di capire cosa vogliono veramente fare gli utenti. Quando consenti agli utenti di porre domande con parole loro, puoi utilizzare l'input per addestrare il sistema e ricavare intenti migliori.
 - Evita di utilizzare un bel po' di nodi quando ne basta uno. Ad esempio, aggiungi più risposte condizionali a un singolo nodo per restituire risposte diverse a seconda dei dettagli forniti dall'utente. Vedi [Risposte condizionali](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multiple).
-- Formula attentamente le tue risposte. Puoi cambiare il modo in cui una persona reagisce al tuo sistema semplicemente in base a come formuli una risposta. La modifica di una riga del testo può evitarti di dover scrivere più righe di codice per implementare una soluzione programmatica complessa. 
+- Formula attentamente le tue risposte. Puoi cambiare il modo in cui una persona reagisce al tuo sistema semplicemente in base a come formuli una risposta. La modifica di una riga del testo può evitarti di dover scrivere più righe di codice per implementare una soluzione programmatica complessa.
 - Esegui frequentemente il backup della tua capacità. Vedi [Scaricamento di una capacità](/docs/services/assistant?topic=assistant-skill-add#skill-add-download).
 
 ## Suggerimenti per l'acquisizione delle informazioni dall'input utente
 {: #dialog-tips-user-input}
 
-Può essere difficile sapere quale sintassi utilizzare nel tuo nodo di dialogo per acquisire con precisione le informazioni che desideri trovare nell'input utente. Di seguito troverai alcuni approcci da utilizzare per occuparti di obiettivi comuni. 
+Può essere difficile sapere quale sintassi utilizzare nel tuo nodo di dialogo per acquisire con precisione le informazioni che desideri trovare nell'input utente. Di seguito troverai alcuni approcci da utilizzare per occuparti di obiettivi comuni.
 
 - **Restituzione dell'input dell'utente**: puoi acquisire il testo esatto espresso dall'utente e restituirlo nella tua risposta. Utilizza la seguente espressione SpEL in una risposta per ripetere il testo che l'utente ha specificato nella risposta:
 
   `You said: <? input.text ?>.`
 
+  Se la correzione automatica è attiva e vuoi restituire l'input originale dell'utente prima della correzione, puoi utilizzare `<? input.original_text ?>`. Tuttavia, assicurati di utilizzare una condizione di risposta che controlli innanzitutto se il campo `original_text` esiste.
+  {: note}
+
 - **Determinazione del numero di parole nell'input utente**: puoi eseguire uno qualsiasi dei metodi Stringa supportati sull'oggetto input.text. Ad esempio, puoi scoprire quante parole ci sono in un'espressione utente utilizzando la seguente espressione SpEL:
 
   `input.text.split(' ').size()`
 
-  Vedi [Metodi del linguaggio delle espressioni per Stringa](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings) per informazioni su altri metodi che puoi utilizzare. 
+  Vedi [Metodi del linguaggio delle espressioni per Stringa](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings) per informazioni su altri metodi che puoi utilizzare.
 
 - **Gestione di più intenti**: un utente immette un input in cui desidera completare due attività separate. `I want to open a savings account and apply for a credit card.` In che modo il dialogo riconosce e fa fronte a entrambe? Vedi la voce [Compound questions](https://sodoherty.ai/2017/02/06/compound-questions/){: new_window} nel blog di Simon O'Doherty per le strategie che puoi provare a utilizzare. (Simon è uno sviluppatore del team {{site.data.keyword.conversationshort}}.)
 
-- **Gestione degli intenti ambigui**: un utente immette un input che esprime una richiesta sufficientemente ambigua da consentire al servizio di trovare due o più nodi con intenti che potrebbero potenzialmente occuparsene. In che modo il dialogo stabilisce quale ramo di dialogo seguire? Se abiliti la disambiguazione, questa può mostrare agli utenti le loro opzioni e chiedere loro di selezionare quella corretta. Per ulteriori dettagli, vedi [Disambiguazione](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
+- **Gestione degli intenti ambigui**: un utente immette un input che esprime una richiesta sufficientemente ambigua da consentire al tuo assistente di trovare due o più nodi con intenti che potrebbero potenzialmente occuparsene. In che modo il dialogo stabilisce quale ramo di dialogo seguire? Se abiliti la disambiguazione, questa può mostrare agli utenti le loro opzioni e chiedere loro di selezionare quella corretta. Per ulteriori dettagli, vedi [Disambiguazione](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
 
 - **Gestione di più entità nell'input**: se vuoi valutare solo il valore della prima istanza rilevata di un tipo di entità, puoi utilizzare la sintassi  `@entity == 'specific-value'` invece del formato `@entity:(specific-value)`.
 
@@ -100,7 +103,7 @@ Può essere difficile sapere quale sintassi utilizzare nel tuo nodo di dialogo p
 
   `@person:(O'Reilly)` e `$person:(O'Reilly)`
 
-  Il servizio converte questi riferimenti abbreviati in queste espressioni SpEL complete:
+  Il tuo assistente converte questi riferimenti abbreviati in queste espressioni SpEL complete: 
 
   `entities['person']?.contains('O''Reilly')` e `context['person'] == 'O''Reilly'`
 
@@ -111,7 +114,7 @@ Può essere difficile sapere quale sintassi utilizzare nel tuo nodo di dialogo p
 
   `$state:MA || $state:ME || $state:NH`
 
-- **Controllo di valori numerici**: quando confronti i numeri, assicurati innanzitutto che l'entità o la variabile che stai controllando contenga un valore. Se l'entità o la variabile non contiene un valore numerico, viene trattata come se avesse un valore null (0) in un confronto numerico. 
+- **Controllo di valori numerici**: quando confronti i numeri, assicurati innanzitutto che l'entità o la variabile che stai controllando contenga un valore. Se l'entità o la variabile non contiene un valore numerico, viene trattata come se avesse un valore null (0) in un confronto numerico.
 
   Ad esempio, desideri controllare se un valore del dollaro specificato dall'utente nell'input utente è inferiore a 100. Se utilizzi la condizione `@price < 100` e l'entità `@price` è null, la condizione viene valutata come `true` perché 0 è inferiore a 100, anche se il prezzo non è stato mai impostato. Per impedire questo tipo di risultato impreciso, utilizza una condizione come `@price AND @price < 100`. Se `@price` non ha alcun valore, questa condizione restituirà correttamente false.
 
@@ -162,7 +165,7 @@ Per aiutarti nel decifrare quale numero di gruppo utilizzare per acquisire la se
 |--------------------------|----------------------------|
 | array_of_matched_groups  | <? @phone_number.groups ?> |
 
-Utilizza il riquadro "Provalo" per immettere alcuni valori di numero di telefono di test. Per l'input `958-123-2345`, questa espressione imposta `$array_of_matched_groups` su `["958-123-2345","958","958",null,"123","2345"]`.
+Utilizza il riquadro "Try it out" per immettere alcuni valori di numero di telefono di test. Per l'input `958-123-2345`, questa espressione imposta `$array_of_matched_groups` su `["958-123-2345","958","958",null,"123","2345"]`.
 
 Puoi quindi conteggiare ciascun valore nell'array partendo da 0 per acquisire il numero di gruppo relativo ad esso.
 
@@ -176,7 +179,7 @@ Puoi quindi conteggiare ciascun valore nell'array partendo da 0 per acquisire il
 | "2345"              | 5 |
 {: caption="Elementi dell'array" caption-side="top"}
 
-Dal risultato, puoi stabilire che, per acquisire le ultime quattro cifre del numero di telefono, hai bisogno, ad esempio, del gruppo #5. 
+Dal risultato, puoi stabilire che, per acquisire le ultime quattro cifre del numero di telefono, hai bisogno, ad esempio, del gruppo #5.
 
 Per ritornare alla struttura JSONArray creata per rappresentare l'entità di modello raggruppata, utilizza la seguente sintassi:
 
@@ -212,7 +215,7 @@ Se l'input è `I want to change my phone number from 958-234-3456 to 555-456-567
 ## Visualizzazione dei dettagli della chiamata API
 {: #dialog-tips-inspect-api}
 
-Mentre verifichi il tuo dialogo con il riquadro "Provalo", potresti voler sapere qual è l'aspetto delle chiamate API sottostanti che vengono restituite dal servizio. Puoi utilizzare gli strumenti per gli sviluppatori forniti dal tuo browser web per controllarle. 
+Mentre verifichi il tuo dialogo con il riquadro "Try it out", potresti voler sapere qual è l'aspetto delle chiamate API sottostanti che vengono restituite dal servizio. Puoi utilizzare gli strumenti per gli sviluppatori forniti dal tuo browser web per controllarle.
 
 Da Chrome, ad esempio, apri Strumenti per sviluppatori. Fai clic sullo strumento Network. La sezione Name elenca più chiamate API. Fai clic sulla chiamata message associata alla tua espressione di test e poi fai clic sulla colonna Response per vedere il corpo della risposta API. Elenca gli intenti e le entità che sono stati riconosciuti nell'input utente con i loro punteggi di affidabilità e i valori delle variabili di contesto al momento della chiamata. Per visualizzare il corpo della risposta nel formato strutturato, fai clic sulla colonna Preview.
 

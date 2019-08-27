@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-08-12"
 
 subcollection: assistant
 
@@ -30,11 +30,12 @@ subcollection: assistant
 
 API 要求需要版本參數接受 `version=YYYY-MM-DD` 格式的日期。只要我們以舊版相容方式變更 API，就會發行 API 的新次要版本。
 
-每個 API 要求都會傳送版本參數。服務會使用所指定日期的 API 版本，或該日期之前的最新版本。請不要預設為現行日期。改為指定符合應用程式相容版本的日期，而且在您的應用程式備妥可用於較新版本之前，請不要進行變更。
+每個 API 要求都會傳送版本參數。{{site.data.keyword.conversationshort}} 會將該 API 版本用於您指定的日期，或使用該日期之前的最新版本。請不要預設為現行日期。改為指定符合應用程式相容版本的日期，而且在您的應用程式備妥可用於較新版本之前，請不要進行變更。
 
 - 第 1 版的現行版本是 `2019-02-28`。
 - 第 2 版的現行版本是 `2019-02-28`。
-- {{site.data.keyword.conversationshort}} 工具中的「試用」窗格使用的版本是 `2018-07-10`。
+- 對話技能的「試用」窗格使用的是版本 `2018-07-10`。
+- 搜尋技能的「試用」窗格使用的是 {{site.data.keyword.discoveryshort}} API 版本 `2018-12-03`。
 
 ## 測試版特性
 {: #release-notes-beta}
@@ -50,14 +51,117 @@ IBM 發行分類為測試版的評估的服務、特性及語言支援。這些�
 
 **附註：**這個更新聲明僅適用於「正式發行 (GA)」版語言及特性。
 
-服務提供下列新特性及變更。請參閱[部落格 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://medium.com/ibm-watson/assistant/home)，以尋找有關最新特性如何協助您企業的深入資訊。
+{{site.data.keyword.conversationshort}} 提供下列新增特性及變更。請參閱[部落格 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://medium.com/ibm-watson/assistant/home)，以尋找有關最新特性如何協助您企業的深入資訊。
+
+## 2019 年 8 月 12 日
+{: #12August2019}
+
+- **新的對話方法**：已新增 `getMatch` 方法。您可以使用此方法來擷取使用者輸入中重複出現的正規表示式型樣的特定出現。如需詳細資料，請參閱[對話方法](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings-getMatch)主題。
+
+## 2019 年 8 月 9 日
+{: #9August2019}
+
+- **介紹產品導覽**：對於某些首次使用的使用者，將顯示一個新的介紹產品導覽，使用者可以選擇遵循此導覽來執行建立助理的初始步驟。
+
+## 2019 年 8 月 6 日
+{: #6August2019}
+
+- 達拉斯提供 Webhook 外呼和「對話」頁面改進功能。
+
+## 2019 年 8 月 1 日
+{: #1August2019}
+
+下列更新目前提供於達拉斯以外的所有位置。
+{: important}
+
+- **提供 Webhook 外呼**：將 Webhook 新增至對話節點，以作為交談流程的一部分對外部應用程式進行程式化呼叫。新的 Webhook 支援可簡化外呼實作處理程序（不再需要 `action` JSON 物件）。如需相關資訊，請參閱[從對話節點進行程式化呼叫](/docs/services/assistant?topic=assistant-dialog-webhooks)。
+
+- **改進對話頁面回應性**：所有服務實例中「對話」頁面的使用者介面都會更新為使用新的 JavaScript 程式庫，進而提高頁面回應性。因此，某些圖形使用者介面元素（如按鈕）的外觀略有變更，但功能不變。
+
+## 2019 年 7 月 31 日
+{: #31July2019}
+
+- **已正式發行搜尋技能和自動更正**：現在已正式發行先前作為測試版特性提供的搜尋技能和拼寫自動更正特性。 
+
+  - 只有加值或超值方案使用者才能建立搜尋技能。 
+  - 您只能對英文語言對話技能啟用自動更正。它會針對新的英文對話技能自動啟用。
+
+## 2019 年 7 月 26 日
+{: #26July2019}
+
+- **解決遺漏技能問題**：在部分情況下，開啟 {{site.data.keyword.conversationshort}} 使用者介面時，不會顯示僅透過 API 建立的工作區。此問題已得到解決。開啟使用者介面時，使用 API 所建立的所有工作區都會顯示為對話技能。
+
+## 2019 年 7 月 23 日
+{: #23July2019}
+
+- **已修正對話搜尋**：在某些技能中，搜尋功能在「對話」頁面中無效。現在已修正此問題。
+
+## 2019 年 7 月 17 日
+{: #17July2019}
+
+- **澄清選項限制**：現在，您可以設定在助理要求使用者說明自己的意圖時，要向使用者顯示的選項數上限。如需澄清的相關資訊，請參閱[澄清](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation)。
+
+- **對話搜尋問題**：在某些技能中，搜尋功能在「對話」頁面中無效。新的使用者介面程式庫將會分階段推出至現有服務實例，而此程式庫可提高頁面回應性。此搜尋問題只會影響尚未啟用新程式庫的對話技能。
+
+- **遺漏技能問題**：在部分情況下，開啟 {{site.data.keyword.conversationshort}} 使用者介面時，不會顯示僅透過 API 建立的工作區。通常，這些工作區會顯示為對話技能。如果您在使用者介面中看不到自己的技能，別擔心，這些技能並未消失。請與支援中心聯絡以報告此問題，讓團隊使這些工作區正確顯示。
+
+<!--- **Premium plan maximum inactivity period increases**: The maximum time that a session can persist after a user stops interacting with the assistant increased from 1 day to 7 days (168 hours).
+-->
+## 2019 年 7 月 15 日
+{: #15July2019}
+
+- **數字系統實體升級在達拉斯可用 ![測試版](images/beta.png)**：現在，新的系統實體還作為測試版特性可用於在達拉斯管理的實例。請參閱[新的系統實體](/docs/services/assistant?topic=assistant-beta-system-entities)。
+
+## 2019 年 6 月 12 日
+{: #12June2019}
+
+- **數字系統實體升級 ![測試版](images/beta.png)**：新的系統實體作為測試版特性提供，可以在以英文或德文編寫的對話技能中啟用此特性。已修訂的系統實體能更好地瞭解日期和時間。它們可以辨識日期和數字範圍以及國定假日參照，並以更精確的方式對提及項目進行分類。例如，日期（如 `May 15`）會辨識為日期提及項目 (`@sys-date:2019-05-15`)，而*不會* 辨識為數字提及項目 (`@sys-number:15`)。請參閱[新的系統實體](/docs/services/assistant?topic=assistant-beta-system-entities)。
+
+  除非您加入測試版計畫，否則目前無法在達拉斯管理的實例中試用這些系統實體。如需如何加入測試版計畫的相關資訊，請參閱[參與測試版計畫](/docs/services/assistant?topic=assistant-feedback#feedback-beta)。
+  {: note}
+
+- **提供加值試用方案**：決定購買時，您可以使用免費加值試用方案來試用加值方案的特性。試用期為 30 天。試用期結束後，如果未升級到加值方案，則加值試用實例會轉換為精簡方案實例。
+
+## 2019 年 5 月 23 日
+{: #23May2019}
+
+下列更新目前提供於達拉斯以外的所有位置。
+{: important}
+
+- **已更新導覽**：已移除首頁，並且已反轉「助理」和「技能」標籤的順序。新的標籤順序鼓勵您藉由依序建立助理和技能，以開始開發工作。 
+
+- **已移動澄清設定**：已移動用於啟用澄清的切換開關，這是只可供加值和超值方案使用者使用的特性。已從**對話**頁面中移除**設定**按鈕。您現在可以在技能的**選項**標籤中啟用澄清，並對其進行配置。
+
+- **現在提供介紹導覽**：現在，在建立新的服務實例時，會顯示一個簡短的產品導覽。全新使用者開始開發時，也會獲得協助。系統會自動為他們建立新的助理。即會顯示參考資訊蹦現畫面，以介紹產品使用者介面特性，並指導新使用者執行關鍵的第一步：建立對話技能。 
+
+## 2019 年 4 月 10 日
+{: #10April2019}
+
+- **現在提供自動更正 ![測試版](images/beta.png)**：自動更正是一個測試版特性，可協助助理瞭解客戶的意圖。這會先更正客戶提交的輸入中的拼寫錯誤，再評估輸入。具有更精確的輸入時，助理會更輕鬆地辨識實體提及項目，並瞭解客戶的目的。如需詳細資料，請參閱[更正使用者輸入](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check)。
+
+## 2019 年 3 月 22 日 
+{: #22March2019}
+
+- **引進搜尋技能 ![測試版](images/beta.png)**：搜尋技能可協助您讓助理能更快速地向客戶提供有用資訊。可以使用有用的回應來符合對於未預期而未建置對話邏輯來處理的客戶查詢。助理可以查詢外部資料來源來尋找相關資訊以在其回應中共用，而不是表示無能為力。您可以逐漸建置對話回應來回答客戶查詢，這些回應需要使用後續問題來釐清使用者的意義，或確定簡短且明確的回應是否合適。您可以使用搜尋技能回應來處理需要詳細說明的開放式客戶查詢。此測試版特性僅可供超值和加值服務方案使用者使用。![僅限加值或超值方案](images/plus.png)
+
+  如需詳細資料，請參閱[建置搜尋技能](/docs/services/assistant?topic=assistant-skill-search-add)。
+
+## 2019 年 3 月 14 日
+{: #14March2019}
+
+- **讓 Watson 協助您建置目的**：使用 Watson 機器學習技術，協助您為助理選擇正確的目的。Watson 會分析現有客服中心日誌資料，以識別最常出現的客戶問題和要求。接著會建議可以用於訓練助理的目的和使用者範例，讓助理未來可辨識相同和類似的要求。確定要使用的正確目的後，您可以使用目的使用者範例建議功能來擴增它們並使其始終保持最新。如需相關資訊，請參閱[取得定義目的的協助](/docs/services/assistant?topic=assistant-intent-recommendations)。
+
+## 2019 年 3 月 4 日
+{: #4March2019}
+
+- **簡化導覽**：已移除含有個別*建置*、*改善* 和*部署* 標籤的資訊看板導覽。現在，您可以從主要技能頁面取得建置對話技能所需的所有工具。
+
+- **「改善」頁面現在稱為「分析」**：Watson 從使用者與您助理之間的交談所產生的參考度量值，已從資訊看板的*改善* 標籤移至主要技能頁面上稱為**分析**的新標籤。
 
 ## 2019 年 3 月 1 日
 {: #1March2019}
 
-- **簡化導覽**：已移除含有個別*建置*、*改善* 和*部署* 標籤的資訊看板導覽。現在，您可以從主要技能頁面取得建置對話技能所需的所有工具。
-
-- **「改善」頁面現在稱為「分析」**：該服務從使用者與您助理之間的交談所產生的參考度量，已從資訊看板的*改善* 標籤移至主要技能頁面上稱為**分析**的新標籤。
+- **日文目的使用者範例建議 ![僅限加值或超值方案](images/plus.png)**：您現在可以上傳包含日文原始使用者輸入的檔案（例如來自客服中心日誌的使用者查詢），讓 Watson 針對目的使用者範例候選項進行分析及發掘。請參閱[從日誌檔新增範例](/docs/services/assistant?topic=assistant-intent-recommendations)。
 
 ## 2019 年 2 月 28 日
 {: #28February2019}
@@ -68,7 +172,7 @@ IBM 發行分類為測試版的評估的服務、特性及語言支援。這些�
 
     - 在訊息的 `context` 或 `output` 物件中開頭為 # 記號的字串，不再被視為目的參照。
   
-      先前，這些字串會自動被視為目的。例如，如果您指定環境定義變數，例如 `"color":"#FFFFFF"`，則十六進位顏色代碼 (#FFFFFF) 會被視為目的。該服務會檢查在使用者的輸入中是否偵測到名為 #FFFFFF 的目的，如果沒有，就會將 #FFFFFF 取代為 `false`。這樣的取代不會再發生。
+      先前，這些字串會自動被視為目的。例如，如果您指定環境定義變數，例如 `"color":"#FFFFFF"`，則十六進位顏色代碼 (#FFFFFF) 會被視為目的。助理會檢查在使用者的輸入中是否偵測到名為 #FFFFFF 的目的，如果沒有，就會將 #FFFFFF 取代為 `false`。這樣的取代不會再發生。
   
       同樣地，如果您在節點回應的字串中包含了 # 記號，以前您必須在它前面使用反斜線 (`\`) 予以跳出。例如，`We are the \#1 seller of lobster rolls in Maine.`。現在您不再需要於文字回應中跳出 `#` 符號。
 
@@ -104,7 +208,7 @@ IBM 發行分類為測試版的評估的服務、特性及語言支援。這些�
 ## 2019 年 1 月 4 日
 {: #4January2019}
 
-- **在華盛頓特區和倫敦位置的 IBM Cloud Functions**：您現在可以從倫敦和華盛頓特區資料中心管理的服務實例的助理對話中，對 IBM Cloud Functions 發出程式化呼叫。請參閱[從對話節點進行程式化呼叫](/docs/services/assistant?topic=assistant-dialog-actions)。
+- **在華盛頓特區和倫敦位置的 IBM Cloud Functions**：您現在可以從倫敦和華盛頓特區資料中心管理的服務實例的助理對話中，對 IBM Cloud Functions 發出程式化呼叫。請參閱[從對話節點進行程式化呼叫](/docs/services/assistant?topic=assistant-dialog-actions-client)。
 
 - **使用陣列的新方法**：下列 SpEL 表示式方法可讓您更容易在對話中使用陣列值：
 
@@ -200,19 +304,19 @@ IBM 發行分類為測試版的評估的服務、特性及語言支援。這些�
     </tr>
   </table>
 
-- **使用者型「超值」方案**：「超值」方案現在的計費是根據作用中的唯一使用者數目。如果您選擇使用此方案，請設計您要建置的任何自訂應用程式，適當地識別產生 /message API 呼叫的使用者。如需相關資訊，請參閱[使用者型方案](services-information#user-based-plans)。
+- **使用者型「超值」方案**：「超值」方案現在的計費是根據作用中的唯一使用者數目。如果您選擇使用此方案，請設計您要建置的任何自訂應用程式，適當地識別產生 /message API 呼叫的使用者。如需相關資訊，請參閱[使用者型方案](/docs/services/assistant?topic=assistant-services-information#services-information-user-based-plans)。
 
-  現有「超值」方案服務實例不受這項變更影響；它們繼續使用 API 型計費方法。只有現有的「超值」方案使用者會看到 API 型方案被列為*超值 (API)* 方案選項。
+  現有「超值」方案服務實例不受這項變更影響；它們繼續使用以 API 為基礎的計費方法。只有現有的「超值」方案使用者會看到 API 型方案被列為*超值 (API)* 方案選項。
   {: note}
 
-  如需所有可用的服務方案的相關資訊，請參閱{{site.data.keyword.conversationshort}}[服務方案選項 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.ibm.com/cloud/watson-assistant/pricing/){: new_window}。
+  如需所有可用服務方案的相關資訊，請參閱{{site.data.keyword.conversationshort}}[服務方案選項 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.ibm.com/cloud/watson-assistant/pricing/){: new_window}。
 
-- **目的使用者範例建議 ![僅限「加值」或「超值」方案](images/premium.png)**：您可以上傳包含原始使用者輸入的檔案（例如來自客服中心日誌的使用者查詢），讓服務針對目的使用者範例候選項進行分析及發掘。請參閱[從日誌檔新增範例](intent-recommendations#intent-recommendations-get-example-recommendations)。
+- **目的使用者範例建議 ![僅限加值或超值方案](images/plus.png)**：您可以上傳包含原始使用者輸入的檔案（例如來自客服中心日誌的使用者查詢），讓 Watson 針對目的使用者範例候選項進行分析及發掘。請參閱[從日誌檔新增範例](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations)。
 
 ## 2018 年 11 月 20 日
 {: #20November2018}
 
-**已停止建議**：已移除「改善」標籤上的「建議」區段。「建議」是僅適用於「超值」方案使用者的測試版特性。它建議使用者可採取哪些動作來改善其訓練資料。現在，可以從您進行實際訓練資料變更的工具部分提供建議，而不是在同一個位置合併建議。例如，新增實體同義字時，您現在可以選擇查看該服務所建議的同義術語清單。如果您要尋找其他方法更詳細地分析您的使用者交談日誌，請考慮使用 Jupyter Notebook。如需詳細資料，請參閱[進階作業](/docs/services/assistant?topic=assistant-logs-resources)。
+**已停止建議**：已移除「改善」標籤上的「建議」區段。「建議」是僅適用於「超值」方案使用者的測試版特性。它建議使用者可採取哪些動作來改善其訓練資料。現在，可以從您進行實際訓練資料變更的工具部分提供建議，而不是在同一個位置合併建議。例如，在新增實體同義字時，現在可以選擇查看 Watson 建議的同義字清單。如果您要尋找其他方法更詳細地分析您的使用者交談日誌，請考慮使用 Jupyter Notebook。如需詳細資料，請參閱[進階作業](/docs/services/assistant?topic=assistant-logs-resources)。
 
 ## 2018 年 11 月 9 日
 {: #9November2018}
@@ -225,7 +329,7 @@ IBM 發行分類為測試版的評估的服務、特性及語言支援。這些�
 
     **我的工作區在哪裡？**您先前建立的任何工作區現在都列在您的服務實例中作為技能。按一下**技能**標籤，即可看到它們。如需相關資訊，請參閱[技能](/docs/services/assistant?topic=assistant-skills)。
 
-  - **助理**：您現在只需兩個步驟就可以發佈技能。將您的技能新增至助理，然後設定一個以上整合來部署您的技能。助理在您的技能上方新增了一層功能，可讓服務編排及管理您的資訊流程。請參閱[助理](/docs/services/assistant?topic=assistant-assistants)。
+  - **助理**：您現在只需兩個步驟就可以發佈技能。將您的技能新增至助理，然後設定一個以上整合來部署您的技能。助理在您的技能上方新增了一層功能，可讓 {{site.data.keyword.conversationshort}} 編排及管理您的資訊流程。請參閱[助理](/docs/services/assistant?topic=assistant-assistants)。
 
   - **內建整合**：現在您不用去**部署**標籤部署工作區，而是要將對話技能新增至助理，然後將整合新增至助理，再透過助理將技能提供給使用者。您不需要建置自訂前端系統應用程式，以及管理從某個呼叫到下一個呼叫的交談狀態。不過，如果想要您仍然可以這麼做。如需相關資訊，請參閱[新增整合](/docs/services/assistant?topic=assistant-deploy-integration-add)。
 
@@ -275,42 +379,43 @@ IBM 發行分類為測試版的評估的服務、特性及語言支援。這些�
 {: #21September2018}
 
 - **新的 API 版本**：現行 API 版本現在是 `2018-09-20`。在這個版本中，API 傳回的錯誤物件的 `errors[].path` 屬性是以 [JSON 指標 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://tools.ietf.org/html/rfc6901) 來表示，而不是以帶點表示法形式來表示。
-- **Web 動作支援**：您現在可以從對話節點呼叫 {{site.data.keyword.openwhisk_short}} Web 動作。如需詳細資料，請參閱[從對話節點進行程式化呼叫](/docs/services/assistant?topic=assistant-dialog-actions)。
+- **Web 動作支援**：您現在可以從對話節點呼叫 {{site.data.keyword.openwhisk_short}} Web 動作。如需詳細資料，請參閱[從對話節點進行程式化呼叫](/docs/services/assistant?topic=assistant-dialog-actions-client)。
 
 ## 2018 年 8 月 15 日
 {: #15August2018}
 
-- **實體模糊符合支援的改善**：英文實體完全支援模糊符合，而拼錯特性不再是許多其他語言的僅限測試版特性。如需詳細資料，請參閱[支援的語言](/docs/services/assistant?topic=assistant-language-support)。
+- **實體模糊比對支援的改善**：英文實體完全支援模糊比對，而拼錯特性不再是許多其他語言的僅限測試版特性。如需詳細資料，請參閱[支援的語言](/docs/services/assistant?topic=assistant-language-support)。
 
 ## 2018 年 8 月 6 日
 {: #6August2018}
 
-- **目的衝突解決 ![僅限「加值」或「超值」方案](images/premium.png)**：此工具現在可協助您解決兩個以上不同目的之使用者範例彼此類似的衝突。不清晰的使用者範例可能削弱訓練資料，讓服務更難以在執行時期將使用者輸入對映至適當的目的。如需詳細資料，請參閱[解決目的衝突](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts)。
+- **目的衝突解決 ![僅限「加值」或「超值」方案](images/plus.png)**：此工具現在可協助您解決兩個以上不同目的之使用者範例彼此類似的衝突。不清晰的使用者範例可能削弱訓練資料，讓助理更難以在執行時期將使用者輸入對映至適當的目的。如需詳細資料，請參閱[解決目的衝突](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts)。
 
-- **澄清** ![僅限「加值」或「超值」方案](images/premium.png)：啟用「澄清」功能，可讓您的助理需要在兩個以上可行對話節點之間做決定時要求使用者提供協助，以便做出回應。如需詳細資料，請參閱[澄清](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation)。
+- **澄清** ![僅限「加值」或「超值」方案](images/plus.png)：啟用「澄清」功能，可讓您的助理需要在兩個以上可行對話節點之間做決定時要求使用者提供協助，以便做出回應。如需詳細資料，請參閱[澄清](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation)。
 
 - **跳至修正**：已修正「對話」工具中的錯誤，該錯誤讓您無法配置跳至來瞄準有 `anything_else` 特殊條件之節點的回應。
 
-- **離題回覆訊息**：您現在可以指定當使用者在離題之後回到節點時所要顯示的文字。使用者應已看過節點的提示。您可以稍微變更訊息，讓使用者知道他們會回到他們當初離開的位置。例如，指定類似這樣的回應：`Where were we? Oh, yes...`。如需詳細資料，請參閱[離題](dialog-runtime#digressions)。
+- **離題回覆訊息**：您現在可以指定當使用者在離題之後回到節點時所要顯示的文字。使用者應已看過節點的提示。您可以稍微變更訊息，讓使用者知道他們會回到他們當初離開的位置。例如，指定類似這樣的回應：`Where were we? Oh, yes...`。如需詳細資料，請參閱[離題](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-digressions)。
 
 ## 2018 年 7 月 12 日
 {: #12July2018}
 
 - **複合式回應類型**：您現在可以在對話中新增複合式回應，除了文字之外，您還可以包括影像或按鈕這類元素。如需相關資訊，請參閱[複合式回應](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia)。
 
-- **環境定義實體（測試版）**：環境定義實體是指您藉由標示目的使用者範例中發生的實體類型的提及項目來定義的實體。這些實體類型會教導服務一些重要術語，還有這些重要術語一般出現在使用者話語中的環境定義，讓服務能夠完全根據在使用者輸入中參照的方式來辨識前所未見的實體提及項目。例如，如果您藉由標示 "Boston" 作為 @destination 實體，來註釋目的使用者範例 "I want a flight to Boston"，則該服務可辨識 "Chicago" 為 "I want a flight to Chicago" 這個使用者輸入中的 @destination"。此特性目前僅提供英文版。如需相關資訊，請參閱[新增環境定義實體](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based)。
+- **環境定義實體（測試版）**：環境定義實體是指您藉由標示目的使用者範例中發生的實體類型的提及項目來定義的實體。這些實體類型會教導助理一些重要詞彙，還有這些重要詞彙一般出現在使用者話語中的環境定義，讓助理能夠完全根據在使用者輸入中參照的方式來辨識前所未見的實體提及項目。例如，如果您藉由標示 "Boston" 作為 @destination 實體，來註釋目的使用者範例 "I want a flight to Boston"，則助理可辨識 "Chicago" 為 "I want a flight to Chicago" 這個使用者輸入中的 @destination"。此特性目前僅提供英文版。如需相關資訊，請參閱[新增環境定義實體](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based)。
 
   當您使用 Internet Explorer Web 瀏覽器存取工具時，無法在目的使用者範例中標示實體提及項目，也無法編輯使用者範例文字。
   {: note}
 
-- **實體建議**：該服務現在可以為您建議實體值的同義字。建議程式會根據從大量現有資訊內文（包括大量書面文字來源）中所擷取的環境定義相似性來尋找相關的同義字，並使用自然語言處理技術來識別與實體值中的現有同義字類似的單字。如需相關資訊，請參閱[同義字](/docs/services/assistant?topic=assistant-entities#entities-synonyms)。
+- **實體建議**：現在，Watson 可以為實體值建議同義字。建議程式會根據從大量現有資訊內文（包括大量書面文字來源）中所擷取的環境定義相似性來尋找相關的同義字，並使用自然語言處理技術來識別與實體值中的現有同義字類似的字組。如需相關資訊，請參閱[同義字](/docs/services/assistant?topic=assistant-entities#entities-synonyms)。
 
 - **新的 API 版本**：現行 API 版本現在是 `2018-07-10`。此版本引進下列變更：
 
   - /message `output` 物件的內容從 `text` JSON 物件變更為 `generic` 陣列，其支援多個複合式回應類型，包括 `image`、`option`、`pause` 及 `text`。
   - 已新增環境定義實體的支援。
+  - 無法再於 `context.metadata` 中新增使用者定義內容。不過，可以將它們直接新增至 `context`。
 
-- **概觀頁面日期過濾器**：使用新的日期過濾器來選擇顯示資料的期間。這些過濾器會影響該頁面上顯示的所有資料：不只是圖形中顯示的交談次數，還會影響與圖形一起顯示的統計資料，以及前幾個目的及實體的清單。如需相關資訊，請參閱[控制項](logs-overview#controls)。
+- **概觀頁面日期過濾器**：使用新的日期過濾器來選擇顯示資料的期間。這些過濾器會影響該頁面上顯示的所有資料：不只是圖形中顯示的交談次數，還會影響與圖形一起顯示的統計資料，以及前幾個目的及實體的清單。如需相關資訊，請參閱[控制項](/docs/services/assistant?topic=assistant-logs-overview#logs-overview-controls)。
 
 - **型樣限制已擴充**：使用**型樣**欄位來[定義實體值的特定型樣](/docs/services/assistant?topic=assistant-entities#entities-patterns)時，型樣（正規表示式）現在限制為 512 個字元。
 
@@ -322,7 +427,7 @@ IBM 發行分類為測試版的評估的服務、特性及語言支援。這些�
 ## 2018 年 6 月 21 日
 {: #21June2018}
 
-- **系統實體的語言更新**：現在已正式發行荷蘭文和簡體中文語言支援。荷蘭文語言支援包括拼字錯誤的模糊符合。繁體中文語言支援包括測試版中[系統實體](/docs/services/assistant?topic=assistant-system-entities)的可用性。如需詳細資料，請參閱[支援的語言](/docs/services/assistant?topic=assistant-language-support)。
+- **系統實體的語言更新**：現在已正式發行荷蘭文和簡體中文語言支援。荷蘭文語言支援包括拼字錯誤的模糊比對。繁體中文語言支援包括測試版中[系統實體](/docs/services/assistant?topic=assistant-system-entities)的可用性。如需詳細資料，請參閱[支援的語言](/docs/services/assistant?topic=assistant-language-support)。
 
 ## 2018 年 6 月 14 日
 {: #14June2018}
@@ -334,7 +439,7 @@ IBM 發行分類為測試版的評估的服務、特性及語言支援。這些�
   - 華盛頓特區 (us-east)：自 2018 年 6 月 14 日開始
   - 澳洲雪梨 (au-syd)：自 2018 年 5 月 7 日開始
 
-  {{site.data.keyword.cloud_notm}} 已移轉至記號型 Identity and Access Management (IAM) 鑑別。
+  {{site.data.keyword.cloud}} 已移轉至記號型 Identity and Access Management (IAM) 鑑別。
 
   對於上列地區的新服務實例，您可以使用 IAM 來進行鑑別。您可以傳遞載送記號或 API 金鑰。記號支援已鑑別要求，而不需要在每個呼叫中內含服務認證。API 金鑰使用基本鑑別。
 
@@ -342,7 +447,7 @@ IBM 發行分類為測試版的評估的服務、特性及語言支援。這些�
 
   使用任何 Watson SDK 時，您可以傳遞 API 金鑰，並讓 SDK 管理記號的生命週期。如需相關資訊和範例，請參閱 API 參考資料中的 [鑑別 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")]https://{DomainName}/apidocs/assistant-v2#authentication){: new_window}。
 
-  如果您不確定要使用的鑑別類型，請按一下 [{{site.data.keyword.Bluemix_notm}} 資源清單 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://cloud.ibm.com/resources){: new_window} 上的服務實例，以檢視服務認證。
+  如果您不確定要使用的鑑別類型，請按一下 [{{site.data.keyword.Bluemix_notm}} 資源清單 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://cloud.ibm.com){: new_window} 的「服務」區段中的服務實例來檢視 {{site.data.keyword.conversationshort}} 認證。
 
 ## 2018 年 5 月 25 日
 {: #25May2018}
@@ -374,12 +479,12 @@ IBM 發行分類為測試版的評估的服務、特性及語言支援。這些�
 ## 2018 年 4 月 4 日
 {: #4April2018}
 
-- **搜尋對話**：您現在可以[搜尋對話節點](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-search)中的指定單字或詞組。
+- **搜尋對話**：您現在可以[搜尋對話節點](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-search)中的指定字組或詞組。
 
 ## 2018 年 3 月 15 日
 {: #15March2018}
 
-- **{{site.data.keyword.conversationfull}} 簡介**：{{site.data.keyword.ibmwatson}} Conversation 已重新命名。它現在稱為 {{site.data.keyword.conversationfull}}。名稱變更反映該服務擴充的事實，提供預先建置的內容及工具，來協助您更輕鬆地共用您所建置的虛擬助理。如需詳細資料，請閱讀[此部落格文章 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.ibm.com/blogs/watson/2018/03/the-future-of-watson-conversation-watson-assistant/)。
+- **{{site.data.keyword.conversationfull}} 簡介**：{{site.data.keyword.ibmwatson}} Conversation 已重新命名。它現在稱為 {{site.data.keyword.conversationfull}}。名稱變更反映 {{site.data.keyword.conversationshort}} 擴充的事實，提供預先建置的內容及工具，來協助您更輕鬆地共用您所建置的虛擬助理。如需詳細資料，請閱讀[此部落格文章 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.ibm.com/blogs/watson/2018/03/the-future-of-watson-conversation-watson-assistant/)。
 
 - **新的 REST API 和 SDK 可用於 Watson Assistant**：新 API 的功能與目前仍繼續支援的現有 Conversation API 一樣。如需 Watson Assistant API 的相關資訊，請參閱 [API 參考資料 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://{DomainName}/apidocs/assistant){: new_window}。
 
@@ -387,10 +492,10 @@ IBM 發行分類為測試版的評估的服務、特性及語言支援。這些�
 - **對話加強功能**：下列特性已新增至對話工具：
 
   - 現在提供了簡式變數名稱及值欄位，可讓您用來新增環境定義變數，或更新環境定義變數值。除非您想要，否則不需要開啟 JSON 編輯器。如需詳細資料，請參閱[定義環境定義變數](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-context-var-define)。
-  - 透過使用資料夾將相關對話節點分組，來組織您的對話。如需詳細資料，請參閱[使用資料夾來組織對話](dialog-build#folders)。
-  - 新增了支援，可自訂每個對話節點如何參與使用者從指定的對話流程起始脫離。如需詳細資料，請參閱[離題](dialog-runtime#digressions)。
+  - 透過使用資料夾將相關對話節點分組，來組織您的對話。如需詳細資料，請參閱[使用資料夾來組織對話](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-folders)。
+  - 新增了支援，可自訂每個對話節點如何參與使用者從指定的對話流程起始脫離。如需詳細資料，請參閱[離題](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-digressions)。
 
-- **搜尋目的和實體**：已新增搜尋特性，可讓您[搜尋目的](intents#searching-intents)來取得使用者範例、目的名稱或說明，或[搜尋實體](/docs/services/assistant?topic=assistant-entities#entities-search)值和同義字。
+- **搜尋目的和實體**：已新增搜尋特性，可讓您[搜尋目的](/docs/services/assistant?topic=assistant-intents#intents-search)來取得使用者範例、目的名稱或說明，或[搜尋實體](/docs/services/assistant?topic=assistant-entities#entities-search)值和同義字。
 
 - **內容型錄**：新的[內容型錄](/docs/services/assistant?topic=assistant-catalog#catalog-add)包含單一種類的預先建置一般目的和實體，您可以將其新增至應用程式。例如，大部分應用程式需要一般 #greeting-type 目的，由它開始與使用者的對話。您可以從內容型錄予以新增，而不必自己建置。
 
@@ -404,7 +509,7 @@ IBM 發行分類為測試版的評估的服務、特性及語言支援。這些�
 ## 2018 年 2 月 16 日
 {: #16February2018}
 
-- **對話節點追蹤**：當您使用「試用」窗格來測試對話時，每一個回應旁會顯示一個位置圖示。您可以按一下圖示，來強調顯示服務穿越對話樹狀結構以到達回應的路徑。如需詳細資料，請參閱[建置對話](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-test)。
+- **對話節點追蹤**：當您使用「試用」窗格來測試對話時，每一個回應旁會顯示一個位置圖示。您可以按一下圖示，來強調顯示助理穿越對話樹狀結構以到達回應的路徑。如需詳細資料，請參閱[建置對話](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-test)。
 
 - **新建 API 版本**：現行 API 版本現在是 `2018-02-16`。此版本引進下列變更：
 
@@ -439,19 +544,19 @@ IBM 發行分類為測試版的評估的服務、特性及語言支援。這些�
 
 - **跨實例的日誌資料存取（僅限超值使用者）**：如果您是「{{site.data.keyword.conversationshort}} 超值」使用者，則超值實例可以選擇性地配置成容許跨不同的超值實例來存取工作區中的日誌資料。
 
-- **複製節點**：您現在可以複製節點來製作其副本及其子項。如果您所建置的節點具有您要在對話的其他位置重複使用的實用邏輯，則此特性非常實用。如需相關資訊，請參閱[複製對話節點](dialog-build#copy-node)。
+- **複製節點**：您現在可以複製節點來製作其副本及其子項。如果您所建置的節點具有您要在對話的其他位置重複使用的實用邏輯，則此特性非常實用。如需相關資訊，請參閱[複製對話節點](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-copy-node)。
 
 - **擷取型樣實體中的群組**：您可以識別在針對實體所定義的正規表示式型樣中的群組。如果您想要稍後可以參照型樣的子區段，則識別群組非常實用。例如，您的實體可能有可擷取美國電話號碼的正規表示式型樣。如果您將號碼型樣的區域碼區段識別為群組，則可以隨後參照該群組，僅存取電話號碼的區域碼區段。如需相關資訊，請參閱[定義實體](/docs/services/assistant?topic=assistant-entities#entities-creating-task)。
 
 ## 2017 年 12 月 6 日
 {: #6December2017}
 
-- **{{site.data.keyword.openwhisk}} 整合（測試版）**：直接從對話節點呼叫 {{site.data.keyword.openwhisk}}（早期為 IBM OpenWhisk）動作。例如，此特性可讓您在對話節點內呼叫動作來擷取天氣資訊，然後設定對話回應中所傳回資訊的條件。目前，您可以從美國南部地區管理的 {{site.data.keyword.openwhisk_short}} 實例或從美國南部地區管理的多個 {{site.data.keyword.conversationshort}} 實例呼叫動作。如需詳細資料，請參閱[從對話節點進行程式化呼叫](/doc/services/assistant?topic=assistant-dialog-actions)。
+- **{{site.data.keyword.openwhisk}} 整合（測試版）**：直接從對話節點呼叫 {{site.data.keyword.openwhisk}}（早期為 IBM OpenWhisk）動作。例如，此特性可讓您在對話節點內呼叫動作來擷取天氣資訊，然後設定對話回應中所傳回資訊的條件。目前，您可以從美國南部地區管理的 {{site.data.keyword.openwhisk_short}} 實例或從美國南部地區管理的多個 {{site.data.keyword.conversationshort}} 實例呼叫動作。如需詳細資料，請參閱[從對話節點進行程式化呼叫](/docs/services/assistant?topic=assistant-dialog-actions-client)。
 
 ## 2017 年 12 月 5 日
 {: #5December2017}
 
-- **重新設計的目的及實體使用者介面**：已重新設計 `Intents` 及 `Entities` 標籤，可在建立與編輯實體及目的時提供較簡單且更有效率的工作流程。如需使用這些標籤的相關資訊，請參閱[定義目的](intents#creating-intents)及[定義實體](/docs/services/assistant?topic=assistant-entities#entities-creating-task)。
+- **重新設計的目的及實體使用者介面**：已重新設計 `Intents` 及 `Entities` 標籤，可在建立與編輯實體及目的時提供較簡單且更有效率的工作流程。如需使用這些標籤的相關資訊，請參閱[定義目的](/docs/services/assistant?topic=assistant-intents-create-task)及[定義實體](/docs/services/assistant?topic=assistant-entities#entities-creating-task)。
 
 ## 2017 年 11 月 30 日
 {: #30November2017}
@@ -488,9 +593,9 @@ IBM 發行分類為測試版的評估的服務、特性及語言支援。這些�
 
     - 您可以將條件新增至空位，讓它只有在符合特定條件時才是必要項目。例如，只有在詢問婚姻狀態的前一個（必要）空位指出使用者已婚時，您才能讓詢問配偶姓名的空位成為必要項目。
 
-    - 您現在可以選擇**跳過使用者輸入**作為節點的下一步。當您選擇此選項時，在處理現行節點之後，服務會直接跳至現行節點的第一個子節點。此選項類似現有的*跳至* 下一步選項，但它更具彈性。您不需要指定要跳至的確切節點。在執行時期，服務一律會跳至為第一個子節點的節點，即使在定義下一步行為之後重新排序子節點或新增節點。
+    - 您現在可以選擇**跳過使用者輸入**作為節點的下一步。當您選擇此選項時，在處理現行節點之後，助理會直接跳至現行節點的第一個子節點。此選項類似現有的*跳至* 下一步選項，但它更具彈性。您不需要指定要跳至的確切節點。在執行時期，助理一律會跳至為第一個子節點的節點，即使在定義下一步行為之後重新排序子節點或新增節點。
 
-    - 您可以新增空位的條件式回應。對於「找到」及「找不到」回應，您可以自訂根據是否符合特定條件的服務回應方式。此特性可讓您檢查可能的錯誤解譯，並先更正它們，再將使用者所提供的值儲存至空位的環境定義變數。例如，如果空位儲存使用者的年齡，並在*檢查* 欄位中使用 `@sys-number` 進行擷取，則您可以新增條件以檢查數目是否超過 100，並回應 *Please provide a valid age in years.* 這類陳述。如需詳細資料，請參閱[新增「找到」及「找不到」回應的條件](/docs/services/assistant?topic=assistant-dialog-slots#dialog-slots-handler-next-steps)。
+    - 您可以新增空位的條件式回應。對於「找到」及「找不到」回應，您可以自訂根據是否符合特定條件的助理回應方式。此特性可讓您檢查可能的錯誤解譯，並先更正它們，再將使用者所提供的值儲存至空位的環境定義變數。例如，如果空位儲存使用者的年齡，並在*檢查* 欄位中使用 `@sys-number` 進行擷取，則您可以新增條件以檢查數目是否超過 100，並回應 *Please provide a valid age in years.* 這類陳述。如需詳細資料，請參閱[新增「找到」及「找不到」回應的條件](/docs/services/assistant?topic=assistant-dialog-slots#dialog-slots-handler-next-steps)。
 
     - 已重新設計您用來將條件式回應新增至節點的介面，可更輕鬆地列出每一個條件及其回應。若要新增節點層次條件式回應，請按一下**自訂**，然後啟用**多個回應**選項。
 
@@ -520,7 +625,7 @@ IBM 發行分類為測試版的評估的服務、特性及語言支援。這些�
     - 透過 CSV 檔案的匯入或匯出作業目前不支援型樣。
     - REST API 不支援直接存取型樣，但您可以使用 `/values` 端點來擷取或修改型樣。
 
-- **依字典過濾的模糊符合（僅限英文）**：針對英文，目前提供適用於實體的已改良模糊符合版本。這項改良可防止將一些常用的有效英文單字擷取為給定實體的模糊相符項。例如，模糊符合不會比對實體值 `like` 與 `hike` 或 `bike`（其為有效的英文單字），但會繼續比對 `lkie` 或 `oike` 這類範例。
+- **依字典過濾的模糊比對（僅限英文）**：針對英文，目前提供適用於實體的已改良模糊比對版本。這項改良可防止將一些常用的有效英文字組擷取為給定實體的模糊相符項。例如，模糊比對不會比對實體值 `like` 與 `hike` 或 `bike`（其為有效的英文字組），但會繼續比對 `lkie` 或 `oike` 這類範例。
 
 ## 2017 年 9 月 27 日
 {: #27September2017}
@@ -541,19 +646,19 @@ IBM 發行分類為測試版的評估的服務、特性及語言支援。這些�
 ## 2017 年 8 月 10 日
 {: #10August2017}
 
-- **重音符號正規化**：在交談式設定中，與 {{site.data.keyword.conversationshort}} 服務互動時，使用者不一定會使用重音符號。因此，已對演算法進行更新，在進行目的偵測及實體識別時，會將重音及無重音版本的單字視為相同。
+- **重音符號正規化**：在交談式設定中，與 {{site.data.keyword.conversationshort}} 服務互動時，使用者不一定會使用重音符號。因此，已對演算法進行更新，在進行目的偵測及實體識別時，會將重音及無重音版本的字組視為相同。
 
-  不過，針對部分語言（例如西班牙文），有些重音符號可能會變更實體的意義。因此，進行實體偵測時，雖然原始實體可能隱含地具有重音符號，但是服務也可能符合相同實體的非重音版本，但具有略低的信任評分。
+  不過，針對部分語言（例如西班牙文），有些重音符號可能會變更實體的意義。因此，進行實體偵測時，雖然原始實體可能隱含地具有重音符號，但是助理也可能符合相同實體的非重音版本，但具有略低的信賴分數。
 
-  例如，針對具有重音符號並對應於動詞 `barrer`（清理）過去式的 `barrió` 這個字，服務也可能符合 `barrio`（鄰近地區）這個字，但具有略低的信任。
+  例如，針對具有重音符號並對應於動詞 `barrer`（清掃）過去式的 `barrió` 這個字，助理也可能符合 `barrio`（鄰近地區）這個字，但具有略低的信賴度。
 
-  系統將提供具有完全相符項之實體中的最高信任評分。例如，如果 `barrió` 位於訓練集中，則偵測不到 `barrio`；而如果 `barrio` 位於訓練集中，則偵測不到 `barrió`。
+  系統將提供具有完全相符項之實體中的最高信賴分數。例如，如果 `barrió` 位於訓練集中，則偵測不到 `barrio`；而如果 `barrio` 位於訓練集中，則偵測不到 `barrió`。
 
   您應該使用適當的字元及重音符號來訓練系統。例如，如果您預期 `barrió` 作為回應，則應該將 `barrió` 放入訓練集中。
 
-  雖然不是重音符號，但是同樣適用於使用西班牙文字母 `ñ` 與字母 `n` 的這類單字，例如 `uña` 與 `una`。在此情況下，字母 `ñ` 不只是具有重音符號的 `n`，還是唯一的西班牙文特有字母。
+  雖然不是重音符號，但是同樣適用於使用西班牙文字母 `ñ` 與字母 `n` 的這類字組，例如 `uña` 與 `una`。在此情況下，字母 `ñ` 不只是具有重音符號的 `n`，還是唯一的西班牙文特有字母。
 
-  如果您認為客戶不會使用適當的重音符號或錯字（例如 including，放置 `n`，而非 `ñ`），則可以啟用模糊符合，或者，您可以在訓練範例中明確包含它們。
+  如果您認為客戶不會使用適當的重音符號或錯字（例如 including，放置 `n`，而非 `ñ`），則可以啟用模糊比對，或者，您可以在訓練範例中明確包含它們。
 
   **附註：**針對葡萄牙文、西班牙文、法文及捷克文，會啟用重音符號正規化。
 
@@ -567,8 +672,8 @@ IBM 發行分類為測試版的評估的服務、特性及語言支援。這些�
 ## 2017 年 8 月 3 日
 {: #3August2017}
 
-- **其他語言的模糊符合（測試版）**：實體的模糊符合現在適用於其他語言（如[支援的語言](/docs/services/assistant?topic=assistant-language-support)主題中所述）。
-- **部分符合（測試版 - 僅限英文）**：模糊符合現在會自動建議使用者定義實體中的子字串型同義字，並指派較低的信任評分（與確切的實體符合相較之下）。如需詳細資料，請參閱[模糊符合](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching)。
+- **其他語言的模糊比對（測試版）**：實體的模糊比對現在適用於其他語言（如[支援的語言](/docs/services/assistant?topic=assistant-language-support)主題中所述）。
+- **部分符合（測試版 - 僅限英文）**：模糊比對現在會自動建議使用者定義實體中的子字串型同義字，並指派較低的信賴分數（與確切的實體符合相較之下）。如需詳細資料，請參閱[模糊比對](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching)。
 
 ## 2017 年 7 月 28 日
 {: #28July2017}
@@ -622,7 +727,7 @@ IBM 發行分類為測試版的評估的服務、特性及語言支援。這些�
 ## 2017 年 6 月 14 日
 {: #14June2017}
 
-- **其他語言的模糊符合（測試版）**：實體的模糊符合現在適用於其他語言（如[支援的語言](/docs/services/assistant?topic=assistant-language-support)主題中所述）。您可以開啟每個實體的模糊符合，以改善服務辨識使用者輸入中的術語的能力，而其使用的語法與實體類似，不需要完全相符。儘管存在拼字錯誤或些微的語法差異，但是此特性還是可以將使用者輸入對映至適當的對應實體。例如，如果您將 giraffe 定義為 animal 實體的同義字，而且使用者輸入包含術語 giraffes 或 girafe，則模糊符合可以將術語正確地對映至 animal 實體。如需詳細資料，請參閱[模糊符合](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching)。
+- **其他語言的模糊比對（測試版）**：實體的模糊比對現在適用於其他語言（如[支援的語言](/docs/services/assistant?topic=assistant-language-support)主題中所述）。您可以開啟每個實體的模糊比對，以改善助理辨識使用者輸入術語的能力，而其使用的語法與實體類似，不需要完全符合。儘管存在拼字錯誤或些微的語法差異，但是此特性還是可以將使用者輸入對映至適當的對應實體。例如，如果您將 giraffe 定義為 animal 實體的同義字，而且使用者輸入包含術語 giraffes 或 girafe，則模糊比對可以將術語正確地對映至 animal 實體。如需詳細資料，請參閱[模糊比對](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching)。
 
 ## 2017 年 6 月 13 日
 {: #13June2017}
@@ -648,7 +753,7 @@ IBM 發行分類為測試版的評估的服務、特性及語言支援。這些�
   只有您訓練資料中內含的表情符號才能正確且一致地識別；表情符號支援可能無法將具有不同色調或其他變異的類似表情符號正確分類。
   {: note}
 
-- **實體詞幹分析（測試版 - 僅限英文）**：模糊符合測試版特性可辨識實體，並根據實體值的詞幹形式進行比對。例如，此特性正確地將 'bananas' 辨識為與 'banana' 類似，並將 'run' 辨識為與 'running' 類似，因為它們共用一般詞幹形式。如需相關資訊，請參閱[模糊符合](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching)。
+- **實體詞幹分析（測試版 - 僅限英文）**：模糊比對測試版特性可辨識實體，並根據實體值的詞幹形式進行比對。例如，此特性正確地將 'bananas' 辨識為與 'banana' 類似，並將 'run' 辨識為與 'running' 類似，因為它們共用一般詞幹形式。如需相關資訊，請參閱[模糊比對](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching)。
 - **工作區匯入進度**：在從 JSON 檔案匯入工作區時，會立即顯示工作區磚，其中會顯示匯入進度的相關資訊。
 - **減少訓練時間**：現在會平行訓練多個模型，可明顯減少大型工作區的訓練時間。
 
@@ -682,7 +787,7 @@ IBM 發行分類為測試版的評估的服務、特性及語言支援。這些�
     - sys-person：辨識使用者詞語中人員姓名（姓氏及名字）的參照。
 
     如需相關資訊，請參閱[系統實體參照](/docs/services/assistant?topic=assistant-system-entities)。
-- 實體的模糊符合是測試版特性（現在以英文提供）。您可以開啟每個實體的模糊符合，以改善服務辨識使用者輸入中的術語的能力，而其使用的語法與實體類似，不需要完全相符。儘管存在拼字錯誤或些微的語法差異，但是此特性還是可以將使用者輸入對映至適當的對應實體。例如，如果您將 **giraffe** 定義為 animal 實體的同義字，而且使用者輸入包含術語 *giraffes* 或 *girafe*，則模糊符合可以將術語正確地對映至 animal 實體。如需詳細資料，請參閱[定義實體](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching)，並搜尋`模糊符合`。
+- 實體的模糊比對是測試版特性（現在以英文提供）。您可以開啟每個實體的模糊比對，以改善助理辨識使用者輸入術語的能力，而其使用的語法與實體類似，不需要完全符合。儘管存在拼字錯誤或些微的語法差異，但是此特性還是可以將使用者輸入對映至適當的對應實體。例如，如果您將 **giraffe** 定義為 animal 實體的同義字，而且使用者輸入包含術語 *giraffes* 或 *girafe*，則模糊比對可以將術語正確地對映至 animal 實體。如需詳細資料，請參閱[定義實體](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching)，並搜尋`模糊比對`。
 
 ## 2017 年 4 月 18 日
 {: #18April2017}
@@ -695,12 +800,12 @@ IBM 發行分類為測試版的評估的服務、特性及語言支援。這些�
 
     如需相關資訊，請參閱 [API 參考資料 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://{DomainName}/apidocs/assistant){: new_window}。
 - /messages `POST` 方法的行為已變更如何處理指定為訊息輸入一部分的實體及目的：
-    - 如果您在輸入時指定目的，則服務會使用您指定的目的，但會使用自然語言處理程序來偵測使用者輸入中的實體。
-    - 如果您在輸入時指定實體，則服務會使用您指定的實體，但會使用自然語言處理程序來偵測使用者輸入中的目的。
+    - 如果您在輸入時指定目的，則助理會使用您指定的目的，但會使用自然語言處理程序來偵測使用者輸入中的實體。
+    - 如果您在輸入時指定實體，則助理會使用您指定的實體，但會使用自然語言處理程序來偵測使用者輸入中的目的。
 
         針對同時指定目的及實體的訊息，或針對未指定任一項的訊息，此行為未變更。
 - 將使用者輸入標示為不相關的選項現在適用於所有支援的語言。這是測試版特性。
-- 新的「認證」標籤提供單一位置，您可在其中尋找將應用程式連接至工作區所需的所有資訊（例如服務認證及工作區 ID）以及其他部署選項。若要存取工作區的「認證」標籤，請按一下 ![功能表](images/Menu_16.png) 圖示，然後選取**認證**。
+- 新的「認證」標籤提供單一位置，您可在其中尋找將應用程式連接至工作區所需的所有資訊（例如 {{site.data.keyword.conversationshort}} 認證及工作區 ID）以及其他部署選項。若要存取工作區的「認證」標籤，請按一下 ![功能表](images/Menu_16.png) 圖示，然後選取**認證**。
 
 ## 2017 年 3 月 9 日
 {: #9March2017}
@@ -772,7 +877,7 @@ IBM 發行分類為測試版的評估的服務、特性及語言支援。這些�
 {: #21October2016}
 
 - {{site.data.keyword.conversationshort}} 服務現在提供系統實體，這些系統實體是可以跨任何使用案例使用的一般實體。如需詳細資料，請參閱[定義實體](/docs/services/assistant?topic=assistant-entities)，並搜尋`啟用系統實體`。
-- 您現在可以在「改善」頁面上檢視與使用者的交談歷程。您可以使用此項目來瞭解機器人的行為。如需詳細資料，請參閱[改善技能](/docs/services/assistant?topic=assistant-logs-intro)。
+- 您現在可以在「改善」頁面上檢視與使用者的交談歷程。您可以使用此項目來瞭解機器人的行為。如需詳細資料，請參閱[改善技能](/docs/services/assistant?topic=assistant-logs)。
 - 您現在可以從逗點區隔值 (CSV) 檔案匯入實體，這在具有大量實體時會提供協助。如需詳細資料，請參閱[定義實體](/docs/services/assistant?topic=assistant-entities)，並搜尋`匯入實體`。
 
 ## 2016 年 9 月 20 日
@@ -789,7 +894,7 @@ IBM 發行分類為測試版的評估的服務、特性及語言支援。這些�
 
 - 您可以將對話節點從某個分支移至另一個分支，作為同層級或對等節點。如需詳細資料，請參閱[移動對話節點](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-move-node)。
 - 您可以展開 JSON 編輯器視窗。
-- 您可以檢視機器人交談的聊天日誌，以協助您瞭解其行為。您可以依目的、實體、日期及時間進行過濾。如需詳細資料，請參閱[改善技能](/docs/services/assistant?topic=assistant-logs-intro)
+- 您可以檢視機器人交談的聊天日誌，以協助您瞭解其行為。您可以依目的、實體、日期及時間進行過濾。如需詳細資料，請參閱[改善技能](/docs/services/assistant?topic=assistant-logs)
 
 ## 2016 年 7 月 11 日
 {: #21July2016}

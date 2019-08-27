@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-08-06"
+
+keywords: system entity, sys-number, sys-date, sys-time
 
 subcollection: assistant
 
@@ -25,10 +27,14 @@ subcollection: assistant
 # 시스템 엔티티 세부사항
 {: #system-entities}
 
-이 참조 섹션에서는 사용 가능한 시스템 엔티티에 대한 완전한 정보를 제공합니다. 시스템 엔티티 및 사용 방법에 대한 자세한 정보를 보려면 [엔티티 정의](/docs/services/assistant?topic=assistant-entities#entities-enable-system-entities)를 참조하고 "시스템 엔티티 사용"을 검색하십시오.
+바로 사용할 수 있도록 IBM에서 제공하는 시스템 엔티티에 대해 자세히 알아보십시오. 이러한 기본 제공 유틸리티 엔티티는 어시스턴트가 대화에서 고객이 일반적으로 사용하는 용어 및 참조(예: 숫자 및 날짜)를 인식하는 데 도움을 줍니다.
 {: shortdesc}
 
 시스템 엔티티는 [지원되는 언어](/docs/services/assistant?topic=assistant-language-support) 주제에 설명된 언어에서 사용 가능합니다.
+
+대화 스킬이 영어 또는 독일어인 경우 업데이트된 시스템 엔티티를 사용해 볼 수 있습니다. 자세한 내용은 [새 시스템 엔티티](/docs/services/assistant?topic=assistant-beta-system-entities)를 참조하십시오.
+
+사용 방법에 대한 자세한 정보는 [엔티티 작성](/docs/services/assistant?topic=assistant-entities#entities-enable-system-entities)을 참조하십시오.
 
 ## @sys-currency 엔티티
 {: #system-entities-sys-currency}
@@ -53,24 +59,24 @@ subcollection: assistant
 
 입력 `twenty dollars` 또는 `$1,234.56`의 경우, @sys-currency는 다음 값을 리턴합니다.
 
-| 속성                        | 유형   | `twenty dollars`에 대해 리턴됨 | `$1,234.56`에 대해 리턴됨 |
+| 속성                   | 유형   | `twenty dollars`에 대해 리턴됨 | `$1,234.56`에 대해 리턴됨 |
 |-----------------------------|--------|-------------------------------|-------------------------:|
 | @sys-currency               | 문자열 | 20                            |                  1234.56 |
 | @sys-currency.literal       | 문자열 | twenty dollars                |                $1,234.56 |
-| @sys-currency.numeric_value | 숫자   | 20                            |                  1234.56 |
-| @sys-currency.location      | 배열   | [0,14]                        |                    [0,9] |
+| @sys-currency.numeric_value | 숫자 | 20                            |                  1234.56 |
+| @sys-currency.location      | 배열  | [0,14]                        |                    [0,9] |
 | @sys-currency.unit          | 문자열 | USD*                          |                      USD |
 
 *@sys-currency.unit은 항상 3자의 ISO 통화 코드를 리턴합니다.
 
 입력 `veinte euro` 또는 <code>&euro;1.234,56</code>(스페인어)의 경우 @sys-currency가 다음 값을 리턴합니다.
 
-| 속성                        | 유형   | `veinte euro`에 대해 리턴됨 | <code>&euro;1.234,56</code>에 대해 리턴됨 |
+| 속성                   | 유형   | `veinte euro`에 대해 리턴됨 | <code>&euro;1.234,56</code>에 대해 리턴됨 |
 |-----------------------------|--------|-----------------------------|-------------------------:|
 | @sys-currency               | 문자열 | 20                          |                  1234.56 |
 | @sys-currency.literal       | 문자열 | veinte euro                 |                &euro;1.234,56 |
-| @sys-currency.numeric_value | 숫자   | 20                          |                  1234.56 |
-| @sys-currency.location      | 배열   | [0,11]                      |                     [0,9]|
+| @sys-currency.numeric_value | 숫자 | 20                          |                  1234.56 |
+| @sys-currency.location      | 배열  | [0,11]                       |                     [0,9]|
 | @sys-currency.unit          | 문자열 | EUR*                        |                     EUR  |
 *@sys-currency.unit은 항상 3자의 ISO 통화 코드를 리턴합니다.
 
@@ -81,7 +87,10 @@ subcollection: assistant
 
 - 통화 값은 @sys-number 엔티티의 인스턴스로 인식됩니다. 개별 조건을 사용하여 통화 값과 숫자 둘 다 검사하는 경우, 숫자를 검사하는 조건 위에 통화를 검사하는 조건을 배치하십시오.
 
-- @sys-currency 엔티티를 노드 조건으로 사용하고 사용자가 `$0`을 값으로 지정하면, 값이 통화로 올바르게 인식되지만 조건은 통화 0이 아닌 숫자 0으로 평가됩니다. 그 결과 예상 응답을 리턴하지 않습니다. 0을 올바르게 처리하는 방식으로 통화 값을 검사하려면 대신 노드 조건에서 전체 SpEL 표현식 `entities['sys-currency']?.value`을 사용하십시오.
+  이 임시 해결책은 개정된 시스템 엔티티를 사용하는 경우에는 필요하지 않습니다. 자세한 내용은 [새 시스템 엔티티](/docs/services/assistant?topic=assistant-beta-system-entities)를 참조하십시오.
+  {: note}
+
+- @sys-currency 엔티티를 노드 조건으로 사용하고 사용자가 `$0`을 값으로 지정하면, 값이 통화로 올바르게 인식되지만 조건은 통화 0이 아닌 숫자 0으로 평가됩니다. 결과적으로 조건에서 `null`이 false로 평가되고 노드는 처리되지 않습니다. 0을 올바르게 처리하는 방식으로 통화 값을 검사하려면 대신 노드 조건에서 `@sys-currency >=0` 표현식을 사용하십시오.
 
 ## @sys-date 및 @sys-time 엔티티
 {: #system-entities-sys-date-time}
@@ -146,11 +155,11 @@ subcollection: assistant
 
 입력 `November 21`의 경우 @sys-date가 다음 값을 리턴합니다.
 
-| 속성                    | 유형   | `November 21`에 대해 리턴됨 |
+| 속성               | 유형   | `November 21`에 대해 리턴됨 |
 |-------------------------|--------|---------------------------:|
 | @sys-date.literal       | 문자열 |                November 21 |
 | @sys-date               | 문자열 |                20xx-11-21 *|
-| @sys-date.location      | 배열   |                    [0,11]  |
+| @sys-date.location      | 배열 |                    [0,11]  |
 | @sys-date.calendar_type | 문자열 |                  GREGORIAN |
 
 - @sys-date는 항상 yyyy-MM-dd 형식의 날짜를 리턴합니다.
@@ -158,16 +167,16 @@ subcollection: assistant
 
 입력 `at 6 pm`의 경우 @sys-time이 다음 값을 리턴합니다.
 
-| 속성                    | 유형   | `at 6 pm`에 대해 리턴됨 |
+| 속성               | 유형   | `at 6 pm`에 대해 리턴됨 |
 |-------------------------|--------|-----------------------:|
 | @sys-time.literal       | 문자열 |                at 6 pm |
 | @sys-time               | 문자열 |               18:00:00 |
-| @sys-time.location      | 배열   |                   [0,7]|
+| @sys-time.location      | 배열 |                   [0,7]|
 | @sys-time.calendar_type | 문자열 |              GREGORIAN |
 
 - @sys-time은 항상 HH:mm:ss 형식으로 시간을 리턴합니다.
 
-날짜 및 시간 값 처리에 대한 정보는 [날짜 및 시간](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-date-time) 메소드 참조를 참조하십시오.
+날짜 및 시간 값 처리에 대한 정보는 [날짜 및 시간 메소드 참조](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-date-time)를 참조하십시오.
 {: tip}
 
 ## @sys-location 엔티티
@@ -182,7 +191,7 @@ subcollection: assistant
 - 대표전화서비스: 02-3781-7114
 - New South Wales
 
-문자열 값 처리에 대한 정보는 [문자열](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings) 메소드 참조를 참조하십시오.
+문자열 값 처리에 대한 정보는 [문자열 메소드 참조](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings)를 참조하십시오.
 {: tip}
 
 ## @sys-number 엔티티
@@ -207,28 +216,28 @@ subcollection: assistant
 
 입력 `twenty` 또는 `1,234.56`의 경우 @sys-number가 다음 값을 리턴합니다.
 
-| 속성                        | 유형   | `twenty`에 대해 리턴됨 | `1,234.56`에 대해 리턴됨 |
+| 속성                   | 유형   | `twenty`에 대해 리턴됨 | `1,234.56`에 대해 리턴됨 |
 |-----------------------------|--------|-------------------|------------------------:|
 | @sys-number               | 문자열 | 20                |                 1234.56 |
 | @sys-number.literal       | 문자열 | twenty            |                1,234.56 |
-| @sys-number.location      | 배열   | [0,6]             |                   [0,8] |
-| @sys-number.numeric_value | 숫자   | 20                |                 1234.56 |
+| @sys-number.location      | 배열 | [0,6]             |                   [0,8]|
+| @sys-number.numeric_value | 숫자 | 20                |                 1234.56 |
 
 입력 `veinte` 또는 `1.234,56`(스페인어)의 경우 @sys-number가 다음 값을 리턴합니다.
 
-| 속성                        | 유형   | `veinte`에 대해 리턴됨 | `1.234,56`에 대해 리턴됨 |
+| 속성                   | 유형   | `veinte`에 대해 리턴됨 | `1.234,56`에 대해 리턴됨 |
 |-----------------------------|--------|-----------------------|------------------------:|
 | @sys-number               | 문자열 |20                    |                 1234.56 |
 | @sys-number.literal       | 문자열 |veinte                |                1.234,56 |
-| @sys-number.location      | 배열   |[0,6]                 |                   [0,8] |
-| @sys-number.numeric_value | 숫자   |20                    |                 1234.56 |
+| @sys-number.location      | 배열  |[0,6]                 |                   [0,8] |
+| @sys-number.numeric_value | 숫자 |20                    |                 1234.56 |
 
 지원되는 다른 언어에 대해서도 동등한 결과를 얻습니다.
 
 ### @system-number 사용 팁
 {: #system-entities-sys-number-usage-tips}
 
-- @sys-number 엔티티를 노드 조건으로 사용하고 사용자가 0을 값으로 지정하면, 0 값은 숫자로 올바르게 인식되지만 조건은 false로 평가되며 연관된 응답을 올바르게 리턴할 수 없습니다. 0을 올바르게 처리하는 방식으로 숫자를 검사하려면 대신 노드 조건에서 전체 SpEL 표현식 `entities['sys-number']?.value`을 사용하십시오.
+- @sys-number 엔티티를 노드 조건으로 사용하고 사용자가 0을 값으로 지정하면, 0 값이 숫자로 올바르게 인식됩니다. 그러나 0은 조건에 대한 `null` 값으로 해석되며, 이는 노드가 처리되지 않게 합니다. 0을 올바르게 처리하는 방식으로 숫자를 검사하려면 대신 노드 조건에서 `@sys-number >=0` 표현식을 사용하십시오.
 
 - @sys-number를 사용하여 조건에서 숫자 값을 비교하는 경우 숫자의 존재에 대한 검사를 별도로 포함해야 합니다. 숫자가 없으면 @sys-number가 널로 평가되며, 그 결과 숫자가 없더라도 비교 시 true로 평가됩니다.
 
@@ -236,7 +245,7 @@ subcollection: assistant
 
   대신 `@sys-number AND @sys-number<4`를 사용하십시오. 숫자가 없는 경우 첫 번째 조건이 false로 평가되며 그에 따라 전체 조건이 false로 평가됩니다.
 
-숫자 값 처리에 대한 정보는 [숫자](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-numbers) 메소드 참조를 참조하십시오.
+숫자 값 처리에 대한 정보는 [숫자 메소드 참조](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-numbers)를 참조하십시오.
 {: tip}
 
 ## @sys-percentage 엔티티
@@ -260,21 +269,21 @@ subcollection: assistant
 
 입력 `1,234.56%`의 경우 @sys-percentage가 다음 값을 리턴합니다.
 
-| 속성                          | 유형   | `1,234.56%`에 대해 리턴됨 |
+| 속성                     | 유형   | `1,234.56%`에 대해 리턴됨 |
 |-------------------------------|--------|-------------------------:|
 | @sys-percentage               | 문자열 |                  1234.56 |
 | @sys-percentage.literal       | 문자열 |                1,234.56% |
-| @sys-percentage.location      | 배열   |                    [0,9] |
-| @sys-percentage.numeric_value | 숫자   |                  1234.56 |
+| @sys-percentage.location      | 배열  |                    [0,9] |
+| @sys-percentage.numeric_value | 숫자 |                  1234.56 |
 
 입력 `1.234,56%`(스페인어)의 경우 @sys-currency가 다음 값을 리턴합니다.
 
-| 속성                          | 유형   | `1.234,56%`에 대해 리턴됨 |
+| 속성                     | 유형   | `1.234,56%`에 대해 리턴됨 |
 |-------------------------------|--------|-------------------------:|
 | @sys-percentage               | 문자열 |                  1234.56 |
 | @sys-percentage.literal       | 문자열 |                1.234,56% |
-| @sys-percentage.location      | 배열   |                    [0,9] |
-| @sys-percentage.numeric_value | 숫자   |                  1234.56 |
+| @sys-percentage.location      | 배열  |                    [0,9] |
+| @sys-percentage.numeric_value | 숫자 |                  1234.56 |
 
 지원되는 다른 언어에 대해서도 동등한 결과를 얻습니다.
 
@@ -283,7 +292,10 @@ subcollection: assistant
 
 - 백분율 값은 @sys-number 엔티티의 인스턴스로 인식됩니다. 개별 조건을 사용하여 백분율 값과 숫자 둘 다 검사하는 경우, 숫자를 검사하는 조건 위에 백분율을 검사하는 조건을 배치하십시오.
 
-- @sys-percentage 엔티티를 노드 조건으로 사용하고 사용자가 `$0%`를 값으로 지정하는 경우, 값이 백분율로 올바르게 인식되지만 조건은 백분율 0%가 아닌 숫자 0으로 평가됩니다. 따라서 예상 응답을 리턴하지 않습니다. 0%를 올바르게 처리하는 방식으로 숫자를 검사하려면 노드 조건에서 전체 SpEL 표현식 `entities['sys-percentage']?.value`을 사용하십시오.
+      이 임시 해결책은 개정된 시스템 엔티티를 사용하는 경우에는 필요하지 않습니다. 자세한 내용은 [새 시스템 엔티티](/docs/services/assistant?topic=assistant-beta-system-entities)를 참조하십시오.
+  {: note}
+
+- @sys-percentage 엔티티를 노드 조건으로 사용하고 사용자가 `0%`를 값으로 지정하는 경우, 값이 백분율로 올바르게 인식되지만 조건은 백분율 0%가 아닌 숫자 0으로 평가됩니다. 결과적으로 조건의 `null`이 false로 평가되고 노드가 처리되지 않습니다. 0을 올바르게 처리하는 방식으로 백분율을 검사하려면 대신 노드 조건에서 `@sys-percentage >=0` 표현식을 사용하십시오.
 
 - `1-2%`와 같은 값을 입력하는 경우 값 `1%` 및 `2%`가 시스템 엔티티로 리턴됩니다. 인덱스는 1%와 2% 사이의 범위 전체에 있으며 두 엔티티 모두 동일한 인덱스를 가집니다.
 
@@ -299,5 +311,5 @@ subcollection: assistant
 - Jane Doe
 - Vijay
 
-문자열 값 처리에 대한 정보는 [문자열](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings) 메소드 참조를 참조하십시오.
+문자열 값 처리에 대한 정보는 [문자열 메소드 참조](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings)를 참조하십시오.
 {: tip}

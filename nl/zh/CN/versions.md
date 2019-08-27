@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-08-05"
 
 subcollection: assistant
 
@@ -37,10 +37,12 @@ subcollection: assistant
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="创建技能版本" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/FDolnBxvcZ8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
+要了解有关各版本如何改进用于构建助手的工作流程的更多信息，请[阅读此博客帖子 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://medium.com/ibm-watson/watson-assistant-versions-announcement-d60869b1f5f){: new_window}。
+
 ## 创建版本
 {: #versions-create}
 
-使用 {{site.data.keyword.conversationshort}} 工具一次只能编辑对话技能的一个版本。进行中的版本称为*开发*版本。
+一次只能编辑对话技能的一个版本。进行中的版本称为*开发*版本。
 
 保存版本时，还会保存应用于开发版本的任何技能设置。
 
@@ -52,12 +54,12 @@ subcollection: assistant
 
 1.  单击**保存**。
 
-将创建当前技能的快照，并另存为新版本。您将保持在技能的开发版本中。您所做的任何更改都将继续应用于开发版本，而不会应用于保存的版本。要访问保存的版本，请转至**版本历史记录**页面。
+将创建当前技能的快照，并另存为新版本。您将保持在技能的开发版本中。您所做的任何更改都将继续应用于开发版本，而不会应用于保存的版本。要访问保存的版本，请转至**版本**页面。
 
 ## 部署技能版本
 {: #versions-deploy}
 
-1.  在技能的标题中，单击**版本历史记录**选项卡。
+1.  在技能的标题中，单击**版本**选项卡。
 1.  单击要部署的版本中的 ![单击以查看操作](images/kebab-react.png) 图标，然后选择**分配给助手**。
 
     这将显示可以将此版本链接到的助手的列表。该列表仅限于没有关联任何技能的助手或关联有此技能其他版本的助手。
@@ -67,16 +69,17 @@ subcollection: assistant
 {: important}
 
 ## 技能版本限制
-{: #skill-version-limits}
+{: #versions-limits}
 
 可以为单个技能创建的版本数取决于 {{site.data.keyword.conversationshort}} 套餐。
 
 |服务套餐          |每个技能的版本数    |
 |------------------|-------------------:|
-|高级                                 |50|
+|高端          |50|
 |增强版            |10|
 |标准                                 |10|
-|Lite              |0 |
+|增强试用版|10|
+|轻量              |0 |
 {: caption="服务套餐详细信息" caption-side="top"}
 
 ## 交换技能
@@ -98,7 +101,7 @@ subcollection: assistant
     请立即保存技能的版本。否则，执行以下步骤时，您的工作将丢失。
     {: important}
 
-1.  在要编辑的版本中，单击**技能操作** ![技能操作](images/kebab-react.png) 图标，然后选择**复制到开发**并确认操作。
+1.  在要编辑的版本中，单击**技能操作** ![技能操作](images/kebab-react.png) 图标，然后选择**还原到此版本**并确认操作。
 
     页面将刷新以还原为创建版本时技能所处于的状态。
 

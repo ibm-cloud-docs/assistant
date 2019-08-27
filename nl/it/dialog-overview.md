@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-08-06"
+
+keywords: condition, response, options, jump, jump-to, multiline, response variations
 
 subcollection: assistant
 
@@ -35,7 +37,7 @@ Il dialogo mette in corrispondenza gli intenti (cosa dicono gli utenti) con le r
 
 Nota: il video dura 15 minuti; i primi 5 minuti spiegano come aggiungere un nodo.
 
-Questo dialogo viene rappresentato graficamente nello strumento {{site.data.keyword.conversationshort}} come una struttura ad albero. Crea un ramo per elaborare ogni intento che desideri venga gestito dalla conversazione. Un ramo è composto da più nodi.
+Questo dialogo viene rappresentato graficamente in {{site.data.keyword.conversationshort}} come una struttura ad albero. Crea un ramo per elaborare ogni intento che desideri venga gestito dalla conversazione. Un ramo è composto da più nodi.
 
 ## Nodi del dialogo
 {: #dialog-overview-nodes}
@@ -45,34 +47,34 @@ Ogni nodo di dialogo contiene, come minimo, una condizione e una risposta.
 ![Mostra l'input utente che va a una casella che contiene l'istruzione If: CONDITION, Then: RESPONSE](images/node1-empty.png)
 
 - Condizione: specifica le informazioni che devono essere presenti nell'input utente affinché questo nodo nel dialogo venga attivato. Di norma, le informazioni costituiscono uno specifico intento. Potrebbero anche essere un tipo di entità, un valore di entità o un valore di variabile di contesto. Per ulteriori informazioni, vedi [Condizioni](#dialog-overview-conditions).
-- Risposta: l'espressione utilizzata dal servizio per rispondere all'utente. La risposta può anche essere configurata per mostrare un'immagine o un elenco delle opzioni oppure per attivare azioni programmatiche. Per ulteriori informazioni, vedi [Risposte](#dialog-overview-responses).
+- Risposta: l'espressione utilizzata dal tuo assistente per rispondere all'utente.  La risposta può anche essere configurata per mostrare un'immagine o un elenco delle opzioni oppure per attivare azioni programmatiche. Per ulteriori informazioni, vedi [Risposte](#dialog-overview-responses).
 
 Il nodo può essere considerato come avente una costruzione if/then: se la condizione è true, allora restituirà questa risposta.
 
-Ad esempio, il seguente nodo viene attivato se la funzione di elaborazione del linguaggio naturale del servizio determina che l'input utente contiene l'intento `#cupcake-menu`. Come risultato del nodo che viene attivato, il servizio risponde con una risposta appropriata.
+Ad esempio, il seguente nodo viene attivato se la funzione di elaborazione del linguaggio naturale del tuo assistente determina che l'input utente contiene l'intento `#cupcake-menu`. Come risultato del nodo che viene attivato, il tuo assistente risponde con una risposta appropriata. 
 
 ![Mostra l'utente che chiede dei tipi di cupcake, la condizione If è #cupcake-menu e la risposta Then è un elenco dei tipi di cupcake.](images/node1-simple.png)
 
-Un singolo nodo con una sola condizione e risposta può gestire semplici richieste dell'utente. Ma, il più delle volte, gli utenti hanno domande più sofisticate o desiderano aiuto con attività più complesse. Puoi aggiungere dei nodi figlio che richiedano all'utente di fornire qualsiasi ulteriore informazione richiesta dal servizio.
+Un singolo nodo con una sola condizione e risposta può gestire semplici richieste dell'utente. Ma, il più delle volte, gli utenti hanno domande più sofisticate o desiderano aiuto con attività più complesse. Puoi aggiungere dei nodi figlio che richiedano all'utente di fornire qualsiasi ulteriore informazione richiesta dal tuo assistente. 
 
 ![Mostra che il primo nodo nel dialogo chiede quale tipo di cupcake l'utente desidera, senza glutine o normale, e ha due nodi figlio che forniscono una risposta diversa a seconda della risposta dell'utente.](images/node1-children.png)
 
 ## Flusso del dialogo
 {: #dialog-overview-flow}
 
-Il dialogo che crei viene elaborato dal servizio dal primo nodo nella struttura ad albero all'ultimo.
+Il dialogo che crei viene elaborato dal tuo assistente dal primo nodo nella struttura ad albero all'ultimo. 
 
 ![Freccia rivolta verso il basso accanto ai 3 nodi per mostrare che il dialogo scorre dal primo nodo all'ultimo](images/node-flow-down.png)
 
-Mentre scende lungo la struttura ad albero, se il servizio trova una condizione che viene soddisfatta, attiverà tale nodo. Si sposta quindi insieme al nodo attivato per controllare l'input utente e verificare la presenza di eventuali condizioni del nodo figlio. Mentre controlla i nodi figlio, si sposta di nuovo dal primo nodo figlio all'ultimo.
+Mentre scende lungo la struttura ad albero, se il tuo assistente trova una condizione che viene soddisfatta, attiverà tale nodo. Si sposta quindi insieme al nodo attivato per controllare l'input utente e verificare la presenza di eventuali condizioni del nodo figlio. Mentre controlla i nodi figlio, si sposta di nuovo dal primo nodo figlio all'ultimo.
 
-Il servizio continua il suo percorso attraverso la struttura ad albero di dialogo dal primo all'ultimo nodo, insieme a ciascun nodo attivato, quindi dal primo all'ultimo nodo figlio, insieme a ciascun nodo figlio attivato finché non raggiunge l'ultimo nodo nel ramo che sta seguendo.
+Il tuo assistente continua il suo percorso attraverso la struttura ad albero di dialogo dal primo all'ultimo nodo, insieme a ciascun nodo attivato, quindi dal primo all'ultimo nodo figlio, insieme a ciascun nodo figlio attivato finché non raggiunge l'ultimo nodo nel ramo che sta seguendo. 
 
 ![Mostra la freccia 1 rivolta dal primo nodo root all'ultimo, la freccia 2 che percorre la lunghezza di un nodo attivato e la freccia 3 rivolta dal primo all'ultimo dei nodi figlio del nodo attivato.](images/node-flow.png)
 
 Quando inizi a creare il dialogo, devi stabilire i rami da includere e dove posizionarli. L'ordine dei rami è importante in quanto i nodi vengono valutati dal primo all'ultimo. Viene utilizzato il primo nodo root la cui condizione corrisponde all'input; tutti i nodi che seguono nella struttura ad albero non vengono attivati.
 
-Quando il servizio raggiunge la fine di un ramo oppure non può trovare una condizione valutata come true nella serie corrente di nodi figlio che sta valutando, ritorna alla base della struttura ad albero. E ancora una volta, il servizio elabora i nodi root dal primo all'ultimo. Se nessuna condizione viene valutata come true, viene restituita la risposta proveniente dall'ultimo nodo nella struttura ad albero che di solito contiene una condizione speciale `anything_else` che viene sempre valutata come true.
+Quando il tuo assistente raggiunge la fine di un ramo oppure non può trovare una condizione valutata come true nella serie corrente di nodi figlio che sta valutando, ritorna alla base della struttura ad albero. E ancora una volta, il tuo assistente elabora i nodi root dal primo all'ultimo. Se nessuna condizione viene valutata come true, viene restituita la risposta proveniente dall'ultimo nodo nella struttura ad albero che di solito contiene una condizione speciale `anything_else` che viene sempre valutata come true.
 
 Puoi interrompere il flusso standard dal-primo-all'ultimo nei seguenti modi:
 
@@ -122,11 +124,11 @@ Per definire una condizione, puoi utilizzare una o più delle seguenti risorse i
   Se l'entità è un'entità modello con gruppi di acquisizione, puoi controllare la presenza di una determinata corrispondenza del valore del gruppo. Ad esempio puoi utilizzare la sintassi: `@us_phone.groups[1] == '617'`
   Per ulteriori informazioni, vedi [Memorizzazione e riconoscimento dei gruppi di entità modello nell'input](/docs/services/assistant?topic=assistant-dialog-tips#dialog-tips-get-pattern-groups).
 
-- **Intento**: la condizione più semplice è un singolo intento. Il nodo viene utilizzato se, una volta che l'elaborazione del linguaggio naturale del servizio valuta l'input dell'utente, determina che lo scopo dell'input dell'utente viene associato a un intento predefinito. Utilizza la sintassi `#intent_name`. Ad esempio, `#weather` controlla se l'input utente sta chiedendo una previsione meteorologica. Se sì, il nodo con la condizione di intento `#weather` viene elaborata.
+- **Intento**: la condizione più semplice è un singolo intento. Il nodo viene utilizzato se, una volta che l'elaborazione del linguaggio naturale del tuo assistente valuta l'input dell'utente, determina che lo scopo dell'input dell'utente viene associato a un intento predefinito. Utilizza la sintassi `#intent_name`. Ad esempio, `#weather` controlla se l'input utente sta chiedendo una previsione meteorologica. Se sì, il nodo con la condizione di intento `#weather` viene elaborata.
 
   Per ulteriori informazioni sugli intenti, vedi [Definizione di intenti](/docs/services/assistant?topic=assistant-intents).
 
-- **Condizione speciale**: condizioni fornite con il servizio che puoi utilizzare per eseguire funzioni di dialogo comuni. Vedi la tabella **Condizioni speciali** nella prossima sezione per i dettagli.
+- **Condizione speciale**: condizioni fornite con il prodotto che puoi utilizzare per eseguire funzioni di dialogo comuni. Vedi la tabella **Condizioni speciali** nella prossima sezione per i dettagli.
 
 ### Condizioni speciali
 {: #dialog-overview-special-conditions}
@@ -166,7 +168,7 @@ Puoi rispondere in uno dei seguenti modi:
 ### Risposta di testo semplice
 {: #dialog-overview-simple-text}
 
-Se vuoi fornire una risposta di testo, immetti semplicemente il testo che vuoi che il servizio visualizzi all'utente.
+Se vuoi fornire una risposta di testo, immetti semplicemente il testo che vuoi che il tuo assistente mostri all'utente. 
 
 ![Mostra un nodo che visualizza la domanda dell'utente, Dove vi trovate, e la risposta del dialogo è, Non abbiamo negozi fisici! Ma con una connessione internet, puoi fare acquisti da qualsiasi luogo.](images/response-simple.png)
 
@@ -179,7 +181,7 @@ Hello $user
 
 Se il nome dell'utente corrente è `Norman`, la risposta che viene visualizza a Norman è `Hello Norman`.
 
-Se includi uno di questi caratteri speciali in una risposta di testo, eseguine l'escape aggiungendo una barra rovesciata (``\`) davanti ad esso. Se stai utilizzando l'editor JSON, devi utilizzare due barre rovesciate per eseguire l'escape (``\\`). L'escape del carattere impedisce al servizio di interpretarlo in modo errato come uno dei seguenti tipi di risorsa:
+Se includi uno di questi caratteri speciali in una risposta di testo, eseguine l'escape aggiungendo una barra rovesciata (``\`) davanti ad esso. Se stai utilizzando l'editor JSON, devi utilizzare due barre rovesciate per eseguire l'escape (``\\`). L'escape del carattere impedisce al tuo assistente di interpretarlo in modo errato come uno dei seguenti tipi di risorsa: 
 
 | Carattere speciale | Risorsa | Esempio |
 |-------------------|----------|---------|
@@ -193,11 +195,12 @@ Le integrazioni integrate supportano i seguenti elementi di sintassi Markdown:
 |------------|--------|---------|
 | Corsivo | `We're talking about *practice*.` | We're talking about *practice*. |
 | Grassetto | `There's **no** crying in baseball.` | There's **no** crying in baseball. |
-| Collegamento ipertestuale | `Contact us at [ibm.com](https://www.ibm.com).` | Contact us at [ibm.com ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www.ibm.com). |
+| Collegamento ipertestuale | `Contact us at [ibm.com](https://www.ibm.com).` | Contact us at [ibm.com](https://www.ibm.com). |
 {: caption="Sintassi Markdown supportata" caption-side="top"}
 
-Al momento, il riquadro "Provalo" non supporta la sintassi Markdown. Per includere un link di cui viene eseguito il rendering solo nel riquadro "Provalo" e nell'integrazione Preview link, puoi utilizzare la sintassi HTML. Ad esempio: `Contact us at <a href="https://www.ibm.com">ibm.com</a>.` (*Non* provare ad eseguire l'escape delle virgolette con una barra rovesciata `\"`, ad esempio.) Tuttavia, la sintassi HTML non è supportata dalle altre integrazioni integrate.
-{: note}
+Al momento, il riquadro "Try it out" non supporta la sintassi Markdown. L'integrazione Preview link invece sì, quindi puoi verificare il dialogo nella pagina web di anteprima per vedere in che modo viene eseguito il rendering della sintassi Markdown.
+
+Il riquadro "Try it out" e l'integrazione Preview Link supportano la sintassi HTML. Le integrazioni Slack e Facebook non lo fanno. 
 
 #### Ulteriori informazioni sulle risposte semplici
 {: #dialog-overview-variety}
@@ -227,7 +230,7 @@ Se desideri che una singola risposta di testo includa più righe separate da rit
 
 1.  Per l'impostazione della variante di risposta, scegli **multiline**.
 
-    Se stai utilizzando una capacità di dialogo creata prima che il supporto per i tipi di risposte esaurienti venisse aggiunto al servizio, potresti non vedere l'opzione *multiline*. Aggiungi un secondo tipo di risposta di testo alla risposta del nodo corrente. Questa azione cambia il modo in cui la risposta viene rappresentata nel JSON sottostante. Di conseguenza, l'opzione multiline diventa disponibile. Scegli il tipo di variazione multiline. Ora, puoi eliminare il secondo tipo di risposta di testo che hai aggiunto alla risposta.
+    Se stai utilizzando una capacità di dialogo creata prima che il supporto per i tipi di risposte esaurienti venisse aggiunto al prodotto, potresti non vedere l'opzione *multiline*. Aggiungi un secondo tipo di risposta di testo alla risposta del nodo corrente. Questa azione cambia il modo in cui la risposta viene rappresentata nel JSON sottostante. Di conseguenza, l'opzione multiline diventa disponibile. Scegli il tipo di variazione multiline. Ora, puoi eliminare il secondo tipo di risposta di testo che hai aggiunto alla risposta.
     {: note}
 
 Quando la risposta viene mostrata all'utente, vengono visualizzate entrambe le varianti di risposta, una per riga, come mostrato di seguito:
@@ -243,7 +246,7 @@ How are you today?
 
 Se i tuoi utenti utilizzano spesso il tuo servizio di conversazione, potrebbero essere stanchi di ascoltare ogni volta gli stessi messaggi iniziali e le stesse risposte.  Puoi aggiungere delle *variazioni* alle tue risposte in modo che la conversazione possa rispondere alla stessa condizione in modi diversi.
 
-In questo esempio, la risposta che il servizio fornisce alle domande relative alle posizioni del negozio differisce da un'interazione all'altra.
+In questo esempio, la risposta che il tuo assistente fornisce alle domande relative alle posizioni del negozio differisce da un'interazione all'altra. 
 
 ![Mostra un nodo che visualizza la domanda dell'utente, Dove vi trovate, e il dialogo ha tre diverse risposte definite.](images/variety.png)
 
@@ -327,32 +330,38 @@ Puoi restituire risposte con elementi multimediali o interattivi come ad esempio
 
 Oltre al tipo di risposta predefinito **Text**, per il quale specifichi il testo da restituire all'utente come una risposta, sono supportati i seguenti tipi di risposta:
 
-- **Connect to human agent**: ![Solo piano Plus o Premium](images/premium.png) il dialogo richiama un servizio da te designato, di norma un servizio che gestisce le code di ticket di supporto dell'operatore, per passare la conversazione a una persona. Puoi, facoltativamente, includere un messaggio che riepiloghi il problema dell'utente da fornire all'operatore. È responsabilità del servizio esterno visualizzare un messaggio che viene mostrato all'utente indicante che si sta trasferendo la conversazione. Il dialogo non gestisce tale comunicazione da solo. Il trasferimento del dialogo non avviene quando stai verificando i nodi con questo tipo di risposta nel riquadro "Provalo". Devi accedere a un nodo che utilizza questo tipo di risposta da una distribuzione di test per vedere come sarà al riguardo l'esperienza dei tuoi utenti.
+- **Connect to human agent**: ![Solo piano Plus o Premium](images/plus.png) il dialogo richiama un servizio da te designato, di norma un servizio che gestisce le code di ticket di supporto dell'operatore, per passare la conversazione a una persona. Puoi, facoltativamente, includere un messaggio che riepiloghi il problema dell'utente da fornire all'operatore. È responsabilità del servizio esterno visualizzare un messaggio che viene mostrato all'utente indicante che si sta trasferendo la conversazione. Il dialogo non gestisce tale comunicazione da solo. Il trasferimento del dialogo non avviene quando stai verificando i nodi con questo tipo di risposta nel riquadro "Try it out". Devi accedere a un nodo che utilizza questo tipo di risposta da una distribuzione di test per vedere come sarà al riguardo l'esperienza dei tuoi utenti.
 
-  Questo tipo di risposta è visibile solo nelle istanze del servizio per un piano Plus o Premium ed è supportato solo con Intercom o con le integrazioni dell'applicazione personalizzate.
+  Questo tipo di risposta è disponibile solo per gli utenti Plus o Premium ed è supportato solo con Intercom o con le integrazioni dell'applicazione personalizzate.
   {: note}
 
 - **Image**: incorpora un'immagine nella risposta. Il file immagine di origine deve essere ospitato in un'ubicazione e deve avere un URL che tu possa utilizzare per farvi riferimento. Non può essere un file che viene memorizzato in una directory che non è accessibile pubblicamente.
-- **Option**: aggiunge un elenco di una o più opzioni. Quando un utente fa clic su una delle opzioni, un valore di input utente associato viene inviato al servizio. Il rendering delle opzioni può differire a seconda di dove distribuisci il dialogo. Ad esempio, in un canale di integrazione, le opzioni potrebbero essere visualizzate come pulsanti su cui fare clic, mentre in un altro potrebbero essere visualizzate come un elenco a discesa.
-- **Pause**: forza l'applicazione ad attendere un determinato numero di millisecondi prima di continuare l'elaborazione. Puoi scegliere di mostrare un indicatore di digitazione per indicare che il dialogo sta lavorando. Utilizza questo tipo di risposta se devi eseguire un'azione che potrebbe richiedere tempo. Ad esempio, un nodo padre esegue una chiamata Cloud Function e visualizza il risultato in un nodo figlio. Potresti utilizzare questo tipo di risposta mentre viene completata la risposta che il nodo padre dà alla chiamata programmatica e poi passare al nodo figlio per mostrare il risultato. Il rendering di questo tipo di risposta non viene eseguito nel riquadro "Provalo". Devi accedere a un nodo che utilizza questo tipo di risposta da una distribuzione di test per vedere come sarà al riguardo l'esperienza dei tuoi utenti.
+- **Option**: aggiunge un elenco di una o più opzioni. Quando un utente fa clic su una delle opzioni, un valore di input utente associato viene inviato al tuo assistente. Il rendering delle opzioni può differire a seconda di dove distribuisci il dialogo. Ad esempio, in un canale di integrazione, le opzioni potrebbero essere visualizzate come pulsanti su cui fare clic, mentre in un altro potrebbero essere visualizzate come un elenco a discesa.
+- **Pause**: forza l'applicazione ad attendere un determinato numero di millisecondi prima di continuare l'elaborazione. Puoi scegliere di mostrare un indicatore di digitazione per indicare che il dialogo sta lavorando. Utilizza questo tipo di risposta se devi eseguire un'azione che potrebbe richiedere tempo. Ad esempio, un nodo padre esegue una chiamata Cloud Function e visualizza il risultato in un nodo figlio. Potresti utilizzare questo tipo di risposta mentre viene completata la risposta che il nodo padre dà alla chiamata programmatica e poi passare al nodo figlio per mostrare il risultato. Il rendering di questo tipo di risposta non viene eseguito nel riquadro "Try it out". Devi accedere a un nodo che utilizza questo tipo di risposta da una distribuzione di test per vedere come sarà al riguardo l'esperienza dei tuoi utenti.
+- **Search skill**: ![Solo piano Plus o Premium](images/plus.png) Ricerca informazioni pertinenti da restituire all'utente in un'origine dati esterna. L'origine dati in cui viene effettuata la ricerca è una raccolta dati del servizio {{site.data.keyword.discoveryshort}} che configuri quando aggiungi una capacità di ricerca all'assistente che utilizza questa capacità di dialogo. Per ulteriori informazioni, vedi [Creazione di una capacità di ricerca](/docs/services/assistant?topic=assistant-skill-search-add).
+
+  Questo tipo di risposta è disponibile solo per gli utenti dei piani Plus o Premium.
+  {: note}
 
 #### Aggiunta di risposte esaurienti
 {: #dialog-overview-multimedia-add}
 
 Per aggiungere una risposta esauriente, completa questi passi:
 
-1.  Fai clic sul menu a discesa nel campo della risposta per scegliere un tipo di risposta e poi fornire le informazioni necessarie: 
+1.  Fai clic sul menu a discesa nel campo della risposta per scegliere un tipo di risposta e poi fornire le informazioni necessarie:
 
-    - **Connect to human agent**. ![Solo piano Plus o Premium](images/premium.png) Facoltativamente, puoi aggiungere un messaggio da condividere con l'operatore a cui viene trasferita la conversazione. 
+    - **Connect to human agent**. ![Solo piano Plus o Premium](images/plus.png) Facoltativamente, puoi aggiungere un messaggio da condividere con l'operatore a cui viene trasferita la conversazione.
 
         Questo tipo di risposta è supportato solo con Intercom e le applicazioni di integrazione personalizzate. Per le applicazioni personalizzate, devi programmare l'applicazione client in modo che riconosca quando viene attivato questo tipo di risposta.
         {: note}
 
-    - **Image**. Aggiungi l'URL completo al file di immagine ospitato nel campo **Image source**. L'immagine deve avere un formato .jpg, .gif o .png. Il file di immagine deve essere memorizzato in un'ubicazione che sia pubblicamente indirizzabile dall'URL. 
+    - **Image**. Aggiungi l'URL completo al file di immagine ospitato nel campo **Image source**. L'immagine deve avere un formato .jpg, .gif o .png. Il file di immagine deve essere memorizzato in un'ubicazione che sia pubblicamente indirizzabile dall'URL.
 
         Ad esempio: `https://www.example.com/assets/common/logo.png`.
 
-        Se desideri visualizzare un titolo e una descrizione dell'immagine sopra l'immagine incorporata nella risposta, aggiungili nei campi forniti. 
+        Se desideri visualizzare un titolo e una descrizione dell'immagine sopra l'immagine incorporata nella risposta, aggiungili nei campi forniti.
+
+        Per accedere a un'immagine archiviata in {{site.data.keyword.cloud}} {{site.data.keyword.cos_short}}, abilita l'accesso pubblico al singolo oggetto di archiviazione immagini e poi fai riferimento ad esso specificando l'origine dell'immagine con una sintassi simile a questa: `https://s3.eu.cloud-object-storage.appdomain.cloud/your-bucket-name/image-name.png`.
 
         Le integrazioni Slack richiedono un titolo. Gli altri canali di integrazione ignorano i titoli o le descrizioni.
         {: note}
@@ -360,22 +369,24 @@ Per aggiungere una risposta esauriente, completa questi passi:
     - **Option**. Completa i seguenti passi:
 
       1.  Fai clic su **Add option**.
-      1.  Nel campo **List label**, immetti l'opzione da visualizzare nell'elenco. L'etichetta deve avere una lunghezza inferiore a 64 caratteri. 
-      1.  Nel campo **Value** corrispondente, immetti l'input utente da passare al servizio quando viene selezionata questa opzione. Il valore deve avere una lunghezza inferiore a 2.048 caratteri. (Una limitazione corrente applica un limite a 64 caratteri, ma ce ne stiamo occupando.) 
+      1.  Nel campo **List label**, immetti l'opzione da visualizzare nell'elenco. L'etichetta deve avere una lunghezza inferiore a 64 caratteri.
+      1.  Nel campo **Value** corrispondente, immetti l'input utente da passare al tuo assistente quando viene selezionata questa opzione. Il valore deve avere una lunghezza inferiore a 2.048 caratteri.
 
-          Specifica un valore che sai che attiverà l'intento corretto quando viene inoltrato. Ad esempio, potrebbe essere un esempio utente dei dati di addestramento per l'intento. 
-      1.  Ripeti i passi precedenti per aggiungere altre opzioni all'elenco. 
-      1.  Aggiungi un'introduzione all'elenco nel campo **Title**. Il titolo può richiedere all'utente di selezionare dall'elenco di opzioni. 
+          Specifica un valore che sai che attiverà l'intento corretto quando viene inoltrato. Ad esempio, potrebbe essere un esempio utente dei dati di addestramento per l'intento.
+      1.  Ripeti i passi precedenti per aggiungere altre opzioni all'elenco.
+
+          Puoi aggiungere fino a 20 opzioni. 
+      1.  Aggiungi un'introduzione all'elenco nel campo **Title**. Il titolo può richiedere all'utente di selezionare dall'elenco di opzioni.
 
           Alcuni canali di integrazione non visualizzano il titolo.
           {: note}
 
-      1.  Facoltativamente, aggiungi informazioni aggiuntive nel campo **Description**. Se specificata, la descrizione viene visualizzata dopo il titolo e prima dell'elenco di opzioni. 
+      1.  Facoltativamente, aggiungi informazioni aggiuntive nel campo **Description**. Se specificata, la descrizione viene visualizzata dopo il titolo e prima dell'elenco di opzioni.
 
       Alcuni canali di integrazione non visualizzano la descrizione.
       {: note}
 
-      Ad esempio, puoi creare una risposta come questa: 
+      Ad esempio, puoi creare una risposta come questa:
 
         <table>
         <caption>Opzioni di risposta</caption>
@@ -418,19 +429,50 @@ Per aggiungere una risposta esauriente, completa questi passi:
         Aggiungi un altro tipo di risposta, ad esempio un tipo di risposta di testo, dopo la pausa per indicare chiaramente che la pausa è terminata.
         {: tip}
 
-    - **Text**. Aggiungi il testo da restituire all'utente nel campo di testo. Facoltativamente, scegli un'impostazione di variante per la risposta di testo. Per ulteriori dettagli, vedi [Risposta di testo semplice](#dialog-overview-simple-text). 
+    - **Text**. Aggiungi il testo da restituire all'utente nel campo di testo. Facoltativamente, scegli un'impostazione di variante per la risposta di testo. Per ulteriori dettagli, vedi [Risposta di testo semplice](#dialog-overview-simple-text).
 
-1.  Fai clic su **Add response** per aggiungere un altro tipo di risposta alla risposta corrente. 
+    - **Search skill**. ![Solo piano Plus o Premium](images/plus.png) Indica che vuoi ricercare una risposta pertinente in un'origine dati esterna. 
 
-    Potresti voler aggiungere più tipi di risposta a una singola risposta per fornire una risposta più esauriente ad una query utente. Ad esempio, se un utente chiede le posizioni di un negozio, potresti mostrare una mappa e visualizzare un pulsante per ogni posizione su cui l'utente può fare clic per ottenere i dettagli dell'indirizzo. Per creare tale tipo di risposta, puoi utilizzare una combinazione di immagine, opzioni e tipi di risposta di testo. Un altro esempio è costituito dall'utilizzo di un tipo di risposta di testo prima di un tipo di risposta pausa in modo che tu possa avvertire gli utenti prima della sospensione del dialogo. 
+      Questo tipo di risposta è visibile solo per gli utenti con piano Plus o Premium.
+      {: note}
+
+      Per modificare la query di ricerca da passare al servizio {{site.data.keyword.discoveryshort}}, fai clic su **Customize** e poi riempi i seguenti campi:
+
+        - **Query**: facoltativo. Puoi specificare una query particolare nel linguaggio naturale da passare a {{site.data.keyword.discoveryshort}}. Se non aggiungi una query, il testo di input esatto del cliente viene passato come query. 
+
+          Ad esempio, puoi specificare `What cities do you fly to?`. Questo valore di query viene passato a {{site.data.keyword.discoveryshort}} come una query di ricerca. {{site.data.keyword.discoveryshort}} utilizza la comprensione del linguaggio naturale per comprendere la query e per trovare una risposta o le informazioni pertinenti sull'argomento nella raccolta di dati configurata per la capacità di ricerca.
+
+          Puoi includere informazioni specifiche fornite dall'utente facendo riferimento alle entità che sono state rilevate nell'input dell'utente come parte della query. Ad esempio, `Tell me about @product`. Oppure puoi fare riferimento a una variabile di contesto, ad esempio `Do you have flights to $destination?`. Assicurati di progettare il tuo dialogo in modo che la ricerca non venga attivata a meno che le entità o le variabili di contesto a cui fai riferimento nella query non siano state impostate su valori validi. 
+
+          Questo campo equivale al parametro {{site.data.keyword.discoveryshort}} `natural_language_query`. Per ulteriori informazioni, vedi [Parametri di query ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](/docs/services/discovery?topic=discovery-query-parameters#nlq){: new_window}.
+
+        - **Filter**: facoltativo. Specifica una stringa di testo che definisce le informazioni che devono essere presenti nei risultati di ricerca che vengono restituiti. 
+
+          - Per indicare che vuoi restituire solo i documenti con parere positivo rilevato, ad esempio, specifica `enriched_text.sentiment.document.label:positive`.
+
+          - Per filtrare i risultati per includere solo i documenti che il processo di inserimento ha identificato come contenenti l'entità `Boston, MA`, specifica `enriched_text.entities.text:"Boston, MA"`.
+
+          - Per filtrare i risultati per includere solo i documenti che il processo di inserimento ha identificato come contenenti un nome prodotto fornito dal cliente, puoi specificare `enriched_text.entities.text:@product`.
+
+          - Per filtrare i risultati per includere solo i documenti che il processo di inserimento ha identificato come contenenti un nome città che hai salvato in una variabile di contesto denominata `$destination`, puoi specificare `enriched_text.entities.text:$destination`.
+
+        Se aggiungi sia una query che un valore di filtro, il parametro di filtro viene applicato innanzitutto per filtrare i documenti della raccolta dati e memorizzare i risultati nella cache. Il parametro di query classifica quindi i risultati memorizzati nella cache.  
+
+        Questo campo equivale al parametro {{site.data.keyword.discoveryshort}} `filter`. Per ulteriori informazioni, vedi [Parametri di query ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](/docs/services/discovery?topic=discovery-query-parameters#filter){: new_window}.
+
+      Questo tipo di risposta restituisce solo una risposta valida se l'assistente a cui hai aggiunto questa capacità di dialogo ha anche una capacità di ricerca associata ad esso. Verifica questo tipo di risorsa da Preview Link o da un'altra integrazione a livello di assistente. Non puoi verificarlo dal riquadro "Try it out" della capacità di dialogo.
+
+1.  Fai clic su **Add response type** per aggiungere un altro tipo di risposta alla risposta corrente. 
+
+    Potresti voler aggiungere più tipi di risposta a una singola risposta per fornire una risposta più esauriente ad una query utente. Ad esempio, se un utente chiede le posizioni di un negozio, potresti mostrare una mappa e visualizzare un pulsante per ogni posizione su cui l'utente può fare clic per ottenere i dettagli dell'indirizzo. Per creare tale tipo di risposta, puoi utilizzare una combinazione di immagine, opzioni e tipi di risposta di testo. Un altro esempio è costituito dall'utilizzo di un tipo di risposta di testo prima di un tipo di risposta pausa in modo che tu possa avvertire gli utenti prima della sospensione del dialogo.
 
     Non puoi aggiungere più di 5 tipi di risposta a una singola risposta. Ciò significa che se definisci tre risposte condizionali per un nodo di dialogo, ciascuna risposta condizionale può avere non più di 5 tipi di risposte aggiunti ad essa.
     {: note}
 
-    Un singolo nodo di dialogo non può avere più di una risposta **Connect to human agent**.
+    Un singolo nodo di dialogo non può avere più di un tipo di risposta **Connect to human agent** o **Search skill**.
     {: note}
 
-1.  Se hai aggiunto più di un tipo di risposta, puoi fare clic sulle frecce per lo **spostamento** verso l'alto o verso il basso per organizzare i tipi di risposta nell'ordine in cui desideri che il servizio li elabori. 
+1.  Se hai aggiunto più di un tipo di risposta, puoi fare clic sulle frecce per lo **spostamento** verso l'alto o verso il basso per organizzare i tipi di risposta nell'ordine in cui desideri che il tuo assistente li elabori. 
 
 ### Risposte condizionali
 {: #dialog-overview-multiple}
@@ -441,37 +483,37 @@ Un singolo nodo di dialogo può fornire risposte diverse, ognuna attivata da una
 
 Il nodo ha ancora una condizione principale, che è la condizione per l'utilizzo del nodo e l'elaborazione delle condizioni e delle risposte che contiene.
 
-In questo esempio, il servizio utilizza le informazioni sulla posizione dell'utente raccolte in precedenza per personalizzare la risposta e fornire informazioni sul negozio più vicino all'utente. Vedi [Variabili di contesto](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-context) per ulteriori informazioni su come memorizzare le informazioni raccolte dall'utente.
+In questo esempio, il tuo assistente utilizza le informazioni sulla posizione dell'utente raccolte in precedenza per personalizzare la risposta e fornire informazioni sul negozio più vicino all'utente. Vedi [Variabili di contesto](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-context) per ulteriori informazioni su come memorizzare le informazioni raccolte dall'utente.
 
 ![Mostra un nodo che visualizza la domanda dell'utente, Dove vi trovate, e il dialogo ha tre risposte diverse a seconda delle condizioni che utilizzano le informazioni dalla variabile di contesto $state per specificare le posizioni in quegli stati.](images/multiple-responses.png)
 
 Questo singolo nodo fornisce ora la funzione equivalente di quattro nodi separati.
 
-Per aggiungere risposte condizionali a un nodo, completa i seguenti passi: 
+Per aggiungere risposte condizionali a un nodo, completa i seguenti passi:
 
 1.  Fai clic su **Customize** e poi fai clic sull'interruttore **Multiple responses** per **attivarlo**.
 
     La sezione della risposta del nodo cambia per mostrare una coppia di campi condizione e risposta. Puoi aggiungere ad essi una condizione e una risposta.
 1.  Per personalizzare ulteriormente una risposta, fai clic sull'icona **Edit response** ![Edit response](images/edit-slot.png) accanto alla risposta.
 
-    Devi aprire la risposta per la modifica per completare le seguenti attività: 
+    Devi aprire la risposta per la modifica per completare le seguenti attività:
 
-    - **Aggiornare il contesto**. Per modificare il valore di una variabile di contesto quando viene attivata una risposta, specifica il valore di contesto nell'editor di contesto. Devi aggiornare il contesto per ogni singola risposta condizionale; non esiste un editor di contesto o un editor JSON comune per tutte le risposte condizionali. 
-    - **Aggiungere risposte esaurienti**. Per aggiungere più di una risposta di testo o per aggiungere tipi di risposta diversi dalle risposte di testo a una singola risposta condizionale, devi aprire la vista di modifica della risposta. 
-    - **Configurare un passaggio**. Per indicare al servizio di passare a un nodo differente dopo aver elaborato questa risposta condizionale, seleziona **Jump to** dalla sezione *And finally* della vista di modifica della risposta. Identifica il nodo successivo che desideri venga elaborato dal servizio. Per ulteriori informazioni, vedi [Configurazione dell'azione Passa a](#dialog-overview-jump-to-config). 
+    - **Aggiornare il contesto**. Per modificare il valore di una variabile di contesto quando viene attivata una risposta, specifica il valore di contesto nell'editor di contesto. Devi aggiornare il contesto per ogni singola risposta condizionale; non esiste un editor di contesto o un editor JSON comune per tutte le risposte condizionali.
+    - **Aggiungere risposte esaurienti**. Per aggiungere più di una risposta di testo o per aggiungere tipi di risposta diversi dalle risposte di testo a una singola risposta condizionale, devi aprire la vista di modifica della risposta.
+    - **Configurare un passaggio**. Per indicare al tuo assistente di passare a un nodo differente dopo aver elaborato questa risposta condizionale, seleziona **Jump to** dalla sezione *And finally* della vista di modifica della risposta. Identifica il nodo successivo che desideri venga elaborato dal tuo assistente. Per ulteriori informazioni, vedi [Configurazione dell'azione Passa a](#dialog-overview-jump-to-config).
 
-      Un'azione **Passa a** configurata per il nodo non viene elaborata fino a quando non vengono elaborate tutte le risposte condizionali. Quindi, se una risposta condizionale viene configurata per passare a un altro nodo e la risposta condizionale viene attivata, il passaggio configurato per il nodo non viene mai elaborato e quindi non si verifica. 
+      Un'azione **Passa a** configurata per il nodo non viene elaborata fino a quando non vengono elaborate tutte le risposte condizionali. Quindi, se una risposta condizionale viene configurata per passare a un altro nodo e la risposta condizionale viene attivata, il passaggio configurato per il nodo non viene mai elaborato e quindi non si verifica.
 
-1.  Fai clic su **Add response** per aggiungere un'altra risposta condizionale. 
+1.  Fai clic su **Add response** per aggiungere un'altra risposta condizionale.
 
-Le condizioni all'interno di un nodo vengono valutate in ordine, proprio come i nodi.  Assicurati che le risposte condizionali siano elencate nell'ordine corretto. Se devi modificare l'ordine, seleziona una coppia condizione e risposta e spostala in alto o in basso nell'elenco utilizzando le frecce visualizzate. 
+Le condizioni all'interno di un nodo vengono valutate in ordine, proprio come i nodi.  Assicurati che le risposte condizionali siano elencate nell'ordine corretto.  Se devi modificare l'ordine, seleziona una coppia condizione e risposta e spostala in alto o in basso nell'elenco utilizzando le frecce visualizzate.
 
 ## Definizione delle operazioni successive
 {: #dialog-overview-jump-to}
 
-Dopo aver eseguito la risposta specificata, puoi istruire il servizio affinché effettui una delle seguenti operazioni:
+Dopo aver eseguito la risposta specificata, puoi istruire il tuo assistente affinché effettui una delle seguenti operazioni: 
 
-- **Attendi input utente**: il servizio attende che l'utente fornisca un nuovo input indotto dalla risposta. Ad esempio, la risposta potrebbe chiedere all'utente una domanda "sì o no". Il dialogo non avanzerà finché l'utente non fornisce altro input.
+- **Attendi input utente**: il tuo assistente attende che l'utente fornisca un nuovo input indotto dalla risposta. Ad esempio, la risposta potrebbe chiedere all'utente una domanda "sì o no". Il dialogo non avanzerà finché l'utente non fornisce altro input.
 - **Ignora input utente**: utilizza questa opzione quando desideri ignorare l'attesa dell'input utente e vuoi che la conversazione vada invece direttamente al primo nodo figlio del nodo corrente.
 
   Il nodo corrente deve avere almeno un nodo figlio affinché questa opzione sia disponibile.
@@ -485,9 +527,9 @@ Dopo aver eseguito la risposta specificata, puoi istruire il servizio affinché 
 ### Configurazione dell'azione Passa a
 {: #dialog-overview-jump-to-config}
 
-Se scegli di passare a un altro nodo, specifica quando il nodo di destinazione viene elaborato scegliendo una delle seguenti opzioni: 
+Se scegli di passare a un altro nodo, specifica quando il nodo di destinazione viene elaborato scegliendo una delle seguenti opzioni:
 
-- **Condizione**: se l'istruzione è destinata alla sezione della condizione del nodo di dialogo selezionato, il servizio verifica prima se la condizione del nodo di destinazione viene valutata come true.
+- **Condizione**: se l'istruzione è destinata alla sezione della condizione del nodo di dialogo selezionato, il tuo assistente verifica prima se la condizione del nodo di destinazione viene valutata come true. 
     - Se la condizione viene valutata come true, il sistema elabora immediatamente il nodo di destinazione.
     - Se la condizione non viene valutata come true, il sistema si sposta sul nodo di pari livello successivo del nodo di destinazione per valutarne la condizione e ripete questo processo fino a quando non trova un nodo di dialogo con una condizione che viene valutata come true.
 
@@ -495,17 +537,17 @@ Se scegli di passare a un altro nodo, specifica quando il nodo di destinazione v
 
     La specifica della condizione è utile per concatenare le condizioni dei nodi di dialogo. Ad esempio, potresti voler prima verificare se l'input contiene un intento, come `#turn_on`, e se lo contiene, potresti voler controllare se l'input contiene entità, come `@lights`, `@radio` o `@wipers`. Il concatenamento di condizioni aiuta a strutturare alberi di dialogo più grandi.
 
-    Evita di scegliere questa opzione quando configuri un'opzione Passa a da una risposta condizionale che va a un nodo situato sopra il nodo corrente nella struttura ad albero di dialogo. In caso contrario, puoi creare un loop infinito. Se il servizio passa a un nodo precedente e ne controlla la condizione, è probabile che restituisca false perché è stato valutato lo stesso input utente che l'ultima volta ha attivato il nodo corrente tramite il dialogo. Il servizio si sposterà sul nodo di pari livello successivo o tornerà al nodo root per controllare le condizioni su tali nodi e probabilmente concluderà attivando nuovamente questo nodo, ciò significa che il processo si ripeterà.
+    Evita di scegliere questa opzione quando configuri un'opzione Passa a da una risposta condizionale che va a un nodo situato sopra il nodo corrente nella struttura ad albero di dialogo. In caso contrario, puoi creare un loop infinito. Se il tuo assistente passa a un nodo precedente e ne controlla la condizione, è probabile che restituisca false perché è stato valutato lo stesso input utente che l'ultima volta ha attivato il nodo corrente tramite il dialogo. Il tuo assistente si sposterà sul nodo di pari livello successivo o tornerà al nodo root per controllare le condizioni su tali nodi e probabilmente concluderà attivando nuovamente questo nodo, ciò significa che il processo si ripeterà.
     {: note}
 
 - **Risposta**: se l'istruzione è destinata alla sezione della risposta del nodo di dialogo selezionato, viene eseguita immediatamente. Ovvero, il sistema non valuta la condizione del nodo di dialogo selezionato, esegue immediatamente la risposta del nodo di dialogo selezionato.
 
   La specifica della risposta è utile per concatenare insieme più nodi di dialogo. La risposta viene elaborata come se la condizione di questo nodo di dialogo fosse true. Se il nodo di dialogo selezionato ha un'altra azione **Passa a**, anche tale azione viene eseguita immediatamente.
 
-- **Attendi input utente**: attende il nuovo input dall'utente e inizia ad elaborarlo dal nodo a cui è passato. Questa opzione è utile, ad esempio, se il nodo di origine pone una domanda e tu desideri passare a un nodo separato per elaborare la risposta dell'utente alla domanda. 
+- **Attendi input utente**: attende il nuovo input dall'utente e inizia ad elaborarlo dal nodo a cui è passato. Questa opzione è utile, ad esempio, se il nodo di origine pone una domanda e tu desideri passare a un nodo separato per elaborare la risposta dell'utente alla domanda.
 
 ## Ulteriori informazioni
 
 Per informazioni sul linguaggio delle espressioni utilizzato dal dialogo, oltre ai metodi, alle entità di sistema e altri dettagli utili, vedi la sezione **Riferimento** nel riquadro di navigazione.
 
-Puoi anche utilizzare l'API per aggiungere i nodi o altrimenti modificare un dialogo. Per ulteriori informazioni, vedi [Modifica di un dialogo attraverso l'API](/docs/services/assistant?topic=assistant-api-dialog-modify). 
+Puoi anche utilizzare l'API per aggiungere i nodi o altrimenti modificare un dialogo. Per ulteriori informazioni, vedi [Modifica di un dialogo attraverso l'API](/docs/services/assistant?topic=assistant-api-dialog-modify).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
 
@@ -60,25 +60,25 @@ Primeiro, você precisará importar a qualificação de diálogo *Showcase de di
 ## Etapa 2: digressionando temporariamente do diálogo
 {: #tutorial-digressions-temporarily-digress-away}
 
-As digressões permitem que o usuário se afaste de uma ramificação de diálogo para mudar temporariamente o tópico antes de retornar ao fluxo de diálogo original. Nesta etapa, você começará a fazer uma reserva de restaurante e, em seguida, digressionará para perguntar as horas do restaurante. Depois de fornecer as informações de horas de abertura, o serviço retornará para o fluxo de diálogo de reserva do restaurante.
+As digressões permitem que o usuário se afaste de uma ramificação de diálogo para mudar temporariamente o tópico antes de retornar ao fluxo de diálogo original. Nesta etapa, você começará a fazer uma reserva de restaurante e, em seguida, digressionará para perguntar as horas do restaurante. Depois de fornecer as informações de horários de abertura, seu assistente retornará ao fluxo de diálogo de reserva do restaurante.
 
 1.  Clique em **Diálogo** para alternar da página com intenções para uma visualização da árvore de diálogo.
 
 1.  Clique no ícone ![Tente](images/ask_watson.png) para abrir a área de janela "Experimente".
 1.  Digite `Book me a restaurant` no campo de texto.
 
-    O serviço responde com um prompt para o dia a ser reservado, `When do you want to go?`
+    Seu assistente responde com um prompt para o dia a ser reservado, `When do you want to go?`
 
 1.  Clique no ícone **Local** ![Local](images/location.png) próximo da resposta para destacar o nó que acionou a resposta, o nó **Reserva de restaurante**, na árvore de diálogo.
 
     ![Mostra o nó Reserva de restaurante destacado e o diálogo em andamento na área de janela Experimente.](images/tut-dig-location.png)
 1.  Digite `Tomorrow`.
 
-    O serviço responde com um prompt para o horário a ser reservado, `What time do you want to go?`
+    Seu assistente responde com um prompt para o horário a ser reservado, `What time do you want to go?`
 
 1.  Você não sabe quando o restaurante fecha, portanto, pergunta `What time do you close?`
 
-    O robô digressiona do nó de reserva do restaurante para processar o nó **Horas de abertura do restaurante**. Ele responde com `The restaurant is open from 8:00 AM to 10:00 PM.` Em seguida, o serviço retorna ao nó de reserva de restaurante e solicita novamente o horário de reserva.
+    O robô digressiona do nó de reserva do restaurante para processar o nó **Horas de abertura do restaurante**. Ele responde com `The restaurant is open from 8:00 AM to 10:00 PM.` Em seguida, seu assistente retorna ao nó de reserva do restaurante e solicita novamente o horário da reserva.
 
     ![Mostra a digressão acontecendo na área de janela Experimente.](images/tut-dig-digression.png)
 1.  **Opcional**: para concluir o fluxo de diálogo, digite `8pm` para o horário de reserva e `2` para o número de convidados.
@@ -104,22 +104,22 @@ Nesta etapa, você editará a configuração de digressão para o nó de reserva
 
 1.  Digite  ` Book me a restaurante `.
 
-    O serviço responde com um prompt para o dia a ser reservado, `When do you want to go?`
+    Seu assistente responde com um prompt para o dia a ser reservado, `When do you want to go?`
 
 1.  Digite `Tomorrow`.
 
-    O serviço responde com um prompt para o horário a ser reservado, `What time do you want to go?`
+    Seu assistente responde com um prompt para o horário a ser reservado, `What time do you want to go?`
 
 1.  Perguntar,  ` Que horas você fecha? `
 
-    O serviço reconhece que a pergunta aciona a intenção #restaurant_opening_hours, mas a ignora e exibe o prompt associado ao intervalo @sys-time novamente.
+    Seu assistente reconhece que a pergunta aciona a intenção #restaurant_opening_hours no entanto, ele a ignora e exibe o prompt associado ao slot @sys-time novamente.
 
 Você impediu com êxito o usuário de digressionar do processo de reserva de restaurante.
 
 ## Etapa 4: digressionando para um nó que não retorna
 {: #tutorial-digressions-digress-without-return}
 
-É possível configurar um nó de diálogo para não voltar para o nó do qual o serviço digressionou para que o nó atual seja processado. Para demonstrar isso, você mudará a configuração de digressão para o nó de horas do restaurante. Na Etapa 2, você viu que, depois de digressionar do nó de reserva do restaurante para acessar o nó de horas de abertura do restaurante, o serviço retornou ao nó de reserva do restaurante para continuar com o processo de reserva. Nesse exercício, depois de mudar a configuração, você digressionará do diálogo **Oportunidades de trabalho** para perguntar sobre as horas de abertura do restaurante e ver que o serviço não retorna para onde ele parou.
+É possível configurar um nó de diálogo para não voltar ao nó do qual seu assistente saiu para que o nó atual seja processado. Para demonstrar isso, você mudará a configuração de digressão para o nó de horas do restaurante. Na Etapa 2, você observou que depois de sair do nó de reserva do restaurante para acessar o nó de horários de abertura do restaurante, seu assistente voltou ao nó de reserva do restaurante para continuar com o processo de reserva. Neste exercício, depois de mudar a configuração, você sairá do diálogo **Oportunidades de trabalho** para perguntar sobre os horários de abertura do restaurante e observará que seu assistente não retornará de onde parou.
 
 1.  Clique para abrir o nó **Horas de abertura do restaurante** .
 
@@ -131,13 +131,13 @@ Você impediu com êxito o usuário de digressionar do processo de reserva de re
 
 1.  Para encaixar o nó de diálogo **Oportunidades de trabalho**, digite `I'm looking for a job`.
 
-    O serviço responde dizendo `We are always looking for talented people to add to our team. What type of job are you interested in?`
+    Seu assistente responde dizendo `We are always looking for talented people to add to our team. What type of job are you interested in?`
 
 1.  Em vez de responder essa pergunta, faça ao robô uma pergunta não relacionada. Digite  ` Que horas você abre? `
 
-    O serviço digressiona do nó de Oportunidades de trabalho para o nó Horas de abertura do restaurante para responder à sua pergunta. O serviço responde com `The restaurant is open from 8:00 AM to 10:00 PM.`
+    Seu assistente sai do nó Oportunidades de trabalho para acessar o nó Horários de abertura do restaurante para responder a sua pergunta. Seu assistente responde com `The restaurant is open from 8:00 AM to 10:00 PM.`
 
-    Diferentemente do teste anterior, desta vez o diálogo não assimila onde ele parou no nó **Oportunidades de trabalho**. O serviço não retorna ao diálogo que estava em andamento porque você mudou a configuração no nó **Horas de abertura do restaurante** para não retornar.
+    Diferentemente do teste anterior, desta vez o diálogo não assimila onde ele parou no nó **Oportunidades de trabalho**. Seu assistente não retorna ao diálogo que estava em andamento porque você mudou a configuração no nó **Horários de abertura do restaurante** para não retornar.
 
     ![Mostra uma conversa que não retorna após uma digressão](images/tut-dig-noreturn.png)
 

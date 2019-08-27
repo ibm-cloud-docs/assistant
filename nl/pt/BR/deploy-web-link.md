@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-11"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -30,7 +30,7 @@ Se você não desativar o link de visualização, então o assistente estará im
 
 O assistente é implementado como um widget de bate-papo integrado a uma página da web simples com a marca da IBM automaticamente. É possível testar a qualificação de diálogo que você incluiu no assistente, inserindo texto no widget de bate-papo. Também é possível compartilhar a URL da página com outras pessoas para inscrever-se na ajuda para teste e obtenção de feedback sobre o assistente.
 
-Ao contrário de quando você testa usando a área de janela "Experimente" na ferramenta, quaisquer chamadas da API que resultam de suas interações com o assistente hospedado pelo URL do Link de visualização incorrem em encargos.
+Ao contrário do teste realizado por meio da área de janela "Experimentar", quaisquer chamadas de API resultantes de suas interações com o assistente hospedado pela URL do link de visualização geram encargos.
 
 ## Usando a integração do Link de visualização para testar seu assistente
 {: #deploy-web-link-try}
@@ -41,7 +41,7 @@ Para testar o assistente por meio de um widget de bate-papo hospedado pela web, 
 
 1.  Na seção *Integrações*, clique no tile **Link de visualização**.
 
-    Se você não ativou o link de visualização quando criou o assistente, clique em **Incluir integração**, clique no tile de integração **Link de visualização** e, em seguida, clique em **Criar**.
+    Se você não ativou o link de visualização ao criar o assistente, clique em **Incluir integração** e, em seguida, clique no quadro de integração **Link de visualização**.
 
 1.  **Opcional**: mude o nome e a descrição da página da web de visualização.
 
@@ -60,7 +60,7 @@ Para testar o assistente por meio de um widget de bate-papo hospedado pela web, 
 
 1.  Após o teste, é possível fechar a guia do navegador para sair da página da web pública.
 
-1.  Na ferramenta, clique em **Salvar mudanças** para salvar quaisquer edições feitas na integração de link de visualização e feche a página ou clique em **X** para fechar a página sem salvar.
+1.  Clique em **Salvar mudanças** para salvar quaisquer edições feitas na integração do link de visualização e fechar a página ou em **X** para fechar a página sem salvar.
 
 ## Considerações sobre Diálogo
 {: #deploy-web-link-dialog}

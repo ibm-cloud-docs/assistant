@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-07-29"
 
 subcollection: assistant
 
@@ -26,7 +26,7 @@ subcollection: assistant
 # Construindo um diálogo
 {: #dialog-build}
 
-Use a ferramenta {{site.data.keyword.conversationshort}} para criar seu diálogo.
+O diálogo define o que seu assistente diz em resposta aos clientes, com base no que ele acredita que os clientes desejam.
 {: shortdesc}
 
 ## Construindo um diálogo
@@ -34,18 +34,20 @@ Use a ferramenta {{site.data.keyword.conversationshort}} para criar seu diálogo
 
 Para criar um diálogo, conclua as etapas a seguir:
 
-1.  Clique na guia **Diálogo** e, em seguida, clique em **Criar**.
+1.  Clique na guia **Diálogo** e, em seguida, clique em **Criar diálogo**.
 
     Quando você abre o editor de diálogo pela primeira vez, os nós a seguir são criados:
 
-    - **Welcome**: o primeiro nó. Ele contém uma saudação que é exibida para seus usuários quando eles se engajam pela primeira vez com o serviço. É possível editar a saudação.
+    - **Welcome**: o primeiro nó. Ele contém uma saudação exibida para seus usuários quando eles interagem pela primeira vez com seu assistente. É possível editar a saudação.
 
     Esse nó não é acionado em fluxos de diálogo que são iniciados pelos usuários. Por exemplo, os diálogos usados em integrações com canais como o Facebook ou o Slack ignoram os nós com a condição especial `welcome`. Consulte  [ Inicialização de diálogo ](/docs/services/assistant?topic=assistant-dialog-start)  para obter mais informações.
     {: note}
 
-    - **Anything else**: O nó final. Ele contém frases que são usadas para responder aos usuários quando suas entradas não são reconhecidas. É possível substituir as respostas que são fornecidas ou incluir mais respostas com um significado semelhante para incluir variedade à conversa. Também é possível escolher se deseja que o serviço retorne cada resposta que está definida por vez ou as retorne em ordem aleatória.
+    - **Anything else**: O nó final. Ele contém frases que são usadas para responder aos usuários quando suas entradas não são reconhecidas. É possível substituir as respostas que são fornecidas ou incluir mais respostas com um significado semelhante para incluir variedade à conversa. Também é possível escolher se você deseja que seu assistente retorne cada resposta definida por vez ou as devolva em ordem aleatória.
 1.  Para incluir mais nós na árvore de diálogo, clique no ícone **Mais** ![Ícone Mais](images/kabob.png) no nó **Bem-vindo** e, em seguida, selecione **Incluir nó abaixo**.
-1.  Insira uma condição que, quando atendida, aciona o serviço para processar o nó.
+1.  No campo **Se o assistente reconhecer**, insira uma condição que, quando atendida, acione seu assistente para processar o nó. 
+
+    Para começar, você geralmente deseja incluir uma intenção como a condição. Por exemplo, incluir `#open_account` aqui significa que você deseja que a resposta especificada nesse nó seja retornada ao usuário quando a entrada dele indicar o desejo de abrir uma conta.
 
     À medida que você começa a definir uma condição, uma caixa será exibida mostrando suas opções. É possível inserir um dos caracteres a seguir e, em seguida, escolher um valor na lista de opções que é exibida.
 
@@ -83,19 +85,19 @@ Para criar um diálogo, conclua as etapas a seguir:
     Para obter mais informações sobre como testar valores em condições, consulte [Condições](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-conditions).
 1.  **Opcional**: se você deseja coletar várias partes de informações do usuário nesse nó, clique em **Customizar** e ative **Intervalos**. Veja [Reunindo informações com intervalos](/docs/services/assistant?topic=assistant-dialog-slots) para obter mais detalhes.
 1.  Insira uma resposta.
-    - Inclua os elementos de texto ou multimídia que você deseja que o serviço exiba para o usuário como uma resposta.
+    - Inclua os elementos de texto ou multimídia que deseja que seu assistente exiba para o usuário como uma resposta.
     - Se você deseja definir respostas diferentes com base em determinadas condições, clique em **Customizar** e ative **Múltiplas respostas**.
     - Para obter informações sobre respostas condicionais, respostas ricas ou como incluir a variedade em respostas, consulte [Respostas](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-responses).
 
 1.  Especifique o que fazer após o nó atual ser processado. É possível escolher entre as opções a seguir:
 
-    - **Aguardar entrada do usuário**: o serviço pausa até que uma nova entrada seja fornecida pelo usuário.
-    - **Ignorar entrada do usuário**: o serviço vai diretamente para o primeiro nó-filho. Essa opção estará disponível somente se o nó atual tiver pelo menos um nó-filho.
-    - **Ir para**: o serviço continua o diálogo processando o nó que você especifica. É possível escolher se o serviço deve avaliar a condição do nó de destino ou ir diretamente para a resposta do nó de destino. Veja [Configurando a ação Ir para](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-jump-to-config) para obter mais detalhes.
+    - **Aguardar entrada do usuário**: seu assistente é pausado até que a nova entrada seja fornecida pelo usuário.
+    - **Ignorar entrada do usuário**: seu assistente vai diretamente para o primeiro nó-filho. Essa opção estará disponível somente se o nó atual tiver pelo menos um nó-filho.
+    - **Ir para**: seu assistente continua o diálogo processando o nó especificado. É possível escolher se seu assistente deve avaliar a condição do nó de destino ou ignorar e ir diretamente para a resposta do nó de destino. Veja [Configurando a ação Ir para](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-jump-to-config) para obter mais detalhes.
 
-1.  **Opcional**: se você desejar que esse nó seja considerado quando um conjunto de opções de nó forem mostrados ao usuário no tempo de execução e o usuário for solicitado a escolher o que melhor corresponde ao seu objetivo, inclua uma descrição simples do objetivo do usuário manipulado por esse nó no campo **nome do nó externo**. Por exemplo,  * Fazer um pedido *.
+1.  **Opcional**: se você desejar que esse nó seja considerado quando um conjunto de opções de nó forem mostrados ao usuário no tempo de execução e o usuário for solicitado a escolher o que melhor corresponde ao seu objetivo, inclua uma descrição simples do objetivo do usuário manipulado por esse nó no campo **nome do nó externo**. Por exemplo, *Abrir uma conta*.
 
-    ![Somente plano Plus ou Premium](images/premium.png) O campo *nome do nó externo* é exibido somente para os usuários do plano Plus ou Premium. Consulte  [ Desambiguação ](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation)  para obter mais detalhes.
+    ![Somente plano Plus ou Premium](images/plus.png) O campo *nome do nó externo* é exibido somente para os usuários do plano Plus ou Premium. Consulte  [ Desambiguação ](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation)  para obter mais detalhes.
 
 1.  **Opcional**: nomeie o nó.
 
@@ -129,12 +131,16 @@ As consultas que você envia por meio da área de janela "Experimente" geram cha
     ![Captura de tela da mensagem de treinamento](images/training.png)
 1.  Verifique a resposta para ver se o diálogo interpretou corretamente sua entrada e escolheu a resposta apropriada.
 
-    A janela de bate-papo indica quais intenções e entidades foram reconhecidas na entrada:
+    A janela de bate-papo indica quais intenções e entidades foram reconhecidas na entrada.
 
-    ![Captura de tela da saída de diálogo de teste](images/test_dialog_output.png)
+    ![Captura de tela da saída do diálogo de teste](images/test_dialog_output.png)
+
+    Se desejar editar uma entidade reconhecida na entrada, clique no nome dela para abri-la na página Entidades. Se a intenção errada for reconhecida, será possível clicar na seta próxima ao nome dela para corrigi-la ou marcar o tópico como irrelevante. Para obter mais informações, consulte [Realizando melhorias nos dados de treinamento](/docs/services/assistant?topic=assistant-logs#logs-fix-data).
+
 1.  Se você deseja saber qual nó na árvore de diálogo acionou uma resposta, clique no ícone **Local** ![Local](images/location.png) próximo a ele. Se você ainda não estiver na guia Diálogo, abra-a.
 
-    É dado o foco ao nó de origem e a rota que o serviço atravessou na árvore para chegar até ele é destacada. Ela permanece destacada até que você execute outra ação, como inserir uma nova entrada de teste.
+    O nó de origem recebe o foco e a rota feita pelo seu assistente através da árvore para chegar a ele é destacada. Ela permanece destacada até que você execute outra ação, como inserir uma nova entrada de teste.
+
 1.  Para verificar ou configurar o valor de uma variável de contexto, clique no link **Gerenciar contexto**.
 
     Quaisquer variáveis de contexto que você definiu no diálogo serão exibidas.
@@ -150,7 +156,7 @@ As consultas que você envia por meio da área de janela "Experimente" geram cha
 
 1.  Continue interagindo com o diálogo para ver como a conversa flui através dele.
     - Para localizar e reenviar uma elocução de teste, é possível pressionar a tecla Para Cima para percorrer suas entradas recentes.
-    - Para remover elocuções de teste anteriores da área de janela de bate-papo e recomeçar, clique no link **Limpar**. Não apenas as elocuções e respostas de teste são removidas, mas essa ação também limpa os valores de quaisquer variáveis de contexto que foram configuradas como resultado de suas interações com o diálogo. Os valores de variáveis de contexto que você configurar ou mudar explicitamente não serão limpos.
+    - Para remover elocuções de teste anteriores da área de janela de bate-papo e recomeçar, clique no link **Limpar**. Não apenas as elocuções e respostas de teste são removidas, mas essa ação também limpa os valores de quaisquer variáveis de contexto que foram configuradas como resultado de suas interações com o diálogo.
 
 ### O que fazer em seguida
 {: #dialog-build-next-steps}
@@ -166,25 +172,26 @@ Se você estiver pronto para colocar a conversa para trabalhar ajudando seus usu
 ## Limites do nó de diálogo
 {: #dialog-build-node-limits}
 
-O número de nós de diálogo que podem ser criados por qualificação depende de seu plano de serviço.
+O número de nós de diálogo que podem ser criados por qualificação depende de seu tipo de plano.
 
-| Plano de Serviço     | Nós de diálogo por qualificação     |
+| Plano     | Nós de diálogo por qualificação     |
 |------------------|---------------------------:|
 | Premium          |                    100.000 |
 | Mais             |                    100.000 |
 | Padrão         |                    100.000 |
+| Plus Trial       |                     25.000 |
 | Lite             |                     100`*` |
-{: caption="Detalhes do plano de serviço" caption-side="top"}
+{: caption="Detalhes do plano" caption-side="top"}
 
 Os nós de diálogo de boas-vindas e anything_else que são preenchidos previamente na árvore contam para o total.
 
-Limite de profundidade da árvore: o serviço suporta 2.000 descendentes de nó de diálogo; a ferramenta executa melhor com 20 ou menos.
+Limite de profundidade da árvore: o diálogo suporta 2.000 descendentes de nó de diálogo, mas é melhor executado com 20 ou menos.
 
 `*` Os limites mudaram de 25.000 para 100 para planos Lite em 1º de dezembro de 2018. Os usuários de instâncias de serviço que foram criados antes da mudança do limite têm até 1º de junho de 2019 para fazer upgrade de seu plano ou editar os diálogos nas qualificações nas instâncias de serviço existentes para atender aos novos requisitos de limite.
 
 Para ver o número de nós de diálogo em uma qualificação de diálogo, execute um dos procedimentos a seguir:
 
-- Na ferramenta, se ela ainda não estiver associada a um assistente, inclua a qualificação de diálogo em um assistente e, em seguida, visualize o quadro de qualificações na página principal do assistente. A seção *dados treinados* lista o número de nós de diálogo.
+- Se ainda não estiver associada a um assistente, inclua a qualificação de diálogo em um assistente e, em seguida, visualize o quadro dela na página principal do assistente. A seção *dados treinados* lista o número de nós de diálogo.
 - Envie uma solicitação GET para o terminal de API /dialog_nodes e inclua o parâmetro `include_count=true`. Por exemplo:
 
   ```curl
@@ -193,7 +200,7 @@ Para ver o número de nós de diálogo em uma qualificação de diálogo, execut
 
   Na resposta, o atributo `total` no objeto `pagination` contém o número de nós de diálogo.
 
-Se o total parecer maior do que você esperava, isso pode ser porque o diálogo que você constrói na ferramenta é convertido em um objeto JSON pela ferramenta. Alguns campos que parecem fazer parte de um único nó são realmente estruturados como nós de diálogo separados no objeto JSON subjacente.
+Se o total parecer maior do que o esperado, isso poderá significar que o diálogo construído no aplicativo foi traduzido em um objeto JSON. Alguns campos que parecem fazer parte de um único nó são realmente estruturados como nós de diálogo separados no objeto JSON subjacente.
 
   - Cada nó e pasta é representado como seu próprio nó.
   - Cada resposta condicional que está associada a um único nó de diálogo é representada como um nó individual.
@@ -226,17 +233,16 @@ Os nós contendo seu termo de procura, com exemplos correspondentes, são mostra
 
 Outra maneira de descobrir um nó com base em seu ID de nó é seguindo estas etapas:
 
-1.  Na guia Diálogo da ferramenta, selecione qualquer nó em sua árvore de diálogo.
+1.  Na guia Diálogo, selecione qualquer nó em sua árvore de diálogo.
 1.  Feche a visualização de edição se ela estiver aberta para o nó atual.
 1.  No campo de local do navegador da web, deve ser exibida uma URL que possa a sintaxe a seguir:
 
-    `    https://watson-conversation.ng.bluemix.net/space/instance-id/workspaces/workspace-id/build/dialog#node=node-id
-    `
+    `https://assistant-location.watsonplatform.net/location/instance-id/workspaces/workspace-id/build/dialog#node=node-id`
 
 1.  Edite a URL substituindo o valor de `node-id` atual pelo ID do nó que você deseja localizar e, em seguida, envie a nova URL.
 1.  Se necessário, destaque a URL editada novamente e reenvie-a.
 
-A ferramenta é atualizada e desloca o foco para o nó de diálogo com o ID de nó que você especificou. Se o ID de nó for para um intervalo, uma condição do intervalo Localizado ou Não localizado, um manipulador de intervalo ou uma resposta condicional, o nó no qual o intervalo ou a resposta condicional é definida obtém o foco e o modal correspondente é exibido.
+A página é atualizada e desloca o foco para o nó de diálogo com o ID de nó especificado. Se o ID de nó for para um intervalo, uma condição do intervalo Localizado ou Não localizado, um manipulador de intervalo ou uma resposta condicional, o nó no qual o intervalo ou a resposta condicional é definida obtém o foco e o modal correspondente é exibido.
 
 Se ainda não for possível localizar o nó, será possível exportar a qualificação de diálogo e usar um editor JSON para procurar o arquivo JSON de qualificação.
 {: tip}
@@ -272,11 +278,11 @@ Você pode desejar mover um nó criado anteriormente para outra área do fluxo p
 
 Estas características da pasta afetam como os nós em uma pasta são processados:
 
-- Condição: se nenhuma condição for especificada, o serviço processará os nós dentro da pasta diretamente. Se uma condição for especificada, o serviço avaliará primeiro a condição da pasta para determinar se deve processar os nós dentro dela.
+- Condição: se nenhuma condição for especificada, seu assistente processará diretamente os nós na pasta. Se uma condição for especificada, seu assistente primeiro avaliará a condição da pasta para determinar se os nós serão processados dentro dela.
 - Customizações: todas as definições de configuração que você aplica à pasta são herdadas pelos nós na pasta. Se você muda as configurações de digressão da pasta, por exemplo, as mudanças são herdadas por todos os nós na pasta.
 - Hierarquia em árvore: os nós em uma pasta são tratados como nós raiz ou filho com base em se a pasta está incluída na árvore de diálogo no nível raiz ou filho. Quaisquer nós de nível raiz que você inclui em uma pasta de nível raiz continuam funcionando como nós raiz; eles não se tornam os nós-filhos da pasta, por exemplo. No entanto, se você mover um nó de nível raiz para uma pasta que é um filho de outro nó, o nó raiz se tornará um filho desse outro nó.
 
-As pastas não têm impacto sobre a ordem na qual os nós são avaliados. Os nós continuam a ser processados do primeiro ao último. Conforme o serviço percorre a árvore, quando ele encontra uma pasta, se a pasta não tem condição ou sua condição é true, ele processa imediatamente o primeiro nó na pasta e continua na árvore na ordem de lá. Se uma pasta não tem uma condição da pasta, ela fica transparente para o serviço e cada nó na pasta será tratado como qualquer outro nó individual na árvore.
+As pastas não têm impacto sobre a ordem na qual os nós são avaliados. Os nós continuam a ser processados do primeiro ao último. Conforme seu assistente avançar na árvore, ao encontrar uma pasta que não tenha uma condição ou cuja condição seja true, ele processará imediatamente o primeiro nó na pasta e continuará avançando na árvore desse ponto em diante. Se uma pasta não tiver uma condição de pasta, ela será transparente para seu assistente e cada nó nela será tratado como qualquer outro nó individual da árvore.
 
 ### Incluindo uma pasta
 {: #dialog-build-folders-add}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
 
@@ -48,7 +48,7 @@ Il completamento di questa esercitazione richiede circa 2 o 3 ore.
 
 Prima di iniziare, completa l'[Esercitazione introduttiva](/docs/services/assistant?topic=assistant-getting-started).
 
-Utilizzerai la capacità dell'esercitazione {{site.data.keyword.conversationshort}} che hai creato e aggiungerai dei nodi al semplice dialogo come parte dell'esercitazione iniziale. 
+Utilizzerai la capacità dell'esercitazione {{site.data.keyword.conversationshort}} che hai creato e aggiungerai dei nodi al semplice dialogo come parte dell'esercitazione iniziale.
 
 ## Passo 1: aggiungi intenti ed esempi
 {: #tutorial-car-dashboard-add-intents}
@@ -127,7 +127,7 @@ Crea le entità che potrebbero verificarsi nell'input utente che ha l'intento #t
     - Valore: `air conditioning`. Sinonimi: `air` e `AC`.
 
 1.  Fai clic sull'interruttore per **attivare** la corrispondenza fuzzy per l'entità `@appliance`.
-    Questa impostazione aiuta il servizio a riconoscere i riferimenti alle entità nell'input utente anche quando l'entità viene specificata in un modo che non corrisponde esattamente alla sintassi che usi qui.
+    Questa impostazione aiuta il tuo assistente a riconoscere i riferimenti alle entità nell'input utente anche quando l'entità viene specificata in un modo che non corrisponde esattamente alla sintassi che usi qui.
 1.  Fai clic sull'icona **Chiudi** ![Freccia di chiusura](images/close_arrow.png) per completare l'aggiunta dell'entità `@appliance`.
 1.  Ripeti i passi 2-8 per creare l'entità `@genre` con la corrispondenza fuzzy attivata e i seguenti valori e sinonimi:
 
@@ -165,7 +165,7 @@ Ci sono tre possibili scenari, basati sugli intenti e le entità che hai definit
 
 **Scenario 2**: l'utente vuole attivare qualsiasi altro dispositivo valido, nel qual caso l'assistente ripete il nome del dispositivo richiesto in un messaggio che indica che verrà attivato.
 
-**Scenario 3**: l'utente non specifica un nome dispositivo riconoscibile, nel qual caso l'assistente deve chiedere un chiarimento. 
+**Scenario 3**: l'utente non specifica un nome dispositivo riconoscibile, nel qual caso l'assistente deve chiedere un chiarimento.
 
 Aggiungi i nodi che verificano queste condizioni di scenario in quest'ordine in modo che il dialogo valuti prima la condizione più specifica.
 
@@ -288,13 +288,13 @@ Ora aggiungi un nodo peer che viene attivato se l'utente non specifica un tipo d
 
     ![Mostra la scelta di un intento diverso e il riaddestramento](images/tut-change-intent.gif){: gif}
 
-Facoltativamente, puoi riesaminare la capacità **Servizio clienti - Esempio** per vedere questo stesso caso di utilizzo arricchito ancora di più con un dialogo più lungo e ulteriori funzionalità. 
+Facoltativamente, puoi riesaminare la capacità **Servizio clienti - Esempio** per vedere questo stesso caso di utilizzo arricchito ancora di più con un dialogo più lungo e ulteriori funzionalità.
 
 1.  Fai clic sul pulsante **Torna alle capacità** ![Mostra il pulsante Torna alle capacità nel menu](images/workspaces-button.png) dal menu di navigazione.
 
 1.  Fai clic su **Aggiungi un esempio**.
 
-    La capacità di esempio viene aggiunta al tuo elenco di capacità. Non viene associata a nessun assistente. 
+    La capacità di esempio viene aggiunta al tuo elenco di capacità. Non viene associata a nessun assistente.
 
 ## Passi successivi
 {: #tutorial-car-dashboard-deploy}

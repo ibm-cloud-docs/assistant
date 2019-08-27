@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -44,17 +44,17 @@ Primeiro, revise as definições de termos que estão associados aos logs do {{s
 
 - ***Assistente***: um aplicativo - às vezes referido como um 'robô de bate-papo' - que implementa seu conteúdo do {{site.data.keyword.conversationshort}}.
 - ***Conversa***: um conjunto de mensagens consistindo nas mensagens que um usuário individual envia para seu assistente e as mensagens que seu assistente envia de volta.
-- ***ID de conversa***: identificador exclusivo que é incluído em chamadas de mensagem individual para vincular as trocas de mensagens relacionadas. Os desenvolvedores de aplicativo que usam a versão V1 da API de serviço incluem esse valor para as chamadas de mensagem em uma conversa, incluindo o ID nos metadados do objeto de contexto.
+- ***ID de conversa***: identificador exclusivo que é incluído em chamadas de mensagem individual para vincular as trocas de mensagens relacionadas. Os desenvolvedores de aplicativos que usam a versão V1 da API do {{site.data.keyword.conversationshort}} incluem esse valor nas chamadas de mensagem em uma conversa incluindo o ID nos metadados do objeto de contexto.
 - ***ID de cliente***: um ID exclusivo que poderá ser usado para rotular os dados do cliente de forma que eles possam ser subsequentemente excluídos se o cliente solicitar a remoção de seus dados.
-- ***ID de implementação***: um rótulo exclusivo que os desenvolvedores de aplicativo que usam a versão V1 da API de serviço passam com cada mensagem do usuário para ajudar a identificar o ambiente de implementação que produziu a mensagem.
+- ***ID de implementação***: um rótulo exclusivo transmitido pelos desenvolvedores de aplicativos que usam a versão V1 da API do {{site.data.keyword.conversationshort}} com cada mensagem do usuário para ajudar a identificar o ambiente de implementação que produziu a mensagem.
 - ***Instância***: sua implementação do {{site.data.keyword.conversationshort}}, acessível com credenciais exclusivas. Uma instância do  {{site.data.keyword.conversationshort}}  pode conter múltiplos assistentes.
 - ***Mensagem***: uma mensagem é uma única elocução que um usuário envia para o assistente.
 - ***ID de qualificação***: o identificador exclusivo de uma qualificação.
 - ***Usuário***: um usuário é qualquer um que interage com seu assistente; geralmente esses são seus clientes.
 - ***ID do usuário***: um rótulo exclusivo que é usado para controlar o nível de uso de serviço de um usuário específico.
-- ***ID de área de trabalho***: o identificador exclusivo de uma área de trabalho. Embora quaisquer áreas de trabalho criadas antes de 9 de novembro sejam mostradas como qualificações na ferramenta, uma qualificação e uma área de trabalho não são a mesma coisa. Uma qualificação é efetivamente um wrapper para uma área de trabalho V1.
+- ***ID de área de trabalho***: o identificador exclusivo de uma área de trabalho. Embora as áreas de trabalho criadas antes de 9 de novembro sejam mostradas como qualificações na interface com o usuário do produto, uma qualificação e uma área de trabalho não são a mesma coisa. Uma qualificação é efetivamente um wrapper para uma área de trabalho V1.
 
-**Importante**: a propriedade **ID do usuário** *não* é equivalente à propriedade **ID do cliente**, embora ambas possam ser passadas para o serviço. O campo **ID do usuário** é usado para rastrear níveis de uso para propósitos de faturamento, enquanto o campo **ID do cliente** é usado para suportar a rotulagem e a exclusão subsequente de mensagens que estão associadas a usuários finais. O ID do cliente é usado de forma consistente em todos os serviços do Watson e é especificado no cabeçalho `X-Watson-Metadata`. O ID do usuário é usado exclusivamente pelo serviço {{site.data.keyword.conversationshort}} e é passado no objeto de contexto de cada chamada da API /message.
+**Importante**: a propriedade de **ID do usuário** *não* é equivalente à propriedade de **ID do cliente**, embora ambas possam ser transmitidas com a mensagem. O campo **ID do usuário** é usado para rastrear níveis de uso para propósitos de faturamento, enquanto o campo **ID do cliente** é usado para suportar a rotulagem e a exclusão subsequente de mensagens que estão associadas a usuários finais. O ID do cliente é usado de forma consistente em todos os serviços do Watson e é especificado no cabeçalho `X-Watson-Metadata`. O ID do usuário é usado exclusivamente pelo serviço {{site.data.keyword.conversationshort}} e é passado no objeto de contexto de cada chamada da API /message.
 
 ## Ativando Métricas do Usuário
 {: #logs-resources-user-id}
@@ -103,6 +103,8 @@ A IBM criou blocos de notas do Jupyter que podem ser usados para analisar os dad
 
 Há um conjunto de blocos de notas que podem ser usados com as ferramentas Python padrão e um conjunto projetado para uso otimizado com o {{site.data.keyword.DSX_full}}. O {{site.data.keyword.DSX_short}} é um produto que fornece um ambiente no qual é possível selecionar e escolher as ferramentas que você precisa para analisar e visualizar dados, para limpar e modelar dados, para alimentar dados de fluxo ou para criar, treinar e implementar modelos de aprendizado de máquina. Consulte a [documentação do produto ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://dataplatform.cloud.ibm.com/docs/content/getting-started/welcome-main.html){:new_window} para obter mais detalhes.
 
+Para saber mais sobre como blocos de notas podem ajudar a melhorar seu assistente, [leia esta postagem do blog ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://medium.com/ibm-watson/continuously-improve-your-watson-assistant-with-jupiter-notebooks-60231df4f01f).
+
 Os seguintes notebooks estão disponíveis:
 
 - **Medida**: reúne métricas que focam a cobertura (com que frequência o assistente está suficientemente confiante para responder aos usuários) e a efetividade (quando o assistente responde, se as respostas estão satisfazendo as necessidades do usuário).
@@ -114,14 +116,14 @@ O [Guia de melhores práticas de melhoria contínua do Watson Assistant ![Ícone
 ### Usando os blocos de notas com o  {{site.data.keyword.DSX}}
 {: #logs-resources-notebooks-studio}
 
-Se você escolher usar os blocos de notas que são projetados para uso com o {{site.data.keyword.DSX}}, em um alto nível, as etapas serão:
+Ao escolher utilizar os blocos de notas projetados para uso com o {{site.data.keyword.DSX}}, as etapas serão praticamente como a seguir:
 
 1.  Crie uma conta do {{site.data.keyword.DSX}}, [crie um projeto ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://dataplatform.cloud.ibm.com/docs/content/getting-started/projects.html?context=analytics){:new_window} e inclua uma conta do Cloud Object Storage nele.
 1.  Na comunidade do {{site.data.keyword.DSX}}, obtenha o [bloco de notas Medir o desempenho do Watson Assistant ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")]( https://dataplatform.cloud.ibm.com/exchange/public/entry/view/133dfc4cd1480bbe4eaa78d3f635e568).
 1   Siga as instruções passo a passo fornecidas com o bloco de notas para analisar um subconjunto de trocas de diálogo nos logs.
 
     Os insights são visualizados de maneiras que tornam mais fácil entender a cobertura e a efetividade do assistente.
-1.  Exporte um conjunto de amostra das visualizações subjacentes dos logs de conversas ineficazes e, em seguida, analise e anote-as.
+1.  Exporte um conjunto de amostra dos logs de conversas ineficazes e, em seguida, analise-os e anote-os.
 
     Por exemplo, indique se uma resposta está correta. Se estiver correta, marque se ela é útil. Se uma resposta estiver incorreta, identifique a causa raiz, por exemplo, a intenção ou entidade errada foi detectada ou o nó de diálogo errado foi acionado. Depois de identificar a causa raiz, indique qual teria sido a opção correta.
 1.  Alimente a planilha anotada para o [bloco de notas Analisar a efetividade do Watson Assistant](https://dataplatform.cloud.ibm.com/exchange/public/entry/view/133dfc4cd1480bbe4eaa78d3f636921c).

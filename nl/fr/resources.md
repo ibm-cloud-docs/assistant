@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-08-07"
+lastupdated: "2019-05-14"
 
 subcollection: assistant
 
@@ -43,8 +43,8 @@ Liens vers des ressources, des vidéos, des tutoriels et des articles qui peuven
 - [Agent conversationnel de commande de pizza à l'aide d'attributs![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://developer.ibm.com/code/journey/assemble-a-pizza-ordering-chatbot-dialog/){: new_window}
 - [Création d'une compétence Amazon Alexa à l'aide de {{site.data.keyword.conversationshort}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/IBM/alexa-skill-watson-conversation){: new_window}
 - [Ajout d'un agent conversationnel à WordPress à l'aide de {{site.data.keyword.conversationshort}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://wordpress.org/plugins/conversation-watson/){: new_window}
-- [Tutoriel : Build a database-driven Slackbot ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://cloud.ibm.com/docs/tutorials/slack-chatbot-database-watson.html){: new_window}
-- [Tutoriel : Build a voice-enabled Android chatbot ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://cloud.ibm.com/docs/tutorials/android-watson-chatbot.html){: new_window}
+- [Tutoriel : Génération d'un Slackbot basé sur une base de données ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://cloud.ibm.com/docs/tutorials/slack-chatbot-database-watson.html){: new_window}
+- [Tutoriel : Génération d'un robot conversationnel Android à commande vocale ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://cloud.ibm.com/docs/tutorials/android-watson-chatbot.html){: new_window}
 
 ## Création à l'aide de vidéos Watson
 {: #resources-videos}
@@ -60,16 +60,17 @@ Sur la base d'une série d'analyses techniques approfondies menées par IBM. Ces
 
 Autres vidéos créées par des employés d'IBM.
 
-- [Digital Technical Enablement ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://ibm-dte.mybluemix.net/ibm-watson-assistant){: new_window} : ensemble de ressources, y compris une visite guidée du produit et un laboratoire pratique.
-- [{{site.data.keyword.conversationshort}}Watson Conversation Integrations Tutorial ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.youtube.com/watch?v=O3silvVBaC8&t=3s){: new_window} : tutoriel de 10 minutes qui vous montre comment connecter {{site.data.keyword.conversationshort}} à Twilio à l'aide de Botkit pour créer un agent conversationnel pour les SMS. 
-- [Show me how to use {{site.data.keyword.conversationshort}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://youtu.be/tUkLIUOm550){: new_window} : vidéo qui présente le service en 3 minutes
-- [Introducing {{site.data.keyword.conversationshort}} service ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://youtu.be/A96nLYSMltA){: new_window} : vidéo d'introduction qui dure 1 minute.  
-- [Walkthrough of {{site.data.keyword.conversationshort}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://youtu.be/ELwWhJGE2P8){: new_window} : revue de projet technique qui dure 14 minutes.  
+- [Digital Technical Enablement ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://ibm-dte.mybluemix.net/watson-assistant){: new_window} : ensemble de ressources, y compris une visite guidée du produit et un laboratoire pratique.
+- [{{site.data.keyword.conversationshort}} Integrations Tutorial ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.youtube.com/watch?v=O3silvVBaC8&t=3s){: new_window} : tutoriel de 10 minutes qui vous montre comment connecter {{site.data.keyword.conversationshort}} à Twilio à l'aide de Botkit pour créer un agent conversationnel pour les SMS.
+- [Show me how to use {{site.data.keyword.conversationshort}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://youtu.be/tUkLIUOm550){: new_window} : vidéo qui présente le produit en 3 minutes
+- [Introducing {{site.data.keyword.conversationshort}} service ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://youtu.be/A96nLYSMltA){: new_window} : vidéo d'introduction qui dure 1 minute.
+- [Walkthrough of {{site.data.keyword.conversationshort}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://youtu.be/ELwWhJGE2P8){: new_window} : revue de projet technique qui dure 14 minutes.
 
-## IBM Watson Academy
+## Matériel éducatif
 {: #resources-academy}
 
-- [{{site.data.keyword.conversationshort}} Foundations ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://ibm.com/training/watsonacademy){: new_window}
+- [Watson Academy ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://ibm.com/training/watsonacademy){: new_window}
+- [Coursera: Building AI Powered Chatbots Without Programming ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.coursera.org/learn/building-ai-powered-chatbots)
 
 ## Blogs
 {: #resources-blogs}

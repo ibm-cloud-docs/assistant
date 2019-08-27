@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-05-20"
 
 subcollection: assistant
+
 
 ---
 
@@ -35,7 +36,7 @@ subcollection: assistant
 
 无法导出以下数据：
 
-<!--- Search skill -->
+- 搜索技能
 - 助手，包括任何配置的集成
 
 ## 保留日志
@@ -73,7 +74,9 @@ subcollection: assistant
 
 1.  单击**技能**选项卡。
 
-1.  单击**新建**。
+1.  单击**创建技能**。
+
+1.  如果提供了多种技能类型的选项，请进行选择以创建对话技能。
 
 1.  单击**导入技能**，然后单击**选择 JSON 文件**，并选择要导入的 JSON 文件。
 
@@ -95,7 +98,7 @@ subcollection: assistant
     - **描述**：可选的描述，长度不超过 200 个字符。
     - **语言**：将对技能进行训练以理解用户输入的语言。缺省值为“英语”。
 
-创建技能后，该技能即会在“技能”页面上显示为磁贴。
+创建对话技能后，该技能即会在“技能”页面上显示为磁贴。
 
 ## 重新创建助手
 {: #backup-recreate-assistant}

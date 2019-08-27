@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-07-31"
 
 subcollection: assistant
 
@@ -10,6 +10,7 @@ subcollection: assistant
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
@@ -35,24 +36,31 @@ IBM 致力于为客户和合作伙伴提供创新的数据隐私、安全和监�
 
 如果需要为创建的 {{site.data.keyword.cloud}} {{site.data.keyword.watson}} 资源请求 GDPR 支持
 
-- 在欧盟，请参阅 [Requesting support for IBM Cloud Watson resources created in the European Union ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/docs/services/watson/getting-started-gdpr-sar#request-EU){: new_window}。
-- 在欧盟以外的地区，请参阅 [Requesting support for resources outside the European Union ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/docs/services/watson/getting-started-gdpr-sar#request-non-EU){: new_window}。
+- 在欧盟内，请参阅[为欧盟之内创建的 IBM Cloud Watson 资源请求支持 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/docs/services/watson/getting-started-gdpr-sar#request-EU){: new_window}。
+- 在欧盟以外的地区，请参阅[为欧盟之外的资源请求支持 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/docs/services/watson/getting-started-gdpr-sar#request-non-EU){: new_window}。
 
 ## 欧盟一般数据保护条例 (GDPR)
 {: #information-security-gdpr}
 
 IBM 致力于为客户和合作伙伴提供创新的数据隐私、安全和监管解决方案，以协助他们完成 GDPR 合规旅程。
 
-在[此处 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](../../icons/launch-glyph.svg "外部链接图标")](http://www.ibm.com/gdpr) 了解有关 IBM 自己的 GDPR 就绪性旅程以及支持您合规旅程的 GDPR 功能和产品的更多信息{: new_window}。
+在[此处 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](../../icons/launch-glyph.svg "外部链接图标")](http://www.ibm.com/gdpr) 了解有关 IBM 自己的 GDPR 就绪性旅程以及支持您合规旅程的 GDPR 功能和产品的更多信息{: new_window}.
 
-## 标注和删除 {{site.data.keyword.conversationshort}} 中的数据
+## 健康保险可移植性和责任法案 (HIPAA)
+{: #information-security-hipaa}
+
+美国健康保险可移植性和责任法案 (HIPAA) 支持可用于在 2019 年 4 月 1 日或之后创建且在华盛顿位置托管的高端套餐。有关更多信息，请参阅[启用欧盟支持和支持 HIPAA 设置](/docs/account?topic=account-eu-hipaa-supported#eu-hipaa-supported){: external}。
+
+不要向创建的训练数据（实体和意向，包括用户示例）添加个人健康信息 (PHI)。特别是，确保从上传用于挖掘意向或意向用户示例建议的包含实际用户话语的文件中，除去所有 PHI。
+
+## 标注和删除 Watson Assistant 中的数据
 {: #information-security-gdpr-wa}
 
-不要向创建的训练数据（实体和意向，包括用户示例）添加个人数据。特别是，确保从上传用于挖掘用户示例建议的包含实际用户发声的文件中，除去所有个人可标识信息。
+不要向创建的训练数据（实体和意向，包括用户示例）添加个人数据。特别是，确保从上传用于挖掘用户示例建议的包含实际用户话语的文件中，除去所有个人可标识信息。
 
 **注：**试验性和 Beta 功能不适用于生产环境，因此在标注和删除数据时，不保证能按预期起作用。在实现需要标注和删除数据的解决方案时，不应使用试验性和 Beta 功能。
 
-如果需要从 {{site.data.keyword.conversationshort}} 实例中除去客户的消息数据，可以根据客户的客户标识来执行此操作，但条件是在消息发送到服务时，将消息与客户标识相关联。
+如果需要从 {{site.data.keyword.conversationshort}} 实例中除去客户的消息数据，可以根据客户的客户标识来执行此操作，但条件是在消息发送到 {{site.data.keyword.conversationshort}} 时，将消息与客户标识相关联。
 
 **注：**“预览链接”和自动 Facebook 集成功能不支持标记，因此会根据客户标识来删除数据。在需要能够根据客户标识进行删除的解决方案中，不应使用这些功能。
 
@@ -95,7 +103,7 @@ curl -X GET -u "apikey:3Df... ...Y7Pc9"
 ### 删除数据
 {: #information-security-delete-data}
 
-要删除服务可能已存储的与特定用户关联的任何消息日志数据，请使用 `DELETE /user_data` V1 API 方法。通过随请求一起传递 `customer_id` 参数，指定用户的客户标识。
+要删除助手可能已存储的与特定用户关联的任何消息日志数据，请使用 `DELETE /user_data` V1 API 方法。通过随请求一起传递 `customer_id` 参数，指定用户的客户标识。
 
 使用此删除方法只能删除通过包含关联客户标识的 `POST /message` API 端点添加的数据。无法根据客户标识删除其他方法添加的数据。例如，无法通过这种方式来删除从客户会话中添加的实体和意向。这些方法不支持个人数据。
 

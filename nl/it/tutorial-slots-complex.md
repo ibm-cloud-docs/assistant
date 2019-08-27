@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-08-12"
 
 subcollection: assistant
 
@@ -85,7 +85,7 @@ Quando vengono salvati i valori di entità di sistema per data e ora, vengono co
 
 1.  Fai clic su **Salva**.
 
-1.  Verifica di nuovo il nodo. Apri il riquadro "Provalo" e fai clic su **Cancella** per eliminare i valori della variabile di contesto dello slot che hai specificato nella precedente verifica del nodo con slot. Per vedere in che modo influiscono le modifiche che hai apportato, utilizza il seguente script:
+1.  Verifica di nuovo il nodo. Apri il riquadro "Try it out" e fai clic su **Cancella** per eliminare i valori della variabile di contesto dello slot che hai specificato nella precedente verifica del nodo con slot. Per vedere in che modo influiscono le modifiche che hai apportato, utilizza il seguente script:
 
     <table>
     <caption>Dettagli script</caption>
@@ -146,7 +146,7 @@ In questo passo, apprenderai come richiedere tutte le informazioni in una volta.
 
 1.  Fai clic su ![Chiudi](images/close.png) per chiudere la vista di modifica del nodo.
 
-1.  Verifica questa modifica nel riquadro "Provalo". Apri il riquadro e quindi fai clic su **Cancella** per eliminare i valori della variabile di contesto dello slot del test precedente.
+1.  Verifica questa modifica nel riquadro "Try it out". Apri il riquadro e quindi fai clic su **Cancella** per eliminare i valori della variabile di contesto dello slot del test precedente.
 
 1.  Immetti `i'd like to make a reservation.`
 
@@ -156,7 +156,7 @@ In questo passo, apprenderai come richiedere tutte le informazioni in una volta.
 
     Il dialogo risponde con `OK. I am making you a reservation for 2 on Saturday at 8:00 PM.`
 
-    ![Mostra il riquadro Provalo quando l'utente fornisce tutte le informazioni in un input.](images/slots-everything-tested.png)
+    ![Mostra il riquadro Try it out quando l'utente fornisce tutte le informazioni in un input.](images/slots-everything-tested.png)
 
 Se l'utente fornisce uno qualsiasi dei valori di slot nell'input iniziale, la richiesta che chiede tutte le informazioni non viene visualizzata. Ad esempio, l'input iniziale dall'utente potrebbe essere `I want to make a reservation for this Friday night.` In questo caso, la richiesta iniziale viene ignorata in quanto non devi chiedere le informazioni che l'utente ha già fornito - la data (`Venerdì`), in questo esempio. Il dialogo mostra invece la richiesta per il successivo slot vuoto.
 {: note}
@@ -164,9 +164,9 @@ Se l'utente fornisce uno qualsiasi dei valori di slot nell'input iniziale, la ri
 ## Passo 3: gestisci correttamente gli zeri
 {: #tutorial-slots-complex-recognize-zero}
 
-Quando utilizzi l'entità di sistema `sys-number` in una condizione dello slot, non gestisce correttamente gli zeri. Invece di impostare la variabile di contesto che definisci per lo slot su 0, il servizio la imposta su false. Di conseguenza, lo slot non crede di essere pieno e richiede all'utente un numero più volte finché l'utente non specifica un numero diverso da zero.
+Quando utilizzi l'entità di sistema `sys-number` in una condizione dello slot, non gestisce correttamente gli zeri. Invece di impostare la variabile di contesto che definisci per lo slot su 0, il tuo assistente la imposta su false. Di conseguenza, lo slot non crede di essere pieno e richiede all'utente un numero più volte finché l'utente non specifica un numero diverso da zero.
 
-1.  Verifica il nodo in modo da poter comprendere meglio il problema. Apri il riquadro "Provalo" e fai clic su **Cancella** per eliminare i valori della variabile di contesto dello slot che hai specificato nella precedente verifica del nodo con slot. Utilizza il seguente script:
+1.  Verifica il nodo in modo da poter comprendere meglio il problema. Apri il riquadro "Try it out" e fai clic su **Cancella** per eliminare i valori della variabile di contesto dello slot che hai specificato nella precedente verifica del nodo con slot. Utilizza il seguente script:
 
     <table>
     <caption>Dettagli script</caption>
@@ -202,24 +202,37 @@ Quando utilizzi l'entità di sistema `sys-number` in una condizione dello slot, 
 
     Rimarrai bloccato in questo loop finché non specifichi un numero diverso da 0.
 
-1.  Per assicurarti che lo slot tratti correttamente gli zeri, modifica la condizione dello slot da `@sys-number` a `@sys-number || @sys-number:0`.
+1.  Per assicurarti che lo slot tratti correttamente gli zeri, modifica la condizione dello slot da `@sys-number` a `@sys-number >= 0`.
 
-1.  Fai clic sull'icona **Modifica risposta** ![Modifica risposta](images/edit-slot.png) per lo slot.
+1.  Apri lo slot per modificarlo facendo clic sull'icona **Modifica slot** ![Modifica slot](images/edit-slot.png). Dal menu **Opzioni** ![icona Altro](images/kabob.png), apri l'editor JSON.
 
-1.  Quando viene creata la variabile di contesto, utilizza automaticamente la stessa espressione specificata per la condizione dello slot. Tuttavia, la variabile di contesto deve salvare solo un numero. Modifica il valore che era stato salvato come variabile di contesto per rimuovere l'operatore `OR` da esso. Dal menu **Altro** ![Icona Altro](images/kabob.png), seleziona **Apri editor JSON** e quindi modifica il JSON che definisce la variabile di contesto. Modifica la variabile da `"guests":"@sys-number || @sys-number:0"` in modo che utilizzi la seguente sintassi:
+1.  Modifica il valore della variabile di contesto.
+
+    Il valore sarà simile a quanto segue:
 
     ```json
     {
       "context": {
-        "guests": "@sys-number"
+        "number": "@sys-number >= 0"
       }
     }
     ```
     {: codeblock}
 
-1.  Fai clic su **Salva**.
+    Modificalo con quanto segue:
 
-1.  Verifica di nuovo il nodo. Apri il riquadro "Provalo" e fai clic su **Cancella** per eliminare i valori della variabile di contesto dello slot che hai specificato nella precedente verifica del nodo con slot. Per vedere in che modo influiscono le modifiche che hai apportato, utilizza il seguente script:
+    ```json
+    {
+      "context": {
+        "number":"@sys-number"
+      }
+    }
+    ```
+    {: codeblock}
+
+1.  Salva le tue modifiche. 
+
+1.  Verifica di nuovo il nodo. Apri il riquadro "Try it out" e fai clic su **Cancella** per eliminare i valori della variabile di contesto dello slot che hai specificato nella precedente verifica del nodo con slot. Per vedere in che modo influiscono le modifiche che hai apportato, utilizza il seguente script:
 
     <table>
     <caption>Dettagli script</caption>
@@ -342,9 +355,9 @@ Per convalidare l'input utente, completa la procedura riportata di seguito:
 1.  Modifica lo slot @sys-number per convalidare il valore fornito dall'utente nei seguenti modi:
 
     - Controlla che il numero di clienti specificato sia maggiore di zero.
-    - Anticipa e risolvi il caso in cui l'utente cambia il numero di ospiti. 
+    - Anticipa e risolvi il caso in cui l'utente cambia il numero di ospiti.
 
-      Se, ad un certo punto, mentre il nodo viene elaborato, l'utente cambia un valore slot, viene aggiornato il valore della variabile di contesto slot corrispondente. Tuttavia, può essere utile far sapere all'utente che il valore viene sostituito, sia per fornire un feedback chiaro all'utente che per dargli la possibilità di correggerlo se la modifica non era quella desiderata. 
+      Se, ad un certo punto, mentre il nodo viene elaborato, l'utente cambia un valore slot, viene aggiornato il valore della variabile di contesto slot corrispondente. Tuttavia, può essere utile far sapere all'utente che il valore viene sostituito, sia per fornire un feedback chiaro all'utente che per dargli la possibilità di correggerlo se la modifica non era quella desiderata.
 
 1.  Dalla vista di modifica del nodo con slot, fai clic sull'icona **Modifica slot** ![Modifica slot](images/edit-slot.png) per lo slot `@sys-number`.
 
@@ -360,13 +373,13 @@ Per convalidare l'input utente, completa la procedura riportata di seguito:
       <th>Azione</th>
     </tr>
     <tr>
-      <td>`entities['sys-number']?.value == 0`</td>
+      <td>`@sys-number == 0`</td>
       <td>Please specify a number that is larger than 0.</td>
       <td>Cancella lo slot e riprova</td>
     </tr>
     <tr>
       <td>`(event.previous_value != null) && (event.previous_value != event.current_value)`</td>
-      <td>Ok, updating the number of guests from `<? event.previous_value ?>` a `<? event.current_value ?>`.</td>
+      <td>Ok, updating the number of guests from `<? event.previous_value ?>` to `<? event.current_value ?>`.</td>
       <td>Vai avanti</td>
     </tr>
     <tr>
@@ -437,7 +450,7 @@ Potresti voler progettare il tuo dialogo in modo che richiami un servizio di pre
 
 1.  Fai clic sull'icona **Modifica slot** ![Modifica slot](images/edit-slot.png). Dal menu **Opzioni** ![Icona Altro](images/kabob.png) nell'intestazione *Configura slot 4*, seleziona **Abilita risposte condizionali**.
 
-1.  Nella richiesta **Trovato**, aggiungi una condizione che controlli la presenta di una risposta No (`#no`). Utilizza la risposta `D'accordo. Ricominciamo. Cercherò di stare al passo.` In caso contrario, puoi presupporre che l'utente abbia confermato i dettagli della prenotazione e procedere con la prenotazione.
+1.  Nella richiesta **Trovato**, aggiungi una condizione che controlli la presenta di una risposta No (`#no`). Utilizza la risposta `D'accordo. Let's start over. Cercherò di stare al passo.` In caso contrario, puoi presupporre che l'utente abbia confermato i dettagli della prenotazione e procedere con la prenotazione.
 
     Quando viene trovato l'intento `#no`, devi anche reimpostare le variabili di contesto che hai salvato precedentemente su null, in questo modo puoi chiedere di nuovo le informazioni. Puoi reimpostare i valori delle variabili di contesto utilizzando l'editor JSON. Fai clic sull'icona **Modifica risposta** ![Modifica risposta](images/edit-slot.png) per la risposta condizionale che hai appena aggiunto. Dal menu **Opzioni**  ![Risposta avanzata](images/kabob.png), fai clic su **Apri editor JSON**. Aggiungi un blocco `context` che imposta le variabili di contesto dello slot su `null`, come mostrato di seguito.
 
@@ -644,9 +657,9 @@ L'aggiunta di un nodo con slot è efficace perché consente gli utenti di esegui
     Se configuri più di uno slot per ignorare gli altri slot oppure configuri un altro gestore eventi a livello del nodo per ignorare gli slot, devi utilizzare un approccio diverso per controllare se l'intento #exit è stato attivato. Vedi [Gestione delle richieste per uscire dal processo](/docs/services/assistant?topic=assistant-dialog-slots#dialog-slots-node-level-handler) per un modo alternativo con cui effettuare tale operazione.
     {: note}
 
-1.  Vuoi che il servizio controlli la presenza della proprietà `has_skipped_slots` prima che visualizzi la risposta a livello di nodo standard. Sposta la risposta condizionale `has_skipped_slots` verso l'alto in modo che venga elaborata prima della risposta condizionale originale oppure non verrà mai attivata. Per eseguire tale operazione, fai clic sulla risposta appena aggiunta, utilizza la **freccia rivolta verso l'alto** per spostarla verso l'alto e poi fai clic su **Salva**.
+1.  Vuoi che il tuo assistente controlli la presenza della proprietà `has_skipped_slots` prima che visualizzi la risposta a livello di nodo standard. Sposta la risposta condizionale `has_skipped_slots` verso l'alto in modo che venga elaborata prima della risposta condizionale originale oppure non verrà mai attivata. Per eseguire tale operazione, fai clic sulla risposta appena aggiunta, utilizza la **freccia rivolta verso l'alto** per spostarla verso l'alto e poi fai clic su **Salva**.
 
-1.  Verifica questa modifica utilizzando il seguente script nel riquadro "Provalo".
+1.  Verifica questa modifica utilizzando il seguente script nel riquadro "Try it out".
 
     <table>
     <caption>Dettagli script</caption>
@@ -806,7 +819,7 @@ Per le informazioni $time, definirai un'istruzione di follow-up che verrà visua
 ## Passo 9: connettiti ad un servizio esterno
 {: #tutorial-slots-complex-action}
 
-Ora che il tuo dialogo può raccogliere e confermare i dettagli di prenotazione di un utente, puoi richiamare un servizio esterno per prenotare effettivamente un tavolo nel sistema del ristorante oppure puoi farlo tramite un servizio di prenotazione online di più ristoranti. Per ulteriori dettagli, vedi [Esecuzione di chiamate programmatiche da un nodo di dialogo](/docs/services/assistant?topic=assistant-dialog-actions).
+Ora che il tuo dialogo può raccogliere e confermare i dettagli di prenotazione di un utente, puoi richiamare un servizio esterno per prenotare effettivamente un tavolo nel sistema del ristorante oppure puoi farlo tramite un servizio di prenotazione online di più ristoranti. Per ulteriori dettagli, vedi [Esecuzione di chiamate programmatiche da un nodo di dialogo](/docs/services/assistant?topic=assistant-dialog-webhooks).
 
 Nella logica che richiama il servizio di prenotazione, assicurati di controllare la presenza di `has_skipped_slots` e, se presente, di non proseguire con la prenotazione.
 

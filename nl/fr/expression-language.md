@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-06-04"
 
 subcollection: assistant
 
@@ -34,7 +34,7 @@ Vous pouvez écrire des expressions permettant d'accéder à des objets et à de
 Pour développer des valeurs de variable au sein d'autres variables, ou appeler des méthodes sur des propriétés et des objets globaux, utilisez la syntaxe d'expression `<? expression ?>`. Par exemple :
 
 - **Développement d'une propriété**
-    - `"output":{"text":"Votre nom est <? context.userName ?>"}`
+    - `"output":{"text":"Vous vous appelez <? context.userName ?>"}`
 
 - **Appel de méthodes sur des propriétés d'objets globaux**
     - `"context":{"email": "<? @email.literal ?>"}`
@@ -90,7 +90,7 @@ Si la valeur d'entité que vous souhaitez rechercher contient un caractère `)`,
 Le tableau suivant présente des exemples de la syntaxe abrégée que vous pouvez utiliser pour faire référence à des intentions :
 
 <table>
-  <caption>Syntaxe abrégée des intentions </caption>
+  <caption>Syntaxe abrégée des intentions</caption>
   <tr>
     <th>Syntaxe abrégée</th>
     <th>Syntaxe complète en SpEL</th>
@@ -138,7 +138,7 @@ Lorsque vous testez votre dialogue, vous pouvez afficher les détails des entit�
 ```
 {: codeblock}
 
-Pour l'entrée utilisateur *Hello now*, le service reconnaît les entités de système @sys-date et @sys-time, par conséquent, la réponse contient les objets d'entité suivants :
+Pour l'entrée utilisateur *Hello now*, l'assistant reconnaît les entités de système @sys-date et @sys-time, par conséquent, la réponse contient les objets d'entité suivants :
 
 ```json
 [
@@ -174,7 +174,7 @@ Un groupe de propriétés est associé à chaque entité. Vous pouvez accéder a
 
 | Propriété              | Définition | Conseils d'utilisation |
 |-----------------------|------------|------------|
-| *confidence*          | Pourcentage décimal qui représente la confiance du service dans l'entité reconnue. La cote de confiance relative à une entité est 0 ou 1, sauf si vous avez activé la fonction Fuzzy Matching pour les entités. Lorsque la fonction Fuzzy Matching est activée, le seuil de la cote de confiance par défaut est 0.3. Que la fonction Fuzzy Matching soit ou non activée, les entités de système ont toujours une cote de confiance égale à 1.0. | Vous pouvez utiliser cette propriété dans une condition de sorte que celle-ci renvoie la valeur false si la cote de confiance n'est pas supérieure à un pourcentage que vous spécifiez. |
+| *confidence*          | Pourcentage décimal qui représente la confiance de votre assistant dans l'entité reconnue. La cote de confiance relative à une entité est 0 ou 1, sauf si vous avez activé la fonction Fuzzy Matching pour les entités. Lorsque la fonction Fuzzy Matching est activée, le seuil de la cote de confiance par défaut est 0.3. Que la fonction Fuzzy Matching soit ou non activée, les entités de système ont toujours une cote de confiance égale à 1.0. | Vous pouvez utiliser cette propriété dans une condition de sorte que celle-ci renvoie la valeur false si la cote de confiance n'est pas supérieure à un pourcentage que vous spécifiez. |
 | *location*            | Un décalage de caractère basé sur des zéros indiquant où les valeurs d'entité détectées commencent et finissent dans le texte d'entrée. | Utilisez `.literal` pour extraire le passage de texte entre les valeurs de début et de fin qui sont stockées dans la propriété location. |
 | *value*               | Valeur d'entité identifiée dans l'entrée. | Cette propriété renvoie la valeur d'entité telle qu'elle est définie dans les données d'apprentissage, même si la correspondance a été établie avec l'un des synonymes qui lui sont associés. Vous pouvez utiliser `.values` pour capturer plusieurs occurrences d'une entité qui peuvent être présentes dans l'entrée utilisateur. |
 
@@ -188,14 +188,14 @@ Dans les exemples ci-dessous, la compétence contient une entité d'aéroport ay
   or
   `@airport = "JFK"`
 - Afin de renvoyer le nom d'entité tel qu'il a été spécifié par l'utilisateur dans la réponse de dialogue, utilisez la propriété .literal :
-  `Vous souhaitez donc vous rendre à l' <?entities.airport[0].literal?>...`
+  `Vous souhaitez donc vous rendre à l'<?entities.airport[0].literal?>...`
   ou
-  `Vous souhaitez donc vous rendre à l'@airport.literal ...`
+  `Vous souhaitez donc vous rendre à l'@airport.literal ...` 
 
   Avec ces deux formats, la réponse renvoyée est 'Vous souhaitez donc vous rendre à l'aéroport Kennedy...'. 
 
 - Des expressions comme `@airport:(JFK)` ou `@airport.contains('JFK')` font toujours référence à la **valeur** de l'entité (`JFK` dans cet exemple).
-- Pour restreindre les termes qui sont identifiés comme des aéroports dans l'entrée lorsque la fonction Fuzzy Matching est activée, vous pouvez spécifier cette expression dans une condition de noeud, par exemple :`@airport && @airport.confidence > 0.7`. Le noeud ne sera exécuté que si le service est confiant à 70 % que le texte d'entrée contient une référence à un aéroport.
+- Pour restreindre les termes qui sont identifiés comme des aéroports dans l'entrée lorsque la fonction Fuzzy Matching est activée, vous pouvez spécifier cette expression dans une condition de noeud, par exemple :`@airport && @airport.confidence > 0.7`. Le noeud ne sera exécuté que si l'assistant est confiant à 70 % que le texte d'entrée contient une référence à un aéroport.
 
 Dans l'exemple suivant, l'entrée utilisateur est *Est-il possible de changer des devises à JFK, Logan et O'Hare ?*
 
@@ -209,7 +209,8 @@ Dans l'exemple suivant, l'entrée utilisateur est *Est-il possible de changer de
 
   Pour faire référence ultérieurement à la liste capturée dans une réponse de dialogue, utilisez la syntaxe suivante :
   `Vous avez demandé des informations sur les aéroports suivants : <? $airports.join(', ') ?>.`
-  Cela s'affiche comme suit :
+
+Cela s'affiche comme suit :
   `Vous avez demandé des informations sur les aéroports suivants : JFK, Logan, O'Hare.`
 
 ## Accès à des intentions
@@ -217,7 +218,7 @@ Dans l'exemple suivant, l'entrée utilisateur est *Est-il possible de changer de
 
 Le tableau d'intentions contient une ou plusieurs intentions qui sont reconnues dans l'entrée utilisateur, triées par ordre croissant de côte de confiance.
 
-Chaque intention ne contient qu'une seule propriété, nommée `confidence`. La propriété confidence est un pourcentage décimal qui représente la cote de confiance du service dans l'intention reconnue.
+Chaque intention ne contient qu'une seule propriété, nommée `confidence`. La propriété confidence est un pourcentage décimal qui représente la cote de confiance de l'assistant dans l'intention reconnue.
 
 Lorsque vous testez votre dialogue, vous pouvez afficher les détails des intentions qui sont reconnues dans les entrées utilisateur en spécifiant cette expression dans une réponse de noeud de dialogue :
 
@@ -226,7 +227,7 @@ Lorsque vous testez votre dialogue, vous pouvez afficher les détails des intent
 ```
 {: codeblock}
 
-Pour l'entrée utilisateur *Hello now*, le service trouve une correspondance exacte avec l'intention #greeting. Par conséquent, il répertorie en premier les détails de l'objet d'intention #greeting. La réponse inclut également les 10 autres premières intentions définies dans la compétence, quelle que soit leur cote de confiance. (Dans cet exemple, la cote de confiance du service pour les autres intentions a pour valeur 0 car la première intention est une correspondance exacte.) Les 10 premières intentions sont renvoyées car le panneau"Try it out" envoie le paramètre `alternate_intents:true` avec sa demande. Si vous utilisez directement l'API et que vous souhaitez voir les 10 premiers résultats, prenez soin de spécifier ce paramètre dans votre appel. Si `alternate_intents` a pour valeur false (valeur par défaut), seules les intentions ayant une cote de confiance supérieure à 0.2 sont renvoyées dans le tableau.
+Pour l'entrée utilisateur *Hello now*, l'assistant trouve une correspondance exacte avec l'intention #greeting. Par conséquent, il répertorie en premier les détails de l'objet d'intention #greeting. La réponse inclut également les 10 autres premières intentions définies dans la compétence, quelle que soit leur cote de confiance. (Dans cet exemple, la cote de confiance du service pour les autres intentions a pour valeur 0 car la première intention est une correspondance exacte.) Les 10 premières intentions sont renvoyées car le panneau"Try it out" envoie le paramètre `alternate_intents:true` avec sa demande. Si vous utilisez directement l'API et que vous souhaitez voir les 10 premiers résultats, prenez soin de spécifier ce paramètre dans votre appel. Si `alternate_intents` a pour valeur false (valeur par défaut), seules les intentions ayant une cote de confiance supérieure à 0.2 sont renvoyées dans le tableau.
 
 ```json
 [{"intent":"greeting","confidence":1},
@@ -255,7 +256,7 @@ L'exemple suivant montre comment accéder à une entrée :
 - Pour exécuter un noeud si l'entrée utilisateur est "Yes", ajoutez l'expression suivante au condition de noeud :
   `input.text == 'Yes'`
 
-Vous pouvez utiliser n'importe laquelle des [méthodes String](/docs/services/conversation/dialog-methods#dialog-methods-strings) pour évaluer ou manipuler le texte de l'entrée utilisateur. Par exemple :
+Vous pouvez utiliser n'importe laquelle des [méthodes String](/docs/services/assistant/dialog-methods#dialog-methods-strings) pour évaluer ou manipuler le texte de l'entrée utilisateur. Par exemple :
 
 - Pour vérifier si l'entrée utilisateur contient "Yes", utilisez : `input.text.contains( 'Yes' )`.
 - La valeur true est renvoyée si l'entrée utilisateur est un nombre : `input.text.matches( '[0-9]+' )`.

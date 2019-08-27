@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-04-08"
 
 subcollection: assistant
 
@@ -40,7 +40,7 @@ Node.js 應用程式顯示 {{site.data.keyword.conversationshort}} 如何在簡�
 
 此 Node.js 應用程式是您可以使用 {{site.data.keyword.conversationshort}}（使用目的、實體及對話）建置之應用程式類型的完整開發範例。
 
-[檢視展示 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://watson-assistant-demo.ng.bluemix.net/){: new_window}。
+[查看展示 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://watson-assistant-demo.ng.bluemix.net/){: new_window} 或[分出程式碼 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/watson-developer-cloud/assistant-demo){: new_window}。
 
 ## {{site.data.keyword.conversationshort}} 及 {{site.data.keyword.discoveryshort}}
 {: #sample-apps-with-discovery}
@@ -52,7 +52,7 @@ Node.js 應用程式顯示 {{site.data.keyword.conversationshort}} 如何在簡�
 ## {{site.data.keyword.conversationshort}} 及 {{site.data.keyword.toneanalyzershort}}
 {: #sample-apps-with-tone-analyzer}
 
-{{site.data.keyword.toneanalyzerfull}} 會使用語言分析，從書面文字偵測到三種類型的音調：情緒、社會傾向及書寫樣式。Watson Food Coach 應用程式是與 {{site.data.keyword.conversationshort}} 整合之 {{site.data.keyword.toneanalyzershort}} 的範例。在此應用程式中，根據使用者所吃的食品類型以及他/她對該食品的感受，自動化代理程式會提供適當的指導回應，以鼓勵使用者進行健全的選擇。
+{{site.data.keyword.toneanalyzerfull}} 會使用語言分析，從書面文字偵測到三種類型的語氣：情緒、社會傾向及書寫樣式。Watson Food Coach 應用程式是與 {{site.data.keyword.conversationshort}} 整合之 {{site.data.keyword.toneanalyzershort}} 的範例。在此應用程式中，根據使用者所吃的食品類型以及他/她對該食品的感受，自動化代理程式會提供適當的指導回應，以鼓勵使用者進行健全的選擇。
 
 此示範以先前的名稱 Watson Conversation 來參照 {{site.data.keyword.conversationshort}}。
 {: note}

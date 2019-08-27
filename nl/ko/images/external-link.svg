@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54 (76480) - https://sketchapp.com -->
+    <title>icon-launch</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon-launch" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="launch">
+            <polygon id="Path" fill="#000000" points="12.5125 0.875 9.1875 0.875 9.1875 0 14 0 14 4.8125 13.125 4.8125 13.125 1.4875 8.4875 6.125 7.875 5.5125"></polygon>
+            <polygon id="Path" fill="#3D70B2" points="12.5125 0.875 9.1875 0.875 9.1875 0 14 0 14 4.8125 13.125 4.8125 13.125 1.4875 8.4875 6.125 7.875 5.5125"></polygon>
+            <path d="M11.375,7.875 L12.25,7.875 L12.25,13.125 C12.25,13.65 11.9,14 11.375,14 L0.875,14 C0.35,14 0,13.65 0,13.125 L0,2.625 C0,2.1 0.35,1.75 0.875,1.75 L7,1.75 L7,2.625 L0.875,2.625 L0.875,13.125 L11.375,13.125 L11.375,7.875 Z" id="Path" fill="#3D70B2"></path>
+        </g>
+    </g>
+</svg>

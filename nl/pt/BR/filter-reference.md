@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-03-29"
 
 subcollection: assistant
 
@@ -27,9 +27,9 @@ subcollection: assistant
 
 A API de REST do serviço {{site.data.keyword.conversationshort}} oferece recursos de procura de log poderosos através de consultas de filtro. É possível usar o parâmetro `filter` da API /logs para procurar o log de qualificação para eventos que correspondem a uma consulta especificada.
 
-O parâmetro `filter` é uma consulta em cache que limita os resultados àqueles que correspondem ao filtro especificado. É possível filtrar em qualquer objeto que faça parte do modelo de resposta JSON (por exemplo, o texto de entrada do usuário, as intenções e as entidades detectadas ou a pontuação de confiança).
+O parâmetro `filter` é uma consulta em cache que limita os resultados àqueles que correspondem ao filtro especificado. É possível filtrar diversos objetos que fazem parte do modelo de resposta JSON (por exemplo, o texto de entrada do usuário, as intenções e as entidades detectadas ou a pontuação de confiança).
 
-Para ver exemplos de vários tipos de consultas de filtro, consulte [Exemplos](#filter-reference-examples).
+Para ver exemplos de consultas de filtro, consulte [Exemplos](#filter-reference-examples).
 
 Para obter informações adicionais sobre o método /logs `GET` e seu modelo de resposta, consulte a [Referência da API ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://cloud.ibm.com/apidocs/assistant?curl=#list-log-events-in-a-workspace){: new_window}.
 
@@ -56,7 +56,7 @@ A filtragem por intenção ou entidade requer sintaxe um pouco diferente da filt
 É possível usar os operadores a seguir em sua consulta de filtro.
 
 | Operador | Descrição |
-|:-------------------:|-----------|
+|:-------------------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `:` | Operador de consulta de correspondência difusa. Prefixe o termo de consulta com `:` se você deseja corresponder qualquer valor que contém o termo de consulta ou uma variante gramatical do termo de consulta. Correspondência difusa está disponível para texto de entrada do usuário, texto de saída de resposta e valores de entidade. |
 | `::` | Operador de consulta de correspondência exata. Prefixe o termo de consulta com `::` se você deseja corresponder apenas os valores que são exatamente iguais ao termo de consulta. |
 | `:!` | Operador de consulta de correspondência difusa negativa. Prefixe o termo de consulta com `:!` se você deseja corresponder apenas os valores que _não_ contêm o termo de consulta ou uma variante gramatical do termo de consulta. |
@@ -101,7 +101,7 @@ Para filtrar por ID de cliente, use o local especial `customer_id`. (Para obter 
 ### Filtrando por outros campos
 {: #filter-reference-fields}
 
-Para filtrar em qualquer outro campo nos dados do log, especifique o local como um caminho identificando os níveis de objetos aninhados na resposta JSON da API /logs. Use pontos (`.`) para especificar níveis sucessivos de aninhamento nos dados JSON. Por exemplo, o local `request.input.text` identifica o campo de texto de entrada do usuário, conforme mostrado no fragmento JSON a seguir:
+Para filtrar outro campo nos dados do log, especifique o local como um caminho que identifica os níveis de objetos aninhados na resposta JSON da API /logs. Use pontos (`.`) para especificar níveis sucessivos de aninhamento nos dados JSON. Por exemplo, o local `request.input.text` identifica o campo de texto de entrada do usuário, conforme mostrado no fragmento JSON a seguir:
 
 ```json
   "request": {
@@ -110,6 +110,19 @@ Para filtrar em qualquer outro campo nos dados do log, especifique o local como 
     }
   }
 ```
+<!-- {data-copy=false} -->
+
+A filtragem não está disponível para todos os campos. É possível filtrar os campos a seguir:
+
+- request.context.metadata.deployment
+- request.input.text
+- response.entities
+- response.input.text
+- response.intents
+- response.top_intent
+- meta.message.entities_count
+
+A filtragem de outros campos não é suportada atualmente.
 
 ## Exemplos
 {: #filter-reference-examples}
@@ -135,3 +148,4 @@ Os exemplos a seguir ilustram vários tipos de consultas usando esta sintaxe.
 | Um nome de intenção na resposta corresponde exatamente a `hello` ou `goodbye`. | ` response.intents:intenção :: (hello|goodbye)` |
 | Uma intenção na resposta possui o nome `hello` e um valor de confiança igual ou maior que 0,8. | `response.intents:(intent:hello,confidence>=0.8)` |
 | Um nome de intenção na resposta corresponde exatamente a `order` e um nome de entidade na resposta corresponde exatamente a `beverage`. | `[response.intents:intent::order,response.entities:entity::beverage]` |
+<!-- -->

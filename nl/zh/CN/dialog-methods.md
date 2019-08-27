@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-08-12"
 
 subcollection: assistant
 
@@ -25,18 +25,49 @@ subcollection: assistant
 # 表达式语言方法
 {: #dialog-methods}
 
-可以处理从用户发声中抽取的值，这些值将根据您的需要在上下文变量、条件或响应中的其他地方进行引用。
+可以处理从用户话语中抽取的值，这些值将根据您的需要在上下文变量、条件或响应中的其他地方进行引用。
 {: shortdesc}
 
-## 求值语法
+## 使用表达式语法的位置
 {: #dialog-methods-evaluation-syntax}
 
 要在其他变量内部扩展变量值，或要将方法应用于输出文本或上下文变量，请使用 `<? expression ?>` 表达式语法。例如：
 
-- **递增数字属性**
-    - `"output":{"number":"<? output.number + 1 ?>"}`
-- **对对象调用方法**
-    - `"context":{"toppings": "<? context.toppings.append( 'onions' ) ?>"}`
+- **在对话节点文本响应中引用用户输入**
+
+  ```bash
+  You said <? input.text ?>.
+  ```
+  {: codeblock}
+
+- **通过 JSON 编辑器递增数字属性**
+
+    ```json
+    "output":{"number":"<? output.number + 1 ?>"}
+    ```
+    {: codeblock}
+
+- **通过上下文编辑器将元素添加到上下文变量数组**
+
+|上下文变量名|上下文变量值|
+|-----------------------|------------------------|
+|`toppings`| `<? context.toppings.append( 'onions' ) ?>` |
+
+您还可以在对话节点条件和对话节点响应条件中使用 SpEL 表达式。在条件中使用表达式时，不需要用 `<? ?>` 将其括起的语法。
+
+- **检查对话节点条件中是否有特定实体值**
+
+  ```bash
+  @city.toLowerCase() == 'paris'
+  ```
+  {: codeblock}
+
+- **检查对话节点响应条件中是否有特定日期范围**
+
+  ```bash
+  @sys-date.after(today())
+  ```
+  {: codeblock}
 
 以下各部分描述可用于处理值的方法。这些值按数据类型进行组织：
 
@@ -52,6 +83,7 @@ subcollection: assistant
 要检查某个节点条件或响应条件中是否存在某个数组中的值，不能在设置了这些数组值的同一节点中使用以下方法进行检查。
 
 ### JSONArray.append(object)
+{: #dialog-methods-arrays-append}
 
 此方法用于将新值附加到 JSONArray，并返回修改后的 JSONArray。
 
@@ -89,6 +121,7 @@ subcollection: assistant
 {: codeblock}
 
 ### JSONArray.clear()
+{: #dialog-methods-arrays-clear}
 
 此方法用于清除数组中的所有值并返回 null。
 
@@ -106,6 +139,7 @@ subcollection: assistant
 如果后续引用 $toppings_array 上下文变量，那么仅返回“[]”。
 
 ### JSONArray.contains(Object value)
+{: #dialog-methods-arrays-contains}
 
 如果输入 JSONArray 包含输入值，那么此方法会返回 true。
 
@@ -130,15 +164,15 @@ $toppings_array.contains('ham')
 结果：`True`，因为数组包含元素 ham。
 
 ### JSONArray.containsIntent(String intent_name, Double min_score, [Integer top_n])
-{: #dialog-methods-array-containsIntent}
+{: #dialog-methods-arrays-containsIntent}
 
-如果 `intents` JSONArray 具体包含指定的意向，并且该意向的置信度分数等于或高于指定的最小分数，那么此方法会返回 `true`。（可选）可以指定一个数字，以指示该意向必须包含在数组中排名前几位（该数字）元素内。
+如果 `intents` JSONArray 明确包含指定的意向，并且该意向的置信度分数等于或高于指定的最小分数，那么此方法会返回 `true`。您可以选择指定一个数字，以指示该意向必须包含在数组中排名前几位（该数字）元素内。
 
-如果指定的意向不在数组中，其置信度分数低于最小置信度分数，或者该意向在数组中的位置低于指定的索引位置，那么会返回 `false`。
+如果指定的意向不在数组中，并且其置信度分数低于最小置信度分数，或者该意向在数组中的位置低于指定的索引位置，那么会返回 `false`。
 
 服务会自动生成 `intents` 数组，其中列出每当提交用户输入时，服务都会在输入中检测到的意向。该数组会按置信度从高到低列出服务检测到的所有意向。
 
-可以在节点条件中使用此方法，以便不仅可检查是否存在意向，还可设置置信度分数阈值，必须达到此阈值后，才会处理节点并返回其响应。
+可以在节点条件中使用此方法，这样不仅可以检查是否存在意向，还可以设置置信度分数阈值，必须达到此阈值，才会处理节点并返回其响应。
 
 例如，如果要在仅当满足以下条件时才触发对话节点，请在节点条件中使用以下表达式：
 
@@ -152,9 +186,9 @@ intents.containsIntent("General_Ending", 0.8, 2)
 {: codeblock}
 
 ### JSONArray.filter(temp, "temp.property operator comparison_value")
-{: #dialog-methods-array-filter}
+{: #dialog-methods-arrays-filter}
 
-通过将每个数组元素值与指定的值进行比较来过滤数组。此方法类似于[集合投影](#collection-projection)。集合投影返回基于数组元素名称/值对中的名称过滤的数组。filter 方法返回基于数组元素名称/值对中的值过滤的数组。
+通过将每个数组元素值与指定的值进行比较来过滤数组。此方法类似于[集合投影](#dialog-methods-collection-projection)。集合投影返回基于数组元素名称/值对中的名称过滤的数组。filter 方法返回基于数组元素名称/值对中的值过滤的数组。
 
 过滤表达式由以下值组成：
 
@@ -317,7 +351,7 @@ $cities.filter("y", "y.name == @city")
 ```
 {: codeblock}
 
-您可以使用集合项目来获取只包含原始数组中 population 元素的数组，然后使用 `get` 方法来返回 population 元素的值。
+您可以使用集合投影来获取只包含原始数组中 population 元素的数组，然后使用 `get` 方法来返回 population 元素的值。
 
 ```bash
 The population of @city is: <? ($cities.filter("y", "y.name == @city").![population]).get(0) ?>.
@@ -327,6 +361,7 @@ The population of @city is: <? ($cities.filter("y", "y.name == @city").![populat
 表达式会返回：`The population of Tokyo is 9273000.`
 
 ### JSONArray.get(Integer)
+{: #dialog-methods-arrays-get}
 
 此方法用于返回 JSONArray 中的输入索引。
 
@@ -373,6 +408,7 @@ $nested.array.get(0).getAsString().contains('one')
 {: codeblock}
 
 ### JSONArray.getRandomItem()
+{: #dialog-methods-arrays-getRandom}
 
 此方法用于返回输入 JSONArray 中的随机项。
 
@@ -413,7 +449,7 @@ $nested.array.get(0).getAsString().contains('one')
 **注：**生成的输出文本是随机选择的。
 
 ### JSONArray.indexOf(value)
-{: #dialog-methods-array-indexOf}
+{: #dialog-methods-arrays-indexOf}
 
 此方法返回数组中与指定为参数的值相匹配的元素的下标号，如果在数组中找不到该值，那么会返回 `-1`。值可以是字符串 (`"School"`)、整数 (`8`) 或双精度值 (`9.1`)。值必须是完全匹配项，并且区分大小写。
 
@@ -437,7 +473,7 @@ $nested.array.get(0).getAsString().contains('one')
 <? $array3.indexOf(10.1) ?> returns `2`
 ```
 
-例如，要获取 intents 数组中某个元素的下标，此方法会非常有用。您可以将 `indexOf` 方法应用于在每次对用户输入求值时生成的 intents 数组，以确定特定意向的数组下标号。
+例如，要获取 intents 数组中某个元素的下标，此方法很有用。您可以将 `indexOf` 方法应用于在每次对用户输入求值时生成的 intents 数组，以确定特定意向的数组下标号。
 
 ```bash
 intents.indexOf("General_Greetings")
@@ -452,6 +488,7 @@ intents[intents.indexOf("General_Greetings")].confidence
 {: codeblock}
 
 ### JSONArray.join(String delimiter)
+{: #dialog-methods-arrays-join}
 
 此方法用于将此数组中的所有值连接成一个字符串。值将转换为字符串，并由输入定界符进行定界。
 
@@ -491,6 +528,13 @@ intents[intents.indexOf("General_Greetings")].confidence
 
 ```json
 This is the array: onion;olives;ham;
+```
+{: codeblock}
+
+如果用户输入提及了多种馅料，并且已定义名称为 `@toppings` 的实体用于识别馅料提及项，那么可以在响应中使用以下表达式来列出前面提到的馅料：
+
+```json
+So, you'd like <? @toppings.values.join(',') ?>.
 ```
 {: codeblock}
 
@@ -540,9 +584,9 @@ The flights that fit your criteria are:
 结果：`The flights that match your criteria are: OK123,LH421,TS4156.`
 
 ### JSONArray.joinToArray(template)
-{: #dialog-methods-joinToArray}
+{: #dialog-methods-arrays-joinToArray}
 
-此方法会将您在模板中定义的格式应用于数组，并返回根据规范设置了格式的数组。例如，要将格式应用于您希望在对话响应中返回的数组值，此方法非常有用。
+此方法会将您在模板中定义的格式应用于数组，并返回根据规范设置了格式的数组。例如，要将格式应用于您希望在对话响应中返回的数组值，此方法很有用。
 
 模板可以指定为字符串、JSON 对象或 JSON 数组。要引用您正在模板中编辑的数组中的值，请遵循以下语法约定：
 
@@ -669,7 +713,7 @@ Arrival time: 09:05
 ```
 {: codeblock}
 
-您可能希望设计定制客户机应用程序，以从返回的数组中读取对象，并针对聊天机器人的响应正确设置值的格式。对话节点响应可以使用以下表达式将航班到达详细信息对象作为数组返回：
+您可能希望设计定制客户机应用程序，以从返回的数组中读取对象，并针对助手的响应正确设置值的格式。对话节点响应可以使用以下表达式将航班到达详细信息对象作为数组返回：
 
 ```
 <? $flights.joinToArray($template) ?>
@@ -698,6 +742,7 @@ Arrival time: 09:05
 请注意，`arrival` 和 `departure` 元素的顺序在响应中进行了交换。服务通常会对 JSON 对象中的元素进行重新排序。如果要以特定顺序返回元素，请改为使用 JSON 数组或字符串值来定义模板。
 
 ### JSONArray.remove(Integer)
+{: #dialog-methods-arrays-remove}
 
 此方法用于从 JSONArray 除去索引位置中的元素，并返回更新后的 JSONArray。
 
@@ -735,6 +780,7 @@ Arrival time: 09:05
 {: codeblock}
 
 ### JSONArray.removeValue(object)
+{: #dialog-methods-arrays-removeValue}
 
 此方法用于从 JSONArray 中除去第一次出现的值，并返回更新后的 JSONArray。
 
@@ -772,6 +818,7 @@ Arrival time: 09:05
 {: codeblock}
 
 ### JSONArray.set(Integer index, Object value)
+{: #dialog-methods-arrays-set}
 
 此方法用于将 JSONArray 的输入索引设置为输入值，并返回修改后的 JSONArray。
 
@@ -809,6 +856,7 @@ Arrival time: 09:05
 {: codeblock}
 
 ### JSONArray.size()
+{: #dialog-methods-arrays-size}
 
 此方法用于以整数形式返回 JSONArray 的大小。
 
@@ -846,6 +894,7 @@ Arrival time: 09:05
 {: codeblock}
 
 ### JSONArray split(String regexp)
+{: #dialog-methods-arrays-split}
 
 此方法用于通过输入正则表达式来拆分输入字符串。结果为字符串的 JSONArray。
 
@@ -879,11 +928,12 @@ Arrival time: 09:05
 {: codeblock}
 
 ### com.google.gson.JsonArray 支持
-{: #dialog-methods-com.google.gson.JsonArray}
+{: #dialog-methods-arrays-com-google-gson-JsonArray}
 
 除了内置方法外，还可以使用 `com.google.gson.JsonArray` 类的标准方法。
 
 #### 新增数组
+{: #dialog-methods-arrays-new}
 
 新增 JsonArray().append('value')
 
@@ -905,10 +955,13 @@ Arrival time: 09:05
 有关如何在用户输入中识别和抽取日期和时间信息的信息，请参阅 [@sys-date 和 @sys-time 实体](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-date-time)。
 
 ### .after(String date or time)
+{: #dialog-methods-dates-after}
 
 确定日期/时间值是否晚于 date/time 自变量。
 
 ### .before(String date or time)
+{: #dialog-methods-dates-before}
+
 确定日期/时间值是否早于 date/time 自变量。
 
 例如：
@@ -921,6 +974,7 @@ Arrival time: 09:05
 - 如果比较`日期和时间与时间`，那么此方法会忽略日期而仅比较时间。
 
 ### now()
+{: #dialog-methods-dates-now}
 
 返回 `yyyy-MM-dd HH:mm:ss` 格式的当前日期和时间的字符串。
 
@@ -973,6 +1027,7 @@ Arrival time: 09:05
 {: codeblock}
 
 ### .reformatDateTime(String format)
+{: #dialog-methods-dates-reformatDateTime}
 
 将日期和时间字符串的格式设置为用户输出所需的格式。
 
@@ -1002,19 +1057,23 @@ Arrival time: 09:05
 **注**：尝试仅设置时间的格式时，日期会视为 `1970-01-01`。
 
 ### .sameMoment(String date/time)
+{: #dialog-methods-dates-sameMoment}
 
 - 确定日期/时间值是否等于 date/time 自变量。
 
 ### .sameOrAfter(String date/time)
+{: #dialog-methods-dates-sameOrAfter}
 
 - 确定日期/时间值是否晚于或等于 date/time 自变量。
 - 类似于 `.after()`。
 
 ### .sameOrBefore(String date/time)
+{: #dialog-methods-dates-sameOrBefore}
 
 - 确定日期/时间值是否早于或等于 date/time 自变量。
 
 ### today()
+{: #dialog-methods-dates-today}
 
 返回 `yyyy-MM-dd` 格式的当前日期的字符串。
 
@@ -1047,20 +1106,20 @@ Arrival time: 09:05
 结果：`Today's date is 2018-03-09.`
 
 ## 日期和时间计算
-{: #dialog-methods-calculations}
+{: #dialog-methods-date-time-calculations}
 
 使用以下方法可计算日期。
 
 |方法|描述|
 |-------------------------|-------------|
-| `<date>.minusDays(n)`   |返回指定日期之前 n 天的日期。|
-| `<date>.minusMonths(n)` |返回指定日期之前 n 个月的日期。|
-| `<date>.minusYears(n)`  |返回指定日期之前 n 年的日期。|
-| `<date>.plusDays(n)`   |返回指定日期之后 n 天的日期。|
-| `<date>.plusMonths(n)` |返回指定日期之后 n 个月的日期。|
-| `<date>.plusYears(n)`  |返回指定日期之后 n 年的日期。|
+|`<date>.minusDays(n)`|返回指定日期之前 n 天的日期。|
+|`<date>.minusMonths(n)`|返回指定日期之前 n 个月的日期。|
+|`<date>.minusYears(n)`|返回指定日期之前 n 年的日期。|
+|`<date>.plusDays(n)`|返回指定日期之后 n 天的日期。|
+|`<date>.plusMonths(n)`|返回指定日期之后 n 个月的日期。|
+|`<date>.plusYears(n)`|返回指定日期之后 n 年的日期。|
 
-其中，`<date>` 指定为格式 `yyyy-MM-dd` 或 `yyyy-MM-dd HH:mm:ss`。
+其中，`<date>` 以格式 `yyyy-MM-dd` 或 `yyyy-MM-dd HH:mm:ss` 进行指定。
 
 要获取明天的日期，请指定以下表达式：
 
@@ -1232,7 +1291,7 @@ Arrival time: 09:05
 `now().after($start_date) && now().before($end_date)`
 
 ### java.util.Date 支持
-{: #dialog-methods-java.util.Date}
+{: #dialog-methods-dates-java-util-date}
 
 除了内置方法外，还可以使用 `java.util.Date` 类的标准方法。
 
@@ -1287,26 +1346,30 @@ Arrival time: 09:05
 
 如果您希望服务识别用户输入中的特定数字格式（例如，订单号引用），请考虑创建模式实体来进行捕获。有关更多详细信息，请参阅[创建实体](/docs/services/assistant?topic=assistant-entities)。
 
-如果要更改数字的小数位数（例如，用于将数字格式重新设置为货币值），请参阅 [String format() 方法](#dialog-methods-java.lang.String)。
+如果要更改数字的小数位数（例如，用于将数字格式重新设置为货币值），请参阅 [String format() 方法](#java.lang.String)。
 
 ### toDouble()
+{: #dialog-methods-numbers-toDouble}
 
   将对象或字段转换为 Double 数字类型。可以对任何对象或字段调用此方法。如果转换失败，会返回 *null*。
 
 ### toInt()
+{: #dialog-methods-numbers-toInt}
 
   将对象或字段转换为 Integer 数字类型。可以对任何对象或字段调用此方法。如果转换失败，会返回 *null*。
 
 ### toLong()
+{: #dialog-methods-numbers-toLong}
 
   将对象或字段转换为 Long 数字类型。可以对任何对象或字段调用此方法。如果转换失败，会返回 *null*。
 
   如果在 SpEL 表达式中指定了长整型数字类型，那么必须在该数字后附加 `L` 进行标识。例如，`5000000000L`。对于任何不适合 32 位整数类型的数字，此语法都是必需的。例如，大于 2^31 (2,147,483,648) 或小于 -2^31 (-2,147,483,648) 的数字被视为长整型数字类型。长整型数字类型的最小值为 -2^63，最大值为 2^63-1。
 
 ### Java 数字支持
-{: #dialog-methods-java.lang.Number}
+{: #dialog-methods-numbers-java}
 
 ### java.lang.Math()
+{: #dialog-methods-numbers-java-lang-math}
 
 执行基本数字运算。
 
@@ -1384,16 +1447,17 @@ Arrival time: 09:05
 ```
 {: codeblock}
 
-有关其他方法的信息，请参阅 [java.lang.Math 参考文档](https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html)。
+有关其他方法的信息，请参阅 [java.lang.Math 参考文档 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html)。
 
 ### java.util.Random()
+{: #dialog-methods-numbers-java-util-random}
 
 返回一个随机数。可以使用以下其中一个语法选项：
 
-- 要返回随机布尔值（true 或 false），请使用 `<?new Random().nextBoolean()?>`.
+- 要返回随机布尔值（true 或 false），请使用 `<?new Random().nextBoolean()?>`。
 - 要返回 0（含 0）和 1（不含 1）之间的随机双精度数，请使用 `<?new Random().nextDouble()?>`
-- 要返回 0（含 0）和指定数字之间的随机整数，请使用 `<?new Random().nextInt(n)?>`，其中 n 等于您需要的数字范围上限 + 1。例如，如果要返回 0 到 10 之间的随机数，请指定 `<?new Random().nextInt(11)?>`.
-- 要返回完整 Integer 值范围（-2147483648 到 2147483648）内的随机整数，请使用 `<?new Random().nextInt()?>`.
+- 要返回 0（含 0）和指定数字之间的随机整数，请使用 `<?new Random().nextInt(n)?>`，其中 n 等于您需要的数字范围上限 + 1。例如，如果要返回 0 到 10 之间的随机数，请指定 `<?new Random().nextInt(11)?>`。
+- 要返回整个 Integer 值范围（-2147483648 到 2147483648）内的随机整数，请使用 `<?new Random().nextInt()?>`。
 
 例如，可以创建由 #random_number 意向触发的对话节点。第一个响应条件可能类似于：
 
@@ -1435,6 +1499,7 @@ Condition = @sys-number
 {: #dialog-methods-objects}
 
 ### JSONObject.clear()
+{: #dialog-methods-objects-jsonobject-clear}
 
 此方法用于清除 JSON 对象中的所有值并返回 null。
 
@@ -1535,6 +1600,7 @@ Condition = @sys-number
 如果树中较早的节点定义了文本响应 `I'm happy to help.`，然后跳转至如上所述定义了 JSON 输出对象的节点，那么只会将 `Have a great day.` 显示为响应。不会显示 `I'm happy to help.` 输出，因为此输出已被清除并替换为调用 `clear()` 方法的节点中的文本响应。
 
 ### JSONObject.has(String)
+{: #dialog-methods-objects-jsonobject-has}
 
 如果复杂 JSONObject 具有输入名称的属性，那么此方法会返回 true。
 
@@ -1564,6 +1630,7 @@ Condition = @sys-number
 结果：条件为 true，因为用户对象包含属性 `first_name`。
 
 ### JSONObject.remove(String)
+{: #dialog-methods-objects-jsonobject-remove}
 
 此方法用于从输入 `JSONObject` 中除去名称的属性。此方法返回的 `JSONElement` 是要除去的 `JSONElement`。
 
@@ -1609,7 +1676,7 @@ Condition = @sys-number
 {: codeblock}
 
 ### com.google.gson.JsonObject 支持
-{: #dialog-methods-com.google.gson.JsonObject}
+{: #dialog-methods-objects-com-google-gson-JsonObject}
 
 除了内置方法外，还可以使用 `com.google.gson.JsonObject` 类的标准方法。
 
@@ -1623,6 +1690,7 @@ Condition = @sys-number
 **注：**有关涉及正则表达式的方法，请参阅 [RE2 语法参考 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/google/re2/wiki/Syntax){: new_window}，以了解有关指定正则表达式时使用的语法的详细信息。
 
 ### String.append(Object)
+{: #dialog-methods-strings-append}
 
 此方法用于将输入对象作为字符串附加到字符串，并返回修改后的字符串。
 
@@ -1660,6 +1728,7 @@ Condition = @sys-number
 {: codeblock}
 
 ### String.contains(String)
+{: #dialog-methods-strings-contains}
 
 如果字符串包含输入子字符串，那么此方法会返回 true。
 
@@ -1677,6 +1746,7 @@ Condition = @sys-number
 结果：条件为 `true`。
 
 ### String.endsWith(String)
+{: #dialog-methods-strings-endsWith}
 
 如果字符串以输入子字符串结尾，那么此方法会返回 true。
 
@@ -1699,41 +1769,43 @@ Condition = @sys-number
 结果：条件为 `true`。
 
 ### String.extract(String regexp, Integer groupIndex)
+{: #dialog-methods-strings-extract}
 
-此方法用于返回由输入正则表达式的指定组索引所抽取的字符串。
+此方法会返回输入中与指定的正则表达式组模式相匹配的字符串。如果找不到匹配项，那么将返回空字符串。
 
-对于以下输入：
+此方法旨在抽取不同正则表达式模式组的匹配项，而不是抽取单个正则表达式模式的不同匹配项。要查找不同的匹配项，请参阅 [getMatch](#dialog-methods-strings-getMatch) 方法。
+{: note}
 
-```
-"Hello 123456".
-```
-{: codeblock}
-
-以下语法：
+在此示例中，上下文变量将保存与指定的正则表达式模式组相匹配的字符串。在表达式中，定义了两个正则表达式模式组，每个组都用括号括起。这会自然产生第三组，此组由定义的两个组构成。第一个正则表达式组 (groupIndex 0) 与由完整数字组和文本组相组合而构成的字符串相匹配。第二个正则表达式组 (groupIndex 1) 与第一次出现的数字组相匹配。第三个组 (groupIndex 2) 与数字组后第一次出现的文本组相匹配。
 
 ```json
 {
   "context": {
-   "number_extract": "<? input.text.extract('[\\d]+',0) ?>"
+   "number_extract": "<? input.text.extract('([\\d]+)(\\b [A-Za-z]+)',n) ?>"
   }
 }
 ```
 {: codeblock}
 
-  **重要信息：**要将 `\\d` 作为正则表达式处理，必须通过再添加一组 `\\` 对原来的两个反斜杠进行转义：`\\\\d`
+指定 JSON 格式的正则表达式时，必须提供两个反斜杠 (\\)。如果在节点响应中指定此表达式，那么只需要一个反斜杠。例如： 
+
+`<? input.text.extract('([\d]+)(\b [A-Za-z]+)',n) ?>`
+
+输入：
+
+```
+"Hello 123 this is 456".
+```
+{: codeblock}
 
 结果：
 
-```json
-{
-  "context": {
-   "number_extract": "123456"
-  }
-}
-```
-{: codeblock}
+- n=`0` 时，值为 `123`。
+- n=`1` 时，值为 `123`。
+- n=`2` 时，值为 `this`。
 
 ### String.find(String regexp)
+{: #dialog-methods-strings-find}
 
 如果字符串的任何分段与输入正则表达式匹配，那么此方法会返回 true。可以对 JSONArray 或 JSONObject 元素调用此方法，在进行比较之前，此方法会将数组或对象转换为字符串。
 
@@ -1755,7 +1827,47 @@ Condition = @sys-number
 
 结果：条件为 true，因为输入文本的数字部分与正则表达式 `^[^\d]*[\d]{6}[^\d]*$` 匹配。
 
+### String.getMatch(String regexp, Integer matchIndex)
+{: #dialog-methods-strings-getMatch}
+
+此方法会返回输入中与指定的正则表达式模式的出现相匹配的字符串。如果找不到匹配项，那么此方法将返回空字符串。
+
+找到匹配项时，会将其添加到您可以视为*匹配项数组*的内容。如果要返回第三个匹配项，因为数组元素计数从 0 开始，因此请为 `matchIndex` 值指定 2。例如，如果输入的文本字符串包含与指定模式匹配的三个词，那么只能通过指定其索引值来返回第一个、第二个或第三个匹配项。
+
+在以下表达式中，您将在输入中查找一组数字。此表达式将第二个模式匹配字符串保存到 `$second_number` 上下文变量中，因为指定了索引值 1。
+
+```json
+{
+  "context": {
+   "second_number": "<? input.text.getMatch('([\\d]+)',1) ?>"
+  }
+}
+```
+{: codeblock}
+
+如果指定符合 JSON 语法的表达式，那么必须提供两个反斜杠 (\\)。如果在节点响应中指定此表达式，那么只需要一个反斜杠。 
+
+例如： 
+
+`<? input.text.getMatch('([\d]+)',1) ?>`
+
+- 用户输入：
+
+  ```
+  "hello 123 i said 456 and 8910".
+  ```
+  {: codeblock}
+
+- 结果：`456`
+
+在此示例中，表达式会在输入中查找第三个文本块。
+
+`<? input.text.getMatch('(\b [A-Za-z]+)',2) ?>`
+
+对于相同的用户输入，此表达式会返回 `and`。
+
 ### String.isEmpty()
+{: #dialog-methods-strings-isEmpty}
 
 如果字符串为空字符串，但不是 null，那么此方法会返回 true。
 
@@ -1782,6 +1894,7 @@ Condition = @sys-number
 结果：条件为 `true`。
 
 ### String.length()
+{: #dialog-methods-strings-length}
 
 此方法用于返回字符串的字符长度。
 
@@ -1815,6 +1928,7 @@ Condition = @sys-number
 {: codeblock}
 
 ### String.matches(String regexp)
+{: #dialog-methods-strings-matches}
 
 如果字符串与输入正则表达式匹配，那么此方法会返回 true。
 
@@ -1837,6 +1951,7 @@ Condition = @sys-number
 结果：条件为 true，因为输入文本与正则表达式 `\^Hello\$` 匹配。
 
 ### String.startsWith(String)
+{: #dialog-methods-strings-startsWith}
 
 如果字符串以输入子字符串开头，那么此方法会返回 true。
 
@@ -1859,6 +1974,7 @@ Condition = @sys-number
 结果：条件为 `true`。
 
 ### String.substring(Integer beginIndex, Integer endIndex)
+{: #dialog-methods-strings-substring}
 
 此方法用于获取子字符串，其第一个字符位于 `beginIndex`，最后一个字符设置为 `endIndex` 之前的索引。不包括 endIndex 字符。
 
@@ -1896,6 +2012,7 @@ Condition = @sys-number
 {: codeblock}
 
 ### String.toLowerCase()
+{: #dialog-methods-strings-toLowerCase}
 
 此方法用于返回原始 String 转换为小写字母之后的结果。
 
@@ -1922,13 +2039,14 @@ Condition = @sys-number
 ```json
 {
   "context": {
-   "input_upper_case": "this is a dog!"
+   "input_lower_case": "this is a dog!"
   }
 }
 ```
 {: codeblock}
 
 ### String.toUpperCase()
+{: #dialog-methods-strings-toUpperCase}
 
 此方法用于返回原始 String 转换为大写字母之后的结果。
 
@@ -1962,6 +2080,7 @@ Condition = @sys-number
 {: codeblock}
 
 ### String.trim()
+{: #dialog-methods-strings-trim}
 
 此方法用于删除字符串开头和结尾的所有空格，并返回修改后的字符串。
 
@@ -1999,13 +2118,14 @@ Condition = @sys-number
 {: codeblock}
 
 ### java.lang.String 支持
-{: #java.lang.String}
+{: #dialog-methods-strings-java-lang-String-format}
 
 除了内置方法外，还可以使用 `java.lang.String` 类的标准方法。
 
 #### java.lang.String.format()
+{: #dialog-methods-strings-java-lang-String-format}
 
-可以将标准 Java String `format()` 方法应用于文本。有关用于指定格式详细信息的语法的信息，请参阅 [java.util.formatter 参考 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter#syntax){: new_window}。
+可以将标准 Java String `format()` 方法应用于文本。有关用于指定格式详细信息的语法的信息，请参阅 [java.util.formatter 参考 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax){: new_window}。
 
 例如，以下表达式采用 3 个十进制整数（1、1 和 2）并将它们添加到语句中。
 
@@ -2027,7 +2147,7 @@ Condition = @sys-number
 ```
 {: codeblock}
 
-例如，如果需要将格式设置为美元的 $number 变量为 `4.5`，那么诸如 `Your total is $<? T(String).format('%.2f',$number) ?>` 之类的响应将返回 `Your total is $4.50`。
+例如，如果需要将格式设置为美元的 $number 变量为 `4.5`，那么诸如 `Your total is $<? T(String).format('%.2f',$number) ?>` 之类的响应会返回 `Your total is $4.50`。
 
 ## 间接数据类型转换
 {: #dialog-methods-indirect-type-conversion}
@@ -2090,4 +2210,4 @@ Condition = @sys-number
 
 **$array_in_string** : `"this is my array: [\"one\",\"two\"]"`
 
-可以随后对 $array 变量（例如，`<? $array.removeValue('two') ?>`）执行数组方法，而不能对 $array_in_string 变量执行。
+可以随后对 $array 变量执行数组方法（例如，`<? $array.removeValue('two') ?>`），但不能对 $array_in_string 变量执行数组方法。

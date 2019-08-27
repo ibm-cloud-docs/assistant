@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-01"
+lastupdated: "2019-05-29"
 
 subcollection: assistant
 
@@ -30,13 +30,23 @@ O Slack é um aplicativo de sistema de mensagens baseado em nuvem que ajuda as p
 
 Depois de configurar uma qualificação de diálogo e incluí-la em um assistente, será possível integrar o assistente ao Slack.
 
+Quando integrado, dependendo dos eventos configurados para o suporte do assistente, ele poderá responder a perguntas feitas em mensagens diretas ou em canais nos quais é mencionado diretamente. 
+
+## Incluindo a integração do Slack
+{: #deploy-slack-task}
+
 1.  Na guia Assistentes, clique para abrir o quadro do assistente que você deseja implementar.
 
 1.  Na seção Integrações, clique em **Incluir integração**.
 
-1.  Clique no botão **Selecionar integração** para *Slack*.
+1.  Clique em **Slack**.
 
 1.  Siga as instruções fornecidas na tela para concluir o processo de integração.
+
+    Escolha um ou mais dos eventos de assinatura a seguir para suportar:
+
+    - `message.im`: o assistente responde quando alguém inicia uma mensagem direta com ele.
+    - `app_mentions`: o assistente responde quando alguém o menciona pelo nome em um canal.
 
 Se quiser acompanhar enquanto outra pessoa percorre as etapas de implementação, assista a este vídeo.
 
@@ -72,7 +82,7 @@ Para iniciar um bate-papo com o assistente, conclua as etapas a seguir:
 1.  Clique no aplicativo criado na seção Apps.
 1.  Chat com o assistente.
 
-O nó Bem-vindo de seu diálogo não é processado pela integração do Slack. A mensagem de boas-vindas não é exibida no canal slack, como está na área de janela "Experimente" dentro da ferramenta ou na página da web de integração do Link de visualização. Ele não é acionado daqui porque os nós com a condição especial `welcome` são ignorados em fluxos de diálogo iniciados por usuários. O Slack espera que o usuário inicie a conversa. Se for necessário configurar valores padrão para variáveis de contexto no início de sua conversa, não os configure no nó de boas-vindas. Consulte [Iniciando o diálogo](/docs/services/assistant?topic=assistant-dialog-start) para obter mais informações.
+O nó Bem-vindo de seu diálogo não é processado pela integração do Slack. A mensagem de boas-vindas não é exibida no canal do Slack da mesma forma como na área de janela "Experimentar" ou na página da web de integração do Link de visualização. Ele não é acionado daqui porque os nós com a condição especial `welcome` são ignorados em fluxos de diálogo iniciados por usuários. O Slack espera que o usuário inicie a conversa. Se for necessário configurar valores padrão para variáveis de contexto no início de sua conversa, não os configure no nó de boas-vindas. Consulte [Iniciando o diálogo](/docs/services/assistant?topic=assistant-dialog-start) para obter mais informações.
 {: note}
 
 O fluxo de diálogo da sessão atual é reiniciado após 60 minutos de inatividade (5 minutos para os planos Lite e Standard). Isso significa que, se um usuário parar de interagir com o assistente, após 60 (ou 5) minutos, todos os valores da variável de contexto configurados durante a conversa anterior serão configurados como nulos ou de volta para seus valores padrão.

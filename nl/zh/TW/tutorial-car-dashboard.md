@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
 
@@ -126,10 +126,10 @@ subcollection: assistant
     - 值：`headlights`。同義字：`lights`。
     - 值：`air conditioning`。同義字：`air` 及 `AC`。
 
-1.  按一下切換開關，以**開啟** `@appliance` 實體的模糊符合。
-    此設定可協助服務辨識使用者輸入中實體的參照，即使指定實體的方法不完全符合您在這裡使用的語法。
+1.  按一下切換開關，以**開啟** `@appliance` 實體的模糊比對。
+    此設定可協助助理辨識使用者輸入中實體的參照，即使指定實體的方法不完全符合您在這裡使用的語法。
 1.  按一下**關閉** ![關閉箭頭](images/close_arrow.png) 圖示，以完成新增 `@appliance` 實體。
-1.  重複步驟 2-8，建立開啟模糊符合的 `@genre` 實體，以及下列值及同義字：
+1.  重複步驟 2-8，建立開啟模糊比對的 `@genre` 實體，以及下列值及同義字：
 
     - 值：`classical`。同義字：`symphonic`。
     - 值：`rhythm and blues`。同義字：`r&b`。
@@ -250,8 +250,7 @@ subcollection: assistant
 1.  按一下 **Music** 節點上的「其他」圖示 ![其他選項](images/kabob.png)，然後選取**新增下面的節點**，以建立要在評估 @appliance:music 條件之後評估的對等節點。
 1.  輸入 `@appliance` 作為節點條件。
     如果使用者輸入包含音樂以外的 @appliance 實體的任何可辨識值，則會觸發此條件。
-1.  輸入 `OK! Turning on the @appliance.` 作為回應。
-    此回應會重申使用者已提供的設備值。
+1.  輸入 `OK! 開啟 @appliance。` 作為回應。此回應會重申使用者已提供的設備值。
 
 #### 測試與其他設備的對話
 {: #tutorial-car-dashboard-test-other-appliances}

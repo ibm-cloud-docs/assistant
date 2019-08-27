@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-02-21"
+lastupdated: "2019-08-06"
+
+keywords: context, context variable, digression, disambiguation, autocorrection, spelling correction, spell check, confidence 
 
 subcollection: assistant
 
@@ -36,7 +38,7 @@ Cada expresión de usuario se pasa al diálogo como una llamada API de /message.
 
 El cuerpo de la solicitud y la respuesta de una llamada de API /message incluye los siguientes objetos:
 
-- `context`: Contiene las variables que están destinadas a ser persistentes. Para pasar información de una llamada a la siguiente, el desarrollador de aplicaciones debe pasar el contexto de la respuesta de la llamada API anterior en cada llamada de API posterior. Por ejemplo, el diálogo puede recopilar el nombre del usuario y, a continuación, hacer referencia al nombre de usuario en nodos posteriores.
+- `context`: Contiene las variables que están destinadas a ser persistentes. Para pasar información de una llamada a la siguiente, el desarrollador de aplicaciones debe pasar el contexto de la respuesta de la llamada API anterior en cada llamada de API posterior. Por ejemplo, el diálogo puede recopilar el nombre del usuario y, a continuación, hacer referencia al nombre de usuario en nodos posteriores. En el ejemplo siguiente se muestra cómo se representa el objeto de contexto en el editor de JSON de diálogo:
 
   ```json
   {
@@ -48,7 +50,7 @@ El cuerpo de la solicitud y la respuesta de una llamada de API /message incluye 
 
   Consulte [Retención de información a través de rondas de diálogo](#dialog-runtime-context) para obtener más información.
 
-- `input`: Serie de texto que el usuario envió. La serie del texto puede contener hasta 2.048 caracteres.
+- `input`: Serie de texto que el usuario envió. La serie del texto puede contener hasta 2.048 caracteres. En el ejemplo siguiente se muestra cómo se representa el objeto de entrada en el editor de JSON de diálogo:
 
   ```json
   {
@@ -58,7 +60,7 @@ El cuerpo de la solicitud y la respuesta de una llamada de API /message incluye 
   ```
   {: codeblock}
 
-- `output`: Respuesta del diálogo que se devuelve al usuario.
+- `output`: Respuesta del diálogo que se devuelve al usuario. En el ejemplo siguiente se muestra cómo se representa el objeto de salida en el editor de JSON de diálogo:
 
   ```json
   {
@@ -88,7 +90,7 @@ En la respuesta de la API /message resultante, la respuesta de texto está forma
 }
 ```
 
-Se da soporte al siguiente formato de objeto `output` por motivos de compatibilidad con versiones anteriores. Cualquier espacio de trabajo que especifique una respuesta de texto utilizando este formato seguirá funcionando correctamente. Con la introducción de los tipos de respuesta completa, la estructura `output.text` se ha aumentado con la estructura `output.generic` para facilitar el soporte de otros tipos de respuestas además del texto. Utilice el nuevo formato cuando cree nuevos nodos para tener más flexibilidad, ya que posteriormente puede cambiar el tipo de respuesta si es necesario.
+Se da soporte al siguiente formato JSON de objeto `output` por motivos de compatibilidad con versiones anteriores. Cualquier espacio de trabajo que especifique una respuesta de texto utilizando este formato seguirá funcionando correctamente. Con la introducción de los tipos de respuesta completa, la estructura `output.text` se ha aumentado con la estructura `output.generic` para facilitar el soporte de otros tipos de respuestas además del texto. Utilice el nuevo formato cuando cree nuevos nodos para tener más flexibilidad, ya que posteriormente puede cambiar el tipo de respuesta si es necesario.
 {: note}
 
   ```json
@@ -219,7 +221,7 @@ Para almacenar el valor de una entidad en una variable de contexto, utilice esta
 |----------|------------------|
 | place    | `@place`         |
 
-Por ejemplo, suponga que la entrada de usuario es `I want to go to Paris.` Si la entidad @place reconoce `Paris`, entonces el servicio guarda `Paris` en la variable de contexto `$place`.
+Por ejemplo, suponga que la entrada de usuario es `I want to go to Paris.` Si su entidad `@place` reconoce `Paris`, su asistente guarda `Paris` en la variable de contexto `$place`.
 
 Para almacenar el valor de una serie extraída de la entrada del usuario, puede incluir una expresión SpEL que utilice el método `extract` para aplicar una expresión regular a la entrada del usuario. La expresión siguiente extrae un número de la entrada del usuario y la almacena en la variable de contexto `$number`.
 
@@ -261,16 +263,16 @@ Para obtener información sobre cómo actualizar el valor de una variable de con
 ### Cómo se procesan las variables de contexto
 {: #dialog-runtime-context-processing}
 
-El lugar en el que se define la variable de contexto es importante. La variable de contexto no se crea y se establece en el valor que especifique para el mismo hasta que el servicio procese la parte del nodo de diálogo donde ha definido la variable de contexto. En la mayoría de los casos, el usuario define la variable de contexto como parte de la respuesta del nodo. Cuando lo hace, se crea la variable de contexto y se le da el valor especificado cuando el servicio devuelve la respuesta del nodo.
+El lugar en el que se define la variable de contexto es importante. La variable de contexto no se crea y se establece en el valor que especifique para el mismo hasta que su asistente procese la parte del nodo de diálogo donde ha definido la variable de contexto. En la mayoría de los casos, el usuario define la variable de contexto como parte de la respuesta del nodo. Cuando lo hace, se crea la variable de contexto y se le da el valor especificado cuando su asistente devuelve la respuesta del nodo.
 
-Para un nodo con respuestas condicionales, la variable de contexto se crea y se establece cuando se cumple la condición correspondiente a una respuesta específica y se procesa la respuesta. Por ejemplo, si define una variable de contexto para la respuesta condicional #1 y el servicio procesa únicamente la respuesta condicional #2, entonces la variable de contexto que ha definido para la respuesta condicional #1 no se crea ni se establece.
+Para un nodo con respuestas condicionales, la variable de contexto se crea y se establece cuando se cumple la condición correspondiente a una respuesta específica y se procesa la respuesta. Por ejemplo, si define una variable de contexto para la respuesta condicional #1 y su asistente procesa únicamente la respuesta condicional #2, entonces la variable de contexto que ha definido para la respuesta condicional #1 no se crea ni se establece.
 
-Para obtener información sobre dónde añadir las variables de contexto que desea que el servicio cree y establezca a medida que un usuario interactúa con un nodo con ranuras, consulte [Adición de variables de contexto a un nodo con ranuras](#dialog-runtime-context-var-slots).
+Para obtener información sobre dónde añadir las variables de contexto que desea que su asistente cree y establezca a medida que un usuario interactúa con un nodo con ranuras, consulte [Adición de variables de contexto a un nodo con ranuras](#dialog-runtime-context-var-slots).
 
 ### Orden de operación
 {: #dialog-runtime-context-order-of-ops}
 
-Cuando el usuario define varias variables para que se procesen juntas, el orden en el que las define no determina el orden en el que el servicio evalúa las variables. El servicio evalúa las variables en orden aleatorio. No establezca un valor en la primera variable de contexto en la lista y espere a poder utilizarlo en la segunda variable de la lista, porque no hay garantía de que la primera variable de contexto se ejecute antes que la segunda. Por ejemplo, no utilice dos variables de contexto para implementar la lógica que compruebe si la entrada de usuario contiene la palabra `Yes`.
+Cuando el usuario define varias variables para que se procesen juntas, el orden en el que las define no determina el orden en el que su asistente evalúa las variables. Su asistente evalúa las variables en orden aleatorio. No establezca un valor en la primera variable de contexto en la lista y espere a poder utilizarlo en la segunda variable de la lista, porque no hay garantía de que la primera variable de contexto se ejecute antes que la segunda. Por ejemplo, no utilice dos variables de contexto para implementar la lógica que compruebe si la entrada de usuario contiene la palabra `Yes`.
 
 | Variable        | Valor            |
 |-----------------|------------------|
@@ -847,7 +849,7 @@ final de cada rama del diálogo como una manera de evitar que los usuarios se qu
 
 - **Recuerde que el nodo actual tiene prioridad**: Recuerde que los nodos fuera del flujo actual sólo son considerados como destinos de digresión si el flujo actual no puede tratar la entrada de usuario. Es aún más importante en un nodo con ranuras que permite digresiones hacia fuera, en particular, para dejar claro a los usuarios qué información se necesita de ellos, y añadir sentencias de confirmación que aparezcan después de que el usuario haya proporcionado un valor.
 
-  Todas las ranuras se pueden cumplimentar durante el proceso de cumplimentación de las ranuras. Por ello, una ranura podría capturar la entrada de usuario de forma inesperada. Por ejemplo, podría tener un nodo con ranuras que recopila la información necesaria para realizar una reserva para una cena. Una de las ranuras podría recopilar información de la fecha. Al proporcionar detalles de la reserva, el usuario podría haber preguntado, `What's the weather meant to be tomorrow?` (¿Qué tiempo se espera para mañana?) Sin embargo, si la respuesta del usuario incluyese la palabra `tomorrow` (mañana) mientras se está procesando el nodo de reserva con ranuras, el servicio presupondría que la respuesta del usuario está proporcionando o actualizando es con relación a la fecha de la reserva. *El nodo actual siempre tiene prioridad* Si define una sentencia de confirmación clara, por ejemplo, `Ok, setting the reservation date to tomorrow` (De acuerdo, estableciendo la fecha de reserva para mañana), es más probable que el usuario se dé cuenta de la confusión y corrija el malentendido.
+  Todas las ranuras se pueden cumplimentar durante el proceso de cumplimentación de las ranuras. Por ello, una ranura podría capturar la entrada de usuario de forma inesperada. Por ejemplo, podría tener un nodo con ranuras que recopila la información necesaria para realizar una reserva para una cena. Una de las ranuras podría recopilar información de la fecha. Al proporcionar detalles de la reserva, el usuario podría haber preguntado, `What's the weather meant to be tomorrow?` (¿Qué tiempo se espera para mañana?) Sin embargo, si la respuesta del usuario incluyese la palabra `tomorrow` (mañana) mientras se está procesando el nodo de reserva con ranuras, su asistente presupondría que la respuesta del usuario está proporcionando o actualizando es con relación a la fecha de la reserva. *El nodo actual siempre tiene prioridad* Si define una sentencia de confirmación clara, por ejemplo, `Ok, setting the reservation date to tomorrow` (De acuerdo, estableciendo la fecha de reserva para mañana), es más probable que el usuario se dé cuenta de la confusión y corrija el malentendido.
 
   Por el contrario, cuando está cumplimentando ranuras, si el usuario proporciona un valor que no se espera que ninguna de las ranuras, es posible que se encuentre una coincidencia en un nodo raíz sin relación alguna al que el usuario nunca tuviese la intención de llegar.
 
@@ -857,13 +859,77 @@ final de cada rama del diálogo como una manera de evitar que los usuarios se qu
 
   Por ejemplo, si el nodo con ranuras recopila la información necesaria para cumplimentar una reclamación de seguros, es posible que desee añadir manejadores para abordar preguntas habituales sobre el seguro. Sin embargo, para las preguntas sobre cómo obtener ayuda, o sus ubicaciones tiendas, o la historia de su empresa, utilice un nodo de nivel raíz.
 
-## Disambiguation ![Solo planes Plus o Premium](images/premium.png)
+## Correcting user input
+{: #dialog-runtime-spell-check}
+
+Habilite la característica de *corrección automática* para corregir las faltas de ortografía que los usuarios hacen en las expresiones que se envían como entrada de usuario. Si la corrección ortográfica está habilitada, las palabras con errores ortográficos se corrigen automáticamente. Y son las palabras corregidas las que se utilizan para evaluar la entrada. Cuando se proporciona una entrada más precisa, su asistente puede reconocer con mayor frecuencia las menciones de entidades y comprender la intención del usuario.
+
+Este valor solo se puede habilitar para los conocimientos de diálogo en inglés. Se habilita automáticamente para los nuevos conocimientos de diálogo en inglés.
+{: note}
+
+Con la corrección automática habilitada, la entrada de usuario se corrige del siguiente modo:
+
+- Entrada original: `letme applt for a memberdhip`
+- Entrada corregida: `let me apply for a membership`
+
+Cuando su asistente evalúa si se debe corregir la ortografía de una palabra, no se basa en un proceso de búsqueda de diccionario simple. Utiliza una combinación de proceso de lenguaje natural o modelos de probabilidades para evaluar si un término está realmente mal escrito y se debe corregir.
+
+### Enabling autocorrection
+{: #dialog-runtime-spell-check-enable}
+
+Para habilitar la característica de corrección automática, realice los pasos siguientes:
+
+1.  En la página Conocimientos, abra su conocimiento.
+1.  Pulse en el separador **Opciones**.
+1.  Active **Corrección automática**.
+
+### Testing autocorrection
+{: #dialog-runtime-spell-check-test}
+
+1.  En el panel "Pruébelo", envíe una expresión que incluya algunas palabras con errores ortográficos.
+
+    Si las palabras de la entrada están mal escritas, se corrigen automáticamente y se muestra el icono ![auto-correct](images/auto-correct.png). Se subraya la expresión corregida.
+1.  Mueva el puntero del ratón sobre la expresión subrayada para ver la redacción original.
+
+Si hay términos con errores ortográficos que espera que su asistente corrija, pero no lo ha hecho, revise las reglas que utiliza su asistente para decidir si debe corregir una palabra para ver si la palabra está dentro de la categoría de palabras que su asistente no cambia intencionadamente.
+
+Para evitar una corrección excesiva, su asistente no corrija la ortografía de los siguientes tipos de entrada:
+
+- Palabras con mayúscula inicial
+- Emojis
+- Entidades de lugares, como Comunidades Autónomas y calles
+- Números y unidades de medida o de tiempo
+- Nombres propios, como nombres de personas o empresas
+- Texto entrecomillado
+- Palabras con caracteres especiales, como guión (-), asterisco (*), ampersand (&) o arroba (@), incluyendo los utilizados en direcciones de correo electrónico o URL.
+- Palabras que *pertenecen* a este conocimiento, lo que significa palabras que tienen un significado implícito porque aparecen en valores de entidad, sinónimos de entidad o ejemplos de intenciones de usuario.
+
+  Las menciones de una entidad contextual se pueden corregir de forma inadvertida. Esto se debe a que los términos que funcionan como menciones de entidad contextuales son fluidos; no pueden ser predeterminados y evitados por la función del corrector ortográfico en la forma en que se haría con una lista de términos basados en diccionario. Si, después de la prueba, detecta que las menciones se están corrigiendo en exceso para una determinada entidad contextual, plantéese la posibilidad de utilizar una entidad basada en diccionario en su lugar.
+  {: note}
+
+Si no resulta evidente que la palabra que no se corrige pertenece a uno de estos tipos de entrada, es posible que valga la pena comprobar si la entidad tiene habilitada la coincidencia aproximada.
+
+#### ¿Qué relación tiene la corrección ortográfica automática con la coincidencia aproximada?
+{: #dialog-runtime-spell-check-vs-fuzzy-matching}
+
+La coincidencia aproximada ayuda a su asistente a reconocer menciones de entidades basadas en diccionario en la entrada de usuario. Utiliza un enfoque de búsqueda de diccionario para comparar una palabra de la entrada de usuario con un valor de entidad o un sinónimo existente en los datos de entrenamiento del conocimiento. Por ejemplo, si el usuario escribe `boook`, y sus datos de entrenamiento contienen una entidad `@reading_material` con un valor `book`, la coincidencia por aproximación reconoce que los dos términos (`boook` y `book`) significan lo mismo.
+
+Si habilita tanto la corrección automática como la coincidencia aproximada, la función de coincidencia aproximada se ejecuta antes de que se active la corrección automática. Si encuentra un término que puede comparar con un valor de entidad de diccionario existente o con un sinónimo, añade el término a la lista de palabras que *pertenecen* al conocimiento, y no se corrige.
+
+Por ejemplo, si un usuario escribe una frase como `I wnt to buy a boook`, la coincidencia aproximada reconoce que el término `boook` significa lo mismo que el valor de entidad `book` y lo añade a la lista de palabras protegidas. Su asistente corrige la entrada para que sea, `I want to buy a boook`. Observe que corrige `wnt` pero que *no* corrige la ortografía de `boook`. Si ve este tipo de resultados cuando está probando el cuadro de diálogo, es posible que piense que su asistente no funciona bien. No obstante, no es el caso. Gracias a la comparación por aproximación, identifica correctamente `boook` como una mención de la entidad `@reading_material`. Y gracias a la corrección automática que revisa el término para `want`, su asistente es capaz de correlacionar la entrada a su intención de `#buy_something`. Cada función aporta su parte, que ayuda a su asistente a entender el significado de la entrada del usuario.
+
+#### ¿Cómo funciona la corrección automática?
+{: #dialog-runtime-spell-check-how-it-works}
+
+Por lo general, la entrada de usuario se guarda tal cual en el campo `text` del objeto `input` del mensaje. Si, y solo si, la entrada de usuario se corrige de alguna forma, se crea un nuevo campo en el objeto `input`, denominada `original_text`. Este campo almacena la entrada original del usuario que incluye las palabras con errores ortográficos. Y el texto corregido se añade al campo `input.text`.
+
+## Desambiguación ![Solo en el plan Plus o Premium](images/plus.png)
 {: #dialog-runtime-disambiguation}
 
 Esta característica solo está disponible para los usuarios de los planes Plus o Premium.
-{: tip}
+{: note}
 
-Si habilita la desambiguación, indica al servicio que solicite ayuda a los usuarios cuando encuentre más de un nodo de diálogo que puede responder a su entrada. En lugar de adivinar qué nodo debe procesar, el asistente comparte una lista de las principales opciones de nodo con el usuario y le solicita que elija la adecuada.
+Si habilita la desambiguación, indica a su asistente que solicite ayuda a los usuarios cuando encuentre más de un nodo de diálogo que puede responder a su entrada. En lugar de adivinar qué nodo debe procesar, el asistente comparte una lista de las principales opciones de nodo con el usuario y le solicita que elija la adecuada.
 
 ![Muestra una conversación de ejemplo entre un usuario y el asistente, en la que el asistente pide al usuario una aclaración.](images/disambig-demo.png)
 
@@ -902,7 +968,7 @@ Si el usuario especifica `i must cancel it today`, se pueden detectar las siguie
 `{"intent":"Customer_Care_Store_Hours","confidence":0.2550420880317688},`
 `...]`
 
-El servicio tiene una confianza del `0,6618281841278076` (66 %) en que el objetivo del usuario coincide con la intención `#Customer_Care_Cancel_Account`. Si alguna otra intención tiene una puntuación de confianza mayor que el 55 % de 66 %, se ajusta a los criterios para convertirse en candidata a desambiguación.
+Su asistente tiene una confianza del `0,6618281841278076` (66 %) en que el objetivo del usuario coincide con la intención `#Customer_Care_Cancel_Account`. Si alguna otra intención tiene una puntuación de confianza mayor que el 55 % de 66 %, se ajusta a los criterios para convertirse en candidata a desambiguación.
 
 `0,66 x 0,55 = 0,36`
 
@@ -914,7 +980,7 @@ Si la entrada del usuario es `i must cancel it today`, ambos nodos de diálogo s
 
 ![El servicio solicita al usuario que elija entre una lista de opciones de diálogo, que incluye Cancelar una cuenta, Cancelar un pedido de un producto y Ninguno de los anteriores.](images/disambig-tryitout.png)
 
-Observe que el servicio reconoce el término `today` en la entrada de usuario como una fecha, una mención de la entidad `@sys-date`. Si el árbol de diálogo contiene un nodo condicionado por la entidad `@sys-date`, también se incluye en la lista de opciones de desambiguación. Esta imagen muestra que se incluye en la lista como la opción *Capturar información de fecha*.
+Observe que su asistente reconoce el término `today` en la entrada de usuario como una fecha, una mención de la entidad `@sys-date`. Si el árbol de diálogo contiene un nodo condicionado por la entidad `@sys-date`, también se incluye en la lista de opciones de desambiguación. Esta imagen muestra que se incluye en la lista como la opción *Capturar información de fecha*.
 
 ![El servicio solicita al usuario que elija entre una lista de opciones de diálogo, que incluye Capturar información de fecha.](images/disambig-tryitout-date.png)
 
@@ -927,23 +993,29 @@ El siguiente vídeo contiene una visión general de desambiguación.
 
 Para habilitar la desambiguación, siga estos pasos:
 
-1.  En la página Diálogos, pulse **Valores**.
-1.  Pulse **Desambiguación**.
-1.  En la sección *Habilitar desambiguación*, coloque el conmutador en **Activo**.
-1.  En el campo de mensaje de solicitud, añada texto que muestre la lista de opciones de nodo de diálogo. Por ejemplo, *What do you want to do?* (¿Qué quiere hacer?)
-1.  **Opcional**: En el campo de mensaje Ninguno de los anteriores, añada texto que se muestre como opción adicional que los usuarios puedan elegir si ninguno de los otros nodos de diálogo refleja lo que el usuario quiere hacer. Por ejemplo, *Ninguno de los anteriores*.
+1.  Abra el separador **Opciones** para el conocimiento de diálogo en el que desea habilitar la desambiguación.
 
-    El mensaje debe ser corto para que se muestre en una línea con las otras opciones. El mensaje debe tener menos de 512 caracteres. Para obtener información sobre lo que hace el servicio si un usuario elige esta opción, consulte [Manejo de Ninguno de los anteriores](#dialog-runtime-handle-none).
+    Si su aplicación está alojada en Dallas, para habilitar la desambiguación, pulse **Valores** de la página **Diálogo**.
+    {: note}
 
-1.  Pulse **Cerrar**
-1.  Elija los nodos de diálogo para los desea que el asistente solicite ayuda.
+1.  En la sección *Desambiguación*, coloque el conmutador en **Activo**.
+1.  En el campo **Mensaje de desambiguación**, añada texto a mostrar antes de la lista de opciones del nodo de diálogo. Por ejemplo, *What do you want to do?* (¿Qué quiere hacer?)
+1.  En el campo **Anything else** añada texto que se muestre como opción adicional que los usuarios puedan elegir si ninguna de las otras opciones de nodos de diálogo refleja lo que el usuario quiere hacer. Por ejemplo, *Ninguno de los anteriores*.
+
+    El mensaje debe ser corto para que se muestre en una línea con las otras opciones. El mensaje debe tener menos de 512 caracteres. Para obtener información sobre lo que hace su asistente si un usuario elige esta opción, consulte [Manejo de Ninguno de los anteriores](#dialog-runtime-handle-none).
+
+1.  Si desea limitar el número de opciones de desambiguación que se pueden visualizar a un usuario, en el campo **Número máximo de sugerencias**, especifique un número entre 2 y 5. 
+
+    Los cambios se guardan automáticamente.
+
+1.  Ahora, pulse el separador **Diálogo**. Revise su diálogo para decidir los nodos del diálogo para los que quiere que el asistente pida ayuda.
 
     - Puede elegir nodos de cualquier nivel de la jerarquía de árbol.
     - Puede elegir nodos que estén condicionados por intenciones, entidades, condiciones especiales, variables de contexto o cualquier combinación de estos valores.
 
     Consulte [Selección de nodos](#dialog-runtime-choose-nodes) para ver sugerencias.
 
-    Para cada nodo que desea que opte a la desambiguación, siga estos pasos:
+    Para cada nodo que desee que esté disponible en la lista de opciones de desambiguación, complete los pasos siguientes:
 
     1.  Pulse para abrir el nodo en la vista de edición.
     1.  En el campo *nombre de nodo externo*, describe la tarea de usuario que va a manejar este nodo de diálogo. Por ejemplo, *Cancel an account* (Cancelar una cuenta).
@@ -955,31 +1027,31 @@ Para habilitar la desambiguación, siga estos pasos:
 
 Elija como opciones de desambiguación nodos que sirvan como raíz de una rama distintiva del diálogo. Pueden incluir nodos que sean hijos de otros nodos. La clave es que el nodo esté condicionado por uno o varios valores distintivos que le diferencien de cualquier otro.
 
-La herramienta puede reconocer conflictos de intenciones, que se producen cuando dos o más intenciones tienen ejemplos de usuario que se solapan. [Resuelva este tipo de conflictos](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts) en primer lugar para garantizar que las propias intenciones sean tan exclusivas como sea posible, lo que ayuda al servicio a adjudicar mejores puntuaciones de confianza de intenciones.
+{{site.data.keyword.conversationshort}} puede reconocer conflictos de intenciones, que se producen cuando dos o más intenciones tienen ejemplos de usuario que se solapan. [Resuelva este tipo de conflictos](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts) en primer lugar para garantizar que las propias intenciones sean tan exclusivas como sea posible, lo que ayuda a su asistente a adjudicar mejores puntuaciones de confianza de intenciones.
 {: note}
 
 Tenga en cuenta lo siguiente:
 
-- Para los nodos condicionados por intenciones, si el servicio confía en que la condición de intención del nodo coincide con la intención del usuario, el nodo se incluye como una opción de desambiguación.
+- Para los nodos condicionados por intenciones, si su asistente confía en que la condición de intención del nodo coincide con la intención del usuario, el nodo se incluye como una opción de desambiguación.
 - Para los nodos con condiciones booleanas (condiciones que se evalúan como true o false), el nodo se incluye como una opción de desambiguación si la condición se evalúa como true. Por ejemplo, cuando el nodo está condicionado por un tipo de entidad, si la entidad se menciona en la entrada que activa la desambiguación, el nodo se incluye.
 - El orden de los nodos en la jerarquía de árbol afecta a la desambiguación.
 
   - Afecta a si la desambiguación se activa
   
-    Por ejemplo, eche un vistazo al [caso de ejemplo](#dialog-runtime-disambig-example) utilizado anteriormente como introducción a la desambiguación. Si el nodo condicionado por `@sys-date` se hubiera colocado en el árbol de diálogo por encima de los nodos condicionados por las intenciones `#Customer_Care_Cancel_Account` y `#eCommerce_Cancel_Product_Order`, nunca se activaría la desambiguación cuando un usuario especificara `i must cancel it today`. Esto se debe a que el servicio consideraría que la fecha mencionada (`today`) es más importante que las referencias a intenciones, debido a la colocación de los nodos correspondientes en el árbol.
+    Por ejemplo, eche un vistazo al [caso de ejemplo](#dialog-runtime-disambig-example) utilizado anteriormente como introducción a la desambiguación. Si el nodo condicionado por `@sys-date` se hubiera colocado en el árbol de diálogo por encima de los nodos condicionados por las intenciones `#Customer_Care_Cancel_Account` y `#eCommerce_Cancel_Product_Order`, nunca se activaría la desambiguación cuando un usuario especificara `i must cancel it today`. Esto se debe a que su asistente consideraría que la fecha mencionada (`today`) es más importante que las referencias a intenciones, debido a la colocación de los nodos correspondientes en el árbol.
 
   - Afecta a los nodos que se incluyen en la lista de opciones de desambiguación
   
-    A veces un nodo no aparece en la lista de opciones de desambiguación según lo esperado. Esto puede ocurrir si un nodo también hace referencia a un valor de condición que no es apto para la inclusión en la lista de desambiguación por algún motivo. Por ejemplo, una mención de entidad podría activar un nodo que está situado antes en el árbol de diálogo, pero que no está habilitado para la desambiguación. Si la misma entidad es la única condición para un nodo que *está* habilitado para la desambiguación, pero está situada más abajo en el árbol, no se añade como opción de desambiguación porque el servicio nunca accede a la misma. Se ha comparado con el nodo anterior y se ha omitido, de modo que el servicio no procesa el último nodo.
+    A veces un nodo no aparece en la lista de opciones de desambiguación según lo esperado. Esto puede ocurrir si un nodo también hace referencia a un valor de condición que no es apto para la inclusión en la lista de desambiguación por algún motivo. Por ejemplo, una mención de entidad podría activar un nodo que está situado antes en el árbol de diálogo, pero que no está habilitado para la desambiguación. Si la misma entidad es la única condición para un nodo que *está* habilitado para la desambiguación, pero está situada más abajo en el árbol, no se añade como opción de desambiguación porque su asistente nunca accede a la misma. Se ha comparado con el nodo anterior y se ha omitido, de modo que su asistente no procesa el último nodo.
 
 Para cada nodo que a la desambiguación, pruebe casos de ejemplo en los que espera que el nodo se incluya en la lista de opciones de desambiguación. La prueba le da la oportunidad de realizar ajustes en el orden de los nodos o en otros factores que puedan afectar a la forma en que la desambiguación funciona en tiempo de ejecución.
 
 ### Manejo de Ninguno de los anteriores
 {: #dialog-runtime-handle-none}
 
-Cuando un usuario pulsa la opción *Ninguno de los anteriores*, el servicio quita las intenciones que se han reconocido en la entrada de usuario del mensaje y lo vuelve a enviar. Esta acción suele activar el nodo anything else en el árbol de diálogo.
+Cuando un usuario pulsa la opción *Ninguno de los anteriores*, su asistente quita las intenciones que se han reconocido en la entrada de usuario del mensaje y lo vuelve a enviar. Esta acción suele activar el nodo anything else en el árbol de diálogo.
 
-Para personalizar la respuesta que se devuelve en esta situación, puede añadir un nodo raíz con una condición que compruebe si hay una entrada de usuario sin intenciones reconocidas (recuerde que las intenciones se quitan) y que contenga una propiedad `suggestion_id`. El servicio añade una propiedad `suggestion_id` cuando se activa la desambiguación.
+Para personalizar la respuesta que se devuelve en esta situación, puede añadir un nodo raíz con una condición que compruebe si hay una entrada de usuario sin intenciones reconocidas (recuerde que las intenciones se quitan) y que contenga una propiedad `suggestion_id`. Su asistente añade una propiedad `suggestion_id` cuando se activa la desambiguación.
 {: tip}
 
 Añada un nodo raíz con la siguiente condición:
@@ -1006,25 +1078,35 @@ Para probar la desambiguación, siga estos pasos:
 
 1.  Si todavía no se activa la desambiguación, podría ser que las puntuaciones de confianza de los nodos no tengan valores tan cercanos como se pensaba.
 
-    Puede obtener información acerca de intenciones, entidades y otras propiedades que se devuelven para determinadas entradas de usuario.
+    - Para obtener una lista de las intenciones que cumplen el umbral de desambiguación para una entrada de usuario determinada, puede utilizar la siguiente expresión SpEL en la respuesta del texto de un nodo.
 
-    - Para ver las puntuaciones de confianza de las intenciones que se han detectado en la entrada de usuario, añada temporalmente `<? intents ?>` al final de la respuesta de nodo para un nodo que sepa que se va a activar.
+      ```json
+      Las intenciones siguientes cumplen el umbral de desambiguación: <? intents.filter("x", "x.confidence > intents[0].confidence * 0.55") ?>
+      ```
+      {: codeblock}
 
-      Esta expresión SpEL muestra las intenciones detectadas en la entrada de usuario como una matriz. La matriz incluye el nombre de la intención y el nivel de confianza que tiene servicio tiene en que la intención refleja el objetivo previsto por el usuario.
+      Esta expresión obtiene la puntuación de confianza de la primera intención en la matriz de intenciones que se reconocen en la entrada de usuario. Luego se multiplica la puntuación de confianza de la intención superior por 0,55 para obtener el umbral de confianza que se debe cumplir por otras intenciones de la matriz para que se produzca la desambiguación. Por último, filtra la matriz de intenciones para incluir sólo aquellas intenciones con puntuaciones de confianza por encima del umbral.
+
+      La matriz que devuelve esta expresión le da una idea de cuál y cuántos intentos se incluirían como opciones de desambiguación si cada intento se utilizara en una condición de nodo de diálogo de un nodo que tuviera habilitada la desambiguación. Añada la expresión a un nodo que sepa que se desencadenará mediante la entrada de prueba.
+
+      Para obtener más detalles sobre el método `JSONArray.filter` que se utiliza en la expresión, consulte [Métodos de lenguaje de expresión](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-array-filter).
+
+    - Para ver las puntuaciones de confianza de todos los intentos que se detectan en la entrada de usuario, añada temporalmente `<? intents ?>` al final de la respuesta de nodo para un nodo que sepa que se desencadenará.
+
+      Esta expresión SpEL muestra las intenciones detectadas en la entrada de usuario como una matriz. La matriz incluye el nombre de la intención y el nivel de confianza que tiene su asistente, en que la intención refleja el objetivo previsto por el usuario.
 
     - Para ver qué entidades, si las hay, se han detectado en la entrada de usuario, puede sustituir temporalmente la respuesta actual por una sola respuesta de texto que contenga la expresión `<? entities ?>`.
 
-      Esta expresión SpEL muestra las entidades detectadas en la entrada de usuario como una matriz. La matriz incluye el nombre de la entidad, la ubicación de la mención de la entidad dentro de la serie de entrada de usuario, la serie de mención de la entidad y el nivel de confianza que tiene el servicio en el término sea una mención del tipo de entidad especificado.
+      Esta expresión SpEL muestra las entidades detectadas en la entrada de usuario como una matriz. La matriz incluye el nombre de la entidad, la ubicación de la mención de la entidad dentro de la serie de entrada de usuario, la serie de mención de la entidad y el nivel de confianza que tiene su asistente en el término sea una mención del tipo de entidad especificado.
 
-    - Para ver detalles de todos los artefactos a la vez, incluidas otras propiedades, como por ejemplo el valor de una variable de contexto determinada en el momento de la llamada, puede examinar toda la respuesta de la API. Consulte [Visualización de detalles de llamadas
-de API](/docs/services/assistant?topic=assistant-dialog-tips#dialog-tips-inspect-api).
+    - Para ver detalles de todos los artefactos a la vez, incluidas otras propiedades, como por ejemplo el valor de una variable de contexto determinada en el momento de la llamada, puede examinar toda la respuesta de la API. Consulte [Ver los detalles de la llamada de API](/docs/services/assistant?topic=assistant-dialog-tips#dialog-tips-inspect-api).
 
 1.  Elimine temporalmente la descripción que ha añadido al campo *nombre de nodo externo* para al menos uno de los nodos que cree que aparecerá en la lista como opción de desambiguación.
 
 1.  Vuelva a escribir la expresión de prueba en el panel "Pruébelo".
 
-    Si ha añadido la expresión `<? intents ?>` a la respuesta, el texto que se devuelve incluye una lista de las intenciones que el servicio ha reconocido en la expresión de prueba e incluye la puntuación de confianza de cada una.
+    Si ha añadido la expresión `<? intents ?>` a la respuesta, el texto que se devuelve incluye una lista de las intenciones que su asistente ha reconocido en la expresión de prueba e incluye la puntuación de confianza de cada una.
 
-    ![El servicio devuelve una matriz de intenciones, que incluye Customer_Care_Cancel_Account y eCommerce_Cancel_Product_Order.](images/disambig-show-intents.png)
+    ![El servicio devuelve una matriz de intenciones, incluyendo Customer_Care_Cancel_Account y eCommerce_Cancel_Product_Order.](images/disambig-show-intents.png)
 
 Cuando termine de realizar pruebas, elimine las expresiones SpEL que haya adjuntado a las respuestas de nodo o vuelva a añadir las respuestas originales que haya sustituido por expresiones y rellene los campos de cualquier *nombre de nodo externo* del que haya eliminado texto.

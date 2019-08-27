@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-02"
 
 subcollection: assistant
 
@@ -22,7 +22,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Migrando
+# Migrando do Cloud Foundry
 {: #migrate}
 
 Migre uma instância de serviço do {{site.data.keyword.conversationshort}} para movê-la de sua organização e do espaço do Cloud Foundry atuais para um grupo de recursos.
@@ -52,6 +52,11 @@ Para migrar sua instância de serviço, conclua estas etapas:
 
     Consulte [Melhores práticas para organizar o recurso em um grupo de recursos ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](/docs/resources?topic=resources-bp_resourcegroups) para obter dicas.
 
+    É possível usar uma instância de serviço para desenvolver, testar e implementar um assistente, portanto, não crie grupos de recursos distintos para diferentes tipos de ambientes de implementação.
+    {:tip}
+
+    Com um plano Premium, é possível criar múltiplas instâncias. No entanto, elas devem ser todas criadas no mesmo grupo de recursos.
+
 1.  Na lista de serviços do IBM Cloud Dashboard, clique no ícone de migração ![Migrar](images/migrate.svg) para a instância que você deseja migrar e, em seguida, clique em **Migrar** no pop-up.
 
     Todas as instâncias de serviço que foram criadas no data center de Sydney antes de 7 de maio de 2018 ou no data center de Londres antes de 13 de dezembro de 2018 foram organizadas para o data center de Dallas. Ao migrar uma instância de serviço do Cloud Foundry baseada em Sydney ou em Londres, ela é convertida em um recurso que está hospedado em Dallas.
@@ -64,6 +69,28 @@ Para migrar sua instância de serviço, conclua estas etapas:
 1.  Clique em  ** Migrar **.
 
     Uma mensagem será exibida quando o processo estiver pronto. Se você tiver outras instâncias de serviço para migrar, será possível continuar a migração de outras instâncias de serviço ou clicar em **Pronto**.
+
+1.  **Etapa única do plano Premium**: se a instância de serviço que você está migrando foi criada como parte de um plano Premium, a equipe de serviços deverá ser informada. Para isso, crie um caso no [Suporte do IBM Cloud ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://cloud.ibm.com/unifiedsupport/supportcenter){: new_window}.
+
+    Há algumas etapas adicionais que a equipe de serviço precisará concluir por você. Inclua as informações a seguir no caso:
+
+    - Região de hospedagem da instância de serviço, como Dallas ou Frankfurt.
+    - Nome do grupo de recursos
+    - ID do grupo de recursos
+
+      Se não souber o ID, abra a ferramenta da interface da linha de comandos (CLI) do IBM Cloud e insira o comando a seguir:
+
+      ```bash
+      ibmcloud resource groups
+      ```
+      {: codeblock}
+
+      A resposta mostra o ID do grupo de recursos. Para obter mais informações sobre o comando da CLI, consulte [Trabalhando com recursos e grupos de recursos ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://cloud.ibm.com/docs/cli?topic=cloud-cli-ibmcloud_commands_resource#ibmcloud_commands_resource).
+
+      Aguarde 24 horas a partir do momento do envio do caso até que a equipe de suporte possa concluir o trabalho necessário para suportar a migração do plano Premium. Não há interrupção de serviço durante o processo de migração.
+
+      Esta etapa deverá ser executada apenas na primeira vez que você migrar uma instância de serviço para o plano Premium. Ao clicar em *Migrar* para outras instâncias de serviço do mesmo plano, elas serão migradas para o mesmo grupo de recursos sem a necessidade de envolver a equipe de serviços.
+      {: important}
 
 A instância de serviço antiga (baseada na organização do Cloud Foundry) que você migrou continua a ser listada na seção Serviços do Cloud Foundry do Painel e agora é mostrada como um *alias* da nova versão (baseada em grupo de recursos) da instância.
 

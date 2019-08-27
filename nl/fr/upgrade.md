@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-06-11"
 
 subcollection: assistant
 
@@ -33,31 +33,20 @@ Découvrez comment mettre à niveau votre forfait de service.
 
 Vous pouvez explorer les [options de forfait de service ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/cloud/watson-assistant/pricing/){: new_window} {{site.data.keyword.conversationshort}} pour décider quel forfait vous convient le mieux.
 
-Vous ne pouvez pas mettre à niveau une instance Cloud Foundry vers un forfait Plus. Vous devez migrer l'instance pour qu'elle utilise un groupe de ressources avant de pouvoir la mettre à niveau.  Pour plus d'informations, reportez-vous à la rubrique [Migrations](/docs/services/assistant?topic=assistant-migrate).
+Vous ne pouvez pas mettre à niveau une instance Cloud Foundry vers un forfait Plus. Vous devez migrer l'instance pour qu'elle utilise un groupe de ressources avant de pouvoir la mettre à niveau. Pour plus d'informations, reportez-vous à la rubrique [Migration à partir de Cloud Foundry](/docs/services/watson?topic=watson-migrate).
 {: note}
 
 Pour mettre votre forfait à niveau, procédez comme suit :
 
-1.  Dans le menu {{site.data.keyword.Bluemix_notm}}, sélectionnez **Upgrade Plan**.
-    Votre forfait en cours, ainsi que d'autres options de forfait disponibles, sont affichés et vous pouvez effectuer des modifications.
+1.  Dans le menu {{site.data.keyword.cloud}}, sélectionnez **Upgrade Plan**.
+    Votre forfait en cours, ainsi que d'autres options de forfait disponibles, sont affichés. Selon le type de forfait, vous pouvez apporter des modifications vous-même ou informer IBM que vous souhaitez modifier votre forfait. 
 
-Pour visualiser les réponses aux questions les plus courantes sur les abonnements, reportez-vous à la rubrique sur la [gestion de la facturation et de l'utilisation ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](/docs/billing-usage?topic=billing-usage-charges){: new_window}.
+    Pour un forfait Premium, toutes les instances du forfait doivent faire partie du même groupe de ressources.
+    {: note} 
 
-D'autres questions ? Contactez [IBM Sales ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www-01.ibm.com/marketing/iwm/dre/signup?source=urx-20970){: new_window}.
+    Actuellement, vous ne pouvez pas passer d'un forfait Lite ou Standard à un forfait Plus. Au lieu de cela, achetez d'abord le forfait Plus. Exportez les compétences d'une instance de votre forfait existant, puis importez-les dans une instance du forfait Plus. Pour démarrer le processus de mise à disposition d'un forfait Plus, remplissez [ce formulaire ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://ibm.biz/contact-WA-plus).
+    {: note}
 
-## Mise à niveau d'une compétence de dialogue 
-{: #upgrade-skill}
+Pour obtenir des réponses aux questions courantes sur les abonnements, reportez-vous à la rubrique [Facturation ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](/docs/billing-usage?topic=billing-usage-charges){: new_window}.
 
-Le service {{site.data.keyword.conversationshort}} ajoute et met à jour des fonctions régulièrement. Si certaines modifications sont appliquées automatiquement à vos compétences de dialogue, celles qui ont un impact majeur nécessitent d'être appliquées manuellement au modèle d’apprentissage automatique utilisé par vos compétences.
-
-Une mise à niveau est disponible pour votre compétence de dialogue uniquement si l'icône Upgrade (![icône Upgrade](images/upgrade.png)) est affichée. 
-
-Pour mettre à niveau une compétence de dialogue, procédez comme suit : 
-
-1.  [Téléchargez une copie de votre compétence de dialogue](/docs/services/assistant?topic=assistant-skill-add#skill-add-download-skill), puis importez-la en tant que nouvelle compétence.
-2.  Mettez à niveau la nouvelle copie de votre compétence de dialogue. 
-
-    Lorsque vous mettez à niveau votre compétence, la dernière version de l'API est activée dans l'outil et le panneau "Try it out" commence à utiliser les dernières fonctionnalités.
-3.  Testez la compétence mise à niveau. 
-4.  Après avoir évalué la compétence mise à niveau pour comprendre de quelle manière la mise à niveau impactera votre application, appliquez la mise à niveau à votre compétence de dialogue principale. 
-5.  Mettez à niveau votre application. Pour ce faire, modifiez les appels de l'API de message utilisés par votre applications pour spécifier la dernière version de l'API. Pour plus d'informations sur la version de l'API, reportez-vous aux [Notes sur l'édition](/docs/services/assistant?topic=assistant-release-notes).
+D'autres questions ? Contactez [IBM Sales ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/account/reg/us-en/subscribe?formid=urx-20970){: new_window}.

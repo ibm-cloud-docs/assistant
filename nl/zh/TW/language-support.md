@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-05-20"
 
 subcollection: assistant
 
@@ -25,18 +25,18 @@ subcollection: assistant
 # 支援的語言
 {: #language-support}
 
-{{site.data.keyword.conversationshort}} 服務支援列出的語言。每一種語言都或多或少支援服務的個別特性。
+{{site.data.keyword.conversationshort}} 服務支援列出的語言。每種語言或多或少都會支援個別特性。
 {: shortdesc}
 
 在下表中，語言和特性支援層次由下列代碼指出：
 
-- **GA 版** - 此特性已正式發行並支援該語言。請注意，特性即使在正式發行之後，仍然可能會繼續進行更新。
+- **GA 版** - 此特性已正式發行並支援該語言。請注意，即使已正式發佈，特性仍可能會繼續更新。
 - **測試版** - 此特性僅支援作為「測試版」，而且在正式發行該語言版本之前仍在進行測試。
 - **NA** - 指出特性沒有此語言版本。
 
 第一個表格顯示所有特性的支援層次，但與目的及實體相關的那些特性除外，這些特性會顯示在第二個及第三個表格中。
 
-**表格 1. 特性支援詳細資料**
+**表 1. 特性支援詳細資料**
 
 | 語言 | **定義[目的](/docs/services/assistant?topic=assistant-intents)**、**[實體](/docs/services/assistant?topic=assistant-entities)**及**[對話](/docs/services/assistant?topic=assistant-dialog-build)** | **搜尋** |
 |:---:|:---:|:---:|
@@ -55,43 +55,82 @@ subcollection: assistant
 |**西班牙文 (es)**                  |GA 版 |測試版|
 {: caption="特性支援詳細資料" caption-side="top"}
 
-**表格 2. 目的特性支援詳細資料**
+**表 2a. 目的特性支援詳細資料**
 
-| 語言 | **[絕對評分及「標示為不相關」](/docs/services/assistant?topic=assistant-intents#intents-mark-irrelevant)** | **[內容型錄](/docs/services/assistant?topic=assistant-catalog)** | **[使用者範例建議](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations)** |
-|:---:|:---:|:---:|:---:|
-|**英文 (en)**                      |GA 版 |GA 版 |測試版|
-|**阿拉伯文 (ar)**                  |測試版|GA 版 | NA |
-|**簡體中文 (zh-cn)**               |GA 版 | NA | NA |
-|**繁體中文 (zh-tw)**               |測試版| NA | NA |
-|**捷克文 (cs)**                    |GA 版 | NA | NA |
-|**荷蘭文 (nl)**                    |GA 版 | NA | NA |
-|**法文 (fr)**                      |GA 版 |GA 版 | NA |
-|**德文 (de)**                      |GA 版 |GA 版 | NA |
-|**義大利文 (it)**                  |GA 版 |GA 版 | NA |
-|**日文 (ja)**                      |GA 版 |GA 版 | NA |
-|**韓文 (ko)**                      |GA 版 | NA | NA |
-|**葡萄牙文（巴西）(pt-br)**        |GA 版 |GA 版 | NA |
-|**西班牙文 (es)**                  |GA 版 |GA 版 | NA |
+| 語言 |**[絕對評分](/docs/services/assistant?topic=assistant-intents#intents-absolute-scoring)**和**[標示為不相關](/docs/services/assistant?topic=assistant-logs#logs-mark-irrelevant)**| **[內容型錄](/docs/services/assistant?topic=assistant-catalog)** |
+|:---:|:---:|:---:|
+|**英文 (en)**                      |GA 版 |GA 版 |
+|**阿拉伯文 (ar)**                  |測試版|GA 版 |
+|**簡體中文 (zh-cn)**               |GA 版 | NA |
+|**繁體中文 (zh-tw)**               |測試版| NA |
+|**捷克文 (cs)**                    |GA 版 | NA |
+|**荷蘭文 (nl)**                    |GA 版 | NA |
+|**法文 (fr)**                      |GA 版 |GA 版 |
+|**德文 (de)**                      |GA 版 |GA 版 |
+|**義大利文 (it)**                  |GA 版 |GA 版 |
+|**日文 (ja)**                      |GA 版 |GA 版 |
+|**韓文 (ko)**                      |GA 版 | NA |
+|**葡萄牙文（巴西）(pt-br)**        |GA 版 |GA 版 |
+|**西班牙文 (es)**                  |GA 版 |GA 版 |
 {: caption="目的特性支援詳細資料" caption-side="top"}
 
-**表格 3. 實體特性支援詳細資料**
+**表 2b. 目的特性支援詳細資料（續）**
 
-| 語言 | **系統實體（[數字](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-number)、[貨幣](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-currency)、[百分比](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-percentage)、[日期和時間](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-date-time)）** | **[實體模糊符合](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[環境定義實體](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based)** | **[同義字建議](/docs/services/assistant?topic=assistant-entities#entities-synonyms)**
-|:---|:---:|:---:|:---:|:---:|
-|**英文 (en)**                      | GA 版、測試版（[位置](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-location)、[人員](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-person)）|GA 版 |測試版|GA 版 |
-|**阿拉伯文 (ar)**                  |測試版| GA 版（僅限拼字錯誤）| NA | NA |
-|**簡體中文 (zh-cn)**               |GA 版 | NA | NA | NA |
-|**繁體中文 (zh-tw)**               |測試版| NA | NA | NA |
-|**捷克文 (cs)**                    |GA 版 | GA 版（僅限拼字錯誤）| NA | NA |
-|**荷蘭文 (nl)**                    |GA 版 | GA 版（僅限拼字錯誤）| NA | NA |
-|**法文 (fr)**                      |GA 版 | GA 版（僅限拼字錯誤）| NA |GA 版 |
-|**德文 (de)**                      |GA 版 | GA 版（僅限拼字錯誤）| NA | NA |
-|**義大利文 (it)**                  |GA 版 | GA 版（僅限拼字錯誤）| NA | NA |
-|**日文 (ja)**                      |GA 版 | GA 版（僅限拼字錯誤）| NA |GA 版 |
-|**韓文 (ko)**                      |GA 版 | GA 版（僅限拼字錯誤）| NA | NA |
-|**葡萄牙文（巴西）(pt-br)**        |GA 版 | GA 版（僅限拼字錯誤）| NA | NA |
-|**西班牙文 (es)**                  |GA 版 | GA 版（僅限拼字錯誤）| NA |GA 版 |
+| 語言 | **[使用者範例建議](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations)** |**[目的建議](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-intent-recommendations)**|
+|:---:|:---:|
+|**英文 (en)**                      |GA 版 |GA 版 |
+|**阿拉伯文 (ar)**                  | NA | NA |
+|**簡體中文 (zh-cn)**               | NA | NA |
+|**繁體中文 (zh-tw)**               | NA | NA |
+|**捷克文 (cs)**                    | NA | NA |
+|**荷蘭文 (nl)**                    | NA | NA |
+|**法文 (fr)**                      | NA | NA |
+|**德文 (de)**                      | NA | NA |
+|**義大利文 (it)**                  | NA | NA |
+|**日文 (ja)**                      |GA 版 | NA |
+|**韓文 (ko)**                      | NA | NA |
+|**葡萄牙文（巴西）(pt-br)**        | NA | NA |
+|**西班牙文 (es)**                  | NA | NA |
+{: caption="目的特性支援詳細資料（續）" caption-side="top"}
+
+**表 3. 實體特性支援詳細資料**
+
+| 語言 | **[實體模糊比對](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[環境定義實體](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based)** | **[同義字建議](/docs/services/assistant?topic=assistant-entities#entities-synonyms)**
+|
+|:---:|:---:|:---:|:---:|
+|**英文 (en)**                      |GA 版 |測試版|GA 版 |
+|**阿拉伯文 (ar)**                  | GA 版（僅限拼字錯誤）| NA | NA |
+|**簡體中文 (zh-cn)**               | NA | NA | NA |
+|**繁體中文 (zh-tw)**               | NA | NA | NA |
+|**捷克文 (cs)**                    | GA 版（僅限拼字錯誤）| NA | NA |
+|**荷蘭文 (nl)**                    | GA 版（僅限拼字錯誤）| NA | NA |
+|**法文 (fr)**                      | GA 版（僅限拼字錯誤）| NA |GA 版 |
+|**德文 (de)**                      | GA 版（僅限拼字錯誤）| NA | NA |
+|**義大利文 (it)**                  | GA 版（僅限拼字錯誤）| NA | NA |
+|**日文 (ja)**                      | GA 版（僅限拼字錯誤）| NA |GA 版 |
+|**韓文 (ko)**                      | GA 版（僅限拼字錯誤）| NA | NA |
+|**葡萄牙文（巴西）(pt-br)**        | GA 版（僅限拼字錯誤）| NA | NA |
+|**西班牙文 (es)**                  | GA 版（僅限拼字錯誤）| NA |GA 版 |
 {: caption="實體特性支援詳細資料" caption-side="top"}
+
+**表 4. 系統實體特性支援詳細資料**
+
+| 語言 | **系統實體（[數字](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-number)、[貨幣](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-currency)、[百分比](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-percentage)、[日期和時間](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-date-time)）** |**[新系統實體](/docs/services/assistant?topic=assistant-beta-system-entities)**|
+|:---|:---:|:---:|
+|**英文 (en)**                      | GA 版、測試版（[位置](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-location)、[人員](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-person)）|測試版|
+|**阿拉伯文 (ar)**                  |測試版| NA |
+|**簡體中文 (zh-cn)**               |GA 版 | NA |
+|**繁體中文 (zh-tw)**               |測試版| NA |
+|**捷克文 (cs)**                    |GA 版 | NA |
+|**荷蘭文 (nl)**                    |GA 版 | NA |
+|**法文 (fr)**                      |GA 版 | NA |
+|**德文 (de)**                      |GA 版 |測試版|
+|**義大利文 (it)**                  |GA 版 | NA |
+|**日文 (ja)**                      |GA 版 | NA |
+|**韓文 (ko)**                      |GA 版 | NA |
+|**葡萄牙文（巴西）(pt-br)**        |GA 版 | NA |
+|**西班牙文 (es)**                  |GA 版 | NA |
+{: caption="系統實體特性支援詳細資料" caption-side="top"}
 
 **附註：**{{site.data.keyword.conversationshort}} 服務如所述支援多種語言，但工具介面本身（說明、標籤等）為英文。所有支援的語言都可以透過英文介面輸入及訓練。
 
@@ -128,16 +167,16 @@ subcollection: assistant
 ## 使用重音字元
 {: #language-support-accents}
 
-在交談式設定中，與 {{site.data.keyword.conversationshort}} 服務互動時，使用者不一定會使用重音符號。因此，在進行目的偵測及實體辨識時，會將重音及無重音版本的單字視為相同。
+在交談式設定中，與 {{site.data.keyword.conversationshort}} 服務互動時，使用者不一定會使用重音符號。因此，在進行目的偵測及實體辨識時，會將重音及無重音版本的字組視為相同。
 
-不過，針對部分語言（例如西班牙文），有些重音符號可能會變更實體的意義。因此，進行實體偵測時，雖然原始實體可能隱含地具有重音符號，但是服務也可能符合相同實體的非重音版本，但具有略低的信任評分。
+不過，針對部分語言（例如西班牙文），有些重音符號可能會變更實體的意義。因此，進行實體偵測時，雖然原始實體可能隱含地具有重音符號，但是助理也可能符合相同實體的非重音版本，但具有略低的信賴分數。
 
-例如，針對具有重音符號並對應於動詞 "barrer"（清理）過去式的 "barrió" 單字，服務也可能符合 "barrio"（鄰近地區）單字，但具有略低的信任。
+例如，針對具有重音符號並對應於動詞 "barrer"（清掃）過去式的 "barrió" 字組，助理也可能符合 "barrio"（鄰近地區）字組，但具有略低的信賴度。
 
-系統將提供具有完全相符項之實體中的最高信任評分。例如，如果 `barrió` 位於訓練集中，則偵測不到 `barrio`；而如果 `barrio` 位於訓練集中，則偵測不到 `barrió`。
+系統將提供具有完全相符項之實體中的最高信賴分數。例如，如果 `barrió` 位於訓練集中，則偵測不到 `barrio`；而如果 `barrio` 位於訓練集中，則偵測不到 `barrió`。
 
 您應該使用適當的字元及重音符號來訓練系統。例如，如果您預期 `barrió` 作為回應，則應該將 `barrió` 放入訓練集中。
 
-雖然不是重音符號，但是同樣適用於使用西班牙文字母 `ñ` 與字母 `n` 的這類單字，例如 "uña" 與 "una"。在此情況下，字母 `ñ` 不只是具有重音符號的 `n`，還是唯一的西班牙文特有字母。
+雖然不是重音符號，但是同樣適用於使用西班牙文字母 `ñ` 與字母 `n` 的這類字組，例如 "uña" 與 "una"。在此情況下，字母 `ñ` 不只是具有重音符號的 `n`，還是唯一的西班牙文特有字母。
 
-如果您認為客戶不會使用適當的重音符號或錯字（例如 including，放置 `n`，而非 `ñ`），則可以啟用模糊符合，或者，您可以在訓練範例中明確包含它們。
+如果您認為客戶不會使用適當的重音符號或錯字（例如 including，放置 `n`，而非 `ñ`），則可以啟用模糊比對，或者，您可以在訓練範例中明確包含它們。

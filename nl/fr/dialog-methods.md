@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-08-12"
 
 subcollection: assistant
 
@@ -28,15 +28,46 @@ subcollection: assistant
 Vous pouvez traiter les valeurs extraites des énoncés utilisateur que vous souhaitez référencer dans une variable contextuelle, une condition, ou ailleurs dans la réponse.
 {: shortdesc}
 
-## Syntaxe d'évaluation
+## Où utiliser la syntaxe d'expression
 {: #dialog-methods-evaluation-syntax}
 
 Pour développer des valeurs de variable au sein d'autres variables, ou appliquer des méthodes à un texte de sortie ou à des variables contextuelles, utilisez la syntaxe d'expression `<? expression ?>`. Par exemple :
 
-- **Incrémentation d'une propriété numérique**
-    - `"output":{"number":"<? output.number + 1 ?>"}`
-- **Appel d'une méthode sur un objet**
-    - `"context":{"toppings": "<? context.toppings.append( 'onions' ) ?>"}`
+- **Référencement d'une entrée utilisateur à partir d'une réponse textuelle d'un nœud de dialogue**
+
+  ```bash
+  Vous avez dit <? input.text ?>.
+  ```
+  {: codeblock}
+
+- **Incrémentation d'une propriété numérique à partir de l'éditeur JSON**
+
+    ```json
+    "output":{"number":"<? output.number + 1 ?>"}
+    ```
+    {: codeblock}
+
+- **Ajout d'un élément à un tableau de variables contextuelles à partir de l'éditeur de contexte**
+
+| Nom de la variable contextuelle | Valeur de la variable contextuelle |
+|-----------------------|------------------------|
+| `toppings` | `<? context.toppings.append( 'onions' ) ?>` |
+
+Vous pouvez également utiliser des expressions SpEL dans les conditions de nœud de dialogue et les conditions de réponse de nœud de dialogue. Lorsqu'une expression est utilisée dans une condition, la syntaxe `<? ?>` environnante n'est pas requise.
+
+- **Vérification d'une valeur d'entité spécifique à partir d'une condition de noeud de dialogue**
+
+  ```bash
+  @city.toLowerCase() == 'paris'
+  ```
+  {: codeblock}
+
+- **Vérification d'une plage de dates spécifique à partir d'une condition de réponse de nœud de dialogue**
+
+  ```bash
+  @sys-date.after(today())
+  ```
+  {: codeblock}
 
 Les sections ci-après décrivent les méthodes que vous pouvez utiliser pour traiter des valeurs. Elles sont organisées par type de données :
 
@@ -52,6 +83,7 @@ Les sections ci-après décrivent les méthodes que vous pouvez utiliser pour tr
 Vous ne pouvez pas utiliser les méthodes ci-après pour rechercher une valeur dans un tableau dans une condition de noeud ou une condition de réponse au sein du noeud dans lequel vous définissez les valeurs de tableau.
 
 ### JSONArray.append(object)
+{: #dialog-methods-arrays-append}
 
 Cette méthode ajoute une nouvelle valeur à l'élément JSONArray et renvoie l'élément JSONArray modifié.
 
@@ -89,10 +121,11 @@ Résultat :
 {: codeblock}
 
 ### JSONArray.clear()
+{: #dialog-methods-arrays-clear}
 
-Cette méthode efface toutes les valeurs du tableau et renvoie la valeur null. 
+Cette méthode efface toutes les valeurs du tableau et renvoie la valeur null.
 
-Utilisez l'expression suivante dans la sortie pour définir une zone qui efface un tableau que vous avez enregistré dans une variable contextuelle ($toppings_array) de ses valeurs. 
+Utilisez l'expression suivante dans la sortie pour définir une zone qui efface un tableau que vous avez enregistré dans une variable contextuelle ($toppings_array) de ses valeurs.
 
 ```json
 {
@@ -106,6 +139,7 @@ Utilisez l'expression suivante dans la sortie pour définir une zone qui efface 
 Si vous faites ensuite référence à la variable contextuelle $toppings_array, elle renvoie uniquement '[]'.
 
 ### JSONArray.contains(Object value)
+{: #dialog-methods-arrays-contains}
 
 Cette méthode renvoie la valeur true si l'élément JSONArray d'entrée contient la valeur d'entrée.
 
@@ -130,17 +164,17 @@ $toppings_array.contains('jambon')
 Résultat : `True`, car le tableau contient l'élément jambon.
 
 ### JSONArray.containsIntent(String intent_name, Double min_score, [Integer top_n])
-{: #dialog-methods-array-containsIntent}
+{: #dialog-methods-arrays-containsIntent}
 
-Cette méthode renvoie `true` si le tableau JSONArray, `intents`, contient spécifiquement l'intention indiquée et que cette intention possède une cote de confiance égale ou supérieure à la cote minimale spécifiée. Vous pouvez éventuellement spécifier un nombre pour indiquer que l'intention doit être incluse dans le nombre d'éléments supérieurs du tableau. 
+Cette méthode renvoie `true` si le tableau JSONArray, `intents`, contient spécifiquement l'intention indiquée et que cette intention possède une cote de confiance égale ou supérieure à la cote minimale spécifiée. Vous pouvez éventuellement spécifier un nombre pour indiquer que l'intention doit être incluse dans le nombre d'éléments supérieurs du tableau.
 
 Cette méthode renvoie `false` si l'intention spécifiée ne figure pas dans le tableau, si sa cote de confiance n'est pas supérieure ou égale à la cote de confiance minimale, ou si l'intention est inférieure dans le tableau à l'emplacement d'index spécifié.
 
- Le service génère automatiquement un tableau d'`intentions` qui répertorie les intentions que le service détecte dans l'entrée chaque fois que l'entrée utilisateur est soumise. Le tableau répertorie en premier lieu toutes les intentions détectées par le service dans l'ordre de confiance la plus élevée. 
+Le service génère automatiquement un tableau d'`intentions` qui répertorie les intentions que le service détecte dans l'entrée chaque fois que l'entrée utilisateur est soumise. Le tableau répertorie en premier lieu toutes les intentions détectées par le service dans l'ordre de confiance la plus élevée.
 
-Vous pouvez utiliser cette méthode dans une condition de noeud non seulement pour vérifier la présence d'une intention, mais également pour définir un seuil de cote de confiance à respecter afin que le noeud puisse être traité et que sa réponse soit renvoyée. 
+Vous pouvez utiliser cette méthode dans une condition de noeud non seulement pour vérifier la présence d'une intention, mais également pour définir un seuil de cote de confiance à respecter afin que le noeud puisse être traité et que sa réponse soit renvoyée.
 
-Par exemple, utilisez l'expression suivante dans une condition de noeud lorsque vous souhaitez déclencher le noeud de dialogue uniquement lorsque les conditions suivantes sont remplies : 
+Par exemple, utilisez l'expression suivante dans une condition de noeud lorsque vous souhaitez déclencher le noeud de dialogue uniquement lorsque les conditions suivantes sont remplies :
 
 - L'intention `#General_Ending` est présente.
 - La cote de confiance de l'intention `#General_Ending` est supérieure à 80 %.
@@ -152,20 +186,20 @@ intents.containsIntent("General_Ending", 0.8, 2)
 {: codeblock}
 
 ### JSONArray.filter(temp, "temp.property operator comparison_value")
-{: #dialog-methods-array-filter}
+{: #dialog-methods-arrays-filter}
 
-Filtre un tableau en comparant chaque valeur d'élément de tableau à une valeur que vous spécifiez. Cette méthode est similaire à une [projection de collection](#collection-projection). Une projection de collection renvoie un tableau filtré basé sur un nom dans une paire nom-valeur d'élément de tableau. La méthode de filtrage renvoie un tableau filtré basé sur une valeur d'une paire nom-valeur d'élément de tableau. 
+Filtre un tableau en comparant chaque valeur d'élément de tableau à une valeur que vous spécifiez. Cette méthode est similaire à une [projection de collection](#dialog-methods-collection-projection). Une projection de collection renvoie un tableau filtré basé sur un nom dans une paire nom-valeur d'élément de tableau. La méthode de filtrage renvoie un tableau filtré basé sur une valeur d'une paire nom-valeur d'élément de tableau.
 
-L'expression de filtre comprend les valeurs suivantes : 
+L'expression de filtre comprend les valeurs suivantes :
 
 - `temp` : nom d'une variable utilisée temporairement lorsque chaque élément du tableau est évalué. Par exemple, `city`.
 - `property` : propriété d'élément que vous souhaitez comparer à `comparison_value`. Spécifiez la propriété en tant que propriété de la variable temporaire nommée dans le premier paramètre. Utilisez la syntaxe : `temp.property`. Par exemple, si `latitude` est un nom d'élément valide pour une paire nom-valeur du tableau, spécifiez la propriété sous la forme `city.latitude`.
 - `operator` : opérateur à utiliser pour comparer la valeur de la propriété à `comparison_value`.
 
-     Les opérateurs pris en charge sont : 
+    Les opérateurs pris en charge sont :
 
     <table>
-    <caption>Opérateurs de filtre pris en charge </caption>
+    <caption>Opérateurs de filtre pris en charge</caption>
     <tr>
       <th>Opérateur</th>
       <th>Description</th>
@@ -198,9 +232,9 @@ L'expression de filtre comprend les valeurs suivantes :
 
 - `comparison_value` : valeur à laquelle vous souhaitez comparer chaque valeur de propriété d'élément de tableau. Pour spécifier une valeur pouvant changer en fonction de l'entrée utilisateur, utilisez une variable contextuelle ou une entité comme valeur. Si vous spécifiez une valeur pouvant varier, ajoutez une logique pour garantir que la valeur `comparison_value` est valide au moment de l'évaluation, faute de quoi une erreur se produit.
 
-#### Exemple de filtre 1 
+#### Exemple de filtre 1
 
-Par exemple, vous pouvez utiliser la méthode du filtre pour évaluer un tableau contenant un ensemble de noms de villes et leur population afin de renvoyer un tableau plus petit ne contenant que des villes de plus de 5 millions d’habitants. 
+Par exemple, vous pouvez utiliser la méthode du filtre pour évaluer un tableau contenant un ensemble de noms de villes et leur population afin de renvoyer un tableau plus petit ne contenant que des villes de plus de 5 millions d’habitants.
 
 La variable contextuelle `$cities` suivante contient un tableau d'objets. Chaque objet contient une propriété `name` et `population`.
 
@@ -249,18 +283,18 @@ L'expression renvoie le tableau filtré suivant :
 ```
 {: codeblock}
 
-Vous pouvez utiliser une projection de collection pour créer un nouveau tableau n'incluant que les noms de ville du tableau renvoyés par la méthode de filtrage. Vous pouvez ensuite utiliser la méthode `join` pour afficher les deux valeurs d'élément de nom du tableau sous forme de chaîne (String) et séparer les valeurs par une virgule et un espace. 
+Vous pouvez utiliser une projection de collection pour créer un nouveau tableau n'incluant que les noms de ville du tableau renvoyés par la méthode de filtrage. Vous pouvez ensuite utiliser la méthode `join` pour afficher les deux valeurs d'élément de nom du tableau sous forme de chaîne (String) et séparer les valeurs par une virgule et un espace.
 
 ```bash
 Les villes de plus de 5 millions d’habitants sont <?  T(String).join(", ",($cities.filter("city", "city.population > 5000000")).![name]) ?>.
 ```
 {: codeblock}
 
- La réponse obtenue est la suivante : ` Les villes de plus de 5 millions d’habitants sont Tokyo et Beijing`
+La réponse obtenue est la suivante : ` Les villes de plus de 5 millions d’habitants sont Tokyo et Beijing`
 
-#### Exemple de filtre 2 
+#### Exemple de filtre 2
 
-La méthode de filtrage a l'avantage de ne pas nécessiter de coder la valeur `comparison_value`. Dans cet exemple, la valeur codée 5000000 est remplacée par une variable contextuelle. 
+La méthode de filtrage a l'avantage de ne pas nécessiter de coder la valeur `comparison_value`. Dans cet exemple, la valeur codée 5000000 est remplacée par une variable contextuelle.
 
 Dans cet exemple, la variable contextuelle `$population_min` contient le nombre `5000000`. Le nom arbitraire de la variable temporaire est `city`. L'expression SpEL filtre le tableau `$cities` pour n'inclure que les villes de plus de 5 millions d'habitants :
 
@@ -288,16 +322,16 @@ L'expression renvoie le tableau filtré suivant :
 Lorsque vous comparez des valeurs numériques, veillez à définir la variable contextuelle impliquée dans la comparaison sur une valeur valide avant le déclenchement de la méthode de filtrage. Notez que `null` peut être une valeur valide si l’élément de tableau avec lequel vous la comparez peut la contenir. Par exemple, si la paire nom-valeur de population pour Tokyo est `"population":null`, et que l'expression de comparaison est `"city.population == $population_min"`, `null` serait une valeur valide pour la variable contextuelle `$population_min`.
 {: tip}
 
-Vous pouvez utiliser une expression de réponse de noeud de dialogue telle que : 
+Vous pouvez utiliser une expression de réponse de noeud de dialogue telle que :
 
 ```bash
 Les villes de plus de $population_min habitants sont <?  T(String).join(", ",($cities.filter("city", "city.population > $population_min")).![name]) ?>.
 ```
 {: codeblock}
 
- La réponse obtenue est la suivante : ` Les villes de plus de 5000000 habitants sont Tokyo et Beijing`
+La réponse obtenue est la suivante : ` Les villes de plus de 5000000 habitants sont Tokyo et Beijing`
 
-#### Exemple de filtre 3 
+#### Exemple de filtre 3
 
 Dans cet exemple, un nom d'entité est utilisé comme `comparison_value`. L'entrée utilisateur est `Quel est le nombre d'habitants de Tokyo ?` Le nom arbitraire de la variable temporaire est `y`. Vous avez créé une entité nommée `@city` qui reconnaît les noms de ville, y compris `Tokyo`.
 
@@ -317,7 +351,7 @@ L'expression renvoie le tableau suivant :
 ```
 {: codeblock}
 
-Vous pouvez utiliser un projet de collection pour obtenir un tableau contenant uniquement l'élément de population issu du tableau initial, puis utiliser la méthode `get` pour renvoyer la valeur de l'élément de population. 
+Vous pouvez utiliser un projet de collection pour obtenir un tableau contenant uniquement l'élément de population issu du tableau initial, puis utiliser la méthode `get` pour renvoyer la valeur de l'élément de population.
 
 ```bash
 Le nombre d'habitants de @city est : <? ($cities.filter("y", "y.name == @city").![population]).get(0) ?>.
@@ -327,6 +361,7 @@ Le nombre d'habitants de @city est : <? ($cities.filter("y", "y.name == @city").
 L'expression renvoie : `Le nombre d'habitants de Tokyo est 9273000.`
 
 ### JSONArray.get(Integer)
+{: #dialog-methods-arrays-get}
 
 Cette méthode renvoie un index d'entrée à partir de l'élément JSONArray.
 
@@ -373,6 +408,7 @@ Réponse :
 {: codeblock}
 
 ### JSONArray.getRandomItem()
+{: #dialog-methods-arrays-getRandom}
 
 Cette méthode renvoie un élément aléatoire à partir de l'élément JSONArray d'entrée.
 
@@ -413,11 +449,11 @@ Résultat : `"jambon est un excellent choix !"` ou `"oignons est un excellent ch
 **Remarque :** le texte de sortie résultant est choisi de manière aléatoire.
 
 ### JSONArray.indexOf(value)
-{: #dialog-methods-array-indexOf}
+{: #dialog-methods-arrays-indexOf}
 
-Cette méthode renvoie le numéro d'index de l'élément dans le tableau qui correspond à la valeur que vous spécifiez en tant que paramètre ou à `-1` si la valeur est introuvable dans le tableau. La valeur peut être une chaîne (String) (`"Ecole"`), un entier (Integer) (`8`), ou un double (`9.1`). La valeur doit être une correspondance exacte et est sensible à la casse. 
+Cette méthode renvoie le numéro d'index de l'élément dans le tableau qui correspond à la valeur que vous spécifiez en tant que paramètre ou à `-1` si la valeur est introuvable dans le tableau. La valeur peut être une chaîne (String) (`"Ecole"`), un entier (Integer) (`8`), ou un double (`9.1`). La valeur doit être une correspondance exacte et est sensible à la casse.
 
-Par exemple, les variables contextuelles suivantes contiennent des tableaux : 
+Par exemple, les variables contextuelles suivantes contiennent des tableaux :
 
 ```json
 {
@@ -429,7 +465,7 @@ Par exemple, les variables contextuelles suivantes contiennent des tableaux :
 }
 ```
 
-Les expressions suivantes peuvent être utilisées pour déterminer l'index de tableau auquel la valeur est spécifiée : 
+Les expressions suivantes peuvent être utilisées pour déterminer l'index de tableau auquel la valeur est spécifiée :
 
 ```bash
 <? $array1.indexOf("Marie") ?> renvoie `0`
@@ -437,7 +473,7 @@ Les expressions suivantes peuvent être utilisées pour déterminer l'index de t
 <? $array3.indexOf(10.1) ?> renvoie `2`
 ```
 
-Cette méthode peut être utile pour obtenir l'index d'un élément dans un tableau d'intentions, par exemple. Vous pouvez appliquer la méthode `indexOf` au tableau d'intentions généré chaque fois que l'entrée utilisateur est évaluée afin de déterminer le numéro d'index du tableau d'une intention spécifique. 
+Cette méthode peut être utile pour obtenir l'index d'un élément dans un tableau d'intentions, par exemple. Vous pouvez appliquer la méthode `indexOf` au tableau d'intentions généré chaque fois que l'entrée utilisateur est évaluée afin de déterminer le numéro d'index du tableau d'une intention spécifique.
 
 ```bash
 intents.indexOf("General_Greetings")
@@ -452,6 +488,7 @@ intents[intents.indexOf("General_Greetings")].confidence
 {: codeblock}
 
 ### JSONArray.join(String delimiter)
+{: #dialog-methods-arrays-join}
 
 Cette méthode joint toutes les valeurs de ce tableau à une chaîne. Les valeurs sont converties en chaîne et délimitées par le délimiteur d'entrée.
 
@@ -494,14 +531,21 @@ Voici le tableau : oignons;olives;jambon;
 ```
 {: codeblock}
 
-Si vous définissez une variable qui stocke plusieurs valeurs dans un tableau JSON, vous pouvez renvoyer un sous-ensemble de valeurs à partir du tableau, puis utiliser la méthode join() pour les formater correctement. 
+Si une entrée utilisateur mentionne plusieurs garnitures et que vous avez défini une entité nommée `@toppings` pouvant reconnaître les mentions de garnitures, vous pouvez utiliser l'expression suivante dans la réponse pour répertorier les garnitures mentionnées :
+
+```json
+Donc, vous voulez <? @toppings.values.join(',') ?>.
+```
+{: codeblock}
+
+Si vous définissez une variable qui stocke plusieurs valeurs dans un tableau JSON, vous pouvez renvoyer un sous-ensemble de valeurs à partir du tableau, puis utiliser la méthode join() pour les formater correctement.
 
 #### Projection de collection
 {: #dialog-methods-collection-projection}
 
 Une expression SpEL de `projection de collection` extrait une sous-collection d'un tableau contenant des objets. La syntaxe d'une projection de collection est `array_that_contains_value_sets.![value_of_interest]`.
 
-Par exemple, la variable contextuelle suivante définit un tableau JSON qui stocke des informations de vol. Il y a deux points de données par vol, l'heure et le code de vol. 
+Par exemple, la variable contextuelle suivante définit un tableau JSON qui stocke des informations de vol. Il y a deux points de données par vol, l'heure et le code de vol.
 
 ```json
 "flights_found": [
@@ -521,7 +565,7 @@ Par exemple, la variable contextuelle suivante définit un tableau JSON qui stoc
 ```
 {: codeblock}
 
-Pour renvoyer les codes de vol uniquement, vous pouvez créer une expression de projection de collection à l'aide de la syntaxe suivante : 
+Pour renvoyer les codes de vol uniquement, vous pouvez créer une expression de projection de collection à l'aide de la syntaxe suivante :
 
 ```
 <? $flights_found.![flight_code] ?>
@@ -529,7 +573,7 @@ Pour renvoyer les codes de vol uniquement, vous pouvez créer une expression de 
 
 Cette expression renvoie un tableau des valeurs `flight_code` sous la forme `["OK123","LH421","TS4156"]`. Pour plus d'informations, reportez-vous à la [documentation sur la projection de collection SpEL](https://docs.spring.io/spring/docs/3.0.x/reference/expressions.html).
 
-Si vous appliquez la méthode `join()` aux valeurs du tableau renvoyé, les codes de vol sont affichés sour forme de liste de valeurs séparées par des virgules. Par exemple, vous pouvez utiliser la syntaxe suivante dans une réponse : 
+Si vous appliquez la méthode `join()` aux valeurs du tableau renvoyé, les codes de vol sont affichés sous forme de liste de valeurs séparées par des virgules. Par exemple, vous pouvez utiliser la syntaxe suivante dans une réponse :
 
 ```
 Les vols correspondant à vos critères sont :
@@ -540,16 +584,16 @@ Les vols correspondant à vos critères sont :
 Résultat : `Les vols correspondant à vos critères sont : OK123,LH421,TS4156.`
 
 ### JSONArray.joinToArray(template)
-{: #dialog-methods-joinToArray}
+{: #dialog-methods-arrays-joinToArray}
 
-Cette méthode applique le format que vous définissez dans un modèle au tableau et renvoie un tableau mis en forme conformément à vos spécifications. Cette méthode est utile pour appliquer la mise en forme aux valeurs de tableau que vous souhaitez renvoyer dans une réponse de dialogue, par exemple. 
+Cette méthode applique le format que vous définissez dans un modèle au tableau et renvoie un tableau mis en forme conformément à vos spécifications. Cette méthode est utile pour appliquer la mise en forme aux valeurs de tableau que vous souhaitez renvoyer dans une réponse de dialogue, par exemple.
 
-Le modèle peut être spécifié en tant que chaîne (String), objet JSON (JSON Object) ou tableau JSON (JSON Array). Pour référencer les valeurs du tableau que vous modifiez dans le modèle, respectez les conventions syntaxiques suivantes : 
+Le modèle peut être spécifié en tant que chaîne (String), objet JSON (JSON Object) ou tableau JSON (JSON Array). Pour référencer les valeurs du tableau que vous modifiez dans le modèle, respectez les conventions syntaxiques suivantes :
 
 - `%` : Représente le début ou la fin d'un élément ou d'une propriété d'élément que vous voulez renvoyer du tableau en cours d'édition.
-- `e` : représente temporairement l'élément de tableau auquel vous souhaitez appliquer la mise en forme. Ce nom de variable temporaire `e` ne peut pas être modifié. 
+- `e` : représente temporairement l'élément de tableau auquel vous souhaitez appliquer la mise en forme. Ce nom de variable temporaire `e` ne peut pas être modifié.
 
-Par exemple, une variable contextuelle contient un tableau avec une liste des détails de vol pour trois vols. 
+Par exemple, une variable contextuelle contient un tableau avec une liste des détails de vol pour trois vols.
 
 ```json
 "flights": [
@@ -590,7 +634,7 @@ Par exemple, une variable contextuelle contient un tableau avec une liste des d�
 ```
 {: codeblock}
 
-Vous souhaitez renvoyer uniquement la liste des codes de vol. Pour extraire uniquement la valeur de l'élément `flight` de chaque tableau et la renvoyer dans une liste, vous pouvez utiliser l'expression suivante : 
+Vous souhaitez renvoyer uniquement la liste des codes de vol. Pour extraire uniquement la valeur de l'élément `flight` de chaque tableau et la renvoyer dans une liste, vous pouvez utiliser l'expression suivante :
 
 ```
 Les vols disponibles sont <? $flights.joinToArray("%e.flight%"). ?>
@@ -611,9 +655,9 @@ La réponse est `Les vols disponibles sont DL1040, DL1710, DL4379.`
 #### Modèle complexe
 {: #dialog-methods-complex-template}
 
-Pour créer un modèle plus complexe, au lieu de spécifier directement les détails du modèle dans le paramètre de méthode, vous pouvez créer une variable contextuelle. 
+Pour créer un modèle plus complexe, au lieu de spécifier directement les détails du modèle dans le paramètre de méthode, vous pouvez créer une variable contextuelle.
 
-Cette variable contextuelle de modèle contient un sous-ensemble des éléments du tableau et les fait précéder d'intitulés, de sorte que les informations seront affichées dans une liste lisible dans la réponse : 
+Cette variable contextuelle de modèle contient un sous-ensemble des éléments du tableau et les fait précéder d'intitulés, de sorte que les informations seront affichées dans une liste lisible dans la réponse :
 
 ```json
 "template": "<br/>Numéro de vol : %e.flight% <br/> Compagnie aérienne : %e.carrier% <br/> Date de départ : %e.departure_date% <br/> Heure de départ : %e.departure_time% <br/> Heure d'arrivée : %e.arrival_time% <br/>"
@@ -630,7 +674,7 @@ Les informations de vol sont <? $flights.joinToArray($template).join(" ") ?>
 ```
 {: codeblock}
 
-La réponse ressemble à ceci : 
+La réponse ressemble à ceci :
 
 ```
 Les informations de vol sont
@@ -654,12 +698,12 @@ Heure d'arrivée : 09:05
 ```
 {: screen}
 
-L'avantage d'utiliser cette méthode est que la fréquence à laquelle les valeurs du tableau changent ou si le nombre d'éléments dans le tableau augmente importe peu. Tant que chaque élément du tableau contient au moins le sous-ensemble de propriétés référencées par le modèle, l'expression est valide. 
+L'avantage d'utiliser cette méthode est que la fréquence à laquelle les valeurs du tableau changent ou si le nombre d'éléments dans le tableau augmente importe peu. Tant que chaque élément du tableau contient au moins le sous-ensemble de propriétés référencées par le modèle, l'expression est valide.
 
-#### Exemple de modèle d'objet JSON 
+#### Exemple de modèle d'objet JSON
 {: #dialog-methods-object-template}
 
-Dans cet exemple, la variable contextuelle de modèle est définie en tant qu'objet JSON qui extrait le numéro de vol, ainsi que les dates et les heures d'arrivée et de départ de chacun des éléments de vol spécifiés dans le tableau de la variable contextuelle `$flights`. Vous pouvez utiliser cette approche pour appliquer un formatage standard aux détails de vol pour des vols gérés par deux compagnies différentes et qui mettent en forme les informations de vol différemment dans leurs services Web, par exemple. 
+Dans cet exemple, la variable contextuelle de modèle est définie en tant qu'objet JSON qui extrait le numéro de vol, ainsi que les dates et les heures d'arrivée et de départ de chacun des éléments de vol spécifiés dans le tableau de la variable contextuelle `$flights`. Vous pouvez utiliser cette approche pour appliquer un formatage standard aux détails de vol pour des vols gérés par deux compagnies différentes et qui mettent en forme les informations de vol différemment dans leurs services Web, par exemple.
 
 ```json
 "template": {
@@ -669,14 +713,14 @@ Dans cet exemple, la variable contextuelle de modèle est définie en tant qu'ob
 ```
 {: codeblock}
 
-Vous souhaiterez peut-être concevoir votre application client personnalisée pour lire les objets du tableau renvoyé et formater les valeurs correctement pour la réponse de votre agent conversationnel. Votre réponse de noeud de dialogue peut renvoyer l'objet de détails d'arrivée de vol sous forme de tableau à l'aide de cette expression : 
+Vous souhaiterez peut-être concevoir votre application client personnalisée pour lire les objets du tableau renvoyé et formater les valeurs correctement pour la réponse de votre assistant. Votre réponse de noeud de dialogue peut renvoyer l'objet de détails d'arrivée de vol sous forme de tableau à l'aide de cette expression :
 
 ```
 <? $flights.joinToArray($template) ?>
 ```
 {: screen}
 
-Voici la réponse du noeud de dialogue : 
+Voici la réponse du noeud de dialogue :
 
 ```json
 [
@@ -691,12 +735,13 @@ Voici la réponse du noeud de dialogue :
   {
     "arrival":"Le vol DL4379 arrive le 2019-02-03 à 09:05.",
     "departure":"Le vol DL4379 part le 2019-02-02 à 21:40."
-    ]
+  ]
   ```
 
-Notez que l'ordre des éléments `arrival` et `departure` est interverti dans la réponse. Le service réorganise généralement les éléments dans un objet JSON. Si vous souhaitez que les éléments soient renvoyés dans un ordre spécifique, définissez le modèle en utilisant plutôt un tableau JSON (JSON Array) ou une valeur de chaîne (String). 
+Notez que l'ordre des éléments `arrival` et `departure` est interverti dans la réponse. Le service réorganise généralement les éléments dans un objet JSON. Si vous souhaitez que les éléments soient renvoyés dans un ordre spécifique, définissez le modèle en utilisant plutôt un tableau JSON (JSON Array) ou une valeur de chaîne (String).
 
 ### JSONArray.remove(Integer)
+{: #dialog-methods-arrays-remove}
 
 Cette méthode retire l'élément de la position d'index dans l'élément JSONArray et renvoie l'élément JSONArray ainsi mis à jour.
 
@@ -734,6 +779,7 @@ Résultat :
 {: codeblock}
 
 ### JSONArray.removeValue(object)
+{: #dialog-methods-arrays-removeValue}
 
 Cette méthode retire la première occurrence de la valeur dans l'élément JSONArray et renvoie l'élément JSONArray ainsi mis à jour.
 
@@ -771,6 +817,7 @@ Résultat :
 {: codeblock}
 
 ### JSONArray.set(Integer index, Object value)
+{: #dialog-methods-arrays-set}
 
 Cette méthode affecte la valeur d'entrée à l'index d'entrée de l'élément JSONArray et renvoie l'élément JSONArray ainsi modifié.
 
@@ -808,6 +855,7 @@ Résultat :
 {: codeblock}
 
 ### JSONArray.size()
+{: #dialog-methods-arrays-size}
 
 Cette méthode renvoie la taille de l'élément JSONArray sous la forme d'un entier.
 
@@ -845,6 +893,7 @@ Résultat :
 {: codeblock}
 
 ### JSONArray split(expression régulière de type Chaîne)
+{: #dialog-methods-arrays-split}
 
 Cette méthode fractionne la chaîne d'entrée à l'aide de l'expression régulière d'entrée. Le résultat obtenu est un élément JSONArray composé de chaînes.
 
@@ -878,11 +927,12 @@ Génère la sortie suivante :
 {: codeblock}
 
 ### Prise en charge de com.google.gson.JsonArray
-{: #dialog-methods-com.google.gson.JsonArray}
+{: #dialog-methods-arrays-com-google-gson-JsonArray}
 
 En plus des méthodes intégrées, vous pouvez utiliser des méthodes standard de la classe `com.google.gson.JsonArray`.
 
 #### Nouveau tableau
+{: #dialog-methods-arrays-new}
 
 new JsonArray().append('value')
 
@@ -904,10 +954,13 @@ Plusieurs méthodes sont disponibles pour les dates et les heures.
 Pour plus d'informations sur la procédure permettant de reconnaître et d'extraire des informations de date et d'heure à partir d'une entrée utilisateur, reportez-vous à la rubrique [Entités @sys-date et @sys-time](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-date-time).
 
 ### .after(date-heure de type Chaîne)
+{: #dialog-methods-dates-after}
 
 Détermine si la valeur date-heure figure après l'argument date-heure.
 
 ### .before(date-heure de type Chaîne)
+{: #dialog-methods-dates-before}
+
 Détermine si la valeur date-heure figure avant l'argument date-heure.
 
 Par exemple :
@@ -920,6 +973,7 @@ Par exemple :
 - Si elle compare `date and time vs. time`, la méthode ignore la date et compare uniquement les heures.
 
 ### now()
+{: #dialog-methods-dates-now}
 
 Renvoie une chaîne avec la date et l'heure en cours au format `aaaa-MM-jj HH:mm:ss`.
 
@@ -972,6 +1026,7 @@ Exemple de `now()` dans des conditions de noeud (pour décider si c'est encore l
 {: codeblock}
 
 ### .reformatDateTime(String format)
+{: #dialog-methods-dates-reformatDateTime}
 
 Met en forme les chaînes de date et d'heure au format souhaité pour la sortie utilisateur.
 
@@ -1001,19 +1056,23 @@ Le format suit les règles Java [SimpleDateFormat ![Icône de lien externe](../.
 **Remarque** : lorsque le formatage porte uniquement sur l'heure, la date est interprétée comme `1970-01-01`.
 
 ### .sameMoment(String date/time)
+{: #dialog-methods-dates-sameMoment}
 
 - Détermine si la valeur date-heure est identique à l'argument date-heure.
 
 ### .sameOrAfter(String date/time)
+{: #dialog-methods-dates-sameOrAfter}
 
 - Détermine si la valeur date-heure figure après ou est identique à l'argument date-heure.
 - Semblable à `.after()`.
 
 ### .sameOrBefore(String date/time)
+{: #dialog-methods-dates-sameOrBefore}
 
 - Détermine si la valeur date-heure figure avant ou est identique à l'argument date-heure.
 
 ### today()
+{: #dialog-methods-dates-today}
 
 Renvoie une chaîne avec la date en cours au format `aaaa-MM-jj`.
 
@@ -1045,12 +1104,12 @@ Exemple de noeud de dialogue `today()` utilisé dans la zone de sortie :
 
 Résultat : `La date du jour est 2018-03-09.`
 
-## Calculs de date et heure 
-{: #dialog-methods-calculations}
+## Calculs de date et heure
+{: #dialog-methods-date-time-calculations}
 
-Utilisez les méthodes suivantes pour calculer une date. 
+Utilisez les méthodes suivantes pour calculer une date.
 
-| Méthode                 | Description |
+| Méthode                  | Description |
 |-------------------------|-------------|
 | `<date>.minusDays(n)`   | Renvoie la date du jour n nombre de jours avant la date spécifiée. |
 | `<date>.minusMonths(n)` | Renvoie la date du jour n nombre de mois avant la date spécifiée. |
@@ -1061,7 +1120,7 @@ Utilisez les méthodes suivantes pour calculer une date.
 
 où `<date>` est spécifié au format `aaaa-MM-jj` ou `aaaa-MM-jj HH:mm:ss`.
 
-Pour obtenir la date de demain, spécifiez l'expression suivante : 
+Pour obtenir la date de demain, spécifiez l'expression suivante :
 
 ```json
 {
@@ -1107,7 +1166,7 @@ Pour obtenir la date du jour dans une semaine à partir d'aujourd'hui, spécifie
 
 Résultat si la date capturée par l'entité @sys-date est la date du jour, soit le 9 mars 2018 : `La date de la semaine prochaine est 2018-03-16.`
 
-Pour obtenir la date du mois dernier, spécifiez l'expression suivante : 
+Pour obtenir la date du mois dernier, spécifiez l'expression suivante :
 
 ```json
 {
@@ -1130,9 +1189,9 @@ Pour obtenir la date du mois dernier, spécifiez l'expression suivante :
 
 Résultat si la date du jour est le 9 mars 2018 : `Le mois dernier la date était 2018-02-9.`
 
-Utilisez les méthodes suivantes pour calculer l'heure. 
+Utilisez les méthodes suivantes pour calculer l'heure.
 
-| Méthode                 | Description |
+| Méthode                  | Description |
 |-------------------------|-------------|
 | `<time>.minusHours(n)`   | Renvoie l'heure n heures avant l'heure spécifiée. |
 | `<time>.minusMinutes(n)` | Renvoie l'heure n minutes avant l'heure spécifiée. |
@@ -1143,7 +1202,7 @@ Utilisez les méthodes suivantes pour calculer l'heure.
 
 où `<time>` est spécifié au format `HH:mm:ss`.
 
-Pour obtenir l'heure dans une heure, spécifiez l'expression suivante : 
+Pour obtenir l'heure dans une heure, spécifiez l'expression suivante :
 
 ```json
 {
@@ -1166,7 +1225,7 @@ Pour obtenir l'heure dans une heure, spécifiez l'expression suivante :
 
 Résultat s'il est 8 heures du matin : `Dans une heure, il sera 09:00:00.`
 
-Pour obtenir l'heure il y a 30 minutes, spécifiez l'expression suivante : 
+Pour obtenir l'heure il y a 30 minutes, spécifiez l'expression suivante :
 
 ```json
 {
@@ -1189,7 +1248,7 @@ Pour obtenir l'heure il y a 30 minutes, spécifiez l'expression suivante :
 
 Résultat si l'heure capturée par l'entité @sys-time est 8 heures du matin : `Une demi-heure avant 08:00:00, il était 07:30:00.`
 
-Pour reformater l'heure renvoyée, vous pouvez utiliser l'expression suivante : 
+Pour reformater l'heure renvoyée, vous pouvez utiliser l'expression suivante :
 
 ```json
 {
@@ -1215,9 +1274,9 @@ Résultat s'il est 14h19 : `Il y a 6 heures, il était 8:19 AM.`
 ### Utilisation des intervalles de temps
 {: #dialog-methods-time-spans}
 
-Pour afficher une réponse selon que la date du jour se situe ou non dans une période donnée, vous pouvez utiliser une combinaison de méthodes liées au temps. Par exemple, si vous proposez annuellement une offre spéciale pendant les fêtes de fin d'année, vous pouvez vérifier si la date du jour se situe entre le 25 novembre et le 24 décembre de cette année. Commencez par définir les dates d’intérêt en tant que variables contextuelles. 
+Pour afficher une réponse selon que la date du jour se situe ou non dans une période donnée, vous pouvez utiliser une combinaison de méthodes liées au temps. Par exemple, si vous proposez annuellement une offre spéciale pendant les fêtes de fin d'année, vous pouvez vérifier si la date du jour se situe entre le 25 novembre et le 24 décembre de cette année. Commencez par définir les dates d’intérêt en tant que variables contextuelles.
 
-Dans les expressions suivantes de variable contextuelle de date de début et de fin, la date est construite en concaténant la valeur de l'année en cours dérivée de manière dynamique avec des valeurs de mois et de jour codées. 
+Dans les expressions suivantes de variable contextuelle de date de début et de fin, la date est construite en concaténant la valeur de l'année en cours dérivée de manière dynamique avec des valeurs de mois et de jour codées.
 
 ```json
 "context": {
@@ -1226,12 +1285,12 @@ Dans les expressions suivantes de variable contextuelle de date de début et de 
  }
 ```
 
-Dans la condition de réponse, vous pouvez indiquer que vous souhaitez afficher la réponse uniquement si la date du jour se situe entre les dates de début et de fin que vous avez définies en tant que variables contextuelles. 
+Dans la condition de réponse, vous pouvez indiquer que vous souhaitez afficher la réponse uniquement si la date du jour se situe entre les dates de début et de fin que vous avez définies en tant que variables contextuelles.
 
 `now().after($start_date) && now().before($end_date)`
 
 ### Prise en charge de java.util.Date
-{: #dialog-methods-java.util.Date}
+{: #dialog-methods-dates-java-util-date}
 
 En plus des méthodes intégrées, vous pouvez utiliser des méthodes standard de la classe `java.util.Date`.
 
@@ -1286,26 +1345,30 @@ Pour plus d'informations sur les entités de système qui peuvent reconnaître e
 
 Si vous voulez que le service reconnaisse des formats numériques spécifiques dans une entrée utilisateur, tels que des références de numéro d'ordre, pensez à créer une entité de canevas pour les capturer. Pour plus d'informations, reportez-vous à la rubrique [Création d'entités](/docs/services/assistant?topic=assistant-entities).
 
-Si vous souhaitez modifier l’emplacement décimal d’un nombre, par exemple, pour reformater un nombre en tant que valeur monétaire, reportez-vous à la [méthode String format()](#dialog-methods-java.lang.String).
+Si vous souhaitez modifier l’emplacement décimal d’un nombre, par exemple, pour reformater un nombre en tant que valeur monétaire, reportez-vous à la [méthode String format()](#java.lang.String).
 
 ### toDouble()
+{: #dialog-methods-numbers-toDouble}
 
   Convertit l'objet ou la zone en type Nombre double. Vous pouvez appeler cette méthode sur n'importe quel objet ou sur n'importe quelle zone. Si la conversion échoue, *null* est renvoyé.
 
 ### toInt()
+{: #dialog-methods-numbers-toInt}
 
   Convertit l'objet ou la zone en type Nombre entier. Vous pouvez appeler cette méthode sur n'importe quel objet ou sur n'importe quelle zone. Si la conversion échoue, *null* est renvoyé.
 
 ### toLong()
+{: #dialog-methods-numbers-toLong}
 
   Convertit l'objet ou la zone en type Nombre long. Vous pouvez appeler cette méthode sur n'importe quel objet ou sur n'importe quelle zone. Si la conversion échoue, *null* est renvoyé.
 
   Si vous spécifiez un type numérique Long dans une expression SpEL, vous devez ajouter un `L` au numéro pour l'identifier comme tel. Par exemple, `5000000000L`. Cette syntaxe est requise pour les nombres qui ne font pas partie du type Entier 32 bits. Par exemple, les nombres supérieurs à 2^31 (2,147,483,648) ou inférieurs à -2^31 (-2,147,483,648) sont considérés comme étant de type numérique Long. Les types numériques Long ont une valeur minimale de -2^63 et une valeur maximale de 2^63-1.
 
 ### Prise en charge des nombres Java
-{: #dialog-methods-java.lang.Number}
+{: #dialog-methods-numbers-java}
 
 ### java.lang.Math()
+{: #dialog-methods-numbers-java-lang-math}
 
 Effectue des opérations numériques de base.
 
@@ -1383,17 +1446,17 @@ Vous pouvez utiliser les méthodes de classe, notamment les suivantes :
 ```
 {: codeblock}
 
-Pour plus d'informations sur les autres méthodes, reportez-vous à la [documentation de référence java.lang.Math](https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html).
+Pour plus d'informations sur les autres méthodes, reportez-vous à la [documentation de référence java.lang.Math ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html).
 
 ### java.util.Random()
+{: #dialog-methods-numbers-java-util-random}
 
 Renvoie un nombre aléatoire. Vous pouvez utiliser l'une des options de syntaxe suivantes :
 
 - Pour renvoyer une valeur booléenne aléatoire (true ou false), utilisez `<?new Random().nextBoolean()?>`.
 - Pour renvoyer un nombre double aléatoire compris entre 0 (inclus) et 1 (exclu), utilisez `<?new Random().nextDouble()?>`
-- Pour renvoyer un nombre entier aléatoire compris entre 0 (inclus) et un nombre que vous spécifiez, utilisez `<?new Random().nextInt(n)?>`, où n est la limite supérieure de la plage numérique souhaitée + 1.
-  Par exemple, si vous voulez renvoyer un nombre aléatoire compris entre 0 et 10, spécifiez `<?new Random().nextInt(11)?>`.
-- Pour renvoyer un nombre entier aléatoire à partir de la plage de valeurs entières (-2147483648 à 2147483648), utilisez `<?new Random().nextInt()?>`.
+- Pour renvoyer un nombre entier aléatoire compris entre 0 (inclus) et un nombre que vous spécifiez, utilisez `<?new Random().nextInt(n)?>` où n est le haut de la plage de chiffres souhaitée + 1. Par exemple, si vous voulez renvoyer un nombre aléatoire compris entre 0 et 10, spécifiez `<?new Random().nextInt(11)?>`. 
+- Pour renvoyer un nombre entier aléatoire à partir de la plage de valeurs entières (-2147483648 à 2147483648), utilisez `<?new Random().nextInt()?>`. 
 
 Par exemple, vous pouvez créer un noeud de dialogue qui est déclenché par l'intention #random_number. La première condition de réponse peut se présenter comme suit :
 
@@ -1435,10 +1498,11 @@ Vous pouvez également utiliser des méthodes standard des classes suivantes :
 {: #dialog-methods-objects}
 
 ### JSONObject.clear()
+{: #dialog-methods-objects-jsonobject-clear}
 
-Cette méthode efface toutes les valeurs de l'objet JSON et renvoie la valeur null. 
+Cette méthode efface toutes les valeurs de l'objet JSON et renvoie la valeur null.
 
-Par exemple, vous souhaitez effacer les valeurs actuelles de la variable contextuelle $user. 
+Par exemple, vous souhaitez effacer les valeurs actuelles de la variable contextuelle $user.
 
 ```json
 {
@@ -1452,7 +1516,7 @@ Par exemple, vous souhaitez effacer les valeurs actuelles de la variable context
 ```
 {: codeblock}
 
-Utilisez l'expression suivante dans la sortie pour définir une zone qui efface l'objet de ses valeurs. 
+Utilisez l'expression suivante dans la sortie pour définir une zone qui efface l'objet de ses valeurs.
 
 ```json
 {
@@ -1467,7 +1531,7 @@ Si vous faites ensuite référence à la variable contextuelle $user, elle renvo
 
 Vous pouvez utiliser la méthode `clear()` sur les objets JSON `context` ou `output` dans le corps de l'appel d'API `/message`.
 
-#### Effacement du contexte 
+#### Effacement du contexte
 {: #dialog-methods-clearing-context}
 
 Lorsque vous utilisez la méthode `clear()` pour effacer l'objet `context`, elle efface **toutes** les variables à l'exception des variables suivantes :
@@ -1478,8 +1542,8 @@ Lorsque vous utilisez la méthode `clear()` pour effacer l'objet `context`, elle
 
 **Avertissement** : "toutes les valeurs de variable contextuelle" signifie :
 
-  - Toutes les valeurs par défaut définies pour les variables des noeuds ayant été déclenchés pendant la session en cours. 
-  - Toutes les mises à jour des valeurs par défaut avec les informations fournies par l'utilisateur ou des services externes pendant la session en cours. 
+  - Toutes les valeurs par défaut définies pour les variables des noeuds ayant été déclenchés pendant la session en cours.
+  - Toutes les mises à jour des valeurs par défaut avec les informations fournies par l'utilisateur ou des services externes pendant la session en cours.
 
 Pour utiliser la méthode, vous pouvez la spécifier dans une expression d'une variable que vous définissez dans l'objet de sortie. Par exemple :
 
@@ -1503,7 +1567,7 @@ Pour utiliser la méthode, vous pouvez la spécifier dans une expression d'une v
 
 ```
 
-#### Effacement de la sortie 
+#### Effacement de la sortie
 {: #dialog-methods-clearing-output}
 
 Lorsque vous utilisez la méthode `clear()` pour effacer l'objet `output`, elle efface toutes les variables sauf celle que vous utilisez pour effacer l'objet de sortie et toutes les réponses textuelles que vous définissez dans le noeud en cours. Elle n'efface pas non plus les variables suivantes :
@@ -1535,6 +1599,7 @@ Pour utiliser la méthode, vous pouvez la spécifier dans une expression d'une v
 Si un noeud antérieur dans l’arborescence définit la réponse textuelle `Je serais heureux de vous aider.`, puis passe à un noeud avec l’objet de sortie JSON défini ci-dessus, seul le message `Bonne journée.` apparaît comme réponse. La sortie `Je serais heureux de vous aider.` n’est pas affichée car elle est effacée et remplacée par la réponse textuelle du noeud qui appelle la méthode `clear()`.
 
 ### JSONObject.has(String)
+{: #dialog-methods-objects-jsonobject-has}
 
 Cette méthode renvoie la valeur true si l'élément JSONObject complexe contient une propriété du nom d'entrée.
 
@@ -1564,6 +1629,7 @@ Sortie du noeud de dialogue :
 Résultat : la condition est true car l'objet utilisateur contient la propriété `first_name`.
 
 ### JSONObject.remove(String)
+{: #dialog-methods-objects-jsonobject-remove}
 
 Cette méthode retire une propriété du nom de l'élément `JSONObject` d'entrée. L'élément `JSONElement` qui est renvoyé par cette méthode est l'élément `JSONElement` en cours de retrait.
 
@@ -1609,7 +1675,7 @@ Résultat :
 {: codeblock}
 
 ### Prise en charge de com.google.gson.JsonObject
-{: #dialog-methods-com.google.gson.JsonObject}
+{: #dialog-methods-objects-com-google-gson-JsonObject}
 
 En plus des méthodes intégrées, vous pouvez utiliser des méthodes standard de la classe `com.google.gson.JsonObject`.
 
@@ -1623,6 +1689,7 @@ Pour plus d'informations sur la procédure permettant de reconnaître et d'extra
 **Remarque :** pour les méthodes impliquant des expressions régulières, reportez-vous à l'article [RE2 Syntax reference ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/google/re2/wiki/Syntax){: new_window} qui contient des informations détaillées sur la syntaxe à utiliser lorsque vous spécifiez l'expression régulière.
 
 ### String.append(Object)
+{: #dialog-methods-strings-append}
 
 Cette méthode ajoute un objet d'entrée à la chaîne sous forme de chaîne et renvoie une chaîne modifiée.
 
@@ -1660,6 +1727,7 @@ Génère la sortie suivante :
 {: codeblock}
 
 ### String.contains(String)
+{: #dialog-methods-strings-contains}
 
 Cette méthode renvoie la valeur true si la chaîne contient la sous-chaîne d'entrée.
 
@@ -1677,6 +1745,7 @@ La syntaxe suivante :
 Résultat : la condition est `true`.
 
 ### String.endsWith(String)
+{: #dialog-methods-strings-endsWith}
 
 Cette méthode renvoie la valeur true si la chaîne se termine par la sous-chaîne d'entrée.
 
@@ -1699,41 +1768,43 @@ La syntaxe suivante :
 Résultat : la condition est `true`.
 
 ### String.extract(String regexp, Integer groupIndex)
+{: #dialog-methods-strings-extract}
 
-Cette méthode renvoie une chaîne extraite par index de groupe spécifié de l'expression régulière d'entrée.
+Cette méthode renvoie une chaîne de l'entrée qui correspond au canevas de groupe d'expressions régulières que vous spécifiez. Elle renvoie une chaîne vide si aucune correspondance n'est trouvée.
 
-Pour l'entrée suivante :
+Cette méthode est conçue pour extraire des correspondances pour différents groupes de canevas d'expression régulière, et non pour des correspondances différentes pour un canevas d'expression régulière. Pour rechercher des correspondances différentes, reportez-vous à la méthode [getMatch](#dialog-methods-strings-getMatch).
+{: note}
 
-```
-"Bonjour 123456".
-```
-{: codeblock}
-
-La syntaxe suivante :
+Dans cet exemple, la variable contextuelle permet de sauvegarder une chaîne qui correspond au groupe de canevas d'expression régulière que vous spécifiez. Dans l'expression, deux groupes de canevas d'expression régulière sont définis, chacun entre parenthèses. Il existe un troisième groupe inhérent qui est composé des deux groupes. Il s'agit du premier groupe d'expressions régulières(groupIndex 0) ; il correspond à une chaîne contenant le groupe de nombres complets et le groupe de textes. Le deuxième groupe d'expressions régulières (groupIndex 1) correspond à la première occurrence d'un groupe de nombres. Le troisième groupe (groupIndex 2) correspond à la première occurrence d'un groupe de textes après un groupe de nombres. 
 
 ```json
 {
   "context": {
-    "number_extract": "<? input.text.extract('[\\d]+',0) ?>"
+    "number_extract": "<? input.text.extract('([\\d]+)(\\b [A-Za-z]+)',n) ?>"
   }
 }
 ```
 {: codeblock}
 
-  **Important :** pour que `\\d` soit interprété comme une expression régulière, vous devez mettre en échappement les deux barres obliques inversées en ajoutant `\\` : `\\\\d`
+Lorsque vous spécifiez l'expression régulière dans JSON, vous devez fournir deux barres obliques inversées (\\). Si vous spécifiez cette expression dans une réponse de noeud, vous avez besoin d'une seule barre oblique inverse. Par exemple : 
+
+`<? input.text.extract('([\d]+)(\b [A-Za-z]+)',n) ?>`
+
+Entrée :
+
+```
+"Bonjour 123 je suis 456".
+```
+{: codeblock}
 
 Résultat :
 
-```json
-{
-  "context": {
-    "number_extract": "123456"
-  }
-}
-```
-{: codeblock}
+- Lorsque n=`0`, la valeur est `123 je`.
+- Lorsque n=`1`, la valeur est `123`.
+- Lorsque n=`2`, la valeur est `je`.
 
 ### String.find(String regexp)
+{: #dialog-methods-strings-find}
 
 Cette méthode renvoie la valeur true si l'un des segments de la chaîne correspond à l'expression régulière d'entrée.  Vous pouvez appeler cette méthode sur un élément JSONArray ou JSONObject, le tableau ou l'objet sera converti en chaîne avant la comparaison.
 
@@ -1755,7 +1826,47 @@ La syntaxe suivante :
 
 Résultat : la condition est true car la partie numérique du texte d'entrée correspond à l'expression régulière `^[^\d]*[\d]{6}[^\d]*$`.
 
+### String.getMatch(String regexp, Integer matchIndex)
+{: #dialog-methods-strings-getMatch}
+
+Cette méthode renvoie une chaîne de l'entrée qui correspond à l'occurrence du canevas de groupe d'expressions régulières que vous spécifiez. Cette méthode renvoie une chaîne vide si aucune correspondance n'est trouvée.
+
+Lorsque des correspondances sont trouvées, elles sont ajoutées à ce que vous pouvez considérer comme un *tableau de correspondances*. Si vous souhaitez renvoyer la troisième correspondance, car le nombre d'éléments du tableau commence à 0, spécifiez 2 comme valeur `matchIndex`. Par exemple, si vous entrez une chaîne de texte avec trois mots correspondant au modèle spécifié, vous pouvez renvoyer la première, la deuxième ou la troisième correspondance uniquement en spécifiant sa valeur d'index. 
+
+Dans l'expression suivante, vous recherchez un groupe de nombres dans l'entrée. Cette expression enregistre la deuxième chaîne de correspondance de canevas dans la variable contextuelle `$second_number`, car la valeur d'index 1 est spécifiée.
+
+```json
+{
+  "context": {
+    "second_number": "<? input.text.getMatch('([\\d]+)',1) ?>"
+  }
+}
+```
+{: codeblock}
+
+Lorsque vous spécifiez l'expression dans la syntaxe JSON, vous devez fournir deux barres obliques inversées (\\). Si vous spécifiez cette expression dans une réponse de noeud, vous avez besoin d'une seule barre oblique inversée.  
+
+Par exemple : 
+
+`<? input.text.getMatch('([\d]+)',1) ?>`
+
+- Entrée utilisateur :
+
+  ```
+  "Bonjour 123 j'ai dit 456 et 8910".
+  ```
+  {: codeblock}
+
+- Résultat : `456`
+
+Dans cet exemple, l'expression recherche le troisième bloc de texte dans l'entrée.
+
+`<? input.text.getMatch('(\b [A-Za-z]+)',2) ?>`
+
+Pour la même entrée utilisateur, cette expression renvoie `and`.
+
 ### String.isEmpty()
+{: #dialog-methods-strings-isEmpty}
 
 Cette méthode renvoie la valeur true si la chaîne est une chaîne vide, mais pas null.
 
@@ -1782,6 +1893,7 @@ La syntaxe suivante :
 Résultat : la condition est `true`.
 
 ### String.length()
+{: #dialog-methods-strings-length}
 
 Cette méthode renvoie le nombre de caractères de la chaîne.
 
@@ -1815,6 +1927,7 @@ Génère la sortie suivante :
 {: codeblock}
 
 ### String.matches(String regexp)
+{: #dialog-methods-strings-matches}
 
 Cette méthode renvoie la valeur true si la chaîne correspond à l'expression régulière d'entrée.
 
@@ -1837,6 +1950,7 @@ La syntaxe suivante :
 Résultat : la condition est true car le texte d'entrée correspond à l'expression régulière `\^Bonjour\$`.
 
 ### String.startsWith(String)
+{: #dialog-methods-strings-startsWith}
 
 Cette méthode renvoie la valeur true si la chaîne débute par la sous-chaîne d'entrée.
 
@@ -1859,6 +1973,7 @@ La syntaxe suivante :
 Résultat : la condition est `true`.
 
 ### String.substring(Integer beginIndex, Integer endIndex)
+{: #dialog-methods-strings-substring}
 
 Cette méthode extrait une sous-chaîne débutant par le caractère situé à `beginIndex` et se terminant par caractère défini pour l'index avant `endIndex`.
 Le caractère endIndex n'est pas inclus.
@@ -1897,6 +2012,7 @@ Génère la sortie suivante :
 {: codeblock}
 
 ### String.toLowerCase()
+{: #dialog-methods-strings-toLowerCase}
 
 Cette méthode renvoie la chaîne d'origine convertie en lettres minuscules.
 
@@ -1923,13 +2039,14 @@ Génère la sortie suivante :
 ```json
 {
   "context": {
-    "input_upper_case": "ceci est un chien !"
+    "input_lower_case": "this is a dog!"
   }
 }
 ```
 {: codeblock}
 
 ### String.toUpperCase()
+{: #dialog-methods-strings-toUpperCase}
 
 Cette méthode renvoie la chaîne d'origine convertie en lettres majuscules.
 
@@ -1963,6 +2080,7 @@ Génère la sortie suivante :
 {: codeblock}
 
 ### String.trim()
+{: #dialog-methods-strings-trim}
 
 Cette méthode enlève les espaces au début et à la fin de la chaîne et renvoie la chaîne ainsi modifiée.
 
@@ -2000,13 +2118,14 @@ Génère la sortie suivante :
 {: codeblock}
 
 ### Prise en charge de java.lang.String
-{: #java.lang.String}
+{: #dialog-methods-strings-java-lang-String-format}
 
 En plus des méthodes intégrées, vous pouvez utiliser des méthodes standard de la classe `java.lang.String`.
 
 #### java.lang.String.format()
+{: #dialog-methods-strings-java-lang-String-format}
 
-Vous pouvez appliquer la méthode `format()` de chaîne Java à du texte. Pour plus d'informations sur la syntaxe à utiliser pour spécifier les détails de format, reportez-vous à l'article de référence [java.util.formatter![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter#syntax){: new_window}.
+Vous pouvez appliquer la méthode `format()` de chaîne Java à du texte. Pour plus d'informations sur la syntaxe à utiliser pour spécifier les détails de format, reportez-vous à l'article de référence [java.util.formatter![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax){: new_window}.
 
 Par exemple, l'expression suivante prend trois entiers décimaux (1, 1 et 2) et les ajoute à une phrase.
 
@@ -2019,7 +2138,7 @@ Par exemple, l'expression suivante prend trois entiers décimaux (1, 1 et 2) et 
 
 Résultat : `1 + 1 equals 2`.
 
-Pour modifier la position décimale d'un nombre, utilisez la syntaxe suivante : 
+Pour modifier la position décimale d'un nombre, utilisez la syntaxe suivante :
 
 ```
 {
@@ -2091,4 +2210,4 @@ Si vous utilisez le panneau Try it out pour vérifier les valeurs de ces variabl
 
 **$array_in_string** : `"this is my array: [\"one\",\"two\"]"`
 
-Vous pouvez ensuite exécuter des méthodes de tableau sur la variable $array, par exemple, `<? $array.removeValue('two') ?>`, mais pas sur la variable $array_in_string.
+Vous pouvez ensuite exécuter des méthodes de tableau sur la variable $array, par exemple, `<? $array.removeValue('two') ?>` mais pas la variable $array_in_string. 

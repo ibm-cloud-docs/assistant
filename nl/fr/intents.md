@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-08-06"
+
+keywords: intent, intent conflicts, annotate
 
 subcollection: assistant
 
@@ -30,31 +32,31 @@ Les ***intentions*** sont des objectifs exprimés dans une entrée d'un client, 
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Utilisation des intentions" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/OPdOCUPGMIQ" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
-## Présentation de la création d’intention 
+## Présentation de la création d’intention
 {: #intents-described}
 
-- Planifiez les intentions de votre application.  
+- Planifiez les intentions de votre application.
 
-  Examinez ce que vos clients pourraient vouloir faire et ce que vous souhaitez que votre application puisse gérer en leur nom. Par exemple, vous souhaiterez peut-être que votre application aide vos clients à effectuer un achat. Si tel est le cas, vous pouvez ajouter l'intention `#buy_something`. (Le signe `#` précédant le nom de l’intention permet de l’identifier clairement comme étant une intention.)
+  Examinez ce que vos clients pourraient vouloir faire et ce que vous souhaitez que votre application puisse gérer en leur nom. Par exemple, vous souhaiterez peut-être que votre application aide vos clients à effectuer un achat. Si tel est le cas, vous pouvez ajouter l'intention `#buy_something`. (Le signe `#` ajouté en tant que préfixe au nom de l’intention permet de l’identifier clairement comme étant une intention.)
 
-- Enseignez vos intentions à Watson. 
+- Enseignez vos intentions à Watson.
 
-  Une fois que vous avez décidé des demandes métier que votre application doit traiter pour vos clients, vous devez les enseigner à Watson. Pour chaque objectif métier (tel que `#buy_something`), vous devez fournir au moins 10 exemples d'énoncés que vos clients utilisent généralement pour indiquer leur objectif. Par exemple, `Je souhaite effectuer un achat.`
+  Une fois que vous avez décidé des demandes métier que votre application doit traiter pour vos clients, vous devez les enseigner à Watson. Pour chaque objectif métier (tel que `#buy_something`), vous devez fournir au moins 5 exemples d'énoncés que vos clients utilisent généralement pour indiquer leur objectif. Par exemple, `Je souhaite effectuer un achat.`
   
-  Dans l'idéal, recherchez des exemples d'énoncés utilisateur réels que vous pouvez extraire des processus métier existants. Les exemples d'utilisateurs doivent être adaptés à votre activité spécifique. Par exemple, si vous êtes une compagnie d’assurance, vos exemples d’utilisateurs pourraient ressembler davantage à ceci : `Je souhaite souscrire un nouveau contrat d’assurance XYZ.`
+  Dans l'idéal, recherchez des exemples d'énoncés utilisateur réels que vous pouvez extraire des processus métier existants. Les exemples d'utilisateurs doivent être adaptés à votre activité spécifique. Par exemple, si vous êtes une compagnie d’assurance, un exemple d’utilisateur pourrait ressembler davantage à ceci : `Je souhaite souscrire un nouveau contrat d’assurance XYZ.`
   
-  Les exemples que vous fournissez sont utilisés par le service pour créer un modèle d'apprentissage automatique capable de reconnaître les mêmes types d'énoncés et des types similaires et de les mapper avec l'intention appropriée. 
+  Les exemples que vous fournissez sont utilisés par l'assistant pour créer un modèle d'apprentissage automatique capable de reconnaître les mêmes types d'énoncés et des types similaires et de les mapper avec l'intention appropriée. 
 
-Commencez avec quelques intentions et testez-les au fur et à mesure que vous développez de manière itérative la portée de l'application. 
+Commencez avec quelques intentions et testez-les au fur et à mesure que vous développez de manière itérative la portée de l'application.
+
+![Forfait Plus ou Premium uniquement](images/plus.png) Si vous avez déjà des transcriptions de discussion d'un centre d'appels ou des demandes de clients que vous avez recueillies à partir d'une application en ligne, mettez ces données à votre service. Partagez les énoncés réels de vos clients avec Watson et laissez Watson vous recommander les meilleures intentions et les meilleurs exemples d'intentions utilisateur répondant à vos besoins. Pour plus d'informations, reportez-vous à la rubrique [Obtention d'aide pour définir les intentions](/docs/services/assistant?topic=assistant-intent-recommendations).
 
 ## Création d'intentions
 {: #intents-create-task}
 
-Utilisez l'outil {{site.data.keyword.conversationshort}} pour créer des intentions.
+1.  Ouvrez votre compétence de dialogue. La compétence s'ouvre sur la page **Intents**.
 
-1.  Dans l'outil {{site.data.keyword.conversationshort}}, ouvrez votre compétence de dialogue. La compétence s'ouvre sur la page **Intents**.
-
-1.  Sélectionnez **Create new**.
+1.  Sélectionnez **Create intent**.
 
 1.  Dans la zone **Intent name**, tapez un nom pour l'intention.
     - Le nom d'intention peut contenir des lettres (au format Unicode), des nombres, des traits de soulignement, des traits d'union et des points.
@@ -64,42 +66,43 @@ Utilisez l'outil {{site.data.keyword.conversationshort}} pour créer des intenti
         - `#pay_bill`
         - `#escalate_to_agent`
 
-    L'outil inclut automatiquement le caractère `#` dans les noms d'intention, vous n'avez donc pas besoin d'en ajouter un.
+    Un signe dièse `#` est automatiquement ajouté au nom de l'intention afin d'aider à identifier le terme comme une intention. Il n'est pas nécessaire de l'ajouter.
     {: tip}
 
-    Ajoutez une description de l'intention dans la zone **Description**.
+    Vous pouvez éventuellement ajouter une description de l'intention dans la zone **Description**.
 
 1.  Sélectionnez **Create intent** pour sauvegarder votre nom d'intention.
 
-    ![Capture d'écran illustrant une nouvelle définition d'entité](images/create_intent.png)
+    ![Capture d'écran illustrant une nouvelle définition d'intention](images/create_intent.png)
 
-1.  Ensuite, dans la zone **Add user examples**, tapez le texte d'un exemple d'utilisateur pour l'intention. Un exemple peut être n'importe quelle chaîne de 1024 caractères au maximum. Voici quelques exemples d'intention `#pay_bill` :
+1.  Ensuite, dans la zone **Add user example**, tapez le texte d'un exemple d'utilisateur pour l'intention. Un exemple peut être n'importe quelle chaîne de 1024 caractères au maximum. Les énoncés suivants pourraient être des exemples de l'intention `#pay_bill` :
     - `Je dois payer ma facture.`
     - `Payer le solde de mon compte`
     - `effectuer un paiement`
 
-    Pour ajouter des exemples d'utilisateurs extraits de demandes d'assistance réelles effectuées par vos clients, reportez-vous à la rubrique [Ajout d’exemples à partir de fichiers journaux](#intents-intent-recommendations).
-
     Pour en savoir plus sur l'impact de l'inclusion de références dans les entités de vos exemples d'utilisateurs, reportez-vous à la rubrique [Traitement des références d'entités](#intents-entity-references).
     {: tip}
 
-    Les noms d'intention et l'exemple de texte peuvent être exposés dans des URL lorsqu'une application interagit avec le service. N'ajoutez pas d'informations sensibles ou personnelles dans ces artefacts.
+    Les noms d'intention et l'exemple de texte peuvent être exposés dans des URL lorsqu'une application interagit avec {{site.data.keyword.conversationshort}}. N'ajoutez pas d'informations sensibles ou personnelles dans ces artefacts.
     {: important}
 
-1.  Cliquez sur **Add example** pour sauvegarder l'exemple. 
+1.  Cliquez sur **Add example** pour sauvegarder l'exemple utilisateur. 
 
-1.  Répétez le même processus pour ajouter d'autres exemples. Vous pouvez passer d'un exemple à l'autre à l'aide de la touche de tabulation. Indiquez au moins 5 exemples pour chaque intention. Plus vous fournirez d'exemples, plus votre application sera précise.
+1.  Répétez le même processus pour ajouter d'autres exemples.
 
-    Pour obtenir de l'aide sur la création d'un exemple utilisateur, reportez-vous à la rubrique [Obtenir des recommandations sur les exemples utilisateur d'intention](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations).
+    Indiquez au moins cinq exemples pour chaque intention.
+    {: important}
 
-1.  Lorsque vous avez terminé d'ajouter des valeurs d'entité, cliquez sur ![icône de fermeture (représentée par une flèche)](images/close_arrow.png) pour terminer la création de l'intention. 
+    ![Forfait Plus ou Premium uniquement](images/plus.png) Pour obtenir de l'aide sur la création d'un exemple utilisateur, reportez-vous à la rubrique [Obtenir des recommandations sur les exemples utilisateur d'intention](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations). 
 
-Le système commence à se former sur l'intention et les exemples d'utilisateurs que vous avez ajoutés. 
+1.  Lorsque vous avez terminé d'ajouter des exemples, cliquez sur ![icône de fermeture (représentée par une flèche)](images/close_arrow.png) pour terminer la création de l'intention. 
 
-## Traitement des références d'entités 
+Le système commence à se former sur l'intention et les exemples d'utilisateurs que vous avez ajoutés.
+
+## Traitement des références d'entités
 {: #intents-entity-references}
 
-Lorsque vous incluez une mention d'entité dans un exemple d'utilisateur, le modèle d'apprentissage machine utilise les informations de différentes manières dans les scénarios suivants : 
+Lorsque vous incluez une mention d'entité dans un exemple d'utilisateur, le modèle d'apprentissage machine utilise les informations de différentes manières dans les scénarios suivants :
 
 - [Référence à des valeurs d'entité et des synonymes dans des exemples d'intention](#intents-related-entities)
 - [Mention annotée](#intents-annotated-mentions)
@@ -108,27 +111,27 @@ Lorsque vous incluez une mention d'entité dans un exemple d'utilisateur, le mod
 ### Référence à des valeurs d'entité et des synonymes dans des exemples d'intention
 {: #intents-related-entities}
 
-Si vous avez défini, ou envisagez de définir, des entités liées à cette intention, mentionnez les valeurs d'entité ou les synonymes dans certains exemples. Cela vous permettra d'établir une relation entre l'intention et les entités. Il s'agit d'une relation faible, mais elle informe le modèle.  
+Si vous avez défini, ou envisagez de définir, des entités liées à cette intention, mentionnez les valeurs d'entité ou les synonymes dans certains exemples. Cela vous permettra d'établir une relation entre l'intention et les entités. Il s'agit d'une relation faible, mais elle informe le modèle.
 
-![Capture d'écran illustrant la définition d'une intention](images/define_intent.png)
+![Capture d'écran illustrant une définition d'intention](images/define_intent.png)
 
 *Important* :
 
-  - Les exemples de données d'intention doivent être représentatifs et typiques des données qui seront fournies par les utilisateurs finaux. Des exemples peuvent être collectés à partir de données utilisateur réelles ou auprès de personnes qui sont des spécialistes dans votre domaine spécifique. La nature précise et représentative des données est primordiale.
+  - Les exemples de données d'intention doivent être représentatifs et typiques des données fournies par vos utilisateurs. Des exemples peuvent être collectés à partir de données utilisateur réelles ou auprès de personnes qui sont des spécialistes dans votre domaine spécifique. La nature précise et représentative des données est primordiale.
   - Les données d'apprentissage et les données de test (pour l'évaluation) doivent refléter la distribution des intentions dans une utilisation réelle. Généralement, les intentions plus fréquentes possèdent un plus grand nombre d'exemples et une meilleure couverture de réponse.
-  - Vous pouvez inclure de la ponctuation dans l'exemple de texte tant que cela paraît naturel. Si vous pensez que certains utilisateurs exprimeront leurs intentions avec des exemples comportant de la ponctuation, contrairement à d'autres utilisateurs, incluez les deux versions. Généralement, plus le champ d'application sera élargi à différents canevas, plus la réponse sera appropriée.
+  - Vous pouvez inclure de la ponctuation dans l'exemple de texte tant que cela paraît naturel. Si vous pensez que certains utilisateurs expriment leurs intentions avec des exemples comportant de la ponctuation, contrairement à d'autres utilisateurs, incluez les deux versions. Généralement, plus le champ d'application sera élargi à différents canevas, plus la réponse sera appropriée.
 
-###  Mentions annotées 
+### Mentions annotées
 {: #intents-annotated-mentions}
 
-Lorsque vous définissez des entités, vous pouvez annoter les mentions de l'entité directement à partir de vos exemples d'utilisateurs d'intention existants. Une relation que vous identifiez de la sorte entre l'intention et l'entité *n'est pas* utilisée par le modèle de classification d'intention. Toutefois, lorsque vous ajoutez la mention à l'entité, elle est également ajoutée à cette entité en tant que nouvelle valeur. Et lorsque vous ajoutez la mention à une valeur d'entité existante, elle est également ajoutée à cette valeur d'entité en tant que nouveau synonyme. La classification d'intention utilise ces types de références de dictionnaire dans les exemples d'utilisateur d'intention pour établir une référence faible entre une intention et une entité. 
+Lorsque vous définissez des entités, vous pouvez annoter les mentions de l'entité directement à partir de vos exemples d'utilisateurs d'intention existants. Une relation que vous identifiez de la sorte entre l'intention et l'entité *n'est pas* utilisée par le modèle de classification d'intention. Toutefois, lorsque vous ajoutez la mention à l'entité, elle est également ajoutée à cette entité en tant que nouvelle valeur. Et lorsque vous ajoutez la mention à une valeur d'entité existante, elle est également ajoutée à cette valeur d'entité en tant que nouveau synonyme. La classification d'intention utilise ces types de références de dictionnaire dans les exemples d'utilisateur d'intention pour établir une référence faible entre une intention et une entité.
 
-Pour plus d'informations sur les entités contextuelles, reportez-vous à la rubrique [Ajout d'entités contextuelles](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based). 
+Pour plus d'informations sur les entités contextuelles, reportez-vous à la rubrique [Ajout d'entités contextuelles](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based).
 
 ### Référence directe à un nom d'entité dans un exemple d'intention
 {: #intents-entity-as-example}
 
-Il s'agit d'une approche avancée qui, si elle est utilisée, doit l'être de manière cohérente.
+Cette approche est avancée. Si elle est utilisée, elle doit être utilisée de manière cohérente.
 {: note}
 
 Vous pouvez choisir de référencer directement des entités dans vos exemples d'intention. Supposons que vous ayez une entité appelée `@PhoneModelName`, qui contient les valeurs *Galaxy S8*, *Moto Z2*, *LG G6* et *Google Pixel 2*. Lorsque vous créez une intention, par exemple, `#order_phone`, vous pouvez fournir des données d'apprentissage telles que les suivantes :
@@ -145,7 +148,7 @@ Actuellement, vous pouvez uniquement référencer directement des entités de sy
 Si vous choisissez de référencer une entité en tant qu'exemple d'intention (par exemple, `@PhoneModelName`) *n'importe où* dans vos données d'apprentissage, elle annule la valeur correspondant à l'utilisation d'une référence directe (par exemple, *Galaxy S8*) partout ailleurs dans un exemple d'intention. Toutes les intentions utiliseront ensuite l'approche "entité en tant qu'exemple d'intention". Vous ne pouvez pas appliquer cette approche à une intention spécifique uniquement.
 {: important}
 
-En pratique, cela signifie que si vous aviez déjà entraîné la plupart de vos intentions sur la base de références directes (*Galaxy S8*) et que vous utilisez à présent des références d'entité (`@PhoneModelName`) pour une seule intention, ce changement a une incidence sur votre entraînement précédent. Si vous choisissez d'utiliser des références `@Entity`, vous devez remplacer toutes les références directes précédentes par des références `@Entity`. 
+En pratique, cela signifie que si vous aviez déjà entraîné la plupart de vos intentions sur la base de références directes (*Galaxy S8*) et que vous utilisez à présent des références d'entité (`@PhoneModelName`) pour une seule intention, ce changement a une incidence sur votre entraînement précédent. Si vous choisissez d'utiliser des références `@Entity`, vous devez remplacer toutes les références directes précédentes par des références `@Entity`.
 
 Définir un exemple d'intention avec une entité `@Entity` pour laquelle 10 valeurs sont définies **ne revient pas** à spécifier 10 fois cet exemple d'intention. Le service {{site.data.keyword.conversationshort}} n'accorde pas beaucoup d'importance à cette syntaxe d'exemple d'intention.
 
@@ -154,9 +157,9 @@ Définir un exemple d'intention avec une entité `@Entity` pour laquelle 10 vale
 
 Lorsque vous avez fini de créer de nouvelles intentions, vous pouvez tester le système pour voir s'il reconnaît vos intentions comme prévu.
 
-1.  Dans l'outil {{site.data.keyword.conversationshort}}, cliquez sur l'icône ![Demander à Watson](images/ask_watson.png).
+1.  Cliquez sur l'icône ![Ask Watson](images/ask_watson.png).
 
-1.  Sur le panneau *Try it out*, tapez une question ou une autre chaîne de texte et appuyez sur Entrée pour voir quelle intention est reconnue. Si l'intention reconnue n'est pas celle qui est prévue, vous pouvez améliorer votre modèle en ajoutant ce texte comme exemple dans l'intention appropriée.
+1.  Sur le panneau "Try it out", tapez une question ou une autre chaîne de texte et appuyez sur Entrée pour voir quelle intention est reconnue. Si l'intention reconnue n'est pas celle qui est prévue, vous pouvez améliorer votre modèle en ajoutant ce texte comme exemple dans l'intention appropriée.
 
     Si vous avez récemment modifié votre compétence, il est possible qu'un message indiquant que le système est toujours en phase d'entraînement s'affiche. Lorsque cela se produit, attendez la fin de la phase d'entraînement avant de lancer les tests :
     {: tip}
@@ -171,19 +174,11 @@ Lorsque vous avez fini de créer de nouvelles intentions, vous pouvez tester le 
 
     ![Capture d'écran illustrant la correction d'une intention reconnue](images/correct_intent.png)
 
-1.  Si l'entrée n'est liée à aucune des intentions de votre application, vous pouvez former le service en sélectionnant l'intention affichée, puis en cliquant sur **Mark as irrelevant**.
+1.  {: #intents-mark-irrelevant}Si l'entrée n'est liée à aucune des intentions de votre application, vous pouvez former l'assistant en sélectionnant l'intention affichée, puis en cliquant sur **Mark as irrelevant**.
 
     ![Capture d'écran illustrant l'option Mark as irrelevant](images/irrelevant.png)
 
-    *Mark as irrelevant*
-    {: #intents-mark-irrelevant}
-
-    L'option *Mark as irrelevant* n'est pas disponible dans toutes les langues. Pour plus d'informations, reportez-vous à la rubrique [Langues prises en charge](/docs/services/assistant?topic=assistant-language-support).
-
-    **Important** : les intentions marquées comme non pertinentes sont enregistrées dans l'espace de travail JSON et sont incluses dans le cadre des données d'apprentissage. Soyez prudent avant de désigner une entrée comme non pertinente. 
-
-      - Les entrées ne sont plus accessibles et ne peuvent plus être modifiées ultérieurement dans l'outil.
-      - La seule façon d'inverser l'identification d'une entrée non pertinente consiste à utiliser à nouveau la même entrée dans le panneau *Try it out*, et à l'attribuer à une intention. 
+    Pour plus d'informations sur cette action, reportez-vous à la rubrique [Enseigner à votre assistant les sujets à ignorer](/docs/services/assistant?topic=assistant-logs#logs-mark-irrelevant).
 
 Si vos intentions ne sont pas correctement reconnues, songez à effectuer les modifications suivantes :
 
@@ -196,20 +191,20 @@ Si vos intentions ne sont pas correctement reconnues, songez à effectuer les mo
 
 Le service {{site.data.keyword.conversationshort}} évalue la cote de confiance de chaque intention isolément et non par rapport à d'autres intentions. Cette approche ajoute de la flexibilité. Plusieurs intentions peuvent être détectées dans une seule entrée utilisateur. Cela signifie également que le système peut ne pas renvoyer d'intention du tout. Si l'intention principale a une cote de confiance faible (inférieure à 0,2), l'intention supérieure est incluse dans le tableau d'intentions renvoyé par l'API, mais les noeuds conditionnés par l'intention ne sont pas déclenchés. Si vous souhaitez détecter le cas où aucune intention ayant de bonnes cotes de confiance n'a été détectée, utilisez la condition spéciale `irrelevant` dans votre noeud de dialogue. Pour plus d'informations, reportez-vous à la rubrique [Conditions spéciales](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-special-conditions).
 
-A mesure que les cotes de confiance d'intention changent, vos dialogues peuvent nécessiter une restructuration. Par exemple, si un noeud de dialogue utilise une intention dans sa condition, et que la cote de confiance de l'intention commence à descendre régulièrement en dessous de 0,2, le noeud de dialogue cesse d'être traité. Si la cote de confiance change, le comportement du dialogue peut également changer. 
+A mesure que les cotes de confiance d'intention changent, vos dialogues peuvent nécessiter une restructuration. Par exemple, si un noeud de dialogue utilise une intention dans sa condition, et que la cote de confiance de l'intention commence à descendre régulièrement en dessous de 0,2, le noeud de dialogue cesse d'être traité. Si la cote de confiance change, le comportement du dialogue peut également changer.
 
 ## Nombre limite d'intentions
 {: #intents-limits}
 
-Le nombre d'intentions et d'exemples que vous pouvez créez dépend de votre forfait de service {{site.data.keyword.conversationshort}} :
+Le nombre d'intentions et d'exemples que vous pouvez créez dépend du type de votre forfait {{site.data.keyword.conversationshort}} :
 
-| Forfait de service     | Intentions par compétence | Exemples par compétence |
+| Forfait     | Intentions par compétence | Exemples par compétence |
 |------------------|------------------:|-------------------:|
 | Premium          |             2 000 |             25 000 |
 | Plus             |             2 000 |             25 000 |
 | Standard         |             2 000 |             25 000 |
-| Lite             |               100 |             25 000 |
-{: caption="Détails de forfait de service" caption-side="top"}
+| Lite, Plus Trial |               100 |             25 000 |
+{: caption="Détails du forfait" caption-side="top"}
 
 ## Edition d'intentions
 {: #intents-edit}
@@ -256,9 +251,9 @@ Vous pouvez exporter un certain nombre d'intentions vers un fichier CSV, de mani
 ## Importation d'intentions et d'exemples
 {: #intents-import}
 
-Si vous possédez un grand nombre d'intentions et d'exemples, vous trouverez peut-être plus facile de les importer à partir d'un fichier CSV que de les définir un par un dans l'outil {{site.data.keyword.conversationshort}}. Veillez à supprimer toutes les données personnelles des exemples d'utilisateurs que vous avez inclus dans le fichier. 
+Si vous possédez un grand nombre d'intentions et d'exemples, vous trouverez peut-être plus facile de les importer à partir d'un fichier CSV que de les définir un par un. Veillez à supprimer toutes les données personnelles des exemples d'utilisateurs que vous avez inclus dans le fichier.
 
-Vous pouvez également télécharger un fichier contenant des énoncés utilisateur bruts (à partir des journaux du centre d'appel, par exemple) et laisser le service rechercher des candidats pour des exemples d'utilisateur à partir des données. Pour plus d'informations, reportez-vous à la rubrique [Ajout d’exemples à partir de fichiers journaux](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations). Cette fonctionnalité est disponible pour les utilisateurs du forfait Plus ou Premium uniquement. 
+Vous pouvez également télécharger un fichier contenant des énoncés utilisateur bruts (à partir des journaux du centre d'appel, par exemple) et laisser Watson rechercher des candidats pour des exemples d'utilisateur à partir des données. Pour plus d'informations, reportez-vous à la rubrique [Ajout d’exemples à partir de fichiers journaux](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations). Cette fonctionnalité est disponible pour les utilisateurs du forfait Plus ou Premium uniquement.
 
 1.  Collectez les intentions et les exemples dans un fichier CSV ou exportez-les à partir d'une feuille de calcul dans un fichier CSV. Le format requis pour chaque ligne du fichier est le suivant :
 
@@ -267,7 +262,7 @@ Vous pouvez également télécharger un fichier contenant des énoncés utilisat
     ```
     {: screen}
 
-    où `<example>` est le texte de l'exemple d'utilisateur, et `<intent>` est le nom de l'intention à laquelle l'exemple doit correspondre. Par exemple :
+    Où `<example>` est le texte d'un exemple utilisateur, et `<intent>` est le nom de l'intention à laquelle vous souhaitez que l'exemple corresponde. Par exemple :
 
     ```
     Quelles sont les conditions météorologiques actuelles ?,weather_conditions
@@ -290,11 +285,11 @@ Vous pouvez également télécharger un fichier contenant des énoncés utilisat
 
 Vous pouvez visualiser les intentions importées et les exemples correspondants sur l'onglet **Intents**. Vous devrez peut-être actualiser la page pour voir les nouvelles entités et les nouveaux exemples.
 
-## Résolution des conflits d’intention ![Forfait Plus or Premium uniquement](images/premium.png)
+## Résolution des conflits d’intention ![Forfait Plus or Premium uniquement](images/plus.png)
 {: #intents-resolve-conflicts}
 
 Cette fonction est disponible uniquement pour les utilisateurs Plus ou Premium.
-{: tip}
+{: note}
 
 L'application {{site.data.keyword.conversationshort}} détecte un conflit lorsque deux ou plusieurs exemples d'intention dans des intentions *distinctes* sont si similaires que {{site.data.keyword.conversationshort}} ne sait pas quelle intention utiliser.
 
@@ -313,7 +308,7 @@ Pour résoudre les conflits :
 
     ![Exemple d'intention conflictuelle](images/ConflictIntent3.png)
 
-1.  Vous avez maintenant la possibilité de déplacer un exemple en conflit vers une autre intention ou de supprimer complètement l'exemple en conflit. 
+1.  Vous avez maintenant la possibilité de déplacer un exemple en conflit vers une autre intention ou de supprimer complètement l'exemple en conflit.
 
     Dans ce cas, les exemples `Annuler ma commande` et `Je veux annuler ma commande` figurent dans l'intention `#cancel` et l'intention `#eCommerce_Cancel_Product_Order`.
 
@@ -325,9 +320,10 @@ Pour résoudre les conflits :
 
     ![Exemple d'intention conflictuelle](images/ConflictIntent5.png)
 
-1.  Lorsque vous décidez où placer un exemple, recherchez l'intention qui comporte des exemples de synonymes ou de quasi synonymes. 
+1.  Lorsque vous décidez où placer un exemple, recherchez l'intention qui comporte des exemples de synonymes ou de quasi synonymes.
 
-    Gardez chaque intention aussi distincte et centrée sur un objectif que possible. Si deux intentions avec plusieurs exemples d'utilisateurs se chevauchent, peut-être n'avez-vous pas besoin de deux intentions distinctes. Vous pouvez déplacer ou supprimer des exemples d'utilisateurs qui ne se chevauchent pas directement dans une intention, puis supprimer l'autre intention. {: tip}
+    Gardez chaque intention aussi distincte et centrée sur un objectif que possible. Si deux intentions avec plusieurs exemples d'utilisateurs se chevauchent, peut-être n'avez-vous pas besoin de deux intentions distinctes. Vous pouvez déplacer ou supprimer des exemples d'utilisateurs qui ne se chevauchent pas directement dans une intention, puis supprimer l'autre intention.
+    {: tip}
 
     Sélectionnez les autres exemples dans l'intention `#cancel` et supprimez-les :
 
@@ -337,11 +333,11 @@ Pour résoudre les conflits :
 
     ![Exemple d'intention conflictuelle](images/ConflictIntent7.png)
 
-    L'option *Reset* vous permet de recommencer en déplaçant l'exemple de conflit entre les intentions. L'option *Cancel* vous ramène à la page d'intention. 
+    L'option *Reset* vous permet de recommencer en déplaçant l'exemple de conflit entre les intentions. L'option *Cancel* vous ramène à la page d'intention.
 
-Vous avez résolu un conflit et vous pouvez continuer à vérifier les autres intentions comportant des conflits 
+Vous avez résolu un conflit et vous pouvez continuer à vérifier les autres intentions comportant des conflits
 
-Regardez cette vidéo pour en savoir plus. 
+Regardez cette vidéo pour en savoir plus.
 
 <iframe class="embed-responsive-item" id="youtubeplayer0" title="Présentation de la résolution des conflits d'intentions" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/9gQtjCBxjdc?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
@@ -350,7 +346,7 @@ Regardez cette vidéo pour en savoir plus.
 
 Vous pouvez sélectionner un certain nombre d'intentions à supprimer.
 
-**Important** : lorsque vous supprimez des intentions, vous supprimez également tous les exemples qui leur sont associés, et ces éléments ne peuvent plus être extraits ultérieurement. Tous les noeuds de dialogue qui font référence à ces intentions doivent être mis à jour manuellement de manière à ne plus faire référence au contenu supprimé.
+**IMPORTANT** : en supprimant les intentions, vous supprimez également tous les exemples associés et ces éléments ne peuvent pas être récupérés ultérieurement. Tous les noeuds de dialogue qui font référence à ces intentions doivent être mis à jour manuellement de manière à ne plus faire référence au contenu supprimé.
 
 1.  Dans la page **Intents**, sélectionnez les intentions souhaitées dans la liste, puis cliquez sur **Delete**.
 

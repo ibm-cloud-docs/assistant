@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-01"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
+
 
 ---
 
@@ -37,7 +38,7 @@ Facebook Messenger는 비즈니스와 고객이 서로 직접 의사소통하는
 
 1.  통합 섹션에서 **통합 추가**를 클릭하십시오.
 
-1.  *Facebook Messenger*에 대한 **통합 선택** 단추를 클릭하십시오.
+1.  **Facebook Messenger**를 클릭하십시오.
 
 1.  화면에 제공된 지시사항에 따라 통합 프로세스를 완료하십시오.
 
@@ -64,7 +65,7 @@ Facebook Messenger는 비즈니스와 고객이 서로 직접 의사소통하는
 
 - **일시정지**: 이 응답 유형은 Messenger에서 어시스턴트의 활동을 일시정지합니다. 그러나 이 응답 유형 다음에 다른 응답 유형이 트리거되지 않는 한 일시정지 후 활동이 재개되지 않습니다. 이 응답 유형을 포함시킬 때마다 다른 응답 유형(예: 텍스트 응답)을 추가하고 이 응답 유형 다음에 배치하십시오.
 
-응답 유형에 대한 자세한 내용은 [서식이 있는 응답](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia)을 참조하십시오. 
+응답 유형에 대한 자세한 내용은 [서식이 있는 응답](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia)을 참조하십시오.
 
 ## 어시스턴트와 대화
 {: #deploy-facebook-try}
@@ -75,7 +76,7 @@ Facebook Messenger는 비즈니스와 고객이 서로 직접 의사소통하는
 1.  이전에 작성한 페이지의 이름을 입력하십시오.
 1.  해당 페이지가 표시되면 이를 클릭한 후 어시스턴트와의 대화를 시작하십시오.
 
-대화의 Welcome 노드는 Facebook Messenger 통합에서 처리되지 않습니다. Facebook 대화에서는 도구 내의 "시험 사용" 분할창 또는 미리보기 링크 통합 웹 페이지에 있는 것처럼 환영 메시지가 표시되지 않습니다. 사용자가 시작한 대화 플로우에서는 `welcome` 특수 조건이 있는 노드를 건너뛰기 때문에 여기서 환영 메시지가 트리거되지 않습니다. Facebook Messenger는 사용자가 대화를 시작할 때까지 대기합니다. 대화 시작 시 컨텍스트 변수에 대한 기본값을 설정해야 하는 경우 Welcome 노드에서 설정하지 마십시오. 자세한 정보는 [대화 시작](/docs/services/assistant?topic=assistant-dialog-start)을 참조하십시오.
+대화의 Welcome 노드는 Facebook Messenger 통합에서 처리되지 않습니다. Facebook 대화에서는 "시험 사용" 분할창 또는 미리보기 링크 통합 웹 페이지에 있는 것처럼 환영 메시지가 표시되지 않습니다. 사용자가 시작한 대화 플로우에서는 `welcome` 특수 조건이 있는 노드를 건너뛰기 때문에 여기서 환영 메시지가 트리거되지 않습니다. Facebook Messenger는 사용자가 대화를 시작할 때까지 대기합니다. 대화 시작 시 컨텍스트 변수에 대한 기본값을 설정해야 하는 경우 Welcome 노드에서 설정하지 마십시오. 자세한 정보는 [대화 시작](/docs/services/assistant?topic=assistant-dialog-start)을 참조하십시오.
 {: note}
 
 비활성 상태가 60분(Lite 및 Standard 플랜의 경우 5분)을 넘으면 현재 세션의 대화 플로우가 다시 시작됩니다. 즉, 사용자가 어시스턴트와의 상호작용을 중지하면 60분(또는 5분) 후에 이전 대화 중에 설정된 컨텍스트 변수값이 널로 설정되거나 다시 기본값으로 설정됩니다.

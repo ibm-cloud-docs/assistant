@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -34,7 +34,7 @@ Consulte estas sugerencias de diseñadores de diálogos con una amplia experienc
 ## Planificación del diálogo general
 {: #dialog-tips-plan}
 
-- Planifique el diseño del diálogo que desea crear antes de añadir un nodo de diálogo individual en la herramienta. Si es necesario, haga un boceto en papel.
+- Planifique el diseño del diálogo que desea crear antes de añadir un nodo de diálogo individual. Si es necesario, haga un boceto en papel.
 - Siempre que sea posible, base sus decisiones de diseño en datos de comportamientos reales. No añada nodos para manejar una situación que alguien *piense* que se podría producir.
 - Evite copiar procesos empresariales tal como están. Rara vez son conversacionales.
 - Si la gente ya utiliza un proceso, examine cómo lo enfocan. La gente suele optimizar el proceso desde una perspectiva conversacional.
@@ -50,7 +50,7 @@ Consulte estas sugerencias de diseñadores de diálogos con una amplia experienc
   Ya sabe lo que hace el nodo en este momento, pero es posible que no lo sepa en unos meses. Usted mismo y los miembros del equipo le agradecerán en el futuro que haya añadido un nombre de nodo descriptivo. Y el nombre de nodo se muestra en el registro, lo que le puede ayudar a depurar una conversación más adelante.
 - Para obtener la información necesaria para llevar a cabo una tarea, intente utilizar un nodo con ranuras en lugar de un grupo de nodos separados para recopilar información de los usuarios. Consulte [Obtención de información con ranuras](/docs/services/assistant?topic=assistant-dialog-slots).
 - En el caso de un flujo de proceso complejo, indique a los usuarios la información que deben proporcionar al principio del proceso.
-- Comprenda cómo avanza el servicio a través del árbol de diálogo y el impacto que tienen las carpetas, las ramas, los saltos y las digresiones sobre la ruta. Consulte [Flujo de diálogo](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-flow).
+- Comprenda cómo avanza su asistente a través del árbol de diálogo y el impacto que tienen las carpetas, las ramas, los saltos y las digresiones sobre la ruta. Consulte [Flujo de diálogo](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-flow).
 - No añada saltos en todas partes. Aumentan la complejidad del flujo de diálogo y dificultan la depuración del diálogo más adelante.
 - Para saltar a un nodo que esté en la misma rama que el nodo actual, utilice *Saltar entrada de usuario* en lugar de *Ir a*.
 
@@ -77,7 +77,10 @@ Puede resultar difícil saber la sintaxis que se utiliza en el nodo de diálogo 
 
 - **Devolución de la entrada de usuario**: Puede capturar el texto exacto utilizado por el usuario y devolverlo en su respuesta. Utilice la siguiente expresión SpEL en una respuesta para repetir el texto que el usuario ha especificado en la respuesta:
 
-  `You said: <? input.text ?>.`
+  `Usted ha dicho: <? input.text ?>.`
+
+  Si la corrección automática está activada, y desea devolver la entrada original del usuario antes de que se corrija, puede utilizar `<? input.original_text ?>`. Sin embargo, asegúrese de utilizar una condición de respuesta que compruebe primero si existe el campo `original_text`.
+  {: note}
 
 - **Determinación del número de palabras en la entrada de usuario**: Puede utilizar cualquiera de los métodos String admitidos en el objeto input.text. Por ejemplo, puede averiguar cuántas palabras hay en una expresión de usuario, utilice la siguiente expresión SpEL:
 
@@ -87,7 +90,7 @@ Puede resultar difícil saber la sintaxis que se utiliza en el nodo de diálogo 
 
 - **Manejo de varias intenciones**: Un usuario especifica una entrada que expresa el deseo de llevar a cabo dos tareas separadas. `I want to open a savings account and apply for a credit card (Quiero abrir una cuenta de ahorro y conseguir una tarjeta de crédito).` ¿Cómo reconoce y aborda el diálogo ambas intenciones? Consulte la entrada [Preguntas compuestas](https://sodoherty.ai/2017/02/06/compound-questions/){: new_window} en el blog de Simon O'Doherty para ver las estrategias que puede probar. (Simon es un desarrollador del equipo de {{site.data.keyword.conversationshort}}).
 
-- **Manejo de intenciones ambiguas**: Una entrada de usuario expresa un deseo que es lo suficientemente ambiguo como para que el servicio encuentre dos o más nodos con intenciones que podrían darle respuesta. ¿Cómo sabe el diálogo qué rama de diálogo debe seguir? Si habilita la desambiguación, puede mostrar a los usuarios sus opciones y pedir al usuario que elija la correcta. Consulte [Desambiguación](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation) para obtener más información.
+- **Manejo de intenciones ambiguas**: Una entrada de usuario expresa un deseo que es lo suficientemente ambiguo como para que su asistente encuentre dos o más nodos con intenciones que podrían darle respuesta. ¿Cómo sabe el diálogo qué rama de diálogo debe seguir? Si habilita la desambiguación, puede mostrar a los usuarios sus opciones y pedir al usuario que elija la correcta. Consulte [Desambiguación](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation) para obtener más información.
 
 - **Manejo de varias entidades en la entrada**: Si solo desea evaluar el valor de la primera instancia detectada de un tipo de entidad, puede utilizar la sintaxis `@entidad == 'valor-específico'` en lugar del formato `@entidad:(valor-específico)`.
 
@@ -100,7 +103,7 @@ Puede resultar difícil saber la sintaxis que se utiliza en el nodo de diálogo 
 
   `@person:(O'Reilly)` y `$person:(O'Reilly)`
 
-  El servicio convierte estas referencias en estas expresiones SpEL completas:
+  Su asistente convierte estas referencias en estas expresiones SpEL completas:
 
   `entities['person']?.contains('O''Reilly')` y `context['person'] == 'O''Reilly'`
 

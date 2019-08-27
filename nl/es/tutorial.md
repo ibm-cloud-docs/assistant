@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-05-10"
 
 subcollection: assistant
 
@@ -73,9 +73,9 @@ sirve una función similar, pero sus ejemplos de usuario se centran en consultas
 ### Adición de la intención #about_restaurant
 {: #tutorial-add-about-restaurant}
 
-1.  En el separador **Intenciones**, pulse **Añadir intención**.
+1.  En el separador **Intenciones**, pulse **Crear intención**.
 
-    ![Muestra el botón Añadir intención de la página Intenciones.](images/gs-ass-intent-add.png)
+    ![Muestra el botón Crear intención en la página Intenciones.](images/gs-ass-intent-add.png)
 1.  Escriba `about_restaurant` en el campo *Nombre de intención* y pulse **Crear intención**.
 
     ![Muestra la intención #about_restaurant añadida.](images/gs-ass-add-intent.png)
@@ -102,9 +102,9 @@ Ha añadido una intención y ha proporcionado ejemplos de expresiones que los us
 ### Adición de un nodo de diálogo que se activa mediante la intención #about_restaurant
 {: #tutorial-trigger-about-intent}
 
-Añada un nodo de diálogo que reconozca cuándo la entrada de usuario se correlaciona con la intención que ha creado en el paso anterior, lo que significa que su condición comprueba si el servicio ha reconocido la intención `#about_restaurant` en la entrada del usuario.
+Añada un nodo de diálogo que reconozca cuándo la entrada de usuario se correlaciona con la intención que ha creado en el paso anterior, lo que significa que su condición comprueba si su asistente ha reconocido la intención `#about_restaurant` en la entrada del usuario.
 
-1.  Pulse el separador **Diálogos**.
+1.  Pulse el separador **Diálogo**.
 1.  Busque el nodo `#General_Greetings` en el árbol de diálogo.
 
     Añadirá un nodo que compruebe si hay preguntas sobre el restaurante bajo este nodo de saludo inicial para que refleje el flujo que podría esperar encontrarse en una conversación normal. Por ejemplo, `Hello.` y luego `Tell me about yourself.`
@@ -112,8 +112,10 @@ Añada un nodo de diálogo que reconozca cuándo la entrada de usuario se correl
 1.  Pulse el icono **More** ![Más opciones](images/kabob.png) en el nodo `#General_Greetings` y seleccione **Añadir nodo debajo**.
 
     ![Muestra el menú Añadir nodo debajo abierto desde el nodo de diálogo #General_Greetings.](images/gs-ass-dialog-add-about-restaurant.png)
-1.  Empiece por escribir `#about_restaurant` en el campo **Especificar una condición** de este nodo. Luego seleccione la opción `#about_restaurant`.
-1.  Añada el texto siguiente como respuesta:
+1.  Empiece por escribir `#about_restaurant` en el campo **Si el asistente reconoce** de este nodo. Luego seleccione la opción `#about_restaurant`.
+1.  Añada el siguiente texto como la respuesta.
+
+   Para copiar el texto, pulse en el icono de copia asociado con el bloque de texto ![Indica que puede copiar el bloque de código.](images/cloud-copy.png):
 
     ```
     Truck Stop Gourmand is the brain child of Gloria and Fred Smith. What started out as a food truck in 2004 has expanded into a thriving restaurant. We now have one brick and mortar restaurant in downtown Portland. The bigger kitchen brought with it new chefs, but each one is faithful to the philosophy that made the Smith food truck so popular to begin with: deliver fresh, local produce in inventive and delicious ways. Join us for lunch or dinner seven days a week. Or order a cake from our bakery.
@@ -132,13 +134,13 @@ Añada un nodo de diálogo que reconozca cuándo la entrada de usuario se correl
 ### Prueba del nodo de diálogo #about_restaurant
 {: #tutorial-test-about-intent}
 
-Para probar la intención, compruebe si las expresiones de usuario que son parecidas a los ejemplos que ha añadido a los datos de entrenamiento, pero no exactamente iguales, han enseñado correctamente al servicio a reconocer entradas con una intención `#about_restaurant`.
+Para probar la intención, compruebe si las expresiones de usuario que son parecidas a los ejemplos que ha añadido a los datos de entrenamiento, pero no exactamente iguales, han enseñado correctamente a su asistente a reconocer entradas con una intención `#about_restaurant`.
 
 1.  Pulse el icono ![Pruébelo](images/ask_watson.png) para abrir el panel "Pruébelo".
 
 1.  Escriba `I want to learn more about your restaurant.`
 
-    El servicio indica que se reconoce la intención `#about_restaurant` y devuelve una respuesta con la imagen y el texto que ha especificado para el nodo de diálogo.
+    Su asistente indica que se reconoce la intención `#about_restaurant` y devuelve una respuesta con la imagen y el texto que ha especificado para el nodo de diálogo.
 
     ![Muestra el panel Pruébelo que reconoce la intención #about_restaurant y muestra la imagen y el texto de respuesta.](images/gs-ass-test-about-restaurant.png)
 
@@ -165,9 +167,9 @@ Una pregunta lave de los posibles clientes de restaurante es sobre el menú. El 
 {: #tutorial-add-menu-intent}
 
 1.  Pulse el separador **Intenciones**.
-1.  Pulse **Añadir intención**.
+1.  Pulse **Crear intención**.
 
-    ![Muestra el botón Añadir intención de la página Intenciones.](images/gs-ass-intent-add.png)
+    ![Muestra el botón Crear intención en la página Intenciones.](images/gs-ass-intent-add.png)
 
 1.  Escriba `menu` en el campo *Nombre de intención* y luego pulse **Crear intención**.
 
@@ -195,9 +197,9 @@ Una pregunta lave de los posibles clientes de restaurante es sobre el menú. El 
 ### Adición de un nodo de diálogo activado por la intención #menu
 {: #tutorial-trigger-menu-intent}
 
-Añada un nodo de diálogo que reconozca cuándo la entrada de usuario se correlaciona con la intención que ha creado en el paso anterior, lo que significa que su condición comprueba si el servicio ha reconocido la intención `#menu` en la entrada del usuario.
+Añada un nodo de diálogo que reconozca cuándo la entrada de usuario se correlaciona con la intención que ha creado en el paso anterior, lo que significa que su condición comprueba si su asistente ha reconocido la intención `#menu` en la entrada del usuario.
 
-1.  Pulse el separador **Diálogos**.
+1.  Pulse el separador **Diálogo**.
 1.  Busque el nodo `#about_restaurant` en el árbol de diálogo.
 
     Añadirá un nodo que compruebe si hay preguntas sobre el menú por debajo de este nodo.
@@ -206,7 +208,7 @@ Añada un nodo de diálogo que reconozca cuándo la entrada de usuario se correl
 
     ![Muestra un diálogo que se añade bajo el nodo #about_restaurant.](images/gs-ass-dialog-add-menu.png)
 
-1.  Empiece por escribir `#menu` en el campo **Especificar una condición** de este nodo. Luego seleccione la opción `#menu`.
+1.  Empiece por escribir `#menu` en el campo **Si el asistente reconoce** de este nodo. Luego seleccione la opción `#menu`.
 
     ![Muestra la intención #menu añadida como condición para un nodo de diálogo.](images/gs-ass-menu-add.png)
 
@@ -226,16 +228,16 @@ Añada un nodo de diálogo que reconozca cuándo la entrada de usuario se correl
 
 1.  Pulse **Añadir opción**.
 
-1.  En el campo **Etiqueta**, añada `Standard`. El texto que añada como etiqueta se mostrará en la respuesta al usuario como una opción que puede seleccionar.
+1.  En el campo **Lista de etiquetas**, añada `Standard`. El texto que añada como etiqueta se mostrará en la respuesta al usuario como una opción que puede seleccionar.
 
-1.  En el campo **Valor**, añada `standard menu`. El texto que se especifica como valor es lo que se envía al servicio como nueva entrada de usuario cuando un usuario elige esta opción en la lista y pulsa en la misma.
+1.  En el campo **Valor**, añada `standard menu`. El texto que se especifica como valor es lo que se envía a su asistente como nueva entrada de usuario cuando un usuario elige esta opción en la lista y pulsa en la misma.
 
 1.  Repita los dos pasos anteriores para añadir información de etiqueta y de valor para los otros tipos de menú:
 
     <table>
     <caption>Detalles del tipo de respuesta de opción</caption>
     <tr>
-      <th>Etiqueta</th>
+      <th>Lista de etiquetas</th>
       <th>Valor</th>
     </tr>
     <tr>
@@ -259,9 +261,9 @@ Para reconocer los distintos tipos de menús que los clientes indican que desean
 
 1.  Pulse el separador **Entidades**.
 
-    ![Muestra la página de entidades vacía con el botón Añadir entidad.](images/gs-ass-add-entity.png)
+    ![Muestra la página de entidades vacía con el botón Crearentidad.](images/gs-ass-add-entity.png)
 
-1.  Pulse **Añadir entidad**.
+1.  Pulse **Crear entidad**.
 
 1.  Escriba `menu` en el campo de nombre de entidad.
 
@@ -269,7 +271,7 @@ Para reconocer los distintos tipos de menús que los clientes indican que desean
 
 1.  Pulse **Crear entidad**.
 
-1.  Añada `standard` al campo *Nombre de valor* y luego añada `standard menu` al campo **Sinónimos** y pulse Intro.
+1.  Añada `standard` al campo **Nombre de valor** y luego añada `standard menu` al campo **Sinónimos** y pulse Intro.
 
 1.  Añada los siguientes sinónimos adicionales:
 
@@ -281,9 +283,9 @@ Para reconocer los distintos tipos de menús que los clientes indican que desean
 
 1.  Pulse **Añadir valor** para añadir el valor `@menu:standard`.
 
-1.  Añada `vegetarian` al campo *Nombre de valor* y luego añada `vegetarian menu` al campo **Sinónimos** y pulse Intro.
+1.  Añada `vegetarian` al campo **Nombre de valor** y luego añada `vegetarian menu` al campo **Sinónimos** y pulse Intro.
 
-1.  Pulse **Mostrar recomendaciones** y, a continuación, pulse los recuadros de selección correspondientes a *meatless diet* (dieta sin carne), *meatless* (sin carne) y *vegan dieta* (dieta vegana).
+1.  Pulse **Mostrar recomendaciones** y, a continuación, pulse el recuadro de selección para *vegan diet* (dieta vegana).
 
 1.  Pulse **Añadir seleccionados**.
 
@@ -296,7 +298,7 @@ Para reconocer los distintos tipos de menús que los clientes indican que desean
 
 1.  Pulse **Añadir valor** para añadir el valor `@menu:vegetarian`.
 
-1.  Añada `cake` al campo *Nombre de valor* y luego añada `cake menu` al campo **Sinónimos** y pulse Intro.
+1.  Añada `cake` al campo **Nombre de valor** y luego añada `cake menu` al campo **Sinónimos** y pulse Intro.
 
 1.  Añada los siguientes sinónimos adicionales:
 
@@ -315,7 +317,7 @@ Para reconocer los distintos tipos de menús que los clientes indican que desean
 
 En este paso, añadirá nodos hijo al nodo de diálogo que comprueba la intención `#menu`. Cada nodo hijo mostrará una respuesta distinta en función del tipo de entidad `@menu` que el usuario elija en la lista de opciones.
 
-1.  Pulse el separador **Diálogos**.
+1.  Pulse el separador **Diálogo**.
 1.  Busque el nodo `#menu` en el árbol de diálogo.
 
     Añadirá un nodo hijo para manejar cada opción de tipo de menú que haya añadido al nodo `#menu`.
@@ -324,7 +326,7 @@ En este paso, añadirá nodos hijo al nodo de diálogo que comprueba la intenci�
 
     ![Muestra un nodo hijo añadido al nodo de diálogo #menu.](images/gs-ass-add-child-node.png)
 
-1.  Empiece por escribir `@menu:standard` en el campo **Especificar una condición** de este nodo. Luego seleccione la opción `@menu:standard`.
+1.  Empiece por escribir `@menu:standard` en el campo **Si el asistente reconoce** de este nodo. Luego seleccione la opción `@menu:standard`.
 
 1.  Añada el siguiente mensaje en el campo de texto de respuesta: `To see our menu, go to the <a href="https://www.example.com/menu.html" target="blank">menu</a> page on our website.`
 
@@ -334,7 +336,7 @@ En este paso, añadirá nodos hijo al nodo de diálogo que comprueba la intenci�
 
 1.  Pulse el icono **Más** ![Más opciones](images/kabob.png) en el nodo `@menu:standard` y luego seleccione **Añadir nodo debajo**.
 
-1.  Empiece por escribir `@menu:vegetarian` en el campo **Especificar una condición** de este nodo. Luego seleccione la opción `@menu:vegetarian`.
+1.  Empiece por escribir `@menu:vegetarian` en el campo **Si el asistente reconoce** de este nodo. Luego seleccione la opción `@menu:vegetarian`.
 
 1.  Añada el siguiente mensaje en el campo de texto de respuesta: `To see our vegetarian menu, go to the <a href="https://www.example.com/vegetarian-menu.html" target="blank">vegetarian menu</a> page on our website.`
 
@@ -344,7 +346,7 @@ En este paso, añadirá nodos hijo al nodo de diálogo que comprueba la intenci�
 
 1.  Pulse el icono **Más** ![Más opciones](images/kabob.png) en el nodo `@menu:vegetarian` y luego seleccione **Añadir nodo debajo**.
 
-1.  Empiece por escribir `@menu:cake` en el campo **Especificar una condición** de este nodo. Luego seleccione la opción `@menu:cake`.
+1.  Empiece por escribir `@menu:cake` en el campo **Si el asistente reconoce** de este nodo. Luego seleccione la opción `@menu:cake`.
 
 1.  Añada el siguiente mensaje en el campo de texto de respuesta: `To see our cake shop menu, go to the <a href="https://www.example.com/menu.html" target="blank">cake shop menu</a> page on our website.`
 
@@ -352,9 +354,9 @@ En este paso, añadirá nodos hijo al nodo de diálogo que comprueba la intenci�
 
 1.  Pulse ![Cerrar](images/close.png) para cerrar la vista de edición.
 
-1.  Es probable que el menú estándar se solicite con más frecuencia, así que muévalo a la parte inferior de la lista de nodos hijo. Si se coloca al final se evita que se active accidentalmente cuando alguien pregunte por un menú especial en lugar de por el menú estándar.
+1.  Es probable que el menú estándar se solicite con más frecuencia, así que muévalo a la parte inferior de la lista de nodos hijo. Si se coloca al final se evita que se active accidentalmente cuando alguien pregunte por un menú especial en lugar de por el menú estándar. 
 
-1.  Pulse el icono **Más** ![Más opciones](images/kabob.png) en el nodo `@menu:standard` y luego seleccione **Mover**.
+    Pulse el icono **Más** ![Más opciones](images/kabob.png) en el nodo `@menu:standard` y luego seleccione **Mover**.
 
     ![Muestra el nodo @menu:standard que se ha movido para que esté después del nodo @menu:cake.](images/gs-ass-move-standard-menu-node.png)
 
@@ -373,19 +375,19 @@ Pruebe los nodos de diálogo que ha añadido para que reconozcan las preguntas s
 
 1.  Escriba `What type of food do you serve?`
 
-    El servicio indica que se reconoce la intención `#menu` y muestra la lista de opciones de menú para que el usuario elija una.
+    Su asistente indica que se reconoce la intención `#menu` y muestra la lista de opciones de menú para que el usuario elija una.
 
     ![Muestra el panel Pruébelo cuando la entrada de usuario activa la intención #menu y la respuesta con opciones.](images/gs-ass-test-menu-intent.png)
 1.  Pulse la opción `Cake shop`.
 
-    El servicio reconoce la intención `#menu` y la referencia a la entidad `@menu:cake` y muestra la respuesta `To see our cake shop menu, go to the cake shop page on our website.`
+    Su asistente reconoce la intención `#menu` y la referencia a la entidad `@menu:cake` y muestra la respuesta `To see our cake shop menu, go to the cake shop page on our website.`
 
     ![Muestra el panel Pruébelo después de que el usuario elija la opción cake shop.](images/gs-ass-pick-cake-menu.png)
 1.  Pulse el hiperenlace *cake shop* en la respuesta.
 
     Se abre una nueva página del navegador que muestra el sitio web example.com.
 
-1.  Cierre la página del navegador web.
+1.  Cierre la página web example.com.
 
 Bien hecho. Ha añadido correctamente una intención y una entidad que reconoce las solicitudes de usuario de detalles sobre los menús y les dirige al menú adecuado.
 
@@ -402,7 +404,7 @@ Los clientes realizan los pedidos en persona, por teléfono o mediante el formul
 Desea que el asistente reconozca los números de pedido, por lo que creará una entidad de patrón que reconozca el formato exclusivo que utiliza el restaurante para identificar sus pedidos. La sintaxis de los números de pedido que utiliza la pastelería del restaurante consiste en 2 letras mayúsculas seguidas de 5 números. Por ejemplo, `YR34663`. Añada una entidad que pueda reconocer este patrón de caracteres.
 
 1.  Pulse el separador **Entidades**.
-1.  Pulse **Añadir entidad**.
+1.  Pulse **Crear entidad**.
 1.  Escriba `order_number` en el campo de nombre de entidad.
 1.  Pulse **Crear entidad**.
 
@@ -412,7 +414,7 @@ Desea que el asistente reconozca los números de pedido, por lo que creará una 
     ![Muestra un usuario que elige añadir un patrón para una entidad.](images/gs-ass-add-pattern.png)
 1.  Añada la siguiente expresión regular al campo Patrón: `[A-Z]{2}\d{5}`
 
-    ![Muestra que se ha especificado un patrón para la entidad @order-number.](images/gs-ass-entity-added-pattern.png)
+    ![Muestra que se ha especificado un patrón para la entidad @order_number.](images/gs-ass-entity-added-pattern.png)
 
 1.  Pulse **Añadir valor**.
 
@@ -426,7 +428,7 @@ Desea que el asistente reconozca los números de pedido, por lo que creará una 
 {: #tutorial-cancel-order-intent}
 
 1.  Pulse el separador **Intenciones**.
-1.  Pulse **Añadir intención**.
+1.  Pulse **Crear intención**.
 1.  Escriba `cancel_order` en el campo *Nombre de intención* y luego pulse **Crear intención**.
 1.  Añada los siguientes ejemplos de usuario:
 
@@ -448,10 +450,10 @@ Desea que el asistente reconozca los números de pedido, por lo que creará una 
 ### Adición de una intención yes
 {: #tutorial-yes-intent}
 
-Antes de realizar una acción en nombre del usuario, debe obtener la confirmación de que está realizando la acción adecuada. Añada una intención #yes al diálogo que pueda reconocer cuándo un usuario está de acuerdo con lo que propone el servicio.
+Antes de realizar una acción en nombre del usuario, debe obtener la confirmación de que está realizando la acción adecuada. Añada una intención #yes al diálogo que pueda reconocer cuándo un usuario está de acuerdo con lo que propone su asistente.
 
 1.  Pulse el separador **Intenciones**.
-1.  Pulse **Añadir intención**.
+1.  Pulse **Crear intención**.
 1.  Escriba `yes` en el campo *Nombre de intención* y luego pulse **Crear intención**.
 1.  Añada los siguientes ejemplos de usuario:
 
@@ -479,7 +481,7 @@ Ahora, añada un nodo de diálogo que pueda manejar las solicitudes para cancela
 
 1.  Pulse el separador **Diálogo**.
 1.  Busque el nodo `#menu`. Pulse el icono **Más** ![Más opciones](images/kabob.png) en el nodo `#menu` y luego seleccione **Añadir nodo debajo**.
-1.  Empiece por escribir `#cancel_order` en el campo **Especificar una condición** de este nodo. Luego seleccione la opción `#cancel_order`.
+1.  Empiece por escribir `#cancel_order` en el campo **Si el asistente reconoce** de este nodo. Luego seleccione la opción `#cancel_order`.
 1.  Añada el siguiente mensaje en el campo de texto de respuesta:
 
     ```
@@ -491,7 +493,7 @@ Ahora, añada un nodo de diálogo que pueda manejar las solicitudes para cancela
 
     Para poder cancelar realmente el pedido, debe conocer el número de pedido. Es posible que el usuario especifique el número de pedido en la solicitud original. Por lo tanto, para no pedirle de nuevo el número de pedido, compruebe si hay un número con el patrón de número de pedido en la entrada original. Para ello, defina una variable de contexto que habría guardado el número de pedido si se hubiera especificado.
 
-1.  Abra el editor de contexto. Pulse el icono **Más** ![Más opciones](images/kabob.png) y seleccione **Abrir editor de contexto**.
+1.  Puede definir una variable de contexto en el editor de contexto. En la sección de respuesta del nodo, pulse en el icono **Más** ![Más opciones](images/kabob.png) y, a continuación, seleccione **Abrir editor de contexto**.
 
     ![Muestra la opción Abrir editor de contexto de la vista de edición de nodos.](images/gs-ass-open-context-editor.png)
 1.  Especifique el siguiente par de nombre de variable de contexto y valor:
@@ -518,7 +520,7 @@ Ahora, añada un nodo de diálogo que pueda manejar las solicitudes para cancela
 1.  Pulse el icono **Más** ![Más opciones](images/kabob.png) en el nodo `#cancel_order` y luego seleccione **Añadir nodo hijo**.
 
     ![Muestra el menú en el nodo #cancel_order con la opción de menú Añadir nodo hijo seleccionada.](images/gs-ass-add-child-to-cancel.png)
-1.  Añada una etiqueta al nodo para distinguirlo de los otros nodos hijo que va a añadir. En el campo de nombre, añada `Ask for order number`. Escriba `true` en el campo **Especificar una condición** de este nodo.
+1.  Añada una etiqueta al nodo para distinguirlo de los otros nodos hijo que va a añadir. En el campo de nombre, añada `Ask for order number`. Escriba `true` en el campo **Si el asistente reconoce** de este nodo.
 
 1.  Añada el siguiente mensaje en el campo de texto de respuesta:
 
@@ -532,7 +534,7 @@ Ahora, añada un nodo de diálogo que pueda manejar las solicitudes para cancela
 
     Ahora añada otro nodo hijo que informe al usuario de que está cancelando el pedido.
 1.  Pulse el icono **Más** ![Más opciones](images/kabob.png) en el nodo `Ask for order number` y luego seleccione **Añadir nodo hijo**.
-1.  Escriba `@order_number` en el campo **Especificar una condición** de este nodo.
+1.  Escriba `@order_number` en el campo **Si el asistente reconoce** de este nodo.
 1.  Abra el editor de contexto. Pulse el icono **Más** ![Más opciones](images/kabob.png) y seleccione **Abrir editor de contexto**.
 1.  Especifique el siguiente par de nombre de variable de contexto y valor:
 
@@ -560,7 +562,7 @@ Ahora, añada un nodo de diálogo que pueda manejar las solicitudes para cancela
     ![Muestra detalles del nodo hijo de número de pedido.](images/gs-ass-order-number-child.png)
 1.  Pulse ![Cerrar](images/close.png) para cerrar la vista de edición.
 1.  Añada otro nodo para capturar el caso en que un usuario proporciona un número, pero no es un número de pedido válido. Pulse el icono **Más** ![Más opciones](images/kabob.png) en el nodo `@order_number` y luego seleccione **Añadir nodo debajo**.
-1.  Escriba `true` en el campo **Especificar una condición** de este nodo.
+1.  Escriba `true` en el campo **Si el asistente reconoce** de este nodo.
 1.  Añada el siguiente mensaje en el campo de texto de respuesta:
 
     ```
@@ -572,7 +574,7 @@ Ahora, añada un nodo de diálogo que pueda manejar las solicitudes para cancela
 1.  Pulse ![Cerrar](images/close.png) para cerrar la vista de edición.
 
 1.  Añada un nodo bajo el nodo de solicitud de cancelación de pedido inicial que responsa en el caso de que el usuario especifique el número de pedido en la solicitud inicial, para no tener que volver a preguntárselo. Pulse el icono **Más** ![Más opciones](images/kabob.png) en el nodo `#cancel_order` y luego seleccione **Añadir nodo hijo**.
-1.  Añada una etiqueta al nodo para distinguirlo de los otros nodos hijo. En el campo de nombre, añada `Number provided`. Escriba `@order_number` en el campo **Especificar una condición** de este nodo.
+1.  Añada una etiqueta al nodo para distinguirlo de los otros nodos hijo. En el campo de nombre, añada `Number provided`. Escriba `@order_number` en el campo **Si el asistente reconoce** de este nodo.
 1.  Añada el siguiente mensaje en el campo de texto de respuesta:
 
     ```
@@ -585,7 +587,7 @@ Ahora, añada un nodo de diálogo que pueda manejar las solicitudes para cancela
 
     Debe añadir nodos hijo que comprueben la respuesta del usuario a la pregunta de confirmación.
 1.  Pulse el icono **Más** ![Más opciones](images/kabob.png) en el nodo `Number provided` y luego seleccione **Añadir nodo hijo**.
-1.  Escriba `#yes` en el campo **Especificar una condición** de este nodo.
+1.  Escriba `#yes` en el campo **Si el asistente reconoce** de este nodo.
 
 1.  Añada el siguiente mensaje en el campo de texto de respuesta:
 
@@ -599,7 +601,7 @@ Ahora, añada un nodo de diálogo que pueda manejar las solicitudes para cancela
 
 1.  Pulse el icono **Más** ![Más opciones](images/kabob.png) en el nodo `#yes` y luego seleccione **Añadir nodo debajo**.
 
-1.  Escriba `true` en el campo **Especificar una condición** de este nodo.
+1.  Escriba `true` en el campo **Si el asistente reconoce** de este nodo.
 
     No añada una respuesta. En lugar de ello, redirigirá a los usuarios a la rama que solicita los detalles de número de pedido que ha creado con anterioridad.
 
@@ -617,37 +619,40 @@ Ahora, añada un nodo de diálogo que pueda manejar las solicitudes para cancela
 
     ![Muestra el valor del nodo de cancelación de pedido de modo que omita la entrada de usuario.](images/gs-ass-skip-user-input.png)
 
-### Prueba de cancelaciones de pedidos
+### Prueba de cancelación de pedidos
 {: #tutorial-test-cancel-order}
 
-Pruebe si el servicio puede reconocer patrones de caracteres que coincidan con el patrón utilizado para los números de pedido de productos en la entrada de usuario.
+Pruebe si su asistente puede reconocer patrones de caracteres que coincidan con el patrón utilizado para los números de pedido de productos en la entrada de usuario.
 
 1.  Pulse el icono ![Pruébelo](images/ask_watson.png) para abrir el panel "Pruébelo".
 
 1.  Escriba `i want to cancel my order number TW12345.` (quiero cancelar mi número de pedido TW12345.)
 
-    El servicio reconoce tanto la intención `#cancel_order` como la entidad `@order_number`. Responde lo siguiente: `If the pickup time is more than 48 hours from now, you can cancel your order. Just to confirm, you want to cancel order TW12345?` (Si la hora de recogida está pasadas las 48 horas a partir de ahora, puede cancelar su pedido. Solo para confirmar, ¿desea cancelar el pedido TW12345?).
+    Su asistente reconoce tanto la intención `#cancel_order` como la entidad `@order_number`. Responde lo siguiente: `If the pickup time is more than 48 hours from now, you can cancel your order. Just to confirm, you want to cancel order TW12345?` (Si la hora de recogida está pasadas las 48 horas a partir de ahora, puede cancelar su pedido. Solo para confirmar, ¿desea cancelar el pedido TW12345?).
 
 1.  Escriba `Yes`.
 
-    El servicio reconoce la intención `#yes` y responde `Ok. The order TW12345 is canceled. We hope we get the opportunity to bake a cake for you sometime soon.` (De acuerdo. El pedido TW12345 queda cancelado. Esperamos poderle preparar un pastel en el futuro.)
+    Su asistente reconoce la intención `#yes` y responde `Ok. The order TW12345 is canceled. We hope we get the opportunity to bake a cake for you sometime soon.` (De acuerdo. El pedido TW12345 queda cancelado. Esperamos poderle preparar un pastel en el futuro.)
 
     ![Muestra la prueba del panel Pruébelo del nodo de cancelación de número de pedido cuando el usuario proporciona el número de pedido en la entrada inicial.](images/gs-ass-test-cancel-order-number-provided.png)
 
     Ahora pruébelo en el caso de que no sepa el número de pedido.
 1.  Pulse **Borrar** en el panel "Pruébelo" para volver a empezar. Escriba `I want to cancel my order.` (Quiero cancelar mi pedido.)
 
-    El servicio reconoce la intención `#cancel_order` y responde `If the pickup time is more than 48 hours from now, you can cancel your order. What is the order number?` (Si la hora de recogida está pasadas las 48 horas a partir de ahora, puede cancelar su pedido. ¿Cuál es el número de pedido?).
+    Su asistente reconoce la intención `#cancel_order` y responde `If the pickup time is more than 48 hours from now, you can cancel your order. What is the order number?` (Si la hora de recogida está pasadas las 48 horas a partir de ahora, puede cancelar su pedido. ¿Cuál es el número de pedido?).
 
 1.  Escriba `I don't know.` (No lo sé.).
 
-    El servicio responde `I need the order number to cancel the order for you. If you don't know the order number, please call us at 958-234-3456 to cancel over the phone.` (Necesito saber el número de pedido para cancelar el pedido. Si no sabe el número de pedido, llámenos al teléfono 958-234-3456 para hacer la cancelación por teléfono.).
+    Su asistente responde `I need the order number to cancel the order for you. If you don't know the order number, please call us at 958-234-3456 to cancel over the phone.` (Necesito saber el número de pedido para cancelar el pedido. Si no sabe el número de pedido, llámenos al teléfono 958-234-3456 para hacer la cancelación por teléfono.).
 
     ![Muestra la prueba del panel Pruébelo del nodo de cancelación de número de pedido cuando el usuario no sabe el número de pedido.](images/gs-ass-test-cancel-order-number-unknown.png)
 
+### Añadir nodos para clarificar el formato de número de pedido
+{: #tutorial-clarify-order-number format}
+
 Si realiza más pruebas, es posible que encuentre que el diálogo no es muy útil en los casos en los que el usuario no recuerda el formato del número de pedido. Es posible que el usuario solo incluya los números o que escriba las letras pero olvide que deben ser mayúsculas. Por lo tanto, sería conveniente ofrecerles una pista en estos casos. Si desea ser amable, añada otro nodo al árbol de diálogo que compruebe los números en la entrada de usuario.
 
-1.  Busque el nodo `@order-number` que es un hijo del nodo *Ask order number*.
+1.  Busque el nodo `@order_number` que es un hijo del nodo *Ask order number*.
 
 1.  Pulse el icono **Más** ![Más opciones](images/kabob.png) en el nodo `@order_number` y luego seleccione **Añadir nodo debajo**.
 
@@ -656,7 +661,7 @@ Si realiza más pruebas, es posible que encuentre que el diálogo no es muy úti
 1.  En el campo de respuesta de texto, añada esta respuesta:
 
     ```
-    The correct format for our order numbers is AAnnnnn. The A's represents 2 upper-case letters, and the n's represents 5 numbers. Do you have an order number in that format? (El formato correcto de nuestros números de pedido es AAnnnn. Las A representan 2 letras mayúsculas y las n representan 5 números. ¿Tiene un número de pedido con este formato?)
+    El formato correcto para nuestros números de pedido es AAnnnnn. AA representa 2 letras en mayúscula, y nnnnn representa 5 números. ¿Tiene un número de pedido en dicho formato?
     ```
     {: codeblock}
 
@@ -664,13 +669,13 @@ Si realiza más pruebas, es posible que encuentre que el diálogo no es muy úti
 
 1.  Pulse el icono **Más** ![Más opciones](images/kabob.png) en el nodo `input.text.find('\d')` y seleccione **Añadir nodo hijo**.
 
-1.  Escriba `true` en el campo **Especificar una condición** de este nodo.
+1.  Escriba `true` en el campo **Si el asistente reconoce** de este nodo.
 
-1.  Habilite las respuestas condicionales pulsando **Personalizar** y cambiando el valor de *Varias respuestas* para **activarlo**.
+1.  Habilite las respuestas condicionales pulsando **Personalizar**, desplazándose abajo y cambiando el valor de *Varias respuestas* a **Activado** (On).
 
 1.  Pulse **Aplicar**.
 
-1.  En el campo *Si el bot reconoce* que acaba de añadir, escriba `@order_number` y en el campo *Responder* escriba:
+1.  En el campo *Si el asistente reconoce* que acaba de añadir, escriba `@order_number` y en el campo *Responder* escriba:
 
     ```
     Ok. The order $ordernumber is canceled. We hope we get the opportunity to bake a cake for you sometime soon.
@@ -679,7 +684,7 @@ Si realiza más pruebas, es posible que encuentre que el diálogo no es muy úti
 
 1.  Pulse **Añadir respuesta**.
 
-1.  En el campo *Si el bot reconoce*, escriba `true` y en el campo *Responder* escriba:
+1.  En el campo *Si el asistente reconoce*, escriba `true` y en el campo *Responder* escriba:
 
     ```
     I need the order number to cancel the order for you. If you don't know the order number, please call us at 958-234-3456 to cancel over the phone.
@@ -699,12 +704,12 @@ Otra forma de abordar este tipo de escenario consiste en añadir un nodo con ran
 
 Si el usuario muestra interés en el propio bot, desea que el asistente virtual detecte esa curiosidad y se comprometa con el usuario de una forma más personal. Quizás recuerde la intención `#General_About_You`, que se proporciona con el catálogo de contenido *General*, cuyo uso hemos considerado anteriormente, antes de añadir su propia intención `#about_restaurant` personalizada. Está pensada para reconocer este tipo de preguntas del usuario. Añada un nodo que esté condicionado por esta intención. En su respuesta, puede preguntar el nombre del usuario y guardarlo en una variable $username que se puede utilizar en cualquier otro lugar del diálogo, si está disponible.
 
-En primer lugar, tiene que asegurarse de que el servicio reconozca un nombre si el usuario lo especifica. Para ello puede habilitar la entidad `@sys-person`, que está diseñada para reconocer nombres propios y apellidos comunes (en inglés).
+En primer lugar, tiene que asegurarse de que su asistente reconozca un nombre si el usuario lo especifica. Para ello puede habilitar la entidad `@sys-person`, que está diseñada para reconocer nombres propios y apellidos comunes (en inglés).
 
 ### Adición de una entidad del sistema person
 {: #tutorial-add-person-entity}
 
-El servicio proporciona una serie de *entidades del sistema*, que son entidades comunes que puede utilizar para cualquier aplicación.
+Su asistente proporciona una serie de *entidades del sistema*, que son entidades comunes que puede utilizar para cualquier aplicación.
 
 1.  Pulse el separador **Entidades** y luego pulse **Entidades del sistema**.
 
@@ -717,10 +722,10 @@ El servicio proporciona una serie de *entidades del sistema*, que son entidades 
 
 Ahora, añada un nodo de diálogo que pueda reconocer el interés del usuario en el bot y pueda responder.
 
-1.  Pulse el separador **Diálogos**.
+1.  Pulse el separador **Diálogo**.
 1.  Busque el nodo `Welcome` en el árbol de diálogo.
 1.  Pulse el icono **Más** ![Más opciones](images/kabob.png) en el nodo `Welcome` y luego seleccione **Añadir nodo debajo**.
-1.  Empiece por escribir `#General_About_You` en el campo **Especificar una condición** de este nodo. Luego seleccione la opción `#General_About_You`.
+1.  Empiece por escribir `#General_About_You` en el campo **Si el asistente reconoce** de este nodo. Luego seleccione la opción `#General_About_You`.
 1.  Añada el siguiente mensaje en el campo de texto de respuesta:
 
     ```
@@ -732,12 +737,11 @@ Ahora, añada un nodo de diálogo que pueda reconocer el interés del usuario en
     ![Muestra la adición del nodo #General_About_You.](images/gs-ass-add-about-you-node.png)
 1.  Pulse ![Cerrar](images/close.png) para cerrar la vista de edición.
 1.  Pulse el icono **Más** ![Más opciones](images/kabob.png) en el nodo `#General_About_You` y luego seleccione **Añadir nodo hijo**.
-1.  Empiece por escribir `@sys-person` en el campo **Especificar una condición** de este nodo. Luego seleccione la opción `@sys-person`.
+1.  Empiece por escribir `@sys-person` en el campo **Si el asistente reconoce** de este nodo. Luego seleccione la opción `@sys-person`.
 1.  Añada el siguiente mensaje en el campo de texto de respuesta:
 
     ```
-    Hello, <? @sys-person.literal ?>! It's lovely to meet you. How can I help you today.
-    (Hola, <? @sys-person.literal ?>! Encantado de hablar con usted. En qué puedo ayudarle.)
+    Hello, <? @sys-person.literal ?>! It's lovely to meet you. How can I help you today?
     ```
     {: codeblock}
 
@@ -764,7 +768,7 @@ Ahora, añada un nodo de diálogo que pueda reconocer el interés del usuario en
 1.  Pulse el icono **Más** ![Más opciones](images/kabob.png) en el nodo `@sys-person` y luego seleccione **Añadir nodo debajo**.
 
     Va a añadir un nodo para capturar respuestas del usuario que no incluyan un nombre. Si el usuario elige no compartirlo, desea que el bot continúe con la conversación de algún modo.
-1.  Escriba `true` en el campo **Especificar una condición** de este nodo.
+1.  Escriba `true` en el campo **Si el asistente reconoce** de este nodo.
 1.  Añada el siguiente mensaje en el campo de texto de respuesta:
 
     ```
@@ -783,14 +787,14 @@ Si, en el momento de la ejecución, el usuario activa este nodo y especifica un 
 Si sabe el nombre del usuario, debe incluirlo en el mensaje de saludo. Para ello, añada respuestas condicionales e incluya una variación del mensaje de bienvenida que incluya el nombre del usuario.
 
 1.  Busque el nodo `#General_Greetings` en el árbol de diálogo y pulse para abrirlo en la vista de edición.
-1.  Pulse **Personalizar** y luego coloque el conmutador *Varias respuestas* en **activo**.
+1.  Pulse **Personalizar**, desplácese hacia abajo y luego coloque el conmutador *Varias respuestas* en **Activado**.
 
     ![Muestra que se ha habilitado el valor de respuestas condicionales.](images/gs-ass-turn-on-mcr.png)
 1.  Pulse **Aplicar**.
 
     ![Muestra que ahora la respuesta existente forma parte de una tabla de respuestas.](images/gs-ass-mcr-add-response.png)
 1.  Pulse **Añadir respuesta**.
-1.  En el campo *Si el bot reconoce*, escriba `$username` y en el campo *Responder con* escriba:
+1.  En el campo *Si el asistente reconoce*, escriba `$username` y en el campo *Responder con* escriba:
 
     ```
     Good day to you, $username!
@@ -806,7 +810,7 @@ Si sabe el nombre del usuario, debe incluirlo en el mensaje de saludo. Para ello
 ### Prueba de la personalización
 {: #tutorial-test-personalize}
 
-Pruebe si el servicio puede reconocer y guardar el nombre de un usuario y puede hacer referencia al usuario posteriormente.
+Pruebe si su asistente puede reconocer y guardar el nombre de un usuario y puede hacer referencia al usuario posteriormente.
 
 1.  Pulse el icono ![Pruébelo](images/ask_watson.png) para abrir el panel "Pruébelo".
 
@@ -814,13 +818,13 @@ Pruebe si el servicio puede reconocer y guardar el nombre de un usuario y puede 
 
 1.  Escriba `Who are you?`
 
-    El servicio reconoce la intención `#General_About_You`. Su respuesta acaba con la pregunta `What's your name?`
+    Su asistente reconoce la intención `#General_About_You`. Su respuesta acaba con la pregunta `What's your name?`
 1.  Escriba `I am Jane Doe.`
 
-    El servicio reconoce `Jane Doe` como una mención de la entidad `@sys-person`. Hace un comentario con el nombre y le pregunta en qué le puede ayudar.
+    Su asistente reconoce `Jane Doe` como una mención de la entidad `@sys-person`. Hace un comentario con el nombre y le pregunta en qué le puede ayudar.
 1.  Escriba `Hello.`
 
-    El servicio reconoce la intención `#General_Greetings` y responde `Good day to you, Jane Doe!`. Utiliza la respuesta condicional que incluye el nombre del usuario porque la variable de contexto `$username` contiene un valor en el momento en que se activa el nodo de saludo.
+    Su asistente reconoce la intención `#General_Greetings` y responde `Good day to you, Jane Doe!` Utiliza la respuesta condicional que incluye el nombre del usuario porque la variable de contexto `$username` contiene un valor en el momento en que se activa el nodo de saludo.
 
     ![Muestra el panel Pruébelo en el que el usuario pregunta Who are you, especifica el nombre Jane Doe, dice hello y se le saluda por su nombre.](images/gs-ass-test-personalization.png)
 
@@ -838,7 +842,7 @@ Ahora que ha creado una versión más sofisticada del asistente, vuelva a la pá
     La página se abre en un nuevo separador.
 1.  Repita algunas de las expresiones de prueba que ha enviado al panel "Pruébelo" para ver cómo se comporta el asistente en una integración real.
 
-    A diferencia de cuando envía expresiones de prueba al servicio desde el panel "Pruébelo", se aplican cargos de uso estándar a las llamadas de API resultantes de las expresiones que se envían al widget de conversación.
+    A diferencia de cuando envía expresiones de prueba a su asistente desde el panel "Pruébelo", se aplican cargos de uso estándar a las llamadas de API resultantes de las expresiones que se envían al widget de conversación.
     {: note}
 
 ## Siguientes pasos

@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-08-06"
+
+keywords: entity, entity value, contextual entity, dictionary entity, pattern entity, entity synonym, annotate mentions
 
 subcollection: assistant
 
@@ -31,53 +33,53 @@ Si des intentions représentent des verbes (une action que l'utilisateur souhait
 
 La reconnaissance des entités dans l'entrée utilisateur vous aide à élaborer des réponses plus utiles et plus ciblées. Soit, par exemple, l'intention `#buy_something`. Lorsqu'un utilisateur exprime une demande qui déclenche l'intention `#buy_something`, la réponse de l'assistant doit refléter une compréhension de ce qu'est le produit (*something*) que le client souhaite acheter. Vous pouvez ajouter une entité `@produit`, puis l'utiliser pour extraire des informations de l'entrée utilisateur concernant le produit qui intéresse le client. (Le signe `@` précédant le nom de l'entité aide à l'identifier clairement en tant qu'entité.)
 
-Enfin, vous pouvez ajouter plusieurs réponses à votre arborescence de dialogue avec une formulation différente en fonction de la valeur de `@produit` détectée dans la demande de l'utilisateur. 
+Enfin, vous pouvez ajouter plusieurs réponses à votre arborescence de dialogue avec une formulation différente en fonction de la valeur de `@produit` détectée dans la demande de l'utilisateur.
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Utilisation des entités" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/o-uhdw6bIyI" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 ## Présentation de l'évaluation des entités
 {: #entities-described}
 
-Le service détecte les entités dans l'entrée utilisateur à l'aide de l'une des méthodes d'évaluation suivantes :  
+L'assistant détecte les entités dans l'entrée utilisateur à l'aide de l'une des méthodes d'évaluation suivantes :  
 
-### Méthode basée sur un dictionnaire 
+### Méthode basée sur un dictionnaire
 {: #entities-dictionary-overview}
 
-Le service recherche dans l'entrée utilisateur les termes qui correspondent aux valeurs, aux synonymes ou aux canevas que vous définissez pour l'entité.
+L'assistant recherche dans l'entrée utilisateur les termes qui correspondent aux valeurs, aux synonymes ou aux canevas que vous définissez pour l'entité.
 
-- **Entité de synonyme** : vous définissez une catégorie de termes en tant qu'entité (`couleur`), puis une ou plusieurs valeurs dans cette catégorie (`bleu`). Pour chaque valeur, vous spécifiez un groupe de synonymes (`turquoise`, `marine`). Vous pouvez également choisir des synonymes à ajouter à partir des recommandations que le service vous a faites.
+- **Entité de synonyme** : vous définissez une catégorie de termes en tant qu'entité (`couleur`), puis une ou plusieurs valeurs dans cette catégorie (`bleu`). Pour chaque valeur, vous spécifiez un groupe de synonymes (`turquoise`, `marine`). Vous pouvez également choisir des synonymes à ajouter à partir des recommandations que Watson vous a faites.
 
-    Au moment de l'exécution, le service reconnaît dans l'entrée utilisateur les termes qui correspondent exactement aux valeurs ou aux synonymes que vous avez définis pour l'entité en tant que mentions de cette entité.
+    Au moment de l'exécution, l'assistant reconnaît dans l'entrée utilisateur les termes qui correspondent exactement aux valeurs ou aux synonymes que vous avez définis pour l'entité en tant que mentions de cette entité.
 - **Entité de canevas** : vous définissez une catégorie de termes en tant qu'entité (`info_contact`), puis une ou plusieurs valeurs dans cette catégorie (`email`). Pour chaque valeur, vous spécifiez une expression régulière qui définit le canevas textuel de mentions de ce type de valeur. Pour une valeur d'entité `email`, vous pouvez spécifier une expression régulière qui définit un canevas `texte@texte.com`.
 
-     Au moment de l'exécution, le service recherche les modèles correspondant à votre expression régulière dans l'entrée utilisateur et identifie les correspondances en tant que mentions de cette entité.
-- **Entité système** : entités synonymes préconstruites pour vous par IBM. Elles couvrent les catégories couramment utilisées, telles que les nombres, les dates et les heures. Vous permettez simplement à une entité système de commencer à l'utiliser. 
+     Au moment de l'exécution, l'assistant recherche les modèles correspondant à votre expression régulière dans l'entrée utilisateur et identifie les correspondances en tant que mentions de cette entité.
+- **Entité système** : entités synonymes préconstruites pour vous par IBM. Elles couvrent les catégories couramment utilisées, telles que les nombres, les dates et les heures. Vous permettez simplement à une entité système de commencer à l'utiliser.
 
-### Méthode basée sur le contexte 
+### Méthode basée sur les annotations
 {: #entities-annotations-overview}
 
-Lorsque vous définissez une entité contextuelle, un modèle est formé à la fois sur le *terme annoté* et le *contexte* dans lequel le terme est utilisé dans la phrase que vous annotez. Ce nouveau modèle d’entité contextuelle permet au service de calculer une cote de confiance identifiant la probabilité qu’un mot ou une expression soit une instance d’une entité, en fonction de la façon dont il est utilisé dans l'entrée de l’utilisateur. 
+Lorsque vous définissez une entité basée sur des annotations, également appelée entité contextuelle, un modèle est formé à la fois sur le *terme annoté* et le *contexte* dans lequel le terme est utilisé dans la phrase que vous annotez. Ce nouveau modèle d’entité contextuelle permet à l'assistant de calculer une cote de confiance identifiant la probabilité qu’un mot ou une expression soit une instance d’une entité, en fonction de la façon dont il est utilisé dans l'entrée de l’utilisateur. 
 
 - **Entité contextuelle** : vous définissez tout d'abord une catégorie de termes en tant qu'entité (`produit`). Ensuite, vous accédez à la page *Intents* et parcourez vos exemples d’utilisateurs d'intentions existants pour rechercher les mentions de l’entité et les étiqueter en tant que telles. Par exemple, vous pouvez aller à l’intention `#buy_something` et rechercher un exemple d’utilisateur indiquant `Je souhaite acheter un sac Coach`. Vous pouvez indiquer `sac Coach` comme mention de l'entité `@produit`
 
     Pour les besoins de la formation, le terme annoté, `sac Coach`, est ajouté en tant que valeur de l’entité `@produit`.
 
-    Au moment de l'exécution, le service évalue les termes en fonction du contexte dans lequel ils sont utilisés dans la phrase uniquement. Si la structure d'une demande d'utilisateur qui mentionne le terme correspond à la structure d'un exemple d'utilisateur d'intention dans lequel une mention est étiquetée, le service interprète le terme comme une mention de ce type d'entité. Par exemple, l'entrée utilisateur peut inclure l'énoncé suivant : `Je souhaite acheter un sac Gucci`. En raison de la similitude de la structure de cette phrase avec l'exemple utilisateur que vous avez annoté (`Je souhaite acheter un sac Coach`), le service reconnaît `sac Gucci` en tant que mention de l'entité `@produit`.
+    Au moment de l'exécution, l'assistant évalue les termes en fonction du contexte dans lequel ils sont utilisés dans la phrase uniquement. Si la structure d'une demande d'utilisateur qui mentionne le terme correspond à la structure d'un exemple d'utilisateur d'intention dans lequel une mention est étiquetée, l'assistant interprète le terme comme une mention de ce type d'entité. Par exemple, l'entrée utilisateur peut inclure l'énoncé suivant : `Je souhaite acheter un sac Gucci`. En raison de la similitude de la structure de cette phrase avec l'exemple utilisateur que vous avez annoté (`Je souhaite acheter un sac Coach`), l'assistant reconnaît `sac Gucci` en tant que mention de l'entité `@produit`.
 
-    Lorsqu'un modèle d'entité contextuelle est utilisé pour une entité, le service *ne recherche pas* les correspondances de texte ou de canevas exactes pour l'entité dans l'entrée utilisateur, mais se concentre plutôt sur le contexte de la phrase où l'entité est mentionnée. 
+    Lorsqu'un modèle d'entité contextuelle est utilisé pour une entité, l'assistant *ne recherche pas* les correspondances de texte ou de canevas exactes pour l'entité dans l'entrée utilisateur, mais se concentre plutôt sur le contexte de la phrase où l'entité est mentionnée. 
 
-    Si vous choisissez de définir des valeurs d'entité à l'aide d'annotations, ajoutez au moins 10 annotations par entité pour donner au modèle d'entité contextuelle suffisamment de données pour être fiable. 
+    Si vous choisissez de définir des valeurs d'entité à l'aide d'annotations, ajoutez au moins 10 annotations par entité pour donner au modèle d'entité contextuelle suffisamment de données pour être fiable.
+
+Pour en savoir plus sur les entités contextuelles, [lisez cet article ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://medium.com/ibm-watson/contextual-entities-with-ibm-watson-assistant-f41b2e0ca82e).
 
 ## Création d'entités
 {: #entities-creating-task}
 
-Utilisez l'outil {{site.data.keyword.conversationshort}} pour créer des entités.
+1.  Ouvrez votre compétence de dialogue et cliquez sur l'onglet **Entities**. Si l'onglet **Entities** ne s'affiche pas, utilisez le menu ![Menu](images/Menu_16.png) pour ouvrir la page.
 
-1.  Dans l'outil {{site.data.keyword.conversationshort}}, ouvrez votre compétence de dialogue et cliquez sur l'onglet **Entities**. Si l'onglet **Entities** ne s'affiche pas, utilisez le menu ![Menu](images/Menu_16.png) pour ouvrir la page.
+1.  Cliquez sur **Create entity**.
 
-1.  Cliquez sur **Add entity**.
-
-    Vous pouvez également cliquer sur **Use System Entities** pour effectuer une sélection dans une liste d'entités courantes, fournie par {{site.data.keyword.IBM_notm}}, qui s'applique à n'importe quel scénario d'utilisation. Pour plus d'informations, reportez-vous à la rubrique [Activation des entités de système](#entities-enable-system-entities).
+    Vous pouvez également cliquer sur **System entities** pour effectuer une sélection dans une liste d'entités courantes, fournie par {{site.data.keyword.IBM_notm}}, qui s'applique à n'importe quel scénario d'utilisation. Pour plus d'informations, reportez-vous à la rubrique [Activation des entités de système](#entities-enable-system-entities).
 
 1.  Dans la zone **Entity name**, tapez un nom descriptif pour l'entité.
 
@@ -88,30 +90,30 @@ Utilisez l'outil {{site.data.keyword.conversationshort}} pour créer des entité
 
     Le nom ne doit pas comporter d'espace. Le nom ne peut pas comporter plus de 64 caractères. Ne commencez pas le nom par la chaîne `sys-` car elle est réservée aux entités système.
 
-    L'outil inclut automatiquement le caractère @ dans le nom de l'entité, vous n'avez donc pas besoin d'en ajouter un.
+    Le signe `@` est ajouté avant le nom de l'entité afin d'identifier automatiquement le terme en tant qu'entité. Il n'est pas nécessaire de l'ajouter.
     {: tip}
 
 1.  Cliquez sur **Create entity**.
 
     ![Capture d'écran illustrant la création d'une entité](images/create_entity.png)
 
-1.  Pour cette entité, indiquez si vous souhaitez que le service utilise une approche basée sur un dictionnaire ou sur un contexte pour en trouver les mentions, puis suivez la procédure appropriée. 
+1.  Pour cette entité, indiquez si vous souhaitez que l'assistant utilise une approche basée sur un dictionnaire ou sur des annotations pour en trouver les mentions, puis suivez la procédure appropriée. 
 
     **Pour chaque entité que vous créez, choisissez uniquement un type d'entité à utiliser.** Dès que vous ajoutez une annotation à une entité, le modèle contextuel est initialisé et devient l'approche principale pour analyser les entrées utilisateur afin de trouver des mentions de cette entité. Le contexte dans lequel la mention est utilisée dans l'entrée utilisateur a priorité sur les correspondances exactes éventuellement présentes. Pour plus d'informations sur la façon dont chaque type est évalué, reportez-vous à la rubrique [Présentation de l'évaluation d'entité](#entities-described).
 
     - [Entités basées sur un dictionnaire](#entities-create-dictionary-based)
-    - [Entités basées sur le contexte](#entities-create-annotation-based)
+    - [Entités basées sur des annotations](#entities-create-annotation-based)
 
-## Ajout d'entités basées sur un dictionnaire 
+## Ajout d'entités basées sur un dictionnaire
 {: #entities-create-dictionary-based}
 
-Les entités basées sur un dictionnaire sont celles pour lesquelles vous définissez des termes, des synonymes ou des modèles spécifiques. Au moment de l'exécution, le service trouve les mentions d'entité uniquement lorsqu'un terme de l'entrée utilisateur correspond exactement (ou étroitement si la correspondance approximative est activée) à la valeur ou à l'un de ses synonymes. 
+Les entités basées sur un dictionnaire sont celles pour lesquelles vous définissez des termes, des synonymes ou des modèles spécifiques. Au moment de l'exécution, l'assistant trouve les mentions d'entité uniquement lorsqu'un terme de l'entrée utilisateur correspond exactement (ou étroitement si la correspondance approximative est activée) à la valeur ou à l'un de ses synonymes. 
 
 1.  Dans la zone **Value name**, tapez le texte d'une valeur possible pour l'entité et appuyez sur la touche `Entrée`. Une valeur d'entité peut être n'importe quelle chaîne de 64 caractères au maximum.
 
     **Important :** n'ajoutez pas d'informations sensibles ou personnelles dans les noms ou les valeurs d'entité. En effet, les noms et les valeurs peuvent être exposés dans les URL d'une application.
 
-1.  Si vous souhaitez que le service reconnaisse les termes avec une syntaxe similaire à la valeur d'entité et aux synonymes que vous spécifiez, mais sans exiger de correspondance exacte, cliquez sur l'option à bascule **Fuzzy Matching** pour l'activer.
+1.  Si vous souhaitez que l'assistant reconnaisse les termes avec une syntaxe similaire à la valeur d'entité et aux synonymes que vous spécifiez, mais sans exiger de correspondance exacte, cliquez sur l'option à bascule **Fuzzy Matching** pour l'activer.
 
     Cette fonction est disponible pour les langues mentionnées dans la rubrique [Langues prises en charge](/docs/services/assistant?topic=assistant-language-support).
 
@@ -127,7 +129,7 @@ Les entités basées sur un dictionnaire sont celles pour lesquelles vous défin
     Pour l'anglais, la fonction Fuzzy Matching empêche la capture de certains mots anglais valides courants comme correspondances floues pour une entité donnée. Ce dispositif utilise des mots de dictionnaire anglais standard. Vous pouvez également définir une valeur/un synonyme d'entité en anglais, et la fonction Fuzzy Matching établira une correspondance uniquement avec la valeur/le synonyme d'entité que vous avez défini. Par exemple, la fonction Fuzzy Matching peut établir une correspondance entre le terme `unsure` et `insurance` ; mais, si `unsure` est défini en tant que valeur/synonyme pour une entité, telle que `@option`, le terme `unsure` sera toujours mis en correspondance avec `@option` et non avec `insurance`.
     {: note}
 
-    Votre paramètre Fuzzy Matching n'a aucun impact sur les recommandations de synonymes. Même si Fuzzy Matching est activée, des synonymes sont suggérés pour la valeur exacte que vous spécifiez uniquement, pas la valeur et les légères variantes de la valeur. 
+    Votre paramètre Fuzzy Matching n'a aucun impact sur les recommandations de synonymes. Même si Fuzzy Matching est activée, des synonymes sont suggérés pour la valeur exacte que vous spécifiez uniquement, pas la valeur et les légères variantes de la valeur.
 
 1.  Une fois que vous avez entré un nom de valeur, vous pouvez ajouter n'importe quel synonyme, ou définir des canevas spécifiques, pour cette valeur d'entité en sélectionnant `Synonyms` ou `Patterns` dans le menu déroulant *Type*.
 
@@ -142,11 +144,11 @@ Les entités basées sur un dictionnaire sont celles pour lesquelles vous défin
 
       ![Capture d'écran illustrant la définition d'une entité](images/define_entity.png)
 
-      Le service {{site.data.keyword.conversationshort}} peut également recommander des synonymes pour vos valeurs d'entité. L'outil de recommandation recherche les synonymes associés en fonction de la similarité contextuelle extraite d'un vaste ensemble d'informations existantes, y compris de grandes sources de texte écrit, et utilise des techniques de traitement de langage naturel pour identifier des mots similaires aux synonymes existants dans votre valeur d'entité. 
+      Le service {{site.data.keyword.conversationshort}} peut également recommander des synonymes pour vos valeurs d'entité. L'outil de recommandation recherche les synonymes associés en fonction de la similarité contextuelle extraite d'un vaste ensemble d'informations existantes, y compris de grandes sources de texte écrit, et utilise des techniques de traitement de langage naturel pour identifier des mots similaires aux synonymes existants dans votre valeur d'entité.
 
     - Cliquez sur **Show recommendations**.
 
-    - Le service {{site.data.keyword.conversationshort}} formulera plusieurs recommandations pour les synonymes. Les termes sont affichés en minuscules, mais le service reconnaît les mentions des synonymes, qu’elles soient spécifiées en minuscules ou en majuscules. 
+    - Le service {{site.data.keyword.conversationshort}} formulera plusieurs recommandations pour les synonymes. Les termes sont affichés en minuscules, mais l'assistant reconnaît les mentions des synonymes, qu’elles soient spécifiées en minuscules ou en majuscules. 
 
       Plus vos synonymes de valeur d'entité sont cohérents, plus vos recommandations seront pertinentes et ciblées. Par exemple, plusieurs mots sont centrés sur un thème, vous obtiendrez de meilleures suggestions que si vous aviez un ou deux mots aléatoires.
       {: tip}
@@ -155,7 +157,7 @@ Les entités basées sur un dictionnaire sont celles pour lesquelles vous défin
 
     - Sélectionnez les synonymes à inclure, puis cliquez sur **Add selected**.
 
-      Vous devez cliquer sur le bouton **Add selected** pour que les synonymes que vous avez sélectionnés soient ajoutés. Si vous passez au groupe suivant sans cliquer d'abord sur ce bouton, vos sélections sont perdues. 
+      Vous devez cliquer sur le bouton **Add selected** pour que les synonymes que vous avez sélectionnés soient ajoutés. Si vous passez au groupe suivant sans cliquer d'abord sur ce bouton, vos sélections sont perdues.
 
       ![Ecran de recommandation sur les synonymes 3](images/synonym_3.png)
 
@@ -164,7 +166,7 @@ Les entités basées sur un dictionnaire sont celles pour lesquelles vous défin
       Si vous ne recevez aucune recommandation de synonyme supplémentaire, il est possible que votre entité soit déjà bien définie ou qu'elle comporte un contenu que l'agent de recommandation n'est pas en mesure de développer.
       {: tip}
 
-      Si vous choisissez de ne pas sélectionner un synonyme recommandé, le système traite ce terme comme un terme qui ne vous intéresse pas et modifie le prochain ensemble de recommandations que vous verrez lorsque vous appuierez sur `Add selected` ou `Next set`. Cette inférence ne persiste que lorsque vous choisissez des synonymes. Les informations sur les synonymes ignorés ne sont utilisées à aucune autre fin par le service.
+      Si vous choisissez de ne pas sélectionner un synonyme recommandé, le système traite ce terme comme un terme qui ne vous intéresse pas et modifie le prochain ensemble de recommandations que vous verrez lorsque vous appuierez sur `Add selected` ou `Next set`. Cette inférence ne persiste que lorsque vous choisissez des synonymes. Les informations sur les synonymes ignorés ne sont utilisées à aucune autre fin par l'assistant.
       {: note}
 
       ![Ecran de recommandation sur les synonymes 4](images/synonym_4.png)
@@ -187,7 +189,7 @@ Les entités basées sur un dictionnaire sont celles pour lesquelles vous défin
         - `localPhone` : `(\d{3})-(\d{4})`, par exemple, 426-4968
         - `fullUSphone` : `(\d{3})-(\d{3})-(\d{4})`, par exemple, 800-426-4968
         - `internationalPhone` : `^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$`, par exemple, +44 1962 815000
-      - `email` : `\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b`, par exemple, name@ibm.com
+      - `email` : `\b[A-Za-z0-9._%+-]+@([A-Za-z0-9-]+\.)+[A-Za-z]{2,}\b`, par exemple, name@ibm.com
       - `website` : `(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$`, par exemple, https://www.ibm.com
 
       Souvent, avec des entités de canevas, il est nécessaire de stocker le texte correspondant au canevas dans une variable contextuelle (ou une variable d'action) à partir d'une arborescence de dialogue. Pour plus d'informations, reportez-vous à la rubrique [Définition d'une variable contextuelle](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-context-var-define).
@@ -241,33 +243,33 @@ Les entités basées sur un dictionnaire sont celles pour lesquelles vous défin
         - Des branches conditionnelles (par exemple, `(?(cond)true)`)
       - Lorsqu'une entité de canevas commence ou se termine par un caractère Unicode et inclut des limites de mot, par exemple, `\bš\b`, la correspondance de canevas ne correspond pas exactement à la limite de mot. Dans cet exemple, pour l'entrée `š zkouška`, la correspondance renvoie `Group 0: 6-7 š` (`š zkou`_**`š`**_`ka`) au lieu de renvoyer la chaîne appropriée `Group 0: 0-1 š` (_**`š`**_ `zkouška`).
 
-      Le moteur d'expression régulière est librement inspiré du moteur d'expression régulière Java. Le service {{site.data.keyword.conversationshort}} produira une erreur si vous essayez de télécharger un canevas non pris en charge, que ce soit via l'API ou à partir de l'interface utilisateur d'outils du service {{site.data.keyword.conversationshort}}.
+      Le moteur d'expression régulière est librement inspiré du moteur d'expression régulière Java. Le service {{site.data.keyword.conversationshort}} produira une erreur si vous essayez de télécharger un canevas non pris en charge, que ce soit via l'API ou à partir de l'interface utilisateur de {{site.data.keyword.conversationshort}}.
 
 1.  Cliquez sur **Add value** et répétez le processus afin d'ajouter d'autres valeurs d'entité.
 
-1.  Lorsque vous avez terminé d'ajouter des valeurs d'entité, cliquez sur l'![icône Fermer (représentée par une flèche)](images/close_arrow.png) pour terminer la création de l'entité. 
+1.  Lorsque vous avez terminé d'ajouter des valeurs d'entité, cliquez sur l'![icône Fermer (représentée par une flèche)](images/close_arrow.png) pour terminer la création de l'entité.
 
 L'entité que vous avez créée est ajoutée à l'onglet **Entities** et le système commence à s'entraîner lui-même en utilisant les nouvelles données.
 
 ## Ajout d'entités contextuelles
 {: #entities-create-annotation-based}
 
-Les entités basées sur le contexte sont celles pour lesquelles vous annotez les occurrences de l'entité dans des exemples de phrases afin d'enseigner au service le contexte dans lequel l'entité est généralement utilisée. 
+Les entités basées sur les annotations sont celles pour lesquelles vous annotez les occurrences de l'entité dans des exemples de phrases afin d'enseigner à l'assistant le contexte dans lequel l'entité est généralement utilisée. 
 
-Pour former un modèle d'entité contextuelle, vous pouvez tirer parti de vos exemples d'intention, qui fournissent des phrases facilement disponibles à annoter. 
+Pour former un modèle d'entité contextuelle, vous pouvez tirer parti de vos exemples d'intention, qui fournissent des phrases facilement disponibles à annoter.
 
 L'utilisation d'exemples d'utilisateur d'intention pour définir des entités contextuelles n'a aucune incidence sur la classification de cette intention. Cependant, les mentions d'entité que vous étiquetez sont également ajoutées à cette entité en tant que synonymes. De plus, la classification d'intention utilise des mentions de synonyme dans les exemples d'utilisateur d'intention pour établir une référence faible entre une intention et une entité.
 {: note}
 
-1.  Dans l'outil {{site.data.keyword.conversationshort}}, ouvrez votre compétence et cliquez sur l'onglet **Intents**. Si l'onglet **Intents** ne s'affiche pas, utilisez le menu ![Menu](images/Menu_16.png) pour ouvrir la page.
+1.  A partir de votre compétence de dialogue, cliquez sur l'onglet **Intents**.
 
-1.  Cliquez sur une intention pour l'ouvrir. 
+1.  Cliquez sur une intention pour l'ouvrir.
 
     Pour cet exemple, l'intention `#place_order` définit la fonction de commande d'un détaillant en ligne.
 
     ![Sélectionnez l'intention #place_order](images/oe-intent.png)
 
-1.  Consultez les exemples d'intention pour les mentions d'entités potentielles. Mettez en surbrillance une mention d’entité potentielle parmi les exemples d’intention. 
+1.  Consultez les exemples d'intention pour les mentions d'entités potentielles. Mettez en surbrillance une mention d’entité potentielle parmi les exemples d’intention.
 
     Dans cet exemple, `ordinateur` est la mention de l'entité.
 
@@ -284,16 +286,17 @@ L'utilisation d'exemples d'utilisateur d'intention pour définir des entités co
 
     ![Zone de recherche avec paramètre de recherche prod](images/oe-intent-search2.png)
 
-    Si l'entité a des valeurs d'entité existantes, elles sont affichées à titre informatif uniquement. Vous ajoutez l'annotation à l'entité et non à une valeur d'entité spécifique. 
+    Si l'entité a des valeurs d'entité existantes, elles sont affichées à titre informatif uniquement. Vous ajoutez l'annotation à l'entité et non à une valeur d'entité spécifique.
 
-    Si vous souhaitez enseigner au modèle que la mention est synonyme d'une valeur d'entité existante, vous pouvez l'associer à une valeur d'entité spécifique. {: important}
+    Si vous souhaitez enseigner au modèle que la mention est synonyme d'une valeur d'entité existante, vous pouvez l'associer à une valeur d'entité spécifique.
+    {: important}
 
-    Pour associer la mention à une valeur d'entité spécifique, procédez comme suit : 
+    Pour associer la mention à une valeur d'entité spécifique, procédez comme suit :
 
     1.  Saisissez le nom complet de l’entité et sa valeur dans la zone de recherche. Par exemple, entrez `@produit:IT`.
-    1.  Lorsque la valeur de l'entité est affichée dans le menu déroulant, sélectionnez-la. 
+    1.  Lorsque la valeur de l'entité est affichée dans le menu déroulant, sélectionnez-la.
 
-1.  Sélectionnez l'entité à laquelle vous souhaitez ajouter l'annotation. 
+1.  Sélectionnez l'entité à laquelle vous souhaitez ajouter l'annotation.
 
     Dans cet exemple, `ordinateur` est ajouté en tant qu'annotation pour l'entité `@produit`.
 
@@ -302,17 +305,19 @@ L'utilisation d'exemples d'utilisateur d'intention pour définir des entités co
 
 1.  Si aucune des entités n'est appropriée, vous pouvez créer une nouvelle entité en choisissant **@(créer une entité)**.
 
-1.  Répétez cette procédure pour chaque entité que vous souhaitez annoter.  
+1.  Répétez cette procédure pour chaque entité que vous souhaitez annoter.
 
-    Veillez à annoter chaque mention d’un type d’entité apparaissant dans les exemples d’utilisateur que vous éditez. Pour plus d'informations, reportez-vous à la rubrique [Ce que vous n'annotez pas compte](#entities-counter-examples).{: important}
+    Veillez à annoter chaque mention d’un type d’entité apparaissant dans les exemples d’utilisateur que vous éditez. Pour plus d'informations, reportez-vous à la rubrique [Ce que vous n'annotez pas compte](#entities-counter-examples).
+    {: important}
 
 1.  Cliquez à présent sur l'annotation que vous venez de créer. Une fenêtre s'ouvre et indique `Go to: <entity-name>`. Cliquez sur ce lien pour accéder directement à l'entité.
 
     ![Vérification de la valeur ordinateur pour l'entité de produit](images/oe-verify-value.png)
 
-    L'annotation est ajoutée à l'entité à laquelle vous l'avez associée et le système commence à se former sur les nouvelles données. 
+    L'annotation est ajoutée à l'entité à laquelle vous l'avez associée et le système commence à se former sur les nouvelles données.
 
-    Le terme que vous avez annoté est ajouté à l'entité en tant que nouvelle valeur de dictionnaire. Si vous avez associé le terme annoté à une valeur d'entité existante, le terme est ajouté en tant que synonyme de cette valeur d'entité et non en tant que valeur d'entité indépendante. {: important}
+    Le terme que vous avez annoté est ajouté à l'entité en tant que nouvelle valeur de dictionnaire. Si vous avez associé le terme annoté à une valeur d'entité existante, le terme est ajouté en tant que synonyme de cette valeur d'entité et non en tant que valeur d'entité indépendante.
+    {: important}
 
 1.  Pour afficher toutes les mentions annotées pour une entité particulière, dans la page de configuration de l'entité, cliquez sur l'onglet **Annotation**.
 
@@ -323,16 +328,16 @@ L'utilisation d'exemples d'utilisateur d'intention pour définir des entités co
 
     Si vous ne souhaitez pas que vos entités contextuelles utilisent cette compréhension élargie des valeurs d'entité, sélectionnez tous les exemples d'utilisateur dans la vue *Annotation* pour cette entité, puis cliquez sur **Delete**.
 
-La vidéo suivante montre comment annoter des mentions d'entités. 
+La vidéo suivante montre comment annoter des mentions d'entités.
 
 <iframe class="embed-responsive-item" id="youtubeplayer0" title="Annotation de mentions d'entité" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/3WjzJpLsnhQ" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 Pour parcourir un tutoriel vous expliquant comment définir des entités contextuelles avant d'ajouter la vôtre, accédez à [Tutoriel : Définition d'entités contextuelles ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/cloud/garage/demo/try-watson-assistant-contextual-entities){: new_window}.
 
-### Ce que vous n'annotez pas compte 
+### Ce que vous n'annotez pas compte
 {: #entities-counter-examples}
 
-Si vous avez un exemple d'intention avec une annotation et qu'un autre mot de cet exemple correspond à la valeur ou à un synonyme de la même entité, mais que la valeur *n'est pas* annotée, cette omission a un impact. Le modèle tire également des leçons du contexte du terme que vous n'avez pas annoté. Par conséquent, si vous identifiez un terme en tant que mention d'une entité dans un exemple d'utilisateur, veillez également à étiqueter toutes les autres mentions applicables. 
+Si vous avez un exemple d'intention avec une annotation et qu'un autre mot de cet exemple correspond à la valeur ou à un synonyme de la même entité, mais que la valeur *n'est pas* annotée, cette omission a un impact. Le modèle tire également des leçons du contexte du terme que vous n'avez pas annoté. Par conséquent, si vous identifiez un terme en tant que mention d'une entité dans un exemple d'utilisateur, veillez également à étiqueter toutes les autres mentions applicables.
 
 1.  L'intention `#Customer_Care_Appointments` comprend deux exemples d'intention avec le mot `visite`.
 
@@ -355,7 +360,7 @@ Les entités de système peuvent être utilisées pour reconnaître un large év
 
 Les entités de système sont gérées de manière centralisée, par conséquent, toutes les mises à jour sont disponibles automatiquement. Vous ne pouvez pas modifier les entités de système.
 
-1.  Sur l'onglet Entities, cliquez sur **System entities**.
+1.  Sur la page Entities, cliquez sur **System entities**. 
 
     ![Capture d'écran de l'onglet "System entities"](images/system_entities_1.png)
 
@@ -374,10 +379,10 @@ Le nombre d'entités, de valeurs d'entité et de synonymes que vous pouvez crée
 
 | Forfait de service      | Nombre d'entités par compétence | Nombre de valeurs d'entité par compétence | Nombre de synonymes d'entité par compétence |
 |-------------------|-------------------:|------------------------:|--------------------------:|
-| Premium           |               1000 |                 100 000 |                   100 000 |
-| Plus              |               1000 |                 100 000 |                   100 000 |
-| Standard          |               1000 |                 100 000 |                   100 000 |
-| Lite              |                 25 |                 100 000 |                   100 000 |
+| Premium | 1 000 | 100 000 | 100 000 |
+| Plus | 1 000 | 100 000 |                   100 000 |
+| Standard | 1 000 | 100 000 | 100 000 |
+| Lite, Plus Trial | 25 | 100 000 | 100 000 |
 {: caption="Détails de forfait de service" caption-side="top"}
 
 Les entités de système que vous activez pour utilisation sont prises en compte dans le nombre total d'entités utilisées de votre forfait.
@@ -387,7 +392,7 @@ Les entités de système que vous activez pour utilisation sont prises en compte
 | Premium      |        30 entités contextuelles avec 3000 annotations |
 | Plus         |        20 entités contextuelles avec 2000 annotations |
 | Standard     |        20 entités contextuelles avec 2000 annotations |
-| Lite         |        10 entités contextuelles avec 1000 annotations |
+| Lite, Plus Trial |    10 entités contextuelles avec 1000 annotations |
 {: caption="Détails de forfait de service (suite)" caption-side="top"}
 
 ## Edition d'entités
@@ -401,7 +406,7 @@ Si vous modifiez le type d'entité `synonym` et que vous le remplacez par `patte
 ## Recherche d'entités
 {: #entities-search}
 
-Utilisez la fonction de recherche pour trouver des noms, des valeurs et des synonymes d'entité. 
+Utilisez la fonction de recherche pour trouver des noms, des valeurs et des synonymes d'entité.
 
 1.  Dans la page **Entities**, cliquez sur l'icône de recherche.
 
@@ -424,16 +429,16 @@ Les entités contenant votre terme de recherche, avec des exemples correspondant
 Vous pouvez exporter un certain nombre d'entités vers un fichier CSV, de manière à pouvoir les importer et les réutiliser pour une autre application {{site.data.keyword.conversationshort}}.
 
 - Les informations de canevas sont incluses dans l'exportation CSV. Toute chaîne encapsulée avec `/` sera considérée comme un canevas (par opposition à un synonyme).
-- Les annotations associées aux entités contextuelles ne sont pas exportées. Vous devez exporter l'intégralité de la compétence de dialogue pour capturer à la fois la valeur d'entité et les annotations associées. 
+- Les annotations associées aux entités contextuelles ne sont pas exportées. Vous devez exporter l'intégralité de la compétence de dialogue pour capturer à la fois la valeur d'entité et les annotations associées.
 
-1.  Sélectionnez les entités souhaitées, puis cliquez sur **Export**. 
+1.  Sélectionnez les entités souhaitées, puis cliquez sur **Export**.
 
     ![Bouton Export pour une entité](images/ExportEntity.png)
 
 ## Importation d'entités
 {: #entities-import}
 
-Si vous possédez un grand nombre d'entités, vous trouverez peut-être plus facile de les importer à partir d'un fichier CSV que de les définir une par une dans l'outil {{site.data.keyword.conversationshort}}.
+Si vous possédez un grand nombre d'entités, vous trouverez peut-être plus facile de les importer à partir d'un fichier CSV que de les définir une par une. 
 
 Les annotations d'entité ne sont pas incluses dans l'importation d'un fichier CSV d'entité. Vous devez importer l'intégralité de la compétence de dialogue pour conserver les annotations associées à une entité contextuelle de cette compétence. Si vous exportez et importez uniquement des entités, toutes les entités contextuelles que vous avez exportées sont traitées comme des entités basées sur un dictionnaire une fois que vous les avez importées.
 {: note}
@@ -474,7 +479,8 @@ Les annotations d'entité ne sont pas incluses dans l'importation d'un fichier C
     ```
     {: screen}
 
-    Sauvegardez le fichier CSV au format UTF-8 et sans marque d'ordre d'octet. Le fichier CSV ne doit pas excéder 10 Mo. Si votre fichier CSV est plus gros, songez à le fractionner en plusieurs fichiers et à les importer séparément.  Dans l'outil {{site.data.keyword.conversationshort}}, ouvrez votre compétence de dialogue et cliquez sur l'onglet **Entities**. {: tip}
+    Sauvegardez le fichier CSV au format UTF-8 et sans marque d'ordre d'octet. Le fichier CSV ne doit pas excéder 10 Mo. Si votre fichier CSV est plus gros, songez à le fractionner en plusieurs fichiers et à les importer séparément.  Ouvrez votre compétence de dialogue et cliquez sur l'onglet **Entities**.
+    {: tip}
 
 1.  Cliquez sur ![Import](images/importGA.png), puis faites glisser un fichier, ou recherchez un fichier sur votre ordinateur. Le fichier est validé et importé et le système commence à s'entraîner lui-même en utilisant les nouvelles données.
 
@@ -487,6 +493,6 @@ Vous pouvez sélectionner un certain nombre d'entités à supprimer.
 
 **Important** : lorsque vous supprimez des entités, vous supprimez également toutes les valeurs, tous les synonymes ou tous les canevas qui leur sont associés, et ces éléments ne peuvent plus être extraits ultérieurement. Tous les noeuds de dialogue qui font référence à ces entités ou ces valeurs doivent être mis à jour manuellement de manière à ne plus faire référence au contenu supprimé.
 
-1.  Sélectionnez les entités que vous souhaitez supprimer, puis cliquez sur **Delete**. 
+1.  Sélectionnez les entités que vous souhaitez supprimer, puis cliquez sur **Delete**.
 
     ![Bouton Delete pour une entité](images/DeleteEntity.png)

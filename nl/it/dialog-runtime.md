@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-02-21"
+lastupdated: "2019-08-06"
+
+keywords: context, context variable, digression, disambiguation, autocorrection, spelling correction, spell check, confidence 
 
 subcollection: assistant
 
@@ -36,7 +38,7 @@ Ogni espressione utente viene passata al dialogo come una chiamata API /message.
 
 Il corpo della richiesta della chiamata API /message e della risposta include i seguenti oggetti:
 
-- `context`: contiene le variabili che devono essere conservate. Per passare le informazioni da una chiamata alla successiva, lo sviluppatore di applicazioni deve passare il contesto di risposta della chiamata API precedente con ogni chiamata API successiva. Ad esempio, il dialogo può raccogliere il nome dell'utente e quindi fare riferimento all'utente utilizzando il nome nei nodi successivi.
+- `context`: contiene le variabili che devono essere conservate. Per passare le informazioni da una chiamata alla successiva, lo sviluppatore di applicazioni deve passare il contesto di risposta della chiamata API precedente con ogni chiamata API successiva. Ad esempio, il dialogo può raccogliere il nome dell'utente e quindi fare riferimento all'utente utilizzando il nome nei nodi successivi. Il seguente esempio mostra come viene rappresentato l'oggetto context nell'editor JSON del dialogo: 
 
   ```json
   {
@@ -48,7 +50,7 @@ Il corpo della richiesta della chiamata API /message e della risposta include i 
 
   Per ulteriori informazioni, vedi [Conservazione delle informazioni tra turni di dialogo](#dialog-runtime-context).
 
-- `input`: la stringa di testo che è stata inoltrata dall'utente. La stringa di testo può contenere fino a 2.048 caratteri.
+- `input`: la stringa di testo che è stata inoltrata dall'utente. La stringa di testo può contenere fino a 2.048 caratteri. Il seguente esempio mostra come viene rappresentato l'oggetto input nell'editor JSON del dialogo:
 
   ```json
   {
@@ -58,7 +60,7 @@ Il corpo della richiesta della chiamata API /message e della risposta include i 
   ```
   {: codeblock}
 
-- `output`: la risposta del dialogo da restituire all'utente.
+- `output`: la risposta del dialogo da restituire all'utente. Il seguente esempio mostra come viene rappresentato l'oggetto output nell'editor JSON del dialogo: 
 
   ```json
   {
@@ -88,7 +90,7 @@ Nella risposta /message API risultante, la risposta di testo viene formattata co
 }
 ```
 
-Il seguente formato oggetto `output` è supportato per la compatibilità con le versioni precedenti. Gli spazi di lavoro che specificano una risposta di testo utilizzando questo formato, continueranno a funzionare correttamente. Con l'introduzione dei tipi di risposta esauriente, la struttura `output.text` è stata ampliata con la struttura `output.generic` per facilitare il supporto di altri tipi di risposte oltre a quella di testo. Utilizza il nuovo formato quando crei nuovi nodi per concederti una maggiore flessibilità, poiché, se necessario, puoi cambiare il tipo di risposta in un secondo momento.
+Il seguente formato JSON dell'oggetto `output` è supportato per la compatibilità con le versioni precedenti. Gli spazi di lavoro che specificano una risposta di testo utilizzando questo formato, continueranno a funzionare correttamente. Con l'introduzione dei tipi di risposta esauriente, la struttura `output.text` è stata ampliata con la struttura `output.generic` per facilitare il supporto di altri tipi di risposte oltre a quella di testo. Utilizza il nuovo formato quando crei nuovi nodi per concederti una maggiore flessibilità, poiché, se necessario, puoi cambiare il tipo di risposta in un secondo momento.
 {: note}
 
   ```json
@@ -105,7 +107,7 @@ Il seguente formato oggetto `output` è supportato per la compatibilità con le 
 
 Ci sono tipi di risposta diversi da una risposta di testo che puoi definire. Per ulteriori dettagli, vedi [Risposte](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-responses).
 
-Puoi reperire ulteriori informazioni sulla chiamata API /message in [Riferimento API ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://{DomainName}/apidocs/assistant-v2){: new_window}.
+Puoi reperire ulteriori informazioni sulla chiamata API /message nella [Guida di riferimento API ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://{DomainName}/apidocs/assistant-v2){: new_window}.
 
 ### Conservazione delle informazioni tra turni di dialogo
 {: #dialog-runtime-context}
@@ -176,7 +178,7 @@ Definisci una variabile di contesto aggiungendo il nome della variabile al campo
 
     - Il `name` può contenere caratteri alfabetici maiuscoli e minuscoli, caratteri numerici (0-9) e caratteri di sottolineatura.
 
-      Nel nome puoi includere altri caratteri, come punti e trattini. Tuttavia, se li includi, devi specificare la sintassi abbreviata `$(variable-name)` ogni volta che successivamente fai riferimento alla variabile. Per ulteriori dettagli, vedi [Espressioni per l'accesso agli oggetti](/docs/services/assistant?topic=assistant-expression-language#expression-language-shorthand-context).
+      Puoi includere altri caratteri nel nome, ad esempio punti e trattini. Tuttavia, se li includi, devi specificare la sintassi abbreviata `$(variable-name)` ogni volta che successivamente fai riferimento alla variabile. Per ulteriori dettagli, vedi [Espressioni per l'accesso agli oggetti](/docs/services/assistant?topic=assistant-expression-language#expression-language-shorthand-context).
       {:tip}
 
     - Il `value` può essere qualsiasi tipo JSON supportato, come una variabile stringa semplice, un numero, un array JSON o un oggetto JSON.
@@ -219,7 +221,7 @@ Per memorizzare il valore di un'entità in una variabile di contesto, utilizza q
 |----------|------------------|
 | place    | `@place`         |
 
-Ad esempio, l'input utente è `I want to go to Paris.` Se la tua entità @place riconosce `Paris`, il servizio salva `Paris` nella variabile di contesto `$place`.
+Ad esempio, l'input utente è `I want to go to Paris.` Se la tua entità `@place` riconosce `Paris`, il tuo assistente salva `Paris` nella variabile di contesto `$place`.
 
 Per memorizzare il valore di una stringa che hai estratto dall'input dell'utente, puoi includere un'espressione SpEL che utilizza il metodo `extract` per applicare un'espressione regolare all'input utente. La seguente espressione estrae un numero dall'input utente e lo salva nella variabile di contesto `$number`.
 
@@ -260,16 +262,16 @@ Per informazioni su come aggiornare il valore di una variabile di contesto quand
 ### Come vengono elaborate le variabili di contesto
 {: #dialog-runtime-context-processing}
 
-È importante dove definisci la variabile di contesto. La variabile di contesto non viene creata e impostata sul valore che hai specificato per essa fino a quando il servizio non elabora la parte del nodo di dialogo in cui hai definito la variabile di contesto. Nella maggior parte dei casi, definisci la variabile di contesto come parte della risposta del nodo. Quando lo fai, la variabile di contesto viene creata e le viene assegnato il valore specificato quando il servizio restituisce la risposta del nodo.
+È importante dove definisci la variabile di contesto. La variabile di contesto non viene creata e impostata sul valore che hai specificato per essa fino a quando il tuo assistente non elabora la parte del nodo di dialogo in cui hai definito la variabile di contesto. Nella maggior parte dei casi, definisci la variabile di contesto come parte della risposta del nodo. Quando lo fai, la variabile di contesto viene creata e le viene assegnato il valore specificato quando il tuo assistente restituisce la risposta del nodo. 
 
-Per un nodo con risposte condizionali, la variabile di contesto viene creata e impostata quando viene soddisfatta la condizione per una specifica risposta e tale risposta viene elaborata. Ad esempio, se definisci una variabile di contesto per la risposta condizionale #1 e il servizio elabora solo la risposta condizionale #2, la variabile di contesto che hai definito per la risposta condizionale #1 non viene creata e impostata.
+Per un nodo con risposte condizionali, la variabile di contesto viene creata e impostata quando viene soddisfatta la condizione per una specifica risposta e tale risposta viene elaborata. Ad esempio, se definisci una variabile di contesto per la risposta condizionale #1 e il tuo assistente elabora solo la risposta condizionale #2, la variabile di contesto che hai definito per la risposta condizionale #1 non viene creata e impostata. 
 
-Per informazioni su dove aggiungere le variabili di contesto che desideri che il servizio crei e imposti mentre un utente interagisce con un nodo con slot, vedi [Aggiunta di variabili di contesto a un nodo con slot](#dialog-runtime-context-var-slots).
+Per informazioni su dove aggiungere le variabili di contesto che desideri che il tuo assistente crei e imposti mentre un utente interagisce con un nodo con slot, vedi [Aggiunta di variabili di contesto a un nodo con slot](#dialog-runtime-context-var-slots). 
 
 ### Ordine delle operazioni
 {: #dialog-runtime-context-order-of-ops}
 
-Quando definisce più variabili da elaborare insieme, l'ordine in cui le definisci non determina l'ordine in cui vengono dal servizio. Il servizio valuta le variabili in ordine casuale. Non impostare un valore nella prima variabile di contesto nell'elenco e sperare di riuscire a utilizzarlo nella seconda variabile nell'elenco, perché non vi è alcuna garanzia che la prima variabile di contesto verrà eseguita prima della seconda. Ad esempio, non utilizzare due variabili di contesto per implementare la logica che controlla che l'input utente contenga la parola `Yes`.
+Quando definisci più variabili da elaborare insieme, l'ordine in cui le definisci non determina l'ordine in cui vengono valutate dal tuo assistente. Il tuo assistente valuta le variabili in ordine casuale. Non impostare un valore nella prima variabile di contesto nell'elenco e sperare di riuscire a utilizzarlo nella seconda variabile nell'elenco, perché non vi è alcuna garanzia che la prima variabile di contesto verrà eseguita prima della seconda. Ad esempio, non utilizzare due variabili di contesto per implementare la logica che controlla che l'input utente contenga la parola `Yes`.
 
 | Variabile        | Valore            |
 |-----------------|------------------|
@@ -352,9 +354,9 @@ Il seguente esempio JSON definisce i valori per le variabili di contesto stringa
 ```
 {: codeblock}
 
-Per definire una variabile di contesto in formato JSON, completa i seguenti passi: 
+Per definire una variabile di contesto in formato JSON, completa i seguenti passi:
 
-1.  Fai clic per aprire il nodo di dialogo a cui desideri aggiungere la variabile di contesto. 
+1.  Fai clic per aprire il nodo di dialogo a cui desideri aggiungere la variabile di contesto.
 
     I valori della variabile di contesto esistenti definiti per questo nodo vengono visualizzati in una serie di campi **Variabile** e **Valore** corrispondenti. Se non desideri che vengano visualizzati nella vista di modifica del nodo, devi chiudere l'editor di contesto. Puoi chiudere l'editor dallo stesso menu che hai utilizzato per aprire l'editor JSON; la procedura riportata di seguito descrive come accedere al menu.
     {: note}
@@ -377,7 +379,7 @@ Per definire una variabile di contesto in formato JSON, completa i seguenti pass
     ```
     {: codeblock}
 
-1.  Nel blocco di contesto, aggiungi una coppia `"name"` e `"value"` per ogni variabile di contesto che desideri definire. 
+1.  Nel blocco di contesto, aggiungi una coppia `"name"` e `"value"` per ogni variabile di contesto che desideri definire.
 
     ```json
     {
@@ -440,7 +442,7 @@ In alternativa, puoi eliminare la variabile di contesto nella logica della tua a
 ### Aggiornamento del valore di una variabile di contesto in JSON
 {: #dialog-runtime-context-update-json}
 
-In generale, se un nodo imposta il valore di una variabile di contesto già impostata, il valore precedente viene sovrascritto dal nuovo valore. 
+In generale, se un nodo imposta il valore di una variabile di contesto già impostata, il valore precedente viene sovrascritto dal nuovo valore.
 
 #### Aggiornamento di un oggetto JSON complesso
 
@@ -641,9 +643,9 @@ Vedi [Metodi del linguaggio delle espressioni](/docs/services/assistant?topic=as
 ### Impostazione di una variabile di contesto uguale a un'altra
 {: #dialog-runtime-var-equals-var}
 
-Quando imposti una variabile di contesto uguale a un'altra, devi definire un puntatore dall'una all'altra. Se successivamente il valore di una delle variabili cambia, anche il valore dell'altra variabile cambierà. 
+Quando imposti una variabile di contesto uguale a un'altra, devi definire un puntatore dall'una all'altra. Se successivamente il valore di una delle variabili cambia, anche il valore dell'altra variabile cambierà.
 
-Ad esempio, se specifichi una variabile di contesto come segue, quando, successivamente, il valore di `$var1` o `$var2` cambia, cambierà anche il valore dell'altra. 
+Ad esempio, se specifichi una variabile di contesto come segue, quando, successivamente, il valore di `$var1` o `$var2` cambia, cambierà anche il valore dell'altra.
 
 | Variabile  | Valore  |
 |-----------|--------|
@@ -651,7 +653,7 @@ Ad esempio, se specifichi una variabile di contesto come segue, quando, successi
 
 Non impostare una variabile uguale a un'altra per acquisire un punto nel valore di riferimento temporale. Quando si tratta di array, ad esempio, se desideri acquisire un valore di array memorizzato in una variabile di contesto in un determinato momento nel dialogo per salvarlo per un uso successivo, puoi creare invece una nuova variabile basata sul valore corrente della variabile.
 
-Ad esempio, per creare una copia dei valori di un array in un determinato momento del flusso di dialogo, aggiungi un nuovo array che viene popolato con i valori dell'array esistente. Per eseguire tale operazione, puoi utilizzare la seguente sintassi: 
+Ad esempio, per creare una copia dei valori di un array in un determinato momento del flusso di dialogo, aggiungi un nuovo array che viene popolato con i valori dell'array esistente. Per eseguire tale operazione, puoi utilizzare la seguente sintassi:
 
 ```json
 {
@@ -673,7 +675,7 @@ Con le impostazioni di digressione, puoi consentire il ritorno della conversazio
 
 L'immagine animata utilizza un mockup dell'interfaccia utente della struttura ad albero di dialogo per illustrare il concetto di digressione. Mostra come un utente interagisce con i nodi di dialogo configurati per consentire le digressioni che ritornano al flusso di dialogo che era in corso. L'utente inizia a fornire le informazioni necessarie per prenotare una cena. Mentre sta riempiendo gli slot nel nodo #reservation, l'utente pone una domanda sulle opzioni per il menu vegetariano. Il dialogo risponde alla nuova domanda dell'utente trovando un nodo che lo indirizza tra i nodi root (un nodo che condiziona l'intento #cuisine). Ritorna quindi alla conversazione che era in corso mostrando la richiesta del successivo slot vuoto proveniente dal nodo di dialogo originale.
 
-Guarda questo video per ulteriori informazioni. 
+Guarda questo video per ulteriori informazioni.
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Panoramica delle digressioni" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/I3K7mQ46K3o?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
@@ -755,7 +757,7 @@ Per modificare il comportamento di un singolo nodo, completa la seguente procedu
 
 1.  Fai clic su **Applica**.
 
-1.  Utilizza il riquadro "Provalo" per verificare il comportamento della digressione.
+1.  Utilizza il riquadro "Try it out" per verificare il comportamento della digressione.
 
     Di nuovo, non puoi definire l'inizio e la fine di una digressione. L'utente controlla dove e quando si verificano le digressioni. Puoi solo applicare le impostazioni che determinano come un singolo nodo partecipa ad una di esse. Poiché le digressioni sono così imprevedibili, è difficile sapere in che modo le tue decisioni di configurazione influiranno sulla conversazione generale. Per vedere effettivamente l'impatto delle scelte effettuate, devi verificare il dialogo.
 
@@ -768,13 +770,13 @@ I nodi #reservation e #cuisine rappresentano due rami del dialogo che possono pa
 
 Questa sezione descrive soluzioni a situazioni che potresti riscontrare quando utilizzi le digressioni.
 
-- **Messaggio di ritorno personalizzato**: per i nodi a cui puoi ritornare dalla generazione di digressioni, prendi in considerazione di aggiungere del testo che consenta agli utenti di sapere che stanno tornando nel punto in cui si erano fermati in un flusso di dialogo precedente. Nel tuo testo di risposta, utilizza una sintassi speciale che ti consenta di aggiungere due versioni della risposta. 
+- **Messaggio di ritorno personalizzato**: per i nodi a cui puoi ritornare dalla generazione di digressioni, prendi in considerazione di aggiungere del testo che consenta agli utenti di sapere che stanno tornando nel punto in cui si erano fermati in un flusso di dialogo precedente. Nel tuo testo di risposta, utilizza una sintassi speciale che ti consenta di aggiungere due versioni della risposta.
 
-  Se non esegui azioni, lo stesso testo di risposta verrà visualizzato una seconda volta per far sapere agli utenti che stanno ritornando al nodo da cui hanno generato la digressione. Puoi rendere più chiaro agli utenti che sono ritornati al thread di conversazione originale specificando un messaggio univoco che verrà visualizzato al momento del loro ritorno. 
+  Se non esegui azioni, lo stesso testo di risposta verrà visualizzato una seconda volta per far sapere agli utenti che stanno ritornando al nodo da cui hanno generato la digressione. Puoi rendere più chiaro agli utenti che sono ritornati al thread di conversazione originale specificando un messaggio univoco che verrà visualizzato al momento del loro ritorno.
 
-  Ad esempio, se la risposta di testo originale per il nodo è `What's the order number?`, potresti voler visualizzare un messaggio come `Now let's get back to where we left off. What is the order number?` quando gli utenti ritornano al nodo. 
+  Ad esempio, se la risposta di testo originale per il nodo è `What's the order number?`, potresti voler visualizzare un messaggio come `Now let's get back to where we left off. What is the order number?` quando gli utenti ritornano al nodo.
 
-  Per eseguire tale operazione, utilizza la seguente sintassi per specificare la risposta di testo del nodo: 
+  Per eseguire tale operazione, utilizza la seguente sintassi per specificare la risposta di testo del nodo:
 
   `<? (returning_from_digression)? "post-digression message" : "first-time message" ?>`
 
@@ -800,7 +802,7 @@ Questa sezione descrive soluzioni a situazioni che potresti riscontrare quando u
 
   Per dettagli sulla sintassi dell'espressione SpEL completa, vedi [Espressione per l'accesso agli oggetti](/docs/services/assistant?topic=assistant-expression-language#expression-language-shorthand-syntax).
 
-- **Blocco dei ritorni**: in alcuni casi, potresti voler impedire un ritorno a un flusso di conversazione interrotto in base a una scelta fatta dall'utente nel flusso di dialogo corrente. Puoi utilizzare la sintassi speciale per impedire un ritorno da un nodo specifico. 
+- **Blocco dei ritorni**: in alcuni casi, potresti voler impedire un ritorno a un flusso di conversazione interrotto in base a una scelta fatta dall'utente nel flusso di dialogo corrente. Puoi utilizzare la sintassi speciale per impedire un ritorno da un nodo specifico.
 
   Ad esempio, potresti avere un nodo che condiziona `#General_Connect_To_Agent` o un intento simile. Quando viene attivato, se desideri la conferma degli utenti prima di trasferirli a un servizio esterno, potresti aggiungere una risposta come `Do you want me to transfer you to an agent now?` Puoi aggiungere poi due nodi figlio che condizionino rispettivamente `#yes` e `#no`.
   
@@ -837,15 +839,15 @@ Segui la sezione di [esercitazione](/docs/services/assistant?topic=assistant-tut
 
 - **Evita l'aumento del nodo di fallback**: molti designer del dialogo includono un nodo con una condizione `true` o `anything_else` alla fine di ogni ramo del dialogo come un modo per impedire agli utenti di rimanere bloccati nel ramo. Questa progettazione restituisce un messaggio generico se l'input utente non corrisponde a nessun elemento che hai anticipato e incluso come indirizzato a un nodo di dialogo specifico. Tuttavia, gli utenti non possono generare le digressioni dai flussi di dialogo che utilizzano questo approccio.
 
-  Valuta i rami che utilizzano questo approccio per stabilire se sarebbe meglio consentire la generazione di digressioni dal ramo. Se l'input dell'utente non corrisponde a nessun elemento che hai anticipato, potrebbe trovare una corrispondenza in un flusso di dialogo completamente diverso nella tua struttura ad albero. Invece di rispondere con un messaggio generico, puoi utilizzare efficacemente il resto del dialogo per cercare di indirizzare l'input utente. E il nodo a livello root `Altro` può rispondere sempre all'input che nessuno degli altri nodi root può affrontare.
+  Valuta i rami che utilizzano questo approccio per stabilire se sarebbe meglio consentire la generazione di digressioni dal ramo. Se l'input dell'utente non corrisponde a nessun elemento che hai anticipato, potrebbe trovare una corrispondenza in un flusso di dialogo completamente diverso nella tua struttura ad albero. Invece di rispondere con un messaggio generico, puoi utilizzare efficacemente il resto del dialogo per cercare di indirizzare l'input utente. E il nodo a livello root `Anything else` può rispondere sempre all'input che nessuno degli altri nodi root può affrontare.
 
-- **Riconsidera i passaggi a un nodo di chiusura**: molti dialoghi sono progettati per porre una domanda di chiusura standard, ad esempio `Ho risposto alle tue domande oggi?`. Gli utenti non possono generare digressioni dai nodi che sono configurati per passare a un altro nodo. Pertanto, se configuri tutti i tuoi nodi finali del ramo in modo che passino a un nodo di chiusura comune, le digressioni non potranno verificarsi. Prendi in considerazione di tracciare la soddisfazione dell'utente attraverso metriche o in altri modi.
+- **Riconsidera i passaggi a un nodo di chiusura**: molti dialoghi sono progettati per porre una domanda di chiusura standard, ad esempio `Did I answer your question today?`. Gli utenti non possono generare digressioni dai nodi che sono configurati per passare a un altro nodo. Pertanto, se configuri tutti i tuoi nodi finali del ramo in modo che passino a un nodo di chiusura comune, le digressioni non potranno verificarsi. Prendi in considerazione di tracciare la soddisfazione dell'utente attraverso metriche o in altri modi.
 
 - **Verifica le possibili catene di digressioni**: se un utente genera le digressioni dal nodo corrente a un altro nodo che consente la generazione di digressioni, l'utente potrebbe potenzialmente generare digressioni da questo altro nodo e ripetere di nuovo questo modello una o più volte. Se il nodo di partenza nella catena di digressioni è configurato per ritornare dopo la digressione, l'utente, alla fine, verrà riportato al nodo di dialogo corrente. In effetti, i nodi successivi nella catena che sono configurati per non farvi ritorno, vengono esclusi dall'essere considerati come destinazioni della digressione. Verifica gli scenari che generano più volte le digressioni per stabilire se i singoli nodi funzionano come previsto.
 
 - **Ricorda che il nodo corrente ha la priorità**: ricorda che i nodi al di fuori del flusso corrente vengono considerati come destinazioni della digressione solo se il flusso corrente non può far fronte all'input utente. In particolare, è ancora più importante, in un nodo con slot che consentono la generazione di digressioni, chiarire agli utenti quali sono le informazioni che devono fornire e aggiungere le istruzioni di conferma che verranno visualizzate una volta che l'utente fornisce un valore.
 
-  Durante il processo di riempimento dello slot può essere riempito qualsiasi slot. Pertanto, uno slot potrebbe acquisire input utente non previsto. Ad esempio, potresti avere un nodo con slot che raccoglie le informazioni necessarie per prenotare una cena. Uno degli slot raccoglie le informazioni sulla data. Mentre vengono forniti i dettagli della prenotazione, l'utente potrebbe chiedere `Come sarà il tempo domani?` Potresti avere un nodo root che genera condizioni su #forecast che potrebbe rispondere all'utente. Tuttavia, poiché l'input dell'utente include la parola `domani` e il nodo di prenotazione con slot è in fase di elaborazione, il servizio presuppone che l'utente stia invece fornendo o aggiornando la data di prenotazione. *Il nodo corrente ha sempre la priorità.* Se definisci un'istruzione di conferma chiara, ad esempio `Ok, la data di prenotazione è domani,` è più probabile che l'utente si renda conto che si è verificato un fraintendimento e che lo risolva.
+  Durante il processo di riempimento dello slot può essere riempito qualsiasi slot. Pertanto, uno slot potrebbe acquisire input utente non previsto. Ad esempio, potresti avere un nodo con slot che raccoglie le informazioni necessarie per prenotare una cena. Uno degli slot raccoglie le informazioni sulla data. Mentre vengono forniti i dettagli della prenotazione, l'utente potrebbe chiedere `What's the weather meant to be tomorrow?` Potresti avere un nodo root che genera condizioni su #forecast che potrebbe rispondere all'utente. Tuttavia, poiché l'input dell'utente include la parola `tomorrow` e il nodo di prenotazione con slot è in fase di elaborazione, il tuo assistente presuppone che l'utente stia invece fornendo o aggiornando la data di prenotazione. *Il nodo corrente ha sempre la priorità.* Se definisci un'istruzione di conferma chiara, ad esempio `Ok, setting the reservation date to tomorrow,` è più probabile che l'utente si renda conto che si è verificato un fraintendimento e che lo risolva.
 
   In caso contrario, mentre vengono riempiti gli slot, se l'utente fornisce un valore non previsto da nessuno degli slot, è possibile che corrisponda ad un nodo root completamente non correlato per cui l'utente non ha mai avuto intenzione di generare una digressione.
 
@@ -855,13 +857,77 @@ Segui la sezione di [esercitazione](/docs/services/assistant?topic=assistant-tut
 
   Ad esempio, se il nodo con slot raccoglie le informazioni necessarie per compilare una richiesta di indennizzo assicurativo, potresti voler aggiungere i gestori che fanno fronte alle domande relative all'assicurazione. Tuttavia, per domande su come ottenere supporto oppure le posizioni dei negozi oppure la storia della tua azienda, utilizza un nodo a livello di root.
 
-## Disambiguazione ![Solo piano Plus o Premium](images/premium.png)
+## Correzione dell'input utente
+{: #dialog-runtime-spell-check}
+
+Abilita la funzione di correzione automatica per correggere gli errori di ortografia commessi dagli utenti nelle espressioni che inoltrano come input utente. Quando la correzione automatica è abilitata, le parole scritte in modo errato vengono corrette automaticamente. E sono le parole corrette che vengono utilizzate per valutare l'input. Quando viene fornito un input più preciso, il tuo assistente può riconoscere più frequentemente le citazioni di entità e comprendere l'intento dell'utente.
+
+Puoi abilitare questa impostazione solo per le capacità di dialogo in lingua inglese. Viene abilitata automaticamente per le nuove capacità di dialogo in lingua inglese.
+{: note}
+
+Con la correzione automatica abilitata, l'input utente viene corretto nel seguente modo:
+
+- Input originale: `letme applt for a memberdhip`
+- Input corretto: `let me apply for a membership`
+
+Quando il tuo assistente valuta se correggere l'ortografia di una parola, non si basa su un semplice processo di ricerca nel dizionario. Utilizza invece una combinazione di elaborazione del linguaggio naturale e di modelli probabilistici per valutare se un termine è, in effetti, scritto in modo errato e deve essere corretto.
+
+### Abilitazione della correzione automatica
+{: #dialog-runtime-spell-check-enable}
+
+Per abilitare la funzione di correzione automatica, completa questi passi:
+
+1.  Dalla pagina Skills, apri la tua capacità.
+1.  Fai clic sulla scheda **Options**.
+1.  Attiva **Autocorrection**.
+
+### Verifica della correzione automatica
+{: #dialog-runtime-spell-check-test}
+
+1.  Dal riquadro "Try it out", immetti un'espressione che includa alcune parole scritte in modo errato.
+
+    Se le parole nel tuo input sono scritte in modo errato, verranno corrette automaticamente e verrà visualizzata un'icona ![auto-correct](images/auto-correct.png). L'espressione corretta è sottolineata.
+1.  Posiziona il mouse sull'espressione sottolineata per vedere l'originale.
+
+Se sono presenti termini scritti in modo errato di cui hai previsto la correzione da parte del tuo assistente, ma che non sono stati corretti, riesamina le regole utilizzate dal tuo assistente per stabilire se correggere una parola per vedere se la parola rientra nella categoria delle parole che non verranno cambiate intenzionalmente dal tuo assistente.
+
+Per evitare un'ipercorrezione, il tuo assistente non corregge l'ortografia dei seguenti tipi di input:
+
+- Parole in maiuscolo
+- Emoji
+- Entità di posizione, ad esempio stati e indirizzi
+- Numeri e unità di misura o di tempo
+- Nomi propri, ad esempio nomi comuni o nomi di società
+- Testo tra virgolette
+- Parole che contengono caratteri speciali, ad esempio trattini (-), asterischi (*), e commerciale (&), o chiocciola (@), inclusi quelli usati negli indirizzi email o negli URL.
+- Parole che *appartengono* a questa capacità, ossia parole che hanno un significato implicito perché sono presenti nei valori di entità, nei sinonimi di entità o negli esempi utente dell'intento.
+
+  Le citazioni di un'entità contestuale possono essere corrette inavvertitamente. Questo perché i termini che funzionano come citazioni di un'entità contestuale sono in continuo cambiamento; non possono essere predeterminati e evitati dalla funzione di controllo ortografico nel modo in cui può esserlo un elenco di termini basati sul dizionario. Se, dopo la verifica, trovi che le citazioni siano state ipercorrette per una determinata entità contestuale, prendi in considerazione di utilizzare al suo posto un'entità basata su dizionario.
+  {: note}
+
+Se la parola che non viene corretta non è ovviamente uno di questi tipi di input, vale la pena controllare se l'entità ha una corrispondenza fuzzy per tale parola.
+
+#### Come si correla la correzione ortografica automatica alla corrispondenza fuzzy?
+{: #dialog-runtime-spell-check-vs-fuzzy-matching}
+
+La corrispondenza fuzzy aiuta il tuo assistente a riconoscere le citazioni di entità basate sul dizionario nell'input utente. Utilizza un approccio di ricerca nel dizionario per mettere in corrispondenza una parola dell'input utente con un valore o un sinonimo di entità esistente nei dati di addestramento della capacità. Ad esempio, se l'utente immette `boook` e i tuoi dati di addestramento contengono un'entità `@reading_material` con un valore `book`, la corrispondenza fuzzy riconosce che i due termini (`boook` e `book`) hanno lo stesso significato.
+
+Quando abiliti sia la correzione automatica che la corrispondenza fuzzy, quest'ultima viene eseguita prima che venga attivata la prima. Se trova un termine che può essere messo in corrispondenza con un sinonimo o un valore di entità del dizionario esistente, lo aggiunge all'elenco delle parole che *appartengono* alla capacità e quindi non lo corregge.
+
+Ad esempio, se un utente immette una frase come `I wnt to buy a boook`, la corrispondenza fuzzy riconosce che il termine `boook` significa la stessa cosa del tuo valore di entità `book` e lo aggiunge all'elenco delle parole protette. Il tuo assistente corregge l'input in modo che sia `I want to buy a boook`. Nota che corregge `wnt` ma *non* corregge l'ortografia di `boook`. Se ottieni questo tipo di risultato mentre stai verificando il tuo dialogo, potresti pensare che il tuo assistente abbia un comportamento non corretto. Tuttavia, non è così. Grazie alla corrispondenza fuzzy, identifica correttamente `boook` come una citazione di entità `@reading_material`. E grazie alla correzione automatica nella revisione del termine in `want`, il tuo assistente è in grado di associare l'input al tuo intento `#buy_something`. Ogni funzione svolge il suo lavoro per aiutare il tuo assistente a comprendere il significato dell'input utente.
+
+#### Come funziona la correzione automatica
+{: #dialog-runtime-spell-check-how-it-works}
+
+Di norma, l'input utente viene salvato così com'è nel campo `text` dell'oggetto `input` del messaggio. Se e soltanto se l'input utente viene corretto in qualche modo, verrà creato un nuovo campo nell'oggetto `input`, denominato `original_text`. Questo campo memorizza l'input originale dell'utente che include tutti i termini scritti in modo errato contenuti in esso. E il testo corretto viene aggiunto al campo `input.text`.
+
+## Disambiguazione ![Solo piano Plus o Premium](images/plus.png)
 {: #dialog-runtime-disambiguation}
 
 Questa funzione è disponibile solo per gli utenti Plus o Premium.
-{: tip}
+{: note}
 
-Quando abiliti la disambiguazione, indichi all'utente di chiedere aiuto agli utenti quando trova più di un nodo di dialogo che può rispondere al loro input. Invece di indovinare quale nodo elaborare, il tuo assistente condivide un elenco delle opzioni nodo principali con l'utente e gli chiede di scegliere quella corretta.
+Quando abiliti la disambiguazione, indichi al tuo assistente di chiedere aiuto agli utenti quando trova più di un nodo di dialogo che può rispondere al loro input. Invece di indovinare quale nodo elaborare, il tuo assistente condivide un elenco delle opzioni nodo principali con l'utente e gli chiede di scegliere quella corretta.
 
 ![Mostra una conversazione di esempio tra un utente e l'assistente in cui l'assistente chiede chiarimenti all'utente.](images/disambig-demo.png)
 
@@ -900,11 +966,11 @@ Se l'input utente è `i must cancel it today`, nell'input potrebbero essere rile
 `{"intent":"Customer_Care_Store_Hours","confidence":0.2550420880317688},`
 `...]`
 
-Il servizio è sicuro per lo `0.6618281841278076` (66%) che l'obiettivo utente corrisponde all'intento `#Customer_Care_Cancel_Account`. Se qualsiasi altro intento ha un punteggio di affidabilità superiore al 55% del 66%, soddisfa i criteri per essere un candidato della disambiguazione.
+Il tuo assistente è sicuro per lo `0.6618281841278076` (66%) che l'obiettivo utente corrisponda all'intento `#Customer_Care_Cancel_Account`. Se qualsiasi altro intento ha un punteggio di affidabilità superiore al 55% del 66%, soddisfa i criteri per essere un candidato della disambiguazione.
 
 `0.66 x 0.55 = 0.36`
 
-Gli intenti con un punteggio maggiore di 0,36 sono idonei.
+Gli intenti con un punteggio maggiore di 0.36 sono idonei.
 
 Nel nostro esempio, l'intento `#eCommerce_Cancel_Product_Order` supera la soglia, con un punteggio di affidabilità pari a `0.4330700159072876`.
 
@@ -912,7 +978,7 @@ Quando l'input utente è `i must cancel it today`, entrambi i nodi di dialogo ve
 
 ![Il servizio chiede all'utente di scegliere da un elenco di opzioni di dialogo, incluse Annulla un account, Annulla l'ordine di un prodotto e Nessuno dei precedenti.](images/disambig-tryitout.png)
 
-Tieni presente che il servizio riconosce il termine `today` nell'input utente come una data, una citazione dell'entità `@sys-date`. Se la tua struttura ad albero del dialogo contiene un nodo che condiziona l'entità `@sys-date`, anch'esso viene incluso nell'elenco di disambiguazione. Questa immagine mostra che viene incluso nell'elenco come opzione *Acquisisci informazioni sulla data*.
+Nota che il tuo assistente riconosce il termine `today` nell'input utente come una data, una citazione dell'entità `@sys-date`. Se la tua struttura ad albero del dialogo contiene un nodo che condiziona l'entità `@sys-date`, anch'esso viene incluso nell'elenco di disambiguazione. Questa immagine mostra che viene incluso nell'elenco come opzione *Acquisisci informazioni sulla data*.
 
 ![Il servizio richiede all'utente di scegliere da un elenco delle opzioni di dialogo, inclusa Acquisisci informazioni sulla data.](images/disambig-tryitout-date.png)
 
@@ -925,23 +991,29 @@ Il seguente video fornisce una panoramica della disambiguazione.
 
 Per abilitare la disambiguazione, completa questi passi:
 
-1.  Dalla pagina Dialoghi, fai clic su **Impostazioni**.
-1.  Fai clic su **Disambiguazione**.
-1.  Nella sezione *Abilita disambiguazione*, imposta l'interruttore su **Attivo**.
-1.  Nel campo del messaggio della richiesta, aggiungi il testo prima dell'elenco delle opzioni del nodo di dialogo. Ad esempio, *What do you want to do?*
-1.  **Facoltativo**: nel campo Nessuno dei precedenti, aggiungi il testo da visualizzare come opzione aggiuntiva che gli utenti possono selezionare se nessuno degli altri nodi di dialogo riflette quale operazione vuole eseguire l'utente. Ad esempio, *Nessuno dei precedenti*.
+1.  Apri la scheda **Options** per la capacità di dialogo in cui desideri abilitare la disambiguazione.
 
-    Usa un messaggio breve cosicché venga visualizzato su una riga con le altre opzioni. Il messaggio deve essere inferiore a 512 caratteri. Per informazioni sulle operazioni eseguite dal servizio se un utente sceglie questa opzione, vedi [Gestione di Nessuno dei precedenti](#dialog-runtime-handle-none).
+    Se la tua applicazione è ospitata a Dallas, per abilitare la disambiguazione, fai clic su **Settings** dalla pagina **Dialog**.
+    {: note}
 
-1.  Fai clic su **Chiudi**
-1.  Decidi per quali nodi di dialogo desideri che l'assistente richieda supporto.
+1.  Nella sezione *Disambiguation*, imposta l'interruttore su **On**.
+1.  Nel campo **Disambiguation message**, aggiungi il testo da mostrare prima dell'elenco delle opzioni del nodo di dialogo. Ad esempio, *What do you want to do?*
+1.  Nel campo **Anything else**, aggiungi il testo da visualizzare come opzione aggiuntiva che gli utenti possono selezionare se nessuna delle altre opzioni del nodo di dialogo riflette quale operazione vuole eseguire l'utente. Ad esempio, *Nessuno dei precedenti*.
+
+    Usa un messaggio breve cosicché venga visualizzato su una riga con le altre opzioni. Il messaggio deve essere inferiore a 512 caratteri. Per informazioni sulle operazioni eseguite dal tuo assistente se un utente sceglie questa opzione, vedi [Gestione di Nessuno dei precedenti](#dialog-runtime-handle-none).
+
+1.  Se vuoi limitare il numero di opzioni di disambiguazione che possono essere mostrate a un utente nel campo **Maximum number of suggestions**, specifica un numero compreso tra 2 e 5.
+
+    Le tue modifiche vengono salvate automaticamente.
+
+1.  Ora, fai clic sulla scheda **Dialog**. Esamina il tuo dialogo per decidere per quali nodi di dialogo desideri che l'assistente richieda supporto.
 
     - Puoi scegliere i nodi a qualsiasi livello della gerarchia della struttura ad albero.
     - Puoi scegliere i nodi che condizionano gli intenti, le entità, le condizioni speciali, le variabili di contesto o qualsiasi combinazione di questi valori.
 
     Per suggerimenti, vedi [Scelta dei nodi](#dialog-runtime-choose-nodes).
 
-    Per ciascun nodo che desideri rifiutare per la disambiguazione, completa questi passi:
+    Per ciascun nodo che desideri rendere disponibile dall'elenco di opzioni di disambiguazione completa i seguenti passi:
 
     1.  Fai clic per aprire il nodo nella vista di modifica.
     1.  Nel campo del *nome nodo esterno*, descrivi l'attività utente che questo nodo di dialogo è progettato ad eseguire. Ad esempio, *Annulla un account*.
@@ -953,31 +1025,31 @@ Per abilitare la disambiguazione, completa questi passi:
 
 Scegli i nodi che fungano da root di un ramo distinto del dialogo in modo che siano scelte di disambiguazione. Questi possono includere i nodi che sono figli di altri nodi. La chiave è quella per cui il nodo condizioni alcuni valori distinti che lo distinguono da tutto il resto.
 
-Lo strumento può riconoscere i conflitti di intenti che si verificano quando due o più intenti hanno esempi utente che si sovrappongono. [Risolvi i conflitti di questo tipo](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts) come prima cosa per assicurarti che gli intenti stessi siano il più univoci possibile, ciò consentirà al servizio di ottenere punteggi di affidabilità degli intenti migliori.
+{{site.data.keyword.conversationshort}} può riconoscere i conflitti di intenti che si verificano quando due o più intenti hanno esempi utente che si sovrappongono. [Risolvi i conflitti di questo tipo](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts) come prima cosa per assicurarti che gli intenti stessi siano il più univoci possibile, ciò consentirà al tuo assistente di ottenere punteggi di affidabilità degli intenti migliori.
 {: note}
 
 Tieni presente che:
 
-- Per i nodi che condizionano gli intenti, se il servizio è sicuro che la condizione di intento del nodo soddisfa l'intento dell'utente, il nodo viene incluso come un'opzione di disambiguazione.
+- Per i nodi che condizionano gli intenti, se il tuo assistente è sicuro che la condizione di intento del nodo soddisfa l'intento dell'utente, il nodo viene incluso come un'opzione di disambiguazione.
 - Per i nodi con condizioni booleane (condizioni che vengono valutate come true o false), il nodo viene incluso come un'opzione di disambiguazione se la condizione viene valutata come true. Ad esempio, quando il nodo condiziona un tipo di entità, se l'entità viene citata nell'input che ha attivato la disambiguazione, il nodo verrà incluso.
 - L'ordine dei nodi nella gerarchia della struttura ad albero influisce sulla disambiguazione.
 
   - Influisce sul fatto che la disambiguazione non venga proprio attivata
-
-    Esamina lo [scenario](#dialog-runtime-disambig-example) utilizzato in precedenza per introdurre la disambiguazione, ad esempio. Se il nodo che condiziona `@sys-date` è stato collocato più in alto nella struttura ad albero di dialogo rispetto ai nodi che condizionano gli intenti `#Customer_Care_Cancel_Account` e `#eCommerce_Cancel_Product_Order`, la disambiguazione non viene mai attivata quando un utente immette `i must cancel it today`. Ciò si verifica perché il servizio considera la data indicata (`today`) più importante dei riferimenti dell'intento a causa della collocazione dei nodi corrispondenti nella struttura ad albero.
+  
+    Esamina lo [scenario](#dialog-runtime-disambig-example) utilizzato in precedenza per introdurre la disambiguazione, ad esempio. Se il nodo che condiziona `@sys-date` è stato collocato più in alto nella struttura ad albero di dialogo rispetto ai nodi che condizionano gli intenti `#Customer_Care_Cancel_Account` e `#eCommerce_Cancel_Product_Order`, la disambiguazione non viene mai attivata quando un utente immette `i must cancel it today`. Ciò si verifica perché il tuo assistente considera la data indicata (`today`) più importante dei riferimenti dell'intento a causa della collocazione dei nodi corrispondenti nella struttura ad albero.
 
   - Influisce su quali nodi vengono inclusi nell'elenco delle opzioni di disambiguazione
-
-    A volte un nodo non viene elencato come opzione di disambiguazione come previsto. Ciò può verificarsi se al valore di una condizione fa riferimento un nodo che non è idoneo per essere incluso nell'elenco di disambiguazione per determinati motivi. Ad esempio, una citazione di entità potrebbe attivare un nodo che si trova più in alto nella struttura ad albero di dialogo ma che non è abilitato per la disambiguazione. Se la stessa entità è l'unica condizione per un nodo che *è* abilitato per la disambiguazione, ma si trova più in basso nella struttura ad albero, non viene aggiunto come opzione di disambiguazione perché il servizio non lo raggiunge mai. È stato messo in corrispondenza con il nodo precedente ed è stato omesso, quindi il servizio non elabora il nodo successivo.
+  
+    A volte un nodo non viene elencato come opzione di disambiguazione come previsto. Ciò può verificarsi se al valore di una condizione fa riferimento un nodo che non è idoneo per essere incluso nell'elenco di disambiguazione per determinati motivi. Ad esempio, una citazione di entità potrebbe attivare un nodo che si trova più in alto nella struttura ad albero di dialogo ma che non è abilitato per la disambiguazione. Se la stessa entità è l'unica condizione per un nodo che *è* abilitato per la disambiguazione, ma si trova più in basso nella struttura ad albero, non viene aggiunto come opzione di disambiguazione perché il tuo assistente non lo raggiunge mai. È stato messo in corrispondenza con il nodo precedente ed è stato omesso, quindi il tuo assistente non elabora il nodo successivo.
 
 Per ciascun nodo che tu rifiuti per la disambiguazione, verifica gli scenari in cui prevedi che il nodo venga incluso nell'elenco delle opzioni di disambiguazione. La verifica ti dà l'opportunità di apportare modifiche all'ordine dei nodi e ad altri fattori che potrebbero influire sul corretto funzionamento della disambiguazione nel runtime.
 
 ### Gestione di Nessuno dei precedenti
 {: #dialog-runtime-handle-none}
 
-Quando un utente fa clic sull'opzione *Nessuno dei precedenti*, il servizio rimuove gli intenti che sono stati riconosciuti nell'input utente dal messaggio e lo inoltra di nuovo. Di norma, questa azione attiva il nodo anything else nella tua struttura ad albero di dialogo.
+Quando un utente fa clic sull'opzione *Nessuno dei precedenti*, il tuo assistente rimuove gli intenti che sono stati riconosciuti nell'input utente dal messaggio e lo inoltra di nuovo. Di norma, questa azione attiva il nodo anything else nella tua struttura ad albero di dialogo.
 
-Per personalizzare una risposta che viene restituita in questa situazione, puoi aggiungere un nodo root con una condizione che controlla un input utente senza intenti riconosciuti (ricordati che gli intenti vengono rimossi) e che contiene una proprietà `suggestion_id`. Una proprietà `suggestion_id` viene aggiunta dal servizio quando viene attivata la disambiguazione.
+Per personalizzare una risposta che viene restituita in questa situazione, puoi aggiungere un nodo root con una condizione che controlla un input utente senza intenti riconosciuti (ricordati che gli intenti vengono rimossi) e che contiene una proprietà `suggestion_id`. Una proprietà `suggestion_id` viene aggiunta dal tuo assistente quando viene attivata la disambiguazione.
 {: tip}
 
 Aggiungi un nodo root con la seguente condizione:
@@ -998,30 +1070,41 @@ E ancora una volta, è importante il posizionamento dei nodi nella struttura ad 
 
 Per verificare la disambiguazione, completa i seguenti passi:
 
-1.  Dal riquadro "Provalo", immetti un'espressione di test che ritieni sia una buona candidata per la disambiguazione, il che significa che due o più dei tuoi nodi di dialogo sono configurati per occuparsi di espressioni come questa.
+1.  Dal riquadro "Try it out", immetti un'espressione di test che ritieni sia una buona candidata per la disambiguazione, il che significa che due o più dei tuoi nodi di dialogo sono configurati per occuparsi di espressioni come questa.
 
 1.  Se la risposta non contiene un elenco delle opzioni del nodo di dialogo da cui puoi scegliere come previsto, controlla innanzitutto di aver aggiunto le informazioni di riepilogo al campo del nome nodo esterno di ciascuno dei nodi.
 
 1.  Se la disambiguazione non viene ancora attivata, potrebbe essere dovuto al fatto che i punteggi di affidabilità per i nodi non sono così vicini al valore come pensi.
 
-    Puoi ottenere le informazioni relative agli intenti, alle entità e ad altre proprietà restituite per determinati input utente.
+    - Per ottenere un elenco di intenti che soddisfanno la soglia di disambiguazione per un determinato input utente, puoi utilizzare la seguente espressione SpEL nella risposta di testo di un nodo.
 
-    - Per vedere i punteggi di affidabilità degli intenti rilevati nell'input utente, aggiungi temporaneamente `<? intents ?>` alla fine della risposta del nodo per un nodo che sai che verrà attivato.
+      ```json
+      I seguenti intenti soddisfano la soglia di disambiguazione: <? intents.filter("x", "x.confidence > intents[0].confidence * 0.55") ?>
+      ```
+      {: codeblock}
 
-      Questa espressione SpEL mostra gli intenti rilevati nell'input utente come un array. L'array include il nome dell'intento e il livello di affidabilità del servizio che l'intento riflette nell'obiettivo dell'utente.
+      Questa espressione ottiene il punteggio di affidabilità del primo intento nell'array degli intenti riconosciuti nell'input utente. Poi moltiplica il punteggio di affidabilità dell'intento principale per 0.55 per ottenere la soglia di affidabilità che deve essere soddisfatta dagli altri intenti nell'array affinché si verifichi la disambiguazione. Infine, filtra l'array di intenti per includere solo quegli intenti con punteggi di affidabilità superiori alla soglia. 
 
-    - Per vedere quali entità, se presenti, sono state rilevate nell'input utente, puoi sostituire temporaneamente la risposta corrente con una singola risposta di testo che contiene l'espressione SpEL `<? entities ?>`.
+      L'array che viene restituito da questa espressione ti dà un'idea di quale e di quanti intenti verrebbero inclusi come opzioni di disambiguazione se ogni intento fosse stato utilizzato in una condizione di nodo di dialogo di un nodo abilitato per la disambiguazione. Aggiungi l'espressione a un nodo che sai verrà attivato dal tuo input di test. 
 
-      Questa espressione SpEL mostra le entità rilevate nell'input utente come un array. L'array include il nome entità, l'ubicazione della citazione di entità all'interno della stringa di input dell'utente, della stringa della citazione di entità e del livello di affidabilità che il servizio ha che il termine sia una citazione del tipo di entità specificato.
+      Per ulteriori dettagli sul metodo `JSONArray.filter` utilizzato nell'espressione, vedi [Metodi del linguaggio delle espressioni](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-array-filter).
+
+    - Per vedere i punteggi di affidabilità di tutti gli intenti rilevati nell'input utente, aggiungi temporaneamente `<? intents ?>` alla fine della risposta del nodo per un nodo che sai verrà attivato. 
+
+      Questa espressione SpEL mostra gli intenti rilevati nell'input utente come un array. L'array include il nome dell'intento e il livello di affidabilità del tuo assistente che l'intento riflette nell'obiettivo dell'utente. 
+
+    - Per vedere quali entità, se presenti, sono state rilevate nell'input utente, puoi sostituire temporaneamente la risposta corrente con una singola risposta di testo che contiene l'espressione SpEL, `<? entities ?>`.
+
+      Questa espressione SpEL mostra le entità rilevate nell'input utente come un array. L'array include il nome entità, l'ubicazione della citazione di entità all'interno della stringa di input dell'utente, la stringa della citazione di entità e il livello di affidabilità che il tuo assistente ha che il termine sia una citazione del tipo di entità specificato. 
 
     - Per vedere contemporaneamente i dettagli per tutte le risorse, incluse le altre proprietà, ad esempio il valore di una determinata variabile di contesto al momento della chiamata, puoi controllare l'intera risposta API. Vedi [Visualizzazione dei dettagli della chiamata API](/docs/services/assistant?topic=assistant-dialog-tips#dialog-tips-inspect-api).
 
-1.  Rimuovi temporaneamente la descrizione che hai aggiunto al campo del *nome nodo esterno* per almeno uno dei nodi che hai anticipato che verranno elencati come un'opzione di disambiguazione.
+1.  Rimuovi temporaneamente la descrizione che hai aggiunto al campo del *nome nodo esterno* per almeno uno dei nodi che hai anticipato che verranno elencati come un'opzione di disambiguazione. 
 
-1.  Immetti di nuovo l'espressione di test nel riquadro "Provalo".
+1.  Immetti di nuovo l'espressione di test nel riquadro "Try it out".
 
-    Se hai aggiunto l'espressione `<? intents ?>` alla risposta, il testo restituito include un elenco degli intenti che il servizio ha riconosciuto nell'espressione di test e include il punteggio di affidabilità per ciascuno di essi.
+    Se hai aggiunto l'espressione `<? intents ?>` alla risposta, il testo restituito include un elenco degli intenti che il tuo assistente ha riconosciuto nell'espressione di test e include il punteggio di affidabilità per ciascuno di essi. 
 
     ![Il servizio restituisce un array di intenti, inclusi Customer_Care_Cancel_Account e eCommerce_Cancel_Product_Order.](images/disambig-show-intents.png)
 
-Una volta completata la verifica, rimuovi le espressioni SpEL che hai aggiunto alle risposte del nodo o aggiungi di nuovo le risposte originali che hai sostituito con le espressioni e ripopola i campi del *nome nodo esterno* da cui hai rimosso il testo.
+Una volta completata la verifica, rimuovi le espressioni SpEL che hai aggiunto alle risposte del nodo o aggiungi di nuovo le risposte originali che hai sostituito con le espressioni e ripopola i campi del *nome nodo esterno* da cui hai rimosso il testo. 

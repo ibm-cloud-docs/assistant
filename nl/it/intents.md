@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-08-06"
+
+keywords: intent, intent conflicts, annotate
 
 subcollection: assistant
 
@@ -30,31 +32,31 @@ Gli ***Intenti*** sono scopi o obiettivi espressi nell'input di un cliente, come
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Utilizzo degli intenti" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/OPdOCUPGMIQ" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
-## Panoramica sulla creazione degli intenti 
+## Panoramica sulla creazione degli intenti
 {: #intents-described}
 
-- Pianifica gli intenti per la tua applicazione. 
+- Pianifica gli intenti per la tua applicazione.
 
-  Cosa potrebbero voler fare i tuoi clienti e cosa vuoi che sia in grado di gestire la tua applicazione al loro posto. Ad esempio, potresti volere che la tua applicazione aiuti i tuoi clienti ad effettuare un acquisto. Se è così, puoi aggiungere un intento `#buy_something`. (Il `#` anteposto al nome dell'intento consente di identificarlo chiaramente come un intento.)
+  Cosa potrebbero voler fare i tuoi clienti e cosa vuoi che sia in grado di gestire la tua applicazione al loro posto. Ad esempio, potresti volere che la tua applicazione aiuti i tuoi clienti ad effettuare un acquisto. Se è così, puoi aggiungere un intento `#buy_something`. (Il `#` che viene aggiunto come prefisso al nome dell'intento consente di identificarlo chiaramente come un intento.)
 
 - Informa Watson dei tuoi intenti.
 
-  Una volta deciso quali richieste di business vuoi che la tua applicazione gestisca per i tuoi clienti, devi comunicarle a Watson. Per ogni obiettivo di business (ad esempio `#buy_something`), devi fornire almeno 10 esempi di espressioni che i tuoi clienti utilizzano normalmente per indicare il proprio obiettivo. Ad esempio, `I want to make a purchase.`
+  Dopo aver deciso quali richieste di business vuoi che la tua applicazione gestisca per i tuoi clienti, devi comunicarle a Watson. Per ogni obiettivo di business (ad esempio `#buy_something`), devi fornire almeno 5 esempi di espressioni che i tuoi clienti utilizzano normalmente per indicare il proprio obiettivo. Ad esempio, `I want to make a purchase.`
   
-  Idealmente, trova degli esempi di espressioni utente reali che puoi estrarre da processi di business esistenti. Gli esempi utente dovrebbero venire personalizzati per il tuo business specifico. Ad esempio, se sei una compagnia di assicurazioni, i tuoi esempi utente potrebbe essere simili a questo, `I want to buy a new XYZ insurance plan.`
+  Idealmente, trova degli esempi di espressioni utente reali che puoi estrarre da processi di business esistenti. Gli esempi utente dovrebbero venire personalizzati per il tuo business specifico. Ad esempio, se sei una compagnia di assicurazioni, un esempio utente potrebbe essere simile a questo, `I want to buy a new XYZ insurance plan.`
   
-  Gli esempi che fornisci vengono utilizzati dal servizio per creare un modello di machine learning che può riconoscere gli stessi tipi di espressioni o tipi simili e associarli all'intento appropriato.
+  Gli esempi che fornisci vengono utilizzati dal tuo assistente per creare un modello di machine learning che può riconoscere gli stessi tipi di espressioni o tipi simili e associarli all'intento appropriato.
 
 Inizia con pochi intenti e verificali mentre espandi in modo iterativo l'ambito dell'applicazione.
+
+![Solo piano Plus o Premium](images/plus.png) se già hai le trascrizioni delle chat da un call center o dalle richieste del cliente che hai raccolto da un'applicazione online, inserisci tali dati in modo che lavorino per tuo conto. Condividi le espressioni del cliente reali con Watson e lasciagli consigliare gli intenti e gli esempi utente dell'intento migliori per le tue esigenze. Per ulteriori dettagli, vedi [Ottieni supporto nella definizione degli intenti](/docs/services/assistant?topic=assistant-intent-recommendations).
 
 ## Creazione di intenti
 {: #intents-create-task}
 
-Utilizza lo strumento {{site.data.keyword.conversationshort}} per creare gli intenti.
+1.  Apri la tua capacità di dialogo. La capacità si apre nella pagina **Intenti**.
 
-1.  Nello strumento {{site.data.keyword.conversationshort}}, apri la tua capacità di dialogo. La capacità si apre nella pagina **Intenti**.
-
-1.  Seleziona **Crea nuovo**.
+1.  Seleziona **Crea intento**.
 
 1.  Nel campo **Nome intento**, immetti un nome per l'intento.
     - Il nome intento può contenere lettere (in Unicode), caratteri di sottolineatura, trattini e punti.
@@ -64,39 +66,40 @@ Utilizza lo strumento {{site.data.keyword.conversationshort}} per creare gli int
         - `#pay_bill`
         - `#escalate_to_agent`
 
-    Lo strumento include automaticamente il carattere `#` nel nome dell'intento, per cui non dovrai aggiungerne uno.
+    Un simbolo cancelletto `#` viene automaticamente anteposto al nome intento per aiutare a identificare il termine come un intento. Non è necessario aggiungerlo.
     {: tip}
 
-    Aggiungi una descrizione dell'intento nel campo **Descrizione**.
+    Facoltativamente aggiungi una descrizione dell'intento nel campo **Descrizione**.
 
 1.  Seleziona **Crea intento** per salvare il tuo nome intento.
 
     ![Schermata che mostra la nuova definizione di intento](images/create_intent.png)
 
-1.  Successivamente, nel campo **Aggiungi esempi utente**, immetti il testo di un esempio utente per l'intento. Un esempio può essere qualsiasi stringa composta da un massimo di 1024 caratteri. Quelli che seguono possono essere degli esempi per l'intento `#pay_bill`:
+1.  Successivamente, nel campo **Aggiungi esempio utente**, immetti il testo di un esempio utente per l'intento. Un esempio può essere qualsiasi stringa composta da un massimo di 1024 caratteri. Le seguenti espressioni possono essere degli esempi per l'intento `#pay_bill`:
     - `I need to pay my bill.`
     - `Pay my account balance`
     - `make a payment`
 
-    Per aggiungere esempi utente che vengono estratti da richieste di supporto reali effettuate dai tuoi clienti, vedi [Aggiunta di esempi dai file di log](#intents-intent-recommendations).
-
     Per ulteriori informazioni sull'impatto di includere dei riferimenti alle entità nei tuoi esempi utente, vedi [Come vengono trattati i riferimenti entità](#intents-entity-references).
     {: tip}
 
-    I nomi intento e il testo di esempio possono essere esposti negli URL quando un'applicazione interagisce con il servizio. Non includere informazioni sensibili o personali in queste risorse.
+    I nomi intento e il testo di esempio possono essere esposti negli URL quando un'applicazione interagisce con {{site.data.keyword.conversationshort}}. Non includere informazioni sensibili o personali in queste risorse.
     {: important}
 
-1.  Fai clic su **Aggiungi esempio** per salvare l'esempio.
+1.  Fai clic su **Aggiungi esempio** per salvare l'esempio utente.
 
-1.  Ripeti lo stesso processo per aggiungere altri esempi. Puoi passare da un esempio all'altro. Fornisci almeno 5 esempi per ogni intento. Più esempi fornisci, più accurata sarà la tua applicazione.
+1.  Ripeti lo stesso processo per aggiungere altri esempi.
 
-    Per ottenere supporto sulla creazione dell'esempio utente, vedi [Ottieni i consigli sull'esempio utente dell'intento](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations).
+    Fornisci almeno cinque esempi per ogni intento.
+    {: important}
 
-1.  Quando hai finito di aggiungere gli esempi, fai clic sulla ![Freccia di chiusura](images/close_arrow.png) per completare la creazione dell'intento.
+    ![Solo piano Plus o Premium](images/plus.png) Per ottenere supporto sulla creazione dell'esempio utente, vedi [Ottieni i consigli sull'esempio utente dell'intento](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations).
+
+1.  Quando hai terminato di aggiungere gli esempi, fai clic sulla ![Freccia di chiusura](images/close_arrow.png) per completare la creazione dell'intento.
 
 Il sistema inizia ad addestrarsi sugli esempi utente e di intento che hai aggiunto.
 
-## Come vengono trattate le entità 
+## Come vengono trattate le entità
 {: #intents-entity-references}
 
 Quando includi una citazione dell'entità in un esempio utente, il modello di machine learning utilizza le informazioni in diversi modi in questi scenari:
@@ -105,18 +108,18 @@ Quando includi una citazione dell'entità in un esempio utente, il modello di ma
 - [Citazioni annotate](#intents-annotated-mentions)
 - [Riferimento diretto a un nome dell'entità in un esempio di intento](#intents-entity-as-example)
 
-### Riferimento ai sinonimi e ai valori dell'entità negli esempi di intento 
+### Riferimento ai sinonimi e ai valori dell'entità negli esempi di intento
 {: #intents-related-entities}
 
 Se hai definito o prevedi di definire entità correlate a questo intento, fai riferimento ai sinonimi e ai valori dell'entità in alcuni esempi. In questo modo consenti di stabilire una relazione tra l'intento e le entità. Si tratta di una relazione debole ma fornisce informazioni al modello.
 
-![Schermata che mostra la definizione dell'intento](images/define_intent.png)
+![Schermata che mostra la definizione di intento](images/define_intent.png)
 
 *Importante*:
 
-  - I dati di esempio dell'intento devono essere dati rappresentativi e tipici che verranno forniti dagli utenti finali. Gli esempi possono essere raccolti dai dati utente effettivi o da persone esperte nel campo specifico. La natura rappresentativa e accurata dei dati è importante.
+  - I dati di esempio dell'intento devono essere dati rappresentativi e tipici che vengono forniti dai tuoi utenti. Gli esempi possono essere raccolti dai dati utente effettivi o da persone esperte nel campo specifico. La natura rappresentativa e accurata dei dati è importante.
   - Sia i dati di addestramento che quelli di test (per scopi valutativi) devono riflettere la distribuzione degli intenti nell'utilizzo reale. In genere, intenti più frequenti hanno relativamente più esempi e una miglior copertura della risposta.
-  - Puoi includere la punteggiatura nel punteggiatura purché sembri naturale. Se credi che alcuni utenti esprimeranno i loro intenti con esempi che includono la punteggiatura mentre altri non lo faranno, includi entrambe le versioni. In genere, maggiore è la copertura per i diversi modelli, migliore è la risposta.
+  - Puoi includere la punteggiatura nel punteggiatura purché sembri naturale. Se credi che alcuni utenti esprimono i loro intenti con esempi che includono la punteggiatura mentre altri non lo faranno, includi entrambe le versioni. In genere, maggiore è la copertura per i diversi modelli, migliore è la risposta.
 
 ### Citazioni annotate
 {: #intents-annotated-mentions}
@@ -125,10 +128,10 @@ Dopo aver definito le entità, puoi annotare le citazioni dell'entità direttame
 
 Per ulteriori informazioni sulle entità contestuali, vedi [Aggiunta di entità contestuali](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based).
 
-### Riferimento diretto a un nome dell'entità in un esempio di intento 
+### Riferimento diretto a un nome dell'entità in un esempio di intento
 {: #intents-entity-as-example}
 
-Questo è un approccio avanzato che, se utilizzato, lo deve essere in modo coerente.
+Questo approccio è avanzato. Se utilizzato, lo deve essere in modo coerente.
 {: note}
 
 Puoi scegliere di fare direttamente riferimento alle entità nei tuoi esempi di intento. Ad esempio, diciamo che hai un'entità denominata `@PhoneModelName`, che contiene i valori *Galaxy S8*, *Moto Z2*, *LG G6* e *Google Pixel 2*. Quando crei un intento, ad esempio `#order_phone`, puoi quindi fornire i dati di addestramento come segue:
@@ -142,7 +145,7 @@ Puoi scegliere di fare direttamente riferimento alle entità nei tuoi esempi di 
 
 Attualmente, puoi fare direttamente riferimento solo a entità sinonimo che hai definito (i valori modello vengono ignorati). Non puoi utilizzare le [entità di sistema](/docs/services/assistant?topic=assistant-system-entities).
 
-Se scegli di fare riferimento ad un'entità come a un esempio di intento (ad esempio, `@PhoneModelName`) *anywhere* nei dati di addestramento, verrà annullato il valore dell'utilizzo di un riferimento diretto (ad esempio, *Galaxy S8*) in un esempio di intento dappertutto. Tutti gli intenti utilizzeranno poi l'approccio entità come esempio di intento. Non puoi applicare questo approccio solo a un intento specifico.
+Se scegli di fare riferimento ad un'entità come a un esempio di intento (ad esempio, `@PhoneModelName`) *ovunque* nei dati di addestramento, verrà annullato il valore dell'utilizzo di un riferimento diretto (ad esempio, *Galaxy S8*) in un esempio di intento dappertutto. Tutti gli intenti utilizzeranno poi l'approccio entità come esempio di intento. Non puoi applicare questo approccio solo a un intento specifico.
 {: important}
 
 In pratica significa che se hai precedentemente eseguito l'addestramento della maggior parte dei tuoi intenti in base ai riferimenti diretti (*Galaxy S8*) e ora utilizzi i riferimenti di entità (`@PhoneModelName`) solo per un intento, la modifica influisce sui tuoi precedenti addestramenti. Se scegli di utilizzare i riferimenti `@Entity`, devi sostituire tutti i precedenti riferimenti diretti con i riferimenti `@Entity`.
@@ -154,9 +157,9 @@ La definizione di un intento di esempio con un `@Entity` che ha 10 valori defini
 
 Dopo aver finito di creare i nuovi intenti, puoi testare il sistema per vedere se riconosce i tuoi intenti nel modo previsto.
 
-1.  Nello strumento {{site.data.keyword.conversationshort}}, fai clic sull'icona ![Chiedi a Watson](images/ask_watson.png).
+1.  Fai clic sull'icona ![Chiedi a Watson](images/ask_watson.png).
 
-1.  Nel riquadro *Provalo* immetti una domanda o un'altra stringa di testo e premi Invio per vedere quale intento viene riconosciuto. Se viene riconosciuto l'intento errato, puoi migliorare il tuo modello aggiungendo questo testo come esempio all'intento corretto.
+1.  Nel riquadro "Try it out" immetti una domanda o un'altra stringa di testo e premi Invio per vedere quale intento viene riconosciuto. Se viene riconosciuto l'intento errato, puoi migliorare il tuo modello aggiungendo questo testo come esempio all'intento corretto.
 
     Se di recente hai apportato delle modifiche nella tua capacità, potresti visualizzare un messaggio che indica che il sistema è ancora in fase di addestramento. Se visualizzi questo messaggio, attendi che l'addestramento venga completato prima di eseguire il test:
     {: tip}
@@ -171,19 +174,11 @@ Dopo aver finito di creare i nuovi intenti, puoi testare il sistema per vedere s
 
     ![Schermata della correzione di un intento riconosciuto](images/correct_intent.png)
 
-1.  Se l'input non è correlato ad alcun intento nella tua applicazione, puoi istruire il servizio selezionando l'intento visualizzato e poi facendo clic su **Contrassegna come irrilevante**.
+1.  {: #intents-mark-irrelevant}Se l'input non è correlato ad alcun intento nella tua applicazione, puoi istruire il tuo assistente selezionando l'intento visualizzato e poi facendo clic su **Contrassegna come irrilevante**.
 
     ![Schermata di Contrassegna come irrilevante](images/irrelevant.png)
 
-    *Contrassegna come irrilevante*
-    {: #intents-mark-irrelevant}
-
-    L'opzione *Contrassegna come irrilevante* non è disponibile in tutte le lingue. Per i dettagli, vedi le [lingue supportate](/docs/services/assistant?topic=assistant-language-support).
-
-    **Importante**: gli intenti contrassegnati come irrilevanti vengono salvati come esempi contatori (counterexamples) nello spazio di lavoro JSON e vengono inclusi come parte dei dati di addestramento. Devi essere sicuro prima di designare un input come irrilevante.
-
-      - Non è possibile accedere o modificare successivamente gli input nello strumento.
-      - L'unico modo di invertire l'identificazione di un input dall'essere irrilevante è di riutilizzare lo stesso input nel pannello *Provalo* e questa volta di assegnarlo a un intento.
+    Per ulteriori informazioni su questa azione, vedi [Istruisci il tuo assistente sugli argomenti da ignorare](/docs/services/assistant?topic=assistant-logs#logs-mark-irrelevant).
 
 Se i tuoi intenti non vengono riconosciuti correttamente, puoi apportare i seguenti tipi di modifiche:
 
@@ -201,15 +196,15 @@ Poiché i punteggi di affidabilità dell'intento cambiano, i tuoi dialoghi potre
 ## Limiti di intenti
 {: #intents-limits}
 
-Il numero di intenti ed esempi che puoi creare dipende dal tuo piano di servizio {{site.data.keyword.conversationshort}}:
+Il numero di intenti ed esempi che puoi creare dipende dal tuo tipo di piano {{site.data.keyword.conversationshort}}:
 
-| Piano di servizio     | Intenti per capacità | Esempi per capacità |
+|Piano| Intenti per capacità | Esempi per capacità |
 |------------------|------------------:|-------------------:|
 | Premium          |             2.000 |             25.000 |
 | Plus             |             2.000 |             25.000 |
 | Standard         |             2.000 |             25.000 |
-| Lite             |               100 |             25.000 |
-{: caption="Dettagli piano di servizio" caption-side="top"}
+| Lite, Plus Trial |               100 |             25.000 |
+{: caption="Dettagli del piano" caption-side="top"}
 
 ## Modifica degli intenti
 {: #intents-edit}
@@ -256,9 +251,9 @@ Puoi esportare una serie di intenti in un file CSV in modo da poterli importare 
 ## Importazione di intenti ed esempi
 {: #intents-import}
 
-Se hai un numero elevato di intenti ed esempi, è più facile importarli da un file CSV (comma-separated value) anziché definirli uno ad uno nello strumento {{site.data.keyword.conversationshort}}. Assicurati di rimuovere tutti i dati personali dagli esempi utente che includi nel file.
+Se hai un numero elevato di intenti ed esempi, è più facile importarli da un file CSV (comma-separated value) anziché definirli uno ad uno. Assicurati di rimuovere tutti i dati personali dagli esempi utente che includi nel file.
 
-In alternativa, puoi caricare un file con delle espressioni utente non elaborate (ad esempio dai log del call center) e lascia che il servizio trovi dei candidati per gli esempi utente dai dati. Per ulteriori informazioni, vedi [Aggiunta degli esempi dai file di log](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations). Questa funzione è disponibile solo per gli utenti del piano Plus o Premium.
+In alternativa, puoi caricare un file con delle espressioni utente non elaborate (ad esempio dai log del call center) e lascia che Watson trovi dei candidati per gli esempi utente dai dati. Per ulteriori informazioni, vedi [Aggiunta degli esempi dai file di log](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations). Questa funzione è disponibile solo per gli utenti del piano Plus o Premium.
 
 1.  Raccogli gli intenti ed esempi in un file CSV o esportali da un foglio di calcolo in un file CSV. Il formato richiesto per ogni riga nel file è il seguente:
 
@@ -288,17 +283,17 @@ In alternativa, puoi caricare un file con delle espressioni utente non elaborate
 
     Il file viene convalidato e importato e il sistema comincia ad addestrarsi sui nuovi dati.
 
-Puoi visualizzare gli intenti importati e gli esempi corrispondenti sulla scheda **Intenti**. Per vedere i nuovi intenti potresti dover aggiornare la pagina.
+Puoi visualizzare gli intenti importati e gli esempi corrispondenti sulla scheda **Intenti**. Per vedere i nuovi intenti ed esempi potresti dover aggiornare la pagina.
 
-## Risoluzione dei conflitti degli intenti ![solo Plus o Premium](images/premium.png)
+## Risoluzione dei conflitti degli intenti ![solo Plus o Premium](images/plus.png)
 {: #intents-resolve-conflicts}
 
 Questa funzione è disponibile solo per gli utenti Plus o Premium.
-{: tip}
+{: note}
 
 L'applicazione {{site.data.keyword.conversationshort}} rileva un conflitto quando due o più esempi di intento in intenti *separati* sono talmente simili che {{site.data.keyword.conversationshort}} fa confusione su quale intento utilizzare.
 
-Per risolvere i conflitti: 
+Per risolvere i conflitti:
 
 1.  Dalla pagina **Intenti**, rivedi tutti gli intenti con conflitti.
 

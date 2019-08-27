@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-05-20"
 
 subcollection: assistant
+
 
 ---
 
@@ -35,7 +36,7 @@ subcollection: assistant
 
 다음 데이터는 내보낼 수 없습니다.
 
-<!--- Search skill -->
+- 검색 스킬
 - 어시스턴트(구성된 통합 포함)
 
 ## 로그 보유
@@ -73,19 +74,21 @@ subcollection: assistant
 
 1.  **스킬** 탭을 클릭하십시오.
 
-1.  **새로 작성**을 클릭하십시오.
+1.  **스킬 작성**을 클릭하십시오.
+
+1.  둘 이상의 스킬 유형의 옵션이 제공되는 경우 대화 스킬을 작성하도록 선택하십시오.
 
 1.  **스킬 가져오기**를 클릭한 다음 **JSON 파일 선택**을 클릭하고 가져올 JSON 파일을 선택하십시오.
 
     **중요:**
 
     - 가져온 JSON 파일은 BOM(Byte Order Mark) 인코딩을 사용하지 않고 UTF-8 인코딩을 사용해야 합니다.
-    - 스킬 JSON 파일의 최대 크기는 10MB입니다. 더 큰 스킬을 가져와야 하는 경우 스킬을 가져온 후에 별도로 인텐트와 엔티티를 가져오십시오. (REST API를 사용하여 더 큰 스킬을 가져올 수도 있습니다. 자세한 정보는 [API 참조 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/apidocs/assistant#create-workspace){: new_window}를 참조하십시오.)
+    - 스킬 JSON 파일의 최대 크기는 10MB입니다. 더 큰 스킬을 가져와야 하는 경우 스킬을 가져온 후에 별도로 인텐트와 엔티티를 가져오는 것을 고려하십시오. (REST API를 사용하여 더 큰 스킬을 가져올 수도 있습니다. 자세한 정보는 [API 참조 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/apidocs/assistant#create-workspace){: new_window}를 참조하십시오.)
     - JSON 파일에는 탭, 줄 바꾸기 또는 캐리지 리턴이 포함될 수 없습니다.
 
     내보낸 스킬의 전체 사본을 가져오려면 **모두(인텐트, 엔티티 및 대화)**를 선택하십시오.
 
-    **가져오기**를 클릭하십시오. 
+    **가져오기**를 클릭하십시오.
 
     스킬을 가져오는 데 문제가 있는 경우 [스킬 가져오기 문제 해결](/docs/services/assistant?topic=assistant-skill-add#skill-add-import-errors)을 참조하십시오.
 
@@ -95,7 +98,7 @@ subcollection: assistant
     - **설명**: 길이가 200자 이하인 선택적 설명입니다.
     - **언어**: 이해를 위해 스킬을 훈련하는 데 사용할 사용자 입력 언어입니다. 기본값은 영어입니다.
 
-스킬을 작성하면 스킬 페이지에 타일로 표시됩니다.
+대화 스킬을 작성하면 스킬 페이지에 타일로 표시됩니다.
 
 ## 어시스턴트 다시 작성
 {: #backup-recreate-assistant}

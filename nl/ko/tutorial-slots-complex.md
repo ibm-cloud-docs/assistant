@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-08-12"
 
 subcollection: assistant
 
@@ -123,7 +123,7 @@ subcollection: assistant
     </tr>
     </table>
 
-    Watson이 다음과 같이 응답합니다. `OK. I am making you a reservation for 6 on Friday, December 29 at 5:00 PM.`
+    이번에는 Watson이 다음과 같이 응답합니다. `OK. I am making you a reservation for 6 on Friday, December 29 at 5:00 PM.`
 
 응답에서 컨텍스트 변수 값을 참조할 때 대화가 사용하는 형식이 향상되었습니다. 대화는 이제 `2017-12-29` 대신, `Friday, December 29`를 사용합니다. 또한, `17:00:00` 대신, `5:00 PM`을 사용합니다. 사용자가 날짜 및 시간 값으로 사용할 수 있는 기타 SpEL 메소드에 대해 자세히 알아보려면, [값을 처리하는 메소드](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-date-time)를 참조하십시오.
 
@@ -164,9 +164,9 @@ subcollection: assistant
 ## 3단계: 영(0)을 적절하게 처리
 {: #tutorial-slots-complex-recognize-zero}
 
-슬롯 조건에서 `sys-number`시스템 엔티티를 사용할 경우 영(0)을 올바르게 처리하지 않습니다. 슬롯에 대해 정의한 컨텍스트 변수를 0으로 설정하는 대신, 서비스는 컨텍스트 변수를 false로 설정합니다. 그 결과, 슬롯은 가득 차지 않았다고 간주하고 사용자가 숫자를 0으로 지정할 때까지 숫자를 입력하라는 메시지를 계속해서 표시합니다.
+슬롯 조건에서 `sys-number`시스템 엔티티를 사용할 경우 영(0)을 올바르게 처리하지 않습니다. 슬롯에 대해 정의한 컨텍스트 변수를 0으로 설정하는 대신, 어시스턴트는 컨텍스트 변수를 false로 설정합니다. 그 결과, 슬롯은 가득 차지 않았다고 간주하고 사용자가 숫자를 0으로 지정할 때까지 숫자를 입력하라는 메시지를 계속해서 표시합니다.
 
-1.  문제점을 더 잘 이해할 수 있도록 노드를 테스트하십시오. "시험 사용" 분할창을 열고, **지우기**를 클릭하여 이전에 슬롯이 있는 노드를 테스트할 때 지정한 슬롯 컨텍스트 변수 값을 삭제하십시오. 다음 스크립트를 사용하십시오. 
+1.  문제점을 더 잘 이해할 수 있도록 노드를 테스트하십시오. "시험 사용" 분할창을 열고, **지우기**를 클릭하여 이전에 슬롯이 있는 노드를 테스트할 때 지정한 슬롯 컨텍스트 변수 값을 삭제하십시오. 다음 스크립트를 사용하십시오.
 
     <table>
     <caption>스크립트 세부사항</caption>
@@ -202,22 +202,35 @@ subcollection: assistant
 
     0이외의 숫자를 지정할 때까지 이 루프가 계속됩니다.
 
-1.  슬롯이 0을 적절하게 처리하는지 확인하려면 슬롯 조건을 `@sys-number`에서 `@sys-number || @sys-number:0`으로 변경합니다.
+1.  슬롯이 0을 적절하게 처리하는지 확인하려면 슬롯 조건을 `@sys-number`에서 `@sys-number >= 0`으로 변경하십시오.
 
-1.  슬롯에 대해 **응답 편집** ![응답 편집](images/edit-slot.png) 아이콘을 클릭하십시오. 
+1.  **슬롯 편집** ![슬롯 편집](images/edit-slot.png) 아이콘을 클릭하여 슬롯을 열어 편집하십시오. **옵션** ![추가 아이콘](images/kabob.png) 메뉴에서 JSON 편집기를 여십시오.
 
-1.  컨텍스트 변수가 작성되면 슬롯 조건에 지정된 것과 동일한 표현식을 자동으로 사용합니다. 그러나 컨텍스트 변수는 숫자만 저장해야 합니다. 컨텍스트 변수로 저장된 값을 편집하여 이 값에서 `OR` 연산자를 제거하십시오. **추가** ![추가 아이콘](images/kabob.png) 메뉴에서 **JSON 편집기 열기**를 선택한 후 컨텍스트 변수를 정의하는 JSON을 편집하십시오. 다음 구문을 사용하려면 `"guests":"@sys-number || @sys-number:0"`에서 변수하십시오.
+1.  컨텍스트 변수 값을 변경하십시오.
+
+    값은 다음과 같습니다.
 
     ```json
     {
       "context": {
-        "guests": "@sys-number"
+        "number": "@sys-number >= 0"
       }
     }
     ```
     {: codeblock}
 
-1.  **저장**을 클릭하십시오.
+    다음과 같이 변경하십시오. 
+
+    ```json
+    {
+      "context": {
+        "number":"@sys-number"
+      }
+    }
+    ```
+    {: codeblock}
+
+1.  변경사항을 저장하십시오. 
 
 1.  노드를 다시 테스트하십시오. "시험 사용" 분할창을 열고, **지우기**를 클릭하여 이전에 슬롯이 있는 노드를 테스트할 때 지정한 슬롯 컨텍스트 변수 값을 삭제하십시오. 변경 사항의 효과를 확인하려면 다음 스크립트를 사용하십시오.
 
@@ -344,7 +357,7 @@ subcollection: assistant
     - 지정한 게스트 수가 0보다 큰지 확인하십시오.
     - 사용자가 게스트 수를 변경할 때 예상하고 처리하십시오.
 
-      슬롯이 있는 노드가 처리되는 어느 시점에서도 사용자가 슬롯 값을 변경할 경우, 해당 슬롯 컨텍스트 변수 값이 업데이트됩니다. 그러나, 사용자에게 명확한 피드백을 제공하고 사용자가 의도한 대로 변경되지 않은 경우 사용자가 수정할 수 있는 기회를 제공하기 위해 값을 대체한다는 사실을 사용자에게 알려주는 것이 유용할 수 있습니다. 
+      슬롯이 있는 노드가 처리되는 어느 시점에서도 사용자가 슬롯 값을 변경할 경우, 해당 슬롯 컨텍스트 변수 값이 업데이트됩니다. 그러나, 사용자에게 명확한 피드백을 제공하고 사용자가 의도한 대로 변경되지 않은 경우 사용자가 수정할 수 있는 기회를 제공하기 위해 값을 대체한다는 사실을 사용자에게 알려주는 것이 유용할 수 있습니다.
 
 1.  슬롯이 있는 노드의 편집 보기에서, `@sys-number` 슬롯의 **슬롯 편집**![슬롯 편집](images/edit-slot.png) 아이콘을 클릭하십시오.
 
@@ -360,7 +373,7 @@ subcollection: assistant
       <th>조치</th>
     </tr>
     <tr>
-      <td>`entities['sys-number']?.value == 0`</td>
+      <td>`@sys-number == 0`</td>
       <td>Please specify a number that is larger than 0.</td>
       <td>슬롯을 지우고 다시 프롬프트하십시오.</td>
     </tr>
@@ -371,7 +384,7 @@ subcollection: assistant
     </tr>
     <tr>
       <td>`true`</td>
-      <td>Ok. The reservation is for $guests guests.</td>
+      <td>    Ok. The reservation is for $guests guests.</td>
       <td>이동</td>
     </tr>
     </table>
@@ -421,7 +434,7 @@ subcollection: assistant
     <caption>확인 슬롯 세부사항</caption>
     <tr>
       <th>검사 대상</th>
-      <th>저장힐 이름</th>
+      <th>저장할 이름</th>
       <th>지정되지 않은 경우, 요청</th>
     </tr>
     <tr>
@@ -522,7 +535,7 @@ subcollection: assistant
     </tr>
     <tr>
       <td>`!($date && $time)`</td>
-      <td>Ok. The reservation is for $guests guests.</td>
+      <td>    Ok. The reservation is for $guests guests.</td>
       <td>이동</td>
     </tr>
     </table>
@@ -644,7 +657,7 @@ subcollection: assistant
     다른 슬롯을 건너 뛰도록 둘 이상의 슬롯을 구성하거나 슬롯을 건너 뛰도록 다른 노드 레벨 이벤트 핸들러를 구성하는 경우 #exit 인텐트가 트리거되었는지 여부를 확인하기 위해 다른 방법을 사용해야 합니다. 그렇게 하기 위한 대체 방법은 [프로세스 종료 요청 핸들링](/docs/services/assistant?topic=assistant-dialog-slots#dialog-slots-node-level-handler)을 참조하십시오.
     {: note}
 
-1.  표준 노드 레벨 응답을 표시하기 전에 `has_skipped_slots` 특성을 검사하려고 합니다. `has_skipped_slots` 조건부 응답을 위로 이동하여 원래 조건부 응답 전에 처리되도록 하거나 해당 응답이 트리거되지 않습니다. 이를 수행하려면, 방금 추가한 응답을 클릭하고 **위로 화살표**를 사용하여 위로 이동한 다음 **저장**을 클릭하십시오.
+1.  어시스턴트가 표준 노드 레벨 응답을 표시하기 전에 `has_skipped_slots` 특성을 검사하려고 합니다. `has_skipped_slots` 조건부 응답을 위로 이동하여 원래 조건부 응답 전에 처리되도록 하거나 해당 응답이 트리거되지 않습니다. 이를 수행하려면, 방금 추가한 응답을 클릭하고 **위로 화살표**를 사용하여 위로 이동한 다음 **저장**을 클릭하십시오.
 
 1.  "시험 사용" 분할창에 있는 다음 스크립트를 사용하여 이 변경사항을 테스트하십시오.
 
@@ -668,7 +681,7 @@ subcollection: assistant
     </tr>
     <tr>
       <td>Watson</td>
-      <td>Ok. The reservation is for 5 guests.  What day would you like to come in?</td>
+      <td>    Ok. The reservation is for 5 guests.  What day would you like to come in?</td>
     </tr>
     <tr>
       <td>사용자</td>
@@ -790,23 +803,23 @@ $time 정보의 경우, 사용자가 올바른 시간을 제공하지 않을 경
 
 1.  다음 스크립트를 사용하여 변경 사항을 테스트하십시오.
 
-| 말하는 쪽 | 발화  |
+| 말하는 쪽 | 발화 |
 |---------|-----------|
-| 사용자  | i want to make a reservation |
+| 사용자     | i want to make a reservation |
 | Watson  | I can make a reservation for you. Just tell me the day and time of the reservation, and how many people it is for. |
-| 사용자  | tomorrow |
+| 사용자     | tomorrow |
 | Watson  | Friday, December 29 it is.  What time do you want the reservation to be made for? |
-| 사용자  | orange |
+| 사용자     | orange |
 | Watson  | Please specify the time that you want to eat. The restaurant seats people between 9AM and 9PM. |
-| 사용자  | pink |
+| 사용자     | pink |
 | Watson  | Please specify the time that you want to eat. The restaurant seats people between 9AM and 9PM. |
-| 사용자  | purple |
+| 사용자     | purple |
 | Watson  | You seem to be having trouble choosing a time. I will make the reservation at 8PM for you.  How many people will be dining? |
 
 ## 9단계: 외부 서비스에 연결
 {: #tutorial-slots-complex-action}
 
-대화에서 사용자의 예약 세부사항을 수집하여 확인할 수 있으므로 외부 서비스에 전화하여 실제로 식당 시스템이나 다중 식당 온라인 예약 서비스를 통해 테이블을 예약할 수 있습니다. 세부사항은 [대화 노드에서 프로그래밍 방식 호출 작성](/docs/services/assistant?topic=assistant-dialog-actions)을 참조하십시오.
+대화에서 사용자의 예약 세부사항을 수집하여 확인할 수 있으므로 외부 서비스에 전화하여 실제로 식당 시스템이나 다중 식당 온라인 예약 서비스를 통해 테이블을 예약할 수 있습니다. 세부사항은 [대화 노드에서 프로그래밍 방식 호출 작성](/docs/services/assistant?topic=assistant-dialog-webhooks)을 참조하십시오.
 
 예약 서비스를 호출하는 로직에서는, `has_skipped_slots`을 검사하고 예약이 있는 경우 계속하지 마십시오.
 

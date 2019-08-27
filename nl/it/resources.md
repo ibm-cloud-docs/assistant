@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-08-07"
+lastupdated: "2019-05-14"
 
 subcollection: assistant
 
@@ -33,7 +33,7 @@ Link alle risorse, ai video, alle esercitazioni e agli articoli che possono aiut
 
 - [IBM Code Bot Asset Exchange ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://developer.ibm.com/code/exchanges/bots/){: new_window}
 
-## Risorse dello sviluppatore per la creazione di assistenti 
+## Risorse dello sviluppatore per la creazione di assistenti
 {: #resources-for-bots}
 
 - [Automazione del testo senza codice per il tuo assistente ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://chatbotsmagazine.com/10-minutes-codeless-test-automation-for-ibm-watson-chatbots-d71eac9626d7){: new_window}
@@ -60,18 +60,19 @@ Da una serie di approfondimenti tecnici IBM. Queste registrazioni forniscono ist
 
 Video aggiuntivi creati da dipendenti IBM.
 
-- [Abilitazione tecnica digitale ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://ibm-dte.mybluemix.net/ibm-watson-assistant){: new_window}: una raccolta di risorse, inclusi un tour del prodotto e un'esercitazione pratica.
+- [Abilitazione tecnica digitale ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://ibm-dte.mybluemix.net/watson-assistant){: new_window}: una raccolta di risorse, inclusi un tour del prodotto e un'esercitazione pratica.
 - [{{site.data.keyword.conversationshort}} Integrations Tutorial  ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www.youtube.com/watch?v=O3silvVBaC8&t=3s){: new_window}: un'esercitazione di 10 minuti per puoi seguire per connettere {{site.data.keyword.conversationshort}} a Twilio utilizzando Botkit per creare una chatbot SMS.
-- [Utilizzo di {{site.data.keyword.conversationshort}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://youtu.be/tUkLIUOm550){: new_window}: una panoramica di 3 minuti del servizio
+- [Utilizzo di {{site.data.keyword.conversationshort}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://youtu.be/tUkLIUOm550){: new_window}: una panoramica di 3 minuti del prodotto
 - [Introduzione al servizio {{site.data.keyword.conversationshort}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://youtu.be/A96nLYSMltA){: new_window}: un'introduzione di 1 minuto.
 - [Guida dettagliata di {{site.data.keyword.conversationshort}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://youtu.be/ELwWhJGE2P8){: new_window}: una guida dettagliata tecnica di 14 minuti.
 
-## IBM Watson Academy
+## Materiale didattico
 {: #resources-academy}
 
-- [{{site.data.keyword.conversationshort}} Foundations ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://ibm.com/training/watsonacademy){: new_window}
+- [Watson Academy ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://ibm.com/training/watsonacademy){: new_window}
+- [Coursera: Building AI Powered Chatbots Without Programming ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www.coursera.org/learn/building-ai-powered-chatbots)
 
-## Blog 
+## Blog
 {: #resources-blogs}
 
 - [Ultimi blog su Medium ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://medium.com/tag/watson-assistant/latest){: new_window}

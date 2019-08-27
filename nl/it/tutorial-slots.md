@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
 
@@ -45,7 +45,7 @@ Il completamento di questa esercitazione richiede circa 30 minuti.
 ### Prerequisito
 {: #tutorial-slots-prereqs}
 
-Prima di iniziare, completa l'[Esercitazione introduttiva](/docs/services/assistant?topic=assistant-getting-started). Utilizzerai la capacità dell'esercitazione {{site.data.keyword.conversationshort}} che hai creato e aggiungerai dei nodi al semplice dialogo come parte dell'esercitazione iniziale. 
+Prima di iniziare, completa l'[Esercitazione introduttiva](/docs/services/assistant?topic=assistant-getting-started). Utilizzerai la capacità dell'esercitazione {{site.data.keyword.conversationshort}} che hai creato e aggiungerai dei nodi al semplice dialogo come parte dell'esercitazione iniziale.
 
 Se lo desideri, puoi anche iniziare con una nuova capacità. Assicurati solamente di creare la capacità prima di iniziare questa esercitazione.
 {: note}
@@ -88,13 +88,13 @@ Aggiungi un intento alla scheda Intenti. Un intento è lo scopo o l'obiettivo es
 ## Passo 2: aggiungi le entità
 {: #tutorial-slots-add-entity}
 
-Una definizione di entità include una serie di entità *values* che rappresentano la terminologia che spesso viene utilizzata nel contesto di un determinato intento. Definendo le entità, puoi aiutare il servizio a identificare i riferimenti nell'input utente che sono correlati agli intenti a cui sei interessato. In questo passo, abiliterai le entità di sistema che possono riconoscere i riferimenti a ora, data e numeri.
+Una definizione di entità include una serie di entità *values* che rappresentano la terminologia che spesso viene utilizzata nel contesto di un determinato intento. Definendo le entità, puoi aiutare il tuo assistente a identificare i riferimenti nell'input utente che sono correlati agli intenti a cui sei interessato. In questo passo, abiliterai le entità di sistema che possono riconoscere i riferimenti a ora, data e numeri.
 
 1.  Fai clic su **Entità** per aprire la pagina Entità.
 1.  Abilita le entità di sistema che possono riconoscere riferimenti a data, ora e numeri nell'input utente. Fai clic sulla scheda **Entità di sistema** e quindi attiva queste entità:
 
     - `@sys-time`
-    - `@sys-date               `
+    - `@sys-date`
     - `@sys-number`
 
 Hai abilitato correttamente le entità di sistema @sys-date, @sys-time e @sys-number. Ora puoi utilizzarle nel tuo dialogo.
@@ -102,14 +102,14 @@ Hai abilitato correttamente le entità di sistema @sys-date, @sys-time e @sys-nu
 ## Passo 3: aggiungi un nodo di dialogo con gli slot
 {: #tutorial-slots-add-dialog-with-slots}
 
-Un nodo di dialogo rappresenta il punto di inizio di un thread del dialogo tra il servizio e l'utente. Contiene una condizione che deve essere soddisfatta affinché il nodo venga elaborato dal servizio. Come minimo, contiene anche una risposta. Ad esempio, una condizione nodo potrebbe ricercare l'intento `#hello` nell'input utente e rispondere con `Hi. How can I help you?` Questo esempio è la forma più semplice di un nodo di dialogo, uno che contiene una singola condizione e una singola risposta. Puoi definire dialoghi più complessi aggiungendo risposte condizionali a un singolo nodo, aggiungendo nodi figlio che prolungano lo scambio con l'utente e molto altro. (Se desideri reperire ulteriori informazioni sui dialoghi complessi, puoi completare l'esercitazione [Creazione di un dialogo complesso](/docs/services/assistant?topic=assistant-tutorial).)
+Un nodo di dialogo rappresenta il punto di inizio di un thread del dialogo tra il tuo assistente e l'utente. Contiene una condizione che deve essere soddisfatta affinché il nodo venga elaborato dal tuo assistente. Come minimo, contiene anche una risposta. Ad esempio, una condizione nodo potrebbe ricercare l'intento `#hello` nell'input utente e rispondere con `Hi. How can I help you?` Questo esempio è la forma più semplice di un nodo di dialogo, uno che contiene una singola condizione e una singola risposta. Puoi definire dialoghi più complessi aggiungendo risposte condizionali a un singolo nodo, aggiungendo nodi figlio che prolungano lo scambio con l'utente e molto altro. (Se desideri reperire ulteriori informazioni sui dialoghi complessi, puoi completare l'esercitazione [Creazione di un dialogo complesso](/docs/services/assistant?topic=assistant-tutorial).)
 
 Il nodo che aggiungerai in questo passo è quello che contiene gli slot. Gli slot forniscono un formato strutturato tramite il quale puoi richiedere e salvare più informazioni provenienti da un utente all'interno di un singolo nodo. Sono maggiormente utili quando hai in mente una specifica attività e hai bisogno di parti chiave di informazioni provenienti dall'utente prima di poterla eseguire. Per ulteriori informazioni, vedi [Raccolta di informazioni con gli slot](/docs/services/assistant?topic=assistant-dialog-slots).
 
 Il nodo che aggiungi raccoglierà le informazioni necessarie per fare una prenotazione al ristorante.
 
 1.  Fai clic sulla scheda **Dialoghi** per aprire la struttura ad albero di dialogo.
-1.  Fai clic sull'icona Altro ![Altre opzioni](images/kabob.png) sul nodo **#General_Greetings** e seleziona **Aggiungi nodo in basso**. 
+1.  Fai clic sull'icona Altro ![Altre opzioni](images/kabob.png) sul nodo **#General_Greetings** e seleziona **Aggiungi nodo in basso**.
 1.  Inizia a immettere `#reservation` nel campo condizione e quindi selezionalo dall'elenco.
     Questo nodo verrà valutato se l'input utente corrisponde all'intento `#reservation`.
 1.  Fai clic su **Personalizza**, fai clic sull'interruttore **Slot** per **attivarlo** e quindi fai clic su **Applica**.
@@ -168,7 +168,7 @@ Il nodo che aggiungi raccoglierà le informazioni necessarie per fare una prenot
 
     L'assistente riconosce il valore e lo utilizza per riempire la variabile di contesto $guests per il terzo slot. Ora che tutti gli slot sono stati riempiti, mostra la risposta del nodo, `OK. Sto prenotato per 6 per il giorno 2017-12-29 alle 17:00:00.`
 
-![Mostra un dialogo di test nel riquadro Provalo con gli slot del nodo riempiti correttamente.](images/slots-test-simple-node.png)
+![Mostra un dialogo di test nel riquadro Try it out con gli slot del nodo riempiti correttamente.](images/slots-test-simple-node.png)
 
 Ha funzionato! Congratulazioni. Hai creato correttamente un nodo con gli slot.
 

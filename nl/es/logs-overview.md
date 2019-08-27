@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
+
 
 ---
 
@@ -74,7 +75,7 @@ Varias tarjetas de puntuación estadísticas proporcionan datos de registro para
 
   Una sola conversación es un conjunto de mensajes que consta de los mensajes que un usuario activo envía a la aplicación y de los mensajes con los que responde la aplicación.
 
-  **Importante**: Se considera que una 'conversación' es *cualquier* conjunto de mensajes enviados o recibidos por una aplicación/bot, de modo que si el servicio empieza por decir "Hi, how can I help you?" (Hola, ¿en qué puedo ayudarle?)y luego el usuario cierra su navegador sin responder, este mensaje se incluye en el recuento total de conversaciones.
+  **Importante**: Se considera que una 'conversación' es *cualquier* conjunto de mensajes enviados o recibidos por una aplicación/bot, de modo que si su asistente empieza por decir "Hi, how can I help you?" (Hola, ¿en qué puedo ayudarle?)y luego el usuario cierra su navegador sin responder, este mensaje se incluye en el recuento total de conversaciones.
 
 * *Número medio de mensajes por conversación*: El número total de mensajes recibidos durante el periodo de tiempo seleccionado dividido por el número total de conversaciones durante el periodo de tiempo seleccionado, tal como se muestra en el gráfico correspondiente.
 * *Número máximo de conversaciones*: El número máximo de conversaciones correspondientes a un solo punto de datos dentro del periodo de tiempo seleccionado.
@@ -105,4 +106,4 @@ También puede ver las intenciones y entidades que se han reconocido con mayor f
 
 * En la lista también se muestran las *Entidades principales*. Para cada entidad, puede seleccionar en la columna **Valores** para ver una lista de los valores más comunes que se han identificado para esta entidad durante el periodo de tiempo. También puede seleccionar una entidad para abrir la página **Conversaciones de usuario** con el rango de fechas filtrado para que coincida con los datos que está visualizando y la entidad filtrada para que coincida con la entidad seleccionada.
 
-Consulte [Cómo aprender de las conversaciones](/docs/services/assistant?topic=assistant-logs) para ver consejos sobre cómo editar intenciones y entidades en función de los descubrimientos que realice revisando las intenciones y las entidades que reconoce el servicio.
+Consulte [Mejora de su conocimiento](/docs/services/assistant?topic=assistant-logs) para ver consejos sobre cómo editar intenciones y entidades en función de los descubrimientos que realice revisando las intenciones y las entidades que reconoce su asistente.

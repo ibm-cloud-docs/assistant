@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-01"
+lastupdated: "2019-08-06"
+
+keywords: assistant, omnichannel, virtual agent, virtual assistant, chatbot, conversation, watson assistant, watson conversation
 
 subcollection: assistant
 
@@ -28,10 +30,10 @@ subcollection: assistant
 {:download: .download}
 {:gif: data-image-type='gif'}
 
-# 튜토리얼 시작하기
+# {{site.data.keyword.conversationshort}} 시작하기
 {: #getting-started}
 
-이 짧은 튜토리얼에서는 {{site.data.keyword.conversationshort}} 도구를 소개하고 첫 번째 어시스턴트를 작성하는 프로세스를 살펴봅니다.
+이 짧은 튜토리얼에서는 {{site.data.keyword.conversationfull}}를 소개하고 첫 번째 어시스턴트를 작성하는 프로세스를 살펴봅니다.
 {: shortdesc}
 
 ## 시작하기 전에
@@ -41,57 +43,79 @@ subcollection: assistant
 시작하려면 서비스 인스턴스가 필요합니다.
 {: hide-dashboard}
 
-1.  {: hide-dashboard}{{site.data.keyword.cloud_notm}} 카탈로그에서 [{{site.data.keyword.conversationshort}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/catalog/services/watson-assistant) 페이지로 이동하십시오.
+1.  {: hide-dashboard}{{site.data.keyword.cloud}} 카탈로그에서 [{{site.data.keyword.conversationshort}} ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/catalog/services/watson-assistant) 페이지로 이동하십시오.
 
-    다른 리소스 그룹을 선택하지 않으면 서비스 인스턴스가 **기본** 리소스 그룹에 작성되며 나중에 이를 변경할 수 *없습니다*. 이 그룹은 서비스를 시험 사용하기 위한 용도로 충분합니다.
+    다른 리소스 그룹을 선택하지 않으면 서비스 인스턴스가 **기본** 리소스 그룹에 작성되며 나중에 이를 변경할 수 *없습니다*. 이 그룹은 제품을 시험 사용하기 위한 용도로 충분합니다.
 
     보다 강력한 사용을 위한 인스턴스를 작성 중인 경우 [리소스 그룹 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://{DomainName}/docs/resources/bestpractice_rgs#bp_resourcegroups){: new_window}에 대해 자세히 알아보십시오.
 1.  {: hide-dashboard}무료 {{site.data.keyword.cloud_notm}} 계정에 가입하거나 로그인하십시오.
 1.  {: hide-dashboard}**작성**을 클릭하십시오.
 
-## 1단계: 도구 열기
+## 1단계: Watson Assistant 열기
 {: #getting-started-launch-tool}
 
-{{site.data.keyword.conversationshort}} 서비스 인스턴스를 작성하면 서비스 대시보드의 **관리** 페이지로 이동합니다.
+{{site.data.keyword.conversationshort}} 서비스 인스턴스를 작성하면 {{site.data.keyword.conversationshort}} 대시보드의 **관리** 페이지로 이동합니다.
 {: hide-dashboard}
 
-1.  **도구 실행**을 클릭하십시오. 도구에 로그인하라는 프롬프트가 표시되면 {{site.data.keyword.cloud_notm}} 인증 정보를 제공하십오.
+1.  **{{site.data.keyword.conversationshort}} 실행**을 클릭하십시오. 로그인하라는 프롬프트가 표시되면 {{site.data.keyword.cloud_notm}} 인증 정보를 제공하십오.
 
 <!-- Remove this text after dedicated instances have the developer console: begin -->
 
-{{site.data.keyword.Bluemix_dedicated_notm}}: 대시보드에서 서비스 인스턴스를 선택하여 도구를 실행하십시오.
+{{site.data.keyword.Bluemix_dedicated_notm}}: 대시보드에서 서비스 인스턴스를 선택하여 제품을 실행하십시오.
 
 <!-- Remove this text after dedicated instances have the Developer Console: end -->
 
-## 2단계: 대화 스킬 작성
-{: #getting-started-add-skill}
+새 사용자인 경우, *My first assistant*라는 어시스턴트가 자동으로 작성됩니다. 다음 단계를 건너뛰십시오. 
 
-{{site.data.keyword.conversationshort}} 도구의 첫 번째 단계는 스킬을 작성하는 것입니다.
+![어시스턴트가 어시스턴트 페이지에 자동으로 추가되었음을 보여줍니다. ](images/gs-ass-created-for-me.png)
+
+사용자의 위치에서 사용 가능한 경우, 제품에 대해 알 수 있도록 단계별로 안내하는 둘러보기가 시작됩니다. 둘러보기를 진행하십시오. 이 학습서 단계와 화면이 겹치므로 둘러보기가 종료된 후에 이 학습서를 다시 시작할 수 있습니다. {: tip}
+
+[*어시스턴트*](/docs/services/assistant?topic=assistant-assistants)는 유용한 방법으로 고객과 상호작용할 수 있도록 하는 스킬을 추가하는 코그너티브 봇입니다.
+
+어시스턴트가 자동으로 작성되지 않은 경우에는 1단계로 어시스턴트를 작성하십시오. 
+
+## 2단계: 어시스턴트 작성
+{: #getting-started-create-assistant}
+
+1.  **어시스턴트 작성**을 클릭하십시오.
+
+    ![어시스턴트 페이지에서 어시스턴트 단추를 작성합니다.](images/gs-create-assistant.png)
+1.  어시스턴트 이름을 `My first assistant`로 지정하십시오. 
+1.  **어시스턴트 작성**을 클릭하십시오.
+
+    ![새 어시스턴트 작성 완료](images/gs-create-assistant-done.png)
+
+## 3단계: 대화 스킬 작성
+{: #getting-started-add-skill}
 
 *대화 스킬*은 어시스턴트가 고객과 진행할 수 있는 대화의 플로우를 정의하는 아티팩트의 컨테이너입니다.
 
-1.  {{site.data.keyword.conversationshort}} 도구의 홈 페이지에서 **스킬 작성**을 클릭하십시오.
+1.  어시스턴트가 작성된 경우에는 *My first assistant* 타일을 클릭하여 어시스턴트를 여십시오. 
+
+1.  **대화 스킬 추가**를 클릭하십시오.
 
     ![홈 페이지의 스킬 추가 단추를 표시합니다.](images/gs-new-skill.png)
 
-1.  **새로 작성**을 클릭하십시오.
-
-    ![스킬 페이지의 새로 작성 단추를 표시합니다.](images/gs-click-create-new.png)
-
 1.  스킬의 이름을 `Conversational skill tutorial`로 지정하십시오.
 1.  **선택사항**: 빌드하려는 대화에 영어 이외의 언어를 사용할 경우 목록에서 해당 언어를 선택하십시오.
-1.  **작성**을 클릭하십시오.
 
     ![스킬 작성 완료](images/gs-add-skill-done.png)
 
-도구의 인텐트 페이지로 이동합니다.
+1.  **대화 스킬 작성**을 클릭하십시오.
 
-## 3단계: 컨텐츠 카탈로그에서 인텐트 추가
+    ![스킬 작성 완료](images/gs-skill-added.png)
+
+1.  방금 작성한 스킬을 클릭하여 여십시오.
+
+인텐트 페이지로 이동합니다.
+
+## 4단계: 컨텐츠 카탈로그에서 인텐트 추가
 {: #getting-started-add-catalog}
 
 컨텐츠 카탈로그에서 인텐트를 추가하여 IBM에서 빌드된 훈련 데이터를 스킬에 추가하십시오. 특히, 대화에서 사용자를 환영하고 사용자와의 대화를 종료할 수 있도록 어시스턴트에 **일반** 컨텐츠 카탈로그에 대한 액세스 권한을 부여합니다.
 
-1.  {{site.data.keyword.conversationshort}} 도구에서 **컨텐츠 카탈로그** 탭을 클릭하십시오.
+1.  **컨텐츠 카탈로그** 탭을 클릭하십시오.
 1.  목록에서 **일반**을 찾은 다음 **스킬에 추가**를 클릭하십시오.
 
     ![컨텐츠 카탈로그를 표시하고 General 카탈로그에 대한 스킬에 추가 단추를 강조표시합니다.](images/gs-add-general-catalog.png)
@@ -101,7 +125,7 @@ subcollection: assistant
 
 {{site.data.keyword.IBM_notm}}에서 사전 빌드된 컨텐츠를 추가하여 훈련 데이터를 빌드하기 시작했습니다.
 
-## 4 단계: 대화 빌드
+## 5단계: 대화 빌드
 {: #getting-started-build-dialog}
 
 [대화](/docs/services/assistant?topic=assistant-dialog-overview)는 로직 트리 양식으로 대화의 플로우를 정의합니다. 대화는 인텐트(사용자가 말하는 내용)를 응답(봇이 답변하는 내용)에 일치시킵니다. 트리의 각 노드에는 사용자 입력에 따라 트리거하는 조건이 있습니다.
@@ -110,8 +134,8 @@ subcollection: assistant
 
 ### 시작 노드 추가
 
-1.  {{site.data.keyword.conversationshort}} 도구에서 **대화** 탭을 클릭하십시오.
-1.  **작성**을 클릭하십시오. 다음과 같은 두 개의 노드가 표시됩니다.
+1.  **대화** 탭을 클릭합니다.
+1.  **대화 작성**을 클릭하십시오. 다음과 같은 두 개의 노드가 표시됩니다.
     - **Welcome**: 처음 어시스턴트를 사용할 때 사용자에게 표시되는 인사말을 포함합니다.
     - **Anything else**: 입력이 인식되지 않을 때 사용자에게 응답하는 데 사용되는 구가 포함됩니다.
 
@@ -120,7 +144,7 @@ subcollection: assistant
 1.  기본 응답을 `Welcome to the Watson Assistant tutorial!`이라는 텍스트로 대체하십시오.
 
     ![Welcome 노드 응답 편집](images/gs-edit-welcome.png)
-1.  ![닫기](images/close.png)를 클릭하여 편집 보기를 닫으십시오.
+1.  ![닫기](images/close.png)를 클릭하여 편집 보기를 닫습니다.
 
 `welcome` 노드에서 트리거되는 대화 노드를 작성했습니다. (`welcome`은 인텐트와 같이 작동하는 특수 조건이지만 `#`으로 시작하지 않습니다.) 이 노드는 새 대화가 시작될 때 트리거됩니다. 노드는 새 대화가 시작될 때 시스템에서 이 첫 번째 노드의 응답 섹션에 추가한 환영 메시지로 응답해야 하도록 지정합니다.
 
@@ -135,26 +159,24 @@ subcollection: assistant
 이제 `Welcome` 노드와 `Anything else` 노드 간에 인텐트를 처리하는 노드를 추가합니다.
 
 1.  **Welcome** 노드에서 추가 아이콘 ![추가 옵션](images/kabob.png)을 클릭한 다음 **아래에 노드 추가**를 선택하십시오.
-1.  이 노드의 **조건 입력** 필드에 `#General_Greetings`를 입력하십시오. 그런 다음 **`#General_Greetings`** 옵션을 선택하십시오.
-1.  `Good day to you!` 응답을 추가하십시오.
-1.  ![닫기](images/close.png)를 클릭하여 편집 보기를 닫으십시오.
+1.  이 노드의 **If assistant recognizes** 필드에 `#General_Greetings`를 입력을 시작하십시오. 그런 다음 **`#General_Greetings`** 옵션을 선택하십시오.
+1.  응답 텍스트 `Good day to you!`를 추가하십시오.
+1.  ![닫기](images/close.png)를 클릭하여 편집 보기를 닫습니다.
 
    ![대화에 추가된 일반 인사 노드](images/gs-add-greeting-node.png)
 
-1.  이 노드에서 추가 아이콘(![추가 옵션](images/kabob.png))을 클릭한 다음 **아래에 노드 추가**를 선택하여 피어 노드를 작성하십시오. 피어 노드에서 `#General_Ending`을 조건으로 지정하고 `OK. See you later.`를 응답으로 지정하십시오.
+1.  이 노드에서 추가 아이콘(![추가 옵션](images/kabob.png))을 클릭한 다음 **아래에 노드 추가**를 선택하여 피어 노드를 작성하십시오. 피어 노드에서 **If assistant recognizes** 필드에 `#General_Ending`을 지정하고 `OK. See you later.`를 응답 텍스트로 지정하십시오.
 
    ![대화에 종료 노드 추가](images/gs-add-ending-node.png)
 
-1.  ![닫기](images/close.png)를 클릭하여 편집 보기를 닫으십시오.
-
-   ![일반 종료 노드도 대화에 추가되었음을 표시합니다.](images/gs-ending-added.png)
+1.  ![닫기](images/close.png)를 클릭하여 편집 보기를 닫습니다.
 
 ### 인텐트 인식 테스트
 
 인사 및 종료 입력 모두를 인식하고 이에 응답하는 단순 대화를 빌드했습니다. 작동 방식을 확인합니다.
 
 1.  ![시험 사용](images/ask_watson.png) 아이콘을 클릭하여 "시험 사용" 분할창을 여십시오. 환영 메시지가 있습니다.
-1.  분할창의 맨 아래에 `Hello`를 입력하고 Enter를 누르십시오. 출력은 #hello 인텐트가 인식되었음을 표시하며 적절한 응답(`Good day to you.`)이 나타납니다.
+1.  분할창의 맨 아래에 `Hello`를 입력하고 Enter를 누르십시오. 출력은 `#General_Greetings` 인텐트가 인식되었음을 나타내며 적절한 응답(`Good day to you.`)이 표시됩니다.
 1.  다음 입력을 시도하십시오.
     - `bye`
     - `howdy`
@@ -170,47 +192,32 @@ subcollection: assistant
 
 완료되었습니다. 두 개의 인텐트와 이를 인식하는 대화가 포함된 단순 대화를 작성했습니다.
 
-## 5단계: 어시스턴트 작성
-{: #getting-started-create-assistant}
-
-[*어시스턴트*](/docs/services/assistant?topic=assistant-assistants)는 유용한 방법으로 고객과 상호작용할 수 있도록 하는 스킬을 추가하는 코그너티브 봇입니다.
-
-1.  **어시스턴트** 탭을 클릭하십시오.
-1.  **새로 작성**을 클릭하십시오.
-
-    ![어시스턴트 탭의 새로 작성 단추](images/gs-create-assistant.png)
-1.  어시스턴트의 이름을 `Watson Assistant tutorial`로 지정하십시오.
-1.  설명 필드에 `This is a sample assistant that I am creating to help me learn.`을 입력하십시오.
-1.  **작성**을 클릭하십시오.
-
-    ![새 어시스턴트 작성 완료](images/gs-create-assistant-done0.png)
-
-## 6단계: 어시스턴트에 스킬 추가
-{: #getting-started-add-skill-to-assistant}
-
-빌드한 대화 스킬을 작성한 어시스턴트에 추가하십시오.
-
-1.  새 어시스턴트 페이지에서 **스킬 추가**를 클릭하십시오.
-
-    {{site.data.keyword.conversationshort}} 서비스의 GA 버전으로 빌드된 작업공간을 작성했거나 이에 대한 개발자 역할 액세스 권한을 부여받은 경우 해당 작업공간이 스킬 페이지에 대화 스킬로 나열됩니다.
-    {: tip}
-
-    ![어시스턴트 페이지의 스킬 추가 단추 표시](images/gs-add-skill.png)
-1.  이전에 작성한 스킬을 어시스턴트에 추가하도록 선택하십시오.
-
-## 7단계: 어시스턴트 통합
+## 6단계: 어시스턴트 통합
 {: #getting-started-integrate-assistant}
 
-이제 단순 대화 교환에 참여할 수 있는 어시스턴트가 있으므로 이를 테스트할 수 있는 공용 웹 페이지에 공개하십시오. 서비스에서 미리보기 링크라고 하는 기본 제공 통합을 제공합니다. 이 유형의 통합을 작성하면 어시스턴트를 IBM 브랜드 웹 페이지에서 호스팅되는 대화 위젯에 빌드합니다. 웹 페이지를 열고 어시스턴트와 대화하여 사용해 볼 수 있습니다.
+이제 단순 대화 교환에 참여할 수 있는 어시스턴트가 있으므로 이를 테스트하십시오.
 
-1.  **어시스턴트** 탭에서, 작성한 `Watson Assistant tutorial` 어시스턴트를 찾아 여십시오.
-1.  *통합* 영역에서 **통합 추가**를 클릭하십시오.
-1.  **미리보기 링크**를 찾고 **통합 선택**을 클릭하십시오.
+1.  **어시스턴트** 탭을 클릭하고 *My first assistant* 어시스턴트를 찾아 여십시오.
+1.  다음 중 하나를 수행하여 미리보기 링크 통합으로 어시스턴트를 테스트하십시오. 
 
-1.  페이지에 표시된 URL을 클릭하십시오.
+    미리보기 링크 통합은 어시스턴트를 IBM 브랜드 웹 페이지에서 호스팅되는 대화 위젯에 빌드합니다. 웹 페이지를 열고 어시스턴트와 대화하여 사용해 볼 수 있습니다.
 
-    페이지가 새 탭에서 열립니다.
-1.  어시스턴트에 `hello`라고 말하고 응답하는 것을 지켜보십시오. 어시스턴트를 사용해 보려는 다른 사용자와 URL을 공유할 수 있습니다.
+    - 어시스턴트가 작성되었으면 미리보기 링크 통합을 추가해야 합니다. *통합* 영역에서 **통합 추가**를 클릭한 후 **미리보기 링크**를 클릭하십시오. **작성**을 클릭하십시오.
+
+    - 어시스턴트를 직접 작성한 경우, 미리보기 링크 통합 타일을 클릭하여 여십시오. 
+    
+      사용자를 직접 어시스턴트를 작성하면 자동으로 미리보기 링크 통합이 생성됩니다. 
+
+1.  페이지에 표시된 URL을 클릭합니다.
+
+    테스트 웹 페이지가 새 탭에서 열립니다.
+1.  텍스트 필드에 `hello`를 입력하고 어시스턴트가 응답하는 것을 지켜보십시오.  
+
+    ![단일 대화 교환을 보여주는 미리보기 링크 통합의 위젯](images/gs-test-from-preview-link.png)
+
+    어시스턴트를 사용해 보려는 다른 사용자와 URL을 공유할 수 있습니다.
+
+1.  테스트 후, 웹 페이지를 닫으십시오. **X**를 클릭하여 미리보기 링크 통합 페이지를 닫으십시오.
 
 ## 다음 단계
 {: #getting-started-next-steps}

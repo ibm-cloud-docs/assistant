@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -34,7 +34,7 @@ Revise essas dicas de designers de diálogo experientes.
 ## Planejando o diálogo geral
 {: #dialog-tips-plan}
 
-- Planeje o design do diálogo que você deseja construir antes de incluir um único nó de diálogo na ferramenta. Faça um rascunho no papel, se necessário.
+- Planeje o design do diálogo que deseja construir antes de incluir um único nó de diálogo. Faça um rascunho no papel, se necessário.
 - Sempre que possível, baseie suas decisões de design em dados de evidências e comportamentos do mundo real. Não inclua nós para manipular uma situação que alguém *acha* que possa ocorrer.
 - Evite copiar processos de negócios como está. Eles são raramente conversacionais.
 - Se as pessoas já usam um processo, examine como elas abordam-no. As pessoas geralmente otimizam o processo de uma perspectiva de conversação.
@@ -50,7 +50,7 @@ Revise essas dicas de designers de diálogo experientes.
   Sabe-se o que o nó faz neste momento, mas daqui a meses você pode não saber. O seu eu futuro e quaisquer membros da equipe agradecerão a inclusão de um nome do nó descritivo. E o nome do nó é exibido no log, o que pode ajudar a depurar uma conversa posteriormente.
 - Para reunir as informações necessárias para executar uma tarefa, tente usar um nó com intervalos em vez de vários nós separados para extrair informações dos usuários. Consulte  [ Reunindo informações com slots ](/docs/services/assistant?topic=assistant-dialog-slots).
 - Para um fluxo do processo complexo, diga aos usuários sobre qualquer informação que eles precisarão fornecer no início do processo.
-- Entenda como o serviço percorre a árvore de diálogo e o impacto que as pastas, as ramificações, os saltos e as digressões têm na rota. Consulte  [ Fluxo de diálogo ](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-flow).
+- Entenda como seu assistente percorre a árvore de diálogo e o impacto que as pastas, ramificações, saltos e digressões têm na rota. Consulte  [ Fluxo de diálogo ](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-flow).
 - Não inclua salto-tos em todos os lugares. Eles aumentam a complexidade do fluxo de diálogo e tornam mais difícil depurar o diálogo posteriormente.
 - Para ir para um nó na mesma ramificação que o nó atual, use *Ignorar entrada do usuário* em vez de *Ir para*.
 
@@ -77,7 +77,10 @@ Pode ser difícil saber a sintaxe a ser usada em seu nó de diálogo para captur
 
 - **Retornando a entrada do usuário**: é possível capturar o texto exato proferido pelo usuário e retorná-lo em sua resposta. Use a expressão SpEL a seguir em uma resposta para repetir o texto que o usuário especificou de volta na resposta:
 
-  ` Você disse: <? input.text ?>.`
+  `You said: <? input.text ?>.`
+
+  Se a autocorreção estiver ligada e você desejar retornar a entrada original do usuário antes da correção, será possível usar `<? input.original_text ?>`. No entanto, certifique-se de usar uma condição de resposta que verifique se o campo `original_text` existe primeiro.
+  {: note}
 
 - **Determinando o número de palavras na entrada do usuário**: é possível executar qualquer um dos métodos de Sequência suportados no objeto input.text. Por exemplo, é possível descobrir quantas palavras há em uma elocução do usuário usando a expressão SpEL a seguir:
 
@@ -87,7 +90,7 @@ Pode ser difícil saber a sintaxe a ser usada em seu nó de diálogo para captur
 
 - **Lidando com múltiplas intenções**: um usuário insere a entrada que expressa um desejo de concluir duas tarefas separadas. `I want to open a savings account and apply for a credit card.` Como o diálogo reconhece e direciona ambas? Consulte a entrada [Perguntas compostas](https://sodoherty.ai/2017/02/06/compound-questions/){: new_window} do blog de Simon O'Doherty para estratégias que podem ser tentadas. (Simon é um desenvolvedor na equipe do {{site.data.keyword.conversationshort}}.)
 
-- **Lidando com intenções ambíguas**: um usuário insere uma entrada que expressa um desejo ambíguo o suficiente de que o serviço localize dois ou mais nós com intenções que podem potencialmente direcioná-lo. Como o diálogo sabe qual ramificação de diálogo seguir? Se você ativar a desambiguação, ela poderá mostrar aos usuários suas opções e solicitar ao usuário para selecionar a correta. Consulte  [ Desambiguação ](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation)  para obter mais detalhes.
+- **Lidando com intenções ambíguas**: um usuário insere uma entrada que expressa um desejo ambíguo o suficiente para que seu assistente localize dois ou mais nós com intenções que poderiam possivelmente atendê-lo. Como o diálogo sabe qual ramificação de diálogo seguir? Se você ativar a desambiguação, ela poderá mostrar aos usuários suas opções e solicitar ao usuário para selecionar a correta. Consulte  [ Desambiguação ](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation)  para obter mais detalhes.
 
 - **Manipulando múltiplas entidades na entrada**: se você deseja avaliar somente o valor da primeira instância detectada de um tipo de entidade, é possível usar a sintaxe `@entity == 'specific-value'` em vez do formato `@entity:(specific-value)`.
 
@@ -100,7 +103,7 @@ Pode ser difícil saber a sintaxe a ser usada em seu nó de diálogo para captur
 
   `@person:(O'Reilly)` e `$person:(O'Reilly)`
 
-  O serviço converte essas referências abreviadas para estas expressões SpEL integrais:
+  Seu assistente converte as referências abreviadas nestas expressões SpEL completas:
 
   `entities['person']?.contains('O''Reilly')` e `context['person'] == 'O''Reilly'`
 
@@ -113,7 +116,7 @@ Pode ser difícil saber a sintaxe a ser usada em seu nó de diálogo para captur
 
 - **Verificando valores de número**: ao comparar números, primeiro certifique-se de que a entidade ou a variável que você está verificando tenha um valor. Se a entidade ou a variável não tiver um valor numérico, ela será tratada como tendo um valor nulo (0) em uma comparação numérica.
 
-  Por exemplo, você deseja verificar se um valor de dólar que um usuário especificou na entrada do usuário é menor que 100. Se você usar a condição  ` @price < 100` e a entidade `@price` for nula, a condição será avaliada como `true` porque 0 é menor que 100, mesmo que o preço nunca tenha sido configurado. Para evitar esse tipo de resultado impreciso, use uma condição como `@price AND @price < 100`. Se `@price` não tem nenhum valor, essa condição retorna corretamente false.
+  Por exemplo, você deseja verificar se um valor de dólar que um usuário especificou na entrada do usuário é menor que 100. Se você usar a condição `@price < 100` e a entidade `@price` for nula, a condição será avaliada como `true` (porque 0 é menor que 100), mesmo que o preço nunca tenha sido configurado. Para evitar esse tipo de resultado impreciso, use uma condição como `@price AND @price < 100`. Se `@price` não tem nenhum valor, essa condição retorna corretamente false.
 
 - **Verificando intenções com um padrão de nome de intenção específico**: é possível usar uma condição que procura intenções que correspondem a um padrão. Por exemplo, para localizar quaisquer intenções detectadas com nomes de intenção que iniciam com 'User_', é possível usar uma sintaxe como esta na condição:
 

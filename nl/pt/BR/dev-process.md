@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-07-19"
 
 subcollection: assistant
 
@@ -25,7 +25,7 @@ subcollection: assistant
 # Processo de desenvolvimento
 {: #dev-process}
 
-Use a ferramenta {{site.data.keyword.conversationshort}} para alavancar a IA à medida que você constrói, implementa e melhora incrementalmente um assistente conversacional.
+Com o {{site.data.keyword.conversationshort}}, utilize a IA ao construir, implementar e aprimorar um assistente de conversação de forma incremental.
 {: shortdesc}
 
 ![Mostra o fluxo de etapas de desenvolvimento, iniciando com o desenvolvimento de dados de treinamento e terminando com a implementação para produção](images/dev-process.png)
@@ -35,10 +35,10 @@ Use a ferramenta {{site.data.keyword.conversationshort}} para alavancar a IA à 
 
 O fluxo de trabalho típico para um projeto de assistente inclui as etapas a seguir:
 
-1.  Defina um conjunto limitado de necessidades chave do cliente que você deseja que o assistente direcione em seu nome, incluindo todos os processos de negócios que ele possa iniciar ou concluir para os clientes.
-1.  Crie intenções que representem as necessidades do cliente que você identificou na etapa anterior. Por exemplo, intenções como `About_company` ou `#Place_order`.
+1.  Defina um conjunto limitado de necessidades chave do cliente que você deseja que o assistente direcione em seu nome, incluindo todos os processos de negócios que ele possa iniciar ou concluir para os clientes. Comece com pouco.
+1.  Crie intenções que representem as necessidades do cliente que você identificou na etapa anterior. Por exemplo, intenções como `#about_company` ou `#place_order`.
 
-    Use o recurso de recomendação de exemplo de intenção para extrair os logs existentes da central de atendimento para localizar exemplos do usuário de intenção ideal.
+    ![Somente nos planos Plus ou Premium](images/plus.png) Use o recurso de recomendações de intenção para explorar os logs existentes de sua central de atendimento e localizar intenções ideais para seu caso de uso. Consulte [Obter ajuda ao definir intenções](/docs/services/assistant?topic=assistant-intent-recommendations) para obter mais detalhes.
     {: tip}
 
 1.  Construa um diálogo que detecte as intenções definidas e direcione-as, seja com respostas simples ou com um fluxo de diálogo que colete mais informações primeiro.

@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-06-11"
 
 subcollection: assistant
+
 
 ---
 
@@ -28,7 +29,7 @@ subcollection: assistant
 IBM은 연령이나 능력에 관계없이 모든 사람이 액세스할 수 있는 제품을 제공하기 위해 노력하고 있습니다.
 {: shortdesc}
 
-{{site.data.keyword.conversationfull}} 도구에서는 표준 Windows 탐색 키를 사용합니다.
+{{site.data.keyword.conversationfull}}에서는 표준 Windows 탐색 키를 사용합니다.
 
 ## 제품 문서의 접근성 기능
 {: #accessibility-in-doc}

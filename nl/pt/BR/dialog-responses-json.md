@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-11"
 
 subcollection: assistant
 
@@ -166,7 +166,7 @@ Exibe um conjunto de botões ou uma lista suspensa que os usuários podem usar p
 | options[].label | sequência | O rótulo voltado ao usuário para a opção. | S     |
 | options[].value | objeto | Um objeto que define a resposta que será enviada para o serviço {{site.data.keyword.conversationshort}} se o usuário selecionar a opção. | S |
 | options [ ].value.input | objeto | Um objeto de entrada que inclui o texto de entrada correspondente à opção. | N |
-| options[].value.input.text | sequência | O texto que será enviado para o serviço para a opção. | N |
+| options[].value.input.text | sequência | O texto que será enviado ao seu assistente para a opção. | N |
 
 #### Exemplo
 {: #dialog-responses-json-option-example}

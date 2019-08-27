@@ -6,6 +6,7 @@ lastupdated: "2019-02-21"
 
 subcollection: assistant
 
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -28,4 +29,4 @@ subcollection: assistant
 Se i canali di integrazione disponibili non soddisfano le tue esigenze, puoi creare la tua applicazione client come interfaccia tra l'assistente e i tuoi utenti.
 {: shortdesc}
 
-Per ulteriori informazioni, vedi [Panoramica sull'API](/docs/services/assistant?topic=assistant-api-overview). 
+Per ulteriori informazioni, vedi [Panoramica sull'API](/docs/services/assistant?topic=assistant-api-overview).

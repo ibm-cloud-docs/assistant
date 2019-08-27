@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-01"
+lastupdated: "2019-05-29"
 
 subcollection: assistant
 
@@ -30,13 +30,23 @@ Slack es una aplicación de mensajería basada en la nube que ayuda a las person
 
 Después de configurar un conocimiento de diálogo y de añadirlo a un asistente, puede integrar el asistente con Slack.
 
+Cuando se integra, en función de los sucesos que configure el asistente para dar soporte, el asistente puede responder a las preguntas que se le preguntan en los mensajes directos o en los canales en los que se menciona directamente al asistente. 
+
+## Adición de la integración con Slack
+{: #deploy-slack-task}
+
 1.  En el separador Asistentes, pulse para abrir el mosaico del asistente que desea desplegar.
 
 1.  En la sección Integraciones, pulse **Añadir integración**.
 
-1.  Pulse el botón **Seleccionar integración** correspondiente a *Slack*.
+1.  Pulse **Slack**.
 
 1.  Siga las instrucciones que se proporcionan en la pantalla para completar el proceso de integración.
+
+    Elija uno o varios de los sucesos de suscripción siguientes para dar soporte a:
+
+    - `message.im`: el asistente responde cuando alguien inicia un mensaje directo con el asistente.
+    - `app_mentions`: el asistente responde cuando alguien menciona el asistente por su nombre en un canal.
 
 Si desea ver los pasos que sigue otro usuario para realizar el despliegue, vea este vídeo.
 
@@ -72,7 +82,7 @@ Para iniciar una conversación con el asistente, siga los pasos siguientes:
 1.  Pulse la aplicación que ha creado en la sección Apps.
 1.  Chatee con el asistente.
 
-La integración de Slack no procesa el nodo de bienvenida de su diálogo. El mensaje de bienvenida no se muestra en el canal de slack, al contrario que en el panel "Pruébelo" dentro de la herramienta o en la página web de integración de enlace de vista previa. No se activa desde aquí porque los nodos con la condición especial `welcome` se omiten en los flujos de diálogo iniciados por usuarios. Slack espera a que el usuario inicie la conversación. Si tiene que definir valores predeterminados para las variables de contexto al principio de la conversación, no las defina en el nodo de bienvenida. Consulte [Inicio del diálogo](/docs/services/assistant?topic=assistant-dialog-start) para obtener más información.
+La integración de Slack no procesa el nodo de bienvenida de su diálogo. El mensaje de bienvenida no se muestra en el canal de Slack, al contrario que en el panel "Pruébelo" o en la página web de integración de enlace de vista previa. No se activa desde aquí porque los nodos con la condición especial `welcome` se omiten en los flujos de diálogo iniciados por usuarios. Slack espera a que el usuario inicie la conversación. Si tiene que definir valores predeterminados para las variables de contexto al principio de la conversación, no las defina en el nodo de bienvenida. Consulte [Inicio del diálogo](/docs/services/assistant?topic=assistant-dialog-start) para obtener más información.
 {: note}
 
 El flujo de diálogo correspondiente a la sesión actual se reinicia después de 60 minutos de inactividad (5 minutos para los planes Lite y Estándar). Esto significa que si un usuario deja de interactuar con el asistente, después de 60 (o de 5) minutos, cualquier valor de variable de contexto que se haya definido durante la conversación anterior se establece en nulo o en sus valores predeterminados.

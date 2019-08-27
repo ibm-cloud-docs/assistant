@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-05-20"
 
 subcollection: assistant
 
@@ -25,16 +25,16 @@ subcollection: assistant
 # Langues prises en charge
 {: #language-support}
 
-Le service {{site.data.keyword.conversationshort}} prend en charge les langues indiquées ci-après. Certaines fonctions du service sont prises en charge à des degrés divers pour chaque langue.
+Le service {{site.data.keyword.conversationshort}} prend en charge les langues indiquées ci-après. Chaque fonction est prise en charge à un degré divers pour chaque langue.
 {: shortdesc}
 
 Dans les tableaux suivants, le niveau de prise en charge de la fonction et de la langue est indiqué selon les codes suivants :
 
-- **GA** : la fonction est officiellement disponible et prise en charge pour cette langue. A noter que les fonctions peuvent continuer d'être mises à jour alors qu'elles sont officiellement disponibles.
+- **GA** : la fonction est officiellement disponible et prise en charge pour cette langue. A noter que les fonctions peuvent continuer d'être mises à jour, y compris après leur commercialisation.
 - **Bêta** : la fonction est prise en charge uniquement en tant que version bêta et continue de faire l'objet de tests avant qu'elle ne soit officiellement disponible dans cette langue.
 - **NA** : la fonction n'est pas disponible dans cette langue.
 
-Le premier tableau indique le niveau de prise en charge de toutes les fonctions, à l'exception de celles liées aux intentions et aux entités, qui figurent dans les deuxième et troisième tableaux. 
+Le premier tableau indique le niveau de prise en charge de toutes les fonctions, à l'exception de celles liées aux intentions et aux entités, qui figurent dans les deuxième et troisième tableaux.
 
 **Tableau 1. Détails de la prise en charge des fonctions**
 
@@ -55,43 +55,81 @@ Le premier tableau indique le niveau de prise en charge de toutes les fonctions,
 | **Espagnol (es)**                   | GA | Bêta |
 {: caption="Détails de la prise en charge des fonctions" caption-side="top"}
 
-**Tableau 2. Détails de la prise en charge des fonctions d'intention**
+**Tableau 2a. Détails de la prise en charge des fonctions d'intention**
 
-| Langue | **[Absolute scoring et 'Mark as irrelevant'](/docs/services/assistant?topic=assistant-intents#intents-mark-irrelevant)** | **[Catalogue de contenu](/docs/services/assistant?topic=assistant-catalog)** | **[Recommandations d'exemples utilisateur](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations)** |
-|:---:|:---:|:---:|:---:|
-| **Anglais (en)**                   | GA | GA | Bêta |
-| **Arabe (ar)**                    | Bêta | GA | NA |
-| **Chinois (simplifié) (zh-cn)**   | GA | NA | NA |
-| **Chinois (traditionnel) (zh-tw)**  | Bêta | NA | NA |
-| **Tchèque (cs)**                     | GA | NA | NA |
-| **Néerlandais (nl)**                     | GA | NA | NA |
-| **Français (fr)**                    | GA | GA | NA |
-| **Allemand (de)**                    | GA | GA | NA |
-| **Italien (it)**                   | GA | GA | NA |
-| **Japonais (ja)**                  | GA | GA | NA |
-| **Coréen (ko)**                    | GA | NA | NA |
-| **Portugais (brésil) (pt-br)** | GA | GA | NA |
-| **Espagnol (es)**                   | GA | GA | NA |
+| Langue | **[Absolute scoring](/docs/services/assistant?topic=assistant-intents#intents-absolute-scoring)** et **[Mark as irrelevant](/docs/services/assistant?topic=assistant-logs#logs-mark-irrelevant)** | **[Catalogue de contenu](/docs/services/assistant?topic=assistant-catalog)** |
+|:---:|:---:|:---:|
+| **Anglais (en)**                   | GA | GA |
+| **Arabe (ar)**                    | Bêta | GA |
+| **Chinois (simplifié) (zh-cn)**   | GA | NA |
+| **Chinois (traditionnel) (zh-tw)**  | Bêta | NA |
+| **Tchèque (cs)**                     | GA | NA |
+| **Néerlandais (nl)**                     | GA | NA |
+| **Français (fr)**                    | GA | GA |
+| **Allemand (de)**                    | GA | GA |
+| **Italien (it)**                   | GA | GA |
+| **Japonais (ja)**                  | GA | GA |
+| **Coréen (ko)**                    | GA | NA |
+| **Portugais (brésil) (pt-br)** | GA | GA |
+| **Espagnol (es)**                   | GA | GA |
 {: caption="Détails de la prise en charge des fonctions d'intention" caption-side="top"}
+
+**Tableau 2b. Détails de la prise en charge des fonctions d'intention (suite)**
+
+| Langue | **[Recommandations d'exemples utilisateur](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations)** | **[Recommandations d'intention](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-intent-recommendations)** |
+|:---:|:---:|
+| **Anglais (en)**                   | GA | GA |
+| **Arabe (ar)**                    | NA | NA |
+| **Chinois (simplifié) (zh-cn)**   | NA | NA |
+| **Chinois (traditionnel) (zh-tw)**  | NA | NA |
+| **Tchèque (cs)**                     | NA | NA |
+| **Néerlandais (nl)**                     | NA | NA |
+| **Français (fr)**                    | NA | NA |
+| **Allemand (de)**                    | NA | NA |
+| **Italien (it)**                   | NA | NA |
+| **Japonais (ja)**                  | GA | NA |
+| **Coréen (ko)**                    | NA | NA |
+| **Portugais (brésil) (pt-br)** | NA | NA |
+| **Espagnol (es)**                   | NA | NA |
+{: caption="Détails de la prise en charge des fonctions d'intention (suite)" caption-side="top"}
 
 **Tableau 3. Détails de la prise en charge des fonctions d'entité**
 
-| Langue | **Entités de système ([nombre](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-number), [devise](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-currency), [pourcentage](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-percentage), [date, heure](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-date-time))** | **[Correspondance partielle d'entités](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Entités contextuelles](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based)** | **[Recommandations de synonymes](/docs/services/assistant?topic=assistant-entities#entities-synonyms)**
-|:---|:---:|:---:|:---:|:---:|
-| **Anglais (en)**                   | GA, Bêta ([emplacement](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-location), [personne](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-person)) | GA | Bêta | GA |
-| **Arabe (ar)**                    | Bêta | GA (Fautes d'orthographe uniquement) | NA | NA |
-| **Chinois (simplifié) (zh-cn)**   | GA | NA | NA | NA |
-| **Chinois (traditionnel) (zh-tw)**  | Bêta | NA | NA | NA |
-| **Tchèque (cs)**                     | GA | GA (Fautes d'orthographe uniquement) | NA | NA |
-| **Néerlandais (nl)**                     | GA | GA (Fautes d'orthographe uniquement) | NA | NA |
-| **Français (fr)**                    | GA | GA (Fautes d'orthographe uniquement) | NA | GA |
-| **Allemand (de)**                    | GA | GA (Fautes d'orthographe uniquement) | NA | NA |
-| **Italien (it)**                   | GA | GA (Fautes d'orthographe uniquement) | NA | NA |
-| **Japonais (ja)**                  | GA | GA (Fautes d'orthographe uniquement) | NA | GA |
-| **Coréen (ko)**                    | GA | GA (Fautes d'orthographe uniquement) | NA | NA |
-| **Portugais (brésil) (pt-br)** | GA | GA (Fautes d'orthographe uniquement) | NA | NA |
-| **Espagnol (es)**                   | GA | GA (Fautes d'orthographe uniquement) | NA | GA |
+| Langue | **[Correspondance partielle d'entités](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Entités contextuelles](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based)** | **[Recommandations de synonymes](/docs/services/assistant?topic=assistant-entities#entities-synonyms)** |
+|:---:|:---:|:---:|:---:|
+| **Anglais (en)**                   | GA | Bêta | GA |
+| **Arabe (ar)**                    | GA (Fautes d'orthographe uniquement) | NA | NA |
+| **Chinois (simplifié) (zh-cn)**   | NA | NA | NA |
+| **Chinois (traditionnel) (zh-tw)**  | NA | NA | NA |
+| **Tchèque (cs)**                     | GA (Fautes d'orthographe uniquement) | NA | NA |
+| **Néerlandais (nl)**                     | GA (Fautes d'orthographe uniquement) | NA | NA |
+| **Français (fr)**                    | GA (Fautes d'orthographe uniquement) | NA | GA |
+| **Allemand (de)**                    | GA (Fautes d'orthographe uniquement) | NA | NA |
+| **Italien (it)**                   | GA (Fautes d'orthographe uniquement) | NA | NA |
+| **Japonais (ja)**                  | GA (Fautes d'orthographe uniquement) | NA | GA |
+| **Coréen (ko)**                    | GA (Fautes d'orthographe uniquement) | NA | NA |
+| **Portugais (brésil) (pt-br)** | GA (Fautes d'orthographe uniquement) | NA | NA |
+| **Espagnol (es)**                   | GA (Fautes d'orthographe uniquement) | NA | GA |
 {: caption="Détails de la prise en charge des fonctions d'entité" caption-side="top"}
+
+**Tableau 4. Détails de la prise en charge des fonctions d'entité de système**
+
+| Langue | **Entités de système ([nombre](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-number), [devise](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-currency), [pourcentage](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-percentage), [date, heure](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-date-time))** | **[Nouvelles entités de système](/docs/services/assistant?topic=assistant-beta-system-entities)** |
+|:---|:---:|:---:|
+| **Anglais (en)**                   | GA, Bêta ([emplacement](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-location), [personne](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-person)) | Bêta |
+| **Arabe (ar)**                    | Bêta | NA |
+| **Chinois (simplifié) (zh-cn)**   | GA | NA |
+| **Chinois (traditionnel) (zh-tw)**  | Bêta | NA |
+| **Tchèque (cs)**                     | GA | NA |
+| **Néerlandais (nl)**                     | GA | NA |
+| **Français (fr)**                    | GA | NA |
+| **Allemand (de)**                    | GA | Bêta |
+| **Italien (it)**                   | GA | NA |
+| **Japonais (ja)**                  | GA | NA |
+| **Coréen (ko)**                    | GA | NA |
+| **Portugais (brésil) (pt-br)** | GA | NA |
+| **Espagnol (es)**                   | GA | NA |
+{: caption="Détails de la prise en charge des fonctions d'entité de système" caption-side="top"}
 
 **Remarque :** le service {{site.data.keyword.conversationshort}} prend en charge plusieurs langues, mais l'interface de l'outil proprement dite (descriptions, libellés, etc.) est en anglais. Toutes les langues prises en charge peuvent être utilisées pour la saisie et l'entraînement via l'interface en anglais.
 
@@ -130,9 +168,9 @@ Lorsque vous avez terminé de choisir vos options, cliquez sur **Update** pour l
 
 Dans un paramétrage conversationnel, les utilisateurs peuvent ou non utiliser des accents lors de l'interaction avec le service {{site.data.keyword.conversationshort}}. Ainsi, les versions accentuées et non accentuées de mots peuvent être interprétées de la même manière pour la détection d'intention et la reconnaissance d'entité.
 
-Toutefois, dans certaines langues, telles que l'espagnol, certains accents peuvent modifier le sens de l'entité. Par conséquent, pour la détection d'entité, même si l'entité d'origine comporte implicitement un accent, le service peut aussi établir une correspondance avec la version non accentuée de la même entité, mais avec une cote de confiance légèrement inférieure.
+Toutefois, dans certaines langues, telles que l'espagnol, certains accents peuvent modifier le sens de l'entité. Par conséquent, pour la détection d'entité, même si l'entité d'origine comporte implicitement un accent, l'assistant peut aussi établir une correspondance avec la version non accentuée de la même entité, mais avec une cote de confiance légèrement inférieure.
 
-Par exemple, avec le mot "barrió", qui est accentué et correspond au participe passé du verbe "barrer" (balayer, en français), le service peut également établir une correspondance avec le "barrio" (quartier, en français), mais avec une cote de confiance légèrement inférieure.
+Par exemple, avec le mot "barrió", qui est accentué et correspond au participe passé du verbe "barrer" (balayer, en français), l'assistant peut également établir une correspondance avec le "barrio" (quartier, en français), mais avec une cote de confiance légèrement inférieure.
 
 Le système fournit la cote de confiance la plus élevée dans les entités pour lesquelles des correspondances exactes sont trouvées. Par exemple, `barrio` ne sera pas détecté si `barrió` figure dans l'ensemble d'entraînement et `barrió` ne sera pas détecté si `barrio` figure dans l'ensemble d'entraînement.
 

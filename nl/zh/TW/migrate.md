@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-02"
 
 subcollection: assistant
 
@@ -22,7 +22,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# 移轉
+# 從 Cloud Foundry 移轉
 {: #migrate}
 
 移轉 {{site.data.keyword.conversationshort}} 服務實例，將它從其現行 Cloud Foundry 組織及空間移至資源群組。
@@ -52,6 +52,11 @@ subcollection: assistant
 
     如需提示，請參閱[在資源群組中組織資源的最佳作法 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](/docs/resources?topic=resources-bp_resourcegroups)。
 
+    您可以使用一個服務實例來開發、測試及部署助理，因此不要為不同類型的部署環境建立不同的資源群組。
+        {:tip}
+
+    使用「超值」方案，您可以建立多個實例。不過，實例必須全部建立在相同的資源群組中。
+
 1.  從 IBM Cloud 儀表板服務清單中，對您要移轉的實例按一下「移轉」圖示 ![移轉](images/migrate.svg)，然後按一下蹦現畫面中的**移轉**。
 
     在 2018 年 5 月 7 日之前於雪梨資料中心或在 2018 年 12 月 13 日之前於倫敦資料中心建立的所有服務實例，都已聯合至達拉斯資料中心。移轉基於雪梨或基於倫敦的 Cloud Foundry 服務實例時，它會轉換為在達拉斯管理的資源。
@@ -64,6 +69,28 @@ subcollection: assistant
 1.  按一下**移轉**。
 
     當處理程序完成時，會顯示一則訊息。如果您有其他要移轉的服務實例，可以繼續移轉其他服務實例，或按一下**完成**。
+
+1.  **超值方案一次性步驟**：如果您要移轉的服務實例是作為超值方案的一部分所建立，則必須通知服務團隊，您要移轉超值方案實例。若要這樣做，請在 [IBM Cloud 支援中心 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://cloud.ibm.com/unifiedsupport/supportcenter){: new_window} 中建立案例。
+
+    服務團隊需要代表您執行其他一些步驟。請將下列資訊新增至案例：
+
+    - 管理服務實例的地區，如達拉斯或法蘭克福。
+    - 資源群組名稱
+    - 資源群組 ID
+
+      如果您不知道該 ID，請開啟 IBM Cloud 指令行介面 (CLI) 工具，並輸入下列指令：
+
+      ```bash
+      ibmcloud resource groups
+      ```
+      {: codeblock}
+
+      回應會顯示資源群組的 ID。如需 CLI 指令的相關資訊，請參閱[使用資源和資源群組 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://cloud.ibm.com/docs/cli?topic=cloud-cli-ibmcloud_commands_resource#ibmcloud_commands_resource)。
+
+      提交案例後，請給支援團隊最長 24 個小時的時間，讓其能完成支援超值方案移轉所需執行的工作。移轉處理程序期間不會中斷服務。
+
+      只有在第一次移轉超值方案的服務實例時，才需要執行此步驟。對屬於相同方案的其他服務實例按一下*移轉* 時，這些服務實例將移轉到相同的資源群組，而不需要服務團隊的任何參與。
+      {: important}
 
 您已移轉的舊（基於 Cloud Foundry 組織）服務實例會繼續列在「儀表板」的 Cloud Foundry 服務區段中，現在它顯示為該實例的新（基於資源群組）版本的*別名*。
 

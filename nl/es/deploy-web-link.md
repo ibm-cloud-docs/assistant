@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-11"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -30,7 +30,7 @@ Si no inhabilita el enlace de vista previa, el asistente estará disponible inme
 
 El asistente se implementa automáticamente como un widget de conversación integrado en una página web sencilla de IBM. Puede probar el conocimiento de diálogo que ha añadido al asistente especificando el texto en el widget de conversación. También puede compartir el URL de la página con otras personas para obtener ayuda en las pruebas y para recibir comentarios sobre el asistente.
 
-A diferencia de cuando se prueba utilizando el panel "Pruébelo" de la herramienta, cualquier llamada de API resultante de las interacciones con el asistente alojado por el URL de enlace de vista previa no incurre en ningún cargo.
+A diferencia de cuando se prueba utilizando el panel "Pruébelo", cualquier llamada de API resultante de las interacciones con el asistente alojado por el URL de enlace de vista previa no incurre en ningún cargo.
 
 ## Utilización de la integración de enlace de vista previa para probar el asistente
 {: #deploy-web-link-try}
@@ -41,7 +41,7 @@ Para probar el asistente desde un widget de conversación alojado en la web, sig
 
 1.  En la sección *Integraciones*, pulse el icono **Enlace de vista previa**.
 
-    Si no ha habilitado el enlace de vista previa cuando ha creado el asistente, pulse **Añadir integración**, pulse el mosaico de integración **Enlace de vista previa** y luego pulse **Crear**.
+    Si no ha habilitado el enlace de vista previa cuando ha creado el asistente, pulse **Añadir integración**, y luego en el icono de integración **Vista previa de enlace**.
 
 1.  **Opcional**: cambie el nombre y la descripción de la página web de la vista previa.
 
@@ -60,7 +60,7 @@ Para probar el asistente desde un widget de conversación alojado en la web, sig
 
 1.  Después de la prueba, puede cerrar el separador del navegador para salir de la página web pública.
 
-1.  En la herramienta, pulse **Guardar cambios** para guardar las ediciones que haya realizado en la integración del enlace de vista previa y cerrar la página o bien pulse **X** para cerrar la página sin guardar.
+1.  Pulse **Guardar cambios** para guardar las ediciones que haya realizado en la integración del enlace de vista previa y cerrar la página o bien pulse **X** para cerrar la página sin guardar.
 
 ## Consideraciones sobre el diálogo
 {: #deploy-web-link-dialog}

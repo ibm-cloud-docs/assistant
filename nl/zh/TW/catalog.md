@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
+
 
 ---
 
@@ -33,9 +34,7 @@ subcollection: assistant
 ## 將內容型錄新增至對話技能
 {: #catalog-add}
 
-使用 {{site.data.keyword.conversationshort}} 工具來新增內容型錄。
-
-1.  在 {{site.data.keyword.conversationshort}} 工具中，開啟對話技能，然後按一下**內容型錄**標籤。
+1.  開啟對話技能，然後按一下**內容型錄**標籤。
 
 1.  選取內容型錄（例如*銀行業*），以查看與它一起提供的目的。
 

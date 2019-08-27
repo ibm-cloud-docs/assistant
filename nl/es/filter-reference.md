@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-03-29"
 
 subcollection: assistant
 
@@ -27,9 +27,9 @@ subcollection: assistant
 
 La API REST del servicio {{site.data.keyword.conversationshort}} ofrece potentes funciones de búsqueda por las consultas de filtro. Puede utilizar el parámetro `filter` de la API /logs para buscar en el registro del conocimiento los sucesos que coinciden con una consulta especificada.
 
-El parámetro `filter` es una consulta que se puede colocar en memoria caché que limita los resultados a aquellos que coinciden con el filtro especificado. Puede filtrar según cualquier objeto que forme parte del modelo de respuesta JSON (por ejemplo, el texto de entrada de usuario, las intenciones y entidades detectadas o la puntuación de confianza).
+El parámetro `filter` es una consulta que se puede colocar en memoria caché que limita los resultados a aquellos que coinciden con el filtro especificado. Puede filtrar según varios objetos que formen parte del modelo de respuesta JSON (por ejemplo, el texto de entrada de usuario, las intenciones y entidades detectadas o la puntuación de confianza).
 
-Para ver ejemplos de distintos tipos de consultas de filtro, consulte [Ejemplos](#filter-reference-examples).
+Para ver ejemplos de consultas de filtro, consulte [Ejemplos](#filter-reference-examples).
 
 Para obtener más información sobre el método /logs `GET` y su modelo de respuesta, revise la [Consulta de API ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com/apidocs/assistant?curl=#list-log-events-in-a-workspace){: new_window}.
 
@@ -48,7 +48,8 @@ En el ejemplo siguiente se muestra el formato general de una consulta de filtro:
 
 El filtrado por intención o entidad requiere una sintaxis ligeramente diferente de la del filtrado por otros campos. Para obtener más información, consulte [Filtrado por intención o entidad](#filter-reference-intent-entity).
 
-**Nota:** En la sintaxis de la consulta de filtro se utilizan algunos caracteres que no están permitidos en consultas HTTP. Asegúrese de que todos los caracteres especiales, incluidos espacios y comillas, estén codificados en URL cuando se envíen como parte de una consulta HTTP. Por ejemplo, el filtro `response_timestamp<2016-11-01` se especificaría como `response_timestamp%3C2016-11-01`.
+**Nota:** En la sintaxis de la consulta de filtro se utilizan algunos caracteres que no están permitidos en consultas HTTP. Asegúrese de que todos los caracteres especiales, incluidos espacios y comillas, estén codificados en URL cuando se envíen como parte de una consulta HTTP. Por ejemplo, el filtro `response_timestamp<2016-11-01` se especificaría como
+`response_timestamp%3C2016-11-01`.
 
 ## Operadores
 {: #filter-reference-operators}
@@ -56,7 +57,7 @@ El filtrado por intención o entidad requiere una sintaxis ligeramente diferente
 Puede utilizar los operadores siguientes en la consulta de filtro.
 
 | Operador | Descripción |
-|:-------------------:|-----------|
+|:-------------------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `:` | Operador de consulta de coincidencia aproximada. Utilice el prefijo `:` antes del término de consulta si desea que haya coincidencia con cualquier valor que contenga el término de consulta o una variante gramatical del mismo. La coincidencia aproximada está disponible para texto de entrada de usuario, texto de salida de respuesta y valores de entidad. |
 | `::` | Operador de consulta de coincidencia exacta. Utilice el prefijo `::` antes del término de consulta si desea que haya coincidencia únicamente con los valores que sean exactamente iguales al término de consulta. |
 | `:!` | Operador de consulta de coincidencia aproximada negativa. Utilice el prefijo `:!` antes del término de consulta si desea que haya coincidencia únicamente con los valores que _no_ contengan el término de consulta ni una variante gramatical del mismo. |
@@ -110,6 +111,19 @@ Para filtrar por cualquier otro campo de los datos de registro, especifique la u
     }
   }
 ```
+<!-- {data-copy=false} -->
+
+El filtrado no está disponible para todos los campos. Puede filtrar por los campos siguientes:
+
+- request.context.metadata.deployment
+- request.input.text
+- response.entities
+- response.input.text
+- response.intents
+- response.top_intent
+- meta.message.entities_count
+
+Actualmente no hay soporte para el filtrado por otros campos.
 
 ## Ejemplos
 {: #filter-reference-examples}
@@ -135,3 +149,4 @@ En los ejemplos siguientes se ilustran distintos tipos de consultas que utilizan
 | Un nombre de intención de la respuesta coincide exactamente con `hello` o con `goodbye`. | `response.intents:intent::(hello|goodbye)` |
 | Una intención de la respuesta tiene el nombre `hello` y un valor de confianza igual o mayor que 0,8. | `response.intents:(intent:hello,confidence>=0.8)` |
 | Un nombre de intención de la respuesta coincide exactamente con `order`, y un nombre de entidad de la respuesta coincide exactamente con `beverage`. | `[response.intents:intent::order,response.entities:entity::beverage]` |
+<!-- -->

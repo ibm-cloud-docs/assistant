@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-06-11"
 
 subcollection: assistant
+
 
 ---
 
@@ -28,7 +29,7 @@ subcollection: assistant
 IBM se esfuerza por proporcionar productos con un acceso utilizable para todo el mundo, independientemente de la edad o aptitudes.
 {: shortdesc}
 
-La herramienta {{site.data.keyword.conversationfull}} utiliza las teclas de navegación estándar de Windows.
+{{site.data.keyword.conversationfull}} utiliza las teclas de navegación estándar de Windows.
 
 ## Funciones de accesibilidad en la documentación del producto
 {: #accessibility-in-doc}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-08-05"
 
 subcollection: assistant
 
@@ -37,10 +37,13 @@ subcollection: assistant
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="스킬 버전 작성" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/FDolnBxvcZ8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
+버전이 어시스턴트를 빌드하는 데 사용하는 워크플로우를 개선할 수 있는 방법에 대해 자세히 알아보려면
+[이 블로그 게시물 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://medium.com/ibm-watson/watson-assistant-versions-announcement-d60869b1f5f){: new_window}을 읽으십시오. 
+
 ## 버전 작성
 {: #versions-create}
 
-{{site.data.keyword.conversationshort}} 도구를 사용하여 한 번에 한 버전의 대화 스킬만 편집할 수 있습니다. 진행 중인 버전을 *개발* 버전이라고 합니다.
+한 번에 한 버전의 대화 스킬만 편집할 수 있습니다. 진행 중인 버전을 *개발* 버전이라고 합니다.
 
 버전을 저장하면 개발 버전에 적용한 스킬 설정도 저장됩니다.
 
@@ -52,12 +55,12 @@ subcollection: assistant
 
 1.  **저장**을 클릭하십시오.
 
-현재 스킬의 스냅샷이 작성되고 새 버전으로 저장됩니다. 개발 버전의 스킬에 남아 있습니다. 변경사항이 저장한 버전이 아니라 개발 버전에 계속 적용됩니다. 저장한 버전에 액세스하려면 **버전 히스토리** 페이지로 이동하십시오.
+현재 스킬의 스냅샷이 작성되고 새 버전으로 저장됩니다. 개발 버전의 스킬에 남아 있습니다. 변경사항이 저장한 버전이 아니라 개발 버전에 계속 적용됩니다. 저장한 버전에 액세스하려면 **버전** 페이지로 이동하십시오.
 
 ## 스킬 버전 배치
 {: #versions-deploy}
 
-1.  스킬의 헤더에서 **버전 히스토리** 탭을 클릭하십시오.
+1.  스킬의 헤더에서 **버전** 탭을 클릭하십시오.
 1.  배치할 버전에서 ![클릭하여 조치 보기](images/kebab-react.png) 아이콘을 클릭한 후 **어시스턴트에 지정**을 선택하십시오.
 
     이 버전에 링크할 수 있는 어시스턴트 목록이 표시됩니다. 이 목록은 연관된 스킬이 없거나 이 스킬의 다른 버전과 연관된 어시스턴트로 제한됩니다.
@@ -67,15 +70,16 @@ subcollection: assistant
 {: important}
 
 ## 스킬 버전 한계
-{: #skill-version-limits}
+{: #versions-limits}
 
 단일 스킬에 대해 작성할 수 있는 버전의 수는 {{site.data.keyword.conversationshort}} 플랜에 따라 다릅니다.
 
-| 서비스 플랜      | 스킬당 버전 수     |
+| 서비스 플랜     | 스킬당 버전 수 |
 |------------------|-------------------:|
-| 프리미엄         |                 50 |
-| 플러스           |                 10 |
-| 표준             |                 10 |
+| Premium          |                 50 |
+| Plus             |                 10 |
+| 표준         |                 10 |
+| Plus Trial   |                 10 |
 | Lite             |                  0 |
 {: caption="서비스 플랜 세부사항" caption-side="top"}
 
@@ -98,7 +102,7 @@ subcollection: assistant
     지금 스킬의 버전을 저장하십시오. 그렇지 않으면 다음 단계를 수행할 때 작업이 손실됩니다.
     {: important}
 
-1.  편집할 버전에서 **스킬 조치** ![스킬 조치](images/kebab-react.png) 아이콘을 클릭한 후 **개발에 복사**를 선택하고 조치를 확인하십시오.
+1.  편집할 버전에서 **스킬 조치** ![스킬 조치](images/kebab-react.png) 아이콘을 클릭한 후 **이 버전으로 되돌리기**를 선택하고 조치를 확인하십시오.
 
     페이지가 새로 고쳐지고 버전이 작성된 당시의 스킬 상태로 되돌아갑니다.
 

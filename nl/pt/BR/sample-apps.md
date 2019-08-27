@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-04-08"
 
 subcollection: assistant
 
@@ -40,7 +40,7 @@ O aplicativo Node.js mostra como o {{site.data.keyword.conversationshort}} usa i
 
 Esse aplicativo Node.js é um exemplo totalmente desenvolvido do tipo de aplicativo que você pode construir com {{site.data.keyword.conversationshort}} que usa intenções, entidades e diálogo.
 
-[Visualize a demo ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://watson-assistant-demo.ng.bluemix.net/){: new_window}.
+[Consulte a demo ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://watson-assistant-demo.ng.bluemix.net/){: new_window} ou [bifurcar o código ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/watson-developer-cloud/assistant-demo){: new_window}.
 
 ## {{site.data.keyword.conversationshort}} e {{site.data.keyword.discoveryshort}}
 {: #sample-apps-with-discovery}

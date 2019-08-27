@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-05-20"
 
 subcollection: assistant
 
@@ -25,7 +25,7 @@ subcollection: assistant
 # Lingue supportate
 {: #language-support}
 
-Il servizio {{site.data.keyword.conversationshort}} supporta le lingue elencate. Le singole funzioni del servizio sono supportate in misura maggiore o minore per ciascuna lingua.
+Il servizio {{site.data.keyword.conversationshort}} supporta le lingue elencate. Le singole funzioni sono supportate in misura maggiore o minore per ciascuna lingua.
 {: shortdesc}
 
 Nelle seguenti tabelle, il livello di supporto per lingua e funzione è indicato da questi codici:
@@ -53,45 +53,83 @@ La prima tabella mostra il livello di supporto per tutte le funzioni, con l'ecce
 | **Coreano (ko)**                    | GA | Beta |
 | **Portoghese (brasiliano) (pt-br)** | GA | Beta |
 | **Spagnolo (es)**                   | GA | Beta |
-{: caption="Dettagli del supporto della funzione " caption-side="top"}
+{: caption="Dettagli del supporto della funzione" caption-side="top"}
 
-**Tabella 2. Dettagli del supporto della funzione dell'intento**
+**Tabella 2a. Dettagli del supporto della funzione dell'intento**
 
-| Lingua | **[Punteggio assoluto e 'Contrassegna come irrilevante'](/docs/services/assistant?topic=assistant-intents#intents-mark-irrelevant)** | **[Catalogo contenuto](/docs/services/assistant?topic=assistant-catalog)** | **[Consigli sugli esempi utente](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations)** |
-|:---:|:---:|:---:|:---:|
-| **Inglese (en)**                   | GA | GA | Beta |
-| **Arabo (ar)**                    | Beta | GA | ND |
-| **Cinese (semplificato) (zh-cn)**   | GA | ND | ND |
-| **Cinese (tradizionale) (zh-tw)**  | Beta | ND | ND |
-| **Ceco (cs)**                     | GA | ND | ND |
-| **Olandese (nl)**                     | GA | ND | ND |
-| **Francese (fr)**                    | GA | GA | ND |
-| **Tedesco (de)**                    | GA | GA | ND |
-| **Italiano (it)**                   | GA | GA | ND |
-| **Giapponese (ja)**                  | GA | GA | ND |
-| **Coreano (ko)**                    | GA | ND | ND |
-| **Portoghese (brasiliano) (pt-br)** | GA | GA | ND |
-| **Spagnolo (es)**                   | GA | GA | ND |
-{: caption="Dettagli del supporto della funzione dell'intento " caption-side="top"}
+| Lingua | **[Punteggio assoluto](/docs/services/assistant?topic=assistant-intents#intents-absolute-scoring)** e **[Contrassegna come irrilevante](/docs/services/assistant?topic=assistant-logs#logs-mark-irrelevant)** | **[Catalogo contenuto](/docs/services/assistant?topic=assistant-catalog)** |
+|:---:|:---:|:---:|
+| **Inglese (en)**                   | GA | GA |
+| **Arabo (ar)**                    | Beta | GA |
+| **Cinese (semplificato) (zh-cn)**   | GA | ND |
+| **Cinese (tradizionale) (zh-tw)**  | Beta | ND |
+| **Ceco (cs)**                     | GA | ND |
+| **Olandese (nl)**                     | GA | ND |
+| **Francese (fr)**                    | GA | GA |
+| **Tedesco (de)**                    | GA | GA |
+| **Italiano (it)**                   | GA | GA |
+| **Giapponese (ja)**                  | GA | GA |
+| **Coreano (ko)**                    | GA | ND |
+| **Portoghese (brasiliano) (pt-br)** | GA | GA |
+| **Spagnolo (es)**                   | GA | GA |
+{: caption="Dettagli del supporto della funzione dell'intento" caption-side="top"}
+
+**Tabella 2b. Dettagli del supporto della funzione dell'intento - continua**
+
+| Lingua | **[Consigli sugli esempi utente](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations)** | **[Consigli sull'intento](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-intent-recommendations)** |
+|:---:|:---:|
+| **Inglese (en)**                   | GA | GA |
+| **Arabo (ar)**                    | ND | ND |
+| **Cinese (semplificato) (zh-cn)**   | ND | ND |
+| **Cinese (tradizionale) (zh-tw)**  | ND | ND |
+| **Ceco (cs)**                     | ND | ND |
+| **Olandese (nl)**                     | ND | ND |
+| **Francese (fr)**                    | ND | ND |
+| **Tedesco (de)**                    | ND | ND |
+| **Italiano (it)**                   | ND | ND |
+| **Giapponese (ja)**                  | GA | ND |
+| **Coreano (ko)**                    | ND | ND |
+| **Portoghese (brasiliano) (pt-br)** | ND | ND |
+| **Spagnolo (es)**                   | ND | ND |
+{: caption="Dettagli del supporto della funzione dell'intento - continua " caption-side="top"}
 
 **Tabella 3. Dettagli del supporto della funzione dell'entità**
 
-| Lingua | **Entità di sistema ([numero](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-number), [valuta](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-currency), [percentuale](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-percentage), [data, ora](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-date-time))** | **[Corrispondenza fuzzy di entità](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Entità contestuali](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based)** | **[Consigli sui sinonimi](/docs/services/assistant?topic=assistant-entities#entities-synonyms)**
-|:---|:---:|:---:|:---:|:---:|
-| **Inglese (en)**                   | GA, Beta ([posizione](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-location), [persona](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-person)) | GA | Beta | GA |
-| **Arabo (ar)**                    | Beta |GA (Solo errore di ortografia) | ND | ND |
-| **Cinese (semplificato) (zh-cn)**   | GA | ND | ND | ND |
-| **Cinese (tradizionale) (zh-tw)**  | Beta | ND | ND | ND |
-| **Ceco (cs)**                     | GA | GA (Solo errore di ortografia) | ND | ND |
-| **Olandese (nl)**                     | GA | GA (Solo errore di ortografia) | ND | ND |
-| **Francese (fr)**                    | GA | GA (Solo errore di ortografia) | ND | GA |
-| **Tedesco (de)**                    | GA | GA (Solo errore di ortografia) | ND | ND |
-| **Italiano (it)**                   | GA | GA (Solo errore di ortografia) | ND | ND |
-| **Giapponese (ja)**                  | GA | GA (Solo errore di ortografia) | ND | GA |
-| **Coreano (ko)**                    | GA | GA (Solo errore di ortografia) | ND | ND |
-| **Portoghese (brasiliano) (pt-br)** | GA | GA (Solo errore di ortografia) | ND | ND |
-| **Spagnolo (es)**                   | GA | GA (Solo errore di ortografia) | ND | GA |
-{: caption="Dettagli del supporto della funzione dell'entità " caption-side="top"}
+| Lingua | **[Corrispondenza fuzzy di entità](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Entità contestuali](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based)** | **[Consigli sui sinonimi](/docs/services/assistant?topic=assistant-entities#entities-synonyms)** |
+|:---:|:---:|:---:|:---:|
+| **Inglese (en)**                   | GA | Beta | GA |
+| **Arabo (ar)**                    | GA (Solo errore di ortografia) | ND | ND |
+| **Cinese (semplificato) (zh-cn)**   | ND | ND | ND |
+| **Cinese (tradizionale) (zh-tw)**  | ND | ND | ND |
+| **Ceco (cs)**                     | GA (Solo errore di ortografia) | ND | ND |
+| **Olandese (nl)**                     | GA (Solo errore di ortografia) | ND | ND |
+| **Francese (fr)**                    | GA (Solo errore di ortografia) | ND | GA |
+| **Tedesco (de)**                    | GA (Solo errore di ortografia) | ND | ND |
+| **Italiano (it)**                   | GA (Solo errore di ortografia) | ND | ND |
+| **Giapponese (ja)**                  | GA (Solo errore di ortografia) | ND | GA |
+| **Coreano (ko)**                    | GA (Solo errore di ortografia) | ND | ND |
+| **Portoghese (brasiliano) (pt-br)** | GA (Solo errore di ortografia) | ND | ND |
+| **Spagnolo (es)**                   | GA (Solo errore di ortografia) | ND | GA |
+{: caption="Dettagli del supporto della funzione dell'entità" caption-side="top"}
+
+**Tabella 4. Dettagli del supporto della funzione dell'entità di sistema**
+
+| Lingua | **Entità di sistema ([numero](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-number), [valuta](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-currency), [percentuale](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-percentage), [data, ora](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-date-time))** | **[Nuove entità di sistema](/docs/services/assistant?topic=assistant-beta-system-entities)** |
+|:---|:---:|:---:|
+| **Inglese (en)**                   | GA, Beta ([posizione](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-location), [persona](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-person)) | Beta |
+| **Arabo (ar)**                    | Beta | ND |
+| **Cinese (semplificato) (zh-cn)**   | GA | ND |
+| **Cinese (tradizionale) (zh-tw)**  | Beta | ND |
+| **Ceco (cs)**                     | GA | ND |
+| **Olandese (nl)**                     | GA | ND |
+| **Francese (fr)**                    | GA | ND |
+| **Tedesco (de)**                    | GA | Beta |
+| **Italiano (it)**                   | GA | ND |
+| **Giapponese (ja)**                  | GA | ND |
+| **Coreano (ko)**                    | GA | ND |
+| **Portoghese (brasiliano) (pt-br)** | GA | ND |
+| **Spagnolo (es)**                   | GA | ND |
+{: caption="Dettagli del supporto della funzione dell'entità di sistema " caption-side="top"}
 
 **Nota:** il servizio {{site.data.keyword.conversationshort}} supporta più lingue come indicato, ma l'interfaccia dello strumento stessa (descrizioni, etichette, ecc.) è in inglese. Tutte le lingue supportate possono essere inserite e addestrate attraverso l'interfaccia inglese.
 
@@ -118,7 +156,7 @@ Scegli tra le seguenti opzioni per la tua capacità:
 - **Forma numerica**: specifica quale forma di numeri utilizzare quando si presentano cifre regolari. Scegli tra `Nominal`, `Arabic-Indic` o `Arabic-European`. L'opzione `None` visualizzerà i numeri occidentali.
 - **Tipo di calendario**: specifica come scegli di filtrare le date nella IU della capacità. Scegli `Islamic-Civil`, `Islamic-Tabular`, `Islamic-Umm al-Qura` o `Gregorian`.
 
-  Questa impostazione non si applica al riquadro "Provalo".
+  Questa impostazione non si applica al riquadro "Try it out".
   {: note}
 
 ![Opzioni bidi](images/bidi_opts.png)
@@ -130,9 +168,9 @@ Al termine delle selezioni, fai clic su **Aggiorna** per salvare e ritornare al 
 
 In un contesto di conversazione, gli utenti possono utilizzare o meno accenti durante l'interazione con il servizio {{site.data.keyword.conversationshort}}. Di conseguenza, sia le versioni accentate che quelle non accentate delle parole possono essere trattate allo stesso modo per il rilevamento di intenti e il riconoscimento di entità.
 
-Tuttavia per alcune lingue, come lo spagnolo, alcuni accenti possono modificare il significato dell'entità. Pertanto, per il rilevamento di entità, sebbene l'entità originale possa implicitamente avere un accento, il servizio può anche abbinare la versione non accentata della stessa entità, ma con un punteggio di affidabilità leggermente inferiore.
+Tuttavia per alcune lingue, come lo spagnolo, alcuni accenti possono modificare il significato dell'entità. Pertanto, per il rilevamento di entità, sebbene l'entità originale possa implicitamente avere un accento, il tuo assistente può anche abbinare la versione non accentata della stessa entità, ma con un punteggio di affidabilità leggermente inferiore.
 
-Ad esempio, per la parola "barrió", che ha un accento e corrisponde al passato del verbo "barrer" (spazzare), il servizio può abbinare anche la parola "barrio" (quartiere), ma con una confidenza leggermente inferiore.
+Ad esempio, per la parola "barrió", che ha un accento e corrisponde al passato del verbo "barrer" (spazzare), il tuo assistente può abbinare anche la parola "barrio" (quartiere), ma con una confidenza leggermente inferiore.
 
 Il sistema fornirà punteggi di affidabilità più alti nelle entità con corrispondenze esatte. Ad esempio, `barrio` non verrà rilevato se `barrió` è nel set di addestramento e `barrió` non verrà rilevato se `barrio` è nel set di addestramento.
 

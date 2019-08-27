@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-03-29"
 
 subcollection: assistant
 
@@ -27,9 +27,9 @@ subcollection: assistant
 
 {{site.data.keyword.conversationshort}} 서비스 REST API가 필터 조회를 통해 강력한 로그 검색 기능을 제공합니다. /logs API `filter` 매개변수를 사용하여 스킬 로그에서 지정된 조회와 일치하는 이벤트를 검색할 수 있습니다.
 
-`filter` 매개변수는 결과를 지정된 필터와 일치하는 결과로 제한하는 캐시 가능한 조회입니다. JSON 응답 모델의 일부인 오브젝트에서 필터링할 수 있습니다(예: 사용자 입력 텍스트, 발견된 인텐트 및 엔티티 또는 신뢰도 점수).
+`filter` 매개변수는 결과를 지정된 필터와 일치하는 결과로 제한하는 캐시 가능한 조회입니다. JSON 응답 모델의 일부인 여러 오브젝트에서 필터링할 수 있습니다(예: 사용자 입력 텍스트, 발견된 인텐트 및 엔티티 또는 신뢰도 점수).
 
-다양한 종류의 필터 조회의 예제를 보려면 [예제](#filter-reference-examples)를 참조하십시오.
+필터 조회의 예제를 보려면 [예제](#filter-reference-examples)를 참조하십시오.
 
 /logs `GET` 메소드 및 해당 응답 모델에 대한 자세한 정보는 [API 참조 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/apidocs/assistant?curl=#list-log-events-in-a-workspace){: new_window}를 참조하십시오.
 
@@ -55,8 +55,8 @@ subcollection: assistant
 
 필터 조회에서 다음 연산자를 사용할 수 있습니다.
 
-| 연산자              | 설명 |
-|:-------------------:|-----------|
+| 연산자 | 설명 |
+|:-------------------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `:` | 유사 일치 조회 연산자. 조회 용어 또는 조회 용어의 문법적 변형이 포함된 모든 값을 일치시키려는 경우 조회 용어 앞에 `:`을 추가하십시오. 유사 일치는 사용자 입력 텍스트, 응답 출력 텍스트 및 엔티티 값에서 사용 가능합니다. |
 | `::` | 정확한 일치 조회 연산자. 조회 용어와 정확하게 같은 값만 일치시키려면 조회 용어 앞에 `::`을 추가하십시오. |
 | `:!` | 부정 유사 일치 조회 연산자. 조회 용어 또는 조회 용어의 문법적 변형이 포함되지 _않은_ 값만 일치시키려면 조회 용어 앞에 `:!`를 추가하십시오. |
@@ -110,13 +110,26 @@ subcollection: assistant
     }
   }
 ```
+<!-- {data-copy=false} -->
+
+모든 필드에 대해 필터링을 사용할 수 있는 것은 아닙니다. 다음 필드를 필터링할 수 있습니다.
+
+- request.context.metadata.deployment
+- request.input.text
+- response.entities
+- response.input.text
+- response.intents
+- response.top_intent
+- meta.message.entities_count
+
+다른 필드에 대한 필터링은 현재 지원되지 않습니다.
 
 ## 예제
 {: #filter-reference-examples}
 
 다음 예제에서는 이 구문을 사용하는 다양한 유형의 조회를 보여줍니다.
 
-| 설명    | 조회      |
+| 설명 | 조회 |
 |---------|-----------|
 | 응답 날짜가 2017년 7월입니다. | `response_timestamp>=2017-07-01,response_timestamp<2017-08-01` |
 | 응답 시간소인은 `2016-11-01T04:00:00.000Z` 전입니다. | `response_timestamp<2016-11-01T04:00:00.000Z` |
@@ -135,3 +148,4 @@ subcollection: assistant
 | 응답의 인텐트 이름이 `hello` 또는 `goodbye`와 정확하게 일치합니다. | `response.intents:intent::(hello|goodbye)` |
 | 응답의 인텐트 이름이 `hello`이며 신뢰도 값은 0.8 이상입니다. | `response.intents:(intent:hello,confidence>=0.8)` |
 | 응답의 인텐트 이름이 `order`와 정확히 일치하며, 응답의 엔티티 이름은 `beverage`와 정확히 일치합니다. | `[response.intents:intent::order,response.entities:entity::beverage]` |
+<!-- -->

@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-01"
+lastupdated: "2019-08-06"
+
+keywords: assistant, omnichannel, virtual agent, virtual assistant, chatbot, conversation, watson assistant, watson conversation
 
 subcollection: assistant
 
@@ -28,10 +30,10 @@ subcollection: assistant
 {:download: .download}
 {:gif: data-image-type='gif'}
 
-# Guía de aprendizaje de iniciación
+# Iniciación a {{site.data.keyword.conversationshort}}
 {: #getting-started}
 
-En esta breve guía de aprendizaje presentamos una introducción a la herramienta {{site.data.keyword.conversationshort}} y al proceso de crear el primer asistente.
+En esta breve guía de aprendizaje, se presenta {{site.data.keyword.conversationfull}} y se le guía a través del proceso de creación de su primer asistente.
 {: shortdesc}
 
 ## Antes de empezar
@@ -41,57 +43,80 @@ En esta breve guía de aprendizaje presentamos una introducción a la herramient
 Para poder empezar necesitará una instancia de servicio.
 {: hide-dashboard}
 
-1.  {: hide-dashboard} Vaya a la página [{{site.data.keyword.conversationshort}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com/catalog/services/watson-assistant) en el catálogo de {{site.data.keyword.cloud_notm}}.
+1.  {: hide-dashboard} Vaya a la página [{{site.data.keyword.conversationshort}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com/catalog/services/watson-assistant) en el catálogo de {{site.data.keyword.cloud}}.
 
-    La instancia de servicio se creará en el grupo de recursos **default** si no elige otro y *no se puede* cambiar posteriormente. Este grupo es suficiente para probar el servicio.
+    La instancia de servicio se creará en el grupo de recursos **default** si no elige otro y *no se puede* cambiar posteriormente. Este grupo es suficiente para probar el producto.
 
     Si va a crear una instancia para utilizarla de forma más intensiva, obtenga más información sobre los [grupos de recursos ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://{DomainName}/docs/resources/bestpractice_rgs#bp_resourcegroups){: new_window}.
 1.  {: hide-dashboard} Regístrese para obtener una cuenta de {{site.data.keyword.cloud_notm}} gratuita o inicie una sesión.
 1.  {: hide-dashboard} Pulse **Crear**.
 
-## Paso 1: Abrir la herramienta
+## Paso 1: Abrir el asistente Watson
 {: #getting-started-launch-tool}
 
-Después de crear una instancia de servicio de {{site.data.keyword.conversationshort}}, irá a la página **Gestionar** del panel de control del servicio.
+Después de crear una instancia de servicio de {{site.data.keyword.conversationshort}}, irá a la página **Gestionar** del panel de control de {{site.data.keyword.conversationshort}}.
 {: hide-dashboard}
 
-1.  Pulse **Iniciar herramienta**. Si se le solicita que inicie una sesión en la herramienta, proporcione sus credenciales de {{site.data.keyword.cloud_notm}}.
+1.  Pulse **Iniciar {{site.data.keyword.conversationshort}}**. Si se le solicita que inicie una sesión, proporcione sus credenciales de {{site.data.keyword.cloud_notm}}.
 
 <!-- Remove this text after dedicated instances have the developer console: begin -->
 
-{{site.data.keyword.Bluemix_dedicated_notm}}: Seleccione la instancia de servicio en el panel de control para iniciar la herramienta.
+{{site.data.keyword.Bluemix_dedicated_notm}}: Seleccione la instancia de servicio en el panel de control para iniciar el producto.
 
 <!-- Remove this text after dedicated instances have the Developer Console: end -->
 
-## Paso 2: Crear un conocimiento de diálogo
-{: #getting-started-add-skill}
+Si es un usuario nuevo, se crea automáticamente un asistente denominado *My first assistant* (Mi primer asistente). Sáltese el siguiente paso. 
 
-El primer paso en la herramienta {{site.data.keyword.conversationshort}} consiste en crear un conocimiento.
+![Muestra un asistente que se han añadido automátiamente a la página Asistentes](images/gs-ass-created-for-me.png)
+
+Si está disponible en su ubicación, se inicia una visita guiada que puede recorrer para obtener información sobre el producto. Siga el recorrido; se integra con estos pasos de la guía de aprendizaje, por lo que puede reanudar esta guía de aprendizaje después de que termine la visita guiada.
+  {: tip}
+
+Un [*asistente*](/docs/services/assistant?topic=assistant-assistants) es un bot cognitivo al que se añade un conocimiento que le permite interactuar con sus clientes de forma útil.
+
+Si no se crea un asistente automáticamente, el primer paso es crearlo.
+
+## Paso 2: Crear un asistente
+{: #getting-started-create-assistant}
+
+1.  Pulse **Crear asistente**.
+
+    ![Boton Crear asistente en la página Asistentes.](images/gs-create-assistant.png)
+1.  Llámelo `Mi primer asistente`.
+1.  Pulse **Crear asistente**.
+
+    ![Terminar de crear el nuevo asistente](images/gs-create-assistant-done.png)
+
+## Paso 3: Crear un conocimiento de diálogo
+{: #getting-started-add-skill}
 
 Un *conocimiento de diálogo* es un contenedor de los artefactos que definen el flujo de una conversación que el asistente puede tener con sus clientes.
 
-1.  Desde la página de inicio de la herramienta {{site.data.keyword.conversationshort}}, pulse **Crear un conocimiento**.
+1.  Si el asistente se ha creado automáticamente, pulse en el icono *Mi primer asistente* (My first assistant) para abrir el asistente.
+
+1.  Pulse **Añadir conocimiento de diálogo**.
 
     ![Muestra el botón Añadir conocimiento de la página de inicio](images/gs-new-skill.png)
 
-1.  Pulse **Crear nuevo**.
-
-    ![Muestra el botón Crear nuevo de la página Conocimiento](images/gs-click-create-new.png)
-
 1.  Asigne al conocimiento el nombre `Conversational skill tutorial`.
 1.  **Opcional**. Si el diálogo que tiene previsto crear utilizará un idioma distinto del inglés, elija el idioma adecuado en la lista.
-1.  Pulse **Crear**.
 
     ![Terminar de crear el conocimiento](images/gs-add-skill-done.png)
 
-Irá a la página Intenciones de la herramienta.
+1.  Pulse **Crear conocimiento de diálogo**.
 
-## Paso 3: Añadir intenciones de un catálogo de contenido
+    ![Terminar de crear el conocimiento](images/gs-skill-added.png)
+
+1.  Pulse para abrir el conocimiento que acaba de crear.
+
+Irá a la página Intenciones.
+
+## Paso 4: Añadir intenciones de un catálogo de contenido
 {: #getting-started-add-catalog}
 
 Añada datos de entrenamiento creados por IBM al conocimiento añadiendo intenciones de un catálogo de contenido. En concreto, otorgará al asistente acceso al catálogo de contenido **General** para que el diálogo pueda saludar a los usuarios y terminar conversaciones con ellos.
 
-1.  En la herramienta {{site.data.keyword.conversationshort}}, pulse el separador **Catálogo de contenido**.
+1.  Pulse el separador **Catálogo de contenido**.
 1.  Busque **General** en la lista y pulse **Añadir a conocimiento**.
 
     ![Muestra el catálogo de contenido y resalta el botón Añadir a conocimiento para el catálogo General.](images/gs-add-general-catalog.png)
@@ -101,7 +126,7 @@ Añada datos de entrenamiento creados por IBM al conocimiento añadiendo intenci
 
 Ha empezado con éxito a crear los datos de entrenamiento añadiendo contenido predefinido de {{site.data.keyword.IBM_notm}}.
 
-## Paso 4: Crear un diálogo
+## Paso 5: Crear un diálogo
 {: #getting-started-build-dialog}
 
 Un [diálogo](/docs/services/assistant?topic=assistant-dialog-overview) define el flujo de la conversación en forma de árbol lógico. Compara intenciones (lo que dicen los usuarios) con respuestas (lo que responde el bot). Cada nodo del árbol tiene una condición que lo activa, en función de la entrada de usuario.
@@ -110,8 +135,8 @@ Vamos a crear un diálogo sencillo que maneje nuestras intenciones de saludo y d
 
 ### Adición de un nodo de inicio
 
-1.  En la herramienta {{site.data.keyword.conversationshort}}, pulse el separador **Diálogo**.
-1.  Pulse **Crear**. Verá dos nodos:
+1.  Pulse el separador **Diálogo**.
+1.  Pulse **Crear diálogo**. Verá dos nodos:
     - **Welcome**: contiene un saludo que se muestra a los usuarios la primera vez que interactúan con el asistente.
     - **Anything else**: contiene frases que se utilizan para responder a los usuarios cuando no se reconoce la información que especifican.
 
@@ -135,26 +160,24 @@ Puede probar el diálogo en cualquier momento para verificarlo. Vamos a probarlo
 Ahora vamos a añadir nodos entre el nodo `Welcome` y el nodo `Anything else` que gestionen nuestras intenciones.
 
 1.  Pulse el icono Más ![Más opciones](images/kabob.png) del nodo **Welcome** y seleccione **Añadir nodo debajo**.
-1.  Escriba `#General_Greetings` en el campo **Especificar una condición** de este nodo. Luego seleccione la opción **`#General_Greetings`**.
-1.  Añada la respuesta, `Good day to you!`
+1.  En el campo **Si el asistente reconoce** de este nodo, empiece a escribir `#General_Greetings`. Luego seleccione la opción **`#General_Greetings`**.
+1.  Añada el texto de respuesta `Good day to you!` (Buenos días).
 1.  Pulse ![Cerrar](images/close.png) para cerrar la vista de edición.
 
    ![Se ha añadido un nodo de saludo general al diálogo.](images/gs-add-greeting-node.png)
 
-1.  Pulse el icono Más ![Más opciones](images/kabob.png) en este nodo y luego seleccione **Añadir nodo debajo** para crear un nodo igual. En el nodo de igual, especifique `#General_Ending` como condición y `OK. See you later.` como respuesta.
+1.  Pulse el icono Más ![Más opciones](images/kabob.png) en este nodo y luego seleccione **Añadir nodo debajo** para crear un nodo igual. En el nodo de igual, especifique `#General_Ending` en el campo **Si el asistente reconoce** y `OK. See you later.` (Muy bien. Hasta pronto.) como texto de respuesta.
 
    ![Adición de un nodo de finalización de conversación al diálogo.](images/gs-add-ending-node.png)
 
 1.  Pulse ![Cerrar](images/close.png) para cerrar la vista de edición.
-
-   ![Muestra que se ha añadido un nodo de finalización de conversación general al diálogo.](images/gs-ending-added.png)
 
 ### Prueba de reconocimiento de intención
 
 Ha creado un diálogo sencillo para reconocer y responder a las entradas greeting y ending. Vamos a ver si funcionan.
 
 1.  Pulse el icono ![Pruébelo](images/ask_watson.png) para abrir el panel "Pruébelo". Aparece este mensaje de bienvenida tranquilizador.
-1.  En la parte inferior del panel, escriba `Hello` y pulse Intro. La salida indica que se ha reconocido la intención #hello y aparece la respuesta adecuada (`Good day to you`).
+1.  En la parte inferior del panel, escriba `Hello` (Hola) y pulse Intro. La salida indica que la intención `#General_Greetings` se ha reconocido, y que se muestra la respuesta (`Good day to you.`) (Buenos días.)) adecuada.
 1.  Intente la entrada siguiente:
     - `bye`
     - `howdy`
@@ -170,47 +193,32 @@ Ha creado un diálogo sencillo para reconocer y responder a las entradas greetin
 
 Eso es todo. Ha creado una conversación sencilla con dos intenciones y un diálogo para reconocerlas.
 
-## Paso 5: Crear un asistente
-{: #getting-started-create-assistant}
-
-Un [*asistente*](/docs/services/assistant?topic=assistant-assistants) es un bot cognitivo al que se añade un conocimiento que le permite interactuar con sus clientes de forma útil.
-
-1.  Pulse el separador **Asistentes**.
-1.  Pulse **Crear nuevo**.
-
-    ![Botón Crear nuevo en el separador Asistente](images/gs-create-assistant.png)
-1.  Asigne al asistente el nombre `Watson Assistant tutorial`.
-1.  En el campo Descripción, especifique `This is a sample assistant that I am creating to help me learn.`
-1.  Pulse **Crear**.
-
-    ![Terminar de crear el nuevo asistente](images/gs-create-assistant-done0.png)
-
-## Paso 6: Añadir su conocimiento al asistente
-{: #getting-started-add-skill-to-assistant}
-
-Añada el conocimiento de diálogo que ha creado al asistente que ha creado.
-
-1.  En la página del nuevo asistente, pulse **Añadir conocimiento**.
-
-    Si ha creado o si ha recibido acceso con el rol de desarrollador a los espacios de trabajo creados con la versión disponible a nivel general del servicio {{site.data.keyword.conversationshort}}, los verá en la lista de la página Conocimientos como conocimientos de conversación.
-    {: tip}
-
-    ![Muestra el botón Añadir conocimiento de la página Asistente](images/gs-add-skill.png)
-1.  Elija añadir el conocimiento que ha creado antes al asistente.
-
-## Paso 7: Integrar el asistente
+## Paso 6: Integrar el asistente
 {: #getting-started-integrate-assistant}
 
-Ahora que tiene un asistente que puede participar en un intercambio conversacional sencillo, publíquelo en una página web pública en la que puede probarlo. El servicio proporciona una integración incorporada que se denomina Enlace de vista previa. Cuando crea este tipo de integración, el asistente se crea en un widget de chat alojado en una página web de IBM. Puede abrir la página web y conversar con su asistente para probarlo.
+Ahora que tiene un asistente que puede participar en un intercambio conversacional sencillo, pruébelo.
 
-1.  Pulse el separador **Asistentes**, busque el asistente de `Watson Assistant tutorial` que ha creado y ábralo.
-1.  En el área *Integraciones*, pulse **Añadir integración**.
-1.  Busque **Enlace de vista previa** y pulse **Seleccionar integración**.
+1.  Pulse el separador **Asistentes**, busque el asistente *Mi primer asistente* (My first assistant) y ábralo.
+1.  Realice una de las acciones siguientes para probar el asistente con una integración de enlace de vista previa. 
+
+    La integración del enlace de vista previa crea su asistente en un widget de chat alojado en una página web de IBM. Puede abrir la página web y conversar con su asistente para probarlo.
+
+    - Si el asistente se ha creado automáticamente, debe añadir una integración de enlace de vista previa. En el área *Integraciones*, pulse **Añadir integración** y luego pulse en **Enlace de vista previa**. Pulse **Crear**.
+
+    - Si ha creado el asistente usted mismo, pulse en el icono de la integración de enlace de vista previa para abrirlo. 
+    
+      Cuando crea un asistente usted mismo, se crea automáticamente una integración de enlace de vista previa.
 
 1.  Pulse el URL que se visualiza en la página.
 
-    La página se abre en un nuevo separador.
-1.  Diga `hello` a su asistente espere a que responda. Puede compartir el URL con otros que deseen probar su asistente.
+    La página web de prueba se abre en un nuevo separador.
+1.  Escriba `hello` en el campo de texto y vea la respuesta de su asistente. 
+
+    ![Widget en la integración del enlace de vista previa que muestra un único intercambio de diálogo.](images/gs-test-from-preview-link.png)
+
+    Puede compartir el URL con otros que deseen probar su asistente.
+
+1.  Después de hacer la prueba, cierre la página web. Pulse en la **X** para cerrar la página de integración de enlaces de vista previa.
 
 ## Siguientes pasos
 {: #getting-started-next-steps}

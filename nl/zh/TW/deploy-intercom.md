@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-07-19"
 
 subcollection: assistant
 
@@ -22,7 +22,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# 與 Intercom 整合 ![僅限「加值」或「超值」方案](images/premium.png)
+# 與 Intercom 整合 ![僅限「加值」或「超值」方案](images/plus.png)
 {: #deploy-intercom}
 
 Intercom 是一種客戶傳訊平台，可協助在整個客戶生命週期中，透過更適當的關係來推動業務成長。
@@ -31,6 +31,7 @@ Intercom 是一種客戶傳訊平台，可協助在整個客戶生命週期中�
 Intercom 與 IBM 合作，將新的代理程式加入客戶支援團隊，這是一個虛擬 Watson Assistant。您可以將助理與 Intercom 應用程式整合，讓應用程式可以順利地在助理與真人服務專員之間傳遞使用者交談。請閱讀 [Watson 部落格文章 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://medium.com/@blakemcgregor/contact-center-post-394dff427c8)，以進一步瞭解整合。
 
 此整合僅適用於「加值」或「超值」方案使用者。
+如果您想試用，可以註冊免費的加值試用方案。[取得加值試用](https://cloud.ibm.com/registration?target=%2Fdeveloper%2Fwatson%2Flaunch-tool%2Fconversation%3Fplan%3Dplus-trial&cm_mmc=OSocial_Voicestorm-_-Watson+AI_Watson+Core+-+Conversation-_-WW_WW-_-Intercom+Trial+Registration+Link&cm_mmca1=000027BD&cm_mmca2=10004432)。
 {: note}
 
 如果您整合助理與 Intercom，則 Intercom 應用程式會變成適用於技能的客戶端面向應用程式。所有與使用者的互動都是透過 Intercom 來起始及管理的。
@@ -64,6 +65,11 @@ Intercom 與 IBM 合作，將新的代理程式加入客戶支援團隊，這是
 ## 準備對話
 {: #deploy-intercom-dialog-prereq}
 
+如果您沒有與助理相關聯的對話技能，請立即建立對話技能或將對話技能新增至助理。如需詳細資料，請參閱[建置對話](/docs/services/assistant?topic=assistant-dialog-build)。
+
+Intercom 整合目前不支援透過搜尋技能來觸發搜尋。
+{: note}
+
 請在對話技能中完成下列步驟，讓助理可以處理使用者要求，並且可以在客戶要求交談時，將交談傳遞給真人服務專員。
 
 1.  將目的新增至您的技能，其可以辨識使用者與真人交談的要求。
@@ -85,8 +91,8 @@ Intercom 與 IBM 合作，將新的代理程式加入客戶支援團隊，這是
 
       ![節點編輯視圖中的欄位擷取畫面，您會在此視圖中新增節點用途摘要。](images/disambig-node-purpose.png)
 
-      請**不要**將外部節點名稱新增至您在步驟 2 中建立的根節點。呈報時，服務會查看最後處理之節點的外部節點名稱，以瞭解未順利符合的使用者目標。如果您在連接至真人服務專員目的的節點中包括外部節點名稱，則將防止服務瞭解最後一個真正目標導向的節點，使用者已在呈報問題之前與此節點互動。
-      {: tip}
+      請**不要**將外部節點名稱新增至您在步驟 2 中建立的根節點。呈報時，助理會查看最後處理之節點的外部節點名稱，以瞭解未順利符合的使用者目標。如果您在連接至真人服務專員目的的節點中包括外部節點名稱，則將防止助理瞭解最後一個真正目標導向的節點，使用者已在呈報問題之前與此節點互動。
+     {: tip}
 
 1.  如果後續要求或問題上的分支條件中有您不想要助理處理的子節點，請將**連接至真人服務專員**回應類型新增至節點。
 
@@ -95,6 +101,19 @@ Intercom 與 IBM 合作，將新的代理程式加入客戶支援團隊，這是
     在執行時期，如果交談到達這個子節點，則會在該點將對話傳遞給真人服務專員。稍後，在設定 Intercom 整合時，您可以選擇真人服務專員作為每個分支的候補人員。
 
 您的對話目前已備妥可在 Intercom 中支援您的助理。
+
+### 對話考量
+{: #deploy-intercom-dialog}
+
+「試用」窗格內會顯示您新增至對話的部分複合式回應，此顯示方式與將它們顯示給 Intercom 使用者的方式不同。下表說明 Intercom 如何處理回應類型。
+
+| 回應類型 | 如何顯示給 Intercom 使用者  |
+|---------------|---------------------------|
+| **選項**    | 選項會顯示為編號清單。在**標題**或**說明**欄位中，提供向使用者說明如何從清單中選擇選項的指示。|
+| **影像**     | 呈現影像**標題**、**說明**及影像本身。|
+| **暫停**     | 不論是您是否啟用它，在暫停期間不會顯示鍵入指示器。|
+
+如需回應類型的相關資訊，請參閱[複合式回應](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia)。
 
 ## 新增 Intercom 整合
 {: #deploy-intercom-add-intercom}
@@ -107,17 +126,36 @@ Intercom 與 IBM 合作，將新的代理程式加入客戶支援團隊，這是
 
     遵循畫面上提供的指示。下列各節可協助您執行這些步驟。
 
+下列 4 分鐘的視訊說明這些步驟。
+
+<iframe class="embed-responsive-item" id="youtubeplayer" title="快速設定" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/SkbFWNScueU" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
 ## 將助理連接至 Intercom
 {: #deploy-intercom-connect}
 
 只要您提供 Intercom 使用助理的許可權，助理即會變成 Intercom 團隊的可用成員。
 
-真人服務專員可以使用 Intercom 的指派規則將訊息指派給助理，該規則可以根據某些準則，或藉由真人服務專員在執行時期所進行的手動重新指派，自動將入埠交談指派給隊友或團隊收件匣。如需詳細資料，請參閱 [Intercom 文件 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.intercom.com/help/support-and-retain-customers/work-as-a-team/assign-conversations-to-teammates-and-teams)。
+真人服務專員可以使用 Intercom 的指派規則將訊息指派給助理。訊息可以透過下列方式指派給助理：
+
+- 根據某些條件，自動將入埠交談指派給團隊成員或團隊收件匣
+
+  下列一分半鐘的視訊說明這些步驟。
+
+  <iframe class="embed-responsive-item" id="youtubeplayer2" title="自動指派" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/4M9wu8NHxcY" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
+- 真人服務專員在執行時期手動進行的重新指派。
+
+  下列不到 3 分鐘的視訊說明這些步驟。
+
+  <iframe class="embed-responsive-item" id="youtubeplayer3" title="手動指派" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/jAnolyUJAIA" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
+如需詳細資料，請參閱 [Intercom 文件 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.intercom.com/help/support-and-retain-customers/work-as-a-team/assign-conversations-to-teammates-and-teams)。
 
 1.  當您的對話備妥時，請按一下**立即連接**。
 1.  按一下**存取 Intercom**，以重新導向至 Intercom 網站。
 
-     使用助理的功能電子郵件位址和密碼（不是您自己的）登入 Intercom。您要建立與組織中多個人共用的功能 ID 的連線。{: important}
+     使用助理的功能電子郵件位址和密碼（不是您自己的）登入 Intercom。您要建立與組織中多個人共用的功能 ID 的連線。
+     {: important}
 
 1.  按一下**授權存取**。
 1.  按一下**回到概觀**。
@@ -155,12 +193,16 @@ Intercom 與 IBM 合作，將新的代理程式加入客戶支援團隊，這是
 
 1.  新增規則之後，請按一下**回到概觀**，以結束此頁面。
 
+下列長度 3 分鐘的視訊說明了步驟。
+
+<iframe class="embed-responsive-item" id="youtubeplayer0" title="基於主題的呈報遞送" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/dTwJZOqdzII" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
 ## 提供助理監視及回答使用者查詢的許可權
 {: #deploy-intercom-config-action}
 
 當您要助理開始監視 Intercom 收件匣，以及自行回答訊息時，請開啟監視。
 
-您的助理會在使用者登入 Intercom 時監看使用者查詢。當助理有信心知道如何回答使用者查詢時，助理便會直接回應使用者。（當服務所識別的最高目的具有 0.75 或更高的信任評分時，表示助理很有信心。）
+您的助理會在使用者登入 Intercom 時監看使用者查詢。當助理有信心知道如何回答使用者查詢時，助理便會直接回應使用者。（當助理所識別的最高目的具有 0.75 或更高的信賴分數時，表示助理很有信心。）
 
 如果您不希望助理回答某些類型的使用者查詢，則可以新增規則來指定其他動作，讓助理根據對話分支採取這些動作。例如，您可能想要更保守地將助理納入 Intercom 團隊中，讓助理只在將使用者訊息移轉給其他隊友讓他們來回答時建議回應。經過一段時間後，在助理證明自己沒問題時，您就可以給它更多的責任。
 
@@ -188,7 +230,7 @@ Intercom 與 IBM 合作，將新的代理程式加入客戶支援團隊，這是
 
       - 如果使用者輸入觸發對話分支，表示根對話節點具有代表綜合性互動的子節點，則助理會指出它能夠處理要求，並提供作法。
       - 如果使用者輸入觸發沒有子項的根節點，則助理只會與真人服務專員共用來自節點的程式化回應，但不會直接回應使用者。
-      - 如果輸入觸發多個具有高信任的對話節點，則助理會向真人隊友顯示一份可能的回應清單，並要求隊友選擇最佳回應。
+      - 如果輸入觸發多個具有高信賴度的對話節點，則助理會向真人隊友顯示一份可能的回應清單，並要求隊友選擇最佳回應。
 
       在每種情況下，真人服務專員都會決定是否讓助理接管。
 
@@ -202,22 +244,13 @@ Intercom 與 IBM 合作，將新的代理程式加入客戶支援團隊，這是
 
 當您的對話變更時，您可能會回到 Intercom 整合頁面，對這些規則進行漸進式變更。
 
+下列長度 3 分鐘的視訊說明了步驟。
+
+<iframe class="embed-responsive-item" id="youtubeplayer1" title="信箱監視" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/fFKjWUfIftw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
 ## 測試整合
 {: #deploy-intercom-try}
 
 若要有效地測試端對端的 Intercom 整合，您必須有權存取 Intercom 一般使用者應用程式。您已建立或編輯 Intercom 工作區。此工作區必須有關聯的使用者介面用戶端。如果沒有，請參閱 [Intercom 中的應用程式 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.intercom.com/help/apps-in-intercom){: new_window}，以取得設定工作區的說明。
 
 透過與 Intercom 工作區相關聯的用戶端應用程式提交測試使用者查詢，以瞭解 Intercom 如何處理訊息。請驗證要由助理回答的訊息產生了適當的回應，且助理未回應未配置為要回答的訊息。
-
-## 對話考量
-{: #deploy-intercom-dialog}
-
-「試用」窗格內會顯示您新增至對話的部分複合式回應，此顯示方式與將它們顯示給 Intercom 使用者的方式不同。下表說明 Intercom 如何處理回應類型。
-
-| 回應類型 | 如何顯示給 Intercom 使用者  |
-|---------------|---------------------------|
-| **選項**    | 選項會顯示為編號清單。在**標題**或**說明**欄位中，提供向使用者說明如何從清單中選擇選項的指示。|
-| **影像**     | 呈現影像**標題**、**說明**及影像本身。|
-| **暫停**     | 不論是您是否啟用它，在暫停期間不會顯示鍵入指示器。|
-
-如需回應類型的相關資訊，請參閱[複合式回應](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia)。

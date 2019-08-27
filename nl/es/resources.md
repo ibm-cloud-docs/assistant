@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-06"
+lastupdated: "2019-05-14"
 
 subcollection: assistant
 
@@ -60,16 +60,17 @@ De una serie de análisis técnicos de IBM. Estas grabaciones ofrecen instruccio
 
 Otros vídeos creados por personal de IBM.
 
-- [Habilitación técnica digital ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://ibm-dte.mybluemix.net/ibm-watson-assistant){: new_window}: una colección de recursos que incluyen una guía del producto y un laboratorio práctico.
+- [Habilitación técnica digital ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://ibm-dte.mybluemix.net/watson-assistant){: new_window}: una colección de recursos que incluyen una guía del producto y un laboratorio práctico.
 - [Guía de aprendizaje de integraciones de {{site.data.keyword.conversationshort}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.youtube.com/watch?v=O3silvVBaC8&t=3s){: new_window}: Una guía de aprendizaje de 10 minutos para conectar {{site.data.keyword.conversationshort}} con Twilio utilizando Botkit para crear un chatbot de SMS.
-- [Cómo utilizar {{site.data.keyword.conversationshort}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://youtu.be/tUkLIUOm550){: new_window}: una visión general de 3 minutos del servicio
+- [Cómo utilizar {{site.data.keyword.conversationshort}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://youtu.be/tUkLIUOm550){: new_window}: Una visión general de 3 minutos del producto.
 - [Introducción al servicio {{site.data.keyword.conversationshort}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://youtu.be/A96nLYSMltA){: new_window}: una introducción de un minuto.
 - [Recorrido a través de {{site.data.keyword.conversationshort}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://youtu.be/ELwWhJGE2P8){: new_window}: un recorrido técnico de 14 minutos.
 
-## IBM Watson Academy
+## Materiales educativos
 {: #resources-academy}
 
-- [Bases de {{site.data.keyword.conversationshort}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://ibm.com/training/watsonacademy){: new_window}
+- [Academia de Watson ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://ibm.com/training/watsonacademy){: new_window}
+- [Coursera: Creación de chatbot basado en IA sin programar ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.coursera.org/learn/building-ai-powered-chatbots)
 
 ## Blogs
 {: #resources-blogs}

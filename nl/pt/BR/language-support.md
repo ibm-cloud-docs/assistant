@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-05-20"
 
 subcollection: assistant
 
@@ -25,12 +25,12 @@ subcollection: assistant
 # Idiomas suportados
 {: #language-support}
 
-O serviço {{site.data.keyword.conversationshort}} suporta os idiomas listados. Recursos individuais do serviço são suportados em uma extensão maior ou menor para cada idioma.
+O serviço {{site.data.keyword.conversationshort}} suporta os idiomas listados. Os recursos individuais são mais ou menos amplamente suportados para cada idioma.
 {: shortdesc}
 
 Nas tabelas a seguir, o nível de idioma e suporte de recurso são indicados por estes códigos:
 
-- **GA** - O recurso é geralmente disponibilizado e suportado para este idioma. Observe que os recursos podem continuar sendo atualizados mesmo após a disponibilização.
+- **GA** - O recurso é geralmente disponibilizado e suportado para este idioma. Observe que os recursos podem continuar a ser atualizados mesmo depois de estarem em disponibilidade geral.
 - **Beta** - O recurso é suportado apenas como uma liberação Beta e ainda está passando por testes antes que seja disponibilizado nesse idioma.
 - **NA** -Indica que um recurso não está disponível neste idioma.
 
@@ -55,43 +55,81 @@ A primeira tabela mostra o nível de suporte para todos os recursos, exceto aque
 | **Espanhol (es)**                   | disponibilidade geral | Beta |
 {: caption="Detalhes do suporte de recurso" caption-side="top"}
 
-** Tabela 2. Detalhes do suporte do recurso de Intenção **
+**Tabela 2a. Detalhes do suporte ao recurso de intenção**
 
-| Idioma | **[Pontuação absoluta e 'Marcar como irrelevante'](/docs/services/assistant?topic=assistant-intents#intents-mark-irrelevant)** | **[Catálogo de conteúdo](/docs/services/assistant?topic=assistant-catalog)** | **[Recomendações de exemplo do usuário](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations)** |
-|:---:|:---:|:---:|:---:|
-| **Inglês (en)**                   | disponibilidade geral | disponibilidade geral | Beta |
-| **Árabe (ar)**                    | Beta | disponibilidade geral | NA |
-| **Chinês (Simplificado) (zh-cn)**   | disponibilidade geral | NA | NA |
-| **Chinês (Tradicional) (zh-tw)**  | Beta | NA | NA |
-| **Tcheco (cs)**                     | disponibilidade geral | NA | NA |
-| **Holandês (nl)**                     | disponibilidade geral | NA | NA |
-| **Francês (fr)**                    | disponibilidade geral | disponibilidade geral | NA |
-| **Alemão (de)**                    | disponibilidade geral | disponibilidade geral | NA |
-| **Italiano (it)**                   | disponibilidade geral | disponibilidade geral | NA |
-| **Japonês (ja)**                  | disponibilidade geral | disponibilidade geral | NA |
-| **Coreano (ko)**                    | disponibilidade geral | NA | NA |
-| **Português (do Brasil) (pt-br)** | disponibilidade geral | disponibilidade geral | NA |
-| **Espanhol (es)**                   | disponibilidade geral | disponibilidade geral | NA |
+| Idioma | **[Pontuação absoluta](/docs/services/assistant?topic=assistant-intents#intents-absolute-scoring)** e **[Marcar como irrelevante](/docs/services/assistant?topic=assistant-logs#logs-mark-irrelevant)** | **[Catálogo de conteúdo](/docs/services/assistant?topic=assistant-catalog)** |
+|:---:|:---:|:---:|
+| **Inglês (en)**                   | disponibilidade geral | disponibilidade geral |
+| **Árabe (ar)**                    | Beta | disponibilidade geral |
+| **Chinês (Simplificado) (zh-cn)**   | disponibilidade geral | NA |
+| **Chinês (Tradicional) (zh-tw)**  | Beta | NA |
+| **Tcheco (cs)**                     | disponibilidade geral | NA |
+| **Holandês (nl)**                     | disponibilidade geral | NA |
+| **Francês (fr)**                    | disponibilidade geral | disponibilidade geral |
+| **Alemão (de)**                    | disponibilidade geral | disponibilidade geral |
+| **Italiano (it)**                   | disponibilidade geral | disponibilidade geral |
+| **Japonês (ja)**                  | disponibilidade geral | disponibilidade geral |
+| **Coreano (ko)**                    | disponibilidade geral | NA |
+| **Português (do Brasil) (pt-br)** | disponibilidade geral | disponibilidade geral |
+| **Espanhol (es)**                   | disponibilidade geral | disponibilidade geral |
 {: caption="Detalhes do suporte de recurso de Intenção" caption-side="top"}
+
+**Tabela 2b. Continuação dos detalhes do suporte ao recurso de intenção**
+
+| Idioma | **[Recomendações de exemplo do usuário](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations)** | **[Recomendações de intenção](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-intent-recommendations)** |
+|:---:|:---:|
+| **Inglês (en)**                   | disponibilidade geral | disponibilidade geral |
+| **Árabe (ar)**                    | NA | NA |
+| **Chinês (Simplificado) (zh-cn)**   | NA | NA |
+| **Chinês (Tradicional) (zh-tw)**  | NA | NA |
+| **Tcheco (cs)**                     | NA | NA |
+| **Holandês (nl)**                     | NA | NA |
+| **Francês (fr)**                    | NA | NA |
+| **Alemão (de)**                    | NA | NA |
+| **Italiano (it)**                   | NA | NA |
+| **Japonês (ja)**                  | disponibilidade geral | NA |
+| **Coreano (ko)**                    | NA | NA |
+| **Português (do Brasil) (pt-br)** | NA | NA |
+| **Espanhol (es)**                   | NA | NA |
+{: caption="Continuação dos detalhes do suporte ao recurso de intenção" caption-side="top"}
 
 ** Tabela 3. Detalhes do Suporte do Recurso de Entidade **
 
-| Idioma | **Entidades do sistema ([número](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-number), [moeda](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-currency), [porcentagem](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-percentage), [data, hora](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-date-time))** | **[Correspondência difusa de entidade](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Entidades contextuais](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based)** | **[Recomendações de sinônimos](/docs/services/assistant?topic=assistant-entities#entities-synonyms)**
-|:---|:---:|:---:|:---:|:---:|
-| **Inglês (en)**                   | GA, Beta ([ local ](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-location),  [ pessoa ](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-person)) | disponibilidade geral | Beta | disponibilidade geral |
-| **Árabe (ar)**                    | Beta | GA (Apenas Missel) | NA | NA |
-| **Chinês (Simplificado) (zh-cn)**   | disponibilidade geral | NA | NA | NA |
-| **Chinês (Tradicional) (zh-tw)**  | Beta | NA | NA | NA |
-| **Tcheco (cs)**                     | disponibilidade geral | GA (Apenas Missel) | NA | NA |
-| **Holandês (nl)**                     | disponibilidade geral | GA (Apenas Missel) | NA | NA |
-| **Francês (fr)**                    | disponibilidade geral | GA (Apenas Missel) | NA | disponibilidade geral |
-| **Alemão (de)**                    | disponibilidade geral | GA (Apenas Missel) | NA | NA |
-| **Italiano (it)**                   | disponibilidade geral | GA (Apenas Missel) | NA | NA |
-| **Japonês (ja)**                  | disponibilidade geral | GA (Apenas Missel) | NA | disponibilidade geral |
-| **Coreano (ko)**                    | disponibilidade geral | GA (Apenas Missel) | NA | NA |
-| **Português (do Brasil) (pt-br)** | disponibilidade geral | GA (Apenas Missel) | NA | NA |
-| **Espanhol (es)**                   | disponibilidade geral | GA (Apenas Missel) | NA | disponibilidade geral |
+| Idioma | **[Correspondência difusa de entidade](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Entidades contextuais](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based)** | **[Recomendações de sinônimos](/docs/services/assistant?topic=assistant-entities#entities-synonyms)** |
+|:---:|:---:|:---:|:---:|
+| **Inglês (en)**                   | disponibilidade geral | Beta | disponibilidade geral |
+| **Árabe (ar)**                    | GA (Apenas Missel) | NA | NA |
+| **Chinês (Simplificado) (zh-cn)**   | NA | NA | NA |
+| **Chinês (Tradicional) (zh-tw)**  | NA | NA | NA |
+| **Tcheco (cs)**                     | GA (Apenas Missel) | NA | NA |
+| **Holandês (nl)**                     | GA (Apenas Missel) | NA | NA |
+| **Francês (fr)**                    | GA (Apenas Missel) | NA | disponibilidade geral |
+| **Alemão (de)**                    | GA (Apenas Missel) | NA | NA |
+| **Italiano (it)**                   | GA (Apenas Missel) | NA | NA |
+| **Japonês (ja)**                  | GA (Apenas Missel) | NA | disponibilidade geral |
+| **Coreano (ko)**                    | GA (Apenas Missel) | NA | NA |
+| **Português (do Brasil) (pt-br)** | GA (Apenas Missel) | NA | NA |
+| **Espanhol (es)**                   | GA (Apenas Missel) | NA | disponibilidade geral |
 {: caption="Detalhes do Suporte do Recurso de Entidade" caption-side="top"}
+
+**Tabela 4. Detalhes do suporte ao recurso de entidade do sistema**
+
+| Idioma | **Entidades do sistema ([número](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-number), [moeda](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-currency), [porcentagem](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-percentage), [data, hora](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-date-time))** | **[Novas entidades do sistema](/docs/services/assistant?topic=assistant-beta-system-entities)** |
+|:---|:---:|:---:|
+| **Inglês (en)**                   | GA, Beta ([ local ](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-location),  [ pessoa ](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-person)) | Beta |
+| **Árabe (ar)**                    | Beta | NA |
+| **Chinês (Simplificado) (zh-cn)**   | disponibilidade geral | NA |
+| **Chinês (Tradicional) (zh-tw)**  | Beta | NA |
+| **Tcheco (cs)**                     | disponibilidade geral | NA |
+| **Holandês (nl)**                     | disponibilidade geral | NA |
+| **Francês (fr)**                    | disponibilidade geral | NA |
+| **Alemão (de)**                    | disponibilidade geral | Beta |
+| **Italiano (it)**                   | disponibilidade geral | NA |
+| **Japonês (ja)**                  | disponibilidade geral | NA |
+| **Coreano (ko)**                    | disponibilidade geral | NA |
+| **Português (do Brasil) (pt-br)** | disponibilidade geral | NA |
+| **Espanhol (es)**                   | disponibilidade geral | NA |
+{: caption="Detalhes do suporte ao recurso de entidade do sistema" caption-side="top"}
 
 **Nota:** o serviço {{site.data.keyword.conversationshort}} suporta múltiplos idiomas, conforme observado, mas a própria interface da ferramenta (descrições, rótulos, etc.) está em inglês. Todos os idiomas suportados podem ser inseridos e treinados por meio da interface em inglês.
 
@@ -128,11 +166,11 @@ Quando terminar de fazer seleções, clique em **Atualizar** para salvar e retor
 ## Trabalhando com caracteres acentuados
 {: #language-support-accents}
 
-Em uma configuração de conversa, os usuários podem ou não usar acentos enquanto interagem com o serviço {{site.data.keyword.conversationshort}}. Dessa forma, ambas as versões, acentuadas e não acentuadas, de palavras podem ser tratadas da mesma forma para detecção de intenção e reconhecimento de entidade.
+Em uma configuração de conversação, os usuários podem ou não usar sotaques ao interagir com o serviço {{site.data.keyword.conversationshort}}. Como tal, as versões de palavras com e sem sotaque podem receber o mesmo tratamento de detecção de intenção e reconhecimento de entidade.
 
-No entanto, para alguns idiomas, como o espanhol, alguns acentos podem alterar o significado da entidade. Dessa forma, para a detecção de entidade, embora a entidade original possa ter implicitamente um acento, o serviço também poderá corresponder à versão não acentuada da mesma entidade, mas com uma pontuação de confiança ligeiramente mais baixa.
+No entanto, para alguns idiomas, como o espanhol, alguns acentos podem alterar o significado da entidade. Assim, para a detecção de entidade, embora a entidade original possa ter implicitamente um sotaque, seu assistente também poderá corresponder à versão sem sotaque da mesma entidade, mas com uma pontuação de confiança um pouco mais baixa.
 
-Por exemplo, para a palavra "barrió", que tem um acento e corresponde ao passado do verbo "barrer" (varrer), o serviço também pode corresponder à palavra "barrio" (vizinhança), mas com uma confiança ligeiramente mais baixa.
+Por exemplo, para a palavra "barrió", que tem um sotaque e corresponde ao pretérito perfeito do verbo "barrer" (varrer), seu assistente também pode corresponder à palavra "barrio" (bairro), mas com uma confiança um pouco menor.
 
 O sistema fornecerá a maior pontuação de confiança em entidades com correspondências exatas. Por exemplo, `barrio` não será detectado se `barrió` estiver no conjunto de treinamento, e `barrió` não será detectado se `barrio` estiver no conjunto de treinamento.
 

@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-08-06"
+
+keywords: system entity, sys-number, sys-date, sys-time
 
 subcollection: assistant
 
@@ -25,10 +27,14 @@ subcollection: assistant
 # Detalhes da entidade do sistema
 {: #system-entities}
 
-Essa seção de referência fornece informações completas sobre as entidades do sistema disponíveis. Para obter mais informações sobre entidades do sistema e como usá-las, consulte [Definindo entidades](/docs/services/assistant?topic=assistant-entities#entities-enable-system-entities) e procure por "Ativando entidades do sistema".
+Saiba mais sobre as entidades do sistema fornecidas pela IBM prontas para utilização. Estas entidades de utilitário integradas ajudam seu assistente a reconhecer termos e referências comumente usados por clientes em conversas, como números e datas.
 {: shortdesc}
 
 As entidades do sistema estão disponíveis para idiomas anotados no tópico [Idiomas suportados](/docs/services/assistant?topic=assistant-language-support).
+
+Se sua qualificação de diálogo estiver em inglês ou alemão, será possível experimentar as entidades do sistema atualizadas. Para obter mais detalhes, consulte [Novas entidades do sistema](/docs/services/assistant?topic=assistant-beta-system-entities).
+
+Para obter mais informações sobre como usá-las, consulte [Criando entidades](/docs/services/assistant?topic=assistant-entities#entities-enable-system-entities).
 
 ## Entidade @sys-currency
 {: #system-entities-sys-currency}
@@ -81,7 +87,10 @@ Você obtém resultados equivalentes para outros idiomas e moedas nacionais supo
 
 - Os valores de moeda também são reconhecidos como instâncias de entidades @sys-number. Se você estiver usando condições separadas para verificar os valores de moeda e os números, coloque a condição que verifica a moeda acima daquela que verifica um número.
 
-- Se você usar a entidade @sys-currency como uma condição de nó e o usuário especificar `$0` como o valor, o valor será reconhecido como uma moeda corretamente, mas a condição será avaliada para o número zero, não a moeda zero. Como resultado, ela não retorna a resposta esperada. Para verificar os valores de moeda de uma maneira que manipule os zeros adequadamente, use a sintaxe de expressão SpEL integral `entities['sys-currency']?.value` na condição do nó.
+  Essa solução alternativa não será necessária se você estiver usando as entidades do sistema revisadas. Para obter mais detalhes, consulte [Novas entidades do sistema](/docs/services/assistant?topic=assistant-beta-system-entities).
+  {: note}
+
+- Se você usar a entidade @sys-currency como uma condição de nó e o usuário especificar `$0` como o valor, o valor será reconhecido como uma moeda corretamente, mas a condição será avaliada para o número zero, não a moeda zero. Como resultado, `null` é avaliado como false na condição e o nó não é processado. Em vez disso, para verificar valores de moeda de uma forma que manipule zeros corretamente, use a expressão `@sys-currency >=0` na condição do nó.
 
 ## Entidades @sys-date e @sys-time
 {: #system-entities-sys-date-time}
@@ -167,7 +176,7 @@ Para a entrada `at 6 pm` @sys-time retorna esses valores:
 
 - @sys-time sempre retorna o horário neste formato: HH:mm:ss.
 
-Para obter informações sobre o processamento de valores de data e hora, consulte a referência do método [Data e hora](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-date-time).
+Para obter informações sobre o processamento de valores de data e hora, consulte a [Referência do método de data e hora](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-date-time).
 {: tip}
 
 ## Entidade @sys-location
@@ -182,7 +191,7 @@ Para obter informações sobre o processamento de valores de data e hora, consul
 - EUA
 - Nova Gales do Sul
 
-Para obter informações sobre o processamento de valores de sequência, veja a referência de método de [Sequências](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings).
+Para obter informações sobre o processamento de valores de Sequência, consulte a [Referência do método de sequências](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings).
 {: tip}
 
 ## Entidade @sys-number
@@ -228,15 +237,15 @@ Você obtém resultados equivalentes para outros idiomas suportados.
 ### Dicas de uso de @system-number
 {: #system-entities-sys-number-usage-tips}
 
-- Se você usar a entidade @sys-number como uma condição de nó e o usuário especificar zero como o valor, o valor 0 será reconhecido corretamente como um número, mas a condição será avaliada como false e não poderá retornar a resposta associada corretamente. Para verificar os números de uma maneira que manipule os zeros adequadamente, use a sintaxe de expressão SpEL integral `entities['sys-number']?.value` na condição do nó.
+- Se você usar a entidade @sys-number como uma condição de nó e o usuário especificar zero como o valor, esse valor será reconhecido corretamente como um número. No entanto, 0 é interpretado como um valor `null` para a condição, o que faz com que o nó não seja processado. Em vez disso, para verificar os números de uma forma que manipule zeros corretamente, use a expressão `@sys-number >= 0` na condição do nó.
 
 - Se você usar @sys-number para comparar valores numéricos em uma condição, certifique-se de incluir separadamente uma verificação para a presença de um número em si. Se nenhum número for localizado, @sys-number será avaliado como nulo, o que pode resultar em sua comparação sendo avaliada como verdadeira mesmo quando nenhum número está presente.
 
-  Por exemplo, não use `@sys-number<4` sozinho porque se nenhum número for localizado, `@sys-number` será avaliado como nulo. Como nulo é menor que 4, a condição será avaliada como verdadeira, embora nenhum número esteja presente.
+  Por exemplo, não use somente `@sys-number<4` porque, se nenhum número for localizado, `@sys-number` será avaliado como nulo. Como nulo é menor que 4, a condição será avaliada como verdadeira, embora nenhum número esteja presente.
 
-  Use `@sys-number AND @sys-number<4` em vez disso. Se nenhum número estiver presente, a primeira condição será avaliada como falsa, o que resulta adequadamente na condição inteira sendo avaliada como falsa.
+  Em vez disso, use `@sys-number AND @sys-number<4`. Se nenhum número estiver presente, a primeira condição será avaliada como falsa, o que resulta adequadamente na condição inteira sendo avaliada como falsa.
 
-Para obter informações sobre o processamento de valores numéricos, consulte a referência de método [Números](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-numbers).
+Para obter informações sobre os valores de número de processamento, consulte a [Referência do método de números](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-numbers).
 {: tip}
 
 ## Entidade @sys-percentage
@@ -283,8 +292,10 @@ Você obtém resultados equivalentes para outros idiomas suportados.
 
 - Os valores de porcentagem também são reconhecidos como instâncias de entidades @sys-number. Se você estiver usando condições separadas para verificar os valores de porcentagem e números, coloque a condição que verifica uma porcentagem acima daquela que verifica um número.
 
-- Se você usar a entidade @sys-percentage como um nó de
-condição e o usuário especificar `0%` como o valor, o valor será reconhecido como uma porcentagem corretamente, mas a condição será avaliada para o número zero, não a porcentagem 0%. Portanto, ela não retornará a resposta esperada. Para verificar as porcentagens de uma maneira que manipule as porcentagens zero adequadamente, use a sintaxe de expressão SpEL integral `entities['sys-percentage']?.value` na condição do nó.
+  Essa solução alternativa não será necessária se você estiver usando as entidades do sistema revisadas. Para obter mais detalhes, consulte [Novas entidades do sistema](/docs/services/assistant?topic=assistant-beta-system-entities).
+  {: note}
+
+- Se você usar a entidade @sys-percentage como uma condição do nó e o usuário especificar `0%` como o valor, esse valor será reconhecido corretamente como uma porcentagem, mas a condição será avaliada para o número zero e não para a porcentagem de 0%. Como resultado, `null` será avaliado como false na condição e o nó não será processado. Em vez disso, para verificar porcentagens de uma forma que manipule corretamente as porcentagens de zero, use a expressão `@sys-percentage >= 0` na condição do nó.
 
 - Se você inserir um valor como `1-2%`, os valores `1%` e `2%` serão retornados como entidades do sistema. O índice será o intervalo inteiro entre 1% e 2%, e ambas as entidades terão o mesmo índice.
 
@@ -300,5 +311,5 @@ condição e o usuário especificar `0%` como o valor, o valor será reconhecido
 - Jane Doe
 - Vijay
 
-Para obter informações sobre o processamento de valores de sequência, veja a referência de método de [Sequências](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings).
+Para obter informações sobre o processamento de valores de Sequência, consulte a [Referência do método de sequências](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings).
 {: tip}

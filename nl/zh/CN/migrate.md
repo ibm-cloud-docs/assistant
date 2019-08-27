@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-02"
 
 subcollection: assistant
 
@@ -22,7 +22,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# 迁移
+# 从 Cloud Foundry 迁移
 {: #migrate}
 
 迁移 {{site.data.keyword.conversationshort}} 服务实例，以将其从当前 Cloud Foundry 组织和空间移至资源组。
@@ -48,13 +48,18 @@ subcollection: assistant
 
 要迁移服务实例，请完成以下步骤：
 
-1.  首先确定要将服务实例移至的资源组。
+1.  首先确定要将服务实例移到哪个资源组。
 
-    有关提示，请参阅[使用资源组来组织资源的最佳实践 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](/docs/resources?topic=resources-bp_resourcegroups)。
+    请参阅[使用资源组来组织资源的最佳实践 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](/docs/resources?topic=resources-bp_resourcegroups) 以获取相关技巧。
+
+    可以使用一个服务实例来开发、测试和部署助手，因此不要为不同类型的部署环境创建不同的资源组。
+        {:tip}
+
+    使用高端套餐时，可以创建多个实例。但是，实例必须全部在同一资源组中创建。
 
 1.  在 IBM Cloud“仪表板”的服务列表中，单击要迁移的实例的“迁移”图标 ![迁移](images/migrate.svg)，然后单击弹出窗口中的**迁移**。
 
-    2018 年 5 月 7 日前在悉尼数据中心创建的任何服务实例，或 2018 年 12 月 13 日之前在伦敦数据中心内创建的任何服务实例，都已联合到达拉斯数据中心。迁移基于悉尼或基于伦敦的 Cloud Foundry 服务实例时，会将其转换为在达拉斯托管的资源。
+    2018 年 5 月 7 日之前在悉尼数据中心创建的任何服务实例，或 2018 年 12 月 13 日之前在伦敦数据中心内创建的任何服务实例，都已联合到达拉斯数据中心。迁移基于悉尼或基于伦敦的 Cloud Foundry 服务实例时，会将其转换为在达拉斯托管的资源。
     {: note}
 
 1.  单击**继续**，然后选择资源组。
@@ -64,6 +69,28 @@ subcollection: assistant
 1.  单击**迁移**。
 
     迁移过程完成时，将显示一条消息。如果有其他服务实例要迁移，可以继续迁移其他服务实例，否则请单击**完成**。
+
+1.  **高端套餐一次性步骤**：如果要迁移的服务实例是作为高端套餐的一部分创建的，那么必须通知服务团队您要迁移高端套餐实例。为此，请在 [IBM Cloud 支持 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/unifiedsupport/supportcenter){: new_window} 中创建案例。
+
+    服务团队需要代表您执行其他一些步骤。请向案例添加以下信息：
+
+    - 托管服务实例的区域，如达拉斯或法兰克福。
+    - 资源组名称
+    - 资源组标识
+
+      如果您不知道该标识，请打开 IBM Cloud 命令行界面 (CLI) 工具并输入以下命令：
+
+      ```bash
+      ibmcloud resource groups
+      ```
+      {: codeblock}
+
+      响应会显示资源组的标识。有关 CLI 命令的更多信息，请参阅[使用资源和资源组 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/docs/cli?topic=cloud-cli-ibmcloud_commands_resource#ibmcloud_commands_resource)。
+
+      提交案例后，请给支持团队最长 24 小时时间，让其能完成支持高端套餐迁移所需执行的工作。迁移过程中不会发生服务中断。
+
+      仅在第一次迁移高端套餐的服务实例时，才需要执行此步骤。对属于同一套餐的其他服务实例单击*迁移*时，这些服务实例将迁移到同一资源组，而无需服务团队的任何参与。
+      {: important}
 
 已迁移的旧服务实例（基于 Cloud Foundry 组织的服务实例）会继续列在仪表板的“Cloud Foundry 服务”部分中，但现在会显示为新版本（基于资源组的版本）实例的*别名*。
 

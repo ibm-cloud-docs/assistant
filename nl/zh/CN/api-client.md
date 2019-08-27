@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-08-08"
 
 subcollection: assistant
+
 
 ---
 
@@ -38,15 +39,15 @@ subcollection: assistant
 继续使用此示例之前，您需要先设置必需的助手：
 
 1.  下载对话技能 <a target="_blank" href="https://watson-developer-cloud.github.io/doc-tutorial-downloads/assistant/assistant-simple-example.json" download="assistant-simple-example.json">JSON 文件</a>。
-1.  [导入技能](/docs/services/assistant?topic=assistant-skill-add#creating-skills)至 {{site.data.keyword.conversationshort}} 服务的实例。
-1.  [创建助手](/docs/services/assistant?topic=assistant-assistant-add#creating-assistants)并连接导入的技能。
+1.  [导入技能](/docs/services/assistant?topic=assistant-skill-dialog-add#skill-dialog-add-task)至 {{site.data.keyword.conversationshort}} 服务的实例。
+1.  [创建助手](/docs/services/assistant?topic=assistant-assistant-add)并连接导入的技能。
 
 ## 获取服务信息
 {: #api-client-get-info}
 
 要访问 {{site.data.keyword.conversationshort}} 服务 REST API，应用程序需要能够向 {{site.data.keyword.Bluemix}} 进行认证，并连接到正确的助手。您需要复制服务凭证和助手标识，然后将其粘贴到应用程序代码中。
 
-要从 {{site.data.keyword.conversationshort}} 工具访问服务凭证和助手标识，请转至**助手**选项卡，然后单击要连接到的助手的 ![菜单](images/kabob-grey.png) 菜单。选择**查看 API 详细信息**以查看助手的详细信息，包括助手标识和 API 密钥。
+要从 {{site.data.keyword.conversationshort}} 工具访问服务凭证和助手标识，请转至**助手**选项卡，然后单击要连接到的助手的 ![菜单](images/kebab-react.png) 菜单。选择**查看 API 详细信息**以查看助手的详细信息，包括助手标识和 API 密钥。
 
 还可以通过 {{site.data.keyword.Bluemix_short}}“仪表板”来访问服务凭证。
 
@@ -59,57 +60,70 @@ subcollection: assistant
 // 示例 1：设置服务包装器，发送初始消息，
 // 并接收响应。
 
-var AssistantV2 = require('watson-developer-cloud/assistant/v2');
+const AssistantV2 = require('ibm-watson/assistant/v2');
 
 // 设置 Assistant 服务包装器。
-var service = new AssistantV2({
+const service = new AssistantV2({
   iam_apikey: '{apikey}', // 替换为 API 密钥
-  version: '2018-09-20'
+  version: '2019-02-28',
 });
 
-var assistantId = '{assistant_id}'; // 替换为助手标识
-var sessionId;
+const assistantId = '{assistant_id}'; // 替换为助手标识
+let sessionId;
 
 // 创建会话。
-service.createSession({
-  assistant_id: assistantId
-}, function(err, result) {
-  if (err) {
-    console.error(err); // 发生了问题
-    return;
-  }
-  sessionId = result.session_id;
-  sendMessage(); // 使用空消息启动会话
-});
+service
+  .createSession({
+    assistant_id: assistantId,
+  })
+  .then(res => {
+    sessionId = res.session_id;
+    sendMessage({
+      message_type: 'text',
+      text: '' // 以空消息开始会话
+    });
+  })
+  .catch(err => {
+    console.log(err); // 出错了
+  });
 
 // 向助手发送消息。
-function sendMessage() {
-  service.message({
-    assistant_id: assistantId,
-    session_id: sessionId
-  }, processResponse);
+function sendMessage(messageInput) {
+  service
+    .message({
+      assistant_id: assistantId,
+      session_id: sessionId,
+      input: messageInput
+    })
+    .then(res => {
+      processResponse(res);
+    })
+    .catch(err => {
+      console.log(err); // 出错了
+    });
 }
 
 // 处理响应。
-function processResponse(err, response) {
-  if (err) {
-    console.error(err); // something went wrong
-    return;
-  }
-
-  // 显示助手的输出（如有）。假定是单个文本响应。
-  if (response.output.generic.length != 0) {
-      console.log(response.output.generic[0].text);
-  }
-
-  // 操作已完成，将关闭会话
-  service.deleteSession({
-    assistant_id: assistantId,
-    session_id: sessionId
-  }, function(err, result) {
-    if (err) {
-    console.error(err); // 发生了问题
+function processResponse(response) {
+  // 显示助手的输出（如有）。仅支持一个
+  // 文本响应。
+  if (response.output.generic) {
+    if (response.output.generic.length > 0) {
+      if (response.output.generic[0].response_type === 'text') {
+        console.log(response.output.generic[0].text);
     }
+  }
+  }
+
+
+// 操作已完成，将关闭会话。
+service
+  .deleteSession({
+    assistant_id: assistantId,
+    session_id: sessionId,
+  })
+  .catch(err => {
+    console.log(err); // 出错了
   });
 }
 ```
@@ -120,12 +134,12 @@ function processResponse(err, response) {
 # 示例 1：设置服务包装器，发送初始消息，
 # 然后接收响应。
 
-import watson_developer_cloud
+import ibm_watson
 
 # 设置 Assistant 服务。
-service = watson_developer_cloud.AssistantV2(
+service = ibm_watson.AssistantV2(
     iam_apikey = '{apikey}', # 替换为 API 密钥
-    version = '2018-09-20'
+    version = '2019-02-28'
 )
 
 assistant_id = '{assistant_id}' # 替换为助手标识
@@ -141,9 +155,11 @@ response = service.message(
     session_id
 ).get_result()
 
-# 显示对话的输出（如有）。假定是单个文本响应。
+# 显示对话的输出（如有）。仅支持一个
+# 文本响应。
 if response['output']['generic']:
-    print(response['output']['generic'][0]['text'])
+    if response['output']['generic'][0]['response_type'] == 'text':
+        print(response['output']['generic'][0]['text'])
 
 # 操作已完成，将删除会话。
 service.delete_session(
@@ -160,13 +176,13 @@ service.delete_session(
  * 然后接收响应。
  */
 
-import com.ibm.watson.developer_cloud.assistant.v2.Assistant;
-import com.ibm.watson.developer_cloud.assistant.v2.model.CreateSessionOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.DeleteSessionOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageResponse;
-import com.ibm.watson.developer_cloud.assistant.v2.model.SessionResponse;
-import com.ibm.watson.developer_cloud.service.security.IamOptions;
+import com.ibm.watson.assistant.v2.Assistant;
+import com.ibm.watson.assistant.v2.model.CreateSessionOptions;
+import com.ibm.watson.assistant.v2.model.DeleteSessionOptions;
+import com.ibm.watson.assistant.v2.model.MessageOptions;
+import com.ibm.watson.assistant.v2.model.MessageResponse;
+import com.ibm.watson.assistant.v2.model.SessionResponse;
+import com.ibm.cloud.sdk.core.service.security.IamOptions;
 import java.util.logging.LogManager;
 
 public class AssistantSimpleExample {
@@ -177,17 +193,18 @@ public class AssistantSimpleExample {
 
     // 设置 Assistant 服务。
     IamOptions iamOptions = new IamOptions.Builder().apiKey("{apikey}").build();
-    Assistant service = new Assistant("2018-09-20", iamOptions);
+    Assistant service = new Assistant("2019-02-28", iamOptions);
     String assistantId = "{assistant_id}"; // 替换为助手标识
 
     // 创建会话。
     CreateSessionOptions createSessionOptions = new CreateSessionOptions.Builder(assistantId).build();
-    SessionResponse session = service.createSession(createSessionOptions).execute();
+    SessionResponse session = service.createSession(createSessionOptions).execute().getResult();
     String sessionId = session.getSessionId();
 
     // 以空消息开始会话。
-MessageOptions messageOptions = new MessageOptions.Builder(assistantId, sessionId).build();
-    MessageResponse response = service.message(messageOptions).execute();
+MessageOptions messageOptions = new MessageOptions.Builder(assistantId,
+                                                        sessionId).build();
+    MessageResponse response = service.message(messageOptions).execute().getResult();
 
     // 显示对话的输出（如有）。假定是单个文本响应。
     System.out.println(response.getOutput().getGeneric().get(0).getText());
@@ -225,13 +242,13 @@ MessageOptions messageOptions = new MessageOptions.Builder(assistantId, sessionI
 将示例代码粘贴到名为 `AssistantSimpleExample.java` 的文件中。然后，可以编译并运行该文件。
 {: java}
 
-**注：**确保已使用 `npm install watson-developer-cloud` 安装用于 Node.js 的 Watson SDK。
+**注：**确保已使用 `npm install ibm-watson` 安装用于 Node.js 的 Watson SDK。
 {: javascript}
 
-**注：**确保已使用 `pip install --upgrade watson-developer-cloud` 或 `easy_install --upgrade watson-developer-cloud` 安装用于 Python 的 Watson SDK。
+**注：**确保已使用 `pip install --upgrade ibm-watson` 或 `easy_install --upgrade ibm-watson` 安装用于 Python 的 Watson SDK。
 {: python}
 
-**注：**确保已安装 [Watson SDK for Java ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/watson-developer-cloud/java-sdk/blob/develop/README.md){: new_window}。
+**注：**确保已安装 [Watson SDK for Java ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/watson-developer-cloud/java-sdk/blob/master/README.md){: new_window}。
 {: java}
 
 假定一切正常，那么助手将返回对话输出，然后该输出将显示到控制台：
@@ -254,73 +271,86 @@ MessageOptions messageOptions = new MessageOptions.Builder(assistantId, sessionI
 ```javascript
 // 示例 2：添加用户输入并检测意向。
 
-var prompt = require('prompt-sync')();
-var AssistantV2 = require('watson-developer-cloud/assistant/v2');
+const prompt = require('prompt-sync')();
+const AssistantV2 = require('ibm-watson/assistant/v2');
 
 // 设置 Assistant 服务包装器。
-var service = new AssistantV2({
+const service = new AssistantV2({
   iam_apikey: '{apikey}', // 替换为 API 密钥
-  version: '2018-09-20'
+  version: '2019-02-28',
 });
 
-var assistantId = '{assistant_id}'; // 替换为助手标识
-var sessionId;
+const assistantId = '{assistant_id}'; // 替换为助手标识
+let sessionId;
 
 // 创建会话。
-service.createSession({
-  assistant_id: assistantId
-}, function(err, result) {
-  if (err) {
-    console.error(err); // 发生了问题
-    return;
-  }
-  sessionId = result.session_id;
-  sendMessage(); // 使用空消息启动会话
-});
+service
+  .createSession({
+    assistant_id: assistantId,
+  })
+  .then(res => {
+    sessionId = res.session_id;
+    sendMessage({
+      message_type: 'text',
+      text: ''
+    }); // 以空消息开始会话
+  })
+  .catch(err => {
+    console.log(err); // 出错了
+  });
 
 // 向助手发送消息。
-function sendMessage(messageText) {
-  service.message({
-    assistant_id: assistantId,
-    session_id: sessionId,
-    input: {
-      message_type: 'text',
-      text: messageText
-    }
-  }, processResponse);
+function sendMessage(messageInput) {
+  service
+    .message({
+      assistant_id: assistantId,
+      session_id: sessionId,
+      input: messageInput
+    })
+    .then(res => {
+      processResponse(res);
+    })
+    .catch(err => {
+      console.log(err); // 出错了
+    });
 }
 
 // 处理响应。
-function processResponse(err, response) {
-  if (err) {
-    console.error(err); // something went wrong
-    return;
-  }
+function processResponse(response) {
 
   // 如果检测到意向，就将其记录到控制台。
   if (response.output.intents.length > 0) {
     console.log('Detected intent: #' + response.output.intents[0].intent);
   }
 
-  // 显示助手的输出（如有）。假定是单个文本响应。
-  if (response.output.generic.length != 0) {
-    console.log(response.output.generic[0].text);
+  // 显示助手的输出（如有）。仅支持一个
+  // 文本响应。
+  if (response.output.generic) {
+    if (response.output.generic.length > 0) {
+      if (response.output.generic[0].response_type === 'text') {
+        console.log(response.output.generic[0].text);
+    }
+  }
   }
 
   // 提示下一轮输入。
-  var newMessageFromUser = prompt('>> ');
-    if (newMessageFromUser === 'quit') {
-      service.deleteSession({
+  const newMessageFromUser = prompt('>> ');
+  if (newMessageFromUser === 'quit') {
+    service
+      .deleteSession({
         assistant_id: assistantId,
-        session_id: sessionId
-      }, function(err, result) {
-        if (err) {
-    console.error(err); // 发生了问题
-        }
+        session_id: sessionId,
+      })
+      .catch(err => {
+        console.log(err); // 出错了
       });
-      return;
-    }
-  sendMessage(newMessageFromUser);
+    return;
+  }
+  newMessageInput = {
+    message_type: 'text',
+    text: newMessageFromUser
+  }
+  sendMessage(newMessageInput);
 }
 ```
 {: codeblock}
@@ -329,12 +359,12 @@ function processResponse(err, response) {
 ```python
 # 示例 2：添加用户输入并检测意向。
 
-import watson_developer_cloud
+import ibm_watson
 
 # 设置 Assistant 服务。
-service = watson_developer_cloud.AssistantV2(
+service = ibm_watson.AssistantV2(
     iam_apikey = '{apikey}', # 替换为 API 密钥
-    version = '2018-09-20'
+    version = '2019-02-28'
 )
 
 assistant_id = '{assistant_id}' # 替换为助手标识
@@ -345,31 +375,37 @@ session_id = service.create_session(
 ).get_result()['session_id']
 
 # 使用空值进行初始化以启动会话。
-user_input = ''
+message_input = {
+    'message_type:': 'text',
+    'text': ''
+    }
 
 # 主输入/输出循环
-while user_input != 'quit':
+while message_input['text'] != 'quit':
 
     # 向助手发送消息。
     response = service.message(
         assistant_id,
         session_id,
-        input = {
-            'text': user_input
-    }
-  ).get_result()
+        input = message_input
+    ).get_result()
 
     # 如果检测到意向，将其显示到控制台。
   if response['output']['intents']:
         print('Detected intent: #' + response['output']['intents'][0]['intent'])
 
-    # 显示对话的输出（如有）。假定是单个文本响应。
-    if response['output']['generic']:
-        print(response['output']['generic'][0]['text'])
+    # 显示对话的输出（如有）。仅支持一个
+    # 文本响应。
+if response['output']['generic']:
+        if response['output']['generic'][0]['response_type'] == 'text':
+            print(response['output']['generic'][0]['text'])
 
     # 提示进行下一轮输入。
   user_input = input('>> ')
-# 操作已完成，将删除会话。
+message_input = {
+        'text': user_input
+    }
+  # 操作已完成，将删除会话。
 service.delete_session(
     assistant_id = assistant_id,
     session_id = session_id
@@ -383,16 +419,16 @@ service.delete_session(
  * 示例 2：添加用户输入并检测意向。
  */
 
-import com.ibm.watson.developer_cloud.assistant.v2.Assistant;
-import com.ibm.watson.developer_cloud.assistant.v2.model.CreateSessionOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.DeleteSessionOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.DialogRuntimeResponseGeneric;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageInput;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageResponse;
-import com.ibm.watson.developer_cloud.assistant.v2.model.RuntimeIntent;
-import com.ibm.watson.developer_cloud.assistant.v2.model.SessionResponse;
-import com.ibm.watson.developer_cloud.service.security.IamOptions;
+import com.ibm.watson.assistant.v2.Assistant;
+import com.ibm.watson.assistant.v2.model.CreateSessionOptions;
+import com.ibm.watson.assistant.v2.model.DeleteSessionOptions;
+import com.ibm.watson.assistant.v2.model.DialogRuntimeResponseGeneric;
+import com.ibm.watson.assistant.v2.model.MessageInput;
+import com.ibm.watson.assistant.v2.model.MessageOptions;
+import com.ibm.watson.assistant.v2.model.MessageResponse;
+import com.ibm.watson.assistant.v2.model.RuntimeIntent;
+import com.ibm.watson.assistant.v2.model.SessionResponse;
+import com.ibm.cloud.sdk.core.service.security.IamOptions;
 import java.util.List;
 import java.util.logging.LogManager;
 
@@ -404,12 +440,12 @@ public class AssistantSimpleExample {
 
     // 设置 Assistant 服务。
     IamOptions iamOptions = new IamOptions.Builder().apiKey("{apikey}").build();
-    Assistant service = new Assistant("2018-09-20", iamOptions);
+    Assistant service = new Assistant("2019-02-28", iamOptions);
     String assistantId = "{assistant_id}"; // 替换为助手标识
 
     // 创建会话。
     CreateSessionOptions createSessionOptions = new CreateSessionOptions.Builder(assistantId).build();
-    SessionResponse session = service.createSession(createSessionOptions).execute();
+    SessionResponse session = service.createSession(createSessionOptions).execute().getResult();
     String sessionId = session.getSessionId();
 
     // 使用空值进行初始化以启动会话。
@@ -422,7 +458,7 @@ public class AssistantSimpleExample {
       MessageOptions messageOptions = new MessageOptions.Builder(assistantId, sessionId)
                                                   .input(input)
                                                   .build();
-      MessageResponse response = service.message(messageOptions).execute();
+      MessageResponse response = service.message(messageOptions).execute().getResult();
 
       // 如果检测到意向，就将其显示到控制台。
       List<RuntimeIntent> responseIntents = response.getOutput().getIntents();
@@ -491,50 +527,54 @@ public class AssistantSimpleExample {
 ```javascript
 // 示例 3：实现应用程序操作。
 
-var prompt = require('prompt-sync')();
-var AssistantV2 = require('watson-developer-cloud/assistant/v2');
+const prompt = require('prompt-sync')();
+const AssistantV2 = require('ibm-watson/assistant/v2');
 
-// 设置 Assistant 服务。
-var service = new AssistantV2({
+// 设置 Assistant 服务包装器。
+const service = new AssistantV2({
   iam_apikey: '{apikey}', // 替换为 API 密钥
-  version: '2018-09-20'
+  version: '2019-02-28',
 });
 
-var assistantId = '{assistant_id}'; // 替换为助手标识
-var sessionId;
+const assistantId = '{assistant_id}'; // 替换为助手标识
+let sessionId;
 
 // 创建会话。
-service.createSession({
-  assistant_id: assistantId
-}, function(err, result) {
-  if (err) {
-    console.error(err); // 发生了问题
-    return;
-  }
-  sessionId = result.session_id;
-  sendMessage(''); // 使用空消息启动会话
-});
+service
+  .createSession({
+    assistant_id: assistantId,
+  })
+  .then(res => {
+    sessionId = res.session_id;
+    sendMessage({
+      message_type: 'text',
+      text: ''  // 以空消息开始会话
+    });
+  })
+  .catch(err => {
+    console.log(err); // 出错了
+  });
 
 // 向助手发送消息。
-function sendMessage(messageText) {
-  service.message({
-    assistant_id: assistantId,
-    session_id: sessionId,
-    input: {
-      message_type: 'text',
-      text: messageText
-    }
-  }, processResponse);
+function sendMessage(messageInput) {
+  service
+    .message({
+      assistant_id: assistantId,
+      session_id: sessionId,
+      input: messageInput
+    })
+    .then(res => {
+      processResponse(res);
+    })
+    .catch(err => {
+      console.log(err); // 出错了
+    });
 }
 
 // 处理响应。
-function processResponse(err, response) {
-  if (err) {
-    console.error(err); // something went wrong
-    return;
-  }
+function processResponse(response) {
 
-  var endConversation = false;
+  let endConversation = false;
 
   // 检查助手请求的客户机操作。
   if (response.output.actions) {
@@ -550,25 +590,35 @@ function processResponse(err, response) {
     }
   } else {
     // 显示助手的输出（如有）。假定是单个文本响应。
-    if (response.output.generic.length != 0) {
-      console.log(response.output.generic[0].text);
+    if (response.output.generic) {
+      if (response.output.generic.length > 0) {
+        if (response.output.generic[0].response_type === 'text') {
+          console.log(response.output.generic[0].text);
+    }
+  }
     }
   }
 
   // 如果未结束，那么提示进行下一轮输入。
   if (!endConversation) {
-    var newMessageFromUser = prompt('>> ');
-    sendMessage(newMessageFromUser);
+    const newMessageFromUser = prompt('>> ');
+    newMessageInput = {
+      message_type: 'text',
+      text: newMessageFromUser
+    }
+    sendMessage(newMessageInput);
   } else {
-    service.deleteSession({
-      assistant_id: assistantId,
-      session_id: sessionId
-    }, function(err, result) {
-      if (err) {
-    console.error(err); // 发生了问题
-      }
-    });
-    return;
+    service
+      .deleteSession({
+        assistant_id: assistantId,
+        session_id: sessionId,
+      })
+      .then(res => {
+        return;
+      })
+      .catch(err => {
+        console.log(err); // 出错了
+      });
   }
 }
 ```
@@ -578,13 +628,13 @@ function processResponse(err, response) {
 ```python
 # 示例 3：实现应用程序操作。
 
-import watson_developer_cloud
+import ibm_watson
 import time
 
 # 设置 Assistant 服务。
-service = watson_developer_cloud.AssistantV2(
+service = ibm_watson.AssistantV2(
     iam_apikey = '{apikey}', # 替换为 API 密钥
-    version = '2018-09-20'
+    version = '2019-02-28'
 )
 
 assistant_id = '{assistant_id}' # 替换为助手标识
@@ -595,7 +645,7 @@ session_id = service.create_session(
 ).get_result()['session_id']
 
 # 使用空值进行初始化以启动会话。
-user_input = ''
+message_input = {'text': ''}
 current_action = ''
 
 # 主输入/输出循环
@@ -607,14 +657,14 @@ while current_action != 'end_conversation':
     response = service.message(
         assistant_id,
         session_id,
-        input = {
-            'text': user_input
-    }
-  ).get_result()
+        input = message_input
+    ).get_result()
 
-    # 显示对话的输出（如有）。假定是单个文本响应。
+    # 显示对话的输出（如有）。仅支持一个
+    # 文本响应。
     if response['output']['generic']:
-        print(response['output']['generic'][0]['text'])
+        if response['output']['generic'][0]['response_type'] == 'text':
+            print(response['output']['generic'][0]['text'])
 
     # 检查助手请求的客户机操作。
     if 'actions' in response['output']:
@@ -627,7 +677,10 @@ while current_action != 'end_conversation':
     # 如果未结束，那么提示进行下一轮输入。
     if current_action != 'end_conversation':
     user_input = input('>> ')
-# 操作已完成，将删除会话。
+message_input = {
+            'text': user_input
+    }
+  # 操作已完成，将删除会话。
 service.delete_session(
     assistant_id = assistant_id,
     session_id = session_id
@@ -641,17 +694,17 @@ service.delete_session(
  * 示例 3：实现应用程序操作。
  */
 
-import com.ibm.watson.developer_cloud.assistant.v2.Assistant;
-import com.ibm.watson.developer_cloud.assistant.v2.model.CreateSessionOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.DeleteSessionOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.DialogNodeAction;
-import com.ibm.watson.developer_cloud.assistant.v2.model.DialogRuntimeResponseGeneric;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageInput;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageResponse;
-import com.ibm.watson.developer_cloud.assistant.v2.model.RuntimeIntent;
-import com.ibm.watson.developer_cloud.assistant.v2.model.SessionResponse;
-import com.ibm.watson.developer_cloud.service.security.IamOptions;
+import com.ibm.watson.assistant.v2.Assistant;
+import com.ibm.watson.assistant.v2.model.CreateSessionOptions;
+import com.ibm.watson.assistant.v2.model.DeleteSessionOptions;
+import com.ibm.watson.assistant.v2.model.DialogNodeAction;
+import com.ibm.watson.assistant.v2.model.DialogRuntimeResponseGeneric;
+import com.ibm.watson.assistant.v2.model.MessageInput;
+import com.ibm.watson.assistant.v2.model.MessageOptions;
+import com.ibm.watson.assistant.v2.model.MessageResponse;
+import com.ibm.watson.assistant.v2.model.RuntimeIntent;
+import com.ibm.watson.assistant.v2.model.SessionResponse;
+import com.ibm.cloud.sdk.core.service.security.IamOptions;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -665,12 +718,12 @@ public class AssistantSimpleExample {
 
     // 设置 Assistant 服务。
     IamOptions iamOptions = new IamOptions.Builder().apiKey("{apikey}").build();
-    Assistant service = new Assistant("2018-09-20", iamOptions);
+    Assistant service = new Assistant("2019-02-28", iamOptions);
     String assistantId = "{assistant_id}"; // 替换为助手标识
 
     // 创建会话。
     CreateSessionOptions createSessionOptions = new CreateSessionOptions.Builder(assistantId).build();
-    SessionResponse session = service.createSession(createSessionOptions).execute();
+    SessionResponse session = service.createSession(createSessionOptions).execute().getResult();
     String sessionId = session.getSessionId();
 
     // 使用空值进行初始化以启动会话。
@@ -687,10 +740,10 @@ public class AssistantSimpleExample {
       MessageOptions messageOptions = new MessageOptions.Builder(assistantId, sessionId)
                                                   .input(input)
                                                   .build();
-      MessageResponse response = service.message(messageOptions).execute();
+      MessageResponse response = service.message(messageOptions).execute().getResult();
 
       // 显示对话的输出（如有）。假定是单个文本响应。
-      List<DialogRuntimeResponseGeneric> responseGeneric = response.getOutput().getGeneric();
+    List<DialogRuntimeResponseGeneric> responseGeneric = response.getOutput().getGeneric();
       if(responseGeneric.size() > 0) {
         System.out.println(response.getOutput().getGeneric().get(0).getText());
       }
@@ -745,171 +798,6 @@ public class AssistantSimpleExample {
 当然，现实世界应用程序将使用更复杂的用户界面，例如 Web 交谈窗口。它将实现更复杂的操作，可能是与客户数据库或其他业务系统相集成。它还需要向助手发送其他数据，例如用户标识，用于标识每个唯一用户。但是，应用程序如何与 {{site.data.keyword.conversationshort}} 服务进行交互的基本原则将保持不变。
 
 有关一些更复杂的示例，请参阅[样本应用程序](/docs/services/assistant?topic=assistant-sample-apps)。
-
-## 访问上下文
-{: #api-client-get-context}
-
-*context* 是一个包含变量的对象，这些变量在整个会话中持久存储，并且可以由对话和客户机应用程序共享。如果应用程序使用的是 V2 API，那么上下文由助手逐个会话自动进行维护。对话和客户机应用程序都可以读取和写入上下文变量。缺省情况下，上下文不会返回给客户机应用程序，但您可以选择请求将其包含在对每个 `/message` 请求的响应中。
-
-**重要信息：**上下文的一个用途是指定与助手进行交互的每个最终用户的唯一用户标识。对于基于用户的套餐，此标识用于计费。（有关更多信息，请参阅[基于用户的套餐](/docs/services/assistant?topic=assistant-services-information#user-based-plans)。）
-
-有两种类型的上下文：
-
-- **全局上下文**：由助手使用的所有技能共享的上下文变量，包括用于管理会话流的内部系统变量。
-
-- **特定于技能的上下文**：特定于某种技能的上下文变量，包括应用程序所需的任何用户定义的变量。目前，仅支持一种技能（名为 `main skill`）。
-
-以下示例显示了包含全局上下文变量和特定于技能的上下文变量的 `/message` 请求；此示例还使用 `options.return_context` 属性来请求随响应返回上下文。
-
-```javascript
-service.message({
-  assistant_id: '{assistant_id}',
-  session_id: '{session_id}',
-  input: {
-    'message_type': 'text',
-    'text': 'Hello',
-    'options': {
-      'return_context': true
-    }
-  },
-  context: {
-    'global': {
-      'system': {
-        'user_id': 'my_user_id'
-      }
-    },
-    'skills': {
-      'main skill': {
-        'user_defined': {
-          'account_number': '123456'
-        }
-      }
-    }
-  }
-}, function(err, response) {
-  if (err)
-    console.log('error:', err);
-  else
-    console.log(JSON.stringify(response, null, 2));
-});
-```
-{: codeblock}
-{: javascript}
-
-```python
-response=service.message(
-    assistant_id='{assistant_id}',
-    session_id='{session_id}',
-    input={
-        'message_type': 'text',
-        'text': 'Hello',
-        'options': {
-            'return_context': True
-        }
-    },
-    context={
-        'global': {
-            'system': {
-                'user_id': 'my_user_id'
-            }
-        },
-        'skills': {
-            'main skill': {
-                'user_defined': {
-                    'account_number': '123456'
-                }
-            }
-        }
-    }
-).get_result()
-
-print(json.dumps(response, indent=2))
-```
-{: codeblock}
-{: python}
-
-```java
-    MessageInputOptions inputOptions = new MessageInputOptions();
-    inputOptions.setReturnContext(true);
-
-    MessageInput input = new MessageInput.Builder()
-      .messageType("text")
-      .text("Hello")
-      .options(inputOptions)
-      .build();
-
-    // 使用用户标识创建全局上下文
-    MessageContextGlobalSystem system = new MessageContextGlobalSystem();
-    system.setUserId("my_user_id");
-    MessageContextGlobal globalContext = new MessageContextGlobal();
-    globalContext.setSystem(system);
-
-    // 构建用户定义的上下文变量，并为 main skill 放入特定于技能的上下文
-    Map<String, String> userDefinedContext = new HashMap<>();
-    userDefinedContext.put("account_num","123456");
-    Map<String, Map> mainSkillContext = new HashMap<>();
-    mainSkillContext.put("user_defined", userDefinedContext);
-    MessageContextSkills skillsContext = new MessageContextSkills();
-    skillsContext.put("main skill", mainSkillContext);
-
-    MessageContext context = new MessageContext();
-    context.setGlobal(globalContext);
-    context.setSkills(skillsContext);
-
-    MessageOptions options = new MessageOptions.Builder("{assistant_id}", "{session_id}")
-      .input(input)
-      .context(context)
-      .build();
-
-    MessageResponse response = service.message(options).execute();
-
-    System.out.println(response);
-```
-{: codeblock}
-{: java}
-
-在此示例请求中，应用程序将 `user_id` 的值指定为全局上下文的一部分。此外，应用程序还将一个用户定义的上下文变量 (`account_number`) 设置为特定于技能的上下文的一部分。此上下文变量可由对话节点作为 `$account_number` 进行访问。（有关在对话中使用上下文的更多信息，请参阅[如何处理对话](/docs/services/assistant?topic=assistant-dialog-runtime)。）
-
-可以指定要用于用户定义的上下文变量的任何变量名称。如果指定的变量已存在，那么将使用新值覆盖该变量；如果不存在，会将新变量添加到上下文中。
-
-此请求的输出不仅包括通常的输出，还包括上下文，其中显示添加了指定值。
-
-```json
-{
-  "output": {
-    "generic":[
-      {
-        "response_type": "text",
-        "text": "欢迎使用 Watson Assistant 示例！"
-      }
-    ],
-    "intents": [
-      {
-        "intent": "hello",
-        "confidence": 1
-      }
-    ],
-    "entities": []
-  },
-"context": {
-   "global": {
-      "system": {
-        "turn_count": 1,
-        "user_id": "my_user_id"
-      }
-    },
-    "skills": {
-      "main skill": {
-        "user_defined": {
-          "account_number": "123456"
-        }
-      }
-    }
-  }
-}
-```
-
-有关如何使用 API 访问上下文变量的详细信息，请参阅 [V2 API 参考 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://{DomainName}/apidocs/assistant-v2#send-user-input-to-assistant){: new_window}。
 
 ## 使用 V1 API
 {: #api-client-v1-api}

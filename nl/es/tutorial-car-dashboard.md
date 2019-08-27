@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
 
@@ -127,7 +127,7 @@ Cree entidades que se puedan producir en la entrada de usuario que tiene la inte
     - Valor: `air conditioning`. Sinónimos: `air` y `AC`.
 
 1.  Pulse para **Activar** la coincidencia aproximada para la entidad `@appliance`.
-    Este valor ayuda al servicio a reconocer referencias a entidades en la entrada de usuario aunque la entidad se especifique de forma que no coincida exactamente con la sintaxis utilizada aquí.
+    Este valor ayuda a su asistente a reconocer referencias a entidades en la entrada de usuario aunque la entidad se especifique de forma que no coincida exactamente con la sintaxis utilizada aquí.
 1.  Pulse el icono **Cerrar** ![Flecha Cerrar](images/close_arrow.png) para completar la adición de la entidad `@appliance`.
 1.  Repita los pasos 2-8 para crear la entidad `@genre` con la coincidencia aproximada activada y estos valores y sinónimos:
 

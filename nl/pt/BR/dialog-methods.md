@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-08-12"
 
 subcollection: assistant
 
@@ -28,15 +28,46 @@ subcollection: assistant
 É possível processar os valores extraídos de elocuções do usuário que você deseja referenciar em uma variável de contexto, condição ou em outro lugar na resposta.
 {: shortdesc}
 
-## Sintaxe de avaliação
+## Onde usar a sintaxe de expressão
 {: #dialog-methods-evaluation-syntax}
 
-Para expandir os valores de variáveis dentro de outras variáveis ou aplicar métodos para texto de saída ou variáveis de contexto, use a sintaxe de expressão `<? expression ?>`. Por exemplo:
+Para expandir valores de variáveis dentro de outras variáveis ou aplicar métodos nas variáveis de contexto ou no texto de saída, use a sintaxe de expressão `<? expression ?>`. Por exemplo:
 
-- **Incrementando uma propriedade numérica**
-    - `"output":{"number":"<? output.number + 1 ?>"}`
-- **Chamando um método em um objeto**
-    - `"context":{"toppings": "<? context.toppings.append( 'onions' ) ?>"}`
+- **Referenciando a entrada de um usuário por meio de uma resposta de texto do nó de diálogo**
+
+  ```bash
+  You said <? input.text ?>.
+  ```
+  {: codeblock}
+
+- **Incrementando uma propriedade numérica por meio do editor JSON**
+
+    ```json
+    "output":{"number":"<? output.number + 1 ?>"}
+    ```
+    {: codeblock}
+
+- **Incluindo um elemento em uma matriz de variável de contexto por meio do editor de contexto**
+
+| Nome da variável de contexto | Valor da variável de contexto |
+|-----------------------|------------------------|
+| `toppings` | `<? context.toppings.append( 'onions' ) ?>` |
+
+É possível usar expressões SpEL nas condições do nó de diálogo e nas condições de resposta do nó de diálogo. Quando uma expressão é usada em uma condição, a sintaxe circundante `<? ?>` não é necessária.
+
+- **Verificando um valor de entidade específico em uma condição do nó de diálogo**
+
+  ```bash
+  @city.toLowerCase() == 'paris'
+  ```
+  {: codeblock}
+
+- **Verificando um intervalo de data específico em uma condição de resposta do nó de diálogo**
+
+  ```bash
+  @sys-date.after(today())
+  ```
+  {: codeblock}
 
 As seções a seguir descrevem os métodos que podem ser usados para processar valores. Eles são organizados por tipo de dados:
 
@@ -52,6 +83,7 @@ As seções a seguir descrevem os métodos que podem ser usados para processar v
 Não é possível usar esses métodos para procurar um valor em uma matriz em uma condição de nó ou condição de resposta dentro do mesmo nó no qual você configura os valores de matriz.
 
 ### JSONArray.append(object)
+{: #dialog-methods-arrays-append}
 
 Esse método anexa um novo valor no JSONArray e retorna o JSONArray modificado.
 
@@ -89,6 +121,7 @@ Resultado:
 {: codeblock}
 
 ### JSONArray.clear ()
+{: #dialog-methods-arrays-clear}
 
 Esse método limpa todos os valores da matriz e retorna nulo.
 
@@ -106,6 +139,7 @@ Use a expressão a seguir na saída para definir um campo que limpa uma matriz q
 Se você referenciar subsequentemente a variável de contexto $toppings_array, ela retornará somente '[]'.
 
 ### JSONArray.contains (Object value)
+{: #dialog-methods-arrays-contains}
 
 Esse método retorna true se o JSONArray de entrada contém o valor de entrada.
 
@@ -130,7 +164,7 @@ $toppings_array.contains('ham')
 Resultado: `True` porque a matriz contém o elemento ham.
 
 ### JSONArray.containsIntent (String intent_name, Double min_score, [ Integer top_n ])
-{: #dialog-methods-array-containsIntent}
+{: #dialog-methods-arrays-containsIntent}
 
 Esse método retornará `true` se o JSONArray `intents` contiver particularmente a intenção especificada e essa intenção tiver uma pontuação de confiança que seja igual ou maior que a pontuação mínima especificada. Opcionalmente, é possível especificar um número para indicar que a intenção deve ser incluída dentro desse número de elementos principais na matriz.
 
@@ -152,9 +186,9 @@ intents.containsIntent (" General_Ending", 0.8, 2)
 {: codeblock}
 
 ### JSONArray.filter (temp, "temp.property operator comparison_value")
-{: #dialog-methods-array-filter}
+{: #dialog-methods-arrays-filter}
 
-Filtra uma matriz comparando cada valor do elemento de matriz com um valor especificado. Esse método é semelhante a uma [projeção de coleção](#collection-projection). Uma projeção de coleção retorna uma matriz filtrada com base em um nome em um par nome-valor de elemento de matriz. O método de filtro retorna uma matriz filtrada com base em um valor em um par nome-valor de elemento da matriz.
+Filtra uma matriz comparando cada valor do elemento de matriz com um valor especificado. Esse método é semelhante a uma [projeção de coleção](#dialog-methods-collection-projection). Uma projeção de coleção retorna uma matriz filtrada com base em um nome em um par nome-valor de elemento de matriz. O método de filtro retorna uma matriz filtrada com base em um valor em um par nome-valor de elemento da matriz.
 
 A expressão de filtro consiste nos valores a seguir:
 
@@ -320,6 +354,7 @@ A população de @city é: <? ($cities.filter ("y", "y.name == @city").! [popula
 A expressão retorna: `The population of Tokyo is 9273000.`
 
 ### JSONArray.get (Integer)
+{: #dialog-methods-arrays-get}
 
 Esse método retorna o índice de entrada do JSONArray.
 
@@ -363,6 +398,7 @@ Resposta:
 {: codeblock}
 
 ### JSONArray.getRandomItem()
+{: #dialog-methods-arrays-getRandom}
 
 Esse método retorna um item aleatório do JSONArray de entrada.
 
@@ -399,7 +435,7 @@ Resultado: `"ham is a great choice!"` ou `"onion is a great choice!"` ou `"olive
 **Nota:** O texto de saída resultante é escolhido aleatoriamente.
 
 ### JSONArray.indexOf (value)
-{: #dialog-methods-array-indexOf}
+{: #dialog-methods-arrays-indexOf}
 
 Esse método retorna o número de índice do elemento na matriz que corresponde ao valor especificado como um parâmetro ou `-1` se o valor não é localizado na matriz. O valor pode ser uma Sequência (`"School"`), Número inteiro (`8`) ou Duplo (`9.1`). O valor deve ser uma correspondência exata e faz distinção entre maiúsculas e minúsculas.
 
@@ -438,6 +474,7 @@ intents [ intents.indexOf ("General_Greetings") ] .confiança
 {: codeblock}
 
 ### JSONArray.join (delimitador de sequência)
+{: #dialog-methods-arrays-join}
 
 Esse método reúne todos os valores nessa matriz para uma sequência. Os valores são convertidos em sequência e delimitados pelo delimitador de entrada.
 
@@ -473,6 +510,13 @@ Resultado:
 
 ```json
 This is the array: onion;olives;ham;
+```
+{: codeblock}
+
+Se uma entrada do usuário mencionar diversas coberturas e você tiver definido uma entidade denominada `@toppings` capaz de reconhecer menções de coberturas, será possível usar a expressão a seguir na resposta para listar as coberturas mencionadas:
+
+```json
+So, you'd like <? @toppings.values.join(',') ?>.
 ```
 {: codeblock}
 
@@ -521,7 +565,7 @@ The flights that fit your criteria are:
 Resultado: `The flights that match your criteria are: OK123,LH421,TS4156.`
 
 ### JSONArray.joinToArray (modelo)
-{: #dialog-methods-joinToArray}
+{: #dialog-methods-arrays-joinToArray}
 
 Esse método aplica o formato que você define em um modelo para a matriz e retorna uma matriz que é formatada de acordo com suas especificações. Esse método é útil para aplicar formatação a valores de matriz que você deseja retornar em uma resposta de diálogo, por exemplo.
 
@@ -650,7 +694,7 @@ Neste exemplo, a variável de contexto de modelo é definida como um objeto JSON
 ```
 {: codeblock}
 
-Você pode desejar projetar seu aplicativo cliente customizado para ler os objetos da matriz retornada e formatar os valores adequadamente para a resposta de seu robô de bate-papo. Sua resposta do nó de diálogo pode retornar o objeto de detalhes de chegada de voo como uma matriz usando esta expressão:
+É possível que você deseje projetar seu aplicativo cliente customizado para ler os objetos da matriz retornada e formatar os valores corretamente para a resposta do seu assistente. Sua resposta do nó de diálogo pode retornar o objeto de detalhes de chegada de voo como uma matriz usando esta expressão:
 
 ```
 <? $flights.joinToArray($template) ?>
@@ -679,6 +723,7 @@ Esta é a resposta do nó de diálogo:
 Observe que a ordem dos elementos `arrival` e `departure` é trocada na resposta. O serviço geralmente reordena os elementos em um objeto JSON. Se você desejar que os elementos sejam retornados em uma ordem específica, defina o modelo usando um valor de Matriz JSON ou Sequência.
 
 ### JSONArray.remove (Integer)
+{: #dialog-methods-arrays-remove}
 
 Esse método remove o elemento na posição de índice do JSONArray e retorna o JSONArray atualizado.
 
@@ -716,6 +761,7 @@ Resultado:
 {: codeblock}
 
 ### JSONArray.removeValue(object)
+{: #dialog-methods-arrays-removeValue}
 
 Esse método remove a primeira ocorrência do valor do JSONArray e retorna o JSONArray atualizado.
 
@@ -753,6 +799,7 @@ Resultado:
 {: codeblock}
 
 ### JSONArray.set(Integer index, Object value)
+{: #dialog-methods-arrays-set}
 
 Esse método configura o índice de entrada do JSONArray para o valor de entrada e retorna o JSONArray modificado.
 
@@ -790,6 +837,7 @@ Resultado:
 {: codeblock}
 
 ### JSONArray.size()
+{: #dialog-methods-arrays-size}
 
 Esse método retorna o tamanho do JSONArray como um número inteiro.
 
@@ -827,6 +875,7 @@ Resultado:
 {: codeblock}
 
 ### JSONArray split(String regexp)
+{: #dialog-methods-arrays-split}
 
 Esse método divide a sequência de entrada usando a expressão regular de entrada. O resultado é um JSONArray de sequências.
 
@@ -860,11 +909,12 @@ Resultados nessa saída:
 {: codeblock}
 
 ### Suporte ao com.google.gson.JsonArray
-{: #dialog-methods-com.google.gson.JsonArray}
+{: #dialog-methods-arrays-com-google-gson-JsonArray}
 
 Além dos métodos integrados, é possível usar os métodos padrão da classe `com.google.gson.JsonArray`.
 
 #### Nova matriz
+{: #dialog-methods-arrays-new}
 
 new JsonArray().append('value')
 
@@ -886,10 +936,13 @@ Vários métodos estão disponíveis para trabalhar com data e hora.
 Para obter informações sobre como reconhecer e extrair as informações de data e hora da entrada do usuário, veja [Entidades @sys-date e @sys-time](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-date-time).
 
 ### .after (Data ou hora da sequência)
+{: #dialog-methods-dates-after}
 
 Determina se o valor de data/hora é após o argumento de data/hora.
 
 ### .before(String date or time)
+{: #dialog-methods-dates-before}
+
 Determina se o valor de data/hora é anterior ao argumento de data/hora.
 
 Por exemplo:
@@ -902,6 +955,7 @@ Por exemplo:
 - Se comparar `date and time vs. time` o método ignorará a data e comparará apenas os horários.
 
 ### now()
+{: #dialog-methods-dates-now}
 
 Retorna uma sequência com a data e hora atuais no formato `yyyy-MM-dd HH:mm:ss`.
 
@@ -946,6 +1000,7 @@ Exemplo de `now()` em condições do nó (para decidir se ainda é de manhã):
 {: codeblock}
 
 ### .reformatDateTime(String format)
+{: #dialog-methods-dates-reformatDateTime}
 
 Formata sequências de data e hora no formato desejado para a saída de usuário.
 
@@ -975,19 +1030,23 @@ O formato segue as regras do Java [SimpleDateFormat ![Ícone de link externo](..
 **Nota**: ao tentar formatar somente o horário, a data é tratada como `1970-01-01`.
 
 ### .sameMoment(String date/time)
+{: #dialog-methods-dates-sameMoment}
 
 - Determina se o valor de data/hora é o mesmo que o argumento de data/hora.
 
 ### .sameOrAfter(String date/time)
+{: #dialog-methods-dates-sameOrAfter}
 
 - Determina se o valor de data/hora é posterior ou igual ao argumento de data/hora.
 - Análogo a `.after()`.
 
 ### .sameOrBefore(String date/time)
+{: #dialog-methods-dates-sameOrBefore}
 
 - Determina se o valor de data/hora é anterior ou igual ao argumento de data/hora.
 
 ### hoje ()
+{: #dialog-methods-dates-today}
 
 Retorna uma sequência com a data atual no formato `yyyy-MM-dd`.
 
@@ -1015,7 +1074,7 @@ Exemplo de um nó de diálogo com `today()` usado no campo de saída:
 Resultado:  ` Hoje a data é 2018-03-09. `
 
 ## Cálculos de data e hora
-{: #dialog-methods-calculations}
+{: #dialog-methods-date-time-calculations}
 
 Use os métodos a seguir para calcular uma data.
 
@@ -1175,7 +1234,7 @@ Na condição de resposta, será possível indicar que você deseja mostrar a re
 `now().after($start_date) && now().before($end_date)`
 
 ### Suporte ao java.util.Date
-{: #dialog-methods-java.util.Date}
+{: #dialog-methods-dates-java-util-date}
 
 Além dos métodos integrados, é possível usar os métodos padrão da classe `java.util.Date`.
 
@@ -1228,26 +1287,30 @@ Para obter informações sobre entidades do sistema que podem reconhecer e extra
 
 Se desejar que o serviço reconheça formatos numéricos específicos na entrada do usuário, como referências de números de ordem, pense em criar uma entidade padrão para capturá-los. Veja [Criando entidades](/docs/services/assistant?topic=assistant-entities) para obter mais detalhes.
 
-Se você desejar mudar o posicionamento decimal para um número, para reformatar um número como um valor de moeda, por exemplo, consulte o [Método String format()](#dialog-methods-java.lang.String).
+Se você desejar mudar o posicionamento decimal para um número, para reformatar um número como um valor de moeda, por exemplo, consulte o [Método String format()](#java.lang.String).
 
 ### toDouble()
+{: #dialog-methods-numbers-toDouble}
 
   Converte o objeto ou campo no tipo de número Duplo. Será possível chamar esse método em qualquer objeto ou campo. Se a conversão falhar, *null* será retornado.
 
 ### toInt()
+{: #dialog-methods-numbers-toInt}
 
   Converte o objeto ou campo no tipo de número Inteiro. Será possível chamar esse método em qualquer objeto ou campo. Se a conversão falhar, *null* será retornado.
 
 ### toLong()
+{: #dialog-methods-numbers-toLong}
 
   Converte o objeto ou campo no tipo de número Longo. Será possível chamar esse método em qualquer objeto ou campo. Se a conversão falhar, *null* será retornado.
 
   Se você especifica um tipo de número Longo em uma expressão SpEL, deve-se anexar um `L` ao número para identificá-lo como tal. Por exemplo, `5000000000L`. Essa sintaxe é necessária para quaisquer números que não se ajustam ao tipo de Número inteiro de 32 bits. Por exemplo, números que são maiores que 2^31 (2.147.483.648) ou menores que -2^31 (-2.147.483.648) são considerados tipos de número Longo. Os tipos de número Longo têm um valor mínimo de -2^63 e um valor máximo de 2^63-1.
 
 ### Suporte a números do Java
-{: #dialog-methods-java.lang.Number}
+{: #dialog-methods-numbers-java}
 
 ### java.lang.Math()
+{: #dialog-methods-numbers-java-lang-math}
 
 Executa operações numéricas básicas.
 
@@ -1313,17 +1376,18 @@ Executa operações numéricas básicas.
 ```
 {: codeblock}
 
-Veja a [documentação de referência do java.lang.Math](https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html) para obter informações sobre outros métodos.
+Consulte a [Documentação da referência de java.lang.Math ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html) para obter informações sobre outros métodos.
 
 ### java.util.Random()
+{: #dialog-methods-numbers-java-util-random}
 
 Retorna um número aleatório. É possível usar uma das opções de sintaxe a seguir:
 
 - Para retornar um valor booleano aleatório (true ou false), use `<?new Random().nextBoolean()?>`.
 - Para retornar um número duplo aleatório entre 0 (incluído) e 1 (excluído), use `<?new Random().nextDouble()?>`
-- Para retornar um número inteiro aleatório entre 0 (incluído) e um número que você especificar, use `<?new Random().nextInt(n)?>` em que n é o topo do intervalo de números que deseja + 1.
-  Por exemplo, se você deseja retornar um número aleatório entre 0 e 10, especifique `<?new Random().nextInt(11)?>`.
-- Para retornar um número inteiro aleatório do intervalo de valores de número inteiro completo (-2147483648 a 2147483648), use `<?new Random().nextInt()?>`.
+- Para retornar um número inteiro aleatório entre 0 (incluído) e um número especificado, use `<?new Random().nextInt(n)?>`, em que n é a parte mais alta do intervalo de números que você deseja +1.
+  Por exemplo, se desejar retornar um número aleatório entre 0 e 10, especifique `<?new Random().nextInt(11)?>`.
+- Para retornar um número inteiro aleatório do intervalo completo de valores de número inteiro (-2147483648 a 2147483648), use `<?new Random().nextInt()?>`.
 
 Por exemplo, você pode criar um nó de diálogo que é acionado pela intenção #random_number. A primeira condição de resposta pode ser semelhante a esta:
 
@@ -1361,6 +1425,7 @@ Também é possível usar métodos padrão das classes a seguir:
 {: #dialog-methods-objects}
 
 ### JSONObject.clear ()
+{: #dialog-methods-objects-jsonobject-clear}
 
 Esse método limpa todos os valores do objeto JSON e retorna nulo.
 
@@ -1453,6 +1518,7 @@ Para usar o método, é possível especificá-lo em uma expressão em uma variá
 Se um nó anterior na árvore definir uma resposta de texto de `I'm happy to help.` e, em seguida, ir para um nó com o objeto de saída JSON definido acima, somente `Have a great day.` será exibido como a resposta. A saída `I'm happy to help.` não é exibida, porque ela é limpa e substituída pela resposta de texto do nó que está chamando o método `clear()`.
 
 ### JSONObject.tem (Sequência)
+{: #dialog-methods-objects-jsonobject-has}
 
 Esse método retorna true se o JSONObject complexo possui uma propriedade do nome de entrada.
 
@@ -1482,6 +1548,7 @@ Saída do nó de diálogo:
 Resultado: a condição é true porque o objeto de usuário contém a propriedade `first_name`.
 
 ### JSONObject.remove (Sequência)
+{: #dialog-methods-objects-jsonobject-remove}
 
 Esse método remove uma propriedade do nome da entrada `JSONObject`. O `JSONElement` que é retornado por esse método é o `JSONElement` que está sendo removido.
 
@@ -1527,7 +1594,7 @@ Resultado:
 {: codeblock}
 
 ### Suporte ao com.google.gson.JsonObject
-{: #dialog-methods-com.google.gson.JsonObject}
+{: #dialog-methods-objects-com-google-gson-JsonObject}
 
 Além dos métodos integrados, é possível usar métodos padrão da classe `com.google.gson.JsonObject`.
 
@@ -1541,6 +1608,7 @@ Para obter informações sobre como reconhecer e extrair determinados tipos de S
 **Nota:** para métodos que envolvem expressões regulares, veja [Referência da Sintaxe RE2 ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/google/re2/wiki/Syntax){: new_window} para obter detalhes sobre a sintaxe a ser usada ao especificar a expressão regular.
 
 ### String.append (Object)
+{: #dialog-methods-strings-append}
 
 Esse método anexa um objeto de entrada à sequência como uma sequência e retorna uma sequência modificada.
 
@@ -1578,6 +1646,7 @@ Resultados nessa saída:
 {: codeblock}
 
 ### String.contains (String)
+{: #dialog-methods-strings-contains}
 
 Esse método retorna true se a sequência contém a subsequência de entrada.
 
@@ -1595,6 +1664,7 @@ Essa sintaxe:
 Resultados: a condição é `true`.
 
 ### String.endsWith (String)
+{: #dialog-methods-strings-endsWith}
 
 Esse método retorna true se a sequência termina com a subsequência de entrada.
 
@@ -1617,41 +1687,43 @@ Essa sintaxe:
 Resultados: a condição é `true`.
 
 ### String.extract(String regexp, Integer groupIndex)
+{: #dialog-methods-strings-extract}
 
-Esse método retorna uma sequência extraída pelo índice de grupo especificado da expressão regular de entrada.
+Esse método retorna uma sequência da entrada que corresponde ao padrão do grupo de expressão regular especificado. Ele retorna uma sequência vazia caso nenhuma correspondência seja localizada.
 
-Para essa entrada:
+Esse método foi projetado para extrair correspondências para diferentes grupos de padrões de expressão regular, não diferentes correspondências para um único padrão de expressão regular. Para localizar correspondências diferentes, consulte o método [getMatch](#dialog-methods-strings-getMatch).
+{: note}
 
-```
-"Hello 123456".
-```
-{: codeblock}
-
-Essa sintaxe:
+Neste exemplo, a variável de contexto está salvando uma sequência que corresponde ao grupo de padrões de expressão regular especificado. Na expressão, dois grupos de padrões de expressão regular são definidos, ambos entre parênteses. Há um terceiro grupo inerente, que é composto pelos outros dois. Esse é o primeiro grupo de expressão regular (groupIndex 0), que corresponde a uma sequência que contém todo o grupo de números e o grupo de texto. O segundo grupo de expressão regular (groupIndex 1) corresponde à primeira ocorrência de um grupo de números. O terceiro grupo (groupIndex 2) corresponde à primeira ocorrência de um grupo de texto após um grupo de números.
 
 ```json
 {
   "context": {
-    "number_extract": "<? input.text.extract('[\\d]+',0) ?>"
+    "number_extract": "<? input.text.extract('([\\d]+)(\\b [A-Za-z]+)',n) ?>"
   }
 }
 ```
 {: codeblock}
 
-  **Importante:** para processar `\\d` como a expressão regular, você precisa escapar as barras invertidas incluindo outro `\\`: `\\\\d`
+Ao especificar a expressão regular em JSON, deve-se fornecer duas barras invertidas (\\). Ao especificá-la em uma resposta do nó, somente uma barra invertida será necessária. Por exemplo: 
+
+`<? input.text.extract('([\d]+)(\b [A-Za-z]+)',n) ?>`
+
+Entrada:
+
+```
+"Hello 123 this is 456".
+```
+{: codeblock}
 
 Resultado:
 
-```json
-{
-  "context": {
-    "number_extract": "123456"
-  }
-}
-```
-{: codeblock}
+- Quando n=`0`, o valor é `123 this`.
+- Quando n=`1`, o valor é `123`.
+- Quando n=`2`, o valor é `this`.
 
 ### String.localizar (String regexp)
+{: #dialog-methods-strings-find}
 
 Esse método retorna true se qualquer segmento da sequência corresponde à expressão regular de entrada.  É possível chamar esse método em um elemento JSONArray ou JSONObject, e ele converterá a matriz ou o objeto em uma sequência antes de fazer a comparação.
 
@@ -1673,7 +1745,47 @@ Essa sintaxe:
 
 Resultado: a condição é true porque a parte numérica do texto de entrada corresponde à expressão regular `^[^\d]*[\d]{6}[^\d]*$`.
 
+### String.getMatch(String regexp, Integer matchIndex)
+{: #dialog-methods-strings-getMatch}
+
+Esse método retorna uma sequência da entrada que corresponde à ocorrência do padrão de expressão regular especificado. Ele retorna uma sequência vazia caso nenhuma correspondência seja localizada.
+
+Conforme correspondências são localizadas, elas são incluídas em algo semelhante a uma *matriz de correspondências*. Como a contagem de elementos da matriz começa em 0, especifique 2 como o valor de `matchIndex` para retornar a terceira correspondência. Por exemplo, ao inserir uma sequência de texto com três palavras que correspondem ao padrão especificado, é possível retornar a primeira, a segunda ou a terceira correspondência apenas especificando seu valor de índice.
+
+Na expressão a seguir, você está procurando um grupo de números na entrada. Esta expressão salva a segunda sequência de correspondência de padrão na variável de contexto `$second_number` porque o valor de índice 1 está especificado.
+
+```json
+{
+  "context": {
+    "second_number": "<? input.text.getMatch('([\\d]+)',1) ?>"
+  }
+}
+```
+{: codeblock}
+
+Ao especificar a expressão na sintaxe JSON, deve-se fornecer duas barras invertidas (\\). Ao especificá-la em uma resposta do nó, somente uma barra invertida será necessária. 
+
+Por exemplo: 
+
+`<? input.text.getMatch('([\d]+)',1) ?>`
+
+- Entrada do usuário:
+
+  ```
+  "hello 123 i said 456 and 8910".
+  ```
+  {: codeblock}
+
+- Resultado: `456`
+
+Neste exemplo, a expressão procura o terceiro bloco de texto na entrada.
+
+`<? input.text.getMatch('(\b [A-Za-z]+)',2) ?>`
+
+Para a mesma entrada do usuário, essa expressão retorna `and`.
+
 ### String.isEmpty()
+{: #dialog-methods-strings-isEmpty}
 
 Esse método retorna true se a sequência é uma sequência vazia, mas não nula.
 
@@ -1700,6 +1812,7 @@ Essa sintaxe:
 Resultados: a condição é `true`.
 
 ### String.length()
+{: #dialog-methods-strings-length}
 
 Esse método retorna o comprimento de caracteres da sequência.
 
@@ -1733,6 +1846,7 @@ Resultados nessa saída:
 {: codeblock}
 
 ### String.matches (String regexp)
+{: #dialog-methods-strings-matches}
 
 Esse método retorna true se a sequência corresponde à expressão regular de entrada.
 
@@ -1755,6 +1869,7 @@ Essa sintaxe:
 Resultado: a condição é true porque o texto de entrada corresponde à expressão regular `\^Hello\$`.
 
 ### String.startsWith(String)
+{: #dialog-methods-strings-startsWith}
 
 Esse método retorna true se a sequência inicia com a subsequência de entrada.
 
@@ -1777,6 +1892,7 @@ Essa sintaxe:
 Resultados: a condição é `true`.
 
 ### String.substring( Integer beginIndex, Integer endIndex)
+{: #dialog-methods-strings-substring}
 
 Esse método obtém uma subsequência com o caractere em `beginIndex` e o último caractere configurado como índice antes de `endIndex`.
 O caractere endIndex não está incluído.
@@ -1815,6 +1931,7 @@ Resultados nessa saída:
 {: codeblock}
 
 ### String.toLowerCase()
+{: #dialog-methods-strings-toLowerCase}
 
 Esse método retorna a Sequência original convertida em letras minúsculas.
 
@@ -1841,13 +1958,14 @@ Resultados nessa saída:
 ```json
 {
   "context": {
-    "input_upper_case": "this is a dog!"
+    "input_lower_case": "this is a dog!"
   }
 }
 ```
 {: codeblock}
 
 ### String.toUpperCase()
+{: #dialog-methods-strings-toUpperCase}
 
 Esse método retorna a Sequência original convertida em letras maiúsculas.
 
@@ -1881,6 +1999,7 @@ Resultados nessa saída:
 {: codeblock}
 
 ### String.trim()
+{: #dialog-methods-strings-trim}
 
 Esse método reduz quaisquer espaços no início e no final da sequência e retorna a sequência modificada.
 
@@ -1918,13 +2037,14 @@ Resultados nessa saída:
 {: codeblock}
 
 ### Suporte ao java.lang.String
-{: #java.lang.String}
+{: #dialog-methods-strings-java-lang-String-format}
 
 Além dos métodos integrados, é possível usar métodos padrão da classe `java.lang.String`.
 
 #### java.lang.String.format()
+{: #dialog-methods-strings-java-lang-String-format}
 
-É possível aplicar o método de Sequência Java padrão `format()` ao texto. Veja [Referência java.util.formatter ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter#syntax){: new_window} para obter informações sobre a sintaxe a ser usada para especificar os detalhes de formato.
+É possível aplicar o método de Sequência Java padrão `format()` ao texto. Veja [Referência java.util.formatter ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax){: new_window} para obter informações sobre a sintaxe a ser usada para especificar os detalhes de formato.
 
 Por exemplo, a expressão a seguir toma três números inteiros decimais (1, 1 e 2) e os inclui em uma sentença.
 
@@ -1946,7 +2066,7 @@ Para mudar o posicionamento decimal para um número, use a sintaxe a seguir:
 ```
 {: codeblock}
 
-Por exemplo, se a variável $number que precisa ser formatada em dólares dos EUA for `4.5`, uma resposta, como `Your total is $<? T(String).format('%.2f',$number) ?>` retornará `Your total is $4.50.`
+Por exemplo, se a variável $number que precisa ser formatada em dólares americanos for `4.5`, uma resposta como `Your total is $<? T(String).format('%.2f',$number) ?>` retornará `Your total is $4.50.`
 
 ## Conversão indireta do tipo de dado
 {: #dialog-methods-indirect-type-conversion}
@@ -2009,4 +2129,4 @@ Se você verificar os valores dessas variáveis de contexto na área de janela E
 
 **$array_in_string** : `"this is my array: [\"one\",\"two\"]"`
 
-É possível executar métodos de matriz subsequentemente na variável $array, tal como `<? $array.removeValue('two') ?>`, mas não a variável $array_in_string.
+Posteriormente, é possível executar métodos de matriz na variável $array, como `<? $array.removeValue('two') ?>`, mas não na variável $array_in_string.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-07-29"
 
 subcollection: assistant
 
@@ -26,7 +26,7 @@ subcollection: assistant
 # Creazione di un dialogo
 {: #dialog-build}
 
-Utilizza lo strumento {{site.data.keyword.conversationshort}} per creare il tuo dialogo.
+Il dialogo definisce cosa dice l'assistente in risposta ai clienti, in base a ciò che crede che il cliente desideri.
 {: shortdesc}
 
 ## Creazione di un dialogo
@@ -34,18 +34,20 @@ Utilizza lo strumento {{site.data.keyword.conversationshort}} per creare il tuo 
 
 Per creare un dialogo, completa la seguente procedura:
 
-1.  Fai clic sulla scheda **Dialog** e poi fai clic su **Create**.
+1.  Fai clic sulla scheda **Dialog** e poi fai clic su **Create dialog**.
 
-    Quando apri l'editor del dialogo per la prima volta, vengono creati automaticamente i seguenti nodi: 
+    Quando apri l'editor del dialogo per la prima volta, vengono creati automaticamente i seguenti nodi:
 
-    - **Benvenuto**: il primo nodo. Contiene un messaggio iniziale che viene visualizzato agli utenti la prima volta che si collegano al servizio. Puoi modificare il messaggio iniziale.
+    - **Benvenuto**: il primo nodo. Contiene un messaggio iniziale che viene visualizzato agli utenti la prima volta che si collegano al tuo assistente. Puoi modificare il messaggio iniziale.
 
     Questo nodo non viene attivato nei flussi di dialogo avviati dagli utenti. Ad esempio, i dialoghi utilizzati nelle integrazioni con canali come Facebook o Slack ignorano i nodi con la condizione speciale `welcome`. Per ulteriori informazioni, vedi [Inizializzazione del dialogo](/docs/services/assistant?topic=assistant-dialog-start).
     {: note}
 
-    - **Altro**: il nodo finale. Contiene frasi che vengono utilizzate per rispondere agli utenti quando il loro input non viene riconosciuto. Puoi sostituire le risposte fornite o aggiungere altre risposte con un significato simile per aggiungere varietà alla conversazione. Inoltre, puoi scegliere che il servizio restituisca ogni risposta definita a turno o in ordine casuale.
+    - **Altro**: il nodo finale. Contiene frasi che vengono utilizzate per rispondere agli utenti quando il loro input non viene riconosciuto. Puoi sostituire le risposte fornite o aggiungere altre risposte con un significato simile per aggiungere varietà alla conversazione. Inoltre, puoi scegliere che il tuo assistente restituisca ogni risposta definita a turno o in ordine casuale. 
 1.  Per aggiungere altri nodi alla struttura ad albero di dialogo, fai clic sull'icona **Altro** ![Icona Altro](images/kabob.png) sul nodo **Benvenuto** e seleziona quindi **Aggiungi nodo in basso**.
-1.  Immetti una condizione che, quando soddisfatta, attivi il servizio per elaborare il nodo.
+1.  Nel campo **If assistant recognizes**, immetti una condizione che, quando soddisfatta, attivi il tuo assistente per elaborare il nodo.  
+
+    Per iniziare, di solito vuoi aggiungere un intento come condizione. Ad esempio, se aggiungi `#open_account` qui, significa che vuoi che la risposta che specificherai in questo nodo venga restituita all'utente se l'input utente indica che l'utente vuole aprire un conto. 
 
     Quando inizi a definire una condizione, viene visualizzata una casella che mostra le tue opzione. Puoi immettere uno dei seguenti caratteri e quindi scegliere un valore dall'elenco di opzioni che viene visualizzato.
 
@@ -83,19 +85,19 @@ Per creare un dialogo, completa la seguente procedura:
     Per ulteriori informazioni su come testare i valori nelle condizioni, vedi [Condizioni](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-conditions).
 1.  **Facoltativo**: se vuoi raccogliere più informazioni dall'utente in questo nodo, fai clic su **Personalizza** e abilita **Slot**. Per ulteriori dettagli, vedi [Raccolta di informazioni con gli slot](/docs/services/assistant?topic=assistant-dialog-slots).
 1.  Immetti una risposta.
-    - Aggiungi il testo o gli elementi multimediali che vuoi che il servizio visualizzi all'utente come risposta. 
+    - Aggiungi il testo o gli elementi multimediali che vuoi che il tuo assistente mostri all'utente come risposta. 
     - Se desideri definire risposte diverse in base a determinate condizioni, fai clic su **Personalizza** e abilita **Risposte multiple**.
     - Per informazioni sulle risposte condizionali, sulle risposte esaurienti o su come aggiungere varietà alle risposte, vedi [Risposte](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-responses).
 
 1.  Specifica quali operazioni eseguire una volta elaborato il nodo corrente. Puoi scegliere tra le seguenti opzioni:
 
-    - **Attendi input utente**: il servizio si interrompe fino a quando l'utente non fornisce nuovo input.
-    - **Ignora input utente**: il servizio passa direttamente al primo nodo figlio. Questa opzione è disponibile solo se il nodo corrente presenta almeno un nodo figlio.
-    - **Passa a**: il servizio continua il dialogo elaborando il nodo che hai specificato. Puoi scegliere se il servizio deve valutare la condizione del nodo di destinazione oppure deve passare direttamente alla risposta del nodo di destinazione. Per ulteriori dettagli, vedi [Configurazione dell'azione Passa a](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-jump-to-config).
+    - **Attendi input utente**: il tuo assistente si ferma fino a quando l'utente non fornisce nuovo input.
+    - **Ignora input utente**: il tuo assistente passa direttamente al primo nodo figlio. Questa opzione è disponibile solo se il nodo corrente presenta almeno un nodo figlio.
+    - **Passa a**: il tuo assistente continua il dialogo elaborando il nodo che hai specificato. Puoi scegliere se il tuo assistente deve valutare la condizione del nodo di destinazione oppure deve passare direttamente alla risposta del nodo di destinazione. Per ulteriori dettagli, vedi [Configurazione dell'azione Passa a](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-jump-to-config).
 
-1.  **Facoltativo**: se desideri che questo nodo venga tenuto in considerazione quando agli utenti viene mostrata una serie di scelte di nodi nel runtime e gli viene richiesto di selezionare quello che meglio soddisfa i loro obiettivi, aggiungi una breve descrizione dell'obbiettivo utente gestito da questo nodo nel campo relativo al **nome nodo esterno**. Ad esempio, *Place an order*.
+1.  **Facoltativo**: se desideri che questo nodo venga tenuto in considerazione quando agli utenti viene mostrata una serie di scelte di nodi nel runtime e gli viene richiesto di selezionare quello che meglio soddisfa i loro obiettivi, aggiungi una breve descrizione dell'obbiettivo utente gestito da questo nodo nel campo relativo al **nome nodo esterno**. Ad esempio, *Open an account*.
 
-    ![Solo piano Plus o Premium](images/premium.png) Il campo relativo al *nome nodo esterno* viene visualizzato solo per gli utenti con piano Plus o Premium. Per ulteriori dettagli, vedi [Disambiguazione](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation). 
+    ![Solo piano Plus o Premium](images/plus.png) Il campo relativo al *nome nodo esterno* viene visualizzato solo per gli utenti con piano Plus o Premium. Per ulteriori dettagli, vedi [Disambiguazione](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
 
 1.  **Facoltativo**: fornisci un nome per il nodo.
 
@@ -116,30 +118,34 @@ Per creare un dialogo, completa la seguente procedura:
 ## Test del dialogo
 {: #dialog-build-test}
 
-Quando apporti modifiche al tuo dialogo, puoi testarlo in qualsiasi momento per vedere come risponde all'input. 
+Quando apporti modifiche al tuo dialogo, puoi testarlo in qualsiasi momento per vedere come risponde all'input.
 
-Le query che inoltri tramite il riquadro "Provalo" generano chiamate API `/message`, ma non vengono registrate e non implicano addebiti.
+Le query che inoltri tramite il riquadro "Try it out" generano chiamate API `/message`, ma non vengono registrate e non implicano addebiti.
 
-1.  Dalla scheda Dialog, fai clic sull'icona ![Provalo](images/ask_watson.png).
+1.  Dalla scheda Dialog, fai clic sull'icona ![Try it](images/ask_watson.png).
 1.  Nel riquadro di chat, immetti un testo e premi Invio.
 
-    Assicurati che il sistema abbia terminato l'addestramento sulle tue modifiche più recenti prima di iniziare a testare il dialogo. Se il sistema è ancora in fase di addestramento, nel riquadro *Provalo* viene visualizzato un messaggio:
+    Assicurati che il sistema abbia terminato l'addestramento sulle tue modifiche più recenti prima di iniziare a testare il dialogo. Se il sistema è ancora in fase di addestramento, nel riquadro *Try it out* viene visualizzato un messaggio:
     {: tip}
 
     ![Schermata del messaggio di addestramento](images/training.png)
 1.  Controlla la risposta per vedere se il dialogo ha interpretato correttamente il tuo input e scelto la risposta appropriata.
 
-    La finestra di chat indica quali intenti ed entità sono stati riconosciuti nell'input:
+    La finestra di chat indica quali intenti ed entità sono stati riconosciuti nell'input.
 
     ![Schermata dell'output del dialogo di test](images/test_dialog_output.png)
+
+    Se vuoi modificare un'entità che viene riconosciuta dall'input, fai clic sul nome entità per aprirla nella pagina Entities. Se viene riconosciuto l'intento errato, puoi fare clic sulla freccia accanto al nome intento per correggerlo oppure contrassegnare l'argomento come irrilevante. Per ulteriori informazioni, vedi [Apportare dei miglioramenti ai dati di apprendimento](/docs/services/assistant?topic=assistant-logs#logs-fix-data).
+
 1.  Se desideri conoscere quale nodo nella struttura ad albero di dialogo ha attivato una risposta, fai clic sull'icona **Ubicazione** ![Ubicazione](images/location.png) accanto ad esso. Se ancora non ti trovi nella scheda Dialogo, aprila.
 
-    Il nodo di origine viene attivato e viene evidenziata la rotta utilizzata dal servizio nella struttura ad albero per raggiungerlo. Rimane evidenziata fino a quando non esegui un'altra azione, ad esempio se inserisci un nuovo input di test.
+    Il nodo di origine viene attivato e viene evidenziata la rotta utilizzata dal tuo assistente nella struttura ad albero per raggiungerlo. Rimane evidenziata fino a quando non esegui un'altra azione, ad esempio se inserisci un nuovo input di test.
+
 1.  Per controllare o impostare il valore di una variabile di contesto, fai clic sul link **Gestisci contesto**.
 
     Vengono visualizzate tutte le variabili di contesto definite nel dialogo.
 
-    Inoltre, è elencata una variabile di contesto `$timezone`. L'interfaccia utente del riquadro *Provalo* ottiene le informazioni sulla locale dell'utente dal browser web e le utilizza per impostare la variabile di contesto `$timezone`. Questa variabile di contesto consente di gestire meglio i riferimenti di tempo negli scambi di dialogo di test. Potresti fare qualcosa di simile nella tua applicazione utente. Se non si specifica un valore, viene utilizzato Greenwich Mean Time (GMT).
+    Inoltre, è elencata una variabile di contesto `$timezone`. L'interfaccia utente del riquadro *Try it out* ottiene le informazioni sulla locale dell'utente dal browser web e le utilizza per impostare la variabile di contesto `$timezone`. Questa variabile di contesto consente di gestire meglio i riferimenti di tempo negli scambi di dialogo di test. Potresti fare qualcosa di simile nella tua applicazione utente. Se non si specifica un valore, viene utilizzato Greenwich Mean Time (GMT).
 
     Puoi aggiungere una variabile e impostarne il valore per vedere come il dialogo risponde nel turno di dialogo di test successivo. Questa funzionalità è utile se, ad esempio, il dialogo è configurato per mostrare risposte diverse in base a un valore di variabile di contesto fornito dall'utente.
 
@@ -150,7 +156,7 @@ Le query che inoltri tramite il riquadro "Provalo" generano chiamate API `/messa
 
 1.  Continua a interagire con il dialogo per vedere come fluisce la conversazione.
     - Per trovare e inviare nuovamente un'espressione di test, puoi premere il tasto Su per scorrere i tuoi input recenti.
-    - Per rimuovere le espressioni di test precedenti dal riquadro di chat e ricominciare, fai clic sul link **Cancella**. Questa azione non solo rimuove le espressioni e le risposte di test, ma cancella anche i valori di qualsiasi variabile di contesto impostata in seguito alle tue interazioni con il dialogo. I valori delle variabili di contesto che hai impostato o modificato in modo esplicito non vengono cancellati.
+    - Per rimuovere le espressioni di test precedenti dal riquadro di chat e ricominciare, fai clic sul link **Cancella**. Questa azione non solo rimuove le espressioni e le risposte di test, ma cancella anche i valori di qualsiasi variabile di contesto impostata in seguito alle tue interazioni con il dialogo.
 
 ### Operazioni successive
 {: #dialog-build-next-steps}
@@ -159,50 +165,51 @@ Se stabilisci che vengono riconosciuti intenti o entità errati, potresti dover 
 
 Se vengono riconosciuti gli intenti e le entità corretti, ma nel dialogo vengono attivati i nodi errati, assicurati che le tue condizioni siano scritte correttamente.
 
-Vedi [Suggerimenti per la creazione del dialogo](/docs/services/assistant?topic=assistant-dialog-tips) per suggerimenti che potrebbero aiutarti quando inizi. 
+Vedi [Suggerimenti per la creazione del dialogo](/docs/services/assistant?topic=assistant-dialog-tips) per suggerimenti che potrebbero aiutarti quando inizi.
 
 Se sei pronto a utilizzare la conversazione per aiutare i tuoi utenti, integra il tuo assistente con una piattaforma di messaggistica o un'applicazione personalizzata. Vedi [Aggiunta delle integrazioni](/docs/services/assistant?topic=assistant-deploy-integration-add).
 
 ## Limiti di nodi del dialogo
 {: #dialog-build-node-limits}
 
-Il numero di nodi di dialogo che puoi creare per capacità dipende dal tuo piano di servizio. 
+Il numero di nodi di dialogo che puoi creare per capacità dipende dal tuo tipo di piano. 
 
-| Piano di servizio     | Nodi di dialogo per capacità   |
+| Piano     | Nodi di dialogo per capacità     |
 |------------------|---------------------------:|
 | Premium          |                    100.000 |
 | Plus             |                    100.000 |
 | Standard         |                    100.000 |
+| Plus Trial       |                     25.000 |
 | Lite             |                     100`*` |
-{: caption="Dettagli piano di servizio" caption-side="top"}
+{: caption="Dettagli del piano" caption-side="top"}
 
-I nodi di dialogo welcome e anything_else che vengono prepopolati nella struttura ad albero, vengono conteggiati nel totale. 
+I nodi di dialogo welcome e anything_else che vengono prepopolati nella struttura ad albero, vengono conteggiati nel totale.
 
-Limite di profondità della struttura ad albero: il servizio supporta 2.000 discendenti del nodo di dialogo, lo strumento rende al meglio con 20 o meno. 
+Limite di profondità della struttura ad albero: il dialogo supporta 2.000 discendenti del nodo di dialogo, il dialogo rende al meglio con 20 o meno. 
 
-`*` I limiti sono cambiati da 25.000 a 100 per i piani Lite dall'1 dicembre 2018. Gli utenti delle istanze del servizio che sono state create prima della modifica del limite, hanno tempo fino all'1 giugno 2019 per aggiornare il loro piano o per modificare i dialoghi nelle capacità nelle istanze del servizio esistenti per soddisfare i nuovi requisiti di limite. 
+`*` I limiti sono cambiati da 25.000 a 100 per i piani Lite dall'1 dicembre 2018. Gli utenti delle istanze del servizio che sono state create prima della modifica del limite, hanno tempo fino all'1 giugno 2019 per aggiornare il loro piano o per modificare i dialoghi nelle capacità nelle istanze del servizio esistenti per soddisfare i nuovi requisiti di limite.
 
-Per vedere il numero di nodi di dialogo in una capacità di dialogo, esegui una delle seguenti operazioni: 
+Per vedere il numero di nodi di dialogo in una capacità di dialogo, esegui una delle seguenti operazioni:
 
-- Dallo strumento, se non è già associata a un assistente, aggiungi la capacità di dialogo a un assistente e poi esamina il tile della capacità dalla pagina principale dell'assistente. La sezione relativa ai *dati di addestramento* elenca il numero di nodi di dialogo. 
+- Se non è già associata a un assistente, aggiungi la capacità di dialogo a un assistente e poi esamina il tile della capacità dalla pagina principale dell'assistente. La sezione relativa ai *dati di addestramento* elenca il numero di nodi di dialogo.
 - Invia una richiesta GET all'endpoint dell'API /dialog_nodes e includi il parametro `include_count=true`. Ad esempio:
 
   ```curl
   curl -u "apikey:{apikey}" "https://gateway.watsonplatform.net/assistant/api/v1/workspaces/{workspace_id}/dialog_nodes?version=2018-09-20&include_count=true"
   ```
 
-  Nella risposta, l'attributo `total` nell'oggetto `pagination` contiene il numero di nodi di dialogo. 
+  Nella risposta, l'attributo `total` nell'oggetto `pagination` contiene il numero di nodi di dialogo.
 
-Se il totale ti sembra più grande del previsto, potrebbe essere perché il dialogo che hai creato nello strumento è stato convertito in un oggetto JSON dallo strumento. Alcuni campi che sembrano far parte di un singolo nodo sono in realtà strutturati come nodi di dialogo separati nell'oggetto JSON sottostante. 
+Se il totale ti sembra più grande del previsto, potrebbe essere perché il dialogo che hai creato dall'applicazione è stato convertito in un oggetto JSON. Alcuni campi che sembrano far parte di un singolo nodo sono in realtà strutturati come nodi di dialogo separati nell'oggetto JSON sottostante.
 
-  - Ogni nodo e cartella viene rappresentato come il suo nodo. 
-  - Ciascuna risposta condizionale associata a un singolo nodo di dialogo viene rappresentata come un nodo individuale. 
-  - Per un nodo con slot, ciascuno slot, risposta di slot trovato, risposta di slot non trovato, gestore slot e, se impostata, la risposta "prompt for everything" è un nodo individuale. In effetti, un nodo con tre slot potrebbe essere equivalente a undici nodi di dialogo. 
+  - Ogni nodo e cartella viene rappresentato come il suo nodo.
+  - Ciascuna risposta condizionale associata a un singolo nodo di dialogo viene rappresentata come un nodo individuale.
+  - Per un nodo con slot, ciascuno slot, risposta di slot trovato, risposta di slot non trovato, gestore slot e, se impostata, la risposta "prompt for everything" è un nodo individuale. In effetti, un nodo con tre slot potrebbe essere equivalente a undici nodi di dialogo.
 
 ## Ricerca nel dialogo
 {: #dialog-build-search}
 
-Puoi eseguire una ricerca nel dialogo per trovare uno o più nodi di dialogo che menzionino una determina parola o frase. 
+Puoi eseguire una ricerca nel dialogo per trovare uno o più nodi di dialogo che menzionino una determina parola o frase.
 
 1.  Seleziona l'icona Ricerca: ![Icona Ricerca](images/search_icon.png)
 
@@ -224,19 +231,18 @@ Puoi ricercare un nodo di dialogo in base al suo ID nodo. Immetti l'ID nodo comp
 - Vuoi associare gli ID nodo elencati nella proprietà `nodes_visited` dell'output del messaggio API ai nodi che puoi vedere nella tua struttura ad albero di dialogo.
 - Un messaggio di errore di runtime del dialogo ti informa di un errore di sintassi e utilizza un ID nodo per identificare il nodo da correggere.
 
-Un altro modo per rilevare un nodo basato sul suo ID nodo è: 
+Un altro modo per rilevare un nodo basato sul suo ID nodo è:
 
-1.  Dalla scheda Dialog dello strumento, seleziona un nodo nella tua struttura ad albero di dialogo. 
+1.  Dalla scheda Dialog, seleziona un nodo nella tua struttura ad albero di dialogo. 
 1.  Se è aperta, chiudi la vista di modifica per il nodo corrente.
 1.  Nel campo di ubicazione del tuo browser web, dovrebbe essere visualizzato un URL con la seguente sintassi:
 
-    `    https://watson-conversation.ng.bluemix.net/space/instance-id/workspaces/workspace-id/build/dialog#node=node-id
-    `
+    `https://assistant-location.watsonplatform.net/location/instance-id/workspaces/workspace-id/build/dialog#node=node-id`
 
 1.  Modifica l'URL sostituendo il valore `node-id` corrente con l'ID del nodo che vuoi trovare e invia quindi il nuovo URL.
 1.  Se necessario, evidenzia l'URL modificato e invialo di nuovo.
 
-Lo strumento si aggiorna e sposta lo stato attivo sul nodo di dialogo con l'ID nodo che hai specificato. Se l'ID nodo è per uno slot, una condizione di slot trovato o non trovato, un gestore slot o una risposta condizionale, il nodo in cui è definito lo slot o la risposta condizionale verrà attivato e verrà visualizzato il modale corrispondente. 
+La pagina si aggiorna e sposta lo stato attivo sul nodo di dialogo con l'ID nodo che hai specificato. Se l'ID nodo è per uno slot, una condizione di slot trovato o non trovato, un gestore slot o una risposta condizionale, il nodo in cui è definito lo slot o la risposta condizionale verrà attivato e verrà visualizzato il modale corrispondente.
 
 Se ancora non riesci a trovare il nodo, puoi esportare la capacità di dialogo e utilizzare l'editor JSON per eseguire la ricerca nel file JSON della capacità.
 {: tip}
@@ -272,11 +278,11 @@ Puoi raggruppare insieme i nodi di dialogo aggiungendoli ad una cartella. Sono m
 
 Queste caratteristiche della cartella influiscono sulla modalità di elaborazione dei nodi in una cartella:
 
-- Condizione: se non vengono specificate condizioni, il servizio elabora direttamente i nodi all'interno della cartella. Se viene specificata una condizione, il servizio valuta innanzitutto la condizione della cartella per stabilire se elaborare i nodi contenuti in essa. 
+- Condizione: se non vengono specificate condizioni, il tuo assistente elabora direttamente i nodi all'interno della cartella. Se viene specificata una condizione, il tuo assistente valuta innanzitutto la condizione della cartella per stabilire se elaborare i nodi contenuti in essa. 
 - Personalizzazioni: le impostazioni di configurazione che applichi alla cartella vengono ereditate dai nodi presenti nella cartella. Se, ad esempio, modifichi le impostazioni di digressione della cartella, le modifiche verranno ereditate da tutti i nodi presenti nella cartella.
-- Gerarchia struttura ad albero: i nodi in una cartella vengono gestiti come nodi root o figlio a seconda del fatto che la cartella sia stata aggiunta alla struttura ad albero di dialogo a livello root o figlio. I nodi a livello root che hai aggiunto ad una cartella a livello root continueranno a funzionare come nodi root; ad esempio, non diventeranno nodi figlio della cartella. Tuttavia, se sposti un nodo a livello root in una cartella che è una cartella figlio di un altro nodo, il nodo root diventa figlio di questo altro nodo. 
+- Gerarchia struttura ad albero: i nodi in una cartella vengono gestiti come nodi root o figlio a seconda del fatto che la cartella sia stata aggiunta alla struttura ad albero di dialogo a livello root o figlio. I nodi a livello root che hai aggiunto ad una cartella a livello root continueranno a funzionare come nodi root; ad esempio, non diventeranno nodi figlio della cartella. Tuttavia, se sposti un nodo a livello root in una cartella che è una cartella figlio di un altro nodo, il nodo root diventa figlio di questo altro nodo.
 
-Le cartelle non influiscono sull'ordine con cui vengono valutati i nodi. I nodi continuano ad essere elaborati dal primo all'ultimo. Mentre il servizio scende lungo la struttura ad albero, quando trova una cartella, se questa non presenta condizioni o se la sua condizione è true, elaborerà immediatamente il primo nodo della cartella e continuerà a scendere lungo la struttura ad albero da quel punto. Se una cartella non presenta una condizione della cartella, verrà ignorata dal servizio e ciascun nodo presente in essa verrà gestito come qualsiasi altro nodo individuale nella struttura ad albero. 
+Le cartelle non influiscono sull'ordine con cui vengono valutati i nodi. I nodi continuano ad essere elaborati dal primo all'ultimo. Mentre il tuo assistente scende lungo la struttura ad albero, quando trova una cartella, se questa non presenta condizioni o se la sua condizione è true, elaborerà immediatamente il primo nodo della cartella e continuerà a scendere lungo la struttura ad albero da quel punto. Se una cartella non presenta una condizione della cartella, verrà ignorata dal tuo assistente e ciascun nodo presente in essa verrà gestito come qualsiasi altro nodo individuale nella struttura ad albero. 
 
 ### Aggiunta di una cartella
 {: #dialog-build-folders-add}
@@ -328,4 +334,4 @@ Per eliminare una cartella, completa la seguente procedura:
     - Per eliminare solo la cartella e conservare i nodi di dialogo presenti in essa, deseleziona la casella di spunta **Elimina i nodi nella cartella** e quindi fai clic su **Sì, eliminala**.
     - Per eliminare la cartella e tutti i nodi di dialogo presenti in essa, fai clic su **Sì, eliminala**.
 
-Se hai eliminato solo la cartella, i nodi contenuti in essa vengono visualizzati nella struttura ad albero di dialogo nel punto in cui si trovava la cartella. 
+Se hai eliminato solo la cartella, i nodi contenuti in essa vengono visualizzati nella struttura ad albero di dialogo nel punto in cui si trovava la cartella.

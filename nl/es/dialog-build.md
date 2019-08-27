@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-07-29"
 
 subcollection: assistant
 
@@ -26,7 +26,7 @@ subcollection: assistant
 # Creación de un diálogo
 {: #dialog-build}
 
-Utilice la herramienta de {{site.data.keyword.conversationshort}} para crear su diálogo.
+El diálogo define lo que dice su asistente en respuesta a los clientes, en base a lo que cree que quiere el cliente.
 {: shortdesc}
 
 ## Creación de un diálogo
@@ -34,18 +34,20 @@ Utilice la herramienta de {{site.data.keyword.conversationshort}} para crear su 
 
 Para crear un diálogo, siga estos pasos:
 
-1.  Pulse el separador **Diálogo** y luego pulse **Crear**.
+1.  Pulse en el separador **Diálogo** y luego en **Crear diálogo**.
 
     Cuando se abra el editor de diálogos por primera vez, se crean automáticamente los nodos siguientes:
 
-    - **Welcome**: El primer nodo. Contiene un saludo que se muestra a los usuarios la primera vez que interactúan con el servicio. Puede editar el mensaje.
+    - **Welcome**: El primer nodo. Contiene un saludo que se muestra a los usuarios la primera vez que interactúan con su asistente. Puede editar el mensaje.
 
     Este nodo no se desencadena en los flujos de diálogo que inician los usuarios. Por ejemplo, los diálogos que se utilizan en las integraciones con canales como Facebook o Slack se saltan los nodos con la condición especial `welcome`. Consulte [Inicialización de un diálogo](/docs/services/assistant?topic=assistant-dialog-start) para obtener más información.
     {: note}
 
-    - **Anything else**: El nodo final. Contiene frases que se utilizan para responder a los usuarios cuando no se reconoce la información que especifican. Puede sustituir las respuestas que se proporcionan o añadir más respuestas con un significado similar a añadir variedad a la conversación. También puede elegir si desea que el servicio para devuelva cada respuesta definida por orden o si desea devolverlas en orden aleatorio.
+    - **Anything else**: El nodo final. Contiene frases que se utilizan para responder a los usuarios cuando no se reconoce la información que especifican. Puede sustituir las respuestas que se proporcionan o añadir más respuestas con un significado similar a añadir variedad a la conversación. También puede elegir si desea que su asistente para devuelva cada respuesta definida por orden o si desea devolverlas en orden aleatorio.
 1.  Para añadir más nodos al árbol de diálogo, pulse **Más** ![icono Más](images/kabob.png) en el nodo **Welcome** y seleccione **Añadir nodo debajo**.
-1.  Especifique una condición que, si se cumple, active el servicio para que procese el nodo.
+1.  En el campo **Si el asistente reconoce**, especifique una condición que, cuando se cumpla, hace que su asistente procese el nodo. 
+
+    Para empezar, normalmente habrá que añadir una intención como la condición. Por ejemplo, si añade `#open_account` aquí, quiere decir que quiere que se devuelva al usuario la respuesta que especificará en este nodo, si la entrada del usuario indica que éste quiere abrir una cuenta.
 
     Cuando empieza a definir una condición, se muestra un recuadro que muestra sus opciones. Puede especificar uno de los siguientes caracteres, y luego seleccionar un valor de la lista de opciones que se visualiza.
 
@@ -83,19 +85,19 @@ Para crear un diálogo, siga estos pasos:
     Para obtener más información sobre cómo probar valores en condiciones, consulte [Condiciones](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-conditions).
 1.  **Opcional**: Si desea recopilar varios fragmentos información del usuario en este nodo, pulse **Personalizar** y habilite **Ranuras**. Consulte [Obtención de información con ranuras](/docs/services/assistant?topic=assistant-dialog-slots) para ver más detalles.
 1.  Escriba una respuesta.
-    - Añada el texto o los elementos multimedia que desea que el servicio muestre al usuario como respuesta.
+    - Añada el texto o los elementos multimedia que desea que su asistente muestre al usuario como respuesta.
     - Si desea definir diferentes respuestas basándose en determinadas condiciones, pulse **Personalizar** y habilite **Varias respuestas**.
     - Para obtener información sobre respuestas condicionales, sobre respuestas completas o sobre cómo añadir distintas respuestas, consulte [Respuestas](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-responses).
 
 1.  Especifique qué hacer después de que se haya procesado el nodo actual. Elija entre las siguientes opciones:
 
-    - **Esperar una entrada de usuario**: Se detiene el servicio hasta que el usuario proporcione una nueva entrada.
-    - **Saltar entrada de usuario**: El servicio salta directamente al primer nodo hijo. Esta opción únicamente está disponible si el nodo actual tiene al menos un nodo hijo.
-    - **Ir a**: El servicio sigue el proceso de diálogo en el nodo que especifique. Puede elegir si el servicio debe evaluar la condición del nodo de destino o ir directamente a la respuesta del nodo de destino. Consulte la [Configuración de la acción Ir a](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-jump-to-config) para obtener más detalles.
+    - **Esperar una entrada de usuario**: Se detiene su asistente hasta que el usuario proporcione una nueva entrada.
+    - **Saltar entrada de usuario**: Su asistente salta directamente al primer nodo hijo. Esta opción únicamente está disponible si el nodo actual tiene al menos un nodo hijo.
+    - **Ir a**: Su asistente sigue el proceso de diálogo en el nodo que especifique. Puede elegir si su asistente debe evaluar la condición del nodo de destino o ir directamente a la respuesta del nodo de destino. Consulte la [Configuración de la acción Ir a](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-jump-to-config) para obtener más detalles.
 
-1.  **Opcional**: si desea que este nodo se tenga en cuenta cuando se muestre a los usuarios un conjunto de opciones de nodo en el momento de la ejecución y si les solicite que elijan la que mejor se ajuste a su objetivo, añada una breve descripción del objetivo de usuario que gestiona este nodo en el campo **nombre de nodo externo**. Por ejemplo, *Realizar un pedido*.
+1.  **Opcional**: si desea que este nodo se tenga en cuenta cuando se muestre a los usuarios un conjunto de opciones de nodo en el momento de la ejecución y si les solicite que elijan la que mejor se ajuste a su objetivo, añada una breve descripción del objetivo de usuario que gestiona este nodo en el campo **nombre de nodo externo**. Por ejemplo, *Abrir una cuenta*.
 
-    ![Solo plan Plus o Premium](images/premium.png) el campo *nombre de nodo externo* solo se muestra a los usuarios del plan Plus o Premium. Consulte [Desambiguación](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation) para obtener más información.
+    ![Solo plan Plus o Premium](images/plus.png) el campo *nombre de nodo externo* solo se muestra a los usuarios del plan Plus o Premium. Consulte [Desambiguación](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation) para obtener más información.
 
 1.  **Opcional**: Asigne un nombre al nodo.
 
@@ -129,12 +131,17 @@ Las consultas que envíe a través del panel "Pruébelo" generan llamadas de API
     ![Captura de pantalla del mensaje de entrenamiento](images/training.png)
 1.  Compruebe la respuesta para ver si el diálogo ha interpretado correctamente la entrada y ha elegido la respuesta apropiada.
 
-    La ventana de la conversación indica las intenciones y entidades que se han reconocido en la entrada:
+    La ventana de la conversación indica las intenciones y entidades que se han reconocido en la entrada.
 
     ![Captura de pantalla de la salida del diálogo de prueba](images/test_dialog_output.png)
+
+    Si desea editar una entidad que se reconoce de la entrada, pulse el nombre de la entidad para abrirla en la página Entidades. Si se reconoce el intento incorrecto, puede pulsar en la flecha situada junto al nombre de intento para corregirla o marcar el tema como irrelevante. Para obtener más información, consulte
+[Cómo realizar mejora en los datos de entrenamiento](/docs/services/assistant?topic=assistant-logs#logs-fix-data).
+
 1.  Si desea saber qué nodo en el árbol de diálogo desencadenó una respuesta, pulse el icono **Ubicación** ![Ubicación](images/location.png) junto a la misma. Si todavía no está en el separador Diálogo, ábralo.
 
-    Se le da el foco al nodo de origen y se resalta la ruta que el servicio ha recorrido a través del árbol para llegar al final del mismo. La ruta permanece resaltada hasta que lleve a cabo otra acción como, por ejemplo, especificar una nueva entrada de prueba.
+    Se le da el foco al nodo de origen y se resalta la ruta que su asistente ha recorrido a través del árbol para llegar al final del mismo. La ruta permanece resaltada hasta que lleve a cabo otra acción como, por ejemplo, especificar una nueva entrada de prueba.
+
 1.  Para comprobar o establecer el valor de una variable de contexto, pulse el enlace **Gestionar contexto**.
 
     Se muestran las variables de contexto que ha definido en el diálogo.
@@ -150,7 +157,7 @@ Las consultas que envíe a través del panel "Pruébelo" generan llamadas de API
 
 1.  Continúe interactuando con el diálogo para ver cómo fluye la conversación.
     - Para encontrar y volver a enviar una expresión de prueba, puede pulsar la tecla Subir para recorrer las entradas recientes.
-    - Para eliminar expresiones de prueba anteriores del panel de la conversación y volver a empezar, pulse el enlace **Borrar**. No solo se eliminan las expresiones de prueba y las respuestas; esta acción también elimina los valores de las variables de contexto establecidas como resultado de sus interacciones con el diálogo. Los valores de las variables de contexto que ha establecido o modificado de forma explícita no se borran.
+    - Para eliminar expresiones de prueba anteriores del panel de la conversación y volver a empezar, pulse el enlace **Borrar**. No solo se eliminan las expresiones de prueba y las respuestas; esta acción también elimina los valores de las variables de contexto establecidas como resultado de sus interacciones con el diálogo.
 
 ### Qué hacer a continuación
 {: #dialog-build-next-steps}
@@ -166,25 +173,26 @@ Si está listo para poner la conversación en funcionamiento para ayudar a los u
 ## Límites del nodo del diálogo
 {: #dialog-build-node-limits}
 
-El número de nodos de diálogo que puede crear por conocimiento depende de su plan de servicio.
+El número de nodos de diálogo que puede crear por conocimiento depende de su tipo de plan.
 
-| Plan de servicio     | Nodos de diálogo por conocimiento     |
+| Plan     | Nodos de diálogo por conocimiento     |
 |------------------|---------------------------:|
 | Premium          |                    100.000 |
 | Plus             |                    100.000 |
 | Estándar         |                    100.000 |
+| Plus Trial       |                     25.000 |
 | Lite             |                     100`*` |
-{: caption="Detalles del plan de servicio" caption-side="top"}
+{: caption="Detalles del plan" caption-side="top"}
 
 Los nodos de diálogo welcome y anything_else que ya contienen información en el árbol no cuentan al calcular el total.
 
-Límite de profundidad de árbol: el servicio da soporte a 2.000 nodos de diálogo descendientes; la herramienta funciona mejor con 20 o menos.
+Límite de profundidad de árbol: el diálogo admite 2000 nodos de diálogo descendientes; el diálogo funciona mejor con 20 o menos.
 
 `*` Los límites han pasado de 25.000 a 100 para los planes Lite el 1 de diciembre de 2018. Los usuarios de instancias de servicio que se han creado antes de la modificación del límite tienen hasta el 1 de junio de 2019 para actualizar su plan o para editar los diálogos en los conocimientos de las instancias de servicio existentes para que se ajusten a los nuevos requisitos de límite.
 
 Para ver el número de nodos de diálogo en un conocimiento de diálogo, realice una de las siguientes acciones:
 
-- En la herramienta, si aún no está asociado con un asistente, añada el conocimiento de diálogo a un asistente y, a continuación, visualice el mosaico de conocimientos en la página principal del asistente. La sección *datos formados* muestra el número de nodos de diálogo.
+- Si aún no está asociado con un asistente, añada el conocimiento de diálogo a un asistente y, a continuación, visualice el mosaico de conocimientos en la página principal del asistente. La sección *datos formados* muestra el número de nodos de diálogo.
 - Envíe una solicitud GET al punto final de la API /dialog_nodes API e incluya el parámetro `include_count=true`. Por ejemplo:
 
   ```curl
@@ -193,7 +201,7 @@ Para ver el número de nodos de diálogo en un conocimiento de diálogo, realice
 
   En la respuesta, el atributo `total` del objeto `pagination` contiene el número de nodos de diálogo.
 
-Si el total parece mayor de lo que esperaba, podría deberse a que la herramienta convierte el diálogo que crea en la herramienta en un objeto JSON. Algunos campos que parecen ser parte de un nodo individual están realmente estructurados como nodos de diálogo separados en el objeto JSON subyacente.
+Si el total parece mayor de lo que esperaba, podría deberse a que el diálogo que crea desde la aplicación se convierte en un objeto JSON. Algunos campos que parecen ser parte de un nodo individual están realmente estructurados como nodos de diálogo separados en el objeto JSON subyacente.
 
   - Cada nodo y carpeta se representa como su propio nodo.
   - Cada respuesta condicional que está asociada con un solo nodo de diálogo se representa como un nodo individual.
@@ -226,16 +234,16 @@ Puede buscar un nodo de diálogo por su ID de nodo. Especifique el ID de nodo co
 
 Otra forma de descubrir un nodo en función de su ID de nodo es mediante estos pasos:
 
-1.  En el separador Diálogo de la herramienta, seleccione cualquier nodo del árbol del diálogo.
+1.  En el separador Diálogo, seleccione cualquier nodo del árbol del diálogo.
 1.  Cierre la vista de edición si está abierta para el nodo actual.
 1.  En el campo de ubicación del navegador web, debería mostrarse un URL con la siguiente sintaxis:
 
-    `https://watson-conversation.ng.bluemix.net/space/instance-id/workspaces/workspace-id/build/dialog#node=node-id`
+    `https://assistant-location.watsonplatform.net/location/instance-id/workspaces/workspace-id/build/dialog#node=node-id`
 
 1.  Edite el URL y sustituya el valor `node-id` actual por el ID del nodo que desea encontrar y envíe el nuevo URL.
 1.  Si es necesario, vuelva a resaltar el URL editado y envíelo de nuevo.
 
-La herramienta se renueva y el foco pasa a estar en el nodo del diálogo con el ID de nodo que ha especificado. Si el ID de nodo es para una ranura, una condición de ranura encontrada o no encontrada, un manejador de ranura o una respuesta condicional, entonces el nodo en que se definió la respuesta condicional o la ranura recibe el foco y se visualiza la correspondiente sección modal.
+La página se renueva y el foco pasa a estar en el nodo del diálogo con el ID de nodo que ha especificado. Si el ID de nodo es para una ranura, una condición de ranura encontrada o no encontrada, un manejador de ranura o una respuesta condicional, entonces el nodo en que se definió la respuesta condicional o la ranura recibe el foco y se visualiza la correspondiente sección modal.
 
 Si sigue sin poder encontrar el nodo, exporte el conocimiento del diálogo y utilice el editor JSON para buscar el archivo JSON del conocimiento.
 {: tip}
@@ -271,11 +279,11 @@ Los nodos del diálogo se pueden agrupar en carpetas. Hay muchas razones para ag
 
 Estas características de la carpeta afectan la forma en la que se procesan los nodos en una carpeta:
 
-- Condición: si no se especifica ninguna condición, el servicio procesa directamente los nodos dentro de la carpeta. Si se especifica una condición, el servicio evalúa en primer lugar la condición de la carpeta para determinar si hay que procesar los nodos que contiene.
+- Condición: si no se especifica ninguna condición, su asistente procesa directamente los nodos dentro de la carpeta. Si se especifica una condición, su asistente evalúa en primer lugar la condición de la carpeta para determinar si hay que procesar los nodos que contiene.
 - Personalización: Los valores de configuración que se aplican a la carpeta los heredan los nodos en la carpeta. Si cambia los valores de digresión de la carpeta, por ejemplo, los cambios los heredan todos los nodos en la carpeta.
 - Jerarquía de árbol: Los nodos en la carpeta se tratan como nodos raíz o hijo con base a si la carpeta se añadió al árbol de diálogo a nivel de raíz o hijo. Todos los nodos a nivel raíz que se añaden a una carpeta de nivel raíz continúan funcionando como nodos raíz; por ejemplo, no se convierten en nodos hijo de la carpeta. Sin embargo, si mueve un nodo de nivel raíz a una carpeta que es un hijo de otro nodo, el nodo raíz se convierte en hijo de ese otro nodo.
 
-Las carpetas no afectan al orden en que se evalúan los nodos. Los nodos continúan procesándose del primero al último. A medida que el servicio recorre el árbol en sentido descendente, cuando encuentra una carpeta, si la carpeta no tiene ninguna condición o si su condición es verdadero, procesa de forma inmediata el primer nodo de la carpeta y recorre el árbol en sentido descendente a partir de ese punto. Si una carpeta no tiene una condición de carpeta, la carpeta es transparente para el servicio y cada nodo de la carpeta se trata como cualquier otro nodo individual del árbol.
+Las carpetas no afectan al orden en que se evalúan los nodos. Los nodos continúan procesándose del primero al último. A medida que su asistente recorre el árbol en sentido descendente, cuando encuentra una carpeta, si la carpeta no tiene ninguna condición o si su condición es verdadero, procesa de forma inmediata el primer nodo de la carpeta y recorre el árbol en sentido descendente a partir de ese punto. Si una carpeta no tiene una condición de carpeta, la carpeta es transparente para su asistente y cada nodo de la carpeta se trata como cualquier otro nodo individual del árbol.
 
 ### Adición de una carpeta
 {: #dialog-build-folders-add}

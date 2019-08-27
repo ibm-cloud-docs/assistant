@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
 
@@ -45,7 +45,7 @@ Ce tutoriel dure environ 30 minutes.
 ### Prérequis
 {: #tutorial-slots-prereqs}
 
-Avant de commencer, exécutez le [tutoriel d'initiation](/docs/services/assistant?topic=assistant-getting-started). Vous utiliserez la compétence du tutoriel {{site.data.keyword.conversationshort}} que vous avez créée et ajouterez des noeuds au dialogue simple que vous avez créé dans le cadre de l'exercice d'initiation. 
+Avant de commencer, exécutez le [tutoriel d'initiation](/docs/services/assistant?topic=assistant-getting-started). Vous utiliserez la compétence du tutoriel {{site.data.keyword.conversationshort}} que vous avez créée et ajouterez des noeuds au dialogue simple que vous avez créé dans le cadre de l'exercice d'initiation.
 
 Vous pouvez également démarrer avec une nouvelle compétence de dialogue, si vous le souhaitez. Dans ce cas, vous devez prendre soin de créer la compétence avant de commencer à suivre ce tutoriel.
 {: note}
@@ -88,7 +88,7 @@ Ajoutez une intention sur l'onglet Intents. Une intention est l'objectif ou la f
 ## Etape 2 : Ajout d'entités
 {: #tutorial-slots-add-entity}
 
-Une définition d'entité inclut un groupe de *valeurs* d'entité représentant le vocabulaire qui est souvent utilisé dans le contexte d'une intention donnée. En définissant des entités, vous pouvez aider le service à identifier des références dans l'entrée utilisateur qui sont liées à des intentions d'intérêt. Au cours de cette étape, vous allez activer des entités de système qui peuvent reconnaître des références d'heure, de date et de nombre.
+Une définition d'entité inclut un groupe de *valeurs* d'entité représentant le vocabulaire qui est souvent utilisé dans le contexte d'une intention donnée. En définissant des entités, vous pouvez aider l'assistant à identifier des références dans l'entrée utilisateur qui sont liées à des intentions d'intérêt. Au cours de cette étape, vous allez activer des entités de système qui peuvent reconnaître des références d'heure, de date et de nombre.
 
 1.  Cliquez sur **Entities** pour ouvrir la page Entities.
 1.  Activez les entités de système qui peuvent reconnaître des références de date, d'heure et de nombre dans l'entrée utilisateur. Cliquez sur l'onglet **System entities**, puis activez les entités suivantes :
@@ -102,7 +102,7 @@ Vous avez activé les entités de système @sys-date, @sys-time et @sys-number. 
 ## Etape 3 : Ajout d'un noeud de dialogue avec attributs
 {: #tutorial-slots-add-dialog-with-slots}
 
-Un noeud de dialogue représente le début d'une conversation d'un dialogue entre le service et l'utilisateur. Le noeud contient une condition qui doit être remplie pour qu'il puisse être traité par le service. Au minimum, il comporte aussi une réponse. Par exemple, une condition de noeud peut rechercher l'intention `#hello` dans l'entrée utilisateur et répondre `Bonjour. En quoi puis-je vous aider ?` Cet exemple est la forme la plus simple d'un noeud de dialogue, contenant une seule condition et une seule réponse. Vous pouvez définir des dialogues complexes en ajoutant des réponses conditionnelles à un noeud, en ajoutant des noeuds enfants qui prolongent l'échange avec l'utilisateur, etc. (Si vous souhaitez en savoir plus sur les dialogues complexes, vous pouvez suivre le tutoriel [Création d'un dialogue complexe](/docs/services/assistant?topic=assistant-tutorial).)
+Un noeud de dialogue représente le début d'une conversation d'un dialogue entre l'assistant et l'utilisateur. Le noeud contient une condition qui doit être remplie pour qu'il puisse être traité par l'assistant. Au minimum, il comporte aussi une réponse. Par exemple, une condition de noeud peut rechercher l'intention `#hello` dans l'entrée utilisateur et répondre `Bonjour. En quoi puis-je vous aider ?` Cet exemple est la forme la plus simple d'un noeud de dialogue, contenant une seule condition et une seule réponse. Vous pouvez définir des dialogues complexes en ajoutant des réponses conditionnelles à un noeud, en ajoutant des noeuds enfants qui prolongent l'échange avec l'utilisateur, etc. (Si vous souhaitez en savoir plus sur les dialogues complexes, vous pouvez suivre le tutoriel [Création d'un dialogue complexe](/docs/services/assistant?topic=assistant-tutorial).)
 
 Le noeud que vous allez ajouter au cours de cette étape est celui qui contient des attributs. Les attributs fournissent un format structuré via lequel vous pouvez demander et sauvegarder plusieurs éléments d'informations auprès d'un utilisateur au sein d'un seul noeud. Ils sont utiles lorsque vous avez en tête une tâche spécifique et que vous avez besoin d'éléments d'information essentielles de la part de l'utilisateur avant de pouvoir l'exécuter. Pour plus d'informations, reportez-vous à la rubrique [Collecte d'informations à l'aide d'attributs](/docs/services/assistant?topic=assistant-dialog-slots).
 
@@ -132,13 +132,13 @@ Le noeud que vous ajoutez va collecter les informations requises pour effectuer 
     <tr>
       <td>@sys-time</td>
       <td>$time</td>
-      <td>Pour quelle heure voulez-vous que la réservation soit faite ? </td>
+      <td>Pour quelle heure voulez-vous que la réservation soit faite ?</td>
     </tr>
     </tr>
     <tr>
       <td>@sys-number</td>
       <td>$guests</td>
-      <td>Combien serez-vous pour dîner ? </td>
+      <td>Combien serez-vous pour dîner ?</td>
     </tr>
     </table>
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-08-07"
+lastupdated: "2019-05-14"
 
 subcollection: assistant
 
@@ -60,16 +60,17 @@ subcollection: assistant
 
 IBM 员工创建的其他视频。
 
-- [数据技术支持 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://ibm-dte.mybluemix.net/ibm-watson-assistant){: new_window}：资源集合，包含产品教程和动手实验室。
+- [数据技术支持 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://ibm-dte.mybluemix.net/watson-assistant){: new_window}：资源集合，包含产品教程和动手实验室。
 - [{{site.data.keyword.conversationshort}} Integrations Tutorial ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.youtube.com/watch?v=O3silvVBaC8&t=3s){: new_window}：10 分钟的教程，您可以遵循此教程使用 Botkit 将 {{site.data.keyword.conversationshort}} 与 Twilio 相连接，以创建 SMS 聊天机器人。
-- [演示如何使用 {{site.data.keyword.conversationshort}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://youtu.be/tUkLIUOm550){: new_window}：3 分钟的 Conversation 服务概述
+- [演示如何使用 {{site.data.keyword.conversationshort}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://youtu.be/tUkLIUOm550){: new_window}：3 分钟的产品概述。
 - [Introducing {{site.data.keyword.conversationshort}} service ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://youtu.be/A96nLYSMltA){: new_window}：1 分钟的简介。
 - [Walkthrough of {{site.data.keyword.conversationshort}} ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://youtu.be/ELwWhJGE2P8){: new_window}：14 分钟的技术全程指导。
 
-## IBM Watson 学院
+## 培训材料
 {: #resources-academy}
 
-- [{{site.data.keyword.conversationshort}} Foundations ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://ibm.com/training/watsonacademy){: new_window}
+- [Watson Academy ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://ibm.com/training/watsonacademy){: new_window}
+- [Coursera: Building AI Powered Chatbots Without Programming ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.coursera.org/learn/building-ai-powered-chatbots)
 
 ## 博客
 {: #resources-blogs}

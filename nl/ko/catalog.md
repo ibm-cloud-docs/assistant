@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
+
 
 ---
 
@@ -33,9 +34,7 @@ subcollection: assistant
 ## 대화 스킬에 컨텐츠 카탈로그 추가
 {: #catalog-add}
 
-{{site.data.keyword.conversationshort}} 도구를 사용하여 컨텐츠 카탈로그를 추가하십시오.
-
-1.  {{site.data.keyword.conversationshort}} 도구에서 대화 스킬을 연 다음 **컨텐츠 카탈로그** 탭을 클릭하십시오.
+1.  대화 스킬을 연 후 **컨텐츠 카탈로그** 탭을 클릭하십시오.
 
 1.  컨텐츠 카탈로그(예: *Banking*)를 선택하여 함께 제공되는 인텐트를 확인하십시오.
 

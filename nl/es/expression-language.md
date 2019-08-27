@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-06-04"
 
 subcollection: assistant
 
@@ -138,7 +138,7 @@ Cuando se prueba el diálogo, puede ver los detalles de las entidades que se rec
 ```
 {: codeblock}
 
-Para la entrada de usuario, *Hello now*, el servicio reconoce las entidades @sys-date y @sys-time, de modo que la respuesta contiene estos objetos de entidad:
+Para la entrada de usuario, *Hello now*, su asistente reconoce las entidades @sys-date y @sys-time, de modo que la respuesta contiene estos objetos de entidad:
 
 ```json
 [
@@ -174,7 +174,7 @@ Cada entidad tiene un conjunto de propiedades asociadas. Puede acceder a informa
 
 | Propiedad              | Definición | Consejos de uso |
 |-----------------------|------------|------------|
-| *confidence*          | Un porcentaje decimal que representa la confianza del servicio en la entidad reconocida. La confianza de una entidad puede ser 0 o 1, a no ser que haya activado la coincidencia aproximada de entidades. Cuando la coincidencia aproximada está habilitada, el umbral de nivel de confianza predeterminado es 0.3. Tanto si la coincidencia aproximada está habilitada como si no, las entidades del sistema siempre tienen el nivel de confianza 1.0. | Puede utilizar esta propiedad en una condición para que devuelva false si el nivel de confianza no es superior al porcentaje que especifique. |
+| *confidence*          | Un porcentaje decimal que representa la confianza de su asistente en la entidad reconocida. La confianza de una entidad puede ser 0 o 1, a no ser que haya activado la coincidencia aproximada de entidades. Cuando la coincidencia aproximada está habilitada, el umbral de nivel de confianza predeterminado es 0.3. Tanto si la coincidencia aproximada está habilitada como si no, las entidades del sistema siempre tienen el nivel de confianza 1.0. | Puede utilizar esta propiedad en una condición para que devuelva false si el nivel de confianza no es superior al porcentaje que especifique. |
 | *location*            | Un desplazamiento de carácter basado en cero que indica dónde empiezan y terminan los valores de entidad detectados en el texto de entrada. | Utilice `.literal` para extraer la parte de texto comprendida entre los valores de índice de inicio y fin almacenados en la propiedad location. |
 | *value*               | La entidad value identificada en la entrada. | Esta propiedad devuelve el valor de entidad tal como está definido en los datos de entrenamiento, aunque la comparación se haya realizado sobre uno de los sinónimos asociados. Puede utilizar `.values` para capturar varias apariciones de una entidad que pueda estar presente en la entrada de usuario. |
 
@@ -183,17 +183,19 @@ Cada entidad tiene un conjunto de propiedades asociadas. Puede acceder a informa
 
 En los ejemplos siguientes, el conocimiento contiene una entidad airport que incluye el valor JFK y el sinónimo "Kennedy Airport". La entrada del usuario es *I want to go to Kennedy Aiport*.
 
-- Para devolver una respuesta específica si se reconoce la entidad 'JFK' en la entrada del usuario, podría añadir esta expresión a la condición de respuesta: `entities.airport[0].value == 'JFK'`
-  o
+- Para devolver una respuesta específica si se reconoce la entidad 'JFK' en la entrada del usuario, podría añadir esta expresión a la condición de respuesta:
+  `entities.airport[0].value == 'JFK'`
+  o bien
   `@airport = "JFK"`
-- Para devolver el nombre de la entidad tal como la ha especificado el usuario en la respuesta del diálogo, utilice la propiedad .literal: `So you want to go to <?entities.airport[0].literal?>...`
-  o
+- Para devolver el nombre de la entidad tal como la ha especificado el usuario en la respuesta del diálogo, utilice la propiedad .literal:
+  `So you want to go to <?entities.airport[0].literal?>...`
+  o bien
   `So you want to go to @airport.literal ...`
 
   Ambos formatos se evalúan como `So you want to go to Kennedy Airport...' en la respuesta.
 
 - Las expresiones como `@airport:(JFK)` o `@airport.contains('JFK')` siempre hacen referencia al **valor** de la entidad (`JFK` en este ejemplo).
-- Para ser más restrictivo sobre los términos identificados como aeropuertos en la entrada cuando la coincidencia aproximada está habilitada, puede especificar esta expresión en una condición de nodo, por ejemplo: `@airport && @airport.confidence > 0.7`. El nodo solo se ejecutará si el servicio tiene una confianza del 70% en que el texto de entrada contiene una referencia a airport.
+- Para ser más restrictivo sobre los términos identificados como aeropuertos en la entrada cuando la coincidencia aproximada está habilitada, puede especificar esta expresión en una condición de nodo, por ejemplo: `@airport && @airport.confidence > 0.7`. El nodo solo se ejecutará si su asistente tiene una confianza del 70% en que el texto de entrada contiene una referencia a airport.
 
 En este ejemplo, la entrada del usuario es *Are there places to exchange currency at JFK, Logan, and O'Hare?*
 
@@ -205,7 +207,8 @@ En este ejemplo, la entrada del usuario es *Are there places to exchange currenc
     }
     ```
 
-  Para hacer referencia posteriormente a la lista capturada de una respuesta de diálogo, utilice esta sintaxis: `You asked about these airports: <? $airports.join(', ') ?>.`
+  Para hacer referencia posteriormente a la lista capturada de una respuesta de diálogo, utilice esta sintaxis:
+  `You asked about these airports: <? $airports.join(', ') ?>.`
   Se muestra del siguiente modo:
   `You asked about these airports: JFK, Logan, O'Hare.`
 
@@ -214,7 +217,7 @@ En este ejemplo, la entrada del usuario es *Are there places to exchange currenc
 
 La matriz de intenciones contiene una o varias intenciones que se han reconocido en la entrada del usuario, clasificadas en orden descendente de confianza.
 
-Cada intención tiene una única propiedad: la propiedad `confidence`. La propiedad confidence es un porcentaje decimal que representa la confianza del servicio en la intención reconocida.
+Cada intención tiene una única propiedad: la propiedad `confidence`. La propiedad confidence es un porcentaje decimal que representa la confianza del asistente en la intención reconocida.
 
 Cuando se prueba el diálogo, puede ver los detalles de las intenciones que se reconocen en la entrada del usuario especificando esta expresión en una respuesta del nodo del diálogo:
 
@@ -223,7 +226,7 @@ Cuando se prueba el diálogo, puede ver los detalles de las intenciones que se r
 ```
 {: codeblock}
 
-Para la entrada de usuario, *Hello now*, el servicio encuentra una coincidencia exacta con la intención #greeting. Por lo tanto, lista en primer lugar los detalles del objeto de intención #greeting. La respuesta también incluye las otras 10 primeras intenciones definidas en el conocimiento independientemente de su puntuación de confianza. (En este ejemplo, su confianza en las otras intenciones se establece en 0 porque la primera intención es una coincidencia exacta). Se devuelven las otras 10 primeras intenciones porque el panel "Pruébelo" envía el parámetro `alternate_intents:true` con su solicitud. Si está utilizando directamente la API y desea ver los primeros 10 resultados, asegúrese de especificar este parámetro en su llamada. Si `alternate_intents` es false, el valor predeterminado, únicamente se devolverán en la matriz las intenciones con una confianza por encima de 0,2.
+Para la entrada de usuario, *Hello now*, su asistente encuentra una coincidencia exacta con la intención #greeting. Por lo tanto, lista en primer lugar los detalles del objeto de intención #greeting. La respuesta también incluye las otras 10 primeras intenciones definidas en el conocimiento independientemente de su puntuación de confianza. (En este ejemplo, su confianza en las otras intenciones se establece en 0 porque la primera intención es una coincidencia exacta). Se devuelven las otras 10 primeras intenciones porque el panel "Pruébelo" envía el parámetro `alternate_intents:true` con su solicitud. Si está utilizando directamente la API y desea ver los primeros 10 resultados, asegúrese de especificar este parámetro en su llamada. Si `alternate_intents` es false, el valor predeterminado, únicamente se devolverán en la matriz las intenciones con una confianza por encima de 0,2.
 
 ```json
 [{"intent":"greeting","confidence":1},
@@ -251,7 +254,7 @@ En el ejemplo siguiente se muestra cómo acceder a la entrada:
 
 - Para ejecutar un nodo si la entrada del usuario es "Yes", añada esta expresión a la condición del nodo: `input.text == 'Yes'`
 
-Puede utilizar cualquiera de los [métodos String](/docs/services/conversation/dialog-methods#dialog-methods-strings) para evaluar o manipular texto de la entrada del usuario. Por ejemplo:
+Puede utilizar cualquiera de los [métodos String](/docs/services/assistant/dialog-methods#dialog-methods-strings) para evaluar o manipular texto de la entrada del usuario. Por ejemplo:
 
 - Para comprobar si la entrada del usuario contiene "Yes", utilice: `input.text.contains( 'Yes' )`.
 - Devuelve true si la entrada del usuario es un número: `input.text.matches( '[0-9]+' )`.

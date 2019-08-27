@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -44,17 +44,17 @@ subcollection: assistant
 
 - ***어시스턴트***: {{site.data.keyword.conversationshort}} 컨텐츠를 구현하는 애플리케이션이며 '챗봇'이라고도 합니다.
 - ***대화***: 개별 사용자가 어시스턴트에 전송하는 메시지와 어시스턴트가 반송하는 메시지로 구성되는 메시지 세트입니다.
-- ***대화 ID***: 관련 메시지 교환을 함께 링크하기 위해 개별 메시지 호출에 추가되는 고유 ID입니다. V1 버전의 서비스 API를 사용 중인 앱 개발자가 컨텍스트 오브젝트의 메타데이터에 있는 ID를 포함하여 대화의 메시지 호출에 이 값을 추가합니다.
+- ***대화 ID***: 관련 메시지 교환을 함께 링크하기 위해 개별 메시지 호출에 추가되는 고유 ID입니다. V1 버전의 {{site.data.keyword.conversationshort}} API를 사용 중인 앱 개발자가 컨텍스트 오브젝트의 메타데이터에 있는 ID를 포함하여 대화의 메시지 호출에 이 값을 추가합니다.
 - ***고객 ID***: 나중에 고객이 해당 데이터의 제거를 요청하는 경우에 삭제될 수 있도록 컴퓨터 데이터에 레이블을 지정하는 데 사용될 수 있는 고유 ID입니다.
-- ***배치 ID***: V1 버전의 서비스 API를 사용 중인 앱 개발자가 메시지를 생성한 배치 환경을 식별하는 데 도움이 되도록 각 사용자 메시지와 함께 전달하는 고유 레이블입니다.
+- ***배치 ID***: V1 버전의 {{site.data.keyword.conversationshort}} API를 사용 중인 앱 개발자가 메시지를 생성한 배치 환경을 식별하는 데 도움이 되도록 각 사용자 메시지와 함께 전달하는 고유 레이블입니다.
 - ***인스턴스***: 고유한 인증 정보로 액세스할 수 있는 {{site.data.keyword.conversationshort}} 배치. {{site.data.keyword.conversationshort}} 인스턴스에는 여러 어시스턴트가 포함될 수 있습니다.
 - ***메시지***: 메시지는 사용자가 어시스턴트에 전송하는 단일 발화(utterance)입니다.
 - ***스킬 ID***: 스킬의 고유 ID입니다.
 - ***사용자***: 사용자는 어시스턴트와 상호작용하는 모든 사람이며 종종 고객입니다.
 - ***사용자 ID***: 특정 사용자의 서비스 사용량 레벨을 추적하는 데 사용되는 고유 레이블입니다.
-- ***작업공간 ID***: 작업 공간의 고유 ID입니다. 11월 9일 이전에 작성한 작업공간은 도구에서 스킬로 표시되지만 스킬과 작업공간은 동일하지 않습니다. 스킬은 실질적으로 V1 작업공간의 랩퍼입니다.
+- ***작업공간 ID***: 작업 공간의 고유 ID입니다. 11월 9일 이전에 작성한 작업공간은 제품 사용자 인터페이스에서 스킬로 표시되지만 스킬과 작업공간은 동일하지 않습니다. 스킬은 실질적으로 V1 작업공간의 랩퍼입니다.
 
-**중요**: **사용자 ID** 특성이 **고객 ID** 특성과 동등하지 *않지만* 둘 다 서비스에 전달될 수 있습니다. **사용자 ID** 필드는 청구 목적으로 사용량 레벨을 추적하는 데 사용되지만 **고객 ID** 필드는 일반 사용자와 연관된 메시지의 레이블 지정과 후속 삭제를 지원하는 데 사용됩니다. 고객 ID는 모든 Watson 서비스에서 일관되게 사용되며 `X-Watson-Metadata` 헤더에 지정됩니다. 사용자 ID는 {{site.data.keyword.conversationshort}} 서비스에서 독점적으로 사용되며 각 /message API 호출의 컨텍스트 오브젝트로 전달됩니다.
+**중요**: **사용자 ID** 특성이 **고객 ID** 특성과 동등하지 *않지만* 둘 다 메시지와 함께 전달될 수 있습니다. **사용자 ID** 필드는 청구 목적으로 사용량 레벨을 추적하는 데 사용되지만 **고객 ID** 필드는 일반 사용자와 연관된 메시지의 레이블 지정과 후속 삭제를 지원하는 데 사용됩니다. 고객 ID는 모든 Watson 서비스에서 일관되게 사용되며 `X-Watson-Metadata` 헤더에 지정됩니다. 사용자 ID는 {{site.data.keyword.conversationshort}} 서비스에서 독점적으로 사용되며 각 /message API 호출의 컨텍스트 오브젝트로 전달됩니다.
 
 ## 사용자 메트릭 사용
 {: #logs-resources-user-id}
@@ -99,9 +99,11 @@ curl -X POST -u "apikey:3Df... ...Y7Pc9"
 ## Jupyter 노트북
 {: #logs-resources-jupyter-notebooks}
 
-IBM에서 로그 데이터를 보다 자세하게 분석하는 데 사용할 수 있는 Jupyter 노트북을 작성했습니다. Jupyter 노트북은 대화식 컴퓨팅을 위한 웹 기반 환경입니다. 데이터를 처리하는 작은 코드 조각을 실행하고 계산 결과를 즉시 확인할 수 있습니다. 
+IBM에서 로그 데이터를 보다 자세하게 분석하는 데 사용할 수 있는 Jupyter 노트북을 작성했습니다. Jupyter 노트북은 대화식 컴퓨팅을 위한 웹 기반 환경입니다. 데이터를 처리하는 작은 코드 조각을 실행하고 계산 결과를 즉시 확인할 수 있습니다.
 
 표준 Python 도구에서 사용할 수 있는 노트북 세트와 {{site.data.keyword.DSX_full}}에서 최적으로 사용하도록 디자인된 세트가 있습니다. {{site.data.keyword.DSX_short}}는 데이터를 분석하고 시각화하거나, 데이터를 정리하고 형성하거나, 스트리밍 데이터를 수집하거나, 기계 학습 모델을 작성, 훈련 및 배치하는 데 필요한 도구를 선택할 수 있는 환경을 제공하는 제품입니다. 세부사항은 [제품 문서 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://dataplatform.cloud.ibm.com/docs/content/getting-started/welcome-main.html){:new_window}를 참조하십시오.
+
+노트북이 어시스턴트를 향상하도록 도와주는 방법에 대해 자세히 알아보려면 [이 블로그 게시물![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://medium.com/ibm-watson/continuously-improve-your-watson-assistant-with-jupiter-notebooks-60231df4f01f)을 읽으십시오. 
 
 사용 가능한 노트북은 다음과 같습니다.
 
@@ -114,14 +116,14 @@ IBM에서 로그 데이터를 보다 자세하게 분석하는 데 사용할 수
 ### {{site.data.keyword.DSX}}에서 노트북 사용
 {: #logs-resources-notebooks-studio}
 
-{{site.data.keyword.DSX}}에 사용하도록 디자인된 노트북을 사용하도록 선택하는 경우 상위 레벨의 단계는 다음과 같습니다.
+{{site.data.keyword.DSX}}에 사용하도록 디자인된 노트북을 사용하도록 선택하는 경우, 단계는 대략 다음과 같습니다.
 
 1.  {{site.data.keyword.DSX}} 계정을 작성하고 [프로젝트를 작성한 후 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://dataplatform.cloud.ibm.com/docs/content/getting-started/projects.html?context=analytics){:new_window} Cloud Object Storage 계정을 추가하십시오.
 1.  {{site.data.keyword.DSX}} 커뮤니티에서 [Watson Assistant 성능 측정 노트북  ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")]( https://dataplatform.cloud.ibm.com/exchange/public/entry/view/133dfc4cd1480bbe4eaa78d3f635e568)을 가져오십시오.
 1   노트북과 함께 제공된 단계별 지시사항에 따라 로그의 대화 교환 서브세트를 분석하십시오.
 
     어시스턴트의 적용 범위와 효과를 더 쉽게 이해할 수 있도록 하는 방식으로 인사이트가 시각화됩니다.
-1.  유효하지 않은 대화에서 시각화의 기반이 되는 샘플 로그 세트를 내보낸 후 분석하고 어노테이션을 작성하십시오.
+1.  유효하지 않은 대화에서 샘플 로그 세트를 내보낸 후 분석하고 어노테이션을 작성하십시오.
 
     예를 들어, 응답이 올바른지 여부를 표시하십시오. 올바른 경우 유용한지 여부를 표시하십시오. 응답이 올바르지 않으면 근본 원인(예: 잘못된 인텐트 또는 엔티티가 발견되었거나 잘못된 대화 노드가 트리거됨)을 식별하십시오. 근본 원인을 식별한 후 올바른 선택사항이 무엇이었는지 표시하십시오.
 1.  [Analyze Watson Assistant 효율성 노트북](https://dataplatform.cloud.ibm.com/exchange/public/entry/view/133dfc4cd1480bbe4eaa78d3f636921c)에 어노테이션이 있는 스프레드시트를 제공하십시오.

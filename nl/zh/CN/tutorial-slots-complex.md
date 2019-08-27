@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-08-12"
 
 subcollection: assistant
 
@@ -51,7 +51,7 @@ subcollection: assistant
 ## 步骤 1：改进响应格式
 {: #tutorial-slots-complex-fix-format}
 
-保存日期和时间系统实体值时，这些值会转换成标准格式。这种标准格式在对值执行计算时非常有用，但您可能并不希望向用户公开这种格式重新设置。在此步骤中，您将重新设置对话引用的日期 (`2017-12-29`) 和时间 (`17:00:00`) 值的格式。
+保存日期和时间系统实体值时，这些值会转换成标准格式。这种标准格式在对值执行计算时很有用，但您可能并不希望向用户公开这种格式重新设置。在此步骤中，您将重新设置对话引用的日期 (`2017-12-29`) 和时间 (`17:00:00`) 值的格式。
 
 1.  要重新设置 $date 上下文变量值的格式，请单击 @sys-date 槽的**编辑响应** ![编辑响应](images/edit-slot.png) 图标。
 
@@ -91,7 +91,7 @@ subcollection: assistant
     <caption>脚本详细信息</caption>
     <tr>
       <th>说话者</th>
-      <th>发声</th>
+      <th>话语</th>
     </tr>
     <tr>
       <td>您</td>
@@ -164,7 +164,7 @@ subcollection: assistant
 ## 步骤 3：正确处理零
 {: #tutorial-slots-complex-recognize-zero}
 
-在槽条件中使用 `sys-number` 系统实体时，服务不会正确处理零。服务会将您为槽定义的上下文变量设置为 false，而不是将其设置为 0。因此，槽不会认为它已满，而会反复提示用户输入数字，直到用户指定了非零的数字为止。
+在槽条件中使用 `sys-number` 系统实体时，服务不会正确处理零。助手会将您为槽定义的上下文变量设置为 false，而不是将其设置为 0。因此，槽不会认为它已满，而会反复提示用户输入数字，直到用户指定了非零的数字为止。
 
 1.  测试节点，以便更好地理解问题。打开“试用”窗格，然后单击**清除**以删除先前测试带槽的节点时指定的槽上下文变量值。请使用以下脚本：
 
@@ -172,7 +172,7 @@ subcollection: assistant
     <caption>脚本详细信息</caption>
     <tr>
       <th>说话者</th>
-      <th>发声</th>
+      <th>话语</th>
     </tr>
     <tr>
       <td>您</td>
@@ -202,22 +202,35 @@ subcollection: assistant
 
     在指定非 0 的数字之前，您将陷入此循环中。
 
-1.  要确保槽能够正确处理零，请将槽条件从 `@sys-number` 更改为 `@sys-number || @sys-number:0`。
+1.  要确保槽能够正确处理零，请将槽条件从 `@sys-number` 更改为 `@sys-number >= 0`。
 
-1.  单击槽的**编辑响应** ![编辑响应](images/edit-slot.png) 图标。
+1.  通过单击**编辑槽** ![编辑槽](images/edit-slot.png) 图标，重新打开该槽进行编辑。从**选项** ![“更多”图标](images/kabob.png) 菜单中，打开 JSON 编辑器。
 
-1.  创建上下文变量时，系统会自动使用为槽条件指定的相同表达式。但是，上下文变量必须仅保存数字。编辑以上下文变量形式保存的值，以从中除去 `OR` 运算符。从**更多** ![“更多”图标](images/kabob.png) 菜单中，选择**打开 JSON 编辑器**，然后编辑用于定义该上下文变量的 JSON。将变量从 `"guests":"@sys-number || @sys-number:0"` 更改为使用以下语法：
+1.  更改上下文变量值。
+
+    值将类似于以下内容：
 
     ```json
     {
       "context": {
-   "guests": "@sys-number"
+   "number": "@sys-number >= 0"
       }
     }
     ```
     {: codeblock}
 
-1.  单击**保存**。
+    将其更改为类似于以下内容：
+
+    ```json
+    {
+      "context": {
+   "number":"@sys-number"
+      }
+    }
+    ```
+    {: codeblock}
+
+1.  保存更改。 
 
 1.  再次测试节点。打开“试用”窗格，然后单击**清除**以删除先前测试带槽的节点时指定的槽上下文变量值。要查看所做更改的影响，请使用以下脚本：
 
@@ -225,7 +238,7 @@ subcollection: assistant
     <caption>脚本详细信息</caption>
     <tr>
       <th>说话者</th>
-      <th>发声</th>
+      <th>话语</th>
     </tr>
     <tr>
       <td>您</td>
@@ -248,7 +261,7 @@ subcollection: assistant
 ## 步骤 4：验证用户输入
 {: #tutorial-slots-complex-slot-conditions}
 
-到目前为止，我们一直假定用户将为槽提供适用的值类型。但在现实中并不总是如此。您可以通过向槽添加条件响应，从而考虑用户可能提供无效值的情况。在此步骤中，您将使用条件槽响应来执行以下任务：
+到目前为止，我们一直假定用户将为槽提供适用的值类型。但在现实中并不总是如此。您可以通过向槽添加条件响应来考虑用户可能提供无效值的情况。在此步骤中，您将使用条件槽响应来执行以下任务：
 
 - 确保请求的日期不是过去的时间。
 - 检查请求的预订时间是否在接待时段内。
@@ -344,7 +357,7 @@ subcollection: assistant
     - 检查所指定的就餐人数大于零。
     - 预测并处理用户更改就餐人数的情况。
 
-      如果在处理带槽的节点的过程中，用户在任何时刻更改了槽值，那么相应的槽上下文变量值会更新。但是，让用户知道将替换值会非常有用，这既向用户提供明确的反馈，也让用户有机会在更改有误的情况下加以纠正。 
+      如果在处理带槽的节点的过程中，用户在任何时刻更改了槽值，那么相应的槽上下文变量值会更新。但是，让用户知道将替换值会很有用，这既向用户提供明确的反馈，也让用户有机会在更改有误的情况下加以纠正。
 
 1.  在带槽的节点的编辑视图中，单击 `@sys-number` 槽的**编辑槽** ![编辑槽](images/edit-slot.png) 图标。
 
@@ -360,13 +373,13 @@ subcollection: assistant
       <th>操作</th>
     </tr>
     <tr>
-      <td>`entities['sys-number']?.value == 0`</td>
+      <td>`@sys-number == 0`</td>
       <td>请指定大于 0 的数字。</td>
       <td>清除槽并重新提示</td>
     </tr>
     <tr>
       <td>`(event.previous_value != null) && (event.previous_value != event.current_value)`</td>
-      <td>好，更新就餐人数，`<? event.previous_value ?>` 位改为 `<? event.current_value ?>`.</td>
+      <td>好，就餐人数从 `<? event.previous_value ?>` 更新为 `<? event.current_value ?>`</td>
       <td>离开</td>
     </tr>
     <tr>
@@ -383,7 +396,7 @@ subcollection: assistant
 
 1.  确认槽期望用户的回答为“是”或“否”。您必须培训对话，使其能够首先识别用户输入中的“是”或“否”意向。
 
-1.  单击**意向**选项卡以返回到“意向”页面。添加以下意向和示例发声。
+1.  单击**意向**选项卡以返回到“意向”页面。添加以下意向和示例话语。
 
 - `#yes`
 
@@ -578,7 +591,7 @@ subcollection: assistant
 
 1.  您必须培训对话，使其能够首先识别用户输入中的 #exit 意向。
 
-1.  单击**意向**选项卡以返回到“意向”页面。添加具有以下示例发声的 #exit 意向。
+1.  单击**意向**选项卡以返回到“意向”页面。添加具有以下示例话语的 #exit 意向。
 
     ```json
     我想停止预订
@@ -644,7 +657,7 @@ subcollection: assistant
     如果将多个槽配置为跳过其他槽，或者将另一个节点级别的事件处理程序配置为跳过槽，那么必须使用其他方法来检查是否触发了 #exit 意向。有关可执行此操作的替代方法，请参阅[处理请求以退出过程](/docs/services/assistant?topic=assistant-dialog-slots#dialog-slots-node-level-handler)。
     {: note}
 
-1.  您希望服务在显示标准的节点级别响应之前，先检查 `has_skipped_slots` 属性。请将 `has_skipped_slots` 条件响应上移，使其在原始条件响应之前进行处理，否则此响应将永远不会触发。为此，请单击刚才添加的响应，使用**向上箭头**将其上移，然后单击**保存**。
+1.  您希望助手在显示标准的节点级别响应之前，先检查 `has_skipped_slots` 属性。请将 `has_skipped_slots` 条件响应上移，使其在原始条件响应之前进行处理，否则此响应将永远不会触发。为此，请单击刚才添加的响应，使用**向上箭头**将其上移，然后单击**保存**。
 
 1.  在“试用”窗格中使用以下脚本来测试此更改。
 
@@ -652,7 +665,7 @@ subcollection: assistant
     <caption>脚本详细信息</caption>
     <tr>
       <th>说话者</th>
-      <th>发声</th>
+      <th>话语</th>
     </tr>
     <tr>
       <td>您</td>
@@ -790,7 +803,7 @@ subcollection: assistant
 
 1.  使用以下脚本测试更改。
 
-|说话者|发声|
+|说话者|话语|
 |---------|-----------|
 |您|我要订位|
 |Watson|我可以为您订位。请告诉我预订的日期和时间，以及有几位。|
@@ -806,7 +819,7 @@ subcollection: assistant
 ## 步骤 9：连接到外部服务
 {: #tutorial-slots-complex-action}
 
-现在，对话可以收集并确认用户的预订详细信息，您可以调用外部服务以在餐厅系统中实际订位，或者通过多餐厅在线预订服务订位。有关更多详细信息，请参阅[从对话节点发起程序化调用](/docs/services/assistant?topic=assistant-dialog-actions)。
+现在，对话可以收集并确认用户的预订详细信息，您可以调用外部服务以在餐厅系统中实际订位，或者通过多餐厅在线预订服务订位。有关更多详细信息，请参阅[从对话节点发起程序化调用](/docs/services/assistant?topic=assistant-dialog-webhooks)。
 
 在调用预订服务的逻辑中，请确保检查是否存在 `has_skipped_slots`，如果存在，请不要继续预订。
 

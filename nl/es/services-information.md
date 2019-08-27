@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-07-19"
 
 subcollection: assistant
 
@@ -25,7 +25,7 @@ subcollection: assistant
 # Información sobre los servicios de IBM Cloud
 {: #services-information}
 
-El asistente es un bot alojado completamente que está gestionado por {{site.data.keyword.cloud_notm}}, lo que significa que no tiene que preocuparse por configurar o mantener la infraestructura para darle soporte.
+El asistente es un bot alojado completamente que está gestionado por {{site.data.keyword.cloud}}, lo que significa que no tiene que preocuparse por configurar o mantener la infraestructura para darle soporte.
 {: shortdesc}
 
 ## Información sobre el plan de servicio
@@ -35,6 +35,12 @@ Consulte las {{site.data.keyword.conversationshort}} [opciones del plan de servi
 
 Antes de crear una instancia de servicio, decida cómo desea organizar los recursos en la cuenta de {{site.data.keyword.cloud_notm}}. Si no define su propio grupo de recursos, se utiliza el grupo de recursos **default**, que *no puede* cambiar posteriormente. Consulte las [Prácticas recomendadas para organizar recursos en un grupo de recursos ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com/docs/resources/bestpractice_rgs#bp_resourcegroups){: new_window} para obtener más información. Todos los usuarios deben tener un rol de acceso de plataforma de Operador. ({{site.data.keyword.conversationshort}} no utiliza los roles de acceso al servicio).
 
+Para averiguar el plan de servicio al que pertenece la instancia actual, siga estos pasos:
+
+1.  Anote el nombre de la instancia que está utilizando actualmente. (Puede encontrar y cambiar la instancia de las páginas principales Conocimientos o Asistentes).
+1.  Acceda a la página [lista de recursos de IBM Cloud ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com/resources).
+1.  Expanda la sección **Servicios**, busque el nombre de instancia que ha anotado anteriormente y pulse en él para ver la información de plan asociada.
+
 ### Límites de plan por tipo de artefacto
 {: #services-information-limits}
 
@@ -43,6 +49,7 @@ Dispone de información sobre los límites de artefactos por plan en los temas e
 - [Asistentes](/docs/services/assistant?topic=assistant-assistant-add#assistant-add-limits)
 - [Nodos del diálogo](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-node-limits)
 - [Entidades](/docs/services/assistant?topic=assistant-entities#entities-limits)
+- [Tiempo de espera excedido de inactividad](/docs/services/assistant?topic=assistant-assistant-settings#assistant-settings-session-limits)
 - [Intenciones](/docs/services/assistant?topic=assistant-intents#intents-limits)
 - [Integraciones](/docs/services/assistant?topic=assistant-deploy-integration-add#deploy-integration-add-limits)
 - [Registros](/docs/services/assistant?topic=assistant-logs#logs-limits)
@@ -58,22 +65,23 @@ Si tiene un plan Lite y alcanza el límite de llamadas de API, pero los registro
 
 Si desea actualizar de un plan a otro, consulte el apartado sobre [Actualización](/docs/services/assistant?topic=assistant-upgrade).
 
-### Características de los planes Plus y Premium
+### Características de los planes Plus y Premium ![solo el plan Plus y Premium](images/plus.png)
 {: #services-information-premium}
 
-Las siguientes características solo están disponibles para los usuarios de planes Premium.
+Las siguientes características sólo están disponibles para los usuarios de los planes Plus o Premium.
 
 - [Desambiguación](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation)
 - [Resolución de conflictos de intenciones](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts)
-- [Recomendaciones de ejemplo de usuario de intenciones](/docs/services/assistant?topic=assistant-intent-recommendations)
+- [Recomendaciones de intención y recomendaciones de ejemplo de usuario de intención](/docs/services/assistant?topic=assistant-intent-recommendations)
 - [Integración de Intercom](/docs/services/assistant?topic=assistant-deploy-intercom)
+- [Conocimiento de búsqueda](/docs/services/assistant?topic=assistant-skill-search-add)
 
 ### Planes basados en el usuario
 {: #services-information-user-based-plans}
 
 A diferencia de los planes basados en API, que miden el uso por el número de llamadas de API realizadas durante un periodo de tiempo especificado, el nuevo plan Plus y el plan Premium actualizado utilizan una facturación basada en el usuario. Miden el uso por el número de usuarios exclusivos que han interactuado con el asistente durante un periodo de tiempo especificado.
 
-El servicio comprueba la información siguiente de las solicitudes de API en este orden para la facturación:
+{{site.data.keyword.conversationshort}} comprueba la información siguiente de las solicitudes de API en este orden para la facturación:
 
   1.  **user_id**: propiedad definida en la API que se envía en el objeto de contexto de una llamada de API /message. Esta propiedad constituye la mejor forma de asegurarse de que se envían llamadas de API /message a usuarios exclusivos. Para obtener más información sobre la propiedad de ID de usuario, consulte la documentación de referencia de la API:
   
@@ -84,7 +92,7 @@ El servicio comprueba la información siguiente de las solicitudes de API en est
 
   1.  **conversation_id**: propiedad definida en la API v1 que se almacena en el objeto de contexto de una llamada de API /message. Esta propiedad se puede utilizar para identificar varias llamadas de API /message asociadas a un solo intercambio de conversaciones con un usuario. Sin embargo, solo se utiliza el mismo ID si se retiene explícitamente el ID y se pasa de nuevo con cada solicitud que se realiza como parte de la misma conversación. De lo contrario, se genera un nuevo ID para cada nueva llamada de API /message.
 
-Para sacar el máximo provecho de los nuevos planes de servicio basados en el usuario, diseñe las aplicaciones personalizadas que utilice para desplegar su asistente de modo que capturen un ID de usuario o un ID de sesión exclusivo y pasen la información al servicio.
+Para sacar el máximo provecho de los nuevos planes de servicio basados en el usuario, diseñe las aplicaciones personalizadas que utilice para desplegar su asistente de modo que capturen un ID de usuario o un ID de sesión exclusivo y pasen la información a {{site.data.keyword.conversationshort}}.
 
 ## Autenticación de llamadas de API
 {: #services-information-authenticate-api-calls}
@@ -93,7 +101,7 @@ El mecanismo de autenticación que utiliza la instancia de servicio afecta a la 
 
 1.  Obtenga las credenciales de servicio.
 
-    - Busque y pulse la instancia de servicio en la [lista de recursos de {{site.data.keyword.Bluemix_notm}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com/resources){: new_window}.
+    - Busque y pulse la instancia de servicio en la [Lista de recursos de {{site.data.keyword.Bluemix_notm}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cloud.ibm.com){: new_window}.
 
     - Pulse para abrir la instancia de servicio, pulse **Credenciales de servicio** y luego pulse **Ver credenciales**.
 
@@ -155,7 +163,7 @@ El mecanismo de autenticación que utiliza la instancia de servicio afecta a la 
 {{site.data.keyword.cloud_notm}} tiene una red de centros de datos globales que proporcionan ventajas en cuanto a rendimiento a sus servicios de nube. Consulte [Centros de datos globales de {{site.data.keyword.cloud_notm}}
 ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.ibm.com/cloud/data-centers/){: new_window} para ver más detalles.
 
-{{site.data.keyword.cloud_notm}} ha pasado de gestionar el acceso de los usuarios con Cloud Foundry a utilizar la autenticación de IAM (Identity and Access Management) basada en señales. IAM se ha ido incorporando a distintas ubicaciones en distintos momentos. Puede migrar una instancia de servicio para que pase de su organización y espacio actuales de Cloud Foundry a un grupo de recursos. Consulte [Migración](/docs/services/assistant?topic=assistant-migrate) para obtener más detalles.
+{{site.data.keyword.cloud_notm}} ha pasado de gestionar el acceso de los usuarios con Cloud Foundry a utilizar la autenticación de IAM (Identity and Access Management) basada en señales. IAM se ha ido incorporando a distintas ubicaciones en distintos momentos. Puede migrar una instancia de servicio para que pase de su organización y espacio actuales de Cloud Foundry a un grupo de recursos. Consulte [Migración](/docs/services/watson?topic=watson-migrate) para obtener más detalles.
 
 Puede crear instancias del servicio {{site.data.keyword.conversationshort}} alojadas en los siguientes centros de datos:
 

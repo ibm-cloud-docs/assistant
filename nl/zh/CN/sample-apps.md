@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-04-08"
 
 subcollection: assistant
 
@@ -40,7 +40,7 @@ Node.js 应用程序显示 {{site.data.keyword.conversationshort}} 如何在简�
 
 利用 {{site.data.keyword.conversationshort}} 可以构建使用意向、实体和对话的应用程序，而此 Node.js 应用程序就是这一类型的成熟的应用程序。
 
-[观看演示 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://watson-assistant-demo.ng.bluemix.net/){: new_window}。
+[观看演示 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://watson-assistant-demo.ng.bluemix.net/){: new_window} 或 [派生代码 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/watson-developer-cloud/assistant-demo){: new_window}。
 
 ## {{site.data.keyword.conversationshort}} 和 {{site.data.keyword.discoveryshort}}
 {: #sample-apps-with-discovery}

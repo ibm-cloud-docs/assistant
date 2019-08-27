@@ -6,6 +6,7 @@ lastupdated: "2019-01-31"
 
 subcollection: assistant
 
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -25,7 +26,7 @@ subcollection: assistant
 # 删除集成
 {: #deploy-integration-delete}
 
-要阻止助手可通过特定通道供用户使用，请删除与该通道的集成。
+要阻止用户可通过特定通道访问助手，请删除与该通道的集成。
 
 1.  在“助手”选项卡中，单击以打开要编辑的助手的磁贴。
 

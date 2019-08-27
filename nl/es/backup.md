@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-05-20"
 
 subcollection: assistant
+
 
 ---
 
@@ -35,7 +36,7 @@ Puede exportar los siguientes datos desde una instancia de servicio de {{site.da
 
 No puede exportar los siguientes datos:
 
-<!--- Search skill -->
+- Conocimiento de búsqueda
 - Asistente, incluidas las integraciones configuradas
 
 ## Conservación de registros
@@ -74,7 +75,9 @@ Si el servicio {{site.data.keyword.conversationshort}} cambia entre el momento e
 
 1.  Pulse el separador **Conocimientos**.
 
-1.  Pulse **Crear nuevo**.
+1.  Pulse **Crear conocimiento**.
+
+1.  Si se le da la opción de más de un tipo de conocimiento, elija crear un conocimiento de diálogo.
 
 1.  Pulse **Importar conocimiento** y luego pulse **Elegir archivo JSON** y seleccione el archivo JSON que desea importar.
 
@@ -96,7 +99,7 @@ Si el servicio {{site.data.keyword.conversationshort}} cambia entre el momento e
     - **Descripción**: una descripción no puede contener más de 200 caracteres.
     - **Idioma**: el idioma de la entrada de usuario para el que se ha entrenado el conocimiento. El valor predeterminado es el inglés.
 
-Después de crear el conocimiento, aparece como un mosaico en la página Conocimientos.
+Después de crear el conocimiento de diálogo, aparece como un mosaico en la página Conocimientos.
 
 ## Cómo volver a crear su asistente
 {: #backup-recreate-assistant}

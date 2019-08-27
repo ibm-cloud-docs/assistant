@@ -6,6 +6,7 @@ lastupdated: "2019-02-11"
 
 subcollection: assistant
 
+
 ---
 
 {:shortdesc: .shortdesc}
@@ -43,7 +44,7 @@ Un dialogo valido soddisfa sempre i seguenti criteri:
 
   - `event_handler`: un gestore definito per un nodo frame o un singolo nodo slot.
 
-    Dallo strumento, puoi definire un gestore nodo frame facendo clic sul link **Gestisci gestori** da un nodo con slot. (L'interfaccia utente dello strumento non mostra il gestore eventi a livello dello slot, ma puoi definirne uno tramite l'API.) 
+    Dallo strumento, puoi definire un gestore nodo frame facendo clic sul link **Gestisci gestori** da un nodo con slot. (L'interfaccia utente dello strumento non mostra il gestore eventi a livello dello slot, ma puoi definirne uno tramite l'API.)
 
   - `frame`: un nodo con uno o più nodi figlio di tipo `slot`. I nodi slot figlio necessari devono essere riempiti prima che il servizio possa uscire dal nodo frame.
 
@@ -72,7 +73,7 @@ Un dialogo valido soddisfa sempre i seguenti criteri:
   - `input`: aggiorna il contesto del messaggio per includere una variabile di contesto con il valore raccolto dall'utente per riempire lo slot. Per ciascuno slot presente nel nodo frame deve essere presente un gestore con questo nome.
   - `nomatch`: definisce quali operazioni eseguire se la risposta dell'utente alla richiesta dello slot non contiene un valore valido. Un gestore con questo nome è presente solo se per lo slot viene definita una condizione Non trovato.
 
-  Il seguente diagramma mostra dove, nell'interfaccia utente dello strumento, definisci il codice attivato per ciascun evento denominato. 
+  Il seguente diagramma mostra dove, nell'interfaccia utente dello strumento, definisci il codice attivato per ciascun evento denominato.
 
   ![Posizione IU in cui viene creato il codice attivato dai gestori eventi denominati](images/api-event-handlers.png)
 

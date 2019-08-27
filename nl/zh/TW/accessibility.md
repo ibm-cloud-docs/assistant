@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-06-11"
 
 subcollection: assistant
+
 
 ---
 
@@ -28,7 +29,7 @@ subcollection: assistant
 IBM 致力提供存取方便的產品給每一個人，不論年齡或能力。
 {: shortdesc}
 
-{{site.data.keyword.conversationfull}} 工具使用標準 Windows 導覽鍵。
+{{site.data.keyword.conversationfull}} 使用標準 Windows 導覽鍵。
 
 ## 產品說明文件中的協助工具特性
 {: #accessibility-in-doc}

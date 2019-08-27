@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-11"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
+
 
 ---
 
@@ -28,7 +29,7 @@ subcollection: assistant
 No puede utilizar el nodo de bienvenida incorporado para iniciar un diálogo del mismo modo para todas las integraciones. Utilice en su lugar este método alternativo.
 {: shortdesc}
 
-La respuesta que defina para el nodo de bienvenida en el diálogo se visualiza para iniciar una conversación desde el panel "Pruébelo" de la herramienta y desde el widget de chat en la integración de enlace de vista previa. Sin embargo, no se visualiza en muchas de las otras integraciones de canal porque los nodos con la condición especial `welcome` se omiten en los flujos de diálogo que inician los usuarios. Y los asistentes desplegados suelen esperar a que los usuarios inicien conversaciones con ellos, no a la inversa.
+La respuesta que defina para el nodo de bienvenida en el diálogo se visualiza para iniciar una conversación desde el panel "Pruébelo" y desde el widget de conversación en la integración de enlace de vista previa. Sin embargo, no se visualiza en muchas de las otras integraciones de canal porque los nodos con la condición especial `welcome` se omiten en los flujos de diálogo que inician los usuarios. Y los asistentes desplegados suelen esperar a que los usuarios inicien conversaciones con ellos, no a la inversa.
 
 A diferencia de la condición especial `welcome`, la condición especial `conversation_start` siempre se activa al principio de un diálogo. Puede utilizar una combinación de nodos con estas dos condiciones especiales (`welcome` y `conversation_start`) para gestionar el inicio de su diálogo de forma coherente.
 

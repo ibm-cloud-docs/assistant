@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-08-06"
+
+keywords: entity, entity value, contextual entity, dictionary entity, pattern entity, entity synonym, annotate mentions
 
 subcollection: assistant
 
@@ -38,46 +40,46 @@ Finalmente, é possível incluir múltiplas respostas em sua árvore de diálogo
 ## Visão Geral da Avaliação da Entidade
 {: #entities-described}
 
-O serviço detecta entidades na entrada do usuário usando um dos métodos de avaliação a seguir:
+Seu assistente detecta entidades na entrada do usuário usando um dos métodos de avaliação a seguir:
 
 ### Método baseado em dicionário
 {: #entities-dictionary-overview}
 
-O serviço procura termos na entrada do usuário que correspondem aos valores, sinônimos ou padrões definidos para a entidade.
+Seu assistente procura termos na entrada do usuário que correspondam aos valores, sinônimos ou padrões definidos para a entidade.
 
-- **Entidade de sinônimo**: você define uma categoria de termos como uma entidade (`color`) e, em seguida, um ou mais valores nessa categoria (`blue`). Para cada valor, você especifica vários sinônimos (`aqua`, `navy`). Também é possível selecionar sinônimos para incluir por meio de recomendações feitas a você pelo serviço.
+- **Entidade de sinônimo**: você define uma categoria de termos como uma entidade (`color`) e, em seguida, um ou mais valores nessa categoria (`blue`). Para cada valor, você especifica vários sinônimos (`aqua`, `navy`). Também é possível selecionar sinônimos a serem incluídos com base em recomendações feitas a você pelo Watson.
 
-    No tempo de execução, o serviço reconhece os termos na entrada do usuário que correspondem exatamente aos valores ou sinônimos que você definiu para a entidade como menções dessa entidade.
+    No tempo de execução, seu assistente reconhece os termos na entrada do usuário que correspondem exatamente aos valores ou sinônimos definidos para a entidade como menções a ela.
 - **Entidade padrão**: você define uma categoria de termos como uma entidade (`contact_info`) e, em seguida, um ou mais valores nessa categoria (`email`). Para cada valor, você especifica uma expressão regular que define o padrão textual de menções desse tipo de valor. Para um valor de entidade `email`, você pode desejar especificar uma expressão regular que defina um padrão `text@text.com`.
 
-    No tempo de execução, o serviço procura padrões que correspondem à sua expressão regular na entrada do usuário e identifica quaisquer correspondências como menções dessa entidade.
+    No tempo de execução, seu assistente procura padrões que correspondem à sua expressão regular na entrada do usuário e identifica quaisquer correspondências como menções à entidade.
 - **Entidade do sistema**: entidades de sinônimo que são pré-construídas para você pela IBM. Elas cobrem categorias comumente usadas, como números, datas e horários. Você simplesmente ativa uma entidade do sistema para começar a usá-la.
 
-### Método baseado em contexto
+### Método baseado em anotação
 {: #entities-annotations-overview}
 
-Quando você define uma entidade contextual, um modelo é treinado no *termo anotado* e no *contexto* no qual o termo é usado na sentença anotada. Esse novo modelo de entidade contextual permite que o serviço calcule uma pontuação de confiança que identifica a probabilidade de uma palavra ou frase ser uma instância de uma entidade, com base em como ela é usada na entrada do usuário.
+Ao definir uma entidade baseada em anotação, que também é chamada de entidade contextual, um modelo é treinado com relação ao *termo anotado* e ao *contexto* no qual o termo é usado na sentença anotada. Esse novo modelo de entidade contextual permite que seu assistente calcule uma pontuação de confiança que identifica a probabilidade de uma palavra ou frase ser uma instância de uma entidade, com base em como ela é utilizada na entrada do usuário.
 
 - **Entidade contextual**: primeiro, você define uma categoria de termos como uma entidade (`product`). Em seguida, você acessa a página *Intenções* e extrai seus exemplos do usuário de intenção existentes para localizar quaisquer menções da entidade e rotulá-las como tais. Por exemplo, você pode acessar a intenção `#buy_something` e localizar um exemplo do usuário que diz `I want to buy a Coach bag`. É possível rotular `Coach bag` como uma menção da entidade `@product`.
 
     Para propósitos de treinamento, o termo que você anotou, `Coach bag`, é incluído como um valor da entidade `@product`.
 
-    No tempo de execução, o serviço avalia termos com base no contexto no qual eles são usados somente na sentença. Se a estrutura de uma solicitação do usuário que menciona o termo corresponde à estrutura de um exemplo do usuário de intenção no qual uma menção é rotulada, o serviço interpreta o termo como uma menção desse tipo de entidade. Por exemplo, a entrada do usuário pode incluir a elocução `I want to buy a Gucci bag`. Devido à similaridade da estrutura dessa sentença para o exemplo do usuário que você anotou (`I want to buy a Coach bag`), o serviço reconhece `Gucci bag` como uma menção de entidade `@product`.
+    No tempo de execução, seu assistente avalia os termos apenas com base no contexto no qual eles são usados na sentença. Se a estrutura de uma solicitação do usuário que menciona o termo corresponder à estrutura de um exemplo de usuário de intenção no qual uma menção está rotulada, seu assistente interpretará o termo como uma menção a esse tipo de entidade. Por exemplo, a entrada do usuário pode incluir a elocução `I want to buy a Gucci bag`. Devido à similaridade da estrutura dessa sentença com o exemplo de usuário anotado (`I want to buy a Coach bag`), seu assistente reconhece `Gucci bag` como uma menção à entidade `@product`.
 
-    Quando um modelo de entidade contextual é usado para uma entidade, o serviço *não* procura correspondências exatas de texto ou padrão para a entidade na entrada do usuário, mas foca no contexto da sentença na qual a entidade é mencionada.
+    Quando um modelo de entidade contextual é usado para uma entidade, seu assistente *não* procura por correspondências de texto ou padrão exatas para ela na entrada do usuário, em vez disso, ele foca no contexto da sentença na qual ela é mencionada.
 
     Se você escolher definir valores de entidade usando anotações, inclua pelo menos 10 anotações por entidade para fornecer ao modelo de entidade contextual dados suficientes para que seja confiável.
+
+Para saber mais sobre entidades contextuais, [leia esta postagem do blog ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://medium.com/ibm-watson/contextual-entities-with-ibm-watson-assistant-f41b2e0ca82e).
 
 ## Criando entidades
 {: #entities-creating-task}
 
-Use a ferramenta {{site.data.keyword.conversationshort}} para criar entidades.
+1.  Abra sua qualificação de diálogo e, em seguida, clique na guia **Entidades**. Se **Entidades** não estiver visível, use o menu ![Menu](images/Menu_16.png) para abrir a página.
 
-1.  Na ferramenta {{site.data.keyword.conversationshort}}, abra sua qualificação de diálogo e, em seguida, clique na guia **Entidades**. Se **Entidades** não estiver visível, use o menu ![Menu](images/Menu_16.png) para abrir a página.
+1.  Clique em  ** Criar entidade **.
 
-1.  Clique em **Incluir entidade**.
-
-    Também é possível clicar em **Usar Entidades do Sistema** para selecionar desde uma lista de entidades comuns, fornecidas pelo {{site.data.keyword.IBM_notm}}, que podem ser aplicadas a qualquer caso de uso. Consulte [Ativando entidades do sistema](#entities-enable-system-entities) para obter detalhes adicionais.
+    Também é possível clicar em **Entidades do sistema** para realizar uma seleção em uma lista fornecida pelo {{site.data.keyword.IBM_notm}} de entidades comuns que podem ser aplicadas a qualquer caso de uso. Consulte [Ativando entidades do sistema](#entities-enable-system-entities) para obter detalhes adicionais.
 
 1.  No campo **Nome da entidade**, digite um nome descritivo para a entidade.
 
@@ -88,30 +90,30 @@ Use a ferramenta {{site.data.keyword.conversationshort}} para criar entidades.
 
     Não inclua espaços no nome. O nome não pode ter mais que 64 caracteres. Não inicie o nome com a sequência `sys-` porque ela está reservada para entidades do sistema.
 
-    A ferramenta inclui automaticamente o caractere @ no nome da entidade, portanto você não precisa incluir um.
+    O sinal de arroba `@` precede o nome da entidade automaticamente para identificar o termo como uma entidade. Não é necessário incluí-lo.
     {: tip}
 
 1.  Clique em  ** Criar entidade **.
 
     ![Captura de tela de criação de uma entidade](images/create_entity.png)
 
-1.  Para essa entidade, escolha se você deseja que o serviço use uma abordagem baseada em dicionário ou baseada em contexto para localizar menções dele e, em seguida, siga o procedimento apropriado.
+1.  Para essa entidade, escolha se deseja que seu assistente use uma abordagem baseada em dicionário ou em anotação para localizar menções a ela e, em seguida, siga o procedimento apropriado.
 
     **Para cada entidade que você criar, escolha somente um tipo de entidade para usar.** Assim que você inclui uma anotação para uma entidade, o modelo contextual é inicializado e se torna a abordagem primária para analisar a entrada do usuário para localizar menções dessa entidade. O contexto no qual a menção é usada na entrada do usuário tem precedência sobre quaisquer correspondências exatas que possam estar presentes. Consulte [Visão geral de avaliação de entidade](#entities-described) para obter mais informações sobre como cada tipo é avaliado.
 
     - [ Entidades Baseadas em Dicionário ](#entities-create-dictionary-based)
-    - [Entidades baseadas em contexto](#entities-create-annotation-based)
+    - [Entidades baseadas em anotação](#entities-create-annotation-based)
 
 ## Incluindo entidades baseadas em dicionário
 {: #entities-create-dictionary-based}
 
-As entidades baseadas em dicionário são aquelas para as quais você define termos, sinônimos ou padrões específicos. No tempo de execução, o serviço localiza menções de entidade somente quando um termo na entrada do usuário corresponde exatamente (ou corresponde aproximadamente se a correspondência difusa está ativada) ao valor ou um de seus sinônimos.
+As entidades baseadas em dicionário são aquelas para as quais você define termos, sinônimos ou padrões específicos. No tempo de execução, seu assistente somente localiza menções de entidades quando um termo na entrada do usuário corresponde exatamente (ou muito aproximadamente no caso de a correspondência difusa estar ativada) ao valor ou a um de seus sinônimos.
 
 1.  No campo **Nome do valor**, digite o texto de um valor possível para a entidade e pressione a tecla `Enter`. Um valor de entidade pode ser qualquer sequência de até 64 caracteres de comprimento.
 
     **Importante:** Não inclua informações sensíveis ou pessoais em nomes de entidades ou valores. Os nomes e valores podem ser expostos em URLs em um aplicativo.
 
-1.  Se você desejar que o serviço reconheça termos com sintaxe semelhante ao valor de entidade e sinônimos especificados, mas sem requerer uma correspondência exata, clique na alternância **Correspondência difusa** para ativá-la.
+1.  Para que seu assistente reconheça termos com sintaxe semelhante ao valor da entidade e aos sinônimos especificados, mas sem a necessidade de uma correspondência exata, clique na tecla de alternância **Correspondência difusa** para ativá-la.
 
     Esse recurso está disponível para os idiomas observados no tópico [Idiomas suportados](/docs/services/assistant?topic=assistant-language-support).
 
@@ -146,7 +148,7 @@ As entidades baseadas em dicionário são aquelas para as quais você define ter
 
     - Clique em **Mostrar recomendações**.
 
-    - O serviço {{site.data.keyword.conversationshort}} fará várias recomendações para sinônimos. Os termos são exibidos em minúsculas, mas o serviço reconhece menções dos sinônimos independentemente de elas serem especificadas em minúsculas ou maiúsculas.
+    - O serviço {{site.data.keyword.conversationshort}} fará várias recomendações para sinônimos. Os termos são exibidos em minúsculas, mas seu assistente reconhece menções dos sinônimos especificadas em minúsculas ou maiúsculas.
 
       Quanto mais coerentes forem os sinônimos de valor de entidade, mais relevantes e melhor focadas suas recomendações serão. Por exemplo, se houver várias palavras que estão focadas em um tema, você obterá melhores sugestões do que se tiver uma ou duas palavras aleatórias.
       {: tip}
@@ -164,7 +166,7 @@ As entidades baseadas em dicionário são aquelas para as quais você define ter
       Se você não receber nenhuma recomendação de sinônimo adicional, isso poderá ser porque sua entidade já está bem definida ou tem conteúdo que o recomendador não está atualmente apto a expandir.
       {: tip}
 
-      Caso escolha não selecionar um sinônimo recomendado, o sistema tratará isso como um termo em que você não está interessado e alterará o próximo conjunto de recomendações que você vir quando pressionar `Add selected` ou `Next set`. Essa inferência persiste somente enquanto você está escolhendo sinônimos; informações sobre sinônimos ignorados não são usadas para nenhum outro propósito pelo serviço.
+      Caso escolha não selecionar um sinônimo recomendado, o sistema tratará isso como um termo em que você não está interessado e alterará o próximo conjunto de recomendações que você vir quando pressionar `Add selected` ou `Next set`. Essa inferência permanece somente durante a escolha de sinônimos, pois informações sobre sinônimos ignorados não são usadas para nenhum outro propósito por seu assistente.
       {: note}
 
       ![Synonym recommendation screen 4](images/synonym_4.png)
@@ -187,7 +189,7 @@ As entidades baseadas em dicionário são aquelas para as quais você define ter
         - `localPhone`: `(\d{3})-(\d{4})`, por exemplo, 426-4968
         - `fullUSphone`: `(\d{3})-(\d{3})-(\d{4})`, por exemplo, 800-426-4968
         - `internationalPhone`: `^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$`, por exemplo, +44 1962 815000
-      - `email`: `\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b`, por exemplo, nome@ibm.com
+      - `email`: `\b[A-Za-z0-9._%+-]+@([A-Za-z0-9-]+\.)+[A-Za-z]{2,}\b`, por exemplo, nome@ibm.com
       - `website`: `(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$`, por exemplo, https://www.ibm.com
 
       Geralmente ao usar as entidades padrão, será necessário armazenar o texto que corresponde ao padrão em uma variável de contexto (ou variável de ação) desde sua árvore de diálogos. Para obter informações adicionais, consulte [Definindo uma variável de contexto](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-context-var-define).
@@ -241,7 +243,7 @@ As entidades baseadas em dicionário são aquelas para as quais você define ter
         - Ramificações condicionais (por exemplo `(?(cond)true)`)
       - Quando uma entidade padrão inicia ou termina com um caractere Unicode e inclui limites de palavras, por exemplo `\bš\b`, a correspondência de padrões não corresponde ao limite de palavra corretamente. Neste exemplo, para a entrada `š zkouška`, a correspondência retorna `Group 0: 6-7 š` (`š zkou`_**`š`**_`ka`), em vez do `Group 0: 0-1 š` correto (_**`š`**_ `zkouška`).
 
-      O mecanismo de expressão regular baseia-se vagamente no mecanismo de expressão regular Java. O serviço {{site.data.keyword.conversationshort}} produzirá um erro se você tentar fazer upload de um padrão não suportado, por meio da API ou de dentro da Tooling UI do serviço {{site.data.keyword.conversationshort}}.
+      O mecanismo de expressão regular baseia-se vagamente no mecanismo de expressão regular Java. O serviço {{site.data.keyword.conversationshort}} produzirá um erro se você tentar fazer upload de um padrão não suportado por meio da API ou na interface com o usuário do {{site.data.keyword.conversationshort}}.
 
 1.  Clique em **Incluir valor** e repita o processo para incluir mais valores de entidade.
 
@@ -252,14 +254,14 @@ A entidade criada é incluída na guia **Entidades** e o sistema começa a trein
 ## Incluindo entidades contextuais
 {: #entities-create-annotation-based}
 
-As entidades baseadas em contexto são aquelas para as quais você anota as ocorrências da entidade em sentenças de amostra para ensinar o serviço sobre o contexto no qual a entidade é geralmente usada.
+Entidades baseadas em anotação são aquelas para as quais você anota ocorrências em sentenças de amostra para ensinar seu assistente sobre o contexto no qual elas são normalmente usadas.
 
 Para treinar um modelo de entidade contextual, é possível obter vantagem de seus exemplos de intenção, que fornecem sentenças prontamente disponíveis para anotar.
 
 O uso de exemplos do usuário de uma intenção para definir entidades contextuais não afeta a classificação dessa intenção. No entanto, as menções de entidade que você rotula também são incluídas nessa entidade como sinônimos. E a classificação de intenção usa as menções de sinônimo em exemplos do usuário de intenção para estabelecer uma referência fraca entre uma intenção e uma entidade.
 {: note}
 
-1.  Na ferramenta {{site.data.keyword.conversationshort}}, abra sua qualificação e, em seguida, clique na guia **Intenções**. Se **Intenções** não estiver visível, use o menu ![Menu](images/Menu_16.png) para abrir a página.
+1.  Em sua qualificação de diálogo, clique na guia **Intenções**.
 
 1.  Clique em uma intenção para abri-la.
 
@@ -308,7 +310,7 @@ O uso de exemplos do usuário de uma intenção para definir entidades contextua
     Certifique-se de anotar cada menção de um tipo de entidade que ocorrer em qualquer exemplo do usuário que você editar. Consulte [O que você não anota importa](#entities-counter-examples) para obter mais detalhes.
     {: important}
 
-1.  Agora, clique na anotação que você acabou de criar. Uma caixa é aberta que diz `Go to: <entity-name>`. Clicar nesse link leva você diretamente para a entidade.
+1.  Agora, clique na anotação que você acabou de criar. Uma caixa com a mensagem `Go to: <entity-name>` é aberta. Clicar nesse link leva você diretamente para a entidade.
 
     ![Verify value computer for product entity](images/oe-verify-value.png)
 
@@ -358,7 +360,7 @@ Entidades do Sistema podem ser usadas para reconhecer uma ampla variedade de val
 
 As entidades do sistema são mantidas centralmente, portanto, quaisquer atualizações ficarão disponíveis automaticamente. Não é possível modificar entidades do sistema.
 
-1.  Na guia Entidades, clique em **Entidades do sistema**.
+1.  Na página Entidades, clique em **Entidades do sistema**.
 
     ![Captura de tela da guia "Entidades do sistema" ](images/system_entities_1.png)
 
@@ -377,10 +379,10 @@ O número de entidades, valores de entidade e sinônimos que você pode criar de
 
 | Plano de Serviço      | Entidades por habilidade | Valores de Entidade por Habilidade | Sinônimos de entidade por qualificação |
 |-------------------|-------------------:|------------------------:|--------------------------:|
-| Premium           |               1000 |                 100.000 |                   100.000 |
-| Mais              |               1000 |                 100.000 |                   100.000 |
-| Padrão          |               1000 |                 100.000 |                   100.000 |
-| Lite              |                 25 |                 100.000 |                   100.000 |
+| Premium | 1.000 | 100.000 | 100.000 |
+| Mais | 1.000 | 100.000 |                   100.000 |
+| Padrão | 1.000 | 100.000 | 100.000 |
+| Lite, Plus Trial | 25 | 100.000 | 100.000 |
 {: caption="Detalhes do plano de serviço" caption-side="top"}
 
 Entidades do sistema que você ativa para uso contam para o total de uso do seu plano.
@@ -390,7 +392,7 @@ Entidades do sistema que você ativa para uso contam para o total de uso do seu 
 | Premium      |        30 entidades contextuais com 3.000 anotações |
 | Mais         |        20 entidades contextuais com anotações de 2000 |
 | Padrão     |        20 entidades contextuais com anotações de 2000 |
-| Lite         |        10 entidades contextuais com 1000 anotações |
+| Lite, Plus Trial |    10 entidades contextuais com 1000 anotações |
 {: caption="Detalhes do plano de serviço continuado" caption-side="top"}
 
 ## Editando entidades
@@ -436,7 +438,7 @@ As entidades que contêm seu termo de procura, com exemplos correspondentes, sã
 ## Importando entidades
 {: #entities-import}
 
-Se ver um grande número de entidades, você poderá achar mais fácil importá-los de um arquivo CSV (Comma-Separated Value) do que defini-los um por um na ferramenta {{site.data.keyword.conversationshort}}.
+Se tiver um grande número de entidades, importá-las de um arquivo de valor separado por vírgula (CSV) poderá ser mais fácil do que as definir uma a uma.
 
 As anotações de entidade não são incluídas na importação de um arquivo CSV de entidade. Deve-se importar a qualificação de diálogo inteira para reter as anotações associadas para uma entidade contextual nessa qualificação. Se você exportar e importar somente entidades, quaisquer entidades contextuais exportadas serão tratadas como entidades baseadas em dicionário depois de importá-las.
 {: note}
@@ -477,7 +479,7 @@ As anotações de entidade não são incluídas na importação de um arquivo CS
     ```
     {: screen}
 
-    Salve o arquivo CSV com codificação UTF-8 e nenhuma marca de ordem de byte (BOM). O tamanho máximo do arquivo CSV é 10MB. Se seu arquivo CSV for maior, considere dividir isso em vários arquivos e importá-los separadamente.  Na ferramenta {{site.data.keyword.conversationshort}}, abra sua qualificação de diálogo e, em seguida, clique na guia **Entidades**.
+    Salve o arquivo CSV com codificação UTF-8 e nenhuma marca de ordem de byte (BOM). O tamanho máximo do arquivo CSV é 10MB. Se seu arquivo CSV for maior, considere dividir isso em vários arquivos e importá-los separadamente.  Abra sua qualificação de diálogo e, em seguida, clique na guia **Entidades**.
     {: tip}
 
 1.  Clique em ![Importar](images/importGA.png) e, em seguida, arraste um arquivo ou navegue para selecionar um arquivo de seu computador. O arquivo é validado e importado e o sistema começa a treinar com os novos dados.

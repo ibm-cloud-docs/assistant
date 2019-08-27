@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
 
@@ -60,25 +60,25 @@ subcollection: assistant
 ## 步驟 2：暫時從對話中脫離
 {: #tutorial-digressions-temporarily-digress-away}
 
-離題容許使用者從對話分支中離開以暫時變更主題，然後再回到原始的對話流程中。在此步驟中，您會開始進行餐廳預約，然後會脫離去詢問餐廳營業時間。在提供營業時間資訊之後，該服務會返回到餐廳預約對話流程。
+離題容許使用者從對話分支中離開以暫時變更主題，然後再回到原始的對話流程中。在此步驟中，您會開始進行餐廳預約，然後會脫離去詢問餐廳營業時間。在提供營業時間資訊之後，助理會返回到餐廳預約對話流程。
 
 1.  按一下**對話**，從含有目的之頁面切換至對話樹狀結構的視圖。
 
 1.  按一下 ![試用](images/ask_watson.png) 圖示，來開啟「試用」窗格。
 1.  在文字欄位中鍵入 `Book me a restaurant`。
 
-    該服務會提示您輸入預約日期來作為回應：`When do you want to go?`。
+    助理會提示您輸入預約日期來作為回應：`When do you want to go?`。
 
 1.  按一下該回應旁邊的**位置** ![位置](images/location.png) 圖示，以強調顯示對話樹狀結構中觸發該回應的節點，亦即**餐廳預約**節點。
 
     ![顯示強調顯示的餐廳預約節點，以及「試用」窗格中的進行中對話。](images/tut-dig-location.png)
 1.  鍵入 `Tomorrow`。
 
-    該服務會提示您輸入預約時間來作為回應：`What time do you want to go?`。
+    助理會提示您輸入預約時間來作為回應：`What time do you want to go?`。
 
 1.  您不知道餐廳何時關門，因此您詢問：`What time do you close?`。
 
-    機器人會從餐廳預約節點脫離，去處理**餐廳營業時間**節點。它回應：`The restaurant is open from 8:00 AM to 10:00 PM`。然後，該服務會回到餐廳預約節點，並再次提示您預約時間。
+    機器人會從餐廳預約節點脫離，去處理**餐廳營業時間**節點。它回應：`The restaurant is open from 8:00 AM to 10:00 PM`。然後，助理會回到餐廳預約節點，並再次提示您預約時間。
 
     ![顯示發生在「試用」窗格中的離題。](images/tut-dig-digression.png)
 1.  **選用**：若要完成對話流程，請針對預約時間鍵入 `8pm`，針對來賓數目鍵入 `2`。
@@ -104,22 +104,22 @@ subcollection: assistant
 
 1.  鍵入 `Book me a restaurant`。
 
-    該服務會提示您輸入預約日期來作為回應：`When do you want to go?`。
+    助理會提示您輸入預約日期來作為回應：`When do you want to go?`。
 
 1.  鍵入 `Tomorrow`。
 
-    該服務會提示您輸入預約時間來作為回應：`What time do you want to go?`。
+    助理會提示您輸入預約時間來作為回應：`What time do you want to go?`。
 
 1.  詢問：`What time do you close?`。
 
-    該服務辨識該問題觸發 #restaurant_opening_hours 目的，但會忽略它，並再次改為顯示與 @sys-time 空位相關聯的提示。
+    助理可辨識該問題觸發 #restaurant_opening_hours 目的，但會忽略它，並再次改為顯示與 @sys-time 空位相關聯的提示。
 
 您順利阻止使用者從餐廳預約處理程序中脫離。
 
 ## 步驟 4：離題到節點且不返回
 {: #tutorial-digressions-digress-without-return}
 
-您可以將對話節點配置成不回到服務當初脫離的節點，以便處理現行節點。為了證明這一點，您將變更餐廳營業時間節點的離題設定。在步驟 2 中，您看到該服務從餐廳預約節點脫離並跳到餐廳營業時間節點之後，又回到餐廳預約節點繼續執行預約處理程序。在此練習中，您變更了設定之後，會從**工作機會**對話中脫離而去詢問餐廳營業時間，而且您會看到該服務並未返回它當初離開的地方。
+您可以將對話節點配置成不回到助理當初脫離的節點，以處理現行節點。為了證明這一點，您將變更餐廳營業時間節點的離題設定。在步驟 2 中，您看到助理從餐廳預約節點脫離並跳到餐廳營業時間節點之後，又回到餐廳預約節點繼續執行預約處理程序。在此練習中，您變更設定之後，會從**工作機會**對話中脫離而去詢問餐廳營業時間，而且您會看到助理並未返回它當初離開的地方。
 
 1.  按一下以開啟**餐廳營業時間**節點。
 
@@ -131,13 +131,13 @@ subcollection: assistant
 
 1.  若要使用**工作機會**對話節點，請鍵入 `I'm looking for a job`。
 
-    該服務的回應是：`We are always looking for talented people to add to our team. What type of job are you interested in?`。
+    助理的回應是：`We are always looking for talented people to add to our team. What type of job are you interested in?`。
 
 1.  不要回答此問題，而是詢問機器人不相關的問題。鍵入 `What time do you open?`。
 
-    該服務會從工作機會節點脫離並跳到餐廳營業時間節點來回答您的問題。該服務回應：`The restaurant is open from 8:00 AM to 10:00 PM.`。
+    助理會離開「就業機會」節點而轉到「餐廳營業時間」節點來回答您的問題。助理會回應：`The restaurant is open from 8:00 AM to 10:00 PM.`。
 
-    與前一個測試不同，這次對話不會回到它當初在**工作機會**節點離開的地方。該服務不會回到進行中的對話，因為您將**餐廳營業時間**節點上的設定變更為不返回。
+    與前一個測試不同，這次對話不會回到它當初在**工作機會**節點離開的地方。助理不會回到進行中的對話，因為您將**餐廳營業時間**節點上的設定變更為不返回。
 
     ![顯示離題之後不返回的交談](images/tut-dig-noreturn.png)
 

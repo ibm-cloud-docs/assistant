@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-01"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
+
 
 ---
 
@@ -37,7 +38,7 @@ Não há atualmente nenhum mecanismo para identificar usuários que interagem co
 
 1.  Na seção Integrações, clique em **Incluir integração**.
 
-1.  Clique no botão **Selecionar integração** para *Facebook Messenger*.
+1.  Clique em **Facebook Messenger**.
 
 1.  Siga as instruções fornecidas na tela para concluir o processo de integração.
 
@@ -75,7 +76,7 @@ Para iniciar um bate-papo com o assistente, conclua as etapas a seguir:
 1.  Digite o nome da página que você criou anteriormente.
 1.  Depois que a página aparecer, clique nela e, em seguida, inicie o bate-papo com o assistente.
 
-O nó Bem-vindo de seu diálogo não é processado pela integração do Facebook Messenger. A mensagem de boas-vindas não é exibida no bate-papo do Facebook, como está na área de janela "Experimente" dentro da ferramenta ou na página da web de integração do Link de visualização. Ele não é acionado daqui porque os nós com a condição especial `welcome` são ignorados em fluxos de diálogo iniciados por usuários. O Facebook Messenger espera que o usuário inicie a conversa. Se for necessário configurar valores padrão para variáveis de contexto no início de sua conversa, não os configure no nó de boas-vindas. Consulte [Iniciando o diálogo](/docs/services/assistant?topic=assistant-dialog-start) para obter mais informações.
+O nó Bem-vindo de seu diálogo não é processado pela integração do Facebook Messenger. A mensagem de boas-vindas não é exibida no bate-papo do Facebook, somente na área de janela "Experimentar" ou na página da web de integração Link de visualização. Ele não é acionado daqui porque os nós com a condição especial `welcome` são ignorados em fluxos de diálogo iniciados por usuários. O Facebook Messenger espera que o usuário inicie a conversa. Se for necessário configurar valores padrão para variáveis de contexto no início de sua conversa, não os configure no nó de boas-vindas. Consulte [Iniciando o diálogo](/docs/services/assistant?topic=assistant-dialog-start) para obter mais informações.
 {: note}
 
 O fluxo de diálogo da sessão atual é reiniciado após 60 minutos de inatividade (5 minutos para os planos Lite e Standard). Isso significa que, se um usuário parar de interagir com o assistente, após 60 (ou 5) minutos, todos os valores da variável de contexto configurados durante a conversa anterior serão configurados como nulos ou de volta para seus valores padrão.

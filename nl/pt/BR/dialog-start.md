@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-11"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
+
 
 ---
 
@@ -28,7 +29,7 @@ subcollection: assistant
 Não é possível usar o nó de boas-vindas integrado para iniciar um diálogo da mesma maneira para todas as integrações. Use essa solução alternativa no lugar.
 {: shortdesc}
 
-A resposta que você define para o nó de boas-vindas no diálogo é exibida para iniciar uma conversa na área de janela "Experimente" dentro da ferramenta e por meio do widget de bate-papo na integração do Link de visualização. No entanto, ela não é exibida em muitas das outras integrações de canal porque os nós com a condição especial `welcome` são ignorados em fluxos de diálogo que são iniciados pelos usuários. E os assistentes implementados geralmente esperam que os usuários iniciem conversas com eles, não o contrário.
+A resposta definida para o nó de boas-vindas no diálogo é exibida para iniciar uma conversa na área de janela "Experimentar" e no widget de bate-papo na integração Link de visualização. No entanto, ela não é exibida em muitas das outras integrações de canal porque os nós com a condição especial `welcome` são ignorados em fluxos de diálogo que são iniciados pelos usuários. E os assistentes implementados geralmente esperam que os usuários iniciem conversas com eles, não o contrário.
 
 Diferentemente da condição especial `welcome`, a condição especial `conversation_start` é sempre acionada no início de um diálogo. É possível usar uma combinação de nós com estas duas condições especiais (`welcome` e `conversation_start`) para gerenciar o início de seu diálogo de uma maneira consistente.
 

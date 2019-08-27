@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-07"
+lastupdated: "2019-06-06"
 
 subcollection: assistant
 
@@ -31,7 +31,7 @@ Apprezziamo la tua opinione e vorremmo sentirla.
 ## Condividi le tue idee
 {: #feedback-ideas-portal}
 
-Per condividere le idee o suggerire nuove funzioni per il servizio {{site.data.keyword.conversationfull}}, vai a [IBM Watson Ideas Portal ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://ibm-watson.ideas.aha.io/?project=ASSISTANT){: new_window}.
+Per condividere le idee o suggerire nuove funzioni per il servizio {{site.data.keyword.conversationfull}}, vai a [IBM Data and AI Ideas Portal ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://ibm-data-and-ai.ideas.aha.io/?project=ASSISTANT){: new_window}.
 
 ## La documentazione ti è stata di aiuto?
 {: #feedback-doc}
@@ -40,6 +40,8 @@ Per fornire il feedback sulla documentazione, fai clic sul pulsante **FEEDBACK**
 
   **Nota**: il pulsante **FEEDBACK** non è disponibile quando accedi al sito della documentazione da dispositivi mobili.
 
+Valuta e commenta l'utilità dell'argomento facendo clic su **Sì** o **No** alla fine dell'argomento.
+
 ## Partecipa al programma beta
 {: #feedback-beta}
 
@@ -47,14 +49,14 @@ Vuoi rimanere informato sulle nuove funzioni che verranno aggiunte al prodotto? 
 
 Per richiedere la partecipazione al programma beta, devi innanzitutto creare una nuova istanza del servizio {{site.data.keyword.conversationshort}} che dedicherai solo a scopo di valutazione beta. *Non aggiungere un'istanza esistente che stai utilizzando per eseguire qualsiasi lavoro reale al programma beta.*
 
-1.  Crea una risorsa del servizio {{site.data.keyword.conversationshort}} dalla pagina [{{site.data.keyword.conversationshort}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://{DomainName}/catalog/services/watson-assistant) nel catalogo {{site.data.keyword.cloud_notm}}.
+1.  Crea una risorsa del servizio {{site.data.keyword.conversationshort}} dalla pagina [{{site.data.keyword.conversationshort}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://{DomainName}/catalog/services/watson-assistant) nel catalogo {{site.data.keyword.cloud}}.
 
-    L'istanza di servizio può far parte di un piano gratuito (Lite) o Standard e deve essere distribuita nell'ubicazione **Dallas**. 
+    L'istanza di servizio può far parte di un piano gratuito (Lite) o Standard e deve essere distribuita nell'ubicazione **Dallas**. L'istanza del servizio deve essere gestita da un gruppo di risorse, non da Cloud Foundry.
 
-    A meno che non lo modifichi, l'istanza di servizio verrà creata nel gruppo di risorse **predefinito**, sufficiente per gli scopi del programma beta. 
+    A meno che non lo modifichi, l'istanza di servizio verrà creata nel gruppo di risorse **predefinito**, sufficiente per gli scopi del programma beta.
 
-1.  Una volta creata l'istanza, fai clic su **Launch tool** per aprire lo strumento {{site.data.keyword.conversationshort}}.
+1.  Una volta creata l'istanza, fai clic su **Launch {{site.data.keyword.conversationshort}}** per aprire {{site.data.keyword.conversationshort}}.
 1.  Fai clic sulla scheda **Skills**.
 1.  Dalla parte inferiore della pagina, fai clic su **Request Beta** e poi conferma che accetti i termini e le condizioni per partecipare al programma beta.
 
-Se la tua partecipazione al programma beta viene approvata, è l'istanza di servizio da cui richiederai che l'accesso beta venga aggiornato per includere le funzioni beta. 
+Se la tua partecipazione al programma beta viene approvata, è l'istanza di servizio da cui richiederai che l'accesso beta venga aggiornato per includere le funzioni beta.

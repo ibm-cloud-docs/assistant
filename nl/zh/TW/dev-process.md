@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-07-19"
 
 subcollection: assistant
 
@@ -25,7 +25,7 @@ subcollection: assistant
 # 開發處理程序
 {: #dev-process}
 
-建置、部署及漸進式改善交談助理時，請使用 {{site.data.keyword.conversationshort}} 工具來運用 AI。
+建置、部署及漸進式改善交談助理時，請使用 {{site.data.keyword.conversationshort}} 來運用 AI。
 {: shortdesc}
 
 ![顯示開發步驟流程，從開發訓練資料開始，結束於部署至正式作業](images/dev-process.png)
@@ -35,10 +35,10 @@ subcollection: assistant
 
 助理專案的一般工作流程包括下列步驟：
 
-1.  定義一組嚴密的重要客戶需求，您想要助理代表您處理這些需求，包括它可以為客戶起始或完成的所有商業程序。
-1.  建立一些目的，代表您在前一個步驟中所識別的客戶需求。例如，`About_company` 或 `#Place_order` 這類目的。
+1.  定義一組嚴密的重要客戶需求，您想要助理代表您處理這些需求，包括它可以為客戶起始或完成的所有商業程序。一開始定義的內容不要太多。
+1.  建立一些目的，代表您在前一個步驟中所識別的客戶需求。例如，`#about_company` 或 `#place_order` 這類目的。
 
-    使用目的範例建議特性來發掘現有客服中心日誌，以尋找最佳目的使用者範例。
+    ![僅限加值或超值方案](images/plus.png) 使用目的建議特性來發掘現有客服中心日誌，以尋找您使用案例的最佳目的。如需詳細資料，請參閱[定義目的時取得協助](/docs/services/assistant?topic=assistant-intent-recommendations)。
     {: tip}
 
 1.  建置一個對話，利用簡單回應或首先收集相關資訊的對話流程，來偵測已定義的目的並進行處理。

@@ -1,14 +1,14 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="assistant" audience="service" href="/docs/services/assistant?topic=assistant-getting-started" path="services/assistant"}
+{: .toc subcollection="assistant" arm="969310" category="ai" audience="service" href="/docs/services/assistant?topic=assistant-getting-started" path="services/assistant"}
 Watson Assistant
 
     {: .navgroup id="learn"}
     getting-started.md
     index.md
-    skills.md
     assistants.md
+    skills.md
     tool-overview.md
     [Demo: Banking Assistant](https://watson-conversation-duo-dev.ng.bluemix.net/)
     resources.md
@@ -16,7 +16,10 @@ Watson Assistant
 
     {: .navgroup id="howto"}
     dev-process.md
+    assistant-add.md
     skill-add.md
+    skill-search-add.md
+    skill-dialog-add.md
     catalog.md
 
     {: .topicgroup}
@@ -27,17 +30,17 @@ Watson Assistant
     {: .topicgroup}
     Creazione di un dialogo
         dialog-overview.md
-        dialog-runtime.md
         dialog-build.md
+        dialog-runtime.md
         dialog-tips.md
         dialog-slots.md
-        dialog-actions.md
+        dialog-webhooks.md
+        dialog-actions-client.md
         dialog-responses-json.md
         dialog-depiction.md
 
     entities.md
     versions.md
-    assistant-add.md
     skill-open.md
 
     {: .topicgroup}
@@ -51,14 +54,16 @@ Watson Assistant
         dialog-start.md
         deploy-integration-delete.md
 
+    assistant-settings.md
+
     {: .topicgroup}
-    Miglioramento della comprensione
-        logs-intro.md
+    Analisi
         logs-overview.md
         logs.md
         logs-resources.md
 
-    migrate.md
+    /watson/watson-migrate
+    recovery.md
     backup.md
     upgrade.md
     edit-convo-workspace.md
@@ -77,31 +82,27 @@ Watson Assistant
         api-overview.md
         api-methods.md
         api-client.md
+        api-migration.md
+        api-context.md
         api-dialog-responses.md
         api-dialog-modify.md
-
-    {: .topicgroup}
-    Funzioni beta
-        beta.md
-        beta-skill-dialog-add.md
-        skill-search-add.md
-        beta-intent-recommendations.md
-        beta-spell-check.md	
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    [Riferimento API v2](https://cloud.ibm.com/apidocs/assistant-v2)
+    [Riferimento API v2 ](https://cloud.ibm.com/apidocs/assistant-v2)
     [Riferimento API v1](https://cloud.ibm.com/apidocs/assistant)
     dialog-methods.md
     expression-language.md
     filter-reference.md
+    services-information.md
+    information-security.md
     sample-apps.md
     language-support.md
-    information-security.md
 
     {: .topicgroup}
     Entità di sistema
         system-entities.md
+        system-entities-new.md
         time-zones.md
 
     /watson/watson-using-sdks
@@ -110,14 +111,14 @@ Watson Assistant
 
     {: .navgroup id="help"}
     release-notes.md
-    feedback.md
-    services-information.md
 
     {: .topicgroup}
     Community degli sviluppatori
         [StackOverflow](https://stackoverflow.com/questions/tagged/watson-conversation+or+watson-assistant)
-        [IBM Developer Answers](https://developer.ibm.com/answers/search.html?f=&sort=relevance&q=%5Bwatson-conversation%5D+%5Bwatson-assistant%5D+%24)
+        [IBM Developer Answers](https://developer.ibm.com/answers/topics/watson-assistant/)
         [WDC Slack channel](http://wdc-slack-inviter.mybluemix.net/)
 
+    feedback.md
+    troubleshoot.md
     accessibility.md
     {: .navgroup-end}

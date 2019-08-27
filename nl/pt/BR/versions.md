@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-08-05"
 
 subcollection: assistant
 
@@ -37,10 +37,12 @@ Esse vídeo de 2 1/2 minutos descreve como o uso de versões pode ajudá-lo.
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Criando versões de qualificação" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/FDolnBxvcZ8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
+Para saber mais sobre como as versões podem melhorar o fluxo de trabalho usado para construir um assistente, [leia esta postagem do blog ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://medium.com/ibm-watson/watson-assistant-versions-announcement-d60869b1f5f){: new_window}.
+
 ## Criando uma versão
 {: #versions-create}
 
-É possível usar a ferramenta {{site.data.keyword.conversationshort}} para editar somente uma versão de qualificação de diálogo de cada vez. A versão em andamento é chamada de versão de *desenvolvimento*.
+É possível editar apenas uma versão da qualificação de diálogo por vez. A versão em andamento é chamada de versão de *desenvolvimento*.
 
 Quando você salva uma versão, quaisquer configurações de qualificação aplicadas à versão de desenvolvimento também são salvas.
 
@@ -52,12 +54,12 @@ Para criar uma versão de qualificação de diálogo, siga estas etapas:
 
 1.  Clique em **Salvar**.
 
-Uma captura instantânea é obtida da qualificação atual e salva como uma nova versão. Você permanece na versão de desenvolvimento da qualificação. Quaisquer mudanças feitas continuam a ser aplicadas à versão de desenvolvimento, não à versão que você salvou. Para acessar a versão salva, acesse a página **Histórico de versão**.
+Uma captura instantânea é obtida da qualificação atual e salva como uma nova versão. Você permanece na versão de desenvolvimento da qualificação. Quaisquer mudanças feitas continuam a ser aplicadas à versão de desenvolvimento, não à versão que você salvou. Para acessar a versão salva, acesse a página **Versões**.
 
 ## Implementando uma Versão de Habilidade
 {: #versions-deploy}
 
-1.  No cabeçalho da qualificação, clique na guia **Histórico de versão**.
+1.  No cabeçalho da qualificação, clique na guia **Versões**.
 1.  Clique no ícone ![Clique para visualizar ações](images/kebab-react.png) da versão que você deseja implementar e, em seguida, escolha **Designar ao assistente**.
 
     Uma lista de assistentes para os quais é possível vincular essa versão é exibida. A lista é limitada a esses assistentes que não têm nenhuma qualificação associada a eles ou que estão associados a uma versão diferente dessa qualificação.
@@ -67,7 +69,7 @@ Mantenha o controle de quando essa versão é implementada em um assistente e po
 {: important}
 
 ## Limites de Versão de Skill
-{: #skill-version-limits}
+{: #versions-limits}
 
 O número de versões que podem ser criadas para uma única qualificação depende de seu plano do {{site.data.keyword.conversationshort}}.
 
@@ -76,6 +78,7 @@ O número de versões que podem ser criadas para uma única qualificação depen
 | Premium          |                 50 |
 | Mais             |                 10 |
 | Padrão         |                 10 |
+| Plus Trial       |                 10 |
 | Lite             |                  0 |
 {: caption="Detalhes do plano de serviço" caption-side="top"}
 
@@ -98,7 +101,7 @@ Não é possível editar uma versão salva. Para alcançar o mesmo objetivo, é 
     Salve uma versão da qualificação agora. Caso contrário, seu trabalho será perdido quando você seguir estas etapas.
     {: important}
 
-1.  Na versão que você deseja editar, clique no ícone **Ações de qualificação** ![Ações de qualificação](images/kebab-react.png) e, em seguida, escolha **Copiar para desenvolvimento** e confirme a ação.
+1.  Na versão que deseja editar, clique no ícone **Ações de qualificação** ![Ações de qualificação](images/kebab-react.png), em seguida, escolha **Reverter para esta versão** e confirme a ação.
 
     A página é atualizada para reverter para o estado em que a qualificação estava quando a versão foi criada.
 

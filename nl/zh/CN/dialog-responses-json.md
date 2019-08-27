@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-11"
 
 subcollection: assistant
 
@@ -158,15 +158,15 @@ subcollection: assistant
 
 |名称|类型|描述|必需？|
 |---------------|--------|-------------------------------------|-----------|
-|response_type |枚举值 |`option`|是|
-|title         |字符串 |要在选项前面显示的标题。|是|
-|description   |字符串 |选项附带的描述的文本。|否|
-|preference    |枚举值 |要显示的首选类型的控件（如果通道支持）（`dropdown` 或 `button`）。{{site.data.keyword.conversationshort}} 连接器当前仅支持 `button`。|否|
+|response_type |枚举值|`option`|是|
+|title         |字符串|要在选项前面显示的标题。|是|
+|description   |字符串|选项附带的描述的文本。|否|
+|preference    |枚举值|要显示的首选类型的控件（如果通道支持）（`dropdown` 或 `button`）。{{site.data.keyword.conversationshort}} 连接器当前仅支持 `button`。|否|
 |options       |列表   |指定用户可以从中进行选择的选项的键/值对列表。|是|
-|options[].label |字符串 |面向用户的选项标签。|是|
+|options[].label |字符串|面向用户的选项标签。|是|
 |options[].value |对象|定义用户选择选项时将发送到 {{site.data.keyword.conversationshort}} 服务的响应的对象。|是|
 |options[].value.input |对象|输入对象，包含与选项对应的输入文本。|否|
-|options[].value.input.text |字符串 |针对选项将发送到服务的文本。|否|
+|options[].value.input.text |字符串|针对选项将发送到助手的文本。|否|
 
 #### 示例
 {: #dialog-responses-json-option-example}
@@ -257,11 +257,11 @@ subcollection: assistant
 
 |名称|类型|描述|必需？|
 |---------------|--------|--------------------|-----------|
-|response_type |枚举值 |`text`|是|
+|response_type |枚举值|`text`|是|
 |values        |列表   |定义文本响应的一个或多个对象的列表。|是|
-|values.[_n_].text   |字符串 |响应的文本。这可以包含换行符 (`\n`) 和 Markdown 标记（如果通道支持）。（通道不支持的任何格式设置都会被忽略。）|否|
-|selection_policy |字符串 |指定了多个响应时，如何从列表中选择响应。可能的值为 `sequential`、`random` 和 `multiline`。|否|
-|delimiter     |字符串 |输出作为响应之间分隔符的定界符。 仅当 `selection_policy`=`multiline` 时使用。缺省定界符为换行符 (`\n`)。|否|
+|values.[_n_].text   |字符串|响应的文本。这可以包含换行符 (`\n`) 和 Markdown 标记（如果通道支持）。（通道不支持的任何格式设置都会被忽略。）|否|
+|selection_policy |字符串|指定了多个响应时，如何从列表中选择响应。可能的值为 `sequential`、`random` 和 `multiline`。|否|
+|delimiter     |字符串|输出作为响应之间分隔符的定界符。 仅当 `selection_policy`=`multiline` 时使用。缺省定界符为换行符 (`\n`)。|否|
 
 #### 示例
 {: #dialog-responses-json-text-example}

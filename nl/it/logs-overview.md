@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
+
 
 ---
 
@@ -35,7 +36,7 @@ Utilizza le metriche per rispondere a domande come:
 * Quali intenti sono apparsi più spesso la scorsa settimana?
 * Quali valori di entità sono stati riconosciuti più volte durante il mese di febbraio?
 
-Per visualizzare le informazioni sulle metriche, seleziona **Panoramica** nella barra di navigazione. 
+Per visualizzare le informazioni sulle metriche, seleziona **Panoramica** nella barra di navigazione.
 
   ![Pagina Panoramica](images/oview.png)
 
@@ -50,9 +51,9 @@ Puoi utilizzare i seguenti controlli per filtrare le informazioni:
 
 - *Aggiorna dati* - Ti consente di aggiornare immediatamente le statistiche della pagina Panoramica. La pagina Panoramica mostra quando sono stati aggiornati l'ultima volta i dati visualizzati. Puoi selezionare **Aggiorna dati** se pensi che potrebbero essere disponibili dati più recenti.
 
-  Le statistiche rappresentano il traffico esterno (da utenti o chiamate API) che ha interagito con il tuo assistente; non includono le interazioni dal riquadro *Provalo* nello strumento.
+  Le statistiche rappresentano il traffico esterno (da utenti o chiamate API) che ha interagito con il tuo assistente; non includono le interazioni dal riquadro *Try it out* nello strumento.
 
-- *Controllo del periodo di tempo* - Utilizza questo controllo per scegliere il periodo per il quale vengono visualizzati i dati.  Questo controllo riguarda tutti i dati visualizzati nella pagina: non solo il numero di conversazioni visualizzate nel grafico, ma anche le statistiche visualizzate insieme al grafico e gli elenchi di intenti ed entità principali.
+- *Controllo del periodo di tempo* - Utilizza questo controllo per scegliere il periodo per il quale vengono visualizzati i dati. Questo controllo riguarda tutti i dati visualizzati nella pagina: non solo il numero di conversazioni visualizzate nel grafico, ma anche le statistiche visualizzate insieme al grafico e gli elenchi di intenti ed entità principali.
 
   Le statistiche possono coprire un periodo di tempo più lungo rispetto a quello in cui vengono conservati i log delle conversazioni.
   {: note}
@@ -61,7 +62,7 @@ Puoi utilizzare i seguenti controlli per filtrare le informazioni:
 
   Puoi scegliere se visualizzare i dati per un singolo giorno, una settimana, un mese o un trimestre. In ogni caso, i punti dati sul grafico si adattano ad un periodo di misurazione appropriato. Ad esempio, quando si visualizza un grafico per un giorno, i dati vengono presentati in valori orari, ma quando si visualizza un grafico per una settimana, i dati vengono visualizzati per giorno. Una settimana va sempre da domenica a sabato. Non puoi creare periodi di tempo personalizzati, ad esempio una settimana che va dal giovedì al mercoledì successivo o un mese che inizia in un giorno diverso dal primo.
 
-  Se ad esempio scegli una vista di un singolo giorno, l'ora mostrata per ogni conversazione viene localizzata per rispecchiare il fuso orario del tuo browser. Può scostarsi dalla data/ora mostrata se controlli lo stesso log di conversazione tramite una chiamata API; le chiamate di log API vengono sempre mostrate in UTC.
+  Se ad esempio scegli una vista di un singolo giorno, l'ora mostrata per ogni conversazione viene localizzata per rispecchiare il fuso orario del tuo browser. Questo può scostarsi dalla data/ora mostrata se controlli lo stesso log di conversazione tramite una chiamata API; le chiamate di log API vengono sempre mostrate in UTC.
 
     ![Controllo del periodo di tempo](images/oview-time2.png)
 
@@ -74,7 +75,7 @@ Diverse scorecard statistiche forniscono i dati di log per la tua applicazione:
 
   Una singola conversazione è una serie di messaggi composta dai messaggi che un utente attivo invia alla tua applicazione e i messaggi con cui risponde la tua applicazione.
 
-  **Importante**: per 'conversazione' si intende una *qualsiasi* serie di messaggi inviati o ricevuti da un'applicazione/bot, per cui se il servizio inizia dicendo "Hi, how can I help you?" e l'utente chiude il proprio browser senza rispondere, tale messaggio viene incluso nel numero totale di conversazioni.
+  **Importante**: per 'conversazione' si intende una *qualsiasi* serie di messaggi inviati o ricevuti da un'applicazione/bot, per cui se il tuo assistente inizia dicendo "Hi, how can I help you?"e l'utente chiude il proprio browser senza rispondere, tale messaggio viene incluso nel numero totale di conversazioni.
 
 * *Media di messaggi per conversazione* - Il totale dei messaggi ricevuti durante il periodo di tempo selezionato diviso il totale di conversazioni durante il periodo di tempo selezionato, come mostrato nel grafico corrispondente.
 * *Numero massimo di conversazioni* - Il numero massimo di conversazioni per un singolo punto dati nel periodo di tempo selezionato.
@@ -105,4 +106,4 @@ Puoi anche visualizzare gli intenti e le entità che sono stati riconosciuti pi�
 
 * Anche le *Entità principali* vengono mostrate in un elenco. Per ogni entità puoi effettuare una selezione dalla colonna **Valori** per visualizzare un elenco dei valori più comuni identificati per questa entità durante il periodo di tempo. Puoi anche selezionare un'entità per aprire la pagina **Conversazioni utente** con l'intervallo di date filtrato per corrispondere ai dati che stai visualizzando e l'entità filtrata per corrispondere all'entità selezionata.
 
-Vedi [Impara dalle conversazioni](/docs/services/assistant?topic=assistant-logs) per suggerimenti su come modificare gli intenti e le entità in base a cosa hai individuato controllando gli intenti e le entità riconosciuti dal sistema.
+Vedi [Migliora la tua capacità](/docs/services/assistant?topic=assistant-logs) per suggerimenti su come modificare gli intenti e le entità in base a cosa hai individuato controllando gli intenti e le entità riconosciuti dal tuo assistente.

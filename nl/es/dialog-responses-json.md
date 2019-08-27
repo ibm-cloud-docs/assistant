@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-11"
 
 subcollection: assistant
 
@@ -167,7 +167,7 @@ Muestra un conjunto de botones o una lista desplegable que los usuarios pueden u
 | options[].label | serie | Etiqueta para mostrar al usuario de la opción. | S     |
 | options[].value | object | Un objeto que define la respuesta que se enviará al servicio {{site.data.keyword.conversationshort}} si el usuario selecciona la opción. | S |
 | options[].value.input | object | Un objeto de entrada que incluye el texto de entrada correspondiente a la opción. | N |
-| options[].value.input.text | serie | El texto que se enviará al servicio para la opción. | N |
+| options[].value.input.text | serie | El texto que se enviará a su asistente para la opción. | N |
 
 #### Ejemplo
 {: #dialog-responses-json-option-example}

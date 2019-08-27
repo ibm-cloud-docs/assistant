@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-08-06"
+
+keywords: system entity, sys-number, sys-date, sys-time
 
 subcollection: assistant
 
@@ -25,10 +27,15 @@ subcollection: assistant
 # Détails des entités de système
 {: #system-entities}
 
-Cette rubrique fournit des informations complètes sur les entités de système disponibles. Pour plus d'informations sur les entités de système et leur utilisation, reportez-vous à la section "Activation des entités de système" dans la rubrique [Définition d'entités](/docs/services/assistant?topic=assistant-entities#entities-enable-system-entities).
+Découvrez les entités de système fournies par IBM que vous pouvez utiliser immédiatement. Ces entités utilitaires intégrées aident votre assistant à reconnaître les termes et les références couramment utilisés par les clients dans les conversations, tels que les chiffres et les dates.
 {: shortdesc}
 
 Des entités de système sont disponibles pour les langues mentionnées dans la rubrique [Langues prises en charge](/docs/services/assistant?topic=assistant-language-support).
+
+Si votre compétence de dialogue est en anglais ou en allemand, vous pouvez essayer les entités système mises à jour. Pour plus d'informations, reportez-vous à la rubrique [Nouvelles entités de système](/docs/services/assistant?topic=assistant-beta-system-entities).
+  
+
+Pour plus d'informations sur leur utilisation, reportez-vous à la rubrique [Création d'entités](/docs/services/assistant?topic=assistant-entities#entities-enable-system-entities).
 
 ## Entité @sys-currency
 {: #system-entities-sys-currency}
@@ -81,7 +88,10 @@ Les résultats obtenus pour les autres langues et devises nationales prises en c
 
 - Les valeurs de devise sont également reconnues en tant qu'instances d'entités @sys-number. Si vous utilisez des conditions distinctes pour rechercher des valeurs de devise et des nombres, placez celle qui permet de rechercher des devises au-dessus de celle qui permet de rechercher des nombres.
 
-- Si vous utilisez l'entité @sys-currency comme condition de noeud et que l'utilisateur spécifie `$0` comme valeur, la valeur est correctement reconnue en tant que devise, mais la condition renvoie le nombre zéro et non la devise zéro. Par conséquent, elle ne renvoie pas la réponse attendue. Pour que les zéros soient correctement interprétés lors de la recherche des valeurs de devise, utilisez à la place la syntaxe d'expression SpEL complète `entities['sys-currency']?.value` dans la condition de noeud.
+  Cette solution de contournement n'est pas nécessaire si vous utilisez les entités de système révisées. Pour plus d'informations, reportez-vous à la rubrique [Nouvelles entités de système](/docs/services/assistant?topic=assistant-beta-system-entities).
+  {: note}
+
+- Si vous utilisez l'entité @sys-currency comme condition de noeud et que l'utilisateur spécifie `$0` comme valeur, la valeur est correctement reconnue en tant que devise, mais la condition renvoie le nombre zéro et non la devise zéro. Par conséquent, la valeur `null` dans la condition est évaluée à false et le noeud n'est pas traité. Pour vérifier les valeurs de devise d'une manière qui gère correctement les zéros, utilisez à la place l'expression `@sys-currency >=0` dans la condition de noeud.
 
 ## Entités @sys-date et @sys-time
 {: #system-entities-sys-date-time}
@@ -167,7 +177,7 @@ Pour l'entrée `at 6 pm` @sys-time renvoie les valeurs suivantes :
 
 - @sys-time renvoie toujours l'heure au format suivant : HH:mm:ss.
 
-Pour plus d'informations sur le traitement des valeurs de date et d'heure, reportez-vous à la section de référence sur la méthode [Date et heure](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-date-time).
+Pour plus d'informations sur le traitement des valeurs de date et d'heure, reportez-vous à la référence sur la méthode [Date et heure](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-date-time).
 {: tip}
 
 ## Entité @sys-location
@@ -182,7 +192,7 @@ Pour plus d'informations sur le traitement des valeurs de date et d'heure, repor
 - U.S.A.
 - New South Wales
 
-Pour plus d'informations sur le traitement des valeurs de type Chaîne, reportez-vous à la section de référence sur la méthode [Chaînes](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings).
+Pour plus d'informations sur le traitement des valeurs de type Chaîne, reportez-vous à la référence sur la méthode [Chaînes](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings).
 {: tip}
 
 ## Entité @sys-number
@@ -228,15 +238,15 @@ Les résultats obtenus pour les autres langues prises en charge sont équivalent
 ### Conseils relatifs à l'utilisation de @system-number
 {: #system-entities-sys-number-usage-tips}
 
-- Si vous utilisez l'entité @sys-number comme condition de noeud et que l'utilisateur spécifie zero comme valeur, la valeur 0 est correctement reconnue en tant que nombre, mais la condition renvoie la valeur false et ne peut pas renvoyer correctement la réponse associée. Pour que les zéros soient correctement interprétés lors de la recherche des nombres, utilisez à la place la syntaxe d'expression SpEL complète `entities['sys-number']?.value` dans la condition de noeud.
+- Si vous utilisez l'entité @sys-number en tant que condition de noeud et que l'utilisateur spécifie zéro comme valeur, la valeur 0 est reconnue comme un nombre. Toutefois, la valeur 0 est interprétée en tant que valeur `null` pour la condition, ce qui entraîne le non-traitement du noeud. Pour vérifier les nombres d'une manière qui gère correctement les zéros, utilisez à la place l'expression `@sys-number > = 0` dans la condition de noeud.
 
 - Si vous utilisez @sys-number pour comparer des valeurs numériques dans une condition, prenez soin d'inclure séparément une recherche de la présence d'un nombre proprement dit. Si aucun nombre n'est trouvé, @sys-number renvoie la valeur null, et par conséquent, votre comparaison pourrait renvoyer la valeur true, même si aucune nombre n'est présent.
 
-  Par exemple, n'utilisez pas `@sys-number<4` tout seul car si aucun nombre n'est trouvé, `@sys-number` renvoie la valeur null. La valeur null étant inférieure à 4, la condition renvoie la valeur true même si aucun nombre n'est présent.
+  Par exemple, n'utilisez pas `@sys-number<4` uniquement car si aucun nombre n'est trouvé, `@sys-number` renvoie la valeur null. La valeur null étant inférieure à 4, la condition renvoie la valeur true même si aucun nombre n'est présent.
 
-  Utilisez `@sys-number AND @sys-number<4` à la place. Si aucun nombre n'est présent, la première condition renvoie la valeur false, et par conséquent, la condition entière renvoie la valeur false.
+  Utilisez à la place `@sys-number AND @sys-number<4`. Si aucun nombre n'est présent, la première condition renvoie la valeur false, et par conséquent, la condition entière renvoie la valeur false.
 
-Pour plus d'informations sur le traitement des valeurs numériques, reportez-vous à la section de référence sur la méthode [Nombres](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-numbers).
+Pour plus d'informations sur le traitement des valeurs numériques, reportez-vous à la [Référence de méthode des nombres](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-numbers).
 {: tip}
 
 ## Entité @sys-percentage
@@ -283,7 +293,10 @@ Les résultats obtenus pour les autres langues prises en charge sont équivalent
 
 - Les valeurs de pourcentage sont également reconnues en tant qu'instances d'entités @sys-number. Si vous utilisez des conditions distinctes pour rechercher des valeurs de pourcentage et des nombres, placez celle qui permet de rechercher un pourcentage au-dessus de celle qui permet de rechercher des nombres.
 
-- Si vous utilisez l'entité @sys-percentage comme condition de noeud et que l'utilisateur spécifie `0%` comme valeur, la valeur est correctement reconnue en tant que pourcentage, mais la condition renvoie le nombre zéro et non le pourcentage 0%. Pour que les zéros soient correctement interprétés lors de la recherche des pourcentages, utilisez à la place la syntaxe d'expression SpEL complète `entities['sys-percentage']?.value` dans la condition de noeud.
+  Cette solution de contournement n'est pas nécessaire si vous utilisez les entités de système révisées. Pour plus d'informations, reportez-vous à la rubrique [Nouvelles entités de système](/docs/services/assistant?topic=assistant-beta-system-entities).
+  {: note}
+
+- Si vous utilisez l'entité @sys-percentage comme condition de noeud et que l'utilisateur spécifie `0%` comme valeur, la valeur est correctement reconnue en tant que pourcentage, mais la condition renvoie le nombre zéro et non le pourcentage 0%. Par conséquent, la valeur `null` dans la condition est évaluée à false et le noeud n'est pas traité. Pour vérifier les pourcentages d'une manière qui gère correctement les pourcentages zéro, utilisez à la place l'expression `@sys-percentage > = 0` dans la condition de noeud.
 
 - Si vous entrez une valeur telle que `1-2%`, les valeurs `1%` et `2%` sont renvoyées sous la forme d'entités de système. L'index correspond à la plage complète entre 1% et 2%, et les deux entités ont le même index.
 
@@ -299,5 +312,5 @@ Les résultats obtenus pour les autres langues prises en charge sont équivalent
 - Jane Doe
 - Vijay
 
-Pour plus d'informations sur le traitement des valeurs de type Chaîne, reportez-vous à la section de référence sur la méthode [Chaînes](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings).
+Pour plus d'informations sur le traitement des valeurs de type Chaîne, reportez-vous à la référence sur la méthode [Chaînes](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings).
 {: tip}

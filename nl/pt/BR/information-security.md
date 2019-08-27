@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-07-31"
 
 subcollection: assistant
 
@@ -10,6 +10,7 @@ subcollection: assistant
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
@@ -45,14 +46,21 @@ A IBM está comprometida em fornecer aos nossos clientes e parceiros soluções 
 
 Saiba mais sobre a própria jornada de prontidão GDPR da IBM e nossas capacidades e ofertas de GDPR para suportar sua jornada de conformidade [aqui ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](../../icons/launch-glyph.svg "Ícone de link externo")](http://www.ibm.com/gdpr){: new_window}.
 
-## Rotulando e excluindo dados no  {{site.data.keyword.conversationshort}}
+## Health Insurance Portability and Accountability Act (HIPAA)
+{: #information-security-hipaa}
+
+O suporte ao Health Insurance Portability and Accountability Act (HIPAA) dos EUA está disponível para os planos Premium que estão hospedados no local de Washington, DC criado em ou após 1º de abril de 2019. Para obter mais informações, consulte [Ativando as configurações suportadas da UE e do HIPAA](/docs/account?topic=account-eu-hipaa-supported#eu-hipaa-supported){: external}.
+
+Não inclua informações pessoais de saúde (PHI) nos dados de treinamento (entidades e intenções, incluindo exemplos de usuário) criados. Em particular, certifique-se de remover quaisquer PHI de arquivos que contenham elocuções reais de usuário transferidas por upload para a exploração de recomendações de intenção ou de exemplo de usuário de intenção.
+
+## Rotulando e excluindo dados do Watson Assistant
 {: #information-security-gdpr-wa}
 
 Não inclua dados pessoais nos dados de treinamento (entidades e intenções, incluindo exemplos do usuário) que você cria. Em particular, certifique-se de remover quaisquer informações pessoalmente identificáveis de arquivos que contenham elocuções reais do usuário das quais você faz upload para extrair recomendações de exemplo do usuário.
 
 **Nota:** os recursos experimentais e beta não são destinados ao uso com um ambiente de produção e, portanto, não é garantido que funcionem como esperado ao rotular e excluir dados. Os recursos experimentais e beta não devem ser usados ao implementar uma solução que requer a rotulagem e a exclusão de dados.
 
-Se for necessário remover os dados da mensagem de um cliente de uma instância do {{site.data.keyword.conversationshort}}, será possível fazer isso com base no ID de cliente do cliente, desde que você associe a mensagem a um ID de cliente quando a mensagem for enviada para o serviço.
+Se for necessário remover os dados de mensagem de um cliente de uma instância do {{site.data.keyword.conversationshort}}, isso poderá ser feito com base no ID do cliente, desde que você associe a mensagem a um ID de cliente quando ela for enviada ao {{site.data.keyword.conversationshort}}.
 
 **Nota:** os recursos de Link de visualização e de integração automática do Facebook não suportam a rotulagem e, portanto, a exclusão de dados com base no ID de cliente. Esses recursos não devem ser usados em uma solução que requeira a capacidade de excluir com base no ID de cliente.
 
@@ -95,7 +103,7 @@ Consulte a [Referência de consulta de filtro ](/docs/services/assistant?topic=a
 ### Excluindo dados
 {: #information-security-delete-data}
 
-Para excluir quaisquer dados do log de mensagens associados a um usuário específico que o serviço pode ter armazenado, use o método da API v1 `DELETE /user_data`. Especifique o ID de cliente do usuário passando um parâmetro `customer_id` com a solicitação.
+Para excluir quaisquer dados do log de mensagens que sejam associados a um usuário específico e possam ter sido armazenados por seu assistente, use o método da API `DELETE /user_data` v1. Especifique o ID de cliente do usuário passando um parâmetro `customer_id` com a solicitação.
 
 Somente os dados que foram incluídos usando o terminal da API `POST /message` com um ID de cliente associado podem ser excluídos usando esse método de exclusão. Os dados que foram incluídos por outros métodos não podem ser excluídos com base no ID de cliente. Por exemplo, as entidades e as intenções que foram incluídas de conversas do cliente não podem ser excluídas dessa maneira. Os Dados pessoais não são suportados para esses métodos.
 

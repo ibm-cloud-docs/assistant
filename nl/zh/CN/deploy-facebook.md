@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-01"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
+
 
 ---
 
@@ -37,7 +38,7 @@ Facebook Messenger 是一种移动消息传递应用程序，可帮助企业和�
 
 1.  在“集成”部分中，单击**添加集成**。
 
-1.  单击**选择集成**按钮以选择 *Facebook Messenger*。
+1.  单击 **Facebook Messenger**。
 
 1.  按照屏幕上提供的指示信息完成集成过程。
 
@@ -76,7 +77,7 @@ Facebook Messenger 是一种移动消息传递应用程序，可帮助企业和�
 1.  输入先前创建的页面的名称。
 1.  在该页面出现后，单击该页面，然后开始与助手进行交谈。
 
-对话的“欢迎”节点不会由 Facebook Messenger 集成进行处理。在 Facebook 交谈中，不会像在工具的“试用”窗格中或在“预览链接”集成 Web 页面中那样显示欢迎消息。由于在用户启动的对话流中跳过了具有 `welcome` 特殊条件的节点，因此不会在此处触发此节点。Facebook Messenger 会等待用户启动会话。如果您需要在会话开始时设置上下文变量的缺省值，不要将这些变量设置在“欢迎”节点中。有关更多信息，请参阅[启动对话](/docs/services/assistant?topic=assistant-dialog-start)。
+对话的“欢迎”节点不会由 Facebook Messenger 集成进行处理。在 Facebook 交谈中，不会像在“试用”窗格中或在“预览链接”集成 Web 页面中那样显示欢迎消息。由于在用户启动的对话流中跳过了具有 `welcome` 特殊条件的节点，因此不会在此处触发此节点。Facebook Messenger 会等待用户启动会话。如果您需要在会话开始时设置上下文变量的缺省值，不要将这些变量设置在“欢迎”节点中。有关更多信息，请参阅[启动对话](/docs/services/assistant?topic=assistant-dialog-start)。
 {: note}
 
 当前会话的对话流在处于不活动状态 60 分钟（轻量和标准套餐为 5 分钟）后会重新启动。这意味着，如果用户停止与助手进行交互，那么在 60 分钟（或 5 分钟）后，先前会话期间设置的所有上下文变量值都会设置为 null 或恢复为其缺省值。

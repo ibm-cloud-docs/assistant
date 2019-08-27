@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
 
@@ -45,17 +45,17 @@ En primer lugar, revise las definiciones de los términos que asociados con los 
 
 - ***Asistente***: aplicación, a la que a veces se denomina 'chat bot', que implementa el contenido de {{site.data.keyword.conversationshort}}.
 - ***Conversación***: conjunto de mensajes que consta de los mensajes que envía un usuario individual a su asistente de y los mensajes que devuelve el asistente.
-- ***ID de conversación***: identificador exclusivo que se añade a las llamadas de mensajes individuales para relacionar los intercambios de mensajes relacionados entre sí. Los desarrolladores de apps que utilizan la versión V1 de la API de servicio añaden este valor a las llamadas de mensaje en una conversación incluyendo el ID en los metadatos del objeto de contexto.
+- ***ID de conversación***: identificador exclusivo que se añade a las llamadas de mensajes individuales para relacionar los intercambios de mensajes relacionados entre sí. Los desarrolladores de apps que utilizan la versión V1 de la API {{site.data.keyword.conversationshort}} añaden este valor a las llamadas de mensaje en una conversación incluyendo el ID en los metadatos del objeto de contexto.
 - ***ID de cliente***: ID exclusivo que se puede utilizar para etiquetar datos de cliente de forma que se puedan suprimir posteriormente si el cliente solicita la eliminación de sus datos.
-- ***ID de despliegue***: etiqueta exclusiva que los desarrolladores de apps que utilizan la versión V1 de la API de servicio pasan con cada mensaje de usuario para ayudar a identificar el entorno de despliegue que ha producido el mensaje.
+- ***ID de despliegue***: etiqueta exclusiva que los desarrolladores de apps que utilizan la versión V1 de la API {{site.data.keyword.conversationshort}} pasan con cada mensaje de usuario para ayudar a identificar el entorno de despliegue que ha producido el mensaje.
 - ***Instancia***: su despliegue de {{site.data.keyword.conversationshort}}, accesible a través de credenciales exclusivas. Una instancia de {{site.data.keyword.conversationshort}} puede contener varios asistentes.
 - ***Mensaje***: expresión que un usuario envía al asistente.
 - ***ID de conocimiento***: identificador exclusivo de un conocimiento.
 - ***Usuario***: un usuario es cualquier persona que interactúe con su asistente; a menudo son sus clientes.
 - ***ID de usuario***: etiqueta exclusiva que se utiliza para realizar un seguimiento del nivel de uso del servicio de un usuario específico.
-- ***ID de espacio de trabajo***: identificador exclusivo de un espacio de trabajo. Aunque los espacios de trabajo creados antes del 9 de noviembre se muestran como conocimientos en la herramienta, un conocimiento y un espacio de trabajo no son lo mismo. Un conocimiento es en realidad un derivador de un espacio de trabajo de V1.
+- ***ID de espacio de trabajo***: identificador exclusivo de un espacio de trabajo. Aunque los espacios de trabajo creados antes del 9 de noviembre se muestran como conocimientos en la interfaz de usuario del producto, un conocimiento y un espacio de trabajo no son lo mismo. Un conocimiento es en realidad un derivador de un espacio de trabajo de V1.
 
-**Importante**: la propiedad **ID de usuario** *no* equivale a la propiedad **ID de cliente**, aunque ambos se pueden pasar al servicio. El campo **ID de usuario** se utiliza para realizar un seguimiento de los niveles de uso a efectos de facturación, mientras que el campo **ID de cliente** se utiliza para dar soporte al etiquetado y a la posterior supresión de mensajes asociados con usuarios finales. El ID de cliente se utiliza en todos los servicios Watson y se especifica en la cabecera `X-Watson-Metadata`. El ID de usuario se utiliza exclusivamente en el servicio {{site.data.keyword.conversationshort}} y se pasa en el objeto de contexto de cada llamada de la API /message.
+**Importante**: la propiedad **ID de usuario** *no* equivale a la propiedad **ID de cliente**, aunque ambos se pueden pasar con el mensaje. El campo **ID de usuario** se utiliza para realizar un seguimiento de los niveles de uso a efectos de facturación, mientras que el campo **ID de cliente** se utiliza para dar soporte al etiquetado y a la posterior supresión de mensajes asociados con usuarios finales. El ID de cliente se utiliza en todos los servicios Watson y se especifica en la cabecera `X-Watson-Metadata`. El ID de usuario se utiliza exclusivamente en el servicio {{site.data.keyword.conversationshort}} y se pasa en el objeto de contexto de cada llamada de la API /message.
 
 ## Habilitación de métricas de usuario
 {: #logs-resources-user-id}
@@ -106,6 +106,9 @@ IBM ha creado cuadernos de Jupyter que puede utilizar para analizar en detalle s
 
 Hay un conjunto de cuadernos que puede utilizar con herramientas de Python estándares y un conjunto que está diseñado para un uso óptimo con {{site.data.keyword.DSX_full}}. {{site.data.keyword.DSX_short}} es un producto que proporciona un entorno en el que puede elegir las herramientas que necesita para analizar y visualizar datos, para limpiar y configurar datos, para ingerir datos de modalidad continua o para crear, entrenar y desplegar modelos de aprendizaje de máquina. Consulte la [documentación del producto ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://dataplatform.cloud.ibm.com/docs/content/getting-started/welcome-main.html){:new_window} para obtener más detalles.
 
+Para obtener más información sobre cómo los cuadernos pueden ayudarle a mejorar su asistente,
+[lea esta publicación de blog ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://medium.com/ibm-watson/continuously-improve-your-watson-assistant-with-jupiter-notebooks-60231df4f01f).
+
 Están disponibles los siguientes cuadernos:
 
 - **Medida**: recopila métricas que se centran en la cobertura (la frecuencia con la que el asistente tiene suficiente confianza como para responder a los usuarios) y la efectividad (cuando el asistente responde, si las respuestas satisfacen los requisitos de los usuarios).
@@ -117,7 +120,7 @@ En el documento [Watson Assistant Continuous Improvement Best Practices Guide ![
 ### Utilización de cuadernos con {{site.data.keyword.DSX}}
 {: #logs-resources-notebooks-studio}
 
-Si opta por utilizar los cuadernos que se han diseñado para su uso con {{site.data.keyword.DSX}}, a un nivel alto, los pasos son:
+Si opta por utilizar los cuadernos que se han diseñado para su uso con {{site.data.keyword.DSX}}, los pasos serían, a grandes rasgos, éstos:
 
 1.  Cree una cuenta de {{site.data.keyword.DSX}}, [cree un proyecto ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://dataplatform.cloud.ibm.com/docs/content/getting-started/projects.html?context=analytics){:new_window} y añada
 una cuenta de Cloud Object Storage al mismo.
@@ -125,7 +128,7 @@ una cuenta de Cloud Object Storage al mismo.
 1   Siga las instrucciones paso a paso que se proporcionan con el cuaderno para analizar un subconjunto de intercambios de diálogos de los registros.
 
     Los detalles se visualizan de forma que resulte más fácil comprender la cobertura y la eficacia del asistente.
-1.  Exporte un conjunto de ejemplo de visualizaciones subyacentes de las conversaciones poco eficaces y analícelas y anótelas.
+1.  Exporte un conjunto de ejemplo de las conversaciones poco eficaces y analícelas y anótelas.
 
     Por ejemplo, indique si una respuesta es correcta. Si es correcta, marque si resulta útil. Si una respuesta es incorrecta, identifique la causa raíz, como por ejemplo que se haya detectado una intención o una entidad incorrecta o que se haya activado un nodo de diálogo erróneo. Después de identificar la causa raíz, indique cuál habría sido la elección correcta.
 1.  Incorpore la hoja de cálculo anotada al [cuaderno de análisis de efectividad de Watson Assistant](https://dataplatform.cloud.ibm.com/exchange/public/entry/view/133dfc4cd1480bbe4eaa78d3f636921c).

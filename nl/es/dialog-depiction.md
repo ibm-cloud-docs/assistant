@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
+
 
 ---
 
@@ -27,7 +28,7 @@ subcollection: assistant
 
 ![Un árbol de diálogo de muestra con contenido de ejemplo](images/dialog-depiction-full.png)
 
-Este diagrama muestra una maqueta de un árbol de diálogo creado la herramienta de edición de diálogos de la interfaz gráfica de usuario. Contiene dos nodos de diálogo raíz. Un árbol de diálogo típico probablemente tenga muchos más nodos, pero esta representación proporciona una visión general del aspecto que puede tener un subconjunto de nodos.
+Este diagrama muestra una maqueta de un árbol de diálogo creado con el editor de diálogos de la interfaz gráfica de usuario. Contiene dos nodos de diálogo raíz. Un árbol de diálogo típico probablemente tenga muchos más nodos, pero esta representación proporciona una visión general del aspecto que puede tener un subconjunto de nodos.
 
 - El primer nodo raíz está condicionado por un valor de intención. Tiene dos nodos hijo, cada uno de los cuales está condicionado por un valor de entidad.  El segundo nodo hijo define dos respuestas. La primera respuesta se devuelve al usuario si el valor de la variable de contexto coincide con el valor especificado en la condición. De lo contrario, se devuelve la segunda respuesta.
 

@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
+
 
 ---
 
@@ -33,9 +34,7 @@ Las intenciones que añade desde el catálogo están pensadas para proporcionar 
 ## Adición de un catálogo de contenido al conocimiento de diálogo
 {: #catalog-add}
 
-Utilice la herramienta {{site.data.keyword.conversationshort}} para añadir catálogos de contenido.
-
-1.  En la herramienta {{site.data.keyword.conversationshort}}, abra el conocimiento de diálogo y luego pulse el separador **Catálogo de contenido**.
+1.  Abra el conocimiento de diálogo y, a continuación, pulse el separador **Catálogo de contenido**.
 
 1.  Seleccione un catálogo de contenido, como por ejemplo *Banking*, para ver las intenciones que se proporcionan con el mismo.
 

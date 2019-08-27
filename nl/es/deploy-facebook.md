@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-01"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
+
 
 ---
 
@@ -37,7 +38,7 @@ Actualmente no hay ningún mecanismo para identificar a los usuarios que interac
 
 1.  En la sección Integraciones, pulse **Añadir integración**.
 
-1.  Pulse el botón **Seleccionar integración** correspondiente a *Facebook Messenger*.
+1.  Pulse **Facebook Messenger**.
 
 1.  Siga las instrucciones que se proporcionan en la pantalla para completar el proceso de integración.
 
@@ -75,7 +76,7 @@ Para iniciar una conversación con el asistente, siga los pasos siguientes:
 1.  Escriba el nombre de la página que ha creado anteriormente.
 1.  Cuando aparezca la página, pulse en la misma y empiece a chatear con el asistente.
 
-La integración de Facebook Messenger no procesa el nodo de bienvenida de su diálogo. El mensaje de bienvenida no se muestra en la conversación de Facebook, al contrario que en el panel "Pruébelo" dentro de la herramienta o en la página web de integración de enlace de vista previa. No se activa desde aquí porque los nodos con la condición especial `welcome` se omiten en los flujos de diálogo iniciados por usuarios. Facebook Messenger espera a que el usuario inicie la conversación. Si tiene que definir valores predeterminados para las variables de contexto al principio de la conversación, no las defina en el nodo de bienvenida. Consulte [Inicio del diálogo](/docs/services/assistant?topic=assistant-dialog-start) para obtener más información.
+La integración de Facebook Messenger no procesa el nodo de bienvenida de su diálogo. El mensaje de bienvenida no se muestra en la conversación de Facebook, al contrario que en el panel "Pruébelo" o en la página web de integración de enlace de vista previa. No se activa desde aquí porque los nodos con la condición especial `welcome` se omiten en los flujos de diálogo iniciados por usuarios. Facebook Messenger espera a que el usuario inicie la conversación. Si tiene que definir valores predeterminados para las variables de contexto al principio de la conversación, no las defina en el nodo de bienvenida. Consulte [Inicio del diálogo](/docs/services/assistant?topic=assistant-dialog-start) para obtener más información.
 {: note}
 
 El flujo de diálogo correspondiente a la sesión actual se reinicia después de 60 minutos de inactividad (5 minutos para los planes Lite y Estándar). Esto significa que si un usuario deja de interactuar con el asistente, después de 60 (o de 5) minutos, cualquier valor de variable de contexto que se haya definido durante la conversación anterior se establece en nulo o en sus valores predeterminados.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-11"
 
 subcollection: assistant
 
@@ -121,7 +121,7 @@ URL로 지정된 이미지를 표시합니다.
 #### 필드
 {: #{: #dialog-responses-json-image-fields}
 
-| 이름          | 유형   | 설명                               |필수?      |
+| 이름          | 유형   | 설명                        | 필수? |
 |---------------|--------|------------------------------------|-----------|
 | response_type | enum   | `image`                            | Y         |
 | source        | 문자열 | 이미지의 URL. 지정된 이미지는 .jpg, .gif 또는 .png 형식이어야 합니다. | Y |
@@ -156,17 +156,17 @@ URL로 지정된 이미지를 표시합니다.
 #### 필드
 {: #dialog-responses-json-option-fields}
 
-| 이름          | 유형   | 설명                                |필수?      |
+| 이름          | 유형   | 설명                         | 필수? |
 |---------------|--------|-------------------------------------|-----------|
 | response_type | enum   | `option`                            | Y         |
 | title         | 문자열 | 옵션 전에 표시하는 제목. |Y       |
 | description   | 문자열 | 옵션과 함께 제공되는 설명 텍스트. | N |
-| preference    | enum   | 채널에서 지원되는 경우 표시할 기본 제어 유형(`dropdown` 또는 `button`). {{site.data.keyword.conversationshort}}커넥터는 현재 `button`만 지원합니다. | N |
+| preference    | enum   | 채널에서 지원되는 경우 표시할 기본 제어 유형(`dropdown` 또는 `button`). {{site.data.keyword.conversationshort}}커넥터는 현재 `button`만 지원합니다.| N |
 | options       | list   | 사용자가 선택할 수 있는 옵션을 지정하는 키/값 쌍의 목록. | Y |
 | options[].label | 문자열 | 옵션의 사용자 대상 레이블. | Y     |
 | options[].value | 오브젝트 | 사용자가 옵션을 선택하는 경우 {{site.data.keyword.conversationshort}} 서비스로 전송될 응답을 정의하는 오브젝트. | Y |
 | options[].value.input | 오브젝트 | 옵션에 해당하는 입력 텍스트를 포함하는 입력 오브젝트. | N |
-| options[].value.input.text | 문자열 | 옵션에 대한 서비스로 전송될 텍스트. | N |
+| options[].value.input.text | 문자열 | 옵션에 대한 어시스턴트로 전송될 텍스트. | N |
 
 #### 예제
 {: #dialog-responses-json-option-example}
@@ -222,10 +222,10 @@ URL로 지정된 이미지를 표시합니다.
 #### 필드
 {: #dialog-responses-json-pause-fields}
 
-| 이름          | 유형   | 설명               | 필수?     |
+| 이름          | 유형   | 설명        | 필수? |
 |---------------|--------|--------------------|-----------|
 | response_type | enum   | `pause`            | Y         |
-| time          | 정수 | 일시정지할 기간(밀리초). | Y |
+| time          | 정수    | 일시정지할 기간(밀리초). | Y |
 | typing        | 부울 | 일시정지 중에 "사용자 입력 중" 이벤트를 전송할지 여부. 채널이 이 이벤트를 지원하지 않는 경우 무시됩니다. | N |
 
 #### 예제
@@ -255,7 +255,7 @@ URL로 지정된 이미지를 표시합니다.
 #### 필드
 {: #dialog-responses-json-text-fields}
 
-| 이름          | 유형   | 설명               | 필수?     |
+| 이름          | 유형   | 설명        | 필수? |
 |---------------|--------|--------------------|-----------|
 | response_type | enum   | `text`             | Y         |
 | values        | list   | 텍스트 응답을 정의하는 하나 이상의 오브젝트 목록. | Y |

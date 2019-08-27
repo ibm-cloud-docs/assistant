@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-03-29"
 
 subcollection: assistant
 
@@ -27,9 +27,9 @@ subcollection: assistant
 
 {{site.data.keyword.conversationshort}} 服务 REST API 通过过滤器查询，提供功能强大的日志搜索功能。可以使用 /logs API `filter` 参数来搜索技能日志，以查找与指定查询匹配的事件。
 
-`filter` 参数是可高速缓存的查询，用于将结果限制为与指定过滤器匹配的结果。可以过滤属于 JSON 响应模型的任何对象（例如，用户输入文本、检测到的意向和实体或置信度分数）。
+`filter` 参数是可高速缓存的查询，用于将结果限制为与指定过滤器匹配的结果。可以过滤属于 JSON 响应模型的各种对象（例如，用户输入文本、检测到的意向和实体或置信度分数）。
 
-要查看各种类型的过滤器查询的示例，请参阅[示例](#filter-reference-examples)。
+要查看过滤器查询的示例，请参阅[示例](#filter-reference-examples)。
 
 有关 /logs `GET` 方法及其响应模型的更多信息，请参阅 [API 参考 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://cloud.ibm.com/apidocs/assistant?curl=#list-log-events-in-a-workspace){: new_window}。
 
@@ -56,7 +56,7 @@ subcollection: assistant
 可以在过滤器查询中使用以下运算符。
 
 |运算符|描述|
-|:-------------------:|-----------|
+|:-------------------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `:` |模糊匹配查询运算符。如果要匹配包含查询项或查询项语法变体的任何值，请使用 `:` 作为查询项的前缀。模糊匹配可用于用户输入文本、响应输出文本和实体值。|
 | `::` |完全匹配查询运算符。如果要仅匹配完全等于查询项的值，请使用 `::` 作为查询项的前缀。|
 | `:!` |否定模糊匹配查询运算符。如果要仅匹配_不_包含查询项或查询项语法变体的值，请使用 `:!` 作为查询项的前缀。|
@@ -101,7 +101,7 @@ subcollection: assistant
 ### 按其他字段过滤
 {: #filter-reference-fields}
 
-要过滤日志数据中的其他任何字段，请将位置指定为路径，以确定来自 /logs API 的 JSON 响应中嵌套对象的级别。使用点 (`.`) 来指定 JSON 数据中的后续嵌套级别。例如，位置 `request.input.text` 确定用户输入文本字段，如以下 JSON 片段中所示：
+要过滤日志数据中的其他字段，请将位置指定为路径，以确定来自 /logs API 的 JSON 响应中嵌套对象的级别。使用点 (`.`) 来指定 JSON 数据中的后续嵌套级别。例如，位置 `request.input.text` 确定用户输入文本字段，如以下 JSON 片段中所示：
 
 ```json
   "request": {
@@ -110,6 +110,19 @@ subcollection: assistant
     }
   }
 ```
+<!-- {data-copy=false} -->
+
+过滤并不是可用于所有字段。可以对以下字段进行过滤：
+
+- request.context.metadata.deployment
+- request.input.text
+- response.entities
+- response.input.text
+- response.intents
+- response.top_intent
+- meta.message.entities_count
+
+目前不支持对其他字段进行过滤。
 
 ## 示例
 {: #filter-reference-examples}
@@ -118,8 +131,8 @@ subcollection: assistant
 
 |描述|查询|
 |---------|-----------|
-|响应日期为 2017 年 7 月。|`response_timestamp>=2017-07-01,response_timestamp<2017-08-01` |
-|响应的时间戳记早于 `2016-11-01T04:00:00.000Z`。|`response_timestamp<2016-11-01T04:00:00.000Z` |
+|响应日期为 2017 年 7 月。|`response_timestamp>=2017-07-01,response_timestamp<2017-08-01`|
+|响应的时间戳记早于 `2016-11-01T04:00:00.000Z`。|`response_timestamp<2016-11-01T04:00:00.000Z`|
 |消息标注有客户标识 `my_id`。|`customer_id::my_id`|
 |用户输入文本包含单词“order”或语法变体（例如，`orders` 或 `ordering`）。|`request.input.text:order`|
 |响应中的意向名称与 `place_order` 完全匹配。|`response.intents:intent::place_order`|
@@ -135,3 +148,4 @@ subcollection: assistant
 |响应中的意向名称与 `hello` 或 `goodbye` 完全匹配。|`response.intents:intent::(hello|goodbye)` |
 |响应中意向的名称为 `hello` 且置信度值等于或大于 0.8。|`response.intents:(intent:hello,confidence>=0.8)`|
 |响应中的意向名称与 `order` 完全匹配，并且响应中的实体名称与 `beverage` 完全匹配。|`[response.intents:intent::order,response.entities:entity::beverage]` |
+<!-- -->

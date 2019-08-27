@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-08-12"
 
 subcollection: assistant
 
@@ -30,11 +30,12 @@ subcollection: assistant
 
 Les demandes d'API nécessitent un paramètre de version qui prend une date au format `version=AAAA-MM-JJ`. Chaque fois que nous modifions l'API de manière irréversible, nous publions une nouvelle version mineure de l'API.
 
-Envoyez le paramètre de version avec chaque demande d'API. Le service utilise la version d'API correspondant à la date que vous spécifiez ou la toute dernière version avant cette date. Ne laissez pas la date du jour par défaut. A la place, spécifiez une date correspondant à une version qui est compatible avec votre application et ne la changez pas tant que votre application n'est pas prête pour une version ultérieure.
+Envoyez le paramètre de version avec chaque demande d'API. {{site.data.keyword.conversationshort}} utilise la version d'API correspondant à la date que vous spécifiez ou la toute dernière version avant cette date. Ne laissez pas la date du jour par défaut. A la place, spécifiez une date correspondant à une version qui est compatible avec votre application et ne la changez pas tant que votre application n'est pas prête pour une version ultérieure.
 
 - La version actuelle de V1 est `2019-02-28`.
 - La version actuelle de V2 est `2019-02-28`.
-- Le panneau "Try it out" des outils {{site.data.keyword.conversationshort}} utilise la version `2018-07-10`.
+- Le panneau "Try it out" de la compétence de dialogue utilise la version `2018-07-10`.
+- Le panneau "Try it out" de la compétence de recherche utilise la version d'API {{site.data.keyword.discoveryshort}}, `2018-12-03`.
 
 ## Fonctions bêta
 {: #release-notes-beta}
@@ -50,14 +51,119 @@ Les modèles existants ayant été formés ne seront pas immédiatement impacté
 
 **Remarque :** cette instruction de mise à jour s'applique uniquement aux langues et aux fonctions officiellement disponibles.
 
-Les nouvelles fonctions et modifications apportées au service et décrites ci-après sont disponibles. Consultez notre [blog ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://medium.com/ibm-watson/assistant/home) pour rechercher des informations détaillées sur les avantages des nouvelles fonctionnalités pour votre entreprise.
+Les nouvelles fonctionnalités et modifications suivantes sont disponibles dans {{site.data.keyword.conversationshort}}.
+Consultez notre [blog ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://medium.com/ibm-watson/assistant/home) pour rechercher des informations détaillées sur les avantages des nouvelles fonctionnalités pour votre entreprise.
+
+## 12 août 2019
+{: #12August2019}
+
+- **Nouvelle méthode de dialogue** : la méthode `getMatch` a été ajoutée. Vous pouvez utiliser cette méthode pour extraire une occurrence spécifique d'un modèle d'expression régulière qui se reproduit dans l'entrée utilisateur. Pour plus de détails, reportez-vous à la rubrique des [méthodes de dialogue](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings-getMatch).
+
+## 9 août 2019
+{: #9August2019}
+
+- **Visite guidée du produit** : pour certains utilisateurs novices, une nouvelle visite guidée du produit est présentée, que l'utilisateur peut choisir de suivre pour effectuer les premières étapes de la création d'un assistant.
+
+## 6 août 2019
+{: #6August2019}
+
+- Les appels Webhook et les améliorations de la page Dialog sont disponibles à Dallas. 
+
+## 1er août 2019
+{: #1August2019}
+
+Les mises à jour suivantes sont disponibles à tous les emplacements, sauf Dallas pour le moment.
+{: important}
+
+- **Les appels Webhook sont disponibles** : ajoutez des appels webhook aux noeuds de dialogue pour effectuer des appels de programmation vers une application externe dans le cadre du flux de conversation. La nouvelle prise en charge de webhook simplifie le processus de mise en oeuvre des appels. (Aucun autre objet JSON `action` n'est requis.) Pour plus d'informations, reportez-vous à la rubrique [Création d'un appel par programmation à partir d'un noeud de dialogue](/docs/services/assistant?topic=assistant-dialog-webhooks).
+
+- **Amélioration de la réactivité de la page de dialogue** : dans toutes les instances de service, l'interface utilisateur de la page Dialog a été mise à jour pour utiliser une nouvelle bibliothèque JavaScript qui augmente la réactivité de la page. En conséquence, l'apparence de certains éléments de l'interface graphique, tels que les boutons, a légèrement changé, mais la fonction n'a pas changé. 
+
+## 31 juillet 2019
+{: #31July2019}
+
+- **La compétence de recherche et la correction automatique sont généralement disponibles **: les fonctionnalités compétence de recherche et correction orthographique automatique, qui étaient auparavant disponibles en tant que fonctionnalités bêta, sont désormais commercialisées. 
+
+  - Les compétences de recherche ne peuvent être créées que par les utilisateurs des forfaits Plus ou Premium.  
+  - Vous pouvez activer la correction automatique uniquement pour les compétences de dialogue en anglais. Elle est automatiquement activée pour les nouvelles compétences de dialogue en anglais.
+
+
+## 26 juillet 2019
+{: #26July2019}
+
+- **Le problème relatif aux compétences manquantes est résolu** : dans certains cas, les espaces de travail créés via l'API uniquement n'étaient pas affichés lorsque vous avez ouvert l'interface utilisateur de {{site.data.keyword.conversationshort}}. Ce problème a été traité. Tous les espaces de travail que vous créez à l'aide de l'API sont affichés en tant que compétences de dialogue lorsque vous ouvrez l'interface utilisateur. 
+
+## 23 juillet 2019
+{: #23July2019}
+
+- **La recherche de la page Dialog est corrigée** : dans certaines compétences, la fonction de recherche ne fonctionnait pas dans la page Dialog. Le problème est maintenant corrigé.
+
+## 17 juillet 2019
+{: #17July2019}
+
+- **Limite de choix de désambiguïsation** : vous pouvez désormais définir le nombre maximal d'options à afficher pour les utilisateurs lorsque l'assistant leur demande de clarifier ce qu'ils souhaitent faire. Pour plus d'informations sur la désambiguïsation, reportez-vous à la rubrique [Désambiguïsation](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
+
+- **Problème de recherche dans les dialogues** : dans certaines compétences, la fonction de recherche ne fonctionne pas dans la page Dialog. Une nouvelle bibliothèque d'interface utilisateur, qui augmente la réactivité de la page, est déployée par phases vers les instances de service existantes. Ce problème de recherche concerne uniquement les compétences de dialogue pour lesquelles la nouvelle bibliothèque n'est pas encore activée. 
+
+- **Problème de compétences manquantes** : dans certains cas, les espaces de travail créés via l'API uniquement ne sont pas affichés lorsque vous ouvrez l'interface utilisateur de {{site.data.keyword.conversationshort}}. Normalement, ces espaces de travail sont affichés en tant que compétences de dialogue. Si vous ne voyez pas vos compétences dans l'interface utilisateur, ne vous inquiétez pas, ils sont toujours là.Contactez le support pour signaler le problème afin que l'équipe puisse activer l'affichage correct des espaces de travail. 
+
+<!--- **Premium plan maximum inactivity period increases**: The maximum time that a session can persist after a user stops interacting with the assistant increased from 1 day to 7 days (168 hours).
+-->
+## 15 juillet 2019
+{: #15July2019}
+
+- **Mise à niveau des entités de système numériques disponible à Dallas ![Bêta](images/beta.png)** : les nouvelles entités système sont désormais également disponibles en tant que fonctionnalité bêta pour les instances hébergées à Dallas. Reportez-vous à la rubrique [Nouvelles entités de système](/docs/services/assistant?topic=assistant-beta-system-entities)
+
+## 12 juin 2019
+{: #12June2019}
+
+- **Mise à niveau des entités de système numériques ![Bêta](images/beta.png)** : de nouvelles entités de système sont disponibles en tant que fonctionnalité bêta que vous pouvez activer dans les dialogues écrits en anglais ou en allemand. Les entités de système révisées offrent une meilleure compréhension de la date et de l'heure. Elles peuvent reconnaître les plages de dates et de nombres, les références de jours fériés et classer les mentions avec plus de précision. Par exemple, une date telle que `May 15` est reconnue comme une mention de date (`@sys-date:2019-05-15`), et *n'est pas* également identifiée comme une référence numérique (`@sys-number:15`). Reportez-vous à la rubrique [Nouvelles entités de système](/docs/services/assistant?topic=assistant-beta-system-entities)
+
+  Vous ne pouvez pas essayer ces entités de système dans les instances hébergées à Dallas actuellement, sauf si vous faites partie du programme bêta. Pour plus d'informations sur la participation au programme bêta, reportez-vous à la rubrique [Participer au programme bêta](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
+  {: note}
+
+- **Un forfait d'essai Plus est disponible** : vous pouvez utiliser le forfait d'essai gratuit Plus pour tester les fonctionnalités du forfait Plus et vous aider dans votre décision d'achat. La durée de l'essai est de 30 jours. Une fois la période d’essai terminée, si vous n’effectuez pas de mise à niveau vers un forfait Plus, votre instance d'essai Plus est convertie en instance de forfait Lite. 
+
+## 23 mai 2019
+{: #23May2019}
+
+Les mises à jour suivantes sont disponibles à tous les emplacements, sauf Dallas pour le moment.
+{: important}
+
+- **Navigation mise à jour** : la page d'accueil a été supprimée et l'ordre des onglets Assistants et Skills a été inversé. Le nouvel ordre des onglets vous encourage à commencer votre travail de développement en créant un assistant, puis une compétence.  
+
+- **Les paramètres de désambiguïsation ont été déplacés** : la bascule permettant d'activer la désambiguïsation, une fonctionnalité disponible uniquement pour les utilisateurs des forfaits Plus et Premium, a été déplacée. Le bouton **Settings** a été supprimé de la page **Dialog**. Vous pouvez maintenant activer la désambiguïsation et la configurer à partir de l'onglet **Options** de la compétence. 
+
+- **Une visite guidée est maintenant disponible** : une visite guidée du produit est désormais affichée lorsqu'une instance de service est créée. Les nouveaux utilisateurs bénéficient également d’une aide au début de leur développement. Un assistant est créé pour eux automatiquement. Des fenêtres contextuelles d’information sont affichées pour présenter les fonctionnalités de l’interface utilisateur du produit et guider le nouvel utilisateur vers la première étape essentielle de la création d’une compétence de dialogue.  
+
+## 10 avril 2019
+{: #10April2019}
+
+- **La correction automatique est désormais disponible ![Bêta](images/beta.png)** : la correction automatique est une fonctionnalité bêta qui aide votre assistant à comprendre les souhaits de vos clients. Elle corrige les fautes d'orthographe dans l'entrée que les clients soumettent avant que l'entrée ne soit évaluée. Avec une saisie plus précise, votre assistant peut plus facilement reconnaître les mentions d'entités et comprendre l'intention du client. Pour plus d'informations, reportez-vous à la rubrique [Correction de l'entrée utilisateur](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check).
+
+## 22 mars 2019
+{: #22March2019}
+
+- **Présentation de la compétence de recherche ![Bêta](images/beta.png)** : une compétence de recherche vous permet de rendre votre assistant utile aux clients plus rapidement. Les demandes des clients que vous n'aviez pas prévues et que vous n'avez donc pas construites pour gérer la logique de dialogue peuvent donner lieu à des réponses utiles. Au lieu de dire qu'il ne peut pas aider, l'assistant peut interroger une source de données externe pour trouver des informations pertinentes à partager dans sa réponse. Au fil du temps, vous pouvez créer des réponses de dialogue pour répondre aux questions des clients nécessitant des questions complémentaires afin de clarifier le sens de l'utilisateur ou pour lesquelles une réponse courte et claire convient. Et vous pouvez utiliser les réponses aux compétences de recherche pour répondre à davantage de requêtes de clients ouvertes nécessitant une explication plus longue. Cette fonctionnalité bêta est uniquement disponible pour les utilisateurs des forfaits de services Premium et Plus. ![Forfait Plus ou Premium uniquement](images/plus.png)
+
+  Pour plus d'informations, reportez-vous à la rubrique [Génération d'une compétence de recherche](/docs/services/assistant?topic=assistant-skill-search-add).
+
+## 14 mars 2019
+{: #14March2019}
+
+- **Demandez à Watson de vous aider à créer vos intentions** : utilisez la technologie d’apprentissage automatique Watson pour vous aider à choisir les bonnes intentions pour votre assistant. Watson analyse vos données de journal de centre d'appels existantes pour identifier les questions et les demandes des clients les plus fréquentes. Il recommande ensuite les intentions et les exemples utilisateur que vous pouvez utiliser pour former votre assistant afin qu'il puisse reconnaître les demandes identiques et similaires à l'avenir. Une fois que vous avez déterminé les bonnes intentions à utiliser, vous pouvez les augmenter et les maintenir à jour à l'aide de la fonctionnalité de recommandations d'exemple utilisateur d'intention, qui est déjà disponible. Pour plus d'informations, reportez-vous à la rubrique [Obtention d'aide pour définir les intentions](/docs/services/assistant?topic=assistant-intent-recommendations).
+
+## 4 mars 2019 
+{: #4March2019}
+
+- **Navigation simplifiée** : la navigation dans la barre latérale avec les onglets séparés *Build*, *Improve* et *Deploy* a été supprimée. Vous pouvez maintenant accéder à tous les outils nécessaires pour créer une compétence de dialogue à partir de la page de compétences principale.
+
+- **La page Improve s'appelle désormais Analytics** : les métriques d'information générées par Watson à partir de conversations entre vos utilisateurs et votre assistant sont passées de l'onglet *Improve* de la barre latérale à un nouvel onglet de la page de compétences principale appelé **Analytics**.
 
 ## 1er mars 2019
 {: #1March2019}
 
-- **Navigation simplifiée** : la navigation dans la barre latérale avec les onglets séparés *Build*, *Improve* et *Deploy* a été supprimée. Vous pouvez maintenant accéder à tous les outils nécessaires pour créer une compétence de dialogue à partir de la page de compétences principale.
-
-- **La page Improve s'appelle désormais Analytics** : les métriques d'information générées par le service à partir de conversations entre vos utilisateurs et votre assistant sont passées de l'onglet *Improve* de la barre latérale à un nouvel onglet de la page de compétences principale appelé **Analytics**.
+- **Recommandations sur les exemples utilisateur d'intention en japonais![Forfaits Plus ou Premium uniquement](images/plus.png)** : vous pouvez désormais télécharger un fichier contenant des entrées utilisateur brutes en japonais, telles que des demandes utilisateur dans un journal du centre d’appels, que Watson peut analyser et explorer à la recherche de candidats d'exemples utilisateur d'intention. Reportez-vous à la rubrique [Ajout d’exemples à partir de fichiers journaux](/docs/services/assistant?topic=assistant-intent-recommendations).
 
 ## 28 février 2019
 {: #28February2019}
@@ -66,13 +172,13 @@ Les nouvelles fonctions et modifications apportées au service et décrites ci-a
 
     - L'ordre dans lequel les conditions sont évaluées dans les noeuds avec attributs a changé. Auparavant, si vous disposiez d'un noeud avec attributs permettant les digressions, le noeud racine `anything_else` était déclenché avant que les conditions Not found de niveau attribut puissent être évaluées. L'ordre des opérations a été modifié pour remédier à ce problème. Désormais, lorsqu'un utilisateur digresse d'un noeud avec attributs, tous les noeuds racine, à l'exception du noeud `anything_else` sont traités. Ensuite, les conditions Not found de niveau attribut sont évaluées. Et, enfin, le noeud de niveau racine `anything_else` est traité. Pour mieux comprendre l'ordre complet des opérations sur un noeud avec attributs, reportez-vous à la rubrique [Conseils relatifs à l'utilisation des attributs](/docs/services/assistant?topic=assistant-dialog-slots#dialog-slots-node-level-handler).
 
-    -  Les chaînes commençant par un signe (#) dans les objets `context` ou `output` d'un message ne sont plus traitées comme des références d'intention.
+    - Les chaînes commençant par un signe (#) dans les objets `context` ou `output` d'un message ne sont plus traitées comme des références d'intention.
   
-      Auparavant, ces chaînes étaient automatiquement traitées comme des intentions. Par exemple, si vous avez spécifié une variable contextuelle, telle que `"color":"#FFFFFF"`, le code de couleur hexadécimal (#FFFFFF) était traité comme une intention. Le service vérifiait si une intention nommée #FFFFFF était détectée dans l'entrée utilisateur et, dans le cas contraire, remplaçait #FFFFFF par `false`. Ce remplacement ne se produit plus.
+      Auparavant, ces chaînes étaient automatiquement traitées comme des intentions. Par exemple, si vous avez spécifié une variable contextuelle, telle que `"color":"#FFFFFF"`, le code de couleur hexadécimal (#FFFFFF) était traité comme une intention. L'assistant vérifiait si une intention nommée #FFFFFF était détectée dans l'entrée utilisateur et, dans le cas contraire, remplaçait #FFFFFF par `false`. Ce remplacement ne se produit plus.
   
       De même, si vous incluiez un signe dièse (#) dans la chaîne de texte d'une réponse de noeud, vous deviez le mettre en échappement en le faisant précéder d'une barre oblique inversée (`\`). Par exemple, `Nous sommes le \#1 des vendeurs de langoustes de l'état du Maine.` Il n'est plus nécessaire de mettre le symbole `#` en échappement dans une réponse textuelle.
 
-      Cette modification ne s'applique pas aux conditions de réponse de noeud ou conditionnelles. Toutes les chaînes commençant par un signe dièse (#) spécifié dans les conditions continuent d'être traitées comme des références d'intention. En outre, vous pouvez utiliser la syntaxe d'expression SpEL pour forcer le système à traiter une chaîne dans les objets `context` ou `output` d'un message comme une intention. Par exemple, spécifiez l'intention `<? #intent-name ?>`.
+      Cette modification ne s'applique pas aux conditions de réponse de noeud ou conditionnelles. Toutes les chaînes commençant par un signe dièse (#) spécifié dans les conditions continuent d'être traitées comme des références d'intention. En outre, vous pouvez utiliser la syntaxe d'expression SpEL pour forcer le système à traiter une chaîne dans les objets `context` ou `output` d'un message comme une intention. Par exemple, spécifiez l'intention `<? #intent-name ?>`. 
 
 ## 25 février 2019
 {: #25February2019}
@@ -94,7 +200,7 @@ Les nouvelles fonctions et modifications apportées au service et décrites ci-a
 ## 17 janvier 2019
 {: #17January2019}
 
-- **La prise en charge de la langue tchèque est généralement disponible** : la prise en charge de la langue tchèque n'est plus classée en version bêta ; elle est maintenant généralement disponible. Pour plus d'informations, reportez-vous à la rubrique[Langues prises en charge](/docs/services/assistant?topic=assistant-language-support).
+- **La prise en charge de la langue tchèque est généralement disponible** : la prise en charge de la langue tchèque n'est plus classée en version bêta ; elle est maintenant généralement disponible. Pour plus d'informations, reportez-vous à la rubrique [Langues prises en charge](/docs/services/assistant?topic=assistant-language-support).
 
 - **Améliorations de la prise en charge linguistique** : les composants de compréhension linguistique ont été mis à jour pour améliorer les fonctionnalités suivantes :
 
@@ -104,23 +210,23 @@ Les nouvelles fonctions et modifications apportées au service et décrites ci-a
 ## 4 janvier 2019
 {: #4January2019}
 
-- **IBM Cloud Functions sur les sites de Washington, DC et Londres** : vous pouvez désormais appeler par programmation des fonctions IBM Cloud Functions à partir du dialogue d'un assistant dans une instance de service hébergée dans les centres de données de Londres et de Washington, DC. Reportez-vous à la rubrique [Procédure permettant de passer des appels par de programmation à partir d'un noeud de dialogue](/docs/services/assistant?topic=assistant-dialog-actions).
+- **IBM Cloud Functions sur les sites de Washington, DC et Londres** : vous pouvez désormais appeler par programmation des fonctions IBM Cloud Functions à partir du dialogue d'un assistant dans une instance de service hébergée dans les centres de données de Londres et de Washington, DC. Reportez-vous à la rubrique [Procédure permettant de passer des appels par programmation à partir d'un noeud de dialogue](/docs/services/assistant?topic=assistant-dialog-actions-client).
 
 - ** Nouvelles méthodes de travail avec les tableaux** : les méthodes d'expression SpEL suivantes sont disponibles pour faciliter l'utilisation des valeurs de tableau dans votre dialogue :
 
   - **JSONArray.filter** : filtre un tableau en comparant chaque valeur du tableau à une valeur pouvant varier en fonction de l'entrée utilisateur.
   - **JSONArray.includesIntent** : vérifie si un tableau `intents` contient une intention particulière.
   - **JSONArray.indexOf** : obtient le numéro d'index d'une valeur spécifique dans un tableau.
-  - **JSONArray.joinToArray** : applique le formatage aux valeurs renvoyées par un tableau. 
+  - **JSONArray.joinToArray** : applique le formatage aux valeurs renvoyées par un tableau.
 
    Pour plus d'informations, reportez-vous à la [documentation sur les méthodes de tableau](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-arrays).
 
 ## 13 décembre 2018
 {: #13December2018}
 
-- **Centre de données de Londres** : vous pouvez désormais créer des instances de service {{site.data.keyword.conversationshort}} hébergées dans le centre de données de Londres sans syndication. Pour plus d'informations, reportez-vous à la rubrique [Centres de données](/docs/services/assistant?topic=assistant-services-information#services-information-regions). 
+- **Centre de données de Londres** : vous pouvez désormais créer des instances de service {{site.data.keyword.conversationshort}} hébergées dans le centre de données de Londres sans syndication. Pour plus d'informations, reportez-vous à la rubrique [Centres de données](/docs/services/assistant?topic=assistant-services-information#services-information-regions).
 
-- **Modification de la limite de noeud de dialogue** : la limite de noeud de dialogue a été temporairement modifiée de 100 000 à 500 pour les nouvelles instances du forfait Standard. Ce changement de limite a ensuite été inversé. Si vous avez créé une instance du forfait Standard au cours de la période pendant laquelle la limite était en vigueur, vos dialogues pourraient être affectés. La limite s'appliquait aux compétences créées entre le 10 et le 12 décembre 2018. Les limites inférieures ont été supprimées de toutes les instances concernées en janvier. Si vous devez augmenter la limite inférieure avant cela, soumettez un ticket de demande de service. 
+- **Modification de la limite de noeud de dialogue** : la limite de noeud de dialogue a été temporairement modifiée de 100 000 à 500 pour les nouvelles instances du forfait Standard. Ce changement de limite a ensuite été inversé. Si vous avez créé une instance du forfait Standard au cours de la période pendant laquelle la limite était en vigueur, vos dialogues pourraient être affectés. La limite s'appliquait aux compétences créées entre le 10 et le 12 décembre 2018. Les limites inférieures ont été supprimées de toutes les instances concernées en janvier. Si vous devez augmenter la limite inférieure avant cela, soumettez un ticket de demande de service.
 
 ## 1er décembre 2018
 {: #1December2018}
@@ -135,7 +241,7 @@ Les nouvelles fonctions et modifications apportées au service et décrites ci-a
      curl -u "apikey:{apikey}" "https://gateway.watsonplatform.net/assistant/api/v1/workspaces/{workspace_id}/dialog_nodes?version=2018-09-20&include_count=true"
      ```
 
-     Dans la réponse, l'attribut `total` de l'objet `pagination` contient le nombre de nœuds du dialogue. 
+     Dans la réponse, l'attribut `total` de l'objet `pagination` contient le nombre de nœuds du dialogue.
 
      Reportez-vous à la rubrique [Traitement des incidents liés à l'importation de compétences](/docs/services/assistant?topic=assistant-skill-add#skill-add-import-errors) pour plus d'informations sur comment modifier les compétences que vous souhaitez continuer à utiliser.
 
@@ -147,7 +253,7 @@ Les nouvelles fonctions et modifications apportées au service et décrites ci-a
   <table>
   <caption>Limites du forfait Plus</caption>
     <tr>
-      <th>Artefact </th>
+      <th>Artefact</th>
       <th>Limite</th>
     </tr>
     <tr>
@@ -171,7 +277,7 @@ Les nouvelles fonctions et modifications apportées au service et décrites ci-a
        <td>1 000</td>
     </tr>
     <tr>
-       <td>Synonymes d'entité </td>
+       <td>Synonymes d'entité</td>
        <td>100 000</td>
     </tr>
     <tr>
@@ -192,7 +298,7 @@ Les nouvelles fonctions et modifications apportées au service et décrites ci-a
     </tr>
     <tr>
        <td>Journaux</td>
-       <td>30 jours </td>
+       <td>30 jours</td>
     </tr>
     <tr>
        <td>Compétences</td>
@@ -200,38 +306,39 @@ Les nouvelles fonctions et modifications apportées au service et décrites ci-a
     </tr>
   </table>
 
-- **Forfait Premium basé sur l'utilisateur** : le forfait Premium base désormais sa facturation sur le nombre d'utilisateurs uniques actifs. Si vous choisissez d'utiliser ce forfait, concevez toutes les applications personnalisées que vous créez pour identifier correctement les utilisateurs qui génèrent des appels d'API /message. Pour plus d'informations, reportez-vous à la rubrique[Forfaits basés sur l'utilisateur](services-information#user-based-plans).
+- **Forfait Premium basé sur l'utilisateur** : le forfait Premium base désormais sa facturation sur le nombre d'utilisateurs uniques actifs. Si vous choisissez d'utiliser ce forfait, concevez toutes les applications personnalisées que vous créez pour identifier correctement les utilisateurs qui génèrent des appels d'API /message. Pour plus d'informations, reportez-vous à la rubrique [Forfaits basés sur l'utilisateur](/docs/services/assistant?topic=assistant-services-information#services-information-user-based-plans).
 
   Ce changement n'a pas d'incidence sur les instances du service Premium existantes ; elles continuent à utiliser les méthodes de facturation basées sur les API. Seuls les utilisateurs existants du forfait Premium verront le forfait basé sur l'API répertorié comme option du forfait *Premium (API)*.
   {: note}
 
   Pour plus d'informations sur tous les forfaits de service disponibles, reportez-vous aux {{site.data.keyword.conversationshort}} [options des forfaits de services ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/cloud/watson-assistant/pricing/){: new_window}.
 
-- **Recommandations sur les exemples utilisateur d'intention ![Forfaits Plus ou Premium uniquement](images/premium.png)** : vous pouvez télécharger un fichier contenant des entrées utilisateur brutes, telles que des demandes utilisateur dans un journal du centre d’appels, que le service peut analyser et explorer à la recherche de candidats d'exemples utilisateur d'intention. Reportez-vous à la rubrique [Ajout d’exemples à partir de fichiers journaux](intent-recommendations#intent-recommendations-get-example-recommendations).
+- **Recommandations sur les exemples utilisateur d'intention ![Forfaits Plus ou Premium uniquement](images/plus.png)** : vous pouvez télécharger un fichier contenant des entrées utilisateur brutes, telles que des demandes utilisateur dans un journal du centre d’appels, que Watson peut analyser et explorer à la recherche de candidats d'exemples utilisateur d'intention. Reportez-vous à la rubrique [Ajout d’exemples à partir de fichiers journaux](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations).
 
-## 20 novembre 2018 
+## 20 novembre 2018
 {: #20November2018}
 
-**Fin des recommandations** : la section Recommendations de l'onglet Improve a été supprimée. Recommendations était une fonctionnalité bêta réservée aux utilisateurs du forfait Premium. Cette section recommandait aux utilisateurs les mesures permettant d'améliorer leurs données d'apprentissage. Plutôt que d'être centralisées à un seul emplacement, les recommandations sont désormais disponibles dans les portions de l'outil où vous effectuez les modifications des données d'apprentissage. Par exemple, tout en ajoutant des synonymes d'entité, vous pouvez désormais choisir de voir une liste de termes synonymes recommandés par le service. Si vous recherchez d'autres moyens d'analyser plus en détails vos journaux de conversation des utilisateurs, envisagez d'utiliser les blocs-notes Jupyter. Pour plus d'informations, reportez-vous à la rubrique [Tâches avancées](/docs/services/assistant?topic=assistant-logs-resources). 
+**Fin des recommandations** : la section Recommendations de l'onglet Improve a été supprimée. Recommendations était une fonctionnalité bêta réservée aux utilisateurs du forfait Premium. Cette section recommandait aux utilisateurs les mesures permettant d'améliorer leurs données d'apprentissage. Plutôt que d'être centralisées à un seul emplacement, les recommandations sont désormais disponibles dans les portions de l'outil où vous effectuez les modifications des données d'apprentissage. Par exemple, tout en ajoutant des synonymes d'entité, vous pouvez désormais choisir de voir une liste de termes synonymes recommandés par Watson. Si vous recherchez d'autres moyens d'analyser plus en détails vos journaux de conversation des utilisateurs, envisagez d'utiliser les blocs-notes Jupyter. Pour plus d'informations, reportez-vous à la rubrique [Tâches avancées](/docs/services/assistant?topic=assistant-logs-resources).
 
 ## 9 novembre 2018
 {: #9November2018}
 
 - **Révision majeure de l’interface utilisateur** : le service {{site.data.keyword.conversationshort}} a une nouvelle apparence et de nouvelles fonctionnalités.
 
-  Cette version de l'outil a été évaluée par les participants au programme bêta au cours des derniers mois. 
+  Cette version de l'outil a été évaluée par les participants au programme bêta au cours des derniers mois.
 
-  - **Compétences** : ce que vous conceviez comme un *espace de travail* est maintenant appelé une *compétence*. Une *compétence de dialogue* est un conteneur de données et d'artefacts d'apprentissage du traitement du langage naturel qui permettent à votre assistant de comprendre les questions des utilisateurs et d'y répondre. 
+  - **Compétences** : ce que vous conceviez comme un *espace de travail* est maintenant appelé une *compétence*. Une *compétence de dialogue* est un conteneur de données et d'artefacts d'apprentissage du traitement du langage naturel qui permettent à votre assistant de comprendre les questions des utilisateurs et d'y répondre.
 
     **Où sont mes espaces de travail ?** Tous les espaces de travail que vous avez créés sont désormais répertoriés dans votre instance de service en tant que compétences. Cliquez sur l'onglet **Skills** pour les visualiser. Pour plus d'informations, reportez-vous à la rubrique [Compétences](/docs/services/assistant?topic=assistant-skills).
 
-  - **Assistants** : vous pouvez maintenant publier votre compétence en deux étapes seulement. Ajoutez votre compétence à un assistant, puis configurez une ou plusieurs intégrations avec lesquelles déployer votre compétence. L’assistant ajoute une couche de fonction à votre compétence qui permet au service d’orchestrer et de gérer automatiquement le flux d’informations. Reportez-vous à la rubrique [Assistants](/docs/services/assistant?topic=assistant-assistants).
+  - **Assistants** : vous pouvez maintenant publier votre compétence en deux étapes seulement. Ajoutez votre compétence à un assistant, puis configurez une ou plusieurs intégrations avec lesquelles déployer votre compétence. L’assistant ajoute une couche de fonction à votre compétence qui permet à {{site.data.keyword.conversationshort}} d’orchestrer et de gérer automatiquement le flux d’informations. Reportez-vous à la rubrique [Assistants](/docs/services/assistant?topic=assistant-assistants).
 
-  - **Intégrations incorporées** : plutôt que d'accéder à l'onglet **Deploy** pour déployer votre espace de travail, vous ajoutez votre compétence de dialogue à un assistant, puis vous ajoutez des intégrations à l'assistant où la compétence est mise à la disposition de vos utilisateurs. Vous n'avez pas besoin de créer une application frontale personnalisée et de gérer l'état de la conversation d'un appel à l'autre. Cependant, vous pouvez toujours le faire si vous le souhaitez. Pour plus d'informations, reportez-vous à la rubrique [Ajout d'intégrations](/docs/services/assistant?topic=assistant-deploy-integration-add). 
+  - **Intégrations incorporées** : plutôt que d'accéder à l'onglet **Deploy** pour déployer votre espace de travail, vous ajoutez votre compétence de dialogue à un assistant, puis vous ajoutez des intégrations à l'assistant où la compétence est mise à la disposition de vos utilisateurs. Vous n'avez pas besoin de créer une application frontale personnalisée et de gérer l'état de la conversation d'un appel à l'autre. Cependant, vous pouvez toujours le faire si vous le souhaitez. Pour plus d'informations, reportez-vous à la rubrique [Ajout d'intégrations](/docs/services/assistant?topic=assistant-deploy-integration-add).
 
   - **Nouvelle version majeure de l'API** : une version V2 de l'API est disponible. Cette version permet d'accéder aux méthodes que vous pouvez utiliser pour interagir avec un assistant au moment de l'exécution. Plus de contexte de transmission avec chaque appel d'API ; l'état de la session est géré automatiquement dans le cadre de la couche assistant.
   
-    Ce que les outils présentent comme une compétence de dialogue est en réalité un encapsuleur pour un espace de travail V1. Il n’existe actuellement aucune méthode d’API permettant de créer des compétences et des assistants avec l’API V2. Cependant, vous pouvez continuer à utiliser l'API V1 pour la création d'espaces de travail. Pour plus d'informations, reportez-vous à la rubrique [Présentation des API](/docs/services/assistant?topic=assistant-api-overview). {: note}
+    Ce que les outils présentent comme une compétence de dialogue est en réalité un encapsuleur pour un espace de travail V1. Il n’existe actuellement aucune méthode d’API permettant de créer des compétences et des assistants avec l’API V2. Cependant, vous pouvez continuer à utiliser l'API V1 pour la création d'espaces de travail. Pour plus d'informations, reportez-vous à la rubrique [Présentation des API](/docs/services/assistant?topic=assistant-api-overview).
+    {: note}
 
   - **Changement de source de données** : il est maintenant plus facile d'améliorer le modèle d'une compétence donnée avec les journaux de conversation utilisateur d'une autre compétence. Vous n'avez pas besoin de vous fier aux ID de déploiement, vous pouvez simplement choisir le nom de l'assistant dans lequel une compétence a été ajoutée et déployée pour utiliser ses données. Reportez-vous à la rubrique [Amélioration grâce aux assistants](/docs/services/assistant?topic=assistant-logs#logs-deploy-id).
 
@@ -244,7 +351,7 @@ Les nouvelles fonctions et modifications apportées au service et décrites ci-a
 ## 8 novembre 2018
 {: #8November2018}
 
-- **Centre de données japonais** : vous pouvez maintenant créer des instances de service {{site.data.keyword.conversationshort}} hébergées dans le centre de données de Tokyo. Pour plus d'informations, reportez-vous à la rubrique [Centres de données](/docs/services/assistant?topic=assistant-services-information#services-information-regions). 
+- **Centre de données japonais** : vous pouvez maintenant créer des instances de service {{site.data.keyword.conversationshort}} hébergées dans le centre de données de Tokyo. Pour plus d'informations, reportez-vous à la rubrique [Centres de données](/docs/services/assistant?topic=assistant-services-information#services-information-regions).
 
 ## 30 octobre 2018
 {: #30October2018}
@@ -258,7 +365,7 @@ Les nouvelles fonctions et modifications apportées au service et décrites ci-a
 
   Pour toutes les instances de service existantes, vous continuez à utiliser les données d'identification du service (`{username}:{password}`) pour l'authentification.
 
-  Pour plus d'informations, reportez-vous à la rubrique [Authentification des appels d'API](/docs/services/assistant?topic=assistant-services-information#services-information-authenticate-api-calls). 
+  Pour plus d'informations, reportez-vous à la rubrique [Authentification des appels d'API](/docs/services/assistant?topic=assistant-services-information#services-information-authenticate-api-calls).
 
 ## 25 octobre 2018
 {: #25October2018}
@@ -274,7 +381,7 @@ Les nouvelles fonctions et modifications apportées au service et décrites ci-a
 {: #21September2018}
 
 - **Nouvelle version de l'API** : la version actuelle de l'API est désormais `2018-09-20`. Dans cette version, l'attribut `errors[].path` de l'objet d'erreur renvoyé par l'API est exprimé sous la forme d'un [Pointeur JSON ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://tools.ietf.org/html/rfc6901) et non sous forme de notation à points.
-- **Prise en charge des actions Web** : vous pouvez désormais appeler des actions Web {{site.data.keyword.openwhisk_short}} à partir d'un noeud de dialogue. Pour plus d'informations, reportez-vous à la rubrique [Procédure permettant de passer des appels de programmation à partir d'un noeud de dialogue](/docs/services/assistant?topic=assistant-dialog-actions).
+- **Prise en charge des actions Web** : vous pouvez désormais appeler des actions Web {{site.data.keyword.openwhisk_short}} à partir d'un noeud de dialogue. Pour plus d'informations, reportez-vous à la rubrique [Procédure permettant de passer des appels de programmation à partir d'un noeud de dialogue](/docs/services/assistant?topic=assistant-dialog-actions-client).
 
 ## 15 août 2018
 {: #15August2018}
@@ -284,33 +391,35 @@ Les nouvelles fonctions et modifications apportées au service et décrites ci-a
 ## 6 août 2018
 {: #6August2018}
 
-- **Résolution des conflits d'intentions ![Forfait Plus ou Premium uniquement](images/premium.png)** : l'outil peut maintenant vous aider à résoudre les conflits lorsque deux ou plusieurs exemples d'utilisateur dans des intentions distinctes sont similaires. Les exemples d'utilisateurs non distincts peuvent affaiblir les données d'apprentissage et rendre plus difficile pour le service de mapper les entrées utilisateur sur l'intention appropriée au moment de l'exécution. Pour plus d'informations, reportez-vous à la rubrique [Résolution des conflits d'intentions](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts).
+- **Résolution des conflits d'intentions ![Forfait Plus ou Premium uniquement](images/plus.png)** : l'outil peut maintenant vous aider à résoudre les conflits lorsque deux ou plusieurs exemples d'utilisateur dans des intentions distinctes sont similaires. Les exemples d'utilisateurs non distincts peuvent affaiblir les données d'apprentissage et rendre plus difficile pour l'assistant de mapper les entrées utilisateur sur l'intention appropriée au moment de l'exécution. Pour plus d'informations, reportez-vous à la rubrique [Résolution des conflits d'intentions](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts).
 
-- **Désambiguïsation** ![Forfait Plus ou Premium uniquement](images/premium.png) : activez la désambiguïsation pour permettre à votre assistant de demander de l'aide à l'utilisateur quand il doit choisir entre deux noeuds de dialogue viables ou plus à traiter pour une réponse. Pour plus d'informations, reportez-vous à la rubrique [Désambiguïsation](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
+- **Désambiguïsation** ![Forfait Plus ou Premium uniquement](images/plus.png) : activez la désambiguïsation pour permettre à votre assistant de demander de l'aide à l'utilisateur quand il doit choisir entre deux noeuds de dialogue viables ou plus à traiter pour une réponse. Pour plus d'informations, reportez-vous à la rubrique [Désambiguïsation](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
 
 - **Correctif d'accès direct** : correction d'un bogue dans l'outil Dialogs qui vous empêchait de configurer un accès direct vers la réponse d'un noeud avec la condition spéciale `anything_else`.
 
-- **Message de retour de digression** : vous pouvez maintenant spécifier le texte à afficher lorsque l'utilisateur revient à un noeud après une digression. L'utilisateur aura déjà vu l'invite du noeud. Vous pouvez modifier légèrement le message pour que les utilisateurs sachent qu'ils reviennent où ils se sont interrompus. Par exemple, spécifiez une réponse du type `Où en étions-nous ? Ah oui...` Pour plus d'informations, reportez-vous à la rubrique [Digressions](dialog-runtime#digressions).
+- **Message de retour de digression** : vous pouvez maintenant spécifier le texte à afficher lorsque l'utilisateur revient à un noeud après une digression. L'utilisateur aura déjà vu l'invite du noeud. Vous pouvez modifier légèrement le message pour que les utilisateurs sachent qu'ils reviennent où ils se sont interrompus. Par exemple, spécifiez une réponse du type `Où en étions-nous ? Ah oui...` Pour plus d'informations, reportez-vous à la rubrique [Digressions](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-digressions).
 
 ## 12 juillet 2018
 {: #12July2018}
 
-- **Types de réponses enrichies** : vous pouvez désormais ajouter des réponses enrichies à votre dialogue, contenant des éléments tels que des images ou des boutons, ainsi que du texte. Pour plus d'informations, reportez-vous à la rubrique [Réponses enrichies](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia). 
+- **Types de réponses enrichies** : vous pouvez désormais ajouter des réponses enrichies à votre dialogue, contenant des éléments tels que des images ou des boutons, ainsi que du texte. Pour plus d'informations, reportez-vous à la rubrique [Réponses enrichies](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia).
 
-- **Entités contextuelles (Bêta)** : les entités contextuelles sont des entités que vous définissez en étiquetant les mentions du type d'entité qui apparaissent dans les exemples d'utilisateur d'intention. Ces types d'entité enseignent au service non seulement les termes qui peuvent l'intéresser, mais également le contexte dans lequel ces termes apparaissent généralement dans les énoncés utilisateur. Cela permet au service de reconnaître les mentions d'entités jamais vues auparavant uniquement en fonction de la manière dont elles sont référencées dans l'entrée utilisateur. Par exemple, si vous annotez l'exemple d'utilisateur d'intention "Je veux un vol à destination de Boston" en désignant "Boston" en tant qu'entité @destination, le service peut reconnaître "Chicago" en tant que @destination dans une entrée utilisateur indiquant "Je veux un vol pour Chicago." Cette fonctionnalité est actuellement disponible en anglais uniquement. Pour plus d'informations, reportez-vous à la rubrique [Ajout d'entités contextuelles](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based). 
+- **Entités contextuelles (Bêta)** : les entités contextuelles sont des entités que vous définissez en étiquetant les mentions du type d'entité qui apparaissent dans les exemples d'utilisateur d'intention. Ces types d'entité enseignent à l'assistant non seulement les termes qui peuvent l'intéresser, mais également le contexte dans lequel ces termes apparaissent généralement dans les énoncés utilisateur. Cela permet à l'assistant de reconnaître les mentions d'entités jamais vues auparavant uniquement en fonction de la manière dont elles sont référencées dans l'entrée utilisateur. Par exemple, si vous annotez l'exemple d'utilisateur d'intention "Je veux un vol à destination de Boston" en désignant "Boston" en tant qu'entité @destination, l'assistant peut reconnaître "Chicago" en tant que @destination dans une entrée utilisateur indiquant "Je veux un vol pour Chicago." Cette fonctionnalité est actuellement disponible en anglais uniquement. Pour plus d'informations, reportez-vous à la rubrique [Ajout d'entités contextuelles](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based).
 
-  Lorsque vous accédez à l'outil avec un navigateur Web Internet Explorer, vous ne pouvez pas étiqueter les mentions d'entités dans les exemples d'utilisateurs d'intention ni modifier le texte de ces exemples. {: note}
+  Lorsque vous accédez à l'outil avec un navigateur Web Internet Explorer, vous ne pouvez pas étiqueter les mentions d'entités dans les exemples d'utilisateurs d'intention ni modifier le texte de ces exemples.
+  {: note}
 
-- **Recommandations d'entité** : le service peut désormais recommander des synonymes pour vos valeurs d'entité. L'outil de recommandation recherche les synonymes associés en fonction de la similarité contextuelle extraite d'un vaste ensemble d'informations existantes, y compris de grandes sources de texte écrit, et utilise des techniques de traitement de langage naturel pour identifier des mots similaires aux synonymes existants dans votre valeur d'entité. Pour plus d'informations, reportez-vous à la rubrique [Synonymes](/docs/services/assistant?topic=assistant-entities#entities-synonyms).
+- **Recommandations d'entité** : Watson peut désormais recommander des synonymes pour vos valeurs d'entité. L'outil de recommandation recherche les synonymes associés en fonction de la similarité contextuelle extraite d'un vaste ensemble d'informations existantes, y compris de grandes sources de texte écrit, et utilise des techniques de traitement de langage naturel pour identifier des mots similaires aux synonymes existants dans votre valeur d'entité. Pour plus d'informations, reportez-vous à la rubrique [Synonymes](/docs/services/assistant?topic=assistant-entities#entities-synonyms).
 
 - **Nouvelle version de l'API** : la version actuelle de l'API est désormais `2018-07-10`. Cette version comprend les modifications suivantes :
 
   - Le contenu de l'objet `output` /message n'est plus un objet JSON `text` mais un tableau `generic` prenant en charge plusieurs types de réponses enrichies, y compris `image`, `option`, `pause` et `text`.
   - La prise en charge des entités contextuelles a été ajoutée.
+  - Vous ne pouvez plus ajouter de propriétés définies par l'utilisateur dans `context.metadata`. Toutefois, vous pouvez les ajouter directement à `context`.
 
-- **Filtre de date de la page Overview** : utilisez les nouveaux filtres de date pour choisir la période d'affichage des données. Ces filtres affectent toutes les données affichées dans la page : non seulement le nombre de conversations affichées dans le graphique, mais également les statistiques affichées avec le graphique, ainsi que les listes des principales intentions et entités. Pour plus d'informations, reportez-vous à la rubrique [Contrôles](logs-overview#controls).
+- **Filtre de date de la page Overview** : utilisez les nouveaux filtres de date pour choisir la période d'affichage des données. Ces filtres affectent toutes les données affichées dans la page : non seulement le nombre de conversations affichées dans le graphique, mais également les statistiques affichées avec le graphique, ainsi que les listes des principales intentions et entités. Pour plus d'informations, reportez-vous à la rubrique [Contrôles](/docs/services/assistant?topic=assistant-logs-overview#logs-overview-controls).
 
-- **Extension de la limite de canevas** : lors de l'utilisation de la zone **Patterns** pour [définir des canevas spécifiques pour une valeur d'entité,](/docs/services/assistant?topic=assistant-entities#entities-patterns), le canevas (expression régulière) est désormais limité à 512 caractères. 
+- **Extension de la limite de canevas** : lors de l'utilisation de la zone **Patterns** pour [définir des canevas spécifiques pour une valeur d'entité,](/docs/services/assistant?topic=assistant-entities#entities-patterns), le canevas (expression régulière) est désormais limité à 512 caractères.
 
 ## 2 juillet 2018
 {: #2July2018}
@@ -325,14 +434,14 @@ Les nouvelles fonctions et modifications apportées au service et décrites ci-a
 ## 14 juin 2018
 {: #14June2018}
 
-- **Ouverture du centre de données de Washington, DC** : vous pouvez maintenant créer des instances de service {{site.data.keyword.conversationshort}} dans le centre de données de Washington, DC. Pour plus d'informations, reportez-vous à la rubrique [Centres de données](/docs/services/assistant?topic=assistant-services-information#services-information-regions). 
+- **Ouverture du centre de données de Washington, DC** : vous pouvez maintenant créer des instances de service {{site.data.keyword.conversationshort}} dans le centre de données de Washington, DC. Pour plus d'informations, reportez-vous à la rubrique [Centres de données](/docs/services/assistant?topic=assistant-services-information#services-information-regions).
 
 - **Nouveau processus d'authentification d'API** : le service {{site.data.keyword.conversationshort}} dispose d'un nouveau processus d'authentification d'API pour les instances de service hébergées dans les régions suivantes :
 
-  - Washington, DC (us-east) à compter du 14 juin 2018 
+  - Washington, DC (us-east) à compter du 14 juin 2018
   - Sydney, Australie (au-syd) à compter du 7 mai 2018
 
-  {{site.data.keyword.cloud_notm}} migre vers l'authentification IAM (Identity and Access Management) par jeton.
+  {{site.data.keyword.cloud}} migre vers l'authentification IAM (Identity and Access Management) par jeton.
 
   Pour les nouvelles instances de service dans les régions répertoriées ci-dessus, vous utilisez IAM pour l'authentification. Vous pouvez transmettre un jeton bearer ou une clé d'API. Les jetons prennent en charge les demandes authentifiées sans intégrer de données d'identification de service dans chaque appel. Les clés d'API utilisent l'authentification de base.
 
@@ -340,7 +449,7 @@ Les nouvelles fonctions et modifications apportées au service et décrites ci-a
 
   Lorsque vous utilisez un kit SDK Watson, vous pouvez transmettre la clé d'API et laisser le kit SDK gérer le cycle de vie des jetons. Pour plus d'informations et des exemples, reportez-vous à [Authentification ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")]https://{DomainName}/apidocs/assistant-v2#authentication){: new_window} dans la référence de l'API.
 
-  Si vous ne savez pas quel type d’authentification utiliser, affichez les données d’identification du service en cliquant sur l’instance de service dans la [{{site.data.keyword.Bluemix_notm}} Liste de ressources ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://cloud.ibm.com/resources){: new_window}.
+  Si vous ne savez pas quel type d’authentification utiliser, affichez les données d’identification {{site.data.keyword.conversationshort}} en cliquant sur l’instance de service dans la section Services de la [Liste de ressources {{site.data.keyword.Bluemix_notm}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://cloud.ibm.com){: new_window}.
 
 ## 25 mai 2018
 {: #25May2018}
@@ -355,9 +464,9 @@ Les nouvelles fonctions et modifications apportées au service et décrites ci-a
 
   `Contactez-nous au site ` [ibm.com](https://www.ibm.com){: new_window}.
 
-    N'oubliez pas que vous devez utiliser le type de syntaxe approprié dans vos réponses pour l'application client sur laquelle vous allez déployer la conversation. Utilisez la syntaxe HTML uniquement si votre application client peut l'interpréter correctement. D'autres canaux d'intégration peuvent prévoir d'autres formats. 
+    N'oubliez pas que vous devez utiliser le type de syntaxe approprié dans vos réponses pour l'application client sur laquelle vous allez déployer la conversation. Utilisez la syntaxe HTML uniquement si votre application client peut l'interpréter correctement. D'autres canaux d'intégration peuvent prévoir d'autres formats.
 
-- **Modifications du déploiement** : l'option **Test in Slack** a été supprimée. 
+- **Modifications du déploiement** : l'option **Test in Slack** a été supprimée.
 
 ## 11 mai 2018
 {: #11May2018}
@@ -377,22 +486,21 @@ Les nouvelles fonctions et modifications apportées au service et décrites ci-a
 ## 15 mars 2018
 {: #15March2018}
 
-- **Présentation d'{{site.data.keyword.conversationfull}}** : la conversation {{site.data.keyword.ibmwatson}} a été renommée. Elle s'appelle désormais {{site.data.keyword.conversationfull}}. Le changement de nom reflète le fait que le service a été développé pour fournir un contenu et des outils prédéfinis vous permettant de partager plus facilement les assistants virtuels que vous avez créés. Pour plus d'informations, reportez-vous à la rubrique [cet article ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/blogs/watson/2018/03/the-future-of-watson-conversation-watson-assistant/). 
+- **Présentation d'{{site.data.keyword.conversationfull}}** : la conversation {{site.data.keyword.ibmwatson}} a été renommée. Elle s'appelle désormais {{site.data.keyword.conversationfull}}. Le changement de nom reflète le fait que {{site.data.keyword.conversationshort}} a été développé pour fournir un contenu et des outils prédéfinis vous permettant de partager plus facilement les assistants virtuels que vous avez créés. Pour plus d'informations, reportez-vous à la rubrique [cet article ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/blogs/watson/2018/03/the-future-of-watson-conversation-watson-assistant/).
 
 - **De nouvelles API REST et de nouveaux SDK sont disponibles pour Watson Assistant** : les nouvelles API sont fonctionnellement identiques aux API de conversation existantes, lesquelles continuent d'être prises en charge. Pour plus d'informations sur les API de Watson Assistant, reportez-vous à la documentation [Référence d'API ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://{DomainName}/apidocs/assistant){: new_window}.
-
 
 - **Améliorations des dialogues** : les fonctionnalités suivantes ont été ajoutées à l'outil de dialogue :
 
   - Les zones de nom et de valeur de variable simple sont désormais disponibles et peuvent être utilisées pour l'ajout de variables contextuelles ou la mise à jour de valeurs de variable contextuelle. Il n'est pas nécessaire d'ouvrir l'éditeur JSON sauf si vous le souhaitez. Pour plus d'informations, reportez-vous à la rubrique [Définition d'une variable contextuelle](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-context-var-define).
-  - Organisez votre dialogue à l'aide de dossiers pour regrouper les noeuds de dialogue associés. Pour plus d'informations, reportez-vous à la rubrique [Organisation du dialogue à l'aide de dossiers](dialog-build#folders). 
-  - Une prise en charge a été ajoutée pour personnaliser la manière dont chaque noeud de dialogue participe aux digressions initiées par l'utilisateur, en dehors du flux de dialogue désigné. Pour plus d'informations, reportez-vous à la rubrique [Digressions](dialog-runtime#digressions).
+  - Organisez votre dialogue à l'aide de dossiers pour regrouper les noeuds de dialogue associés. Pour plus d'informations, reportez-vous à la rubrique [Organisation du dialogue à l'aide de dossiers](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-folders).
+  - Une prise en charge a été ajoutée pour personnaliser la manière dont chaque noeud de dialogue participe aux digressions initiées par l'utilisateur, en dehors du flux de dialogue désigné. Pour plus d'informations, reportez-vous à la rubrique [Digressions](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-digressions).
 
-- **Recherche dans les intentions et les entités** : une nouvelle fonctionnalité de recherche a été ajoutée pour vous permettre [d'explorer des intentions](intents#searching-intents) afin de rechercher des exemples utilisateur, des noms d'intention ou des descriptions, ou [d'explorer des valeurs et des synonymes d'entité](/docs/services/assistant?topic=assistant-entities#entities-search).
+- **Recherche dans les intentions et les entités** : une nouvelle fonctionnalité de recherche a été ajoutée pour vous permettre [d'explorer des intentions](/docs/services/assistant?topic=assistant-intents#intents-search) afin de rechercher des exemples utilisateur, des noms d'intention ou des descriptions, ou [d'explorer des valeurs et des synonymes d'entité](/docs/services/assistant?topic=assistant-entities#entities-search).
 
-- **Catalogues de contenu** : les nouveaux [catalogues de contenu](/docs/services/assistant?topic=assistant-catalog#catalog-add) contiennent une seule catégorie d'intentions et d'entités communes prédéfinies que vous pouvez ajouter à votre application. Par exemple, la plupart des applications nécessitent une intention #greeting-type générale qui ouvre un dialogue avec l'utilisateur. Vous pouvez l'ajouter à partir du catalogue de contenu plutôt que de créer la vôtre. 
+- **Catalogues de contenu** : les nouveaux [catalogues de contenu](/docs/services/assistant?topic=assistant-catalog#catalog-add) contiennent une seule catégorie d'intentions et d'entités communes prédéfinies que vous pouvez ajouter à votre application. Par exemple, la plupart des applications nécessitent une intention #greeting-type générale qui ouvre un dialogue avec l'utilisateur. Vous pouvez l'ajouter à partir du catalogue de contenu plutôt que de créer la vôtre.
 
-- **Métriques utilisateur améliorées** : le composant Improve a été amélioré avec des métriques utilisateur et des statistiques de journalisation supplémentaires. Par exemple, la page Overview comprend plusieurs nouveaux graphiques détaillés résumant les interactions entre les utilisateurs et votre application, la quantité de trafic pour une période donnée, ainsi que les intentions et les entités qui étaient reconnues le plus souvent dans les conversations utilisateur. 
+- **Métriques utilisateur améliorées** : le composant Improve a été amélioré avec des métriques utilisateur et des statistiques de journalisation supplémentaires. Par exemple, la page Overview comprend plusieurs nouveaux graphiques détaillés résumant les interactions entre les utilisateurs et votre application, la quantité de trafic pour une période donnée, ainsi que les intentions et les entités qui étaient reconnues le plus souvent dans les conversations utilisateur.
 
 ## 12 mars 2018
 {: #12March2018}
@@ -402,7 +510,7 @@ Les nouvelles fonctions et modifications apportées au service et décrites ci-a
 ## 16 février 2018
 {: #16February2018}
 
-- **Traçage de noeud de dialogue** : lorsque vous utilisez le panneau "Try it out" pour tester un dialogue, une icône d'emplacement s'affiche en regard de chaque réponse. Vous pouvez cliquer sur l'icône dans le but de mettre en évidence le chemin parcouru par le service dans l'arborescence de dialogue pour arriver à la réponse. Pour plus d'informations, voir [Création d'un dialogue](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-test).
+- **Traçage de noeud de dialogue** : lorsque vous utilisez le panneau "Try it out" pour tester un dialogue, une icône d'emplacement s'affiche en regard de chaque réponse. Vous pouvez cliquer sur l'icône dans le but de mettre en évidence le chemin parcouru par l'assistant dans l'arborescence de dialogue pour arriver à la réponse. Pour plus d'informations, reportez-vous à la rubrique [Création d'un dialogue](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-test).
 
 - **Nouvelle version d'API** : la version d'API actuelle est désormais `2018-02-16`. Cette version comprend les modifications suivantes :
 
@@ -438,19 +546,19 @@ Les nouvelles fonctions et modifications apportées au service et décrites ci-a
 
 - **Autoriser l'accès aux données de journal dans les instances (utilisateurs Premium uniquement)** : si vous êtes un utilisateur {{site.data.keyword.conversationshort}} Premium, vos instances premium peuvent éventuellement être configurées pour autoriser l'accès aux données de journal à partir des espaces de travail qu'elles comportent.
 
-- **Copier des noeuds** : vous pouvez désormais dupliquer un noeud afin de réaliser une copie de ce dernier et de ses enfants. Cette fonction est utile si vous créez un noeud avec une logique utile que vous souhaitez réutiliser ailleurs dans votre dialogue. Pour plus d'informations, reportez-vous à la rubrique [Copie d'un noeud de dialogue](dialog-build#copy-node).
+- **Copier des noeuds** : vous pouvez désormais dupliquer un noeud afin de réaliser une copie de ce dernier et de ses enfants. Cette fonction est utile si vous créez un noeud avec une logique utile que vous souhaitez réutiliser ailleurs dans votre dialogue. Pour plus d'informations, reportez-vous à la rubrique [Copie d'un noeud de dialogue](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-copy-node).
 
-- **Capturer des groupes dans des entités de canevas** : vous pouvez identifier des groupes dans le canevas d'expression régulière que vous définissez pour une entité. Identifier des groupes est utile si vous souhaitez pouvoir vous référer ultérieurement à une sous-section du canevas. Par exemple, votre entité peut avoir un canevas d'expression régulière qui capture des numéros de téléphone américains. Si vous identifiez le segment d'indicatif régional du canevas de numéro en tant que groupe, vous pouvez ensuite faire référence à ce groupe pour accéder uniquement au segment d'indicatif régional d'un numéro de téléphone. Pour plus d'informations, reportez-vous à la rubrique[Définition d'entités](/docs/services/assistant?topic=assistant-entities#entities-creating-task).
+- **Capturer des groupes dans des entités de canevas** : vous pouvez identifier des groupes dans le canevas d'expression régulière que vous définissez pour une entité. Identifier des groupes est utile si vous souhaitez pouvoir vous référer ultérieurement à une sous-section du canevas. Par exemple, votre entité peut avoir un canevas d'expression régulière qui capture des numéros de téléphone américains. Si vous identifiez le segment d'indicatif régional du canevas de numéro en tant que groupe, vous pouvez ensuite faire référence à ce groupe pour accéder uniquement au segment d'indicatif régional d'un numéro de téléphone. Pour plus d'informations, reportez-vous à la rubrique [Définition d'entités](/docs/services/assistant?topic=assistant-entities#entities-creating-task).
 
 ## 6 décembre 2017
 {: #6December2017}
 
-- **Intégration {{site.data.keyword.openwhisk}} (Bêta)** : appelez les actions {{site.data.keyword.openwhisk}} (anciennement IBM OpenWhisk) directement à partir d'un noeud de dialogue. Cette fonction vous permet, par exemple, d'appeler une action pour extraire des informations météorologiques à partir d'un noeud de dialogue, puis définir une condition sur les informations renvoyées dans la réponse de dialogue. Actuellement, vous pouvez appeler une action à partir d'une instance {{site.data.keyword.openwhisk_short}} qui est hébergée dans la région Sud des Etats-Unis à partir des instances {{site.data.keyword.conversationshort}} qui sont hébergées dans la région Sud des Etats-Unis. Pour plus d'informations, reportez-vous à la rubrique [Procédure permettant de passer des appels de programmation à partir d'un noeud de dialogue](/doc/services/assistant?topic=assistant-dialog-actions).
+- **Intégration {{site.data.keyword.openwhisk}} (Bêta)** : appelez les actions {{site.data.keyword.openwhisk}} (anciennement IBM OpenWhisk) directement à partir d'un noeud de dialogue. Cette fonction vous permet, par exemple, d'appeler une action pour extraire des informations météorologiques à partir d'un noeud de dialogue, puis définir une condition sur les informations renvoyées dans la réponse de dialogue. Actuellement, vous pouvez appeler une action à partir d'une instance {{site.data.keyword.openwhisk_short}} qui est hébergée dans la région Sud des Etats-Unis à partir des instances {{site.data.keyword.conversationshort}} qui sont hébergées dans la région Sud des Etats-Unis. Pour plus d'informations, reportez-vous à la rubrique [Procédure permettant de passer des appels de programmation à partir d'un noeud de dialogue](/docs/services/assistant?topic=assistant-dialog-actions-client).
 
 ## 5 décembre 2017
 {: #5December2017}
 
-- **Interface utilisateur repensée pour les intentions et les entités** : les onglets `Intents` et `Entities` ont été repensés de manière à fournir un flux de travail plus efficace et plus facile lors de la création et de l'édition d'entités et d'intentions. Pour plus d'informations sur l'utilisation de ces onglets, reportez-vous aux rubriques [Définition d'intentions](intents#creating-intents) et [Définition d'entités](/docs/services/assistant?topic=assistant-entities#entities-creating-task).
+- **Interface utilisateur repensée pour les intentions et les entités** : les onglets `Intents` et `Entities` ont été repensés de manière à fournir un flux de travail plus efficace et plus facile lors de la création et de l'édition d'entités et d'intentions. Pour plus d'informations sur l'utilisation de ces onglets, reportez-vous aux rubriques [Définition d'intentions](/docs/services/assistant?topic=assistant-intents-create-task) et [Définition d'entités](/docs/services/assistant?topic=assistant-entities#entities-creating-task).
 
 ## 30 novembre 2017
 {: #30November2017}
@@ -487,9 +595,9 @@ Les nouvelles fonctions et modifications apportées au service et décrites ci-a
 
     - Vous pouvez ajouter une condition à un attribut afin de rendre ce dernier obligatoire uniquement dans certaines conditions. Par exemple, vous pouvez créer un attribut qui demande le nom d'une épouse uniquement si un attribut (obligatoire) précédent sollicitant des informations sur l'état civil indique que l'utilisateur est marié.
 
-    - Vous pouvez désormais choisir **Skip user input** comme étape suivante pour un noeud. Lorsque vous choisissez cette option, une fois que le noeud en cours est traité, le service passe directement au premier noeud enfant du noeud en cours. Cette option est semblable à l'option de l'étape suivante *Jump to* existante, à ceci près qu'elle offre davantage de souplesse. Vous n'avez pas besoin de spécifier le noeud exact auquel passer directement. Lors de l'exécution, le service passe toujours directement au noeud qui est le premier noeud enfant, quel qu'il soit, même si les noeuds enfant sont réorganisés ou que de nouveaux noeuds sont ajoutés une fois le comportement d'étape suivant défini.
+    - Vous pouvez désormais choisir **Skip user input** comme étape suivante pour un noeud. Lorsque vous choisissez cette option, une fois que le noeud en cours est traité, l'assistant passe directement au premier noeud enfant du noeud en cours. Cette option est semblable à l'option de l'étape suivante *Jump to* existante, à ceci près qu'elle offre davantage de souplesse. Vous n'avez pas besoin de spécifier le noeud exact auquel passer directement. Lors de l'exécution, l'assistant passe toujours directement au noeud qui est le premier noeud enfant, quel qu'il soit, même si les noeuds enfant sont réorganisés ou que de nouveaux noeuds sont ajoutés une fois le comportement d'étape suivant défini.
 
-    - Vous pouvez ajouter des réponses conditionnelles pour des attributs. Pour les réponses Found et Not found, vous pouvez personnaliser la façon dont le service répond selon que certaines conditions sont remplies ou pas. Cette fonction vous permet de rechercher d'éventuelles interprétations erronées et de les corriger avant de sauvegarder la valeur fournie par l'utilisateur dans la variable contextuelle de l'attribut. Par exemple, si l'attribut sauvegarde l'âge de l'utilisateur et utilise `@sys-number` dans la zone *Check for* pour le capturer, vous pouvez ajouter une condition qui recherche les nombres au-dessus de 100 et fournit une réponse semblable à *Please provide a valid age in years.* Pour plus d'informations, reportez-vous à la rubrique [Ajout de conditions aux réponses Found et Not found](/docs/services/assistant?topic=assistant-dialog-slots#dialog-slots-handler-next-steps).
+    - Vous pouvez ajouter des réponses conditionnelles pour des attributs. Pour les réponses Found et Not found, vous pouvez personnaliser la façon dont l'assistant répond selon que certaines conditions sont remplies ou pas. Cette fonction vous permet de rechercher d'éventuelles interprétations erronées et de les corriger avant de sauvegarder la valeur fournie par l'utilisateur dans la variable contextuelle de l'attribut. Par exemple, si l'attribut sauvegarde l'âge de l'utilisateur et utilise `@sys-number` dans la zone *Check for* pour le capturer, vous pouvez ajouter une condition qui recherche les nombres au-dessus de 100 et fournit une réponse semblable à *Please provide a valid age in years.* Pour plus d'informations, reportez-vous à la rubrique [Ajout de conditions aux réponses Found et Not found](/docs/services/assistant?topic=assistant-dialog-slots#dialog-slots-handler-next-steps).
 
     - L'interface que vous utilisez pour ajouter des réponses conditionnelles à un noeud a été repensée afin d'afficher plus facilement chacune des conditions et la réponse associée. Pour ajouter des réponses conditionnelles de niveau noeud, cliquez sur **Customize**, puis activez l'option **Multiple responses**.
 
@@ -542,9 +650,9 @@ Les nouvelles fonctions et modifications apportées au service et décrites ci-a
 
 - **Normalisation des accents** : dans un paramétrage conversationnel, les utilisateurs peuvent ou non utiliser des accents lors de l'interaction avec le service {{site.data.keyword.conversationshort}}. Ainsi, une mise à jour a été apportée à l'algorithme de sorte que les versions accentuées et non accentuées des mots puissent être interprétées de la même manière pour la détection d'intention et la reconnaissance d'entité.
 
-  Toutefois, dans certaines langues, telles que l'espagnol, certains accents peuvent modifier le sens de l'entité. Par conséquent, pour la détection d'entité, même si l'entité d'origine comporte implicitement un accent, le service peut aussi établir une correspondance avec la version non accentuée de la même entité, mais avec une cote de confiance légèrement inférieure.
+  Toutefois, dans certaines langues, telles que l'espagnol, certains accents peuvent modifier le sens de l'entité. Par conséquent, pour la détection d'entité, même si l'entité d'origine comporte implicitement un accent, l'assistant peut aussi établir une correspondance avec la version non accentuée de la même entité, mais avec une cote de confiance légèrement inférieure.
 
-  Par exemple, avec le mot `barrió`, ui est accentué et correspond au participe passé du verbe `barrer` (balayer, en français), le service peut également établir une correspondance avec le mot `barrio` (quartier, en français), mais avec une cote de confiance légèrement inférieure.
+  Par exemple, avec le mot `barrió`, ui est accentué et correspond au participe passé du verbe `barrer` (balayer, en français), l'assistant peut également établir une correspondance avec le mot `barrio` (quartier, en français), mais avec une cote de confiance légèrement inférieure.
 
   Le système fournit la cote de confiance la plus élevée dans les entités pour lesquelles des correspondances exactes sont trouvées. Par exemple, `barrio` ne sera pas détecté si `barrió` figure dans l'ensemble d'entraînement et `barrió` ne sera pas détecté si `barrio` figure dans l'ensemble d'entraînement.
 
@@ -621,7 +729,7 @@ Les nouvelles fonctions et modifications apportées au service et décrites ci-a
 ## 14 juin 2017
 {: #14June2017}
 
-- **Fonction Fuzzy Matching pour d'autres langues (bêta)** : la fonction Fuzzy Matching pour les entités est désormais disponible pour d'autres langues, comme indiqué dans la rubrique [Langues prises en charge](/docs/services/assistant?topic=assistant-language-support). Vous pouvez activer la fonction Fuzzy Matching par entité afin d'améliorer la capacité du service à reconnaître les termes dans les entrées utilisateur dont la syntaxe est similaire à l'entité, mais pas forcément identique. La fonction est capable de mapper une entrée utilisateur à l'entité correspondante en dépit de la présence de fautes d'orthographe ou de légères différences de syntaxe. Par exemple, si vous définissez giraffe comme synonyme d'une entité d'animal et que l'entrée utilisateur contient les termes giraffes ou girafe, la fonction Fuzzy Matching est capable de mapper correctement le terme à l'entité d'animal. Pour plus d'informations, reportez-vous à la section sur la [fonction Fuzzy matching](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching).
+- **Fonction Fuzzy Matching pour d'autres langues (bêta)** : la fonction Fuzzy Matching pour les entités est désormais disponible pour d'autres langues, comme indiqué dans la rubrique [Langues prises en charge](/docs/services/assistant?topic=assistant-language-support). Vous pouvez activer la fonction Fuzzy Matching par entité afin d'améliorer la capacité de l'assistant à reconnaître les termes dans les entrées utilisateur dont la syntaxe est similaire à l'entité, mais pas forcément identique. La fonction est capable de mapper une entrée utilisateur à l'entité correspondante en dépit de la présence de fautes d'orthographe ou de légères différences de syntaxe. Par exemple, si vous définissez giraffe comme synonyme d'une entité d'animal et que l'entrée utilisateur contient les termes giraffes ou girafe, la fonction Fuzzy Matching est capable de mapper correctement le terme à l'entité d'animal. Pour plus d'informations, reportez-vous à la section sur la [fonction Fuzzy matching](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching).
 
 ## 13 juin 2017
 {: #13June2017}
@@ -644,7 +752,8 @@ Les nouvelles fonctions et modifications apportées au service et décrites ci-a
 - **Mises à jour apportées au coréen** : les marqueurs sémantiques coréens ont été mis à jour pour assurer le support du langage familier. IBM continue de s'employer à améliorer la reconnaissance et la classification d'entités.
 - **Prise en charge d'émoticônes** : les émoticônes ajoutées aux exemples d'intention ou en tant que valeurs d'entité seront désormais correctement classifiées/extraites.
 
-  Seules les émoticônes qui sont incluses dans vos données d'apprentissage seront correctement et systématiquement identifiées ; il se peut que des émoticônes similaires ayant des teintes de couleur différentes ou présentant d'autres variations ne soient pas correctement classifiées.{: note}
+  Seules les émoticônes qui sont incluses dans vos données d'apprentissage seront correctement et systématiquement identifiées ; il se peut que des émoticônes similaires ayant des teintes de couleur différentes ou présentant d'autres variations ne soient pas correctement classifiées.
+  {: note}
 
 - **Fonction Stemming pour les entités (bêta - anglais uniquement)** : la fonction bêta Fuzzy Matching reconnaît des entités et établit des correspondances en fonction du format de réduction au radical de la valeur d'entité. Par exemple, cette fonction reconnaît correctement 'bananes' comme étant similaire à 'banane' et 'run' comme étant similaire à 'running' car ils ont le même radical. Pour plus d'informations, reportez-vous à la rubrique sur la [fonction Fuzzy Matching](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching).
 - **Progression de l'importation d'espace de travail** : lorsque vous importez un espace de travail à partir d'un fichier JSON, une vignette représentant l'espace de travail et contenant des informations sur la progression de l'importation s'affiche immédiatement.
@@ -680,7 +789,7 @@ Les nouvelles fonctions et modifications apportées au service et décrites ci-a
     - sys-person : reconnaît des références à des noms de personne (nom de famille et prénom) dans des énoncés utilisateur.
 
     Pour plus d'informations, reportez-vous à la rubrique de référence sur les [entités de système](/docs/services/assistant?topic=assistant-system-entities).
-- La fonction Fuzzy Matching pour les entités est une fonction bêta qui est désormais disponible en anglais. Vous pouvez activer la fonction Fuzzy Matching par entité afin d'améliorer la capacité du service à reconnaître les termes dans les entrées utilisateur dont la syntaxe est similaire à l'entité, mais pas forcément identique. La fonction est capable de mapper une entrée utilisateur à l'entité correspondante en dépit de la présence de fautes d'orthographe ou de légères différences de syntaxe. Par exemple, si vous définissez **giraffe** comme synonyme d'une entité d'animal et que l'entrée utilisateur contient les termes *giraffes* ou *girafe*, la fonction Fuzzy Matching est capable de mapper correctement le terme à l'entité d'animal. Pour plus d'informations, reportez-vous à la section portant sur la fonction `Fuzzy Matching` dans la rubrique [Définition d'entités](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching).
+- La fonction Fuzzy Matching pour les entités est une fonction bêta qui est désormais disponible en anglais. Vous pouvez activer la fonction Fuzzy Matching par entité afin d'améliorer la capacité de l'assistant à reconnaître les termes dans les entrées utilisateur dont la syntaxe est similaire à l'entité, mais pas forcément identique. La fonction est capable de mapper une entrée utilisateur à l'entité correspondante en dépit de la présence de fautes d'orthographe ou de légères différences de syntaxe. Par exemple, si vous définissez **giraffe** comme synonyme d'une entité d'animal et que l'entrée utilisateur contient les termes *giraffes* ou *girafe*, la fonction Fuzzy Matching est capable de mapper correctement le terme à l'entité d'animal. Pour plus d'informations, reportez-vous à la section portant sur la fonction `Fuzzy Matching` dans la rubrique [Définition d'entités](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching).
 
 ## 18 avril 2017
 {: #18April2017}
@@ -693,12 +802,12 @@ Les nouvelles fonctions et modifications apportées au service et décrites ci-a
 
     Pour plus d'informations, reportez-vous à la documentation [Référence d'API ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://{DomainName}/apidocs/assistant){: new_window}.
 - Le comportement de la méthode `POST` /messages a modifié le traitement des entités et des intentions spécifiées dans le cadre de l'entrée du message :
-    - Si vous spécifiez des intentions dans une entrée, le service utilise ces intentions, mais il fait appel au traitement du langage naturel pour détecter des entités dans l'entrée utilisateur.
-    - Si vous spécifiez des entités dans une entrée, le service utilise ces entités, mais il fait appel au traitement du langage naturel pour détecter des intentions dans l'entrée utilisateur.
+    - Si vous spécifiez des intentions dans une entrée, l'assistant utilise ces intentions, mais il fait appel au traitement du langage naturel pour détecter des entités dans l'entrée utilisateur.
+    - Si vous spécifiez des entités dans une entrée, l'assistant utilise ces entités, mais il fait appel au traitement du langage naturel pour détecter des intentions dans l'entrée utilisateur.
 
         Le comportement n'a pas été modifié pour les messages qui spécifient à la fois des intentions et des entités ou pour les messages qui n'en spécifient aucune.
 - L'option permettant de marquer l'entrée utilisateur comme non pertinente (Mark as irrelevant) est désormais disponible pour toutes les langues prises en charge. Il s'agit d'une fonction bêta.
-- Un nouvel onglet, nommé Credentials, constitue un espace dans lequel sont regroupées toutes les informations dont vous avez besoin pour connecter votre application à un espace de travail (par exemple, les données d'identification du service et l'ID de l'espace de travail), ainsi que d'autres options de déploiement. Pour accéder à l'onglet Credentials pour votre espace de travail, cliquez sur l'icône ![Menu](images/Menu_16.png) et sélectionnez **Credentials**.
+- Un nouvel onglet, nommé Credentials, constitue un espace dans lequel sont regroupées toutes les informations dont vous avez besoin pour connecter votre application à un espace de travail (par exemple, les données d'identification {{site.data.keyword.conversationshort}} et l'ID de l'espace de travail), ainsi que d'autres options de déploiement. Pour accéder à l'onglet Credentials pour votre espace de travail, cliquez sur l'icône ![Menu](images/Menu_16.png) et sélectionnez **Credentials**.
 
 ## 9 mars 2017
 {: #9March2017}
@@ -770,7 +879,7 @@ Plusieurs modifications ont été apportées à l'éditeur de dialogue afin de l
 {: #21October2016}
 
 - Le service {{site.data.keyword.conversationshort}} fournit désormais des entités de système ; il s'agit d'entités communes que vous pouvez utiliser pour n'importe quel scénario d'utilisation. Pour plus d'informations, reportez-vous à la section `Activation des entités de système` dans la rubrique [Définition d'entités](/docs/services/assistant?topic=assistant-entities).
-- Vous pouvez désormais afficher un historique des conversations avec les utilisateurs sur la page Improve. Cela doit vous permettre de comprendre le comportement de votre bot. Pour plus d'informations, reportez-vous à la rubrique [Amélioration de votre compétence](/docs/services/assistant?topic=assistant-logs-intro).
+- Vous pouvez désormais afficher un historique des conversations avec les utilisateurs sur la page Improve. Cela doit vous permettre de comprendre le comportement de votre bot. Pour plus d'informations, reportez-vous à la rubrique [Amélioration de votre compétence](/docs/services/assistant?topic=assistant-logs).
 - Vous pouvez désormais importer des entités à partir d'un fichier CSV, ce qui peut être utile si vous avez beaucoup d'entités. Pour plus d'informations, reportez-vous à la section `Importation d'entités` dans la rubrique [Définition d'entités](/docs/services/assistant?topic=assistant-entities).
 
 ## 20 septembre 2016
@@ -787,7 +896,7 @@ Pour bénéficier des modifications spécifiques d'une nouvelle version, remplac
 
 - Vous pouvez déplacer des noeuds de dialogue d'une branche vers une autre, en tant que noeuds de même niveau ou noeuds homologues. Pour plus d'informations, reportez-vous à la rubrique [Déplacement d'un noeud de dialogue](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-move-node).
 - Vous pouvez développer la fenêtre d'édition JSON.
-- Vous pouvez visualiser les journaux de discussion relatifs aux conversations de votre bot afin de mieux comprendre son comportement. Vous pouvez filtrer l'affichage par intentions, entités, date et heure. Pour plus d'informations, reportez-vous à la rubrique [Amélioration de votre compétence](/docs/services/assistant?topic=assistant-logs-intro)
+- Vous pouvez visualiser les journaux de discussion relatifs aux conversations de votre bot afin de mieux comprendre son comportement. Vous pouvez filtrer l'affichage par intentions, entités, date et heure. Pour plus d'informations, reportez-vous à la rubrique [Amélioration de votre compétence](/docs/services/assistant?topic=assistant-logs)
 
 ## 11 juillet 2016
 {: #21July2016}

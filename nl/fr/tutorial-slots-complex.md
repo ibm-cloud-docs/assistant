@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-08-12"
 
 subcollection: assistant
 
@@ -72,7 +72,7 @@ Lorsque les valeurs d'entité de système de date et d'heure sont sauvegardées,
 
 1.  Pour modifier le format dans lequel la valeur d'heure est stockée dans la variable contextuelle $time de manière à utiliser l'heure, les minutes et indiquer AM ou PM, cliquez sur l'icône d'**édition de réponse** ![Edition de réponse](images/edit-slot.png) pour l'attribut @sys-time.
 
-1.  Dans le menu **Autres options** ![icône Autres options](images/kabob.png), sélectionnez **Open JSON editor**, puis éditez l'objet JSON qui définit la variable contextuelle comme suit : 
+1.  Dans le menu **Autres options** ![icône Autres options](images/kabob.png), sélectionnez **Open JSON editor**, puis éditez l'objet JSON qui définit la variable contextuelle comme suit :
 
     ```json
     {
@@ -95,7 +95,7 @@ Lorsque les valeurs d'entité de système de date et d'heure sont sauvegardées,
     </tr>
     <tr>
       <td>Vous</td>
-      <td>je veux faire une réservation </td>
+      <td>je veux faire une réservation</td>
     </tr>
     <tr>
       <td>Watson</td>
@@ -107,7 +107,7 @@ Lorsque les valeurs d'entité de système de date et d'heure sont sauvegardées,
     </tr>
     <tr>
       <td>Watson</td>
-      <td>Pour quelle heure voulez-vous que la réservation soit faite ? </td>
+      <td>Pour quelle heure voulez-vous que la réservation soit faite ?</td>
     </tr>
     <tr>
       <td>Vous</td>
@@ -115,7 +115,7 @@ Lorsque les valeurs d'entité de système de date et d'heure sont sauvegardées,
     </tr>
     <tr>
       <td>Watson</td>
-      <td>Combien serez-vous pour dîner ? </td>
+      <td>Combien serez-vous pour dîner ?</td>
     </tr>
     <tr>
       <td>Vous</td>
@@ -161,10 +161,10 @@ Dans cette étape, vous allez apprendre à demander toutes les informations en m
 Si l'utilisateur fournit l'une quelconque des valeurs d'attribut dans son entrée initiale, l'invite demandant toutes les informations ne s'affiche pas. Par exemple, l'entrée initiale de l'utilisateur peut être `Je veux faire une réservation pour ce vendredi soir.` Dans ce cas, l'invite initiale est ignorée car vous ne souhaitez pas demander des informations que l'utilisateur a déjà fournies, en l'occurrence, la date (`Vendredi`). A la place, le dialogue affiche l'invite pour l'attribut suivant non renseigné.
 {: note}
 
-## Etape 3 : Traitement approprié des zéros 
+## Etape 3 : Traitement approprié des zéros
 {: #tutorial-slots-complex-recognize-zero}
 
-Lorsque vous utilisez l'entité système `sys-number` dans une condition d'attribut, les zéros ne sont pas correctement traités. Au lieu de définir la variable contextuelle que vous définissez pour l'attribut sur 0, le service définit la variable contextuelle sur false. En conséquence, l’attribut ne pense pas qu’il est complété et invite l’utilisateur à entrer un nombre jusqu’à ce qu'il spécifie un nombre autre que zéro. 
+Lorsque vous utilisez l'entité système `sys-number` dans une condition d'attribut, les zéros ne sont pas correctement traités. Au lieu de définir la variable contextuelle que vous définissez pour l'attribut sur 0, l'assistant définit la variable contextuelle sur false. En conséquence, l’attribut ne pense pas qu’il est complété et invite l’utilisateur à entrer un nombre jusqu’à ce qu'il spécifie un nombre autre que zéro.
 
 1.  Testez le noeud afin de mieux comprendre le problème. Ouvrez le panneau "Try it out" et cliquez sur **Clear** pour supprimer les valeurs de variable contextuelle que vous aviez spécifiées lors du précédent test du noeud avec attributs. Utilisez le script suivant :
 
@@ -176,7 +176,7 @@ Lorsque vous utilisez l'entité système `sys-number` dans une condition d'attri
     </tr>
     <tr>
       <td>Vous</td>
-      <td>je veux faire une réservation </td>
+      <td>je veux faire une réservation</td>
     </tr>
     <tr>
       <td>Watson</td>
@@ -184,11 +184,11 @@ Lorsque vous utilisez l'entité système `sys-number` dans une condition d'attri
     </tr>
     <tr>
       <td>Vous</td>
-      <td>Nous voulons dîner le 23 mai à 20h. Il y aura 0 convive. </td>
+      <td>Nous voulons dîner le 23 mai à 20h. Il y aura 0 convive.</td>
     </tr>
     <tr>
       <td>Watson</td>
-      <td>Combien serez-vous pour dîner ? </td>
+      <td>Combien serez-vous pour dîner ?</td>
     </tr>
     <tr>
       <td>Vous</td>
@@ -196,28 +196,41 @@ Lorsque vous utilisez l'entité système `sys-number` dans une condition d'attri
     </tr>
     <tr>
       <td>Watson</td>
-      <td>Combien serez-vous pour dîner ? </td>
+      <td>Combien serez-vous pour dîner ?</td>
     </tr>
     </table>
 
-    Vous serez bloqué dans cette boucle jusqu'à ce que vous spécifiiez un nombre autre que 0. 
+    Vous serez bloqué dans cette boucle jusqu'à ce que vous spécifiiez un nombre autre que 0.
 
-1.  Pour vous assurer que l'attribut traite correctement les zéros, remplacez la condition d'attribut `@sys-number` par `@sys-number || @sys-number:0`.
+1.  Pour vous assurer que l'attribut traite correctement les zéros, remplacez la condition d'attribut `@sys-number` par `@sys-number >= 0`.
 
-1.  Cliquez sur l'icône d'**édition de réponse** ![Edition de réponse](images/edit-slot.png) pour l'attribut.
+1.  Ouvrez l'attribut pour l'éditer en cliquant sur l'icône d'**édition d'attribut** ![Edition d'attribut](images/edit-slot.png). Dans le menu **Autres options** ![icône Autres options](images/kabob.png), ouvrez l'éditeur JSON.
 
-1.  Lorsque la variable contextuelle est créée, elle utilise automatiquement la même expression que celle spécifiée pour la condition d'attribut. Cependant, la variable contextuelle doit enregistrer un nombre uniquement. Editez la valeur qui a été enregistrée en tant que variable contextuelle pour en retirer l'opérateur `OR`. Dans le menu **Autres options** ![icône Autres options](images/kabob.png), sélectionnez **Open JSON editor**, puis éditez l'objet JSON qui définit la variable contextuelle. Remplacez la variable `"guests":"@sys-number || @sys-number:0"` pour utiliser la syntaxe suivante :
+1.  Modifiez la valeur de la variable contextuelle.
+
+    La valeur sera similaire à ceci :
 
     ```json
     {
       "context": {
-        "guests": "@sys-number"
+        "number": "@sys-number >= 0"
       }
     }
     ```
     {: codeblock}
 
-1.  Cliquez sur **Save**.
+    Modifiez-la pour qu'elle ressemble à ceci :
+
+    ```json
+    {
+      "context": {
+        "number":"@sys-number"
+      }
+    }
+    ```
+    {: codeblock}
+
+1.  Sauvegardez vos modifications. 
 
 1.  Testez à nouveau le noeud. Ouvrez le panneau "Try it out" et cliquez sur **Clear** pour supprimer les valeurs de variable contextuelle que vous aviez spécifiées lors du précédent test du noeud avec attributs. Pour voir l'impact de vos modifications, utilisez le script suivant :
 
@@ -229,7 +242,7 @@ Lorsque vous utilisez l'entité système `sys-number` dans une condition d'attri
     </tr>
     <tr>
       <td>Vous</td>
-      <td>je veux faire une réservation </td>
+      <td>je veux faire une réservation</td>
     </tr>
     <tr>
       <td>Watson</td>
@@ -237,13 +250,13 @@ Lorsque vous utilisez l'entité système `sys-number` dans une condition d'attri
     </tr>
     <tr>
       <td>Vous</td>
-      <td>Nous voulons dîner le 23 mai à 20h. Il y aura 0 convive. </td>
+      <td>Nous voulons dîner le 23 mai à 20h. Il y aura 0 convive.</td>
     </tr>
     </table>
 
     Cette fois-ci, Watson répond : `Entendu. Je réserve pour 0 Mercredi 23 mai à 20h:00.`
 
-Vous avez correctement formaté l'attribut numérique pour qu'il traite correctement les zéros. Bien sûr, vous pouvez aussi refuser que le noeud accepte un zéro en tant que nombre valide de convives. Vous apprendrez à valider les valeurs spécifiées par les utilisateurs à l’étape suivante. 
+Vous avez correctement formaté l'attribut numérique pour qu'il traite correctement les zéros. Bien sûr, vous pouvez aussi refuser que le noeud accepte un zéro en tant que nombre valide de convives. Vous apprendrez à valider les valeurs spécifiées par les utilisateurs à l’étape suivante.
 
 ## Etape 4 : Validation des entrées utilisateur
 {: #tutorial-slots-complex-slot-conditions}
@@ -253,7 +266,7 @@ Jusqu'ici, nous sommes partis du principe que l'utilisateur fournira les types d
 - Vérifier que la date demandée n'est pas dépassée.
 - Vérifier si une heure de réservation demandée se situe dans la période de service.
 - Confirmer l'entrée utilisateur.
-- Assurez-vous que le nombre de convives indiqué est supérieur à zéro. 
+- Assurez-vous que le nombre de convives indiqué est supérieur à zéro.
 - Indiquer que vous remplacez une valeur par une autre.
 
 Pour valider l'entrée utilisateur, procédez comme suit :
@@ -275,7 +288,7 @@ Pour valider l'entrée utilisateur, procédez comme suit :
     </tr>
     <tr>
       <td>`@sys-date.before(now())`</td>
-      <td>Vous ne pouvez pas faire de réservation pour une journée passée. </td>
+      <td>Vous ne pouvez pas faire de réservation pour une journée passée.</td>
       <td>Clear slot and prompt again</td>
     </tr>
     </table>
@@ -291,7 +304,7 @@ Pour valider l'entrée utilisateur, procédez comme suit :
     </tr>
     <tr>
       <td>`true`</td>
-      <td>$date</td>
+      <td>$date it is</td>
       <td>Move on</td>
     </tr>
     </table>
@@ -313,12 +326,12 @@ Pour valider l'entrée utilisateur, procédez comme suit :
     </tr>
     <tr>
       <td>`@sys-time.after('21:00:00')`</td>
-      <td>Notre dernier service est à 21h. </td>
+      <td>Notre dernier service est à 21h.</td>
       <td>Clear slot and prompt again</td>
     </tr>
     <tr>
       <td>`@sys-time.before('09:00:00')`</td>
-      <td>Notre premier service est à 9 heures. </td>
+      <td>Notre premier service est à 9 heures.</td>
       <td>Clear slot and prompt again</td>
     </tr>
     </table>
@@ -342,9 +355,9 @@ Pour valider l'entrée utilisateur, procédez comme suit :
 1.  Editez l'attribut @sys-number pour valider la valeur fournie par l'utilisateur de la manière suivante :
 
     - Vérifiez que le nombre de convives spécifié est supérieur à zéro.
-    - Anticipez et traitez le cas où l'utilisateur change le nombre de convives. 
+    - Anticipez et traitez le cas où l'utilisateur change le nombre de convives.
 
-      Si, à tout moment durant le traitement du noeud avec attributs, l'utilisateur change une valeur d'attribut, la valeur de variable contextuelle d'attribut correspondante est mise à jour. Cela dit, il peut être utile d'informer l'utilisateur que la valeur est remplacée, non seulement pour lui fournir des commentaires en retour précis, mais également pour lui permettre de corriger éventuellement la modification. 
+      Si, à tout moment durant le traitement du noeud avec attributs, l'utilisateur change une valeur d'attribut, la valeur de variable contextuelle d'attribut correspondante est mise à jour. Cela dit, il peut être utile d'informer l'utilisateur que la valeur est remplacée, non seulement pour lui fournir des commentaires en retour précis, mais également pour lui permettre de corriger éventuellement la modification.
 
 1.  A partir de la vue d'édition du noeud avec attributs, cliquez sur l'icône d'**édition d'attribut** ![Edition d'attribut](images/edit-slot.png) pour l'attribut `@sys-number`.
 
@@ -360,13 +373,13 @@ Pour valider l'entrée utilisateur, procédez comme suit :
       <th>Action</th>
     </tr>
     <tr>
-      <td>`entities['sys-number']?.value == 0`</td>
+      <td>`@sys-number == 0`</td>
       <td>Veuillez indiquez un nombre supérieur à 0.</td>
       <td>Clear slot and prompt again</td>
     </tr>
     <tr>
       <td>`(event.previous_value != null) && (event.previous_value != event.current_value)`</td>
-      <td>Entendu, mise à jour du nombre de convives `<? event.previous_value ?>` à `<? event.current_value ?>`.</td>
+      <td>Entendu, mise à jour du nombre de convives `<? event.previous_value ?>` sur `<? event.current_value ?>`.  </td>
       <td>Move on</td>
     </tr>
     <tr>
@@ -471,7 +484,7 @@ Vous souhaiterez peut-être repenser votre dialogue afin d'appeler un système d
     </tr>
     <tr>
       <td>`true`</td>
-      <td>Répondez par Oui pour indiquer que vous souhaitez que la réservation soit faite telle quelle ou par Non pour indiquer que vous ne le souhaitez pas. </td>
+      <td>Répondez par Oui pour indiquer que vous souhaitez que la réservation soit faite telle quelle ou par Non pour indiquer que vous ne le souhaitez pas.</td>
     </tr>
     </table>
 
@@ -490,7 +503,7 @@ Vous souhaiterez peut-être repenser votre dialogue afin d'appeler un système d
     </tr>
     <tr>
       <td>`!($time && $guests)`</td>
-      <td>$date</td>
+      <td>$date it is</td>
       <td>Move on</td>
     </tr>
     </table>
@@ -609,7 +622,7 @@ Ajouter un noeud avec attributs est une action puissante car elle permet aux uti
     <tr>
       <td>`#quitter`</td>
       <td>Entendu, nous nous arrêterons là. Aucune réservation ne sera effectuée.</td>
-      <td>Skip to response </td>
+      <td>Skip to response</td>
     </tr>
     </table>
 
@@ -635,7 +648,7 @@ Ajouter un noeud avec attributs est une action puissante car elle permet aux uti
     </tr>
     <tr>
       <td>`has_skipped_slots`</td>
-      <td>J'ai hâte de vous aider lors de votre prochaine réservation. Bonne journée. </td>
+      <td>J'ai hâte de vous aider lors de votre prochaine réservation. Bonne journée.</td>
     </tr>
     </table>
 
@@ -644,7 +657,7 @@ Ajouter un noeud avec attributs est une action puissante car elle permet aux uti
     Si vous configurez plusieurs attributs dans le but d'ignorer d'autres attributs ou si vous configurez un autre gestionnaire d'événements de niveau noeud dans le but d'ignorer des attributs, vous devez utiliser une autre approche pour vérifier si l'intention #quitter a été déclenchée. Pour connaître cette autre méthode, reportez-vous à la rubrique [Traitement des demandes de sortie d'un processus](/docs/services/assistant?topic=assistant-dialog-slots#dialog-slots-node-level-handler).
     {: note}
 
-1.  Vous souhaitez que le service recherche la propriété `has_skipped_slots` avant d'afficher la réponse de niveau noeud standard. Déplacez la réponse conditionnelle `has_skipped_slots` vers le haut de sorte qu'elle soit traitée avant la réponse conditionnelle d'origine, sinon elle ne sera jamais déclenchée. Pour ce faire, cliquez sur la réponse que vous venez d'ajouter, utilisez la **flèche vers le haut** pour la déplacer vers le haut, puis cliquez sur **Save**.
+1.  Vous souhaitez que l'assistant recherche la propriété `has_skipped_slots` avant d'afficher la réponse de niveau noeud standard. Déplacez la réponse conditionnelle `has_skipped_slots` vers le haut de sorte qu'elle soit traitée avant la réponse conditionnelle d'origine, sinon elle ne sera jamais déclenchée. Pour ce faire, cliquez sur la réponse que vous venez d'ajouter, utilisez la **flèche vers le haut** pour la déplacer vers le haut, puis cliquez sur **Save**.
 
 1.  Testez cette modification en utilisant le script suivant dans le panneau "Try it out" :
 
@@ -656,7 +669,7 @@ Ajouter un noeud avec attributs est une action puissante car elle permet aux uti
     </tr>
     <tr>
       <td>Vous</td>
-      <td>je veux faire une réservation </td>
+      <td>je veux faire une réservation</td>
     </tr>
     <tr>
       <td>Watson</td>
@@ -664,11 +677,11 @@ Ajouter un noeud avec attributs est une action puissante car elle permet aux uti
     </tr>
     <tr>
       <td>Vous</td>
-      <td>c'est pour 5 personnes </td>
+      <td>c'est pour 5 personnes</td>
     </tr>
     <tr>
       <td>Watson</td>
-      <td>Entendu. La réservation est pour 5 personnes. Quel jour voudriez-vous venir ?</td>
+      <td>Entendu. La réservation est pour 5 personnes.  Quel jour voudriez-vous venir ?</td>
     </tr>
     <tr>
       <td>Vous</td>
@@ -676,7 +689,7 @@ Ajouter un noeud avec attributs est une action puissante car elle permet aux uti
     </tr>
     <tr>
       <td>Watson</td>
-      <td>Entendu, nous nous arrêterons là. Aucune réservation ne sera effectuée. J'ai hâte de vous aider lors de votre prochaine réservation. Bonne journée. </td>
+      <td>Entendu, nous nous arrêterons là. Aucune réservation ne sera effectuée.  J'ai hâte de vous aider lors de votre prochaine réservation. Bonne journée.</td>
     </tr>
     </table>
 
@@ -720,7 +733,7 @@ Pour les informations $time, vous allez définir une instruction de suivi qui s'
     </tr>
     <tr>
       <td>`true`</td>
-      <td>Veuillez indiquer l'heure à laquelle vous souhaitez venir. Le restaurant peut vous accueillir de 9h00 à 21h00. </td>
+      <td>Veuillez indiquer l'heure à laquelle vous souhaitez venir. Le restaurant peut vous accueillir de 9h00 à 21h00.</td>
     </tr>
     </table>
 
@@ -792,21 +805,21 @@ Pour les informations $time, vous allez définir une instruction de suivi qui s'
 
 | Locuteur | Enoncé |
 |---------|-----------|
-| Vous     |je veux faire une réservation |
-| Watson  |Je peux prendre votre réservation. Il vous suffit de me dire le jour et l'heure de la réservation, et pour combien de personnes.|
+| Vous     | je veux faire une réservation |
+| Watson  | Je peux prendre votre réservation. Il vous suffit de me dire le jour et l'heure de la réservation, et pour combien de personnes. |
 | Vous     | demain |
-| Watson  | Vendredi, Décembre 29. Pour quelle heure voulez-vous que la réservation soit faite ? |
+| Watson  | Vendredi, Décembre 29.  Pour quelle heure voulez-vous que la réservation soit faite ? |
 | Vous     | orange |
-| Watson  |Veuillez indiquer l'heure à laquelle vous souhaitez venir. Le restaurant peut vous accueillir de 9h00 à 21h00. |
+| Watson  | Veuillez indiquer l'heure à laquelle vous souhaitez venir. Le restaurant peut vous accueillir de 9h00 à 21h00. |
 | Vous     | rose |
-| Watson  |Veuillez indiquer l'heure à laquelle vous souhaitez venir. Le restaurant peut vous accueillir de 9h00 à 21h00. |
+| Watson  | Veuillez indiquer l'heure à laquelle vous souhaitez venir. Le restaurant peut vous accueillir de 9h00 à 21h00. |
 | Vous     | violet |
-| Watson  |Vous semblez avoir du mal à choisir une heure. Je vais prendre la réservation à 20h00 pour vous. Combien serez-vous pour dîner ? |
+| Watson  | Vous semblez avoir du mal à choisir une heure. Je vais prendre la réservation à 20h00 pour vous.  Combien serez-vous pour dîner ? |
 
 ## Etape 9 : Connexion à un service externe
 {: #tutorial-slots-complex-action}
 
-A présent que votre dialogue peut collecter et confirmer les détails de la réservation d'un utilisateur, vous pouvez appeler un service externe pour réserver réellement une table dans le système du restaurant ou via un service de réservations en ligne pour plusieurs restaurations. Pour plus d'informations, reportez-vous à la rubrique [Procédure permettant de passer des appels de programmation à partir d'un noeud de dialogue](/docs/services/assistant?topic=assistant-dialog-actions).
+A présent que votre dialogue peut collecter et confirmer les détails de la réservation d'un utilisateur, vous pouvez appeler un service externe pour réserver réellement une table dans le système du restaurant ou via un service de réservations en ligne pour plusieurs restaurations. Pour plus d'informations, reportez-vous à la rubrique [Procédure permettant de passer des appels de programmation à partir d'un noeud de dialogue](/docs/services/assistant?topic=assistant-dialog-webhooks).
 
 Dans la logique qui appelle le service de réservation, prenez soin de rechercher la zone `has_skipped_slots` et si elle existe, ne poursuivez pas la réservation.
 
@@ -818,4 +831,4 @@ Dans ce tutoriel, vous avez testé un noeud avec attributs et apporté des modif
 ## Etapes suivantes
 {: #tutorial-slots-complex-deploy}
 
-Déployez votre compétence de dialogue en la connectant d’abord à un assistant, puis en déployant l’assistant. Cette opération peut s'effectuer de plusieurs manières. Pour plus d'informations, reportez-vous à la rubrique [Ajout d'intégrations](/docs/services/assistant?topic=assistant-deploy-integration-add). 
+Déployez votre compétence de dialogue en la connectant d’abord à un assistant, puis en déployant l’assistant. Cette opération peut s'effectuer de plusieurs manières. Pour plus d'informations, reportez-vous à la rubrique [Ajout d'intégrations](/docs/services/assistant?topic=assistant-deploy-integration-add).

@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-08-06"
+
+keywords: system entity, sys-number, sys-date, sys-time
 
 subcollection: assistant
 
@@ -25,10 +27,14 @@ subcollection: assistant
 # 系統實體詳細資料
 {: #system-entities}
 
-此參照小節提供有關可用系統實體的完整資訊。如需系統實體及其使用方式的相關資訊，請參閱[定義實體](/docs/services/assistant?topic=assistant-entities#entities-enable-system-entities)，並搜尋「啟用系統實體」。
+瞭解 IBM 所提供以供您立即可用的系統實體。這些內建公用程式實體可協助助理辨識交談中客戶常用的詞彙和參照，例如數字和日期。
 {: shortdesc}
 
 系統實體適用於[支援的語言](/docs/services/assistant?topic=assistant-language-support)主題中指出的語言。
+
+如果對話技能為英文或德文，則您可以試用已更新的系統實體。如需詳細資料，請參閱[新的系統實體](/docs/services/assistant?topic=assistant-beta-system-entities)。
+
+如需如何使用它們的相關資訊，請參閱[建立實體](/docs/services/assistant?topic=assistant-entities#entities-enable-system-entities)。
 
 ## @sys-currency 實體
 {: #system-entities-sys-currency}
@@ -81,7 +87,10 @@ subcollection: assistant
 
 - 貨幣值也會辨識為 @sys-number 實體實例。如果您要使用不同的條件同時檢查貨幣值及數字，請在檢查數字的條件上面放置用於檢查貨幣的條件。
 
-- 如果您使用 @sys-currency 實體作為節點條件，而且使用者將 `$0` 指定為值，則會將值適當地辨識為貨幣，但會將條件評估為數字零，而非貨幣零。因此，它不會傳回預期的回應。若要以能夠正確處理零的方式來檢查貨幣值，請改為在節點條件中使用完整 SpEL 表示式語法 `entities['sys-currency']?.value`。
+  如果您使用已修訂的系統實體，則不需要此暫行解決方法。如需詳細資料，請參閱[新的系統實體](/docs/services/assistant?topic=assistant-beta-system-entities)。
+  {: note}
+
+- 如果您使用 @sys-currency 實體作為節點條件，而且使用者將 `$0` 指定為值，則會將值適當地辨識為貨幣，但會將條件評估為數字零，而非貨幣零。因此，條件中的 `null` 會評估為 false，並且不會處理節點。若要以正確處理零的方式來檢查貨幣值，請改為在節點條件中使用表示式 `@sys-currency >=0`。
 
 ## @sys-date 及 @sys-time 實體
 {: #system-entities-sys-date-time}
@@ -97,7 +106,7 @@ subcollection: assistant
 
 會將日期和時間的提及（例如 `now` 或 `two hours from now`）擷取為兩個不同的實體提及：一個是 `@sys-date`，另一個是 `@sys-time`。這兩個提及不會彼此鏈結，但是它們會共用跨整個日期時間提及的相同文字字串。
 
-也會將多單字日期時間提及（例如 `on Monday at 4pm`）擷取為兩個 @sys-date 及 @sys-time 提及。連續提及時，它們也會共用跨整個日期時間提及的單一文字字串。
+也會將多字組日期時間提及（例如 `on Monday at 4pm`）擷取為兩個 @sys-date 及 @sys-time 提及。連續提及時，它們也會共用跨整個日期時間提及的單一文字字串。
 
 ### 日期和時間範圍
 {: #system-entities-date-time-ranges}
@@ -167,7 +176,7 @@ REST API 用戶端可以選擇性地將本端時區新增為環境定義變數 `
 
 - @sys-time 一律會以下列格式傳回時間：HH:mm:ss。
 
-如需處理日期及時間值的相關資訊，請參閱[日期和時間](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-date-time)方法參照。
+如需處理日期和時間值的相關資訊，請參閱[日期和時間方法參照](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-date-time)。
 {: tip}
 
 ## @sys-location 實體
@@ -182,13 +191,13 @@ REST API 用戶端可以選擇性地將本端時區新增為環境定義變數 `
 - U.S.A.
 - New South Wales
 
-如需處理字串值的相關資訊，請參閱[字串](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings)方法參照。
+如需處理字串值的相關資訊，請參閱[字串方法參照](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings)。
 {: tip}
 
 ## @sys-number 實體
 {: #system-entities-sys-number}
 
-@sys-number 系統實體會偵測使用數字或單字所撰寫的數字。在任一情況下，都會傳回數值。
+@sys-number 系統實體會偵測使用數字或字組所撰寫的數字。在任一情況下，都會傳回數值。
 
 ### 可辨識的格式
 {: #system-entities-sys-number-formats}
@@ -228,7 +237,7 @@ REST API 用戶端可以選擇性地將本端時區新增為環境定義變數 `
 ### @system-number 用法提示
 {: #system-entities-sys-number-usage-tips}
 
-- 如果您使用 @sys-number 實體作為節點條件，而且使用者將零指定為值，則會將 0 值適當地辨識為數字，但會將條件評估為 false，而且無法適當地傳回關聯的回應。若要以能夠正確處理零的方式來檢查數字，請改為在節點條件中使用完整 SpEL 表示式語法 `entities['sys-number']?.value`。
+- 如果您使用 @sys-number 實體作為節點條件，而且使用者將零指定為值，則會將 0 值適當地辨識為數字。不過，會將 0 解譯為條件的 `null` 值，這會導致不處理節點。若要以正確處理零的方式來檢查數字，請改為在節點條件中使用表示式 `@sys-number >= 0`。
 
 - 如果您使用 @sys-number 來比較條件中的數值，請務必另外檢查數字本身是否存在。如果找不到數字，則會將 @sys-number 評估為空值，這樣可能會將您的比較評估為 true，即使數字不存在。
 
@@ -236,13 +245,13 @@ REST API 用戶端可以選擇性地將本端時區新增為環境定義變數 `
 
   請改用 `@sys-number AND @sys-number<4`。如果找不到數字，則會將第一個條件評估為 false，這樣會適當地將整個條件評估為 false。
 
-如需處理數值的相關資訊，請參閱[數字](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-numbers)方法參照。
+如需處理數值的相關資訊，請參閱[數字方法參照](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-numbers)。
 {: tip}
 
 ## @sys-percentage 實體
 {: #system-entities-sys-percentage}
 
-@sys-percentage 系統實體會偵測到以具有百分比符號的詞語所表示或使用 `percent` 這個單字所撰寫的百分比。在任一情況下，都會傳回數值。
+@sys-percentage 系統實體會偵測到以具有百分比符號的詞語所表示或使用 `percent` 這個字組所撰寫的百分比。在任一情況下，都會傳回數值。
 
 ### 可辨識的格式
 {: #system-entities-sys-percentage-formats}
@@ -283,7 +292,10 @@ REST API 用戶端可以選擇性地將本端時區新增為環境定義變數 `
 
 - 百分比值也會辨識為 @sys-number 實體實例。如果您要使用不同的條件同時檢查百分比值及數字，請在檢查數字的條件上面放置用於檢查百分比的條件。
 
-- 如果您使用 @sys-percentage 實體作為節點條件，而且使用者將 `0%` 指定為值，則會將值適當地辨識為百分比，但會將條件評估為數字零，而非百分比 0%。因此，它不會傳回預期的回應。若要以能夠正確處理零百分比的方式來檢查百分比，請改為在節點條件中使用完整 SpEL 表示式語法 `entities['sys-percentage']?.value`。
+  如果您使用已修訂的系統實體，則不需要此暫行解決方法。如需詳細資料，請參閱[新的系統實體](/docs/services/assistant?topic=assistant-beta-system-entities)。
+  {: note}
+
+- 如果您使用 @sys-percentage 實體作為節點條件，而且使用者將 `0%` 指定為值，則會將值適當地辨識為百分比，但會將條件評估為數字零，而非百分比 0%。因此，條件中的 `null` 會評估為 false，而且不會處理節點。若要以正確處理零百分比的方式來檢查百分比，請改為在節點條件中使用表示式 `@sys-percentage >= 0`。
 
 - 如果您輸入 `1-2%` 這類值，則會將值 `1%` 及 `2%` 傳回為系統實體。索引會是 1% 與 2% 之間的完整範圍，而且兩個實體都會有相同的索引。
 
@@ -299,5 +311,5 @@ REST API 用戶端可以選擇性地將本端時區新增為環境定義變數 `
 - Jane Doe
 - Vijay
 
-如需處理字串值的相關資訊，請參閱[字串](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings)方法參照。
+如需處理字串值的相關資訊，請參閱[字串方法參照](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings)。
 {: tip}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-07-19"
 
 subcollection: assistant
 
@@ -22,17 +22,15 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Intercom과 통합![플러스 또는 프리미엄 플랜만 해당](images/premium.png)
+# Intercom과 통합![Plus 또는 Premium 플랜만 해당](images/plus.png)
 {: #deploy-intercom}
 
 Intercom은 고객의 라이프사이클 전반에 걸쳐 보다 나은 관계를 통해 비즈니스 성장을 촉진하는 고객 메시징 플랫폼입니다.
 {: shortdesc}
 
-Intercom은 고객 지원 팀에 새로운 에이전트를 추가하기 위해 IBM과 파트너 관계를 맺고 있습니다.
-어시스턴트와 Intercom 애플리케이션을 통합하여 앱이 어시스턴트와 휴먼 에이전트 간의 사용자 대화를 원활하게 전달하도록 할 수 있습니다.
-통합에 대한 자세한 내용은 [Watson 블로그 게시글![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://medium.com/@blakemcgregor/contact-center-post-394dff427c8)을 참조하십시오.
+Intercom은 고객 지원 팀에 새로운 에이전트를 추가하기 위해 IBM과 파트너 관계를 맺고 있습니다. 어시스턴트와 Intercom 애플리케이션을 통합하여 앱이 어시스턴트와 휴먼 에이전트 간의 사용자 대화를 원활하게 전달하도록 할 수 있습니다. 통합에 대한 자세한 내용은 [Watson 블로그 게시글![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://medium.com/@blakemcgregor/contact-center-post-394dff427c8)을 참조하십시오.
 
-이 통합은 플러스 또는 프리미엄 플랜 사용자만 사용할 수 있습니다.
+이 통합은 Plus 또는 Premium 플랜 사용자만 사용할 수 있습니다. 시험 사용해 보고 싶으면, 무료 Plus Trial 플랜에 등록할 수 있습니다. [Plus Trial 가져오기](https://cloud.ibm.com/registration?target=%2Fdeveloper%2Fwatson%2Flaunch-tool%2Fconversation%3Fplan%3Dplus-trial&cm_mmc=OSocial_Voicestorm-_-Watson+AI_Watson+Core+-+Conversation-_-WW_WW-_-Intercom+Trial+Registration+Link&cm_mmca1=000027BD&cm_mmca2=10004432).
 {: note}
 
 Intercom과 어시스턴트를 통합하는 경우, Intercom 애플리케이션이 사용자 스킬을 위한 클라이언트 대면 애플리케이션이 됩니다. 사용자와의 모든 상호 작용은 Intercom을 통해 시작 및 관리됩니다.
@@ -66,6 +64,11 @@ Intercom 통합을 어시스턴트에 추가하기 전에 귀하 또는 조직�
 ## 대화 준비
 {: #deploy-intercom-dialog-prereq}
 
+어시스턴트와 연관된 대화 스킬이 없는 경우, 지금 하나를 작성하거나 어시스턴트에 추가하십시오. 자세한 내용은 [대화 빌드](/docs/services/assistant?topic=assistant-dialog-build)를 참조하십시오.
+
+검색 스킬을 통해 검색을 트리거하는 것은 현재 Intercom 통합에서 지원되지 않습니다.
+{: note}
+
 어시스턴트가 사용자 요청을 처리하고 고객이 요청할 때 대화를 휴먼 에이전트로 전달할 수 있도록 대화 스킬에서 다음 단계를 완료하십시오.
 
 1.  사람과의 대화에 대한 사용자 요청을 인식할 수 있는 스킬에 인텐트를 추가하십시오.
@@ -87,7 +90,7 @@ Intercom 통합을 어시스턴트에 추가하기 전에 귀하 또는 조직�
 
       ![노드 목적 요약을 추가하는 노드 편집 보기에 있는 필드의 화면.](images/disambig-node-purpose.png)
 
-      2단계에서 작성한 루트 노드에 외부 노드 이름을 추가하지 **마십시오**. 에스컬레이션이 발생하는 경우, 서비스에서 마지막으로 처리된 노드의 외부 노드 이름을 확인하고 충족되지 않은 사용자 목표를 파악합니다. 휴먼 에이전트에 연결 인텐트가 있는 노드에 외부 노드 이름을 포함하는 경우, 문제를 에스컬레이션하기 전에 사용자가 상호작용한 마지막 실제 목표 지향 노드를 서비스가 파악하지 못하도록 합니다.
+      2단계에서 작성한 루트 노드에 외부 노드 이름을 추가하지 **마십시오**. 에스컬레이션이 발생하는 경우, 어시스턴트에서 마지막으로 처리된 노드의 외부 노드 이름을 확인하고 충족되지 않은 사용자 목표를 파악합니다. 휴먼 에이전트에 연결 인텐트가 있는 노드에 외부 노드 이름을 포함하는 경우, 문제를 에스컬레이션하기 전에 사용자가 상호작용한 마지막 실제 목표 지향 노드를 어시스턴트가 파악하지 못하도록 합니다.
       {: tip}
 
 1.  분기의 하위 노드에서 어시스턴트가 처리하지 않기를 바라는 후속 요청 또는 질문을 조건으로 하는 경우, 해당 노드에 **휴먼 에이전트에 연결** 응답 유형을 추가하십시오.
@@ -98,10 +101,23 @@ Intercom 통합을 어시스턴트에 추가하기 전에 귀하 또는 조직�
 
 이제 대화에서 Intercom의 어시스턴트를 지원할 준비가 되었습니다.
 
+### 대화 고려사항
+{: #deploy-intercom-dialog}
+
+대화에 추가한 일부 서식이 있는 응답은 Intercom 사용자에게 표시되는 방법과 다르게 "시험 사용" 분할창 내에 표시됩니다. 아래 표에서는 응답 유형이 Intercom에서 처리되는 방법에 대해 설명합니다.
+
+| 응답 유형 | Intercom 사용자에게 표시되는 방법  |
+|---------------|---------------------------|
+| **선택사항**    | 선택사항은 번호 지정된 목록으로 표시됩니다. **제목** 또는 **설명** 필드에서는, 목록에서 선택사항을 선택하는 방법을 사용자에게 설명하는 지침을 제공합니다. |
+| **이미지**     | 이미지 **제목**, **설명** 및 이미지 자체가 렌더링됩니다. |
+| **일시정지**     | 사용 설정에 관계 없이, 입력 표시기가 일시정지 기간 동안 표시되지 않습니다. |
+
+응답 유형에 대한 자세한 내용은 [서식이 있는 응답](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia)을 참조하십시오.
+
 ## Intercom 통합 추가
 {: #deploy-intercom-add-intercom}
 
-1.  어시스턴트 탭에서 배치할 보조 타일을 클릭하여 여십시오.
+1.  어시스턴트 탭에서 배치할 어시스턴트 타일을 클릭하여 여십시오.
 
 1.  통합 섹션에서 **통합 추가**를 클릭하십시오.
 
@@ -109,12 +125,30 @@ Intercom 통합을 어시스턴트에 추가하기 전에 귀하 또는 조직�
 
     화면에 제공된 지시사항을 따르십시오. 다음 절에서는 해당 단계에 대해 설명합니다.
 
+다음 4분 분량의 동영상에서는 단계를 보여줍니다.
+
+<iframe class="embed-responsive-item" id="youtubeplayer" title="빠른 설정" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/SkbFWNScueU" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
 ## Intercom에 어시스턴트 연결하기
 {: #deploy-intercom-connect}
 
 Intercom에 어시스턴트 사용 권한을 부여하는 즉시, 어시스턴트가 Intercom 팀의 지원 가능한 구성원이 됩니다.
 
-휴먼 에이전트는 Intercom의 지정 규칙을 사용하여 어시스턴트에 메시지를 지정할 수 있습니다. 이 규칙은 일부 기준에 따라 팀 동료 또는 팀 받은 편지함에 인바운드 대화를 자동으로 지정하거나 런타임 시 휴먼 에이전트가 수행한 수동 재지정을 자동으로 지정할 수 있습니다. [Intercom 문서![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.intercom.com/help/support-and-retain-customers/work-as-a-team/assign-conversations-to-teammates-and-teams)를 참조하십시오.
+휴먼 에이전트는 Intercom의 지정 규칙을 사용하여 어시스턴트에 메시지를 지정할 수 있습니다. 다음 방법으로 어시스턴트에 메시지를 지정할 수 있습니다.
+
+- 일부 기준에 기반하여 팀 동료 또는 팀 받은 편지함에 인바운드 대화 자동 지정
+
+  다음 1분 30초 분량의 동영상에서는 단계를 보여줍니다.
+
+  <iframe class="embed-responsive-item" id="youtubeplayer2" title="자동 지정" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/4M9wu8NHxcY" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
+- 런타임 시 휴먼 에이전트가 수행한 수동 재지정입니다.
+
+  다음 3분 분량의 동영상에서는 단계를 보여줍니다.
+
+  <iframe class="embed-responsive-item" id="youtubeplayer3" title="수동 지정" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/jAnolyUJAIA" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
+[Intercom 문서![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.intercom.com/help/support-and-retain-customers/work-as-a-team/assign-conversations-to-teammates-and-teams)를 참조하십시오.
 
 1.  대화가 준비되면 **지금 연결**을 클릭합니다.
 1.  Intercom 사이트로 이동하려면 **Intercom에 액세스**를 클릭합니다.
@@ -144,7 +178,7 @@ Intercom에 어시스턴트 사용 권한을 부여하는 즉시, 어시스턴�
 
     변경하지 않은 경우, 모든 노드의 백업 담당자가 지정되지 않은 상태로 남습니다.
 
-1.  **새 규칙**을 클릭하십시오. 
+1.  **새 규칙**을 클릭하십시오.
 
 1.  *노드 선택* 드롭 다운 목록에서, 구성할 대화 분기의 노드를 선택하십시오.
 
@@ -154,22 +188,26 @@ Intercom에 어시스턴트 사용 권한을 부여하는 즉시, 어시스턴�
 
 1.  다른 대화 분기의 라우팅 규칙을 정의하려면 **새 규칙**을 다시 클릭하고 이전 단계를 반복하십시오.
 
-    분기의 하위 노드에 *휴먼 에이전트에 연결* 응답 유형이 있는 루트 노드에 대한 지정을 설정하십시오. 연관된 루트 노드를 특정 사용자 또는 팀에게 전송하지 않는 경우, 중요한 문제가 *지정되지 않음* 받음 편지함으로 전송될 수 있습니다. 
+    분기의 하위 노드에 *휴먼 에이전트에 연결* 응답 유형이 있는 루트 노드에 대한 지정을 설정하십시오. 연관된 루트 노드를 특정 사용자 또는 팀에게 전송하지 않는 경우, 중요한 문제가 *지정되지 않음* 받음 편지함으로 전송될 수 있습니다.
 
 1.  규칙을 추가한 후, **개요로 돌아가기**를 클릭하여 페이지를 종료하십시오.
+
+다음 3분 분량의 동영상에서는 단계를 보여줍니다.
+
+<iframe class="embed-responsive-item" id="youtubeplayer0" title="주제 기반 에스컬레이션 라우팅" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/dTwJZOqdzII" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 ## 어시스턴트에게 사용자 조회를 모니터하고 이에 응답할 수 있는 권한 부여
 {: #deploy-intercom-config-action}
 
 어시스턴트가 자체적으로 Intercom 받은 편지함을 모니터링하고 메시지에 응답하기 시작하도록 하려면 모니터링을 켜십시오.
 
-어시스턴트가 Intercom에 로그인된 사용자 조회를 감시합니다. 어시스턴트가 사용자 조회에 응답하는 방법을 알고 있다고 확신하는 경우, 어시스턴트는 사용자에게 직접 응답합니다. (서비스에서 식별된 최상위 인텐트의 신뢰도 점수가 0.75 이상인 경우에 어시스턴트가 확신합니다.)
+어시스턴트가 Intercom에 로그인된 사용자 조회를 감시합니다. 어시스턴트가 사용자 조회에 응답하는 방법을 알고 있다고 확신하는 경우, 어시스턴트는 사용자에게 직접 응답합니다. (어시스턴트에서 식별된 최상위 인텐트의 신뢰도 점수가 0.75 이상인 경우에 어시스턴트가 확신합니다.)
 
 어시스턴트가 특정 유형의 사용자 조회에 응답하지 않도록 하려면, 어시스턴트가 대화 분기당 수행할 다른 조치를 지정하는 규칙을 추가할 수 있습니다. 예를 들어, Intercom 팀에 어시스턴트를 더 보수적으로 통합하고 싶을 수도 있습니다. 즉, 어시스턴트가 다른 팀 동료에게 응답하도록 메시지를 전송하므로 어시스턴트는 응답을 제안만 할 수 있습니다. 시간이 지나면서 어시스턴트가 스스로를 증명한 후에는 더 많은 책임을 부여할 수 있습니다.
 
 어시스턴스에서 특정 대화 분기를 처리하는 방법을 구성하려면 규칙을 정의하십시오.
 
-1.  Intercom 통합 페이지의 *어시스턴트에서 받은 편지함을 모니터링하도록 설정* 섹션에서 모니터링을 **켜짐**으로 전환하십시오.   
+1.  Intercom 통합 페이지의 *어시스턴트에서 받은 편지함을 모니터링하도록 설정* 섹션에서 모니터링을 **켜짐**으로 전환하십시오.
 
 1.  *설정*에서 **규칙 관리**를 클릭하십시오.
 
@@ -205,22 +243,13 @@ Intercom에 어시스턴트 사용 권한을 부여하는 즉시, 어시스턴�
 
 대화가 변경되면 Intercom 통합 페이지로 돌아가서 이 규칙에 대한 증분 변경을 수행합니다.
 
+다음 3분 분량의 동영상에서는 단계를 보여줍니다.
+
+<iframe class="embed-responsive-item" id="youtubeplayer1" title="받은 편지함 모니터링" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/fFKjWUfIftw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
 ## 통합 테스트
 {: #deploy-intercom-try}
 
 Intercom 통합을 엔드 투 엔드에서 효과적으로 테스트하려면 Intercom 최종 사용자 애플리케이션에 대한 액세스 권한이 있어야 합니다. Intercom 작업공간을 이미 작성하거나 편집했습니다. 작업공간에는 연관된 사용자 인터페이스 클라이언트가 있어야 합니다. 그렇지 않은 경우 이를 설정하는 방법에 대한 도움말을 보려면 [Intercom의 앱![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.intercom.com/help/apps-in-intercom){: new_window}을 참조하십시오.
 
 Intercom 작업공간과 연관된 클라이언트 애플리케이션을 통해 테스트 사용자 조회를 제출하여 Intercom에서 메시지를 처리하는 방법을 확인할 수 있습니다. 어시스턴트가 응답해야 하는 메시지가 적절한 응답을 생성하고 어시스턴트가 응답하도록 구성되지 않은 메시지에 응답하지 않는지 확인하십시오.
-
-## 대화 고려사항
-{: #deploy-intercom-dialog}
-
-대화에 추가한 일부 서식이 있는 응답은 Intercom 사용자에게 표시되는 방법과 다르게 "시험 사용" 분할창 내에 표시됩니다. 아래 표에서는 응답 유형이 Intercom에서 처리되는 방법에 대해 설명합니다.
-
-| 응답 유형 | Intercom 사용자에게 표시되는 방법  |
-|---------------|---------------------------|
-| **선택사항**        | 선택사항은 번호 지정된 목록으로 표시됩니다. **제목** 또는 **설명** 필드에서는, 목록에서 선택사항을 선택하는 방법을 사용자에게 설명하는 지침을 제공합니다. |
-| **이미지**      | 이미지 **제목**, **설명** 및 이미지 자체가 렌더링됩니다. |
-| **일시정지**    | 사용 설정에 관계 없이, 입력 표시기가 일시정지 기간 동안 표시되지 않습니다. |
-
-응답 유형에 대한 자세한 내용은 [서식이 있는 응답](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia)을 참조하십시오. 

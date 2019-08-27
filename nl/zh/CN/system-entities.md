@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-08-06"
+
+keywords: system entity, sys-number, sys-date, sys-time
 
 subcollection: assistant
 
@@ -25,15 +27,19 @@ subcollection: assistant
 # 系统实体详细信息
 {: #system-entities}
 
-本参考部分提供有关可用系统实体的完整信息。有关系统实体以及如何使用这些实体的更多信息，请参阅[定义实体](/docs/services/assistant?topic=assistant-entities#entities-enable-system-entities)并搜索“启用系统实体”。
+了解有关 IBM 提供的可供您开箱即用的系统实体。这些内置实用程序实体可帮助助手识别会话中客户常用的词汇和引用，例如数字和日期。
 {: shortdesc}
 
 系统实体可用于[支持的语言](/docs/services/assistant?topic=assistant-language-support)主题中注明的语言。
 
+如果对话技能为英语或德语，那么可以试用已更新的系统实体。有关更多详细信息，请参阅[新系统实体](/docs/services/assistant?topic=assistant-beta-system-entities)。
+
+有关如何使用实体的更多信息，请参阅[创建实体](/docs/services/assistant?topic=assistant-entities#entities-enable-system-entities)。
+
 ## @sys-currency 实体
 {: #system-entities-sys-currency}
 
-@sys-currency 系统实体用于检测发声中使用货币符号或特定于货币的词汇表示的货币值。这将返回数字值。
+@sys-currency 系统实体用于检测话语中使用货币符号或特定于货币的词汇表示的货币值。这将返回数字值。
 
 ### 可识别的格式
 {: #system-entities-sys-currency-formats}
@@ -81,7 +87,10 @@ subcollection: assistant
 
 - 货币值会识别为 @sys-number 实体的实例。如果要使用单独的条件来检查货币值和数字，请将用于检查货币的条件放在用于检查数字的条件上方。
 
-- 如果将 @sys-currency 实体用作节点条件，并且用户将 `$0` 指定为值，那么该值会正确识别为货币，但该条件会求值为数字零，而不是货币零。因此，不会返回预期的响应。要检查货币值是否以正确方式处理零，请改为在节点条件中使用完整 SpEL 表达式语法 `entities['sys-currency']?.value`。
+  如果使用的是已修改的系统实体，那么此变通方法不是必需的。有关更多详细信息，请参阅[新系统实体](/docs/services/assistant?topic=assistant-beta-system-entities)。
+  {: note}
+
+- 如果将 @sys-currency 实体用作节点条件，并且用户将 `$0` 指定为值，那么该值会正确识别为货币，但该条件会求值为数字零，而不是货币零。因此，条件中的 `null` 会求值为 false，并且不会处理节点。要检查货币值是否以正确方式处理零，请改为在节点条件中使用表达式 `@sys-currency >=0`。
 
 ## @sys-date 和 @sys-time 实体
 {: #system-entities-sys-date-time}
@@ -120,7 +129,7 @@ subcollection: assistant
 
 相对于当前时间的日期或时间的提及项会针对所选时区进行解析。缺省情况下，时区为 UTC (GMT)。这意味着缺省情况下，位于非 UTC 时区中的 REST API 客户机将根据当前 UTC 时间来观察所抽取的 `now` 值。
 
-（可选）REST API 客户机可以将本地时区添加为上下文变量 `$timezone`。此上下文变量应该随每个客户机请求一起发送。例如，`$timezone` 值应该为 `America/Los_Angeles`、`EST` 或 `UTC`。有关受支持时区的完整列表，请参阅[支持的时区](/docs/services/assistant?topic=assistant-time-zones)。
+REST API 客户机可以选择将本地时区添加为上下文变量 `$timezone`。此上下文变量应该随每个客户机请求一起发送。例如，`$timezone` 值应该为 `America/Los_Angeles`、`EST` 或 `UTC`。有关受支持时区的完整列表，请参阅[支持的时区](/docs/services/assistant?topic=assistant-time-zones)。
 
 如果提供 `$timezone` 变量，那么将根据客户机时区（而不是 UTC）来计算相对 @sys-date 和 @sys-time 提及项的值。
 
@@ -167,7 +176,7 @@ subcollection: assistant
 
 - @sys-time 始终返回以下格式的时间：HH:mm:ss。
 
-有关处理日期和时间值的信息，请参阅[日期和时间](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-date-time)方法参考。
+有关处理日期和时间值的信息，请参阅[日期和时间方法参考](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-date-time)。
 {: tip}
 
 ## @sys-location 实体
@@ -182,7 +191,7 @@ subcollection: assistant
 - U.S.A.
 - New South Wales
 
-有关处理字符串值的信息，请参阅[字符串](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings)方法参考。
+有关处理字符串值的信息，请参阅[字符串方法参考](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings)。
 {: tip}
 
 ## @sys-number 实体
@@ -228,21 +237,21 @@ subcollection: assistant
 ### @system-number 用法提示
 {: #system-entities-sys-number-usage-tips}
 
-- 如果将 @sys-number 实体用作节点条件，并且用户将零指定为值，那么会将 0 值正确识别为数字，但该条件会求值为 false，因此无法正确返回关联的响应。要检查数字是否以正确方式处理零，请改为在节点条件中使用完整 SpEL 表达式语法 `entities['sys-number']?.value`。
+- 如果将 @sys-number 实体用作节点条件，并且用户将零指定为值，那么会将 0 值正确识别为数字。但是，0 会被解释为条件的 `null` 值，这会导致不处理节点。要检查数字是否以正确方式处理零，请改为在节点条件中使用表达式 `@sys-number >= 0`。
 
 - 如果使用 @sys-number 来比较条件中的数字值，请确保单独包含一项检查来确认是否存在数字本身。如果找不到数字，那么 @sys-number 会求值为 null，这可能导致即便不存在任何数字，比较也会求值为 true。
 
-  例如，不要单独使用 `@sys-number<4` ，因为如果找不到数字，`@sys-number` 会求值为 null。由于 null 小于 4，因此即便不存在任何数字，条件也会求值为 true。
+  例如，不要单独使用 `@sys-number<4`，因为如果找不到数字，`@sys-number` 会求值为 null。由于 null 小于 4，因此即便不存在任何数字，条件也会求值为 true。
 
-  请改为使用 `@sys-number AND @sys-number<4` 。如果不存在任何数字，那么第一个条件求值为 false，这会相应地将整个条件求值为 false。
+  请改为使用 `@sys-number AND @sys-number<4`。如果不存在任何数字，那么第一个条件求值为 false，这会相应地将整个条件求值为 false。
 
-有关处理数字值的信息，请参阅[数字](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-numbers)方法参考。
+有关处理数字值的信息，请参阅[数字方法参考](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-numbers)。
 {: tip}
 
 ## @sys-percentage 实体
 {: #system-entities-sys-percentage}
 
-@sys-percentage 系统实体用于检测在发声中使用百分号表示的百分比或使用文字 `percent` 书写的百分比。在两种情况下，都会返回数字值。
+@sys-percentage 系统实体用于检测在话语中使用百分号表示的百分比或使用文字 `percent` 书写的百分比。在两种情况下，都会返回数字值。
 
 ### 可识别的格式
 {: #system-entities-sys-percentage-formats}
@@ -283,7 +292,10 @@ subcollection: assistant
 
 - 百分比值还会识别为 @sys-number 实体的实例。如果要使用单独的条件来检查百分比值和数字，请将用于检查百分比的条件放在用于检查数字的条件上方。
 
-- 如果将 @sys-percentage 实体用作节点条件，并且用户将 `0%` 指定为值，那么该值会正确识别为百分比，但该条件会求值为数字零，而不是百分比 0%。因此，不会返回预期响应。要检查百分比是否以正确方式处理零百分比，请改为在节点条件中使用完整 SpEL 表达式语法 `entities['sys-percentage']?.value`。
+  如果使用的是已修改的系统实体，那么此变通方法不是必需的。有关更多详细信息，请参阅[新系统实体](/docs/services/assistant?topic=assistant-beta-system-entities)。
+  {: note}
+
+- 如果将 @sys-percentage 实体用作节点条件，并且用户将 `0%` 指定为值，那么该值会正确识别为百分比，但该条件会求值为数字零，而不是百分比 0%。因此，条件中的 `null` 会求值为 false，并且不会处理节点。要检查百分比是否以正确方式处理 0%，请改为在节点条件中使用表达式 `@sys-percentage >= 0`。
 
 - 如果输入像 `1-2%` 这样的值，那么值 `1%` 和 `2%` 会作为系统实体返回。索引将是 1% 到 2% 之间的整个范围，并且这两个实体具有相同的索引。
 
@@ -299,5 +311,5 @@ subcollection: assistant
 - Jane Doe
 - Vijay
 
-有关处理字符串值的信息，请参阅[字符串](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings)方法参考。
+有关处理字符串值的信息，请参阅[字符串方法参考](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings)。
 {: tip}

@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-06-12"
+
+keywords: mark as irrelevant, counterexample, data source, deployment ID
 
 subcollection: assistant
 
@@ -22,15 +24,20 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Saiba de conversas
+# Melhorar a sua qualificação
 {: #logs}
 
-Para abrir uma lista de mensagens entre usuários e o assistente que usa essa qualificação de diálogo, selecione **Conversas do usuário** na barra de navegação.
+A página Analítica do {{site.data.keyword.conversationshort}} fornece um histórico de conversas entre usuários e um assistente implementado. É possível usar esse histórico para melhorar o entendimento e a resposta dos assistentes a solicitações do usuário.
 {: shortdesc}
 
-Quando você abre a página **Conversas do usuário**, a visualização padrão lista resultados para o último dia, com os resultados mais recentes primeiro. A intenção principal (#intent) e quaisquer valores de entidade (@entity) reconhecidos usados em uma mensagem, além do texto da mensagem, estão disponíveis. Para as intenções que não são reconhecidas, o valor mostrado é *Irrelevante*. Se uma entidade não é reconhecida ou não foi fornecida, o valor mostrado é *Nenhuma entidade localizada*. ![Página padrão de logs](images/logs_page1.png)
+Para abrir uma lista de mensagens individuais entre clientes e o assistente que usa essa qualificação de diálogo, selecione **Conversas do usuário** na barra de navegação.
 
-É importante observar que a página **Conversas do usuário** exibe o número total de *mensagens* entre usuários e seu aplicativo. Uma mensagem é uma única elocução que o usuário envia para o aplicativo. Cada conversa pode ser composta por múltiplas mensagens. Assim, o número de resultados nesta página **Conversas do usuário** é diferente do número de conversas mostrado na página [Visão Geral](/docs/services/assistant?topic=assistant-logs-overview).
+Quando você abre a página **Conversas do usuário**, a visualização padrão lista entradas enviadas ao assistente no último dia, com os resultados mais recentes primeiro. A intenção principal (#intent) e quaisquer valores de entidade (@entity) reconhecidos usados em uma mensagem, além do texto da mensagem, estão disponíveis. Para as intenções que não são reconhecidas, o valor mostrado é *Irrelevante*. Se uma entidade não é reconhecida ou não foi fornecida, o valor mostrado é *Nenhuma entidade localizada*. 
+
+![Página padrão de logs](images/logs_page1.png)
+
+A página Conversas do usuário exibe o número total de *mensagens* entre clientes e seu assistente. Uma mensagem é uma única elocução enviada por um usuário ao assistente. Uma conversa geralmente consiste em diversas mensagens. Portanto, o número de resultados na página **Conversas do usuário** é diferente do número de conversas mostradas na página **Visão geral**.
+{: important}
 
 ## Limites de log
 {: #logs-limits}
@@ -42,14 +49,15 @@ O comprimento de tempo durante o qual as mensagens são retidas depende de seu p
   Premium                              | Últimos 90 dias
   Mais                                 | Últimos 30 dias
   Padrão                             | Últimos 30 dias
+  Plus Trial                           | Últimos 30 dias
   Lite                                 | Últimos 7 dias
 
 ## Filtrando mensagens
 {: #logs-filter-messages}
 
-É possível filtrar mensagens por *Procurar instruções do usuário*, *Intenções*, *Entidades* e *Últimos* n *dias*:
+É possível filtrar mensagens em *Procurar instruções do usuário*, *Intenções*, *Entidades* e *Últimos n dias*.
 
-*Procurar instruções do usuário* - digite uma palavra na barra de procura. Isso procura as entradas dos usuários, mas não as respostas de seu aplicativo.
+*Procurar instruções do usuário* - digite uma palavra na barra de procura. Procura as entradas dos usuários, mas não as respostas de seu assistente.
 
 *Intenções* - selecione o menu suspenso e digite uma intenção no campo de entrada ou escolha na lista preenchida. É possível selecionar mais de uma intenção, que filtra os resultados usando qualquer uma das intenções selecionadas, incluindo *Irrelevante*.
 
@@ -59,14 +67,14 @@ O comprimento de tempo durante o qual as mensagens são retidas depende de seu p
 
 ![Menu suspenso entidades](images/entities_filter.png)
 
-As mensagens podem levar algum tempo para serem atualizadas. Permita pelo menos 30 minutos após a interação de um usuário com seu aplicativo antes de tentar filtrar por esse conteúdo.
+As mensagens podem levar algum tempo para atualizar. Aguarde pelo menos 30 minutos após a interação de um usuário com seu assistente antes de tentar filtrar esse conteúdo.
 
-## Visualizando uma mensagem individual
+## Visualizando mensagens individuais
 {: #logs-see-message}
 
-É possível expandir cada entrada de mensagem para ver o que o usuário disse na conversa toda e como seu aplicativo respondeu. Para fazer isso, selecione **Abrir conversa**. Você é levado automaticamente para a mensagem selecionada dentro dessa conversa.
+Para qualquer entrada do usuário, clique em **Abrir conversa** para ver a entrada do usuário e a resposta do assistente dentro do contexto de toda a conversa.
 
-O horário mostrado na parte superior de cada conversa é localizado para refletir o fuso horário de seu navegador. Isso poderá diferir do registro de data e hora mostrado se você revisar o mesmo log de conversa por meio de uma chamada de API; as chamadas de log de API são sempre mostradas em UTC.
+O horário mostrado na parte superior de cada conversa é localizado para refletir o fuso horário de seu navegador. Esse horário poderá ser diferente do registro de data e hora mostrado se você revisar o mesmo log de conversa por meio de uma chamada de API, pois as chamadas de log da API são sempre mostradas em UTC.
 
 ![Painel abrir conversa](images/open_convo.png)
 
@@ -74,18 +82,22 @@ Em seguida, é possível escolher mostrar as classificações para a mensagem se
 
 ![Painel abrir conversa com classificações](images/open_convo_classes.png)
 
+Se o recurso de verificação ortográfica estiver ativado para a qualificação, quaisquer elocuções do usuário que foram corrigidas serão destacadas pelo ícone Autocorreção. O termo corrigido será sublinhado. É possível passar o mouse sobre o termo sublinhado para ver a entrada original do usuário.
+
+![Abrir o painel de conversa que mostra o texto original de um termo ao qual a lógica de correção de ortografia foi aplicada](images/open_convo_spellchecked.jpg)
+
 ## Melhorar entre os assistentes
 {: #logs-deploy-id}
 
-A criação de uma qualificação de diálogo é um processo iterativo. Ao desenvolver sua qualificação, use a área de janela *Experimente* para verificar se o serviço reconhece as intenções e entidades corretas em entradas de teste e para fazer correções, conforme necessário.
+A criação de uma qualificação de diálogo é um processo iterativo. Enquanto desenvolve sua qualificação, use a área de janela *Experimentar* para verificar se seu assistente reconhece as intenções e as entidades corretas nas entradas de teste e para fazer correções, conforme necessário.
 
 Na página Conversas do usuário, é possível analisar interações reais entre o assistente que você usou para implementar a qualificação e seus usuários. Com base nessas interações, é possível fazer correções para melhorar a precisão com a qual as intenções e entidades são reconhecidas por sua qualificação de diálogo. É difícil saber exatamente *como* seus usuários farão perguntas ou quais mensagens aleatórias eles poderão enviar, portanto, é importante analisar frequentemente conversas reais para melhorar suas qualificações de diálogo.
 
-Para uma instância do {{site.data.keyword.conversationshort}} que inclui múltiplos assistentes, às vezes pode ser útil usar os dados da mensagem da qualificação de diálogo de um assistente para melhorar a qualificação de diálogo usada por outro assistente dentro dessa mesma instância.
+Para uma instância do {{site.data.keyword.conversationshort}} que inclui diversos assistentes, pode haver momentos nos quais seja útil usar dados de mensagem da qualificação de diálogo de um assistente para melhorar a qualificação de diálogo utilizada por outro assistente dentro dessa mesma instância.
 
 ![Somente plano Premium](images/premium0.png) Se você for um usuário Premium do {{site.data.keyword.conversationshort}}, suas instâncias poderão ser configuradas opcionalmente para permitir acesso a dados do log de assistentes em suas diferentes instâncias premium.
 
-Como um exemplo, suponha que você tenha uma instância do {{site.data.keyword.conversationshort}} nomeada *HelpDesk*. É possível ter um assistente de Produção e um assistente de Desenvolvimento em sua instância do HelpDesk. Ao trabalhar na qualificação de diálogo para o assistente de Desenvolvimento, é possível usar logs das mensagens do assistente de Produção para melhorar a qualificação de diálogo do assistente de Desenvolvimento.
+Como um exemplo, suponha que você tenha uma instância do {{site.data.keyword.conversationshort}} nomeada *HelpDesk*. É possível ter um assistente de produção e um de desenvolvimento em sua instância do HelpDesk. Ao trabalhar na qualificação de diálogo para o assistente de Desenvolvimento, é possível usar logs das mensagens do assistente de Produção para melhorar a qualificação de diálogo do assistente de Desenvolvimento.
 
 Qualquer edição feita, então, dentro da qualificação de diálogo para o assistente de Desenvolvimento afetará somente a qualificação de diálogo do assistente de Desenvolvimento, mesmo que você esteja usando dados de mensagens enviadas para o assistente de Produção.
 
@@ -115,7 +127,7 @@ Observe que a lista não inclui versões de qualificação. Para obter dados que
 
 Os aplicativos que usam a versão V1 da API devem especificar um ID de implementação em cada mensagem enviada usando a API `/message`. Esse ID identifica o app implementado do qual a chamada foi feita. A página Analítica pode usar esse ID de implementação para recuperar e exibir logs que estão associados a um aplicativo em tempo real específico.
 
-Para assistentes ou apps customizados que usam a versão V2 da API, o serviço inclui automaticamente um ID do sistema e um ID de qualificação com cada chamada /message, para que seja possível escolher uma origem de dados pelo nome do assistente em vez de usar um ID de implementação.
+Para assistentes ou aplicativos customizados que usam a versão V2 da API, seu assistente inclui automaticamente um ID do sistema e um ID de qualificação com cada chamada /message, para que seja possível escolher uma origem de dados pelo nome do assistente em vez de usar um ID de implementação.
 
 Para incluir o ID de implementação, os usuários da API V1 incluem a propriedade de implementação dentro dos metadados do [contexto ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://cloud.ibm.com/apidocs/assistant?curl=#get-response-to-user-input){: new_window}, como neste exemplo:
 
@@ -141,7 +153,7 @@ Se você usar dados de outra origem de dados, quaisquer melhorias feitas no mode
 1.  Para corrigir uma intenção, selecione o ícone editar ![Editar](images/edit_icon.png) ao lado da #intent escolhida.
 1.  Na lista fornecida, selecione a intenção correta para esta entrada.
     - Comece digitando no campo de entrada e a lista de intenções é filtrada.
-    - Também é possível escolher **Marcar como irrelevante** neste menu. (Para obter mais informações, veja [Marcar como irrelevante](/docs/services/assistant?topic=assistant-intents#intents-mark-irrelevant).) Ou, é possível escolher **Não treinar na intenção**, o que não salva essa mensagem como um exemplo para treinamento.
+    - Também é possível escolher **Marcar como irrelevante** nesse menu (para obter mais informações, consulte [Ensinando seu assistente sobre tópicos a serem ignorados](#logs-mark-irrelevant)). Ou, é possível escolher **Não treinar na intenção**, o que não salva essa mensagem como um exemplo para treinamento.
 
     ![Selecionar intenção](images/select_intent.png)
 1.  Selecione **Salvar**.
@@ -169,3 +181,23 @@ Se você usar dados de outra origem de dados, quaisquer melhorias feitas no mode
 1.  Selecione **Salvar**.
 
     ![Salvar entidade](images/add_entity_save.png)
+
+### Ensinando seu assistente sobre tópicos a serem ignorados
+{: #logs-mark-irrelevant}
+
+É importante ajudar seu assistente a focar nos tipos de perguntas e transações de negócios do cliente para os quais ele foi criado. É possível usar as informações coletadas de conversas reais do cliente para destacar assuntos que você não deseja que seu assistente tente abordar.
+
+Para ensinar seu assistente sobre assuntos que ele deve ignorar, marque as elocuções que discutem esses assuntos fora do tópico como irrelevantes.
+
+A opção **Marcar como irrelevante** não está disponível em todos os idiomas. Consulte  [ idiomas suportados ](/docs/services/assistant?topic=assistant-language-support)  para obter detalhes.
+
+Intenções marcados como irrelevantes são salvos como contraexemplos na área de trabalho JSON e são incluídos como parte dos dados de treinamento. Eles ensinam seu assistente a não responder explicitamente a elocuções desse tipo.
+
+Certifique-se de designar uma entrada como irrelevante.
+
+- Não há maneiras de acessar ou mudar posteriormente as entradas por meio da interface com o usuário.
+- A única maneira de reverter a identificação "irrelevante" de uma entrada é usar a mesma entrada em um canal de integração de teste e, em seguida, designá-la explicitamente a uma intenção.
+
+Também é possível marcar uma intenção como irrelevante diretamente na área de janela *Experimentar*.
+
+  ![Captura de tela marcar como irrelevante](images/irrelevant.png)

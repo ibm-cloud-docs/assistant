@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-08-12"
 
 subcollection: assistant
 
@@ -28,15 +28,46 @@ subcollection: assistant
 您可以處理從使用者詞語中擷取的值，而這些使用者詞語是您要在回應的環境定義變數、條件或其他位置中參照的詞語。
 {: shortdesc}
 
-## 評估語法
+## 使用表示式語法的位置
 {: #dialog-methods-evaluation-syntax}
 
 若要在其他變數內展開變數值，或將方法套用至輸出文字或環境定義變數，請使用 `<? expression ?>` 表示式語法。例如：
 
-- **將數值內容增量**
-    - `"output":{"number":"<? output.number + 1 ?>"}`
-- **對物件呼叫方法**
-    - `"context":{"toppings": "<? context.toppings.append( 'onions' ) ?>"}`
+- **在對話節點文字回應中參照使用者輸入**
+
+  ```bash
+  You said <? input.text ?>.
+  ```
+  {: codeblock}
+
+- **從 JSON 編輯器將數值內容增量**
+
+    ```json
+    "output":{"number":"<? output.number + 1 ?>"}
+    ```
+    {: codeblock}
+
+- **從環境定義編輯器將元素新增至環境定義變數陣列**
+
+|環境定義變數名稱|環境定義變數值|
+|-----------------------|------------------------|
+|`toppings`| `<? context.toppings.append( 'onions' ) ?>` |
+
+您可以在對話節點條件和對話節點回應條件中使用 SpEL 表示式。在條件中使用表示式時，不需要周圍 `<? ?>` 語法。
+
+- **檢查對話節點條件中是否有特定實體值**
+
+  ```bash
+  @city.toLowerCase() == 'paris'
+  ```
+  {: codeblock}
+
+- **檢查對話節點回應條件中是否有特定日期範圍**
+
+  ```bash
+  @sys-date.after(today())
+  ```
+  {: codeblock}
 
 下列各節說明您可用來處理值的方法。它們是依資料類型進行分組：
 
@@ -52,6 +83,7 @@ subcollection: assistant
 您無法在設定陣列值的相同節點內，在節點條件或回應條件中，使用這些方法來檢查陣列中的值。
 
 ### JSONArray.append(object)
+{: #dialog-methods-arrays-append}
 
 此方法會將新值附加至 JSONArray，並傳回已修改的 JSONArray。
 
@@ -89,6 +121,7 @@ subcollection: assistant
 {: codeblock}
 
 ### JSONArray.clear()
+{: #dialog-methods-arrays-clear}
 
 此方法可清除陣列中的所有值，並傳回空值。
 
@@ -106,6 +139,7 @@ subcollection: assistant
 如果您後續參照 $toppings_array 環境定義變數，則它只會傳回 '[]'。
 
 ### JSONArray.contains(Object value)
+{: #dialog-methods-arrays-contains}
 
 如果輸入 JSONArray 包含輸入值，則此方法會傳回 true。
 
@@ -130,20 +164,20 @@ $toppings_array.contains('ham')
 結果：`True`，因為陣列包含元素 ham。
 
 ### JSONArray.containsIntent(String intent_name, Double min_score, [Integer top_n])
-{: #dialog-methods-array-containsIntent}
+{: #dialog-methods-arrays-containsIntent}
 
-如果 `intents` JSONArray 特別包含指定的目的，且該目的具有的信任評分等於或高於指定的最低分數，則此方法會傳回 `true`。您可以選擇性地指定一個數目，以指出陣列中該數目的最上層元素內必須包含目的。
+如果 `intents` JSONArray 特別包含指定的目的，且該目的具有的信賴分數等於或高於指定的最低分數，則此方法會傳回 `true`。您可以選擇性地指定一個數目，以指出陣列中該數目的最上層元素內必須包含目的。
 
-如果指定的目的不在陣列中、沒有任何信任評分等於或高於最低信任評分，或目的在陣列中低於指定的索引位置，則會傳回 `false`。
+如果指定的目的不在陣列中、沒有任何信賴分數等於或高於最低信賴分數，或目的在陣列中低於指定的索引位置，則會傳回 `false`。
 
-服務會自動產生 `intents` 陣列，列出每當提交使用者輸入時服務在輸入中偵測到的目的。此陣列會列出服務偵測到的所有目的，其排列順序為最高信任目的放在第一位。
+服務會自動產生 `intents` 陣列，列出每當提交使用者輸入時服務在輸入中偵測到的目的。此陣列會列出服務偵測到的所有目的，其排列順序為最高信賴度目的放在第一位。
 
-您可以在節點條件中使用此方法，不只檢查是否有目的，還可設定信任評分臨界值，節點必須符合此臨界值，才能進行處理並傳回其回應。
+您可以在節點條件中使用此方法，不只檢查是否有目的，還可設定信賴分數臨界值，節點必須符合此臨界值，才能進行處理並傳回其回應。
 
 例如，若您想要只在符合下列條件時才觸發對話節點，請在節點條件中使用下列表示式：
 
 - 存在 `#General_Ending` 目的。
-- `#General_Ending` 目的的信任評分超過 80%。
+- `#General_Ending` 目的的信賴分數超過 80%。
 - `#General_Ending` 目的是目的陣列中前 2 個目的的其中一個。
 
 ```bash
@@ -152,9 +186,9 @@ intents.containsIntent("General_Ending", 0.8, 2)
 {: codeblock}
 
 ### JSONArray.filter(temp, "temp.property operator comparison_value")
-{: #dialog-methods-array-filter}
+{: #dialog-methods-arrays-filter}
 
-藉由比較每個陣列元素值與您指定的值，來過濾陣列。此方法類似於[集合預測](#collection-projection)。集合預測會根據陣列元素名稱/值配對中的名稱來傳回已過濾的陣列。過濾方法會根據陣列元素名稱/值配對中的值來傳回已過濾的陣列。
+藉由比較每個陣列元素值與您指定的值，來過濾陣列。此方法類似於[集合預測](#dialog-methods-collection-projection)。集合預測會根據陣列元素名稱/值配對中的名稱來傳回已過濾的陣列。過濾方法會根據陣列元素名稱/值配對中的值來傳回已過濾的陣列。
 
 過濾表示式由下列值組成：
 
@@ -327,6 +361,7 @@ The population of @city is: <? ($cities.filter("y", "y.name == @city").![populat
 此表示式傳回：`The population of Tokyo is 9273000.`
 
 ### JSONArray.get(Integer)
+{: #dialog-methods-arrays-get}
 
 此方法會傳回來自 JSONArray 的輸入索引。
 
@@ -373,6 +408,7 @@ $nested.array.get(0).getAsString().contains('one')
 {: codeblock}
 
 ### JSONArray.getRandomItem()
+{: #dialog-methods-arrays-getRandom}
 
 此方法會傳回來自輸入 JSONArray 的隨機項目。
 
@@ -413,7 +449,7 @@ $nested.array.get(0).getAsString().contains('one')
 **附註：**會隨機選擇產生的輸出文字。
 
 ### JSONArray.indexOf(value)
-{: #dialog-methods-array-indexOf}
+{: #dialog-methods-arrays-indexOf}
 
 如果在陣列中找不到值，則此方法會傳回陣列中元素的索引號碼，其符合您指定為參數或 `-1` 的值。值可以是「字串」(`"School"`)、「整數」(`8`) 或「倍精準數」(`9.1`)。值必須完全相符，且區分大小寫。
 
@@ -444,7 +480,7 @@ intents.indexOf("General_Greetings")
 ```
 {: codeblock}
 
-如果您想要知道特定目的的信任評分，可以使用語法 `intents[`*`index`*`].confidence`，將上述表示式當作 *`index`* 值傳遞至表示式。例如：
+如果您想要知道特定目的的信賴分數，可以使用語法 `intents[`*`index`*`].confidence`，將上述表示式當作 *`index`* 值傳遞至表示式。例如：
 
 ```bash
 intents[intents.indexOf("General_Greetings")].confidence
@@ -452,6 +488,7 @@ intents[intents.indexOf("General_Greetings")].confidence
 {: codeblock}
 
 ### JSONArray.join(String delimiter)
+{: #dialog-methods-arrays-join}
 
 此方法會將這個陣列中的所有值都結合至字串。值會轉換為字串，並以輸入定界字元分隔。
 
@@ -491,6 +528,13 @@ intents[intents.indexOf("General_Greetings")].confidence
 
 ```json
 This is the array: onion;olives;ham;
+```
+{: codeblock}
+
+如果使用者輸入提及多種餡料，並且您已定義名稱為 `@toppings` 的實體用於辨識餡料提及項目，則可以在回應中使用下列表示式來列出前面提到的餡料：
+
+```json
+So, you'd like <? @toppings.values.join(',') ?>.
 ```
 {: codeblock}
 
@@ -540,7 +584,7 @@ The flights that fit your criteria are:
 結果：`The flights that match your criteria are: OK123,LH421,TS4156.`
 
 ### JSONArray.joinToArray(template)
-{: #dialog-methods-joinToArray}
+{: #dialog-methods-arrays-joinToArray}
 
 此方法會將您在範本中定義的格式套用至陣列，並傳回根據規格格式化的陣列。例如，此方法有助於將格式化套用至您要在對話回應中傳回的陣列值。
 
@@ -669,7 +713,7 @@ Arrival time: 09:05
 ```
 {: codeblock}
 
-您可能想要設計自訂用戶端應用程式，以從傳回的陣列中讀取物件，並適當地將聊天機器人的回應值格式化。您的對話節點回應可以使用此表示式，將航班抵達詳細資料物件當作陣列傳回：
+您可能想要設計自訂用戶端應用程式，以從傳回的陣列中讀取物件，並適當地將助理的回應值格式化。您的對話節點回應可以使用此表示式，將航班抵達詳細資料物件當作陣列傳回：
 
 ```
 <? $flights.joinToArray($template) ?>
@@ -698,6 +742,7 @@ Arrival time: 09:05
 請注意，在回應中會交換 `arrival` 和 `departure` 元素的順序。此服務通常會重新排序「JSON 物件」中的元素。如果想要元素依特定順序傳回，請改用「JSON 陣列」或「字串」值來定義範本。
 
 ### JSONArray.remove(Integer)
+{: #dialog-methods-arrays-remove}
 
 此方法會從 JSONArray 中移除索引位置中的元素，並傳回已更新的 JSONArray。
 
@@ -735,6 +780,7 @@ Arrival time: 09:05
 {: codeblock}
 
 ### JSONArray.removeValue(object)
+{: #dialog-methods-arrays-removeValue}
 
 此方法會從 JSONArray 中移除第一次出現的值，並傳回已更新的 JSONArray。
 
@@ -772,6 +818,7 @@ Arrival time: 09:05
 {: codeblock}
 
 ### JSONArray.set(Integer index, Object value)
+{: #dialog-methods-arrays-set}
 
 此方法會將 JSONArray 的輸入索引設為輸入值，並傳回已修改的 JSONArray。
 
@@ -809,6 +856,7 @@ Arrival time: 09:05
 {: codeblock}
 
 ### JSONArray.size()
+{: #dialog-methods-arrays-size}
 
 此方法會將 JSONArray 的大小傳回為整數。
 
@@ -846,6 +894,7 @@ Arrival time: 09:05
 {: codeblock}
 
 ### JSONArray split(String regexp)
+{: #dialog-methods-arrays-split}
 
 此方法使用輸入正規表示式來分割輸入字串。結果是字串的 JSONArray。
 
@@ -879,11 +928,12 @@ Arrival time: 09:05
 {: codeblock}
 
 ### com.google.gson.JsonArray 支援
-{: #dialog-methods-com.google.gson.JsonArray}
+{: #dialog-methods-arrays-com-google-gson-JsonArray}
 
 除了內建方法之外，您還可以使用 `com.google.gson.JsonArray` 類別的標準方法。
 
 #### 新陣列
+{: #dialog-methods-arrays-new}
 
 new JsonArray().append('value')
 
@@ -905,10 +955,13 @@ new JsonArray().append('value')
 如需如何從使用者輸入中辨識及擷取日期和時間資訊的相關資訊，請參閱 [@sys-date 及 @sys-time 實體](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-date-time)。
 
 ### .after(String date or time)
+{: #dialog-methods-dates-after}
 
 判定日期/時間值是否在日期/時間引數之後。
 
 ### .before(String date or time)
+{: #dialog-methods-dates-before}
+
 判定日期/時間值是否在日期/時間引數之前。
 
 例如：
@@ -921,6 +974,7 @@ new JsonArray().append('value')
 - 如果比較 `date and time vs. time`，則此方法會忽略日期，而僅比較時間。
 
 ### now()
+{: #dialog-methods-dates-now}
 
 傳回含有現行日期和時間的字串，格式為 `yyyy-MM-dd HH:mm:ss`。
 
@@ -934,7 +988,7 @@ new JsonArray().append('value')
 {
   "conditions": "#what_time_is_it",
   "output": {
-    "generic":[
+    "generic": [
       {
         "values": [
           {
@@ -973,6 +1027,7 @@ new JsonArray().append('value')
 {: codeblock}
 
 ### .reformatDateTime(String format)
+{: #dialog-methods-dates-reformatDateTime}
 
 將日期和時間字串格式化為使用者輸出所要的格式。
 
@@ -1002,19 +1057,23 @@ new JsonArray().append('value')
 **附註**：嘗試僅格式化時間時，會將日期視為 `1970-01-01`。
 
 ### .sameMoment(String date/time)
+{: #dialog-methods-dates-sameMoment}
 
 - 判定日期/時間值是否與日期/時間引數相同。
 
 ### .sameOrAfter(String date/time)
+{: #dialog-methods-dates-sameOrAfter}
 
 - 判定日期/時間值是在日期/時間引數之後還是與其相同。
 - 類似 `.after()`。
 
 ### .sameOrBefore(String date/time)
+{: #dialog-methods-dates-sameOrBefore}
 
 - 判定日期/時間值是在日期/時間引數之前還是與其相同。
 
 ### today()
+{: #dialog-methods-dates-today}
 
 傳回含有現行日期的字串，格式為 `yyyy-MM-dd`。
 
@@ -1028,7 +1087,7 @@ new JsonArray().append('value')
 {
   "conditions": "#what_day_is_it",
   "output": {
-    "generic":[
+    "generic": [
       {
         "values": [
           {
@@ -1047,18 +1106,18 @@ new JsonArray().append('value')
 結果：`Today's date is 2018-03-09.`
 
 ## 日期和時間計算
-{: #dialog-methods-calculations}
+{: #dialog-methods-date-time-calculations}
 
 使用下列方法來計算日期。
 
 | 方法                  |說明        |
 |-------------------------|-------------|
-| `<date>.minusDays(n)`   | 傳回指定日期之前 n 天的日期。|
-| `<date>.minusMonths(n)` | 傳回指定日期之前 n 個月的日期。|
-| `<date>.minusYears(n)`  | 傳回指定日期之前 n 年的日期。|
-| `<date>.plusDays(n)`   | 傳回指定日期之後 n 天的日期。|
-| `<date>.plusMonths(n)` | 傳回指定日期之後 n 個月的日期。|
-| `<date>.plusYears(n)`  | 傳回指定日期之後 n 年的日期。|
+|`<date>.minusDays(n)`| 傳回指定日期之前 n 天的日期。|
+|`<date>.minusMonths(n)`| 傳回指定日期之前 n 個月的日期。|
+|`<date>.minusYears(n)`| 傳回指定日期之前 n 年的日期。|
+|`<date>.plusDays(n)`| 傳回指定日期之後 n 天的日期。|
+|`<date>.plusMonths(n)`| 傳回指定日期之後 n 個月的日期。|
+|`<date>.plusYears(n)`| 傳回指定日期之後 n 年的日期。|
 
 其中 `<date>` 是以格式 `yyyy-MM-dd` 或 `yyyy-MM-dd HH:mm:ss` 指定。
 
@@ -1067,7 +1126,7 @@ new JsonArray().append('value')
 ```json
 {
   "output": {
-    "generic":[
+    "generic": [
       {
         "values": [
           {
@@ -1090,7 +1149,7 @@ new JsonArray().append('value')
 ```json
 {
   "output": {
-    "generic":[
+    "generic": [
       {
         "values": [
           {
@@ -1113,7 +1172,7 @@ new JsonArray().append('value')
 ```json
 {
   "output": {
-    "generic":[
+    "generic": [
       {
         "values": [
           {
@@ -1149,7 +1208,7 @@ new JsonArray().append('value')
 ```json
 {
   "output": {
-    "generic":[
+    "generic": [
       {
         "values": [
           {
@@ -1172,7 +1231,7 @@ new JsonArray().append('value')
 ```json
 {
   "output": {
-    "generic":[
+    "generic": [
       {
         "values": [
           {
@@ -1195,7 +1254,7 @@ new JsonArray().append('value')
 ```json
 {
   "output": {
-    "generic":[
+    "generic": [
       {
         "values": [
           {
@@ -1222,7 +1281,7 @@ new JsonArray().append('value')
 
 ```json
 "context": {
-   "end_date": "<? now().reformatDateTime('Y') + '-12-24' ?>",
+    "end_date": "<? now().reformatDateTime('Y') + '-12-24' ?>",
    "start_date": "<? now().reformatDateTime('Y') + '-11-25' ?>"
  }
 ```
@@ -1232,7 +1291,7 @@ new JsonArray().append('value')
 `now().after($start_date) && now().before($end_date)`
 
 ### java.util.Date 支援
-{: #dialog-methods-java.util.Date}
+{: #dialog-methods-dates-java-util-date}
 
 除了內建方法之外，您還可以使用 `java.util.Date` 類別的標準方法。
 
@@ -1287,26 +1346,30 @@ new JsonArray().append('value')
 
 如果您要服務辨識使用者輸入中的特定數字格式（例如訂單號碼參照），請考慮建立型樣實體來進行擷取。如需詳細資料，請參閱[建立實體](/docs/services/assistant?topic=assistant-entities)。
 
-如果，如果您要變更數字的小數位數，將數字重新格式化為貨幣值，請參閱 [String format() 方法](#dialog-methods-java.lang.String)。
+如果，如果您要變更數字的小數位數，將數字重新格式化為貨幣值，請參閱 [String format() 方法](#java.lang.String)。
 
 ### toDouble()
+{: #dialog-methods-numbers-toDouble}
 
   將物件或欄位轉換為 Double 數字類型。您可以在任何物件或欄位上呼叫此方法。如果轉換失敗，則會傳回*空值*。
 
 ### toInt()
+{: #dialog-methods-numbers-toInt}
 
   將物件或欄位轉換為 Integer 數字類型。您可以在任何物件或欄位上呼叫此方法。如果轉換失敗，則會傳回*空值*。
 
 ### toLong()
+{: #dialog-methods-numbers-toLong}
 
   將物件或欄位轉換為 Long 數字類型。您可以在任何物件或欄位上呼叫此方法。如果轉換失敗，則會傳回*空值*。
 
   如果您在 SpEL 表示式中指定 Long 數字類型，則必須在數字後面加上 `L`，以進行這類識別。例如，`5000000000L`。任何不適用於 32 位元 Integer 類型的數字都需要使用此語法。例如，大於 2^31 (2,147,483,648) 或小於 -2^31 (-2,147,483,648) 的數字都會視為 Long 數字類型。Long 數字類型的最小值為 -2^63，而最大值為 2^63-1。
 
 ### Java 數字支援
-{: #dialog-methods-java.lang.Number}
+{: #dialog-methods-numbers-java}
 
 ### java.lang.Math()
+{: #dialog-methods-numbers-java-lang-math}
 
 執行基本數值運算。
 
@@ -1320,7 +1383,7 @@ new JsonArray().append('value')
     "bigger_number": "<? T(Math).max($number1,$number2) ?>"
   },
   "output": {
-    "generic":[
+    "generic": [
       {
         "values": [
           {
@@ -1344,7 +1407,7 @@ new JsonArray().append('value')
     "smaller_number": "<? T(Math).min($number1,$number2) ?>"
   },
   "output": {
-    "generic":[
+    "generic": [
       {
         "values": [
           {
@@ -1368,7 +1431,7 @@ new JsonArray().append('value')
     "power_of_two": "<? T(Math).pow($base.toDouble(),2.toDouble()) ?>"
   },
   "output": {
-    "generic":[
+    "generic": [
       {
         "values": [
           {
@@ -1384,14 +1447,15 @@ new JsonArray().append('value')
 ```
 {: codeblock}
 
-如需其他方法的相關資訊，請參閱 [java.lang.Math 參考文件](https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html)。
+如需其他方法的相關資訊，請參閱 [java.lang.Math 參考文件 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html)。
 
 ### java.util.Random()
+{: #dialog-methods-numbers-java-util-random}
 
 傳回亂數。您可以使用下列其中一個語法選項：
 
 - 若要傳回隨機布林值（true 或 false），請使用 `<?new Random().nextBoolean()?>`。
-- 若要傳回 0（包含）與 1（排除）之間的隨機倍精準數，請使用 `<?new Random().nextDouble()?>`
+- 若要傳回 0（包括）與 1（排除）之間的隨機倍精準數，請使用 `<?new Random().nextDouble()?>`
 - 若要傳回 0（包含）與所指定數字之間的隨機整數，請使用 `<?new Random().nextInt(n)?>`，其中 n 是您要 + 1 的數字範圍頂端。
   例如，如果您要傳回介於 0 與 10 之間的亂數，請指定 `<?new Random().nextInt(11)?>`。
 - 若要傳回完整整數值範圍（-2147483648 到 2147483648）的隨機整數，請使用 `<?new Random().nextInt()?>`。
@@ -1405,7 +1469,7 @@ Condition = @sys-number
     "answer": "<? new Random().nextInt(@sys-number.numeric_value + 1) ?>"
   },
   "output": {
-    "generic":[
+    "generic": [
       {
         "values": [
           {
@@ -1436,6 +1500,7 @@ Condition = @sys-number
 {: #dialog-methods-objects}
 
 ### JSONObject.clear()
+{: #dialog-methods-objects-jsonobject-clear}
 
 此方法可清除 JSON 物件中的所有值，並傳回空值。
 
@@ -1487,7 +1552,7 @@ Condition = @sys-number
 ```json
 {
   "output": {
-    "generic":[
+    "generic": [
       {
         "values": [
           {
@@ -1517,7 +1582,7 @@ Condition = @sys-number
 ```json
 {
   "output": {
-    "generic":[
+    "generic": [
       {
         "values": [
           {
@@ -1536,6 +1601,7 @@ Condition = @sys-number
 如果樹狀結構中先前的節點定義文字回應 `I'm happy to help.`，然後跳至具有上述定義之 JSON 輸出物件的節點，則只有 `Have a great day.` 會顯示為回應。不會顯示 `I'm happy to help.` 輸出，因為已清除它，並已取代為呼叫 `clear()` 方法之節點中的文字回應。
 
 ### JSONObject.has(String)
+{: #dialog-methods-objects-jsonobject-has}
 
 如果複雜 JSONObject 具有輸入名稱的內容，則此方法會傳回 true。
 
@@ -1565,6 +1631,7 @@ Condition = @sys-number
 結果：條件是 true，因為使用者物件包含 `first_name` 內容。
 
 ### JSONObject.remove(String)
+{: #dialog-methods-objects-jsonobject-remove}
 
 此方法會從輸入 `JSONObject` 中移除名稱的內容。此方法所傳回的 `JSONElement` 是要被移除的 `JSONElement`。
 
@@ -1610,7 +1677,7 @@ Condition = @sys-number
 {: codeblock}
 
 ### com.google.gson.JsonObject 支援
-{: #dialog-methods-com.google.gson.JsonObject}
+{: #dialog-methods-objects-com-google-gson-JsonObject}
 
 除了內建方法之外，您還可以使用 `com.google.gson.JsonObject` 類別的標準方法。
 
@@ -1624,6 +1691,7 @@ Condition = @sys-number
 **附註：**針對涉及正規表示式的方法，請參閱 [RE2 語法參考資料 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/google/re2/wiki/Syntax){: new_window}，以取得要在指定正規表示式時使用之語法的詳細資料。
 
 ### String.append(Object)
+{: #dialog-methods-strings-append}
 
 此方法會將輸入物件作為字串附加至字串，並傳回已修改的字串。
 
@@ -1661,6 +1729,7 @@ Condition = @sys-number
 {: codeblock}
 
 ### String.contains(String)
+{: #dialog-methods-strings-contains}
 
 如果字串包含輸入子字串，則此方法會傳回 true。
 
@@ -1678,6 +1747,7 @@ Condition = @sys-number
 結果：條件是 `true`。
 
 ### String.endsWith(String)
+{: #dialog-methods-strings-endsWith}
 
 如果字串的結尾是輸入子字串，則此方法會傳回 true。
 
@@ -1700,41 +1770,43 @@ Condition = @sys-number
 結果：條件是 `true`。
 
 ### String.extract(String regexp, Integer groupIndex)
+{: #dialog-methods-strings-extract}
 
-此方法會傳回由輸入正規表示式的指定群組索引所擷取的字串。
+此方法會傳回輸入中與指定的正規表示式群組型樣相符的字串。如果找不到相符項，則會傳回空字串。
 
-針對此輸入：
+此方法旨在擷取不同正規表示式型樣群組的相符項，而不是擷取單一正規表示式型樣的不同相符項。若要尋找不同的相符項，請參閱 [getMatch](#dialog-methods-strings-getMatch) 方法。
+{: note}
 
-```
-"Hello 123456".
-```
-{: codeblock}
-
-此語法：
+在此範例中，環境定義變數將儲存與指定的正規表示式型樣群組相符的字串。在表示式中，定義兩個正規表示式型樣群組，並以括弧括住每個群組。這會自然產生第三個群組，此群組同時包含這兩個群組。第一個正規表示式群組 (groupIndex 0) 與同時包含完整數字群組和文字群組的字串相符。第二個正規表示式群組 (groupIndex 1) 與第一次出現的數字群組相符。第三個群組 (groupIndex 2) 與數字群組後第一次出現的文字群組相符。
 
 ```json
 {
   "context": {
-    "number_extract": "<? input.text.extract('[\\d]+',0) ?>"
+    "number_extract": "<? input.text.extract('([\\d]+)(\\b [A-Za-z]+)',n) ?>"
   }
 }
 ```
 {: codeblock}
 
-  **重要事項：**若要處理 `\\d` 作為正規表示式，您必須新增另一個 `\\` 來跳出這兩條反斜線：`\\\\d`
+指定 JSON 格式的正規表示式時，必須提供兩個反斜線 (\\)。如果在節點回應中指定此表示式，則只需要一個反斜線。例如： 
+
+`<? input.text.extract('([\d]+)(\b [A-Za-z]+)',n) ?>`
+
+輸入：
+
+```
+"Hello 123 this is 456".
+```
+{: codeblock}
 
 結果：
 
-```json
-{
-  "context": {
-    "number_extract": "123456"
-  }
-}
-```
-{: codeblock}
+- n=`0` 時，值為 `123 this`。
+- n=`1` 時，值為 `123`。
+- n=`2` 時，值為 `this`。
 
 ### String.find(String regexp)
+{: #dialog-methods-strings-find}
 
 如果字串的任何區段符合輸入正規表示式，則此方法會傳回 true。您可以針對 JSONArray 或 JSONObject 元素呼叫此方法，它會在進行比較之前，將陣列或物件轉換為字串。
 
@@ -1756,7 +1828,47 @@ Condition = @sys-number
 
 結果：條件是 true，因為輸入文字的數值部分符合正規表示式 `^[^\d]*[\d]{6}[^\d]*$`。
 
+### String.getMatch(String regexp, Integer matchIndex)
+{: #dialog-methods-strings-getMatch}
+
+此方法會傳回輸入中與出現的指定正規表示式型樣相符的字串。如果找不到相符項，則此方法會傳回空字串。
+
+找到相符項時，會將其新增到您可以視為*相符項陣列* 的內容。如果您要傳回第三個相符項，則因為陣列元素計數從 0 開始，所以請指定 2 作為 `matchIndex` 值。例如，如果輸入的字串包含與指定型樣相符的三個字組，則只能藉由指定其索引值來傳回第一個、第二個或第三個相符項。
+
+在下列表示式中，您將在輸入中尋找一組數字。此表示式會將第二個型樣相符字串儲存到 `$second_number` 環境定義變數中，因為已指定索引值 1。
+
+```json
+{
+  "context": {
+    "second_number": "<? input.text.getMatch('([\\d]+)',1) ?>"
+  }
+}
+```
+{: codeblock}
+
+如果您以 JSON 語法指定表示式，則必須提供兩個反斜線 (\\)。如果在節點回應中指定該表示式，則只需要一個反斜線。 
+
+例如： 
+
+`<? input.text.getMatch('([\d]+)',1) ?>`
+
+- 使用者輸入：
+
+  ```
+  "hello 123 i said 456 and 8910".
+  ```
+  {: codeblock}
+
+- 結果：`456`
+
+在此範例中，表示式會在輸入中尋找第三個文字區塊。
+
+`<? input.text.getMatch('(\b [A-Za-z]+)',2) ?>`
+
+對於相同的使用者輸入，此表示式會傳回 `and`。
+
 ### String.isEmpty()
+{: #dialog-methods-strings-isEmpty}
 
 如果字串是空字串，而非空值，則此方法會傳回 true。
 
@@ -1783,6 +1895,7 @@ Condition = @sys-number
 結果：條件是 `true`。
 
 ### String.length()
+{: #dialog-methods-strings-length}
 
 此方法會傳回字串的字元長度。
 
@@ -1816,6 +1929,7 @@ Condition = @sys-number
 {: codeblock}
 
 ### String.matches(String regexp)
+{: #dialog-methods-strings-matches}
 
 如果字串符合輸入正規表示式，則此方法會傳回 true。
 
@@ -1838,6 +1952,7 @@ Condition = @sys-number
 結果：條件是 true，因為輸入文字符合正規表示式 `\^Hello\$`。
 
 ### String.startsWith(String)
+{: #dialog-methods-strings-startsWith}
 
 如果字串的開頭是輸入子字串，則此方法會傳回 true。
 
@@ -1860,6 +1975,7 @@ Condition = @sys-number
 結果：條件是 `true`。
 
 ### String.substring(Integer beginIndex, Integer endIndex)
+{: #dialog-methods-strings-substring}
 
 此方法會從位於 `beginIndex` 的字元取得子字串，且最後一個字元設為 `endIndex` 之前的索引。不包含 endIndex 字元。
 
@@ -1897,6 +2013,7 @@ Condition = @sys-number
 {: codeblock}
 
 ### String.toLowerCase()
+{: #dialog-methods-strings-toLowerCase}
 
 此方法會傳回轉換為小寫字母的原始字串。
 
@@ -1923,13 +2040,14 @@ Condition = @sys-number
 ```json
 {
   "context": {
-    "input_upper_case": "this is a dog!"
+    "input_lower_case": "this is a dog!"
   }
 }
 ```
 {: codeblock}
 
 ### String.toUpperCase()
+{: #dialog-methods-strings-toUpperCase}
 
 此方法會傳回轉換為大寫字母的原始字串。
 
@@ -1963,6 +2081,7 @@ Condition = @sys-number
 {: codeblock}
 
 ### String.trim()
+{: #dialog-methods-strings-trim}
 
 此方法會修除字串開頭及結尾的任何空格，並傳回已修改的字串。
 
@@ -2000,13 +2119,14 @@ Condition = @sys-number
 {: codeblock}
 
 ### java.lang.String 支援
-{: #java.lang.String}
+{: #dialog-methods-strings-java-lang-String-format}
 
 除了內建方法之外，您還可以使用 `java.lang.String` 類別的標準方法。
 
 #### java.lang.String.format()
+{: #dialog-methods-strings-java-lang-String-format}
 
-您可以將標準 Java 字串的 `format()` 方法套用至文字。如需用來指定格式詳細資料之語法的相關資訊，請參閱 [java.util.formatter 參考資料 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter#syntax){: new_window}。
+您可以將標準 Java 字串的 `format()` 方法套用至文字。如需用來指定格式詳細資料之語法的相關資訊，請參閱 [java.util.formatter 參考資料 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax){: new_window}。
 
 例如，下列表示式會接受三個十進位整數（1、1 及 2），並將它們新增至句子中。
 

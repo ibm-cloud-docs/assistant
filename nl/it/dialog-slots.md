@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-08-12"
+
+keywords: slot, slots
 
 subcollection: assistant
 
@@ -26,7 +28,7 @@ subcollection: assistant
 # Raccolta di informazioni con gli slot
 {: #dialog-slots}
 
-Aggiungi gli slot a un nodo di dialogo per raccogliere più informazioni da un utente all'interno di tale nodo. Gli slot raccolgono informazioni al ritmo dell'utente. I dettagli che l'utente fornisce all'inizio vengono salvati e il servizio chiede solo i dettagli che non lo sono.
+Aggiungi gli slot a un nodo di dialogo per raccogliere più informazioni da un utente all'interno di tale nodo. Gli slot raccolgono informazioni al ritmo dell'utente. Vengono salvati i dettagli che un utente fornisce in anticipo e il tuo assistente richiede solo i dettagli mancanti di cui necessita per completare la richiesta. 
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Aggiunta di slot a un nodo" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/kMLyKfmO9wI?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
@@ -41,15 +43,15 @@ Gli slot possono aiutarti a raccogliere ulteriori informazioni necessarie per co
 
 ![Mostra quattro slot che richiedono le informazioni necessarie per prenotare una cena.](images/reservation.png)
 
-L'utente potrebbe fornire valori per più slot contemporaneamente. Ad esempio, l'input potrebbe includere le informazioni `Saremo in 6 a cenare alle 7 PM.` Questo solo input contiene due dei valori richiesti mancanti: il numero di ospiti e l'ora della prenotazione. Il servizio li riconosce e li memorizza entrambi, ciascuno nel suo slot corrispondente. Quindi, visualizza la richiesta associata al successivo slot vuoto.
+L'utente potrebbe fornire valori per più slot contemporaneamente. Ad esempio, l'input potrebbe includere le informazioni `Saremo in 6 a cenare alle 7 PM.` Questo solo input contiene due dei valori richiesti mancanti: il numero di ospiti e l'ora della prenotazione. Il tuo assistente li riconosce e li archivia entrambi, ciascuno nel suo slot corrispondente. Quindi, visualizza la richiesta associata al successivo slot vuoto.
 
 ![Mostra che due slot sono riempiti e il servizio richiede quello rimanente.](images/pass-in-info.png)
 
-Gli slot consentono al servizio di rispondere alle domande di follow-up senza dover ricostruire l'obiettivo dell'utente. Ad esempio, un utente potrebbe chiedere una previsione meteorologica, quindi fare una domanda di follow-up sul tempo in un'altra posizione o per un altro giorno. Se salvi negli slot le variabili di previsione richieste, come la posizione e il giorno, qualora un utente faccia una domanda di follow-up con nuovi valori di variabile, puoi sovrascrivere i valori di slot con i nuovi valori forniti e dare una risposta che rifletta le nuove informazioni. (Per ulteriori informazioni su come richiamare un servizio esterno da un dialogo, vedi [Esecuzione di chiamate programmatiche da un nodo di dialogo](/docs/services/assistant?topic=assistant-dialog-actions)).
+Gli slot consentono al tuo assistente di rispondere alle domande di follow-up senza dover ricostruire l'obiettivo dell'utente. Ad esempio, un utente potrebbe chiedere una previsione meteorologica, quindi fare una domanda di follow-up sul tempo in un'altra posizione o per un altro giorno. Se salvi negli slot le variabili di previsione richieste, come la posizione e il giorno, qualora un utente faccia una domanda di follow-up con nuovi valori di variabile, puoi sovrascrivere i valori di slot con i nuovi valori forniti e dare una risposta che rifletta le nuove informazioni. (Per ulteriori informazioni su come richiamare un servizio esterno da un dialogo, vedi [Esecuzione di chiamate programmatiche da un nodo di dialogo](/docs/services/assistant?topic=assistant-dialog-webhooks)).
 
 ![Mostra qualcuno che chiede una previsione meteorologica e poi segue una domanda sul tempo per una posizione e un giorno differente.](images/follow-up.png)
 
-L'utilizzo di slot produce un flusso di dialogo più naturale tra l'utente e il servizio ed è più facile da gestire che cercare di raccogliere le informazioni utilizzando molti nodi separati.
+L'utilizzo di slot produce un flusso di dialogo più naturale tra l'utente e il tuo assistente ed è più facile da gestire che cercare di raccogliere le informazioni utilizzando molti nodi separati. 
 
 ## Aggiunta di slot
 {: #dialog-slots-add}
@@ -72,20 +74,20 @@ L'utilizzo di slot produce un flusso di dialogo più naturale tra l'utente e il 
       Il valore *Controlla* viene prima utilizzato come condizione, ma poi diventa il valore della variabile di contesto che specifichi nel campo *Salva con nome*. Specifica sia **cosa controllare** che **cosa salvare**. Se desideri modificare la modalità di salvataggio del valore, aggiungi l'espressione che riformatta il valore al campo *Controlla*.
       {: important}
 
-      Ad esempio, se l'entità è un'entità modello, ad esempio `@email`, dopo aver aggiunto il nome entità, aggiungi `.literal` al nome. L'aggiunta di  `.literal` indica che desideri acquisire il testo esatto che è stato immesso dall'utente e che è stato identificato come indirizzo email basato sul suo modello. 
+      Ad esempio, se l'entità è un'entità modello, ad esempio `@email`, dopo aver aggiunto il nome entità, aggiungi `.literal` al nome. L'aggiunta di  `.literal` indica che desideri acquisire il testo esatto che è stato immesso dall'utente e che è stato identificato come indirizzo email basato sul suo modello.
 
-      In alcuni casi, potresti voler utilizzare un'espressione per acquisire il valore, ma non applicare l'espressione a quello che viene salvato. In casi come questo, puoi utilizzare un valore nel campo *Controlla* per acquisire il valore e poi aprire l'editor JSON per modificare il valore della variabile di contesto in modo che venga salvato un altro valore. Vedi [Gestisci correttamente gli zeri](/docs/services/assistant?topic=assistant-tutorial-slots-complex#tutorial-slots-complex-recognize-zero) per un esempio. 
+      In alcuni casi, potresti voler utilizzare un'espressione per acquisire il valore, ma non applicare l'espressione a quello che viene salvato. In casi come questo, puoi utilizzare un valore nel campo *Controlla* per acquisire il valore e poi aprire l'editor JSON per modificare il valore della variabile di contesto in modo che venga salvato un altro valore.
 
-      Qualsiasi modifica apporti a un valore della variabile di contesto dello slot nell'editor JSON non si riflette nel campo **Controlla** quando esci dall'editor JSON. E se fai clic sul campo **Controlla** per attivarlo in qualsiasi momento dopo aver utilizzato l'editor JSON per modificare il valore, la modifica che hai apportato non è presente.
+      Qualsiasi modifica apporti a un valore della variabile di contesto dello slot nell'editor JSON non si riflette nel campo **Controlla** una volta che sei uscito dall'editor JSON. E se fai clic sul campo **Controlla** per attivarlo in qualsiasi momento dopo aver utilizzato l'editor JSON per modificare il valore, la modifica che hai apportato non è presente.
       {: important}
 
-      Evita di controllare i valori della variabile di contesto nel campo *Controlla*. Poiché il valore che controlli è anche il valore salvato, l'utilizzo di una variabile di contesto nella condizione può portare a un comportamento imprevisto. 
+      Evita di controllare i valori della variabile di contesto nel campo *Controlla*. Poiché il valore che controlli è anche il valore salvato, l'utilizzo di una variabile di contesto nella condizione può portare a un comportamento imprevisto.
 
     - **Salva con nome**: fornisci un nome per la variabile di contesto in cui memorizzare il valore di interesse dalla risposta dell'utente alla richiesta dello slot.
 
        Non riutilizzare una variabile di contesto utilizzata altrove nel dialogo. Se la variabile di contesto ha già un valore, la richiesta dello slot non viene visualizzata. La richiesta per lo slot viene visualizzata solo quando la variabile di contesto per lo slot è null.
 
-    - **Richiesta**: scrivi un'istruzione che induca l'utente a fornire le informazioni che ti servono. Dopo aver visualizzato questa richiesta, la conversazione si interrompe e il servizio attende che l'utente risponda.
+    - **Richiesta**: scrivi un'istruzione che induca l'utente a fornire le informazioni che ti servono. Dopo aver visualizzato questa richiesta, la conversazione viene sospesa e il tuo assistente attende che l'utente risponda. 
 
     - Se desideri che vengano visualizzate istruzioni di follow-up diverse a seconda del fatto che l'utente ti fornisca le istruzioni necessarie in risposta alla richiesta slot iniziale, puoi modificare lo slot (facendo clic sull'icona **Modifica slot** ![Modifica slot](images/edit-slot.png)) e definire le istruzioni di follow-up:
 
@@ -124,7 +126,7 @@ L'utilizzo di slot produce un flusso di dialogo più naturale tra l'utente e il 
 
 1.  **Rendi uno slot facoltativo o disabilitalo in determinate condizioni**. Puoi facoltativamente configurare uno slot nei seguenti modi:
 
-    - **Facoltativo**: per rendere uno slot facoltativo, aggiungi uno slot senza una richiesta. Il servizio non richiede all'utente le informazioni, ma le ricerca nell'input utente e salva il valore se l'utente l'ha fornito. Ad esempio, potresti aggiungere uno slot che acquisisce informazioni di restrizione dietetica nel caso in cui l'utente le specifichi. Tuttavia, non vuoi chiedere a tutti gli utenti informazioni dietetiche in quanto è irrilevante nella maggior parte dei casi.
+    - **Facoltativo**: per rendere uno slot facoltativo, aggiungi uno slot senza una richiesta. Il tuo assistente non richiede all'utente le informazioni, ma le ricerca nell'input utente e salva il valore se l'utente l'ha fornito. Ad esempio, potresti aggiungere uno slot che acquisisce informazioni di restrizione dietetica nel caso in cui l'utente le specifichi. Tuttavia, non vuoi chiedere a tutti gli utenti informazioni dietetiche in quanto è irrilevante nella maggior parte dei casi.
 
        <table>
        <caption>Slot facoltativo</caption>
@@ -153,13 +155,13 @@ L'utilizzo di slot produce un flusso di dialogo più naturale tra l'utente e il 
 
     ![Mostra un utente che chiede la ricetta della salsa. La risposta è' Me la porterò fino alla tomba'.](images/sauce.png)
 
-    Dopo aver risposto alla domanda fuori fuori argomento, viene visualizzata la richiesta associata allo slot vuoto corrente.
+    Dopo aver risposto alla domanda fuori argomento, viene visualizzata la richiesta associata allo slot vuoto corrente.
 
     Questa condizione viene attivata se l'utente fornisce un input che corrisponde alle condizioni del gestore slot in qualsiasi momento durante il flusso del nodo di dialogo finché non viene visualizzata la risposta a livello di nodo. Vedi [Gestione delle richieste per uscire dal processo](#dialog-slots-node-level-handler) per ulteriori modi in cui utilizzare il gestore slot.
 1.  **Aggiungi una risposta a livello di nodo**. La risposta a livello di nodo non viene eseguita fino a quando non vengono riempiti tutti gli slot richiesti. Puoi aggiungere una risposta che riepiloghi le informazioni che hai raccolto. Ad esempio, `La consegna di una pizza $size è prevista alle $time. Buon appetito!`
 
     Se desideri definire risposte diverse in base a determinate condizioni, fai clic su **Personalizza** e quindi fai clic sull'interruttore **Risposte multiple** per **attivarlo**. Per informazioni sulle risposte condizionali, vedi [Risposte condizionali](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multiple).
-1.  **Aggiungi la logica che reimposta le variabili di contesto degli slot**. Quando raccogli le risposte dell'utente per ogni slot, queste vengono salvate in variabili di contesto. Puoi utilizzare le variabili di contesto per passare le informazioni a un altro nodo o affinché vengano utilizzate da un'applicazione o un servizio esterno. Tuttavia, dopo aver passato le informazioni, devi impostare le variabili di contesto su null per reimpostare il nodo in modo che possa iniziare a raccogliere di nuovo le informazioni. Non puoi impostare su null le variabili di contesto all'interno del nodo corrente perché il servizio non esce dal nodo finché non vengono riempiti tutti gli slot richiesti. Invece, prendi in considerazione uno dei seguenti metodi:
+1.  **Aggiungi la logica che reimposta le variabili di contesto degli slot**. Quando raccogli le risposte dell'utente per ogni slot, queste vengono salvate in variabili di contesto. Puoi utilizzare le variabili di contesto per passare le informazioni a un altro nodo o affinché vengano utilizzate da un'applicazione o un servizio esterno. Tuttavia, dopo aver passato le informazioni, devi impostare le variabili di contesto su null per reimpostare il nodo in modo che possa iniziare a raccogliere di nuovo le informazioni. Non puoi impostare su null le variabili di contesto all'interno del nodo corrente perché il tuo assistente non esce dal nodo finché non vengono riempiti tutti gli slot richiesti. Invece, prendi in considerazione uno dei seguenti metodi:
 
     - Aggiungi l'elaborazione all'applicazione esterna che imposta su null le variabili.
     - Aggiungi un nodo figlio che imposta su null le variabili.
@@ -189,7 +191,7 @@ Prendi in considerazione l'utilizzo di questi approcci per gestire le attività 
 - [Gestione degli zeri](#dialog-slots-zero)
 - [Richiamo della conferma](#dialog-slots-get-confirmation)
 - [Sostituzione di un valore di variabile di contesto dello slot](#dialog-slots-found-handler-event-properties)
-- [Evitare confusione tra i numeri](#dialog-slots-avoid-number-confusion)
+- [Evitare confusione tra i numeri](#dialog-slots-avoid-slot-confusion)
 - [Aggiunta di condizioni alle risposte Trovato e Non trovato](#dialog-slots-handler-next-steps)
 - [Prosecuzione dopo più tentativi non riusciti](#dialog-slots-stop-trying-after-3)
 - [Omissione di una risposta Trovato quando non è necessaria](#dialog-slots-stifle-found-responses)
@@ -202,7 +204,7 @@ Includi una richiesta iniziale per l'intero nodo che indichi chiaramente agli ut
 
 Ad esempio, quando il nodo viene attivato perché un cliente vuole ordinare una pizza, puoi rispondere con la richiesta preliminare, `Posso ordinarti una pizza. Dimmi quale formato desideri e l'ora in cui vuoi che venga consegnata.`
 
-Se l'utente fornisce anche solo una parte di queste informazioni nella sua richiesta iniziale, la richiesta non viene visualizzata. Ad esempio, l'input iniziale potrebbe essere, `Voglio ordinare una pizza grande.` Quando il servizio analizza l'input, riconosce `grande` come dimensione della pizza e riempie lo slot **Dimensione** con il valore fornito. Poiché uno degli slot è stato riempito, ignora la visualizzazione della richiesta iniziale per evitare di chiedere nuovamente le informazioni sulla dimensione della pizza. Invece, visualizza le richieste per eventuali slot rimanenti con informazioni mancanti.
+Se l'utente fornisce anche solo una parte di queste informazioni nella sua richiesta iniziale, la richiesta non viene visualizzata. Ad esempio, l'input iniziale potrebbe essere, `Voglio ordinare una pizza grande.` Quando il tuo assistente analizza l'input, riconosce `grande` come dimensione della pizza e riempie lo slot **Dimensione** con il valore fornito. Poiché uno degli slot è stato riempito, ignora la visualizzazione della richiesta iniziale per evitare di chiedere nuovamente le informazioni sulla dimensione della pizza. Invece, visualizza le richieste per eventuali slot rimanenti con informazioni mancanti.
 
 Dal riquadro Personalizza in cui hai abilitato la funzione Slot, seleziona la casella di spunta **Richiedi tutto** per abilitare la richiesta iniziale. Questa impostazione aggiunge il campo **Se non ci sono slot precompilati, chiedi prima questo** al nodo, dove puoi specificare il testo che richiede all'utente tutte le informazioni.
 
@@ -254,23 +256,44 @@ Per altre idee di riformattazione, vedi [Metodi del linguaggio delle espressioni
 ### Gestione degli zeri
 {: #dialog-slots-zero}
 
-L'utilizzo di `@sys-number` in una condizione slot è utile per acquisire i numeri specificati dagli utenti nei loro input. Tuttavia, non funziona come previsto quando gli utenti specificano il numero zero (0). Invece di gestire lo zero come un numero valido, la condizione viene valutata come false e il servizio chiede di nuovo un numero all'utente. Per impedire questo comportamento, controlla `@sys-number` o `@sys-number:0` nella condizione slot. 
+L'utilizzo di `@sys-number` in una condizione slot è utile per acquisire i numeri specificati dagli utenti nei loro input. Tuttavia, non funziona come previsto quando gli utenti specificano il numero zero (0). Invece di gestire lo zero come un numero valido, la condizione viene valutata come false e il tuo assistente chiede di nuovo un numero all'utente. Per impedire questo comportamento, controlla che una citazione `@sys-number` sia maggiore o uguale a zero nella condizione slot.
 
-Per assicurarti che una condizione slot che controlla le citazioni dei numeri gestisca correttamente gli zeri, completa i seguenti passi: 
+Per assicurarti che una condizione slot che controlla le citazioni dei numeri gestisca correttamente gli zeri, completa il seguente passo:
 
-1.  Aggiungi `@sys-number || @sys-number:0` al campo della condizione slot e poi fornisci il nome della variabile di contesto e la richiesta di testo. 
-1.  Fai clic sull'icona **Modifica risposta** ![Modifica risposta](images/edit-slot.png).
-1.  Fai clic sul menu **Altro** ![Icona Altro](images/kabob.png) e poi seleziona **Apri editor JSON**.
-1.  Aggiorna la variabile di contesto che ora contiene la nuova sintassi,  `"number":"@sys-number || @sys-number:0"`, per specificare solo `@sys-number`.
+1.  Aggiungi `@sys-number >= 0` al campo della condizione slot e poi fornisci il nome della variabile di contesto e la richiesta di testo. 
+    
+    Quello che controlli nell'input viene anche salvato nella variabile di contesto dello slot. Tuttavia, in questo caso, vuoi salvare solo il numero (ad esempio `5`). Non vuoi salvare `5 > = 0`. Per cambiare ciò che viene salvato, devi modificare il valore della variabile di contesto. 
+
+1.  Apri lo slot per modificarlo facendo clic sull'icona **Modifica slot** ![Modifica slot](images/edit-slot.png). Dal menu **Opzioni** ![Icona Altro](images/kabob.png), apri l'editor JSON.
+
+1.  Modifica il valore della variabile di contesto. 
+
+    Il valore sarà simile al seguente:
 
     ```json
     {
-      "context":{
+      "context": {
+        "number": "@sys-number >= 0"
+      }
+    }
+    ```
+    {: codeblock}
+
+    Modificalo in modo simile a questo:
+
+    ```json
+    {
+      "context": {
         "number":"@sys-number"
       }
     }
     ```
     {: codeblock}
+
+1.  Salva le tue modifiche. 
+
+La modifica che apporti al valore della variabile di contesto non si riflette nel campo Controlla, il che è corretto. Non modificare il valore per il campo Controlla o fai anche clic sul campo. Se lo fai, la modifica che hai apportato al JSON verrà persa.
+{: tip}
 
 Se non desideri accettare uno zero come valore valido, puoi aggiungere una risposta condizionale per lo slot che controlla il valore zero e comunicare all'utente che deve fornire un numero maggiore di zero. Tuttavia, è importante che la condizione slot sia in grado di riconoscere uno zero quando viene fornito come input.
 
@@ -367,19 +390,31 @@ Response: Ok, destination is $destination.
 
 Questa configurazione dello slot consente al tuo dialogo di reagire alla modifica di destinazione dell'utente dicendo, `Ok, la destinazione verrà aggiornata da Parigi a Madrid.`
 
-### Evitare confusione tra i numeri
-{: #dialog-slots-avoid-number-confusion}
+### Evitare confusione nel riempimento degli slot
+{: #dialog-slots-avoid-slot-confusion}
 
-Alcuni valori forniti dagli utenti possono essere identificati come più di un tipo di entità.
+Quando viene valutato un input utente, viene riempito solo lo slot che soddisfa la prima condizione slot. Verifica le seguenti possibili cause di errata interpretazione e occupatene: 
 
-Potresti avere due slot che memorizzano lo stesso tipo di valore, come ad esempio una data di arrivo e una data di partenza. Crea una logica nelle tue condizioni di slot per distinguere tra loro questi valori simili.
+- **Problema**: la stessa entità viene utilizzata in più di uno slot. 
 
-Inoltre, il servizio può riconoscere più tipi di entità in un singolo input utente. Ad esempio, quando un utente fornisce una valuta, viene riconosciuta come tipi di entità @sys-currency e @sys-number. Esegui qualche test nel riquadro *Provalo* per comprendere come il sistema interpreterà i diversi input utente e creerà la logica nelle tue condizioni per evitare possibili errori di interpretazione.
+    Ad esempio, `@sys-date` viene utilizzato per acquisire la data di partenza in uno slot e la data di arrivo in un altro. 
 
-Nella logica che è univoca per la funzione degli slot, quando due entità di sistema vengono riconosciute in un singolo input utente, viene utilizzata quella con l'estensione più lunga. Ad esempio, se l'utente immette *May 2*, anche se il servizio {{site.data.keyword.conversationshort}} riconosce entrambe le entità @sys-date (05022017) e @sys-number (2) nel testo, solo l'entità di sistema con l'estensione più lunga (@sys-date) viene registrata e applicata a uno slot.
-{: tip}
+    **Soluzione**: utilizza le condizioni di slot trovato per ottenere chiarimenti dall'utente circa quale data stai salvando in uno slot prima di salvarla.
 
-Per ciascuna entità che viene riconosciuta nell'input utente, può essere riempito solo uno slot. Pertanto, se hai due slot che stanno ricercando valori simili, posizionali in modo tale che lo slot che acquisisce la stringa più lunga si trovi sopra lo slot che acquisisce quella più breve. Ad esempio, se uno slot acquisisce un ID prodotto (`@id`) con una sintassi simile a `GR1234` e un altro slot acquisisce un numero (`@number`), ad esempio `1234`, posiziona lo slot che acquisisce l'ID sopra quello che acquisisce il numero. Diversamente, quando l'input utente contiene un ID, ad esempio `BR3344`, lo slot `@number` potrebbe acquisirlo come riferimento numerico e riempire la variabile di contenuto `$number` con `3344`. Tuttavia, è più probabile che il valore sia un riferimento all'ID del prodotto che deve essere salvato nella variabile di contesto `$id` dello slot `@id` come `BR3344`.
+- **Problema**: un termine corrisponde completamente o parzialmente alle entità in più di una condizione slot. 
+
+    Ad esempio, se uno slot acquisisce un ID prodotto (`@id`) con una sintassi simile a `GR1234` e un altro slot acquisisce un numero (`@number`), ad esempio `1234`, l'input utente che contiene un ID, ad esempio `BR3344` potrebbe essere acquisito dallo slot `@number` come riferimento numerico e riempire la variabile di contesto `$number` con `3344`.
+
+    **Soluzione**: colloca lo slot con la condizione di entità che acquisisce un modello più lungo (@id) più in alto nell'elenco degli slot rispetto alla condizione che acquisisce il modello più breve (@number).
+
+- **Problema**: un termine viene riconosciuto come più di un tipo di entità di sistema.
+
+    Ad esempio, se l'utente immette *May 2*, il tuo assistente riconosce sia l'entità `@sys-date` (2017-05-02) che l'entità `@sys-number` (2).
+
+    **Soluzione**: nella logica che è univoca per la funzione degli slot, quando due entità di sistema vengono riconosciute in un singolo input utente, viene utilizzata quella con l'estensione più lunga. Pertanto, anche se il tuo assistente riconosce entrambe le entità di sistema nel testo, solo l'entità con l'estensione più lunga (`@sys-date` con `2017-05-02`) viene registrata e applicata allo slot.
+
+    Questa soluzione temporanea non è necessaria se stai utilizzando le entità di sistema revisionate. Con le entità aggiornate, un riferimento alla data viene considerato unicamente come una citazione di `@sys-date` e non viene trattato anche come una citazione di `@sys-number`. Per ulteriori dettagli, vedi [Nuove entità di sistema](/docs/services/assistant?topic=assistant-beta-system-entities).
+  {: note}
 
 ### Aggiunta di condizioni alle risposte Trovato e Non trovato
 {: #dialog-slots-handler-next-steps}
@@ -398,25 +433,25 @@ Per ogni slot, puoi utilizzare le risposte condizionali con le azioni associate 
 
     Per le risposte Trovato (che vengono visualizzate quando l'utente fornisce un valore che corrisponde al tipo di valore specificato nel campo Controlla), puoi scegliere una di queste azioni da eseguire:
 
-      - **Vai a (predefinito)**: indica al servizio di andare allo slot vuoto successivo dopo la visualizzazione della risposta. Nella risposta associata, assicura all'utente che l'input è stato compreso. Ad esempio, *Ok. Vuoi pianificarlo per il giorno $date.*
+      - **Vai a (predefinito)**: indica al tuo assistente di andare allo slot vuoto successivo dopo la visualizzazione della risposta. Nella risposta associata, assicura all'utente che l'input è stato compreso. Ad esempio, *Ok. Vuoi pianificarlo per il giorno $date.*
       - **Cancella slot e chiedi di nuovo**: se stai utilizzando un'entità nel campo *Controlla* che potrebbe selezionare il valore errato, aggiungi le condizioni per acquisire tutti i probabili errori di interpretazione e utilizza questa azione per cancellare il valore slot corrente e richiedere quello corretto.
       - **Passa alla risposta**: se, quando viene soddisfatta la condizione che hai definito, non hai più bisogno di riempire gli slot rimanenti in questo nodo, scegli questa azione per ignorare gli slot rimanenti e andare direttamente alla risposta a livello di nodo successiva. Ad esempio, potresti aggiungere una condizione che controlla se l'età dell'utente è inferiore a 16. Se è così, potresti ignorare gli slot rimanenti che pongono domande relative ai dati di guida dell'utente.
 
     Per le risposte Non trovato (che vengono visualizzate quando l'utente non fornisce un valore valido), puoi scegliere una di queste azioni da eseguire:
 
-      - **Attendi input utente (predefinito)**: interrompe la conversazione e il servizio attende che l'utente risponda. Nel caso più semplice, il testo che specifichi qui può indicare più esplicitamente il tipo di informazioni che l'utente deve fornire. Se utilizzi questa azione con una risposta condizionale, assicurati di formulare la risposta condizionale in modo da indicare chiaramente l'errore nella risposta dell'utente e cosa invece prevedi venga specificato.
-      - **Chiedi di nuovo**: dopo aver visualizzato la risposta Non trovato, il servizio ripete di nuovo la richiesta slot e attende la risposta dell'utente. Se utilizzi questa azione con una risposta condizionale, la risposta può semplicemente spiegare l'errore nella risposta fornita dall'utente. Non deve reiterare il tipo di informazioni che desideri ti vengano fornite dall'utente in quanto, di norma, la spiegazione viene fornita dalla richiesta slot.
+      - **Attendi input utente (predefinito)**: sospende la conversazione e il tuo assistente attende che l'utente risponda. Nel caso più semplice, il testo che specifichi qui può indicare più esplicitamente il tipo di informazioni che l'utente deve fornire. Se utilizzi questa azione con una risposta condizionale, assicurati di formulare la risposta condizionale in modo da indicare chiaramente l'errore nella risposta dell'utente e cosa invece prevedi venga specificato.
+      - **Chiedi di nuovo**: dopo aver visualizzato la risposta Non trovato, il tuo assistente ripete di nuovo la richiesta slot e attende la risposta dell'utente. Se utilizzi questa azione con una risposta condizionale, la risposta può semplicemente spiegare l'errore nella risposta fornita dall'utente. Non deve reiterare il tipo di informazioni che desideri ti vengano fornite dall'utente in quanto, di norma, la spiegazione viene fornita dalla richiesta slot.
 
         Se scegli questa opzione, considera di aggiungere almeno una variante della risposta Non trovato in modo che l'utente non veda lo stesso identico testo più di una volta. Cogli l'opportunità di formulare diversamente il testo per spiegare all'utente quali sono le informazioni che devono essere fornite e in quale formato.
         {: tip}
 
-      - **Salta questo slot**: indica al servizio di smettere di tentare di riempire lo slot corrente e, invece, di spostarsi alla richiesta dello slot vuoto successivo. Questa opzione è utile in uno slot che vuoi rendere facoltativo e per cui vuoi visualizzare una richiesta che chiede informazioni all'utente. Ad esempio, potresti avere un'entità @seating che acquisisce le preferenze per i posti a sedere al ristorante, ad esempio *fuori*, *accanto al caminetto*, *privato* e così via. Puoi aggiungere uno slot che richieda all'utente *Hai preferenze per il posto a sedere?* e controlli `@seating.values`. Se viene fornita una risposta valida, le informazioni sulla preferenza vengono salvate in `$seating_preferences`. Tuttavia, scegliendo questa azione come passo successivo alla risposta Non trovato, indichi al servizio di smettere di tentare di riempire questo slot se l'utente non fornisce un valore valido.
+      - **Salta questo slot**: indica al tuo assistente di smettere di tentare di riempire lo slot corrente e, invece, di spostarsi alla richiesta dello slot vuoto successivo. Questa opzione è utile in uno slot che vuoi rendere facoltativo e per cui vuoi visualizzare una richiesta che chiede informazioni all'utente. Ad esempio, potresti avere un'entità @seating che acquisisce le preferenze per i posti a sedere al ristorante, ad esempio *fuori*, *accanto al caminetto*, *privato* e così via. Puoi aggiungere uno slot che richieda all'utente *Hai preferenze per il posto a sedere?* e controlli `@seating.values`. Se viene fornita una risposta valida, le informazioni sulla preferenza vengono salvate in `$seating_preferences`. Tuttavia, scegliendo questa azione come passo successivo alla risposta Non trovato, indichi al tuo assistente di smettere di tentare di riempire questo slot se l'utente non fornisce un valore valido. 
       - **Passa alla risposta**: se, quando viene soddisfatta la condizione che hai definito, non hai più bisogno di riempire gli slot rimanenti in questo nodo, scegli questa azione per ignorare gli slot rimanenti e andare direttamente alla risposta a livello di nodo successiva. Ad esempio, se dopo aver acquisito le informazioni per il volo di sola andata, la richiesta slot è *Stai acquistando biglietti di andata e ritorno?* la condizione Non trovato può controllare la presenza di #No. Se #No viene trovato, utilizza questa opzione per saltare gli slot rimanenti che acquisiscono le informazioni sul volo di ritorno e andare invece direttamente alla risposta a livello di nodo.
 
     Fai clic su **Indietro** per tornare alla vista di modifica dello slot.
 1.  Per aggiungere un'altra risposta condizionale, fai clic su **Aggiungi una risposta** e quindi immetti la condizione e la risposta da visualizzare se viene soddisfatta la condizione.
 
-    Assicurati di aggiungere almeno una risposta che verrà visualizzata in ogni caso. Puoi lasciare vuoto il campo per questa risposta generica. Il servizio popolerà automaticamente la condizione vuota con la condizione speciale `true`.
+    Assicurati di aggiungere almeno una risposta che verrà visualizzata in ogni caso. Puoi lasciare vuoto il campo per questa risposta generica. Il tuo assistente popolerà automaticamente la condizione vuota con la condizione speciale `true`.
 
 1.  Fai clic su **Salva** per salvare le modifiche, chiudere la vista di modifica dello slot e ritornare alla vista di modifica del nodo.
 
@@ -425,7 +460,7 @@ Per ogni slot, puoi utilizzare le risposte condizionali con le azioni associate 
 
 Puoi fornire agli utenti un modo per uscire da uno slot se non possono rispondere correttamente dopo diversi tentativi utilizzando le risposte condizionali Non trovato. Nella risposta generica, apri l'editor JSON per aggiungere una variabile di contesto contatore che terrà traccia del numero di volte in cui viene restituita la risposta Non trovato. In un nodo precedente, assicurati di impostare il valore iniziale della variabile di contesto contatore su 0.
 
-In questo esempio, il servizio richiede il formato della pizza. Consente all'utente di rispondere in modo errato per 3 volte prima di applicare automaticamente un formato (medio) alla variabile. (Puoi includere uno slot di conferma in cui gli utenti possono sempre correggere il formato quando viene loro richiesto di confermare le informazioni dell'ordine.)
+In questo esempio, il tuo assistente richiede il formato della pizza. Consente all'utente di rispondere in modo errato per 3 volte prima di applicare automaticamente un formato (medio) alla variabile. (Puoi includere uno slot di conferma in cui gli utenti possono sempre correggere il formato quando viene loro richiesto di confermare le informazioni dell'ordine.)
 
 Check for: @size
 Save as: $size
@@ -485,10 +520,10 @@ Aggiungi almeno un gestore slot che possa riconoscere quando un utente vuole usc
 Ad esempio, in un nodo che raccoglie le informazioni per pianificare un appuntamento di toelettatura di animali domestici, puoi aggiungere un gestore che condizioni l'intento #cancel, che riconosce espressioni come <q>Lascia stare. Ho cambiato idea.</q>
 
 1.  Nell'editor JSON per il gestore, compila tutte le variabili di contesto dello slot con valori fittizi per impedire al nodo di continuare a chiedere informazioni mancanti. Quindi, nella risposta del gestore, aggiungi un messaggio come, `Ok, ci fermiamo qui. Non verrà pianificato alcun appuntamento.`
-1.  Scegli quale azione vuoi che venga eseguita successivamente dal servizio dalle seguenti opzioni:
+1.  Scegli quale azione vuoi che venga eseguita successivamente dal tuo assistente dalle seguenti opzioni: 
 
     - **Chiedi di nuovo (predefinito)**: visualizza la richiesta per lo slot su cui l'utente stava lavorando appena prima di porre una domanda fuori argomento.
-    - **Salta slot corrente**: visualizza la richiesta associata allo slot che viene dopo lo slot su cui l'utente stava lavorando appena prima di porre una domanda fuori argomento. E il servizio non effettua ulteriori tentativi di riempire lo slot saltato.
+    - **Salta slot corrente**: visualizza la richiesta associata allo slot che viene dopo lo slot su cui l'utente stava lavorando appena prima di porre una domanda fuori argomento. E il tuo assistente non effettua ulteriori tentativi di riempire lo slot saltato. 
     - **Passa alla risposta**: salta le richieste per tutti gli slot vuoti rimanenti incluso lo slot su cui l'utente stava lavorando appena prima di porre una domanda fuori argomento.
 
 1.  Nella risposta a livello di nodo, aggiungi una condizione che controlli la presenza di un valore fittizio in una delle variabili di contesto dello slot. Se viene trovato, mostra un messaggio finale come: `Se decidi di prendere un appuntamento più tardi, sono qui per aiutarti.` Se non viene trovato, visualizza il messaggio di riepilogo standard per il nodo, ad esempio `Prenderò un appuntamento di toelettatura per il tuo $animal alle $time del $date.`

@@ -6,6 +6,7 @@ lastupdated: "2019-01-31"
 
 subcollection: assistant
 
+
 ---
 
 {:curl: #curl .ph data-hd-programlang='curl'}
@@ -37,7 +38,7 @@ subcollection: assistant
 
 |方法|描述|API 版本|参考|
 |:-------|:------------|:-------:|:---------:|
-|**创建会话**|创建新的会话。会话用于将用户输入发送到技能并接收响应。此外，还可维护会话的状态。|V2|[cURL](https://{DomainName}/apidocs/assistant-v2#create-a-session){: new_window} [node](https://{DomainName}/apidocs/assistant-v2?language=node#create-a-session){: new_window} [java](https://{DomainName}/apidocs/assistant-v2?language=java#create-a-session){: new_window} [python](https://{DomainName}/apidocs/assistant-v2?language=python#create-a-session){: new_window}|
+|**创建会话**|创建新的会话。会话用于将用户输入发送到技能并接收响应。它还可维护对话的状态。|V2|[cURL](https://{DomainName}/apidocs/assistant-v2#create-a-session){: new_window} [node](https://{DomainName}/apidocs/assistant-v2?language=node#create-a-session){: new_window} [java](https://{DomainName}/apidocs/assistant-v2?language=java#create-a-session){: new_window} [python](https://{DomainName}/apidocs/assistant-v2?language=python#create-a-session){: new_window}|
 |**删除会话**|在会话超时前显式删除会话。|V2|[cURL](https://{DomainName}/apidocs/assistant-v2#delete-session){: new_window} [node](https://{DomainName}/apidocs/assistant-v2?language=node#delete-session){: new_window} [java](https://{DomainName}/apidocs/assistant-v2?language=java#delete-session){: new_window} [python](https://{DomainName}/apidocs/assistant-v2?language=python#delete-session){: new_window}|
 |**向助手发送用户输入**|向助手发送用户输入并接收响应。|V2|[cURL](https://{DomainName}/apidocs/assistant-v2#send-user-input-to-assistant){: new_window} [node](https://{DomainName}/apidocs/assistant-v2?language=node#send-user-input-to-assistant){: new_window} [java](https://{DomainName}/apidocs/assistant-v2?language=java#send-user-input-to-assistant){: new_window} [python](https://{DomainName}/apidocs/assistant-v2?language=python#send-user-input-to-assistant){: new_window}|
 |**获取对用户输入的响应**|向工作空间发送用户输入并接收响应。|V1|[cURL](https://{DomainName}/apidocs/assistant#get-response-to-user-input){: new_window} [node](https://{DomainName}/apidocs/assistant?language=node#get-response-to-user-input){: new_window} [java](https://{DomainName}/apidocs/assistant?language=java#get-response-to-user-input){: new_window} [python](https://{DomainName}/apidocs/assistant?language=python#get-response-to-user-input){: new_window}|

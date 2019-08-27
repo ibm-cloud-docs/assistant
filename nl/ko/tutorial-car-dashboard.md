@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
 
@@ -48,14 +48,14 @@ subcollection: assistant
 
 시작하기 전에 [시작하기 튜토리얼](/docs/services/assistant?topic=assistant-getting-started)을 완료하십시오.
 
-사용자가 작성한 {{site.data.keyword.conversationshort}} 튜토리얼 스킬을 사용하고 시작하기 연습의 일부로 빌드된 단순 대화에 노드를 추가하십시오. 
+사용자가 작성한 {{site.data.keyword.conversationshort}} 튜토리얼 스킬을 사용하고 시작하기 연습의 일부로 빌드된 단순 대화에 노드를 추가합니다.
 
 ## 1단계: 인텐트 및 예제 추가
 {: #tutorial-car-dashboard-add-intents}
 
 인텐트 탭에서 인텐트를 추가하십시오. 인텐트는 사용자 입력에 표현된 목적입니다.
 
-1.  {{site.data.keyword.conversationshort}} 튜토리얼 스킬의 **인텐트** 페이지에서, **인텐트 추가**를 클릭하십시오. 
+1.  {{site.data.keyword.conversationshort}} 튜토리얼 스킬의 **인텐트** 페이지에서, **인텐트 추가**를 클릭하십시오.
 1.  다음 인텐트 이름을 추가하고 **인텐트 작성**을 클릭하십시오.
 
     ```
@@ -95,7 +95,7 @@ subcollection: assistant
 #turn_on 인텐트가 있는 사용자 입력에서 발생할 수 있는 엔티티를 작성하여 사용자가 켜려는 대상을 나타내십시오.
 
 1.  **엔티티** 탭을 클릭하여 엔티티 페이지를 여십시오.
-1.  **엔티티 추가**를 클릭하십시오.
+1.  **엔티티 추가**를 클릭합니다.
 1.  다음 엔티티 이름을 추가한 다음 Enter를 누르십시오.
 
     ```
@@ -127,7 +127,7 @@ subcollection: assistant
     - 값: `air conditioning`. 동의어: `air`와 `AC`.
 
 1.  `@appliance` 엔티티에 대한 유사 일치를 **켜는** 토글을 클릭하십시오.
-    이 설정을 사용하면 엔티티가 여기서 사용하는 구문과 정확하게 일치하지 않는 방식으로 지정된 경우에도 서비스가 사용자 입력에서 엔티티에 대한 참조를 인식할 수 있습니다.
+    이 설정을 사용하면 엔티티가 여기서 사용하는 구문과 정확하게 일치하지 않는 방식으로 지정된 경우에도 어시스턴트가 사용자 입력에서 엔티티에 대한 참조를 인식할 수 있습니다.
 1.  `@appliance` 엔티티 추가를 완료하려면 **닫기**![닫기 화살표](images/close_arrow.png) 아이콘을 클릭하십시오.
 1.  2 - 8단계를 반복하여 유사 일치를 켠 상태의 `@genre` 엔티티 및 다음 값과 동의어를 작성하십시오.
 
@@ -208,7 +208,7 @@ subcollection: assistant
 1.  **Music** 노드에서 추가 아이콘(![추가 옵션](images/kabob.png))을 클릭하고 **하위 노드 추가**를 선택하십시오.
     이 하위 노드는 사용자가 들으려는 음악 유형에 대한 질문에 응답한 후에만 평가됩니다. 이 노드 전에 사용자 입력이 필요하므로 **점프** 조치를 사용할 필요가 없습니다.
 1.  조건 필드에 `@genre`를 추가하십시오.  이 조건은 @genre 엔티티의 올바른 값이 발견될 때마다 true입니다.
-1.  `OK! Playing @genre.`를 응답으로 입력하십시오. 이 응답은 사용자가 제공하는 장르 값을 반복합니다.
+1.  응답으로 `OK! Playing @genre.`를 입력하십시오. 이 응답은 사용자가 제공하는 장르 값을 반복합니다.
 
 #### 사용자 응답에서 인식되지 않는 장르 유형을 처리하는 노드 추가
 {: #tutorial-car-dashboard-catch-genre}
@@ -288,7 +288,7 @@ subcollection: assistant
 
     ![다른 인텐트 선택 및 재훈련 표시](images/tut-change-intent.gif){: gif}
 
-선택적으로, **고객 서비스 - 샘플** 스킬을 검토하여 더 긴 대화 및 추가 기능을 사용하여 이 동일한 유스 케이스를 더욱 자세히 볼 수 있습니다. 
+선택적으로, **고객 서비스 - 샘플** 스킬을 검토하여 더 긴 대화 및 추가 기능을 사용하여 이 동일한 유스 케이스를 더욱 자세히 볼 수 있습니다.
 
 1.  탐색 메뉴에서 **스킬로 돌아가기** 단추(![메뉴에 스킬로 돌아가기 단추 표시](images/workspaces-button.png))를 클릭하십시오.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-08-12"
 
 subcollection: assistant
 
@@ -164,7 +164,7 @@ Si el usuario proporciona cualquiera de los valores de ranura en su entrada inic
 ## Paso 3: Tratar los ceros correctamente
 {: #tutorial-slots-complex-recognize-zero}
 
-Si utiliza la entidad del sistema `sys-number` en una condición de ranura, no maneja correctamente los ceros. En lugar de establecer la variable de contexto que define para la ranura en 0, el servicio establecer la variable de contexto en false. Como resultado, la ranura no cree que esté completo y solicita una y otra vez un número al usuario hasta que este especifica un número distinto de cero.
+Si utiliza la entidad del sistema `sys-number` en una condición de ranura, no maneja correctamente los ceros. En lugar de establecer la variable de contexto que define para la ranura en 0, su asistente establece la variable de contexto en false. Como resultado, la ranura no cree que esté completo y solicita una y otra vez un número al usuario hasta que este especifica un número distinto de cero.
 
 1.  Pruebe el nodo para comprender mejor el problema. Abra el panel "Pruébelo", y pulse **Borrar** para suprimir los valores de las variables de contexto de la ranura que especificó con anterioridad al probar el nodo con ranuras. Utilice el siguiente script:
 
@@ -176,7 +176,7 @@ Si utiliza la entidad del sistema `sys-number` en una condición de ranura, no m
     </tr>
     <tr>
       <td>Usted</td>
-      <td>i want to make a reservation (quiero realizar una reserva)</td>
+      <td>I want to make a reservation (Quiero realizar una reserva)</td>
     </tr>
     <tr>
       <td>Watson</td>
@@ -202,22 +202,35 @@ Si utiliza la entidad del sistema `sys-number` en una condición de ranura, no m
 
     Quedará atrapado en este bucle hasta que especifique un número distinto de 0.
 
-1.  Para garantizar que la ranura trate los ceros correctamente, cambie la condición de ranura `@sys-number` por `@sys-number || @sys-number:0`.
+1.  Para garantizar que la ranura trate los ceros correctamente, cambie la condición de ranura `@sys-number` a `@sys-number >= 0`.
 
-1.  Pulse el icono **Editar respuesta** ![Editar respuesta](images/edit-slot.png) correspndiente a la ranura.
+1.  Abra la ranura para editarla, pulsando en el icono **Editar ranura** ![Editar ranura](images/edit-slot.png). En el menú **Opciones** ![icono Más](images/kabob.png), abra el editor JSON.
 
-1.  Cuando se crea la variable de contexto, esta utiliza automáticamente la misma expresión que se ha especificado para la condición de ranura. Sin embargo, la variable de contexto solo debe guardar un número. Edite el valor que se ha guardado como variable de contexto para eliminar de la misma el operador `OR`. En el menú **Más** ![Icono Más](images/kabob.png), seleccione **Abrir editor JSON** y luego edite el JSON que define la variable de contexto. Modifique la variable `"guests":"@sys-number || @sys-number:0"` para que utilice la siguiente sintaxis:
+1.  Cambie el valor de la variable de contexto.
+
+    El valor tendrá el aspecto siguiente:
 
     ```json
     {
       "context": {
-        "guests": "@sys-number"
+        "number": "@sys-number >= 0"
       }
     }
     ```
     {: codeblock}
 
-1.  Pulse **Guardar**.
+    Cámbielo para que sea como:
+
+    ```json
+    {
+      "context": {
+        "number":"@sys-number"
+      }
+    }
+    ```
+    {: codeblock}
+
+1.  Guarde los cambios. 
 
 1.  Pruebe el nodo de nuevo. Abra el panel "Pruébelo", y pulse **Borrar** para suprimir los valores de las variables de contexto de la ranura que especificó con anterioridad al probar el nodo con ranuras. Para ver el efecto de los cambios realizados, utilice el siguiente script:
 
@@ -229,7 +242,7 @@ Si utiliza la entidad del sistema `sys-number` en una condición de ranura, no m
     </tr>
     <tr>
       <td>Usted</td>
-      <td>i want to make a reservation (quiero realizar una reserva)</td>
+      <td>I want to make a reservation (Quiero realizar una reserva)</td>
     </tr>
     <tr>
       <td>Watson</td>
@@ -318,7 +331,7 @@ Para validar la entrada del usuario, siga estos pasos:
     </tr>
     <tr>
       <td>`@sys-time.before('09:00:00')`</td>
-      <td>Our first seating is at 9 AM. (Nuestra primera reserva es a las 9 h.).</td>
+      <td>Our first seating is at 9 AM. (Nuestra primera reserva es a las 9 h.)</td>
       <td>Borrar la ranura y realizar la solicitud de nuevo</td>
     </tr>
     </table>
@@ -334,7 +347,7 @@ Para validar la entrada del usuario, siga estos pasos:
     </tr>
     <tr>
       <td>`true`</td>
-      <td>Ok, the reservation is for $time. (De acuerdo, la reserva es a las $time.).</td>
+      <td>Ok, the reservation is for $time. (De acuerdo, la reserva es a las $time.)</td>
       <td>Continuar</td>
     </tr>
     </table>
@@ -344,7 +357,7 @@ Para validar la entrada del usuario, siga estos pasos:
     - Compruebe que el número de comensales es mayor que cero.
     - Anticípese y soluciones el caso en el que el usuario cambia el número de comensales.
 
-      Si, en un punto cualquiera del nodo cuando se están procesando las ranuras, el usuario cambia un valor de ranura, se actualiza el correspondiente valor de variable de contexto de ranura. Sin embargo, puede ser útil hacer saber al usuario que se está sustituyendo el valor, tanto para proporcionar una mejor retroalimentación para el usuario como para dar al usuario la posibilidad de cambiar lo que no tenía previsto. 
+      Si, en un punto cualquiera del nodo cuando se están procesando las ranuras, el usuario cambia un valor de ranura, se actualiza el correspondiente valor de variable de contexto de ranura. Sin embargo, puede ser útil hacer saber al usuario que se está sustituyendo el valor, tanto para proporcionar una mejor retroalimentación para el usuario como para dar al usuario la posibilidad de cambiar lo que no tenía previsto.
 
 1.  Desde la vista de edición del nodo con ranuras, pulse el icono **Editar ranura** ![Editar ranura](images/edit-slot.png) para la ranura de `@sys-number`.
 
@@ -360,7 +373,7 @@ Para validar la entrada del usuario, siga estos pasos:
       <th>Acción</th>
     </tr>
     <tr>
-      <td>`entities['sys-number']?.value == 0`</td>
+      <td>`@sys-number == 0`</td>
       <td>Please specify a number that is larger than 0 (Especifique un número mayor que cero).</td>
       <td>Borrar la ranura y realizar la solicitud de nuevo</td>
     </tr>
@@ -506,7 +519,7 @@ Puede que desee diseñar el diálogo para llamar a un sistema de reservas extern
     </tr>
     <tr>
       <td>`!($date && $guests)`</td>
-      <td>Ok, the reservation is for $time. (De acuerdo, la reserva es a las $time.).</td>
+      <td>Ok, the reservation is for $time. (De acuerdo, la reserva es a las $time.)</td>
       <td>Continuar</td>
     </tr>
     </table>
@@ -644,7 +657,7 @@ La adición de un nodo con ranuras es un mecanismo poderoso porque mantiene en s
     Si configura más de una ranura para saltar otras ranuras, o si configura otro manejador de sucesos de nivel de nodo para saltar las ranuras, debe utilizar otra aproximación para comprobar si se ha activado la intención #exit. Consulte [Manejo de solicitudes para salir de un proceso](/docs/services/assistant?topic=assistant-dialog-slots#dialog-slots-node-level-handler) para conocer una forma distinta de hacerlo.
     {: note}
 
-1.  Desea que el servicio compruebe la propiedad `has_skipped_slots` antes de visualizar la respuesta a nivel de nodo estándar. Mueva hacia arriba la respuesta condicional `has_skipped_slots` de forma que se procese antes que la respuesta condicional original o nunca se activará. Para ello, pulse en la respuesta que acaba de añadir, utilice la **flecha hacia arriba** para moverla y, a continuación, pulse **Guardar**.
+1.  Desea que el asistente compruebe la propiedad `has_skipped_slots` antes de visualizar la respuesta a nivel de nodo estándar. Mueva hacia arriba la respuesta condicional `has_skipped_slots` de forma que se procese antes que la respuesta condicional original o nunca se activará. Para ello, pulse en la respuesta que acaba de añadir, utilice la **flecha hacia arriba** para moverla y, a continuación, pulse **Guardar**.
 
 1.  Pruebe este cambio utilizando el siguiente script en el panel "Pruébelo".
 
@@ -656,7 +669,7 @@ La adición de un nodo con ranuras es un mecanismo poderoso porque mantiene en s
     </tr>
     <tr>
       <td>Usted</td>
-      <td>i want to make a reservation (quiero realizar una reserva)</td>
+      <td>I want to make a reservation (Quiero realizar una reserva)</td>
     </tr>
     <tr>
       <td>Watson</td>
@@ -806,7 +819,7 @@ Para la información de $time, definirá una sentencia de seguimiento que se mos
 ## Paso 9: Conectarse a un servicio externo
 {: #tutorial-slots-complex-action}
 
-Ahora que el diálogo puede recopilar y confirmar los detalles de reserva de un usuario, puede llamar a un servicio externo para realmente reservar una mesa en el sistema mediante un servicio de reservas en línea de restaurantes. Consulte [Cómo realizar llamadas mediante programación desde un nodo de diálogo](/docs/services/assistant?topic=assistant-dialog-actions) para obtener más detalles.
+Ahora que el diálogo puede recopilar y confirmar los detalles de reserva de un usuario, puede llamar a un servicio externo para realmente reservar una mesa en el sistema mediante un servicio de reservas en línea de restaurantes. Consulte [Cómo realizar llamadas mediante programación desde un nodo de diálogo](/docs/services/assistant?topic=assistant-dialog-webhooks) para obtener más detalles.
 
 En la lógica que llame al servicio de reservas, asegúrese de comprobar `has_skipped_slots` y no continúe con la reserva si está presente.
 

@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-08-08"
 
 subcollection: assistant
+
 
 ---
 
@@ -38,15 +39,15 @@ L'exemple d'application que nous allons créer au cours de cette section implém
 Avant de continuer, vous devez configurer l'assistant nécessaire :
 
 1.  Téléchargez la compétence de dialogue <a target="_blank" href="https://watson-developer-cloud.github.io/doc-tutorial-downloads/assistant/assistant-simple-example.json" download="assistant-simple-example.json">fichier JSON</a>.
-1.  [Importez la compétence](/docs/services/assistant?topic=assistant-skill-add#creating-skills) dans une instance du service {{site.data.keyword.conversationshort}}.
-1.  [Créez un assistant](/docs/services/assistant?topic=assistant-assistant-add#creating-assistants) et connectez la compétence vous avez importée.
+1.  [Importez la compétence](/docs/services/assistant?topic=assistant-skill-dialog-add#skill-dialog-add-task) dans une instance du service {{site.data.keyword.conversationshort}}.
+1.  [Créez un assistant](/docs/services/assistant?topic=assistant-assistant-add) et connectez la compétence vous avez importée.
 
 ## Obtention d'informations sur le service
 {: #api-client-get-info}
 
 Pour accéder aux API REST du service {{site.data.keyword.conversationshort}}, votre application doit pouvoir s'authentifier auprès d'{{site.data.keyword.Bluemix}} et se connecter à l'assistant approprié. Vous devrez copier les données d'identification du service et l'ID d'assistant et les coller dans votre code d'application.
 
-Pour accéder aux données d'identification du service et à l'ID d'assistant à partir de l'outil {{site.data.keyword.conversationshort}}, accédez à l'onglet **Assistants**, puis cliquez sur le ![Menu](images/kabob-grey.png) correspondant à l’assistant auquel vous souhaitez vous connecter. Sélectionnez **View API Details** pour afficher les détails de l'assistant, y compris son ID et la clé de l'API.
+Pour accéder aux données d'identification du service et à l'ID d'assistant à partir de l'outil {{site.data.keyword.conversationshort}}, accédez à l'onglet **Assistants**, puis cliquez sur le ![Menu](images/kebab-react.png) correspondant à l’assistant auquel vous souhaitez vous connecter. Sélectionnez **View API Details** pour afficher les détails de l'assistant, y compris son ID et la clé de l'API.
 
 Vous pouvez également accéder aux données d'identification du service à partir de votre tableau de bord {{site.data.keyword.Bluemix_short}}.
 
@@ -59,59 +60,73 @@ Il est facile d'interagir avec le service {{site.data.keyword.conversationshort}
 // Example 1: sets up service wrapper, sends initial message, and
 // receives response.
 
-var AssistantV2 = require('watson-developer-cloud/assistant/v2');
+const AssistantV2 = require('ibm-watson/assistant/v2');
 
 // Set up Assistant service wrapper.
-var service = new AssistantV2({
+const service = new AssistantV2({
   iam_apikey: '{apikey}', // replace with API key
-  version: '2018-09-20'
+  version: '2019-02-28',
 });
 
-var assistantId = '{assistant_id}'; // replace with assistant ID
-var sessionId;
+const assistantId = '{assistant_id}'; // replace with assistant ID
+let sessionId;
 
 // Create session.
-service.createSession({
-  assistant_id: assistantId
-}, function(err, result) {
-  if (err) {
-    console.error(err); // something went wrong
-    return;
-  }
-  sessionId = result.session_id;
-  sendMessage(); // start conversation with empty message
-});
+service
+  .createSession({
+    assistant_id: assistantId,
+  })
+  .then(res => {
+    sessionId = res.session_id;
+    sendMessage({
+      message_type: 'text',
+      text: '' // start conversation with empty message
+    });
+  })
+  .catch(err => {
+    console.log(err); // something went wrong
+  });
 
 // Send message to assistant.
-function sendMessage() {
-  service.message({
-    assistant_id: assistantId,
-    session_id: sessionId
-  }, processResponse);
+function sendMessage(messageInput) {
+  service
+    .message({
+      assistant_id: assistantId,
+      session_id: sessionId,
+      input: messageInput
+    })
+    .then(res => {
+      processResponse(res);
+    })
+    .catch(err => {
+      console.log(err); // something went wrong
+    });
 }
 
 // Process the response.
-function processResponse(err, response) {
-  if (err) {
-    console.error(err); // something went wrong
-    return;
+function processResponse(response) {
+  // Display the output from assistant, if any. Supports only a single
+  // text response.
+  if (response.output.generic) {
+    if (response.output.generic.length > 0) {
+      if (response.output.generic[0].response_type === 'text') {
+        console.log(response.output.generic[0].text);
   }
-
-  // Display the output from assistant, if any. Assumes a single text response.
-  if (response.output.generic.length != 0) {
-      console.log(response.output.generic[0].text);
-  }
-
-  // We're done, so we close the session
-  service.deleteSession({
-    assistant_id: assistantId,
-    session_id: sessionId
-  }, function(err, result) {
-    if (err) {
-      console.error(err); // something went wrong
     }
-  });
+  }
+
+
+// We're done, so we close the session.
+service
+  .deleteSession({
+    assistant_id: assistantId,
+    session_id: sessionId,
+  })
+  .catch(err => {
+    console.log(err); // something went wrong
+    });
 }
+
 ```
 {: codeblock}
 {: javascript}
@@ -120,12 +135,12 @@ function processResponse(err, response) {
 # Example 1: sets up service wrapper, sends initial message, and
 # receives response.
 
-import watson_developer_cloud
+import ibm_watson
 
 # Set up Assistant service.
-service = watson_developer_cloud.AssistantV2(
+service = ibm_watson.AssistantV2(
     iam_apikey = '{apikey}', # replace with API key
-    version = '2018-09-20'
+    version = '2019-02-28'
 )
 
 assistant_id = '{assistant_id}' # replace with assistant ID
@@ -141,9 +156,11 @@ response = service.message(
     session_id
 ).get_result()
 
-# Print the output from dialog, if any. Assumes a single text response.
+# Print the output from dialog, if any. Supports only a single
+# text response.
 if response['output']['generic']:
-    print(response['output']['generic'][0]['text'])
+    if response['output']['generic'][0]['response_type'] == 'text':
+        print(response['output']['generic'][0]['text'])
 
 # We're done, so we delete the session.
 service.delete_session(
@@ -160,13 +177,13 @@ service.delete_session(
  * receives response.
  */
 
-import com.ibm.watson.developer_cloud.assistant.v2.Assistant;
-import com.ibm.watson.developer_cloud.assistant.v2.model.CreateSessionOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.DeleteSessionOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageResponse;
-import com.ibm.watson.developer_cloud.assistant.v2.model.SessionResponse;
-import com.ibm.watson.developer_cloud.service.security.IamOptions;
+import com.ibm.watson.assistant.v2.Assistant;
+import com.ibm.watson.assistant.v2.model.CreateSessionOptions;
+import com.ibm.watson.assistant.v2.model.DeleteSessionOptions;
+import com.ibm.watson.assistant.v2.model.MessageOptions;
+import com.ibm.watson.assistant.v2.model.MessageResponse;
+import com.ibm.watson.assistant.v2.model.SessionResponse;
+import com.ibm.cloud.sdk.core.service.security.IamOptions;
 import java.util.logging.LogManager;
 
 public class AssistantSimpleExample {
@@ -177,17 +194,18 @@ public class AssistantSimpleExample {
 
     // Set up Assistant service.
     IamOptions iamOptions = new IamOptions.Builder().apiKey("{apikey}").build();
-    Assistant service = new Assistant("2018-09-20", iamOptions);
+    Assistant service = new Assistant("2019-02-28", iamOptions);
     String assistantId = "{assistant_id}"; // replace with assistant ID
 
     // Create session.
     CreateSessionOptions createSessionOptions = new CreateSessionOptions.Builder(assistantId).build();
-    SessionResponse session = service.createSession(createSessionOptions).execute();
+    SessionResponse session = service.createSession(createSessionOptions).execute().getResult();
     String sessionId = session.getSessionId();
 
     // Start conversation with empty message.
-    MessageOptions messageOptions = new MessageOptions.Builder(assistantId, sessionId).build();
-    MessageResponse response = service.message(messageOptions).execute();
+    MessageOptions messageOptions = new MessageOptions.Builder(assistantId,
+                                                        sessionId).build();
+    MessageResponse response = service.message(messageOptions).execute().getResult();
 
     // Print the output from dialog, if any. Assumes a single text response.
     System.out.println(response.getOutput().getGeneric().get(0).getText());
@@ -214,7 +232,7 @@ Dans cet exemple Python, l'encapsuleur est une instance de `watson_developer_clo
 Dans cet exemple Java, l'encapsuleur est une instance d'`Assistant`, stockée dans la variable `service`. Les logiciels SDK Watson correspondant aux autres langages fournissent des mécanismes équivalents pour l'instanciation d'un encapsuleur de service.
 {: java}
 
-Après avoir créé l'encapsuleur de service, nous l’utilisons pour créer une session et envoyer un message à l’assistant. Dans cet exemple, le message est vide ; nous voulons juste déclencher le noeud conversation_start dans le dialogue, par conséquent, nous n'avons pas besoin de texte d'entrée. Nous imprimons ensuite le texte de la réponse sur la console et, finalement, nous supprimons la session. 
+Après avoir créé l'encapsuleur de service, nous l’utilisons pour créer une session et envoyer un message à l’assistant. Dans cet exemple, le message est vide ; nous voulons juste déclencher le noeud conversation_start dans le dialogue, par conséquent, nous n'avons pas besoin de texte d'entrée. Nous imprimons ensuite le texte de la réponse sur la console et, finalement, nous supprimons la session.
 
 Utilisez la commande `node <filename.js>` pour exécuter l'exemple d'application.
 {: javascript}
@@ -225,19 +243,19 @@ Utilisez la commande `python3 <filename.py>` pour exécuter l'exemple d'applicat
 Collez l'exemple de code dans un fichier nommé `AssistantSimpleExample.java`. Vous pouvez ensuite le compiler et l'exécuter.
 {: java}
 
-**Remarque :** assurez-vous que vous avez installé le logiciel SDK Watson pour Node.js à l'aide de la commande `npm install watson-developer-cloud`.
+**Remarque :** assurez-vous que vous avez installé le logiciel SDK Watson pour Node.js à l'aide de la commande `npm install ibm-watson`.
 {: javascript}
 
-**Remarque :** assurez-vous que vous avez installé le logiciel SDK Watson pour Python à l'aide de la commande `pip install --upgrade watson-developer-cloud` ou `easy_install --upgrade watson-developer-cloud`.
+**Remarque :** assurez-vous que vous avez installé le logiciel SDK Watson pour Python à l'aide de la commande `pip install --upgrade ibm-watson` ou `easy_install --upgrade ibm-watson`.
 {: python}
 
-**Remarque :** assurez-vous que vous avez installé [Watson SDK for Java ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/watson-developer-cloud/java-sdk/blob/develop/README.md){: new_window}.
+**Remarque :** assurez-vous que vous avez installé [Watson SDK for Java ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/watson-developer-cloud/java-sdk/blob/master/README.md){: new_window}.
 {: java}
 
-Si l'on part du principe que tout fonctionne comme prévu, l'assistant renvoie la sortie générée par le dialogue, qui est ensuite consignée sur la console : 
+Si l'on part du principe que tout fonctionne comme prévu, l'assistant renvoie la sortie générée par le dialogue, qui est ensuite consignée sur la console :
 
 ```
-Welcome to the Watson Assistant example!
+Bienvenue dans l'exemple de l'assistant Watson !
 ```
 {: screen}
 
@@ -254,73 +272,86 @@ Pour pouvoir traiter les entrées utilisateur, nous devons ajouter une interface
 ```javascript
 // Example 2: adds user input and detects intents.
 
-var prompt = require('prompt-sync')();
-var AssistantV2 = require('watson-developer-cloud/assistant/v2');
+const prompt = require('prompt-sync')();
+const AssistantV2 = require('ibm-watson/assistant/v2');
 
 // Set up Assistant service wrapper.
-var service = new AssistantV2({
+const service = new AssistantV2({
   iam_apikey: '{apikey}', // replace with API key
-  version: '2018-09-20'
+  version: '2019-02-28',
 });
 
-var assistantId = '{assistant_id}'; // replace with assistant ID
-var sessionId;
+const assistantId = '{assistant_id}'; // replace with assistant ID
+let sessionId;
 
 // Create session.
-service.createSession({
-  assistant_id: assistantId
-}, function(err, result) {
-  if (err) {
-    console.error(err); // something went wrong
-    return;
-  }
-  sessionId = result.session_id;
-  sendMessage(); // start conversation with empty message
-});
+service
+  .createSession({
+    assistant_id: assistantId,
+  })
+  .then(res => {
+    sessionId = res.session_id;
+    sendMessage({
+      message_type: 'text',
+      text: ''
+    }); // start conversation with empty message
+  })
+  .catch(err => {
+    console.log(err); // something went wrong
+  });
 
 // Send message to assistant.
-function sendMessage(messageText) {
-  service.message({
-    assistant_id: assistantId,
-    session_id: sessionId,
-    input: {
-      message_type: 'text',
-      text: messageText
-    }
-  }, processResponse);
+function sendMessage(messageInput) {
+  service
+    .message({
+      assistant_id: assistantId,
+      session_id: sessionId,
+      input: messageInput
+    })
+    .then(res => {
+      processResponse(res);
+    })
+    .catch(err => {
+      console.log(err); // something went wrong
+    });
 }
 
 // Process the response.
-function processResponse(err, response) {
-  if (err) {
-    console.error(err); // something went wrong
-    return;
-  }
+function processResponse(response) {
 
   // If an intent was detected, log it out to the console.
   if (response.output.intents.length > 0) {
     console.log('Detected intent: #' + response.output.intents[0].intent);
   }
 
-  // Display the output from assistant, if any. Assumes a single text response.
-  if (response.output.generic.length != 0) {
-    console.log(response.output.generic[0].text);
+  // Display the output from assistant, if any. Supports only a single
+  // text response.
+  if (response.output.generic) {
+    if (response.output.generic.length > 0) {
+      if (response.output.generic[0].response_type === 'text') {
+        console.log(response.output.generic[0].text);
+  }
+    }
   }
 
   // Prompt for the next round of input.
-  var newMessageFromUser = prompt('>> ');
-    if (newMessageFromUser === 'quit') {
-      service.deleteSession({
+  const newMessageFromUser = prompt('>> ');
+  if (newMessageFromUser === 'quit') {
+    service
+      .deleteSession({
         assistant_id: assistantId,
-        session_id: sessionId
-      }, function(err, result) {
-        if (err) {
-          console.error(err); // something went wrong
-        }
+        session_id: sessionId,
+      })
+      .catch(err => {
+        console.log(err); // something went wrong
       });
-      return;
-    }
-  sendMessage(newMessageFromUser);
+    return;
+  }
+  newMessageInput = {
+    message_type: 'text',
+    text: newMessageFromUser
+  }
+  sendMessage(newMessageInput);
 }
 ```
 {: codeblock}
@@ -329,12 +360,12 @@ function processResponse(err, response) {
 ```python
 # Example 2: adds user input and detects intents.
 
-import watson_developer_cloud
+import ibm_watson
 
 # Set up Assistant service.
-service = watson_developer_cloud.AssistantV2(
+service = ibm_watson.AssistantV2(
     iam_apikey = '{apikey}', # replace with API key
-    version = '2018-09-20'
+    version = '2019-02-28'
 )
 
 assistant_id = '{assistant_id}' # replace with assistant ID
@@ -345,30 +376,36 @@ session_id = service.create_session(
 ).get_result()['session_id']
 
 # Initialize with empty value to start the conversation.
-user_input = ''
+message_input = {
+    'message_type:': 'text',
+    'text': ''
+    }
 
 # Main input/output loop
-while user_input != 'quit':
+while message_input['text'] != 'quit':
 
     # Send message to assistant.
     response = service.message(
         assistant_id,
         session_id,
-        input = {
-            'text': user_input
-    }
+        input = message_input
     ).get_result()
 
     # If an intent was detected, print it to the console.
     if response['output']['intents']:
         print('Detected intent: #' + response['output']['intents'][0]['intent'])
 
-    # Print the output from dialog, if any. Assumes a single text response.
+    # Print the output from dialog, if any. Supports only a single
+    # text response.
     if response['output']['generic']:
-    print(response['output']['generic'][0]['text'])
+        if response['output']['generic'][0]['response_type'] == 'text':
+            print(response['output']['generic'][0]['text'])
 
-# Prompt for next round of input.
+    # Prompt for next round of input.
     user_input = input('>> ')
+    message_input = {
+        'text': user_input
+    }
 
 # We're done, so we delete the session.
 service.delete_session(
@@ -384,16 +421,16 @@ service.delete_session(
  * Example 2: adds user input and detects intents.
  */
 
-import com.ibm.watson.developer_cloud.assistant.v2.Assistant;
-import com.ibm.watson.developer_cloud.assistant.v2.model.CreateSessionOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.DeleteSessionOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.DialogRuntimeResponseGeneric;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageInput;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageResponse;
-import com.ibm.watson.developer_cloud.assistant.v2.model.RuntimeIntent;
-import com.ibm.watson.developer_cloud.assistant.v2.model.SessionResponse;
-import com.ibm.watson.developer_cloud.service.security.IamOptions;
+import com.ibm.watson.assistant.v2.Assistant;
+import com.ibm.watson.assistant.v2.model.CreateSessionOptions;
+import com.ibm.watson.assistant.v2.model.DeleteSessionOptions;
+import com.ibm.watson.assistant.v2.model.DialogRuntimeResponseGeneric;
+import com.ibm.watson.assistant.v2.model.MessageInput;
+import com.ibm.watson.assistant.v2.model.MessageOptions;
+import com.ibm.watson.assistant.v2.model.MessageResponse;
+import com.ibm.watson.assistant.v2.model.RuntimeIntent;
+import com.ibm.watson.assistant.v2.model.SessionResponse;
+import com.ibm.cloud.sdk.core.service.security.IamOptions;
 import java.util.List;
 import java.util.logging.LogManager;
 
@@ -405,12 +442,12 @@ public class AssistantSimpleExample {
 
     // Set up Assistant service.
     IamOptions iamOptions = new IamOptions.Builder().apiKey("{apikey}").build();
-    Assistant service = new Assistant("2018-09-20", iamOptions);
+    Assistant service = new Assistant("2019-02-28", iamOptions);
     String assistantId = "{assistant_id}"; // replace with assistant ID
 
     // Create session.
-CreateSessionOptions createSessionOptions = new CreateSessionOptions.Builder(assistantId).build();
-    SessionResponse session = service.createSession(createSessionOptions).execute();
+    CreateSessionOptions createSessionOptions = new CreateSessionOptions.Builder(assistantId).build();
+    SessionResponse session = service.createSession(createSessionOptions).execute().getResult();
     String sessionId = session.getSessionId();
 
     // Initialize with empty value to start the conversation.
@@ -423,7 +460,7 @@ CreateSessionOptions createSessionOptions = new CreateSessionOptions.Builder(ass
       MessageOptions messageOptions = new MessageOptions.Builder(assistantId, sessionId)
                                                   .input(input)
                                                   .build();
-      MessageResponse response = service.message(messageOptions).execute();
+      MessageResponse response = service.message(messageOptions).execute().getResult();
 
       // If an intent was detected, print it to the console.
       List<RuntimeIntent> responseIntents = response.getOutput().getIntents();
@@ -465,15 +502,16 @@ Elle affiche alors les intentions détectées par le dialogue parallèlement au 
 Nous n'avons pas encore implémenté de méthode en langage naturel pour mettre fin à la conversation. Nous utilisons donc la commande littérale `quit` pour indiquer que le programme doit supprimer la session et quitter.
 
 ```
-Welcome to the Watson Assistant example!
->> hello
-Detected intent: #hello
-Good day to you.
->> what time is it?
-Detected intent: #time
->> goodbye
-Detected intent: #goodbye
-OK! See you later.
+Bienvenue dans l'exemple de l'assistant Watson !
+>>
+Bonjour
+Intention détectée : #hello
+Bonjour.
+>> quelle heure est-il ?
+Intention détectée : #time
+>> au revoir
+Intention détectée : #goodbye
+Entendu ! À plus tard.
 >> quit
 ```
 {: screen}
@@ -485,57 +523,61 @@ Cependant, il ne se passe plus rien. Lorsque nous demandons l'heure, nous n'obte
 ## Implémentation d'actions d'application
 {: #api-client-implement-actions}
 
-En plus du texte de sortie qui doit être présenté à l'utilisateur, notre dialogue {{site.data.keyword.conversationshort}} utilise le tableau `actions` dans l'objet JSON de la réponse afin de signaler à quel moment l'application doit exécuter une action, en fonction des intentions détectées. Lorsque le dialogue détermine que l'application client doit faire quelque chose, elle renvoie un objet d'action avec le `type` `client`. Le `nom` de l'action indique l'action spécifique, soit `display_time`, soit `end_conversation`. (Des propriétés supplémentaires de l'action peuvent spécifier des paramètres, des données d'identification et d'autres informations relatives à l'action, mais pour notre exemple, nous avons besoin uniquement du nom de l'action.) 
+En plus du texte de sortie qui doit être présenté à l'utilisateur, notre dialogue {{site.data.keyword.conversationshort}} utilise le tableau `actions` dans l'objet JSON de la réponse afin de signaler à quel moment l'application doit exécuter une action, en fonction des intentions détectées. Lorsque le dialogue détermine que l'application client doit faire quelque chose, elle renvoie un objet d'action avec le `type` `client`. Le `nom` de l'action indique l'action spécifique, soit `display_time`, soit `end_conversation`. (Des propriétés supplémentaires de l'action peuvent spécifier des paramètres, des données d'identification et d'autres informations relatives à l'action, mais pour notre exemple, nous avons besoin uniquement du nom de l'action.)
 
 Nous savons que notre dialogue ne demandera jamais plus d'une action à la fois. Par conséquent, notre client n'a plus qu'à vérifier l'existence d'une seule action `client` dans le tableau `actions`. S'il en trouve une, il peut alors exécuter l'action spécifiée. (Avec cette version, les intentions détectées ne sont plus affichées, à présent que nous sommes savons qu'elles sont correctement identifiées.)
 
 ```javascript
 // Example 3: implements app actions.
 
-var prompt = require('prompt-sync')();
-var AssistantV2 = require('watson-developer-cloud/assistant/v2');
+const prompt = require('prompt-sync')();
+const AssistantV2 = require('ibm-watson/assistant/v2');
 
-// Set up Assistant service.
-    var service = new AssistantV2({
+// Set up Assistant service wrapper.
+const service = new AssistantV2({
   iam_apikey: '{apikey}', // replace with API key
-  version: '2018-09-20'
+  version: '2019-02-28',
 });
 
-var assistantId = '{assistant_id}'; // replace with assistant ID
-var sessionId;
+const assistantId = '{assistant_id}'; // replace with assistant ID
+let sessionId;
 
 // Create session.
-service.createSession({
-  assistant_id: assistantId
-}, function(err, result) {
-  if (err) {
-    console.error(err); // something went wrong
-    return;
-  }
-  sessionId = result.session_id;
-  sendMessage(''); // start conversation with empty message
-});
+service
+  .createSession({
+    assistant_id: assistantId,
+  })
+  .then(res => {
+    sessionId = res.session_id;
+    sendMessage({
+      message_type: 'text',
+      text: ''  // start conversation with empty message
+    });
+  })
+  .catch(err => {
+    console.log(err); // something went wrong
+  });
 
 // Send message to assistant.
-function sendMessage(messageText) {
-  service.message({
-    assistant_id: assistantId,
-    session_id: sessionId,
-    input: {
-      message_type: 'text',
-      text: messageText
-    }
-  }, processResponse);
+function sendMessage(messageInput) {
+  service
+    .message({
+      assistant_id: assistantId,
+      session_id: sessionId,
+      input: messageInput
+    })
+    .then(res => {
+      processResponse(res);
+    })
+    .catch(err => {
+      console.log(err); // something went wrong
+    });
 }
 
 // Process the response.
-function processResponse(err, response) {
-  if (err) {
-    console.error(err); // something went wrong
-    return;
-  }
+function processResponse(response) {
 
-  var endConversation = false;
+  let endConversation = false;
 
   // Check for client actions requested by the assistant.
   if (response.output.actions) {
@@ -551,26 +593,35 @@ function processResponse(err, response) {
     }
   } else {
     // Display the output from assistant, if any. Assumes a single text response.
-    if (response.output.generic.length != 0) {
-      console.log(response.output.generic[0].text);
+    if (response.output.generic) {
+      if (response.output.generic.length > 0) {
+        if (response.output.generic[0].response_type === 'text') {
+        console.log(response.output.generic[0].text);
   }
-
+      }
+    }
   }
 
   // If we're not done, prompt for the next round of input.
   if (!endConversation) {
-    var newMessageFromUser = prompt('>> ');
-    sendMessage(newMessageFromUser);
+    const newMessageFromUser = prompt('>> ');
+    newMessageInput = {
+      message_type: 'text',
+      text: newMessageFromUser
+    }
+    sendMessage(newMessageInput);
   } else {
-    service.deleteSession({
-      assistant_id: assistantId,
-      session_id: sessionId
-    }, function(err, result) {
-      if (err) {
-        console.error(err); // something went wrong
-      }
-    });
-    return;
+    service
+      .deleteSession({
+        assistant_id: assistantId,
+        session_id: sessionId,
+      })
+      .then(res => {
+        return;
+      })
+      .catch(err => {
+        console.log(err); // something went wrong
+      });
   }
 }
 ```
@@ -580,13 +631,13 @@ function processResponse(err, response) {
 ```python
 # Example 3: Implements app actions.
 
-import watson_developer_cloud
+import ibm_watson
 import time
 
 # Set up Assistant service.
-service = watson_developer_cloud.AssistantV2(
+service = ibm_watson.AssistantV2(
     iam_apikey = '{apikey}', # replace with API key
-    version = '2018-09-20'
+    version = '2019-02-28'
 )
 
 assistant_id = '{assistant_id}' # replace with assistant ID
@@ -597,7 +648,7 @@ session_id = service.create_session(
 ).get_result()['session_id']
 
 # Initialize with empty values to start the conversation.
-user_input = ''
+message_input = {'text': ''}
 current_action = ''
 
 # Main input/output loop
@@ -605,20 +656,20 @@ while current_action != 'end_conversation':
     # Clear any action flag set by the previous response.
     current_action = ''
 
-# Send message to assistant.
+    # Send message to assistant.
     response = service.message(
         assistant_id,
         session_id,
-        input = {
-            'text': user_input
-    }
+        input = message_input
     ).get_result()
 
-    # Print the output from dialog, if any. Assumes a single text response.
+    # Print the output from dialog, if any. Supports only a single
+    # text response.
     if response['output']['generic']:
-    print(response['output']['generic'][0]['text'])
+        if response['output']['generic'][0]['response_type'] == 'text':
+            print(response['output']['generic'][0]['text'])
 
-# Check for client actions requested by the assistant.
+    # Check for client actions requested by the assistant.
     if 'actions' in response['output']:
         if response['output']['actions'][0]['type'] == 'client':
             current_action = response['output']['actions'][0]['name']
@@ -629,6 +680,9 @@ while current_action != 'end_conversation':
     # If we're not done, prompt for next round of input.
     if current_action != 'end_conversation':
     user_input = input('>> ')
+        message_input = {
+        'text': user_input
+    }
 
 # We're done, so we delete the session.
 service.delete_session(
@@ -644,17 +698,17 @@ service.delete_session(
  * Example 3: implements app actions.
  */
 
-import com.ibm.watson.developer_cloud.assistant.v2.Assistant;
-import com.ibm.watson.developer_cloud.assistant.v2.model.CreateSessionOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.DeleteSessionOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.DialogNodeAction;
-import com.ibm.watson.developer_cloud.assistant.v2.model.DialogRuntimeResponseGeneric;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageInput;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageResponse;
-import com.ibm.watson.developer_cloud.assistant.v2.model.RuntimeIntent;
-import com.ibm.watson.developer_cloud.assistant.v2.model.SessionResponse;
-import com.ibm.watson.developer_cloud.service.security.IamOptions;
+import com.ibm.watson.assistant.v2.Assistant;
+import com.ibm.watson.assistant.v2.model.CreateSessionOptions;
+import com.ibm.watson.assistant.v2.model.DeleteSessionOptions;
+import com.ibm.watson.assistant.v2.model.DialogNodeAction;
+import com.ibm.watson.assistant.v2.model.DialogRuntimeResponseGeneric;
+import com.ibm.watson.assistant.v2.model.MessageInput;
+import com.ibm.watson.assistant.v2.model.MessageOptions;
+import com.ibm.watson.assistant.v2.model.MessageResponse;
+import com.ibm.watson.assistant.v2.model.RuntimeIntent;
+import com.ibm.watson.assistant.v2.model.SessionResponse;
+import com.ibm.cloud.sdk.core.service.security.IamOptions;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -668,12 +722,12 @@ public class AssistantSimpleExample {
 
     // Set up Assistant service.
     IamOptions iamOptions = new IamOptions.Builder().apiKey("{apikey}").build();
-    Assistant service = new Assistant("2018-09-20", iamOptions);
+    Assistant service = new Assistant("2019-02-28", iamOptions);
     String assistantId = "{assistant_id}"; // replace with assistant ID
 
     // Create session.
-CreateSessionOptions createSessionOptions = new CreateSessionOptions.Builder(assistantId).build();
-    SessionResponse session = service.createSession(createSessionOptions).execute();
+    CreateSessionOptions createSessionOptions = new CreateSessionOptions.Builder(assistantId).build();
+    SessionResponse session = service.createSession(createSessionOptions).execute().getResult();
     String sessionId = session.getSessionId();
 
     // Initialize with empty values to start the conversation.
@@ -686,11 +740,11 @@ CreateSessionOptions createSessionOptions = new CreateSessionOptions.Builder(ass
       currentAction = "";
 
       // Send message to assistant.
-MessageInput input = new MessageInput.Builder().text(inputText).build();
+      MessageInput input = new MessageInput.Builder().text(inputText).build();
       MessageOptions messageOptions = new MessageOptions.Builder(assistantId, sessionId)
                                                   .input(input)
                                                   .build();
-      MessageResponse response = service.message(messageOptions).execute();
+      MessageResponse response = service.message(messageOptions).execute().getResult();
 
       // Print the output from dialog, if any. Assumes a single text response.
       List<DialogRuntimeResponseGeneric> responseGeneric = response.getOutput().getGeneric();
@@ -733,13 +787,13 @@ MessageInput input = new MessageInput.Builder().text(inputText).build();
 L'application vérifie maintenant le tableau `actions` dans la réponse pour voir si une action avec `type`=`client` est présente. Si tel est le cas, elle vérifie la valeur `name` de l'action et exécute l'action appropriée (en affichant l'heure système locale ou en définissant un indicateur interne indiquant que la conversation est terminée).
 
 ```
-Welcome to the {{site.data.keyword.conversationshort}} example!
->> hello
-Good day to you.
->> what time is it?
-The current time is 12:40:42 PM.
->> goodbye
-OK! See you later.
+Bienvenue dans l'exemple {{site.data.keyword.conversationshort}} !
+>> Bonjour
+Bonjour.
+>> quelle heure est-il ?
+Il est actuellement 12 heures 40 minutes et 42 secondes.
+>> Au revoir
+Très bien ! À plus tard.
 ```
 {: screen}
 
@@ -747,177 +801,12 @@ Bravo ! A présent, l'application utilise le service {{site.data.keyword.convers
 
 Evidemment, une application réelle utiliserait une interface utilisateur plus sophistiquée, par exemple, une fenêtre de discussion Web. Et elle implémenterait des actions plus complexes, en intégrant probablement une base de données client ou d'autres systèmes métier. Il serait également nécessaire d’envoyer des données supplémentaires à l’assistant, par exemple un ID utilisateur, pour identifier chaque utilisateur unique. Mais, les principes de base relatifs à la façon dont l'application interagit avec le service {{site.data.keyword.conversationshort}} restent les mêmes.
 
-Pour des exemples plus complexes, reportez-vous à [Exemples d'application](/docs/services/assistant?topic=assistant-sample-apps.
+Pour consulter des exemples plus complexes, reportez-vous à la rubrique [Exemples d'application](/docs/services/assistant?topic=assistant-sample-apps).
 
-## Accès au contexte
-{: #api-client-get-context}
-
-Le *contexte* est un objet contenant des variables qui persistent dans une conversation et peuvent être partagées par la boîte de dialogue et l'application client. Si votre application utilise l'API v2, le contexte est automatiquement géré par l'assistant session par session. Le dialogue et l'application client peuvent lire et écrire des variables contextuelles. Par défaut, le contexte n'est pas renvoyé à une application client, mais vous pouvez éventuellement demander qu'il soit inclus dans la réponse à chaque demande `/message`.
-
-**Important: **une des utilisations du contexte est de spécifier un ID utilisateur unique pour chaque utilisateur final qui interagit avec l’assistant. Pour les plans basés sur l'utilisateur, cet identifiant est utilisé à des fins de facturation. (Pour plus d'informations, reportez-vous à la rubrique [Forfaits basés sur l'utilisateur](/docs/services/assistant?topic=assistant-services-information#user-based-plans).) 
-
-Il existe deux types de contexte :
-
-- **Contexte global** : variables contextuelles partagées par toutes les compétences utilisées par un assistant, y compris les variables système internes utilisées pour gérer le flux de conversation.
-
-- **Contexte spécifique à une compétence** : variables contextuelles spécifiques à une compétence particulière, y compris les variables définies par l'utilisateur nécessaires à votre application. Actuellement, une seule compétence (nommée `main skill`) est prise en charge. 
-
-L'exemple suivant montre une demande `/message` incluant des variables contextuelles globales et spécifiques à une compétence. Il utilise également la propriété `options.return_context` pour demander que le contexte soit renvoyé avec la réponse.
-
-```javascript
-service.message({
-  assistant_id: '{assistant_id}',
-  session_id: '{session_id}',
-  input: {
-    'message_type': 'text',
-    'text': 'Hello',
-    'options': {
-      'return_context': true
-    }
-  },
-  context: {
-    'global': {
-      'system': {
-        'user_id': 'my_user_id'
-      }
-    },
-    'skills': {
-      'main skill': {
-        'user_defined': {
-          'account_number': '123456'
-        }
-      }
-    }
-  }
-}, function(err, response) {
-  if (err)
-    console.log('error:', err);
-  else
-    console.log(JSON.stringify(response, null, 2));
-});
-```
-{: codeblock}
-{: javascript}
-
-```python
-response=service.message(
-    assistant_id='{assistant_id}',
-    session_id='{session_id}',
-    input={
-        'message_type': 'text',
-        'text': 'Hello',
-        'options': {
-            'return_context': True
-        }
-    },
-    context={
-        'global': {
-            'system': {
-                'user_id': 'my_user_id'
-            }
-        },
-        'skills': {
-            'main skill': {
-                'user_defined': {
-                    'account_number': '123456'
-                }
-            }
-        }
-    }
-).get_result()
-
-print(json.dumps(response, indent=2))
-```
-{: codeblock}
-{: python}
-
-```java
-    MessageInputOptions inputOptions = new MessageInputOptions();
-    inputOptions.setReturnContext(true);
-
-    MessageInput input = new MessageInput.Builder()
-      .messageType("text")
-      .text("Hello")
-      .options(inputOptions)
-      .build();
-
-    // create global context with user ID
-    MessageContextGlobalSystem system = new MessageContextGlobalSystem();
-    system.setUserId("my_user_id");
-    MessageContextGlobal globalContext = new MessageContextGlobal();
-    globalContext.setSystem(system);
-
-    // build user-defined context variables, put in skill-specific context for main skill
-    Map<String, String> userDefinedContext = new HashMap<>();
-    userDefinedContext.put("account_num","123456");
-    Map<String, Map> mainSkillContext = new HashMap<>();
-    mainSkillContext.put("user_defined", userDefinedContext);
-    MessageContextSkills skillsContext = new MessageContextSkills();
-    skillsContext.put("main skill", mainSkillContext);
-
-    MessageContext context = new MessageContext();
-    context.setGlobal(globalContext);
-    context.setSkills(skillsContext);
-
-    MessageOptions options = new MessageOptions.Builder("{assistant_id}", "{session_id}")
-      .input(input)
-      .context(context)
-      .build();
-
-    MessageResponse response = service.message(options).execute();
-
-    System.out.println(response);
-```
-{: codeblock}
-{: java}
-
-Dans cet exemple de demande, l'application spécifie une valeur pour `user_id` dans le cadre du contexte global. En outre, elle définit une variable contextuelle définie par l'utilisateur (`account_number`) dans le cadre du contexte spécifique à la compétence. Les noeuds de dialogue peuvent accéder à cette variable contextuelle sous la forme `$account_number`. (Pour plus d'informations sur l'utilisation du contexte dans votre dialogue, reportez-vous à la rubrique [Mode de traitement du dialogue](/docs/services/assistant?topic=assistant-dialog-runtime).)
-
-Vous pouvez spécifier le nom de variable que vous souhaitez utiliser pour une variable contextuelle définie par l'utilisateur. Si la variable spécifiée existe déjà, elle est remplacée par la nouvelle valeur. sinon, une nouvelle variable est ajoutée au contexte. 
-
-La sortie de cette requête inclut non seulement la sortie habituelle, mais également le contexte, indiquant que les valeurs spécifiées ont été ajoutées. 
-
-```json
-{
-  "output": {
-    "generic":[
-      {
-        "response_type": "text",
-        "text": "Welcome to the Watson Assistant example!"
-      }
-    ],
-    "intents": [
-      {
-        "intent": "hello",
-        "confidence": 1
-      }
-    ],
-    "entities": []
-  },
-"context": {
-    "global": {
-      "system": {
-        "turn_count": 1,
-        "user_id": "my_user_id"
-      }
-    },
-    "skills": {
-      "main skill": {
-        "user_defined": {
-          "account_number": "123456"
-        }
-      }
-    }
-  }
-}
-```
-
-Pour plus d'informations sur l'accès aux variables contextuelles à l'aide de l'API, reportez-vous à la rubrique [Référence d'API v2![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://{DomainName}/apidocs/assistant-v2#send-user-input-to-assistant){: new_window}.)
-
-## Utilisation de l'API v1 
+## Utilisation de l'API v1
 {: #api-client-v1-api}
 
-L'utilisation de l'API v2 est la méthode recommandée pour créer une application client d'exécution qui communique avec le service {{site.data.keyword.conversationshort}}. Cependant, certaines applications plus anciennes peuvent toujours utiliser l'API v1, qui inclut une méthode d'exécution similaire pour l'envoi de messages à l'espace de travail dans le cadre d'une compétence de dialogue. 
+L'utilisation de l'API v2 est la méthode recommandée pour créer une application client d'exécution qui communique avec le service {{site.data.keyword.conversationshort}}. Cependant, certaines applications plus anciennes peuvent toujours utiliser l'API v1, qui inclut une méthode d'exécution similaire pour l'envoi de messages à l'espace de travail dans le cadre d'une compétence de dialogue.
 
 Notez que si votre application utilise l'API v1, elle communique directement avec l'espace de travail, en contournant les fonctionnalités d'orchestration et de gestion des états de l'assistant. Cela signifie que votre application est responsable de la gestion des informations d'état à l'aide du contexte. Votre application doit conserver le contexte en enregistrant le contexte reçu avec chaque réponse et en le renvoyant au service avec chaque nouvelle demande de message. (La méthode v1 `/message` renvoie toujours le contexte avec chaque réponse.)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-06-11"
 
 subcollection: assistant
 
@@ -33,31 +33,20 @@ Saiba como fazer upgrade de seu plano de serviço.
 
 É possível explorar as [opções de plano de serviço ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.ibm.com/cloud/watson-assistant/pricing/){: new_window} do {{site.data.keyword.conversationshort}} para decidir qual plano é melhor para você.
 
-Não é possível fazer upgrade de uma instância baseada no Cloud Foundry para um plano Plus. Deve-se migrar a instância, de forma que ela esteja usando um grupo de recursos antes que seja possível fazer upgrade dela. Consulte  [ Migrando ](/docs/services/assistant?topic=assistant-migrate)  para obter mais detalhes.
+Não é possível fazer upgrade de uma instância baseada no Cloud Foundry para um plano Plus. Deve-se migrar a instância, de forma que ela esteja usando um grupo de recursos antes que seja possível fazer upgrade dela. Consulte [Migrando do Cloud Foundry](/docs/services/watson?topic=watson-migrate) para obter mais detalhes.
 {: note}
 
 Para atualizar seu plano, conclua essas etapas:
 
-1.  No menu  {{site.data.keyword.Bluemix_notm}} , selecione  ** Fazer upgrade do plano **.
-    Aqui é possível ver seu plano atual e outras opções de plano disponíveis e fazer mudanças.
+1.  No menu  {{site.data.keyword.cloud}} , selecione  ** Fazer upgrade do plano **.
+    Aqui, é possível ver seu plano atual e outras opções de plano disponíveis. Dependendo do tipo de plano, é possível fazer mudanças por conta própria ou informar a IBM de que você deseja mudar seu plano.
 
-Para obter respostas às perguntas comuns sobre assinaturas, consulte [Gerenciando faturamento e uso ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](/docs/billing-usage?topic=billing-usage-charges){: new_window}.
+    Para um plano Premium, todas as instâncias no plano devem fazer parte do mesmo grupo de recursos.
+    {: note} 
 
-Ainda tem dúvidas? Entre em contato com o [IBM Sales ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www-01.ibm.com/marketing/iwm/dre/signup?source=urx-20970){: new_window}.
+    Atualmente, não é possível fazer upgrade de um plano Lite ou Standard para um Plus. Em vez disso, compre o plano Plus primeiro. Exporte qualificações de uma instância em seu plano existente e, em seguida, importe-as para uma instância no plano Plus. Para começar o processo de fornecimento de um plano Plus, preencha [este formulário ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://ibm.biz/contact-WA-plus).
+    {: note}
 
-## Fazendo upgrade de uma habilidade de diálogo
-{: #upgrade-skill}
+Para obter respostas para perguntas comuns sobre assinaturas, consulte [Como a cobrança é feita ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](/docs/billing-usage?topic=billing-usage-charges){: new_window}.
 
-O serviço {{site.data.keyword.conversationshort}} inclui e atualiza recursos regularmente. Embora algumas dessas mudanças sejam aplicadas automaticamente às suas qualificações de diálogo, as atualizações que têm um grande impacto requerem uma atualização manual para o modelo de aprendizado de máquina que é usado por sua qualificação.
-
-Um upgrade estará disponível para sua qualificação de diálogo somente se o ícone de upgrade (![ícone de upgrade](images/upgrade.png)) for exibido.
-
-Para fazer upgrade de sua qualificação de diálogo, conclua as etapas a seguir:
-
-1.  [Faça download de uma cópia de sua qualificação de diálogo](/docs/services/assistant?topic=assistant-skill-add#skill-add-download-skill) e, em seguida, importe-a como uma nova qualificação.
-2.  Faça upgrade da nova cópia de sua qualificação de diálogo.
-
-    Quando você faz upgrade de sua qualificação, a versão mais recente da API é ativada na ferramenta e a área de janela "Experimente" começa a usar os recursos mais recentes.
-3.  Teste a habilidade atualizada.
-4.  Depois de avaliar a qualificação submetida a upgrade para entender como o upgrade afetará seu aplicativo, aplique o upgrade à sua qualificação de diálogo primário.
-5.  Faça upgrade de seu aplicativo. Para fazer isso, mude as chamadas da API da mensagem que ele usa para especificar a versão da API mais recente. Para obter detalhes da versão da API, consulte as [notas sobre a liberação](/docs/services/assistant?topic=assistant-release-notes).
+Ainda tem dúvidas? Entre em contato com o [IBM Sales ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.ibm.com/account/reg/us-en/subscribe?formid=urx-20970){: new_window}.

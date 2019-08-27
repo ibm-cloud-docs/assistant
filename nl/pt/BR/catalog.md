@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
+
 
 ---
 
@@ -33,9 +34,7 @@ As intenções que você inclui do catálogo são destinadas a fornecer um ponto
 ## Incluindo um catálogo de conteúdo em sua qualificação de diálogo
 {: #catalog-add}
 
-Use a ferramenta {{site.data.keyword.conversationshort}} para incluir catálogos de conteúdo.
-
-1.  Na ferramenta {{site.data.keyword.conversationshort}}, abra sua qualificação de diálogo e, em seguida, clique na guia **Catálogo de conteúdo**.
+1.  Abra sua qualificação de diálogo e, em seguida, clique na guia **Catálogo de conteúdo**.
 
 1.  Selecione um catálogo de conteúdo, como *Financeiro*, para ver as intenções que são fornecidas com ele.
 

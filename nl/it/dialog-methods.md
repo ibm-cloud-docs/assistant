@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-08-12"
 
 subcollection: assistant
 
@@ -28,15 +28,46 @@ subcollection: assistant
 Puoi elaborare i valori estratti dalle espressioni dell'utente a cui vuoi fare riferimento in una variabile di contesto, in una condizione o altrove nella risposta.
 {: shortdesc}
 
-## Sintassi della valutazione
+## Dove utilizzare la sintassi dell'espressione
 {: #dialog-methods-evaluation-syntax}
 
 Per espandere i valori delle variabili all'interno di altre variabili oppure applicare metodi al testo di output o alle variabili di contesto, utilizza la sintassi dell'espressione `<? expression ?>`. Ad esempio:
 
-- **Incremento di una proprietà numerica**
-    - `"output":{"number":"<? output.number + 1 ?>"}`
-- **Richiamo di un metodo su un oggetto**
-    - `"context":{"toppings": "<? context.toppings.append( 'onions' ) ?>"}`
+- **Riferimento all'input di un utente da una risposta di testo del nodo di dialogo**
+
+  ```bash
+  You said <? input.text ?>.
+  ```
+  {: codeblock}
+
+- **Incremento di una proprietà numerica dall'editor JSON**
+
+    ```json
+    "output":{"number":"<? output.number + 1 ?>"}
+    ```
+    {: codeblock}
+
+- **Aggiunta di un elemento a un array di variabili di contesto dall'editor di contesto**
+
+| Nome variabile di contesto | Valore variabile di contesto |
+|-----------------------|------------------------|
+| `toppings` | `<? context.toppings.append( 'onions' ) ?>` |
+
+Puoi utilizzare le espressioni SpEL anche nelle condizioni del nodo di dialogo e in quelle della risposta del nodo di dialogo. Quando viene utilizzata un'espressione in una condizione, la sintassi di inclusione `<? ?>` non è necessaria. 
+
+- **Controllo di un valore di entità specifico da una condizione del nodo di dialogo**
+
+  ```bash
+  @city.toLowerCase() == 'paris'
+  ```
+  {: codeblock}
+
+- **Controllo di un intervallo di date specifico da una condizione di risposta del nodo di dialogo**
+
+  ```bash
+  @sys-date.after(today())
+  ```
+  {: codeblock}
 
 Le seguenti sezioni descrivono i metodi che puoi utilizzare per elaborare i valori. Sono organizzate in base al tipo di dati:
 
@@ -52,6 +83,7 @@ Le seguenti sezioni descrivono i metodi che puoi utilizzare per elaborare i valo
 Non puoi utilizzare questi metodi per controllare i valori di un array in una condizione di nodo o una condizione di risposta all'interno dello stesso nodo in cui imposti i valori di array.
 
 ### JSONArray.append(object)
+{: #dialog-methods-arrays-append}
 
 Questo metodo aggiunge un nuovo valore al JSONArray e restituisce il JSONArray modificato.
 
@@ -89,6 +121,7 @@ Risultato:
 {: codeblock}
 
 ### JSONArray.clear()
+{: #dialog-methods-arrays-clear}
 
 Questo metodo cancella tutti i valori dall'array e restituisce null.
 
@@ -106,6 +139,7 @@ Utilizza la seguente espressione nell'output per definire un campo che cancella 
 Se successivamente farai riferimento alla variabile di contesto $toppings_array, verrà restituito solo '[]'.
 
 ### JSONArray.contains(Object value)
+{: #dialog-methods-arrays-contains}
 
 Questo metodo restituisce true se il JSONArray di input contiene il valore di input.
 
@@ -130,7 +164,7 @@ $toppings_array.contains('ham')
 Risultato: `True` perché l'array contiene l'elemento ham.
 
 ### JSONArray.containsIntent(String intent_name, Double min_score, [Integer top_n])
-{: #dialog-methods-array-containsIntent}
+{: #dialog-methods-arrays-containsIntent}
 
 Questo metodo restituisce `true` se il JSONArray `intents` contiene specificatamente l'intento specificato e se l'intento ha un punteggio di affidabilità pari o superiore al punteggio minimo specificato. Facoltativamente, puoi specificare un numero per indicare che l'intento deve rientrare nel numero di elementi superiori nell'array.
 
@@ -152,9 +186,9 @@ intents.containsIntent("General_Ending", 0.8, 2)
 {: codeblock}
 
 ### JSONArray.filter(temp, "temp.property operator comparison_value")
-{: #dialog-methods-array-filter}
+{: #dialog-methods-arrays-filter}
 
-Filtra un array confrontando ciascun valore dell'elemento dell'array con un valore che hai specificato. Questo metodo è simile a una [proiezione della raccolta](#collection-projection). Una proiezione della raccolta restituisce un array filtrato basato su un nome in una coppia nome-valore dell'elemento dell'array. Il metodo filter restituisce un array filtrato basato su un valore in una coppia nome-valore dell'elemento dell'array.
+Filtra un array confrontando ciascun valore dell'elemento dell'array con un valore che hai specificato. Questo metodo è simile a una [proiezione della raccolta](#dialog-methods-collection-projection). Una proiezione della raccolta restituisce un array filtrato basato su un nome in una coppia nome-valore dell'elemento dell'array. Il metodo filter restituisce un array filtrato basato su un valore in una coppia nome-valore dell'elemento dell'array.
 
 L'espressione di filtro è composta dai seguenti valori:
 
@@ -260,7 +294,7 @@ La risposta risultante è: `The cities with more than 5 million people include T
 
 #### Esempio di filtro 2
 
-La potenza del metodo filter è costituita dal fatto che non devi codificare nel programma il valore `comparison_value`. In questo esempio, il valore codificato nel programma 5000000 viene sostituito invece con una variabile di contesto. 
+La potenza del metodo filter è costituita dal fatto che non devi codificare nel programma il valore `comparison_value`. In questo esempio, il valore codificato nel programma 5000000 viene sostituito invece con una variabile di contesto.
 
 In questo esempio, la variabile di contesto `$population_min` contiene il numero `5000000`. Il nome della variabile temporanea arbitraria è `city`. L'espressione SpEL filtra l'array `$cities` per includere solo le città con una popolazione superiore a 5 milioni:
 
@@ -288,7 +322,7 @@ L'espressione restituisce il seguente array filtrato:
 Quando confronti i valori numerici, assicurati di impostare la variabile di contesto coinvolta nel confronto su un valore valido prima che il metodo filter venga attivato. Tieni presente che `null` può essere un valore valido se l'elemento dell'array con cui lo stai confrontando potrebbe contenerlo. Ad esempio, se la coppia nome e valore della popolazione per Tokyo è `"population":null` e l'espressione di confronto è `"city.population == $population_min"`, `null` sarebbe un valore valido per la variabile di contesto `$population_min`.
 {: tip}
 
-Puoi utilizzare un'espressione di risposta del nodo di dialogo come questa: 
+Puoi utilizzare un'espressione di risposta del nodo di dialogo come questa:
 
 ```bash
 The cities with more than $population_min people include <?  T(String).join(", ",($cities.filter("city", "city.population > $population_min")).![name]) ?>.
@@ -327,6 +361,7 @@ The population of @city is: <? ($cities.filter("y", "y.name == @city").![populat
 L'espressione restituisce: `The population of Tokyo is 9273000.`
 
 ### JSONArray.get(Integer)
+{: #dialog-methods-arrays-get}
 
 Questo metodo restituisce l'indice di input dal JSONArray.
 
@@ -374,6 +409,7 @@ Risposta:
 {: codeblock}
 
 ### JSONArray.getRandomItem()
+{: #dialog-methods-arrays-getRandom}
 
 Questo metodo restituisce un elemento casuale dal JSONArray di input.
 
@@ -414,9 +450,9 @@ Risultato: `"ham is a great choice!"` o `"onion is a great choice!"` o `"olives 
 **Nota:** il testo di output risultante viene scelto in modo casuale.
 
 ### JSONArray.indexOf(value)
-{: #dialog-methods-array-indexOf}
+{: #dialog-methods-arrays-indexOf}
 
-Questo metodo restituisce il numero di indice dell'elemento che corrisponde al valore che specifichi come parametro o a `-1` se il valore non viene trovato nell'array. Il valore può essere una Stringa (`"School"`), un numero Intero (`8`) o un numero Doppio (`9.1`). Il valore deve essere una corrispondenza esatta ed è sensibile al minuscolo/maiuscolo. 
+Questo metodo restituisce il numero di indice dell'elemento che corrisponde al valore che specifichi come parametro o a `-1` se il valore non viene trovato nell'array. Il valore può essere una Stringa (`"School"`), un numero Intero (`8`) o un numero Doppio (`9.1`). Il valore deve essere una corrispondenza esatta ed è sensibile al minuscolo/maiuscolo.
 
 Ad esempio, le seguenti variabili di contesto contengono array:
 
@@ -430,7 +466,7 @@ Ad esempio, le seguenti variabili di contesto contengono array:
 }
 ```
 
-Le seguenti espressioni possono essere utilizzate per determinare l'indice dell'array in cui viene specificato il valore: 
+Le seguenti espressioni possono essere utilizzate per determinare l'indice dell'array in cui viene specificato il valore:
 
 ```bash
 <? $array1.indexOf("Mary") ?> returns `0`
@@ -453,6 +489,7 @@ intents[intents.indexOf("General_Greetings")].confidence
 {: codeblock}
 
 ### JSONArray.join(String delimiter)
+{: #dialog-methods-arrays-join}
 
 Questo metodo unisce tutti i valori di questo array a una stringa. I valori vengono convertiti in stringa e delimitati dal delimitatore di input.
 
@@ -495,14 +532,21 @@ This is the array: onion;olives;ham;
 ```
 {: codeblock}
 
-Se definisci una variabile che memorizza più valori in un array JSON, puoi restituire una sottoserie dei valori dell'array e utilizzare il metodo join() per formattarli in modo corretto. 
+Se un input utente cita più condimenti, e hai definito un'entità denominata `@toppings` che può riconoscere le citazioni di condimenti, potresti utilizzare la seguente espressione nella risposta per elencare i condimenti che sono stati citati:
+
+```json
+So, you'd like <? @toppings.values.join(',') ?>.
+```
+{: codeblock}
+
+Se definisci una variabile che memorizza più valori in un array JSON, puoi restituire una sottoserie dei valori dell'array e utilizzare il metodo join() per formattarli in modo corretto.
 
 #### Proiezione della raccolta
 {: #dialog-methods-collection-projection}
 
 Un'espressione SpEL della `proiezione della raccolta` estrae una sottoraccolta da un array che contiene oggetti. La sintassi per una proiezione della raccolta è `array_that_contains_value_sets.![value_of_interest]`.
 
-Ad esempio, la seguente variabile di contesto definisce un array JSON che memorizza le informazioni sul volo. Ci sono due punti di dati per volo, l'orario e il numero di volo. 
+Ad esempio, la seguente variabile di contesto definisce un array JSON che memorizza le informazioni sul volo. Ci sono due punti di dati per volo, l'orario e il numero di volo.
 
 ```json
 "flights_found": [
@@ -522,7 +566,7 @@ Ad esempio, la seguente variabile di contesto definisce un array JSON che memori
 ```
 {: codeblock}
 
-Per restituire solo i numeri di volo, puoi creare un'espressione della proiezione della raccolta utilizzando la seguente sintassi: 
+Per restituire solo i numeri di volo, puoi creare un'espressione della proiezione della raccolta utilizzando la seguente sintassi:
 
 ```
 <? $flights_found.![flight_code] ?>
@@ -530,7 +574,7 @@ Per restituire solo i numeri di volo, puoi creare un'espressione della proiezion
 
 Questa espressione restituisce un array dei valori `flight_code` come `["OK123","LH421","TS4156"]`. Per ulteriori dettagli, vedi la [documentazione di SpEL Collection Projection](https://docs.spring.io/spring/docs/3.0.x/reference/expressions.html).
 
-Se applichi il metodo `join()` ai valori nell'array restituito, i numeri di volo vengono visualizzati in un elenco separato da virgole. Ad esempio, puoi utilizzare la seguente sintassi in una risposta: 
+Se applichi il metodo `join()` ai valori nell'array restituito, i numeri di volo vengono visualizzati in un elenco separato da virgole. Ad esempio, puoi utilizzare la seguente sintassi in una risposta:
 
 ```
 The flights that fit your criteria are:
@@ -541,16 +585,16 @@ The flights that fit your criteria are:
 Risultato: `The flights that match your criteria are: OK123,LH421,TS4156.`
 
 ### JSONArray.joinToArray(template)
-{: #dialog-methods-joinToArray}
+{: #dialog-methods-arrays-joinToArray}
 
-Questo metodo si applica al formato che definisci in un template nell'array e restituisce un array formattato in base alle tue specifiche. Questo template è utile per applicare la formattazione ai valori dell'array che desideri restituire in una risposta del dialogo, ad esempio. 
+Questo metodo si applica al formato che definisci in un template nell'array e restituisce un array formattato in base alle tue specifiche. Questo template è utile per applicare la formattazione ai valori dell'array che desideri restituire in una risposta del dialogo, ad esempio.
 
-Il template può essere specificato come Stringa, oggetto JSON o array JSON. Per fare riferimento ai valori dall'array che stai modificando nel template, segui queste convenzioni di sintassi: 
+Il template può essere specificato come Stringa, oggetto JSON o array JSON. Per fare riferimento ai valori dall'array che stai modificando nel template, segui queste convenzioni di sintassi:
 
-- `%`: rappresenta l'inizio e la fine di un elemento o di una proprietà dell'elemento che desideri restituire dall'array che stai modificando. 
+- `%`: rappresenta l'inizio e la fine di un elemento o di una proprietà dell'elemento che desideri restituire dall'array che stai modificando.
 - `e`: rappresenta temporaneamente l'elemento dell'array a cui vuoi applicare la formattazione. Questo nome di variabile temporanea non può essere modificato da `e`.
 
-Ad esempio, hai una variabile di contesto che contiene un array con un elenco dei dettagli di volo relativi a tre voli. 
+Ad esempio, hai una variabile di contesto che contiene un array con un elenco dei dettagli di volo relativi a tre voli.
 
 ```json
 "flights": [
@@ -600,7 +644,7 @@ The available flights are <? $flights.joinToArray("%e.flight%"). ?>
 
 La risposta del nodo di dialogo è `The available flights are ["DL1040","DL1710","DL4379"].`
 
-Per visualizzare l'array come testo, utilizza il metodo `join` nell'espressione come segue: 
+Per visualizzare l'array come testo, utilizza il metodo `join` nell'espressione come segue:
 
 ```
 The available flights are <? $flights.joinToArray("%e.flight%").join(", "). ?>
@@ -612,7 +656,7 @@ La risposta è, `The available flights are DL1040, DL1710, DL4379.`
 #### Template complesso
 {: #dialog-methods-complex-template}
 
-Per creare un template più complesso, invece di specificare i dettagli del template direttamente nel parametro del metodo, puoi creare una variabile di contesto. 
+Per creare un template più complesso, invece di specificare i dettagli del template direttamente nel parametro del metodo, puoi creare una variabile di contesto.
 
 Questa variabile di contesto del template contiene una sottoserie degli elementi dell'array e aggiunge le etichette davanti ad essi, quindi le informazioni verranno visualizzate in un elenco leggibile nella risposta:
 
@@ -655,12 +699,12 @@ Arrival time: 09:05
 ```
 {: screen}
 
-Il vantaggio di utilizzare questo metodo consiste nel fatto che non importa la frequenza con cui cambiano i valori nell'array oppure se il numero di elementi nell'array aumenta. Fino a quando ciascun elemento dell'array contiene almeno una sottoserie delle proprietà a cui fa riferimento il template, l'espressione funzionerà. 
+Il vantaggio di utilizzare questo metodo consiste nel fatto che non importa la frequenza con cui cambiano i valori nell'array oppure se il numero di elementi nell'array aumenta. Fino a quando ciascun elemento dell'array contiene almeno una sottoserie delle proprietà a cui fa riferimento il template, l'espressione funzionerà.
 
 #### Esempio di template dell'oggetto JSON
 {: #dialog-methods-object-template}
 
-In questo esempio, la variabile di contesto del template è definita come un oggetto JSON che estrae il numero di volo e le date e gli orari di partenza e di arrivo da ognuno degli elementi del volo specificati nell'array nella variabile di contesto `$flights`. Puoi utilizzare questo approccio per applicare la formattazione standard ai dettagli dei voli che vengono gestiti da due diversi vettori e chi formatta le informazioni di volo direttamente nei loro servizi web, ad esempio. 
+In questo esempio, la variabile di contesto del template è definita come un oggetto JSON che estrae il numero di volo e le date e gli orari di partenza e di arrivo da ognuno degli elementi del volo specificati nell'array nella variabile di contesto `$flights`. Puoi utilizzare questo approccio per applicare la formattazione standard ai dettagli dei voli che vengono gestiti da due diversi vettori e chi formatta le informazioni di volo direttamente nei loro servizi web, ad esempio.
 
 ```json
 "template": {
@@ -670,7 +714,7 @@ In questo esempio, la variabile di contesto del template è definita come un ogg
 ```
 {: codeblock}
 
-Potresti voler progettare la tua applicazione client personalizzata per leggere gli oggetti dall'array restituito e formattare correttamente i valori per la risposta del tuo bot della chat. La tua risposta del nodo di dialogo può restituire l'oggetto dei dettagli di arrivo del volo come un array utilizzando questa espressione: 
+Potresti voler progettare la tua applicazione client personalizzata per leggere gli oggetti dall'array restituito e formattare correttamente i valori per la risposta del tuo assistente. La tua risposta del nodo di dialogo può restituire l'oggetto dei dettagli di arrivo del volo come un array utilizzando questa espressione:
 
 ```
 <? $flights.joinToArray($template) ?>
@@ -699,6 +743,7 @@ Questa è la risposta del nodo di dialogo:
 Tieni presente che l'ordine degli elementi `arrival` e `departure` viene scambiato nella risposta. Di norma, il servizio riordina gli elementi in un oggetto JSON. Se desideri che gli elementi vengano restituiti in uno specifico ordine, definisci il template utilizzando invece un valore Array JSON o Stringa.
 
 ### JSONArray.remove(Integer)
+{: #dialog-methods-arrays-remove}
 
 Questo metodo rimuove l'elemento nella posizione dell'indice dal JSONArray e restituisce il JSONArray aggiornato.
 
@@ -736,6 +781,7 @@ Risultato:
 {: codeblock}
 
 ### JSONArray.removeValue(object)
+{: #dialog-methods-arrays-removeValue}
 
 Questo metodo rimuove la prima ricorrenza del valore dal JSONArray e restituisce il JSONArray aggiornato.
 
@@ -773,6 +819,7 @@ Risultato:
 {: codeblock}
 
 ### JSONArray.set(Integer index, Object value)
+{: #dialog-methods-arrays-set}
 
 Questo metodo imposta l'indice di input del JSONArray sul valore di input e restituisce il JSONArray modificato.
 
@@ -810,6 +857,7 @@ Risultato:
 {: codeblock}
 
 ### JSONArray.size()
+{: #dialog-methods-arrays-size}
 
 Questo metodo restituisce la dimensione del JSONArray come numero intero.
 
@@ -847,6 +895,7 @@ Risultato:
 {: codeblock}
 
 ### JSONArray split(String regexp)
+{: #dialog-methods-arrays-split}
 
 Questo metodo suddivide la stringa di input utilizzando l'espressione regolare di input. Il risultato è un JSONArray di stringhe.
 
@@ -880,11 +929,12 @@ Risultati in questo output:
 {: codeblock}
 
 ### Supporto com.google.gson.JsonArray
-{: #dialog-methods-com.google.gson.JsonArray}
+{: #dialog-methods-arrays-com-google-gson-JsonArray}
 
 Oltre ai metodi integrati, puoi utilizzare i metodi standard della classe `com.google.gson.JsonArray`.
 
 #### Nuovo array
+{: #dialog-methods-arrays-new}
 
 new JsonArray().append('value')
 
@@ -906,10 +956,13 @@ Sono disponibili diversi metodi per lavorare con la data e ora.
 Per informazioni su come riconoscere ed estrarre le informazioni sulla data e sull'ora dall'input utente, vedi le [entità @sys-date e @sys-time](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-date-time).
 
 ### .after(String date or time)
+{: #dialog-methods-dates-after}
 
 Determina se il valore data/ora è dopo l'argomento data/ora.
 
 ### .before(String date or time)
+{: #dialog-methods-dates-before}
+
 Determina se il valore data/ora è prima dell'argomento data/ora.
 
 Ad esempio:
@@ -922,6 +975,7 @@ Ad esempio:
 - Se si confronta `date and time vs. time` il metodo ignora la data e confronta solo le ore.
 
 ### now()
+{: #dialog-methods-dates-now}
 
 Restituisce una stringa con la data e ora corrente in formato `yyyy-MM-dd HH:mm:ss`.
 
@@ -974,6 +1028,7 @@ Esempio di `now()` nelle condizioni del nodo (per decidere se è ancora mattina)
 {: codeblock}
 
 ### .reformatDateTime(String format)
+{: #dialog-methods-dates-reformatDateTime}
 
 Formatta stringhe di data e ora nel formato desiderato per l'output dell'utente.
 
@@ -1003,25 +1058,29 @@ Il formato segue le regole Java [SimpleDateFormat ![Icona link esterno](../../ic
 **Nota**: quando si tenta di formattare solo l'ora, la data viene considerata come `1970-01-01`.
 
 ### .sameMoment(String date/time)
+{: #dialog-methods-dates-sameMoment}
 
 - Determina se il valore data/ora è uguale all'argomento data/ora.
 
 ### .sameOrAfter(String date/time)
+{: #dialog-methods-dates-sameOrAfter}
 
 - Determina se il valore data/ora è dopo o uguale all'argomento data/ora.
 - Simile a `.after()`.
 
 ### .sameOrBefore(String date/time)
+{: #dialog-methods-dates-sameOrBefore}
 
 - Determina se il valore data/ora è prima o uguale all'argomento data/ora.
 
 ### today()
+{: #dialog-methods-dates-today}
 
 Restituisce una stringa con la data corrente nel formato `yyyy-MM-dd`.
 
 - Funzione statica.
-- Gli altri metodi di data possono essere richiamati sui valori di data restituiti da questa funzione e possono essere passati come argomento. 
-- Se la variabile di contesto `$timezone` è impostata, questa funzione restituisce le date nel fuso orario del client. In caso contrario, viene utilizzato il fuso orario `GMT`. 
+- Gli altri metodi di data possono essere richiamati sui valori di data restituiti da questa funzione e possono essere passati come argomento.
+- Se la variabile di contesto `$timezone` è impostata, questa funzione restituisce le date nel fuso orario del client. In caso contrario, viene utilizzato il fuso orario `GMT`.
 
 Esempio di un nodo di dialogo con `today()` utilizzato nel campo di output:
 
@@ -1048,9 +1107,9 @@ Esempio di un nodo di dialogo con `today()` utilizzato nel campo di output:
 Risultato: `Today's date is 2018-03-09.`
 
 ## Calcoli di data e ora
-{: #dialog-methods-calculations}
+{: #dialog-methods-date-time-calculations}
 
-Utilizza i seguenti metodi per calcolare una data. 
+Utilizza i seguenti metodi per calcolare una data.
 
 | Metodo                  | Descrizione |
 |-------------------------|-------------|
@@ -1061,9 +1120,9 @@ Utilizza i seguenti metodi per calcolare una data.
 | `<date>.plusMonths(n)` | Restituisce la data del giorno e il numero n di mesi dopo la data specificata. |
 | `<date>.plusYears(n)`  | Restituisce la data del giorno e il numero n di anni dopo la data specificata. |
 
-dove `<date>` viene specificato nel formato `yyyy-MM-dd` o `yyyy-MM-dd HH:mm:ss`.
+dove `<date>` viene specificato nel formato `yyyy-MM-dd` oppure `yyyy-MM-dd HH:mm:ss`.
 
-Per ottenere la data di domani, specifica la seguente espressione: 
+Per ottenere la data di domani, specifica la seguente espressione:
 
 ```json
 {
@@ -1086,7 +1145,7 @@ Per ottenere la data di domani, specifica la seguente espressione:
 
 Risultato se domani fosse il 9 marzo 2018: `Tomorrow's date is 2018-03-10.`
 
-Per ottenere la data del giorno tra una settimana a partire da oggi, specifica la seguente espressione. 
+Per ottenere la data del giorno tra una settimana a partire da oggi, specifica la seguente espressione.
 
 ```json
 {
@@ -1109,7 +1168,7 @@ Per ottenere la data del giorno tra una settimana a partire da oggi, specifica l
 
 Risultato se la data acquisita dall'entità @sys-date fosse la data di oggi, 9 marzo 2018: `Next week's date is 2018-03-16.`
 
-Per ottenere la data del mese scorso, specifica la seguente espressione: 
+Per ottenere la data del mese scorso, specifica la seguente espressione:
 
 ```json
 {
@@ -1132,7 +1191,7 @@ Per ottenere la data del mese scorso, specifica la seguente espressione:
 
 Risultato se oggi fosse il 9 marzo 2018: `Last month the date was 2018-02-9.`
 
-Utilizza i seguenti metodi per calcolare l'ora. 
+Utilizza i seguenti metodi per calcolare l'ora.
 
 | Metodo                  | Descrizione |
 |-------------------------|-------------|
@@ -1145,7 +1204,7 @@ Utilizza i seguenti metodi per calcolare l'ora.
 
 dove `<time>` viene specificato nel formato `HH:mm:ss`.
 
-Per ottenere l'orario di un'ora a partire da adesso, specifica la seguente sintassi: 
+Per ottenere l'orario di un'ora a partire da adesso, specifica la seguente sintassi:
 
 ```json
 {
@@ -1168,7 +1227,7 @@ Per ottenere l'orario di un'ora a partire da adesso, specifica la seguente sinta
 
 Risultato se fossero le 8 AM: `One hour from now is 09:00:00.`
 
-Per ottenere l'orario di 30 minuti fa, specifica la seguente espressione: 
+Per ottenere l'orario di 30 minuti fa, specifica la seguente espressione:
 
 ```json
 {
@@ -1191,7 +1250,7 @@ Per ottenere l'orario di 30 minuti fa, specifica la seguente espressione:
 
 Risultato se l'orario acquisito dall'entità @sys-time fosse 8 AM: `A half hour before 08:00:00 is 07:30:00.`
 
-Per riformattare l'orario restituito, puoi utilizzare la seguente espressione: 
+Per riformattare l'orario restituito, puoi utilizzare la seguente espressione:
 
 ```json
 {
@@ -1217,9 +1276,9 @@ Risultato se fossero le 2:19 PM: `6 hours ago was 8:19 AM.`
 ### Utilizzo degli intervalli di tempo
 {: #dialog-methods-time-spans}
 
-Per mostrare una risposta basata sul fatto che la data di oggi rientra in un determinato intervallo di tempo, puoi utilizzare una combinazione di metodi correlati al tempo. Ad esempio, se ogni anno fai un'offerta speciale durante il periodo delle festività, puoi controllare se la data di oggi rientra nell'intervallo tra il 25 novembre e il 24 dicembre di quest'anno. Innanzitutto, definisci le date di interesse come variabili di contesto. 
+Per mostrare una risposta basata sul fatto che la data di oggi rientra in un determinato intervallo di tempo, puoi utilizzare una combinazione di metodi correlati al tempo. Ad esempio, se ogni anno fai un'offerta speciale durante il periodo delle festività, puoi controllare se la data di oggi rientra nell'intervallo tra il 25 novembre e il 24 dicembre di quest'anno. Innanzitutto, definisci le date di interesse come variabili di contesto.
 
-Nelle seguenti espressioni di variabili di contesto della data iniziale e finale, la data viene generata concatenando il valore dell'anno corrente derivato dinamicamente ai valori di mese e giorno codificati nel programma. 
+Nelle seguenti espressioni di variabili di contesto della data iniziale e finale, la data viene generata concatenando il valore dell'anno corrente derivato dinamicamente ai valori di mese e giorno codificati nel programma.
 
 ```json
 "context": {
@@ -1228,12 +1287,12 @@ Nelle seguenti espressioni di variabili di contesto della data iniziale e finale
  }
 ```
 
-Nella condizione di risposta, puoi indicare che desideri mostrare la risposta solo se la data corrente rientra tra la data iniziale e quella finale che hai definito come variabili di contesto. 
+Nella condizione di risposta, puoi indicare che desideri mostrare la risposta solo se la data corrente rientra tra la data iniziale e quella finale che hai definito come variabili di contesto.
 
 `now().after($start_date) && now().before($end_date)`
 
 ### Supporto java.util.Date
-{: #dialog-methods-java.util.Date}
+{: #dialog-methods-dates-java-util-date}
 
 Oltre ai metodi integrati, puoi utilizzare i metodi standard della classe `java.util.Date`.
 
@@ -1288,26 +1347,30 @@ Per informazioni sulle entità di sistema che possono riconoscere ed estrarre i 
 
 Se desideri che il servizio riconosca formati numerici specifici nell'input utente, ad esempio riferimenti al numero di ordine, prendi in considerazione di creare un'entità modello per eseguire l'acquisizione. Per ulteriori dettagli, vedi [Creazione di entità](/docs/services/assistant?topic=assistant-entities).
 
-Se desideri modificare la posizione decimale per un numero, per riformattare un numero come un valore di valuta, ad esempio, vedi il [Metodo String format()](#dialog-methods-java.lang.String).
+Se desideri modificare la posizione decimale per un numero, per riformattare un numero come un valore di valuta, ad esempio, vedi il [Metodo String format()](#java.lang.String).
 
 ### toDouble()
+{: #dialog-methods-numbers-toDouble}
 
   Converte l'oggetto o il campo nel tipo di numero Doppio. Puoi chiamare questo metodo su qualsiasi oggetto o campo. Se la conversione non riesce, viene restituito *null*.
 
 ### toInt()
+{: #dialog-methods-numbers-toInt}
 
   Converte l'oggetto o il campo nel tipo di numero Intero. Puoi chiamare questo metodo su qualsiasi oggetto o campo. Se la conversione non riesce, viene restituito *null*.
 
 ### toLong()
+{: #dialog-methods-numbers-toLong}
 
   Converte l'oggetto o il campo nel tipo di numero Lungo. Puoi chiamare questo metodo su qualsiasi oggetto o campo. Se la conversione non riesce, viene restituito *null*.
 
   Se specifichi un tipo di numero Lungo in un'espressione SpEL, devi accodare una lettera `L` al numero per identificarlo come tale. Ad esempio, `5000000000L`. Questa sintassi è obbligatoria per i numeri che non si adattano al tipo Intero a 32 bit. Ad esempio, i numeri maggiori di 2^31 (2,147,483,648) o minori di -2^31 (-2,147,483,648) sono considerati tipi di numero Lungo. I tipi di numero Lungo hanno un valore minimo di -2^63 e un valore massimo di 2^63-1.
 
 ### Supporto numero Java
-{: #dialog-methods-java.lang.Number}
+{: #dialog-methods-numbers-java}
 
 ### java.lang.Math()
+{: #dialog-methods-numbers-java-lang-math}
 
 Esegue operazioni numeriche di base.
 
@@ -1385,15 +1448,16 @@ Puoi utilizzare i metodi Classe, inclusi quelli riportati di seguito:
 ```
 {: codeblock}
 
-Per informazioni sugli altri metodi, vedi la [documentazione di riferimento java.lang.Math](https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html).
+Per informazioni sugli altri metodi, vedi la [documentazione di riferimento java.lang.Math ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html).
 
 ### java.util.Random()
+{: #dialog-methods-numbers-java-util-random}
 
 Restituisce un numero casuale. Puoi utilizzare una delle seguenti opzioni di sintassi:
 
 - Per restituire un valore booleano casuale (true o false), utilizza `<?new Random().nextBoolean()?>`.
 - Per restituire un numero doppio casuale compreso tra 0 (incluso) e 1 (escluso), utilizza `<?new Random().nextDouble()?>`
-- Per restituire un numero intero casuale compreso tra 0 (incluso) e un numero da te specificato, utilizza `<?new Random().nextInt(n)?>`  dove n è l'inizio dell'intervallo di numeri desiderato  + 1.
+- Per restituire un numero intero casuale compreso tra 0 (incluso) e un numero da te specificato, utilizza `<?new Random().nextInt(n)?>`  dove n è l'inizio dell'intervallo di numeri desiderato + 1.
   Ad esempio, se vuoi restituire un numero casuale tra 0 e 10, specifica `<?new Random().nextInt(11)?>`.
 - Per restituire un numero intero casuale dall'intervallo completo di valori interi (da -2147483648 a 2147483648), utilizza `<?new Random().nextInt()?>`.
 
@@ -1437,6 +1501,7 @@ Puoi anche utilizzare i metodi standard delle seguenti classi:
 {: #dialog-methods-objects}
 
 ### JSONObject.clear()
+{: #dialog-methods-objects-jsonobject-clear}
 
 Questo metodo cancella tutti i valori dall'oggetto JSON e restituisce null.
 
@@ -1454,7 +1519,7 @@ Ad esempio, desideri cancellare i valori correnti dalla variabile di contesto $u
 ```
 {: codeblock}
 
-Utilizza la seguente espressione nell'output per definire un campo che cancella i valori dell'oggetto. 
+Utilizza la seguente espressione nell'output per definire un campo che cancella i valori dell'oggetto.
 
 ```json
 {
@@ -1472,7 +1537,7 @@ Puoi utilizzare il metodo `clear()` sugli oggetti JSON `context` o `output` nel 
 #### Cancellazione del contesto
 {: #dialog-methods-clearing-context}
 
-Quando utilizzi il metodo `clear()` per cancellare l'oggetto `context`, cancella **tutte** le variabili ad eccezione di queste: 
+Quando utilizzi il metodo `clear()` per cancellare l'oggetto `context`, cancella **tutte** le variabili ad eccezione di queste:
 
  - `context.conversation_id`
  - `context.timezone`
@@ -1480,10 +1545,10 @@ Quando utilizzi il metodo `clear()` per cancellare l'oggetto `context`, cancella
 
 **Avvertenza**: tutti i valori della variabile di contesto indicano che:
 
-  - Tutti i valori predefiniti impostati per le variabili nei nodi sono stati attivati durante la sessione corrente. 
-  - Gli aggiornamenti sono stati apportati ai valori predefiniti con le informazioni fornite dall'utente o dai servizi esterni durante la sessione corrente. 
+  - Tutti i valori predefiniti impostati per le variabili nei nodi sono stati attivati durante la sessione corrente.
+  - Gli aggiornamenti sono stati apportati ai valori predefiniti con le informazioni fornite dall'utente o dai servizi esterni durante la sessione corrente.
 
-Per utilizzare il metodo, puoi specificarlo in un'espressione in una variabile che definisci nell'oggetto di output. Ad esempio:
+Per utilizzare il metodo, puoi specificarlo in una variabile nell'espressione che definisci nell'output corrente. Ad esempio:
 
 ```json
 {
@@ -1508,7 +1573,7 @@ Per utilizzare il metodo, puoi specificarlo in un'espressione in una variabile c
 #### Cancellazione dell'output
 {: #dialog-methods-clearing-output}
 
-Quando utilizzi il metodo `clear()` per cancellare l'oggetto `output`, cancella tutte le variabili ad eccezione di quelle che utilizzi per cancellare l'oggetto di output e le risposte di testo che definisci nel nodo corrente. Inoltre, non cancella queste variabili: 
+Quando utilizzi il metodo `clear()` per cancellare l'oggetto `output`, cancella tutte le variabili ad eccezione di quelle che utilizzi per cancellare l'oggetto di output e le risposte di testo che definisci nel nodo corrente. Inoltre, non cancella queste variabili:
 
 - `output.nodes_visited`
 - `output.nodes_visited_details`
@@ -1537,6 +1602,7 @@ Per utilizzare il metodo, puoi specificarlo in una variabile nell'espressione ch
 Se un nodo precedente nella struttura ad albero definisce una risposta di testo `I'm happy to help.` e poi passa a un nodo con l'oggetto di output JSON sopra definito, verrà visualizzato solo `Have a great day.` come risposta. L'output `I'm happy to help.` non viene visualizzato in quanto viene cancellato e sostituito con la risposta di testo del nodo che sta richiamando il metodo `clear()`.
 
 ### JSONObject.has(String)
+{: #dialog-methods-objects-jsonobject-has}
 
 Questo metodo restituisce true se il JSONObject complesso ha una proprietà del nome di input.
 
@@ -1566,6 +1632,7 @@ Output del nodo di dialogo:
 Risultato: la condizione è true perché l'oggetto utente contiene la proprietà `first_name`.
 
 ### JSONObject.remove(String)
+{: #dialog-methods-objects-jsonobject-remove}
 
 Questo metodo rimuove una proprietà del nome dall'input `JSONObject`. Il `JSONElement` che viene restituito da questo metodo è il `JSONElement` che verrà rimosso.
 
@@ -1611,7 +1678,7 @@ Risultato:
 {: codeblock}
 
 ### Supporto com.google.gson.JsonObject
-{: #dialog-methods-com.google.gson.JsonObject}
+{: #dialog-methods-objects-com-google-gson-JsonObject}
 
 Oltre ai metodi integrati, puoi utilizzare i metodi standard della classe `com.google.gson.JsonObject`.
 
@@ -1625,6 +1692,7 @@ Per informazioni su come riconoscere ed estrarre determinati tipi di stringhe, a
 **Nota:** per i metodi che prevedono le espressioni regolari, vedi [Riferimento alla sintassi RE2 ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://github.com/google/re2/wiki/Syntax){: new_window} per i dettagli sulla sintassi da utilizzare quando specifichi l'espressione regolare.
 
 ### String.append(Object)
+{: #dialog-methods-strings-append}
 
 Questo metodo aggiunge un oggetto di input alla stringa sotto forma di stringa e restituisce una stringa modificata.
 
@@ -1662,6 +1730,7 @@ Risultati in questo output:
 {: codeblock}
 
 ### String.contains(String)
+{: #dialog-methods-strings-contains}
 
 Questo metodo restituisce true se la stringa contiene la sottostringa di input.
 
@@ -1679,6 +1748,7 @@ Questa sintassi:
 Risultato: la condizione è `true`.
 
 ### String.endsWith(String)
+{: #dialog-methods-strings-endsWith}
 
 Questo metodo restituisce true se la stringa termina con la sottostringa di input.
 
@@ -1701,41 +1771,43 @@ Questa sintassi:
 Risultato: la condizione è `true`.
 
 ### String.extract(String regexp, Integer groupIndex)
+{: #dialog-methods-strings-extract}
 
-Questo metodo restituisce una stringa estratta dall'indice di gruppi specificato dell'espressione regolare di input.
+Questo metodo restituisce una stringa dall'input che corrisponde al modello di gruppo dell'espressione regolare che specifichi. Restituisce una stringa vuota se non vengono trovate corrispondenze. 
 
-Per questo input:
+Questo metodo è progettato per estrarre le corrispondenze per i diversi gruppi di modelli regex, non le diverse corrispondenze per un singolo modello regex. Per trovare corrispondenze diverse, vedi il metodo [getMatch](#dialog-methods-strings-getMatch).
+{: note}
 
-```
-"Hello 123456".
-```
-{: codeblock}
-
-Questa sintassi:
+In questo esempio, la variabile di contesto sta salvando una stringa che corrisponde al gruppo di modelli regex che specifichi. Nell'espressione, sono definiti due gruppi di modelli regex, ciascuno racchiuso tra parentesi. C'è un terzo gruppo intrinseco che comprende i due gruppi insieme. Questo è il primo gruppo regex (groupIndex 0); corrisponde a una stringa che contiene il gruppo di numeri completo e il gruppo di testo insieme. Il secondo gruppo regex (groupIndex 1) corrisponde alla prima ricorrenza di un gruppo di numeri. Il terzo gruppo (groupIndex 2) corrisponde alla prima ricorrenza di un gruppo di testo dopo un gruppo di numeri. 
 
 ```json
 {
   "context": {
-    "number_extract": "<? input.text.extract('[\\d]+',0) ?>"
+    "number_extract": "<? input.text.extract('([\\d]+)(\\b [A-Za-z]+)',n) ?>"
   }
 }
 ```
 {: codeblock}
 
-  **Importante:** per elaborare `\\d` come espressione regolare, devi eseguire l'escape di entrambe le barre rovesciate aggiungendo un altro `\\`: `\\\\d`
+Quando specifichi regex in JSON, devi fornire due barre rovesciate (\\). Se specifichi questa espressione in un nodo di risposta, hai bisogno di una sola barra rovesciata. Ad esempio: 
+
+`<? input.text.extract('([\d]+)(\b [A-Za-z]+)',n) ?>`
+
+Input:
+
+```
+"Hello 123 this is 456".
+```
+{: codeblock}
 
 Risultato:
 
-```json
-{
-  "context": {
-    "number_extract": "123456"
-  }
-}
-```
-{: codeblock}
+- Quando n=`0`, il valore è `123 this`.
+- Quando n=`1`, il valore è `123`.
+- Quando n=`2`, il valore è `this`.
 
 ### String.find(String regexp)
+{: #dialog-methods-strings-find}
 
 Questo metodo restituisce true se qualsiasi segmento della stringa corrisponde all'espressione regolare di input.  Puoi richiamare questo metodo su un elemento JSONArray o JSONObject e questo convertirà l'array o l'oggetto in una stringa prima di effettuare il confronto.
 
@@ -1757,7 +1829,47 @@ Questa sintassi:
 
 Risultato: la condizione è true perché la parte numerica del testo di input corrisponde all'espressione regolare `^[^\d]*[\d]{6}[^\d]*$`.
 
+### String.getMatch(String regexp, Integer matchIndex)
+{: #dialog-methods-strings-getMatch}
+
+Questo metodo restituisce una stringa dall'input che corrisponde alla ricorrenza del modello di gruppo dell'espressione regolare che specifichi. Questo metodo restituisce una stringa vuota se non vengono trovate corrispondenze. 
+
+Man mano che vengono trovate corrispondenze, vengono aggiunte a quello che puoi considerare come un *array di corrispondenze*. Se vuoi restituire la terza corrispondenza, poiché il conteggio degli elementi dell'array inizia da 0, specifica 2 come valore di `matchIndex`. Ad esempio, se immetti una stringa di testo con tre parole che corrispondono al modello specificato, puoi restituire solo la prima, la seconda o la terza corrispondenza specificando il suo valore di indice.
+
+Nella seguente espressione, stai ricercando un gruppo di numeri nell'input. Questa espressione salva la seconda stringa di corrispondenza del modello nella variabile di contesto `$second_number` poiché viene specificato il valore di indice 1.
+
+```json
+{
+  "context": {
+    "second_number": "<? input.text.getMatch('([\\d]+)',1) ?>"
+  }
+}
+```
+{: codeblock}
+
+Se specifichi l'espressione nella sintassi JSON, devi fornire due barre rovesciate (\\). Se specifichi l'espressione in un nodo di risposta, hai bisogno di una sola barra rovesciata.  
+
+Ad esempio: 
+
+`<? input.text.getMatch('([\d]+)',1) ?>`
+
+- Input utente:
+
+  ```
+  "hello 123 i said 456 and 8910".
+  ```
+  {: codeblock}
+
+- Risultato: `456`
+
+In questo esempio, l'espressione ricerca il terzo blocco di testo nell'input.
+
+`<? input.text.getMatch('(\b [A-Za-z]+)',2) ?>`
+
+Per lo stesso input utente, questa espressione restituisce `and`.
+
 ### String.isEmpty()
+{: #dialog-methods-strings-isEmpty}
 
 Questo metodo restituisce true se la stringa è una stringa vuota, ma non null.
 
@@ -1784,6 +1896,7 @@ Questa sintassi:
 Risultato: la condizione è `true`.
 
 ### String.length()
+{: #dialog-methods-strings-length}
 
 Questo metodo restituisce la lunghezza dei caratteri della stringa.
 
@@ -1817,6 +1930,7 @@ Risultati in questo output:
 {: codeblock}
 
 ### String.matches(String regexp)
+{: #dialog-methods-strings-matches}
 
 Questo metodo restituisce true se la stringa corrisponde all'espressione regolare di input.
 
@@ -1839,6 +1953,7 @@ Questa sintassi:
 Risultato: la condizione è true perché il testo di input corrisponde all'espressione regolare `\^Hello\$`.
 
 ### String.startsWith(String)
+{: #dialog-methods-strings-startsWith}
 
 Questo metodo restituisce true se la stringa inizia con la sottostringa di input.
 
@@ -1861,6 +1976,7 @@ Questa sintassi:
 Risultato: la condizione è `true`.
 
 ### String.substring(Integer beginIndex, Integer endIndex)
+{: #dialog-methods-strings-substring}
 
 Questo metodo ottiene una sottostringa con il carattere in `beginIndex` e l'ultimo carattere impostato sull'indice prima di `endIndex`.
 Il carattere endIndex non è incluso.
@@ -1899,6 +2015,7 @@ Risultati in questo output:
 {: codeblock}
 
 ### String.toLowerCase()
+{: #dialog-methods-strings-toLowerCase}
 
 Questo metodo restituisce la stringa originale convertita in lettere minuscole.
 
@@ -1925,13 +2042,14 @@ Risultati in questo output:
 ```json
 {
   "context": {
-    "input_upper_case": "this is a dog!"
+    "input_lower_case": "this is a dog!"
   }
 }
 ```
 {: codeblock}
 
 ### String.toUpperCase()
+{: #dialog-methods-strings-toUpperCase}
 
 Questo metodo restituisce la stringa originale convertita in lettere maiuscole.
 
@@ -1965,6 +2083,7 @@ Risultati in questo output:
 {: codeblock}
 
 ### String.trim()
+{: #dialog-methods-strings-trim}
 
 Questo metodo elimina gli spazi all'inizio e alla fine della stringa e restituisce la stringa modificata.
 
@@ -2002,13 +2121,14 @@ Risultati in questo output:
 {: codeblock}
 
 ### Supporto java.lang.String
-{: #java.lang.String}
+{: #dialog-methods-strings-java-lang-String-format}
 
 Oltre ai metodi integrati, puoi utilizzare i metodi standard della classe `java.lang.String`.
 
 #### java.lang.String.format()
+{: #dialog-methods-strings-java-lang-String-format}
 
-Puoi applicare il metodo Java String `format()` standard al testo. Vedi [Riferimento java.util.formatter ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter#syntax){: new_window} per informazioni sulla sintassi da utilizzare per specificare i dettagli del formato.
+Puoi applicare il metodo Java String `format()` standard al testo. Vedi [Riferimento java.util.formatter ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax){: new_window} per informazioni sulla sintassi da utilizzare per specificare i dettagli del formato.
 
 Ad esempio, la seguente espressione acquisisce tre numeri interi decimali (1, 1 e 2) e li aggiunge ad una frase.
 
@@ -2021,7 +2141,7 @@ Ad esempio, la seguente espressione acquisisce tre numeri interi decimali (1, 1 
 
 Risultato: `1 + 1 equals 2`.
 
-Per modificare la posizione decimale per un numero, utilizza la seguente sintassi: 
+Per modificare la posizione decimale per un numero, utilizza la seguente sintassi:
 
 ```
 {
@@ -2087,7 +2207,7 @@ Come ulteriore esempio, la seguente variabile di contesto $array è un array, ma
 ```
 {: codeblock}
 
-Se controlli i valori di queste variabili di contesto nel riquadro Provalo, vedrai i valori specificati come segue:
+Se controlli i valori di queste variabili di contesto nel riquadro Try it out, vedrai i valori specificati come segue:
 
 **$array** : `["one","two"]`
 

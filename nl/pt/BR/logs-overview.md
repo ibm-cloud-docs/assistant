@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
+
 
 ---
 
@@ -61,7 +62,7 @@ Para ver informações de métricas, selecione **Visão geral** na barra de nave
 
   É possível escolher se deve visualizar dados para um único dia, uma semana, um mês ou um trimestre. Em cada caso, os pontos de dados no gráfico são ajustados para um período de medição apropriado. Por exemplo, ao visualizar um gráfico para um dia, os dados são apresentados em valores por hora, mas ao visualizar um gráfico para uma semana, os dados são mostrados por dia. Uma semana sempre é executada de domingo até sábado. Não é possível criar períodos de tempo customizados, como uma semana que é executada de quinta à quarta-feira seguinte, ou um mês que começa em qualquer data diferente do dia primeiro.
 
-  Se você escolher uma visualização de único dia, por exemplo, o horário mostrado para cada conversa será localizado para refletir o fuso horário de seu navegador. Isso poderá diferir do registro de data e hora mostrado se você revisar o mesmo log de conversa por meio de uma chamada de API; as chamadas de log de API são sempre mostradas em UTC.
+  Se você escolher uma visualização de único dia, por exemplo, o horário mostrado para cada conversa será localizado para refletir o fuso horário de seu navegador. Diferenças poderão ocorrer no registro de data e hora mostrado se você revisar o mesmo log de conversa por meio de uma chamada de API, pois elas são sempre mostradas em UTC.
 
     ![Controle do período de tempo](images/oview-time2.png)
 
@@ -74,7 +75,7 @@ Vários scorecards estatísticos fornecem dados do log para seu aplicativo:
 
   Uma única conversa é um conjunto de mensagens que consiste nas mensagens que um usuário ativo envia para seu aplicativo e as mensagens com as quais seu aplicativo responde.
 
-  **Importante**: uma 'conversa' é considerada como *qualquer* conjunto de mensagens enviadas ou recebidas por um aplicativo/robô, portanto, se o serviço iniciar dizendo "Olá, como posso ajudá-lo?" e, em seguida, o usuário fechar seu navegador sem responder, essa mensagem será incluída na contagem total de conversas.
+  **Importante**: uma 'conversa' é considerada como *qualquer* conjunto de mensagens enviadas ou recebidas por um aplicativo/robô, portanto, se seu assistente começar dizendo "Olá, como posso ajudá-lo?" e, em seguida, o usuário fechar seu navegador sem responder, essa mensagem será incluída na contagem total de conversas.
 
 * * Média. msg. por conversa* - o total de mensagens recebidas durante o período selecionado dividido pelo total de conversas durante o período selecionado, conforme mostrado no gráfico correspondente.
 * *Máx. de conversas* - o número máximo de conversas para um único ponto de dados dentro do período selecionado.
@@ -105,4 +106,4 @@ Também é possível visualizar as intenções e as entidades que foram reconhec
 
 * *Entidades principais* também são mostradas em uma lista. Para cada entidade, é possível selecionar na coluna **Valores** para ver uma lista dos valores mais comuns que foram identificados para essa entidade durante o período. Também é possível selecionar uma entidade para abrir a página **Conversas do usuário** com o intervalo de data filtrado para corresponder aos dados que você está visualizando e a entidade filtrada para corresponder à entidade selecionada.
 
-Consulte [Aprender com as conversas](/docs/services/assistant?topic=assistant-logs) para obter dicas sobre como editar intenções e entidades com base em descobertas que você faz revisando as intenções e entidades que o serviço reconhece.
+Consulte [Melhorar suas qualificações](/docs/services/assistant?topic=assistant-logs) para obter dicas sobre como editar intenções e entidades com base em descobertas feitas, revisando aquelas que são reconhecidas por seu assistente.

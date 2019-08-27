@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-08-07"
+lastupdated: "2019-05-14"
 
 subcollection: assistant
 
@@ -49,7 +49,7 @@ subcollection: assistant
 ## 使用 Watson 視訊建置
 {: #resources-videos}
 
-從 IBM 技術深潛系列。這些紀錄提供逐步指示及回答。
+從 IBM 技術深潛系列。這些錄製內容提供逐步的指示及回答。
 
 - [與 {{site.data.keyword.conversationshort}} 的進階整合 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://youtu.be/0rnt54ONtQw){: new_window}
 - [訓練 {{site.data.keyword.conversationshort}} 偵測使用者目的 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://youtu.be/uYw4Tv1Y5tc){: new_window}
@@ -60,16 +60,17 @@ subcollection: assistant
 
 其他由 IBM 員工建立的視訊。
 
-- [數位技術啟用 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://ibm-dte.mybluemix.net/ibm-watson-assistant){: new_window}：資源集合，包括產品導覽和上機實驗室。
+- [數位技術啟用 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://ibm-dte.mybluemix.net/watson-assistant){: new_window}：資源集合，包括產品導覽和上機實驗室。
 - [{{site.data.keyword.conversationshort}}整合指導教學 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.youtube.com/watch?v=O3silvVBaC8&t=3s){: new_window}：您可以遵循 10 分鐘的指導教學，使用 Botkit 連接 {{site.data.keyword.conversationshort}} 與 Twilio，來建立一個 SMS 聊天機器人。
-- [顯示如何使用 {{site.data.keyword.conversationshort}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://youtu.be/tUkLIUOm550){: new_window}：服務的 3 分鐘概觀
+- [顯示如何使用 {{site.data.keyword.conversationshort}} ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://youtu.be/tUkLIUOm550){: new_window}：3 分鐘的產品概觀。
 - [{{site.data.keyword.conversationshort}} 服務簡介 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://youtu.be/A96nLYSMltA){: new_window}：1 分鐘簡介。
 - [{{site.data.keyword.conversationshort}} 的逐步演練 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://youtu.be/ELwWhJGE2P8){: new_window}：14 分鐘技術逐步演練。
 
-## IBM Watson Academy
+## 教育資料
 {: #resources-academy}
 
-- [{{site.data.keyword.conversationshort}} 基礎 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://ibm.com/training/watsonacademy){: new_window}
+- [Watson Academy ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://ibm.com/training/watsonacademy){: new_window}
+- [Coursera: Building AI Powered Chatbots Without Programming ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.coursera.org/learn/building-ai-powered-chatbots)
 
 ## 部落格
 {: #resources-blogs}

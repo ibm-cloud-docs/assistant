@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-08-12"
 
 subcollection: assistant
 
@@ -28,15 +28,46 @@ subcollection: assistant
 컨텍스트 변수, 조건 또는 응답의 다른 위치에서 참조할 사용자 발화(utterance)에서 추출한 값을 처리할 수 있습니다.
 {: shortdesc}
 
-## 평가 구문
+## 표현식 구문을 사용할 수 있는 위치
 {: #dialog-methods-evaluation-syntax}
 
 다른 변수 내에서 변수 값을 늘리거나 텍스트 또는 컨텍스트 변수를 출력하는 메소드를 적용하려면, `<? expression ?>` 표현식 구문을 사용하십시오. 예:
 
-- **숫자 특성 증분**
-    - `"output":{"number":"<? output.number + 1 ?>"}`
-- **오브젝트에서 메소드 호출**
-    - `"context":{"toppings": "<? context.toppings.append( 'onions' ) ?>"}`
+- **대화 노드 텍스트 응답에서 사용자 입력 참조**
+
+  ```bash
+  You said <? input.text ?>.
+  ```
+  {: codeblock}
+
+- **JSON 편집기에서 숫자 특성 증분**
+
+    ```json
+    "output":{"number":"<? output.number + 1 ?>"}
+    ```
+    {: codeblock}
+
+- **컨텍스트 편집기에서 컨텍스트 변수 배열에 요소 추가**
+
+| 컨텍스트 변수 이름 | 컨텍스트 변수 값 |
+|-----------------------|------------------------|
+| `toppings` | `<? context.toppings.append( 'onions' ) ?>` |
+
+대화 노드 조건 및 대화 노드 응답 조건에서도 SpEL 표현식을 사용할 수 있습니다. 표현식이 조건에서 사용되는 경우에는 주변에 `<? ?>` 구문이 필요하지 않습니다. 
+
+- **대화 노드 조건에서 특정 엔티티 값 확인**
+
+  ```bash
+  @city.toLowerCase() == 'paris'
+  ```
+  {: codeblock}
+
+- **대화 노드 응답 조건에서 특정 날짜 범위 확인**
+
+  ```bash
+  @sys-date.after(today())
+  ```
+  {: codeblock}
 
 다음 섹션은 값을 처리하는데 사용할 수 있는 메소드를 설명합니다. 메소드는 데이터 유형별로 구성됩니다.
 
@@ -52,6 +83,7 @@ subcollection: assistant
 배열 값을 설정하는 동일한 노드 내 노드 조건 또는 응답 조건에서 배열의 값을 검사하는 데 다음 메소드를 사용할 수 없습니다.
 
 ### JSONArray.append(object)
+{: #dialog-methods-arrays-append}
 
 이 메소드는 JSONArray에 새 값을 추가하고 수정된 JSONArray를 리턴합니다.
 
@@ -89,6 +121,7 @@ subcollection: assistant
 {: codeblock}
 
 ### JSONArray.clear()
+{: #dialog-methods-arrays-clear}
 
 이 메소드는 배열에서 모든 값을 지우고 널을 리턴합니다.
 
@@ -106,6 +139,7 @@ subcollection: assistant
 차후에 $toppings_array 컨텍스트 변수를 참조하는 경우, '[]'만 리턴합니다.
 
 ### JSONArray.contains(Object value)
+{: #dialog-methods-arrays-contains}
 
 이 메소드는 입력 JSONArray에 입력 값이 포함되어 있는 경우 true를 리턴합니다.
 
@@ -130,7 +164,7 @@ $toppings_array.contains('ham')
 결과: 배열에 요소 ham이 포함되어 있으므로 `True`입니다.
 
 ### JSONArray.containsIntent(String intent_name, Double min_score, [Integer top_n])
-{: #dialog-methods-array-containsIntent}
+{: #dialog-methods-arrays-containsIntent}
 
 이 메소드는 `intents` JSONArray가 지정된 인텐트를 특별히 포함하고 해당 인텐트의 신뢰도 점수가 지정된 최소 점수 이상인 경우 그러한 인텐트가 지정된 최소 점수와 같거나 높은 신뢰도 점수를 갖는 경우에 `true`를 리턴합니다. 선택적으로 배열의 최상위 요소 개수 내에 인텐트가 포함되어야 함을 표시하도록 숫자를 지정할 수 있습니다.
 
@@ -152,9 +186,9 @@ intents.containsIntent("General_Ending", 0.8, 2)
 {: codeblock}
 
 ### JSONArray.filter(temp, "temp.property operator comparison_value")
-{: #dialog-methods-array-filter}
+{: #dialog-methods-arrays-filter}
 
-각 배열 요소 값을 사용자가 지정하는 값과 비교하여 배열을 필터링합니다. 이 메소드는 [콜렉션 투영법(collection projection)](#collection-projection)과 유사합니다. 콜렉션 투영법은 배열 요소 이름-값 쌍의 이름을 기반으로 필터링된 배열을 리턴합니다. 필터 메소드는 배열 요소 이름-값 쌍의 값을 기반으로 필터링된 배열을 리턴합니다. 
+각 배열 요소 값을 사용자가 지정하는 값과 비교하여 배열을 필터링합니다. 이 메소드는 [콜렉션 투영법(collection projection)](#dialog-methods-collection-projection)과 유사합니다. 콜렉션 투영법은 배열 요소 이름-값 쌍의 이름을 기반으로 필터링된 배열을 리턴합니다. 필터 메소드는 배열 요소 이름-값 쌍의 값을 기반으로 필터링된 배열을 리턴합니다.
 
 필터 표현식은 다음 값으로 구성됩니다.
 
@@ -327,6 +361,7 @@ The population of @city is: <? ($cities.filter("y", "y.name == @city").![populat
 표현식은 `The population of Tokyo is 9273000.`을 리턴합니다.
 
 ### JSONArray.get(Integer)
+{: #dialog-methods-arrays-get}
 
 이 메소드는 JSONArray에서 입력 인덱스를 리턴합니다.
 
@@ -374,6 +409,7 @@ $nested.array.get(0).getAsString().contains('one')
 {: codeblock}
 
 ### JSONArray.getRandomItem()
+{: #dialog-methods-arrays-getRandom}
 
 이 메소드는 입력 JSONArray에서 랜덤 항목을 리턴합니다.
 
@@ -414,11 +450,9 @@ $nested.array.get(0).getAsString().contains('one')
 **참고:** 결과 출력 텍스트는 임의로 선택됩니다.
 
 ### JSONArray.indexOf(value)
-{: #dialog-methods-array-indexOf}
+{: #dialog-methods-arrays-indexOf}
 
-이 메소드는 값을 배열에서 찾을 수 없는 경우 매개변수 또는 `-1`로 지정하는 값과 일치하는 배열에 있는 요소의 인덱스 번호를 리턴합니다.
-값은 String(`"School"`), Integer(`8`) 또는 Double(`9.1`)이 될 수 있습니다.
-값은 정확히 일치해야 하며 대소문자를 구분합니다.
+이 메소드는 값을 배열에서 찾을 수 없는 경우 매개변수 또는 `-1`로 지정하는 값과 일치하는 배열에 있는 요소의 인덱스 번호를 리턴합니다. 값은 String(`"School"`), Integer(`8`) 또는 Double(`9.1`)이 될 수 있습니다. 값은 정확히 일치해야 하며 대소문자를 구분합니다.
 
 예를 들어, 다음 컨텍스트 변수는 배열을 포함합니다.
 
@@ -455,6 +489,7 @@ intents[intents.indexOf("General_Greetings")].confidence
 {: codeblock}
 
 ### JSONArray.join(String delimiter)
+{: #dialog-methods-arrays-join}
 
 이 메소드는 이 배열의 모든 값을 하나의 문자열로 결합합니다. 값은 문자열로 변환되고 입력 구분 기호로 구분됩니다.
 
@@ -494,6 +529,13 @@ intents[intents.indexOf("General_Greetings")].confidence
 
 ```json
 This is the array: onion;olives;ham;
+```
+{: codeblock}
+
+사용자 입력에서 여러 토핑을 멘션하고 토핑 멘션을 인식할 수 있는 엔티티를 `@toppings`라고 정의한 경우, 응답에 다음 표현식을 사용하여 멘션된 토핑을 나열할 수 있습니다. 
+
+```json
+So, you'd like <? @toppings.values.join(',') ?>.
 ```
 {: codeblock}
 
@@ -543,7 +585,7 @@ The flights that fit your criteria are:
 결과: `The flights that match your criteria are: OK123,LH421,TS4156.`
 
 ### JSONArray.joinToArray(template)
-{: #dialog-methods-joinToArray}
+{: #dialog-methods-arrays-joinToArray}
 
 이 메소드는 템플리트에서 정의한 형식을 배열에 적용하고 스펙에 따라 형식화된 배열을 리턴합니다. 예를 들어, 이 메소드는 대화 응답에서 리턴하려는 배열 값에 형식화를 적용하는 데 유용합니다.
 
@@ -672,7 +714,7 @@ Arrival time: 09:05
 ```
 {: codeblock}
 
-리턴된 배열에서 오브젝트를 읽고 대화 봇의 응답에 적합하게 값을 형식화하도록 사용자 정의 클라이언트 애플리케이션을 설계할 수 있습니다. 대화 노드 응답은 다음 표현식을 사용하여 항공편 도착 세부사항 오브젝트를 배열로 리턴할 수 있습니다.
+리턴된 배열에서 오브젝트를 읽고 어시스턴트의 응답에 적합하게 값을 형식화하도록 사용자 정의 클라이언트 애플리케이션을 설계할 수 있습니다. 대화 노드 응답은 다음 표현식을 사용하여 항공편 도착 세부사항 오브젝트를 배열로 리턴할 수 있습니다.
 
 ```
 <? $flights.joinToArray($template) ?>
@@ -701,6 +743,7 @@ Arrival time: 09:05
 `arrival` 요소와 `departure` 요소의 순서가 응답에서 바뀌었습니다. 일반적으로 서비스는 JSON 오브젝트에서 요소를 다시 정렬합니다. 요소를 특정 순서로 리턴하려면 그 대신 JSON 배열 또는 문자열 값을 사용하여 템플리트를 정의하십시오.
 
 ### JSONArray.remove(Integer)
+{: #dialog-methods-arrays-remove}
 
 이 메소드는 JSONArray에서 인덱스 위치의 요소를 제거하고 업데이트된 JSONArray를 리턴합니다.
 
@@ -738,6 +781,7 @@ Arrival time: 09:05
 {: codeblock}
 
 ### JSONArray.removeValue(object)
+{: #dialog-methods-arrays-removeValue}
 
 이 메소드는 JSONArray에서 값의 첫 번째 발생을 제거하고 업데이트된 JSONArray를 리턴합니다.
 
@@ -775,6 +819,7 @@ Arrival time: 09:05
 {: codeblock}
 
 ### JSONArray.set(Integer index, Object value)
+{: #dialog-methods-arrays-set}
 
 이 메소드는 JSONArray의 입력 인덱스를 입력 값으로 설정하고 수정된 JSONArray를 리턴합니다.
 
@@ -812,6 +857,7 @@ Arrival time: 09:05
 {: codeblock}
 
 ### JSONArray.size()
+{: #dialog-methods-arrays-size}
 
 이 메소드는 JSONArray의 크기를 정수로 리턴합니다.
 
@@ -849,6 +895,7 @@ Arrival time: 09:05
 {: codeblock}
 
 ### JSONArray split(String regexp)
+{: #dialog-methods-arrays-split}
 
 이 메소드는 입력 정규식을 사용하여 입력 문자열을 분할합니다. 결과는 문자열의 JSONArray입니다.
 
@@ -882,11 +929,12 @@ Arrival time: 09:05
 {: codeblock}
 
 ### com.google.gson.JsonArray support
-{: #dialog-methods-com.google.gson.JsonArray}
+{: #dialog-methods-arrays-com-google-gson-JsonArray}
 
 내장 메소드 외에도, `com.google.gson.JsonArray` 클래스의 표준 메소드를 사용할 수 있습니다.
 
 #### 새 배열
+{: #dialog-methods-arrays-new}
 
 new JsonArray().append('value')
 
@@ -908,10 +956,13 @@ new JsonArray().append('value')
 사용자 입력에서 날짜 및 시간 정보를 인식하고 추출하는 방법에 대한 정보는 [@sys-date 및 @sys-time 엔티티](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-date-time)를 참조하십시오.
 
 ### .after(String date or time)
+{: #dialog-methods-dates-after}
 
 날짜/시간 값이 날짜/시간 인수 다음에 있는지 여부를 판별합니다.
 
 ### .before(String date or time)
+{: #dialog-methods-dates-before}
+
 날짜/시간 값이 날짜/시간 인수 앞에 있는지 여부를 판별합니다.
 
 예:
@@ -924,6 +975,7 @@ new JsonArray().append('value')
 - `date and time vs. time`을 비교하는 경우 메소드가 날짜는 무시하고 시간만 비교합니다.
 
 ### now()
+{: #dialog-methods-dates-now}
 
 `yyyy-MM-dd HH:mm:ss` 형식의 현재 날짜 및 시간이 포함된 문자열을 리턴합니다.
 
@@ -976,6 +1028,7 @@ new JsonArray().append('value')
 {: codeblock}
 
 ### .reformatDateTime(String format)
+{: #dialog-methods-dates-reformatDateTime}
 
 날짜 및 시간 문자열을 사용자 출력에 대해 원하는 형식으로 형식화합니다.
 
@@ -1005,19 +1058,23 @@ new JsonArray().append('value')
 **참고**: 시간만 형식화하려는 경우, 날짜는 `1970-01-01`로 처리됩니다.
 
 ### .sameMoment(String date/time)
+{: #dialog-methods-dates-sameMoment}
 
 - 날짜/시간 값이 날짜/시간 인수와 같은지 여부를 판별합니다.
 
 ### .sameOrAfter(String date/time)
+{: #dialog-methods-dates-sameOrAfter}
 
 - 날짜/시간 값이 날짜/시간 인수 이후인지 여부를 판별합니다.
 - `.after()`와 유사합니다.
 
 ### .sameOrBefore(String date/time)
+{: #dialog-methods-dates-sameOrBefore}
 
 - 날짜/시간 값이 날짜/시간 인수 이전인지 여부를 판별합니다.
 
 ### today()
+{: #dialog-methods-dates-today}
 
 `yyyy-MM-dd` 형식의 현재 날짜가 포함된 문자열을 리턴합니다.
 
@@ -1050,11 +1107,11 @@ new JsonArray().append('value')
 결과: `Today's date is 2018-03-09.`
 
 ## 날짜 및 시간 계산
-{: #dialog-methods-calculations}
+{: #dialog-methods-date-time-calculations}
 
 다음 메소드를 사용하여 날짜를 계산하십시오.
 
-| 메소드                  | 설명        |
+| 메소드                  | 설명 |
 |-------------------------|-------------|
 | `<date>.minusDays(n)`   | 지정된 날짜에서 n일 전인 날의 날짜를 리턴합니다. |
 | `<date>.minusMonths(n)` | 지정된 날짜에서 n달 전인 날의 날짜를 리턴합니다. |
@@ -1086,7 +1143,7 @@ new JsonArray().append('value')
 ```
 {: codeblock}
 
-오늘이 2018년 3월 9일인 경우, 결과: `Tomorrow's date is 2018-03-10.`   
+오늘이 2018년 3월 9일인 경우, 결과: `Tomorrow's date is 2018-03-10.`
 
 오늘부터 1주일 후의 날짜를 가져오려면 다음 표현식을 지정하십시오.
 
@@ -1132,11 +1189,11 @@ new JsonArray().append('value')
 ```
 {: codeblock}
 
-오늘이 2018년 3월 9일인 경우, 결과: `Last month the date was 2018-02-9.`   
+오늘이 2018년 3월 9일인 경우, 결과: `Last month the date was 2018-02-9.`
 
 다음 메소드를 사용하여 시간을 계산하십시오.
 
-| 메소드                  | 설명        |
+| 메소드                  | 설명 |
 |-------------------------|-------------|
 | `<time>.minusHours(n)`   | 지정된 시간에서 n시간 전인 시간을 리턴합니다. |
 | `<time>.minusMinutes(n)` | 지정된 시간에서 n분 전인 시간을 리턴합니다. |
@@ -1235,7 +1292,7 @@ new JsonArray().append('value')
 `now().after($start_date) && now().before($end_date)`
 
 ### java.util.Date support
-{: #dialog-methods-java.util.Date}
+{: #dialog-methods-dates-java-util-date}
 
 내장 메소드 외에도, `java.util.Date` 클래스의 표준 메소드를 사용할 수 있습니다.
 
@@ -1290,26 +1347,30 @@ new JsonArray().append('value')
 
 서비스가 사용자 입력에서 특정 숫자 형식을 인식하도록 하려면, 이를 캡처하기 위한 패턴 엔티티 작성을 고려하십시오. 세부사항은 [엔티티 작성](/docs/services/assistant?topic=assistant-entities)을 참조하십시오.
 
-예를 들어, 숫자를 통화 값으로 재형식화하기 위해 숫자에 대한 10진수 배치를 변경하려는 경우, [String format() 메소드](#dialog-methods-java.lang.String)를 참조하십시오.
+예를 들어, 숫자를 통화 값으로 재형식화하기 위해 숫자에 대한 10진수 배치를 변경하려는 경우, [String format() 메소드](#java.lang.String)를 참조하십시오.
 
 ### toDouble()
+{: #dialog-methods-numbers-toDouble}
 
   오브젝트 또는 필드를 실수 유형으로 변환합니다. 오브젝트 또는 필드에서 이 메소드를 호출할 수 있습니다. 변환에 실패하면 *널*이 리턴됩니다.
 
 ### toInt()
+{: #dialog-methods-numbers-toInt}
 
   오브젝트 또는 필드를 정수 유형으로 변환합니다. 오브젝트 또는 필드에서 이 메소드를 호출할 수 있습니다. 변환에 실패하면 *널*이 리턴됩니다.
 
 ### toLong()
+{: #dialog-methods-numbers-toLong}
 
   오브젝트 또는 필드를 숫자(Long) 유형으로 변환합니다. 오브젝트 또는 필드에서 이 메소드를 호출할 수 있습니다. 변환에 실패하면 *널*이 리턴됩니다.
 
   SpEL 표현식에서 Long 숫자 유형을 지정하는 경우 숫자에 `L`을 추가해야합니다. 예: `5000000000L`. 이 구문은 32비트 정수 유형에 맞지 않는 모든 숫자에 대해 필요합니다. 예를 들어, 2 ^ 31 (2,147,483,648)보다 크거나 -2 ^ 31 (-2,147,483,648)보다 작은 숫자는 Long 숫자 유형으로 간주됩니다. Long 숫자 형식의 최소 값은 -2 ^ 63이고 최대 값은 2 ^ 63-1입니다.
 
 ### Java 숫자 지원
-{: #dialog-methods-java.lang.Number}
+{: #dialog-methods-numbers-java}
 
 ### java.lang.Math()
+{: #dialog-methods-numbers-java-lang-math}
 
 기본 숫자 연산을 수행합니다.
 
@@ -1387,15 +1448,17 @@ new JsonArray().append('value')
 ```
 {: codeblock}
 
-기타 메소드에 관한 정보는 [java.lang.Math 참조 문서](https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html)를 참조하십시오.
+기타 메소드에 대한 정보는 [java.lang.Math 참조 문서![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html)를 참조하십시오.
 
 ### java.util.Random()
+{: #dialog-methods-numbers-java-util-random}
 
 난수를 리턴합니다. 다음 구문 옵션 중 하나를 사용할 수 있습니다.
 
 - 랜덤 부울 값(true 또는 false)을 리턴하려면 `<?new Random().nextBoolean()?>`를 사용하십시오.
 - 0(포함됨)과 1(제외됨) 사이의 실수형 난수를 리턴하려면 `<?new Random().nextDouble()?>`를 사용하십시오.
-- 0(포함됨)과 지정한 수 사이의 정수형 난수를 리턴하려면 `<?new Random().nextInt(n)?>`를 사용하십시오. 여기서 n은 숫자 범위(1을 더함)의 최대 수입니다. 예를 들어, 0과 10 사이의 난수를 리턴하려면 `<?new Random().nextInt(11)?>`를 지정하십시오.
+- 0(포함됨)과 지정한 수 사이의 정수형 난수를 리턴하려면 `<?new Random().nextInt(n)?>`를 사용하십시오. 여기서 n은 숫자 범위(1을 더함)의 최대 수입니다.
+  예를 들어, 0과 10 사이의 난수를 리턴하려면 `<?new Random().nextInt(11)?>`를 지정하십시오.
 - 전체 정수 값 범위(-2147483648에서 2147483648까지)에서 정수형 난수를 리턴하려면 `<?new Random().nextInt()?>`를 사용하십시오.
 
 예를 들어, #random_number 인텐트로 트리거되는 대화 노드를 작성할 수 있습니다. 첫 번째 응답 조건은 다음과 같습니다.
@@ -1438,6 +1501,7 @@ Condition = @sys-number
 {: #dialog-methods-objects}
 
 ### JSONObject.clear()
+{: #dialog-methods-objects-jsonobject-clear}
 
 이 메소드는 JSON 오브젝트에서 모든 값을 지우고 널을 리턴합니다.
 
@@ -1538,6 +1602,7 @@ API `/message` 호출의 본문에 있는 `context` 또는 `output` JSON 오브�
 트리에 있는 노드가 이전에 `I'm happy to help.`를 정의한 다음, 위에 정의된 JSON 출력 오브젝트가 있는 노드로 이동하는 경우 `Have a great day.`만 응답으로 표시됩니다. `I'm happy to help.` 출력은 표시되지 않습니다. 이유는 이 출력이 지워지고 `clear()` 메소드를 호출하는 노드의 텍스트 응답으로 대체되기 때문입니다.
 
 ### JSONObject.has(String)
+{: #dialog-methods-objects-jsonobject-has}
 
 이 메소드는 복합 JSONObject에 입력 이름의 특성이 있는 경우 true를 리턴합니다.
 
@@ -1567,6 +1632,7 @@ API `/message` 호출의 본문에 있는 `context` 또는 `output` JSON 오브�
 결과: 사용자 오브젝트에 `first_name` 특성이 있으므로 조건은 true입니다.
 
 ### JSONObject.remove(String)
+{: #dialog-methods-objects-jsonobject-remove}
 
 이 메소드는 입력 `JSONObject`에서 이름의 특성을 제거합니다. 이 메소드에서 리턴되는 `JSONElement`는 제거되는 `JSONElement`입니다.
 
@@ -1612,7 +1678,7 @@ API `/message` 호출의 본문에 있는 `context` 또는 `output` JSON 오브�
 {: codeblock}
 
 ### com.google.gson.JsonObject 지원
-{: #dialog-methods-com.google.gson.JsonObject}
+{: #dialog-methods-objects-com-google-gson-JsonObject}
 
 내장 메소드 외에도, `com.google.gson.JsonObject` 클래스의 표준 메소드를 사용할 수 있습니다.
 
@@ -1626,6 +1692,7 @@ API `/message` 호출의 본문에 있는 `context` 또는 `output` JSON 오브�
 **참고:** 정규식과 관련된 메소드의 경우, 정규식을 지정할 때 사용할 구문에 대한 세부사항은 [RE2 구문 참조 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/google/re2/wiki/Syntax){: new_window}를 참조하십시오.
 
 ### String.append(Object)
+{: #dialog-methods-strings-append}
 
 이 메소드는 입력 오브젝트를 문자열에 문자열로 추가하고 수정된 문자열을 리턴합니다.
 
@@ -1663,6 +1730,7 @@ API `/message` 호출의 본문에 있는 `context` 또는 `output` JSON 오브�
 {: codeblock}
 
 ### String.contains(String)
+{: #dialog-methods-strings-contains}
 
 이 메소드는 문자열에 입력 하위 문자열이 포함되어 있는 경우 true를 리턴합니다.
 
@@ -1680,6 +1748,7 @@ API `/message` 호출의 본문에 있는 `context` 또는 `output` JSON 오브�
 결과: 조건이 `true`입니다.
 
 ### String.endsWith(String)
+{: #dialog-methods-strings-endsWith}
 
 이 메소드는 문자열이 입력 하위 문자열로 끝나는 경우 true를 리턴합니다.
 
@@ -1702,41 +1771,43 @@ API `/message` 호출의 본문에 있는 `context` 또는 `output` JSON 오브�
 결과: 조건이 `true`입니다.
 
 ### String.extract(String regexp, Integer groupIndex)
+{: #dialog-methods-strings-extract}
 
-이 메소드는 입력 정규식의 지정된 그룹 인덱스에 따라 추출된 문자열을 리턴합니다.
+이 메소드는 입력에서 지정한 정규식 그룹 패턴과 일치하는 문자열을 리턴합니다. 일치하는 항목이 없으면 빈 문자열을 리턴합니다.
 
-다음 입력의 경우:
+이 메소드는 단일 regex 패턴에 대해 서로 다른 일치가 아니라 서로 다른 regex 패턴 그룹에 대한 일치를 추출하도록 설계되었습니다. 다른 일치를 찾으려면 [getMatch](#dialog-methods-strings-getMatch) 메소드를 참조하십시오.
+{: note}
 
-```
-"Hello 123456".
-```
-{: codeblock}
-
-다음 구문을 사용합니다.
+이 예제에서 컨텍스트 변수는 사용자가 지정하는 정규식 패턴 그룹과 일치하는 문자열을 저장합니다. 표현식에서 두 개의 regex  패턴 그룹이 정의되어 있으며 각 그룹은 소괄호로 묶입니다. 두 그룹으로 구성된 고유한 세 번째 그룹이 있습니다. 이 그룹은 첫 번째(groupIndex 0) regex 그룹이며 전체 숫자 그룹과 텍스트 그룹을 함께 포함하는 문자열과 일치합니다. 두 번째 regex 그룹(groupIndex 1)은 숫자 그룹의 첫 번째 발생과 일치합니다. 세 번째 그룹(groupIndex 2)은 숫자 그룹 다음에 있는 텍스트 그룹의 첫 번째 항목과 일치합니다.
 
 ```json
 {
   "context": {
-    "number_extract": "<? input.text.extract('[\\d]+',0) ?>"
+    "number_extract": "<? input.text.extract('([\\d]+)(\\b [A-Za-z]+)',n) ?>"
   }
 }
 ```
 {: codeblock}
 
-  **중요:** `\\d`를 정규식으로 처리하려면 다른 `\\`: `\\\\d`를 추가하여 백슬래시를 둘 다 이스케이프 처리해야 합니다.
+JSON에서 regex를 지정하는 경우에는 두 개의 백슬래시(\\)를 제공해야 합니다. 노드 응답에서 이 표현식을 지정하는 경우에는 백슬래시가 하나만 필요합니다. 예: 
+
+`<? input.text.extract('([\d]+)(\b [A-Za-z]+)',n) ?>`
+
+입력:
+
+```
+"Hello 123 this is 456".
+```
+{: codeblock}
 
 결과:
 
-```json
-{
-  "context": {
-    "number_extract": "123456"
-  }
-}
-```
-{: codeblock}
+- n=`0`이면 값은 `123 this`입니다.
+- n=`1`이면 값은 `123`입니다.
+- n=`2`이면 값은 `this`입니다.
 
 ### String.find(String regexp)
+{: #dialog-methods-strings-find}
 
 이 메소드는 문자열의 세그먼트가 입력 정규식과 일치하는 경우 true를 리턴합니다.  이 메소드를 JSONArray 또는 JSONObject 요소에 대해 호출할 수 있으며, 비교하기 전에 배열 또는 오브젝트를 문자열로 변환합니다.
 
@@ -1758,7 +1829,47 @@ API `/message` 호출의 본문에 있는 `context` 또는 `output` JSON 오브�
 
 결과: 입력 텍스트의 숫자 부분이 정규식 `^[^\d]*[\d]{6}[^\d]*$`와 일치하므로 조건은 true입니다.
 
+### String.getMatch(String regexp, Integer matchIndex)
+{: #dialog-methods-strings-getMatch}
+
+이 메소드는 입력에서 지정한 정규식 패턴의 발생과 일치하는 문자열을 리턴합니다. 일치하는 항목이 없으면 빈 문자열을 리턴합니다.
+
+일치하는 항목이 발견되면 *일치 배열*로 여러분이 생각하는 것에 추가됩니다. 배열 요소 수가 0에서 시작되므로 세 번째 일치를 리턴하려면 2를 `matchIndex` 값으로 지정하십시오. 예를 들어, 지정된 패턴과 일치하는 세 개의 단어가 있는 텍스트 문자열을 입력하면 해당 인덱스 값을 지정하여 첫 번째, 두 번째 또는 세 번째 일치만 리턴할 수 있습니다.
+
+다음 표현식에서는 입력에서 숫자 그룹을 찾습니다. 이 표현식은 인덱스 값 1이 지정되었기 때문에 두 번째 패턴 일치 문자열을 `$second_number` 컨텍스트 변수에로 저장합니다. 
+
+```json
+{
+  "context": {
+    "second_number": "<? input.text.getMatch('([\\d]+)',1) ?>"
+  }
+}
+```
+{: codeblock}
+
+JSON 구문에서 표현식을 지정하는 경우에는 두 개의 백슬래시(\\)를 제공해야 합니다. 노드 응답에서 표현식을 지정하는 경우에는 백슬래시가 하나만 필요합니다.  
+
+예: 
+
+`<? input.text.getMatch('([\d]+)',1) ?>`
+
+- 사용자 입력:
+
+  ```
+  "hello 123 i said 456 and 8910".
+  ```
+  {: codeblock}
+
+- 결과: `456`
+
+이 예제에서 표현식은 입력에서 세 번째 텍스트 블록을 찾습니다. 
+
+`<? input.text.getMatch('(\b [A-Za-z]+)',2) ?>`
+
+동일한 사용자 입력의 경우 이 표현식은 `and`를 리턴합니다.
+
 ### String.isEmpty()
+{: #dialog-methods-strings-isEmpty}
 
 이 메소드는 문자열이 널이 아닌 빈 문자열인 경우 true를 리턴합니다.
 
@@ -1785,6 +1896,7 @@ API `/message` 호출의 본문에 있는 `context` 또는 `output` JSON 오브�
 결과: 조건이 `true`입니다.
 
 ### String.length()
+{: #dialog-methods-strings-length}
 
 이 메소드는 문자열의 문자 길이를 리턴합니다.
 
@@ -1818,6 +1930,7 @@ API `/message` 호출의 본문에 있는 `context` 또는 `output` JSON 오브�
 {: codeblock}
 
 ### String.matches(String regexp)
+{: #dialog-methods-strings-matches}
 
 이 메소드는 문자열이 입력 정규식과 일치하는 경우 true를 리턴합니다.
 
@@ -1840,6 +1953,7 @@ API `/message` 호출의 본문에 있는 `context` 또는 `output` JSON 오브�
 결과: 입력 텍스트가 정규식 `\^Hello\$`와 일치하므로 조건은 true입니다.
 
 ### String.startsWith(String)
+{: #dialog-methods-strings-startsWith}
 
 이 메소드는 문자열이 입력 하위 문자열로 시작되는 경우 true를 리턴합니다.
 
@@ -1862,8 +1976,10 @@ API `/message` 호출의 본문에 있는 `context` 또는 `output` JSON 오브�
 결과: 조건이 `true`입니다.
 
 ### String.substring(Integer beginIndex, Integer endIndex)
+{: #dialog-methods-strings-substring}
 
-이 메소드는 `beginIndex`의 문자와 `endIndex` 앞에 인덱스로 설정된 마지막 문자가 포함된 하위 문자열을 가져옵니다. endIndex 문자는 포함되지 않습니다.
+이 메소드는 `beginIndex`의 문자와 `endIndex` 앞에 인덱스로 설정된 마지막 문자가 포함된 하위 문자열을 가져옵니다.
+endIndex 문자는 포함되지 않습니다.
 
 다음 대화 런타임 컨텍스트의 경우:
 
@@ -1899,6 +2015,7 @@ API `/message` 호출의 본문에 있는 `context` 또는 `output` JSON 오브�
 {: codeblock}
 
 ### String.toLowerCase()
+{: #dialog-methods-strings-toLowerCase}
 
 이 메소드는 소문자로 변환되는 원래 문자열을 리턴합니다.
 
@@ -1925,13 +2042,14 @@ API `/message` 호출의 본문에 있는 `context` 또는 `output` JSON 오브�
 ```json
 {
   "context": {
-    "input_upper_case": "this is a dog!"
+    "input_lower_case": "this is a dog!"
   }
 }
 ```
 {: codeblock}
 
 ### String.toUpperCase()
+{: #dialog-methods-strings-toUpperCase}
 
 이 메소드는 대문자로 변환되는 원래 문자열을 리턴합니다.
 
@@ -1965,6 +2083,7 @@ API `/message` 호출의 본문에 있는 `context` 또는 `output` JSON 오브�
 {: codeblock}
 
 ### String.trim()
+{: #dialog-methods-strings-trim}
 
 이 메소드는 문자열의 시작과 끝에 있는 공백을 자르고 수정된 문자열을 리턴합니다.
 
@@ -2002,13 +2121,14 @@ API `/message` 호출의 본문에 있는 `context` 또는 `output` JSON 오브�
 {: codeblock}
 
 ### java.lang.String 지원
-{: #java.lang.String}
+{: #dialog-methods-strings-java-lang-String-format}
 
 내장 메소드 외에도, `java.lang.String` 클래스의 표준 메소드를 사용할 수 있습니다.
 
 #### java.lang.String.format()
+{: #dialog-methods-strings-java-lang-String-format}
 
-표준 Java 문자열 `format()` 메소드를 텍스트에 적용할 수 있습니다. 형식 세부사항을 지정하는 데 사용할 구문에 대한 정보는 [java.util.formatter 참조 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter#syntax){: new_window}를 참조하십시오.
+표준 Java 문자열 `format()` 메소드를 텍스트에 적용할 수 있습니다. 형식 세부사항을 지정하는 데 사용할 구문에 대한 정보는 [java.util.formatter 참조 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax){: new_window}를 참조하십시오.
 
 예를 들어, 다음 표현식은 3개의 10진 정수(1, 1 및 2)를 가져와서 이를 문장에 추가합니다.
 
@@ -2030,7 +2150,7 @@ API `/message` 호출의 본문에 있는 `context` 또는 `output` JSON 오브�
 ```
 {: codeblock}
 
-예를 들어, 미화로 형식을 지정해야 하는 $number 변수가 `4.5`인 경우, 응답(예:`Your total is $<? T(String).format('%.2f',$number) ?>`)이 `Your total is $4.50`를 리턴합니다.    
+예를 들어, 미화로 형식을 지정해야 하는 $number 변수가 `4.5`인 경우, 응답(예:`Your total is $<? T(String).format('%.2f',$number) ?>`)이 `Your total is $4.50`를 리턴합니다.
 
 ## 간접 데이터 유형 변환
 {: #dialog-methods-indirect-type-conversion}

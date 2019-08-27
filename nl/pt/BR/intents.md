@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-08-06"
+
+keywords: intent, intent conflicts, annotate
 
 subcollection: assistant
 
@@ -25,7 +27,7 @@ subcollection: assistant
 # Definindo intenções
 {: #intents}
 
-***Intenções*** são propósitos ou objetivos expressos em uma entrada do cliente, como responder a uma pergunta ou processar um pagamento de conta. Ao reconhecer a intenção expressa na entrada de um cliente, o serviço {{site.data.keyword.conversationshort}} pode escolher o fluxo de diálogo correto para responder a isso.
+***Intenções*** são objetivos ou propósitos expressos em uma entrada do cliente, como a resposta a uma pergunta ou o processamento de um pagamento de fatura. Ao reconhecer a intenção expressa na entrada de um cliente, o serviço {{site.data.keyword.conversationshort}} pode escolher o fluxo de diálogo correto para responder a isso.
 {: shortdesc}
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Trabalhando com intenções" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/OPdOCUPGMIQ" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
@@ -35,26 +37,26 @@ subcollection: assistant
 
 - Planeje as intents para seu aplicativo.
 
-  Considere o que seus clientes podem desejar fazer e o que você deseja que seu aplicativo seja capaz de manipular em seu nome. Por exemplo, você pode desejar que o aplicativo ajude seus clientes a fazer uma compra. Neste caso, é possível incluir uma intenção `#buy_something`. (O `#` pré-anexado ao nome da intenção ajuda a identificá-lo claramente como uma intenção.)
+  Considere o que seus clientes podem desejar fazer e o que você deseja que seu aplicativo seja capaz de manipular em seu nome. Por exemplo, você pode desejar que o aplicativo ajude seus clientes a fazer uma compra. Neste caso, é possível incluir uma intenção `#buy_something` (o `#` incluído como um prefixo no nome da intenção ajuda a identificá-la claramente como uma intenção).
 
 - Ensina o Watson sobre suas intents.
 
-  Depois de decidir quais solicitações de negócios você deseja que seu aplicativo manipule para seus clientes, deve-se ensinar ao Watson sobre elas. Para cada objetivo de negócios (como `#buy_something`), deve-se fornecer pelo menos 10 exemplos de elocuções que seus clientes geralmente usam para indicar seu objetivo. Por exemplo, `I want to make a purchase.`
+  Depois de decidir quais solicitações de negócios o aplicativo deve manipular para os clientes, deve-se ensinar o Watson sobre eles. Para cada objetivo de negócios (como `#buy_something`), deve-se fornecer pelo menos 5 exemplos de elocuções que são usadas normalmente pelos clientes para indicar seus objetivos. Por exemplo, `I want to make a purchase.`
   
-  Idealmente, localize exemplos de elocução do usuário do mundo real que podem ser extraídos de processos de negócios existentes. Os exemplos do usuário devem ser customizados para seus negócios específicos. Por exemplo, se você é uma empresa de seguros, seus exemplos do usuário podem ser mais semelhantes a isto, `I want to buy a new XYZ insurance plan.`
+  Idealmente, localize exemplos de elocução do usuário do mundo real que podem ser extraídos de processos de negócios existentes. Os exemplos do usuário devem ser customizados para seus negócios específicos. Por exemplo, se você for uma empresa de seguros, um exemplo de usuário poderá ser semelhante a `I want to buy a new XYZ insurance plan.`
   
-  Os exemplos que você fornece são usados pelo serviço para construir um modelo de aprendizado de máquina que possa reconhecer tipos iguais ou semelhantes de elocuções e mapeá-las para a intenção apropriada.
+  Os exemplos fornecidos são utilizados por seu assistente para construir um modelo de aprendizado de máquina que possa reconhecer os mesmos tipos de elocuções e elocuções semelhantes, mapeando-os para a intenção apropriada.
 
 Inicie com algumas intenções e teste-as conforme você expande iterativamente o escopo do aplicativo.
+
+![Somente nos planos Plus ou Premium](images/plus.png) Se já tiver transcrições de bate-papo de uma central de atendimento ou consultas de cliente coletadas de um aplicativo on-line, aproveite esses dados. Compartilhe elocuções reais do cliente com o Watson e permita que ele recomende as melhores intenções e exemplos de usuário de intenção para suas necessidades. Consulte [Obter ajuda ao definir intenções](/docs/services/assistant?topic=assistant-intent-recommendations) para obter mais detalhes.
 
 ## Criando intenções
 {: #intents-create-task}
 
-Use a ferramenta {{site.data.keyword.conversationshort}} para criar intenções.
+1.  Abra sua qualificação de diálogo. A qualificação é aberta para a página **Intenções**.
 
-1.  Na ferramenta {{site.data.keyword.conversationshort}}, abra sua qualificação de diálogo. A qualificação é aberta para a página **Intenções**.
-
-1.  Selecione **Criar novo**.
+1.  Selecione **Criar intenção**.
 
 1.  No campo **Nome da intenção**, digite um nome para a intenção.
     - O nome de intenção pode conter letras (em Unicode), números, sublinhados, hifens e pontos.
@@ -64,35 +66,36 @@ Use a ferramenta {{site.data.keyword.conversationshort}} para criar intenções.
         - `#pay_bill`
         - `#escalate_to_agent`
 
-    A ferramenta inclui automaticamente o caractere `#` nos nomes de intenção, para que você não tenha que incluir um.
+    Um sinal de número `#` precede automaticamente o nome da intenção para ajudar a identificar o termo como uma intenção. Não é necessário incluí-lo.
     {: tip}
 
-    Inclua uma descrição da intenção no campo **Descrição**.
+    Opcionalmente, inclua uma descrição da intenção no campo **Descrição**.
 
 1.  Selecione **Criar intenção** para salvar o nome da intenção.
 
-    ![Captura de tela mostrando a nova definição de intenção](images/create_intent.png)
+    ![Captura de tela que mostra uma nova definição de intenção](images/create_intent.png)
 
-1.  Em seguida, no campo **Incluir exemplos do usuário**, digite o texto de um exemplo do usuário para a intenção. Um exemplo pode ser qualquer sequência de até 1024 caracteres de comprimento. Os seguintes podem ser exemplos para a intenção `#pay_bill`:
+1.  Em seguida, no campo **Incluir exemplo de usuário**, digite o texto de um exemplo de usuário para a intenção. Um exemplo pode ser qualquer sequência de até 1024 caracteres de comprimento. As elocuções a seguir podem ser exemplos para a intenção `#pay_bill`:
     - `I need to pay my bill.`
     - `Pay my account balance`
     - `make a payment`
 
-    Para incluir exemplos do usuário que são extraídos de solicitações de suporte real feitas por seus clientes, consulte [Incluindo exemplos de arquivos de log](#intents-intent-recommendations).
-
     Para saber sobre o impacto de incluir referências a entidades em seus exemplos do usuário, consulte [Como as referências de entidade são tratadas](#intents-entity-references).
     {: tip}
 
-    Os nomes de intenção e o texto de exemplo podem ser expostos em URLs quando um aplicativo interage com o serviço. Não inclua informações sensíveis ou pessoais nestes artefatos.
+    Os nomes de intenção e o texto de exemplo podem ser expostos em URLs quando um aplicativo interage com o {{site.data.keyword.conversationshort}}. Não inclua informações sensíveis ou pessoais nestes artefatos.
     {: important}
 
-1.  Clique em **Incluir exemplo** para salvar o exemplo.
+1.  Clique em **Incluir exemplo** para salvar o exemplo de usuário.
 
-1.  Repita o mesmo processo para incluir mais exemplos. É possível usar a tecla tab entre os exemplos. Forneça pelo menos 5 exemplos para cada intenção. Quanto mais exemplos você fornecer, mais preciso seu aplicativo pode ser.
+1.  Repita o mesmo processo para incluir mais exemplos.
 
-    Para obter ajuda com a criação de exemplo do usuário, consulte [Obter recomendações de exemplo do usuário de intenção](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations).
+    Forneça pelo menos cinco exemplos para cada intenção.
+    {: important}
 
-1.  Quando você tiver concluído a inclusão de exemplos, clique em ![Seta de fechamento](images/close_arrow.png) para concluir a criação da intenção.
+    ![Somente nos planos Plus ou Premium](images/plus.png) Para obter ajuda com a criação de exemplos de usuário, consulte [Obter recomendações de exemplo de usuário de intenção](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations).
+
+1.  Ao concluir a inclusão de exemplos, clique em ![Fechar seta](images/close_arrow.png) para concluir a criação da intenção.
 
 O sistema começa a treinar a si mesmo sobre a intenção e os exemplos do usuário que você incluiu.
 
@@ -110,28 +113,28 @@ Quando você inclui uma menção de entidade em um exemplo do usuário, o modelo
 
 Se você tiver definido, ou planeja definir, entidades que estão relacionadas a essa intenção, mencione os valores de entidade ou sinônimos em alguns dos exemplos. Fazer isso ajuda a estabelecer um relacionamento entre a intenção e as entidades. É um relacionamento fraco, mas ele informa o modelo.
 
-![Screen capture showing intent definition](images/define_intent.png)
+![Captura de tela que mostra a definição de intenção](images/define_intent.png)
 
 *Importante*:
 
-  - Os dados de exemplo de intenção devem ser representativos e típicos de dados que os usuários finais fornecerão. Os exemplos podem ser coletados de dados reais do usuário ou de pessoas que são especialistas em seu campo específico. A natureza representativa e precisa dos dados é importante.
+  - Os dados de exemplo de intenção devem ser representativos e típicos de dados fornecidos por seus usuários. Os exemplos podem ser coletados de dados reais do usuário ou de pessoas que são especialistas em seu campo específico. A natureza representativa e precisa dos dados é importante.
   - Os dados de treinamento e teste (para propósitos de avaliação) devem refletir a distribuição de intenções no uso real. Geralmente, intenções mais frequentes têm relativamente mais exemplos e melhor cobertura de resposta.
-  - É possível incluir pontuação no texto de exemplo, contanto que apareça naturalmente. Se você acredita que alguns usuários expressarão suas intenções com exemplos que incluem pontuação e alguns usuários não, inclua as duas versões. Geralmente, quando mais cobertura para vários padrões, melhor a resposta.
+  - É possível incluir pontuação no texto de exemplo, contanto que apareça naturalmente. Se acreditar que alguns usuários expressem suas intenções com exemplos que incluam pontuação e outros não, inclua ambas as versões. Geralmente, quando mais cobertura para vários padrões, melhor a resposta.
 
 ### Menas anotadas
 {: #intents-annotated-mentions}
 
-Conforme você define as entidades, é possível anotar menções da entidade diretamente de seus exemplos do usuário de intenção existentes. Um relacionamento que você identifica dessa maneira entre a intenção e a entidade *não* é usado pelo modelo de classificação de intenção. No entanto, quando você inclui a menção na entidade, ela também é incluída nessa entidade como um novo valor. E quando você inclui a menção em um valor de entidade existente, ela também é incluída nesse valor de entidade como um novo sinônimo. A classificação de intenção usa esses tipos de referências de dicionário em exemplos do usuário de intenção para estabelecer uma referência fraca entre uma intenção e uma entidade.
+Ao definir entidades, é possível anotar menções da entidade diretamente de seus exemplos de usuário de intenção existentes. Um relacionamento que você identifica dessa maneira entre a intenção e a entidade *não* é usado pelo modelo de classificação de intenção. No entanto, quando você inclui a menção na entidade, ela também é incluída nessa entidade como um novo valor. E quando você inclui a menção em um valor de entidade existente, ela também é incluída nesse valor de entidade como um novo sinônimo. A classificação de intenção usa esses tipos de referências de dicionário em exemplos do usuário de intenção para estabelecer uma referência fraca entre uma intenção e uma entidade.
 
-Consulte [Incluindo entidades contextuais](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based) para obter mais informações sobre entidades contextuais.
+Para obter mais informações sobre entidades contextuais, consulte [Incluindo entidades contextuais](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based).
 
 ### Referenciando diretamente um nome de entidade em um exemplo de intenção
 {: #intents-entity-as-example}
 
-Essa é uma abordagem avançada que, se usada, deve ser usada de forma consistente.
+Esta abordagem é avançada. Ao adotá-la, use-a de forma consistente.
 {: note}
 
-É possível escolher referenciar diretamente as entidades em seus exemplos de intenção. Por exemplo, suponha que você tenha uma entidade chamada `@PhoneModelName`, que contém os valores *Galaxy S8*, *Moto Z2*, *LG G6* e *Google Pixel 2*. Ao criar uma intenção, por exemplo `#order_phone`, você pode fornecer dados de treinamento conforme a seguir:
+É possível escolher referenciar diretamente as entidades em seus exemplos de intenção. Por exemplo, suponha que você tenha uma entidade chamada `@PhoneModelName` com os valores *Galaxy S8*, *Moto Z2*, *LG G6* e *Google Pixel 2*. Ao criar uma intenção, por exemplo, `#order_phone`, será possível fornecer dados de treinamento como a seguir:
 
 - Posso obter um `@PhoneModelName`?
 - Ajude-me pedir um `@PhoneModelName`.
@@ -142,23 +145,23 @@ Essa é uma abordagem avançada que, se usada, deve ser usada de forma consisten
 
 Atualmente, é possível referenciar diretamente somente as entidades de sinônimos que você define (os valores padrão são ignorados). Não é possível usar [entidades do sistema](/docs/services/assistant?topic=assistant-system-entities).
 
-Se você escolhe referenciar uma entidade como um exemplo de intenção (por exemplo, `@PhoneModelName`) *em qualquer lugar* em seus dados de treinamento, ela cancela a valor de uso de uma referência direta (por exemplo, *Galaxy S8*) em um exemplo de intenção em outro lugar. Todas as intenções usarão, então, a abordagem de entidade como um exemplo de intenção. Não é possível aplicar essa abordagem somente a uma intenção específica.
+Se optar por referenciar uma entidade como um exemplo de intenção (por exemplo, `@PhoneModelName`) em *qualquer lugar* de seus dados de treinamento, ela cancelará o valor do uso de uma referência direta (por exemplo, *Galaxy S8*) em um exemplo de intenção em qualquer outro lugar. Todas as intenções usarão, então, a abordagem de entidade como um exemplo de intenção. Não é possível aplicar essa abordagem somente a uma intenção específica.
 {: important}
 
 Na prática, isso significa que, se você tiver treinado anteriormente a maioria de suas intenções com base em referências diretas (*Galaxy S8*) e agora usar referências de entidade (`@PhoneModelName`) para apenas uma intenção, a mudança afetará seu treinamento anterior. Se você escolhe usar referências `@Entity`, deve-se substituir todas as referências diretas anteriores por referências `@Entity`.
 
-A definição de uma intenção de exemplo com um `@Entity` que tem 10 valores definidos para ele **não** equivale a especificar essa intenção de exemplo 10 vezes. O serviço {{site.data.keyword.conversationshort}} não dá tanto peso a essa sintaxe de intenção de exemplo.
+Definir uma intenção de exemplo com uma `@Entity` com 10 valores definidos para ela **não** equivale a especificar essa intenção de exemplo 10 vezes. O serviço {{site.data.keyword.conversationshort}} não dá tanto peso a essa sintaxe de intenção de exemplo.
 
 ## Testando suas intenções
 {: #intents-test}
 
 Depois de ter concluído a criação de novas intenções, é possível testar o sistema para ver se ele reconhece suas intenções como você espera.
 
-1.  Na ferramenta {{site.data.keyword.conversationshort}}, clique no ícone ![Perguntar ao Watson](images/ask_watson.png).
+1.  Clique no ícone ![Perguntar ao Watson](images/ask_watson.png).
 
-1.  Na área de janela *Experimente*, insira uma pergunta ou outra sequência de texto e pressione Enter para ver qual intenção é reconhecida. Se a intenção incorreta é reconhecida, você pode melhorar seu modelo incluindo esse texto como um exemplo para a intenção correta.
+1.  Na área de janela "Experimentar", insira uma pergunta ou outra sequência de texto e pressione Enter para ver qual intenção é reconhecida. Se a intenção incorreta é reconhecida, você pode melhorar seu modelo incluindo esse texto como um exemplo para a intenção correta.
 
-    Se você tiver feito mudanças recentemente em sua qualificação, poderá ver uma mensagem indicando que o sistema ainda está sendo treinado novamente. Se você vir essa mensagem, aguarde até que o treinamento seja concluído antes de testar:
+    Se tiver feito mudanças recentemente em sua qualificação, uma mensagem poderá ser exibida indicando que o sistema ainda está realizando o novo treinamento. Se você vir essa mensagem, aguarde até que o treinamento seja concluído antes de testar:
     {: tip}
 
     ![Captura de tela mostrando mensagem de treinamento em andamento](images/training.png)
@@ -171,19 +174,11 @@ Depois de ter concluído a criação de novas intenções, é possível testar o
 
     ![Captura de tela da correção de uma intenção reconhecida](images/correct_intent.png)
 
-1.  Se a entrada não estiver relacionada a nenhuma das intenções em seu aplicativo, será possível ensinar o serviço selecionando a intenção exibida e, em seguida, clicando em **Marcar como irrelevante**.
+1.  {: #intents-mark-irrelevant}Se a entrada não estiver relacionada a nenhuma intenção em seu aplicativo, isso poderá ser ensinado ao seu assistente selecionando a intenção exibida e, em seguida, clicando em **Marcar como irrelevante**.
 
     ![Captura de tela marcar como irrelevante](images/irrelevant.png)
 
-    *Marcar como irrelevante*
-    {: #intents-mark-irrelevant}
-
-    A opção *Marcar como irrelevante* não está disponível em todos os idiomas. Consulte  [ idiomas suportados ](/docs/services/assistant?topic=assistant-language-support)  para obter detalhes.
-
-    **Importante**: as intenções que são marcadas como irrelevantes são salvas como contraexemplos na área de trabalho JSON e são incluídas como parte dos dados de treinamento. Certifique-se de designar uma entrada como irrelevante.
-
-      - As entradas não podem ser acessadas ou mudadas posteriormente na ferramenta.
-      - A única maneira de reverter a identificação de uma entrada como sendo irrelevante é usar a mesma entrada na área de janela *Experimente* novamente e, desta vez, designá-la a uma intenção.
+    Para obter mais informações sobre essa ação, consulte [Ensinando seu assistente sobre tópicos a serem ignorados](/docs/services/assistant?topic=assistant-logs#logs-mark-irrelevant).
 
 Se suas intenções não estão sendo corretamente reconhecidas, considere fazer os seguintes tipos de mudanças:
 
@@ -194,22 +189,22 @@ Se suas intenções não estão sendo corretamente reconhecidas, considere fazer
 ## Pontuação absoluta
 {: #intents-absolute-scoring}
 
-O serviço {{site.data.keyword.conversationshort}} pontua a confiança de cada intenção independentemente, não em relação a outras intenções. Essa abordagem inclui flexibilidade; múltiplas intenções podem ser detectadas em uma única entrada do usuário. Isso também significa que o sistema pode não retornar uma intenção de forma nenhuma. Se a intenção superior tiver uma pontuação de confiança baixa (menor que 0,2), a intenção superior será incluída na matriz de intenções que é retornada pela API, mas quaisquer nós que condicionarem a intenção não serão acionados. Se você desejar detectar o caso quando nenhuma intenção com boa pontuação de confiança foi detectada, use a condição especial `irrelevant` em seu nó de diálogo. Consulte  [ Condições especiais ](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-special-conditions)  para obter mais informações.
+O serviço {{site.data.keyword.conversationshort}} pontua a confiança de cada intenção independentemente, não em relação a outras intenções. Essa abordagem inclui flexibilidade; múltiplas intenções podem ser detectadas em uma única entrada do usuário. Isso também significa que o sistema pode não retornar nenhuma intenção. Se a intenção superior tiver uma pontuação de confiança baixa (menor que 0,2), a intenção superior será incluída na matriz de intenções que é retornada pela API, mas quaisquer nós que condicionarem a intenção não serão acionados. Se você desejar detectar o caso quando nenhuma intenção com boa pontuação de confiança foi detectada, use a condição especial `irrelevant` em seu nó de diálogo. Consulte  [ Condições especiais ](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-special-conditions)  para obter mais informações.
 
 Conforme as pontuações de confiança de intenção mudam, seus diálogos podem precisar de reestruturação. Por exemplo, se um nó de diálogo usar uma intenção em sua condição e a pontuação de confiança da intenção começar a cair de forma consistente abaixo de 0,2, o nó de diálogo parará de ser processado. Se a pontuação de confiança mudar, o comportamento do diálogo também poderá mudar.
 
 ## Limites de intenção
 {: #intents-limits}
 
-O número de intenções e exemplos que você pode criar depende de seu plano de serviço {{site.data.keyword.conversationshort}}:
+O número de intenções e exemplos que podem ser criados depende do tipo de plano de seu {{site.data.keyword.conversationshort}}:
 
-| Plano de Serviço     | Intentos por habilidade | Exemplos por habilidade |
+| Plano     | Intenções por habilidade | Exemplos por habilidade |
 |------------------|------------------:|-------------------:|
 | Premium          |             2.000 |             25.000 |
 | Mais             |             2.000 |             25.000 |
 | Padrão         |             2.000 |             25.000 |
-| Lite             |               100 |             25.000 |
-{: caption="Detalhes do plano de serviço" caption-side="top"}
+| Lite, Plus Trial |               100 |             25.000 |
+{: caption="Detalhes do plano" caption-side="top"}
 
 ## Editando intenções
 {: #intents-edit}
@@ -223,7 +218,7 @@ O número de intenções e exemplos que você pode criar depende de seu plano de
 
 É possível usar a tecla tab do nome da intenção para cada exemplo, editando os exemplos se você desejar.
 
-Para mover ou excluir um exemplo, clique na caixa de seleção associada a ele e, em seguida, clique em **Mover** ou **Excluir**.
+Para mover ou excluir um exemplo, clique na caixa de seleção associada a ela e, em seguida, clique em **Mover** ou **Excluir**.
 
   ![Captura de tela mostrando como mover ou excluir um exemplo](images/move_example.png)
 
@@ -249,16 +244,16 @@ As intenções contendo seu termo de procura, com exemplos correspondentes, são
 
 É possível exportar várias intenções para um arquivo CSV, depois é possível importar e reutilizá-las para outro aplicativo {{site.data.keyword.conversationshort}}.
 
-1.  Na página **Intenções**, selecione as intenções que você deseja na lista e clique em **Exportar**.
+1.  Na página **Intenções**, selecione as intenções que deseja na lista e clique em **Exportar**.
 
     ![Opção Exportar](images/ExportIntent.png)
 
 ## Importando intenções e exemplos
 {: #intents-import}
 
-Se você tiver um grande número de intenções e exemplos, você pode achar mais fácil importá-los de um arquivo CSV (Valor Separado por Vírgula) do que defini-los um por um na ferramenta {{site.data.keyword.conversationshort}}. Certifique-se de remover quaisquer dados pessoais dos exemplos do usuário que você incluir no arquivo.
+Se tiver um grande número de intenções e exemplos, importá-los de um arquivo de valor separado por vírgula (CSV) poderá ser mais fácil do que os definir um a um. Certifique-se de remover quaisquer dados pessoais dos exemplos do usuário que você incluir no arquivo.
 
-Como alternativa, é possível fazer upload de um arquivo com elocuções brutas do usuário (por meio de logs da central de atendimento, por exemplo) e deixar o serviço localizar candidatos para exemplos do usuário por meio dos dados. Consulte [Incluindo exemplos de arquivos de log](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations) para obter mais informações. Esse recurso está disponível somente para os usuários do plano Plus ou Premium.
+Como alternativa, é possível fazer upload de um arquivo com elocuções brutas do usuário (de logs de central de atendimento, por exemplo) e permitir que o Watson localize candidatos para exemplos de usuário nos dados. Consulte [Incluindo exemplos de arquivos de log](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations) para obter mais informações. Esse recurso está disponível somente para os usuários do plano Plus ou Premium.
 
 1.  Colete as intenções e exemplos em um arquivo CSV ou exporte-os de uma planilha para um arquivo CSV. O formato obrigatório para cada linha no arquivo é o seguinte:
 
@@ -267,7 +262,7 @@ Como alternativa, é possível fazer upload de um arquivo com elocuções brutas
     ```
     {: screen}
 
-    em que `<example>` é o texto de um exemplo do usuário e `<intent>` é o nome da intenção que você deseja que corresponda ao exemplo. Por exemplo:
+    em que `<example>` é o texto de um exemplo de usuário e `<intent>` é o nome da intenção com a qual você deseja que o exemplo corresponda. Por exemplo:
 
     ```
     Tell me the current weather conditions.,weather_conditions
@@ -284,17 +279,17 @@ Como alternativa, é possível fazer upload de um arquivo com elocuções brutas
 
     ![Opção Importar](images/ImportIntent.png)
 
-    **Importante:** O tamanho máximo do arquivo CSV é 10MB. Se o seu arquivo CSV for maior, considere dividi-lo em múltiplos arquivos e importá-los separadamente.
+    **Importante:** o tamanho máximo do arquivo CSV é de 10 MB. Se o seu arquivo CSV for maior, considere dividi-lo em múltiplos arquivos e importá-los separadamente.
 
     O arquivo é validado e importado e o sistema começa a treinar com os novos dados.
 
-É possível visualizar as intenções importadas e os exemplos correspondentes na guia **Intenções**. Você pode precisar atualizar a página para ver as novas intenções e exemplos.
+É possível visualizar as intenções importadas e os exemplos correspondentes na guia **Intenções**. Talvez seja necessário atualizar a página para ver as novas intenções e exemplos.
 
-## Resolvendo conflitos de intenção ![Somente Plus ou Premium](images/premium.png)
+## Resolvendo conflitos de intenção ![Somente Plus ou Premium](images/plus.png)
 {: #intents-resolve-conflicts}
 
 Esse recurso está disponível somente para usuários do Plus ou Premium.
-{: tip}
+{: note}
 
 O aplicativo {{site.data.keyword.conversationshort}} detecta um conflito quando dois ou mais exemplos de intenção em intenções *separadas* são tão semelhantes que o {{site.data.keyword.conversationshort}} fica confuso quanto a qual intenção usar.
 
@@ -351,8 +346,8 @@ Assista a este vídeo para aprender mais.
 
 É possível selecionar várias intenções para exclusão.
 
-**IMPORTANTE**: ao excluir intenções, você também exclui todos os exemplos associados e esses itens não podem ser recuperados posteriormente. Todos os nós de diálogo que fazem referência a essas intenções devem ser atualizados manualmente para que não façam referencia ao conteúdo excluído.
+**IMPORTANTE**: ao excluir intenções, todos os exemplos associados também são excluídos e não é possível recuperá-los posteriormente. Todos os nós de diálogo que fazem referência a essas intenções devem ser atualizados manualmente para que não façam referencia ao conteúdo excluído.
 
-1.  Na página **Intenções**, selecione as intenções que você deseja na lista e clique em **Excluir**.
+1.  Na página **Intenções**, selecione as intenções que deseja na lista e clique em **Excluir**.
 
     ![Opção Excluir](images/DeleteIntent.png)

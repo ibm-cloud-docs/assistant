@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-06-04"
 
 subcollection: assistant
 
@@ -31,7 +31,7 @@ subcollection: assistant
 ## Sintaxe de avaliação
 {: #expression-language-long-syntax}
 
-Para expandir os valores de variáveis dentro de outras variáveis ou chamar métodos em propriedades e objetos globais, use a sintaxe de expressão `<? expression ?>`. Por exemplo:
+Para expandir valores de variáveis dentro de outras variáveis ou chamar métodos em propriedades e objetos globais, use a sintaxe de expressão `<? expression ?>`. Por exemplo:
 
 - **Expandindo uma propriedade**
     - `"output":{"text":"Your name is <? context.userName ?>"}`
@@ -139,7 +139,7 @@ Ao testar seu diálogo, é possível ver detalhes das entidades que são reconhe
 ```
 {: codeblock}
 
-Para a entrada do usuário *Hello now*, o serviço reconhece as entidades de sistema @sys-date e @sys-time, portanto a resposta contém esses objetos de entidade:
+Para a entrada do usuário, *Hello now*, seu assistente reconhece as entidades do sistema @sys-date e @sys-time, portanto, a resposta contém esses objetos de entidade:
 
 ```json
 [
@@ -175,7 +175,7 @@ Cada entidade possui um conjunto de propriedades associadas a ela. É possível 
 
 | Propriedade              | Definição | Dicas de Uso |
 |-----------------------|------------|------------|
-| *confiança*          | Uma porcentagem decimal que representa a confiança do serviço na entidade reconhecida. A confiança de uma entidade é 0 ou 1, a menos que você tenha ativado a correspondência difusa de entidades. Quando a correspondência difusa está ativada, o limite de nível de confiança padrão é 0,3. Independentemente de a correspondência difusa estar ativada ou não, as entidades do sistema sempre terão um nível de confiança 1,0. | Será possível usar essa propriedade em uma condição para que ela retorne falso se o nível de confiança não for maior que um percentual especificado. |
+| *confiança*          | Uma porcentagem decimal que representa a confiança de seu assistente na entidade reconhecida. A confiança de uma entidade é 0 ou 1, a menos que você tenha ativado a correspondência difusa de entidades. Quando a correspondência difusa está ativada, o limite de nível de confiança padrão é 0,3. Independentemente de a correspondência difusa estar ativada ou não, as entidades do sistema sempre terão um nível de confiança 1,0. | Será possível usar essa propriedade em uma condição para que ela retorne falso se o nível de confiança não for maior que um percentual especificado. |
 | *localização*            | Um deslocamento de caractere baseado em zero que indica onde os valores de entidade detectados começam e terminam no texto de entrada. | Use `.literal` para extrair o período de texto entre os valores de índice iniciais e finais que estão armazenados na propriedade localização. |
 | *valor*               | O valor da entidade identificado na entrada. | Essa propriedade retorna o valor da entidade conforme definido nos dados de treinamento, mesmo se a correspondência foi feita contra um de seus sinônimos associados. É possível usar `.values` para capturar várias ocorrências de uma entidade que podem estar presentes na entrada do usuário. |
 
@@ -185,15 +185,15 @@ Cada entidade possui um conjunto de propriedades associadas a ela. É possível 
 Nos exemplos a seguir, a qualificação contém uma entidade de aeroporto que inclui um valor de JFK e o sinônimo "Kennedy Airport". A entrada do usuário é *Eu quero ir para o aeroporto Kennedy*.
 
 - Para retornar uma resposta específica se a entidade 'JFK' for reconhecida na entrada do usuário, você poderia incluir essa expressão para a condição de resposta: `entities.airport[0].value == 'JFK'` ou `@airport = "JFK"`
-- Para retornar o nome da entidade como foi especificado pelo usuário na resposta do diálogo, use a propriedade .literal:
-`So you want to go to <?entities.airport[0].literal?>...`
+- Para retornar o nome da entidade como especificado pelo usuário na resposta do diálogo, use a propriedade .literal:
+  `So you want to go to <?entities.airport[0].literal?>...`
   ou
   `So you want to go to @airport.literal ...`
 
   Ambos os formatos são avaliados para `So you want to go to Kennedy Airport...' na resposta.
 
 - Expressões como `@airport:(JFK)` ou `@airport.contains('JFK')` sempre referem-se ao **valor** da entidade (`JFK` neste exemplo).
-- Para ser mais restritivo sobre quais termos são identificados como aeroportos na entrada quando a correspondência difusa estiver ativada, é possível especificar essa expressão em uma condição de nó, por exemplo: `@airport && @airport.confidence > 0.7`. O nó executará apenas se o serviço estiver 70% confiante de que o texto de entrada contém uma referência ao aeroporto.
+- Para ser mais restritivo sobre quais termos são identificados como aeroportos na entrada quando a correspondência difusa estiver ativada, é possível especificar essa expressão em uma condição de nó, por exemplo: `@airport && @airport.confidence > 0.7`. O nó será executado apenas se o seu assistente estiver 70% confiante de que o texto de entrada contém uma referência de aeroporto.
 
 Nesse exemplo, a entrada do usuário é *Há lugares para troca de moeda no JFK, Logan e O'Hare?*
 
@@ -205,8 +205,8 @@ Nesse exemplo, a entrada do usuário é *Há lugares para troca de moeda no JFK,
     }
     ```
 
-  Para referir-se posteriormente à lista capturada em uma resposta de diálogo, use esta sintaxe:
-`You asked about these airports: <? $airports.join(', ') ?>.`
+  Para consultar posteriormente a lista capturada em uma resposta de diálogo, use esta sintaxe:
+  `You asked about these airports: <? $airports.join(', ') ?>.`
   Ela é exibida assim:
 `You asked about these airports: JFK, Logan, O'Hare.`
 
@@ -215,7 +215,7 @@ Nesse exemplo, a entrada do usuário é *Há lugares para troca de moeda no JFK,
 
 A matriz de intenções contém uma ou mais intenções que foram reconhecidas na entrada do usuário, classificadas em ordem decrescente de confiança.
 
-Cada intenção tem somente uma propriedade: a propriedade `confidence`. A propriedade confiança é uma porcentagem decimal que representa a confiança do serviço na intenção reconhecida.
+Cada intenção tem somente uma propriedade: a propriedade `confidence`. A propriedade de confiança é uma porcentagem decimal que representa a confiança de seu assistente na intenção reconhecida.
 
 Ao testar seu diálogo, é possível ver detalhes das intenções que são reconhecidas na entrada do usuário, especificando essa expressão em uma resposta do nó diálogo:
 
@@ -224,7 +224,7 @@ Ao testar seu diálogo, é possível ver detalhes das intenções que são recon
 ```
 {: codeblock}
 
-Para a entrada do usuário, *Hello now*, o serviço localiza uma correspondência exata com a intenção #greeting. Portanto, ele lista os detalhes do objeto de intenção #greeting primeiro. A resposta também inclui as outras 10 principais intenções que estão definidas na qualificação, independentemente da sua pontuação de confiança. (Neste exemplo, sua confiança nas outras intenções é configurada para 0 porque a primeira intenção é uma correspondência exata.) As 10 principais intenções são retornadas porque a área de janela "Experimente" envia o parâmetro `alternate_intents:true` com sua solicitação. Se você está usando a API diretamente e deseja ver os 10 resultados principais, certifique-se de especificar esse parâmetro em sua chamada. Se `alternate_intents` é false, que é o valor padrão, somente intenções com uma confiança acima de 0,2 são retornadas na matriz.
+Para a entrada do usuário, *Hello now*, seu assistente localiza uma correspondência exata com a intenção #greeting. Portanto, ele lista os detalhes do objeto de intenção #greeting primeiro. A resposta também inclui as outras 10 principais intenções que estão definidas na qualificação, independentemente da sua pontuação de confiança. (Neste exemplo, sua confiança nas outras intenções é configurada para 0 porque a primeira intenção é uma correspondência exata.) As 10 principais intenções são retornadas porque a área de janela "Experimente" envia o parâmetro `alternate_intents:true` com sua solicitação. Se você está usando a API diretamente e deseja ver os 10 resultados principais, certifique-se de especificar esse parâmetro em sua chamada. Se `alternate_intents` é false, que é o valor padrão, somente intenções com uma confiança acima de 0,2 são retornadas na matriz.
 
 ```json
 [{"intent":"greeting","confidence":1},
@@ -253,7 +253,7 @@ O exemplo a seguir mostra como acessar a entrada:
 - Para executar um nó se a entrada do usuário for "Sim", inclua essa expressão para a condição nó:
 `input.text == 'Yes'`
 
-É possível usar qualquer [Método de sequência](/docs/services/conversation/dialog-methods#dialog-methods-strings) para avaliar ou manipular texto da entrada do usuário. Por exemplo:
+É possível usar qualquer [Método de sequência](/docs/services/assistant/dialog-methods#dialog-methods-strings) para avaliar ou manipular texto da entrada do usuário. Por exemplo:
 
 - Para verificar se a entrada do usuário contém "Yes", use: `input.text.contains( 'Yes' )`.
 - Retorna verdadeiro se a entrada do usuário for um número: `input.text.matches( '[0-9]+' )`.

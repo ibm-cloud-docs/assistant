@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-06-11"
 
 subcollection: assistant
+
 
 ---
 
@@ -28,7 +29,7 @@ subcollection: assistant
 A IBM esforça-se para fornecer produtos com acesso utilizável para todos, independentemente de idade ou capacidade.
 {: shortdesc}
 
-A ferramenta {{site.data.keyword.conversationfull}} usa as chaves de navegação padrão do Windows.
+O {{site.data.keyword.conversationfull}} usa as chaves de navegação padrão do Windows.
 
 ## Recursos de Acessibilidade na Documentação do Produto
 {: #accessibility-in-doc}

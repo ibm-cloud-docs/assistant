@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-08-05"
 
 subcollection: assistant
 
@@ -22,7 +22,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Creazione di versioni della capacità 
+# Creazione di versioni della capacità
 {: #versions}
 
 Le versioni sono utili per gestire il flusso di lavoro di un progetto di sviluppo della capacità di dialogo.
@@ -37,10 +37,12 @@ Questo video di 2 minuti e mezzo illustra come l'utilizzo delle versioni può es
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Creazione delle versioni della capacità" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/FDolnBxvcZ8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
+Per ulteriori informazioni su come le versioni possono migliorare il flusso di lavoro che utilizzi per creare un assistente, [leggi questo post di blog ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://medium.com/ibm-watson/watson-assistant-versions-announcement-d60869b1f5f){: new_window}.
+
 ## Creazione di una versione
 {: #versions-create}
 
-Puoi utilizzare lo strumento {{site.data.keyword.conversationshort}} per modificare solo una versione della capacità di dialogo alla volta. La versione in corso viene denominata *di sviluppo*.
+Puoi modificare solo una versione della capacità di dialogo alla volta. La versione in corso viene denominata *di sviluppo*.
 
 Quando salvi una versione, anche tutte le impostazioni della capacità che hai applicato alla versione di sviluppo vengono salvate.
 
@@ -52,12 +54,12 @@ Per creare una versione della capacità di dialogo, completa la seguente procedu
 
 1.  Fai clic su **Salva**.
 
-Viene presa un'istantanea della capacità corrente e salvata come una nuova versione. Rimani nella versione di sviluppo della capacità. Tutte le modifiche che apporti continuano ad essere applicate alla versione di sviluppo, non alla versione che hai salvato. Per accedere alla versione che hai salvato, passa alla pagina **Version History**.
+Viene presa un'istantanea della capacità corrente e salvata come una nuova versione. Rimani nella versione di sviluppo della capacità. Tutte le modifiche che apporti continuano ad essere applicate alla versione di sviluppo, non alla versione che hai salvato. Per accedere alla versione che hai salvato, passa alla pagina **Versions**.
 
 ## Distribuzione di una versione della capacità
 {: #versions-deploy}
 
-1.  Dall'intestazione della capacità, fai clic sulla scheda **Version History**.
+1.  Dall'intestazione della capacità, fai clic sulla scheda **Versions**.
 1.  Fai clic sull'icona ![Click to view actions](images/kebab-react.png) dalla versione che vuoi distribuire e scegli **Assign to assistant**.
 
     Viene visualizzato un elenco di assistenti a cui puoi collegare questa versione. L'elenco è limitato agli assistenti che non hanno alcuna capacità associata loro o che sono state associate con una versione differente di questa capacità.
@@ -66,8 +68,8 @@ Viene presa un'istantanea della capacità corrente e salvata come una nuova vers
 Tieni traccia di quando questa versione viene distribuita a un assistente e per quanto tempo. È probabile che vorrai analizzare le conversazioni dell'utente che si verificano tra gli utenti e questa versione specifica della capacità. Puoi ottenere queste informazioni dalla pagina **Analytics**. Tuttavia, quando selezioni un'origine dati, le versioni non vengono elencate. Devi scegliere il nome dell'assistente a cui hai distribuito questa versione. Puoi successivamente filtrare i dati delle metriche per visualizzare solo le conversazioni che si sono verificate tra la data di inizio e di fine dell'intervallo di tempo durante il quale questa versione della capacità è stata distribuita all'assistente.
 {: important}
 
-## Limiti della versione della capacità 
-{: #skill-version-limits}
+## Limiti della versione della capacità
+{: #versions-limits}
 
 Il numero di versioni che puoi creare per una sola capacità dipende dal tuo piano {{site.data.keyword.conversationshort}}.
 
@@ -76,6 +78,7 @@ Il numero di versioni che puoi creare per una sola capacità dipende dal tuo pia
 | Premium          |                 50 |
 | Plus             |                 10 |
 | Standard         |                 10 |
+| Plus Trial       |                 10 |
 | Lite             |                  0 |
 {: caption="Dettagli piano di servizio" caption-side="top"}
 
@@ -98,7 +101,7 @@ Non puoi modificare una versione salvata. Per ottenere lo stesso risultato, puoi
     Salva una versione della capacità ora. Altrimenti, il tuo lavoro andrà perso quando segui questa procedura:
     {: important}
 
-1.  Dalla versione che vuoi modificare, fai clic sull'icona **Skill actions** ![Skill actions](images/kebab-react.png), scegli **Copy to development** e conferma l'azione.
+1.  Dalla versione che vuoi modificare, fai clic sull'icona **Skill actions** ![Skill actions](images/kebab-react.png), scegli **Revert to this version** e conferma l'azione.
 
     La pagina si aggiorna per ripristinare lo stato a cui era la capacità quando è stata creata la versione.
 

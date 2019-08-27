@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-07-19"
 
 subcollection: assistant
 
@@ -22,7 +22,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# 与 Intercom 集成 ![仅限增强版或高端套餐](images/premium.png)
+# 与 Intercom 集成 ![仅限增强版或高端套餐](images/plus.png)
 {: #deploy-intercom}
 
 Intercom 是一种客户消息传递平台，通过在整个客户生命周期内改善关系来帮助推动业务增长。
@@ -31,11 +31,12 @@ Intercom 是一种客户消息传递平台，通过在整个客户生命周期�
 Intercom 通过与 IBM 合作，向客户支持团队添加了新的座席，即虚拟 Watson Assistant。您可以将助手与 Intercom 应用程序相集成，以支持应用程序在助手和人工座席之间无缝地传递用户会话。要了解有关集成的更多信息，请阅读 [Watson 博客帖子 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://medium.com/@blakemcgregor/contact-center-post-394dff427c8)。
 
 此集成仅可供增强版或高端套餐用户使用。
+如果您想试用，可以注册免费的增强试用版套餐。[获取增强试用版](https://cloud.ibm.com/registration?target=%2Fdeveloper%2Fwatson%2Flaunch-tool%2Fconversation%3Fplan%3Dplus-trial&cm_mmc=OSocial_Voicestorm-_-Watson+AI_Watson+Core+-+Conversation-_-WW_WW-_-Intercom+Trial+Registration+Link&cm_mmca1=000027BD&cm_mmca2=10004432)。
 {: note}
 
-如果将助手与 Intercom 集成，那么 Intercom 应用程序会成为面向客户的应用程序，以用于处理技能。与用户的所有交互都由 Intercom 发起和管理。
+如果将助手与 Intercom 集成，那么 Intercom 应用程序会成为可供技能使用的面向客户的应用程序。与用户的所有交互都由 Intercom 发起和管理。
 
-目前还没有方法可将正在进行的会话一个集成通道传递到另一个集成通道。
+目前还没有方法可将正在进行的会话从一个集成通道传递到另一个集成通道。
 
 ## 一次性座席创建
 {: #deploy-intercom-account-prereq}
@@ -64,6 +65,11 @@ Intercom 通过与 IBM 合作，向客户支持团队添加了新的座席，即
 ## 准备对话
 {: #deploy-intercom-dialog-prereq}
 
+如果您没有与助手关联的对话技能，请立即创建对话技能或向助手添加对话技能。有关更多详细信息，请参阅[构建对话](/docs/services/assistant?topic=assistant-dialog-build)。
+
+Intercom 集成目前不支持通过搜索技能来触发搜索。
+{: note}
+
 在对话技能中完成以下步骤，以便助手可以处理用户请求，并可以在客户要求时将会话传递给人工座席。
 
 1.  向技能添加意向，用于识别用户要求与人工进行交谈的请求。
@@ -85,16 +91,29 @@ Intercom 通过与 IBM 合作，向客户支持团队添加了新的座席，即
 
       ![在节点编辑视图中添加节点目的摘要的字段的屏幕快照。](images/disambig-node-purpose.png)
 
-      **不要**向步骤 2 中创建的根节点添加外部节点名。发生上报时，服务会查看最后一个处理的节点的外部节点名，以了解未成功满足的是哪个用户目标。如果在有“连接到人工座席”意向的节点中包含外部节点名，那么将阻止服务了解在上报问题前，用户与之交互的最后一个目标明确的实际节点。
+      **不要**向步骤 2 中创建的根节点添加外部节点名。发生上报时，助手会查看最后一个处理的节点的外部节点名，以了解未成功满足的是哪个用户目标。如果在有“连接到人工座席”意向的节点中包含外部节点名，那么将阻止助手了解用户在上报问题前，与之交互的最后一个目标明确的实际节点。
      {: tip}
 
 1.  如果分支中的某个子节点以您不希望助手处理的跟进请求或问题为条件，请向该节点添加**连接到人工座席**响应类型。
 
-    例如，一些节点涉及只应由人工处理的敏感问题，或跟踪何时助手总是无法理解用户意图，您可能希望将此响应类型添加到此类节点。
+    例如，一些节点涉及只应由人工处理的敏感问题，或负责跟踪助手总是无法理解用户意图的情况，您可能希望将此响应类型添加到此类节点。
 
-    在运行时，如果会话到达此子节点，那么对话将在此时传递给人工座席。稍后，设置 Intercom 集成时，可以选择人工座席作为每个分支的备份。
+    在运行时，如果会话到达此子节点，那么对话将在此时传递给人工座席。稍后，设置 Intercom 集成时，可以选择人工座席作为每个分支的替补。
 
 现在，对话已准备好在 Intercom 中支持助手。
+
+### 对话注意事项
+{: #deploy-intercom-dialog}
+
+添加到对话的某些富文本响应在“试用”窗格中的显示方式与向 Intercom 用户显示的方式不同。下表描述了 Intercom 如何处理响应类型。
+
+|响应类型|向 Intercom 用户的显示方式|
+|---------------|---------------------------|
+|**选项**|选项显示为编号列表。在**标题**或**描述**字段中，提供向用户说明如何从列表中选择一个选项的指示信息。|
+|**图像**|将呈现图像**标题**、**描述**和图像本身。|
+|**暂停**|无论是否启用此类型，在暂停期间都不会显示正在输入指示符。|
+
+有关响应类型的更多信息，请参阅[富文本响应](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia)。
 
 ## 添加 Intercom 集成
 {: #deploy-intercom-add-intercom}
@@ -107,12 +126,30 @@ Intercom 通过与 IBM 合作，向客户支持团队添加了新的座席，即
 
     按照屏幕上提供的指示信息进行操作。以下各部分将帮助您执行这些步骤。
 
+以下 4 分钟的视频说明了相关步骤。
+
+<iframe class="embed-responsive-item" id="youtubeplayer" title="快速设置" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/SkbFWNScueU" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
 ## 将助手连接到 Intercom
 {: #deploy-intercom-connect}
 
 授予 Intercom 使用助手的许可权后，该助手即成为 Intercom 团队的有效成员。
 
-人工座席可以使用 Intercom 的分配规则（这些规则可以根据某些条件自动将入站会话分配给队友或团队收件箱）向助手分配消息，也可以在运行时由人工座席手动重新分配。有关更多详细信息，请参阅 [Intercom 文档 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.intercom.com/help/support-and-retain-customers/work-as-a-team/assign-conversations-to-teammates-and-teams)。
+人工座席可以使用 Intercom 的分配规则将消息分配给助手。消息可以通过以下方式分配给助手：
+
+- 根据某些条件自动将入站会话分配给队友或团队收件箱
+
+  以下一分半钟的视频说明了相关步骤。
+
+  <iframe class="embed-responsive-item" id="youtubeplayer2" title="自动分配" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/4M9wu8NHxcY" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
+- 人工座席在运行时手动进行了重新分配。
+
+  以下不到 3 分钟的视频说明了相关步骤。
+
+  <iframe class="embed-responsive-item" id="youtubeplayer3" title="手动分配" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/jAnolyUJAIA" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
+有关更多详细信息，请参阅 [Intercom 文档 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.intercom.com/help/support-and-retain-customers/work-as-a-team/assign-conversations-to-teammates-and-teams)。
 
 1.  对话准备就绪后，单击**立即连接**。
 1.  单击**访问 Intercom** 以重定向到 Intercom 站点。
@@ -156,14 +193,18 @@ Intercom 通过与 IBM 合作，向客户支持团队添加了新的座席，即
 
 1.  添加规则后，单击**返回到概述**以退出页面。
 
+以下 3 分钟的视频说明了相关步骤。
+
+<iframe class="embed-responsive-item" id="youtubeplayer0" title="基于主题的上报路线" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/dTwJZOqdzII" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
 ## 授予助手监视和回答用户查询的许可权
 {: #deploy-intercom-config-action}
 
 希望助手开始监视 Intercom 收件箱，并自行回答消息时，请开启监视功能。
 
-助手会监视在 Intercom 中记录的用户查询。助手确信自己知道如何回答用户查询时，会直接响应用户。（服务识别到最热门意向的置信度分数等于或高于 0.75 时，助手即会确信。）
+助手会监视在 Intercom 中记录的用户查询。助手确信自己知道如何回答用户查询时，会直接响应用户。（助手识别到最热门意向的置信度分数等于或高于 0.75 时，即说明助手确信。）
 
-如果不希望助手回答某些类型的用户查询，那么可以添加规则，按分支指定助手要执行的其他操作。例如，您可能希望一开始以更保守的方式将助手合并到 Intercom 团队中，仅允许助手建议响应，并将用户消息转移给其他队友进行回答。一段时间后，助手证明自己的能力后，可以给予助手更多责任。
+如果不希望助手回答某些类型的用户查询，那么可以添加规则，按对话分支指定助手要执行的其他操作。例如，您可能希望一开始以更保守的方式将助手合并到 Intercom 团队中，仅允许助手建议响应，并将用户消息转移给其他队友进行回答。一段时间后，助手证明自己的能力后，可以给予助手更多责任。
 
 要配置希望助手如何处理特定对话分支，请定义规则。
 
@@ -203,22 +244,13 @@ Intercom 通过与 IBM 合作，向客户支持团队添加了新的座席，即
 
 随着对话的更改，您可能要返回到 Intercom 集成页面，对这些规则进行递增更改。
 
+以下 3 分钟的视频说明了相关步骤。
+
+<iframe class="embed-responsive-item" id="youtubeplayer1" title="收件箱监视" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/fFKjWUfIftw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
 ## 测试集成
 {: #deploy-intercom-try}
 
 要有效地测试端到端的 Intercom 集成，您必须有权访问 Intercom 最终用户应用程序。您已创建或编辑了 Intercom 工作空间。该工作空间必须具有关联的用户界面客户机。如果没有，请参阅 [Apps in Intercom ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.intercom.com/help/apps-in-intercom){: new_window} 以获取有关设置客户机的帮助。
 
 通过与 Intercom 工作空间关联的客户机应用程序来提交测试用户查询，以了解 Intercom 如何处理消息。验证应该由助手回答的消息是否生成了合适的响应，并且助手是否未响应自己未配置为回答的消息。
-
-## 对话注意事项
-{: #deploy-intercom-dialog}
-
-添加到对话的某些富文本响应在“试用”窗格中的显示方式与向 Intercom 用户显示的方式不同。下表描述了 Intercom 如何处理响应类型。
-
-|响应类型|向 Intercom 用户的显示方式|
-|---------------|---------------------------|
-|**选项**|选项显示为编号列表。在**标题**或**描述**字段中，提供向用户说明如何从列表中选择一个选项的指示信息。|
-|**图像**|将呈现图像**标题**、**描述**和图像本身。|
-|**暂停**|无论是否启用此类型，在暂停期间都不会显示正在输入指示符。|
-
-有关响应类型的更多信息，请参阅[富文本响应](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia)。

@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-08-06"
+
+keywords: entity, entity value, contextual entity, dictionary entity, pattern entity, entity synonym, annotate mentions
 
 subcollection: assistant
 
@@ -39,46 +41,46 @@ Por último, puede añadir varias respuestas al árbol de diálogo con términos
 ## Visión general de la evaluación de entidades
 {: #entities-described}
 
-El servicio detecta entidades en la entrada de usuario utilizando uno de los siguientes métodos de evaluación:
+Su asistente detecta entidades en la entrada de usuario utilizando uno de los siguientes métodos de evaluación:
 
 ### Método basado en diccionario
 {: #entities-dictionary-overview}
 
-El servicio busca términos en la entrada del usuario que coincidan con los valores, sinónimos o patrones que defina para la entidad.
+Su asistente busca términos en la entrada del usuario que coincidan con los valores, sinónimos o patrones que defina para la entidad.
 
-- **Entidad de sinónimo**: El usuario defina una categoría de términos como una entidad (`color`) y luego uno o varios valores en dicha categoría (`blue`). Para cada valor, especifique un grupo de sinónimos (`aqua`, `navy`). También puede seleccionar sinónimos para añadirlos de las recomendaciones que le ha hecho el servicio.
+- **Entidad de sinónimo**: El usuario defina una categoría de términos como una entidad (`color`) y luego uno o varios valores en dicha categoría (`blue`). Para cada valor, especifique un grupo de sinónimos (`aqua`, `navy`). También puede seleccionar sinónimos para añadirlos de las recomendaciones que le ha hecho Watson.
 
-    En el momento de la ejecución, el servicio reconoce los términos en la entrada de usuario que coinciden exactamente con los valores o con los sinónimos que ha definido para la entidad como menciones de dicha entidad.
+    En el momento de la ejecución, su asistente reconoce los términos en la entrada de usuario que coinciden exactamente con los valores o con los sinónimos que ha definido para la entidad como menciones de dicha entidad.
 - **Entidad de patrón**: El usuario define una categoría de términos como entidad (`contact_info`) y luego uno o varios valores en dicha categoría (`email`). Para cada valor, el usuario especifica una expresión regular que define el patrón textual de las menciones de dicho tipo de valor. En el caso del valor de la entidad `email`, es posible que desee especificar una expresión regular que defina un patrón `text@text.com`.
 
-    En el momento de la ejecución, el servicio busca patrones que coincidan con su expresión regular en la entrada de usuario e identifica las coincidencias como menciones de dicha entidad.
+    En el momento de la ejecución, su asistente busca patrones que coincidan con su expresión regular en la entrada de usuario e identifica las coincidencias como menciones de dicha entidad.
 - **Entidad del sistema**: Entidades de sinónimos predefinidas por IBM. Cubren las categorías de uso común, tales como números, fechas y horas. Solo tiene que habilitar una entidad del sistema para empezar a usarla.
 
-### Método basado en contexto
+### Método basado en anotaciones
 {: #entities-annotations-overview}
 
-Cuando define una entidad contextual, se entrena un modelo sobre el *término anotado* y el *contexto* en el que se utiliza el término en la frase que anota. Este nuevo modelo de entidad contextual permite al servicio calcular una puntuación de confianza que identifica la probabilidad de que una palabra o frase sea una instancia de una entidad, en función de cómo se utiliza en la entrada del usuario.
+Cuando se define una entidad basada en anotaciones, a la que también se hace referencia como una entidad contextual, se entrena un modelo sobre el *término anotado* y el *contexto* en el que se utiliza el término en la frase que anota. Este nuevo modelo de entidad contextual permite a su asistente calcular una puntuación de confianza que identifica la probabilidad de que una palabra o frase sea una instancia de una entidad, en función de cómo se utiliza en la entrada del usuario.
 
 - **Entidad contextual**: En primer lugar, el usuario define una categoría de términos como una entidad (`product`). A continuación, va a la página *Intenciones* y examina los ejemplos de usuario de intenciones existentes para encontrar menciones de la entidad y las etiqueta como tales. Por ejemplo, puede ir a la intención `#buy_something` y buscar un ejemplo de usuario como `I want to buy a Coach bag`. Puede etiquetar `Coach bag` como una mención de la entidad `@product`.
 
     A efectos de entrenamiento, el término que ha anotado, `Coach bag`, se añade como valor de la entidad `@product`.
 
-    En el momento de la ejecución, el servicio evalúa los términos en función del contexto en el que se utilizan solo en la sentencia. Si la estructura de una solicitud de usuario que menciona el término coincide con la estructura de un ejemplo de usuario de intención en el que se etiqueta una mención, el servicio interpreta el término de modo que sea una mención de ese tipo de entidad. Por ejemplo, la entrada de usuario puede incluir la expresión `I want to buy a Gucci bag`. Debido a la similitud de la estructura de esta frase con el ejemplo de usuario que ha anotado (`I want to buy a Coach bag`), el servicio reconoce `Gucci bag` como mención de entidad `@product`.
+    En el momento de la ejecución, el asistente evalúa los términos en función del contexto en el que se utilizan solo en la sentencia. Si la estructura de una solicitud de usuario que menciona el término coincide con la estructura de un ejemplo de usuario de intención en el que se etiqueta una mención, su asistente interpreta el término de modo que sea una mención de ese tipo de entidad. Por ejemplo, la entrada de usuario puede incluir la expresión `I want to buy a Gucci bag`. Debido a la similitud de la estructura de esta frase con el ejemplo de usuario que ha anotado (`I want to buy a Coach bag`), su asistente reconoce `Gucci bag` como mención de entidad `@product`.
 
-    Cuando se utiliza un modelo de entidad contextual para una entidad, el servicio *no* busca coincidencias exactas de texto o de patrón para la entidad en la entrada de usuario, sino que se centra en el contexto de la frase en la que se menciona la entidad.
+    Cuando se utiliza un modelo de entidad contextual para una entidad, su asistente *no* busca coincidencias exactas de texto o de patrón para la entidad en la entrada de usuario, sino que se centra en el contexto de la frase en la que se menciona la entidad.
 
     Si opta por definir valores de entidad utilizando anotaciones, añada al menos 10 anotaciones por entidad para dar al modelo de entidad de contexto suficientes datos para que resulten fiables.
+
+Para obtener más información sobre entidades contextuales, [lea esta publicación de blog ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://medium.com/ibm-watson/contextual-entities-with-ibm-watson-assistant-f41b2e0ca82e).
 
 ## Creación de entidades
 {: #entities-creating-task}
 
-Utilice la herramienta {{site.data.keyword.conversationshort}} para crear entidades.
+1.  Abra el conocimiento de diálogo y pulse en el separador **Entidades**. Si **Entidades** no está visible, utilice el menú ![Menú](images/Menu_16.png) para abrir la página.
 
-1.  En la herramienta {{site.data.keyword.conversationshort}}, abra el conocimiento de diálogo y luego pulse el separador **Entidades**. Si **Entidades** no está visible, utilice el menú ![Menú](images/Menu_16.png) para abrir la página.
+1.  Pulse **Crear entidad**.
 
-1.  Pulse **Añadir entidad**.
-
-    También puede pulsar **Utilizar entidades del sistema** para seleccionar entre una lista de entidades comunes, proporcionadas por {{site.data.keyword.IBM_notm}}, que se pueden aplicar a cualquier caso de uso. Consulte [Habilitación de entidades del sistema](#entities-enable-system-entities) para ver más detalles.
+    También puede pulsar en **Entidades de sistema** para seleccionar entre una lista de entidades comunes, proporcionadas por {{site.data.keyword.IBM_notm}}, que se pueden aplicar a cualquier caso de uso. Consulte [Habilitación de entidades del sistema](#entities-enable-system-entities) para ver más detalles.
 
 1.  En el campo **Nombre de entidad**, escriba un nombre descriptivo para la entidad.
 
@@ -89,30 +91,30 @@ Utilice la herramienta {{site.data.keyword.conversationshort}} para crear entida
 
     No incluya espacios en el nombre. El nombre no puede tener más de 64 caracteres. El nombre no debe comenzar con la serie `sys-` porque está reservada para las entidades del sistema.
 
-    La herramienta incluye automáticamente el carácter @ en el nombre de entidad, de modo que no tiene que añadirlo.
+    El signo at `@` se añade como prefijo al nombre de entidad automáticamente para identificar el término como una entidad. No es necesario añadirlo.
     {: tip}
 
 1.  Pulse **Crear entidad**.
 
     ![Captura de pantalla sobre la creación de una entidad](images/create_entity.png)
 
-1.  Para esta entidad, elija si desea que el servicio utilice un enfoque basado en diccionario o uno basado en contexto para encontrar menciones del mismo y luego siga el procedimiento correspondiente.
+1.  Para esta entidad, elija si desea que su asistente utilice un enfoque basado en diccionario o uno basado en anotaciones para encontrar menciones del mismo y luego siga el procedimiento correspondiente.
 
     **Para cada entidad que cree, elija un solo tipo de entidad.** En cuando añada una anotación para una entidad, el modelo contextual se inicializa y se convierte en el enfoque principal para analizar la entrada de usuario para encontrar menciones de dicha entidad. El contexto en el que se utiliza la mención en la entrada de usuario tiene prioridad sobre las coincidencias exactas que pueda haber. Consulte [Visión general de la evaluación de entidades](#entities-described) para obtener más información sobre la forma en que se evalúa cada tipo.
 
     - [Entidades basadas en diccionario](#entities-create-dictionary-based)
-    - [Entidades basadas en contexto](#entities-create-annotation-based)
+    - [Entidades basadas en anotaciones](#entities-create-annotation-based)
 
 ## Adición de entidades basadas en diccionario
 {: #entities-create-dictionary-based}
 
-Las entidades basadas en diccionario son aquellas para los que se definen términos, sinónimos o patrones específicos. En el momento de la ejecución, el servicio solo encuentra menciones de la entidad cuando un término en la entrada de usuario coincide exactamente (o se parece mucho si la coincidencia aproximada está habilitada) con el valor de uno de sus sinónimos.
+Las entidades basadas en diccionario son aquellas para los que se definen términos, sinónimos o patrones específicos. En el momento de la ejecución, su asistente solo encuentra menciones de la entidad cuando un término en la entrada de usuario coincide exactamente (o se parece mucho si la coincidencia aproximada está habilitada) con el valor de uno de sus sinónimos.
 
 1.  En el campo **Nombre de valor**, escriba el texto de un posible valor para la entidad y pulse `Intro`. El valor de una entidad puede ser cualquier serie de un máximo de 64 caracteres de longitud.
 
     **Importante:** No incluya información confidencial o personal en los nombres o valores de entidad. Los nombres y valores pueden ser expuestas en URL en una app.
 
-1.  Si desea que el servicio reconozca términos con una sintaxis parecida al valor de entidad y a los sinónimos que especifique, pero sin necesidad de que haya una coincidencia exacta, pulse el conmutador **Coincidencia aproximada** para activarlo.
+1.  Si desea que su asistente reconozca términos con una sintaxis parecida al valor de entidad y a los sinónimos que especifique, pero sin necesidad de que haya una coincidencia exacta, pulse el conmutador **Coincidencia aproximada** para activarlo.
 
     Esta característica está disponible para los idiomas indicados en el tema [Idiomas soportados](/docs/services/assistant?topic=assistant-language-support).
 
@@ -147,7 +149,7 @@ Las entidades basadas en diccionario son aquellas para los que se definen térmi
 
     - Pulse **Mostrar recomendaciones**.
 
-    - El servicio {{site.data.keyword.conversationshort}} hará varias recomendaciones para los sinónimos. Los términos se muestran en minúsculas, pero el servicio reconoce las menciones de los sinónimos tanto si se especifican en minúsculas como en mayúsculas.
+    - El servicio {{site.data.keyword.conversationshort}} hará varias recomendaciones para los sinónimos. Los términos se muestran en minúsculas, pero su asistente reconoce las menciones de los sinónimos tanto si se especifican en minúsculas como en mayúsculas.
 
       Cuanto más coherentes sean los sinónimos de los valores de las entidades, más relevantes y precisas serán las recomendaciones. Por ejemplo, si tiene varias palabras sobre un tema, obtendrá mejores sugerencias que si tiene una o dos palabras aleatorias.
       {: tip}
@@ -165,7 +167,7 @@ Las entidades basadas en diccionario son aquellas para los que se definen térmi
       Si no recibe ninguna recomendación de sinónimos adicionales, podría deberse a que la entidad ya está bien definida, o bien a que contiene contenido que el recomendador no es capaz de ampliar en este momento.
       {: tip}
 
-      Si elige no seleccionar un sinónimo recomendado, el sistema lo tratará como un término que no le interesa y modificará el siguiente conjunto de recomendaciones que verá cuando pulse `Añadir seleccionados` o `Siguiente conjunto`. Esta inferencia solo se aplica mientras está seleccionando sinónimos; el servicio no utiliza la información sobre los sinónimos omitidos para ninguna otra finalidad.
+      Si elige no seleccionar un sinónimo recomendado, el sistema lo tratará como un término que no le interesa y modificará el siguiente conjunto de recomendaciones que verá cuando pulse `Añadir seleccionados` o `Siguiente conjunto`. Esta inferencia solo se aplica mientras está seleccionando sinónimos; su asistente no utiliza la información sobre los sinónimos omitidos para ninguna otra finalidad.
       {: note}
 
       ![Pantalla 4 de recomendaciones de sinónimos](images/synonym_4.png)
@@ -188,7 +190,7 @@ Las entidades basadas en diccionario son aquellas para los que se definen térmi
         - `localPhone`: `(\d{3})-(\d{4})`, por ejemplo 426-4968
         - `fullUSphone`: `(\d{3})-(\d{3})-(\d{4})`, por ejemplo 800-426-4968
         - `internationalPhone`: `^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$`, por ejemplo +44 1962 815000
-      - `email`: `\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b`, por ejemplo name@ibm.com
+      - `email`: `\b[A-Za-z0-9._%+-]+@([A-Za-z0-9-]+\.)+[A-Za-z]{2,}\b`, por ejemplo name@ibm.com
       - `website`: `(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$`, por ejemplo https://www.ibm.com
 
       Cuando se utiliza entidades de patrón, generalmente es necesario almacenar el texto que coincida con el patrón en una variable de contexto (o variable de acción), desde dentro del árbol de diálogo. Para obtener más información, consulte [Definición de una variable de contexto](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-context-var-define).
@@ -242,7 +244,7 @@ Las entidades basadas en diccionario son aquellas para los que se definen térmi
         - Ramas condicionales (por ejemplo, `(?(cond)true)`)
       - Cuando una entidad de patrón empieza o finaliza con un carácter Unicode, e incluye límites de palabra, por ejemplo `\bš\b`, la coincidencia de patrón no coincide correctamente con el límite de palabra. En este ejemplo, para la entrada `š zkouška`, la coincidencia devuelve `Grupo 0: 6-7 š` (`š zkou`_**`š`**_`ka`), en lugar de la respuesta correcta `Grupo 0: 0-1 š` (_**`š`**_ `zkouška`).
 
-      El motor de expresión regular se basa en parte en el motor de expresión regular de Java. El servicio {{site.data.keyword.conversationshort}} generará un error si intenta cargar un patrón no soportado, ya sea mediante la API o desde dentro de la IU de herramientas del servicio {{site.data.keyword.conversationshort}}.
+      El motor de expresión regular se basa en parte en el motor de expresión regular de Java. El servicio {{site.data.keyword.conversationshort}} generará un error si intenta cargar un patrón no soportado, ya sea mediante la API o desde dentro de la interfaz de usuario de {{site.data.keyword.conversationshort}}.
 
 1.  Pulse **Añadir valor** y repita el proceso para añadir más valores de entidad.
 
@@ -253,14 +255,14 @@ La entidad que ha creado se añade al separador **Entidades** y el sistema empie
 ## Adición de entidades contextuales
 {: #entities-create-annotation-based}
 
-Las entidades basadas en contexto son aquellas para los que se anotan las apariciones de la entidad en frases de ejemplo para enseñar al servicio el contexto en el que se utiliza normalmente la entidad.
+Las entidades basadas en anotaciones son aquellas para los que se anotan las apariciones de la entidad en frases de ejemplo para enseñar a su asistente el contexto en el que se utiliza normalmente la entidad.
 
 Para entrenar un modelo de entidad contextual, puede aprovechar sus ejemplos de intenciones, que ofrecen frases preparadas para que las anote.
 
 La utilización de ejemplos de usuario de intención para definir entidades contextuales no afecta a la clasificación de dicha intención. Sin embargo, las menciones de entidad que etiquete también se añaden a dicha entidad como sinónimos. Y la clasificación de intenciones utiliza las menciones de sinónimos en los ejemplos de usuario de intención para establecer una referencia débil entre una intención y una entidad.
 {: note}
 
-1.  En la herramienta {{site.data.keyword.conversationshort}}, abra el conocimiento y pulse el separador **Intenciones**. Si no ve **Intenciones**, utilice el menú ![Menú](images/Menu_16.png) para abrir la página.
+1.  En el conocimiento de diálogo, pulse el separador **Intenciones**.
 
 1.  Pulse una intención para abrirla.
 
@@ -309,7 +311,7 @@ La utilización de ejemplos de usuario de intención para definir entidades cont
     Asegúrese de anotar cada mención de un tipo de entidad que aparezca en los ejemplos de usuario que edite. Consulte [Lo que no anote es importante](#entities-counter-examples) para obtener más detalles.
     {: important}
 
-1.  Ahora pulse la anotación que acaba de crear. Se abre un recuadro con la indicación `Ir a: <entity-name>`. Si pulsa dicho enlace irá directamente a la entidad.
+1.  Ahora pulse la anotación que acaba de crear. Se abre el recuadro `Ir a:<entity-name>`. Si pulsa dicho enlace irá directamente a la entidad.
 
     ![Verificar el valor computer para la entidad product](images/oe-verify-value.png)
 
@@ -359,7 +361,7 @@ Las entidades del sistema se pueden utilizar para reconocer una amplia gama de v
 
 Las entidades del sistema se mantienen de forma centralizada, de modo que cualquier actualización está disponible automáticamente. No puede modificar las entidades del sistema.
 
-1.  En el separador Entidades, pulse **Entidades del sistema**.
+1.  En la página Entidades, pulse **Entidades del sistema**.
 
     ![Captura de pantalla del separador "Entidades del sistema"](images/system_entities_1.png)
 
@@ -378,10 +380,10 @@ El número de entidades, los valores de las entidades y los sinónimos que puede
 
 | Plan de servicio      | Entidades por conocimiento | Valores de entidad por conocimiento | Sinónimos de entidad por conocimiento |
 |-------------------|-------------------:|------------------------:|--------------------------:|
-| Premium           |               1000 |                 100.000 |                   100.000 |
-| Plus              |               1000 |                 100.000 |                   100.000 |
-| Estándar          |               1000 |                 100.000 |                   100.000 |
-| Lite              |                 25 |                 100.000 |                   100.000 |
+| Premium | 1.000 | 100.000 | 100.000 |
+| Plus | 1.000 | 100.000 |                   100.000 |
+| Estándar | 1.000 | 100.000 | 100.000 |
+| Lite, Plus Trial | 25 | 100.000 | 100.000 |
 {: caption="Detalles del plan de servicio" caption-side="top"}
 
 Las entidades del sistema cuyo uso habilite cuentan en los totales de uso de su plan.
@@ -391,7 +393,7 @@ Las entidades del sistema cuyo uso habilite cuentan en los totales de uso de su 
 | Premium      |        30 entidades contextuales con 3000 anotaciones |
 | Plus         |        20 entidades contextuales con 2000 anotaciones |
 | Estándar     |        20 entidades contextuales con 2000 anotaciones |
-| Lite         |        10 entidades contextuales con 1000 anotaciones |
+| Lite, Plus Trial |    10 entidades contextuales con 1000 anotaciones |
 {: caption="Detalles de los planes de servicio, continuación" caption-side="top"}
 
 ## Edición de entidades
@@ -437,7 +439,7 @@ Puede exportar varias entidades a un archivo CSV para luego importarlas y reutil
 ## Importación de entidades
 {: #entities-import}
 
-Si tiene un gran número de entidades, puede que le resulte más fácil importarlas desde un archivo CSV (valores separados por comas) que definirlas una por una en la herramienta {{site.data.keyword.conversationshort}}.
+Si tiene un gran número de entidades, puede que le resulte más fácil importarlas desde un archivo CSV (valores separados por comas) que definirlas una por una.
 
 Las anotaciones de entidad no se incluyen en la importación de un archivo CSV de entidad. Debe importar todo el conocimiento de diálogo para conservar las anotaciones asociadas para una entidad contextual en dicho conocimiento. Si solo exporta e importa entidades, las entidades contextuales que haya exportado se tratan como entidades basadas en diccionario después de importarlas.
 {: note}
@@ -478,7 +480,7 @@ Las anotaciones de entidad no se incluyen en la importación de un archivo CSV d
     ```
     {: screen}
 
-    Guarde el archivo CSV con codificación UTF-8 y sin marca de orden de bytes (BOM). El tamaño máximo del archivo CSV es 10 MB. Si el archivo CSV es mayor, considere la posibilidad de dividirlo en varios archivos y de importarlos por separado.  En la herramienta {{site.data.keyword.conversationshort}}, abra el conocimiento de diálogo y luego pulse el separador **Entidades**.
+    Guarde el archivo CSV con codificación UTF-8 y sin marca de orden de bytes (BOM). El tamaño máximo del archivo CSV es 10 MB. Si el archivo CSV es mayor, considere la posibilidad de dividirlo en varios archivos y de importarlos por separado.  Abra el conocimiento de diálogo y pulse en el separador **Entidades**.
     {: tip}
 
 1.  Pulse ![Importar](images/importGA.png) y luego arrastre un archivo o examine para seleccionar un archivo del sistema. El archivo se valida y se importa y el sistema empieza a formarse a sí mismo con los datos nuevos.

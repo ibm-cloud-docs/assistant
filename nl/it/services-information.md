@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-07-19"
 
 subcollection: assistant
 
@@ -25,7 +25,7 @@ subcollection: assistant
 # Informazioni sui servizi IBM Cloud
 {: #services-information}
 
-L'assistente è un bot ospitato completo gestito da {{site.data.keyword.cloud_notm}}, ciò significa che non devi preoccuparti della configurazione o della manutenzione dell'infrastruttura per supportarlo.
+L'assistente è un bot ospitato completo gestito da {{site.data.keyword.cloud}}, ciò significa che non devi preoccuparti della configurazione o della manutenzione dell'infrastruttura per supportarlo.
 {: shortdesc}
 
 ## Informazioni sul piano di servizio
@@ -35,7 +35,13 @@ Esplora le {{site.data.keyword.conversationshort}} [opzioni del piano di servizi
 
 Prima di creare un'istanza del servizio, decidi come vuoi organizzare le risorse nel tuo account {{site.data.keyword.cloud_notm}}. Se non definisci il tuo gruppo di risorse, viene utilizzato il gruppo di risorse **predefinito** e *non puoi* modificarlo successivamente. Per ulteriori dettagli, vedi [Prassi ottimali per organizzare le risorse in un gruppo di risorse ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/docs/resources/bestpractice_rgs#bp_resourcegroups){: new_window}. Tutti gli utenti devono avere il ruolo di accesso alla piattaforma di Operatore. (I ruoli di accesso al servizio non vengono utilizzati da {{site.data.keyword.conversationshort}}.)
 
-### Limiti del piano per tipo di risorsa 
+Per scoprire a quale piano del servizio appartiene la tua istanza corrente, completa questa procedura:
+
+1.  Prendi nota del nome dell'istanza che stai utilizzando al momento. (Puoi trovare e modificare l'istanza dalle pagine principali Skills o Assistants.)
+1.  Vai alla pagina [Elenco di risorse IBM Cloud ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/resources).
+1.  Espandi la sezione **Servizi**, trova il nome dell'istanza di cui hai preso appunti precedentemente e fai clic su di essa per visualizzare le informazioni sul piano associato.
+
+### Limiti del piano per tipo di risorsa
 {: #services-information-limits}
 
 Le informazioni sui limiti della risorsa per piano sono disponibili dagli argomenti che descrivono come creare le risorse, per cui puoi fare riferimento ai limiti quando hai bisogno di conoscerli. Questi sono i link agli argomenti:
@@ -43,6 +49,7 @@ Le informazioni sui limiti della risorsa per piano sono disponibili dagli argome
 - [Assistenti](/docs/services/assistant?topic=assistant-assistant-add#assistant-add-limits)
 - [Nodi del dialogo](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-node-limits)
 - [Entità](/docs/services/assistant?topic=assistant-entities#entities-limits)
+- [Timeout di inattività](/docs/services/assistant?topic=assistant-assistant-settings#assistant-settings-session-limits)
 - [Intenti](/docs/services/assistant?topic=assistant-intents#intents-limits)
 - [Integrazioni](/docs/services/assistant?topic=assistant-deploy-integration-add#deploy-integration-add-limits)
 - [Log](/docs/services/assistant?topic=assistant-logs#logs-limits)
@@ -58,22 +65,23 @@ Se hai un piano Lite e raggiungi il tuo limite di chiamate API, ma i log mostran
 
 Se vuoi eseguire l'upgrade da un piano a un altro, vedi [Aggiornamento](/docs/services/assistant?topic=assistant-upgrade).
 
-### Funzioni del piano Plus e Premium
+### Funzioni del piano Plus e Premium ![Solo piano Plus o Premium](images/plus.png)
 {: #services-information-premium}
 
-Le seguenti funzioni sono disponibili solo per gli utenti dei piani Premium. 
+Le seguenti funzioni sono disponibili solo per gli utenti dei piani Premium o Plus. 
 
 - [Disambiguazione](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation)
 - [Risoluzione del conflitto degli intenti ](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts)
-- [Consigli sull'esempio utente dell'intento](/docs/services/assistant?topic=assistant-intent-recommendations)
+- [Consigli sull'intento e sull'esempio utente dell'intento](/docs/services/assistant?topic=assistant-intent-recommendations)
 - [Integrazione Intercom](/docs/services/assistant?topic=assistant-deploy-intercom)
+- [Capacità di ricerca](/docs/services/assistant?topic=assistant-skill-search-add)
 
 ### Piani basati sull'utente
 {: #services-information-user-based-plans}
 
 A differenza dei piani basati sull'API, che misurano l'utilizzo in base al numero di chiamate API effettuate durante un determinato intervallo di tempo, il nuovo piano Plus e il piano Premium aggiornato utilizzano la fatturazione basata sull'utente. Misurano l'utilizzo in base al numero di utenti univoci che hanno interagito con l'assistente durante un determinato intervallo di tempo.
 
-Il servizio controlla le seguenti informazioni dalle richieste API in questo ordine per scopi di fatturazione:
+{{site.data.keyword.conversationshort}} controlla le seguenti informazioni dalle richieste API in questo ordine per scopi di fatturazione:
 
   1.  **user_id**: una proprietà definita nell'API inviata nell'oggetto di contesto di una chiamata API /message. L'utilizzo di questa proprietà è il modo migliore per assicurarti di assegnare in modo accurato le chiamate API /message a utenti univoci. Per ulteriori informazioni sulla proprietà ID utente, vedi la documentazione della guida di riferimento API.
   
@@ -84,16 +92,16 @@ Il servizio controlla le seguenti informazioni dalle richieste API in questo ord
 
   1.  **conversation_id**: una proprietà definita nell'API v1 che viene archiviata nell'oggetto di contesto di una chiamata API /message. Questa proprietà può essere utilizzata per identificare più chiamate API /message associate a un solo scambio colloquiale con un utente. Tuttavia, lo stesso ID viene utilizzato solo se lo conservi esplicitamente e lo passi con ogni richiesta effettuata come parte della stessa conversazione. Altrimenti, viene generato un nuovo ID per ogni chiamata API /message.
 
-Per avvalerti al massimo dei nuovi piani di servizio basati sull'utente, progetta ogni applicazione personalizzata che utilizzi per distribuire il tuo assistente per acquisire un ID utente o sessione univoco e passare le informazioni al servizio.
+Per avvalerti al massimo dei nuovi piani di servizio basati sull'utente, progetta ogni applicazione personalizzata che utilizzi per distribuire il tuo assistente per acquisire un ID utente o sessione univoco e passare le informazioni a {{site.data.keyword.conversationshort}}.
 
-## Autenticazione delle chiamate API 
+## Autenticazione delle chiamate API
 {: #services-information-authenticate-api-calls}
 
 Il meccanismo di autenticazione utilizzato dalla tua istanza del servizio influisce su come devi fornire le credenziali quando effettui una chiamata API.
 
-1.  Ottieni le credenziali del servizio. 
+1.  Ottieni le credenziali del servizio.
 
-    - Trova e fai clic sull'istanza del servizio nell'[Elenco di risorse {{site.data.keyword.Bluemix_notm}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com/resources){: new_window}.
+    - Trova e fai clic sull'istanza del servizio nell'[Elenco di risorse {{site.data.keyword.Bluemix_notm}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://cloud.ibm.com){: new_window}.
 
     - Fai clic per aprire la tua istanza del servizio, fai clic su **Credenziali del servizio** e quindi su **Visualizza credenziali**.
 
@@ -121,7 +129,7 @@ Il meccanismo di autenticazione utilizzato dalla tua istanza del servizio influi
      **Chiamata API IAM**
 
     - L'URL di base deve includere l'ubicazione. Utilizza la sintassi `gateway-<location>.watsonplatform.net` per specificare l'ubicazione in cui hai creato l'istanza del servizio. I codici ubicazione sono elencati nella tabella *Ubicazioni data center*.
-    - Fornisci il tipo di token appropriato nell'intestazione. Puoi passare un token di connessione o una chiave API. 
+    - Fornisci il tipo di token appropriato nell'intestazione. Puoi passare un token di connessione o una chiave API.
 
       - I token supportano le richieste autenticate senza le credenziali del servizio incorporate in ogni chiamata. Il seguente esempio mostra l'utilizzo di un token di connessione.
 
@@ -143,7 +151,7 @@ Il meccanismo di autenticazione utilizzato dalla tua istanza del servizio influi
         Quando utilizzi uno degli SDK Watson, puoi passare la chiave API e lasciare che l'SDK gestisca il ciclo di vita dei token.
         {: note}
 
-        Le risorse IAM non possono essere gestite con la CLI (Command Line Interface) Cloud Foundry. Ad esempio, i comandi CLI Cloud Foundry (che iniziano con `cf`) che creano o gestiscono le istanze del servizio non funzionano con le istanze ospitate in ubicazioni utilizzando IAM. Invece, devi utilizzare la CLI {{site.data.keyword.cloud_notm}} e i relativi comandi associati. Per ulteriori dettagli, vedi [Gestione di risorse e gruppi di risorse ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_resource). 
+        Le risorse IAM non possono essere gestite con la CLI (Command Line Interface) Cloud Foundry. Ad esempio, i comandi CLI Cloud Foundry (che iniziano con `cf`) che creano o gestiscono le istanze del servizio non funzionano con le istanze ospitate in ubicazioni utilizzando IAM. Invece, devi utilizzare la CLI {{site.data.keyword.cloud_notm}} e i relativi comandi associati. Per ulteriori dettagli, vedi [Gestione di risorse e gruppi di risorse ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_resource).
 
         Per ulteriori informazioni, vedi [Autenticazione con i token IAM![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](/docs/services/watson?topic=watson-iam){: new_window}.
 
@@ -154,11 +162,11 @@ Il meccanismo di autenticazione utilizzato dalla tua istanza del servizio influi
 
 {{site.data.keyword.cloud_notm}} ha una rete di data center globali che fornisce benefici prestazionali sui propri servizi cloud. Per ulteriori dettagli, vedi [Data center globali {{site.data.keyword.cloud_notm}}![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www.ibm.com/cloud/data-centers/){: new_window}.
 
-{{site.data.keyword.cloud_notm}} la gestione dell'accesso utente con Cloud Foundry è stata modificata per utilizzare l'autenticazione Identity and Access Management (IAM) basata sul token. IAM è stato distribuito in diverse ubicazioni in momenti differenti. Puoi migrare un'istanza del servizio per spostarla dai suoi organizzazione e spazio Cloud Foundry correnti a un gruppo di risorse. Per ulteriori dettagli, vedi [Migrazione](/docs/services/assistant?topic=assistant-migrate).
+{{site.data.keyword.cloud_notm}} la gestione dell'accesso utente con Cloud Foundry è stata modificata per utilizzare l'autenticazione Identity and Access Management (IAM) basata sul token. IAM è stato distribuito in diverse ubicazioni in momenti differenti. Puoi migrare un'istanza del servizio per spostarla dai suoi organizzazione e spazio Cloud Foundry correnti a un gruppo di risorse. Per ulteriori dettagli, vedi [Migrazione](/docs/services/watson?topic=watson-migrate).
 
 Puoi creare delle istanze del servizio {{site.data.keyword.conversationshort}} che vengono ospitate nelle seguenti ubicazioni data center:
 
-| Posizione    | Codice ubicazione | Tipo di autenticazione | Data di adesione a IAM  | Note |
+| Posizione    | Codice ubicazione | Tipo di autenticazione | Data di adesione a IAM | Note |
 |-------------|---------------|---------------------|-------------------|-------|
 | Dallas      | us-south      | IAM                 | 30 ottobre 2018 | N/D |
 | Francoforte   | eu-de         | IAM                 | 30 ottobre 2018 | N/D |

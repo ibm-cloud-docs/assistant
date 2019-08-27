@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-08-12"
+
+keywords: slot, slots
 
 subcollection: assistant
 
@@ -26,7 +28,7 @@ subcollection: assistant
 # Collecte d'informations à l'aide d'attributs
 {: #dialog-slots}
 
-Ajoutez des attributs à un noeud de dialogue afin de collecter plusieurs éléments d'informations auprès d'un utilisateur au sein de ce noeud. Les attributs permettent de collecter des informations au rythme de l'utilisateur. Les détails fournis initialement par l'utilisateur sont sauvegardés et le service réclame uniquement les détails qui n'ont pas été fournis.
+Ajoutez des attributs à un noeud de dialogue afin de collecter plusieurs éléments d'informations auprès d'un utilisateur au sein de ce noeud. Les attributs permettent de collecter des informations au rythme de l'utilisateur. Les détails fournis à l'avance par un utilisateur sont enregistrés et votre assistant ne demande que les détails manquants pour répondre à la demande. 
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Ajout d'attributs à un noeud" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/kMLyKfmO9wI?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
@@ -41,15 +43,15 @@ Les attributs peuvent vous aider à collecter plusieurs éléments d'information
 
 ![Illustration représentant quatre attributs qui invitent à saisir les informations nécessaires pour réserver une table dans un restaurant](images/reservation.png)
 
-L'utilisateur peut fournir des valeurs pour plusieurs attributs en même temps. Par exemple, l'entrée peut inclure les informations suivantes : `C'est une réservation pour 6 personnes à 19 heures.` Cette entrée contient deux des valeurs requises manquantes : le nombre de personnes et l'heure de la réservation. Le service reconnaît et stocke ces deux valeurs, chacune dans son attribut correspondant. Il affiche ensuite l'invite qui est associée au prochain attribut vide.
+L'utilisateur peut fournir des valeurs pour plusieurs attributs en même temps. Par exemple, l'entrée peut inclure les informations suivantes : `C'est une réservation pour 6 personnes à 19 heures.` Cette entrée contient deux des valeurs requises manquantes : le nombre de personnes et l'heure de la réservation. L'assistant reconnaît et stocke ces deux valeurs, chacune dans son attribut correspondant. Il affiche ensuite l'invite qui est associée au prochain attribut vide.
 
 ![Illustration montrant que deux attributs sont renseignés et que le service demande des informations pour un autre attribut.](images/pass-in-info.png)
 
-Les attributs permettent au service de répondre à des questions complémentaires sans avoir à redéfinir l'objectif de l'utilisateur. Par exemple, un utilisateur peut demander des prévisions météorologiques, puis poser une question complémentaire portant sur la météo pour un autre endroit ou un autre jour. Imaginons que vous sauvegardiez les variables de prévision requises, comme l'endroit et le jour, dans des attributs, si un utilisateur poste une question complémentaire afin d'obtenir de nouvelles valeurs de variable, vous pouvez écraser les valeurs d'attribut avec les nouvelles valeurs fournies et donner une réponse qui reflète les nouvelles informations. (Pour en savoir plus sur l'appel d'un service externe à partir d'un dialogue, reportez-vous à la rubrique [Procédure permettant de passer des appels de programmation à partir d'un noeud de dialogue](/docs/services/assistant?topic=assistant-dialog-actions)).
+Les attributs permettent à l'assistant de répondre à des questions complémentaires sans avoir à redéfinir l'objectif de l'utilisateur. Par exemple, un utilisateur peut demander des prévisions météorologiques, puis poser une question complémentaire portant sur la météo pour un autre endroit ou un autre jour. Imaginons que vous sauvegardiez les variables de prévision requises, comme l'endroit et le jour, dans des attributs, si un utilisateur poste une question complémentaire afin d'obtenir de nouvelles valeurs de variable, vous pouvez écraser les valeurs d'attribut avec les nouvelles valeurs fournies et donner une réponse qui reflète les nouvelles informations. (Pour en savoir plus sur l'appel d'un service externe à partir d'un dialogue, reportez-vous à la rubrique [Procédure permettant de passer des appels de programmation à partir d'un noeud de dialogue](/docs/services/assistant?topic=assistant-dialog-webhooks)).
 
 ![Illustration représentant une question portant sur des prévisions météorologiques, suivie d'une question complémentaires portant sur la météo pour un autre lieu et un autre moment. ](images/follow-up.png)
 
-L'utilisation d'attributs permet de produire un flux de dialogue plus naturel entre l'utilisateur et le service et est plus facile à gérer que l'opération consistant à essayer de collecter les informations en utilisant un grand nombre de noeuds distincts.
+L'utilisation d'attributs permet de produire un flux de dialogue plus naturel entre l'utilisateur et l'assistant et est plus facile à gérer que l'opération consistant à essayer de collecter les informations en utilisant un grand nombre de noeuds distincts.
 
 ## Ajout d'attributs
 {: #dialog-slots-add}
@@ -69,24 +71,25 @@ L'utilisation d'attributs permet de produire un flux de dialogue plus naturel en
 
     - **Check for** : identifiez le type d'information que vous souhaitez extraire de la réponse de l'utilisateur afin de la transmettre pour la demande d'attribut. La plupart du temps, vous recherchez des valeurs d'entité. En fait, le générateur de conditions qui s'affiche suggère des entités que vous pouvez rechercher. Cependant, vous pouvez également rechercher une intention ; il vous suffit de taper le nom d'intention dans la zone. Vous pouvez utiliser des opérateurs AND et OR ici pour définir des conditions plus complexes.
 
-      La valeur *Check for* est d'abord utilisée comme condition, puis elle devient la valeur de la variable contextuelle que vous indiquez dans la zone *Save as*. Elle spécifie à la fois **les éléments à vérifier** et **les éléments à sauvegarder**. Si vous souhaitez modifier la façon dont la valeur est sauvegardée, ajoutez l'expression qui reformate la valeur dans la zone *Check for*. {: important}
-
-      Par exemple, si l'entité est une entité de canevas, telle que `@email`, après avoir ajouté le nom d'entité, ajoutez-lui `.literal`. La propriété `.literal` indique que vous souhaitez capturer le texte exact entré par l'utilisateur et qui a été identifié comme adresse électronique sur la base de son canevas. 
-
-      Dans certains cas, vous pouvez utiliser une expression pour capturer la valeur, mais ne pas appliquer l'expression à ce qui est sauvegardé. Dans ce cas, vous pouvez utiliser une valeur de la zone *Check for* pour capturer la valeur, puis ouvrir l'éditeur JSON pour modifier la valeur de la variable contextuelle afin de sauvegarder autre chose. Pour consulter un exemple, reportez-vous à la rubrique [Traitement approprié des zéros](/docs/services/assistant?topic=assistant-tutorial-slots-complex#tutorial-slots-complex-recognize-zero).
-
-      Les modifications apportées à la valeur de la variable contextuelle d'un attribut dans l'éditeur JSON ne sont pas reflétées dans la zone **Check for** lorsque vous quittez l'éditeur JSON. Et si vous cliquez sur la zone **Check for** pour l'activer à tout moment après avoir utilisé l'éditeur JSON pour modifier la valeur, les modifications que vous avez apportées sont perdues.
+      La valeur *Check for* est d'abord utilisée comme condition, puis elle devient la valeur de la variable contextuelle que vous indiquez dans la zone *Save as*. Elle spécifie à la fois **les éléments à vérifier** et **les éléments à sauvegarder**. Si vous souhaitez modifier la façon dont la valeur est sauvegardée, ajoutez l'expression qui reformate la valeur dans la zone *Check for*.
       {: important}
 
-      Evitez de rechercher des valeurs de variables contextuelles dans la zone *Check for*. La valeur à vérifier étant également la valeur sauvegardée, l'utilisation d'une variable contextuelle dans la condition peut entraîner un comportement inattendu. 
+      Par exemple, si l'entité est une entité de canevas, telle que `@email`, après avoir ajouté le nom d'entité, ajoutez-lui `.literal`. La propriété `.literal` indique que vous souhaitez capturer le texte exact entré par l'utilisateur et qui a été identifié comme adresse électronique sur la base de son canevas.
+
+      Dans certains cas, vous pouvez utiliser une expression pour capturer la valeur, mais ne pas appliquer l'expression à ce qui est sauvegardé. Dans ce cas, vous pouvez utiliser une valeur de la zone *Check for* pour capturer la valeur, puis ouvrir l'éditeur JSON pour modifier la valeur de la variable contextuelle afin de sauvegarder autre chose.
+
+      Les modifications apportées à la valeur de la variable contextuelle d'un attribut dans l'éditeur JSON ne sont pas reflétées dans la zone **Check for** après que vous quittez l'éditeur JSON. Et si vous cliquez sur la zone **Check for** pour l'activer à tout moment après avoir utilisé l'éditeur JSON pour modifier la valeur, les modifications que vous avez apportées sont perdues.
+      {: important}
+
+      Evitez de rechercher des valeurs de variables contextuelles dans la zone *Check for*. La valeur à vérifier étant également la valeur sauvegardée, l'utilisation d'une variable contextuelle dans la condition peut entraîner un comportement inattendu.
 
     - **Save as** : indiquez le nom de la variable contextuelle dans laquelle vous souhaitez stocker la valeur d'intérêt provenant de la réponse de l'utilisateur et à transmettre à la demande d'attribut.
 
        Ne réutilisez pas une variable contextuelle utilisée ailleurs dans le dialogue. Si la variable contextuelle comporte déjà une valeur, l'invite de l'attribut n'est pas affichée. La demande d'attribut s'affiche uniquement lorsque la variable contextuelle pour l'attribut a pour valeur null.
 
-    - **Prompt** : écrivez une instruction qui sollicite l'élément d'information dont vous avez besoin auprès de l'utilisateur. Après l'affichage de cette invite, la conversation marque une pause et le service attend la réponse de l'utilisateur.
+    - **Prompt** : écrivez une instruction qui sollicite l'élément d'information dont vous avez besoin auprès de l'utilisateur. Après l'affichage de cette invite, la conversation marque une pause et l'assistant attend la réponse de l'utilisateur.
 
-    - Si vous souhaitez que différentes instructions de suivi s'affichent selon que l'utilisateur fournit ou non les informations dont vous avez besoin en réponse à la demande d'attribut initiale, vous pouvez éditer l'attribut (en cliquant sur l'icône d'**édition d'attribut** ![Edition d'attribut](images/edit-slot.png)) et les instructions de suivi : 
+    - Si vous souhaitez que différentes instructions de suivi s'affichent selon que l'utilisateur fournit ou non les informations dont vous avez besoin en réponse à la demande d'attribut initiale, vous pouvez éditer l'attribut (en cliquant sur l'icône d'**édition d'attribut** ![Edition d'attribut](images/edit-slot.png)) et les instructions de suivi :
 
       - **Found** : s'affiche après que l'utilisateur a fourni les informations attendues.
 
@@ -123,7 +126,7 @@ L'utilisation d'attributs permet de produire un flux de dialogue plus naturel en
 
 1.  **Rendez un attribut facultatif ou désactivez-le sous certaines conditions**. Vous pouvez éventuellement configurer un attribut en procédant comme suit :
 
-    - **Facultatif** : pour rendre un attribut facultatif, ajoutez-le sans invite. Le service ne réclame pas les informations à l'utilisateur, mais il recherche ces informations dans l'entrée utilisateur et il sauvegarde la valeur si l'utilisateur la fournit. Par exemple, vous pouvez ajouter un attribut qui capture des informations relatives à des restrictions alimentaires si l'utilisateur spécifie des restrictions. Cependant, vous ne pouvez pas demander à tous les utilisateurs d'indiquer des restrictions alimentaires car cela n'est pas pertinent dans la plupart des cas.
+    - **Facultatif** : pour rendre un attribut facultatif, ajoutez-le sans invite. L'assistant ne réclame pas les informations à l'utilisateur, mais il recherche ces informations dans l'entrée utilisateur et il sauvegarde la valeur si l'utilisateur la fournit. Par exemple, vous pouvez ajouter un attribut qui capture des informations relatives à des restrictions alimentaires si l'utilisateur spécifie des restrictions. Cependant, vous ne pouvez pas demander à tous les utilisateurs d'indiquer des restrictions alimentaires car cela n'est pas pertinent dans la plupart des cas.
 
        <table>
        <caption>Attribut facultatif</caption>
@@ -158,7 +161,7 @@ L'utilisation d'attributs permet de produire un flux de dialogue plus naturel en
 1.  **Ajoutez une réponse de niveau noeud**. La réponse de niveau noeud n'est pas exécutée tant que tous les attributs requis ne sont pas renseignés. Vous pouvez ajouter une réponse qui récapitule les informations que vous avez collectées. Par exemple, `Une $size vous sera livrée à $time. Bon appétit !`
 
     Si vous souhaitez définir des réponses différentes en fonction de certaines conditions, cliquez sur **Customize**, puis cliquez sur le bouton à bascule **Multiple responses** pour l'activer (**on**). Pour plus d'informations sur les réponses conditionnelles, reportez-vous à la rubrique [Réponses conditionnelles](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multiple).
-1.  **Ajoutez une logique qui réinitialise les variables contextuelles d'attribut**. A mesure que vous collectez les réponses de l'utilisateur pour chaque attribut, elles sont sauvegardées dans des variables contextuelles. Vous pouvez utiliser les variables contextuelles pour transmettre les informations à un autre noeud ou à une application ou à un service externe en vue de leur utilisation. Cependant, après avoir transmis les informations, vous devez affecter la valeur null aux variables contextuelles afin de réinitialiser le noeud pour qu'il recommence à collecter des informations. Vous ne pouvez pas affecter la valeur null aux variables contextuelles au sein du noeud en cours car le service ne quittera pas le noeud tant que les attributs requis ne seront pas renseignés. En revanche, songez à utiliser l'une des méthodes suivantes :
+1.  **Ajoutez une logique qui réinitialise les variables contextuelles d'attribut**. A mesure que vous collectez les réponses de l'utilisateur pour chaque attribut, elles sont sauvegardées dans des variables contextuelles. Vous pouvez utiliser les variables contextuelles pour transmettre les informations à un autre noeud ou à une application ou à un service externe en vue de leur utilisation. Cependant, après avoir transmis les informations, vous devez affecter la valeur null aux variables contextuelles afin de réinitialiser le noeud pour qu'il recommence à collecter des informations. Vous ne pouvez pas affecter la valeur null aux variables contextuelles au sein du noeud en cours car l'assistant ne quittera pas le noeud tant que les attributs requis ne seront pas renseignés. En revanche, songez à utiliser l'une des méthodes suivantes :
 
     - Ajoutez un traitement à l'application externe qui affecte la valeur null aux variables.
     - Ajoutez un noeud enfant qui affecte la valeur null aux variables.
@@ -188,7 +191,7 @@ Pensez à utiliser les approches décrites ci-après pour gérer des tâches cou
 - [Traitement des zéros](#dialog-slots-zero)
 - [Procédure permettant d'obtenir une confirmation](#dialog-slots-get-confirmation)
 - [Procédure permettant de remplacer une valeur de variable contextuelle d'attribut](#dialog-slots-found-handler-event-properties)
-- [Procédure permettant d'éviter de confondre des nombres](#dialog-slots-avoid-number-confusion)
+- [Procédure permettant d'éviter de confondre des nombres](#dialog-slots-avoid-slot-confusion)
 - [Ajout de conditions aux réponses Found et Not found](#dialog-slots-handler-next-steps)
 - [Procédure permettant de passer à autre chose après plusieurs tentatives infructueuses](#dialog-slots-stop-trying-after-3)
 - [Procédure permettant d'empêcher l'affichage d'une réponse Found lorsque celle-ci est inutile](#dialog-slots-stifle-found-responses)
@@ -201,7 +204,7 @@ Incluez une invite initiale pour l'ensemble du noeud afin d'indiquer clairement 
 
 Par exemple, lorsque le noeud est déclenché parce qu'un client souhaite commander une pizza, vous pouvez répondre avec l'invite préliminaire suivante : `Je peux prendre votre commande. Indiquez-moi la taille de la pizza que vous désirez et l'heure à laquelle vous souhaitez être livré.`
 
-Si l'utilisateur fournit ne serait-ce qu'une partie de ces informations dans sa demande initiale, l'invite n'apparaît pas. Par exemple, l'entrée initiale peut être `Je voudrais commander une grande pizza.` Lorsque le service analyse l'entrée, il reconnaît `grande` comme étant la taille de la pizza et il renseigne l'attribut **Taille** avec la valeur fournie. Etant donné que l'un des attributs est renseigné, le service ignore l'affichage de l'invite initiale pour éviter de redemander la taille de la pizza. En revanche, il affiche les invites pour les autres attributs qui sont pas renseignés.
+Si l'utilisateur fournit ne serait-ce qu'une partie de ces informations dans sa demande initiale, l'invite n'apparaît pas. Par exemple, l'entrée initiale peut être `Je voudrais commander une grande pizza.` Lorsque l'assistant analyse l'entrée, il reconnaît `grande` comme étant la taille de la pizza et il renseigne l'attribut **Taille** avec la valeur fournie. Etant donné que l'un des attributs est renseigné, le service ignore l'affichage de l'invite initiale pour éviter de redemander la taille de la pizza. En revanche, il affiche les invites pour les autres attributs qui sont pas renseignés.
 
 Sur le panneau Customize où vous avez activé la fonction Slots, cochez la case **Prompt for everything** pour activer l'invite initiale. Ce paramètre ajoute la zone **If no slots are pre-filled, ask this first** au noeud, dans laquelle vous pouvez spécifier le texte qui invite l'utilisateur à spécifier toutes les informations.
 
@@ -230,7 +233,7 @@ Par exemple, vous pouvez demander aux utilisateurs s'ils souhaitent de la garnit
 </tr>
 </table>
 
-Afin de référencer ultérieurement les garnitures spécifiées par l'utilisateur, utilisez la syntaxe `<? $entity-name.join(',') ?>` pour répertorier chaque élément dans le tableau des garnitures en séparant les valeurs par une virgule. Par exemple, `Je voudrais commander une $size pizza avec <? $toppings.join(',') ?> pour une livraison à $time.`
+Pour référencer ultérieurement les garnitures spécifiées par l'utilisateur, utilisez `<? $entity-name.join(',') ?>` pour répertorier chaque élément dans le tableau des garnitures en séparant les valeurs par une virgule. Par exemple, `Je voudrais commander une pizza $size avec <? $toppings.join(',') ?> pour une livraison à $time.` 
 
 ### Procédure permettant de reformater des valeurs
 {: #dialog-slots-reformat-values}
@@ -253,25 +256,46 @@ Pour plus d'informations sur le reformatage des idées, reportez-vous à la rubr
 ### Traitement des zéros
 {: #dialog-slots-zero}
 
-L'utilisation de `@sys-number` dans une condition d'attribut est utile pour capturer les nombres spécifiés par les utilisateurs dans leur entrée. Toutefois, cette entité ne se comporte pas comme prévu lorsque les utilisateurs spécifient le nombre zéro (0). Au lieu de traiter zéro comme un chiffre valide, la condition est évaluée à la valeur false et le service invite à nouveau l'utilisateur à entrer un chiffre. Pour éviter ce comportement, recherchez `@sys-number` ou `@sys-number:0` dans la condition d'attribut.
+L'utilisation de `@sys-number` dans une condition d'attribut est utile pour capturer les nombres spécifiés par les utilisateurs dans leur entrée. Toutefois, cette entité ne se comporte pas comme prévu lorsque les utilisateurs spécifient le nombre zéro (0). Au lieu de traiter zéro comme un chiffre valide, la condition est évaluée à la valeur false et l'assistant invite à nouveau l'utilisateur à entrer un chiffre. Pour éviter ce comportement, recherchez une mention `@sys-number` supérieure ou égale à zéro dans la condition d'attribut.
 
 Pour vous assurer qu'une condition d'attribut qui vérifie les mentions numériques traite correctement les zéros, procédez comme suit : 
 
-1.  Ajoutez `@sys-number || @sys-number:0` dans la zone de condition d'attribut, puis indiquez le nom de la variable contextuelle et l'invite de texte.
-1.  Cliquez sur l'icône d'**édition de réponse** ![Edition de réponse](images/edit-slot.png).
-1.  Cliquez sur le menu **Autres options** ![icône Autres options](images/kabob.png), puis sélectionnez **Open JSON editor**.
-1.  Mettez à jour la variable contextuelle qui a maintenant la syntaxe, `"number":"@sys-number || @sys-number:0"`, pour spécifier `@sys-number` uniquement.
+1.  Ajoutez `@sys-number >= 0` dans la zone de condition d'attribut, puis indiquez le nom de la variable contextuelle et l'invite de texte.
+    
+    Ce que vous vérifiez dans l'entrée correspond également à ce qui est enregistré dans la variable de contexte d'attribut. Toutefois, dans ce cas, vous souhaitez que seul le nombre (tel que `5`) soit sauvegardé. Vous ne souhaitez pas sauvegarder `5 > = 0`. Pour modifier ce qui est sauvegardé, vous devez modifier la valeur de la variable contextuelle.
+
+1.  Ouvrez l'attribut pour l'éditer en cliquant sur l'icône d'**édition d'attribut** ![Edition d'attribut](images/edit-slot.png). Dans le menu **Autres options** ![icône Autres options](images/kabob.png), ouvrez l'éditeur JSON.
+
+1.  Modifiez la valeur de la variable contextuelle.
+
+    La valeur sera similaire à ceci :
 
     ```json
     {
-      "context":{
+      "context": {
+        "number": "@sys-number >= 0"
+      }
+    }
+    ```
+    {: codeblock}
+
+    Modifiez-la pour qu'elle ressemble à ceci :
+
+    ```json
+    {
+      "context": {
         "number":"@sys-number"
       }
     }
     ```
     {: codeblock}
 
-Si vous ne souhaitez pas accepter le zéro en tant que valeur numérique, vous pouvez ajouter une réponse conditionnelle à l'attribut pour rechercher les zéros et indiquer à l'utilisateur qu'il doit fournir un nombre supérieur à zéro. Cependant, il est important que la condition d'attribut puisse reconnaître un zéro lorsqu'il est fourni en entrée. 
+1.  Sauvegardez vos modifications. 
+
+Les modifications apportées à la valeur de la variable contextuelle ne sont pas reflétées dans la zone Check for, ce qui est approprié. N'éditez pas la valeur de la zone Check for et ne cliquez pas non plus sur la zone. Si vous le faites, la modification que vous avez apportée au JSON est perdue.
+{: tip}
+
+Si vous ne souhaitez pas accepter le zéro en tant que valeur numérique, vous pouvez ajouter une réponse conditionnelle à l'attribut pour rechercher les zéros et indiquer à l'utilisateur qu'il doit fournir un nombre supérieur à zéro. Cependant, il est important que la condition d'attribut puisse reconnaître un zéro lorsqu'il est fourni en entrée.
 
 ### Procédure permettant d'obtenir une confirmation
 {: #dialog-slots-get-confirmation}
@@ -365,19 +389,31 @@ Response: Ok, destination is $destination.
 
 Cette configuration d'attribut permet à votre dialogue de réagir au changement de destination de l'utilisateur en disant : `Très bien, nous remplaçons la destination Paris par Madrid.`
 
-### Procédure permettant d'éviter de confondre des nombres
-{: #dialog-slots-avoid-number-confusion}
+### Éviter la confusion en matière de remplissage des attributs 
+{: #dialog-slots-avoid-slot-confusion}
 
-Certaines valeurs fournies par les utilisateurs peuvent être identifiées comme plusieurs types d'entité.
+Lorsqu’une entrée utilisateur est évaluée, l’attribut comportant la première condition d'attribut correspondant est rempli uniquement. Recherchez les causes possibles d’interprétation erronée suivantes et corrigez-les : 
 
-Il est possible d'avoir deux attributs avec le même type de valeur, par exemple, une date d'arrivée et une date de départ. Créez une logique dans vos conditions d'attribut afin de distinguer ces valeurs similaires entre elles.
+- **Problème** : la même entité est utilisée dans plusieurs attributs. 
 
-De plus, le service peut reconnaître plusieurs types d'entité dans une seule entrée utilisateur. Par exemple, lorsqu'un utilisateur fournit une devise, celle-ci est reconnue à la fois comme un type d'entité @sys-currency et comme un type d'entité @sys-number. Effectuez des tests à l'aide du panneau *Try it out* pour comprendre de quelle façon le système interprétera différentes entrées utilisateur et créez une logique dans vos conditions afin d'empêcher toute mauvaise interprétation.
+    Par exemple, `@sys-date` est utilisé pour capturer la date de départ dans un attribut et la date d'arrivée dans un autre.
 
-Dans une logique qui est spécifique à la fonction d'attributs, lorsque deux entités de système sont reconnues dans une seule entrée utilisateur, celle dont la portée est la plus étendue est utilisée. Par exemple, si l'utilisateur entre *2 mai*, même si le service {{site.data.keyword.conversationshort}} reconnaît à la fois les entités @sys-date (05022017) et @sys-number (2) dans le texte, seule l'entité de système dont la portée est la plus étendue (@sys-date) est enregistrée et appliquée à un attribut.
-{: tip}
+    **Solution**: utilisez des conditions Found d'attribut qui permettent à l'utilisateur de préciser la date que vous enregistrez dans un attribut avant de l'enregistrer.
 
-Pour chaque entité reconnue dans l'entrée utilisateur, un seul attribut peut être renseigné. Par conséquent, si deux attributs recherchent des valeurs similaires, positionnez-les de sorte que l'attribut qui capture la chaîne la plus longue se situe au-dessus de l'attribut qui capture la chaîne la plus courte. Par exemple, si un attribut capture un ID de produit (`@id`) avec la syntaxe `GR1234` et un autre attribut capture un nombre (`@number`), tel que `1234`, placez l'attribut qui capture l'ID au-dessus de l'attribut qui capture le nombre. Faute de quoi, lorsque l'entrée utilisateur contient un ID, tel que `BR3344`, l'attribut `@number` peut le réclamer en tant que référence numérique et remplir la variable contextuelle `$number` avec `3344`. Toutefois, il est plus probable que la valeur corresponde à une référence d'ID de produit devant être sauvegardée dans la variable contextuelle `$id` de l'attribut `@id` en tant que `BR3344`.
+- **Problème** : un terme correspond totalement ou partiellement aux entités dans plusieurs conditions d'attribut.
+
+    Par exemple, si un attribut capture un ID de produit (`@id`) avec une syntaxe telle que `GR1234` et qu'un autre attribut capture un nombre (`@number`), tel que `1234`, l'entrée utilisateur contenant un ID, tel que `BR3344`, peut être réclamée par l'attribut `@number` en tant que référence numérique et peut renseigner la variable contextuelle `$number` avec `3344`.
+
+    **Solution** : placez l'attribut avec la condition d'entité qui capture le modèle plus long (@id) plus haut dans la liste d'attributs que la condition qui capture le motif plus court (@number).
+
+- **Problème** : plusieurs types d’entité de système sont reconnus dans un terme.
+
+    Par exemple, si l'utilisateur entre *2 mai*, votre assistant reconnaît les entités `@sys-date` (2017-05-02) et `@sys-number` (2).
+
+    **Solution** : dans une logique qui est spécifique à la fonction d'attributs, lorsque deux entités de système sont reconnues dans une seule entrée utilisateur, celle dont la portée est la plus étendue est utilisée. Par conséquent, même si votre assistant reconnaît les deux entités de système dans le texte, seule l'entité système ayant une durée plus longue (`@sys-date` avec `2017-05-02`) est enregistrée et appliquée à l'attribut.
+
+Cette solution de contournement n'est pas nécessaire si vous utilisez les entités de système révisées. Avec les entités mises à jour, une référence de date est considérée comme une mention `@sys-date` uniquement et n'est pas également traitée comme une mention `@sys-number`. Pour plus d'informations, reportez-vous à la rubrique [Nouvelles entités de système](/docs/services/assistant?topic=assistant-beta-system-entities).
+  {: note}
 
 ### Ajout de conditions aux réponses Found et Not found
 {: #dialog-slots-handler-next-steps}
@@ -396,25 +432,25 @@ Pour chaque attribut, vous pouvez utiliser des réponses conditionnelles avec de
 
     Pour les réponses Found (affichées lorsque l'utilisateur fournit une valeur qui correspond au type de valeur spécifié dans la zone Check for), vous pouvez choisir l'une des actions suivantes présentées ci-dessous :
 
-      - **Move on (action par défaut)** : indique au service qu'il doit passer à l'attribut vide suivant après avoir affiché la réponse. Dans la réponse associée, garantissez à l'utilisateur que son entrée a été comprise. Par exemple, *Ok. Vous souhaitez réserver pour le $date.*
+      - **Move on (action par défaut)** : indique à l'assistant qu'il doit passer à l'attribut vide suivant après avoir affiché la réponse. Dans la réponse associée, garantissez à l'utilisateur que son entrée a été comprise. Par exemple, *Ok. Vous souhaitez réserver pour le $date.*
       - **Clear slot and prompt again** : si vous utilisez une entité dans la zone *Check for* qui est susceptible de sélectionner une valeur non valide, ajoutez des conditions qui interceptent toute interprétation erronée et utilisez cette action pour effacer la valeur d'attribut en cours et demander la valeur correcte.
       - **Skip to response** : si, lorsque la condition que vous définissez est remplie, vous n'avez plus besoin de renseigner aucun des attributs restants dans ce noeud, choisissez cette action pour ignorer les attributs restants et accéder directement à la réponse de niveau noeud suivante. Par exemple, vous pouvez ajouter une condition qui vérifie si l'utilisateur a moins de 16 ans. Si tel est le cas, vous pouvez ignorer les attributs restants qui posent des questions relatives au permis de conduire de l'utilisateur.
 
     Pour les réponses Not found (affichées lorsque l'utilisateur ne fournit pas une valeur valide), vous pouvez choisir l'une des actions suivantes :
 
-      - **Wait for user input (action par défaut)** : la conversation marque une pause et le service attend la réponse de l'utilisateur. Dans le plus simple des cas, le texte que vous indiquez ici peut stipuler de manière plus explicite le type d'information dont vous avez besoin de la part de l'utilisateur. Si vous utilisez cette action avec une réponse conditionnelle, prenez soin de formuler la réponse conditionnelle en précisant clairement ce qui n'allait pas dans la réponse de l'utilisateur et ce que vous attendez comme réponse de la part de ce dernier.
-      - **Prompt again** : après avoir affiché la réponse Not found, le service répète l'invite d'attribut et attend la réponse de l'utilisateur. Si vous utilisez cette action avec une réponse conditionnelle, la réponse peut simplement expliquer ce qui n'allait pas dans la réponse fournie par l'utilisateur. Elle n'a pas besoin de réitérer le type d'information que l'utilisateur doit fournir car cela est généralement expliqué par l'invite d'attribut.
+      - **Wait for user input (action par défaut)** : la conversation marque une pause et l'assistant attend la réponse de l'utilisateur. Dans le plus simple des cas, le texte que vous indiquez ici peut stipuler de manière plus explicite le type d'information dont vous avez besoin de la part de l'utilisateur. Si vous utilisez cette action avec une réponse conditionnelle, prenez soin de formuler la réponse conditionnelle en précisant clairement ce qui n'allait pas dans la réponse de l'utilisateur et ce que vous attendez comme réponse de la part de ce dernier.
+      - **Prompt again** : après avoir affiché la réponse Not found, l'assistant répète l'invite d'attribut et attend la réponse de l'utilisateur. Si vous utilisez cette action avec une réponse conditionnelle, la réponse peut simplement expliquer ce qui n'allait pas dans la réponse fournie par l'utilisateur. Elle n'a pas besoin de réitérer le type d'information que l'utilisateur doit fournir car cela est généralement expliqué par l'invite d'attribut.
 
         Si vous choisissez cette option, pensez à ajouter au moins une variante de la réponse Not found de sorte que le même texte ne s'affiche pas plusieurs fois pour l'utilisateur. Profitez-en pour utiliser différentes formulations afin d'expliquer à l'utilisateur les informations qu'il doit fournir et le format dans lequel il doit les spécifier.
         {: tip}
 
-      - **Skip this slot** : indique au service qu'il doit cesser d'essayer de remplir l'attribut en cours et qu'il doit passer à l'invite pour l'attribut vide suivant. Cette option est utilise dans un attribut que vous souhaitez rendre facultatif et pour lequel vous souhaitez afficher une invite demandant à l'utilisateur de fournir des informations. Imaginons que vous ayez une entité @seating qui capture les préférences en matière de placement dans un restaurant, par exemple, *à l'extérieur*, *près de la cheminée*, *privé*, etc. Vous pouvez ajouter un attribut associé à l'invite *Avez-vous une préférence en matière de placement ?* et qui recherche `@seating.values`. Si une réponse valide est fournie, les informations de préférence sont sauvegardées dans `$seating_preferences`. Toutefois, en choisissant cette action comme étape suivante de la réponse Not found, vous indiquez au service qu'il doit cesser d'essayer de remplir cet attribut si l'utilisateur ne fournit pas une valeur valide pour cet attribut.
+      - **Skip this slot** : indique à l'assistant qu'il doit cesser d'essayer de remplir l'attribut en cours et qu'il doit passer à l'invite pour l'attribut vide suivant. Cette option est utilise dans un attribut que vous souhaitez rendre facultatif et pour lequel vous souhaitez afficher une invite demandant à l'utilisateur de fournir des informations. Imaginons que vous ayez une entité @seating qui capture les préférences en matière de placement dans un restaurant, par exemple, *à l'extérieur*, *près de la cheminée*, *privé*, etc. Vous pouvez ajouter un attribut associé à l'invite *Avez-vous une préférence en matière de placement ?* et qui recherche `@seating.values`. Si une réponse valide est fournie, les informations de préférence sont sauvegardées dans `$seating_preferences`. Toutefois, en choisissant cette action comme étape suivante de la réponse Not found, vous indiquez à l'assistant qu'il doit cesser d'essayer de remplir cet attribut si l'utilisateur ne fournit pas une valeur valide pour cet attribut.
       - **Skip to response** : si, lorsque la condition que vous définissez est remplie, vous n'avez plus besoin de renseigner aucun des attributs restants dans ce noeud, choisissez cette action pour ignorer les attributs restants et accéder directement à la réponse de niveau noeud suivante. Par exemple, si après avoir capturé des informations de vol pour un aller simple, l'invite d'attribut est *Achetez-vous des billets aller-retour ?*, la condition Not found peut rechercher #No. Si la réponse #No est trouvée, utilisez cette option pour ignorer les attributs restants qui capturent des informations sur le vol retour et accédez directement à la réponse de niveau noeud à la place.
 
     Cliquez sur **Back** pour revenir à la vue édition de l'attribut.
 1.  Pour ajouter une autre réponse conditionnelle, cliquez sur **Add a response**, puis entrez la condition et la réponse à afficher si la condition est remplie.
 
-    Prenez soin d'ajouter au moins une réponse qui sera affichée quoi qu'il arrive. Vous pouvez laisser la zone de condition vide pour cette réponse fourre-tout. Le service remplit automatiquement la zone de condition vide avec la condition spéciale `true`.
+    Prenez soin d'ajouter au moins une réponse qui sera affichée quoi qu'il arrive. Vous pouvez laisser la zone de condition vide pour cette réponse fourre-tout. L'assistant remplit automatiquement la zone de condition vide avec la condition spéciale `true`.
 
 1.  Cliquez sur **Save** pour sauvegarder vos modifications, fermez la vue édition de l'attribut et revenez à la vue édition du noeud.
 
@@ -423,7 +459,7 @@ Pour chaque attribut, vous pouvez utiliser des réponses conditionnelles avec de
 
 Vous pouvez fournir aux utilisateurs un moyen de quitter un attribut s'ils ne peuvent pas y répondre correctement après plusieurs tentatives en utilisant des réponses conditionnelles Not found. Dans la réponse fourre-tout, ouvrez l'éditeur JSON afin d'ajouter une variable contextuelle de compteur qui assure le suivi du nombre de renvois d'une réponse Not found. Dans un noeud précédent, prenez soin d'affecter la valeur 0 à la variable contextuelle de compteur initiale.
 
-Dans cet exemple, le service demande la taille de la pizza. Il permet à l'utilisateur de donner 3 réponses incorrectes avant d'appliquer une taille (moyenne) à la variable. (Vous pouvez inclure un attribut de confirmation dans lequel les utilisateurs peuvent corriger la taille lorsqu'il leur est demandé de confirmer les informations relatives à la commande.)
+Dans cet exemple, l'assistant demande la taille de la pizza. Il permet à l'utilisateur de donner 3 réponses incorrectes avant d'appliquer une taille (moyenne) à la variable. (Vous pouvez inclure un attribut de confirmation dans lequel les utilisateurs peuvent corriger la taille lorsqu'il leur est demandé de confirmer les informations relatives à la commande.)
 
 Check for: @size
 Save as: $size
@@ -483,10 +519,10 @@ Ajoutez au moins un gestionnaire d'attributs qui peut reconnaître qu'un utilisa
 Par exemple, dans un noeud qui collecte des informations afin de planifier un rendez-vous de toilettage pour un animal domestique, vous pouvez ajouter un gestionnaire qui définit des conditions sur l'intention #cancel, qui reconnaît des énoncés tels que <q>Oubliez-ça. J'ai changé d'avis.</q>
 
 1.  Dans l'éditeur JSON pour le gestionnaire, renseignez toutes les variables contextuelles d'attribut avec des valeurs factices afin d'empêcher le noeud de continuer à demander d'éventuelles valeurs manquantes. Et, dans la réponse du gestionnaire, ajoutez un message comme `Entendu. Nous allons nous arrêter là. Aucun rendez-vous ne sera pris.`
-1.  Choisissez l'action que le service doit effectuer parmi les options suivantes :
+1.  Choisissez l'action que l'assistant doit effectuer parmi les options suivantes :
 
     - **Prompt again (par défaut)** : affiche l'invite associée à l'attribut avec lequel l'utilisateur travaillait juste avant de poser la question hors sujet.
-    - **Skip current slot** : affiche l'invite associée à l'attribut qui arrive après l'attribut avec lequel l'utilisateur travaillait juste avant de poser la question hors sujet. Et le service ne fait aucune autre tentative pour remplir l'attribut ignoré.
+    - **Skip current slot** : affiche l'invite associée à l'attribut qui arrive après l'attribut avec lequel l'utilisateur travaillait juste avant de poser la question hors sujet. Et l'assistant ne fait aucune autre tentative pour remplir l'attribut ignoré.
     - **Skip to response** : ignore les invites associées à tous les attributs vides restants, y compris celui avec lequel l'utilisateur travaillait juste avant de poser la question hors sujet.
 
 1.  Dans le message de niveau noeud, ajoutez une condition qui recherche une valeur factice dans l'une des variables contextuelles d'attribut. Si cette valeur est trouvée, un message final tel que `Si vous décidez de prendre un autre rendez-vous plus tard, dites-le moi.` s'affiche. Si cette valeur n'est pas trouvée, le message récapitulatif standard pour le noeud s'affiche, par exemple, `J'ai pris un rendez-vous pour votre $animal à $time le $date.`

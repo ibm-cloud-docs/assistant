@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-04-02"
 
 subcollection: assistant
 
@@ -22,7 +22,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# 마이그레이션
+# Cloud Foundry에서 마이그레이션
 {: #migrate}
 
 현재 Cloud Foundry 조직 및 영역에서 리소스 그룹으로 이동하려면 {{site.data.keyword.conversationshort}} 서비스 인스턴스를 마이그레이션하십시오.
@@ -50,7 +50,12 @@ subcollection: assistant
 
 1.  먼저 서비스 인스턴스를 이동할 리소스 그룹을 판별하십시오.
 
-    팁은 [리소스 그룹의 리소스 구성을 위한 우수 사례 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](/docs/resources?topic=resources-bp_resourcegroups)를 참조하십시오. 
+    팁은 [리소스 그룹의 리소스 구성을 위한 우수 사례 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](/docs/resources?topic=resources-bp_resourcegroups)를 참조하십시오.
+
+    어시스턴트를 개발, 테스트 및 배포하는 데 한 개의 서비스 인스턴스를 사용할 수 있으므로, 다른 유형의 배포 환경에 사용하기 위해 개별 리소스 그룹을 작성하지 마십시오
+    {:tip}
+
+    Premium 플랜을 사용하면 다중 인스턴스를 작성할 수 있습니다. 하지만 인스턴스는 모두 동일한 리소스 그룹에서 작성되어야 합니다.
 
 1.  IBM Cloud Dashboard 서비스 목록에서 마이그레이션할 인스턴스에 대한 마이그레이션 아이콘 ![마이그레이션](images/migrate.svg)을 클릭한 후 팝업에서 **마이그레이션**을 클릭하십시오.
 
@@ -64,6 +69,27 @@ subcollection: assistant
 1.  **마이그레이션**을 클릭하십시오.
 
     프로세스가 완료되면 메시지가 표시됩니다. 마이그레이션할 다른 서비스 인스턴스가 있는 경우 계속해서 다른 서비스 인스턴스를 마이그레이션하거나 **완료**를 클릭할 수 있습니다.
+
+1.  **Premium 플랜 일회성 단계**: 마이그레이션 중인 서비스 인스턴스가 Premium 플랜의 일부로 작성된 경우, Premium 플랜 인스턴스를 마이그레이션 중임을 서비스 팀에 알려야 합니다. 이를 위해서 [IBM Cloud 지원 센터![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/unifiedsupport/supportcenter){: new_window}에서 케이스를 작성하십시오.
+
+    서비스 팀이 사용자 대신 수행해야 하는 몇 가지 추가 단계가 있습니다. 케이스에 다음 정보를 추가하십시오.
+
+    - 서비스 인스턴스가 호스트되는 지역(예: Dallas 또는 Frankfurt).
+    - 리소스 그룹 이름
+    - 리소스 그룹 ID
+
+      ID를 모르는 경우에는 IBM Cloud 명령행 인터페이스(CLI) 도구를 열고 다음 명령을 입력하십시오. 
+
+      ```bash
+      ibmcloud resource groups
+      ```
+      {: codeblock}
+
+      응답은 리소스 그룹의 ID를 표시합니다. CLI 명령에 대한 자세한 정보는 [리소스 및 리소스 그룹에 대한 작업![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/docs/cli?topic=cloud-cli-ibmcloud_commands_resource#ibmcloud_commands_resource)을 참조하십시오.
+
+      지원 팀이 Premium 플랜 마이그레이션을 지원하기 위해 수행해야 하는 작업을 완료하도록 케이스를 제출한 시점부터 최대 24시간을 제공해 주십시오. 마이그레이션 프로세스 중에는 서비스 중단이 없습니다. 
+
+      Premium 플랜의 서비스 인스턴스를 처음으로 마이그레이션할 때만 이 단계를 수행하면 됩니다. 동일한 플랜에 속하는 다른 서비스 인스턴스의 경우 *마이그레이션*을 클릭하면 서비스 팀의 개입 없이 동일한 리소스 그룹으로 마이그레이션됩니다. {: important}
 
 마이그레이션한 이전(Cloud Foundry 조직 기반) 서비스 인스턴스가 대시보드의 Cloud Foundry 서비스 섹션에 계속 나열되며 이제 새(리소스 그룹 기반) 버전의 인스턴스에 대한 *별명*으로 표시됩니다.
 

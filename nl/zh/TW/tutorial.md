@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-05-10"
 
 subcollection: assistant
 
@@ -72,9 +72,9 @@ subcollection: assistant
 ### 新增 #about_restaurant 目的
 {: #tutorial-add-about-restaurant}
 
-1.  從**目的**標籤，按一下**新增目的**。
+1.  在**目的**標籤中，按一下**建立目的**。
 
-    ![顯示「目的」頁面上的「新增目的」按鈕。](images/gs-ass-intent-add.png)
+    ![顯示「目的」頁面上的「建立目的」按鈕。](images/gs-ass-intent-add.png)
 1.  在*目的名稱* 欄位中輸入 `about_restaurant`，然後按一下**建立目的**。
 
     ![顯示所新增的 #about_restaurant 目的。](images/gs-ass-add-intent.png)
@@ -101,7 +101,7 @@ subcollection: assistant
 ### 新增由 #about_restaurant 目的觸發的對話節點
 {: #tutorial-trigger-about-intent}
 
-新增一個對話節點以在使用者輸入對映至您在前一個步驟所建立的目的時能夠予以辨識，這表示它的條件會檢查該服務是否能夠從使用者輸入中辨識出 `#about_restaurant` 目的。
+新增一個對話節點以在使用者輸入對映至您在前一個步驟所建立的目的時能夠予以辨識，這表示它的條件會檢查助理是否能夠從使用者輸入中辨識出 `#about_restaurant` 目的。
 
 1.  按一下**對話**標籤。
 1.  在對話樹狀結構中，尋找 `#General_Greetings` 節點。
@@ -111,8 +111,10 @@ subcollection: assistant
 1.  按一下 `#General_Greetings` 節點上的**其他** ![其他選項](images/kabob.png) 圖示，然後選取**在下面新增節點**。
 
     ![顯示從 #General_Greetings 對話節點開啟的「在下面新增節點」功能表。](images/gs-ass-dialog-add-about-restaurant.png)
-1.  開始在此節點的**輸入條件**欄位中鍵入 `#about_restaurant`。然後，選取 `#about_restaurant` 選項。
-1.  新增下列文字作為回應：
+1.  在此節點的**如果助理能辨識**欄位中，開始鍵入 `#about_restaurant`。然後，選取 `#about_restaurant` 選項。
+1.  新增下列文字作為回應。
+
+   若要複製文字，請按一下與文字區塊 ![指出您可以複製程式碼區塊。](images/cloud-copy.png) 相關聯的複製圖示：
 
     ```
     Truck Stop Gourmand is the brain child of Gloria and Fred Smith. What started out as a food truck in 2004 has expanded into a thriving restaurant. We now have one brick and mortar restaurant in downtown Portland. The bigger kitchen brought with it new chefs, but each one is faithful to the philosophy that made the Smith food truck so popular to begin with: deliver fresh, local produce in inventive and delicious ways. Join us for lunch or dinner seven days a week. Or order a cake from our bakery.
@@ -131,13 +133,13 @@ subcollection: assistant
 ### 測試 #about_restaurant 對話節點
 {: #tutorial-test-about-intent}
 
-測試目的，方法是檢查與您新增至訓練資料的範例類似、但不完全相同的使用者話語是否已順利訓練該服務來辨識具有 `#about_restaurant` 目的的輸入。
+測試目的，方法是檢查與您新增至訓練資料的範例類似、但不完全相同的使用者話語是否已順利訓練助理來辨識具有 `#about_restaurant` 目的的輸入。
 
 1.  按一下 ![試用](images/ask_watson.png) 圖示，來開啟「試用」窗格。
 
 1.  輸入 `I want to learn more about your restaurant.`。
 
-    該服務指出辨識出 `#about_restaurant` 目的，並以您針對此對話節點所指定的影像和文字來傳回回應。
+    助理指出辨識出 `#about_restaurant` 目的，並以您針對此對話節點所指定的影像和文字來傳回回應。
 
     ![辨識出 #about_restaurant 目的時顯示「試用」窗格，並且顯示影像和文字回應。](images/gs-ass-test-about-restaurant.png)
 
@@ -164,9 +166,9 @@ subcollection: assistant
 {: #tutorial-add-menu-intent}
 
 1.  按一下**目的**標籤。
-1.  按一下**新增目的**。
+1.  按一下**建立目的**。
 
-    ![顯示「目的」頁面上的「新增目的」按鈕。](images/gs-ass-intent-add.png)
+    ![顯示「目的」頁面上的「建立目的」按鈕。](images/gs-ass-intent-add.png)
 
 1.  在*目的名稱* 欄位中輸入 `menu`，然後按一下**建立目的**。
 
@@ -194,7 +196,7 @@ subcollection: assistant
 ### 新增由 #menu 目的觸發的對話節點
 {: #tutorial-trigger-menu-intent}
 
-新增一個對話節點以在使用者輸入對映至您在前一個步驟所建立的目的時能夠予以辨識，這表示它的條件會檢查該服務是否能夠從使用者輸入中辨識出 `#menu` 目的。
+新增一個對話節點以在使用者輸入對映至您在前一個步驟所建立的目的時能夠予以辨識，這表示它的條件會檢查助理是否能夠從使用者輸入中辨識出 `#menu` 目的。
 
 1.  按一下**對話**標籤。
 1.  在對話樹狀結構中，尋找 `#about_restaurant` 節點。
@@ -205,7 +207,7 @@ subcollection: assistant
 
     ![顯示要在 #about_restaurant 節點下面新增的對話節點。](images/gs-ass-dialog-add-menu.png)
 
-1.  開始在此節點的**輸入條件**欄位中鍵入 `#menu`。然後，選取 `#menu` 選項。
+1.  在此節點的**如果助理能辨識**欄位中，開始鍵入 `#menu`。然後，選取 `#menu` 選項。
 
     ![顯示要新增為對話節點條件的 #menu 目的。](images/gs-ass-menu-add.png)
 
@@ -225,17 +227,17 @@ subcollection: assistant
 
 1.  按一下**新增選項**。
 
-1.  在**標籤**欄位中，新增 `Standard`。您新增作為標籤的文字會顯示在使用者的回應中，作為可選取的選項。
+1.  在**清單標籤**欄位中，新增 `Standard`。您新增作為標籤的文字會顯示在使用者的回應中，作為可選取的選項。
 
-1.  在**值**欄位中，新增 `standard menu`。您指定作為值的文字，會在使用者從清單中選取此選項並按一下時，傳送至該服務作為新的使用者輸入。
+1.  在**值**欄位中，新增 `standard menu`。指定為值的文字是在使用者從清單中選擇並按一下此選項時，將作為新的使用者輸入傳送給助理的內容。
 
 1.  重複前兩個步驟來新增其餘菜單類型的標籤和值資訊：
 
     <table>
     <caption>選項回應類型詳細資料</caption>
     <tr>
-      <th>標籤</th>
-      <th>值                 </th>
+      <th>清單標籤</th>
+      <th>值</th>
     </tr>
     <tr>
       <td>Vegetarian</td>
@@ -254,13 +256,13 @@ subcollection: assistant
 ### 新增 @menu 實體
 {: #tutorial-add-menu-entity}
 
-為了辨識出客戶表示他們想要查看的不同類型菜單，您將新增 `@menu` 實體。實體代表與使用者用途相關的物件類別或資料類型。藉由檢查使用者輸入中是否有特定實體存在，您可以新增更多回應，每個回應都可自訂以滿足不同的使用者要求。在此情況下，您將新增一個 `@menu` 實體，以區分不同的菜單類型。
+為了辨識出客戶表示他們想要查看的不同類型菜單，您將新增 `@menu` 實體。實體代表與使用者用途相關的物件類別或資料類型。藉由檢查使用者輸入中是否有特定實體存在，您可以新增更多回應，每個回應都可自訂以滿足不同的使用者要求。在本例中，您將新增一個 `@menu` 實體，用於識別不同的功能表類型。
 
 1.  按一下**實體**標籤。
 
-    ![顯示含有「新增實體」按鈕的空的實體頁面。](images/gs-ass-add-entity.png)
+    ![顯示具有「建立實體」按鈕的空實體頁面。](images/gs-ass-add-entity.png)
 
-1.  按一下**新增實體**。
+1.  按一下**建立實體**。
 
 1.  在實體名稱欄位中輸入 `menu`。
 
@@ -268,7 +270,7 @@ subcollection: assistant
 
 1.  按一下**建立實體**。
 
-1.  在*值名稱* 欄位中新增 `standard`，再將 `standard menu` 新增至**同義字**欄位，然後按 Enter 鍵。
+1.  在**值名稱** 欄位中新增 `standard`，再將 `standard menu` 新增至**同義字**欄位，然後按 Enter 鍵。
 
 1.  新增下列其他同義字：
 
@@ -280,9 +282,9 @@ subcollection: assistant
 
 1.  按一下**新增值**，以新增 `@menu:standard` 值。
 
-1.  在*值名稱* 欄位中新增 `vegetarian`，再將 `vegetarian menu` 新增至**同義字**欄位，然後按 Enter 鍵。
+1.  在**值名稱** 欄位中新增 `vegetarian`，再將 `vegetarian menu` 新增至**同義字**欄位，然後按 Enter 鍵。
 
-1.  按一下**顯示建議**，然後按一下 *meatless diet*、*meatless* 和 *vegan diet* 的勾選框。
+1.  按一下**顯示建議**，然後按一下 *vegan diet* 勾選框。
 
 1.  按一下**新增選取的項目**。
 
@@ -295,7 +297,7 @@ subcollection: assistant
 
 1.  按一下**新增值**，以新增 `@menu:vegetarian` 值。
 
-1.  在*值名稱* 欄位中新增 `cake`，再將 `cake menu` 新增至**同義字**欄位，然後按 Enter 鍵。
+1.  在**值名稱** 欄位中新增 `cake`，再將 `cake menu` 新增至**同義字**欄位，然後按 Enter 鍵。
 
 1.  新增下列其他同義字：
 
@@ -323,7 +325,7 @@ subcollection: assistant
 
     ![顯示要新增至 #menu 對話節點的子節點。](images/gs-ass-add-child-node.png)
 
-1.  開始在此節點的**輸入條件**欄位中鍵入 `@menu:standard`。然後，選取 `@menu:standard` 選項。
+1.  在此節點的**如果助理能辨識**欄位中，開始鍵入 `@menu:standard`。然後，選取 `@menu:standard` 選項。
 
 1.  在回應文字欄位中新增下列訊息：`To see our menu, go to the <a href="https://www.example.com/menu.html" target="blank">menu</a> page on our website.`。
 
@@ -333,7 +335,7 @@ subcollection: assistant
 
 1.  按一下 `@menu_standard` 節點上的**其他** ![其他選項](images/kabob.png) 圖示，然後選取**在下面新增節點**。
 
-1.  開始在此節點的**輸入條件**欄位中鍵入 `@menu:vegetarian`。然後，選取 `@menu:vegetarian` 選項。
+1.  在此節點的**如果助理能辨識**欄位中，開始鍵入 `@menu:vegetarian`。然後，選取 `@menu:vegetarian` 選項。
 
 1.  在回應文字欄位中新增下列訊息：`To see our vegetarian menu, go to the <a href="https://www.example.com/vegetarian-menu.html" target="blank">vegetarian menu</a> page on our website.`。
 
@@ -343,7 +345,7 @@ subcollection: assistant
 
 1.  按一下 `@menu_vegetarian` 節點上的**其他** ![其他選項](images/kabob.png) 圖示，然後選取**在下面新增節點**。
 
-1.  開始在此節點的**輸入條件**欄位中鍵入 `@menu:cake`。然後，選取 `@menu:cake` 選項。
+1.  在此節點的**如果助理能辨識**欄位中，開始鍵入 `@menu:cake`。然後，選取 `@menu:cake` 選項。
 
 1.  在回應文字欄位中新增下列訊息：`To see our cake shop menu, go to the <a href="https://www.example.com/menu.html" target="blank">cake shop menu</a> page on our website.`。
 
@@ -351,9 +353,9 @@ subcollection: assistant
 
 1.  按一下 ![關閉](images/close.png)，以關閉編輯視圖。
 
-1.  標準菜單可能是最常見的要求，因此，請將它移至子節點清單的底端。將它放在最後面，當有人詢問特別菜單而非標準菜單時，可防止不小心觸發它。
+1.  標準菜單可能是最常見的要求，因此，請將它移至子節點清單的底端。將它放在最後面，當有人詢問特別菜單而非標準菜單時，可防止不小心觸發它。 
 
-1.  按一下 `@menu_standard` 節點上的**其他** ![其他選項](images/kabob.png) 圖示，然後選取**移動**。
+    按一下 `@menu_standard` 節點上的**其他** ![其他選項](images/kabob.png) 圖示，然後選取**移動**。
 
     ![顯示要移至 @menu:cake 節點後面的 @menu:standard 節點。](images/gs-ass-move-standard-menu-node.png)
 
@@ -372,19 +374,19 @@ subcollection: assistant
 
 1.  輸入 `What type of food do you serve?`。
 
-    該服務指出辨識出 `#menu` 目的，並顯示可供使用者選擇的菜單選項清單。
+    助理指出辨識出 `#menu` 目的，並顯示可供使用者選擇的菜單選項清單。
 
     ![當使用者輸入觸發 #menu 目的和選項回應時顯示「試用」窗格。](images/gs-ass-test-menu-intent.png)
 1.  按一下 `Cake shop` 選項。
 
-    該服務會辨識 `#menu` 目的和 `@menu:cake` 實體參照，並顯示此回應：`To see our cake shop menu, go to the cake shop page on our website.`。
+    助理會辨識 `#menu` 目的和 `@menu:cake` 實體參照，並顯示此回應：`To see our cake shop menu, go to the cake shop page on our website.`
 
     ![在使用者挑選蛋糕店選項之後顯示「試用」窗格。](images/gs-ass-pick-cake-menu.png)
 1.  按一下回應中的*蛋糕店* 超鏈結。
 
     即會開啟新的 Web 瀏覽器頁面，並顯示 example.com 網站。
 
-1.  關閉 Web 瀏覽器頁面。
+1.  關閉 example.com 網頁。
 
 做得好。您已順利新增可用來辨識使用者對菜單詳細資料要求的目的和實體，並可將使用者引導至適當的菜單。
 
@@ -401,7 +403,7 @@ subcollection: assistant
 您要助理能夠辨識訂單號碼，因此您將建立型樣實體，以辨識該餐廳用來識別其訂單的唯一格式。餐廳烘培坊所使用之訂單號碼的語法為：2 個大寫字母、後面再接著 5 個數字。例如，`YR34663`。新增一個可辨識此字元樣式的實體。
 
 1.  按一下**實體**標籤。
-1.  按一下**新增實體**。
+1.  按一下**建立實體**。
 1.  在實體名稱欄位中輸入 `order_number`。
 1.  按一下**建立實體**。
 
@@ -411,7 +413,7 @@ subcollection: assistant
     ![顯示使用者選擇為實體新增一個型樣。](images/gs-ass-add-pattern.png)
 1.  將下列正規表示式新增至「型樣」欄位：`[A-Z]{2}\d{5}`
 
-    ![顯示已對 @order-number 實體指定一個型樣。](images/gs-ass-entity-added-pattern.png)
+    ![顯示已為 @order_number 實體指定一個型樣。](images/gs-ass-entity-added-pattern.png)
 
 1.  按一下**新增值**。
 
@@ -425,7 +427,7 @@ subcollection: assistant
 {: #tutorial-cancel-order-intent}
 
 1.  按一下**目的**標籤。
-1.  按一下**新增目的**。
+1.  按一下**建立目的**。
 1.  在*目的名稱* 欄位中輸入 `cancel_order`，然後按一下**建立目的**。
 1.  新增下列使用者範例：
 
@@ -447,10 +449,10 @@ subcollection: assistant
 ### 新增 #yes 目的
 {: #tutorial-yes-intent}
 
-在代表使用者執行某個動作之前，您必須先確認您採取的是正確動作。將 #yes 目的新增至對話，以在使用者同意服務的提議時能夠予以辨識。
+在代表使用者執行某個動作之前，您必須先確認您採取的是正確動作。將 #yes 目的新增至對話，以在使用者同意助理的提議時能夠予以辨識。
 
 1.  按一下**目的**標籤。
-1.  按一下**新增目的**。
+1.  按一下**建立目的**。
 1.  在*目的名稱* 欄位中輸入 `yes`，然後按一下**建立目的**。
 1.  新增下列使用者範例：
 
@@ -478,7 +480,7 @@ subcollection: assistant
 
 1.  按一下**對話**標籤。
 1.  尋找 `#menu` 節點。按一下 `#menu` 節點上的**其他** ![其他選項](images/kabob.png) 圖示，然後選取**在下面新增節點**。
-1.  開始在此節點的**輸入條件**欄位中鍵入 `#cancel_order`。然後，選取 `#cancel_order` 選項。
+1.  在此節點的**如果助理能辨識**欄位中，開始鍵入 `#cancel_order`。然後，選取 `#cancel_order` 選項。
 1.  在回應文字欄位中新增下列訊息：
 
     ```
@@ -490,7 +492,7 @@ subcollection: assistant
 
     您必須先知道訂單號碼，才能實際取消訂單。使用者可能會在原始要求中指定訂單號碼。因此，為避免再次要求訂單號碼，請檢查原始輸入中具有此訂單號碼型樣的號碼。若要這樣做，請定義會依指定方式儲存訂單號碼的環境定義變數。
 
-1.  開啟環境定義編輯器。按一下**其他** ![其他選項](images/kabob.png) 圖示，然後選取**開啟環境定義編輯器**。
+1.  您可在環境定義編輯器中定義環境定義變數。在節點的回應區段中，按一下**其他** ![其他選項](images/kabob.png) 圖示，然後選取**開啟環境定義編輯器**。
 
     ![顯示節點編輯視圖中的「開啟環境定義編輯器」功能表選項。](images/gs-ass-open-context-editor.png)
 1.  輸入下列環境定義變數名稱/值配對：
@@ -517,7 +519,7 @@ subcollection: assistant
 1.  按一下 `#cancel_order` 節點上的**其他** ![其他選項](images/kabob.png) 圖示，然後選取**新增子節點**。
 
     ![顯示 #cancel_order 節點上的功能表，其中已選取「新增子節點」功能表選項。](images/gs-ass-add-child-to-cancel.png)
-1.  將標籤新增至節點，以區分它與您要新增的其他子節點。在名稱欄位中，新增 `Ask for order number`。在此節點的**輸入條件**欄位中，鍵入 `true`。
+1.  將標籤新增至節點，以區分它與您要新增的其他子節點。在名稱欄位中，新增 `Ask for order number`。在此節點的**如果助理能辨識**欄位中，鍵入 `true`。
 
 1.  在回應文字欄位中新增下列訊息：
 
@@ -531,7 +533,7 @@ subcollection: assistant
 
     現在，新增另一個子節點來通知使用者您要取消訂單。
 1.  按一下 `Ask for order number` 節點上的**其他** ![其他選項](images/kabob.png) 圖示，然後選取**新增子節點**。
-1.  在此節點的**輸入條件**欄位中，鍵入 `@order_number`。
+1.  在此節點的**如果助理能辨識**欄位中，鍵入 `@order_number`。
 1.  開啟環境定義編輯器。按一下**其他** ![其他選項](images/kabob.png) 圖示，然後選取**開啟環境定義編輯器**。
 1.  輸入下列環境定義變數名稱/值配對：
 
@@ -539,8 +541,8 @@ subcollection: assistant
     <caption>訂單號碼環境定義變數詳細資料</caption>
 
     <tr>
-      <th>變數           </th>
-      <th>值                 </th>
+      <th>變數</th>
+      <th>值</th>
     </tr>
     <tr>
       <td>$ordernumber</td>
@@ -548,7 +550,7 @@ subcollection: assistant
     </tr>
     </table>
 
-    環境定義變數值 (`<? @order_number.literal ?>`) 是 SpEL 表示式，它會擷取使用者指定且符合 @order_number 型樣實體所定義之型樣的號碼。它會將該號碼儲存至 `$ordernumber` 變數。
+環境定義變數值 (`<? @order_number.literal ?>`) 是 SpEL 表示式，它會擷取使用者指定且符合 @order_number 型樣實體所定義之型樣的號碼。它會將該號碼儲存至 `$ordernumber` 變數。
 1.  在回應文字欄位中新增下列訊息：
 
     ```
@@ -559,7 +561,7 @@ subcollection: assistant
     ![顯示訂單號碼子節點詳細資料。](images/gs-ass-order-number-child.png)
 1.  按一下 ![關閉](images/close.png)，以關閉編輯視圖。
 1.  新增另一個節點，以擷取使用者提供的號碼不是有效訂單號碼的案例。按一下 `@order_number` 節點上的**其他** ![其他選項](images/kabob.png) 圖示，然後選取**在下面新增節點**。
-1.  在此節點的**輸入條件**欄位中，鍵入 `true`。
+1.  在此節點的**如果助理能辨識**欄位中，鍵入 `true`。
 1.  在回應文字欄位中新增下列訊息：
 
     ```
@@ -571,7 +573,7 @@ subcollection: assistant
 1.  按一下 ![關閉](images/close.png)，以關閉編輯視圖。
 
 1.  在起始訂單取消要求節點下面新增一個節點，以在使用者於起始要求中提供訂單號碼時作出回應，因此您不必再次要求。按一下 `#cancel_order` 節點上的**其他** ![其他選項](images/kabob.png) 圖示，然後選取**新增子節點**。
-1.  將標籤新增至節點，以區分它與其他子節點。在名稱欄位中，新增 `Number provided`。在此節點的**輸入條件**欄位中，鍵入 `@order_number`。
+1.  將標籤新增至節點，以區分它與其他子節點。在名稱欄位中，新增 `Number provided`。在此節點的**如果助理能辨識**欄位中，鍵入 `@order_number`。
 1.  在回應文字欄位中新增下列訊息：
 
     ```
@@ -584,12 +586,12 @@ subcollection: assistant
 
     您必須新增子節點，以檢查使用者對您的確認問題的回應。
 1.  按一下 `Number provided` 節點上的**其他** ![其他選項](images/kabob.png) 圖示，然後選取**新增子節點**。
-1.  在此節點的**輸入條件**欄位中，鍵入 `#yes`。
+1.  在此節點的**如果助理能辨識**欄位中，鍵入 `#yes`。
 
 1.  在回應文字欄位中新增下列訊息：
 
     ```
-Ok. The order $ordernumber is canceled. We hope we get the opportunity to bake a cake for you sometime soon.
+    Ok. The order $ordernumber is canceled. We hope we get the opportunity to bake a cake for you sometime soon.
     ```
     {: codeblock}
 
@@ -598,14 +600,14 @@ Ok. The order $ordernumber is canceled. We hope we get the opportunity to bake a
 
 1.  按一下 `#yes` 節點上的**其他** ![其他選項](images/kabob.png) 圖示，然後選取**在下面新增節點**。
 
-1.  在此節點的**輸入條件**欄位中，鍵入 `true`。
+1.  在此節點的**如果助理能辨識**欄位中，鍵入 `true`。
 
     不要新增回應。相反地，您會將使用者重新導向至會要求您先前建立之訂單號碼詳細資料的分支。
 
 1.  在*最後* 區段中，選擇**跳至**。
 
-    ![顯示沒有回應、但已選取「跳至」功能表選項的真正節點。](images/gs-ass-true-jump-to.png)
-1.  選取*要求訂單號碼*節點的條件。
+    ![顯示沒有回應但已選取「跳至」功能表選項的真正節點。](images/gs-ass-true-jump-to.png)
+1.  選取*要求訂單號碼* 節點的條件。
 
     ![顯示選擇要求訂單號碼節點條件作為跳至目標。](images/gs-ass-true-jump-to-destination.png)
 1.  按一下 ![關閉](images/close.png)，以關閉編輯視圖。
@@ -619,43 +621,46 @@ Ok. The order $ordernumber is canceled. We hope we get the opportunity to bake a
 ### 測試訂單取消
 {: #tutorial-test-cancel-order}
 
-測試該服務是否可辨識符合用於使用者輸入中的產品訂單號碼之型樣的字元樣式。
+測試助理是否可辨識符合用於使用者輸入中的產品訂單號碼之型樣的字元樣式。
 
 1.  按一下 ![試用](images/ask_watson.png) 圖示，來開啟「試用」窗格。
 
 1.  輸入 `i want to cancel my order number TW12345.`。
 
-    該服務可辨識 `#cancel_order` 目的和 `@order_number` 實體。它回應：`If the pickup time is more than 48 hours from now, you can cancel your order. Just to confirm, you want to cancel order TW12345?`
+    助理可辨識 `#cancel_order` 目的和 `@order_number` 實體。它回應：`If the pickup time is more than 48 hours from now, you can cancel your order. Just to confirm, you want to cancel order TW12345?`
 
 1.  請輸入 `Yes`。
 
-    該服務可辨識 `#yes` 目的，並回應 `Ok. The order TW12345 is canceled. We hope we get the opportunity to bake a cake for you sometime soon.`
+    助理可辨識 `#yes` 目的，並回應 `Ok. The order TW12345 is canceled. We hope we get the opportunity to bake a cake for you sometime soon.`
 
     ![在使用者於起始輸入中提供訂單號碼時，顯示「試用」窗格來測試取消訂單號碼節點。](images/gs-ass-test-cancel-order-number-provided.png)
 
     現在，如果您不知道訂單號碼就試試看。
 1.  按一下「試用」窗格中的**清除**，即可重新開始。輸入 `I want to cancel my order.`。
 
-    該服務可辨識 `#cancel_order` 目的，並回應 `If the pickup time is more than 48 hours from now, you can cancel your order. What is the order number?`。
+    助理可辨識 `#cancel_order` 目的，並回應 `If the pickup time is more than 48 hours from now, you can cancel your order. What is the order number?`。
 
 1.  輸入 `I don't know.`。
 
-    該服務回應：`I need the order number to cancel the order for you. If you don't know the order number, please call us at 958-234-3456 to cancel over the phone.`。
+    助理會回應：`I need the order number to cancel the order for you. If you don't know the order number, please call us at 958-234-3456 to cancel over the phone.`。
 
     ![在使用者不知道訂單號碼時，顯示「試用」窗格來測試取消訂單號碼節點。](images/gs-ass-test-cancel-order-number-unknown.png)
 
+### 新增節點以釐清訂單號碼格式
+{: #tutorial-clarify-order-number format}
+
 如果您要進行更多測試，可能會發現此對話在使用者不記得訂單號碼格式的情況下幫助不大。使用者可能只包含數字或字母，但忘記它們要大寫。因此，在這種情況下給他們一點提示會是個好點子，對吧？如果您想要友善一點，可新增另一個節點至對話樹狀結構，來檢查使用者輸入中的號碼。
 
-1.  尋找 `@order-number` 節點，它是*要求訂單號碼*節點的子節點。
+1.  尋找 `@order_number` 節點，它是*要求訂單號碼* 節點的子節點。
 
-1.  按一下 `@order-number` 節點上的**其他** ![其他選項](images/kabob.png) 圖示，然後選取**在下面新增節點**。
+1.  按一下 `@order_number` 節點上的**其他** ![其他選項](images/kabob.png) 圖示，然後選取**在下面新增節點**。
 
 1.  在條件欄位中，新增 `input.text.find('\d')`，這是一個 SpEL 表示式，指出如果您在使用者輸入中找到一個以上號碼，則觸發此回應。
 
 1.  在文字回應欄位中，新增下列回應：
 
     ```
-    The correct format for our order numbers is AAnnnnn. The A's represents 2 upper-case letters, and the n's represents 5 numbers. Do you have an order number in that format?
+    The correct format for our order numbers is AAnnnnn. A 代表 2 個大寫字母，n 代表 5 個數字。Do you have an order number in that format?
     ```
     {: codeblock}
 
@@ -663,22 +668,22 @@ Ok. The order $ordernumber is canceled. We hope we get the opportunity to bake a
 
 1.  按一下 `input.text.find('\d')` 節點上的**其他** ![其他選項](images/kabob.png) 圖示，然後選取**新增子節點**。
 
-1.  在此節點的**輸入條件**欄位中，鍵入 `true`。
+1.  在此節點的**如果助理能辨識**欄位中，鍵入 `true`。
 
-1.  按一下**自訂**，然後將*多個回應* 切換開關切換至**開啟**，以啟用條件式回應。
+1.  按一下**自訂**，並向下捲動，然後將*多個回應* 切換開關切換為**開啟**，來啟用條件式回應。
 
 1.  按一下**套用**。
 
-1.  在新增的*如果機器人辨識* 欄位中，鍵入 `@order_number`，然後在*回應* 欄位中，鍵入：
+1.  在新增的*如果助理能辨識* 欄位中，鍵入 `@order_number`，然後在*回應* 欄位中，鍵入：
 
     ```
-Ok. The order $ordernumber is canceled. We hope we get the opportunity to bake a cake for you sometime soon.
+    Ok. The order $ordernumber is canceled. We hope we get the opportunity to bake a cake for you sometime soon.
     ```
     {: codeblock}
 
 1.  按一下**新增回應**。
 
-1.  在*如果機器人辨識* 欄位中，鍵入 `true`，然後在*回應* 欄位中，鍵入：
+1.  在*如果助理能辨識* 欄位中，鍵入 `true`，然後在*回應* 欄位中，鍵入：
 
     ```
     I need the order number to cancel the order for you. If you don't know the order number, please call us at 958-234-3456 to cancel over the phone.
@@ -696,14 +701,14 @@ Ok. The order $ordernumber is canceled. We hope we get the opportunity to bake a
 ## 步驟 5：新增個性化
 {: #tutorial-get-username}
 
-如果使用者對機器人本身感到興趣，您會希望虛擬助理能夠辨識此好奇心，並以更個性化的方式來與使用者互動。在您新增自己的自訂 `#about_restaurant` 目的之前，您或許記得我們先前曾考慮使用的 `#General_About_You` 目的，它隨附於*一般* 內容型錄中。它是建置用來辨識使用者的這類問題。請新增一個將條件設為此目的的節點。在回應中，您可以要求使用者名稱，並將它儲存至您可以在對話的其他地方使用的 $username 變數（如果有的話）。
+如果使用者對機器人本身感到興趣，您會希望虛擬助理能夠辨識此好奇心，並以更個性化的方式來與使用者互動。在您新增自己的自訂 `#about_restaurant` 目的之前，您或許記得我們先前曾考慮使用的 `#General_About_You` 目的，它隨附於*一般* 內容型錄中。它是建置用來辨識使用者的這類問題。請新增將條件設為此目的的節點。在回應中，您可以要求使用者名稱，並將它儲存至您可以在對話的其他地方使用的 $username 變數（如果有的話）。
 
-首先，您需要確定該服務可辨識使用者提供的名稱。因此，您可以啟用 `@sys-person` 實體，它是設計用來辨識常用的名字和姓氏（英文）。
+首先，您需要確定助理可辨識使用者提供的名稱。若要這樣做，請啟用 `@sys-person` 實體，它是設計用來辨識常用的名字和姓氏（英文）。
 
 ### 新增個人系統實體
 {: #tutorial-add-person-entity}
 
-該服務提供若干*系統實體*，這些系統實體是可用於任何應用程式的一般實體。
+助理提供若干*系統實體*，這些系統實體是可用於任何應用程式的一般實體。
 
 1.  按一下**實體**標籤，然後按一下**系統實體**。
 
@@ -719,7 +724,7 @@ Ok. The order $ordernumber is canceled. We hope we get the opportunity to bake a
 1.  按一下**對話**標籤。
 1.  在對話樹狀結構中尋找 `Welcome` 節點。
 1.  按一下 `Welcome` 節點上的**其他** ![其他選項](images/kabob.png) 圖示，然後選取**在下面新增節點**。
-1.  開始在此節點的**輸入條件**欄位中鍵入 `#General_About_You`。然後，選取 `#General_About_You` 選項。
+1.  在此節點的**如果助理能辨識**欄位中，開始鍵入 `#General_About_You`。然後，選取 `#General_About_You` 選項。
 1.  在回應文字欄位中新增下列訊息：
 
     ```
@@ -730,11 +735,11 @@ Ok. The order $ordernumber is canceled. We hope we get the opportunity to bake a
     ![顯示所新增的 #General_About_You 節點。](images/gs-ass-add-about-you-node.png)
 1.  按一下 ![關閉](images/close.png)，以關閉編輯視圖。
 1.  按一下 `#General_About_You` 節點上的**其他** ![其他選項](images/kabob.png) 圖示，然後選取**新增子節點**。
-1.  開始在此節點的**輸入條件**欄位中鍵入 `@sys-person`。然後，選取 `@sys-person` 選項。
+1.  在此節點的**如果助理能辨識**欄位中，開始鍵入 `@sys-person`。然後，選取 `@sys-person` 選項。
 1.  在回應文字欄位中新增下列訊息：
 
     ```
-    Hello, <? @sys-person.literal ?>! It's lovely to meet you. How can I help you today.
+    Hello, <? @sys-person.literal ?>! It's lovely to meet you.     How can I help you today?
     ```
     {: codeblock}
 
@@ -745,8 +750,8 @@ Ok. The order $ordernumber is canceled. We hope we get the opportunity to bake a
     <caption>使用者名稱環境定義變數詳細資料</caption>
 
     <tr>
-      <th>變數           </th>
-      <th>值                 </th>
+      <th>變數</th>
+      <th>值</th>
     </tr>
     <tr>
       <td>$username</td>
@@ -754,14 +759,14 @@ Ok. The order $ordernumber is canceled. We hope we get the opportunity to bake a
     </tr>
     </table>
 
-    環境定義變數值 (`<? @sys-person.literal ?>`) 是 SpEL 表示式，它會擷取使用者所指定的使用者名稱，然後將它儲存至 `$username` 環境定義變數。
+    環境定義變數值 (`<? @sys-person.literal ?>`) 是一個 SpEL 表示式，用於擷取使用者指定的使用者名稱，然後將其儲存到 `$username` 環境定義變數中。
 
     ![顯示所新增的 @sys-person 子節點。](images/gs-ass-sys-person-child-node.png)
 1.  按一下 ![關閉](images/close.png)，以關閉編輯視圖。
 1.  按一下 `@sys-person` 節點上的**其他** ![其他選項](images/kabob.png) 圖示，然後選取**在下面新增節點**。
 
     您將新增節點，以擷取不包含名稱的使用者回應。如果使用者選擇不分享它，您仍希望機器人繼續交談下去。
-1.  在此節點的**輸入條件**欄位中，鍵入 `true`。
+1.  在此節點的**如果助理能辨識**欄位中，鍵入 `true`。
 1.  在回應文字欄位中新增下列訊息：
 
     ```
@@ -780,14 +785,14 @@ Ok. The order $ordernumber is canceled. We hope we get the opportunity to bake a
 如果您知道使用者的名稱，則應將其包含在問候語訊息中。若要這樣做，請新增條件式回應，並包含一個問候語變式來包括該使用者的名稱。
 
 1.  在對話樹狀結構中尋找 `#General_Greetings` 節點，然後按一下，以在編輯視圖中將它開啟。
-1.  按一下**自訂**，然後將*多個回應* 切換至**開啟**。
+1.  按一下**自訂**，並向下捲動，然後將*多個回應* 切換開關切換為**開啟**。
 
     ![顯示已啟用條件式回應設定。](images/gs-ass-turn-on-mcr.png)
 1.  按一下**套用**。
 
     ![顯示現有回應現在是回應表格的一部分。](images/gs-ass-mcr-add-response.png)
 1.  按一下**新增回應**。
-1.  在*如果機器人辨識* 欄位中，鍵入 `$username`，然後在*回應* 欄位中，鍵入：
+1.  在*如果助理能辨識*欄位中鍵入 `$username`，然後在*回應* 欄位中新增回應：
 
     ```
     Good day to you, $username!
@@ -802,7 +807,7 @@ Ok. The order $ordernumber is canceled. We hope we get the opportunity to bake a
 ### 測試個人化
 {: #tutorial-test-personalize}
 
-測試該服務是否可辨識及儲存使用者的名稱，然後稍後藉由該名稱來參照使用者。
+測試助理是否可辨識及儲存使用者的名稱，然後稍後藉由該名稱來參照使用者。
 
 1.  按一下 ![試用](images/ask_watson.png) 圖示，來開啟「試用」窗格。
 
@@ -810,19 +815,19 @@ Ok. The order $ordernumber is canceled. We hope we get the opportunity to bake a
 
 1.  請輸入 `Who are you?`。
 
-    該服務可辨識 `#General_About_You` 目的。其回應以此問題結束：`What's your name?`。
+    助理可辨識 `#General_About_You` 目的。其回應以此問題結束：`What's your name?`。
 1.  輸入 `I am Jane Doe.`。
 
-    該服務可辨識 `Jane Doe` 為 `@sys-person` 實體提及項目。它會加註您的名稱，然後詢問要如何協助您。
+    助理可辨識 `Jane Doe` 為 `@sys-person` 實體提及項目。它會加註您的名稱，然後詢問要如何協助您。
 1.  輸入 `Hello.`。
 
-    該服務可辨識 `#General_Greetings` 目的，並說 `Good day to you, Jane Doe!`。它會使用包含使用者名稱的條件式回應，因為 `$username` 環境定義變數在觸發問候語節點時包含一個值。
+    助理可辨識 `#General_Greetings` 目的，並說 `Good day to you, Jane Doe!`。它會使用包含使用者名稱的條件式回應，因為 `$username` 環境定義變數在觸發問候語節點時包含一個值。
 
     ![顯示「試用」窗格，其中使用者會問「您是誰」，提供 Jane Doe 這個名字，打招呼，然後以這個名字問候之。](images/gs-ass-test-personalization.png)
 
 如果個人化可以幫交談加分，您可以針對任何其他回應新增一個條件式回應來包含並設定使用者名稱為條件。
 
-## 步驟 6：從您的網頁整合測試助理
+## 步驟 6：從網頁整合測試助理
 {: #tutorial-integrate-assistant}
 
 現在，您已建置更準確的助理版本，請回到您在前一個指導教學中部署的公用網頁，然後測試您新增的功能。
@@ -832,9 +837,9 @@ Ok. The order $ordernumber is canceled. We hope we get the opportunity to bake a
 1.  按一下頁面上所顯示的 URL。
 
     即會在新標籤中開啟頁面。
-1.  請重複一些您提交到「試用窗格」的測試話語，以查看助理在實際整合中的行為表現。
+1.  重複使用您提交給「試用」窗格的一些測試話語，看看助理在實際整合中如何表現。
 
-    與您從「試用」窗格將測試話語傳送至該服務不同，從提交到聊天小組件的話語中產生的 API 呼叫將適用標準使用收費。
+    與您從「試用」窗格將測試話語傳送至助理不同，從提交到聊天小組件的話語中產生的 API 呼叫將適用標準使用收費。
     {: note}
 
 ## 後續步驟

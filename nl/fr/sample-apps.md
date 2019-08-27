@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-04-08"
 
 subcollection: assistant
 
@@ -35,12 +35,12 @@ L'application Node.js app montre comment {{site.data.keyword.conversationshort}}
 
 [Reportez-vous à la démonstration ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://watson-assistant-simple.ng.bluemix.net/){: new_window} ou [déviez le code ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/watson-developer-cloud/assistant-simple){: new_window}.
 
-## Démonstration du service client {{site.data.keyword.conversationshort}} 
+## Démonstration du service client {{site.data.keyword.conversationshort}}
 {: #sample-apps-customer-service}
 
 Cette application Node.js est un exemple entièrement développé du type d'application que vous pouvez créer à l'aide de {{site.data.keyword.conversationshort}} et qui utilise des intentions, des entités et un dialogue.
 
-[Regardez la démonstration ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://watson-assistant-demo.ng.bluemix.net/){: new_window}.
+[Reportez-vous à la démonstration ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://watson-assistant-demo.ng.bluemix.net/){: new_window} ou [déviez le code ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/watson-developer-cloud/assistant-demo){: new_window}.
 
 ## {{site.data.keyword.conversationshort}} et {{site.data.keyword.discoveryshort}}
 {: #sample-apps-with-discovery}

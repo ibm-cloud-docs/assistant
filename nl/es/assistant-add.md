@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-07-26"
 
 subcollection: assistant
 
@@ -28,54 +28,56 @@ subcollection: assistant
 Cree un asistente con los conocimientos que necesita para dar respuesta a los objetivos empresariales de sus clientes.
 {: shortdesc}
 
+Para obtener más información sobre lo que es un asistente en primer lugar, consulte
+[Asistentes](/docs/services/assistant?topic=assistant-assistants).
+
 Siga estos pasos para crear un asistente:
 
-1.  Pulse el separador **Asistentes**.
+1.  Pulse **Crear asistente**.
 
-1.  Realice una de las acciones siguientes:
+1.  Añada detalles sobre el nuevo asistente:
 
-    - Para crear un asistente de ejemplo que puede revisar y del que puede aprender, pulse **Añadir un ejemplo** y luego elija el asistente de ejemplo que desea crear.
-
-      Se añade el asistente de ejemplo. Puede saltarse los pasos restantes de este procedimiento.
-
-      Se proporciona un conocimiento de ejemplo con el asistente de ejemplo y se añade a la lista de conocimientos. Si ya ha creado un conocimiento de ejemplo del mismo tipo, el conocimiento existente se asocia automáticamente con este asistente de ejemplo nuevo.
-      {: note}
-
-    - Para crear un asistente desde cero, pulse **Crear nuevo** y, a continuación, siga los pasos restantes de este procedimiento.
-
-1.  Especifique los detalles del nuevo asistente:
     - **Nombre**: un nombre no puede contener más de 100 caracteres. El nombre es obligatorio.
     - **Descripción**: una descripción no puede contener más de 200 caracteres.
 
     Se crea automáticamente una página web de IBM para que el usuario y su equipo puedan probar su asistente. Si no desea que se cree la página web de vista previa, anule la selección del recuadro de selección **Habilitar enlace de vista previa**.
 
-1.  Pulse **Crear**.
+1.  Pulse **Crear asistente**.
 
-1.  Añada un conocimiento al asistente pulsando **Añadir conocimiento**. Puede optar por añadir un conocimiento existente o crear uno nuevo.
+1.  Añada un conocimiento al asistente eligiendo uno de los siguientes tipos de conocimientos a añadir.
 
-    Cuando se añade un conocimiento desde aquí, se obtiene la versión de desarrollo. Si desea añadir una versión de conocimiento específica, añádala desde el separador *Historial de versiones* del conocimiento.
+    **Nota**: Puede optar por añadir un conocimiento existente o crear uno nuevo.
 
-    Si ha creado o si ha recibido acceso con el rol de desarrollador a los espacios de trabajo creados con la versión disponible a nivel general del servicio {{site.data.keyword.conversationshort}} (antes llamado Watson Conversation), los verá en la lista como conocimientos de diálogo.
-    {: note}
+    - **Añadir Conocimiento de diálogo**: Utiliza el procesamiento de lenguaje natural de Watson y las tecnologías de aprendizaje automático para comprender las preguntas y las solicitudes de los usuarios, y responder a ellas con las respuestas que usted haya creado.
 
-    Consulte [Creación de un conocimiento](/docs/services/assistant?topic=assistant-skill-add) para obtener más información sobre cómo crear un conocimiento.
+      Cuando se añade un conocimiento de diálogo desde aquí, se obtiene la versión de desarrollo. Si quiere añadir una versión de conocimiento de diálogo específica, añádala mejor desde la página *Versiones* del conocimiento.
+
+    - **Añadir conocimiento de búsqueda** ![Solo en el plan Plus o Premium](images/plus.png): para una consulta de usuario determinada, utiliza el servicio {{site.data.keyword.discoveryfull}} para recuperar información de un origen de datos que identifique y comparte cualquier información relevante que encuentre como respuesta al usuario.
+
+      Esta opción sólo es visible si se trata de un usuario del plan Plus o Premium.
+      {: note}
+
+    Consulte [Creación de un conocimiento](/docs/services/assistant?topic=assistant-skill-add).
 
 ## Límites del asistente
 {: #assistant-add-limits}
 
-El número de asistentes que puede crear en una sola instancia de servicio depende de su plan de {{site.data.keyword.conversationshort}}.
+El número de asistentes que puede crear depende del tipo de plan de {{site.data.keyword.conversationshort}}.
 
-| Plan de servicio | Asistentes por instancia de servicio | Integraciones por asistente  | Periodo de inactividad de sesión de conversación |
-|--------------|--------------------------------:|----------------------------:|-----------------:|
-| Premium      |                             100 |                         100 |       60 minutos |
-| Plus         |                             100 |                         100 |       60 minutos |
-| Estándar     |                             100 |                         100 |        5 minutos |
-| Lite*        |                             100 |                         100 |        5 minutos |
-{: caption="Detalles del plan de servicio" caption-side="top"}
+| Plan | Asistentes por instancia de servicio |
+|--------------|--------------------------------:|
+| Premium      |                             100 |
+| Plus         |                             100 |
+| Estándar     |                             100 |
+| Plus Trial   |                               5 |
+| Lite*        |                             100 |
+{: caption="Detalles del plan" caption-side="top"}
 
 *Después de 30 días de inactividad, es posible que un asistente no utilizado de una instancia de servicio del Plan se suprima para liberar espacio.
 
-Puede conectar un conocimiento a su asistente. El número de conocimientos que puede crear difiere en función del plan que tenga. Consulte [Límites de conocimientos](/docs/services/assistant?topic=assistant-skill-add#skill-add-limits) para obtener más información.
+Consulte [Cambio del valor de tiempo de espera de inactividad](/docs/services/assistant?topic=assistant-assistant-settings) para obtener más información sobre el asunto.
+
+Puede conectar un conocimiento de cada tipo a su asistente. El número de conocimientos que puede crear difiere en función del plan que tenga. Consulte [Límites de conocimientos](/docs/services/assistant?topic=assistant-skill-add#skill-add-limits) para obtener más información.
 
 ## Supresión de un asistente
 {: #assistant-add-delete}
@@ -104,15 +106,17 @@ Para cambiar el nombre de un asistente, siga estos pasos:
 ### Cambio del conocimiento asociada con el asistente
 {: #assistant-add-swap-skill}
 
-Puede añadir un conocimiento a un asistente. Si desea cambiar el conocimiento que utiliza su asistente, puede intercambiar un conocimiento por otro.
+Puede añadir un conocimiento de cada tipo de conocimiento a un asistente. Si desea cambiar un conocimiento que utiliza su asistente, puede intercambiar un conocimiento por otro.
 
-1.  En el separador Asistente, pulse para abrir el mosaico correspondiente al asistente para el que desea cambiar el conocimiento.
+1.  En el separador Asistentes, abra el asistente.
 
-1.  Pulse el icono ![abrir y cerrar lista de opciones](images/kabob-beta.png) y seleccione **Cambiar conocimiento**. Para cambiar el conocimiento actual por otra versión del conocimiento, elija **Cambiar versión de conocimiento**.
+1.  Pulse el icono ![abrir y cerrar lista de opciones](images/kabob-beta.png) en el conocimiento que quiere intercambiar y seleccione **Cambiar conocimiento**.
+
+    Para cambiar el conocimiento de diálogo actual por otra versión del conocimiento, elija **Cambiar versión de conocimiento**.
 
 1.  Elija un conocimiento existente para utilizarlo en lugar del otro o bien [cree un conocimiento](/docs/services/assistant?topic=assistant-skill-add).
 
 ### Cambio entre instancias de servicio
 {: #assistant-add-switch-instance}
 
-Si tiene más de una instancia de servicio, puede comprobar la cabecera de la página para averiguar la instancia que está utilizando actualmente. Si está trabajando en un conocimiento, pulse primero el enlace del rastro de navegación **Conocimientos**. El mensaje de cabecera muestra el nombre de la instancia actual. Para cambiar a otra instancia de servicio, pulse **cambiar** y elija la instancia que desee.
+Si tiene más de una instancia de servicio, puede comprobar la cabecera de la página para averiguar la instancia que está utilizando actualmente. Si está trabajando en un conocimiento, pulse primero el enlace del rastro de navegación **Conocimientos**. El mensaje de cabecera muestra el nombre de la instancia actual. Para cambiar a otra instancia de servicio, pulse **Cambiar** y elija la instancia que desee.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-07"
+lastupdated: "2019-06-06"
 
 subcollection: assistant
 
@@ -31,7 +31,7 @@ Deseamos conocer y tener en cuenta sus opiniones.
 ## Comparta sus ideas
 {: #feedback-ideas-portal}
 
-Para compartir ideas o sugerir nuevas características para el servicio {{site.data.keyword.conversationfull}}, vaya a [IBM Watson Ideas Portal ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://ibm-watson.ideas.aha.io/?project=ASSISTANT){: new_window}.
+Para compartir ideas o sugerir nuevas características para el servicio {{site.data.keyword.conversationfull}}, acceda a [IBM Data and AI Ideas Portal ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://ibm-data-and-ai.ideas.aha.io/?project=ASSISTANT){: new_window}.
 
 ## ¿Le ha ayudado la documentación?
 {: #feedback-doc}
@@ -40,6 +40,8 @@ Para proporcionar comentarios sobre la documentación, pulse el botón de **COME
 
   **Nota**: El botón de **COMENTARIOS** no está disponible cuando accede al sitio de la documentación desde dispositivos móviles.
 
+Evalúe y comente sobre si el tema es útil pulsando **Sí** o **No** en la parte inferior del tema.
+
 ## Participe en el programa beta
 {: #feedback-beta}
 
@@ -47,13 +49,13 @@ Para proporcionar comentarios sobre la documentación, pulse el botón de **COME
 
 Para solicitar la participación en el programa beta, en primer lugar debe crear una nueva instancia del servicio {{site.data.keyword.conversationshort}} que dedicará únicamente a la evaluación del programa beta. *No añada una instancia existente que esté utilizando para realizar cualquier trabajo real al programa beta.*
 
-1.  Cree un recurso de servicio de {{site.data.keyword.conversationshort}} en la página [{{site.data.keyword.conversationshort}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://{DomainName}/catalog/services/watson-assistant) en el catálogo de {{site.data.keyword.cloud_notm}}.
+1.  Cree un recurso de servicio de {{site.data.keyword.conversationshort}} en la página [{{site.data.keyword.conversationshort}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://{DomainName}/catalog/services/watson-assistant) en el catálogo de {{site.data.keyword.cloud}}.
 
-    La instancia de servicio puede ser parte de un plan gratuito (Lite) o estándar y debe estar desplegada en la ubicación **Dallas**.
+    La instancia de servicio puede ser parte de un plan gratuito (Lite) o estándar y debe estar desplegada en la ubicación **Dallas**. La instancia de servicio debe estar gestionada por un grupo de recursos, no por Cloud Foundry.
 
     A menos que la cambie, la instancia de servicio se creará en el grupo de recursos **default**, que es suficiente para el objetivo de la versión beta.
 
-1.  Una vez que se haya creado la instancia, pulse **Iniciar herramienta** para abrir la herramienta {{site.data.keyword.conversationshort}}.
+1.  Tras crear la instancia, pulse **Lanzar {{site.data.keyword.conversationshort}}** para abrir {{site.data.keyword.conversationshort}}.
 1.  Pulse el separador **Conocimientos**.
 1.  Desde la parte inferior de la página, pulse **Solicitar Beta** y luego confirme que acepta los términos y condiciones para participar en el programa beta.
 

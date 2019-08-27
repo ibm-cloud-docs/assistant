@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-07-16"
 
 subcollection: assistant
+
 
 ---
 
@@ -22,26 +23,35 @@ subcollection: assistant
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
 {:tip: .tip}
 
 # Visión general de la API de {{site.data.keyword.conversationshort}}
 {: #api-overview}
 
-Puede utilizar las API REST de {{site.data.keyword.conversationshort}} y los SDK correspondientes para desarrollar aplicaciones que interactúen con el servicio. Existen dos versiones de la API de {{site.data.keyword.conversationshort}}, cada una de las cuales da soporte a un conjunto diferente de funciones: v1 y v2. La API que debe utilizar depende del tipo de métodos que requiera su aplicación:
+Puede utilizar las API REST de {{site.data.keyword.conversationshort}} y los SDK correspondientes para desarrollar aplicaciones que interactúen con el servicio.
 
-- **Métodos de tiempo de ejecución**: métodos que permiten a una aplicación cliente interactuar con un asistente o un conocimiento existentes, pero no modificarlos. Puede utilizar estos métodos para desarrollar un cliente de cara al usuario que se pueda desplegar en un entorno de producción, una aplicación que actúe como intermediaria en la comunicación entre un asistente y otro servicio (como un servicio de chat o un sistema de fondo) o una aplicación de prueba.
+## Aplicaciones clientes
 
-  La API v2 de {{site.data.keyword.conversationshort}} ofrece acceso a los métodos que puede utilizar para interactuar con un asistente en tiempo de ejecución (como por ejemplo `/message`). Es la API preferida para desarrollar nuevas aplicaciones cliente. Para ver más información sobre la API v2, revise la {{site.data.keyword.conversationshort}} [Consulta de API v2 ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://{DomainName}/apidocs/assistant-v2){: new_window}.
+Para crear un asistente virtual u otra aplicación cliente que se comunique con un asistente en tiempo de ejecución, utilice la nueva API v2. Con esta API, puede desarrollar un cliente de cara al usuario que se pueda desplegar en un entorno de producción, una aplicación que actúe como intermediaria en la comunicación entre un asistente y otro servicio (como un servicio de chat o un sistema de fondo) o una aplicación de prueba.
 
-  La API v1 de {{site.data.keyword.conversationshort}} incluye un método `/message` que envía la entrada de usuario directamente al espacio de trabajo que utiliza un conocimiento de diálogo, pasando por alto el asistente. La API v1 de tiempo de ejecución recibe soporte principalmente a efectos de compatibilidad con versiones anteriores. Si utiliza el método `/message` de v1, la app no puede aprovechar las posibilidades de orquestación y de gestión de estado de un asistente. Para obtener más información, consulte [Utilización de la API de tiempo de ejecución v1](/docs/services/assistant?topic=assistant-api-client#v1-api).
+Al utilizar la API de tiempo de ejecución v2 para comunicarse con el asistente, la aplicación puede beneficiarse de las siguientes características:
 
-- **Métodos de creación**: métodos que permiten a una aplicación crear o modificar conocimientos de diálogo, como alternativa a la creación de un conocimiento de forma gráfica mediante la herramienta {{site.data.keyword.conversationshort}}. Una aplicación de creación utiliza varios métodos para crear y modificar conocimientos, intenciones, entidades, nodos de diálogo y otros artefactos que componen un conocimiento de diálogo.
+- **Gestión automática de estado.** La API de tiempo de ejecución v2 gestiona cada sesión con un usuario final, almacenando y manteniendo todos los datos de contexto que su asistente necesita para una conversación completa.
 
-  Para crear una aplicación de creación, utilice la API v1. Para obtener más información, vea la [Consulta de API v1 ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://{DomainName}/apidocs/assistant){: new_window}.
+- **Facilidad de despliegue utilizando asistentes.** Además de dar soporte a clientes personalizados, un asistente se puede desplegar fácilmente en canales de mensajería populares como Slack y Facebook Messenger.
 
-  **Nota:** los métodos de creación de v1 interactúan con espacios de trabajo en lugar de con conocimientos. Un espacio de trabajo es un contenedor para el diálogo y los datos de entrenamiento (por ejemplo, intenciones y entidades) dentro de un conocimiento de diálogo. En la mayoría de los casos, cuando utilice la API puede considerar que los espacios de trabajo y los conocimientos de diálogo son intercambiables; por ejemplo, si crea un nuevo espacio de trabajo mediante la API, aparecerá como un nuevo conocimiento de diálogo en la herramienta {{site.data.keyword.conversationshort}}.
+- **Control de versiones.** Con el mantenimiento de versiones de conocimiento de diálogo, puede guardar una instantánea de su conocimiento y enlazar su asistente con esa versión específica. Luego puede continuar actualizando la versión de desarrollo sin que afecte al asistente de producción.
+
+- **Capacidades de búsqueda.** La API de tiempo de ejecución v2 se puede utilizar para recibir respuestas de conocimientos tanto de diálogo como de búsqueda. Cuando se envía una consulta que su conocimiento de diálogo no puede responder, el asistente puede utilizar un conocimiento de búsqueda para encontrar la mejor respuesta en los orígenes de datos configurados. (Los conocimientos de búsqueda son una función beta disponible sólo para los usuarios del plan Plus o Premium).
+
+Para ver más información sobre la API v2, revise la {{site.data.keyword.conversationshort}} [Consulta de API v2 ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://{DomainName}/apidocs/assistant-v2){: new_window}.
+
+**Nota**: La API v1 de {{site.data.keyword.conversationshort}} admite el método `/message` heredado que envía la entrada de usuario directamente al espacio de trabajo que utiliza un conocimiento de diálogo. La API v1 de tiempo de ejecución recibe soporte principalmente a efectos de compatibilidad con versiones anteriores. Si utiliza el método v1 `/message`, debe implementar su propia gestión de estado, y no puede aprovechar el mantenimiento de versiones ni ninguna de las otras características de un asistente.
+
+## Creación de aplicaciones
+
+La API v1 proporciona métodos que permiten a una aplicación crear o modificar conocimientos de diálogo, como alternativa a la creación de un conocimiento de forma gráfica mediante la interfaz de usuario de {{site.data.keyword.conversationshort}}. Una aplicación de creación utiliza la API para crear y modificar conocimientos, intenciones, entidades, nodos de diálogo y otros artefactos que componen un conocimiento de diálogo. Para obtener más información, consulte la [Referencia de API v1 ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://{DomainName}/apidocs/assistant){: new_window}.
+
+  **Nota:** los métodos de creación de v1 crean y modifican espacios de trabajo en lugar de conocimientos. Un espacio de trabajo es un contenedor para el diálogo y los datos de entrenamiento (por ejemplo, intenciones y entidades) dentro de un conocimiento de diálogo. Si crea un espacio de trabajo nuevo utilizando la API, aparecerá como un nuevo conocimiento de diálogo en la interfaz de usuario de {{site.data.keyword.conversationshort}}.
 
 Para ver una lista de los métodos de API disponibles, consulte [Resumen de métodos de API](/docs/services/assistant?topic=assistant-api-methods).

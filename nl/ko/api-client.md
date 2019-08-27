@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-08-08"
 
 subcollection: assistant
+
 
 ---
 
@@ -38,78 +39,91 @@ subcollection: assistant
 이 예제를 계속하기 전에 필수 어시스턴트를 설정해야 합니다.
 
 1.  대화 스킬 <a target="_blank" href="https://watson-developer-cloud.github.io/doc-tutorial-downloads/assistant/assistant-simple-example.json" download="assistant-simple-example.json">JSON 파일</a>을 다운로드합니다.
-1.  {{site.data.keyword.conversationshort}} 서비스의 인스턴스로 [스킬을 가져옵니다](/docs/services/assistant?topic=assistant-skill-add#creating-skills).
-1.  [어시스턴트를 작성](/docs/services/assistant?topic=assistant-assistant-add#creating-assistants)하고 가져온 스킬을 연결합니다.
+1.  {{site.data.keyword.conversationshort}} 서비스의 인스턴스로 [스킬을 가져옵니다](/docs/services/assistant?topic=assistant-skill-dialog-add#skill-dialog-add-task).
+1.  [어시스턴트를 작성](/docs/services/assistant?topic=assistant-assistant-add)하고 가져온 스킬을 연결합니다.
 
 ## 서비스 정보 가져오기
 {: #api-client-get-info}
 
 {{site.data.keyword.conversationshort}} 서비스 REST API에 액세스하려면 애플리케이션이 {{site.data.keyword.Bluemix}}에 인증하고 올바른 어시스턴트에 연결되어야 합니다. 서비스 인증 정보 및 어시스턴트 ID를 복사하고 애플리케이션 코드에 붙여넣어야 합니다.
 
-{{site.data.keyword.conversationshort}} 도구에서 서비스 인증 정보와 어시스턴트 ID에 액세스하려면 **어시스턴트** 탭으로 이동하여 연결하려는 어시스턴트의 ![메뉴](images/kabob-grey.png) 메뉴를 클릭하십시오. 어시스턴트 ID 및 API 키를 포함하여, 어시스턴트의 세부사항을 보려면 **API 세부사항 보기**를 선택하십시오.
+{{site.data.keyword.conversationshort}} 도구에서 서비스 인증 정보와 어시스턴트 ID에 액세스하려면 **어시스턴트** 탭으로 이동하여 연결하려는 어시스턴트의 ![메뉴](images/kebab-react.png) 메뉴를 클릭하십시오. 어시스턴트 ID 및 API 키를 포함하여, 어시스턴트의 세부사항을 보려면 **API 세부사항 보기**를 선택하십시오.
 
 또한, {{site.data.keyword.Bluemix_short}} 대시보드에서 서비스에 인증 정보에 액세스할 수 있습니다.
 
 ## {{site.data.keyword.conversationshort}} 서비스와 통신하기
 {: #api-client-communicate}
 
-{{site.data.keyword.conversationshort}} 서비스와 통신하는 방법은 간단합니다. 서비스에 연결하고, 단일 메시지를 발송하고, 결과를 콘솔에 출력하는 예제를 살펴보겠습니다. 
+{{site.data.keyword.conversationshort}} 서비스와 통신하는 방법은 간단합니다. 서비스에 연결하고, 단일 메시지를 발송하고, 결과를 콘솔에 출력하는 예제를 살펴보겠습니다.
 
 ```javascript
 // 예제 1: 서비스 랩퍼를 설정하고, 초기 메시지를 발송하며,
 // 응답을 수신합니다.
 
-var AssistantV2 = require('watson-developer-cloud/assistant/v2');
+const AssistantV2 = require('ibm-watson/assistant/v2');
 
-// Set up Assistant service wrapper.
-var service = new AssistantV2({
-  iam_apikey: '{apikey}', // API 키로 대체
-  version: '2018-09-20'
+// 어시스턴트 서비스 랩퍼를 설정합니다.
+const service = new AssistantV2({
+  iam_apikey: '{apikey}', // replace with API key
+  version: '2019-02-28',
 });
 
-var assistantId = '{assistant_id}'; // 어시스턴트 ID로 대체
-var sessionId;
+const assistantId = '{assistant_id}'; // replace with assistant ID
+let sessionId;
 
 // 세션을 작성합니다.
-service.createSession({
-  assistant_id: assistantId
-}, function(err, result) {
-  if (err) {
-    console.error(err); // 문제가 발생한 경우
-    return;
-  }
-  sessionId = result.session_id;
-  sendMessage(); // 빈 메시지로 대화 시작
-});
+service
+  .createSession({
+    assistant_id: assistantId,
+  })
+  .then(res => {
+    sessionId = res.session_id;
+    sendMessage({
+      message_type: 'text',
+      text: '' // start conversation with empty message
+    });
+  })
+  .catch(err => {
+    console.log(err); // something went wrong
+  });
 
 // 어시스턴트로 메시지를 발송합니다.
-function sendMessage() {
-  service.message({
-    assistant_id: assistantId,
-    session_id: sessionId
-  }, processResponse);
+function sendMessage(messageInput) {
+  service
+    .message({
+      assistant_id: assistantId,
+      session_id: sessionId,
+      input: messageInput
+    })
+    .then(res => {
+      processResponse(res);
+    })
+    .catch(err => {
+      console.log(err); // something went wrong
+    });
 }
 
 // 응답을 처리합니다.
-function processResponse(err, response) {
-  if (err) {
-    console.error(err); // 문제가 발생한 경우
-    return;
-  }
-
-  // 어시스턴트로부터의 메시지를 표시합니다(있는 경우). 단일 텍스트 응답을 가정합니다.
-  if (response.output.generic.length != 0) {
-      console.log(response.output.generic[0].text);
-  }
-
-  // 이제 끝났으므로 세션을 닫습니다.
-  service.deleteSession({
-    assistant_id: assistantId,
-    session_id: sessionId
-  }, function(err, result) {
-    if (err) {
-      console.error(err); // 문제가 발생한 경우
+function processResponse(response) {
+  // 어시스턴트로부터의 출력을 표시합니다(있는 경우). Supports only a single
+  // text response.
+  if (response.output.generic) {
+    if (response.output.generic.length > 0) {
+      if (response.output.generic[0].response_type === 'text') {
+        console.log(response.output.generic[0].text);
     }
+    }
+  }
+
+
+// We're done, so we close the session.
+service
+  .deleteSession({
+    assistant_id: assistantId,
+    session_id: sessionId,
+  })
+  .catch(err => {
+    console.log(err); // something went wrong
   });
 }
 ```
@@ -120,12 +134,12 @@ function processResponse(err, response) {
 # 예제 1: 서비스 랩퍼를 설정하고, 초기 메시지를 발송하며,
 # 응답을 수신합니다.
 
-import watson_developer_cloud
+import ibm_watson
 
 # 어시스턴트 서비스를 설정합니다.
-service = watson_developer_cloud.AssistantV2(
-    iam_apikey = '{apikey}', # API 키로 대체
-    version = '2018-09-20'
+service = ibm_watson.AssistantV2(
+    iam_apikey = '{apikey}', # replace with API key
+    version = '2019-02-28'
 )
 
 assistant_id = '{assistant_id}' # 어시스턴트 ID로 대체
@@ -141,9 +155,11 @@ response = service.message(
     session_id
 ).get_result()
 
-# 대화로부터의 출력을 인쇄합니다(있는 경우). 단일 텍스트 메시지을 가정합니다.
+# 대화로부터의 출력을 인쇄합니다(있는 경우). Supports only a single
+# text response.
 if response['output']['generic']:
-    print(response['output']['generic'][0]['text'])
+    if response['output']['generic'][0]['response_type'] == 'text':
+        print(response['output']['generic'][0]['text'])
 
 # 이제 끝났으므로 세션을 삭제합니다.
 service.delete_session(
@@ -160,13 +176,13 @@ service.delete_session(
  * 응답을 수신합니다.
  */
 
-import com.ibm.watson.developer_cloud.assistant.v2.Assistant;
-import com.ibm.watson.developer_cloud.assistant.v2.model.CreateSessionOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.DeleteSessionOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageResponse;
-import com.ibm.watson.developer_cloud.assistant.v2.model.SessionResponse;
-import com.ibm.watson.developer_cloud.service.security.IamOptions;
+import com.ibm.watson.assistant.v2.Assistant;
+import com.ibm.watson.assistant.v2.model.CreateSessionOptions;
+import com.ibm.watson.assistant.v2.model.DeleteSessionOptions;
+import com.ibm.watson.assistant.v2.model.MessageOptions;
+import com.ibm.watson.assistant.v2.model.MessageResponse;
+import com.ibm.watson.assistant.v2.model.SessionResponse;
+import com.ibm.cloud.sdk.core.service.security.IamOptions;
 import java.util.logging.LogManager;
 
 public class AssistantSimpleExample {
@@ -177,17 +193,18 @@ public class AssistantSimpleExample {
 
     // 어시스턴트 서비스를 설정합니다.
     IamOptions iamOptions = new IamOptions.Builder().apiKey("{apikey}").build();
-    Assistant service = new Assistant("2018-09-20", iamOptions);
-    String assistantId = "{assistant_id}"; // 어시스턴트 ID로 대체
+    Assistant service = new Assistant("2019-02-28", iamOptions);
+    String assistantId = "{assistant_id}"; // replace with assistant ID
 
     // 세션을 작성합니다.
     CreateSessionOptions createSessionOptions = new CreateSessionOptions.Builder(assistantId).build();
-    SessionResponse session = service.createSession(createSessionOptions).execute();
+    SessionResponse session = service.createSession(createSessionOptions).execute().getResult();
     String sessionId = session.getSessionId();
 
     // 빈 메시지로 대화를 시작합니다.
-    MessageOptions messageOptions = new MessageOptions.Builder(assistantId, sessionId).build();
-    MessageResponse response = service.message(messageOptions).execute();
+    MessageOptions messageOptions = new MessageOptions.Builder(assistantId,
+                                                        sessionId).build();
+    MessageResponse response = service.message(messageOptions).execute().getResult();
 
     // 대화로부터의 출력을 인쇄합니다(있는 경우). 단일 텍스트 응답을 가정합니다.
     System.out.println(response.getOutput().getGeneric().get(0).getText());
@@ -225,13 +242,13 @@ public class AssistantSimpleExample {
 예제 코드를 `AssistantSimpleExample.java`라는 파일에 붙여넣습니다. 그런 다음 컴파일하여 실행할 수 있습니다.
 {: java}
 
-**참고:** `npm install watson-developer-cloud`를 사용하여 Watson SDK for Node.js를 설치했는지 확인하십시오.
+**참고:** `npm install ibm-watson`를 사용하여 Watson SDK for Node.js를 설치했는지 확인하십시오.
 {: javascript}
 
-**참고:** `pip install --upgrade watson-developer-cloud` 또는 `easy_install --upgrade watson-developer-cloud`를 사용하여 Watson SDK for Python을 설치했는지 확인하십시오.
+**참고:** `pip install --upgrade ibm-watson` 또는 `easy_install --upgrade ibm-watson`을 사용하여 Watson SDK for Python을 설치했는지 확인하십시오.
 {: python}
 
-**참고:** [Watson SDK for Java![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/watson-developer-cloud/java-sdk/blob/develop/README.md){: new_window}를 설치했는지 확인하십시오.
+**참고:** [Watson SDK for Java![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/watson-developer-cloud/java-sdk/blob/master/README.md){: new_window}를 설치했는지 확인하십시오.
 {: java}
 
 모든 것이 예상대로 작동되면, 어시스턴트가 대화에서 출력을 리턴하며, 출력은 콘솔에 인쇄됩니다.
@@ -254,73 +271,86 @@ Welcome to the Watson Assistant example!
 ```javascript
 // 예제 2: 사용자 입력을 추가하고 인텐트를 발견합니다.
 
-var prompt = require('prompt-sync')();
-var AssistantV2 = require('watson-developer-cloud/assistant/v2');
+const prompt = require('prompt-sync')();
+const AssistantV2 = require('ibm-watson/assistant/v2');
 
 // 어시스턴트 서비스 랩퍼를 설정합니다.
-var service = new AssistantV2({
-  iam_apikey: '{apikey}', // API 키로 대체
-  version: '2018-09-20'
+const service = new AssistantV2({
+  iam_apikey: '{apikey}', // replace with API key
+  version: '2019-02-28',
 });
 
-var assistantId = '{assistant_id}'; // 어시스턴트 ID로 대체
-var sessionId;
+const assistantId = '{assistant_id}'; // replace with assistant ID
+let sessionId;
 
 // 세션을 작성합니다.
-service.createSession({
-  assistant_id: assistantId
-}, function(err, result) {
-  if (err) {
-    console.error(err); // 문제가 발생한 경우
-    return;
-  }
-  sessionId = result.session_id;
-  sendMessage(); // 빈 메시지로 대화 시작
-});
+service
+  .createSession({
+    assistant_id: assistantId,
+  })
+  .then(res => {
+    sessionId = res.session_id;
+    sendMessage({
+      message_type: 'text',
+      text: ''
+    }); // start conversation with empty message
+  })
+  .catch(err => {
+    console.log(err); // something went wrong
+  });
 
 // 어시스턴트로 메시지를 발송합니다.
-function sendMessage(messageText) {
-  service.message({
-    assistant_id: assistantId,
-    session_id: sessionId,
-    input: {
-      message_type: 'text',
-      text: messageText
-    }
-  }, processResponse);
+function sendMessage(messageInput) {
+  service
+    .message({
+      assistant_id: assistantId,
+      session_id: sessionId,
+      input: messageInput
+    })
+    .then(res => {
+      processResponse(res);
+    })
+    .catch(err => {
+      console.log(err); // something went wrong
+    });
 }
 
 // 응답을 처리합니다.
-function processResponse(err, response) {
-  if (err) {
-    console.error(err); // 문제가 발생한 경우
-    return;
-  }
+function processResponse(response) {
 
   // If an intent was detected, log it out to the console.
   if (response.output.intents.length > 0) {
     console.log('Detected intent: #' + response.output.intents[0].intent);
   }
 
-  // 어시스턴트로부터의 출력을 표시합니다(있는 경우). 단일 텍스트 응답을 가정합니다.
-  if (response.output.generic.length != 0) {
-    console.log(response.output.generic[0].text);
+  // 어시스턴트로부터의 출력을 표시합니다(있는 경우). Supports only a single
+  // text response.
+  if (response.output.generic) {
+    if (response.output.generic.length > 0) {
+      if (response.output.generic[0].response_type === 'text') {
+        console.log(response.output.generic[0].text);
+    }
+    }
   }
 
   // 다음 라운드의 입력에 대한 프롬프트를 표시합니다.
-  var newMessageFromUser = prompt('>> ');
-    if (newMessageFromUser === 'quit') {
-      service.deleteSession({
+  const newMessageFromUser = prompt('>> ');
+  if (newMessageFromUser === 'quit') {
+    service
+      .deleteSession({
         assistant_id: assistantId,
-        session_id: sessionId
-      }, function(err, result) {
-        if (err) {
-          console.error(err); // 문제가 발생한 경우
-        }
+        session_id: sessionId,
+      })
+      .catch(err => {
+        console.log(err); // something went wrong
       });
-      return;
-    }
-  sendMessage(newMessageFromUser);
+    return;
+  }
+  newMessageInput = {
+    message_type: 'text',
+    text: newMessageFromUser
+  }
+  sendMessage(newMessageInput);
 }
 ```
 {: codeblock}
@@ -329,12 +359,12 @@ function processResponse(err, response) {
 ```python
 # 예제 2: 사용자 입력을 추가하고 인텐트를 발견합니다.
 
-import watson_developer_cloud
+import ibm_watson
 
 # 어시스턴트 서비스를 설정합니다.
-service = watson_developer_cloud.AssistantV2(
-    iam_apikey = '{apikey}', # API 키로 대체
-    version = '2018-09-20'
+service = ibm_watson.AssistantV2(
+    iam_apikey = '{apikey}', # replace with API key
+    version = '2019-02-28'
 )
 
 assistant_id = '{assistant_id}' # 어시스턴트 ID로 대체
@@ -345,30 +375,36 @@ session_id = service.create_session(
 ).get_result()['session_id']
 
 # 대화를 시작하기 위해 빈 값으로 초기화합니다.
-user_input = ''
+message_input = {
+    'message_type:': 'text',
+    'text': ''
+    }
 
-# 기본 입/출력 루프
-while user_input != 'quit':
+# Main input/output loop
+while message_input['text'] != 'quit':
 
     # 어시스턴트로 메시지를 발송합니다.
     response = service.message(
         assistant_id,
         session_id,
-        input = {
-            'text': user_input
-    }
+        input = message_input
     ).get_result()
 
     # 인텐트가 발견된 경우 이를 콘솔에 인쇄합니다.
     if response['output']['intents']:
         print('Detected intent: #' + response['output']['intents'][0]['intent'])
 
-    # 대화로부터의 출력을 인쇄합니다(있는 경우). 단일 텍스트 응답을 가정합니다.
+    # 대화로부터의 출력을 인쇄합니다(있는 경우). Supports only a single
+    # text response.
     if response['output']['generic']:
-        print(response['output']['generic'][0]['text'])
+        if response['output']['generic'][0]['response_type'] == 'text':
+            print(response['output']['generic'][0]['text'])
 
     # 다음 라운드의 입력에 대한 프롬프트를 표시합니다.
     user_input = input('>> ')
+    message_input = {
+        'text': user_input
+    }
 
 # 이제 끝났으므로 세션을 삭제합니다.
 service.delete_session(
@@ -384,16 +420,16 @@ service.delete_session(
  * 예제 2: 사용자 입력을 추가하고 인텐트를 발견합니다.
  */
 
-import com.ibm.watson.developer_cloud.assistant.v2.Assistant;
-import com.ibm.watson.developer_cloud.assistant.v2.model.CreateSessionOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.DeleteSessionOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.DialogRuntimeResponseGeneric;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageInput;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageResponse;
-import com.ibm.watson.developer_cloud.assistant.v2.model.RuntimeIntent;
-import com.ibm.watson.developer_cloud.assistant.v2.model.SessionResponse;
-import com.ibm.watson.developer_cloud.service.security.IamOptions;
+import com.ibm.watson.assistant.v2.Assistant;
+import com.ibm.watson.assistant.v2.model.CreateSessionOptions;
+import com.ibm.watson.assistant.v2.model.DeleteSessionOptions;
+import com.ibm.watson.assistant.v2.model.DialogRuntimeResponseGeneric;
+import com.ibm.watson.assistant.v2.model.MessageInput;
+import com.ibm.watson.assistant.v2.model.MessageOptions;
+import com.ibm.watson.assistant.v2.model.MessageResponse;
+import com.ibm.watson.assistant.v2.model.RuntimeIntent;
+import com.ibm.watson.assistant.v2.model.SessionResponse;
+import com.ibm.cloud.sdk.core.service.security.IamOptions;
 import java.util.List;
 import java.util.logging.LogManager;
 
@@ -405,12 +441,12 @@ public class AssistantSimpleExample {
 
     // 어시스턴트 서비스를 설정합니다.
     IamOptions iamOptions = new IamOptions.Builder().apiKey("{apikey}").build();
-    Assistant service = new Assistant("2018-09-20", iamOptions);
-    String assistantId = "{assistant_id}"; // 어시스턴트 ID로 대체
+    Assistant service = new Assistant("2019-02-28", iamOptions);
+    String assistantId = "{assistant_id}"; // replace with assistant ID
 
     // 세션을 작성합니다.
     CreateSessionOptions createSessionOptions = new CreateSessionOptions.Builder(assistantId).build();
-    SessionResponse session = service.createSession(createSessionOptions).execute();
+    SessionResponse session = service.createSession(createSessionOptions).execute().getResult();
     String sessionId = session.getSessionId();
 
     // 대화를 시작하기 위해 빈 값으로 초기화합니다.
@@ -423,7 +459,7 @@ public class AssistantSimpleExample {
       MessageOptions messageOptions = new MessageOptions.Builder(assistantId, sessionId)
                                                   .input(input)
                                                   .build();
-      MessageResponse response = service.message(messageOptions).execute();
+      MessageResponse response = service.message(messageOptions).execute().getResult();
 
       // 인텐트가 발견된 경우 이를 콘솔에 인쇄합니다.
       List<RuntimeIntent> responseIntents = response.getOutput().getIntents();
@@ -453,8 +489,7 @@ public class AssistantSimpleExample {
 
 이 버전의 애플리케이션은 전과 같은 방식으로 시작됩니다(빈 메시지를 어시스턴트로 보내 대화 시작).
 
-`processResponse()` 함수는 이제 출력 텍스트와 함께 대화 스킬에서 발견한 모든 인텐트를 표시합니다.
-그런 다음, 다음 라운드의 사용자 입력에 대한 프롬프트가 표시됩니다.
+`processResponse()` 함수는 이제 출력 텍스트와 함께 대화 스킬에서 발견한 모든 인텐트를 표시합니다. 그런 다음, 다음 라운드의 사용자 입력에 대한 프롬프트가 표시됩니다.
 {: javascript }
 
 그런 다음 출력 텍스트와 함께 대화 스킬에서 발견된 모든 인텐트를 표시합니다. 그런 다음, 다음 라운드의 사용자 입력에 대한 프롬프트가 표시됩니다.
@@ -486,63 +521,67 @@ OK! See you later.
 ## 앱 조치 구현
 {: #api-client-implement-actions}
 
-{{site.data.keyword.conversationshort}} 대화는 사용자에게 출력 텍스트를 표시하는 것 외에, 발견된 인텐트에 따라 애플리케이션이 조치를 실행해야 할 때 신호에 대한 응답 JSON에 `actions` 오브젝트를 사용합니다. 클라이언트 애플리케이션이 무엇을 수행해야 한다고 대화가 결정하는 경우, `client`의 `type`을 사용하는 조치 오브젝트를 리턴합니다. 이 조치의 `name`은 특정 조치 `display_time` 또는 `end_conversation`를 나타냅니다.(이 조치의 추가 특성은 매개변수, 인증 정보 및 조치와 관련된 기타 정보를 지정할 수 있지만, 예제에서는 조치 이름만 필요합니다.)
+{{site.data.keyword.conversationshort}} 대화는 사용자에게 출력 텍스트를 표시하는 것 외에, 발견된 인텐트에 따라 애플리케이션이 조치를 실행해야 할 때 신호에 대한 응답 JSON에 `actions` 오브젝트를 사용합니다. 클라이언트 애플리케이션이 무엇을 수행해야 한다고 대화가 결정하는 경우, `client`의 `type`을 사용하는 조치 오브젝트를 리턴합니다. 이 조치의 `name`은 특정 조치 `display_time` 또는 `end_conversation`를 나타냅니다. (이 조치의 추가 특성은 매개변수, 인증 정보 및 조치와 관련된 기타 정보를 지정할 수 있지만, 예제에서는 조치 이름만 필요합니다.)
 
 대화가 한 번에 두 개 이상의 조치를 요청하지 않는다는 것을 알고 있으므로, 클라이언트는 `actions` 배열에서 단일 `client`의 존재 여부를 확인하기만 하면 됩니다. 하나를 찾으면 지정된 조치를 수행할 수 있습니다. (또한 발견된 인텐트가 올바르게 식별되므로 이 버전은 이 인텐트의 표시를 제거합니다.)
 
 ```javascript
 // 예제 3: 앱 조치를 구현합니다.
 
-var prompt = require('prompt-sync')();
-var AssistantV2 = require('watson-developer-cloud/assistant/v2');
+const prompt = require('prompt-sync')();
+const AssistantV2 = require('ibm-watson/assistant/v2');
 
-// 어시스턴트 서비스를 설정합니다.
-var service = new AssistantV2({
-  iam_apikey: '{apikey}', // API 키로 대체
-  version: '2018-09-20'
+// 어시스턴트 서비스 랩퍼를 설정합니다.
+const service = new AssistantV2({
+  iam_apikey: '{apikey}', // replace with API key
+  version: '2019-02-28',
 });
 
-var assistantId = '{assistant_id}'; // 어시스턴트 ID로 대체
-var sessionId;
+const assistantId = '{assistant_id}'; // replace with assistant ID
+let sessionId;
 
 // 세션을 작성합니다.
-service.createSession({
-  assistant_id: assistantId
-}, function(err, result) {
-  if (err) {
-    console.error(err); // 문제가 발생한 경우
-    return;
-  }
-  sessionId = result.session_id;
-  sendMessage(''); // 빈 메시지로 대화 시작
-});
+service
+  .createSession({
+    assistant_id: assistantId,
+  })
+  .then(res => {
+    sessionId = res.session_id;
+    sendMessage({
+      message_type: 'text',
+      text: ''  // start conversation with empty message
+    });
+  })
+  .catch(err => {
+    console.log(err); // something went wrong
+  });
 
 // 어시스턴트로 메시지를 발송합니다.
-function sendMessage(messageText) {
-  service.message({
-    assistant_id: assistantId,
-    session_id: sessionId,
-    input: {
-      message_type: 'text',
-      text: messageText
-    }
-  }, processResponse);
+function sendMessage(messageInput) {
+  service
+    .message({
+      assistant_id: assistantId,
+      session_id: sessionId,
+      input: messageInput
+    })
+    .then(res => {
+      processResponse(res);
+    })
+    .catch(err => {
+      console.log(err); // something went wrong
+    });
 }
 
 // 응답을 처리합니다.
-function processResponse(err, response) {
-  if (err) {
-    console.error(err); // 문제가 발생한 경우
-    return;
-  }
+function processResponse(response) {
 
-  var endConversation = false;
+  let endConversation = false;
 
   // 어시스턴트에 의해 요청된 클라이언트 조치를 확인합니다.
   if (response.output.actions) {
     if (response.output.actions[0].type === 'client'){
       if (response.output.actions[0].name === 'display_time') {
-        // 사용자가 몇 시냐고 물어서 로컬 시스템 시간을 출력합니다.
+        // 사용자가 몇 시인지 물어서 로컬 시스템 시간을 출력합니다.
         console.log('The current time is ' + new Date().toLocaleTimeString() + '.');
       } else if (response.output.actions[0].name === 'end_conversation') {
         // 사용자가 goodbye라고 말했으므로 이제 끝났습니다.
@@ -551,26 +590,36 @@ function processResponse(err, response) {
       }
     }
   } else {
-    // 어시스턴트로부터의 출력을 인쇄합니다(있는 경우). 단일 텍스트 응답을 가정합니다.
-    if (response.output.generic.length != 0) {
-      console.log(response.output.generic[0].text);
+    // 어시스턴트로부터의 출력을 표시합니다(있는 경우). 단일 텍스트 응답을 가정합니다.
+    if (response.output.generic) {
+      if (response.output.generic.length > 0) {
+        if (response.output.generic[0].response_type === 'text') {
+          console.log(response.output.generic[0].text);
+    }
+      }
     }
   }
 
   // 아직 끝나지 않은 경우 다음 라운드의 입력에 대한 프롬프트를 표시합니다.
   if (!endConversation) {
-    var newMessageFromUser = prompt('>> ');
-    sendMessage(newMessageFromUser);
+    const newMessageFromUser = prompt('>> ');
+    newMessageInput = {
+      message_type: 'text',
+      text: newMessageFromUser
+    }
+    sendMessage(newMessageInput);
   } else {
-    service.deleteSession({
-      assistant_id: assistantId,
-      session_id: sessionId
-    }, function(err, result) {
-      if (err) {
-        console.error(err); // 문제가 발생한 경우
-      }
-    });
-    return;
+    service
+      .deleteSession({
+        assistant_id: assistantId,
+        session_id: sessionId,
+      })
+      .then(res => {
+        return;
+      })
+      .catch(err => {
+        console.log(err); // something went wrong
+      });
   }
 }
 ```
@@ -580,13 +629,13 @@ function processResponse(err, response) {
 ```python
 # 예제 3: 앱 조치를 구현합니다.
 
-import watson_developer_cloud
+import ibm_watson
 import time
 
 # 어시스턴트 서비스를 설정합니다.
-service = watson_developer_cloud.AssistantV2(
-    iam_apikey = '{apikey}', # API 키로 대체
-    version = '2018-09-20'
+service = ibm_watson.AssistantV2(
+    iam_apikey = '{apikey}', # replace with API key
+    version = '2019-02-28'
 )
 
 assistant_id = '{assistant_id}' # 어시스턴트 ID로 대체
@@ -597,7 +646,7 @@ session_id = service.create_session(
 ).get_result()['session_id']
 
 # 대화를 시작하기 위해 빈 값으로 초기화합니다.
-user_input = ''
+message_input = {'text': ''}
 current_action = ''
 
 # 기본 입/출력 루프
@@ -609,14 +658,14 @@ while current_action != 'end_conversation':
     response = service.message(
         assistant_id,
         session_id,
-        input = {
-            'text': user_input
-    }
+        input = message_input
     ).get_result()
 
-    # 대화로부터의 출력을 인쇄합니다(있는 경우). 단일 텍스트 응답을 가정합니다.
+    # 대화로부터의 출력을 인쇄합니다(있는 경우). Supports only a single
+    # text response.
     if response['output']['generic']:
-        print(response['output']['generic'][0]['text'])
+        if response['output']['generic'][0]['response_type'] == 'text':
+            print(response['output']['generic'][0]['text'])
 
     # 어시스턴트에서 요청한 클라이언트 조치를 확인합니다.
     if 'actions' in response['output']:
@@ -629,6 +678,9 @@ while current_action != 'end_conversation':
     # 아직 끝나지 않은 경우 다음 라운드의 입력에 대한 프롬프트를 표시합니다.
     if current_action != 'end_conversation':
         user_input = input('>> ')
+        message_input = {
+            'text': user_input
+    }
 
 # 이제 끝났으므로 세션을 삭제합니다.
 service.delete_session(
@@ -644,17 +696,17 @@ service.delete_session(
  * 예제 3: 앱 조치를 구현합니다.
  */
 
-import com.ibm.watson.developer_cloud.assistant.v2.Assistant;
-import com.ibm.watson.developer_cloud.assistant.v2.model.CreateSessionOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.DeleteSessionOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.DialogNodeAction;
-import com.ibm.watson.developer_cloud.assistant.v2.model.DialogRuntimeResponseGeneric;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageInput;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageOptions;
-import com.ibm.watson.developer_cloud.assistant.v2.model.MessageResponse;
-import com.ibm.watson.developer_cloud.assistant.v2.model.RuntimeIntent;
-import com.ibm.watson.developer_cloud.assistant.v2.model.SessionResponse;
-import com.ibm.watson.developer_cloud.service.security.IamOptions;
+import com.ibm.watson.assistant.v2.Assistant;
+import com.ibm.watson.assistant.v2.model.CreateSessionOptions;
+import com.ibm.watson.assistant.v2.model.DeleteSessionOptions;
+import com.ibm.watson.assistant.v2.model.DialogNodeAction;
+import com.ibm.watson.assistant.v2.model.DialogRuntimeResponseGeneric;
+import com.ibm.watson.assistant.v2.model.MessageInput;
+import com.ibm.watson.assistant.v2.model.MessageOptions;
+import com.ibm.watson.assistant.v2.model.MessageResponse;
+import com.ibm.watson.assistant.v2.model.RuntimeIntent;
+import com.ibm.watson.assistant.v2.model.SessionResponse;
+import com.ibm.cloud.sdk.core.service.security.IamOptions;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -666,14 +718,14 @@ public class AssistantSimpleExample {
     // 표준 출력에 로그 메시지를 표시하지 않습니다.
     LogManager.getLogManager().reset();
 
-    // 세션 서비스를 설정합니다.
+    // 어시스턴트 서비스를 설정합니다.
     IamOptions iamOptions = new IamOptions.Builder().apiKey("{apikey}").build();
-    Assistant service = new Assistant("2018-09-20", iamOptions);
-    String assistantId = "{assistant_id}"; // 어시스턴트 ID로 대체
+    Assistant service = new Assistant("2019-02-28", iamOptions);
+    String assistantId = "{assistant_id}"; // replace with assistant ID
 
     // 세션을 작성합니다.
     CreateSessionOptions createSessionOptions = new CreateSessionOptions.Builder(assistantId).build();
-    SessionResponse session = service.createSession(createSessionOptions).execute();
+    SessionResponse session = service.createSession(createSessionOptions).execute().getResult();
     String sessionId = session.getSessionId();
 
     // 대화를 시작하기 위해 빈 값으로 초기화합니다.
@@ -690,7 +742,7 @@ public class AssistantSimpleExample {
       MessageOptions messageOptions = new MessageOptions.Builder(assistantId, sessionId)
                                                   .input(input)
                                                   .build();
-      MessageResponse response = service.message(messageOptions).execute();
+      MessageResponse response = service.message(messageOptions).execute().getResult();
 
       // 대화로부터의 출력을 인쇄합니다(있는 경우). 단일 텍스트 응답을 가정합니다.
       List<DialogRuntimeResponseGeneric> responseGeneric = response.getOutput().getGeneric();
@@ -747,184 +799,13 @@ OK! See you later.
 
 물론, 실제 애플리케이션은 더 정교한 사용자 인터페이스를 사용합니다(예: 웹 대화 창). 또한 복잡한 조치를 구현하며, 고객 데이터베이스 또는 기타 비즈니스 시스템과 통합할 수도 있습니다. 또한, 각각의 고유한 사용자를 식별하기 위해 사용자 ID와 같은 추가적인 데이터를 어시스턴트에 전송해야 합니다. 하지만 애플리케이션이 {{site.data.keyword.conversationshort}} 서비스와 상호작용하는 방법에 대한 기본 원칙은 동일합니다.
 
-몇 가지 더 복잡한 예제는 [샘플 앱](/docs/services/assistant?topic=assistant-sample-apps)를 참조하십시오.
-
-## 컨텍스트 액세스
-{: #api-client-get-context}
-
-*컨텍스트*는 대화를 통해 지속되는 변수를 포함하는 오브젝트이며 대화와 클라이언트 애플리케이션에서 공유할 수 있습니다. 애플리케이션이 v2 API를 사용하는 경우에는 세션별로 어시스턴트에서 컨텍스트를 자동으로 관리합니다. 대화와 클라이언트 애플리케이션은 둘 다 컨텍스트 변수를 읽고 쓸 수 있습니다. 기본적으로 컨텍스트는 클라이언트 애플리케이션에 리턴되지 않지만, 선택적으로 각각의 `/message` 요청에 대한 응답에 포함되도록 요청할 수 있습니다.
-
-**중요:** 어시스턴트 사용은 어시스턴트와 상호작용하는 각각의 최종 사용자에 대해 고유한 사용자 ID를 지정하는 것입니다. 사용자 기반 플랜의 경우 이 ID는 청구용으로 사용됩니다. (자세한 정보는 [사용자 기반 플랜](/docs/services/assistant?topic=assistant-services-information#user-based-plans)을 참조하십시오.)
-
-다음과 같은 두 가지 유형의 컨텍스트가 있습니다.
-
-- **글로벌 컨텍스트**: 대화 플로우를 관리하는 데 사용되는 내부 시스템 변수를 포함하여, 어시스턴트에서 사용하는 모든 스킬이 공유하는 컨텍스트 변수입니다.
-
-- **스킬 특정 컨텍스트**: 애플리케이션에서 필요로 하는 사용자 정의 변수를 포함하여 특정 스킬에 고유한 컨텍스트 변수입니다. 현재, 하나의 스킬(이름: `main skill`)만 지원됩니다.
-
-다음 예제는 글로벌 및 스킬 특정 컨텍스트 변수를 포함하는 `/message` 요청을 표시합니다. 또한 이 요청은 컨텍스트가 응답과 함께 리턴되도록 요청하기 위해 `options.return_context` 속성을 사용합니다 `
-
-```javascript
-service.message({
-  assistant_id: '{assistant_id}',
-  session_id: '{session_id}',
-  input: {
-    'message_type': 'text',
-    'text': 'Hello',
-    'options': {
-      'return_context': true
-    }
-  },
-  context: {
-    'global': {
-      'system': {
-        'user_id': 'my_user_id'
-      }
-    },
-    'skills': {
-      'main skill': {
-        'user_defined': {
-          'account_number': '123456'
-        }
-      }
-    }
-  }
-}, function(err, response) {
-  if (err)
-    console.log('error:', err);
-  else
-    console.log(JSON.stringify(response, null, 2));
-});
-```
-{: codeblock}
-{: javascript}
-
-```python
-response=service.message(
-    assistant_id='{assistant_id}',
-    session_id='{session_id}',
-    input={
-        'message_type': 'text',
-        'text': 'Hello',
-        'options': {
-            'return_context': True
-        }
-    },
-    context={
-        'global': {
-            'system': {
-                'user_id': 'my_user_id'
-            }
-        },
-        'skills': {
-            'main skill': {
-                'user_defined': {
-                    'account_number': '123456'
-                }
-            }
-        }
-    }
-).get_result()
-
-print(json.dumps(response, indent=2))
-```
-{: codeblock}
-{: python}
-
-```java
-    MessageInputOptions inputOptions = new MessageInputOptions();
-    inputOptions.setReturnContext(true);
-
-    MessageInput input = new MessageInput.Builder()
-      .messageType("text")
-      .text("Hello")
-      .options(inputOptions)
-      .build();
-
-    // create global context with user ID
-    MessageContextGlobalSystem system = new MessageContextGlobalSystem();
-    system.setUserId("my_user_id");
-    MessageContextGlobal globalContext = new MessageContextGlobal();
-    globalContext.setSystem(system);
-
-    // build user-defined context variables, put in skill-specific context for main skill
-    Map<String, String> userDefinedContext = new HashMap<>();
-    userDefinedContext.put("account_num","123456");
-    Map<String, Map> mainSkillContext = new HashMap<>();
-    mainSkillContext.put("user_defined", userDefinedContext);
-    MessageContextSkills skillsContext = new MessageContextSkills();
-    skillsContext.put("main skill", mainSkillContext);
-
-    MessageContext context = new MessageContext();
-    context.setGlobal(globalContext);
-    context.setSkills(skillsContext);
-
-    MessageOptions options = new MessageOptions.Builder("{assistant_id}", "{session_id}")
-      .input(input)
-      .context(context)
-      .build();
-
-    MessageResponse response = service.message(options).execute();
-
-    System.out.println(response);
-```
-{: codeblock}
-{: java}
-
-이 예제 요청에서 애플리케이션은 글로벌 컨텍스트의 일부로 `user_id`에 대한 값을 지정합니다.
-또한, 스킬 특정 컨텍스트의 일부로 하나의 사용자 정의 컨텍스트 변수(`account_number`)를 설정합니다. 이 컨텍스트 변수는
-대화 노드에서 `$account_number`로 액세스할 수 있습니다. (대화에서 컨텍스트를 사용하는 방법에 대한 자세한 정보는
-[대화 처리 방법](/docs/services/assistant?topic=assistant-dialog-runtime)을 참조하십시오.)
-
-사용자 정의 컨텍스트 변수에 사용할 변수 이름을 지정할 수 있습니다. 지정된 변수가 이미 존재하는 경우 새 값이 겹쳐씁니다. 그렇지 않은 경우, 새 변수가 컨텍스트에 추가됩니다.
-
-이 요청의 출력에는 일반적인 출력뿐만 아니라 지정된 값이 추가되었음을 표시하는 컨텍스트도 포함됩니다.
-
-```json
-{
-  "output": {
-    "generic":[
-      {
-        "response_type": "text",
-        "text": "Welcome to the Watson Assistant example!"
-      }
-    ],
-    "intents": [
-      {
-        "intent": "hello",
-        "confidence": 1
-      }
-    ],
-    "entities": []
-  },
-"context": {
-    "global": {
-      "system": {
-        "turn_count": 1,
-        "user_id": "my_user_id"
-      }
-    },
-    "skills": {
-      "main skill": {
-        "user_defined": {
-          "account_number": "123456"
-        }
-      }
-    }
-  }
-}
-```
-
-API를 사용하여 컨텍스트 변수에 액세스하는 방법에 대한 자세한 정보는 [v2 API 참조 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://{DomainName}/apidocs/assistant-v2#send-user-input-to-assistant){: new_window}를 참조하십시오.
+몇 가지 더 복잡한 예제는 [샘플 앱](/docs/services/assistant?topic=assistant-sample-apps)을 참조하십시오.
 
 ## v1 API 사용
 {: #api-client-v1-api}
 
 v2 API 사용은 {{site.data.keyword.conversationshort}} 서비스와 통신하는 런타임 클라이언트 애플리케이션을 빌드하는 데 권장되는 방법입니다. 그러나 일부 이전 애플리케이션에서는 여전히 v1 API를 사용하고 있을 수 있지만, 여기에는 대화 스킬에서 작업 공간으로 메시지를 보내기 위한 유사한 런타임 메소드가 포함되어 있습니다.
 
-애플리케이션이 v1 API를 사용하는 경우, 이 애플리케이션은 어시스턴트의 오케스트레이션 및 상태 관리 기능을 사용하지 않고 작업공간과 직접 통신합니다.
-이는 애플리케이션이 컨텍스트를 사용하여 상태 정보를 관리해야 함을 의미합니다.
-애플리케이션은 각 응답과 함께 수신된 컨텍스트를 저장하고 각각의 새 메시지 요청과 함께 서비스에 다시 전송하여 컨텍스트를 유지보수해야 합니다.
-(v1 `/message` 메소드는 항상 각 응답과 함께 컨텍스트를 리턴합니다.)
+애플리케이션이 v1 API를 사용하는 경우, 이 애플리케이션은 어시스턴트의 오케스트레이션 및 상태 관리 기능을 사용하지 않고 작업공간과 직접 통신합니다. 이는 애플리케이션이 컨텍스트를 사용하여 상태 정보를 관리해야 함을 의미합니다. 애플리케이션은 각 응답과 함께 수신된 컨텍스트를 저장하고 각각의 새 메시지 요청과 함께 서비스에 다시 전송하여 컨텍스트를 유지보수해야 합니다. (v1 `/message` 메소드는 항상 각 응답과 함께 컨텍스트를 리턴합니다.)
 
 v1 `/message` 메소드 및 컨텍스트에 대한 자세한 정보는 [v1 API 참조![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://cloud.ibm.com/apidocs/assistant#get-response-to-user-input){: new_window}를 참조하십시오.

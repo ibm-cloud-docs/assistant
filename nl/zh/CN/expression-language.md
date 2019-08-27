@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-21"
+lastupdated: "2019-06-04"
 
 subcollection: assistant
 
@@ -131,7 +131,7 @@ subcollection: assistant
 ```
 {: codeblock}
 
-对于用户输入 *Hello now*，服务可识别到 @sys-date 和 @sys-time 系统实体，因此响应包含以下实体对象：
+对于用户输入 *Hello now*，助手可识别到 @sys-date 和 @sys-time 系统实体，因此响应包含以下实体对象：
 
 ```json
 [
@@ -165,9 +165,9 @@ subcollection: assistant
 
 每个实体都有一组与之关联的属性。可以通过实体的属性访问有关实体的信息。
 
-|属性                  |定义       |使用技巧   |
+|属性                  |定义       |用法提示   |
 |-----------------------|------------|------------|
-|*confidence*          |表示服务对已识别实体的置信度的小数百分比。除非激活了实体模糊匹配，否则实体的置信度为 0 或 1。启用模糊匹配后，缺省置信度级别阈值为 0.3。无论是否启用模糊匹配，系统实体的置信度级别都始终为 1.0。|可以在条件中使用此属性，在置信度级别不高于您指定的百分比时，使其返回 false。|
+|*confidence*          |表示助手对已识别实体的置信度的小数百分比。除非激活了实体模糊匹配，否则实体的置信度为 0 或 1。启用模糊匹配后，缺省置信度级别阈值为 0.3。无论是否启用模糊匹配，系统实体的置信度级别都始终为 1.0。|可以在条件中使用此属性，在置信度级别不高于您指定的百分比时，使其返回 false。|
 |*location*            |从零开始的字符偏移量，用于指示检测到的实体值在输入文本中的起始和结束位置。|使用 `.literal` 可抽取 location 属性中存储的起始索引值与结束索引值之间的文本范围。|
 |*value*               |在输入中识别到的实体值。|此属性返回在训练数据中定义的实体值，即便已针对其某个关联同义词进行了匹配也不例外。可以使用 `.values` 来捕获可能在用户输入出现多次的实体。|
 
@@ -177,13 +177,15 @@ subcollection: assistant
 在以下示例中，技能包含 airport 实体，此实体包含值 JFK 和同义词“Kennedy Airport”。用户输入为 *I want to go to Kennedy Aiport*。
 
 - 要在用户输入中识别到“JFK”实体时返回特定响应，可以将以下表达式添加到响应条件：`entities.airport[0].value == 'JFK'` 或 `@airport = "JFK"`
-- 要返回由用户在对话响应中指定的实体名称，请使用 .literal 属性：`So you want to go to <?entities.airport[0].literal?>...`
-  或 `So you want to go to @airport.literal ...`
+- 要返回由用户在对话响应中指定的实体名称，请使用 .literal 属性：
+  `So you want to go to <?entities.airport[0].literal?>...`
+  或
+  `So you want to go to @airport.literal ...`
 
   这两种格式都会在响应中求值为“So you want to go to Kennedy Airport...”。
 
 - 像 `@airport:(JFK)` 或 `@airport.contains('JFK')` 这样的表达式始终引用实体（在此示例中为 `JFK`）的**值**。
-- 例如，要在启用模糊匹配时对输入中识别为机场的词汇进行更强的限制，可以在节点条件中指定以下表达式：`@airport && @airport.confidence > 0.7`。仅当服务对输入文本包含机场引用的置信度为 70% 时，才会执行此节点。
+- 例如，要在启用模糊匹配时对输入中识别为机场的词汇进行更强的限制，可以在节点条件中指定以下表达式：`@airport && @airport.confidence > 0.7`。仅当助手对输入文本包含机场引用的置信度超过 70% 时，才会执行此节点。
 
 在此示例中，用户输入为 *Are there places to exchange currency at JFK, Logan, and O'Hare?*
 
@@ -195,7 +197,8 @@ subcollection: assistant
     }
     ```
 
-  要稍后在对话响应中引用捕获的列表，请使用以下语法：`You asked about these airports: <? $airports.join(', ') ?>.`
+  要稍后在对话响应中引用捕获的列表，请使用以下语法：
+  `You asked about these airports: <? $airports.join(', ') ?>.`
   显示的响应类似于：`You asked about these airports: JFK, Logan, O'Hare.`
 
 ## 访问意向
@@ -203,7 +206,7 @@ subcollection: assistant
 
 意向数组包含在用户输入中已识别到的一个或多个意向，按置信度降序排序。
 
-每个意向只有一个属性：`confidence` 属性。confidence 属性为小数百分比，表示服务对识别到的意向的置信度。
+每个意向只有一个属性：`confidence` 属性。confidence 属性为小数百分比，表示助手对识别到的意向的置信度。
 
 测试对话时，通过在对话节点响应中指定以下表达式，可以查看在用户输入中识别到的意向的详细信息：
 
@@ -212,7 +215,7 @@ subcollection: assistant
 ```
 {: codeblock}
 
-对于用户输入 *Hello now*，服务找到了与 #greeting 意向的完全匹配。因此，服务首先列出 #greeting 意向对象的详细信息。响应还包含在技能中定义的排名前 10 的其他意向，这些意向与置信度分数无关。（在此示例中，由于第一个意向是完全匹配，因此它在其他意向中的置信度设置为 0。）由于“试用”窗格在其请求中发送了 `alternate_intents:true` 参数，因此返回了排名前 10 的意向。如果要直接使用 API，并希望查看排名前 10 的结果，请确保在调用中指定此参数。如果 `alternate_intents` 为 false（这是缺省值），那么在数组中仅返回置信度高于 0.2 的意向。
+对于用户输入 *Hello now*，助手找到了与 #greeting 意向的完全匹配。因此，服务首先列出 #greeting 意向对象的详细信息。响应还包含在技能中定义的排名前 10 的其他意向，这些意向与置信度分数无关。（在此示例中，由于第一个意向是完全匹配，因此它在其他意向中的置信度设置为 0。）由于“试用”窗格在其请求中发送了 `alternate_intents:true` 参数，因此返回了排名前 10 的意向。如果要直接使用 API，并希望查看排名前 10 的结果，请确保在调用中指定此参数。如果 `alternate_intents` 为 false（这是缺省值），那么在数组中仅返回置信度高于 0.2 的意向。
 
 ```json
 [{"intent":"greeting","confidence":1},
@@ -240,7 +243,7 @@ subcollection: assistant
 
 - 要在用户输入为“Yes”时执行节点，请向节点条件添加以下表达式：`input.text == 'Yes'`
 
-可以使用任何[字符串方法](/docs/services/conversation/dialog-methods#dialog-methods-strings)对用户输入的文本进行求值或处理。例如：
+可以使用任何[字符串方法](/docs/services/assistant/dialog-methods#dialog-methods-strings)对用户输入的文本进行求值或处理。例如：
 
 - 要检查用户输入是否包含“Yes”，请使用：`input.text.contains( 'Yes' )`。
 - 如果用户输入的是数字，那么返回 true：`input.text.matches( '[0-9]+' )`。

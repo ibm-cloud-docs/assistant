@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-08-07"
+lastupdated: "2019-05-14"
 
 subcollection: assistant
 
@@ -25,7 +25,7 @@ subcollection: assistant
 # Recursos Adicionais
 {: #resources}
 
-Links para recursos, vídeos, tutoriais e artigos que podem ajudá-lo a iniciar mais rápido e ir além.
+Links para recursos, vídeos, tutoriais e artigos que podem ajudar você a começar mais rápido e ir mais longe.
 {: shortdesc}
 
 ## Recursos do desenvolvedor
@@ -60,16 +60,17 @@ De uma série de detalhamentos técnicos IBM. Essas gravações fornecem respost
 
 Vídeos adicionais criados por IBMistas.
 
-- [Ativação técnica digital ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://ibm-dte.mybluemix.net/ibm-watson-assistant){: new_window}: uma coleção de recursos, incluindo um tour do produto e aulas práticas em laboratório.
+- [Ativação técnica digital ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://ibm-dte.mybluemix.net/watson-assistant){: new_window}: uma coleção de recursos, incluindo um tour do produto e aulas práticas em laboratório.
 - [Tutorial de integrações do {{site.data.keyword.conversationshort}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.youtube.com/watch?v=O3silvVBaC8&t=3s){: new_window}: um tutorial de 10 minutos que você pode seguir para conectar o {{site.data.keyword.conversationshort}} ao Twilio usando o Botkit para criar um robô de bate-papo SMS.
-- [Mostre-me como usar o {{site.data.keyword.conversationshort}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://youtu.be/tUkLIUOm550){: new_window}: uma visão geral de 3 minutos do serviço
+- [Mostre-me como usar o {{site.data.keyword.conversationshort}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://youtu.be/tUkLIUOm550){: new_window}: uma visão geral de 3 minutos do produto.
 - [Introduzindo o serviço {{site.data.keyword.conversationshort}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://youtu.be/A96nLYSMltA){: new_window}: uma introdução de 1 minuto.
 - [Passagem do {{site.data.keyword.conversationshort}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://youtu.be/ELwWhJGE2P8){: new_window}: uma passagem técnica de 14 minutos.
 
-## IBM Watson Academy
+## Materiais didáticos
 {: #resources-academy}
 
-- [Bases do {{site.data.keyword.conversationshort}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://ibm.com/training/watsonacademy){: new_window}
+- [Watson Academy ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://ibm.com/training/watsonacademy){: new_window}
+- [Coursera: construindo robôs de bate-papo desenvolvidos com IA sem programação ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.coursera.org/learn/building-ai-powered-chatbots)
 
 ## Blogs
 {: #resources-blogs}

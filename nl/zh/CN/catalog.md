@@ -2,9 +2,10 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-05-28"
 
 subcollection: assistant
+
 
 ---
 
@@ -33,9 +34,7 @@ subcollection: assistant
 ## 向对话技能添加内容目录
 {: #catalog-add}
 
-使用 {{site.data.keyword.conversationshort}} 工具来添加内容目录。
-
-1.  在 {{site.data.keyword.conversationshort}} 工具中，打开对话技能，然后单击**内容目录**选项卡。
+1.  打开对话技能，然后单击**内容目录**选项卡。
 
 1.  选择内容目录（如*银行*）以查看随该目录一起提供的意向。
 

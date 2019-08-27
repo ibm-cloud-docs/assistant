@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-04-12"
 
 subcollection: assistant
 
@@ -88,7 +88,7 @@ Inclua uma intenção na guia Intenções. Uma intenção é o propósito ou obj
 ## Etapa 2: incluir entidades
 {: #tutorial-slots-add-entity}
 
-Uma definição de entidade inclui um conjunto de *valores* de entidade que representam o vocabulário que é frequentemente usado no contexto de uma determinada intenção. Ao definir entidades, é possível ajudar o serviço a identificar referências na entrada do usuário que estão relacionadas a intenções de interesse. Nesta etapa, você ativará as entidades do sistema que podem reconhecer referências ao horário, data e números.
+Uma definição de entidade inclui um conjunto de *valores* de entidade que representam o vocabulário que é frequentemente usado no contexto de uma determinada intenção. Ao definir entidades, é possível ajudar seu assistente a identificar referências na entrada do usuário relacionadas a intenções de interesse. Nesta etapa, você ativará as entidades do sistema que podem reconhecer referências ao horário, data e números.
 
 1.  Clique em **Entidades** para abrir a página Entidades.
 1.  Ative as entidades do sistema que podem reconhecer as referências de data, horário e número na entrada do usuário. Clique na guia **Entidades do sistema** e, em seguida, ative estas entidades:
@@ -102,7 +102,7 @@ Você ativou com êxito as entidades do sistema @sys-date, @sys-time e @sys-numb
 ## Etapa 3: incluir um nó de diálogo com intervalos
 {: #tutorial-slots-add-dialog-with-slots}
 
-Um nó de diálogo representa o início de um encadeamento de diálogo entre o serviço e o usuário. Ele contém uma condição que deve ser atendida para que o nó seja processado pelo serviço. No mínimo, ele também contém uma resposta. Por exemplo, uma condição de nó pode procurar a intenção `#hello` na entrada do usuário e responder com `Hi. How can I help you?` Esse exemplo é a forma mais simples de um nó de diálogo, uma que contém uma condição única e uma resposta única. É possível definir diálogos complexos, incluindo respostas condicionais em um único nó, incluindo nós-filhos que prolongam a troca com o usuário e muito mais. (Se você deseja aprender mais sobre diálogos complexos, é possível concluir o tutorial [Construindo um diálogo complexo](/docs/services/assistant?topic=assistant-tutorial).)
+Um nó de diálogo representa o início de um encadeamento de diálogo entre seu assistente e o usuário. Ele contém uma condição que deve ser atendida para que o nó seja processado por seu assistente. No mínimo, ele também contém uma resposta. Por exemplo, uma condição de nó pode procurar a intenção `#hello` na entrada do usuário e responder com `Hi. How can I help you?` Esse exemplo é a forma mais simples de um nó de diálogo, uma que contém uma condição única e uma resposta única. É possível definir diálogos complexos, incluindo respostas condicionais em um único nó, incluindo nós-filhos que prolongam a troca com o usuário e muito mais. (Se você deseja aprender mais sobre diálogos complexos, é possível concluir o tutorial [Construindo um diálogo complexo](/docs/services/assistant?topic=assistant-tutorial).)
 
 O nó que você incluirá nesta etapa é aquele que contém intervalos. Os intervalos fornecem um formato estruturado por meio do qual é possível perguntar e salvar múltiplas informações de um usuário em um único nó. Eles são mais úteis quando você tem uma tarefa específica em mente e precisa de informações chave do usuário antes de poder executá-la. Veja [Reunindo informações com intervalos](/docs/services/assistant?topic=assistant-dialog-slots) para obter mais informações.
 

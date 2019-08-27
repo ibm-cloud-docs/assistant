@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-08-05"
 
 subcollection: assistant
 
@@ -37,10 +37,12 @@ subcollection: assistant
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="建立技能版本" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/FDolnBxvcZ8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
+若要進一步瞭解各版本如何改善您用來建置助理的工作流程，請[閱讀本部落格文章 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://medium.com/ibm-watson/watson-assistant-versions-announcement-d60869b1f5f){: new_window}。
+
 ## 建立版本
 {: #versions-create}
 
-您可以使用 {{site.data.keyword.conversationshort}} 工具，一次只編輯一個對話技能版本。進行中的版本稱為*開發* 版本。
+一次只能編輯對話技能的一個版本。進行中的版本稱為*開發* 版本。
 
 當您儲存版本時，也會儲存您套用至開發版本的所有技能設定。
 
@@ -52,12 +54,12 @@ subcollection: assistant
 
 1.  按一下**儲存**。
 
-Snapshot 取自於現行技能，並儲存為新版本。您仍保持在技能的開發版本。您所做的全部變更都會繼續套用至開發版本，而不是套用至您所儲存的版本。若要存取您所儲存的版本，請移至**版本歷程**頁面。
+Snapshot 取自於現行技能，並儲存為新版本。您仍保持在技能的開發版本。您所做的全部變更都會繼續套用至開發版本，而不是套用至您所儲存的版本。若要存取您所儲存的版本，請移至**版本**頁面。
 
 ## 部署技能版本
 {: #versions-deploy}
 
-1.  從技能的標頭中，按一下**版本歷程**標籤。
+1.  在技能的標頭中，按一下**版本**標籤。
 1.  從您要部署的版本中按一下 ![按一下以檢視動作](images/kebab-react.png) 圖示，然後選擇**指派給助理**。
 
     即會顯示一份您可以鏈結這個版本的助理清單。該清單僅限於那些不具有任何相關聯技能的助理，或與此技能的不同版本相關聯的助理。
@@ -67,15 +69,16 @@ Snapshot 取自於現行技能，並儲存為新版本。您仍保持在技能�
 {: important}
 
 ## 技能版本限制
-{: #skill-version-limits}
+{: #versions-limits}
 
 您可以為單一技能建立的版本數目，取決於您的 {{site.data.keyword.conversationshort}} 方案。
 
 |服務方案                             | 每個技能的版本數 |
 |------------------|-------------------:|
-|超值                                 |                 50 |
-|加值                                 |                 10 |
-|標準                                 |                 10 |
+|超值              |                 50 |
+|加值              |                 10 |
+|標準              |                 10 |
+|加值試用   |                 10 |
 |精簡              |0 |
 {: caption="服務方案詳細資料" caption-side="top"}
 
@@ -95,9 +98,10 @@ Snapshot 取自於現行技能，並儲存為新版本。您仍保持在技能�
 
 1.  儲存自您前次建立版本以來對技能所做的全部變更。
 
-    立即儲存一個技能版本。否則，當您遵循這些步驟時，您所做的一切將會流失。{: important}
+    立即儲存一個技能版本。否則，當您遵循這些步驟時，您所做的一切將會流失。
+    {: important}
 
-1.  從您要編輯的版本中，按一下**技能動作** ![技能動作](images/kebab-react.png) 圖示，然後選擇**複製到開發**，並確認動作。
+1.  在要編輯的版本中，按一下**技能動作** ![技能動作](images/kebab-react.png) 圖示，然後選擇**回復到此版本**並確認動作。
 
     頁面會重新整理，以回復到當初建立版本時該技能所處的狀態。
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-07-19"
 
 subcollection: assistant
 
@@ -22,7 +22,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Integración con Intercom ![Solo plan Plus o Premium](images/premium.png)
+# Integración con Intercom ![Solo plan Plus o Premium](images/plus.png)
 {: #deploy-intercom}
 
 Intercom es una plataforma de mensajería de cliente que ayuda a impulsar el crecimiento de las empresas mediante la mejora de las relaciones en todo el ciclo de vida del cliente.
@@ -30,7 +30,7 @@ Intercom es una plataforma de mensajería de cliente que ayuda a impulsar el cre
 
 Intercom se ha asociado con IBM para añadir un nuevo agente al equipo de soporte al cliente, un asistente virtual de Watson. Puede integrar su asistente con una aplicación Intercom para permitir que la app pase sin problemas conversaciones de usuario entre el asistente y el equipo de agentes de soporte al usuario. Lea esta [publicación del blog de Watson ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://medium.com/@blakemcgregor/contact-center-post-394dff427c8) para obtener más información sobre la integración.
 
-Esta integración solo está disponible para los usuarios del plan Plus o Premium.
+Esta integración solo está disponible para los usuarios del plan Plus o Premium. Si quiere intentarlo, puede registrarse en un plan de prueba gratuito (Plus Trial). [Obtener la licencia Plus Trial](https://cloud.ibm.com/registration?target=%2Fdeveloper%2Fwatson%2Flaunch-tool%2Fconversation%3Fplan%3Dplus-trial&cm_mmc=OSocial_Voicestorm-_-Watson+AI_Watson+Core+-+Conversation-_-WW_WW-_-Intercom+Trial+Registration+Link&cm_mmca1=000027BD&cm_mmca2=10004432).
 {: note}
 
 Si integra el asistente con Intercom, la aplicación Intercom se convierte en la aplicación de cara al cliente para su conocimiento. Todas las interacciones con los usuarios se inician y gestionan mediante Intercom.
@@ -64,6 +64,11 @@ Usted o alguien en su organización debe seguir, una sola vez, estos pasos de re
 ## Preparación del diálogo
 {: #deploy-intercom-dialog-prereq}
 
+Si no tiene un conocimiento de diálogo asociado a su asistente, cree uno o añádalo ahora. Para obtener más detalles, consulte [Creación de un diálogo](/docs/services/assistant?topic=assistant-dialog-build).
+
+Actualmente no hay soporte para la activación de una búsqueda mediante un conocimiento de búsqueda desde una integración Intercom.
+{: note}
+
 Siga estos pasos en su conocimiento de diálogo para que el asistente pueda manejar las solicitudes de usuario y pueda pasar la conversación a un agente humano cuando un cliente solicite uno.
 
 1.  Añada una intención a su conocimiento que pueda reconocer la solicitud de un usuario de hablar con un humano.
@@ -85,7 +90,7 @@ Siga estos pasos en su conocimiento de diálogo para que el asistente pueda mane
 
       ![Captura de pantalla del campo de la vista de edición de nodo donde puede añadir el resumen de la finalidad del nodo.](images/disambig-node-purpose.png)
 
-      **No** añada un nombre de nodo externo al nodo raíz que ha creado en el paso 2. Cuando se realiza un escalado, el servicio examina el nombre de nodo externo del último nodo procesado para saber qué objetivo de usuario no se ha cumplido correctamente. Si incluye un nombre de nodo externo en el nodo con conexión con la intención del agente humano, impedirá que el servicio sepa cuál es el último nodo real orientado al objetivo con el que ha interactuado el usuario antes de escalar el problema.
+      **No** añada un nombre de nodo externo al nodo raíz que ha creado en el paso 2. Cuando se realiza un escalado, su asistente examina el nombre de nodo externo del último nodo procesado para saber qué objetivo de usuario no se ha cumplido correctamente. Si incluye un nombre de nodo externo en el nodo con conexión con la intención del agente humano, impedirá que su asistente sepa cuál es el último nodo real orientado al objetivo con el que ha interactuado el usuario antes de escalar el problema.
       {: tip}
 
 1.  Si un nodo hijo está condicionado por una solicitud de seguimiento o por una pregunta que no desea que el asistente maneje, añada el tipo de respuesta **Conectar con un agente humano** al nodo.
@@ -95,6 +100,19 @@ Siga estos pasos en su conocimiento de diálogo para que el asistente pueda mane
     En tiempo de ejecución, si la conversación alcanza este nodo hijo, el diálogo se pasa a un agente humano en ese punto. Más tarde, cuando configure la integración de Intercom, puede elegir un agente humano como respaldo para cada rama.
 
 Su diálogo ya está listo para dar soporte a su asistente en Intercom.
+
+### Consideraciones sobre el diálogo
+{: #deploy-intercom-dialog}
+
+Algunas respuestas completas que añade a un diálogo se muestran en el panel "Pruébelo" de forma distinta a cómo se muestran a los usuarios de Intercom. En la tabla siguiente se describe cómo trata Intercom los distintos tipos de respuesta.
+
+| Tipo de respuesta | Cómo se muestra a los usuarios de Intercom  |
+|---------------|---------------------------|
+| **Opción**    | Las opciones se muestran como una lista numerada. En el campo de **título** o de **descripción**, especifique instrucciones que indiquen al usuario cómo elegir una opción de la lista. |
+| **Imagen**     | Se muestra el **título**, la **descripción** y la propia imagen. |
+| **Pausa**     | Independientemente de si se habilita o no, no se muestra un indicador de escritura durante la pausa. |
+
+Consulte [Respuestas completas](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) para obtener más información sobre los tipos de respuesta.
 
 ## Adición de una integración de Intercom
 {: #deploy-intercom-add-intercom}
@@ -107,12 +125,30 @@ Su diálogo ya está listo para dar soporte a su asistente en Intercom.
 
     Siga las instrucciones que se proporcionan en la pantalla. Las secciones siguientes le ayudan con los pasos a seguir.
 
+El siguiente vídeo de 4 minutos muestra los pasos.
+
+<iframe class="embed-responsive-item" id="youtubeplayer" title="Configuración rápida" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/SkbFWNScueU" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
 ## Conexión del asistente a Intercom
 {: #deploy-intercom-connect}
 
 En cuanto de a Intercom permiso para utilizar el asistente, este se convertirá en un miembro viable del equipo de Intercom.
 
-Los agentes humanos pueden asignar mensajes al asistente utilizando las reglas de asignación de Intercom, que pueden asignar automáticamente conversaciones de entrada a un compañero de equipo o una bandeja de entrada del equipo en función de algunos criterios o mediante una reasignación manual realizada por un agente humano en tiempo de ejecución. Consulte la [documentación de Intercom ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.intercom.com/help/support-and-retain-customers/work-as-a-team/assign-conversations-to-teammates-and-teams) para obtener más detalles.
+Los agentes (personas) pueden asignar mensajes al asistente utilizando las reglas de asignación de Intercom. Los mensajes se pueden asignar al asistente de las formas siguientes:
+
+- Asignación automática de conversaciones de entrada a un compañero de equipo o bandeja de entrada de equipo en función de algunos criterios
+
+  El siguiente vídeo de un minuto y medio muestra los pasos.
+
+  <iframe class="embed-responsive-item" id="youtubeplayer2" title="Asignación automática" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/4M9wu8NHxcY" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
+- Reasignación manual realizada por un agente humano en tiempo de ejecución.
+
+  El siguiente vídeo de menos de tres minutos muestra los pasos.
+
+  <iframe class="embed-responsive-item" id="youtubeplayer3" title="Asignación manual" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/jAnolyUJAIA" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
+Consulte la [documentación de Intercom ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.intercom.com/help/support-and-retain-customers/work-as-a-team/assign-conversations-to-teammates-and-teams) para obtener más detalles.
 
 1.  Cuando el diálogo esté listo, pulse **Conectar ahora**.
 1.  Pulse **Acceder a Intercom** para redirigirse al sitio de Intercom.
@@ -156,12 +192,16 @@ Para configurar las asignaciones de direccionamiento para escalados desde el asi
 
 1.  Después de añadir reglas, pulse **Volver a visión general** para salir de la página.
 
+El siguiente vídeo de 3 minutos muestra los pasos.
+
+<iframe class="embed-responsive-item" id="youtubeplayer0" title="Direccionamiento de escalamiento basado en tema" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/dTwJZOqdzII" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
 ## Otorgue al asistente permiso para supervisar y responder consultas de usuario
 {: #deploy-intercom-config-action}
 
 Cuando desee que el asistente inicie la supervisión de una bandeja de entrada de Intercom y responda a los mensajes por su cuenta, active la supervisión.
 
-Su asistente observa las consultas de usuario a medida que se registran en Intercom. Si el asistente está seguro de que conoce la respuesta a una consulta de usuario, responde directamente al usuario. (El asistente está seguro cuando la intención principal identificada por el servicio tiene una puntuación de confianza de 0,75 o superior.)
+Su asistente observa las consultas de usuario a medida que se registran en Intercom. Si el asistente está seguro de que conoce la respuesta a una consulta de usuario, responde directamente al usuario. (El asistente está seguro cuando la intención principal identificada por su asistente tiene una puntuación de confianza de 0,75 o superior).
 
 Si no desea que el asistente responda a determinados tipos de consultas de usuario, puede añadir reglas para especificar otras acciones que el asistente debe realizar por rama de diálogo. Por ejemplo, es posible que desee empezar a incorporar al asistente en el equipo Intercom de forma más conservadora, permitiendo que el asistente solo sugiera respuestas a medida que transfiere mensajes de usuario a otros compañeros del equipo para que respondan. Con el tiempo, cuando el asistente haya demostrado su efectividad, puede asignarle más responsabilidad.
 
@@ -203,22 +243,13 @@ Para configurar el modo en que desea que el asistente maneje determinadas ramas 
 
 A medida que cambia el diálogo, es probable que vuelva a la página de integración de Intercom para realizar cambios incrementales en estas reglas.
 
+El siguiente vídeo de 3 minutos muestra los pasos.
+
+<iframe class="embed-responsive-item" id="youtubeplayer1" title="Supervisión de bandeja de entrada" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/fFKjWUfIftw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
 ## Prueba de la integración
 {: #deploy-intercom-try}
 
 Para probar de forma efectiva la integración de Intercom desde el extremo a extremo, debe tener acceso a una aplicación de usuario final de Intercom. Ya ha creado o editado un espacio de trabajo de Intercom. El espacio de trabajo debe tener un cliente de interfaz de usuario asociado. Si no es así, consulte [Apps en Intercom ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.intercom.com/help/apps-in-intercom){: new_window} para obtener ayuda con la configuración de uno.
 
 Envíe las consultas de usuario de prueba a través de una aplicación cliente que esté asociada con el espacio de trabajo de Intercom para ver cómo maneja los mensajes Intercom. Verifique que los mensajes que están configurados a ser respondidos por el asistente están generando las respuestas adecuadas y que el asistente no está respondiendo a mensajes que no debe responder según la configuración.
-
-## Consideraciones sobre el diálogo
-{: #deploy-intercom-dialog}
-
-Algunas respuestas completas que añade a un diálogo se muestran en el panel "Pruébelo" de forma distinta a cómo se muestran a los usuarios de Intercom. En la tabla siguiente se describe cómo trata Intercom los distintos tipos de respuesta.
-
-| Tipo de respuesta | Cómo se muestra a los usuarios de Intercom  |
-|---------------|---------------------------|
-| **Opción**    | Las opciones se muestran como una lista numerada. En el campo de **título** o de **descripción**, especifique instrucciones que indiquen al usuario cómo elegir una opción de la lista. |
-| **Imagen**     | Se muestra el **título**, la **descripción** y la propia imagen. |
-| **Pausa**     | Independientemente de si se habilita o no, no se muestra un indicador de escritura durante la pausa. |
-
-Consulte [Respuestas completas](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) para obtener más información sobre los tipos de respuesta.
