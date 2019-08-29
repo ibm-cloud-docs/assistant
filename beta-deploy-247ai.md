@@ -82,7 +82,7 @@ The following table describes how the response types are rendered by the \[24\]7
 
     Follow the on-screen instructions.
 
-    - The service password that is added to the credential code block automatically is the API key frm the service credential for your service instance. If there is more than one code block, it means your service instance has more than one credential associated with it. Choose one of them to copy.
+    - The service password that is added to the credential code block automatically is the API key from the service credential for your service instance. If there is more than one code block, it means your service instance has more than one credential associated with it. Choose one of them to copy.
     - Providing your email address in Step 2 is optional.
 
 1.  Test your assistant integration from the \[24\]7.ai chatbot.
