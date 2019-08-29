@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-15"
+lastupdated: "2019-08-29"
 
 subcollection: assistant
 
@@ -82,7 +82,7 @@ The following table describes how the response types are rendered by the \[24\]7
 
     Follow the on-screen instructions.
 
-    - If the Service password is undefined, then you can retrieve the appropriate password from the Service credentials page for the service instance. The IBM Cloud instance management page refers to the service password as an API key. Paste the code block into a text editor, and then replace `Undefined` with the API key value. You can then recopy the full updated code block from the text editor.
+    - The service password that is added to the credential code block automatically is the API key from the service credential for your service instance. If there is more than one code block, it means your service instance has more than one credential associated with it. Choose one of them to copy.
     - Providing your email address in Step 2 is optional.
 
 1.  Test your assistant integration from the \[24\]7.ai chatbot.
