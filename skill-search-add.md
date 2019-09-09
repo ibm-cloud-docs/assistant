@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-21"
+lastupdated: "2019-09-06"
 
 subcollection: assistant
 
@@ -133,7 +133,7 @@ If you have a Discovery service Lite plan, you are given an opportunity to upgra
 
         1.  Provide the required information for the data source you choose, and then click **Connect**.
 
-            See [Connecting to data sources ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-sources){: new_window} for more details.
+            For a list of the supported data types and details on how to set up access to them, see [Connecting to data sources ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/discovery?topic=discovery-sources){: new_window}.
         1.  Indicate the frequency with which you want data from the data source to be synchronized with the collection you are creating in {{site.data.keyword.discoveryshort}}.
         1.  Specify the information that you want to extract from the data source and include in your {{site.data.keyword.discoveryshort}} collection.
 
