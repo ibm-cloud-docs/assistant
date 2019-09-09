@@ -56,7 +56,7 @@ The following new features and changes to {{site.data.keyword.conversationshort}
 ## 6 September 2019
 {: #6September2019}
 
-- **Label character limit expanded**: The limit to the number of characters allowed for a label that you define for an option response type has been expanded from 64 characters to 2,048 characters. <!--1.75 --> 
+- **Label character limit increase**: The limit to the number of characters allowed for a label that you define for an option response type changed from 64 characters to 2,048 characters. <!--1.75 --> 
 
 ## 12 August 2019
 {: #12August2019}
