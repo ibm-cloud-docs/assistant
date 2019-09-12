@@ -94,7 +94,7 @@ Unlike API-based plans, which measure usage by the number of API calls made duri
 
 To get the most benefit from the new user-based service plans, design any custom applications that you use to deploy your assistant to capture a unique user ID or session ID and pass the information to {{site.data.keyword.conversationshort}}.
 
-For example, if the same person chats with your assistant on three separate occasions over the same billing period, how you represent that user in the API call impacts how the interactions are billed. If you identify the user interaction with a user_id, it will count as 1 use. If you identify the user interaction with a session_id, then it will count as 3 uses (because there is a separate session created for each interaction).
+For example, if the same person chats with your assistant on three separate occasions over the same billing period, how you represent that user in the API call impacts how the interactions are billed. If you identify the user interaction with a `user_id`, it will count as 1 use. If you identify the user interaction with a `session_id`, then it will count as 3 uses (because there is a separate session created for each interaction).
 
 ## Authenticating API calls
 {: #services-information-authenticate-api-calls}
