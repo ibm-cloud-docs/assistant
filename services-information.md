@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-09-12"
 
 subcollection: assistant
 
@@ -93,6 +93,8 @@ Unlike API-based plans, which measure usage by the number of API calls made duri
   1.  **conversation_id**: A property defined in the v1 API that is stored in the context object of a /message API call. This property can be used to identify multiple /message API calls that are associated with a single conversational exchange with one user. However, the same ID is only used if you explicitly retain the ID and pass it back with each request that is made as part of the same conversation. Otherwise, a new ID is generated for each new /message API call.
 
 To get the most benefit from the new user-based service plans, design any custom applications that you use to deploy your assistant to capture a unique user ID or session ID and pass the information to {{site.data.keyword.conversationshort}}.
+
+For example, if the same person chats with your assistant on three separate occasions over the same billing period, how you represent that user in the API call impacts how the interactions are billed. If you identify the user interaction with a user_id, it will count as 1 use. If you identify the user interaction with a session_id, then it will count as 3 uses (because there is a separate session created for each interaction).
 
 ## Authenticating API calls
 {: #services-information-authenticate-api-calls}
