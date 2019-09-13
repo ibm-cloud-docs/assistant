@@ -174,7 +174,7 @@ To add an entity that recognizes a pattern:
 
 1.  Follow the standard procedure to create a dictionary-based entity, but select **Patterns** from the *Type* drop-down menu instead of *Synonyms*.
 
-    ![Screen capture of defining an entity](images/define-entity.png)
+    ![Shows picking the Patterns type when creating an entity](images/define-entity.png)
 
 1.  Add a regular expression that defines the pattern you want to look for.
 
@@ -204,10 +204,6 @@ To add an entity that recognizes a pattern:
     - `website`: `(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$`, e.g. https://www.ibm.com
 
 1.  Click **Add value** and repeat the process to add more entity values.
-
-1.  After you add the entity values, click ![Close arrow](images/close_arrow.png) to finish creating the entity.
-
-The entity you created is added, and the system begins to train itself on the new data.
 
 When you use pattern entities to find patterns in user input, you often need a way to store the part of the user input text that matches the pattern. To do so, you can use a context variable. For more information, see [Defining a context variable](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-context-var-define).
 
@@ -351,11 +347,11 @@ If you have an intent example with an annotation, and another word in that examp
 
     ![Visit examples intent](images/oe-counter1.png)
 
-1.  In the first example, you want to annotate the word `visit` as an entity value of the `@meeting` entity. This makes `visit` equivalent to other `@meeting` entity values such as `appointment`, as in "I'd like to make an appointment" or "I'd like to schedule a visit".
+1.  In the second occurrence of the word, you want to annotate the word `visit` as an entity value of the `@meeting` entity. This makes `visit` equivalent to other `@meeting` entity values such as `appointment`, as in *I'd like to make an appointment* or *I'd like to schedule a visit*.
 
     ![@meeting entity](images/oe-counter2.png)
 
-1.  For the second example, the word `visit` is being used in a different context than a meeting. In this case, you can select the word `appointment` from the intent example, and annotate it as an entity value of the `@meeting` entity. The model learns from the fact that the word `visit` in the same example is not annotated.
+1.  In the first occurrence, the word `visit` is being used as a verb. It has a different meaning from a meeting. In this case, you can select the word `appointment` from the intent example, and annotate it as an entity value of the `@meeting` entity. The model learns from the fact that the word `visit` in the same example is not annotated.
 
     ![Visit unselected](images/oe-counter3.png)
 
