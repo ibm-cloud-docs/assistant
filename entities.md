@@ -109,13 +109,13 @@ To learn more about contextual entities, [read this blog post ![External link ic
 
 Dictionary-based entites are those for which you define specific terms, synonyms, or patterns. At run time, your assistant finds entity mentions only when a term in the user input exactly matches (or closely matches if fuzzy matching is enabled) the value or one of its synonyms.
 
-1.  In the **Value name** field, type a value. For example, for the `@city` entity, you might type `Boston` as a value to represent the city of Boston, Massachusetts.
+1.  In the **Value name** field, type a value. For example, for the `@city` entity, you might type `New York City`.
 
     An entity value can be any string up to 64 characters in length.
 
     **Important:** Don't include sensitive or personal information in entity names or values. The names and values can be exposed in URLs in an app.
 
-1.  Add synonyms for the value. For example, you might add `Beantown` as a synonym for `Boston`.
+1.  Add synonyms for the value. For example, you might add `NYC` and `The Big Apple` as synonyms for `New York City`.
 
     A synonym can be any string up to 64 characters in length.
 
@@ -140,7 +140,7 @@ Dictionary-based entites are those for which you define specific terms, synonyms
 
        ![Synonym recommendation screen 3](images/synonym_3.png)
 
-    1. The {{site.data.keyword.conversationshort}} service adds those synonyms to your entity, and suggests additional synonyms.
+       The synonyms are added to your entity, and Watson suggests more synonyms.
 
        If you receive no additional synonym recommendations, it could be because your entity is already well defined, or it contains content that the recommender is not currently able to expand upon.
        {: tip}
@@ -158,7 +158,7 @@ Dictionary-based entites are those for which you define specific terms, synonyms
 
 1.  Click **Add value** and repeat the process to add more entity values.
 
-    If you are adding many values, one after another, press **Shit+Enter** to finish adding the current value, and keep focus in the value field so you can add the next value.
+    If you are adding many values, one after another, press **Shift+Enter** to finish adding the current value, and keep focus in the value field so you can add the next value.
     {: tip}
 
 1.  After you add the entity values, click ![Close arrow](images/close_arrow.png) to finish creating the entity.
@@ -229,9 +229,9 @@ For regular expressions, any part of a pattern inside a pair of normal parenthes
 - `(\d{3})` - Prefix
 - `(\d{4})` - Line number
 
-Grouping can be helpful if, for example, you wanted the {{site.data.keyword.conversationshort}} service to ask users for their phone number, and then use only the area code of their provided number in a response.
+Grouping can be helpful if, for example, you want your assistant to ask a user for a phone number, and then use only the area code of the provided number in a response.
 
-To assign the user-entered area code as a context variable, the following syntax can be used to capture the group match within the dialog node's response section:
+To assign the user-entered area code as a context variable, use the following syntax in the dialog node's response section to capture the group match:
 
 | Variable | Value |
 |----------|-------|
@@ -362,7 +362,7 @@ If you have an intent example with an annotation, and another word in that examp
 ## Enabling system entities
 {: #entities-enable-system-entities}
 
-The {{site.data.keyword.conversationshort}} service provides a number of *system entities*, which are common entities that you can use for any application. Enabling a system entity makes it possible to quickly populate your skill with training data that is common to many use cases.
+{{site.data.keyword.conversationshort}} provides a number of *system entities*, which are common entities that you can use for any application. Enabling a system entity makes it possible to quickly populate your skill with training data that is common to many use cases.
 
 System entities can be used to recognize a broad range of values for the object types they represent. For example, the `@sys-number` system entity matches any numerical value, including whole numbers, decimal fractions, or even numbers written out as words.
 
@@ -378,30 +378,30 @@ System entities are centrally maintained, so any updates are available automatic
 
 1.  Click the toggle switch next to a system entity to enable or disable it.
 
-After you enable system entities, the {{site.data.keyword.conversationshort}} service begins retraining. After training is complete, you can use the entities.
+After you enable system entities, {{site.data.keyword.conversationshort}} begins to retrain. After training is complete, you can use the entities.
 
 ## Entity limits
 {: #entities-limits}
 
 The number of entities, entity values, and synonyms that you can create depends on your {{site.data.keyword.conversationshort}} service plan:
 
-| Service plan      | Entities per skill | Entity values per skill | Entity synonyms per skill |
+| Plan      | Entities per skill | Entity values per skill | Entity synonyms per skill |
 |-------------------|-------------------:|------------------------:|--------------------------:|
 | Premium | 1,000 | 100,000 | 100,000 |
 | Plus | 1,000 | 100,000 |                   100,000 |
 | Standard | 1,000 | 100,000 | 100,000 |
 | Lite, Plus Trial | 25 | 100,000 | 100,000 |
-{: caption="Service plan details" caption-side="top"}
+{: caption="Plan details" caption-side="top"}
 
 System entities that you enable for use count toward your plan usage totals.
 
-| Service plan | Contextual entities and annotations |
+| Plan | Contextual entities and annotations |
 |--------------|------------------------------------:|
 | Premium      |        30 contextual entities with 3000 annotations |
 | Plus         |        20 contextual entities with 2000 annotations |
 | Standard     |        20 contextual entities with 2000 annotations |
 | Lite, Plus Trial |    10 contextual entities with 1000 annotations |
-{: caption="Service plan details continued" caption-side="top"}
+{: caption="Plan details continued" caption-side="top"}
 
 ## Editing entities
 {: #entities-edit}
