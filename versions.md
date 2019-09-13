@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-05"
+lastupdated: "2019-09-12"
 
 subcollection: assistant
 
@@ -55,6 +55,8 @@ To create a dialog skill version, follow these steps:
 1.  Click **Save**.
 
 A snapshot is taken of the current skill and saved as a new version. You remain in the development version of the skill. Any changes you make continue to be applied to the development version, not the version you saved. To access the version you saved, go to the **Versions** page.
+
+If you have trouble creating the version, check that your skill does not have any entities with large numbers of values (such as 10,000 or more synonyms for a single entity). If it does, try to break the entity into many, more categorized entities, or consider using a contextual entity instead.
 
 ## Deploying a skill version
 {: #versions-deploy}
