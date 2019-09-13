@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-06"
+lastupdated: "2019-09-13"
 
 keywords: entity, entity value, contextual entity, dictionary entity, pattern entity, entity synonym, annotate mentions
 
@@ -75,7 +75,7 @@ To learn more about contextual entities, [read this blog post ![External link ic
 ## Creating entities
 {: #entities-creating-task}
 
-1.  Open your dialog skill and then click the **Entities** tab. If **Entities** is not visible, use the ![Menu](images/Menu_16.png) menu to open the page.
+1.  Open your dialog skill and then click the **Entities** tab.
 
 1.  Click **Create entity**.
 
@@ -95,7 +95,7 @@ To learn more about contextual entities, [read this blog post ![External link ic
 
 1.  Click **Create entity**.
 
-    ![Screen capture of creating an entity](images/create_entity.png)
+    ![Screen capture of creating an entity](images/create-entity.png)
 
 1.  For this entity, choose whether you want your assistant to use a dictionary-based or annotation-based approach to find mentions of it, and then follow the appropriate procedure.
 
@@ -109,147 +109,154 @@ To learn more about contextual entities, [read this blog post ![External link ic
 
 Dictionary-based entites are those for which you define specific terms, synonyms, or patterns. At run time, your assistant finds entity mentions only when a term in the user input exactly matches (or closely matches if fuzzy matching is enabled) the value or one of its synonyms.
 
-1.  In the **Value name** field, type the text of a possible value for the entity and hit the `Enter` key. An entity value can be any string up to 64 characters in length.
+1.  In the **Value name** field, type a value. For example, for the `@city` entity, you might type `Boston` as a value to represent the city of Boston, Massachusetts.
+
+    An entity value can be any string up to 64 characters in length.
 
     **Important:** Don't include sensitive or personal information in entity names or values. The names and values can be exposed in URLs in an app.
 
-1.  If you want your assistant to recognize terms with syntax that is similar to the entity value and synonyms you specify, but without requiring an exact match, click the **Fuzzy Matching** toggle to turn it on.
+1.  Add synonyms for the value. For example, you might add `Beantown` as a synonym for `Boston`.
 
-    This feature is available for languages noted in the [Supported languages](/docs/services/assistant?topic=assistant-language-support) topic.
+    A synonym can be any string up to 64 characters in length.
 
-    **Fuzzy matching**
-    {: #entities-fuzzy-matching}
-
-    Fuzzy matching has these components:
-
-    - *Stemming* - The feature recognizes the stem form of entity values that have several grammatical forms. For example, the stem of 'bananas' would be 'banana', while the stem of 'running' would be 'run'.
-    - *Misspelling* - The feature is able to map user input to the appropriate corresponding entity despite the presence of misspellings or slight syntactical differences. For example, if you define *giraffe* as a synonym for an animal entity, and the user input contains the terms *giraffes* or *girafe*, the fuzzy match is able to map the term to the animal entity correctly.
-    - *Partial match* - With partial matching, the feature automatically suggests substring-based synonyms present in the user-defined entities, and assigns a lower confidence score as compared to the exact entity match.
-
-    For English, fuzzy matching prevents the capturing of some common, valid English words as fuzzy matches for a given entity. This feature uses standard English dictionary words. You can also define an English entity value/synonym, and fuzzy matching will match only your defined entity value/synonym. For example, fuzzy matching may match the term `unsure` with `insurance`; but if you have `unsure` defined as a value/synonym for an entity like `@option`, then `unsure` will always be matched to `@option`, and not to `insurance`.
-    {: note}
-
-    Your fuzzy matching setting has no impact on synonym recommendations. Even if fuzzy matching is enabled, synonyms are suggested for the exact value you specify only, not the value and slight variations of the value.
-
-1.  Once you have entered a value name, you can then add any synonyms, or define specific patterns, for that entity value by selecting either `Synonyms` or `Patterns` from the *Type* drop-down menu.
-
-    ![Type selector for Value](images/value_type.png)
+    If you want to define a pattern for your assistant to look for in user input, such as a product order number or email address, define a pattern value instead. See [Adding entities that recognize patterns](#entities-patterns) for more details.
 
     **Note:** You can add *either* synonyms or patterns for a single entity value, not both.
 
-    ***Synonyms***
-    {: #entities-synonyms}
+    Watson can also recommend synonyms for your entity values. The recommender finds related synonyms based on contextual similarity extracted from a vast body of existing information, including large sources of written text, and uses natural language processing techniques to identify words similar to the existing synonyms in your entity value.
 
-    - In the **Synonyms** field, type any synonym for the entity value. A synonym can be any string up to 64 characters in length.
+1.  To see synonym recommendations from Watson, click **Recommend synonyms**. Otherwise, skip this step.
 
-      ![Screen capture of defining an entity](images/define_entity.png)
+    Synonym recommendations are listed. The terms are displayed in lowercase, but your assistant recognizes mentions of the synonyms whether they are specified in lowercase or uppercase.
 
-      The {{site.data.keyword.conversationshort}} service can also recommend synonyms for your entity values. The recommender finds related synonyms based on contextual similarity extracted from a vast body of existing information, including large sources of written text, and uses natural language processing techniques to identify words similar to the existing synonyms in your entity value.
+    The more coherent your entity value synonyms are, the more relevant and better focused your recommendations will be. For example, if you have several words that are focused on a theme, you will get better suggestions than if you have one or two random words.
+    {: tip}
 
-    - Click **Show recommendations**.
+    ![Synonym recommendation screen 2](images/synonym_2.png)
 
-    - The {{site.data.keyword.conversationshort}} service will make several recommendations for synonyms. The terms are displayed in lowercase, but your assistant recognizes mentions of the synonyms whether they are specified in lowercase or uppercase.
+    1. Select any synonyms you want to include, and then click **Add selected**.
 
-      The more coherent your entity value synonyms are, the more relevant and better focused your recommendations will be. For example, if you have several words that are focused on a theme, you will get better suggestions than if you have one or two random words.
-      {: tip}
+       You must click the **Add selected** button for any synonyms you selected to be added. If you move to the next set without clicking this button first, your selections will be lost.
 
-      ![Synonym recommendation screen 2](images/synonym_2.png)
+       ![Synonym recommendation screen 3](images/synonym_3.png)
 
-    - Select any synonyms you want to include, and then click **Add selected**.
+    1. The {{site.data.keyword.conversationshort}} service adds those synonyms to your entity, and suggests additional synonyms.
 
-      You must click the **Add selected** button for any synonyms you selected to be added. If you move to the next set without clicking this button first, your selections are lost.
+       If you receive no additional synonym recommendations, it could be because your entity is already well defined, or it contains content that the recommender is not currently able to expand upon.
+       {: tip}
 
-      ![Synonym recommendation screen 3](images/synonym_3.png)
+       If you choose not to select a recommended synonym, the system will treat that as a term you are not interested in, and will alter the next set of recommendations you see when you press **Add selected** or **Next set**. This inference only persists while you are choosing synonyms; information about skipped synonyms is not used for any other purpose by your assistant.
+       {: note}
 
-    - The {{site.data.keyword.conversationshort}} service adds those synonyms to your entity, and suggests additional synonyms.
+       ![Synonym recommendation screen 4](images/synonym_4.png)
 
-      If you receive no additional synonym recommendations, it could be because your entity is already well defined, or it contains content that the recommender is not currently able to expand upon.
-      {: tip}
+    1. Continue adding synonyms as desired. When you're finished accepting recommendations, click the **X** to close the recommendations panel.
 
-      If you choose not to select a recommended synonym, the system will treat that as a term you are not interested in, and will alter the next set of recommendations you see when you press `Add selected` or `Next set`. This inference only persists while you are choosing synonyms; information about skipped synonyms is not used for any other purpose by your assistant.
-      {: note}
+1.  If you want your assistant to recognize terms with syntax that is similar to the entity value and synonyms you specify, but without requiring an exact match, click the **Fuzzy Matching** toggle to turn it on. 
 
-      ![Synonym recommendation screen 4](images/synonym_4.png)
-
-      Continue adding synonyms as desired. When you're finished accepting recommendations, click the **X** to close.
-
-    ***Patterns***
-    {: #entities-patterns}
-
-    - The **Patterns** field lets you define specific patterns for an entity value. A pattern **must** be entered as a regular expression in the field.
-
-      - For each entity value, there can be a maximum of up to 5 patterns.
-      - Each pattern (regular expression) is limited to 512 characters.
-
-      ![Screen capture of defining a pattern entity](images/patternents1.png)
-      {: #entities-pattern-entities}
-
-      As in this example, for entity *ContactInfo*, the patterns for phone, email, and website values can be defined as follows:
-      - Phone
-        - `localPhone`: `(\d{3})-(\d{4})`, e.g. 426-4968
-        - `fullUSphone`: `(\d{3})-(\d{3})-(\d{4})`, e.g. 800-426-4968
-        - `internationalPhone`: `^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$`, e.g., +44 1962 815000
-      - `email`: `\b[A-Za-z0-9._%+-]+@([A-Za-z0-9-]+\.)+[A-Za-z]{2,}\b`, e.g. name@ibm.com
-      - `website`: `(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$`, e.g. https://www.ibm.com
-
-      Often when using pattern entities, it will be necessary to store the text that matches the pattern in a context variable (or action variable), from within your dialog tree. For additional information, see [Defining a context variable](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-context-var-define).
-
-      Imagine a case where you are asking a user for their email address. The dialog node condition will contain a condition similar to `@contactInfo:email`. In order to assign the user-entered email as a context variable, the following syntax can be used to capture the pattern match within the dialog node's response section:
-
-      <table>
-      <caption>Saving a pattern</caption>
-        <tr>
-          <th>Variable</th>
-          <th>Value</th>
-        </tr>
-        <tr>
-          <td>email</td>
-          <td>`<? @contactInfo.literal ?>`</td>
-        </tr>
-      </table>
-
-      ***Capture groups***
-      {: #entities-capture-group}
-
-      For regular expressions, any part of a pattern inside a pair of normal parentheses will be captured as a group. For example, the entity `@ContactInfo` has a pattern value named `fullUSphone` that contains three captured groups:
-
-      - `(\d{3})` - US area code
-      - `(\d{3})` - Prefix
-      - `(\d{4})` - Line number
-
-      Grouping can be helpful if, for example, you wanted the {{site.data.keyword.conversationshort}} service to ask users for their phone number, and then use only the area code of their provided number in a response.
-
-      In order to assign the user-entered area code as a context variable, the following syntax can be used to capture the group match within the dialog node's response section:
-
-      <table>
-      <caption>Saving a capture group</caption>
-        <tr>
-          <th>Variable</th>
-          <th>Value</th>
-        </tr>
-        <tr>
-          <td>area_code</td>
-          <td>`<? @ContactInfo.groups[1] ?>`</td>
-        </tr>
-      </table>
-
-      For additional information about using capture groups in your dialog, see [Storing and recognizing entity pattern groups in input](/docs/services/assistant?topic=assistant-dialog-tips#dialog-tips-get-pattern-groups).
-
-      The pattern matching engine employed by the {{site.data.keyword.conversationshort}} service has some syntax limitations, which are necessary in order to avoid performance concerns which can occur when using other regular expression engines.
-
-      - Entity patterns may not contain:
-        - Positive repetitions (for example `x*+`)
-        - Backreferences (for example `\g1`)
-        - Conditional branches (for example `(?(cond)true)`)
-      - When a pattern entity starts or ends with a Unicode character, and includes word boundaries, for example `\bš\b`, the pattern match does not match the word boundary correctly. In this example, for input `š zkouška`, the match returns `Group 0: 6-7 š` (`š zkou`_**`š`**_`ka`), instead of the correct `Group 0: 0-1 š` (_**`š`**_ `zkouška`).
-
-      The regular expression engine is loosely based on the Java regular expression engine. The {{site.data.keyword.conversationshort}} service will produce an error if you try to upload an unsupported pattern, either via the API or from within the {{site.data.keyword.conversationshort}} user interface.
+    For example, if you add `apple` as a value for a `@fruit` entity, and a user enters `apples` or `appel`, if fuzzy matching is enabled, your assistant will recognize the word as a `@fruit` mention. For more information, see [How fuzzy matching works](#entities-fuzzy-matching).
 
 1.  Click **Add value** and repeat the process to add more entity values.
 
-1.  When you are finished adding entity values, click ![Close arrow](images/close_arrow.png) to finish creating the entity.
+    If you are adding many values, one after another, press **Shit+Enter** to finish adding the current value, and keep focus in the value field so you can add the next value.
+    {: tip}
 
-The entity you created is added to the **Entities** tab, and the system begins to train itself on the new data.
+1.  After you add the entity values, click ![Close arrow](images/close_arrow.png) to finish creating the entity.
+
+The entity you created is added, and the system begins to train itself on the new data.
+
+### Adding entities that recognize patterns
+{: #entities-patterns}
+
+You can create an entity that looks for patterns in user input. For example, you can look for mentions of an email address by looking for occurrences of the pattern `{word}+@+{word}+.com`. Or, you might have product order numbers that follow a very specific format, such as `TWEX3433JKL`. You can create a pattern to look for strings with that syntax in the user utterance.
+
+To add an entity that recognizes a pattern:
+
+1.  Follow the standard procedure to create a dictionary-based entity, but select **Patterns** from the *Type* drop-down menu instead of *Synonyms*.
+
+    ![Screen capture of defining an entity](images/define-entity.png)
+
+1.  Add a regular expression that defines the pattern you want to look for.
+
+    - For each entity value, there can be a maximum of up to 5 patterns.
+    - Each pattern (regular expression) is limited to 512 characters.
+
+    ![Screen capture of defining a pattern entity](images/patternents1.png)
+    {: #entities-pattern-entities}
+
+    Follow these syntax rules:
+
+    - Entity patterns may not contain:
+      - Positive repetitions (for example `x*+`)
+      - Backreferences (for example `\g1`)
+      - Conditional branches (for example `(?(cond)true)`)
+    - When a pattern entity starts or ends with a Unicode character, and includes word boundaries, for example `\bš\b`, the pattern match does not match the word boundary correctly. In this example, for input `š zkouška`, the match returns `Group 0: 6-7 š` (`š zkou`_**`š`**_`ka`), instead of the correct `Group 0: 0-1 š` (_**`š`**_ `zkouška`).
+
+      The regular expression engine is loosely based on the Java regular expression engine. You will see an error if you try to upload an unsupported pattern, either by using the API or from within the {{site.data.keyword.conversationshort}} user interface.
+
+    For example, for entity *ContactInfo*, the patterns for phone, email, and website values can be defined as follows:
+    
+    - Phone
+      - `localPhone`: `(\d{3})-(\d{4})`, e.g. 426-4968
+      - `fullUSphone`: `(\d{3})-(\d{3})-(\d{4})`, e.g. 800-426-4968
+      - `internationalPhone`: `^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$`, e.g., +44 1962 815000
+    - `email`: `\b[A-Za-z0-9._%+-]+@([A-Za-z0-9-]+\.)+[A-Za-z]{2,}\b`, e.g. name@ibm.com
+    - `website`: `(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$`, e.g. https://www.ibm.com
+
+1.  Click **Add value** and repeat the process to add more entity values.
+
+1.  After you add the entity values, click ![Close arrow](images/close_arrow.png) to finish creating the entity.
+
+The entity you created is added, and the system begins to train itself on the new data.
+
+When you use pattern entities to find patterns in user input, you often need a way to store the part of the user input text that matches the pattern. To do so, you can use a context variable. For more information, see [Defining a context variable](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-context-var-define).
+
+For example, your dialog might ask users for their email addresses. The dialog node condition will contain a condition similar to `@contactInfo:email`. You can use the following syntax in the dialog node's response section to define a context variable that captures and stores the user's email address text:
+
+| Variable | Value |
+|----------|-------|
+| email    | `<? @contactInfo.literal ?>` |
+{: caption="Saving a pattern" caption-side="top"}
+
+This syntax indicates that you want to find the part of the user input that matches the email pattern and save that subset of text into a context variable named `email`. 
+
+#### Capture groups
+{: #entities-capture-group}
+
+For regular expressions, any part of a pattern inside a pair of normal parentheses will be captured as a group. For example, the entity `@ContactInfo` has a pattern value named `fullUSphone` that contains three captured groups:
+
+- `(\d{3})` - US area code
+- `(\d{3})` - Prefix
+- `(\d{4})` - Line number
+
+Grouping can be helpful if, for example, you wanted the {{site.data.keyword.conversationshort}} service to ask users for their phone number, and then use only the area code of their provided number in a response.
+
+To assign the user-entered area code as a context variable, the following syntax can be used to capture the group match within the dialog node's response section:
+
+| Variable | Value |
+|----------|-------|
+| area_code | `<? @ContactInfo.groups[1] ?>` |
+{: caption="Saving a capture group" caption-side="top"}
+
+For more information about using capture groups in your dialog, see [Storing and recognizing entity pattern groups in input](/docs/services/assistant?topic=assistant-dialog-tips#dialog-tips-get-pattern-groups).
+
+### How fuzzy matching works
+{: #entities-fuzzy-matching}
+
+Fuzzy matching is available for languages noted in the [Supported languages](/docs/services/assistant?topic=assistant-language-support) topic.
+
+Fuzzy matching has these components:
+
+- *Stemming* - The feature recognizes the stem form of entity values that have several grammatical forms. For example, the stem of 'bananas' would be 'banana', while the stem of 'running' would be 'run'.
+- *Misspelling* - The feature is able to map user input to the appropriate corresponding entity despite the presence of misspellings or slight syntactical differences. For example, if you define *giraffe* as a synonym for an animal entity, and the user input contains the terms *giraffes* or *girafe*, the fuzzy match is able to map the term to the animal entity correctly.
+- *Partial match* - With partial matching, the feature automatically suggests substring-based synonyms present in the user-defined entities, and assigns a lower confidence score as compared to the exact entity match.
+
+For English, fuzzy matching prevents the capturing of some common, valid English words as fuzzy matches for a given entity. This feature uses standard English dictionary words. You can also define an English entity value/synonym, and fuzzy matching will match only your defined entity value/synonym. For example, fuzzy matching may match the term `unsure` with `insurance`; but if you have `unsure` defined as a value/synonym for an entity like `@option`, then `unsure` will always be matched to `@option`, and not to `insurance`.
+{: note}
+
+Your fuzzy matching setting has no impact on synonym recommendations. Even if fuzzy matching is enabled, synonyms are suggested for the exact value you specify only, not the value and slight variations of the value.
+
+To understand how fuzzy matching and autocorrection are related to one another, see the [autocorrection documentation](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check-vs-fuzzy-matching).
 
 ## Adding contextual entities
 {: #entities-create-annotation-based}
@@ -265,63 +272,64 @@ Using an intent's user examples to define contextual entities does not affect th
 
 1.  Click an intent to open it.
 
-    For this example, the intent `#place_order` defines the order function for an online retailer.
+    For this example, the intent `#buy_supplies` defines the order function for an online retailer.
 
-    ![Select #place_order intent](images/oe-intent.png)
+    ![Select the #buy_supplies intent](images/oe-intent.png)
 
-1.  Review the intent examples for potential entity mentions. Highlight a potential entity mention from the intent examples.
+1.  Click **Annotate entities**, and then review the intent examples for potential entity mentions. 
 
-    In this example, `computer` is the entity mention.
+    ![Shows the Annotate entities toggle](images/oe-annotate.png)
 
-    ![Review intent examples](images/oe-intent-review.png)
+1.  Click any word, words, or punctuation that is part of a single entity mention from the intent examples.
 
-    The Edit icon ![Edit icon](images/oe-intent-edit.png) is used to edit an intent user example; it is not related to adding annotations.
-    {: tip}
+    In this example, `mobile phones` is the entity mention.
 
-1.  A Search box opens that you can use to search for the entity that the highlighted word or phrase is a mention of.
+    ![Review intent examples](images/oe-click-tokens.png)
 
-    ![Search box initial state](images/oe-intent-search1.png)
+    A Search box opens that you can use to search for the entity that the highlighted word or phrase is a mention of.
 
-    In this example, searching `prod` brings up matches for the `@product` entity.
+    ![Search box with search parameter prod](images/oe-tokens-clicked.png)
 
-    ![Search box with search parameter prod](images/oe-intent-search2.png)
+1.  Enter the entity name to search for. You do not need to include the starting `@` symbol. 
 
-    If the entity has any existing entity values, they are displayed for informational purposes only. You are adding the annotation to the entity, not to any specific entity value.
+    Do one of the following things:
 
-    If you want to teach the model that the mention is synonymous with an existing entity value, you can associate it with a specific entity value.
-    {: important}
+    - If the entity has any existing entity values, they are displayed for informational purposes only. You are adding the annotation to the entity, not to any specific entity value.
 
-    To associate the mention with a specific entity value, follow these steps:
+    - If you want to teach the model that the mention is synonymous with an existing entity value, add a colon (`:`) after the entity name to show a list of entity values. Choose an entity value from the list that is displayed. For example, `@product:device`.
 
-    1.  Type the full entity name and value into the search field. For example, type `@product:IT`.
-    1.  When the entity value is displayed in the drop-down menu, select it.
+      ![Search box with search parameter prod](images/oe-intent-review.png)
 
-1.  Select the entity to which you want to add the annotation.
+1.  Select the entity or entity and value to which you want to add the annotation.
 
-    In this example, `computer` is being added as an annotation for the `@product` entity.
+    In this example, `mobile phones` is being added as an annotation for the `@product` entity value and as a synonym for the `@product:device` entity value.
 
     Create *at least* 10 annotations for each contextual entity; more annotations are recommended for production use.
     {: important}
 
-1.  If none of the entities are appropriate, you can create a new entity by choosing **@(create new entity)**.
+1.  If none of the entities are appropriate, you can create a new entity by adding its name. Then choose the **{entity_name}(create new entity)** option from the list.
+
+    ![Shows how to add a new @location entity from annotation page](images/oe-add-entity.png)
 
 1.  Repeat this process for each entity mention that you want to annotate.
 
     Be sure to annotate every mention of an entity type that occurs in any user examples that you edit. See [What you don't annotate matters](#entities-counter-examples) for more details.
     {: important}
 
-1.  Now, click the annotation you just created. A box opens that says, `Go to: <entity-name>`. Clicking that link takes you directly to the entity.
+1.  Now, click the annotation you just created. A box is displayed that says, `Go to: {entity-name}`. Clicking that link takes you directly to the entity.
 
-    ![Verify value computer for product entity](images/oe-verify-value.png)
+    ![Verify value computer for product entity](images/oe-go-to-entity.png)
 
     The annotation is added to the entity you associated it with, and the system begins to train itself on the new data.
 
     The term you annotated is added to the entity as a new dictionary value. If you associated the annotated term with an existing entity value, then the term is added as a synonym of that entity value instead of as an independent entity value.
     {: important}
 
+    ![Shows mobile phones was added as a synonym for device value](images/oe-phones-added.png)
+
 1.  To see all of the mentions you annotated for a particular entity, from the entity's configuration page, click the **Annotation** tab.
 
-    ![Annotation view selector highlighted](images/oe-annotate2.png)
+    ![Annotation view selector highlighted](images/oe-annotated.png)
 
     Contextual entities understand values that you have not explicitly defined. The system makes predictions about additional entity values based on how your user examples are annotated, and uses those values to train other entities. Any similar user examples are added to the *Annotation* view, so you can see how this option impacts training.
     {: note}
@@ -341,15 +349,15 @@ If you have an intent example with an annotation, and another word in that examp
 
 1.  The `#Customer_Care_Appointments` intent includes two intent examples with the word `visit`.
 
-    ![Visit examples intent](images/oe-counter-1.png)
+    ![Visit examples intent](images/oe-counter1.png)
 
 1.  In the first example, you want to annotate the word `visit` as an entity value of the `@meeting` entity. This makes `visit` equivalent to other `@meeting` entity values such as `appointment`, as in "I'd like to make an appointment" or "I'd like to schedule a visit".
 
-    ![@meeting entity](images/oe-counter-2.png)
+    ![@meeting entity](images/oe-counter2.png)
 
 1.  For the second example, the word `visit` is being used in a different context than a meeting. In this case, you can select the word `appointment` from the intent example, and annotate it as an entity value of the `@meeting` entity. The model learns from the fact that the word `visit` in the same example is not annotated.
 
-    ![Visit unselected](images/oe-counter-3.png)
+    ![Visit unselected](images/oe-counter3.png)
 
 ## Enabling system entities
 {: #entities-enable-system-entities}
@@ -362,7 +370,7 @@ System entities are centrally maintained, so any updates are available automatic
 
 1.  On the Entities page, click **System entities**.
 
-    ![Screen capture of "System entities" tab](images/system_entities_1.png)
+    ![Screen capture of "System entities" tab](images/system-entities1.png)
 
 1.  Browse through the list of system entities to choose the ones that are useful for your application.
     - To see more information about a system entity, including examples of matching input, click the entity in the list.
@@ -431,9 +439,9 @@ You can export a number of entities to a CSV file, so you can then import and re
 - Pattern information is included in the CSV export. Any string wrapped with `/` will be considered a pattern (as opposed to a synonym).
 - Annotations associated with contexual entities are not exported. You must export the entire dialog skill to capture both the entity value and any associated annotations.
 
-1.  Select the entities you want, then click **Export**.
+1.  Select the entities you want, then click the export icon.
 
-    ![Export entity button](images/ExportEntity.png)
+    ![Export entity button](images/export-entity.png)
 
 ## Importing entities
 {: #entities-import}
@@ -482,7 +490,11 @@ Entity annotations are not included in the import of an entity CSV file. You mus
     Save the CSV file with UTF-8 encoding and no byte order mark (BOM). The maximum CSV file size is 10MB. If your CSV file is larger, consider splitting it into multiple files and importing them separately.  Open your dialog skill and then click the **Entities** tab.
     {: tip}
 
-1.  Click ![Import](images/importGA.png) and then drag a file, or browse to select a file from your computer. The file is validated and imported, and the system begins to train itself on the new data.
+1.  Click the import icon.
+
+    ![Import](images/import-entity.png)
+
+1.  Drag a file, or browse to select a file from your computer. The file is validated and imported, and the system begins to train itself on the new data.
 
 You can view the imported entities on the Entities tab. You might need to refresh the page to see the new entities.
 
@@ -493,6 +505,6 @@ You can select a number of entities for deletion.
 
 **IMPORTANT**: By deleting entities you are also deleting all associated values, synonyms, or patterns, and these items cannot be retrieved later. All dialog nodes that reference these entities or values must be updated manually to no longer reference the deleted content.
 
-1.  Select the entities you want to delete, then click **Delete**.
+1.  Select the entities you want to delete, then click the delete icon.
 
-    ![Delete entity button](images/DeleteEntity.png)
+    ![Delete entity button](images/delete-entity.png)

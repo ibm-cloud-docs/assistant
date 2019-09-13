@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-09"
+lastupdated: "2019-09-13"
 
 subcollection: assistant
 
@@ -52,6 +52,17 @@ Existing models that you have trained will not be immediately impacted, but expi
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
 The following new features and changes to {{site.data.keyword.conversationshort}} are available. Check out our [blog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/assistant/home) to find in-depth information about how the newest features can benefit your business.
+
+## 13 September 2019 
+{: #13September2019}
+<!--1.76-->
+
+The following updates are available in all locations except Dallas currently.
+{: important}
+
+- **Improved Entities and Intents page responsiveness**: The Entities and Intents pages were updated to use a new JavaScript library that increases the page responsiveness. As a result, the look of some graphical user interface elements, such as buttons, changed slightly, but the function did not.
+
+- **Creating contextual entities got easier**: The process you use to annotate entity mentions from intent user examples was improved. You can now put the intent page into annotation mode to more easily select and label mentions.
 
 ## 6 September 2019
 {: #6September2019}
