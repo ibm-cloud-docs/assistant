@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-09-18"
 
 subcollection: assistant
 
@@ -41,7 +41,6 @@ The following tables list the methods that are available using the {{site.data.k
 | **Create a session** | Create a new session. A session is used to send user input to a skill and receive responses. It also maintains the state of the conversation. | v2 | [cURL](https://{DomainName}/apidocs/assistant-v2#create-a-session){: new_window} [node](https://{DomainName}/apidocs/assistant-v2?language=node#create-a-session){: new_window} [java](https://{DomainName}/apidocs/assistant-v2?language=java#create-a-session){: new_window} [python](https://{DomainName}/apidocs/assistant-v2?language=python#create-a-session){: new_window} |
 | **Delete session** | Deletes a session explicitly before it times out. | v2 | [cURL](https://{DomainName}/apidocs/assistant-v2#delete-session){: new_window} [node](https://{DomainName}/apidocs/assistant-v2?language=node#delete-session){: new_window} [java](https://{DomainName}/apidocs/assistant-v2?language=java#delete-session){: new_window} [python](https://{DomainName}/apidocs/assistant-v2?language=python#delete-session){: new_window} |
 | **Send user input to assistant** | Send user input to an assistant and receive a response. | v2 | [cURL](https://{DomainName}/apidocs/assistant-v2#send-user-input-to-assistant){: new_window} [node](https://{DomainName}/apidocs/assistant-v2?language=node#send-user-input-to-assistant){: new_window} [java](https://{DomainName}/apidocs/assistant-v2?language=java#send-user-input-to-assistant){: new_window} [python](https://{DomainName}/apidocs/assistant-v2?language=python#send-user-input-to-assistant){: new_window} |
-| **Get response to user input** | Send user input to a workspace and receive a response. | v1 | [cURL](https://{DomainName}/apidocs/assistant#get-response-to-user-input){: new_window} [node](https://{DomainName}/apidocs/assistant?language=node#get-response-to-user-input){: new_window} [java](https://{DomainName}/apidocs/assistant?language=java#get-response-to-user-input){: new_window} [python](https://{DomainName}/apidocs/assistant?language=python#get-response-to-user-input){: new_window} |
 
 ## Authoring methods
 {: #api-methods-authoring}

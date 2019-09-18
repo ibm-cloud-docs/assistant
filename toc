@@ -98,8 +98,7 @@ Watson Assistant
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    [v2 API reference](https://cloud.ibm.com/apidocs/assistant-v2)
-    [v1 API reference](https://cloud.ibm.com/apidocs/assistant)
+    [API reference](https://cloud.ibm.com/apidocs/assistant-v2)
     dialog-methods.md
     expression-language.md
     filter-reference.md
