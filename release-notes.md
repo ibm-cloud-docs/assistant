@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-17"
+lastupdated: "2019-09-18"
 
 subcollection: assistant
 
@@ -525,7 +525,7 @@ The following updates are available in all locations except Dallas currently.
 
 - **New API version**: The current API version is now `2018-02-16`. This version introduces the following changes:
 
-  - A new `include_audit` parameter is now supported on most GET requests. This is an optional boolean parameter that specifies whether the response should include the audit properties (`created` and `updated` timestamps). The default value is `false`. (If you are using an API version earlier than `2018-02-16`, the default value is `true`.) For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant){: new_window}.
+  - A new `include_audit` parameter is now supported on most GET requests. This is an optional boolean parameter that specifies whether the response should include the audit properties (`created` and `updated` timestamps). The default value is `false`. (If you are using an API version earlier than `2018-02-16`, the default value is `true`.) For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant-v1){: new_window}.
 
   - Responses from API calls using the new version include only properties with non-`null` values.
 
@@ -543,8 +543,8 @@ The following updates are available in all locations except Dallas currently.
 {: #29January2018}
 
 - The {{site.data.keyword.conversationshort}} REST API now supports new request parameters:
-  - Use the `append` parameter when updating a workspace to indicate whether the new workspace data should be added to the existing data, rather than replacing it. For more information, see [Update workspace ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant?curl=#update-workspace){: new_window}.
-  - Use the `nodes_visited_details` parameter when sending a message to indicate whether the response should include additional diagnostic information about the nodes that were visited during processing of the message. For more information, see [Send message ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant?curl=#get-response-to-user-input){: new_window}.
+  - Use the `append` parameter when updating a workspace to indicate whether the new workspace data should be added to the existing data, rather than replacing it. For more information, see [Update workspace ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant-v1?curl=#update-workspace){: new_window}.
+  - Use the `nodes_visited_details` parameter when sending a message to indicate whether the response should include additional diagnostic information about the nodes that were visited during processing of the message. For more information, see [Send message ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant-v1?curl=#get-response-to-user-input){: new_window}.
 
 ## 23 January 2018
 {: #23January2018}
@@ -674,7 +674,7 @@ The following updates are available in all locations except Dallas currently.
 
   **Note:** Accent normalization is enabled for Portuguese, Spanish, French, and Czech.
 
-- **Workspace opt-out flag**: The {{site.data.keyword.conversationshort}} REST API now supports an opt-out flag for workspaces. This flag indicates that workspace training data such as intents and entities are not to be used by IBM for general service improvements. For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant?curl=#data-collection){: new_window}
+- **Workspace opt-out flag**: The {{site.data.keyword.conversationshort}} REST API now supports an opt-out flag for workspaces. This flag indicates that workspace training data such as intents and entities are not to be used by IBM for general service improvements. For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant-v1?curl=#data-collection){: new_window}
 
 ## 7 August 2017
 {: #7August2017}
@@ -696,7 +696,7 @@ The following updates are available in all locations except Dallas currently.
 ## 19 July 2017
 {: #19July2017}
 
-- The {{site.data.keyword.conversationshort}} REST API now supports access to dialog nodes. For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant?curl=#list-dialog-nodes){: new_window}.
+- The {{site.data.keyword.conversationshort}} REST API now supports access to dialog nodes. For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant-v1?curl=#list-dialog-nodes){: new_window}.
 
 ## 14 July 2017
 {: #14July2017}
@@ -810,7 +810,7 @@ The following updates are available in all locations except Dallas currently.
     - entity value synonyms
     - logs
 
-    For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant){: new_window}.
+    For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant-v1){: new_window}.
 - The behavior of the /messages `POST` method has changed the handling of entities and intents specified as part of the message input:
     - If you specify intents on input, your assistant uses the intents you specify, but uses natural language processing to detect entities in the user input.
     - If you specify entities on input, your assistant uses the entities you specify, but uses natural language processing to detect intents in the user input.
@@ -829,7 +829,7 @@ The {{site.data.keyword.conversationshort}} REST API now supports access to the 
 - examples
 - counterexamples
 
-For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant){: new_window}.
+For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant-v1){: new_window}.
 
 ## 7 March 2017
 {: #7March2017}

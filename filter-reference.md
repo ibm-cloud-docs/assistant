@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-29"
+lastupdated: "2019-09-18"
 
 subcollection: assistant
 
@@ -31,7 +31,7 @@ The `filter` parameter is a cacheable query that limits the results to those mat
 
 To see examples of filter queries, see [Examples](#filter-reference-examples).
 
-For more information about the /logs `GET` method and its response model, refer to the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant?curl=#list-log-events-in-a-workspace){: new_window}.
+For more information about the /logs `GET` method and its response model, refer to the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant-v1?curl=#list-log-events-in-a-workspace){: new_window}.
 
 ## Filter query syntax
 {: #filter-reference-syntax}

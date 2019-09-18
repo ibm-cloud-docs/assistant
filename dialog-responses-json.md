@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-11"
+lastupdated: "2019-09-18"
 
 subcollection: assistant
 
@@ -174,7 +174,7 @@ Displays a set of buttons or a drop-down list users can use to choose an option.
 This example displays two options:
 
 - Option 1 (labeled `Buy something`) sends a simple string message (`Place order`), which is sent to the workspace as the input text.
-- Option 2 (labeled `Exit`) sends a complex message that includes both input text and an array of intents. The response can include any field that is a valid part of a {{site.data.keyword.conversationshort}} message. (For more information about the structure of message input, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant?curl=#get-response-to-user-input){: new_window}.)
+- Option 2 (labeled `Exit`) sends a complex message that includes both input text and an array of intents. The response can include any field that is a valid part of a {{site.data.keyword.conversationshort}} message. (For more information about the structure of message input, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant-v2?curl=#get-response-to-user-input){: new_window}.)
 
 ```json
 {
