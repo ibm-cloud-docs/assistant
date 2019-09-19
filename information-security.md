@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-09-18"
 
 subcollection: assistant
 
@@ -119,6 +119,6 @@ curl -X DELETE -u "apikey:3Df... ...Y7Pc9"
 
 An empty JSON object `{}` is returned.
 
-For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant?curl=#delete-labeled-data).
+For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant-v1?curl=#delete-labeled-data).
 
 **Note:** Delete requests are processed in batches and may take up to 24 hours to complete.

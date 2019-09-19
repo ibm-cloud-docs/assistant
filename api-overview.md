@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-16"
+lastupdated: "2019-09-18"
 
 subcollection: assistant
 
@@ -50,7 +50,7 @@ For details about the v2 API, see the {{site.data.keyword.conversationshort}} [v
 
 ## Authoring applications
 
-The v1 API provides methods that enable an application to create or modify dialog skills, as an alternative to building a skill graphically using the {{site.data.keyword.conversationshort}} user interface. An authoring application uses the API to create and modify skills, intents, entities, dialog nodes, and other artifacts that make up a dialog skill. For more information, see the [v1 API Reference ![External link icon](../../icons/launch-glyph.svg "External linkicon")](https://{DomainName}/apidocs/assistant){: new_window}.
+The v1 API provides methods that enable an application to create or modify dialog skills, as an alternative to building a skill graphically using the {{site.data.keyword.conversationshort}} user interface. An authoring application uses the API to create and modify skills, intents, entities, dialog nodes, and other artifacts that make up a dialog skill. For more information, see the [v1 API Reference ![External link icon](../../icons/launch-glyph.svg "External linkicon")](https://{DomainName}/apidocs/assistant-v1){: new_window}.
 
   **Note:** The v1 authoring methods create and modify workspaces rather than skills. A workspace is a container for the dialog and training data (such as intents and entities) within a dialog skill. If you create a new workspace using the API, it will appear as a new dialog skill in the {{site.data.keyword.conversationshort}} user interface.
 
