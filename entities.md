@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-17"
+lastupdated: "2019-09-179"
 
 keywords: entity, entity value, contextual entity, dictionary entity, pattern entity, entity synonym, annotate mentions
 
@@ -336,7 +336,10 @@ The following video demonstrates how to annotate entity mentions.
 
 <iframe class="embed-responsive-item" id="youtubeplayer0" title="Annotating entity mentions" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/3WjzJpLsnhQ" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
-To walk through a tutorial that shows you how to define contextual entities before you add your own, go to [Tutorial: Defining contextual entities ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/garage/demo/try-watson-assistant-contextual-entities){: new_window}.
+**Tutorial**: To walk through a tutorial that shows you how to define contextual entities before you add your own, go to [Tutorial: Defining contextual entities ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/garage/demo/try-watson-assistant-contextual-entities){: new_window}.
+
+The contextual entities tutorial shows a slightly older veresion of the user interface. But, the concepts it covers are the same, so it is still a worthwhile exercise.
+{: note}
 
 ### What you don't annotate matters
 {: #entities-counter-examples}
