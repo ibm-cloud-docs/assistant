@@ -338,7 +338,7 @@ The following video demonstrates how to annotate entity mentions.
 
 **Tutorial**: To walk through a tutorial that shows you how to define contextual entities before you add your own, go to [Tutorial: Defining contextual entities ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/garage/demo/try-watson-assistant-contextual-entities){: new_window}.
 
-The contextual entities tutorial shows a slightly older veresion of the user interface. But, the concepts it covers are the same, so it is still a worthwhile exercise.
+The contextual entities tutorial shows a slightly older veresion of the user interface. But the concepts it covers are the same, so it is still a worthwhile exercise.
 {: note}
 
 ### What you don't annotate matters
