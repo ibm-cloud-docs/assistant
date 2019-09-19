@@ -85,7 +85,6 @@ If your application is still using the older [v1 runtime API ![External link ico
 }
 ```
 {: codeblock}
-{:note}
 
 ## Associating message data with a user for deletion
 {: #logs-resources-customer_id}
