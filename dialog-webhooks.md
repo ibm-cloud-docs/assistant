@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-09"
+lastupdated: "2019-09-17"
 
 ---
 
@@ -185,40 +185,47 @@ To use a webhook from a dialog node, you must enable webhooks on the node, and t
 
 1.  In the conditional responses section, two response conditions are added automatically, one response to show when the webhook callout is successful and a return variable is sent back. And one response to show when the callout fails. You can edit these responses, and add more conditional responses to the node.
 
-    If the callout returns a response, and you know the format of the JSON response, then you can edit the dialog node response to include only the section of the response that you want to share with users. 
+    - If the callout returns a response, and you know the format of the JSON response, then you can edit the dialog node response to include only the section of the response that you want to share with users. 
     
-    For example, the Language Translator service returns an object like this:
+      For example, the Language Translator service returns an object like this:
     
-    ```json
-       {
-       "translations":[
-          {"translation":"¿Cómo estás?"}
-       ],
-       "word_count":3,
-       "character_count":12
-       }
-    ```
-    {: codeblock}
+      ```json
+         {
+         "translations":[
+            {"translation":"¿Cómo estás?"}
+         ],
+         "word_count":3,
+         "character_count":12
+         }
+      ```
+      {: codeblock}
     
-    Use a SpEL expression that extracts only the translated text value.
+      Use a SpEL expression that extracts only the translated text value.
 
-    <table>
-    <caption>Conditional responses example</caption>
-      <tr>
-        <th>Condition</th>
-        <th>Response</th>
-      </tr>
-      <tr>
-        <td>$webhook_result_1</td>
-        <td>Your words in Spanish: <? $webhook_result_1.translations[0].translation ?>.</td>
-      </tr>
-      <tr>
-        <td>anything_else</td>
-        <td>The call to the external application failed. Please try again later.</td>
-      </tr>
-    </table>
+      <table>
+      <caption>Conditional responses example</caption>
+        <tr>
+          <th>Condition</th>
+          <th>Response</th>
+        </tr>
+        <tr>
+          <td>$webhook_result_1</td>
+          <td>Your words in Spanish: <? $webhook_result_1.translations[0].translation ?>.</td>
+        </tr>
+        <tr>
+          <td>anything_else</td>
+          <td>The call to the external application failed. Please try again later.</td>
+        </tr>
+      </table>
 
-    If you use the recommended format for the response and the translation response shown earlier is returned, the assistant's response to the user would be: `Your words in Spanish: ¿Cómo estás?`
+      If you use the recommended format for the response and the translation response shown earlier is returned, the assistant's response to the user would be: `Your words in Spanish: ¿Cómo estás?`
+
+    - If you want to provide a specific response if the callout returns an empty string, meaning the call is successful, but the value returned is an empty string, you can add a conditional response that has a condition with syntax like this:
+
+      ```
+      $webhook_result_1.size() == 0
+      ```
+      {: codeblock}
 
 1.  When you are done, click the X to close the node. Your changes are automatically saved.
 
