@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-15"
+lastupdated: "2019-09-20"
 
 subcollection: assistant
 
@@ -37,12 +37,10 @@ When you participate in the early access program, IBM gives you early access to 
 
 Zendesk has partnered with IBM to add a new agent to the Zendesk support team, a virtual Watson Assistant. You can integrate your assistant with Zendesk Chat to enable the Zendesk Chat app to seamlessly pass user conversations between your assistant and its human support agents. Zendesk Chat enables customers to initiate live chat with an agent. Chat sessions become tickets that agents can update after the chat session. You can add Zendesk Chat to any website or Help Center. Agents can also chat with other agents, either one-on-one or by pulling them into a conversation with a visitor.
 
-This integration is available only to Plus or Premium plan users.
-{: note}
-
 If you integrate the assistant with Zendesk Chat, the Zendesk Chat app becomes the client application for your assistant. All interactions with users are initiated through Zendesk Chat and managed by Zendesk.
 
-There is currently no way to pass an ongoing conversation from one integration channel to another.
+As with any beta feature, do not use this feature in production. This integration approach is still in active development and is subject to change, withdrawal, or replacement, such as by a different approach for integrating with Zendesk. 
+{: important}
 
 ## One-time setup steps
 {: #deploy-zendesk-account-prereq}
