@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-29"
+lastupdated: "2019-09-20"
 
 subcollection: assistant
 
@@ -45,6 +45,9 @@ For example, your deployed assistant might look like this:
 ![Shows an example 24/7 chat widget window with welcome text and responses from an assistant](images/247-chatbot.png)
 
 After you test the integration, you can contact \[24\]7.ai to discuss the next steps for purchasing a \[24\]7.ai service desk subscription and using your assistant as the \[24\]7.ai chatbot.
+
+As with any beta feature, do not use this feature in production. This integration approach is still in active development and is subject to change or withdrawal without notice. 
+{: important}
 
 ## Preparing the dialog
 {: #deploy-247ai-dialog-prereq}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-29"
+lastupdated: "2019-09-20"
 
 subcollection: assistant
 
@@ -37,11 +37,11 @@ The length allowed for an inactivity timeout differs by service instance plan ty
 
 | Service plan | Chat session default inactivity period | Chat session maximum inactivity period |
 |--------------|--------------------------------:|----------------------------:|
-| Premium      |                      60 minutes |                    24 hours |
-| Plus         |                      60 minutes |                    24 hours |
+| Premium      |                          1 hour |          168 hours (7 days) |
+| Plus         |                          1 hour |                    24 hours |
 | Standard     |                       5 minutes |                   5 minutes |
 | Plus Trial   |                       5 minutes |                   5 minutes |
-| Lite*        |                       5 minutes |                   5 minutes |
+| Lite         |                       5 minutes |                   5 minutes |
 {: caption="Service plan details" caption-side="top"}
 
 ## Changing the setting
@@ -50,5 +50,8 @@ The length allowed for an inactivity timeout differs by service instance plan ty
 1.  Click the menu for your assistant, and then choose **Settings**.
 
 1.  Change the time specified in the **Timeout limit** field.
+
+    Use `01:00` instead of `00:60` to specify one hour.
+    {: tip}
 
 1.  Close the settings page. Your change is saved automatically.
