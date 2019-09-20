@@ -39,7 +39,7 @@ Zendesk has partnered with IBM to add a new agent to the Zendesk support team, a
 
 If you integrate the assistant with Zendesk Chat, the Zendesk Chat app becomes the client application for your assistant. All interactions with users are initiated through Zendesk Chat and managed by Zendesk.
 
-As with any beta feature, do not use this feature in production. This integration approach is still in active development and is subject to change, withdrawal, or replacement, such as by a different approach for integrating with Zendesk. 
+As with any beta feature, do not use this feature in production. This integration approach is still in active development and is subject to change, withdrawal, or replacement, such as by a different way of integrating with Zendesk. 
 {: important}
 
 ## One-time setup steps
