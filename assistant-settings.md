@@ -41,7 +41,7 @@ The length allowed for an inactivity timeout differs by service instance plan ty
 | Plus         |                          1 hour |                    24 hours |
 | Standard     |                       5 minutes |                   5 minutes |
 | Plus Trial   |                       5 minutes |                   5 minutes |
-| Lite*        |                       5 minutes |                   5 minutes |
+| Lite         |                       5 minutes |                   5 minutes |
 {: caption="Service plan details" caption-side="top"}
 
 ## Changing the setting
@@ -51,7 +51,7 @@ The length allowed for an inactivity timeout differs by service instance plan ty
 
 1.  Change the time specified in the **Timeout limit** field.
 
-    Use `1:00` instead of `00:60` to specify one hour.
+    Use `01:00` instead of `00:60` to specify one hour.
     {: tip}
 
 1.  Close the settings page. Your change is saved automatically.
