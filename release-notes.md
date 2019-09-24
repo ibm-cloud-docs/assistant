@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-20"
+lastupdated: "2019-09-23"
 
 subcollection: assistant
 
@@ -52,6 +52,11 @@ Existing models that you have trained will not be immediately impacted, but expi
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
 The following new features and changes to {{site.data.keyword.conversationshort}} are available. Check out our [blog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/assistant/home) to find in-depth information about how the newest features can benefit your business.
+
+## 23 September 2019 
+{: #23September2019}
+
+- **Dallas updates**: The updates from 20 September are now available to service instances hosted in Dallas.
 
 ## 20 September 2019 
 {: #20September2019}
@@ -265,7 +270,7 @@ The following updates are available in all locations except Dallas currently.
 
      In the response, the `total` attribute in the `pagination` object contains the number of dialog nodes.
 
-     See [Troubleshooting skill import issues](/docs/services/assistant?topic=assistant-skill-add#skill-add-import-errors) for information about how to edit skills that you want to continue using.
+     See [Troubleshooting skill import issues](/docs/services/assistant?topic=assistant-skill-dialog-add#skill-dialog-add-import-errors) for information about how to edit skills that you want to continue using.
 
 ## 27 November 2018
 {: #27November2018}

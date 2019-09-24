@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-06"
+lastupdated: "2019-09-23"
 
 subcollection: assistant
 
@@ -87,7 +87,7 @@ Here's how you implement your assistant:
 Read more about these implementation steps by following these links:
 
 - [Assistant overview](/docs/services/assistant?topic=assistant-assistants)
-- [Search skill overview](/docs/services/assistant?topic=assistant-skill-add-search)
+- [Search skill overview](/docs/services/assistant?topic=assistant-skill-search-add)
 - [Intent creation overview](/docs/services/assistant?topic=assistant-intents#intents-described)
 - [Dialog overview](/docs/services/assistant?topic=assistant-dialog-overview)
 - [Entity creation overview](/docs/services/assistant?topic=assistant-entities#entities-described)
