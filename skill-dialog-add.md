@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-18"
+lastupdated: "2019-09-23"
 
 keywords: import workspace, import JSON, export JSON
 
@@ -88,7 +88,7 @@ If you receive a message that says the skill contains artifacts that exceed the 
 1.  Purchase a plan with higher artifact limits.
 1.  Create a service instance in the new plan.
 1.  Import the skill to the new service instance.
-1.  Make edits to the skill such that it meets the artifact limit requirements for the plan you want to use going forward. You might need to decrease the number of dialog nodes used in the dialog tree, for example.
+1.  Make edits to the skill such that it meets the artifact limit requirements for the plan you want to use going forward. If you need to decrease the number of dialog nodes used in the dialog tree, to find out how, see [How many nodes are in my dialog?](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-count-nodes).
 1.  Export the edited skill by downloading it.
 1.  Try again to import the edited skill into the original service instance on the plan you want.
 
@@ -121,6 +121,8 @@ To download a dialog skill, complete the following steps:
 1.  Specify a name for the JSON file and where to save it, and then click **Save**.
 
 You can export a skill by using the API also. Include the `export=true` parameter with the request. See the [API reference](https://cloud.ibm.com/apidocs/assistant-v1#get-information-about-a-workspace) for more details.
+
+For information about how to download a specific skill version, see [Downloading a skill version](/docs/services/assistant?topic=assistant-versions-export).
 
 ## Sharing a dialog skill with team members
 {: #skill-dialog-add-invite-others}

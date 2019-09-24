@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-12"
+lastupdated: "2019-09-23"
 
 subcollection: assistant
 
@@ -111,3 +111,14 @@ If you want to save any changes that you make to this version, you must save the
 
 When you open a skill by clicking the skill tile from the assistant page, the development version of the skill is displayed. Even if you associated a later version with the assistant, when you access the skill, its development version opens.
 {: important}
+
+## Downloading a skill version
+{: #versions-export}
+
+You can download a dialog skill version in JSON format. You might want to download a skill version if you want to use a specific version of a dialog skill in a different instance of the {{site.data.keyword.conversationshort}} service, for example. You can download the version from one instance and import it to another instance as a new dialog skill.
+
+To download a dialog skill version, complete the following steps:
+
+1.  From the header of the skill, click the **Versions** tab.
+1.  Click the ![Click to view actions](images/kebab-react.png) icon from the version you want to download, and then choose **Export**.
+1.  Specify a name for the JSON file and where to save it, and then click **Save**.
