@@ -88,7 +88,9 @@ If you receive a message that says the skill contains artifacts that exceed the 
 1.  Purchase a plan with higher artifact limits.
 1.  Create a service instance in the new plan.
 1.  Import the skill to the new service instance.
-1.  Make edits to the skill such that it meets the artifact limit requirements for the plan you want to use going forward. If you need to decrease the number of dialog nodes used in the dialog tree, to find out how, see [How many nodes are in my dialog?](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-count-nodes).
+1.  Make edits to the skill such that it meets the artifact limit requirements for the plan you want to use going forward. 
+
+    For information about how to decrease the number of dialog nodes, see [How many nodes are in my dialog?](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-count-nodes).
 1.  Export the edited skill by downloading it.
 1.  Try again to import the edited skill into the original service instance on the plan you want.
 
