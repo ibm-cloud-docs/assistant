@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-29"
+lastupdated: "2019-09-25"
 
 subcollection: assistant
 
@@ -37,22 +37,28 @@ The following features are available for use by participants in the early access
 
 - The main menu options of **Assistants** and **Skills** have moved from being displayed at the top of the page to being shown as icons on the side of the page. <!--1.74-->
 
-  ![Assistants menu icon](images/nav-ass-icon.png) Assistants
-  ![Skills menu icon](images/nav-skills-icon.png) Skills
+  - ![Assistants menu icon](images/nav-ass-icon.png) Assistants
+  - ![Skills menu icon](images/nav-skills-icon.png) Skills
+
+  The tabbed pages for the tools you use to develop a dialog skill were moved to a secondary navigation bar that is displayed when you open the skill.
+
+  ![Skills secondary navigation menu](images/secondary-nav.png)
 
 - The user interface controls that you use to create entity annotations on the Intents page have changed. You can now click the Annotate entities toggle to enable annotation, and then more easily pick one or more words to annotate. <!--1.73-->
 
 - The user interface of the Entities and Intents <!--1.72 --> pages were updated to use a new JavaScript library that increases the page responsiveness. As a result, the look of some graphical user interface elements, such as buttons, changed slightly, but the function did not.
 
-- Add your assistant as a Zendesk Chat agent. See [Integrating with Zendesk Chat](/docs/services/assistant?topic=assistant-deploy-zendesk).
-
 - Try out the new irrelevant topic detection feature. When enabled, a supplemental model is used to help identify utterances that are irrelevant and should not be answered by the dialog skill. This new model is especially beneficial for skills that have not been trained on what subjects to ignore. For more information, see [New irrelevant topic detection](/docs/services/assistant?topic=assistant-irrelevance-detection).
 
 - Add rich response types to dialog node slot prompts. For example, you can display a list of options for a user to choose from as the prompt for the slot. See [Adding rich responses to slots](dialog-slots-multimedia). <!--1.71 -->
 
+- Deploy your assistant in minutes. Create a web chat integration to generate an HTML script element that you can copy and paste into a page on your website to embed the assistant as a chat widget. See [Integrating with your own website](/docs/services/assistant?topic=assistant-deploy-web-chat). <!--1.72 -->
+
+- What you add to the dialog node name field has new significance. The text in the name field might be shown to users, both to internal users if the conversation is transferred to a human agent, or to end users if the assistant needs to include it in a disambiguation list that it shows to users when it asks them to clarify their meaning. You do not need to add user-friendly text to the external node name field separately. Instead, whatever text you add as the node name is used to identify the purpose of the node.
+
 - You can test out pubishing your assistant as a \[24\]7.ai chatbot. See [Testing a \[24\]7.ai chatbot integration](/docs/services/assistant?topic=assistant-deploy-247ai). <!--1.72 -->
 
-- Deploy your assistant in minutes. Create a web chat integration to generate an HTML script element that you can copy and paste into a page on your website to embed the assistant as a chat widget. See [Integrating with your own website](/docs/services/assistant?topic=assistant-deploy-web-chat). <!--1.72 -->
+- Add your assistant as a Zendesk Chat agent. See [Integrating with Zendesk Chat](/docs/services/assistant?topic=assistant-deploy-zendesk).
 
 ## Tell us what you think
 
