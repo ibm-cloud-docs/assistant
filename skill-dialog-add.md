@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-23"
+lastupdated: "2019-09-26"
 
 keywords: import workspace, import JSON, export JSON
 
@@ -145,7 +145,13 @@ To share a dialog skill with other people, you must give them access to the serv
     
 1.  Click **Invite users**. 
 
-1.  In the *Services* section, choose the {{site.data.keyword.conversationshort}} service.
+1.  Add the email address of the user or users with whom you want to share the instance.
+
+1.  Expand the *Assign users additional resources* section, and then click **IAM Services**.
+
+1.  In the *No access* field, choose {{site.data.keyword.conversationshort}}.
+
+    The *Account* resource group is used unless you change it.
 
 1.  Select at least one region and at least one service instance to share with this user.
 
@@ -156,10 +162,14 @@ To share a dialog skill with other people, you must give them access to the serv
 
     For more information about roles, see [IAM access ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/iam?topic=iam-userroles).
 
-    For older instances that are managed by Cloud Foundry, you must expand the *Cloud Foundry access* section, choose your organization, and then assign the person to the **Developer** space role.
+    For older instances that are managed by Cloud Foundry, you click *Cloud Foundry* instead of *IAM Services*, choose your organization, and then assign the person to the **Developer** space role.
     {: note}
 
-1.  Click **Invite users**.
+1.  Click **Add**.
+
+    You can repeat the previous step to invite other users and apply different roles to them. 
+
+1.  Click **Invite** to finish the process.
 
     If you are editing access for an existing user, click **Assign access**.
 

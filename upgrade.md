@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-11"
+lastupdated: "2019-09-26"
 
 subcollection: assistant
 
@@ -10,6 +10,7 @@ subcollection: assistant
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
@@ -31,7 +32,7 @@ Learn how to upgrade your service plan.
 ## Upgrading your plan
 {: #upgrade-plan}
 
-You can explore the {{site.data.keyword.conversationshort}} [service plan options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/watson-assistant/pricing/){: new_window} to decide which plan is best for you.
+You can explore the {{site.data.keyword.conversationshort}} [service plan options](https://www.ibm.com/cloud/watson-assistant/pricing/){: external} to decide which plan is best for you.
 
 You cannot upgrade a Cloud Foundry-based instance to a Plus plan. You must migrate the instance, so it is using a resource group before you can upgrade it. See [Migrating from Cloud Foundry](/docs/services/watson?topic=watson-migrate) for more details.
 {: note}
@@ -44,7 +45,7 @@ To upgrade your plan, complete these steps:
     For a Premium plan, all of the instances in the plan must be part of the same resource group.
     {: note} 
 
-    Currently, you cannot upgrade from a Lite or Standard plan to a Plus plan. Instead, purchase the Plus plan first. Export skills from an instance in your existing plan and then import them to an instance in the Plus plan. To start the process of provisioning a Plus plan, fill out [this form ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm.biz/contact-WA-plus).
+    Currently, you cannot upgrade from a Lite, Standard, or Plus Lite plan to a Plus plan. Instead, purchase the Plus plan first. Export skills from an instance in your existing plan and then import them to an instance in the Plus plan. To start the process of provisioning a Plus plan, fill out [this form](https://ibm.biz/contact-WA-plus){: external}. Alternatively, go to the [plan overview page](https://www.ibm.com/cloud/watson-assistant/pricing/){: external} and start a chat with an IBM representative. Tell them about the type of plan you want to upgrade, and be prepared to provide the plan account ID.
     {: note}
 
 For answers to common questions about subscriptions, see the [How you're charged ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/billing-usage?topic=billing-usage-charges){: new_window}.

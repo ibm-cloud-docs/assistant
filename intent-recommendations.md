@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-09-26"
 
 subcollection: assistant
 
@@ -74,6 +74,26 @@ Follow these additional guidelines:
   ```
 
 Any files you upload are shared across all of the skills in the current service instance. The utterances from all of the available files are mined when you ask for both intent recommendations and intent user example recommendations.
+
+### Should I copy edit the source file?
+{: #intent-recommendations-copy-edit}
+
+It helps if the user utterances that serve as the source for intent user examples have accurate spelling and grammar.
+When users interact with the live assistant, many of the misspellings they make in their input are autocorrected. So, if you have clear and correct user examples, the input that is processed at run time is easier to map to the appropriate intents.
+
+However, do not run a spell check tool over the CSV file you create as the user example source file. A dumb spell check tool will do more harm than good. The reason is that it will not preserve terms that are unique to your domain.
+
+For example, DUCS is an acronym for Display Unit Control System, which was an early teleprocessing monitor. Maybe that acronym has meaning to your domain. If so, you don’t want a spell checker to replace every occurrence of DUCS with the word ducks. It will clearly change the meaning of the utterance. In fact, the autocorrection function uses the existing training data to identify domain-specific terms that should not be corrected. 
+
+If you choose to correct spelling and grammar in the user examples, follow these tips:
+
+- Get a human subject matter expert to do a visual copy edit of the utterances.
+- To minimize the expert's effort, ask the expert to edit only the subset of recommended utterances that are picked to be added to the training data.
+
+Doing a copy edit is not required. If there are misspellings in your training data, the autocorrection tool will accept the misspelled word at run time and still be able to classify input successfully. You might be perpetuating a misspelling, but doing so will have limited impact on the overall performance of your assistant.
+{: note}
+
+For more information about how autocorrection works, see [Correcting user input](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check).
 
 ## Get intent recommendations from Watson
 {: #intent-recommendations-get-intent-recommendations}
