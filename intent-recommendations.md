@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-26"
+lastupdated: "2019-09-27"
 
 subcollection: assistant
 
@@ -88,7 +88,7 @@ For example, DUCS is an acronym for Display Unit Control System, which was an ea
 If you choose to correct spelling and grammar in the user examples, follow these tips:
 
 - Get a human subject matter expert to do a visual copy edit of the utterances.
-- To minimize the expert's effort, ask the expert to edit only the subset of recommended utterances that are picked to be added to the training data.
+- To minimize the effort, do a copy edit pass on only the subset of recommended utterances that are chosen to be added to the training data.
 
 Doing a copy edit is not required. If there are misspellings in your training data, the autocorrection tool will accept the misspelled word at run time and still be able to classify input successfully. You might be perpetuating a misspelling, but doing so will have limited impact on the overall performance of your assistant.
 {: note}
@@ -111,7 +111,7 @@ To get intent recommendations, complete the following steps:
 
 1.  Open your dialog skill. The skill opens to the **Intents** page.
 
-1.  Click **Get recommendations**.
+1.  Click **View intent recommendations**.
 
 1.  **First time only**: Click **Add file**, and then click **Choose a file** to browse for the CSV file you created earlier and select it.
 
@@ -184,9 +184,9 @@ The user examples that you add in this way do count toward your intent user exam
 
 After you upload at least one file, you can open the *User example source files* collection to manage your files. Uploaded files are added to a file collection that is shared across the current {{site.data.keyword.conversationshort}} service instance.
 
-1.  To access the collection, click to open an intent, click **Show recommendations**, and then click **View Files** from the sidebar.
+1.  To access the collection, click to open an intent, click **Show recommendations**, and then click **more** from the sidebar.
 
-    If you don't have any intents added yet, from the main Intents page, expand the *Intent recommendations* section, click **Get recommendations**, click **Show all recommendations**, and then click **View Files**.
+    If you don't have any intents added yet, from the main Intents page, click **View intent recommendations**, and then click **CSV files**.
 
 1.  You can take the following actions:
 
