@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-23"
+lastupdated: "2019-09-27"
 
 subcollection: assistant
 
@@ -68,6 +68,8 @@ The following updates are available in all locations except Dallas currently.
 - **Inactivity timeout increase**: The maximum inactivity timeout can now be extended to up to 7 days for Premium plans. See [Changing the inactivity timeout setting](/docs/services/assistant?topic=assistant-assistant-settings).
 
 - **Pattern entity fix**: A change that was introduced in the previous release which changed all alphabetic characters to lower case at the time an entity value was added has been fixed. The case of any alphabetic characters that are part of a pattern entity value are no longer changed when the value is added. <!--30545-->
+
+- **Dialog text response syntax fix**: Fixed a bug in which the format of a dialog response reverted to an earlier version of the JSON syntax. Standard text responses were being saved as `output.text` instead of `output.generic`. For more information about the `output` object, see [Anatomy of a dialog call](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-message-anatomy). <!--30176-->
 
 ## 13 September 2019 
 {: #13September2019}
