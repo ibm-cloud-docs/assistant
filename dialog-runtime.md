@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-06"
+lastupdated: "2019-10-01"
 
 keywords: context, context variable, digression, disambiguation, autocorrection, spelling correction, spell check, confidence 
 
@@ -28,7 +28,7 @@ subcollection: assistant
 # How the dialog is processed
 {: #dialog-runtime}
 
-Understand how your dialog is processed when a person interacts with your instance of the deployed {{site.data.keyword.conversationshort}} service at run time.
+Understand how your dialog is processed when a person interacts with your assistant at run time.
 {: shortdesc}
 
 ## Anatomy of a dialog call
@@ -860,26 +860,30 @@ Follow the [tutorial](/docs/services/assistant?topic=assistant-tutorial-digressi
 ## Correcting user input
 {: #dialog-runtime-spell-check}
 
-Enable the *Autocorrection* feature to fix misspellings that users make in the utterances that they submit as user input. When autocorrection is enabled, the misspelled words are automatically corrected. And it is the corrected words that are used to evaluate the input. When given more precise input, your assistant can more often recognize entity mentions and understand the user's intent.
+*Autocorrection* fixes misspellings that users make in the utterances that they submit as user input. When autocorrection is enabled, the misspelled words are automatically corrected. And it is the corrected words that are used to evaluate the input. When given more precise input, your assistant can more often recognize entity mentions and understand the user's intent.
 
-You can enable this setting for English-language dialog skills only. It is enabled automatically for new English-language dialog skills.
+Autocorrection is enabled automatically for all new English-language dialog skills.
 {: note}
 
-With Autocorrection enabled, user input is corrected in the following way:
+Autocorrection corrects user input in the following way:
 
 - Orignal input: `letme applt for a memberdhip`
 - Corrected input: `let me apply for a membership`
 
 When your assistant evaluates whether to correct the spelling of a word, it does not rely on a simple dictionary lookup process. Instead, it uses a combination of Natural Language Processing and probabalistic models to assess whether a term is, in fact, misspelled and should be corrected.
 
-### Enabling autocorrection
-{: #dialog-runtime-spell-check-enable}
+### Disabling autocorrection
+{: #dialog-runtime-spell-check-disable}
 
-To enable the autocorrection feature, complete the following steps:
+Autocorrection helps your assistant understand user input. However, if you decide to disable it, you must turn it off entirely. You cannot disable autocorrection for a single word or phrase. 
+
+If you find that a domain-specific term is being corrected that shouldn't be, you can prevent the correction from happening by adding the term or phrase to your training data. For more details, see [Autocorrection rules](#dialog-runtime-spell-check-rules).
+
+If you decide to disable the autocorrection feature, complete the following steps:
 
 1.  From the Skills page, open your skill.
-1.  Click the **Options** tab.
-1.  Turn on **Autocorrection**.
+1.  Click the **Options** tab, and then click **Autocorrection**.
+1.  Turn off **Autocorrection**.
 
 ### Testing autocorrection
 {: #dialog-runtime-spell-check-test}
@@ -890,6 +894,9 @@ To enable the autocorrection feature, complete the following steps:
 1.  Hover over the underlined utterance to see the original wording.
 
 If there are misspelled terms that you expected your assistant to correct, but it did not, then review the rules that your assistant uses to decide whether to correct a word to see if the word falls into the category of words that your assistant intentionally does not change.
+
+### Autocorrection rules
+{: #dialog-runtime-spell-check-rules}
 
 To avoid overcorrection, your assistant does not correct the spelling of the following types of input:
 
@@ -920,6 +927,10 @@ For example, if a user enters a sentence like `I wnt to buy a boook`, fuzzy matc
 {: #dialog-runtime-spell-check-how-it-works}
 
 Normally, user input is saved as-is in the `text` field of the `input` object of the message. If, and only if the user input is corrected in some way, a new field is created in the `input` object, called `original_text`. This field stores the user's original input that includes any misspelled words in it. And the corrected text is added to the `input.text` field.
+
+If you want to ask a user to confirm their input, you can do so in a way that takes into account that their input might be corrected. In a dialog node with multiple conditional responses enabled, the first conditional response can have the condition `original_text`. This means that if the user's input is automatically corrected, show the corresponding response. And the response can contain the expression: `You said: <? input.original_text ?>. Did you mean: <? input.text ?>?` In the next conditional response, you can specify just the response by using the expression: `You said: <? input.text ?>`.
+
+Remember, the `input.text` field stores either the never-corrected original text from the user or the user’s text after it is corrected. The `input.original_text` field is only created if the input is corrected. And the user’s incorrect input is stored in it.”
 
 ## Disambiguation ![Plus or Premium plan only](images/plus.png)
 {: #dialog-runtime-disambiguation}
