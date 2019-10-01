@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-17"
+lastupdated: "2019-09-30"
 
 ---
 
@@ -53,7 +53,7 @@ The programmatic call to the external service must meet these requirements:
 
 - The call must be a POST HTTP request.
 - The format of the request and response must be in JSON. For example: `Content-Type: application/json`.
-- The call must return in **5 seconds or less**.
+- The call must return in **8 seconds or less**.
 
   For less efficient services that you need to call, you can manage the call through a client application and pass the information to the dialog as a separate step. For more information, see [Calling a client application from a dialog node](/docs/services/assistant?topic=assistant-dialog-actions-client).
   {: tip}
