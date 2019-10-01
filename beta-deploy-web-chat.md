@@ -35,7 +35,7 @@ This feature is available for use by participants in the early access program on
 
 When you participate in the early access program, IBM gives you early access to features for your evaluation. These features are classified as beta, which means they might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment. Beta features are supported only on the [IBM Developer Answers](https://developer.ibm.com/answers/topics/watson-assistant/){: external}.
 
-When you create a Web Chat integration, code is generated that calls a script written in JavaScript which instantiates a unique instance of your assistant. You can then copy and paste the HTML `<script>` element into any page or pages on your website where you want users to be able to ask your assistant for help.
+When you create a Web Chat integration, code is generated that calls a script written in JavaScript that instantiates a unique instance of your assistant. You can then copy and paste the HTML `<script>` element into any page or pages on your website where you want users to be able to ask your assistant for help.
 
 ![Plus or Premium plan only](images/plus.png) When the feature is generally available, it will be available to Plus or Premium plan users only.
 
@@ -57,7 +57,7 @@ To add the assistant to a web page on your company website, complete the followi
 1.  **Optional**: Customize the chat. You can make the following changes:
 
     - **Public assistant name**. Name by which the assistant is known to users. This name is displayed in the header of the chat window. 
-    - **Font family**. List one or more font styles that you want applied to the text that is displayed in the chat window. Separate multiple font names with commas. The first font family in the list is used unless the web page does not support it, in which case, the next font family in the list is used. Surround font family names that include spaces with single quotation marks. For example, `Georgia,'Helvetica Neue'`. 
+    - **Font family**. List one or more font styles that you want applied to the text that is displayed in the chat window. Separate multiple font names with commas. The first font family in the list is used unless the web page does not support it, in which case the next font family in the list is used. Surround font family names that include spaces with single quotation marks. For example, `Georgia,'Helvetica Neue'`. 
     
       If you don't specify a font, these fonts are used: `IBMPlexSans, Arial, Helvetica, sans-serif`. 
 
