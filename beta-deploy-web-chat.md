@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-01"
+lastupdated: "2019-10-03"
 
 subcollection: assistant
 
@@ -61,7 +61,9 @@ To add the assistant to a web page on your company website, complete the followi
     
       If you don't specify a font, these fonts are used: `IBMPlexSans, Arial, Helvetica, sans-serif`. 
 
-    - **Accent color**. This color is applied to the following elements:
+    - **Accent color**. Click the blue dot to open a color switcher where you can choose a color. The color is saved as a HTML color code, such as `#FF33FC` for pink and `#329A1D` for green. Alternatively, you can add a HTML color code directly to the field to set the color.
+    
+    The color you specify is applied to the following elements:
 
       - Chat launcher button that is embedded in your web page
       - Send button associated with the input text field
@@ -69,18 +71,17 @@ To add the assistant to a web page on your company website, complete the followi
       - Marker that shows the start of the assistant’s response
       - Border of a button after it is clicked
       - Typing indicator that is shown to repesent a pause response
-      - Active state for dropdown color of border 
+      - Active state for dropdown color of border
 
-    - **Secondary access color**. This color is applied to the chat launcher button after it is clicked.
-  
-    Use HTML color codes to specify the colors. For example, `#FF33FC` is pink and `#329A1D` is green.
-    {: note}
+    Style changes you make are immediately applied to the preview that is shown on the page, so you can see how your choices impact the style of the chat UI.
+
+    When you are happy with the style, click **Save changes**.
 
 1.  Copy the `<script>` HTML element.
 
 1.  Open the HTML source for a web page on your website where you want the chat window to be displayed. Paste the code snippet into the page.
 
-    Paste the code as close to the closing `</body>` tag as possible to prevent the script from blocking the rest of the page from rendering.
+    Paste the code as close to the closing `</body>` tag as possible to ensure that your page renders faster.
     {: tip}
 
     The following HTML snippet is the source for a test page that you can copy and save as a file with a .html extension for testing purposes. You would replace the script element block here with the script elements you copied from the Web Chat integration setup page.
@@ -120,7 +121,7 @@ To add the assistant to a web page on your company website, complete the followi
 
     If you don't extend the session timeout setting for the assistant, the dialog flow for the current session is restarted after 60 minutes of inactivity. This means that if a user stops interacting with the assistant, after 60 minutes, any context variable values that were set during the previous conversation are set to null or back to their initial values.
 
-1.  Click **Save changes** to save the web chat name and description information that you added and close the integration page. Alternatively, you can click the **X** to close the page. 
+1.  Click **Save changes** to save the web chat name and any customization information that you added and close the integration page. Alternatively, you can click the **X** to close the page. 
 
     The web chat integration instance is created as soon as you click the *Create* button, and does not need to be saved.
 
@@ -130,6 +131,9 @@ To add the assistant to a web page on your company website, complete the followi
 You can make more advanced customizations and extend the capability of the web chat by using the {site.data.keyword.conversationshort}} Web Chat toolkit on [GitHub](https://github.com/watson-developer-cloud/assistant-web-chat){: external}.
 
 If you choose to use the provided methods, you implement them by editing the code snippet that was generated earlier. You then embed the updated code snippet into your web page.
+
+### Setting and passing context variable values
+{: #deploy-web-chat-set-context}
 
 For example, the following updated script preserves the context for the conversation. In addition, it adds an `$ismember` context variable and sets it to `true`.
 
@@ -159,3 +163,31 @@ For example, the following updated script preserves the context for the conversa
 {: codeblock}
 
 You can reference the `$ismember` context variable from your dialog. For example, you might add a dialog node that conditions on the `#General_Greetings` intent that is defined in the **General** content catalog. Add multiple conditioned response to the node. In the condition for the first response, add `$ismember`, and draft a response to show to customers who are members of your Rewards Program, such as `Hello, valued Rewards Program member!` The next conditioned response can condition on `true` and specify the response to show to everyone else, such as `Hello!`.
+
+### Adding user identity information
+{: deploy-web-chat-userid}
+
+If you want to perform tasks that require you to know the user who submitted the user input, then you must pass the user ID to the web chat integration. Such tasks include the following:
+
+- User-based billing plans use the `user_id` associated with user input for billing purposes. 
+- The ability to delete any data created by someone who requests to be forgotten requires that a `customer_id` be associated with the user input. When a user_id is defined, the product can reuse it to pass a customer_id parameter.
+
+To support these user-based capabilities, you must add the `options.userID` method to the codeblock before you paste it into your web page.
+
+In the following example, the user ID `L44556677` is added to the script codeblock.
+
+```html
+<script src="https://assistant-web.watsonplatform.net/loadWatsonAssistantChat.js"></script>
+<script>
+  window.loadWatsonAssistantChat({
+    integrationID: '{INTEGRATION ID}',
+    region: '{REGION}',
+    userID: `L44556677`
+  }).then(function(instance){
+    // When this promise returns, we know WatsonAssistantChat is ready.
+    instance.on({ type: "pre:send", handler: preSendhandler });
+    instance.render();
+  });
+</script>
+```
+{: codeblock}
