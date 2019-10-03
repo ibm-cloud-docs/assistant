@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-25"
+lastupdated: "2019-10-03"
 
 subcollection: assistant
 
@@ -54,9 +54,13 @@ The following features are available for use by participants in the early access
 
 - Deploy your assistant in minutes. Create a web chat integration to generate an HTML script element that you can copy and paste into a page on your website to embed the assistant as a chat widget. See [Integrating with your own website](/docs/services/assistant?topic=assistant-deploy-web-chat). <!--1.72 -->
 
-- What you add to the dialog node name field has new significance. The text in the name field might be shown to users, both to internal users if the conversation is transferred to a human agent, or to end users if the assistant needs to include it in a disambiguation list that it shows to users when it asks them to clarify their meaning. You do not need to add user-friendly text to the external node name field separately. Instead, whatever text you add as the node name is used to identify the purpose of the node.
+- **Disambiguation changes**: How disambiguation works is changing in the following ways:
 
-- You can test out pubishing your assistant as a \[24\]7.ai chatbot. See [Testing a \[24\]7.ai chatbot integration](/docs/services/assistant?topic=assistant-deploy-247ai). <!--1.72 -->
+  - If the external node field exists and contains a summary of the node's purpose, then its summary will be shown to users who need to pick a node for disambiguation. Otherwise, the dialog node name content will be used.
+  - Now the text that you add to the dialog node name field might be shown to users. Both to internal users if the conversation is transferred to a human agent, and to end users if the assistant needs to ask users to clarify their meaning. The text you add as the node name must identify the purpose of the node clearly and succinctly. 
+  - When testing, you might notice that the order of the options in the disambiguation list changes from one test run to the next. Don't worry; this is the intended behavior. As part of work being done to help the assistant learn automatically from user choices, the order of the options in the disambiguation list is being randomized on purpose. Changing the order helps to avoid bias that can be introduced by a percentage of people who always pick the first option without first reviewing their choices.
+
+- You can test out publishing your assistant as a \[24\]7.ai chatbot. See [Testing a \[24\]7.ai chatbot integration](/docs/services/assistant?topic=assistant-deploy-247ai). <!--1.72 -->
 
 - Add your assistant as a Zendesk Chat agent. See [Integrating with Zendesk Chat](/docs/services/assistant?topic=assistant-deploy-zendesk).
 
