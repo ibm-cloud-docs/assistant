@@ -162,7 +162,7 @@ For example, the following updated script preserves the context for the conversa
 ```
 {: codeblock}
 
-You can reference the `$ismember` context variable from your dialog. For example, the following screen shot shows a dialog node that conditions on #General_Greetings. It has multiple conditioned responses. The first one, checks whether the current user is a member of your Rewards Program, and addresses the user as a member. The next response has a more generic greeting.
+You can reference the `$ismember` context variable from your dialog. For example, the following screen shot shows a dialog node that conditions on #General_Greetings. It has multiple conditioned responses. The first response checks whether the current user is a member of your Rewards Program by checking for the presence of the `$ismember` context variable. If the variable is present, the response addresses the user as a member. The next response has a more generic greeting.
 
 ![Shows multiple conditioned responses in a dialog node, one of which references the ismember context variable](images/web-chat-use-context-var.png)
 
