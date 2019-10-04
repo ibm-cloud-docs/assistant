@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-03"
+lastupdated: "2019-10-04"
 
 subcollection: assistant
 
@@ -162,15 +162,17 @@ For example, the following updated script preserves the context for the conversa
 ```
 {: codeblock}
 
-You can reference the `$ismember` context variable from your dialog. For example, you might add a dialog node that conditions on the `#General_Greetings` intent that is defined in the **General** content catalog. Add multiple conditioned response to the node. In the condition for the first response, add `$ismember`, and draft a response to show to customers who are members of your Rewards Program, such as `Hello, valued Rewards Program member!` The next conditioned response can condition on `true` and specify the response to show to everyone else, such as `Hello!`.
+You can reference the `$ismember` context variable from your dialog. For example, the following screen shot shows a dialog node that conditions on #General_Greetings. It has multiple conditioned responses. The first response checks whether the current user is a member of your Rewards Program by checking for the presence of the `$ismember` context variable. If the variable is present, the response addresses the user as a member. The next response has a more generic greeting.
+
+![Shows multiple conditioned responses in a dialog node, one of which references the ismember context variable](images/web-chat-use-context-var.png)
 
 ### Adding user identity information
 {: deploy-web-chat-userid}
 
 If you want to perform tasks that require you to know the user who submitted the user input, then you must pass the user ID to the web chat integration. Such tasks include the following:
 
-- User-based billing plans use the `user_id` associated with user input for billing purposes. 
-- The ability to delete any data created by someone who requests to be forgotten requires that a `customer_id` be associated with the user input. When a user_id is defined, the product can reuse it to pass a customer_id parameter.
+- User-based service plans use the `user_id` associated with user input for billing purposes. See [User-based plans](/docs/services/assistant?topic=assistant-services-information#services-information-user-based-plans). 
+- The ability to delete any data created by someone who requests to be forgotten requires that a `customer_id` be associated with the user input. When a `user_id` is defined, the product can reuse it to pass a `customer_id` parameter. See [Labeling and deleting data](/docs/services/assistant?topic=assistant-information-security#information-security-gdpr-wa).
 
 To support these user-based capabilities, you must add the `options.userID` method to the codeblock before you paste it into your web page.
 
