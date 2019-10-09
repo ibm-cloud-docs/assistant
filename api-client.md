@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-18"
+lastupdated: "2019-10-09"
 
 subcollection: assistant
 
@@ -61,11 +61,14 @@ Interacting with the {{site.data.keyword.conversationshort}} service is simple. 
 // receives response.
 
 const AssistantV2 = require('ibm-watson/assistant/v2');
+const { IamAuthenticator } = require('ibm-watson/auth');
 
 // Set up Assistant service wrapper.
 const service = new AssistantV2({
-  iam_apikey: '{apikey}', // replace with API key
   version: '2019-02-28',
+  authenticator: new IamAuthenticator({
+    apikey: '{apikey}', // replace with API key
+  })
 });
 
 const assistantId = '{assistant_id}'; // replace with assistant ID
@@ -74,12 +77,12 @@ let sessionId;
 // Create session.
 service
   .createSession({
-    assistant_id: assistantId,
+    assistantId,
   })
   .then(res => {
-    sessionId = res.session_id;
+    sessionId = res.result.session_id;
     sendMessage({
-      message_type: 'text',
+      messageType: 'text',
       text: '' // start conversation with empty message
     });
   })
@@ -91,12 +94,12 @@ service
 function sendMessage(messageInput) {
   service
     .message({
-      assistant_id: assistantId,
-      session_id: sessionId,
+      assistantId,
+      sessionId,
       input: messageInput
     })
     .then(res => {
-      processResponse(res);
+      processResponse(res.result);
     })
     .catch(err => {
       console.log(err); // something went wrong
@@ -119,8 +122,8 @@ function processResponse(response) {
 // We're done, so we close the session.
 service
   .deleteSession({
-    assistant_id: assistantId,
-    session_id: sessionId,
+    assistantId,
+    sessionId,
   })
   .catch(err => {
     console.log(err); // something went wrong
@@ -134,12 +137,14 @@ service
 # Example 1: sets up service wrapper, sends initial message, and
 # receives response.
 
-import ibm_watson
+from ibm_watson import AssistantV2
+from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 
 # Set up Assistant service.
-service = ibm_watson.AssistantV2(
-    iam_apikey = '{apikey}', # replace with API key
-    version = '2019-02-28'
+authenticator = IAMAuthenticator('{apikey}') # replace with API key
+service = AssistantV2(
+    version = '2019-02-28',
+    authenticator = authenticator
 )
 
 assistant_id = '{assistant_id}' # replace with assistant ID
@@ -179,10 +184,13 @@ service.delete_session(
 import com.ibm.watson.assistant.v2.Assistant;
 import com.ibm.watson.assistant.v2.model.CreateSessionOptions;
 import com.ibm.watson.assistant.v2.model.DeleteSessionOptions;
+import com.ibm.watson.assistant.v2.model.RuntimeResponseGeneric;
 import com.ibm.watson.assistant.v2.model.MessageOptions;
 import com.ibm.watson.assistant.v2.model.MessageResponse;
 import com.ibm.watson.assistant.v2.model.SessionResponse;
-import com.ibm.cloud.sdk.core.service.security.IamOptions;
+import com.ibm.cloud.sdk.core.security.Authenticator;
+import com.ibm.cloud.sdk.core.security.IamAuthenticator;
+import java.util.List;
 import java.util.logging.LogManager;
 
 public class AssistantSimpleExample {
@@ -192,8 +200,8 @@ public class AssistantSimpleExample {
     LogManager.getLogManager().reset();
 
     // Set up Assistant service.
-    IamOptions iamOptions = new IamOptions.Builder().apiKey("{apikey}").build();
-    Assistant service = new Assistant("2019-02-28", iamOptions);
+    Authenticator authenticator = new IamAuthenticator("{apikey}"); // replace with API key
+    Assistant service = new Assistant("2019-02-28", authenticator);
     String assistantId = "{assistant_id}"; // replace with assistant ID
 
     // Create session.
@@ -207,8 +215,12 @@ public class AssistantSimpleExample {
     MessageResponse response = service.message(messageOptions).execute().getResult();
 
     // Print the output from dialog, if any. Assumes a single text response.
-    System.out.println(response.getOutput().getGeneric().get(0).getText());
-
+      List<RuntimeResponseGeneric> responseGeneric = response.getOutput().getGeneric();
+      if(responseGeneric.size() > 0) {
+        if(responseGeneric.get(0).responseType().equals("text")) {
+          System.out.println(responseGeneric.get(0).text());
+        }
+      }
     // We're done, so we delete the session.
     DeleteSessionOptions deleteSessionOptions = new DeleteSessionOptions.Builder(assistantId, sessionId).build();
     service.deleteSession(deleteSessionOptions).execute();
@@ -273,11 +285,14 @@ To be able to process user input, we need to add a user interface to our client 
 
 const prompt = require('prompt-sync')();
 const AssistantV2 = require('ibm-watson/assistant/v2');
+const { IamAuthenticator } = require('ibm-watson/auth');
 
 // Set up Assistant service wrapper.
 const service = new AssistantV2({
-  iam_apikey: '{apikey}', // replace with API key
   version: '2019-02-28',
+  authenticator: new IamAuthenticator({
+    apikey: '{apikey}', // replace with API key
+  })
 });
 
 const assistantId = '{assistant_id}'; // replace with assistant ID
@@ -286,12 +301,12 @@ let sessionId;
 // Create session.
 service
   .createSession({
-    assistant_id: assistantId,
+    assistantId,
   })
   .then(res => {
-    sessionId = res.session_id;
+    sessionId = res.result.session_id;
     sendMessage({
-      message_type: 'text',
+      messageType: 'text',
       text: ''
     }); // start conversation with empty message
   })
@@ -303,12 +318,12 @@ service
 function sendMessage(messageInput) {
   service
     .message({
-      assistant_id: assistantId,
-      session_id: sessionId,
+      assistantId,
+      sessionId,
       input: messageInput
     })
     .then(res => {
-      processResponse(res);
+      processResponse(res.result);
     })
     .catch(err => {
       console.log(err); // something went wrong
@@ -338,8 +353,8 @@ function processResponse(response) {
   if (newMessageFromUser === 'quit') {
     service
       .deleteSession({
-        assistant_id: assistantId,
-        session_id: sessionId,
+        assistantId,
+        sessionId,
       })
       .catch(err => {
         console.log(err); // something went wrong
@@ -347,7 +362,7 @@ function processResponse(response) {
     return;
   }
   newMessageInput = {
-    message_type: 'text',
+    messageType: 'text',
     text: newMessageFromUser
   }
   sendMessage(newMessageInput);
@@ -359,12 +374,14 @@ function processResponse(response) {
 ```python
 # Example 2: adds user input and detects intents.
 
-import ibm_watson
+from ibm_watson import AssistantV2
+from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 
 # Set up Assistant service.
-service = ibm_watson.AssistantV2(
-    iam_apikey = '{apikey}', # replace with API key
-    version = '2019-02-28'
+authenticator = IAMAuthenticator('{apikey}') # replace with API key
+service = AssistantV2(
+    version = '2019-02-28',
+    authenticator = authenticator
 )
 
 assistant_id = '{assistant_id}' # replace with assistant ID
@@ -423,13 +440,14 @@ service.delete_session(
 import com.ibm.watson.assistant.v2.Assistant;
 import com.ibm.watson.assistant.v2.model.CreateSessionOptions;
 import com.ibm.watson.assistant.v2.model.DeleteSessionOptions;
-import com.ibm.watson.assistant.v2.model.DialogRuntimeResponseGeneric;
+import com.ibm.watson.assistant.v2.model.RuntimeResponseGeneric;
 import com.ibm.watson.assistant.v2.model.MessageInput;
 import com.ibm.watson.assistant.v2.model.MessageOptions;
 import com.ibm.watson.assistant.v2.model.MessageResponse;
 import com.ibm.watson.assistant.v2.model.RuntimeIntent;
 import com.ibm.watson.assistant.v2.model.SessionResponse;
-import com.ibm.cloud.sdk.core.service.security.IamOptions;
+import com.ibm.cloud.sdk.core.security.Authenticator;
+import com.ibm.cloud.sdk.core.security.IamAuthenticator;
 import java.util.List;
 import java.util.logging.LogManager;
 
@@ -440,8 +458,8 @@ public class AssistantSimpleExample {
     LogManager.getLogManager().reset();
 
     // Set up Assistant service.
-    IamOptions iamOptions = new IamOptions.Builder().apiKey("{apikey}").build();
-    Assistant service = new Assistant("2019-02-28", iamOptions);
+    Authenticator authenticator = new IamAuthenticator("{apikey}"); // replace with API key
+    Assistant service = new Assistant("2019-02-28", authenticator);
     String assistantId = "{assistant_id}"; // replace with assistant ID
 
     // Create session.
@@ -449,34 +467,42 @@ public class AssistantSimpleExample {
     SessionResponse session = service.createSession(createSessionOptions).execute().getResult();
     String sessionId = session.getSessionId();
 
-    // Initialize with empty value to start the conversation.
-    String inputText = "";
+    // Initialize with empty message to start the conversation.
+    MessageInput input = new MessageInput.Builder()
+      .messageType("text")
+      .text("")
+      .build();
 
     // Main input/output loop
     do {
       // Send message to assistant.
-      MessageInput input = new MessageInput.Builder().text(inputText).build();
       MessageOptions messageOptions = new MessageOptions.Builder(assistantId, sessionId)
-                                                  .input(input)
-                                                  .build();
+        .input(input)
+        .build();
       MessageResponse response = service.message(messageOptions).execute().getResult();
 
       // If an intent was detected, print it to the console.
       List<RuntimeIntent> responseIntents = response.getOutput().getIntents();
       if(responseIntents.size() > 0) {
-        System.out.println("Detected intent: #" + responseIntents.get(0).getIntent());
+        System.out.println("Detected intent: #" + responseIntents.get(0).intent());
       }
 
       // Print the output from dialog, if any. Assumes a single text response.
-      List<DialogRuntimeResponseGeneric> responseGeneric = response.getOutput().getGeneric();
+      List<RuntimeResponseGeneric> responseGeneric = response.getOutput().getGeneric();
       if(responseGeneric.size() > 0) {
-        System.out.println(response.getOutput().getGeneric().get(0).getText());
+        if(responseGeneric.get(0).responseType().equals("text")) {
+          System.out.println(responseGeneric.get(0).text());
+        }
       }
 
       // Prompt for next round of input.
       System.out.print(">> ");
-      inputText = System.console().readLine();
-    } while(!inputText.equals("quit"));
+      String inputText = System.console().readLine();
+      input = new MessageInput.Builder()
+        .messageType("text")
+        .text(inputText)
+        .build();
+    } while(!input.text().equals("quit"));
 
     // We're done, so we delete the session.
     DeleteSessionOptions deleteSessionOptions = new DeleteSessionOptions.Builder(assistantId, sessionId).build();
@@ -530,11 +556,14 @@ We know that our dialog will never request more than one action at a time, so ou
 
 const prompt = require('prompt-sync')();
 const AssistantV2 = require('ibm-watson/assistant/v2');
+const { IamAuthenticator } = require('ibm-watson/auth');
 
 // Set up Assistant service wrapper.
 const service = new AssistantV2({
-  iam_apikey: '{apikey}', // replace with API key
   version: '2019-02-28',
+  authenticator: new IamAuthenticator({
+    apikey: '{apikey}', // replace with API key
+  })
 });
 
 const assistantId = '{assistant_id}'; // replace with assistant ID
@@ -543,12 +572,12 @@ let sessionId;
 // Create session.
 service
   .createSession({
-    assistant_id: assistantId,
+    assistantId,
   })
   .then(res => {
-    sessionId = res.session_id;
+    sessionId = res.result.session_id;
     sendMessage({
-      message_type: 'text',
+      messageType: 'text',
       text: ''  // start conversation with empty message
     });
   })
@@ -560,12 +589,12 @@ service
 function sendMessage(messageInput) {
   service
     .message({
-      assistant_id: assistantId,
-      session_id: sessionId,
+      assistantId,
+      sessionId,
       input: messageInput
     })
     .then(res => {
-      processResponse(res);
+      processResponse(res.result);
     })
     .catch(err => {
       console.log(err); // something went wrong
@@ -604,15 +633,15 @@ function processResponse(response) {
   if (!endConversation) {
     const newMessageFromUser = prompt('>> ');
     newMessageInput = {
-      message_type: 'text',
+      messageType: 'text',
       text: newMessageFromUser
     }
     sendMessage(newMessageInput);
   } else {
     service
       .deleteSession({
-        assistant_id: assistantId,
-        session_id: sessionId,
+        assistantId,
+        sessionId,
       })
       .then(res => {
         return;
@@ -629,13 +658,15 @@ function processResponse(response) {
 ```python
 # Example 3: Implements app actions.
 
-import ibm_watson
+from ibm_watson import AssistantV2
+from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 import time
 
 # Set up Assistant service.
-service = ibm_watson.AssistantV2(
-    iam_apikey = '{apikey}', # replace with API key
-    version = '2019-02-28'
+authenticator = IAMAuthenticator('{apikey}') # replace with API key
+service = AssistantV2(
+    version = '2019-02-28',
+    authenticator = authenticator
 )
 
 assistant_id = '{assistant_id}' # replace with assistant ID
@@ -697,16 +728,16 @@ service.delete_session(
  */
 
 import com.ibm.watson.assistant.v2.Assistant;
+import com.ibm.watson.assistant.v2.model.SessionResponse;
 import com.ibm.watson.assistant.v2.model.CreateSessionOptions;
 import com.ibm.watson.assistant.v2.model.DeleteSessionOptions;
-import com.ibm.watson.assistant.v2.model.DialogNodeAction;
-import com.ibm.watson.assistant.v2.model.DialogRuntimeResponseGeneric;
 import com.ibm.watson.assistant.v2.model.MessageInput;
 import com.ibm.watson.assistant.v2.model.MessageOptions;
+import com.ibm.watson.assistant.v2.model.RuntimeResponseGeneric;
+import com.ibm.watson.assistant.v2.model.DialogNodeAction;
 import com.ibm.watson.assistant.v2.model.MessageResponse;
-import com.ibm.watson.assistant.v2.model.RuntimeIntent;
-import com.ibm.watson.assistant.v2.model.SessionResponse;
-import com.ibm.cloud.sdk.core.service.security.IamOptions;
+import com.ibm.cloud.sdk.core.security.Authenticator;
+import com.ibm.cloud.sdk.core.security.IamAuthenticator;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -719,8 +750,8 @@ public class AssistantSimpleExample {
     LogManager.getLogManager().reset();
 
     // Set up Assistant service.
-    IamOptions iamOptions = new IamOptions.Builder().apiKey("{apikey}").build();
-    Assistant service = new Assistant("2019-02-28", iamOptions);
+    Authenticator authenticator = new IamAuthenticator("{apikey}"); // replace with API key
+    Assistant service = new Assistant("2019-02-28", authenticator);
     String assistantId = "{assistant_id}"; // replace with assistant ID
 
     // Create session.
@@ -729,7 +760,10 @@ public class AssistantSimpleExample {
     String sessionId = session.getSessionId();
 
     // Initialize with empty values to start the conversation.
-    String inputText = "";
+    MessageInput input = new MessageInput.Builder()
+      .messageType("text")
+      .text("")
+      .build();
     String currentAction;
 
     // Main input/output loop
@@ -738,22 +772,23 @@ public class AssistantSimpleExample {
       currentAction = "";
 
       // Send message to assistant.
-      MessageInput input = new MessageInput.Builder().text(inputText).build();
       MessageOptions messageOptions = new MessageOptions.Builder(assistantId, sessionId)
-                                                  .input(input)
-                                                  .build();
+        .input(input)
+        .build();
       MessageResponse response = service.message(messageOptions).execute().getResult();
 
       // Print the output from dialog, if any. Assumes a single text response.
-      List<DialogRuntimeResponseGeneric> responseGeneric = response.getOutput().getGeneric();
+      List<RuntimeResponseGeneric> responseGeneric = response.getOutput().getGeneric();
       if(responseGeneric.size() > 0) {
-        System.out.println(response.getOutput().getGeneric().get(0).getText());
+        if(responseGeneric.get(0).responseType().equals("text")) {
+          System.out.println(responseGeneric.get(0).text());
+        }
       }
 
       // Check for any actions requested by the assistant.
       List<DialogNodeAction> responseActions = response.getOutput().getActions();
       if(responseActions != null) {
-        if(responseActions.get(0).getActionType().equals("client")) {
+        if(responseActions.get(0).getType().equals("client")) {
           currentAction = responseActions.get(0).getName();
         }
       }
@@ -768,7 +803,11 @@ public class AssistantSimpleExample {
       // If we're not done, prompt for next round of input.
       if(!currentAction.equals("end_conversation")) {
         System.out.print(">> ");
-        inputText = System.console().readLine();
+        String inputText = System.console().readLine();
+        input = new MessageInput.Builder()
+          .messageType("text")
+          .text(inputText)
+          .build();
       }
 
     } while(!currentAction.equals("end_conversation"));
