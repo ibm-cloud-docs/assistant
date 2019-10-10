@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-27"
+lastupdated: "2019-10-09"
 
 subcollection: assistant
 
@@ -52,6 +52,14 @@ Existing models that you have trained will not be immediately impacted, but expi
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
 The following new features and changes to {{site.data.keyword.conversationshort}} are available. Check out our [blog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/assistant/home) to find in-depth information about how the newest features can benefit your business.
+
+## 9 October 2019 
+{: #9October2019}
+
+- **New system entities changes**: The following updates have been made:
+
+  - In addition to English and German, the new numeric system entities are now available in these languages: Brazilian Portuguese, Czech, French, Italian, and Spanish.
+  - The `part_of_day` property of the `@sys-time` entity now returns a time range instead of a single time value.
 
 ## 23 September 2019 
 {: #23September2019}

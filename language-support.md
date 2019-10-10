@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-20"
+lastupdated: "2019-10-09"
 
 subcollection: assistant
 
@@ -120,15 +120,15 @@ The first table shows the level of support for all features, except those relate
 | **Arabic (ar)**                    | Beta | NA |
 | **Chinese (Simplified) (zh-cn)**   | GA | NA |
 | **Chinese (Traditional) (zh-tw)**  | Beta | NA |
-| **Czech (cs)**                     | GA | NA |
+| **Czech (cs)**                     | GA | Beta |
 | **Dutch (nl)**                     | GA | NA |
-| **French (fr)**                    | GA | NA |
+| **French (fr)**                    | GA | Beta |
 | **German (de)**                    | GA | Beta |
-| **Italian (it)**                   | GA | NA |
+| **Italian (it)**                   | GA | Beta |
 | **Japanese (ja)**                  | GA | NA |
 | **Korean (ko)**                    | GA | NA |
-| **Portuguese (Brazilian) (pt-br)** | GA | NA |
-| **Spanish (es)**                   | GA | NA |
+| **Portuguese (Brazilian) (pt-br)** | GA | Beta |
+| **Spanish (es)**                   | GA | Beta |
 {: caption="System entity feature support details" caption-side="top"}
 
 **Note:** The {{site.data.keyword.conversationshort}} service supports multiple languages as noted, but the tool interface itself (descriptions, labels, etc.) is in English. All supported languages can be input and trained through the English interface.
