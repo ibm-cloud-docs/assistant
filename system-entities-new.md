@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-17"
+lastupdated: "2019-10-09"
 
 subcollection: assistant
 
@@ -28,7 +28,7 @@ subcollection: assistant
 
 Enable the new system entities to take advantage of improvements that were made to the number-based system entities provided by IBM.
 
-Currently, this setting can be enabled for dialog skills that are written in English or German only.
+For information about the languages in which the new system entities are supported, see [Supported languages](/docs/services/assistant?topic=assistant-language-support).
 {: note}
 
 The new system entities can recognize more nuanced mentions in user input. For example, `@sys-date` can calculate the date of a national holiday, such as `Thanksgiving`, when it is mentioned by name. And `@sys-date` can recognize when a year is specified as part of a date mentioned in the user's input. The improvements also make it easier for your assistant to distinguish among the many number-based system entities. For example, a date mention, such as `May 10`, that is recognized to be a `@sys-date` is not also identified as a `@sys-number` mention.
@@ -78,7 +78,7 @@ Table 1. New system entity properties
 | `sys-time` | `datetime_link` | If present, indicates that the user's input mentions a date and time together, which implies that the date and time are related to one another. The start and end index values of the string that includes the date and time are saved as part of the link name. For example, if the input is, `Are you open today at 5?`, then `today` is recognized as a date reference at location `[13,18]` and `at 5` is recognized as a time reference at location `[19,23]`. A location value of `[13,23]`, which spans both the date and time mentions, is appended to the resulting datetime_link. It is named `datetime_link_13_23` and it is included in the output of the `@sys-date` and `@sys-time` system entities that participate in the relationship. |
 | `@sys-time` | `granularity` | Recognizes mentions of time frames, such as `now` (=`instant`) or `3 o'clock` or `noon` (=`hour`), or `17:00:00` (=`second`). Options are `hour`, `minute`, `second` and `instant`. |
 | `@sys-time` | `interpretation` | The object that is returned by your assistant which contains new fields that increase the precision of the system entity classifier. You can omit `interpretation` from the expression that you use to refer to its fields. For example, you can access the value of the `granularity` field in the interpretation object by using the shorhand syntax `<? @sys-time.granularity ?>`. |
-| `@sys-time` | `part_of_day` | Recognizes terms that represent the time of day, such as `morning`, `afternoon`, `evening`, `night`, or `now`. Also sets arbitrary times, such as `9:00:00` for morning, `15:00:00` for afternoon, `18:00:00` for evening, and `22:00:00` for night. |
+| `@sys-time` | `part_of_day` | Recognizes terms that represent the time of day, such as `morning`, `afternoon`, `evening`, `night`, or `now`. Also sets a time range for each part of the day. The response contains two `@sys-time` values, one for the start and one for the end of the time range. The entities array contains a `range_link` object with `time-from` and `time-to` role types. The time range for morning is `6:00:00` to `12:00:00`. Afternoon is `12:00:00` to `18:00:00`. Evening is `18:00:00` to `22:00:00`. Night is `22:00:00` to `23:59:59`. Night ends just before midnight because otherwise it would overlap with a new day, which is measured by `@sys-date`. |
 | `@sys-time` | `range_link` | If present, indicates that the user's input contains syntax that suggests a time range is specified. For example, the input might be `Are you open from 9AM to 11AM`. Each of the two `@sys-time` system entities that are detected has a `range_link` property in its output. Additional information is provided, including the role that each `@sys-time` plays in the range relationship. For example, the start time has a role type of `time_from` and the end time has a role type of `time_to`. To check a role value, you can use the syntax `@sys-time.role?.type == 'time_from'`. If the user input implies a range, but only one time is specified, then the `range_link` property is not returned, but one role type is returned. For example, if the user asks, `Are you open until 9PM`, 9PM is recognized as the `@sys-time` mention, and a role of type `time_to` is returned for it. A `range_modifier` that identifies the word in the input that triggers the identification of a range is also returned. In this example, the modifier is `until`. |
 | `@sys-time` | `relative_hour`, `relative_minute`, `relative_second` | Recognizes relative mentions of time, such as `5 hours ago` (`relative_hour = -5`),`in two minutes`(`relative_minute = 2`), or `in a second` (`relative_second = 1`). |
 | `@sys-time` | `specific_hour`, `specific_minute`, `specific_second` | Recognizes specific mentions of time, such as `at 5 o'clock` (`specific_hour = 5`), `at 2:30`(`specific_minute = 30`), or `23:30:22` (`specific_second = 22`). |
