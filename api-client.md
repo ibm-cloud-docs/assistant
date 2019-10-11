@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-09"
+lastupdated: "2019-10-11"
 
 subcollection: assistant
 
@@ -83,7 +83,7 @@ service
     sessionId = res.result.session_id;
     sendMessage({
       messageType: 'text',
-      text: '' // start conversation with empty message
+      text: '', // start conversation with empty message
     });
   })
   .catch(err => {
@@ -307,7 +307,7 @@ service
     sessionId = res.result.session_id;
     sendMessage({
       messageType: 'text',
-      text: ''
+      text: '',
     }); // start conversation with empty message
   })
   .catch(err => {
@@ -320,7 +320,7 @@ function sendMessage(messageInput) {
     .message({
       assistantId,
       sessionId,
-      input: messageInput
+      input: messageInput,
     })
     .then(res => {
       processResponse(res.result);
@@ -363,7 +363,7 @@ function processResponse(response) {
   }
   newMessageInput = {
     messageType: 'text',
-    text: newMessageFromUser
+    text: newMessageFromUser,
   }
   sendMessage(newMessageInput);
 }
@@ -591,7 +591,7 @@ function sendMessage(messageInput) {
     .message({
       assistantId,
       sessionId,
-      input: messageInput
+      input: messageInput,
     })
     .then(res => {
       processResponse(res.result);
@@ -634,7 +634,7 @@ function processResponse(response) {
     const newMessageFromUser = prompt('>> ');
     newMessageInput = {
       messageType: 'text',
-      text: newMessageFromUser
+      text: newMessageFromUser,
     }
     sendMessage(newMessageInput);
   } else {

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-14"
+lastupdated: "2019-10-11"
 
 subcollection: assistant
 
@@ -362,11 +362,14 @@ Our simplified example uses standard input and output, so we don't have access t
 
 const prompt = require('prompt-sync')();
 const AssistantV2 = require('ibm-watson/assistant/v2');
+const { IamAuthenticator } = require('ibm-watson/auth');
 
 // Set up Assistant service wrapper.
 const service = new AssistantV2({
-  iam_apikey: '{apikey}', // replace with API key
   version: '2019-02-28',
+  authenticator: new IamAuthenticator({
+    apikey: '{apikey}', // replace with API key
+  })
 });
 
 const assistantId = '{assistant_id}'; // replace with assistant ID
@@ -375,11 +378,14 @@ let sessionId;
 // Create session.
 service
   .createSession({
-    assistant_id: assistantId,
+    assistantId,
   })
   .then(res => {
-    sessionId = res.session_id;
-    sendMessage({text: ''}); // start conversation with empty message
+    sessionId = res.result.session_id;
+    sendMessage({
+      messageType: 'text',
+      text: '',  // start conversation with empty message
+    });
   })
   .catch(err => {
     console.log(err); // something went wrong
@@ -389,12 +395,12 @@ service
 function sendMessage(messageInput) {
   service
     .message({
-      assistant_id: assistantId,
-      session_id: sessionId,
+      assistantId,
+      sessionId,
       input: messageInput,
     })
     .then(res => {
-      processResponse(res);
+      processResponse(res.result);
     })
     .catch(err => {
       console.log(err); // something went wrong
@@ -447,16 +453,16 @@ function processResponse(response) {
   if (!endConversation) {
     const newMessageFromUser = prompt('>> ');
     newMessageInput = {
-      message_type: 'text',
-      text: newMessageFromUser
+      messageType: 'text',
+      text: newMessageFromUser,
     }
     sendMessage(newMessageInput);
   } else {
     // We're done, so we delete the session.
     service
       .deleteSession({
-        assistant_id: assistantId,
-        session_id: sessionId,
+        assistantId,
+        sessionId,
       })
       .then(res => {
         return;
@@ -529,24 +535,30 @@ To do this in our application, we will set a new `promptOption` flag when the cl
 
 const prompt = require('prompt-sync')();
 const AssistantV2 = require('ibm-watson/assistant/v2');
+const { IamAuthenticator } = require('ibm-watson/auth');
 
 // Set up Assistant service wrapper.
 const service = new AssistantV2({
-  iam_apikey: 'AZkSnK4b40UI5kLepHKxIKYpVcxeg0yPLbVVwGFW8kjM', // replace with API key
   version: '2019-02-28',
+  authenticator: new IamAuthenticator({
+    apikey: '{apikey}', // replace with API key
+  })
 });
 
-const assistantId = 'dcd5c5ad-f3a1-4345-89c5-708b0b5ff4f7'; // replace with assistant ID
+const assistantId = '{assistant_id}'; // replace with assistant ID
 let sessionId;
 
 // Create session.
 service
   .createSession({
-    assistant_id: assistantId,
+    assistantId,
   })
   .then(res => {
-    sessionId = res.session_id;
-    sendMessage({text: ''}); // start conversation with empty message
+    sessionId = res.result.session_id;
+    sendMessage({
+      messageType: 'text',
+      text: '',  // start conversation with empty message
+    });
   })
   .catch(err => {
     console.log(err); // something went wrong
@@ -556,12 +568,12 @@ service
 function sendMessage(messageInput) {
   service
     .message({
-      assistant_id: assistantId,
-      session_id: sessionId,
+      assistantId,
+      sessionId,
       input: messageInput,
     })
     .then(res => {
-      processResponse(res);
+      processResponse(res.result);
     })
     .catch(err => {
       console.log(err); // something went wrong
@@ -632,7 +644,7 @@ function processResponse(response) {
       // round of input.
       const newText = prompt('>> ');
       messageInput = {
-        text: newText
+        text: newText,
       }
     }
     sendMessage(messageInput); 
@@ -640,8 +652,8 @@ function processResponse(response) {
     // We're done, so we delete the session.
     service
       .deleteSession({
-        assistant_id: assistantId,
-        session_id: sessionId,
+        assistantId,
+        sessionId,
       })
       .then(res => {
         return;
