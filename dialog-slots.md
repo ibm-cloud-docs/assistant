@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-12"
+lastupdated: "2019-10-15"
 
 keywords: slot, slots
 
@@ -89,6 +89,82 @@ Using slots produces a more natural dialog flow between the user and your assist
 
     - **Prompt**: Write a statement that elicits the piece of the information you need from the user. After displaying this prompt, the conversation pauses and your assistant waits for the user to respond.
 
+      If you want the prompt to be something other than a text response, you can change the response type by clicking the **Edit slot** ![Edit slot](images/edit-slot.png) icon. Click **Text** to choose a different response type. 
+      
+      Response type options{: #dialog-slots-response-types}:
+
+      - **Image**. Add the full URL to the hosted image file into the **Image source** field. The image must be in .jpg, .gif, or .png format. The image file must be stored in a location that is publicly addressable by URL.
+
+        For example: `https://www.example.com/assets/common/logo.png`.
+
+        If you want to display an image title and description above the embedded image in the response, then add them in the fields provided.
+
+        Slack integrations require a title. Other integration channels ignore titles or descriptions.
+        {: note}
+
+      - **Option**. Complete the following steps:
+
+        1.  Click **Add option**.
+        1.  In the **List label** field, enter the option to display in the list. The label must be less than 2,048 characters in length.
+        1.  In the corresponding **Value** field, enter the user input to pass to your assistant when this option is selected. The value must be less than 2,048 characters in length.
+
+            Specify a value that you know will trigger the correct intent when it is submitted. For example, it might be a user example from the training data for the intent.
+        1.  Repeat the previous steps to add more options to the list.
+
+            You can add up to 20 options.
+        1.  Add a list introduction in the **Title** field. The title can ask the user to pick from the list of options.
+
+            Some integration channels do not display the title.
+            {: note}
+
+        1.  Optionally, add additional information in the **Description** field. If specified, the description is displayed after the title and before the option list.
+
+        Some integration channels do not display the description.
+        {: note}
+
+        For example, you can construct a response like this:
+
+        <table>
+        <caption>Response options</caption>
+        <tr>
+          <th>List title</th>
+          <th>List description</th>
+          <th>Option label</th>
+          <th>User input submitted when clicked</th>
+        </tr>
+        <tr>
+          <td>Insurance types</td>
+          <td>Which of these items do you want to insure?</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>Boat</td>
+          <td>I want to buy boat insurance</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>Car</td>
+          <td>I want to buy car insurance</td>
+        </tr>
+         <tr>
+          <td></td>
+          <td></td>
+          <td>Home</td>
+          <td>I want to buy home insurance</td>
+        </tr>
+        </table>
+
+      - **Pause**. Add the length of time for the pause to last as a number of milliseconds (ms) to the **Duration** field.
+
+        The value cannot exceed 10,000 ms. Users are typically willing to wait about 8 seconds (8,000 ms) for someone to enter a response. To prevent a typing indicator from being displayed during the pause, choose **Off**.
+
+        Add another response type, such as a text response type, after the pause to clearly denote that the pause is over.
+        {: tip}
+
     - If you want different follow-up statements to be shown based on whether the user provides the information you need in response to the initial slot prompt, you can edit the slot (by clicking the **Edit slot** ![Edit slot](images/edit-slot.png) icon) and define the follow-up statements:
 
       - **Found**: Displayed after the user provides the expected information.
@@ -159,6 +235,8 @@ Using slots produces a more natural dialog flow between the user and your assist
 
     This condition is triggered if the user provides input that matches the slot handler conditions at any time during the dialog node flow up until the node-level response is displayed. See [Handling requests to exit a process](#dialog-slots-node-level-handler) for more ways to use the slot handler.
 1.  **Add a node-level response**. The node-level response is not executed until after all of the required slots are filled. You can add a response that summarizes the information you collected. For example, `A $size pizza is scheduled for delivery at $time. Enjoy!`
+
+    You can alternatively show an image or list of options as a response instead of a text response. See [Response type options](#dialog-slots-response-types).
 
     If you want to define different responses based on certain conditions, click **Customize**, and then click the **Multiple responses** toggle to turn it **On**. For information about conditional responses, see [Conditional responses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multiple).
 1.  **Add logic that resets the slot context variables**. As you collect answers from the user per slot, they are saved in context variables. You can use the context variables to pass the information to another node or to an application or external service for use. However, after passing the information, you must set the context variables to null to reset the node so it can start collecting information again. You cannot null the context variables within the current node because your assistant will not exit the node until the required slots are filled. Instead, consider using one of the following methods:

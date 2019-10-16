@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-26"
+lastupdated: "2019-10-15"
 
 subcollection: assistant
 
@@ -78,6 +78,8 @@ See [Changing the inactivity timeout setting](/docs/services/assistant?topic=ass
 
 You can connect one skill of each type to your assistant. The number of skills you can build differs depending on the plan you have. See [Skill limits](/docs/services/assistant?topic=assistant-skill-add#skill-add-limits) for more details.
 
+If you want to create an assistant in a different service instance, you can switch to another service instance. See [Switching the service instance](/docs/services/assistant?topic=assistant-skill-open#skill-open-switch-instance).
+
 ## Deleting an assistant
 {: #assistant-add-delete}
 
@@ -114,8 +116,3 @@ You can add one skill of each skill type to an assistant. If you want to change 
     To swap the current dialog skill for a different version of the skill, choose **Change skill version**.
 
 1.  Choose an existing skill to use instead or [create a skill](/docs/services/assistant?topic=assistant-skill-add).
-
-### Switching between service instances
-{: #assistant-add-switch-instance}
-
-If you have more than one service instance, you can check the page header to find out which instance you are currently using. If you are working in a skill, click the **Skills** breadcrumb link first. The banner displays the current instance name. To switch to a different service instance, click **Change**, and then choose the appropriate instance.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-09"
+lastupdated: "2019-10-15"
 
 subcollection: assistant
 
@@ -52,6 +52,26 @@ Existing models that you have trained will not be immediately impacted, but expi
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
 The following new features and changes to {{site.data.keyword.conversationshort}} are available. Check out our [blog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/assistant/home) to find in-depth information about how the newest features can benefit your business.
+
+## 14 October 2019
+{: #14October2019}
+<!--1.79-->
+
+The following updates are available in all locations except Dallas currently.
+{: important}
+
+- The main menu options of **Assistants** and **Skills** have moved from being displayed at the top of the page to being shown as icons on the side of the page.
+
+  - ![Assistants menu icon](images/nav-ass-icon.png) Assistants
+  - ![Skills menu icon](images/nav-skills-icon.png) Skills
+
+  The tabbed pages for the tools you use to develop a dialog skill were moved to a secondary navigation bar that is displayed when you open the skill.
+
+  ![Skills secondary navigation menu](images/secondary-nav.png)
+
+- **Rich response types are supported in a dialog node with slots**. You can display a list of options for a user to choose from as the prompt for a slot, for example. See [Adding rich responses to slots](dialog-slots-multimedia).
+
+- Where you go to switch service instances has changed. See [Switching the service instance](/docs/services/assistant?topic=assistant-skill-open#skill-open-switch-instance).
 
 ## 9 October 2019 
 {: #9October2019}
