@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-28"
+lastupdated: "2019-10-15"
 
 subcollection: assistant
 
@@ -48,4 +48,13 @@ Assistants and skills are created within a {{site.data.keyword.conversationshort
 
 1.  Click the assistant you want to open or click the **Skills** tab to find a skill.
 
-    If you do not see the skill or assistant you are looking for, you can look for it in a different service instance. To switch to a different instance, find the current instance's name in the header, and then click **Change**. A list of your service instances is displayed. Click a different service instance to open it.
+If you do not see the skill or assistant you are looking for, you can look for it in a different service instance.
+
+## Switching the service instance
+{: #skill-open-switch-instance}
+
+To switch to a different {{site.data.keyword.conversationshort}} service instance, complete the following steps:
+    
+1. From the header of any page in the current instance, click the User icon ![user icon](images/user-icon.png).
+1.  Choose **Switch instance** from the menu.
+1.  A list of the available service instances is displayed. Click a different service instance to open it.
