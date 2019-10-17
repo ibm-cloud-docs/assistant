@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-15"
+lastupdated: "2019-10-17"
 
 subcollection: assistant
 
@@ -53,12 +53,19 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 The following new features and changes to {{site.data.keyword.conversationshort}} are available. Check out our [blog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/assistant/home) to find in-depth information about how the newest features can benefit your business.
 
+## 16 October 2019
+{: #16October2019}
+
+The changes from 14 October are now available in Dallas.
+
 ## 14 October 2019
 {: #14October2019}
 <!--1.79-->
 
 The following updates are available in all locations except Dallas currently.
 {: important}
+
+- Deploy your assistant in minutes. Create a web chat integration to embed your assistant into a page on your website as a chat widget. See [Integrating with your own website](/docs/services/assistant?topic=assistant-deploy-web-chat).
 
 - The main menu options of **Assistants** and **Skills** have moved from being displayed at the top of the page to being shown as icons on the side of the page.
 
