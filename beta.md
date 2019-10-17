@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-03"
+lastupdated: "2019-10-17"
 
 subcollection: assistant
 
@@ -35,24 +35,7 @@ When you participate in the early access program, IBM gives you early access to 
 The following features are available for use by participants in the early access program only. To find out how to request access, see [Participate in the early access program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
 {: preview}
 
-- The main menu options of **Assistants** and **Skills** have moved from being displayed at the top of the page to being shown as icons on the side of the page. <!--1.74-->
-
-  - ![Assistants menu icon](images/nav-ass-icon.png) Assistants
-  - ![Skills menu icon](images/nav-skills-icon.png) Skills
-
-  The tabbed pages for the tools you use to develop a dialog skill were moved to a secondary navigation bar that is displayed when you open the skill.
-
-  ![Skills secondary navigation menu](images/secondary-nav.png)
-
-- The user interface controls that you use to create entity annotations on the Intents page have changed. You can now click the Annotate entities toggle to enable annotation, and then more easily pick one or more words to annotate. <!--1.73-->
-
-- The user interface of the Entities and Intents <!--1.72 --> pages were updated to use a new JavaScript library that increases the page responsiveness. As a result, the look of some graphical user interface elements, such as buttons, changed slightly, but the function did not.
-
 - Try out the new irrelevant topic detection feature. When enabled, a supplemental model is used to help identify utterances that are irrelevant and should not be answered by the dialog skill. This new model is especially beneficial for skills that have not been trained on what subjects to ignore. For more information, see [New irrelevant topic detection](/docs/services/assistant?topic=assistant-irrelevance-detection).
-
-- Add rich response types to dialog node slot prompts. For example, you can display a list of options for a user to choose from as the prompt for the slot. See [Adding rich responses to slots](dialog-slots-multimedia). <!--1.71 -->
-
-- Deploy your assistant in minutes. Create a web chat integration to generate an HTML script element that you can copy and paste into a page on your website to embed the assistant as a chat widget. See [Integrating with your own website](/docs/services/assistant?topic=assistant-deploy-web-chat). <!--1.72 -->
 
 - **Disambiguation changes**: How disambiguation works is changing in the following ways:
 

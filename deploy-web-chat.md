@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-04"
+lastupdated: "2019-10-17"
 
 subcollection: assistant
 
@@ -24,20 +24,15 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Integrating with your own website
+# Integrating with your own website ![Beta](images/beta.png)
 {: #deploy-web-chat}
 
-Add your assistant to your company website as a web chat widget.
+Embed your assistant in your company website as a chat widget.
 {: shortdesc}
 
-This feature is available for use by participants in the early access program only. To find out how to request access, see [Participate in the early access program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
-{: preview}
+When you create a Web Chat integration, code is generated that calls a script written in JavaScript. The script instantiates a unique instance of your assistant. You can then copy and paste the HTML `<script>` element into any page or pages on your website where you want users to be able to ask your assistant for help.
 
-When you participate in the early access program, IBM gives you early access to features for your evaluation. These features are classified as beta, which means they might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment. Beta features are supported only on the [IBM Developer Answers](https://developer.ibm.com/answers/topics/watson-assistant/){: external}.
-
-When you create a Web Chat integration, code is generated that calls a script written in JavaScript that instantiates a unique instance of your assistant. You can then copy and paste the HTML `<script>` element into any page or pages on your website where you want users to be able to ask your assistant for help.
-
-![Plus or Premium plan only](images/plus.png) When the feature is generally available, it will be available to Plus or Premium plan users only.
+![Plus or Premium plan only](images/plus.png) This feature is available to Plus or Premium plan users only.
 
 ## Create a web chat instance to add to your website
 {: #deploy-web-chat-task}
