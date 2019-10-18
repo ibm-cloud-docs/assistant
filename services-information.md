@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-18"
+lastupdated: "2019-10-18"
 
 subcollection: assistant
 
@@ -10,6 +10,7 @@ subcollection: assistant
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
@@ -31,14 +32,14 @@ The assistant is a fully hosted bot that is managed by {{site.data.keyword.cloud
 ## Service plan information
 {: #services-information-plans}
 
-Explore the {{site.data.keyword.conversationshort}} [service plan options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/watson-assistant/pricing/){: new_window}.
+Explore the {{site.data.keyword.conversationshort}} [service plan options](https://www.ibm.com/cloud/watson-assistant/pricing/){: external}.
 
-Before you create a service instance, decide how you want to organize the resources in your {{site.data.keyword.cloud_notm}} account. If you do not define your own resource group, the **default** resource group is used, and you *cannot* change it later. See [Best practices for organizing resources in a resource group ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/resources/bestpractice_rgs#bp_resourcegroups){: new_window} for more details. All users must have a platform access role of Operator. (Service access roles are not leveraged by {{site.data.keyword.conversationshort}}.)
+Before you create a service instance, decide how you want to organize the resources in your {{site.data.keyword.cloud_notm}} account. If you do not define your own resource group, the **default** resource group is used, and you *cannot* change it later. See [Best practices for organizing resources in a resource group](https://cloud.ibm.com/docs/resources/bestpractice_rgs#bp_resourcegroups){: external} for more details. All users must have a platform access role of Operator. (Service access roles are not leveraged by {{site.data.keyword.conversationshort}}.)
 
 To find out the service plan to which your current instance belongs, complete these steps:
 
 1.  Make a note of the name of the instance you are currently using. (You can find and change the instance from the main Skills or Assistants pages.)
-1.  Go to the [IBM Cloud Resource list ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/resources) page.
+1.  Go to the [IBM Cloud Resource list](https://cloud.ibm.com/resources){: external} page.
 1.  Expand the **Services** section, find the instance name that you noted earlier, and click it to see the associated plan information.
 
 ### Plan limits by artifact type
@@ -75,6 +76,7 @@ The following features are available only to users of Plus or Premium plans only
 - [Intent recommendations and intent user example recommendations](/docs/services/assistant?topic=assistant-intent-recommendations)
 - [Intercom integration](/docs/services/assistant?topic=assistant-deploy-intercom)
 - [Search skill](/docs/services/assistant?topic=assistant-skill-search-add)
+- [Web Chat](/docs/services/assistant?topic=assistant-deploy-web-chat)
 
 ### User-based plans
 {: #services-information-user-based-plans}
@@ -103,7 +105,7 @@ The authentication mechanism used by your service instance impacts how you must 
 
 1.  Get the service credentials.
 
-    - Find and click the service instance in the [{{site.data.keyword.Bluemix_notm}}  Resource List ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com){: new_window}.
+    - Find and click the service instance in the [{{site.data.keyword.Bluemix_notm}}  Resource List](https://cloud.ibm.com){: external}.
 
     - Click to open your service instance, click **Service credentials**, and then click **View credentials**.
 
@@ -153,16 +155,16 @@ The authentication mechanism used by your service instance impacts how you must 
         When you use any of the Watson SDKs, you can pass the API key and let the SDK manage the lifecycle of the tokens.
         {: note}
 
-        IAM resources cannot be managed with the Cloud Foundry Command Line Interface (CLI). For example, Cloud Foundry CLI commands (beginning with `cf`) that create or manage service instances do not work with instances hosted in locations using IAM. Instead, you must use the {{site.data.keyword.cloud_notm}} CLI and its associated commands. See [Working with resources and resource groups ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_resource) for more details.
+        IAM resources cannot be managed with the Cloud Foundry Command Line Interface (CLI). For example, Cloud Foundry CLI commands (beginning with `cf`) that create or manage service instances do not work with instances hosted in locations using IAM. Instead, you must use the {{site.data.keyword.cloud_notm}} CLI and its associated commands. See [Working with resources and resource groups](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_resource){: external} for more details.
 
-        See [Authenticating with IAM tokens ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/watson?topic=watson-iam){: new_window} for more information.
+        See [Authenticating with IAM tokens](/docs/services/watson?topic=watson-iam){: external} for more information.
 
-    For examples, see  [Authentication ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant-v2#authentication){: new_window} for your language in the API reference.
+    For examples, see  [Authentication](https://{DomainName}/apidocs/assistant-v2#authentication){: external} for your language in the API reference.
 
 ### Data centers
 {: #services-information-regions}
 
-{{site.data.keyword.cloud_notm}} has a network of global data centers that provide performance benefits to its cloud services. See [{{site.data.keyword.cloud_notm}} global data centers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/data-centers/){: new_window} for more details.
+{{site.data.keyword.cloud_notm}} has a network of global data centers that provide performance benefits to its cloud services. See [{{site.data.keyword.cloud_notm}} global data centers](https://www.ibm.com/cloud/data-centers/){: external} for more details.
 
 {{site.data.keyword.cloud_notm}} changed from managing user access with Cloud Foundry to using token-based Identity and Access Management (IAM) authentication. IAM was rolled out in different locations at different times. You can migrate a service instance to move it from its current Cloud Foundry org and space to a resource group. See [Migrating](/docs/services/watson?topic=watson-migrate) for more details.
 
@@ -178,20 +180,20 @@ You can create {{site.data.keyword.conversationshort}} service instances that ar
 | Washington DC  | us-east    | IAM                 | 14 June 2018 | N/A |
 {: caption="Data center locations" caption-side="top"}
 
-For information about the data centers in which other {{site.data.keyword.cloud_notm}} services are hosted, see [Services by region ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/resources/services_region#services_region){: new_window}.
+For information about the data centers in which other {{site.data.keyword.cloud_notm}} services are hosted, see [Services by region](https://cloud.ibm.com/docs/resources/services_region#services_region){: external}.
 
 ## Terms and security
 {: #services-information-terms}
 
 To learn more about service terms and data security, read the following information:
 
-- [Service terms ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/sla/home?OpenDocument){: new_window}
-- [Data security and privacy ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/software/sla/sladb.nsf/sla/csdsp?OpenDocument){: new_window}
+- [Service terms](https://www-03.ibm.com/software/sla/sladb.nsf/sla/home?OpenDocument){: external}
+- [Data security and privacy](https://www.ibm.com/software/sla/sladb.nsf/sla/csdsp?OpenDocument){: external}
 - [Information security](/docs/services/assistant?topic=assistant-information-security)
 
-See [Platform overview ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/overview?topic=overview-whatis-platform){: new_window} for more information about {{site.data.keyword.cloud_notm}}.
+See [Platform overview](/docs/overview?topic=overview-whatis-platform){: external} for more information about {{site.data.keyword.cloud_notm}}.
 
 ## Still have questions? 
 {: #services-information-sales}
 
-Contact [IBM Sales ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-01.ibm.com/marketing/iwm/dre/signup?source=urx-20970){: new_window}.
+Contact [IBM Sales](https://www-01.ibm.com/marketing/iwm/dre/signup?source=urx-20970){: external}.

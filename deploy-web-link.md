@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-28"
+lastupdated: "2019-10-18"
 
 subcollection: assistant
 
@@ -22,7 +22,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Integrating with a web-hosted chat widget
+# Integrating with an IBM-branded web page
 {: #deploy-web-link}
 
 If you do not disable the preview link, then the assistant is immediately available for testing from a web page.
@@ -37,7 +37,7 @@ Unlike when you test using the "Try it out" pane, any API calls that result from
 
 To test the assistant from a web-hosted chat widget, complete the following steps:
 
-1.  From the Assistants tab, click to open the assistant tile that you want to test.
+1.  From the Assistants page, click to open the assistant tile that you want to test.
 
 1.  From the *Integrations* section, click the **Preview Link** tile.
 

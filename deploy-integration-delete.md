@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-31"
+lastupdated: "2019-10-18"
 
 subcollection: assistant
 
@@ -28,7 +28,7 @@ subcollection: assistant
 
 To stop an assistant from being available to users from a certain channel, delete the integration to that channel.
 
-1.  From the Assistants tab, click to open the assistant tile that you want to edit.
+1.  From the Assistants page, click to open the assistant tile that you want to edit.
 
 1.  From the Integrations section, find the tile for the integration that you want to delete.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-23"
+lastupdated: "2019-10-18"
 
 subcollection: assistant
 
@@ -34,7 +34,7 @@ The dialog defines what your assistant says in response to customers, based on w
 
 To create a dialog, complete the following steps:
 
-1.  Click the **Dialog** tab, and then click **Create dialog**.
+1.  From the Skills menu, click **Dialog**, and then click **Create dialog**.
 
     When you open the dialog editor for the first time, the following nodes are created for you:
 
@@ -122,7 +122,7 @@ As you make changes to your dialog, you can test it at any time to see how the d
 
 Queries you submit through the "Try it out" pane generate `/message` API calls, but they are not logged and do not incur charges.
 
-1.  From the Dialog tab, click the ![Try it](images/ask_watson.png) icon.
+1.  From the Dialog page, click the ![Try it](images/ask_watson.png) icon.
 1.  In the chat pane, type some text and then press Enter.
 
     Make sure the system has finished training on your most recent changes before you start to test the dialog. If the system is still training, a message is displayed in the *Try it out* pane:
@@ -137,7 +137,7 @@ Queries you submit through the "Try it out" pane generate `/message` API calls, 
 
     If you want to edit an entity that is recognized from the input, click the entity name to open it in the Entities page. If the wrong intent is recognized, you can click the arrow next to the intent name to correct it or mark the topic as irrelevant. For more information, see [Making training data improvements](/docs/services/assistant?topic=assistant-logs#logs-fix-data).
 
-1.  If you want to know which node in the dialog tree triggered a response, click the **Location** ![Location](images/location.png) icon next to it. If you are not already in the Dialog tab, open it.
+1.  If you want to know which node in the dialog tree triggered a response, click the **Location** ![Location](images/location.png) icon next to it. If you are not already on the Dialog page, open it.
 
     The source node is given focus and the route that your assistant traversed through the tree to get to it is highlighted. It remains highlighted until you perform another action, such as entering a new test input.
 
@@ -236,7 +236,7 @@ You can search for a dialog node by its node ID. Enter the full node ID into the
 
 Another way to discover a node based on its node ID is by following these steps:
 
-1.  From the Dialog tab, select any node in your dialog tree.
+1.  From the Dialog page, select any node in your dialog tree.
 1.  Close the edit view if it is open for the current node.
 1.  In your web browser's location field, a URL should display that has the following syntax:
 

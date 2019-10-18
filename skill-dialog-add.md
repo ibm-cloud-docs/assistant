@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-26"
+lastupdated: "2019-10-18"
 
 keywords: import workspace, import JSON, export JSON
 
@@ -39,7 +39,7 @@ You can create a skill from scratch, use a sample skill that is provided by IBM,
 
 To add a skill, complete the following steps:
 
-1.  Click the **Skills** tab, and then click **Create skill**.
+1.  Click the **Skills** icon ![Skills menu icon](images/nav-skills-icon.png), and then click **Create skill**.
 
 1.  Click the *Dialog skill* tile, and then click **Next**.
 
@@ -99,7 +99,7 @@ If you receive a message that says the skill contains artifacts that exceed the 
 
 You can add one dialog skill to an assistant. You must open the assistant tile and add the skill to the assistant from the assistant configuration page; you cannot choose the assistant that will use the skill from within the skill configuration page. One dialog skill can be used by more than one assistant.
 
-1.  From the Assistants tab, click to open the tile for the assistant to which you want to add the skill.
+1.  From the Assistants page, click to open the tile for the assistant to which you want to add the skill.
 
 1.  Click **Add Dialog Skill**.
 
@@ -107,7 +107,7 @@ You can add one dialog skill to an assistant. You must open the assistant tile a
 
     Click the skill that you want to add from the available skills that are displayed.
 
-When you add a dialog skill from here, you get the development version. If you want to add a specific skill version, add it from the skill's *Versions* tab instead.
+When you add a dialog skill from here, you get the development version. If you want to add a specific skill version, add it from the skill's *Versions* page instead.
 
 ## Downloading a dialog skill
 {: #skill-dialog-add-download}

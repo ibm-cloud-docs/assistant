@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-10-18"
 
 subcollection: assistant
 
@@ -117,7 +117,7 @@ See [Rich responses](/docs/services/assistant?topic=assistant-dialog-overview#di
 ## Adding an Intercom integration
 {: #deploy-intercom-add-intercom}
 
-1.  From the Assistants tab, click to open the assistant tile that you want to deploy.
+1.  From the Assistants page, click to open the assistant tile that you want to deploy.
 
 1.  From the Integrations section, click **Add integration**.
 

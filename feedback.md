@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-13"
+lastupdated: "2019-10-18"
 
 subcollection: assistant
 
@@ -57,7 +57,7 @@ To request participation in the program, you must first create a new {{site.data
     Unless you change it, the service instance will be created in the **default** resource group, which is sufficient for the purposes of the beta.
 
 1.  After the instance is created, click **Launch {{site.data.keyword.conversationshort}}** to open {{site.data.keyword.conversationshort}}.
-1.  Click the **Skills** tab.
+1.  Click the **Skills** icon  ![Skills menu icon](images/nav-skills-icon.png).
 1.  From the bottom of the page, click **Request Early Access**, and then confirm that you accept the terms and conditions for participating in the program. The early access program is considered a *beta* by IBM Cloud. 
 
     If you are approved for participation in the early access program, it is the service instance from which you request program access that is upgraded to expose new features.

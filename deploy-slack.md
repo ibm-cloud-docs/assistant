@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-29"
+lastupdated: "2019-10-18"
 
 subcollection: assistant
 
@@ -35,7 +35,7 @@ When integrated, depending on the events that you configure the assistant to sup
 ## Adding the Slack integration
 {: #deploy-slack-task}
 
-1.  From the Assistants tab, click to open the assistant tile that you want to deploy.
+1.  From the Assistants page, click to open the assistant tile that you want to deploy.
 
 1.  From the Integrations section, click **Add integration**.
 

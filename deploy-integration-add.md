@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-10-18"
 
 subcollection: assistant
 
@@ -42,10 +42,7 @@ To learn about how service desk integrations with your assistant can benefit you
 
 Follow these steps to add integrations to your assistant:
 
-1.  Click the **Assistants** tab.
-
-    If you don't see the **Assistants** tab, click the breadcrumb menu link in the page header.
-    {: note}
+1.  Click the **Assistants** icon ![Assistants menu icon](images/nav-ass-icon.png).
 
 1.  Click to open the tile for the assistant that you want to deploy.
 

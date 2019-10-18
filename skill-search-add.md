@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-06"
+lastupdated: "2019-10-18"
 
 subcollection: assistant
 
@@ -65,7 +65,7 @@ If you create a Discovery instance first, do not add the pre-enriched data sourc
 ## Create the search skill
 {: #skill-search-add-task}
 
-1.  Click the **Skills** tab, and then click **Create skill**.
+1.  Click the **Skills** icon ![Skills menu icon](images/nav-skills-icon.png), and then click **Create skill**.
 
 1.  Click the *Search skill* tile, and then click **Next**.
 
@@ -313,7 +313,7 @@ You can add one skill to an assistant. Open the assistant tile and add the skill
 
 One search skill can be used by more than one assistant.
 
-1.  From the Assistants tab, click to open the tile for the assistant to which you want to add the skill.
+1.  From the Assistants page, click to open the tile for the assistant to which you want to add the skill.
 
 1.  Click **Add Search Skill**.
 
