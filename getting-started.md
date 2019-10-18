@@ -137,7 +137,7 @@ We'll create a simple dialog that handles greeting and ending intents, each with
 
 ### Adding a start node
 
-1.  From the *Skills* menu, click **Dialog**.
+1.  From the Skills menu, click **Dialog**.
 1.  Click **Create dialog**. You see two nodes:
     - **Welcome**: Contains a greeting that is displayed to your users when they first engage with the assistant.
     - **Anything else**: Contains phrases that are used to reply to users when their input is not recognized.
