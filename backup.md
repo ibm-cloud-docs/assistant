@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-18"
+lastupdated: "2019-10-18"
 
 subcollection: assistant
 
@@ -72,7 +72,7 @@ To reinstate a backup copy of a dialog skill that you exported from another serv
 If the {{site.data.keyword.conversationshort}} service changes between the time you export the skill and import it, due to functional updates which are regularly applied to instances in cloud-hosted continuous delivery environments, your imported skill might function differently than it did before.
 {: important}
 
-1.  Click the **Skills** tab.
+1.  Click the **Skills** icon ![Skills menu icon](images/nav-skills-icon.png).
 
 1.  Click **Create skill**.
 

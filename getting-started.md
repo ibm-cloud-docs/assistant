@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-06"
+lastupdated: "2019-10-18"
 
 keywords: assistant, omnichannel, virtual agent, virtual assistant, chatbot, conversation, watson assistant, watson conversation
 
@@ -74,12 +74,12 @@ If available in your location, a tour begins that you can step through to learn 
 
 An [*assistant*](/docs/services/assistant?topic=assistant-assistants) is a cognitive bot to which you add a skill that enables it to interact with your customers in useful ways.
 
-If an assistant is not created automatically, your first step is to create an assistant.
+If an assistant is not created automatically, your first step is to create an assistant. Otherwise, you can skip Step 2.
 
 ## Step 2: Create an assistant
 {: #getting-started-create-assistant}
 
-1.  Click **Create assistant**.
+1.  Click the **Assistants** icon ![Assistants menu icon](images/nav-ass-icon.png), and then click **Create assistant**.
 
     ![Create assistant button on the Assistants page.](images/gs-create-assistant.png)
 1.  Name the assistant `My first assistant`.
@@ -92,7 +92,9 @@ If an assistant is not created automatically, your first step is to create an as
 
 A *dialog skill* is a container for the artifacts that define the flow of a conversation that your assistant can have with your customers.
 
-1.  If the assistant was created for you, click the *My first assistant* tile to open the assistant.
+Sometimes a dialog skill is created for you automatically or is created as part of the product tour. If not, complete this step to create your first dialog skill. Otherwise, you can skip this step. 
+
+1.  Click the *My first assistant* tile to open the assistant.
 
 1.  Click **Add dialog skill**.
 
@@ -135,7 +137,7 @@ We'll create a simple dialog that handles greeting and ending intents, each with
 
 ### Adding a start node
 
-1.  Click the **Dialog** tab.
+1.  From the Skills menu, click **Dialog**.
 1.  Click **Create dialog**. You see two nodes:
     - **Welcome**: Contains a greeting that is displayed to your users when they first engage with the assistant.
     - **Anything else**: Contains phrases that are used to reply to users when their input is not recognized.
@@ -198,7 +200,8 @@ That's it. You created a simple conversation with two intents and a dialog to re
 
 Now that you have an assistant that can participate in a simple conversational exchange, test it.
 
-1.  Click the **Assistants** tab, find the *My first assistant* assistant, and open it.
+1.  Click the **Assistants** icon ![Assistants menu icon](images/nav-ass-icon.png) to open a list of your assistants.
+1.  Find the *My first assistant* assistant, and open it.
 1.  Do one of the following things to test your assistant with a preview link integration. 
 
     The preview link integration builds your assistant into a chat widget that is hosted by an IBM-branded web page. You can open the web page and chat with your assistant to test it out.
@@ -223,7 +226,7 @@ Now that you have an assistant that can participate in a simple conversational e
 ## Next steps
 {: #getting-started-next-steps}
 
-This tutorial is built around a simple example. For a real application, you need to define some more interesting intents, some entities, and a more complex dialog that uses them both. When you have a polished version of the assistant, you can integrate it with channels that your customers use, such as Slack. As traffic increases between the assistant and your customers, you can use the tools that are provided in the **Analytics** tab to analyze real conversations, and identify areas for improvement.
+This tutorial is built around a simple example. For a real application, you need to define some more interesting intents, some entities, and a more complex dialog that uses them both. When you have a polished version of the assistant, you can integrate it with channels that your customers already use, such as Slack. As traffic increases between the assistant and your customers, you can use the tools that are provided in the **Analytics** tab to analyze real conversations, and identify areas for improvement.
 
 - Complete follow-on tutorials that build more advanced dialogs:
     - Add standard nodes with the [Building a complex dialog](/docs/services/assistant?topic=assistant-tutorial) tutorial.

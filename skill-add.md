@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-02"
+lastupdated: "2019-10-18"
 
 subcollection: assistant
 
@@ -45,7 +45,7 @@ You can add one skill of each skill type to an assistant.
 
 To create a skill, complete the following step:
 
-1.  Click the **Skills** tab, and then click **Create skill**.
+1.  Click the **Skills** icon ![Skills menu icon](images/nav-skills-icon.png), and then click **Create skill**.
 
 1.  Choose the type of skill to create, and then click **Next**.
 
@@ -79,14 +79,14 @@ Be sure to check with anyone else who might be using the skill before you delete
 
 To delete a skill, complete the following steps:
 
-1.  Find out whether the skill is being used by any assistants. From the Skills tab, find the tile for the skill that you want to delete. The **Assistants** field lists the assistants that currently use the skill.
+1.  Find out whether the skill is being used by any assistants. From the Skills page, find the tile for the skill that you want to delete. The **Assistants** field lists the assistants that currently use the skill.
 
 1.  If the skill you want to delete is associated with an assistant, then remove it from the assistant by completing the following steps:
 
     - Check with the owner of the assistant that is using the skill before you remove the skill from it.
-    - Open the Assistants tab, and then click to open the assistant tile.
+    - Open the Assistants page, and then click to open the assistant tile.
     - Find the tile for the skill that you want to delete. Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Remove**.
     - Repeat the previous steps for any other assistants that use the skill.
-    - Return to the Skills tab and find the tile for the skill that you want to delete.
+    - Return to the Skills page and find the tile for the skill that you want to delete.
 
 1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Delete**. Confirm the deletion.

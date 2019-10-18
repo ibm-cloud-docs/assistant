@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-17"
+lastupdated: "2019-10-18"
 
 subcollection: assistant
 
@@ -39,7 +39,7 @@ When you create a Web Chat integration, code is generated that calls a script wr
 
 To add the assistant to a web page on your company website, complete the following steps:
 
-1.  From the Assistants tab, click to open the assistant tile that you want to deply to your site.
+1.  From the Assistants page, click to open the assistant tile that you want to deply to your site.
 
 1.  From the *Integrations* section, click the **Web Chat** tile.
 

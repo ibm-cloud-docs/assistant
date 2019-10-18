@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-28"
+lastupdated: "2019-10-18"
 
 subcollection: assistant
 
@@ -34,7 +34,7 @@ After you configure a dialog skill and add it to an assistant, you can integrate
 There is currently no mechanism for identifying users who interact with the assistant through Facebook Messenger, which means that is no way to identify or delete data associated with a specific user. Do not use this integration method for deployments that must be GDPR compliant. See [Information security](/docs/services/assistant?topic=assistant-information-security) for more details.
 {: important}
 
-1.  From the Assistants tab, click to open the assistant tile that you want to deploy.
+1.  From the Assistants page, click to open the assistant tile that you want to deploy.
 
 1.  From the Integrations section, click **Add integration**.
 

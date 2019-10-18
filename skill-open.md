@@ -42,11 +42,12 @@ Assistants and skills are created within a {{site.data.keyword.conversationshort
 
 1.  Click a service instance to open it.
 
-1.  Click **Launch {{site.data.keyword.conversationshort}}** from the service instance details page.
+1.  Click **Launch {{site.data.keyword.conversationshort}}** from the service instance details page to open the product in a new browser tab or window.
 
-    The {{site.data.keyword.conversationshort}} application opens in a new browser tab. The Assistants page is displayed.
+1.  Click the appropriate icon from the navigation pane to see a list of your assistants or skills.
 
-1.  Click the assistant you want to open or click the **Skills** tab to find a skill.
+  - ![Assistants menu icon](images/nav-ass-icon.png) Assistants
+  - ![Skills menu icon](images/nav-skills-icon.png) Skills
 
 If you do not see the skill or assistant you are looking for, you can look for it in a different service instance.
 

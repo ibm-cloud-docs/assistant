@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-01"
+lastupdated: "2019-10-18"
 
 keywords: context, context variable, digression, disambiguation, autocorrection, spelling correction, spell check, confidence 
 
@@ -166,7 +166,7 @@ Define a context variable by adding the variable name to the **Variable** field 
 
 1.  Click to open the dialog node to which you want to add a context variable.
 
-1.  Click the **Options**  ![Advanced response](images/kabob.png) icon that is associated with the node response, and then click **Open context editor**.
+1.  Click the Options icon ![Advanced response](images/kabob.png) that is associated with the node response, and then click **Open context editor**.
 
       ![Shows how to access the JSON editor associated with a standard node response.](images/contextvar-json-response.png)
 
@@ -293,18 +293,18 @@ For more information about slots, see [Gathering information with slots](/docs/s
 
     - To add a context variable that is processed after a response condition for a slot is met, perform the following steps:
 
-      1.  Click the **Edit slot** ![Edit response](images/edit-slot.png) icon.
-      1.  Click the **Options** ![Advanced response](images/kabob.png) icon, and then select **Enable conditional responses**.
-      1.  Click the **Edit response** ![Edit response](images/edit-slot.png) icon next to the response with which you want to associate the context variable.
-      1.  Click the **Options** ![Advanced response](images/kabob.png) icon in the response section, and then click **Open context editor**.
+      1.  Click the *Edit slot* icon ![Edit response](images/edit-slot.png).
+      1.  Click the *Options* icon ![Advanced response](images/kabob.png), and then select **Enable conditional responses**.
+      1.  Click the *Edit response* icon ![Edit response](images/edit-slot.png) next to the response with which you want to associate the context variable.
+      1.  Click the *Options* icon ![Advanced response](images/kabob.png) in the response section, and then click **Open context editor**.
       1.  Add the variable name and value pair to the **Variable** and **Value** fields.
 
       ![Shows how to access the JSON editor associated with the conditional response for a slot.](images/contextvar-json-slot-multi-response.png)
 
     - To add a context variable that is set or updated after a slot condition is met, complete the following steps:
 
-      1.  Click the **Edit slot** ![Edit response](images/edit-slot.png) icon.
-      1.  From the **Options** ![Advanced response](images/kabob.png) menu in the *Configure slot* view header, click **Open JSON editor**.
+      1.  Click the *Edit slot* icon ![Edit response](images/edit-slot.png).
+      1.  From the *Options* ![Advanced response](images/kabob.png) menu in the *Configure slot* view header, click **Open JSON editor**.
       1.  Add the variable name and value pair in JSON format.
 
           ```json
@@ -361,7 +361,7 @@ To define a context variable in JSON format, complete the following steps:
     Any existing context variable values that are defined for this node are displayed in a set of corresponding **Variable** and **Value** fields. If you do not want them to be displayed in the edit view of the node, you must close the context editor. You can close the editor from the same menu that is used to open the JSON editor; the following steps describe how to access the menu.
     {: note}
 
-1.  Click the **Options**  ![Advanced response](images/kabob.png) icon that is associated with the response, and then click **Open JSON editor**.
+1.  Click the *Options* icon ![Advanced response](images/kabob.png) that is associated with the response, and then click **Open JSON editor**.
 
     ![Shows how to access the JSON editor associated with a standard node response.](images/contextvar-json-response.png)
 
@@ -881,8 +881,8 @@ If you find that a domain-specific term is being corrected that shouldn't be, yo
 
 If you decide to disable the autocorrection feature, complete the following steps:
 
-1.  From the Skills page, open your skill.
-1.  Click the **Options** tab, and then click **Autocorrection**.
+1.  Click the **Skills** icon ![Skills menu icon](images/nav-skills-icon.png), and then open your skill.
+1.  From the Skills menu, click **Options**, and then click **Autocorrection**.
 1.  Turn off **Autocorrection**.
 
 ### Testing autocorrection
@@ -1002,12 +1002,8 @@ The following video provides an overview of disambiguation.
 
 To enable disambiguation, complete the following steps:
 
-1.  Open the **Options** tab for the dialog skill where you want to enable disabmiguation.
-
-    If your application is hosted in Dallas, to enable disambiguation, click **Settings** from the **Dialog** page.
-    {: note}
-
-1.  In the *Disambiguation* section, switch the toggle to **On**.
+1.  From the Skills menu of the dialog skill where you want to enable disabmiguation, click **Options**.
+1.  On the *Disambiguation* page, switch the toggle to **On**.
 1.  In the **Disambiguation message** field, add text to show before the list of dialog node options. For example, *What do you want to do?*
 1.  In the **Anything else** field, add text to display as an additional option that users can pick if none of the other dialog node options reflect what the user wants to do. For example, *None of the above*.
 
@@ -1017,7 +1013,7 @@ To enable disambiguation, complete the following steps:
 
     Your changes are automatically saved.
 
-1.  Now, click the **Dialog** tab. Review your dialog to decide which dialog nodes you want the assistant to ask for help with.
+1.  Now, click **Dialog** from the Skills menu. Review your dialog to decide which dialog nodes you want the assistant to ask for help with.
 
     - You can pick nodes at any level of the tree hierarchy.
     - You can pick nodes that condition on intents, entities, special conditions, context variables, or any combination of these values.
@@ -1030,6 +1026,9 @@ To enable disambiguation, complete the following steps:
     1.  In the *external node name* field, describe the user task that this dialog node is designed to handle. For example, *Cancel an account*.
 
         ![Shows where to add the external node name information in the node edit view.](images/disambig-node-purpose.png)
+
+        To prevent a node from being shown as a disambiguation option, remove the description from the *external node name* field. If you cannot remove text from the field permanently, then switch the disambiguation setting off on the Options page, and then try again to remove the text from the field. <!-- https://github.ibm.com/watson-engagement-advisor/wea-backlog/issues/31618 -->
+        {: tip}
 
 ### Choosing nodes
 {: #dialog-runtime-choose-nodes}

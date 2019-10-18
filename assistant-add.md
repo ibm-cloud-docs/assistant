@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-15"
+lastupdated: "2019-10-18"
 
 subcollection: assistant
 
@@ -31,6 +31,8 @@ Create an assistant with the skills it needs to address the business goals of yo
 To learn more about what an assistant is first, see [Assistants](/docs/services/assistant?topic=assistant-assistants).
 
 Follow these steps to create an assistant:
+
+1.  Click the **Assistants** icon ![Assistants menu icon](images/nav-ass-icon.png).
 
 1.  Click **Create assistant**.
 
@@ -87,7 +89,7 @@ When you delete an assistant, any integrations that you defined for the assistan
 
 To delete an assistant, follow these steps:
 
-1.  From the Assistants tab, find the assistant that you want to delete.
+1.  From the Assistants page, find the assistant that you want to delete.
 
 1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Delete**. Confirm the deletion.
 
@@ -109,7 +111,7 @@ To rename an assistant, follow these steps:
 
 You can add one skill of each skill type to an assistant. If you want to change a skill that your assistant is using, you can swap one skill for another skill.
 
-1.  From the Assistants tab, open the assistant.
+1.  From the Assistants page, open the assistant.
 
 1.  Click the ![open and close list of options](images/kabob-beta.png) icon for the skill you want to swap, and then choose **Swap skill**.
 
