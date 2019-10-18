@@ -881,7 +881,7 @@ If you find that a domain-specific term is being corrected that shouldn't be, yo
 
 If you decide to disable the autocorrection feature, complete the following steps:
 
-1.  Click the Skills icon ![Skills menu icon](images/nav-skills-icon.png), and then open your skill.
+1.  Click the **Skills** icon ![Skills menu icon](images/nav-skills-icon.png), and then open your skill.
 1.  From the Skills menu, click **Options**, and then click **Autocorrection**.
 1.  Turn off **Autocorrection**.
 
