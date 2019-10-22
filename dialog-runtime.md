@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-18"
+lastupdated: "2019-10-22"
 
 keywords: context, context variable, digression, disambiguation, autocorrection, spelling correction, spell check, confidence 
 
@@ -944,7 +944,7 @@ When you enable disambiguation, you instruct your assistant to ask users for hel
 
 If enabled, disambiguation is not triggered unless the following conditions are met:
 
-- The confidence score of one or more of the runner-up intents detected in the user input is greater than 55% of the confidence score of the top intent.
+- The confidence scores of the runner-up intents detected in the user input are close in value to the confidence score of the top intent.
 - The confidence score of the top intent is above 0.2.
 
 Even when these conditions are met, disambiguation does not occur unless two or more independent nodes in your dialog meet the following criteria:
@@ -977,16 +977,9 @@ If the user input is `i must cancel it today`, then the following intents might 
 `{"intent":"Customer_Care_Store_Hours","confidence":0.2550420880317688},`
 `...]`
 
-Your assistant is `0.6618281841278076` (66%) confident that the user goal matches the `#Customer_Care_Cancel_Account` intent. If any other intent has a confidence score that is greater than 55% of 66%, then it fits the criteria for being a disambiguation candidate.
+Your assistant is `0.6618281841278076` (66%) confident that the user goal matches the `#Customer_Care_Cancel_Account` intent. If another intent has a confidence score that is close to the score of this top intent, then disambiguation is triggered. In our example, the `#eCommerce_Cancel_Product_Order` intent has a close confidence score of 43%.
 
-`0.66 x 0.55 = 0.36`
-
-Intents with a score that is greater than 0.36 are eligible.
-
-In our example, the `#eCommerce_Cancel_Product_Order` intent is over the threshold, with a confidence score of `0.4330700159072876`.
-
-When the user input is `i must cancel it today`, both dialog nodes will be considered viable candidates to respond. To determine which dialog node to process, the assistant asks the user to pick one. And to help the user choose between them, the assistant provides a short summary of what each node does. The summary text it displays is extracted directly from the *external node name* information that was specified for each node.
-
+As a result, when the user input is `i must cancel it today`, both dialog nodes are likely to be considered viable candidates to respond. To determine which dialog node to process, the assistant asks the user to pick one. And to help the user choose between them, the assistant provides a short summary of what each node does. The summary text is extracted directly from the *external node name* information that is specified for each node.
 ![Service prompts the user to choose from a list of dialog options, including Cancel an account, Cancel a product order, and None of the above.](images/disambig-tryitout.png)
 
 Notice that your assistant recognizes the term `today` in the user input as a date, a mention of the `@sys-date` entity. If your dialog tree contains a node that conditions on the `@sys-date` entity, then it is also included in the list of disambiguation choices. This image shows it included in the list as the *Capture date information* option.
@@ -1040,8 +1033,8 @@ Choose nodes that serve as the root of a distinct branch of the dialog to be dis
 
 Keep in mind:
 
-- For nodes that condition on intents, if your assistant is confident that the node's intent condition matches the user's intent, then the node is included as a disambiguation option.
-- For nodes with boolean conditions (conditions that evaluate to either true or false), the node is included as a disambiguation option if the condition evaluates to true. For example, when the node conditions on an entity type, if the entity is mentioned in the input that triggers disambiguation, then the node is included.
+- For nodes that condition on intents, if your assistant is confident that the node's intent condition matches the user's intent, then the node might be included as a disambiguation option.
+- For nodes with boolean conditions (conditions that evaluate to either true or false), the node might be included as a disambiguation option if the condition evaluates to true. For example, when the node conditions on an entity type, if the entity is mentioned in the input that triggers disambiguation, then the node might be included.
 - The order of nodes in the tree hierarchy impacts disambiguation.
 
   - It impacts whether disambiguation is triggered at all
@@ -1050,9 +1043,12 @@ Keep in mind:
 
   - It impacts which nodes are included in the disambiguation options list
   
-    Sometimes a node is not listed as a disambiguation option as expected. This can happen if a condition value is also referenced by a node that is not eligible for inclusion in the disambiguation list for some reason. For example, an entity mention might trigger a node that is situated earlier in the dialog tree but is not enabled for disambiguation. If the same entity is the only condition for a node that *is* enabled for disambiguation, but is situated lower in the tree, then it is not added as a disambiguation option because your assistant never reaches it. It matched against the earlier node and was omitted, so your assistant does not process the later node.
+    Sometimes a node is not listed as a disambiguation option as expected. This can happen if a condition value is also referenced by a node that is not eligible for inclusion in the disambiguation list for some reason. For example, an entity mention might trigger a node that is situated earlier in the dialog tree but is not enabled for disambiguation. If the same entity is the only condition for a node that *is* enabled for disambiguation, but is situated lower in the tree, then it might not be added as a disambiguation option because your assistant never reaches it. If it matched against the earlier node and was omitted, your assistant might not process the later node.
 
 For each node that you opt in to disambiguation, test scenarios in which you expect the node to be included in the disambiguation options list. Testing gives you a chance to make adjustments to the node order or other factors that might impact how well disambiguation works at run time.
+
+When testing, you might notice that the options that are included in the disambiguation changes from one test run to the next. In fact, the order in which the options are listed might change from test run to test run. Don't worry; this is the intended behavior. As part of work being done to help the assistant learn automatically from user choices, the choices included and their order in the disambiguation list is being randomized on purpose. Changing the order helps to avoid bias that can be introduced by a percentage of people who always pick the first option without carefully reviewing their choices beforehand.
+{: important}
 
 ### Handling none of the above
 {: #dialog-runtime-handle-none}
@@ -1086,19 +1082,6 @@ To test disambiguation, complete the following steps:
 
 1.  If disambiguation is still not triggered, it might be that the confidence scores for the nodes are not as close in value as you thought.
 
-    - To get a list of the intents that meet the disambiguation threshold for a given user input, you can use the following SpEL expression in the text response of a node.
-
-      ```json
-      The following intents meet the disambiguation threshold: <? intents.filter("x", "x.confidence > intents[0].confidence * 0.55") ?>
-      ```
-      {: codeblock}
-
-      This expression gets the confidence score of the first intent in the array of intents that are recognized in the user input. It then multiplies the confidence score of the top intent by 0.55 to get the confidence threshold that must be met by other intents in the array for disambiguation to occur. Lastly, it filters the intents array to include only those intents with confidence scores above the threshold.
-
-      The array that is returned by this expression gives you an idea of which and how many intents would be included as disambiguation options if each intent were used in a dialog node condition of a node that was enabled for disambiguation. Add the expression to a node that you know will be triggered by your test input.
-
-      For more details about the `JSONArray.filter` method used in the expression, see [Expression language methods](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-array-filter).
-
     - To see the confidence scores of all the intents that are detected in the user input, temporarily add `<? intents ?>` to the end of the node response for a node that you know will be triggered.
 
       This SpEL expression shows the intents that were detected in the user input as an array. The array includes the intent name and the level of confidence that your assistant has that the intent reflects the user's intended goal.
@@ -1118,3 +1101,5 @@ To test disambiguation, complete the following steps:
     ![Service returns an array of intents, including Customer_Care_Cancel_Account and eCommerce_Cancel_Product_Order.](images/disambig-show-intents.png)
 
 After you finish testing, remove any SpEL expressions that you appended to node responses, or add back any original responses that you replaced with expressions, and repopulate any *external node name* fields from which you removed text.
+
+Again, keep in mind that the options included in the list and the order of the options might change from one test run to the next. This behavior is intended; the options are randomized on purpose. 
