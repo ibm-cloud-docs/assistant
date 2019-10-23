@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-30"
+lastupdated: "2019-10-22"
 
 ---
 
@@ -309,7 +309,7 @@ The following tips will help you call a {{site.data.keyword.openwhisk_short}} we
       </tr>
     </table>
 
-    When calling a {{site.data.keyword.openwhisk_short}} web action, you cannot pass parameters with the same key as parameters that are defined as part of the web action. See [Protected parameters](/docs/openwhisk?topic=cloud-functions-actions_web#actions_web_protect){: new_window} for more details.
+    When calling a {{site.data.keyword.openwhisk_short}} web action, you cannot pass parameters with the same key as parameters that are defined as part of the web action. See [Protected parameters](/docs/openwhisk?topic=cloud-functions-actions_web#protected-parameters){: new_window} for more details.
     {: note}
 
 1.  You can edit the dialog node response to include only the section of the response that you want to display to users. 

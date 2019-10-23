@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-12"
+lastupdated: "2019-10-23"
 
 subcollection: assistant
 
@@ -1053,7 +1053,7 @@ For example, this context variable definition creates a $time variable that save
 ```
 {: codeblock}
 
-Format follows the Java [SimpleDateFormat ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html){: new_window} rules.
+Format follows the Java [SimpleDateFormat ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html){: new_window} rules.
 
 **Note**: When trying to format time only, the date is treated as `1970-01-01`.
 

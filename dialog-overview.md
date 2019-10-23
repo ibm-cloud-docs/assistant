@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-27"
+lastupdated: "2019-10-23"
 
 keywords: condition, response, options, jump, jump-to, multiline, response variations
 
@@ -150,7 +150,7 @@ Use one of these syntax options to create valid expressions in conditions:
 
 - Shorthand notations to refer to intents, entities, and context variables. See [Accessing and evaluating objects](/docs/services/assistant?topic=assistant-expression-language).
 
-- Spring Expression (SpEL) language, which is an expression language that supports querying and manipulating an object graph at run time. See [Spring Expression Language (SpEL) language ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/expressions.html){: new_window} for more information.
+- Spring Expression (SpEL) language, which is an expression language that supports querying and manipulating an object graph at run time. See [Spring Expression Language (SpEL) language ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#expressions){: new_window} for more information.
 
 You can use regular expressions to check for values to condition against.  To find a matching string, for example, you can use the `String.find` method. See  [Methods](/docs/services/assistant?topic=assistant-dialog-methods) for more details.
 
