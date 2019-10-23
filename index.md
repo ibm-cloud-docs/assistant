@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-23"
+lastupdated: "2019-10-23"
 
 subcollection: assistant
 
@@ -82,7 +82,7 @@ Here's how you implement your assistant:
 
 - **Integrate your assistant.** Add a built-in channel integration to deploy the configured assistant directly to a social media or messaging channel. Or build your own client application as the user interface for the assistant.
 
-  Your deployed assistant is hosted by {{site.data.keyword.cloud}}, the IBM cloud computing platform. (For more information, see [Platform overview](/docs/overview/ibm-cloud#overview){: external}.)
+  Your deployed assistant is hosted by {{site.data.keyword.cloud}}, the IBM cloud computing platform. (For more information, see [Platform overview](/docs/overview?topic=overview-whatis-platform){: external}.)
 
 Read more about these implementation steps by following these links:
 
@@ -116,4 +116,4 @@ US Health Insurance Portability and Accountability Act (HIPAA) support is availa
 - [Get started](/docs/services/assistant?topic=assistant-getting-started) with the product.
 - View the list of [developer resources)](https://www.ibm.com/watson/developer-resources/){: external}.
 
-Have questions? Contact [IBM Sales](https://www-01.ibm.com/marketing/iwm/dre/signup?source=urx-20970){: external}.
+Have questions? Contact [IBM Sales](https://www.ibm.com/account/reg/us-en/signup?formid=urx-20970){: external}.

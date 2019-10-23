@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-20"
+lastupdated: "2019-10-23"
 
 subcollection: assistant
 
@@ -51,7 +51,7 @@ You must have a Zendesk account. If not, go to [www.zendesk.com ![External link 
 
 When you create an account, you specify a subdomain. Afterwards, your Zendesk console is available from a URL with the syntax: `<subdomain>.zendesk.com`. For example: `ibm.zendesk.com`
 
-Set up Zendesk Chat. See [Setting up Zendesk Chat in Zendesk Support ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.zendesk.com/hc/en-us/articles/203661666-Setting-up-Zopim-Chat-in-Zendesk).
+Set up Zendesk Chat. See [Setting up Zendesk Chat routing ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.zendesk.com/hc/en-us/articles/203661666-Setting-up-Zopim-Chat-in-Zendesk).
 
 You or someone in your organziation must complete these one-time prerequisite steps before you can add the Zendesk integration to your assistant.
 
@@ -88,7 +88,7 @@ You or someone in your organziation must complete these one-time prerequisite st
 
     Chats with customers are routed to departments. You need to create a department with only your assistant as a member, so that you can route customer chats to your assistant in a later step.
 
-    For more details, see [Creating agents and departments ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://chat.zendesk.com/hc/en-us/articles/212015708-Creating-agents-and-departments).
+    For more details, see [Creating agents and departments ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.zendesk.com/hc/en-us/articles/360022365373).
 
 1.  Create at least one more department. Add members to it who are human agents that can address customer questions.
 
@@ -188,7 +188,7 @@ An application is provided by the {{site.data.keyword.conversationshort}} servic
 
 1.  Upload the application to Zendesk Chat as a new private app. When credentials are requested, paste the app credentials that you copied earlier.
 
-    For more details, see [Private apps ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://chat.zendesk.com/hc/en-us/articles/115010754368-Managing-your-installed-apps-in-Zendesk-Chat).
+    For more details, see [Managing your installed apps ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.zendesk.com/hc/en-us/articles/203662486).
 
 ### Configuring message routing
 {: #deploy-zendesk-config-backup}
@@ -276,7 +276,7 @@ To test the assistant, temporarily route all incoming chats to the assistant's d
 
     ![Shows the Zendesk UI Settings page where you can define a trigger that always routes messages to an assistant](images/zendesk-setup-for-testing-trigger-always.png)
 
-    For more details, see [Automatically route chats to departments ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://chat.zendesk.com/hc/en-us/articles/212679657-Automatically-route-chats-to-departments) from the Zendesk documentation.
+    For more details, see [Automatically route chats to departments ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.zendesk.com/hc/en-us/articles/360022186814) from the Zendesk documentation.
 
 1.  Create a chat widget to embed in a test web page.
 
@@ -309,9 +309,9 @@ After you test the integration, and feel confident that the assistant is ready t
 
 1.  Create a new trigger that routes specific types of messages to the department you created for the assistant.
 
-    For more details, see [Automatically route chats to departments ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://chat.zendesk.com/hc/en-us/articles/212679657-Automatically-route-chats-to-departments).
+    For more details, see [Automatically route chats to departments ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.zendesk.com/hc/en-us/articles/360022186814).
 1.  Set up reassignments that will reroute messages that your assistant does not reply to in under 20 seconds to a department monitored by human agents.
 
-    For more details, see [Configuring reassignment ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://chat.zendesk.com/hc/en-us/articles/217777918-Setting-up-chat-routing).
+    For more details, see [Setting up chat routing ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://support.zendesk.com/hc/en-us/articles/360022366213).
 
 1.  Embed the chat widget in a production web site to make it available to your customers.

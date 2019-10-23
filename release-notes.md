@@ -80,6 +80,8 @@ The following updates are available in all locations except Dallas currently.
 
 - Where you go to switch service instances has changed. See [Switching the service instance](/docs/services/assistant?topic=assistant-skill-open#skill-open-switch-instance).
 
+- **Known issue: Cannot rename search skills**: You currently cannot rename a search skill after you create it. 
+ 
 ## 9 October 2019 
 {: #9October2019}
 
