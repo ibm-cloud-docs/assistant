@@ -52,7 +52,14 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
-The following new features and changes to {{site.data.keyword.conversationshort}} are available. Check out our [blog](https://medium.com/ibm-watson/assistant/home) to find in-depth information about how the newest features can benefit your business.
+# 24 October 2019
+{: #24October2019}
+<!--1.80-->
+
+The following update is available in all locations except Dallas currently.
+{: important}
+
+- **Testing improvement**: You can now see the top three intents that were recognized in a test user input from the "Try it out" pane. For more details, see [Testing your dialog](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-test).
 
 ## 16 October 2019
 {: #16October2019}
