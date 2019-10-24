@@ -4,10 +4,13 @@ copyright:
   years: 2015, 2019
 lastupdated: "2019-10-22"
 
+subcollection: assistant
+
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
@@ -278,7 +281,7 @@ The following tips will help you call a {{site.data.keyword.openwhisk_short}} we
 
     If the external application that you call returns a response, it must be able to send back a response in JSON format.
 
-    Notice the request URL in this example ends in `.json`. By specifying this extension, you take advantage of a feature of web actions that lets you specify the desired content type of the response. Specifying this extension type ensures that, if the web actions can return responses in more than one format, a JSON response will be returned. See [Extra features](/docs/openwhisk?topic=cloud-functions-actions_web#actions_web_extra){: new_window} for more details.
+    Notice the request URL in this example ends in `.json`. By specifying this extension, you take advantage of a feature of web actions that lets you specify the desired content type of the response. Specifying this extension type ensures that, if the web actions can return responses in more than one format, a JSON response will be returned. See [Extra features](/docs/openwhisk?topic=cloud-functions-actions_web#actions_web_extra){: external} for more details.
     {: tip}
 
 1.  You do not need to add any headers.
@@ -309,7 +312,7 @@ The following tips will help you call a {{site.data.keyword.openwhisk_short}} we
       </tr>
     </table>
 
-    When calling a {{site.data.keyword.openwhisk_short}} web action, you cannot pass parameters with the same key as parameters that are defined as part of the web action. See [Protected parameters](/docs/openwhisk?topic=cloud-functions-actions_web#protected-parameters){: new_window} for more details.
+    When calling a {{site.data.keyword.openwhisk_short}} web action, you cannot pass parameters with the same key as parameters that are defined as part of the web action. See [Protected parameters](/docs/openwhisk?topic=cloud-functions-actions_web#protected-parameters){: external} for more details.
     {: note}
 
 1.  You can edit the dialog node response to include only the section of the response that you want to display to users. 

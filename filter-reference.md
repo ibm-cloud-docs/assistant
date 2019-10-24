@@ -10,6 +10,7 @@ subcollection: assistant
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
@@ -31,7 +32,7 @@ The `filter` parameter is a cacheable query that limits the results to those mat
 
 To see examples of filter queries, see [Examples](#filter-reference-examples).
 
-For more information about the /logs `GET` method and its response model, refer to the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant-v1?curl=#list-log-events-in-a-workspace){: new_window}.
+For more information about the /logs `GET` method and its response model, refer to the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#list-log-events-in-a-workspace){: external}.
 
 ## Filter query syntax
 {: #filter-reference-syntax}

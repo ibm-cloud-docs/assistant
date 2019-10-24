@@ -36,15 +36,15 @@ The products, services, and other capabilities described herein are not suitable
 
 If you need to request GDPR support for {{site.data.keyword.cloud}} {{site.data.keyword.watson}} resources that are created
 
-- In the European Union, see [Requesting support for IBM Cloud Watson resources created in the European Union![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/services/watson/getting-started-gdpr-sar#request-EU){: new_window}.
-- Outside the European Union, see [Requesting support for resources outside the European Union![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/services/watson/getting-started-gdpr-sar#request-non-EU){: new_window}.
+- In the European Union, see [Requesting support for IBM Cloud Watson resources created in the European Union](https://cloud.ibm.com/docs/services/watson/getting-started-gdpr-sar#request-EU){: external}.
+- Outside the European Union, see [Requesting support for resources outside the European Union](https://cloud.ibm.com/docs/services/watson/getting-started-gdpr-sar#request-non-EU){: external}.
 
 ## European Union General Data Protection Regulation (GDPR)
 {: #information-security-gdpr}
 
 IBM is committed to providing our clients and partners with innovative data privacy, security and governance solutions to assist them on their journey to GDPR compliance.
 
-Learn more about IBM's own GDPR readiness journey and our GDPR capabilities and offerings to support your compliance journey [here ![External link icon](../../icons/launch-glyph.svg "External link icon")](../../icons/launch-glyph.svg "External link icon")](http://www.ibm.com/gdpr){: new_window}.
+Learn more about IBM's own GDPR readiness journey and our GDPR capabilities and offerings to support your compliance journey [here](http://www.ibm.com/gdpr){: external}.
 
 ## Health Insurance Portability and Accountability Act (HIPAA)
 {: #information-security-hipaa}
@@ -119,6 +119,6 @@ curl -X DELETE -u "apikey:3Df... ...Y7Pc9"
 
 An empty JSON object `{}` is returned.
 
-For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant-v1?curl=#delete-labeled-data).
+For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#delete-labeled-data).
 
 **Note:** Delete requests are processed in batches and may take up to 24 hours to complete.

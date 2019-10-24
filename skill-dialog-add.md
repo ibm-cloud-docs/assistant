@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-18"
+lastupdated: "2019-10-24"
 
 keywords: import workspace, import JSON, export JSON
 
@@ -12,6 +12,7 @@ subcollection: assistant
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
@@ -55,7 +56,7 @@ To add a skill, complete the following steps:
       **Important:**
 
       - The imported JSON file must use UTF-8 encoding, without byte order mark (BOM) encoding.
-      - The maximum size for a skill JSON file is 10MB. If you need to import a larger skill, consider importing the intents and entities separately after you have imported the skill. (You can also import larger skills using the REST API. For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant-v1?curl=#create-workspace){: new_window}.)
+      - The maximum size for a skill JSON file is 10MB. If you need to import a larger skill, consider importing the intents and entities separately after you have imported the skill. (You can also import larger skills using the REST API. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#create-workspace){: external}.)
       - The JSON cannot contain tabs, newlines, or carriage returns.
 
       Specify the data you want to include:
@@ -122,7 +123,7 @@ To download a dialog skill, complete the following steps:
 
 1.  Specify a name for the JSON file and where to save it, and then click **Save**.
 
-You can export a skill by using the API also. Include the `export=true` parameter with the request. See the [API reference](https://cloud.ibm.com/apidocs/assistant-v1#get-information-about-a-workspace) for more details.
+You can export a skill by using the API also. Include the `export=true` parameter with the request. See the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1#get-information-about-a-workspace){: external} for more details.
 
 For information about how to download a specific skill version, see [Downloading a skill version](/docs/services/assistant?topic=assistant-versions-export).
 
@@ -160,7 +161,8 @@ To share a dialog skill with other people, you must give them access to the serv
     - **Platform access roles**: Operator
     - **Service access roles**: Writer
 
-    For more information about roles, see [IAM access ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/iam?topic=iam-userroles).
+    The service access role assignment is currently ignored. Any person you invite is given full access to the instance and all of its skills and assistants, regardless of the *Service access role* you assign to them. You cannot assign someone to a Reader service access role to give them read-only access to an instance, for example.
+    {: important}
 
     For older instances that are managed by Cloud Foundry, you click *Cloud Foundry* instead of *IAM Services*, choose your organization, and then assign the person to the **Developer** space role.
     {: note}

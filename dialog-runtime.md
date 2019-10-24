@@ -12,6 +12,7 @@ subcollection: assistant
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
@@ -107,7 +108,7 @@ The following `output` object JSON format is supported for backwards compatibili
 
 There are response types other than a text response that you can define. See [Responses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-responses) for more details.
 
-You can learn more about the /message API call from the [API reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant-v2){: new_window}.
+You can learn more about the /message API call from the [API reference](https://{DomainName}/apidocs/assistant/assistant-v2){: external}.
 
 ### Retaining information across dialog turns
 {: #dialog-runtime-context}
