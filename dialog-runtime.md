@@ -980,13 +980,14 @@ If the user input is `i must cancel it today`, then the following intents might 
 ```
 {: code block}
 
-In fact, if you test from the "Try it out" pane, you can hover over the eye icon to see the top three intents recognized.
+In fact, if you test from the "Try it out" pane, you can hover over the eye icon to see the top three intents that were recognized in the test input.
 
 ![Shows the top 3 intents recognized in the user input from the Try it out pane.](images/tryit-disambig-intent-details.png)
 
-Your assistant is `0.5618281841278076` (56%) confident that the user goal matches the `#Customer_Care_Cancel_Account` intent. If another intent has a confidence score that is close to the score of this top intent, then disambiguation is triggered. In our example, the `#eCommerce_Cancel_Product_Order` intent has a close confidence score of 46%.
+Your assistant is `0.5618281841278076` (56%) confident that the user goal matches the `#Customer_Care_Cancel_Account` intent. If another intent has a confidence score that is close to the score of this top intent, then disambiguation is triggered. In this example, the `#eCommerce_Cancel_Product_Order` intent has a close confidence score of 46%.
 
 As a result, when the user input is `i must cancel it today`, both dialog nodes are likely to be considered viable candidates to respond. To determine which dialog node to process, the assistant asks the user to pick one. And to help the user choose between them, the assistant provides a short summary of what each node does. The summary text is extracted directly from the *external node name* information that is specified for each node.
+
 ![Service prompts the user to choose from a list of dialog options, including Cancel an account, Cancel a product order, and None of the above.](images/disambig-tryitout.png)
 
 Notice that your assistant recognizes the term `today` in the user input as a date, a mention of the `@sys-date` entity. If your dialog tree contains a node that conditions on the `@sys-date` entity, then it is also included in the list of disambiguation choices. This image shows it included in the list as the *Capture date information* option.
