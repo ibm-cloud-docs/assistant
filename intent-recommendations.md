@@ -10,6 +10,7 @@ subcollection: assistant
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
@@ -39,7 +40,7 @@ The following video provides a 3 1/2-minute overview of intent and intent user e
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Intent recommendations overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/64h59KqDY98?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
-To learn more about how intent recommendations can help you build a useful bot faster, [read this blog post ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/let-watson-train-your-virtual-assistant-57bd53b12bc3){: new_window}.
+To learn more about how intent recommendations can help you build a useful bot faster, [read this blog post](https://medium.com/ibm-watson/let-watson-train-your-virtual-assistant-57bd53b12bc3){: external}.
 
 Mine your existing data to do one of the following things:
 

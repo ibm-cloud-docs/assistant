@@ -15,6 +15,7 @@ subcollection: assistant
 {:python: #python .ph data-hd-programlang='python'}
 {:swift: data-hd-programlang='swift'}
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
@@ -192,4 +193,4 @@ The output from this request includes not only the usual output, but also the co
 }
 ```
 
-For detailed information about how to access context variables using the API, see the [v2 API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant-v2#send-user-input-to-assistant){: new_window}.)
+For detailed information about how to access context variables using the API, see the [v2 API Reference](https://{DomainName}/apidocs/assistant/assistant-v2#send-user-input-to-assistant){: external}.)

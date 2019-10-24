@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-17"
+lastupdated: "2019-10-24"
 
 subcollection: assistant
 
@@ -10,6 +10,7 @@ subcollection: assistant
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
@@ -40,7 +41,7 @@ Send the version parameter with every API request. {{site.data.keyword.conversat
 ## Beta features
 {: #release-notes-beta}
 
-IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment. Beta features are supported only on the [IBM Developer Answers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/topics/watson-assistant/){: new_window}.
+IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment. Beta features are supported only on the [IBM Developer Answers](https://developer.ibm.com/answers/topics/watson-assistant/){: external}.
 
 ## Updated models
 {: #release-notes-updated-models}
@@ -51,7 +52,7 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
-The following new features and changes to {{site.data.keyword.conversationshort}} are available. Check out our [blog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/assistant/home) to find in-depth information about how the newest features can benefit your business.
+The following new features and changes to {{site.data.keyword.conversationshort}} are available. Check out our [blog](https://medium.com/ibm-watson/assistant/home) to find in-depth information about how the newest features can benefit your business.
 
 ## 16 October 2019
 {: #16October2019}
@@ -377,7 +378,7 @@ The following updates are available in all locations except Dallas currently.
   Existing Premium plan service instances are not impacted by this change; they continue to use API-based billing methods. Only existing Premium plan users will see the API-based plan listed as the *Premium (API)* plan option.
   {: note}
 
-  See {{site.data.keyword.conversationshort}} [service plan options ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/watson-assistant/pricing/){: new_window} for more information about all available service plans.
+  See {{site.data.keyword.conversationshort}} [service plan options](https://www.ibm.com/cloud/watson-assistant/pricing/){: external} for more information about all available service plans.
 
 - **Intent user example recommendations ![Plus or Premium plan only](images/plus.png)**: You can upload a file that contains raw user inputs, such as user inquiries from a call center log, that Watson can analyze and mine for intent user example candidates. See [Adding examples from log files](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations).
 
@@ -441,12 +442,12 @@ The following updates are available in all locations except Dallas currently.
 ## 26 September 2018
 {: #26September2018}
 
-- **{{site.data.keyword.conversationfull}} is available in {{site.data.keyword.icpfull}}**: See the [{{site.data.keyword.icpfull}} documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.3/featured_applications/watson_assistant.html) for more information.
+- **{{site.data.keyword.conversationfull}} is available in {{site.data.keyword.icpfull}}**: See the [{{site.data.keyword.icpfull}} documentation](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.3/featured_applications/watson_assistant.html) for more information.
 
 ## 21 September 2018
 {: #21September2018}
 
-- **New API version**: The current API version is now `2018-09-20`. In this version, the `errors[].path` attribute of the error object that is returned by the API is expressed as a [JSON Pointer ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://tools.ietf.org/html/rfc6901) instead of in dot notation form.
+- **New API version**: The current API version is now `2018-09-20`. In this version, the `errors[].path` attribute of the error object that is returned by the API is expressed as a [JSON Pointer](https://tools.ietf.org/html/rfc6901) instead of in dot notation form.
 - **Web actions support**: You can now call {{site.data.keyword.openwhisk_short}} web actions from a dialog node. See [Making programmatic calls from a dialog node](/docs/services/assistant?topic=assistant-dialog-actions-client) for more details.
 
 ## 15 August 2018
@@ -513,9 +514,9 @@ The following updates are available in all locations except Dallas currently.
 
   For all new and existing service instances in other regions, you continue to use service credentials (`{username}:{password}`) for authentication.
 
-  When you use any of the Watson SDKs, you can pass the API key and let the SDK manage the lifecycle of the tokens. For more information and examples, see [Authentication ![External link icon](../../icons/launch-glyph.svg "External link icon")]https://{DomainName}/apidocs/assistant-v2#authentication){: new_window} in the API reference.
+  When you use any of the Watson SDKs, you can pass the API key and let the SDK manage the lifecycle of the tokens. For more information and examples, see [Authentication]https://{DomainName}/apidocs/assistant/assistant-v2#authentication){: external} in the API reference.
 
-  If you are not sure which type of authentication to use, view the {{site.data.keyword.conversationshort}} credentials by clicking the service instance from the Services section of the [{{site.data.keyword.Bluemix_notm}} Resource List ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com){: new_window}.
+  If you are not sure which type of authentication to use, view the {{site.data.keyword.conversationshort}} credentials by clicking the service instance from the Services section of the [{{site.data.keyword.Bluemix_notm}} Resource List](https://cloud.ibm.com){: external}.
 
 ## 25 May 2018
 {: #25May2018}
@@ -528,7 +529,7 @@ The following updates are available in all locations except Dallas currently.
 
   Now, the hypertext link is rendered as if on a web page. It is displayed like this:
 
-  `Contact us at` [ibm.com](https://www.ibm.com){: new_window}.
+  `Contact us at` [ibm.com](https://www.ibm.com){: external}.
 
     Remember, you must use the appropriate type of syntax in your responses for the client application to which you will deploy the conversation. Only use HTML syntax if your client application can interpret it properly. Other integration channels might expect other formats.
 
@@ -552,9 +553,9 @@ The following updates are available in all locations except Dallas currently.
 ## 15 March 2018
 {: #15March2018}
 
-- **Introducing {{site.data.keyword.conversationfull}}**: {{site.data.keyword.ibmwatson}} Conversation has been renamed. It is now called {{site.data.keyword.conversationfull}}. The name change reflects the fact that {{site.data.keyword.conversationshort}} is expanding to provide prebuilt content and tools that help you more easily share the virtual assistants you build. Read [this blog post ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/watson/2018/03/the-future-of-watson-conversation-watson-assistant/) for more details.
+- **Introducing {{site.data.keyword.conversationfull}}**: {{site.data.keyword.ibmwatson}} Conversation has been renamed. It is now called {{site.data.keyword.conversationfull}}. The name change reflects the fact that {{site.data.keyword.conversationshort}} is expanding to provide prebuilt content and tools that help you more easily share the virtual assistants you build. Read [this blog post](https://www.ibm.com/blogs/watson/2018/03/the-future-of-watson-conversation-watson-assistant/) for more details.
 
-- **New REST APIs and SDKs are available for Watson Assistant**: The new APIs are functionally identical to the existing Conversation APIs, which continue to be supported. For more information about the Watson Assistant APIs, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant-v1){: new_window}.
+- **New REST APIs and SDKs are available for Watson Assistant**: The new APIs are functionally identical to the existing Conversation APIs, which continue to be supported. For more information about the Watson Assistant APIs, see the [API Reference](https://{DomainName}/apidocs/assistant/assistant-v1){: external}.
 
 - **Dialog enhancements**: The following features were added to the dialog tool:
 
@@ -580,7 +581,7 @@ The following updates are available in all locations except Dallas currently.
 
 - **New API version**: The current API version is now `2018-02-16`. This version introduces the following changes:
 
-  - A new `include_audit` parameter is now supported on most GET requests. This is an optional boolean parameter that specifies whether the response should include the audit properties (`created` and `updated` timestamps). The default value is `false`. (If you are using an API version earlier than `2018-02-16`, the default value is `true`.) For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant-v1){: new_window}.
+  - A new `include_audit` parameter is now supported on most GET requests. This is an optional boolean parameter that specifies whether the response should include the audit properties (`created` and `updated` timestamps). The default value is `false`. (If you are using an API version earlier than `2018-02-16`, the default value is `true`.) For more information, see the [API Reference](https://{DomainName}/apidocs/assistant/assistant-v1){: external}.
 
   - Responses from API calls using the new version include only properties with non-`null` values.
 
@@ -598,8 +599,8 @@ The following updates are available in all locations except Dallas currently.
 {: #29January2018}
 
 - The {{site.data.keyword.conversationshort}} REST API now supports new request parameters:
-  - Use the `append` parameter when updating a workspace to indicate whether the new workspace data should be added to the existing data, rather than replacing it. For more information, see [Update workspace ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant-v1?curl=#update-workspace){: new_window}.
-  - Use the `nodes_visited_details` parameter when sending a message to indicate whether the response should include additional diagnostic information about the nodes that were visited during processing of the message. For more information, see [Send message ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant-v1?curl=#get-response-to-user-input){: new_window}.
+  - Use the `append` parameter when updating a workspace to indicate whether the new workspace data should be added to the existing data, rather than replacing it. For more information, see [Update workspace](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#update-workspace){: external}.
+  - Use the `nodes_visited_details` parameter when sending a message to indicate whether the response should include additional diagnostic information about the nodes that were visited during processing of the message. For more information, see [Send message](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#get-response-to-user-input){: external}.
 
 ## 23 January 2018
 {: #23January2018}
@@ -729,7 +730,7 @@ The following updates are available in all locations except Dallas currently.
 
   **Note:** Accent normalization is enabled for Portuguese, Spanish, French, and Czech.
 
-- **Workspace opt-out flag**: The {{site.data.keyword.conversationshort}} REST API now supports an opt-out flag for workspaces. This flag indicates that workspace training data such as intents and entities are not to be used by IBM for general service improvements. For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant-v1?curl=#data-collection){: new_window}
+- **Workspace opt-out flag**: The {{site.data.keyword.conversationshort}} REST API now supports an opt-out flag for workspaces. This flag indicates that workspace training data such as intents and entities are not to be used by IBM for general service improvements. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#data-collection){: external}
 
 ## 7 August 2017
 {: #7August2017}
@@ -751,7 +752,7 @@ The following updates are available in all locations except Dallas currently.
 ## 19 July 2017
 {: #19July2017}
 
-- The {{site.data.keyword.conversationshort}} REST API now supports access to dialog nodes. For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant-v1?curl=#list-dialog-nodes){: new_window}.
+- The {{site.data.keyword.conversationshort}} REST API now supports access to dialog nodes. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#list-dialog-nodes){: external}.
 
 ## 14 July 2017
 {: #14July2017}
@@ -828,7 +829,7 @@ The following updates are available in all locations except Dallas currently.
 {: #26May2017}
 
 - The current API version is now `2017-05-26`. This version introduces the following changes:
-    - The schema of ErrorResponse objects has changed. This change affects all endpoints and methods. For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant){: new_window}.
+    - The schema of ErrorResponse objects has changed. This change affects all endpoints and methods. For more information, see the [API Reference](https://{DomainName}/apidocs/assistant){: external}.
     - The internal schema used to represent dialog nodes in exported workspace JSON has changed. If you use the `2017-05-26` API to import a workspace that was exported using an earlier version, some dialog nodes might not import correctly. For best results, always import a workspace using the same version that was used to export it.
 
 ## 25 May 2017
@@ -865,7 +866,7 @@ The following updates are available in all locations except Dallas currently.
     - entity value synonyms
     - logs
 
-    For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant-v1){: new_window}.
+    For more information, see the [API Reference](https://{DomainName}/apidocs/assistant/assistant-v1){: external}.
 - The behavior of the /messages `POST` method has changed the handling of entities and intents specified as part of the message input:
     - If you specify intents on input, your assistant uses the intents you specify, but uses natural language processing to detect entities in the user input.
     - If you specify entities on input, your assistant uses the entities you specify, but uses natural language processing to detect intents in the user input.
@@ -884,7 +885,7 @@ The {{site.data.keyword.conversationshort}} REST API now supports access to the 
 - examples
 - counterexamples
 
-For more information, see the [API Reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/apidocs/assistant-v1){: new_window}.
+For more information, see the [API Reference](https://{DomainName}/apidocs/assistant/assistant-v1){: external}.
 
 ## 7 March 2017
 {: #7March2017}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-23"
+lastupdated: "2019-10-24"
 
 subcollection: assistant
 
@@ -10,6 +10,7 @@ subcollection: assistant
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
@@ -31,11 +32,11 @@ Learn about APIs and other tools you can use to access and analyze log data.
 ## API
 {: #logs-resources-api}
 
-You can use the `/logs` API to list events from the transcripts of conversations that occured between your users and your assistant. For detailed API reference documentation, see [List log events ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant-v1#list-log-events-in-a-workspace).
+You can use the `/logs` API to list events from the transcripts of conversations that occured between your users and your assistant. For detailed API reference documentation, see [List log events](https://cloud.ibm.com/apidocs/assistant/assistant-v1#list-log-events-in-a-workspace)(: external).
 
 The number of days that logs are stored differs by service plan type. See [Log limits](/docs/services/assistant?topic=assistant-logs#logs-limits) for details.
 
-For a Python script you can run to export logs and convert them to CSV format, download the `export_logs.py` file from the [Watson Assistant GitHub ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/community/blob/master/watson-assistant/export_logs.py) repository.
+For a Python script you can run to export logs and convert them to CSV format, download the `export_logs.py` file from the [Watson Assistant GitHub)](https://github.com/watson-developer-cloud/community/blob/master/watson-assistant/export_logs.py){: external} repository.
 
 ## Logs-related terminology
 {: #logs-resources-terminology}
@@ -61,7 +62,7 @@ First, review the definitions of terms that are associated with {{site.data.keyw
 
 User metrics allow you to see, for example, the number of unique users who have engaged with your assistant, or the average number of conversations per user over a given time interval on the [Overview page](/docs/services/assistant?topic=assistant-logs-overview). User metrics are enabled by using a unique `User ID` parameter.
 
-To specify the `User ID` for a message sent using the `/message` API, include the `user_id` property in your global [context ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant-v2#send-user-input-to-assistant){: new_window}, as in this example:
+To specify the `User ID` for a message sent using the `/message` API, include the `user_id` property in your global [context](https://cloud.ibm.com/apidocs/assistant/assistant-v2#send-user-input-to-assistant){: external}, as in this example:
 
 ```json
 "context": {
@@ -74,7 +75,7 @@ To specify the `User ID` for a message sent using the `/message` API, include th
 ```
 {: codeblock}
 
-If your application is still using the older [v1 runtime API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant-v1?curl=#get-response-to-user-input){: new_window}, the context format is different:
+If your application is still using the older [v1 runtime API](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#get-response-to-user-input){: external}, the context format is different:
 {: note}
 
 ```json
@@ -115,9 +116,9 @@ To delete messages using `customer_id` values, see the [Information security](/d
 
 IBM created Jupyter notebooks that you can use to analyze your log data in more detail. A Jupyter notebook is a web-based environment for interactive computing. You can run small pieces of code that process your data, and you can immediately view the results of your computation.
 
-There is a set of notebooks that you can use with standard Python tools and a set that is designed for optimal use with {{site.data.keyword.DSX_full}}. {{site.data.keyword.DSX_short}} is a product that provides an environment in which you can pick and choose the tools you need to analyze and visualize data, to cleanse and shape data, to ingest streaming data, or to create, train, and deploy machine learning models. See the [product documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/welcome-main.html){:new_window} for more details.
+There is a set of notebooks that you can use with standard Python tools and a set that is designed for optimal use with {{site.data.keyword.DSX_full}}. {{site.data.keyword.DSX_short}} is a product that provides an environment in which you can pick and choose the tools you need to analyze and visualize data, to cleanse and shape data, to ingest streaming data, or to create, train, and deploy machine learning models. See the [product documentation](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/welcome-main.html){: external} for more details.
 
-To learn more about how notebooks can help you improve your assistant, [read this blog post ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/continuously-improve-your-watson-assistant-with-jupiter-notebooks-60231df4f01f).
+To learn more about how notebooks can help you improve your assistant, [read this blog post](https://medium.com/ibm-watson/continuously-improve-your-watson-assistant-with-jupiter-notebooks-60231df4f01f){: external}.
 
 The following notebooks are available:
 
@@ -125,29 +126,29 @@ The following notebooks are available:
 
 - **Effectiveness**: Performs a deeper analysis of your logs to help you understand the steps you can take to improve your assistant.
 
-The [Watson Assistant Continuous Improvement Best Practices Guide ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/downloads/cas/V0XQ0ZRE) describes how to get the most out of the notebooks.
+The [Watson Assistant Continuous Improvement Best Practices Guide](https://www.ibm.com/downloads/cas/V0XQ0ZRE){: external} describes how to get the most out of the notebooks.
 
 ### Using the notebooks with {{site.data.keyword.DSX}}
 {: #logs-resources-notebooks-studio}
 
 If you choose to use the notebooks that are designed for use with {{site.data.keyword.DSX}}, the steps are roughly these:
 
-1.  Create a {{site.data.keyword.DSX}} account, [create a project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/projects.html){:new_window}, and add a Cloud Object Storage account to it.
-1.  From the {{site.data.keyword.DSX}} community, get the [Measure Watson Assistant Performance notebook ![External link icon](../../icons/launch-glyph.svg "External link icon")]( https://dataplatform.cloud.ibm.com/exchange/public/entry/view/133dfc4cd1480bbe4eaa78d3f635e568).
+1.  Create a {{site.data.keyword.DSX}} account, [create a project](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/projects.html){: external}, and add a Cloud Object Storage account to it.
+1.  From the {{site.data.keyword.DSX}} community, get the [Measure Watson Assistant Performance notebook](https://dataplatform.cloud.ibm.com/exchange/public/entry/view/133dfc4cd1480bbe4eaa78d3f635e568){: external}.
 1   Follow the step-by-step instructions provided with the notebook to analyze a subset of the dialog exchanges from the logs.
 
     The insights are visualized in ways that make it easier to understand the assistant's coverage and effectiveness.
 1.  Export a sample set of the logs from ineffective conversations, and then analyze and annotate them.
 
     For example, indicate whether a response is correct. If correct, mark whether it is helpful. If a response is incorrect, then identify the root cause, the wrong intent or entity was detected, for example, or the wrong dialog node was triggered. After identifying the root cause, indicate what the correct choice would have been.
-1.  Feed the annotated spreadsheet to the [Analyze Watson Assistant Effectiveness notebook](https://dataplatform.cloud.ibm.com/exchange/public/entry/view/133dfc4cd1480bbe4eaa78d3f636921c).
+1.  Feed the annotated spreadsheet to the [Analyze Watson Assistant Effectiveness notebook](https://dataplatform.cloud.ibm.com/exchange/public/entry/view/133dfc4cd1480bbe4eaa78d3f636921c){: external}.
 
 This process helps you to understand the steps you can take to improve your assistant. There is no way to automatically apply what you learn back to your service instance. Keep track of any changes you make to improve the system, so you can subsequently apply them to the training data of your dialog skill directly.
 
 ### Using the notebooks with standard Python tools
 {: #logs-resources-notebooks-python}
 
-If you choose to use standard Python tools to run the notebooks, you can get the notebooks from the [IBM GitHub repository](https://github.com/watson-developer-cloud/assistant-improve-recommendations-notebook/tree/master/notebook). Be sure to run them in the following order:
+If you choose to use standard Python tools to run the notebooks, you can get the notebooks from the [IBM GitHub repository](https://github.com/watson-developer-cloud/assistant-improve-recommendations-notebook/tree/master/notebook){: external}. Be sure to run them in the following order:
 
 1.  Measure Notebook.ipynb
 1.  Effectiveness Notebook.ipynb

@@ -10,6 +10,7 @@ subcollection: assistant
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
@@ -70,7 +71,7 @@ To migrate your service instance, complete these steps:
 
     A message is displayed when the process is done. If you have other service instances to migrate, you can continue migrating other service instances, or click **Done**.
 
-1.  **Premium plan one-time step**: If the service instance you are migrating was created as part of a Premium plan, you must inform the service team that you are migrating a Premium plan instance. To do so, create a case from [IBM Cloud Support ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/unifiedsupport/supportcenter){: new_window}.
+1.  **Premium plan one-time step**: If the service instance you are migrating was created as part of a Premium plan, you must inform the service team that you are migrating a Premium plan instance. To do so, create a case from [IBM Cloud Support](https://cloud.ibm.com/unifiedsupport/supportcenter){: external}.
 
     There are some additional steps that the service team needs to take on your behalf. Add the following information to the case:
 

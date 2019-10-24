@@ -12,6 +12,7 @@ subcollection: assistant
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
@@ -129,7 +130,7 @@ Applications that use the older v1 runtime API must specify a deployment ID in e
 
 For assistants or custom apps that use the v2 version of the API, your assistant automatically includes a system id and skill id with each /message call, so you can choose a data source by assistant name instead of using a deployment ID.
 
-To add the deployment ID, v1 API users include the deployment property inside the metadata of the [context ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/assistant-v1?curl=#get-response-to-user-input){: new_window}, as in this example:
+To add the deployment ID, v1 API users include the deployment property inside the metadata of the [context](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#get-response-to-user-input){: external}, as in this example:
 
 ```json
 "context" : {
