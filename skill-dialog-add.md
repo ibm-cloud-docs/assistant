@@ -119,7 +119,7 @@ To download a dialog skill, complete the following steps:
 
 1.  Find the dialog skill tile on the Skills page or on the configuration page of an assistant that uses the skill.
 
-1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Download JSON**.
+1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Export**.
 
 1.  Specify a name for the JSON file and where to save it, and then click **Save**.
 

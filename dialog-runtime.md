@@ -971,14 +971,20 @@ For example, you have a dialog that has two nodes with intent conditions that ad
 
 If the user input is `i must cancel it today`, then the following intents might be detected in the input:
 
-`[`
-`{"intent":"Customer_Care_Cancel_Account","confidence":0.6618281841278076},`
-`{"intent":"eCommerce_Cancel_Product_Order","confidence":0.4330700159072876},`
-`{"intent":"Customer_Care_Appointments","confidence":0.2902342438697815},`
-`{"intent":"Customer_Care_Store_Hours","confidence":0.2550420880317688},`
-`...]`
+```json
+[
+  {"intent":"Customer_Care_Cancel_Account","confidence":0.5602024316787719},
+  {"intent":"eCommerce_Cancel_Product_Order","confidence":0.46903514862060547},
+  {"intent":"Customer_Care_Appointments","confidence":0.29033891558647157},
+  {"intent":"General_Greetings","confidence":0.2894785046577454},
+```
+{: code block}
 
-Your assistant is `0.6618281841278076` (66%) confident that the user goal matches the `#Customer_Care_Cancel_Account` intent. If another intent has a confidence score that is close to the score of this top intent, then disambiguation is triggered. In our example, the `#eCommerce_Cancel_Product_Order` intent has a close confidence score of 43%.
+In fact, if you test from the "Try it out" pane, you can hover over the eye icon to see the top three intents recognized.
+
+![Shows the top 3 intents recognized in the user input from the Try it out pane.](images/tryit-disambig-intent-details.png)
+
+Your assistant is `0.5618281841278076` (56%) confident that the user goal matches the `#Customer_Care_Cancel_Account` intent. If another intent has a confidence score that is close to the score of this top intent, then disambiguation is triggered. In our example, the `#eCommerce_Cancel_Product_Order` intent has a close confidence score of 46%.
 
 As a result, when the user input is `i must cancel it today`, both dialog nodes are likely to be considered viable candidates to respond. To determine which dialog node to process, the assistant asks the user to pick one. And to help the user choose between them, the assistant provides a short summary of what each node does. The summary text is extracted directly from the *external node name* information that is specified for each node.
 ![Service prompts the user to choose from a list of dialog options, including Cancel an account, Cancel a product order, and None of the above.](images/disambig-tryitout.png)

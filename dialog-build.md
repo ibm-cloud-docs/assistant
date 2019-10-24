@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-18"
+lastupdated: "2019-10-24"
 
 subcollection: assistant
 
@@ -10,6 +10,7 @@ subcollection: assistant
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
@@ -135,9 +136,19 @@ Queries you submit through the "Try it out" pane generate `/message` API calls, 
 
     ![Screen capture of test dialog output](images/test_dialog_output.png)
 
-    If you want to edit an entity that is recognized from the input, click the entity name to open it in the Entities page. If the wrong intent is recognized, you can click the arrow next to the intent name to correct it or mark the topic as irrelevant. For more information, see [Making training data improvements](/docs/services/assistant?topic=assistant-logs#logs-fix-data).
+1.  To see the top intents that were recognized in the test input along with their confidence scores, hover over the eye icon that is displayed next to the intent with the highest confidence score.
 
-1.  If you want to know which node in the dialog tree triggered a response, click the **Location** ![Location](images/location.png) icon next to it. If you are not already on the Dialog page, open it.
+    ![Screen capture of the eye icon that is shown next to the top-most recognizes intent](images/tryit-intent-details.png)
+
+1.  If the response is not what you expected it to be, you can take the following actions from the "Try it out" pane:
+    
+    - If you want to edit an entity that is recognized in the input, click the entity name to open it in the Entities page. 
+    - If the wrong intent is recognized, you can click the arrow next to the intent name to correct it or mark the topic as irrelevant. For more information, see [Making training data improvements](/docs/services/assistant?topic=assistant-logs#logs-fix-data).
+
+1.  If you want to know which node in the dialog tree triggered a response, click the **Location** ![Location](images/location.png) icon next to it. 
+
+    If you are not already on the Dialog page, open it.
+    {: tip}
 
     The source node is given focus and the route that your assistant traversed through the tree to get to it is highlighted. It remains highlighted until you perform another action, such as entering a new test input.
 
@@ -155,6 +166,7 @@ Queries you submit through the "Try it out" pane generate `/message` API calls, 
     See [Context variables](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-context) for more information.
 
 1.  Continue to interact with the dialog to see how the conversation flows through it.
+
     - To find and resubmit a test utterance, you can press the Up key to cycle through your recent inputs.
     - To remove prior test utterances from the chat pane and start over, click the **Clear** link. Not only are the test utterances and responses removed, but this action also clears the values of any context variables that were set as a result of your interactions with the dialog.
 
