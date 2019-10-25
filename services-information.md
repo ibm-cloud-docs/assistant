@@ -148,7 +148,7 @@ The authentication mechanism used by your service instance impacts how you must 
 
         ```curl
         curl -X GET -u "apikey:3Df... ...Y7Pc9" \
-        'https://gateway-us-east.watsonplatform.net/assistant/api/v1/workspaces?version=2018-09-20' \
+        'https://gateway-wdc.watsonplatform.net/assistant/api/v1/workspaces?version=2018-09-20' \
         ```
         {: codeblock}
 
@@ -170,14 +170,14 @@ The authentication mechanism used by your service instance impacts how you must 
 
 You can create {{site.data.keyword.conversationshort}} service instances that are hosted in the following data center locations:
 
-| Location    | Location code | Authentication type | IAM adoption date | Notes |
-|-------------|---------------|---------------------|-------------------|-------|
-| Dallas      | us-south      | IAM                 | 30 October 2018 | N/A |
-| Frankfurt   | eu-de         | IAM                 | 30 October 2018 | N/A |
-| Sydney      | au-syd        | IAM                 | 7 May 2018 | Instances created before May 7 were syndicated to Dallas |
-| Tokyo       | jp-tok        | IAM                 | 8 November 2018 | N/A |
-| London      | eu-gb, lon    | IAM                 | 13 December 2018 | Instances that were created in the United Kingdom region before December 13 were syndicated to the US South region |
-| Washington DC  | us-east    | IAM                 | 14 June 2018 | N/A |
+| Location    | Location code | API location | Authentication type | IAM adoption date | Notes |
+|-------------|---------------|--------------|---------------------|-------------------|-------|
+| Dallas      | us-south      | N/A          | IAM                 | 30 October 2018 | N/A |
+| Frankfurt   | eu-de         | fra          | IAM                 | 30 October 2018 | N/A |
+| Sydney      | au-syd        | syd          | IAM                 | 7 May 2018 | Instances created before May 7 were syndicated to Dallas |
+| Tokyo       | jp-tok        | tok          | IAM                 | 8 November 2018 | N/A |
+| London      | eu-gb         | lon          | IAM                 | 13 December 2018 | Instances that were created in the United Kingdom region before December 13 were syndicated to the US South region |
+| Washington DC  | us-east    | wdc          | IAM                 | 14 June 2018 | N/A |
 {: caption="Data center locations" caption-side="top"}
 
 For information about the data centers in which other {{site.data.keyword.cloud_notm}} services are hosted, see [Services by region](https://cloud.ibm.com/docs/resources/services_region#services_region){: external}.
