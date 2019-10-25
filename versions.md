@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-23"
+lastupdated: "2019-10-25"
 
 subcollection: assistant
 
@@ -62,7 +62,7 @@ If you have trouble creating the version, check that your skill does not have an
 ## Deploying a skill version
 {: #versions-deploy}
 
-1.  From the header of the skill, click the **Versions** tab.
+1.  From the skill menu, click **Versions**.
 1.  Click the ![Click to view actions](images/kebab-react.png) icon from the version you want to deploy, and then choose **Assign to assistant**.
 
     A list of assistants to which you can link this version is displayed. The list is limited to those assistants that don't have any skills associated with them, or that are associated with a different version of this skill.
@@ -120,6 +120,6 @@ You can download a dialog skill version in JSON format. You might want to downlo
 
 To download a dialog skill version, complete the following steps:
 
-1.  From the header of the skill, click the **Versions** tab.
+1.  From the skill menu, click **Versions**.
 1.  Click the ![Click to view actions](images/kebab-react.png) icon from the version you want to download, and then choose **Export**.
 1.  Specify a name for the JSON file and where to save it, and then click **Save**.
