@@ -56,9 +56,6 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #24October2019}
 <!--1.80-->
 
-The following update is available in all locations except Dallas currently.
-{: important}
-
 - **Testing improvement**: You can now see the top three intents that were recognized in a test user input from the "Try it out" pane. For more details, see [Testing your dialog](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-test).
 
 ## 16 October 2019

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-22"
+lastupdated: "2019-10-25"
 
 keywords: context, context variable, digression, disambiguation, autocorrection, spelling correction, spell check, confidence 
 
@@ -994,7 +994,10 @@ Notice that your assistant recognizes the term `today` in the user input as a da
 
 ![Service prompts the user to choose from a list of dialog options, including Capture date information.](images/disambig-tryitout-date.png)
 
-The following video provides an overview of disambiguation.
+The following video explains the benefits of using disambiguation. A few things have changed since the video was created:
+
+- You enable dismabiguation from the *Options* page instead of a **Settings** link from the Dialog page.
+- You can also set a maximum number of options to display in the disambiguation list.
 
 <iframe class="embed-responsive-item" id="youtubeplayer0" title="Disambiguation overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/VVyklAXlmbA?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
@@ -1055,7 +1058,7 @@ Keep in mind:
 
 For each node that you opt in to disambiguation, test scenarios in which you expect the node to be included in the disambiguation options list. Testing gives you a chance to make adjustments to the node order or other factors that might impact how well disambiguation works at run time.
 
-When testing, you might notice that the options that are included in the disambiguation changes from one test run to the next. In fact, the order in which the options are listed might change from test run to test run. Don't worry; this is the intended behavior. As part of work being done to help the assistant learn automatically from user choices, the choices included and their order in the disambiguation list is being randomized on purpose. Changing the order helps to avoid bias that can be introduced by a percentage of people who always pick the first option without carefully reviewing their choices beforehand.
+When testing, the order in which the options are listed might change from test run to test run. In fact, the options themselves that are included in the disambiguation list might change from one test run to the next. Don't worry; this is the intended behavior. As part of development that is in progress to help the assistant learn automatically from user choices, the choices included and their order in the disambiguation list is being randomized on purpose. Changing the order helps to avoid bias that can be introduced by a percentage of people who always pick the first option without carefully reviewing all of their choices beforehand.
 {: important}
 
 ### Handling none of the above
