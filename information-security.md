@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-18"
+lastupdated: "2019-10-25"
 
 subcollection: assistant
 
@@ -36,15 +36,15 @@ The products, services, and other capabilities described herein are not suitable
 
 If you need to request GDPR support for {{site.data.keyword.cloud}} {{site.data.keyword.watson}} resources that are created
 
-- In the European Union, see [Requesting support for IBM Cloud Watson resources created in the European Union](https://cloud.ibm.com/docs/services/watson/getting-started-gdpr-sar#request-EU){: external}.
-- Outside the European Union, see [Requesting support for resources outside the European Union](https://cloud.ibm.com/docs/services/watson/getting-started-gdpr-sar#request-non-EU){: external}.
+- In the European Union, see [Requesting support for IBM Cloud Watson resources created in the European Union](/docs/services/watson/getting-started-gdpr-sar?topic=watson-gdpr-sar#request-EU){: external}.
+- Outside the European Union, see [Requesting support for resources outside the European Union](/docs/services/watson/getting-started-gdpr-sar?topic=watson-gdpr-sar#request-non-EU){: external}.
 
 ## European Union General Data Protection Regulation (GDPR)
 {: #information-security-gdpr}
 
 IBM is committed to providing our clients and partners with innovative data privacy, security and governance solutions to assist them on their journey to GDPR compliance.
 
-Learn more about IBM's own GDPR readiness journey and our GDPR capabilities and offerings to support your compliance journey [here](http://www.ibm.com/gdpr){: external}.
+Learn more about IBM's own GDPR readiness journey and our GDPR capabilities and offerings to support your compliance journey [here](https://www.ibm.com/data-responsibility/gdpr/){: external}.
 
 ## Health Insurance Portability and Accountability Act (HIPAA)
 {: #information-security-hipaa}
@@ -76,7 +76,7 @@ curl -X POST -u "apikey:3Df... ...Y7Pc9"
    'X-Watson-Metadata: customer_id=abc'
  --data
    '{"input":{"text":"hello"}}'
-  'https://gateway-eu-de.watsonplatform.net/assistant/api/v1/workspaces/{workspaceID}/message?version=2018-09-20'
+  'https://gateway-fra.watsonplatform.net/assistant/api/v1/workspaces/{workspaceID}/message?version=2018-09-20'
 ```
 {: codeblock}
 
@@ -94,7 +94,7 @@ Use the v1 `/logs` method `filter` parameter to search an application log for sp
 
 ``` curl
 curl -X GET -u "apikey:3Df... ...Y7Pc9"
-'https://gateway-eu-de.watsonplatform.net/assistant/api/v1/workspaces/{workspaceID}/logs?version=2018-09-20&filter=customer_id::my_best_customer'
+'https://gateway-fra.watsonplatform.net/assistant/api/v1/workspaces/{workspaceID}/logs?version=2018-09-20&filter=customer_id::my_best_customer'
 ```
 {: codeblock}
 
@@ -113,7 +113,7 @@ As an example, to delete any message data associated with a user that has the cu
 
 ```
 curl -X DELETE -u "apikey:3Df... ...Y7Pc9"
- 'https://gateway-eu-de.watsonplatform.net/assistant/api/v1/user_data?customer_id=abc&version=2018-09-20'
+ 'https://gateway-fra.watsonplatform.net/assistant/api/v1/user_data?customer_id=abc&version=2018-09-20'
 ```
 {: codeblock}
 

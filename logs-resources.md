@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-24"
+lastupdated: "2019-10-25"
 
 subcollection: assistant
 
@@ -102,7 +102,7 @@ curl -X POST -u "apikey:3Df... ...Y7Pc9"
  --header
    'Content-Type: application/json'
    'X-Watson-Metadata: customer_id={first-customer-ID};customer_id={second-customer-ID}'
- --data '{"input":{"text":"hello"}}' 'https:// gateway-us-south.watsonplatform.net/assistant/api/v1/workspaces/{workspaceID}/message?version=2018-09-20'
+ --data '{"input":{"text":"hello"}}' 'https:// gateway.watsonplatform.net/assistant/api/v1/workspaces/{workspaceID}/message?version=2018-09-20'
 ```
 {: codeblock}
 

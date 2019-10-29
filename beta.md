@@ -43,7 +43,7 @@ The following features are available for use by participants in the early access
   - Now the text that you add to the dialog node name field might be shown to users. Both to internal users if the conversation is transferred to a human agent, and to end users if the assistant needs to ask users to clarify their meaning. The text you add as the node name must identify the purpose of the node clearly and succinctly. 
   - When testing, you might notice that the order of the options in the disambiguation list changes from one test run to the next. Don't worry; this is the intended behavior. As part of work being done to help the assistant learn automatically from user choices, the order of the options in the disambiguation list is being randomized on purpose. Changing the order helps to avoid bias that can be introduced by a percentage of people who always pick the first option without first reviewing their choices.
 
-- You can test out publishing your assistant as a \[24\]7.ai chatbot. See [Testing a \[24\]7.ai chatbot integration](/docs/services/assistant?topic=assistant-deploy-247ai). <!--1.72 -->
+<!-- - You can test out publishing your assistant as a \[24\]7.ai chatbot. See [Testing a \[24\]7.ai chatbot integration](/docs/services/assistant?topic=assistant-deploy-247ai). Added with 1.72, removed from doc after 1.80 -->
 
 - Add your assistant as a Zendesk Chat agent. See [Integrating with Zendesk Chat](/docs/services/assistant?topic=assistant-deploy-zendesk).
 

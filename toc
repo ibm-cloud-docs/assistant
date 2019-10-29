@@ -92,7 +92,6 @@ Watson Assistant
         beta.md
         beta-irrelevance-detection.md
         beta-deploy-zendesk.md
-        beta-deploy-247ai.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
