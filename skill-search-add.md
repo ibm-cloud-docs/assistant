@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-18"
+lastupdated: "2019-10-29"
 
 subcollection: assistant
 
@@ -298,6 +298,34 @@ Review this information for help with performing common tasks.
     For example, you can define a filter that filters out any documents in the data collection that do not mention an intent in the document title or some other metadata field. Or the filter can filter out documents that do not identify an entity as a known entity in the data collection's metadata or that don't mention the entity anywhere in the full text of the document. For details about how to add a search skill response type, see [Adding rich responses](https://cloud.ibm.com/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia-add).
 
     For more tips about improving results, read the [Improve your natural language query results from Watson Discovery](https://developer.ibm.com/blogs/improving-your-natural-language-query-results-from-watson-discovery/){: external} blog post.
+
+- **My response text is surrounded by brackets**: If you notice that your response text is surrounded by brackets and quotation marks (`["My response text"]`) when you test it from the Preview link integration, for example, you might need to change the source field that you're using in the configuration. The unexpected formatting indicates that the value is stored in the source document as an array. Any field that you extract text from must contain a value with a String data type, not an Array data type. When the chat integration shows a response that is extracted from a field that stores the data as an array, it does a straight conversion of the array value into a string, which produces a response that includes the array syntax.
+
+  For example, maybe the field in the source document contains an array with a single text value as its only array element:
+
+  ```json
+  "title": ["a single array element"]
+  ```
+  {: codeblock}
+
+  The array value is converted by the {{site.data.keyword.conversationshort}} into this string value:
+
+  ```json
+  "title": "[\"a single array element\"]"
+  ```
+  {: codeblock}
+
+  As a result, the string is returned in this format in the chat; the surrounding square brackets and quotation marks are displayed:
+
+  ```
+  ["a single array element"]
+  ```
+  {: codeblock}
+
+  If you see this happening, consider choosing a different collection field from which to extract search results.
+  
+  The {{site.data.keyword.discoveryshort}} document `highlight` field stores values in an array.
+  {: note}
 
 ## Next steps
 {: #skill-search-add-next-steps}
