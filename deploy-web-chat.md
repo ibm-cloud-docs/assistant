@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-18"
+lastupdated: "2019-10-29"
 
 subcollection: assistant
 
@@ -179,7 +179,7 @@ In the following example, the user ID `L44556677` is added to the script codeblo
   window.loadWatsonAssistantChat({
     integrationID: '{INTEGRATION ID}',
     region: '{REGION}',
-    userID: `L44556677`
+    userID: 'L44556677'
   }).then(function(instance){
     // When this promise returns, we know WatsonAssistantChat is ready.
     instance.on({ type: "pre:send", handler: preSendhandler });
