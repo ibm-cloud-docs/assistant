@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-24"
+lastupdated: "2019-10-31"
 
 subcollection: assistant
 
@@ -52,7 +52,7 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
-# 24 October 2019
+## 24 October 2019
 {: #24October2019}
 <!--1.80-->
 
