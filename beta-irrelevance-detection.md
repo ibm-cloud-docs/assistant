@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-15"
+lastupdated: "2019-10-31"
 
 subcollection: assistant
 
@@ -25,7 +25,7 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:gif: data-image-type='gif'}
 
-# Beta: New irrelevant topic detection
+# Beta: New irrelevance detection
 {: #irrelevance-detection}
 
 Enable the new irrelevant topic detection feature to help your dialog skill recognize when a user asks about topics that it is not designed to answer, and to do so with confidence earlier in the development process.
@@ -41,14 +41,14 @@ This feature helps your dialog skill recognize subjects that you do not want it 
 This setting can be enabled for English-language dialog skills only.
 {: note}
 
-## Enabling the new irrelevant intent detection
+## Enabling the new irrelevance detection feature
 {: #irrelevance-detection-enable}
 
-To enable the new irrelevant topic detection feature, complete the following steps:
+To enable the enhanced irrelevant intent detection feature, complete the following steps:
 
 1.  From the Skills page, open your skill.
-1.  Click the **Options** tab.
-1.  From the *Off topic* page, choose **Try beta**.
+1.  From the skill menu, click **Options**.
+1.  On the *Irrelevance detection* page, choose **Enhanced**.
 
 To test the new detection mechanism in the "Try it out" pane, submit one or more utterances that have absolutely nothing to do with your training data. The new mechanism helps your skill to correctly recognize that the test utterances do not map to any of the intents defined in your training data, and classifies them as being `Irrelevant`.
 
