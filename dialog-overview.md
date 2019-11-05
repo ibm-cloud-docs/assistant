@@ -199,9 +199,9 @@ The built-in integrations support the following Markdown syntax elements:
 | Hypertext link | `Contact us at [ibm.com](https://www.ibm.com).` | Contact us at [ibm.com](https://www.ibm.com). |
 {: caption="Supported markdown syntax" caption-side="top"}
 
-The "Try it out" pane does not support Markdown syntax currently. The Preview link integration does, so you can test the dialog in the preview web page to see how the Markdown syntax is rendered.
+The "Try it out" pane does not support Markdown syntax currently. For testing purposes, you can use the *Preview link* integration to see how the Markdown syntax is rendered.
 
-The "Try it out" pane and Preview link integration support HTML syntax. The Slack and Facebook integrations do not. 
+The "Try it out" pane, and *Preview link* and *Web Chat* integrations support HTML syntax. The *Slack* and *Facebook* integrations do not. 
 
 #### Learn more about simple responses
 {: #dialog-overview-variety}
