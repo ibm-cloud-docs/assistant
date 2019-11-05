@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-24"
+lastupdated: "2019-11-05"
 
 subcollection: assistant
 
@@ -192,14 +192,12 @@ The number of dialog nodes you can create per skill depends on your plan type.
 | Plus             |                    100,000 |
 | Standard         |                    100,000 |
 | Plus Trial       |                     25,000 |
-| Lite             |                     100`*` |
+| Lite             |                     25,000 |
 {: caption="Plan details" caption-side="top"}
 
 The welcome and anything_else dialog nodes that are prepopulated in the tree do count toward the total.
 
 Tree depth limit: The dialog supports 2,000 dialog node descendants; the dialog performs best with 20 or fewer.
-
-`*` The limits changed from 25,000 to 100 for Lite plans on 1 December 2018. Users of service instances that were created before the limit changed have until 1 June 2019 to upgrade their plan, or edit the dialogs in the skills in the existing service instances to meet the new limit requirements.
 
 ### How many nodes are in my dialog?
 {: #dialog-build-count-nodes}
