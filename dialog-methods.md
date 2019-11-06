@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-23"
+lastupdated: "2019-11-06"
 
 subcollection: assistant
 
@@ -974,38 +974,16 @@ For example:
   For example, `@sys-date.before(@sys-time)`.
 - If comparing `date and time vs. time` the method ignores the date and only compares times.
 
-### now()
+### now(String time zone)
 {: #dialog-methods-dates-now}
 
-Returns a string with the current date and time in the format `yyyy-MM-dd HH:mm:ss`.
+Returns a string with the current date and time in the format `yyyy-MM-dd HH:mm:ss`. Optionally specify a `timezone` value to get the current date and time for a specific time zone.
 
 - Static function.
 - The other date/time methods can be invoked on date-time values that are returned by this function and it can be passed in as their argument.
-- If the context variable `$timezone` is set, this function returns dates and times in the client's time zone.
+- The user interface creates a `$timezone` context variable for you automatically so the correct time is returned when you test from the "Try it out" pane. If you don't pass a time zone, the time zone that is set automatically by the UI is used. Outside of the UI, `GMT` is used as the time zone. To learn about the syntax to use to specify the time zone, see [Time zones supported by system entities](/docs/services/assistant?topic=assistant-time-zones).
 
-Example of a dialog node with `now()` used in the output field:
-
-```json
-{
-  "conditions": "#what_time_is_it",
-  "output": {
-    "generic": [
-      {
-        "values": [
-          {
-          "text": "<? now() ?>"
-          }
-        ],
-        "response_type": "text",
-        "selection_policy": "sequential"
-      }
-    ]
-  }
-}
-```
-{: codeblock}
-
-Example of `now()` in node's conditions (to decide if it is still morning):
+Example of `now()` being used to first check whether it's morning before responding with a morning-specific greeting.
 
 ```json
 {
@@ -1026,6 +1004,29 @@ Example of `now()` in node's conditions (to decide if it is still morning):
 }
 ```
 {: codeblock}
+
+Example of using now() with a timezone to return the current time (in England):
+
+```json
+{
+  "output": {
+      "generic": [
+        {
+        "values": [
+          {
+          "text": "The current date and time is: <? now('Europe/London') ?>"
+          }
+        ],
+        "response_type": "text",
+        "selection_policy": "sequential"
+        }
+      ]
+  }
+}
+```
+{: codeblock}
+
+You can substitute the hard-coded time zone value with a context variable to dynamically change the time based on a time zone that is passed to the expression. For example: `<? now('$myzone') ?>`. The `$myzone` context variable might be set to `'Australia/Sydney'` in one conversation and to `'Mexico/BajaNorte'` in another.
 
 ### .reformatDateTime(String format)
 {: #dialog-methods-dates-reformatDateTime}
