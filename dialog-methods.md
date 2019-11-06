@@ -1026,7 +1026,7 @@ Example of using now() with a timezone to return the current time (in England):
 ```
 {: codeblock}
 
-You can substitute the hard-coded time zone value with a context variable to dynamically change the time based on a time zone that is passed to the expression. For example: `<? now('$myzone') ?>`  where `$myzone` is the context variable that is passed in.
+You can substitute the hard-coded time zone value with a context variable to dynamically change the time based on a time zone that is passed to the expression. For example: `<? now('$myzone') ?>`. The `$myzone` context variable might be set to `'Australia/Sydney'` in one conversation and to `'Mexico/BajaNorte'` in another.
 
 ### .reformatDateTime(String format)
 {: #dialog-methods-dates-reformatDateTime}
