@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-29"
+lastupdated: "2019-11-05"
 
 subcollection: assistant
 
@@ -123,7 +123,7 @@ To add the assistant to a web page on your company website, complete the followi
 ## Extending the web chat
 {: #deploy-web-chat-extend}
 
-You can make more advanced customizations and extend the capability of the web chat by using the {site.data.keyword.conversationshort}} Web Chat toolkit on [GitHub](https://github.com/watson-developer-cloud/assistant-web-chat){: external}.
+You can make more advanced customizations and extend the capability of the web chat by using the {site.data.keyword.conversationshort}} Web Chat toolkit on [GitHub](https://watson-developer-cloud.github.io/assistant-web-chat/index.html){: external}.
 
 If you choose to use the provided methods, you implement them by editing the code snippet that was generated earlier. You then embed the updated code snippet into your web page.
 
