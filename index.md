@@ -32,7 +32,7 @@ Use {{site.data.keyword.conversationfull}} to build your own branded assistant i
 ## How it works
 {: #index-how-it-works}
 
-This diagram illustrates how the product works:
+This diagram illustrates how the product delivers an omnichannel customer experience:
 
 ![Flow diagram of the service](images/simple-overview.png)
 
@@ -82,7 +82,9 @@ Here's how you implement your assistant:
 
 - **Integrate your assistant.** Add a built-in channel integration to deploy the configured assistant directly to a social media or messaging channel. Or build your own client application as the user interface for the assistant.
 
-  Your deployed assistant is hosted by {{site.data.keyword.cloud}}, the IBM cloud computing platform. (For more information, see [Platform overview](/docs/overview?topic=overview-whatis-platform){: external}.)
+  Your deployed assistant is hosted by {{site.data.keyword.cloud}}, the IBM cloud computing platform. (For more information, see [Platform overview](/docs/overview?topic=overview-whatis-platform){: external}.) 
+
+  If you are interested in on-premises deployments, see the [{{site.data.keyword.conversationfull}} for {{site.data.keyword.icp4dfull}} documentation](/docs/services/assistant-data?topic=assistant-data-index).
 
 Read more about these implementation steps by following these links:
 
