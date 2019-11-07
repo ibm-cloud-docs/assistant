@@ -26,6 +26,7 @@ Watson Assistant
     Creating intents
         intents.md
         intent-recommendations.md
+        irrelevance-detection.md
 
     {: .topicgroup}
     Creating a dialog

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-19"
+lastupdated: "2019-11-07"
 
 keywords: mark as irrelevant, counterexample, data source, deployment ID
 
@@ -202,3 +202,5 @@ Be sure before you designate an input as irrelevant.
 You can mark an intent as irrelevant directly from the *Try it out* pane also.
 
   ![Mark as irrelevant screen capture](images/irrelevant.png)
+
+For English-language skills, irrelevance detection is used to help your skill recognize irrelevant inputs earlier in the development process. For more information, see [Irrelevance detection](/docs/services/assistant?topic=assistant-irrelevance-detection).
