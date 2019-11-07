@@ -56,6 +56,9 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: 7Novembber2019}
 <!--1.82-->
 
+The following update is available in all locations except Dallas currently.
+{: important}
+
 - **Irrelevance detection has been added**: When enabled, a supplemental model is used to help identify utterances that are irrelevant and should not be answered by the dialog skill. This new model is especially beneficial for skills that have not been trained on what subjects to ignore. This feature is available for English skills only. For more information, see [New irrelevant topic detection](/docs/services/assistant?topic=assistant-irrelevance-detection).
 
 ## 24 October 2019
