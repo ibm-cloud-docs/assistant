@@ -63,7 +63,7 @@ The algorithmic models that help your assistant understand what your users say a
 
 The best way to build an assistant that understands your domain and the specific needs of your customers is to take the time to build good training data, especially data that includes counterexamples.
 
-To bridge any gaps you might have in your counterexample data as you start to build your skill, you can enable this new irrelevance detection feature. When enabled, an alternative method for evaluating the relevance of a newly submitted utterance is triggered in addition to the standard method. 
+Irrelevance detection is designed to bridge any gaps you might have in your counterexample data as you start to build your skill. When enabled, an alternative method for evaluating the relevance of a newly submitted utterance is triggered in addition to the standard method. 
 
 The supplemental method examines the structure of the new utterance and compares it to the structure of the user example utterances in your training data. This alternate approach helps skills that have few or no counterexamples recognize irrelevant utterances. It is likely to have less of an effect for skills that have a sufficient number of counterexamples defined already. 
 

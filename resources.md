@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-23"
+lastupdated: "2019-11-07"
 
 subcollection: assistant
 
@@ -33,6 +33,13 @@ Links to resources, videos, tutorials, and articles that can help you to get sta
 {: #resources-for-developers}
 
 - [IBM Code Bot Asset Exchange](https://developer.ibm.com/code/exchanges/bots/){: external}
+
+## Popular product overview videos
+{: #resources-om-videos}
+
+- [Deep Dive: {{site.data.keyword.conversationshort}} integrations and new web chat with live agents](https://event.on24.com/eventRegistration/EventLobbyServlet?target=reg20.jsp&referrer=https%3A%2F%2Fwcc.on24.com%2Fwebcast%2Fwebcasts&eventid=2109942&sessionid=1&key=4671C1236885158BD7823403CE605635&regTag=&sourcepage=register)
+- [Best practices in building a dialog flow](https://onlinexperiences.com/scripts/Server.nxp?LASCmd=AI:4;F:QS!10100&ShowUUID=269C27BC-909C-4094-879C-96832E1BEA9A&LangLocaleID=1033&Referrer=https%3A%2F%2Fmail.notes.na.collabserv.com%2Fverse)
+- [How to continuously train and improve your virtual assistant](https://event.on24.com/eventRegistration/EventLobbyServlet?target=reg20.jsp&referrer=https%3A%2F%2Fwcc.on24.com%2Fwebcast%2Fregistration%2F1887419&eventid=1887419&sessionid=1&key=F3C33E6E145971E9E4AA8508360B299B&regTag=&sourcepage=register)
 
 ## Developer resources for building assistants
 {: #resources-for-bots}
