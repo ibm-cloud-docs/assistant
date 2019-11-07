@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-09"
+lastupdated: "2019-11-07"
 
 subcollection: assistant
 
@@ -76,21 +76,21 @@ The first table shows the level of support for all features, except those relate
 
 **Table 2b. Intent feature support details continued**
 
-| Language | **[User example recommendations](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations)** | **[Intent recommendations](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-intent-recommendations)** |
-|:---:|:---:|
-| **English (en)**                   | GA | GA |
-| **Arabic (ar)**                    | NA | NA |
-| **Chinese (Simplified) (zh-cn)**   | NA | NA |
-| **Chinese (Traditional) (zh-tw)**  | NA | NA |
-| **Czech (cs)**                     | NA | NA |
-| **Dutch (nl)**                     | NA | NA |
-| **French (fr)**                    | NA | NA |
-| **German (de)**                    | NA | NA |
-| **Italian (it)**                   | NA | NA |
-| **Japanese (ja)**                  | GA | NA |
-| **Korean (ko)**                    | NA | NA |
-| **Portuguese (Brazilian) (pt-br)** | NA | NA |
-| **Spanish (es)**                   | NA | NA |
+| Language | **[User example recommendations](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations)** | **[Intent recommendations](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-intent-recommendations)** | **[Irrelevance detection](/docs/services/assistant?topic=assistant-irrelevance-detection)** |
+|:---:|:---:|:---:|
+| **English (en)**                   | GA | GA | GA |
+| **Arabic (ar)**                    | NA | NA | NA |
+| **Chinese (Simplified) (zh-cn)**   | NA | NA | NA |
+| **Chinese (Traditional) (zh-tw)**  | NA | NA | NA |
+| **Czech (cs)**                     | NA | NA | NA |
+| **Dutch (nl)**                     | NA | NA | NA |
+| **French (fr)**                    | NA | NA | NA |
+| **German (de)**                    | NA | NA | NA |
+| **Italian (it)**                   | NA | NA | NA |
+| **Japanese (ja)**                  | GA | NA | NA |
+| **Korean (ko)**                    | NA | NA | NA |
+| **Portuguese (Brazilian) (pt-br)** | NA | NA | NA |
+| **Spanish (es)**                   | NA | NA | NA |
 {: caption="Intent feature support details continued" caption-side="top"}
 
 **Table 3. Entity feature support details**
