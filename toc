@@ -89,10 +89,17 @@ Watson Assistant
         api-dialog-modify.md
 
     {: .topicgroup}
-    Beta features
+    Early access program
         beta.md
         beta-irrelevance-detection.md
         beta-deploy-zendesk.md
+    
+    {: .topicgroup}
+    Technology preview
+        dialog-evolution.md
+        preview.md
+        preview-actions.md
+        preview-steps.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
