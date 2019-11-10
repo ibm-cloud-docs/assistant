@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-10"
 
 subcollection: assistant
 
@@ -266,7 +266,7 @@ For example, you can construct a response like this:
 ## Giving the assistant extra time
 {: #steps-pause}
 
-There might be steps that your assistant takes that require a little extra time, such as waiting for an externral service to finish a process. You can build a visual indicator into your action that lets the customer know that the assistant is still there and is actively working on their request. To buy the assistant some time, as it were, add a pause response type to your step. The assistant shows a typing indicator to the customer. 
+There might be steps that your assistant takes that require a little extra time, such as waiting for an external service to finish a process. You can build a visual indicator into your action that lets the customer know that the assistant is still there and is actively working on their request. To buy the assistant some time, as it were, add a pause response type to your step. The assistant shows a typing indicator to the customer. 
 
 This response type is especially useful if you are making a programmatic call from the action by using a webhook, because such calls can take a few seconds to return a response. For more information about webhooks, see [Making a programmatic call from dialog](/docs/services/assistant?topic=assistant-dialog-webhook).
 
