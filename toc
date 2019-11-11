@@ -91,7 +91,7 @@ Watson Assistant
     {: .topicgroup}
     Early access program
         beta.md
-        beta-irrelevance-detection.md
+        beta-intent-recommendations.md
         beta-deploy-zendesk.md
     
     {: .topicgroup}
