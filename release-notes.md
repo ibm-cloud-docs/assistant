@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-07"
+lastupdated: "2019-11-11"
 
 subcollection: assistant
 
@@ -60,6 +60,8 @@ The following update is available in all locations except Dallas currently.
 {: important}
 
 - **Irrelevance detection has been added**: When enabled, a supplemental model is used to help identify utterances that are irrelevant and should not be answered by the dialog skill. This new model is especially beneficial for skills that have not been trained on what subjects to ignore. This feature is available for English skills only. For more information, see [New irrelevant topic detection](/docs/services/assistant?topic=assistant-irrelevance-detection).
+
+- **Time zone support for now() method**: You can now specify the time zone for the date and time that is returned by the `now()` method. See [Now()](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-dates-now).
 
 ## 24 October 2019
 {: #24October2019}

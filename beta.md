@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-10"
+lastupdated: "2019-11-11"
 
 subcollection: assistant
 
@@ -34,6 +34,11 @@ When you participate in the early access program, IBM gives you early access to 
 
 The following features are available for use by participants in the early access program only. To find out how to request access, see [Participate in the early access program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
 {: preview}
+
+- You can now use the chat log from one of your production assistants as the source for intent and intent user example recommendations. See [Intent recommendations](/docs/services/assistant?topic=assistant-beta-intent-recommendations).
+
+  With the introduction of this feature, the way in which CSV log files are stored also changed. Previously, a log CSV file that you uploaded to one skill was shared by all of the skills in that service instance. Now, a CSV file that you upload to one skill is available for use only by that one skill. For existing instances with CSV files, the shared CSV files have been made available to each of the skills in the instance. You can delete a CSV file from a skill that doesn't use it by managing the recommendation sources for the skill.
+  {: important}
 
 - **Disambiguation changes**: How disambiguation works is changing in the following ways:
 
