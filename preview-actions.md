@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-11"
 
 subcollection: assistant
 
@@ -58,7 +58,7 @@ For example, a customer named Sally might need to get a weather forecast for New
 
 - **Steps**
 
-  1.  Collect the date and location values that are required to get relevant a weather forecast for NYC next week.
+  1.  Collect the date and location values that are required to get a relevant weather forecast for NYC next week.
   1.  Make a programmatic call to an online weather service, and share the forecast results with Sally.
   1.  Show a text message that asks Sally whether she is satisfied with the information she recieved and the assistant's overall service.
 
@@ -98,16 +98,16 @@ To create an action, complete the following steps:
 
 1.  Add the assistant's response.
 
-    What you define here is the first step that will be performed to fulfill the action. This is the first interaction that your assistant will have with your customer.
-
-    The step can be any of the following response types:
+    What you define here is the first step that will be performed to fulfill the action. This is the first interaction that your assistant will have with your customer. The step can be any of the following response types:
     
-    - [Showing a text message](/docs/services/assistant?topic=assistant-steps#steps-text)
-    - [Displaying an image](/docs/services/assistant?topic=assistant-steps#steps-image)
-    - [Asking the customer to make a choice](/docs/services/assistant?topic=assistant-steps#steps-options)
-    - [Giving the assistant extra time](/docs/services/assistant?topic=assistant-steps#steps-pause)
-    - [Adding messages that are responsive to customer information](/docs/services/assistant?topic=assistant-steps#steps-mcr)
-    - [Collecting a series of required values](/docs/services/assistant?topic=assistant-steps#steps-slots)
+    - Showing a text message
+    - Displaying an image
+    - Asking the customer to make a choice
+    - Giving the assistant extra time
+    - Adding messages that are responsive to customer information
+    - Collecting a series of required values
+
+    See [Adding steps](/docs/services/assistant?topic=assistant-steps#steps-overview).
 
 1.  **Optional**: Add another response type to the step. Click **Add response type**.
 
@@ -126,8 +126,8 @@ To create an action, complete the following steps:
     - **Jump to another step**: Use this option when you want the conversation to go directly to an entirely different step. Maybe your last step checks the customer's satisfaction with the action, and you want to process that step at the end of each interaction, for example. For more information about how to process the targeted step, see [Configuring the jump to another step](#actions-jump-to-config). 
     - **Jump to another action**: Use this option when you want the conversation to go directly to an entirely different action. 
 
-    This option is available from any step that doesn't have substeps. The target action that you want to jump to must exist before you can set up a jump to it.
-    {: note}
+      This option is available from any step that doesn't have substeps. The target action that you want to jump to must exist before you can set up a jump to it.
+      {: note}
 
 1.  Test the action as you build it.
 
@@ -161,7 +161,7 @@ The following actions are created for you automatically:
   For example, when the Web Chat is launched by a customer from their company website, this action defines how the assistant will greet the user. Use the Welcome action to define how you want the assistant to introduce itself to the customer and set the tone as it initiates a conversation.
 - **Anything else**:  The Anything else action is triggered when a customer's request cannot be satisfied by any of the other defined actions.
 
-  For example, your assistant might know how to help with product orders, but not travel plans. If a customer asks for help with travel plans, your assistant must be able to convey that it understand what the customer wants, but explain that it can't help with that particular task. Ideally, your assistant can direct the customer to other resources that might help with the task, or can explain other tasks it can help with to keep the conversation going, and headed in a positive direction.
+  For example, your assistant might know how to help with product orders, but not travel plans. If a customer asks for help with travel plans, your assistant must be able to convey that it understands what the customer wants, but explain that it can't help with that particular task. Ideally, your assistant can direct the customer to other resources that might help with the task, or can explain other tasks it can help with to keep the conversation going, and headed in a positive direction.
 
 You can customize the text that is displayed by these actions or add steps to them to incorporate other interactions. For example, you might want to add a context variable to the Welcome action response text so you can greet the customer by name. From the *Actions* page, click an action to open it for editing.
 
@@ -205,7 +205,7 @@ As you make changes, test the action at any time to see whether the resulting in
 
     Any context variables that you defined in the action that is being processed are displayed.
 
-    In addition, a `$timezone` context variable is listed. The *Try it out* pane user interface gets user locale information from the web browser and uses it to set the `$timezone` context variable. This context variable makes it easier to deal with time references in test dialog exchanges. Consider doing something similar in your user application. If not specified, Greenwich Mean Time (GMT) is used.
+    In addition, a `$timezone` context variable is listed. The "Try it out" pane user interface gets user locale information from the web browser and uses it to set the `$timezone` context variable. This context variable makes it easier to deal with time references in test dialog exchanges. Consider doing something similar in your user application. If not specified, Greenwich Mean Time (GMT) is used.
 
     You can add a variable and set its value to see how the assistant responds in the next turn of the conversation. This capability is helpful if, for example, a step is set up to show different responses based on a context variable value that is provided by the user.
 

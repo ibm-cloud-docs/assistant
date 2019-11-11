@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-10"
+lastupdated: "2019-11-11"
 
 subcollection: assistant
 
@@ -282,7 +282,7 @@ This response type is especially useful if you are making a programmatic call fr
     
 1.  To prevent a typing indicator from being displayed during the pause, choose **Off**.
 
-1.  Add another response type, such as a text response type, after the pause to clearly denote that the pause is over.
+1.  Add another response type, such as a text response type, after the pause to clearly denote when the pause ends.
 
 ## Adding messages that are responsive to customer information
 {: #steps-mcr}
@@ -301,11 +301,17 @@ To add messages that are responsive to information about the customer, enable mu
 
     You must open the response for editing to complete the following tasks:
 
-    - **Update context**. To change the value of a context variable when the response is triggered, specify the context value in the context editor. You update context for each individual conditional response; there is no common context editor or JSON editor where you can edit all of the conditional responses at once.
-    - **Add rich responses**. To add more than one text response or to add response types other than text responses to a single conditional response, you must open the edit response view.
-    - **Configure a jump**. To instruct your assistant to jump somewhere after this conditional response is processed, select **Jump to** from the *Then your assistant should* section of the response edit view. Identify the step or action that you want your assistant to process next. See [Configuring the Jump to action](/docs/services/assistant?topic=assistant-actions#actions-jump-to-config) for more information.
+    - **Update context**. To change the value of a context variable when the response is triggered, you need to open the context editor from the response edit view. 
+    
+      You update context for each individual conditional response; there is no common context editor or JSON editor where you can edit all of the conditional responses at once.
+      {: note}
+    - **Add rich responses**. To add a response type other than a text response.
+    - **Configure a jump**. To instruct your assistant to jump somewhere after this conditional response is processed. 
+    
+      You configure the **Jump to** from the *Then your assistant should* section of the response edit view. Identify the step or action that you want your assistant to process next. For help configuring a jump to a step, see [Configuring a jump to another step](/docs/services/assistant?topic=assistant-actions#actions-jump-to-config).
 
-      A jump that is configured for the step itself is not processed until all of the conditional responses are processed. Therefore, if a conditional response is configured to jump to another step or action, and that conditional response is triggered, then the jump configured for the current step will never be processed, and so will not occur.
+      A jump that is configured for the step itself is not processed until all of the conditional responses are processed. Therefore, if a conditional response is configured to jump to another step or action, and that conditional response is triggered, the jump configured for the current step will never be processed, and will not occur.
+      {: tip}
 
 1.  Click **Add response** to add another conditional response.
 
@@ -316,11 +322,11 @@ The conditions within a step are evaluated in order, just as steps are. Be sure 
 
 Add slots to a step to enable the step to gather multiple pieces of information from a customer within that step. Slots collect information at the customer's pace. Details that a customer provides up front are saved, and your assistant asks only for the missing details it needs to fulfill the request.
 
-Use slots to get the information you need before you can respond accurately to the customer. For example, if customers ask about operating hours, but the hours differ by store location, you could ask a follow-up question about which store location they plan to visit before you answer. You can then add response conditions that take the provided location information into account.
+Sometimes your assistant needs information from the customer before it can respond accurately. For example, if customers ask about operating hours, but the hours differ by store location, your assistant could ask a follow-up question about which store location they plan to visit before it answers. You can then add conditioned responses that take the provided location information into account.
 
 ![Asks for location information before answering the question, When do you open?.](images/steps-op-hours.png)
 
-Slots can help you to collect multiple pieces of information that you need to complete a complex task for a customer, such as making a dinner reservation.
+Slots can help your assistant collect multiple pieces of information that it needs to complete a complex task for a customer, such as making a dinner reservation.
 
 ![Shows four slots that prompt for the information needed to make a dinner reservation.](images/steps-reservation.png)
 
@@ -328,7 +334,7 @@ The customer might provide values for mutliple slots at once. For example, the i
 
 ![Shows that two slots are filled, and the service prompts for the remaining one.](images/steps-pass-in-info.png)
 
-Slots make it possible for your assistant to answer follow-up questions without having to reestablish the customer's goal. For example, a customer might ask for a weather forecast, then ask a follow-up question about weather in another location or on a different day. If you save the required forecast variables, such as location and day, in slots, then if a customer asks a follow-up question with new variable values, you can overwrite the slot values with the new values provided, and give a response that reflects the new information. (For more information about how to call an external service, see [Making programmatic calls from dialog](/docs/services/assistant?topic=assistant-dialog-webhooks)).
+Slots also make it possible for your assistant to answer follow-up questions without having to reestablish the customer's goal. For example, a customer might ask for a weather forecast, then ask a follow-up question about weather in another location or on a different day. If you save the required forecast variables, such as location and day, in slots, then if a customer asks a follow-up question with new variable values, you can overwrite the slot values with the new values provided, and give a response that reflects the new information. (For more information about how to call an external service, see [Making programmatic calls from dialog](/docs/services/assistant?topic=assistant-dialog-webhooks)).
 
 ![Shows someone asking for a weather forecast, and then following up with a question about weather for a different location and time.](images/steps-follow-up.png)
 
@@ -434,7 +440,7 @@ Using slots produces a more natural conversational flow between your assistant a
 
     For example, the customer might ask about the tomato sauce recipe or where you get your ingredients. To handle such off-topic questions, click the **Manage handlers** link and add a condition and response for each anticipated question.
 
-    ![Shows a customer ask about the sauce recipe. The response is, I'll take it to my grave'.](images/sauce.png)
+    ![Shows a customer ask about the sauce recipe. The response is, I'll take it to my grave'.](images/steps-sauce.png)
 
     After responding to the off-topic question, the prompt associated with the current empty slot is displayed.
 
@@ -464,5 +470,5 @@ You can duplicate a step to create an exact copy of it as a peer step. The dupli
 
 When you duplicate a step that has substeps, the substeps are duplicated also. The copied substeps have the exact same names as the original substeps. The only way to distinguish a copied substep from an original substep is the `copy` reference in the parent step name.
 
-1.  From the steps view for the action, find the step you want to copy, and then click the **More** ![More icon](images/kabob.png) icon, and select **Duplicate**.
+1.  From the steps view for the action, find the step you want to copy, and then click the **More** ![More icon](images/kabob.png) icon and select **Duplicate**.
 1.  Rename the copied step so you can tell it apart from the original.
