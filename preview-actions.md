@@ -107,7 +107,7 @@ To create an action, complete the following steps:
     - Adding messages that are responsive to customer information
     - Collecting a series of required values
 
-    See [Adding steps](https://cloud.ibm.com/docs/services/assistant?topic=assistant-steps#steps-overview).
+    See [Adding steps](/docs/services/assistant?topic=assistant-steps#steps-overview).
 
 1.  **Optional**: Add another response type to the step. Click **Add response type**.
 
