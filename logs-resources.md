@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-25"
+lastupdated: "2019-11-12"
 
 subcollection: assistant
 
@@ -32,7 +32,7 @@ Learn about APIs and other tools you can use to access and analyze log data.
 ## API
 {: #logs-resources-api}
 
-You can use the `/logs` API to list events from the transcripts of conversations that occured between your users and your assistant. For detailed API reference documentation, see [List log events](https://cloud.ibm.com/apidocs/assistant/assistant-v1#list-log-events-in-a-workspace)(: external).
+You can use the `/logs` API to list events from the transcripts of conversations that occurred between your users and your assistant. For conversations created by using the v2 `/message` API, use the instance-level endpoint to [list log events in all workspaces](https://cloud.ibm.com/apidocs/assistant/assistant-v1#list-log-events-in-all-workspaces)(: external), and then filter by Assistant ID. For more information about filtering logs, see [Filter query reference](/docs/services/assistant?topic=assistant-filter-reference).
 
 The number of days that logs are stored differs by service plan type. See [Log limits](/docs/services/assistant?topic=assistant-logs#logs-limits) for details.
 
@@ -44,6 +44,7 @@ For a Python script you can run to export logs and convert them to CSV format, d
 First, review the definitions of terms that are associated with {{site.data.keyword.conversationshort}} logs:
 
 - ***Assistant***: An application - sometimes referred to as a 'chat bot' - that implements your {{site.data.keyword.conversationshort}} content.
+- ***Assistant ID***: The unique identifier of an assistant.
 - ***Conversation***: A set of messages consisting of the messages that an individual user sends to your assistant, and the messages your assistant sends back.
 - ***Conversation ID***: Unique identifier that is added to individual message calls to link related message exchanges together. App developers using the V1 version of the {{site.data.keyword.conversationshort}} API add this value to the message calls in a conversation by including the ID in the metadata of the context object.
 - ***Customer ID***: A unique ID that can be used to label customer data such that it can be subsequently deleted if the customer requests the removal of their data.

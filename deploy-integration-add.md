@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-18"
+lastupdated: "2019-11-12"
 
 subcollection: assistant
 
@@ -32,7 +32,7 @@ To deploy your skill, add it to an assistant, and then add integrations to the a
 ## How service desk platform integrations work
 {: #deploy-integration-service-desk-integrations}
 
-Watson this 3-minute video to learn more about integrating your assistant with a service desk platform, such as Intercom.
+Watch this 3-minute video to learn more about integrating your assistant with a service desk platform, such as Intercom.
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Overview of how service desk integrations work" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/pJSCZLQVgCY?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
