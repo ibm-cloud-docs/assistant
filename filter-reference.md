@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-18"
+lastupdated: "2019-12-03"
 
 subcollection: assistant
 
@@ -116,12 +116,14 @@ To filter on another field in the log data, specify the location as a path ident
 Filtering is not available for all fields. You can filter on the following fields:
 
 - request.context.metadata.deployment
+- request.context.system.assistant_id
 - request.input.text
 - response.entities
 - response.input.text
 - response.intents
 - response.top_intent
 - meta.message.entities_count
+- workspace_id
 
 Filtering on other fields is not currently supported.
 
@@ -135,6 +137,7 @@ The following examples illustrate various types of queries using this syntax.
 | The date of the response is in the month of July 2017. | `response_timestamp>=2017-07-01,response_timestamp<2017-08-01` |
 | The timestamp of the response is earlier than `2016-11-01T04:00:00.000Z`. | `response_timestamp<2016-11-01T04:00:00.000Z` |
 | The message is labeled with the customer ID `my_id`. | `customer_id::my_id` |
+| The message was sent to a specific assistant (applies only to messages sent with the v2 API). | `request.context.system.assistant_id::dcd5c5ad-f3a1-4345-89c5-708b0b5ff4f7` |
 | The user input text contains the word "order" or a grammatical variant (for example, `orders` or `ordering`. | `request.input.text:order` |
 | An intent name in the response exactly matches `place_order`. | `response.intents:intent::place_order` |
 | An entity name in the response exactly matches `beverage`.  | `response.entities:entity::beverage` |
