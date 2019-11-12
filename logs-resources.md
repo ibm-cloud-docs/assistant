@@ -32,7 +32,7 @@ Learn about APIs and other tools you can use to access and analyze log data.
 ## API
 {: #logs-resources-api}
 
-You can use the `/logs` API to list events from the transcripts of conversations that occured between your users and your assistant. For conversations created by using the v2 `/message` API, use the instance-level endpoint to [list log events in all workspaces](https://cloud.ibm.com/apidocs/assistant/assistant-v1#list-log-events-in-all-workspaces)(: external), and then filter by Assistant ID. For more information about filtering logs, see [Filter query reference](/docs/services/assistant?topic=assistant-filter-reference).
+You can use the `/logs` API to list events from the transcripts of conversations that occurred between your users and your assistant. For conversations created by using the v2 `/message` API, use the instance-level endpoint to [list log events in all workspaces](https://cloud.ibm.com/apidocs/assistant/assistant-v1#list-log-events-in-all-workspaces)(: external), and then filter by Assistant ID. For more information about filtering logs, see [Filter query reference](/docs/services/assistant?topic=assistant-filter-reference).
 
 The number of days that logs are stored differs by service plan type. See [Log limits](/docs/services/assistant?topic=assistant-logs#logs-limits) for details.
 
