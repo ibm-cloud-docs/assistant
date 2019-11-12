@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-18"
+lastupdated: "2019-11-12"
 
 subcollection: assistant
 
@@ -59,7 +59,7 @@ To create a skill, complete the following step:
 
 The number of skills you can create depends on your {{site.data.keyword.conversationshort}} plan type. Any sample dialog skills that are available for you to use do not count toward your limit unless you use them. A skill version does not count as a skill.
 
-| Plan     | Skills per service instance |
+| Plan     | Maximum number of skills of each type per service instance |
 |------------------|----------------------------:|
 | Premium          |                          50 |
 | Plus             |                          50 |
