@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-11"
+lastupdated: "2019-11-13"
 
 subcollection: assistant
 
@@ -52,12 +52,15 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
+12 November 2019
+{: 12Novembber2019}
+<!--1.83-->
+
+- **Slot prompt JSON editor**: You can now use the context or JSON editors for the slot response field where you define the question that your assistant asks to get information it needs from the customer. For more information about slots, see [Gathering information with slots](/docs/services/assistant?topic=assistant-dialog-slots).
+
 7 November 2019
 {: 7Novembber2019}
 <!--1.82-->
-
-The following update is available in all locations except Dallas currently.
-{: important}
 
 - **Irrelevance detection has been added**: When enabled, a supplemental model is used to help identify utterances that are irrelevant and should not be answered by the dialog skill. This new model is especially beneficial for skills that have not been trained on what subjects to ignore. This feature is available for English skills only. For more information, see [New irrelevant topic detection](/docs/services/assistant?topic=assistant-irrelevance-detection).
 
