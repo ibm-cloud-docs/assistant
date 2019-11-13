@@ -58,6 +58,8 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 - **Slot prompt JSON editor**: You can now use the context or JSON editors for the slot response field where you define the question that your assistant asks to get information it needs from the customer. For more information about slots, see [Gathering information with slots](/docs/services/assistant?topic=assistant-dialog-slots).
 
+- **New South Korea location**: You can now create {{site.data.keyword.conversationshort}} instances in the Seoul location. As with other locations, the {{site.data.keyword.cloud_notm}} Seoul location uses token-based Identity and Access Management (IAM) authentication.
+
 7 November 2019
 {: 7Novembber2019}
 <!--1.82-->

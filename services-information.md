@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-18"
+lastupdated: "2019-11-13"
 
 subcollection: assistant
 
@@ -174,6 +174,7 @@ You can create {{site.data.keyword.conversationshort}} service instances that ar
 |-------------|---------------|--------------|---------------------|-------------------|-------|
 | Dallas      | us-south      | N/A          | IAM                 | 30 October 2018 | N/A |
 | Frankfurt   | eu-de         | fra          | IAM                 | 30 October 2018 | N/A |
+| Seoul       | kr-seo        | seo          | IAM                 | 12 November 2019 | N/A |
 | Sydney      | au-syd        | syd          | IAM                 | 7 May 2018 | Instances created before May 7 were syndicated to Dallas |
 | Tokyo       | jp-tok        | tok          | IAM                 | 8 November 2018 | N/A |
 | London      | eu-gb         | lon          | IAM                 | 13 December 2018 | Instances that were created in the United Kingdom region before December 13 were syndicated to the US South region |
