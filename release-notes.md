@@ -52,7 +52,7 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
-12 November 2019
+## 12 November 2019
 {: 12Novembber2019}
 <!--1.83-->
 
@@ -60,7 +60,7 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 - **New South Korea location**: You can now create {{site.data.keyword.conversationshort}} instances in the Seoul location. As with other locations, the {{site.data.keyword.cloud_notm}} Seoul location uses token-based Identity and Access Management (IAM) authentication.
 
-7 November 2019
+## 7 November 2019
 {: 7Novembber2019}
 <!--1.82-->
 
