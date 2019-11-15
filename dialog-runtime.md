@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-25"
+lastupdated: "2019-11-14"
 
 keywords: context, context variable, digression, disambiguation, autocorrection, spelling correction, spell check, confidence 
 
@@ -1033,6 +1033,8 @@ To enable disambiguation, complete the following steps:
 
         To prevent a node from being shown as a disambiguation option, remove the description from the *external node name* field. If you cannot remove text from the field permanently, then switch the disambiguation setting off on the Options page, and then try again to remove the text from the field. <!-- https://github.ibm.com/watson-engagement-advisor/wea-backlog/issues/31618 -->
         {: tip}
+
+    ![Technology preview experience only](images/preview.png) If you have the technology preview user experience, you can skip this step.
 
 ### Choosing nodes
 {: #dialog-runtime-choose-nodes}
