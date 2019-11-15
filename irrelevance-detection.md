@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-07"
+lastupdated: "2019-11-15"
 
 subcollection: assistant
 
@@ -35,6 +35,8 @@ This feature helps your dialog skill recognize subjects that you do not want it 
 
 This setting is used by English-language dialog skills only.
 {: important}
+
+To learn more about the benefits of this feature, read the [Why Zero-Effort Irrelevance is Relevant](https://medium.com/ibm-watson/enhanced-offtopic-90b2dadf0ef1){: external} blog post.
 
 ## Enabling irrelevance detection
 {: #irrelevance-detection-enable}
