@@ -63,66 +63,72 @@ After you create a {{site.data.keyword.conversationshort}} service instance, you
 
 <!-- Remove this text after dedicated instances have the Developer Console: end -->
 
-If you are a brand new user, an assistant named *My first assistant* is created for you automatically. Skip the next step. 
+A new browser tab or window opens and the Assistants page of {{site.data.keyword.conversationshort}} is displayed.
 
-![Shows that an assistant was automatically added to Assistants page](images/gs-ass-created-for-me.png)
+- An assistant named **My first assistant** is created for you automatically. An *assistant* is a cognitive bot to which you add skills that enable it to interact with your customers in useful ways.
 
-If available in your location, a tour begins that you can step through to learn about the product. Follow the tour; it overlaps with these tutorial steps, so you can resume this tutorial after the tour ends.
-  {: tip}
+- A dialog skill named **My first skill** is added to the assistant for you automatically. A *dialog skill* is a container for the artifacts that define the flow of a conversation that your assistant can have with your customers.
 
-An [*assistant*](/docs/services/assistant?topic=assistant-assistants) is a cognitive bot to which you add a skill that enables it to interact with your customers in useful ways.
+![Shows the My first assistant with the My first skill added to it](images/gs-my-first-skill.png)
 
-If an assistant is not created automatically, your first step is to create an assistant. Otherwise, you can skip Step 2.
+If an assistant and skill are not created automatically, complete Steps 2 and 3. Otherwise, you can skip to [Step 4: Add intents from a content catalog](#getting-started-add-catalog).
 
 ## Step 2: Create an assistant
 {: #getting-started-create-assistant}
+
+An *assistant* is a cognitive bot to which you add skills that enable it to interact with your customers in useful ways.
 
 1.  Click the **Assistants** icon ![Assistants menu icon](images/nav-ass-icon.png), and then click **Create assistant**.
 
     ![Create assistant button on the Assistants page.](images/gs-create-assistant.png)
 1.  Name the assistant `My first assistant`.
-1.  Click **Create assistant**.
 
     ![Finish creating the new assistant](images/gs-create-assistant-done.png)
+1.  Click **Create assistant**.
 
 ## Step 3: Create a dialog skill
 {: #getting-started-add-skill}
 
 A *dialog skill* is a container for the artifacts that define the flow of a conversation that your assistant can have with your customers.
 
-Sometimes a dialog skill is created for you automatically or is created as part of the product tour. If not, complete this step to create your first dialog skill. Otherwise, you can skip this step. 
-
 1.  Click the *My first assistant* tile to open the assistant.
 
 1.  Click **Add dialog skill**.
 
-    ![Shows the Add skill button from the home page](images/gs-new-skill.png)
+    ![Shows the Add skill button from the home page](images/gs-add-dialog-skill.png)
 
-1.  Give your skill the name `Conversational skill tutorial`.
+1.  Give your skill the name `My first dialog`.
 1.  **Optional**. If the dialog you plan to build will use a language other than English, then choose the appropriate language from the list.
 
     ![Finish creating the skill](images/gs-add-skill-done.png)
 
 1.  Click **Create dialog skill**.
 
-    ![Finish creating the skill](images/gs-skill-added.png)
+    ![Finish creating the skill](images/gs-my-first-skill.png)
 
 1.  Click to open the skill you just created.
-
-You land on the Intents page.
 
 ## Step 4: Add intents from a content catalog
 {: #getting-started-add-catalog}
 
+When you open the *My first skill*, you land on the *Intents* page.
+
+![Shows the Intents page of My first skill](images/gs-intents-page.png)
+
+![Technology preview experience only](images/preview.png) If you land on a page named *Actions* instead, then you are using the preview experience. For information about what to do next, see [Creating actions](/docs/services/assistant?topic=assistant-actions).
+
+If available in your location, a tour begins that you can step through to learn about the product. Follow the tour; it provides a great overview of the product.
+
 Add training data that was built by IBM to your skill by adding intents from a content catalog. In particular, you will give your assistant access to the **General** content catalog so your dialog can greet users, and end conversations with them.
 
 1.  Click the **Content Catalog** tab.
+
 1.  Find **General** in the list, and then click **Add to skill**.
 
-    ![Shows the Content Catalog and highlights the Add to skill button for the General catalog.](images/gs-add-general-catalog.png)
+    ![Shows the Content Catalog and highlights the Add to skill button for the General catalog.](images/gs-add-content-catalog.png)
 1.  Open the **Intents** tab to review the intents and associated example utterances that were added to your training data. You can recognize them because each intent name begins with the prefix `#General_`. You will add the `#General_Greetings` and `#General_Ending` intents to your dialog in the next step.
 
-    ![Shows the intents that are displayed in the Intents tab after the General catalog is added.](images/gs-general-added.png)
+    ![Shows the intents that are displayed in the Intents tab after the General catalog is added.](images/gs-general-content-added.png)
 
 You successfully started to build your training data by adding prebuilt content from {{site.data.keyword.IBM_notm}}.
 
@@ -144,7 +150,7 @@ We'll create a simple dialog that handles greeting and ending intents, each with
 1.  Click the **Welcome** node to open it in the edit view.
 1.  Replace the default response with the text, `Welcome to the Watson Assistant tutorial!`.
 
-    ![Editing the welcome node response](images/gs-edit-welcome.png)
+    ![Editing the welcome node response](images/gs-edit-welcome-node.png)
 1.  Click ![Close](images/close.png) to close the edit view.
 
 You created a dialog node that is triggered by the `welcome` condition. (`welcome` is a special condition that functions like an intent, but does not begin with a `#`.) It is triggered when a new conversation starts. Your node specifies that when a new conversation starts, the system should respond with the welcome message that you add to the response section of this first node.
@@ -153,7 +159,7 @@ You created a dialog node that is triggered by the `welcome` condition. (`welcom
 
 You can test your dialog at any time to verify the dialog. Let's test it now.
 
-- Click the ![Try it](images/ask_watson.png) icon to open the "Try it out" pane. You should see your welcome message.
+- Click the ![Try it](images/try-it.png) icon to open the "Try it out" pane. You should see your welcome message.
 
 ### Adding nodes to handle intents
 
@@ -162,21 +168,19 @@ Now let's add nodes between the `Welcome` node and the `Anything else` node that
 1.  Click the More icon ![More options](images/kabob.png) on the **Welcome** node, and then select **Add node below**.
 1.  In the **If assistant recognizes** field of this node, start to type `#General_Greetings`. Then, select the **`#General_Greetings`** option.
 1.  Add the response text, `Good day to you!`
+
+    ![Editing the general greeting node.](images/gs-add-greeting-node.png)
 1.  Click ![Close](images/close.png) to close the edit view.
-
-   ![A general greeting node was added to the dialog.](images/gs-add-greeting-node.png)
-
 1.  Click the More icon ![More options](images/kabob.png) on this node, and then select **Add node below** to create a peer node. In the peer node, specify `#General_Ending` in the **If assistant recognizes** field, and `OK. See you later.` as the response text.
-
-   ![Adding an ending node to the dialog.](images/gs-add-ending-node.png)
-
 1.  Click ![Close](images/close.png) to close the edit view.
+
+   ![Dialog after the ending node is added.](images/gs-ending-node-added.png)
 
 ### Testing intent recognition
 
 You built a simple dialog to recognize and respond to both greeting and ending inputs. Let's see how well it works.
 
-1.  Click the ![Try it](images/ask_watson.png) icon to open the "Try it out" pane. There's that reassuring welcome message.
+1.  Click the ![Try it](images/try-it.png) icon to open the "Try it out" pane. There's that reassuring welcome message.
 1.  At the bottom of the pane, type `Hello` and press Enter. The output indicates that the `#General_Greetings` intent was recognized, and the appropriate response (`Good day to you.`) is displayed.
 1.  Try the following input:
     - `bye`
