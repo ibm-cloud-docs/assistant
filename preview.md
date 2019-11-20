@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-20"
 
 subcollection: assistant
 
@@ -35,10 +35,19 @@ The product documentation describes how to complete tasks in the standard user e
 ## Available preview features
 {: #preview-features}
 
-The following feature is available in the technology preview experience only.
+The following features are available in the technology preview experience only.
 {: preview}
 
 - **Actions**: Use actions to take a conversation-first approach to defining what your assistant will do to help your customers. See [Creating actions](/docs/services/assistant?topic=assistant-actions).
+
+- **New navigation**: A new navigation bar is available in some locations. Use the menu to switch between key tasks you can complete for the current assistant, such as building a dialog skill, building a search skill, or deploying the assistant.
+
+  ![Shows the Assistant responds field for a new action](images/ia-nav-menu.png)
+
+  Before you can access the menu options, you must choose the assistant that you want to work with first.
+  {: note}
+
+  ![Shows the Select assistant menu that must be filled out before you can use the menu](images/ia-nav-select-assistant.png)
 
 ## Tell us what you think
 {: #preview-feedback}

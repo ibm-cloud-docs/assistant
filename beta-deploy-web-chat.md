@@ -248,11 +248,11 @@ LiveEngage is an enterprise-class platform that empowers consumers to stop wasti
     - Navigate to *Authentication Server > Configure*. 
     - In the authentication server configuration page, choose *oAuth 2.0 authentication (implicit)*.
     - In the *JWT Public Key* field, paste the assistant's token that you copied earlier.
+
+      ![Shows the LiveEngage Authentication server configuration pane](images/lp-authentication-server.png)
+
+      For more details, see the [Authentication LiveEngage tutorial](https://developers.liveperson.com/messaging-window-api-tutorials-authentication.html){: external}.
     - Click *Save*.
-
-    ![Shows the LiveEngage Authentication server configuration pane](images/lp-authentication-server.png)
-
-    For more details, see the [Authentication LiveEngage tutorial](https://developers.liveperson.com/messaging-window-api-tutorials-authentication.html){: external}.
 
 1.  {: #deploy-web-chat-lp-mobile-app}Add an application to LiveEngage through which your assistant will interact with service desk personnel.
 
