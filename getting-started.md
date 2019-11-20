@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-18"
+lastupdated: "2019-11-19"
 
 keywords: assistant, omnichannel, virtual agent, virtual assistant, chatbot, conversation, watson assistant, watson conversation
 
@@ -57,12 +57,6 @@ After you create a {{site.data.keyword.conversationshort}} service instance, you
 
 1.  Click **Launch {{site.data.keyword.conversationshort}}**. If you're prompted to log in, provide your {{site.data.keyword.cloud_notm}} credentials.
 
-<!-- Remove this text after dedicated instances have the developer console: begin -->
-
-{{site.data.keyword.Bluemix_dedicated_notm}}: Select your service instance from the Dashboard to launch the product.
-
-<!-- Remove this text after dedicated instances have the Developer Console: end -->
-
 A new browser tab or window opens and the Assistants page of {{site.data.keyword.conversationshort}} is displayed.
 
 - An assistant named **My first assistant** is created for you automatically. An *assistant* is a cognitive bot to which you add skills that enable it to interact with your customers in useful ways.
@@ -71,7 +65,7 @@ A new browser tab or window opens and the Assistants page of {{site.data.keyword
 
 ![Shows the My first assistant with the My first skill added to it](images/gs-my-first-skill.png)
 
-If an assistant and skill are not created automatically, complete Steps 2 and 3. Otherwise, you can skip to [Step 4: Add intents from a content catalog](#getting-started-add-catalog).
+If an assistant and skill are not created automatically, complete Steps 2 and 3. Otherwise, [skip to Step 4: Add intents from a content catalog](#getting-started-add-catalog).
 
 ## Step 2: Create an assistant
 {: #getting-started-create-assistant}
@@ -97,12 +91,14 @@ A *dialog skill* is a container for the artifacts that define the flow of a conv
 
     ![Shows the Add skill button from the home page](images/gs-add-dialog-skill.png)
 
-1.  Give your skill the name `My first dialog`.
+1.  Give your skill the name `My first skill`.
 1.  **Optional**. If the dialog you plan to build will use a language other than English, then choose the appropriate language from the list.
 
     ![Finish creating the skill](images/gs-add-skill-done.png)
 
 1.  Click **Create dialog skill**.
+
+    The skill is created and you return to the assistant page.
 
     ![Finish creating the skill](images/gs-my-first-skill.png)
 
