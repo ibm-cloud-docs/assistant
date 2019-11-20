@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-11"
+lastupdated: "2019-11-20"
 
 subcollection: assistant
 
@@ -34,6 +34,8 @@ When you participate in the early access program, IBM gives you early access to 
 
 The following features are available for use by participants in the early access program only. To find out how to request access, see [Participate in the early access program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
 {: preview}
+
+- Delight your customers with 360-degree support by integrating your web chat with a third-party service desk solution. When a customer asks to speak to a person, you can connect them to an agent through a service desk solution, such as LiveEngage or Zendesk. For more information, see [Adding support for transfers](/docs/services/assistant?topic=assistant-beta-deploy-web-chat#deploy-web-chat-haa).
 
 - You can now use the chat log from one of your production assistants as the source for intent and intent user example recommendations. See [Intent recommendations](/docs/services/assistant?topic=assistant-beta-intent-recommendations).
 
