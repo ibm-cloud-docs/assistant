@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-05"
+lastupdated: "2019-11-21"
 
 subcollection: assistant
 
@@ -97,7 +97,9 @@ It can be difficult to know the syntax to use in your dialog node to accurately 
 
   For example, when you use `@appliance == 'air conditioner'`, you are evaluating only the value of the first detected `@appliance` entity. But, using `@appliance:(air conditioner)` gets expanded to `entity['appliance'].contains('air conditioner')`, which matches whenever there is at least one `@appliance` entity of value 'air conditioner' detected in the user input.
 
-- **Hide data from the log**: You can prevent information from being stored in Watson logs by storing it in a context variable and nesting the context variable within the `$private` section of the message context. For example: `$private.my_info`. Storing data in the private object hides it from the logs only. The information is still stored in the underlying JSON object. Do not allow this information to be exposed to the client application.
+- **Hiding data from the log**: You can prevent information from being stored in Watson logs by storing it in a context variable and nesting the context variable within the `$private` section of the message context. For example: `$private.my_info`. Storing data in the private object hides it from the logs only. The information is still stored in the underlying JSON object. Do not allow this information to be exposed to the client application.
+
+- **Checking for personal information**: If you want to check for and prevent a user from submitting personally identifiable information (PII) to some later process, you can add a dialog node that conditions on a pattern entity. Place the node at the beginning of the dialog tree to ensure that it checks the input first. For example, the entity could check for US Social Security number patterns or email address patterns. It can then respond with something like, `Please do not submit personally identifiable information. Can you reenter your request?` You can optionally reset the context to ensure that the user-submitted information with PII is not retained. 
 
 ## Condition usage tips
 {: #dialog-tips-condition-usage}

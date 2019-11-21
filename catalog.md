@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-28"
+lastupdated: "2019-11-21"
 
 subcollection: assistant
 
@@ -28,6 +28,8 @@ subcollection: assistant
 
 ***Content Catalogs*** provide an easy way to add common intents to your {{site.data.keyword.conversationshort}} dialog skill.
 {: shortdesc}
+
+![Technology preview experience only](images/preview.png) If you don't see the **Content Catalog** page in your skill, then you are using the technology preview version of the product. To get started, see [Creating actions](/docs/services/assistant?topic=assistant-actions).
 
 Intents you add from the catalog are meant to provide a starting point. Add to or edit the catalog intents to tailor them for your use case.
 

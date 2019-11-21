@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-05"
+lastupdated: "2019-11-21"
 
 subcollection: assistant
 
@@ -29,6 +29,8 @@ subcollection: assistant
 
 The dialog defines what your assistant says in response to customers, based on what it believes the customer wants.
 {: shortdesc}
+
+![Technology preview experience only](images/preview.png) If you don't see the **Dialog** page in your skill, then you are using the technology preview version of the product. To get started, see [Creating actions](/docs/services/assistant?topic=assistant-actions).
 
 ## Building a dialog
 {: #dialog-build-task}

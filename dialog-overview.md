@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-23"
+lastupdated: "2019-11-21"
 
 keywords: condition, response, options, jump, jump-to, multiline, response variations
 
@@ -31,6 +31,8 @@ subcollection: assistant
 
 The dialog uses the intents that are identified in the user's input, plus context from the application, to interact with the user and ultimately provide a useful response.
 {: shortdesc}
+
+![Technology preview experience only](images/preview.png) If you don't see the **Dialog** page in your skill, then you are using the technology preview version of the product. To get started, see [Creating actions](/docs/services/assistant?topic=assistant-actions).
 
 The dialog matches intents (what users say) to responses (what the bot says back). The response might be the answer to a question such as `Where can I get some gas?` or the execution of a command, such as turning on the radio. The intent and entity might be enough information to identify the correct response, or the dialog might ask the user for more input that is needed to respond correctly. For example, if a user asks, `Where can I get some food?` you might want to clarify whether they want a restaurant or a grocery store, to dine in or take out, and so on. You can ask for more details in a text response and create one or more child nodes to process the new input.
 
