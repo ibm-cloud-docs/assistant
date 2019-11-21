@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-20"
+lastupdated: "2019-11-21"
 
 subcollection: assistant
 
@@ -32,6 +32,8 @@ A select group of customers is being presented with a technology preview version
 The product documentation describes how to complete tasks in the standard user experience. Therefore, much of the content is not applicable to the version of the product you are using. Stay in the **Technology preview** section of the table of contents to find information about how to complete tasks in the preview user experience.
 {: important}
 
+In particular, the preview experience removes the **Dialog**, **Intents**, and **Content Catalog** pages (and replaces them with a single Actions page). Any documentation that describes the removed pages is not applicable to the version of the product you are using.
+
 ## Available preview features
 {: #preview-features}
 
@@ -44,9 +46,8 @@ The following features are available in the technology preview experience only.
 
   ![Shows the Assistant responds field for a new action](images/ia-nav-menu.png)
 
-  Before you can access the menu options, you must choose the assistant that you want to work with first.
+  Before you can access the menu options, you must choose the assistant that you want to work with.
   {: note}
-
   ![Shows the Select assistant menu that must be filled out before you can use the menu](images/ia-nav-select-assistant.png)
 
 ## Tell us what you think
@@ -57,4 +58,6 @@ To share your feedback, join the [Watson Developer Community on Slack](http://wd
 ## Opting out of the preview experience
 {: #preview-opt-out}
 
-If you would prefer to work with the standard user experience, you can switch to a standard version of your service instance from the account page. To open the account page, click the user icon ![User icon](images/user-icon.png) that is displayed in the page header.
+If you would prefer to work with the standard user experience, you can revert to the standard version of the product from the account page. To open the account page, click the user icon ![User icon](images/user-icon.png) that is displayed in the page header.
+
+![Shows the revert to standard icon](images/preview-revert.png)
