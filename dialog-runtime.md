@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-14"
+lastupdated: "2019-11-26"
 
 keywords: context, context variable, digression, disambiguation, autocorrection, spelling correction, spell check, confidence 
 
@@ -933,25 +933,24 @@ If you want to ask users to confirm the assistant's understanding of their meani
 
 Remember, the `input.text` field stores either the never-corrected original text from the user or the user’s text after it is corrected. The `input.original_text` field is only created if the input is corrected. And the user’s incorrect input is stored in it.”
 
-## Disambiguation ![Plus or Premium plan only](images/plus.png)
+## Disambiguation
 {: #dialog-runtime-disambiguation}
 
-This feature is available only to Plus or Premium users.
-{: note}
-
-When you enable disambiguation, you instruct your assistant to ask users for help when it finds that more than one dialog node can respond to their input. Instead of guessing which node to process, your assistant shares a list of the top node options with the user, and asks the user to pick the right one.
+Disambiguation instructs your assistant to ask the customer for help when more than one dialog node can respond to a customer's input. Instead of guessing which node to process, your assistant shares a list of the top node options with the user, and asks the user to pick the right one.
 
 ![Shows a sample conversation between a user and the assistant, where the assistant asks for clarification from the user.](images/disambig-demo.png)
 
-If enabled, disambiguation is not triggered unless the following conditions are met:
+Disambiguation is triggered when the following conditions are met:
 
-- The confidence scores of the runner-up intents detected in the user input are close in value to the confidence score of the top intent.
+- The confidence scores of the runner-up intents that are detected in the user input are close in value to the confidence score of the top intent.
 - The confidence score of the top intent is above 0.2.
 
 Even when these conditions are met, disambiguation does not occur unless two or more independent nodes in your dialog meet the following criteria:
 
-- The node condition includes one of the intents that triggered disambiguation. Or the node condition otherwise evaluates to true. For example, if the node checks for an entity type and the entity is mentioned in the user input, it is eligible.
-- There is text in the node's *external node name* field.
+- The node condition includes one of the intents that triggered disambiguation.
+- A description of the node's purpose is provided for the node in the node name field. (Alternatively, a description can be included in the external node name field.)
+
+A node with a boolean node condition that evaluates to true is likely to be included in the disambiguation list. For example, if the node checks for an entity type and the entity is mentioned in the user input, it is eligible to be included in the list. Such nodes do not trigger disambiguation, but if disambiguation is triggered, they are likely to be included in the resulting disambiguation list.
 
 Learn more
 
@@ -986,28 +985,30 @@ In fact, if you test from the "Try it out" pane, you can hover over the eye icon
 
 Your assistant is `0.5618281841278076` (56%) confident that the user goal matches the `#Customer_Care_Cancel_Account` intent. If another intent has a confidence score that is close to the score of this top intent, then disambiguation is triggered. In this example, the `#eCommerce_Cancel_Product_Order` intent has a close confidence score of 46%.
 
-As a result, when the user input is `i must cancel it today`, both dialog nodes are likely to be considered viable candidates to respond. To determine which dialog node to process, the assistant asks the user to pick one. And to help the user choose between them, the assistant provides a short summary of what each node does. The summary text is extracted directly from the *external node name* information that is specified for each node.
+As a result, when the user input is `i must cancel it today`, both dialog nodes are likely to be considered viable candidates to respond. To determine which dialog node to process, the assistant asks the user to pick one. And to help the user choose between them, the assistant provides a short summary of what each node does. The summary text is extracted directly from the node's *name* field. If present and if a description is added to it, then the text is taken from the *external node name* field instead.
 
 ![Service prompts the user to choose from a list of dialog options, including Cancel an account, Cancel a product order, and None of the above.](images/disambig-tryitout.png)
 
-Notice that your assistant recognizes the term `today` in the user input as a date, a mention of the `@sys-date` entity. If your dialog tree contains a node that conditions on the `@sys-date` entity, then it is also included in the list of disambiguation choices. This image shows it included in the list as the *Capture date information* option.
+Notice that your assistant recognizes the term `today` in the user input as a date, a mention of the `@sys-date` entity. If your dialog tree contains a node that conditions on the `@sys-date` entity, then it is also likely to be included in the list of disambiguation choices. This image shows it included in the list as the *Capture date information* option.
 
 ![Service prompts the user to choose from a list of dialog options, including Capture date information.](images/disambig-tryitout-date.png)
 
 The following video explains the benefits of using disambiguation. A few things have changed since the video was created:
 
-- You enable dismabiguation from the *Options* page instead of a **Settings** link from the Dialog page.
+- You enable disambiguation from the *Options* page instead of a **Settings** link from the *Dialog* page.
 - You can also set a maximum number of options to display in the disambiguation list.
 
-<iframe class="embed-responsive-item" id="youtubeplayer0" title="Disambiguation overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/VVyklAXlmbA?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+  <iframe class="embed-responsive-item" id="youtubeplayer0" title="Disambiguation overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/VVyklAXlmbA?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
-### Enabling disambiguation
-{: #dialog-runtime-disambig-enable}
+### Editing the disambiguation configuration
+{: #dialog-runtime-disambig-edit}
 
-To enable disambiguation, complete the following steps:
+Disambiguation is enabled automatically for all new dialog skills. You can change the settings that are applied automatically to disambiguation from the *Options* page. 
 
-1.  From the Skills menu of the dialog skill where you want to enable disabmiguation, click **Options**.
-1.  On the *Disambiguation* page, switch the toggle to **On**.
+To edit the disambiguation settings, complete the following steps:
+
+1.  From the Skills menu, click **Options**.
+1.  Click *Disambiguation*.
 1.  In the **Disambiguation message** field, add text to show before the list of dialog node options. For example, *What do you want to do?*
 1.  In the **Anything else** field, add text to display as an additional option that users can pick if none of the other dialog node options reflect what the user wants to do. For example, *None of the above*.
 
@@ -1017,38 +1018,30 @@ To enable disambiguation, complete the following steps:
 
     Your changes are automatically saved.
 
-1.  Now, click **Dialog** from the Skills menu. Review your dialog to decide which dialog nodes you want the assistant to ask for help with.
+Next, you must decide which dialog nodes you want to make eligible for disambiguation. From the Skills menu, click **Dialog**.
 
-    - You can pick nodes at any level of the tree hierarchy.
-    - You can pick nodes that condition on intents, entities, special conditions, context variables, or any combination of these values.
+![Technology preview experience only](images/preview.png) If you don't have a **Dialogs** page, you are using the preview experience of the product. Each action is eligible for disambiguation. For more details, see [Creating actions](/docs/services/assistant?topic=assistant-actions).
 
-    See [Choosing nodes](#dialog-runtime-choose-nodes) for tips.
-
-    For each node that you want to make available from the disambiguation options list, complete the following steps:
-
-    1.  Click to open the node in edit view.
-    1.  In the *external node name* field, describe the user task that this dialog node is designed to handle. For example, *Cancel an account*.
-
-        ![Shows where to add the external node name information in the node edit view.](images/disambig-node-purpose.png)
-
-        To prevent a node from being shown as a disambiguation option, remove the description from the *external node name* field. If you cannot remove text from the field permanently, then switch the disambiguation setting off on the Options page, and then try again to remove the text from the field. <!-- https://github.ibm.com/watson-engagement-advisor/wea-backlog/issues/31618 -->
-        {: tip}
-
-    ![Technology preview experience only](images/preview.png) If you have the technology preview user experience, you can skip this step.
-
-### Choosing nodes
+### Choosing eligible nodes
 {: #dialog-runtime-choose-nodes}
 
-Choose nodes that serve as the root of a distinct branch of the dialog to be disambiguation choices. These can include nodes that are children of other nodes. The key is for the node to condition on some distinct value or values that distinguish it from everything else.
+To make a node eligible for disambiguation, you must add a summary of the node's purpose to the node's *name* field. 
 
-{{site.data.keyword.conversationshort}} can recognize intent conflicts, which occur when two or more intents have user examples that overlap. [Resolve any such conflicts](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts) first to ensure that the intents themselves are as unique as possible, which helps your assistant attain better intent confidence scores.
-{: note}
+  - You can pick nodes at any level of the tree hierarchy.
+  - You can pick nodes that condition on intents, entities, special conditions, context variables, or any combination of these values.
 
-Keep in mind:
+Choose nodes that serve as the root of a distinct branch of conversation. The candidates can include nodes that are children of other nodes. The key is for the node to condition on some distinct value or values that distinguish it from everything else.
 
-- For nodes that condition on intents, if your assistant is confident that the node's intent condition matches the user's intent, then the node might be included as a disambiguation option.
-- For nodes with boolean conditions (conditions that evaluate to either true or false), the node might be included as a disambiguation option if the condition evaluates to true. For example, when the node conditions on an entity type, if the entity is mentioned in the input that triggers disambiguation, then the node might be included.
-- The order of nodes in the tree hierarchy impacts disambiguation.
+For each node that you want to make available from the disambiguation options list, complete the following steps:
+
+1.  Click to open the node in edit view.
+1.  In the **name** field, describe the user task that this dialog node is designed to handle. For example, *Cancel an account*.
+
+    ![Plus or Premium plan only](images/plus.png) You can add a node summary description to the **external node name** field instead of the *name* field. The *external node name* field serves two purposes. It provides information about the node to customers when it is included in a disambiguation list. It also describes the node in a chat summary that is shared with service desk agents when a conversation is transferred to a person. The *external node name* field is only visible in skills that are part of a Plus or Premium plan instance. If the *external node name* field contains text, its text is used, whether or not there is text in the *name* field.
+
+    ![Shows the external node name field.](images/disambig-external-node-name.png)    
+
+The order of nodes in the tree hierarchy impacts disambiguation.
 
   - It impacts whether disambiguation is triggered at all
   
@@ -1058,10 +1051,10 @@ Keep in mind:
   
     Sometimes a node is not listed as a disambiguation option as expected. This can happen if a condition value is also referenced by a node that is not eligible for inclusion in the disambiguation list for some reason. For example, an entity mention might trigger a node that is situated earlier in the dialog tree but is not enabled for disambiguation. If the same entity is the only condition for a node that *is* enabled for disambiguation, but is situated lower in the tree, then it might not be added as a disambiguation option because your assistant never reaches it. If it matched against the earlier node and was omitted, your assistant might not process the later node.
 
-For each node that you opt in to disambiguation, test scenarios in which you expect the node to be included in the disambiguation options list. Testing gives you a chance to make adjustments to the node order or other factors that might impact how well disambiguation works at run time.
+For each node, test scenarios in which you expect the node to be included in the disambiguation options list. Testing gives you a chance to make adjustments to the node order or other factors that might impact how well disambiguation works at run time. See [Testing disambiguation](#dialog-runtime-disambig-test).
 
-When testing, the order in which the options are listed might change from test run to test run. In fact, the options themselves that are included in the disambiguation list might change from one test run to the next. Don't worry; this is the intended behavior. As part of development that is in progress to help the assistant learn automatically from user choices, the choices included and their order in the disambiguation list is being randomized on purpose. Changing the order helps to avoid bias that can be introduced by a percentage of people who always pick the first option without carefully reviewing all of their choices beforehand.
-{: important}
+{{site.data.keyword.conversationshort}} can recognize intent conflicts, which occur when two or more intents have user examples that overlap. [Resolve any such conflicts](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts) first to ensure that the intents themselves are as unique as possible, which helps your assistant attain better intent confidence scores.
+{: tip}
 
 ### Handling none of the above
 {: #dialog-runtime-handle-none}
@@ -1082,18 +1075,25 @@ This condition is met only by input that has triggered a set of disambiguation o
 
 Add a response that lets users know that you understand that none of the options that were suggested met their needs, and take appropriate action.
 
-Again, the placement of nodes in the tree matters. If a node that conditions on an entity type that is mentioned in the user input is higher in the tree than this node, its response is displayed instead.
+Again, the placement of nodes in the tree matters. If a node that conditions on an entity type that is mentioned in the user input is higher in the tree than this node, its response will be displayed instead.
 
 ### Testing disambiguation
 {: #dialog-runtime-disambig-test}
+
+When testing, the order in which the options are listed might change from test run to test run. In fact, the options themselves that are included in the disambiguation list might change from one test run to the next.
+{: important}
+
+This behavior is intended. As part of development that is in progress to help the assistant learn automatically from user choices, the choices included and their order in the disambiguation list is being randomized on purpose. Changing the order helps to avoid bias that can be introduced by a percentage of people who always pick the first option without carefully reviewing all of their choices beforehand.
 
 To test disambiguation, complete the following steps:
 
 1.  From the "Try it out" pane, enter a test utterance that you think is a good candidate for disambiguation, meaning two or more of your dialog nodes are configured to address utterances like it.
 
-1.  If the response does not contain a list of dialog node options for you to choose from as expected, first check that you added summary information to the external node name field for each of the nodes.
+1.  If the response does not contain a list of dialog node options for you to choose from as expected, first check that you added summary information to the node name (or external node name) field for each of the nodes.
 
 1.  If disambiguation is still not triggered, it might be that the confidence scores for the nodes are not as close in value as you thought.
+
+    - To see the confidence scores of the top three intents that were detected in the input, hover over the eye icon in the "Try it out" pane.
 
     - To see the confidence scores of all the intents that are detected in the user input, temporarily add `<? intents ?>` to the end of the node response for a node that you know will be triggered.
 
@@ -1105,7 +1105,7 @@ To test disambiguation, complete the following steps:
 
     - To see details for all of the artifacts at once, including other properties, such as the value of a given context variable at the time of the call, you can inspect the entire API response. See [Viewing API call details](/docs/services/assistant?topic=assistant-dialog-tips#dialog-tips-inspect-api).
 
-1.  Temporarily remove the description you added to the *external node name* field for at least one of the nodes that you anticipate will be listed as a disambiguation option.
+1.  Temporarily remove the description you added to the *name* field (or *external node name* field) for at least one of the nodes that you anticipate will be listed as a disambiguation option.
 
 1.  Enter the test utterance into the "Try it out" pane again.
 
@@ -1113,6 +1113,26 @@ To test disambiguation, complete the following steps:
 
     ![Service returns an array of intents, including Customer_Care_Cancel_Account and eCommerce_Cancel_Product_Order.](images/disambig-show-intents.png)
 
-After you finish testing, remove any SpEL expressions that you appended to node responses, or add back any original responses that you replaced with expressions, and repopulate any *external node name* fields from which you removed text.
+After you finish testing, remove any SpEL expressions that you appended to node responses, or add back any original responses that you replaced with expressions, and repopulate any *name* or *external node name* fields from which you removed text.
 
-Again, keep in mind that the options included in the list and the order of the options might change from one test run to the next. This behavior is intended; the options are randomized on purpose. 
+### Disabling disambiguation
+{: #dialog-runtime-disambig-disable}
+
+You can disable disambiguation for the entire dialog or for an individual dialog node.
+
+- To disable disambiguation entirely: 
+
+  - From the Skills menu, click **Options**. 
+  - On the *Disambiguation* page, switch the toggle to **Off**.
+
+- To disable disambiguation for a single dialog node: 
+
+  - From the Skills menu, click **Dialog**. Click the node to open it in the edit view.
+
+    ![Shows the Settings link after the description text for the node name field.](images/disambig-node-setting.png)
+
+  - Click **Settings**.
+
+    ![Shows the expanded disambiguation settings section where the toggle is.](images/disambig-node-level-toggle.png)
+
+  - Switch the *Show node name* toggle to **Off**.

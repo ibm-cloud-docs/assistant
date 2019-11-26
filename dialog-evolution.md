@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-11-26"
 
 subcollection: assistant
 
@@ -58,4 +58,3 @@ If you are an existing user who is familiar with the standard product, the follo
 - An action conditions on a single intent only. The steps attached to an action condition on context variables or entities only; they cannot condition on intents.
 - The run time conversation does not flow through the root nodes from the top to the bottom of a dialog tree. Rather, the action defined for the request that is detected in user input is triggered independently. The steps within an action continue to be processed from top to bottom.
 - Context variables are scoped to the action that uses them. They are nulled when the action is finished. An action's context variable cannot be set and retrieved by any other action that is triggered during a conversation.
-- The action name is used to represent the action when it is displayed in a disambiguation list. There is no external node name field on the action creation page. For this same reason, if you deploy your assistant to Intercom, you cannot customize agent assignments per action.
