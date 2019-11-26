@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-13"
+lastupdated: "2019-11-21"
 
 subcollection: assistant
 
@@ -71,7 +71,6 @@ If you want to upgrade from one plan to another, see [Upgrading](/docs/services/
 
 The following features are available only to users of Plus or Premium plans only.
 
-- [Disambiguation](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation)
 - [Intent conflict resolution](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts)
 - [Intent recommendations and intent user example recommendations](/docs/services/assistant?topic=assistant-intent-recommendations)
 - [Intercom integration](/docs/services/assistant?topic=assistant-deploy-intercom)

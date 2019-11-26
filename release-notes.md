@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-14"
+lastupdated: "2019-11-26"
 
 subcollection: assistant
 
@@ -52,8 +52,28 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
+## 26 November 2019
+{: #26Novembber2019}
+<!--1.85-->
+
+The following update is available in all locations except Dallas currently.
+
+- **Disambiguation is available to everyone**: Disambiguation is now available to users of every plan type. 
+
+  The following changes were made to how it functions:
+
+  The text that you add to the dialog **node name** field now matters.
+  {: important}
+  
+  - The text in the node name field might be shown to customers. The disambiguation feature shows it to customers if the assistant needs to ask them to clarify their meaning. The text you add as the node name must identify the purpose of the node clearly and succinctly, such as *Place an order* or *Get plan information*.
+  
+    If the *External node name* field exists and contains a summary of the node's purpose, then its summary is shown in the disambiguation list instead. Otherwise, the dialog node name content is shown.
+    {: note}
+  - Disambiguation is enabled automatically for all nodes. You can disable it for the entire dialog or for individual dialog nodes.
+  - When testing, you might notice that the order of the options in the disambiguation list changes from one test run to the next. Don't worry; this new behavior is intended. As part of work being done to help the assistant learn automatically from user choices, the order of the options in the disambiguation list is being randomized on purpose. Changing the order helps to avoid bias that can be introduced by a percentage of people who always pick the first option without first reviewing their choices.
+
 ## 12 November 2019
-{: #12Novembber2019}
+{: #12November2019}
 <!--1.83-->
 
 - **Slot prompt JSON editor**: You can now use the context or JSON editors for the slot response field where you define the question that your assistant asks to get information it needs from the customer. For more information about slots, see [Gathering information with slots](/docs/services/assistant?topic=assistant-dialog-slots).

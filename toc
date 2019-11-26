@@ -43,6 +43,7 @@ Watson Assistant
     entities.md
     versions.md
     skill-open.md
+    assistant-settings.md
 
     {: .topicgroup}
     Deploying
@@ -56,18 +57,19 @@ Watson Assistant
         dialog-start.md
         deploy-integration-delete.md
 
-    assistant-settings.md
-
     {: .topicgroup}
     Analytics
         logs-overview.md
         logs.md
         logs-resources.md
 
-    /watson/watson-migrate
-    recovery.md
-    backup.md
-    upgrade.md
+    {: .topicgroup}
+    Administrative tasks
+        /watson/watson-migrate
+        recovery.md
+        backup.md
+        upgrade.md
+
     edit-convo-workspace.md
 
     {: .topicgroup}

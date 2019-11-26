@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-11"
+lastupdated: "2019-11-26"
 
 subcollection: assistant
 
@@ -129,6 +129,10 @@ To create an action, complete the following steps:
       This option is available from any step that doesn't have substeps. The target action that you want to jump to must exist before you can set up a jump to it.
       {: note}
 
+1.  ![Plus or Premium plan only](images/plus.png) If you have a Plus or Premium plan, then your action has an *external node name* field. 
+
+    If you plan to add support for transferring conversations to a third-party service desk when a customer asks to speak to a person, then specify a value for this field. Add a description of the action goal. You can use the same text that you used in the action name field. This description is displayed in the chat summary that is provided to service desk agents. You also use the content of this field to identify actions that you want to assign to specific Intercom agents.
+
 1.  Test the action as you build it.
 
     Open the "Try it out" pane to submit test input and see how your assistant responds. For more tips, see [Testing your action](#acions-test).
@@ -164,6 +168,8 @@ The following actions are created for you automatically:
   For example, your assistant might know how to help with product orders, but not travel plans. If a customer asks for help with travel plans, your assistant must be able to convey that it understands what the customer wants, but explain that it can't help with that particular task. Ideally, your assistant can direct the customer to other resources that might help with the task, or can explain other tasks it can help with to keep the conversation going, and headed in a positive direction.
 
 You can customize the text that is displayed by these actions or add steps to them to incorporate other interactions. For example, you might want to add a context variable to the Welcome action response text so you can greet the customer by name. From the *Actions* page, click an action to open it for editing.
+
+You cannot delete or disable these built-in actions.
 
 ### Configuring a jump to another step
 {: #actions-jump-to-config}
