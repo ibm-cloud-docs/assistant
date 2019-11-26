@@ -995,7 +995,7 @@ Notice that your assistant recognizes the term `today` in the user input as a da
 
 The following video explains the benefits of using disambiguation. A few things have changed since the video was created:
 
-- You enable dismabiguation from the *Options* page instead of a **Settings** link from the *Dialog* page.
+- You enable disambiguation from the *Options* page instead of a **Settings** link from the *Dialog* page.
 - You can also set a maximum number of options to display in the disambiguation list.
 
   <iframe class="embed-responsive-item" id="youtubeplayer0" title="Disambiguation overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/VVyklAXlmbA?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
