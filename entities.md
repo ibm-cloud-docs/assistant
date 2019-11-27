@@ -191,7 +191,7 @@ To add an entity that recognizes a pattern:
       - Positive repetitions (for example `x*+`)
       - Backreferences (for example `\g1`)
       - Conditional branches (for example `(?(cond)true)`)
-    - When a pattern entity starts or ends with a Unicode character, and includes word boundaries, for example `\bš\b`, the pattern match does not match the word boundary correctly. In this example, for input `š zkouška`, the match returns `Group 0: 6-7 š` (`š zkou`_**`š`**_`ka`), instead of the correct `Group 0: 0-1 š` (_**`š`**_ `zkouška`).
+    - When a pattern entity starts or ends with a Unicode character, and includes word boundaries, for example `\bš\b`, the pattern match does not match the word boundary correctly. In this example, for input `š zkouška`, the match returns `Group 0: 6-7 š` (`š zkou`**`š`**`ka`), instead of the correct `Group 0: 0-1 š` (**`š`** `zkouška`).
 
       The regular expression engine is loosely based on the Java regular expression engine. You will see an error if you try to upload an unsupported pattern, either by using the API or from within the {{site.data.keyword.conversationshort}} user interface.
 
