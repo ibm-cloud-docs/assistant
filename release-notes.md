@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-11-27"
 
 subcollection: assistant
 
@@ -55,8 +55,6 @@ Existing models that you have trained will not be immediately impacted, but expi
 ## 26 November 2019
 {: #26Novembber2019}
 <!--1.85-->
-
-The following update is available in all locations except Dallas currently.
 
 - **Disambiguation is available to everyone**: Disambiguation is now available to users of every plan type. 
 
