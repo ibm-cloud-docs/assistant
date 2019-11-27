@@ -53,7 +53,7 @@ Existing models that you have trained will not be immediately impacted, but expi
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
 ## 26 November 2019
-{: #26Novembber2019}
+{: #26November2019}
 <!--1.85-->
 
 - **Disambiguation is available to everyone**: Disambiguation is now available to users of every plan type. 
