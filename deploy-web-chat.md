@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-05"
+lastupdated: "2019-12-02"
 
 subcollection: assistant
 
@@ -97,7 +97,9 @@ To add the assistant to a web page on your company website, complete the followi
 
     ![Chat icon](images/web-chat-icon.png) 
     
-    The web chat icon is displayed at the end of the page. Its placement is always the same regardless of where you paste the script element into the web page source. The chat launcher icon is blue unless you customize the accent color.
+    The Web Chat launcher icon is displayed at the end of the page. The icon is blue unless you customize the accent color.
+
+    The placement of the Web Chat icon is always the same regardless of where you paste the script element into the web page source.
     {: important}
 
 1.  Click the icon to open the chat window and talk to your assistant.
@@ -123,14 +125,14 @@ To add the assistant to a web page on your company website, complete the followi
 ## Extending the web chat
 {: #deploy-web-chat-extend}
 
-You can make more advanced customizations and extend the capability of the web chat by using the {site.data.keyword.conversationshort}} Web Chat toolkit on [GitHub](https://watson-developer-cloud.github.io/assistant-web-chat/index.html){: external}.
+You can make more advanced customizations and extend the capability of the web chat by using the {{site.data.keyword.conversationshort}} Web Chat toolkit on [GitHub](https://watson-developer-cloud.github.io/assistant-web-chat/index.html){: external}.
 
-If you choose to use the provided methods, you implement them by editing the code snippet that was generated earlier. You then embed the updated code snippet into your web page.
+If you choose to use the provided methods, you implement them by editing the code snippet that was generated earlier. You then embed the edited code snippet into your web page.
 
 ### Setting and passing context variable values
 {: #deploy-web-chat-set-context}
 
-For example, the following updated script preserves the context for the conversation. In addition, it adds an `$ismember` context variable and sets it to `true`.
+For example, the following edited script preserves the context for the conversation. In addition, it adds an `$ismember` context variable and sets it to `true`.
 
 ```html
 <script src="https://assistant-web.watsonplatform.net/loadWatsonAssistantChat.js"></script>
