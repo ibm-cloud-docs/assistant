@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-21"
+lastupdated: "2019-12-06"
 
 subcollection: assistant
 
@@ -125,29 +125,33 @@ The authentication mechanism used by your service instance impacts how you must 
     ```curl
     curl -X GET \
     --user {username}:{password} \
-    'https://gateway.watson.net/assistant/api/v1/workspaces?version=2018-09-20'
+    'https://{service-hostname/assistant/api/v1/workspaces?version=2018-09-20'
     ```
     {: codeblock}
 
+    where {service-hostname} is the appropriate URL for your instance. For more details, see [Service endpoint](https://cloud.ibm.com/apidocs/assistant/assistant-v1#service-endpoint){: external}
+
      **IAM API call**
 
-    - The base url must include the location. Use the syntax `gateway-<location>.watsonplatform.net` to specify the location in which you created the service instance. The location codes are listed in the *Data center locations* table.
+    - The service hostname typically includes the service location.
     - Provide the appropriate type of token in the header. You can pass either a bearer token or an API key.
 
       - Tokens support authenticated requests without embedding service credentials in every call. The following example shows a bearer token being used.
 
         ```curl
         curl -X GET \
-        'https://gateway-syd.watsonplatform.net/assistant/api/v1/workspaces?version=2018-09-20' \
+        'https://{service-hostname}/assistant/api/v1/workspaces?version=2018-09-20' \
         --header 'Authorization: Bearer eyJhbGciOiJIUz......sgrKIi8hdFs'
         ```
         {: codeblock}
+
+        where {service-hostname} is the appropriate URL for your instance. For more details, see [Service endpoint](https://cloud.ibm.com/apidocs/assistant/assistant-v1#service-endpoint){: external}
 
       - API keys use basic authentication. The following example shows an apikey being used.
 
         ```curl
         curl -X GET -u "apikey:3Df... ...Y7Pc9" \
-        'https://gateway-wdc.watsonplatform.net/assistant/api/v1/workspaces?version=2018-09-20' \
+        'https://{service-hostname}/assistant/api/v1/workspaces?version=2018-09-20' \
         ```
         {: codeblock}
 

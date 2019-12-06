@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-06"
 
 subcollection: assistant
 
@@ -219,8 +219,11 @@ To see the number of dialog nodes in a dialog skill, do one of the following thi
 - Send a GET request to the /dialog_nodes API endpoint, and include the `include_count=true` parameter. For example:
 
   ```curl
-  curl -u "apikey:{apikey}" "https://gateway.watsonplatform.net/assistant/api/v1/workspaces/{workspace_id}/dialog_nodes?version=2018-09-20&include_count=true"
+  curl -u "apikey:{apikey}" "https://{service-hostname}.watsonplatform.net/assistant/api/v1/workspaces/{workspace_id}/dialog_nodes?version=2018-09-20&include_count=true"
   ```
+  {: codeblock}
+
+  where {service-hostname} is the appropriate URL for your instance. For more details, see [Service endpoint](https://cloud.ibm.com/apidocs/assistant/assistant-v1#service-endpoint){: external}.
 
   In the response, the `total` attribute in the `pagination` object contains the number of dialog nodes.
 
