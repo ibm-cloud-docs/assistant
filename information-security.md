@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-25"
+lastupdated: "2019-12-06"
 
 subcollection: assistant
 
@@ -76,9 +76,11 @@ curl -X POST -u "apikey:3Df... ...Y7Pc9"
    'X-Watson-Metadata: customer_id=abc'
  --data
    '{"input":{"text":"hello"}}'
-  'https://gateway-fra.watsonplatform.net/assistant/api/v1/workspaces/{workspaceID}/message?version=2018-09-20'
+  'https://{service-hostname}/assistant/api/v1/workspaces/{workspaceID}/message?version=2018-09-20'
 ```
 {: codeblock}
+
+where {service-hostname} is the appropriate URL for your instance. For more details, see [Service endpoint](https://cloud.ibm.com/apidocs/assistant/assistant-v1#service-endpoint){: external}.
 
 The `customer_id` string cannot include the semicolon (`;`) or equal sign (`=`) characters. You are responsible for ensuring that each `customer ID` property is unique across your customers.
 {: note}
@@ -94,9 +96,11 @@ Use the v1 `/logs` method `filter` parameter to search an application log for sp
 
 ``` curl
 curl -X GET -u "apikey:3Df... ...Y7Pc9"
-'https://gateway-fra.watsonplatform.net/assistant/api/v1/workspaces/{workspaceID}/logs?version=2018-09-20&filter=customer_id::my_best_customer'
+'https://{service-hostname}/assistant/api/v1/workspaces/{workspaceID}/logs?version=2018-09-20&filter=customer_id::my_best_customer'
 ```
 {: codeblock}
+
+where {service-hostname} is the appropriate URL for your instance. For more details, see [Service endpoint](https://cloud.ibm.com/apidocs/assistant/assistant-v1#service-endpoint){: external}.
 
 See the [Filter query reference](/docs/services/assistant?topic=assistant-filter-reference) for additional details.
 
@@ -113,9 +117,11 @@ As an example, to delete any message data associated with a user that has the cu
 
 ```
 curl -X DELETE -u "apikey:3Df... ...Y7Pc9"
- 'https://gateway-fra.watsonplatform.net/assistant/api/v1/user_data?customer_id=abc&version=2018-09-20'
+ 'https://{service-hostname}/assistant/api/v1/user_data?customer_id=abc&version=2018-09-20'
 ```
 {: codeblock}
+
+where {service-hostname} is the appropriate URL for your instance. For more details, see [Service endpoint](https://cloud.ibm.com/apidocs/assistant/assistant-v1#service-endpoint){: external}.
 
 An empty JSON object `{}` is returned.
 
