@@ -76,11 +76,11 @@ curl -X POST -u "apikey:3Df... ...Y7Pc9"
    'X-Watson-Metadata: customer_id=abc'
  --data
    '{"input":{"text":"hello"}}'
-  'https://{service-hostname}/assistant/api/v1/workspaces/{workspaceID}/message?version=2018-09-20'
+  'https://{service-hostname}/assistant/api/v2/assistants/{assistant_id}/sessions/{session_id}/message?version=2019-02-28'
 ```
 {: codeblock}
 
-where {service-hostname} is the appropriate URL for your instance. For more details, see [Service endpoint](https://cloud.ibm.com/apidocs/assistant/assistant-v1#service-endpoint){: external}.
+where {service-hostname} is the appropriate URL for your instance. For more details, see [Service endpoint](https://cloud.ibm.com/apidocs/assistant/assistant-v2#service-endpoint){: external}.
 
 The `customer_id` string cannot include the semicolon (`;`) or equal sign (`=`) characters. You are responsible for ensuring that each `customer ID` property is unique across your customers.
 {: note}
