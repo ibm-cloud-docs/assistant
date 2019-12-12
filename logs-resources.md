@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-11"
+lastupdated: "2019-12-12"
 
 subcollection: assistant
 
@@ -123,18 +123,18 @@ IBM created Jupyter notebooks that you can use to analyze the behavior or your a
 ### Dialog skill analysis notebook
 {: #logs-resources-jupyter-dialog}
 
-The Dialog Skill Analysis Notebook is a Python notebook that helps you find and fix issues with the dialog that is used  by your assistant. It does so in the following ways:
+The Dialog Skill Analysis Notebook is a Python notebook that helps you find and fix issues with the dialog that is used by your assistant. It does so in the following ways:
 
-- Examines the terms that are correlated with each intent in your training data to find anomolies that might identify problems that you can investigate further.
+- Examines the terms that are correlated with each intent in your training data to find anomalies that might identify problems that you can investigate further.
 - Uses a blind test set that you provide to calculate performance on statistical metrics like Accuracy, Precision, Recall & F1. 
-- Offer advanced features that you can use to find the cause for common issues such as why some sentences are often misidentified.
+- Offers advanced features that you can use to find the causes of common issues such as why some sentences are often misidentified.
 
-To get the notebook, you can use the online version that is available from the [IBM Watson Studio Gallery](https://dataplatform.cloud.ibm.com/exchange/public/entry/view/4d77701840fcb2f21587e39fdb887049){: external}. Alternatively, you can fork or download the dialog skill analysis framework from [Github](https://github.com/watson-developer-cloud/assistant-dialog-skill-analysis){: external}.
+To try out the notebook, you can use the online version that is available from the [{{site.data.keyword.DSX_short}} Gallery](https://dataplatform.cloud.ibm.com/exchange/public/entry/view/4d77701840fcb2f21587e39fdb887049){: external}. Alternatively, you can fork or download the dialog skill analysis framework from [Github](https://github.com/watson-developer-cloud/assistant-dialog-skill-analysis){: external}.
 
 ### Log analysis notebooks
 {: #logs-resources-jupyter-logs}
 
-There is a set of notebooks that you can use with standard Python tools and a set that is designed for optimal use with {{site.data.keyword.DSX_full}}. {{site.data.keyword.DSX_short}} is a product that provides an environment in which you can pick and choose the tools you need to analyze and visualize data, to cleanse and shape data, to ingest streaming data, or to create, train, and deploy machine learning models. See the [product documentation](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/welcome-main.html){: external} for more details.
+There is a set of log analysis notebooks that you can use with standard Python tools and a set that is designed for optimal use with {{site.data.keyword.DSX_full}}. {{site.data.keyword.DSX_short}} is a product that provides an environment in which you can pick and choose the tools you need to analyze and visualize data, to cleanse and shape data, to ingest streaming data, or to create, train, and deploy machine learning models. See the [product documentation](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/welcome-main.html){: external} for more details.
 
 To learn more about how notebooks can help you improve your assistant, [read this blog post](https://medium.com/ibm-watson/continuously-improve-your-watson-assistant-with-jupiter-notebooks-60231df4f01f){: external}.
 
@@ -144,12 +144,12 @@ The following notebooks are available:
 
 - **Effectiveness**: Performs a deeper analysis of your logs to help you understand the steps you can take to improve your assistant.
 
-The [Watson Assistant Continuous Improvement Best Practices Guide](https://www.ibm.com/downloads/cas/V0XQ0ZRE){: external} describes how to get the most out of the notebooks.
+The [Watson Assistant Continuous Improvement Best Practices Guide](https://www.ibm.com/downloads/cas/V0XQ0ZRE){: external} describes how to get the most out of these notebooks.
 
 ### Using the notebooks with {{site.data.keyword.DSX}}
 {: #logs-resources-notebooks-studio}
 
-If you choose to use the notebooks that are designed for use with {{site.data.keyword.DSX}}, the steps are roughly these:
+If you choose to use the log analysis notebooks that are designed for use with {{site.data.keyword.DSX}}, the steps are roughly these:
 
 1.  Create a {{site.data.keyword.DSX}} account, [create a project](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/projects.html){: external}, and add a Cloud Object Storage account to it.
 1.  From the {{site.data.keyword.DSX}} community, get the [Measure Watson Assistant Performance notebook](https://dataplatform.cloud.ibm.com/exchange/public/entry/view/133dfc4cd1480bbe4eaa78d3f635e568){: external}.
