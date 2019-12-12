@@ -38,7 +38,7 @@ When you integrate with {{site.data.keyword.keymanagementservicefull}}, you can 
 
 For implementation details, see [Protecting sensitive information in your {{site.data.keyword.watson}} service](/docs/services/watson?topic=watson-keyservice){: external}.
 
-### Important BYOK notes
+### Important encryption key notes
 {: #security-byok-notes}
 
 - Do not delete your key or your {{site.data.keyword.keymanagementserviceshort}} instance. The key is required to access your data and only you manage it. IBM cannot help you retrieve your data if you accidentally delete your key.
