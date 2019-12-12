@@ -64,7 +64,8 @@ Watson Assistant
         logs-resources.md
 
     {: .topicgroup}
-    Administrative tasks
+    Administering
+        security.md
         /watson/watson-migrate
         recovery.md
         backup.md

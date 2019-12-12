@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-06"
+lastupdated: "2019-12-11"
 
 subcollection: assistant
 
@@ -118,7 +118,21 @@ To delete messages using `customer_id` values, see the [Information security](/d
 ## Jupyter notebooks
 {: #logs-resources-jupyter-notebooks}
 
-IBM created Jupyter notebooks that you can use to analyze your log data in more detail. A Jupyter notebook is a web-based environment for interactive computing. You can run small pieces of code that process your data, and you can immediately view the results of your computation.
+IBM created Jupyter notebooks that you can use to analyze the behavior or your assistant. A Jupyter notebook is a web-based environment for interactive computing. You can run small pieces of code that process your data, and you can immediately view the results of your computation.
+
+### Dialog skill analysis notebook
+{: #logs-resources-jupyter-dialog}
+
+The Dialog Skill Analysis Notebook is a Python notebook that helps you find and fix issues with the dialog that is used  by your assistant. It does so in the following ways:
+
+- Examines the terms that are correlated with each intent in your training data to find anomolies that might identify problems that you can investigate further.
+- Uses a blind test set that you provide to calculate performance on statistical metrics like Accuracy, Precision, Recall & F1. 
+- Offer advanced features that you can use to find the cause for common issues such as why some sentences are often misidentified.
+
+To get the notebook, you can use the online version that is available from the [IBM Watson Studio Gallery](https://dataplatform.cloud.ibm.com/exchange/public/entry/view/4d77701840fcb2f21587e39fdb887049){: external}. Alternatively, you can fork or download the dialog skill analysis framework from [Github](https://github.com/watson-developer-cloud/assistant-dialog-skill-analysis){: external}.
+
+### Log analysis notebooks
+{: #logs-resources-jupyter-logs}
 
 There is a set of notebooks that you can use with standard Python tools and a set that is designed for optimal use with {{site.data.keyword.DSX_full}}. {{site.data.keyword.DSX_short}} is a product that provides an environment in which you can pick and choose the tools you need to analyze and visualize data, to cleanse and shape data, to ingest streaming data, or to create, train, and deploy machine learning models. See the [product documentation](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/welcome-main.html){: external} for more details.
 

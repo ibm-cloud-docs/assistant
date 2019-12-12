@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-08"
+lastupdated: "2019-12-10"
 
 subcollection: assistant
 
@@ -23,16 +23,21 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Intent recommendations ![Plus or Premium plan only](images/plus.png)
+# Beta: Intent recommendations
 {: #beta-intent-recommendations}
 
 Let Watson analyze your chat transcript log data to understand the most common and frequently expressed customer needs related to your business. Watson can then recommend intents and intent user examples you can use to train your assistant so it can recognize the same and similar requests in the future.
 {: shortdesc}
 
-When generally available, it will be available to Plus or Premium plan users only.
+![Plus or Premium plan only](images/plus.png) When generally available, it will be available to Plus or Premium plan users only.
 {: note}
 
 Watson can recommend some initial intents for you to start with. Or, if you already created some intents, Watson analyzes your logs and compares its findings with your existing intents to identify gaps in your training data and suggest new intents that can fill them in. 
+
+The abiility to use assistant logs as the source for intent recommendations is available for use by participants in the early access program only. To find out how to request access, see [Participate in the early access program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
+{: preview}
+
+When you participate in the early access program, IBM gives you early access to features for your evaluation. These features are classified as beta, which means they might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment. Beta features are supported only on the [IBM Developer Answers](https://developer.ibm.com/answers/topics/watson-assistant/){: external}.
 
 ## Get help getting started
 {: #intent-recommendations-get-started}
