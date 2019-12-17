@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-24"
+lastupdated: "2019-12-17"
 
 keywords: import workspace, import JSON, export JSON
 
@@ -83,6 +83,8 @@ The dialog skill cannot interact with customers until it is added to an assistan
 
 ### Troubleshooting skill import issues
 {: #skill-dialog-add-import-errors}
+
+If you get the message, `Error. Should NOT be shorter than 1 character`, then check whether your skill has a name. If not, add one.
 
 If you receive a message that says the skill contains artifacts that exceed the limits imposed by your service plan, complete the following steps to import the skill successfully:
 
