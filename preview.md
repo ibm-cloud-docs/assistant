@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-21"
+lastupdated: "2019-12-17"
 
 subcollection: assistant
 
@@ -58,6 +58,11 @@ To share your feedback, join the [Watson Developer Community on Slack](http://wd
 ## Opting out of the preview experience
 {: #preview-opt-out}
 
-If you would prefer to work with the standard user experience, you can revert to the standard version of the product from the account page. To open the account page, click the user icon ![User icon](images/user-icon.png) that is displayed in the page header.
+If you would prefer to work with the standard user experience, you can revert to the standard version of the product from the account page. 
 
-![Shows the revert to standard icon](images/preview-revert.png)
+1.  To open the account page, click the user icon ![User icon](images/user-icon.png) that is displayed in the page header.
+1.  Find the service instance name.
+
+    ![Shows the revert to standard icon](images/preview-revert.png)
+
+1.  Click the *Revert to standard* ![Revert to standard icon](images/actions-revert-icon.png) icon, and then click **Revert to standard**.
