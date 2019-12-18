@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-10"
+lastupdated: "2019-12-18"
 
 subcollection: assistant
 
@@ -55,6 +55,15 @@ Existing models that you have trained will not be immediately impacted, but expi
 ## 12 December 2019
 {: #12December2019}
 
+- **New network and data security features**
+
+    - **Support for data encryption with customer-managed keys**
+        - Users of Premium plans can integrate {{site.data.keyword.keymanagementservicefull}} with  {{site.data.keyword.conversationshort}} to encrypt their data and manage encryption keys.
+    - **Support for private network endpoints**
+        - Users of Premium plans can create private network endpoints to connect to {{site.data.keyword.conversationshort}} over a private network. Connections to private network endpoints do not require public internet access.
+
+  For more information, see [Protecting sensitive information](/docs/services/assistant?topic=assistant-security).
+
 - **Full support for IBM Cloud IAM**
 
     - {{site.data.keyword.conversationshort}} now supports the full implementation of {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). API keys for Watson services are no longer limited to a single service instance. You can create access policies and API keys that apply to more than one service, and you can grant access between services.
@@ -68,13 +77,6 @@ Existing models that you have trained will not be immediately impacted, but expi
 
         These URLs do not introduce a breaking change. The new URLs work both for your existing service instances and for new instances. The original URLs continue to work on your existing service instances for at least one year (until December 2020).
     - For more information, see [Authenticating to Watson services](/docs/services/watson?topic=watson-iam).
-- **New network and data security features**
-    - **Support for data encryption with customer-managed keys**
-        - Users of Premium plans can integrate {{site.data.keyword.keymanagementservicefull}} with  {{site.data.keyword.conversationshort}} to encrypt their data and manage encryption keys.
-    - **Support for private network endpoints**
-        - Users of Premium plans can create private network endpoints to connect to {{site.data.keyword.conversationshort}} over a private network. Connections to private network endpoints do not require public internet access.
-
-  For more information, see [Protecting sensitive information](/docs/services/assistant?topic=assistant-security).
 
 ## 26 November 2019
 {: #26November2019}

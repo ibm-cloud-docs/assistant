@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-06"
+lastupdated: "2019-12-18"
 
 subcollection: assistant
 
@@ -1349,6 +1349,32 @@ For information about system entities that can recognize and extract numbers fro
 If you want the service to recognize specific number formats in user input, such as order number references, consider creating a pattern entity to capture it. See [Creating entities](/docs/services/assistant?topic=assistant-entities) for more details.
 
 If you want to change the decimal placement for a number, to reformat a number as a currency value, for example, see the [String format() method](#java.lang.String).
+
+### Standard math
+{: #dialog-methods-numbers-standard-math}
+
+Use SpEL expressions to define standard math equations, where the operators are represented by using these symbols:
+
+| Arithmetic operation | Symbol |
+|--------|-----------|
+| addition | + |
+| division | / |
+| multiplication | * |
+| subraction | - |
+
+For example, in a dialog node response, you might add a context variable that captures a number specified in the user input (`@sys-number`), and saves it as `$your_number`. You might add the following text as a text response:
+
+```
+I'm doing math. Given the value you specified, when I add 5, I get: <? $your_number + 5 ?>. When I subtract 5, I get: <? $your_number - 5 ?>. When I multiply it by 5, I get: <? $your_number * 5 ?>. When I divide it by 5, I get: <? $your_number/5 ?>.
+```
+{codeblock}
+
+If the user specifies `10`, then the resulting text response is:
+
+```
+I'm doing math. Given the value you specified, when I add 5, I get: 15. When I subtract 5, I get: 5. When I multiply it by 5, I get: 50. When I divide it by 5, I get: 2.
+```
+{codeblock}
 
 ### toDouble()
 {: #dialog-methods-numbers-toDouble}

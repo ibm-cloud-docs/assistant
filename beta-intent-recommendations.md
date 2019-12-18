@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-10"
+lastupdated: "2019-12-17"
 
 subcollection: assistant
 
@@ -178,9 +178,9 @@ To get intent recommendations, complete the following steps:
 
     The top intent recommendations are chosen and ordered as follows:
 
-    1.  Intents with the most frequently occuring utterances. The frequency of the utterances associated with these intents suggests they identify the most common customer pain points.
-    1.  The distinctness of the newly recommended intents when compared to the intents that are already in your training data. Their uniqueness suggests that they can address customer needs that are not being met currently.
-    1.  The similarity of the user examples that are associated with the intent, which illustrates the strength of the intent.
+    - Intents with the most frequently occuring utterances. The frequency of the utterances associated with these intents suggests they identify the most common customer pain points.
+    - The distinctness of the newly recommended intents when compared to the intents that are already in your training data. Their uniqueness suggests that they can address customer needs that are not being met currently.
+    - The similarity of the user examples that are associated with the intent, which illustrates the strength of the intent.
 
 1.  Click an intent to see its associated user examples.
 
