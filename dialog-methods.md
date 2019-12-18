@@ -1350,32 +1350,6 @@ If you want the service to recognize specific number formats in user input, such
 
 If you want to change the decimal placement for a number, to reformat a number as a currency value, for example, see the [String format() method](#java.lang.String).
 
-### Standard math
-{: #dialog-methods-numbers-standard-math}
-
-Use SpEL expressions to define standard math equations, where the operators are represented by using these symbols:
-
-| Arithmetic operation | Symbol |
-|--------|-----------|
-| addition | + |
-| division | / |
-| multiplication | * |
-| subraction | - |
-
-For example, in a dialog node response, you might add a context variable that captures a number specified in the user input (`@sys-number`), and saves it as `$your_number`. You might add the following text as a text response:
-
-```
-I'm doing math. Given the value you specified, when I add 5, I get: <? $your_number + 5 ?>. When I subtract 5, I get: <? $your_number - 5 ?>. When I multiply it by 5, I get: <? $your_number * 5 ?>. When I divide it by 5, I get: <? $your_number/5 ?>.
-```
-{codeblock}
-
-If the user specifies `10`, then the resulting text response is:
-
-```
-I'm doing math. Given the value you specified, when I add 5, I get: 15. When I subtract 5, I get: 5. When I multiply it by 5, I get: 50. When I divide it by 5, I get: 2.
-```
-{codeblock}
-
 ### toDouble()
 {: #dialog-methods-numbers-toDouble}
 
@@ -1392,6 +1366,32 @@ I'm doing math. Given the value you specified, when I add 5, I get: 15. When I s
   Converts the object or field to the Long number type. You can call this method on any object or field. If the conversion fails, *null* is returned.
 
   If you specify a Long number type in a SpEL expression, you must append an `L` to the number to identify it as such. For example, `5000000000L`. This syntax is required for any numbers that do not fit into the 32-bit Integer type. For example, numbers that are greater than 2^31 (2,147,483,648) or lower than -2^31 (-2,147,483,648) are considered Long number types. Long number types have a minimum value of -2^63 and a maximum value of 2^63-1.
+
+### Standard math
+{: #dialog-methods-numbers-standard-math}
+
+Use SpEL expressions to define standard math equations, where the operators are represented by using these symbols:
+
+| Arithmetic operation | Symbol |
+|--------|:-----------|
+| addition | + |
+| division | / |
+| multiplication | * |
+| subraction | - |
+
+For example, in a dialog node response, you might add a context variable that captures a number specified in the user input (`@sys-number`), and saves it as `$your_number`. You can then add the following text as a text response:
+
+```
+I'm doing math. Given the value you specified ($your_number), when I add 5, I get: <? $your_number + 5 ?>. When I subtract 5, I get: <? $your_number - 5 ?>. When I multiply it by 5, I get: <? $your_number * 5 ?>. When I divide it by 5, I get: <? $your_number/5 ?>.
+```
+{: screen}
+
+If the user specifies `10`, then the resulting text response looks like this:
+
+```
+I'm doing math. Given the value you specified (10), when I add 5, I get: 15. When I subtract 5, I get: 5. When I multiply it by 5, I get: 50. When I divide it by 5, I get: 2.
+```
+{: screen}
 
 ### Java number support
 {: #dialog-methods-numbers-java}
