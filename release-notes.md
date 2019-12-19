@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-18"
+lastupdated: "2019-12-19"
 
 subcollection: assistant
 
@@ -119,6 +119,8 @@ Existing models that you have trained will not be immediately impacted, but expi
 <!--1.80-->
 
 - **Testing improvement**: You can now see the top three intents that were recognized in a test user input from the "Try it out" pane. For more details, see [Testing your dialog](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-test).
+
+- **Error message when opening an instance**: When you launch {{site.data.keyword.conversationshort}} from the {{site.data.keyword.cloud}} dashboard, you might see an error message that says, `Module 'ui-router' is not available! You either misspelled the module name or forgot to load it.` You can ignore the message. Refresh the web browser page to close the notification. 
 
 ## 16 October 2019
 {: #16October2019}
