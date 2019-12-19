@@ -1382,16 +1382,22 @@ Use SpEL expressions to define standard math equations, where the operators are 
 For example, in a dialog node response, you might add a context variable that captures a number specified in the user input (`@sys-number`), and saves it as `$your_number`. You can then add the following text as a text response:
 
 ```
-I'm doing math. Given the value you specified ($your_number), when I add 5, I get: <? $your_number + 5 ?>. When I subtract 5, I get: <? $your_number - 5 ?>. When I multiply it by 5, I get: <? $your_number * 5 ?>. When I divide it by 5, I get: <? $your_number/5 ?>.
+I'm doing math. Given the value you specified ($your_number), when I add 5, I get: <? $your_number + 5 ?>. 
+When I subtract 5, I get: <? $your_number - 5 ?>. 
+When I multiply it by 5, I get: <? $your_number * 5 ?>. 
+When I divide it by 5, I get: <? $your_number/5 ?>.
 ```
-{: screen}
+{: codeblock}
 
 If the user specifies `10`, then the resulting text response looks like this:
 
 ```
-I'm doing math. Given the value you specified (10), when I add 5, I get: 15. When I subtract 5, I get: 5. When I multiply it by 5, I get: 50. When I divide it by 5, I get: 2.
+I'm doing math. Given the value you specified (10), when I add 5, I get: 15. 
+When I subtract 5, I get: 5. 
+When I multiply it by 5, I get: 50. 
+When I divide it by 5, I get: 2.
 ```
-{: screen}
+{: codeblock}
 
 ### Java number support
 {: #dialog-methods-numbers-java}
