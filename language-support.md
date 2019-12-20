@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-07"
+lastupdated: "2019-12-20"
 
 subcollection: assistant
 
@@ -33,6 +33,9 @@ In the following tables, the level of language and feature support is indicated 
 - **GA** - The feature is generally available and supported for this language. Note that features might continue to be updated even after they are generally available.
 - **Beta** - The feature is supported only as a Beta release, and is still undergoing testing before it is made generally available in this language.
 - **NA** - Indicates that a feature is not available in this language.
+
+Your assistant might be able to identify intents in unsupported languages depending on the complexity of your data, but if the language is not listed here it is not officially supported and results cannot be guaranteed.
+{: note}
 
 The first table shows the level of support for all features, except those related to intents and entities, which are shown in the second and third tables.
 
