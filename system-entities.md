@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2015, 2019
+  years: 2015, 2020
 lastupdated: "2019-08-06"
 
 keywords: system entity, sys-number, sys-date, sys-time

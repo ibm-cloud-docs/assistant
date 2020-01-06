@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2019
-lastupdated: "2019-11-20"
+  years: 2015, 2020
+lastupdated: "2020-01-06"
 
 subcollection: assistant
 
@@ -229,6 +229,9 @@ LiveEngage is an enterprise-class platform that empowers consumers to stop wasti
     - You must know the account number that is associated with your LiveEngage compaign. 
     - You must have administrative access to the account that you connect to the web chat.
 
+    It might take up to 24 hours before your campaign is available. The JWT key that you need to copy later in this procedure cannot be generated until after the creation of the account and campaign is finished.
+    {: important}
+
 1.  From the Web Chat integration page in {{site.data.keyword.conversationshort}}, switch the **Allow transfers to live agents** toggle to **On**, and then choose **LiveEngage** as the service desk type, and then click **Set up**.
 
 1.  Enter the account number that is associated with your campaign, and then click **Access account**.
@@ -279,7 +282,7 @@ LiveEngage is an enterprise-class platform that empowers consumers to stop wasti
 
       From the campaign page in LiveEngage, click *Add engagement*, and then choose *Mobile App*.
 
-    - Work with the LiveEngage team to add messaging support to the mobile app.
+    - If messaging is not enabled, work with the LiveEngage team to add messaging support to the mobile app.
 
     For more details, see the [Monitoring API LiveEngage documentation](https://developers.liveperson.com/monitoring-api-getting-started.html){: external}.
 
