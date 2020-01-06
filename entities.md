@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2015, 2019
+  years: 2015, 2020
 lastupdated: "2019-10-24"
 
 keywords: entity, entity value, contextual entity, dictionary entity, pattern entity, entity synonym, annotate mentions
