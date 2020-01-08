@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-08-06"
+lastupdated: "2020-01-08"
 
 keywords: system entity, sys-number, sys-date, sys-time
 
@@ -66,6 +66,7 @@ For the input `twenty dollars` or `$1,234.56`, @sys-currency returns these value
 | @sys-currency.numeric_value | number | 20                            |                  1234.56 |
 | @sys-currency.location      | array  | [0,14]                        |                    [0,9] |
 | @sys-currency.unit          | string | USD*                          |                      USD |
+{: caption="@sys-currency examples" caption-side="top"}
 
 *@sys-currency.unit always returns the 3-letter ISO currency code.
 
@@ -78,6 +79,8 @@ For the input `veinte euro` or <code>&euro;1.234,56</code>, in Spanish, @sys-cur
 | @sys-currency.numeric_value | number | 20                          |                  1234.56 |
 | @sys-currency.location      | array  |[0,11]                       |                     [0,9]|
 | @sys-currency.unit          | string | EUR*                        |                     EUR  |
+{: caption="More @sys-currency examples" caption-side="top"}
+
 *@sys-currency.unit always returns the 3-letter ISO currency code.
 
 You get equivalent results for other supported languages and national currencies.
@@ -161,6 +164,7 @@ For the input `November 21` @sys-date returns these values:
 | @sys-date               | string |                20xx-11-21 *|
 | @sys-date.location      | array |                     [0,11]  |
 | @sys-date.calendar_type | string |                  GREGORIAN |
+{: caption="@sys-date examples" caption-side="top"}
 
 - @sys-date always returns the date in this format: yyyy-MM-dd.
 - \* Returns the next matching date. If that date has already passed this year, this returns next year's date.
@@ -173,6 +177,7 @@ For the input `at 6 pm` @sys-time returns these values:
 | @sys-time               | string |               18:00:00 |
 | @sys-time.location      | array |                   [0,7]|
 | @sys-time.calendar_type | string |              GREGORIAN |
+{: caption="More @sys-date examples" caption-side="top"}
 
 - @sys-time always returns the time in this format: HH:mm:ss.
 
@@ -222,6 +227,7 @@ For the input `twenty` or `1,234.56`, @sys-number returns these values:
 | @sys-number.literal       | string | twenty            |                1,234.56 |
 | @sys-number.location      | array |  [0,6]             |                    [0,8]|
 | @sys-number.numeric_value | number | 20                |                 1234.56 |
+{: caption="@sys-number examples" caption-side="top"}
 
 For the input `veinte` or `1.234,56`, in Spanish, @sys-number returns these values:
 
@@ -231,6 +237,7 @@ For the input `veinte` or `1.234,56`, in Spanish, @sys-number returns these valu
 | @sys-number.literal       | string | veinte                |                1.234,56 |
 | @sys-number.location      | array  | [0,6]                 |                   [0,8] |
 | @sys-number.numeric_value | number | 20                    |                 1234.56 |
+{: caption="More @sys-number examples" caption-side="top"}
 
 You get equivalent results for other supported languages.
 
@@ -275,6 +282,7 @@ For the input `1,234.56%`, @sys-percentage returns these values:
 | @sys-percentage.literal       | string |                1,234.56% |
 | @sys-percentage.location      | array  |                    [0,9] |
 | @sys-percentage.numeric_value | number |                  1234.56 |
+{: caption="@sys-percentage examples" caption-side="top"}
 
 For the input `1.234,56%`, in Spanish, @sys-currency returns these values:
 
@@ -284,6 +292,7 @@ For the input `1.234,56%`, in Spanish, @sys-currency returns these values:
 | @sys-percentage.literal       | string |                1.234,56% |
 | @sys-percentage.location      | array  |                    [0,9] |
 | @sys-percentage.numeric_value | number |                  1234.56 |
+{: caption="More @sys-percentage examples" caption-side="top"}
 
 You get equivalent results for other supported languages.
 
