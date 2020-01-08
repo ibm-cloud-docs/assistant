@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-02-12"
+lastupdated: "2020-01-08"
 
 subcollection: assistant
 
@@ -26,11 +26,11 @@ subcollection: assistant
 # Time zones supported by system entities
 {: #time-zones}
 
-This list of supported time zones can be used with the time zone functions related to the [@sys-date and @sys-time entities](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-date-time).
+The following list of supported time zones can be used with the time zone functions for the [@sys-date and @sys-time entities](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-date-time).
 {: shortdesc}
 
 |            Time zone           |             Time zone            |
-|:------------------------------:|:--------------------------------:|
+|:-------------------------------|:---------------------------------|
 |         Africa/Abidjan         |           Africa/Accra           |
 |       Africa/Addis_Ababa       |          Africa/Algiers          |
 |          Africa/Asmara         |           Africa/Asmera          |
@@ -340,3 +340,4 @@ This list of supported time zones can be used with the time zone functions relat
 |               PLT              |                PNT               |
 |               PRT              |                PST               |
 |               SST              |                VST               |
+{: caption="Supported time zones" caption-side="top"}
