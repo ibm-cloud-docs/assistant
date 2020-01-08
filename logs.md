@@ -141,7 +141,7 @@ To add the deployment ID, v1 API users include the deployment property inside th
 ```
 {: codeblock}
 
-![Premium plan only](images/premium0.png) For premium {{site.data.keyword.conversationshort}} instances that use the v1 API and specify a deployment ID with each /message call, you can ask IBM to configure your instances to allow you to access log data from deployed applications across different instances. If your instances use the v2 API, you cannot get log data from across different instances. And you cannot get logs data from across different instances if the instances use a combination of v1 and v2 APIs.
+![Premium plan only](images/premium0.png) For premium {{site.data.keyword.conversationshort}} instances that use the v1 API and specify a deployment ID with each /message call, you can ask IBM to configure your instances to allow you to access log data from deployed applications across different instances. If your instances use the v2 API, you cannot get log data from across different instances. You cannot get log data from across different instances if the instances use a combination of v1 and v2 APIs.
 
 ## Making training data improvements
 {: #logs-fix-data}
