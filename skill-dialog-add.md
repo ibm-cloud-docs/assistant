@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-12-17"
+lastupdated: "2020-01-09"
 
 keywords: import workspace, import JSON, export JSON
 
@@ -51,18 +51,15 @@ To add a skill, complete the following steps:
 
       The sample skill is added to your list of skills. It is not associated with any assistants. Skip the remaining steps in this procedure.
 
-    - To add an existing skill to this service instance, you can import it as a JSON file. Click **Import skill**, and then click **Choose JSON File**, and select the JSON file you want to import.
+    - To add an existing skill to this service instance, you can import it as a JSON file. Click **Import skill**, and then click **Choose JSON File** and select the JSON file you want to import.
 
       **Important:**
 
       - The imported JSON file must use UTF-8 encoding, without byte order mark (BOM) encoding.
-      - The maximum size for a skill JSON file is 10MB. If you need to import a larger skill, consider importing the intents and entities separately after you have imported the skill. (You can also import larger skills using the REST API. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#create-workspace){: external}.)
       - The JSON cannot contain tabs, newlines, or carriage returns.
 
-      Specify the data you want to include:
-
-        - Select **Everything (Intents, Entities, and Dialog)** if you want to import a complete copy of the exported skill, including the dialog.
-        - Select **Intents and Entities** if you want to use the intents and entities from the exported skill, but you plan to build a new dialog.
+      The maximum size for a skill JSON file is 10 MB. If you need to import a larger skill, consider using the REST API. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#create-workspace){: external}.
+      {: tip}
 
       Click **Import**.
 
