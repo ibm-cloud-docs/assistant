@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-10-24"
+lastupdated: "2020-01-09"
 
 subcollection: assistant
 
@@ -83,10 +83,10 @@ If the {{site.data.keyword.conversationshort}} service changes between the time 
     **Important:**
 
     - The imported JSON file must use UTF-8 encoding, without byte order mark (BOM) encoding.
-    - The maximum size for a skill JSON file is 10MB. If you need to import a larger skill, consider importing the intents and entities separately after you have imported the skill. (You can also import larger skills using the REST API. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1#create-workspace){: external}.)
     - The JSON file cannot contain tabs, newlines, or carriage returns.
 
-    Select **Everything (Intents, Entities, and Dialog)** to import a complete copy of the exported skill.
+    The maximum size for a skill JSON file is 10MB. If you need to import a larger skill, consider using the REST API. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1#create-workspace){: external}.
+    {: tip}
 
     Click **Import**.
 
