@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-10-24"
+lastupdated: "2020-01-14"
 
 subcollection: assistant
 
@@ -71,7 +71,7 @@ The number of assistants you can create depends on your {{site.data.keyword.conv
 | Premium      |                             100 |
 | Plus         |                             100 |
 | Standard     |                             100 |
-| Plus Trial   |                               5 |
+| Plus Trial   |                             100 |
 | Lite*        |                             100 |
 {: caption="Plan details" caption-side="top"}
 
