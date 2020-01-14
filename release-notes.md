@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-12-19"
+lastupdated: "2020-01-14"
 
 subcollection: assistant
 
@@ -51,6 +51,12 @@ The {{site.data.keyword.conversationshort}} algorithms may be periodically refin
 Existing models that you have trained will not be immediately impacted, but expired models will be updated to the current model, if you have not already done so, after 60 days of a new model becoming available.
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
+
+## 14 January 2020
+{: #14January2020}
+<!--1.87.2-->
+
+- **Fixed an error message that was displayed when opening an instance**: An error that was displayed when you launched {{site.data.keyword.conversationshort}} from the {{site.data.keyword.cloud}} dashboard has been fixed. Previously, an error message that said, `Module 'ui-router' is not available! You either misspelled the module name or forgot to load it` would sometimes be displayed.
 
 ## 12 December 2019
 {: #12December2019}

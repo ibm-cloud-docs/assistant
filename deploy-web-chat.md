@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-12-05"
+lastupdated: "2020-01-10"
 
 subcollection: assistant
 
@@ -37,7 +37,7 @@ When you create a Web Chat integration, code is generated that calls a script wr
 If you are participating in the **Early Access Program**, follow the instructions in this topic instead: [Beta: Integrating with your own website](/docs/services/assistant?topic=assistant-beta-deploy-web-chat).
 {: tip}
 
-## Create a web chat instance to add to your website
+## Create a Web Chat instance to add to your website
 {: #deploy-web-chat-task}
 
 To add the assistant to a web page on your company website, complete the following steps:
@@ -46,11 +46,11 @@ To add the assistant to a web page on your company website, complete the followi
 
 1.  From the *Integrations* section, click the **Web Chat** tile.
 
-1.  **Optional**: Change the web chat integration name from *Web Chat* to something more descriptive.
+1.  **Optional**: Change the Web Chat integration name from *Web Chat* to something more descriptive.
 
 1.  Click **Create** to generate the script.
 
-    A code snippet is created and added to the bottom of the page that contains an HTML `<script>` element. The script tag calls JavaScript code that is hosted on an IBM site. The code instantiates an instance of your assistant within a web chat widget. The generated code includes a region and unique integration ID. Do not change these parameter values.
+    A code snippet is created and added to the bottom of the page that contains an HTML `<script>` element. The script tag calls JavaScript code that is hosted on an IBM site. The code instantiates an instance of your assistant within a Web Chat widget. The generated code includes a region and unique integration ID. Do not change these parameter values.
 
 1.  **Optional**: Customize the chat. You can make the following changes:
 
@@ -73,9 +73,10 @@ To add the assistant to a web page on your company website, complete the followi
 
     Style changes you make are immediately applied to the preview that is shown on the page, so you can see how your choices impact the style of the chat UI.
 
-    When you are happy with the style, click **Save changes**.
-
 1.  Copy the `<script>` HTML element.
+
+    Do not click *Save changes* until you are done with making Web Chat edits; it closes the page.
+    {: tip}
 
 1.  Open the HTML source for a web page on your website where you want the chat window to be displayed. Paste the code snippet into the page.
 
@@ -121,14 +122,14 @@ To add the assistant to a web page on your company website, complete the followi
 
     If you don't extend the session timeout setting for the assistant, the dialog flow for the current session is restarted after 60 minutes of inactivity. This means that if a user stops interacting with the assistant, after 60 minutes, any context variable values that were set during the previous conversation are set to null or back to their initial values.
 
-1.  Click **Save changes** to save the web chat name and any customization information that you added and close the integration page. Alternatively, you can click the **X** to close the page. 
+1.  Click **Save changes** to save the Web Chat name and any customization information that you added and close the integration page. Alternatively, you can click the **X** to close the page. 
 
-    The web chat integration instance is created as soon as you click the *Create* button, and does not need to be saved.
+    The Web Chat instance is created as soon as you click the *Create* button, and does not need to be saved.
 
-## Extending the web chat
+## Extending the Web Chat
 {: #deploy-web-chat-extend}
 
-You can make more advanced customizations and extend the capability of the web chat by using the {{site.data.keyword.conversationshort}} Web Chat toolkit on [GitHub](https://watson-developer-cloud.github.io/assistant-web-chat/index.html){: external}.
+You can make more advanced customizations and extend the capability of the Web Chat by using the {{site.data.keyword.conversationshort}} Web Chat toolkit on [GitHub](https://watson-developer-cloud.github.io/assistant-web-chat/index.html){: external}.
 
 If you choose to use the provided methods, you implement them by editing the code snippet that was generated earlier. You then embed the edited code snippet into your web page.
 
@@ -169,7 +170,7 @@ You can reference the `$ismember` context variable from your dialog. For example
 ### Adding user identity information
 {: deploy-web-chat-userid}
 
-If you want to perform tasks that require you to know the user who submitted the user input, then you must pass the user ID to the web chat integration. Such tasks include the following:
+If you want to perform tasks that require you to know the user who submitted the user input, then you must pass the user ID to the Web Chat integration. Such tasks include the following:
 
 - User-based service plans use the `user_id` associated with user input for billing purposes. See [User-based plans](/docs/services/assistant?topic=assistant-services-information#services-information-user-based-plans). 
 - The ability to delete any data created by someone who requests to be forgotten requires that a `customer_id` be associated with the user input. When a `user_id` is defined, the product can reuse it to pass a `customer_id` parameter. See [Labeling and deleting data](/docs/services/assistant?topic=assistant-information-security#information-security-gdpr-wa).
