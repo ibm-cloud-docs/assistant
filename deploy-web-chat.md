@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-10"
+lastupdated: "2020-01-14"
 
 subcollection: assistant
 
@@ -105,6 +105,8 @@ To add the assistant to a web page on your company website, complete the followi
 
     The placement of the Web Chat icon is always the same regardless of where you paste the script element into the web page source.
     {: important}
+
+    For information about the web browsers that are supported by the Web Chat, see [Browser Support](https://watson-developer-cloud.github.io/assistant-web-chat/documentation.html#browser-support){: external}.
 
 1.  Click the icon to open the chat window and talk to your assistant.
 

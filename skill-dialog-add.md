@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-09"
+lastupdated: "2020-01-16"
 
 keywords: import workspace, import JSON, export JSON
 
@@ -134,10 +134,11 @@ After you create the service instance, you can give other people access to it. T
 Only one person can edit an intent, entity, or a dialog node at a time. If multiple people work on the same item at the same time, then the changes made by the person who saves their changes last are the only changes applied. Changes that are made during the same time frame by someone else and are saved first are not retained. Coordinate the updates that you plan to make with your team members to prevent anyone from losing their work.
 {: important}
 
-To share a dialog skill with other people, you must give them access to the service instance that hosts the skill. Note that the person you invite will be able to access any skill that is hosted by this service instance.
+To share a dialog skill with other people, you must give them access to the service instance that hosts the skill. Note that the person you invite will be able to access any skill or assistant in this service instance.
 
-1.  Make a note of the current instance name, which is displayed at the top of the current page.
-1.  Click the User ![User](images/user-icon2.png) icon in the page header, and select **Manage Users** from the drop-down.
+1.  Click the User ![User](images/user-icon2.png) icon in the page header.
+
+1.  Make a note of the current service instance name, and then select **Manage Users** from the drop-down.
 
 1.  From the navigation pane, click **Users**.
 
@@ -145,7 +146,7 @@ To share a dialog skill with other people, you must give them access to the serv
     
 1.  Click **Invite users**. 
 
-1.  Add the email address of the user or users with whom you want to share the instance.
+1.  Add the email address of the person with whom you want to share the instance. You can add more than one person.
 
 1.  Expand the *Assign users additional resources* section, and then click **IAM Services**.
 
@@ -154,6 +155,8 @@ To share a dialog skill with other people, you must give them access to the serv
     The *Account* resource group is used unless you change it.
 
 1.  Select at least one region and at least one service instance to share with this user.
+
+    Remember, you made a note of the name of the current service instance in an earlier step. You can select it from the list of service instances if you want to give the person access to that service instance only.
 
 1.  Give this user the following assignments at a minimum:
  

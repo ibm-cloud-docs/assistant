@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-10-29"
+lastupdated: "2020-01-14"
 
 subcollection: assistant
 
@@ -103,7 +103,7 @@ The remaining steps differ depending on whether you have access to an existing {
 
       Go to [Configure the search](#search-skill-add-configure).
 
-    - If you do not have a collection or do not want to use any of the data collections that are listed, click **Create a new collection** to add one. Follow the procedure in [Create a data collection](#search-skill-add-create-discovery-collection).
+    - If you do not have a collection or do not want to use any of the data collections that are listed, click **Create a new collection** to add one. Follow the procedure in [Create a data collection](#skill-search-add-create-discovery-collection).
 
       The **Create a new collection** button is not displayed if you have reached the limit to the number of collections you are allowed to create based on your {{site.data.keyword.discoveryshort}} service plan. See [{{site.data.keyword.discoveryshort}} pricing plans](/docs/services/discovery/discovery-about?topic=discovery-discovery-pricing-plans){: external} for plan limit details.
       {: note}

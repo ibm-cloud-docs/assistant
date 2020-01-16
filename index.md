@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-10-23"
+lastupdated: "2020-01-14"
 
 subcollection: assistant
 
@@ -98,7 +98,9 @@ Read more about these implementation steps by following these links:
 ## Browser support
 {: #index-browser-support}
 
-{{site.data.keyword.conversationshort}} requires the same level of browser software as is required by {{site.data.keyword.Bluemix_notm}}. For more information, see {{site.data.keyword.Bluemix_notm}} [Prerequisites](/docs/overview?topic=overview-prereqs-platform#browsers-platform){: external}.
+The {{site.data.keyword.conversationshort}} application (where you create assistants and skills) requires the same level of browser software as is required by {{site.data.keyword.Bluemix_notm}}. For more information, see {{site.data.keyword.Bluemix_notm}} [Prerequisites](/docs/overview?topic=overview-prereqs-platform#browsers-platform){: external}. 
+
+For information about the web browsers that are supported by the Web Chat integration, see [Browser Support](https://watson-developer-cloud.github.io/assistant-web-chat/documentation.html#browser-support){: external}.
 
 ## Language support
 {: #index-lang-support}
