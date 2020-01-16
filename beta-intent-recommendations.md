@@ -104,7 +104,7 @@ To use assistant chat logs as the source for your intent and intent user example
   {:tip}
 - The assistant must have exchanged messages with a customer within the log retention time period. Logs are stored for a number of days, the total of which is determined by your service plan type. If no customer interactions take place within the retention period, then there is no log data available to use as a recommendation source. For details about log limits, see [Log limits](/docs/services/assistant?topic=assistant-logs#logs-limits).
 
-{{site.data.keyword.Bluemix_dedicated_notm}}: You cannot get intent recommendations from logs. A component that is required to render the log data properly for consumption is not available in dedicated environments. You can see the option to link to a connected log, but the data source will always indicate that there are 0 logs available. To use an assistant log as the source for your intent recommendations, switch to a Premium plan. Alternatively, you can add the user utterances from the logs to a CSV file, upload it, and choose the logs CSV file as the data source.
+{{site.data.keyword.Bluemix_dedicated_notm}}: You cannot get intent recommendations from logs. You can see the option to link to a connected log, but the data source will always indicate that there are 0 logs available. To use an assistant log as the source for your intent recommendations, switch to a Premium plan. Alternatively, you can add the user utterances from the logs to a CSV file, upload it, and choose the logs CSV file as the data source.
 
 ### Getting recommendations from a CSV log file
 {: #intent-recommendations-log-files-add}
