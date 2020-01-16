@@ -156,7 +156,7 @@ To share a dialog skill with other people, you must give them access to the serv
 
 1.  Select at least one region and at least one service instance to share with this user.
 
-    Remember, you made a note of the name of the current service instance in an earlier step. You can select it from the list of service instance if you want to give the person access to that service instance only.
+    Remember, you made a note of the name of the current service instance in an earlier step. You can select it from the list of service instances if you want to give the person access to that service instance only.
 
 1.  Give this user the following assignments at a minimum:
  
