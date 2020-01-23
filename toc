@@ -67,9 +67,9 @@ Watson Assistant
     {: .topicgroup}
     Administering
         security.md
-        /watson/watson-migrate
         recovery.md
         backup.md
+        /watson/watson-migrate
         upgrade.md
 
     edit-convo-workspace.md
