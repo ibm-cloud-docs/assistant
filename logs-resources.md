@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-12-12"
+lastupdated: "2020-01-23"
 
 subcollection: assistant
 
@@ -131,12 +131,12 @@ The Dialog Skill Analysis Notebook is a Python notebook that helps you find and 
 
 To try out the notebook, you can use the online version that is available from the [{{site.data.keyword.DSX_short}} Gallery](https://dataplatform.cloud.ibm.com/exchange/public/entry/view/4d77701840fcb2f21587e39fdb887049){: external}. Alternatively, you can fork or download the dialog skill analysis framework from [Github](https://github.com/watson-developer-cloud/assistant-dialog-skill-analysis){: external}.
 
+To learn more about how this notebook can help you improve your dialog, read this [Medium.com blog post](https://medium.com/ibm-watson/announcing-dialog-skill-analysis-for-watson-assistant-83cdfb968178){: external}.
+
 ### Log analysis notebooks
 {: #logs-resources-jupyter-logs}
 
 There is a set of log analysis notebooks that you can use with standard Python tools and a set that is designed for optimal use with {{site.data.keyword.DSX_full}}. {{site.data.keyword.DSX_short}} is a product that provides an environment in which you can pick and choose the tools you need to analyze and visualize data, to cleanse and shape data, to ingest streaming data, or to create, train, and deploy machine learning models. See the [product documentation](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/welcome-main.html){: external} for more details.
-
-To learn more about how notebooks can help you improve your assistant, [read this blog post](https://medium.com/ibm-watson/continuously-improve-your-watson-assistant-with-jupiter-notebooks-60231df4f01f){: external}.
 
 The following notebooks are available:
 
@@ -144,7 +144,9 @@ The following notebooks are available:
 
 - **Effectiveness**: Performs a deeper analysis of your logs to help you understand the steps you can take to improve your assistant.
 
-The [Watson Assistant Continuous Improvement Best Practices Guide](https://www.ibm.com/downloads/cas/V0XQ0ZRE){: external} describes how to get the most out of these notebooks.
+The [Watson Assistant Continuous Improvement Best Practices Guide](https://www.ibm.com/downloads/cas/V0XQ0ZRE){: external} describes how to get the most out of these notebooks. 
+
+To learn more about how these notebooks can help you improve your assistant, read this [Medium.com blog post](https://medium.com/ibm-watson/continuously-improve-your-watson-assistant-with-jupiter-notebooks-60231df4f01f){: external}.
 
 ### Using the notebooks with {{site.data.keyword.DSX}}
 {: #logs-resources-notebooks-studio}
