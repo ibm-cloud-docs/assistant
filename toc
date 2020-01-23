@@ -45,6 +45,7 @@ Watson Assistant
     skill-open.md
     assistant-settings.md
     access-control-pre.md
+    access-control.md
 
     {: .topicgroup}
     Deploying
