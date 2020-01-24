@@ -27,7 +27,7 @@ subcollection: assistant
 # System entity details
 {: #system-entities}
 
-Learn about system entities that are provided by IBM for you to use out of the box. These built-in, utility entities help your assistant recognize terms and references that are commonly used by customers in conversation, such as numbers and dates. 
+Learn about system entities that are provided by IBM for you to use out of the box. These built-in utility entities help your assistant recognize terms and references that are commonly used by customers in conversation, such as numbers and dates. 
 {: shortdesc}
 
 A new and improved version of the numeric system entities is generally available. For more details, see [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities).
@@ -191,7 +191,7 @@ For information about processing date and time values, see the [Date and time me
 Available as a beta feature for only languages noted in the [Supported languages](/docs/services/assistant?topic=assistant-language-support) topic. A powerful alternative to using this system entity is to use a contextual entity for identifying proper nouns, such as locations. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/services/assistant?topic=assistant-entities#entities-annotations-overview).
 {: tip}
 
-The @sys-location system entity extracts place names (country, state/province, city, town, etc.) from the user's input. The value of the entity is not a system-standard value of the location.
+The @sys-location system entity extracts place names (country, state/province, city, town, etc.) from the user's input.
 
 ### Recognized formats
 {: #system-entities-sys-location-formats}
@@ -318,7 +318,7 @@ You get equivalent results for other supported languages.
 Available as a beta feature for only languages noted in the [Supported languages](/docs/services/assistant?topic=assistant-language-support) topic. A powerful alternative to using this system entity is to use a contextual entity for identifying proper nouns, such as names. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/services/assistant?topic=assistant-entities#entities-annotations-overview).
 {: tip}
 
-The @sys-person system entity extracts names from the user's input. Names are recognized individually, so that "Joe" is not treated as "Joseph", or vice versa. The value of the entity is not a system-standard value of the name.
+The @sys-person system entity extracts names from the user's input. Names are recognized individually, so that "Joe" is not treated as "Joseph", or vice versa.
 
 ### Recognized formats
 {: #system-entities-sys-person-formats}

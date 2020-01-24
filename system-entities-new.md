@@ -49,7 +49,7 @@ To enable the new system entities, complete the following steps:
 
 Test the new system entities by adding one or more of them to dialog node conditions or in the condition of a dialog node's conditional responses. Then, from the "Try it out" pane, submit user utterances that trigger the nodes you added.
 
-If you decide you prefer the behavior of the previous version of the system entities, you can stop using the new version at any time. Return to the **Options>System entities**, and then select **Use legacy version**. Give Watson time to retrain.
+If you decide you prefer the behavior of the previous version of the system entities, you can stop using the new version at any time. Return to the **Options>System entities** page, and then select **Use legacy version**. Give Watson time to retrain.
 
 If you decide to continue using the new version, review any existing dialog nodes that condition on or return system entity values to determine if you need to make changes. For example, some mentions were classified as more than one system entity type before. Now, if a currency is mentioned, for example, it is classified as a `@sys-currency` only. You might be able to simplify logic you used before to work around the prior behavior. Or you might need to revise logic that you added that relies on the old behavior.
 
