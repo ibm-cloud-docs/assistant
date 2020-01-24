@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-14"
+lastupdated: "2020-01-24"
 
 subcollection: assistant
 
@@ -51,6 +51,12 @@ The {{site.data.keyword.conversationshort}} algorithms may be periodically refin
 Existing models that you have trained will not be immediately impacted, but expired models will be updated to the current model, if you have not already done so, after 60 days of a new model becoming available.
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
+
+## 24 January 2020
+{: #24January2020}
+<!--1.87.4-->
+
+- **New system entities are now generally available in non-English skills**: The new and improved numeric system entities are now generally available in all supported languages, except Arabic, Chinese, Japanese, and Korean, where they are available as a beta feature. They are not used by your dialog skill unless you explicitly enable them from the **Options>System entities** page. For more information, see [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities).
 
 ## 14 January 2020
 {: #14January2020}
