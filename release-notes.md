@@ -56,7 +56,7 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #24January2020}
 <!--1.87.4-->
 
-- **New system entities are now generally available in non-English skills**: The new and improved numeric system entities are now generally available in all supported languages, except Arabic, Chinese, Japanese, and Korean, where they are available as a beta feature. They are not used by your dialog skill unless you explicitly enable them from the **Options>System entities** page. For more information, see [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities).
+- **New system entities are now generally available in multiple languages**: The new and improved numeric system entities are now generally available in all supported languages, except Arabic, Chinese, Japanese, and Korean, where they are available as a beta feature. They are not used by your dialog skill unless you enable them from the **Options>System entities** page. For more information, see [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities).
 
 ## 14 January 2020
 {: #14January2020}
