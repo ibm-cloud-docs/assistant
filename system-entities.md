@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-24"
 
 keywords: system entity, sys-number, sys-date, sys-time
 
@@ -30,11 +30,11 @@ subcollection: assistant
 Learn about system entities that are provided by IBM for you to use out of the box. These built-in utility entities help your assistant recognize terms and references that are commonly used by customers in conversation, such as numbers and dates. 
 {: shortdesc}
 
-System entities are available for languages noted in the [Supported languages](/docs/services/assistant?topic=assistant-language-support) topic.
+A new and improved version of the numeric system entities is generally available. For more details, see [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities).
 
-If your dialog skill is in English or German, you can try out the updated system entities. For more details, see [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities).
+For information about language support for system entities, see [Supported languages](/docs/services/assistant?topic=assistant-language-support).
 
-For more information about how to use them, see [Creating entities](/docs/services/assistant?topic=assistant-entities#entities-enable-system-entities).
+For more information about how to use system entities from dialog, see [Creating entities](/docs/services/assistant?topic=assistant-entities#entities-enable-system-entities).
 
 ## @sys-currency entity
 {: #system-entities-sys-currency}
@@ -100,7 +100,8 @@ You get equivalent results for other supported languages and national currencies
 
 The `@sys-date` system entity extracts mentions such as `Friday`, `today`, or `November 1`. The value of this entity stores the corresponding inferred date as a string in the format "yyyy-MM-dd" e.g. "2016-11-21". The system augments missing elements of a date (such as the year for "November 21") with the current date values.
 
-**Note:** - For English locale only, the default system behavior for date input is MM/DD/YYYY. This will change to DD/MM/YYYY only if the first two numbers are greater than 12. The value stored will still be in the format "yyyy-MM-dd".
+For English locale only, the default system behavior for date input is MM/DD/YYYY. This will change to DD/MM/YYYY only if the first two numbers are greater than 12. The value stored will still be in the format "yyyy-MM-dd".
+{: note}
 
 The `@sys-time` system entity extracts mentions such as `2pm`, `at 4`, or `15:30`. The value of this entity stores the time as a string in the format "HH:mm:ss". For example, "13:00:00."
 
@@ -187,7 +188,10 @@ For information about processing date and time values, see the [Date and time me
 ## @sys-location entity
 {: #system-entities-sys-location}
 
-**BETA, for languages noted in the [Supported languages](/docs/services/assistant?topic=assistant-language-support) topic**: The @sys-location system entity extracts place names (country, state/province, city, town, etc.) from the user's input. The value of the entity is not a system-standard value of the location.
+Available as a beta feature for only languages noted in the [Supported languages](/docs/services/assistant?topic=assistant-language-support) topic. A powerful alternative to using this system entity is to use a contextual entity for identifying proper nouns, such as locations. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/services/assistant?topic=assistant-entities#entities-annotations-overview).
+{: tip}
+
+The @sys-location system entity extracts place names (country, state/province, city, town, etc.) from the user's input.
 
 ### Recognized formats
 {: #system-entities-sys-location-formats}
@@ -311,7 +315,10 @@ You get equivalent results for other supported languages.
 ## @sys-person entity
 {: #system-entities-sys-person}
 
-**BETA, for languages noted in the [Supported languages](/docs/services/assistant?topic=assistant-language-support) topic**: The @sys-person system entity extracts names from the user's input. Names are recognized individually, so that "Joe" is not treated as "Joseph", or vice versa. The value of the entity is not a system-standard value of the name.
+Available as a beta feature for only languages noted in the [Supported languages](/docs/services/assistant?topic=assistant-language-support) topic. A powerful alternative to using this system entity is to use a contextual entity for identifying proper nouns, such as names. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/services/assistant?topic=assistant-entities#entities-annotations-overview).
+{: tip}
+
+The @sys-person system entity extracts names from the user's input. Names are recognized individually, so that "Joe" is not treated as "Joseph", or vice versa.
 
 ### Recognized formats
 {: #system-entities-sys-person-formats}

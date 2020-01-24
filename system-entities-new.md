@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-10-09"
+lastupdated: "2020-01-24"
 
 subcollection: assistant
 
@@ -23,7 +23,7 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:gif: data-image-type='gif'}
 
-# New system entities ![Beta](images/beta.png)
+# New system entities
 {: #beta-system-entities}
 
 Enable the new system entities to take advantage of improvements that were made to the number-based system entities provided by IBM.
@@ -41,17 +41,17 @@ The `@sys-location` and `@sys-person` system entities did not change.
 
 To enable the new system entities, complete the following steps:
 
-1.  From the Skills page, open your skill.
-1.  Click the **Options** tab.
-1.  Click **System Entities**, and then choose **Try beta**.
-1.  Click the **Entities** tab, and then click **System entities**.
-1.  Turn on the system entitites that you want to use in your dialog.
+1.  Click the **Skills** icon ![Skills menu icon](images/nav-skills-icon.png), and then open your skill.
+1.  From the Skills menu, click **Options**, and then click **System Entities**.
+1.  Select **Use new system entities**.
+1.  From the Skills menu, click **Entities**, and then click **System entities**.
+1.  Turn on the individual system entitites that you want to use in your dialog.
 
 Test the new system entities by adding one or more of them to dialog node conditions or in the condition of a dialog node's conditional responses. Then, from the "Try it out" pane, submit user utterances that trigger the nodes you added.
 
-If you decide you prefer the behavior of the previous version of the system entities, you can stop using the beta version at any time. Return to the **System entities** page on the **Options** tab, and choose **Keep existing**. Give Watson time to retrain.
+If you decide you prefer the behavior of the previous version of the system entities, you can stop using the new version at any time. Return to the **Options>System entities** page, and then select **Use legacy version**. Give Watson time to retrain.
 
-If you decide to continue using the beta version, review any existing dialog nodes that condition on or return system entity values to determine if you need to make changes. For example, some mentions were classified as more than one system entity type before. Now, if a currency is mentioned, for example, it is classified as a `@sys-currency` only. You might be able to simplify logic you used before to work around the behavior. Or you might need to revise logic that you added that relies on the old behavior.
+If you decide to continue using the new version, review any existing dialog nodes that condition on or return system entity values to determine if you need to make changes. For example, some mentions were classified as more than one system entity type before. Now, if a currency is mentioned, for example, it is classified as a `@sys-currency` only. You might be able to simplify logic you used before to work around the prior behavior. Or you might need to revise logic that you added that relies on the old behavior.
 
 ### New system entity properties
 {: #beta-system-entities-props}
