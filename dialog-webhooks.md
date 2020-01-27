@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-11-05"
+lastupdated: "2020-01-27"
 
 subcollection: assistant
 
@@ -72,7 +72,7 @@ To add the webhook details, complete the following steps:
     For example, to call the Language Translator service, specify the URL for your service instance.
 
     ```bash
-    https://gateway.watsonplatform.net/language-translator/api/v3/translate?version=2018-05-01
+    https://api.us-south.language-translator.watson.cloud.ibm.com/v3/translate?version=2018-05-01
     ```
     {: codeblock}
 
