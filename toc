@@ -129,15 +129,16 @@ Watson Assistant
     {: .navgroup-end}
 
     {: .navgroup id="help"}
+    faqs.md
     release-notes.md
+    troubleshoot.md
+    feedback.md
 
     {: .topicgroup}
     Developer community
-        [StackOverflow](https://stackoverflow.com/questions/tagged/watson-conversation+or+watson-assistant)
+        [StackOverflow](https://stackoverflow.com/questions/tagged/watson-assistant)
         [IBM Developer Answers](https://developer.ibm.com/answers/topics/watson-assistant/)
         [WDC Slack channel](http://wdc-slack-inviter.mybluemix.net/)
 
-    feedback.md
-    troubleshoot.md
     accessibility.md
     {: .navgroup-end}
