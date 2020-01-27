@@ -72,7 +72,7 @@ To add the webhook details, complete the following steps:
     For example, to call the Language Translator service, specify the URL for your service instance.
 
     ```bash
-    https://https://api.us-south.language-translator.watson.cloud.ibm.com/v3/translate?version=2018-05-01
+    https://api.us-south.language-translator.watson.cloud.ibm.com/v3/translate?version=2018-05-01
     ```
     {: codeblock}
 
