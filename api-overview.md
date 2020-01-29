@@ -55,4 +55,4 @@ The v1 API provides methods that enable an application to create or modify dialo
 
   **Note:** The v1 authoring methods create and modify workspaces rather than skills. A workspace is a container for the dialog and training data (such as intents and entities) within a dialog skill. If you create a new workspace using the API, it will appear as a new dialog skill in the {{site.data.keyword.conversationshort}} user interface.
 
-For a list of the available API methods, see [API methods summary](/docs/services/assistant?topic=assistant-api-methods).
+For a list of the available API methods, see [API methods summary](/docs/assistant?topic=assistant-api-methods).

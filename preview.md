@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-12-17"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -40,7 +40,7 @@ In particular, the preview experience removes the **Dialog**, **Intents**, and *
 The following features are available in the technology preview experience only.
 {: preview}
 
-- **Actions**: Use actions to take a conversation-first approach to defining what your assistant will do to help your customers. See [Creating actions](/docs/services/assistant?topic=assistant-actions).
+- **Actions**: Use actions to take a conversation-first approach to defining what your assistant will do to help your customers. See [Creating actions](/docs/assistant?topic=assistant-actions).
 
 - **New navigation**: A new navigation bar is available in some locations. Use the menu to switch between key tasks you can complete for the current assistant, such as building a dialog skill, building a search skill, or deploying the assistant.
 

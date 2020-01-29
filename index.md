@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-14"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -84,16 +84,16 @@ Here's how you implement your assistant:
 
   Your deployed assistant is hosted by {{site.data.keyword.cloud}}, the IBM cloud computing platform. (For more information, see [Platform overview](/docs/overview?topic=overview-whatis-platform){: external}.) 
 
-  If you are interested in on-premises deployments, see the [{{site.data.keyword.conversationfull}} for {{site.data.keyword.icp4dfull}} documentation](/docs/services/assistant-data?topic=assistant-data-index).
+  If you are interested in on-premises deployments, see the [{{site.data.keyword.conversationfull}} for {{site.data.keyword.icp4dfull}} documentation](/docs/assistant-data?topic=assistant-data-index).
 
 Read more about these implementation steps by following these links:
 
-- [Assistant overview](/docs/services/assistant?topic=assistant-assistants)
-- [Search skill overview](/docs/services/assistant?topic=assistant-skill-search-add)
-- [Intent creation overview](/docs/services/assistant?topic=assistant-intents#intents-described)
-- [Dialog overview](/docs/services/assistant?topic=assistant-dialog-overview)
-- [Entity creation overview](/docs/services/assistant?topic=assistant-entities#entities-described)
-- [Adding integrations](/docs/services/assistant?topic=assistant-deploy-integration-add)
+- [Assistant overview](/docs/assistant?topic=assistant-assistants)
+- [Search skill overview](/docs/assistant?topic=assistant-skill-search-add)
+- [Intent creation overview](/docs/assistant?topic=assistant-intents#intents-described)
+- [Dialog overview](/docs/assistant?topic=assistant-dialog-overview)
+- [Entity creation overview](/docs/assistant?topic=assistant-entities#entities-described)
+- [Adding integrations](/docs/assistant?topic=assistant-deploy-integration-add)
 
 ## Browser support
 {: #index-browser-support}
@@ -105,7 +105,7 @@ For information about the web browsers that are supported by the Web Chat integr
 ## Language support
 {: #index-lang-support}
 
-Language support by feature is detailed in the [Supported languages](/docs/services/assistant?topic=assistant-language-support) topic.
+Language support by feature is detailed in the [Supported languages](/docs/assistant?topic=assistant-language-support) topic.
 
 ## Terms and notices
 {: #index-notices}
@@ -117,7 +117,7 @@ US Health Insurance Portability and Accountability Act (HIPAA) support is availa
 ## Next steps
 {: #index-next-steps}
 
-- [Get started](/docs/services/assistant?topic=assistant-getting-started) with the product.
+- [Get started](/docs/assistant?topic=assistant-getting-started) with the product.
 - View the list of [developer resources)](https://www.ibm.com/watson/developer-resources/){: external}.
 
 Have questions? Contact [IBM Sales](https://www.ibm.com/account/reg/us-en/signup?formid=urx-20970){: external}.

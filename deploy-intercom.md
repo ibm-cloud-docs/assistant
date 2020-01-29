@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-10-23"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -65,7 +65,7 @@ You or someone in your organziation must complete these one-time prerequisite st
 ## Preparing the dialog
 {: #deploy-intercom-dialog-prereq}
 
-If you do not have a dialog skill associated with your assistant, create one or add one to your assistant now. See [Building a dialog](/docs/services/assistant?topic=assistant-dialog-build) for more details.
+If you do not have a dialog skill associated with your assistant, create one or add one to your assistant now. See [Building a dialog](/docs/assistant?topic=assistant-dialog-build) for more details.
 
 Triggering a search through a search skill is not currently supported from an Intercom integration.
 {: note}
@@ -113,7 +113,7 @@ Some rich responses that you add to a dialog are displayed differently within th
 | **Image**     | The image **title**, **description**, and the image itself are rendered. |
 | **Pause**     | Whether or not you enable it, a typing indicator is not displayed during the pause. |
 
-See [Rich responses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more information about response types.
+See [Rich responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more information about response types.
 
 ## Adding an Intercom integration
 {: #deploy-intercom-add-intercom}

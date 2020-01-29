@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-07-30"
+lastupdated: "2020-01-28"
 
 subcollection: assistant
 
@@ -54,7 +54,7 @@ The v2 runtime API sends messages to an assistant, which routes the messages to 
 
 1. Click the **Assistants** tab. Click **Create assistant** to create a new assistant. When prompted to add skills, click **Add dialog skill** and select the dialog skill that corresponds to your workspace.
 
-  For more information about creating assistants, see [Creating an assistant](https://cloud.ibm.com/docs/services/assistant?topic=assistant-assistant-add).
+  For more information about creating assistants, see [Creating an assistant](/docs/assistant?topic=assistant-assistant-add).
 
 1. After your new assistant is created, click the ![Menu](images/kebab-react.png) menu and then select **Settings**.
 
@@ -163,9 +163,9 @@ After you have created an assistant, you can update your client application to u
   {: codeblock}
   {: java}
 
-   If you do not explicitly delete the session, it will be automatically deleted after the configured timeout interval. (The timeout duration depends on your plan; for more information, see [Session limits](/docs/services/assistant?topic=assistant-assistant-settings#assistant-settings-session-limits).)
+   If you do not explicitly delete the session, it will be automatically deleted after the configured timeout interval. (The timeout duration depends on your plan; for more information, see [Session limits](/docs/assistant?topic=assistant-assistant-settings#assistant-settings-session-limits).)
 
-To see examples of the v2 APIs in the context of a simple client application, see [Building a client application](/docs/services/assistant?topic=assistant-api-client).
+To see examples of the v2 APIs in the context of a simple client application, see [Building a client application](/docs/assistant?topic=assistant-api-client).
 
 ## Handle the v2 response format
 
@@ -196,4 +196,4 @@ Note that with the v2 API, the context is by default not included in responses t
 
   Make sure the context object you send conforms to the v2 format. All user-defined context variables sent by your application should be part of the skill context; typically, the only global context variable you might need to set is `system.user_id`, which is used by Plus and Premium plans for billing purposes.
 
-- You can still retrieve context variables from either the global or skill context. To have the `context` object included with message responses, use the **return_context** property in the message input options. For more information, see [Accessing context data](/docs/services/assistant?topic=assistant-api-client-get-context).
+- You can still retrieve context variables from either the global or skill context. To have the `context` object included with message responses, use the **return_context** property in the message input options. For more information, see [Accessing context data](/docs/assistant?topic=assistant-api-client-get-context).

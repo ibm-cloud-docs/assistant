@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-14"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -46,7 +46,7 @@ To learn more about how search skill can benefit your business, [read this blog 
 
 The search skill searches for information from a data collection that you create by using the {{site.data.keyword.discoveryshort}} service.
 
-{{site.data.keyword.discoveryshort}} is a service that crawls, converts, and normalizes your unstructured data. The product applies data analysis and cognitive intuition to enrich your data such that you can more easily find and retrieve meaningful information from it later. To read more about {{site.data.keyword.discoveryshort}}, see the [product documentation](/docs/services/discovery?topic=discovery-about){: external}.
+{{site.data.keyword.discoveryshort}} is a service that crawls, converts, and normalizes your unstructured data. The product applies data analysis and cognitive intuition to enrich your data such that you can more easily find and retrieve meaningful information from it later. To read more about {{site.data.keyword.discoveryshort}}, see the [product documentation](/docs/discovery?topic=discovery-about){: external}.
 
 Typically, the type of data collection you add to {{site.data.keyword.discoveryshort}} and access from your assistant contains information that is owned by your company. This proprietary information can include FAQs, sales collateral, technical manuals, or papers written by subject matter experts. Mine this dense collection of proprietary information to find answers to customer questions quickly.
 
@@ -105,7 +105,7 @@ The remaining steps differ depending on whether you have access to an existing {
 
     - If you do not have a collection or do not want to use any of the data collections that are listed, click **Create a new collection** to add one. Follow the procedure in [Create a data collection](#skill-search-add-create-discovery-collection).
 
-      The **Create a new collection** button is not displayed if you have reached the limit to the number of collections you are allowed to create based on your {{site.data.keyword.discoveryshort}} service plan. See [{{site.data.keyword.discoveryshort}} pricing plans](/docs/services/discovery/discovery-about?topic=discovery-discovery-pricing-plans){: external} for plan limit details.
+      The **Create a new collection** button is not displayed if you have reached the limit to the number of collections you are allowed to create based on your {{site.data.keyword.discoveryshort}} service plan. See [{{site.data.keyword.discoveryshort}} pricing plans](/docs/discovery/discovery-about?topic=discovery-discovery-pricing-plans){: external} for plan limit details.
       {: note}
 
 ## Create a Watson Discovery service instance
@@ -133,7 +133,7 @@ If you have a Discovery service Lite plan, you are given an opportunity to upgra
 
         1.  Provide the required information for the data source you choose, and then click **Connect**.
 
-            For a list of the supported data types and details on how to set up access to them, see [Connecting to data sources](/docs/services/discovery?topic=discovery-sources){: external}.
+            For a list of the supported data types and details on how to set up access to them, see [Connecting to data sources](/docs/discovery?topic=discovery-sources){: external}.
         1.  Indicate the frequency with which you want data from the data source to be synchronized with the collection you are creating in {{site.data.keyword.discoveryshort}}.
         1.  Specify the information that you want to extract from the data source and include in your {{site.data.keyword.discoveryshort}} collection.
 
@@ -157,12 +157,12 @@ If you have a Discovery service Lite plan, you are given an opportunity to upgra
         1.  First, you define the collection, and then you upload the documents. Provide the following information:
 
             - Collection name. The name must be unique for this service instance.
-            - Language. Select the language of the files that you are adding to this collection. For information about the languages supported by {{site.data.keyword.discoveryshort}}, see [Language support](/docs/services/discovery?topic=discovery-language-support){: external}.
+            - Language. Select the language of the files that you are adding to this collection. For information about the languages supported by {{site.data.keyword.discoveryshort}}, see [Language support](/docs/discovery?topic=discovery-language-support){: external}.
 
-              If you are uploading a PDF document and want to extract party, nature, and category information from it, then expand the **Advanced** section and click **Use the Default Contract Configuration with this collection**. See [Collection requirements](/docs/services/discovery?topic=discovery-element-classification#element-collection){: external} for more details.
+              If you are uploading a PDF document and want to extract party, nature, and category information from it, then expand the **Advanced** section and click **Use the Default Contract Configuration with this collection**. See [Collection requirements](/docs/discovery?topic=discovery-element-classification#element-collection){: external} for more details.
         1.  Upload documents.
 
-            Supported file types include PDF, HTML, JSON, and DOC files. See [Adding content](/docs/services/discovery?topic=discovery-addcontent){: external} for more details.
+            Supported file types include PDF, HTML, JSON, and DOC files. See [Adding content](/docs/discovery?topic=discovery-addcontent){: external} for more details.
             {: note}
 
             No ongoing synchronization of uploaded documents is available. If you want to pick up changes that are made to a document, upload a later version of the document.
@@ -179,7 +179,7 @@ For example, you might have a JSON file like this one:
   "Title": "About",
   "Shortdesc": "IBM Watson Assistant is a cognitive bot that you can customize for your business needs, and deploy across multiple channels to bring help to your customers where and when they need it.",
   "Topics": "overview",
-  "url": "https://cloud.ibm.com/docs/services/assistant?topic=assistant-index"
+  "url": "https://cloud.ibm.com/docs/assistant?topic=assistant-index"
 }
 ```
 {: codeblock}
@@ -269,7 +269,7 @@ The appropriate collection fields to extract data from vary depending on your co
 
 To learn more about the structure of the documents in your collection, including the names of fields that contain information you might want to extract, open the collection in {{site.data.keyword.discoveryshort}}, and then click the View data schema icon ![View data schema icon](images/icon-view-data-schema.png).
 
-The source fields are created when the collection is created. To learn more about fields that are generated for you, such as `enriched_text.concepts.text`, see [Configuring your service > Adding enrichments](/docs/services/discovery?topic=discovery-configservice#adding-enrichments){: external}.
+The source fields are created when the collection is created. To learn more about fields that are generated for you, such as `enriched_text.concepts.text`, see [Configuring your service > Adding enrichments](/docs/discovery?topic=discovery-configservice#adding-enrichments){: external}.
 
 ## Troubleshooting
 {: #skill-search-add-troubleshoot}
@@ -287,7 +287,7 @@ Review this information for help with performing common tasks.
 
   This feature enables you to annotate documents based on text formatting. For example, you can teach {{site.data.keyword.discoveryshort}} that any text in 28-point bold font is a document title. If you apply this information to the collection when you ingest it, you can later use the *title* field as the source for the title section of your search result. 
   
-  You can also use Smart Document Understanding to split up large documents into segments that are easier to search. For more information, see the the [Smart Document Understanding](/docs/services/discovery?topic=discovery-sdu) topic in the {{site.data.keyword.discoveryshort}} documentation.
+  You can also use Smart Document Understanding to split up large documents into segments that are easier to search. For more information, see the the [Smart Document Understanding](/docs/discovery?topic=discovery-sdu) topic in the {{site.data.keyword.discoveryshort}} documentation.
 
 - **Improve search results**: If you don't like the results you are seeing, review this information for help.
 
@@ -295,7 +295,7 @@ Review this information for help with performing common tasks.
 
     From a dialog node search skill response, you can specify a full {{site.data.keyword.discoveryshort}} query syntax filter to help narrow the results. 
     
-    For example, you can define a filter that filters out any documents in the data collection that do not mention an intent in the document title or some other metadata field. Or the filter can filter out documents that do not identify an entity as a known entity in the data collection's metadata or that don't mention the entity anywhere in the full text of the document. For details about how to add a search skill response type, see [Adding rich responses](https://cloud.ibm.com/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia-add).
+    For example, you can define a filter that filters out any documents in the data collection that do not mention an intent in the document title or some other metadata field. Or the filter can filter out documents that do not identify an entity as a known entity in the data collection's metadata or that don't mention the entity anywhere in the full text of the document. For details about how to add a search skill response type, see [Adding rich responses](https://cloud.ibm.com/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia-add).
 
     For more tips about improving results, read the [Improve your natural language query results from Watson Discovery](https://developer.ibm.com/blogs/improving-your-natural-language-query-results-from-watson-discovery/){: external} blog post.
 
@@ -332,7 +332,7 @@ Review this information for help with performing common tasks.
 
 After you create the skill, it appears as a tile on the Skills page.
 
-The search skill cannot interact with customers until it is added to an assistant and the assistant is deployed. See [Creating assistants](/docs/services/assistant?topic=assistant-assistant-add).
+The search skill cannot interact with customers until it is added to an assistant and the assistant is deployed. See [Creating assistants](/docs/assistant?topic=assistant-assistant-add).
 
 ### Adding the skill to an assistant
 {: #skill-search-add-to-assistant}
@@ -358,7 +358,7 @@ After you add a search skill to an assistant, it is automatically enabled for th
   You can prevent the search from being triggered from the `anything_else` node by following the steps in [Disabling search](#search-skill-add-disable).
   {: note}
 
-- If you want a specific search query to be triggered for specific questions, add a search skill response type to the appropriate dialog node. See [Responses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more details.
+- If you want a specific search query to be triggered for specific questions, add a search skill response type to the appropriate dialog node. See [Responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more details.
 
 ## Search triggers
 {: #skill-search-add-trigger}
@@ -412,7 +412,7 @@ Follow this procedure to make it less likely that the dialog will respond by res
 
 After changing the dialog, test the assistant to make sure the search skill is triggered as often as you want it to be.
 
-An alternative approach is to teach the dialog about topics to ignore. To do so, you can add utterances that you want the assistant to send to the search skill immediately as test utterances in the dialog skill's "Try it out" pane. You can then select the **Mark as irrelevant** option within the "Try it out" pane to teach the dialog not to respond to this utterance or others like it. For more information, see [Teaching your assistant about topics to ignore](/docs/services/assistant?topic=assistant-logs#logs-mark-irrelevant).
+An alternative approach is to teach the dialog about topics to ignore. To do so, you can add utterances that you want the assistant to send to the search skill immediately as test utterances in the dialog skill's "Try it out" pane. You can then select the **Mark as irrelevant** option within the "Try it out" pane to teach the dialog not to respond to this utterance or others like it. For more information, see [Teaching your assistant about topics to ignore](/docs/assistant?topic=assistant-logs#logs-mark-irrelevant).
 
 ## Disabling search
 {: #search-skill-add-disable}

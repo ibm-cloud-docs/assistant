@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-11-12"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -51,8 +51,8 @@ To create a skill, complete the following step:
 
     Follow the remaining steps in the appropriate procedure to complete the skill creation process.
 
-      - [Dialog Skill](/docs/services/assistant?topic=assistant-skill-dialog-add)
-      - [Search Skill](/docs/services/assistant?topic=assistant-skill-search-add)
+      - [Dialog Skill](/docs/assistant?topic=assistant-skill-dialog-add)
+      - [Search Skill](/docs/assistant?topic=assistant-skill-search-add)
 
 ## Skill limits
 {: #skill-add-limits}

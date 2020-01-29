@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-24"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -41,7 +41,7 @@ The first table shows the level of support for all features, except those relate
 
 **Table 1. Feature support details**
 
-| Language | **Defining [intents](/docs/services/assistant?topic=assistant-intents)**, **[entities](/docs/services/assistant?topic=assistant-entities)**, and **[dialog](/docs/services/assistant?topic=assistant-dialog-build)** | **Search** |
+| Language | **Defining [intents](/docs/assistant?topic=assistant-intents)**, **[entities](/docs/assistant?topic=assistant-entities)**, and **[dialog](/docs/assistant?topic=assistant-dialog-build)** | **Search** |
 |:---:|:---:|:---:|
 | **English (en)**                   | GA | GA |
 | **Arabic (ar)**                    | GA | NA |
@@ -60,7 +60,7 @@ The first table shows the level of support for all features, except those relate
 
 **Table 2a. Intent feature support details**
 
-| Language | **[Absolute scoring](/docs/services/assistant?topic=assistant-intents#intents-absolute-scoring)** and **[Mark as irrelevant](/docs/services/assistant?topic=assistant-logs#logs-mark-irrelevant)** | **[Content Catalog](/docs/services/assistant?topic=assistant-catalog)** |
+| Language | **[Absolute scoring](/docs/assistant?topic=assistant-intents#intents-absolute-scoring)** and **[Mark as irrelevant](/docs/assistant?topic=assistant-logs#logs-mark-irrelevant)** | **[Content Catalog](/docs/assistant?topic=assistant-catalog)** |
 |:---:|:---:|:---:|
 | **English (en)**                   | GA | GA |
 | **Arabic (ar)**                    | Beta | GA |
@@ -79,7 +79,7 @@ The first table shows the level of support for all features, except those relate
 
 **Table 2b. Intent feature support details continued**
 
-| Language | **[User example recommendations](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations)** | **[Intent recommendations](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-intent-recommendations)** | **[Irrelevance detection](/docs/services/assistant?topic=assistant-irrelevance-detection)** |
+| Language | **[User example recommendations](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations)** | **[Intent recommendations](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-intent-recommendations)** | **[Irrelevance detection](/docs/assistant?topic=assistant-irrelevance-detection)** |
 |:---:|:---:|:---:|
 | **English (en)**                   | GA | GA | GA |
 | **Arabic (ar)**                    | NA | NA | NA |
@@ -98,7 +98,7 @@ The first table shows the level of support for all features, except those relate
 
 **Table 3. Entity feature support details**
 
-| Language | **[Entity fuzzy matching](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Contextual entities](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based)** | **[Synonym recommendations](/docs/services/assistant?topic=assistant-entities#entities-synonyms)** |
+| Language | **[Entity fuzzy matching](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Contextual entities](/docs/assistant?topic=assistant-entities#entities-create-annotation-based)** | **[Synonym recommendations](/docs/assistant?topic=assistant-entities#entities-synonyms)** |
 |:---:|:---:|:---:|:---:|
 | **English (en)**                   | GA | Beta | GA |
 | **Arabic (ar)**                    | GA (Misspelling only) | NA | NA |
@@ -117,9 +117,9 @@ The first table shows the level of support for all features, except those relate
 
 **Table 4. System entity feature support details**
 
-| Language | **System entities ([number](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-number), [currency](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-currency), [percentage](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-percentage), [date, time](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-date-time))** | **[New system entities](/docs/services/assistant?topic=assistant-beta-system-entities)** |
+| Language | **System entities ([number](/docs/assistant?topic=assistant-system-entities#system-entities-sys-number), [currency](/docs/assistant?topic=assistant-system-entities#system-entities-sys-currency), [percentage](/docs/assistant?topic=assistant-system-entities#system-entities-sys-percentage), [date, time](/docs/assistant?topic=assistant-system-entities#system-entities-sys-date-time))** | **[New system entities](/docs/assistant?topic=assistant-beta-system-entities)** |
 |:---|:---:|:---:|
-| **English (en)**                   | GA, Beta ([location](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-location), [person](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-person)) | GA |
+| **English (en)**                   | GA, Beta ([location](/docs/assistant?topic=assistant-system-entities#system-entities-sys-location), [person](/docs/assistant?topic=assistant-system-entities#system-entities-sys-person)) | GA |
 | **Arabic (ar)**                    | Beta | Beta |
 | **Chinese (Simplified) (zh-cn)**   | GA | Beta |
 | **Chinese (Traditional) (zh-tw)**  | Beta | Beta |

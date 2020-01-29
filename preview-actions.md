@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-11-26"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -31,7 +31,7 @@ subcollection: assistant
 Actions represent the discrete tasks or questions that your assistant is designed to handle. 
 {: shortdesc}
 
-This feature is visible only in a select set of service instances where the technology preview is deployed. See [Preview details](/docs/services/assistant?topic=assistant-preview). 
+This feature is visible only in a select set of service instances where the technology preview is deployed. See [Preview details](/docs/assistant?topic=assistant-preview). 
 {: preview}
 
 ## Actions overview
@@ -107,7 +107,7 @@ To create an action, complete the following steps:
     - Adding messages that are responsive to customer information
     - Collecting a series of required values
 
-    See [Adding steps](/docs/services/assistant?topic=assistant-steps#steps-overview).
+    See [Adding steps](/docs/assistant?topic=assistant-steps#steps-overview).
 
 1.  **Optional**: Add another response type to the step. Click **Add response type**.
 
@@ -218,7 +218,7 @@ As you make changes, test the action at any time to see whether the resulting in
     1.  To add a context variable, specify the variable name, and press **Enter**.
     1.  To define a default value for the context variable, find the context variable you added in the list, and then specify a value for it.
 
-    For more information about variables, see [Context variables](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-context).
+    For more information about variables, see [Context variables](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-context).
 
 1.  Continue to converse with your assistant to see how the conversation flows.
 
@@ -249,7 +249,7 @@ If you determine that the wrong actions are being triggered, you might need to m
 
 If the correct action is being triggered, but the wrong interactions are happening, review the steps that you defined for the action.
 
-If you are ready to put this set of actions to work helping your customers, integrate your assistant with a messaging platform or custom application. See [Adding integrations](/docs/services/assistant?topic=assistant-deploy-integration-add).
+If you are ready to put this set of actions to work helping your customers, integrate your assistant with a messaging platform or custom application. See [Adding integrations](/docs/assistant?topic=assistant-deploy-integration-add).
 
 <!-- ### Irrelevant actions
 {: #actions-irrelevant}

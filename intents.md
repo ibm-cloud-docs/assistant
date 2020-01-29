@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-11-21"
+lastupdated: "2020-01-29"
 
 keywords: intent, intent conflicts, annotate
 
@@ -30,7 +30,7 @@ subcollection: assistant
 ***Intents*** are purposes or goals that are expressed in a customer's input, such as answering a question or processing a bill payment. By recognizing the intent expressed in a customer's input, the {{site.data.keyword.conversationshort}} service can choose the correct dialog flow for responding to it.
 {: shortdesc}
 
-![Technology preview experience only](images/preview.png) If you don't see the **Intents** page in your skill, then you are using the technology preview version of the product. To get started, see [Creating actions](/docs/services/assistant?topic=assistant-actions).
+![Technology preview experience only](images/preview.png) If you don't see the **Intents** page in your skill, then you are using the technology preview version of the product. To get started, see [Creating actions](/docs/assistant?topic=assistant-actions).
 
 <iframe class="embed-responsive-item" id="youtubeplayer" title="Working with intents" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/OPdOCUPGMIQ" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
@@ -51,7 +51,7 @@ subcollection: assistant
 
 Start with a few intents, and test them as you iteratively expand the scope of the application.
 
-![Plus or Premium plan only](images/plus.png) If you already have chat transcripts from a call center or customer inquiries that you collected from an online application, put that data to work for you. Share the real customer utterances with Watson and let Watson recommend the best intents and intent user examples for your needs. See [Get help defining intents](/docs/services/assistant?topic=assistant-intent-recommendations) for more details.
+![Plus or Premium plan only](images/plus.png) If you already have chat transcripts from a call center or customer inquiries that you collected from an online application, put that data to work for you. Share the real customer utterances with Watson and let Watson recommend the best intents and intent user examples for your needs. See [Get help defining intents](/docs/assistant?topic=assistant-intent-recommendations) for more details.
 
 ## Creating intents
 {: #intents-create-task}
@@ -95,7 +95,7 @@ Start with a few intents, and test them as you iteratively expand the scope of t
     Provide at least five examples for each intent.
     {: important}
 
-    ![Plus or Premium plan only](images/plus.png) To get help with user example creation, see [Get intent user example recommendations](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations).
+    ![Plus or Premium plan only](images/plus.png) To get help with user example creation, see [Get intent user example recommendations](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations).
 
 1.  When you are done adding examples, click ![Close arrow](images/close_arrow.png) to finish creating the intent.
 
@@ -128,7 +128,7 @@ If you have defined, or plan to define, entities that are related to this intent
 
 As you define entities, you can annotate mentions of the entity directly from your existing intent user examples. A relationship that you identify in this way between the intent and the entity is *not* used by the intent classification model. However, when you add the mention to the entity, it is also added to that entity as new value. And when you add the mention to an existing entity value, it is also added to that entity value as new synonym. Intent classification does use these types of dictionary references in intent user examples to establish a weak reference between an intent and an entity.
 
-For more information about contextual entities, see [Adding contextual entities](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based).
+For more information about contextual entities, see [Adding contextual entities](/docs/assistant?topic=assistant-entities#entities-create-annotation-based).
 
 ### Directly referencing an entity name in an intent example
 {: #intents-entity-as-example}
@@ -145,7 +145,7 @@ You can choose to directly reference entities in your intent examples. For insta
 
 ![Screen capture showing intent definition](images/define_intent_entity.png)
 
-Currently, you can only directly reference synonym entities that you define (pattern values are ignored). You cannot use [system entities](/docs/services/assistant?topic=assistant-system-entities).
+Currently, you can only directly reference synonym entities that you define (pattern values are ignored). You cannot use [system entities](/docs/assistant?topic=assistant-system-entities).
 
 If you choose to reference an entity as an intent example (for example, `@PhoneModelName`) *anywhere* in your training data it cancels the value of using a direct reference (for example, *Galaxy S8*) in an intent example anywhere else. All intents will then use the entity-as-an-intent-example approach. You cannot apply this approach for a specific intent only.
 {: important}
@@ -180,7 +180,7 @@ After you have finished creating new intents, you can test the system to see if 
 
     ![Mark as irrelevant screen capture](images/irrelevant.png)
 
-    For more information about this action, see [Teaching your assistant about topics to ignore](/docs/services/assistant?topic=assistant-logs#logs-mark-irrelevant).
+    For more information about this action, see [Teaching your assistant about topics to ignore](/docs/assistant?topic=assistant-logs#logs-mark-irrelevant).
 
 If your intents are not being correctly recognized, consider making the following kinds of changes:
 
@@ -191,7 +191,7 @@ If your intents are not being correctly recognized, consider making the followin
 ## Absolute scoring
 {: #intents-absolute-scoring}
 
-The {{site.data.keyword.conversationshort}} service scores each intent’s confidence independently, not in relation to other intents. This approach adds flexibility; multiple intents can be detected in a single user input. It also means that the system might not return an intent at all. If the top intent has a low confidence score (less than 0.2), the top intent is included in the intents array that is returned by the API, but any nodes that condition on the intent are not triggered. If you want to detect the case when no intents with good confidence scores were detected, use the `irrelevant` special condition in your dialog node. See [Special conditions](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-special-conditions) for more information.
+The {{site.data.keyword.conversationshort}} service scores each intent’s confidence independently, not in relation to other intents. This approach adds flexibility; multiple intents can be detected in a single user input. It also means that the system might not return an intent at all. If the top intent has a low confidence score (less than 0.2), the top intent is included in the intents array that is returned by the API, but any nodes that condition on the intent are not triggered. If you want to detect the case when no intents with good confidence scores were detected, use the `irrelevant` special condition in your dialog node. See [Special conditions](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-special-conditions) for more information.
 
 As intent confidence scores change, your dialogs might need restructuring. For example, if a dialog node uses an intent in its condition, and the intent's confidence score starts to consistently drop below 0.2, the dialog node stops being processed. If the confidence score changes, the behavior of the dialog can also change.
 
@@ -255,7 +255,7 @@ You can export a number of intents to a CSV file, so you can then import and reu
 
 If you have a large number of intents and examples, you might find it easier to import them from a comma-separated value (CSV) file than to define them one by one. Be sure to remove any personal data from the user examples that you include in the file.
 
-Alternatively, you can upload a file with raw user utterances (from call center logs, for example) and let Watson find candidates for user examples from the data. See [Adding examples from log files](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations) for more information. This feature is available to Plus or Premium plan users only.
+Alternatively, you can upload a file with raw user utterances (from call center logs, for example) and let Watson find candidates for user examples from the data. See [Adding examples from log files](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations) for more information. This feature is available to Plus or Premium plan users only.
 
 1.  Collect the intents and examples into a CSV file, or export them from a spreadsheet to a CSV file. The required format for each line in the file is as follows:
 

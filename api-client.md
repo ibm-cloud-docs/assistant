@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-10-11"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -40,8 +40,8 @@ The example application we will create in this section implements several functi
 Before continuing with this example, you need to set up the required assistant:
 
 1.  Download the dialog skill <a target="_blank" href="https://watson-developer-cloud.github.io/doc-tutorial-downloads/assistant/assistant-simple-example.json" download="assistant-simple-example.json">JSON file</a>.
-1.  [Import the skill](/docs/services/assistant?topic=assistant-skill-dialog-add#skill-dialog-add-task) into an instance of the {{site.data.keyword.conversationshort}} service.
-1.  [Create an assistant](/docs/services/assistant?topic=assistant-assistant-add) and connect the skill you imported.
+1.  [Import the skill](/docs/assistant?topic=assistant-skill-dialog-add#skill-dialog-add-task) into an instance of the {{site.data.keyword.conversationshort}} service.
+1.  [Create an assistant](/docs/assistant?topic=assistant-assistant-add) and connect the skill you imported.
 
 ## Getting service information
 {: #api-client-get-info}
@@ -839,7 +839,7 @@ Success! The application now uses the {{site.data.keyword.conversationshort}} se
 
 Of course, a real-world application would use a more sophisticated user interface, such as a web chat window. And it would implement more complex actions, possibly integrating with a customer database or other business systems. It would also need to send additional data to the assistant, such as a user ID to identify each unique user. But the basic principles of how the application interacts with the {{site.data.keyword.conversationshort}} service would remain the same.
 
-For some more complex examples, see [Sample apps](/docs/services/assistant?topic=assistant-sample-apps).
+For some more complex examples, see [Sample apps](/docs/assistant?topic=assistant-sample-apps).
 
 ## Using the v1 API
 {: #api-client-v1-api}

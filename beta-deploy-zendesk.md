@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-11-20"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -30,7 +30,7 @@ subcollection: assistant
 Zendesk Chat lets you help customers in real time, which increases customer satisfaction. And satisfied customers are happier customers.
 {: shortdesc}
 
-This feature was available for use by participants in the early access program only. However, support for this integration is being removed from the early access program. Starting 8 November 2019, you cannot add new integrations of this type to your assistant. This feature is being deprecated to make way for a more streamlined method of transferring customers to service desk personnel. To learn more about it, see [Beta: Integrating with your own website](/docs/services/assistant?topic=assistant-beta-deploy-web-chat#deploy-web-chat-haa).
+This feature was available for use by participants in the early access program only. However, support for this integration is being removed from the early access program. Starting 8 November 2019, you cannot add new integrations of this type to your assistant. This feature is being deprecated to make way for a more streamlined method of transferring customers to service desk personnel. To learn more about it, see [Beta: Integrating with your own website](/docs/assistant?topic=assistant-beta-deploy-web-chat#deploy-web-chat-haa).
 {: deprecated}
 
 Zendesk has partnered with IBM to add a new agent to the Zendesk support team, a virtual Watson Assistant. You can integrate your assistant with Zendesk Chat to enable the Zendesk Chat app to seamlessly pass user conversations between your assistant and its human support agents. Zendesk Chat enables customers to initiate live chat with an agent. Chat sessions become tickets that agents can update after the chat session. You can add Zendesk Chat to any website or Help Center. Agents can also chat with other agents, either one-on-one or by pulling them into a conversation with a visitor.
@@ -95,7 +95,7 @@ You or someone in your organziation must complete these one-time prerequisite st
 ## Preparing the dialog
 {: #deploy-zendesk-dialog-prereq}
 
-If you do not have a dialog skill associated with your assistant, create one or add one to your assistant now. See [Building a dialog](/docs/services/assistant?topic=assistant-dialog-build) for more details.
+If you do not have a dialog skill associated with your assistant, create one or add one to your assistant now. See [Building a dialog](/docs/assistant?topic=assistant-dialog-build) for more details.
 
 Triggering a search through a search skill is not currently supported from a Zendesk integration.
 {: note}
@@ -145,7 +145,7 @@ Some rich responses that you add to a dialog are displayed differently within th
 | **Image**     | The image **title**, **description**, and the image itself are rendered. |
 | **Pause**     | Whether or not you enable it, a typing indicator is not displayed during the pause. |
 
-See [Rich responses](/docs/services/assistant?topic=assistant-dialog-overview#multimedia) for more information about response types.
+See [Rich responses](/docs/assistant?topic=assistant-dialog-overview#multimedia) for more information about response types.
 
 ## Adding a Zendesk integration
 {: #deploy-zendesk-add-zendesk}

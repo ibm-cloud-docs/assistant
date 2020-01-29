@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-06"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -30,7 +30,7 @@ subcollection: assistant
 Add your assistant to your company website as a web chat widget that can transfer customers to human agents.
 {: shortdesc}
 
-This feature is available for use by participants in the early access program only. To find out how to request access, see [Participate in the early access program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
+This feature is available for use by participants in the early access program only. To find out how to request access, see [Participate in the early access program](/docs/assistant?topic=assistant-feedback#feedback-beta).
 {: preview}
 
 When you participate in the early access program, IBM gives you early access to features for your evaluation. These features are classified as beta, which means they might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment. Beta features are supported only on the [IBM Developer Answers](https://developer.ibm.com/answers/topics/watson-assistant/){: external}.
@@ -132,7 +132,7 @@ The rich responses that you add to a dialog are displayed in the web chat widget
 
 - **Pause**: This response type pauses the assistant's activity in the chat widget. However, activity does not resume after the pause until another response is triggered. Whenever you include a `pause` response type, add another response type, such as `text`, after it.
 
-See [Rich responses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more information about response types.
+See [Rich responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more information about response types.
 
 ## Extending the web chat
 {: #deploy-web-chat-extend}
@@ -180,8 +180,8 @@ You can reference the `$ismember` context variable from your dialog. For example
 
 If you want to perform tasks that require you to know the user who submitted the user input, then you must pass the user ID to the web chat integration. Such tasks include the following:
 
-- User-based service plans use the `user_id` associated with user input for billing purposes. See [User-based plans](/docs/services/assistant?topic=assistant-services-information#services-information-user-based-plans). 
-- The ability to delete any data created by someone who requests to be forgotten requires that a `customer_id` be associated with the user input. When a `user_id` is defined, the product can reuse it to pass a `customer_id` parameter. See [Labeling and deleting data](/docs/services/assistant?topic=assistant-information-security#information-security-gdpr-wa).
+- User-based service plans use the `user_id` associated with user input for billing purposes. See [User-based plans](/docs/assistant?topic=assistant-services-information#services-information-user-based-plans). 
+- The ability to delete any data created by someone who requests to be forgotten requires that a `customer_id` be associated with the user input. When a `user_id` is defined, the product can reuse it to pass a `customer_id` parameter. See [Labeling and deleting data](/docs/assistant?topic=assistant-information-security#information-security-gdpr-wa).
 
 To support these user-based capabilities, you must add the `options.userID` method to the codeblock before you paste it into your web page.
 
@@ -368,7 +368,7 @@ Zendesk Chat is an add-on to Zendesk Support. Zendesk Support puts all your cust
 ## Adding transfer support to your dialog
 {: #deploy-web-chat-dialog-prereq}
 
-If you do not have a dialog skill associated with your assistant, create one or add one to your assistant now. See [Building a dialog](/docs/services/assistant?topic=assistant-dialog-build) for more details.
+If you do not have a dialog skill associated with your assistant, create one or add one to your assistant now. See [Building a dialog](/docs/assistant?topic=assistant-dialog-build) for more details.
 
 Complete these steps in your dialog skill so the assistant can pass the conversation to a service desk agent when a customer asks to speak to a person.
 

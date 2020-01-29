@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-12-09"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -36,7 +36,7 @@ Learn more about strategies that are available for you to use to ensure that you
 
 When you integrate with {{site.data.keyword.keymanagementservicefull}}, you can encrypt {{site.data.keyword.conversationshort}} data in Premium plan instances with ecryption keys that you create or import.
 
-For implementation details, see [Protecting sensitive information in your {{site.data.keyword.watson}} service](/docs/services/watson?topic=watson-keyservice){: external}.
+For implementation details, see [Protecting sensitive information in your {{site.data.keyword.watson}} service](/docs/watson?topic=watson-keyservice){: external}.
 
 ### Important encryption key notes
 {: #security-byok-notes}
@@ -53,7 +53,7 @@ You can set up a private network for {{site.data.keyword.conversationshort}} ins
 
 Private network endpoints support routing services over the {{site.data.keyword.cloud_notm}} private network instead of the public network. A private network endpoint provides a unique IP address that is accessible to you without a VPN connection.
 
-For implementation details, see [Public and private network endpoints](/docs/services/watson?topic=watson-public-private-endpoints){: external}.
+For implementation details, see [Public and private network endpoints](/docs/watson?topic=watson-public-private-endpoints){: external}.
 
 ### Important private network endpoint notes
 {: #security-private-endpoint-notes}
@@ -64,4 +64,4 @@ For implementation details, see [Public and private network endpoints](/docs/ser
 ## Related topic
 {: #security-related}
 
-- **[Information security](/docs/services/assistant?topic=assistant-information-security)**: Describes strategies for complying with data protection regulations, such as GDPR and HIPAA. 
+- **[Information security](/docs/assistant?topic=assistant-information-security)**: Describes strategies for complying with data protection regulations, such as GDPR and HIPAA. 

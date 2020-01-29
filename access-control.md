@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2020-01-23"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -72,6 +72,6 @@ Act now to get the service instance owner to change your access level.
     You are the owner of the {service instance name} {{site.data.keyword.conversationshort}} service instance. 
     I am currently a {role-you-have} of the instance. 
     Please change my service access role to {role-you-want}.
-    For instructions, see https://cloud.ibm.com/docs/services/assistant?topic=assistant-access-control-pre#access-control-admin-prep.
+    For instructions, see https://cloud.ibm.com/docs/assistant?topic=assistant-access-control-pre#access-control-admin-prep.
     ```
     {: codeblock}

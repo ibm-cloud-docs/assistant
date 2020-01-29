@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-24"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -28,7 +28,7 @@ subcollection: assistant
 
 Enable the new system entities to take advantage of improvements that were made to the number-based system entities provided by IBM.
 
-For information about the languages in which the new system entities are supported, see [Supported languages](/docs/services/assistant?topic=assistant-language-support).
+For information about the languages in which the new system entities are supported, see [Supported languages](/docs/assistant?topic=assistant-language-support).
 {: note}
 
 The new system entities can recognize more nuanced mentions in user input. For example, `@sys-date` can calculate the date of a national holiday, such as `Thanksgiving`, when it is mentioned by name. And `@sys-date` can recognize when a year is specified as part of a date mentioned in the user's input. The improvements also make it easier for your assistant to distinguish among the many number-based system entities. For example, a date mention, such as `May 10`, that is recognized to be a `@sys-date` is not also identified as a `@sys-number` mention.
@@ -58,7 +58,7 @@ If you decide to continue using the new version, review any existing dialog node
 
 To improve the system entities, new properties were added to the entity objects of number-based system entities.
 
-The following table summarizes the new properties that were added. To see the properties that are associated with the current system entities, see [System entity details](/docs/services/assistant?topic=assistant-system-entities).
+The following table summarizes the new properties that were added. To see the properties that are associated with the current system entities, see [System entity details](/docs/assistant?topic=assistant-system-entities).
 
 Table 1. New system entity properties
 

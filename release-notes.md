@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-24"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -56,7 +56,7 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #24January2020}
 <!--1.87.4-->
 
-- **New system entities are now generally available in multiple languages**: The new and improved numeric system entities are now generally available in all supported languages, except Arabic, Chinese, Japanese, and Korean, where they are available as a beta feature. They are not used by your dialog skill unless you enable them from the **Options>System entities** page. For more information, see [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities).
+- **New system entities are now generally available in multiple languages**: The new and improved numeric system entities are now generally available in all supported languages, except Arabic, Chinese, Japanese, and Korean, where they are available as a beta feature. They are not used by your dialog skill unless you enable them from the **Options>System entities** page. For more information, see [New system entities](/docs/assistant?topic=assistant-beta-system-entities).
 
 ## 14 January 2020
 {: #14January2020}
@@ -74,7 +74,7 @@ Existing models that you have trained will not be immediately impacted, but expi
     - **Support for private network endpoints**
         - Users of Premium plans can create private network endpoints to connect to {{site.data.keyword.conversationshort}} over a private network. Connections to private network endpoints do not require public internet access.
 
-  For more information, see [Protecting sensitive information](/docs/services/assistant?topic=assistant-security).
+  For more information, see [Protecting sensitive information](/docs/assistant?topic=assistant-security).
 
 - **Full support for IBM Cloud IAM**
 
@@ -88,7 +88,7 @@ Existing models that you have trained will not be immediately impacted, but expi
         For more information, see the [API reference](https://{DomainName}/apidocs/assistant/assistant-v2#service-endpoint){: external}.
 
         These URLs do not introduce a breaking change. The new URLs work both for your existing service instances and for new instances. The original URLs continue to work on your existing service instances for at least one year (until December 2020).
-    - For more information, see [Authenticating to Watson services](/docs/services/watson?topic=watson-iam).
+    - For more information, see [Authenticating to Watson services](/docs/watson?topic=watson-iam).
 
 ## 26 November 2019
 {: #26November2019}
@@ -112,25 +112,25 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #12November2019}
 <!--1.83-->
 
-- **Slot prompt JSON editor**: You can now use the context or JSON editors for the slot response field where you define the question that your assistant asks to get information it needs from the customer. For more information about slots, see [Gathering information with slots](/docs/services/assistant?topic=assistant-dialog-slots).
+- **Slot prompt JSON editor**: You can now use the context or JSON editors for the slot response field where you define the question that your assistant asks to get information it needs from the customer. For more information about slots, see [Gathering information with slots](/docs/assistant?topic=assistant-dialog-slots).
 
 - **New South Korea location**: You can now create {{site.data.keyword.conversationshort}} instances in the Seoul location. As with other locations, the {{site.data.keyword.cloud_notm}} Seoul location uses token-based Identity and Access Management (IAM) authentication.
 
-- **Technology preview**: A technology preview experience was released. A select set of new users are being presented with a new user interface that takes a different approach to building an assistant. For more information, see [Preview details](/docs/services/assistant?topic=assistant-preview).
+- **Technology preview**: A technology preview experience was released. A select set of new users are being presented with a new user interface that takes a different approach to building an assistant. For more information, see [Preview details](/docs/assistant?topic=assistant-preview).
 
 ## 7 November 2019
 {: #7Novembber2019}
 <!--1.82-->
 
-- **Irrelevance detection has been added**: When enabled, a supplemental model is used to help identify utterances that are irrelevant and should not be answered by the dialog skill. This new model is especially beneficial for skills that have not been trained on what subjects to ignore. This feature is available for English skills only. For more information, see [New irrelevant topic detection](/docs/services/assistant?topic=assistant-irrelevance-detection).
+- **Irrelevance detection has been added**: When enabled, a supplemental model is used to help identify utterances that are irrelevant and should not be answered by the dialog skill. This new model is especially beneficial for skills that have not been trained on what subjects to ignore. This feature is available for English skills only. For more information, see [New irrelevant topic detection](/docs/assistant?topic=assistant-irrelevance-detection).
 
-- **Time zone support for now() method**: You can now specify the time zone for the date and time that is returned by the `now()` method. See [Now()](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-dates-now).
+- **Time zone support for now() method**: You can now specify the time zone for the date and time that is returned by the `now()` method. See [Now()](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-dates-now).
 
 ## 24 October 2019
 {: #24October2019}
 <!--1.80-->
 
-- **Testing improvement**: You can now see the top three intents that were recognized in a test user input from the "Try it out" pane. For more details, see [Testing your dialog](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-test).
+- **Testing improvement**: You can now see the top three intents that were recognized in a test user input from the "Try it out" pane. For more details, see [Testing your dialog](/docs/assistant?topic=assistant-dialog-build#dialog-build-test).
 
 - **Error message when opening an instance**: When you launch {{site.data.keyword.conversationshort}} from the {{site.data.keyword.cloud}} dashboard, you might see an error message that says, `Module 'ui-router' is not available! You either misspelled the module name or forgot to load it.` You can ignore the message. Refresh the web browser page to close the notification. 
 
@@ -146,7 +146,7 @@ The changes from 14 October are now available in Dallas.
 The following updates are available in all locations except Dallas currently.
 {: important}
 
-- Deploy your assistant in minutes. Create a web chat integration to embed your assistant into a page on your website as a chat widget. See [Integrating with your own website](/docs/services/assistant?topic=assistant-deploy-web-chat).
+- Deploy your assistant in minutes. Create a web chat integration to embed your assistant into a page on your website as a chat widget. See [Integrating with your own website](/docs/assistant?topic=assistant-deploy-web-chat).
 
 - The main menu options of **Assistants** and **Skills** have moved from being displayed at the top of the page to being shown as icons on the side of the page.
 
@@ -159,7 +159,7 @@ The following updates are available in all locations except Dallas currently.
 
 - **Rich response types are supported in a dialog node with slots**. You can display a list of options for a user to choose from as the prompt for a slot, for example. See [Adding rich responses to slots](dialog-slots-multimedia).
 
-- Where you go to switch service instances has changed. See [Switching the service instance](/docs/services/assistant?topic=assistant-skill-open#skill-open-switch-instance).
+- Where you go to switch service instances has changed. See [Switching the service instance](/docs/assistant?topic=assistant-skill-open#skill-open-switch-instance).
 
 - **Known issue: Cannot rename search skills**: You currently cannot rename a search skill after you create it. 
  
@@ -183,11 +183,11 @@ The following updates are available in all locations except Dallas currently.
 The following updates are available in all locations except Dallas currently.
 {: important}
 
-- **Inactivity timeout increase**: The maximum inactivity timeout can now be extended to up to 7 days for Premium plans. See [Changing the inactivity timeout setting](/docs/services/assistant?topic=assistant-assistant-settings).
+- **Inactivity timeout increase**: The maximum inactivity timeout can now be extended to up to 7 days for Premium plans. See [Changing the inactivity timeout setting](/docs/assistant?topic=assistant-assistant-settings).
 
 - **Pattern entity fix**: A change that was introduced in the previous release which changed all alphabetic characters to lower case at the time an entity value was added has been fixed. The case of any alphabetic characters that are part of a pattern entity value are no longer changed when the value is added. <!--30545-->
 
-- **Dialog text response syntax fix**: Fixed a bug in which the format of a dialog response reverted to an earlier version of the JSON syntax. Standard text responses were being saved as `output.text` instead of `output.generic`. For more information about the `output` object, see [Anatomy of a dialog call](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-message-anatomy). <!--30176-->
+- **Dialog text response syntax fix**: Fixed a bug in which the format of a dialog response reverted to an earlier version of the JSON syntax. Standard text responses were being saved as `output.text` instead of `output.generic`. For more information about the `output` object, see [Anatomy of a dialog call](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-message-anatomy). <!--30176-->
 
 ## 13 September 2019 
 {: #13September2019}
@@ -195,7 +195,7 @@ The following updates are available in all locations except Dallas currently.
 
 - **Improved Entities and Intents page responsiveness**: The Entities and Intents pages were updated to use a new JavaScript library that increases the page responsiveness. As a result, the look of some graphical user interface elements, such as buttons, changed slightly, but the function did not.
 
-- **Creating contextual entities got easier**: The process you use to annotate entity mentions from intent user examples was improved. You can now put the intent page into annotation mode to more easily select and label mentions. See [Adding contextual entities](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based).
+- **Creating contextual entities got easier**: The process you use to annotate entity mentions from intent user examples was improved. You can now put the intent page into annotation mode to more easily select and label mentions. See [Adding contextual entities](/docs/assistant?topic=assistant-entities#entities-create-annotation-based).
 
 ## 6 September 2019
 {: #6September2019}
@@ -205,7 +205,7 @@ The following updates are available in all locations except Dallas currently.
 ## 12 August 2019
 {: #12August2019}
 
-- **New dialog method**: The `getMatch` method was added. You can use this method to extract a specific occurrence of a regular expression pattern that recurs in user input. For more details, see the [dialog methods](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings-getMatch) topic.
+- **New dialog method**: The `getMatch` method was added. You can use this method to extract a specific occurrence of a regular expression pattern that recurs in user input. For more details, see the [dialog methods](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-strings-getMatch) topic.
 
 ## 9 August 2019
 {: #9August2019}
@@ -223,7 +223,7 @@ The following updates are available in all locations except Dallas currently.
 The following updates are available in all locations except Dallas currently.
 {: important}
 
-- **Webhook callouts are available**: Add webhooks to dialog nodes to make programmatic calls to an external application as part of the conversational flow. The new Webhook support simplifies the callout implementation process. (No more `action` JSON objects required.) For more information, see [Making a programmatic call from a dialog node](/docs/services/assistant?topic=assistant-dialog-webhooks).
+- **Webhook callouts are available**: Add webhooks to dialog nodes to make programmatic calls to an external application as part of the conversational flow. The new Webhook support simplifies the callout implementation process. (No more `action` JSON objects required.) For more information, see [Making a programmatic call from a dialog node](/docs/assistant?topic=assistant-dialog-webhooks).
 
 - **Improved dialog page responsiveness**: In all service instances, the user interface of the Dialog page was updated to use a new JavaScript library that increases the page responsiveness. As a result, the look of some graphical user interface elements, such as buttons, changed slightly, but the function did not.
 
@@ -248,7 +248,7 @@ The following updates are available in all locations except Dallas currently.
 ## 17 July 2019
 {: #17July2019}
 
-- **Disambiguation choice limit**: You can now set the maximum number of options to show to users when the assistant asks them to clarify what they want to do. For more information about disambiguation, see [Disambiguation](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
+- **Disambiguation choice limit**: You can now set the maximum number of options to show to users when the assistant asks them to clarify what they want to do. For more information about disambiguation, see [Disambiguation](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
 
 - **Dialog search issue**: In some skills, the search function is not working in the Dialog page. A new user interface library, which increases the page responsiveness, is being rolled out to existing service instances in phases. This search issue affects only dialog skills for which the new library is not yet enabled.
 
@@ -259,12 +259,12 @@ The following updates are available in all locations except Dallas currently.
 ## 15 July 2019
 {: #15July2019}
 
-- **Numeric system entities upgrade available in Dallas ![Beta](images/beta.png)**: The new system entities are now also available as a beta feature for instances that are hosted in Dallas. See [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities)
+- **Numeric system entities upgrade available in Dallas ![Beta](images/beta.png)**: The new system entities are now also available as a beta feature for instances that are hosted in Dallas. See [New system entities](/docs/assistant?topic=assistant-beta-system-entities)
 
 ## 12 June 2019
 {: #12June2019}
 
-- **Numeric system entities upgrade ![Beta](images/beta.png)**: New system entities are available as a beta feature that you can enable in dialog skills that are written in English or German. The revised system entities offer better date and time understanding. They can recognize date and number spans, national holiday references, and classify mentions with more precision. For example, a date such as `May 15` is recognized as a date mention(`@sys-date:2019-05-15`), and is *not* also identified as a number mention (`@sys-number:15`). See [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities)
+- **Numeric system entities upgrade ![Beta](images/beta.png)**: New system entities are available as a beta feature that you can enable in dialog skills that are written in English or German. The revised system entities offer better date and time understanding. They can recognize date and number spans, national holiday references, and classify mentions with more precision. For example, a date such as `May 15` is recognized as a date mention(`@sys-date:2019-05-15`), and is *not* also identified as a number mention (`@sys-number:15`). See [New system entities](/docs/assistant?topic=assistant-beta-system-entities)
 
   You cannot try out these system entities in instances hosted in Dallas currently. 
   {: note}
@@ -286,19 +286,19 @@ The following updates are available in all locations except Dallas currently.
 ## 10 April 2019
 {: #10April2019}
 
-- **Autocorrection is now available ![Beta](images/beta.png)**: Autocorrection is a beta feature that helps your assistant understand what your customers want. It corrects misspellings in the input that customers submit before the input is evaluated. With more precise input, your assistant can more easily recognize entity mentions and understand the customer's intent. See [Correcting user input](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check) for more details.
+- **Autocorrection is now available ![Beta](images/beta.png)**: Autocorrection is a beta feature that helps your assistant understand what your customers want. It corrects misspellings in the input that customers submit before the input is evaluated. With more precise input, your assistant can more easily recognize entity mentions and understand the customer's intent. See [Correcting user input](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check) for more details.
 
 ## 22 March 2019
 {: #22March2019}
 
 - **Introducing search skill ![Beta](images/beta.png)**: A search skill helps you to make your assistant useful to customers faster. Customer inquiries that you did not anticipate and so have not built dialog logic to handle can be met with useful responses. Instead of saying it can't help, the assistant can query an external data source to find relevant information to share in its response. Over time, you can build dialog responses to answer customer queries that require follow-up questions to clarify the user's meaning or for which a short and clear response is suitable. And you can use search skill responses to address more open-ended customer queries that require a longer explanation. This beta feature is available to users of Premium and Plus service plans only. ![Plus or Premium plan only](images/plus.png)
 
-  See [Building a search skill](/docs/services/assistant?topic=assistant-skill-search-add) for more details.
+  See [Building a search skill](/docs/assistant?topic=assistant-skill-search-add) for more details.
 
 ## 14 March 2019
 {: #14March2019}
 
-- **Have Watson help you build intents**: Use Watson machine learning technology to help you choose the right intents for your assistant. Watson analyzes your existing call center log data to identify the customer questions and requests that occur most often. It then recommends intents and user examples you can use to train your assistant so it can recognize the same and similar requests in future. Once you determine the right intents to use, you can augment them and keep them up-to-date over time using the intent user example recommendations functionality, which is already available. For more information, see [Get help defining intents](/docs/services/assistant?topic=assistant-intent-recommendations).
+- **Have Watson help you build intents**: Use Watson machine learning technology to help you choose the right intents for your assistant. Watson analyzes your existing call center log data to identify the customer questions and requests that occur most often. It then recommends intents and user examples you can use to train your assistant so it can recognize the same and similar requests in future. Once you determine the right intents to use, you can augment them and keep them up-to-date over time using the intent user example recommendations functionality, which is already available. For more information, see [Get help defining intents](/docs/assistant?topic=assistant-intent-recommendations).
 
 ## 4 March 2019
 {: #4March2019}
@@ -310,14 +310,14 @@ The following updates are available in all locations except Dallas currently.
 ## 1 March 2019
 {: #1March2019}
 
-- **Japanese intent user example recommendations ![Plus or Premium plan only](images/plus.png)**: You can now upload a file that contains raw user inputs in Japanese, such as user inquiries from a call center log, that Watson can analyze and mine for intent user example candidates. See [Adding examples from log files](/docs/services/assistant?topic=assistant-intent-recommendations).
+- **Japanese intent user example recommendations ![Plus or Premium plan only](images/plus.png)**: You can now upload a file that contains raw user inputs in Japanese, such as user inquiries from a call center log, that Watson can analyze and mine for intent user example candidates. See [Adding examples from log files](/docs/assistant?topic=assistant-intent-recommendations).
 
 ## 28 February 2019
 {: #28February2019}
 
 - **New API version**: The current API version is now `2019-02-28`. The following changes were made with this version:
 
-    - The order in which conditions are evaluated in nodes with slots has changed. Previously, if you had a node with slots that allowed for digressions away, the `anything_else` root node was triggered before any of the slot level Not found conditions could be evaluated. The order of operations has been changed to address this behavior. Now, when a user digresses away from a node with slots, all the root nodes except the `anything_else` node are processed. Next, the slot level Not found conditions are evaluated. And, finally, the root level `anything_else` node is processed. To better understand the full order of operations for a node with slots, see [Slot usage tips](/docs/services/assistant?topic=assistant-dialog-slots#dialog-slots-node-level-handler).
+    - The order in which conditions are evaluated in nodes with slots has changed. Previously, if you had a node with slots that allowed for digressions away, the `anything_else` root node was triggered before any of the slot level Not found conditions could be evaluated. The order of operations has been changed to address this behavior. Now, when a user digresses away from a node with slots, all the root nodes except the `anything_else` node are processed. Next, the slot level Not found conditions are evaluated. And, finally, the root level `anything_else` node is processed. To better understand the full order of operations for a node with slots, see [Slot usage tips](/docs/assistant?topic=assistant-dialog-slots#dialog-slots-node-level-handler).
 
     - Strings that begin with a number sign (#) in the `context` or `output` objects of a message are no longer treated as intent references.
   
@@ -335,19 +335,19 @@ The following updates are available in all locations except Dallas currently.
 ## 11 February 2019
 {: #11February2019}
 
-**Integrate with Intercom**: Intercom, a leading customer service messaging platform, has partnered with IBM to add a new agent to the team, a virtual Watson Assistant. You can integrate your assistant with an Intercom application to enable the app to seamlessly pass user conversations between your assistant and human support agents. This integration is available to Plus and Premium plan users only. See [Integrating with Intercom](/docs/services/assistant?topic=assistant-deploy-intercom) for more details.
+**Integrate with Intercom**: Intercom, a leading customer service messaging platform, has partnered with IBM to add a new agent to the team, a virtual Watson Assistant. You can integrate your assistant with an Intercom application to enable the app to seamlessly pass user conversations between your assistant and human support agents. This integration is available to Plus and Premium plan users only. See [Integrating with Intercom](/docs/assistant?topic=assistant-deploy-intercom) for more details.
 
 ## 8 February 2019
 {: #8February2019}
 
-- **Version your skills**: You can now capture a snapshot of the the intents, entities, dialog, and configuration settings for a skill at key points during the development process. With versions, it's safe to get creative. You can deploy new design approaches in a test environment to validate them before you apply any updates to a production deployment of your assistant. See [Creating skill versions](/docs/services/assistant?topic=assistant-versions) for more details.
+- **Version your skills**: You can now capture a snapshot of the the intents, entities, dialog, and configuration settings for a skill at key points during the development process. With versions, it's safe to get creative. You can deploy new design approaches in a test environment to validate them before you apply any updates to a production deployment of your assistant. See [Creating skill versions](/docs/assistant?topic=assistant-versions) for more details.
 
-- **Arabic content catalog**: Users of Arabic-language skills can now add prebuilt intents to their dialogs. See [Using content catalogs](/docs/services/assistant?topic=assistant-catalog) for more information.
+- **Arabic content catalog**: Users of Arabic-language skills can now add prebuilt intents to their dialogs. See [Using content catalogs](/docs/assistant?topic=assistant-catalog) for more information.
 
 ## 17 January 2019
 {: #17January2019}
 
-- **Czech language support is generally available**: Support for the Czech language is no longer classified as beta; it is now generally available. See [Supported languages](/docs/services/assistant?topic=assistant-language-support) for more information.
+- **Czech language support is generally available**: Support for the Czech language is no longer classified as beta; it is now generally available. See [Supported languages](/docs/assistant?topic=assistant-language-support) for more information.
 
 - **Language support improvements**: The language understanding components were updated to improve the following features:
 
@@ -357,7 +357,7 @@ The following updates are available in all locations except Dallas currently.
 ## 4 January 2019
 {: #4January2019}
 
-- **IBM Cloud Functions in DC and London locations**: You can now make programmatic calls to IBM Cloud Functions from the dialog of an assistant in a service instance that is hosted in the London and Washington, DC data centers. See [Making programmatic calls from a dialog node](/docs/services/assistant?topic=assistant-dialog-actions-client).
+- **IBM Cloud Functions in DC and London locations**: You can now make programmatic calls to IBM Cloud Functions from the dialog of an assistant in a service instance that is hosted in the London and Washington, DC data centers. See [Making programmatic calls from a dialog node](/docs/assistant?topic=assistant-dialog-actions-client).
 
 - **New methods for working with arrays**: The following SpEL expression methods are available that make it easier to work with array values in your dialog:
 
@@ -366,12 +366,12 @@ The following updates are available in all locations except Dallas currently.
   - **JSONArray.indexOf**: Gets the index number of a specific value in an array.
   - **JSONArray.joinToArray**: Applies formatting to values that are returned from an array.
 
-   See the [array method documentation](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-arrays) for more details.
+   See the [array method documentation](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-arrays) for more details.
 
 ## 13 December 2018
 {: #13December2018}
 
-- **London data center**: You can now create {{site.data.keyword.conversationshort}} service instances that are hosted in the London data center without syndication. See [Data centers](/docs/services/assistant?topic=assistant-services-information#services-information-regions) for more details.
+- **London data center**: You can now create {{site.data.keyword.conversationshort}} service instances that are hosted in the London data center without syndication. See [Data centers](/docs/assistant?topic=assistant-services-information#services-information-regions) for more details.
 
 - **Dialog node limit changes**: The dialog node limit was temporarily changed from 100,000 to 500 for new Standard plan instances. This limit change was later reversed. If you created a Standard plan instance during the time frame in which the limit was in effect, your dialogs might be impacted. The limit was in effect for skills created between 10 December and 12 December 2018. The lower limits will be removed from all impacted instances in January. If you need to have the lower limit lifted before then, open a support ticket.
 
@@ -393,12 +393,12 @@ The following updates are available in all locations except Dallas currently.
 
      In the response, the `total` attribute in the `pagination` object contains the number of dialog nodes.
 
-     See [Troubleshooting skill import issues](/docs/services/assistant?topic=assistant-skill-dialog-add#skill-dialog-add-import-errors) for information about how to edit skills that you want to continue using.
+     See [Troubleshooting skill import issues](/docs/assistant?topic=assistant-skill-dialog-add#skill-dialog-add-import-errors) for information about how to edit skills that you want to continue using.
 
 ## 27 November 2018
 {: #27November2018}
 
-- **A new service plan, the Plus plan, is available**: The new plan offers premium-level features at a lower price point. Unlike previous plans, the Plus plan is a user-based billing plan. It measures usage by the number of unique users that interact with your assistant over a given time period. To get the most from the plan, if you build your own client application, design your app such that it defines a unique ID for each user, and passes the user ID with each /message API call. For the built-in integrations, the session ID is used to identify user interactions with the assistant. See [User-based plans](/docs/services/assistant?topic=assistant-services-information#services-information-user-based-plans) for more information.
+- **A new service plan, the Plus plan, is available**: The new plan offers premium-level features at a lower price point. Unlike previous plans, the Plus plan is a user-based billing plan. It measures usage by the number of unique users that interact with your assistant over a given time period. To get the most from the plan, if you build your own client application, design your app such that it defines a unique ID for each user, and passes the user ID with each /message API call. For the built-in integrations, the session ID is used to identify user interactions with the assistant. See [User-based plans](/docs/assistant?topic=assistant-services-information#services-information-user-based-plans) for more information.
 
   <table>
   <caption>Plus plan limits</caption>
@@ -456,19 +456,19 @@ The following updates are available in all locations except Dallas currently.
     </tr>
   </table>
 
-- **User-based Premium plan**: The Premium plan now bases its billing on the number of active unique users. If you choose to use this plan, design any custom applications that you build to properly identify the users who generate /message API calls. See [User-based plans](/docs/services/assistant?topic=assistant-services-information#services-information-user-based-plans) for more information.
+- **User-based Premium plan**: The Premium plan now bases its billing on the number of active unique users. If you choose to use this plan, design any custom applications that you build to properly identify the users who generate /message API calls. See [User-based plans](/docs/assistant?topic=assistant-services-information#services-information-user-based-plans) for more information.
 
   Existing Premium plan service instances are not impacted by this change; they continue to use API-based billing methods. Only existing Premium plan users will see the API-based plan listed as the *Premium (API)* plan option.
   {: note}
 
   See {{site.data.keyword.conversationshort}} [service plan options](https://www.ibm.com/cloud/watson-assistant/pricing/){: external} for more information about all available service plans.
 
-- **Intent user example recommendations ![Plus or Premium plan only](images/plus.png)**: You can upload a file that contains raw user inputs, such as user inquiries from a call center log, that Watson can analyze and mine for intent user example candidates. See [Adding examples from log files](/docs/services/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations).
+- **Intent user example recommendations ![Plus or Premium plan only](images/plus.png)**: You can upload a file that contains raw user inputs, such as user inquiries from a call center log, that Watson can analyze and mine for intent user example candidates. See [Adding examples from log files](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations).
 
 ## 20 November 2018
 {: #20November2018}
 
-**Recommendations are discontinued**: The Recomendations section on the Improve tab was removed. Recommendations was a beta feature available to Premium plan users only. It recommended actions that users could take to improve their training data. Instead of consolidating recommendations in one place, recommendations are now being made available from the parts of the tool where you make actual training data changes. For example, while adding entity synonyms, you can now opt to see a list of synonymous terms that are recommended by Watson. If you are looking for other ways to analyze your user conversation logs in more detail, consider using Jupyter notebooks. See [Advanced tasks](/docs/services/assistant?topic=assistant-logs-resources) for more details.
+**Recommendations are discontinued**: The Recomendations section on the Improve tab was removed. Recommendations was a beta feature available to Premium plan users only. It recommended actions that users could take to improve their training data. Instead of consolidating recommendations in one place, recommendations are now being made available from the parts of the tool where you make actual training data changes. For example, while adding entity synonyms, you can now opt to see a list of synonymous terms that are recommended by Watson. If you are looking for other ways to analyze your user conversation logs in more detail, consider using Jupyter notebooks. See [Advanced tasks](/docs/assistant?topic=assistant-logs-resources) for more details.
 
 ## 9 November 2018
 {: #9November2018}
@@ -479,18 +479,18 @@ The following updates are available in all locations except Dallas currently.
 
   - **Skills**: What you think of as a *workspace* is now called a *skill*. A *dialog skill* is a container for the natural language processing training data and artifacts that enable your assistant to understand user questions, and respond to them.
 
-    **Where are my workspaces?** Any workspaces that you created previously are now listed in your service instance as skills. Click the **Skills** tab to see them. For more information, see [Skills](/docs/services/assistant?topic=assistant-skills).
+    **Where are my workspaces?** Any workspaces that you created previously are now listed in your service instance as skills. Click the **Skills** tab to see them. For more information, see [Skills](/docs/assistant?topic=assistant-skills).
 
-  - **Assistants**: You can now publish your skill in just two steps. Add your skill to an assistant, and then set up one or more integrations with which to deploy your skill. The assistant adds a layer of function on top of your skill that enables {{site.data.keyword.conversationshort}} to orchestrate and manage the flow of information for you. See [Assistants](/docs/services/assistant?topic=assistant-assistants).
+  - **Assistants**: You can now publish your skill in just two steps. Add your skill to an assistant, and then set up one or more integrations with which to deploy your skill. The assistant adds a layer of function on top of your skill that enables {{site.data.keyword.conversationshort}} to orchestrate and manage the flow of information for you. See [Assistants](/docs/assistant?topic=assistant-assistants).
 
-  - **Built-in integrations**: Instead of going to the **Deploy** tab to deploy your workspace, you add your dialog skill to an assistant, and add integrations to the assistant through which the skill is made available to your users. You do not need to build a custom front-end application and manage the conversation state from one call to the next. However, you can still do so if you want to. See [Adding integrations](/docs/services/assistant?topic=assistant-deploy-integration-add) for more information.
+  - **Built-in integrations**: Instead of going to the **Deploy** tab to deploy your workspace, you add your dialog skill to an assistant, and add integrations to the assistant through which the skill is made available to your users. You do not need to build a custom front-end application and manage the conversation state from one call to the next. However, you can still do so if you want to. See [Adding integrations](/docs/assistant?topic=assistant-deploy-integration-add) for more information.
 
   - **New major API version**: A V2 version of the API is available. This version provides access to methods you can use to interact with an assistant at run time. No more passing context with each API call; the session state is managed for you as part of the assistant layer.
   
-    What is presented in the tooling as a dialog skill is effectively a wrapper for a V1 workspace. There are currently no API methods for authoring skills and assistants with the V2 API. However, you can continue to use the V1 API for authoring workspaces. See [API Overview](/docs/services/assistant?topic=assistant-api-overview) for more details.
+    What is presented in the tooling as a dialog skill is effectively a wrapper for a V1 workspace. There are currently no API methods for authoring skills and assistants with the V2 API. However, you can continue to use the V1 API for authoring workspaces. See [API Overview](/docs/assistant?topic=assistant-api-overview) for more details.
     {: note}
 
-  - **Switching data sources**: It is now easier to improve the model in one skill with user conversation logs from a different skill. You do not need to rely on deployment IDs, but can simply pick the name of the assistant to which a skill was added and deployed to use its data. See [Improving across assistants](/docs/services/assistant?topic=assistant-logs#logs-deploy-id).
+  - **Switching data sources**: It is now easier to improve the model in one skill with user conversation logs from a different skill. You do not need to rely on deployment IDs, but can simply pick the name of the assistant to which a skill was added and deployed to use its data. See [Improving across assistants](/docs/assistant?topic=assistant-logs#logs-deploy-id).
 
   The following video provides a 2-minute overview of the updated {{site.data.keyword.conversationshort}} tool.
 
@@ -501,7 +501,7 @@ The following updates are available in all locations except Dallas currently.
 ## 8 November 2018
 {: #8November2018}
 
-- **Japanese data center**: You can now create {{site.data.keyword.conversationshort}} service instances that are hosted in the Tokyo data center. See [Data centers](/docs/services/assistant?topic=assistant-services-information#services-information-regions) for more details.
+- **Japanese data center**: You can now create {{site.data.keyword.conversationshort}} service instances that are hosted in the Tokyo data center. See [Data centers](/docs/assistant?topic=assistant-services-information#services-information-regions) for more details.
 
 ## 30 October 2018
 {: #30October2018}
@@ -515,7 +515,7 @@ The following updates are available in all locations except Dallas currently.
 
   For all existing service instances, you continue to use service credentials (`{username}:{password}`) for authentication.
 
-  See [Authenticating API calls](/docs/services/assistant?topic=assistant-services-information#services-information-authenticate-api-calls) for more information.
+  See [Authenticating API calls](/docs/assistant?topic=assistant-services-information#services-information-authenticate-api-calls) for more information.
 
 ## 25 October 2018
 {: #25October2018}
@@ -531,35 +531,35 @@ The following updates are available in all locations except Dallas currently.
 {: #21September2018}
 
 - **New API version**: The current API version is now `2018-09-20`. In this version, the `errors[].path` attribute of the error object that is returned by the API is expressed as a [JSON Pointer](https://tools.ietf.org/html/rfc6901) instead of in dot notation form.
-- **Web actions support**: You can now call {{site.data.keyword.openwhisk_short}} web actions from a dialog node. See [Making programmatic calls from a dialog node](/docs/services/assistant?topic=assistant-dialog-actions-client) for more details.
+- **Web actions support**: You can now call {{site.data.keyword.openwhisk_short}} web actions from a dialog node. See [Making programmatic calls from a dialog node](/docs/assistant?topic=assistant-dialog-actions-client) for more details.
 
 ## 15 August 2018
 {: #15August2018}
 
-- **Entity fuzzy matching support improvements**: Fuzzy matching is fully supported for English entities, and the misspelling feature is no longer a Beta-only feature for many other languages. See [Supported languages](/docs/services/assistant?topic=assistant-language-support) for details.
+- **Entity fuzzy matching support improvements**: Fuzzy matching is fully supported for English entities, and the misspelling feature is no longer a Beta-only feature for many other languages. See [Supported languages](/docs/assistant?topic=assistant-language-support) for details.
 
 ## 6 August 2018
 {: #6August2018}
 
-- **Intent conflict resolution ![Plus or Premium plan only](images/plus.png)**: The tool can now help you to resolve conflicts when two or more user examples in separate intents are similar to one another. Non-distinct user examples can weaken the training data and make it harder for your assistant to map user input to the appropriate intent at run time. See [Resolving intent conflicts](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts) for details.
+- **Intent conflict resolution ![Plus or Premium plan only](images/plus.png)**: The tool can now help you to resolve conflicts when two or more user examples in separate intents are similar to one another. Non-distinct user examples can weaken the training data and make it harder for your assistant to map user input to the appropriate intent at run time. See [Resolving intent conflicts](/docs/assistant?topic=assistant-intents#intents-resolve-conflicts) for details.
 
-- **Disambiguation** ![Plus or Premium plan only](images/plus.png): Enable disambiguation to allow your assistant to ask the user for help when it needs to decide between two or more viable dialog nodes to process for a response. See [Disambiguation](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation) for more details.
+- **Disambiguation** ![Plus or Premium plan only](images/plus.png): Enable disambiguation to allow your assistant to ask the user for help when it needs to decide between two or more viable dialog nodes to process for a response. See [Disambiguation](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation) for more details.
 
 - **Jump-to fix**: Fixed a bug in the Dialogs tool which prevented you from being able to configure a jump-to that targets the response of a node with the `anything_else` special condition.
 
-- **Digression return message**: You can now specify text to display when the user returns to a node after a digression. The user will have seen the prompt for the node already. You can change the message slightly to let users know they are returning to where they left off. For example, specify a response like, `Where were we? Oh, yes...` See [Digressions](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-digressions) for more details.
+- **Digression return message**: You can now specify text to display when the user returns to a node after a digression. The user will have seen the prompt for the node already. You can change the message slightly to let users know they are returning to where they left off. For example, specify a response like, `Where were we? Oh, yes...` See [Digressions](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-digressions) for more details.
 
 ## 12 July 2018
 {: #12July2018}
 
-- **Rich response types**: You can now add rich responses that include elements such as images or buttons in addition to text, to your dialog. See [Rich responses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more information.
+- **Rich response types**: You can now add rich responses that include elements such as images or buttons in addition to text, to your dialog. See [Rich responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more information.
 
-- **Contextual entities (Beta)**: Contextual entities are entities that you define by labeling mentions of the entity type that occur in intent user examples. These entity types teach your assistant not only terms of interest, but also the context in which terms of interest typically appear in user utterances, enabling your assistant to recognize never-seen-before entity mentions based solely on how they are referenced in user input. For example, if you annotate the intent user example, "I want a flight to Boston" by labeling "Boston" as a @destination entity, then your assistant can recognize "Chicago" as a @destination in a user input that says, "I want a flight to Chicago." This feature is currently available for English only. See [Adding contextual entities](/docs/services/assistant?topic=assistant-entities#entities-create-annotation-based) for more information.
+- **Contextual entities (Beta)**: Contextual entities are entities that you define by labeling mentions of the entity type that occur in intent user examples. These entity types teach your assistant not only terms of interest, but also the context in which terms of interest typically appear in user utterances, enabling your assistant to recognize never-seen-before entity mentions based solely on how they are referenced in user input. For example, if you annotate the intent user example, "I want a flight to Boston" by labeling "Boston" as a @destination entity, then your assistant can recognize "Chicago" as a @destination in a user input that says, "I want a flight to Chicago." This feature is currently available for English only. See [Adding contextual entities](/docs/assistant?topic=assistant-entities#entities-create-annotation-based) for more information.
 
   When you access the tool with an Internet Explorer web browser, you cannot label entity mentions in intent user examples nor edit user example text.
   {: note}
 
-- **Entity recommendations**: Watson can now recommend synonyms for your entity values. The recommender finds related synonyms based on contextual similarity extracted from a vast body of existing information, including large sources of written text, and uses natural language processing techniques to identify words similar to the existing synonyms in your entity value. For more information see [Synonyms](/docs/services/assistant?topic=assistant-entities#entities-synonyms).
+- **Entity recommendations**: Watson can now recommend synonyms for your entity values. The recommender finds related synonyms based on contextual similarity extracted from a vast body of existing information, including large sources of written text, and uses natural language processing techniques to identify words similar to the existing synonyms in your entity value. For more information see [Synonyms](/docs/assistant?topic=assistant-entities#entities-synonyms).
 
 - **New API version**: The current API version is now `2018-07-10`. This version introduces the following changes:
 
@@ -567,24 +567,24 @@ The following updates are available in all locations except Dallas currently.
   - Support for contextual entities was added.
   - You can no longer add user-defined properties in `context.metadata`. However, you can add them directly to `context`.
 
-- **Overview page date filter**: Use the new date filters to choose the period for which data is displayed. These filters affect all data shown on the page: not just the number of conversations displayed in the graph, but also the statistics displayed along with the graph, and the lists of top intents and entities. See [Controls](/docs/services/assistant?topic=assistant-logs-overview#logs-overview-controls) for more information.
+- **Overview page date filter**: Use the new date filters to choose the period for which data is displayed. These filters affect all data shown on the page: not just the number of conversations displayed in the graph, but also the statistics displayed along with the graph, and the lists of top intents and entities. See [Controls](/docs/assistant?topic=assistant-logs-overview#logs-overview-controls) for more information.
 
-- **Pattern limit expanded**: When using the **Patterns** field to [define specific patterns for an entity value](/docs/services/assistant?topic=assistant-entities#entities-patterns), the pattern (regular expression) is now limited to 512 characters.
+- **Pattern limit expanded**: When using the **Patterns** field to [define specific patterns for an entity value](/docs/assistant?topic=assistant-entities#entities-patterns), the pattern (regular expression) is now limited to 512 characters.
 
 ## 2 July 2018
 {: #2July2018}
 
-- **Jump-tos from conditional responses**: You can now configure a conditional response to jump directly to another node. See [Conditional responses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multiple) for more details.
+- **Jump-tos from conditional responses**: You can now configure a conditional response to jump directly to another node. See [Conditional responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multiple) for more details.
 
 ## 21 June 2018
 {: #21June2018}
 
-- **Language updates for system entities**: Dutch and Simplified Chinese language support are now generally available. Dutch language support includes fuzzy matching for misspellings. Traditional Chinese language support includes the availability of [system entities](/docs/services/assistant?topic=assistant-system-entities) in beta release. See [Supported languages](/docs/services/assistant?topic=assistant-language-support) for details.
+- **Language updates for system entities**: Dutch and Simplified Chinese language support are now generally available. Dutch language support includes fuzzy matching for misspellings. Traditional Chinese language support includes the availability of [system entities](/docs/assistant?topic=assistant-system-entities) in beta release. See [Supported languages](/docs/assistant?topic=assistant-language-support) for details.
 
 ## 14 June 2018
 {: #14June2018}
 
-- **Washington, DC data center opens**: You can now create {{site.data.keyword.conversationshort}} service instances that are hosted in the Washington, DC data center. See [Data centers](/docs/services/assistant?topic=assistant-services-information#services-information-regions) for more details.
+- **Washington, DC data center opens**: You can now create {{site.data.keyword.conversationshort}} service instances that are hosted in the Washington, DC data center. See [Data centers](/docs/assistant?topic=assistant-services-information#services-information-regions) for more details.
 
 - **New API authentication process**: The {{site.data.keyword.conversationshort}} service has a new API authentication process for service instances that are hosted in the following regions:
 
@@ -621,7 +621,7 @@ The following updates are available in all locations except Dallas currently.
 ## 11 May 2018
 {: #11May2018}
 
-- **Information security**: The documentation includes some new details about data privacy. Read more in [Information security](/docs/services/assistant?topic=assistant-information-security).
+- **Information security**: The documentation includes some new details about data privacy. Read more in [Information security](/docs/assistant?topic=assistant-information-security).
 
 ## 7 May 2018
 {: #7May2018}
@@ -631,7 +631,7 @@ The following updates are available in all locations except Dallas currently.
 ## 4 April 2018
 {: #4April2018}
 
-- **Search dialogs**: You can now [search dialog nodes](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-search) for a given word or phrase.
+- **Search dialogs**: You can now [search dialog nodes](/docs/assistant?topic=assistant-dialog-build#dialog-build-search) for a given word or phrase.
 
 ## 15 March 2018
 {: #15March2018}
@@ -642,25 +642,25 @@ The following updates are available in all locations except Dallas currently.
 
 - **Dialog enhancements**: The following features were added to the dialog tool:
 
-  - Simple variable name and value fields are now available that you can use to add context variables or update context variable values. You do not need to open the JSON editor unless you want to. See [Defining a context variable](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-context-var-define) for more details.
-  - Organize your dialog by using folders to group together related dialog nodes. See [Organizing the dialog with folders](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-folders) for more details.
-  - Support was added for customizing how each dialog node participates in user-initiated digressions away from the designated dialog flow. See [Digressions](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-digressions) for more details.
+  - Simple variable name and value fields are now available that you can use to add context variables or update context variable values. You do not need to open the JSON editor unless you want to. See [Defining a context variable](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-context-var-define) for more details.
+  - Organize your dialog by using folders to group together related dialog nodes. See [Organizing the dialog with folders](/docs/assistant?topic=assistant-dialog-build#dialog-build-folders) for more details.
+  - Support was added for customizing how each dialog node participates in user-initiated digressions away from the designated dialog flow. See [Digressions](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-digressions) for more details.
 
-- **Search intents and entities**: A new search feature has been added that allows you to [search intents](/docs/services/assistant?topic=assistant-intents#intents-search) for user examples, intent names, or descriptions, or to [search entity](/docs/services/assistant?topic=assistant-entities#entities-search) values and synonyms.
+- **Search intents and entities**: A new search feature has been added that allows you to [search intents](/docs/assistant?topic=assistant-intents#intents-search) for user examples, intent names, or descriptions, or to [search entity](/docs/assistant?topic=assistant-entities#entities-search) values and synonyms.
 
-- **Content catalogs**: The new [content catalogs](/docs/services/assistant?topic=assistant-catalog#catalog-add) contain a single category of prebuilt common intents and entities that you can add to your application. For example, most applications require a general #greeting-type intent that starts a dialog with the user. You can add it from the content catalog rather than building your own.
+- **Content catalogs**: The new [content catalogs](/docs/assistant?topic=assistant-catalog#catalog-add) contain a single category of prebuilt common intents and entities that you can add to your application. For example, most applications require a general #greeting-type intent that starts a dialog with the user. You can add it from the content catalog rather than building your own.
 
 - **Enhanced user metrics**: The Improve component has been enhanced with additional user metrics and logging statistics. For example, the Overview page includes several new, detailed graphs that summarize interactions between users and your application, the amount of traffic for a given time period, and the intents and entities that were recognized most often in user conversations.
 
 ## 12 March 2018
 {: #12March2018}
 
-- **New date and time methods**: Methods were added that make it easier to perform date calculations from the dialog. See [Date and time calculations](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-date-and-time-calculations) for more details.
+- **New date and time methods**: Methods were added that make it easier to perform date calculations from the dialog. See [Date and time calculations](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-date-and-time-calculations) for more details.
 
 ## 16 February 2018
 {: #16February2018}
 
-- **Dialog node tracing**: When you use the "Try it out" pane to test a dialog, a location icon is displayed next to each response. You can click the icon to highlight the path that your assistant traversed through the dialog tree to arrive at the response. See [Building a dialog](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-test) for details.
+- **Dialog node tracing**: When you use the "Try it out" pane to test a dialog, a location icon is displayed next to each response. You can click the icon to highlight the path that your assistant traversed through the dialog tree to arrive at the response. See [Building a dialog](/docs/assistant?topic=assistant-dialog-build#dialog-build-test) for details.
 
 - **New API version**: The current API version is now `2018-02-16`. This version introduces the following changes:
 
@@ -676,7 +676,7 @@ The following updates are available in all locations except Dallas currently.
 ## 9 February 2018
 {: #9February2018}
 
-- **Dutch system entities (Beta)**: Dutch language support has been enhanced to include the availability of [System entities](/docs/services/assistant?topic=assistant-system-entities) in beta release. See [Supported languages](/docs/services/assistant?topic=assistant-language-support) for details.
+- **Dutch system entities (Beta)**: Dutch language support has been enhanced to include the availability of [System entities](/docs/assistant?topic=assistant-system-entities) in beta release. See [Supported languages](/docs/assistant?topic=assistant-language-support) for details.
 
 ## 29 January 2018
 {: #29January2018}
@@ -695,19 +695,19 @@ The following updates are available in all locations except Dallas currently.
 
 - **Log data access across instances (Premium users only)**: If you are a {{site.data.keyword.conversationshort}} Premium user, your premium instances can optionally be configured to allow access to log data from workspaces across your different premium instances.
 
-- **Copy nodes**: You can now duplicate a node to make a copy of it and its children. This feature is helpful if you build a node with useful logic that you want to reuse elsewhere in your dialog. See [Copying a dialog node](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-copy-node) for more information.
+- **Copy nodes**: You can now duplicate a node to make a copy of it and its children. This feature is helpful if you build a node with useful logic that you want to reuse elsewhere in your dialog. See [Copying a dialog node](/docs/assistant?topic=assistant-dialog-build#dialog-build-copy-node) for more information.
 
-- **Capture groups in pattern entities**: You can identify groups in the regular expression pattern that you define for an entity. Identifying groups is useful if you want to be able to refer to a subsection of the pattern later. For example, your entity might have a regex pattern that captures US phone numbers. If you identify the area code segment of the number pattern as a group, then you can subsequently refer to that group to access just the area code segment of a phone number. See [Defining entities](/docs/services/assistant?topic=assistant-entities#entities-creating-task) for more information.
+- **Capture groups in pattern entities**: You can identify groups in the regular expression pattern that you define for an entity. Identifying groups is useful if you want to be able to refer to a subsection of the pattern later. For example, your entity might have a regex pattern that captures US phone numbers. If you identify the area code segment of the number pattern as a group, then you can subsequently refer to that group to access just the area code segment of a phone number. See [Defining entities](/docs/assistant?topic=assistant-entities#entities-creating-task) for more information.
 
 ## 6 December 2017
 {: #6December2017}
 
-- **{{site.data.keyword.openwhisk}} integration (Beta)**: Call {{site.data.keyword.openwhisk}} (formerly IBM OpenWhisk) actions directly from a dialog node. This feature enables you to, for example, call an action to retrieve weather information from within a dialog node, and then condition on the returned information in the dialog response. Currently, you can call an action from a {{site.data.keyword.openwhisk_short}} instance that is hosted in the US South region from {{site.data.keyword.conversationshort}} instances that are hosted in the US South region. See [Making programmatic calls from a dialog node](/docs/services/assistant?topic=assistant-dialog-actions-client) for more details.
+- **{{site.data.keyword.openwhisk}} integration (Beta)**: Call {{site.data.keyword.openwhisk}} (formerly IBM OpenWhisk) actions directly from a dialog node. This feature enables you to, for example, call an action to retrieve weather information from within a dialog node, and then condition on the returned information in the dialog response. Currently, you can call an action from a {{site.data.keyword.openwhisk_short}} instance that is hosted in the US South region from {{site.data.keyword.conversationshort}} instances that are hosted in the US South region. See [Making programmatic calls from a dialog node](/docs/assistant?topic=assistant-dialog-actions-client) for more details.
 
 ## 5 December 2017
 {: #5December2017}
 
-- **Redesigned UI for Intents and Entities**: The `Intents` and `Entities` tabs have been redesigned to provide an easier, more efficient workflow when creating and editing entities and intents. See [Defining intents](/docs/services/assistant?topic=assistant-intents-create-task) and [Defining entities](/docs/services/assistant?topic=assistant-entities#entities-creating-task) for information about working with these tabs.
+- **Redesigned UI for Intents and Entities**: The `Intents` and `Entities` tabs have been redesigned to provide an easier, more efficient workflow when creating and editing entities and intents. See [Defining intents](/docs/assistant?topic=assistant-intents-create-task) and [Defining entities](/docs/assistant?topic=assistant-entities#entities-creating-task) for information about working with these tabs.
 
 ## 30 November 2017
 {: #30November2017}
@@ -717,7 +717,7 @@ The following updates are available in all locations except Dallas currently.
 ## 29 November 2017
 {: #29November2017}
 
-- **Improving understanding of user input across workspaces**: You can now improve a workspace with utterances that were sent to other workspaces within your instance. For example, you might have multiple versions of production workspaces and development workspaces; you can use the same utterance data to improve any of these workspaces. See [Improving across workspaces](/docs/services/assistant?topic=assistant-logs#logs-deploy-id).
+- **Improving understanding of user input across workspaces**: You can now improve a workspace with utterances that were sent to other workspaces within your instance. For example, you might have multiple versions of production workspaces and development workspaces; you can use the same utterance data to improve any of these workspaces. See [Improving across workspaces](/docs/assistant?topic=assistant-logs#logs-deploy-id).
 
 ## 20 November 2017
 {: #20November2017}
@@ -727,9 +727,9 @@ The following updates are available in all locations except Dallas currently.
 ## 9 November 2017
 {: #9November2017}
 
-- **Intent examples can directly reference entities**: You can now specify an entity reference directly in an intent example. That entity reference, along with all its values or synonyms, is used by the {{site.data.keyword.conversationshort}} service classifier for training the intent. For more information, see [*Entity as example*](/docs/services/assistant?topic=assistant-intents#intents-entity-as-example) in the [Intents](/docs/services/assistant?topic=assistant-intents) topic.
+- **Intent examples can directly reference entities**: You can now specify an entity reference directly in an intent example. That entity reference, along with all its values or synonyms, is used by the {{site.data.keyword.conversationshort}} service classifier for training the intent. For more information, see [*Entity as example*](/docs/assistant?topic=assistant-intents#intents-entity-as-example) in the [Intents](/docs/assistant?topic=assistant-intents) topic.
 
-  Currently, you can only directly reference closed entities that you define. You cannot directly reference [pattern entities](/docs/services/assistant?topic=assistant-entities#entities-pattern) or [system entities](/docs/services/assistant?topic=assistant-system-entities).
+  Currently, you can only directly reference closed entities that you define. You cannot directly reference [pattern entities](/docs/assistant?topic=assistant-entities#entities-pattern) or [system entities](/docs/assistant?topic=assistant-system-entities).
   {: note}
 
 ## 8 November 2017
@@ -740,13 +740,13 @@ The following updates are available in all locations except Dallas currently.
 ## 3 November 2017
 {: #3November2017}
 
-- **Dialog updates**: The following updates make is easier for you to build a dialog. (See [Building a dialog](/docs/services/assistant?topic=assistant-dialog-build) for details.)
+- **Dialog updates**: The following updates make is easier for you to build a dialog. (See [Building a dialog](/docs/assistant?topic=assistant-dialog-build) for details.)
 
     - You can add a condition to a slot to make it required only if certain conditions are met. For example, you can make a slot that asks for the name of a spouse required only if a previous (required) slot that asks for marital status indicates that the user is married.
 
     - You can now choose **Skip user input** as the next step for a node. When you choose this option, after processing the current node, your assistant jumps directly to the first child node of the current node. This option is similar to the existing *Jump to* next step option, except that it allows for more flexibility. You do not need to specify the exact node to jump to. At run time, your assistant always jumps to whichever node is the first child node, even if the child nodes are reordered or new nodes are added after the next step behavior is defined.
 
-    - You can add conditional responses for slots. For both Found and Not found responses, you can customize how your assistant responds based on whether certain conditions are met. This feature enables you to check for possible misinterpretations and correct them before saving the value provided by the user in the slot's context variable. For example, if the slot saves the user's age, and uses `@sys-number` in the *Check for* field to capture it, you can add a condition that checks for numbers over 100, and responds with something like, *Please provide a valid age in years.* See [Adding conditions to Found and Not found responses](/docs/services/assistant?topic=assistant-dialog-slots#dialog-slots-handler-next-steps) for more details.
+    - You can add conditional responses for slots. For both Found and Not found responses, you can customize how your assistant responds based on whether certain conditions are met. This feature enables you to check for possible misinterpretations and correct them before saving the value provided by the user in the slot's context variable. For example, if the slot saves the user's age, and uses `@sys-number` in the *Check for* field to capture it, you can add a condition that checks for numbers over 100, and responds with something like, *Please provide a valid age in years.* See [Adding conditions to Found and Not found responses](/docs/assistant?topic=assistant-dialog-slots#dialog-slots-handler-next-steps) for more details.
 
     - The interface you use to add conditional responses to a node has been redesigned to make it easier to list each condition and its response. To add node-level conditional responses, click **Customize**, and then enable the **Multiple responses** option.
 
@@ -769,7 +769,7 @@ The following updates are available in all locations except Dallas currently.
 ## 3 October 2017
 {: #3October2017}
 
-- **Pattern-defined entities (Beta)**: You can now define specific patterns for an entity, using regular expressions. This can help you identify entities that follow a defined pattern, for example SKU or part numbers, phone numbers, or email addresses. See [Pattern-defined entities](/docs/services/assistant?topic=assistant-entities#entities-pattern) for additional details.
+- **Pattern-defined entities (Beta)**: You can now define specific patterns for an entity, using regular expressions. This can help you identify entities that follow a defined pattern, for example SKU or part numbers, phone numbers, or email addresses. See [Pattern-defined entities](/docs/assistant?topic=assistant-entities#entities-pattern) for additional details.
     - You can add either synonyms or patterns for a single entity value; you cannot add both.
     - For each entity value, there can be a maximum of up to 5 patterns.
     - Each pattern (regular expression) is limited to 128 characters.
@@ -818,13 +818,13 @@ The following updates are available in all locations except Dallas currently.
 ## 7 August 2017
 {: #7August2017}
 
-- **`Next` and `last` date interpretation**: The {{site.data.keyword.conversationshort}} service treats `last` and `next` dates as referring to the most immediate last or next day referenced, which may be in either the same or a previous week. See the [system entities](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-datetime) topic for additional information.
+- **`Next` and `last` date interpretation**: The {{site.data.keyword.conversationshort}} service treats `last` and `next` dates as referring to the most immediate last or next day referenced, which may be in either the same or a previous week. See the [system entities](/docs/assistant?topic=assistant-system-entities#system-entities-sys-datetime) topic for additional information.
 
 ## 3 August 2017
 {: #3August2017}
 
-- **Fuzzy matching for additional languages (Beta)**: Fuzzy matching for entities is now available for additional languages, as noted in the [Supported languages](/docs/services/assistant?topic=assistant-language-support) topic.
-- **Partial match (Beta - English only)**: Fuzzy matching will now automatically suggest substring-based synonyms present in user-defined entities, and assign a lower confidence score as compared to the exact entity match. See [Fuzzy matching](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching) for details.
+- **Fuzzy matching for additional languages (Beta)**: Fuzzy matching for entities is now available for additional languages, as noted in the [Supported languages](/docs/assistant?topic=assistant-language-support) topic.
+- **Partial match (Beta - English only)**: Fuzzy matching will now automatically suggest substring-based synonyms present in user-defined entities, and assign a lower confidence score as compared to the exact entity match. See [Fuzzy matching](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching) for details.
 
 ## 28 July 2017
 {: #28July2017}
@@ -840,35 +840,35 @@ The following updates are available in all locations except Dallas currently.
 ## 14 July 2017
 {: #14July2017}
 
-- The slots functionality of dialogs was enhanced. For example, a *slot_in_focus* property was added that you can use to define a condition that applies to a single slot only. See [Gathering information with slots](/docs/services/assistant?topic=assistant-dialog-slots) for details.
+- The slots functionality of dialogs was enhanced. For example, a *slot_in_focus* property was added that you can use to define a condition that applies to a single slot only. See [Gathering information with slots](/docs/assistant?topic=assistant-dialog-slots) for details.
 
 ## 12 July 2017
 {: #12July2017}
 
-- **Support for Czech**: Czech language support has been introduced; please see the [Supported languages](/docs/services/assistant?topic=assistant-language-support) topic for additional details.
+- **Support for Czech**: Czech language support has been introduced; please see the [Supported languages](/docs/assistant?topic=assistant-language-support) topic for additional details.
 
 ## 11 July 2017
 {: #11July2017}
 
 - **Test in Slack**: You can use the new **Test in Slack** tool to quickly deploy your workspace as a Slack bot user for testing purposes. This tool is available only for the {{site.data.keyword.Bluemix_notm}} US South region.
-- **Updates to Arabic**: Arabic language support has been enhanced to include absolute scoring per intent, and the ability to mark intents as irrelevant; please see the [Supported languages](/docs/services/assistant?topic=assistant-language-support) topic for additional details. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied; see [Updated models](#release-notes-updated-models) for more information.
+- **Updates to Arabic**: Arabic language support has been enhanced to include absolute scoring per intent, and the ability to mark intents as irrelevant; please see the [Supported languages](/docs/assistant?topic=assistant-language-support) topic for additional details. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied; see [Updated models](#release-notes-updated-models) for more information.
 
 ## 23 June 2017
 {: #23June2017}
 
-- **Updates to Korean**: Korean language support has been enhanced; please see the [Supported languages](/docs/services/assistant?topic=assistant-language-support) topic for additional details. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied; see [Updated models](#release-notes-updated-models) for more information.
+- **Updates to Korean**: Korean language support has been enhanced; please see the [Supported languages](/docs/assistant?topic=assistant-language-support) topic for additional details. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied; see [Updated models](#release-notes-updated-models) for more information.
 
 ## 22 June 2017
 {: #22June2017}
 
-- **Introducing slots**: It is now easier to collect multiple pieces of information from a user in a single node by adding slots. Previously, you had to create several dialog nodes to cover all the possible combinations of ways that users might provide the information. With slots, you can configure a single node that saves any information that the user provides, and prompts for any required details that the user does not. See [Gathering information with slots](/docs/services/assistant?topic=assistant-dialog-slots) for more details.
+- **Introducing slots**: It is now easier to collect multiple pieces of information from a user in a single node by adding slots. Previously, you had to create several dialog nodes to cover all the possible combinations of ways that users might provide the information. With slots, you can configure a single node that saves any information that the user provides, and prompts for any required details that the user does not. See [Gathering information with slots](/docs/assistant?topic=assistant-dialog-slots) for more details.
 - **Simplified dialog tree** - The dialog tree has been redesigned to improve its usability. The tree view is more compact so it is easier to see where you are within it. And the links between nodes are represented in a way that makes it easier to understand the relationships between the nodes.
 
 ## 21 June 2017
 {: #21June2017}
 
-- **Arabic support**: Language support for Arabic is now generally available. For details, see [Configuring bi-directional languages](/docs/services/assistant?topic=assistant-language-support#language-support-configuring-bi-directional).
-- **Language updates**: The {{site.data.keyword.conversationshort}} service algorithms have been updated to improve overall language support. See the [Supported languages](/docs/services/assistant?topic=assistant-language-support) topic for details.
+- **Arabic support**: Language support for Arabic is now generally available. For details, see [Configuring bi-directional languages](/docs/assistant?topic=assistant-language-support#language-support-configuring-bi-directional).
+- **Language updates**: The {{site.data.keyword.conversationshort}} service algorithms have been updated to improve overall language support. See the [Supported languages](/docs/assistant?topic=assistant-language-support) topic for details.
 
 ## 16 June 2017
 {: #16June2017}
@@ -878,7 +878,7 @@ The following updates are available in all locations except Dallas currently.
 ## 14 June 2017
 {: #14June2017}
 
-- **Fuzzy matching for additional languages (Beta)**: Fuzzy matching for entities is now available for additional languages, as noted in the [Supported languages](/docs/services/assistant?topic=assistant-language-support) topic. You can turn on fuzzy matching per entity to improve the ability of your assistant to recognize terms in user input with syntax that is similar to the entity, without requiring an exact match. The feature is able to map user input to the appropriate corresponding entity despite the presence of misspellings or slight syntactical differences. For example, if you define giraffe as a synonym for an animal entity, and the user input contains the terms giraffes or girafe, the fuzzy match is able to map the term to the animal entity correctly. See [Fuzzy matching](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching) for details.
+- **Fuzzy matching for additional languages (Beta)**: Fuzzy matching for entities is now available for additional languages, as noted in the [Supported languages](/docs/assistant?topic=assistant-language-support) topic. You can turn on fuzzy matching per entity to improve the ability of your assistant to recognize terms in user input with syntax that is similar to the entity, without requiring an exact match. The feature is able to map user input to the appropriate corresponding entity despite the presence of misspellings or slight syntactical differences. For example, if you define giraffe as a synonym for an animal entity, and the user input contains the terms giraffes or girafe, the fuzzy match is able to map the term to the animal entity correctly. See [Fuzzy matching](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching) for details.
 
 ## 13 June 2017
 {: #13June2017}
@@ -904,7 +904,7 @@ The following updates are available in all locations except Dallas currently.
   Only emojis that are included in your training data will be correctly and consistently identified; emoji support may not correctly classify similar emojis with different color tones or other variations.
   {: note}
 
-- **Entity stemming (Beta - English only)**: The fuzzy matching beta feature recognizes entities and matches them based on the stem form of the entity value. For example, this feature correctly recognizes 'bananas' as being similar to 'banana', and 'run' being similar to 'running' as they share a common stem form. For more information, see [Fuzzy matching](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching).
+- **Entity stemming (Beta - English only)**: The fuzzy matching beta feature recognizes entities and matches them based on the stem form of the entity value. For example, this feature correctly recognizes 'bananas' as being similar to 'banana', and 'run' being similar to 'running' as they share a common stem form. For more information, see [Fuzzy matching](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching).
 - **Workspace import progress**: When you import a workspace from a JSON file, a tile for the workspace is displayed immediately, in which information about the progress of the import is displayed.
 - **Reduced training time**: Multiple models are now trained in parallel, which noticeably reduces the training time for large workspaces.
 
@@ -918,17 +918,17 @@ The following updates are available in all locations except Dallas currently.
 ## 25 May 2017
 {: #25May2017}
 
-- You can now manage context variables in the "Try it out" pane. Click the **Manage context** link to open a new pane where you can set and check the values of context variables as you test the dialog. See [Testing your dialog](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-test) for more information.
+- You can now manage context variables in the "Try it out" pane. Click the **Manage context** link to open a new pane where you can set and check the values of context variables as you test the dialog. See [Testing your dialog](/docs/assistant?topic=assistant-dialog-build#dialog-build-test) for more information.
 
 ## 16 May 2017
 {: #16May2017}
 
 - A **Car Dashboard** sample workspace is now available when you open the tool. To use the sample as a starting point for your own workspace, edit the workspace. If you want to use it for multiple workspaces, then duplicate it instead. The sample workspace does not count toward your subscription workspace total unless you use it.
 - It is now easier to navigate the tool. The navigation menu options are available from the side of the main page instead of the top. At the top of the page, Breadcrumb links display that show you where you are. You can now switch between service instances from the Workspaces page. To get there quickly, click **Back to workspaces** from the navigation menu. If you have multiple service instances, the name of the current instance is displayed. You can click the **Change** link beside it to choose another instance.
-- When you create a dialog, two nodes are now added to it for you: 1) a **Welcome** node at the top of the dialog tree that contains the greeting to display to the user and 2) an **Anything else** node at the bottom of the tree that catches any user inquiries that are not recognized by other nodes in the dialog and responds to them. See [Creating a dialog](/docs/services/assistant?topic=assistant-dialog-build) for more details.
+- When you create a dialog, two nodes are now added to it for you: 1) a **Welcome** node at the top of the dialog tree that contains the greeting to display to the user and 2) an **Anything else** node at the bottom of the tree that catches any user inquiries that are not recognized by other nodes in the dialog and responds to them. See [Creating a dialog](/docs/assistant?topic=assistant-dialog-build) for more details.
 - When you are testing a dialog in the "Try it out" pane, you can now find and resubmit a recent test utterance by pressing the Up key to cycle through your previous inputs.
 - Experimental Korean language support for 5 system entities (`@sys-date`, `@sys-time`, `@sys-currency`, `@sys-number`, `@sys-percentage`) is now available. There are known issues for some of the numeric entities, and limited support for informal language input.
-- An Overview page is available from the Improve tab. The page provides a summary of interactions with your bot. You can view the amount of traffic for a given time period, as well as the intents and entities that were recognized most often in user conversations. For additional information, see [Using the Overview page](/docs/services/assistant?topic=assistant-logs-overview).
+- An Overview page is available from the Improve tab. The page provides a summary of interactions with your bot. You can view the amount of traffic for a given time period, as well as the intents and entities that were recognized most often in user conversations. For additional information, see [Using the Overview page](/docs/assistant?topic=assistant-logs-overview).
 
 ## 27 April 2017
 {: #27April2017}
@@ -937,8 +937,8 @@ The following updates are available in all locations except Dallas currently.
     - sys-location: Recognizes references to locations, such as towns, cities, and countries, in user utterances.
     - sys-person: Recognizes references to people's names, first and last, in user utterances.
 
-    For more information, see the [System entities reference](/docs/services/assistant?topic=assistant-system-entities).
-- Fuzzy matching for entities is a beta feature that is now available in English. You can turn on fuzzy matching per entity to improve the ability of your assistant to recognize terms in user input with syntax that is similar to the entity, without requiring an exact match. The feature is able to map user input to the appropriate corresponding entity despite the presence of misspellings or slight syntactical differences. For examples, if you define **giraffe** as a synonym for an animal entity, and the user input contains the terms *giraffes* or *girafe*, the fuzzy match is able to map the term to the animal entity correctly. See [Defining entities](/docs/services/assistant?topic=assistant-entities#entities-fuzzy-matching) and search for `Fuzzy Matching` for details.
+    For more information, see the [System entities reference](/docs/assistant?topic=assistant-system-entities).
+- Fuzzy matching for entities is a beta feature that is now available in English. You can turn on fuzzy matching per entity to improve the ability of your assistant to recognize terms in user input with syntax that is similar to the entity, without requiring an exact match. The feature is able to map user input to the appropriate corresponding entity despite the presence of misspellings or slight syntactical differences. For examples, if you define **giraffe** as a synonym for an animal entity, and the user input contains the terms *giraffes* or *girafe*, the fuzzy match is able to map the term to the animal entity correctly. See [Defining entities](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching) and search for `Fuzzy Matching` for details.
 
 ## 18 April 2017
 {: #18April2017}
@@ -992,7 +992,7 @@ For more information, see the [API Reference](https://{DomainName}/apidocs/assis
 ## 3 February 2017
 {: #3February2017}
 
-- We changed how intents are scored and added the ability to mark input as irrelevant to your application. For details, see [Defining intents](/docs/services/assistant?topic=assistant-intents) and search for `Mark as irrelevant`.
+- We changed how intents are scored and added the ability to mark input as irrelevant to your application. For details, see [Defining intents](/docs/assistant?topic=assistant-intents) and search for `Mark as irrelevant`.
 
 - This release introduced a major change to the workspace. To benefit from the changes, you must manually upgrade your workspace.
 
@@ -1016,20 +1016,20 @@ For more information, see the [API Reference](https://{DomainName}/apidocs/assis
 Several changes make the dialog editor easier and more intuitive to use:
 
 - A larger editing view makes it easier to view all the details of a node as you work on it.
-- A node can contain multiple responses, each triggered by a separate condition. For more information see [Multiple responses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-responses).
+- A node can contain multiple responses, each triggered by a separate condition. For more information see [Multiple responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-responses).
 
 ## 5 December 2016
 {: #5December2016}
 
 - New languages are supported, all in Experimental mode: German, Traditional Chinese, Simplified Chinese, and Dutch.
-- Two new system entities are available: @sys-date and @sys-time. For details, see [System entities](/docs/services/assistant?topic=assistant-system-entities).
+- Two new system entities are available: @sys-date and @sys-time. For details, see [System entities](/docs/assistant?topic=assistant-system-entities).
 
 ## 21 October 2016
 {: #21October2016}
 
-- The {{site.data.keyword.conversationshort}} service now provides system entities, which are common entities that can be used across any use case. For details, see [Defining entities](/docs/services/assistant?topic=assistant-entities) and search for `Enabling system entities`.
-- You can now view a history of conversations with users on the Improve page. You can use this to understand your bot's behavior. For details, see [Improving your skill](/docs/services/assistant?topic=assistant-logs).
-- You can now import entities from a comma-separated value (CSV) file, which helps with when you have a large number of entities. For details, see [Defining entities](/docs/services/assistant?topic=assistant-entities) and search for `Importing entities`.
+- The {{site.data.keyword.conversationshort}} service now provides system entities, which are common entities that can be used across any use case. For details, see [Defining entities](/docs/assistant?topic=assistant-entities) and search for `Enabling system entities`.
+- You can now view a history of conversations with users on the Improve page. You can use this to understand your bot's behavior. For details, see [Improving your skill](/docs/assistant?topic=assistant-logs).
+- You can now import entities from a comma-separated value (CSV) file, which helps with when you have a large number of entities. For details, see [Defining entities](/docs/assistant?topic=assistant-entities) and search for `Importing entities`.
 
 ## 20 September 2016
 {: #20September2016}
@@ -1043,9 +1043,9 @@ To take advantage of the changes in a new version, change the value of the `vers
 ## 29 August 2016
 {: #29August2016}
 
-- You can move dialog nodes from one branch to another, as siblings or peers. For details, see [Moving a dialog node](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-move-node).
+- You can move dialog nodes from one branch to another, as siblings or peers. For details, see [Moving a dialog node](/docs/assistant?topic=assistant-dialog-build#dialog-build-move-node).
 - You can expand the JSON editor window.
-- You can view chat logs of your bot's conversations to help you understand it's behavior. You can filter by intents, entities, date, and time. For details, see [Improving your skill](/docs/services/assistant?topic=assistant-logs)
+- You can view chat logs of your bot's conversations to help you understand it's behavior. You can filter by intents, entities, date, and time. For details, see [Improving your skill](/docs/assistant?topic=assistant-logs)
 
 ## 11 July 2016
 {: #21July2016}

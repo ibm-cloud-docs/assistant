@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-12-06"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -47,15 +47,15 @@ To find out the service plan to which your current instance belongs, complete th
 
 Information about the artifact limits per plan is available from the topics that describe how to create the artifacts, so you can refer to the limits when you need to know them. Here are links to the topics:
 
-- [Assistants](/docs/services/assistant?topic=assistant-assistant-add#assistant-add-limits)
-- [Dialog nodes](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-node-limits)
-- [Entities](/docs/services/assistant?topic=assistant-entities#entities-limits)
-- [Inactivity timeout](/docs/services/assistant?topic=assistant-assistant-settings#assistant-settings-session-limits)
-- [Intents](/docs/services/assistant?topic=assistant-intents#intents-limits)
-- [Integrations](/docs/services/assistant?topic=assistant-deploy-integration-add#deploy-integration-add-limits)
-- [Logs](/docs/services/assistant?topic=assistant-logs#logs-limits)
-- [Skills](/docs/services/assistant?topic=assistant-skill-add#skill-add-limits)
-- [Versions](/docs/services/assistant?topic=assistant-versions#versions-limits)
+- [Assistants](/docs/assistant?topic=assistant-assistant-add#assistant-add-limits)
+- [Dialog nodes](/docs/assistant?topic=assistant-dialog-build#dialog-build-node-limits)
+- [Entities](/docs/assistant?topic=assistant-entities#entities-limits)
+- [Inactivity timeout](/docs/assistant?topic=assistant-assistant-settings#assistant-settings-session-limits)
+- [Intents](/docs/assistant?topic=assistant-intents#intents-limits)
+- [Integrations](/docs/assistant?topic=assistant-deploy-integration-add#deploy-integration-add-limits)
+- [Logs](/docs/assistant?topic=assistant-logs#logs-limits)
+- [Skills](/docs/assistant?topic=assistant-skill-add#skill-add-limits)
+- [Versions](/docs/assistant?topic=assistant-versions#versions-limits)
 
 ### API call limits
 {: #services-information-api-limits}
@@ -64,18 +64,18 @@ The number of API calls allowed per instance depends on your service plan. See y
 
 If you have a Lite plan and reach your API call limit, but the logs show that you have made fewer calls than expected, remember that the Lite plan stores log information for only 7 days.
 
-If you want to upgrade from one plan to another, see [Upgrading](/docs/services/assistant?topic=assistant-upgrade).
+If you want to upgrade from one plan to another, see [Upgrading](/docs/assistant?topic=assistant-upgrade).
 
 ### Plus and Premium plan features ![Plus or Premium plan only](images/plus.png)
 {: #services-information-premium}
 
 The following features are available only to users of Plus or Premium plans only.
 
-- [Intent conflict resolution](/docs/services/assistant?topic=assistant-intents#intents-resolve-conflicts)
-- [Intent recommendations and intent user example recommendations](/docs/services/assistant?topic=assistant-intent-recommendations)
-- [Intercom integration](/docs/services/assistant?topic=assistant-deploy-intercom)
-- [Search skill](/docs/services/assistant?topic=assistant-skill-search-add)
-- [Web Chat](/docs/services/assistant?topic=assistant-deploy-web-chat)
+- [Intent conflict resolution](/docs/assistant?topic=assistant-intents#intents-resolve-conflicts)
+- [Intent recommendations and intent user example recommendations](/docs/assistant?topic=assistant-intent-recommendations)
+- [Intercom integration](/docs/assistant?topic=assistant-deploy-intercom)
+- [Search skill](/docs/assistant?topic=assistant-skill-search-add)
+- [Web Chat](/docs/assistant?topic=assistant-deploy-web-chat)
 
 ### User-based plans
 {: #services-information-user-based-plans}
@@ -160,7 +160,7 @@ The authentication mechanism used by your service instance impacts how you must 
 
         IAM resources cannot be managed with the Cloud Foundry Command Line Interface (CLI). For example, Cloud Foundry CLI commands (beginning with `cf`) that create or manage service instances do not work with instances hosted in locations using IAM. Instead, you must use the {{site.data.keyword.cloud_notm}} CLI and its associated commands. See [Working with resources and resource groups](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_resource){: external} for more details.
 
-        See [Authenticating with IAM tokens](/docs/services/watson?topic=watson-iam){: external} for more information.
+        See [Authenticating with IAM tokens](/docs/watson?topic=watson-iam){: external} for more information.
 
     For examples, see  [Authentication](https://{DomainName}/apidocs/assistant/assistant-v2#authentication){: external} for your language in the API reference.
 
@@ -169,7 +169,7 @@ The authentication mechanism used by your service instance impacts how you must 
 
 {{site.data.keyword.cloud_notm}} has a network of global data centers that provide performance benefits to its cloud services. See [{{site.data.keyword.cloud_notm}} global data centers](https://www.ibm.com/cloud/data-centers/){: external} for more details.
 
-{{site.data.keyword.cloud_notm}} changed from managing user access with Cloud Foundry to using token-based Identity and Access Management (IAM) authentication. IAM was rolled out in different locations at different times. You can migrate a service instance to move it from its current Cloud Foundry org and space to a resource group. See [Migrating](/docs/services/watson?topic=watson-migrate) for more details.
+{{site.data.keyword.cloud_notm}} changed from managing user access with Cloud Foundry to using token-based Identity and Access Management (IAM) authentication. IAM was rolled out in different locations at different times. You can migrate a service instance to move it from its current Cloud Foundry org and space to a resource group. See [Migrating](/docs/watson?topic=watson-migrate) for more details.
 
 You can create {{site.data.keyword.conversationshort}} service instances that are hosted in the following data center locations:
 
@@ -193,7 +193,7 @@ To learn more about service terms and data security, read the following informat
 
 - [Service terms](https://www-03.ibm.com/software/sla/sladb.nsf/sla/home?OpenDocument){: external}
 - [Data security and privacy](https://www.ibm.com/software/sla/sladb.nsf/sla/csdsp?OpenDocument){: external}
-- [Information security](/docs/services/assistant?topic=assistant-information-security)
+- [Information security](/docs/assistant?topic=assistant-information-security)
 
 See [Platform overview](/docs/overview?topic=overview-whatis-platform){: external} for more information about {{site.data.keyword.cloud_notm}}.
 

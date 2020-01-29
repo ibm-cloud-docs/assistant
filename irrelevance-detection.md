@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-11-15"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -69,4 +69,4 @@ Irrelevance detection is designed to bridge any gaps you might have in your coun
 
 The supplemental method examines the structure of the new utterance and compares it to the structure of the user example utterances in your training data. This alternate approach helps skills that have few or no counterexamples recognize irrelevant utterances. It is likely to have less of an effect for skills that have a sufficient number of counterexamples defined already. 
 
-Note that the new method relies on structural information that is based on data from outside your skill. So, while the new method can be useful as you are starting out, to build an assistant that provides a more customized experience, you want it to use information from data that is derived from within the application's domain. The way to ensure that your assistant does so is by adding your own counterexamples. For more information, see [Teaching your skill about topics to ignore](/docs/services/assistant?topic=assistant-logs#logs-mark-irrelevant).
+Note that the new method relies on structural information that is based on data from outside your skill. So, while the new method can be useful as you are starting out, to build an assistant that provides a more customized experience, you want it to use information from data that is derived from within the application's domain. The way to ensure that your assistant does so is by adding your own counterexamples. For more information, see [Teaching your skill about topics to ignore](/docs/assistant?topic=assistant-logs#logs-mark-irrelevant).

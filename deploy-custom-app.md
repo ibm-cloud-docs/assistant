@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-02-21"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -29,4 +29,4 @@ subcollection: assistant
 If the available integration channels do not meet your needs, you can build your own client application as the interface between the assistant and your users.
 {: shortdesc}
 
-See [API overview](/docs/services/assistant?topic=assistant-api-overview) for more information.
+See [API overview](/docs/assistant?topic=assistant-api-overview) for more information.

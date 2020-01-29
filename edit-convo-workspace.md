@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-04-12"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -40,7 +40,7 @@ Your workspace is still available; it is just referred to as a *skill* now. To m
 1.  Make any changes or additions to the training data or dialog that you want to make.
 1.  Save your changes.
 
-Once training is completed, your updates are available to the custom application from which you are calling {{site.data.keyword.conversationshort}}. See [Watson Assistant API overview](/docs/services/assistant?topic=assistant-api-overview) for more information.
+Once training is completed, your updates are available to the custom application from which you are calling {{site.data.keyword.conversationshort}}. See [Watson Assistant API overview](/docs/assistant?topic=assistant-api-overview) for more information.
 
 ## Limitations
 {: #edit-convo-workspace-cons}

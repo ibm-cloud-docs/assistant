@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-14"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -34,7 +34,7 @@ When you create a Web Chat integration, code is generated that calls a script wr
 
 ![Plus or Premium plan only](images/plus.png) This feature is available to Plus or Premium plan users only.
 
-If you are participating in the **Early Access Program**, follow the instructions in this topic instead: [Beta: Integrating with your own website](/docs/services/assistant?topic=assistant-beta-deploy-web-chat).
+If you are participating in the **Early Access Program**, follow the instructions in this topic instead: [Beta: Integrating with your own website](/docs/assistant?topic=assistant-beta-deploy-web-chat).
 {: tip}
 
 ## Create a Web Chat instance to add to your website
@@ -174,8 +174,8 @@ You can reference the `$ismember` context variable from your dialog. For example
 
 If you want to perform tasks that require you to know the user who submitted the user input, then you must pass the user ID to the Web Chat integration. Such tasks include the following:
 
-- User-based service plans use the `user_id` associated with user input for billing purposes. See [User-based plans](/docs/services/assistant?topic=assistant-services-information#services-information-user-based-plans). 
-- The ability to delete any data created by someone who requests to be forgotten requires that a `customer_id` be associated with the user input. When a `user_id` is defined, the product can reuse it to pass a `customer_id` parameter. See [Labeling and deleting data](/docs/services/assistant?topic=assistant-information-security#information-security-gdpr-wa).
+- User-based service plans use the `user_id` associated with user input for billing purposes. See [User-based plans](/docs/assistant?topic=assistant-services-information#services-information-user-based-plans). 
+- The ability to delete any data created by someone who requests to be forgotten requires that a `customer_id` be associated with the user input. When a `user_id` is defined, the product can reuse it to pass a `customer_id` parameter. See [Labeling and deleting data](/docs/assistant?topic=assistant-information-security#information-security-gdpr-wa).
 
 To support these user-based capabilities, you must add the `options.userID` method to the codeblock before you paste it into your web page.
 

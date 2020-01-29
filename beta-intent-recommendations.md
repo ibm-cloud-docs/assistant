@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-27"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -34,7 +34,7 @@ Let Watson analyze your chat transcript log data to understand the most common a
 
 Watson can recommend some initial intents for you to start with. Or, if you already created some intents, Watson analyzes your logs and compares its findings with your existing intents to identify gaps in your training data and suggest new intents that can fill them in. 
 
-The abiility to use assistant logs as the source for intent recommendations is available for use by participants in the early access program only. To find out how to request access, see [Participate in the early access program](/docs/services/assistant?topic=assistant-feedback#feedback-beta).
+The abiility to use assistant logs as the source for intent recommendations is available for use by participants in the early access program only. To find out how to request access, see [Participate in the early access program](/docs/assistant?topic=assistant-feedback#feedback-beta).
 {: preview}
 
 When you participate in the early access program, IBM gives you early access to features for your evaluation. These features are classified as beta, which means they might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment. Beta features are supported only on the [IBM Developer Answers](https://developer.ibm.com/answers/topics/watson-assistant/){: external}.
@@ -65,7 +65,7 @@ Mine your existing data to do one of the following things:
 - [Get intent recommendations](#intent-recommendations-get-intent-recommendations-task)
 - [Get intent user example recommendations](#intent-recommendations-get-example-recommendations-task)
 
-See [Supported languages](/docs/services/assistant?topic=assistant-language-support) for information about the language support for this feature.
+See [Supported languages](/docs/assistant?topic=assistant-language-support) for information about the language support for this feature.
 
 ## Enabling the intent recommendations feature
 {: #intent-recommendations-enable-task}
@@ -100,9 +100,9 @@ To use assistant chat logs as the source for your intent and intent user example
 - The assistant must be *live*, meaning it is deployed in a production environment, and is interacting with customers.
 - The application with which you deploy the assistant must use the v2 `/message` API. The log of an assistant that receives user input through the v1 `/message` API cannot be used as a recommendation source. 
 
-  All of the built-in integrations use the v2 API. See [Adding integrations](/docs/services/assistant?topic=assistant-deploy-integration-add).
+  All of the built-in integrations use the v2 API. See [Adding integrations](/docs/assistant?topic=assistant-deploy-integration-add).
   {:tip}
-- The assistant must have exchanged messages with a customer within the log retention time period. Logs are stored for a number of days, the total of which is determined by your service plan type. If no customer interactions take place within the retention period, then there is no log data available to use as a recommendation source. For details about log limits, see [Log limits](/docs/services/assistant?topic=assistant-logs#logs-limits).
+- The assistant must have exchanged messages with a customer within the log retention time period. Logs are stored for a number of days, the total of which is determined by your service plan type. If no customer interactions take place within the retention period, then there is no log data available to use as a recommendation source. For details about log limits, see [Log limits](/docs/assistant?topic=assistant-logs#logs-limits).
 - The assistant log must contain at least 3,000 messages.
 
 {{site.data.keyword.Bluemix_dedicated_notm}}: You cannot get intent recommendations from logs. You can see the option to link to a connected log, but the data source will always indicate that there are 0 logs available. To use an assistant log as the source for your intent recommendations, switch to a Premium plan. Alternatively, you can add the user utterances from the logs to a CSV file, upload it, and choose the logs CSV file as the data source.
@@ -156,7 +156,7 @@ If you choose to correct spelling and grammar in the user examples, follow these
 Doing a copy edit is not required. If there are misspellings in your training data, the autocorrection tool will accept the misspelled words at run time and still be able to classify input successfully. You might be perpetuating a misspelling, but doing so will have limited impact on the overall performance of your assistant.
 {: note}
 
-For more information about how autocorrection works, see [Correcting user input](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check)
+For more information about how autocorrection works, see [Correcting user input](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check)
 
 ## Getting intent recommendations
 {: #intent-recommendations-get-intent-recommendations-task}
@@ -194,7 +194,7 @@ To get intent recommendations, complete the following steps:
     - To add the recommended intent with the selected utterances as user examples, click **Create new intent**.
     - To add the selected utterances from the recommended intent to one of your existing intents as user examples instead, click **Add to existing intent**, choose the intent, and then click **Add**.
 
-The intents and intent user examples that you add in this way do count toward your intent and intent user example totals for which there are limits per plan. See [Intent limits](/docs/services/assistant?topic=assistant-intents#intents-limits) for more details.
+The intents and intent user examples that you add in this way do count toward your intent and intent user example totals for which there are limits per plan. See [Intent limits](/docs/assistant?topic=assistant-intents#intents-limits) for more details.
 
 As the subjects that your customers want to discuss change, you can use the intent user example recommendations feature to help keep your intents up-to-date and revelant over time.
 
@@ -205,7 +205,7 @@ For any intent that is already part of your training data, you can find and add 
 
 Before you begin, you must [enable the intent recommendations feature](#intent-recommendations-enable-task). Even though you request user example recommendations on a per-intent basis, the same data source is used to find user examples that are appropriate for every intent. Watson knows which intent you are working on and finds suitable examples to recommend for that specific intent.
 
-1.  Follow the steps in [Creating intents](/docs/services/assistant?topic=assistant-intents#intents-creating-intents-task) to create an intent.
+1.  Follow the steps in [Creating intents](/docs/assistant?topic=assistant-intents#intents-creating-intents-task) to create an intent.
 
 1.  Add at least 5 user examples that illustrate the full range of typical utterances that you anticipate customers might say to trigger this intent.
 
@@ -233,4 +233,4 @@ Before you begin, you must [enable the intent recommendations feature](#intent-r
 
       If you want to include one in a search term without it being processed as an operator, you must prefix it with a backslash (`\`).
 
-The user examples that you add in this way do count toward your intent user example totals for which there are limits per plan. See [Intent limits](/docs/services/assistant?topic=assistant-intents#intents-limits) for more details.
+The user examples that you add in this way do count toward your intent user example totals for which there are limits per plan. See [Intent limits](/docs/assistant?topic=assistant-intents#intents-limits) for more details.
