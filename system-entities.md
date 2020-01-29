@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-24"
+lastupdated: "2020-01-29"
 
 keywords: system entity, sys-number, sys-date, sys-time
 
@@ -30,11 +30,11 @@ subcollection: assistant
 Learn about system entities that are provided by IBM for you to use out of the box. These built-in utility entities help your assistant recognize terms and references that are commonly used by customers in conversation, such as numbers and dates. 
 {: shortdesc}
 
-A new and improved version of the numeric system entities is generally available. For more details, see [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities).
+A new and improved version of the numeric system entities is generally available. For more details, see [New system entities](/docs/assistant?topic=assistant-beta-system-entities).
 
-For information about language support for system entities, see [Supported languages](/docs/services/assistant?topic=assistant-language-support).
+For information about language support for system entities, see [Supported languages](/docs/assistant?topic=assistant-language-support).
 
-For more information about how to use system entities from dialog, see [Creating entities](/docs/services/assistant?topic=assistant-entities#entities-enable-system-entities).
+For more information about how to use system entities from dialog, see [Creating entities](/docs/assistant?topic=assistant-entities#entities-enable-system-entities).
 
 ## @sys-currency entity
 {: #system-entities-sys-currency}
@@ -90,7 +90,7 @@ You get equivalent results for other supported languages and national currencies
 
 - Currency values are recognized as instances of @sys-number entities as well. If you are using separate conditions to check for both currency values and numbers, place the condition that checks for currency above the one that checks for a number.
 
-  This workaround is not necessary if you are using the revised system entities. For more details, see [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities).
+  This workaround is not necessary if you are using the revised system entities. For more details, see [New system entities](/docs/assistant?topic=assistant-beta-system-entities).
   {: note}
 
 - If you use the @sys-currency entity as a node condition and the user specifies `$0` as the value, the value is recognized as a currency properly, but the condition is evaluated to the number zero, not the currency zero. As a result, the `null` in the condition is evaluated to false and the node is not processed. To check for currency values in a way that handles zeros properly, use expression `@sys-currency >=0` in the node condition instead.
@@ -133,7 +133,7 @@ For time phrases like "for the last 3 days" or "in the next 4 hours", the logic 
 
 Mentions of a date or time that are relative to the current time are resolved with respect to a chosen time zone. By default, this is UTC (GMT). This means that by default, REST API clients located in time zones different from UTC will observe the value of `now` extracted according to the current UTC time.
 
-Optionally, the REST API client can add the local timezone as the context variable `$timezone`. This context variable should be sent with every client request. For example, the `$timezone` value should be `America/Los_Angeles`, `EST`, or `UTC`. For a full list of supported time zones, see [Supported time zones](/docs/services/assistant?topic=assistant-time-zones).
+Optionally, the REST API client can add the local timezone as the context variable `$timezone`. This context variable should be sent with every client request. For example, the `$timezone` value should be `America/Los_Angeles`, `EST`, or `UTC`. For a full list of supported time zones, see [Supported time zones](/docs/assistant?topic=assistant-time-zones).
 
 When the `$timezone` variable is provided, the values of relative @sys-date and @sys-time mentions are computed based on the client time zone instead of UTC.
 
@@ -182,13 +182,13 @@ For the input `at 6 pm` @sys-time returns these values:
 
 - @sys-time always returns the time in this format: HH:mm:ss.
 
-For information about processing date and time values, see the [Date and time method reference](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-date-time).
+For information about processing date and time values, see the [Date and time method reference](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-date-time).
 {: tip}
 
 ## @sys-location entity
 {: #system-entities-sys-location}
 
-Available as a beta feature for only languages noted in the [Supported languages](/docs/services/assistant?topic=assistant-language-support) topic. A powerful alternative to using this system entity is to use a contextual entity for identifying proper nouns, such as locations. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/services/assistant?topic=assistant-entities#entities-annotations-overview).
+Available as a beta feature for only languages noted in the [Supported languages](/docs/assistant?topic=assistant-language-support) topic. A powerful alternative to using this system entity is to use a contextual entity for identifying proper nouns, such as locations. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/assistant?topic=assistant-entities#entities-annotations-overview).
 {: tip}
 
 The @sys-location system entity extracts place names (country, state/province, city, town, etc.) from the user's input.
@@ -200,7 +200,7 @@ The @sys-location system entity extracts place names (country, state/province, c
 - U.S.A.
 - New South Wales
 
-For information about processing String values, see the [Strings method reference](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings).
+For information about processing String values, see the [Strings method reference](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-strings).
 {: tip}
 
 ## @sys-number entity
@@ -256,7 +256,7 @@ You get equivalent results for other supported languages.
 
   Use `@sys-number AND @sys-number<4` instead. If no number is present, the first condition evaluates to false, which appropriately results in the whole condition evaluating to false.
 
-For information about processing number values, see the [Numbers method reference](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-numbers).
+For information about processing number values, see the [Numbers method reference](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-numbers).
 {: tip}
 
 ## @sys-percentage entity
@@ -305,7 +305,7 @@ You get equivalent results for other supported languages.
 
 - Percentage values are recognized as instances of @sys-number entities as well. If you are using separate conditions to check for both percentage values and numbers, place the condition that checks for a percentage above the one that checks for a number.
 
-  This workaround is not necessary if you are using the revised system entities. For more details, see [New system entities](/docs/services/assistant?topic=assistant-beta-system-entities).
+  This workaround is not necessary if you are using the revised system entities. For more details, see [New system entities](/docs/assistant?topic=assistant-beta-system-entities).
   {: note}
 
 - If you use the @sys-percentage entity as a node condition and the user specifies `0%` as the value, the value is recognized as a percentage properly, but the condition is evaluated to the number zero not the percentage 0%. As a result, the `null` in the condition is evaluated to false and the node is not processed. To check for percentages in a way that handles zero percentages properly, use the expression `@sys-percentage >= 0` in the node condition instead.
@@ -315,7 +315,7 @@ You get equivalent results for other supported languages.
 ## @sys-person entity
 {: #system-entities-sys-person}
 
-Available as a beta feature for only languages noted in the [Supported languages](/docs/services/assistant?topic=assistant-language-support) topic. A powerful alternative to using this system entity is to use a contextual entity for identifying proper nouns, such as names. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/services/assistant?topic=assistant-entities#entities-annotations-overview).
+Available as a beta feature for only languages noted in the [Supported languages](/docs/assistant?topic=assistant-language-support) topic. A powerful alternative to using this system entity is to use a contextual entity for identifying proper nouns, such as names. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/assistant?topic=assistant-entities#entities-annotations-overview).
 {: tip}
 
 The @sys-person system entity extracts names from the user's input. Names are recognized individually, so that "Joe" is not treated as "Joseph", or vice versa.
@@ -327,5 +327,5 @@ The @sys-person system entity extracts names from the user's input. Names are re
 - Jane Doe
 - Vijay
 
-For information about processing String values, see the [Strings method reference](/docs/services/assistant?topic=assistant-dialog-methods#dialog-methods-strings).
+For information about processing String values, see the [Strings method reference](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-strings).
 {: tip}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-29"
 
 keywords: mark as irrelevant, counterexample, data source, deployment ID
 
@@ -163,7 +163,7 @@ If you use data from another data source, any improvements you make to the model
 
     ![Save intent](images/save_intent.png)
 
-    The {{site.data.keyword.conversationshort}} service supports adding user input as an example to an intent *as-is*. If you are using @entity references as examples in your intent training data, and a user message that you want to save contains an entity value or synonym from your training data, then you must edit the message later. After you save it, edit the message from the Intents page to replace the entity that it references. For more information, see [Directly referencing an @Entity as an intent example](/docs/services/assistant?topic=assistant-intents#intents-entity-as-example).
+    The {{site.data.keyword.conversationshort}} service supports adding user input as an example to an intent *as-is*. If you are using @entity references as examples in your intent training data, and a user message that you want to save contains an entity value or synonym from your training data, then you must edit the message later. After you save it, edit the message from the Intents page to replace the entity that it references. For more information, see [Directly referencing an @Entity as an intent example](/docs/assistant?topic=assistant-intents#intents-entity-as-example).
     {: tip}
 
 ### Adding an entity value or synonym
@@ -192,7 +192,7 @@ It is important to help your assistant stay focused on the types of customer que
 
 To teach your assistant about subjects it should ignore, mark utterances that discuss these off-topic subjects as irrelevant.
 
-The **Mark as irrelevant** option is not available in all languages. See [supported languages](/docs/services/assistant?topic=assistant-language-support) for details.
+The **Mark as irrelevant** option is not available in all languages. See [supported languages](/docs/assistant?topic=assistant-language-support) for details.
 
 Intents that are marked as irrelevant are saved as counterexamples in the JSON workspace, and are included as part of the training data. They teach your assistant to explicitly not answer utterances of this type.
 
@@ -205,4 +205,4 @@ You can mark an intent as irrelevant directly from the *Try it out* pane also.
 
   ![Mark as irrelevant screen capture](images/irrelevant.png)
 
-For English-language skills, irrelevance detection is used to help your skill recognize irrelevant inputs earlier in the development process. For more information, see [Irrelevance detection](/docs/services/assistant?topic=assistant-irrelevance-detection).
+For English-language skills, irrelevance detection is used to help your skill recognize irrelevant inputs earlier in the development process. For more information, see [Irrelevance detection](/docs/assistant?topic=assistant-irrelevance-detection).

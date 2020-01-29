@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-08-01"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -38,7 +38,7 @@ You can call a client application to do the following types of things:
 - Do calculations or string manipulations on user input that are too complex for supported SpEL expression methods to handle.
 - Get data from another application or service.
 
-For information about how to call an external service, such as a {{site.data.keyword.openwhisk_short}} web action, see [Making a programmatic call from a dialog node](/docs/services/assistant?topic=assistant-dialog-webhooks).
+For information about how to call an external service, such as a {{site.data.keyword.openwhisk_short}} web action, see [Making a programmatic call from a dialog node](/docs/assistant?topic=assistant-dialog-webhooks).
 
 The following diagram illustrates how you can use a client call to get weather forecast information, and return it to the user.
 

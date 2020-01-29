@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-09-27"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -47,7 +47,7 @@ Mine your existing data to do one of the following things:
 - [Get intent recommendations](#intent-recommendations-get-intent-recommendations)
 - [Get intent user example recommendations](#intent-recommendations-get-example-recommendations)
 
-See [Supported languages](/docs/services/assistant?topic=assistant-language-support) for information about the language support for this feature.
+See [Supported languages](/docs/assistant?topic=assistant-language-support) for information about the language support for this feature.
 
 ## Creating a user example source file
 {: #intent-recommendations-log-files-add}
@@ -94,7 +94,7 @@ If you choose to correct spelling and grammar in the user examples, follow these
 Doing a copy edit is not required. If there are misspellings in your training data, the autocorrection tool will accept the misspelled word at run time and still be able to classify input successfully. You might be perpetuating a misspelling, but doing so will have limited impact on the overall performance of your assistant.
 {: note}
 
-For more information about how autocorrection works, see [Correcting user input](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check).
+For more information about how autocorrection works, see [Correcting user input](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check).
 
 ## Get intent recommendations from Watson
 {: #intent-recommendations-get-intent-recommendations}
@@ -135,7 +135,7 @@ To get intent recommendations, complete the following steps:
     - To add the recommended intent with the selected utterances as user examples, click **Create intent**.
     - To add the selected utterances from the recommended intent to one of your existing intents as user examples instead, click **Add to existing intent**, choose the intent, and then click **Add**.
 
-The intents and intent user examples that you add in this way do count toward your intent and intent user example totals for which there are limits per plan. See [Intent limits](/docs/services/assistant?topic=assistant-intents#intents-limits) for more details.
+The intents and intent user examples that you add in this way do count toward your intent and intent user example totals for which there are limits per plan. See [Intent limits](/docs/assistant?topic=assistant-intents#intents-limits) for more details.
 
 As the subjects that your customers want to discuss change, you can use the intent user example recommendations feature to help keep your intents up-to-date and revelant over time.
 
@@ -146,7 +146,7 @@ The data you provide to Watson for it to find intent user examples does not need
 
 Before you begin, create a CSV file with your data. See [Creating a user example source file](#intent-recommendations-log-files-add).
 
-1.  Follow the steps in [Creating intents](/docs/services/assistant?topic=assistant-intents#intents-creating-intents-task) to create an intent.
+1.  Follow the steps in [Creating intents](/docs/assistant?topic=assistant-intents#intents-creating-intents-task) to create an intent.
 
 1.  Add at least 5 user examples that illustrate the full range of typical utterances that you anticipate customers might say to trigger this intent.
 
@@ -178,7 +178,7 @@ Before you begin, create a CSV file with your data. See [Creating a user example
 
       If you want to include one in a search term without it being processed as an operator, you must prefix it with a backslash (`\`).
 
-The user examples that you add in this way do count toward your intent user example totals for which there are limits per plan. See [Intent limits](/docs/services/assistant?topic=assistant-intents#intents-limits) for more details.
+The user examples that you add in this way do count toward your intent user example totals for which there are limits per plan. See [Intent limits](/docs/assistant?topic=assistant-intents#intents-limits) for more details.
 
 ## Managing uploaded files
 {: #intent-recommendations-manage-files}

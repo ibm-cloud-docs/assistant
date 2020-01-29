@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-23"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -32,9 +32,9 @@ Learn about APIs and other tools you can use to access and analyze log data.
 ## API
 {: #logs-resources-api}
 
-You can use the `/logs` API to list events from the transcripts of conversations that occurred between your users and your assistant. For conversations created by using the v2 `/message` API, use the instance-level endpoint to [list log events in all workspaces](https://cloud.ibm.com/apidocs/assistant/assistant-v1#list-log-events-in-all-workspaces){: external}, and then filter by Assistant ID. For more information about filtering logs, see [Filter query reference](/docs/services/assistant?topic=assistant-filter-reference).
+You can use the `/logs` API to list events from the transcripts of conversations that occurred between your users and your assistant. For conversations created by using the v2 `/message` API, use the instance-level endpoint to [list log events in all workspaces](https://cloud.ibm.com/apidocs/assistant/assistant-v1#list-log-events-in-all-workspaces){: external}, and then filter by Assistant ID. For more information about filtering logs, see [Filter query reference](/docs/assistant?topic=assistant-filter-reference).
 
-The number of days that logs are stored differs by service plan type. See [Log limits](/docs/services/assistant?topic=assistant-logs#logs-limits) for details.
+The number of days that logs are stored differs by service plan type. See [Log limits](/docs/assistant?topic=assistant-logs#logs-limits) for details.
 
 For a Python script you can run to export logs and convert them to CSV format, download the `export_logs.py` file from the [Watson Assistant GitHub)](https://github.com/watson-developer-cloud/community/blob/master/watson-assistant/export_logs.py){: external} repository.
 
@@ -61,7 +61,7 @@ First, review the definitions of terms that are associated with {{site.data.keyw
 ## Enabling user metrics
 {: #logs-resources-user-id}
 
-User metrics allow you to see, for example, the number of unique users who have engaged with your assistant, or the average number of conversations per user over a given time interval on the [Overview page](/docs/services/assistant?topic=assistant-logs-overview). User metrics are enabled by using a unique `User ID` parameter.
+User metrics allow you to see, for example, the number of unique users who have engaged with your assistant, or the average number of conversations per user over a given time interval on the [Overview page](/docs/assistant?topic=assistant-logs-overview). User metrics are enabled by using a unique `User ID` parameter.
 
 To specify the `User ID` for a message sent using the `/message` API, include the `user_id` property in your global [context](https://cloud.ibm.com/apidocs/assistant/assistant-v2#send-user-input-to-assistant){: external}, as in this example:
 
@@ -113,7 +113,7 @@ where {service-hostname} is the appropriate URL for your instance. For more deta
 The `customer_id` string cannot include the semicolon (`;`) or equal sign (`=`) characters. You are responsible for ensuring that each `Customer ID` parameter is unique across your customers.
 {: note}
 
-To delete messages using `customer_id` values, see the [Information security](/docs/services/assistant?topic=assistant-information-security#information-security-gdpr-wa) topic.
+To delete messages using `customer_id` values, see the [Information security](/docs/assistant?topic=assistant-information-security#information-security-gdpr-wa) topic.
 
 ## Jupyter notebooks
 {: #logs-resources-jupyter-notebooks}

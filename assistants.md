@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-10-24"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -58,4 +58,4 @@ A search skill leverages information from existing corporate knowledge bases or 
 |--------------------|:----------|
 | You can deploy the assistant through multiple interfaces, including existing messaging channels, such as Slack and Facebook Messenger, in just a few steps. Or, if you want to design a custom application that incorporates it, you can make direct calls to the underlying APIs to do so. | ![Integration methods including Slack, Facebook Messenger, a web application or human agent integration](images/integrations.png) |
 
-See [Creating assistants](/docs/services/assistant?topic=assistant-assistant-add) to get started.
+See [Creating assistants](/docs/assistant?topic=assistant-assistant-add) to get started.

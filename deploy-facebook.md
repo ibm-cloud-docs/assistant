@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-10-18"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -31,7 +31,7 @@ Facebook Messenger is a mobile messaging application that helps businesses and c
 
 After you configure a dialog skill and add it to an assistant, you can integrate the assistant with Facebook Messenger.
 
-There is currently no mechanism for identifying users who interact with the assistant through Facebook Messenger, which means that is no way to identify or delete data associated with a specific user. Do not use this integration method for deployments that must be GDPR compliant. See [Information security](/docs/services/assistant?topic=assistant-information-security) for more details.
+There is currently no mechanism for identifying users who interact with the assistant through Facebook Messenger, which means that is no way to identify or delete data associated with a specific user. Do not use this integration method for deployments that must be GDPR compliant. See [Information security](/docs/assistant?topic=assistant-information-security) for more details.
 {: important}
 
 1.  From the Assistants page, click to open the assistant tile that you want to deploy.
@@ -65,7 +65,7 @@ The rich responses that you add to a dialog are displayed in a Facebook app as e
 
 - **Pause**: This response type pauses the assistant's activity in the Messenger. However, activity does not resume after the pause unless another response type is triggered after it. Whenever you include this response type, add another, different response type, such as a text response, and position it after this one.
 
-See [Rich responses](/docs/services/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more information about response types.
+See [Rich responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more information about response types.
 
 ## Chatting with the assistant
 {: #deploy-facebook-try}
@@ -76,7 +76,7 @@ To start a chat with the assistant, complete the following steps:
 1.  Type the name of the page you created earlier.
 1.  After the page comes up, click it, and then start chatting with the assistant.
 
-The Welcome node of your dialog is not processed by the Facebook Messenger integration. The welcome message is not displayed in the Facebook chat like it is in the "Try it out" pane or in the Preview Link integration web page. It is not triggered from here because nodes with the `welcome` special condition are skipped in dialog flows that are started by users. Facebook Messenger waits for the user to initiate the conversation. If you need to set default values for context variables at the start of your conversation, do not set them in the welcome node. See [Starting the dialog](/docs/services/assistant?topic=assistant-dialog-start) for more information.
+The Welcome node of your dialog is not processed by the Facebook Messenger integration. The welcome message is not displayed in the Facebook chat like it is in the "Try it out" pane or in the Preview Link integration web page. It is not triggered from here because nodes with the `welcome` special condition are skipped in dialog flows that are started by users. Facebook Messenger waits for the user to initiate the conversation. If you need to set default values for context variables at the start of your conversation, do not set them in the welcome node. See [Starting the dialog](/docs/assistant?topic=assistant-dialog-start) for more information.
 {: note}
 
 The dialog flow for the current session is restarted after 60 minutes of inactivity (5 minutes for Lite and Standard plans). This means that if a user stops interacting with the assistant, after 60 (or 5) minutes, any context variable values that were set during the previous conversation are set to null or back to their default values.

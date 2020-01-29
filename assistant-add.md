@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-14"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -29,7 +29,7 @@ subcollection: assistant
 Create an assistant with the skills it needs to address the business goals of your customers.
 {: shortdesc}
 
-To learn more about what an assistant is first, see [Assistants](/docs/services/assistant?topic=assistant-assistants).
+To learn more about what an assistant is first, see [Assistants](/docs/assistant?topic=assistant-assistants).
 
 Follow these steps to create an assistant:
 
@@ -59,7 +59,7 @@ Follow these steps to create an assistant:
       This option is only visible if you are a Plus or Premium plan user.
       {: note}
 
-    See [Creating a skill](/docs/services/assistant?topic=assistant-skill-add).
+    See [Creating a skill](/docs/assistant?topic=assistant-skill-add).
 
 ## Assistant limits
 {: #assistant-add-limits}
@@ -77,11 +77,11 @@ The number of assistants you can create depends on your {{site.data.keyword.conv
 
 *After 30 days of inactivity, an unused assistant in a Lite plan service instance might be deleted to free up space.
 
-See [Changing the inactivity timeout setting](/docs/services/assistant?topic=assistant-assistant-settings) for more information on the subject.
+See [Changing the inactivity timeout setting](/docs/assistant?topic=assistant-assistant-settings) for more information on the subject.
 
-You can connect one skill of each type to your assistant. The number of skills you can build differs depending on the plan you have. See [Skill limits](/docs/services/assistant?topic=assistant-skill-add#skill-add-limits) for more details.
+You can connect one skill of each type to your assistant. The number of skills you can build differs depending on the plan you have. See [Skill limits](/docs/assistant?topic=assistant-skill-add#skill-add-limits) for more details.
 
-If you want to create an assistant in a different service instance, you can switch to another service instance. See [Switching the service instance](/docs/services/assistant?topic=assistant-skill-open#skill-open-switch-instance).
+If you want to create an assistant in a different service instance, you can switch to another service instance. See [Switching the service instance](/docs/assistant?topic=assistant-skill-open#skill-open-switch-instance).
 
 ## Deleting an assistant
 {: #assistant-add-delete}
@@ -118,4 +118,4 @@ You can add one skill of each skill type to an assistant. If you want to change 
 
     To swap the current dialog skill for a different version of the skill, choose **Change skill version**.
 
-1.  Choose an existing skill to use instead or [create a skill](/docs/services/assistant?topic=assistant-skill-add).
+1.  Choose an existing skill to use instead or [create a skill](/docs/assistant?topic=assistant-skill-add).

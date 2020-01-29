@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-27"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -47,7 +47,7 @@ The **Intents** and **Dialog** pages are being replaced with a page named **Acti
 
 - **Dialog**: This page is where you authored the script for your assistant to follow as it talked with your customers. The dialog was represented as a hierarchical tree of dialog nodes. Each root node in the tree represented a distinct major topic of conversation. Follow-up questions were represented as child nodes of the root node or other child nodes. The root and child nodes formed a branch of the conversation.  At run time, the dialog processed the nodes in the tree starting from the top of the tree, and flowed down the tree or across a branch depending on which conditions were met by each new user input.
 
-- **Actions**: This page incorporates the purposes that were served by both the *Intents* and *Dialog* pages into a single page. The new approach represents the conversation as a set of distinct actions. You teach the action to recognize customer requests for the action first. You then add steps to each action to define the interactions your assistant will have with your customers to help them reach their goal. A step might be to ask a follow-up question or ask the customer to choose from a list of options, and so on. See [Creating actions](/docs/services/assistant?topic=assistant-actions).
+- **Actions**: This page incorporates the purposes that were served by both the *Intents* and *Dialog* pages into a single page. The new approach represents the conversation as a set of distinct actions. You teach the action to recognize customer requests for the action first. You then add steps to each action to define the interactions your assistant will have with your customers to help them reach their goal. A step might be to ask a follow-up question or ask the customer to choose from a list of options, and so on. See [Creating actions](/docs/assistant?topic=assistant-actions).
 
 ## Key functional differences
 {: #dialog-evolution-differences}

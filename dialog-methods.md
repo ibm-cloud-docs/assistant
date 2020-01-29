@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-12-18"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -953,7 +953,7 @@ To define a new array that will be filled in with values that are provided by us
 
 Several methods are available to work with date and time.
 
-For information about how to recognize and extract date and time information from user input, see [@sys-date and @sys-time entities](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-date-time).
+For information about how to recognize and extract date and time information from user input, see [@sys-date and @sys-time entities](/docs/assistant?topic=assistant-system-entities#system-entities-sys-date-time).
 
 ### .after(String date or time)
 {: #dialog-methods-dates-after}
@@ -981,7 +981,7 @@ Returns a string with the current date and time in the format `yyyy-MM-dd HH:mm:
 
 - Static function.
 - The other date/time methods can be invoked on date-time values that are returned by this function and it can be passed in as their argument.
-- The user interface creates a `$timezone` context variable for you automatically so the correct time is returned when you test from the "Try it out" pane. If you don't pass a time zone, the time zone that is set automatically by the UI is used. Outside of the UI, `GMT` is used as the time zone. To learn about the syntax to use to specify the time zone, see [Time zones supported by system entities](/docs/services/assistant?topic=assistant-time-zones).
+- The user interface creates a `$timezone` context variable for you automatically so the correct time is returned when you test from the "Try it out" pane. If you don't pass a time zone, the time zone that is set automatically by the UI is used. Outside of the UI, `GMT` is used as the time zone. To learn about the syntax to use to specify the time zone, see [Time zones supported by system entities](/docs/assistant?topic=assistant-time-zones).
 
 Example of `now()` being used to first check whether it's morning before responding with a morning-specific greeting.
 
@@ -1344,9 +1344,9 @@ The `(60*60*1000L)` value represents an hour in milliseconds. This expression ad
 
 These methods help you get and reformat number values.
 
-For information about system entities that can recognize and extract numbers from user input, see [@sys-number entity](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-number).
+For information about system entities that can recognize and extract numbers from user input, see [@sys-number entity](/docs/assistant?topic=assistant-system-entities#system-entities-sys-number).
 
-If you want the service to recognize specific number formats in user input, such as order number references, consider creating a pattern entity to capture it. See [Creating entities](/docs/services/assistant?topic=assistant-entities) for more details.
+If you want the service to recognize specific number formats in user input, such as order number references, consider creating a pattern entity to capture it. See [Creating entities](/docs/assistant?topic=assistant-entities) for more details.
 
 If you want to change the decimal placement for a number, to reformat a number as a currency value, for example, see the [String format() method](#java.lang.String).
 
@@ -1720,7 +1720,7 @@ In addition to the built-in methods, you can use standard methods of the `com.go
 
 There methods help you work with text.
 
-For information about how to recognize and extract certain types of Strings, such as people names and locations, from user input, see [System entities](/docs/services/assistant?topic=assistant-system-entities).
+For information about how to recognize and extract certain types of Strings, such as people names and locations, from user input, see [System entities](/docs/assistant?topic=assistant-system-entities).
 
 **Note:** For methods that involve regular expressions, see [RE2 Syntax reference](https://github.com/google/re2/wiki/Syntax){: external} for details about the syntax to use when you specify the regular expression.
 

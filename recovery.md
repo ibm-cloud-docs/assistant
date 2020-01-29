@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-04-12"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -45,4 +45,4 @@ Disaster recovery can become an issue if an {{site.data.keyword.cloud_notm}} loc
 
 If a catastrophic failure occurs, IBM might not be able to recover data from database backups. In this case, you need to restore your data to return your service instance to its most recent state. You can restore the data to the same or to a different location.
 
-Your disaster recovery plan includes knowing, preserving, and being prepared to restore all data that is maintained on {{site.data.keyword.cloud_notm}}. See [Backing up and restoring data](/docs/services/assistant?topic=assistant-backup) for information about how to back up your service instances.
+Your disaster recovery plan includes knowing, preserving, and being prepared to restore all data that is maintained on {{site.data.keyword.cloud_notm}}. See [Backing up and restoring data](/docs/assistant?topic=assistant-backup) for information about how to back up your service instances.

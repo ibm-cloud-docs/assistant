@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-04-02"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -37,7 +37,7 @@ Resource groups offer these benefits over Cloud Foundry:
 - Ability to connect service instances to apps and service across different regions
 - Simplifies the capture of usage data per group
 
-If you created service instances before November 2018, then depending on the location in which your instance is hosted, it might be using Cloud Foundry instead of resource groups. See [Data centers](/docs/services/assistant?topic=assistant-services-information#services-information-regions) for information about when each location started to use IAM with new instances.
+If you created service instances before November 2018, then depending on the location in which your instance is hosted, it might be using Cloud Foundry instead of resource groups. See [Data centers](/docs/assistant?topic=assistant-services-information#services-information-regions) for information about when each location started to use IAM with new instances.
 
 ## Migrating a service instance
 {: #migrate-task}

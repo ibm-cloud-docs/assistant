@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-16"
+lastupdated: "2020-01-29"
 
 keywords: import workspace, import JSON, export JSON
 
@@ -31,7 +31,7 @@ subcollection: assistant
 The natural-language processing for the {{site.data.keyword.conversationshort}} service is defined in a *dialog skill*, which is a container for all of the artifacts that define a conversation flow.
 {: shortdesc}
 
-You can add one dialog skill to an assistant. See [Skill limits](/docs/services/assistant?topic=assistant-skill-add#skill-add-limits) for information about limits per plan.
+You can add one dialog skill to an assistant. See [Skill limits](/docs/assistant?topic=assistant-skill-add#skill-add-limits) for information about limits per plan.
 
 ## Create the dialog skill
 {: #skill-dialog-add-task}
@@ -73,10 +73,10 @@ To add a skill, complete the following steps:
 
 After you create the dialog skill, it appears as a tile on the Skills page. Now, you can start identifying the user goals that you want the dialog skill to address.
 
-- To add prebuilt intents to your skill, see [Using content catalogs](/docs/services/assistant?topic=assistant-catalog).
-- To define your own intents, see [Defining intents](/docs/services/assistant?topic=assistant-intents).
+- To add prebuilt intents to your skill, see [Using content catalogs](/docs/assistant?topic=assistant-catalog).
+- To define your own intents, see [Defining intents](/docs/assistant?topic=assistant-intents).
 
-The dialog skill cannot interact with customers until it is added to an assistant and the assistant is deployed. See [Creating an assistant](/docs/services/assistant?topic=assistant-assistant-add).
+The dialog skill cannot interact with customers until it is added to an assistant and the assistant is deployed. See [Creating an assistant](/docs/assistant?topic=assistant-assistant-add).
 
 ### Troubleshooting skill import issues
 {: #skill-dialog-add-import-errors}
@@ -90,7 +90,7 @@ If you receive a message that says the skill contains artifacts that exceed the 
 1.  Import the skill to the new service instance.
 1.  Make edits to the skill such that it meets the artifact limit requirements for the plan you want to use going forward. 
 
-    For information about how to decrease the number of dialog nodes, see [How many nodes are in my dialog?](/docs/services/assistant?topic=assistant-dialog-build#dialog-build-count-nodes).
+    For information about how to decrease the number of dialog nodes, see [How many nodes are in my dialog?](/docs/assistant?topic=assistant-dialog-build#dialog-build-count-nodes).
 1.  Export the edited skill by downloading it.
 1.  Try again to import the edited skill into the original service instance on the plan you want.
 
@@ -124,7 +124,7 @@ To download a dialog skill, complete the following steps:
 
 You can export a skill by using the API also. Include the `export=true` parameter with the request. See the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1#get-information-about-a-workspace){: external} for more details.
 
-For information about how to download a specific skill version, see [Downloading a skill version](/docs/services/assistant?topic=assistant-versions-export).
+For information about how to download a specific skill version, see [Downloading a skill version](/docs/assistant?topic=assistant-versions-export).
 
 ## Sharing a dialog skill with team members
 {: #skill-dialog-add-invite-others}

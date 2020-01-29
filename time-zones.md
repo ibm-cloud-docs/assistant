@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-08"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -26,7 +26,7 @@ subcollection: assistant
 # Time zones supported by system entities
 {: #time-zones}
 
-The following list of supported time zones can be used with the time zone functions for the [@sys-date and @sys-time entities](/docs/services/assistant?topic=assistant-system-entities#system-entities-sys-date-time).
+The following list of supported time zones can be used with the time zone functions for the [@sys-date and @sys-time entities](/docs/assistant?topic=assistant-system-entities#system-entities-sys-date-time).
 {: shortdesc}
 
 |            Time zone           |             Time zone            |

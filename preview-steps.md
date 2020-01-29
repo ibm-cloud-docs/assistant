@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-11-11"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -31,7 +31,7 @@ subcollection: assistant
 A step represents an interaction or exchange of information with a customer.
 {: shortdesc}
 
-This feature is visible only in a select set of service instances where the technology preview is deployed. See [Preview details](/docs/services/assistant?topic=assistant-preview). 
+This feature is visible only in a select set of service instances where the technology preview is deployed. See [Preview details](/docs/assistant?topic=assistant-preview). 
 {: preview}
 
 ## Steps overview
@@ -51,7 +51,7 @@ The types of steps your assistant can perform include the following tasks:
 ### Before you begin
 {: #steps-prereq}
 
-You must create an action in which to add steps. For information about how to create an action, see [Creating actions](/docs/services/assistant?topic=assistant-actions).
+You must create an action in which to add steps. For information about how to create an action, see [Creating actions](/docs/assistant?topic=assistant-actions).
 
 A step is defined by what you add to the *Assistant responds* section.
 
@@ -62,7 +62,7 @@ A step is defined by what you add to the *Assistant responds* section.
 
 1.  To show a text response to the customer, simply enter the text into the text field.
 
-    To include a context variable value in the response, use the syntax `$variable_name` to specify it. See [Context variables](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-context) for more information. 
+    To include a context variable value in the response, use the syntax `$variable_name` to specify it. See [Context variables](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-context) for more information. 
 
     For example, if you know that the $user context variable is set to the current customer's name before a step is processed, then you can refer to it in the text response of the step like this:
 
@@ -268,7 +268,7 @@ For example, you can construct a response like this:
 
 There might be steps that your assistant takes that require a little extra time, such as waiting for an external service to finish a process. You can build a visual indicator into your action that lets the customer know that the assistant is still there and is actively working on their request. To buy the assistant some time, as it were, add a pause response type to your step. The assistant shows a typing indicator to the customer. 
 
-This response type is especially useful if you are making a programmatic call from the action by using a webhook, because such calls can take a few seconds to return a response. For more information about webhooks, see [Making a programmatic call from dialog](/docs/services/assistant?topic=assistant-dialog-webhook).
+This response type is especially useful if you are making a programmatic call from the action by using a webhook, because such calls can take a few seconds to return a response. For more information about webhooks, see [Making a programmatic call from dialog](/docs/assistant?topic=assistant-dialog-webhook).
 
 ### Adding a pause response type
 {: #steps-pause-task}
@@ -308,7 +308,7 @@ To add messages that are responsive to information about the customer, enable mu
     - **Add rich responses**. To add a response type other than a text response.
     - **Configure a jump**. To instruct your assistant to jump somewhere after this conditional response is processed. 
     
-      You configure the **Jump to** from the *Then your assistant should* section of the response edit view. Identify the step or action that you want your assistant to process next. For help configuring a jump to a step, see [Configuring a jump to another step](/docs/services/assistant?topic=assistant-actions#actions-jump-to-config).
+      You configure the **Jump to** from the *Then your assistant should* section of the response edit view. Identify the step or action that you want your assistant to process next. For help configuring a jump to a step, see [Configuring a jump to another step](/docs/assistant?topic=assistant-actions#actions-jump-to-config).
 
       A jump that is configured for the step itself is not processed until all of the conditional responses are processed. Therefore, if a conditional response is configured to jump to another step or action, and that conditional response is triggered, the jump configured for the current step will never be processed, and will not occur.
       {: tip}
@@ -334,7 +334,7 @@ The customer might provide values for mutliple slots at once. For example, the i
 
 ![Shows that two slots are filled, and the service prompts for the remaining one.](images/steps-pass-in-info.png)
 
-Slots also make it possible for your assistant to answer follow-up questions without having to reestablish the customer's goal. For example, a customer might ask for a weather forecast, then ask a follow-up question about weather in another location or on a different day. If you save the required forecast variables, such as location and day, in slots, then if a customer asks a follow-up question with new variable values, you can overwrite the slot values with the new values provided, and give a response that reflects the new information. (For more information about how to call an external service, see [Making programmatic calls from dialog](/docs/services/assistant?topic=assistant-dialog-webhooks)).
+Slots also make it possible for your assistant to answer follow-up questions without having to reestablish the customer's goal. For example, a customer might ask for a weather forecast, then ask a follow-up question about weather in another location or on a different day. If you save the required forecast variables, such as location and day, in slots, then if a customer asks a follow-up question with new variable values, you can overwrite the slot values with the new values provided, and give a response that reflects the new information. (For more information about how to call an external service, see [Making programmatic calls from dialog](/docs/assistant?topic=assistant-dialog-webhooks)).
 
 ![Shows someone asking for a weather forecast, and then following up with a question about weather for a different location and time.](images/steps-follow-up.png)
 
@@ -382,7 +382,7 @@ Using slots produces a more natural conversational flow between your assistant a
 
       - **Not found**: Displayed if the information provided by the customer is not understood, or is not provided in the expected format. If the slot is filled successfully, or the customer input is understood and handled by a slot handler, then this statement is never displayed.
 
-      For information about how to define conditions and associated actions for Found and Not found responses, see [Adding conditions to Found and Not found responses](/docs/services/assistant?topic=assistant-dialog-slots#dialog-slots-handler-next-steps).
+      For information about how to define conditions and associated actions for Found and Not found responses, see [Adding conditions to Found and Not found responses](/docs/assistant?topic=assistant-dialog-slots#dialog-slots-handler-next-steps).
 
     This table shows example slot values for a step that helps customers place a pizza order by collecting two pieces of information, the pizza size and delivery time.
 
@@ -444,7 +444,7 @@ Using slots produces a more natural conversational flow between your assistant a
 
     After responding to the off-topic question, the prompt associated with the current empty slot is displayed.
 
-    This condition is triggered if the customer provides input that matches the slot handler conditions at any time during the conversatin up until the step-level response is displayed. See [Handling requests to exit a process](/docs/services/assistant?topic=assistant-dialog-slots#dialog-slots-node-level-handler) for more ways to use the slot handler.
+    This condition is triggered if the customer provides input that matches the slot handler conditions at any time during the conversatin up until the step-level response is displayed. See [Handling requests to exit a process](/docs/assistant?topic=assistant-dialog-slots#dialog-slots-node-level-handler) for more ways to use the slot handler.
 1.  **Add a step-level response**. The step-level response is not executed until after all of the required slots are filled. You can add a response that summarizes the information you collected. For example, `A $size pizza is scheduled for delivery at $time. Enjoy!`
 
     You can alternatively show an image or list of options as a response instead of a text response.

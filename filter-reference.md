@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-12-03"
+lastupdated: "2020-01-29"
 
 subcollection: assistant
 
@@ -97,7 +97,7 @@ Filtering on intents operates on all detected intents. To filter only on the det
 ### Filtering by customer ID
 {: #filter-reference-customer-id}
 
-To filter by customer ID, use the special location `customer_id`. (For more information about labeling messages with a customer ID, see [Information security](/docs/services/assistant?topic=assistant-information-security)).
+To filter by customer ID, use the special location `customer_id`. (For more information about labeling messages with a customer ID, see [Information security](/docs/assistant?topic=assistant-information-security)).
 
 ### Filtering by other fields
 {: #filter-reference-fields}

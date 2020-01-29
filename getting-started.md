@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-11-19"
+lastupdated: "2020-01-29"
 
 keywords: assistant, omnichannel, virtual agent, virtual assistant, chatbot, conversation, watson assistant, watson conversation
 
@@ -111,7 +111,7 @@ When you open the *My first skill*, you land on the *Intents* page.
 
 ![Shows the Intents page of My first skill](images/gs-intents-page.png)
 
-![Technology preview experience only](images/preview.png) If you land on a page named *Actions* instead, then you are using the preview experience. For information about what to do next, see [Creating actions](/docs/services/assistant?topic=assistant-actions).
+![Technology preview experience only](images/preview.png) If you land on a page named *Actions* instead, then you are using the preview experience. For information about what to do next, see [Creating actions](/docs/assistant?topic=assistant-actions).
 
 If available in your location, a tour begins that you can step through to learn about the product. Follow the tour; it provides a great overview of the product.
 
@@ -131,7 +131,7 @@ You successfully started to build your training data by adding prebuilt content 
 ## Step 5: Build a dialog
 {: #getting-started-build-dialog}
 
-A [dialog](/docs/services/assistant?topic=assistant-dialog-overview) defines the flow of your conversation in the form of a logic tree. It matches intents (what users say) to responses (what the bot says back). Each node of the tree has a condition that triggers it, based on user input.
+A [dialog](/docs/assistant?topic=assistant-dialog-overview) defines the flow of your conversation in the form of a logic tree. It matches intents (what users say) to responses (what the bot says back). Each node of the tree has a condition that triggers it, based on user input.
 
 We'll create a simple dialog that handles greeting and ending intents, each with a single node.
 
@@ -227,6 +227,6 @@ Now that you have an assistant that can participate in a simple conversational e
 This tutorial is built around a simple example. For a real application, you need to define some more interesting intents, some entities, and a more complex dialog that uses them both. When you have a polished version of the assistant, you can integrate it with channels that your customers already use, such as Slack. As traffic increases between the assistant and your customers, you can use the tools that are provided in the **Analytics** tab to analyze real conversations, and identify areas for improvement.
 
 - Complete follow-on tutorials that build more advanced dialogs:
-    - Add standard nodes with the [Building a complex dialog](/docs/services/assistant?topic=assistant-tutorial) tutorial.
-    - Learn about slots with the [Adding a node with slots](/docs/services/assistant?topic=assistant-tutorial-slots) tutorial.
-- Check out more [sample apps](/docs/services/assistant?topic=assistant-sample-apps) to get ideas.
+    - Add standard nodes with the [Building a complex dialog](/docs/assistant?topic=assistant-tutorial) tutorial.
+    - Learn about slots with the [Adding a node with slots](/docs/assistant?topic=assistant-tutorial-slots) tutorial.
+- Check out more [sample apps](/docs/assistant?topic=assistant-sample-apps) to get ideas.

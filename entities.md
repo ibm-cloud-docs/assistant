@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-10-24"
+lastupdated: "2020-01-29"
 
 keywords: entity, entity value, contextual entity, dictionary entity, pattern entity, entity synonym, annotate mentions
 
@@ -206,7 +206,7 @@ To add an entity that recognizes a pattern:
 
 1.  Click **Add value** and repeat the process to add more entity values.
 
-When you use pattern entities to find patterns in user input, you often need a way to store the part of the user input text that matches the pattern. To do so, you can use a context variable. For more information, see [Defining a context variable](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-context-var-define).
+When you use pattern entities to find patterns in user input, you often need a way to store the part of the user input text that matches the pattern. To do so, you can use a context variable. For more information, see [Defining a context variable](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-context-var-define).
 
 For example, your dialog might ask users for their email addresses. The dialog node condition will contain a condition similar to `@contactInfo:email`. You can use the following syntax in the dialog node's response section to define a context variable that captures and stores the user's email address text:
 
@@ -235,12 +235,12 @@ To assign the user-entered area code as a context variable, use the following sy
 | area_code | `<? @ContactInfo.groups[1] ?>` |
 {: caption="Saving a capture group" caption-side="top"}
 
-For more information about using capture groups in your dialog, see [Storing and recognizing entity pattern groups in input](/docs/services/assistant?topic=assistant-dialog-tips#dialog-tips-get-pattern-groups).
+For more information about using capture groups in your dialog, see [Storing and recognizing entity pattern groups in input](/docs/assistant?topic=assistant-dialog-tips#dialog-tips-get-pattern-groups).
 
 ### How fuzzy matching works
 {: #entities-fuzzy-matching}
 
-Fuzzy matching is available for languages noted in the [Supported languages](/docs/services/assistant?topic=assistant-language-support) topic.
+Fuzzy matching is available for languages noted in the [Supported languages](/docs/assistant?topic=assistant-language-support) topic.
 
 Fuzzy matching has these components:
 
@@ -253,7 +253,7 @@ For English, fuzzy matching prevents the capturing of some common, valid English
 
 Your fuzzy matching setting has no impact on synonym recommendations. Even if fuzzy matching is enabled, synonyms are suggested for the exact value you specify only, not the value and slight variations of the value.
 
-To understand how fuzzy matching and autocorrection are related to one another, see the [autocorrection documentation](/docs/services/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check-vs-fuzzy-matching).
+To understand how fuzzy matching and autocorrection are related to one another, see the [autocorrection documentation](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check-vs-fuzzy-matching).
 
 ## Adding contextual entities
 {: #entities-create-annotation-based}
@@ -374,7 +374,7 @@ System entities are centrally maintained, so any updates are available automatic
 
 1.  Browse through the list of system entities to choose the ones that are useful for your application.
     - To see more information about a system entity, including examples of matching input, click the entity in the list.
-    - For details about the available system entities, see [System entities](/docs/services/assistant?topic=assistant-system-entities).
+    - For details about the available system entities, see [System entities](/docs/assistant?topic=assistant-system-entities).
 
 1.  Click the toggle switch next to a system entity to enable or disable it.
 
