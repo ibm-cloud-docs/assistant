@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-01-31"
 
 subcollection: assistant
 
@@ -29,7 +29,7 @@ subcollection: assistant
 Intercom is a customer messaging platform that helps drive business growth through better relationships throughout the customer lifecycle.
 {: shortdesc}
 
-Intercom has partnered with IBM to add a new agent to the customer support team, a virtual Watson Assistant. You can integrate your assistant with an Intercom application to enable the app to seamlessly pass user conversations between your assistant and human agents. Read the [Watson blog post ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://medium.com/ibm-watson/contact-center-post-394dff427c8) to learn more about the integration.
+Intercom has partnered with IBM to add a new agent to the customer support team, a virtual Watson Assistant. You can integrate your assistant with an Intercom application to enable the app to seamlessly pass user conversations between your assistant and human agents. Read the [Watson blog post](https://medium.com/ibm-watson/contact-center-post-394dff427c8){: external} to learn more about the integration.
 
 This integration is available only to Plus or Premium plan users. If you want to give it a try, you can sign up for a free Plus Trial plan. [Get Plus Trial](https://cloud.ibm.com/registration?target=%2Fdeveloper%2Fwatson%2Flaunch-tool%2Fconversation%3Fplan%3Dplus-trial&cm_mmc=OSocial_Voicestorm-_-Watson+AI_Watson+Core+-+Conversation-_-WW_WW-_-Intercom+Trial+Registration+Link&cm_mmca1=000027BD&cm_mmca2=10004432).
 {: note}
@@ -50,7 +50,7 @@ You or someone in your organziation must complete these one-time prerequisite st
 
     Go to the teammate settings page in your Intercom workspace, invite the assistant as a new agent by adding the email you created in the previous step to the invite field.
 
-    If you don't have an Intercom workspace set up yet, create one at [www.intercom.com ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.intercom.com). At a minimum, you need a subscription to the *Inbox* product from Intercom to be able to create a workspace.
+    If you don't have an Intercom workspace set up yet, create one at [www.intercom.com](https://www.intercom.com){: external}. At a minimum, you need a subscription to the *Inbox* product from Intercom to be able to create a workspace.
 
 1.  From the assistant email account you created earlier, find the invitation from Intercom. Click the link in the email to join the team. Sign up using the assistant's functional email address, and then join the team.
 
@@ -149,7 +149,7 @@ Human agents can assign messages to the assistant by using Intercom's assignment
 
   <iframe class="embed-responsive-item" id="youtubeplayer3" title="Manual Assign" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/jAnolyUJAIA" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
-See the [Intercom documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.intercom.com/help/en/articles/199-assign-conversations-to-teammates-and-teams) for more details.
+See the [Intercom documentation](https://www.intercom.com/help/en/articles/199-assign-conversations-to-teammates-and-teams){: external} for more details.
 
 1.  When your dialog is ready, click **Connect now**.
 1.  Click **Access Intercom** to be redirected to the Intercom site.
@@ -251,6 +251,6 @@ The following 3-minute video illustrates the steps.
 ## Testing the integration
 {: #deploy-intercom-try}
 
-To effectively test your Intercom integration from end-to-end, you must have access to an Intercom end-user application. You already created or edited an Intercom workspace. The workspace must have an associated user interface client. If it does not, see [Apps in Intercom ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.intercom.com/help/en/collections/380-apps-in-intercom){: external} for help with setting one up.
+To effectively test your Intercom integration from end-to-end, you must have access to an Intercom end-user application. You already created or edited an Intercom workspace. The workspace must have an associated user interface client. If it does not, see [How do I create an app?](https://www.intercom.com/help/en/articles/1827298-how-do-i-create-an-app){: external} for help with setting one up.
 
 Submit test user queries through a client application that is associated with your Intercom workspace to see how the messages are handled by Intercom. Verify that messages that are meant to be answered by the assistant are generating the appropriate responses, and that the assistant is not responding to messages that it is not configured to answer.
