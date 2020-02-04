@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-04"
 
 keywords: entity, entity value, contextual entity, dictionary entity, pattern entity, entity synonym, annotate mentions
 
@@ -439,9 +439,15 @@ You can export a number of entities to a CSV file, so you can then import and re
 - Pattern information is included in the CSV export. Any string wrapped with `/` will be considered a pattern (as opposed to a synonym).
 - Annotations associated with contexual entities are not exported. You must export the entire dialog skill to capture both the entity value and any associated annotations.
 
-1.  Select the entities you want, then click the export icon.
+1.  Go to the **Entities** page
 
-    ![Export entity button](images/export-entity.png)
+    - To export all entities, meaning the entities that are listed on this and any additional pages, do not select any individual entities. Instead, click the *Export* icon. ![Export option](images/export-c10.png)
+
+    - To export the entities that are listed on the current page only, select the checkbox in the header. This action selects all of the entities on the current page. Click **Export**.
+
+    - To export one or more specific entities, select the entities that you want to export, and then click **Export**.
+
+1.  Specify the name and location in which to store the CSV file that is generated.
 
 ## Importing entities
 {: #entities-import}
@@ -503,8 +509,13 @@ You can view the imported entities on the Entities tab. You might need to refres
 
 You can select a number of entities for deletion.
 
-**IMPORTANT**: By deleting entities you are also deleting all associated values, synonyms, or patterns, and these items cannot be retrieved later. All dialog nodes that reference these entities or values must be updated manually to no longer reference the deleted content.
+When you delete an entity, you remove any values, synonyms, patterns, or annotations that are associated with the entity. This data cannot be retrieved later. All dialog nodes that reference these entities or values must be updated manually to no longer reference the deleted content.
+{: important}
 
-1.  Select the entities you want to delete, then click the delete icon.
+1.  Go to the **Entities** page.
 
-    ![Delete entity button](images/delete-entity.png)
+    - To delete all entities, meaning the entities listed on this and any additional pages, do not select any individual entities. Instead, click the *Delete all entities* icon. ![Delete option](images/delete-c10.png)
+
+    - To delete the entities that are listed on the current page only, select the checkbox in the header. This action selects all of the entities that are listed on the current page. Click **Delete**.
+
+    - To delete one or more specific entities, select the entities that you want to delete, and then click **Delete**.
