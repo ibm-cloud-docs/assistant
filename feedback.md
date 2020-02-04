@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-10-18"
+lastupdated: "2020-02-04"
 
 subcollection: assistant
 
@@ -48,19 +48,24 @@ Rate and comment about whether the topic is helpful by clicking **Yes** or **No*
 
 Want to stay informed about new features that will be added to the product? Want to share your feedback about the feature function and direction? Join the early access program!
 
-To request participation in the program, you must first create a new {{site.data.keyword.conversationshort}} service instance that you will dedicate to new feature evaluation purposes only. *Do not add an existing instance that you are using to do any real work to the early access program.*
+To request participation in the program, you must first create a new {{site.data.keyword.conversationshort}} service instance that you will dedicate to new feature evaluation purposes only. 
+
+Do not add an existing instance that you are using to do any real work to the early access program.
+{: important}
 
 1.  Create a {{site.data.keyword.conversationshort}} service resource from the [{{site.data.keyword.conversationshort}}](https://{DomainName}/catalog/services/watson-assistant){: external} page in the {{site.data.keyword.cloud}} catalog.
 
     The service instance can be part of a free (Lite) or Standard plan, and must be deployed to the **Dallas** location. The service instance must be managed by a resource group, not Cloud Foundry.
 
-    Unless you change it, the service instance will be created in the **default** resource group, which is sufficient for the purposes of the beta.
+    Unless you change it, the service instance will be created in the **default** resource group, which is sufficient for the purposes of new feature evaluation.
 
 1.  After the instance is created, click **Launch {{site.data.keyword.conversationshort}}** to open {{site.data.keyword.conversationshort}}.
-1.  Click the **Skills** icon  ![Skills menu icon](images/nav-skills-icon.png).
-1.  From the bottom of the page, click **Request Early Access**, and then confirm that you accept the terms and conditions for participating in the program. The early access program is considered a *beta* by IBM Cloud. 
+1.  Click the User ![User](images/user-icon2.png) icon in the page header, and then choose **Sign up for Beta Access**.
 
-    If you are approved for participation in the early access program, it is the service instance from which you request program access that is upgraded to expose new features.
+    You won't see this option unless your service instance is part of a Lite or Standard plan that is hosted in the US South data center.
+1.  Confirm that you accept the terms and conditions for participating in the program. (The early access program is considered a *beta* by IBM Cloud.)
+
+    If you are approved for participation in the early access program, it is the service instance from which you request program access that is upgraded to include new features.
 
 1.  After you get a chance to try out the new features, let us know what you think.
 

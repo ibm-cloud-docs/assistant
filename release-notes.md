@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-04"
 
 subcollection: assistant
 
@@ -51,6 +51,13 @@ The {{site.data.keyword.conversationshort}} algorithms may be periodically refin
 Existing models that you have trained will not be immediately impacted, but expired models will be updated to the current model, if you have not already done so, after 60 days of a new model becoming available.
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
+
+## 4 February 2020
+{: #4February2020}
+<!--1.88-->
+
+- **Product user interface makeover**: The UI has been updated to be more intuitive, responsive, and consistent across its pages. While the look and feel of the UI elements has changed, their function has not.
+- **Requesting early access**: The button you click to request participation in the early access program has moved from the Skills page to the user account menu. For more information, see [Feedback](/docs/assistant?topic=assistant-feedback#feedback-beta).
 
 ## 24 January 2020
 {: #24January2020}

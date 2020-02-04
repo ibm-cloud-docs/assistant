@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-04"
 
 keywords: intent, intent conflicts, annotate
 
@@ -246,9 +246,17 @@ Intents containing your search term, with corresponding examples, are shown.
 
 You can export a number of intents to a CSV file, so you can then import and reuse them for another {{site.data.keyword.conversationshort}} application.
 
-1.  From the **Intents** page, select the intents that you want from the list and click **Export**.
+1.  Go to the **Intents** page.
 
-    ![Export option](images/ExportIntent.png)
+    - To export all intents, meaning the intents listed on this and any additional pages, do not select any individual intents. Instead, click the *Export all intents* icon. ![Export option](images/export-c10.png)
+
+    - To export the intents that are listed on the current page only, select the checkbox in the header. This action selects all of the intents on the current page. Click **Export**.
+
+    - To export one or more specific intents, select the intents that you want to export, and then click **Export**.
+
+      ![Export option](images/ExportIntent.png)
+
+1.  Specify the name and location in which to store the CSV file that is generated.
 
 ## Importing intents and examples
 {: #intents-import}
@@ -350,6 +358,12 @@ You can select a number of intents for deletion.
 
 **IMPORTANT**: By deleting intents that you are also deleting all associated examples, and these items cannot be retrieved later. All dialog nodes that reference these intents must be updated manually to no longer reference the deleted content.
 
-1.  From the **Intents** page, select the intents that you want from the list and click **Delete**.
+1.  Go to the **Intents** page
 
-    ![Delete option](images/DeleteIntent.png)
+    - To delete all intents, meaning the intents listed on this and any additional pages, do not select any individual intents. Instead, click the *Delete all intents* icon. ![Delete option](images/delete-c10.png)
+
+    - To delete the intents that are listed on the current page only, select the checkbox in the header. This action selects all of the intents that are listed on the current page. Click **Delete**.
+
+    - To delete one or more specific intents, select the intents that you want to delete, and then click **Delete**.
+
+      ![Delete option](images/DeleteIntent.png)
