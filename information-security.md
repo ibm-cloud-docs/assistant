@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-05"
 
 subcollection: assistant
 
@@ -69,18 +69,18 @@ If you need to remove a customer's message data from a {{site.data.keyword.conve
 
 To be able to delete message data associated with a specific user, you must first associate all messages with a unique **customer ID** for each user. To specify the **customer ID** for any messages sent using the `/message` API, include the `X-Watson-Metadata: customer_id` property in your header. For example:
 
-```
+```sh
 curl -X POST -u "apikey:3Df... ...Y7Pc9"
  --header
    'Content-Type: application/json'
    'X-Watson-Metadata: customer_id=abc'
  --data
    '{"input":{"text":"hello"}}'
-  'https://{service-hostname}/assistant/api/v2/assistants/{assistant_id}/sessions/{session_id}/message?version=2019-02-28'
+  '{url}/v2/assistants/{assistant_id}/sessions/{session_id}/message?version=2019-02-28'
 ```
-{: codeblock}
+{: pre}
 
-where {service-hostname} is the appropriate URL for your instance. For more details, see [Service endpoint](https://cloud.ibm.com/apidocs/assistant/assistant-v2#service-endpoint){: external}.
+where {url} is the appropriate URL for your instance. For more details, see [Service endpoint](https://cloud.ibm.com/apidocs/assistant/assistant-v2#service-endpoint){: external}.
 
 The `customer_id` string cannot include the semicolon (`;`) or equal sign (`=`) characters. You are responsible for ensuring that each `customer ID` property is unique across your customers.
 {: note}
@@ -94,13 +94,13 @@ If you add a search skill to an assistant, user input that is submitted to the a
 
 Use the v1 `/logs` method `filter` parameter to search an application log for specific user data. For example, to search for data specific to a `customer_id` that matches `my_best_customer`, the query might be:
 
-``` curl
-curl -X GET -u "apikey:3Df... ...Y7Pc9"
-'https://{service-hostname}/assistant/api/v1/workspaces/{workspaceID}/logs?version=2018-09-20&filter=customer_id::my_best_customer'
+``` sh
+curl -X GET -u "apikey:3Df... ...Y7Pc9" \
+"{url}/v1/workspaces/{workspaceID}/logs?version=2018-09-20&filter=customer_id::my_best_customer"
 ```
-{: codeblock}
+{: pre}
 
-where {service-hostname} is the appropriate URL for your instance. For more details, see [Service endpoint](https://cloud.ibm.com/apidocs/assistant/assistant-v1#service-endpoint){: external}.
+where {url} is the appropriate URL for your instance. For more details, see [Service endpoint](https://cloud.ibm.com/apidocs/assistant/assistant-v1#service-endpoint){: external}.
 
 See the [Filter query reference](/docs/assistant?topic=assistant-filter-reference) for additional details.
 
@@ -115,13 +115,13 @@ Only data that was added by using the `POST /message` API endpoint with an assoc
 
 As an example, to delete any message data associated with a user that has the customer ID `abc` from your {{site.data.keyword.conversationshort}} instance, send the following cURL command:
 
+```sh
+curl -X DELETE -u "apikey:3Df... ...Y7Pc9" \
+"{url}/v1/user_data?customer_id=abc&version=2018-09-20"
 ```
-curl -X DELETE -u "apikey:3Df... ...Y7Pc9"
- 'https://{service-hostname}/assistant/api/v1/user_data?customer_id=abc&version=2018-09-20'
-```
-{: codeblock}
+{: pre}
 
-where {service-hostname} is the appropriate URL for your instance. For more details, see [Service endpoint](https://cloud.ibm.com/apidocs/assistant/assistant-v1#service-endpoint){: external}.
+where {url} is the appropriate URL for your instance. For more details, see [Service endpoint](https://cloud.ibm.com/apidocs/assistant/assistant-v1#service-endpoint){: external}.
 
 An empty JSON object `{}` is returned.
 
