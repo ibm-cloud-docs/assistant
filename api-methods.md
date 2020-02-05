@@ -9,7 +9,7 @@ subcollection: assistant
 
 ---
 
-{:curl: #curl .ph data-hd-programlang='curl'}
+{:curl: .ph data-hd-programlang='curl'}
 {:javascript: #javascript .ph data-hd-programlang='javascript'}
 {:java: #java .ph data-hd-programlang='java'}
 {:python: #python .ph data-hd-programlang='python'}
