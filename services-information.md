@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-05"
 
 subcollection: assistant
 
@@ -122,14 +122,14 @@ The authentication mechanism used by your service instance impacts how you must 
 
     Provide your username and password credentials.
 
-    ```curl
+    ```sh
     curl -X GET \
     --user {username}:{password} \
-    'https://{service-hostname/assistant/api/v1/workspaces?version=2018-09-20'
+    "{url}/assistant/api/v1/workspaces?version=2018-09-20"
     ```
-    {: codeblock}
+    {: pre}
 
-    where {service-hostname} is the appropriate URL for your instance. For more details, see [Service endpoint](https://cloud.ibm.com/apidocs/assistant/assistant-v1#service-endpoint){: external}
+    where {url} is the appropriate URL for your instance. For more details, see [Service endpoint](https://cloud.ibm.com/apidocs/assistant/assistant-v1#service-endpoint){: external}
 
      **IAM API call**
 
@@ -138,22 +138,22 @@ The authentication mechanism used by your service instance impacts how you must 
 
       - Tokens support authenticated requests without embedding service credentials in every call. The following example shows a bearer token being used.
 
-        ```curl
+        ```sh
         curl -X GET \
-        'https://{service-hostname}/assistant/api/v1/workspaces?version=2018-09-20' \
-        --header 'Authorization: Bearer eyJhbGciOiJIUz......sgrKIi8hdFs'
+        "{url}/v1/workspaces?version=2018-09-20" \
+        --header "Authorization: Bearer eyJhbGciOiJIUz......sgrKIi8hdFs"
         ```
-        {: codeblock}
+        {: pre}
 
-        where {service-hostname} is the appropriate URL for your instance. For more details, see [Service endpoint](https://cloud.ibm.com/apidocs/assistant/assistant-v1#service-endpoint){: external}
+        where {url} is the appropriate URL for your instance. For more details, see [Service endpoint](https://cloud.ibm.com/apidocs/assistant/assistant-v1#service-endpoint){: external}
 
       - API keys use basic authentication. The following example shows an apikey being used.
 
-        ```curl
+        ```sh
         curl -X GET -u "apikey:3Df... ...Y7Pc9" \
-        'https://{service-hostname}/assistant/api/v1/workspaces?version=2018-09-20' \
+        "{url}/v1/workspaces?version=2018-09-20" \
         ```
-        {: codeblock}
+        {: pre}
 
         When you use any of the Watson SDKs, you can pass the API key and let the SDK manage the lifecycle of the tokens.
         {: note}
@@ -162,7 +162,7 @@ The authentication mechanism used by your service instance impacts how you must 
 
         See [Authenticating with IAM tokens](/docs/watson?topic=watson-iam){: external} for more information.
 
-    For examples, see  [Authentication](https://{DomainName}/apidocs/assistant/assistant-v2#authentication){: external} for your language in the API reference.
+    For examples, see [Authentication](https://{DomainName}/apidocs/assistant/assistant-v2#authentication){: external} for your language in the API reference.
 
 ### Data centers
 {: #services-information-regions}
