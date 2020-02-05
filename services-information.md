@@ -125,7 +125,7 @@ The authentication mechanism used by your service instance impacts how you must 
     ```sh
     curl -X GET \
     --user {username}:{password} \
-    "{url}/assistant/api/v1/workspaces?version=2018-09-20"
+    "{url}/v1/workspaces?version=2018-09-20"
     ```
     {: pre}
 
