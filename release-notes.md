@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-02-05"
 
 subcollection: assistant
 
@@ -33,8 +33,8 @@ API requests require a version parameter that takes a date in the format `versio
 
 Send the version parameter with every API request. {{site.data.keyword.conversationshort}} uses the API version for the date you specify, or the most recent version before that date. Don't default to the current date. Instead, specify a date that matches a version that is compatible with your app, and don't change it until your app is ready for a later version.
 
-- The current version for V1 is `2019-02-28`.
-- The current version for V2 is `2019-02-28`.
+- The current version for V1 is `2020-02-05`.
+- The current version for V2 is `2020-02-05`.
 - The dialog skill "Try it out" pane uses version `2018-07-10`.
 - The search skill "Try it out" pane uses {{site.data.keyword.discoveryshort}} API version `2018-12-03`.
 
@@ -51,6 +51,15 @@ The {{site.data.keyword.conversationshort}} algorithms may be periodically refin
 Existing models that you have trained will not be immediately impacted, but expired models will be updated to the current model, if you have not already done so, after 60 days of a new model becoming available.
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
+
+## 5 February 2020
+{: #5February2020}
+
+- **New API version**: The current API version is now `2020-02-05`. The following changes were made with this version:
+
+    - When a dialog node's response type is `connect-to-agent`, the node's `title` is used as the `topic` value. Previously, `user_label` was used.
+
+    - The `alternate_intents` property is stored as a Boolean value instead of a String.
 
 ## 4 February 2020
 {: #4February2020}
