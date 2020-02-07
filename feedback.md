@@ -69,4 +69,4 @@ Do not add an existing instance that you are using to do any real work to the ea
 
 1.  After you get a chance to try out the new features, let us know what you think.
 
-    To share your feedback, join the [Watson Developer Community on Slack](http://wdc-slack-inviter.mybluemix.net/)(: external). Add your first impressions and suggestions to the **#assistant-early-access** channel.
+    To share your feedback, join the [Watson Developer Community on Slack](http://wdc-slack-inviter.mybluemix.net/){: external}. Add your first impressions and suggestions to the **#assistant-early-access** channel.
