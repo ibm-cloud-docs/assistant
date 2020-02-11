@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-11-20"
+lastupdated: "2020-01-31"
 
 subcollection: assistant
 
@@ -41,12 +41,6 @@ The following features are available for use by participants in the early access
 
   With the introduction of this feature, the way in which CSV log files are stored also changed. Previously, a log CSV file that you uploaded to one skill was shared by all of the skills in that service instance. Now, a CSV file that you upload to one skill is available for use only by that one skill. For existing instances with CSV files, the shared CSV files have been made available to each of the skills in the instance. You can delete a CSV file from a skill that doesn't use it by managing the recommendation sources for the skill.
   {: important}
-
-- **Disambiguation changes**: How disambiguation works is changing in the following ways:
-
-  - If the external node field exists and contains a summary of the node's purpose, then its summary will be shown to users who need to pick a node for disambiguation. Otherwise, the dialog node name content will be used.
-  - Now the text that you add to the dialog node name field might be shown to users. Both to internal users if the conversation is transferred to a human agent, and to end users if the assistant needs to ask users to clarify their meaning. The text you add as the node name must identify the purpose of the node clearly and succinctly. 
-  - When testing, you might notice that the order of the options in the disambiguation list changes from one test run to the next. Don't worry; this is the intended behavior. As part of work being done to help the assistant learn automatically from user choices, the order of the options in the disambiguation list is being randomized on purpose. Changing the order helps to avoid bias that can be introduced by a percentage of people who always pick the first option without first reviewing their choices.
 
 ## Tell us what you think
 
