@@ -46,7 +46,7 @@ The following table lists the {{site.data.keyword.conversationshort}} actions th
 | `conversation.counterexample.create` | marks test user input in the "Try it out" pane as being irrelevant or corrects the categorization of a user input that was incorrectly assigned to an intent by marking it as irrelevant. |
 | `conversation.counterexample.delete` | deletes a counterexample. |
 | `conversation.counterexample.update` | edits a counterexample. |
-| `conversation.data.update` | does a bulk action, such as imports a CSV file of intents or entities to the skill or deletes multiple training data items, such as multiple entities or intents. |
+| `conversation.data.update` | does a bulk action, such as importing a CSV file of intents or entities to the skill, or deleting multiple training data items, such as multiple entities or intents. |
 | `conversation.entity.create` | creates an entity. |
 | `conversation.entity.delete` | deletes an entity. |
 | `conversation.entity.update` | edits an entity. |
