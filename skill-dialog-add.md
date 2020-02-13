@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-11"
 
 keywords: import workspace, import JSON, export JSON
 
@@ -163,11 +163,8 @@ To share a dialog skill with other people, you must give them access to the serv
     - **Platform access roles**: Operator
     - **Service access roles**: Writer
 
-    The service access role assignment is currently ignored. Any person you invite is given full access to the instance and all of its skills and assistants, regardless of the *Service access role* you assign to them. You cannot assign someone to a Reader service access role to give them read-only access to an instance, for example.
+    The service access role assignment is currently ignored. Any person you invite is Manager access to the instance and all of its skills and assistants, regardless of the *Service access role* you assign to them. You cannot assign someone to a Reader service access role to give them read-only access to an instance, for example.
     {: important}
-
-    For older instances that are managed by Cloud Foundry, you click *Cloud Foundry* instead of *IAM Services*, choose your organization, and then assign the person to the **Developer** space role.
-    {: note}
 
 1.  Click **Add**.
 

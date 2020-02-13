@@ -110,6 +110,7 @@ Watson Assistant
 
     {: .navgroup id="reference"}
     [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2)
+    at-events.md
     dialog-methods.md
     expression-language.md
     filter-reference.md

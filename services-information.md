@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-05"
+lastupdated: "2020-02-11"
 
 subcollection: assistant
 
@@ -42,7 +42,7 @@ To find out the service plan to which your current instance belongs, complete th
 1.  Go to the [IBM Cloud Resource list](https://cloud.ibm.com/resources){: external} page.
 1.  Expand the **Services** section, find the instance name that you noted earlier, and click it to see the associated plan information.
 
-### Plan limits by artifact type
+## Plan limits by artifact type
 {: #services-information-limits}
 
 Information about the artifact limits per plan is available from the topics that describe how to create the artifacts, so you can refer to the limits when you need to know them. Here are links to the topics:
@@ -66,18 +66,19 @@ If you have a Lite plan and reach your API call limit, but the logs show that yo
 
 If you want to upgrade from one plan to another, see [Upgrading](/docs/assistant?topic=assistant-upgrade).
 
-### Plus and Premium plan features ![Plus or Premium plan only](images/plus.png)
+## Plus and Premium plan features ![Plus or Premium plan only](images/plus.png)
 {: #services-information-premium}
 
-The following features are available only to users of Plus or Premium plans only.
+The following features are available only to users of Plus or Premium plans.
 
+- [Activity tracker](/docs/assistant?topic=assistant-at-events)
 - [Intent conflict resolution](/docs/assistant?topic=assistant-intents#intents-resolve-conflicts)
 - [Intent recommendations and intent user example recommendations](/docs/assistant?topic=assistant-intent-recommendations)
 - [Intercom integration](/docs/assistant?topic=assistant-deploy-intercom)
 - [Search skill](/docs/assistant?topic=assistant-skill-search-add)
 - [Web Chat](/docs/assistant?topic=assistant-deploy-web-chat)
 
-### User-based plans
+## User-based plans
 {: #services-information-user-based-plans}
 
 Unlike API-based plans, which measure usage by the number of API calls made during a specified timeframe, the new Plus plan and updated Premium plan use user-based billing. They measure usage by the number of unique users who interacted with the assistant during a specified timeframe.
@@ -108,30 +109,9 @@ The authentication mechanism used by your service instance impacts how you must 
 
     - Click to open your service instance, click **Service credentials**, and then click **View credentials**.
 
-      **Cloud Foundry credentials**
-
-      ![Shows the service credentials page for Cloud Foundry-hosted instances.](images/cf-cred-ui.png)
-
-      **IAM credentials**
-
       ![Shows the service credentials page for IAM-hosted instances.](images/iam-creds.png)
 
 1.  Use these credentials in your API call.
-
-    **Cloud Foundry API call**
-
-    Provide your username and password credentials.
-
-    ```sh
-    curl -X GET \
-    --user {username}:{password} \
-    "{url}/v1/workspaces?version=2018-09-20"
-    ```
-    {: pre}
-
-    where {url} is the appropriate URL for your instance. For more details, see [Service endpoint](https://cloud.ibm.com/apidocs/assistant/assistant-v1#service-endpoint){: external}
-
-     **IAM API call**
 
     - The service hostname typically includes the service location.
     - Provide the appropriate type of token in the header. You can pass either a bearer token or an API key.
@@ -162,7 +142,7 @@ The authentication mechanism used by your service instance impacts how you must 
 
         See [Authenticating with IAM tokens](/docs/watson?topic=watson-iam){: external} for more information.
 
-    For examples, see [Authentication](https://{DomainName}/apidocs/assistant/assistant-v2#authentication){: external} for your language in the API reference.
+    For examples, see [Authentication](https://cloud.ibm.com/apidocs/assistant/assistant-v2#authentication){: external} for your language in the API reference.
 
 ### Data centers
 {: #services-information-regions}
@@ -173,18 +153,18 @@ The authentication mechanism used by your service instance impacts how you must 
 
 You can create {{site.data.keyword.conversationshort}} service instances that are hosted in the following data center locations:
 
-| Location    | Location code | API location | Authentication type | IAM adoption date | Notes |
+| Location    | Location code | API location |  IAM adoption date | Notes |
 |-------------|---------------|--------------|---------------------|-------------------|-------|
-| Dallas      | us-south      | N/A          | IAM                 | 30 October 2018 | N/A |
-| Frankfurt   | eu-de         | fra          | IAM                 | 30 October 2018 | N/A |
-| Seoul       | kr-seo        | seo          | IAM                 | 12 November 2019 | N/A |
-| Sydney      | au-syd        | syd          | IAM                 | 7 May 2018 | Instances created before May 7 were syndicated to Dallas |
-| Tokyo       | jp-tok        | tok          | IAM                 | 8 November 2018 | N/A |
-| London      | eu-gb         | lon          | IAM                 | 13 December 2018 | Instances that were created in the United Kingdom region before December 13 were syndicated to the US South region |
-| Washington DC  | us-east    | wdc          | IAM                 | 14 June 2018 | N/A |
+| Dallas      | us-south      | N/A          | 30 October 2018 | N/A |
+| Frankfurt   | eu-de         | fra          | 30 October 2018 | N/A |
+| Seoul       | kr-seo        | seo          | 12 November 2019 | N/A |
+| Sydney      | au-syd        | syd          | 7 May 2018 | Instances created before May 7 were syndicated to Dallas |
+| Tokyo       | jp-tok        | tok          | 8 November 2018 | N/A |
+| London      | eu-gb         | lon          | 13 December 2018 | Instances that were created in the United Kingdom region before December 13 were syndicated to the US South region |
+| Washington DC  | us-east    | wdc          | 14 June 2018 | N/A |
 {: caption="Data center locations" caption-side="top"}
 
-For information about the data centers in which other {{site.data.keyword.cloud_notm}} services are hosted, see [Services by region](https://cloud.ibm.com/docs/resources/services_region#services_region){: external}.
+For information about the data centers in which other {{site.data.keyword.cloud_notm}} services are hosted, see [Services by region](/docs/resources/services_region#services_region){: external}.
 
 ## Terms and security
 {: #services-information-terms}
