@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-12"
 
 subcollection: assistant
 
@@ -34,7 +34,7 @@ Learn more about strategies that are available for you to use to ensure that you
 ## Bring your own key
 {: #security-byok}
 
-When you integrate with {{site.data.keyword.keymanagementservicefull}}, you can encrypt {{site.data.keyword.conversationshort}} data in Premium plan instances with ecryption keys that you create or import.
+When you integrate with {{site.data.keyword.keymanagementservicefull}}, you can encrypt {{site.data.keyword.conversationshort}} data in Premium plan instances with encryption keys that you create or import.
 
 For implementation details, see [Protecting sensitive information in your {{site.data.keyword.watson}} service](/docs/watson?topic=watson-keyservice){: external}.
 
