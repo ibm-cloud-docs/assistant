@@ -71,7 +71,7 @@ If you want to upgrade from one plan to another, see [Upgrading](/docs/assistant
 
 The following features are available only to users of Plus or Premium plans.
 
-- [Activity tracker](/docs/assistant?topic=assistant-at-events)
+- [Activity tracker](/docs/assistant?topic=assistant-at-events) (Premium plans only)
 - [Intent conflict resolution](/docs/assistant?topic=assistant-intents#intents-resolve-conflicts)
 - [Intent recommendations and intent user example recommendations](/docs/assistant?topic=assistant-intent-recommendations)
 - [Intercom integration](/docs/assistant?topic=assistant-deploy-intercom)
