@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-14"
 
 subcollection: assistant
 
@@ -59,9 +59,13 @@ To add the assistant to a web page on your company website, complete the followi
     
       If you don't specify a font, these fonts are used: `IBMPlexSans, Arial, Helvetica, sans-serif`. 
 
-    - **Accent color**. Click the blue dot to open a color switcher where you can choose a color. The color is saved as a HTML color code, such as `#FF33FC` for pink and `#329A1D` for green. Alternatively, you can add a HTML color code directly to the field to set the color.
-    
-    The color you specify is applied to the following elements:
+    - **Primary color**. Sets the color of the Web Chat header.
+
+      Click the white dot to open a color switcher where you can choose a color. The color is saved as an HTML color code, such as `#FF33FC` for pink and `#329A1D` for green. Alternatively, you can add an HTML color code directly to the field to set the color.
+
+    - **Secondary color**: Sets the color of the user input message bubble.
+
+    - **Accent color**. Sets the color of interactive elements, including:
 
       - Chat launcher button that is embedded in your web page
       - Send button associated with the input text field
