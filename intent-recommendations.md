@@ -123,7 +123,7 @@ Follow these additional guidelines:
   - The CSV must include only one column.
   - Remove everything that is not a customer-generated utterance, including any human agent responses or notes.
 
-  Here's same CSV file content:
+  Here's some sample CSV file content:
 
   ```
   What happens to my coverage if I trade in my car?
