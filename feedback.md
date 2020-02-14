@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-02-14"
 
 subcollection: assistant
 
@@ -60,12 +60,12 @@ Do not add an existing instance that you are using to do any real work to the ea
     Unless you change it, the service instance will be created in the **default** resource group, which is sufficient for the purposes of new feature evaluation.
 
 1.  After the instance is created, click **Launch {{site.data.keyword.conversationshort}}** to open {{site.data.keyword.conversationshort}}.
-1.  Click the User ![User](images/user-icon2.png) icon in the page header, and then choose **Sign up for Beta Access**.
+1.  Click the User ![User](images/user-icon2.png) icon in the page header, and then choose **Request early access**.
 
     You won't see this option unless your service instance is part of a Lite or Standard plan that is hosted in the US South data center.
-1.  Confirm that you accept the terms and conditions for participating in the program. (The early access program is considered a *beta* by IBM Cloud.)
+1.  Confirm that you accept the terms and conditions for participating in the program. (The early access program is referred to as *beta* by IBM Cloud.)
 
-    If you are approved for participation in the early access program, it is the service instance from which you request program access that is upgraded to include new features.
+    If you are approved for participation in the early access program, it is the service instance that you request program access from that is upgraded to include new features.
 
 1.  After you get a chance to try out the new features, let us know what you think.
 

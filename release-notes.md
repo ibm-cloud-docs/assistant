@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-13"
+lastupdated: "2020-02-14"
 
 subcollection: assistant
 
@@ -51,6 +51,22 @@ The {{site.data.keyword.conversationshort}} algorithms may be periodically refin
 Existing models that you have trained will not be immediately impacted, but expired models will be updated to the current model, if you have not already done so, after 60 days of a new model becoming available.
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
+
+## 14 February 2020
+{: #14February2020}
+<!--1.89-->
+
+The following updates are available in all locations except Dallas currently.
+{: important}
+
+- **Get intent recommendations from an assistant log**: You can now use the chat log from one of your production assistants as the source for intent and intent user example recommendations. See [Intent recommendations](/docs/assistant?topic=assistant-intent-recommendations). This capability is a beta feature.
+
+  With the introduction of this feature, how CSV log files are stored also changed. Previously, a log CSV file that you uploaded to one skill was shared by all of the skills in that service instance. Now, a CSV file that you upload to one skill is available for use only by that one skill. For existing instances with CSV files, the shared CSV files are available to each of the skills in the instance. You can delete a CSV file from a skill that doesn't use it by managing the recommendation sources for the skill.
+  {: important}
+
+- **More Web Chat color settings**: You can now specify the color of more elements of the Web Chat integration. For example, you can define one color for the web chat window header. You can define a different color for the user message bubble. And another color for interactive components, such as the launcher button for the chat. 
+
+- **Access control changes are coming**: Notifications are displayed in the user interface for anyone with Reader and Writer level access to a service instance. The notification explains that access control is going to change soon, and that what they can take in the instance will change unless they are given Manager service access beforehand. For more information, see [Preventing loss of access](/docs/assistant?topic=assistant-access-control).
 
 ## 13 February 2020
 {: #13February2020}

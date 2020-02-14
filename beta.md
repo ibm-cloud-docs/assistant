@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-31"
+lastupdated: "2020-02-14"
 
 subcollection: assistant
 
@@ -36,11 +36,6 @@ The following features are available for use by participants in the early access
 {: preview}
 
 - Delight your customers with 360-degree support by integrating your web chat with a third-party service desk solution. When a customer asks to speak to a person, you can connect them to an agent through a service desk solution, such as LiveEngage or Zendesk. For more information, see [Adding support for transfers](/docs/assistant?topic=assistant-beta-deploy-web-chat#deploy-web-chat-haa).
-
-- You can now use the chat log from one of your production assistants as the source for intent and intent user example recommendations. See [Intent recommendations](/docs/assistant?topic=assistant-beta-intent-recommendations).
-
-  With the introduction of this feature, the way in which CSV log files are stored also changed. Previously, a log CSV file that you uploaded to one skill was shared by all of the skills in that service instance. Now, a CSV file that you upload to one skill is available for use only by that one skill. For existing instances with CSV files, the shared CSV files have been made available to each of the skills in the instance. You can delete a CSV file from a skill that doesn't use it by managing the recommendation sources for the skill.
-  {: important}
 
 ## Tell us what you think
 

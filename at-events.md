@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-12"
+lastupdated: "2020-02-13"
 
 subcollection: assistant
 
@@ -31,8 +31,7 @@ As a security officer, auditor, or manager, you can use the Activity Tracker ser
 
 {{site.data.keyword.at_full_notm}} records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use this service to investigate abnormal activity and critical actions and to comply with regulatory audit requirements. In addition, you can be alerted about actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard. For more information, see the getting started tutorial for [{{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started){: external}.
 
-This feature is available to Premium plan users only.
-{: note}
+![Premium plan only](images/premium0.png) This feature is available to Premium plan users only.
 
 ## List of events
 {: #at-events-actions}
