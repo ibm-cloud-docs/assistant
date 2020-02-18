@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-14"
+lastupdated: "2020-02-18"
 
 subcollection: assistant
 
@@ -55,9 +55,6 @@ Existing models that you have trained will not be immediately impacted, but expi
 ## 14 February 2020
 {: #14February2020}
 <!--1.89-->
-
-The following updates are available in all locations except Dallas currently.
-{: important}
 
 - **Get intent recommendations from an assistant log**: You can now use the chat log from one of your production assistants as the source for intent and intent user example recommendations. See [Intent recommendations](/docs/assistant?topic=assistant-intent-recommendations). This capability is a beta feature.
 

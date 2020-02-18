@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-12"
+lastupdated: "2020-02-18"
 
 subcollection: assistant
 
@@ -61,7 +61,9 @@ For implementation details, see [Public and private network endpoints](/docs/wat
 - The integrations that are provided with the product require endpoints that are available on the public internet. Therefore, any built-in integrations you add to your assistant will have public endpoints. If you only want to connect to a client application or messaging channel over the private network, then you must build your own custom client application or channel integration.
 - Before you can create a search skill, you must create a {{site.data.keyword.discoveryshort}} instance with a private network endpoint. The list of {{site.data.keyword.discoveryshort}} instances that are displayed for you to connect to includes only instances with private network endpoints. Normally, when you create a search skill and do not have any {{site.data.keyword.discoveryshort}} instances, a Lite plan instance is provisioned for you automatically. No instance is provisioned for you when you are using a private network. You must create a {{site.data.keyword.discoveryshort}} instance with a private network endpoint first.
 
-## Related topic
+## Related topics
 {: #security-related}
 
-- **[Information security](/docs/assistant?topic=assistant-information-security)**: Describes strategies for complying with data protection regulations, such as GDPR and HIPAA. 
+- [Information security](/docs/assistant?topic=assistant-information-security): Describes strategies for complying with data protection regulations, such as GDPR and HIPAA. 
+- [Security architecture](https://www.ibm.com/cloud/architecture/architectures/securityArchitecture/watson-security){: external}: Describes the security components that are needed for secure cloud development, deployment, and operations.
+- [IBM Cloud compliance programs](https://www.ibm.com/cloud/compliance){: external}: Describes how to manage regulatory compliance and internal governance requirements with IBM Cloud services.
