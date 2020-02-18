@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-14"
 
 keywords: system entity, sys-number, sys-date, sys-time
 
@@ -185,7 +185,7 @@ For the input `at 6 pm` @sys-time returns these values:
 For information about processing date and time values, see the [Date and time method reference](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-date-time).
 {: tip}
 
-## @sys-location entity
+## @sys-location entity  ![Beta feature](images/beta.png)
 {: #system-entities-sys-location}
 
 Available as a beta feature for only languages noted in the [Supported languages](/docs/assistant?topic=assistant-language-support) topic. A powerful alternative to using this system entity is to use a contextual entity for identifying proper nouns, such as locations. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/assistant?topic=assistant-entities#entities-annotations-overview).
@@ -312,7 +312,7 @@ You get equivalent results for other supported languages.
 
 - If you input a value like `1-2%`, the values `1%` and `2%` are returned as system entities. The index will be the whole range between 1% and 2%, and both entities will have the same index.
 
-## @sys-person entity
+## @sys-person entity ![Beta feature](images/beta.png)
 {: #system-entities-sys-person}
 
 Available as a beta feature for only languages noted in the [Supported languages](/docs/assistant?topic=assistant-language-support) topic. A powerful alternative to using this system entity is to use a contextual entity for identifying proper nouns, such as names. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/assistant?topic=assistant-entities#entities-annotations-overview).
