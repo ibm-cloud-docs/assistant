@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-18"
 
 subcollection: assistant
 
@@ -704,7 +704,7 @@ For the $time information, you will define a follow-up statement that is display
 
 1.  Create a context variable that can keep track of how many times the user provides a value that does not match the value type that the slot expects. You want the context variable to be initialized and set to 0 before the node with slots is processed, so you will add it to the parent `#reservation` node.
 
-1.  Click to edit the `#reservation` node. Open the JSON editor associated with the node response, by clicking the **Options** ![More icon](images/kabob.png) icon in the response section, and choosing **Open JSON editor**. Add a context variable called `counter` to the bottom of the existing `"context"` block, below the `confirmation` variable. Set the `counter` variable equal to `0`.
+1.  Click to edit the `#reservation` node. Open the JSON editor associated with the node response, by clicking the **Options** ![More icon](images/kabob.png) icon in the response section, and choosing **Open JSON editor**. Add a context variable called `counter` to the existing `"context"` block, below the `confirmation` variable. Set the `counter` variable equal to `0`.
 
        ```json
        {

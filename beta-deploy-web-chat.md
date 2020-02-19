@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-18"
 
 subcollection: assistant
 
@@ -52,7 +52,7 @@ To add the assistant to a web page on your company website, complete the followi
 
 1.  Click **Create** to generate the script.
 
-    A code snippet is created and added to the bottom of the page that contains an HTML `<script>` element. The script tag calls JavaScript code that is hosted on an IBM site. The code instantiates an instance of your assistant within a web chat widget. The generated code includes a region and unique integration ID. Do not change these parameter values.
+    A code snippet is created and added to the page that contains an HTML `<script>` element. The script tag calls JavaScript code that is hosted on an IBM site. The code instantiates an instance of your assistant within a web chat widget. The generated code includes a region and unique integration ID. Do not change these parameter values.
 
 1.  **Optional**: Customize the chat. You can make the following changes:
 
@@ -126,13 +126,14 @@ To add the assistant to a web page on your company website, complete the followi
     The web chat integration instance is created as soon as you click the *Create* button, and does not need to be saved.
 
 ## Dialog considerations
-{: #beta-deploy-web-chat-dialog}
+{: #deploy-web-chat-dialog}
 
-The rich responses that you add to a dialog are displayed in the web chat widget as expected, with the following exception:
+The rich responses that you add to a dialog are displayed in the Web Chat as expected, with the following exceptions:
 
-- **Pause**: This response type pauses the assistant's activity in the chat widget. However, activity does not resume after the pause until another response is triggered. Whenever you include a `pause` response type, add another response type, such as `text`, after it.
+- **Option**: If your option list contains up to four choices, they are displayed as butttons. If your list contains five or more options, then they are displayed in a drop-down list.
+- **Pause**: This response type pauses the assistant's activity in the chat. However, activity does not resume after the pause until another response is triggered. Whenever you include a `pause` response type, add another, different response type, such as `text`, after it.
 
-See [Rich responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more information about response types.
+For more information about rich response types, see [Rich responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia).
 
 ## Extending the web chat
 {: #deploy-web-chat-extend}

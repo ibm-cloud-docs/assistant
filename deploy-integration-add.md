@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-19"
 
 subcollection: assistant
 
@@ -63,9 +63,6 @@ Follow these steps to add integrations to your assistant:
     - [Voice Agent (Telephony)](https://cloud.ibm.com/catalog/services/voice-agent-with-watson){: external}
 
       Opens the **Voice Agent with Watson** service overview page on {{site.data.keyword.cloud}}.
-    - [WordPress plug-in](https://wordpress.org/plugins/conversation-watson/){: external}
-
-      Opens the IBM Watson Assistant plug-in overview page on the WordPress site.
 
 1.  Follow the instructions that are provided on the screen to complete the integration process.
 

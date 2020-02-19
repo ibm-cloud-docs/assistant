@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-18"
 
 subcollection: assistant
 
@@ -56,5 +56,5 @@ If you are an existing user who is familiar with the standard product, the follo
 
 - An action serves two purposes: 1. it is equivalent to an intent, and 2. it serves as a root dialog node. Steps that you add to the action are equivalent to the root node's child nodes.
 - An action conditions on a single intent only. The steps attached to an action condition on context variables or entities only; they cannot condition on intents.
-- The run time conversation does not flow through the root nodes from the top to the bottom of a dialog tree. Rather, the action defined for the request that is detected in user input is triggered independently. The steps within an action continue to be processed from top to bottom.
+- The run time conversation does not flow through the root nodes from the start to the end of a dialog tree. Rather, the action defined for the request that is detected in user input is triggered independently. The steps within an action continue to be processed from the first to last in the list.
 <!-- Context variables are scoped to the action that uses them. They are nulled when the action is finished. An action's context variable cannot be set and retrieved by any other action that is triggered during a conversation. -->
