@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-14"
+lastupdated: "2020-02-18"
 
 subcollection: assistant
 
@@ -50,7 +50,7 @@ To add the assistant to a web page on your company website, complete the followi
 
 1.  Click **Create** to generate the script.
 
-    A code snippet is created and added to the bottom of the page that contains an HTML `<script>` element. The script tag calls JavaScript code that is hosted on an IBM site. The code instantiates an instance of your assistant within a Web Chat widget. The generated code includes a region and unique integration ID. Do not change these parameter values.
+    A code snippet is created and added to the page that contains an HTML `<script>` element. The script tag calls JavaScript code that is hosted on an IBM site. The code instantiates an instance of your assistant within a Web Chat widget. The generated code includes a region and unique integration ID. Do not change these parameter values.
 
 1.  **Optional**: Customize the chat. You can make the following changes:
 
@@ -131,6 +131,17 @@ To add the assistant to a web page on your company website, complete the followi
 1.  Click **Save changes** to save the Web Chat name and any customization information that you added and close the integration page. Alternatively, you can click the **X** to close the page. 
 
     The Web Chat instance is created as soon as you click the *Create* button, and does not need to be saved.
+
+## Dialog considerations
+{: #deploy-web-chat-dialog}
+
+The rich responses that you add to a dialog are displayed in the Web Chat as expected, with the following exceptions:
+
+- **Connect to human agent**: This response type is ignored.
+- **Option**: If your option list contains up to four choices, they are displayed as butttons. If your list contains five or more options, then they are displayed in a drop-down list.
+- **Pause**: This response type pauses the assistant's activity in the chat. However, activity does not resume after the pause until another response is triggered. Whenever you include a `pause` response type, add another, different response type, such as `text`, after it.
+
+For more information about rich response types, see [Rich responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia).
 
 ## Extending the Web Chat
 {: #deploy-web-chat-extend}

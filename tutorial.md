@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-18"
 
 subcollection: assistant
 
@@ -353,7 +353,7 @@ In this step, you will add child nodes to the dialog node that checks for the `#
 
 1.  Click ![Close](images/close.png) to close the edit view.
 
-1.  The standard menu is likely to be requested most often, so move it to the bottom of the child nodes list. Placing it last can help prevent it from being triggered accidentally when someone asks for a specialty menu instead the standard menu. 
+1.  The standard menu is likely to be requested most often, so move it to the end of the child nodes list. Placing it last can help prevent it from being triggered accidentally when someone asks for a specialty menu instead the standard menu. 
 
     Click the **More** ![More options](images/kabob.png) icon on the `@menu:standard` node, and then select **Move**.
 
