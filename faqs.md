@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-24"
 
 subcollection: assistant
 
@@ -80,3 +80,9 @@ The 401 response code is returned for many reasons, including:
 {: faq}
 
 You are using a valid API Key, but it is not the right key for the service instance that you are trying to access programmatically.
+
+## Assistants could not be loaded at this time. Unable to fetch access token for account.
+{: #faqs-cannot-fetch-token}
+{: faq}
+
+Your {{site.data.keyword.cloud}} refresh tokens might have expired. Log out and then log back in to {{site.data.keyword.cloud_notm}} to generate fresh tokens. 
