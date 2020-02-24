@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-04-03"
+lastupdated: "2020-02-24"
 
 subcollection: assistant
 
@@ -26,19 +26,11 @@ subcollection: assistant
 # Getting help
 {: #troublehoot}
 
-Scan the list of known error messages to see if you can find a quick solution.
+Get help with solving issues that you encounter while using the product.
 {: shortdesc}
 
 If you cannot find a solution to the issue you are having, try the resources available from the **Developer community** section of the table of contents.
 
+Scan the list of known error messages to see if you can find a quick solution. See [FAQ](/docs/assistant?topic=assistant-faqs).
+
 If your service plan covers it, you can get help by creating a case from [IBM Cloud Support](https://cloud.ibm.com/unifiedsupport/supportcenter){: external}.
-
-## Solutions
-{: #troubleshoot-solutions}
-
-The following table describes known error messages and how you can resolve them.
-
-| Problem | Cause | Solution |
-|---------|-------|----------|
-| Getting the message, `Assistants could not be loaded at this time. Unable to fetch access token for account.` | Your {{site.data.keyword.cloud}} refresh tokens might have expired. | Log out and then log back in to {{site.data.keyword.cloud_notm}} to generate fresh tokens. |
-{: caption="Error messages" caption-side="top"}

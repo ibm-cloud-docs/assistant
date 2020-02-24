@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-10-24"
+lastupdated: "2020-02-21"
 
 subcollection: assistant
 
@@ -51,8 +51,5 @@ The length allowed for an inactivity timeout differs by service instance plan ty
 1.  Click the menu for your assistant ![open and close list of options](images/kabob-beta.png), and then choose **Settings**.
 
 1.  Change the time specified in the **Timeout limit** field.
-
-    Use `01:00` instead of `00:60` to specify one hour.
-    {: tip}
 
 1.  Close the settings page. Your change is saved automatically.

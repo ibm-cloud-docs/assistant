@@ -63,7 +63,7 @@ Mine your existing data to do one of the following things:
 For more information about the language support for this feature, see [Supported languages](/docs/assistant?topic=assistant-language-support).
 
 ## Choosing an intent recommendations data source
-{: #intent-recommendations-enable-task}
+{: #intent-recommendations-data-resources}
 
 Intent recommendations are based on analysis of real-world user utterances, which you can provide in uploaded CSV files or by connecting to the log of a deployed assistant. The first time that you use intent recommendations, you must indicate the source from which you want Watson to derive its recommendations.
 
@@ -199,7 +199,7 @@ As the subjects that your customers want to discuss change, you can use the inte
 
 For any intent that is already part of your training data, you can find and add new user examples by asking Watson for intent user example recommendations. 
 
-Before you begin, you must [choose an intent recommendations data source](#intent-recommendations-enable-task). Even though you request user example recommendations on a per-intent basis, the same data source is used to find user examples that are appropriate for every intent. Watson knows which intent you are working on and finds suitable examples to recommend for that specific intent.
+Before you begin, you must [choose an intent recommendations data source](#intent-recommendations-data-resources). Even though you request user example recommendations on a per-intent basis, the same data source is used to find user examples that are appropriate for every intent. Watson knows which intent you are working on and finds suitable examples to recommend for that specific intent.
 
 1.  Follow the steps in [Creating intents](/docs/assistant?topic=assistant-intents#intents-creating-intents-task) to create an intent.
 
