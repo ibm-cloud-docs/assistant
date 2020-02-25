@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-18"
+lastupdated: "2020-02-25"
 
 subcollection: assistant
 
@@ -152,10 +152,6 @@ For example, the following updated script preserves the context for the conversa
 <script>
   // Following the v2 message API, we add some items to context.
   function preSendhandler(event) {
-    event.data.context = event.data.context || {};
-    event.data.context.skills = event.data.context.skills || {};
-    event.data.context.skills['main skill'] = event.data.context.skills.main_skill || {};
-    event.data.context.skills['main skill'].user_defined = event.data.context.skills['main skill'].user_defined || {};
     event.data.context.skills['main skill'].user_defined.ismember = true;
   }
 </script>
@@ -352,7 +348,7 @@ Zendesk Chat is an add-on to Zendesk Support. Zendesk Support puts all your cust
 
     When you create a Zendesk Chat account, you specify a subdomain. Afterwards, your Zendesk console is available from a URL with the syntax: `<subdomain>.zendesk.com`. For example: `ibm.zendesk.com`
     
-    IBM provides an application that you can install in your Zendesk Chat domain to enable your human agents to communicate directly with your assistant.
+    IBM provides an application that you can install in your Zendesk Chat domain. When a customer asks to speak to a person, your assistant will transfer the in-progress conversation and a chat summary to the Zendesk agent by using this private app.
 
     - Download the private application from the Zendesk Chat setup page in {{site.data.keyword.conversationshort}}.
 
