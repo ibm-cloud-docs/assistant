@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-24"
+lastupdated: "2020-02-26"
 
 subcollection: assistant
 
@@ -81,8 +81,24 @@ The 401 response code is returned for many reasons, including:
 
 You are using a valid API Key, but it is not the right key for the service instance that you are trying to access programmatically.
 
-## Assistants could not be loaded at this time. Unable to fetch access token for account.
+## Getting `Unable to fetch access token for account` message
 {: #faqs-cannot-fetch-token}
 {: faq}
 
+The full message is, `Assistants could not be loaded at this time. Unable to fetch access token for account`.
+
 Your {{site.data.keyword.cloud}} refresh tokens might have expired. Log out and then log back in to {{site.data.keyword.cloud_notm}} to generate fresh tokens. 
+
+## Getting `Authentication Required` or `Sign in` message
+: #faqs-authentication-required}
+{: faq}
+
+You are being asked for credentials to access a Watson Assistant service instance that you have been able to access without trouble in the past. You might see, `Authentication Required: https://assistant-{location}-watsonplatform.net is requesting your username and password.` or just a `Sign in` dialog box with fields for a username and password.
+
+This message is displayed for service instances that have not been migrated from Cloud Foundry. If you have not migrated your instance, you must do so now. See [Migrating Watson services from Cloud Foundry](/docs/services/assistant?topic=watson-migrate).
+
+It can also be displayed for service instances that were migrated from Cloud Foundry, but for which access roles were not subsequently updated. After the migration, the service instance owner must update the user permissions to ensure that anyone who needs access to the instance is assigned to the appropriate Platform and Service access roles.
+
+To regain access to the service instance, ask the service instance owner to review your access permissions. Ask to be given at least a service access role of Writer. 
+
+After your access roles are fixed, be sure to use the correct web address, the URL of the migrated service instance, to open it.
