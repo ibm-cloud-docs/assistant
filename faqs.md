@@ -90,7 +90,7 @@ The full message is, `Assistants could not be loaded at this time. Unable to fet
 Your {{site.data.keyword.cloud}} refresh tokens might have expired. Log out and then log back in to {{site.data.keyword.cloud_notm}} to generate fresh tokens. 
 
 ## Getting `Authentication Required` or `Sign in` message
-: #faqs-authentication-required}
+{: #faqs-authentication-required}
 {: faq}
 
 You are being asked for credentials to access a Watson Assistant service instance that you have been able to access without trouble in the past. You might see, `Authentication Required: https://assistant-{location}-watsonplatform.net is requesting your username and password.` or just a `Sign in` dialog box with fields for a username and password.

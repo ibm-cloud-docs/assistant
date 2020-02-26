@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-24"
+lastupdated: "2020-02-26"
 
 subcollection: assistant
 
@@ -51,6 +51,14 @@ The {{site.data.keyword.conversationshort}} algorithms may be periodically refin
 Existing models that you have trained will not be immediately impacted, but expired models will be updated to the current model, if you have not already done so, after 60 days of a new model becoming available.
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
+
+## 26 February 2020
+{: #26February2020}
+<!--1.90-->
+
+- **The new system entities are used by new skills**: For new service instances, the new system entities are enabled automatically when you create a skill. If you decide to turn on a system entity and add it to your dialog, it's the new and improved version of the system entity that is used. For more information, see [New system entities](/docs/assistant?topic=assistant-beta-system-entities).
+
+- **Slot `Check for` field retains your edits**: When you edit what gets saved for a slot by using the JSON editor to edit the value of the context variable to be something other than what is specified in the **Check for** field, your changes are kept even if someone subsequently clicks the **Check for** or **Save it as** fields.
 
 ## 20 February 2020
 {: #20February2020}

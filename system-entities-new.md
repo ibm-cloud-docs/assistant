@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-26"
 
 subcollection: assistant
 
@@ -26,18 +26,19 @@ subcollection: assistant
 # New system entities
 {: #beta-system-entities}
 
-Enable the new system entities to take advantage of improvements that were made to the number-based system entities provided by IBM.
-
-For information about the languages in which the new system entities are supported, see [Supported languages](/docs/assistant?topic=assistant-language-support).
-{: note}
-
-The new system entities can recognize more nuanced mentions in user input. For example, `@sys-date` can calculate the date of a national holiday, such as `Thanksgiving`, when it is mentioned by name. And `@sys-date` can recognize when a year is specified as part of a date mentioned in the user's input. The improvements also make it easier for your assistant to distinguish among the many number-based system entities. For example, a date mention, such as `May 10`, that is recognized to be a `@sys-date` is not also identified as a `@sys-number` mention.
+The numeric system entities have been updated. The new system entities can recognize more nuanced mentions in user input. For example, `@sys-date` can calculate the date of a national holiday, such as `Thanksgiving`, when it is mentioned by name. And `@sys-date` can recognize when a year is specified as part of a date mentioned in the user's input. The improvements also make it easier for your assistant to distinguish among the many number-based system entities. For example, a date mention, such as `May 10`, that is recognized to be a `@sys-date` is not also identified as a `@sys-number` mention.
 
 The `@sys-location` and `@sys-person` system entities did not change.
 {: note}
 
+The new system entities are enabled automatically in all new service instances.
+
+For information about the languages in which the new system entities are supported, see [Supported languages](/docs/assistant?topic=assistant-language-support).
+
 ## Enabling the new system entities
 {: #beta-system-entities-enable}
+
+Skills in service instances that were created before 26 February 2020 use the legacy version of the system entities unless you enable the new version.
 
 To enable the new system entities, complete the following steps:
 
@@ -136,3 +137,12 @@ Table 4. Using new system entities in conditional responses
 | `@sys-date.specific_day_of_week == 'monday' && @sys-date.alternative` | Checks whether the user mentioned the weekday `Monday` in their query. For example, `Are you open Monday`. The condition also checks whether any alternative dates were stored. Alternative dates are created when your assistant isn't entirely sure which Monday the user means, so it stores the dates of alternative Mondays also. When a user specifies a weekday, your assistant assumes that the user means the future occurrence of the day (the coming Monday). You can add a response that double checks the intended date, by using the detected alternative value. In this case, the alternative date is the previous Monday's date. | Do you mean `@sys-date` or `@sys-date.alternative`? |
 | `true` | Responds to any other requests for store hour information. | We're open from 9AM to 9PM Monday through Saturday. |
 {: caption="Use the new system entities in conditional responses" caption-side="top"}
+
+## Disabling the new system entities
+{: #beta-system-entities-disable}
+
+To disable the new system entities, complete the following steps:
+
+1.  Click the **Skills** icon ![Skills menu icon](images/nav-skills-icon.png), and then open your skill.
+1.  From the Skills menu, click **Options**, and then click **System Entities**.
+1.  Select **Use legacy version**.
