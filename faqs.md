@@ -81,7 +81,7 @@ The 401 response code is returned for many reasons, including:
 
 You are using a valid API Key, but it is not the right key for the service instance that you are trying to access programmatically.
 
-## Getting Unable to fetch access token for account message
+## Getting `Unable to fetch access token for account` message
 {: #faqs-cannot-fetch-token}
 {: faq}
 
@@ -89,7 +89,7 @@ The full message is, `Assistants could not be loaded at this time. Unable to fet
 
 Your {{site.data.keyword.cloud}} refresh tokens might have expired. Log out and then log back in to {{site.data.keyword.cloud_notm}} to generate fresh tokens. 
 
-## Getting Authentication Required or Sign in message
+## Getting `Authentication Required` or `Sign in` message
 : #faqs-authentication-required}
 {: faq}
 
