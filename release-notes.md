@@ -58,7 +58,7 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 - **The new system entities are used by new skills**: For new service instances, the new system entities are enabled automatically when you create a skill. If you decide to turn on a system entity and add it to your dialog, it's the new and improved version of the system entity that is used. For more information, see [New system entities](/docs/assistant?topic=assistant-beta-system-entities).
 
-- **Slot `Check for` field retains your edits**: When you edit what gets saved for a slot by using the JSON editor to edit the value of the context variable to be something other than what is specified in the **Check for** field, your changes are kept even if someone subsequently clicks the **Check for** or **Save it as** fields.
+- **Slot `Save it as` field retains your edits**: When you edit what gets saved for a slot by using the JSON editor to edit the value of the context variable to be something other than what is specified in the **Check for** field, your changes are kept even if someone subsequently clicks the **Save it as** field.
 
 ## 20 February 2020
 {: #20February2020}
