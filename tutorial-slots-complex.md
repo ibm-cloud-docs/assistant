@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-18"
+lastupdated: "2020-02-26"
 
 subcollection: assistant
 
@@ -232,7 +232,7 @@ When you use the `sys-number` system entity in a slot condition, it does not dea
 
 1.  Save your changes. 
 
-    You must edit the context variable value in the JSON editor. Do not edit the value in the slot's **Check for** field. The **Check for** field must remain set to `@sys-number >= 0`. When you edit the value in the JSON editor, you are effectively changing only what to save in the context variable. However, you do not want to change what to look for in the input. These two values will be different. That is how you want it to be. Do not edit the **Check for** field or even give it focus or you will undo the change you made by using the JSON editor to change the value that gets saved.
+    You must edit the context variable value in the JSON editor. Do not edit the value in the slot's **Check for** field. The **Check for** field must remain set to `@sys-number >= 0`. When you edit the value in the JSON editor, you are effectively changing only what to save in the context variable. However, you do not want to change what to look for in the input. These two values will be different. That is how you want it to be.
     {: important}
 
 1.  Test the node again. Open the "Try it out" pane, and click **Clear** to delete the slot context variable values that you specified when you tested the node with slots earlier. To see the impact of the changes you made, use the following script:

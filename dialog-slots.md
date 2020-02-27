@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-26"
 
 keywords: slot, slots
 
@@ -72,19 +72,19 @@ Using slots produces a more natural dialog flow between the user and your assist
 
     - **Check for**: Identify the type of information you want to extract from the user's response to the slot prompt. In most cases, you check for entity values. In fact, the condition builder that is displayed suggests entities that you can check for. However, you can also check for an intent; just type the intent name into the field. You can use AND and OR operators here to define more complex conditions.
 
-      The *Check for* value is first used as a condition, but then becomes the value of the context variable that you name in the *Save as* field. It specifies both **what to check for** and **what to save**. If you want to change how the value is saved, then add the expression that reformats the value to the *Check for* field.
+      The *Check for* value is first used as a condition, but then becomes the value of the context variable that you name in the *Save it as* field. It specifies both **what to check for** and **what to save**. If you want to change how the value is saved, then add the expression that reformats the value to the *Save it as* field.
       {: important}
 
       For example, if the entity is a pattern entity, such as `@email`, then after adding the entity name, append `.literal` to it. Adding `.literal` indicates that you want to capture the exact text that was entered by the user and was identified as an email address based on its pattern.
 
       In some cases, you might want to use an expression to capture the value, but not apply the expression to what is saved. In such cases, you can use one value in the *Check for* field to capture the value, and then open the JSON editor to change the value of the context variable, so it saves something else.
 
-      Any edit you make to a slot's context variable value in the JSON editor is not reflected in the **Check for** field after you exit the JSON editor. And if you click the **Check for** field to give the field focus at any time after you use the JSON editor to edit the value, then the change you made is lost.
-      {: important}
+      Any edit you make to a slot's context variable value in the JSON editor is not reflected in the **Check for** field after you exit the JSON editor. You must reopen the JSON editor to see what will be saved as the context variable value.
+      {: note}
 
       Avoid checking for context variable values in the *Check for* field. Because the value you check for is also the value that is saved, using a context variable in the condition can lead to unexpected behavior.
 
-    - **Save as**: Provide a name for the context variable in which to store the value of interest from the user's response to the slot prompt.
+    - **Save it as**: Provide a name for the context variable in which to store the value of interest from the user's response to the slot prompt.
 
        Do not reuse a context variable that is used elsewhere in the dialog. If the context variable has a value already, then the slot's prompt is not displayed. It is only when the context variable for the slot is null that the prompt for the slot is displayed.
 
@@ -180,7 +180,7 @@ Using slots produces a more natural dialog flow between the user and your assist
     <caption>Example slots for pizza order</caption>
     <tr>
       <th>Check for</th>
-      <th>Save as</th>
+      <th>Save it as</th>
       <th>Prompt</th>
       <th>Follow-up if found</th>
       <th>Follow-up if not found</th>
@@ -210,7 +210,7 @@ Using slots produces a more natural dialog flow between the user and your assist
        <tr>
           <th>Information</th>
           <th>Check for</th>
-          <th>Save as</th>
+          <th>Save it as</th>
        </tr>
        <tr>
           <td>Wheat restriction</td>
@@ -298,7 +298,7 @@ For example, you might want to ask users whether they want toppings on their piz
 <caption>Multiple value slot</caption>
 <tr>
   <th>Check for</th>
-  <th>Save as</th>
+  <th>Save it as</th>
   <th>Prompt</th>
   <th>Follow-up if found</th>
   <th>Follow-up if not found</th>
@@ -371,8 +371,8 @@ To ensure that a slot condition that checks for number mentions deals with zeros
 
 1.  Save your changes. 
 
-The change you made to the context variable value is not reflected in the Check for field, which is appropriate. Do not edit the value of the Check for field or even click in the field. If you do, the change you made to the JSON will be lost.
-{: tip}
+The change you made to the context variable value is not reflected in the Check for field. You must reopen the JSON editor see what will be saved.
+{: note}
 
 If you do not want to accept a zero as the number value, then you can add a conditional response for the slot to check for zero, and tell the user that they must provide a number greater than zero. But, it is important for the slot condition to be able to recognize a zero when it is provided as input.
 
@@ -385,7 +385,7 @@ Add a slot after the others that asks the user to confirm that the information y
 <caption>Confirmation slot</caption>
 <tr>
   <th>Check for</th>
-  <th>Save as</th>
+  <th>Save it as</th>
   <th>Prompt</th>
   <th>Follow-up if found</th>
   <th>Follow-up if not found</th>
@@ -406,7 +406,7 @@ Add a slot after the others that asks the user to confirm that the information y
 ```
 {: codeblock}
 
-The `slot_in_focus` property always evaluates to a Boolean (true or false) value. Only include it in a condition for which you want a boolean result. Do not use it in slot conditions that checks for an entity type and then save the entity value, for example.
+The `slot_in_focus` property always evaluates to a boolean (true or false) value. Only include it in a condition for which you want a boolean result. Do not use it in slot conditions that check for an entity type and then save the entity value, for example.
 {: tip}
 
 In the **Not found** prompt, clarify that you are expecting the user to provide a Yes or No answer.
@@ -543,7 +543,7 @@ You can provide users with a way to exit a slot if they cannot answer it correct
 In this example, your assistant asks for the pizza size. It lets the user answer the question incorrectly 3 times before applying a size (medium) to the variable for the user. (You can include a confirmation slot where users can always correct the size when they are asked to confirm the order information.)
 
 Check for: @size
-Save as: $size
+Save it as: $size
 Not found catchall condition:
 
 ```json
