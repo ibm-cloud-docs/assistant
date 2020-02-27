@@ -406,7 +406,7 @@ Add a slot after the others that asks the user to confirm that the information y
 ```
 {: codeblock}
 
-The `slot_in_focus` property always evaluates to a Boolean (true or false) value. Only include it in a condition for which you want a boolean result. Do not use it in slot conditions that check for an entity type and then save the entity value, for example.
+The `slot_in_focus` property always evaluates to a boolean (true or false) value. Only include it in a condition for which you want a boolean result. Do not use it in slot conditions that check for an entity type and then save the entity value, for example.
 {: tip}
 
 In the **Not found** prompt, clarify that you are expecting the user to provide a Yes or No answer.
