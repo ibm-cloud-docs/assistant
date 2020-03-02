@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-03-02"
 
 keywords: mark as irrelevant, counterexample, data source, deployment ID
 
@@ -141,7 +141,12 @@ To add the deployment ID, v1 API users include the deployment property inside th
 ```
 {: codeblock}
 
-![Premium plan only](images/premium0.png) For premium {{site.data.keyword.conversationshort}} instances that use the v1 API and specify a deployment ID with each /message call, you can ask IBM to configure your instances to allow you to access log data from deployed applications across different instances. If your instances use the v2 API, you cannot get log data from across different instances.
+![Premium plan only](images/premium0.png) For premium {{site.data.keyword.conversationshort}} instances that use the v1 API and specify a deployment ID with each /message call, you can ask IBM to configure your instances to allow you to access log data from deployed applications across different instances.
+
+If log sharing is enabled, only someone with Manager service access to the current instance can view logs from all of the instances. And logs from across all of the participating instances are displayed, regardless of the current user's service level access to the other instances. Similarly, when someone with Manager service access to an instance sends a GET request to the v1 `/logs` API endpoint, logs from all instances that participate in log sharing are returned, regardless of the user's service level access to each instance.
+{: note}
+
+If your instances use the v2 API, you cannot get log data from across different instances.
 
 ## Making training data improvements
 {: #logs-fix-data}

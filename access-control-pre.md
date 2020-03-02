@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2020-01-23"
+lastupdated: "2020-03-02"
 
 subcollection: assistant
 
@@ -22,7 +22,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Managing access to resources
+# Preventing loss of access
 {: #access-control-pre}
 
 Access control is the ability to give other people access to your {{site.data.keyword.conversationshort}} resources, and control the level of access they get. Changes to how {{site.data.keyword.conversationshort}} access is managed are underway. Prepare your service instances for these access control changes today to prevent users from losing their current level of access when the feature updates are released.
@@ -42,7 +42,7 @@ The service access roles will apply the following restrictions.
 | Manager | Read, edit, create, and delete an assistant or skill, and view analytics. |
 {: caption="Table 3. Service access role details" caption-side="top"}
 
-## Prevent your collaborators from losing access
+## Prevent your collaborators from losing their access
 {: #access-control-admin-prep}
 
 When you create a {{site.data.keyword.conversationshort}} service instance, you are assigned to a Manager service access role automatically. Your access will not change. 
