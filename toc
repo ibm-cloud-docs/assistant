@@ -55,7 +55,6 @@ Watson Assistant
         deploy-web-link.md
         deploy-web-chat.md
         deploy-slack.md
-        dialog-start.md
         deploy-integration-delete.md
 
     {: .topicgroup}
