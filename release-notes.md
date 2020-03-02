@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-26"
+lastupdated: "2020-03-02"
 
 subcollection: assistant
 
@@ -51,6 +51,16 @@ The {{site.data.keyword.conversationshort}} algorithms may be periodically refin
 Existing models that you have trained will not be immediately impacted, but expired models will be updated to the current model, if you have not already done so, after 60 days of a new model becoming available.
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
+
+## 2 March 2020
+{: #2March2020}
+
+- **Known issue accessing logs**: If you cannot access user logs from the Analytics page, ask the owner of the service instance for the skill to change your service level access to make you a Manager of the instance. For more information about access control, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).
+
+## 28 February 2020
+{: #28February2020}
+
+- **{{site.data.keyword.conversationfull}} is available in {{site.data.keyword.icp4dfull_notm}}**: The service can be installed on-premises in environments where {{site.data.keyword.icp4dfull_notm}} 2.5 is installed on OpenShift or standalone. See the [{{site.data.keyword.icp4dfull_notm}} documentation](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/assistant-overview.html){: external} for more information.
 
 ## 26 February 2020
 {: #26February2020}
@@ -570,7 +580,7 @@ The following updates are available in all locations except Dallas currently.
 ## 26 September 2018
 {: #26September2018}
 
-- **{{site.data.keyword.conversationfull}} is available in {{site.data.keyword.icpfull}}**: See the [{{site.data.keyword.icpfull}} documentation](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.3/featured_applications/watson_assistant.html) for more information.
+- **{{site.data.keyword.conversationfull}} is available in {{site.data.keyword.icpfull}}**
 
 ## 21 September 2018
 {: #21September2018}

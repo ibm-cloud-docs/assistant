@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-03-02"
 
 subcollection: assistant
 
@@ -28,6 +28,8 @@ subcollection: assistant
 
 Use {{site.data.keyword.conversationfull}} to build your own branded assistant into any device, application, or channel. Your assistant connects to the customer engagement resources you already use to deliver an engaging, unified problem-solving experience to your customers.
 {: shortdesc}
+
+[Read the Watson blog](https://www.ibm.com/blogs/watson/2020/03/independent-study-finds-ibm-watson-assistant-customers-accrued-23-9-million-in-benefits/){: external} to see how {{site.data.keyword.conversationfull}} is helping enterprises cut costs and improve customer satisfaction today.
 
 ## How it works
 {: #index-how-it-works}
