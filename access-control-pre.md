@@ -76,8 +76,6 @@ To change a collaborator's service access role:
 
 1.  To change the user's role, click the *list of actions* icon for the entry, and then click **Edit**.
 
-    ![Shows a user platform access role entry for a service instance and how to get to the Edit menu for the role.](images/acl-change-user-role1.png)
-
 1.  Click the appropriate service access role checkbox.
 
     ![Shows a user's access role details for a service instancein edit mode.](images/acl-change-user-role2.png)
