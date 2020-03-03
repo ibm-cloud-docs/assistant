@@ -340,9 +340,9 @@ The following video demonstrates how to annotate entity mentions.
 
 <iframe class="embed-responsive-item" id="youtubeplayer0" title="Annotating entity mentions" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/3WjzJpLsnhQ" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
-**Tutorial**: To walk through a tutorial that shows you how to define contextual entities before you add your own, go to [Tutorial: Defining contextual entities](https://www.ibm.com/cloud/garage/demo/try-watson-assistant-contextual-entities){: external}.
+**Tutorial**: To walk through a tutorial that shows you how to define contextual entities before you add your own, go to [Tutorial: Defining contextual entities](https://www.ibm.com/cloud/architecture/demo/try-watson-assistant-contextual-entities){: external}.
 
-The contextual entities tutorial shows a slightly older veresion of the user interface. But the concepts it covers are the same, so it is still a worthwhile exercise.
+The contextual entities tutorial shows a slightly older version of the user interface. But the concepts it covers are the same, so it is still a worthwhile exercise.
 {: note}
 
 ### What you don't annotate matters

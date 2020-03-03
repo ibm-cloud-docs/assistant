@@ -60,7 +60,7 @@ The first table shows the level of support for all features, except those relate
 
 **Table 2a. Intent feature support details**
 
-| Language | **[Absolute scoring](/docs/assistant?topic=assistant-intents#intents-absolute-scoring)** and **[Mark as irrelevant](/docs/assistant?topic=assistant-logs#logs-mark-irrelevant)** | **[Content Catalog](/docs/assistant?topic=assistant-catalog)** | **[Autocorrection](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check)** | 
+| Language | **[Absolute scoring](/docs/assistant?topic=assistant-intents#intents-absolute-scoring)** and **[Mark as irrelevant](/docs/assistant?topic=assistant-logs#logs-mark-irrelevant)** | **[Content Catalog](/docs/assistant?topic=assistant-catalog)** | **[Autocorrection](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check)** |
 |:---:|:---:|:---:|:---:|
 | **English (en)**                   | GA | GA | GA |
 | **Arabic (ar)**                    | Beta | GA | NA |
@@ -68,7 +68,7 @@ The first table shows the level of support for all features, except those relate
 | **Chinese (Traditional) (zh-tw)**  | Beta | NA | NA |
 | **Czech (cs)**                     | GA | NA | NA |
 | **Dutch (nl)**                     | GA | NA | NA |
-| **French (fr)**                    | GA | GA | GA |
+| **French (fr)**                    | GA | GA | NA |
 | **German (de)**                    | GA | GA | NA |
 | **Italian (it)**                   | GA | GA | NA |
 | **Japanese (ja)**                  | GA | GA | NA |
