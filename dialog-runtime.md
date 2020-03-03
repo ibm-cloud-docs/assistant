@@ -863,7 +863,7 @@ Follow the [tutorial](/docs/assistant?topic=assistant-tutorial-digressions) to i
 
 *Autocorrection* fixes misspellings that users make in the utterances that they submit as user input. When autocorrection is enabled, the misspelled words are automatically corrected. And it is the corrected words that are used to evaluate the input. When given more precise input, your assistant can more often recognize entity mentions and understand the user's intent.
 
-Autocorrection is enabled automatically for all new English-language dialog skills. You can enable it for French-language dialog skills.
+Autocorrection is enabled automatically for all new English-language dialog skills.
 {: note}
 
 Autocorrection corrects user input in the following way:
