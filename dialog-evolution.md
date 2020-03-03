@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-18"
+lastupdated: "2020-03-03"
 
 subcollection: assistant
 
@@ -24,37 +24,36 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:table: .aria-labeledby="caption"}
 
-# A new approach ![Technology preview experience only](images/preview.png)
+# Exiting the technology preview ![Technology preview experience only](images/preview.png)
 {: #dialog-evolution}
 
-The product user interface is being reimagined. The new experience is available as a technology preview for a select set of customers.
+During a span of several months, a technology preview version of the user interface was enabled for a select set of first-time customers.
+{: shortdesc}
 
-The goal of the reimagined user experience is to make the quality of the conversation that your assistant has with your customers the focus of your work. To acheive it, we are making it easier for business subject matter experts to participate directly in designing the assistant. Let the people who best understand your business and how to talk to your customers decide how your assistant speaks and behaves.
+The goal of publishing a revised user interface as a technology preview was to get real usage feedback to help us determine whether the new approach helps customers attain certain milestones in the assistant creation process more quickly. Our testing is finished. As a result, we are reverting all user interfaces to the standard version of the {{site.data.keyword.conversationshort}} user interface. 
 
-We have simplified the steps you take to train your assistant. You can quickly identify discrete customer goals, and in the context of each goal, define the interactions that must occur to satisfy them.
-
-Providing good training data is as critical a step as ever for building powerful virtual assistants. However, you can leave the mechanics of how the training data is created and used to us. Expend your energy on delivering experiences that will delight your customers. The product is designed to generate the data that is needed for the service's algorithmic models automatically, as a byproduct of your work.
-
-## What is changing?
+## What to expect when you revert your service instance
 {: #dialog-evolution-what}
 
-The following changes are visible in the technology preview experience only.
-{: preview}
+You will see the following changes:
 
-The **Intents** and **Dialog** pages are being replaced with a page named **Actions**. 
+- There is no **Actions** page. Your dialog skill has an **Intents** page and a **Dialog** page instead.
 
-- **Intents**: This page was where you defined the intents that you wanted the assistant to understand. Intents represent a customer goal. This is where you added sample user utterances as intent user examples to teach your assistant how to recognize when a customer articulated a request that mapped to the intent.  
+  ![Shows tech preview menuand the standard UI menu side by side](images/preview-menu-change.png)
 
-- **Dialog**: This page is where you authored the script for your assistant to follow as it talked with your customers. The dialog was represented as a hierarchical tree of dialog nodes. Each root node in the tree represented a distinct major topic of conversation. Follow-up questions were represented as child nodes of the root node or other child nodes. The root and child nodes formed a branch of the conversation.  At run time, the dialog processed the nodes in the tree starting from the top of the tree, and flowed down the tree or across a branch depending on which conditions were met by each new user input.
+  Your actions data is retained, but how you access it is different.
 
-- **Actions**: This page incorporates the purposes that were served by both the *Intents* and *Dialog* pages into a single page. The new approach represents the conversation as a set of distinct actions. You teach the action to recognize customer requests for the action first. You then add steps to each action to define the interactions your assistant will have with your customers to help them reach their goal. A step might be to ask a follow-up question or ask the customer to choose from a list of options, and so on. See [Creating actions](/docs/assistant?topic=assistant-actions).
+  Each action you created is listed as an *intent* in the **Intents** page. Similar to an action, an intent represents a customer goal. Each customer utterance that you added to help teach the assistant to recognize when a user wants to perform the action is listed as an *intent user example*.
 
-## Key functional differences
-{: #dialog-evolution-differences}
+  The steps you defined for the action are represented in the **Dialog** page. The dialog is like a script that you author for your assistant to follow as it talks with your customers. The dialog is represented as a hierarchical tree of dialog nodes. Each root node in the tree represents a distinct major topic of conversation. Therefore, each action that you defined is available as a root node in your dialog tree. The steps that you defined for the action are represented as the root node's response. For an action with multiple steps, the lower-level steps are represented as child nodes of the root node or other child nodes. The root and child nodes of the dialog form a branch of the conversation. 
 
-If you are an existing user who is familiar with the standard product, the following list explains the key differences in the new experience.
+- A **Content Catalog** page is available. The *content catalog* provides a set of prebuilt intents that are categorized by subject, such as customer care. You can add these intents to your skill and start using them immediately.
 
-- An action serves two purposes: 1. it is equivalent to an intent, and 2. it serves as a root dialog node. Steps that you add to the action are equivalent to the root node's child nodes.
-- An action conditions on a single intent only. The steps attached to an action condition on context variables or entities only; they cannot condition on intents.
-- The run time conversation does not flow through the root nodes from the start to the end of a dialog tree. Rather, the action defined for the request that is detected in user input is triggered independently. The steps within an action continue to be processed from the first to last in the list.
-<!-- Context variables are scoped to the action that uses them. They are nulled when the action is finished. An action's context variable cannot be set and retrieved by any other action that is triggered during a conversation. -->
+## Technology preview goal
+{: #dialog-evolution-goal}
+
+Based on what we learn from user interactions with the technology preview, we will make improvements that the data suggests simplify the development process. That's why it's so important for you to share your feelings about using the preview with our team. When you are prompted to revert your instance, please take a minute to share your opinions with us in the feedback field.
+
+The goal of the reimagined user experience is to make the quality of the conversation that your assistant has with your customers the focus of your work. To acheive that goal, we tried to make it easier for business subject matter experts to participate directly in designing the assistant. Let the people who best understand your business and how to talk to your customers decide how your assistant speaks and behaves.
+
+We simplified the steps you take to train your assistant. You quickly identified discrete customer goals, and in the context of each goal, defined the interactions that must occur to satisfy them.

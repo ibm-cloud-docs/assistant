@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-03-03"
 
 keywords: context, context variable, digression, disambiguation, autocorrection, spelling correction, spell check, confidence 
 
@@ -863,7 +863,7 @@ Follow the [tutorial](/docs/assistant?topic=assistant-tutorial-digressions) to i
 
 *Autocorrection* fixes misspellings that users make in the utterances that they submit as user input. When autocorrection is enabled, the misspelled words are automatically corrected. And it is the corrected words that are used to evaluate the input. When given more precise input, your assistant can more often recognize entity mentions and understand the user's intent.
 
-Autocorrection is enabled automatically for all new English-language dialog skills.
+Autocorrection is enabled automatically for all new English-language dialog skills. You can enable it for French-language dialog skills.
 {: note}
 
 Autocorrection corrects user input in the following way:
@@ -910,7 +910,7 @@ To avoid overcorrection, your assistant does not correct the spelling of the fol
 - Words containing special characters, such as hyphens (-), asterisks (*), ampersands (&), or at signs (@), including those used in email addresses or URLs.
 - Words that *belong* in this skill, meaning words that have implied significance because they occur in entity values, entity synonyms, or intent user examples.
 
-  Mentions of a contextual entity can be corrected inadvertently. That's because terms that function as contextual entity mentions are fluid; they cannot be predetermined and avoided by the spell checker function in the way a list of dictionary-based terms can be. If, after testing, you find that mentions are being overcorrected for a certain contextual entity, consider using a dictionary-based entity in its place.
+  Mentions of a contextual entity can be corrected inadvertently. That's because terms that function as contextual entity mentions are fluid; they cannot be predetermined and avoided by the spell checker function in the way a list of dictionary-based terms can be.
   {: note}
 
 If the word that is not corrected is not obviously one of these types of input, then it might be worth checking whether the entity has fuzzy matching enabled for it.
