@@ -30,7 +30,7 @@ subcollection: assistant
 During a span of several months, a technology preview version of the user interface was enabled for a select set of first-time customers.
 {: shortdesc}
 
-The goal of publishing a revised user interface as a technology preview was to get real usage feedback to help us determine whether the new approach helps customers attain certain milestones in the assistant creation process more quickly. Our testing is finished. As a result, we are reverting all user interfaces back to the standard version of the {{site.data.keyword.conversationshort}} user interface. 
+The goal of publishing a revised user interface as a technology preview was to get real usage feedback to help us determine whether the new approach helps customers attain certain milestones in the assistant creation process more quickly. Our testing is finished. As a result, we are reverting all user interfaces to the standard version of the {{site.data.keyword.conversationshort}} user interface. 
 
 ## What to expect when you revert your service instance
 {: #dialog-evolution-what}

@@ -313,7 +313,7 @@ To set up a Salesforce service desk integration, complete the following steps:
 1.  Add a chat app that enables the Salesforce agent to interact with your assistant. To do so, create a Visualforce page, and then add a chat app to the page.
 {: #deploy-web-chat-salesforce-add-visualforce-page}
 
-    Visualforce pages is the mechanism that Salesforce provides for you to customize a live agent's console by adding your own pages to it. A Visualforce page is similar to a standard web page, but it provides ways for you to access, display, and update your organization’s data. Pages can be referenced and invoked by using a unique URL, just as HTML pages on a traditional web server can be.
+    Visualforce pages are the mechanism that Salesforce provides for you to customize a live agent's console by adding your own pages to it. A Visualforce page is similar to a standard web page, but it provides ways for you to access, display, and update your organization’s data. Pages can be referenced and invoked by using a unique URL, just as HTML pages on a traditional web server can be.
 
     - Copy the code snippet from the Visualforce page markup field.
     - From Salesforce Setup, search for **Visualforce Pages**. Create a page. Add a label and name to the page, and then paste the code snippet that you copied in the previous step into the page markup field.
@@ -321,7 +321,7 @@ To set up a Salesforce service desk integration, complete the following steps:
 1.  Add custom fields to the Salesforce chat transcript layout.
 {: #deploy-web-chat-salesforce-add-custom-fields}
 
-    This is a one-time task. If the fields already exist for your org, you can skip this step.
+    This is a one-time task. If the fields already exist for your organization, you can skip this step.
     {: note}
 
     From the Salesforce **Setup>Object Manager>Chat Transcript>Fields & Relationships** page, create the following custom fields:
