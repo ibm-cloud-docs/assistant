@@ -35,7 +35,8 @@ When you participate in the early access program, IBM gives you early access to 
 The following features are available for use by participants in the early access program only. To find out how to request access, see [Participate in the early access program](/docs/assistant?topic=assistant-feedback#feedback-beta).
 {: preview}
 
-- LiveEngage is available as a service desk solution choice. For more information, see [Adding support for transfers](/docs/assistant?topic=assistant-beta-deploy-web-chat#deploy-web-chat-liveperson).
+- Delight your customers with 360-degree support by integrating your web chat with a third-party service desk solution. When a customer asks to speak to a person, you can connect them to an agent through a service desk solution, such as Zendesk. For more information, see [Adding support for transfers](/docs/assistant?topic=assistant-beta-deploy-web-chat#deploy-web-chat-haa).
+
 
 ## Tell us what you think
 
