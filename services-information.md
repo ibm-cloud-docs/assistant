@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-11"
+lastupdated: "2020-03-03"
 
 subcollection: assistant
 
@@ -164,7 +164,7 @@ You can create {{site.data.keyword.conversationshort}} service instances that ar
 | Washington DC  | us-east    | wdc          | 14 June 2018 | N/A |
 {: caption="Data center locations" caption-side="top"}
 
-For information about the data centers in which other {{site.data.keyword.cloud_notm}} services are hosted, see [Services by region](/docs/resources/services_region#services_region){: external}.
+For information about the data centers in which other {{site.data.keyword.cloud_notm}} services are hosted, see [Services by region](/docs/resources/services_region?topic=resources-services_region#services_region){: external}.
 
 ## Terms and security
 {: #services-information-terms}

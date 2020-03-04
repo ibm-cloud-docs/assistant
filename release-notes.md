@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-02"
+lastupdated: "2020-03-04"
 
 subcollection: assistant
 
@@ -52,12 +52,6 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
-## 3 March 2020
-{: #3March2020}
-<!--1.91-->
-
-- **Transfer a web chat conversation to a human agent**: Delight your customers with 360-degree support by integrating your web chat with a third-party service desk solution. When a customer asks to speak to a person, you can connect them to an agent through a service desk solution, such as Zendesk or Salesforce. Service desk support is a beta feature. For more information, see [Adding support for transfers](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-haa).
-
 ## 2 March 2020
 {: #2March2020}
 
@@ -71,8 +65,6 @@ Existing models that you have trained will not be immediately impacted, but expi
 ## 26 February 2020
 {: #26February2020}
 <!--1.90-->
-
-- **The new system entities are used by new skills**: For new service instances, the new system entities are enabled automatically when you create a skill. If you decide to turn on a system entity and add it to your dialog, it's the new and improved version of the system entity that is used. For more information, see [New system entities](/docs/assistant?topic=assistant-beta-system-entities).
 
 - **Slot `Save it as` field retains your edits**: When you edit what gets saved for a slot by using the JSON editor to edit the value of the context variable to be something other than what is specified in the **Check for** field, your changes are kept even if someone subsequently clicks the **Save it as** field.
 
