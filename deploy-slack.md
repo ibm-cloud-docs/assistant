@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-02"
+lastupdated: "2020-03-05"
 
 subcollection: assistant
 
@@ -41,18 +41,46 @@ When integrated, depending on the events that you configure the assistant to sup
 
 1.  Click **Slack**.
 
-1.  Follow the instructions that are provided on the screen to complete the integration process.
+1.  You need to have a Slack app to connect to.
 
-    Choose one or more of the following subscription events to support:
+    If you don’t have a Slack app, create one now. See [Starting with Slack apps](https://api.slack.com/start){: external}.
 
-    - `message.im`: The assistant responds when someone starts a direct message with the assistant.
-    - `app_mentions`: The assistant responds when someone mentions the assistant by name in a channel.
+1.  Go to the [Your Apps](https://api.slack.com/apps) page on the Slack website, and then click the app you want to use.
 
-If you want to follow along as someone else walks through the deployment steps, watch this video.
+1.  From the settings page for your Slack app, open the **App Home** page.
 
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Walkthrough of the Slack deployment steps" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/RBGBPJ8h4HQ?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+1.  Add access scopes for your Slack app. 
 
-Duration: 9.5 minutes
+    The button label might be *Review Scopes to Add* or *Update scopes* depending on whether you are creating a new app or editing an app that you created before February 2020. The method for Slack access changed. For more information about it, read the [Slack blog post](https://medium.com/slack-developer-blog/more-precision-less-restrictions-a3550006f9c3){: external} about it.
+
+1.  Assign bot token scopes to your Slack app. At a minimum, apply the following scopes:
+
+    - app_mentions:read
+    - chat:write
+    - im:history
+    - im:read
+    - im:write
+
+1.  Click *Install App to Workspace*, and then allow the installation when prompted.
+
+    If you are editing scopes for an existing application, reinstall it.
+
+1.  From the *OAuth and Permissions* page in Slack, copy the *Bot User OAuth Access Token*.
+
+1.  Go to the {{site.data.keyword.conversationshort}} Slack integration configuration page, and then paste the token that you copied in the previous step into both the **OAuth access token** and **Bot user OAuth access token** fields.
+
+1.  Copy the generated request URL from the Slack integration configuration page in {{site.data.keyword.conversationshort}}.
+
+1.  Return to the Slack app settings page. Open the *Event Subscriptions* page, and then turn on *Enable Events*. Paste the request URL that you copied in the previous step into the field. 
+
+1.  On the *Event Subscriptions* page in Slack, find the *Subscribe to Bot Events* section. Click *Add Bot User Event*, and then select the event types you want to subscribe to. You must select at least one of the following types:
+
+    - message.im: Listens for message events that are posted in a direct message channel.
+    - app_mention: Listens for only message events that mention your app or bot.
+
+1.  Click *Save Changes*.
+
+1.  Optional: To add support for showing buttons, menus, and disambiguation options in the Slack app, go to the *Interactive Components* tab and enable the feature. Paste your request URL in the provided text entry field, and then click *Enable Interactive Components*.
 
 ## Dialog considerations
 {: #deploy-slack-dialog}
