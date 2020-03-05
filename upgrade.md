@@ -42,7 +42,7 @@ To upgrade your plan, complete these steps:
 1.  From the {{site.data.keyword.cloud}} menu, select **Upgrade Plan**.
     From here, you can see your current plan and other available plan options. Depending on the plan type, you can make changes yourself or inform IBM that you want to change your plan.
 
-    - You cannot upgrade from a Lite, Standard, or Plus Lite plan to a Plus plan. Instead, purchase the Plus plan first. 
+    - You cannot upgrade from a Lite, Standard, or Plus Trial plan to a Plus plan. Instead, purchase the Plus plan first. 
     
       To start the process of provisioning a Plus plan, fill out [this form](https://ibm.biz/contact-WA-plus){: external}. Alternatively, go to the [plan overview page](https://www.ibm.com/cloud/watson-assistant/pricing/){: external} and start a chat with an IBM representative. Tell them about the type of plan you want to upgrade, and be prepared to provide the plan account ID.
 
