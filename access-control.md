@@ -223,7 +223,7 @@ Anyone who creates an assistant or skill is automatically granted the Manager ro
 
 - Reader
 
-  The following screen capture shows you what someone with a Reader service access role to a resource sees when viewng the Dialog page.
+  The following screen capture shows you what someone with a Reader service access role to a resource sees when viewing the Dialog page.
 
   ![Shows the dialog page with disabled buttons.](images/access-control-read-only.png)
 
@@ -232,7 +232,7 @@ Anyone who creates an assistant or skill is automatically granted the Manager ro
 
 - Writer
 
-  This screen capture shows you what someone with a Writer service access role to a resource sees when viewng the same page.
+  This screen capture shows you what someone with a Writer service access role to a resource sees when viewing the same page.
 
   ![Shows the dialog page with buttons enabled, but no Analytics option in nav.](images/access-control-writer.png)
 
