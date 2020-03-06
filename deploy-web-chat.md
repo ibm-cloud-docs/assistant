@@ -278,19 +278,20 @@ Salesforce is a customer relationship management solution that brings companies 
 
 To connect to a Salesforce service desk, your organization must have a Salesforce Service Cloud plan that supports Live Agent Chat. Chat support is available in Salesforce Service Cloud Unlimited and Enterprise plans. It is also available with Performance or Developer plans that were created after 14 June 2012.
 
-Your organization must have a Salesforce chat app with the following characteristics:
+Your organization must have a [Salesforce chat app](https://help.salesforce.com/articleView?id=live_agent_create_deployments.htm&type=5){: external} with the following characteristics:
 
 - Console navigation
-- Utility: Omni-channel
 - Navigation items: Cases, Chat sessions, Chat transcripts
-- User profiles: Apply the appropriate profiles to ensure that agents can access the app and view chat history information. You can limit access to this page later.
+- Utility: Omni-channel. See [Omni-Channel](https://help.salesforce.com/articleView?id=omnichannel_intro.htm&type=5){: external}.
+- User profiles: Apply the appropriate profiles to ensure that agents can access the app and view chat history information. You can limit access to this page later. See [Profiles](https://help.salesforce.com/articleView?id=admin_userprofiles.htm&type=5){: external}.
+- A [chat button deployment](https://help.salesforce.com/articleView?id=live_agent_create_buttons.htm&type=5){: external} with appropriate routing. See [Chat routing options](https://help.salesforce.com/articleView?id=live_agent_chat_routing_options.htm&type=5){: external}.
 
 You must have a level of access to your Salesforce service desk deployment that allows you to do the following things:
 
 - Edit the chat app
 - Get chat deployment and button code details
 - Add custom fields to layout objects
-- Create Visualforce pages. 
+- Create Visualforce pages
 
 If you don't, ask someone with the appropriate level of access to perform this procedure for you.
 
@@ -298,7 +299,7 @@ To set up a Salesforce service desk integration, complete the following steps:
 
 1.  From the Web Chat integration page in {{site.data.keyword.conversationshort}}, switch the **Allow transfers to live agents** toggle to **On**, and then choose **Salesforce** as the service desk type. Click **Set up**.
 
-1.  For {{site.data.keyword.conversationshort}} to connect to a Salesforce service desk, it needs information about your organization's Salesforce chat deployment and button implementation. Specifically, it needs the API endpoint, organization ID, deployment ID, and button ID. The service can derive the values that it needs from code snippets that you copy and paste to this configuration page.
+1.  For {{site.data.keyword.conversationshort}} to connect to a Salesforce service desk, it needs information about your organization's Salesforce chat deployment and button implementations. Specifically, it needs the API endpoint, organization ID, deployment ID, and button ID. The service can derive the values that it needs from code snippets that you copy and paste to this configuration page.
 {: #deploy-web-chat-salesforce-get-deployment-info}
 
     - Get the deployment code for your Salesforce Agent Configuration chat deployment. 
@@ -313,7 +314,7 @@ To set up a Salesforce service desk integration, complete the following steps:
 1.  Add a chat app that enables the Salesforce agent to interact with your assistant. To do so, create a Visualforce page, and then add a chat app to the page.
 {: #deploy-web-chat-salesforce-add-visualforce-page}
 
-    Visualforce pages are the mechanism that Salesforce provides for you to customize a live agent's console by adding your own pages to it. A Visualforce page is similar to a standard web page, but it provides ways for you to access, display, and update your organization’s data. Pages can be referenced and invoked by using a unique URL, just as HTML pages on a traditional web server can be.
+    Visualforce pages are the mechanism that Salesforce provides for you to customize a live agent's console by adding your own pages to it. A Visualforce page is similar to a standard web page, but it provides ways for you to access, display, and update your organization’s data. Pages can be referenced and invoked by using a unique URL, just as HTML pages on a traditional web server can be. See [Create Visualforce Pages](https://help.salesforce.com/articleView?id=pages_creating.htm&type=5){: external}
 
     - Copy the code snippet from the Visualforce page markup field.
     - From Salesforce Setup, search for **Visualforce Pages**. Create a page. Add a label and name to the page, and then paste the code snippet that you copied in the previous step into the page markup field.
@@ -323,6 +324,8 @@ To set up a Salesforce service desk integration, complete the following steps:
 
     This is a one-time task. If the fields already exist for your organization, you can skip this step.
     {: note}
+
+    See [Create Custom Fields](https://help.salesforce.com/articleView?id=adding_fields.htm&type=5){: external}.
 
     From the Salesforce **Setup>Object Manager>Chat Transcript>Fields & Relationships** page, create the following custom fields:
 
@@ -341,7 +344,7 @@ To set up a Salesforce service desk integration, complete the following steps:
 1.  Add the Visualforce page that you created to the Salesforce chat app.
 {: #deploy-web-chat-salesforce-add-page-to-layout}
 
-    To ensure the Salesforce agents can see history of the chat between the customer and your assistant, you must add the page that you created earlier into the console that they use to keep track of their work.
+    To ensure the Salesforce agents can see history of the chat between the customer and your assistant, you must add the page that you created earlier into the console that they use to keep track of their work. See [Create and Configure Lightning Experience Record Pages](https://help.salesforce.com/articleView?id=lightning_app_builder_customize_lex_pages.htm&type=5){: external}.
     
     - From the Salesforce App Launcher, open the chat app that you created for your agents to talk to customers.
     - Open the *Chat Transcripts* object, and then select a transcript page.
