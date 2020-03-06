@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-05"
+lastupdated: "2020-03-06"
 
 subcollection: assistant
 
@@ -10,6 +10,7 @@ subcollection: assistant
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
@@ -45,38 +46,50 @@ When integrated, depending on the events that you configure the assistant to sup
 
     If you don’t have a Slack app, create one now. See [Starting with Slack apps](https://api.slack.com/start){: external}.
 
-1.  Go to the [Your Apps](https://api.slack.com/apps) page on the Slack website, and then click the app you want to use.
+1.  Go to the [Your Apps](https://api.slack.com/apps){: external} page on the Slack website, and then click the app you want to use.
+
+    Open the Slack app in a new browser tab, so you can easily switch back and forth between the Slack app settings page and {{site.data.keyword.conversationshort}} Slack integration configuration page.
+    {: tip}
 
 1.  From the settings page for your Slack app, open the **App Home** page.
 
 1.  Add access scopes for your Slack app. 
 
-    The button label might be *Review Scopes to Add* or *Update scopes* depending on whether you are creating a new app or editing an app that you created before February 2020. The method for Slack access changed. For more information about it, read the [Slack blog post](https://medium.com/slack-developer-blog/more-precision-less-restrictions-a3550006f9c3){: external} about it.
+    The button label might be *Review Scopes to Add* or *Update scopes* depending on whether you are creating a new app or editing an app that you created before February 2020. 
+    
+    The method for Slack access changed. For more information about it, read the [Slack blog post](https://medium.com/slack-developer-blog/more-precision-less-restrictions-a3550006f9c3){: external} about it.
+    {: note}
 
 1.  Assign bot token scopes to your Slack app. At a minimum, apply the following scopes:
 
-    - app_mentions:read
-    - chat:write
-    - im:history
-    - im:read
-    - im:write
+    - `app_mentions:read`
+    - `chat:write`
+    - `im:history`
+    - `im:read`
+    - `im:write`
 
 1.  Click *Install App to Workspace*, and then allow the installation when prompted.
 
     If you are editing scopes for an existing application, reinstall it.
 
-1.  From the *OAuth and Permissions* page in Slack, copy the *Bot User OAuth Access Token*.
+1.  From the Slack settings App Home page, enable the *Always Show My Bot As Online* setting.
 
-1.  Go to the {{site.data.keyword.conversationshort}} Slack integration configuration page, and then paste the token that you copied in the previous step into both the **OAuth access token** and **Bot user OAuth access token** fields.
+1.  Go to the *OAuth and Permissions* page in Slack, copy the *Bot User OAuth Access Token*.
 
-1.  Copy the generated request URL from the Slack integration configuration page in {{site.data.keyword.conversationshort}}.
+1.  From the {{site.data.keyword.conversationshort}} Slack integration configuration page, paste the token that you copied in the previous step into both the **OAuth access token** and **Bot user OAuth access token** fields.
+
+1.  On the Slack app settings page, go to the *Basic Information* page, and then find the *App Credentials* section. Copy the app credential verification token.
+
+1.  From the {{site.data.keyword.conversationshort}} Slack integration configuration page, paste the verification token that you copied in the previous step into the **Verification token** field. 
+
+1.  Click **Generate request URL**, and then copy the generated request URL.
 
 1.  Return to the Slack app settings page. Open the *Event Subscriptions* page, and then turn on *Enable Events*. Paste the request URL that you copied in the previous step into the field. 
 
 1.  On the *Event Subscriptions* page in Slack, find the *Subscribe to Bot Events* section. Click *Add Bot User Event*, and then select the event types you want to subscribe to. You must select at least one of the following types:
 
-    - message.im: Listens for message events that are posted in a direct message channel.
-    - app_mention: Listens for only message events that mention your app or bot.
+    - `message.im`: Listens for message events that are posted in a direct message channel.
+    - `app_mention`: Listens for only message events that mention your app or bot.
 
 1.  Click *Save Changes*.
 
