@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-02"
+lastupdated: "2020-03-06"
 
 subcollection: assistant
 
@@ -217,6 +217,27 @@ You do not need to assign resource-level roles to people who already have access
 | Logs | View conversation logs for the specific assistant or skill, but not edit anything. |-->
 
 Anyone who creates an assistant or skill is automatically granted the Manager role to that resource.
+
+#### Service access examples
+{: #access-control-ui-impact}
+
+- Reader
+
+  The following screen capture shows you what someone with a Reader service access role to a resource sees when viewng the Dialog page.
+
+  ![Shows the dialog page with disabled buttons.](images/access-control-read-only.png)
+
+  Most buttons, such as **Add node**, **Add folder**, and **Save new version** are disabled. There is no Analytics option in the navigation. The "Try it out" pane is available.
+  {: note}
+
+- Writer
+
+  This screen capture shows you what someone with a Writer service access role to a resource sees when viewng the same page.
+
+  ![Shows the dialog page with buttons enabled, but no Analytics option in nav.](images/access-control-writer.png)
+
+  All of the buttons are available. There is no Analytics option in the navigation.
+  {: note}
 
 ## Common role assignments
 {: #access-control-common-roles}
