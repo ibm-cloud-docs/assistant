@@ -32,7 +32,7 @@ When you participate in the early access program, IBM gives you early access to 
 ## Available beta features
 {: #beta-features}
 
-No feature are available currently. 
+No features are available currently. 
 
 ## Participate in the program
 {: #beta-access}
