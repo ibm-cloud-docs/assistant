@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-03"
+lastupdated: "2020-03-05"
 
 subcollection: assistant
 
@@ -32,12 +32,15 @@ When you participate in the early access program, IBM gives you early access to 
 ## Available beta features
 {: #beta-features}
 
-The following features are available for use by participants in the early access program only. To find out how to request access, see [Participate in the early access program](/docs/assistant?topic=assistant-feedback#feedback-beta).
+No feature are available currently. 
+
+## Participate in the program
+{: #beta-access}
+
+To find out how to request access, see [Participate in the early access program](/docs/assistant?topic=assistant-feedback#feedback-beta).
 {: preview}
 
-- Delight your customers with 360-degree support by integrating your web chat with a third-party service desk solution. When a customer asks to speak to a person, you can connect them to an agent through a service desk solution, such as Zendesk. For more information, see [Adding support for transfers](/docs/assistant?topic=assistant-beta-deploy-web-chat#deploy-web-chat-haa).
-
-
 ## Tell us what you think
+{: #beta-feedback}
 
 To share your feedback, join the [Watson Developer Community on Slack](http://wdc-slack-inviter.mybluemix.net/)(: external). Add your first impressions and suggestions to the **#assistant-early-access** channel.

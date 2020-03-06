@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-18"
+lastupdated: "2020-03-06"
 
 keywords: assistant, omnichannel, virtual agent, virtual assistant, chatbot, conversation, watson assistant, watson conversation
 
@@ -111,8 +111,6 @@ When you open the *My first skill*, you land on the *Intents* page.
 
 ![Shows the Intents page of My first skill](images/gs-intents-page.png)
 
-![Technology preview experience only](images/preview.png) If you land on a page named *Actions* instead, then you are using the preview experience. For information about what to do next, see [Creating actions](/docs/assistant?topic=assistant-actions).
-
 If available in your location, a tour begins that you can step through to learn about the product. Follow the tour; it provides a great overview of the product.
 
 Add training data that was built by IBM to your skill by adding intents from a content catalog. In particular, you will give your assistant access to the **General** content catalog so your dialog can greet users, and end conversations with them.
@@ -200,19 +198,21 @@ Now that you have an assistant that can participate in a simple conversational e
 
 1.  Click the **Assistants** icon ![Assistants menu icon](images/nav-ass-icon.png) to open a list of your assistants.
 1.  Find the *My first assistant* assistant, and open it.
-1.  Do one of the following things to test your assistant with a preview link integration. 
+1.  Test your assistant with a preview link integration. 
 
-    The preview link integration builds your assistant into a chat widget that is hosted by an IBM-branded web page. You can open the web page and chat with your assistant to test it out.
-
-    - If the assistant was created for you, you must add a preview link integration. From the *Integrations* area, click **Add integration**, and then click **Preview Link**. Click **Create**.
-
-    - If you created the assistant yourself, then click the preview link integration tile to open it. 
+    The preview link integration builds your assistant into a chat widget that is hosted by an IBM-branded web page. You can open the web page and chat with your assistant to test it out. 
     
-      When you create an assistant yourself, a preview link integration is created for you automatically.
+1.  If a *My first assistant* assistant was created for you, then you must add a preview link integration. From the *Integrations* area, click **Add integration**, and then click **Preview Link**. Click **Create**.
+
+    When you you create an assistant yourself, you can skip this step. A preview link integration is added to the assistant for you automatically. Click the preview link integration tile to open it.
 
 1.  Click the URL that is displayed on the page.
 
-    The test web page opens in a new tab.
+    The test web page opens in a new tab. You can start submitting message to see how your assistant responds. 
+
+    With a Lite plan, you can use the service for free. With other plans, you are charged for messages that you submit from the preview link integration. You can review metrics about the test user conversations from the Analytics page. You are not charged for messages that you submit from the "Try it out" pane, and the exchanges you have there are not logged.
+    {: note}
+
 1.  Type `hello` into the text field, and watch your assistant respond. 
 
     ![The widget in the preview link integration showing a single dialog exchange.](images/gs-test-from-preview-link.png)
@@ -224,9 +224,11 @@ Now that you have an assistant that can participate in a simple conversational e
 ## Next steps
 {: #getting-started-next-steps}
 
-This tutorial is built around a simple example. For a real application, you need to define some more interesting intents, some entities, and a more complex dialog that uses them both. When you have a polished version of the assistant, you can integrate it with channels that your customers already use, such as Slack. As traffic increases between the assistant and your customers, you can use the tools that are provided in the **Analytics** tab to analyze real conversations, and identify areas for improvement.
+This tutorial is built around a simple example. For a real application, you need to define some more interesting intents, some entities, and a more complex dialog that uses them both. When you have a polished version of the assistant, you can integrate it with web sites or channels, such as Slack, that your customers already use. As traffic increases between the assistant and your customers, you can use the tools that are provided in the **Analytics** page to analyze real conversations, and identify areas for improvement.
 
 - Complete follow-on tutorials that build more advanced dialogs:
-    - Add standard nodes with the [Building a complex dialog](/docs/assistant?topic=assistant-tutorial) tutorial.
-    - Learn about slots with the [Adding a node with slots](/docs/assistant?topic=assistant-tutorial-slots) tutorial.
+
+    - Add more dialog nodes to design complex conversational exchanges. See [Building a complex dialog](/docs/assistant?topic=assistant-tutorial).
+    - Learn techniques for getting customers to share information that the assistant needs before it can provide a useful response. See [Adding a node with slots](/docs/assistant?topic=assistant-tutorial-slots).
+
 - Check out more [sample apps](/docs/assistant?topic=assistant-sample-apps) to get ideas.
