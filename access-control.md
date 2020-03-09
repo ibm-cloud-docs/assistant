@@ -257,12 +257,12 @@ N/A stands for no assignment, meaning no role of the type is assigned.
 
 Use resource-level role assignments to limit who can edit live assistants that are interacting with your customers in a production environment. And protect customer data by limiting who can view analytics and user conversation logs.
 
-## Resource-level role impact on user interface actions
+## Resource-level role impact on available actions
 {: #access-control-ui-impact}
 
-The {{site.data.keyword.conversationshort}} user interface complies with the access roles that are defined for a service instance. When someone logs in, the user interface adjusts to show only what the current user can access, and it disables functions that the user does not have permissions to do. For example, a person assigned to the Reader role for a dialog skill cannot create or edit entities, intents, or dialog nodes in the skill because the **Create {resource}** and **Edit** functions are disabled. 
+The {{site.data.keyword.conversationshort}} user interface and API comply with the access roles that are defined for a service instance. When someone logs in to the user interface, it adjusts to show only what the current user can access, and it disables functions that the user does not have permissions to do. (For example, a person assigned to the Reader role for a dialog skill cannot create or edit entities, intents, or dialog nodes in the skill because the **Create {resource}** and **Edit** functions are disabled.) Similarly, the API allows access only to resources and methods that are permitted for the role associated with the specified API key.
 
-The following table shows the actions that can be performed by different resource-level service roles.
+The following table shows the UI and API actions that can be performed by different resource-level service roles.
 
 | Action | Reader | Writer | Manager |
 |--------|--------|--------|---------|
@@ -295,10 +295,9 @@ The following table shows the actions that can be performed by different resourc
 | Improve data from dialog skill "Try it out" pane | | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | View analytics | | | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | View intent and intent example recommendations | | | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| v1 and v2 API POST requests to `/message` endpoint | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| v1 API requests (all but POST to `/message` endpoint) | | | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| v2 API all GET requests, v2 POST requests to `/sessions` endpoint| ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| v2 API POST and DELETE requests (to all but `/message` and `/sessions` endpoints) | | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| v1 runtime API (`/message` endpoint) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| v2 runtime API (`session` and `/message` endpoints) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| v1 authoring and logs API (all but `/message` endpoint) | | | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Table 5. Action privileges per service role" caption-side="top"}
