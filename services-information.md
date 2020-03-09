@@ -4,6 +4,8 @@ copyright:
   years: 2015, 2020
 lastupdated: "2020-03-09"
 
+keywords: billing, data centers, MAU, monthly active users, service plans
+
 subcollection: assistant
 
 ---

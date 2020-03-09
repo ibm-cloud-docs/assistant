@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-02"
+lastupdated: "2020-03-09"
+
+keywords: dialog node limits, copying a node, moving a node, adding a folder, building a dialog
 
 subcollection: assistant
 
