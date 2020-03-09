@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-03"
+lastupdated: "2020-03-09"
 
 subcollection: assistant
 
@@ -23,26 +23,27 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# IBM Cloud services information
+# Billing information
 {: #services-information}
 
-The assistant is a fully hosted bot that is managed by {{site.data.keyword.cloud}}, which means you do not need to worry about setting up or maintaining infrastructure to support it.
+Billing for the use of {{site.data.keyword.conversationshort}} is managed through your {{site.data.keyword.cloud}} account.
 {: shortdesc}
 
-## Service plan information
-{: #services-information-plans}
+You are billed based on different metrics depending on your plan type. You can be billed based on the number of API calls made to a service instance or the number of active users who interact with the instance.
+
+For answers to common questions about subscriptions, see [How you're charged](/docs/billing-usage?topic=billing-usage-charges){: external}.
+
+## Plan details
+{: #services-information-plan-details}
 
 Explore the {{site.data.keyword.conversationshort}} [service plan options](https://www.ibm.com/cloud/watson-assistant/pricing/){: external}.
 
-Before you create a service instance, decide how you want to organize the resources in your {{site.data.keyword.cloud_notm}} account. If you do not define your own resource group, the **default** resource group is used, and you *cannot* change it later. See [Best practices for organizing resources in a resource group](https://cloud.ibm.com/docs/resources/bestpractice_rgs#bp_resourcegroups){: external} for more details. All users must have a platform access role of Operator. (Service access roles are not leveraged by {{site.data.keyword.conversationshort}}.)
+Find out more about what is included with the plans.
 
-To find out the service plan to which your current instance belongs, complete these steps:
+- [Artifact limits per plan](#services-information-limits)
+- [Plus and Premium plan features](#services-information-premium)
 
-1.  Make a note of the name of the instance you are currently using. (You can find and change the instance from the main Skills or Assistants pages.)
-1.  Go to the [IBM Cloud Resource list](https://cloud.ibm.com/resources){: external} page.
-1.  Expand the **Services** section, find the instance name that you noted earlier, and click it to see the associated plan information.
-
-## Plan limits by artifact type
+### Artifact limits per plan
 {: #services-information-limits}
 
 Information about the artifact limits per plan is available from the topics that describe how to create the artifacts, so you can refer to the limits when you need to know them. Here are links to the topics:
@@ -57,16 +58,7 @@ Information about the artifact limits per plan is available from the topics that
 - [Skills](/docs/assistant?topic=assistant-skill-add#skill-add-limits)
 - [Versions](/docs/assistant?topic=assistant-versions#versions-limits)
 
-### API call limits
-{: #services-information-api-limits}
-
-The number of API calls allowed per instance depends on your service plan. See your plan description for details.
-
-If you have a Lite plan and reach your API call limit, but the logs show that you have made fewer calls than expected, remember that the Lite plan stores log information for only 7 days.
-
-If you want to upgrade from one plan to another, see [Upgrading](/docs/assistant?topic=assistant-upgrade).
-
-## Plus and Premium plan features ![Plus or Premium plan only](images/plus.png)
+### Plus and Premium plan features ![Plus or Premium plan only](images/plus.png)
 {: #services-information-premium}
 
 The following features are available only to users of Plus or Premium plans.
@@ -78,71 +70,50 @@ The following features are available only to users of Plus or Premium plans.
 - [Search skill](/docs/assistant?topic=assistant-skill-search-add)
 - [Web Chat](/docs/assistant?topic=assistant-deploy-web-chat)
 
-## User-based plans
+## User-based plans explained
 {: #services-information-user-based-plans}
 
-Unlike API-based plans, which measure usage by the number of API calls made during a specified timeframe, the new Plus plan and updated Premium plan use user-based billing. They measure usage by the number of unique users who interacted with the assistant during a specified timeframe.
+Unlike API-based plans, which measure usage by the number of API calls made during a month, the Plus and Premium plans measure usage by the number of monthly active users.
 
-{{site.data.keyword.conversationshort}} checks for the following information from API requests in this order for billing purposes:
+A monthly active user is any unique user who has at least one meaningful interaction with your assistant or custom application over the calendar billing month. A meaningful interaction is an exchange in which a user sends a request to your service and your service responds. Welcome messages that are displayed at the start of a conversation are not charged. Neither are messages that are submitted in the "Try it out" pane for testing purposes. However, test messages sent from the preview link integration are charged.
+
+A unique user is recognized by the user ID that is associated with the person that interacts with your assistant. It is your responsibility to pass the user ID information to the service. {{site.data.keyword.conversationshort}} checks for the following information from API requests in this order for billing purposes:
 
   1.  **user_id**: A property defined in the API that is sent in the context object of a /message API call. Using this property is the best way to ensure that you accurately attribute /message API calls to unique users. For more information about the user ID property, see the API reference documentation:
   
     - `context.global.system.user_id`: [v2 API](https://cloud.ibm.com/apidocs/assistant/assistant-v2#send-user-input-to-assistant)
     - `context.metadata.user_id`: [v1 API](https://cloud.ibm.com/apidocs/assistant/assistant-v1#get-response-to-user-input)
 
-  1.  **session_id**: A property defined in the v2 API that identifies a single conversation between a user and the assistant. A session ID is provided in /message API calls that are generated by the built-in integrations. The session ends when a user closes the chat window or after the chat is inactive for 60 minutes.
+  1.  **session_id (v2 only)**: A property defined in the v2 API that identifies a single conversation between a user and the assistant. A session ID is provided in /message API calls that are generated by the built-in integrations. The session ends when a user closes the chat window or after the inactivity time limit is reached.
 
-  1.  **conversation_id**: A property defined in the v1 API that is stored in the context object of a /message API call. This property can be used to identify multiple /message API calls that are associated with a single conversational exchange with one user. However, the same ID is only used if you explicitly retain the ID and pass it back with each request that is made as part of the same conversation. Otherwise, a new ID is generated for each new /message API call.
+  1.  **conversation_id (v1 only)** : A property defined in the v1 API that is stored in the context object of a /message API call. This property can be used to identify multiple /message API calls that are associated with a single conversational exchange with one user. However, the same ID is only used if you explicitly retain the ID and pass it back with each request that is made as part of the same conversation. Otherwise, a new ID is generated for each new /message API call.
 
-To get the most benefit from the new user-based service plans, design any custom applications that you use to deploy your assistant to capture a unique user ID or session ID and pass the information to {{site.data.keyword.conversationshort}}.
+For example, if the same person chats with your assistant on three separate occasions over the same billing period, how you represent that user in the API call impacts how the interactions are billed. If you identify the user interaction with a `user_id`, it counts as one use. If you identify the user interaction with a `session_id`, then it counts as three uses (because there is a separate session that is created for each interaction).
 
-For example, if the same person chats with your assistant on three separate occasions over the same billing period, how you represent that user in the API call impacts how the interactions are billed. If you identify the user interaction with a `user_id`, it will count as 1 use. If you identify the user interaction with a `session_id`, then it will count as 3 uses (because there is a separate session created for each interaction).
+Billing is managed per monthy active user per service instance. If a single user interacts with assistants that are hosted by different service instances which are part of the same plan, the user's interaction with each service instance is treated as a separate use. You are billed for the user's interaction with each service instance separately.
 
-## Authenticating API calls
-{: #services-information-authenticate-api-calls}
+Design any custom applications to capture a unique `user_id` or `session_id` and pass the information to {{site.data.keyword.conversationshort}}. Choose a non-human-identifiable ID that doesn't change throughout your customer lifecycle.
 
-The authentication mechanism used by your service instance impacts how you must provide credentials when making an API call.
+The built-in integrations use a combination of the `session_id` and `user_id` to identify an interaction.
 
-1.  Get the service credentials.
+- For Web Chat, you can specify a `user_id`. For more information, see [Adding user identity information](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-userid).
 
-    - Find and click the service instance in the [{{site.data.keyword.Bluemix_notm}}  Resource List](https://cloud.ibm.com){: external}.
+If your custom application or assistant interacts with users who are anonymous, you can generate your own randomized universally unique IDs to represent these users. 
 
-    - Click to open your service instance, click **Service credentials**, and then click **View credentials**.
+- For Web Chat, if you are not passing an identifier for the user when the session begins, the Web Chat generates a unique ID for the user and stores it. If the same user returns to your site later in the month and chats with your assistant again, the Web Chat integration recognizes the user. And you are charged only once when an anonymous user interacts with your assistant multiple times in a single month.
 
-      ![Shows the service credentials page for IAM-hosted instances.](images/iam-creds.png)
+If an anonymous user logs in and later is identified as being the same person who submitted a request with a known ID, you are charged twice. Each message with a unique user ID is charged as an independent active user. To avoid this situation, you can prompt users to log in before initiating a chat or you can use the anonymous user ID to represent the user consistently.
 
-1.  Use these credentials in your API call.
+## Getting plan information for a service
+{: #services-information-plans}
 
-    - The service hostname typically includes the service location.
-    - Provide the appropriate type of token in the header. You can pass either a bearer token or an API key.
+To find out the service plan to which your current instance belongs, complete these steps:
 
-      - Tokens support authenticated requests without embedding service credentials in every call. The following example shows a bearer token being used.
+1.  Make a note of the name of the instance you are currently using. (You can find the instance name from the header of any page in the current instance. Click the User icon ![user icon](images/user-icon.png).)
+1.  Go to the [IBM Cloud Resource list](https://cloud.ibm.com/resources){: external} page.
+1.  Expand the **Services** section, find the instance name that you noted earlier, and click it to see the associated plan information.
 
-        ```sh
-        curl -X GET \
-        "{url}/v1/workspaces?version=2018-09-20" \
-        --header "Authorization: Bearer eyJhbGciOiJIUz......sgrKIi8hdFs"
-        ```
-        {: pre}
-
-        where {url} is the appropriate URL for your instance. For more details, see [Service endpoint](https://cloud.ibm.com/apidocs/assistant/assistant-v1#service-endpoint){: external}
-
-      - API keys use basic authentication. The following example shows an apikey being used.
-
-        ```sh
-        curl -X GET -u "apikey:3Df... ...Y7Pc9" \
-        "{url}/v1/workspaces?version=2018-09-20" \
-        ```
-        {: pre}
-
-        When you use any of the Watson SDKs, you can pass the API key and let the SDK manage the lifecycle of the tokens.
-        {: note}
-
-        IAM resources cannot be managed with the Cloud Foundry Command Line Interface (CLI). For example, Cloud Foundry CLI commands (beginning with `cf`) that create or manage service instances do not work with instances hosted in locations using IAM. Instead, you must use the {{site.data.keyword.cloud_notm}} CLI and its associated commands. See [Working with resources and resource groups](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_resource){: external} for more details.
-
-        See [Authenticating with IAM tokens](/docs/watson?topic=watson-iam){: external} for more information.
-
-    For examples, see [Authentication](https://cloud.ibm.com/apidocs/assistant/assistant-v2#authentication){: external} for your language in the API reference.
+You can upgrade from one plan type to another. For more information, see [Upgrading](/docs/assistant?topic=assistant-upgrade).
 
 ### Data centers
 {: #services-information-regions}
