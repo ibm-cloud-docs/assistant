@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-03"
+lastupdated: "2020-03-10"
 
 subcollection: assistant
 
@@ -278,13 +278,15 @@ Salesforce is a customer relationship management solution that brings companies 
 
 To connect to a Salesforce service desk, your organization must have a Salesforce Service Cloud plan that supports Live Agent Chat. Chat support is available in Salesforce Service Cloud Unlimited and Enterprise plans. It is also available with Performance or Developer plans that were created after 14 June 2012.
 
-Your organization must have a [Salesforce chat app](https://help.salesforce.com/articleView?id=live_agent_create_deployments.htm&type=5){: external} with the following characteristics:
+Your organization must have a [Salesforce chat app](https://help.salesforce.com/articleView?id=dev_tabsets.htm&type=5){: external} with the following characteristics:
 
 - Console navigation
 - Navigation items: Cases, Chat sessions, Chat transcripts
-- Utility: Omni-channel. See [Omni-Channel](https://help.salesforce.com/articleView?id=omnichannel_intro.htm&type=5){: external}.
 - User profiles: Apply the appropriate profiles to ensure that agents can access the app and view chat history information. You can limit access to this page later. See [Profiles](https://help.salesforce.com/articleView?id=admin_userprofiles.htm&type=5){: external}.
-- A [chat button deployment](https://help.salesforce.com/articleView?id=live_agent_create_buttons.htm&type=5){: external} with appropriate routing. See [Chat routing options](https://help.salesforce.com/articleView?id=live_agent_chat_routing_options.htm&type=5){: external}.
+- A [chat deployment](https://help.salesforce.com/articleView?id=live_agent_create_deployments.htm&type=5).
+- A [chat button deployment](https://help.salesforce.com/articleView?id=live_agent_create_buttons.htm&type=5){: external}.
+- Routing must be configured for the chat button. See [Chat routing options](https://help.salesforce.com/articleView?id=live_agent_chat_routing_options.htm&type=5){: external}. 
+- If you choose omni-channel routing, be sure to include omni-channel as a utility in the chat app. See [Omni-Channel](https://help.salesforce.com/articleView?id=omnichannel_intro.htm&type=5){: external}.
 
 You must have a level of access to your Salesforce service desk deployment that allows you to do the following things:
 

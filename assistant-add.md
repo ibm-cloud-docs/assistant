@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-03-10"
 
 subcollection: assistant
 
@@ -42,7 +42,9 @@ Follow these steps to create an assistant:
     - **Name**: A name no more than 100 characters in length. A name is required.
     - **Description**: An optional description no more than 200 characters in length.
 
-    An IBM-branded public web page is created for you automatically that you and your team can use to test your assistant. If you do not want the preview web page to be created, deselect the **Enable Preview Link** checkbox.
+    An IBM-branded public web page is created for you automatically that you and your team can use to test your assistant. If you do not want the preview web page to be created, deselect the **Enable Preview Link** checkbox. 
+    
+    A preview link integration is not added to the assistant named My first Assistant that is created for you automatically in some cases. It is also not added if you have private endpoints enabled for the service instance.
 
 1.  Click **Create assistant**.
 

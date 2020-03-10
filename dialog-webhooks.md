@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-03-10"
 
 subcollection: assistant
 
@@ -46,6 +46,9 @@ You cannot use a webhook to call a {{site.data.keyword.openwhisk_short}} action 
 {: note}
 
 For information about how to call a client application, see [Calling a client application from a dialog node](/docs/assistant?topic=assistant-dialog-actions-client).
+
+![Premium plan only](images/premium0.png) For environments where private endpoints are in use, keep in mind that a webhook sends traffic over the internet. For more information, see [Private network endpoints](https://cloud.ibm.com/docs/assistant?topic=assistant-security#security-private-endpoints).
+{: note}
 
 ## Defining the webhook
 {: #dialog-webhooks-create}
