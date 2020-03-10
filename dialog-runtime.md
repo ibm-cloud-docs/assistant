@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-03"
+lastupdated: "2020-03-10"
 
 keywords: context, context variable, digression, disambiguation, autocorrection, spelling correction, spell check, confidence 
 
@@ -863,7 +863,7 @@ Follow the [tutorial](/docs/assistant?topic=assistant-tutorial-digressions) to i
 
 *Autocorrection* fixes misspellings that users make in the utterances that they submit as user input. When autocorrection is enabled, the misspelled words are automatically corrected. And it is the corrected words that are used to evaluate the input. When given more precise input, your assistant can more often recognize entity mentions and understand the user's intent.
 
-Autocorrection is enabled automatically for all new English-language dialog skills.
+Autocorrection is enabled automatically for all new English-language dialog skills. It is available as a beta feature in French-language dialog skills. You must turn it on to use it with French-language skills. For more information about language support, see [Supported languages](/docs/assistant?topic=assistant-language-support).
 {: note}
 
 Autocorrection corrects user input in the following way:
@@ -873,18 +873,20 @@ Autocorrection corrects user input in the following way:
 
 When your assistant evaluates whether to correct the spelling of a word, it does not rely on a simple dictionary lookup process. Instead, it uses a combination of Natural Language Processing and probabalistic models to assess whether a term is, in fact, misspelled and should be corrected.
 
-### Disabling autocorrection
+### Turning autocorrection on or off
 {: #dialog-runtime-spell-check-disable}
 
-Autocorrection helps your assistant understand user input. However, if you decide to disable it, you must turn it off entirely. You cannot disable autocorrection for a single word or phrase. 
+Autocorrection helps your assistant understand user input. It is enabled automatically for some languages and available, but disabled in others.
+
+If you decide to disable it, you must turn it off entirely. You cannot disable autocorrection for a single word or phrase. 
 
 If you find that a domain-specific term is being corrected that shouldn't be, you can prevent the correction from happening by adding the term or phrase to your training data. For more details, see [Autocorrection rules](#dialog-runtime-spell-check-rules).
 
-If you decide to disable the autocorrection feature, complete the following steps:
+To turn autocorrection on or off, complete the following steps:
 
 1.  Click the **Skills** icon ![Skills menu icon](images/nav-skills-icon.png), and then open your skill.
 1.  From the Skills menu, click **Options**, and then click **Autocorrection**.
-1.  Turn off **Autocorrection**.
+1.  Click the toggle to enable or disable the feature.
 
 ### Testing autocorrection
 {: #dialog-runtime-spell-check-test}

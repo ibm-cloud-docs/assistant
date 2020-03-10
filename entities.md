@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-03"
+lastupdated: "2020-03-10"
 
 keywords: entity, entity value, contextual entity, dictionary entity, pattern entity, entity synonym, annotate mentions
 
@@ -255,14 +255,14 @@ Your fuzzy matching setting has no impact on synonym recommendations. Even if fu
 
 To understand how fuzzy matching and autocorrection are related to one another, see the [autocorrection documentation](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check-vs-fuzzy-matching).
 
-## Adding contextual entities ![Beta feature](images/beta.png)
+## Adding contextual entities
 {: #entities-create-annotation-based}
 
 Annotation-based entites are those for which you annotate occurrences of the entity in sample sentences to teach your assistant about the context in which the entity is typically used.
 
 In order to train a contextual entity model, you can take advantage of your intent examples, which provide readily-available sentences to annotate.
 
-This beta feature is available in English-language dialog skills only.
+This feature is generally available in English-language dialog skills only. For more information about language support, see [Supported languages](/docs/assistant?topic=assistant-language-support).
 {: note}
 
 Using an intent's user examples to define contextual entities does not affect the classification of that intent. However, entity mentions that you label are also added to that entity as synonyms. And intent classification does use synonym mentions in intent user examples to establish a weak reference between an intent and an entity.

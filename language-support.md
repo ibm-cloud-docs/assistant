@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-03"
+lastupdated: "2020-03-10"
 
 subcollection: assistant
 
@@ -60,7 +60,7 @@ The first table shows the level of support for all features, except those relate
 
 **Table 2a. Intent feature support details**
 
-| Language | **[Absolute scoring](/docs/assistant?topic=assistant-intents#intents-absolute-scoring)** and **[Mark as irrelevant](/docs/assistant?topic=assistant-logs#logs-mark-irrelevant)** | **[Content Catalog](/docs/assistant?topic=assistant-catalog)** | **[Autocorrection](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check)** |
+| Language | **[Absolute scoring](/docs/assistant?topic=assistant-intents#intents-absolute-scoring)** and **[Mark as irrelevant](/docs/assistant?topic=assistant-logs#logs-mark-irrelevant)** | **[Content Catalog](/docs/assistant?topic=assistant-catalog)** | **[Autocorrection](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check)** | 
 |:---:|:---:|:---:|:---:|
 | **English (en)**                   | GA | GA | GA |
 | **Arabic (ar)**                    | Beta | GA | NA |
@@ -68,7 +68,7 @@ The first table shows the level of support for all features, except those relate
 | **Chinese (Traditional) (zh-tw)**  | Beta | NA | NA |
 | **Czech (cs)**                     | GA | NA | NA |
 | **Dutch (nl)**                     | GA | NA | NA |
-| **French (fr)**                    | GA | GA | NA |
+| **French (fr)**                    | GA | GA | Beta |
 | **German (de)**                    | GA | GA | NA |
 | **Italian (it)**                   | GA | GA | NA |
 | **Japanese (ja)**                  | GA | GA | NA |
@@ -100,7 +100,7 @@ The first table shows the level of support for all features, except those relate
 
 | Language | **[Entity fuzzy matching](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Contextual entities](/docs/assistant?topic=assistant-entities#entities-create-annotation-based)** | **[Synonym recommendations](/docs/assistant?topic=assistant-entities#entities-synonyms)** |
 |:---:|:---:|:---:|:---:|
-| **English (en)**                   | GA | Beta | GA |
+| **English (en)**                   | GA | GA | GA |
 | **Arabic (ar)**                    | GA (Misspelling only) | NA | NA |
 | **Chinese (Simplified) (zh-cn)**   | NA | NA | NA |
 | **Chinese (Traditional) (zh-tw)**  | NA | NA | NA |
