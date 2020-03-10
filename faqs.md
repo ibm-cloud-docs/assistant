@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-04"
+lastupdated: "2020-03-10"
 
 subcollection: assistant
 
@@ -73,7 +73,7 @@ The 401 response code is returned for many reasons, including:
 
 - You exceeded the API call limit for your plan for this month. For example, for Lite plans, the monthly limit for API calls 10,000 messages per month. If you reach your limit for the month, but the logs show that you have made fewer calls than the limit, remember that the Lite plan stores log information for 7 days only. The 401 response will go away as soon as the next billing cycle begins, which is the first day of the calendar month.
 - You are trying to use an instance-level API key that you created in one data center location to connect to a service instance that is hosted from another location. You must create an API key in the same data center location where your service instance is hosted.
-- Your service instance might be using Cloud Foundry for resource management. If you authenticate with a username and password, then it is likely that you are still using Cloud Foundry. If so, you must migrate the instance so it uses IBM Cloud Identity and Access Management (IAM) instead. For more details, see [Migrating Watson services from Cloud Foundry](/docs/assistant?topic=watson-migrate).
+- Your service instance might be using Cloud Foundry for resource management. If you authenticate with a username and password, then it is likely that you are still using Cloud Foundry. If so, you must migrate the instance so it uses {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) instead. For more details, see [Migrating Watson services from Cloud Foundry](/docs/assistant?topic=watson-migrate).
 
 ## I'm getting a `403` response
 {: #faqs-getting-403}
@@ -87,13 +87,16 @@ You are using a valid API Key, but it is not the right key for the service insta
 
 The full message is, `Assistants could not be loaded at this time. Unable to fetch access token for account`.
 
-Your {{site.data.keyword.cloud}} refresh tokens might have expired. Log out and then log back in to {{site.data.keyword.cloud_notm}} to generate fresh tokens. 
+This message is displayed for a few reasons:
+
+- Your {{site.data.keyword.cloud}} refresh tokens might have expired. Log out and then log back in to {{site.data.keyword.cloud_notm}} to generate fresh tokens. 
+- Make sure that the IBM ID that you logged in with has access to this service instance. To confirm, you can go to the [{{site.data.keyword.cloud_notm}} resources list](https://cloud.ibm.com/resources), and then log in with the same IBM ID. You should see this service instance listed as one of your available services.
 
 ## Getting `Authentication Required` or `Sign in` message
 {: #faqs-authentication-required}
 {: faq}
 
-You are being asked for credentials to access a Watson Assistant service instance that you have been able to access without trouble in the past. You might see, `Authentication Required: https://assistant-{location}-watsonplatform.net is requesting your username and password.` or just a `Sign in` dialog box with fields for a username and password.
+You are being asked for credentials to access a {{site.data.keyword.conversationshort}} service instance that you have been able to access without trouble in the past. You might see, `Authentication Required: https://assistant-{location}-watsonplatform.net is requesting your username and password.` or just a `Sign in` dialog box with fields for a username and password.
 
 This message is displayed for service instances that have not been migrated from Cloud Foundry. If you have not migrated your instance, you must do so now. See [Migrating Watson services from Cloud Foundry](/docs/services/assistant?topic=watson-migrate).
 
