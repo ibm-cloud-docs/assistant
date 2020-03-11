@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-26"
+lastupdated: "2020-03-10"
 
 subcollection: assistant
 
@@ -31,14 +31,14 @@ The numeric system entities have been updated. The new system entities can recog
 The `@sys-location` and `@sys-person` system entities did not change.
 {: note}
 
-The new system entities are enabled automatically in all new service instances.
+The new system entities are enabled automatically in English, Brazilian Portuguese, Czech, Dutch, French, German, Italian, and Spanish dialog skills. For more information, see [Supported languages](/docs/assistant?topic=assistant-language-support).
 
 For information about the languages in which the new system entities are supported, see [Supported languages](/docs/assistant?topic=assistant-language-support).
 
 ## Enabling the new system entities
 {: #beta-system-entities-enable}
 
-Skills in service instances that were created before 26 February 2020 use the legacy version of the system entities unless you enable the new version.
+Arabic, Chinese, Korean, and Japanese dialog skills or skills in service instances that were created before 10 March 2020 use the legacy version of the system entities unless you enable the new version.
 
 To enable the new system entities, complete the following steps:
 
