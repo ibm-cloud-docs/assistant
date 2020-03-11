@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-10"
+lastupdated: "2020-03-11"
 
 subcollection: assistant
 
@@ -24,7 +24,7 @@ subcollection: assistant
 {:gif: data-image-type='gif'}
 
 # New system entities
-{: #beta-system-entities}
+{: #new-system-entities}
 
 The numeric system entities have been updated. The new system entities can recognize more nuanced mentions in user input. For example, `@sys-date` can calculate the date of a national holiday, such as `Thanksgiving`, when it is mentioned by name. And `@sys-date` can recognize when a year is specified as part of a date mentioned in the user's input. The improvements also make it easier for your assistant to distinguish among the many number-based system entities. For example, a date mention, such as `May 10`, that is recognized to be a `@sys-date` is not also identified as a `@sys-number` mention.
 
@@ -33,10 +33,8 @@ The `@sys-location` and `@sys-person` system entities did not change.
 
 The new system entities are enabled automatically in English, Brazilian Portuguese, Czech, Dutch, French, German, Italian, and Spanish dialog skills. For more information, see [Supported languages](/docs/assistant?topic=assistant-language-support).
 
-For information about the languages in which the new system entities are supported, see [Supported languages](/docs/assistant?topic=assistant-language-support).
-
 ## Enabling the new system entities
-{: #beta-system-entities-enable}
+{: #new-system-entities-enable}
 
 Arabic, Chinese, Korean, and Japanese dialog skills or skills in service instances that were created before 10 March 2020 use the legacy version of the system entities unless you enable the new version.
 
@@ -55,7 +53,7 @@ If you decide you prefer the behavior of the previous version of the system enti
 If you decide to continue using the new version, review any existing dialog nodes that condition on or return system entity values to determine if you need to make changes. For example, some mentions were classified as more than one system entity type before. Now, if a currency is mentioned, for example, it is classified as a `@sys-currency` only. You might be able to simplify logic you used before to work around the prior behavior. Or you might need to revise logic that you added that relies on the old behavior.
 
 ### New system entity properties
-{: #beta-system-entities-props}
+{: #new-system-entities-props}
 
 To improve the system entities, new properties were added to the entity objects of number-based system entities.
 
@@ -101,7 +99,7 @@ Table 2. System entities helper functions
 {: caption="System entities helper functions" caption-side="top"}
 
 ### Usage examples
-{: #beta-system-entities-examples}
+{: #new-system-entities-examples}
 
 You can use the following types of expressions to take advantage of the new properties in the improved system entities. The table shows the results are returned when a user mentions the date `4 July 2019` and time `3:30 PM`. You can use these expressions in dialog text responses without surrounding them in `<? ?>` syntax.
 
@@ -139,7 +137,7 @@ Table 4. Using new system entities in conditional responses
 {: caption="Use the new system entities in conditional responses" caption-side="top"}
 
 ## Disabling the new system entities
-{: #beta-system-entities-disable}
+{: #new-system-entities-disable}
 
 To disable the new system entities, complete the following steps:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-27"
+lastupdated: "2020-03-11"
 
 keywords: system entity, sys-number, sys-date, sys-time
 
@@ -30,7 +30,8 @@ subcollection: assistant
 Learn about system entities that are provided by IBM for you to use out of the box. These built-in utility entities help your assistant recognize terms and references that are commonly used by customers in conversation, such as numbers and dates. 
 {: shortdesc}
 
-A new and improved version of the numeric system entities is generally available. For more details, see [New system entities](/docs/assistant?topic=assistant-beta-system-entities).
+New and improved versions of the numeric system entities are generally available for dialog skills in the English, Brazilian Portuguese, Czech, Dutch, French, German, Italian, and Spanish languages. The new versions of the numeric system entities provide superior number recognition with higher precision. This topic describes the legacy versions of the numeric system entities. The legacy versions are being deprecated in English, Brazilian Portuguese, Czech, Dutch, French, German, Italian, and Spanish dialog skills. For these languages, support will end in June 2020. Switch to using the new system entities now so you have time to test your dialog before support ends. For more information, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
+{: deprecated}
 
 For information about language support for system entities, see [Supported languages](/docs/assistant?topic=assistant-language-support).
 
@@ -90,7 +91,7 @@ You get equivalent results for other supported languages and national currencies
 
 - Currency values are recognized as instances of @sys-number entities as well. If you are using separate conditions to check for both currency values and numbers, place the condition that checks for currency above the one that checks for a number.
 
-  This workaround is not necessary if you are using the revised system entities. For more details, see [New system entities](/docs/assistant?topic=assistant-beta-system-entities).
+  This workaround is not necessary if you are using the revised system entities. For more details, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
   {: note}
 
 - If you use the @sys-currency entity as a node condition and the user specifies `$0` as the value, the value is recognized as a currency properly, but the condition is evaluated to the number zero, not the currency zero. As a result, the `null` in the condition is evaluated to false and the node is not processed. To check for currency values in a way that handles zeros properly, use expression `@sys-currency >=0` in the node condition instead.
@@ -305,7 +306,7 @@ You get equivalent results for other supported languages.
 
 - Percentage values are recognized as instances of @sys-number entities as well. If you are using separate conditions to check for both percentage values and numbers, place the condition that checks for a percentage above the one that checks for a number.
 
-  This workaround is not necessary if you are using the revised system entities. For more details, see [New system entities](/docs/assistant?topic=assistant-beta-system-entities).
+  This workaround is not necessary if you are using the revised system entities. For more details, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
   {: note}
 
 - If you use the @sys-percentage entity as a node condition and the user specifies `0%` as the value, the value is recognized as a percentage properly, but the condition is evaluated to the number zero not the percentage 0%. As a result, the `null` in the condition is evaluated to false and the node is not processed. To check for percentages in a way that handles zero percentages properly, use the expression `@sys-percentage >= 0` in the node condition instead.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-10"
+lastupdated: "2020-03-11"
 
 subcollection: assistant
 
@@ -117,7 +117,7 @@ The first table shows the level of support for all features, except those relate
 
 **Table 4. System entity feature support details**
 
-| Language | **System entities ([number](/docs/assistant?topic=assistant-system-entities#system-entities-sys-number), [currency](/docs/assistant?topic=assistant-system-entities#system-entities-sys-currency), [percentage](/docs/assistant?topic=assistant-system-entities#system-entities-sys-percentage), [date, time](/docs/assistant?topic=assistant-system-entities#system-entities-sys-date-time))** | **[New system entities](/docs/assistant?topic=assistant-beta-system-entities)** |
+| Language | **System entities ([number](/docs/assistant?topic=assistant-system-entities#system-entities-sys-number), [currency](/docs/assistant?topic=assistant-system-entities#system-entities-sys-currency), [percentage](/docs/assistant?topic=assistant-system-entities#system-entities-sys-percentage), [date, time](/docs/assistant?topic=assistant-system-entities#system-entities-sys-date-time))** | **[New system entities](/docs/assistant?topic=assistant-new-system-entities)** |
 |:---|:---:|:---:|
 | **English (en)**                   | GA, Beta ([location](/docs/assistant?topic=assistant-system-entities#system-entities-sys-location), [person](/docs/assistant?topic=assistant-system-entities#system-entities-sys-person)) | GA |
 | **Arabic (ar)**                    | Beta | Beta |
