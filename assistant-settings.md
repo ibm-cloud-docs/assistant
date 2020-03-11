@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-02"
+lastupdated: "2020-03-11"
 
 subcollection: assistant
 
@@ -65,9 +65,11 @@ Get information, such as the assistant ID and skill ID and credentials that you 
 - For a skill, click the overflow menu, and then choose **View API Details**.
 - For an assistant, click the overflow menu, and then choose **Settings**. Click **API Details**.
 
-If you cannot view the API details or service credentials, it is likely that you do not have Manager access to this resource. If you want to use the API as a Writer or Reader, you can create a personal API key instead. Go to the [IBM Cloud API keys](https://cloud.ibm.com/iam/apikeys){: external} page to create an IBM Cloud API key to use to authenticate your API requests. For more information, see [Managing user API keys](/docs/iam?topic=iam-userapikey){: external}. With the personal key, you can make API requests that you have the appropriate privileges to complete. For more information about API support per role, see [Resource-level role impact on user interface actions](/docs/assistant?topic=assistant-access-control#access-control-ui-impact).
+If you cannot view the API details or service credentials, it is likely that you do not have Manager access to the service instance in which the resource was created. Only people with Manager service access to the instance can use the service credentials. 
 
-If the assistant ID is not displayed, you can copy it from the URL of the assistant page. The Assistant ID is listed just after `/assistants/{assistantID}`.
+If you have a Writer or Reader service access role to the instance and want to use the API, you can create a personal API key. Go to the [IBM Cloud API keys](https://cloud.ibm.com/iam/apikeys){: external} page to create an IBM Cloud API key to use to authenticate your API requests. For more information, see [Managing user API keys](/docs/iam?topic=iam-userapikey){: external}. With the personal key, you can make API requests that you have the appropriate privileges to complete. For more information about API privileges per access role, see [Resource-level role impact on available actions](/docs/assistant?topic=assistant-access-control#access-control-ui-impact).
+
+If the assistant ID is not displayed, you can copy it from the URL of the assistant web page. The Assistant ID is listed just after `/assistants/{assistantID}`.
 
 ## Changing the inactivity timeout setting ![Plus or Premium plan only](images/plus.png)
 {: #assistant-settings-change-timeout}
