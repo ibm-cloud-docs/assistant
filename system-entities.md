@@ -101,7 +101,7 @@ You get equivalent results for other supported languages and national currencies
 
 The `@sys-date` system entity extracts mentions such as `Friday`, `today`, or `November 1`. The value of this entity stores the corresponding inferred date as a string in the format `yyyy-MM-dd`. For example, `"2016-11-21"`. The system augments missing elements of a date (such as the year for `"November 21"`) with the current date values.
 
-For English locale only, the default system behavior for date input is MM/DD/YYYY. This behavior changes to DD/MM/YYYY only if the first two numbers are greater than 12. The value that is stored has the format `yyyy-MM-dd`.
+For the English locale only, the format for date input is MM/DD/YYYY. The format for date input changes to DD/MM/YYYY only if the first two numbers are greater than 12. The value that is stored has the format `yyyy-MM-dd`.
 {: note}
 
 The `@sys-time` system entity extracts mentions such as `2pm`, `at 4`, or `15:30`. The value of this entity stores the time as a string in the format `HH:mm:ss`. For example, `"13:00:00"`.
