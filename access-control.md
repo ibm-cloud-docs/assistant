@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-09"
+lastupdated: "2020-03-12"
 
 subcollection: assistant
 
@@ -47,13 +47,15 @@ When service level access control support is added to instances in your data cen
 
 If you have a Reader or Writer service access role, then what you can do will change when service-level access control support is added.
 
-- **I'm a Reader**
+### I'm a Reader
+{: #access-control-prep-reader}
 
-  With a Reader role, you cannot take any actions in the {{site.data.keyword.conversationshort}} application user interface. You can only view the assistants and skills pages. You cannot edit, create, or delete anything, and cannot view analytics.
+With a Reader role, you cannot take any actions in the {{site.data.keyword.conversationshort}} application user interface. You can only view the assistants and skills pages. You cannot edit, create, or delete anything, and cannot view analytics.
 
-- **I'm a Writer**
+### I'm a Writer
+{: #access-control-prep-writer}
 
-  With a Writer role, you can view, edit, create, and delete resources, such as assistants or skills. However, you cannot view analytics or user conversation log information. Only people with a Manager service access role can view the analytics page.
+With a Writer role, you can view, edit, create, and delete resources, such as assistants or skills. However, you cannot view analytics or user conversation log information. Only people with a Manager service access role can view the analytics page.
 
 Act now to get the service instance owner to change your access level.
 
@@ -170,7 +172,8 @@ The breaks down access definitions into the following role types:
 
 To define someone's global access, meaning access roles that apply to a service instance and all of the resources that are created as part of the instance, decide which roles to assign to the user from among the following role types:
 
-**Platform roles**
+#### Platform roles
+{: #access-control-global-platform-roles}
 
 Choose a platform role to assign to the user.
 
@@ -185,7 +188,8 @@ The **Editor** and **Operator** platform roles are equivalent to the Administrat
 At a minimum, you must give someone *Viewer* access to a service instance or they will not be able to access anything.
 {: important}
 
-**Service roles**
+#### Service roles
+{: #access-control-global-service-roles}
 
 Optionally, choose one or more service roles for the user that will apply to all of the skills and assistants in the instance.
 
@@ -205,7 +209,8 @@ To fine tune a person's level of access to individual skills and assistants with
 
 You do not need to assign resource-level roles to people who already have access to all the resources based on their global service role. But, if you want to tailor a bit more who can read, edit, or add to specific assistants or skills within the instance, then apply resource-level roles.
 
-**Service roles**
+#### Service roles
+{: #access-control-resource-service-roles}
 
 | Role | Privileges of the users in this role |
 |------|---------------------------------------|
@@ -219,7 +224,7 @@ You do not need to assign resource-level roles to people who already have access
 Anyone who creates an assistant or skill is automatically granted the Manager role to that resource.
 
 #### Service access examples
-{: #access-control-ui-impact}
+{: #access-control-ui-examples}
 
 - Reader
 

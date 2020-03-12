@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-09"
+lastupdated: "2020-03-12"
 
 keywords: dialog node limits, copying a node, moving a node, adding a folder, building a dialog
 
@@ -99,6 +99,7 @@ To create a dialog, complete the following steps:
     For more information about how to test for values in conditions, see [Conditions](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-conditions).
 1.  **Optional**: If you want to collect multiple pieces of information from the user in this node, then click **Customize** and enable **Slots**. See [Gathering information with slots](/docs/assistant?topic=assistant-dialog-slots) for more details.
 1.  Enter a response.
+
     - Add the text or multimedia elements that you want your assistant to display to the user as a response.
     - If you want to define different responses based on certain conditions, then click **Customize** and enable **Multiple responses**.
     - For information about conditional responses, rich responses, or how to add variety to responses, see [Responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-responses).
@@ -120,6 +121,7 @@ To create a dialog, complete the following steps:
     Naming the node makes it easier for you to remember its purpose and to locate the node when it is minimized. If you don't provide a name, the node condition is used as the name.
 
 1.  To add more nodes, select a node in the tree, and then click the **More** ![More icon](images/kabob.png) icon.
+
     - To create a peer node that is checked next if the condition for the existing node is not met, select **Add node below**.
     - To create a peer node that is checked before the condition for the existing node is checked, select **Add node above**.
     - To create a child node to the selected node, select **Add child node**. A child node is processed after its parent node.
@@ -127,7 +129,8 @@ To create a dialog, complete the following steps:
 
     For more information about the order in which dialog nodes are processed, see [Dialog overview](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-flow).
 1.  Test the dialog as you build it.
-   See [Testing your dialog](#dialog-build-test) for more information.
+
+    See [Testing your dialog](#dialog-build-test) for more information.
 
 ## Testing your dialog
 {: #dialog-build-test}
@@ -279,7 +282,7 @@ If you still cannot find the node, you can export the dialog skill and use a JSO
 ## Copying a dialog node
 {: #dialog-build-copy-node}
 
-You can duplicate a node to create an exact copy of it as a peer node directly below it in the dialog tree. The copied node itself is given the same name as the original node, but with `- copy`*`n`* appended to it, where *`n`* is a number that starts with 1. If you duplicate the same node more than once, then the *`n`* in the name increments by one for each copy to help you distinguish the copies from one another. If the node has no name, it is given the name `copy`*`n`*.
+You can duplicate a node to create an exact copy of it as a peer node directly after it in the dialog tree. The copied node itself is given the same name as the original node, but with `- copy`*`n`* appended to it, where *`n`* is a number that starts with 1. If you duplicate the same node more than once, then the *`n`* in the name increments by one for each copy to help you distinguish the copies from one another. If the node has no name, it is given the name `copy`*`n`*.
 
 When you duplicate a node that has child nodes, the child nodes are duplicated also. The copied child nodes have the exact same names as the original child nodes. The only way to distinguish a copied child node from an original child node is the `copy` reference in the parent node name.
 
@@ -320,11 +323,11 @@ To add a folder to a dialog tree, complete the following steps:
 
 1.  From the tree view of the **Dialog** tab, click **Add folder**.
 
-    The folder is added to the end of the dialog tree, just before the **Anything else** node. Unless an existing node in the tree is selected, in which case, it is added below the selected node.
+    The folder is added to the end of the dialog tree, just before the **Anything else** node. Unless an existing node in the tree is selected, in which case, it is added after the selected node.
 
-    If you want to add the folder elsewhere in the tree, from the node above the spot where you want to add it, click the **More** ![More icon](images/kabob.png) icon, and then select **Add folder**.
+    If you want to add the folder elsewhere in the tree, from the node before the spot where you want to add it, click the **More** ![More icon](images/kabob.png) icon, and then select **Add folder**.
 
-    You can add a folder below a child node within an existing dialog branch. To do so, click the **More** ![More icon](images/kabob.png) icon on the child node, and then select  **Add folder**.
+    You can add a folder after a child node within an existing dialog branch. To do so, click the **More** ![More icon](images/kabob.png) icon on the child node, and then select  **Add folder**.
 
     The folder is opened in edit view.
 

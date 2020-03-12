@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-02"
+lastupdated: "2020-03-12"
 
 keywords: import workspace, import JSON, export JSON
 
@@ -53,10 +53,8 @@ To add a skill, complete the following steps:
 
     - To add an existing skill to this service instance, you can import it as a JSON file. Click **Import skill**, and then click **Choose JSON File** and select the JSON file you want to import.
 
-      **Important:**
-
-      - The imported JSON file must use UTF-8 encoding, without byte order mark (BOM) encoding.
-      - The JSON cannot contain tabs, newlines, or carriage returns.
+      The imported JSON file must use UTF-8 encoding, without byte order mark (BOM) encoding. The JSON cannot contain tabs, newlines, or carriage returns.
+      {: important}
 
       The maximum size for a skill JSON file is 10 MB. If you need to import a larger skill, consider using the REST API. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#create-workspace){: external}.
       {: tip}

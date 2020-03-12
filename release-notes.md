@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-11"
+lastupdated: "2020-03-12"
 
 subcollection: assistant
 
@@ -131,7 +131,7 @@ The following technologies are being deprecated:
 {: #14February2020}
 <!--1.89-->
 
-- **Get intent recommendations from an assistant log**: You can now use the chat log from one of your production assistants as the source for intent and intent user example recommendations. See [Intent recommendations](/docs/assistant?topic=assistant-intent-recommendations). This capability is a beta feature.
+- **Get intent recommendations from an assistant log**: You can now use the chat log from one of your production assistants as the source for intent and intent user example recommendations. See [Getting help defining intents](/docs/assistant?topic=assistant-intent-recommendations). This capability is a beta feature.
 
   With the introduction of this feature, how CSV log files are stored also changed. Previously, a log CSV file that you uploaded to one skill was shared by all of the skills in that service instance. Now, a CSV file that you upload to one skill is available for use only by that one skill. For existing instances with CSV files, the shared CSV files are available to each of the skills in the instance. You can delete a CSV file from a skill that doesn't use it by managing the recommendation sources for the skill.
   {: important}
@@ -192,7 +192,7 @@ The following technologies are being deprecated:
 
         The previous public endpoint domain was `watsonplatform.net`.
 
-        For more information, see the [API reference](https://{DomainName}/apidocs/assistant/assistant-v2#service-endpoint){: external}.
+        For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#service-endpoint){: external}.
 
         These URLs do not introduce a breaking change. The new URLs work both for your existing service instances and for new instances. The original URLs continue to work on your existing service instances for at least one year (until December 2020).
     - For more information, see [Authenticating to Watson services](/docs/watson?topic=watson-iam).
@@ -255,7 +255,7 @@ The following updates are available in all locations except Dallas currently.
 
 - Deploy your assistant in minutes. Create a web chat integration to embed your assistant into a page on your website as a chat widget. See [Integrating with your own website](/docs/assistant?topic=assistant-deploy-web-chat).
 
-- The main menu options of **Assistants** and **Skills** have moved from being displayed at the top of the page to being shown as icons on the side of the page.
+- The main menu options of **Assistants** and **Skills** have moved from being displayed in the page header to being shown as icons on the side of the page.
 
   - ![Assistants menu icon](images/nav-ass-icon.png) Assistants
   - ![Skills menu icon](images/nav-skills-icon.png) Skills
@@ -264,9 +264,9 @@ The following updates are available in all locations except Dallas currently.
 
   ![Skills secondary navigation menu](images/secondary-nav.png)
 
-- **Rich response types are supported in a dialog node with slots**. You can display a list of options for a user to choose from as the prompt for a slot, for example. See [Adding rich responses to slots](dialog-slots-multimedia).
+- **Rich response types are supported in a dialog node with slots**. You can display a list of options for a user to choose from as the prompt for a slot, for example. See [Adding rich responses to slots](/docs/assistant?topic=assistant-dialog-slots#dialog-slots-response-types).
 
-- Where you go to switch service instances has changed. See [Switching the service instance](/docs/assistant?topic=assistant-skill-open#skill-open-switch-instance).
+- Where you go to switch service instances has changed. See [Switching the service instance](/docs/assistant?topic=assistant-assistant-settings#assistant-settings-switch-instance).
 
 - **Known issue: Cannot rename search skills**: You currently cannot rename a search skill after you create it. 
  
@@ -588,7 +588,7 @@ The following updates are available in all locations except Dallas currently.
 
     **Where are my workspaces?** Any workspaces that you created previously are now listed in your service instance as skills. Click the **Skills** tab to see them. For more information, see [Skills](/docs/assistant?topic=assistant-skills).
 
-  - **Assistants**: You can now publish your skill in just two steps. Add your skill to an assistant, and then set up one or more integrations with which to deploy your skill. The assistant adds a layer of function on top of your skill that enables {{site.data.keyword.conversationshort}} to orchestrate and manage the flow of information for you. See [Assistants](/docs/assistant?topic=assistant-assistants).
+  - **Assistants**: You can now publish your skill in just two steps. Add your skill to an assistant, and then set up one or more integrations with which to deploy your skill. The assistant adds a layer of function to your skill that enables {{site.data.keyword.conversationshort}} to orchestrate and manage the flow of information for you. See [Assistants](/docs/assistant?topic=assistant-assistants).
 
   - **Built-in integrations**: Instead of going to the **Deploy** tab to deploy your workspace, you add your dialog skill to an assistant, and add integrations to the assistant through which the skill is made available to your users. You do not need to build a custom front-end application and manage the conversation state from one call to the next. However, you can still do so if you want to. See [Adding integrations](/docs/assistant?topic=assistant-deploy-integration-add) for more information.
 
@@ -700,11 +700,11 @@ The following updates are available in all locations except Dallas currently.
 
   {{site.data.keyword.cloud}} is migrating to token-based Identity and Access Management (IAM) authentication.
 
-  For new service instances in the regions listed above, you use IAM for authentication. You can pass either a bearer token or an API key. Tokens support authenticated requests without embedding service credentials in every call. API keys use basic authentication.
+  For new service instances in the regions listed, you use IAM for authentication. You can pass either a bearer token or an API key. Tokens support authenticated requests without embedding service credentials in every call. API keys use basic authentication.
 
   For all new and existing service instances in other regions, you continue to use service credentials (`{username}:{password}`) for authentication.
 
-  When you use any of the Watson SDKs, you can pass the API key and let the SDK manage the lifecycle of the tokens. For more information and examples, see [Authentication]https://{DomainName}/apidocs/assistant/assistant-v2#authentication){: external} in the API reference.
+  When you use any of the Watson SDKs, you can pass the API key and let the SDK manage the lifecycle of the tokens. For more information and examples, see [Authentication](https://cloud.ibm.com/apidocs/assistant/assistant-v2#authentication){: external} in the API reference.
 
   If you are not sure which type of authentication to use, view the {{site.data.keyword.conversationshort}} credentials by clicking the service instance from the Services section of the [{{site.data.keyword.Bluemix_notm}} Resource List](https://cloud.ibm.com){: external}.
 
@@ -745,7 +745,7 @@ The following updates are available in all locations except Dallas currently.
 
 - **Introducing {{site.data.keyword.conversationfull}}**: {{site.data.keyword.ibmwatson}} Conversation has been renamed. It is now called {{site.data.keyword.conversationfull}}. The name change reflects the fact that {{site.data.keyword.conversationshort}} is expanding to provide prebuilt content and tools that help you more easily share the virtual assistants you build. Read [this blog post](https://www.ibm.com/blogs/watson/2018/03/the-future-of-watson-conversation-watson-assistant/) for more details.
 
-- **New REST APIs and SDKs are available for Watson Assistant**: The new APIs are functionally identical to the existing Conversation APIs, which continue to be supported. For more information about the Watson Assistant APIs, see the [API Reference](https://{DomainName}/apidocs/assistant/assistant-v1){: external}.
+- **New REST APIs and SDKs are available for Watson Assistant**: The new APIs are functionally identical to the existing Conversation APIs, which continue to be supported. For more information about the Watson Assistant APIs, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1){: external}.
 
 - **Dialog enhancements**: The following features were added to the dialog tool:
 
@@ -762,7 +762,7 @@ The following updates are available in all locations except Dallas currently.
 ## 12 March 2018
 {: #12March2018}
 
-- **New date and time methods**: Methods were added that make it easier to perform date calculations from the dialog. See [Date and time calculations](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-date-and-time-calculations) for more details.
+- **New date and time methods**: Methods were added that make it easier to perform date calculations from the dialog. See [Date and time calculations](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-date-time-calculations) for more details.
 
 ## 16 February 2018
 {: #16February2018}
@@ -771,7 +771,7 @@ The following updates are available in all locations except Dallas currently.
 
 - **New API version**: The current API version is now `2018-02-16`. This version introduces the following changes:
 
-  - A new `include_audit` parameter is now supported on most GET requests. This is an optional boolean parameter that specifies whether the response should include the audit properties (`created` and `updated` timestamps). The default value is `false`. (If you are using an API version earlier than `2018-02-16`, the default value is `true`.) For more information, see the [API Reference](https://{DomainName}/apidocs/assistant/assistant-v1){: external}.
+  - A new `include_audit` parameter is now supported on most GET requests. This is an optional boolean parameter that specifies whether the response should include the audit properties (`created` and `updated` timestamps). The default value is `false`. (If you are using an API version earlier than `2018-02-16`, the default value is `true`.) For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1){: external}.
 
   - Responses from API calls using the new version include only properties with non-`null` values.
 
@@ -836,7 +836,7 @@ The following updates are available in all locations except Dallas currently.
 
 - **Intent examples can directly reference entities**: You can now specify an entity reference directly in an intent example. That entity reference, along with all its values or synonyms, is used by the {{site.data.keyword.conversationshort}} service classifier for training the intent. For more information, see [*Entity as example*](/docs/assistant?topic=assistant-intents#intents-entity-as-example) in the [Intents](/docs/assistant?topic=assistant-intents) topic.
 
-  Currently, you can only directly reference closed entities that you define. You cannot directly reference [pattern entities](/docs/assistant?topic=assistant-entities#entities-pattern) or [system entities](/docs/assistant?topic=assistant-system-entities).
+  Currently, you can only directly reference closed entities that you define. You cannot directly reference [pattern entities](/docs/assistant?topic=assistant-entities#entities-patterns) or [system entities](/docs/assistant?topic=assistant-system-entities).
   {: note}
 
 ## 8 November 2017
@@ -876,7 +876,7 @@ The following updates are available in all locations except Dallas currently.
 ## 3 October 2017
 {: #3October2017}
 
-- **Pattern-defined entities (Beta)**: You can now define specific patterns for an entity, using regular expressions. This can help you identify entities that follow a defined pattern, for example SKU or part numbers, phone numbers, or email addresses. See [Pattern-defined entities](/docs/assistant?topic=assistant-entities#entities-pattern) for additional details.
+- **Pattern-defined entities (Beta)**: You can now define specific patterns for an entity, using regular expressions. This can help you identify entities that follow a defined pattern, for example SKU or part numbers, phone numbers, or email addresses. See [Pattern-defined entities](/docs/assistant?topic=assistant-entities#entities-patterns) for additional details.
     - You can add either synonyms or patterns for a single entity value; you cannot add both.
     - For each entity value, there can be a maximum of up to 5 patterns.
     - Each pattern (regular expression) is limited to 128 characters.
@@ -925,7 +925,7 @@ The following updates are available in all locations except Dallas currently.
 ## 7 August 2017
 {: #7August2017}
 
-- **`Next` and `last` date interpretation**: The {{site.data.keyword.conversationshort}} service treats `last` and `next` dates as referring to the most immediate last or next day referenced, which may be in either the same or a previous week. See the [system entities](/docs/assistant?topic=assistant-system-entities#system-entities-sys-datetime) topic for additional information.
+- **`Next` and `last` date interpretation**: The {{site.data.keyword.conversationshort}} service treats `last` and `next` dates as referring to the most immediate last or next day referenced, which may be in either the same or a previous week. See the [system entities](/docs/assistant?topic=assistant-system-entities#system-entities-sys-date-time) topic for additional information.
 
 ## 3 August 2017
 {: #3August2017}
@@ -974,7 +974,7 @@ The following updates are available in all locations except Dallas currently.
 ## 21 June 2017
 {: #21June2017}
 
-- **Arabic support**: Language support for Arabic is now generally available. For details, see [Configuring bi-directional languages](/docs/assistant?topic=assistant-language-support#language-support-configuring-bi-directional).
+- **Arabic support**: Language support for Arabic is now generally available. For details, see [Configuring bidirectional languages](/docs/assistant?topic=assistant-language-support#language-support-configure-bidirectional).
 - **Language updates**: The {{site.data.keyword.conversationshort}} service algorithms have been updated to improve overall language support. See the [Supported languages](/docs/assistant?topic=assistant-language-support) topic for details.
 
 ## 16 June 2017
@@ -1019,7 +1019,7 @@ The following updates are available in all locations except Dallas currently.
 {: #26May2017}
 
 - The current API version is now `2017-05-26`. This version introduces the following changes:
-    - The schema of ErrorResponse objects has changed. This change affects all endpoints and methods. For more information, see the [API Reference](https://{DomainName}/apidocs/assistant){: external}.
+    - The schema of ErrorResponse objects has changed. This change affects all endpoints and methods. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant){: external}.
     - The internal schema used to represent dialog nodes in exported workspace JSON has changed. If you use the `2017-05-26` API to import a workspace that was exported using an earlier version, some dialog nodes might not import correctly. For best results, always import a workspace using the same version that was used to export it.
 
 ## 25 May 2017
@@ -1031,8 +1031,8 @@ The following updates are available in all locations except Dallas currently.
 {: #16May2017}
 
 - A **Car Dashboard** sample workspace is now available when you open the tool. To use the sample as a starting point for your own workspace, edit the workspace. If you want to use it for multiple workspaces, then duplicate it instead. The sample workspace does not count toward your subscription workspace total unless you use it.
-- It is now easier to navigate the tool. The navigation menu options are available from the side of the main page instead of the top. At the top of the page, Breadcrumb links display that show you where you are. You can now switch between service instances from the Workspaces page. To get there quickly, click **Back to workspaces** from the navigation menu. If you have multiple service instances, the name of the current instance is displayed. You can click the **Change** link beside it to choose another instance.
-- When you create a dialog, two nodes are now added to it for you: 1) a **Welcome** node at the top of the dialog tree that contains the greeting to display to the user and 2) an **Anything else** node at the end of the tree that catches any user inquiries that are not recognized by other nodes in the dialog and responds to them. See [Creating a dialog](/docs/assistant?topic=assistant-dialog-build) for more details.
+- It is now easier to navigate the tool. The navigation menu options are available from the side of the main page instead of the top. In the page header, breadcrumb links display that show you where you are. You can now switch between service instances from the Workspaces page. To get there quickly, click **Back to workspaces** from the navigation menu. If you have multiple service instances, the name of the current instance is displayed. You can click the **Change** link beside it to choose another instance.
+- When you create a dialog, two nodes are now added to it for you: 1) a **Welcome** node at the start the dialog tree that contains the greeting to display to the user and 2) an **Anything else** node at the end of the tree that catches any user inquiries that are not recognized by other nodes in the dialog and responds to them. See [Creating a dialog](/docs/assistant?topic=assistant-dialog-build) for more details.
 - When you are testing a dialog in the "Try it out" pane, you can now find and resubmit a recent test utterance by pressing the Up key to cycle through your previous inputs.
 - Experimental Korean language support for 5 system entities (`@sys-date`, `@sys-time`, `@sys-currency`, `@sys-number`, `@sys-percentage`) is now available. There are known issues for some of the numeric entities, and limited support for informal language input.
 - An Overview page is available from the Improve tab. The page provides a summary of interactions with your bot. You can view the amount of traffic for a given time period, as well as the intents and entities that were recognized most often in user conversations. For additional information, see [Using the Overview page](/docs/assistant?topic=assistant-logs-overview).
@@ -1056,7 +1056,7 @@ The following updates are available in all locations except Dallas currently.
     - entity value synonyms
     - logs
 
-    For more information, see the [API Reference](https://{DomainName}/apidocs/assistant/assistant-v1){: external}.
+    For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1){: external}.
 - The behavior of the /messages `POST` method has changed the handling of entities and intents specified as part of the message input:
     - If you specify intents on input, your assistant uses the intents you specify, but uses natural language processing to detect entities in the user input.
     - If you specify entities on input, your assistant uses the entities you specify, but uses natural language processing to detect intents in the user input.
@@ -1075,7 +1075,7 @@ The {{site.data.keyword.conversationshort}} REST API now supports access to the 
 - examples
 - counterexamples
 
-For more information, see the [API Reference](https://{DomainName}/apidocs/assistant/assistant-v1){: external}.
+For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1){: external}.
 
 ## 7 March 2017
 {: #7March2017}

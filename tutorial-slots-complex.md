@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-26"
+lastupdated: "2020-03-12"
 
 subcollection: assistant
 
@@ -455,7 +455,7 @@ You might want to design your dialog to call an external reservation system and 
 
 1.  In the **Found** prompt, add a condition that checks for a No response (`#no`). Use the response, `Alright. Let's start over. I'll try to keep up this time.` Otherwise, you can assume the user confirmed the reservation details and proceed with making the reservation.
 
-    When the `#no` intent is found, you also must reset the context variables that you saved earlier to null, so you can ask for the information again. You can reset the context variable values by using the JSON editor. Click the **Edit response** ![Edit response](images/edit-slot.png) icon for the conditional response you just added. From the **Options**  ![Advanced response](images/kabob.png) menu, click **Open JSON editor**. Add a `context` block that sets the slot context variables to `null`, as shown below.
+    When the `#no` intent is found, you also must reset the context variables that you saved earlier to null, so you can ask for the information again. You can reset the context variable values by using the JSON editor. Click the **Edit response** ![Edit response](images/edit-slot.png) icon for the conditional response you just added. From the **Options**  ![Advanced response](images/kabob.png) menu, click **Open JSON editor**. Add a `context` block that sets the slot context variables to `null`, as shown.
 
     ```json
     {
@@ -704,7 +704,7 @@ For the $time information, you will define a follow-up statement that is display
 
 1.  Create a context variable that can keep track of how many times the user provides a value that does not match the value type that the slot expects. You want the context variable to be initialized and set to 0 before the node with slots is processed, so you will add it to the parent `#reservation` node.
 
-1.  Click to edit the `#reservation` node. Open the JSON editor associated with the node response, by clicking the **Options** ![More icon](images/kabob.png) icon in the response section, and choosing **Open JSON editor**. Add a context variable called `counter` to the existing `"context"` block, below the `confirmation` variable. Set the `counter` variable equal to `0`.
+1.  Click to edit the `#reservation` node. Open the JSON editor associated with the node response, by clicking the **Options** ![More icon](images/kabob.png) icon in the response section, and choosing **Open JSON editor**. Add a context variable called `counter` to the existing `"context"` block, after the `confirmation` variable. Set the `counter` variable equal to `0`.
 
        ```json
        {

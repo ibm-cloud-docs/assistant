@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-11"
+lastupdated: "2020-03-12"
 
 keywords: system entity, sys-number, sys-date, sys-time
 
@@ -89,7 +89,7 @@ You get equivalent results for other supported languages and national currencies
 ### @sys-currency usage tips
 {: #system-entities-currencty-usage-tips}
 
-- Currency values are recognized as instances of @sys-number entities as well. If you are using separate conditions to check for both currency values and numbers, place the condition that checks for currency above the one that checks for a number.
+- Currency values are recognized as instances of @sys-number entities as well. If you are using separate conditions to check for both currency values and numbers, place the condition that checks for currency before the one that checks for a number.
 
   This workaround is not necessary if you are using the revised system entities. For more details, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
   {: note}
@@ -304,7 +304,7 @@ You get equivalent results for other supported languages.
 ### @sys-percentage usage tips
 {: #system-entities-sys-percentage-usage-tips}
 
-- Percentage values are recognized as instances of @sys-number entities as well. If you are using separate conditions to check for both percentage values and numbers, place the condition that checks for a percentage above the one that checks for a number.
+- Percentage values are recognized as instances of @sys-number entities as well. If you are using separate conditions to check for both percentage values and numbers, place the condition that checks for a percentage before the one that checks for a number.
 
   This workaround is not necessary if you are using the revised system entities. For more details, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
   {: note}

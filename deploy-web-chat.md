@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-10"
+lastupdated: "2020-03-12"
 
 subcollection: assistant
 
@@ -107,7 +107,7 @@ To add the assistant to a web page on your company website, complete the followi
     The placement of the Web Chat icon is always the same regardless of where you paste the script element into the web page source.
     {: important}
 
-    For information about the web browsers that are supported by the Web Chat, see [Browser Support](https://watson-developer-cloud.github.io/assistant-web-chat/documentation.html#browser-support){: external}.
+    For information about the web browsers that are supported by the Web Chat, see [Browser Support](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/){: external}.
 
 1.  Click the icon to open the chat window and talk to your assistant.
 
@@ -306,11 +306,11 @@ To set up a Salesforce service desk integration, complete the following steps:
 
     - Get the deployment code for your Salesforce Agent Configuration chat deployment. 
     
-      Go to the Salesforce **Setup>Chat>Deployments** page. Find your organization's deployment. Scroll to the bottom of the chat deployment configuration page and copy the *Deployment Code* snippet.
+      Go to the Salesforce **Setup>Chat>Deployments** page. Find your organization's deployment. Scroll to the end of the chat deployment configuration page and copy the *Deployment Code* snippet.
     - Paste the deployment code snippet into the **Deployment code** field in the {{site.data.keyword.conversationshort}} Salesforce configuration page.
     - Get the Chat Button code. 
     
-      Go to the Salesforce **Setup>Chat>Chat Buttons & Invitations** page. Find your organization's button implementation. Scroll to the bottom of the page, and then copy the *Chat Button Code* snippet.
+      Go to the Salesforce **Setup>Chat>Chat Buttons & Invitations** page. Find your organization's button implementation. Scroll to the end of the page, and then copy the *Chat Button Code* snippet.
     - Paste the chat button code snippet into the **Chat button code** field in the {{site.data.keyword.conversationshort}} Salesforce configuration page.
 
 1.  Add a chat app that enables the Salesforce agent to interact with your assistant. To do so, create a Visualforce page, and then add a chat app to the page.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-03"
+lastupdated: "2020-03-12"
 
 subcollection: assistant
 
@@ -45,7 +45,7 @@ You will see the following changes:
 
   Each action you created is listed as an *intent* in the **Intents** page. Similar to an action, an intent represents a customer goal. Each customer utterance that you added to help teach the assistant to recognize when a user wants to perform the action is listed as an *intent user example*.
 
-  The steps you defined for the action are represented in the **Dialog** page. The dialog is like a script that you author for your assistant to follow as it talks with your customers. The dialog is represented as a hierarchical tree of dialog nodes. Each root node in the tree represents a distinct major topic of conversation. Therefore, each action that you defined is available as a root node in your dialog tree. The steps that you defined for the action are represented as the root node's response. For an action with multiple steps, the lower-level steps are represented as child nodes of the root node or other child nodes. The root and child nodes of the dialog form a branch of the conversation. 
+  The steps you defined for the action are represented in the **Dialog** page. The dialog is like a script that you author for your assistant to follow as it talks with your customers. The dialog is represented as a hierarchical tree of dialog nodes. Each root node in the tree represents a distinct major topic of conversation. Therefore, each action that you defined is available as a root node in your dialog tree. The steps that you defined for the action are represented as the root node's response. For an action with multiple steps, the secondary steps are represented as child nodes of the root node or other child nodes. The root and child nodes of the dialog form a branch of the conversation. 
 
 - A **Content Catalog** page is available. The *content catalog* provides a set of prebuilt intents that are categorized by subject, such as customer care. You can add these intents to your skill and start using them immediately.
 

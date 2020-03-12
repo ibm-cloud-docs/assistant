@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-02"
+lastupdated: "2020-03-12"
 
 keywords: mark as irrelevant, counterexample, data source, deployment ID
 
@@ -75,7 +75,7 @@ Messages might take some time to update. Allow at least 30 minutes after a user'
 
 For any user input entry, click **Open conversation** to see the user input and the response made to it by the assistant within the context of the full conversation.
 
-The time shown at the top of each conversation is localized to reflect the time zone of your browser. This time might differ from the timestamp shown if you review the same conversation log via an API call; API log calls are always shown in UTC.
+The time that is shown for each conversation is localized to reflect the time zone of your browser. This time might differ from the timestamp shown if you review the same conversation log via an API call; API log calls are always shown in UTC.
 
 ![Open conversation panel](images/open_convo.png)
 
@@ -153,12 +153,12 @@ If your instances use the v2 API, you cannot get log data from across different 
 
 Use insights from real user conversations to correct the model associated with your dialog skill.
 
-If you use data from another data source, any improvements you make to the model are applied to the current dialog skill only. The **Data source** field shows the source of the messages you are using to improve this dialog skill, and the top of the page shows the dialog skill you are applying changes to.
+If you use data from another data source, any improvements you make to the model are applied to the current dialog skill only. The **Data source** field shows the source of the messages you are using to improve this dialog skill, and the header of the page shows the dialog skill you are applying changes to.
 
 ### Correcting an intent
 {: #logs-correct-intent}
 
-1.  To correct an intent, select the ![Edit](images/edit_icon.png) edit icon beside the chosen #intent.
+1.  To correct an intent, select the ![Edit](images/edit_icon.png) edit icon for the chosen #intent.
 1.  From the list provided, select the correct intent for this input.
     - Begin typing in the entry field and the list of intents is filtered.
     - You can also choose **Mark as irrelevant** from this menu. (For more information, see [Teaching your assistant about topics to ignore](#logs-mark-irrelevant).) Or, you can choose **Do not train on intent**, which does not save this message as an example for training.
@@ -174,7 +174,7 @@ If you use data from another data source, any improvements you make to the model
 ### Adding an entity value or synonym
 {: #logs-add-entity}
 
-1.  To add an entity value or synonym, select the ![Edit](images/edit_icon.png) edit icon beside the chosen @entity.
+1.  To add an entity value or synonym, select the ![Edit](images/edit_icon.png) edit icon for the chosen @entity.
 1.  Select **Add entity**.
 
     ![Add entity](images/add_entity.png)

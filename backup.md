@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-03-12"
 
 subcollection: assistant
 
@@ -80,17 +80,15 @@ If the {{site.data.keyword.conversationshort}} service changes between the time 
 
 1.  Click **Import skill**, and then click **Choose JSON File**, and select the JSON file you want to import.
 
-    **Important:**
-
-    - The imported JSON file must use UTF-8 encoding, without byte order mark (BOM) encoding.
-    - The JSON file cannot contain tabs, newlines, or carriage returns.
+    The imported JSON file must use UTF-8 encoding, without byte order mark (BOM) encoding. The JSON file cannot contain tabs, newlines, or carriage returns.
+    {: important}
 
     The maximum size for a skill JSON file is 10MB. If you need to import a larger skill, consider using the REST API. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1#create-workspace){: external}.
     {: tip}
 
-    Click **Import**.
+1.  Click **Import**.
 
-    If you have trouble importing a skill, see [Troubleshooting skill import issues](/docs/assistant?topic=assistant-skill-add#skill-add-import-errors).
+    If you have trouble importing a skill, see [Troubleshooting skill import issues](/docs/assistant?topic=assistant-skill-dialog-add#skill-dialog-add-import-errors).
 
 1.  Specify the details for the skill:
 

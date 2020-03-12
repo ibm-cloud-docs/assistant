@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-03-12"
 
 subcollection: assistant
 
@@ -125,7 +125,7 @@ The remaining steps differ depending on whether you have access to an existing {
 ## Create a data collection
 {: #skill-search-add-create-discovery-collection}
 
-If you have a Discovery service Lite plan, you are given an opportunity to upgrade your plan. If you don't want to upgrade right now, click **Let's get started**.
+If you have a Discovery service Lite plan, you are given an opportunity to upgrade your plan. If you don't want to upgrade now, click **Let's get started**.
 
 1.  To create a {{site.data.keyword.discoveryshort}} collection, do one of the following things:
 
@@ -283,7 +283,7 @@ Review this information for help with performing common tasks.
     - To decreate the number of documents that are available to the data collection, specify a subdomain of the base URL. Or, in the web crawl settings, limit the number of hops that Watson can make from the original page. You can specify subdomains to explicitly exclude from the crawl also.
     - If no documents are listed after a few minutes and a page refresh, then make sure that the content you want to ingest is available from the URL's page source. Some web page content is dynamically generated and therefore cannot be crawled.
 
-- **Configuring search results for uploaded documents**: If you are using a collection of uploaded documents and cannot get the right search results or the results are not concise enough, consider using *Smart Document Understanding* when you create the data collection. 
+- **Configuring search results for uploaded documents**: If you are using a collection of uploaded documents and cannot get the correct search results or the results are not concise enough, consider using *Smart Document Understanding* when you create the data collection. 
 
   This feature enables you to annotate documents based on text formatting. For example, you can teach {{site.data.keyword.discoveryshort}} that any text in 28-point bold font is a document title. If you apply this information to the collection when you ingest it, you can later use the *title* field as the source for the title section of your search result. 
   
@@ -315,7 +315,7 @@ Review this information for help with performing common tasks.
   ```
   {: codeblock}
 
-  As a result, the string is returned in this format in the chat; the surrounding square brackets and quotation marks are displayed:
+  As a result, the string is returned in this format in the chat; the surrounding brackets and quotation marks are displayed:
 
   ```
   ["a single array element"]
@@ -402,7 +402,7 @@ Follow this procedure to make it less likely that the dialog will respond by res
 
     Whenever this node is processed, the search skill is triggered.
 
-1.  Add a folder to the dialog. Position the folder above the first dialog node that you want to de-emphasize. Add the following condition to the folder:
+1.  Add a folder to the dialog. Position the folder before the first dialog node that you want to de-emphasize. Add the following condition to the folder:
 
     `intents[0].confidence > 0.5`
 

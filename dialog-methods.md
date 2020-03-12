@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-03-12"
 
 subcollection: assistant
 
@@ -33,41 +33,44 @@ You can process values extracted from user utterances that you want to reference
 
 To expand variable values inside other variables, or apply methods to output text or context variables, use the `<? expression ?>` expression syntax. For example:
 
-- **Referencing a user's input from a dialog node text response**
+- Referencing a user's input from a dialog node text response
 
   ```bash
   You said <? input.text ?>.
   ```
   {: codeblock}
 
-- **Incrementing a numeric property from the JSON editor**
+- Incrementing a numeric property from the JSON editor
 
     ```json
     "output":{"number":"<? output.number + 1 ?>"}
     ```
     {: codeblock}
 
-- **Adding an element to a context variable array from the context editor**
-
-| Context variable name | Context variable value |
-|-----------------------|------------------------|
-| `toppings` | `<? context.toppings.append( 'onions' ) ?>` |
-
-You can use SpEL expressions in dialog node conditions and dialog node response conditions also. When an expression is used in a condition, the surrounding `<? ?>` syntax is not required.
-
-- **Checking for a specific entity value from a dialog node condition**
+- Checking for a specific entity value from a dialog node condition
 
   ```bash
   @city.toLowerCase() == 'paris'
   ```
   {: codeblock}
 
-- **Checking for a specific date range from a dialog node response condition**
+- Checking for a specific date range from a dialog node response condition
 
   ```bash
   @sys-date.after(today())
   ```
   {: codeblock}
+
+- Adding an element to a context variable array from the context editor
+
+| Context variable name | Context variable value |
+|-----------------------|------------------------|
+| `toppings` | `<? context.toppings.append( 'onions' ) ?>` |
+
+You can use SpEL expressions in dialog node conditions and dialog node response conditions also. 
+
+When a SpEL expression is used in a node condition, the surrounding `<? ?>` syntax is not required.
+{: important}
 
 The following sections describe methods you can use to process values. They are organized by data type:
 
@@ -168,7 +171,7 @@ Result: `True` because the array contains the element ham.
 
 This method returns `true` if the `intents` JSONArray specifically contains the specified intent, and that intent has a confidence score that is equal to or higher than the specified minimum score. Optionally, you can specify a number to indicate that the intent must be included within that number of top elements in the array.
 
-Returns `false` if the specified intent is not in the array, does not have a confidence score that is equal to or higher than the minimum confidence score, or the intent is lower in the array than the specified index location.
+Returns `false` if the specified intent is not in the array, does not have a confidence score that is equal to or greater than the minimum confidence score, or the array index of the intent is lower than the specified index location.
 
 The service automatically generates an `intents` array that lists the intents that the service detects in the input whenever user input is submitted. The array lists all intents that are detected by the service in order of highest confidence first.
 
@@ -481,7 +484,7 @@ intents.indexOf("General_Greetings")
 ```
 {: codeblock}
 
-If you want to know the confidence score for a specific intent, you can pass the expression above in as the *`index`* value to an expression with the syntax `intents[`*`index`*`].confidence`. For example:
+If you want to know the confidence score for a specific intent, you can pass the earlier expression in as the *`index`* value to an expression with the syntax `intents[`*`index`*`].confidence`. For example:
 
 ```bash
 intents[intents.indexOf("General_Greetings")].confidence
@@ -1632,7 +1635,7 @@ To use the method, you can specify it in an expression in a variable that you de
 }
 ```
 
-If a node earlier in the tree defines a text response of `I'm happy to help.` and then jumps to a node with the JSON output object defined above, then  only `Have a great day.` is displayed as the response. The `I'm happy to help.` output is not displayed, because it is cleared and replaced with the text response from the node that is calling the `clear()` method.
+If a node earlier in the tree defines a text response of `I'm happy to help.` and then jumps to a node with the JSON output object defined earlier, then  only `Have a great day.` is displayed as the response. The `I'm happy to help.` output is not displayed, because it is cleared and replaced with the text response from the node that is calling the `clear()` method.
 
 ### JSONObject.has(String)
 {: #dialog-methods-objects-jsonobject-has}
@@ -2084,7 +2087,7 @@ Results in this output:
 ### String.toUpperCase()
 {: #dialog-methods-strings-toUpperCase}
 
-This method returns the original String converted to upper case letters.
+This method returns the original String converted to uppercase letters.
 
 For this input:
 
@@ -2154,7 +2157,7 @@ Results in this output:
 {: codeblock}
 
 ### java.lang.String support
-{: #dialog-methods-strings-java-lang-String-format}
+{: #dialog-methods-strings-java-lang-String}
 
 In addition to the built-in methods, you can use standard methods of the `java.lang.String` class.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-10"
+lastupdated: "2020-03-12"
 
 keywords: entity, entity value, contextual entity, dictionary entity, pattern entity, entity synonym, annotate mentions
 
@@ -117,6 +117,9 @@ Dictionary-based entites are those for which you define specific terms, synonyms
     **Important:** Don't include sensitive or personal information in entity names or values. The names and values can be exposed in URLs in an app.
 
 1.  Add synonyms for the value. For example, you might add `NYC` and `The Big Apple` as synonyms for `New York City`.
+{: #entities-synonyms}
+
+    **Synonyms**
 
     A synonym can be any string up to 64 characters in length.
 

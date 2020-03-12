@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-03-12"
 
 keywords: intent, intent conflicts, annotate
 
@@ -95,7 +95,7 @@ Start with a few intents, and test them as you iteratively expand the scope of t
     Provide at least five examples for each intent.
     {: important}
 
-    ![Plus or Premium plan only](images/plus.png) To get help with user example creation, see [Get intent user example recommendations](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations).
+    ![Plus or Premium plan only](images/plus.png) To get help with user example creation, see [Get intent user example recommendations](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations-task).
 
 1.  When you are done adding examples, click ![Close arrow](images/close_arrow.png) to finish creating the intent.
 
@@ -263,7 +263,7 @@ You can export a number of intents to a CSV file, so you can then import and reu
 
 If you have a large number of intents and examples, you might find it easier to import them from a comma-separated value (CSV) file than to define them one by one. Be sure to remove any personal data from the user examples that you include in the file.
 
-Alternatively, you can upload a file with raw user utterances (from call center logs, for example) and let Watson find candidates for user examples from the data. See [Adding examples from log files](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations) for more information. This feature is available to Plus or Premium plan users only.
+Alternatively, you can upload a file with raw user utterances (from call center logs, for example) and let Watson find candidates for user examples from the data. See [Adding examples from log files](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations-task) for more information. This feature is available to Plus or Premium plan users only.
 
 1.  Collect the intents and examples into a CSV file, or export them from a spreadsheet to a CSV file. The required format for each line in the file is as follows:
 

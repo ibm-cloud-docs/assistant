@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-31"
+lastupdated: "2020-03-12"
 
 subcollection: assistant
 
@@ -105,7 +105,7 @@ Your dialog is now ready to support your assistant in Intercom.
 ### Dialog considerations
 {: #deploy-intercom-dialog}
 
-Some rich responses that you add to a dialog are displayed differently within the "Try it out" pane from how they are displayed to Intercom users. The table below describes how the response types are treated by Intercom.
+Some rich responses that you add to a dialog are displayed differently within the "Try it out" pane from how they are displayed to Intercom users. The following table describes how the response types are treated by Intercom.
 
 | Response type | How displayed to Intercom users  |
 |---------------|---------------------------|

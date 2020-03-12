@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-10"
+lastupdated: "2020-03-12"
 
 subcollection: assistant
 
@@ -83,7 +83,7 @@ See [Changing the inactivity timeout setting](/docs/assistant?topic=assistant-as
 
 You can connect one skill of each type to your assistant. The number of skills you can build differs depending on the plan you have. See [Skill limits](/docs/assistant?topic=assistant-skill-add#skill-add-limits) for more details.
 
-If you want to create an assistant in a different service instance, you can switch to another service instance. See [Switching the service instance](/docs/assistant?topic=assistant-skill-open#skill-open-switch-instance).
+If you want to create an assistant in a different service instance, you can switch to another service instance. See [Switching the service instance](/docs/assistant?topic=assistant-assistant-settings#assistant-settings-switch-instance).
 
 ## Deleting an assistant
 {: #assistant-add-delete}

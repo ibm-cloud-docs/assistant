@@ -107,7 +107,7 @@ The `image` response type instructs the client application to display an image, 
 }
 ```
 
-Your application is responsible for retrieving the image specified by the `source` property and displaying it to the user. If the optional `title` and `description` are provided, your application can display them in whatever way is appropriate (for example, rendering the title below the image and the description as hover text).
+Your application is responsible for retrieving the image specified by the `source` property and displaying it to the user. If the optional `title` and `description` are provided, your application can display them in whatever way is appropriate (for example, rendering the title after the image and the description as hover text).
 
 ### Pause
 {: #api-dialog-responses-pause}
