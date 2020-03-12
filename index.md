@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-02"
+lastupdated: "2020-03-12"
 
 subcollection: assistant
 
@@ -29,8 +29,6 @@ subcollection: assistant
 Use {{site.data.keyword.conversationfull}} to build your own branded assistant into any device, application, or channel. Your assistant connects to the customer engagement resources you already use to deliver an engaging, unified problem-solving experience to your customers.
 {: shortdesc}
 
-[Read the Watson blog](https://www.ibm.com/blogs/watson/2020/03/independent-study-finds-ibm-watson-assistant-customers-accrued-23-9-million-in-benefits/){: external} to see how {{site.data.keyword.conversationfull}} is helping enterprises cut costs and improve customer satisfaction today.
-
 ## How it works
 {: #index-how-it-works}
 
@@ -48,6 +46,8 @@ This diagram illustrates how the product delivers an omnichannel customer experi
 - The **dialog skill** interprets the user input further, then directs the flow of the conversation. The dialog gathers any information it needs to respond or perform a transaction on the user's behalf.
 
 - Any questions that cannot be answered by the dialog skill are sent to the **search skill**, which finds relevant answers by searching the company knowledge bases that you configure for the purpose.
+
+[Read the Watson blog](https://www.ibm.com/blogs/watson/2020/03/independent-study-finds-ibm-watson-assistant-customers-accrued-23-9-million-in-benefits/){: external} to see how {{site.data.keyword.conversationfull}} is helping enterprises cut costs and improve customer satisfaction today.
 
 ## Implementation
 {: #index-implementation}
@@ -102,7 +102,7 @@ Read more about these implementation steps by following these links:
 
 The {{site.data.keyword.conversationshort}} application (where you create assistants and skills) requires the same level of browser software as is required by {{site.data.keyword.Bluemix_notm}}. For more information, see {{site.data.keyword.Bluemix_notm}} [Prerequisites](/docs/overview?topic=overview-prereqs-platform#browsers-platform){: external}. 
 
-For information about the web browsers that are supported by the Web Chat integration, see [Browser Support](https://watson-developer-cloud.github.io/assistant-web-chat/documentation.html#browser-support){: external}.
+For information about the web browsers that are supported by the Web Chat integration, see [Browser Support](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/){: external}.
 
 ## Language support
 {: #index-lang-support}

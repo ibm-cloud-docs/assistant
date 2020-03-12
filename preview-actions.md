@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-03-12"
 
 subcollection: assistant
 
@@ -49,14 +49,14 @@ An action ends after the steps that are required to satisfy the customer's goal 
 
 For example, a customer named Sally might need to get a weather forecast for New York City for next week so she can prepare for a business trip. The action you build so your assistant can help Sally might look like this:
 
-- **Action name**: Get a forecast
-- **Customer says** 
+- Action name** Get a forecast
+- Customer says 
 
   - I need a weather forecast for NYC
   - Can you tell me what the weather will be like next week?
   - And so on to reach 10 examples at least
 
-- **Steps**
+- Steps
 
   1.  Collect the date and location values that are required to get a relevant weather forecast for NYC next week.
   1.  Make a programmatic call to an online weather service, and share the forecast results with Sally.

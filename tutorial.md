@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-18"
+lastupdated: "2020-03-12"
 
 subcollection: assistant
 
@@ -106,7 +106,7 @@ Add a dialog node that recognizes when the user input maps to the intent that yo
 1.  Click the **Dialog** tab.
 1.  Find the `#General_Greetings` node in the dialog tree.
 
-    You will add a node that checks for questions about the restaurant below this initial greeting node to reflect the flow you might expect to encounter in a normal conversation. For example, `Hello.` then `Tell me about yourself.`
+    You will add a node that checks for questions about the restaurant after this initial greeting node to reflect the flow you might expect to encounter in a normal conversation. For example, `Hello.` then `Tell me about yourself.`
 
 1.  Click the **More** ![More options](images/kabob.png) icon on the `#General_Greetings` node, and then select **Add node below**.
 
@@ -201,11 +201,11 @@ Add a dialog node that recognizes when the user input maps to the intent that yo
 1.  Click the **Dialog** tab.
 1.  Find the `#about_restaurant` node in the dialog tree.
 
-    You will add a node that checks for questions about the menu below this node.
+    You will add a node that checks for questions about the menu after this node.
 
 1.  Click the **More** ![More options](images/kabob.png) icon on the `#about_restaurant` node, and then select **Add node below**.
 
-    ![Shows a dialog node being added below the #about_restaurant node.](images/gs-ass-dialog-add-menu.png)
+    ![Shows a dialog node being added after the #about_restaurant node.](images/gs-ass-dialog-add-menu.png)
 
 1.  Start to type `#menu` into the **If assistant recognizes** field of this node. Then select the `#menu` option.
 
@@ -361,7 +361,7 @@ In this step, you will add child nodes to the dialog node that checks for the `#
 
 1.  Select the `@menu:cake` node, and then choose **Below node**.
 
-    ![Shows the child nodes below the #menu node after they are reordered.](images/gs-ass-reordered-menu-nodes.png)
+    ![Shows the child nodes after the #menu node after they are reordered.](images/gs-ass-reordered-menu-nodes.png)
 
 You have added nodes that recognize user requests for menu details. Your response informs the user that there are three types of menus available, and asks them to choose one. When the user chooses a menu type, a response is displayed that provides a hypertext link to a web page with the requested menu details.
 
@@ -400,7 +400,7 @@ Customers place orders in person, over the phone, or by using the order form on 
 ### Adding an order number pattern entity
 {: tutorial-add-pattern-entity}
 
-You want the assistant to recognize order numbers, so you will create a pattern entity to recognize the unique format that the restaurant uses to identify its orders. The syntax of order numbers used by the restaurant's bakery is 2 upper-case letters followed by 5 numbers. For example, `YR34663`. Add an entity that can recognize this character pattern.
+You want the assistant to recognize order numbers, so you will create a pattern entity to recognize the unique format that the restaurant uses to identify its orders. The syntax of order numbers used by the restaurant's bakery is two uppercase letters followed by 5 numbers. For example, `YR34663`. Add an entity that can recognize this character pattern.
 
 1.  Click the **Entities** tab.
 1.  Click **Create entity**.
@@ -572,7 +572,7 @@ Now, add a dialog node that can handle requests to cancel a cake order.
     ![Shows the node that responds when the user does not provide a valid order number.](images/gs-ass-cant-help-you.png)
 1.  Click ![Close](images/close.png) to close the edit view.
 
-1.  Add a node below the initial order cancellation request node that responds in the case where the user provides the order number in the initial request, so you don't have to ask for it again. Click the **More** ![More options](images/kabob.png) icon on the `#cancel_order` node, and then select **Add child node**.
+1.  Add a node after the initial order cancellation request node that responds in the case where the user provides the order number in the initial request, so you don't have to ask for it again. Click the **More** ![More options](images/kabob.png) icon on the `#cancel_order` node, and then select **Add child node**.
 1.  Add a label to the node to distinguish it from other child nodes. In the name field, add `Number provided`. Type `@order_number` into the **If assistant recognizes** field of this node.
 1.  Add the following message in the response text field:
 
@@ -611,9 +611,9 @@ Now, add a dialog node that can handle requests to cancel a cake order.
 
     ![Shows choosing the Ask for order number node condition as the jump to target.](images/gs-ass-true-jump-to-destination.png)
 1.  Click ![Close](images/close.png) to close the edit view.
-1.  Move the *Number provided* node above the *Ask for order number* node. Click the **More** ![More options](images/kabob.png) icon on the `Number provided` node, and then select **Move**. Select the *Ask for order number* node, and then click **Above node**.
+1.  Move the *Number provided* node before the *Ask for order number* node. Click the **More** ![More options](images/kabob.png) icon on the `Number provided` node, and then select **Move**. Select the *Ask for order number* node, and then click **Above node**.
 
-    ![Shows moving the Number provided child node above the Ask for order number node.](images/gs-ass-reorder-cancel-order-children.png)
+    ![Shows moving the Number provided child node before the Ask for order number node.](images/gs-ass-reorder-cancel-order-children.png)
 1.  Force the conversation to evaluate the child nodes under the `#cancel_order` node at run time. Click to open the `#cancel_order` node in the edit view, and then, in the `And finally` section, select `Skip user input`.
 
     ![Shows setting the cancel order node being set to skip user input.](images/gs-ass-skip-user-input.png)
@@ -649,7 +649,7 @@ Test whether your assistant can recognize character patterns that match the patt
 ### Add nodes to clarify order number format
 {: #tutorial-clarify-order-number format}
 
-If you do more testing, you might find that the dialog isn't very helpful in scenarios where the user does not remember the order number format. The user might include only the numbers or the letters too, but forget that they are meant to be uppercase. So, it would be a nice touch to give them a hint in such cases, right? If you want to be kind, add another node to the dialog tree that checks for numbers in the user input.
+If you do more testing, you might find that the dialog isn't very helpful in scenarios where the user does not remember the order number format. The user might include only the numbers or the letters too, but forget that they are meant to be uppercase. So, it would be a nice touch to give them a hint in such cases, correct? If you want to be kind, add another node to the dialog tree that checks for numbers in the user input.
 
 1.  Find the `@order_number` node that is a child of the *Ask order number* node.
 

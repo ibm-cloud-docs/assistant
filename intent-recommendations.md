@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-14"
+lastupdated: "2020-03-12"
 
 subcollection: assistant
 
@@ -74,7 +74,6 @@ Intent recommendations are based on analysis of real-world user utterances, whic
 1.  Click **Intent recommendations**.
 
 1.  Choose the type of recommendation data source you want to use.
-{: #intent-recommendations-data-resources}
 
     - [Live assistant log](#intent-recommendations-live-assistant-add): The log from an assistant that is deployed and is actively interacting with customers
     - [CSV log files](#intent-recommendations-log-files-add): A list of utterances that is extracted from support center chat transcripts.
@@ -201,7 +200,7 @@ For any intent that is already part of your training data, you can find and add 
 
 Before you begin, you must [choose an intent recommendations data source](#intent-recommendations-data-resources). Even though you request user example recommendations on a per-intent basis, the same data source is used to find user examples that are appropriate for every intent. Watson knows which intent you are working on and finds suitable examples to recommend for that specific intent.
 
-1.  Follow the steps in [Creating intents](/docs/assistant?topic=assistant-intents#intents-creating-intents-task) to create an intent.
+1.  Follow the steps in [Creating intents](/docs/assistant?topic=assistant-intents#intents-create-task) to create an intent.
 
 1.  Add at least 5 user examples that illustrate the full range of typical utterances that you anticipate customers might say to trigger this intent.
 
@@ -213,7 +212,7 @@ Before you begin, you must [choose an intent recommendations data source](#inten
     
     If no recommendations are made, then the connected recommendation source does not contain examples that are suitable for this intent.
 
-1.  If the current recommendation source cannot provide useful recommendations for any of your intents, you can try a different set of utterances by changing the recommendation source that you're using. See [Managing recommendation sources](#intent-recommendations-data-resources) for more details.
+1.  If the current recommendation source cannot provide useful recommendations for any of your intents, you can try a different set of utterances by changing the recommendation source that you're using. See [Managing recommendation sources](#intent-recommendations-manage-sources) for more details.
 
 1.  After Watson shows you recommendations, select the utterances that you want to add as user examples for this intent, and then click **Add**. Or click **Next set** to review more utterances.
 1.  If you want to search the content of the recommendation source for user examples yourself, click the **Search Logs** tab. Enter a keyword on which to base the search, and then press **Enter**.

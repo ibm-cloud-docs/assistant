@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-03-12"
 
 subcollection: assistant
 
@@ -34,11 +34,19 @@ You can write expressions that access objects and properties of objects by using
 
 To expand variable values inside other variables or invoke methods on properties and global objects, use the `<? expression ?>` expression syntax. For example:
 
-- **Expanding a property**
-    - `"output":{"text":"Your name is <? context.userName ?>"}`
+- Expanding a property
 
-- **Invoking methods on properties of global objects**
-    - `"context":{"email": "<? @email.literal ?>"}`
+  ```json
+  "output":{"text":"Your name is <? context.userName ?>"}
+  ```
+  {: codeblock}
+
+- Invoking methods on properties of global objects
+
+  ```json
+  "context":{"email": "<? @email.literal ?>"}
+  ```
+  {: codeblock}
 
 ## Shorthand syntax
 {: #expression-language-shorthand-syntax}
@@ -63,9 +71,9 @@ The following table shows examples of the shorthand syntax that you can use to w
 
 You can include special characters, such as hyphens or periods, in context variable names. However, doing so can lead to problems when the SpEL expression is evaluated. The hyphen could be interpreted as a minus sign, for example. To avoid such problems, reference the variable by using either the full expression syntax or the shorthand syntax `$(variable-name)` and do not use the following special characters in the name:
 
-- Parentheses ()
-- More than one apostrophe ''
-- Quotation marks "
+- Parentheses `()`
+- More than one apostrophe `''`
+- Quotation marks `"`
 
 ### Shorthand syntax for entities
 {: #expression-language-shorthand-entities}
@@ -134,7 +142,7 @@ The entities array contains one or more entities that were recognized in user in
 
 While testing your dialog, you can see details of the entities that are recognized in user input by specifying this expression in a dialog node response:
 
-```json
+```
 <? entities ?>
 ```
 {: codeblock}

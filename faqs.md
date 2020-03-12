@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-10"
+lastupdated: "2020-03-12"
 
 subcollection: assistant
 
@@ -79,7 +79,7 @@ The 401 response code is returned for many reasons, including:
 {: #faqs-getting-403}
 {: faq}
 
-You are using a valid API Key, but it is not the right key for the service instance that you are trying to access programmatically.
+You are using a valid API Key, but it is not the correct key for the service instance that you are trying to access programmatically.
 
 ## Getting `Unable to fetch access token for account` message
 {: #faqs-cannot-fetch-token}

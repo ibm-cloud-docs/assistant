@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-05"
+lastupdated: "2020-03-12"
 
 keywords: condition, response, options, jump, jump-to, multiline, response variations
 
@@ -94,7 +94,7 @@ A node condition determines whether that node is used in the conversation. Respo
 - [Special conditions](#dialog-overview-special-conditions)
 - [Condition syntax details](#dialog-overview-condition-syntax)
 
-For tips on performing more advanced actions in conditions, see [Condition usage tips](/docs/assistant?topic=assistant-dialog-tips#dialog-tips-condition-usage-tips).
+For tips on performing more advanced actions in conditions, see [Condition usage tips](/docs/assistant?topic=assistant-dialog-tips#dialog-tips-condition-usage).
 
 ### Condition artifacts
 {: #dialog-overview-condition-artifacts}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-03-12"
 
 subcollection: assistant
 
@@ -69,7 +69,7 @@ Review these tips from experienced dialog designers.
 - Avoid overusing buttons. Encouraging users to pick predefined options from a set of buttons is less like a real conversation, and decreases your ability to learn what users really want to do. When you let real users ask for things in their own words, you can use the input to train the system and derive better intents.
 - Avoid using a bunch of nodes when one node will do. For example, add multiple conditional responses to a single node to return different responses depending on details provided by the user. See [Conditional responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multiple).
 - Word your responses carefully. You can change how someone reacts to your system based simply on how you phrase a response. Changing one line of text can prevent you from having to write multiple lines of code to implement a complex programmatic solution.
-- Back up your skill frequently. See [Downloading a skill](/docs/assistant?topic=assistant-skill-add#skill-add-download).
+- Back up your skill frequently. See [Downloading a skill](/docs/assistant?topic=assistant-skill-dialog-add#skill-dialog-add-download).
 
 ## Tips for capturing information from user input
 {: #dialog-tips-user-input}
@@ -91,7 +91,7 @@ It can be difficult to know the syntax to use in your dialog node to accurately 
 
 - **Dealing with multiple intents**: A user enters input that expresses a wish to complete two separate tasks. `I want to open a savings account and apply for a credit card.` How does the dialog recognize and address both of them? See the [Compound questions](https://sodoherty.ai/2017/02/06/compound-questions/){: external} entry from Simon O'Doherty's blog for strategies you can try. (Simon is a developer on the {{site.data.keyword.conversationshort}} team.)
 
-- **Dealing with ambiguous intents**: A user enters input that expresses a wish that is ambiguous enough that your assistant finds two or more nodes with intents that could potentially address it. How does the dialog know which dialog branch to follow? If you enable disambiguation, it can show users their options and ask the user to pick the right one. See [Disambiguation](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation) for more details.
+- **Dealing with ambiguous intents**: A user enters input that expresses a wish that is ambiguous enough that your assistant finds two or more nodes with intents that could potentially address it. How does the dialog know which dialog branch to follow? If you enable disambiguation, it can show users their options and ask the user to pick the correct one. See [Disambiguation](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation) for more details.
 
 - **Handling multiple entities in input**: If you want to evaluate only the value of the first detected instance of an entity type, you can use the syntax  `@entity == 'specific-value'` instead of the `@entity:(specific-value)` format.
 

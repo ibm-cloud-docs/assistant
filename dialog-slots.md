@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-11"
+lastupdated: "2020-03-12"
 
 keywords: slot, slots
 
@@ -69,6 +69,7 @@ Using slots produces a more natural dialog flow between the user and your assist
     For more information about the **Prompt for everything** checkbox, see [Asking for everything at once](#dialog-slots-prompt-for-everything).
 
 1.  **Add a slot for each unit of required information**. For each slot, specify these details:
+{: #dialog-slots-response-types}
 
     - **Check for**: Identify the type of information you want to extract from the user's response to the slot prompt. In most cases, you check for entity values. In fact, the condition builder that is displayed suggests entities that you can check for. However, you can also check for an intent; just type the intent name into the field. You can use AND and OR operators here to define more complex conditions.
 
@@ -92,7 +93,7 @@ Using slots produces a more natural dialog flow between the user and your assist
 
       If you want the prompt to be something other than a text response, you can change the response type by clicking the **Edit slot** ![Edit slot](images/edit-slot.png) icon. Click **Text** to choose a different response type. 
       
-      Response type options{: #dialog-slots-response-types}:
+      Response type options:
 
       - **Image**. Add the full URL to the hosted image file into the **Image source** field. The image must be in .jpg, .gif, or .png format. The image file must be stored in a location that is publicly addressable by URL.
 

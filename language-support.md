@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-11"
+lastupdated: "2020-03-12"
 
 subcollection: assistant
 
@@ -30,16 +30,19 @@ The {{site.data.keyword.conversationshort}} service supports the languages liste
 
 In the following tables, the level of language and feature support is indicated by these codes:
 
-- **GA** - The feature is generally available and supported for this language. Note that features might continue to be updated even after they are generally available.
-- **Beta** - The feature is supported only as a Beta release, and is still undergoing testing before it is made generally available in this language.
-- **NA** - Indicates that a feature is not available in this language.
+- GA: The feature is generally available and supported for this language. Note that features might continue to be updated even after they are generally available.
+- Beta: The feature is supported only as a Beta release, and is still undergoing testing before it is made generally available in this language.
+- NA: Indicates that a feature is not available in this language.
 
 Your assistant might be able to identify intents in unsupported languages depending on the complexity of your data, but if the language is not listed here it is not officially supported and results cannot be guaranteed.
 {: note}
 
 The first table shows the level of support for all features, except those related to intents and entities, which are shown in the second and third tables.
 
-**Table 1. Feature support details**
+## Feature support details
+{: #language-support-tables}
+
+Table 1. Feature support details
 
 | Language | **Defining [intents](/docs/assistant?topic=assistant-intents)**, **[entities](/docs/assistant?topic=assistant-entities)**, and **[dialog](/docs/assistant?topic=assistant-dialog-build)** | **Search** |
 |:---:|:---:|:---:|
@@ -58,7 +61,7 @@ The first table shows the level of support for all features, except those relate
 | **Spanish (es)**                   | GA | Beta |
 {: caption="Feature support details" caption-side="top"}
 
-**Table 2a. Intent feature support details**
+Table 2a. Intent feature support details
 
 | Language | **[Absolute scoring](/docs/assistant?topic=assistant-intents#intents-absolute-scoring)** and **[Mark as irrelevant](/docs/assistant?topic=assistant-logs#logs-mark-irrelevant)** | **[Content Catalog](/docs/assistant?topic=assistant-catalog)** | **[Autocorrection](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check)** | 
 |:---:|:---:|:---:|:---:|
@@ -77,9 +80,9 @@ The first table shows the level of support for all features, except those relate
 | **Spanish (es)**                   | GA | GA | NA |
 {: caption="Intent feature support details" caption-side="top"}
 
-**Table 2b. Intent feature support details continued**
+Table 2b. Intent feature support details continued
 
-| Language | **[User example recommendations](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations)** | **[Intent recommendations](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-intent-recommendations)** | **[Irrelevance detection](/docs/assistant?topic=assistant-irrelevance-detection)** |
+| Language | **[User example recommendations](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations-task)** | **[Intent recommendations](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-intent-recommendations-task)** | **[Irrelevance detection](/docs/assistant?topic=assistant-irrelevance-detection)** |
 |:---:|:---:|:---:|
 | **English (en)**                   | GA | GA | GA |
 | **Arabic (ar)**                    | NA | NA | NA |
@@ -96,7 +99,7 @@ The first table shows the level of support for all features, except those relate
 | **Spanish (es)**                   | NA | NA | NA |
 {: caption="Intent feature support details continued" caption-side="top"}
 
-**Table 3. Entity feature support details**
+Table 3. Entity feature support details
 
 | Language | **[Entity fuzzy matching](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Contextual entities](/docs/assistant?topic=assistant-entities#entities-create-annotation-based)** | **[Synonym recommendations](/docs/assistant?topic=assistant-entities#entities-synonyms)** |
 |:---:|:---:|:---:|:---:|
@@ -115,7 +118,7 @@ The first table shows the level of support for all features, except those relate
 | **Spanish (es)**                   | GA (Misspelling only) | NA | GA |
 {: caption="Entity feature support details" caption-side="top"}
 
-**Table 4. System entity feature support details**
+Table 4. System entity feature support details
 
 | Language | **System entities ([number](/docs/assistant?topic=assistant-system-entities#system-entities-sys-number), [currency](/docs/assistant?topic=assistant-system-entities#system-entities-sys-currency), [percentage](/docs/assistant?topic=assistant-system-entities#system-entities-sys-percentage), [date, time](/docs/assistant?topic=assistant-system-entities#system-entities-sys-date-time))** | **[New system entities](/docs/assistant?topic=assistant-new-system-entities)** |
 |:---|:---:|:---:|
@@ -134,9 +137,10 @@ The first table shows the level of support for all features, except those relate
 | **Spanish (es)**                   | GA | GA |
 {: caption="System entity feature support details" caption-side="top"}
 
-**Note:** The {{site.data.keyword.conversationshort}} service supports multiple languages as noted, but the tool interface itself (descriptions, labels, etc.) is in English. All supported languages can be input and trained through the English interface.
+The {{site.data.keyword.conversationshort}} service supports multiple languages as noted, but the tool interface itself (descriptions, labels, etc.) is in English. All supported languages can be input and trained through the English interface.
+{: note}
 
-**GB18030 compliance**: GB18030 is a Chinese standard that specifies an extended code page for use in the Chinese market. This code page standard is important for the software industry because the China National Information Technology Standardization Technical Committee has mandated that any software application that is released for the Chinese market after September 1, 2001, be enabled for GB18030. The {{site.data.keyword.conversationshort}} service supports this encoding, and is certified GB18030-compliant
+GB18030 compliance: GB18030 is a Chinese standard that specifies an extended code page for use in the Chinese market. This code page standard is important for the software industry because the China National Information Technology Standardization Technical Committee has mandated that any software application that is released for the Chinese market after September 1, 2001, be enabled for GB18030. The {{site.data.keyword.conversationshort}} service supports this encoding, and is certified GB18030-compliant
 
 ## Changing a skill language
 {: #language-support-change-language}
@@ -145,26 +149,29 @@ Once a skill has been created, its language cannot be modified. If it is necessa
 
 The `language` property should be set to the original language of the skill; for example, English would be `en`. Modify the value of this property, changing it to the desired language (`fr` for French, `de` for German, etc.). Save the changes to the JSON file, and import the modified file into your {{site.data.keyword.conversationshort}} service instance.
 
-## Configuring bi-directional languages
-{: #language-support-configure-bi-directional}
+## Configuring bidirectional languages
+{: #language-support-configure-bidirectional}
 
-For bi-directional languages, for example Arabic, you can change your skill preferences accordingly. From your skill tile, select the *Actions* drop-down menu, and select **Bidi preferences** (this option is only available for skills set to a bi-directional language):
+For bidirectional languages, for example Arabic, you can change your skill preferences. 
 
-![Bidi preferences](images/bidi_prefs.png)
+1.  From your skill tile, click the *Actions* drop-down menu, and then select **Language Preferences**.
 
-Select from the following options for your skill:
+    This option is only available for skills that are configured to use a bidirectional language, such as Arabic.
+    {: note}
+
+1.  Select from the following options for your skill:
 
 - **GUI Direction**: Specifies the layout direction of elements, such as buttons or menus, in the graphical user interface. Choose `LTR` (left-to-right) or `RTL` (right-to-left). If not specified, the tool follows the web browser GUI direction setting.
 - **Text Direction**: Specifies the direction of typed text. Choose `LTR` (left-to-right) or `RTL` (right-to-left), or select `Auto` which will automatically choose the text direction based on your system settings. The `None` option will display left-to-right text.
 - **Numeric Shaping**: Specifies which form of numerals to use when presenting regular digits. Choose from `Nominal`, `Arabic-Indic`, or `Arabic-European`. The `None` option will display Western numerals.
 - **Calendar Type**: Specifies how you choose filtering dates in the skill UI. Choose `Islamic-Civil`, `Islamic-Tabular`, `Islamic-Umm al-Qura`, or `Gregorian`.
 
-  This setting does not apply to the "Try it out" panel.
+  This setting is not reflected in the "Try it out" panel.
   {: note}
 
-![Bidi options](images/bidi_opts.png)
+![Bidi options](images/bidi-options.png)
 
-When finished making selections, click **Update** to save and return to the skill tile.
+1.  Click the **X** to close the page. Your changes are saved automatically.
 
 ## Working with accented characters
 {: #language-support-accents}

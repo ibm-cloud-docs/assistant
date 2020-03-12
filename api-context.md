@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-03-12"
 
 subcollection: assistant
 
@@ -10,9 +10,9 @@ subcollection: assistant
 ---
 
 {:curl: .ph data-hd-programlang='curl'}
-{:javascript: #javascript .ph data-hd-programlang='javascript'}
-{:java: #java .ph data-hd-programlang='java'}
-{:python: #python .ph data-hd-programlang='python'}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:java: .ph data-hd-programlang='java'}
+{:python: .ph data-hd-programlang='python'}
 {:swift: data-hd-programlang='swift'}
 {:new_window: target="_blank"}
 {:external: target="_blank" .external}
@@ -31,7 +31,7 @@ subcollection: assistant
 
 The *context* is an object containing variables that persist throughout a conversation and can be shared by the dialog and the client application. If your application is using the v2 API, the context is automatically maintained by the assistant on a per-session basis. Both the dialog and the client application can read and write context variables. By default, the context is not returned to a client application, but you can optionally request that it be included in the response to each `/message` request.
 
-**Important:** One use of the context is to specify a unique user ID for each end user who interacts with the assistant. For user-based plans, this ID is used for billing purposes. (For more information, see [User-based plans](/docs/assistant?topic=assistant-services-information#user-based-plans).)
+**Important:** One use of the context is to specify a unique user ID for each end user who interacts with the assistant. For user-based plans, this ID is used for billing purposes. (For more information, see [User-based plans](/docs/assistant?topic=assistant-services-information#services-information-user-based-plans).)
 
 There are two types of context:
 
