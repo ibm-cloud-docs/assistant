@@ -91,7 +91,7 @@ You get equivalent results for other supported languages and national currencies
 
 - Currency values are recognized as instances of @sys-number entities as well. If you are using separate conditions to check for both currency values and numbers, place the condition that checks for currency before the one that checks for a number.
 
-  This workaround is not necessary if you are using the revised system entities. For more details, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
+  This workaround is not necessary if you are using the revised system entities. For more information, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
   {: note}
 
 - If you use the @sys-currency entity as a node condition and the user specifies `$0` as the value, the value is recognized as a currency properly, but the condition is evaluated to the number zero, not the currency zero. As a result, the `null` in the condition is evaluated to false and the node is not processed. To check for currency values in a way that handles zeros properly, use expression `@sys-currency >=0` in the node condition instead.
@@ -99,12 +99,12 @@ You get equivalent results for other supported languages and national currencies
 ## @sys-date and @sys-time entities
 {: #system-entities-sys-date-time}
 
-The `@sys-date` system entity extracts mentions such as `Friday`, `today`, or `November 1`. The value of this entity stores the corresponding inferred date as a string in the format "yyyy-MM-dd" e.g. "2016-11-21". The system augments missing elements of a date (such as the year for "November 21") with the current date values.
+The `@sys-date` system entity extracts mentions such as `Friday`, `today`, or `November 1`. The value of this entity stores the corresponding inferred date as a string in the format `yyyy-MM-dd`. For example, `"2016-11-21"`. The system augments missing elements of a date (such as the year for `"November 21"`) with the current date values.
 
-For English locale only, the default system behavior for date input is MM/DD/YYYY. This will change to DD/MM/YYYY only if the first two numbers are greater than 12. The value stored will still be in the format "yyyy-MM-dd".
+For English locale only, the default system behavior for date input is MM/DD/YYYY. This behavior changes to DD/MM/YYYY only if the first two numbers are greater than 12. The value that is stored has the format `yyyy-MM-dd`.
 {: note}
 
-The `@sys-time` system entity extracts mentions such as `2pm`, `at 4`, or `15:30`. The value of this entity stores the time as a string in the format "HH:mm:ss". For example, "13:00:00."
+The `@sys-time` system entity extracts mentions such as `2pm`, `at 4`, or `15:30`. The value of this entity stores the time as a string in the format `HH:mm:ss`. For example, `"13:00:00"`.
 
 ### Date-time mentions
 {: #system-entities-date-time-mentions}
@@ -121,20 +121,20 @@ Mentions of a date range such as `the weekend`, `next week`, or `from Monday to 
 ### `Last` and `Next` dates and times
 {: #system-entities-last-next}
 
-In some locales, a phrase like "last Monday" is used to specify the Monday of the previous week only. In contrast, other locales use "last Monday" to specify the last day which was a Monday, but which may have been either in the same week or the previous week.
+In some locales, a phrase like "last Monday" is used to specify the Monday of the previous week only. In contrast, other locales use `last Monday` to specify the last day that was a Monday. However, the Monday might have been either in the same week or the previous week.
 
-As an example, for Friday June 16, in some locales "last Monday" could refer to either June 12 or to June 5, while in other locales it refers only to June 5 (the previous week). This same logic holds true for a phrase like "next Monday".
+As an example, for `Friday June 16`, in some locales `last Monday` refers to either `June 12` or to `June 5`. In other locales, it refers only to `June 5` (the previous week). This same logic holds true for a phrase like `next Monday`.
 
-The {{site.data.keyword.conversationshort}} service treats "last" and "next" dates as referring to the most immediate last or next day referenced, which may be in either the same or a previous week.
+The {{site.data.keyword.conversationshort}} service treats `last` and `next` dates as references to the most immediate last or next day that is referenced, which might be in either the same or a previous week.
 
-For time phrases like "for the last 3 days" or "in the next 4 hours", the logic is equivalent. For example, in the case of "in the next 4 hours", this results in two `@sys-time` entities: one of the current time, and one of the time four hours later than the current time.
+For time phrases like `for the last 3 days` or `in the next 4 hours`, the logic is equivalent. For example, if the input includes, `in the next 4 hours`, two `@sys-time` entities are found: one for the current time, and one for the time four hours later than the current time.
 
 ### Time zones
 {: #system-entities-time-zones}
 
-Mentions of a date or time that are relative to the current time are resolved with respect to a chosen time zone. By default, this is UTC (GMT). This means that by default, REST API clients located in time zones different from UTC will observe the value of `now` extracted according to the current UTC time.
+Mentions of a date or time that are relative to the current time are resolved for a chosen time zone. By default, the time zone is Greenwich mean time. Therefore, REST API clients that are located in different time zones get the current Coordinated Universal Time when `now` is mentioned in input.
 
-Optionally, the REST API client can add the local timezone as the context variable `$timezone`. This context variable should be sent with every client request. For example, the `$timezone` value should be `America/Los_Angeles`, `EST`, or `UTC`. For a full list of supported time zones, see [Supported time zones](/docs/assistant?topic=assistant-time-zones).
+Optionally, the REST API client can add the local time zone as the context variable `$timezone`. This context variable must be sent with every client request. For example, the `$timezone` value can be `America/Los_Angeles`, `EST`, or `UTC`. For a full list of supported time zones, see [Supported time zones](/docs/assistant?topic=assistant-time-zones).
 
 When the `$timezone` variable is provided, the values of relative @sys-date and @sys-time mentions are computed based on the client time zone instead of UTC.
 
@@ -169,7 +169,7 @@ For the input `November 21` @sys-date returns these values:
 {: caption="@sys-date examples" caption-side="top"}
 
 - @sys-date always returns the date in this format: yyyy-MM-dd.
-- \* Returns the next matching date. If that date has already passed this year, this returns next year's date.
+- \* Returns the next matching date. If the date passed for the current year, next year's date is returned.
 
 For the input `at 6 pm` @sys-time returns these values:
 
@@ -192,7 +192,7 @@ For information about processing date and time values, see the [Date and time me
 Available as a beta feature for only languages noted in the [Supported languages](/docs/assistant?topic=assistant-language-support) topic. A powerful alternative to using this system entity is to use a contextual entity for identifying proper nouns, such as locations. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/assistant?topic=assistant-entities#entities-annotations-overview).
 {: tip}
 
-The @sys-location system entity extracts place names (country, state/province, city, town, etc.) from the user's input.
+The @sys-location system entity extracts place names (country, state or province, city, town, and so on) from the user's input.
 
 ### Recognized formats
 {: #system-entities-sys-location-formats}
@@ -201,13 +201,13 @@ The @sys-location system entity extracts place names (country, state/province, c
 - U.S.A.
 - New South Wales
 
-For information about processing String values, see the [Strings method reference](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-strings).
+For more information about processing String values, see the [Strings method reference](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-strings).
 {: tip}
 
 ## @sys-number entity
 {: #system-entities-sys-number}
 
-The @sys-number system entity detects numbers that are written using either numerals or words. In either case, a numeric value is returned.
+The @sys-number system entity detects numbers that are written with either numerals or words. In either case, a numeric value is returned.
 
 ### Recognized formats
 {: #system-entities-sys-number-formats}
@@ -249,15 +249,15 @@ You get equivalent results for other supported languages.
 ### @sys-number usage tips
 {: #system-entities-sys-number-usage-tips}
 
-- If you use @sys-number to compare number values in a condition, be sure to separately include a check for the presence of a number itself. If no number is found, @sys-number evaluates to null, which might result in your comparison evaluating to true even when no number is present.
+- If you use @sys-number to compare number values in a condition, be sure to separately include a check for the presence of a number itself. If no number is found, @sys-number evaluates to null. Your comparison might evaluate to true even when no number is present.
 
   For example, do not use `@sys-number<4` alone because if no number is found, `@sys-number` evaluates to null. Because null is less than 4, the condition evaluates to true even though no number is present.
 
-  Use `@sys-number AND @sys-number<4` instead. If no number is present, the first condition evaluates to false, which appropriately results in the whole condition evaluating to false.
+  Use `@sys-number AND @sys-number<4` instead. If no number is present, the first condition evaluates to false. As a result, the whole condition evaluates to false.
 
 - If you use the @sys-number entity as a node condition and the user specifies zero as the value, the 0 value is recognized properly as a number. However, the 0 is interpreted as a `null` value for the condition, which results in the node not being processed. To check for numbers in a way that handles zeros properly, use the expression `@sys-number >= 0` in the node condition instead. And be sure to check first whether a number is present at all. Meaning, use `@sys-number AND @sys-number >= 0`.
 
-For information about processing number values, see the [Numbers method reference](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-numbers).
+For more information about processing number values, see the [Numbers method reference](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-numbers).
 {: tip}
 
 ## @sys-percentage entity
@@ -306,12 +306,12 @@ You get equivalent results for other supported languages.
 
 - Percentage values are recognized as instances of @sys-number entities as well. If you are using separate conditions to check for both percentage values and numbers, place the condition that checks for a percentage before the one that checks for a number.
 
-  This workaround is not necessary if you are using the revised system entities. For more details, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
+  This workaround is not necessary if you are using the revised system entities. For more information, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
   {: note}
 
 - If you use the @sys-percentage entity as a node condition and the user specifies `0%` as the value, the value is recognized as a percentage properly, but the condition is evaluated to the number zero not the percentage 0%. As a result, the `null` in the condition is evaluated to false and the node is not processed. To check for percentages in a way that handles zero percentages properly, use the expression `@sys-percentage >= 0` in the node condition instead.
 
-- If you input a value like `1-2%`, the values `1%` and `2%` are returned as system entities. The index will be the whole range between 1% and 2%, and both entities will have the same index.
+- If you input a value like `1-2%`, the values `1%` and `2%` are returned as system entities.
 
 ## @sys-person entity ![Beta feature](images/beta.png)
 {: #system-entities-sys-person}
@@ -328,5 +328,5 @@ The @sys-person system entity extracts names from the user's input. Names are re
 - Jane Doe
 - Vijay
 
-For information about processing String values, see the [Strings method reference](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-strings).
+For more information about processing String values, see the [Strings method reference](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-strings).
 {: tip}
