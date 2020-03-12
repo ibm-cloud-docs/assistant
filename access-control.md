@@ -33,12 +33,12 @@ Maybe you want one development team to have access to a test assistant and anoth
 ## Access control improvements
 {: #access-control-new}
 
-Historically, the service access role assignments that were defined for a {{site.data.keyword.conversationshort}} service instance in the IBM Cloud dashboard were ignored. Users with either Reader- or Writer-level service access to an instance effectively had Manager-level access. This behavior is changing. When the access control improvements are released, service-level access role assignments will be honored by the product.
+Historically, the service access role assignments that were defined for a {{site.data.keyword.conversationshort}} service instance in the IBM Cloud dashboard were ignored. Users with either Reader- or Writer-level service access to an instance effectively had Manager-level access. This behavior is changing. When the access control improvements are released, service-level access role assignments will be recognized by the product.
 
 ### Location support
 {: #access-control-geos}
 
-Service level access roles are supported in the Tokyo and Seoul data centers only. Access assignments specified at the resource-level are not yet supported.
+Service level access roles are supported in the Tokyo and Seoul data centers only. Access assignments that are specified at the resource-level are not yet supported.
 
 ## How to keep your access
 {: #access-control-prep}
@@ -50,7 +50,7 @@ If you have a Reader or Writer service access role, then what you can do will ch
 ### I'm a Reader
 {: #access-control-prep-reader}
 
-With a Reader role, you cannot take any actions in the {{site.data.keyword.conversationshort}} application user interface. You can only view the assistants and skills pages. You cannot edit, create, or delete anything, and cannot view analytics.
+With a Reader role, you cannot take any actions in the {{site.data.keyword.conversationshort}} application user interface. You can view only the assistants and skills pages. You cannot edit, create, or delete anything, and cannot view analytics.
 
 ### I'm a Writer
 {: #access-control-prep-writer}
@@ -79,18 +79,18 @@ Act now to get the service instance owner to change your access level.
 ## Before you grant access to others
 {: #access-control-prereqs}
 
-For each person to whom you grant access to your instance, decide whether you want to give the person a role with global access, which applies to all of the assistants and skills in a single service instance. Or give the person a resource level role so he or she can read or edit only individual skills and assistants within a service instance.
+For each person to whom you grant access to your instance, decide whether you want to give the person a role with global or resource level access. Global-level access applies to all of the assistants and skills in a single service instance. Resource-level access applies to individual skills and assistants within a service instance only.
 
-Resource-level roles can be defined for service instances that are managed by Identity and Access Management (IAM) only, not those managed by Cloud Foundry.
+Resource-level roles can be defined for service instances that are managed by Identity and Access Management (IAM) only, not instances managed by Cloud Foundry.
 {: note}
 
 ## Granting users access to your resources
 {: #access-control-task}
 
-Only one person can edit an intent, entity, or a dialog node at a time. If multiple people work on the same item at the same time, then the changes made by the person who saves their changes last are the only changes applied. Changes that are made at the same time by someone else and that are saved first are not retained. Coordinate the updates that you plan to make with your team members to prevent anyone from losing their work.
+Only one person can edit an intent, entity, or a dialog node at a time. If multiple people work on the same item at the same time, then the changes that are made by the person who saves their changes last are the only changes applied. Changes that are made at the same time by someone else and that are saved first are not retained. Coordinate the updates that you plan to make with your team members to prevent anyone from losing their work.
 {: important}
 
-1.  If you plan to give a user access to a single skill or assistant in your service instance, get the ID for the skill or assistant. You'll need to provide the ID in a later step.
+1.  If you plan to give a user access to a single skill or assistant in your service instance, get the ID for the skill or assistant. You need to provide the ID in a later step.
 
     - To get the assistant ID, go to the Assistants page. Click the overflow menu for the assistant, and then click **Settings > API Details**. Copy the assistant ID and paste it somewhere that you can access it from later.
 
@@ -98,7 +98,7 @@ Only one person can edit an intent, entity, or a dialog node at a time. If multi
 
 1.  Click the User ![User](images/user-icon2.png) icon in the page header, 
 
-1.  Make a note of the current instance name, and then select **Manage Users** from the drop-down.
+1.  Make a note of the current instance name, and then click **Manage Users**.
 
     You are directed to the {{site.data.keyword.cloud}} Identity and Access Management (IAM) page.
 1.  Click **Invite users**, and then enter the email addresses of the people to whom you want to grant access. 
@@ -112,9 +112,9 @@ Only one person can edit an intent, entity, or a dialog node at a time. If multi
     The *Account* resource group is used unless you change it in the next field.
     {: note}
 
-1.  Optionally select a specific <!--region and -->service instance to share with this user. 
+1.  Optionally select a specific region and service instance to share with this user. 
 
-    Otherwise, the user access you define here will be applied to all of your services instances<!-- in all data center locations where you have instances-->.
+    Otherwise, the user access you define here is applied to all of your services instances in all data center locations where you have instances.
 
     Remember, you made a note of the name of the current service instance in an earlier step.
 
@@ -125,7 +125,7 @@ Only one person can edit an intent, entity, or a dialog node at a time. If multi
     - Platform
     - Service
 
-    For help, see [Recommended role assignments](#access-control-recommendations). For a description of all your options, see [Global roles](#access-control-global-roles).
+    For help, see [Popular role assignments](#access-control-recommendations). For a description of all your options, see [Global roles](#access-control-global-roles).
 
 1.  **Optional**: Select a single resource, such as a skill or assistant, and then assign the person to the appropriate service role for the resource.
 
@@ -137,10 +137,10 @@ Only one person can edit an intent, entity, or a dialog node at a time. If multi
 
 1.  Click **Invite** to finish the process.
 
-With more people contributing to the development of a dialog skill, unintended changes can occur, including skill deletions. Consider creating backup copies of your dialog skill on a regular basis, so you can roll back to an earlier version if necessary. To create a backup, simply [download the skill as a JSON file](/docs/services/assistant?topic=assistant-skill-dialog-add#skill-dialog-add-download).
+When more people contribute to the development of a dialog skill, unintended changes can occur, including skill deletions. Consider creating backup copies of your dialog skill regularly, so you can roll back to an earlier version if necessary. To create a backup, [download the skill as a JSON file](/docs/services/assistant?topic=assistant-skill-dialog-add#skill-dialog-add-download).
 {: tip}
 
-## Recommended role assignments
+## Popular role assignments
 {: #access-control-recommendations}
 
 To get you started quickly, consider applying these roles at first.
@@ -170,7 +170,9 @@ The breaks down access definitions into the following role types:
 ### Global access
 {: #access-control-global-roles}
 
-To define someone's global access, meaning access roles that apply to a service instance and all of the resources that are created as part of the instance, decide which roles to assign to the user from among the following role types:
+A global access role is a role that applies to a service instance and all of the resources that are created as part of the instance.
+
+To define someone's global access, choose from among the following role types:
 
 #### Platform roles
 {: #access-control-global-platform-roles}
@@ -185,7 +187,7 @@ Choose a platform role to assign to the user.
 
 The **Editor** and **Operator** platform roles are equivalent to the Administrator role.
 
-At a minimum, you must give someone *Viewer* access to a service instance or they will not be able to access anything.
+At a minimum, you must give someone *Viewer* access to a service instance or they cannot access anything.
 {: important}
 
 #### Service roles
@@ -228,7 +230,7 @@ Anyone who creates an assistant or skill is automatically granted the Manager ro
 
 - Reader
 
-  The following screen capture shows you what someone with a Reader service access role to a resource sees when viewing the Dialog page.
+  The following screen capture shows you what someone with Reader service access to a resource sees on the Dialog page.
 
   ![Shows the dialog page with disabled buttons.](images/access-control-read-only.png)
 
@@ -237,7 +239,7 @@ Anyone who creates an assistant or skill is automatically granted the Manager ro
 
 - Writer
 
-  This screen capture shows you what someone with a Writer service access role to a resource sees when viewing the same page.
+  This screen capture shows you what someone with Writer service access to a resource sees on the same page.
 
   ![Shows the dialog page with buttons enabled, but no Analytics option in nav.](images/access-control-writer.png)
 
@@ -251,8 +253,8 @@ Anyone who creates an assistant or skill is automatically granted the Manager ro
 |------------------------|-----------------------------|-----------------------------|------------------------|
 | Make someone a service instance co-owner | Administrator | Manager | N/A |
 | Prevent someone from seeing a skill or assistant | Viewer | N/A | Reader |
-| Allow somone to edit and view logs of all the skills and assistants in the service instance | Viewer | Manager | N/A |
-| Allow somone to edit a skill or assistant in the service instance, but not view logs | Viewer | Manager | Writer |
+| Allow someone to edit and view logs of all the skills and assistants in the service instance | Viewer | Manager | N/A |
+| Allow someone to edit a skill or assistant in the service instance, but not view logs | Viewer | Manager | Writer |
 {: caption="Table 4. Common role assignments" caption-side="top"}
 
 N/A stands for no assignment, meaning no role of the type is assigned.
@@ -265,45 +267,45 @@ Use resource-level role assignments to limit who can edit live assistants that a
 ## Resource-level role impact on available actions
 {: #access-control-ui-impact}
 
-The {{site.data.keyword.conversationshort}} user interface and API comply with the access roles that are defined for a service instance. When someone logs in to the user interface, it adjusts to show only what the current user can access, and it disables functions that the user does not have permissions to do. (For example, a person assigned to the Reader role for a dialog skill cannot create or edit entities, intents, or dialog nodes in the skill because the **Create {resource}** and **Edit** functions are disabled.) Similarly, the API allows access only to resources and methods that are permitted for the role associated with the specified API key.
+The {{site.data.keyword.conversationshort}} user interface and API comply with the access roles that are defined for a service instance. When someone logs in to the user interface, it adjusts to show only what the current user can access, and it disables functions that the user does not have permissions to do. (For example, a person who is assigned to the Reader role for a dialog skill cannot create or edit entities, intents, or dialog nodes in the skill because the **Create {resource}** and **Edit** functions are disabled.) Similarly, the API allows access only to resources and methods that are permitted for the role that is associated with the specified API key.
 
 The following table shows the UI and API actions that can be performed by different resource-level service roles.
 
 | Action | Reader | Writer | Manager |
 |--------|--------|--------|---------|
-| Open and view an assistant, skill, or integration | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| View API details for an assistant or skill | | | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Create an assistant or skill | | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Rename, edit, delete an assistant or skill | | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Create, edit, or delete an integration | | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Add, swap, or remove skills | | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Swap skill versions for an assistant | | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Revert to a previous skill version | | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Save or delete skill versions | | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Export a skill or skill version | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Duplicate a skill | | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Change bidirectional preferences | | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Open and view intents and intent examples | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Import, add (including from content catalog), edit, or delete intents or intent examples | | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Export intents | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Manage intent conflicts | | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Open and view entities | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Import, add, edit, or delete entities | | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Export entities | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Enable system entities and fuzzy matching | | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Add contextual entities | | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Open and view dialog nodes | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Add, move, edit, or delete dialog nodes or folders | | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Change dialog node settings | | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Test and set context in dialog skill "Try it out" pane | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Test in search skill "Try it out" pane | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| Improve data from dialog skill "Try it out" pane | | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| View analytics | | | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| View intent and intent example recommendations | | | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| v1 runtime API (`/message` endpoint) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| v2 runtime API (`session` and `/message` endpoints) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| v1 authoring and logs API (all but `/message` endpoint) | | | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| Open and view an assistant, skill, or integration | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| View API details for an assistant or skill | | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Create an assistant or skill | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Rename, edit, delete an assistant or skill | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Create, edit, or delete an integration | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Add, swap, or remove skills | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Swap skill versions for an assistant | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Revert to a previous skill version | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Save or delete skill versions | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Export a skill or skill version | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Duplicate a skill | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Change bidirectional preferences | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Open and view intents and intent examples | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Import, add (including from content catalog), edit, or delete intents or intent examples | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Export intents | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Manage intent conflicts | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Open and view entities | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Import, add, edit, or delete entities | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Export entities | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Enable system entities and fuzzy matching | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Add contextual entities | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Open and view dialog nodes | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Add, move, edit, or delete dialog nodes or folders | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Change dialog node settings | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Test and set context in dialog skill "Try it out" pane | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Test in search skill "Try it out" pane | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Improve data from dialog skill "Try it out" pane | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| View analytics | | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| View intent and intent example recommendations | | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| v1 runtime API (`/message` endpoint) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| v2 runtime API (`session` and `/message` endpoints) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| v1 authoring and logs API (all but `/message` endpoint) | | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Table 5. Action privileges per service role" caption-side="top"}
-{: summary="This table has row and column headers. The row headers identify the user interface actions. The column headers indentify the different resource-level roles. To understand which roles can do an action, navigate to the row that describes the action, and find the columns for the role you are interested in."}
+{: summary="This table has row and column headers. The row headers identify the user interface actions. The column headers identify the different resource-level roles. To understand which roles can do an action, go to the row that describes the action, and find the columns for the role you are interested in."}
