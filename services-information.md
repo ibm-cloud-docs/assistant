@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-09"
+lastupdated: "2020-03-13"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
@@ -77,7 +77,7 @@ The following features are available only to users of Plus or Premium plans.
 
 Unlike API-based plans, which measure usage by the number of API calls made during a month, the Plus and Premium plans measure usage by the number of monthly active users.
 
-A monthly active user is any unique user who has at least one meaningful interaction with your assistant or custom application over the calendar billing month. A meaningful interaction is an exchange in which a user sends a request to your service and your service responds. Welcome messages that are displayed at the start of a conversation are not charged. Neither are messages that are submitted in the "Try it out" pane for testing purposes. However, test messages that are sent from the preview link integration are charged.
+A monthly active user is any unique user who has at least one meaningful interaction with your assistant or custom application over the calendar billing month. A meaningful interaction is an exchange in which a user sends a request to your service and your service responds. Welcome messages that are displayed at the start of a conversation are not charged.
 
 A unique user is recognized by the user ID that is associated with the person that interacts with your assistant. It is your responsibility to pass the user ID information to the service. {{site.data.keyword.conversationshort}} checks for the following information from API requests in this order for billing purposes:
 
@@ -92,13 +92,19 @@ A unique user is recognized by the user ID that is associated with the person th
 
 For example, if the same person chats with your assistant on three separate occasions over the same billing period, how you represent that user in the API call impacts how the interactions are billed. If you identify the user interaction with a `user_id`, it counts as one use. If you identify the user interaction with a `session_id`, then it counts as three uses (because there is a separate session that is created for each interaction).
 
+Design any custom applications to capture a unique `user_id` or `session_id` and pass the information to {{site.data.keyword.conversationshort}}. Choose a non-human-identifiable ID that doesn't change throughout the customer lifecycle.
+
+The built-in integrations use a combination of the `session_id` and `user_id` to identify an interaction. For Web Chat, you can specify a `user_id`. For more information, see [Adding user identity information](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-userid).
+
 Billing is managed per monthly active user per service instance. If a single user interacts with assistants that are hosted by different service instances that belong to the same plan, each interaction is treated as a separate use. You are billed for the user's interaction with each service instance separately.
 
-Design any custom applications to capture a unique `user_id` or `session_id` and pass the information to {{site.data.keyword.conversationshort}}. Choose a non-human-identifiable ID that doesn't change throughout your customer lifecycle.
+### Test activity charges
+{: services-information-billing-testing}
 
-The built-in integrations use a combination of the `session_id` and `user_id` to identify an interaction.
+When testing your skills and assistants, any messages that you submit in the "Try it out" pane are not charged. However, test messages that you send from the preview link integration are charged. For the preview link, a random `user_id` is generated and stored in a cookie. The multiple interactions that a single tester has with the assistant embedded in the preview link are recognized as coming from a single user and are charged accordingly. If you are doing your own test, running a scripted regression test for example, use a single `user_id` for all of the calls within your regression test. Other uses are flagged as abuse.
 
-- For Web Chat, you can specify a `user_id`. For more information, see [Adding user identity information](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-userid).
+### Handling anonymous users
+{: services-information-billing-anonymous}
 
 If your custom application or assistant interacts with users who are anonymous, you can generate your own randomized universally unique IDs to represent these users. 
 

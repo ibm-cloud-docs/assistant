@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-12"
+lastupdated: "2020-03-13"
 
 subcollection: assistant
 
@@ -193,7 +193,7 @@ The intents and intent user examples that you add in this way do count toward yo
 
 As the subjects that your customers want to discuss change, you can use the intent user example recommendations feature to help keep your intents up-to-date and relevant over time.
 
-## Intent user example recommendations
+## Getting intent user example recommendations
 {: #intent-recommendations-get-example-recommendations-task}
 
 For any intent that is already part of your training data, you can find and add new user examples by asking Watson for intent user example recommendations. 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-10"
+lastupdated: "2020-03-13"
 
 subcollection: assistant
 
@@ -109,12 +109,9 @@ To add the webhook details, complete the following steps:
       </tr>
       <tr>
       <td>Authorization</td>
-      <td>Basic `<encoded-api-key>`</td>
+      <td>Basic `<encoded-credentials>`</td>
       </tr>
     </table>
-    
-    For testing purposes, you can submit an API key over basic authentication. Click **Add authorization**, and then add `apikey` to the **User name** field, and paste the API key value into the **Password** field. Click **Save**.
-    {: tip}
 
 Your webhook details are saved automatically.
 
@@ -261,12 +258,12 @@ The *Multiple conditioned responses* section is editable again. You can choose t
 
 To change the external service that you call from dialog nodes, edit the webhook details defined on the Webhooks page of the **Options** tab. If the new service expects different parameters to be passed to it, be sure to update any dialog nodes that call it.
 
-## Calling IBM Cloud Functions
+<!--## Calling IBM Cloud Functions
 {: #dialog-webhooks-cf}
 
-You write the webhook URL and provide headers differently based on whether you are calling a standard action or a web action.
+You write the webhook URL and provide headers differently based on whether you are calling a standard action or a web action.-->
 
-### Calling a web action
+### Calling an IBM Cloud Functions web action
 {: #dialog-webhooks-cf-web-action}
 
 The following tips will help you call a {{site.data.keyword.openwhisk_short}} web action from your dialog. 
@@ -340,7 +337,7 @@ The following tips will help you call a {{site.data.keyword.openwhisk_short}} we
 
 1.  When you are done, click the X to close the node. Your changes are automatically saved.
 
-### Calling a standard action
+<!--### Calling a standard action
 {: #dialog-webhooks-cf-action}
 
 You can make a call to an action that is managed by Cloud Foundry, but not to an action that uses token-based Identity and Access Management (IAM) authentication.
@@ -397,7 +394,7 @@ To make a synchronous call to a {{site.data.keyword.openwhisk_short}} action tha
          </table>
 
         For more information about how to manage IAM tokens, see this [IBM Developer article](https://developer.ibm.com/tutorials/accessing-iam-based-services-from-ibm-cloud-functions/){: external}.
-    -->
+
     Your webhook details are saved automatically.
 
 1.  Click the **Dialog** tab.
@@ -430,4 +427,4 @@ To make a synchronous call to a {{site.data.keyword.openwhisk_short}} action tha
       </tr>
     </table>
 
-1.  When you are done, click the X to close the node. Your changes are automatically saved.
+1.  When you are done, click the X to close the node. Your changes are automatically saved.-->

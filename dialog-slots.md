@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-12"
+lastupdated: "2020-03-13"
 
 keywords: slot, slots
 
@@ -68,8 +68,9 @@ Using slots produces a more natural dialog flow between the user and your assist
 
     For more information about the **Prompt for everything** checkbox, see [Asking for everything at once](#dialog-slots-prompt-for-everything).
 
-1.  **Add a slot for each unit of required information**. For each slot, specify these details:
-{: #dialog-slots-response-types}
+1.  {: #dialog-slots-response-types}Add a slot for each unit of required information.
+
+    For each slot, specify these details:
 
     - **Check for**: Identify the type of information you want to extract from the user's response to the slot prompt. In most cases, you check for entity values. In fact, the condition builder that is displayed suggests entities that you can check for. However, you can also check for an intent; just type the intent name into the field. You can use AND and OR operators here to define more complex conditions.
 
