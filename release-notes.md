@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-12"
+lastupdated: "2020-03-13"
 
 subcollection: assistant
 
@@ -570,7 +570,7 @@ The following updates are available in all locations except Dallas currently.
 
   See {{site.data.keyword.conversationshort}} [service plan options](https://www.ibm.com/cloud/watson-assistant/pricing/){: external} for more information about all available service plans.
 
-- **Intent user example recommendations ![Plus or Premium plan only](images/plus.png)**: You can upload a file that contains raw user inputs, such as user inquiries from a call center log, that Watson can analyze and mine for intent user example candidates. See [Adding examples from log files](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations).
+- **Intent user example recommendations ![Plus or Premium plan only](images/plus.png)**: You can upload a file that contains raw user inputs, such as user inquiries from a call center log, that Watson can analyze and mine for intent user example candidates. See [Adding examples from log files](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations-task).
 
 ## 20 November 2018
 {: #20November2018}
@@ -621,8 +621,6 @@ The following updates are available in all locations except Dallas currently.
   For new service instances, you use IAM for authentication. You can pass either a bearer token or an API key. Tokens support authenticated requests without embedding service credentials in every call. API keys use basic authentication.
 
   For all existing service instances, you continue to use service credentials (`{username}:{password}`) for authentication.
-
-  See [Authenticating API calls](/docs/assistant?topic=assistant-services-information#services-information-authenticate-api-calls) for more information.
 
 ## 25 October 2018
 {: #25October2018}

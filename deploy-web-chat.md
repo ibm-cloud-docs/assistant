@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-12"
+lastupdated: "2020-03-13"
 
 subcollection: assistant
 
@@ -229,8 +229,7 @@ Zendesk Chat is an add-on to Zendesk Support. Zendesk Support puts all your cust
     An Enterprise or Chat Professional plan is recommended.
 
 1.  From the Web Chat integration page in {{site.data.keyword.conversationshort}}, switch the **Allow transfers to live agents** toggle to **On**, and then choose **Zendesk** as the service desk type, and then click **Set up**.
-1.  Add the account key for your Zendesk account. To get the account key for your Zendesk account, follow these steps:
-{: #deploy-web-chat-zendesk-get-account-key}
+1.  {: #deploy-web-chat-zendesk-get-account-key}Add the account key for your Zendesk account. To get the account key for your Zendesk account, follow these steps:
 
     - Log in to your Zendesk subdomain.
     
@@ -250,8 +249,7 @@ Zendesk Chat is an add-on to Zendesk Support. Zendesk Support puts all your cust
 
     - Paste the key into the field, and then click **Access account**.
 
-1.  Install the {{site.data.keyword.conversationshort}} private application in your Zendesk Chat subdomain.
-{: #deploy-web-chat-zendesk-add-private-app}
+1.  {: #deploy-web-chat-zendesk-add-private-app}Install the {{site.data.keyword.conversationshort}} private application in your Zendesk Chat subdomain.
 
     When you create a Zendesk Chat account, you specify a subdomain. Afterward, your Zendesk console is available from a URL with the syntax: `<subdomain>.zendesk.com`. For example, `ibm.zendesk.com`.
     
@@ -313,16 +311,14 @@ To set up a Salesforce service desk integration, complete the following steps:
       Go to the Salesforce **Setup>Chat>Chat Buttons & Invitations** page. Find your organization's button implementation. Scroll to the end of the page, and then copy the *Chat Button Code* snippet.
     - Paste the chat button code snippet into the **Chat button code** field in the {{site.data.keyword.conversationshort}} Salesforce configuration page.
 
-1.  Add a chat app that enables the Salesforce agent to interact with your assistant. To do so, create a Visualforce page, and then add a chat app to the page.
-{: #deploy-web-chat-salesforce-add-visualforce-page}
+1.  {: #deploy-web-chat-salesforce-add-visualforce-page}Add a chat app that enables the Salesforce agent to interact with your assistant. To do so, create a Visualforce page, and then add a chat app to the page.
 
     Visualforce pages are the mechanism that Salesforce provides for you to customize a live agent's console by adding your own pages to it. A Visualforce page is similar to a standard web page, but it provides ways for you to access, display, and update your organization’s data. Pages can be referenced and invoked by using a unique URL, just as HTML pages on a traditional web server can be. See [Create Visualforce Pages](https://help.salesforce.com/articleView?id=pages_creating.htm&type=5){: external}
 
     - Copy the code snippet from the Visualforce page markup field.
     - From Salesforce Setup, search for **Visualforce Pages**. Create a page. Add a label and name to the page, and then paste the code snippet that you copied in the previous step into the page markup field.
 
-1.  Add custom fields to the Salesforce chat transcript layout.
-{: #deploy-web-chat-salesforce-add-custom-fields}
+1.  {: #deploy-web-chat-salesforce-add-custom-fields}Add custom fields to the Salesforce chat transcript layout.
 
     This is a one-time task. If the fields already exist for your organization, you can skip this step.
     {: note}
@@ -343,8 +339,7 @@ To set up a Salesforce service desk integration, complete the following steps:
       - **Field Label**: `x-watson-assistant-token`
       - **Field Length**: Specify the maximum length allowed to ensure it can hold a token that might contain over 100,000 characters.
 
-1.  Add the Visualforce page that you created to the Salesforce chat app.
-{: #deploy-web-chat-salesforce-add-page-to-layout}
+1.  {: #deploy-web-chat-salesforce-add-page-to-layout}Add the Visualforce page that you created to the Salesforce chat app.
 
     To ensure the Salesforce agents can see history of the chat between the customer and your assistant, you must add the page that you created earlier into the console that they use to keep track of their work. See [Create and Configure Lightning Experience Record Pages](https://help.salesforce.com/articleView?id=lightning_app_builder_customize_lex_pages.htm&type=5){: external}.
     

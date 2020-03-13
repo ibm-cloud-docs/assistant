@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-05"
+lastupdated: "2020-03-13"
 
 subcollection: assistant
 
@@ -32,7 +32,10 @@ When you participate in the early access program, IBM gives you early access to 
 ## Available beta features
 {: #beta-features}
 
-No features are available currently. 
+No features are available currently.
+
+If you were testing a feature, but it is not listed here, it probably means that it has been released as a beta feature to everyone.
+{: tip}
 
 ## Participate in the program
 {: #beta-access}
