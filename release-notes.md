@@ -52,6 +52,12 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
+## 16 March 2020
+{: #16March2020}
+<!--1.93-->
+
+- **Instructions updated for Slack integrations**: The steps required to set up a Slack integration have changed to reflect permission assignment changes that were made by Slack. For more information, see [Integrating with Slack](/docs/assistant?topic=assistant-deploy-slack). 
+
 ## 10 March 2020
 {: #10March2020}
 <!--1.92-->
@@ -174,10 +180,10 @@ The following technologies are being deprecated:
 ## 12 December 2019
 {: #12December2019}
 
-- **New network and data security features**
+- **New network and data security feature**
 
-    - **Support for data encryption with customer-managed keys**
-        - Users of Premium plans can integrate {{site.data.keyword.keymanagementservicefull}} with  {{site.data.keyword.conversationshort}} to encrypt their data and manage encryption keys.
+    <!-- **Support for data encryption with customer-managed keys**
+        - Users of Premium plans can integrate {{site.data.keyword.keymanagementservicefull}} with  {{site.data.keyword.conversationshort}} to encrypt their data and manage encryption keys.-->
     - **Support for private network endpoints**
         - Users of Premium plans can create private network endpoints to connect to {{site.data.keyword.conversationshort}} over a private network. Connections to private network endpoints do not require public internet access.
 
