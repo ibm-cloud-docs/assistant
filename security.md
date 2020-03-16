@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-18"
+lastupdated: "2020-03-16"
 
 subcollection: assistant
 
@@ -29,9 +29,9 @@ subcollection: assistant
 Learn more about strategies that are available for you to use to ensure that your {{site.data.keyword.conversationshort}} data remains secure and protected in the cloud.
 {: shortdesc}
 
-![Premium plan only](images/premium0.png) The following features are available with Premium plans only.
+![Premium plan only](images/premium0.png) The following feature is available with Premium plans only.
 
-## Bring your own key
+<!--## Bring your own key
 {: #security-byok}
 
 When you integrate with {{site.data.keyword.keymanagementservicefull}}, you can encrypt {{site.data.keyword.conversationshort}} data in Premium plan instances with encryption keys that you create or import.
@@ -44,7 +44,7 @@ For implementation details, see [Protecting sensitive information in your {{site
 - Do not delete your key or your {{site.data.keyword.keymanagementserviceshort}} instance. The key is required to access your data and only you manage it. IBM cannot help you retrieve your data if you accidentally delete your key.
 - You cannot delete the first {{site.data.keyword.conversationshort}} service instance that you create with your Premium plan. The access policies for your Premium instances are derived from the first instance that you add. In fact, each time you create an instance in this Premium plan, you must set the **Encrypted with a Key Protect root key** option to **Yes**, and then specify the key protect instance details for this plan.
 
-For existing customers, a new slot must be provisioned for you before you can use {{site.data.keyword.keymanagementserviceshort}}, and your data must be migrated to it. You also must create a new resource group and use it with your new Premium instances.
+For existing customers, a new slot must be provisioned for you before you can use {{site.data.keyword.keymanagementserviceshort}}, and your data must be migrated to it. You also must create a new resource group and use it with your new Premium instances.-->
 
 ## Private network endpoints
 {: #security-private-endpoints}

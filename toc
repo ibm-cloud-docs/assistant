@@ -94,7 +94,6 @@ Watson Assistant
     {: .topicgroup}
     Early access program
         beta.md
-        beta-deploy-web-chat.md
     
     {: .topicgroup}
     Technology preview

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-12"
+lastupdated: "2020-03-16"
 
 subcollection: assistant
 
@@ -38,7 +38,18 @@ Historically, the service access role assignments that were defined for a {{site
 ### Location support
 {: #access-control-geos}
 
-Service level access roles are supported in the Tokyo and Seoul data centers only. Access assignments that are specified at the resource-level are not yet supported.
+Service-level access role support is being enabled in phases. The following table shows the status of support in different data centers.
+
+| Location    | Service access support adoption date |
+|-------------|--------------------------------------|
+| Dallas      | N/A |
+| Frankfurt   | N/A |
+| Seoul       | 2 March 2020 |
+| Sydney      | 16 March 2020 |
+| Tokyo       |  2 March 2020 |
+| London      | 16 March 2020 |
+| Washington DC  | 16 March 2020 |
+{: caption="Data centers with service access role support" caption-side="top"}
 
 ## How to keep your access
 {: #access-control-prep}
@@ -308,4 +319,4 @@ The following table shows the UI and API actions that can be performed by differ
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Table 5. Action privileges per service role" caption-side="top"}
-{: summary="This table has row and column headers. The row headers identify the user interface actions. The column headers identify the different resource-level roles. To understand which roles can do an action, go to the row that describes the action, and find the columns for the role you are interested in."}
+{: summary="This table has row and column headers. The row headers identify the user interface or API actions. The column headers identify the different resource-level roles. To understand which roles can do an action, go to the row that describes the action, and find the columns for the role you are interested in."}
