@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-13"
+lastupdated: "2020-03-17"
 
 subcollection: assistant
 
@@ -253,7 +253,7 @@ Zendesk Chat is an add-on to Zendesk Support. Zendesk Support puts all your cust
 
     When you create a Zendesk Chat account, you specify a subdomain. Afterward, your Zendesk console is available from a URL with the syntax: `<subdomain>.zendesk.com`. For example, `ibm.zendesk.com`.
     
-    IBM provides an application that you can install in your Zendesk Chat domain. When a customer asks to speak to a person, your assistant will transfer the in-progress conversation and a chat summary to the Zendesk agent by using this private app.
+    IBM provides an application that you can install in your Zendesk Chat domain. When a customer asks to speak to a person, your assistant will share a chat summary for the transferred conversation with the Zendesk agent by using this private app.
 
     - Download the private application from the Zendesk Chat setup page in {{site.data.keyword.conversationshort}}.
 
@@ -261,13 +261,15 @@ Zendesk Chat is an add-on to Zendesk Support. Zendesk Support puts all your cust
 
     - Log in to Zendesk with a user ID that has Administrative privileges.
 
-    - Install the private application to your Zendesk Chat subdomain as a new private app. When credentials are requested, paste the private app credentials that you copied earlier.
+    - Install the private application to your Zendesk Chat subdomain as a new private app. When credentials are requested, paste the private app credentials that you copied earlier. Go to *Settings > Account > Apps* to upload the private app.
 
-    For more information, see [Uploading and installing a private app in Zendesk Chat](https://develop.zendesk.com/hc/en-us/articles/360001069347-Uploading-and-installing-a-private-app){: external}.
+      For more information, see [Uploading and installing a private app in Zendesk Chat](https://develop.zendesk.com/hc/en-us/articles/360001069347-Uploading-and-installing-a-private-app){: external}.
+
+1.  Optionally, add an agent avatar image. Edit your profile to upload an avatar image. The image file that you upload cannot be larger than 50 x 50 pixels and 100 KB.
 
 1.  Click **Save** to finish setting up the connection to the Zendesk Chat service desk.
 
-When you test the service desk integration, make sure there is at least one agent with `online` status. Agent status is set to `invisible` unless it is explicitly changed.
+When you test the service desk integration, make sure there is at least one agent with `Online` status. Agent status is set to `Invisible` unless it is explicitly changed.
 
 ### Setting up a Salesforce integration
 {: #deploy-web-chat-salesforce}
@@ -355,6 +357,8 @@ To set up a Salesforce service desk integration, complete the following steps:
     - Click *Next*, and then click *Save*.
 
 1.  From the Salesforce configuration page in {{site.data.keyword.conversationshort}}, click **Save** to finish setting up the connection.
+
+When you test the service desk integration, make sure there is at least one agent with `Available` status.
 
 ## Adding transfer support to your dialog
 {: #deploy-web-chat-dialog-prereq}
