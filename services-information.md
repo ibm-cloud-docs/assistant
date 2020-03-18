@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-13"
+lastupdated: "2020-03-18"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
@@ -99,12 +99,12 @@ The built-in integrations use a combination of the `session_id` and `user_id` to
 Billing is managed per monthly active user per service instance. If a single user interacts with assistants that are hosted by different service instances that belong to the same plan, each interaction is treated as a separate use. You are billed for the user's interaction with each service instance separately.
 
 ### Test activity charges
-{: services-information-billing-testing}
+{: #services-information-billing-testing}
 
 When testing your skills and assistants, any messages that you submit in the "Try it out" pane are not charged. However, test messages that you send from the preview link integration are charged. For the preview link, a random `user_id` is generated and stored in a cookie. The multiple interactions that a single tester has with the assistant embedded in the preview link are recognized as coming from a single user and are charged accordingly. If you are doing your own test, running a scripted regression test for example, use a single `user_id` for all of the calls within your regression test. Other uses are flagged as abuse.
 
 ### Handling anonymous users
-{: services-information-billing-anonymous}
+{: #services-information-billing-anonymous}
 
 If your custom application or assistant interacts with users who are anonymous, you can generate your own randomized universally unique IDs to represent these users. 
 

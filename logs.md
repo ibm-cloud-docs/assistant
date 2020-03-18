@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-12"
+lastupdated: "2020-03-18"
 
 keywords: mark as irrelevant, counterexample, data source, deployment ID
 
@@ -115,7 +115,7 @@ To populate the metrics with message data from a dialog skill or skill version t
 
 1.  Click the **Data source** field to see a list of assistants with log data that you might want to use.
 
-    The list includes assistants that have been deployed and to which you have access. See [*Show deployment IDs* explained](#logs-deployment-id-explained) for more information about that option.
+    The list includes assistants that have been deployed and to which you have access. For more information about the **Show deployment IDs** option, see [*Show deployment IDs* explained](#logs-deployment-id-explained).
 
 1.  Choose a data source.
 
@@ -128,7 +128,7 @@ Notice the list does not include skill versions. To get data that is associated 
 
 Applications that use the older v1 runtime API must specify a deployment ID in each messages sent using the `/message` API. This ID identifies the deployed app that the call was made from. The Analytics page can use this deployment ID to retrieve and display logs that are associated with a specific live application.
 
-For assistants or custom apps that use the v2 version of the API, your assistant automatically includes a system id and skill id with each /message call, so you can choose a data source by assistant name instead of using a deployment ID.
+For assistants or custom apps that use the v2 version of the API, your assistant automatically includes an assistant ID with each /message call, so you can choose a data source by assistant name instead of using a deployment ID.
 
 To add the deployment ID, v1 API users include the deployment property inside the metadata of the [context](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#get-response-to-user-input){: external}, as in this example:
 
