@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-13"
+lastupdated: "2020-03-18"
 
 subcollection: assistant
 
@@ -52,11 +52,18 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
+## 18 March 2020
+{: #18March2020}
+
+- **Technology preview is discontinued**: The technology preview user interface was replaced with the {{site.data.keyword.conversationshort}} standard user interface. If you used an Actions page to create actions and steps for your skill previously, you cannot access the Actions page anymore. Instead, use the Intents and Dialog pages to work with your skill. For more information, see [Exiting the technology preview](/docs/assistant?topic=assistant-dialog-evolution).
+
 ## 16 March 2020
 {: #16March2020}
 <!--1.93-->
 
-- **Instructions updated for Slack integrations**: The steps required to set up a Slack integration have changed to reflect permission assignment changes that were made by Slack. For more information, see [Integrating with Slack](/docs/assistant?topic=assistant-deploy-slack). 
+- **Instructions updated for Slack integrations**: The steps required to set up a Slack integration have changed to reflect permission assignment changes that were made by Slack. For more information, see [Integrating with Slack](/docs/assistant?topic=assistant-deploy-slack).
+
+- **Order of response types is preserved**: Previously, if you included a response type of **Search skill** in a list of response types for a dialog node, the search results were displayed last despite its placement in the list. This behavior was changed to show the search results in the appropriate order, namely in the sequence in which the search skill response type is listed for the dialog node.
 
 ## 10 March 2020
 {: #10March2020}
