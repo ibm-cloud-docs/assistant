@@ -31,7 +31,7 @@ The new `@sys-date` system entity recognizes dates that fall on national holiday
 The following sections list the holidays that are recognized for different locales.
 
 ## Holidays (en-us)
-{: #sys-date-festivals-en-us}
+{: #sys-date-festivals-enus}
 
 - New Year's Day
 - Inauguration Day
@@ -62,7 +62,7 @@ The following sections list the holidays that are recognized for different local
 - New Year's Eve
 
 # Holidays (en-gb)
-{: #sys-date-festivals-en-gb}
+{: #sys-date-festivals-engb}
 
 - New Year's Day
 - New Year's Day observed
@@ -96,7 +96,7 @@ The following sections list the holidays that are recognized for different local
 - New Year's Eve
 
 # Holidays (ar-ar)
-{: #sys-date-festivals-ar-ar}
+{: #sys-date-festivals-arar}
 
 - New Year's Day
 - Valentine's Day
@@ -112,7 +112,7 @@ The following sections list the holidays that are recognized for different local
 - Christmas Day
 
 # Holidays (cs-cz)
-{: #sys-date-festivals-cs-cz}
+{: #sys-date-festivals-cscz}
 
 - New Year's Day
 - Restoration of the Czech Independence Day
@@ -137,7 +137,7 @@ The following sections list the holidays that are recognized for different local
 - New Year's Eve
 
 # Holidays (de-de)
-{: #sys-date-festivals-de-de}
+{: #sys-date-festivals-dede}
 
 - New Year's Day
 - Epiphany (BW, BY, ST)
@@ -180,7 +180,7 @@ The following sections list the holidays that are recognized for different local
 - New Year's Eve
 
 # Holidays (en-ca)
-{: #sys-date-festivals-en-ca}
+{: #sys-date-festivals-enca}
 
 - New Year's Day
 - Epiphany
@@ -212,7 +212,7 @@ The following sections list the holidays that are recognized for different local
 - New Year's Eve
 
 # Holidays (es-es)
-{: #sys-date-festivals-es-es}
+{: #sys-date-festivals-eses}
 
 - New Year's Day
 - Epiphany
@@ -257,7 +257,7 @@ The following sections list the holidays that are recognized for different local
 - New Year's Eve
 
 # Holidays (fr-fr)
-{: #sys-date-festivals-fr-fr}
+{: #sys-date-festivals-frfr}
 
 - New Year's Day
 - Valentines Day
@@ -279,7 +279,7 @@ The following sections list the holidays that are recognized for different local
 - New Years Eve
 
 # Holidays (hi-in)
-{: #sys-date-festivals-hi-in}
+{: #sys-date-festivals-hiin}
 
 - New Year's Day
 - Inauguration Day
@@ -304,7 +304,7 @@ The following sections list the holidays that are recognized for different local
 - Christmas
 
 # Holidays (it-it)
-{: #sys-date-festivals-it-it}
+{: #sys-date-festivals-itit}
 
 - New Year's Day
 - Valentine's Day
@@ -324,7 +324,7 @@ The following sections list the holidays that are recognized for different local
 - New Year's Eve
 
 # Holidays (iw-il)
-{: #sys-date-festivals-iw-il}
+{: #sys-date-festivals-iwil}
 
 - Erev Purim
 - Yom HaAliyah
@@ -370,7 +370,7 @@ The following sections list the holidays that are recognized for different local
 - Hanukkah VII
 
 # Holidays (ja-jp)
-{: #sys-date-festivals-ja-jp}
+{: #sys-date-festivals-jajp}
 
 - New Year's Day
 - January 2 Bank Holiday
@@ -416,7 +416,7 @@ The following sections list the holidays that are recognized for different local
 - December 31 Bank Holiday
 
 # Holidays (ko-kr)
-{: #sys-date-festivals-ko-kr}
+{: #sys-date-festivals-kokr}
 
 - New Year's Day
 - Independence Movement Day
@@ -438,7 +438,7 @@ The following sections list the holidays that are recognized for different local
 - National Assembly Election Day
 
 # Holidays (nl-nl)
-{: #sys-date-festivals-nl-nl}
+{: #sys-date-festivals-nlnl}
 
 - New Year's Day
 - Valentine's Day
@@ -457,7 +457,7 @@ The following sections list the holidays that are recognized for different local
 - New Year's Eve
 
 # Holidays (pt-br)
-{: #sys-date-festivals-pt-br}
+{: #sys-date-festivals-ptbr}
 
 - New Year's Day
 - Carnival Friday
@@ -487,7 +487,7 @@ The following sections list the holidays that are recognized for different local
 - New Year's Eve (from 2pm)
 
 # Holidays (pt-pt)
-{: #sys-date-festivals-pt-pt}
+{: #sys-date-festivals-ptpt}
 
 - New Year's Day
 - Valentine's Day
@@ -510,7 +510,7 @@ The following sections list the holidays that are recognized for different local
 - New Year's Eve
 
 # Holidays (sk-sk)
-{: #sys-date-festivals-sk-sk}
+{: #sys-date-festivals-sksk}
 
 - Republic Day
 - Epiphany
@@ -532,7 +532,7 @@ The following sections list the holidays that are recognized for different local
 - New Year's Eve
 
 # Holidays (zh-cn)
-{: #sys-date-holidays-zh-cn}
+{: #sys-date-holidays-zhcn}
 
 - New Year's Day
 - New Year's Weekend
@@ -555,7 +555,7 @@ The following sections list the holidays that are recognized for different local
 - National Day
 
 # Holidays (zh-tw)
-{: #sys-date-festivals-zh-tw}
+{: #sys-date-festivals-zhtw}
 
 - New Year's Day
 - New Year's Weekend
