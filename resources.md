@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-11-07"
+lastupdated: "2020-03-20"
 
 subcollection: assistant
 
@@ -38,8 +38,6 @@ Links to resources, videos, tutorials, and articles that can help you to get sta
 {: #resources-om-videos}
 
 - [Deep Dive: {{site.data.keyword.conversationshort}} integrations and new web chat with live agents](https://event.on24.com/eventRegistration/EventLobbyServlet?target=reg20.jsp&referrer=https%3A%2F%2Fwcc.on24.com%2Fwebcast%2Fwebcasts&eventid=2109942&sessionid=1&key=4671C1236885158BD7823403CE605635&regTag=&sourcepage=register)
-- [Best practices in building a dialog flow](https://onlinexperiences.com/scripts/Server.nxp?LASCmd=AI:4;F:QS!10100&ShowUUID=269C27BC-909C-4094-879C-96832E1BEA9A&LangLocaleID=1033&Referrer=https%3A%2F%2Fmail.notes.na.collabserv.com%2Fverse)
-- [How to continuously train and improve your virtual assistant](https://event.on24.com/eventRegistration/EventLobbyServlet?target=reg20.jsp&referrer=https%3A%2F%2Fwcc.on24.com%2Fwebcast%2Fregistration%2F1887419&eventid=1887419&sessionid=1&key=F3C33E6E145971E9E4AA8508360B299B&regTag=&sourcepage=register)
 
 ## Developer resources for building assistants
 {: #resources-for-bots}
@@ -70,8 +68,6 @@ Additional videos created by IBMers.
 - [Watson Assistant demos](https://www.ibm.com/demos/collection/Watson-Assistant/){: external}: A collection of resources, including a product tour and hands-on lab.
 - [{{site.data.keyword.conversationshort}} Integrations Tutorial ](https://www.youtube.com/watch?v=O3silvVBaC8&t=3s){: external}: A 10-minute tutorial you can follow to connect {{site.data.keyword.conversationshort}} with Twilio using Botkit to create a SMS chatbot.
 - [Show me how to use {{site.data.keyword.conversationshort}}](https://youtu.be/tUkLIUOm550){: external}: A 3-minute overview of the product.
-- [Introducing {{site.data.keyword.conversationshort}} service](https://youtu.be/A96nLYSMltA){: external}: A 1-minute introduction.
-- [Walkthrough of {{site.data.keyword.conversationshort}}](https://youtu.be/ELwWhJGE2P8){: external}: A 14-minute technical walkthrough.
 
 ## Educational materials
 {: #resources-academy}

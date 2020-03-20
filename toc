@@ -114,6 +114,7 @@ Watson Assistant
         system-entities.md
         new-system-entities.md
         time-zones.md
+        sys-date-festivals.md
 
     /watson/watson-using-sdks
     [Watson GitHub repos](https://github.com/watson-developer-cloud/)

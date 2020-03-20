@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-03-20"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
@@ -77,7 +77,7 @@ The following features are available only to users of Plus or Premium plans.
 
 Unlike API-based plans, which measure usage by the number of API calls made during a month, the Plus and Premium plans measure usage by the number of monthly active users.
 
-A monthly active user is any unique user who has at least one meaningful interaction with your assistant or custom application over the calendar billing month. A meaningful interaction is an exchange in which a user sends a request to your service and your service responds. Welcome messages that are displayed at the start of a conversation are not charged.
+A monthly active user (MAU) is any unique user who has at least one meaningful interaction with your assistant or custom application over the calendar billing month. A meaningful interaction is an exchange in which a user sends a request to your service and your service responds. Welcome messages that are displayed at the start of a conversation are not charged.
 
 A unique user is recognized by the user ID that is associated with the person that interacts with your assistant. It is your responsibility to pass the user ID information to the service. {{site.data.keyword.conversationshort}} checks for the following information from API requests in this order for billing purposes:
 
