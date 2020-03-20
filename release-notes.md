@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-19"
+lastupdated: "2020-03-20"
 
 subcollection: assistant
 
@@ -51,6 +51,14 @@ The {{site.data.keyword.conversationshort}} algorithms may be periodically refin
 Existing models that you have trained will not be immediately impacted, but expired models will be updated to the current model, if you have not already done so, after 60 days of a new model becoming available.
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
+
+## 20 March 2020
+{: #20March2020}
+
+- **Web Chat integration version 1.4.0 is available**: The update includes the following features:
+
+  - You can customize the CSS theme that is used by the Web Chat. For more information, see [Theming](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-instance-methods#theming){: new_window}.
+  - Shadow DOM is no longer used in the Web Chat. When you use custom response types or HTML in your dialog, you can apply CSS styles that are defined in your web page to the assistant's response. To override any default styling in the Web Chat, you must specify the `!important` modifier in your CSS. For more information, see https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-render#html{: new_window}.
 
 ## 19 March 2020
 {: #19March2020}
