@@ -61,7 +61,7 @@ The following sections list the holidays that are recognized for different local
 - Boxing Day
 - New Year's Eve
 
-# Holidays (en-gb)
+## Holidays (en-gb)
 {: #sys-date-festivals-engb}
 
 - New Year's Day
@@ -95,7 +95,7 @@ The following sections list the holidays that are recognized for different local
 - Bank Holiday (Day 2)
 - New Year's Eve
 
-# Holidays (ar-ar)
+## Holidays (ar-ar)
 {: #sys-date-festivals-arar}
 
 - New Year's Day
@@ -111,7 +111,7 @@ The following sections list the holidays that are recognized for different local
 - Laylat al-Miraj
 - Christmas Day
 
-# Holidays (cs-cz)
+## Holidays (cs-cz)
 {: #sys-date-festivals-cscz}
 
 - New Year's Day
@@ -136,7 +136,7 @@ The following sections list the holidays that are recognized for different local
 - St Stephen's Day
 - New Year's Eve
 
-# Holidays (de-de)
+## Holidays (de-de)
 {: #sys-date-festivals-dede}
 
 - New Year's Day
@@ -179,7 +179,7 @@ The following sections list the holidays that are recognized for different local
 - Whit Sunday (Most regions)
 - New Year's Eve
 
-# Holidays (en-ca)
+## Holidays (en-ca)
 {: #sys-date-festivals-enca}
 
 - New Year's Day
@@ -211,7 +211,7 @@ The following sections list the holidays that are recognized for different local
 - Boxing Day
 - New Year's Eve
 
-# Holidays (es-es)
+## Holidays (es-es)
 {: #sys-date-festivals-eses}
 
 - New Year's Day
@@ -256,7 +256,7 @@ The following sections list the holidays that are recognized for different local
 - Almuneda Day
 - New Year's Eve
 
-# Holidays (fr-fr)
+## Holidays (fr-fr)
 {: #sys-date-festivals-frfr}
 
 - New Year's Day
@@ -278,7 +278,7 @@ The following sections list the holidays that are recognized for different local
 - Christmas Day
 - New Years Eve
 
-# Holidays (hi-in)
+## Holidays (hi-in)
 {: #sys-date-festivals-hiin}
 
 - New Year's Day
@@ -303,7 +303,7 @@ The following sections list the holidays that are recognized for different local
 - Halloween
 - Christmas
 
-# Holidays (it-it)
+## Holidays (it-it)
 {: #sys-date-festivals-itit}
 
 - New Year's Day
@@ -323,7 +323,7 @@ The following sections list the holidays that are recognized for different local
 - Labor Day, May Day
 - New Year's Eve
 
-# Holidays (iw-il)
+## Holidays (iw-il)
 {: #sys-date-festivals-iwil}
 
 - Erev Purim
@@ -369,7 +369,7 @@ The following sections list the holidays that are recognized for different local
 - Hanukkah VIII
 - Hanukkah VII
 
-# Holidays (ja-jp)
+## Holidays (ja-jp)
 {: #sys-date-festivals-jajp}
 
 - New Year's Day
@@ -415,7 +415,7 @@ The following sections list the holidays that are recognized for different local
 - Spring Equinox' Observed
 - December 31 Bank Holiday
 
-# Holidays (ko-kr)
+## Holidays (ko-kr)
 {: #sys-date-festivals-kokr}
 
 - New Year's Day
@@ -437,7 +437,7 @@ The following sections list the holidays that are recognized for different local
 - New Year's Eve
 - National Assembly Election Day
 
-# Holidays (nl-nl)
+## Holidays (nl-nl)
 {: #sys-date-festivals-nlnl}
 
 - New Year's Day
@@ -456,7 +456,7 @@ The following sections list the holidays that are recognized for different local
 - Second Day of Christmas
 - New Year's Eve
 
-# Holidays (pt-br)
+## Holidays (pt-br)
 {: #sys-date-festivals-ptbr}
 
 - New Year's Day
@@ -486,7 +486,7 @@ The following sections list the holidays that are recognized for different local
 - Christmas Day
 - New Year's Eve (from 2pm)
 
-# Holidays (pt-pt)
+## Holidays (pt-pt)
 {: #sys-date-festivals-ptpt}
 
 - New Year's Day
@@ -509,7 +509,7 @@ The following sections list the holidays that are recognized for different local
 - Christmas Day
 - New Year's Eve
 
-# Holidays (sk-sk)
+## Holidays (sk-sk)
 {: #sys-date-festivals-sksk}
 
 - Republic Day
@@ -531,7 +531,7 @@ The following sections list the holidays that are recognized for different local
 - St Cyril & St Methodius Day
 - New Year's Eve
 
-# Holidays (zh-cn)
+## Holidays (zh-cn)
 {: #sys-date-holidays-zhcn}
 
 - New Year's Day
@@ -554,7 +554,7 @@ The following sections list the holidays that are recognized for different local
 - Mid-Autumn Festival
 - National Day
 
-# Holidays (zh-tw)
+## Holidays (zh-tw)
 {: #sys-date-festivals-zhtw}
 
 - New Year's Day
