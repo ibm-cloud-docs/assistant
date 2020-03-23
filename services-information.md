@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-20"
+lastupdated: "2020-03-23"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
@@ -142,6 +142,9 @@ You can create {{site.data.keyword.conversationshort}} service instances that ar
 | London      | eu-gb         | lon          | 13 December 2018 | Instances that were created in the United Kingdom region before December 13 were syndicated to the US South region |
 | Washington DC  | us-east    | wdc          | 14 June 2018 | N/A |
 {: caption="Data center locations" caption-side="top"}
+
+For an additional cost, you can request that service instances in a Premium plan account be hosted by different data centers.
+{: note}
 
 For more information about the data centers in which other {{site.data.keyword.cloud_notm}} services are hosted, see [Services by region](/docs/resources/services_region?topic=resources-services_region#services_region){: external}.
 
