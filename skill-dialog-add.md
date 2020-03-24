@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-12"
+lastupdated: "2020-03-24"
 
 keywords: import workspace, import JSON, export JSON
 
@@ -161,7 +161,7 @@ To share a dialog skill with other people, you must give them access to the serv
     - **Platform access roles**: Operator
     - **Service access roles**: Writer
 
-    The service access role assignment is currently ignored in all data centers except Tokyo and Seoul. Any person you invite is given Manager access to the instance and all of its skills and assistants, regardless of the *Service access role* you assign to them. When service access roles are supported in all data centers, your choose will matter.
+    The service access role assignment is currently ignored in the Dallas and Frankfurt data centers. Any person you invite is given Manager access to the instance and all of its skills and assistants, regardless of the *Service access role* you assign to them. When service access roles are supported in all data centers, your choose will matter.
     {: important}
 
 1.  Click **Add**.

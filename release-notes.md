@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-20"
+lastupdated: "2020-03-24"
 
 subcollection: assistant
 
@@ -63,6 +63,12 @@ Existing models that you have trained will not be immediately impacted, but expi
 ## 19 March 2020
 {: #19March2020}
 <!--1.93.1-->
+
+- **A COVID-19 content catalog is available**: The English-only content catalog defines a group of intents that recognize the common types of questions people ask about the novel coronavirus. The World Health Organization characterized COVID-19 as a pandemic in March 2020. You can use the catalog to jump-start development of chatbots that can answer questions about the virus and help to minimize the anxiety and misinformation associated with it.
+
+  ![Shows a list of the intents associated with the COVID-19 content catalog.](images/covid-19-catalog.png)
+
+  For more information about how to add a content catalog to your skill, see [Using content catalogs](/docs/assistant?topic=assistant-catalog).
 
 - **Fixed a problem with missing User Conversation data**: A recent change resulted in no logs being shown in the User Conversations page unless you had a skill as the chosen data source. And the chosen skill had to be the same skill (with same skill ID) that was connected to the assistant when the user messages were submitted.
 
