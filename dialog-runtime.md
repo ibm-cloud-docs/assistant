@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-12"
+lastupdated: "2020-03-24"
 
 keywords: context, context variable, digression, disambiguation, autocorrection, spelling correction, spell check, confidence 
 
@@ -1021,8 +1021,6 @@ To edit the disambiguation settings, complete the following steps:
     Your changes are automatically saved.
 
 Next, you must decide which dialog nodes you want to make eligible for disambiguation. From the Skills menu, click **Dialog**.
-
-![Technology preview experience only](images/preview.png) If you don't have a **Dialogs** page, you are using the preview experience of the product. Each action is eligible for disambiguation. For more details, see [Creating actions](/docs/assistant?topic=assistant-actions).
 
 ### Choosing eligible nodes
 {: #dialog-runtime-choose-nodes}

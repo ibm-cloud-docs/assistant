@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-03-24"
 
 subcollection: assistant
 
@@ -29,9 +29,9 @@ subcollection: assistant
 ***Content Catalogs*** provide an easy way to add common intents to your {{site.data.keyword.conversationshort}} dialog skill.
 {: shortdesc}
 
-![Technology preview experience only](images/preview.png) If you don't see the **Content Catalog** page in your skill, then you are using the technology preview version of the product. To get started, see [Creating actions](/docs/assistant?topic=assistant-actions).
-
 Intents you add from the catalog are meant to provide a starting point. Add to or edit the catalog intents to tailor them for your use case.
+
+The latest content catalog, named `Covid-19`, is available in English only. For more information about language support for the catalogs, see [Supported languages](/docs/assistant?topic=assistant-language-support).
 
 ## Adding a content catalog to your dialog skill
 {: #catalog-add}

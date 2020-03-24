@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-12"
+lastupdated: "2020-03-24"
 
 keywords: dialog node limits, copying a node, moving a node, adding a folder, building a dialog
 
@@ -31,8 +31,6 @@ subcollection: assistant
 
 The dialog defines what your assistant says in response to customers, based on what it believes the customer wants.
 {: shortdesc}
-
-![Technology preview experience only](images/preview.png) If you don't see the **Dialog** page in your skill, then you are using the technology preview version of the product. To get started, see [Creating actions](/docs/assistant?topic=assistant-actions).
 
 ## Building a dialog
 {: #dialog-build-task}
