@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-23"
+lastupdated: "2020-03-25"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
@@ -106,7 +106,7 @@ When testing your skills and assistants, any messages that you submit in the "Tr
 ### Handling anonymous users
 {: #services-information-billing-anonymous}
 
-If your custom application or assistant interacts with users who are anonymous, you can generate your own randomized universally unique IDs to represent these users. 
+If your custom application or assistant interacts with users who are anonymous, you can generate your own randomized universally unique IDs to represent these users. For more information about UUIDs, see [RFC 4122](https://tools.ietf.org/html/rfc4122.html){: external}.
 
 - For Web Chat, if you are not passing an identifier for the user when the session begins, the Web Chat generates a unique ID for the user and stores it. If the same user returns to your site later in the month and chats with your assistant again, the Web Chat integration recognizes the user. And you are charged only once when an anonymous user interacts with your assistant multiple times in a single month.
 
