@@ -64,7 +64,7 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #19March2020}
 <!--1.93.1-->
 
-- **A COVID-19 content catalog is available**: The English-only content catalog defines a group of intents that recognize the common types of questions people ask about the novel coronavirus. The World Health Organization characterized COVID-19 as a pandemic in March 2020. You can use the catalog to jump-start development of chatbots that can answer questions about the virus and help to minimize the anxiety and misinformation associated with it.
+- **A Covid-19 content catalog is available**: The English-only content catalog defines a group of intents that recognize the common types of questions people ask about the novel coronavirus. The World Health Organization characterized COVID-19 as a pandemic in March 2020. You can use the catalog to jump-start development of chatbots that can answer questions about the virus and help to minimize the anxiety and misinformation associated with it.
 
   ![Shows a list of the intents associated with the COVID-19 content catalog.](images/covid-19-catalog.png)
 
