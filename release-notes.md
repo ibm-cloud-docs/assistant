@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-24"
+lastupdated: "2020-03-26"
 
 subcollection: assistant
 
@@ -52,6 +52,11 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
+## 26 March 2020
+{: #26March2020}
+
+- **The Covid-19 content catalog is available in Brazilian Portuguese, French, and Spanish**: The content catalog defines a group of intents that recognize the common types of questions people ask about the novel coronavirus. You can use the catalog to jump-start development of chatbots that can answer questions about the virus and help to minimize the anxiety and misinformation associated with it. For more information about how to add a content catalog to your skill, see [Using content catalogs](/docs/assistant?topic=assistant-catalog).
+
 ## 20 March 2020
 {: #20March2020}
 
@@ -64,7 +69,7 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #19March2020}
 <!--1.93.1-->
 
-- **A Covid-19 content catalog is available**: The English-only content catalog defines a group of intents that recognize the common types of questions people ask about the novel coronavirus. The World Health Organization characterized COVID-19 as a pandemic in March 2020. You can use the catalog to jump-start development of chatbots that can answer questions about the virus and help to minimize the anxiety and misinformation associated with it.
+- **A Covid-19 content catalog is available**: The English-only content catalog defines a group of intents that recognize the common types of questions people ask about the novel coronavirus. The World Health Organization characterized COVID-19 as a pandemic on 11 March 2020. You can use the catalog to jump-start development of chatbots that can answer questions about the virus and help to minimize the anxiety and misinformation associated with it.
 
   ![Shows a list of the intents associated with the COVID-19 content catalog.](images/covid-19-catalog.png)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-24"
+lastupdated: "2020-03-26"
 
 subcollection: assistant
 
@@ -31,7 +31,7 @@ subcollection: assistant
 
 Intents you add from the catalog are meant to provide a starting point. Add to or edit the catalog intents to tailor them for your use case.
 
-The latest content catalog, named `Covid-19`, is available in English only. For more information about language support for the catalogs, see [Supported languages](/docs/assistant?topic=assistant-language-support).
+The latest content catalog, named `Covid-19`, is available in Brazilian Portuguese, English, French, and Spanish only. For more information about language support for the catalogs, see [Supported languages](/docs/assistant?topic=assistant-language-support).
 
 ## Adding a content catalog to your dialog skill
 {: #catalog-add}
