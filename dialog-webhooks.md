@@ -42,7 +42,7 @@ You can use a webhook to do the following types of things:
 - Trigger a SMS notification.
 - Trigger a {{site.data.keyword.openwhisk}} web action.
 
-You cannot use a webhook to call a {{site.data.keyword.openwhisk_short}} action that uses token-based Identity and Access Management (IAM) authentication. However, you can make a call to secured Cloud Function web action. For more information, see [Calling an IBM Cloud Functions web action](#dialog-webhooks-cf-web-action).
+You cannot use a webhook to call a {{site.data.keyword.openwhisk_short}} action that uses token-based Identity and Access Management (IAM) authentication. However, you can make a call to a secured {{site.data.keyword.openwhisk_short}} web action. For more information, see [Calling an IBM {{site.data.keyword.openwhisk_short}} web action](#dialog-webhooks-cf-web-action).
 {: important}
 
 For information about how to call a client application, see [Calling a client application from a dialog node](/docs/assistant?topic=assistant-dialog-actions-client).
