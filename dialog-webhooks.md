@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-13"
+lastupdated: "2020-03-26"
 
 subcollection: assistant
 
@@ -42,8 +42,8 @@ You can use a webhook to do the following types of things:
 - Trigger a SMS notification.
 - Trigger a {{site.data.keyword.openwhisk}} web action.
 
-You cannot use a webhook to call a {{site.data.keyword.openwhisk_short}} action that uses token-based Identity and Access Management (IAM) authentication.
-{: note}
+You cannot use a webhook to call a {{site.data.keyword.openwhisk_short}} action that uses token-based Identity and Access Management (IAM) authentication. However, you can make a call to a secured {{site.data.keyword.openwhisk_short}} web action. For more information, see [Calling an IBM {{site.data.keyword.openwhisk_short}} web action](#dialog-webhooks-cf-web-action).
+{: important}
 
 For information about how to call a client application, see [Calling a client application from a dialog node](/docs/assistant?topic=assistant-dialog-actions-client).
 
@@ -263,8 +263,10 @@ To change the external service that you call from dialog nodes, edit the webhook
 
 You write the webhook URL and provide headers differently based on whether you are calling a standard action or a web action.-->
 
-### Calling an IBM Cloud Functions web action
+## Calling an IBM Cloud Functions web action
 {: #dialog-webhooks-cf-web-action}
+
+Typically, web actions can be run without requiring the caller to authenticate first. However, you can secure a web action that requires any callers to pass an ID with the request. For more information about how to secure a web action, see [Securing web actions](/docs/openwhisk?topic=cloud-functions-actions_web#actions_web_secure){: external}.
 
 The following tips will help you call a {{site.data.keyword.openwhisk_short}} web action from your dialog. 
 
@@ -284,11 +286,19 @@ The following tips will help you call a {{site.data.keyword.openwhisk_short}} we
     Notice the request URL in this example ends in `.json`. By specifying this extension, you take advantage of a feature of web actions that lets you specify the desired content type of the response. Specifying this extension type ensures that, if the web actions can return responses in more than one format, a JSON response will be returned. See [Extra features](/docs/openwhisk?topic=cloud-functions-actions_web#actions_web_extra){: external} for more details.
     {: tip}
 
-1.  You do not need to add any headers.
+1.  If the web action is secured, specify any headers, such as `X-Require-Whisk-Auth`, that are required to call the web action.
 
-    {{site.data.keyword.openwhisk_short}} web actions do not need to be authenticated, so you do not need to define an Authorization header.
-
-    Your webhook details are saved automatically.
+    <table>
+    <caption>Header example</caption>
+      <tr>
+      <th>Header name</th>
+      <th>Header value</th>
+      </tr>
+      <tr>
+      <td>`X-Require-Whisk-Auth`</td>
+      <td>`{my-secret}`</td>
+      </tr>
+    </table>
 
 1.  Click the **Dialog** tab.
 

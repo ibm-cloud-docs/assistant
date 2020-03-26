@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-24"
+lastupdated: "2020-03-26"
 
 subcollection: assistant
 
@@ -71,13 +71,13 @@ Table 2a. Intent feature support details
 | **Chinese (Traditional) (zh-tw)**  | Beta | NA | NA |
 | **Czech (cs)**                     | GA | NA | NA |
 | **Dutch (nl)**                     | GA | NA | NA |
-| **French (fr)**                    | GA | GA (except Covid-19) | Beta |
+| **French (fr)**                    | GA | GA | Beta |
 | **German (de)**                    | GA | GA (except Covid-19) | NA |
 | **Italian (it)**                   | GA | GA (except Covid-19) | NA |
 | **Japanese (ja)**                  | GA | GA (except Covid-19) | NA |
 | **Korean (ko)**                    | GA | NA | NA |
-| **Portuguese (Brazilian) (pt-br)** | GA | GA (except Covid-19) | NA |
-| **Spanish (es)**                   | GA | GA (except Covid-19) | NA |
+| **Portuguese (Brazilian) (pt-br)** | GA | GA | NA |
+| **Spanish (es)**                   | GA | GA | NA |
 {: caption="Intent feature support details" caption-side="top"}
 
 Table 2b. Intent feature support details continued
