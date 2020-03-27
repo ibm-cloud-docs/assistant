@@ -324,7 +324,7 @@ To resolve conflicts:
 
     ![Shows the Move menu with a list of one intent options](images/intent-move-conflict.png)
 
-    When deciding where to put an example, look for the intent that has synonymous, or nearly synonymous examples. 
+    When deciding where to put an example, look for the intent that has synonymous, or nearly synonymous, examples. 
     
     If the exact same example is used by the other intent already, the move action only removes the example from the current intent. It does not add the same example to the other intent twice.
 
