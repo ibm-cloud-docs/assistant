@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-24"
+lastupdated: "2020-03-27"
 
 keywords: intent, intent conflicts, annotate
 
@@ -73,9 +73,9 @@ Start with a few intents, and test them as you iteratively expand the scope of t
 
 1.  Select **Create intent** to save your intent name.
 
-    ![Screen capture that shows new intent definition](images/create_intent.png)
+    ![Screen capture that shows new intent definition](images/intent-create.png)
 
-1.  Next, in the **Add user example** field, type the text of a user example for the intent. An example can be any string up to 1024 characters in length. The following utterances might be examples for the `#pay_bill` intent:
+1.  In the **User example** field, type the text of a user example for the intent. An example can be any string up to 1,024 characters in length. The following utterances might be examples for the `#pay_bill` intent:
     - `I need to pay my bill.`
     - `Pay my account balance`
     - `make a payment`
@@ -87,6 +87,8 @@ Start with a few intents, and test them as you iteratively expand the scope of t
     {: important}
 
 1.  Click **Add example** to save the user example.
+
+    ![Screen capture that shows adding a user example to an intent](images/intent-user-example.png)
 
 1.  Repeat the same process to add more examples.
 
@@ -216,11 +218,11 @@ You can click any intent in the list to open it for editing. You can make the fo
 - Add, edit, or delete examples.
 - Move an example to a different intent.
 
-You can tab from the intent name to each example, editing the examples if you want.
+You can tab from the intent name to each example.
 
-To move or delete an example, click the check box that is associated with it, and then click **Move** or **Delete**.
+1.  To move or delete an example, click the checkbox that is associated with it, and then click **Move** or **Delete**.
 
-  ![Screen capture showing how to move or delete an example](images/move_example.png)
+    ![Screen capture showing how to move or delete an example](images/move_example.png)
 
 ## Searching intents
 {: #intents-search}
@@ -229,15 +231,15 @@ Use the Search feature to find user examples, intent names, and descriptions.
 
 1.  From the **Intents** page, click the Search icon.
 
-    ![Search icon in the Intents page header](images/header-search-icon.png)
+    ![Search icon in the Intents page header](images/intent-search.png)
 
-1.  Enter a search term or phrase.
+1.  Submit a search term or phrase.
 
-    ![Intent search term](images/searchint_1.png)
+    The first time you search for something, you might get a message that says the skill is being indexed. If so, wait a minute, and then resubmit the search term.
 
-Intents containing your search term, with corresponding examples, are shown.
+    Intents that contain your search term are displayed.
 
-  ![Intent search return](images/searchint_2.png)
+    ![Shows the results from a search for intents](images/intent-search-results.png)
 
 ## Exporting intents
 {: #intents-export}
@@ -252,7 +254,7 @@ You can export a number of intents to a CSV file, so you can then import and reu
 
     - To export one or more specific intents, select the intents that you want to export, and then click **Export**.
 
-      ![Export option](images/ExportIntent.png)
+      ![Shows that two intents are selected and the person is focusing on the export icon](images/intent-export.png)
 
 1.  Specify the name and location in which to store the CSV file that is generated.
 
@@ -285,8 +287,6 @@ Alternatively, you can upload a file with raw user utterances (from call center 
 
 1.  From the **Intents** page, click the *Import* icon ![Import icon](images/importGA.png), and then drag a file or browse to select a file from your computer.
 
-    ![Import option](images/ImportIntent.png)
-
     **Important:** The maximum CSV file size is 10 MB. If your CSV file is larger, consider splitting it into multiple files and importing them separately.
 
     The file is validated and imported, and the system begins to train itself on the new data.
@@ -305,47 +305,38 @@ To resolve conflicts:
 
 1.  From the **Intents** page, review any intents with conflicts.
 
-    ![Conflicts in intent list](images/ConflictIntent1.png)
+    ![Shows an intent list with a conflict](images/intent-conflicts.png)
 
-    Toggle the **Show only conflicts** switch to see a list of just your intents with conflicts.
-    {: tip}
+1.  Click an intent with a conflict to open it. Find the user example that is causing the conflict, and then click **Resolve conflicts**.
 
-    ![Conflicts only view](images/ConflictIntent2.png)
+    ![Shows an intent with a user example list where one of the user examples has a Resolve conflicts button](images/intent-resolve-conflicts.png)
 
-1.  Open an intent conflict. For the intent example that is causing the conflict, click **Resolve conflict**.
+1.  Choose whether to delete the example from the intent or to move it to another intent.
 
-    ![Conflicting intent example](images/ConflictIntent3.png)
+    ![Shows the intent conflict details page](images/intent-fix-conflict.png)
 
-1.  Now, you have the option to either move a conflicting example to another intent, or delete a conflicting example entirely.
-
-    In this case, the examples `Cancel my order` and `I want to cancel my order` appear in both the `#cancel` intent and in the `#eCommerce_Cancel_Product_Order` intent.
-
-    ![Conflicting intent example](images/ConflictIntent4.png)
-
-    Additional user examples are training examples that are not necessarily in conflict, but are similar to the examples in conflict. They are shown to provide context to help resolve the conflict.
-
-1.  Select the examples `Cancel  my order` and `I want to cancel my order`, and move them from the `#cancel` intent to the `#eCommerce_Cancel_Product_Order` intent:
-
-    ![Conflicting intent example](images/ConflictIntent5.png)
-
-1.  When deciding where to place an example, look for the intent that has synonymous, or nearly synonymous examples.
+    Similar user examples are displayed for each intent. These examples are not necessarily in conflict. They are shown to give you a quick view of the other types of user examples that are defined for each intent. It provides you with context that can help you make a more informed decision.
 
     Keep each intent as distinct and focused on one goal as possible. If you have two intents with multiple user examples that overlap, maybe you don't need two separate intents. You can move or delete user examples that don't directly overlap into one intent, and then delete the other.
     {: tip}
 
-    Select the other examples in the `#cancel` intent, and delete them:
+1.  To move a user example, click **Move**, and then click the intent where you want to move the example.
 
-    ![Conflicting intent example](images/ConflictIntent6.png)
+    ![Shows the Move menu with a list of one intent options](images/intent-move-conflict.png)
 
-1.  Click the **Submit** button to resolve the conflicts:
+    When deciding where to put an example, look for the intent that has synonymous, or nearly synonymous examples. 
+    
+    If the exact same example is used by the other intent already, the move action only removes the example from the current intent. It does not add the same example to the other intent twice.
 
-    ![Conflicting intent example](images/ConflictIntent7.png)
+1.  After moving or deleting the example, click **Submit** to resolve the conflict.
 
-    The *Reset* option allows you to start over with moving the conflict example among intents. *Cancel* returns you to the intent page.
+    ![Shows a resolved conflict](images/intent-submit-conflict.png)
 
-You have resolved a conflict, and can continue your review of other intents with conflicts.
+    The *Reset* reverts your changes. Click the **x** to close the page without submitting your changes.
 
-Watch this video to learn more.
+1.  Repeat the previous steps to resolve other intents with conflicts.
+
+You can watch the following video to learn more.
 
 <iframe class="embed-responsive-item" id="youtubeplayer0" title="Intent conflict resolution overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/9gQtjCBxjdc?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
@@ -364,4 +355,4 @@ You can select a number of intents for deletion.
 
     - To delete one or more specific intents, select the intents that you want to delete, and then click **Delete**.
 
-      ![Delete option](images/DeleteIntent.png)
+      ![Shows that an intent was selected and the person is focusing on the delete icon](images/intent-delete.png)
