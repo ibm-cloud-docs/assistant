@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-24"
+lastupdated: "2020-03-27"
 
 keywords: condition, response, options, jump, jump-to, multiline, response variations
 
@@ -422,6 +422,58 @@ To add a rich response, complete the following steps:
           <td>I want to buy home insurance</td>
         </tr>
         </table>
+
+      Most integrations display the options as buttons if there are only a few items. Fewer than 4, for example. The options are displayed as a drop-down list when there are a larger number of them to show. Typically, 5 or more. If you want to indicate a preference for how the options are displayed, you can add a `preference` property for the response. 
+      
+      To do so, open the JSON editor for the response, and then add a `preference` name and value pair before the `response_type` name and value pair. You can set the preference to `dropdown` or `button`.
+
+      ```json
+      {
+        "output": {
+          "generic": [
+            {
+              "title": "Insurance types",
+              "options": [
+                {
+                  "label": "Boat",
+                  "value": {
+                    "input": {
+                      "text": "I want to buy boat insurance."
+                    }
+                  }
+                },
+                {
+                  "label": "Car",
+                  "value": {
+                    "input": {
+                      "text": "I want to buy car insurance."
+                    }
+                  }
+                },
+                {
+                  "label": "House",
+                  "value": {
+                    "input": {
+                      "text": "I want to buy house insurance."
+                    }
+                  }
+                }
+              ],
+              "preference": "dropdown", //add this name and value pair 
+              "description": "Which of these items do you want to insure?",
+              "response_type": "option"
+            }
+          ]
+        }
+      }
+      ```
+      {: codeblock}
+
+      When you define an options list with only 3 items, the options are typically displayed as buttons. When you add a preference property that indicates `dropdown` as the preference, for example, you can see in the "Try it out" pane that the list is displayed as a drop-down list instead.
+
+      ![Shows a small options list in the Try it out that is displayed as a drop-down menu.](images/options-try-out.png)
+
+      Some integration types, such as the Web Chat, reflect your preference. Other integration types, such as Slack, might not honor your preference when it renders the list.
 
     - **Pause**. Add the length of time for the pause to last as a number of milliseconds (ms) to the **Duration** field.
 
