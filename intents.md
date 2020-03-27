@@ -254,7 +254,7 @@ You can export a number of intents to a CSV file, so you can then import and reu
 
     - To export one or more specific intents, select the intents that you want to export, and then click **Export**.
 
-      ![Shows that two intents are selected and the person is focusing on the export icon](images/intent-export.png)
+      ![Shows that two intents are selected and the export icon is in focus](images/intent-export.png)
 
 1.  Specify the name and location in which to store the CSV file that is generated.
 
@@ -355,4 +355,4 @@ You can select a number of intents for deletion.
 
     - To delete one or more specific intents, select the intents that you want to delete, and then click **Delete**.
 
-      ![Shows that an intent was selected and the person is focusing on the delete icon](images/intent-delete.png)
+      ![Shows that an intent was selected and the delete icon is in focus](images/intent-delete.png)
