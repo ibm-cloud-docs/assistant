@@ -423,7 +423,7 @@ To add a rich response, complete the following steps:
         </tr>
         </table>
 
-      Most integrations display the options as buttons if there are only a few items. Fewer than 4, for example. The options are displayed as a drop-down list when there are a larger number of them to show. Typically, 5 or more. If you want to indicate a preference for how the options are displayed, you can add a `preference` property for the response. 
+      Most integrations display the options as buttons if there are only a few items (4 or fewer, for example). The options are displayed as a drop-down list when there are a larger number of items to show (typically 5 or more). If you want to indicate a preference for how the options are displayed, you can add a `preference` property for the response.
       
       To do so, open the JSON editor for the response, and then add a `preference` name and value pair before the `response_type` name and value pair. You can set the preference to `dropdown` or `button`.
 
