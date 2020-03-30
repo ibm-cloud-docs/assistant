@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-27"
+lastupdated: "2020-03-30"
 
 keywords: chatbot, live chatbot, omnichannel
 
@@ -49,7 +49,7 @@ This diagram illustrates how the product delivers an omnichannel customer experi
 
 - Any questions that cannot be answered by the dialog skill are sent to the **search skill**, which finds relevant answers by searching the company knowledge bases that you configure for the purpose.
 
-[Read the Watson blog](https://www.ibm.com/blogs/watson/2020/03/independent-study-finds-ibm-watson-assistant-customers-accrued-23-9-million-in-benefits/){: external} to see how {{site.data.keyword.conversationfull}} is helping enterprises cut costs and improve customer satisfaction today.
+To see how {{site.data.keyword.conversationshort}} is helping enterprises cut costs and improve customer satisfaction today, [read the Watson blog](https://www.ibm.com/blogs/watson/2020/03/independent-study-finds-ibm-watson-assistant-customers-accrued-23-9-million-in-benefits/){: external}.
 
 ## Implementation
 {: #index-implementation}
