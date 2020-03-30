@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-27"
+lastupdated: "2020-03-30"
 
 keywords: intent, intent conflicts, annotate
 
@@ -115,8 +115,6 @@ When you include an entity mention in a user example, the machine learning model
 
 If you have defined, or plan to define, entities that are related to this intent, mention the entity values or synonyms in some of the examples. Doing so helps to establish a relationship between the intent and entities. It is a weak relationship, but it does inform the model.
 
-![Screen capture that shows intent definition](images/define_intent.png)
-
 *Important*:
 
   - Intent example data should be representative and typical of data that your users provide. Examples can be collected from actual user data, or from people who are experts in your specific field. The representative and accurate nature of the data is important.
@@ -143,7 +141,7 @@ You can choose to directly reference entities in your intent examples. For insta
 - Is the `@PhoneModelName` in stock?
 - Add a `@PhoneModelName` to my order.
 
-![Screen capture showing intent definition](images/define_intent_entity.png)
+![Screen capture showing intent definition](images/define-intent-entity.png)
 
 Currently, you can only directly reference synonym entities that you define (pattern values are ignored). You cannot use [system entities](/docs/assistant?topic=assistant-system-entities).
 
@@ -159,7 +157,9 @@ Defining one example intent with an `@Entity` that has 10 values that are define
 
 After you have finished creating new intents, you can test the system to see if it recognizes your intents as you expect.
 
-1.  Click the ![Ask Watson](images/ask_watson.png) icon.
+1.  Click **Try it**. 
+
+    ![Ask Watson](images/ask_watson.png)
 
 1.  In the "Try it out" pane, enter a question or other text string and press Enter to see which intent is recognized. If the wrong intent is recognized, you can improve your model by adding this text as an example to the correct intent.
 
@@ -229,7 +229,7 @@ You can tab from the intent name to each example.
 
 Use the Search feature to find user examples, intent names, and descriptions.
 
-1.  From the **Intents** page, click the Search icon.
+1.  From the **Intents** page, click the *Search* icon.
 
     ![Search icon in the Intents page header](images/intent-search.png)
 

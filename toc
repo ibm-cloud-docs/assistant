@@ -129,7 +129,6 @@ Watson Assistant
     {: .topicgroup}
     Developer community
         [StackOverflow](https://stackoverflow.com/questions/tagged/watson-assistant)
-        [IBM Developer Answers](https://developer.ibm.com/answers/topics/watson-assistant/)
         [WDC Slack channel](http://wdc-slack-inviter.mybluemix.net/)
 
     accessibility.md
