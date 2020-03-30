@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-27"
+lastupdated: "2020-03-30"
 
 keywords: condition, response, options, jump, jump-to, multiline, response variations
 
@@ -423,7 +423,11 @@ To add a rich response, complete the following steps:
         </tr>
         </table>
 
-      Most integrations display the options as buttons if there are only a few items (4 or fewer, for example). The options are displayed as a drop-down list when there are a larger number of items to show (typically 5 or more). If you want to indicate a preference for how the options are displayed, you can add a `preference` property for the response.
+      Most integrations display the options as buttons if there are only a few items (4 or fewer, for example). 
+      
+      ![Shows a small options list in the preview link that is displayed as buttons.](images/options-buttons.png)
+      
+      The options are displayed as a drop-down list when there are a larger number of items to show (typically 5 or more). If you want to indicate a preference for how the options are displayed, you can add a `preference` property for the response.
       
       To do so, open the JSON editor for the response, and then add a `preference` name and value pair before the `response_type` name and value pair. You can set the preference to `dropdown` or `button`.
 
@@ -471,7 +475,7 @@ To add a rich response, complete the following steps:
 
       When you define an options list with only 3 items, the options are typically displayed as buttons. When you add a preference property that indicates `dropdown` as the preference, for example, you can see in the "Try it out" pane that the list is displayed as a drop-down list instead.
 
-      ![Shows a small options list in the Try it out that is displayed as a drop-down menu.](images/options-try-out.png)
+      ![Shows a small options list in the preview link that is displayed as a drop-down menu.](images/options-dropdown.png)
 
       Some integration types, such as the Web Chat, reflect your preference. Other integration types, such as Slack, might not honor your preference when it renders the list.
 

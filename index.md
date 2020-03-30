@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-27"
+lastupdated: "2020-03-30"
 
 keywords: chatbot, live chatbot, omnichannel
 
@@ -49,7 +49,7 @@ This diagram illustrates how the product delivers an omnichannel customer experi
 
 - Any questions that cannot be answered by the dialog skill are sent to the **search skill**, which finds relevant answers by searching the company knowledge bases that you configure for the purpose.
 
-[Read the Watson blog](https://www.ibm.com/blogs/watson/2020/03/independent-study-finds-ibm-watson-assistant-customers-accrued-23-9-million-in-benefits/){: external} to see how {{site.data.keyword.conversationfull}} is helping enterprises cut costs and improve customer satisfaction today.
+To see how {{site.data.keyword.conversationshort}} is helping enterprises cut costs and improve customer satisfaction today, [read the Watson blog](https://www.ibm.com/blogs/watson/2020/03/independent-study-finds-ibm-watson-assistant-customers-accrued-23-9-million-in-benefits/){: external}.
 
 ## Implementation
 {: #index-implementation}
@@ -84,7 +84,9 @@ Here's how you implement your assistant:
 
       Take advantage of data collections that you create in {{site.data.keyword.discoveryfull}} to provide answers to customer questions. When a customer asks a question that the dialog is not designed to answer, your assistant can search for relevant information from the configured data sources, extract the information, and return it as the assistant's response.
 
-1.  Integrate your assistant.** Add a built-in channel integration to deploy the configured assistant directly to a social media or messaging channel. Or build your own client application as the user interface for the assistant.
+1.  Integrate your assistant. 
+
+    Add a built-in channel integration to deploy the configured assistant directly to a social media or messaging channel. Or build your own client application as the user interface for the assistant.
 
     Your deployed assistant is hosted by {{site.data.keyword.cloud}}, the IBM cloud computing platform. (For more information, see [Platform overview](/docs/overview?topic=overview-whatis-platform){: external}.) 
 

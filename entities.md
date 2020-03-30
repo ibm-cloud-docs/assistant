@@ -133,13 +133,11 @@ Dictionary-based entites are those for which you define specific terms, synonyms
     The more coherent your entity value synonyms are, the more relevant and better focused your recommendations will be. For example, if you have several words that are focused on a theme, you will get better suggestions than if you have one or two random words.
     {: tip}
 
-    ![Synonym recommendation screen 2](images/synonym_2.png)
+    ![Shows synonym recommendations for the word apple](images/entities-recommended-synonyms.png)
 
     1. Select any synonyms you want to include, and then click **Add selected**.
 
        You must click the **Add selected** button for any synonyms you selected to be added. If you move to the next set without clicking this button first, your selections will be lost.
-
-       ![Synonym recommendation screen 3](images/synonym_3.png)
 
        The synonyms are added to your entity, and Watson suggests more synonyms.
 
@@ -149,7 +147,7 @@ Dictionary-based entites are those for which you define specific terms, synonyms
        If you choose not to select a recommended synonym, the system will treat that as a term you are not interested in, and will alter the next set of recommendations you see when you press **Add selected** or **Next set**. This inference only persists while you are choosing synonyms; information about skipped synonyms is not used for any other purpose by your assistant.
        {: note}
 
-       ![Synonym recommendation screen 4](images/synonym_4.png)
+       ![Shows a set of synonym recommendations that will be added to the entity value](images/entities-synonyms-added.png)
 
     1. Continue adding synonyms as desired. When you're finished accepting recommendations, click the **X** to close the recommendations panel.
 
