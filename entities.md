@@ -147,7 +147,7 @@ Dictionary-based entites are those for which you define specific terms, synonyms
        If you choose not to select a recommended synonym, the system will treat that as a term you are not interested in, and will alter the next set of recommendations you see when you press **Add selected** or **Next set**. This inference only persists while you are choosing synonyms; information about skipped synonyms is not used for any other purpose by your assistant.
        {: note}
 
-       ![Synonym recommendation screen 4](images/entities-synonyms-added.png)
+       ![Shows a set of synonym recommendations that will be added to the entity value](images/entities-synonyms-added.png)
 
     1. Continue adding synonyms as desired. When you're finished accepting recommendations, click the **X** to close the recommendations panel.
 
