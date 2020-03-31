@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-05"
+lastupdated: "2020-03-31"
 
 subcollection: assistant
 
@@ -52,6 +52,20 @@ Learn more about IBM's own GDPR readiness journey and our GDPR capabilities and 
 US Health Insurance Portability and Accountability Act (HIPAA) support is available for Premium plans that are hosted in the Washington, DC location created on or after 1 April 2019. For more information, see [Enabling EU and HIPAA supported settings](/docs/account?topic=account-eu-hipaa-supported#eu-hipaa-supported){: external}.
 
 Do not add personal health information (PHI) to the training data (entities and intents, including user examples) that you create. In particular, be sure to remove any PHI from files that contain real user utterances that you upload to mine for intent or intent user example recommendations.
+
+## Opting out of logging
+{: #information-security-log-opt-out}
+
+Watson Assistant service instances that are not part of Premium plans log requests and their results. Logging is done only to improve the service for future users. The logged data is not shared or made public. This type of logging is disabled for services that are part of Premium plans.
+
+To prevent IBM from using your log data for general service improvements, complete one of the following tasks: 
+
+- If you are using a custom application, for each API `/message` request, set the `X-Watson-Learning-Opt-Out` header parameter to `true`.
+
+  For more information, see [Data collection](https://cloud.ibm.com/apidocs/assistant/assistant-v2#data-collection){: external}.
+- If you are using the Web Chat integration, add the `isTrackingEnabled` parameter to the script that you embed in your web page, and set it to `false`. 
+
+  For more information, see [Configuration](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-configuration){: external}.
 
 ## Labeling and deleting data in Watson Assistant
 {: #information-security-gdpr-wa}

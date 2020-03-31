@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-26"
+lastupdated: "2020-03-31"
 
 subcollection: assistant
 
@@ -36,37 +36,31 @@ The latest content catalog, named `Covid-19`, is available in Brazilian Portugue
 ## Adding a content catalog to your dialog skill
 {: #catalog-add}
 
-1.  Open your dialog skill, and then click the **Content Catalog** tab.
+1.  Open your dialog skill, open the **Content Catalog** page.
+
+    ![Screen capture showing available catalogs](images/catalog-overview.png)
 
 1.  Select a content catalog, such as *Banking*, to see the intents that are provided with it.
 
-    ![Screen capture showing available catalogs](images/catalog_overview.png)
-
-    You will see information about the intents that are included in the catalog.
-
-    ![Screen capture showing Banking category intents](images/catalog_open.png)
+    ![Screen capture showing Banking category intents](images/catalog-open.png)
 
     Intents that are added from a content catalog are distinguishable from other intents by their names. Each intent name is prepended with the content catalog name.
 
-1.  Select ![Close arrow](images/close_arrow.png) to return to the **Content Catalog** tab.
+1.  Add a content catalog to your dialog skill by clicking the `Add to skill` button.
 
-1.  Next, add a content catalog to your dialog skill by clicking the `Add to skill` button.
+1.  Go to the **Intents** page to see the intents that you added from the catalog listed.
 
-1.  Now, select the **Intents** tab, and verify that the intents from the catalog were added and are available.
-
-    ![Screen capture showing Banking intents listed on Intents tab](images/catalog_intents.png)
-
-The system begins to train itself on the new data.
+Your skill trains itself on the new data.
 
 After you add a catalog to your skill, the intents become part of your training data. If IBM makes subsequent updates to a content catalog, the changes are not automatically applied to any intents you added from a catalog.
 {: note}
 
-## Editing content catalog examples
+## Editing content catalog intents
 {: #catalog-edit-content}
 
 Like any other intent, after you add content catalog intents to your skill, you can make the following changes to them:
 
-- Rename the intent.
-- Delete the intent.
-- Add, edit, or delete examples.
-- Move an example to a different intent.
+- Rename intents
+- Delete intents
+- Add, edit, or delete intent user examples
+- Move an example to a different intent

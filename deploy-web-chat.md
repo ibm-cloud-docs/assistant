@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-17"
+lastupdated: "2020-03-31"
 
 subcollection: assistant
 
@@ -30,7 +30,7 @@ subcollection: assistant
 Add your assistant to your company website as a web chat widget that can transfer customers to human agents.
 {: shortdesc}
 
-When you create a web chat integration, code is generated that calls a script that is written in JavaScript. The script instantiates a unique instance of your assistant. You can then copy and paste the HTML `<script>` element into any page or pages on your website where you want users to be able to ask your assistant for help.
+When you create a web chat integration, code is generated that calls a script that is written in JavaScript. The script instantiates a unique instance of your assistant. You can then copy and paste the HTML `script` element into any page or pages on your website where you want users to be able to ask your assistant for help.
 
 ![Plus or Premium plan only](images/plus.png) This integration type is available to Plus or Premium plan users only.
 
@@ -47,7 +47,7 @@ To add the assistant to a web page on your company website, complete the followi
 
 1.  Click **Create** to generate the script.
 
-    A code snippet is created and added to the page that contains an HTML `<script>` element. The script tag calls JavaScript code that is hosted on an IBM site. The code instantiates an instance of your assistant within a Web Chat widget. The generated code includes a region and unique integration ID. Do not change these parameter values.
+    A code snippet is created and added to the page that contains an HTML `script` element. The `script` tag calls JavaScript code that is hosted on an IBM site. The code creates an instance of a widget that communicates with the assistant. The generated code includes a region and unique integration ID. Do not change these parameter values.
 
 1.  **Optional**: Customize the chat. You can make the following changes:
 
@@ -74,7 +74,7 @@ To add the assistant to a web page on your company website, complete the followi
 
     Style changes you make are immediately applied to the preview that is shown on the page, so you can see how your choices impact the style of the chat UI.
 
-1.  Copy the `<script>` HTML element.
+1.  Copy the `script` HTML element.
 
     Do not click *Save changes* until you are done with making Web Chat edits; it closes the page.
     {: tip}
@@ -153,7 +153,7 @@ If you choose to use the provided methods, you implement them by editing the cod
 For example, the following updated script preserves the context for the conversation. In addition, it adds an `$ismember` context variable and sets it to `true`.
 
 ```html
-<script src="https://assistant-web.watsonplatform.net/loadWatsonAssistantChat.js"></script>
+<script src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js"></script>
 <script>
   // Following the v2 message API, we add some items to context.
   function preSendhandler(event) {
@@ -190,7 +190,7 @@ To support these user-based capabilities, you must add the `options.userID` meth
 In the following example, the user ID `L44556677` is added to the script.
 
 ```html
-<script src="https://assistant-web.watsonplatform.net/loadWatsonAssistantChat.js"></script>
+<script src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js"></script>
 <script>
   window.loadWatsonAssistantChat({
     integrationID: '{INTEGRATION ID}',
@@ -270,6 +270,10 @@ Zendesk Chat is an add-on to Zendesk Support. Zendesk Support puts all your cust
 1.  Click **Save** to finish setting up the connection to the Zendesk Chat service desk.
 
 When you test the service desk integration, make sure there is at least one agent with `Online` status. Agent status is set to `Invisible` unless it is explicitly changed.
+
+<!--Watch the following 3 1/2-minute video to see someone set up a connection to a Zendesk service desk.
+
+<iframe class="embed-responsive-item" id="youtubeplayer" title="Setting up a Zendesk service desk connection" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/enTChbJY3R8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>-->
 
 ### Setting up a Salesforce integration
 {: #deploy-web-chat-salesforce}
@@ -359,6 +363,10 @@ To set up a Salesforce service desk integration, complete the following steps:
 1.  From the Salesforce configuration page in {{site.data.keyword.conversationshort}}, click **Save** to finish setting up the connection.
 
 When you test the service desk integration, make sure there is at least one agent with `Available` status.
+
+<!--Watch the following x-minute video to watch someone set up a connection to a Salesforce service desk.
+
+<iframe class="embed-responsive-item" id="youtubeplayer0" title="Setting up a Salesforce service desk connection" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/enTChbJY3R8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>-->
 
 ## Adding transfer support to your dialog
 {: #deploy-web-chat-dialog-prereq}
