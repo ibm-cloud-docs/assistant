@@ -47,7 +47,7 @@ To add the assistant to a web page on your company website, complete the followi
 
 1.  Click **Create** to generate the script.
 
-    A code snippet is created and added to the page that contains an HTML `script` element. The script tag calls JavaScript code that is hosted on an IBM site. The code instantiates an instance of your assistant within a Web Chat widget. The generated code includes a region and unique integration ID. Do not change these parameter values.
+    A code snippet is created and added to the page that contains an HTML `script` element. The `script` tag calls JavaScript code that is hosted on an IBM site. The code creates an instance of a widget that communicates with the assistant. The generated code includes a region and unique integration ID. Do not change these parameter values.
 
 1.  **Optional**: Customize the chat. You can make the following changes:
 
