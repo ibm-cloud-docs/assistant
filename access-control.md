@@ -42,7 +42,7 @@ Service-level access role support was enabled in phases. The following table sho
 
 | Location    | Service access support adoption date |
 |-------------|--------------------------------------|
-| Dallas      | 1 April 2020 |
+| Dallas      | Not available |
 | Frankfurt   | 1 April 2020 |
 | Seoul       | 2 March 2020 |
 | Sydney      | 16 March 2020 |

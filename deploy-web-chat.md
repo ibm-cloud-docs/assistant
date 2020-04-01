@@ -226,7 +226,8 @@ Zendesk Chat is an add-on to Zendesk Support. Zendesk Support puts all your cust
 
 1.  You must have a Zendesk account. If not, create one. 
 
-    An Enterprise or Chat Professional plan is recommended.
+    A Zendesk Chat Enterprise plan is required.
+    {: important}
 
 1.  From the Web Chat integration page in {{site.data.keyword.conversationshort}}, switch the **Allow transfers to live agents** toggle to **On**, and then choose **Zendesk** as the service desk type, and then click **Set up**.
 1.  {: #deploy-web-chat-zendesk-get-account-key}Add the account key for your Zendesk account. To get the account key for your Zendesk account, follow these steps:
