@@ -115,7 +115,7 @@ To populate the metrics with message data from a dialog skill or skill version t
 
 1.  Click the **Data source** field to see a list of assistants with log data that you might want to use.
 
-    The list includes assistants that have been deployed and to which you have access. For more information about the **Show deployment IDs** option, see [*Show deployment IDs* explained](#logs-deployment-id-explained).
+    The list includes assistants that have been deployed and to which you have access. Or you can choose to show a list of other deployments. For more information about other types of deployments, see [*Show deployment IDs* explained](#logs-deployment-id-explained).
 
 1.  Choose a data source.
 
