@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-31"
+lastupdated: "2020-04-01"
 
 subcollection: assistant
 
@@ -33,8 +33,8 @@ API requests require a version parameter that takes a date in the format `versio
 
 Send the version parameter with every API request. {{site.data.keyword.conversationshort}} uses the API version for the date you specify, or the most recent version before that date. Don't default to the current date. Instead, specify a date that matches a version that is compatible with your app, and don't change it until your app is ready for a later version.
 
-- The current version for V1 is `2020-02-05`.
-- The current version for V2 is `2020-02-05`.
+- The current version for V1 is `2020-04-01`.
+- The current version for V2 is `2020-04-01`.
 - The dialog skill "Try it out" pane uses version `2018-07-10`.
 - The search skill "Try it out" pane uses {{site.data.keyword.discoveryshort}} API version `2018-12-03`.
 
@@ -51,6 +51,30 @@ The {{site.data.keyword.conversationshort}} algorithms may be periodically refin
 Existing models that you have trained will not be immediately impacted, but expired models will be updated to the current model, if you have not already done so, after 60 days of a new model becoming available.
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
+
+## 1 April 2020
+{: #1April2020}
+
+- **New and improved access control**: Now, when you give other people access to your Watson Assistant resources, you have more control over the level of access they have to your skills and assistants. You can give one person read-only access to a skill here and manager-level access to an assistant there. For more information, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).
+
+- **French language beta support added for contextual entities**: You can add contextual entities to French-language dialog skills. For more information about contextual entities, see [Creating entities](/docs/assistant?topic=assistant-entities#entities-annotations-overview).
+
+- **New API version**: The current API version is now `2020-04-01`. The following change was made with this version:
+
+    - An `integrations` property was added to the V2 `/message` context. The service now expects the `context.integrations` property to conform to a specific schema in which the allowed values are as follows:
+
+      - `chat`
+      - `facebook`
+      - `intercom`
+      - `liveengage`
+      - `salesforce`
+      - `slack`
+      - `service_desk`
+      - `text_messaging`
+      - `voice_telephony`
+      - `zendesk`
+
+    If your app uses a `context.integrations` property that does not conform to the schema, a 400 error code will be returned.
 
 ## 31 March 2020
 {: #31March2020}
