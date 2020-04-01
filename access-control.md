@@ -82,10 +82,10 @@ Only one person can edit an intent, entity, or a dialog node at a time. If multi
     {: tip}
 
 1.  Expand *Assign users additional resources*, and then click **IAM services**.
-1.  In the *No access* field, choose **Watson Assistant**.
+1.  In the *No access* field, choose **Watson Assistant**. 
 
-    The *Account* resource group is used unless you change it.
-    {: note}
+    You must choose **Account** as the resource group.
+    {: important}
 
 1.  Optionally select a specific region and service instance to share with this user. 
 
