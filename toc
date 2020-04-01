@@ -43,7 +43,6 @@ Watson Assistant
     entities.md
     versions.md
     assistant-settings.md
-    access-control-pre.md
     access-control.md
 
     {: .topicgroup}
