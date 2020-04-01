@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-13"
+lastupdated: "2020-04-01"
 
 keywords: entity, entity value, contextual entity, dictionary entity, pattern entity, entity synonym, annotate mentions
 
@@ -260,7 +260,7 @@ Annotation-based entites are those for which you annotate occurrences of the ent
 
 In order to train a contextual entity model, you can take advantage of your intent examples, which provide readily-available sentences to annotate.
 
-This feature is generally available in English-language dialog skills only. For more information about language support, see [Supported languages](/docs/assistant?topic=assistant-language-support).
+This feature is generally available in English-language dialog skills and is available as a beta feature in French-langage dialog skills. For more information about language support, see [Supported languages](/docs/assistant?topic=assistant-language-support).
 {: note}
 
 Using an intent's user examples to define contextual entities does not affect the classification of that intent. However, entity mentions that you label are also added to that entity as synonyms. And intent classification does use synonym mentions in intent user examples to establish a weak reference between an intent and an entity.
@@ -419,18 +419,20 @@ Use the Search feature to find entity names, values, and synonyms.
 
 1.  From the **Entities** page, click the Search icon.
 
-    ![Search icon in the Intents page header](images/header-search-icon.png)
+    ![Search icon in the Intents page header](images/entities-search-icon.png)
 
     System entities are not searchable.
-    {: note}
+    {: important}
 
 1.  Enter a search term or phrase.
 
-    ![Entity search term](images/searchent_1.png)
+    The first time you search for something, you might get a message that says the skill is being indexed. If so, wait a minute, and then resubmit the search term.
+
+    ![Entity search term](images/entities-search-index.png)
 
 Entities containing your search term, with corresponding examples, are shown.
 
-  ![Entity search return](images/searchent_2.png)
+![Entity search return](images/entities-search-results.png)
 
 ## Exporting entities
 {: #entities-export}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-31"
+lastupdated: "2020-04-01"
 
 subcollection: assistant
 
@@ -143,7 +143,7 @@ For more information about rich response types, see [Rich responses](/docs/assis
 ## Extending the web chat
 {: #deploy-web-chat-extend}
 
-You can make more advanced customizations and extend the capability of the web chat by using the {site.data.keyword.conversationshort}} Web Chat toolkit on [GitHub](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/){: external}.
+You can make more advanced customizations and extend the capability of the web chat by using the {{site.data.keyword.conversationshort}} Web Chat toolkit on [GitHub](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/){: external}.
 
 If you choose to use the provided methods, you implement them by editing the code snippet that was generated earlier. You then embed the updated code snippet into your web page.
 

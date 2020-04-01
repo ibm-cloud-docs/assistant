@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-16"
+lastupdated: "2020-04-01"
 
 subcollection: assistant
 
@@ -33,17 +33,17 @@ Maybe you want one development team to have access to a test assistant and anoth
 ## Access control improvements
 {: #access-control-new}
 
-Historically, the service access role assignments that were defined for a {{site.data.keyword.conversationshort}} service instance in the IBM Cloud dashboard were ignored. Users with either Reader- or Writer-level service access to an instance effectively had Manager-level access. This behavior is changing. When the access control improvements are released, service-level access role assignments will be recognized by the product.
+Historically, the service access role assignments that were defined for a {{site.data.keyword.conversationshort}} service instance in the IBM Cloud dashboard were ignored. Users with either Reader- or Writer-level service access to an instance effectively had Manager-level access. This behavior changed for all data center as of 1 April 2020. Now that the access control improvements are released, service-level access role assignments are recognized by the product.
 
 ### Location support
 {: #access-control-geos}
 
-Service-level access role support is being enabled in phases. The following table shows the status of support in different data centers.
+Service-level access role support was enabled in phases. The following table shows when support was added in different data centers.
 
 | Location    | Service access support adoption date |
 |-------------|--------------------------------------|
-| Dallas      | N/A |
-| Frankfurt   | N/A |
+| Dallas      | 1 April 2020 |
+| Frankfurt   | 1 April 2020 |
 | Seoul       | 2 March 2020 |
 | Sydney      | 16 March 2020 |
 | Tokyo       |  2 March 2020 |
@@ -54,9 +54,10 @@ Service-level access role support is being enabled in phases. The following tabl
 ## How to keep your access
 {: #access-control-prep}
 
-When service level access control support is added to instances in your data center, if you have the wrong service level access role to an instance, you will be unable to do things you could do before. If you have Manager service access to a {{site.data.keyword.conversationshort}} service, then no action is required. You will have the same privileges and can do the same actions within the product after service-level access control is enabled.
+Now that service level access control is supported for instances in your data center, if you have the wrong service level access role to an instance, you might be unable to do things you could do before. 
 
-If you have a Reader or Writer service access role, then what you can do will change when service-level access control support is added.
+- If you have Manager service access to a {{site.data.keyword.conversationshort}} service, then no action is required. You have the same privileges and can do the same actions within the product now that service-level access control is enabled.
+- If you have a Reader or Writer service access role, then what you can do has changed.
 
 ### I'm a Reader
 {: #access-control-prep-reader}
@@ -90,7 +91,7 @@ Act now to get the service instance owner to change your access level.
 ## Before you grant access to others
 {: #access-control-prereqs}
 
-For each person to whom you grant access to your instance, decide whether you want to give the person a role with global or resource level access. Global-level access applies to all of the assistants and skills in a single service instance. Resource-level access applies to individual skills and assistants within a service instance only.
+For each person to whom you grant access to your instance, decide whether you want to give the person a role with instance-level or resource-level access. Instance-level access applies to all of the assistants and skills in a single service instance. Resource-level access applies to individual skills and assistants within a service instance only.
 
 Resource-level roles can be defined for service instances that are managed by Identity and Access Management (IAM) only, not instances managed by Cloud Foundry.
 {: note}
@@ -107,7 +108,7 @@ Only one person can edit an intent, entity, or a dialog node at a time. If multi
 
     - To get the skill ID, go to the Skills page. Click the overflow menu for the skill, and then click **View API Details**. Copy the skill ID and paste it somewhere that you can access it from later.
 
-1.  Click the User ![User](images/user-icon2.png) icon in the page header, 
+1.  Click the User ![User](images/user-icon2.png) icon in the page header.
 
 1.  Make a note of the current instance name, and then click **Manage Users**.
 
@@ -120,12 +121,12 @@ Only one person can edit an intent, entity, or a dialog node at a time. If multi
 1.  Expand *Assign users additional resources*, and then click **IAM services**.
 1.  In the *No access* field, choose **Watson Assistant**.
 
-    The *Account* resource group is used unless you change it in the next field.
+    The *Account* resource group is used unless you change it.
     {: note}
 
 1.  Optionally select a specific region and service instance to share with this user. 
 
-    Otherwise, the user access you define here is applied to all of your services instances in all data center locations where you have instances.
+    Otherwise, the user access you define is applied to all of your services instances in all data center locations where you have instances.
 
     Remember, you made a note of the name of the current service instance in an earlier step.
 
@@ -136,13 +137,11 @@ Only one person can edit an intent, entity, or a dialog node at a time. If multi
     - Platform
     - Service
 
-    For help, see [Popular role assignments](#access-control-recommendations). For a description of all your options, see [Global roles](#access-control-global-roles).
+    For help, see [Popular role assignments](#access-control-recommendations). For a description of all your options, see [Understanding roles](#access-control-iam-roles).
 
 1.  **Optional**: Select a single resource, such as a skill or assistant, and then assign the person to the appropriate service role for the resource.
 
-    For a description of all your options, see [Resource access](#access-control-resource-roles).
-
-    Repeat this step to grant the same person access to other resources in this instance.
+    For a description of your resource-level service options, see [Resource-level access roles](#access-control-resource-service-roles).
 
 1.  Click **Add**.
 
@@ -161,34 +160,33 @@ To get you started quickly, consider applying these roles at first.
   - Instance platform role: **Administrator**
   - Instance service role: **Manager**
 
-- To limit the person's privileges to certain resources, assign the user to the following roles:
+- To give someone manager access to a specific set of resources, but read-only access to everything else, assign the user to the following roles:
 
   - Instance platform role: **Viewer**
-  - Instance service role: **Reader** 
-  - For each individual assistant or skill, assign the **Manager** role.
+  - Instance service role: **Reader**
+
+  Then, for each assistant or skill that you want the person to be able to manage, add another role assignment like this:
+
+  - Instance platform role: **Viewer**
+  - For an individual assistant or skill, assign the **Manager** role.
 
 ## Understanding roles
 {: #access-control-iam-roles}
 
 Access to {{site.data.keyword.conversationshort}}, its service instances and all of the resources that are used by the service is managed by {{site.data.keyword.cloud}}. To share a service instance with other users and control access to the instance, you must use the {{site.data.keyword.cloud_notm}} Identify and Access Management user interface. 
 
-The breaks down access definitions into the following role types:
+{{site.data.keyword.cloud_notm}} breaks down access definitions into the following role types:
 
-- Service instance (or global) platform roles
-- Service instance (or global) service roles
-- Resource service roles
+- Instance-level platform roles
+- Instance-level service roles
+- Resource-level service roles
 
-### Global access
-{: #access-control-global-roles}
+An instance-level access role is a role that applies to a service instance and all of the resources that are created as part of the instance. A resource-level service role gives you the ability to apply a finer-tuned level of access control to a single skill or assistant in an instance.
 
-A global access role is a role that applies to a service instance and all of the resources that are created as part of the instance.
-
-To define someone's global access, choose from among the following role types:
-
-#### Platform roles
+### Platform roles
 {: #access-control-global-platform-roles}
 
-Choose a platform role to assign to the user.
+A platform role controls a person's ability to access a service instance in {{site.data.keyword.cloud_notm}}. Choose a platform role to assign to the user.
 
 | Role | Privileges of the users in this role |
 |------|---------------------------------------|
@@ -198,13 +196,22 @@ Choose a platform role to assign to the user.
 
 The **Editor** and **Operator** platform roles are equivalent to the Administrator role.
 
-At a minimum, you must give someone *Viewer* access to a service instance or they cannot access anything.
+At a minimum, you must give someone *Viewer* platform access to a service instance or they cannot access anything.
 {: important}
 
-#### Service roles
+### Service roles
+{: #access-control-service-roles}
+
+A service role controls what a person can do in {{site.data.keyword.conversationshort}}.
+
+When you assign a service role, you can decide whether to apply the service role to an instance, which effectively applies to every assistant and skill in the instance, or to a specific resource, such as one skill or one assistant.
+
+The resource-level service role assignment takes precedence over the instance-level assignment. For example, you can give someone Reader access to the service instance and Writer access to a single skill in the instance.
+
+#### Instance-level service roles
 {: #access-control-global-service-roles}
 
-Optionally, choose one or more service roles for the user that will apply to all of the skills and assistants in the instance.
+Choose a service role for the user that will apply to all of the skills and assistants in the instance.
 
 | Role | Privileges of the users in this role |
 |------|---------------------------------------|
@@ -215,15 +222,12 @@ Optionally, choose one or more service roles for the user that will apply to all
 <!--| Logs | View conversation logs for all of the dialog skills in the service instance. |
 | Creator | Create new assistants and skills. |-->
 
-### Resource access
-{: #access-control-resource-roles}
+#### Resource-level service roles
+{: #access-control-resource-service-roles}
 
 To fine tune a person's level of access to individual skills and assistants within the instance, assign one or more resource-level service roles to the user.
 
 You do not need to assign resource-level roles to people who already have access to all the resources based on their global service role. But, if you want to tailor a bit more who can read, edit, or add to specific assistants or skills within the instance, then apply resource-level roles.
-
-#### Service roles
-{: #access-control-resource-service-roles}
 
 | Role | Privileges of the users in this role |
 |------|---------------------------------------|
@@ -234,7 +238,7 @@ You do not need to assign resource-level roles to people who already have access
 <!--| Administrator | Invite others to collaborate on the specific assistant or skill, but not read or edit it. |
 | Logs | View conversation logs for the specific assistant or skill, but not edit anything. |-->
 
-Anyone who creates an assistant or skill is automatically granted the Manager role to that resource.
+Anyone who creates an assistant or skill is automatically granted the Manager service role to that resource.
 
 #### Service access examples
 {: #access-control-ui-examples}
@@ -260,20 +264,20 @@ Anyone who creates an assistant or skill is automatically granted the Manager ro
 ## Common role assignments
 {: #access-control-common-roles}
 
-| Goal | Global access platform role | Global access service roles | Resource service roles |
+| Goal | Instance-level platform role | Instance-level service roles | Resource-level service roles |
 |------------------------|-----------------------------|-----------------------------|------------------------|
 | Make someone a service instance co-owner | Administrator | Manager | N/A |
-| Prevent someone from seeing a skill or assistant | Viewer | N/A | Reader |
+| Give someone reader access to only one skill or assistant in an instance | Viewer | N/A | Reader |
 | Allow someone to edit and view logs of all the skills and assistants in the service instance | Viewer | Manager | N/A |
 | Allow someone to edit a skill or assistant in the service instance, but not view logs | Viewer | Manager | Writer |
 {: caption="Table 4. Common role assignments" caption-side="top"}
 
 N/A stands for no assignment, meaning no role of the type is assigned.
 
-### Role assignments for lifecycle stages
+<!--### Role assignments for lifecycle stages
 {: #access-control-lifecycle-roles}
 
-Use resource-level role assignments to limit who can edit live assistants that are interacting with your customers in a production environment. And protect customer data by limiting who can view analytics and user conversation logs.
+Use resource-level role assignments to limit who can edit live assistants that are interacting with your customers in a production environment. And protect customer data by limiting who can view analytics and user conversation logs.-->
 
 ## Resource-level role impact on available actions
 {: #access-control-ui-impact}
