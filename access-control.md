@@ -33,7 +33,7 @@ Maybe you want one development team to have access to a test assistant and anoth
 ## Access control improvements
 {: #access-control-new}
 
-Historically, the service access role assignments that were defined for a {{site.data.keyword.conversationshort}} service instance in the IBM Cloud dashboard were ignored. Users with either Reader- or Writer-level service access to an instance effectively had Manager-level access. This behavior changed for all data center as of 1 April 2020. Now that the access control improvements are released, service-level access role assignments are recognized by the product.
+Historically, the service access role assignments that were defined for a {{site.data.keyword.conversationshort}} service instance in the IBM Cloud dashboard were ignored. Users with either Reader- or Writer-level service access to an instance effectively had Manager-level access. This behavior changed for all data centers as of 1 April 2020. Now that the access control improvements are released, service-level access role assignments are recognized by the product.
 
 ### Location support
 {: #access-control-geos}
