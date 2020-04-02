@@ -55,14 +55,14 @@ Existing models that you have trained will not be immediately impacted, but expi
 <!--## 2 April 2020
 {: #2April2020}
 
-- **New and improved access control**: Now, when you give other people access to your Watson Assistant resources, you have more control over the level of access they have to your skills and assistants. You can give one person read-only access to a skill here and manager-level access to an assistant there. For more information, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).
-
-- **French language beta support added for contextual entities**: You can add contextual entities to French-language dialog skills. For more information about contextual entities, see [Creating entities](/docs/assistant?topic=assistant-entities#entities-annotations-overview).-->
+- **New and improved access control**: Now, when you give other people access to your Watson Assistant resources, you have more control over the level of access they have to your skills and assistants. You can give one person read-only access to a skill here and manager-level access to an assistant there. For more information, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).-->
 
 ## 1 April 2020
 {: #1April2020}
 
-- **Plus plan changes**: The Plus plan is now available starting at $120/month on pay-as-you-go or subscription IBM Cloud accounts. And you can subscribe without contacting Sales.
+- **Plus plan changes**: The Plus plan is now available starting at $120/month for 1,000 users on pay-as-you-go or subscription IBM Cloud accounts. And you can subscribe without contacting Sales.
+
+- **French language beta support added for contextual entities**: You can add contextual entities to French-language dialog skills. For more information about contextual entities, see [Creating entities](/docs/assistant?topic=assistant-entities#entities-annotations-overview).
 
 - **New API version**: The current API version is now `2020-04-01`. The following change was made with this version:
 
