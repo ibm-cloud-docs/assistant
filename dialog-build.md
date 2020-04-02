@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-24"
+lastupdated: "2020-04-02"
 
 keywords: dialog node limits, copying a node, moving a node, adding a folder, building a dialog
 
@@ -111,12 +111,6 @@ To create a dialog, complete the following steps:
 1.  **Optional**: If you want this node to be considered when users are shown a set of node choices at run time, and asked to pick the one that best matches their goal, then add a short description of the user goal handled by this node to the **external node name** field. For example, *Open an account*.
 
     ![Plus or Premium plan only](images/plus.png) The *external node name* field is only displayed to Plus or Premium plan users. See [Disambiguation](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation) for more details.
-
-1.  **Optional**: Name the node.
-
-    The dialog node name can contain letters (in Unicode), numbers, spaces, underscores, hyphens, and periods.
-
-    Naming the node makes it easier for you to remember its purpose and to locate the node when it is minimized. If you don't provide a name, the node condition is used as the name.
 
 1.  To add more nodes, select a node in the tree, and then click the **More** ![More icon](images/kabob.png) icon.
 

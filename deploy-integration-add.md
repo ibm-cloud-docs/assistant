@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-10"
+lastupdated: "2020-04-02"
 
 subcollection: assistant
 
@@ -63,6 +63,7 @@ Follow these steps to add integrations to your assistant:
     - [Voice Agent (Telephony)](https://cloud.ibm.com/catalog/services/voice-agent-with-watson){: external}
 
       Opens the **Voice Agent with Watson** service overview page on {{site.data.keyword.cloud}}.
+    - [Web Chat](/docs/assistant?topic=assistant-deploy-web-chat) ![Plus or Premium plan only](images/plus.png)
 
 1.  Follow the instructions that are provided on the screen to complete the integration process.
 

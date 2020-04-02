@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-01"
+lastupdated: "2020-04-02"
 
 subcollection: assistant
 
@@ -51,7 +51,7 @@ To add the assistant to a web page on your company website, complete the followi
 
 1.  **Optional**: Customize the chat. You can make the following changes:
 
-    - **Public assistant name**. Name by which the assistant is known to users. This name is displayed in the header of the chat window. 
+    - **Public assistant name**. Name by which the assistant is known to users. This name is displayed in the header of the chat window. The name can be up to 18 characters in length.
     - **Font family**. List one or more font styles that you want applied to the text that is displayed in the chat window. Separate multiple font names with commas. The first font family in the list is used unless the web page does not support it, in which case the next font family in the list is used. Surround font family names that include spaces with single quotation marks. For example, `Georgia,'Helvetica Neue'`. 
     
       If you don't specify a font, these fonts are used: `IBMPlexSans, Arial, Helvetica, sans-serif`. 

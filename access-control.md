@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-01"
+lastupdated: "2020-04-02"
 
 subcollection: assistant
 
@@ -42,7 +42,7 @@ Service-level access role support was enabled in phases. The following table sho
 
 | Location    | Service access support adoption date |
 |-------------|--------------------------------------|
-| Dallas      | Not available |
+| Dallas      | 2 April 2020 |
 | Frankfurt   | 1 April 2020 |
 | Seoul       | 2 March 2020 |
 | Sydney      | 16 March 2020 |
@@ -54,7 +54,7 @@ Service-level access role support was enabled in phases. The following table sho
 ## Before you grant access to others
 {: #access-control-prereqs}
 
-For each person to whom you grant access to your instance, decide whether you want to give the person a role with instance-level or resource-level access. Instance-level access applies to all of the assistants and skills in a single service instance. Resource-level access applies to individual skills and assistants within a service instance only.
+For each person to whom you grant access to your {{site.data.keyword.conversationshort}} service instance, decide whether you want to give the person a role with instance-level or resource-level access. Instance-level access applies to all of the assistants and skills in a single service instance. Resource-level access applies to individual skills and assistants within a service instance only.
 
 Resource-level roles can be defined for service instances that are managed by Identity and Access Management (IAM) only, not instances managed by Cloud Foundry.
 {: note}
