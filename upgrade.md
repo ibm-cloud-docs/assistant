@@ -46,7 +46,7 @@ To upgrade your plan, complete these steps:
 
     - If you upgrade to a Premium plan, you cannot do an in-place upgrade of your service instance. A Premium plan instance must be provisioned for you first. After the service instance is provisioned, you must export your dialog skills from the old plan instance, and import them into the new plan instance. For more information, see [Backing up and restoring data](/docs/assistant?topic=assistant-backup).
 
-    - When you upgrade from a Standard plan to a Plus plan, you change the metrics that are used for billing purposes. Instead of basing billing on API usage, the Plus plan bases billing on the number of monthly active users. If you built a custom app to deploy your assistant, evaluate whether you need to update the app to ensure that the API calls pass user ID information. For more information, see [User-based plans explained](/docs/assistant?topic=assistant-services-information#services-information-user-based-plans).
+    - When you upgrade from a Standard plan to a Plus plan, you change the metrics that are used for billing purposes. Instead of basing billing on API usage, the Plus plan bases billing on the number of monthly active users. If you built a custom app to deploy your assistant, you might need to update the app. Ensure that the API calls from the app include user ID information. For more information, see [User-based plans explained](/docs/assistant?topic=assistant-services-information#services-information-user-based-plans).
 
 For answers to common questions about subscriptions, see the [How you're charged](/docs/billing-usage?topic=billing-usage-charges){: external}.
 
