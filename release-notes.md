@@ -62,7 +62,7 @@ Existing models that you have trained will not be immediately impacted, but expi
 ## 1 April 2020
 {: #1April2020}
 
-- **Plus plan changes**: The Plus plan is now available starting at $120/month on pay-as-you-go or subscription IBM Cloud accounts. And you can subscribe without contacting Sales.
+- **Plus plan changes**: The Plus plan is now available starting at $120/month for 1,000 users on pay-as-you-go or subscription IBM Cloud accounts. And you can subscribe without contacting Sales.
 
 - **New API version**: The current API version is now `2020-04-01`. The following change was made with this version:
 
