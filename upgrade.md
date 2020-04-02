@@ -42,7 +42,7 @@ To upgrade your plan, complete these steps:
 1. From the header of any page in the current instance, click the User icon ![user icon](images/user-icon.png).
 1.  Choose **Upgrade Plan** from the menu.
 
-    From here, you can see your current plan and other available plan options. Depending on the plan type, you can make changes yourself or inform IBM that you want to change your plan.
+    From here, you can see your current plan and other available plan options. For most plan types, you can step through the upgrade process yourself.
 
     - If you upgrade to a Premium plan, you cannot do an in-place upgrade of your service instance. A Premium plan instance must be provisioned for you first. After the service instance is provisioned, you must export your dialog skills from the old plan instance, and import them into the new plan instance. For more information, see [Backing up and restoring data](/docs/assistant?topic=assistant-backup).
 

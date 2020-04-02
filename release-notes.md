@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-01"
+lastupdated: "2020-04-02"
 
 subcollection: assistant
 
@@ -52,10 +52,10 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
-<!--## 2 April 2020
+## 2 April 2020
 {: #2April2020}
 
-- **New and improved access control**: Now, when you give other people access to your Watson Assistant resources, you have more control over the level of access they have to your skills and assistants. You can give one person read-only access to a skill here and manager-level access to an assistant there. For more information, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).-->
+- **New and improved access control**: Now, when you give other people access to your {{site.data.keyword.conversationshort}} resources, you have more control over the level of access they have to individual skills and assistants. You can give one person read-only access to a skill here and manager-level access to an assistant there. For more information, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).
 
 ## 1 April 2020
 {: #1April2020}
@@ -300,7 +300,7 @@ The following technologies are being deprecated:
 {: #7Novembber2019}
 <!--1.82-->
 
-- **Irrelevance detection has been added**: When enabled, a supplemental model is used to help identify utterances that are irrelevant and should not be answered by the dialog skill. This new model is especially beneficial for skills that have not been trained on what subjects to ignore. This feature is available for English skills only. For more information, see [New irrelevant topic detection](/docs/assistant?topic=assistant-irrelevance-detection).
+- **Irrelevance detection has been added**: When enabled, a supplemental model is used to help identify utterances that are irrelevant and should not be answered by the dialog skill. This new model is especially beneficial for skills that have not been trained on what subjects to ignore. This feature is available for English skills only. For more information, see [Irrelevance detection](/docs/assistant?topic=assistant-irrelevance-detection).
 
 - **Time zone support for now() method**: You can now specify the time zone for the date and time that is returned by the `now()` method. See [Now()](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-dates-now).
 
@@ -513,7 +513,7 @@ The following updates are available in all locations except Dallas currently.
 ## 11 February 2019
 {: #11February2019}
 
-**Integrate with Intercom**: Intercom, a leading customer service messaging platform, has partnered with IBM to add a new agent to the team, a virtual Watson Assistant. You can integrate your assistant with an Intercom application to enable the app to seamlessly pass user conversations between your assistant and human support agents. This integration is available to Plus and Premium plan users only. See [Integrating with Intercom](/docs/assistant?topic=assistant-deploy-intercom) for more details.
+**Integrate with Intercom**: Intercom, a leading customer service messaging platform, has partnered with IBM to add a new agent to the team, a virtual {{site.data.keyword.conversationshort}}. You can integrate your assistant with an Intercom application to enable the app to seamlessly pass user conversations between your assistant and human support agents. This integration is available to Plus and Premium plan users only. See [Integrating with Intercom](/docs/assistant?topic=assistant-deploy-intercom) for more details.
 
 ## 8 February 2019
 {: #8February2019}
@@ -814,7 +814,7 @@ The following updates are available in all locations except Dallas currently.
 
 - **Introducing {{site.data.keyword.conversationfull}}**: {{site.data.keyword.ibmwatson}} Conversation has been renamed. It is now called {{site.data.keyword.conversationfull}}. The name change reflects the fact that {{site.data.keyword.conversationshort}} is expanding to provide prebuilt content and tools that help you more easily share the virtual assistants you build. Read [this blog post](https://www.ibm.com/blogs/watson/2018/03/the-future-of-watson-conversation-watson-assistant/) for more details.
 
-- **New REST APIs and SDKs are available for Watson Assistant**: The new APIs are functionally identical to the existing Conversation APIs, which continue to be supported. For more information about the Watson Assistant APIs, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1){: external}.
+- **New REST APIs and SDKs are available for {{site.data.keyword.conversationshort}}**: The new APIs are functionally identical to the existing Conversation APIs, which continue to be supported. For more information about the {{site.data.keyword.conversationshort}} APIs, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1){: external}.
 
 - **Dialog enhancements**: The following features were added to the dialog tool:
 
