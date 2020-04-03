@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-26"
+lastupdated: "2020-04-03"
 
 subcollection: assistant
 
@@ -402,8 +402,6 @@ To make a synchronous call to a {{site.data.keyword.openwhisk_short}} action tha
              <td>Bearer `<IAM token>`</td>
            </tr>
          </table>
-
-        For more information about how to manage IAM tokens, see this [IBM Developer article](https://developer.ibm.com/tutorials/accessing-iam-based-services-from-ibm-cloud-functions/){: external}.
 
     Your webhook details are saved automatically.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-05"
+lastupdated: "2020-04-03"
 
 subcollection: assistant
 
@@ -120,6 +120,9 @@ To delete messages using `customer_id` values, see the [Information security](/d
 {: #logs-resources-jupyter-notebooks}
 
 IBM created Jupyter notebooks that you can use to analyze the behavior or your assistant. A Jupyter notebook is a web-based environment for interactive computing. You can run small pieces of code that process your data, and you can immediately view the results of your computation.
+
+You can use the notebooks with English-language skills only.
+{: note}
 
 ### Dialog skill analysis notebook
 {: #logs-resources-jupyter-dialog}
