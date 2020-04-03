@@ -100,14 +100,14 @@ To add the assistant to a web page on your company website, complete the followi
 
 1.  Refresh the web page.
 
+    For information about the web browsers that are supported by the Web Chat, see [Browser Support](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/){: external}.
+
     ![Chat icon](images/web-chat-icon.png) 
     
     The Web Chat launcher icon is displayed at the end of the page. The icon is blue unless you customize the accent color.
 
-    The placement of the Web Chat icon is always the same regardless of where you paste the script element into the web page source.
+    The placement of the Web Chat icon is always the same regardless of where you paste the script element into the web page source. The chat window is represented by a `div` HTML element.
     {: important}
-
-    For information about the web browsers that are supported by the Web Chat, see [Browser Support](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/){: external}.
 
 1.  Click the icon to open the chat window and talk to your assistant.
 
