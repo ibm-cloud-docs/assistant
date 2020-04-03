@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-02"
+lastupdated: "2020-04-03"
 
 subcollection: assistant
 
@@ -30,27 +30,6 @@ You can give other people access to your {{site.data.keyword.conversationshort}}
 
 Maybe you want one development team to have access to a test assistant and another development team to have access to a production assistant. And you want data scientists to be able to view analtyics for user conversation logs from both assistants. And maybe you want a writer to be able to author the dialog that is used by your assistant to converse with your customers. To manage who can do what with your skills and assistants, you can assign different access roles to different people.
 
-## Access control improvements
-{: #access-control-new}
-
-Historically, the service access role assignments that were defined for a {{site.data.keyword.conversationshort}} service instance in the IBM Cloud dashboard were ignored. Users with either Reader- or Writer-level service access to an instance effectively had Manager-level access. This behavior changed for all data centers as of 1 April 2020. Now that the access control improvements are released, service-level access role assignments are recognized by the product.
-
-### Location support
-{: #access-control-geos}
-
-Service-level access role support was enabled in phases. The following table shows when support was added in different data centers.
-
-| Location    | Service access support adoption date |
-|-------------|--------------------------------------|
-| Dallas      | 2 April 2020 |
-| Frankfurt   | 1 April 2020 |
-| Seoul       | 2 March 2020 |
-| Sydney      | 16 March 2020 |
-| Tokyo       |  2 March 2020 |
-| London      | 16 March 2020 |
-| Washington DC  | 16 March 2020 |
-{: caption="Data centers with service access role support" caption-side="top"}
-
 ## Before you grant access to others
 {: #access-control-prereqs}
 
@@ -61,9 +40,6 @@ Resource-level roles can be defined for service instances that are managed by Id
 
 ## Granting users access to your resources
 {: #access-control-task}
-
-Only one person can edit an intent, entity, or a dialog node at a time. If multiple people work on the same item at the same time, then the changes that are made by the person who saves their changes last are the only changes applied. Changes that are made at the same time by someone else and that are saved first are not retained. Coordinate the updates that you plan to make with your team members to prevent anyone from losing their work.
-{: important}
 
 1.  If you plan to give a user access to a single skill or assistant in your service instance, get the ID for the skill or assistant. You need to provide the ID in a later step.
 
@@ -110,7 +86,7 @@ Only one person can edit an intent, entity, or a dialog node at a time. If multi
 
 1.  Click **Invite** to finish the process.
 
-When more people contribute to the development of a dialog skill, unintended changes can occur, including skill deletions. Consider creating backup copies of your dialog skill regularly, so you can roll back to an earlier version if necessary. To create a backup, [download the skill as a JSON file](/docs/services/assistant?topic=assistant-skill-dialog-add#skill-dialog-add-download).
+When more people contribute to the development of a dialog skill, unintended changes can occur, including skill deletions. Only one person can edit an intent, entity, or a dialog node at a time. If multiple people work on the same item at the same time, then the changes that are made by the person who saves their changes last are the only changes applied. Changes that are made at the same time by someone else and that are saved first are not retained. Coordinate the updates that you plan to make with your team members to prevent anyone from losing their work. Also, consider creating backup copies of your dialog skill regularly, so you can roll back to an earlier version if necessary. To create a backup, [download the skill as a JSON file](/docs/services/assistant?topic=assistant-skill-dialog-add#skill-dialog-add-download).
 {: tip}
 
 ## Popular role assignments
@@ -287,6 +263,27 @@ The following table shows the UI and API actions that can be performed by differ
 {: class="comparison-table"}
 {: caption="Table 5. Action privileges per service role" caption-side="top"}
 {: summary="This table has row and column headers. The row headers identify the user interface or API actions. The column headers identify the different resource-level roles. To understand which roles can do an action, go to the row that describes the action, and find the columns for the role you are interested in."}
+
+## Access control improvements
+{: #access-control-new}
+
+Before April 2020, the service access role assignments that were defined for a {{site.data.keyword.conversationshort}} service instance in the IBM Cloud dashboard were not applied. Users with either Reader- or Writer-level service access to an instance effectively had Manager-level access. This behavior changed for all data centers as of 2 April 2020. With the access control improvements released, service-level access role assignments are recognized by the product.
+
+### Location support
+{: #access-control-geos}
+
+Service-level access role support was enabled in phases. The following table shows when support was added in different data centers.
+
+| Location    | Service access support adoption date |
+|-------------|--------------------------------------|
+| Dallas      | 2 April 2020 |
+| Frankfurt   | 1 April 2020 |
+| Seoul       | 2 March 2020 |
+| Sydney      | 16 March 2020 |
+| Tokyo       |  2 March 2020 |
+| London      | 16 March 2020 |
+| Washington DC  | 16 March 2020 |
+{: caption="Data centers with service access role support" caption-side="top"}
 
 ## How to keep your access
 {: #access-control-prep}

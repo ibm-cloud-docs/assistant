@@ -55,7 +55,7 @@ Existing models that you have trained will not be immediately impacted, but expi
 ## 2 April 2020
 {: #2April2020}
 
-- **New and improved access control**: Now, when you give other people access to your {{site.data.keyword.conversationshort}} resources, you have more control over the level of access they have to individual skills and assistants. You can give one person read-only access to a skill here and manager-level access to an assistant there. For more information, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).
+- **New and improved access control**: Now, when you give other people access to your {{site.data.keyword.conversationshort}} resources, you have more control over the level of access they have to individual skills and assistants. You can give one person read-only access to a production skill and manager-level access to a development skill, for example. For more information, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).
 
 ## 1 April 2020
 {: #1April2020}
