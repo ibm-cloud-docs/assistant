@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-30"
+lastupdated: "2020-04-03"
 
 keywords: intent, intent conflicts, annotate
 
@@ -204,7 +204,7 @@ The number of intents and examples you can create depends on your {{site.data.ke
 |------------------|------------------:|-------------------:|
 | Premium          |             2,000 |             25,000 |
 | Plus             |             2,000 |             25,000 |
-| Standard         |             2,000 |             25,000 |
+| Standard(legacy) |             2,000 |             25,000 |
 | Lite, Plus Trial |               100 |             25,000 |
 {: caption="Plan details" caption-side="top"}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-03"
+lastupdated: "2020-04-06"
 
 subcollection: assistant
 
@@ -58,8 +58,10 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 - **New and improved access control**: Now, when you give other people access to your {{site.data.keyword.conversationshort}} resources, you have more control over the level of access they have to individual skills and assistants. You can give one person read-only access to a production skill and manager-level access to a development skill, for example. For more information, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).
 
-  If you cannot do actions that you used to be able to do, ask the service instance owner to change your service access role. For more information, see [How to keep your access](/docs/assistant?topic=assistant-access-control#access-control-prep).
+  Can't see Analytics anymore? If you cannot do things that you could do before, you might not have appropriate access. Ask the service instance owner to change your service access role. For more information, see [How to keep your access](/docs/assistant?topic=assistant-access-control#access-control-prep).
   {: important}
+
+  If you can't access the API Details for a skill or assistant anymore, you might not have the access role that is required to use the instance-level API credentials. You can use a personal API key instead. For more information, see [Getting API information](/docs/assistant?topic=assistant-assistant-settings#assistant-settings-api-details).
 
 - **The Web Chat integration was updated**: The `learningOptOut` parameter replaced a previous version of the parameter. You can add the `learningOptOut` parameter and set it to `true` to add the `X-Watson-Learning-Opt-Out` header to each `/message` request that originates from the Web Chat. For more information about the header, see [Data collection](https://cloud.ibm.com/apidocs/assistant/assistant-v2#data-collection){: external}. For more information about the parameter, see [Configuration](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-configuration){: external}.
 

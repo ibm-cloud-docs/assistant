@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-02"
+lastupdated: "2020-04-03"
 
 subcollection: assistant
 
@@ -81,7 +81,7 @@ The number of integrations you can create in a single service instance depends o
 |------------------|---------------------------:|
 | Premium          |                        100 |
 | Plus             |                        100 |
-| Standard         |                        100 |
+| Standard(legacy) |                        100 |
 | Plus Trial       |                        100 |
 | Lite             |                        100 |
 {: caption="Service plan details" caption-side="top"}

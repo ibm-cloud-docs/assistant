@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-03"
+lastupdated: "2020-04-06"
 
 subcollection: assistant
 
@@ -28,7 +28,7 @@ subcollection: assistant
 You can give other people access to your {{site.data.keyword.conversationshort}} resources, and control the level of access they get.
 {: shortdesc}
 
-Maybe you want one development team to have access to a test assistant and another development team to have access to a production assistant. And you want data scientists to be able to view analtyics for user conversation logs from both assistants. And maybe you want a writer to be able to author the dialog that is used by your assistant to converse with your customers. To manage who can do what with your skills and assistants, you can assign different access roles to different people.
+Maybe you want one development team to have access to a test assistant and another development team to have access to a production assistant. And you want data scientists to be able to view analytics for user conversation logs from both assistants. And maybe you want a writer to be able to author the dialog that is used by your assistant to converse with your customers. To manage who can do what with your skills and assistants, you can assign different access roles to different people.
 
 ## Before you grant access to others
 {: #access-control-prereqs}
@@ -223,6 +223,9 @@ Use resource-level role assignments to limit who can edit live assistants that a
 
 The {{site.data.keyword.conversationshort}} user interface and API comply with the access roles that are defined for a service instance. When someone logs in to the user interface, it adjusts to show only what the current user can access, and it disables functions that the user does not have permissions to do. (For example, a person who is assigned to the Reader role for a dialog skill cannot create or edit entities, intents, or dialog nodes in the skill because the **Create {resource}** and **Edit** functions are disabled.) Similarly, the API allows access only to resources and methods that are permitted for the role that is associated with the specified API key.
 
+If you cannot access the API Details page for a skill or assistant, you might not have the access that is required to use the instance-level API credentials. You can use a personal API key instead. For more imformation, see [Getting API information](/docs/assistant?topic=assistant-assistant-settings#assistant-settings-api-details).
+{: note}
+
 The following table shows the UI and API actions that can be performed by different resource-level service roles.
 
 | Action | Reader | Writer | Manager |
@@ -325,11 +328,9 @@ Act now to get the service instance owner to change your access level.
 ## Prevent your collaborators from losing their access
 {: #access-control-admin-prep}
 
-When you create a {{site.data.keyword.conversationshort}} service instance, you are assigned to a Manager service access role automatically. Your access will not change. 
+When you create a {{site.data.keyword.conversationshort}} service instance, you are assigned to a Manager service access role automatically. Your access has not changed. 
 
 If you invited people to your service instance and assigned them to a Reader or Writer service access role, then perform the following steps now.
-
-If you aren't sure what role you assigned to the people you invited, then you can ask them. They will see a notification when they use the instance that tells them their current role. Otherwise, follow steps 1-5 to discover the person's role. If you assigned them to a role with limited privileges, take action now to reassign them to the appropriate role.
 
 To change a collaborator's service access role:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-01"
+lastupdated: "2020-04-03"
 
 keywords: entity, entity value, contextual entity, dictionary entity, pattern entity, entity synonym, annotate mentions
 
@@ -387,10 +387,10 @@ After you enable system entities, {{site.data.keyword.conversationshort}} begins
 The number of entities, entity values, and synonyms that you can create depends on your {{site.data.keyword.conversationshort}} service plan:
 
 | Plan      | Entities per skill | Entity values per skill | Entity synonyms per skill |
-|-------------------|-------------------:|------------------------:|--------------------------:|
+|-----------|-------------------:|------------------------:|--------------------------:|
 | Premium | 1,000 | 100,000 | 100,000 |
 | Plus | 1,000 | 100,000 |                   100,000 |
-| Standard | 1,000 | 100,000 | 100,000 |
+| Standard(legacy) | 1,000 | 100,000 | 100,000 |
 | Lite, Plus Trial | 25 | 100,000 | 100,000 |
 {: caption="Plan details" caption-side="top"}
 
@@ -400,7 +400,7 @@ System entities that you enable for use count toward your plan usage totals.
 |--------------|------------------------------------:|
 | Premium      |        150 contextual entities with 3000 annotations |
 | Plus         |        100 contextual entities with 2000 annotations |
-| Standard     |        100 contextual entities with 2000 annotations |
+| Standard(legacy) |        100 contextual entities with 2000 annotations |
 | Lite, Plus Trial |    10 contextual entities with 1000 annotations |
 {: caption="Plan details continued" caption-side="top"}
 
