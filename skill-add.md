@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-04-03"
 
 subcollection: assistant
 
@@ -63,7 +63,7 @@ The number of skills you can create depends on your {{site.data.keyword.conversa
 |------------------|----------------------------:|
 | Premium          |                          50 |
 | Plus             |                          50 |
-| Standard         |                          20 |
+| Standard (legacy) |                         20 |
 | Lite`*`, Plus Trial |                        5 |
 {: caption="Plan details" caption-side="top"}
 
