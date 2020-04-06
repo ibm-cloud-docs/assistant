@@ -390,7 +390,7 @@ The number of entities, entity values, and synonyms that you can create depends 
 |-----------|-------------------:|------------------------:|--------------------------:|
 | Premium | 1,000 | 100,000 | 100,000 |
 | Plus | 1,000 | 100,000 |                   100,000 |
-| Standard(legacy) | 1,000 | 100,000 | 100,000 |
+| Standard (legacy) | 1,000 | 100,000 | 100,000 |
 | Lite, Plus Trial | 25 | 100,000 | 100,000 |
 {: caption="Plan details" caption-side="top"}
 
@@ -400,7 +400,7 @@ System entities that you enable for use count toward your plan usage totals.
 |--------------|------------------------------------:|
 | Premium      |        150 contextual entities with 3000 annotations |
 | Plus         |        100 contextual entities with 2000 annotations |
-| Standard(legacy) |        100 contextual entities with 2000 annotations |
+| Standard (legacy) |        100 contextual entities with 2000 annotations |
 | Lite, Plus Trial |    10 contextual entities with 1000 annotations |
 {: caption="Plan details continued" caption-side="top"}
 

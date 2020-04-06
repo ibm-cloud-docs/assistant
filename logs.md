@@ -49,7 +49,7 @@ The length of time for which messages are retained depends on your {{site.data.k
   ------------------------------------ | ------------------------------------
   Premium                              | Last 90 days
   Plus                                 | Last 30 days
-  Standard(legacy)                     | Last 30 days
+  Standard (legacy)                    | Last 30 days
   Plus Trial                           | Last 30 days
   Lite                                 | Last 7 days
 

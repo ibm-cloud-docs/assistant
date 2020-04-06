@@ -80,7 +80,7 @@ The number of versions you can create for a single skill depends on your {{site.
 |------------------|-------------------:|
 | Premium          |                 50 |
 | Plus             |                 10 |
-| Standard(legacy) |                 10 |
+| Standard (legacy) |                10 |
 | Plus Trial       |                 10 |
 | Lite             |                  0 |
 {: caption="Service plan details" caption-side="top"}

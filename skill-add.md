@@ -63,7 +63,7 @@ The number of skills you can create depends on your {{site.data.keyword.conversa
 |------------------|----------------------------:|
 | Premium          |                          50 |
 | Plus             |                          50 |
-| Standard(legacy) |                          20 |
+| Standard (legacy) |                         20 |
 | Lite`*`, Plus Trial |                        5 |
 {: caption="Plan details" caption-side="top"}
 

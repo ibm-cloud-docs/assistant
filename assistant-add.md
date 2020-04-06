@@ -72,7 +72,7 @@ The number of assistants you can create depends on your {{site.data.keyword.conv
 |--------------|--------------------------------:|
 | Premium      |                             100 |
 | Plus         |                             100 |
-| Standard(legacy) |                             100 |
+| Standard (legacy) |                        100 |
 | Plus Trial   |                             100 |
 | Lite*        |                             100 |
 {: caption="Plan details" caption-side="top"}
