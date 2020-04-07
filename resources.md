@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-20"
+lastupdated: "2020-04-07"
 
 subcollection: assistant
 
@@ -32,16 +32,6 @@ Links to resources, videos, tutorials, and articles that can help you to get sta
 ## Developer resources
 {: #resources-for-developers}
 
-- [IBM Code Bot Asset Exchange](https://developer.ibm.com/code/exchanges/bots/){: external}
-
-## Popular product overview videos
-{: #resources-om-videos}
-
-- [Deep Dive: {{site.data.keyword.conversationshort}} integrations and new web chat with live agents](https://event.on24.com/eventRegistration/EventLobbyServlet?target=reg20.jsp&referrer=https%3A%2F%2Fwcc.on24.com%2Fwebcast%2Fwebcasts&eventid=2109942&sessionid=1&key=4671C1236885158BD7823403CE605635&regTag=&sourcepage=register)
-
-## Developer resources for building assistants
-{: #resources-for-bots}
-
 - [Codeless test automation for your assistant](https://chatbotsmagazine.com/10-minutes-codeless-test-automation-for-ibm-watson-chatbots-d71eac9626d7){: external}
 - [Retail chat app](https://developer.ibm.com/patterns/create-cognitive-retail-chatbot/){: external}
 - [Cognitive Banking chatbot](https://developer.ibm.com/patterns/create-cognitive-banking-chatbot/){: external}
@@ -51,19 +41,13 @@ Links to resources, videos, tutorials, and articles that can help you to get sta
 - [Tutorial: Build a database-driven Slackbot](https://cloud.ibm.com/docs/tutorials/slack-chatbot-database-watson.html){: external}
 - [Tutorial: Build a voice-enabled Android chatbot](https://cloud.ibm.com/docs/tutorials/android-watson-chatbot.html){: external}
 
+## Popular product overview videos
+{: #resources-om-videos}
+
+- [Deep Dive: {{site.data.keyword.conversationshort}} integrations and new web chat with live agents](https://event.on24.com/eventRegistration/EventLobbyServlet?target=reg20.jsp&referrer=https%3A%2F%2Fwcc.on24.com%2Fwebcast%2Fwebcasts&eventid=2109942&sessionid=1&key=4671C1236885158BD7823403CE605635&regTag=&sourcepage=register)
+
 ## Building with Watson videos
 {: #resources-videos}
-
-From an IBM technical deep-dive series. These recordings provide step-by-step instructions and answers.
-
-- [Advanced integrations with {{site.data.keyword.conversationshort}}](https://youtu.be/0rnt54ONtQw){: external}
-- [Training {{site.data.keyword.conversationshort}} to detect user intent](https://youtu.be/uYw4Tv1Y5tc){: external}
-- [New tools for dialog scripting](https://youtu.be/QuR54--vD5o){: external}
-
-## Other videos
-{: #resources-other-videos}
-
-Additional videos created by IBMers.
 
 - [Watson Assistant demos](https://www.ibm.com/demos/collection/Watson-Assistant/){: external}: A collection of resources, including a product tour and hands-on lab.
 - [{{site.data.keyword.conversationshort}} Integrations Tutorial ](https://www.youtube.com/watch?v=O3silvVBaC8&t=3s){: external}: A 10-minute tutorial you can follow to connect {{site.data.keyword.conversationshort}} with Twilio using Botkit to create a SMS chatbot.

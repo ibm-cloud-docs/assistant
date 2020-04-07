@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-03"
+lastupdated: "2020-04-07"
 
 subcollection: assistant
 
@@ -69,7 +69,8 @@ If you cannot view the API details or service credentials, it is likely that you
 
 If you have a Writer or Reader service access role to the instance and want to use the API, you can create a personal API key. Go to the [IBM Cloud API keys](https://cloud.ibm.com/iam/apikeys){: external} page to create an IBM Cloud API key to use to authenticate your API requests. For more information, see [Managing user API keys](/docs/iam?topic=iam-userapikey){: external}. With the personal key, you can make API requests that you have the appropriate privileges to complete. For more information about API privileges per access role, see [Resource-level role impact on available actions](/docs/assistant?topic=assistant-access-control#access-control-ui-impact).
 
-If the assistant ID is not displayed, you can copy it from the URL of the assistant web page. The Assistant ID is listed just after `/assistants/{assistantID}`.
+If the assistant ID is not displayed, you can copy it from the URL of the assistant web page. The assistant ID is listed just after `/assistants/{assistantID}`. Similarly, you can get the skill ID from the URL of the skill page. The skill ID is listed just after `/skills/{skillID}`.
+{: tip}
 
 ## Changing the inactivity timeout setting ![Plus or Premium plan only](images/plus.png)
 {: #assistant-settings-change-timeout}
