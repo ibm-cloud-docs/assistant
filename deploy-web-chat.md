@@ -236,7 +236,7 @@ Zendesk Chat is an add-on to Zendesk Support. Zendesk Support puts all your cust
     
     - Open the Zendesk Chat Dashboard.
 
-       From the Zendesk Support dashboard, you can click the Chat icon in the header, and then click *Chat dashboard*.
+       From the Zendesk Support dashboard, you can click the *Zendesk Products* icon in the header, and then click the *Chat* icon.
 
        ![Screen capture of the chat icon in the header.](images/zd-open-chat.png)
     
@@ -262,7 +262,14 @@ Zendesk Chat is an add-on to Zendesk Support. Zendesk Support puts all your cust
 
     - Log in to Zendesk with a user ID that has Administrative privileges.
 
-    - Install the private application to your Zendesk Chat subdomain as a new private app. When credentials are requested, paste the private app credentials that you copied earlier. Go to *Settings > Account > Apps* to upload the private app.
+    - Install the private application to your Zendesk Chat subdomain as a new private app. 
+    
+      - From the Chat dashboard navigation pane, expand *Settings*, and then click *Account*
+      - Open the *Apps* tab.
+      - Click *Upload private app*, and then browse for the application file that you downloaded earlier.    
+      - When credentials are requested, paste the private app credentials that you copied earlier.
+
+      ![Screen capture of the Zendesk Account page where you can upload a private app.](images/zd-upload-app.png)
 
       For more information, see [Uploading and installing a private app in Zendesk Chat](https://develop.zendesk.com/hc/en-us/articles/360001069347-Uploading-and-installing-a-private-app){: external}.
 
