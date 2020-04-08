@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-02"
+lastupdated: "2020-04-08"
 
 subcollection: assistant
 
@@ -248,7 +248,7 @@ Zendesk Chat is an add-on to Zendesk Support. Zendesk Support puts all your cust
 
        ![Screen capture of the connection dialog.](images/zd-account-key.png)
 
-    - Paste the key into the field, and then click **Access account**.
+    - Return to the setup page in {{site.data.keyword.conversationshort}}, and then paste the key into the field. Click **Access account**.
 
 1.  {: #deploy-web-chat-zendesk-add-private-app}Install the {{site.data.keyword.conversationshort}} private application in your Zendesk Chat subdomain.
 
