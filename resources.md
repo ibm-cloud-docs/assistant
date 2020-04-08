@@ -42,16 +42,10 @@ Links to resources, videos, tutorials, and articles that can help you to get sta
 - [Tutorial: Build a voice-enabled Android chatbot](https://cloud.ibm.com/docs/tutorials/android-watson-chatbot.html){: external}
 
 ## Popular product overview videos
-{: #resources-om-videos}
-
-- [Deep Dive: {{site.data.keyword.conversationshort}} integrations and new web chat with live agents](https://event.on24.com/eventRegistration/EventLobbyServlet?target=reg20.jsp&referrer=https%3A%2F%2Fwcc.on24.com%2Fwebcast%2Fwebcasts&eventid=2109942&sessionid=1&key=4671C1236885158BD7823403CE605635&regTag=&sourcepage=register)
-
-## Building with Watson videos
 {: #resources-videos}
 
+- [Deep Dive: {{site.data.keyword.conversationshort}} integrations and new web chat with live agents](https://event.on24.com/eventRegistration/EventLobbyServlet?target=reg20.jsp&referrer=https%3A%2F%2Fwcc.on24.com%2Fwebcast%2Fwebcasts&eventid=2109942&sessionid=1&key=4671C1236885158BD7823403CE605635&regTag=&sourcepage=register)
 - [Watson Assistant demos](https://www.ibm.com/demos/collection/Watson-Assistant/){: external}: A collection of resources, including a product tour and hands-on lab.
-- [{{site.data.keyword.conversationshort}} Integrations Tutorial ](https://www.youtube.com/watch?v=O3silvVBaC8&t=3s){: external}: A 10-minute tutorial you can follow to connect {{site.data.keyword.conversationshort}} with Twilio using Botkit to create a SMS chatbot.
-- [Show me how to use {{site.data.keyword.conversationshort}}](https://youtu.be/tUkLIUOm550){: external}: A 3-minute overview of the product.
 
 ## Educational materials
 {: #resources-academy}
