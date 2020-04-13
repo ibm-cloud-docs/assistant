@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-08"
+lastupdated: "2020-04-13"
 
 subcollection: assistant
 
@@ -279,9 +279,9 @@ Zendesk Chat is an add-on to Zendesk Support. Zendesk Support puts all your cust
 
 When you test the service desk integration, make sure there is at least one agent with `Online` status. Agent status is set to `Invisible` unless it is explicitly changed.
 
-<!--Watch the following 3 1/2-minute video to see someone set up a connection to a Zendesk service desk.
+Watch the following 4-minute video to see someone set up a connection to a Zendesk service desk.
 
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Setting up a Zendesk service desk connection" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/enTChbJY3R8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>-->
+<iframe class="embed-responsive-item" id="youtubeplayer" title="Setting up a Zendesk service desk connection" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/hegheiqUqiM" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 ### Setting up a Salesforce integration
 {: #deploy-web-chat-salesforce}
@@ -372,9 +372,9 @@ To set up a Salesforce service desk integration, complete the following steps:
 
 When you test the service desk integration, make sure there is at least one agent with `Available` status.
 
-<!--Watch the following x-minute video to watch someone set up a connection to a Salesforce service desk.
+Watch the following 5-minute video to watch someone set up a connection to a Salesforce service desk.
 
-<iframe class="embed-responsive-item" id="youtubeplayer0" title="Setting up a Salesforce service desk connection" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/enTChbJY3R8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>-->
+<iframe class="embed-responsive-item" id="youtubeplayer0" title="Setting up a Salesforce service desk connection" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/mUx-qvZH-qo" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 ## Adding transfer support to your dialog
 {: #deploy-web-chat-dialog-prereq}
