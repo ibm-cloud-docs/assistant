@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-13"
+lastupdated: "2020-04-14"
 
 subcollection: assistant
 
@@ -51,10 +51,7 @@ To add the assistant to a web page on your company website, complete the followi
 
 1.  **Optional**: Customize the chat. You can make the following changes:
 
-    - **Public assistant name**. Name by which the assistant is known to users. This name is displayed in the header of the chat window. The name can be up to 18 characters in length.
-    - **Font family**. List one or more font styles that you want applied to the text that is displayed in the chat window. Separate multiple font names with commas. The first font family in the list is used unless the web page does not support it, in which case the next font family in the list is used. Surround font family names that include spaces with single quotation marks. For example, `Georgia,'Helvetica Neue'`. 
-    
-      If you don't specify a font, these fonts are used: `IBMPlexSans, Arial, Helvetica, sans-serif`. 
+    - **Public assistant name**. Name by which the assistant is known to users. This name is displayed in the header of the chat window. The name can be up to 18 characters in length. 
 
     - **Primary color**. Sets the color of the Web Chat header.
 
@@ -129,13 +126,15 @@ To add the assistant to a web page on your company website, complete the followi
 
     The Web Chat instance is created as soon as you click the *Create* button, and does not need to be saved.
 
+You can apply more advanced customizations to the style of the web chat by using the {{site.data.keyword.conversationshort}} Web Chat toolkit on [GitHub](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-configuration){: external}. For example, the text that is displayed in the chat window uses the fonts: `IBMPlexSans, Arial, Helvetica, sans-serif`. If you want to use a different font, you can specify it by using the `instance.updateCSSVariables()` method.
+
 ## Dialog considerations
 {: #deploy-web-chat-dialog}
 
 The rich responses that you add to a dialog are displayed in the Web Chat as expected, with the following exceptions:
 
 - **Connect to human agent**: This response type is ignored.
-- **Option**: If your option list contains up to four choices, they are displayed as butttons. If your list contains five or more options, then they are displayed in a drop-down list.
+- **Option**: If your option list contains up to four choices, they are displayed as buttons. If your list contains five or more options, then they are displayed in a drop-down list.
 - **Pause**: This response type pauses the assistant's activity in the chat. However, activity does not resume after the pause until another response is triggered. Whenever you include a `pause` response type, add another, different response type, such as `text`, after it.
 
 For more information about rich response types, see [Rich responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia).
@@ -143,7 +142,7 @@ For more information about rich response types, see [Rich responses](/docs/assis
 ## Extending the web chat
 {: #deploy-web-chat-extend}
 
-You can make more advanced customizations and extend the capability of the web chat by using the {{site.data.keyword.conversationshort}} Web Chat toolkit on [GitHub](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/){: external}.
+You can extend the capability and customize the behavior of the web chat by using the {{site.data.keyword.conversationshort}} Web Chat toolkit on [GitHub](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/){: external}.
 
 If you choose to use the provided methods, you implement them by editing the code snippet that was generated earlier. You then embed the updated code snippet into your web page.
 
