@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-25"
+lastupdated: "2020-04-15"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
@@ -108,7 +108,7 @@ When testing your skills and assistants, any messages that you submit in the "Tr
 
 If your custom application or assistant interacts with users who are anonymous, you can generate your own randomized universally unique IDs to represent these users. For more information about UUIDs, see [RFC 4122](https://tools.ietf.org/html/rfc4122.html){: external}.
 
-- For Web Chat, if you are not passing an identifier for the user when the session begins, the Web Chat generates a unique ID for the user and stores it. If the same user returns to your site later in the month and chats with your assistant again, the Web Chat integration recognizes the user. And you are charged only once when an anonymous user interacts with your assistant multiple times in a single month.
+- For Web Chat, if you do not pass an identifier for the user when the session begins, the Web Chat creates one for you. It creates a first party cookie with a generated anonymous ID. The cookie remains active for 45 days. If the same user returns to your site later in the month and chats with your assistant again, the Web Chat integration recognizes the user. And you are charged only once when the same anonymous user interacts with your assistant multiple times in a single month.
 
 If an anonymous user logs in and later is identified as being the same person who submitted a request with a known ID, you are charged twice. Each message with a unique user ID is charged as an independent active user. To avoid this situation, you can prompt users to log in before you initiate a chat or you can use the anonymous user ID to represent the user consistently.
 
