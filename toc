@@ -127,7 +127,7 @@ Watson Assistant
 
     {: .topicgroup}
     Developer community
-        [StackOverflow](https://stackoverflow.com/questions/tagged/watson-assistant)
+        [Stack Overflow](https://stackoverflow.com/questions/tagged/watson-assistant)
         [WDC Slack channel](http://wdc-slack-inviter.mybluemix.net/)
 
     accessibility.md
