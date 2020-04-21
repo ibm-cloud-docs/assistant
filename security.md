@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-16"
+lastupdated: "2020-04-21"
 
 subcollection: assistant
 
@@ -28,6 +28,8 @@ subcollection: assistant
 
 Learn more about strategies that are available for you to use to ensure that your {{site.data.keyword.conversationshort}} data remains secure and protected in the cloud.
 {: shortdesc}
+
+For more information about {{site.data.keyword.Bluemix_notm}} security, see [Security architecture](https://www.ibm.com/cloud/architecture/architectures/securityArchitecture/watson-security){: external}.
 
 ![Premium plan only](images/premium0.png) The following feature is available with Premium plans only.
 
