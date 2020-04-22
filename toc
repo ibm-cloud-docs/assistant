@@ -9,41 +9,44 @@ Watson Assistant
     index.md
     assistants.md
     skills.md
+    dev-process.md
     tool-overview.md
     [Demo: Banking Assistant](https://watson-conversation-duo-dev.ng.bluemix.net/)
+    sample-apps.md
     resources.md
+    services-information.md
+    release-notes.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    dev-process.md
     assistant-add.md
     skill-add.md
+    assistant-settings.md
     skill-search-add.md
-    skill-dialog-add.md
-    catalog.md
 
     {: .topicgroup}
-    Creating intents
+    Creating a dialog skill
+        skill-dialog-add.md
+        catalog.md
         intents.md
         intent-recommendations.md
         irrelevance-detection.md
-
-    {: .topicgroup}
-    Creating a dialog
         dialog-overview.md
+        dialog-depiction.md
         dialog-build.md
-        dialog-runtime.md
         dialog-tips.md
+        entities.md
+        versions.md
+        dialog-runtime.md
         dialog-slots.md
         dialog-webhooks.md
         dialog-actions-client.md
         dialog-responses-json.md
-        dialog-depiction.md
-
-    entities.md
-    versions.md
-    assistant-settings.md
-    access-control.md
+        tutorial.md
+        tutorial-slots.md
+        tutorial-slots-complex.md
+        tutorial-car-dashboard.md
+        tutorial-digressions.md
 
     {: .topicgroup}
     Deploying
@@ -64,21 +67,13 @@ Watson Assistant
 
     {: .topicgroup}
     Administering
+        access-control.md
+        information-security.md
         security.md
         recovery.md
         backup.md
         /watson/watson-migrate
         upgrade.md
-
-    edit-convo-workspace.md
-
-    {: .topicgroup}
-    Tutorials
-        tutorial.md
-        tutorial-slots.md
-        tutorial-slots-complex.md
-        tutorial-car-dashboard.md
-        tutorial-digressions.md
 
     {: .topicgroup}
     Using the API
@@ -89,23 +84,20 @@ Watson Assistant
         api-context.md
         api-dialog-responses.md
         api-dialog-modify.md
+        /watson/watson-using-sdks
 
     {: .topicgroup}
     Early access program
         beta.md
 
-    dialog-evolution.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
     [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2)
     at-events.md
-    services-information.md
     dialog-methods.md
     expression-language.md
     filter-reference.md
-    information-security.md
-    sample-apps.md
     language-support.md
 
     {: .topicgroup}
@@ -115,13 +107,10 @@ Watson Assistant
         time-zones.md
         sys-date-festivals.md
 
-    /watson/watson-using-sdks
-    [Watson GitHub repos](https://github.com/watson-developer-cloud/)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
     faqs.md
-    release-notes.md
     troubleshoot.md
     feedback.md
 

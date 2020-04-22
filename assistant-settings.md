@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-07"
+lastupdated: "2020-04-21"
 
 subcollection: assistant
 
@@ -62,8 +62,11 @@ To switch to a different {{site.data.keyword.conversationshort}} service instanc
 
 Get information, such as the assistant ID and skill ID and credentials that you need before you can use the API. 
 
-- For a skill, click the overflow menu, and then choose **View API Details**.
 - For an assistant, click the overflow menu, and then choose **Settings**. Click **API Details**.
+- For a skill, click the overflow menu, and then choose **View API Details**.
+
+  You can find the ID of the workspace that is associated with a dialog skill on the *Skill API Details* page also. It is included in the Legacy v1 workspace URL, after the `/workspaces/` segment.
+  {: note}
 
 If you cannot view the API details or service credentials, it is likely that you do not have Manager access to the service instance in which the resource was created. Only people with Manager service access to the instance can use the service credentials. 
 
