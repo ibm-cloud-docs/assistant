@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-03"
+lastupdated: "2020-04-22"
 
 keywords: mark as irrelevant, counterexample, data source, deployment ID
 
@@ -193,19 +193,4 @@ If you use data from another data source, any improvements you make to the model
 
 It is important to help your assistant stay focused on the types of customer questions and business transactions you have designed it to handle. You can use information collected from real customer conversations to highlight subjects that you do not want your assistant to even attempt to address.
 
-To teach your assistant about subjects it should ignore, mark utterances that discuss these off-topic subjects as irrelevant.
-
-The **Mark as irrelevant** option is not available in all languages. See [supported languages](/docs/assistant?topic=assistant-language-support) for details.
-
-Intents that are marked as irrelevant are saved as counterexamples in the JSON workspace, and are included as part of the training data. They teach your assistant to explicitly not answer utterances of this type.
-
-Be sure before you designate an input as irrelevant.
-
-- There is no way to access or change the inputs from the user interface later.
-- The only way to reverse the identification of an input as being irrelevant is to use the same input in a test integration channel, and then explicitly assign it to an intent.
-
-You can mark an intent as irrelevant directly from the *Try it out* pane also.
-
-  ![Mark as irrelevant screen capture](images/irrelevant.png)
-
-For English-language skills, irrelevance detection is used to help your skill recognize irrelevant inputs earlier in the development process. For more information, see [Irrelevance detection](/docs/assistant?topic=assistant-irrelevance-detection).
+For more information, see [Defining what's irrelevant](/docs/assistant?topic=assistant-irrelevance-detection).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-04-22"
 
 subcollection: assistant
 
@@ -25,23 +25,36 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:gif: data-image-type='gif'}
 
-# Irrelevance detection
+# Defining what's irrelevant
 {: #irrelevance-detection}
 
-Irrelevance detection helps your dialog skill recognize when a user asks about topics that it is not designed to answer, and to do so with confidence earlier in the development process.
+Teach your dialog skill to recognize when a user asks about topics that it is not designed to answer.
 {: shortdesc}
 
-This feature helps your dialog skill recognize subjects that you do not want it to address, even if you haven't explicitly taught it about what to ignore by marking specific user utterances as irrelevant.
+To teach your assistant about subjects it should ignore, you can review your user conversation logs to mark utterances that discuss off-topic subjects as irrelevant.
 
-This setting is used by English-language dialog skills only.
-{: important}
+The **Mark as irrelevant** option is not available in all languages. See [supported languages](/docs/assistant?topic=assistant-language-support) for details.
+{: note}
 
-To learn more about the benefits of this feature, read the [Why Zero-Effort Irrelevance is Relevant](https://medium.com/ibm-watson/enhanced-offtopic-90b2dadf0ef1){: external} blog post.
+Intents that are marked as irrelevant are saved as counterexamples in the JSON workspace, and are included as part of the training data. They teach your assistant to explicitly not answer utterances of this type.
+
+Be certain before you designate an input as irrelevant.
+
+- There is no way to access or change the inputs from the user interface later.
+- The only way to reverse the identification of an input as being irrelevant is to use the same input in a test integration channel, and then explicitly assign it to an intent.
+
+You can mark an intent as irrelevant directly from the *Try it out* pane also.
+
+  ![Mark as irrelevant screen capture](images/irrelevant.png)
 
 ## Enabling irrelevance detection
 {: #irrelevance-detection-enable}
 
-This feature is enabled automatically for all new English-language dialog skills. It is disabled for existing skills. You might choose not to enable it if you already dedicated time and effort to training your skill to recognize irrelevant user inputs.
+The *irrelevance detection* feature helps your dialog skill recognize subjects that you do not want it to address, even if you haven't explicitly taught it about what to ignore. This feature helps your skill recognize irrelevant inputs earlier in the development process.
+
+To learn more about the benefits of this feature, read the [Why Zero-Effort Irrelevance is Relevant](https://medium.com/ibm-watson/enhanced-offtopic-90b2dadf0ef1){: external} blog post.
+
+Irrelevance detection is enabled automatically for all new English-language dialog skills only. It is disabled for existing skills. You might choose not to enable it if you already dedicated time and effort to training your skill to recognize irrelevant user inputs.
 
 To enable the enhanced irrelevance detection feature, complete the following steps:
 

@@ -13,7 +13,6 @@ Watson Assistant
     tool-overview.md
     [Demo: Banking Assistant](https://watson-conversation-duo-dev.ng.bluemix.net/)
     sample-apps.md
-    resources.md
     services-information.md
     release-notes.md
     {: .navgroup-end}

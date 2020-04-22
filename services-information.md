@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-15"
+lastupdated: "2020-04-22"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
@@ -25,7 +25,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Billing information
+# Plan information
 {: #services-information}
 
 Billing for the use of {{site.data.keyword.conversationshort}} is managed through your {{site.data.keyword.cloud}} account.
