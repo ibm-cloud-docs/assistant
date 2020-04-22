@@ -89,7 +89,6 @@ Watson Assistant
     {: .topicgroup}
     Early access program
         beta.md
-
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
