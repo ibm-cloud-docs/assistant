@@ -26,10 +26,10 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:gif: data-image-type='gif'}
 
-# How the dialog is processed
+# Controlling the dialog flow
 {: #dialog-runtime}
 
-Understand how your dialog is processed when a person interacts with your assistant at run time.
+Understand how your dialog is processed when a person interacts with your assistant at run time. Learn to use the conversation flow to your advantage and alter the flow if necessary.
 {: shortdesc}
 
 ## Anatomy of a dialog call

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-05-28"
+lastupdated: "2020-04-22"
 
 subcollection: assistant
 
@@ -26,9 +26,12 @@ subcollection: assistant
 # Dialog depiction
 {: #dialog-depiction}
 
+This diagram shows a mockup of a dialog tree that is built with the graphical user interface dialog editor.
+{: shortdesc}
+
 ![A sample dialog tree with example content](images/dialog-depiction-full.png)
 
-This diagram shows a mockup of a dialog tree that is built with the graphical user interface dialog editor. It contains two root dialog nodes. A typical dialog tree would likely have many more nodes, but this depiction provides a glimpse of what a subset of nodes might look like.
+The dialog tree in this diagram contains two root dialog nodes. A typical dialog tree would likely have many more nodes, but this depiction provides a glimpse of what a subset of nodes might look like.
 
 - The first root node conditions on an intent value. It has two child nodes that each condition on an entity value.  The second child node defines two responses. The first response is returned to the user if the value of the context variable matches the value specified in the condition. Otherwise, the second response is returned.
 

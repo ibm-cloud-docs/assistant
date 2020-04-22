@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-30"
+lastupdated: "2020-04-22"
 
 keywords: chatbot, live chatbot, omnichannel
 
@@ -119,6 +119,12 @@ Language support by feature is detailed in the [Supported languages](/docs/assis
 See [IBM Cloud Terms and Notices](/docs/overview/terms-of-use?topic=overview-terms){: external} for information about the terms of service.
 
 US Health Insurance Portability and Accountability Act (HIPAA) support is available for Premium plans that are hosted in the Washington, DC location created on or after 1 April 2019. For more information, see [Enabling EU and HIPAA supported settings](/docs/account?topic=account-eu-hipaa-supported#eu-hipaa-supported){: external}.
+
+To learn more about service terms and data security, read the following information:
+
+- [Service terms](https://www-03.ibm.com/software/sla/sladb.nsf/sla/home?OpenDocument){: external}
+- [Data security and privacy](https://www.ibm.com/software/sla/sladb.nsf/sla/csdsp?OpenDocument){: external}
+- [Information security](/docs/assistant?topic=assistant-information-security)
 
 ## Next steps
 {: #index-next-steps}

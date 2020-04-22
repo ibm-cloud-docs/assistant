@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-13"
+lastupdated: "2020-04-22"
 
 subcollection: assistant
 
@@ -23,7 +23,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Get help defining intents ![Plus or Premium plan only](images/plus.png)
+# Getting help with intents ![Plus or Premium plan only](images/plus.png)
 {: #intent-recommendations}
 
 Have Watson analyze your chat transcript log data to find the most common and frequently expressed customer needs related to your business. Watson can then recommend intents and intent user examples that you can use to train your assistant so it can recognize the same and similar requests in the future.
