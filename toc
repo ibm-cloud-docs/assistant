@@ -98,7 +98,6 @@ Watson Assistant
     dialog-methods.md
     expression-language.md
     filter-reference.md
-    language-support.md
 
     {: .topicgroup}
     System entities
@@ -107,6 +106,7 @@ Watson Assistant
         time-zones.md
         sys-date-festivals.md
 
+    language-support.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
