@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-16"
+lastupdated: "2020-04-23"
 
 subcollection: assistant
 
@@ -107,10 +107,10 @@ Table 3. Entity feature support details
 | **Arabic (ar)**                    | GA (Misspelling only) | NA | NA |
 | **Chinese (Simplified) (zh-cn)**   | NA | NA | NA |
 | **Chinese (Traditional) (zh-tw)**  | NA | NA | NA |
-| **Czech (cs)**                     | GA (Misspelling only) | NA | NA |
+| **Czech (cs)**                     | GA | NA | NA |
 | **Dutch (nl)**                     | GA (Misspelling only) | NA | NA |
-| **French (fr)**                    | GA (Misspelling only) | Beta | GA |
-| **German (de)**                    | GA (Misspelling only) | NA | NA |
+| **French (fr)**                    | GA | Beta | GA |
+| **German (de)**                    | GA | NA | NA |
 | **Italian (it)**                   | GA (Misspelling only) | NA | NA |
 | **Japanese (ja)**                  | GA (Misspelling only) | NA | GA |
 | **Korean (ko)**                    | GA (Misspelling only) | NA | NA |
