@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-22"
+lastupdated: "2020-04-24"
 
 subcollection: assistant
 
@@ -39,12 +39,9 @@ Watson can recommend some initial intents for you to start with. If you already 
 
 Customer needs are represented in {{site.data.keyword.conversationshort}} as *intents*. If you have no intents, you can get started faster by getting Watson to help you. Upload a file that contains the utterances that customers use to articulate requests when they interact with your customer support personnel. You might be able to extract these utterances from call center transcripts, for example. Upload the utterances as a CSV file to {{site.data.keyword.conversationshort}} so that Watson can analyze the data. Based on the insights it uncovers, Watson recommends a base set of intents that you can build to cover the most common needs of your customers.
 
-The following video provides a 3 1/2-minute overview of intent and intent user example recommendations.
+The following video provides a 3-minute overview of intent and intent user example recommendations.
 
-An earlier version of the product was used to record this video. As a result, the look and placement of some of the user interface elements is different. Also, it does not show support for adding recommendations by using an assistant's logs as the source.
-{: note}
-
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Intent recommendations overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/64h59KqDY98?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+<iframe class="embed-responsive-item" id="youtubeplayer" title="Intent recommendations overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/bBTSnsD8yLA?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 To learn more about how intent recommendations can help you build a useful bot faster, [read this blog post](https://medium.com/ibm-watson/let-watson-train-your-virtual-assistant-57bd53b12bc3){: external}.
 

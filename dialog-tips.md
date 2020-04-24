@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-12"
+lastupdated: "2020-04-24"
 
 subcollection: assistant
 
@@ -27,21 +27,8 @@ subcollection: assistant
 # Dialog building tips
 {: #dialog-tips}
 
-Learn how to approach building a dialog and get some tips on completing more complex steps.
+Get tips about ways to address common tasks.
 {: shortdesc}
-
-Review these tips from experienced dialog designers.
-
-## Planning the overall dialog
-{: #dialog-tips-plan}
-
-- Plan out the design of the dialog that you want to build before you add a single dialog node. Sketch it out on paper, if necessary.
-- Whenever possible, base your design decisions on data from real-world evidence and behaviors. Do not add nodes to handle a situation that someone *thinks* might occur.
-- Avoid copying business processes as-is. They are rarely conversational.
-- If people already use a process, examine how they approach it. People typically optimize the process from a conversational perspective.
-- Decide on the tone, personality, and positioning of your assistant. Consistently reflect these choices in the dialog you create.
-- Never misrepresent the assistant as being a human. If users believe the assistant is a person, then find out it's not, they are likely to distrust it.
-- Not everything has to be a conversation. Sometimes a web form works better.
 
 ## Adding nodes
 {: #dialog-tips-nodes}
@@ -51,7 +38,7 @@ Review these tips from experienced dialog designers.
   You know what the node does right now, but months from now you might not. Your future self and any team members will thank you for adding a descriptive node name. And the node name is displayed in the log, which can help you debug a conversation later.
 - To gather the information that is required to perform a task, try using a node with slots instead of a bunch of separate nodes to elicit information from users. See [Gathering information with slots](/docs/assistant?topic=assistant-dialog-slots).
 - For a complex process flow, tell users about any information they will need to provide at the start of the process.
-- Understand how your assistant travels through the dialog tree and the impact that folders, branches, jump-tos, and digressions have on the route. See [Dialog flow](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-flow).
+- Understand how your assistant travels through the dialog tree and the impact that folders, branches, jump-tos, and digressions have on the route. See [Dialog flow](/docs/assistant?topic=assistant-dialog-build#dialog-build-flow).
 - Do not add jump-tos everywhere. They increase the complexity of the dialog flow, and make it harder to debug the dialog later.
 - To jump to a node in the same branch as the current node, use *Skip user input* instead of a *Jump-to*.
 

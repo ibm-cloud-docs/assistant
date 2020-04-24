@@ -32,6 +32,10 @@ subcollection: assistant
 The dialog defines what your assistant says in response to customers.
 {: shortdesc}
 
+To learn more about the overall process for creating a dialog, watch the following 3 1/2-minute video.
+
+<iframe class="embed-responsive-item" id="youtubeplayer" title="Working with dialog" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/dEILVc86d3Y" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+
 ## Creating a dialog
 {: #dialog-overview-task}
 
