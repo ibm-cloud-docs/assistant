@@ -47,14 +47,16 @@ To create a dialog, complete the following steps:
     {: note}
 
     - **Anything else**: The final node. It contains phrases that are used to reply to users when their input is not recognized. You can replace the responses that are provided or add more responses with a similar meaning to add variety to the conversation. You can also choose whether you want your assistant to return each response that is defined in turn or return them in random order.
-1.  To add more nodes to the dialog tree, click the **More** ![More icon](images/kabob.png) icon on the **Welcome** node, and then select **Add node below**.
+1.  To add more nodes to the dialog tree, click **Add node**.
+
+    Your new node is added after the *Welcome* node and before the *Anything else* node.
 1.  Add a name to the node. 
 
     Use a short, customer-friendly description of what the node does as its name. For example, `Open an account`, `Get policy information`, or `Get a weather forecast`.
 
     The name can be up to 512 characters in length.
 
-    This field is not required, but the node name might be shown to customers or service desk personnel to express the purpose of this branch of the dialog, so it is worth taking some time to add a name that is concise and descriptive.
+    This node name is shown to customers or service desk personnel to express the purpose of this branch of the dialog, so take some time to add a name that is concise and descriptive.
     {: tip}
 
 1.  In the **If assistant recognizes** field, enter a condition that, when met, triggers your assistant to process the node. 
