@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-12"
+lastupdated: "2020-04-24"
 
 subcollection: assistant
 
@@ -65,7 +65,7 @@ You or someone in your organziation must complete these one-time prerequisite st
 ## Preparing the dialog
 {: #deploy-intercom-dialog-prereq}
 
-If you do not have a dialog skill associated with your assistant, create one or add one to your assistant now. See [Building a dialog](/docs/assistant?topic=assistant-dialog-build) for more details.
+If you do not have a dialog skill associated with your assistant, create one or add one to your assistant now. See [Building a dialog](/docs/assistant?topic=assistant-dialog-overview) for more details.
 
 Triggering a search through a search skill is not currently supported from an Intercom integration.
 {: note}

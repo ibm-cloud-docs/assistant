@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-13"
+lastupdated: "2020-04-24"
 
 keywords: slot, slots
 
@@ -62,7 +62,7 @@ Using slots produces a more natural dialog flow between the user and your assist
     - Delivery time
     - Size
 
-1.  If you have not started to create a dialog, follow the instructions in [Creating a dialog](/docs/assistant?topic=assistant-dialog-build) to create one.
+1.  If you have not started to create a dialog, follow the instructions in [Creating a dialog](/docs/assistant?topic=assistant-dialog-overview) to create one.
 
 1.  From the dialog node edit view, click **Customize**, and then click the toggle next to **Slots** to turn it **On**.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-22"
+lastupdated: "2020-04-24"
 
 keywords: import workspace, import JSON, export JSON
 
@@ -88,7 +88,7 @@ If you receive a message that says the skill contains artifacts that exceed the 
 1.  Import the skill to the new service instance.
 1.  Make edits to the skill such that it meets the artifact limit requirements for the plan you want to use going forward. 
 
-    For information about how to decrease the number of dialog nodes, see [How many nodes are in my dialog?](/docs/assistant?topic=assistant-dialog-build#dialog-build-count-nodes).
+    For information about how to decrease the number of dialog nodes, see [How many nodes are in my dialog?](/docs/assistant?topic=assistant-dialog-tasks#dialog-tasks-count-nodes).
 1.  Export the edited skill by downloading it.
 1.  Try again to import the edited skill into the original service instance on the plan you want.
 
