@@ -35,7 +35,6 @@ Watson Assistant
         dialog-tasks.md
         dialog-tips.md
         entities.md
-        versions.md
         dialog-runtime.md
         dialog-slots.md
         dialog-webhooks.md
@@ -46,6 +45,7 @@ Watson Assistant
         tutorial-slots-complex.md
         tutorial-car-dashboard.md
         tutorial-digressions.md
+        versions.md
 
     {: .topicgroup}
     Deploying
