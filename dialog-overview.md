@@ -2,9 +2,9 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-30"
+lastupdated: "2020-04-24"
 
-keywords: condition, response, options, jump, jump-to, multiline, response variations
+keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
 subcollection: assistant
 
@@ -26,62 +26,103 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:table: .aria-labeledby="caption"}
 
-# Dialog overview
+# Building a dialog
 {: #dialog-overview}
 
-The dialog uses the intents that are identified in the user's input, plus context from the application, to interact with the user and ultimately provide a useful response.
+The dialog defines what your assistant says in response to customers.
 {: shortdesc}
 
-The dialog matches intents (what users say) to responses (what the bot says back). The response might be the answer to a question such as `Where can I get some gas?` or the execution of a command, such as turning on the radio. The intent and entity might be enough information to identify the correct response, or the dialog might ask the user for more input that is needed to respond correctly. For example, if a user asks, `Where can I get some food?` you might want to clarify whether they want a restaurant or a grocery store, to dine in or take out, and so on. You can ask for more details in a text response and create one or more child nodes to process the new input.
+## Creating a dialog
+{: #dialog-overview-task}
 
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Dialog overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/XkhAMe9gSFU?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+To create a dialog, complete the following steps:
 
-Note: The video is 15 minutes in duration; the first 5 minutes cover how to add a node.
+1.  From the Skills menu, click **Dialog**, and then click **Create dialog**.
 
-The dialog is represented graphically in {{site.data.keyword.conversationshort}} as a tree. Create a branch to process each intent that you want your conversation to handle. A branch is composed of multiple nodes.
+    When you open the dialog editor for the first time, the following nodes are created for you:
 
-## Dialog nodes
-{: #dialog-overview-nodes}
+    - **Welcome**: The first node. It contains a greeting that is displayed to your users when they first engage with your assistant. You can edit the greeting.
 
-Each dialog node contains, at a minimum, a condition and a response.
+    This node is not triggered in dialog flows that are initiated by users. For example, dialogs used in integrations with channels such as Facebook or Slack skip nodes with the `welcome` special condition.
+    {: note}
 
-![Shows user input going to a box that contains the statement If: CONDITION, Then: RESPONSE](images/node1-empty.png)
+    - **Anything else**: The final node. It contains phrases that are used to reply to users when their input is not recognized. You can replace the responses that are provided or add more responses with a similar meaning to add variety to the conversation. You can also choose whether you want your assistant to return each response that is defined in turn or return them in random order.
+1.  To add more nodes to the dialog tree, click the **More** ![More icon](images/kabob.png) icon on the **Welcome** node, and then select **Add node below**.
+1.  Add a name to the node. 
 
-- Condition: Specifies the information that must be present in the user input for this node in the dialog to be triggered. The information is typically a specific intent. It might also be an entity type, an entity value, or a context variable value. See [Conditions](#dialog-overview-conditions) for more information.
-- Response: The utterance that your assistant uses to respond to the user. The response can also be configured to show an image or a list of options, or to trigger programmatic actions. See [Responses](#dialog-overview-responses) for more information.
+    Use a short, customer-friendly description of what the node does as its name. For example, `Open an account`, `Get policy information`, or `Get a weather forecast`.
 
-You can think of the node as having an if/then construction: if this condition is true, then return this response.
+    The name can be up to 512 characters in length.
 
-For example, the following node is triggered if the natural language processing function of your assistant determines that the user input contains the `#cupcake-menu` intent. As a result of the node being triggered, your assistant responds with an appropriate answer.
+    This field is not required, but the node name might be shown to customers or service desk personnel to express the purpose of this branch of the dialog, so it is worth taking some time to add a name that is concise and descriptive.
+    {: tip}
 
-![Shows the user asking about cupcake flavors. the If condition is #cupcake-menu and the Then response is a list of cupcake flavors.](images/node1-simple.png)
+1.  In the **If assistant recognizes** field, enter a condition that, when met, triggers your assistant to process the node. 
 
-A single node with one condition and response can handle simple user requests. But, more often than not, users have more sophisticated questions or want help with more complex tasks. You can add child nodes that ask the user to provide any additional information that your assistant needs.
+    To start off, you typically want to add an intent as the condition. For example, if you add `#open_account` here, it means that you want the response that you will specify in this node to be returned to the user if the user input indicates that the user wants to open an account.
 
-![Shows that the first node in the dialog asks which type of cupcake the user wants, gluten-free or regular, and has two child nodes that provide a different response depending on the user's answer.](images/node1-children.png)
+    As you begin to define a condition, a box is displayed that shows you your options. You can enter one of the following characters, and then pick a value from the list of options that is displayed.
 
-## Dialog flow
-{: #dialog-overview-flow}
+    <table>
+    <caption>Condition builder syntax</caption>
+    <tr>
+      <th>Character</th>
+      <th>Lists defined values for these artifact types</th>
+    </tr>
+    <tr>
+      <td>`#`</td>
+      <td>intents</td>
+    </tr>
+    <tr>
+      <td>`@`</td>
+      <td>entities</td>
+    </tr>
+    <tr>
+      <td>`@{entity-name}:`</td>
+      <td>{entity-name} values</td>
+    </tr>
+    <tr>
+      <td>`$`</td>
+      <td>context-variables that you defined or referenced elsewhere in the dialog</td>
+    </tr>
+    </table>
 
-The dialog that you create is processed by your assistant from the first node in the tree to the last.
+    You can create a new intent, entity, entity value, or context variable by defining a new condition that uses it. If you create an artifact this way, be sure to go back and complete any other steps that are necessary for the artifact to be created completely, such as defining sample utterances for an intent.
 
-![Arrow points down next to 3 nodes to show that dialog flows from the first node to the last](images/node-flow-down.png)
+    To define a node that triggers based on more than one condition, enter one condition, and then click the plus sign (+) icon next to it. If you want to apply an `OR` operator to the multiple conditions instead of `AND`, click the `and` that is displayed between the fields to change the operator type. AND operations are executed before OR operations, but you can change the order by using parentheses. For example:
+    `$isMember:true AND ($memberlevel:silver OR $memberlevel:gold)`
 
-As it travels down the tree, if your assistant finds a condition that is met, it triggers that node. It then moves along the triggered node to check the user input against any child node conditions. As it checks the child nodes it moves again from the first child node to the last.
+    The condition you define must be less than 2,048 characters in length.
 
-Your assistant continues to work its way through the dialog tree from first to last node, along each triggered node, then from first to last child node, and along each triggered child node until it reaches the last node in the branch it is following.
+    For more information about how to test for values in conditions, see [Conditions](#dialog-overview-conditions).
+1.  **Optional**: If you want to collect multiple pieces of information from the user in this node, then click **Customize** and enable **Slots**. See [Gathering information with slots](/docs/assistant?topic=assistant-dialog-slots) for more details.
+1.  Enter a response.
 
-![Shows arrow 1 pointing from the first root node to the last, arrow 2 pointing from along the length of a triggered node, and arrow 3 pointing from the first to the last child nodes of the triggered node.](images/node-flow.png)
+    - Add the text or multimedia elements that you want your assistant to display to the user as a response.
+    - If you want to define different responses based on certain conditions, then click **Customize** and enable **Multiple responses**.
+    - For information about conditional responses, rich responses, or how to add variety to responses, see [Responses](#dialog-overview-responses).
 
-When you start to build the dialog, you must determine the branches to include, and where to place them. The order of the branches is important because nodes are evaluated from first to last. The first root node whose condition matches the input is used; any nodes that come later in the tree are not triggered.
+1.  Specify what to do after the current node is processed. You can choose from the following options:
 
-When your assistant reaches the end of a branch, or cannot find a condition that evaluates to true from the current set of child nodes it is evaluating, it jumps back out to the base of the tree. And once again, your assistant processes the root nodes from first to the last. If none of the conditions evaluates to true, then the response from the last node in the tree, which typically has a special `anything_else` condition that always evaluates to true, is returned.
+    - **Wait for user input**: Your assistant pauses until new input is provided by the user.
+    - **Skip user input**: Your assistant jumps directly to the first child node. This option is only available if the current node has at least one child node.
+    - **Jump to**: Your assistant continues the dialog by processing the node you specify. You can choose whether your assistant should evaluate the target node's condition or skip directly to the target node's response. See [Configuring the Jump to action](#dialog-overview-jump-to-config) for more details.
 
-You can disrupt the standard first-to-last flow in the following ways:
+1.  **Optional**: If you want this node to be considered when users are shown a set of node choices at run time, and asked to pick the one that best matches their goal, then add a short description of the user goal handled by this node to the **external node name** field. For example, *Open an account*.
 
-- By customizing what happens after a node is processed. For example, you can configure a node to jump directly to another node after it is processed, even if the other node is positioned earlier in the tree. See [Defining what to do next](#dialog-overview-jump-to) for more information.
-- By configuring conditional responses to jump to other nodes. See [Conditional responses](#dialog-overview-multiple) for more information.
-- By configuring digression settings for dialog nodes. Digressions can also impact how users move through the nodes at run time. If you enable digressions away from most nodes and configure returns, users can jump from one node to another and back again more easily. See [Digressions](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-digressions) for more information.
+    ![Plus or Premium plan only](images/plus.png) The *external node name* field is only displayed to Plus or Premium plan users. See [Disambiguation](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation) for more details.
+
+1.  To add more nodes, select a node in the tree, and then click the **More** ![More icon](images/kabob.png) icon.
+
+    - To create a peer node that is checked next if the condition for the existing node is not met, select **Add node below**.
+    - To create a peer node that is checked before the condition for the existing node is checked, select **Add node above**.
+    - To create a child node to the selected node, select **Add child node**. A child node is processed after its parent node.
+    - To copy the current node, select **Duplicate**.
+
+    For more information about the order in which dialog nodes are processed, see [Dialog overview](/docs/assistant?topic=assistant-dialog-build#dialog-build-flow).
+1.  Test the dialog as you build it.
+
+    See [Testing your dialog](/docs/assistant?topic=assistant-dialog-tasks#dialog-tasks-test) for more information.
 
 ## Conditions
 {: #dialog-overview-conditions}
@@ -603,8 +644,11 @@ If you choose to jump to another node, specify when the target node is processed
 
 - **Wait for user input**: Waits for new input from the user, and then begins to process it from the node that you jump to. This option is useful if the source node asks a question, for example, and you want to jump to a separate node to process the user's answer to the question.
 
-## More information
+### What to do next
+{: #dialog-overview-next}
 
-For information about the expression language used by dialog, plus methods, system entities, and other useful details, see the **Reference** section in the navigation pane.
+- Be sure to test your dialog as you build it. For more information, see [Testing the dialog](/docs/assistant?topic=assistant-tasks).
+- For more information about ways to address common use cases, see [Dialog building tips](/docs/assistant?topic=assistant-dialog-tips).
+- For more information about the expression language that you can use to improve your dialog, such as methods that reformat dates or text, see [Expression language methods](/docs/assistant?topic=assistant-dialog-methods).
 
 You can also use the API to add nodes or otherwise edit a dialog. See [Modifying a dialog using the API](/docs/assistant?topic=assistant-api-dialog-modify) for more information.

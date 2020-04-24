@@ -378,7 +378,7 @@ Watch the following 5-minute video to watch someone set up a connection to a Sal
 ## Adding transfer support to your dialog
 {: #deploy-web-chat-dialog-prereq}
 
-If no dialog skill is associated with your assistant, create one or add one to your assistant now. See [Building a dialog](/docs/assistant?topic=assistant-dialog-build) for more details.
+If no dialog skill is associated with your assistant, create one or add one to your assistant now. See [Building a dialog](/docs/assistant?topic=assistant-dialog-overview) for more details.
 
 Complete these steps in your dialog skill so the assistant can pass the conversation to a service desk agent when a customer asks to speak to a person.
 

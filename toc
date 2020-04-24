@@ -29,13 +29,12 @@ Watson Assistant
         catalog.md
         intents.md
         intent-recommendations.md
-        irrelevance-detection.md
-        dialog-overview.md
-        dialog-depiction.md
         dialog-build.md
+        dialog-depiction.md
+        dialog-overview.md
+        dialog-tasks.md
         dialog-tips.md
         entities.md
-        versions.md
         dialog-runtime.md
         dialog-slots.md
         dialog-webhooks.md
@@ -46,6 +45,7 @@ Watson Assistant
         tutorial-slots-complex.md
         tutorial-car-dashboard.md
         tutorial-digressions.md
+        versions.md
 
     {: .topicgroup}
     Deploying
@@ -62,6 +62,7 @@ Watson Assistant
     Analytics
         logs-overview.md
         logs.md
+        irrelevance-detection.md
         logs-resources.md
 
     {: .topicgroup}

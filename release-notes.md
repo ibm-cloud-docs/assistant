@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-14"
+lastupdated: "2020-04-24"
 
 subcollection: assistant
 
@@ -332,7 +332,7 @@ The following technologies are being deprecated:
 {: #24October2019}
 <!--1.80-->
 
-- **Testing improvement**: You can now see the top three intents that were recognized in a test user input from the "Try it out" pane. For more details, see [Testing your dialog](/docs/assistant?topic=assistant-dialog-build#dialog-build-test).
+- **Testing improvement**: You can now see the top three intents that were recognized in a test user input from the "Try it out" pane. For more details, see [Testing your dialog](/docs/assistant?topic=assistant-dialog-tasks#dialog-tasks-test).
 
 - **Error message when opening an instance**: When you launch {{site.data.keyword.conversationshort}} from the {{site.data.keyword.cloud}} dashboard, you might see an error message that says, `Module 'ui-router' is not available! You either misspelled the module name or forgot to load it.` You can ignore the message. Refresh the web browser page to close the notification. 
 
@@ -831,7 +831,7 @@ The following updates are available in all locations except Dallas currently.
 ## 4 April 2018
 {: #4April2018}
 
-- **Search dialogs**: You can now [search dialog nodes](/docs/assistant?topic=assistant-dialog-build#dialog-build-search) for a given word or phrase.
+- **Search dialogs**: You can now [search dialog nodes](/docs/assistant?topic=assistant-dialog-tasks#dialog-tasks-search) for a given word or phrase.
 
 ## 15 March 2018
 {: #15March2018}
@@ -843,7 +843,7 @@ The following updates are available in all locations except Dallas currently.
 - **Dialog enhancements**: The following features were added to the dialog tool:
 
   - Simple variable name and value fields are now available that you can use to add context variables or update context variable values. You do not need to open the JSON editor unless you want to. See [Defining a context variable](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-context-var-define) for more details.
-  - Organize your dialog by using folders to group together related dialog nodes. See [Organizing the dialog with folders](/docs/assistant?topic=assistant-dialog-build#dialog-build-folders) for more details.
+  - Organize your dialog by using folders to group together related dialog nodes. See [Organizing the dialog with folders](/docs/assistant?topic=assistant-dialog-tasks#dialog-tasks-folders) for more details.
   - Support was added for customizing how each dialog node participates in user-initiated digressions away from the designated dialog flow. See [Digressions](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-digressions) for more details.
 
 - **Search intents and entities**: A new search feature has been added that allows you to [search intents](/docs/assistant?topic=assistant-intents#intents-search) for user examples, intent names, or descriptions, or to [search entity](/docs/assistant?topic=assistant-entities#entities-search) values and synonyms.
@@ -860,7 +860,7 @@ The following updates are available in all locations except Dallas currently.
 ## 16 February 2018
 {: #16February2018}
 
-- **Dialog node tracing**: When you use the "Try it out" pane to test a dialog, a location icon is displayed next to each response. You can click the icon to highlight the path that your assistant traversed through the dialog tree to arrive at the response. See [Building a dialog](/docs/assistant?topic=assistant-dialog-build#dialog-build-test) for details.
+- **Dialog node tracing**: When you use the "Try it out" pane to test a dialog, a location icon is displayed next to each response. You can click the icon to highlight the path that your assistant traversed through the dialog tree to arrive at the response. See [Building a dialog](/docs/assistant?topic=assistant-dialog-tasks#dialog-tasks-test) for details.
 
 - **New API version**: The current API version is now `2018-02-16`. This version introduces the following changes:
 
@@ -895,7 +895,7 @@ The following updates are available in all locations except Dallas currently.
 
 - **Log data access across instances (Premium users only)**: If you are a {{site.data.keyword.conversationshort}} Premium user, your premium instances can optionally be configured to allow access to log data from workspaces across your different premium instances.
 
-- **Copy nodes**: You can now duplicate a node to make a copy of it and its children. This feature is helpful if you build a node with useful logic that you want to reuse elsewhere in your dialog. See [Copying a dialog node](/docs/assistant?topic=assistant-dialog-build#dialog-build-copy-node) for more information.
+- **Copy nodes**: You can now duplicate a node to make a copy of it and its children. This feature is helpful if you build a node with useful logic that you want to reuse elsewhere in your dialog. See [Copying a dialog node](/docs/assistant?topic=assistant-dialog-tasks#dialog-tasks-copy-node) for more information.
 
 - **Capture groups in pattern entities**: You can identify groups in the regular expression pattern that you define for an entity. Identifying groups is useful if you want to be able to refer to a subsection of the pattern later. For example, your entity might have a regex pattern that captures US phone numbers. If you identify the area code segment of the number pattern as a group, then you can subsequently refer to that group to access just the area code segment of a phone number. See [Defining entities](/docs/assistant?topic=assistant-entities#entities-creating-task) for more information.
 
@@ -1118,7 +1118,7 @@ The following updates are available in all locations except Dallas currently.
 ## 25 May 2017
 {: #25May2017}
 
-- You can now manage context variables in the "Try it out" pane. Click the **Manage context** link to open a new pane where you can set and check the values of context variables as you test the dialog. See [Testing your dialog](/docs/assistant?topic=assistant-dialog-build#dialog-build-test) for more information.
+- You can now manage context variables in the "Try it out" pane. Click the **Manage context** link to open a new pane where you can set and check the values of context variables as you test the dialog. See [Testing your dialog](/docs/assistant?topic=assistant-dialog-tasks#dialog-tasks-test) for more information.
 
 ## 16 May 2017
 {: #16May2017}
@@ -1243,7 +1243,7 @@ To take advantage of the changes in a new version, change the value of the `vers
 ## 29 August 2016
 {: #29August2016}
 
-- You can move dialog nodes from one branch to another, as siblings or peers. For details, see [Moving a dialog node](/docs/assistant?topic=assistant-dialog-build#dialog-build-move-node).
+- You can move dialog nodes from one branch to another, as siblings or peers. For details, see [Moving a dialog node](/docs/assistant?topic=assistant-dialog-tasks#dialog-tasks-move-node).
 - You can expand the JSON editor window.
 - You can view chat logs of your bot's conversations to help you understand it's behavior. You can filter by intents, entities, date, and time. For details, see [Improving your skill](/docs/assistant?topic=assistant-logs)
 
