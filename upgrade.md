@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-23"
+lastupdated: "2020-04-24"
 
 subcollection: assistant
 
@@ -49,7 +49,7 @@ To upgrade your plan, complete these steps:
     - When you upgrade from a Standard plan to a Plus plan, you change the metrics that are used for billing purposes. Instead of basing billing on API usage, the Plus plan bases billing on the number of monthly active users. If you built a custom app to deploy your assistant, you might need to update the app. Ensure that the API calls from the app include user ID information. For more information, see [User-based plans explained](/docs/assistant?topic=assistant-services-information#services-information-user-based-plans). 
 
     - You cannot upgrade from a Plus Trial to a Standard plan.
-    - You cannot change from a Plut Trial or Standard plan to a Lite plan.
+    - You cannot change from a Plus Trial or Standard plan to a Lite plan.
 
 For answers to common questions about subscriptions, see the [How you're charged](/docs/billing-usage?topic=billing-usage-charges){: external}.
 
