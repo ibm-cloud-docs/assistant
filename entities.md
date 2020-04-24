@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-23"
+lastupdated: "2020-04-24"
 
 keywords: entity, entity value, contextual entity, dictionary entity, pattern entity, entity synonym, annotate mentions
 
@@ -36,7 +36,9 @@ Recognizing entities in the user's input helps you to craft more useful, targete
 
 Finally, you can add multiple responses to your dialog tree with wording that differs based on the `@product` value that is detected in the user's request.
 
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Working with entities" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/o-uhdw6bIyI" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+To learn more about how to create entities, watch the following 2-minute video.
+
+<iframe class="embed-responsive-item" id="youtubeplayer" title="Working with entities" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/SKEKWEqM4LE" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 ## Entity evaluation overview
 {: #entities-described}

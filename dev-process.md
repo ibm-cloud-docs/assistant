@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-04-24"
 
 subcollection: assistant
 
@@ -42,11 +42,11 @@ The typical workflow for an assistant project includes the following steps:
     {: tip}
 
 1.  Build a dialog that detects the defined intents and addresses them, either with simple responses or with a dialog flow that collects more information first.
-1.  Define any entities that are needed to more clearly understand the user's meaning.
+1.  Define any entities that are needed to more clearly understand the user's meaning. For example, you might add an `@product` entity that you can use with the `#place_order` intent to understand what product the customer wants to buy.
 
     Mine existing intent user examples for common entity value mentions. Using annotations to define entities captures not only the text of the entity value, but the context in which the entity value is typically used in a sentence.
 
-    For dictionary-based entities, use synonym recommendations to expand your entity definitions.
+    For dictionary-based entities, you can use synonym recommendations to expand your entity definitions.
     {: tip}
 
 1.  Test each function that you add to the assistant in the "Try it" pane, incrementally, as you go.
@@ -57,7 +57,7 @@ The typical workflow for an assistant project includes the following steps:
     Saving a version when you reach a development milestone gives you something you can go back to if subsequent changes you make to the skill decrease its effectiveness. See [Creating skill versions](/docs/assistant?topic=assistant-versions).
 1.  Deploy the version of the assistant into a test environment, and test it.
 
-    If you use the web-hosted chat widget, you can share the URL with others to get their help with testing.
+    If you use the preview link integration, you can share the URL with others to get their help with testing.
 1.  Use metrics from the Analytics tab to find areas for improvement, and make adjustments.
 
     If you need to test alternative approaches to addressing an issue, create a version for each solution, so you can deploy and test each one independently, and compare the results.
