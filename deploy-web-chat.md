@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-24"
+lastupdated: "2020-04-27"
 
 subcollection: assistant
 
@@ -73,7 +73,7 @@ To add the assistant to a web page on your company website, complete the followi
       - Typing indicator that is shown to repesent a pause response
       - Active state for dropdown color of border
 
-    - **Assistant image**: This image is displayed in the Web Chat header along with the assistant name to represent your assistant or organization. Specify the URL for a publicly-accessible hosted image, such as a company or brand logo or an assistant avatar.
+    - **Assistant image**: This image is displayed in the Web Chat header along with the assistant name to represent your assistant or organization. Specify the URL for a publicly accessible hosted image, such as a company or brand logo or an assistant avatar.
     
       The image file must be between 64 x 64 and 100 x 100 pixels in size. 
 
