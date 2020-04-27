@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-14"
+lastupdated: "2020-04-24"
 
 subcollection: assistant
 
@@ -33,6 +33,10 @@ Add your assistant to your company website as a web chat widget that can transfe
 When you create a web chat integration, code is generated that calls a script that is written in JavaScript. The script instantiates a unique instance of your assistant. You can then copy and paste the HTML `script` element into any page or pages on your website where you want users to be able to ask your assistant for help.
 
 ![Plus or Premium plan only](images/plus.png) This integration type is available to Plus or Premium plan users only.
+
+To learn more about Web Chat, watch the following 3-minute video.
+
+<iframe class="embed-responsive-item" id="youtubeplayer" title="Web Chat overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/52bpMKVigGU" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 ## Create a Web Chat instance to add to your website
 {: #deploy-web-chat-task}
@@ -68,6 +72,10 @@ To add the assistant to a web page on your company website, complete the followi
       - Border of a button after it is clicked
       - Typing indicator that is shown to repesent a pause response
       - Active state for dropdown color of border
+
+    - **Assistant image**: This image is displayed in the Web Chat header along with the assistant name to represent your assistant or organization. Specify the URL for a publicly-accessible hosted image, such as a company or brand logo or an assistant avatar.
+    
+      The image file must be between 64 x 64 and 100 x 100 pixels in size. 
 
     Style changes you make are immediately applied to the preview that is shown on the page, so you can see how your choices impact the style of the chat UI.
 
@@ -255,18 +263,18 @@ Zendesk Chat is an add-on to Zendesk Support. Zendesk Support puts all your cust
     
     IBM provides an application that you can install in your Zendesk Chat domain. When a customer asks to speak to a person, your assistant will share a chat summary for the transferred conversation with the Zendesk agent by using this private app.
 
-    - Download the private application from the Zendesk Chat setup page in {{site.data.keyword.conversationshort}}.
+    - Download the Watson Assistant Zendesk application from the Zendesk Chat setup page in {{site.data.keyword.conversationshort}}.
 
-    - Copy the credentials that are generated for you in the **Private app credentials** field. You will need them in a later step.
+    - Copy the credentials that are generated for you in the **Watson Assistant Zendesk app credentials** field. You will need them in a later step.
 
-    - Log in to Zendesk with a user ID that has Administrative privileges.
+    - Log in to Zendesk with a user ID that has administrative privileges.
 
-    - Install the private application to your Zendesk Chat subdomain as a new private app. 
+    - Install the Watson Assistant Zendesk app to your Zendesk Chat subdomain as a new private app. 
     
       - From the Chat dashboard navigation pane, expand *Settings*, and then click *Account*
       - Open the *Apps* tab.
       - Click *Upload private app*, and then browse for the application file that you downloaded earlier.    
-      - When credentials are requested, paste the private app credentials that you copied earlier.
+      - When credentials are requested, paste the Watson Assistant Zendesk app credentials that you copied earlier.
 
       ![Screen capture of the Zendesk Account page where you can upload a private app.](images/zd-upload-app.png)
 
@@ -315,6 +323,9 @@ To set up a Salesforce service desk integration, complete the following steps:
 1.  For {{site.data.keyword.conversationshort}} to connect to a Salesforce service desk, it needs information about your organization's Salesforce chat deployment and button implementations. Specifically, it needs the API endpoint, organization ID, deployment ID, and button ID. The service can derive the values that it needs from code snippets that you copy and paste to this configuration page.
 {: #deploy-web-chat-salesforce-get-deployment-info}
 
+    In a separate browser tab or window, open your Salesforce account settings page. Log in with a user ID that has administrative privileges. You must switch back and forth between your Salesforce and {{site.data.keyword.conversationshort}} Web Chat integration setup pages. It's easier to do so if  you have both pages open at once.
+    {: tip}
+
     - Get the deployment code for your Salesforce Agent Configuration chat deployment. 
     
       Go to the Salesforce **Setup>Chat>Deployments** page. Find your organization's deployment. Scroll to the end of the chat deployment configuration page and copy the *Deployment Code* snippet.
@@ -322,14 +333,14 @@ To set up a Salesforce service desk integration, complete the following steps:
     - Get the Chat Button code. 
     
       Go to the Salesforce **Setup>Chat>Chat Buttons & Invitations** page. Find your organization's button implementation. Scroll to the end of the page, and then copy the *Chat Button Code* snippet.
-    - Paste the chat button code snippet into the **Chat button code** field in the {{site.data.keyword.conversationshort}} Salesforce configuration page.
+    - Paste the chat button code snippet into the **Chat button code** field in the {{site.data.keyword.conversationshort}} Salesforce configuration page, and then click **Next**.
 
 1.  {: #deploy-web-chat-salesforce-add-visualforce-page}Add a chat app that enables the Salesforce agent to interact with your assistant. To do so, create a Visualforce page, and then add a chat app to the page.
 
     Visualforce pages are the mechanism that Salesforce provides for you to customize a live agent's console by adding your own pages to it. A Visualforce page is similar to a standard web page, but it provides ways for you to access, display, and update your organization’s data. Pages can be referenced and invoked by using a unique URL, just as HTML pages on a traditional web server can be. See [Create Visualforce Pages](https://help.salesforce.com/articleView?id=pages_creating.htm&type=5){: external}
 
-    - Copy the code snippet from the Visualforce page markup field.
-    - From Salesforce Setup, search for **Visualforce Pages**. Create a page. Add a label and name to the page, and then paste the code snippet that you copied in the previous step into the page markup field.
+    - From the Web Chat integration page in {{site.data.keyword.conversationshort}}, copy the code snippet from the Visualforce page markup field.
+    - Switch to your Salesforce web page. Search for **Visualforce Pages**. Create a page. Add a label and name to the page, and then paste the code snippet that you copied in the previous step into the page markup field.
 
 1.  {: #deploy-web-chat-salesforce-add-custom-fields}Add custom fields to the Salesforce chat transcript layout.
 

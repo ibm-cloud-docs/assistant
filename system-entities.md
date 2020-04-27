@@ -189,8 +189,10 @@ For information about processing date and time values, see the [Date and time me
 ## @sys-location entity  ![Beta feature](images/beta.png)
 {: #system-entities-sys-location}
 
-Available as a beta feature for only languages noted in the [Supported languages](/docs/assistant?topic=assistant-language-support) topic. A powerful alternative to using this system entity is to use a contextual entity for identifying proper nouns, such as locations. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/assistant?topic=assistant-entities#entities-annotations-overview).
-{: tip}
+Available as a beta feature for only languages noted in the [Supported languages](/docs/assistant?topic=assistant-language-support) topic. 
+
+This system entity is being deprecated. A powerful alternative to using this system entity is to use a contextual entity for identifying proper nouns, such as locations. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/assistant?topic=assistant-entities#entities-annotations-overview).
+{: deprecated}
 
 The @sys-location system entity extracts place names (country, state or province, city, town, and so on) from the user's input.
 
@@ -316,8 +318,10 @@ You get equivalent results for other supported languages.
 ## @sys-person entity ![Beta feature](images/beta.png)
 {: #system-entities-sys-person}
 
-Available as a beta feature for only languages noted in the [Supported languages](/docs/assistant?topic=assistant-language-support) topic. A powerful alternative to using this system entity is to use a contextual entity for identifying proper nouns, such as names. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/assistant?topic=assistant-entities#entities-annotations-overview).
-{: tip}
+Available as a beta feature for only languages noted in the [Supported languages](/docs/assistant?topic=assistant-language-support) topic. 
+
+This system entity is being deprecated. A powerful alternative to using this system entity is to use a contextual entity for identifying proper nouns, such as names. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/assistant?topic=assistant-entities#entities-annotations-overview).
+{: deprecated}
 
 The @sys-person system entity extracts names from the user's input. Names are recognized individually, so that "Joe" is not treated as "Joseph", or vice versa.
 

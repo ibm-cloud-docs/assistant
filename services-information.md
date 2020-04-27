@@ -72,10 +72,14 @@ The following features are available only to users of Plus or Premium plans.
 - [Search skill](/docs/assistant?topic=assistant-skill-search-add)
 - [Web Chat](/docs/assistant?topic=assistant-deploy-web-chat)
 
+The plan type of the service instance you are currently using is displayed in the page header. You can upgrade from one plan type to another. For more information, see [Upgrading](/docs/assistant?topic=assistant-upgrade).
+
 ## User-based plans explained
 {: #services-information-user-based-plans}
 
 Unlike API-based plans, which measure usage by the number of API calls made during a month, the Plus and Premium plans measure usage by the number of monthly active users.
+
+For example, you can pay $120 for the Plus plan, which covers from 0 to 1,000 monthly active users per service instance per billing period. A Plus plan service instance supports up to 100 assistants. For more details about what is supported by this plan and other plans, see the [artifact limits](#services-information-limits) information.
 
 A monthly active user (MAU) is any unique user who has at least one meaningful interaction with your assistant or custom application over the calendar billing month. A meaningful interaction is an exchange in which a user sends a request to your service and your service responds. Welcome messages that are displayed at the start of a conversation are not charged.
 
@@ -106,22 +110,11 @@ When testing your skills and assistants, any messages that you submit in the "Tr
 ### Handling anonymous users
 {: #services-information-billing-anonymous}
 
-If your custom application or assistant interacts with users who are anonymous, you can generate your own randomized universally unique IDs to represent these users. For more information about UUIDs, see [RFC 4122](https://tools.ietf.org/html/rfc4122.html){: external}.
+If your custom application or assistant interacts with users who are anonymous, you can generate a randomized universally unique ID to represent each anonymous user. For more information about UUIDs, see [RFC 4122](https://tools.ietf.org/html/rfc4122.html){: external}.
 
-- For Web Chat, if you do not pass an identifier for the user when the session begins, the Web Chat creates one for you. It creates a first party cookie with a generated anonymous ID. The cookie remains active for 45 days. If the same user returns to your site later in the month and chats with your assistant again, the Web Chat integration recognizes the user. And you are charged only once when the same anonymous user interacts with your assistant multiple times in a single month.
+- For Web Chat, if you do not pass an identifier for the user when the session begins, the Web Chat creates one for you. It creates a first-party cookie with a generated anonymous ID. The cookie remains active for 45 days. If the same user returns to your site later in the month and chats with your assistant again, the Web Chat integration recognizes the user. And you are charged only once when the same anonymous user interacts with your assistant multiple times in a single month.
 
 If an anonymous user logs in and later is identified as being the same person who submitted a request with a known ID, you are charged twice. Each message with a unique user ID is charged as an independent active user. To avoid this situation, you can prompt users to log in before you initiate a chat or you can use the anonymous user ID to represent the user consistently.
-
-## Getting plan information for a service
-{: #services-information-plans}
-
-To find out the service plan to which your current instance belongs, complete these steps:
-
-1.  Make a note of the name of the instance you are currently using. (You can find the instance name from the header of any page in the current instance. Click the User icon ![user icon](images/user-icon.png).)
-1.  Go to the [IBM Cloud Resource list](https://cloud.ibm.com/resources){: external} page.
-1.  Expand the **Services** section, find the instance name that you noted earlier, and click it to see the associated plan information.
-
-You can upgrade from one plan type to another. For more information, see [Upgrading](/docs/assistant?topic=assistant-upgrade).
 
 ### Data centers
 {: #services-information-regions}
@@ -148,18 +141,14 @@ For an additional cost, you can request that service instances in a Premium plan
 
 For more information about the data centers in which other {{site.data.keyword.cloud_notm}} services are hosted, see [Services by region](/docs/resources/services_region?topic=resources-services_region#services_region){: external}.
 
-## Terms and security
-{: #services-information-terms}
+### Premium plan details
+{: services-information-premium-slots}
 
-To learn more about service terms and data security, read the following information:
+When a Premium plan is provisioned for a customer, one or more service instances are created in a single premium slot. A premium slot is a collection of Kubernetes deployments of a {{site.data.keyword.conversationshort}} service that offers data isolation and some, but not total, compute isolation. 
 
-- [Service terms](https://www-03.ibm.com/software/sla/sladb.nsf/sla/home?OpenDocument){: external}
-- [Data security and privacy](https://www.ibm.com/software/sla/sladb.nsf/sla/csdsp?OpenDocument){: external}
-- [Information security](/docs/assistant?topic=assistant-information-security)
+The following information is true for premium slots that are used to support {{site.data.keyword.conversationshort}} service instances. 
 
-For more information about {{site.data.keyword.cloud_notm}}, see [Platform overview](/docs/overview?topic=overview-whatis-platform){: external}.
-
-## Still have questions? 
-{: #services-information-sales}
-
-Contact [IBM Sales](https://www-01.ibm.com/marketing/iwm/dre/signup?source=urx-20970){: external}.
+- A premium slot is always owned by one account. An account can have multiple premium slots.
+- A premium plam exists in a single region.
+- A premium slot can contain one or more resource groups. However, a resource group can belong to only one premium slot. 
+- Premium slots are plan-agnostic. A service instance has a plan. A premium slot can support services intances of varying plan types, provided the plans adhere to premium policies.
