@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-24"
+lastupdated: "2020-04-27"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
@@ -141,7 +141,7 @@ For an additional cost, you can request that service instances in a Premium plan
 
 For more information about the data centers in which other {{site.data.keyword.cloud_notm}} services are hosted, see [Services by region](/docs/resources/services_region?topic=resources-services_region#services_region){: external}.
 
-### Premium plan details
+<!--### Premium plan details
 {: services-information-premium-slots}
 
 When a Premium plan is provisioned for a customer, one or more service instances are created in a single premium slot. A premium slot is a collection of Kubernetes deployments of a {{site.data.keyword.conversationshort}} service that offers data isolation and some, but not total, compute isolation. 
@@ -151,4 +151,4 @@ The following information is true for premium slots that are used to support {{s
 - A premium slot is always owned by one account. An account can have multiple premium slots.
 - A premium plam exists in a single region.
 - A premium slot can contain one or more resource groups. However, a resource group can belong to only one premium slot. 
-- Premium slots are plan-agnostic. A service instance has a plan. A premium slot can support services intances of varying plan types, provided the plans adhere to premium policies.
+- Premium slots are plan-agnostic. A service instance has a plan. A premium slot can support services intances of varying plan types, provided the plans adhere to premium policies. -->

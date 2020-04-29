@@ -30,7 +30,6 @@ Watson Assistant
         intents.md
         intent-recommendations.md
         dialog-build.md
-        dialog-depiction.md
         dialog-plan.md
         dialog-overview.md
         dialog-tips.md
