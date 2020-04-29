@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-24"
+lastupdated: "2020-04-28"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -650,7 +650,7 @@ If you choose to jump to another node, specify when the target node is processed
 
 - **Wait for user input**: Waits for new input from the user, and then begins to process it from the node that you jump to. This option is useful if the source node asks a question, for example, and you want to jump to a separate node to process the user's answer to the question.
 
-### What to do next
+### Next steps
 {: #dialog-overview-next}
 
 - Be sure to test your dialog as you build it. For more information, see [Testing the dialog](/docs/assistant?topic=assistant-tasks).
