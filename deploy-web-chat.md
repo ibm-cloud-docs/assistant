@@ -160,7 +160,6 @@ If you choose to use the provided methods, you implement them by editing the cod
 For example, the following updated script preserves the context for the conversation. In addition, it adds an `$ismember` context variable and sets it to `true`.
 
 ```html
-<script src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js"></script>
 <script>
   // Following the v2 message API, we add some items to context.
   function preSendhandler(event) {
@@ -169,13 +168,19 @@ For example, the following updated script preserves the context for the conversa
 </script>
 <script>
   window.loadWatsonAssistantChat({
-    integrationID: '{INTEGRATION ID}',
-    region: '{REGION}'
+    integrationID: 'YOUR_INTEGRATION_ID',
+    region: 'YOUR_REGION', 
+    serviceInstanceID: 'YOUR_SERVICE_INSTANCE',
   }).then(function(instance){
     // When this promise returns, we know WatsonAssistantChat is ready.
     instance.on({ type: "pre:send", handler: preSendhandler });
     instance.render();
   });
+  setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+        document.head.appendChild(t);
+      });
 </script>
 ```
 {: codeblock}
@@ -184,29 +189,39 @@ You can reference the `$ismember` context variable from your dialog. For example
 
 ![Shows multiple conditioned responses in a dialog node, one of which references the ismember context variable](images/web-chat-use-context-var.png)
 
+If you enable security, you can encrypt the data that you pass to your dialog. For more information, see [Passing sensitive data](#deploy-web-chat-security-encrypt).
+
 ### Adding user identity information
 {: #deploy-web-chat-userid}
 
-If you want to perform tasks that require you to know the user who submitted the user input, then you must pass the user ID to the web chat integration. User information is used in the following ways:
+If you do not enable security, and you want to perform tasks that require you to know the user who submitted the user input, then you must pass the user ID to the web chat integration.
+
+If you do enable security, you set the user ID in the JSON Web Token instead. For more information, see [Authenticating users](#deploy-web-chat-security-authenticate).
+
+User information is used in the following ways:
 
 - User-based service plans use the `user_id` associated with user input for billing purposes. See [User-based plans](/docs/assistant?topic=assistant-services-information#services-information-user-based-plans). 
 - The ability to delete any data created by someone who requests to be forgotten requires that a `customer_id` be associated with the user input. When a `user_id` is defined, the product can reuse it to pass a `customer_id` parameter. See [Labeling and deleting data](/docs/assistant?topic=assistant-information-security#information-security-gdpr-wa).
 
-To support these user-based capabilities, you must add the `options.userID` method to the code snippet before you paste it into your web page.
+To support these user-based capabilities, add the  method in the code snippet before you paste it into your web page.
 
-In the following example, the user ID `L44556677` is added to the script.
+In the following example, the user ID `L12345` is added to the script.
 
 ```html
-<script src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js"></script>
 <script>
-  window.loadWatsonAssistantChat({
-    integrationID: '{INTEGRATION ID}',
-    region: '{REGION}',
-    userID: `L44556677`
-  }).then(function(instance){
-    // When this promise returns, we know WatsonAssistantChat is ready.
-    instance.on({ type: "pre:send", handler: preSendhandler });
-    instance.render();
+  window.watsonAssistantChatOptions = {
+      integrationID: 'YOUR_INTEGRATION_ID',
+      region: 'YOUR_REGION', 
+      serviceInstanceID: 'YOUR_SERVICE_INSTANCE',
+      onLoad: function(instance) { 
+        instance.updateUserID(L12345);
+        instance.render(); 
+        }
+    };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    document.head.appendChild(t);
   });
 </script>
 ```
@@ -294,17 +309,21 @@ To enable security, complete the following steps:
     For example:
 
     ```html
-    <script src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js"></script>
     <script>
       window.watsonAssistantChatOptions = {
-        integrationID: 'YOUR_INTEGRATION_ID',
-        region: 'YOUR_REGION',
-        identityToken: 'YOUR_JWT',
-        onLoad: function(instance) {
-          instance.render();
-        }
-      };
-      setTimeout(function(){const t=document.createElement('script');t.src='https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js';document.head.appendChild(t);});
+          integrationID: 'YOUR_INTEGRATION_ID',
+          region: 'YOUR_REGION', 
+          serviceInstanceID: 'YOUR_SERVICE_INSTANCE',
+          identityToken: 'YOUR_JWT',
+          onLoad: function(instance) {
+            instance.render(); 
+            }
+        };
+      setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+        document.head.appendChild(t);
+      });
     </script>
     ```
     {: codeblock}
@@ -316,11 +335,11 @@ To enable security, complete the following steps:
     For example:
 
     ```html
-    <script src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js"></script>
     <script>
     window.watsonAssistantChatOptions = {
       integrationID: 'YOUR_INTEGRATION_ID',
       region: 'YOUR_REGION',
+      serviceInstanceID: 'YOUR_SERVICE_INSTANCE',
       identityToken: 'YOUR_JWT',
       onLoad: function(instance) {
         instance.on({ type: 'identityTokenExpired', handler: function(event) {
@@ -334,6 +353,11 @@ To enable security, complete the following steps:
         instance.render();
       }
     };
+    setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+        document.head.appendChild(t);
+      });
     </script>
     ```
     {: codeblock}
@@ -347,7 +371,7 @@ Use this method to send sensitive information in messages that come from your we
 
 For example, you might start a business process for a VIP customer that is different from the process you start for less important customers. You likely do not want non-VIPs to know that they are categorized as such. But you must pass this informataion to your dialog because it changes the route of the conversation. You can pass the customer MVP status as an encrypted variable. This private context variable will be available for use by the dialog, but not by anything else.
 
-1.  Copy the public key from the **IBM provided public key** field.
+1.  From the Web Chat configuration page, copy the public key from the **IBM provided public key** field.
 1.  From your website, write a function that signs a JSON Web Token.
 
     For example, the following NodeJS code snippet shows a function that accepts a userID and payload content and sends it to the Web Chat. If a payload is provided, its content is encrypted and signed with the IBM public key.
@@ -381,12 +405,12 @@ For example, you might start a business process for a VIP customer that is diffe
 
 1.   The encrypted user payload is decrypted and then saved to the `context.integrations.chat.private.user_payload` object. For information about how to access the payload data from the dialog, see [Web Chat: Accessing sensitive data](/docs/assistant?topic=assistant-dialog-integrations#dialog-integrations-chat-private). You might want to access the payload, for example, to get the customer importance information or single sign-on credentials that you can subsequently use to authenticate a webhook.
 
-### Authenticating a user
+### Authenticating users
 {: #deploy-web-chat-security-authenticate}
 
-When you enable security, you cannot use the `instance.updateUserID()` method to specify a unique user ID for your customers. Instead, add the user ID to the token.
+To authenticate and specify a unique ID for each customer, add the user ID information to the token.
 
-1.  Copy the public key from the **IBM provided public key** field. You will specify this value as the `PUBLIC_IBM_RSA_KEY` later.
+1.  From the Web Chat configuration page, copy the public key from the **IBM provided public key** field. You will specify this value as the `PUBLIC_IBM_RSA_KEY` later.
 1.  From your website, write a function that signs a JSON Web Token.
 
     The function must accept a UserID parameter and set the userID as the `sub` claim value.
@@ -418,6 +442,8 @@ When you enable security, you cannot use the `instance.updateUserID()` method to
     {: codeblock}
 
     After you set the value of the `sub` claim to be the user's userID, you cannot change the claim to another user. The userID that you specify with this method is used for billing purposes and can be used to delete customer data upon request.
+
+If you disable security, then you can use the `instance.updateUserID()` method to specify user IDs. For more information, see [Adding user identity information](#deploy-web-chat-userid).
 
 ## Adding support for transfers ![Beta](images/beta.png)
 {: #deploy-web-chat-haa}

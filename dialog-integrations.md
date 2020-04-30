@@ -55,10 +55,10 @@ For example, if you passed the value `"mvp:true"` in the JSON payload, you can a
 | Assistant responds | `I can help you reserve box seats at the upcoming conference!` |
 {: caption="Private variable as node condition" caption-side="top"}
 
-## Web Chat: Reusing the JWT token for webhook authentication
+## Web Chat: Reusing the JWT for webhook authentication
 {: #dialog-integrations-chat-jwt}
 
-You can use the same JSON Web Token that was used to secure your Web Chat to authenticate webhook calls. If you specify a token in the `identityToken` property when you add the Web Chat to your web page, the token is stored in a private variable named `context.integrations.chat.private.jwt`. For more information about passing a JWT, see [Enable security](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-security-task).
+You can use the same JSON Web Token (JWT) that was used to secure your Web Chat to authenticate webhook calls. If you specify a token in the `identityToken` property when you add the Web Chat to your web page, the token is stored in a private variable named `context.integrations.chat.private.jwt`. For more information about passing a JWT, see [Enable security](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-security-task).
 
 1.  From your dialog skill, open the **Options>Webhooks** page.
 1.  Click **Add authentication**. 
