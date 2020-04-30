@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-27"
+lastupdated: "2020-04-30"
 
 subcollection: assistant
 
@@ -51,6 +51,14 @@ The {{site.data.keyword.conversationshort}} algorithms may be periodically refin
 Existing models that you have trained will not be immediately impacted, but expired models will be updated to the current model, if you have not already done so, after 60 days of a new model becoming available.
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
+
+## 30 April 2020
+{: #30April2020}
+<!--1.95.1-->
+
+-  **Web Chat is generally available!**: Add your assistant to your company website as a web chat widget that can help your customers with common questions and tasks. Service desk transfer support continues to be a beta feature. For more information, see [Integrating with your own website](/docs/assistant?topic=assistant-deploy-web-chat).
+
+- **Secure your Web Chat**: Enable security for your Web Chat so that you can verify that messages sent to your assistant come from only your customers and can pass sensitive information to your assistant.
 
 ## 27 April 2020
 {: #27April2020}

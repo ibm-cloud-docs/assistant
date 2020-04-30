@@ -37,6 +37,7 @@ Watson Assistant
         entities.md
         dialog-runtime.md
         dialog-slots.md
+        dialog-integrations.md
         dialog-webhooks.md
         dialog-actions-client.md
         dialog-responses-json.md
