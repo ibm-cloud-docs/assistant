@@ -345,7 +345,7 @@ You can optionally copy the public key that is provided by IBM, and use it to en
 
 Use this method to send sensitive information in messages that come from your website, such as a information about a customer's loyalty level, a user ID, or security tokens to use in webhooks that you call from your dialog. Information that is passed to your assistant in this way is stored in a private variable in your assistant. Private variables are never sent back to the Web Chat.
 
-For example, you might start a business process for a VIP customer that is different from the process you start for less important customers. You likely do not want the non-VIP to know that he is categorized as such. But, you must pass this informataion to your dialog because it changes the route of the conversation. You can pass the customer MVP status as an encrypted variable. This private context variable will be available for use by the dialog, but not by anything else.
+For example, you might start a business process for a VIP customer that is different from the process you start for less important customers. You likely do not want non-VIPs to know that they are categorized as such. But you must pass this informataion to your dialog because it changes the route of the conversation. You can pass the customer MVP status as an encrypted variable. This private context variable will be available for use by the dialog, but not by anything else.
 
 1.  Copy the public key from the **IBM provided public key** field.
 1.  From your website, write a function that signs a JSON Web Token.

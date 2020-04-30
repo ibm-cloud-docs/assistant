@@ -40,7 +40,7 @@ The `integrations` object is available from the v2 API in version `2020-04-01` o
 ## Web Chat: Accessing sensitive data
 {: #dialog-integrations-chat-private}
 
-If you enable security for the Web Chat, you can configure your Web Chat implementation to send encrypted data to the dialog. Payload data that is sent from Web Chat is stored in a private context variable named `context.integrations.chat.private.user_payload`. All private variables are not sent from dialog to any integrations. For more information about how to pass data, see [Passing sensitive data](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-security-encrypt).
+If you enable security for the Web Chat, you can configure your Web Chat implementation to send encrypted data to the dialog. Payload data that is sent from Web Chat is stored in a private context variable named `context.integrations.chat.private.user_payload`. No private variables are sent from the dialog to any integrations. For more information about how to pass data, see [Passing sensitive data](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-security-encrypt).
 
 To access the payload data, you can reference the `context.integrations.chat.private.user_payload` object from the dialog node condition. 
 
