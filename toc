@@ -51,12 +51,12 @@ Watson Assistant
     {: .topicgroup}
     Deploying
         deploy-integration-add.md
-        deploy-custom-app.md
-        deploy-facebook.md
-        deploy-intercom.md
         deploy-web-link.md
         deploy-web-chat.md
+        deploy-intercom.md
+        deploy-facebook.md
         deploy-slack.md
+        deploy-custom-app.md
         deploy-integration-delete.md
 
     {: .topicgroup}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-30"
+lastupdated: "2020-05-01"
 
 subcollection: assistant
 
@@ -52,13 +52,18 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
+## 1 May 2020
+{: #1May2020}
+
+-  **Pricing plan changes**: We continue to revamp the overall service plan structure for {{site.data.keyword.conversationshort}}. Last month, we announced [a new low cost entry point](#1April2020) for the Plus plan. Today, the Standard plan is being retired. Existing Standard plan users are not impacted, but new users do not see the Standard plan as an option when they create a service instance. For more information, see the [Pricing](https://www.ibm.com/cloud/watson-assistant/pricing/){: external} page.
+
 ## 30 April 2020
 {: #30April2020}
 <!--1.95.1-->
 
 -  **Web Chat is generally available!**: Add your assistant to your company website as a web chat widget that can help your customers with common questions and tasks. Service desk transfer support continues to be a beta feature. For more information, see [Integrating with your own website](/docs/assistant?topic=assistant-deploy-web-chat).
 
-- **Secure your Web Chat**: Enable security for your Web Chat so that you can verify that messages sent to your assistant come from only your customers and can pass sensitive information to your assistant.
+- **Secure your Web Chat**: Enable the beta security feature of Web Chat so that you can verify that messages sent to your assistant come from only your customers and can pass sensitive information to your assistant.
 
 ## 27 April 2020
 {: #27April2020}

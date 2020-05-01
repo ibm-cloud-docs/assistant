@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-30"
+lastupdated: "2020-05-01"
 
 subcollection: assistant
 
@@ -227,7 +227,7 @@ In the following example, the user ID `L12345` is added to the script.
 ```
 {: codeblock} 
 
-## Securing the Web Chat
+## Securing the Web Chat ![Beta](images/beta.png)
 {: #deploy-web-chat-security}
 
 Configure the Web Chat to authenticate users and encrypt data that is submitted from your embedded Web Chat.
