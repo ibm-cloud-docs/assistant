@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-03"
+lastupdated: "2020-05-01"
 
 subcollection: assistant
 
@@ -55,15 +55,17 @@ Follow these steps to add integrations to your assistant:
 
 1.  Click the tile for the channel with which you want to integrate the assistant. The options include:
 
-    - [Custom application](/docs/assistant?topic=assistant-deploy-custom-app)
-    - [Facebook Messenger](/docs/assistant?topic=assistant-deploy-facebook)
-    - [Intercom](/docs/assistant?topic=assistant-deploy-intercom)  ![Plus or Premium plan only](images/plus.png)
     - [Preview Link](/docs/assistant?topic=assistant-deploy-web-link)
+    - [Web Chat](/docs/assistant?topic=assistant-deploy-web-chat)
+    - [Salesforce](/docs/assistant?topic=assistant-deploy-salesforce) ![Plus or Premium plan only](images/plus.png)
+    - [Zendesk](/docs/assistant?topic=assistant-deploy-zendesk) ![Plus or Premium plan only](images/plus.png)
+    - [Intercom](/docs/assistant?topic=assistant-deploy-intercom)  ![Plus or Premium plan only](images/plus.png)
+    - [Facebook Messenger](/docs/assistant?topic=assistant-deploy-facebook)
     - [Slack](/docs/assistant?topic=assistant-deploy-slack)
+    - [Custom application](/docs/assistant?topic=assistant-deploy-custom-app)
     - [Voice Agent (Telephony)](https://cloud.ibm.com/catalog/services/voice-agent-with-watson){: external}
 
       Opens the **Voice Agent with Watson** service overview page on {{site.data.keyword.cloud}}.
-    - [Web Chat](/docs/assistant?topic=assistant-deploy-web-chat) ![Plus or Premium plan only](images/plus.png)
 
 1.  Follow the instructions that are provided on the screen to complete the integration process.
 

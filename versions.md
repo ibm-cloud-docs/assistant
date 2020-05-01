@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-03"
+lastupdated: "2020-05-01"
 
 subcollection: assistant
 
@@ -52,6 +52,9 @@ To create a dialog skill version, follow these steps:
 1.  From the header of the skill, click **Save new version**, and then describe the current state of the skill.
 
     Adding a good description will help you to distinguish multiple versions from one another later.
+
+    Add the date you deploy the version to its description to make it easier to filter logs by version from the Analytics page later. For more information, see [Picking a data source](/docs/assistant?topic=assistant-logs#logs-pick-data-source).
+    {: tip}
 
 1.  Click **Save**.
 
