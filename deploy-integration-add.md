@@ -56,7 +56,9 @@ Follow these steps to add integrations to your assistant:
 1.  Click the tile for the channel with which you want to integrate the assistant. The options include:
 
     - [Preview Link](/docs/assistant?topic=assistant-deploy-web-link)
-    - [Web Chat](/docs/assistant?topic=assistant-deploy-web-chat) ![Plus or Premium plan only](images/plus.png)
+    - [Web Chat](/docs/assistant?topic=assistant-deploy-web-chat)
+    - [Salesforce](/docs/assistant?topic=assistant-deploy-salesforce) ![Plus or Premium plan only](images/plus.png)
+    - [Zendesk](/docs/assistant?topic=assistant-deploy-zendesk) ![Plus or Premium plan only](images/plus.png)
     - [Intercom](/docs/assistant?topic=assistant-deploy-intercom)  ![Plus or Premium plan only](images/plus.png)
     - [Facebook Messenger](/docs/assistant?topic=assistant-deploy-facebook)
     - [Slack](/docs/assistant?topic=assistant-deploy-slack)

@@ -53,6 +53,8 @@ Watson Assistant
         deploy-integration-add.md
         deploy-web-link.md
         deploy-web-chat.md
+        deploy-salesforce.md
+        deploy-zendesk.md
         deploy-intercom.md
         deploy-facebook.md
         deploy-slack.md

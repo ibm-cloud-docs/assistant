@@ -24,13 +24,13 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Integrating with your own website
+# Integrating with your website
 {: #deploy-web-chat}
 
-Add your assistant to your company website as a web chat widget that can transfer customers to human agents.
+Add your assistant to your company website as a Web Chat widget that can help your customers with common questions and tasks, and can transfer customers to human agents.
 {: shortdesc}
 
-When you create a web chat integration, code is generated that calls a script that is written in JavaScript. The script instantiates a unique instance of your assistant. You can then copy and paste the HTML `script` element into any page or pages on your website where you want users to be able to ask your assistant for help.
+When you create a Web Chat integration, code is generated that calls a script that is written in JavaScript. The script instantiates a unique instance of your assistant. You can then copy and paste the HTML `script` element into any page or pages on your website where you want users to be able to ask your assistant for help.
 
 ![Plus or Premium plan only](images/plus.png) This integration type is available to Plus or Premium plan users only.
 
@@ -134,7 +134,7 @@ To add the assistant to a web page on your company website, complete the followi
 
     The Web Chat instance is created as soon as you click the *Create* button, and does not need to be saved.
 
-You can apply more advanced customizations to the style of the web chat by using the {{site.data.keyword.conversationshort}} Web Chat toolkit on [GitHub](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-configuration){: external}. For example, the text that is displayed in the chat window uses the fonts: `IBMPlexSans, Arial, Helvetica, sans-serif`. If you want to use a different font, you can specify it by using the `instance.updateCSSVariables()` method.
+You can apply more advanced customizations to the style of the Web Chat by using the {{site.data.keyword.conversationshort}} Web Chat toolkit on [GitHub](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-configuration){: external}. For example, the text that is displayed in the chat window uses the fonts: `IBMPlexSans, Arial, Helvetica, sans-serif`. If you want to use a different font, you can specify it by using the `instance.updateCSSVariables()` method.
 
 ## Dialog considerations
 {: #deploy-web-chat-dialog}
@@ -147,17 +147,19 @@ The rich responses that you add to a dialog are displayed in the Web Chat as exp
 
 For more information about rich response types, see [Rich responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia).
 
-## Extending the web chat
+## Extending the Web Chat
 {: #deploy-web-chat-extend}
 
-You can extend the capability and customize the behavior of the web chat by using the {{site.data.keyword.conversationshort}} Web Chat toolkit on [GitHub](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/){: external}.
+A developer can extend the capabilities of the Web Chat by using the {{site.data.keyword.conversationshort}} Web Chat toolkit on [GitHub](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/){: external}.
 
 If you choose to use the provided methods, you implement them by editing the code snippet that was generated earlier. You then embed the updated code snippet into your web page.
 
 ### Setting and passing context variable values
 {: #deploy-web-chat-set-context}
 
-For example, the following updated script preserves the context for the conversation. In addition, it adds an `$ismember` context variable and sets it to `true`.
+A context variable is a variable that you can use to pass information to your assistant before a conversation starts. It can also collect information during a conversation, and reference it later in the same conversation. For example, you might want to ask for the customer's name and then address the person by name later on.
+
+The following script preserves the context of the conversation. In addition, it adds an `$ismember` context variable and sets it to `true`.
 
 ```html
 <script>
@@ -194,7 +196,7 @@ If you enable security, you can encrypt the data that you pass to your dialog. F
 ### Adding user identity information
 {: #deploy-web-chat-userid}
 
-If you do not enable security, and you want to perform tasks that require you to know the user who submitted the user input, then you must pass the user ID to the web chat integration.
+If you do not enable security, and you want to perform tasks where you need to know the user who submitted the input, then you must pass the user ID to the Web Chat integration.
 
 If you do enable security, you set the user ID in the JSON Web Token instead. For more information, see [Authenticating users](#deploy-web-chat-security-authenticate).
 
@@ -203,7 +205,7 @@ User information is used in the following ways:
 - User-based service plans use the `user_id` associated with user input for billing purposes. See [User-based plans](/docs/assistant?topic=assistant-services-information#services-information-user-based-plans). 
 - The ability to delete any data created by someone who requests to be forgotten requires that a `customer_id` be associated with the user input. When a `user_id` is defined, the product can reuse it to pass a `customer_id` parameter. See [Labeling and deleting data](/docs/assistant?topic=assistant-information-security#information-security-gdpr-wa).
 
-To support these user-based capabilities, add the  method in the code snippet before you paste it into your web page.
+To support these user-based capabilities, add the `updateUserID()` method in the code snippet before you paste it into your web page.
 
 In the following example, the user ID `L12345` is added to the script.
 
@@ -278,8 +280,9 @@ Before you enable security, complete the following steps:
     function mockLogin() {
         const payload = {
             /*
-             * Even if this is an unauthenticated user, add a userID in the sub claim that can be used for billing.
-             * This will serve as our tracking of "unique users". For unauthenticated users, drop a
+             * Even if this is an unauthenticated user, add a userID in the sub claim that can be used 
+             * for billing purposes.
+             * This ID will help us keep track "unique users". For unauthenticated users, drop a
              * cookie in the browser so you can make sure the user is counted uniquely across visits.
              */
             sub: 'some-user-id', // Required
@@ -448,176 +451,14 @@ If you disable security, then you can use the `instance.updateUserID()` method t
 ## Adding support for transfers ![Beta](images/beta.png)
 {: #deploy-web-chat-haa}
 
-Delight your customers with 360-degree support by integrating your web chat with a third-party service desk solution. 
+Delight your customers with 360-degree support by integrating your Web Chat with a third-party service desk solution. 
 
 The following service desk offerings are supported:
 
-- [Zendesk](#deploy-web-chat-zendesk)
-- [Salesforce](#deploy-web-chat-salesforce)
+- [Salesforce](/docs/assistant?topic=assistant-deploy-salesforce)
+- [Zendesk](/docs/assistant?topic=assistant-deploy-zendesk)
 
-After you set up the service desk integration, you must update your dialog to ensure it understands user requests to speak to someone, and can transfer the conversation properly. See [Adding transfer support to your dialog](#deploy-web-chat-dialog-prereq).
-
-### Setting up a Zendesk integration ![Beta](images/beta.png)
-{: #deploy-web-chat-zendesk}
-
-Zendesk Chat lets you help customers in real time, which increases customer satisfaction. And satisfied customers are happier customers. To learn more about this service desk solution, see the [Zendesk website](https://www.zendesk.com/chat/){: external}.
-
-Zendesk Chat is an add-on to Zendesk Support. Zendesk Support puts all your customer support interactions in one place, so communication is seamless, personal, and efficient, which means more productive agents and satisfied customers.
-
-1.  You must have a Zendesk account. If not, create one. 
-
-    A Zendesk Chat Enterprise plan is required.
-    {: important}
-
-1.  From the Web Chat integration page in {{site.data.keyword.conversationshort}}, switch the **Allow transfers to live agents** toggle to **On**, and then choose **Zendesk** as the service desk type, and then click **Set up**.
-1.  {: #deploy-web-chat-zendesk-get-account-key}Add the account key for your Zendesk account. To get the account key for your Zendesk account, follow these steps:
-
-    - Log in to your Zendesk subdomain.
-    
-    - Open the Zendesk Chat Dashboard.
-
-       From the Zendesk Support dashboard, you can click the *Zendesk Products* icon in the header, and then click the *Chat* icon.
-
-       ![Screen capture of the chat icon in the header.](images/zd-open-chat.png)
-    
-    - Click your profile, and then click *Check Connection*.
-
-       ![Screen capture of the Zendesk user interface to show where the profile is located.](images/zd-status-dropdown.png)
-
-    - Copy the account key value.
-
-       ![Screen capture of the connection dialog.](images/zd-account-key.png)
-
-    - Return to the setup page in {{site.data.keyword.conversationshort}}, and then paste the key into the field. Click **Access account**.
-
-1.  {: #deploy-web-chat-zendesk-add-private-app}Install the {{site.data.keyword.conversationshort}} private application in your Zendesk Chat subdomain.
-
-    When you create a Zendesk Chat account, you specify a subdomain. Afterward, your Zendesk console is available from a URL with the syntax: `<subdomain>.zendesk.com`. For example, `ibm.zendesk.com`.
-    
-    IBM provides an application that you can install in your Zendesk Chat domain. When a customer asks to speak to a person, your assistant will share a chat summary for the transferred conversation with the Zendesk agent by using this private app.
-
-    - Download the Watson Assistant Zendesk application from the Zendesk Chat setup page in {{site.data.keyword.conversationshort}}.
-
-    - Copy the credentials that are generated for you in the **Watson Assistant Zendesk app credentials** field. You will need them in a later step.
-
-    - Log in to Zendesk with a user ID that has administrative privileges.
-
-    - Install the Watson Assistant Zendesk app to your Zendesk Chat subdomain as a new private app. 
-    
-      - From the Chat dashboard navigation pane, expand *Settings*, and then click *Account*
-      - Open the *Apps* tab.
-      - Click *Upload private app*, and then browse for the application file that you downloaded earlier.    
-      - When credentials are requested, paste the Watson Assistant Zendesk app credentials that you copied earlier.
-
-      ![Screen capture of the Zendesk Account page where you can upload a private app.](images/zd-upload-app.png)
-
-      For more information, see [Uploading and installing a private app in Zendesk Chat](https://develop.zendesk.com/hc/en-us/articles/360001069347-Uploading-and-installing-a-private-app){: external}.
-
-1.  Optionally, add an agent avatar image. Edit your profile to upload an avatar image. The image file that you upload cannot be larger than 50 x 50 pixels and 100 KB.
-
-1.  Click **Save** to finish setting up the connection to the Zendesk Chat service desk.
-
-When you test the service desk integration, make sure there is at least one agent with `Online` status. Agent status is set to `Invisible` unless it is explicitly changed.
-
-Watch the following 4-minute video to see someone set up a connection to a Zendesk service desk.
-
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Setting up a Zendesk service desk connection" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/hegheiqUqiM" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
-
-### Setting up a Salesforce integration ![Beta](images/beta.png)
-{: #deploy-web-chat-salesforce}
-
-Salesforce is a customer relationship management solution that brings companies and customers together. It is one integrated CRM platform that gives all your departments, including marketing, sales, commerce, and service, a single, shared view of every customer.
-
-To connect to a Salesforce service desk, your organization must have a Salesforce Service Cloud plan that supports Live Agent Chat. Chat support is available in Salesforce Service Cloud Unlimited and Enterprise plans. It is also available with Performance or Developer plans that were created after 14 June 2012.
-
-Your organization must have a [Salesforce chat app](https://help.salesforce.com/articleView?id=dev_tabsets.htm&type=5){: external} with the following characteristics:
-
-- Console navigation
-- Navigation items: Cases, Chat sessions, Chat transcripts
-- User profiles: Apply the appropriate profiles to ensure that agents can access the app and view chat history information. You can limit access to this page later. See [Profiles](https://help.salesforce.com/articleView?id=admin_userprofiles.htm&type=5){: external}.
-- A [chat deployment](https://help.salesforce.com/articleView?id=live_agent_create_deployments.htm&type=5).
-- A [chat button deployment](https://help.salesforce.com/articleView?id=live_agent_create_buttons.htm&type=5){: external}.
-- Routing must be configured for the chat button. See [Chat routing options](https://help.salesforce.com/articleView?id=live_agent_chat_routing_options.htm&type=5){: external}. 
-- If you choose omni-channel routing, be sure to include omni-channel as a utility in the chat app. See [Omni-Channel](https://help.salesforce.com/articleView?id=omnichannel_intro.htm&type=5){: external}.
-
-You must have a level of access to your Salesforce service desk deployment that allows you to do the following things:
-
-- Edit the chat app
-- Get chat deployment and button code details
-- Add custom fields to layout objects
-- Create Visualforce pages
-
-If you don't, ask someone with the appropriate level of access to perform this procedure for you.
-
-To set up a Salesforce service desk integration, complete the following steps:
-
-1.  From the Web Chat integration page in {{site.data.keyword.conversationshort}}, switch the **Allow transfers to live agents** toggle to **On**, and then choose **Salesforce** as the service desk type. Click **Set up**.
-
-1.  For {{site.data.keyword.conversationshort}} to connect to a Salesforce service desk, it needs information about your organization's Salesforce chat deployment and button implementations. Specifically, it needs the API endpoint, organization ID, deployment ID, and button ID. The service can derive the values that it needs from code snippets that you copy and paste to this configuration page.
-{: #deploy-web-chat-salesforce-get-deployment-info}
-
-    In a separate browser tab or window, open your Salesforce account settings page. Log in with a user ID that has administrative privileges. You must switch back and forth between your Salesforce and {{site.data.keyword.conversationshort}} Web Chat integration setup pages. It's easier to do so if you have both pages open at once.
-    {: tip}
-
-    - Get the deployment code for your Salesforce Agent Configuration chat deployment. 
-    
-      Go to the Salesforce **Setup>Chat>Deployments** page. Find your organization's deployment. Scroll to the end of the chat deployment configuration page and copy the *Deployment Code* snippet.
-    - Paste the deployment code snippet into the **Deployment code** field in the {{site.data.keyword.conversationshort}} Salesforce configuration page.
-    - Get the Chat Button code. 
-    
-      Go to the Salesforce **Setup>Chat>Chat Buttons & Invitations** page. Find your organization's button implementation. Scroll to the end of the page, and then copy the *Chat Button Code* snippet.
-    - Paste the chat button code snippet into the **Chat button code** field in the {{site.data.keyword.conversationshort}} Salesforce configuration page, and then click **Next**.
-
-1.  {: #deploy-web-chat-salesforce-add-visualforce-page}Add a chat app that enables the Salesforce agent to interact with your assistant. To do so, create a Visualforce page, and then add a chat app to the page.
-
-    Visualforce pages are the mechanism that Salesforce provides for you to customize a live agent's console by adding your own pages to it. A Visualforce page is similar to a standard web page, but it provides ways for you to access, display, and update your organization’s data. Pages can be referenced and invoked by using a unique URL, just as HTML pages on a traditional web server can be. See [Create Visualforce Pages](https://help.salesforce.com/articleView?id=pages_creating.htm&type=5){: external}
-
-    - From the Web Chat integration page in {{site.data.keyword.conversationshort}}, copy the code snippet from the Visualforce page markup field.
-    - Switch to your Salesforce web page. Search for **Visualforce Pages**. Create a page. Add a label and name to the page, and then paste the code snippet that you copied in the previous step into the page markup field.
-
-1.  {: #deploy-web-chat-salesforce-add-custom-fields}Add custom fields to the Salesforce chat transcript layout.
-
-    This is a one-time task. If the fields already exist for your organization, you can skip this step.
-    {: note}
-
-    See [Create Custom Fields](https://help.salesforce.com/articleView?id=adding_fields.htm&type=5){: external}.
-
-    From the Salesforce **Setup>Object Manager>Chat Transcript>Fields & Relationships** page, create the following custom fields:
-
-    - **Session**: Stores a session ID that tracks ongoing conversations.
-
-      - **Data Type**: Text
-      - **Field Label**: `x-watson-assistant-session`
-      - **Field Length**: 36
-
-    - **Token**: Stores a {{site.data.keyword.conversationshort}} authentication token that secures the communication between Salesforce and your assistant.
-
-      - **Data Type**: Text Area (Long)
-      - **Field Label**: `x-watson-assistant-token`
-      - **Field Length**: Specify the maximum length allowed to ensure it can hold a token that might contain over 100,000 characters.
-
-1.  {: #deploy-web-chat-salesforce-add-page-to-layout}Add the Visualforce page that you created to the Salesforce chat app.
-
-    To ensure the Salesforce agents can see history of the chat between the customer and your assistant, you must add the page that you created earlier into the console that they use to keep track of their work. See [Create and Configure Lightning Experience Record Pages](https://help.salesforce.com/articleView?id=lightning_app_builder_customize_lex_pages.htm&type=5){: external}.
-    
-    - From the Salesforce App Launcher, open the chat app that you created for your agents to talk to customers.
-    - Open the *Chat Transcripts* object, and then select a transcript page.
-    - Click the *Setup* icon, and then select *Edit Page*.
-    - Drag the Visualforce component and drop it into the Chat Transcript Record page layout where you want the chat window to be displayed.
-    - In the component editor, select the Visualforce page that you created earlier, make any adjustments to the widget height that you want, and then click *Save*.
-    - Click *Activation*, and then click the APP, RECORD TYPE, AND PROFILE tab.
-    - Select the apps to which you want to apply the page layout, and then click *Next*.
-    - Select the appropriate record type, such as Master, and then click *Next*.
-    - Select user profiles to give the appropriate set of users access to the page. Limit the group to include only those who you want to be able to view chat history information in the page. 
-    - Click *Next*, and then click *Save*.
-
-1.  From the Salesforce configuration page in {{site.data.keyword.conversationshort}}, click **Save** to finish setting up the connection.
-
-When you test the service desk integration, make sure there is at least one agent with `Available` status.
-
-Watch the following 5-minute video to watch someone set up a connection to a Salesforce service desk.
-
-<iframe class="embed-responsive-item" id="youtubeplayer0" title="Setting up a Salesforce service desk connection" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/mUx-qvZH-qo" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+After you set up the service desk integration, you must update your dialog to ensure it understands user requests to speak to someone, and can transfer the conversation properly.
 
 ## Adding transfer support to your dialog
 {: #deploy-web-chat-dialog-prereq}
