@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-28"
+lastupdated: "2020-05-04"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -653,7 +653,7 @@ If you choose to jump to another node, specify when the target node is processed
 ### Next steps
 {: #dialog-overview-next}
 
-- Be sure to test your dialog as you build it. For more information, see [Testing the dialog](/docs/assistant?topic=assistant-tasks).
+- Be sure to test your dialog as you build it. For more information, see [Testing the dialog](/docs/assistant?topic=assistant-dialog-tasks).
 - For more information about ways to address common use cases, see [Dialog building tips](/docs/assistant?topic=assistant-dialog-tips).
 - For more information about the expression language that you can use to improve your dialog, such as methods that reformat dates or text, see [Expression language methods](/docs/assistant?topic=assistant-dialog-methods).
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-28"
+lastupdated: "2020-05-04"
 
 keywords: dialog overview
 
@@ -47,8 +47,8 @@ Each dialog node contains, at a minimum, a condition and a response.
 
 ![Shows user input going to a box that contains the statement If: CONDITION, Then: RESPONSE](images/node1-empty.png)
 
-- Condition: Specifies the information that must be present in the user input for this node in the dialog to be triggered. The information is typically a specific intent. It might also be an entity type, an entity value, or a context variable value. See [Conditions](/docs/assistant?topic=assistant-overview#dialog-overview-conditions) for more information.
-- Response: The utterance that your assistant uses to respond to the user. The response can also be configured to show an image or a list of options, or to trigger programmatic actions. See [Responses](/docs/assistant?topic=assistant-overview#dialog-overview-responses) for more information.
+- Condition: Specifies the information that must be present in the user input for this node in the dialog to be triggered. The information is typically a specific intent. It might also be an entity type, an entity value, or a context variable value. See [Conditions](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-conditions) for more information.
+- Response: The utterance that your assistant uses to respond to the user. The response can also be configured to show an image or a list of options, or to trigger programmatic actions. See [Responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-responses) for more information.
 
 You can think of the node as having an if/then construction: if this condition is true, then return this response.
 
@@ -79,8 +79,8 @@ When your assistant reaches the end of a branch, or cannot find a condition that
 
 You can disrupt the standard first-to-last flow in the following ways:
 
-- By customizing what happens after a node is processed. For example, you can configure a node to jump directly to another node after it is processed, even if the other node is positioned earlier in the tree. See [Defining what to do next](/docs/assistant?topic=assistant-overview#dialog-overview-jump-to) for more information.
-- By configuring conditional responses to jump to other nodes. See [Conditional responses](/docs/assistant?topic=assistant-overview#dialog-overview-multiple) for more information.
+- By customizing what happens after a node is processed. For example, you can configure a node to jump directly to another node after it is processed, even if the other node is positioned earlier in the tree. See [Defining what to do next](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-jump-to) for more information.
+- By configuring conditional responses to jump to other nodes. See [Conditional responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multiple) for more information.
 - By configuring digression settings for dialog nodes. Digressions can also impact how users move through the nodes at run time. If you enable digressions away from most nodes and configure returns, users can jump from one node to another and back again more easily. See [Digressions](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-digressions) for more information.
 
 ## Sample dialog
@@ -104,4 +104,4 @@ The dialog tree in this diagram contains two root dialog nodes. A typical dialog
 ## Ready to get started?
 {: #dialog-build-start}
 
-For more information, see [Building a dialog](/docs/assistant?topic=assistant-overview).
+For more information, see [Building a dialog](/docs/assistant?topic=assistant-dialog-overview).
