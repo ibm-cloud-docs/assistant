@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-24"
+lastupdated: "2020-05-04"
 
 subcollection: assistant
 
@@ -24,7 +24,7 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:gif: data-image-type='gif'}
 
-# Plan the dialog
+# Planning the dialog
 {: #dialog-plan}
 
 Learn how to approach building a dialog.

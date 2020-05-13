@@ -158,7 +158,7 @@ Existing models that you have trained will not be immediately impacted, but expi
 ## 18 March 2020
 {: #18March2020}
 
-- **Technology preview is discontinued**: The technology preview user interface was replaced with the {{site.data.keyword.conversationshort}} standard user interface. If you used an Actions page to create actions and steps for your skill previously, you cannot access the Actions page anymore. Instead, use the Intents and Dialog pages to work with your skill. For more information, see [Exiting the technology preview](/docs/assistant?topic=assistant-dialog-evolution).
+- **Technology preview is discontinued**: The technology preview user interface was replaced with the {{site.data.keyword.conversationshort}} standard user interface. If you used an Actions page to create actions and steps for your skill previously, you cannot access the Actions page anymore. Instead, use the Intents and Dialog pages to work with your skill.
 
 ## 16 March 2020
 {: #16March2020}
@@ -339,7 +339,7 @@ The following technologies are being deprecated:
 
 - **New South Korea location**: You can now create {{site.data.keyword.conversationshort}} instances in the Seoul location. As with other locations, the {{site.data.keyword.cloud_notm}} Seoul location uses token-based Identity and Access Management (IAM) authentication.
 
-- **Technology preview**: A technology preview experience was released. A select set of new users are being presented with a new user interface that takes a different approach to building an assistant. For more information, see [Preview details](/docs/assistant?topic=assistant-preview).
+- **Technology preview**: A technology preview experience was released. A select set of new users are being presented with a new user interface that takes a different approach to building an assistant.
 
 ## 7 November 2019
 {: #7Novembber2019}

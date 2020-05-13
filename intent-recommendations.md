@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-04-24"
+lastupdated: "2020-05-11"
 
 subcollection: assistant
 
@@ -102,7 +102,7 @@ To use assistant chat logs as the source for your intent and intent user example
 ### Getting recommendations from a CSV log file
 {: #intent-recommendations-log-files-add}
 
-To share your support center chat log transcript data with Watson, you must upload the data as a CSV file in the correct format. Create a comma-separated value (CSV) file with one customer utterance per line. Ideally, the utterances are short phrases that are extracted from your call center transcripts that contain real-world customer questions and requests. 
+To share your support center chat log transcript data with Watson, you must upload the data as a CSV file in the correct format. Create a comma-separated value (CSV) file with one sentence that represents a customer utterance per line. Ideally, the utterances are short phrases that are extracted from your call center transcripts that contain real-world customer questions and requests. 
 
 Each user example source file can be a maximum size of 20 MB.
 
@@ -113,8 +113,11 @@ Follow these additional guidelines:
     Sensitive data includes any information about an identifiable natural person such as names, email addresses, and customer IDs, and regulated data such as protected health information.
     {: important}
   
-  - Do not include utterances that exceed 1,024 characters in length. Longer utterances are truncated.
-  - The file must contain at least 100 utterances. A file with 500 or more utterances gives you better results.
+  - Utterances that are shorter than 3 words or longer than 20 words are automatically filtered out during import. 
+  
+    Short and long utterances do not make good intent user examples. If your log transcript data has many utterances that are longer than 20 words, consider first splitting the long utterances into multiple sentences, and then add one sentence per line in the CSV file.
+  - The file must contain at least 100 utterances. A file with 500 or more utterances will give you better results. Provide as much data as you can within the 20 MB file limit.
+  - Do not submit duplicate utterances. Duplicating data within the CSV does not improve results.
   - If an utterance contains a comma, surround the utterance in quotation marks.
   - The CSV must include only one column.
   - Remove everything that is not a customer-generated utterance, including any human agent responses or notes.
@@ -128,9 +131,9 @@ Follow these additional guidelines:
   "first, i want to know if i am already registered."
   ```
 
-Any files you upload are shared across all of the skills in the current service instance. The utterances from all of the available files are mined when you ask for both intent recommendations and intent user example recommendations.
+Any files you upload are shared with the other users who have access to the skill. The utterances from all the files that were uploaded to this skill are mined when you ask for both intent recommendations and intent user example recommendations.
 
-#### Should I copy edit the CSV log file?
+<!--#### Should I copy edit the CSV log file?
 {: #intent-recommendations-copy-edit}
 
 It helps if the user utterances that serve as the source for intent user examples have accurate spelling and grammar.
@@ -148,7 +151,7 @@ If you choose to correct spelling and grammar in the user examples, follow these
 Doing a copy edit is not required. If there are misspellings in your training data, the autocorrection tool accepts the misspelled words at run time and is still able to classify input successfully. You might be perpetuating a misspelling, but doing so has limited impact on the overall performance of your assistant.
 {: note}
 
-For more information about how autocorrection works, see [Correcting user input](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check)
+For more information about how autocorrection works, see [Correcting user input](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check) -->
 
 ## Getting intent recommendations
 {: #intent-recommendations-get-intent-recommendations-task}
