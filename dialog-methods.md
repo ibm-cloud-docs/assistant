@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-12"
+lastupdated: "2020-05-11"
 
 subcollection: assistant
 
@@ -641,7 +641,7 @@ For example, you have a context variable that contains an array with a list of f
 You want to return just the list of flight codes. To extract only the value of the `flight` element from each array and return it in a list, you can use the following expression:
 
 ```
-The available flights are <? $flights.joinToArray("%e.flight%"). ?>
+The available flights are <? $flights.joinToArray("%e.flight%") ?>.
 ```
 {: codeblock}
 
@@ -650,7 +650,7 @@ The dialog node response is `The available flights are ["DL1040","DL1710","DL437
 To display the array as text, use the `join` method in the expression like this:
 
 ```
-The available flights are <? $flights.joinToArray("%e.flight%").join(", "). ?>
+The available flights are <? $flights.joinToArray("%e.flight%").join(", ") ?>.
 ```
 {: codeblock}
 
