@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-12"
+lastupdated: "2020-05-14"
 
 keywords: system entity, sys-number, sys-date, sys-time
 
@@ -94,7 +94,7 @@ You get equivalent results for other supported languages and national currencies
   This workaround is not necessary if you are using the revised system entities. For more information, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
   {: note}
 
-- If you use the @sys-currency entity as a node condition and the user specifies `$0` as the value, the value is recognized as a currency properly, but the condition is evaluated to the number zero, not the currency zero. As a result, the `null` in the condition is evaluated to false and the node is not processed. To check for currency values in a way that handles zeros properly, use expression `@sys-currency >=0` in the node condition instead.
+- If you use the @sys-currency entity as a node condition and the user specifies `$0` as the value, the value is recognized as a currency properly, but the condition is evaluated to the number zero, not the currency zero. As a result, the `null` in the condition is evaluated to false and the node is not processed. To check for currency values in a way that handles zeros properly, use the expression `@sys-currency OR @sys-currency == 0` in the node condition instead.
 
 ## @sys-date and @sys-time entities
 {: #system-entities-sys-date-time}
@@ -251,13 +251,13 @@ You get equivalent results for other supported languages.
 ### @sys-number usage tips
 {: #system-entities-sys-number-usage-tips}
 
+- If you use the @sys-number entity as a node condition and the user specifies zero as the value, the 0 value is recognized properly as a number. However, the 0 is interpreted as a `null` value for the condition, which results in the node not being processed. To check for numbers in a way that handles zeros properly, use the expression `@sys-number == 0` in the node condition also. The full expression to use is `@sys-number OR @sys-number == 0`.
+
 - If you use @sys-number to compare number values in a condition, be sure to separately include a check for the presence of a number itself. If no number is found, @sys-number evaluates to null. Your comparison might evaluate to true even when no number is present.
 
   For example, do not use `@sys-number<4` alone because if no number is found, `@sys-number` evaluates to null. Because null is less than 4, the condition evaluates to true even though no number is present.
 
-  Use `@sys-number AND @sys-number<4` instead. If no number is present, the first condition evaluates to false. As a result, the whole condition evaluates to false.
-
-- If you use the @sys-number entity as a node condition and the user specifies zero as the value, the 0 value is recognized properly as a number. However, the 0 is interpreted as a `null` value for the condition, which results in the node not being processed. To check for numbers in a way that handles zeros properly, use the expression `@sys-number >= 0` in the node condition instead. And be sure to check first whether a number is present at all. Meaning, use `@sys-number AND @sys-number >= 0`.
+  Use `(@sys-number OR @sys-number == 0) AND @sys-number < 4` instead. If no number is present, the first condition evaluates to false. As a result, the whole condition evaluates to false.
 
 For more information about processing number values, see the [Numbers method reference](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-numbers).
 {: tip}
@@ -311,7 +311,7 @@ You get equivalent results for other supported languages.
   This workaround is not necessary if you are using the revised system entities. For more information, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
   {: note}
 
-- If you use the @sys-percentage entity as a node condition and the user specifies `0%` as the value, the value is recognized as a percentage properly, but the condition is evaluated to the number zero not the percentage 0%. As a result, the `null` in the condition is evaluated to false and the node is not processed. To check for percentages in a way that handles zero percentages properly, use the expression `@sys-percentage >= 0` in the node condition instead.
+- If you use the @sys-percentage entity as a node condition and the user specifies `0%` as the value, the value is recognized as a percentage properly, but the condition is evaluated to the number zero not the percentage 0%. As a result, the `null` in the condition is evaluated to false and the node is not processed. To check for percentages in a way that handles zero percentages properly, use the expression `@sys-percentage OR @sys-percentage == 0` in the node condition instead.
 
 - If you input a value like `1-2%`, the values `1%` and `2%` are returned as system entities.
 
