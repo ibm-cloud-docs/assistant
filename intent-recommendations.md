@@ -122,14 +122,14 @@ Follow these additional guidelines:
   - The CSV must include only one column.
   - Remove everything that is not a customer-generated utterance, including any human agent responses or notes.
 
-  Here's some sample CSV file content:
+Here's some sample CSV file content:
 
-  ```
-  What happens to my coverage if I trade in my car?
-  i'd like to buy a house.
-  How do I add a dependent to my plan?
-  "first, i want to know if i am already registered."
-  ```
+```
+What happens to my coverage if I trade in my car?
+i'd like to buy a house.
+How do I add a dependent to my plan?
+"first, i want to know if i am already registered."
+```
 
 Any files you upload are shared with the other users who have access to the skill. The utterances from all the files that were uploaded to this skill are mined when you ask for both intent recommendations and intent user example recommendations.
 
