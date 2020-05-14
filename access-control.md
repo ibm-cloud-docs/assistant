@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-04-06"
+lastupdated: "2020-05-14"
 
 subcollection: assistant
 
@@ -310,8 +310,8 @@ Act now to get the service instance owner to change your access level.
 
 1.  Contact the person who invited you to work with them on the resources in the service instance. 
 
-    There is no way from the IBM Cloud dashboard to determine who owns a service instance.
-    {: note}
+    The email address of the owner of the service instance is displayed in the User account menu. Click the *User* icon from the page header. ![user icon](images/user-icon.png) 
+    {: tip}
 
 1.  Ask the owner of the service instance to change your service access role assignment.
 
