@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-23"
+lastupdated: "2020-05-14"
 
 subcollection: assistant
 
@@ -120,10 +120,10 @@ Table 3. Entity feature support details
 
 Table 4. System entity feature support details
 
-| Language | **System entities ([number](/docs/assistant?topic=assistant-system-entities#system-entities-sys-number), [currency](/docs/assistant?topic=assistant-system-entities#system-entities-sys-currency), [percentage](/docs/assistant?topic=assistant-system-entities#system-entities-sys-percentage), [date, time](/docs/assistant?topic=assistant-system-entities#system-entities-sys-date-time))** | **[New system entities](/docs/assistant?topic=assistant-new-system-entities)** |
+| Language | **Legacy system entities ([number](/docs/assistant?topic=assistant-system-entities#system-entities-sys-number), [currency](/docs/assistant?topic=assistant-system-entities#system-entities-sys-currency), [percentage](/docs/assistant?topic=assistant-system-entities#system-entities-sys-percentage), [date, time](/docs/assistant?topic=assistant-system-entities#system-entities-sys-date-time))** | **[New system entities](/docs/assistant?topic=assistant-new-system-entities)** |
 |:---|:---:|:---:|
 | **English (en)**                   | GA, Beta ([location](/docs/assistant?topic=assistant-system-entities#system-entities-sys-location), [person](/docs/assistant?topic=assistant-system-entities#system-entities-sys-person)) | GA |
-| **Arabic (ar)**                    | Beta | Beta |
+| **Arabic (ar)**                    | GA | Beta |
 | **Chinese (Simplified) (zh-cn)**   | GA | Beta |
 | **Chinese (Traditional) (zh-tw)**  | Beta | Beta |
 | **Czech (cs)**                     | GA | GA |
