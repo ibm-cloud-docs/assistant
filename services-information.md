@@ -66,6 +66,7 @@ Information about the artifact limits per plan is available from the topics that
 The following features are available only to users of Plus or Premium plans.
 
 - [Activity tracker](/docs/assistant?topic=assistant-at-events) (Premium plans only)
+- [Private endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints)
 - [Intent conflict resolution](/docs/assistant?topic=assistant-intents#intents-resolve-conflicts)
 - [Intent recommendations and intent user example recommendations](/docs/assistant?topic=assistant-intent-recommendations)
 - [Intercom integration](/docs/assistant?topic=assistant-deploy-intercom)

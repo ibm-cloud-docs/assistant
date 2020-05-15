@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-05-14"
+lastupdated: "2020-05-15"
 
 subcollection: assistant
 
@@ -51,6 +51,11 @@ The {{site.data.keyword.conversationshort}} algorithms may be periodically refin
 Existing models that you have trained will not be immediately impacted, but expired models will be updated to the current model, if you have not already done so, after 60 days of a new model becoming available.
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
+
+## 15 May 2020
+{: #15May2020}
+
+- **Private endpoints support is available in Plus plan**: You can use private endpoints to route services over the {{site.data.keyword.cloud_notm}} private network instead of the public network. For more information, see [Private network endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints). This feature was previously available to users of Premium plans only.
 
 ## 14 May 2020
 {: #14May2020}
