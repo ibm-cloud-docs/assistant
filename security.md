@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-21"
+lastupdated: "2020-05-13"
 
 subcollection: assistant
 
@@ -31,10 +31,12 @@ Learn more about strategies that are available for you to use to ensure that you
 
 For more information about {{site.data.keyword.Bluemix_notm}} security, see [Security architecture](https://www.ibm.com/cloud/architecture/architectures/securityArchitecture/watson-security){: external}.
 
-![Premium plan only](images/premium0.png) The following feature is available with Premium plans only.
+![Plus and Premium plans only](images/plus.png) The following feature is available with Plus and Premium plans only.
 
 <!--## Bring your own key
 {: #security-byok}
+
+![Premium plan only](images/premium0.png) This feature is available with Premium plans only.
 
 When you integrate with {{site.data.keyword.keymanagementservicefull}}, you can encrypt {{site.data.keyword.conversationshort}} data in Premium plan instances with encryption keys that you create or import.
 
@@ -51,7 +53,7 @@ For existing customers, a new slot must be provisioned for you before you can us
 ## Private network endpoints
 {: #security-private-endpoints}
 
-You can set up a private network for {{site.data.keyword.conversationshort}} instances that are part of a Premium service plan. Using a private network prevents data from being transferred over the public internet, and ensures greater data isolation.
+You can set up a private network for {{site.data.keyword.conversationshort}} instances that are part of a Plus or Premium service plan. Using a private network prevents data from being transferred over the public internet, and ensures greater data isolation.
 
 Private network endpoints support routing services over the {{site.data.keyword.cloud_notm}} private network instead of the public network. A private network endpoint provides a unique IP address that is accessible to you without a VPN connection.
 
