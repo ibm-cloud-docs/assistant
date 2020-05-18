@@ -81,7 +81,7 @@ To enable autolearning, complete the following steps:
 
     Choose an assistant that is live, meaning it is deployed in a production environment and is actively engaging with customers.
 
-    An assistant is selected already if you are using the logs from a live assistant to get intent and intent user example recommendations. The assistant that you connect your skill to for getting recommendations is automatically used. Only one live assistant can be connected to a dialog skill at a time. Both features must use log data from the same assistant. For more information about the recommendations features, see [Get help defining intents](/docs/assistant?topic=assistant-intent-recommendations).
+    An assistant is selected already if you are using the logs from a live assistant to get intent and intent user example recommendations. The assistant that you connect your skill to for getting recommendations is automatically used. While you can add one dialog skill to more than one assistant, you can only connect one live assistant to a dialog skill to use its logs as a data source. Both features must use log data from the same assistant. For more information about the recommendations features, see [Get help defining intents](/docs/assistant?topic=assistant-intent-recommendations).
       {: note}
 
     To change the assistant that is used as the source for observation, click **Change assistant**, choose an assistant, and then click **Save**.
