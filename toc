@@ -92,6 +92,10 @@ Watson Assistant
     {: .topicgroup}
     Early access program
         beta.md
+
+    {: .topicgroup}
+    Technology preview
+        autolearn.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}

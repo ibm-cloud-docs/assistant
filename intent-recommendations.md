@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-05-11"
+lastupdated: "2020-05-15"
 
 subcollection: assistant
 
@@ -156,9 +156,9 @@ For more information about how autocorrection works, see [Correcting user input]
 ## Getting intent recommendations
 {: #intent-recommendations-get-intent-recommendations-task}
 
-Before you begin, you must [choose an intent recommendations data source](#intent-recommendations-enable-task) to specify the data source you want to use.
+Before you begin, you must [choose an intent recommendations data source](#intent-recommendations-enable-task).
 
-After the data is provided, Watson evaluates the user utterances and identifies common problem areas that customers mention frequently. {{site.data.keyword.conversationshort}} then displays a set of discrete intents that capture the trending customer needs. You can review each recommended intent and its corresponding user examples to choose the ones you want to add to your training data.
+After the data is provided, Watson evaluates the user utterances and identifies common problem areas that customers mention frequently. {{site.data.keyword.conversationshort}} then displays a set of discrete groups of related candidate user examples that capture the trending customer needs. The groups are so granular in scope that you might choose to add separately-grouped candidate user examples to the same intent. You can review each recommended intent and the corresponding user examples to choose the ones you want to add to your training data.
 
 To get intent recommendations, complete the following steps:
 
@@ -170,21 +170,26 @@ To get intent recommendations, complete the following steps:
 
     Give Watson time to analyze your data and group the utterances.
 
-1.  Review the intents that are recommended by Watson.
+1.  Review the groups of candidate intents that are recommended by Watson.
     
     If your recommendation source has over 500,000 user utterances, then Watson samples the data and derives recommendations from the sampled subset.
 
-    The top intent recommendations are chosen and ordered as follows:
+    The top intent recommendations are selected and ranked as follows:
 
-    - Intents with the most frequently occurring utterances. The frequency of the utterances that are associated with these intents suggests they identify the most common customer issues.
-    - The distinctness of the newly recommended intents when compared to the intents that are already in your training data. Their uniqueness suggests that they can address customer needs that are not being met currently.
-    - The similarity of the user examples that are associated with the intent, which illustrates the strength of the intent.
+    - Utterances are grouped together based on their similarity. Candidate groups with a higher number of cohesive utterances are ranked higher.
+    - Candidate groups with utterances that are distinct from existing intent user examples are ranked higher. Groups that are similar to existing intents in the skill are ranked lower. Uniqueness suggests that new training data can address customer needs that are not being met currently.
 
-1.  Click an intent to see its associated user examples.
+1.  Click a candidate intent to see its associated user examples.
 
-    Watson chooses a maximum of 20 user examples for each intent it recommends. It deduplicates examples from the source, and limits the overall number of utterances to a set of top user examples to make it easier for you to understand and work with them.
+    Watson chooses a maximum of 20 user examples for each candidate intent it recommends. It deduplicates utterances from the source, and limits the overall number of utterances to a set of top user examples so it's easier for you to understand and work with them. It chooses the top user examples by identifying the most representative utterances. It then selects utterances that are distinct from the top utterances to add variety. The list is ordered based on the length of the user examples, with the shorter examples listed higher.
 
-1.  Select any utterances that you want to add to your training data. You can click the User utterance checkbox to select all of the utterances. Do one of the following things next:
+1.  Select any utterances that you want to add to your training data. You can click the **User utterance** checkbox to select all of the utterances.
+
+    Do one of the following things next:
+
+    - Change the intent name.
+
+      Watson creates a name for each candidate intent based on common terms in the corresponding utterances. You can change the intent name before you add it. A name that begins with an underscore (_), such as `_not_able_to_login`, signifies that the name is not descriptive of the grouped utterances as a whole.
 
     - To add the recommended intent with the selected utterances as user examples, click **Create new intent**.
     - To add the selected utterances from the recommended intent to one of your existing intents as user examples instead, click **Add to existing intent**, choose the intent, and then click **Add**.
