@@ -44,7 +44,7 @@ The advantage of enabling your skill to apply what it learns from observing cust
 
 Before your skill can learn from customer behavior, it must observe customer behavior. You can give it real user conversation data to learn from by connecting your skill to a live assistant. When you connect to an assistant, the logs from conversations that occur between the assistant and your customers serve as the data source for observation. 
 
-In fact, if you already connected your skill to a live assistant for the purposes of using the assistant logs as the data source for intent recommendations or user example recommendations, then you can skip this step. The same assistant that you connect to for recommendations is used to observe customer behavior.
+In fact, if you already connected your skill to a live assistant to use the assistant logs as the data source for intent or intent user example recommendations, then you can skip this step. The same assistant that you connect to for recommendations is used to observe customer behavior.
 
 Autolearning uses observations of actions that are made by only your customers to improve only your skills.
 
@@ -66,7 +66,7 @@ When you connect a live assistant as the data source for recommendations, you en
 You can enable autolearning when the following conditions are met:
 
 - Disambiguation is enabled for the skill.
-- You have at least one deployed assistant that is actively interacting with customers and has log data that the skill can learn from.
+- You have at least one deployed assistant that is actively interacting with customers and has accumulated log data that the skill can learn from.
 
 <!--Autolearning is optimized for use with the built-in Web Chat integration. This integration, in particular, has a *more options* feature which increases the opportunities for users to make choices, and therefore for the skill to learn from them.
 {: tip}-->
@@ -102,7 +102,7 @@ When you configure autolearning to use all messages, you must be sure to flag an
 
 Observations are made of only your customers` choices to improve only your skills. The observed insights are not reused by IBM or shared in any way.
 
-This observed user choices data is separate from the log data for which metrics are displayed in the Analytics page. User conversation log data in all but Premium plan service instances are used by IBM for general service improvements. You can opt out of such use by specifying an opt-out header in your `/message` API requests. For more information, see [Opting out of logging](/docs/assistant?topic=assistant-information-security#information-security-log-opt-out).
+This observed user choices data is separate from the log data for which metrics are displayed in the Analytics page. User conversation log data in all but Premium plan service instances is used by IBM for general service improvements. You can opt out of such use by specifying an opt-out header in your `/message` API requests. For more information, see [Opting out of logging](/docs/assistant?topic=assistant-information-security#information-security-log-opt-out).
 
 You can limit how the service uses data in the following ways:
 
