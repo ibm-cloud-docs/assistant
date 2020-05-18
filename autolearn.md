@@ -66,6 +66,9 @@ When you connect a live assistant as the data source for recommendations, you en
 You can enable autolearning when the following conditions are met:
 
 - Disambiguation is enabled for the skill.
+
+  Disambiguation is enabled automatically for new skills.
+  {: note}
 - You have at least one deployed assistant that is actively interacting with customers and has accumulated log data that the skill can learn from.
 
 <!--Autolearning is optimized for use with the built-in Web Chat integration. This integration, in particular, has a *more options* feature which increases the opportunities for users to make choices, and therefore for the skill to learn from them.
@@ -78,7 +81,7 @@ To enable autolearning, complete the following steps:
 
     Choose an assistant that is live, meaning it is deployed in a production environment and is actively engaging with customers.
 
-    An assistant is selected already if you are using the logs from a live assistant to get intent and intent user example recommendations. The assistant that you connect your skill to  for getting recommendations is automatically used. Only one live assistant can be connected to a dialog skill at a time. Both features must use log data from the same assistant. For more information about the recommendations features, see [Get help defining intents](/docs/assistant?topic=assistant-intent-recommendations).
+    An assistant is selected already if you are using the logs from a live assistant to get intent and intent user example recommendations. The assistant that you connect your skill to for getting recommendations is automatically used. Only one live assistant can be connected to a dialog skill at a time. Both features must use log data from the same assistant. For more information about the recommendations features, see [Get help defining intents](/docs/assistant?topic=assistant-intent-recommendations).
       {: note}
 
     To change the assistant that is used as the source for observation, click **Change assistant**, choose an assistant, and then click **Save**.
@@ -95,7 +98,7 @@ To enable autolearning, complete the following steps:
 
 Even if you are not using an assistant or any of the built-in integrations to deploy your skill, you can enable autolearning. From the Autolearning page where you enable the feature, select the **Observe all messages** checkbox. When you do so, you indicate that you want your skill to observe and learn from every POST request that is sent to the `/message` API endpoint for this skill, whether it's v1 or v2.
 
-When you configure autolearning to use all messages, you must be sure to flag any requests that are not customer-generated that are sent to the service. Do not mix test utterances with legitimate, customer-generated utterances. You might run manual or automated tests of your skill, for example. You must prevent this canned data from skewing the insights that can otherwise be gained from analyzing choices that are made by real customers. Build your test framework in such a way that each test message is identified as a test message and does not feed the autolearning algorithm. To do so, include the `autolearn:false` property in each test request. For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#send-user-input-to-assistant){: external}.
+When you configure autolearning to use all messages, you must be sure to flag any requests that are not customer-generated that are sent to the service. Do not mix test utterances with legitimate, customer-generated utterances. You might run manual or automated tests of your skill, for example. You must prevent this canned data from skewing the insights that can otherwise be gained from analyzing choices that are made by real customers. Build your test framework in such a way that each test message is identified as a test message and does not feed the autolearning algorithm. To do so, include the `autolearn:false` property in each test request.<!-- For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#send-user-input-to-assistant){: external}.-->
 
 ## Learning from your data
 {: #autolearn-data}
