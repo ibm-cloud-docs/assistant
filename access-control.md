@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-05-14"
+lastupdated: "2020-05-15"
 
 subcollection: assistant
 
@@ -308,7 +308,7 @@ With a Writer role, you can view, edit, create, and delete resources, such as as
 
 Act now to get the service instance owner to change your access level.
 
-1.  Contact the person who invited you to work with them on the resources in the service instance. 
+1.  Contact the owner of the service instance. 
 
     The email address of the owner of the service instance is displayed in the User account menu. Click the *User* icon from the page header. ![user icon](images/user-icon.png) 
     {: tip}
