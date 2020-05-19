@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-04"
+lastupdated: "2020-05-19"
 
 subcollection: assistant
 
@@ -105,7 +105,7 @@ To add the assistant to a web page on your company website, complete the followi
 
 1.  Refresh the web page.
 
-    For information about the web browsers that are supported by the Web Chat, see [Browser Support](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/){: external}.
+    For information about the web browsers that are supported by the Web Chat, see [Browser Support](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=key-concepts#browsersupport){: external}.
 
     ![Chat icon](images/web-chat-icon.png) 
     
@@ -134,7 +134,7 @@ To add the assistant to a web page on your company website, complete the followi
 
     The Web Chat instance is created as soon as you click the *Create* button, and does not need to be saved.
 
-You can apply more advanced customizations to the style of the Web Chat by using the {{site.data.keyword.conversationshort}} Web Chat toolkit on [GitHub](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-configuration){: external}. For example, the text that is displayed in the chat window uses the fonts: `IBMPlexSans, Arial, Helvetica, sans-serif`. If you want to use a different font, you can specify it by using the `instance.updateCSSVariables()` method.
+You can apply more advanced customizations to the style of the Web Chat by using the {{site.data.keyword.conversationshort}} Web Chat toolkit on [GitHub](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-configuration){: external}. For example, the text that is displayed in the chat window uses the fonts: `IBMPlexSans, Arial, Helvetica, sans-serif`. If you want to use a different font, you can specify it by using the `instance.updateCSSVariables()` method.
 
 ## Dialog considerations
 {: #deploy-web-chat-dialog}
@@ -150,7 +150,7 @@ For more information about rich response types, see [Rich responses](/docs/assis
 ## Extending the Web Chat
 {: #deploy-web-chat-extend}
 
-A developer can extend the capabilities of the Web Chat by using the {{site.data.keyword.conversationshort}} Web Chat toolkit on [GitHub](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/){: external}.
+A developer can extend the capabilities of the Web Chat by using the {{site.data.keyword.conversationshort}} Web Chat toolkit on [GitHub](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html){: external}.
 
 If you choose to use the provided methods, you implement them by editing the code snippet that was generated earlier. You then embed the updated code snippet into your web page.
 
@@ -266,7 +266,7 @@ Before you enable security, complete the following steps:
     - `acr`: Authentication Context Class Reference value that identifies the Authentication Context Class that was satisfied by the authentication that was performed. This value must be set to `loa1`, which means level of assurance 1. The value starts with a lowercase `L` and ends with the number `1`. For more information, see [RFC6711](https://tools.ietf.org/html/rfc6711){: external}.
     - `exp`: Represents the expiration time on or after which the JWT cannot be accepted for processing. Many libraries set this value for you automatically. Set a short-lived `exp` claim with whatever library you use.
 
-    For more information about JSON Web Tokens, see the [RFC7519](https://tools.ietf.org/html/rfc7519){: external} and [OpenID Connect 1.0](https://openid.net/specs/openid-connect-core-1_0.html) specifications.
+    For more information about JSON Web Tokens, see the [RFC7519](https://tools.ietf.org/html/rfc7519){: external} and [OpenID Connect 1.0](https://openid.net/specs/openid-connect-core-1_0.html){: external} specifications.
     
     Most programming languages offer JWT libraries that you can use to generate a token. The following NodeJS code sample illustrates how to generate a JWT token.
 
