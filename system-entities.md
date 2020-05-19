@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-05-14"
+lastupdated: "2020-05-19"
 
 keywords: system entity, sys-number, sys-date, sys-time
 
@@ -30,7 +30,7 @@ subcollection: assistant
 Learn about system entities that are provided by IBM for you to use out of the box. These built-in utility entities help your assistant recognize terms and references that are commonly used by customers in conversation, such as numbers and dates. 
 {: shortdesc}
 
-New and improved versions of the numeric system entities are generally available for dialog skills in the English, Brazilian Portuguese, Czech, Dutch, French, German, Italian, and Spanish languages. The new versions of the numeric system entities provide superior number recognition with higher precision. This topic describes the legacy versions of the numeric system entities. The legacy versions are being deprecated in English, Brazilian Portuguese, Czech, Dutch, French, German, Italian, and Spanish dialog skills. For these languages, support will end in June 2020. Switch to using the new system entities now so you have time to test your dialog before support ends. For more information, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
+New and improved versions of the numeric system entities are generally available for dialog skills in the English, Brazilian Portuguese, Czech, Dutch, French, German, Italian, and Spanish languages. The new versions of the numeric system entities provide superior number recognition with higher precision. This topic describes the legacy versions of the numeric system entities. The legacy versions are being deprecated in English, Brazilian Portuguese, Czech, Dutch, French, German, Italian, and Spanish dialog skills. For these languages, support will end on 15 July 2020. When support ends, mentions in input that are detected as person or location system entities today will no longer be detected. Switch to using the new system entities now so you have time to test your dialog before support ends. For more information, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
 {: deprecated}
 
 For information about language support for system entities, see [Supported languages](/docs/assistant?topic=assistant-language-support).
