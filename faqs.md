@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-12"
+lastupdated: "2020-05-20"
 
 subcollection: assistant
 
@@ -105,3 +105,101 @@ It can also be displayed for service instances that were migrated from Cloud Fou
 To regain access to the service instance, ask the service instance owner to review your access permissions. Ask to be given at least a service access role of Writer. 
 
 After your access roles are fixed, be sure to use the correct web address, the URL of the migrated service instance, to open it.
+
+## I don’t see the Analytics page
+{: #faqs-view-analytics}
+{: faq}
+
+To view the Analytics page, you must have a service role of Manager and a platform role of at least Viewer. For more information about access roles and how to request an access role change, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).
+
+## I am unable to view the API details, API key, or service credentials
+{: #faqs-view-api-details}
+{: faq}
+
+If you cannot view the API details or service credentials, it is likely that you do not have Manager access to the service instance in which the resource was created. Only people with Manager service access to the instance can use the service credentials. For more information, see [Getting API information](/docs/assistant?topic=assistant-assistant-settings#assistant-settings-api-details).
+
+## I can't edit intents, entities, or dialog nodes
+{: #faqs-edit-skill}
+{: faq}
+
+To edit skills, you must have Writer service access to the service instance and a platform role of at least Viewer. For more information about access roles and how to request an access role change, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).
+
+## Can I export the user conversations from the Analytics page?
+{: #faqs-export-conversation}
+{: faq}
+
+You cannot directly export conversations from the User conversation page.  You can, however, use the `/logs` API to list events from the transcripts of conversations that occurred between your users and your assistant. For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1#list-log-events-in-a-workspace){: external} and the [Filter query reference](/docs/assistant?topic=assistant-filter-reference#filter-query-syntax).
+
+## Can I export and import dialog nodes?
+{: #faqs-nodes}
+{: faq}
+
+No, you cannot export and import dialog nodes from the product user interface. 
+
+If you want to copy dialog nodes from one skill into another skill, follow these steps:
+
+1.  Download as JSON files both the dialog skill that you want to copy the dialog nodes from and the dialog skill that you want to copy the nodes to. 
+1.  In a text editor, open the JSON file for the dialog skill that you want to copy the dialog nodes from. 
+1.  Find the `dialog_nodes` array, and copy it.
+1.  In a text editor, open the JSON file for the dialog skill that you want to copy the dialog nodes to, and then paste the `dialog_nodes` array into it.
+1.  Import the JSON file that you edited in the previous step to create a new dialog skill with the dialog nodes you wanted.
+
+## Is it possible to recover a deleted skill?  
+{: #faqs-delete-workspace}
+{: faq}
+
+Regularly [back up data](/docs/assistant?topic=assistant-backup) to prevent problems that might arise from inadvertent deletions. If you do not have a backup, there is a short window of time during which a deleted skill might be recoverable. Immediately following the deletion, [open a case](/docs/get-support?topic=get-support-open-case#opentechcase) with Support to determine if the data can be recovered. Include the following information in your case: 
+
+- skill ID
+- instance ID or name
+- region where the service instance is hosted from which the skill was deleted
+
+## Can I change a Plus Trial or a Standard plan to a Lite plan?
+{: #faqs-downgrade-plan}
+{: faq}
+
+No, you cannot change from a Plus Trial or Standard plan to a Lite plan. And you cannot upgrade from a Plus Trial to a Standard plan. For more information, see [Upgrading](/docs/assistant?topic=assistant-upgrade).
+
+## Can I change from a Standard plan to a Premium plan?
+{: #faqs-upgrade-plan}
+{: faq}
+
+Yes, you can upgrade to a Premium plan. However, you cannot do an in-place upgrade of your service instance. After a Premium instance is provisioned, you must export dialog skills from the old plan and import them to the new plan instance. For more information, see [Upgrading](/docs/assistant?topic=assistant-upgrade).
+
+## How long are log files kept for a workspace?
+{: #faqs-assistant-logs}
+{: faq}
+
+The length of time for which messages are retained depends on your service plan. For more information, see [Log limits](/docs/assistant?topic=assistant-logs#logs-limits).
+
+## Can I have more than one entry in the URL field for a webhook?
+{: #faqs-webhook-url}
+{: faq}
+
+No, you can define only one webhook URL for a dialog skill. For more information, see [Defining the webhook](/docs/assistant?topic=assistant-dialog-webhooks#dialog-webhooks-create).
+
+## I received the message “Query cancelled” when importing a skill
+{: #faqs-query-cancel}
+{: faq}
+
+This message is displayed when the skill import stops because artifacts in the skill, such as dialog nodes or synonyms, exceed the plan limits. For information about how to address this problem, see [Troubleshooting skill import issues](/docs/assistant-data?topic=assistant-data-skill-dialog-add#skill-dialog-add-import-errors).  
+
+If a timeout occurs due to the size of the skill but no plan limits are exceeded, you can reduce the number of elements that are imported at a time by completing the following steps:
+
+1.	Make a copy of the JSON file that you are trying to import.
+1.	Open the copy of the JSON file in an editor, and delete the `entities` array.
+1.	Import the edited JSON file as a new skill.
+1.	If this step is successful, edit the original copy of the JSON file.
+1.	Remove the `dialog_nodes`, `intents`, and `counterexamples` arrays.
+1.	Update the skill by using the API. Be sure to include the workspace ID and the `append=true` flag, as in this example:
+
+```curl
+curl -X POST -H "content-type: application/json" -H "accept: application/json" -u "apikey:{apikey}" -d@./skill.json "url/api/v1/workspaces/{workspace_id}?version=2019-02-28&append=true"
+```
+{: codeblock}
+
+## The training process takes a long time and appears stuck
+{: #faqs-stuck-training}
+{: faq}
+
+If the training process gets stuck, you can start a new training process to stop the current process and start over. To do so, add a new intent or entity, and then delete it. This action starts a new training process.
