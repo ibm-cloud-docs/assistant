@@ -56,7 +56,7 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #21May2020}
 <!--1.97-->
 
-- **Preview link URL change**: The url for the preview link was changed. If you previously shared the link with teammates, provide them with the new URL.
+- **Preview link URL change**: The URL for the preview link was changed. If you previously shared the link with teammates, provide them with the new URL.
 
 ## 15 May 2020
 {: #15May2020}
