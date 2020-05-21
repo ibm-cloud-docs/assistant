@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-05-15"
+lastupdated: "2020-05-21"
 
 subcollection: assistant
 
@@ -51,6 +51,12 @@ The {{site.data.keyword.conversationshort}} algorithms may be periodically refin
 Existing models that you have trained will not be immediately impacted, but expired models will be updated to the current model, if you have not already done so, after 60 days of a new model becoming available.
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
+
+## 21 May 2020
+{: #21May2020}
+<!--1.97-->
+
+- **Preview link URL change**: The url for the preview link was changed. If you previously shared the link with teammates, provide them with the new URL.
 
 ## 15 May 2020
 {: #15May2020}
