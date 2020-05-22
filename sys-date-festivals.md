@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-03-18"
+  years: 2015, 2020
+lastupdated: "2020-05-21"
 
 subcollection: assistant
 
@@ -33,546 +33,640 @@ The following sections list the holidays that are recognized for different local
 ## Holidays (en-us)
 {: #sys-date-festivals-enus}
 
-- New Year's Day
-- Inauguration Day
-- Martin Luther King, Jr Day
-- Groundhog Day
-- Washington's Birthday
-- President's Day
-- Valentine's Day
-- International Women's Day
-- St Patrick's Day
-- April Fool's Day
-- Good Friday
-- Easter Sunday
-- Easter Monday
-- Earth Day
-- Memorial Day
-- Mother's Day
-- Father's Day
-- Independence Day
-- Labor Day
-- Columbus Day
-- Veteran's Day
-- Thanksgiving
-- Halloween
-- Christmas Eve
-- Christmas
-- Boxing Day
-- New Year's Eve
+Table 1. US English holidays
 
-## Holidays (en-gb)
-{: #sys-date-festivals-engb}
-
-- New Year's Day
-- New Year's Day observed
-- 2nd January (Scotland)
-- 2nd January Subsitute Day (Scotland)
-- St David's Day (Wales)
-- Valentines Day
-- St Patrick's Day (Northern Ireland)
-- St Patrick's Day Off (Northern Ireland)
-- Good Friday
-- Easter Sunday
-- Easter Monday (England, Wales, Northern Ireland)
-- Easter Monday (Scotland)
-- St George's Day
-- Early May Bank Holiday
-- Spring Bank Holiday
-- Queen's Birthday
-- Battle of the Boyne (Northern Ireland)
-- Summer Bank Holiday (Scotland)
-- Summer Bank Holiday (England, Wales, Northern Ireland)
-- Halloween
-- Guy Fawkes Day 
-- Remberance Sunday
-- St Andrew's Day (Scotland)
-- St Andrew's Day Observed (Scotland)
-- Christmas Day
-- Boxing Day
-- Battle of the Boyne Observed (Northern Ireland)
-- Bank Holiday (Day 1)
-- Bank Holiday (Day 2)
-- New Year's Eve
-
-## Holidays (ar-ar)
-{: #sys-date-festivals-arar}
-
-- New Year's Day
-- Valentine's Day
-- Easter Sunday
-- Eid al-Fitr
-- Eid al-Adha
-- Ramadan
-- Islamic New Year
-- Ashura
-- Mawlid an-Nabi
-- Day of Arafat
-- Laylat al-Miraj
-- Christmas Day
-
-## Holidays (cs-cz)
-{: #sys-date-festivals-cscz}
-
-- New Year's Day
-- Restoration of the Czech Independence Day
-- St Valentines Day
-- International Woman's Day
-- Good Friday
-- Easter Monday
-- April Fools Day
-- Labor Day, May Day
-- Victory in Europe Day
-- Mother's Day
-- Childeren's Day
-- Father's Day
-- Saints Cyril and Methodius
-- Jan Hus Day
-- St Wenceslas Day
-- Independent Czechoslovak State Day
-- Struggle for Freedom and Democracy Day
-- Christmas Eve
-- Christmas Day
-- St Stephen's Day
-- New Year's Eve
-
-## Holidays (de-de)
-{: #sys-date-festivals-dede}
-
-- New Year's Day
-- Epiphany (BW, BY, ST)
-- Valentine's Day
-- Shrove Monday
-- Carnival, Shrove Tuesday
-- Carnival, Ash Wednesday
-- International Women's Day (Most regions)
-- April Fool's Day
-- Palm Sunday
-- Maundy Thursday
-- Good Friday
-- Easter Sunday (Most regions)
-- Easter Monday
-- May Day
-- Mother's Day
-- Father's Day
-- Ascension Day
-- Whit Sunday (Most regions)
-- Whit Sunday (Brandenburg)
-- Whit Monday
-- Corpus Christi (Many regions)
-- Assumption of Mary (Bavaria, Saarland)
-- Day of German Unity
-- Reformation Day (Most regions)
-- Halloween
-- All Saints' Day (Many regions)
-- St Martin's Day
-- National Day of Mourning
-- Repentance Day (Saxony)
-- Sunday of the Dead
-- First Advent Sunday
-- Saint Nicholas Day
-- Second Advent Sunday
-- Third Advent Sunday
-- Fourth Advent Sunday
-- Christmas Day
-- Boxing Day
-- Whit Sunday (Most regions)
-- New Year's Eve
+| Holiday name | String to use to check for a festival match |
+|--------------|---------------------------------------------|
+| New Year's Day | `newyear` |
+| Inauguration Day | `inauguration` |
+| Martin Luther King, Jr Day | `luther` |
+| Groundhog Day | `groundhog` |
+| Washington's Birthday | `washington` |
+| President's Day | `president` |
+| Valentine's Day | `valentine` |
+| International Women's Day | `women` |
+| St Patrick's Day | `patrick` |
+| April Fool's Day | `fool` |
+| Good Friday | `goodfriday` |
+| Easter Sunday | `easter` |
+| Easter Monday | `eastermonday` |
+| Earth Day | `earth` |
+| Memorial Day | `memorial` |
+| Mother's Day | `mother` |
+| Father's Day | `father` |
+| Independence Day | `independence` |
+| Labor Day | `labor` |
+| Columbus Day | `columbus` |
+| Veteran's Day | `veterans` |
+| Thanksgiving | `thanksgiving` |
+| Halloween | `halloween` |
+| Christmas Eve | `christmaseve` |
+| Christmas | `christmas` |
+| Boxing Day | `boxing` |
+| New Year's Eve | `newyearseve` |
+{: caption="US English holidays" caption-side="top"}
 
 ## Holidays (en-ca)
 {: #sys-date-festivals-enca}
 
-- New Year's Day
-- Epiphany
-- Groundhog Day
-- valentines Day
-- Women's Day
-- Commonweath Day
-- St Patrick's Day
-- April Fool's Day
-- Good Friday
-- Easter Sunday
-- Easter Monday
-- National Tartan Day
-- Vimy Ridge Day
-- Earth Day
-- Mother's Day
-- Victoria Day
-- Father's Day
-- National Indigenious Day
-- Canada Day
-- Labor Day
-- Thanksgiving
-- Remembrance Day
-- Halloween
-- Anniversary of the Statue of Westminster
-- Christmas Eve
-- Christmas Day
-- Boxing Day
-- New Year's Eve
+Table 2. Canadian holidays
 
-## Holidays (es-es)
-{: #sys-date-festivals-eses}
-
-- New Year's Day
-- Epiphany
-- Epiphany Observed (Many regions)
-- Valentine's Day
-- Andalusia Day
-- Baleares Day
-- Ash Wednesday
-- San Jose (Many regions)
-- Palm Sunday
-- Maundy Thursday (Many regions)
-- Good Friday
-- Easter Sunday
-- Easter Monday (Many regions)
-- Aragon Day
-- Saint George Day
-- Labor Day, May Day
-- Community Day
-- San Isidro Day
-- Mothers' Day
-- Whit Sunday/Pentecost
-- Feast of Saint James the Apostle (GA, PV, S)
-- Assumption of Mary
-- Hispanic Day
-- All Saints' Day (All)
-- Constitution Day
-- Immaculate Conception
-- Immaculate Conception observed (Many regions)
-- Christmas Eve
-- Christmas Day
-- Feast of the Holy Family
-- Corpus Christi
-- All Saints' Day' observed (Most regions)
-- Assumption observed
-- Cantabria Day
-- Christmas Day observed (Balearic Islands)
-- Labor Day observed (Many regions)
-- Christmas Day observed (Many regions)
-- Immaculate Conception observed
-- Hispanic Day observed (Many regions)
-- Almuneda Day
-- New Year's Eve
-
-## Holidays (fr-fr)
-{: #sys-date-festivals-frfr}
-
-- New Year's Day
-- Valentines Day
-- Easter Sunday
-- Easter Monday
-- Labor Day, May Day
-- WWII Victory Day
-- Mother's Day
-- Ascension Day
-- Whit Sunday
-- Whit Monday
-- Father's Day
-- Bastille Day
-- Assumption of Mary
-- All Saints' Day
-- Armistice Day
-- Christmas Eve
-- Christmas Day
-- New Years Eve
-
-## Holidays (hi-in)
-{: #sys-date-festivals-hiin}
-
-- New Year's Day
-- Inauguration Day
-- Martin Luther King, Jr. Day
-- Washington's Birthday
-- President's day
-- Valentine's Day
-- Women's Day
-- St Patrick's Day
-- April Fools Day
-- Earth Day
-- Memorial Day
-- Mother's Day
-- Father's Day
-- Independence Day
-- Labor Day
-- Columbus Day
-- Veterans Day
-- Thanksgiving
-- Easter
-- Halloween
-- Christmas
-
-## Holidays (it-it)
-{: #sys-date-festivals-itit}
-
-- New Year's Day
-- Valentine's Day
-- Epiphany
-- Good Friday
-- Easter Sunday
-- Easter Monday
-- Liberation Day
-- Labor Day, May Day
-- Republic Day
-- Assumption of Mary, Ferragosto
-- All Saints' Day
-- Feast of the Immaculate Conception
-- Christmas Day
-- St Stephen's Day
-- Labor Day, May Day
-- New Year's Eve
-
-## Holidays (iw-il)
-{: #sys-date-festivals-iwil}
-
-- Erev Purim
-- Yom HaAliyah
-- Erev Pesach
-- Pesach I (First day of Passover)
-- Pesach II (Passover)
-- Pesach III (Passover)
-- Pesach IV (Passover)
-- Pesach V (Passover)
-- Pesach VI (Passover)
-- Pesach VII (Last day of Passover)
-- Yom HaShoah/Holocaust Memorial Day
-- Yom HaZikaron (Memorial Day)
-- Yom HaAtzmaut (Independence Day)
-- Yom Yerushalayim (Jerusalem Day)
-- Erev Shavuot
-- Shavuot (Pentecost)
-- Erev Tisha B'Av
-- Tisha B'Av
-- Erev Rosh Hashana
-- Rosh Hashana (New Year)
-- Rosh Hashana II (New Year day 2)
-- Erev Yom Kippur
-- Yom Kippur
-- Erev Sukkot
-- Sukkot I
-- Sukkot II
-- Sukkot III
-- Sukkot IV
-- Sukkot V
-- Sukkot VI
-- Sukkot VII/Hoshanah Rabah
-- Shmini Atzeret/Simchat Torah
-- Yom HaAliyah School Observance
-- Hanukkah I (Holiday of lights)
-- Hanukkah II
-- Hanukkah III
-- Hanukkah IV
-- Hanukkah V
-- Hanukkah VI/Rosh Chodesh Tevet
-- Hanukkah VII
-- Hanukkah VIII
-- Hanukkah VII
-
-## Holidays (ja-jp)
-{: #sys-date-festivals-jajp}
-
-- New Year's Day
-- January 2 Bank Holiday
-- January 3 Bank Holiday
-- Coming of Age Day
-- National Foundation Day
-- Easter Sunday
-- Saint Valentines Day
-- Dolls' Festival/Girls' Festival
-- Spring Equinox
-- Shōwa Day
-- Coronation Day Holiday
-- Coronation Day
-- Constitution Memorial Day
-- Greenery Day
-- Children's Day
-- Children's Day Observed
-- Star Festival
-- Sea Day
-- Mountain Day
-- Mountain Day Observed
-- Respect for the Aged Day
-- Autumn Equinox
-- Health and Sports Day
-- Enthronement Ceremony Day
-- Culture Day
-- Culture Day Observed
-- 7-5-3 Day
-- Labor Thanksgiving Day
-- Christmas
-- December 31 Bank Holiday
-- Emperor's Birthday
-- Emperor's Birthday Observed
-- Constitution Memorial Day Observed
-- Sports Day
-- New Year's Day' Observed
-- National Foundation Day' Observed
-- Autumn Equinox' Observed
-- Greenery Day' Observed
-- Labor Thanksgiving Day' Observed
-- Bridge Public Holiday
-- Spring Equinox' Observed
-- December 31 Bank Holiday
-
-## Holidays (ko-kr)
-{: #sys-date-festivals-kokr}
-
-- New Year's Day
-- Independence Movement Day
-- Labor Day
-- Children's Day
-- Parents' Day
-- Teacher's Day
-- Buddah's Birthday
-- Memorial Day
-- Constitution Day
-- Liberation Day
-- Chuseok
-- Armed Forces Day
-- National Foundation Day
-- Hangeul Proclamation Day
-- Christmas Eve
-- Christmas Day
-- New Year's Eve
-- National Assembly Election Day
-
-## Holidays (nl-nl)
-{: #sys-date-festivals-nlnl}
-
-- New Year's Day
-- Valentine's Day
-- Good Friday
-- Easter Sunday
-- Easter Monday
-- King's Birthday
-- Liberation Day
-- Ascension Day
-- Whit Sunday
-- Whit Monday
-- St Nicholas' Eve/Sinterklaas
-- Christmas Eve
-- Christmas Day
-- Second Day of Christmas
-- New Year's Eve
+| Holiday name | String to use to check for a festival match |
+|--------------|---------------------------------------------|
+| New Year's Day | `newyear` |
+| Epiphany | `epiphany` |
+| Groundhog Day | `groundhog` |
+| Valentines Day | `valentine` |
+| International Women's Day | `women` |
+| Commonweath Day | `commonwealth` |
+| St Patrick's Day | `patrick` |
+| April Fool's Day | `fool` |
+| Good Friday | `goodfriday` |
+| Easter Sunday | `easter` |
+| Easter Monday | `eastermonday` |
+| National Tartan Day | `tartan` |
+| Vimy Ridge Day | `vimyridge` |
+| Earth Day | `earth` |
+| Mother's Day | `mother` |
+| Victoria Day | `victoria` |
+| Father's Day | `father` |
+| National Indigenious Day | `indigenous` |
+| Canada Day | `canada` |
+| Labor Day | `labor` |
+| Thanksgiving | `thanksgiving` |
+| Remembrance Day | `remembrance` |
+| Halloween | `halloween` |
+| Anniversary of the Statue of Westminster | `westminster` |
+| Christmas Eve | `christmaseve` |
+| Christmas Day | `christmas` |
+| Boxing Day | `boxing` |
+| New Year's Eve | `newyearseve` |
+{: caption="Canadian holidays" caption-side="top"}
 
 ## Holidays (pt-br)
 {: #sys-date-festivals-ptbr}
 
-- New Year's Day
-- Carnival Friday
-- Carnival Friday
-- Carnival Saturday
-- Carnival Sunday
-- Carnival Monday
-- Carnival Tuesday
-- Carnival End (Until 2pm)
-- Good Friday
-- Tiradentes Day
-- Easter Sunday
-- Labor Day, May Day
-- Mother's Day
-- Brazilian Valentine's Day
-- Corpus Christi
-- Father's Day
-- Independence Day
-- Our Lady of Aparecida, Children's Day
-- Teacher's Day
-- Public Service Holiday
-- All Souls' Day
-- Republic Proclamation Day
-- Black Consciousness Day
-- Christmas Eve (from 2pm)
-- Christmas Day
-- New Year's Eve (from 2pm)
+Table 3. Brazilian holidays
+
+| Holiday name | String to use to check for a festival match |
+|--------------|---------------------------------------------|
+| New Year's Day | `newyearsday` |
+| Carnival Friday | `carnivalday` |
+| Carnival Friday | `carnivalfriday` |
+| Carnival Saturday | `carnivalsaturday` |
+| Carnival Sunday | `carnivalsunday` |
+| Carnival Monday | `carnivalmonday` |
+| Carnival Tuesday | `carnivaltuesday` |
+| Carnival End (Until 2pm) | `carnivalend` |
+| Good Friday | `goodfriday` |
+| Tiradentes Day | `tiradentesday` |
+| Easter Sunday | `eastersunday` |
+| Labor Day / May Day | `laborday` |
+| Mother's Day | `mothersday` |
+| Brazilian Valentine's Day | `valentinesday` |
+| Corpus Christi | `corpuschristi` |
+| Father's Day | `fatherday` |
+| Independence Day | `independenceday` |
+| Our Lady of Aparecida / Children's Day | `ourladyofaparecida` |
+| Teacher's Day | `teachersday` |
+| Public Service Holiday | `publicserviceholiday` |
+| All Souls' Day | `allsoulsday` |
+| Republic Proclamation Day | `republicproclamationday` |
+| Black Consciousness Day | `blackconsciousnessday` |
+| Christmas Eve (from 2pm) | `christmaseve` |
+| Christmas Day | `christmasday` |
+| New Year's Eve (from 2pm) | `newyearseve` |
+{: caption="Brazilian holidays" caption-side="top"}
+
+## Holidays (en-gb)
+{: #sys-date-festivals-engb}
+
+Table 4. British English holidays
+
+| Holiday name | String to use to check for a festival match |
+|--------------|---------------------------------------------|
+| New Year's Day | `newyearsday` |
+| 2nd January (Scotland) | `2ndjanuary` |
+| St. David's Day (Wales) | `st.davidsday` |
+| Valentines Day | `valentine` |
+| St Patrick's Day (Northern Ireland) | `stpatricksday` |
+| St Patrick's Day Off (Northern Ireland) | `stpatricksdayoff` |
+| Good Friday | `goodfriday` |
+| Easter Sunday | `easter` |
+| Easter Monday (England, Wales, Northern Ireland, Scotland) | `eastermonday` |
+| St. George's Day | `st.georgesday` |
+| Early May Bank Holiday | `earlymaybankholiday` |
+| Spring Bank Holiday | `springbankholiday` |
+| Queen's Birthday | `queensbirthday` |
+| Battle of the Boyne (Northern Ireland) | `battleoftheboyne` |
+| Summer Bank Holiday (Scotland) | `summerbankholiday` |
+| Summer Bank Holiday (England, Wales, Northern Ireland, Scotland) | `summerbankholiday` |
+| Halloween | `halloween` |
+| Guy Fawkes Day | `guyfawkesday` |
+| Remberance Sunday | `rememberancesunday` |
+| St Andrew's Day (Scotland) | `standrewsday` |
+| St Andrew's Day Observed (Scotland) | `standrewsdayobserved` |
+| Christmas Day | `christmas` |
+| Boxing Day | `boxingday` |
+| Battle of the Boyne Observed (Northern Ireland) | `battleoftheboyneobserved` |
+| Bank Holiday (Day 1) | `bankholidayfirst` |
+| Bank Holiday (Day 2) | `bankholidaysecond` |
+| 2nd January (substitute day) (Scotland)| `2ndjanuary` |
+| New Year's Eve | `newyearseve` |
+| 'New Year's Day' Observed | `newyearsdayobserved` |
+{: caption="British English holidays" caption-side="top"}
+
+## Holidays (cs-cz)
+{: #sys-date-festivals-cscz}
+
+Table 5. Czech holidays
+
+| Holiday name | String to use to check for a festival match |
+|--------------|---------------------------------------------|
+| New Year's Day | `newyearsday` |
+| Restoration of the Czech Independence Day | `restorationofczechindependenceday` |
+| St. Valentine's Day | `valentinesday` |
+| International Women's Day | `internationalwomensday` |
+| Good Friday | `goodfriday` |
+| Easter Monday | `eastermonday` |
+| April Fools Day | `aprilfools` |
+| Labor Day / May Day | `laborday` |
+| Victory in Europe Day | `victoryineuropeday` |
+| Mother's Day | `mothersday` |
+| Childeren's Day | `childrensday` |
+| Father's Day | `fathersday` |
+| Saints Cyril and Methodius | `saintcyrilandmethodius` |
+| Jan Hus Day | `janhusday` |
+| St. Wenceslas Day | `wenceslasday` |
+| Independent Czechoslovak State Day | `independentczechoslovakstateday` |
+| Struggle for Freedom and Democracy Day | `struggleforfreedomanddemocracyday` |
+| Christmas Eve | `christmaseve` |
+| Christmas Day | `christmasday` |
+| St. Stephen's Day | `st.stephensday` |
+| New Year's Eve | `newyearseve` |
+{: caption="Czech holidays" caption-side="top"}
+
+## Holidays (nl-nl)
+{: #sys-date-festivals-nlnl}
+
+Table 6. Dutch holidays
+
+| Holiday name | String to use to check for a festival match |
+|--------------|---------------------------------------------|
+| New Year's Day | `newyearsday` |
+| Valentine's Day | `Valentinesday` |
+| Good Friday | `goodfriday` |
+| Easter Sunday | `eastersunday` |
+| Easter Monday | `eastermonday` |
+| King's Birthday | `kingsbirthday` |
+| Liberation Day | `liberationday` |
+| Ascension Day | `ascensionday` | 
+| Whit Sunday | `whitsunday` |
+| Whit Monday | `whitmonday` |
+| St Nicholas' Eve/Sinterklaas | `stnicholaseve` |
+| Christmas Eve | `christmaseve` |
+| Christmas Day | `christmasday` |
+| Second Day of Christmas | `seconddayofchristmas` |
+| New Year's Eve | `newyearseve` |
+{: caption="Dutch holidays" caption-side="top"}
+
+## Holidays (fr-fr)
+{: #sys-date-festivals-frfr}
+
+Table 7. French holidays
+
+| Holiday name | String to use to check for a festival match |
+|--------------|---------------------------------------------|
+| New Year's Day | `newyearsday` |
+| Valentine's Day | `valentinesday` |
+| Easter Sunday | `eastersunday` |
+| Easter Monday | `eastermonday` |
+| Labor Day / May Day | `laborday` |
+| WWII Victory Day | `wwiivictoryday` |
+| Mother's Day | `mothersday` |
+| Ascension Day | `ascensionday` |
+| Whit Sunday | `whitsunday` |
+| Whit Monday | `whitmonday` |
+| Father's Day | `fathersday` |
+| Bastille Day | `bastilleday` |
+| Assumption of Mary | `assumptionofmary` |
+| All Saints' Day | `allsaintsday` |
+| Armistice Day | `armisticeday` |
+| Christmas Eve | `christmaseve` |
+| Christmas Day | `christmasday` |
+| New Year's Eve | `newyearseve` |
+{: caption="French holidays" caption-side="top"}
+
+## Holidays (de-de)
+{: #sys-date-festivals-dede}
+
+Table 8. German holidays
+
+| Holiday name | String to use to check for a festival match |
+|--------------|---------------------------------------------|
+| New Year's Day | `newyearsday` |
+| Epiphany (BW, BY, ST) | `epiphany` |
+| Valentine's Day | `valentinesday` |
+| Shrove Monday | `shrovemonday` |
+| Carnival / Shrove Tuesday | `carnival` |
+| Carnival / Ash Wednesday | `carnival` |
+| International Women's Day (Most regions) | `internationalwomensday` |
+| April Fool's Day | `aprilfools` |
+| Palm Sunday | `palmsunday` |
+| Maundy Thursday | `maundythursday` |
+| Good Friday | `goodfriday` |
+| Easter Sunday (Most regions) | `eastersunday` |
+| Easter Monday | `eastermonday` |
+| May Day | `mayday` |
+| Mother's Day | `mothersday` |
+| Father's Day | `fathersday` |
+| Ascension Day | `ascensionday` |
+| Whit Sunday (Most regions) | `whitsunday` |
+| Whit Sunday (Brandenburg) | `whitsunday` |
+| Whit Monday | `whitmonday` |
+| Corpus Christi (Many regions) | `corpuschristi` |
+| Assumption of Mary (Bavaria, Saarland) | `assumptioofmary` |
+| Day of German Unity | `dayofgermanunity` |
+| Reformation Day (Most regions) | `reformationday` |
+| Halloween | `halloween` |
+| All Saints' Day (Many regions) | `allsaintsday` |
+| St Martin's Day | `st.martinsday` |
+| National Day of Mourning | `nationaldayofmourning` |
+| Repentance Day (Saxony) | `repentanceday` |
+| Sunday of the Dead | `sundayofthedead` |
+| First Advent Sunday | `firstadventsunday` |
+| Saint Nicholas Day | `saintnicholasday` |
+| Second Advent Sunday | `secondadventsunday` |
+| Third Advent Sunday | `thirdadventsunday` |
+| Fourth Advent Sunday | `fourthadventsunday` |
+| Christmas Day | `christmasday` |
+| Boxing Day | `boxingday` |
+| Whit Sunday (Most regions) | `whitsunday` |
+| New Year's Eve | `newyearseve` |
+{: caption="German holidays" caption-side="top"}
+
+## Holidays (it-it)
+{: #sys-date-festivals-itit}
+
+Table 9. Italian holidays
+
+| Holiday name | String to use to check for a festival match |
+|--------------|---------------------------------------------|
+| New Year's Day | `newyearsday` |
+| Valentine's Day | `valentineday` |
+| Epiphany | `epiphany` |
+| Good Friday | `goodfriday` |
+| Easter Sunday | `eastersunday` |
+| Easter Monday | `eastermonday` |
+| Liberation Day | `liberationday` |
+| Labor Day / May Day | `laborday` |
+| Republic Day | `republicday` |
+| Assumption of Mary / Ferragosto | `assumptionofmary` |
+| All Saints' Day | `allsaintsday` |
+| Feast of the Immaculate Conception | `feastoftheimmaculateconception` |
+| Christmas Day | `christmasday` |
+| St Stephen's Day | `st.stephensday` |
+| Labor Day / May Day | `laborday` |
+| New Year's Eve | `newyearseve` |
+{: caption="Italian holidays" caption-side="top"}
 
 ## Holidays (pt-pt)
 {: #sys-date-festivals-ptpt}
 
-- New Year's Day
-- Valentine's Day
-- Carnival, Shrove Tuesday
-- Good Friday
-- Easter Sunday
-- Liberty Day
-- Labor Day, May Day
-- Mother's Day
-- Father's Day
-- Portugal Day
-- Corpus Christi
-- Assumption of Mary
-- Republic Implantation
-- All Saints' Day
-- Restoration of Independence
-- Feast of the Immaculate Conception
-- Christmas Eve
-- Christmas Day
-- New Year's Eve
+Table 10. Portuguese holidays
+
+| Holiday name | String to use to check for a festival match |
+|--------------|---------------------------------------------|
+| New Year's Day | `newyearsday` |
+| Valentine's Day | `valentinesday` |
+| Carnival / Shrove Tuesday | `carnivalday` |
+| Good Friday | `goodfriday` |
+| Easter Sunday | `eastersunday` |
+| Liberty Day | `libertyday` |
+| Labor Day / May Day | `laborday` |
+| Mother's Day | `mothersday` |
+| Father's Day | `fathersday` |
+| Portugal Day | `portugalday` |
+| Corpus Christi | `corpuschristi` |
+| Assumption of Mary | `assumptionofmary` |
+| Republic Implantation | `republicimplantation` |
+| All Saints' Day | `allsaintsday` |
+| Restoration of Independence | `restorationofindependence` |
+| Feast of the Immaculate Conception | `immaculateconception` |
+| Christmas Eve | `christmaseve` |
+| Christmas Day | `christmasday` |
+| New Year's Eve | `newyearseve` |
+{: caption="Portuguese holidays" caption-side="top"}
 
 ## Holidays (sk-sk)
 {: #sys-date-festivals-sksk}
 
-- Republic Day
-- Epiphany
-- Good Friday
-- Easter Sunday
-- Easter Monday
-- Labor Day
-- End of World War II
-- St Cyril & St Methodius Day
-- National Uprising Day
-- Constitution Day
-- Day of Our Lady of Sorrows
-- All Saints' Day
-- Fight for Freedom and Democracy Day
-- Christmas Eve
-- Christmas Day
-- St Stephen's Day
-- St Cyril & St Methodius Day
-- New Year's Eve
+Table 11. Slovak holidays
+
+| Holiday name | String to use to check for a festival match |
+|--------------|---------------------------------------------|
+| Republic Day | `republicday` |
+| Epiphany | `epiphany` |
+| Good Friday | `goodfriday` |
+| Easter Sunday | `eastersunday` |
+| Easter Monday | `eastermonday` |
+| Labor Day | `laborday` |
+| End of World War II | `endofworldwarii` |
+| St. Cyril & St. Methodius Day | `st.cyril&st.methodiusday` |
+| National Uprising Day | `nationaluprisingday` |
+| Constitution Day | `constitutionday` |
+| Day of Our Lady of Sorrows | `dayofourladyofsorrows` |
+| All Saints' Day | `allsaintsday` |
+| Fight for Freedom and Democracy Day | `fightforfreedomanddemocracyday` |
+| Christmas Eve | `christmaseve` |
+| Christmas Day | `christmasday` |
+| St. Stephen's Day | `st.stephensday` |
+| St. Cyril & St. Methodius Day | `cyrilmethodiusday` |
+| new year's eve | `newyearseve` |
+{: caption="Slovak holidays" caption-side="top"}
+
+## Holidays (es-es)
+{: #sys-date-festivals-eses}
+
+Table 12. Spanish (Castillian) holidays
+
+| Holiday name | String to use to check for a festival match |
+|--------------|---------------------------------------------|
+| New Year's Day | `newyearsday` |
+| Epiphany | `epiphany` |
+| Epiphany observed (Many regions) | `epiphanyobserved` |
+| Valentine's Day | `valentinesday` |
+| Andalusia Day | `andalusiaday` |
+| Baleares Day | `balearesday` |
+| Ash Wednesday | `ashwednesday` |
+| San Jose (Many regions) | `sanjose` |
+| Palm Sunday | `palmsunday` |
+| Maundy Thursday (Many regions) | `maundythursday` |
+| Good Friday | `goodfriday` |
+| Easter Sunday | `eastersunday` |
+| Easter Monday (Many regions) | `eastermonday` |
+| Aragon Day | `aragonday` |
+| Saint George Day | `stgeorgeday` |
+| Labor Day / May Day | `laborday` |
+| Community Day | `communityday` |
+| San Isidro | `saintisidro` |
+| Mothers' Day | `mothersday` |
+| Whit Sunday/Pentecost | `whitsunday` |
+| Feast of Saint James the Apostle (GA, PV, S) | `feastofsaintjamestheapostle` |
+| Assumption of Mary | `assumptionofmary` |
+| Hispanic Day | `hispanicday` |
+| All Saints' Day (All) | `allsaintsday` |
+| Constitution Day | `constitutionday` |
+| Immaculate Conception | `immaculateconception` |
+| Immaculate Conception observed (Many regions) | `immaculateconceptionobserved` |
+| Christmas Eve | `christmaseve` |
+| Christmas Day | `christmasday` |
+| Feast of the Holy Family | `feastoftheholyfamily` |
+| Corpus Christi | `corpuschristi` |
+| All Saints' Day' observed (Most regions) | `allsaintsdayobserved` |
+| Assumption observed | `assumptionobserved` |
+| Cantabria Day | `cantabriaday` |
+| Christmas Day observed (Balearic Islands) | `christmasdayobserved` |
+| Labor Day observed (Many regions) | `labordayobserved` |
+| Christmas Day observed (Many regions) | `christmasdayobserved` |
+| Immaculate Conception observed | `immaculateconceptionobserved` |
+| Hispanic Day observed (Many regions) | `hispanicdayobserved` |
+| Almuneda Day | `almunedaday` |
+| New Year's Eve | `newyearseve` |
+{: caption="Spanish holidays" caption-side="top"}
+
+## Holidays (ar-ar)
+{: #sys-date-festivals-arar}
+
+Table 13. Arabic holidays
+
+| Holiday name | String to use to check for a festival match |
+|--------------|---------------------------------------------|
+| new year | `newyear` |
+| Valentine | `valentine` |
+| easter sunday | `easter` |
+| christmas eve | `christmaseve` |
+| christmas | `christmas` |
+| Eid al-Fitr | `eidalfitr` |
+| Eid al-Adha | `eidaladha` |
+| Ramadan | `ramadan` |
+| Islamic New Year | `islamicnewyear` |
+| Ashura | `ashura` |
+| Mawlid an-Nabi | `mawlidannabi` |
+| Day of Arafat | `dayofarafat` |
+| Laylat al-Miraj | `laylatalmiraj` |
+{: caption="Arabic holidays" caption-side="top"}
+
+## Holidays (iw-il)
+{: #sys-date-festivals-iwil}
+
+Table 14. Hebrew holidays
+
+| Holiday name | String to use to check for a festival match |
+|--------------|---------------------------------------------|
+| Erev Purim | `erevpurim` |
+| Yom HaAliyah | `yomhaaliyah` |
+| Erev Pesach | `erevpesach` |
+| Pesach I (First day of Passover) | `pesachi` |
+| Pesach II (Passover) | `pesachii` |
+| Pesach III (Passover) | `pesachiii` |
+| Pesach IV (Passover) | `pesachiv` |
+| Pesach V (Passover) | `pesachv` |
+| Pesach VI (Passover) | `pesachvi` |
+| Pesach VII (Last day of Passover) | `pesachvii` |
+| Yom HaShoah/Holocaust Memorial Day | `yomhashoah` |
+| Yom HaZikaron (Memorial Day) | `yomhazikaron` |
+| Yom HaAtzmaut (Independence Day) | `yomhaatzmaut` |
+| Yom Yerushalayim (Jerusalem Day) | `yomyerushalayim` |
+| Erev Shavuot | `erevshavuot` |
+| Shavuot (Pentecost) | `shavuot` |
+| Erev Tisha B'Av | `erevtishabav` |
+| Tisha B'Av | `tishabav` |
+| Erev Rosh Hashana | `erevroshhashana` |
+| Rosh Hashana (New Year) | `roshhashana` |
+| Rosh Hashana II (New Year day 2) | `roshhashanaii` |
+| Erev Yom Kippur | `erevyomkippur` |
+| Yom Kippur | `yomkippur` |
+| Erev Sukkot | `erevsukkot` |
+| Sukkot I | `sukkoti` |
+| Sukkot II | `sukkotii` |
+| Sukkot III | `sukkotiii` |
+| Sukkot IV | `sukkotiv` |
+| Sukkot V | `sukkotv` |
+| Sukkot VI | `sukkotvi` |
+| Sukkot VII/Hoshanah Rabah | `sukkotvii` |
+| Shmini Atzeret/Simchat Torah | `shminiatzeret` |
+| Yom HaAliyah School Observance | `yomhaaliyahschoolobservance` |
+| Hanukkah I (Holiday of lights) | `hanukkahi` |
+| Hanukkah II | `hanukkahii` |
+| Hanukkah III | `hanukkahiii` |
+| Hanukkah IV | `hanukkahiv` |
+| Hanukkah V | `hanukkahv` |
+| Hanukkah VI/Rosh Chodesh Tevet | `hanukkahvi` |
+| Hanukkah VII | `hanukkahvii` |
+| Hanukkah VIII | `hanukkahviii` |
+{: caption="Hebrew holidays" caption-side="top"}
+
+## Holidays (hi-in)
+{: #sys-date-festivals-hiin}
+
+Table 15. Hindi holidays
+
+| Holiday name | String to use to check for a festival match |
+|--------------|---------------------------------------------|
+| new year | `newyear` |
+| Inauguration | `inauguration` |
+| Martin Luther King | `luther` |
+| Washington | `washington` |
+| president | `president` |
+| Valentine | `valentine` |
+| Women | `women` |
+| patrick | `patrick` |
+| fool | `fool` |
+| earth | `earth` |
+| Memorial | `memorial` |
+| mother | `mother` |
+| Father | `father` |
+| Independence | `independence` |
+| Labor | `labor` |
+| Columbus | `columbus` |
+| Veterans | `veterans` |
+| Thanksgiving | `thanksgiving` |
+| easter | `easter` |
+| halloween | `halloween` |
+| christmas | `christmas` |
+{: caption="Hindi holidays" caption-side="top"}
 
 ## Holidays (zh-cn)
-{: #sys-date-holidays-zhcn}
+{: #sys-date-festivals-zhcn}
 
-- New Year's Day
-- New Year's Weekend
-- Double Seventh Festival
-- Double Ninth Festival
-- Laba Festival
-- Ching Ming Festival
-- Longtaitou Festival
-- Spring Festival Eve
-- Chinese New Year Eve
-- Chinese New Year
-- Lantern Festival
-- Zhonghe Festival
-- Christmas Day
-- Labor Day
-- Valentine's Day
-- Easter Sunday
-- Dragon Boat Festival
-- Mid-Autumn Festival
-- National Day
+Table 16. Chinese (Simplified ) holidays
+
+| Holiday name | String to use to check for a festival match |
+|--------------|---------------------------------------------|
+| New Year's Day | `newyearsday` |
+| New Year's Weekend | `newyearsweekend` |
+| Double Seventh Festival | `doubleseventhfestival` |
+| Double Ninth Festival | `doubleninthfestival` |
+| Laba Festival | `labafestival` |
+| Ching Ming Festival | `chingmingfestival` |
+| Longtaitou Festival | `longtaitoufestival` |
+| Spring Festival Eve | `springfestivaleve` |
+| Chinese New Year Eve | `chinesenewyeareve` |
+| Chinese New Year | `chinesenewyear` |
+| Lantern Festival | `lanternfestival` |
+| Zhonghe Festival | `zhonghefestival` |
+| christmas | `christmas` |
+| Labor Day | `laborday` |
+| Valentine | `valentine` |
+| easter sunday | `easter` |
+| Dragon Boat Festival | `dragonboatfestival` |
+| Mid-Autumn Festival | `midautumnfestival` |
+| National Day | `nationalday` |
+{: caption="Simplified Chinese holidays" caption-side="top"}
 
 ## Holidays (zh-tw)
 {: #sys-date-festivals-zhtw}
 
-- New Year's Day
-- New Year's Weekend
-- Double Seventh Festival
-- Double Ninth Festival
-- Laba Festival
-- Ching Ming Festival
-- Longtaitou Festival
-- Spring Festival Eve
-- Chinese New Year Eve
-- Chinese New Year
-- Lantern Festival
-- Zhonghe Festival
-- Christmas Day
-- Labor Day
-- Valentine's Day
-- Easter Sunday
-- Dragon Boat Festival
-- Mid-Autumn Festival
-- National Day
+Table 17. Chinese (Traditional) holidays
+
+| Holiday name | String to use to check for a festival match |
+|--------------|---------------------------------------------|
+| New Year's Day | `newyearsday` |
+| New Year's weekend | `newyearsweekend` |
+| Double Seventh Festival | `doubleseventhfestival` |
+| Double Ninth Festival | `doubleninthfestival` |
+| Laba Festival | `labafestival` |
+| Ching Ming Festival | `chingmingfestival` |
+| Longtaitou Festival | `longtaitoufestival` |
+| Spring Festival Eve | `springfestivaleve` |
+| Chinese New Year Eve | `chinesenewyeareve` |
+| Chinese New Year  | `chinesenewyear` |
+| Lantern Festival | `lanternfestival` |
+| Zhonghe Festival | `zhonghefestival` |
+| christmas | `christmas` |
+| Labor Day | `laborday` |
+| Valentine | `valentine` |
+| easter sunday | `easter` |
+| Dragon Boat Festival | `dragonboatfestival` |
+| Mid-Autumn Festival | `midautumnfestival` |
+| National Day | `nationalday` |
+{: caption="Traditional Chinese holidays" caption-side="top"}
+
+## Holidays (ja-jp)
+{: #sys-date-festivals-jajp}
+
+Table 18. Japanese holidays
+
+| Holiday name | String to use to check for a festival match |
+|--------------|---------------------------------------------|
+| New Year's Day | `newyearsday` |
+| January 2 Bank Holiday | `january2bankholiday` |
+| January 3 Bank Holiday | `january3bankholiday` |
+| Coming of Age Day | `comingofageday` |
+| National Foundation Day | `nationalfoundationday` |
+| easter sunday | `easter` |
+| Saint Valentines Day | `valentinesday` |
+| Dolls' Festival/Girls' Festival | `dollsfestival` |
+| Spring Equinox | `springequinox` |
+| Shōwa Day | `showaday` |
+| Coronation Day holiday | `coronationdayholiday` |
+| Coronation Day | `coronationday` |
+| Constitution Memorial Day | `constitutionmemorialday` |
+| Greenery Day | `greeneryday` |
+| Children's Day | `childrensday` |
+| 'Children's Day' observed | `childrensdayobserved` |
+| Star Festival | `starfestival` |
+| Sea Day | `seaday` |
+| Mountain Day | `mountainday` |
+| 'Mountain Day' observed | `mountaindayobserved` |
+| Respect for the Aged Day | `respectfortheagedday` |
+| Autumn Equinox | `autumnequinox` |
+| Health and Sports Day | `healthandsportsday` |
+| Enthronement Ceremony Day | `enthronementceremonyday` |
+| Culture Day | `cultureday` |
+| 'Culture Day' Observed | `culturedayobserved` |
+| 7-5-3 Day | `753day` |
+| Labor Thanksgiving Day | `laborthanksgivingday` |
+| Christmas | `christmas` |
+| December 31 Bank Holiday | `december31bankholiday` |
+| Emperor's Birthday | `emperorsbirthday` |
+| 'Emperor's Birthday' observed | `emperorsbirthdayobserved` |
+| 'Constitution Memorial Day' observed | `constitutionmemorialdayobserved` |
+| Sports Day | `sportsday` |
+| 'New Year's Day' observed | `newyearsdayobserved` |
+| 'National Foundation Day' observed | `nationalfoundationdayobserved` |
+| 'Autumn Equinox' observed | `autumnequinoxobserved` |
+| 'Greenery Day' observed | `greenerydayobserved` |
+| 'Labor Thanksgiving Day' observed | `laborthanksgivingdayobserved` |
+| Bridge Public holiday | `bridgepublicholiday` |
+| 'Spring Equinox' observed | `springequinoxobserved` |
+| December 31 Bank Holiday | `december31bankholiday` |
+{: caption="Japanese holidays" caption-side="top"}
+
+## Holidays (ko-kr)
+{: #sys-date-festivals-kokr}
+
+Table 19. Korean holidays
+
+| Holiday name | String to use to check for a festival match |
+|--------------|---------------------------------------------|
+| New Year's Day | `newyearsday` |
+| Independence Movement Day | `independencemovementday` |
+| Labor Day | `laborday` |
+| Children's Day | `childrensday` |
+| Parents' Day | `parentsday` |
+| Teacher's Day | `teachersday` |
+| Buddha's Birthday | `buddhasbirthday` |
+| Memorial Day | `memorialday` |
+| Constitution Day | `constitutionmemorialday` |
+| Liberation Day | `liberationday` |
+| Chuseok | `chuseok` |
+| Armed Forces Day | `armedforcesday` |
+| National Foundation Day | `nationalfoundationday` |
+| Hangeul Proclamation Day | `hangeulproclamationday` |
+| Christmas Eve | `christmaseve` |
+| Christmas Day | `christmas` |
+| New Year's Eve | `newyearseve` |
+| National Assembly Election Day | `nationalassemblyelectionday` |
+{: caption="Korean holidays" caption-side="top"}
