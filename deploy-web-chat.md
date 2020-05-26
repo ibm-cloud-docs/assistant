@@ -236,7 +236,7 @@ Configure the Web Chat to authenticate users and send private data from your emb
 
 All messages that are sent from the Web Chat are encrypted. When you enable security, your assistant takes an additional step to verify that messages originate from the Web Chat that is embedded in your website only.
 
-The Web Chat uses an RSA signature with SHA-256 to encrypt communication. RS256 cryptography is a sophistocated type of RSA encryption. An RSA key pair includes a private and a public key. The RSA private key is used to generate digital signatures, and the RSA public key is used to verify digital signatures. The complexity of the RSA algorithm that is used to scramble the message makes it nearly impossible to unscramble the message without the key.
+The Web Chat uses an RSA signature with SHA-256 to encrypt communication. RS256 cryptography is a sophisticated type of RSA encryption. An RSA key pair includes a private and a public key. The RSA private key is used to generate digital signatures, and the RSA public key is used to verify digital signatures. The complexity of the RSA algorithm that is used to scramble the message makes it nearly impossible to unscramble the message without the key.
 
 You can implement the following security measures:
 

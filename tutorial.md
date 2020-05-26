@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-12"
+lastupdated: "2020-05-26"
 
 subcollection: assistant
 
@@ -703,23 +703,10 @@ Another way you can address this type of scenario is to add a node with slots. S
 
 If the user shows interest in the bot itself, you want the virtual assistant to recognize that curiosity and engage with the user in a more personal way. You might remember the `#General_About_You` intent, which is provided with the *General* content catalog, that we considered using earlier, before you added your own custom `#about_restaurant` intent. It is built to recognize just such questions from the user. Add a node that conditions on this intent. In your response, you can ask for the user's name and save it to a $username variable that you can use elsewhere in the dialog, if available.
 
-First, you need to make sure your assistant will recognize a name if the user provides one. To do so, enable the `@sys-person` entity, which is designed to recognize common first and last names (in English).
-
-### Add a person system entity
-{: #tutorial-add-person-entity}
-
-Your assistant provides a number of *system entities*, which are common entities that you can use for any application.
-
-1.  Click the **Entities** tab, and then click **System entities**.
-
-1.  Find the *`@sys-person`* entity toggle, and then switch it **On**.
-
-    ![Shows the @sys-person entity being enabled.](images/gs-ass-enable-sys-person.png)
-
 ### Add a node that handles questions about the bot
 {: #tutorial-add-about-you-node}
 
-Now, add a dialog node that can recognize the user's interest in the bot, and respond.
+Add a dialog node that can recognize the user's interest in the bot, and respond.
 
 1.  Click the **Dialog** tab.
 1.  Find the `Welcome` node in the dialog tree.
@@ -728,18 +715,18 @@ Now, add a dialog node that can recognize the user's interest in the bot, and re
 1.  Add the following message in the response text field:
 
     ```
-    I am a virtual assistant that is designed to answer your questions about the Truck Stop Gourmand restaurant. What's your name?
+    I am a virtual assistant that is designed to answer your questions about the Truck Stop Gourmand restaurant. What should I call you?
     ```
     {: codeblock}
 
     ![Shows the #General_About_You node being added.](images/gs-ass-add-about-you-node.png)
 1.  Click ![Close](images/close.png) to close the edit view.
 1.  Click the **More** ![More options](images/kabob.png) icon on the `#General_About_You` node, and then select **Add child node**.
-1.  Start to type `@sys-person` into the **If assistant recognizes** field of this node. Then select the `@sys-person` option.
+1.  In the **If assistant recognizes** field of this node, enter `true`.
 1.  Add the following message in the response text field:
 
     ```
-    Hello, <? @sys-person.literal ?>! It's lovely to meet you. How can I help you today?
+    Hello, <? input.text ?>! It's lovely to meet you. How can I help you today?
     ```
     {: codeblock}
 
@@ -755,26 +742,12 @@ Now, add a dialog node that can recognize the user's interest in the bot, and re
     </tr>
     <tr>
       <td>$username</td>
-      <td><? @sys-person.literal ?></td>
+      <td><? input.text ?></td>
     </tr>
     </table>
 
-    The context variable value (`<? @sys-person.literal ?>`) is a SpEL expression that captures the user name as it is specified by the user, and then saves it to the `$username` context variable.
+    The context variable value (`<? input.text ?>`) is a SpEL expression that captures the user name as it is specified by the user, and then saves it to the `$username` context variable.
 
-    ![Shows the @sys-person child node being added.](images/gs-ass-sys-person-child-node.png)
-1.  Click ![Close](images/close.png) to close the edit view.
-1.  Click the **More** ![More options](images/kabob.png) icon on the `@sys-person` node, and then select **Add node below**.
-
-    You will add a node to capture user responses that do not include a name. If the user chooses not to share it, you want the bot to keep the conversation going anyhow.
-1.  Type `true` into the **If assistant recognizes** field of this node.
-1.  Add the following message in the response text field:
-
-    ```
-    How can I help you today?
-    ```
-    {: codeblock}
-
-    ![Shows the true child node being added to capture input when the user does not provide a name.](images/gs-ass-test-true-child-node.png)
 1.  Click ![Close](images/close.png) to close the edit view.
 
 If, at run time, the user triggers this node and provides a name, then you will know the user's name. If you know it, you should use it! Add conditional responses to the greeting dialog node you added previously to include a conditional response that uses the user name, if it is known.
@@ -815,15 +788,13 @@ Test whether your assistant can recognize and save a user's name, and then refer
 
 1.  Enter, `Who are you?`
 
-    Your assistant recognizes the `#General_About_You` intent. Its response ends with the question, `What's your name?`
-1.  Enter, `I am Jane Doe.`
+    Your assistant recognizes the `#General_About_You` intent. Its response ends with the question, `What should I call you?`
+1.  Enter, `Jane`.
 
-    Your assistant recognizes `Jane Doe` as an `@sys-person` entity mention. It comments on your name, and then asks how it can help you.
+    Your assistant saves `Jane` in the `$username` variable.
 1.  Enter, `Hello.`
 
-    Your assistant recognizes the `#General_Greetings` intent and says, `Good day to you, Jane Doe!` It uses the conditional response that includes the user's name because the `$username` context variable contains a value at the time that the greeting node is triggered.
-
-    ![Shows the Try it out pane where the user asks Who are you, provides the name Jane Doe, says hello and is greeted by name.](images/gs-ass-test-personalization.png)
+    Your assistant recognizes the `#General_Greetings` intent and says, `Good day to you, Jane!` It uses the conditional response that includes the user's name because the `$username` context variable contains a value at the time that the greeting node is triggered.
 
 You can add a conditional response that conditions on and includes the user's name for any other responses where personalization would add value to the conversation.
 
