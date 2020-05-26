@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-19"
+lastupdated: "2020-05-26"
 
 subcollection: assistant
 
@@ -232,19 +232,21 @@ In the following example, the user ID `L12345` is added to the script.
 ## Securing the Web Chat ![Beta](images/beta.png)
 {: #deploy-web-chat-security}
 
-Configure the Web Chat to authenticate users and encrypt data that is submitted from your embedded Web Chat.
+Configure the Web Chat to authenticate users and send private data from your embedded Web Chat.
 
-When security is enabled, your assistant uses an RSA signature with SHA-256 to encrypt communication. RS256 cryptography is a sophistocated type of RSA encryption. An RSA key pair includes a private and a public key. The RSA private key is used to generate digital signatures, and the RSA public key is used to verify digital signatures. The complexity of the RSA algorithm that is used to scramble the message makes it nearly impossible to unscramble the message without the key.
+All messages that are sent from the Web Chat are encrypted. When you enable security, your assistant takes an additional step to verify that messages originate from the Web Chat that is embedded in your website only.
+
+The Web Chat uses an RSA signature with SHA-256 to encrypt communication. RS256 cryptography is a sophisticated type of RSA encryption. An RSA key pair includes a private and a public key. The RSA private key is used to generate digital signatures, and the RSA public key is used to verify digital signatures. The complexity of the RSA algorithm that is used to scramble the message makes it nearly impossible to unscramble the message without the key.
 
 You can implement the following security measures:
 
-- Ensure that messages sent from the Web Chat to your assistant come from your customers
-- Encrypt data that is sent from the Web Chat to your assistant
+- Ensure that messages sent from the Web Chat to your assistant come from your customers only
+- Send private data from the Web Chat to your assistant
 
 ### Enable security
 {: #deploy-web-chat-security-task}
 
-The process you use to add the Web Chat to your website is simple. Its simplicity also means it can be misused. That's why it's important to verify that the messages sent to your assistant are coming from only your customers.
+The process you use to add the Web Chat to your website is simple. Its simplicity also means it can be misused. That's why it's important to verify that the messages sent to your assistant are coming from authorized users only.
 
 After you enable security, users cannot submit messages through the Web Chat unless you take steps to prove their origin. Do not enable it until you have support for authentication in place.
 {: important}
@@ -368,9 +370,9 @@ To enable security, complete the following steps:
 ### Passing sensitive data
 {: #deploy-web-chat-security-encrypt}
 
-You can optionally copy the public key that is provided by IBM, and use it to encrypt sensitive data that is sent from the Web Chat.
+You can optionally copy the public key that is provided by IBM, and use it to add an additional level of encryption to support passing sensitive data from the Web Chat.
 
-Use this method to send sensitive information in messages that come from your website, such as a information about a customer's loyalty level, a user ID, or security tokens to use in webhooks that you call from your dialog. Information that is passed to your assistant in this way is stored in a private variable in your assistant. Private variables are never sent back to the Web Chat.
+Use this method to send sensitive information in messages that come from your website, such as a information about a customer's loyalty level, a user ID, or security tokens to use in webhooks that you call from your dialog. Information that is passed to your assistant in this way is stored in a private variable in your assistant. Private variables cannot be seen by customers and are never sent back to the Web Chat.
 
 For example, you might start a business process for a VIP customer that is different from the process you start for less important customers. You likely do not want non-VIPs to know that they are categorized as such. But you must pass this informataion to your dialog because it changes the route of the conversation. You can pass the customer MVP status as an encrypted variable. This private context variable will be available for use by the dialog, but not by anything else.
 
