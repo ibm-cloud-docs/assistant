@@ -1,0 +1,149 @@
+{
+    "faqs-answers": [
+        "what's an entity",
+        "what are webhooks",
+        "what are intents",
+        "whats dialog",
+        "what triggers disambiguation",
+        "what is a digression"
+    ],
+    "faqs-cannot-login": [
+        "can't login to Assistant",
+        "unable to log in to WA",
+        "can't log on to my assistant instance",
+        "unable to open watson assistant",
+        "assistant login is failing"
+    ],
+    "faqs-login-repeatedly": [
+        "you are getting redirected to login to Assistant",
+        "you are getting redirected to login",
+        "keep getting redirected to login to Assistant",
+        "getting a redirection message for Assistant",
+        "asking me to login to Assistant again"
+    ],
+    "faqs-getting-401": [
+        "401 response code is being returned in Assistant",
+        "what does a 401 response mean",
+        "getting a 401 error in Assistant",
+        "why am I getting 401 error for WA",
+        "401 error code in WA"
+    ],
+    "faqs-getting-403": [
+        "403 response code is being returned in Assistant",
+        "what does a 403 response mean",
+        "getting a 403 error in Assistant",
+        "why am I getting 403 error for WA",
+        "403 error code in WA"
+    ],
+    "faqs-cannot-fetch-token": [
+        "Assistants could not be loaded at this time",
+        "error that assistant could not be loaded at this time",
+        "Unable to fetch access token for WA account",
+        "Assistant could not be created at this time. Unable to fetch access token.",
+        "Unable to fetch access token for watson assistant",
+        "cant fetch access tokens"
+    ],
+    "faqs-authentication-required": [
+        "getting Authentication Required:",
+        "requesting username and password",
+        "Sign In error when accessing Assistant",
+        "Getting Authentication Required error",
+        "Authentication error accessing Watson Assistant"
+    ],
+    "faqs-view-analytics": [
+        "can't view analytics page",
+        "can't view Assistant logs",
+        "can't view user conversations",
+        "unable to see analytics page for WA",
+        "cant access the analytics in Assistant"
+    ],
+    "faqs-view-api-details": [
+        "I cannot view the api details for Assistant",
+        "View api details are gone for WA",
+        "cant see assistant service credentials",
+        "unable to view api key",
+        "credential page never refreshes in Assistant",
+        "can't see the apikey",
+        "cant access the api keys"
+    ],
+    "faqs-edit-skill": [
+        "can't update intents",
+        "unable to edit intents",
+        "can't edit entities",
+        "unable to update entities",
+        "can't edit dialog nodes",
+        "unable to change dialog nodes",
+        "can't edit a skill",
+        "cant change assistant skills",
+        "unable to edit a skill"
+    ],
+    "faqs-export-user-conversations": [
+        "export conversation logs",
+        "export user converstions",
+        "User conversation page export",
+        "exporting user conversation page",
+        "conversation log export"
+    ],
+    "faqs-dialog-nodes": [
+        "export dialog nodes",
+        "import dialog nodes",
+        "exporting dialog node",
+        "importing dialog nodes in assistant",
+        "dialog nodes be exported or imported"
+    ],
+    "faqs-delete-workspace": [
+        "need a skill restored",
+        "I need a skill recovered",
+        "can a skill be recovered if it's deleted",
+        "deleted a skill, can I recover it",
+        "deleted a workspace is it recoverable",
+        "can a workspace be recovered if it's deleted",
+        "need a workspace restored",
+        "need a workspace recovered",
+        "can skills be recovered"
+    ],
+    "faqs-downgrade-plan": [
+        "downgrade my WA plan",
+        "change Assistant from standard to lite",
+        "change trial to standard plan for Assistant",
+        "upgrade assistant trial plan to Standard",
+        "can't downgrade my plus trial assistant to the lite plan?",
+        "upgrade to a standard assistant plan from trial"
+    ],
+    "faqs-upgrade-plan": [
+        "cannot change from a Standard Plan to a Premium API Plan",
+        "upgrade to a premium plan for Assistant",
+        "Assistant upgrade to premium",
+        "upgrading to premiun plan for WA",
+        "convert my standard assistant plan to premium"
+    ],
+    "faqs-assistant-logs": [
+        "how long are assistant logs stored",
+        "how many days are logs stored in WA",
+        "length of time for which messages are kept in Assistant",
+        "how long does Assistant maintain logs",
+        "time limit for logs being kept in WA"
+    ],
+    "faqs-webhook-url": [
+        "webhook have more than one url",
+        "multiple webhooks per skill",
+        "multiple webhook urls in a skill",
+        "one webhook URL for a dialog skill",
+        "more than one webhook per skill"
+    ],
+    "faqs-query-cancel": [
+        "error query cancelled when importing skill",
+        "error query cancelled when importing workspace",
+        "error message 'Query cancelled'",
+        "timeout when importing a skill",
+        "error when importing watson skill"
+    ],
+    "faqs-stuck-training": [
+        "assistant training stuck",
+        "stuck in training process",
+        "assistant training taking a long time",
+        "training taking forever in WA",
+        "training data seems stuck in Assistant",
+        "training data take a long time"
+    ]
+}

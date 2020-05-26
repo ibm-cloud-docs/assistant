@@ -460,21 +460,6 @@ The following service desk offerings are supported:
 1.   {: #deploy-web-chat-salesforce}[Salesforce](/docs/assistant?topic=assistant-deploy-salesforce)
 1.   {: #deploy-web-chat-zendesk}[Zendesk](/docs/assistant?topic=assistant-deploy-zendesk)
 
-To set up the service desk connection, complete the following steps:
-
-1.  Perform any required prerequisite steps for the service desk connections.
-
-    1.  {: #deploy-web-chat-zendesk-get-account-key}**Zendesk**: Set up the account.
-    1.  {: #deploy-web-chat-salesforce-get-deployment-info}**Salesforce**: Get deployment information.
-
-1.  {: #deploy-web-chat-zendesk-add-private-app}From the Web Chat integration page in {{site.data.keyword.conversationshort}}, switch the **Allow transfers to live agents** toggle to **On**.
-1.  {: #deploy-web-chat-salesforce-add-visualforce-page}Choose the service desk that you want to transfer conversations to. 
-1.  {: #deploy-web-chat-salesforce-add-custom-fields}Click **Set up**.
-1.  {: #deploy-web-chat-salesforce-add-page-to-layout}Follow the instructions in the appropriate topic to configure the connection:
-
-    - [Salesforce](/docs/assistant?topic=assistant-deploy-salesforce)
-    - [Zendesk](/docs/assistant?topic=assistant-deploy-zendesk)
-
 After you set up the service desk integration, you must update your dialog to ensure it understands user requests to speak to someone, and can transfer the conversation properly.
 
 ## Adding transfer support to your dialog
