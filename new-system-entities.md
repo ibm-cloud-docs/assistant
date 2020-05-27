@@ -39,7 +39,7 @@ For information about how to add system entities to your dialog skill, see [Crea
 ## @sys-currency entity
 {: #new-system-entities-sys-currency}
 
-The `@sys-currency` system entity detects mentions of monetary currency values in user input. The currency can be exressed with a currency symbol or currency-specific terms. In either case, a number is returned.
+The `@sys-currency` system entity detects mentions of monetary currency values in user input. The currency can be expressed with a currency symbol or currency-specific terms. In either case, a number is returned.
 
 ### Recognized formats
 {: #new-system-entities-sys-currency-formats}
@@ -164,7 +164,7 @@ The `@sys-time` system entity detects mentions of times in user input. Returns t
 - `.minute`: Helper method that returns the minute value that is specified in the time.
 - `.part_of_day`: Recognizes terms that represent the time of day, such as `morning`, `afternoon`, `evening`, `night`, or `now`. Also sets a time range for each part of the day. The response contains two `@sys-time` values, one for the start and one for the end of the time range. The entities array contains a `range_link` object with `time-from` and `time-to` role types. The time ranges for different parts of the day can differ by locale. For US English, morning is `6:00:00` to `12:00:00`, afternoon is `12:00:00` to `18:00:00`, evening is `18:00:00` to `22:00:00`, and night is `22:00:00` to `23:59:59`. Night ends just before midnight because otherwise it would overlap with a new day, which is measured by `@sys-date`.
 - `.range_link`: If present, indicates that the user's input contains a time range. The start and end index values of the string that includes the time range are saved as part of the link name. Additional information is provided, including the role that each `@sys-time` plays in the range relationship. For example, the start time has a role type of `time_from` and the end time has a role type of `time_to`. To check a role value, you can use the syntax `@sys-time.role?.type == 'time_from'`. If the user input implies a range, but only one time is specified, then the `range_link` property is not returned, but one role type is returned. A `range_modifier` that identifies the word in the input that triggers the identification of a range is also returned.
-- `.relative_{timeframe}`: Recognized relative mentions of time and returns a number that shows the number of units between now and the specified time. The {timeframe} units can be `hour`, `minute`, or `second`.
+- `.relative_{timeframe}`: Recognizes relative mentions of time and returns a number that shows the number of units between now and the specified time. The {timeframe} units can be `hour`, `minute`, or `second`.
 - `.second`: Helper method that returns the second value that is specified in the time.
 - `.specific_{timeframe}`: Recognizes and captures mentions of specific time units in the user input. The {timeframe} units can be `hour`, `minute`, or `second`.
 
