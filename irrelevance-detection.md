@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-22"
+lastupdated: "2020-05-27"
 
 subcollection: assistant
 
@@ -83,3 +83,8 @@ Irrelevance detection is designed to bridge any gaps you might have in your coun
 The supplemental method examines the structure of the new utterance and compares it to the structure of the user example utterances in your training data. This alternate approach helps skills that have few or no counterexamples recognize irrelevant utterances. It is likely to have less of an effect for skills that have a sufficient number of counterexamples defined already. 
 
 Note that the new method relies on structural information that is based on data from outside your skill. So, while the new method can be useful as you are starting out, to build an assistant that provides a more customized experience, you want it to use information from data that is derived from within the application's domain. The way to ensure that your assistant does so is by adding your own counterexamples. For more information, see [Teaching your skill about topics to ignore](/docs/assistant?topic=assistant-logs#logs-mark-irrelevant).
+
+## Counterexample limits
+{: #irrelevance-detection-limits}
+
+The maximum number of counterexamples that you can create for any plan type is 25,000.

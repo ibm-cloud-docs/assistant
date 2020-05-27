@@ -715,7 +715,8 @@ Add a dialog node that can recognize the user's interest in the bot, and respond
 1.  Add the following message in the response text field:
 
     ```
-    I am a virtual assistant that is designed to answer your questions about the Truck Stop Gourmand restaurant. What should I call you?
+    I am a virtual assistant that is designed to answer your questions 
+    about the Truck Stop Gourmand restaurant. What should I call you?
     ```
     {: codeblock}
 
@@ -741,7 +742,7 @@ Add a dialog node that can recognize the user's interest in the bot, and respond
       <th>Value</th>
     </tr>
     <tr>
-      <td>$username</td>
+      <td>username</td>
       <td><? input.text ?></td>
     </tr>
     </table>
