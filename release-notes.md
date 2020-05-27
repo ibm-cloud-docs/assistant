@@ -52,8 +52,8 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
-## 26 May 2020
-{: #26May2020}
+## 27 May 2020
+{: #27May2020}
 <!--1.98-->
 
 - **Additional language support for new system entities**: The new version of the system entities is available as a beta feature in Arabic, Chinese, Korean, and Japanese dialog skills. For more information, see [Supported languages](/docs/assistant?topic=assistant-language-support).
