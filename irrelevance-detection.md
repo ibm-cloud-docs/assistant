@@ -84,7 +84,7 @@ The supplemental method examines the structure of the new utterance and compares
 
 Note that the new method relies on structural information that is based on data from outside your skill. So, while the new method can be useful as you are starting out, to build an assistant that provides a more customized experience, you want it to use information from data that is derived from within the application's domain. The way to ensure that your assistant does so is by adding your own counterexamples. For more information, see [Teaching your skill about topics to ignore](/docs/assistant?topic=assistant-logs#logs-mark-irrelevant).
 
-## Counter example limits
+## Counterexample limits
 {: #irrelevance-detection-limits}
 
-The maximum number of counter examples that you can create for any plan type is 25,000.
+The maximum number of counterexamples that you can create for any plan type is 25,000.
