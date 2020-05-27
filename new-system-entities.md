@@ -194,8 +194,8 @@ Some user input contains information that includes both date and time informatio
 
 The relationship between the date and time values is established in two ways:
 
-- Each entity that participates in the relationship contains the same datetime link attribute.
-- The literal string that spans the complete date and time mention, when they are mentioned together in input, is the same for both entities. The location information is appended to the date time link name.
+- Each entity that participates in the relationship contains the same `datetime_link` attribute.
+- The literal string that spans the complete date and time mention, when they are mentioned together in input, is the same for both entities. The location information is appended to the `datetime_link` name.
 
 ### Recognized formats
 {: #new-system-entities-sys-date-time-formats}
