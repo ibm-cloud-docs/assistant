@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-05-26"
+lastupdated: "2020-05-28"
 
 subcollection: assistant
 
@@ -28,7 +28,7 @@ subcollection: assistant
 Learn about system entities that are provided by IBM for you to use out of the box. These built-in utility entities help your assistant recognize terms and references that are commonly used by customers in conversation, such as numbers and dates. 
 {: shortdesc}
 
-New and improved versions of the numeric system entities are generally available for dialog skills in the English, Brazilian Portuguese, Czech, Dutch, French, German, Italian, and Spanish languages. The new versions are available as beta features for Arabic, Chinese, Korean, and Japanese dialog skills. The new versions of the numeric system entities provide superior number recognition with higher precision. This topic describes the legacy versions of the numeric system entities. The legacy versions are being deprecated in English, Brazilian Portuguese, Czech, Dutch, French, German, Italian, and Spanish dialog skills. For these languages, support will end on 15 July 2020. When support ends, mentions in input that are detected as person or location system entities today will no longer be detected. Switch to using the new system entities now so you have time to test your dialog before support ends. For more information, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
+New and improved versions of the numeric system entities are generally available for dialog skills in all languages. The new versions of the numeric system entities provide superior number recognition with higher precision. This topic describes the legacy versions of the numeric system entities. The legacy versions are being deprecated. Support will end on 15 July 2020. When support ends, mentions in input that are detected as person or location system entities today will no longer be detected. Switch to using the new system entities now so you have time to test your dialog before support ends. For more information, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
 {: deprecated}
 
 For information about language support for system entities, see [Supported languages](/docs/assistant?topic=assistant-language-support).
@@ -189,7 +189,7 @@ For information about processing date and time values, see the [Date and time me
 
 Available as a beta feature for only languages noted in the [Supported languages](/docs/assistant?topic=assistant-language-support) topic. 
 
-This system entity is being deprecated. A powerful alternative to using this system entity is to use a contextual entity for identifying proper nouns, such as locations. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/assistant?topic=assistant-entities#entities-annotations-overview).
+This system entity is being deprecated entirely. There is no new version of this system entity available with the new system entities. A powerful alternative to using the `@sys-location` system entity is to use a contextual entity for identifying proper nouns, such as locations. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/assistant?topic=assistant-entities#entities-annotations-overview).
 {: deprecated}
 
 The @sys-location system entity extracts place names (country, state or province, city, town, and so on) from the user's input.
@@ -318,7 +318,7 @@ You get equivalent results for other supported languages.
 
 Available as a beta feature for only languages noted in the [Supported languages](/docs/assistant?topic=assistant-language-support) topic. 
 
-This system entity is being deprecated. A powerful alternative to using this system entity is to use a contextual entity for identifying proper nouns, such as names. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/assistant?topic=assistant-entities#entities-annotations-overview).
+This system entity is being deprecated entirely. There is no new version of this system entity available with the new system entities. A powerful alternative to using the `@sys-person` system entity is to use a contextual entity for identifying proper nouns, such as names. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/assistant?topic=assistant-entities#entities-annotations-overview).
 {: deprecated}
 
 The @sys-person system entity extracts names from the user's input. Names are recognized individually, so that "Joe" is not treated as "Joseph", or vice versa.

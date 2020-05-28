@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-05-21"
+lastupdated: "2020-05-28"
 
 subcollection: assistant
 
@@ -120,21 +120,21 @@ Table 3. Entity feature support details
 
 Table 4. System entity feature support details
 
-| Language | **Legacy system entities ([number](/docs/assistant?topic=assistant-system-entities#system-entities-sys-number), [currency](/docs/assistant?topic=assistant-system-entities#system-entities-sys-currency), [percentage](/docs/assistant?topic=assistant-system-entities#system-entities-sys-percentage), [date, time](/docs/assistant?topic=assistant-system-entities#system-entities-sys-date-time))** | **[New system entities](/docs/assistant?topic=assistant-new-system-entities)** |
+| Language | **[New system entities](/docs/assistant?topic=assistant-new-system-entities)** | **[Legacy system entities](/docs/assistant?topic=assistant-system-entities)** |
 |:---|:---:|:---:|
-| **English (en)**                   | GA, Beta ([location](/docs/assistant?topic=assistant-system-entities#system-entities-sys-location), [person](/docs/assistant?topic=assistant-system-entities#system-entities-sys-person)) | GA |
-| **Arabic (ar)**                    | GA | Beta |
-| **Chinese (Simplified) (zh-cn)**   | GA | Beta |
-| **Chinese (Traditional) (zh-tw)**  | Beta | Beta |
-| **Czech (cs)**                     | GA | GA |
-| **Dutch (nl)**                     | GA | GA |
-| **French (fr)**                    | GA | GA |
-| **German (de)**                    | GA | GA |
-| **Italian (it)**                   | GA | GA |
-| **Japanese (ja)**                  | GA | Beta |
-| **Korean (ko)**                    | GA | Beta |
-| **Portuguese (Brazilian) (pt-br)** | GA | GA |
-| **Spanish (es)**                   | GA | GA |
+| **English (en)**                   | GA | Deprecated |
+| **Arabic (ar)**                    | GA | Deprecated |
+| **Chinese (Simplified) (zh-cn)**   | GA | Deprecated |
+| **Chinese (Traditional) (zh-tw)**  | GA | Deprecated |
+| **Czech (cs)**                     | GA | Deprecated |
+| **Dutch (nl)**                     | GA | Deprecated |
+| **French (fr)**                    | GA | Deprecated |
+| **German (de)**                    | GA | Deprecated |
+| **Italian (it)**                   | GA | Deprecated |
+| **Japanese (ja)**                  | GA | Deprecated |
+| **Korean (ko)**                    | GA | Deprecated |
+| **Portuguese (Brazilian) (pt-br)** | GA | Deprecated |
+| **Spanish (es)**                   | GA | Deprecated |
 {: caption="System entity feature support details" caption-side="top"}
 
 The {{site.data.keyword.conversationshort}} service supports multiple languages as noted, but the tool interface itself (descriptions, labels, etc.) is in English. All supported languages can be input and trained through the English interface.

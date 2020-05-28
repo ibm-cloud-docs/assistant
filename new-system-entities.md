@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-05-27"
+lastupdated: "2020-05-28"
 
 keywords: system entity, sys-number, sys-date, sys-time
 
@@ -30,9 +30,8 @@ subcollection: assistant
 Learn about system entities that are provided by IBM for you to use out of the box. These built-in utility entities help your assistant recognize terms and references that are commonly used by customers in conversation, such as numbers and dates. 
 {: shortdesc}
 
-- The new system entities are enabled automatically in English, Brazilian Portuguese, Czech, Dutch, French, German, Italian, and Spanish dialog skills.
-- The new system entities are supported as a beta feature in Arabic, Chinese, Korean, and Japanese dialog skills. Skills in these languages use the legacy version of the system entities unless you enable the new version from the *Options>System Entities* page. For more information, see [Supported languages](/docs/assistant?topic=assistant-language-support).
-- All dialog skills that were created before 10 March 2020 use the legacy version of the system entities unless you enable the new version. For more information, see [System entities](/docs/assistant?topic=assistant-system-entities).
+- The new system entities are enabled automatically in dialog skills of all languages.
+- New dialog skills in Arabic, Chinese, Korean, and Japanese that were created before 27 May 2020 use the legacy version of the system entities unless you enable the new version. New dialog skills in all other languages that were created before 10 March 2020 use the legacy version by default. For more information, see [System entities](/docs/assistant?topic=assistant-system-entities).
 
 For information about how to add system entities to your dialog skill, see [Creating entities](/docs/assistant?topic=assistant-entities#entities-enable-system-entities).
 

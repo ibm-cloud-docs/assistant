@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-05-27"
+lastupdated: "2020-05-28"
 
 subcollection: assistant
 
@@ -56,9 +56,9 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #27May2020}
 <!--1.98-->
 
-- **Additional language support for new system entities**: The new version of the system entities is available as a beta feature in Arabic, Chinese, Korean, and Japanese dialog skills. For more information, see [Supported languages](/docs/assistant?topic=assistant-language-support).
+- **Full language support for new system entities**: The new version of the system entities is generally available in dialog skills of all languages, including Arabic, Chinese (Simplified), Chinese (Traditional), Korean, and Japanese. For more information, see [Supported languages](/docs/assistant?topic=assistant-language-support).
 
-- **New system entities are enabled automatically**: All new dialog skills use the new version of the system entities automatically (skills in languages for which the new system entities are generally available). For more information, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
+- **New system entities are enabled automatically**: All new dialog skills use the new version of the system entities automatically. For more information, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
 
 ## 22 May 2020
 - **Spelling correction in v2 API**: The v2 `message` API now supports spelling correction options. For more information see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#send-user-input-to-assistant-stateful){: external}.
