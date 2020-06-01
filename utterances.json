@@ -4,33 +4,47 @@
         "what are webhooks",
         "what are intents",
         "whats dialog",
+	"explain system entities",
+	"use of disambiguation in Assistant",
+	"what are Context variables",
+	"use the content catalog in assistant",
+	"explain assistant",
+	"what are skills in Asistant",
+	"all about slots",
         "what triggers disambiguation",
-        "what is a digression"
+        "what is a digression in WA"
     ],
     "faqs-cannot-login": [
         "can't login to Assistant",
         "unable to log in to WA",
         "can't log on to my assistant instance",
         "unable to open watson assistant",
+	"trouble logging in to Watson Assistant",
+	"issue opening assistant",
+	"watson assistant login fails",
         "assistant login is failing"
     ],
     "faqs-login-repeatedly": [
         "you are getting redirected to login to Assistant",
         "you are getting redirected to login",
         "keep getting redirected to login to Assistant",
+	"assistant asking me to keep logging in",
+	"log in repeatedly to assistant",
         "getting a redirection message for Assistant",
+	"asked to login again to assistant",
+	"asked to log in to Assistant again ",
         "asking me to login to Assistant again"
     ],
     "faqs-getting-401": [
         "401 response code is being returned in Assistant",
-        "what does a 401 response mean",
+        "what does a 401 response mean in Assistant",
         "getting a 401 error in Assistant",
         "why am I getting 401 error for WA",
         "401 error code in WA"
     ],
     "faqs-getting-403": [
         "403 response code is being returned in Assistant",
-        "what does a 403 response mean",
+        "what does a 403 response mean in Assistant",
         "getting a 403 error in Assistant",
         "why am I getting 403 error for WA",
         "403 error code in WA"
@@ -47,13 +61,20 @@
         "getting Authentication Required:",
         "requesting username and password",
         "Sign In error when accessing Assistant",
+	"credentials to access a Watson Assistant service",
         "Getting Authentication Required error",
+	"Sign in message in Assistant",
+	"Sign in error message given",
         "Authentication error accessing Watson Assistant"
     ],
     "faqs-view-analytics": [
-        "can't view analytics page",
+        "can't view analytics page in Assistant",
         "can't view Assistant logs",
-        "can't view user conversations",
+	"can’t see assistant analytics",
+	"not see analytics page in WA",
+	"can’t view analytics page for assistant",
+	"unable to see the user conversations for WA",
+        "can't view assistant user conversations",
         "unable to see analytics page for WA",
         "cant access the analytics in Assistant"
     ],
@@ -61,10 +82,15 @@
         "I cannot view the api details for Assistant",
         "View api details are gone for WA",
         "cant see assistant service credentials",
-        "unable to view api key",
+	"can't see my API Key",
+	"can't find my API Key details in assistant",
+        "unable to see API key or service credentials",  
+        "unable to view api key for WA",
+	"can't veiw my assistant API details",
+	"unable to see my service credentials in WA",
         "credential page never refreshes in Assistant",
-        "can't see the apikey",
-        "cant access the api keys"
+        "can't see the apikey details in assistant",
+        "in Assistant cant access the api keys"
     ],
     "faqs-edit-skill": [
         "can't update intents",
@@ -77,17 +103,21 @@
         "cant change assistant skills",
         "unable to edit a skill"
     ],
-    "faqs-export-user-conversations": [
+    "faqs-export-conversation": [
         "export conversation logs",
         "export user converstions",
         "User conversation page export",
+	"export the user conversations from analytics",
         "exporting user conversation page",
+	"export the user conversations from the Analytics Tab in WA",
         "conversation log export"
     ],
-    "faqs-dialog-nodes": [
+    "faqs-nodes": [
         "export dialog nodes",
         "import dialog nodes",
         "exporting dialog node",
+	"export and import dialog node",
+	"exporting and importing dialog nodes",
         "importing dialog nodes in assistant",
         "dialog nodes be exported or imported"
     ],
@@ -98,6 +128,9 @@
         "deleted a skill, can I recover it",
         "deleted a workspace is it recoverable",
         "can a workspace be recovered if it's deleted",
+	"recover a workspace that has been deleted",
+	"can I recover a workspace",
+	"recover a deleted skill in WA",
         "need a workspace restored",
         "need a workspace recovered",
         "can skills be recovered"
@@ -122,6 +155,8 @@
         "how many days are logs stored in WA",
         "length of time for which messages are kept in Assistant",
         "how long does Assistant maintain logs",
+	"limit on how long WA logs kept",
+	"long are log files kept for a Watson Assistant Workspace",
         "time limit for logs being kept in WA"
     ],
     "faqs-webhook-url": [
@@ -129,6 +164,9 @@
         "multiple webhooks per skill",
         "multiple webhook urls in a skill",
         "one webhook URL for a dialog skill",
+	"how many url entries are allowed in a webhook",
+        "many urls for each webhook in assistant",
+	"two webhooks per assistant skill", 
         "more than one webhook per skill"
     ],
     "faqs-query-cancel": [
@@ -142,6 +180,13 @@
         "assistant training stuck",
         "stuck in training process",
         "assistant training taking a long time",
+	"training stuck for my skill",
+	"skill stuck in trianing",
+        "skill taking a long time to train",
+        "skill training taking forever",
+        "training stuck for my workspace",
+	"workspace stuck in training",
+	"workspace taking a long time to train",
         "training taking forever in WA",
         "training data seems stuck in Assistant",
         "training data take a long time"

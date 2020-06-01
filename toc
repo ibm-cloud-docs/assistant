@@ -107,8 +107,8 @@ Watson Assistant
 
     {: .topicgroup}
     System entities
-        system-entities.md
         new-system-entities.md
+        system-entities.md
         time-zones.md
         sys-date-festivals.md
 
