@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-05-28"
+lastupdated: "2020-06-02"
 
 subcollection: assistant
 
@@ -52,7 +52,10 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
-## 27 May 2020
+## Change log
+{: #release-notes-tooling-changes}
+
+### 27 May 2020
 {: #27May2020}
 <!--1.98-->
 
@@ -60,21 +63,21 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 - **New system entities are enabled automatically**: All new dialog skills use the new version of the system entities automatically. For more information, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
 
-## 22 May 2020
+### 22 May 2020
 - **Spelling correction in v2 API**: The v2 `message` API now supports spelling correction options. For more information see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#send-user-input-to-assistant-stateful){: external}.
 
-## 21 May 2020
+### 21 May 2020
 {: #21May2020}
 <!--1.97-->
 
 - **Preview link URL change**: The URL for the preview link was changed. If you previously shared the link with teammates, provide them with the new URL.
 
-## 15 May 2020
+### 15 May 2020
 {: #15May2020}
 
 - **Private endpoints support is available in Plus plan**: You can use private endpoints to route services over the {{site.data.keyword.cloud_notm}} private network instead of the public network. For more information, see [Private network endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints). This feature was previously available to users of Premium plans only.
 
-## 14 May 2020
+### 14 May 2020
 {: #14May2020}
 <!--1.96-->
 
@@ -82,17 +85,17 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 - **System entity deprecation**: As stated in the [March deprecation notice](#March2020-deprecation), the `@sys-location` and `@sys-person` system entities that were available as a beta feature are deprecated. If you are using one of these system entities in your dialog, a toggle is displayed for the entity on the *System entities* page. You can [search your dialog](/docs/assistant?topic=assistant-dialog-tasks#dialog-tasks-search) to find out where you are currently using the entity, and remove it. Consider using a contextual entity to identify references to locations and people instead. After removing the entity from your dialog, disable the entity from the *System entities* page.
 
-## 13 May 2020
+### 13 May 2020
 {: #13May2020}
 
 - **Stateless v2 message API**: The v2 runtime API now supports a new stateless `message` method. If you have a client application that manages its own state, you can use this new method to take advantage of [many of the benefits](https://medium.com/ibm-watson/the-new-watson-assistant-v2-stateless-api-unlock-enterprise-features-today-2c02a4bbdef5){: external} of the v2 API without the overhead of creating sessions. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#send-user-input-to-assistant-stateless){: external}.
 
-## 1 May 2020
+### 1 May 2020
 {: #1May2020}
 
 -  **Pricing plan changes**: We continue to revamp the overall service plan structure for {{site.data.keyword.conversationshort}}. Last month, we announced [a new low cost entry point](#1April2020) for the Plus plan. Today, the Standard plan is being retired. Existing Standard plan users are not impacted, but new users do not see the Standard plan as an option when they create a service instance. For more information, see the [Pricing](https://www.ibm.com/cloud/watson-assistant/pricing/){: external} page.
 
-## 30 April 2020
+### 30 April 2020
 {: #30April2020}
 <!--1.95.1-->
 
@@ -100,7 +103,7 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 - **Secure your Web Chat**: Enable the beta security feature of Web Chat so that you can verify that messages sent to your assistant come from only your customers and can pass sensitive information to your assistant.
 
-## 27 April 2020
+### 27 April 2020
 {: #27April2020}
 <!--1.95-->
 
@@ -108,14 +111,14 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 - **Know your plan**: Now your service plan is displayed in the page header. And if you have a Plus Trial plan, you can see how many days are left in the trial.
 
-## 21 April 2020
+### 21 April 2020
 {: #21April2020}
 
 - **Fuzzy matching support was expanded**: Added support for stemming and misspelling in French, German, and Czech dialog skills. This enhancement means that the assistant can recognize an entity value that is defined in its singular form but mentioned in its plural form in user input. It also can recognize conjugated forms of a verb that is specified as an entity value.
 
   For example, if your French-language dialog skill has an entity value of `animal`, it recognizes the plural form of the word (`animaux`) when it is mentioned in user input. If your German-language dialog skill has the root verb `haben` as an entity value, it recognizes conjugated forms of the verb (`hast`) in user input as mentions of the entity.
 
-## 14 April 2020
+### 14 April 2020
 {: #14April2020}
 <!--web chat 1.5.3-->
 
@@ -124,7 +127,7 @@ Existing models that you have trained will not be immediately impacted, but expi
   - The **Font family** field was removed from the Web Chat configuration page. The text that is displayed in the chat window uses the fonts: `IBMPlexSans, Arial, Helvetica, sans-serif`. If you want to use a different set of fonts, you can customize the CSS for your Web Chat. For more information, see [Theming](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-instance-methods#theming).
   - When your implementation does not specify a unique user ID, Web Chat adds a first party cookie with a generated anonymous ID to use to identify the unique user. The generated cookie now expires after 45 days. For more information, see [Key concepts](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/key-concepts#datapolicy){: external}.
 
-## 2 April 2020
+### 2 April 2020
 {: #2April2020}
 <!--web chat 1.5.2-->
 
@@ -137,7 +140,7 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 - **The Web Chat integration was updated**: The `learningOptOut` parameter replaced a previous version of the parameter. You can add the `learningOptOut` parameter and set it to `true` to add the `X-Watson-Learning-Opt-Out` header to each `/message` request that originates from the Web Chat. For more information about the header, see [Data collection](https://cloud.ibm.com/apidocs/assistant/assistant-v2#data-collection){: external}. For more information about the parameter, see [Configuration](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-configuration){: external}.
 
-## 1 April 2020
+### 1 April 2020
 {: #1April2020}
 
 - **Plus plan changes**: The Plus plan is now available starting at $120/month for 1,000 users on pay-as-you-go or subscription IBM Cloud accounts. And you can subscribe without contacting Sales.
@@ -161,20 +164,20 @@ Existing models that you have trained will not be immediately impacted, but expi
 
     If your app uses a `context.integrations` property that does not conform to the schema, a 400 error code will be returned.
 
-## 31 March 2020
+### 31 March 2020
 {: #31March2020}
 <!--web chat 1.5.1-->
 
 - **The Web Chat integration was updated**: The update adds an `isTrackingEnabled` parameter. You can add this parameter and set it to `false` to add the `X-Watson-Learning-Opt-Out` header to each `/message` request that originates from the Web Chat. For more information about the header, see [Data collection](https://cloud.ibm.com/apidocs/assistant/assistant-v2#data-collection){: external}. For more information about the parameter, see [Configuration](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-configuration){: external}.
 
-## 26 March 2020
+### 26 March 2020
 {: #26March2020}
 
 - **The Covid-19 content catalog is available in Brazilian Portuguese, French, and Spanish**: The content catalog defines a group of intents that recognize the common types of questions people ask about the novel coronavirus. You can use the catalog to jump-start development of chatbots that can answer questions about the virus and help to minimize the anxiety and misinformation associated with it. For more information about how to add a content catalog to your skill, see [Using content catalogs](/docs/assistant?topic=assistant-catalog).
 
   ![Shows a list of the intents associated with the COVID-19 content catalog.](images/covid-19-catalog.png)
 
-## 20 March 2020
+### 20 March 2020
 {: #20March2020}
 
 - **Web Chat integration version 1.4.0 is available**: The update includes the following features:
@@ -182,7 +185,7 @@ Existing models that you have trained will not be immediately impacted, but expi
   - You can customize the CSS theme that is used by the Web Chat. For more information, see [Theming](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-instance-methods#theming){: new_window}.
   - Shadow DOM is no longer used in the Web Chat. When you use custom response types or HTML in your dialog, you can apply CSS styles that are defined in your web page to the assistant's response. To override any default styling in the Web Chat, you must specify the `!important` modifier in your CSS. For more information, see [Rendering response types](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-render#html){: new_window}.
 
-## 19 March 2020
+### 19 March 2020
 {: #19March2020}
 <!--1.93.1-->
 
@@ -190,12 +193,12 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 - **Fixed a problem with missing User Conversation data**: A recent change resulted in no logs being shown in the User Conversations page unless you had a skill as the chosen data source. And the chosen skill had to be the same skill (with same skill ID) that was connected to the assistant when the user messages were submitted.
 
-## 18 March 2020
+### 18 March 2020
 {: #18March2020}
 
 - **Technology preview is discontinued**: The technology preview user interface was replaced with the {{site.data.keyword.conversationshort}} standard user interface. If you used an Actions page to create actions and steps for your skill previously, you cannot access the Actions page anymore. Instead, use the Intents and Dialog pages to work with your skill.
 
-## 16 March 2020
+### 16 March 2020
 {: #16March2020}
 <!--1.93-->
 
@@ -203,7 +206,7 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 - **Order of response types is preserved**: Previously, if you included a response type of **Search skill** in a list of response types for a dialog node, the search results were displayed last despite its placement in the list. This behavior was changed to show the search results in the appropriate order, namely in the sequence in which the search skill response type is listed for the dialog node.
 
-## 10 March 2020
+### 10 March 2020
 {: #10March2020}
 <!--1.92-->
 
@@ -213,7 +216,7 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 - **The new system entities are used by new skills**: For new English, Brazilian Portuguese, Czech, Dutch, French, German, Italian, and Spanish dialog skills, the new system entities are enabled automatically. If you decide to turn on a system entity and add it to your dialog, it's the new and improved version of the system entity that is used. For more information, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
 
-## March 2020 deprecation notice
+### March 2020 deprecation notice
 {: #March2020-deprecation}
 
 To help us continue to improve and expand the capabilities of the assistants you build with {{site.data.keyword.conversationshort}}, we are deprecating some of the older technologies.
@@ -251,34 +254,34 @@ The following technologies are being deprecated:
   
   For more information about the latest supported versions, see [Service API versioning](#release-notes-api-version). To learn about some of the changes that were introduced with each API version update, you can search these release notes for *New API version* entries.
 
-## 6 March 2020
+### 6 March 2020
 {: #6March2020}
 <!--1.91.1-->
 
 - **Transfer a web chat conversation to a human agent**: Delight your customers with 360-degree support by integrating your web chat with a third-party service desk solution. When a customer asks to speak to a person, you can connect them to an agent through a service desk solution, such as Zendesk or Salesforce. Service desk support is a beta feature. For more information, see [Adding support for transfers](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-haa).
 
-## 2 March 2020
+### 2 March 2020
 {: #2March2020}
 
 - **Known issue accessing logs**: If you cannot access user logs from the Analytics page, ask the owner of the service instance for the skill to change your service level access to make you a Manager of the instance. For more information about access control, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).
 
-## 28 February 2020
+### 28 February 2020
 {: #28February2020}
 
 - **{{site.data.keyword.conversationfull}} is available in {{site.data.keyword.icp4dfull_notm}}**: The service can be installed on-premises in environments where {{site.data.keyword.icp4dfull_notm}} 2.5 is installed on OpenShift or standalone. See the [{{site.data.keyword.icp4dfull_notm}} documentation](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/assistant-overview.html){: external} for more information.
 
-## 26 February 2020
+### 26 February 2020
 {: #26February2020}
 <!--1.90-->
 
 - **Slot `Save it as` field retains your edits**: When you edit what gets saved for a slot by using the JSON editor to edit the value of the context variable to be something other than what is specified in the **Check for** field, your changes are kept even if someone subsequently clicks the **Save it as** field.
 
-## 20 February 2020
+### 20 February 2020
 {: #20February2020}
 
 - **Access control changes are coming**: Notifications are displayed in the user interface for anyone with Reader and Writer level access to a service instance. The notification explains that access control is going to change soon, and that what they can do in the instance will change unless they are given Manager service access beforehand. For more information, see [Preventing loss of access](/docs/assistant?topic=assistant-access-control).
 
-## 14 February 2020
+### 14 February 2020
 {: #14February2020}
 <!--1.89-->
 
@@ -289,12 +292,12 @@ The following technologies are being deprecated:
 
 - **More Web Chat color settings**: You can now specify the color of more elements of the Web Chat integration. For example, you can define one color for the web chat window header. You can define a different color for the user message bubble. And another color for interactive components, such as the launcher button for the chat.
 
-## 13 February 2020
+### 13 February 2020
 {: #13February2020}
 
 - **Track API events**: Premium plan users can now use the Activity Tracker service to track how users and applications interact with {{site.data.keyword.conversationfull}} in {{site.data.keyword.cloud}}. See [Activity Tracker events](/docs/assistant?topic=assistant-at-events).
 
-## 5 February 2020
+### 5 February 2020
 {: #5February2020}
 
 - **New API version**: The current API version is now `2020-02-05`. The following changes were made with this version:
@@ -303,26 +306,26 @@ The following technologies are being deprecated:
 
     - The `alternate_intents` property is stored as a Boolean value instead of a String.
 
-## 4 February 2020
+### 4 February 2020
 {: #4February2020}
 <!--1.88-->
 
 - **Product user interface makeover**: The UI has been updated to be more intuitive, responsive, and consistent across its pages. While the look and feel of the UI elements has changed, their function has not.
 - **Requesting early access**: The button you click to request participation in the early access program has moved from the Skills page to the user account menu. For more information, see [Feedback](/docs/assistant?topic=assistant-feedback#feedback-beta).
 
-## 24 January 2020
+### 24 January 2020
 {: #24January2020}
 <!--1.87.4-->
 
 - **New system entities are now generally available in multiple languages**: The new and improved numeric system entities are now generally available in all supported languages, except Arabic, Chinese, Japanese, and Korean, where they are available as a beta feature. They are not used by your dialog skill unless you enable them from the **Options>System entities** page. For more information, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
 
-## 14 January 2020
+### 14 January 2020
 {: #14January2020}
 <!--1.87.2-->
 
 - **Fixed an error message that was displayed when opening an instance**: An error that was displayed when you launched {{site.data.keyword.conversationshort}} from the {{site.data.keyword.cloud}} dashboard has been fixed. Previously, an error message that said, `Module 'ui-router' is not available! You either misspelled the module name or forgot to load it` would sometimes be displayed.
 
-## 12 December 2019
+### 12 December 2019
 {: #12December2019}
 
 - **New network and data security feature**
@@ -348,7 +351,7 @@ The following technologies are being deprecated:
         These URLs do not introduce a breaking change. The new URLs work both for your existing service instances and for new instances. The original URLs continue to work on your existing service instances for at least one year (until December 2020).
     - For more information, see [Authenticating to Watson services](/docs/watson?topic=watson-iam).
 
-## 26 November 2019
+### 26 November 2019
 {: #26November2019}
 <!--1.85-->
 
@@ -366,7 +369,7 @@ The following technologies are being deprecated:
   - Disambiguation is enabled automatically for all nodes. You can disable it for the entire dialog or for individual dialog nodes.
   - When testing, you might notice that the order of the options in the disambiguation list changes from one test run to the next. Don't worry; this new behavior is intended. As part of work being done to help the assistant learn automatically from user choices, the order of the options in the disambiguation list is being randomized on purpose. Changing the order helps to avoid bias that can be introduced by a percentage of people who always pick the first option without first reviewing their choices.
 
-## 12 November 2019
+### 12 November 2019
 {: #12November2019}
 <!--1.83-->
 
@@ -376,7 +379,7 @@ The following technologies are being deprecated:
 
 - **Technology preview**: A technology preview experience was released. A select set of new users are being presented with a new user interface that takes a different approach to building an assistant.
 
-## 7 November 2019
+### 7 November 2019
 {: #7Novembber2019}
 <!--1.82-->
 
@@ -384,7 +387,7 @@ The following technologies are being deprecated:
 
 - **Time zone support for now() method**: You can now specify the time zone for the date and time that is returned by the `now()` method. See [Now()](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-dates-now).
 
-## 24 October 2019
+### 24 October 2019
 {: #24October2019}
 <!--1.80-->
 
@@ -392,12 +395,12 @@ The following technologies are being deprecated:
 
 - **Error message when opening an instance**: When you launch {{site.data.keyword.conversationshort}} from the {{site.data.keyword.cloud}} dashboard, you might see an error message that says, `Module 'ui-router' is not available! You either misspelled the module name or forgot to load it.` You can ignore the message. Refresh the web browser page to close the notification. 
 
-## 16 October 2019
+### 16 October 2019
 {: #16October2019}
 
 The changes from 14 October are now available in Dallas.
 
-## 14 October 2019
+### 14 October 2019
 {: #14October2019}
 <!--1.79-->
 
@@ -421,7 +424,7 @@ The following updates are available in all locations except Dallas currently.
 
 - **Known issue: Cannot rename search skills**: You currently cannot rename a search skill after you create it. 
  
-## 9 October 2019 
+### 9 October 2019 
 {: #9October2019}
 
 - **New system entities changes**: The following updates have been made:
@@ -429,12 +432,12 @@ The following updates are available in all locations except Dallas currently.
   - In addition to English and German, the new numeric system entities are now available in these languages: Brazilian Portuguese, Czech, French, Italian, and Spanish.
   - The `part_of_day` property of the `@sys-time` entity now returns a time range instead of a single time value.
 
-## 23 September 2019 
+### 23 September 2019 
 {: #23September2019}
 
 - **Dallas updates**: The updates from 20 September are now available to service instances hosted in Dallas.
 
-## 20 September 2019 
+### 20 September 2019 
 {: #20September2019}
 <!--1.77-->
 
@@ -447,7 +450,7 @@ The following updates are available in all locations except Dallas currently.
 
 - **Dialog text response syntax fix**: Fixed a bug in which the format of a dialog response reverted to an earlier version of the JSON syntax. Standard text responses were being saved as `output.text` instead of `output.generic`. For more information about the `output` object, see [Anatomy of a dialog call](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-message-anatomy). <!--30176-->
 
-## 13 September 2019 
+### 13 September 2019 
 {: #13September2019}
 <!--1.76-->
 
@@ -455,27 +458,27 @@ The following updates are available in all locations except Dallas currently.
 
 - **Creating contextual entities got easier**: The process you use to annotate entity mentions from intent user examples was improved. You can now put the intent page into annotation mode to more easily select and label mentions. See [Adding contextual entities](/docs/assistant?topic=assistant-entities#entities-create-annotation-based).
 
-## 6 September 2019
+### 6 September 2019
 {: #6September2019}
 
 - **Label character limit increase**: The limit to the number of characters allowed for a label that you define for an option response type changed from 64 characters to 2,048 characters. <!--1.75 --> 
 
-## 12 August 2019
+### 12 August 2019
 {: #12August2019}
 
 - **New dialog method**: The `getMatch` method was added. You can use this method to extract a specific occurrence of a regular expression pattern that recurs in user input. For more details, see the [dialog methods](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-strings-getMatch) topic.
 
-## 9 August 2019
+### 9 August 2019
 {: #9August2019}
 
 - **Introductory product tour**: For some first-time users, a new introductory product tour is shown that the user can choose to follow to perform the initial steps of creating an assistant.
 
-## 6 August 2019
+### 6 August 2019
 {: #6August2019}
 
 - Webhook callouts and Dialog page improvements are available in Dallas.
 
-## 1 August 2019
+### 1 August 2019
 {: #1August2019}
 
 The following updates are available in all locations except Dallas currently.
@@ -485,7 +488,7 @@ The following updates are available in all locations except Dallas currently.
 
 - **Improved dialog page responsiveness**: In all service instances, the user interface of the Dialog page was updated to use a new JavaScript library that increases the page responsiveness. As a result, the look of some graphical user interface elements, such as buttons, changed slightly, but the function did not.
 
-## 31 July 2019
+### 31 July 2019
 {: #31July2019}
 
 - **Search skill and autocorrection are generally available**: The search skill and spelling autocorrection features, which were previously available as beta features, are now generally available. 
@@ -493,17 +496,17 @@ The following updates are available in all locations except Dallas currently.
   - Search skills can be created by users of Plus or Premium plans only. 
   - You can enable autocorrection for English-language dialog skills only. It is enabled automatically for new English-language dialog skills.
 
-## 26 July 2019
+### 26 July 2019
 {: #26July2019}
 
 - **Missing skills issue is resolved**: In some cases, workspaces that were created through the API only were not being displayed when you opened the {{site.data.keyword.conversationshort}} user interface. This issue has been addressed. All workspaces that you create by using the API are displayed as dialog skills when you open the user interface.
 
-## 23 July 2019
+### 23 July 2019
 {: #23July2019}
 
 - **Dialog search is fixed**: In some skills, the search function was not working in the Dialog page. The issue is now fixed.
 
-## 17 July 2019
+### 17 July 2019
 {: #17July2019}
 
 - **Disambiguation choice limit**: You can now set the maximum number of options to show to users when the assistant asks them to clarify what they want to do. For more information about disambiguation, see [Disambiguation](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
@@ -514,12 +517,12 @@ The following updates are available in all locations except Dallas currently.
 
 <!--- **Premium plan maximum inactivity period increases**: The maximum time that a session can persist after a user stops interacting with the assistant increased from 1 day to 7 days (168 hours).
 -->
-## 15 July 2019
+### 15 July 2019
 {: #15July2019}
 
 - **Numeric system entities upgrade available in Dallas ![Beta](images/beta.png)**: The new system entities are now also available as a beta feature for instances that are hosted in Dallas. See [New system entities](/docs/assistant?topic=assistant-new-system-entities)
 
-## 12 June 2019
+### 12 June 2019
 {: #12June2019}
 
 - **Numeric system entities upgrade ![Beta](images/beta.png)**: New system entities are available as a beta feature that you can enable in dialog skills that are written in English or German. The revised system entities offer better date and time understanding. They can recognize date and number spans, national holiday references, and classify mentions with more precision. For example, a date such as `May 15` is recognized as a date mention(`@sys-date:2019-05-15`), and is *not* also identified as a number mention (`@sys-number:15`). See [New system entities](/docs/assistant?topic=assistant-new-system-entities)
@@ -529,7 +532,7 @@ The following updates are available in all locations except Dallas currently.
 
 - **A Plus Trial plan is available**: You can use the free Plus Trial plan to try out the features of the Plus plan as you make a purchasing decision. The trial lasts for 30 days. After the trial period ends, if you do not upgrade to a Plus plan, your Plus Trial instance is converted to a Lite plan instance.
 
-## 23 May 2019
+### 23 May 2019
 {: #23May2019}
 
 The following updates are available in all locations except Dallas currently.
@@ -541,36 +544,36 @@ The following updates are available in all locations except Dallas currently.
 
 - **An introductory tour is now available**: A short product tour is now displayed when a new service instance is created. Brand new users are also given help as they start development. A new assistant is created for them automatically. Informational popups are displayed to introduce the product user interface features, and guide the new user toward taking the key first step of creating a dialog skill. 
 
-## 10 April 2019
+### 10 April 2019
 {: #10April2019}
 
 - **Autocorrection is now available ![Beta](images/beta.png)**: Autocorrection is a beta feature that helps your assistant understand what your customers want. It corrects misspellings in the input that customers submit before the input is evaluated. With more precise input, your assistant can more easily recognize entity mentions and understand the customer's intent. See [Correcting user input](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check) for more details.
 
-## 22 March 2019
+### 22 March 2019
 {: #22March2019}
 
 - **Introducing search skill ![Beta](images/beta.png)**: A search skill helps you to make your assistant useful to customers faster. Customer inquiries that you did not anticipate and so have not built dialog logic to handle can be met with useful responses. Instead of saying it can't help, the assistant can query an external data source to find relevant information to share in its response. Over time, you can build dialog responses to answer customer queries that require follow-up questions to clarify the user's meaning or for which a short and clear response is suitable. And you can use search skill responses to address more open-ended customer queries that require a longer explanation. This beta feature is available to users of Premium and Plus service plans only. ![Plus or Premium plan only](images/plus.png)
 
   See [Building a search skill](/docs/assistant?topic=assistant-skill-search-add) for more details.
 
-## 14 March 2019
+### 14 March 2019
 {: #14March2019}
 
 - **Have Watson help you build intents**: Use Watson machine learning technology to help you choose the right intents for your assistant. Watson analyzes your existing call center log data to identify the customer questions and requests that occur most often. It then recommends intents and user examples you can use to train your assistant so it can recognize the same and similar requests in future. Once you determine the right intents to use, you can augment them and keep them up-to-date over time using the intent user example recommendations functionality, which is already available. For more information, see [Get help defining intents](/docs/assistant?topic=assistant-intent-recommendations).
 
-## 4 March 2019
+### 4 March 2019
 {: #4March2019}
 
 - **Simplified navigation**: The sidebar navigation with separate *Build*,  *Improve*, and *Deploy* tabs has been removed. Now, you can get to all the tools you need to build a dialog skill from the main skill page.
 
 - **Improve page is now called Analytics**: The informational metrics that Watson generates from conversations between your users and your assistant moved from the *Improve* tab of the sidebar to a new tab on the main skill page called **Analytics**.
 
-## 1 March 2019
+### 1 March 2019
 {: #1March2019}
 
 - **Japanese intent user example recommendations ![Plus or Premium plan only](images/plus.png)**: You can now upload a file that contains raw user inputs in Japanese, such as user inquiries from a call center log, that Watson can analyze and mine for intent user example candidates. See [Adding examples from log files](/docs/assistant?topic=assistant-intent-recommendations).
 
-## 28 February 2019
+### 28 February 2019
 {: #28February2019}
 
 - **New API version**: The current API version is now `2019-02-28`. The following changes were made with this version:
@@ -585,24 +588,24 @@ The following updates are available in all locations except Dallas currently.
 
       This change does not apply to node or condtional response conditions. Any strings that begin with a number sign (#) which are specified in conditions continue to be treated as intent references. Also, you can use SpEL expression syntax to force the system to treat a string in the `context` or `output` objects of a message as an intent. For example, specify the intent as `<? #intent-name ?>`.
 
-## 25 February 2019
+### 25 February 2019
 {: #25February2019}
 
 **Slack integration enhancement**: You can now choose the type of event that triggers your assistant in a Slack channel. Previously, when you integrated your assistant with Slack, the assistant interacted with users through a direct message channel. Now, you can configure the assistant to listen for mentions, and respond when it is mentioned in other channels. You can choose to use one or both event types as the mechanism through which your assistant interacts with users.
 
-## 11 February 2019
+### 11 February 2019
 {: #11February2019}
 
 **Integrate with Intercom**: Intercom, a leading customer service messaging platform, has partnered with IBM to add a new agent to the team, a virtual {{site.data.keyword.conversationshort}}. You can integrate your assistant with an Intercom application to enable the app to seamlessly pass user conversations between your assistant and human support agents. This integration is available to Plus and Premium plan users only. See [Integrating with Intercom](/docs/assistant?topic=assistant-deploy-intercom) for more details.
 
-## 8 February 2019
+### 8 February 2019
 {: #8February2019}
 
 - **Version your skills**: You can now capture a snapshot of the the intents, entities, dialog, and configuration settings for a skill at key points during the development process. With versions, it's safe to get creative. You can deploy new design approaches in a test environment to validate them before you apply any updates to a production deployment of your assistant. See [Creating skill versions](/docs/assistant?topic=assistant-versions) for more details.
 
 - **Arabic content catalog**: Users of Arabic-language skills can now add prebuilt intents to their dialogs. See [Using content catalogs](/docs/assistant?topic=assistant-catalog) for more information.
 
-## 17 January 2019
+### 17 January 2019
 {: #17January2019}
 
 - **Czech language support is generally available**: Support for the Czech language is no longer classified as beta; it is now generally available. See [Supported languages](/docs/assistant?topic=assistant-language-support) for more information.
@@ -612,7 +615,7 @@ The following updates are available in all locations except Dallas currently.
   - German and Korean system entities
   - Intent classification tokenization for Arabic, Dutch, French, Italian, Japanese, Portuguese, and Spanish
 
-## 4 January 2019
+### 4 January 2019
 {: #4January2019}
 
 - **IBM Cloud Functions in DC and London locations**: You can now make programmatic calls to IBM Cloud Functions from the dialog of an assistant in a service instance that is hosted in the London and Washington, DC data centers. See [Making programmatic calls from a dialog node](/docs/assistant?topic=assistant-dialog-actions-client).
@@ -626,14 +629,14 @@ The following updates are available in all locations except Dallas currently.
 
    See the [array method documentation](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-arrays) for more details.
 
-## 13 December 2018
+### 13 December 2018
 {: #13December2018}
 
 - **London data center**: You can now create {{site.data.keyword.conversationshort}} service instances that are hosted in the London data center without syndication. See [Data centers](/docs/assistant?topic=assistant-services-information#services-information-regions) for more details.
 
 - **Dialog node limit changes**: The dialog node limit was temporarily changed from 100,000 to 500 for new Standard plan instances. This limit change was later reversed. If you created a Standard plan instance during the time frame in which the limit was in effect, your dialogs might be impacted. The limit was in effect for skills created between 10 December and 12 December 2018. The lower limits will be removed from all impacted instances in January. If you need to have the lower limit lifted before then, open a support ticket.
 
-## 1 December 2018
+### 1 December 2018
 {: #1December2018}
 
    To determine the number of dialog nodes in a dialog skill, do one of the following things:
@@ -653,7 +656,7 @@ The following updates are available in all locations except Dallas currently.
 
      See [Troubleshooting skill import issues](/docs/assistant?topic=assistant-skill-dialog-add#skill-dialog-add-import-errors) for information about how to edit skills that you want to continue using.
 
-## 27 November 2018
+### 27 November 2018
 {: #27November2018}
 
 - **A new service plan, the Plus plan, is available**: The new plan offers premium-level features at a lower price point. Unlike previous plans, the Plus plan is a user-based billing plan. It measures usage by the number of unique users that interact with your assistant over a given time period. To get the most from the plan, if you build your own client application, design your app such that it defines a unique ID for each user, and passes the user ID with each /message API call. For the built-in integrations, the session ID is used to identify user interactions with the assistant. See [User-based plans](/docs/assistant?topic=assistant-services-information#services-information-user-based-plans) for more information.
@@ -723,12 +726,12 @@ The following updates are available in all locations except Dallas currently.
 
 - **Intent user example recommendations ![Plus or Premium plan only](images/plus.png)**: You can upload a file that contains raw user inputs, such as user inquiries from a call center log, that Watson can analyze and mine for intent user example candidates. See [Adding examples from log files](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations-task).
 
-## 20 November 2018
+### 20 November 2018
 {: #20November2018}
 
 **Recommendations are discontinued**: The Recomendations section on the Improve tab was removed. Recommendations was a beta feature available to Premium plan users only. It recommended actions that users could take to improve their training data. Instead of consolidating recommendations in one place, recommendations are now being made available from the parts of the tool where you make actual training data changes. For example, while adding entity synonyms, you can now opt to see a list of synonymous terms that are recommended by Watson. If you are looking for other ways to analyze your user conversation logs in more detail, consider using Jupyter notebooks. See [Advanced tasks](/docs/assistant?topic=assistant-logs-resources) for more details.
 
-## 9 November 2018
+### 9 November 2018
 {: #9November2018}
 
 - **Major user interface revision**: The {{site.data.keyword.conversationshort}} service has a new look and added features.
@@ -756,12 +759,12 @@ The following updates are available in all locations except Dallas currently.
 
   - **Preview links from London instances**: If your service instance is hosted in London, then you must edit the preview link URL. The URL includes a region code for the region where the instance is hosted. Because instances in London are syndicated to Dallas, you must replace the `eu-gb` reference in the URL with `us-south` for the preview web page to render properly.
 
-## 8 November 2018
+### 8 November 2018
 {: #8November2018}
 
 - **Japanese data center**: You can now create {{site.data.keyword.conversationshort}} service instances that are hosted in the Tokyo data center. See [Data centers](/docs/assistant?topic=assistant-services-information#services-information-regions) for more details.
 
-## 30 October 2018
+### 30 October 2018
 {: #30October2018}
 
 - **New API authentication process**: The {{site.data.keyword.conversationshort}} service transitioned from using Cloud Foundry to using token-based Identity and Access Management (IAM) authentication in the following regions:
@@ -773,28 +776,28 @@ The following updates are available in all locations except Dallas currently.
 
   For all existing service instances, you continue to use service credentials (`{username}:{password}`) for authentication.
 
-## 25 October 2018
+### 25 October 2018
 {: #25October2018}
 
 - **Entity synonym recommendations are available in more languages**: Synonym recommendation support was added for the French, Japanese, and Spanish languages.
 
-## 26 September 2018
+### 26 September 2018
 {: #26September2018}
 
 - **{{site.data.keyword.conversationfull}} is available in {{site.data.keyword.icpfull}}**
 
-## 21 September 2018
+### 21 September 2018
 {: #21September2018}
 
 - **New API version**: The current API version is now `2018-09-20`. In this version, the `errors[].path` attribute of the error object that is returned by the API is expressed as a [JSON Pointer](https://tools.ietf.org/html/rfc6901) instead of in dot notation form.
 - **Web actions support**: You can now call {{site.data.keyword.openwhisk_short}} web actions from a dialog node. See [Making programmatic calls from a dialog node](/docs/assistant?topic=assistant-dialog-actions-client) for more details.
 
-## 15 August 2018
+### 15 August 2018
 {: #15August2018}
 
 - **Entity fuzzy matching support improvements**: Fuzzy matching is fully supported for English entities, and the misspelling feature is no longer a Beta-only feature for many other languages. See [Supported languages](/docs/assistant?topic=assistant-language-support) for details.
 
-## 6 August 2018
+### 6 August 2018
 {: #6August2018}
 
 - **Intent conflict resolution ![Plus or Premium plan only](images/plus.png)**: The tool can now help you to resolve conflicts when two or more user examples in separate intents are similar to one another. Non-distinct user examples can weaken the training data and make it harder for your assistant to map user input to the appropriate intent at run time. See [Resolving intent conflicts](/docs/assistant?topic=assistant-intents#intents-resolve-conflicts) for details.
@@ -805,7 +808,7 @@ The following updates are available in all locations except Dallas currently.
 
 - **Digression return message**: You can now specify text to display when the user returns to a node after a digression. The user will have seen the prompt for the node already. You can change the message slightly to let users know they are returning to where they left off. For example, specify a response like, `Where were we? Oh, yes...` See [Digressions](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-digressions) for more details.
 
-## 12 July 2018
+### 12 July 2018
 {: #12July2018}
 
 - **Rich response types**: You can now add rich responses that include elements such as images or buttons in addition to text, to your dialog. See [Rich responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more information.
@@ -827,17 +830,17 @@ The following updates are available in all locations except Dallas currently.
 
 - **Pattern limit expanded**: When using the **Patterns** field to [define specific patterns for an entity value](/docs/assistant?topic=assistant-entities#entities-patterns), the pattern (regular expression) is now limited to 512 characters.
 
-## 2 July 2018
+### 2 July 2018
 {: #2July2018}
 
 - **Jump-tos from conditional responses**: You can now configure a conditional response to jump directly to another node. See [Conditional responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multiple) for more details.
 
-## 21 June 2018
+### 21 June 2018
 {: #21June2018}
 
 - **Language updates for system entities**: Dutch and Simplified Chinese language support are now generally available. Dutch language support includes fuzzy matching for misspellings. Traditional Chinese language support includes the availability of [system entities](/docs/assistant?topic=assistant-system-entities) in beta release. See [Supported languages](/docs/assistant?topic=assistant-language-support) for details.
 
-## 14 June 2018
+### 14 June 2018
 {: #14June2018}
 
 - **Washington, DC data center opens**: You can now create {{site.data.keyword.conversationshort}} service instances that are hosted in the Washington, DC data center. See [Data centers](/docs/assistant?topic=assistant-services-information#services-information-regions) for more details.
@@ -857,7 +860,7 @@ The following updates are available in all locations except Dallas currently.
 
   If you are not sure which type of authentication to use, view the {{site.data.keyword.conversationshort}} credentials by clicking the service instance from the Services section of the [{{site.data.keyword.Bluemix_notm}} Resource List](https://cloud.ibm.com){: external}.
 
-## 25 May 2018
+### 25 May 2018
 {: #25May2018}
 
 - **New sample workspace**: The sample workspace that is provided for you to explore or to use as a starting point for your own workspace has changed. The **Car Dashboard** sample was replaced by a **Customer Service** sample. The new sample showcases how to use content catalog intents and other newer features to build a bot. It can answer common questions, such as inquiries about store hours and locations, and illustrates how to use a node with slots to schedule in-store appointments.
@@ -874,22 +877,22 @@ The following updates are available in all locations except Dallas currently.
 
 - **Deployment changes**: The **Test in Slack** option was removed.
 
-## 11 May 2018
+### 11 May 2018
 {: #11May2018}
 
 - **Information security**: The documentation includes some new details about data privacy. Read more in [Information security](/docs/assistant?topic=assistant-information-security).
 
-## 7 May 2018
+### 7 May 2018
 {: #7May2018}
 
 - **Sydney, Australia data center opens**: You can now create {{site.data.keyword.conversationshort}} service instances that are hosted in the Sydney, Australia data center. See [IBM Cloud global data centers ![External link icon](../../icons/launch-glyph.svg "External link icon"](https://www.ibm.com/cloud/data-centers/) for more details.
 
-## 4 April 2018
+### 4 April 2018
 {: #4April2018}
 
 - **Search dialogs**: You can now [search dialog nodes](/docs/assistant?topic=assistant-dialog-tasks#dialog-tasks-search) for a given word or phrase.
 
-## 15 March 2018
+### 15 March 2018
 {: #15March2018}
 
 - **Introducing {{site.data.keyword.conversationfull}}**: {{site.data.keyword.ibmwatson}} Conversation has been renamed. It is now called {{site.data.keyword.conversationfull}}. The name change reflects the fact that {{site.data.keyword.conversationshort}} is expanding to provide prebuilt content and tools that help you more easily share the virtual assistants you build. Read [this blog post](https://www.ibm.com/blogs/watson/2018/03/the-future-of-watson-conversation-watson-assistant/) for more details.
@@ -908,12 +911,12 @@ The following updates are available in all locations except Dallas currently.
 
 - **Enhanced user metrics**: The Improve component has been enhanced with additional user metrics and logging statistics. For example, the Overview page includes several new, detailed graphs that summarize interactions between users and your application, the amount of traffic for a given time period, and the intents and entities that were recognized most often in user conversations.
 
-## 12 March 2018
+### 12 March 2018
 {: #12March2018}
 
 - **New date and time methods**: Methods were added that make it easier to perform date calculations from the dialog. See [Date and time calculations](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-date-time-calculations) for more details.
 
-## 16 February 2018
+### 16 February 2018
 {: #16February2018}
 
 - **Dialog node tracing**: When you use the "Try it out" pane to test a dialog, a location icon is displayed next to each response. You can click the icon to highlight the path that your assistant traversed through the dialog tree to arrive at the response. See [Building a dialog](/docs/assistant?topic=assistant-dialog-tasks#dialog-tasks-test) for details.
@@ -929,24 +932,24 @@ The following updates are available in all locations except Dallas currently.
     - Nodes with `type`=`response_condition`
     - Nodes with `type`=`event_handler` and `event_name`=`input`
 
-## 9 February 2018
+### 9 February 2018
 {: #9February2018}
 
 - **Dutch system entities (Beta)**: Dutch language support has been enhanced to include the availability of [System entities](/docs/assistant?topic=assistant-system-entities) in beta release. See [Supported languages](/docs/assistant?topic=assistant-language-support) for details.
 
-## 29 January 2018
+### 29 January 2018
 {: #29January2018}
 
 - The {{site.data.keyword.conversationshort}} REST API now supports new request parameters:
   - Use the `append` parameter when updating a workspace to indicate whether the new workspace data should be added to the existing data, rather than replacing it. For more information, see [Update workspace](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#update-workspace){: external}.
   - Use the `nodes_visited_details` parameter when sending a message to indicate whether the response should include additional diagnostic information about the nodes that were visited during processing of the message. For more information, see [Send message](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#get-response-to-user-input){: external}.
 
-## 23 January 2018
+### 23 January 2018
 {: #23January2018}
 
 - **Unable to retrieve list of workspaces**: If you see this or similar error messages when working in the tooling, it might mean that your session has expired. Log out by choosing **Log out** from the **User information** icon ![User information icon menu](images/user-icon.png), and then log back in.
 
-## 8 December 2017
+### 8 December 2017
 {: #8December2017}
 
 - **Log data access across instances (Premium users only)**: If you are a {{site.data.keyword.conversationshort}} Premium user, your premium instances can optionally be configured to allow access to log data from workspaces across your different premium instances.
@@ -955,32 +958,32 @@ The following updates are available in all locations except Dallas currently.
 
 - **Capture groups in pattern entities**: You can identify groups in the regular expression pattern that you define for an entity. Identifying groups is useful if you want to be able to refer to a subsection of the pattern later. For example, your entity might have a regex pattern that captures US phone numbers. If you identify the area code segment of the number pattern as a group, then you can subsequently refer to that group to access just the area code segment of a phone number. See [Defining entities](/docs/assistant?topic=assistant-entities#entities-creating-task) for more information.
 
-## 6 December 2017
+### 6 December 2017
 {: #6December2017}
 
 - **{{site.data.keyword.openwhisk}} integration (Beta)**: Call {{site.data.keyword.openwhisk}} (formerly IBM OpenWhisk) actions directly from a dialog node. This feature enables you to, for example, call an action to retrieve weather information from within a dialog node, and then condition on the returned information in the dialog response. Currently, you can call an action from a {{site.data.keyword.openwhisk_short}} instance that is hosted in the US South region from {{site.data.keyword.conversationshort}} instances that are hosted in the US South region. See [Making programmatic calls from a dialog node](/docs/assistant?topic=assistant-dialog-actions-client) for more details.
 
-## 5 December 2017
+### 5 December 2017
 {: #5December2017}
 
 - **Redesigned UI for Intents and Entities**: The `Intents` and `Entities` tabs have been redesigned to provide an easier, more efficient workflow when creating and editing entities and intents. See [Defining intents](/docs/assistant?topic=assistant-intents-create-task) and [Defining entities](/docs/assistant?topic=assistant-entities#entities-creating-task) for information about working with these tabs.
 
-## 30 November 2017
+### 30 November 2017
 {: #30November2017}
 
 - **Eastern Arabic numeral support**: Eastern Arabic numerals are now supported in Arabic system entities.
 
-## 29 November 2017
+### 29 November 2017
 {: #29November2017}
 
 - **Improving understanding of user input across workspaces**: You can now improve a workspace with utterances that were sent to other workspaces within your instance. For example, you might have multiple versions of production workspaces and development workspaces; you can use the same utterance data to improve any of these workspaces. See [Improving across workspaces](/docs/assistant?topic=assistant-logs#logs-deploy-id).
 
-## 20 November 2017
+### 20 November 2017
 {: #20November2017}
 
 - **GB18030 compliance**: GB18030 is a Chinese standard that specifies an extended code page for use in the Chinese market. This code page standard is important for the software industry because the China National Information Technology Standardization Technical Committee has mandated that any software application that is released for the Chinese market after September 1, 2001, be enabled for GB18030. The {{site.data.keyword.conversationshort}} service supports this encoding, and is certified GB18030-compliant.
 
-## 9 November 2017
+### 9 November 2017
 {: #9November2017}
 
 - **Intent examples can directly reference entities**: You can now specify an entity reference directly in an intent example. That entity reference, along with all its values or synonyms, is used by the {{site.data.keyword.conversationshort}} service classifier for training the intent. For more information, see [*Entity as example*](/docs/assistant?topic=assistant-intents#intents-entity-as-example) in the [Intents](/docs/assistant?topic=assistant-intents) topic.
@@ -988,12 +991,12 @@ The following updates are available in all locations except Dallas currently.
   Currently, you can only directly reference closed entities that you define. You cannot directly reference [pattern entities](/docs/assistant?topic=assistant-entities#entities-patterns) or [system entities](/docs/assistant?topic=assistant-system-entities).
   {: note}
 
-## 8 November 2017
+### 8 November 2017
 {: #8November2017}
 
 - **{{site.data.keyword.conversationshort}} connector**: You can use the new {{site.data.keyword.conversationshort}} connector tool to connect your workspace to a Slack or Facebook Messenger app that you own, making it available as a chat bot that Slack or Facebook Messenger users can interact with. This tool is available only for the {{site.data.keyword.Bluemix_notm}} US South region.
 
-## 3 November 2017
+### 3 November 2017
 {: #3November2017}
 
 - **Dialog updates**: The following updates make is easier for you to build a dialog. (See [Building a dialog](/docs/assistant?topic=assistant-dialog-build) for details.)
@@ -1011,18 +1014,18 @@ The following updates are available in all locations except Dallas currently.
 
     - To keep the page where you edit a slot simple, you now select menu options to a.) add a condition that must be met for the slot to be processed, and b.) add conditional responses for the Found and Not found conditions for a slot. Unless you choose to add this extra functionality, the slot condition and multiple responses fields are not displayed, which declutters the page and makes it easier to use.
 
-## 25 October 2017
+### 25 October 2017
 {: #25October2017}
 
 - **Updates to Simplified Chinese**: Language support has been enhanced for Simplified Chinese. This includes intent classification improvements using character-level word embeddings, and the availability of system entities. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied; see [Updated models](#release-notes-updated-models) for more information.
 - **Updates to Spanish** - Improvements have been made to Spanish intent classification, for very large datasets.
 
-## 11 October 2017
+### 11 October 2017
 {: #11October2017}
 
 - **Updates to Korean**: Language support has been enhanced for Korean. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied; see [Updated models](#release-notes-updated-models) for more information.
 
-## 3 October 2017
+### 3 October 2017
 {: #3October2017}
 
 - **Pattern-defined entities (Beta)**: You can now define specific patterns for an entity, using regular expressions. This can help you identify entities that follow a defined pattern, for example SKU or part numbers, phone numbers, or email addresses. See [Pattern-defined entities](/docs/assistant?topic=assistant-entities#entities-patterns) for additional details.
@@ -1034,23 +1037,23 @@ The following updates are available in all locations except Dallas currently.
 
 - **Fuzzy matching filtered by dictionary (English only)**: An improved version of fuzzy matching for entities is now available, for English. This improvement prevents the capturing of some common, valid English words as fuzzy matches for a given entity. For example, fuzzy matching will not match the entity value `like` to `hike` or `bike`, which are valid English words, but will continue to match examples such as `lkie` or `oike`.
 
-## 27 September 2017
+### 27 September 2017
 {: #27September2017}
 
 - **Condition builder updates**: The control that is displayed to help you define a condition in a dialog node has been updated. Enhancements include support for listing available context variable names after you enter the $ to begin adding a context variable.
 
-## 31 August 2017
+### 31 August 2017
 {: #31August2017}
 
 - **Improve section rollback**: The median conversation time metric, and corresponding filters, are being temporarily removed from the Overview page of the Improve section. This removal will prevent the calculation of certain metrics from causing the median conversation time metric, and the conversations over time graph, to display inaccurate information. IBM regrets removing functionality from the tool, but is committed to ensuring that we are communicating accurate information to users.
 - **Dialog node names**: You can now assign any name to a dialog node; it does not need to be unique. And you can subsequently change the node name without impacting how the node is referenced internally. The name you specify is saved as a title attribute of the node in the workspace JSON file and the system uses a unique ID that is stored in the name attribute to reference the node.
 
-## 23 August 2017
+### 23 August 2017
 {: #23August2017}
 
 - **Updates to Korean, Japanese, and Italian**: Language support has been enhanced for Korean, Japanese, and Italian. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied; see [Updated models](#release-notes-updated-models) for more information.
 
-## 10 August 2017
+### 10 August 2017
 {: #10August2017}
 
 - **Accent normalization**: In a conversational setting, users may or may not use accents while interacting with the {{site.data.keyword.conversationshort}} service. As such, an update has been made to the algorithm so that accented and non-accented versions of words are treated the same for intent detection and entity recognition.
@@ -1071,85 +1074,85 @@ The following updates are available in all locations except Dallas currently.
 
 - **Workspace opt-out flag**: The {{site.data.keyword.conversationshort}} REST API now supports an opt-out flag for workspaces. This flag indicates that workspace training data such as intents and entities are not to be used by IBM for general service improvements. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#data-collection){: external}
 
-## 7 August 2017
+### 7 August 2017
 {: #7August2017}
 
 - **`Next` and `last` date interpretation**: The {{site.data.keyword.conversationshort}} service treats `last` and `next` dates as referring to the most immediate last or next day referenced, which may be in either the same or a previous week. See the [system entities](/docs/assistant?topic=assistant-system-entities#system-entities-sys-date-time) topic for additional information.
 
-## 3 August 2017
+### 3 August 2017
 {: #3August2017}
 
 - **Fuzzy matching for additional languages (Beta)**: Fuzzy matching for entities is now available for additional languages, as noted in the [Supported languages](/docs/assistant?topic=assistant-language-support) topic.
 - **Partial match (Beta - English only)**: Fuzzy matching will now automatically suggest substring-based synonyms present in user-defined entities, and assign a lower confidence score as compared to the exact entity match. See [Fuzzy matching](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching) for details.
 
-## 28 July 2017
+### 28 July 2017
 {: #28July2017}
 
 - When you set bidirectional preferences for the tooling, you can now specify the graphical user interface direction.
 - The color scheme of the tooling was updated to be consistent with other Watson services and products.
 
-## 19 July 2017
+### 19 July 2017
 {: #19July2017}
 
 - The {{site.data.keyword.conversationshort}} REST API now supports access to dialog nodes. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#list-dialog-nodes){: external}.
 
-## 14 July 2017
+### 14 July 2017
 {: #14July2017}
 
 - The slots functionality of dialogs was enhanced. For example, a *slot_in_focus* property was added that you can use to define a condition that applies to a single slot only. See [Gathering information with slots](/docs/assistant?topic=assistant-dialog-slots) for details.
 
-## 12 July 2017
+### 12 July 2017
 {: #12July2017}
 
 - **Support for Czech**: Czech language support has been introduced; please see the [Supported languages](/docs/assistant?topic=assistant-language-support) topic for additional details.
 
-## 11 July 2017
+### 11 July 2017
 {: #11July2017}
 
 - **Test in Slack**: You can use the new **Test in Slack** tool to quickly deploy your workspace as a Slack bot user for testing purposes. This tool is available only for the {{site.data.keyword.Bluemix_notm}} US South region.
 - **Updates to Arabic**: Arabic language support has been enhanced to include absolute scoring per intent, and the ability to mark intents as irrelevant; please see the [Supported languages](/docs/assistant?topic=assistant-language-support) topic for additional details. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied; see [Updated models](#release-notes-updated-models) for more information.
 
-## 23 June 2017
+### 23 June 2017
 {: #23June2017}
 
 - **Updates to Korean**: Korean language support has been enhanced; please see the [Supported languages](/docs/assistant?topic=assistant-language-support) topic for additional details. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied; see [Updated models](#release-notes-updated-models) for more information.
 
-## 22 June 2017
+### 22 June 2017
 {: #22June2017}
 
 - **Introducing slots**: It is now easier to collect multiple pieces of information from a user in a single node by adding slots. Previously, you had to create several dialog nodes to cover all the possible combinations of ways that users might provide the information. With slots, you can configure a single node that saves any information that the user provides, and prompts for any required details that the user does not. See [Gathering information with slots](/docs/assistant?topic=assistant-dialog-slots) for more details.
 - **Simplified dialog tree** - The dialog tree has been redesigned to improve its usability. The tree view is more compact so it is easier to see where you are within it. And the links between nodes are represented in a way that makes it easier to understand the relationships between the nodes.
 
-## 21 June 2017
+### 21 June 2017
 {: #21June2017}
 
 - **Arabic support**: Language support for Arabic is now generally available. For details, see [Configuring bidirectional languages](/docs/assistant?topic=assistant-language-support#language-support-configure-bidirectional).
 - **Language updates**: The {{site.data.keyword.conversationshort}} service algorithms have been updated to improve overall language support. See the [Supported languages](/docs/assistant?topic=assistant-language-support) topic for details.
 
-## 16 June 2017
+### 16 June 2017
 {: #16June2017}
 
 - **Recommendations (Beta - Premium users only)**: The Improve panel also includes a **Recommendations** page that recommends ways to improve your system by analyzing the conversations that users have with your chatbot, and taking into account your system's current training data and response certainty.
 
-## 14 June 2017
+### 14 June 2017
 {: #14June2017}
 
 - **Fuzzy matching for additional languages (Beta)**: Fuzzy matching for entities is now available for additional languages, as noted in the [Supported languages](/docs/assistant?topic=assistant-language-support) topic. You can turn on fuzzy matching per entity to improve the ability of your assistant to recognize terms in user input with syntax that is similar to the entity, without requiring an exact match. The feature is able to map user input to the appropriate corresponding entity despite the presence of misspellings or slight syntactical differences. For example, if you define giraffe as a synonym for an animal entity, and the user input contains the terms giraffes or girafe, the fuzzy match is able to map the term to the animal entity correctly. See [Fuzzy matching](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching) for details.
 
-## 13 June 2017
+### 13 June 2017
 {: #13June2017}
 
 - **User conversations**: The Improve panel now includes a **User conversations** page, which provides a list of user interactions with your chatbot that can be filtered by keyword, intent, entity, or number of days. You can open individual conversations to correct intents, or to add entity values or synonyms.
 - **Regex change**: The regular expressions that are supported by SpEL functions like find, matches, extract, replaceFirst, replaceAll and split have changed. A group of regular expression constructs are no longer allowed, including look-ahead, look-behind, possessive repetition and backreference constructs. This change was necessary to avoid a security exposure in the original regular expression library.
 
-## 12 June 2017
+### 12 June 2017
 {: #12June2017}
 
 - The maximum number of workspaces that you can create with the **Lite** plan (formerly named the Free plan) changed from 3 to 5.
 - You can now assign any name to a dialog node; it does not need to be unique. And you can subsequently change the node name without impacting how the node is referenced internally. The name you specify is treated as an alias and the system uses its own internal identifier to reference the node.
 - You can no longer change the language of a workspace after you create it by editing the workspace details. If you need to change the language, you can export the workspace as a JSON file, update the language property, and then import the JSON file as a new workspace.
 
-## 6 June 2017
+### 6 June 2017
 {: #6June2017}
 
 - **Learn**: A new *Learn about {{site.data.keyword.conversationfull}}* page is available that provides getting started information and links to service documentation and other useful resources. To open the page, click the ![i for information.](images/info.png) icon in the page header.
@@ -1164,19 +1167,19 @@ The following updates are available in all locations except Dallas currently.
 - **Workspace import progress**: When you import a workspace from a JSON file, a tile for the workspace is displayed immediately, in which information about the progress of the import is displayed.
 - **Reduced training time**: Multiple models are now trained in parallel, which noticeably reduces the training time for large workspaces.
 
-## 26 May 2017
+### 26 May 2017
 {: #26May2017}
 
 - The current API version is now `2017-05-26`. This version introduces the following changes:
     - The schema of ErrorResponse objects has changed. This change affects all endpoints and methods. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant){: external}.
     - The internal schema used to represent dialog nodes in exported workspace JSON has changed. If you use the `2017-05-26` API to import a workspace that was exported using an earlier version, some dialog nodes might not import correctly. For best results, always import a workspace using the same version that was used to export it.
 
-## 25 May 2017
+### 25 May 2017
 {: #25May2017}
 
 - You can now manage context variables in the "Try it out" pane. Click the **Manage context** link to open a new pane where you can set and check the values of context variables as you test the dialog. See [Testing your dialog](/docs/assistant?topic=assistant-dialog-tasks#dialog-tasks-test) for more information.
 
-## 16 May 2017
+### 16 May 2017
 {: #16May2017}
 
 - A **Car Dashboard** sample workspace is now available when you open the tool. To use the sample as a starting point for your own workspace, edit the workspace. If you want to use it for multiple workspaces, then duplicate it instead. The sample workspace does not count toward your subscription workspace total unless you use it.
@@ -1186,7 +1189,7 @@ The following updates are available in all locations except Dallas currently.
 - Experimental Korean language support for 5 system entities (`@sys-date`, `@sys-time`, `@sys-currency`, `@sys-number`, `@sys-percentage`) is now available. There are known issues for some of the numeric entities, and limited support for informal language input.
 - An Overview page is available from the Improve tab. The page provides a summary of interactions with your bot. You can view the amount of traffic for a given time period, as well as the intents and entities that were recognized most often in user conversations. For additional information, see [Using the Overview page](/docs/assistant?topic=assistant-logs-overview).
 
-## 27 April 2017
+### 27 April 2017
 {: #27April2017}
 
 - The following system entities are now available as beta features in English only:
@@ -1196,7 +1199,7 @@ The following updates are available in all locations except Dallas currently.
     For more information, see the [System entities reference](/docs/assistant?topic=assistant-system-entities).
 - Fuzzy matching for entities is a beta feature that is now available in English. You can turn on fuzzy matching per entity to improve the ability of your assistant to recognize terms in user input with syntax that is similar to the entity, without requiring an exact match. The feature is able to map user input to the appropriate corresponding entity despite the presence of misspellings or slight syntactical differences. For examples, if you define **giraffe** as a synonym for an animal entity, and the user input contains the terms *giraffes* or *girafe*, the fuzzy match is able to map the term to the animal entity correctly. See [Defining entities](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching) and search for `Fuzzy Matching` for details.
 
-## 18 April 2017
+### 18 April 2017
 {: #18April2017}
 
 - The {{site.data.keyword.conversationshort}} REST API now supports access to the following resources:
@@ -1214,7 +1217,7 @@ The following updates are available in all locations except Dallas currently.
 - The option to mark user input as irrelevant is now available for all supported languages. This is a beta feature.
 - A new Credentials tab provides a single place where you can find all of the information you need for connecting your application to a workspace (such as the {{site.data.keyword.conversationshort}} credentials and workspace ID), as well as other deployment options. To access the Credentials tab for your workspace, click the ![Menu](images/Menu_16.png) icon and select **Credentials**.
 
-## 9 March 2017
+### 9 March 2017
 {: #9March2017}
 
 The {{site.data.keyword.conversationshort}} REST API now supports access to the following resources:
@@ -1226,7 +1229,7 @@ The {{site.data.keyword.conversationshort}} REST API now supports access to the 
 
 For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1){: external}.
 
-## 7 March 2017
+### 7 March 2017
 {: #7March2017}
 
 - The use of `.` or `..` as an intent name causes problems and is no longer supported.
@@ -1235,17 +1238,17 @@ For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assi
 
     Paying customers can contact support for a database change.
 
-## 1 March 2017
+### 1 March 2017
 {: #1March2017}
 
 - System entities are now enabled in German.
 
-## 22 February 2017
+### 22 February 2017
 {: #22February2017}
 
 - Messages are now limited to 2,048 characters.
 
-## 3 February 2017
+### 3 February 2017
 {: #3February2017}
 
 - We changed how intents are scored and added the ability to mark input as irrelevant to your application. For details, see [Defining intents](/docs/assistant?topic=assistant-intents) and search for `Mark as irrelevant`.
@@ -1256,17 +1259,17 @@ For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assi
 
   Under the new process, if neither the target node nor its peers is evaluated as true, the dialog turn is ended. To reimplement the old model, add a final peer node with a condition of `true`. In the response, use a **Jump to** action that targets the condition of the first node at the root level of your dialog tree.
 
-## 11 January 2017
+### 11 January 2017
 {: #11January2017}
 
 - In this release, you can customize node titles in dialog.
 
-## 22 December 2016
+### 22 December 2016
 {: #22December2016}
 
 - In this release, dialog nodes display a new section for `node title`. The ability to customize the `node title` is not available. When collapsed, the `node title` displays the `node condition` of the dialog node. If there is not a `node condition`, "Untitled Node" is displayed as the title.
 
-## 19 December 2016
+### 19 December 2016
 {: #19December2016}
 
 Several changes make the dialog editor easier and more intuitive to use:
@@ -1274,20 +1277,20 @@ Several changes make the dialog editor easier and more intuitive to use:
 - A larger editing view makes it easier to view all the details of a node as you work on it.
 - A node can contain multiple responses, each triggered by a separate condition. For more information see [Multiple responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-responses).
 
-## 5 December 2016
+### 5 December 2016
 {: #5December2016}
 
 - New languages are supported, all in Experimental mode: German, Traditional Chinese, Simplified Chinese, and Dutch.
 - Two new system entities are available: @sys-date and @sys-time. For details, see [System entities](/docs/assistant?topic=assistant-system-entities).
 
-## 21 October 2016
+### 21 October 2016
 {: #21October2016}
 
 - The {{site.data.keyword.conversationshort}} service now provides system entities, which are common entities that can be used across any use case. For details, see [Defining entities](/docs/assistant?topic=assistant-entities) and search for `Enabling system entities`.
 - You can now view a history of conversations with users on the Improve page. You can use this to understand your bot's behavior. For details, see [Improving your skill](/docs/assistant?topic=assistant-logs).
 - You can now import entities from a comma-separated value (CSV) file, which helps with when you have a large number of entities. For details, see [Defining entities](/docs/assistant?topic=assistant-entities) and search for `Importing entities`.
 
-## 20 September 2016
+### 20 September 2016
 {: #20September2016}
 
 **New version**: 2016-09-20
@@ -1296,19 +1299,19 @@ To take advantage of the changes in a new version, change the value of the `vers
 
 - version **2016-09-20**: `dialog_stack` changed from an array of strings to an array of JSON objects.
 
-## 29 August 2016
+### 29 August 2016
 {: #29August2016}
 
 - You can move dialog nodes from one branch to another, as siblings or peers. For details, see [Moving a dialog node](/docs/assistant?topic=assistant-dialog-tasks#dialog-tasks-move-node).
 - You can expand the JSON editor window.
 - You can view chat logs of your bot's conversations to help you understand it's behavior. You can filter by intents, entities, date, and time. For details, see [Improving your skill](/docs/assistant?topic=assistant-logs)
 
-## 11 July 2016
+### 11 July 2016
 {: #21July2016}
 
 - This General Availability release enables you to work with entities and dialogs to create a fully functioning bot.
 
-## 18 May 2016
+### 18 May 2016
 {: #18May2016}
 
 - This Experimental release of the {{site.data.keyword.conversationshort}} introduces the user interface and enables you to work with workspaces, intents, and examples.
