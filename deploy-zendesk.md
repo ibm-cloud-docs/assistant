@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-06-03"
+lastupdated: "2020-06-04"
 
 subcollection: assistant
 
@@ -86,7 +86,7 @@ To set up a Zendesk service desk integration, complete the following steps:
 
     - Download the Watson Assistant Zendesk application from the Zendesk Chat setup page in {{site.data.keyword.conversationshort}}.
 
-      On Safari, the application files are extracted from the ZIP file into a folder. To keep the file archived as a .zip file, so you can uplaod it later, edit the Safari preferences. Clear the *Open safe files after downloading* checkbox.
+      On Safari, the application files are extracted from the ZIP file into a folder. To keep the file archived as a .zip file, so you can upload it later, edit the Safari preferences. Clear the *Open safe files after downloading* checkbox.
       {: note}
 
     - Copy the credentials that are generated for you in the **Watson Assistant Zendesk app credentials** field. You will need them in a later step.
@@ -143,7 +143,7 @@ Before you can secure the Zendesk connection, complete the following required ta
 
     For more information, see [Passing sensitive data](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-security-encrypt).
 
-    Zendesk also expects `iat` and `external_id` name and value pairs but there's no need for you to provide this information because IBM derives these values and adds them to a JWT that it creates for you.
+    Zendesk also expects `iat` and `external_id` name and value pairs. However, there's no need for you to provide this information. IBM automatically provides a JWT that contains these values.
 
     For example:
 
@@ -199,7 +199,7 @@ To secure the Zendesk connection, complete the following steps:
 
 1.  {: #deploy-zendesk-secure-anonymous}Decide whether to allow unidentified users to access Zendesk.
 
-    The Web Chat allows anonymous users to initiate chats. However as soon as you enable visitor authentication, Zendesk requires that the name and email of each user be provided. If you try to connect without passing the required information, the connection will be refused. 
+    The Web Chat allows anonymous users to initiate chats. However, as soon as you enable visitor authentication, Zendesk requires that the name and email of each user be provided. If you try to connect without passing the required information, the connection will be refused. 
 
     If you want to allow anonymous users to connect to Zendesk, you can provide fictitious name and email data. Write a function to populate the two fields with fictitious name and email values.
 
