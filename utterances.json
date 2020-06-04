@@ -12,6 +12,8 @@
 	"what are skills in Asistant",
 	"all about slots",
         "what triggers disambiguation",
+	"overview of Watson Assistant terms",
+	"whats a skill",   
         "what is a digression in WA"
     ],
     "faqs-cannot-login": [
@@ -65,6 +67,7 @@
         "Getting Authentication Required error",
 	"Sign in message in Assistant",
 	"Sign in error message given",
+	"credentials to access a Watson Assistant service that I previously accesed",     
         "Authentication error accessing Watson Assistant"
     ],
     "faqs-view-analytics": [
@@ -75,6 +78,8 @@
 	"can’t view analytics page for assistant",
 	"unable to see the user conversations for WA",
         "can't view assistant user conversations",
+	"access do I need to view analytics", 
+	"Where can i find the analytics page",  
         "unable to see analytics page for WA",
         "cant access the analytics in Assistant"
     ],

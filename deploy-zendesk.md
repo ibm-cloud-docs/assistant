@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-05-04"
+lastupdated: "2020-06-03"
 
 subcollection: assistant
 
@@ -24,13 +24,15 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Integrating with Zendesk ![Beta](images/beta.png)
+# Integrating with Zendesk
 {: #deploy-zendesk}
 
 Integrate your Web Chat with a Zendesk service desk solution so your customers always get the help they need.
 {: shortdesc}
 
 Integrate with a Zendesk service desk by deploying your assistant with the Web Chat integration. The Web Chat serves as the client interface for your assistant. If, in the course of a conversation with your assistant, a customer asks to speak to a person, you can transfer the conversation directly to a Zendesk agent.
+
+![Plus or Premium plan only](images/plus.png) This integration type is available to Plus or Premium plan users only.
 
 Zendesk Chat lets you help customers in real time, which increases customer satisfaction. And satisfied customers are happier customers. To learn more about this service desk solution, see the [Zendesk website](https://www.zendesk.com/chat/){: external}.
 
@@ -43,6 +45,10 @@ Zendesk Chat is an add-on to Zendesk Support. Zendesk Support puts all your cust
 
     A Zendesk Chat Enterprise plan is required.
     {: important}
+
+1.  Decide whether you want to enable security.
+
+    If you choose to enable security in Zendesk, you must collect the name and email address of each user. This information must be passed to the Web Chat so it can be provided to Zendesk when the conversation is transferred.
 
 ## Setting up the Zendesk service desk connection
 {: #deploy-zendesk-task}
@@ -80,6 +86,9 @@ To set up a Zendesk service desk integration, complete the following steps:
 
     - Download the Watson Assistant Zendesk application from the Zendesk Chat setup page in {{site.data.keyword.conversationshort}}.
 
+      On Safari, the application files are extracted from the ZIP file into a folder. To keep the file archived as a .zip file, so you can uplaod it later, edit the Safari preferences. Clear the *Open safe files after downloading* checkbox.
+      {: note}
+
     - Copy the credentials that are generated for you in the **Watson Assistant Zendesk app credentials** field. You will need them in a later step.
 
     - Log in to Zendesk with a user ID that has administrative privileges.
@@ -108,4 +117,102 @@ Watch the following 4-minute video to see someone set up a connection to a Zende
 ## Adding transfer support to your dialog
 {: #deploy-zendesk-dialog-prereq}
 
-Update your dialog to make sure it understands when users request to speak to a person, and can transfer the conversation properly. See [Adding transfer support to your dialog](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-dialog-prereq).
+Update your dialog to make sure it understands when users request to speak to a person, and can transfer the conversation properly. For more information, see [Adding transfer support to your dialog](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-dialog-prereq).
+
+## Securing the transfer to Zendesk
+{: #deploy-zendesk-secure}
+
+Before you can secure the Zendesk connection, complete the following required tasks:
+
+1.  {: #deploy-zendesk-secure-prereqs}Secure the Web Chat. For more information see [Enable security](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-security-task).
+1.  Encrypt sensitive information that you pass to the Web Chat. 
+
+    When you enable security in Zendesk, you must provide the name and email address of the current user with each request. Configure the Web Chat to pass this information in the payload.
+
+    Specify the information by using the following syntax. Use the exact names (`name` and `email`) for the two name and value pairs.
+
+    ```yaml
+    {
+    user_payload : {  
+             name: '#{customerName}',
+             email: '#{customerEmail}'
+      }
+    }     
+    ```
+    {: codeblock}
+
+    For more information, see [Passing sensitive data](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-security-encrypt).
+
+    Zendesk also expects `iat` and `external_id` name and value pairs but there's no need for you to provide this information because IBM derives these values and adds them to a JWT that it creates for you.
+
+    For example:
+
+    ```json
+    const userPayload = {
+     "name" : "Cade Jones",
+     "email" : "cade@example.com",
+    }
+    ```
+    {: codeblock}
+
+    ```javascript
+    // Sample NodeJS code on your server.
+    const jwt = require('jsonwebtoken');
+    const RSA = require('node-rsa');
+
+    const rsaKey = new RSA(process.env.PUBLIC_IBM_RSA_KEY);
+
+    /**
+    * Returns a signed JWT. Optionally, adds an encrypted user_payload in stringified JSON.
+    */
+    function mockLogin(userID, userPayload) {
+        const payload = {
+          sub: userID, // Required
+          iss: 'www.ibm.com', // Required
+          acr: 'loa1' // Required
+          // A short-lived exp claim is automatically added by the jsonwebtoken library.
+        };
+        if (userPayload) {
+            // If there is a user payload, it is encrypted in base64 format using the IBM public key.
+            payload.user_payload = rsaKey.encrypt(userPayload, 'base64');
+        }
+        const token = jwt.sign(payload, process.env.YOUR_PRIVATE_RSA_KEY, { algorithm: 'RS256', expiresIn: '10000ms' });
+        return token;
+        }
+    ```
+    {: codeblock}
+
+1.  From the Zendesk application, enable visitor authentication.
+
+    - From the Chat dashboard navigation pane, expand *Settings*, and then click *Widget*.
+    - Open the *Widget security* tab.
+    - In the *Visitor Authentication* section, click the *Generate* button.
+
+    For more information, see [Enabling authenticated visitors in the Chat widget](https://support.zendesk.com/hc/en-us/articles/360022185314-Enabling-authenticated-visitors-in-the-Chat-widget){: external}. You do not need to follow the steps to create a JWT. The Assistant service generates a JSON Web Token for you.
+1.  Copy the shared secret from Zendesk.
+
+To secure the Zendesk connection, complete the following steps:
+
+1.  {: #deploy-zendesk-secure-task}In the *Authenticate users* section, set the toggle to **On**.
+
+1.  Paste the secret that you copied from the Zendesk setup page into the **Zendesk shared secret** field.
+
+1.  {: #deploy-zendesk-secure-anonymous}Decide whether to allow unidentified users to access Zendesk.
+
+    The Web Chat allows anonymous users to initiate chats. However as soon as you enable visitor authentication, Zendesk requires that the name and email of each user be provided. If you try to connect without passing the required information, the connection will be refused. 
+
+    If you want to allow anonymous users to connect to Zendesk, you can provide fictitious name and email data. Write a function to populate the two fields with fictitious name and email values.
+
+    For example, your function must check whether you know the name and email of the current user, and if not, add canned values for them:
+
+    ```json
+    const userPayload = {
+     "name" : "Jane Doe1",
+     "email" : "jdoe1@example.com",
+    }
+    ```
+    {: codeblock}
+
+    After writing a function that ensures that name and email values are always provided, set the *Authenticate anonymous user chat transfers* toggle to **On**.
+
+If you haven't yet, update your dialog to make sure it understands when users request to speak to a person, and can transfer the conversation properly. For more information, see [Adding transfer support to your dialog](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-dialog-prereq).
