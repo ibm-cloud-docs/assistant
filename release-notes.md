@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-06-02"
+lastupdated: "2020-06-04"
 
 subcollection: assistant
 
@@ -55,6 +55,14 @@ Existing models that you have trained will not be immediately impacted, but expi
 ## Change log
 {: #release-notes-tooling-changes}
 
+### 3 June 2020
+{: #3June2020}
+<!--1.99-->
+
+- **Zendesk support is generally available**: Integrate your Web Chat with Zendesk so your assistant can transfer customers who asks to speak to a person to a Zendesk agent who can answer their questions. And now you can secure the connection to Zendesk. For more information, see [Adding support for transfers](/docs/assistant?topic=assistant-deploy-zendesk).
+
+-  **Pricing plan changes**: We continue to revamp the overall service plan structure for {{site.data.keyword.conversationshort}}. In April, we announced [a new low cost entry point](#1April2020) for the Plus plan. Today, the Standard plan is being retired. Existing Standard plan users are not impacted; they can continue to work in their Standard instances and provision new instances.  New users do not see the Standard plan as an option when they create a service instance. For more information, see the [Pricing](https://www.ibm.com/cloud/watson-assistant/pricing/){: external} page.
+
 ### 27 May 2020
 {: #27May2020}
 <!--1.98-->
@@ -89,11 +97,6 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #13May2020}
 
 - **Stateless v2 message API**: The v2 runtime API now supports a new stateless `message` method. If you have a client application that manages its own state, you can use this new method to take advantage of [many of the benefits](https://medium.com/ibm-watson/the-new-watson-assistant-v2-stateless-api-unlock-enterprise-features-today-2c02a4bbdef5){: external} of the v2 API without the overhead of creating sessions. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#send-user-input-to-assistant-stateless){: external}.
-
-### 1 May 2020
-{: #1May2020}
-
--  **Pricing plan changes**: We continue to revamp the overall service plan structure for {{site.data.keyword.conversationshort}}. Last month, we announced [a new low cost entry point](#1April2020) for the Plus plan. Today, the Standard plan is being retired. Existing Standard plan users are not impacted, but new users do not see the Standard plan as an option when they create a service instance. For more information, see the [Pricing](https://www.ibm.com/cloud/watson-assistant/pricing/){: external} page.
 
 ### 30 April 2020
 {: #30April2020}

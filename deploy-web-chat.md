@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-26"
+lastupdated: "2020-05-28"
 
 subcollection: assistant
 
@@ -450,15 +450,15 @@ To authenticate and specify a unique ID for each customer, add the user ID infor
 
 If you disable security, then you can use the `instance.updateUserID()` method to specify user IDs. For more information, see [Adding user identity information](#deploy-web-chat-userid).
 
-## Adding support for transfers ![Beta](images/beta.png)
+## Adding support for transfers
 {: #deploy-web-chat-haa}
 
 Delight your customers with 360-degree support by integrating your Web Chat with a third-party service desk solution. 
 
 The following service desk offerings are supported:
 
-1.   {: #deploy-web-chat-salesforce}[Salesforce](/docs/assistant?topic=assistant-deploy-salesforce)
 1.   {: #deploy-web-chat-zendesk}[Zendesk](/docs/assistant?topic=assistant-deploy-zendesk)
+1.   {: #deploy-web-chat-salesforce}[Salesforce](/docs/assistant?topic=assistant-deploy-salesforce) ![Beta](images/beta.png)
 
 After you set up the service desk integration, you must update your dialog to ensure it understands user requests to speak to someone, and can transfer the conversation properly.
 
