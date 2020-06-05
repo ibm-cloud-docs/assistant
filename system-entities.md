@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-05-28"
+lastupdated: "2020-06-05"
 
 subcollection: assistant
 
@@ -192,6 +192,8 @@ Available as a beta feature for only languages noted in the [Supported languages
 This system entity is being deprecated entirely. There is no new version of this system entity available with the new system entities. A powerful alternative to using the `@sys-location` system entity is to use a contextual entity for identifying proper nouns, such as locations. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/assistant?topic=assistant-entities#entities-annotations-overview).
 {: deprecated}
 
+For more information about how to use contextual entites to identify locations, see the [Detecting Names And Locations With Watson Assistant](https://medium.com/ibm-watson/detecting-names-and-locations-with-watson-assistant-e3e1fa2a8427) blog post on Medium.
+
 The @sys-location system entity extracts place names (country, state or province, city, town, and so on) from the user's input.
 
 ### Recognized formats
@@ -320,6 +322,8 @@ Available as a beta feature for only languages noted in the [Supported languages
 
 This system entity is being deprecated entirely. There is no new version of this system entity available with the new system entities. A powerful alternative to using the `@sys-person` system entity is to use a contextual entity for identifying proper nouns, such as names. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/assistant?topic=assistant-entities#entities-annotations-overview).
 {: deprecated}
+
+For more information about how to use contextual entites to identify names of people, see the [Detecting Names And Locations With Watson Assistant](https://medium.com/ibm-watson/detecting-names-and-locations-with-watson-assistant-e3e1fa2a8427){: external} blog post on Medium.
 
 The @sys-person system entity extracts names from the user's input. Names are recognized individually, so that "Joe" is not treated as "Joseph", or vice versa.
 
