@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-05-28"
+lastupdated: "2020-06-05"
 
 keywords: system entity, sys-number, sys-date, sys-time
 
@@ -34,6 +34,8 @@ Learn about system entities that are provided by IBM for you to use out of the b
 - New dialog skills in Arabic, Chinese, Korean, and Japanese that were created before 27 May 2020 use the legacy version of the system entities unless you enable the new version. New dialog skills in all other languages that were created before 10 March 2020 use the legacy version by default. For more information, see [System entities](/docs/assistant?topic=assistant-system-entities).
 
 For information about how to add system entities to your dialog skill, see [Creating entities](/docs/assistant?topic=assistant-entities#entities-enable-system-entities).
+
+For information about how to use contextual entites to identify people and location names, see the [Detecting Names And Locations With Watson Assistant](https://medium.com/ibm-watson/detecting-names-and-locations-with-watson-assistant-e3e1fa2a8427){: external} blog post on Medium.
 
 ## @sys-currency entity
 {: #new-system-entities-sys-currency}
