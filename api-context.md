@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-12"
+lastupdated: "2020-06-11"
 
 subcollection: assistant
 
@@ -113,8 +113,9 @@ print(json.dumps(response, indent=2))
 {: python}
 
 ```java
-MessageInputOptions inputOptions = new MessageInputOptions();
-inputOptions.setReturnContext(true);
+MessageInputOptions inputOptions = new MessageInputOptions.Builder()
+      .returnContext(true)
+      .build();
 
 MessageInput input = new MessageInput.Builder()
   .messageType("text")
@@ -123,24 +124,30 @@ MessageInput input = new MessageInput.Builder()
   .build();
 
 // create global context with user ID
-MessageContextGlobalSystem system = new MessageContextGlobalSystem();
-system.setUserId("my_user_id");
-MessageContextGlobal globalContext = new MessageContextGlobal();
-globalContext.setSystem(system);
+MessageContextGlobalSystem system = new MessageContextGlobalSystem.Builder()
+  .userId("my_user_id")
+  .build();
+MessageContextGlobal globalContext = new MessageContextGlobal.Builder()
+  .system(system)
+  .build();
   
 // build user-defined context variables, put in skill-specific context for main skill
-Map<String, String> userDefinedContext = new HashMap<>();
+Map<String, Object> userDefinedContext = new HashMap<>();
 userDefinedContext.put("account_num","123456");
-Map<String, Map> mainSkillContext = new HashMap<>();
-mainSkillContext.put("user_defined", userDefinedContext);
+MessageContextSkill mainSkillContext = new MessageContextSkill.Builder()
+  .userDefined(userDefinedContext)
+  .build();
 MessageContextSkills skillsContext = new MessageContextSkills();
 skillsContext.put("main skill", mainSkillContext);
 
-MessageContext context = new MessageContext();
-context.setGlobal(globalContext);
-context.setSkills(skillsContext);
+MessageContext context = new MessageContext.Builder()
+  .global(globalContext)
+  .skills(skillsContext)
+  .build();
 
-MessageOptions options = new MessageOptions.Builder("{assistant_id}", "{session_id}")
+MessageOptions options = new MessageOptions.Builder()
+  .assistantId("{assistant_id}")
+  .sessionId("{session_id}")
   .input(input)
   .context(context)
   .build();
