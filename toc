@@ -26,26 +26,40 @@ Watson Assistant
     {: .topicgroup}
     Creating a dialog skill
         skill-dialog-add.md
-        catalog.md
-        intents.md
-        intent-recommendations.md
-        dialog-build.md
-        dialog-plan.md
-        dialog-overview.md
-        dialog-tips.md
-        dialog-tasks.md
+
+        {: .topicgroup}
+        Adding intents
+            catalog.md
+            intents.md
+            intent-recommendations.md
+        
+        {: .topicgroup}
+        Adding a dialog
+            dialog-build.md
+            dialog-plan.md
+            dialog-overview.md
+            dialog-tips.md
+            dialog-tasks.md
+
         entities.md
-        dialog-runtime.md
-        dialog-slots.md
-        dialog-integrations.md
-        dialog-webhooks.md
-        dialog-actions-client.md
-        dialog-responses-json.md
-        tutorial.md
-        tutorial-slots.md
-        tutorial-slots-complex.md
-        tutorial-car-dashboard.md
-        tutorial-digressions.md
+
+        {: .topicgroup}
+        Advanced dialog tasks
+            dialog-runtime.md
+            dialog-slots.md
+            dialog-webhooks.md
+            dialog-integrations.md
+            dialog-actions-client.md
+            dialog-responses-json.md
+
+        {: .topicgroup}
+        Tutorials
+            tutorial.md
+            tutorial-slots.md
+            tutorial-slots-complex.md
+            tutorial-car-dashboard.md
+            tutorial-digressions.md
+
         versions.md
 
     {: .topicgroup}
