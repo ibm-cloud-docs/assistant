@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-05-20"
+lastupdated: "2020-06-05"
 
 subcollection: assistant
 
@@ -54,7 +54,7 @@ Find answers to frequently-asked questions and quick fixes for common problems.
 {: #faqs-cannot-login}
 {: faq}
 
-If you are having trouble logging in to a service instance or see messages about tokens, such as `unable to fetch access token`, it might mean that you need to clear your browser cache. Open a private browser window, and then try again. 
+If you are having trouble logging in to a service instance or see messages about tokens, such as `unable to fetch access token` or `400 bad request - header or cookie too large`, it might mean that you need to clear your browser cache. Open a private browser window, and then try again. 
 
 - If accessing the page by using a private browsing window fixes the issue, then consider always using a private window or clear the cache of your browser. You can typically find an option for clearing the cache or deleting cookies in the browser's privacy and security settings.
 - If accessing the page by using a private browsing window doesn't fix the issue, then try deleting the API key for the instance and creating a new one.
