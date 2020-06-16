@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-06-04"
+lastupdated: "2020-06-16"
 
 subcollection: assistant
 
@@ -54,6 +54,8 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 ## Change log
 {: #release-notes-tooling-changes}
+
+The change log lists changes that were made this year ordered by the date they were released.
 
 ### 3 June 2020
 {: #3June2020}
@@ -327,6 +329,26 @@ The following technologies are being deprecated:
 <!--1.87.2-->
 
 - **Fixed an error message that was displayed when opening an instance**: An error that was displayed when you launched {{site.data.keyword.conversationshort}} from the {{site.data.keyword.cloud}} dashboard has been fixed. Previously, an error message that said, `Module 'ui-router' is not available! You either misspelled the module name or forgot to load it` would sometimes be displayed.
+
+## Web Chat change log
+{: #release-notes-web-chat-changes}
+
+The Web Chat change log lists changes ordered by version number. For more information about Web Chat, see [Integrating with your website](/docs/assistant?topic=assistant-deploy-web-chat).
+
+### 2.0
+{: #2.0}
+<!--16June2020-->
+
+- **Versioning was added to Web Chat**: For more information, see [Versioning](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=key-concepts#versioning){: external}.
+
+- **Added bidirectional support**: You can now use the `direction` parameter to choose whether to show text and elements in the Web Chat in right-to-left or left-to-right order. For more information, see  [Configuration](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-configuration){: external}.
+
+- **Introduced the `instance.destroySession()` method**: The `instance.destroySession()` method removes all cookie and browser storage that is related to the current Web Chat session. You can use this method as part of your website logout sequence. For more information, see [Instance methods](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-instance-methods#destroySession){: external}.
+
+## Change log archive
+{: #release-notes-changes-archive}
+
+This section lists changes from previous years.
 
 ### 12 December 2019
 {: #12December2019}
