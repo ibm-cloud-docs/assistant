@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-06-15"
+lastupdated: "2020-06-16"
 
 subcollection: assistant
 
@@ -76,11 +76,11 @@ To set up a Salesforce service desk integration, complete the following steps:
 
     - Get the deployment code for your Salesforce Agent Configuration chat deployment. 
     
-      Go to the Salesforce **Setup>Chat>Deployments** page. Find your organization's deployment. Scroll to the end of the chat deployment configuration page and copy the *Deployment Code* snippet.
+      Go to the Salesforce **Feature Settings>Service>Chat>Deployments** page. Find your organization's deployment. Scroll to the end of the chat deployment configuration page and copy the *Deployment Code* snippet.
     - Paste the deployment code snippet into the **Deployment code** field in the {{site.data.keyword.conversationshort}} Salesforce configuration page.
     - Get the Chat Button code. 
     
-      Go to the Salesforce **Setup>Chat>Chat Buttons & Invitations** page. Find your organization's button implementation. Scroll to the end of the page, and then copy the *Chat Button Code* snippet.
+      Go to the Salesforce **Feature Settings>Service>Chat>Chat Buttons & Invitations** page. Find your organization's button implementation. Scroll to the end of the page, and then copy the *Chat Button Code* snippet.
     - Paste the chat button code snippet into the **Chat button code** field in the {{site.data.keyword.conversationshort}} Salesforce configuration page, and then click **Next**.
 
 1.  {: #deploy-salesforce-add-visualforce-page}Add a chat app that enables the Salesforce agent to see a history of the chat. To do so, create a Visualforce page, and then add a chat app to the page.
@@ -94,7 +94,7 @@ To set up a Salesforce service desk integration, complete the following steps:
 
     See [Create Custom Fields](https://help.salesforce.com/articleView?id=adding_fields.htm&type=5){: external}.
 
-    From the Salesforce **Setup>Object Manager>Chat Transcript>Fields & Relationships** page, create the following custom fields:
+    From the Salesforce **Data>Objects and Fields>Object Manager>Chat Transcript>Fields & Relationships** page, create the following custom fields:
 
     - **Session**: Stores a session ID that tracks ongoing conversations.
 
