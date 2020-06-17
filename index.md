@@ -122,7 +122,8 @@ US Health Insurance Portability and Accountability Act (HIPAA) support is availa
 
 To learn more about service terms and data security, read the following information:
 
-- [Service terms](https://www-03.ibm.com/software/sla/sladb.nsf/sla/home?OpenDocument){: external}
+- [Service terms](https://www.ibm.com/software/sla/sladb.nsf/sla/bm-0038-14){: external}
+- [Detailed system requirements](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/softwareReqsForProduct?deliverableId=DF7F84500FA711E69DCADF455C6AF151){: external}
 - [Data security and privacy](https://www.ibm.com/software/sla/sladb.nsf/sla/csdsp?OpenDocument){: external}
 - [Information security](/docs/assistant?topic=assistant-information-security)
 
