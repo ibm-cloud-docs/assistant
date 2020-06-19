@@ -123,9 +123,9 @@ To set up a Salesforce service desk integration, complete the following steps:
     - Open the *Chat Transcripts* object, and then select a transcript page.
     - Click the *Setup* icon, and then select *Edit Page*.
     - Drag the Visualforce component and drop it into the Chat Transcript Record page layout where you want the chat window to be displayed.
-    - In the component editor, select the Visualforce page that you created earlier, make any adjustments to the widget height that you want, and then click *Save*.
+    - In the component editor, select the Visualforce page that you created earlier, make any adjustments to the component height that you want, and then click *Save*.
 
-      If you do make changes, you must keep the height of the Visualforce page iframe 20px smaller than the height of the component that you add it to. By default, the height of the component is 300 px and the height of the iframe (which is specified in the code that you copy into the page) is 280 px.
+      If you do make changes, make sure the height of the Visualforce page is 20 px smaller than the height of the component that you add it to. By default, the height of the component is 300 px and the height of the Visualforce page is 280 px. (The height of the Visualforce page is specified in the `height` attribute of the `iframe` HTML element in the code snippet that you copy and paste.)
       {: important}
  
     - Click *Activation*, and then click the APP, RECORD TYPE, AND PROFILE tab.
