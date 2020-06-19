@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-03"
+lastupdated: "2020-06-19"
 
 subcollection: assistant
 
@@ -53,10 +53,10 @@ US Health Insurance Portability and Accountability Act (HIPAA) support is availa
 
 Do not add personal health information (PHI) to the training data (entities and intents, including user examples) that you create. In particular, be sure to remove any PHI from files that contain real user utterances that you upload to mine for intent or intent user example recommendations.
 
-## Opting out of logging
+## Opting out of log data use
 {: #information-security-log-opt-out}
 
-Watson Assistant service instances that are not part of Premium plans log requests and their results. Logging is done only to improve the service for future users. The logged data is not shared or made public. This type of logging is disabled for services that are part of Premium plans.
+IBM uses log data, Premium Plan data excluded, to continually learn from and improve the {{site.data.keyword.conversationshort}} product. The logged data is not shared or made public.
 
 To prevent IBM from using your log data for general service improvements, complete one of the following tasks: 
 
