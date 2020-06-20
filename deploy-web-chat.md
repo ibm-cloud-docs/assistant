@@ -43,7 +43,7 @@ To learn more about Web Chat, watch the following 3-minute video.
 
 To add the assistant to a web page on your company website, complete the following steps:
 
-1.  From the Assistants page, click to open the assistant tile that you want to deply to your site.
+1.  From the Assistants page, click to open the assistant tile that you want to deploy to your site.
 
 1.  From the *Integrations* section, click the **Web Chat** tile.
 
