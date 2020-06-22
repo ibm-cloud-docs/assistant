@@ -161,28 +161,28 @@ A context variable is a variable that you can use to pass information to your as
 
 The following script preserves the context of the conversation. In addition, it adds an `$ismember` context variable and sets it to `true`.
 
+The name that is specified for the skill (`main skill`) is a hardcoded name that is used to refer to any skill that you create from the product user interface. You do not need to edit your skill name.
+
 ```html
 <script>
-  // Following the v2 message API, we add some items to context.
   function preSendhandler(event) {
-    event.data.context.skills['main skill'].user_defined.ismember = true;
+    event.data.context.skills['main skill'].user_defined.ismember = true;    
   }
-</script>
-<script>
-  window.loadWatsonAssistantChat({
-    integrationID: 'YOUR_INTEGRATION_ID',
-    region: 'YOUR_REGION', 
-    serviceInstanceID: 'YOUR_SERVICE_INSTANCE',
-  }).then(function(instance){
-    // When this promise returns, we know WatsonAssistantChat is ready.
-    instance.on({ type: "pre:send", handler: preSendhandler });
-    instance.render();
-  });
-  setTimeout(function(){
-        const t=document.createElement('script');
-        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
-        document.head.appendChild(t);
-      });
+  window.watsonAssistantChatOptions = {
+    integrationID: "YOUR_INTEGRATION_ID",
+    region: "YOUR_REGION",
+    serviceInstanceID: "YOUR_SERVICE_INSTANCE_ID",
+
+    onLoad: function(instance) {
+      // Subscribe to the "pre:send" event.
+      instance.on({ type: "pre:send", handler: preSendhandler });
+    
+      instance.render();
+    }
+  };
+
+  setTimeout(function(){const t=document.createElement('script');t.src='https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js';document.head.appendChild(t);});
+
 </script>
 ```
 {: codeblock}
