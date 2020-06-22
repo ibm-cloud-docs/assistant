@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-06-16"
+lastupdated: "2020-06-22"
 
 subcollection: assistant
 
@@ -334,6 +334,12 @@ The following technologies are being deprecated:
 {: #release-notes-web-chat-changes}
 
 The Web Chat change log lists changes ordered by version number. For more information about Web Chat, see [Integrating with your website](/docs/assistant?topic=assistant-deploy-web-chat).
+
+### 2.1
+{: #2.1}
+<!--22June2020-->
+
+- **Service desk agent initials are displayed**: When Web Chat transfers a user to a service desk agent, the agent's avatar is displayed in the chat window to identify messages sent from the service desk agent. If the agent does not have an avatar, the first initial of the agent's given name is displayed instead.
 
 ### 2.0
 {: #2.0}
