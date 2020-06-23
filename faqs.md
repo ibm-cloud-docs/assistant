@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-06-05"
+lastupdated: "2020-06-23"
 
 subcollection: assistant
 
@@ -63,7 +63,10 @@ If you are having trouble logging in to a service instance or see messages about
 {: #faqs-login-repeatedly}
 {: faq}
 
-If you keep getting messages, such as `you are getting redirected to login`, it might mean that the Lite plan you were using has expired. Lite plans expire if they are not used within a 30-day span.
+If you keep getting messages, such as `you are getting redirected to login`, it might be due to one of the following things:
+
+- The Lite plan you were using has expired. Lite plans expire if they are not used within a 30-day span. To begin again, log in to IBM Cloud and create a new service instance of Watson Assistant.
+- An instance is locked when you exceed the plan limits for the month. To log in successfully, wait until the start of the next month when the plan limit totals are reset.
 
 ## I'm getting a `401` response
 {: #faqs-getting-401}
@@ -202,4 +205,4 @@ curl -X POST -H "content-type: application/json" -H "accept: application/json" -
 {: #faqs-stuck-training}
 {: faq}
 
-If the training process gets stuck, you can start a new training process to stop the current process and start over. To do so, add a new intent or entity, and then delete it. This action starts a new training process.
+If the training process gets stuck, first check whether there is an outage for the service by going to the [Cloud status page](https://cloud.ibm.com/status){: external}. You can start a new training process to stop the current process and start over. To do so, add a new intent or entity, and then delete it. This action starts a new training process.
