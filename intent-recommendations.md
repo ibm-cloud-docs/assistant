@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-05-15"
+lastupdated: "2020-06-19"
 
 subcollection: assistant
 
@@ -79,13 +79,10 @@ Intent recommendations are based on analysis of real-world user utterances, whic
 
 The recommendation source data that you add is used to derive both intent and intent user example recommendations.
 
-### Getting recommendations from an assistant log ![Beta feature](images/beta.png)
+### Getting recommendations from an assistant log
 {: #intent-recommendations-live-assistant-add}
 
 Use user conversations that took place between your assistant and your customers as the source for intent recommendations. 
-
-This capability is a beta feature.
-{: note}
 
 To use assistant chat logs as the source for your intent and intent user example recommendations, the assistant must meet these requirements:
 
