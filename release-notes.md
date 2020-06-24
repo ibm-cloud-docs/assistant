@@ -63,6 +63,8 @@ The change log lists changes that were made this year ordered by the date they w
 
 - **Getting intent recommendations from assistant logs is generally available**: Use the chat log from one of your production assistants as the source for intent and intent user example recommendations. For more information, see [Getting help defining intents](/docs/assistant?topic=assistant-intent-recommendations).
 
+**Get better answers from your search skill**: The search skill now has a beta feature that limits the search results that are returned to include only those for which {{site.data.keyword.discoveryshort}} has calculated a 20% or higher confidence score. You can toggle the feature on or off from the *Refine results to return more selective answers* switch on the configuration page. You cannot change the confidence score threshold from 0.2. This beta feature is enabled by default. For more information, see [Creating a search skill](/docs/assistant?topic=assistant-skill-search-add).
+
 ### 3 June 2020
 {: #3June2020}
 <!--1.99-->
