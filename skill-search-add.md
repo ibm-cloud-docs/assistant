@@ -255,7 +255,7 @@ If you upload a JSON file that contains repeating name values, then only the fir
     </tr>
     </table>
 
-1.  The search results that get returned are limited to matches with a confidence score of 20% or higher in {{site.data.keyword.discoveryshort}}. If you want to disable the 0.2 confidence threshold so that all matches are returned, regardless of their confidence scores, then toggle the *Refine results* switch to **Off**.
+1.  The search results that get returned are limited to matches with a confidence score of 20% or higher in {{site.data.keyword.discoveryshort}}. If you want to disable the 0.2 confidence threshold so that all matches are returned, regardless of their confidence scores, then toggle the *Refine results to return more selective answers* switch to **Off**.
 
 1.  Click **Try it** to open the "Try it out" pane for testing. Enter a test message to see the results that are returned when your configuration choices are applied to the search. Make adjustments as necessary.
 
