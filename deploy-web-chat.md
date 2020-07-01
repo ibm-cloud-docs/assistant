@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-22"
+lastupdated: "2020-07-01"
 
 subcollection: assistant
 
@@ -107,7 +107,7 @@ To add the assistant to a web page on your company website, complete the followi
 
     For information about the web browsers that are supported by the Web Chat, see [Browser Support](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=key-concepts#browsersupport){: external}.
 
-    ![Chat icon](images/web-chat-icon.png) 
+    ![Chat icon](images/web-chat-icon.png)
     
     The Web Chat launcher icon is displayed at the end of the page. The icon is blue unless you customize the accent color.
 
@@ -458,7 +458,7 @@ Delight your customers with 360-degree support by integrating your Web Chat with
 The following service desk offerings are supported:
 
 1.   {: #deploy-web-chat-zendesk}[Zendesk](/docs/assistant?topic=assistant-deploy-zendesk)
-1.   {: #deploy-web-chat-salesforce}[Salesforce](/docs/assistant?topic=assistant-deploy-salesforce) ![Beta](images/beta.png)
+1.   {: #deploy-web-chat-salesforce}[Salesforce](/docs/assistant?topic=assistant-deploy-salesforce)
 
 After you set up the service desk integration, you must update your dialog to ensure it understands user requests to speak to someone, and can transfer the conversation properly.
 
