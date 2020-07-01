@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-06-19"
+lastupdated: "2020-07-01"
 
 subcollection: assistant
 
@@ -24,7 +24,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Integrating with Salesforce ![Beta](images/beta.png)
+# Integrating with Salesforce
 {: #deploy-salesforce}
 
 Integrate your Web Chat with a Salesforce service desk solution so your customers always get the help they need.
@@ -130,7 +130,7 @@ To set up a Salesforce service desk integration, complete the following steps:
  
     - Click *Activation*, and then click the APP, RECORD TYPE, AND PROFILE tab.
     - Select the apps to which you want to apply the page layout, and then click *Next*.
-    - Select the appropriate record type, such as Master, and then click *Next*.
+    - Select the appropriate record type, such as Main, and then click *Next*.
     - Select user profiles to give the appropriate set of users access to the page. Limit the group to include only those who you want to be able to view chat history information in the page. 
     - Click *Next*, and then click *Save*.
 

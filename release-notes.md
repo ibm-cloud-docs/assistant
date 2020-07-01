@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-06-24"
+lastupdated: "2020-07-01"
 
 subcollection: assistant
 
@@ -56,6 +56,12 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #release-notes-tooling-changes}
 
 The change log lists changes that were made this year ordered by the date they were released.
+
+### 1 July 2020
+{: #1July2020}
+<!--1.101.3-->
+
+- **Salesforce support is generally available**: Integrate your Web Chat with Salesforce so your assistant can transfer customers who asks to speak to a person to a Salesforce agent who can answer their questions. For more information, see [Integrating with Salesforce](/docs/assistant?topic=assistant-deploy-salesforce).
 
 ### 24 June 2020
 {: #24June2020}
@@ -343,12 +349,12 @@ The following technologies are being deprecated:
 
 The Web Chat change log lists changes ordered by version number. For more information about Web Chat, see [Integrating with your website](/docs/assistant?topic=assistant-deploy-web-chat).
 
-<!--### 2.1
-{: #2.1}
-22June2020
+### 2.1.1
+{: #2.1.1}
+<!--1July2020-->
 
 - **Service desk agent initials are displayed**: When Web Chat transfers a user to a service desk agent, the agent's avatar is displayed in the chat window to identify messages sent from the service desk agent. If the agent does not have an avatar, the first initial of the agent's given name is displayed instead.
--->
+
 ### 2.0
 {: #2.0}
 <!--16June2020-->

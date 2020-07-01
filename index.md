@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-22"
+lastupdated: "2020-07-01"
 
 keywords: chatbot, live chatbot, omnichannel
 
@@ -36,11 +36,12 @@ Use {{site.data.keyword.conversationfull}} to build your own branded live chatbo
 
 This diagram illustrates how the product delivers an omnichannel customer experience:
 
-![Flow diagram of the service](images/simple-overview.png)
+![Flow diagram of the service](images/service-ovw.png)
 
 - Users interact with the assistant through one or more of these **integration** points:
 
   - A virtual assistant that you publish directly to an existing social media messaging platform, such as Slack or Facebook Messenger.
+  - A Web Chat that you embed in your company website that can answer customer questions directly and can transfer complex requests to a customer support representative.
   - A custom application that you develop, such as a mobile app or a robot with a voice interface.
 
 - The **assistant** receives user input and routes it to the dialog skill.
@@ -56,7 +57,7 @@ To see how {{site.data.keyword.conversationshort}} is helping enterprises cut co
 
 This diagram shows the implementation in more detail:
 
-![Flow diagram of the service](images/arch-overview-search.png)
+![Flow diagram of the service](images/service-ovw-details.png)
 
 Here's how you implement your assistant:
 
@@ -86,7 +87,7 @@ Here's how you implement your assistant:
 
 1.  Integrate your assistant. 
 
-    Add a built-in channel integration to deploy the configured assistant directly to a social media or messaging channel. Or build your own client application as the user interface for the assistant.
+    Add a built-in channel integration to deploy the configured assistant directly to a social media or messaging channel. Add the built-in Web Chat integration to your company website. Or build your own client application as the user interface for the assistant.
 
     Your deployed assistant is hosted by {{site.data.keyword.cloud}}, the IBM cloud computing platform. (For more information, see [Platform overview](/docs/overview?topic=overview-whatis-platform){: external}.) 
 
@@ -97,7 +98,7 @@ Read more about these implementation steps by following these links:
 - [Assistant overview](/docs/assistant?topic=assistant-assistants)
 - [Search skill overview](/docs/assistant?topic=assistant-skill-search-add)
 - [Intent creation overview](/docs/assistant?topic=assistant-intents#intents-described)
-- [Dialog overview](/docs/assistant?topic=assistant-dialog-overview)
+- [Dialog overview](/docs/assistant?topic=assistant-dialog-build)
 - [Entity creation overview](/docs/assistant?topic=assistant-entities#entities-described)
 - [Adding integrations](/docs/assistant?topic=assistant-deploy-integration-add)
 
@@ -106,7 +107,7 @@ Read more about these implementation steps by following these links:
 
 The {{site.data.keyword.conversationshort}} application (where you create assistants and skills) requires the same level of browser software as is required by {{site.data.keyword.Bluemix_notm}}. For more information, see {{site.data.keyword.Bluemix_notm}} [Prerequisites](/docs/overview?topic=overview-prereqs-platform#browsers-platform){: external}. 
 
-For information about the web browsers that are supported by the Web Chat integration, see [Browser Support](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/){: external}.
+For information about the web browsers that are supported by the Web Chat integration, see [Browser Support](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=key-concepts#browsersupport){: external}.
 
 ## Language support
 {: #index-lang-support}
