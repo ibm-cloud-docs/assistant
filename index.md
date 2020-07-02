@@ -69,11 +69,11 @@ Here's how you implement your assistant:
 
     - Add a dialog skill.  
   
-    Use the intuitive graphical product to define the training data and dialog for the conversation between your assistant and your customers. The training data consists of the following artifacts:
+      Use the intuitive graphical product to define the training data and dialog for the conversation between your assistant and your customers. The training data consists of the following artifacts:
 
       - **Intents**: Goals that you anticipate your users have when they interact with your assistant. Define one intent for each goal that can be identified in a user's input. For example, you might define an intent that is named *store_hours* that answers questions about store hours. For each intent, you add sample utterances that reflect the input customers might use to ask for the information they need, such as, `What time do you open?`
 
-      Or use prebuilt **content catalogs** that are provided by IBM to get started with data that addresses common customer goals.
+        Or use prebuilt **content catalogs** that are provided by IBM to get started with data that addresses common customer goals.
 
       - **Dialog**: Use the dialog editor to build a dialog flow that incorporates your intents. The dialog flow is represented graphically as a tree. You can add a branch to process each of the intents that you want your assistant to handle.
 

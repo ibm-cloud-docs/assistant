@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-21"
+lastupdated: "2020-07-02"
 
 subcollection: assistant
 
@@ -124,55 +124,71 @@ IBM created Jupyter notebooks that you can use to analyze the behavior or your a
 You can use the notebooks with English-language skills only.
 {: note}
 
-### Dialog skill analysis notebook
-{: #logs-resources-jupyter-dialog}
-
-The Dialog Skill Analysis Notebook is a Python notebook that helps you find and fix issues with the dialog that is used by your assistant. It does so in the following ways:
-
-- Examines the terms that are correlated with each intent in your training data to find anomalies that might identify problems that you can investigate further.
-- Uses a blind test set that you provide to calculate performance on statistical metrics like Accuracy, Precision, Recall & F1. 
-- Offers advanced features that you can use to find the causes of common issues such as why some sentences are often misidentified.
-
-To try out the notebook, you can use the online version that is available from the [{{site.data.keyword.DSX_short}} Gallery](https://dataplatform.cloud.ibm.com/exchange/public/entry/view/4d77701840fcb2f21587e39fdb887049){: external}. Alternatively, you can fork or download the dialog skill analysis framework from [Github](https://github.com/watson-developer-cloud/assistant-dialog-skill-analysis){: external}.
-
-To learn more about how this notebook can help you improve your dialog, read this [Medium.com blog post](https://medium.com/ibm-watson/announcing-dialog-skill-analysis-for-watson-assistant-83cdfb968178){: external}.
-
-### Log analysis notebooks
+### Analysis notebooks
 {: #logs-resources-jupyter-logs}
 
-There is a set of log analysis notebooks that you can use with standard Python tools and a set that is designed for optimal use with {{site.data.keyword.DSX_full}}. {{site.data.keyword.DSX_short}} is a product that provides an environment in which you can pick and choose the tools you need to analyze and visualize data, to cleanse and shape data, to ingest streaming data, or to create, train, and deploy machine learning models. See the [product documentation](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/welcome-main.html){: external} for more details.
+There is a set of analysis notebooks that you can use with standard Python tools and a set that is designed for optimal use with {{site.data.keyword.DSX_full}}. 
 
-The following notebooks are available:
+{{site.data.keyword.DSX_short}} is a product that provides an environment in which you can pick and choose the tools you need to analyze and visualize data, to cleanse and shape data, to ingest streaming data, or to create, train, and deploy machine learning models. See the [product documentation](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/welcome-main.html){: external} for more details.
 
-- **Measure**: Gathers metrics that focus on coverage (how often the assistant is confident enough to respond to users) and effectiveness (when the assistant does respond, whether the the responses are satisying user needs).
-
-- **Effectiveness**: Performs a deeper analysis of your logs to help you understand the steps you can take to improve your assistant.
-
-The [Watson Assistant Continuous Improvement Best Practices Guide](https://www.ibm.com/downloads/cas/V0XQ0ZRE){: external} describes how to get the most out of these notebooks. 
+The [Watson Assistant Continuous Improvement Best Practices Guide](https://github.com/watson-developer-cloud/assistant-improve-recommendations-notebook/raw/master/notebook/IBM%20Watson%20Assistant%20Continuous%20Improvement%20Best%20Practices.pdf){: external} describes how to get the most out of these notebooks. 
 
 To learn more about how these notebooks can help you improve your assistant, read this [Medium.com blog post](https://medium.com/ibm-watson/continuously-improve-your-watson-assistant-with-jupiter-notebooks-60231df4f01f){: external}.
 
 ### Using the notebooks with {{site.data.keyword.DSX}}
 {: #logs-resources-notebooks-studio}
 
-If you choose to use the log analysis notebooks that are designed for use with {{site.data.keyword.DSX}}, the steps are roughly these:
+The following notebooks are available:
+
+- [Dialog skill analysis for Watson Assistant](https://dataplatform.cloud.ibm.com/exchange/public/entry/view/4d77701840fcb2f21587e39fdb887049){: external}
+- [Measure Watson Assistant Performance](https://dataplatform.cloud.ibm.com/exchange/public/entry/view/133dfc4cd1480bbe4eaa78d3f635e568){: external}.
+- [Dialog Flow Analysis for Watson Assistant](https://dataplatform.cloud.ibm.com/exchange/public/entry/view/013c690997e27f3a8d9133265327a9e5){: external}
+
+If you choose to use the notebooks that are designed for use with {{site.data.keyword.DSX}}, the steps are roughly these:
 
 1.  Create a {{site.data.keyword.DSX}} account, [create a project](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/projects.html){: external}, and add a Cloud Object Storage account to it.
-1.  From the {{site.data.keyword.DSX}} community, get the [Measure Watson Assistant Performance notebook](https://dataplatform.cloud.ibm.com/exchange/public/entry/view/133dfc4cd1480bbe4eaa78d3f635e568){: external}.
-1   Follow the step-by-step instructions provided with the notebook to analyze a subset of the dialog exchanges from the logs.
+1.  From the {{site.data.keyword.DSX}} community, choose a notebook.
 
-    The insights are visualized in ways that make it easier to understand the assistant's coverage and effectiveness.
+    Early in the development process, use the **Dialog skill analysis for Watson Assistant** notebook to help you get started. It offers the following types of insights:
+
+    - Examines the terms that are correlated with each intent in your training data to find anomalies that might identify problems that you can investigate further.
+    - Uses a blind test set that you provide to calculate performance on statistical metrics like Accuracy, Precision, Recall & F1. 
+    - Offers advanced features that you can use to find the causes of common issues such as why some sentences are often misidentified.
+
+    To learn more about how this notebook can help you improve your dialog, read this [Medium.com blog post](https://medium.com/ibm-watson/announcing-dialog-skill-analysis-for-watson-assistant-83cdfb968178){: external}.
+
+1.  After you deploy a version of the assistant, and have some conversation log data collected, run the **Measure Watson Assistant Performance** notebook.
+
+1.  Follow the step-by-step instructions provided with the notebooks to analyze a subset of the dialog exchanges from the logs.
+
+    Run the following notebook first:
+
+    - **Measure**: Gathers metrics that focus on coverage (how often the assistant is confident enough to respond to users) and effectiveness (when the assistant does respond, whether the the responses are satisying user needs).
+
+    The insights are visualized in ways that make it easier to understand areas for improvement in your assistant.
 1.  Export a sample set of the logs from ineffective conversations, and then analyze and annotate them.
 
     For example, indicate whether a response is correct. If correct, mark whether it is helpful. If a response is incorrect, then identify the root cause, the wrong intent or entity was detected, for example, or the wrong dialog node was triggered. After identifying the root cause, indicate what the correct choice would have been.
-1.  Feed the annotated spreadsheet to the [Analyze Watson Assistant Effectiveness notebook](https://dataplatform.cloud.ibm.com/exchange/public/entry/view/133dfc4cd1480bbe4eaa78d3f636921c){: external}.
+1.  Feed the annotated spreadsheet to the **Effectiveness** notebook.
+
+    - **Effectiveness**: Performs a deeper analysis of your logs to help you understand the steps you can take to improve your assistant.
+1.  Use the **Dialog Flow Analysis for Watson Assistant** notebook to review your dialog. The notebook can help you pinpoint the dialog nodes where customers most frequently abandon the conversation.
 
 This process helps you to understand the steps you can take to improve your assistant. There is no way to automatically apply what you learn back to your service instance. Keep track of any changes you make to improve the system, so you can subsequently apply them to the training data of your dialog skill directly.
 
 ### Using the notebooks with standard Python tools
 {: #logs-resources-notebooks-python}
 
-If you choose to use standard Python tools to run the notebooks, you can get the notebooks from the [IBM GitHub repository](https://github.com/watson-developer-cloud/assistant-improve-recommendations-notebook/tree/master/notebook){: external}. Be sure to run them in the following order:
+If you choose to use standard Python tools to run the notebooks, you can get the notebooks from GitHub.
 
-1.  Measure Notebook.ipynb
-1.  Effectiveness Notebook.ipynb
+- [Dialog Skill Analysis for Watson Assistant](https://github.com/watson-developer-cloud/assistant-dialog-skill-analysis){: external}
+
+- [Watson Assistant Recommendation notebook](https://github.com/watson-developer-cloud/assistant-improve-recommendations-notebook){: external}
+
+  Be sure to run the Python scripts in the following order:
+
+  1.  Measure Notebook.ipynb
+  1.  Effectiveness Notebook.ipynb
+  1.  Logs Notebook.ipynb
+
+- [Watson Assistant Dialog Flow Analysis notebook](https://github.com/watson-developer-cloud/assistant-dialog-flow-analysis){: external}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-01"
+lastupdated: "2020-07-02"
 
 subcollection: assistant
 
@@ -348,6 +348,12 @@ The following technologies are being deprecated:
 {: #release-notes-web-chat-changes}
 
 The Web Chat change log lists changes ordered by version number. For more information about Web Chat, see [Integrating with your website](/docs/assistant?topic=assistant-deploy-web-chat).
+
+### 2.1.2
+{: #2.1.2}
+<!--2July2020-->
+
+- **Fixing chat loading issue**: Addressed an issue that prevented the Web Chat from loading properly for some deployments with short JWT expiration claims.
 
 ### 2.1.1
 {: #2.1.1}
