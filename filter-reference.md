@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-07-02"
 
 subcollection: assistant
 
@@ -147,6 +147,7 @@ The following examples illustrate various types of queries using this syntax.
 | The user input text contains the string `IBM Watson`. | `request.input.text:"IBM Watson"` |
 | The user input text contains a string that has no more than 2 single-character differences from `Watson`. | `request.input.text:Watson~2` |
 | The user input text contains a string consisting of `comm`, followed by zero or more additional characters, followed by `s`. | `request.input.text:comm*s` |
+| The user input text is not empty. | `request.input.text::!""` |
 | The deployment ID in the context matches `my_app`. | `request.context.metadata.deployment::my_app` |
 | An intent in the response has a confidence value greater than 0.8. | `response.intents:confidence>0.8` |
 | An intent name in the response exactly matches either `hello` or `goodbye`. | <code>response.intents:intent::(hello&#124;goodbye)</code> |
