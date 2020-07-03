@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-03"
+lastupdated: "2020-07-02"
 
 subcollection: assistant
 
@@ -73,11 +73,14 @@ You can use the following controls to filter the information:
 
 Several statistical scorecards provide log data for your application:
 
-* *Total conversations* - The total number of conversations between active users and your application, during the selected time period, as shown in the corresponding graph.
+* *Total conversations* - The total number of conversations between active users and your application that occur during the selected time period.
 
-  A single conversation is a set of messages consisting of the messages that an active user sends to your application, and the messages your application responds with.
+  A single conversation consists of messages that an active user sends to your application, and the messages your application sends to the user to initiate the conversation or reply.
+  
+  If your assistant starts by saying "Hi, how can I help you?", and then the user closes the browser without responding, that message is included in the total conversation count.
 
-  **Important**: A 'conversation' is considered to be *any* set of messages sent or received by an application/bot, so if your assistant starts by saying "Hi, how can I help you?", and then the user closes their browser without responding, that message is included in the total conversation count.
+  The total conversations metric is not used for billing purposes. An exchange with a user is not considered a billable conversation until the user submits a message.
+  {: important}
 
 * *Avg. msg. per conversation* - The total messages received during the selected time period divided by the total conversations during the selected time period, as shown in the corresponding graph.
 * *Max. conversations* - The maximum number of conversations for a single data point within the selected time period.
@@ -85,7 +88,7 @@ Several statistical scorecards provide log data for your application:
 
 Detailed graphs provide additional information:
 
-* *Total conversations* - The total number of conversations between active users and your application, during the selected time period.
+* *Total conversations* - The total number of conversations between active users and your application during the selected time period.
 
   While viewing the ***Conversations*** graph, you can click on an individual data point to see the numeric value, as shown here:
 
