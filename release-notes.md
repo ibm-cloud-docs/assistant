@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-02"
+lastupdated: "2020-07-08"
 
 subcollection: assistant
 
@@ -77,7 +77,7 @@ The change log lists changes that were made this year ordered by the date they w
 
 - **Zendesk support is generally available**: Integrate your Web Chat with Zendesk so your assistant can transfer customers who asks to speak to a person to a Zendesk agent who can answer their questions. And now you can secure the connection to Zendesk. For more information, see [Adding support for transfers](/docs/assistant?topic=assistant-deploy-zendesk).
 
--  **Pricing plan changes**: We continue to revamp the overall service plan structure for {{site.data.keyword.conversationshort}}. In April, we announced [a new low cost entry point](#1April2020) for the Plus plan. Today, the Standard plan is being retired. Existing Standard plan users are not impacted; they can continue to work in their Standard instances and provision new instances.  New users do not see the Standard plan as an option when they create a service instance. For more information, see the [Pricing](https://www.ibm.com/cloud/watson-assistant/pricing/){: external} page.
+-  **Pricing plan changes**: We continue to revamp the overall service plan structure for {{site.data.keyword.conversationshort}}. In April, we announced [a new low cost entry point](#1April2020) for the Plus plan. Today, the Standard plan is being retired. Existing Standard plan users are not impacted; they can continue to work in their Standard instances.  New users do not see the Standard plan as an option when they create a service instance. For more information, see the [Pricing](https://www.ibm.com/cloud/watson-assistant/pricing/){: external} page.
 
 ### 27 May 2020
 {: #27May2020}
@@ -353,7 +353,7 @@ The Web Chat change log lists changes ordered by version number. For more inform
 {: #2.1.2}
 <!--2July2020-->
 
-- **Fixing chat loading issue**: Addressed an issue that prevented the Web Chat from loading properly for some deployments with short JWT expiration claims.
+- **Fixed a loading issue**: Addressed an issue that prevented the Web Chat from loading properly for some deployments with short JWT expiration claims.
 
 ### 2.1.1
 {: #2.1.1}
