@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-06-23"
+lastupdated: "2020-07-09"
 
 subcollection: assistant
 
@@ -180,6 +180,12 @@ The length of time for which messages are retained depends on your service plan.
 {: faq}
 
 No, you can define only one webhook URL for a dialog skill. For more information, see [Defining the webhook](/docs/assistant?topic=assistant-dialog-webhooks#dialog-webhooks-create).
+
+## Can I extend the Webhook time limit?
+{: #faqs-webhook-timeout}
+{: faq}
+
+No. The service that you call from the Webhook must return a response in 8 seconds or less, or the call is canceled. You cannot increase this time limit.
 
 ## I received the message “Query cancelled” when importing a skill
 {: #faqs-query-cancel}
