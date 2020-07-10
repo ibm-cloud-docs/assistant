@@ -174,6 +174,16 @@
 	"two webhooks per assistant skill", 
         "more than one webhook per skill"
     ],
+    "faqs-webhook-timeout": [
+        "make webhook timeout longer than 8 seconds",
+        "extend the webhook timeout",
+        "get more time for the callback to be processed for webhook",
+        "give the webhhook more time to complete",
+	"avoid the execution of webhook took too long error.",
+        "prevent the webhook execution from being canceled.",
+	"increase the time allowed for webhook execution", 
+        "change the webook execution time limit"
+    ],
     "faqs-query-cancel": [
         "error query cancelled when importing skill",
         "error query cancelled when importing workspace",
