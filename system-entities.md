@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-06-05"
+lastupdated: "2020-07-14"
 
 subcollection: assistant
 
@@ -25,10 +25,17 @@ subcollection: assistant
 # Legacy system entities
 {: #system-entities}
 
-Learn about system entities that are provided by IBM for you to use out of the box. These built-in utility entities help your assistant recognize terms and references that are commonly used by customers in conversation, such as numbers and dates. 
+Learn about system entities that are provided by IBM for you to use out of the box. These built-in utility entities help your assistant recognize terms and references that are commonly used by customers in conversation, such as numbers and dates.
 {: shortdesc}
 
-New and improved versions of the numeric system entities are generally available for dialog skills in all languages. The new versions of the numeric system entities provide superior number recognition with higher precision. This topic describes the legacy versions of the numeric system entities. The legacy versions are being deprecated. Support will end on 15 July 2020. When support ends, mentions in input that are detected as person or location system entities today will no longer be detected. Switch to using the new system entities now so you have time to test your dialog before support ends. For more information, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
+New and improved versions of the numeric system entities are generally available for dialog skills in all languages. The new versions of the numeric system entities provide superior number recognition with higher precision. For more information, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
+
+
+This topic describes the legacy versions of the numeric system entities. The legacy versions are being deprecated. 
+
+Support for the `@sys-person` and `@sys-location` system entities ended on 15 July 2020. End of support means that mentions in input that used to be detected as person or location system entities are no longer recognized.
+
+Switch to using the new system entities now. For more information, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
 {: deprecated}
 
 For information about language support for system entities, see [Supported languages](/docs/assistant?topic=assistant-language-support).
@@ -187,24 +194,14 @@ For information about processing date and time values, see the [Date and time me
 ## @sys-location entity  ![Beta feature](images/beta.png)
 {: #system-entities-sys-location}
 
-Available as a beta feature for only languages noted in the [Supported languages](/docs/assistant?topic=assistant-language-support) topic. 
+The @sys-location system entity extracted place names (country, state or province, city, town, and so on) from the user's input.
 
-This system entity is being deprecated entirely. There is no new version of this system entity available with the new system entities. A powerful alternative to using the `@sys-location` system entity is to use a contextual entity for identifying proper nouns, such as locations. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/assistant?topic=assistant-entities#entities-annotations-overview).
+Support for this system entity was removed on 15 July 2020. The new system entities feature does not include an entity that recognizes location names.
 {: deprecated}
 
+A powerful alternative to using the `@sys-location` system entity is to use a contextual entity for identifying proper nouns, such as locations. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/assistant?topic=assistant-entities#entities-annotations-overview).
+
 For more information about how to use contextual entites to identify locations, see the [Detecting Names And Locations With Watson Assistant](https://medium.com/ibm-watson/detecting-names-and-locations-with-watson-assistant-e3e1fa2a8427) blog post on Medium.
-
-The @sys-location system entity extracts place names (country, state or province, city, town, and so on) from the user's input.
-
-### Recognized formats
-{: #system-entities-sys-location-formats}
-
-- Boston
-- U.S.A.
-- New South Wales
-
-For more information about processing String values, see the [Strings method reference](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-strings).
-{: tip}
 
 ## @sys-number entity
 {: #system-entities-sys-number}
@@ -318,21 +315,11 @@ You get equivalent results for other supported languages.
 ## @sys-person entity ![Beta feature](images/beta.png)
 {: #system-entities-sys-person}
 
-Available as a beta feature for only languages noted in the [Supported languages](/docs/assistant?topic=assistant-language-support) topic. 
+The @sys-person system entity extracted names from the user's input. 
 
-This system entity is being deprecated entirely. There is no new version of this system entity available with the new system entities. A powerful alternative to using the `@sys-person` system entity is to use a contextual entity for identifying proper nouns, such as names. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/assistant?topic=assistant-entities#entities-annotations-overview).
+Support for this system entity was removed on 15 July 2020. The new system entities feature does not include an entity that recognizes people's names.
 {: deprecated}
 
+A powerful alternative to using the `@sys-person` system entity is to use a contextual entity for identifying proper nouns, such as names. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/assistant?topic=assistant-entities#entities-annotations-overview).
+
 For more information about how to use contextual entites to identify names of people, see the [Detecting Names And Locations With Watson Assistant](https://medium.com/ibm-watson/detecting-names-and-locations-with-watson-assistant-e3e1fa2a8427){: external} blog post on Medium.
-
-The @sys-person system entity extracts names from the user's input. Names are recognized individually, so that "Joe" is not treated as "Joseph", or vice versa.
-
-### Recognized formats
-{: #system-entities-sys-person-formats}
-
-- Ronald
-- Jane Doe
-- Vijay
-
-For more information about processing String values, see the [Strings method reference](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-strings).
-{: tip}

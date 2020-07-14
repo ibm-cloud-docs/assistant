@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-06-12"
+lastupdated: "2020-07-14"
 
 keywords: entity, entity value, contextual entity, dictionary entity, pattern entity, entity synonym, annotate mentions
 
@@ -382,7 +382,7 @@ System entities are centrally maintained, so any updates are available automatic
 
 1.  Browse through the list of system entities to choose the ones that are useful for your application.
     - To see more information about a system entity, including examples of matching input, click the entity in the list.
-    - For details about the available system entities, see [System entities](/docs/assistant?topic=assistant-system-entities).
+    - For details about the available system entities, see [System entities](/docs/assistant?topic=assistant-new-system-entities).
 
 1.  Click the toggle switch next to a system entity to enable or disable it.
 

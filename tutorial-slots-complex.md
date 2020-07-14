@@ -22,7 +22,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Tutorial: Improving a node with slots
+# Improving a dialog node with slots
 {: #tutorial-slots-complex}
 
 In this tutorial, you will enhance a simple node with slots that collects the information necessary to make a restaurant reservation.
