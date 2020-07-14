@@ -103,7 +103,11 @@ For example, if the same person chats with your assistant on three separate occa
 
 Design any custom applications to capture a unique `user_id` or `session_id` and pass the information to {{site.data.keyword.conversationshort}}. Choose a non-human-identifiable ID that doesn't change throughout the customer lifecycle. For example, don't use a person's email address as the user ID. In fact, the `user_id` syntax must meet the requirements for header fields as defined in [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2).
 
-The built-in integrations use a combination of the `session_id` and `user_id` to identify an interaction. For Web Chat, you can specify a `user_id`. For more information, see [Adding user identity information](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-userid).
+The built-in integrations derive the user ID in the following ways: 
+
+- For Facebook integrations, the `user_id` property is set to the sender ID that Facebook provides in its payload.
+- For Slack integrations, the `user_id` property is a concatenation of the team ID, such as `T09LVDR7Y`, and the member ID of the user, such has `W4F8K9JNF`. For example: `T09LVDR7YW4F8K9JNF`.
+- For Web Chat, you can set the value of the `user_id` property. For more information, see [Adding user identity information](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-userid).
 
 Billing is managed per monthly active user per service instance. If a single user interacts with assistants that are hosted by different service instances that belong to the same plan, each interaction is treated as a separate use. You are billed for the user's interaction with each service instance separately.
 

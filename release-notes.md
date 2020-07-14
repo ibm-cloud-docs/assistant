@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-08"
+lastupdated: "2020-07-14"
 
 subcollection: assistant
 
@@ -56,6 +56,23 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #release-notes-tooling-changes}
 
 The change log lists changes that were made this year ordered by the date they were released.
+
+### 14 July 2020
+{: #14July2020}
+<!--1.102-->
+
+- **Support ended for @sys-location and @sys-person**: The person and location system entities, which were available as a beta feature in English dialog skills only, are no longer supported. You cannot enable them. If your dialog uses them, they are ignored by the service. 
+
+  Use contextual entities to teach your skill to recognize the context in which such names are used. For more information about contextual entities, see [Annotation-based method](/docs/assistant?topic=assistant-entities#entities-annotations-overview).
+
+- **How legacy numeric system entities are processed has changed**: All new dialog skills use the new system entities automatically. 
+
+  For existing skills that use legacy numeric system entities, how the entities are processed now differs based on the skill language. 
+
+  - Arabic, Chinese, Korean, and Japanese dialog skills that use legacy numeric system entities function the same as before. 
+  - If you choose to continue to use the legacy system entities in European-language dialog skills, a new legacy API format is used. The new legacy API format simulates the legacy system entities behavior. In particular, it returns a `metadata` object and does not stop the service from idenfifying multiple system entities for the same input string. In addition, it returns an `interpretation` object, which was introduced with the new version of system entities. Review the `interpretation` object to see the useful information that is returned by the new version.
+
+  Update your skills to use the new system entities from the **Options>System Entities** page.
 
 ### 1 July 2020
 {: #1July2020}

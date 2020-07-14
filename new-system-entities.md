@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-06-05"
+lastupdated: "2020-07-14"
 
 keywords: system entity, sys-number, sys-date, sys-time
 
@@ -30,12 +30,23 @@ subcollection: assistant
 Learn about system entities that are provided by IBM for you to use out of the box. These built-in utility entities help your assistant recognize terms and references that are commonly used by customers in conversation, such as numbers and dates. 
 {: shortdesc}
 
-- The new system entities are enabled automatically in dialog skills of all languages.
-- New dialog skills in Arabic, Chinese, Korean, and Japanese that were created before 27 May 2020 use the legacy version of the system entities unless you enable the new version. New dialog skills in all other languages that were created before 10 March 2020 use the legacy version by default. For more information, see [System entities](/docs/assistant?topic=assistant-system-entities).
-
 For information about how to add system entities to your dialog skill, see [Creating entities](/docs/assistant?topic=assistant-entities#entities-enable-system-entities).
 
-For information about how to use contextual entites to identify people and location names, see the [Detecting Names And Locations With Watson Assistant](https://medium.com/ibm-watson/detecting-names-and-locations-with-watson-assistant-e3e1fa2a8427){: external} blog post on Medium.
+## Replacing legacy system entities
+{: #new-system-entities-legacy}
+
+In January 2020, this new version of the system entities was introduced. These revised system entities offer better date and time understanding and can classify mentions with more precision. For more information about the legacy version, see [Legacy system entities](/docs/assistant?topic=assistant-system-entities).
+
+- The new system entities are enabled automatically in new dialog skills of all languages.
+- Arabic, Chinese, Korean, and Japanese dialog skills that were created before 27 May 2020 use the legacy version of the system entities. 
+- Dialog skills in all other languages that were created before 10 March 2020 use the legacy API format by default.
+
+Update any skills that continue to use the legacy system entities. To do so, go to **Options>System Entities**.
+  
+- For Arabic, Chinese, Korean, and Japanese dialog skills, select **Use new system entities**. 
+- For all other language skills, select **Use new system entities API format**.
+
+For information about how to use contextual entities to identify people and location names, see the [Detecting Names And Locations With Watson Assistant](https://medium.com/ibm-watson/detecting-names-and-locations-with-watson-assistant-e3e1fa2a8427){: external} blog post on Medium.
 
 ## @sys-currency entity
 {: #new-system-entities-sys-currency}

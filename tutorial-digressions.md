@@ -22,7 +22,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Tutorial: Understanding digressions
+# Understanding dialog skill digressions
 {: #tutorial-digressions}
 
 In this tutorial, you see firsthand how digressions work.

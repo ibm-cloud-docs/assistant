@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-06-19"
+lastupdated: "2020-07-14"
 
 subcollection: assistant
 
@@ -76,7 +76,13 @@ Do not add personal data to the training data (entities and intents, including u
 
 If you need to remove a customer's message data from a {{site.data.keyword.conversationshort}} instance, you can do so based on the customer ID of the client, as long as you associate the message with a customer ID when the message is sent to {{site.data.keyword.conversationshort}}.
 
-**Note:** The Preview Link and automatic Facebook integration features do not support the labeling and therefore deletion of data based on customer ID. These features should not be used in a solution that requires the ability to delete based on customer ID.
+- The Preview Link and automatic Facebook integrations do not support the labeling and therefore deletion of data based on customer ID. These integration types should not be used in a solution that must support the ability to delete data based on a customer ID.
+- For Slack, the `customer_id` is the `user_id` prepended with `slack_`. The Slack `user_id` property is a concatenation of the team ID, such as `T09LVDR7Y`, and the member ID of the user, such has `W4F8K9JNF`. For example: `T09LVDR7YW4F8K9JNF`. 
+  - To get the team ID, open the channel from a web browser. Open the web developer tools to view the console. Look for `[BOOT] Initial team ID`.
+  - You can copy the member ID from the user's Slack profile. 
+  - To get the IDs programmatically, use the Slack API. For more information, see [Overview](https://api.slack.com/apis){: external}.
+  The full customer ID looks like this: `customer_id=slack_T09LVDR7YW4F8K9JNF`.
+- For the Web Chat integration, the service takes the `user_id` that is passed in and adds it as the `customer_id` parameter value to the `X-Watson-Metadata` header with each request.
 
 ### Before you begin
 {: #information-security-delete-user-data-prereqs}
@@ -101,7 +107,7 @@ The `customer_id` string cannot include the semicolon (`;`) or equal sign (`=`) 
 
 You can pass multiple **customer ID** values with semicolon-separated `customer_id={value}` pairs. For example: `'X-Watson-Metadata: customer_id=abc;customer_id=xyz'`
 
-If you add a search skill to an assistant, user input that is submitted to the assistant is passed to the {{site.data.keyword.discoveryshort}} service as a search query. If the {{site.data.keyword.conversationshort}} integration provides a customer ID, then the resulting /message API request includes the customer ID in the header, and the ID is passed through to the {{site.data.keyword.discoveryshort}} /query API request. To delete any query data that is associated with a specific customer, you must send a delete request directly to the {{site.data.keyword.discoveryshort}} service instance that is linked your the assistant. See the {{site.data.keyword.discoveryshort}} [information security](/docs/discovery/information-security?topic=discovery-information-security) topic for details.
+If you add a search skill to an assistant, user input that is submitted to the assistant is passed to the {{site.data.keyword.discoveryshort}} service as a search query. If the {{site.data.keyword.conversationshort}} integration provides a customer ID, then the resulting `/message` API request includes the customer ID in the header, and the ID is passed through to the {{site.data.keyword.discoveryshort}} `/query` API request. To delete any query data that is associated with a specific customer, you must send a separate delete request directly to the {{site.data.keyword.discoveryshort}} service instance that is linked your the assistant. See the {{site.data.keyword.discoveryshort}} [information security](/docs/discovery/information-security?topic=discovery-information-security) topic for details.
 
 ### Querying user data
 {: #information-security-query-customer-id}
