@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-05-15"
+lastupdated: "2020-07-13"
 
 subcollection: assistant
 
@@ -145,7 +145,7 @@ A service role controls what a person can do in {{site.data.keyword.conversation
 
 When you assign a service role, you can decide whether to apply the service role to an instance, which effectively applies to every assistant and skill in the instance, or to a specific resource, such as one skill or one assistant.
 
-The resource-level service role assignment takes precedence over the instance-level assignment. For example, you can give someone Reader access to the service instance and Writer access to a single skill in the instance.
+The highest-level role assignment wins. You can give someone Reader access to everything in an instance, and Manager access to a single skill in that instance. But, you cannot do the opposite. You cannot give a person Manager access to all but one skill. If you assign someone to the Manager role at the instance level, you cannot limit the person's access to a resource in that instance by assigning the person to a Reader level access for a single skill, for example.
 
 #### Instance-level service roles
 {: #access-control-global-service-roles}
@@ -167,6 +167,9 @@ Choose a service role for the user that will apply to all of the skills and assi
 To fine tune a person's level of access to individual skills and assistants within the instance, assign one or more resource-level service roles to the user.
 
 You do not need to assign resource-level roles to people who already have access to all the resources based on their global service role. But, if you want to tailor a bit more who can read, edit, or add to specific assistants or skills within the instance, then apply resource-level roles.
+
+You cannot assign someone to a resource-level role that has fewer privileges than the instance-level role to which the person is assigned. If the person has an instance-level Manager access role, for example, you cannot give them read-only access to a specific assistant. The higher-level role assignment wins.
+{: important}
 
 | Role | Privileges of the users in this role |
 |------|---------------------------------------|
@@ -204,11 +207,12 @@ Anyone who creates an assistant or skill is automatically granted the Manager se
 {: #access-control-common-roles}
 
 | Goal | Instance-level platform role | Instance-level service roles | Resource-level service roles |
-|------------------------|-----------------------------|-----------------------------|------------------------|
+|------|------------------------------|------------------------------|-----------------------------|
 | Make someone a service instance co-owner | Administrator | Manager | N/A |
-| Give someone reader access to only one skill or assistant in an instance | Viewer | N/A | Reader |
+| Give someone reader access to only one skill or assistant in an instance | Viewer | Reader | Reader |
 | Allow someone to edit and view logs of all the skills and assistants in the service instance | Viewer | Manager | N/A |
-| Allow someone to edit a skill or assistant in the service instance, but not view logs | Viewer | Manager | Writer |
+| Allow someone to edit a skill or assistant in the service instance, but not view logs | Viewer | Writer | Writer |
+| Give someone full access to only one skill or assistant in an instance | Viewer | Reader | Manager |
 {: caption="Table 4. Common role assignments" caption-side="top"}
 
 N/A stands for no assignment, meaning no role of the type is assigned.

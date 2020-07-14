@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-10"
+lastupdated: "2020-07-13"
 
 subcollection: assistant
 
@@ -269,7 +269,7 @@ Before you enable security, complete the following steps:
     The JWT payload must specify values for the following claims:
 
     - `iss`: Represents the issuer of the JWT. This value is a case-sensitive string.
-    - `sub`: Represents the principal that is the subject of the JWT. This value must either be scoped to be locally unique in the context of the issuer or be globally unique. This value is a case-sensitive string.
+    - `sub`: Represents the principal that is the subject of the JWT. This value must either be scoped to be locally unique in the context of the issuer or be globally unique. The value you specify for `sub` is used as the `user_id`. The syntax of the value must meet the requirements for header fields as defined in [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2){: external}.
     - `acr`: Authentication Context Class Reference value that identifies the Authentication Context Class that was satisfied by the authentication that was performed. This value must be set to `loa1`, which means level of assurance 1. The value starts with a lowercase `L` and ends with the number `1`. For more information, see [RFC6711](https://tools.ietf.org/html/rfc6711){: external}.
     - `exp`: Represents the expiration time on or after which the JWT cannot be accepted for processing. Many libraries set this value for you automatically. Set a short-lived `exp` claim with whatever library you use.
 

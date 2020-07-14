@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-22"
+lastupdated: "2020-07-13"
 
 keywords: sample applications, sample apps
 
@@ -31,12 +31,12 @@ subcollection: assistant
 Explore our sample applications to understand what you can develop with {{site.data.keyword.conversationshort}}.
 {: shortdesc}
 
-## Simple chat app
+## Banking chat app
 {: #sample-apps-simple}
 
-The Node.js app shows how {{site.data.keyword.conversationshort}} uses intents in a simple chat interface. It shows the conversation with an end user and the JSON responses at each turn of the conversation.
+The Node.js app demonstrates the {{site.data.keyword.conversationshort}} service in a simple interface engaging in simulated banking tasks. It shows the conversation with an end user and the JSON responses at each turn of the conversation.
 
-[See the demo](https://watson-assistant-simple.ng.bluemix.net/){: external} or [fork the code](https://github.com/watson-developer-cloud/assistant-simple){: external}.
+[See the demo](https://assistant-intermediate.ng.bluemix.net/){: external} or [fork the code](https://github.com/watson-developer-cloud/assistant-intermediate){: external}.
 
 ## {{site.data.keyword.conversationshort}} customer service demo
 {: #sample-apps-customer-service}
