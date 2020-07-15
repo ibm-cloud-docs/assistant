@@ -57,8 +57,8 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 The change log lists changes that were made this year ordered by the date they were released.
 
-### 14 July 2020
-{: #14July2020}
+### 15 July 2020
+{: #15July2020}
 <!--1.102-->
 
 - **Support ended for @sys-location and @sys-person**: The person and location system entities, which were available as a beta feature in English dialog skills only, are no longer supported. You cannot enable them. If your dialog uses them, they are ignored by the service. 

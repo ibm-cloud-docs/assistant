@@ -15,15 +15,14 @@ Watson Assistant
     sample-apps.md
     services-information.md
     release-notes.md
+    {: .navgroup-end}
 
     {: .navgroup id="tutorial"}
     tutorial.md
     tutorial-slots.md
     tutorial-slots-complex.md
     tutorial-digressions.md
-
     {: .navgroup-end}
-
 
     {: .navgroup id="howto"}
     assistant-add.md
