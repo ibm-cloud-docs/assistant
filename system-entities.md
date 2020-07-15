@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-14"
+lastupdated: "2020-07-15"
 
 subcollection: assistant
 
@@ -29,18 +29,20 @@ Learn about system entities that are provided by IBM for you to use out of the b
 {: shortdesc}
 
 New and improved versions of the numeric system entities are generally available for dialog skills in all languages. The new versions of the numeric system entities provide superior number recognition with higher precision. For more information, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
-
-
-This topic describes the legacy versions of the numeric system entities. The legacy versions are being deprecated. 
+{: important}
 
 Support for the `@sys-person` and `@sys-location` system entities ended on 15 July 2020. End of support means that mentions in input that used to be detected as person or location system entities are no longer recognized.
-
-Switch to using the new system entities now. For more information, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
 {: deprecated}
 
-For information about language support for system entities, see [Supported languages](/docs/assistant?topic=assistant-language-support).
+Switch to using the new system entities now. To do so, complete the following steps:
 
-For more information about how to use system entities from dialog, see [Creating entities](/docs/assistant?topic=assistant-entities#entities-enable-system-entities).
+1.  Go to **Options>System Entities**.
+1.  Do one of the following things:
+
+    - For Arabic, Chinese, Korean, and Japanese dialog skills, select **Use new system entities**. 
+    - For all other language skills, select **Use new system entities API format**.
+
+This topic describes the legacy versions of the numeric system entities.
 
 ## @sys-currency entity
 {: #system-entities-sys-currency}
