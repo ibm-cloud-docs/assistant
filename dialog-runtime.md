@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-24"
+lastupdated: "2020-07-16"
 
 keywords: context, context variable, digression, disambiguation, autocorrection, spelling correction, spell check, confidence 
 
@@ -989,6 +989,9 @@ Your assistant is `0.5618281841278076` (56%) confident that the user goal matche
 
 As a result, when the user input is `i must cancel it today`, both dialog nodes are likely to be considered viable candidates to respond. To determine which dialog node to process, the assistant asks the user to pick one. And to help the user choose between them, the assistant provides a short summary of what each node does. The summary text is extracted directly from the node's *name* field. If present and if a description is added to it, then the text is taken from the *external node name* field instead.
 
+The description that is displayed in the disambiguation list comes from the name (or external node name) of the last node that is processed in the branch where the intent match occurs.
+{: note}
+
 ![Service prompts the user to choose from a list of dialog options, including Cancel an account, Cancel a product order, and None of the above.](images/disambig-tryitout.png)
 
 Notice that your assistant recognizes the term `today` in the user input as a date, a mention of the `@sys-date` entity. If your dialog tree contains a node that conditions on the `@sys-date` entity, then it is also likely to be included in the list of disambiguation choices. This image shows it included in the list as the *Capture date information* option.
@@ -1022,34 +1025,65 @@ To edit the disambiguation settings, complete the following steps:
 
 Next, you must decide which dialog nodes you want to make eligible for disambiguation. From the Skills menu, click **Dialog**.
 
-### Choosing eligible nodes
-{: #dialog-runtime-choose-nodes}
+### Choosing nodes to disable
+{: #dialog-runtime-disambig-choose-nodes}
 
-To make a node eligible for disambiguation, you must add a summary of the node's purpose to the node's *name* field. 
+All nodes are eligible to be included in the disambiguation list. 
 
-  - You can pick nodes at any level of the tree hierarchy.
-  - You can pick nodes that condition on intents, entities, special conditions, context variables, or any combination of these values.
+  - Nodes at any level of the tree hierarchy are included.
+  - Nodes that condition on intents, entities, special conditions, context variables, or any combination of these values are included.
 
-Choose nodes that serve as the root of a distinct branch of conversation. The candidates can include nodes that are children of other nodes. The key is for the node to condition on some distinct value or values that distinguish it from everything else.
+Consider preventing some nodes from being included. 
 
-For each node that you want to make available from the disambiguation options list, complete the following steps:
+- **Disable for root nodes with `welcome` and `anything_else` conditions**
+  Unless you added extra functionality to these nodes, they typically are not useful options to include in a disambiguation list.
 
-1.  Click to open the node in edit view.
-1.  In the **name** field, describe the user task that this dialog node is designed to handle. For example, *Cancel an account*.
+- **Disable for jumped-to utility nodes**
+  The text that is displayed in the disambiguation list is populated from the node name (or external node name) of the *last node that is processed* in the branch where the node condition is matched.
+  {: important}
 
-    ![Plus or Premium plan only](images/plus.png) You can add a node summary description to the **external node name** field instead of the *name* field. The *external node name* field serves two purposes. It provides information about the node to customers when it is included in a disambiguation list. It also describes the node in a chat summary that is shared with service desk agents when a conversation is transferred to a person. The *external node name* field is only visible in skills that are part of a Plus or Premium plan instance. If the *external node name* field contains text, its text is used, whether or not there is text in the *name* field.
+  You do not want the name of a utility node, such as one that thanks the user, or says goodbye, or asks for feedback on answer quality to be shown in the disambiguation list instead of a phrase that describes the purpose of the matched root node.
+  
+  For example, maybe a root node with the matching intent condition of `#store-location` jumps to a node that asks users if they are satisfied with the response. If the `#check_satisfaction` node has a node name and has disambiguation enabled, then the name for that jumped-to node is displayed in the disambiguation list. As a result, `Check satisfaction` is displayed in the disambiguation list to represent the `#store-location` branch instead of the `Get store location` name from the root node. Prevent a jumped-to node from misrepresenting a disambiguation list option by disabling disambiguation on jumped-to nodes.
 
-    ![Shows the external node name field.](images/disambig-external-node-name.png)    
+- **Disable for root nodes that condition on an entity or context variable only**  
+  Again, unless you have a specific function in mind, disable disambiguation on these root nodes. While only a node with a matched intent can trigger disambiguation, once it's triggered, any node with a condition that matches is included in the disambiguation list. When such nodes opt in to disambiguation, the order of nodes in the tree hierarchy can become significant in unexpected ways.
 
-The order of nodes in the tree hierarchy impacts disambiguation.
-
-  - It impacts whether disambiguation is triggered at all
+  - The order of nodes impacts whether disambiguation is triggered at all
   
     Look at the [scenario](#dialog-runtime-disambig-example) that is used earlier to introduce disambiguation, for example. If the node that conditions on `@sys-date` was placed higher in the dialog tree than the nodes that condition on the `#Customer_Care_Cancel_Account` and `#eCommerce_Cancel_Product_Order` intents, disambiguation would never be triggered when a user enters, `i must cancel it today`. That's because your assistant would consider the date mention (`today`) to be more important than the intent references due to the placement of the corresponding nodes in the tree.
 
-  - It impacts which nodes are included in the disambiguation options list
+  - The order of nodes impacts which nodes are included in the disambiguation options list
   
-    Sometimes a node is not listed as a disambiguation option as expected. This can happen if a condition value is also referenced by a node that is not eligible for inclusion in the disambiguation list for some reason. For example, an entity mention might trigger a node that is situated earlier in the dialog tree but is not enabled for disambiguation. If the same entity is the only condition for a node that *is* enabled for disambiguation, but is situated lower in the tree, then it might not be added as a disambiguation option because your assistant never reaches it. If it matched against the earlier node and was omitted, your assistant might not process the later node.
+    Sometimes a node is not listed as a disambiguation option as expected. This can happen if a condition value is also referenced by a node that is *not* eligible for inclusion in the disambiguation list for some reason. For example, an entity mention might trigger a node that is situated earlier in the dialog tree but is not enabled for disambiguation. If the same entity is the only condition for a node that *is* enabled for disambiguation, but is situated lower in the tree, then it might not be added as a disambiguation option because your assistant never reaches it. If it matched against the earlier node and was omitted, your assistant might not process the later node.
+
+### Disabling disambiguation
+{: #dialog-runtime-disambig-disable}
+
+You can disable disambiguation for the entire dialog or for an individual dialog node.
+
+- To disable disambiguation entirely: 
+
+  - From the Skills menu, click **Options**. 
+  - On the *Disambiguation* page, switch the toggle to **Off**.
+
+- To disable disambiguation for a single dialog node: 
+
+  - From the Skills menu, click **Dialog**. Click the node to open it in the edit view.
+
+    ![Shows the Settings link after the description text for the node name field.](images/disambig-node-setting.png)
+
+  - Click **Settings**.
+
+    ![Shows the expanded disambiguation settings section where the toggle is.](images/disambig-node-level-toggle.png)
+
+  - Switch the *Show node name* toggle to **Off**.
+
+  - ![Plus or Premium plan only](images/plus.png) If you added a node summary description to the **external node name** field instead of the *name* field, remove it.
+  
+    The *external node name* field serves two purposes. It provides information about the node to customers when it is included in a disambiguation list. It also describes the node in a chat summary that is shared with service desk agents when a conversation is transferred to a person. The *external node name* field is only visible in skills that are part of a Plus or Premium plan instance. If the *external node name* field contains text, its text is used, whether or not there is text in the *name* field.
+
+    ![Shows the external node name field.](images/disambig-external-node-name.png)    
 
 For each node, test scenarios in which you expect the node to be included in the disambiguation options list. Testing gives you a chance to make adjustments to the node order or other factors that might impact how well disambiguation works at run time. See [Testing disambiguation](#dialog-runtime-disambig-test).
 
@@ -1114,25 +1148,3 @@ To test disambiguation, complete the following steps:
     ![Service returns an array of intents, including Customer_Care_Cancel_Account and eCommerce_Cancel_Product_Order.](images/disambig-show-intents.png)
 
 After you finish testing, remove any SpEL expressions that you appended to node responses, or add back any original responses that you replaced with expressions, and repopulate any *name* or *external node name* fields from which you removed text.
-
-### Disabling disambiguation
-{: #dialog-runtime-disambig-disable}
-
-You can disable disambiguation for the entire dialog or for an individual dialog node.
-
-- To disable disambiguation entirely: 
-
-  - From the Skills menu, click **Options**. 
-  - On the *Disambiguation* page, switch the toggle to **Off**.
-
-- To disable disambiguation for a single dialog node: 
-
-  - From the Skills menu, click **Dialog**. Click the node to open it in the edit view.
-
-    ![Shows the Settings link after the description text for the node name field.](images/disambig-node-setting.png)
-
-  - Click **Settings**.
-
-    ![Shows the expanded disambiguation settings section where the toggle is.](images/disambig-node-level-toggle.png)
-
-  - Switch the *Show node name* toggle to **Off**.

@@ -8,7 +8,6 @@ Watson Assistant
     getting-started.md
     index.md
     assistants.md
-    skills.md
     dev-process.md
     tool-overview.md
     [Demo: Banking Assistant](https://watson-conversation-duo-dev.ng.bluemix.net/)
@@ -26,7 +25,12 @@ Watson Assistant
 
     {: .navgroup id="howto"}
     assistant-add.md
-    skill-add.md
+
+    {: .topicgroup}
+    Creating a skill
+        skills.md
+        skill-add.md
+
     assistant-settings.md
     skill-search-add.md
 
