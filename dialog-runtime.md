@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-24"
+lastupdated: "2020-07-16"
 
 keywords: context, context variable, digression, disambiguation, autocorrection, spelling correction, spell check, confidence 
 
@@ -989,6 +989,9 @@ Your assistant is `0.5618281841278076` (56%) confident that the user goal matche
 
 As a result, when the user input is `i must cancel it today`, both dialog nodes are likely to be considered viable candidates to respond. To determine which dialog node to process, the assistant asks the user to pick one. And to help the user choose between them, the assistant provides a short summary of what each node does. The summary text is extracted directly from the node's *name* field. If present and if a description is added to it, then the text is taken from the *external node name* field instead.
 
+The description that is displayed in the disambiguation list comes from the name (or external node name) of the last node that is processed in the branch where the intent match occurs.
+{: note}
+
 ![Service prompts the user to choose from a list of dialog options, including Cancel an account, Cancel a product order, and None of the above.](images/disambig-tryitout.png)
 
 Notice that your assistant recognizes the term `today` in the user input as a date, a mention of the `@sys-date` entity. If your dialog tree contains a node that conditions on the `@sys-date` entity, then it is also likely to be included in the list of disambiguation choices. This image shows it included in the list as the *Capture date information* option.
@@ -1031,6 +1034,11 @@ To make a node eligible for disambiguation, you must add a summary of the node's
   - You can pick nodes that condition on intents, entities, special conditions, context variables, or any combination of these values.
 
 Choose nodes that serve as the root of a distinct branch of conversation. The candidates can include nodes that are children of other nodes. The key is for the node to condition on some distinct value or values that distinguish it from everything else.
+
+The disambiguation list option is populated from the node name (or external node name) of the *last node that is processed* in the branch where the intent match occurs.
+{: important}
+
+So, for example, maybe the root node with the matching intent condition of `#store-location` has one child node, and then jumps to a node (with intent condition `#check_satisfaction`) that checks user satisfaction with the response. If the `#check_satisfaction` node has a node name (such as `Check satisfaction`) and has disambiguation enabled, then the name for that jumped-to node is displayed in the disambiguation list. `Check satisfaction` is displayed in the disambiguation list to represent the `#store-location` branch instead of the `Get store location` name from the root node. To prevent a jumped-to node from misrepresenting the choice in the disambiguation list, set any jumped-to nodes to opt out of disambiguation.
 
 For each node that you want to make available from the disambiguation options list, complete the following steps:
 
