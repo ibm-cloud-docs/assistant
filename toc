@@ -26,11 +26,7 @@ Watson Assistant
     Creating your assistant
         assistants.md
         assistant-add.md
-
-    {: .topicgroup}
-    Creating skills
-        skills.md
-        skill-add.md
+        skill-add.md        
 
     skill-search-add.md
 

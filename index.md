@@ -31,9 +31,6 @@ subcollection: assistant
 Use {{site.data.keyword.conversationfull}} to build your own branded live chatbot into any device, application, or channel. Your chatbot, which is also known as an *assistant*, connects to the customer engagement resources you already use to deliver an engaging, unified problem-solving experience to your customers.
 {: shortdesc}
 
-## Key features
-{: #index-key}
-
 | | |
 |------------|-------------|
 | *Create AI-driven conversational flows* | Your assistant leverages industry-leading AI capabilities to understand questions that your customers ask in natural language. It uses machine learning models that are custom built from your data to deliver accurate answers in real time. |
@@ -63,7 +60,7 @@ This diagram illustrates how the product delivers an omnichannel customer experi
 
 To see how {{site.data.keyword.conversationshort}} is helping enterprises cut costs and improve customer satisfaction today, [read the Watson blog](https://www.ibm.com/blogs/watson/2020/03/independent-study-finds-ibm-watson-assistant-customers-accrued-23-9-million-in-benefits/){: external}.
 
-## Implementation
+## Implementation steps
 {: #index-implementation}
 
 This diagram shows the implementation in more detail:
@@ -78,7 +75,7 @@ Here's how you implement your assistant:
 
     Depending on your service plan, you can add the following types of skills:
 
-    - Add a dialog skill.  
+    - To create an AI-driven conversational flow, add a dialog skill.  
   
       Use the intuitive graphical product to define the training data and dialog for the conversation between your assistant and your customers. The training data consists of the following artifacts:
 
@@ -92,13 +89,13 @@ Here's how you implement your assistant:
 
       As you add training data, a natural language classifier is automatically added to the skill. The classifier model is trained to understand the types of requests that you teach your assistant to listen for and respond to.
 
-    - Add a search skill. ![Plus or Premium plan only](images/plus.png)
+    - To embed existing help conntent, add a search skill. ![Plus or Premium plan only](images/plus.png)
 
       Take advantage of data collections that you create in {{site.data.keyword.discoveryfull}} to provide answers to customer questions. When a customer asks a question that the dialog is not designed to answer, your assistant can search for relevant information from the configured data sources, extract the information, and return it as the assistant's response.
 
-1.  Integrate your assistant. 
+1.  Bring the assistant to your customers where they are, by adding integrations. 
 
-    Add a built-in channel integration to deploy the configured assistant directly to a social media or messaging channel. Add the built-in Web Chat integration to your company website. Or build your own client application as the user interface for the assistant.
+    Add a built-in channel integration to deploy the configured assistant directly to a social media or messaging channel. Build your own client application as the user interface for the assistant. Or add the built-in Web Chat integration to your company website. From the Web Chat you can transfer customers who ask to speak to someone to your existing service desk personnel.
 
     Your deployed assistant is hosted by {{site.data.keyword.cloud}}, the IBM cloud computing platform. (For more information, see [Platform overview](/docs/overview?topic=overview-whatis-platform){: external}.) 
 
