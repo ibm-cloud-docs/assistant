@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-04-21"
+lastupdated: "2020-07-17"
 
 subcollection: assistant
 
@@ -23,7 +23,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Opening assistants and skills
+# Working with your assistant
 {: #assistant-settings}
 
 Learn how to find and open assistants and skills that you created or can access.
