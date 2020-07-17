@@ -89,11 +89,11 @@ Here's how you implement your assistant:
 
       As you add training data, a natural language classifier is automatically added to the skill. The classifier model is trained to understand the types of requests that you teach your assistant to listen for and respond to.
 
-    - To embed existing help conntent, add a search skill. ![Plus or Premium plan only](images/plus.png)
+    - To embed existing help content, add a search skill. ![Plus or Premium plan only](images/plus.png)
 
       Take advantage of data collections that you create in {{site.data.keyword.discoveryfull}} to provide answers to customer questions. When a customer asks a question that the dialog is not designed to answer, your assistant can search for relevant information from the configured data sources, extract the information, and return it as the assistant's response.
 
-1.  Bring the assistant to your customers where they are, by adding integrations. 
+1.  Bring the assistant to your customers where they are by adding integrations. 
 
     Add a built-in channel integration to deploy the configured assistant directly to a social media or messaging channel. Build your own client application as the user interface for the assistant. Or add the built-in Web Chat integration to your company website. From the Web Chat you can transfer customers who ask to speak to someone to your existing service desk personnel.
 
