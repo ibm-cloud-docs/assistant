@@ -7,13 +7,9 @@ Watson Assistant
     {: .navgroup id="learn"}
     getting-started.md
     index.md
-    assistants.md
-    dev-process.md
     tool-overview.md
     [Demo: Banking Assistant](https://watson-conversation-duo-dev.ng.bluemix.net/)
     sample-apps.md
-    services-information.md
-    release-notes.md
     {: .navgroup-end}
 
     {: .navgroup id="tutorial"}
@@ -24,14 +20,18 @@ Watson Assistant
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    assistant-add.md
+    dev-process.md
 
     {: .topicgroup}
-    Creating a skill
+    Creating your assistant
+        assistants.md
+        assistant-add.md
+
+    {: .topicgroup}
+    Creating skills
         skills.md
         skill-add.md
 
-    assistant-settings.md
     skill-search-add.md
 
     {: .topicgroup}
@@ -64,6 +64,8 @@ Watson Assistant
             dialog-responses-json.md
 
         versions.md
+
+    assistant-settings.md
 
     {: .topicgroup}
     Deploying
@@ -121,6 +123,8 @@ Watson Assistant
     dialog-methods.md
     expression-language.md
     filter-reference.md
+    services-information.md
+    release-notes.md
 
     {: .topicgroup}
     System entities
