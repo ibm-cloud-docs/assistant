@@ -957,8 +957,9 @@ A node with a boolean node condition that evaluates to true is likely to be incl
 Learn more
 
 - [Disambiguation example](#dialog-runtime-disambig-example)
-- [Enabling disambiguation](#dialog-runtime-disambig-enable)
-- [Choosing nodes](#dialog-runtime-choose-nodes)
+- [Editing the disambiguation configuration](#dialog-runtime-disambig-edit)
+- [Choosing nodes to disable](#dialog-runtime-disambig-choose-nodes)
+- [Disabling disambiguation](#dialog-runtime-disambig-disable)
 - [Handling none of the above](#dialog-runtime-handle-none)
 - [Testing disambiguation](#dialog-runtime-disambig-test)
 
