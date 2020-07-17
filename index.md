@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-01"
+lastupdated: "2020-07-17"
 
 keywords: chatbot, live chatbot, omnichannel
 
@@ -30,6 +30,17 @@ subcollection: assistant
 
 Use {{site.data.keyword.conversationfull}} to build your own branded live chatbot into any device, application, or channel. Your chatbot, which is also known as an *assistant*, connects to the customer engagement resources you already use to deliver an engaging, unified problem-solving experience to your customers.
 {: shortdesc}
+
+## Key features
+{: #index-key}
+
+| | |
+|------------|-------------|
+| *Create AI-driven conversational flows* | Your assistant leverages industry-leading AI capabilities to understand questions that your customers ask in natural language. It uses machine learning models that are custom built from your data to deliver accurate answers in real time. |
+| *Embed existing help content* | You already know the answers to customer questions? Put your subject matter experise to work. Add a search skill to give your assistant access to corporate data collections that it can mine for answers. |
+| *Connect to your customer service teams* | If customers need more help or want to discuss a topic that requires a personal touch, connect them to human agents from your existing service desk provider. |
+| *Bring the assistant to your customers, where they are* | Configure one or more built-in integrations to quickly publish your assistant in popular social media channels like Slack, Facebook Messenger, or Intercom. Add your assistant as a chat widget to your company website, or build your own custom app. |
+| *Track customer engagement and satisfaction* | Use built-in metrics to analyze logs from conversations between customers and your assistant to gauge how well it's doing and identify areas for improvement. |
 
 ## How it works
 {: #index-how-it-works}
