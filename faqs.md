@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-09"
+lastupdated: "2020-07-17"
 
 subcollection: assistant
 
@@ -44,7 +44,7 @@ Find answers to frequently-asked questions and quick fixes for common problems.
 | Disambiguation | A feature that enables the assistant to ask customers to clarify their meaning when the assistant isn't sure what a user wants to do next. [Learn more](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation). |
 | Entity | Information in the user input that is related to the user's purpose. An intent represents the action a user wants to do. An entity represents the object of that action. [Learn more](/docs/assistant?topic=assistant-entities). |
 | Intent | The goal that is expressed in the user input, such as answering a question or processing a bill payment. [Learn more](/docs/assistant?topic=assistant-intents) |
-| Skill | Does the work of the assistant. A dialog skill has the training data and dialog that your assistant uses to chat with customers. A search skill is configured to search the appropriate external data sources for answers to customer inquiries. [Learn more](/docs/assistant?topic=assistant-skills). |
+| Skill | Does the work of the assistant. A dialog skill has the training data and dialog that your assistant uses to chat with customers. A search skill is configured to search the appropriate external data sources for answers to customer inquiries. [Learn more](/docs/assistant?topic=assistant-skill-add). |
 | Skill version | Versions are snapshots of a skill that you can create at key points during the development lifecycle. You can deploy one version to production, while you continue to make and test improvements that you make to another version of the skill. [Learn more](/docs/assistant?topic=assistant-versions). |
 | Slots | A special set of fields that you can add to a dialog node that enable the assistant to collect necessary pieces of information from the customer. For example, the assistant can require a customer to provide valid date and location details before it gets weather forecast information on the customer's behalf. [Learn more](/docs/assistant?topic=assistant-dialog-slots). |
 | System entity | Prebuilt entities that recognize references to common things like dates and numbers. You can add these to your skill and start using them immediately. [Learn more](/docs/assistant?topic=assistant-system-entities). |
