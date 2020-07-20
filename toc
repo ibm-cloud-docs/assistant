@@ -28,8 +28,6 @@ Watson Assistant
         assistant-add.md
         skill-add.md        
 
-    skill-search-add.md
-
     {: .topicgroup}
     Creating a dialog skill
         skill-dialog-add.md
@@ -61,6 +59,7 @@ Watson Assistant
 
         versions.md
 
+    skill-search-add.md
     assistant-settings.md
 
     {: .topicgroup}
