@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-13"
+lastupdated: "2020-07-21"
 
 subcollection: assistant
 
@@ -176,12 +176,14 @@ The name that is specified for the skill (`main skill`) is a hardcoded name that
     onLoad: function(instance) {
       // Subscribe to the "pre:send" event.
       instance.on({ type: "pre:send", handler: preSendhandler });
-    
       instance.render();
     }
   };
 
-  setTimeout(function(){const t=document.createElement('script');t.src='https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js';document.head.appendChild(t);});
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src='https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js';
+    document.head.appendChild(t);});
 
 </script>
 ```
@@ -234,7 +236,7 @@ In the following example, the user ID `L12345` is added to the script.
 ```
 {: codeblock} 
 
-## Securing the Web Chat ![Beta](images/beta.png)
+## Securing the Web Chat
 {: #deploy-web-chat-security}
 
 Configure the Web Chat to authenticate users and send private data from your embedded Web Chat.
@@ -270,7 +272,6 @@ Before you enable security, complete the following steps:
 
     - `iss`: Represents the issuer of the JWT. This value is a case-sensitive string.
     - `sub`: Represents the principal that is the subject of the JWT. This value must either be scoped to be locally unique in the context of the issuer or be globally unique. The value you specify for `sub` is used as the `user_id`. The syntax of the value must meet the requirements for header fields as defined in [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2){: external}.
-    - `acr`: Authentication Context Class Reference value that identifies the Authentication Context Class that was satisfied by the authentication that was performed. This value must be set to `loa1`, which means level of assurance 1. The value starts with a lowercase `L` and ends with the number `1`. For more information, see [RFC6711](https://tools.ietf.org/html/rfc6711){: external}.
     - `exp`: Represents the expiration time on or after which the JWT cannot be accepted for processing. Many libraries set this value for you automatically. Set a short-lived `exp` claim with whatever library you use.
 
     For more information about JSON Web Tokens, see the [RFC7519](https://tools.ietf.org/html/rfc7519){: external} and [OpenID Connect 1.0](https://openid.net/specs/openid-connect-core-1_0.html){: external} specifications.
@@ -293,10 +294,7 @@ Before you enable security, complete the following steps:
              * cookie in the browser so you can make sure the user is counted uniquely across visits.
              */
             sub: 'some-user-id', // Required
-            iss: 'yourdomain.com', // Required
-            acr: 'loa1' // Required
-            // The exp claim is automatically added by the jsonwebtoken library. Set a short lived exp claim
-            // with whatever library you are using.
+            iss: 'yourdomain.com' // Required
         };
         // The "expiresIn" option adds an "exp" claim to the payload.
         return jwt.sign(payload, process.env.YOUR_PRIVATE_RSA_KEY, { algorithm: 'RS256', expiresIn: '10000ms' });
@@ -399,9 +397,7 @@ For example, you might start a business process for a VIP customer that is diffe
     function mockLogin(userID, userPayload) {
         const payload = {
           sub: userID, // Required
-          iss: 'www.ibm.com', // Required
-          acr: 'loa1' // Required
-          // A short-lived exp claim is automatically added by the jsonwebtoken library.
+          iss: 'www.ibm.com' // Required
         };
         if (userPayload) {
             // If there is a user payload, it is encrypted in base64 format using the IBM public key.
@@ -440,10 +436,7 @@ To authenticate and specify a unique ID for each customer, add the user ID infor
     function mockLogin() {
       const payload = {
         sub: 'L12345', // Required
-        iss: 'www.example.com', // Required
-        acr: 'loa1' // Required
-        // The exp claim is automatically added by the jsonwebtoken library. Set a short lived exp claim
-        // with whatever library you are using.
+        iss: 'www.example.com' // Required
       };
       const token = jwt.sign(payload, process.env.YOUR_PRIVATE_RSA_KEY, { algorithm: 'RS256', expiresIn: '10000ms' });
     return token;

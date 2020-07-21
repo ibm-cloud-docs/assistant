@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-21"
 
 keywords: context, context variable, digression, disambiguation, autocorrection, spelling correction, spell check, confidence 
 
@@ -990,7 +990,7 @@ Your assistant is `0.5618281841278076` (56%) confident that the user goal matche
 
 As a result, when the user input is `i must cancel it today`, both dialog nodes are likely to be considered viable candidates to respond. To determine which dialog node to process, the assistant asks the user to pick one. And to help the user choose between them, the assistant provides a short summary of what each node does. The summary text is extracted directly from the node's *name* field. If present and if a description is added to it, then the text is taken from the *external node name* field instead.
 
-The description that is displayed in the disambiguation list comes from the name (or external node name) of the last node that is processed in the branch where the intent match occurs.
+The description that is displayed in the disambiguation list comes from the name (or external node name) of the last node that is processed in the branch where the intent match occurs. For more information, see [Disable jumped-to utility nodes](#dialog-runtime-disambig-choose-nodes).
 {: note}
 
 ![Service prompts the user to choose from a list of dialog options, including Cancel an account, Cancel a product order, and None of the above.](images/disambig-tryitout.png)
@@ -1034,12 +1034,14 @@ All nodes are eligible to be included in the disambiguation list.
   - Nodes at any level of the tree hierarchy are included.
   - Nodes that condition on intents, entities, special conditions, context variables, or any combination of these values are included.
 
-Consider preventing some nodes from being included. 
+Consider preventing some nodes from being included in the list by disabling disambiguation on them.
 
-- **Disable for root nodes with `welcome` and `anything_else` conditions**
+- **Disable root nodes with `welcome` and `anything_else` conditions**
+
   Unless you added extra functionality to these nodes, they typically are not useful options to include in a disambiguation list.
 
-- **Disable for jumped-to utility nodes**
+- **Disable jumped-to utility nodes**
+
   The text that is displayed in the disambiguation list is populated from the node name (or external node name) of the *last node that is processed* in the branch where the node condition is matched.
   {: important}
 
@@ -1047,7 +1049,8 @@ Consider preventing some nodes from being included.
   
   For example, maybe a root node with the matching intent condition of `#store-location` jumps to a node that asks users if they are satisfied with the response. If the `#check_satisfaction` node has a node name and has disambiguation enabled, then the name for that jumped-to node is displayed in the disambiguation list. As a result, `Check satisfaction` is displayed in the disambiguation list to represent the `#store-location` branch instead of the `Get store location` name from the root node. Prevent a jumped-to node from misrepresenting a disambiguation list option by disabling disambiguation on jumped-to nodes.
 
-- **Disable for root nodes that condition on an entity or context variable only**  
+- **Disable root nodes that condition on an entity or context variable only**
+
   Again, unless you have a specific function in mind, disable disambiguation on these root nodes. While only a node with a matched intent can trigger disambiguation, once it's triggered, any node with a condition that matches is included in the disambiguation list. When such nodes opt in to disambiguation, the order of nodes in the tree hierarchy can become significant in unexpected ways.
 
   - The order of nodes impacts whether disambiguation is triggered at all

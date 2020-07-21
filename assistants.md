@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-07-21"
 
 subcollection: assistant
 
@@ -56,6 +56,6 @@ A search skill leverages information from existing corporate knowledge bases or 
 
 | Integrations       | Channels  |
 |--------------------|:----------|
-| You can deploy the assistant through multiple interfaces, including existing messaging channels, such as Slack and Facebook Messenger, in just a few steps. Or, if you want to design a custom application that incorporates it, you can make direct calls to the underlying APIs to do so. | ![Integration methods including Slack, Facebook Messenger, a web application or human agent integration](images/integrations.png) |
+| You can deploy the assistant through multiple interfaces, including existing messaging channels, such as Slack and Facebook Messenger, in just a few steps. You can add a Web Chat integration to deploy the assistant in your company website. Web Chat can also connect to popular service desk solutions to support conversation transfers. If you want to design a custom application that incorporates your assistant, you can make direct calls to the underlying APIs to build a custom app. | ![Integration methods including Slack, Facebook Messenger, a web application or human agent integration](images/integrations.png) |
 
 See [Creating assistants](/docs/assistant?topic=assistant-assistant-add) to get started.

@@ -119,7 +119,6 @@ Watson Assistant
     expression-language.md
     filter-reference.md
     services-information.md
-    release-notes.md
 
     {: .topicgroup}
     System entities
@@ -133,6 +132,7 @@ Watson Assistant
 
     {: .navgroup id="help"}
     faqs.md
+    release-notes.md
     troubleshoot.md
     feedback.md
 
