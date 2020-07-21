@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-20"
+lastupdated: "2020-07-21"
 
 keywords: context, context variable, digression, disambiguation, autocorrection, spelling correction, spell check, confidence 
 
@@ -990,7 +990,7 @@ Your assistant is `0.5618281841278076` (56%) confident that the user goal matche
 
 As a result, when the user input is `i must cancel it today`, both dialog nodes are likely to be considered viable candidates to respond. To determine which dialog node to process, the assistant asks the user to pick one. And to help the user choose between them, the assistant provides a short summary of what each node does. The summary text is extracted directly from the node's *name* field. If present and if a description is added to it, then the text is taken from the *external node name* field instead.
 
-The description that is displayed in the disambiguation list comes from the name (or external node name) of the last node that is processed in the branch where the intent match occurs. For more information, see[Disable jumped-to utility nodes](#dialog-runtime-disambig-choose-nodes).
+The description that is displayed in the disambiguation list comes from the name (or external node name) of the last node that is processed in the branch where the intent match occurs. For more information, see [Disable jumped-to utility nodes](#dialog-runtime-disambig-choose-nodes).
 {: note}
 
 ![Service prompts the user to choose from a list of dialog options, including Cancel an account, Cancel a product order, and None of the above.](images/disambig-tryitout.png)
