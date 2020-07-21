@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-02"
+lastupdated: "2020-07-21"
 
 subcollection: assistant
 
@@ -51,7 +51,7 @@ Duration: 8 minutes
 ## Dialog considerations
 {: #deploy-facebook-dialog}
 
-The rich responses that you add to a dialog are displayed in a Facebook app as expected, with the following exceptions:
+The rich responses that you add to the dialog are displayed in a Facebook app as expected, with the following exceptions:
 
 - **Connect to human agent**: This response type is ignored.
 
@@ -76,7 +76,7 @@ To start a chat with the assistant, complete the following steps:
 1.  Type the name of the page you created earlier.
 1.  After the page comes up, click it, and then start chatting with the assistant.
 
-The Welcome node of your dialog is not processed by the Facebook Messenger integration. The welcome message is not displayed in the Facebook chat like it is in the "Try it out" pane or in the Preview Link integration web page. It is not triggered from here because nodes with the `welcome` special condition are skipped in dialog flows that are started by users. Facebook Messenger waits for the user to initiate the conversation. If you need to set default values for context variables at the start of your conversation, do not set them in the welcome node.
+The Welcome node of your dialog is not processed by the Facebook Messenger integration. The welcome message is not displayed in the Facebook chat like it is in the "Try it out" pane or in the preview link integration web page. It is not triggered from here because nodes with the `welcome` special condition are skipped in dialog flows that are started by users. Facebook Messenger waits for the user to initiate the conversation. If you need to set default values for context variables at the start of your conversation, do not set them in the welcome node.
 {: note}
 
 The dialog flow for the current session is restarted after 60 minutes of inactivity (5 minutes for Lite and Standard plans). This means that if a user stops interacting with the assistant, after 60 (or 5) minutes, any context variable values that were set during the previous conversation are set to null or back to their default values.

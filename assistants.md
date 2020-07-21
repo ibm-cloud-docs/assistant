@@ -38,7 +38,7 @@ A dialog skill can understand and address questions or requests that your custom
 
 | Dialog tree | Graphical user interface |
 |-------------|-------------------------:|
-| You can use the graphical dialog editor to create a script of sorts for your assistant to read from when it interacts with your customers. The result is a dialog that simulates a real conversation. The dialog keys off the common customer goals that you teach it to recognize, and provides useful responses. | ![A sample dialog tree with example content](images/dialog-depiction.png) |
+| You can use the graphical dialog editor to create a script of sorts for your assistant to read from when it interacts with your customers. The result is a dialogue that simulates a real conversation. The dialog keys off the common customer goals that you teach it to recognize, and provides useful responses. | ![A sample dialog tree with example content](images/dialog-depiction.png) |
 
 The dialog skill itself is defined in text, but you can integrate it with Watson Speech to Text and Watson Text to Speech services that enable users to interact with your assistant verbally.
 
@@ -56,6 +56,6 @@ A search skill leverages information from existing corporate knowledge bases or 
 
 | Integrations       | Channels  |
 |--------------------|:----------|
-| You can deploy the assistant through multiple interfaces, including existing messaging channels, such as Slack and Facebook Messenger, in just a few steps. You can add a Web Chat integration to deploy the assistant in your company website. Web Chat can also connect to popular service desk solutions to support conversation transfers. If you want to design a custom application that incorporates your assistant, you can make direct calls to the underlying APIs to build a custom app. | ![Integration methods including Slack, Facebook Messenger, a web application or human agent integration](images/integrations.png) |
+| You can deploy the assistant through multiple interfaces, including existing messaging channels, such as Slack and Facebook Messenger, in just a few steps. You can add a web chat integration to deploy the assistant in your company website. Web chat can also connect to popular service desk solutions to support conversation transfers. If you want to design a custom application that incorporates your assistant, you can make direct calls to the underlying APIs to build a custom app. | ![Integration methods including Slack, Facebook Messenger, a web application or human agent integration](images/integrations.png) |
 
 See [Creating assistants](/docs/assistant?topic=assistant-assistant-add) to get started.

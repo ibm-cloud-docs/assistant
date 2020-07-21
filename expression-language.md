@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-12"
+lastupdated: "2020-07-21"
 
 subcollection: assistant
 
@@ -26,7 +26,7 @@ subcollection: assistant
 # Expressions for accessing objects
 {: #expression-language}
 
-You can write expressions that access objects and properties of objects by using the Spring Expression (SpEL) language. For more information, see [Spring Expression Language (SpEL)](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#expressions){: external}.
+You can write expressions that access objects and properties of objects by using the Spring Expression (SpEL) language. For more information, see [Spring Expression Language (SpEL)](https://docs.spring.io/spring/docs/3.0.x/reference/expressions.html){: external}.
 {: shortdesc}
 
 ## Evaluation syntax
@@ -220,6 +220,12 @@ In this example, the user input is *Are there places to exchange currency at JFK
   `You asked about these airports: <? $airports.join(', ') ?>.`
   It is displayed like this:
   `You asked about these airports: JFK, Logan, O'Hare.`
+
+- To capture the literal values for multiple entity mentions, use the following syntax:
+
+    ```
+    entities['myEntityName'].![literal]
+    ```
 
 ## Accessing intents
 {: #expression-language-intent}

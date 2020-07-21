@@ -74,7 +74,7 @@ The change log lists changes that were made this year ordered by the date they w
 
   Update your skills to use the new system entities from the **Options>System Entities** page.
 
-- **Web Chat security is generally available**: Enable the security feature of Web Chat so that you can verify that messages sent to your assistant come from only your customers and can pass sensitive information to your assistant. 
+- **Web chat security is generally available**: Enable the security feature of web chat so that you can verify that messages sent to your assistant come from only your customers and can pass sensitive information to your assistant. 
 
   When configuring the JWT, you no longer need to specify the Authentication Context Class Reference (acr) claim.
 
@@ -82,7 +82,7 @@ The change log lists changes that were made this year ordered by the date they w
 {: #1July2020}
 <!--1.101.3-->
 
-- **Salesforce support is generally available**: Integrate your Web Chat with Salesforce so your assistant can transfer customers who asks to speak to a person to a Salesforce agent who can answer their questions. For more information, see [Integrating with Salesforce](/docs/assistant?topic=assistant-deploy-salesforce).
+- **Salesforce support is generally available**: Integrate your web chat with Salesforce so your assistant can transfer customers who asks to speak to a person to a Salesforce agent who can answer their questions. For more information, see [Integrating with Salesforce](/docs/assistant?topic=assistant-deploy-salesforce).
 
 ### 24 June 2020
 {: #24June2020}
@@ -96,7 +96,7 @@ The change log lists changes that were made this year ordered by the date they w
 {: #3June2020}
 <!--1.99-->
 
-- **Zendesk support is generally available**: Integrate your Web Chat with Zendesk so your assistant can transfer customers who asks to speak to a person to a Zendesk agent who can answer their questions. And now you can secure the connection to Zendesk. For more information, see [Adding support for transfers](/docs/assistant?topic=assistant-deploy-zendesk).
+- **Zendesk support is generally available**: Integrate your web chat with Zendesk so your assistant can transfer customers who asks to speak to a person to a Zendesk agent who can answer their questions. And now you can secure the connection to Zendesk. For more information, see [Adding support for transfers](/docs/assistant?topic=assistant-deploy-zendesk).
 
 -  **Pricing plan changes**: We continue to revamp the overall service plan structure for {{site.data.keyword.conversationshort}}. In April, we announced [a new low cost entry point](#1April2020) for the Plus plan. Today, the Standard plan is being retired. Existing Standard plan users are not impacted; they can continue to work in their Standard instances.  New users do not see the Standard plan as an option when they create a service instance. For more information, see the [Pricing](https://www.ibm.com/cloud/watson-assistant/pricing/){: external} page.
 
@@ -139,15 +139,15 @@ The change log lists changes that were made this year ordered by the date they w
 {: #30April2020}
 <!--1.95.1-->
 
--  **Web Chat is generally available!**: Add your assistant to your company website as a web chat widget that can help your customers with common questions and tasks. Service desk transfer support continues to be a beta feature. For more information, see [Integrating with your own website](/docs/assistant?topic=assistant-deploy-web-chat).
+-  **Web chat is generally available!**: Add your assistant to your company website as a web chat widget that can help your customers with common questions and tasks. Service desk transfer support continues to be a beta feature. For more information, see [Integrating with your own website](/docs/assistant?topic=assistant-deploy-web-chat).
 
-- **Secure your Web Chat**: Enable the beta security feature of Web Chat so that you can verify that messages sent to your assistant come from only your customers and can pass sensitive information to your assistant.
+- **Secure your web chat**: Enable the beta security feature of web chat so that you can verify that messages sent to your assistant come from only your customers and can pass sensitive information to your assistant.
 
 ### 27 April 2020
 {: #27April2020}
 <!--1.95-->
 
-- **Add personality to your assistant in Web Chat**: You can add an assistant image to the Web Chat header to brand the window. You can add an avatar image that represents your assistant or a brand logo, for example. For more information, see [Integrating with your own web site](/docs/assistant?topic=assistant-deploy-web-chat).
+- **Add personality to your assistant in web chat**: You can add an assistant image to the web chat header to brand the window. You can add an avatar image that represents your assistant or a brand logo, for example. For more information, see [Integrating with your own web site](/docs/assistant?topic=assistant-deploy-web-chat).
 
 - **Know your plan**: Now your service plan is displayed in the page header. And if you have a Plus Trial plan, you can see how many days are left in the trial.
 
@@ -162,10 +162,10 @@ The change log lists changes that were made this year ordered by the date they w
 {: #14April2020}
 <!--web chat 1.5.3-->
 
-- **The Web Chat integration was updated**: The following changes were made:
+- **The web chat integration was updated**: The following changes were made:
 
-  - The **Font family** field was removed from the Web Chat configuration page. The text that is displayed in the chat window uses the fonts: `IBMPlexSans, Arial, Helvetica, sans-serif`. If you want to use a different set of fonts, you can customize the CSS for your Web Chat. For more information, see [Theming](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-instance-methods#theming).
-  - When your implementation does not specify a unique user ID, Web Chat adds a first party cookie with a generated anonymous ID to use to identify the unique user. The generated cookie now expires after 45 days. For more information, see [Key concepts](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/key-concepts#datapolicy){: external}.
+  - The **Font family** field was removed from the web chat configuration page. The text that is displayed in the chat window uses the fonts: `IBMPlexSans, Arial, Helvetica, sans-serif`. If you want to use a different set of fonts, you can customize the CSS for your web chat. For more information, see [Theming](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-instance-methods#theming).
+  - When your implementation does not specify a unique user ID, web chat adds a first party cookie with a generated anonymous ID to use to identify the unique user. The generated cookie now expires after 45 days. For more information, see [Key concepts](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/key-concepts#datapolicy){: external}.
 
 ### 2 April 2020
 {: #2April2020}
@@ -178,7 +178,7 @@ The change log lists changes that were made this year ordered by the date they w
 
   If you can't access the API Details for a skill or assistant anymore, you might not have the access role that is required to use the instance-level API credentials. You can use a personal API key instead. For more information, see [Getting API information](/docs/assistant?topic=assistant-assistant-settings#assistant-settings-api-details).
 
-- **The Web Chat integration was updated**: The `learningOptOut` parameter replaced a previous version of the parameter. You can add the `learningOptOut` parameter and set it to `true` to add the `X-Watson-Learning-Opt-Out` header to each `/message` request that originates from the Web Chat. For more information about the header, see [Data collection](https://cloud.ibm.com/apidocs/assistant/assistant-v2#data-collection){: external}. For more information about the parameter, see [Configuration](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-configuration){: external}.
+- **The web chat integration was updated**: The `learningOptOut` parameter replaced a previous version of the parameter. You can add the `learningOptOut` parameter and set it to `true` to add the `X-Watson-Learning-Opt-Out` header to each `/message` request that originates from the web chat. For more information about the header, see [Data collection](https://cloud.ibm.com/apidocs/assistant/assistant-v2#data-collection){: external}. For more information about the parameter, see [Configuration](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-configuration){: external}.
 
 ### 1 April 2020
 {: #1April2020}
@@ -208,7 +208,7 @@ The change log lists changes that were made this year ordered by the date they w
 {: #31March2020}
 <!--web chat 1.5.1-->
 
-- **The Web Chat integration was updated**: The update adds an `isTrackingEnabled` parameter. You can add this parameter and set it to `false` to add the `X-Watson-Learning-Opt-Out` header to each `/message` request that originates from the Web Chat. For more information about the header, see [Data collection](https://cloud.ibm.com/apidocs/assistant/assistant-v2#data-collection){: external}. For more information about the parameter, see [Configuration](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-configuration){: external}.
+- **The web chat integration was updated**: The update adds an `isTrackingEnabled` parameter. You can add this parameter and set it to `false` to add the `X-Watson-Learning-Opt-Out` header to each `/message` request that originates from the web chat. For more information about the header, see [Data collection](https://cloud.ibm.com/apidocs/assistant/assistant-v2#data-collection){: external}. For more information about the parameter, see [Configuration](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-configuration){: external}.
 
 ### 26 March 2020
 {: #26March2020}
@@ -220,10 +220,10 @@ The change log lists changes that were made this year ordered by the date they w
 ### 20 March 2020
 {: #20March2020}
 
-- **Web Chat integration version 1.4.0 is available**: The update includes the following features:
+- **Web chat integration version 1.4.0 is available**: The update includes the following features:
 
-  - You can customize the CSS theme that is used by the Web Chat. For more information, see [Theming](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-instance-methods#theming){: new_window}.
-  - Shadow DOM is no longer used in the Web Chat. When you use custom response types or HTML in your dialog, you can apply CSS styles that are defined in your web page to the assistant's response. To override any default styling in the Web Chat, you must specify the `!important` modifier in your CSS. For more information, see [Rendering response types](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-render#html){: new_window}.
+  - You can customize the CSS theme that is used by the web chat. For more information, see [Theming](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-instance-methods#theming){: new_window}.
+  - Shadow DOM is no longer used in the web chat. When you use custom response types or HTML in your dialog, you can apply CSS styles that are defined in your web page to the assistant's response. To override any default styling in the web chat, you must specify the `!important` modifier in your CSS. For more information, see [Rendering response types](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-render#html){: new_window}.
 
 ### 19 March 2020
 {: #19March2020}
@@ -330,7 +330,7 @@ The following technologies are being deprecated:
   With the introduction of this feature, how CSV log files are stored also changed. Previously, a log CSV file that you uploaded to one skill was shared by all of the skills in that service instance. Now, a CSV file that you upload to one skill is available for use only by that one skill. For existing instances with CSV files, the shared CSV files are available to each of the skills in the instance. You can delete a CSV file from a skill that doesn't use it by managing the recommendation sources for the skill.
   {: important}
 
-- **More Web Chat color settings**: You can now specify the color of more elements of the Web Chat integration. For example, you can define one color for the web chat window header. You can define a different color for the user message bubble. And another color for interactive components, such as the launcher button for the chat.
+- **More web chat color settings**: You can now specify the color of more elements of the web chat integration. For example, you can define one color for the web chat window header. You can define a different color for the user message bubble. And another color for interactive components, such as the launcher button for the chat.
 
 ### 13 February 2020
 {: #13February2020}
@@ -365,32 +365,32 @@ The following technologies are being deprecated:
 
 - **Fixed an error message that was displayed when opening an instance**: An error that was displayed when you launched {{site.data.keyword.conversationshort}} from the {{site.data.keyword.cloud}} dashboard has been fixed. Previously, an error message that said, `Module 'ui-router' is not available! You either misspelled the module name or forgot to load it` would sometimes be displayed.
 
-## Web Chat change log
+## Web chat change log
 {: #release-notes-web-chat-changes}
 
-The Web Chat change log lists changes ordered by version number. For more information about Web Chat, see [Integrating with your website](/docs/assistant?topic=assistant-deploy-web-chat).
+The web chat change log lists changes ordered by version number. For more information about web chat, see [Integrating with your website](/docs/assistant?topic=assistant-deploy-web-chat).
 
 ### 2.1.2
 {: #2.1.2}
 <!--2July2020-->
 
-- **Fixed a loading issue**: Addressed an issue that prevented the Web Chat from loading properly for some deployments with short JWT expiration claims.
+- **Fixed a loading issue**: Addressed an issue that prevented the web chat from loading properly for some deployments with short JWT expiration claims.
 
 ### 2.1.1
 {: #2.1.1}
 <!--1July2020-->
 
-- **Service desk agent initials are displayed**: When Web Chat transfers a user to a service desk agent, the agent's avatar is displayed in the chat window to identify messages sent from the service desk agent. If the agent does not have an avatar, the first initial of the agent's given name is displayed instead.
+- **Service desk agent initials are displayed**: When web chat transfers a user to a service desk agent, the agent's avatar is displayed in the chat window to identify messages sent from the service desk agent. If the agent does not have an avatar, the first initial of the agent's given name is displayed instead.
 
 ### 2.0
 {: #2.0}
 <!--16June2020-->
 
-- **Versioning was added to Web Chat**: For more information, see [Versioning](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=key-concepts#versioning){: external}.
+- **Versioning was added to web chat**: For more information, see [Versioning](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=key-concepts#versioning){: external}.
 
-- **Added bidirectional support**: You can now use the `direction` parameter to choose whether to show text and elements in the Web Chat in right-to-left or left-to-right order. For more information, see  [Configuration](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-configuration){: external}.
+- **Added bidirectional support**: You can now use the `direction` parameter to choose whether to show text and elements in the web chat in right-to-left or left-to-right order. For more information, see  [Configuration](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-configuration){: external}.
 
-- **Introduced the `instance.destroySession()` method**: The `instance.destroySession()` method removes all cookie and browser storage that is related to the current Web Chat session. You can use this method as part of your website logout sequence. For more information, see [Instance methods](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-instance-methods#destroySession){: external}.
+- **Introduced the `instance.destroySession()` method**: The `instance.destroySession()` method removes all cookie and browser storage that is related to the current web chat session. You can use this method as part of your website logout sequence. For more information, see [Instance methods](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-instance-methods#destroySession){: external}.
 
 ## Change log archive
 {: #release-notes-changes-archive}

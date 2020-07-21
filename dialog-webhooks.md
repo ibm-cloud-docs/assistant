@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-05"
+lastupdated: "2020-07-21"
 
 subcollection: assistant
 
@@ -113,7 +113,7 @@ To add the webhook details, complete the following steps:
       </tr>
     </table>
 
-    If you use the Web Chat integration and enable security, you can use the same token you use to secure the Web Chat in the Authorization header. For more information, see [Web Chat: Reusing the JWT for webhook authentication](/docs/assistant?topic=assistant-dialog-integrations#dialog-integrations-chat-jwt).
+    If you use the web chat integration and enable security, you can use the same token you use to secure the web chat in the Authorization header. For more information, see [Web chat: Reusing the JWT for webhook authentication](/docs/assistant?topic=assistant-dialog-integrations#dialog-integrations-chat-jwt).
     {: tip}
 
 Your webhook details are saved automatically.

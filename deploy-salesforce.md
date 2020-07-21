@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-01"
+lastupdated: "2020-07-21"
 
 subcollection: assistant
 
@@ -27,12 +27,12 @@ subcollection: assistant
 # Integrating with Salesforce
 {: #deploy-salesforce}
 
-Integrate your Web Chat with a Salesforce service desk solution so your customers always get the help they need.
+Integrate your web chat with a Salesforce service desk solution so your customers always get the help they need.
 {: shortdesc}
 
 ![Plus or Premium plan only](images/plus.png) This integration type is available to Plus or Premium plan users only.
 
-Integrate with a Salesforce service desk by deploying your assistant with the Web Chat integration. The Web Chat serves as the client interface for your assistant. If, in the course of a conversation with your assistant, a customer asks to speak to a person, you can transfer the conversation directly to a Salesforce agent.
+Integrate with a Salesforce service desk by deploying your assistant with the web chat integration. The web chat serves as the client interface for your assistant. If, in the course of a conversation with your assistant, a customer asks to speak to a person, you can transfer the conversation directly to a Salesforce agent.
 
 Salesforce is a customer relationship management solution that brings companies and customers together. It is one integrated CRM platform that gives all your departments, including marketing, sales, commerce, and service, a single, shared view of every customer.
 
@@ -65,13 +65,13 @@ If you don't, ask someone with the appropriate level of access to perform this p
 
 To set up a Salesforce service desk integration, complete the following steps:
 
-1.  Create a Web Chat integration. For more information, see [Integrating with your website](/docs/assistant?topic=assistant-deploy-web-chat).
+1.  Create a web chat integration. For more information, see [Integrating with your website](/docs/assistant?topic=assistant-deploy-web-chat).
 
-1.  From the Web Chat integration page in {{site.data.keyword.conversationshort}}, switch the **Allow transfers to live agents** toggle to **On**, and then choose **Salesforce** as the service desk type. Click **Set up**.
+1.  From the web chat integration page in {{site.data.keyword.conversationshort}}, switch the **Allow transfers to live agents** toggle to **On**, and then choose **Salesforce** as the service desk type. Click **Set up**.
 
 1.  {: #deploy-salesforce-get-deployment-info}For {{site.data.keyword.conversationshort}} to connect to a Salesforce service desk, it needs information about your organization's Salesforce chat deployment and button implementations. Specifically, it needs the API endpoint, organization ID, deployment ID, and button ID. The service can derive the values that it needs from code snippets that you copy and paste to this configuration page.
 
-    In a separate browser tab or window, open your Salesforce account settings page. Log in with a user ID that has administrative privileges. You must switch back and forth between your Salesforce and {{site.data.keyword.conversationshort}} Web Chat integration setup pages. It's easier to do so if you have both pages open at once.
+    In a separate browser tab or window, open your Salesforce account settings page. Log in with a user ID that has administrative privileges. You must switch back and forth between your Salesforce and {{site.data.keyword.conversationshort}} web chat integration setup pages. It's easier to do so if you have both pages open at once.
     {: tip}
 
     - Get the deployment code for your Salesforce Agent Configuration chat deployment. 
@@ -112,7 +112,7 @@ To set up a Salesforce service desk integration, complete the following steps:
 
     Visualforce pages are the mechanism that Salesforce provides for you to customize a live agent's console by adding your own pages to it. A Visualforce page is similar to a standard web page, but it provides ways for you to access, display, and update your organization’s data. Pages can be referenced and invoked by using a unique URL, just as HTML pages on a traditional web server can be. See [Create Visualforce Pages](https://help.salesforce.com/articleView?id=pages_creating.htm&type=5){: external}
 
-    - From the Web Chat integration page in {{site.data.keyword.conversationshort}}, copy the code snippet from the Visualforce page markup field.
+    - From the web chat integration page in {{site.data.keyword.conversationshort}}, copy the code snippet from the Visualforce page markup field.
     - Switch to your Salesforce web page. Search for **Visualforce Pages**. Create a page. Add a label and name to the page. Select the *Available for Lightning Experience, Lightning Communities, and the mobile app* checkbox. Paste the code snippet that you copied in the previous step into the page markup field.
 
 1.  {: #deploy-salesforce-add-page-to-layout}Add the Visualforce page that you created to the Salesforce chat app.

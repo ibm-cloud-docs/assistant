@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-05-01"
+lastupdated: "2020-07-21"
 
 subcollection: assistant
 
@@ -30,18 +30,18 @@ If you do not disable the preview link, then the assistant is immediately availa
 
 The assistant is implemented as a chat widget embedded in a simple IBM-branded web page automatically. You can test the dialog skill that you added to the assistant by entering text into the chat widget. You can also share the URL of the page with others to enlist help in testing and getting feedback about the assistant.
 
-Unlike when you test using the "Try it out" pane, any API calls that result from your interactions with the assistant hosted by the Preview Link URL do incur charges.
+Unlike when you test using the "Try it out" pane, any API calls that result from your interactions with the assistant hosted by the preview link URL do incur charges.
 
-## Using the Preview Link integration to test your assistant
+## Using the preview link integration to test your assistant
 {: #deploy-web-link-try}
 
 To test the assistant from a web-hosted chat widget, complete the following steps:
 
 1.  From the Assistants page, click to open the assistant tile that you want to test.
 
-1.  From the *Integrations* section, click the **Preview Link** tile.
+1.  From the *Integrations* section, click the **Preview link** tile.
 
-    If you did not enable the preview link when you created the assistant, then click **Add integration**, and then click the **Preview Link** integration tile.
+    If you did not enable the preview link when you created the assistant, then click **Add integration**, and then click the **Preview link** integration tile.
 
 1.  **Optional**: Change the preview web page name and description.
 
@@ -73,7 +73,7 @@ The rich responses that you add to a dialog are displayed in the web-hosted chat
 
 See [Rich responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more information about response types.
 
-## Adding a Preview Link integration
+## Adding a preview link integration
 {: #deploy-web-link-add-more}
 
 If you accidentally deleted the preview link integration that is created automatically for you or want to create another, separate public web page, you can add a preview link integration.
@@ -82,7 +82,7 @@ If you accidentally deleted the preview link integration that is created automat
 
 1.  Go to the **Integrations** section, and then click **Add integration**.
 
-1.  Click the **Preview Link** integration tile.
+1.  Click the **Preview link** integration tile.
 
 1.  Optionally edit the preview link integration name and description, and then click **Create**.
 

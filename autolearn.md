@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-05-18"
+lastupdated: "2020-07-21"
 
 subcollection: assistant
 
@@ -54,9 +54,9 @@ Autolearning uses observations of actions that are made by only your customers t
 Autolearn gains insights from the following user action:
 
 - The choice made from a list of disambiguation options that is displayed for an utterance
-<!-- The choice made from a list of more options that is included with the response in Web Chat integrations-->
+<!-- The choice made from a list of more options that is included with the response in web chat integrations-->
 
-These customer interactions occur in the context of one of the product's built-in integrations, such as the Web Chat, or in a custom application. To say that your skill *observes* the choices that users make means that it analyzes logs of the exchanges after the interactions take place. It does not mean that the skill watches the clicks that users make within the client-facing app in real time, for example.
+These customer interactions occur in the context of one of the product's built-in integrations, such as the web chat, or in a custom application. To say that your skill *observes* the choices that users make means that it analyzes logs of the exchanges after the interactions take place. It does not mean that the skill watches the clicks that users make within the client-facing app in real time, for example.
 
 When you connect a live assistant as the data source for recommendations, you enable observation. When you turn on autolearning, you put the observed insights to use to improve your skill, which results in a better customer experience.
 
@@ -71,7 +71,7 @@ You can enable autolearning when the following conditions are met:
   {: note}
 - You have at least one deployed assistant that is actively interacting with customers and has accumulated log data that the skill can learn from.
 
-<!--Autolearning is optimized for use with the built-in Web Chat integration. This integration, in particular, has a *more options* feature which increases the opportunities for users to make choices, and therefore for the skill to learn from them.
+<!--Autolearning is optimized for use with the built-in web chat integration. This integration, in particular, has a *more options* feature which increases the opportunities for users to make choices, and therefore for the skill to learn from them.
 {: tip}-->
 
 To enable autolearning, complete the following steps:
