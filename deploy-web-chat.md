@@ -24,30 +24,30 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Integrating Web Chat with your website
+# Integrating web chat with your website
 {: #deploy-web-chat}
 
-Add your assistant to your company website as a Web Chat widget that can help your customers with common questions and tasks, and can transfer customers to human agents.
+Add your assistant to your company website as a web chat widget that can help your customers with common questions and tasks, and can transfer customers to human agents.
 {: shortdesc}
 
-When you create a Web Chat integration, code is generated that calls a script that is written in JavaScript. The script instantiates a unique instance of your assistant. You can then copy and paste the HTML `script` element into any page or pages on your website where you want users to be able to ask your assistant for help.
+When you create a web chat integration, code is generated that calls a script that is written in JavaScript. The script instantiates a unique instance of your assistant. You can then copy and paste the HTML `script` element into any page or pages on your website where you want users to be able to ask your assistant for help.
 
 ![Plus or Premium plan only](images/plus.png) This integration type is available to Plus or Premium plan users only.
 
-To learn more about Web Chat, watch the following 3-minute video.
+To learn more about web chat, watch the following 3-minute video.
 
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Web Chat overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/52bpMKVigGU" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+<iframe class="embed-responsive-item" id="youtubeplayer" title="Web chat overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/52bpMKVigGU" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
-## Create a Web Chat instance to add to your website
+## Create a web chat instance to add to your website
 {: #deploy-web-chat-task}
 
 To add the assistant to a web page on your company website, complete the following steps:
 
 1.  From the Assistants page, click to open the assistant tile that you want to deploy to your site.
 
-1.  From the *Integrations* section, click the **Web Chat** tile.
+1.  From the *Integrations* section, click the **Web chat** tile.
 
-1.  **Optional**: Change the Web Chat integration name from *Web Chat* to something more descriptive.
+1.  **Optional**: Change the web chat integration name from *Web chat* to something more descriptive.
 
 1.  Click **Create** to generate the script.
 
@@ -57,7 +57,7 @@ To add the assistant to a web page on your company website, complete the followi
 
     - **Public assistant name**. Name by which the assistant is known to users. This name is displayed in the header of the chat window. The name can be up to 18 characters in length. 
 
-    - **Primary color**. Sets the color of the Web Chat header.
+    - **Primary color**. Sets the color of the web chat header.
 
       Click the white dot to open a color switcher where you can choose a color. The color is saved as an HTML color code, such as `#FF33FC` for pink and `#329A1D` for green. Alternatively, you can add an HTML color code directly to the field to set the color.
 
@@ -73,7 +73,7 @@ To add the assistant to a web page on your company website, complete the followi
       - Typing indicator that is shown to repesent a pause response
       - Active state for dropdown color of border
 
-    - **Assistant image**: This image is displayed in the Web Chat header along with the assistant name to represent your assistant or organization. Specify the URL for a publicly accessible hosted image, such as a company or brand logo or an assistant avatar.
+    - **Assistant image**: This image is displayed in the web chat header along with the assistant name to represent your assistant or organization. Specify the URL for a publicly accessible hosted image, such as a company or brand logo or an assistant avatar.
     
       The image file must be between 64 x 64 and 100 x 100 pixels in size. 
 
@@ -81,7 +81,7 @@ To add the assistant to a web page on your company website, complete the followi
 
 1.  Copy the `script` HTML element.
 
-    Do not click *Save changes* until you are done with making Web Chat edits; it closes the page.
+    Do not click *Save changes* until you are done with making web chat edits; it closes the page.
     {: tip}
 
 1.  Open the HTML source for a web page on your website where you want the chat window to be displayed. Paste the code snippet into the page.
@@ -89,7 +89,7 @@ To add the assistant to a web page on your company website, complete the followi
     Paste the code as close to the closing `</body>` tag as possible to ensure that your page renders faster.
     {: tip}
 
-    The following HTML snippet is the source for a test page that you can copy and save as a file with a .html extension for testing purposes. You would replace the script element block here with the script elements you copied from the Web Chat integration setup page.
+    The following HTML snippet is the source for a test page that you can copy and save as a file with a .html extension for testing purposes. You would replace the script element block here with the script elements you copied from the web chat integration setup page.
 
     ```html
     <html>
@@ -105,13 +105,13 @@ To add the assistant to a web page on your company website, complete the followi
 
 1.  Refresh the web page.
 
-    For information about the web browsers that are supported by the Web Chat, see [Browser Support](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=key-concepts#browsersupport){: external}.
+    For information about the web browsers that are supported by the web chat, see [Browser Support](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=key-concepts#browsersupport){: external}.
 
     ![Chat icon](images/web-chat-icon.png)
     
-    The Web Chat launcher icon is displayed at the end of the page. The icon is blue unless you customize the accent color.
+    The web chat launcher icon is displayed at the end of the page. The icon is blue unless you customize the accent color.
 
-    The placement of the Web Chat icon is always the same regardless of where you paste the script element into the web page source. The chat window is represented by a `div` HTML element.
+    The placement of the web chat icon is always the same regardless of where you paste the script element into the web page source. The chat window is represented by a `div` HTML element.
     {: important}
 
 1.  Click the icon to open the chat window and talk to your assistant.
@@ -130,16 +130,16 @@ To add the assistant to a web page on your company website, complete the followi
 
     If you don't extend the session timeout setting for the assistant, the dialog flow for the current session is restarted after 60 minutes of inactivity. This means that if a user stops interacting with the assistant, after 60 minutes, any context variable values that were set during the previous conversation are set to null or back to their initial values.
 
-1.  Click **Save changes** to save the Web Chat name and any customization information that you added and close the integration page. Alternatively, you can click the **X** to close the page. 
+1.  Click **Save changes** to save the web chat name and any customization information that you added and close the integration page. Alternatively, you can click the **X** to close the page. 
 
-    The Web Chat instance is created as soon as you click the *Create* button, and does not need to be saved.
+    The web chat instance is created as soon as you click the *Create* button, and does not need to be saved.
 
-You can apply more advanced customizations to the style of the Web Chat by using the {{site.data.keyword.conversationshort}} Web Chat toolkit on [GitHub](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-configuration){: external}. For example, the text that is displayed in the chat window uses the fonts: `IBMPlexSans, Arial, Helvetica, sans-serif`. If you want to use a different font, you can specify it by using the `instance.updateCSSVariables()` method.
+You can apply more advanced customizations to the style of the web chat by using the {{site.data.keyword.conversationshort}} web chat toolkit on [GitHub](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-configuration){: external}. For example, the text that is displayed in the chat window uses the fonts: `IBMPlexSans, Arial, Helvetica, sans-serif`. If you want to use a different font, you can specify it by using the `instance.updateCSSVariables()` method.
 
 ## Dialog considerations
 {: #deploy-web-chat-dialog}
 
-The rich responses that you add to a dialog are displayed in the Web Chat as expected, with the following exceptions:
+The rich responses that you add to a dialog are displayed in the web chat as expected, with the following exceptions:
 
 - **Connect to human agent**: This response type is ignored.
 - **Option**: If your option list contains up to four choices, they are displayed as buttons. If your list contains five or more options, then they are displayed in a drop-down list.
@@ -147,10 +147,10 @@ The rich responses that you add to a dialog are displayed in the Web Chat as exp
 
 For more information about rich response types, see [Rich responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia).
 
-## Extending the Web Chat
+## Extending the web chat
 {: #deploy-web-chat-extend}
 
-A developer can extend the capabilities of the Web Chat by using the {{site.data.keyword.conversationshort}} Web Chat toolkit on [GitHub](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html){: external}.
+A developer can extend the capabilities of the web chat by using the {{site.data.keyword.conversationshort}} web chat toolkit on [GitHub](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html){: external}.
 
 If you choose to use the provided methods, you implement them by editing the code snippet that was generated earlier. You then embed the updated code snippet into your web page.
 
@@ -198,7 +198,7 @@ If you enable security, you can encrypt the data that you pass to your dialog. F
 ### Adding user identity information
 {: #deploy-web-chat-userid}
 
-If you do not enable security, and you want to perform tasks where you need to know the user who submitted the input, then you must pass the user ID to the Web Chat integration.
+If you do not enable security, and you want to perform tasks where you need to know the user who submitted the input, then you must pass the user ID to the web chat integration.
 
 If you do enable security, you set the user ID in the JSON Web Token instead. For more information, see [Authenticating users](#deploy-web-chat-security-authenticate).
 
@@ -236,26 +236,26 @@ In the following example, the user ID `L12345` is added to the script.
 ```
 {: codeblock} 
 
-## Securing the Web Chat
+## Securing the web chat
 {: #deploy-web-chat-security}
 
-Configure the Web Chat to authenticate users and send private data from your embedded Web Chat.
+Configure the web chat to authenticate users and send private data from your embedded web chat.
 
-All messages that are sent from the Web Chat are encrypted. When you enable security, your assistant takes an additional step to verify that messages originate from the Web Chat that is embedded in your website only.
+All messages that are sent from the web chat are encrypted. When you enable security, your assistant takes an additional step to verify that messages originate from the web chat that is embedded in your website only.
 
-The Web Chat uses an RSA signature with SHA-256 to encrypt communication. RS256 cryptography is a sophisticated type of RSA encryption. An RSA key pair includes a private and a public key. The RSA private key is used to generate digital signatures, and the RSA public key is used to verify digital signatures. The complexity of the RSA algorithm that is used to scramble the message makes it nearly impossible to unscramble the message without the key.
+The web chat uses an RSA signature with SHA-256 to encrypt communication. RS256 cryptography is a sophisticated type of RSA encryption. An RSA key pair includes a private and a public key. The RSA private key is used to generate digital signatures, and the RSA public key is used to verify digital signatures. The complexity of the RSA algorithm that is used to scramble the message makes it nearly impossible to unscramble the message without the key.
 
 You can implement the following security measures:
 
-- Ensure that messages sent from the Web Chat to your assistant come from your customers only
-- Send private data from the Web Chat to your assistant
+- Ensure that messages sent from the web chat to your assistant come from your customers only
+- Send private data from the web chat to your assistant
 
 ### Enable security
 {: #deploy-web-chat-security-task}
 
-The process you use to add the Web Chat to your website is simple. Its simplicity also means it can be misused. That's why it's important to verify that the messages sent to your assistant are coming from authorized users only.
+The process you use to add the web chat to your website is simple. Its simplicity also means it can be misused. That's why it's important to verify that the messages sent to your assistant are coming from authorized users only.
 
-After you enable security, users cannot submit messages through the Web Chat unless you take steps to prove their origin. Do not enable it until you have support for authentication in place.
+After you enable security, users cannot submit messages through the web chat unless you take steps to prove their origin. Do not enable it until you have support for authentication in place.
 {: important}
 
 Before you enable security, complete the following steps:
@@ -304,15 +304,15 @@ Before you enable security, complete the following steps:
 
 To enable security, complete the following steps:
 
-1.  From the Web Chat integration page in {{site.data.keyword.conversationshort}}, switch the **Secure your Web Chat** toggle to **On**.
+1.  From the web chat integration page in {{site.data.keyword.conversationshort}}, switch the **Secure your web chat** toggle to **On**.
 
 1.  Add your public key to the **Your public key** field.
     
-    The public key that you add is used to verify that data which claims to come from your Web Chat instance *is* coming from your Web Chat instance. 
+    The public key that you add is used to verify that data which claims to come from your web chat instance *is* coming from your web chat instance. 
     
-1.  To prove that a message is coming from your website, each message that is submitted from your Web Chat implementation must include the JSON Web Token (JWT) that you created earlier.
+1.  To prove that a message is coming from your website, each message that is submitted from your web chat implementation must include the JSON Web Token (JWT) that you created earlier.
 
-    Add the token to the Web Chat code snippet that you embed in your website page. Specify the token in the `identityToken` property.
+    Add the token to the web chat code snippet that you embed in your website page. Specify the token in the `identityToken` property.
 
     For example:
 
@@ -336,7 +336,7 @@ To enable security, complete the following steps:
     ```
     {: codeblock}
     
-    The JSON Web Token is automatically included on each subsequent request that is sent from the Web Chat until it expires.
+    The JSON Web Token is automatically included on each subsequent request that is sent from the web chat until it expires.
 
 1.  You can add an event that is triggered when your token expires. The event has a callback you can use to update the token and process any messages that were added to a queue to wait to be processed while the token was expired.
 
@@ -373,16 +373,16 @@ To enable security, complete the following steps:
 ### Passing sensitive data
 {: #deploy-web-chat-security-encrypt}
 
-You can optionally copy the public key that is provided by IBM, and use it to add an additional level of encryption to support passing sensitive data from the Web Chat.
+You can optionally copy the public key that is provided by IBM, and use it to add an additional level of encryption to support passing sensitive data from the web chat.
 
-Use this method to send sensitive information in messages that come from your website, such as a information about a customer's loyalty level, a user ID, or security tokens to use in webhooks that you call from your dialog. Information that is passed to your assistant in this way is stored in a private variable in your assistant. Private variables cannot be seen by customers and are never sent back to the Web Chat.
+Use this method to send sensitive information in messages that come from your website, such as a information about a customer's loyalty level, a user ID, or security tokens to use in webhooks that you call from your dialog. Information that is passed to your assistant in this way is stored in a private variable in your assistant. Private variables cannot be seen by customers and are never sent back to the web chat.
 
 For example, you might start a business process for a VIP customer that is different from the process you start for less important customers. You likely do not want non-VIPs to know that they are categorized as such. But you must pass this informataion to your dialog because it changes the route of the conversation. You can pass the customer MVP status as an encrypted variable. This private context variable will be available for use by the dialog, but not by anything else.
 
-1.  From the Web Chat configuration page, copy the public key from the **IBM provided public key** field.
+1.  From the web chat configuration page, copy the public key from the **IBM provided public key** field.
 1.  From your website, write a function that signs a JSON Web Token.
 
-    For example, the following NodeJS code snippet shows a function that accepts a userID and payload content and sends it to the Web Chat. If a payload is provided, its content is encrypted and signed with the IBM public key.
+    For example, the following NodeJS code snippet shows a function that accepts a userID and payload content and sends it to the web chat. If a payload is provided, its content is encrypted and signed with the IBM public key.
 
     ```javascript
     // Sample NodeJS code on your server.
@@ -409,14 +409,14 @@ For example, you might start a business process for a VIP customer that is diffe
         ```
         {: codeblock}
 
-1.   The encrypted user payload is decrypted and then saved to the `context.integrations.chat.private.user_payload` object. For information about how to access the payload data from the dialog, see [Web Chat: Accessing sensitive data](/docs/assistant?topic=assistant-dialog-integrations#dialog-integrations-chat-private). You might want to access the payload, for example, to get the customer importance information or single sign-on credentials that you can subsequently use to authenticate a webhook.
+1.   The encrypted user payload is decrypted and then saved to the `context.integrations.chat.private.user_payload` object. For information about how to access the payload data from the dialog, see [Web chat: Accessing sensitive data](/docs/assistant?topic=assistant-dialog-integrations#dialog-integrations-chat-private). You might want to access the payload, for example, to get the customer importance information or single sign-on credentials that you can subsequently use to authenticate a webhook.
 
 ### Authenticating users
 {: #deploy-web-chat-security-authenticate}
 
 To authenticate and specify a unique ID for each customer, add the user ID information to the token.
 
-1.  From the Web Chat configuration page, copy the public key from the **IBM provided public key** field. You will specify this value as the `PUBLIC_IBM_RSA_KEY` later.
+1.  From the web chat configuration page, copy the public key from the **IBM provided public key** field. You will specify this value as the `PUBLIC_IBM_RSA_KEY` later.
 1.  From your website, write a function that signs a JSON Web Token.
 
     The function must accept a UserID parameter and set the userID as the `sub` claim value.
@@ -451,7 +451,7 @@ If you disable security, then you can use the `instance.updateUserID()` method t
 ## Adding support for transfers
 {: #deploy-web-chat-haa}
 
-Delight your customers with 360-degree support by integrating your Web Chat with a third-party service desk solution. 
+Delight your customers with 360-degree support by integrating your web chat with a third-party service desk solution. 
 
 The following service desk offerings are supported:
 

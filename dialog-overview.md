@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-05-04"
+lastupdated: "2020-07-21"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -26,7 +26,7 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:table: .aria-labeledby="caption"}
 
-# Building a dialog
+# Building a conversational flow
 {: #dialog-overview}
 
 The dialog defines what your assistant says in response to customers.
@@ -248,7 +248,7 @@ The built-in integrations support the following Markdown syntax elements:
 
 The "Try it out" pane does not support Markdown syntax currently. For testing purposes, you can use the *Preview link* integration to see how the Markdown syntax is rendered.
 
-The "Try it out" pane, and *Preview link* and *Web Chat* integrations support HTML syntax. The *Slack* and *Facebook* integrations do not. 
+The "Try it out" pane, and *preview link* and *web chat* integrations support HTML syntax. The *Slack* and *Facebook* integrations do not. 
 
 #### Learn more about simple responses
 {: #dialog-overview-variety}
@@ -524,7 +524,7 @@ To add a rich response, complete the following steps:
 
       ![Shows a small options list in the preview link that is displayed as a drop-down menu.](images/options-dropdown.png)
 
-      Some integration types, such as the Web Chat, reflect your preference. Other integration types, such as Slack, might not honor your preference when it renders the list.
+      Some integration types, such as the web chat, reflect your preference. Other integration types, such as Slack, might not honor your preference when it renders the list.
 
     - **Pause**. Add the length of time for the pause to last as a number of milliseconds (ms) to the **Duration** field.
 

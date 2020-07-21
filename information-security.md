@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-14"
+lastupdated: "2020-07-21"
 
 subcollection: assistant
 
@@ -63,7 +63,7 @@ To prevent IBM from using your log data for general service improvements, comple
 - If you are using a custom application, for each API `/message` request, set the `X-Watson-Learning-Opt-Out` header parameter to `true`.
 
   For more information, see [Data collection](https://cloud.ibm.com/apidocs/assistant/assistant-v2#data-collection){: external}.
-- If you are using the Web Chat integration, add the `learningOptOut` parameter to the script that you embed in your web page, and set it to `true`. 
+- If you are using the web chat integration, add the `learningOptOut` parameter to the script that you embed in your web page, and set it to `true`. 
 
   For more information, see [Configuration](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-configuration){: external}.
 
@@ -76,13 +76,13 @@ Do not add personal data to the training data (entities and intents, including u
 
 If you need to remove a customer's message data from a {{site.data.keyword.conversationshort}} instance, you can do so based on the customer ID of the client, as long as you associate the message with a customer ID when the message is sent to {{site.data.keyword.conversationshort}}.
 
-- The Preview Link and automatic Facebook integrations do not support the labeling and therefore deletion of data based on customer ID. These integration types should not be used in a solution that must support the ability to delete data based on a customer ID.
+- The preview link and automatic Facebook integrations do not support the labeling and therefore deletion of data based on customer ID. These integration types should not be used in a solution that must support the ability to delete data based on a customer ID.
 - For Slack, the `customer_id` is the `user_id` prepended with `slack_`. The Slack `user_id` property is a concatenation of the team ID, such as `T09LVDR7Y`, and the member ID of the user, such has `W4F8K9JNF`. For example: `T09LVDR7YW4F8K9JNF`. 
   - To get the team ID, open the channel from a web browser. Open the web developer tools to view the console. Look for `[BOOT] Initial team ID`.
   - You can copy the member ID from the user's Slack profile. 
   - To get the IDs programmatically, use the Slack API. For more information, see [Overview](https://api.slack.com/apis){: external}.
   The full customer ID looks like this: `customer_id=slack_T09LVDR7YW4F8K9JNF`.
-- For the Web Chat integration, the service takes the `user_id` that is passed in and adds it as the `customer_id` parameter value to the `X-Watson-Metadata` header with each request.
+- For the web chat integration, the service takes the `user_id` that is passed in and adds it as the `customer_id` parameter value to the `X-Watson-Metadata` header with each request.
 
 ### Before you begin
 {: #information-security-delete-user-data-prereqs}

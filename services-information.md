@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-13"
+lastupdated: "2020-07-21"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
@@ -72,7 +72,7 @@ The following features are available only to users of Plus or Premium plans.
 - [Intent recommendations and intent user example recommendations](/docs/assistant?topic=assistant-intent-recommendations)
 - [Intercom integration](/docs/assistant?topic=assistant-deploy-intercom)
 - [Search skill](/docs/assistant?topic=assistant-skill-search-add)
-- [Web Chat](/docs/assistant?topic=assistant-deploy-web-chat)
+- [Web chat](/docs/assistant?topic=assistant-deploy-web-chat)
 
 The plan type of the service instance you are currently using is displayed in the page header. You can upgrade from one plan type to another. For more information, see [Upgrading](/docs/assistant?topic=assistant-upgrade).
 
@@ -107,7 +107,7 @@ The built-in integrations derive the user ID in the following ways:
 
 - For Facebook integrations, the `user_id` property is set to the sender ID that Facebook provides in its payload.
 - For Slack integrations, the `user_id` property is a concatenation of the team ID, such as `T09LVDR7Y`, and the member ID of the user, such has `W4F8K9JNF`. For example: `T09LVDR7YW4F8K9JNF`.
-- For Web Chat, you can set the value of the `user_id` property. For more information, see [Adding user identity information](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-userid).
+- For web chat, you can set the value of the `user_id` property. For more information, see [Adding user identity information](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-userid).
 
 Billing is managed per monthly active user per service instance. If a single user interacts with assistants that are hosted by different service instances that belong to the same plan, each interaction is treated as a separate use. You are billed for the user's interaction with each service instance separately.
 
@@ -121,7 +121,7 @@ When testing your skills and assistants, any messages that you submit in the "Tr
 
 If your custom application or assistant interacts with users who are anonymous, you can generate a randomized universally unique ID to represent each anonymous user. For more information about UUIDs, see [RFC 4122](https://tools.ietf.org/html/rfc4122.html){: external}.
 
-- For Web Chat, if you do not pass an identifier for the user when the session begins, the Web Chat creates one for you. It creates a first-party cookie with a generated anonymous ID. The cookie remains active for 45 days. If the same user returns to your site later in the month and chats with your assistant again, the Web Chat integration recognizes the user. And you are charged only once when the same anonymous user interacts with your assistant multiple times in a single month.
+- For web chat, if you do not pass an identifier for the user when the session begins, the web chat creates one for you. It creates a first-party cookie with a generated anonymous ID. The cookie remains active for 45 days. If the same user returns to your site later in the month and chats with your assistant again, the web chat integration recognizes the user. And you are charged only once when the same anonymous user interacts with your assistant multiple times in a single month.
 
 If an anonymous user logs in and later is identified as being the same person who submitted a request with a known ID, you are charged twice. Each message with a unique user ID is charged as an independent active user. To avoid this situation, you can prompt users to log in before you initiate a chat or you can use the anonymous user ID to represent the user consistently.
 

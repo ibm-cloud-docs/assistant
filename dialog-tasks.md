@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-06-12"
+lastupdated: "2020-07-21"
 
 keywords: dialog node limits, copying a node, moving a node, adding a folder
 
@@ -26,7 +26,7 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:table: .aria-labeledby="caption"}
 
-# Improving your dialog
+# Improving your conversation
 {: #dialog-tasks}
 
 Test your dialog, and organize your dialog nodes.

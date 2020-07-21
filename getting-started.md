@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-06"
+lastupdated: "2020-07-21"
 
 keywords: assistant, omnichannel, virtual agent, virtual assistant, chatbot, conversation, watson assistant, watson conversation
 
@@ -183,9 +183,9 @@ You built a simple dialog to recognize and respond to both greeting and ending i
     - `good morning`
     - `sayonara`
 
-![Testing the dialog in the Try it out pane](images/gs-try-it.gif){: gif}
+    ![Testing the dialog in the Try it out pane](images/gs-try-it.gif){: gif}
 
-{{site.data.keyword.watson}} can recognize your intents even when your input doesn't exactly match the examples that you included. The dialog uses intents to identify the purpose of the user's input regardless of the precise wording used, and then responds in the way you specify.
+    {{site.data.keyword.watson}} can recognize your intents even when your input doesn't exactly match the examples that you included. The dialog uses intents to identify the purpose of the user's input regardless of the precise wording used, and then responds in the way you specify.
 
 ### Result of building a dialog
 
@@ -202,7 +202,7 @@ Now that you have an assistant that can participate in a simple conversational e
 
     The preview link integration builds your assistant into a chat widget that is hosted by an IBM-branded web page. You can open the web page and chat with your assistant to test it out. 
     
-1.  If a *My first assistant* assistant was created for you, then you must add a preview link integration. From the *Integrations* area, click **Add integration**, and then click **Preview Link**. Click **Create**.
+1.  If a *My first assistant* assistant was created for you, then you must add a preview link integration. From the *Integrations* area, click **Add integration**, and then click **Preview link**. Click **Create**.
 
     When you you create an assistant yourself, you can skip this step. A preview link integration is added to the assistant for you automatically. Click the preview link integration tile to open it.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-07-21"
 
 subcollection: assistant
 
@@ -55,8 +55,8 @@ Follow these steps to add integrations to your assistant:
 
 1.  Click the tile for the channel with which you want to integrate the assistant. The options include:
 
-    - [Preview Link](/docs/assistant?topic=assistant-deploy-web-link)
-    - [Web Chat](/docs/assistant?topic=assistant-deploy-web-chat)
+    - [Preview link](/docs/assistant?topic=assistant-deploy-web-link)
+    - [Web chat](/docs/assistant?topic=assistant-deploy-web-chat)
     - [Salesforce](/docs/assistant?topic=assistant-deploy-salesforce) ![Plus or Premium plan only](images/plus.png)
     - [Zendesk](/docs/assistant?topic=assistant-deploy-zendesk) ![Plus or Premium plan only](images/plus.png)
     - [Intercom](/docs/assistant?topic=assistant-deploy-intercom)  ![Plus or Premium plan only](images/plus.png)
