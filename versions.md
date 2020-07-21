@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-01"
+lastupdated: "2020-07-21"
 
 subcollection: assistant
 
@@ -66,7 +66,7 @@ If you have trouble creating the version, check that your skill does not have an
 {: #versions-deploy}
 
 1.  From the skill menu, click **Versions**.
-1.  Click the ![Click to view actions](images/kebab-react.png) icon from the version you want to deploy, and then choose **Assign to assistant**.
+1.  Click the ![Click to view actions](images/kebab-react.png) icon from the version you want to deploy, and then choose **Assign**.
 
     A list of assistants to which you can link this version is displayed. The list is limited to those assistants that don't have any skills associated with them, or that are associated with a different version of this skill.
 1.  Click the checkbox for one or more of the assistants, and then click **Assign**.

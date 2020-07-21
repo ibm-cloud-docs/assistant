@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-14"
+lastupdated: "2020-07-21"
 
 subcollection: assistant
 
@@ -73,6 +73,10 @@ The change log lists changes that were made this year ordered by the date they w
   - If you choose to continue to use the legacy system entities in European-language dialog skills, a new legacy API format is used. The new legacy API format simulates the legacy system entities behavior. In particular, it returns a `metadata` object and does not stop the service from idenfifying multiple system entities for the same input string. In addition, it returns an `interpretation` object, which was introduced with the new version of system entities. Review the `interpretation` object to see the useful information that is returned by the new version.
 
   Update your skills to use the new system entities from the **Options>System Entities** page.
+
+- **Web Chat security is generally available**: Enable the security feature of Web Chat so that you can verify that messages sent to your assistant come from only your customers and can pass sensitive information to your assistant. 
+
+  When configuring the JWT, you no longer need to specify the Authentication Context Class Reference (acr) claim.
 
 ### 1 July 2020
 {: #1July2020}
