@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-22"
 
 subcollection: assistant
 
@@ -294,7 +294,7 @@ The `search` response type is used by a search skill to return the results from 
           {
             "title": "About",
             "body": "IBM Watson Assistant is a cognitive bot that you can customize for your business needs, and deploy across multiple channels to bring help to your customers where and when they need it.",
-            "url": "https://cloud.ibm.com/docs/services/assistant?topic=assistant-index",
+            "url": "https://cloud.ibm.com/docs/assistant?topic=assistant-index",
             "id": "6682eca3c5b3778ccb730b799a8063f3",
             "result_metadata": {
               "confidence": 0.08401551980328191,
@@ -305,7 +305,7 @@ The `search` response type is used by a search skill to return the results from 
                 "IBM <em>Watson</em> <em>Assistant</em> is a cognitive bot that you can customize for your business needs, and deploy across multiple channels to bring help to your customers where and when they need it."
               ],
               "url": [
-                "https://cloud.ibm.com/docs/services/<em>assistant</em>?topic=<em>assistant</em>-index"
+                "https://cloud.ibm.com/docs/<em>assistant</em>?topic=<em>assistant</em>-index"
               ],
               "body": [
                 "IBM <em>Watson</em> <em>Assistant</em> is a cognitive bot that you can customize for your business needs, and deploy across multiple channels to bring help to your customers where and when they need it."
