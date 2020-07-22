@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2019-03-12"
+lastupdated: "2020-07-21"
 
 subcollection: assistant
 
@@ -41,7 +41,8 @@ The following tables list the methods that are available using the {{site.data.k
 |:-------|:------------|:-------:|:---------:|
 | **Create a session** | Create a new session. A session is used to send user input to a skill and receive responses. It also maintains the state of the conversation. | v2 | [cURL](https://{DomainName}/apidocs/assistant/assistant-v2#create-a-session){: external} [node](https://{DomainName}/apidocs/assistant/assistant-v2?code=node#create-a-session){: external} [java](https://{DomainName}/apidocs/assistant/assistant-v2?code=java#create-a-session){: external} [python](https://{DomainName}/apidocs/assistant/assistant-v2?code=python#create-a-session){: external} |
 | **Delete session** | Deletes a session explicitly before it times out. | v2 | [cURL](https://{DomainName}/apidocs/assistant/assistant-v2#delete-session){: external} [node](https://{DomainName}/apidocs/assistant/assistant-v2?code=node#delete-session){: external} [java](https://{DomainName}/apidocs/assistant/assistant-v2?code=java#delete-session){: external} [python](https://{DomainName}/apidocs/assistant/assistant-v2?code=python#delete-session){: external} |
-| **Send user input to assistant** | Send user input to an assistant and receive a response. | v2 | [cURL](https://{DomainName}/apidocs/assistant/assistant-v2#send-user-input-to-assistant){: external} [node](https://{DomainName}/apidocs/assistant/assistant-v2?code=node#send-user-input-to-assistant){: external} [java](https://{DomainName}/apidocs/assistant/assistant-v2?code=java#send-user-input-to-assistant){: external} [python](https://{DomainName}/apidocs/assistant/assistant-v2?code=python#send-user-input-to-assistant){: external} |
+| **Send user input to assistant (stateful)** | Send user input to an assistant and receive a response, with conversation state (including context data) stored by Watson Assistant for the duration of the session. | v2 | [cURL](https://{DomainName}/apidocs/assistant/assistant-v2#send-user-input-to-assistant){: external} [node](https://{DomainName}/apidocs/assistant/assistant-v2?code=node#send-user-input-to-assistant){: external} [java](https://{DomainName}/apidocs/assistant/assistant-v2?code=java#send-user-input-to-assistant){: external} [python](https://{DomainName}/apidocs/assistant/assistant-v2?code=python#send-user-input-to-assistant){: external} |
+| **Send user input to assistant (stateless)** | Send user input to an assistant and receive a response, with conversation state (including context data) managed by your application. | v2 | [cURL](https://{DomainName}/apidocs/assistant/assistant-v2#send-user-input-to-assistant-stateless){: external} [node](https://{DomainName}/apidocs/assistant/assistant-v2?code=node#send-user-input-to-assistant-stateless){: external} [java](https://{DomainName}/apidocs/assistant/assistant-v2?code=java#send-user-input-to-assistant-stateless){: external} [python](https://{DomainName}/apidocs/assistant/assistant-v2?code=python#send-user-input-to-assistant-stateless){: external} |
 
 ## Authoring methods
 {: #api-methods-authoring}
