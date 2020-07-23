@@ -132,7 +132,12 @@ Watson Assistant
 
     {: .navgroup id="help"}
     faqs.md
-    release-notes.md
+
+    {: .topicgroup}
+    Release notes
+        release-notes.md
+        release-notes-chat.md
+
     troubleshoot.md
     feedback.md
 
