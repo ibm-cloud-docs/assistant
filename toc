@@ -2,7 +2,7 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="assistant" category="ai" audience="service" href="/docs/assistant?topic=assistant-getting-started" console-page="/developer/watson" product-page="https://www.ibm.com/cloud/watson-assistant/" path="assistant"}
-Watson Assistant
+Watson Assistant (Managed)
 
     {: .navgroup id="learn"}
     getting-started.md
