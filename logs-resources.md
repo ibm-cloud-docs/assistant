@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-02"
+lastupdated: "2020-07-23"
 
 subcollection: assistant
 
@@ -131,9 +131,7 @@ There is a set of analysis notebooks that you can use with standard Python tools
 
 {{site.data.keyword.DSX_short}} is a product that provides an environment in which you can pick and choose the tools you need to analyze and visualize data, to cleanse and shape data, to ingest streaming data, or to create, train, and deploy machine learning models. See the [product documentation](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/welcome-main.html){: external} for more details.
 
-The [Watson Assistant Continuous Improvement Best Practices Guide](https://github.com/watson-developer-cloud/assistant-improve-recommendations-notebook/raw/master/notebook/IBM%20Watson%20Assistant%20Continuous%20Improvement%20Best%20Practices.pdf){: external} describes how to get the most out of these notebooks. 
-
-To learn more about how these notebooks can help you improve your assistant, read this [Medium.com blog post](https://medium.com/ibm-watson/continuously-improve-your-watson-assistant-with-jupiter-notebooks-60231df4f01f){: external}.
+The [Watson Assistant Continuous Improvement Best Practices Guide](https://github.com/watson-developer-cloud/assistant-improve-recommendations-notebook/raw/master/notebook/IBM%20Watson%20Assistant%20Continuous%20Improvement%20Best%20Practices.pdf){: external} describes how to get the most out of these notebooks.
 
 ### Using the notebooks with {{site.data.keyword.DSX}}
 {: #logs-resources-notebooks-studio}
@@ -142,6 +140,7 @@ The following notebooks are available:
 
 - [Dialog skill analysis for Watson Assistant](https://dataplatform.cloud.ibm.com/exchange/public/entry/view/4d77701840fcb2f21587e39fdb887049){: external}
 - [Measure Watson Assistant Performance](https://dataplatform.cloud.ibm.com/exchange/public/entry/view/133dfc4cd1480bbe4eaa78d3f635e568){: external}.
+- [Analyze Watson Assistant Effectiveness](https://dataplatform.cloud.ibm.com/exchange/public/entry/view/133dfc4cd1480bbe4eaa78d3f636921c){: external}
 - [Dialog Flow Analysis for Watson Assistant](https://dataplatform.cloud.ibm.com/exchange/public/entry/view/013c690997e27f3a8d9133265327a9e5){: external}
 
 If you choose to use the notebooks that are designed for use with {{site.data.keyword.DSX}}, the steps are roughly these:
@@ -163,18 +162,20 @@ If you choose to use the notebooks that are designed for use with {{site.data.ke
 
     Run the following notebook first:
 
-    - **Measure**: Gathers metrics that focus on coverage (how often the assistant is confident enough to respond to users) and effectiveness (when the assistant does respond, whether the the responses are satisying user needs).
+    - **Measure**: Gathers metrics that focus on coverage (how often the assistant is confident enough to respond to users) and effectiveness (when the assistant does respond, whether the responses are satisfying user needs).
 
     The insights are visualized in ways that make it easier to understand areas for improvement in your assistant.
 1.  Export a sample set of the logs from ineffective conversations, and then analyze and annotate them.
 
     For example, indicate whether a response is correct. If correct, mark whether it is helpful. If a response is incorrect, then identify the root cause, the wrong intent or entity was detected, for example, or the wrong dialog node was triggered. After identifying the root cause, indicate what the correct choice would have been.
-1.  Feed the annotated spreadsheet to the **Effectiveness** notebook.
+1.  Feed the annotated spreadsheet to the **Analyze Watson Assistant Effectiveness** notebook.
 
     - **Effectiveness**: Performs a deeper analysis of your logs to help you understand the steps you can take to improve your assistant.
-1.  Use the **Dialog Flow Analysis for Watson Assistant** notebook to review your dialog. The notebook can help you pinpoint the dialog nodes where customers most frequently abandon the conversation.
+1.  Use the **Dialog Flow Analysis for Watson Assistant** notebook to review your dialog. The notebook can help you pinpoint the dialog nodes where customers most frequently abandon the conversation. 
 
-This process helps you to understand the steps you can take to improve your assistant. There is no way to automatically apply what you learn back to your service instance. Keep track of any changes you make to improve the system, so you can subsequently apply them to the training data of your dialog skill directly.
+    For more information about how this notebook can help you analyze and assess abandonment, read this [Medium.com blog post](https://medium.com/ibm-watson/do-you-know-where-and-why-users-drop-off-the-conversation-6246e99baddc){: external}.
+
+This process helps you to understand the steps you can take to improve your assistant.
 
 ### Using the notebooks with standard Python tools
 {: #logs-resources-notebooks-python}
@@ -182,13 +183,7 @@ This process helps you to understand the steps you can take to improve your assi
 If you choose to use standard Python tools to run the notebooks, you can get the notebooks from GitHub.
 
 - [Dialog Skill Analysis for Watson Assistant](https://github.com/watson-developer-cloud/assistant-dialog-skill-analysis){: external}
-
-- [Watson Assistant Recommendation notebook](https://github.com/watson-developer-cloud/assistant-improve-recommendations-notebook){: external}
-
-  Be sure to run the Python scripts in the following order:
-
-  1.  Measure Notebook.ipynb
-  1.  Effectiveness Notebook.ipynb
-  1.  Logs Notebook.ipynb
-
+- [Watson Assistant Recommendation notebooks (Measure and Analyze Effectiveness)](https://github.com/watson-developer-cloud/assistant-improve-recommendations-notebook){: external}
 - [Watson Assistant Dialog Flow Analysis notebook](https://github.com/watson-developer-cloud/assistant-dialog-flow-analysis){: external}
+
+Again, the [Watson Assistant Continuous Improvement Best Practices Guide](https://github.com/watson-developer-cloud/assistant-improve-recommendations-notebook/raw/master/notebook/IBM%20Watson%20Assistant%20Continuous%20Improvement%20Best%20Practices.pdf){: external} outlines which notebook to use at each stage of your improvement process.

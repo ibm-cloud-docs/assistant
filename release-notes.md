@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-23"
 
 subcollection: assistant
 
@@ -23,7 +23,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Release notes
+# Watson Assistant release notes
 {: #release-notes}
 
 ## Service API Versioning
@@ -57,7 +57,10 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 The change log lists changes that were made this year ordered by the date they were released.
 
-### 15 July 2020
+For more information about what's new in the web chat integration, see the [Web Chat release notes](/docs/assistant?topic=assistant-release-notes-chat).
+{: tip}
+
+## 15 July 2020
 {: #15July2020}
 <!--1.102-->
 
@@ -78,13 +81,13 @@ The change log lists changes that were made this year ordered by the date they w
 
   When configuring the JWT, you no longer need to specify the Authentication Context Class Reference (acr) claim.
 
-### 1 July 2020
+## 1 July 2020
 {: #1July2020}
 <!--1.101.3-->
 
 - **Salesforce support is generally available**: Integrate your web chat with Salesforce so your assistant can transfer customers who asks to speak to a person to a Salesforce agent who can answer their questions. For more information, see [Integrating with Salesforce](/docs/assistant?topic=assistant-deploy-salesforce).
 
-### 24 June 2020
+## 24 June 2020
 {: #24June2020}
 <!--1.101-->
 
@@ -92,7 +95,7 @@ The change log lists changes that were made this year ordered by the date they w
 
 - **Get better answers from search skill**: The search skill now has a beta feature that limits the search results that are returned to include only those for which {{site.data.keyword.discoveryshort}} has calculated a 20% or higher confidence score. You can toggle the feature on or off from the *Refine results to return more selective answers* switch on the configuration page. You cannot change the confidence score threshold from 0.2. This beta feature is enabled by default. For more information, see [Creating a search skill](/docs/assistant?topic=assistant-skill-search-add).
 
-### 3 June 2020
+## 3 June 2020
 {: #3June2020}
 <!--1.99-->
 
@@ -100,7 +103,7 @@ The change log lists changes that were made this year ordered by the date they w
 
 -  **Pricing plan changes**: We continue to revamp the overall service plan structure for {{site.data.keyword.conversationshort}}. In April, we announced [a new low cost entry point](#1April2020) for the Plus plan. Today, the Standard plan is being retired. Existing Standard plan users are not impacted; they can continue to work in their Standard instances.  New users do not see the Standard plan as an option when they create a service instance. For more information, see the [Pricing](https://www.ibm.com/cloud/watson-assistant/pricing/){: external} page.
 
-### 27 May 2020
+## 27 May 2020
 {: #27May2020}
 <!--1.98-->
 
@@ -108,21 +111,21 @@ The change log lists changes that were made this year ordered by the date they w
 
 - **New system entities are enabled automatically**: All new dialog skills use the new version of the system entities automatically. For more information, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
 
-### 22 May 2020
+## 22 May 2020
 - **Spelling correction in v2 API**: The v2 `message` API now supports spelling correction options. For more information see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#send-user-input-to-assistant-stateful){: external}.
 
-### 21 May 2020
+## 21 May 2020
 {: #21May2020}
 <!--1.97-->
 
 - **Preview link URL change**: The URL for the preview link was changed. If you previously shared the link with teammates, provide them with the new URL.
 
-### 15 May 2020
+## 15 May 2020
 {: #15May2020}
 
 - **Private endpoints support is available in Plus plan**: You can use private endpoints to route services over the {{site.data.keyword.cloud_notm}} private network instead of the public network. For more information, see [Private network endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints). This feature was previously available to users of Premium plans only.
 
-### 14 May 2020
+## 14 May 2020
 {: #14May2020}
 <!--1.96-->
 
@@ -130,12 +133,12 @@ The change log lists changes that were made this year ordered by the date they w
 
 - **System entity deprecation**: As stated in the [March deprecation notice](#March2020-deprecation), the `@sys-location` and `@sys-person` system entities that were available as a beta feature are deprecated. If you are using one of these system entities in your dialog, a toggle is displayed for the entity on the *System entities* page. You can [search your dialog](/docs/assistant?topic=assistant-dialog-tasks#dialog-tasks-search) to find out where you are currently using the entity, and remove it. Consider using a contextual entity to identify references to locations and people instead. After removing the entity from your dialog, disable the entity from the *System entities* page.
 
-### 13 May 2020
+## 13 May 2020
 {: #13May2020}
 
 - **Stateless v2 message API**: The v2 runtime API now supports a new stateless `message` method. If you have a client application that manages its own state, you can use this new method to take advantage of [many of the benefits](https://medium.com/ibm-watson/the-new-watson-assistant-v2-stateless-api-unlock-enterprise-features-today-2c02a4bbdef5){: external} of the v2 API without the overhead of creating sessions. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#send-user-input-to-assistant-stateless){: external}.
 
-### 30 April 2020
+## 30 April 2020
 {: #30April2020}
 <!--1.95.1-->
 
@@ -143,7 +146,7 @@ The change log lists changes that were made this year ordered by the date they w
 
 - **Secure your web chat**: Enable the beta security feature of web chat so that you can verify that messages sent to your assistant come from only your customers and can pass sensitive information to your assistant.
 
-### 27 April 2020
+## 27 April 2020
 {: #27April2020}
 <!--1.95-->
 
@@ -151,14 +154,14 @@ The change log lists changes that were made this year ordered by the date they w
 
 - **Know your plan**: Now your service plan is displayed in the page header. And if you have a Plus Trial plan, you can see how many days are left in the trial.
 
-### 21 April 2020
+## 21 April 2020
 {: #21April2020}
 
 - **Fuzzy matching support was expanded**: Added support for stemming and misspelling in French, German, and Czech dialog skills. This enhancement means that the assistant can recognize an entity value that is defined in its singular form but mentioned in its plural form in user input. It also can recognize conjugated forms of a verb that is specified as an entity value.
 
   For example, if your French-language dialog skill has an entity value of `animal`, it recognizes the plural form of the word (`animaux`) when it is mentioned in user input. If your German-language dialog skill has the root verb `haben` as an entity value, it recognizes conjugated forms of the verb (`hast`) in user input as mentions of the entity.
 
-### 14 April 2020
+## 14 April 2020
 {: #14April2020}
 <!--web chat 1.5.3-->
 
@@ -167,7 +170,7 @@ The change log lists changes that were made this year ordered by the date they w
   - The **Font family** field was removed from the web chat configuration page. The text that is displayed in the chat window uses the fonts: `IBMPlexSans, Arial, Helvetica, sans-serif`. If you want to use a different set of fonts, you can customize the CSS for your web chat. For more information, see [Theming](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-instance-methods#theming).
   - When your implementation does not specify a unique user ID, web chat adds a first party cookie with a generated anonymous ID to use to identify the unique user. The generated cookie now expires after 45 days. For more information, see [Key concepts](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/key-concepts#datapolicy){: external}.
 
-### 2 April 2020
+## 2 April 2020
 {: #2April2020}
 <!--web chat 1.5.2-->
 
@@ -180,7 +183,7 @@ The change log lists changes that were made this year ordered by the date they w
 
 - **The web chat integration was updated**: The `learningOptOut` parameter replaced a previous version of the parameter. You can add the `learningOptOut` parameter and set it to `true` to add the `X-Watson-Learning-Opt-Out` header to each `/message` request that originates from the web chat. For more information about the header, see [Data collection](https://cloud.ibm.com/apidocs/assistant/assistant-v2#data-collection){: external}. For more information about the parameter, see [Configuration](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-configuration){: external}.
 
-### 1 April 2020
+## 1 April 2020
 {: #1April2020}
 
 - **Plus plan changes**: The Plus plan is now available starting at $120/month for 1,000 users on pay-as-you-go or subscription IBM Cloud accounts. And you can subscribe without contacting Sales.
@@ -204,20 +207,20 @@ The change log lists changes that were made this year ordered by the date they w
 
     If your app uses a `context.integrations` property that does not conform to the schema, a 400 error code will be returned.
 
-### 31 March 2020
+## 31 March 2020
 {: #31March2020}
 <!--web chat 1.5.1-->
 
 - **The web chat integration was updated**: The update adds an `isTrackingEnabled` parameter. You can add this parameter and set it to `false` to add the `X-Watson-Learning-Opt-Out` header to each `/message` request that originates from the web chat. For more information about the header, see [Data collection](https://cloud.ibm.com/apidocs/assistant/assistant-v2#data-collection){: external}. For more information about the parameter, see [Configuration](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-configuration){: external}.
 
-### 26 March 2020
+## 26 March 2020
 {: #26March2020}
 
 - **The Covid-19 content catalog is available in Brazilian Portuguese, French, and Spanish**: The content catalog defines a group of intents that recognize the common types of questions people ask about the novel coronavirus. You can use the catalog to jump-start development of chatbots that can answer questions about the virus and help to minimize the anxiety and misinformation associated with it. For more information about how to add a content catalog to your skill, see [Using content catalogs](/docs/assistant?topic=assistant-catalog).
 
   ![Shows a list of the intents associated with the COVID-19 content catalog.](images/covid-19-catalog.png)
 
-### 20 March 2020
+## 20 March 2020
 {: #20March2020}
 
 - **Web chat integration version 1.4.0 is available**: The update includes the following features:
@@ -225,7 +228,7 @@ The change log lists changes that were made this year ordered by the date they w
   - You can customize the CSS theme that is used by the web chat. For more information, see [Theming](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-instance-methods#theming){: new_window}.
   - Shadow DOM is no longer used in the web chat. When you use custom response types or HTML in your dialog, you can apply CSS styles that are defined in your web page to the assistant's response. To override any default styling in the web chat, you must specify the `!important` modifier in your CSS. For more information, see [Rendering response types](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-render#html){: new_window}.
 
-### 19 March 2020
+## 19 March 2020
 {: #19March2020}
 <!--1.93.1-->
 
@@ -233,12 +236,12 @@ The change log lists changes that were made this year ordered by the date they w
 
 - **Fixed a problem with missing User Conversation data**: A recent change resulted in no logs being shown in the User Conversations page unless you had a skill as the chosen data source. And the chosen skill had to be the same skill (with same skill ID) that was connected to the assistant when the user messages were submitted.
 
-### 18 March 2020
+## 18 March 2020
 {: #18March2020}
 
 - **Technology preview is discontinued**: The technology preview user interface was replaced with the {{site.data.keyword.conversationshort}} standard user interface. If you used an Actions page to create actions and steps for your skill previously, you cannot access the Actions page anymore. Instead, use the Intents and Dialog pages to work with your skill.
 
-### 16 March 2020
+## 16 March 2020
 {: #16March2020}
 <!--1.93-->
 
@@ -246,7 +249,7 @@ The change log lists changes that were made this year ordered by the date they w
 
 - **Order of response types is preserved**: Previously, if you included a response type of **Search skill** in a list of response types for a dialog node, the search results were displayed last despite its placement in the list. This behavior was changed to show the search results in the appropriate order, namely in the sequence in which the search skill response type is listed for the dialog node.
 
-### 10 March 2020
+## 10 March 2020
 {: #10March2020}
 <!--1.92-->
 
@@ -256,7 +259,7 @@ The change log lists changes that were made this year ordered by the date they w
 
 - **The new system entities are used by new skills**: For new English, Brazilian Portuguese, Czech, Dutch, French, German, Italian, and Spanish dialog skills, the new system entities are enabled automatically. If you decide to turn on a system entity and add it to your dialog, it's the new and improved version of the system entity that is used. For more information, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
 
-### March 2020 deprecation notice
+## March 2020 deprecation notice
 {: #March2020-deprecation}
 
 To help us continue to improve and expand the capabilities of the assistants you build with {{site.data.keyword.conversationshort}}, we are deprecating some of the older technologies.
@@ -294,34 +297,34 @@ The following technologies are being deprecated:
   
   For more information about the latest supported versions, see [Service API versioning](#release-notes-api-version). To learn about some of the changes that were introduced with each API version update, you can search these release notes for *New API version* entries.
 
-### 6 March 2020
+## 6 March 2020
 {: #6March2020}
 <!--1.91.1-->
 
 - **Transfer a web chat conversation to a human agent**: Delight your customers with 360-degree support by integrating your web chat with a third-party service desk solution. When a customer asks to speak to a person, you can connect them to an agent through a service desk solution, such as Zendesk or Salesforce. Service desk support is a beta feature. For more information, see [Adding support for transfers](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-haa).
 
-### 2 March 2020
+## 2 March 2020
 {: #2March2020}
 
 - **Known issue accessing logs**: If you cannot access user logs from the Analytics page, ask the owner of the service instance for the skill to change your service level access to make you a Manager of the instance. For more information about access control, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).
 
-### 28 February 2020
+## 28 February 2020
 {: #28February2020}
 
 - **{{site.data.keyword.conversationfull}} is available in {{site.data.keyword.icp4dfull_notm}}**: The service can be installed on-premises in environments where {{site.data.keyword.icp4dfull_notm}} 2.5 is installed on OpenShift or standalone. See the [{{site.data.keyword.icp4dfull_notm}} documentation](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/assistant-overview.html){: external} for more information.
 
-### 26 February 2020
+## 26 February 2020
 {: #26February2020}
 <!--1.90-->
 
 - **Slot `Save it as` field retains your edits**: When you edit what gets saved for a slot by using the JSON editor to edit the value of the context variable to be something other than what is specified in the **Check for** field, your changes are kept even if someone subsequently clicks the **Save it as** field.
 
-### 20 February 2020
+## 20 February 2020
 {: #20February2020}
 
 - **Access control changes are coming**: Notifications are displayed in the user interface for anyone with Reader and Writer level access to a service instance. The notification explains that access control is going to change soon, and that what they can do in the instance will change unless they are given Manager service access beforehand. For more information, see [Preventing loss of access](/docs/assistant?topic=assistant-access-control).
 
-### 14 February 2020
+## 14 February 2020
 {: #14February2020}
 <!--1.89-->
 
@@ -332,12 +335,12 @@ The following technologies are being deprecated:
 
 - **More web chat color settings**: You can now specify the color of more elements of the web chat integration. For example, you can define one color for the web chat window header. You can define a different color for the user message bubble. And another color for interactive components, such as the launcher button for the chat.
 
-### 13 February 2020
+## 13 February 2020
 {: #13February2020}
 
 - **Track API events**: Premium plan users can now use the Activity Tracker service to track how users and applications interact with {{site.data.keyword.conversationfull}} in {{site.data.keyword.cloud}}. See [Activity Tracker events](/docs/assistant?topic=assistant-at-events).
 
-### 5 February 2020
+## 5 February 2020
 {: #5February2020}
 
 - **New API version**: The current API version is now `2020-02-05`. The following changes were made with this version:
@@ -346,51 +349,24 @@ The following technologies are being deprecated:
 
     - The `alternate_intents` property is stored as a Boolean value instead of a String.
 
-### 4 February 2020
+## 4 February 2020
 {: #4February2020}
 <!--1.88-->
 
 - **Product user interface makeover**: The UI has been updated to be more intuitive, responsive, and consistent across its pages. While the look and feel of the UI elements has changed, their function has not.
 - **Requesting early access**: The button you click to request participation in the early access program has moved from the Skills page to the user account menu. For more information, see [Feedback](/docs/assistant?topic=assistant-feedback#feedback-beta).
 
-### 24 January 2020
+## 24 January 2020
 {: #24January2020}
 <!--1.87.4-->
 
 - **New system entities are now generally available in multiple languages**: The new and improved numeric system entities are now generally available in all supported languages, except Arabic, Chinese, Japanese, and Korean, where they are available as a beta feature. They are not used by your dialog skill unless you enable them from the **Options>System entities** page. For more information, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
 
-### 14 January 2020
+## 14 January 2020
 {: #14January2020}
 <!--1.87.2-->
 
 - **Fixed an error message that was displayed when opening an instance**: An error that was displayed when you launched {{site.data.keyword.conversationshort}} from the {{site.data.keyword.cloud}} dashboard has been fixed. Previously, an error message that said, `Module 'ui-router' is not available! You either misspelled the module name or forgot to load it` would sometimes be displayed.
-
-## Web chat change log
-{: #release-notes-web-chat-changes}
-
-The web chat change log lists changes ordered by version number. For more information about web chat, see [Integrating with your website](/docs/assistant?topic=assistant-deploy-web-chat).
-
-### 2.1.2
-{: #2.1.2}
-<!--2July2020-->
-
-- **Fixed a loading issue**: Addressed an issue that prevented the web chat from loading properly for some deployments with short JWT expiration claims.
-
-### 2.1.1
-{: #2.1.1}
-<!--1July2020-->
-
-- **Service desk agent initials are displayed**: When web chat transfers a user to a service desk agent, the agent's avatar is displayed in the chat window to identify messages sent from the service desk agent. If the agent does not have an avatar, the first initial of the agent's given name is displayed instead.
-
-### 2.0
-{: #2.0}
-<!--16June2020-->
-
-- **Versioning was added to web chat**: For more information, see [Versioning](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=key-concepts#versioning){: external}.
-
-- **Added bidirectional support**: You can now use the `direction` parameter to choose whether to show text and elements in the web chat in right-to-left or left-to-right order. For more information, see  [Configuration](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-configuration){: external}.
-
-- **Introduced the `instance.destroySession()` method**: The `instance.destroySession()` method removes all cookie and browser storage that is related to the current web chat session. You can use this method as part of your website logout sequence. For more information, see [Instance methods](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-instance-methods#destroySession){: external}.
 
 ## Change log archive
 {: #release-notes-changes-archive}
