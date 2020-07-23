@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-07-22"
 
 subcollection: assistant
 
@@ -274,6 +274,64 @@ The `suggestion` response type is used by the disambiguation feature to suggest 
 Note that the structure of a `suggestion` response is very similar to the structure of an `option` response. As with options, each suggestion includes a `label` that can be displayed to the user and a `value` specifying the input that should be sent back to the assistant if the user chooses the corresponding suggestion. To implement `suggestion` responses in your application, you can use the same approach that you would use for `option` responses.
 
 For more information about the disambiguation feature, see [Disambiguation](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
+
+### Search
+{: #api-dialog-responses-search}
+
+This feature is available only to Plus or Premium plan users.
+{: tip}
+
+The `search` response type is used by a search skill to return the results from a Watson Discovery search. A `search` response includes an array of `results`, each of which provides information about a match returned from the Discovery search query:
+
+```json
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "search",
+        "header": "I found the following information that might be helpful.",
+        "results": [
+          {
+            "title": "About",
+            "body": "IBM Watson Assistant is a cognitive bot that you can customize for your business needs, and deploy across multiple channels to bring help to your customers where and when they need it.",
+            "url": "https://cloud.ibm.com/docs/assistant?topic=assistant-index",
+            "id": "6682eca3c5b3778ccb730b799a8063f3",
+            "result_metadata": {
+              "confidence": 0.08401551980328191,
+              "score": 0.73975396
+            },
+            "highlight": {
+              "Shortdesc": [
+                "IBM <em>Watson</em> <em>Assistant</em> is a cognitive bot that you can customize for your business needs, and deploy across multiple channels to bring help to your customers where and when they need it."
+              ],
+              "url": [
+                "https://cloud.ibm.com/docs/<em>assistant</em>?topic=<em>assistant</em>-index"
+              ],
+              "body": [
+                "IBM <em>Watson</em> <em>Assistant</em> is a cognitive bot that you can customize for your business needs, and deploy across multiple channels to bring help to your customers where and when they need it."
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "context": {
+    "global": {
+      "system": {
+        "turn_count": 1
+      },
+      "session_id": "58e1b04e-f4bb-469a-9e4c-dffe1d4ebf23"
+    }
+  }
+}
+```
+
+For each search result, the `title`, `body`, and `url` properties include content returned from the Discovery query. The search skill configuration determines which fields in the Discovery collection are mapped to these fields in the response. Your application can use these fields to display the results to the user (for example, you might use the `body` text to show an abstract or description of the matching document, and the `url` value to create a link the user can click to open the document).
+
+In addition, the `header` property provides a message to display to the user about the results of the search. In the case of a successful search, `header` provides introductory text to be displayed before the search results (for example, `I found the following information that might be helpful.`). Different message text indicates that the search did not return any results, or that the connection to the Discovery service failed. You can customize these messages in the search skill configuration.
+
+For more information about search skills, see [Creating a search skill](/docs/assistant?topic=assistant-skill-search-add).
 
 ## Example: Implementing option responses
 {: #api-dialog-option-example}
