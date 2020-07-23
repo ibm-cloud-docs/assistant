@@ -34,7 +34,7 @@ Use {{site.data.keyword.conversationfull}} to build your own branded live chatbo
 | | |
 |------------|-------------|
 | *Create AI-driven conversational flows* | Your assistant leverages industry-leading AI capabilities to understand questions that your customers ask in natural language. It uses machine learning models that are custom built from your data to deliver accurate answers in real time. |
-| *Embed existing help content* | You already know the answers to customer questions? Put your subject matter experise to work. Add a search skill to give your assistant access to corporate data collections that it can mine for answers. |
+| *Embed existing help content* | You already know the answers to customer questions? Put your subject matter expertise to work. Add a search skill to give your assistant access to corporate data collections that it can mine for answers. |
 | *Connect to your customer service teams* | If customers need more help or want to discuss a topic that requires a personal touch, connect them to human agents from your existing service desk provider. |
 | *Bring the assistant to your customers, where they are* | Configure one or more built-in integrations to quickly publish your assistant in popular social media channels like Slack, Facebook Messenger, or Intercom. Add your assistant as a chat widget to your company website, or build your own custom app. |
 | *Track customer engagement and satisfaction* | Use built-in metrics to analyze logs from conversations between customers and your assistant to gauge how well it's doing and identify areas for improvement. |
