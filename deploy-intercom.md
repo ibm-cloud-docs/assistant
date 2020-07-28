@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-24"
+lastupdated: "2020-07-24"
 
 subcollection: assistant
 
@@ -35,8 +35,6 @@ This integration is available only to Plus or Premium plan users. If you want to
 {: note}
 
 If you integrate the assistant with Intercom, the Intercom application becomes the client-facing application for your skill. All interactions with users are initiated through and managed by Intercom.
-
-There is currently no way to pass an ongoing conversation from one integration channel to another.
 
 ## One-time agent creation
 {: #deploy-intercom-account-prereq}

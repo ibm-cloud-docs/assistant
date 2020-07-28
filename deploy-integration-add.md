@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-24"
 
 subcollection: assistant
 
@@ -40,6 +40,9 @@ To learn about how service desk integrations with your assistant can benefit you
 
 ## Add an integration
 {: #deploy-integration-add-task}
+
+There is currently no way to pass an ongoing conversation from one integration channel to another.
+{: important}
 
 Follow these steps to add integrations to your assistant:
 

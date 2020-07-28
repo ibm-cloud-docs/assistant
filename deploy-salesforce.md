@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-28"
 
 subcollection: assistant
 
@@ -24,7 +24,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Integrating with Salesforce
+# Integrating the web chat with Salesforce
 {: #deploy-salesforce}
 
 Integrate your web chat with a Salesforce service desk solution so your customers always get the help they need.
