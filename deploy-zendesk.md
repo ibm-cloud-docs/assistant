@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-28"
 
 subcollection: assistant
 
@@ -24,7 +24,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Integrating with Zendesk
+# Integrating the web chat with Zendesk
 {: #deploy-zendesk}
 
 Integrate your web chat with a Zendesk service desk solution so your customers always get the help they need.
