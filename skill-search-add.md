@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-06-24"
+lastupdated: "2020-07-29"
 
 subcollection: assistant
 
@@ -21,6 +21,7 @@ subcollection: assistant
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
+{:video: .video}
 
 # Creating a search skill ![Plus or Premium plan only](images/plus.png)
 {: #skill-search-add}
@@ -37,7 +38,7 @@ Add a search skill to your assistant to prevent the assistant from having to say
 
 The following 4-minute video provides an overview of the search skill.
 
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Search skill overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/_UgRPaxipgI?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+![Search skill overview](https://www.youtube.com/embed/_UgRPaxipgI){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 To learn more about how search skill can benefit your business, [read this blog post](https://medium.com/ibm-watson/adding-search-to-watson-assistant-99e4e81839e5){: external}.
 

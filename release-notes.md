@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-23"
+lastupdated: "2020-07-29"
 
 subcollection: assistant
 
@@ -22,6 +22,7 @@ subcollection: assistant
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
+{:video: .video}
 
 # Watson Assistant release notes
 {: #release-notes}
@@ -803,7 +804,7 @@ The following updates are available in all locations except Dallas currently.
 
   The following video provides a 2-minute overview of the updated {{site.data.keyword.conversationshort}} tool.
 
-  <iframe class="embed-responsive-item" id="youtubeplayer" title="Product overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/OkW7gnHrw30?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+  ![Product overview](https://www.youtube.com/embed/OkW7gnHrw30){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
   - **Preview links from London instances**: If your service instance is hosted in London, then you must edit the preview link URL. The URL includes a region code for the region where the instance is hosted. Because instances in London are syndicated to Dallas, you must replace the `eu-gb` reference in the URL with `us-south` for the preview web page to render properly.
 

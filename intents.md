@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-24"
+lastupdated: "2020-07-29"
 
 keywords: intent, intent conflicts, annotate
 
@@ -23,6 +23,7 @@ subcollection: assistant
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
+{:video: .video}
 
 # Creating intents
 {: #intents}
@@ -32,7 +33,7 @@ subcollection: assistant
 
 To learn more about creating intents, watch the following 2 1/2-minute video.
 
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Working with intents" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/nGoFi0MB94Y" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+![Working with intents](https://www.youtube.com/embed/nGoFi0MB94Y){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 ## Intent creation overview
 {: #intents-described}
@@ -340,7 +341,7 @@ To resolve conflicts:
 
 You can watch the following video to learn more.
 
-<iframe class="embed-responsive-item" id="youtubeplayer0" title="Intent conflict resolution overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/9gQtjCBxjdc?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+![Intent conflict resolution overview](https://www.youtube.com/embed/9gQtjCBxjdc){: video output="iframe" id="youtubeplayer0" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 ## Deleting intents
 {: #intents-delete}

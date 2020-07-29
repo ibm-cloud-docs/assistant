@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-28"
+lastupdated: "2020-07-29"
 
 subcollection: assistant
 
@@ -23,6 +23,7 @@ subcollection: assistant
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
+{:video: .video}
 
 # Integrating the web chat with Salesforce
 {: #deploy-salesforce}
@@ -140,7 +141,7 @@ When you test the service desk integration, make sure there is at least one agen
 
 Watch the following 5-minute video to watch someone set up a connection to a Salesforce service desk.
 
-<iframe class="embed-responsive-item" id="youtubeplayer0" title="Setting up a Salesforce service desk connection" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/mUx-qvZH-qo" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+![Setting up a Salesforce service desk connection](https://www.youtube.com/embed/mUx-qvZH-qo){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 ## Adding transfer support to your dialog
 {: #deploy-salesforce-dialog-prereq}

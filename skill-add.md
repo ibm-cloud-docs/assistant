@@ -39,7 +39,7 @@ You can create the following types of skills:
   
 Typically, you create a skill of each type first. Then, as you build a dialog for the dialog skill, you decide when to initiate the search skill. For some questions or requests, a hard-coded or programmatically-derived response (that is defined in the dialog skill) is sufficient. For others, you might want to provide a more robust response by returning a full passage of related information (that is extracted from an external data source by using the search skill).
 
-### Dialog skill
+## Dialog skill
 {: #skill-add-dialog-skill}
 
 A dialog skill contains the training data and logic that enables an assistant to help your customers. It contains the following types of artifacts:
@@ -64,7 +64,7 @@ As you add information, the skill uses this unique data to build a machine learn
 
 For help creating a dialog skill, see [Creating a dialog skill](/docs/assistant?topic=assistant-skill-dialog-add).
 
-### Search skill ![Plus or Premium plan only](images/plus.png)
+## Search skill ![Plus or Premium plan only](images/plus.png)
 {: #skill-add-search-skill}
 
 When Watson Assistant doesn't have an explicit solution to a problem, it routes the user question to a search skill to find an answer from across your disparate sources of self-service content. The search skill interacts with the {{site.data.keyword.discoveryfull}} service to extract this information from a configured data collection.

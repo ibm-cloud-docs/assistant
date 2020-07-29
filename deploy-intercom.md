@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-24"
+lastupdated: "2020-07-29"
 
 subcollection: assistant
 
@@ -22,6 +22,7 @@ subcollection: assistant
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
+{:video: .video}
 
 # Integrating with Intercom ![Plus or Premium plan only](images/plus.png)
 {: #deploy-intercom}
@@ -126,7 +127,7 @@ See [Rich responses](/docs/assistant?topic=assistant-dialog-overview#dialog-over
 
 The following 4-minute video illustrates the steps.
 
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Quick Setup" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/SkbFWNScueU" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+![Quick Setup](https://www.youtube.com/embed/SkbFWNScueU){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 ## Connecting the assistant to Intercom
 {: #deploy-intercom-connect}
@@ -139,13 +140,13 @@ Human agents can assign messages to the assistant by using Intercom's assignment
 
   The following 1 1/2-minute video illustrates the steps.
 
-  <iframe class="embed-responsive-item" id="youtubeplayer2" title="Auto Assign" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/4M9wu8NHxcY" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+  ![Auto Assign](https://www.youtube.com/embed/4M9wu8NHxcY){: video output="iframe" id="youtubeplayer2" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 - Manual reassignment made by a human agent at run time.
 
   The following under 3-minute video illustrates the steps.
 
-  <iframe class="embed-responsive-item" id="youtubeplayer3" title="Manual Assign" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/jAnolyUJAIA" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+  ![Manual Assign](https://www.youtube.com/embed/jAnolyUJAIA){: video output="iframe" id="youtubeplayer3" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 See the [Intercom documentation](https://www.intercom.com/help/en/articles/199-assign-conversations-to-teammates-and-teams){: external} for more details.
 
@@ -193,7 +194,7 @@ To set up routing assignments for escalations from the assistant to a human, com
 
 The following 3-minute video illustrates the steps.
 
-<iframe class="embed-responsive-item" id="youtubeplayer0" title="Topic-based escalation routing" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/dTwJZOqdzII" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+![Topic-based escalation routing](https://www.youtube.com/embed/dTwJZOqdzII){: video output="iframe" id="youtubeplayer0" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 ## Give the assistant permission to monitor and answer user queries
 {: #deploy-intercom-config-action}
@@ -244,7 +245,7 @@ As your dialog changes, you will likely return to the Intercom integration page 
 
 The following 3-minute video illustrates the steps.
 
-<iframe class="embed-responsive-item" id="youtubeplayer1" title="Inbox Monitoring" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/fFKjWUfIftw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+![Inbox Monitoring](https://www.youtube.com/embed/fFKjWUfIftw){: video output="iframe" id="youtubeplayer1" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 ## Testing the integration
 {: #deploy-intercom-try}

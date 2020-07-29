@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-14"
+lastupdated: "2020-07-29"
 
 keywords: entity, entity value, contextual entity, dictionary entity, pattern entity, entity synonym, annotate mentions
 
@@ -24,6 +24,7 @@ subcollection: assistant
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
+{:video: .video}
 
 # Adding entities
 {: #entities}
@@ -38,7 +39,7 @@ Finally, you can add multiple responses to your dialog tree with wording that di
 
 To learn more about how to create entities, watch the following 2-minute video.
 
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Working with entities" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/SKEKWEqM4LE" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+![Working with entities](https://www.youtube.com/embed/SKEKWEqM4LE){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 ## Entity evaluation overview
 {: #entities-described}
@@ -343,7 +344,7 @@ Using an intent's user examples to define contextual entities does not affect th
 
 The following video demonstrates how to annotate entity mentions.
 
-<iframe class="embed-responsive-item" id="youtubeplayer0" title="Annotating entity mentions" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/3WjzJpLsnhQ" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+![Annotating entity mentions](https://www.youtube.com/embed/3WjzJpLsnhQ){: video output="iframe" id="youtubeplayer0" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 **Tutorial**: To walk through a tutorial that shows you how to define contextual entities before you add your own, go to [Tutorial: Defining contextual entities](https://www.ibm.com/cloud/architecture/demo/try-watson-assistant-contextual-entities){: external}.
 

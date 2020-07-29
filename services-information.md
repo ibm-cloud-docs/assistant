@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-29"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
@@ -147,8 +147,6 @@ You can create {{site.data.keyword.conversationshort}} service instances that ar
 
 For an additional cost, you can request that service instances in a Premium plan account be hosted by different data centers.
 {: note}
-
-For more information about the data centers in which other {{site.data.keyword.cloud_notm}} services are hosted, see [Services by region](/docs/resources/services_region?topic=resources-services_region#services_region){: external}.
 
 <!--### Premium plan details
 {: services-information-premium-slots}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-29"
 
 keywords: context, context variable, digression, disambiguation, autocorrection, spelling correction, spell check, confidence 
 
@@ -25,6 +25,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 {:gif: data-image-type='gif'}
+{:video: .video}
 
 # Controlling the dialog flow
 {: #dialog-runtime}
@@ -678,7 +679,7 @@ The animated image uses a mockup of the dialog tree user interface to illustrate
 
 Watch this video to learn more.
 
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Digressions overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/I3K7mQ46K3o?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+![Digressions overview](https://www.youtube.com/embed/I3K7mQ46K3o){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 - [Before you begin](#dialog-runtime-digression-prereqs)
 - [Customizing digressions](#dialog-runtime-enable-digressions)
@@ -1004,7 +1005,7 @@ The following video explains the benefits of using disambiguation. A few things 
 - You enable disambiguation from the *Options* page instead of a **Settings** link from the *Dialog* page.
 - You can also set a maximum number of options to display in the disambiguation list.
 
-  <iframe class="embed-responsive-item" id="youtubeplayer0" title="Disambiguation overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/VVyklAXlmbA?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+  ![Disambiguation overview](https://www.youtube.com/embed/VVyklAXlmbA){: video output="iframe" id="youtubeplayer0" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 ### Editing the disambiguation configuration
 {: #dialog-runtime-disambig-edit}
