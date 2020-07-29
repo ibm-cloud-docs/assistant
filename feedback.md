@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-18"
+lastupdated: "2020-07-28"
 
 subcollection: assistant
 
@@ -55,7 +55,7 @@ Do not add an existing instance that you are using to do any real work to the ea
 
 1.  Create a {{site.data.keyword.conversationshort}} service resource from the [{{site.data.keyword.conversationshort}}](https://{DomainName}/catalog/services/watson-assistant){: external} page in the {{site.data.keyword.cloud}} catalog.
 
-    The service instance can be part of a free (Lite) or Standard plan, and must be deployed to the **Dallas** location. The service instance must be managed by a resource group, not Cloud Foundry.
+    The service instance can be part of a free (Lite) plan, and must be deployed to the **Dallas** location. The service instance must be managed by a resource group, not Cloud Foundry.
 
     Unless you change it, the service instance will be created in the **default** resource group, which is sufficient for the purposes of new feature evaluation.
 
