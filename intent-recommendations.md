@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-06-19"
+lastupdated: "2020-07-29"
 
 subcollection: assistant
 
@@ -22,6 +22,7 @@ subcollection: assistant
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
+{:video: .video}
 
 # Getting help with intents ![Plus or Premium plan only](images/plus.png)
 {: #intent-recommendations}
@@ -41,7 +42,7 @@ Customer needs are represented in {{site.data.keyword.conversationshort}} as *in
 
 The following video provides a 3-minute overview of intent and intent user example recommendations.
 
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Intent recommendations overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/bBTSnsD8yLA?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+![Intent recommendations overview](https://www.youtube.com/embed/bBTSnsD8yLA){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 To learn more about how intent recommendations can help you build a useful bot faster, [read this blog post](https://medium.com/ibm-watson/let-watson-train-your-virtual-assistant-57bd53b12bc3){: external}.
 

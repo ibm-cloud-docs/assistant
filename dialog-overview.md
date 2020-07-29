@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-29"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -25,6 +25,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 {:table: .aria-labeledby="caption"}
+{:video: .video}
 
 # Building a conversational flow
 {: #dialog-overview}
@@ -34,7 +35,7 @@ The dialog defines what your assistant says in response to customers.
 
 To learn more about the overall process for creating a dialog, watch the following 3 1/2-minute video.
 
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Working with dialog" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/dEILVc86d3Y" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+![Working with dialog](https://www.youtube.com/embed/dEILVc86d3Y){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 ## Creating a dialog
 {: #dialog-overview-task}
@@ -583,7 +584,7 @@ To add a rich response, complete the following steps:
 
 A single dialog node can provide different responses, each one triggered by a different condition.  Use this approach to address multiple scenarios in a single node.
 
-<iframe class="embed-responsive-item" id="youtubeplayer1" title="Adding conditional responses" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/Q5_-f7_Iyvg?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+![Adding conditional responses](https://www.youtube.com/embed/Q5_-f7_Iyvg){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 The node still has a main condition, which is the condition for using the node and processing the conditions and responses that it contains.
 

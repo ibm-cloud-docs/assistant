@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-28"
+lastupdated: "2020-07-29"
 
 subcollection: assistant
 
@@ -23,6 +23,7 @@ subcollection: assistant
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
+{:video: .video}
 
 # Integrating the web chat with Zendesk
 {: #deploy-zendesk}
@@ -112,7 +113,7 @@ When you test the service desk integration, make sure there is at least one agen
 
 Watch the following 4-minute video to see someone set up a connection to a Zendesk service desk.
 
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Setting up a Zendesk service desk connection" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/hegheiqUqiM" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+![Setting up a Zendesk service desk connection](https://www.youtube.com/embed/hegheiqUqiM){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 ## Adding transfer support to your dialog
 {: #deploy-zendesk-dialog-prereq}

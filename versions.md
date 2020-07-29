@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-29"
 
 subcollection: assistant
 
@@ -22,6 +22,7 @@ subcollection: assistant
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
+{:video: .video}
 
 # Creating skill versions
 {: #versions}
@@ -36,7 +37,7 @@ If you have a free (Lite) plan, you cannot create skill versions.
 
 This 2 1/2 minute video describes how using versions can help you.
 
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Creating skill versions" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/FDolnBxvcZ8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+![Creating skill versions](https://www.youtube.com/embed/FDolnBxvcZ8){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 To learn more about how versions can improve the workflow you use to build an assistant, [read this blog post](https://medium.com/ibm-watson/watson-assistant-versions-announcement-d60869b1f5f){: external}.
 

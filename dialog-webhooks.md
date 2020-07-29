@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-29"
 
 subcollection: assistant
 
@@ -22,6 +22,7 @@ subcollection: assistant
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
+{:video: .video}
 
 # Making a programmatic call from dialog
 {: #dialog-webhooks}
@@ -32,7 +33,7 @@ A webhook is a mechanism that allows you to call out to an external program base
 
 Watch this video to learn more, including how to set up orchestration to call more than one external service from a dialog.
 
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Webhooks demo" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/j8TBqD2rx2o?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+![Webhooks demo](https://www.youtube.com/embed/j8TBqD2rx2o){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 You can use a webhook to do the following types of things:
 

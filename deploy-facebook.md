@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-29"
 
 subcollection: assistant
 
@@ -22,6 +22,7 @@ subcollection: assistant
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
+{:video: .video}
 
 # Integrating with Facebook Messenger
 {: #deploy-facebook}
@@ -44,7 +45,7 @@ There is currently no mechanism for identifying users who interact with the assi
 
 If you want to follow along as someone else walks through the deployment steps, watch this video.
 
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Walkthrough of the Facebook deployment steps" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/8o-FFU5sYNM?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+![Walkthrough of the Facebook deployment steps](https://www.youtube.com/embed/8o-FFU5sYNM){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 Duration: 8 minutes
 

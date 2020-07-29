@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-29"
 
 subcollection: assistant
 
@@ -23,6 +23,7 @@ subcollection: assistant
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
+{:video: .video}
 
 # Integrating web chat with your website
 {: #deploy-web-chat}
@@ -36,7 +37,7 @@ When you create a web chat integration, code is generated that calls a script th
 
 To learn more about web chat, watch the following 3-minute video.
 
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Web chat overview" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/52bpMKVigGU" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+![Web chat overview](https://www.youtube.com/embed/52bpMKVigGU){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 ## Create a web chat instance to add to your website
 {: #deploy-web-chat-task}

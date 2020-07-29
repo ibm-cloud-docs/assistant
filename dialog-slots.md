@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-24"
+lastupdated: "2020-07-29"
 
 keywords: slot, slots
 
@@ -25,13 +25,14 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 {:table: .aria-labeledby="caption"}
+{:video: .video}
 
 # Gathering information with slots
 {: #dialog-slots}
 
 Add slots to a dialog node to gather multiple pieces of information from a user within that node. Slots collect information at the user's pace. Details that a user provides up front are saved, and your assistant asks only for the missing details it needs to fulfill the request.
 
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Adding slots to a node" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/kMLyKfmO9wI?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+![Adding slots to a node](https://www.youtube.com/embed/kMLyKfmO9wI){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 ## Why add slots?
 {: #dialog-slots-why}
