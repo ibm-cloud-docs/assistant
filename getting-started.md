@@ -26,8 +26,8 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:hide-dashboard: .hide-dashboard}
 {:download: .download}
-{:gif: data-image-type='gif'}
-
+{:gif: data-image-type='gif' width="600"}
+ 
 # Getting started with {{site.data.keyword.conversationshort}}
 {: #getting-started}
 
@@ -183,7 +183,7 @@ You built a simple dialog to recognize and respond to both greeting and ending i
     - `good morning`
     - `sayonara`
 
-    ![Testing the dialog in the Try it out pane](images/gs-try-it.gif){: gif width="600"}
+    ![Testing the dialog in the Try it out pane](images/gs-try-it.gif){: gif}
 
     {{site.data.keyword.watson}} can recognize your intents even when your input doesn't exactly match the examples that you included. The dialog uses intents to identify the purpose of the user's input regardless of the precise wording used, and then responds in the way you specify.
 
