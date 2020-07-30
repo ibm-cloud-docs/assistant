@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-04-24"
+lastupdated: "2020-07-30"
 
 keywords: import workspace, import JSON, export JSON
 
@@ -51,7 +51,7 @@ To add a skill, complete the following steps:
 
       The sample skill is added to your list of skills. It is not associated with any assistants. Skip the remaining steps in this procedure.
 
-    - To add an existing skill to this service instance, you can import it as a JSON file. Click **Import skill**, and then click **Choose JSON File** and select the JSON file you want to import.
+    - To add an existing skill to this service instance, you can import it as a JSON file. Click **Import skill**. Drag a file or click **Drag and drop file here or click to select a file** and select the JSON file you want to import.
 
       The imported JSON file must use UTF-8 encoding, without byte order mark (BOM) encoding. The JSON cannot contain tabs, newlines, or carriage returns.
       {: important}
@@ -79,18 +79,22 @@ The dialog skill cannot interact with customers until it is added to an assistan
 ### Troubleshooting skill import issues
 {: #skill-dialog-add-import-errors}
 
-If you get the message, `Error. Should NOT be shorter than 1 character`, then check whether your skill has a name. If not, add one.
+Here are some solutions to typical import issues:
 
-If you receive a message that says the skill contains artifacts that exceed the limits imposed by your service plan, complete the following steps to import the skill successfully:
+- If you get the message, `Error. Should NOT be shorter than 1 character`, then check whether your skill has a name. If not, add one.
 
-1.  Purchase a plan with higher artifact limits.
-1.  Create a service instance in the new plan.
-1.  Import the skill to the new service instance.
-1.  Make edits to the skill such that it meets the artifact limit requirements for the plan you want to use going forward. 
+- The `@sys-person` and `@sys-location` system entities are no longer supported. If the skill you are importing references them in its dialog, an error is displayed. Remove these system entities from your dialog.
 
-    For information about how to decrease the number of dialog nodes, see [How many nodes are in my dialog?](/docs/assistant?topic=assistant-dialog-tasks#dialog-tasks-count-nodes).
-1.  Export the edited skill by downloading it.
-1.  Try again to import the edited skill into the original service instance on the plan you want.
+- If you receive a message that says the skill contains artifacts that exceed the limits imposed by your service plan, complete the following steps to import the skill successfully:
+
+  1.   Purchase a plan with higher artifact limits.
+  1.   Create a service instance in the new plan.
+  1.   Import the skill to the new service instance.
+  1.   If you don't want to keep the higher-level plan, make edits to the skill such that it meets the artifact limit requirements for the plan you want to use going forward. 
+
+       For information about how to decrease the number of dialog nodes, see [How many nodes are in my dialog?](/docs/assistant?topic=assistant-dialog-tasks#dialog-tasks-count-nodes).
+  1.   Export the edited skill by downloading it.
+  1.   Try again to import the edited skill into the original service instance on the plan you want.
 
 ### Adding the skill to an assistant
 {: #skill-dialog-add-to-assistant}
@@ -123,6 +127,31 @@ To download a dialog skill, complete the following steps:
 You can export a skill by using the API also. Include the `export=true` parameter with the request. See the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1#get-information-about-a-workspace){: external} for more details.
 
 For information about how to download a specific skill version, see [Downloading a skill version](/docs/assistant?topic=assistant-versions-export).
+
+## Overwriting a skill
+{: #skill-dialog-add-overwrite}
+
+To overwrite or replace an existing skill, import the new version of the skill as a JSON file into the existing skill.
+
+To overwrite a skill, complete the following steps:
+
+1.  Click the **Skills** icon ![Skills menu icon](images/nav-skills-icon.png) to open the Skills page.
+
+1.  Find the dialog skill that you want to replace.
+
+1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Import**. 
+
+1.  Drag a file or click **Drag and drop file here or click to select a file** and select the JSON file you want to overwrite your skill with.
+
+      The imported JSON file must use UTF-8 encoding, without byte order mark (BOM) encoding. The JSON cannot contain tabs, newlines, or carriage returns.
+      {: important}
+
+      The maximum size for a skill JSON file is 10 MB. If you need to import a larger skill, consider using the REST API. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#create-workspace){: external}.
+      {: tip}
+
+      Click **Import and overwrite**.
+
+      If you have trouble importing a skill, see [Troubleshooting skill import issues](#skill-dialog-add-import-errors).
 
 ## Sharing a dialog skill with team members
 {: #skill-dialog-add-invite-others}
