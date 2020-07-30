@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-07-30"
 
 subcollection: assistant
 
@@ -60,6 +60,17 @@ The change log lists changes that were made this year ordered by the date they w
 
 For more information about what's new in the web chat integration, see the [Web Chat release notes](/docs/assistant?topic=assistant-release-notes-chat).
 {: tip}
+
+## 29 July 2020
+{: #29July2020}
+<!--1.104-->
+
+- **The @sys-location and @sys-person system entities were removed**: The `@sys-location` and `@sys-person` system entities are no longer listed on the *System entities* page. If your dialog uses one of these entities, a red `Entity not created` notification is displayed to inform you that the entity is not recognized.
+
+- **A few dialog issues were addressed**: 
+
+  - Fixed an issue with adding a jump-to from a conditional response in one node to a conditional response in another node.
+  - The page now responds better when you scroll horizontally to see multiple levels of child nodes.
 
 ## 15 July 2020
 {: #15July2020}
@@ -162,18 +173,8 @@ For more information about what's new in the web chat integration, see the [Web 
 
   For example, if your French-language dialog skill has an entity value of `animal`, it recognizes the plural form of the word (`animaux`) when it is mentioned in user input. If your German-language dialog skill has the root verb `haben` as an entity value, it recognizes conjugated forms of the verb (`hast`) in user input as mentions of the entity.
 
-## 14 April 2020
-{: #14April2020}
-<!--web chat 1.5.3-->
-
-- **The web chat integration was updated**: The following changes were made:
-
-  - The **Font family** field was removed from the web chat configuration page. The text that is displayed in the chat window uses the fonts: `IBMPlexSans, Arial, Helvetica, sans-serif`. If you want to use a different set of fonts, you can customize the CSS for your web chat. For more information, see [Theming](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-instance-methods#theming).
-  - When your implementation does not specify a unique user ID, web chat adds a first party cookie with a generated anonymous ID to use to identify the unique user. The generated cookie now expires after 45 days. For more information, see [Key concepts](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/key-concepts#datapolicy){: external}.
-
 ## 2 April 2020
 {: #2April2020}
-<!--web chat 1.5.2-->
 
 - **New and improved access control**: Now, when you give other people access to your {{site.data.keyword.conversationshort}} resources, you have more control over the level of access they have to individual skills and assistants. You can give one person read-only access to a production skill and manager-level access to a development skill, for example. For more information, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).
 
@@ -181,8 +182,6 @@ For more information about what's new in the web chat integration, see the [Web 
   {: important}
 
   If you can't access the API Details for a skill or assistant anymore, you might not have the access role that is required to use the instance-level API credentials. You can use a personal API key instead. For more information, see [Getting API information](/docs/assistant?topic=assistant-assistant-settings#assistant-settings-api-details).
-
-- **The web chat integration was updated**: The `learningOptOut` parameter replaced a previous version of the parameter. You can add the `learningOptOut` parameter and set it to `true` to add the `X-Watson-Learning-Opt-Out` header to each `/message` request that originates from the web chat. For more information about the header, see [Data collection](https://cloud.ibm.com/apidocs/assistant/assistant-v2#data-collection){: external}. For more information about the parameter, see [Configuration](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-configuration){: external}.
 
 ## 1 April 2020
 {: #1April2020}
@@ -220,14 +219,6 @@ For more information about what's new in the web chat integration, see the [Web 
 - **The Covid-19 content catalog is available in Brazilian Portuguese, French, and Spanish**: The content catalog defines a group of intents that recognize the common types of questions people ask about the novel coronavirus. You can use the catalog to jump-start development of chatbots that can answer questions about the virus and help to minimize the anxiety and misinformation associated with it. For more information about how to add a content catalog to your skill, see [Using content catalogs](/docs/assistant?topic=assistant-catalog).
 
   ![Shows a list of the intents associated with the COVID-19 content catalog.](images/covid-19-catalog.png)
-
-## 20 March 2020
-{: #20March2020}
-
-- **Web chat integration version 1.4.0 is available**: The update includes the following features:
-
-  - You can customize the CSS theme that is used by the web chat. For more information, see [Theming](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-instance-methods#theming){: new_window}.
-  - Shadow DOM is no longer used in the web chat. When you use custom response types or HTML in your dialog, you can apply CSS styles that are defined in your web page to the assistant's response. To override any default styling in the web chat, you must specify the `!important` modifier in your CSS. For more information, see [Rendering response types](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-render#html){: new_window}.
 
 ## 19 March 2020
 {: #19March2020}
@@ -382,6 +373,7 @@ This section lists changes from previous years.
     <!-- **Support for data encryption with customer-managed keys**
         - Users of Premium plans can integrate {{site.data.keyword.keymanagementservicefull}} with  {{site.data.keyword.conversationshort}} to encrypt their data and manage encryption keys.-->
     - **Support for private network endpoints**
+
         - Users of Premium plans can create private network endpoints to connect to {{site.data.keyword.conversationshort}} over a private network. Connections to private network endpoints do not require public internet access.
 
   For more information, see [Protecting sensitive information](/docs/assistant?topic=assistant-security).
@@ -389,6 +381,7 @@ This section lists changes from previous years.
 - **Full support for IBM Cloud IAM**
 
     - {{site.data.keyword.conversationshort}} now supports the full implementation of {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). API keys for Watson services are no longer limited to a single service instance. You can create access policies and API keys that apply to more than one service, and you can grant access between services.
+
     - To support this change, the API service endpoints use a different domain and include the service instance ID. The pattern is `api.{location}.{offering}.watson.cloud.ibm.com/instances/{instance_id}`.
 
         Example URL for an instance hosted in the Dallas location: `api.us-south.assistant.watson.cloud.ibm.com/instances/6bbda3b3-d572-45e1-8c54-22d6ed9e52c2`
@@ -495,7 +488,7 @@ The following updates are available in all locations except Dallas currently.
 
 - **Inactivity timeout increase**: The maximum inactivity timeout can now be extended to up to 7 days for Premium plans. See [Changing the inactivity timeout setting](/docs/assistant?topic=assistant-assistant-settings).
 
-- **Pattern entity fix**: A change that was introduced in the previous release which changed all alphabetic characters to lower case at the time an entity value was added has been fixed. The case of any alphabetic characters that are part of a pattern entity value are no longer changed when the value is added. <!--30545-->
+- **Pattern entity fix**: A change that was introduced in the previous release which changed all alphabetic characters to lowercase at the time an entity value was added has been fixed. The case of any alphabetic characters that are part of a pattern entity value are no longer changed when the value is added. <!--30545-->
 
 - **Dialog text response syntax fix**: Fixed a bug in which the format of a dialog response reverted to an earlier version of the JSON syntax. Standard text responses were being saved as `output.text` instead of `output.generic`. For more information about the `output` object, see [Anatomy of a dialog call](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-message-anatomy). <!--30176-->
 
@@ -862,7 +855,7 @@ The following updates are available in all locations except Dallas currently.
 
 - **Rich response types**: You can now add rich responses that include elements such as images or buttons in addition to text, to your dialog. See [Rich responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more information.
 
-- **Contextual entities (Beta)**: Contextual entities are entities that you define by labeling mentions of the entity type that occur in intent user examples. These entity types teach your assistant not only terms of interest, but also the context in which terms of interest typically appear in user utterances, enabling your assistant to recognize never-seen-before entity mentions based solely on how they are referenced in user input. For example, if you annotate the intent user example, "I want a flight to Boston" by labeling "Boston" as a @destination entity, then your assistant can recognize "Chicago" as a @destination in a user input that says, "I want a flight to Chicago." This feature is currently available for English only. See [Adding contextual entities](/docs/assistant?topic=assistant-entities#entities-create-annotation-based) for more information.
+- **Contextual entities (Beta)**: Contextual entities are entities that you define by labeling mentions of the entity type that occur in intent user examples. These entity types teach your assistant not only terms of interest, but also the context in which terms of interest typically appear in user utterances, enabling your assistant to recognize never-seen-before entity mentions based solely on how they are referenced in user input. For example, if you annotate the intent user example, `I want a flight to Boston` by labeling `Boston` as a `@destination` entity, then your assistant can recognize `Chicago` as a `@destination` mention in a user input that says, `I want a flight to Chicago.` This feature is currently available for English only. See [Adding contextual entities](/docs/assistant?topic=assistant-entities#entities-create-annotation-based) for more information.
 
   When you access the tool with an Internet Explorer web browser, you cannot label entity mentions in intent user examples nor edit user example text.
   {: note}
@@ -934,7 +927,7 @@ The following updates are available in all locations except Dallas currently.
 ### 7 May 2018
 {: #7May2018}
 
-- **Sydney, Australia data center opens**: You can now create {{site.data.keyword.conversationshort}} service instances that are hosted in the Sydney, Australia data center. See [IBM Cloud global data centers ![External link icon](../../icons/launch-glyph.svg "External link icon"](https://www.ibm.com/cloud/data-centers/) for more details.
+- **Sydney, Australia data center opens**: You can now create {{site.data.keyword.conversationshort}} service instances that are hosted in the Sydney, Australia data center. See [IBM Cloud global data centers](https://www.ibm.com/cloud/data-centers/){: external} for more details.
 
 ### 4 April 2018
 {: #4April2018}
@@ -1212,7 +1205,7 @@ The following updates are available in all locations except Dallas currently.
   Only emojis that are included in your training data will be correctly and consistently identified; emoji support may not correctly classify similar emojis with different color tones or other variations.
   {: note}
 
-- **Entity stemming (Beta - English only)**: The fuzzy matching beta feature recognizes entities and matches them based on the stem form of the entity value. For example, this feature correctly recognizes 'bananas' as being similar to 'banana', and 'run' being similar to 'running' as they share a common stem form. For more information, see [Fuzzy matching](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching).
+- **Entity stemming (Beta - English only)**: The fuzzy matching beta feature recognizes entities and matches them based on the stem form of the entity value. For example, this feature correctly recognizes `bananas` as being similar to `banana`, and `run` being similar to `running` as they share a common stem form. For more information, see [Fuzzy matching](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching).
 - **Workspace import progress**: When you import a workspace from a JSON file, a tile for the workspace is displayed immediately, in which information about the progress of the import is displayed.
 - **Reduced training time**: Multiple models are now trained in parallel, which noticeably reduces the training time for large workspaces.
 

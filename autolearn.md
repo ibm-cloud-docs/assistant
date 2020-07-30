@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-28"
 
 subcollection: assistant
 
@@ -40,7 +40,7 @@ When customers interact with your assistant, they often make choices. If your un
 
 For example, when a customer asks a question that the assistant isn't sure it understands, the assistant often shows a list of topics to the customer and asks the customer to choose the right one. This process is called *disambiguation*. If, when a similar list of options is shown, customers most often click the same one (option #2, for example), then your skill can learn from that experience. It can learn that option #2 is the best answer to that type of question. And next time, it can list option #2 as the first choice, so customers can get to it more quickly. And, if the pattern persists over time, it can change its behavior even more. Instead of making the customer choose from a list of options at all, it can return option #2 as the answer immediately.
 
-The advantage of enabling your skill to apply what it learns from observing customer choices to its own machine learning models is clear. As your skill learns over time, your customers get the best answer more often and in fewer clicks.
+The advantage of enabling your skill to apply what it learns from observing customer choices is clear. As your skill learns over time, your customers get the best answer more often and in fewer clicks.
 
 Before your skill can learn from customer behavior, it must observe customer behavior. You can give it real user conversation data to learn from by connecting your skill to a live assistant. When you connect to an assistant, the logs from conversations that occur between the assistant and your customers serve as the data source for observation. 
 
@@ -56,7 +56,7 @@ Autolearn gains insights from the following user action:
 - The choice made from a list of disambiguation options that is displayed for an utterance
 <!-- The choice made from a list of more options that is included with the response in web chat integrations-->
 
-These customer interactions occur in the context of one of the product's built-in integrations, such as the web chat, or in a custom application. To say that your skill *observes* the choices that users make means that it analyzes logs of the exchanges after the interactions take place. It does not mean that the skill watches the clicks that users make within the client-facing app in real time, for example.
+These customer interactions occur in the context of one of the product's built-in integrations, such as the web chat, or in a custom application. To say that your skill *observes* the choices that users make means that it analyzes logs of the exchanges after the interactions take place. It does not mean that the skill watches the clicks that users make within the client-facing app in real time.
 
 When you connect a live assistant as the data source for recommendations, you enable observation. When you turn on autolearning, you put the observed insights to use to improve your skill, which results in a better customer experience.
 
@@ -89,16 +89,18 @@ To enable autolearning, complete the following steps:
     Do not change the assistant without first considering the impact of this change. When you swap the assistant to observe, it changes the live assistant that is used as the data source for the recommendations feature also.
     {: important}
 
-    If you are deploying your skill with a custom app that uses the v1 `/message` API, expand the **Not using assistants?** section. Click **Observe all messages**. For more information about how to manage the data that contributes to autolearning from a custom app, see [Autolearning from custom apps that use the v1 API](#autolearn-v1).
-
 1.  Click the *Enable Autolearning* toggle to turn the feature **On**.
 
-## Autolearning from custom apps that use the v1 API
-{: #autolearn-v1}
+##Tracking customer effort
+{: #autolearn-track}
 
-Even if you are not using an assistant or any of the built-in integrations to deploy your skill, you can enable autolearning. From the Autolearning page where you enable the feature, select the **Observe all messages** checkbox. When you do so, you indicate that you want your skill to observe and learn from every POST request that is sent to the `/message` API endpoint for this skill, whether it's v1 or v2.
+To track the impact that autolearning has over time, use the **Customer Effort Analysis Notebook**. The notebook analyzes a metric called *Customer Effort*, which captures the effort that your customers must expend to get an answer to a question or find the solution to a problem. 
 
-When you configure autolearning to use all messages, you must be sure to flag any requests that are not customer-generated that are sent to the service. Do not mix test utterances with legitimate, customer-generated utterances. You might run manual or automated tests of your skill, for example. You must prevent this canned data from skewing the insights that can otherwise be gained from analyzing choices that are made by real customers. Build your test framework in such a way that each test message is identified as a test message and does not feed the autolearning algorithm. To do so, include the `autolearn:false` property in each test request.<!-- For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#send-user-input-to-assistant){: external}.-->
+Autolearning works in tandem with disambiguation. (For more information about disambiguation, see [Disambiguation](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).) The Customer Effort metric measures how your customers respond to the options that are presented by disambiguation. For example, if your customer chooses the third option in a list of choices, the effort expended is considered to be higher than the effort expended to choose the first option. Likewise, if a customer chooses **None of the above** to signify that none of the options address a need, then the effort metric is even higher. Use this notebook to plot the Customer Effort metric values graphically, so you have a visual indication of how the metric changes over time. You can also see related information such as disambiguation volume and which dialog nodes are most frequently included as disambiguation list options.
+
+You can use the notebook from [GitHub](https://github.com/watson-developer-cloud/assistant-improve-recommendations-notebook/blob/master/notebook/Customer%20Effort%20Notebook.ipynb){: external}<!-- or use the notebook with Watson Studio-->.
+
+For more information about this notebook and others that you can use to improve your assistant, see [Jupyter notebooks](https://cloud.ibm.com/docs/assistant?topic=assistant-logs-resources#logs-resources-jupyter-notebooks).
 
 ## Learning from your data
 {: #autolearn-data}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-24"
 
 subcollection: assistant
 
@@ -77,7 +77,13 @@ Do not add personal data to the training data (entities and intents, including u
 If you need to remove a customer's message data from a {{site.data.keyword.conversationshort}} instance, you can do so based on the customer ID of the client, as long as you associate the message with a customer ID when the message is sent to {{site.data.keyword.conversationshort}}.
 
 - The preview link and automatic Facebook integrations do not support the labeling and therefore deletion of data based on customer ID. These integration types should not be used in a solution that must support the ability to delete data based on a customer ID.
-- For Slack, the `customer_id` is the `user_id` prepended with `slack_`. The Slack `user_id` property is a concatenation of the team ID, such as `T09LVDR7Y`, and the member ID of the user, such has `W4F8K9JNF`. For example: `T09LVDR7YW4F8K9JNF`. 
+- For Intercom, the `customer_id` is the `user_id` prepended with `intercom_`. The Intercom `user_id` property is the `id` of the `author` message object in the Conversation Model that is defined by Intercom.
+  
+  - To get the ID, open the channel from a web browser. Open the web developer tools to view the console. Look for `author`.
+
+  The full customer ID looks like this: `customer_id=intercom_5c499e5535ddf5c7fa2d72b3`.
+- For Slack, the `customer_id` is the `user_id` prepended with `slack_`. The Slack `user_id` property is a concatenation of the team ID, such as `T09LVDR7Y`, and the member ID of the user, such has `W4F8K9JNF`. For example: `T09LVDR7YW4F8K9JNF`.
+
   - To get the team ID, open the channel from a web browser. Open the web developer tools to view the console. Look for `[BOOT] Initial team ID`.
   - You can copy the member ID from the user's Slack profile. 
   - To get the IDs programmatically, use the Slack API. For more information, see [Overview](https://api.slack.com/apis){: external}.

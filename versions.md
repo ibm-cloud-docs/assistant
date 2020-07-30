@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-07-30"
 
 subcollection: assistant
 
@@ -127,3 +127,5 @@ To download a dialog skill version, complete the following steps:
 1.  From the skill menu, click **Versions**.
 1.  Click the ![Click to view actions](images/kebab-react.png) icon from the version you want to download, and then choose **Export**.
 1.  Specify a name for the JSON file and where to save it, and then click **Save**.
+
+For more information about how to replace a skill, see [Overwriting a skill](/docs/assistant?topic=assistant-skills-dialog-add#skills-dialog-add-overwrite).

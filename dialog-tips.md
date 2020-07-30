@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-30"
 
 subcollection: assistant
 
@@ -35,7 +35,7 @@ Get tips about ways to address common tasks.
 
 - Add a node name that describes the purpose of the node.
 
-  You know what the node does right now, but months from now you might not. Your future self and any team members will thank you for adding a descriptive node name. And the node name is displayed in the log, which can help you debug a conversation later.
+  Today, you know what the node does, but months from now you might not remember. Your future self and any team members will thank you for adding a descriptive node name. And the node name is displayed in the log, which can help you debug a conversation later.
 - To gather the information that is required to perform a task, try using a node with slots instead of a bunch of separate nodes to elicit information from users. See [Gathering information with slots](/docs/assistant?topic=assistant-dialog-slots).
 - For a complex process flow, tell users about any information they will need to provide at the start of the process.
 - Understand how your assistant travels through the dialog tree and the impact that folders, branches, jump-tos, and digressions have on the route. See [Dialog flow](/docs/assistant?topic=assistant-dialog-build#dialog-build-flow).
@@ -51,7 +51,7 @@ Get tips about ways to address common tasks.
 - Keep answers short and useful.
 - Reflect the user's intent in the response.
 
-  Doing so assures users that the bot is understanding them, or if it is not, gives users a chance to correct a misunderstanding right away.
+  Doing so assures users that the bot is understanding them, or if it is not, gives users a chance to correct a misunderstanding immediately.
 - Only include links to external sites in responses if the answer depends on data that changes frequently.
 - Avoid overusing buttons. Encouraging users to pick predefined options from a set of buttons is less like a real conversation, and decreases your ability to learn what users really want to do. When you let real users ask for things in their own words, you can use the input to train the system and derive better intents.
 - Avoid using a bunch of nodes when one node will do. For example, add multiple conditional responses to a single node to return different responses depending on details provided by the user. See [Conditional responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multiple).

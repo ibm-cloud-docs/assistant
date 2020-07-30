@@ -81,7 +81,7 @@ The web chat change log lists changes ordered by version number. For more inform
 ## 1.5.2 
 {: #1.5.2}
 
-*Release date: *2 April 2020*
+*Release date: 2 April 2020*
 
 - **Introduced the `learningOptOut` parameter**: You can add the `learningOptOut` parameter and set it to `true` to add the `X-Watson-Learning-Opt-Out` header to each `/message` request that originates from the Web Chat. For more information about the header, see [Data collection](https://cloud.ibm.com/apidocs/assistant/assistant-v2#data-collection){: external}. For more information about the parameter, see [Configuration](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-configuration){: external}.
 

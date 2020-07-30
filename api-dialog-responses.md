@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-22"
+lastupdated: "2020-07-30"
 
 subcollection: assistant
 
@@ -130,7 +130,7 @@ The `pause` response type instructs the application to wait for a specified inte
 
 This pause might be requested by the dialog to allow time for a request to complete, or simply to mimic the appearance of a human agent who might pause between responses. The pause can be of any duration up to 10 seconds.
 
-A `pause` response is typically sent in combination with other responses. Your application should pause for the interval specified by the `time` property (in milliseconds) before displaying the next response in the array. The optional `typing` property requests that the client application show a "user is typing" indicator, if supported, in order to simulate a human agent.
+A `pause` response is typically sent in combination with other responses. Your application should pause for the interval specified by the `time` property (in milliseconds) before displaying the next response in the array. The optional `typing` property requests that the client application show an `assistant is typing` indicator, if supported, in order to simulate a human agent.
 
 ### Option
 {: #api-dialog-responses-option}
