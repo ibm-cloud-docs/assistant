@@ -67,7 +67,7 @@ For more information about what's new in the web chat integration, see the [Web 
 
 - **The @sys-location and @sys-person system entities were removed**: The `@sys-location` and `@sys-person` system entities are no longer listed on the *System entities* page. If your dialog uses one of these entities, a red `Entity not created` notification is displayed to inform you that the entity is not recognized.
 
-- **Skill menu actions moved**: The menu that was avaiable while working with a skill was removed. The actions that were available from the menu, such as import and export, are still available. Go to the Skills page, and click the menu on the skill tile. 
+- **Skill menu actions moved**: The menu that was displayed in the header of the skill while you were working with a skill was removed. The actions that were available from the menu, such as import and export, are still available. Go to the Skills page, and click the menu on the skill tile. 
 
   The import skill process was updated to support overwriting an existing skill on import. For more information, see [Overwriting a skill](/docs/assistant?topic=assistant-skill-dialog-add#skill-dialog-add-overwrite).
 
