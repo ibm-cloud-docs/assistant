@@ -28,6 +28,11 @@ subcollection: assistant
 
 The web chat change log lists changes ordered by version number. For more information about the web chat, see [Integrating with your website](/docs/assistant?topic=assistant-deploy-web-chat).
 
+## Controlling the version
+{: #release-notes-chat-version}
+
+If you want to evaluate changes that are introduced in a web chat release before you apply them to your deployment, you can version your web chat. For more information, see [Versioning](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=key-concepts#versioning)
+
 ## 2.2.0
 {: #2.2.0}
 
