@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-28"
+lastupdated: "2020-08-05"
 
 subcollection: assistant
 
@@ -24,17 +24,14 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Empower your skill to learn over time  ![Technology preview experience only](images/preview.png) 
+# Empower your skill to learn automatically ![Beta](images/beta.png)
 {: #autolearn}
 
 Use autolearning to enable your skill to learn from interactions between your customers and your assistants.
 {: shortdesc}
 
-This feature is visible only in a select set of service instances where the technology preview is deployed. When it becomes generally available, it will be available to Plus or Premium plan users only.
-{: preview}
-
-<!--![Plus or Premium plan only](images/plus.png) This feature is available to Plus or Premium plan users only.
-{: note}-->
+![Plus or Premium plan only](images/plus.png) This beta feature is available to Plus or Premium plan users only.
+{: note}
 
 When customers interact with your assistant, they often make choices. If your underlying dialog skill pays attention, it can learn from these user decisions over time.
 
@@ -90,6 +87,15 @@ To enable autolearning, complete the following steps:
     {: important}
 
 1.  Click the *Enable Autolearning* toggle to turn the feature **On**.
+
+<!--## Advanced configuration
+{: #autolearn-v1}
+
+If you have an advanced use case where more than one assistant submits production message traffic for a skill, you still can enable autolearning. From the Autolearning page where you enable the feature, expand the **Advanced** section, and then select **Observe all messages**. When you do so, you indicate that you want your skill to observe and learn from every `POST` request that is sent to the `/message` API endpoint for this skill.
+
+When you configure autolearning to use all messages, you must be sure to flag any requests that are not customer-generated that are sent to the service. Do not mix test utterances with legitimate, customer-generated utterances. You might run manual or automated tests of your skill, for example. You must prevent this canned data from skewing the insights that can otherwise be gained from analyzing choices that are made by real customers. 
+
+Build your test framework in such a way that each test message is identified as a test message and does not feed the autolearning algorithm. To do so, include the `auto_learn.learn:false` property in each test request. For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#send-user-input-to-assistant){: external}.-->
 
 ##Tracking customer effort
 {: #autolearn-track}

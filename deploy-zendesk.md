@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-08-05"
 
 subcollection: assistant
 
@@ -77,7 +77,7 @@ To set up a Zendesk service desk integration, complete the following steps:
 
        ![Screen capture of the connection dialog.](images/zd-account-key.png)
 
-    - Return to the setup page in {{site.data.keyword.conversationshort}}, and then paste the key into the field. Click **Access account**.
+    - Return to the setup page in {{site.data.keyword.conversationshort}}, and then paste the key into the field.
 
 1.  {: #deploy-zendesk-add-private-app}Install the {{site.data.keyword.conversationshort}} private application in your Zendesk Chat subdomain.
 

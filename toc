@@ -79,6 +79,7 @@ Watson Assistant (Managed)
     Analytics
         logs-overview.md
         logs.md
+        autolearn.md
         irrelevance-detection.md
         logs-resources.md
 
@@ -106,11 +107,6 @@ Watson Assistant (Managed)
     {: .topicgroup}
     Early access program
         beta.md
-
-    {: .topicgroup}
-    Technology preview
-        autolearn.md
-    {: .navgroup-end}
 
     {: .navgroup id="reference"}
     [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-30"
+lastupdated: "2020-08-05"
 
 subcollection: assistant
 
@@ -60,6 +60,14 @@ The change log lists changes that were made this year ordered by the date they w
 
 For more information about what's new in the web chat integration, see the [Web Chat release notes](/docs/assistant?topic=assistant-release-notes-chat).
 {: tip}
+
+## 5 August 2020
+{: #5August2020}
+<!--1.105-->
+
+- **Enable your skill to improve itself**: Try the new **autolearning** beta feature to empower your skill to improve itself automatically over time. Your skill observes customer choices to understand which choices are most often the best. As its confidence grows, your skill presents better options to get the right answers to your customers with fewer clicks. For more information, see [Empower your skill to learn over time](/docs/assistant?topic=assistant-autolearn).
+
+- **Show more of search results**: When search results are returned from the search skill, the customer can now click a twistie to expand the search result card to see more of the returned text.
 
 ## 29 July 2020
 {: #29July2020}
