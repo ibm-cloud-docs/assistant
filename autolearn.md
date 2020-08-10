@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-05"
+lastupdated: "2020-08-07"
 
 subcollection: assistant
 
@@ -38,6 +38,8 @@ When customers interact with your assistant, they often make choices. If your un
 For example, when a customer asks a question that the assistant isn't sure it understands, the assistant often shows a list of topics to the customer and asks the customer to choose the right one. This process is called *disambiguation*. If, when a similar list of options is shown, customers most often click the same one (option #2, for example), then your skill can learn from that experience. It can learn that option #2 is the best answer to that type of question. And next time, it can list option #2 as the first choice, so customers can get to it more quickly. And, if the pattern persists over time, it can change its behavior even more. Instead of making the customer choose from a list of options at all, it can return option #2 as the answer immediately.
 
 The advantage of enabling your skill to apply what it learns from observing customer choices is clear. As your skill learns over time, your customers get the best answer more often and in fewer clicks.
+
+To learn more about how this feaature can benefit you, read the [Building the complete virtual assistant with Watson Assistant](https://www.ibm.com/blogs/watson/2020/05/building-the-complete-virtual-assistant-with-watson-assistant/){: external} blog post.
 
 Before your skill can learn from customer behavior, it must observe customer behavior. You can give it real user conversation data to learn from by connecting your skill to a live assistant. When you connect to an assistant, the logs from conversations that occur between the assistant and your customers serve as the data source for observation. 
 
