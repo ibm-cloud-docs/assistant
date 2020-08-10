@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-05"
+lastupdated: "2020-08-10"
 
 subcollection: assistant
 
@@ -56,10 +56,12 @@ Zendesk Chat is an add-on to Zendesk Support. Zendesk Support puts all your cust
 
 To set up a Zendesk service desk integration, complete the following steps:
 
-1.  Create a web chat integration. For more information, see [Integrating with your website](/docs/assistant?topic=assistant-deploy-web-chat).
+1.  Create a web chat integration. For more information, see [Integrating the web chat with your website](/docs/assistant?topic=assistant-deploy-web-chat).
 
-1.  From the web chat integration page in {{site.data.keyword.conversationshort}}, switch the **Allow transfers to live agents** toggle to **On**, and then choose **Zendesk** as the service desk type, and then click **Set up**.
-1.  {: #deploy-zendesk-get-account-key}Add the account key for your Zendesk account. To get the account key for your Zendesk account, follow these steps:
+1.  From the web chat integration page in {{site.data.keyword.conversationshort}}, switch the **Allow transfers to live agents** toggle to **On**, and then choose **Zendesk** as the service desk type, and then click **Next**.
+1.  {: #deploy-zendesk-get-account-key}Add the account key for your Zendesk account, and then click **Next**.
+
+    To get the account key for your Zendesk account, follow these steps:
 
     - Log in to your Zendesk subdomain.
     
@@ -105,13 +107,14 @@ To set up a Zendesk service desk integration, complete the following steps:
 
       For more information, see [Uploading and installing a private app in Zendesk Chat](https://develop.zendesk.com/hc/en-us/articles/360001069347-Uploading-and-installing-a-private-app){: external}.
 
-1.  Optionally, add an agent avatar image. Edit your profile to upload an avatar image. The image file that you upload cannot be larger than 50 x 50 pixels and 100 KB.
-
-1.  Click **Save** to finish setting up the connection to the Zendesk Chat service desk.
+1.  Click **Save and exit** to finish setting up the connection to the Zendesk Chat service desk.
 
 When you test the service desk integration, make sure there is at least one agent with `Online` status. Agent status is set to `Invisible` unless it is explicitly changed.
 
 Watch the following 4-minute video to see someone set up a connection to a Zendesk service desk.
+
+The product user interface is slightly different from the interface that is shown in the video. However, the main steps are the same.
+{: note}
 
 ![Setting up a Zendesk service desk connection](https://www.youtube.com/embed/hegheiqUqiM){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 

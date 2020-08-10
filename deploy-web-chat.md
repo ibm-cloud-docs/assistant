@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-08-10"
 
 subcollection: assistant
 
@@ -25,7 +25,7 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
 
-# Integrating web chat with your website
+# Integrating the web chat with your website
 {: #deploy-web-chat}
 
 Add your assistant to your company website as a web chat widget that can help your customers with common questions and tasks, and can transfer customers to human agents.
@@ -50,11 +50,9 @@ To add the assistant to a web page on your company website, complete the followi
 
 1.  **Optional**: Change the web chat integration name from *Web chat* to something more descriptive.
 
-1.  Click **Create** to generate the script.
+1.  Click **Create** to create a web chat instance.
 
-    A code snippet is created and added to the page that contains an HTML `script` element. The `script` tag calls JavaScript code that is hosted on an IBM site. The code creates an instance of a widget that communicates with the assistant. The generated code includes a region and unique integration ID. Do not change these parameter values.
-
-1.  **Optional**: Customize the chat. You can make the following changes:
+1.  **Optional**: Customize the style of the chat window. You can make the following changes:
 
     - **Public assistant name**. Name by which the assistant is known to users. This name is displayed in the header of the chat window. The name can be up to 18 characters in length. 
 
@@ -80,10 +78,24 @@ To add the assistant to a web page on your company website, complete the followi
 
     Style changes you make are immediately applied to the preview that is shown on the page, so you can see how your choices impact the style of the chat UI.
 
+1.  **Optional**: To configure support for transferring conversations to a service desk agent, click the **Live agent** tab. For more information, see [Adding service desk support](#deploy-web-chat-haa).
+
+1.  **Optional**: To secure the web chat, click the **Security** tab. For more information, see [Securing the web chat](#deploy-web-chat-security). 
+
+1.  Click the **Embed** tab.
+
+    A code snippet is displayed that defines the chat window implementation. You will add this code snippet to your web page. The code snippet contains an HTML script element. The script calls JavaScript code that is hosted on an IBM site. The code creates an instance of a widget that communicates with the assistant. The generated code includes a region and unique integration ID. Do not change these parameter values.
+
+1.  To give your customers a way to reset the conversation if they get stuck, turn on suggestions.
+
+    Only enable suggestions if your web chat is connected to a service desk solution. For more information, see [Showing more suggestions](#deploy-web-chat-alternate).
+    {: note}
+
 1.  Copy the `script` HTML element.
 
-    Do not click *Save changes* until you are done with making web chat edits; it closes the page.
-    {: tip}
+1.  If you made any customizations, click **Save and exit**. Otherwise, click **Close**.
+
+    The web chat instance is created as soon as you click the *Create* button, and does not need to be saved.
 
 1.  Open the HTML source for a web page on your website where you want the chat window to be displayed. Paste the code snippet into the page.
 
@@ -115,6 +127,11 @@ To add the assistant to a web page on your company website, complete the followi
     The placement of the web chat icon is always the same regardless of where you paste the script element into the web page source. The chat window is represented by a `div` HTML element.
     {: important}
 
+    A developer can make more involved style changes, including:
+
+    - Changing the launcher icon or placement of the launch button. For more information, see the [Using a custom launcher tutorial](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=tutorials-launcher){: external}.
+    - Changing the size or position of the chat window that is displayed when users click the launcher button. For more information, see the [Render to a custom element tutorial](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=tutorials-example-element){: external}.
+
 1.  Click the icon to open the chat window and talk to your assistant.
 
     ![Web chat window](images/web-chat-window.png)
@@ -131,11 +148,18 @@ To add the assistant to a web page on your company website, complete the followi
 
     If you don't extend the session timeout setting for the assistant, the dialog flow for the current session is restarted after 60 minutes of inactivity. This means that if a user stops interacting with the assistant, after 60 minutes, any context variable values that were set during the previous conversation are set to null or back to their initial values.
 
-1.  Click **Save changes** to save the web chat name and any customization information that you added and close the integration page. Alternatively, you can click the **X** to close the page. 
-
-    The web chat instance is created as soon as you click the *Create* button, and does not need to be saved.
-
 You can apply more advanced customizations to the style of the web chat by using the {{site.data.keyword.conversationshort}} web chat toolkit on [GitHub](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-configuration){: external}. For example, the text that is displayed in the chat window uses the fonts: `IBMPlexSans, Arial, Helvetica, sans-serif`. If you want to use a different font, you can specify it by using the `instance.updateCSSVariables()` method.
+
+## Showing more suggestions ![Beta](images/beta.png)
+{: #deploy-web-chat-alternate}
+
+*Suggestions* give your customers a way to try something else when the current exchange with the assistant isn't delivering what they expect. A question mark icon ![Question mark icon](images/question-mark.png) is displayed in the web chat that customers can click at any time to see other topics that might be of interest or to connect to a service desk agent. Customers can click a suggested topic to submit it as input or click the **X** icon to close the suggestions list.
+
+The suggestions are shown also in situations where the customer might otherwise become frustrated. For example, if a customer uses different wording to ask the same question multiple times in succession, and the same dialog node is triggered each time, then related topic suggestions are shown instead of the triggered node's response. The list of suggestions gives the customer a quick way to get the conversation back on track or get help from a person.
+
+The suggestions list is populated with dialog nodes that are related in some way to the matched intent. Any dialog node with a node name (or external node name) can be shown as a suggestion, unless its **Show node name** setting is set to **Off**.
+
+Only enable suggestions if your web chat is connected to [a service desk solution](#deploy-web-chat-haa).
 
 ## Dialog considerations
 {: #deploy-web-chat-dialog}
@@ -154,6 +178,11 @@ For more information about rich response types, see [Rich responses](/docs/assis
 A developer can extend the capabilities of the web chat by using the {{site.data.keyword.conversationshort}} web chat toolkit on [GitHub](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html){: external}.
 
 If you choose to use the provided methods, you implement them by editing the code snippet that was generated earlier. You then embed the updated code snippet into your web page.
+
+Here are some common tasks you might want to perform:
+
+- [Setting and passing context variable values](#deploy-web-chat-set-context})
+- [Adding user identity information (if you don't enable security)](#deploy-web-chat-userid)
 
 ### Setting and passing context variable values
 {: #deploy-web-chat-set-context}
@@ -250,6 +279,8 @@ You can implement the following security measures:
 
 - Ensure that messages sent from the web chat to your assistant come from your customers only
 - Send private data from the web chat to your assistant
+
+For more information about security, see [Security](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=key-concepts#security){: external}.
 
 ### Enable security
 {: #deploy-web-chat-security-task}
@@ -449,7 +480,7 @@ To authenticate and specify a unique ID for each customer, add the user ID infor
 
 If you disable security, then you can use the `instance.updateUserID()` method to specify user IDs. For more information, see [Adding user identity information](#deploy-web-chat-userid).
 
-## Adding support for transfers
+## Adding service desk support
 {: #deploy-web-chat-haa}
 
 Delight your customers with 360-degree support by integrating your web chat with a third-party service desk solution. 
@@ -466,7 +497,12 @@ After you set up the service desk integration, you must update your dialog to en
 
 If no dialog skill is associated with your assistant, create one or add one to your assistant now. See [Building a dialog](/docs/assistant?topic=assistant-dialog-overview) for more details.
 
-Complete these steps in your dialog skill so the assistant can pass the conversation to a service desk agent when a customer asks to speak to a person.
+The web chat integration shows a **Connect to agent** button in situations where the assistant anticipates that customers might need extra help. You can make edits to your dialog to support the following additional use cases:
+
+- Recognize when a customer explicitly asks to speak to a person.
+- Program sensitive topics to be handled primarily by an agent to deliver a more personalized experience.
+
+Complete these steps in your dialog skill so the assistant can pass the conversation to a service desk agent:
 
 1.  Add an intent to your skill that can recognize a user's request to speak to a human.
 

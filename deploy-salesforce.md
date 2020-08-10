@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-08-10"
 
 subcollection: assistant
 
@@ -66,9 +66,9 @@ If you don't, ask someone with the appropriate level of access to perform this p
 
 To set up a Salesforce service desk integration, complete the following steps:
 
-1.  Create a web chat integration. For more information, see [Integrating with your website](/docs/assistant?topic=assistant-deploy-web-chat).
+1.  Create a web chat integration. For more information, see [Integrating the web chat with your website](/docs/assistant?topic=assistant-deploy-web-chat).
 
-1.  From the web chat integration page in {{site.data.keyword.conversationshort}}, switch the **Allow transfers to live agents** toggle to **On**, and then choose **Salesforce** as the service desk type. Click **Set up**.
+1.  From the web chat integration page in {{site.data.keyword.conversationshort}}, switch the **Allow transfers to live agents** toggle to **On**, and then choose **Salesforce** as the service desk type. Click **Next**.
 
 1.  {: #deploy-salesforce-get-deployment-info}For {{site.data.keyword.conversationshort}} to connect to a Salesforce service desk, it needs information about your organization's Salesforce chat deployment and button implementations. Specifically, it needs the API endpoint, organization ID, deployment ID, and button ID. The service can derive the values that it needs from code snippets that you copy and paste to this configuration page.
 
@@ -135,7 +135,7 @@ To set up a Salesforce service desk integration, complete the following steps:
     - Select user profiles to give the appropriate set of users access to the page. Limit the group to include only those who you want to be able to view chat history information in the page. 
     - Click *Next*, and then click *Save*.
 
-1.  From the Salesforce configuration page in {{site.data.keyword.conversationshort}}, click **Save** to finish setting up the connection.
+1.  From the Salesforce configuration page in {{site.data.keyword.conversationshort}}, click **Save and exit** to finish setting up the connection.
 
 When you test the service desk integration, make sure there is at least one agent with `Available` status.
 
