@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-08-10"
 
 subcollection: assistant
 
@@ -26,12 +26,21 @@ subcollection: assistant
 # Web chat release notes
 {: #release-notes-chat}
 
-The web chat change log lists changes ordered by version number. For more information about the web chat, see [Integrating with your website](/docs/assistant?topic=assistant-deploy-web-chat).
+The web chat change log lists changes ordered by version number. For more information about the web chat, see [Integrating the web chat with your website](/docs/assistant?topic=assistant-deploy-web-chat).
 
 ## Controlling the version
 {: #release-notes-chat-version}
 
 If you want to evaluate changes that are introduced in a web chat release before you apply them to your deployment, you can version your web chat. For more information, see [Versioning](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=key-concepts#versioning)
+
+## 2.3.0
+{: #2.3.0}
+
+*Release date: 10 August 2020*
+
+- **Introducing *Suggestions***: Enable this beta feature to show a helper icon in the chat that customers can click to see alternate topics or to connect to an agent. For more information, see [Showing more suggestions](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-alternate).
+
+- **Search results are now expandable**: When search results are displayed in the web chat, users can click **Show more** to see more of the search result text.
 
 ## 2.2.0
 {: #2.2.0}
