@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-08-10"
 
 subcollection: assistant
 
@@ -275,22 +275,6 @@ The following table shows the UI and API actions that can be performed by differ
 {: #access-control-new}
 
 Before April 2020, the service access role assignments that were defined for a {{site.data.keyword.conversationshort}} service instance in the IBM Cloud dashboard were not applied. Users with either Reader- or Writer-level service access to an instance effectively had Manager-level access. This behavior changed for all data centers as of 2 April 2020. With the access control improvements released, service-level access role assignments are recognized by the product.
-
-### Location support
-{: #access-control-geos}
-
-Service-level access role support was enabled in phases. The following table shows when support was added in different data centers.
-
-| Location    | Service access support adoption date |
-|-------------|--------------------------------------|
-| Dallas      | 2 April 2020 |
-| Frankfurt   | 1 April 2020 |
-| Seoul       | 2 March 2020 |
-| Sydney      | 16 March 2020 |
-| Tokyo       |  2 March 2020 |
-| London      | 16 March 2020 |
-| Washington DC  | 16 March 2020 |
-{: caption="Data centers with service access role support" caption-side="top"}
 
 ## How to keep your access
 {: #access-control-prep}

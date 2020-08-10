@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-08-10"
 
 keywords: assistant, omnichannel, virtual agent, virtual assistant, chatbot, conversation, watson assistant, watson conversation
 
@@ -45,7 +45,7 @@ You need a service instance to start.
 
     The service instance will be created in the **default** resource group if you do not choose a different one, and it *cannot* be changed later. This group is sufficient for the purposes of trying out the product.
 
-    If you're creating an instance for more robust use, then learn more about [resource groups](https://{DomainName}/docs/resources/bestpractice_rgs#bp_resourcegroups){: external}.
+    If you're creating an instance for more robust use, then learn more about [resource groups](/docs/account?topic=account-account_setup){: external}.
 1.  {: hide-dashboard} Sign up for a free {{site.data.keyword.cloud_notm}} account or log in.
 1.  {: hide-dashboard} Click **Create**.
 
