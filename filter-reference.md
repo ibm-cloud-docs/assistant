@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-02"
+lastupdated: "2020-08-12"
 
 subcollection: assistant
 
@@ -26,13 +26,13 @@ subcollection: assistant
 # Filter query reference
 {: #filter-reference}
 
-The {{site.data.keyword.conversationshort}} service REST API offers powerful log search capabilities through filter queries. You can use the /logs API `filter` parameter to search your skill log for events that match a specified query.
+The {{site.data.keyword.conversationshort}} service REST API offers powerful log search capabilities through filter queries. You can use the v2 /logs API `filter` parameter to search your skill log for events that match a specified query.
 
 The `filter` parameter is a cacheable query that limits the results to those matching the specified filter. You can filter on various objects that are part of the JSON response model (for example, the user input text, the detected intents and entities, or the confidence score).
 
 To see examples of filter queries, see [Examples](#filter-reference-examples).
 
-For more information about the /logs `GET` method and its response model, refer to the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#list-log-events-in-a-workspace){: external}.
+For more information about the /logs `GET` method and its response model, refer to the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2?code=dotnet-standard#list-log-events-for-an-assistant){: external}.
 
 ## Filter query syntax
 {: #filter-reference-syntax}
@@ -49,7 +49,7 @@ The following example shows the general form of a filter query:
 
 Filtering by intent or entity requires slightly different syntax from filtering on other fields. For more information, see [Filtering by intent or entity](#filter-reference-intent-entity).
 
-**Note:** The filter query syntax uses some characters that are not allowed in HTTP queries. Make sure that all special characters, including spaces and quotation marks, are URL encoded when sent as part of an HTTP query. For example, the filter `response_timestamp<2016-11-01` would be specified as `response_timestamp%3C2016-11-01`.
+**Note:** The filter query syntax uses some characters that are not allowed in HTTP queries. Make sure that all special characters, including spaces and quotation marks, are URL encoded when sent as part of an HTTP query. For example, the filter `response_timestamp<2020-01-01` would be specified as `response_timestamp%3C2020-01-01`.
 
 ## Operators
 {: #filter-reference-operators}
@@ -78,27 +78,22 @@ Because of differences in how intents and entities are stored internally, the sy
 
 For example, this query matches any logged event where the response includes a detected intent named `hello`:
 
-`response.intents:intent::hello`
+`response.output.intents:intent::hello`
 
 Note the `:` operator in place of a dot (intents:intent)
 
 Use the same pattern to match on any field of a detected intent or entity in the response. For example, this query matches any logged event where the response includes a detected entity with the value `soda`:
 
-`response.entities:value::soda`
+`response.output.entities:value::soda`
 
 Similarly, you can filter on intents or entities sent as part of the request, as in this example:
 
-`request.intents:intent::hello`
+`request.input.intents:intent::hello`
 
-Filtering on intents operates on all detected intents. To filter only on the detected intent with the highest confidence, you can use the `response.top_intent` shorthand syntax. For example:
+<!--Filtering on intents operates on all detected intents. To filter only on the detected intent with the highest confidence, you can use the `response.top_intent` shorthand syntax. For example:
 
 `response.top_intent::goodbye`
-
-### Filtering by customer ID
-{: #filter-reference-customer-id}
-
-To filter by customer ID, use the special location `customer_id`. (For more information about labeling messages with a customer ID, see [Information security](/docs/assistant?topic=assistant-information-security)).
-
+-->
 ### Filtering by other fields
 {: #filter-reference-fields}
 
@@ -115,15 +110,18 @@ To filter on another field in the log data, specify the location as a path ident
 
 Filtering is not available for all fields. You can filter on the following fields:
 
-- request.context.metadata.deployment
-- request.context.system.assistant_id
-- request.input.text
-- response.entities
-- response.input.text
-- response.intents
-- response.top_intent
-- meta.message.entities_count
-- workspace_id
+- `assistant_id`
+- `customer_id`
+- `language`
+- `request.context.global.system.user_id`
+- `request.input.text`
+- `request_timestamp`
+- `response.context.global.system.user_id`
+- `response.output.entities`
+- `response.output.intents`
+- `response_timestamp`
+- `skill_id`
+- `snapshot`
 
 Filtering on other fields is not currently supported.
 
@@ -134,23 +132,37 @@ The following examples illustrate various types of queries using this syntax.
 
 | Description | Query |
 |---------|-----------|
-| The date of the response is in the month of July 2017. | `response_timestamp>=2017-07-01,response_timestamp<2017-08-01` |
-| The timestamp of the response is earlier than `2016-11-01T04:00:00.000Z`. | `response_timestamp<2016-11-01T04:00:00.000Z` |
+| The date of the response is in the month of July 2020. | `response_timestamp>=2020-07-01,response_timestamp<2020-08-01` |
+| The timestamp of the response is earlier than `2019-11-01T04:00:00.000Z`. | `response_timestamp<2019-11-01T04:00:00.000Z` |
 | The message is labeled with the customer ID `my_id`. | `customer_id::my_id` |
-| The message was sent to a specific assistant (applies only to messages sent with the v2 API). | `request.context.system.assistant_id::dcd5c5ad-f3a1-4345-89c5-708b0b5ff4f7` |
+| The message was sent to a specific assistant. | `assistant_id::dcd5c5ad-f3a1-4345-89c5-708b0b5ff4f7` |
 | The user input text contains the word "order" or a grammatical variant (for example, `orders` or `ordering`. | `request.input.text:order` |
-| An intent name in the response exactly matches `place_order`. | `response.intents:intent::place_order` |
-| An entity name in the response exactly matches `beverage`.  | `response.entities:entity::beverage` |
+| An intent name in the response exactly matches `place_order`. | `response.output.intents:intent::place_order` |
+| An entity name in the response exactly matches `beverage`.  | `response.output.entities:entity::beverage` |
 | The user input text does not contain the word "order" or a grammatical variant. | `request.input.text:!order` |
-| The name of the detected intent with the highest confidence does not exactly match `hello`. | `response.top_intent::!hello` |
+<!--| The name of the detected intent with the highest confidence does not exactly match `hello`. | `response.top_intent::!hello` |-->
 | The user input text contains the string `!hello`. | `request.input.text:\!hello` |
 | The user input text contains the string `IBM Watson`. | `request.input.text:"IBM Watson"` |
 | The user input text contains a string that has no more than 2 single-character differences from `Watson`. | `request.input.text:Watson~2` |
 | The user input text contains a string consisting of `comm`, followed by zero or more additional characters, followed by `s`. | `request.input.text:comm*s` |
 | The user input text is not empty. | `request.input.text::!""` |
-| The deployment ID in the context matches `my_app`. | `request.context.metadata.deployment::my_app` |
-| An intent in the response has a confidence value greater than 0.8. | `response.intents:confidence>0.8` |
-| An intent name in the response exactly matches either `hello` or `goodbye`. | <code>response.intents:intent::(hello&#124;goodbye)</code> |
-| An intent in the response has the name `hello` and a confidence value equal to or greater than 0.8. | `response.intents:(intent:hello,confidence>=0.8)` |
-| An intent name in the response exactly matches `order`, and an entity name in the response exactly matches `beverage`. | `[response.intents:intent::order,response.entities:entity::beverage]` |
-<!-- -->
+| An intent name in the response exactly matches either `hello` or `goodbye`. | <code>response.output.intents:intent::(hello&#124;goodbye)</code> |
+| An intent name in the response exactly matches `order`, and an entity name in the response exactly matches `beverage`. | `[response.output.intents:intent::order,response.output.entities:entity::beverage]` |
+
+## Filtering v1 logs
+
+If your application is still using the v1 API, you can query and filter logs using the v1 /logs method. The filtering syntax is the same, but the structure of v1 logs and message requests is different. For more information, see [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1#list-log-events-in-a-workspace){: external}.
+
+With the v1 /logs API, you can filter on the following fields:
+
+- `request.context.metadata.deployment`
+- `request.context.system.assistant_id`
+- `request.input.text`
+- `response.entities`
+- `response.input.text`
+- `response.intents`
+- `response.top_intent`
+- `meta.message.entities_count`
+- `workspace_id`
+
+Filtering on other fields is not currently supported.
