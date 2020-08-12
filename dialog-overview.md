@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-08-12"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -584,7 +584,7 @@ To add a rich response, complete the following steps:
 
 A single dialog node can provide different responses, each one triggered by a different condition.  Use this approach to address multiple scenarios in a single node.
 
-![Adding conditional responses](https://www.youtube.com/embed/Q5_-f7_Iyvg){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+![Adding conditional responses](https://www.youtube.com/embed/Q5_-f7_Iyvg){: video output="iframe" id="youtubeplayer0" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 The node still has a main condition, which is the condition for using the node and processing the conditions and responses that it contains.
 
