@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-10"
+lastupdated: "2020-08-14"
 
 subcollection: assistant
 
@@ -153,11 +153,11 @@ You can apply more advanced customizations to the style of the web chat by using
 ## Showing more suggestions ![Beta](images/beta.png)
 {: #deploy-web-chat-alternate}
 
-*Suggestions* give your customers a way to try something else when the current exchange with the assistant isn't delivering what they expect. A question mark icon ![Question mark icon](images/question-mark.png) is displayed in the web chat that customers can click at any time to see other topics that might be of interest or to connect to a service desk agent. Customers can click a suggested topic to submit it as input or click the **X** icon to close the suggestions list.
+*Suggestions* give your customers a way to try something else when the current exchange with the assistant isn't delivering what they expect. A question mark icon ![Question mark icon](images/question-mark.png) is displayed in the web chat that customers can click at any time to see other topics that might be of interest or to connect to a service desk agent. Customers can click a suggested topic to submit it as input or click the *x* icon to close the suggestions list.
 
 The suggestions are shown also in situations where the customer might otherwise become frustrated. For example, if a customer uses different wording to ask the same question multiple times in succession, and the same dialog node is triggered each time, then related topic suggestions are shown instead of the triggered node's response. The list of suggestions gives the customer a quick way to get the conversation back on track or get help from a person.
 
-The suggestions list is populated with dialog nodes that are related in some way to the matched intent. Any dialog node with a node name (or external node name) can be shown as a suggestion, unless its **Show node name** setting is set to **Off**.
+The suggestions list is populated with dialog nodes that condition on intents that are related in some way to the matched intent. The intents are ones that the AI model considered to be possible alternatives, but not with a high enough confidence to show them as disambiguation options. Any dialog node with a node name (or external node name) can be shown as a suggestion, unless its **Show node name** setting is set to **Off**.
 
 Only enable suggestions if your web chat is connected to [a service desk solution](#deploy-web-chat-haa).
 
