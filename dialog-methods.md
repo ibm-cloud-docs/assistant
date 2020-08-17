@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-05-11"
+lastupdated: "2020-08-17"
 
 subcollection: assistant
 
@@ -1368,7 +1368,16 @@ If you want to change the decimal placement for a number, to reformat a number a
 
   Converts the object or field to the Long number type. You can call this method on any object or field. If the conversion fails, *null* is returned.
 
-  If you specify a Long number type in a SpEL expression, you must append an `L` to the number to identify it as such. For example, `5000000000L`. This syntax is required for any numbers that do not fit into the 32-bit Integer type. For example, numbers that are greater than 2^31 (2,147,483,648) or lower than -2^31 (-2,147,483,648) are considered Long number types. Long number types have a minimum value of -2^63 and a maximum value of 2^63-1.
+  If you specify a Long number type in a SpEL expression, you must append an `L` to the number to identify it as such. For example, `5000000000L`. This syntax is required for any numbers that do not fit into the 32-bit Integer type. For example, numbers that are greater than 2^31 (2,147,483,648) or lower than -2^31 (-2,147,483,648) are considered Long number types. Long number types have a minimum value of -2^63 and a maximum value of 2^63-1 (or 9,223,372,036,854,775,807).
+
+  If you need to find out if a number is too long to be recognized properly in the dialog, you can check whether there are more than 18 integers in the number by using an expression like this:
+
+  ```
+  <? @sys-number.toString().length() > 18 ?>
+  ```
+  {: codeblock}
+
+  If you need to work with numbers that are longer than 18 integers, consider using a pattern entity (with a regular expression such as `\d{20}`) to work with them instead of using `@sys-number`.
 
 ### Standard math
 {: #dialog-methods-numbers-standard-math}
