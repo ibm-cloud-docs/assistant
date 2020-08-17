@@ -166,6 +166,7 @@ Only enable suggestions if your web chat is connected to [a service desk solutio
 
 The rich responses that you add to a dialog are displayed in the web chat as expected, with the following exceptions:
 
+- **Connect to human agent**: If service desk support is enabled for the web chat, this response type triggers a chat transfer. If service desk support is not configured, this response type is ignored.
 - **Option**: If your option list contains up to four choices, they are displayed as buttons. If your list contains five or more options, then they are displayed in a drop-down list.
 - **Pause**: This response type pauses the assistant's activity in the chat. However, activity does not resume after the pause until another response is triggered. Whenever you include a `pause` response type, add another, different response type, such as `text`, after it.
 
