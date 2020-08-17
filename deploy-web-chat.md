@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-17"
 
 subcollection: assistant
 
@@ -157,7 +157,7 @@ You can apply more advanced customizations to the style of the web chat by using
 
 The suggestions are shown also in situations where the customer might otherwise become frustrated. For example, if a customer uses different wording to ask the same question multiple times in succession, and the same dialog node is triggered each time, then related topic suggestions are shown instead of the triggered node's response. The list of suggestions gives the customer a quick way to get the conversation back on track or get help from a person.
 
-The suggestions list is populated with dialog nodes that condition on intents that are related in some way to the matched intent. The intents are ones that the AI model considered to be possible alternatives, but not with a high enough confidence to show them as disambiguation options. Any dialog node with a node name (or external node name) can be shown as a suggestion, unless its **Show node name** setting is set to **Off**.
+The suggestions list is populated with dialog nodes that condition on intents that are related in some way to the matched intent. The intents are ones that the AI model considered to be possible alternatives, but that didn't meet the high confidence threshold that is required for a node to be listed as a disambiguation option. Any dialog node with a node name (or external node name) can be shown as a suggestion, unless its **Show node name** setting is set to **Off**.
 
 Only enable suggestions if your web chat is connected to [a service desk solution](#deploy-web-chat-haa).
 
@@ -166,7 +166,6 @@ Only enable suggestions if your web chat is connected to [a service desk solutio
 
 The rich responses that you add to a dialog are displayed in the web chat as expected, with the following exceptions:
 
-- **Connect to human agent**: This response type is ignored.
 - **Option**: If your option list contains up to four choices, they are displayed as buttons. If your list contains five or more options, then they are displayed in a drop-down list.
 - **Pause**: This response type pauses the assistant's activity in the chat. However, activity does not resume after the pause until another response is triggered. Whenever you include a `pause` response type, add another, different response type, such as `text`, after it.
 
