@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-23"
+lastupdated: "2020-08-19"
 
 subcollection: assistant
 
@@ -32,7 +32,7 @@ Learn about APIs and other tools you can use to access and analyze log data.
 ## API
 {: #logs-resources-api}
 
-You can use the `/logs` API to list events from the transcripts of conversations that occurred between your users and your assistant. For conversations created by using the v2 `/message` API, use the instance-level endpoint to [list log events in all workspaces](https://cloud.ibm.com/apidocs/assistant/assistant-v1#list-log-events-in-all-workspaces){: external}, and then filter by Assistant ID. For more information about filtering logs, see [Filter query reference](/docs/assistant?topic=assistant-filter-reference).
+You can use the `/logs` API to list events from the transcripts of conversations that occurred between your users and your assistant. For conversations created by using the v2 `/message` API, use the instance-level endpoint to [list log events in all workspaces](https://cloud.ibm.com/apidocs/assistant/assistant-v1#listalllogs){: external}, and then filter by Assistant ID. For more information about filtering logs, see [Filter query reference](/docs/assistant?topic=assistant-filter-reference).
 
 The number of days that logs are stored differs by service plan type. See [Log limits](/docs/assistant?topic=assistant-logs#logs-limits) for details.
 
@@ -63,7 +63,7 @@ First, review the definitions of terms that are associated with {{site.data.keyw
 
 User metrics allow you to see, for example, the number of unique users who have engaged with your assistant, or the average number of conversations per user over a given time interval on the [Overview page](/docs/assistant?topic=assistant-logs-overview). User metrics are enabled by using a unique `User ID` parameter.
 
-To specify the `User ID` for a message sent using the `/message` API, include the `user_id` property in your global [context](https://cloud.ibm.com/apidocs/assistant/assistant-v2#send-user-input-to-assistant){: external}, as in this example:
+To specify the `User ID` for a message sent using the `/message` API, include the `user_id` property in your global [context](https://cloud.ibm.com/apidocs/assistant/assistant-v2#message){: external}, as in this example:
 
 ```json
 "context": {
@@ -76,7 +76,7 @@ To specify the `User ID` for a message sent using the `/message` API, include th
 ```
 {: codeblock}
 
-If your application is still using the older [v1 runtime API](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#get-response-to-user-input){: external}, the context format is different:
+If your application is still using the older [v1 runtime API](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#message){: external}, the context format is different:
 {: note}
 
 ```json

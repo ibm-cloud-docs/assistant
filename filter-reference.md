@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-19"
 
 subcollection: assistant
 
@@ -32,7 +32,7 @@ The `filter` parameter is a cacheable query that limits the results to those mat
 
 To see examples of filter queries, see [Examples](#filter-reference-examples).
 
-For more information about the /logs `GET` method and its response model, refer to the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2?code=dotnet-standard#list-log-events-for-an-assistant){: external}.
+For more information about the /logs `GET` method and its response model, refer to the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#listlogs){: external}.
 
 ## Filter query syntax
 {: #filter-reference-syntax}
@@ -151,7 +151,7 @@ The following examples illustrate various types of queries using this syntax.
 
 ## Filtering v1 logs
 
-If your application is still using the v1 API, you can query and filter logs using the v1 /logs method. The filtering syntax is the same, but the structure of v1 logs and message requests is different. For more information, see [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1#list-log-events-in-a-workspace){: external}.
+If your application is still using the v1 API, you can query and filter logs using the v1 /logs method. The filtering syntax is the same, but the structure of v1 logs and message requests is different. For more information, see [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1#listlogs){: external}.
 
 With the v1 /logs API, you can filter on the following fields:
 

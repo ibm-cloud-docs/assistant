@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-08-19"
 
 subcollection: assistant
 
@@ -131,7 +131,7 @@ To edit skills, you must have Writer service access to the service instance and 
 {: #faqs-export-conversation}
 {: faq}
 
-You cannot directly export conversations from the User conversation page.  You can, however, use the `/logs` API to list events from the transcripts of conversations that occurred between your users and your assistant. For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1#list-log-events-in-a-workspace){: external} and the [Filter query reference](/docs/assistant?topic=assistant-filter-reference).
+You cannot directly export conversations from the User conversation page.  You can, however, use the `/logs` API to list events from the transcripts of conversations that occurred between your users and your assistant. For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1#listlogs){: external} and the [Filter query reference](/docs/assistant?topic=assistant-filter-reference).
 
 ## Can I export and import dialog nodes?
 {: #faqs-nodes}

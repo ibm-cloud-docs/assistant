@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-07-30"
+lastupdated: "2020-08-19"
 
 keywords: import workspace, import JSON, export JSON
 
@@ -56,7 +56,7 @@ To add a skill, complete the following steps:
       The imported JSON file must use UTF-8 encoding, without byte order mark (BOM) encoding. The JSON cannot contain tabs, newlines, or carriage returns.
       {: important}
 
-      The maximum size for a skill JSON file is 10 MB. If you need to import a larger skill, consider using the REST API. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#create-workspace){: external}.
+      The maximum size for a skill JSON file is 10 MB. If you need to import a larger skill, consider using the REST API. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#createworkspace){: external}.
       {: tip}
 
       Click **Import**.
@@ -124,7 +124,7 @@ To download a dialog skill, complete the following steps:
 
 1.  Specify a name for the JSON file and where to save it, and then click **Save**.
 
-You can export a skill by using the API also. Include the `export=true` parameter with the request. See the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1#get-information-about-a-workspace){: external} for more details.
+You can export a skill by using the API also. Include the `export=true` parameter with the request. See the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1#getworkspace){: external} for more details.
 
 For information about how to download a specific skill version, see [Downloading a skill version](/docs/assistant?topic=assistant-versions-export).
 
@@ -146,7 +146,7 @@ To overwrite a skill, complete the following steps:
       The imported JSON file must use UTF-8 encoding, without byte order mark (BOM) encoding. The JSON cannot contain tabs, newlines, or carriage returns.
       {: important}
 
-      The maximum size for a skill JSON file is 10 MB. If you need to import a larger skill, consider using the REST API. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#create-workspace){: external}.
+      The maximum size for a skill JSON file is 10 MB. If you need to import a larger skill, consider using the REST API. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#createworkspace){: external}.
       {: tip}
 
       Click **Import and overwrite**.

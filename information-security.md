@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-24"
+lastupdated: "2020-08-19"
 
 subcollection: assistant
 
@@ -151,6 +151,6 @@ where {url} is the appropriate URL for your instance. For more details, see [Ser
 
 An empty JSON object `{}` is returned.
 
-For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#delete-labeled-data).
+For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#deleteuserdata).
 
 **Note:** Delete requests are processed in batches and may take up to 24 hours to complete.
