@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-05"
+lastupdated: "2020-08-19"
 
 subcollection: assistant
 
@@ -136,7 +136,7 @@ For more information about what's new in the web chat integration, see the [Web 
 - **New system entities are enabled automatically**: All new dialog skills use the new version of the system entities automatically. For more information, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
 
 ## 22 May 2020
-- **Spelling correction in v2 API**: The v2 `message` API now supports spelling correction options. For more information see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#send-user-input-to-assistant-stateful){: external}.
+- **Spelling correction in v2 API**: The v2 `message` API now supports spelling correction options. For more information see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#message){: external}.
 
 ## 21 May 2020
 {: #21May2020}
@@ -160,7 +160,7 @@ For more information about what's new in the web chat integration, see the [Web 
 ## 13 May 2020
 {: #13May2020}
 
-- **Stateless v2 message API**: The v2 runtime API now supports a new stateless `message` method. If you have a client application that manages its own state, you can use this new method to take advantage of [many of the benefits](https://medium.com/ibm-watson/the-new-watson-assistant-v2-stateless-api-unlock-enterprise-features-today-2c02a4bbdef5){: external} of the v2 API without the overhead of creating sessions. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#send-user-input-to-assistant-stateless){: external}.
+- **Stateless v2 message API**: The v2 runtime API now supports a new stateless `message` method. If you have a client application that manages its own state, you can use this new method to take advantage of [many of the benefits](https://medium.com/ibm-watson/the-new-watson-assistant-v2-stateless-api-unlock-enterprise-features-today-2c02a4bbdef5){: external} of the v2 API without the overhead of creating sessions. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#message-stateless){: external}.
 
 ## 30 April 2020
 {: #30April2020}
@@ -996,7 +996,7 @@ The following updates are available in all locations except Dallas currently.
 
 - The {{site.data.keyword.conversationshort}} REST API now supports new request parameters:
   - Use the `append` parameter when updating a workspace to indicate whether the new workspace data should be added to the existing data, rather than replacing it. For more information, see [Update workspace](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#update-workspace){: external}.
-  - Use the `nodes_visited_details` parameter when sending a message to indicate whether the response should include additional diagnostic information about the nodes that were visited during processing of the message. For more information, see [Send message](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#get-response-to-user-input){: external}.
+  - Use the `nodes_visited_details` parameter when sending a message to indicate whether the response should include additional diagnostic information about the nodes that were visited during processing of the message. For more information, see [Send message](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#message){: external}.
 
 ### 23 January 2018
 {: #23January2018}
@@ -1148,7 +1148,7 @@ The following updates are available in all locations except Dallas currently.
 ### 19 July 2017
 {: #19July2017}
 
-- The {{site.data.keyword.conversationshort}} REST API now supports access to dialog nodes. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#list-dialog-nodes){: external}.
+- The {{site.data.keyword.conversationshort}} REST API now supports access to dialog nodes. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#listdialognodes){: external}.
 
 ### 14 July 2017
 {: #14July2017}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-06-11"
+lastupdated: "2020-08-19"
 
 subcollection: assistant
 
@@ -200,4 +200,4 @@ The output from this request includes not only the usual output, but also the co
 }
 ```
 
-For detailed information about how to access context variables using the API, see the [v2 API Reference](https://{DomainName}/apidocs/assistant/assistant-v2#send-user-input-to-assistant){: external}.)
+For detailed information about how to access context variables using the API, see the [v2 API Reference](https://{DomainName}/apidocs/assistant/assistant-v2#message){: external}.)

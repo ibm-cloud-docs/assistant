@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-07"
+lastupdated: "2020-08-19"
 
 subcollection: assistant
 
@@ -97,7 +97,7 @@ If you have an advanced use case where more than one assistant submits productio
 
 When you configure autolearning to use all messages, you must be sure to flag any requests that are not customer-generated that are sent to the service. Do not mix test utterances with legitimate, customer-generated utterances. You might run manual or automated tests of your skill, for example. You must prevent this canned data from skewing the insights that can otherwise be gained from analyzing choices that are made by real customers. 
 
-Build your test framework in such a way that each test message is identified as a test message and does not feed the autolearning algorithm. To do so, include the `auto_learn.learn:false` property in each test request. For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#send-user-input-to-assistant){: external}.-->
+Build your test framework in such a way that each test message is identified as a test message and does not feed the autolearning algorithm. To do so, include the `auto_learn.learn:false` property in each test request. For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#message){: external}.-->
 
 ##Tracking customer effort
 {: #autolearn-track}

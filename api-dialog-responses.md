@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-30"
+lastupdated: "2020-08-19"
 
 subcollection: assistant
 
@@ -60,7 +60,7 @@ It is the reponsibility of your client application to handle all response types 
 ## Response types
 {: #api-dialog-responses-types}
 
-Each element of a response is of one of the supported response types (currently `image`, `option`, `pause`, `text`, and `suggestion`). Each response type is specified using a different set of JSON properties, so the properties included for each response will vary depending upon response type. For complete information about the response model of the `/message` API, see the [API Reference](https://{DomainName}/apidocs/assistant/assistant-v2#send-user-input-to-assistant){: external}.)
+Each element of a response is of one of the supported response types (currently `image`, `option`, `pause`, `text`, and `suggestion`). Each response type is specified using a different set of JSON properties, so the properties included for each response will vary depending upon response type. For complete information about the response model of the `/message` API, see the [API Reference](https://{DomainName}/apidocs/assistant/assistant-v2#message){: external}.)
 
 This section describes the available response types and how they are represented in the `/message` API response JSON. (If you are using the Watson SDK, you can use the interfaces provided for your language to access the same objects.)
 
