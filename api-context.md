@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-19"
+lastupdated: "2020-08-20"
 
 subcollection: assistant
 
@@ -29,19 +29,51 @@ subcollection: assistant
 # Accessing context data
 {: #api-client-get-context}
 
-The *context* is an object containing variables that persist throughout a conversation and can be shared by the dialog and the client application. If your application is using the v2 API, the context is automatically maintained by the assistant on a per-session basis. Both the dialog and the client application can read and write context variables. By default, the context is not returned to a client application, but you can optionally request that it be included in the response to each `/message` request.
+The *context* is an object containing variables that persist throughout a conversation and can be shared by the dialog and the client application. Both the dialog and the client application can read and write context variables.
+
+You can choose whether you want the context to be maintained by your application or by the {{site.data.keyword.conversationshort}} service:
+
+- If you use the stateful v2 `message` API, the context is automatically maintained by the assistant on a per-session basis. Your application must explicitly create a session at the beginning of each conversation; the context is stored by the service as part of the session and is not returned in message responses unless you request it. For more information, see the [v2 API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#message){: external}.
+
+- If you use the stateless v2 `message` API (or the legacy v1 `message` API) your application is responsible for storing the context after each conversation turn and sending it back to the service with the next message. For a complex application, or an application that needs to store personally identifiable information, you might choose to store the context in a database.
+
+  A session ID is automatically generated at the beginning of the conversation, but no session data is stored by the service. With the stateless `message` API, the context is always included with each message response. For more information, see the [v2 API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#messagestateless){: external}.
 
 **Important:** One use of the context is to specify a unique user ID for each end user who interacts with the assistant. For user-based plans, this ID is used for billing purposes. (For more information, see [User-based plans](/docs/assistant?topic=assistant-services-information#services-information-user-based-plans).)
 
 There are two types of context:
 
-- **Global context**: context variables that are shared by all skills used by an assistant, including internal system variables used to manage conversation flow.
+- **Global context**: context variables that are shared by all skills used by an assistant, including internal system variables used to manage conversation flow. The global context includes the user ID, as well as other global values such as the time zone and language of the assistant.
 
 - **Skill-specific context**: context variables specific to a particular skill, including any user-defined variables needed by your application. Currently, only one skill (named `main skill`) is supported.
 
+User-defined context variables that you specify in a dialog node are part of the `user_defined` object within the skill context when accessed via API. Note that this differs from the `context` structure that appears in the JSON editor in the {{site.data.keyword.conversationshort}} user interface. For example, you might specify the following in the JSON editor:
+
+```json
+"context": {
+  "my_context_var": "this is the value"
+}
+```
+
+In the v2 API, you would access this user-defined variable as follows:
+
+```json
+"context": {
+  "skills": {
+    "main skill": {
+      "user_defined": {
+        "my_context_var": "this is the value"
+      }
+    }
+  }
+}
+```
+
+For detailed information about how to access context variables using the API, see the [v2 API Reference](https://{DomainName}/apidocs/assistant/assistant-v2){: external}.
+
 ## Example
 
-The following example shows a `/message` request that includes both global and skill-specific context variables; it also uses the `options.return_context` property to request that the context be returned with the response.
+The following example shows a stateful `/message` request that includes both global and skill-specific context variables; it also uses the `options.return_context` property to request that the context be returned with the response. Note that this option is applicable only if you are using the stateful `message` method, because the stateless `message` method always returns the context.
 
 ```javascript
 service
@@ -163,7 +195,7 @@ In this example request, the application specifies a value for `user_id` as part
 
 You can specify any variable name you want to use for a user-defined context variable. If the specified variable already exists, it is overwritten with the new value; if not, a new variable is added to the context.
 
-The output from this request includes not only the usual output, but also the context, showing that the specified values have been added.
+The output from this request includes not only the usual output, but also the context, showing that the specified values have been added. If you are using the stateless `message` method, this context data must be stored locally and sent back to the {{site.data.keyword.conversationshort}} service as part of the next message. If you are using the stateful `message` method, this context is stored automatically and will persist for the life of the session.
 
 ```json
 {
@@ -200,4 +232,12 @@ The output from this request includes not only the usual output, but also the co
 }
 ```
 
-For detailed information about how to access context variables using the API, see the [v2 API Reference](https://{DomainName}/apidocs/assistant/assistant-v2#message){: external}.)
+## Restoring conversation state
+
+In some situations, you might want the ability to restore a conversation to a previous state.
+
+You can use the `export` option on stateful `message` requests to specify that you want the context object in the response to include complete session state data. If you specify `true` for this option, the returned skill context includes an encoded `state` property that represents the current conversation state.
+
+If you are using the stateful `message` API, the service stores conversation state data only for the life of the session. However, if you save this context data (including `state`) and send it back to the service with a subsequent message request, you can restore the conversation to the same state, even if the original session has expired or has been deleted.
+
+If you are using the stateless `message` API, the `state` property is always included in responses (along with the rest of `context`). Although stateless sessions do not expire, you can still use this state data to reset a conversation to a previous state.
