@@ -47,7 +47,7 @@ There are two types of context:
 
 - **Skill-specific context**: context variables specific to a particular skill, including any user-defined variables needed by your application. Currently, only one skill (named `main skill`) is supported.
 
-User-defined context variables that you specify in a dialog node are part of the `user_defined` object within the skill context when accessed via API. Note that this differs from the `context` structure that appears in the JSON editor in the {{site.data.keyword.conversationshort}} user interface. For example, you might specify the following in the JSON editor:
+User-defined context variables that you specify in a dialog node are part of the `user_defined` object within the skill context when accessed using the API. Note that this structure differs from the `context` structure that appears in the JSON editor in the {{site.data.keyword.conversationshort}} user interface. For example, you might specify the following in the JSON editor:
 
 ```json
 "context": {
@@ -72,6 +72,7 @@ In the v2 API, you would access this user-defined variable as follows:
 For detailed information about how to access context variables using the API, see the [v2 API Reference](https://{DomainName}/apidocs/assistant/assistant-v2){: external}.
 
 ## Example
+{: #api-context-example}
 
 The following example shows a stateful `/message` request that includes both global and skill-specific context variables; it also uses the `options.return_context` property to request that the context be returned with the response. Note that this option is applicable only if you are using the stateful `message` method, because the stateless `message` method always returns the context.
 
@@ -233,6 +234,7 @@ The output from this request includes not only the usual output, but also the co
 ```
 
 ## Restoring conversation state
+{: #api-context-restore-state}
 
 In some situations, you might want the ability to restore a conversation to a previous state.
 
