@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-08-13"
 
 subcollection: assistant
 
@@ -61,8 +61,8 @@ Follow these steps to add integrations to your assistant:
 
     - [Preview link](/docs/assistant?topic=assistant-deploy-web-link)
     - [Web chat](/docs/assistant?topic=assistant-deploy-web-chat)
-    - [Salesforce](/docs/assistant?topic=assistant-deploy-salesforce) ![Plus or Premium plan only](images/plus.png)
-    - [Zendesk](/docs/assistant?topic=assistant-deploy-zendesk) ![Plus or Premium plan only](images/plus.png)
+    - [Salesforce](/docs/assistant?topic=assistant-deploy-salesforce)
+    - [Zendesk](/docs/assistant?topic=assistant-deploy-zendesk)
     - [Intercom](/docs/assistant?topic=assistant-deploy-intercom)  ![Plus or Premium plan only](images/plus.png)
     - [Facebook Messenger](/docs/assistant?topic=assistant-deploy-facebook)
     - [Slack](/docs/assistant?topic=assistant-deploy-slack)

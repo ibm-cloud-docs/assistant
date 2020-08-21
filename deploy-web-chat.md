@@ -33,8 +33,6 @@ Add your assistant to your company website as a web chat widget that can help yo
 
 When you create a web chat integration, code is generated that calls a script that is written in JavaScript. The script instantiates a unique instance of your assistant. You can then copy and paste the HTML `script` element into any page or pages on your website where you want users to be able to ask your assistant for help.
 
-![Plus or Premium plan only](images/plus.png) This integration type is available to Plus or Premium plan users only.
-
 To learn more about web chat, watch the following 3-minute video.
 
 ![Web chat overview](https://www.youtube.com/embed/52bpMKVigGU){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
@@ -224,6 +222,9 @@ You can reference the `$ismember` context variable from your dialog. For example
 ![Shows multiple conditioned responses in a dialog node, one of which references the ismember context variable](images/web-chat-use-context-var.png)
 
 If you enable security, you can encrypt the data that you pass to your dialog. For more information, see [Passing sensitive data](#deploy-web-chat-security-encrypt).
+
+If you're using a Lite plan, remember that a session ends if there's no interaction with the user after 5 minutes. Any contextual information that you pass or collect is reset after 5 minutes. 
+{: important} 
 
 ### Adding user identity information
 {: #deploy-web-chat-userid}
