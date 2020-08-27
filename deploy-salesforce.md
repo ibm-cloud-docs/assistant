@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-10"
+lastupdated: "2020-08-13"
 
 subcollection: assistant
 
@@ -30,8 +30,6 @@ subcollection: assistant
 
 Integrate your web chat with a Salesforce service desk solution so your customers always get the help they need.
 {: shortdesc}
-
-![Plus or Premium plan only](images/plus.png) This integration type is available to Plus or Premium plan users only.
 
 Integrate with a Salesforce service desk by deploying your assistant with the web chat integration. The web chat serves as the client interface for your assistant. If, in the course of a conversation with your assistant, a customer asks to speak to a person, you can transfer the conversation directly to a Salesforce agent.
 

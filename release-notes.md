@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-19"
+lastupdated: "2020-08-21"
 
 subcollection: assistant
 
@@ -60,6 +60,12 @@ The change log lists changes that were made this year ordered by the date they w
 
 For more information about what's new in the web chat integration, see the [Web Chat release notes](/docs/assistant?topic=assistant-release-notes-chat).
 {: tip}
+
+## 25 August 2020
+{: #25August2020}
+<!--1.107-->
+
+- **Give the web chat integration a try!**: You can now use the web chat integration with a Lite plan. Previously, the web chat was available to Plus or higher plans only. For more information, see [Integrating the web chat with your website](/docs/assistant?topic=assistant-deploy-web-chat).
 
 ## 5 August 2020
 {: #5August2020}

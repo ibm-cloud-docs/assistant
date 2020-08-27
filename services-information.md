@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-19"
+lastupdated: "2020-08-21"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
@@ -72,7 +72,6 @@ The following features are available only to users of Plus or Premium plans.
 - [Intent recommendations and intent user example recommendations](/docs/assistant?topic=assistant-intent-recommendations)
 - [Intercom integration](/docs/assistant?topic=assistant-deploy-intercom)
 - [Search skill](/docs/assistant?topic=assistant-skill-search-add)
-- [Web chat](/docs/assistant?topic=assistant-deploy-web-chat)
 
 The plan type of the service instance you are currently using is displayed in the page header. You can upgrade from one plan type to another. For more information, see [Upgrading](/docs/assistant?topic=assistant-upgrade).
 

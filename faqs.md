@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-19"
+lastupdated: "2020-08-21"
 
 subcollection: assistant
 
@@ -174,6 +174,12 @@ Yes, you can upgrade to a Premium plan. However, you cannot do an in-place upgra
 {: faq}
 
 The length of time for which messages are retained depends on your service plan. For more information, see [Log limits](/docs/assistant?topic=assistant-logs#logs-limits).
+
+## How do I create a webhook?
+{: #faqs-webhook-how}
+{: faq}
+
+To define a webhook and add its details, open the skill where you want to add the webhook. Open the **Options** page, and then click **Webhooks** to add details about your webhook. To invoke the webhook, call it from one or more of your dialog nodes. For more information, see [Making a programmatic call from dialog](/docs/assistant?topic=assistant-dialog-webhooks).
 
 ## Can I have more than one entry in the URL field for a webhook?
 {: #faqs-webhook-url}

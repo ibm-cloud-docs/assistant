@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-10"
+lastupdated: "2020-08-13"
 
 subcollection: assistant
 
@@ -32,8 +32,6 @@ Integrate your web chat with a Zendesk service desk solution so your customers a
 {: shortdesc}
 
 Integrate with a Zendesk service desk by deploying your assistant with the web chat integration. The web chat serves as the client interface for your assistant. If, in the course of a conversation with your assistant, a customer asks to speak to a person, you can transfer the conversation directly to a Zendesk agent.
-
-![Plus or Premium plan only](images/plus.png) This integration type is available to Plus or Premium plan users only.
 
 Zendesk Chat lets you help customers in real time, which increases customer satisfaction. And satisfied customers are happier customers. To learn more about this service desk solution, see the [Zendesk website](https://www.zendesk.com/chat/){: external}.
 
