@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-21"
+lastupdated: "2020-09-01"
 
 subcollection: assistant
 
@@ -34,10 +34,10 @@ API requests require a version parameter that takes a date in the format `versio
 
 Send the version parameter with every API request. {{site.data.keyword.conversationshort}} uses the API version for the date you specify, or the most recent version before that date. Don't default to the current date. Instead, specify a date that matches a version that is compatible with your app, and don't change it until your app is ready for a later version.
 
-- The current version for V1 is `2020-04-01`.
-- The current version for V2 is `2020-04-01`.
+- The current version for v1 is `2020-04-01`.
+- The current version for v2 is `2020-04-01`.
 - The dialog skill "Try it out" pane uses version `2018-07-10`.
-- The search skill "Try it out" pane uses {{site.data.keyword.discoveryshort}} API version `2018-12-03`.
+- The search skill "Try it out" pane uses {{site.data.keyword.discoveryshort}} v1 API version `2018-12-03`.
 
 ## Beta features
 {: #release-notes-beta}
@@ -63,7 +63,7 @@ For more information about what's new in the web chat integration, see the [Web 
 
 ## 25 August 2020
 {: #25August2020}
-<!--1.107-->
+<!--1.108-->
 
 - **Give the web chat integration a try!**: You can now use the web chat integration with a Lite plan. Previously, the web chat was available to Plus or higher plans only. For more information, see [Integrating the web chat with your website](/docs/assistant?topic=assistant-deploy-web-chat).
 
