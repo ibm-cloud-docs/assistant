@@ -107,6 +107,7 @@ Watson Assistant (Managed)
     {: .topicgroup}
     Early access program
         beta.md
+    {: .navgroup-end}
 
     {: .navgroup id="reference"}
     [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2)

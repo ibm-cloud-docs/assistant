@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-09-01"
 
 subcollection: assistant
 
@@ -67,8 +67,8 @@ To add the assistant to a web page on your company website, complete the followi
       - Input text field border when in focus
       - Marker that shows the start of the assistant’s response
       - Border of a button after it is clicked
+      - Border of the drop-down list field as the user chooses an option
       - Typing indicator that is shown to repesent a pause response
-      - Active state for dropdown color of border
 
     - **Assistant image**: This image is displayed in the web chat header along with the assistant name to represent your assistant or organization. Specify the URL for a publicly accessible hosted image, such as a company or brand logo or an assistant avatar.
     
