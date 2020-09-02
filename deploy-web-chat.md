@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-09-01"
+lastupdated: "2020-09-02"
 
 subcollection: assistant
 
@@ -76,6 +76,10 @@ To add the assistant to a web page on your company website, complete the followi
 
     Style changes you make are immediately applied to the preview that is shown on the page, so you can see how your choices impact the style of the chat UI.
 
+1.  **Optional**: Add a home screen to the chat window. Click the **Home screen** tab to turn on the feature.
+
+    The home screen helps to ease your customers into a conversation with your assistant. You can add a greeting and a list of quick conversation starter questions for customers to click. For more information, see [Adding a home screen](#deploy-web-chat-home-screen).
+
 1.  **Optional**: To configure support for transferring conversations to a service desk agent, click the **Live agent** tab. For more information, see [Adding service desk support](#deploy-web-chat-haa).
 
 1.  **Optional**: To secure the web chat, click the **Security** tab. For more information, see [Securing the web chat](#deploy-web-chat-security). 
@@ -147,6 +151,30 @@ To add the assistant to a web page on your company website, complete the followi
     If you don't extend the session timeout setting for the assistant, the dialog flow for the current session is restarted after 60 minutes of inactivity. This means that if a user stops interacting with the assistant, after 60 minutes, any context variable values that were set during the previous conversation are set to null or back to their initial values.
 
 You can apply more advanced customizations to the style of the web chat by using the {{site.data.keyword.conversationshort}} web chat toolkit on [GitHub](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-configuration){: external}. For example, the text that is displayed in the chat window uses the fonts: `IBMPlexSans, Arial, Helvetica, sans-serif`. If you want to use a different font, you can specify it by using the `instance.updateCSSVariables()` method.
+
+## Adding a home screen ![Beta](images/beta.png)
+{: #deploy-web-chat-home-screen}
+
+Customers often don't know how to interact with your assistant at first. They aren't sure how to format a question or what types of things they can ask. Don't make them guess. Show them by adding a home screen to the web chat window.
+
+![An example of the home screen](images/home-screen.png)
+
+1.  From the Home screen tab, turn the home screen feature **On**.
+1.  Add a greeting that is engaging and invites the user to interact with your assistant.
+
+    A greeting is required and replaces the greeting that is specified in the welcome node of the dialog.
+
+1.  Add up to three conversation starter messages. 
+
+    These messages are displayed in the web chat as examples of the types of questions that customers can ask. In fact, customers can click one of them to submit it to the assistant.
+
+    You must test any messages that you add as conversation starters. Use only questions that the assistant understands and knows how to answer well.
+
+A developer can customize the home screen even more:
+
+- A **Get started** heading is displayed before the list of conversation starter messages. You can change the heading text by replacing the `homeScreen_conversationStarterLabel` in the web chat language strings file. For more information, see the [instance.updateLanguagePack() method](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-instance-methods#updatelanguagepack){: external} documentation.
+- You can use the web chat API to add other elements to the home screen page. For more information, see the [instance.writeableElements() method](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-instance-methods#writeableelements){: external} documentation.
+- For information about CSS helper classes that you can use to change the home screen style, see the [prebuilt templates](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-render#html){: external} documentation.
 
 ## Showing more suggestions ![Beta](images/beta.png)
 {: #deploy-web-chat-alternate}
