@@ -45,7 +45,7 @@ The body of the /message API call request and response includes the following ob
   ```json
   {
     "context" : {
-      "user_name" : "<? @sys-person.literal ?>"
+      "user_name" : "<? @name.literal ?>"
     }
   ```
   {: codeblock}
