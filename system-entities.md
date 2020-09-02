@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-09-02"
 
 subcollection: assistant
 
@@ -29,9 +29,8 @@ Learn about system entities that are provided by IBM for you to use out of the b
 {: shortdesc}
 
 New and improved versions of the numeric system entities are generally available for dialog skills in all languages. The new versions of the numeric system entities provide superior number recognition with higher precision. For more information, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
-{: important}
 
-Support for the `@sys-person` and `@sys-location` system entities ended on 15 July 2020. End of support means that mentions in input that used to be detected as person or location system entities are no longer recognized.
+This legacy version of the system entities is being deprecated. Support will end for Arabic, Simplified Chinese, Traditional Chinese, Japanese, and Korean language dialog skills in November 2020.
 {: deprecated}
 
 Switch to using the new system entities now. To do so, complete the following steps:

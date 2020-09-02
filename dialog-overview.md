@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-13"
+lastupdated: "2020-09-02"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -379,201 +379,297 @@ You can return responses with multimedia or interactive elements such as images 
 
 In addition to the default response type of **Text**, for which you specify the text to return to the user as a response, the following response types are supported:
 
-- **Connect to human agent**: The dialog calls a service that you designate, typically a service that manages human agent support ticket queues, to pass off the conversation to a person. You can optionally include a message that summarizes the user's issue to be provided to the human agent. It is the responsibility of the external service to display a message that is shown to the user that explains that the conversation is being transferred. The dialog does not manage that communication itself. The dialog transfer does not occur when you are testing nodes with this response type in the "Try it out" pane. You must access a node that uses this response type from a test deployment to see how your users will experience it.
+- **Connect to human agent**: The dialog calls a service that you designate, typically a service that manages human agent support ticket queues, to transfer the conversation to a person. You can optionally include a message that summarizes the user's issue to be provided to the human agent.
 - **Image**: Embeds an image into the response. The source image file must be hosted somewhere and have a URL that you can use to reference it. It cannot be a file that is stored in a directory that is not publicly accessible.
-- **Option**: Adds a list of one or more options. When a user clicks one of the options, an associated user input value is sent to your assistant. How options are rendered can differ depending on where you deploy the dialog. For example, in one integration channel the options might be displayed as clickable buttons, but in another they might be displayed as a dropdown list.
-- **Pause**: Forces the application to wait for a specified number of milliseconds before continuing with processing. You can choose to show an indicator that the dialog is working on typing a response. Use this response type if you need to perform an action that might take some time. For example, a parent node makes a Cloud Function call and displays the result in a child node. You could use this response type as the response for the parent node to give the programmatic call time to complete, and then jump to the child node to show the result. This response type does not render in the "Try it out" pane. You must access a node that uses this response type from a test deployment to see how your users will experience it.
-- **Search skill**: ![Plus or Premium plan only](images/plus.png) Searches an external data source for relevant information to return to the user. The data source that is searched is a {{site.data.keyword.discoveryshort}} service data collection that you configure when you add a search skill to the assistant that uses this dialog skill. For more information, see [Creating a search skill](/docs/assistant?topic=assistant-skill-search-add).
+- **Option**: Adds a list of one or more options. When a user clicks one of the options, an associated user input value is sent to your assistant. How options are rendered can differ depending on the number of options and where you deploy the dialog.
+- **Pause**: Forces the application to wait for a specified number of milliseconds before continuing with processing. You can choose to show an indicator that the assistant is working on typing a response. Use this response type if you need to perform an action that might take some time.
+- **Search skill**: ![Plus or Premium plan only](images/plus.png) Searches an external data source for relevant information to return to the user. The data source that is searched is a {{site.data.keyword.discoveryshort}} service data collection that you configure when you add a search skill to the assistant that uses this dialog skill.
 
   This response type is available to users of Plus or Premium plans only.
   {: note}
 
-#### Adding rich responses
-{: #dialog-overview-multimedia-add}
+To add a rich response, complete the following step:
 
-To add a rich response, complete the following steps:
+1.  Click the dropdown menu in the **Assistant responds** field to choose a response type, and then provide any required information.
 
-1.  Click the drop-down menu in the response field to choose a response type, and then provide any required information:
+    For more information, see the following sections:
 
-    - **Connect to human agent**. You can optionally add a message to share with the human agent to whom the conversation is transferred.
-
-        This response type is supported with Intercom and custom application integrations only. For custom applications, you must program the client application to recognize when this response type is triggered.
-        {: note}
-
-    - **Image**. Add the full URL to the hosted image file into the **Image source** field. The image must be in .jpg, .gif, or .png format. The image file must be stored in a location that is publicly addressable by URL.
-
-        For example: `https://www.example.com/assets/common/logo.png`.
-
-        If you want to display an image title and description above the embedded image in the response, then add them in the fields provided.
-
-        To access an image that is stored in {{site.data.keyword.cloud}} {{site.data.keyword.cos_short}}, enable public access to the individual image storage object, and then reference it by specifying the image source with syntax like this: `https://s3.eu.cloud-object-storage.appdomain.cloud/your-bucket-name/image-name.png`.
-
-        Slack integrations require a title. Other integration channels ignore titles or descriptions.
-        {: note}
-
-    - **Option**. Complete the following steps:
-
-      1.  Click **Add option**.
-      1.  In the **List label** field, enter the option to display in the list. The label must be less than 2,048 characters in length.
-      1.  In the corresponding **Value** field, enter the user input to pass to your assistant when this option is selected. The value must be less than 2,048 characters in length.
-
-          Specify a value that you know will trigger the correct intent when it is submitted. For example, it might be a user example from the training data for the intent.
-      1.  Repeat the previous steps to add more options to the list.
-
-          You can add up to 20 options.
-      1.  Add a list introduction in the **Title** field. The title can ask the user to pick from the list of options.
-
-          Some integration channels do not display the title.
-          {: note}
-
-      1.  Optionally, add additional information in the **Description** field. If specified, the description is displayed after the title and before the option list.
-
-      Some integration channels do not display the description.
-      {: note}
-
-      For example, you can construct a response like this:
-
-        <table>
-        <caption>Response options</caption>
-        <tr>
-          <th>List title</th>
-          <th>List description</th>
-          <th>Option label</th>
-          <th>User input submitted when clicked</th>
-        </tr>
-        <tr>
-          <td>Insurance types</td>
-          <td>Which of these items do you want to insure?</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td>Boat</td>
-          <td>I want to buy boat insurance</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td>Car</td>
-          <td>I want to buy car insurance</td>
-        </tr>
-         <tr>
-          <td></td>
-          <td></td>
-          <td>Home</td>
-          <td>I want to buy home insurance</td>
-        </tr>
-        </table>
-
-      Most integrations display the options as buttons if there are only a few items (4 or fewer, for example). 
-      
-      ![Shows a small options list in the preview link that is displayed as buttons.](images/options-buttons.png)
-      
-      The options are displayed as a drop-down list when there are a larger number of items to show (typically 5 or more). If you want to indicate a preference for how the options are displayed, you can add a `preference` property for the response.
-      
-      To do so, open the JSON editor for the response, and then add a `preference` name and value pair before the `response_type` name and value pair. You can set the preference to `dropdown` or `button`.
-
-      ```json
-      {
-        "output": {
-          "generic": [
-            {
-              "title": "Insurance types",
-              "options": [
-                {
-                  "label": "Boat",
-                  "value": {
-                    "input": {
-                      "text": "I want to buy boat insurance."
-                    }
-                  }
-                },
-                {
-                  "label": "Car",
-                  "value": {
-                    "input": {
-                      "text": "I want to buy car insurance."
-                    }
-                  }
-                },
-                {
-                  "label": "House",
-                  "value": {
-                    "input": {
-                      "text": "I want to buy house insurance."
-                    }
-                  }
-                }
-              ],
-              "preference": "dropdown", //add this name and value pair 
-              "description": "Which of these items do you want to insure?",
-              "response_type": "option"
-            }
-          ]
-        }
-      }
-      ```
-      {: codeblock}
-
-      When you define an options list with only 3 items, the options are typically displayed as buttons. When you add a preference property that indicates `dropdown` as the preference, for example, you can see in the "Try it out" pane that the list is displayed as a drop-down list instead.
-
-      ![Shows a small options list in the preview link that is displayed as a drop-down menu.](images/options-dropdown.png)
-
-      Some integration types, such as the web chat, reflect your preference. Other integration types, such as Slack, might not honor your preference when it renders the list.
-
-    - **Pause**. Add the length of time for the pause to last as a number of milliseconds (ms) to the **Duration** field.
-
-        The value cannot exceed 10,000 ms. Users are typically willing to wait about 8 seconds (8,000 ms) for someone to enter a response. To prevent a typing indicator from being displayed during the pause, choose **Off**.
-
-        Add another response type, such as a text response type, after the pause to clearly denote that the pause is over.
-        {: tip}
-
-    - **Text**. Add the text to return to the user in the text field. Optionally, choose a variation setting for the text response. See [Simple text response](#dialog-overview-simple-text) for more details.
-
-    - **Search skill**. ![Plus or Premium plan only](images/plus.png) Indicates that you want to search an external data source for a relevant response.
-
+    - [**Connect to human agent**](#dialog-overview-add-connect-to-human-agent)
+    - [**Image**](#dialog-overview-add-image)
+    - [**Option**](#dialog-overview-add-option)
+    - [**Pause**](#dialog-overview-add-pause)
+    - [**Search skill**](#dialog-overview-add-search-skill) ![Plus or Premium plan only](images/plus.png) 
+    
       This response type is only visible to Plus or Premium plan users.
       {: note}
 
-      To edit the search query to pass to the {{site.data.keyword.discoveryshort}} service, click **Customize**, and then fill in the following fields:
+    - [**Text**](#dialog-overview-simple-text)
 
-        - **Query**: Optional. You can specify a specific query in natural language to pass to {{site.data.keyword.discoveryshort}}. If you do not add a query, then the customer's exact input text is passed as the query.
-
-          For example, you can specify `What cities do you fly to?`. This query value is passed to {{site.data.keyword.discoveryshort}} as a search query. {{site.data.keyword.discoveryshort}} uses natural language understanding to understand the query and to find an answer or relevant information about the subject in the data collection that is configured for the search skill.
-
-          You can include specific information provided by the user by referencing entities that were detected in the user's input as part of the query. For example, `Tell me about @product`. Or you can reference a context variable, such as `Do you have flights to $destination?`. Just be sure to design your dialog such that the search is not triggered unless any entities or context variables that you reference in the query have been set to valid values.
-
-          This field is equivalent to the {{site.data.keyword.discoveryshort}} `natural_language_query` parameter. For more information, see [Query parameters](/docs/discovery?topic=discovery-query-parameters#nlq){: external}.
-
-        - **Filter**: Optional. Specify a text string that defines information that must be present in any of the search results that are returned.
-
-          - To indicate that you want to return only documents with positive sentiment detected, for example, specify `enriched_text.sentiment.document.label:positive`.
-
-          - To filter results to includes only documents that the ingestion process identified as containing the entity `Boston, MA`, specify `enriched_text.entities.text:"Boston, MA"`.
-
-          - To filter results to includes only documents that the ingestion process identified as containing a product name provided by the customer, you can specify `enriched_text.entities.text:@product`.
-
-          - To filter results to includes only documents that the ingestion process identified as containing a city name that you saved in a context variable named `$destination`, you can specify `enriched_text.entities.text:$destination`.
-
-        If you add both a query and a filter value, then the filter parameter is applied first to filter the data collection documents and cache the results. The query parameter then ranks the cached results. 
-
-        This field is equivalent to the {{site.data.keyword.discoveryshort}} `filter` parameter. For more information, see [Query parameters](/docs/discovery?topic=discovery-query-parameters#filter){: external}.
-
-      This response type only returns a valid response if the assistant to which you added this dialog skill also has a search skill associated with it. Test this response type from the preview link or another assistant-level integration. You cannot test it from the dialog skill's "Try it out" pane.
-
-1.  Click **Add response type** to add another response type to the current response.
+1.  To add another response type to the current response, click **Add response type**.
 
     You might want to add multiple response types to a single response to provide a richer answer to a user query. For example, if a user asks for store locations, you could show a map and display a button for each store location that the user can click to get address details. To build that type of response, you can use a combination of image, options, and text response types. Another example is using a text response type before a pause response type so you can warn users before pausing the dialog.
 
-    You cannot add more than 5 response types to a single response. Meaning, if you define three conditional responses for a dialog node, each conditional response can have no more than 5 response types added to it.
+    You cannot add more than 5 response types to a single response. If you define three conditional responses for a dialog node, each conditional response can have no more than 5 response types added to it.
     {: note}
 
     A single dialog node cannot have more than one **Connect to human agent** or more than one **Search skill** response type.
     {: note}
 
 1.  If you added more than one response type, you can click the **Move** up or down arrows to arrange the response types in the order you want your assistant to process them.
+
+### Adding a *Connect to human agent* response type
+{: #dialog-overview-add-connect-to-human-agent}
+
+If your client application is able to transfer a conversation to a person, such as a customer support agent, then you can add a *Connect to human agent* response type to initiate a transfer. Some of the built-in integrations, such as web chat and Intercom, support making transfers to service desk agents. If you are using a custom application, you must program the application to recognize when this response type is triggered.
+
+Consider adding support for transferring a customer to an agent in the following scenarios:
+
+- Any time a user asks to speak to a person. 
+
+  Create an intent that can recognize when a customer asks to speak to someone. After defining the intent, you can add a root-level dialog node that conditions on the intent. As the dialog node response, add a connect to human agent response type. At run time, if a user says he wants to speak to someone, this node is triggered and a transfer is initiated on the user's behalf.
+
+  You don't need to create an intent yourself. The **General** content catalog has a prebuilt intent named `General_Connect_to_Agent`. You can add the catalog to your skill, and use the `General_Connect_to_Agent` intent as the dialog node condition.
+  {: tip}
+
+- When the conversation covers a topic that is sensitive in nature, you can trigger a transfer. 
+
+  For example, an insurance company might want questions about bereavement benefits always to be handled by a person. Or, if a customer wants to close their account, you might want to transfer the conversation to a respresentative who is authorized to offer incentives to keep the customer's business.
+
+It is the responsibility of the external service to display a message that is shown to the user that explains that the conversation is being transferred. The dialog does not manage that communication itself.
+
+To add a *Connect to human agent* response type, complete the following steps:
+
+1.  From the dialog node where you want to add the response type, click the dropdown menu in the **Assistant responds** field, and then choose **Connect to human agent**.
+
+1.  **Optional**. Add a message to share with the human agent to whom the conversation is transferred.
+
+The dialog transfer does not occur when you are testing nodes with this response type in the "Try it out" pane. You must access a node that uses this response type from a test deployment to see how your users will experience it.
+
+### Adding an *Image* response type
+{: #dialog-overview-add-image}
+
+Sometimes a picture is worth a thousand words. Include images in your response to do things like illustrate a concept, show off merchandise for sale, or maybe to show a map of your store location.
+
+To add an *Image* response type, complete the following steps:
+
+1.  Choose **Image**.
+
+1.  Add the full URL to the hosted image file into the **Image source** field. 
+
+    The image must be in .jpg, .gif, or .png format. The image file must be stored in a location that is publicly addressable by URL.
+
+    For example: `https://www.example.com/assets/common/logo.png`.
+
+    If you want to display an image title and description above the embedded image in the response, then add them in the fields provided.
+
+    To access an image that is stored in {{site.data.keyword.cloud}} {{site.data.keyword.cos_short}}, enable public access to the individual image storage object, and then reference it by specifying the image source with syntax like this: `https://s3.eu.cloud-object-storage.appdomain.cloud/your-bucket-name/image-name.png`.
+
+    Some integration channels ignore titles or descriptions.
+    {: note}
+
+### Adding an *Option* response type
+{: #dialog-overview-add-option}
+
+Add an option response type when you want to give the customer a set of options to choose from. For example, you can construct a response like this:
+
+    <table>
+    <caption>Response options</caption>
+    <tr>
+      <th>List title</th>
+      <th>List description</th>
+      <th>Option label</th>
+      <th>User input submitted when clicked</th>
+    </tr>
+    <tr>
+      <td>Insurance types</td>
+      <td>Which of these items do you want to insure?</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>Boat</td>
+      <td>I want to buy boat insurance</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>Car</td>
+      <td>I want to buy car insurance</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>Home</td>
+      <td>I want to buy home insurance</td>
+    </tr>
+    </table>
+
+Most integrations display the options as buttons if there are only a few items (4 or fewer, for example).
+      
+![Shows a small options list in the preview link that is displayed as buttons.](images/options-buttons.png)
+
+Otherwise, the options are displayed as a list.
+
+To add an *Option* response type, complete the following steps:
+
+1.  From the dialog node where you want to add the response type, click the dropdown menu in the **Assistant responds** field, and then choose **Option**.
+1.  Click **Add option**.
+1.  In the **List label** field, enter the option to display in the list. 
+
+    The label must be less than 2,048 characters in length.
+1.  In the corresponding **Value** field, enter the user input to pass to your assistant when this option is selected. 
+
+    The value must be less than 2,048 characters in length. 
+    
+    For Slack integrations where the options are displayed as a list, each value must be 75 characters or less in length.
+    {: important}
+
+    Specify a value that you know will trigger the correct intent when it is submitted. For example, it might be a user example from the training data for the intent.
+1.  Repeat the previous steps to add more options to the list.
+
+    You can add up to 20 options.
+1.  Add a list introduction in the **Title** field. The title can ask the user to pick from the list of options.
+
+    Some integration channels do not display the title.
+    {: note}
+
+1.  Optionally, add additional information in the **Description** field. If specified, the description is displayed after the title and before the option list.
+
+    Some integration channels do not display the description.
+    {: note}
+
+1.  **Optional**: If you want to indicate a preference for how the options are displayed, as buttons or in a list, you can add a `preference` property for the response.
+      
+    To do so, open the JSON editor for the response, and then add a `preference` name and value pair before the `response_type` name and value pair. You can set the preference to `dropdown` or `button`.
+
+    ```json
+    {
+      "output": {
+        "generic": [
+          {
+            "title": "Insurance types",
+            "options": [
+              {
+                "label": "Boat",
+                "value": {
+                  "input": {
+                    "text": "I want to buy boat insurance."
+                  }
+                }
+              },
+              {
+                "label": "Car",
+                "value": {
+                  "input": {
+                    "text": "I want to buy car insurance."
+                  }
+                }
+              },
+              {
+                "label": "House",
+                "value": {
+                  "input": {
+                    "text": "I want to buy house insurance."
+                  }
+                }
+              }
+            ],
+            "preference": "dropdown", //add this name and value pair 
+            "description": "Which of these items do you want to insure?",
+            "response_type": "option"
+          }
+        ]
+      }
+    }
+    ```
+    {: codeblock}
+
+    When you define an options list with only 3 items, the options are typically displayed as buttons. When you add a preference property that indicates `dropdown` as the preference, for example, you can see in the "Try it out" pane that the list is displayed as a drop-down list instead.
+
+    ![Shows a small options list in the preview link that is displayed as a drop-down menu.](images/options-dropdown.png)
+
+    Some integration types, such as the web chat, reflect your preference. Other integration types, such as Slack, do not honor your preference when it renders the options.
+
+### Adding a *Pause* response type
+{: #dialog-overview-add-pause}
+
+Add a pause response type to give the assistant time to respond. For example, you might add a pause response type to a node that calls a webhook. The pause indicates that the assistant is working on an answer, which gives the assistant time to make the webhook call and get a response. Then, you can jump to a child node to show the result. 
+
+To add a *Pause* response type, complete the following steps:
+
+1.  From the dialog node where you want to add the response type, click the dropdown menu in the **Assistant responds** field, and then choose **Pause**. 
+
+1.  Add the length of time for the pause to last as a number of milliseconds (ms) to the **Duration** field.
+
+    The value cannot exceed 10,000 ms. Users are typically willing to wait about 8 seconds (8,000 ms) for someone to enter a response. To prevent a typing indicator from being displayed during the pause, choose **Off**.
+
+    Add another response type, such as a text response type, after the pause to clearly denote that the pause is over.
+    {: tip}
+
+This response type does not render in the "Try it out" pane. You must access a node that uses this response type from a test deployment to see how your users will experience it. For more information, see [Testing your assistant from an IBM-branded web page](/docs/assistant?topic=assistant-deploy-web-link).
+
+### Adding a *Search skill* response type ![Plus or Premium plan only](images/plus.png)
+{: #dialog-overview-add-search-skill}
+
+If you have existing customer-facing material, such as an FAQ, a product catalog, or sales material that can answer questions that customers often ask, put that information to use. You can trigger a search of the existing material in real time to get the latest and most up-to-date answer for your customers. 
+
+To use the search skill response type, you must create a search skill and add it to the same assistant that uses this dialog skill. For more information, see [Creating a search skill](/docs/assistant?topic=assistant-skill-search-add).
+
+To add a *Search skill* response type, complete the following steps:
+
+1.  From the dialog node where you want to add the response type, click the dropdown menu in the **Assistant responds** field, and then choose **Search skill**.
+
+    Indicates that you want to search an external data source for a relevant response.
+
+1.  To edit the search query to pass to the {{site.data.keyword.discoveryshort}} service, click **Customize**, and then fill in the following fields:
+
+    - **Query**: Optional. You can specify a specific query in natural language to pass to {{site.data.keyword.discoveryshort}}. If you do not add a query, then the customer's exact input text is passed as the query.
+
+      For example, you can specify `What cities do you fly to?`. This query value is passed to {{site.data.keyword.discoveryshort}} as a search query. {{site.data.keyword.discoveryshort}} uses natural language understanding to understand the query and to find an answer or relevant information about the subject in the data collection that is configured for the search skill.
+
+      You can include specific information provided by the user by referencing entities that were detected in the user's input as part of the query. For example, `Tell me about @product`. Or you can reference a context variable, such as `Do you have flights to $destination?`. Just be sure to design your dialog such that the search is not triggered unless any entities or context variables that you reference in the query have been set to valid values.
+
+      This field is equivalent to the {{site.data.keyword.discoveryshort}} `natural_language_query` parameter. For more information, see [Query parameters](/docs/discovery?topic=discovery-query-parameters#nlq){: external}.
+
+      - **Filter**: Optional. Specify a text string that defines information that must be present in any of the search results that are returned.
+
+        - To indicate that you want to return only documents with positive sentiment detected, for example, specify `enriched_text.sentiment.document.label:positive`.
+
+        - To filter results to includes only documents that the ingestion process identified as containing the entity `Boston, MA`, specify `enriched_text.entities.text:"Boston, MA"`.
+
+        - To filter results to includes only documents that the ingestion process identified as containing a product name provided by the customer, you can specify `enriched_text.entities.text:@product`.
+
+        - To filter results to includes only documents that the ingestion process identified as containing a city name that you saved in a context variable named `$destination`, you can specify `enriched_text.entities.text:$destination`.
+
+        This field is equivalent to the {{site.data.keyword.discoveryshort}} `filter` parameter. For more information, see [Query parameters](/docs/discovery?topic=discovery-query-parameters#filter){: external}.
+
+      If you add both a query and a filter value, the filter parameter is applied first to filter the data collection documents and cache the results. The query parameter then ranks the cached results.
+
+1.  **Optional**: Change the query type that is used for the search. 
+
+    The search skill sends a natural language query to {{site.data.keyword.discoveryshort}} automatically. If you want to use the {{site.data.keyword.discoveryshort}} query language instead, you can specify it. To do so, open the JSON editor for the node response.
+
+    Edit the JSON code snippet to replace `natural_language` with `discovery_query_language`. For example:
+
+    ```json
+    {
+      "output": {
+        "generic": [
+          {
+            "query": "",
+            "filter": "enriched_text.sentiment.document.label:positive",
+            "query_type": "discovery_query_language",
+            "response_type": "search_skill"
+          }
+        ] 
+      }
+    }
+    ```
+    {: codeblock}  
+
+Test this response type from the preview link or another assistant-level integration. You cannot test it from the dialog skill's "Try it out" pane. For more information about testing dialog and search skills together, see [Testing your assistant from an IBM-branded web page](/docs/assistant?topic=assistant-deploy-web-link).
 
 ### Conditional responses
 {: #dialog-overview-multiple}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-10"
+lastupdated: "2020-09-02"
 
 subcollection: assistant
 
@@ -32,6 +32,13 @@ The web chat change log lists changes ordered by version number. For more inform
 {: #release-notes-chat-version}
 
 If you want to evaluate changes that are introduced in a web chat release before you apply them to your deployment, you can version your web chat. For more information, see [Versioning](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=key-concepts#versioning)
+
+## 2.4.0
+{: #2.4.0}
+
+*Release date: 2 September 2020*
+
+- **Add a home screen**: Ease your customers into the conversation by adding a home screen to your web chat window. The home screen greets your customers and shows conversation starter messages that customers can click to submit to the assistant. For more information about this beta feature, see [Adding a home screen](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-home-screen).
 
 ## 2.3.0
 {: #2.3.0}
