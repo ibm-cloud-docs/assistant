@@ -409,7 +409,7 @@ To add a rich response, complete the following step:
 
     You might want to add multiple response types to a single response to provide a richer answer to a user query. For example, if a user asks for store locations, you could show a map and display a button for each store location that the user can click to get address details. To build that type of response, you can use a combination of image, options, and text response types. Another example is using a text response type before a pause response type so you can warn users before pausing the dialog.
 
-    You cannot add more than 5 response types to a single response. Meaning, if you define three conditional responses for a dialog node, each conditional response can have no more than 5 response types added to it.
+    You cannot add more than 5 response types to a single response. If you define three conditional responses for a dialog node, each conditional response can have no more than 5 response types added to it.
     {: note}
 
     A single dialog node cannot have more than one **Connect to human agent** or more than one **Search skill** response type.
@@ -417,7 +417,7 @@ To add a rich response, complete the following step:
 
 1.  If you added more than one response type, you can click the **Move** up or down arrows to arrange the response types in the order you want your assistant to process them.
 
-### Adding a connect to human agent response type
+### Adding a *Connect to human agent* response type
 {: #dialog-overview-add-connect-to-human-agent}
 
 If your client application is able to transfer a conversation to a person, such as a customer support agent, then you can add a *Connect to human agent* response type to initiate a transfer. Some of the built-in integrations, such as web chat and Intercom, support making transfers to service desk agents. If you are using a custom application, you must program the application to recognize when this response type is triggered.
@@ -445,10 +445,10 @@ To add a *Connect to human agent* response type, complete the following steps:
 
 The dialog transfer does not occur when you are testing nodes with this response type in the "Try it out" pane. You must access a node that uses this response type from a test deployment to see how your users will experience it.
 
-### Adding an image response type
+### Adding an *Image* response type
 {: #dialog-overview-add-image}
 
-Sometimes a picture's worth a thousand words. Include images in your response to do things like illustrate a concept, show off merchandise for sale, or maybe to show a map of your store location.
+Sometimes a picture is worth a thousand words. Include images in your response to do things like illustrate a concept, show off merchandise for sale, or maybe to show a map of your store location.
 
 To add an *Image* response type, complete the following steps:
 
@@ -467,7 +467,7 @@ To add an *Image* response type, complete the following steps:
     Some integration channels ignore titles or descriptions.
     {: note}
 
-### Adding an option response type
+### Adding an *Option* response type
 {: #dialog-overview-add-option}
 
 Add an option response type when you want to give the customer a set of options to choose from. For example, you can construct a response like this:
@@ -592,7 +592,7 @@ To add an *Option* response type, complete the following steps:
 
     Some integration types, such as the web chat, reflect your preference. Other integration types, such as Slack, do not honor your preference when it renders the options.
 
-### Adding a pause response type
+### Adding a *Pause* response type
 {: #dialog-overview-add-pause}
 
 Add a pause response type to give the assistant time to respond. For example, you might add a pause response type to a node that calls a webhook. The pause indicates that the assistant is working on an answer, which gives the assistant time to make the webhook call and get a response. Then, you can jump to a child node to show the result. 
@@ -610,7 +610,7 @@ To add a *Pause* response type, complete the following steps:
 
 This response type does not render in the "Try it out" pane. You must access a node that uses this response type from a test deployment to see how your users will experience it. For more information, see [Testing your assistant from an IBM-branded web page](/docs/assistant?topic=assistant-deploy-web-link).
 
-### Adding a search skill response type ![Plus or Premium plan only](images/plus.png)
+### Adding a *Search skill* response type ![Plus or Premium plan only](images/plus.png)
 {: #dialog-overview-add-search-skill}
 
 If you have existing customer-facing material, such as an FAQ, a product catalog, or sales material that can answer questions that customers often ask, put that information to use. You can trigger a search of the existing material in real time to get the latest and most up-to-date answer for your customers. 
@@ -645,7 +645,7 @@ To add a *Search skill* response type, complete the following steps:
 
         This field is equivalent to the {{site.data.keyword.discoveryshort}} `filter` parameter. For more information, see [Query parameters](/docs/discovery?topic=discovery-query-parameters#filter){: external}.
 
-      If you add both a query and a filter value, then the filter parameter is applied first to filter the data collection documents and cache the results. The query parameter then ranks the cached results.
+      If you add both a query and a filter value, the filter parameter is applied first to filter the data collection documents and cache the results. The query parameter then ranks the cached results.
 
 1.  **Optional**: Change the query type that is used for the search. 
 
