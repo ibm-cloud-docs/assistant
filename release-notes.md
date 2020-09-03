@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-01"
+lastupdated: "2020-09-03"
 
 subcollection: assistant
 
@@ -66,6 +66,11 @@ For more information about what's new in the web chat integration, see the [Web 
 <!--1.108-->
 
 - **Give the web chat integration a try!**: You can now use the web chat integration with a Lite plan. Previously, the web chat was available to Plus or higher plans only. For more information, see [Integrating the web chat with your website](/docs/assistant?topic=assistant-deploy-web-chat).
+
+## 12 August 2020
+{: #12August2020}
+
+- **v2 Logs API is available**: If you have a Premium plan, you can use the v2 API `logs` method to list log events for an assistant. For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#listlogs){: external} documentation.
 
 ## 5 August 2020
 {: #5August2020}
@@ -478,7 +483,7 @@ The following updates are available in all locations except Dallas currently.
 
   ![Skills secondary navigation menu](images/secondary-nav.png)
 
-- **Rich response types are supported in a dialog node with slots**. You can display a list of options for a user to choose from as the prompt for a slot, for example. See [Adding rich responses to slots](/docs/assistant?topic=assistant-dialog-slots#dialog-slots-response-types).
+- **Rich response types are supported in a dialog node with slots**. You can display a list of options for a user to choose from as the prompt for a slot, for example.
 
 - Where you go to switch service instances has changed. See [Switching the service instance](/docs/assistant?topic=assistant-assistant-settings#assistant-settings-switch-instance).
 

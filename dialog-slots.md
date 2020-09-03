@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-09-03"
 
 keywords: slot, slots
 
@@ -97,77 +97,17 @@ Using slots produces a more natural dialog flow between the user and your assist
       
       Response type options:
 
-      - **Image**. Add the full URL to the hosted image file into the **Image source** field. The image must be in .jpg, .gif, or .png format. The image file must be stored in a location that is publicly addressable by URL.
+    - [**Connect to human agent**](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-connect-to-human-agent)
+    - [**Image**](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-image)
+    - [**Option**](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-option)
+    - [**Pause**](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-pause)
+    - [**Search skill**](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-search-skill) ![Plus or Premium plan only](images/plus.png) 
+    
+      This response type is only visible to Plus or Premium plan users.
+      {: note}
 
-        For example: `https://www.example.com/assets/common/logo.png`.
+    - [**Text**](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-simple-text)
 
-        If you want to display an image title and description above the embedded image in the response, then add them in the fields provided.
-
-        Slack integrations require a title. Other integration channels ignore titles or descriptions.
-        {: note}
-
-      - **Option**. Complete the following steps:
-
-        1.  Click **Add option**.
-        1.  In the **List label** field, enter the option to display in the list. The label must be less than 2,048 characters in length.
-        1.  In the corresponding **Value** field, enter the user input to pass to your assistant when this option is selected. The value must be less than 2,048 characters in length.
-
-            Specify a value that you know will trigger the correct intent when it is submitted. For example, it might be a user example from the training data for the intent.
-        1.  Repeat the previous steps to add more options to the list.
-
-            You can add up to 20 options.
-        1.  Add a list introduction in the **Title** field. The title can ask the user to pick from the list of options.
-
-            Some integration channels do not display the title.
-            {: note}
-
-        1.  Optionally, add additional information in the **Description** field. If specified, the description is displayed after the title and before the option list.
-
-        Some integration channels do not display the description.
-        {: note}
-
-        For example, you can construct a response like this:
-
-        <table>
-        <caption>Response options</caption>
-        <tr>
-          <th>List title</th>
-          <th>List description</th>
-          <th>Option label</th>
-          <th>User input submitted when clicked</th>
-        </tr>
-        <tr>
-          <td>Insurance types</td>
-          <td>Which of these items do you want to insure?</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td>Boat</td>
-          <td>I want to buy boat insurance</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td>Car</td>
-          <td>I want to buy car insurance</td>
-        </tr>
-         <tr>
-          <td></td>
-          <td></td>
-          <td>Home</td>
-          <td>I want to buy home insurance</td>
-        </tr>
-        </table>
-
-      - **Pause**. Add the length of time for the pause to last as a number of milliseconds (ms) to the **Duration** field.
-
-        The value cannot exceed 10,000 ms. Users are typically willing to wait about 8 seconds (8,000 ms) for someone to enter a response. To prevent a typing indicator from being displayed during the pause, choose **Off**.
-
-        Add another response type, such as a text response type, after the pause to clearly denote that the pause is over.
-        {: tip}
 
     - If you want different follow-up statements to be shown based on whether the user provides the information you need in response to the initial slot prompt, you can edit the slot (by clicking the **Edit slot** ![Edit slot](images/edit-slot.png) icon) and define the follow-up statements:
 

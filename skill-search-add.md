@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-09-01"
+lastupdated: "2020-09-03"
 
 subcollection: assistant
 
@@ -300,7 +300,7 @@ Review this information for help with performing common tasks.
 
     From a dialog node search skill response, you can specify a full {{site.data.keyword.discoveryshort}} query syntax filter to help narrow the results. 
     
-    For example, you can define a filter that filters out any documents in the data collection that do not mention an intent in the document title or some other metadata field. Or the filter can filter out documents that do not identify an entity as a known entity in the data collection's metadata or that don't mention the entity anywhere in the full text of the document. For details about how to add a search skill response type, see [Adding rich responses](https://cloud.ibm.com/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia-add).
+    For example, you can define a filter that filters out any documents in the data collection that do not mention an intent in the document title or some other metadata field. Or the filter can filter out documents that do not identify an entity as a known entity in the data collection's metadata or that don't mention the entity anywhere in the full text of the document. For details about how to add a search skill response type, see [Adding a *Search skill* response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-search-skill).
 
     For more tips about improving results, read the [Improve your natural language query results from Watson Discovery](https://developer.ibm.com/blogs/improving-your-natural-language-query-results-from-watson-discovery/){: external} blog post.
 
@@ -363,7 +363,7 @@ After you add a search skill to an assistant, it is automatically enabled for th
   You can prevent the search from being triggered from the `anything_else` node by following the steps in [Disabling search](#search-skill-add-disable).
   {: note}
 
-- If you want a specific search query to be triggered for specific questions, add a search skill response type to the appropriate dialog node. See [Responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more details.
+- If you want a specific search query to be triggered for specific questions, add a search skill response type to the appropriate dialog node. See [Adding a *Search skill* response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-search-skill) for more details.
 
 ## Search triggers
 {: #skill-search-add-trigger}

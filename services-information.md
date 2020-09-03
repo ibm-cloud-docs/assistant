@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-21"
+lastupdated: "2020-09-03"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
@@ -64,9 +64,13 @@ Information about the artifact limits per plan is available from the topics that
 ### Plus and Premium plan features ![Plus or Premium plan only](images/plus.png)
 {: #services-information-premium}
 
+The following features are available only to users of Premium plans.
+
+- [Activity tracker](/docs/assistant?topic=assistant-at-events)
+- [v2 Logs API](/apidocs/assistant/assistant-v2#listlogs){: external}
+
 The following features are available only to users of Plus or Premium plans.
 
-- [Activity tracker](/docs/assistant?topic=assistant-at-events) (Premium plans only)
 - [Private endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints)
 - [Intent conflict resolution](/docs/assistant?topic=assistant-intents#intents-resolve-conflicts)
 - [Intent recommendations and intent user example recommendations](/docs/assistant?topic=assistant-intent-recommendations)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-24"
+lastupdated: "2020-09-03"
 
 keywords: chatbot, live chatbot, omnichannel
 
@@ -141,6 +141,5 @@ To learn more about service terms and data security, read the following informat
 {: #index-next-steps}
 
 - [Get started](/docs/assistant?topic=assistant-getting-started) with the product.
-- View the list of [developer resources)](https://www.ibm.com/watson/developer-resources/){: external}.
 
 Have questions? Contact [IBM Sales](https://www.ibm.com/account/reg/us-en/signup?formid=urx-20970){: external}.
