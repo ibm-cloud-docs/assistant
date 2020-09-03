@@ -67,7 +67,7 @@ Information about the artifact limits per plan is available from the topics that
 The following features are available only to users of Premium plans.
 
 - [Activity tracker](/docs/assistant?topic=assistant-at-events)
-- [v2 logs API](/apidocs/assistant/assistant-v2#listlogs){: external}
+- [v2 Logs API](/apidocs/assistant/assistant-v2#listlogs){: external}
 
 The following features are available only to users of Plus or Premium plans.
 
