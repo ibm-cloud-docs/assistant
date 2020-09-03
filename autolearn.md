@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-19"
+lastupdated: "2020-09-03"
 
 subcollection: assistant
 
@@ -30,7 +30,7 @@ subcollection: assistant
 Use autolearning to enable your skill to learn from interactions between your customers and your assistants.
 {: shortdesc}
 
-![Plus or Premium plan only](images/plus.png) This beta feature is available to Plus or Premium plan users only.
+![Plus or Premium plan only](images/plus.png) This beta feature is available to Plus or Premium plan users with English-language dialog skills only.
 {: note}
 
 When customers interact with your assistant, they often make choices. If your underlying dialog skill pays attention, it can learn from these user decisions over time.
