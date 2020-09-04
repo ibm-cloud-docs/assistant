@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-09-02"
+lastupdated: "2020-09-04"
 
 subcollection: assistant
 
@@ -164,11 +164,13 @@ Customers often don't know how to interact with your assistant at first. They ar
 
     A greeting is required and replaces the greeting that is specified in the welcome node of the dialog.
 
-1.  Add up to three conversation starter messages. 
+1.  Add three conversation starter messages.
 
-    These messages are displayed in the web chat as examples of the types of questions that customers can ask. In fact, customers can click one of them to submit it to the assistant.
+    These messages are displayed in the web chat as examples of the types of questions that customers can ask. Customers can click one of them to submit it to the assistant.
 
-    You must test any messages that you add as conversation starters. Use only questions that the assistant understands and knows how to answer well.
+    You must test each message that you add as a conversation starter. Use only questions that the assistant understands and knows how to answer well.
+
+     All three conversation starters are required.
 
 A developer can customize the home screen even more:
 
