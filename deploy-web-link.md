@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-09-08"
 
 subcollection: assistant
 
@@ -22,7 +22,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Testing your assistant from an IBM-branded web page
+# Testing your assistant from a web page
 {: #deploy-web-link}
 
 If you do not disable the preview link, then the assistant is immediately available for testing from a web page.

@@ -107,6 +107,15 @@ Watson Assistant (Managed)
     {: .topicgroup}
     Early access program
         beta.md
+
+        {: .topicgroup}
+        Actions skill
+            skills-choose.md
+            actions-overview.md
+            skill-actions-add.md
+            actions.md
+            dialog-call-action.md
+        
     {: .navgroup-end}
 
     {: .navgroup id="reference"}

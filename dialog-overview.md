@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-02"
+lastupdated: "2020-09-08"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -608,7 +608,7 @@ To add a *Pause* response type, complete the following steps:
     Add another response type, such as a text response type, after the pause to clearly denote that the pause is over.
     {: tip}
 
-This response type does not render in the "Try it out" pane. You must access a node that uses this response type from a test deployment to see how your users will experience it. For more information, see [Testing your assistant from an IBM-branded web page](/docs/assistant?topic=assistant-deploy-web-link).
+This response type does not render in the "Try it out" pane. You must access a node that uses this response type from a test deployment to see how your users will experience it. For more information, see [Testing your assistant from a web page](/docs/assistant?topic=assistant-deploy-web-link).
 
 ### Adding a *Search skill* response type ![Plus or Premium plan only](images/plus.png)
 {: #dialog-overview-add-search-skill}
@@ -669,7 +669,7 @@ To add a *Search skill* response type, complete the following steps:
     ```
     {: codeblock}  
 
-Test this response type from the preview link or another assistant-level integration. You cannot test it from the dialog skill's "Try it out" pane. For more information about testing dialog and search skills together, see [Testing your assistant from an IBM-branded web page](/docs/assistant?topic=assistant-deploy-web-link).
+Test this response type from the preview link or another assistant-level integration. You cannot test it from the dialog skill's "Try it out" pane. For more information about testing dialog and search skills together, see [Testing your assistant from a web page](/docs/assistant?topic=assistant-deploy-web-link).
 
 ### Conditional responses
 {: #dialog-overview-multiple}
