@@ -34,6 +34,8 @@ Actions represent the discrete tasks or questions that your assistant is designe
 The actions skill feature is being offered as a beta feature. The feature might be unstable, might change frequently, and might be discontinued with short notice. This beta feature also might not provide the same level of performance or compatibility that generally available features provide and is not intended for use in a production environment.
 {: important}
 
+For more information about how to join the early access program, see [Participate in the early access program](/docs/assistant?topic=assistant-feedback#feedback-beta).
+
 To start quickly, add simple actions, such as ones that capture questions that require a text response only.
 
 ## A simple example
@@ -52,7 +54,7 @@ Here's an example. A customer named Sally wants to know your store hours. The ac
 
 - **Steps**
 
-  1.  Assistant says *We are open from 9:00 AM until 6:00 PM Monday through Saturday.*
+  1.  **Assistant says** *We are open from 9:00 AM until 6:00 PM Monday through Saturday.*
 
 When you are ready to start building a real assistant, you will need to do some prep work first. Spend time researching the most common requests that your customers need help with. Determine which of the requests you want your assistant to handle on behalf of your company. Start small.
 
@@ -77,17 +79,20 @@ To create actions, complete the following steps:
     
     Each phrase can be up to 1,024 characters in length.
 
-    By adding these simple examples, you are building the training data that the machine learning engine of Watson uses to create a natural language processing model for your assistant. The model it builds is customized to understand your uniquely-defined actions.
+    By adding these simple examples, you are building the training data that the machine learning engine of Watson uses to create a natural language processing model for your assistant. The model it builds is customized to understand your uniquely defined actions.
     {: note}
 
-    If you've ever created an intent and added intent user examples in a dialog skill, then this step might feel familiar. An intent is created based on what you define add to this step.
+    If you've ever created an intent and added intent user examples in a dialog skill, then this step might feel familiar. An intent is added to the underlying language model based on what you add to this step.
     {:tip}
 
 1.  Click **New step**.
 
-1.  Add the assistant's response to the **Assistant says** field. 
+1.  Add the assistant's response in the **Assistant says** field.
 
-    You can add a complete answer to the user's question or ask a follow-up question. You can use the text editor tools to apply font styling, such as bold or italic, to the response text.
+    You can add a complete answer to the user's question or ask a follow-up question. Use the text editor tools to apply font styling, such as bold or italic, to the text. 
+    
+    The text styling is stored in Markdown format. The built-in integrations support Markdown. If you're using a custom client application that does not support Markdown, don't apply text styling to your text responses.
+    {: note}
 
 1.  If you ask a follow-up question, define the type of data that you want to collect from customers when they reply. Click **Define customer response**.
 
@@ -95,7 +100,7 @@ To create actions, complete the following steps:
 
     When the customer makes a choice or submits a value, the assistant automatically checks whether the type of data that is submittted is valid. 
     
-    For example, it checks whether the customer made a valid choice from the list of options or supplied a number when a number was requested. If not, the assistant lets the customer know, and explains what is expected. You can customize the message that is shown and how many times the data type is checked by clicking **Edit validation**. For more information, see [Customizing validation](#actions-response-types-validation).
+    The assistant checks whether the customer made a valid choice from the list of options or supplied a number when a number was requested. If not, the assistant lets the customer know, and explains what is expected. You can customize the message that is shown and how many times validation runs by clicking **Edit validation**. For more information, see [Customizing validation](#actions-response-types-validation).
     
     When a customer submits a valid reply, the data that is submitted is saved as a *variable*.
 
@@ -105,12 +110,12 @@ To create actions, complete the following steps:
 
 1.  Test the action as you build it. 
 
-    Click **Save** to save your latest changes first. With autosave enabled, many changes are saved automatically. But, to be sure that changes you *just* made are applied, save them explicitly.
+    Click **Save** to save your latest changes first. With autosave enabled, many changes are saved automatically. But to be sure that changes you *just* made are applied, save them explicitly.
     {: tip}
     
-    Open the "Preview" pane to submit test input and see how your assistant responds.
+    Open the Preview pane to submit test input and see how your assistant responds.
 
-    For more information and tips, see [Testing your action](#actions-test).
+    For more information, see [Testing your action](#actions-test).
 
 1.  If the customer's goal is not satistified by this first step, add another one. Click **New step**.
 
@@ -128,9 +133,9 @@ To create actions, complete the following steps:
 
     By making clear references to information that the customer provided, you personalize the exchange between the assistant and the user. For more information, see [Adding and referencing variables](#actions-variables).
 
-1.  To indicate that an action is complete, in the last step in a conversation thread, choose to *end the action* next.
+1.  To indicate that an action is complete, in the last step in a particular conversation thread, choose to *end the action* next.
 
-    A single action can have more than one ending step. The number of ending steps depends on how many threads of conversation are required to handle every supported outcome for an action.
+    A single action can have more than one ending step. The number of ending steps depends on how many different threads of conversation (that is, how many different possible paths through the action steps) are needed to handle every supported outcome for the action.
 
 1.  **Optional**: Change the action name.
 
@@ -149,19 +154,19 @@ To create actions, complete the following steps:
 
 1.  Add more actions to your skill to address other customer needs. To add another action, click **New action**.
 
-    If you can't see the **New action** button, you might need to close the "Preview" pane.
+    If you can't see the **New action** button, you might need to close the Preview pane.
     {: tip}
 
 ### Applying reply constraints
 {: #actions-response-types}
 
-Guide the customer to provide the right type of information in their reply by adding a customer response type definition. The following response types are supported:
+Guide the customer to provide the right type of information by adding a customer response type definition. The following response types are supported:
 
 - **Numbers**: Collects a single numeric value. 
 
-  The customer can specify the number value in either numerals (`100`) or words (`one hundred`).
+  The customer can specify the number value in either numerals (`100`) or words (`one hundred`). Negative and decimal values are recognized, but percent values (`2%` or `2 percent`) are not. If you expect the user to provide a percent value, add an instruction to ask that percent values be specified in decimals (use `0.02` to specify `2%`).
 
-- **Options**: Presents a set of acceptable answers that customers can choose from. Five or fewer options are displayed as buttons. For more than 5 options, a list is displayed.
+- **Options**: Presents a set of acceptable answers that customers can choose from.
     
   You can help your assistant recognize variations of an option value that customers might enter. For each option that you add, add synonyms in a comma-separated list.
 
@@ -187,21 +192,21 @@ Guide the customer to provide the right type of information in their reply by ad
         </tr>
   </table>
 
-  If you've built a dialog skill before, this process might remind you of defining an entity. In fact, an entity is created based on the options you add.
+  If you've built a dialog skill before, this process might remind you of defining an entity. In fact, an entity is added to the underlying language model based on the options you add.
   {: tip}
 
   To select an option at run time, users can click an option button or list item, such as *Green*. Or they can type `Green` or one of its synonyms, such as `lime`.
 
-  If your action asks for the same type of data in more than one step, select the **Always ask for this** option in the later step.
-  
-  For example, if Step 3 asks for the shirt color that the customer wants to buy and step 5 asks for the tie color, click **Always ask for this** in Step 5. Otherwise, the color that the customer specifies for the shirt in Step 3 is used automatically for the tie. And who wants to wear the same color shirt and tie together?
+  If your action asks for the same type of data in more than one step, select the **Always ask for this** option in the later step. For example, if Step 3 asks for the shirt color that the customer wants to buy and step 5 asks for the tie color, click **Always ask for this** in Step 5. Otherwise, the color that the customer specifies for the shirt in Step 3 is used automatically for the tie. And who wants to wear the same color shirt and tie together?
 
   The benefit of choosing not to always ask is that the assistant doesn't ask for information that has already been submitted by the customer. For example, if the original message from the customer is `I want to buy a blue shirt`, your assistant skips Step 3 altogether because it already knows the customer's shirt color preference.
+
+  When you use the built-in integrations, if you define 5 or fewer options, they are displayed as buttons. For more than 5 options, a list is displayed. If you are using a custom client application, you must specify how you want the options to be displayed.
 
 #### Customizing validation
 {: #actions-response-types-validation}
 
-When you apply contraints to the ways in which customers can reply, validation occurs automatically. Validation helps customers understand what is expected from them. For example, if the assistant expects a number, and the customer provides a sentence of text with no discernable number in it, you can show a message that explains that the assistant needs a number.
+When you apply contraints to the ways in which customers can reply, validation occurs automatically. Validation helps customers understand what is expected from them. For example, if the assistant expects a number, and the customer provides a sentence of text with no discernible number in it, you can show a message that explains that the assistant needs a number.
 
 To customize the validation for a step, complete the following steps:
 
@@ -219,7 +224,9 @@ To customize the validation for a step, complete the following steps:
 ### Defining step conditions
 {: #actions-conditions}
 
-Not every step in an action needs to be shown to customers in every conversational exchange. For example, imagine that your action is designed to help customers open a bank account. The first step asks customers which type of account they want to open, Checking or Savings. Subsequent steps are designed to be shown only when the user is opening a savings account, while others when the user is opening a checking account. Step conditions are how you determine whether to include a step in the exchange or not.
+Not every step in an action needs to be shown to customers in every conversational exchange. Step conditions are how you determine whether to include a step in the exchange or not.
+
+For example, imagine that your action is designed to help customers open a bank account. The first step asks customers which type of account they want to open, Checking or Savings. Some subsequent steps are designed to be shown only when the user is opening a savings account, and others only when the user is opening a checking account.
 
 To add a step condition, complete the following steps:
 
@@ -250,7 +257,7 @@ To add a step condition, complete the following steps:
 
 1.  To add more than one condition to a step, after adding a condition, click **Add condition**.
 
-    One use case where using more than one condition is helpful is if you need to capture a value range. For example, maybe a requirement of opening a checking account is that the customer deposit at least $100 into the account at creation time. You might ask the customer if they want to transfer funds to the account, and if so, how much? To continue with transfer, the transfer amount must be $100 or more, but cannot exceed $1000. You can add a step with the following conditions: 
+    One use case where using more than one condition is helpful is if you need to capture a value range. For example, maybe a requirement of opening a checking account is that the customer deposit at least $100 into the account at creation time. You might ask the customer if they want to transfer funds to the account, and if so, how much? To continue with the transfer, the transfer amount must be $100 or more, but cannot exceed $1000. You can add a step with the following conditions: 
 
     - `How much to transfer?` `>` `99`
     - `How much to transfer?` `<` `1001`
@@ -264,7 +271,7 @@ To add a step condition, complete the following steps:
 ### Adding and referencing variables
 {: #actions-variables}
 
-Each time a customer replies to your assistant, she shares information about herself and what she wants. Your assistant pays attention and remembers this information by storing the data as *variables*. Your assistant can show that it listens when you reference these variables in subsequent responses. 
+When customers reply to your assistant, they share information about themselves and what they want. Your assistant pays attention and remembers this information by storing the data as *variables*. Your assistant can show that it listens when you reference these variables in subsequent responses. 
 
 For example, your assistant might ask the customer about her favorite color in step 3 and remember it in step 10, when she's choosing a dress to buy. We all like considerate people who listen and remember the things we share with them. Why not create an assistant that exhibits this kind of thoughtful behavior? 
 
@@ -277,13 +284,14 @@ To reference a variable in a text response:
 ### Defining global variables
 {: #actions-variables-global}
 
-Global variables are variables that you can set, change, or reference from any step across any action in your skill. All other variables exist for the duration of one action only.
+Global variables are variables that you can set, change, or reference from any step of any action in your skill. All other variables exist for the duration of one action only.
 
 You can use global variables to pass information from:
 
-- an external client application to the actions skills
+- an external client application to the actions skill
 - one action to another action within the same actions skill
 - a dialog skill to an action when the action is called from a dialog node
+- an actions skill to a dialog skill as a return variable
 
 To add a global variable, complete the following steps:
 
@@ -292,7 +300,7 @@ To add a global variable, complete the following steps:
     - From within a step, click **Set variable**. Click **New global variable**.
     - From the main actions skill page, click to open the *Global variables* page. Click **New global variable**. 
 
-      If you can't see the **New global variable** button, you might need to close the "Preview" pane.
+      If you can't see the **New global variable** button, you might need to close the Preview pane.
       {: tip}
 1.  Add a name for the global variable. 
 
@@ -316,14 +324,20 @@ When you reference a global variable elsewhere, such in a step condition express
 
 Use expressions to define values independent of values that are collected in steps or defined in global variables. You can use an expression to define a step condition or to define the value of a global variable.
 
-Use an expression to do simple math equations, for example. Maybe a customer has $200 dollars in her Savings account. She wants to transfer $150 from it to the Checking account she is opening. The funds transfer fee is $3. Her bank charges a fee when a Savings account contains less than $50. You can add a step that warns the user that if they transfer $150, their Savings account will dip below the required $50 minimum. The step condition with an expression like this:
+Use an expression to do simple math equations, for example. Maybe a customer has $200 in a savings account and wants to transfer $150 from it to a new checking account. The funds transfer fee is $3, and the bank charges a fee when a savings account contains less than $50. You can add a step that warns the user that the requested transfer will bring the savings account balance below the $50 minimum and incur a fee. The step conditions on an expression like this:
 
 ```
 ${savings} - (${Step_232} + ${transfer_fee}) < 50
 ```
 {: codeblock}
 
-where `${savings}` represents a global variable that stores the customer's Savings account total. `${Step_232}` represents the step that asks for the amount the customer wants to transfer and `${transfer_fee}` represents a global variable that specifies the fee for a funds transfer. In this scenario, the step condition is met, so the step is processed. A message is shown that warns the user that if she transfers the planned amount, her Savings account will fall below the required $50 minimum.
+where:
+
+- `${savings}` represents a global variable that stores the customer's savings account total.
+- `${Step_232}` represents the step that asks for the amount the customer wants to transfer.
+- `${transfer_fee}` represents a global variable that specifies the fee for a funds transfer. 
+
+In this scenario, the step condition is met, so the step is processed. A message is shown that warns the user that if the transfer is completed, the savings account balance will fall below the $50 minimum and incur the fee.
 
 To use an expression to define a complex step condition:
 
@@ -347,7 +361,7 @@ To use an expression to define a global variable value:
 
 For a full list of supported expressions, see [Expression language methods](/docs/assistant?topic=assistant-dialog-methods).
 
-The examples in the topic use a slightly different syntax for variables. The examples use `$variable_name` instead of `${step_number}`.
+The examples in the topic use a slightly different syntax. The variable names are not surrounded by braces (`{}`).
 {: note}
 
 ### Deciding what to do next
@@ -358,8 +372,8 @@ For each step, you can define what happens next. The choice you make defines how
 | Option | Description |
 |--------|-------------|
 | Continue to next step | Processes the next step in the steps list. As always, the conditions for the next step are evaluated first to determine whether to show the step's response to the customer. |
-| End the action | Indicates that this action is complete. Any variable values that were defined based on choices that the customer made as she stepped through the action are reset. This option can be applied to more than one step in a single action because an action can define more than one branch of a conversation. For example, the open an account action might have one conversational flow for creating a checking account and a separate one for creating a savings account. Each branch might have its own finaal step. Identifying the final step helps analytical tools that follow a customer's progress through an action to identify the success or failure of the action. |
-| Return to step | Processes a step that is listed earlier in the current action. The step might be one that the customer already completed or one that was skipped previously based on its step conditions. Any variable values that were defined based on choices that the customer made as she stepped through the intervening steps in the action are reset. This option is only available from a step that comes third or later in the steps list. |
+| End the action | Indicates that this action is complete. Any variable values that were defined based on choices that the customer made as she stepped through the action are reset. This option can be applied to more than one step in a single action because an action can define more than one branch of a conversation. For example, the open an account action might have one conversational flow for creating a checking account and a separate one for creating a savings account. Each branch might have its own final step. Identifying the final step helps analytical tools that follow a customer's progress through an action to identify the success or failure of the action. |
+| Return to step | Processes a step that is listed earlier in the current action. The step might be one that the customer already completed or one that was skipped previously based on its step conditions. Any variable values that were defined based on choices that the customer made in the intervening steps in the action are reset. This option is only available from a step that comes third or later in the steps list. |
 {: caption="What to do next options" caption-side="top"}
 
 There is no option to skip to a later step. Instead of jumping directly to a later step, control the flow through the intervening steps with step conditions.
@@ -382,17 +396,17 @@ The following actions are created for you automatically:
 
   If there are common topics that your customers ask about, but that you don't want the assistant to help them with, you can add example messages to the *Additional retry examples* step. Add variations of the wording that customers use to articulate requests or questions that you want your assistant to ignore.
 
-  These examples are stored as counterexamples for the underlying skill.
+  These examples are stored in the underlying language model as counterexamples.
   {: tip}
 
-You can customize the response text that is displayed by these actions or add steps to them to incorporate other interactions. For example, you might want to add a context variable to the *Greet customers* action response text so you can greet the customer by name. From the *Actions* page, click **Default**, and then click an action to open it for editing.
+You can customize the response text that is displayed by these actions or add steps to them to incorporate other interactions. For example, you might want to add a global variable to the *Greet customers* action response text so you can greet the customer by name. From the *Actions* page, click **Default**, and then click an action to open it for editing.
 
 You cannot delete these default actions. You can disable the *Greet customer* action.
 
 ## Testing your action
 {: #actions-test}
 
-As you make changes, test the action at any time to see whether the resulting interaction works as intended. The "Preview" pane shows you what customers see if they interact with your assistant through the web chat integration.
+As you make changes, test the action at any time to see whether the resulting interaction works as intended. The Preview pane shows you what customers see if they interact with your assistant through the web chat integration.
 
 1.  Click **Preview**.
 
@@ -403,15 +417,15 @@ As you make changes, test the action at any time to see whether the resulting in
 
 1.  Check the response to see if your assistant correctly interpreted the input and performed the appropriate step.
 
-    The "Preview" pane names the action that was recognized in the input.
+    The Preview pane names the action that was recognized in the input.
 
 1.  Continue to converse with your assistant to see how the conversation flows.
 
     To remove prior test utterances from the chat pane and start over, click the **Clear** link. Not only are the test utterances and responses removed, but this action also clears the values of any variables that were set as a result of your previous interactions.
 
-Queries you submit through the "Preview" pane generate `/message` API calls, but they are not logged and do not incur charges.
+Queries you submit through the Preview pane generate `/message` API calls, but they are not logged and do not incur charges.
 
-A dialog skill can [call an action](/docs/assistant?topic=assistant-dialog-call-actions). To test how an action behaves when it is called from dialog, test it from the assistant that uses both of the skills together. You cannot recreate the interaction from the "Preview" pane of the actions skill. First, add the actions and dialog skills to an assistant. Then, you can create a *Preview link* integration to test how the two skills interact with one another. Queries you submit through the *Preview link* integration do incur charges.
+A dialog skill can [call an action in an actions skill](/docs/assistant?topic=assistant-dialog-call-actions). To test how an action behaves when it is called from a dialog skill, test it from the assistant that uses both of the skills together. You cannot recreate the interaction from the Preview pane of the actions skill. First, add the actions and dialog skills to an assistant. Then, you can create a *Preview link* integration to test how the two skills interact with one another. Queries you submit through the *Preview link* integration do incur charges.
 
 ## Action limits
 {: #actions-limits}
@@ -427,7 +441,7 @@ The number of actions you can create per skill depends on your plan type.
 
 The default actions that are created for you automatically do count toward the total.
 
-## What's next for the action
+## What to do next
 {: #actions-next-steps}
 
 If you determine that the wrong actions are being triggered, you might need to modify the phrases you included in the *Customer says* field.
