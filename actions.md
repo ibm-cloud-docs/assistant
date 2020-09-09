@@ -91,7 +91,7 @@ To create actions, complete the following steps:
 
     You can add a complete answer to the user's question or ask a follow-up question. Use the text editor tools to apply font styling, such as bold or italic, to the text. 
     
-    The text styling is stored in Markdown format. The builtin integrations support Markdown. If you're using a custom client application that does not support Markdown, don't apply text styling to your text responses.
+    The text styling is stored in Markdown format. The built-in integrations support Markdown. If you're using a custom client application that does not support Markdown, don't apply text styling to your text responses.
     {: note}
 
 1.  If you ask a follow-up question, define the type of data that you want to collect from customers when they reply. Click **Define customer response**.
@@ -201,7 +201,7 @@ Guide the customer to provide the right type of information by adding a customer
 
   The benefit of choosing not to always ask is that the assistant doesn't ask for information that has already been submitted by the customer. For example, if the original message from the customer is `I want to buy a blue shirt`, your assistant skips Step 3 altogether because it already knows the customer's shirt color preference.
 
-  When you use the builtin integrations, if you define 5 or fewer options, they are displayed as buttons. For more than 5 options, a list is displayed. If you are using a custom client application, you must specify how you want the options to be displayed.
+  When you use the built-in integrations, if you define 5 or fewer options, they are displayed as buttons. For more than 5 options, a list is displayed. If you are using a custom client application, you must specify how you want the options to be displayed.
 
 #### Customizing validation
 {: #actions-response-types-validation}
