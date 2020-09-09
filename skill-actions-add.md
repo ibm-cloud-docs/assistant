@@ -34,6 +34,8 @@ Add an actions skill to design a content-rich dialog for your assistant.
 The actions skill feature is being offered as a beta feature. The feature might be unstable, might change frequently, and might be discontinued with short notice. This beta feature also might not provide the same level of performance or compatibility that generally available features provide and is not intended for use in a production environment.
 {: important}
 
+For more information about how to join the early access program, see [Participate in the early access program](/docs/assistant?topic=assistant-feedback#feedback-beta).
+
 ## Add the actions skill
 {: #skill-actions-add-task}
 

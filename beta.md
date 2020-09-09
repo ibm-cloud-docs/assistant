@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-08"
+lastupdated: "2020-09-09"
 
 subcollection: assistant
 
@@ -32,7 +32,9 @@ When you participate in the early access program, IBM gives you early access to 
 ## Available beta features
 {: #beta-features}
 
-- **Actions skill**: Try building a conversational flow with the new actions skill. For more information, see [Actions skill overview](/docs/assistant?topic=assistant-actions-overview).
+- **Actions skill**: Try building a conversational flow with the new actions skill. For more information, see [Actions skill overview](/docs/assistant?topic=assistant-actions-overview). 
+
+  We value your first impressions and opinions. Please share them or ask questions by joining the [Slack community](#beta-feedback), and adding your comments to the `#actions-early-access` channel.
 
 If you were testing a feature, but it is not listed here, it probably means that it has been released as a beta feature to everyone.
 {: tip}

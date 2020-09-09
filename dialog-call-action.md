@@ -23,10 +23,10 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Calling an actions skill from dialog ![Beta](images/beta.png)
+# Calling an actions skill from a dialog ![Beta](images/beta.png)
 {: #dialog-call-action}
 
-You can call an action that is defined in an actions skill from a dialog node to perform a task and then return to the dialog. The actions skill that you want to call must be added to the same assistant to which your dialog skill is added.
+A dialog node in a dialog skill can call an action in an actions skill to perform a task and then return to the dialog. The actions skill that you want to call must be added to the same assistant to which your dialog skill is added.
 {: shortdesc}
 
 The actions skill feature is being offered as a beta feature. The feature might be unstable, might change frequently, and might be discontinued with short notice. This beta feature also might not provide the same level of performance or compatibility that generally available features provide and is not intended for use in a production environment.
@@ -118,7 +118,7 @@ To take an action that is defined in an actions skill, complete the following st
 
 1.  Click X to close the dialog node. Your changes are saved automatically.
 
-Test the interaction between the skills. You cannot test from the "Try it out" pane of the dialog skill, nor from the "Preview" pane of the action skill. You must test from an assistant-level integration, such as the Preview link. For more information, see [Testing your assistant from a web page](/docs/assistant?topic=assistant-deploy-web-link).
+Test the interaction between the skills. You cannot test from the "Try it out" pane of the dialog skill, nor from the Preview pane of the action skill. You must test from an assistant-level integration, such as the Preview link. For more information, see [Testing your assistant from a web page](/docs/assistant?topic=assistant-deploy-web-link).
 
 ## When to call an action from a dialog skill
 {: dialog-call-action-when}
