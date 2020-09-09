@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-09-08"
+  years: 2020
+lastupdated: "2020-09-09"
 
 subcollection: assistant
 
@@ -29,7 +29,7 @@ subcollection: assistant
 You can call an action that is defined in an actions skill from a dialog node to perform a task and then return to the dialog. The actions skill that you want to call must be added to the same assistant to which your dialog skill is added.
 {: shortdesc}
 
-The actions skill feature is being offered as a beta feature. The feature might be unstable, might change frequently, and might be discontinued with short notice. This beta feature also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment.
+The actions skill feature is being offered as a beta feature. The feature might be unstable, might change frequently, and might be discontinued with short notice. This beta feature also might not provide the same level of performance or compatibility that generally available features provide and is not intended for use in a production environment.
 {: important}
 
 From a single dialog node, you can make a call to either a webhook or an actions skill, not both. Choose the approach that best suits your needs:
@@ -109,7 +109,7 @@ To take an action that is defined in an actions skill, complete the following st
     
     For example, let's say that the dialog asks for the person's given name and stores it in the `$name` context variable. The dialog then passes the name to the action as a `given_name` global variable. Then, the action that is called asks the customer if there's a nickname that she prefers the assistant to use. The action then replaces the value that was stored in the `given_name` global variable with the nickname that the customer submitted.
 
-    To continue with this example, you might want to address the user by their prefered nickname now that you know it. You can add a response that says, `Thanks for your business, <? $action_result_1.given_name ?>!` The `<? $action_result_1.given_name ?>` expression extracts the value of the `given_name` global variable that is returned from the called action.
+    To continue with this example, you might want to address the user by their preferred nickname now that you know it. You can add a response that says, `Thanks for your business, <? $action_result_1.given_name ?>!` The `<? $action_result_1.given_name ?>` expression extracts the value of the `given_name` global variable that is returned from the called action.
 1.  Add a response to show when no return variable is provided as the second conditional response.
 
     The second response that is added automatically for you has an `anything_else` condition. This response is shown if none of the other conditional responses are displayed. 

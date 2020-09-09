@@ -110,12 +110,12 @@ Watson Assistant (Managed)
 
         {: .topicgroup}
         Actions skill
-            skills-choose.md
-            actions-overview.md
             skill-actions-add.md
             actions.md
             dialog-call-action.md
-        
+            skills-choose.md
+            actions-overview.md
+
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
