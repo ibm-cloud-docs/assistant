@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-08"
+lastupdated: "2020-09-09"
 
 subcollection: assistant
 
@@ -31,7 +31,7 @@ subcollection: assistant
 Learn how the actions skill makes it easier to construct an engaging conversation.
 {: shortdesc}
 
-The actions skill feature is being offered as a beta feature. The feature might be unstable, might change frequently, and might be discontinued with short notice. This beta feature also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment.
+The actions skill feature is being offered as a beta feature. The feature might be unstable, might change frequently, and might be discontinued with short notice. This beta feature also might not provide the same level of performance or compatibility that generally available features provide and is not intended for use in a production environment.
 {: important}
 
 ## Actions
@@ -39,9 +39,9 @@ The actions skill feature is being offered as a beta feature. The feature might 
 
 Actions represent the discrete tasks or questions that your assistant is designed to help customers with.
 
-Each action has a beginning and an end. An action begins when it recognizes the goal a customer wants to achieve based on the words she uses to articulate her goal. An action ends after the steps that are required to satisfy the customer's goal are completed.
+Each action has a beginning and an end. An action begins when it recognizes a goal based on the words the customer uses to articulate the goal. An action ends after the steps that are required to satisfy the customer's goal are completed.
 
-The body of the action is comprised of one or more *steps* that elicit the information your assistant needs to fulfill the customer's goal.
+The body of the action is composed of one or more *steps* that elicit the information your assistant needs to fulfill the customer's goal.
 
 An action is processed when a customer submits a message that the action is designed to understand and address. The order in which an action is placed in the actions list does not impact the priority that is given to the action.
 
@@ -55,7 +55,7 @@ A step represents a single interaction or exchange of information with a custome
 Each step defines the following things:
 
 - one or more conditions that determine whether the step is processed at run time
-- what the assistant says to the customer
+- what the assistant says to the customer when the step is processed
 - rules for how the customer can reply to what the assistant says
 - what to do next
 
@@ -66,12 +66,12 @@ The steps in an action are numbered and are processed from first to last. As you
 
 Step conditions are how your assistant knows whether to include a step in the current exchange with a customer. 
 
-For example, you might have an *Open an account* action. In Step 2, the assistant can ask, *Do you want me to help you open an account?* and allow the customer to answer with *Yes* or *No*. In Step 3, you can add a step condition that checks whether the customer answered *No* in the previous step. If so, the assistant says, *Ok. Let me know if there's something else I can help you with.* and ends that branch of the conversation in the action. Then, you can add one or more steps to walk the customer through the process of opening an account.
+For example, you might have an *Open an account* action. In one step the assistant can ask, *Do you want me to help you open an account?* and allow the customer to answer with *Yes* or *No*. In the next step, you can add a step condition that checks whether the customer answered *No* in the previous step. If so, the assistant says, *OK. Let me know if there's something else I can help you with.* and ends that branch of the conversation in the action. Then, you can add one or more additional steps to walk the customer through the process of opening an account.
 
 ## Customer responses
 {: #actions-overview-step-conditions}
 
-When you define the customer response for a step, you identify the type of data that the assistant expects to find in a reply. If the assistant asks or a number, you define a customer response of type *Numbers*. If the customer does not provide a number in the reply, the conversation stops. The assistant cannot complete a task on the customer's behalf if it doesn't have the data it needs to do so. 
+When you define the customer response for a step, you identify the type of data that the assistant expects to find in a reply. If the assistant asks for a number, you define a customer response of type *Numbers*. If the customer does not provide a number in the reply, the conversation stops. The assistant cannot complete a task on the customer's behalf if it doesn't have the data it needs to do so. 
 
 At run time, validation occurs for each step to check the data type of the customer's reply. If the data type doesn't match what's expected, a message is displayed to help customers understand what is required of them. You can customize the validation message and how many times it occurs for a single step.
 
@@ -89,9 +89,9 @@ Variables exist for the duration of a single action.
 
 A global variable is a variable that you can set and use across all actions.
 
-When you define a global variable, you give it a short name, such as `membership status`. The variable name that is saved contains no spaces. An underscores (`_`) is used in place of each space. When you set the value of a global variable, you choose the global variable by its name, such as `membership status`. When you reference a global variable elsewhere, such in a step condition expression, the global variable is represented with the syntax `${membership_status}`.
+When you define a global variable, you give it a short name, such as `membership status`. You can use this name later to reference the variable when you set its value from within a step.
 
-Client applications or dialog skills that call an action can set the value of a global variable that is used by the action when the action is triggered. 
+Client applications or dialog skills that call an action can set the value of a global variable that is used by the action when the action is triggered.
 
 ## Expressions
 {: #actions-overview-step-expressions}

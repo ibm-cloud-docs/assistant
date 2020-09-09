@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-08"
+lastupdated: "2020-09-09"
 
 subcollection: assistant
 
@@ -28,16 +28,20 @@ subcollection: assistant
 # Adding an actions skill ![Beta](images/beta.png)
 {: #skill-actions-add}
 
-Add an actions skill to design a content-rich dialogue for your assistant.
+Add an actions skill to design a content-rich dialog for your assistant.
 {: shortdesc}
 
-The actions skill feature is being offered as a beta feature. The feature might be unstable, might change frequently, and might be discontinued with short notice. This beta feature also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment.
+The actions skill feature is being offered as a beta feature. The feature might be unstable, might change frequently, and might be discontinued with short notice. This beta feature also might not provide the same level of performance or compatibility that generally available features provide and is not intended for use in a production environment.
 {: important}
 
 ## Add the actions skill
 {: #skill-actions-add-task}
 
-To add actions, complete the following steps:
+An actions skill contains actions that represent the tasks you want your assistant to help your customers with.
+
+Each action contains a series of steps that represent individual exchanges with a customer. Building the conversation that your assistant has with your customers is fundamentally about deciding which steps, or which user interactions, are required to complete an action. After you identify the list of steps, you can then focus on writing engaging content to turn each interaction into a positive experience for your customer.
+
+To add an actions skill, complete the following steps:
 
 1.  Click **Create Skill**.
 
@@ -45,14 +49,14 @@ To add actions, complete the following steps:
 
 1.  Take one of the following actions:
 
-    - To add an existing skill to this service instance, you can import it as a JSON file. Click **Import skill**. Drag a file or click **Drag and drop file here or click to select a file** and select the JSON file you want to import.
+    - To add an actions skill that was downloaded previously to this service instance, you can import it as a JSON file. Click **Import skill**. Drag a file or click **Drag and drop file here or click to select a file** and select the actions skill JSON file you want to import.
 
       The imported JSON file must use UTF-8 encoding, without byte order mark (BOM) encoding. The JSON cannot contain tabs, newlines, or carriage returns.
       {: important}
 
       Click **Import**.
 
-    - To create a new skill, stay on the *Create skill* tab.
+    - To create a new actions skill, stay on the *Create skill* tab.
 
 1.  Specify the details for the skill:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-08"
+lastupdated: "2020-09-09"
 
 subcollection: assistant
 
@@ -31,35 +31,28 @@ subcollection: assistant
 Actions represent the discrete tasks or questions that your assistant is designed to help customers with.
 {: shortdesc}
 
-The actions skill feature is being offered as a beta feature. The feature might be unstable, might change frequently, and might be discontinued with short notice. This beta feature also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment.
+The actions skill feature is being offered as a beta feature. The feature might be unstable, might change frequently, and might be discontinued with short notice. This beta feature also might not provide the same level of performance or compatibility that generally available features provide and is not intended for use in a production environment.
 {: important}
-
-Each action contains a series of steps that represent individual exchanges with a customer. Building the conversation that your assistant has with your customers is fundamentally about deciding which steps, or which user interactions, are required to complete an action. After you identify the list of steps, you can then focus on writing engaging content to turn each interaction into a positive experience for your customer.
 
 To start quickly, add simple actions, such as ones that capture questions that require a text response only.
 
 ## A simple example
 {: #actions-example}
 
-Here's an example. A customer named Sally wants to buy a shirt at your retail shop in Boston when she's there on Friday. The action you build so your assistant can help Sally might look like this:
+Here's an example. A customer named Sally wants to know your store hours. The action you build so your assistant can help Sally might look like this:
 
-- **Action name**: Get store hours
-- **Example messages** 
+- **Example messages**
 
+  - Get store hours
   - What are your store hours?
-  - What time do you open?
+  - What time do you open
   - Can you tell me your weekday hours?
-  - When does the store in Boston open tomorrow?
+  - when does the store in Boston open tomorrow?
   - What time does your downtown store close?
 
 - **Steps**
 
-  1.  Greet Sally and find out what she wants to know or do.
-  1.  Ask about which store Sally plans to visit.
-  1.  Find out the day of the week of the visit.
-  1.  Give her the store hours for the appropriate day and location.
-  1.  Let Sally know about any sales happening at the retail shop.
-  1.  Thank Sally for her business, and ask her whether she is satisfied with the information she recieved and the assistant's overall service.
+  1.  Assistant says *We are open from 9:00 AM until 6:00 PM Monday through Saturday.*
 
 When you are ready to start building a real assistant, you will need to do some prep work first. Spend time researching the most common requests that your customers need help with. Determine which of the requests you want your assistant to handle on behalf of your company. Start small.
 
@@ -312,9 +305,11 @@ To add a global variable, complete the following steps:
     - In a later step, click **Set variable**.
     - Click the global variable name, and then set it to the step variable for the step that collects the data.
 
-      For example, this choice sets the `membership_status` global variable value:
+      For example, this choice sets the `membership status` global variable value:
 
       Set `membership status` to `Are you a member of our rewards program?`
+
+When you reference a global variable elsewhere, such in a step condition expression, you refer to it by its variable ID. For example, to specify the global variable `membership_status` in an expression, use the syntax `${membership_status}`.
 
 ### Defining expressions
 {: #actions-expressions}
