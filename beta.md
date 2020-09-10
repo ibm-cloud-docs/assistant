@@ -32,7 +32,7 @@ When you participate in the early access program, IBM gives you early access to 
 ## Available beta features
 {: #beta-features}
 
-- **Actions skill**: Try building a conversational flow with the new actions skill. For more information, see [Actions skill overview](/docs/assistant?topic=assistant-actions-overview). 
+- **Actions skill**: Try building a conversational flow with the new actions skill. For more information, see [Adding an actions skill](/docs/assistant?topic=assistant-skill-actions-add). 
 
   We value your first impressions and opinions. Please share them or ask questions by joining the [Slack community](#beta-feedback), and adding your comments to the `#actions-early-access` channel.
 
