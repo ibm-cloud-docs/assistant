@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-03"
+lastupdated: "2020-09-10"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
@@ -60,6 +60,7 @@ Information about the artifact limits per plan is available from the topics that
 - [Logs](/docs/assistant?topic=assistant-logs#logs-limits)
 - [Skills](/docs/assistant?topic=assistant-skill-add#skill-add-limits)
 - [Versions](/docs/assistant?topic=assistant-versions#versions-limits)
+- [Web chat integration](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-limits)
 
 ### Plus and Premium plan features ![Plus or Premium plan only](images/plus.png)
 {: #services-information-premium}
