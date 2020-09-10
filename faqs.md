@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-21"
+lastupdated: "2020-09-10"
 
 subcollection: assistant
 
@@ -99,7 +99,7 @@ This message is displayed for a few reasons:
 {: #faqs-authentication-required}
 {: faq}
 
-You are being asked for credentials to access a {{site.data.keyword.conversationshort}} service instance that you have been able to access without trouble in the past. You might see, `Authentication Required: https://assistant-{location}-watsonplatform.net is requesting your username and password.` or just a `Sign in` dialog box with fields for a username and password.
+You are being asked for credentials to access a {{site.data.keyword.conversationshort}} service instance that you have been able to access without trouble in the past. You might see, `Authentication Required: {service-url} is requesting your username and password.` or just a `Sign in` dialog box with fields for a username and password.
 
 This message is displayed for service instances that have not been migrated from Cloud Foundry. If you have not migrated your instance, you must do so now. See [Migrating Watson services from Cloud Foundry](/docs/services/assistant?topic=watson-migrate).
 
