@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-09-04"
+lastupdated: "2020-09-10"
 
 subcollection: assistant
 
@@ -554,3 +554,16 @@ Complete these steps in your dialog skill so the assistant can pass the conversa
     At run time, if the conversation reaches this child node, the dialog is passed to a human agent at that point.
 
 Your dialog is now ready to support transfers from your assistant to service desk agents.
+
+## Web chat integration limits
+{: #deploy-web-chat-limits}
+
+The usage is measured differently depending on the plan type. For Lite plans, usage is measured by the number of `/message` calls (API) are sent to the assistant from the web chat integration. For all other plans, usage is measured by the number of monthly active users (MAU) that the web chat interacts with. The maximum number of allowed MAUs differs depending on your {{site.data.keyword.conversationshort}} plan type.
+
+| Plan       |              Maximum usage |
+|------------|---------------------------:|
+| Premium    |              Unlimited MAU |
+| Plus       |              Unlimited MAU |
+| Plus Trial |                  5,000 MAU |
+| Lite       |                 10,000 API |
+{: caption="Plan details" caption-side="top"}

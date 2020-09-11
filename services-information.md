@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-03"
+lastupdated: "2020-09-11"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
@@ -60,6 +60,7 @@ Information about the artifact limits per plan is available from the topics that
 - [Logs](/docs/assistant?topic=assistant-logs#logs-limits)
 - [Skills](/docs/assistant?topic=assistant-skill-add#skill-add-limits)
 - [Versions](/docs/assistant?topic=assistant-versions#versions-limits)
+- [Web chat integration](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-limits)
 
 ### Plus and Premium plan features ![Plus or Premium plan only](images/plus.png)
 {: #services-information-premium}
@@ -133,19 +134,17 @@ If an anonymous user logs in and later is identified as being the same person wh
 
 {{site.data.keyword.cloud_notm}} has a network of global data centers that provide performance benefits to its cloud services. See [{{site.data.keyword.cloud_notm}} global data centers](https://www.ibm.com/cloud/data-centers/){: external} for more details.
 
-{{site.data.keyword.cloud_notm}} changed from managing user access with Cloud Foundry to using token-based Identity and Access Management (IAM) authentication. IAM was rolled out in different locations at different times. You can migrate a service instance to move it from its current Cloud Foundry org and space to a resource group. See [Migrating](/docs/watson?topic=watson-migrate) for more details.
-
 You can create {{site.data.keyword.conversationshort}} service instances that are hosted in the following data center locations:
 
-| Location    | Location code | API location |  IAM adoption date | Notes |
-|-------------|---------------|--------------|---------------------|-------------------|-------|
-| Dallas      | us-south      | N/A          | 30 October 2018 | N/A |
-| Frankfurt   | eu-de         | fra          | 30 October 2018 | N/A |
-| Seoul       | kr-seo        | seo          | 12 November 2019 | N/A |
-| Sydney      | au-syd        | syd          | 7 May 2018 | Instances created before May 7 were syndicated to Dallas |
-| Tokyo       | jp-tok        | tok          | 8 November 2018 | N/A |
-| London      | eu-gb         | lon          | 13 December 2018 | Instances that were created in the United Kingdom region before December 13 were syndicated to the US South region |
-| Washington DC  | us-east    | wdc          | 14 June 2018 | N/A |
+| Location    | Location code | API location |
+|-------------|---------------|--------------|
+| Dallas      | us-south      | N/A          |
+| Frankfurt   | eu-de         | fra          |
+| Seoul       | kr-seo        | seo          |
+| Sydney      | au-syd        | syd          |
+| Tokyo       | jp-tok        | tok          |
+| London      | eu-gb         | lon          |
+| Washington DC  | us-east    | wdc          |
 {: caption="Data center locations" caption-side="top"}
 
 For an additional cost, you can request that service instances in a Premium plan account be hosted by different data centers.
