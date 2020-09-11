@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-09-11"
 
 subcollection: assistant
 
@@ -36,7 +36,7 @@ When you build the flow of conversation between your assistant and your customer
 - [Actions skill](#skills-choose-actions)
 - [Dialog skill](#skills-choose-dialog)
 
-When you want your assistant to get its answer from your existing help content, use a **search skill**. The search skill can be added to an assistant along with a conversational flow skill.
+When you want your assistant to get its answer from your existing help content, use a *search skill*. The search skill can be added to an assistant along with a conversational flow skill. For more information, see [Creating a search skill](/docs/assistant?topic=assistant-skill-search-add).
 
 ## Actions skill ![Beta](images/beta.png)
 {: #skills-choose-actions}

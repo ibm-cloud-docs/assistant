@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-08"
+lastupdated: "2020-09-11"
 
 subcollection: assistant
 
@@ -28,7 +28,7 @@ subcollection: assistant
 If you do not disable the preview link, then the assistant is immediately available for testing from a web page.
 {: shortdesc}
 
-The assistant is implemented as a chat widget embedded in a simple IBM-branded web page automatically. You can test the dialog skill that you added to the assistant by entering text into the chat widget. You can also share the URL of the page with others to enlist help in testing and getting feedback about the assistant.
+The assistant is implemented as a chat widget embedded in a simple IBM-branded web page automatically. You can test the dialog skill that you added to the assistant by entering text into the chat window. You can also share the URL of the page with others to enlist help in testing and getting feedback about the assistant.
 
 Unlike when you test using the "Try it out" pane, any API calls that result from your interactions with the assistant hosted by the preview link URL do incur charges.
 
@@ -47,16 +47,13 @@ To test the assistant from a web-hosted chat widget, complete the following step
 
 1.  Click the URL link that is displayed to open the test page.
 
-    A separate web browser tab opens that contains a chat widget implementation of your assistant.
-
-    If your service instance was created in the United Kingdom data center before 13 December 2018 or in Sydney before 7 May 2018, then you must edit the preview link URL. The URL includes a location code for the data center where the instance is hosted. Because instances in London and Sydney were syndicated to Dallas prior to the specified dates, you must replace the `eu-gb` or `au-syd` reference in the URL with `us-south` for the web page to render properly.
-    {: important}
+    A separate web browser tab opens that contains a chat window where you can interact with your assistant.
 
 1.  Submit test utterances to see how the assistant responds.
 
     No responses are returned until after you create a dialog skill and add it to the assistant.
 
-    The dialog flow for the current session is restarted after 60 minutes of inactivity (5 minutes for Lite and Standard plans). This means that if a user stops interacting with the assistant, after 60 (or 5) minutes, any context variable values that were set during the previous conversation are set to null or back to their default values.
+    The dialog flow for the current session is restarted after 60 minutes of inactivity (5 minutes for Lite plans). This means that if a user stops interacting with the assistant, after 60 (or 5) minutes, any context variable values that were set during the previous conversation are set to null or back to their default values.
 
 1.  After testing, you can close the browser tab to exit the public web page.
 
