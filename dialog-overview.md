@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-08"
+lastupdated: "2020-09-14"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -472,39 +472,39 @@ To add an *Image* response type, complete the following steps:
 
 Add an option response type when you want to give the customer a set of options to choose from. For example, you can construct a response like this:
 
-    <table>
-    <caption>Response options</caption>
-    <tr>
-      <th>List title</th>
-      <th>List description</th>
-      <th>Option label</th>
-      <th>User input submitted when clicked</th>
-    </tr>
-    <tr>
-      <td>Insurance types</td>
-      <td>Which of these items do you want to insure?</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>Boat</td>
-      <td>I want to buy boat insurance</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>Car</td>
-      <td>I want to buy car insurance</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>Home</td>
-      <td>I want to buy home insurance</td>
-    </tr>
-    </table>
+<table>
+<caption>Response options</caption>
+  <tr>
+    <th>List title</th>
+    <th>List description</th>
+    <th>Option label</th>
+    <th>User input submitted when clicked</th>
+  </tr>
+  <tr>
+    <td>Insurance types</td>
+    <td>Which of these items do you want to insure?</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>Boat</td>
+    <td>I want to buy boat insurance</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>Car</td>
+    <td>I want to buy car insurance</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>Home</td>
+    <td>I want to buy home insurance</td>
+  </tr>
+</table>
 
 Most integrations display the options as buttons if there are only a few items (4 or fewer, for example).
       
