@@ -141,7 +141,7 @@ Using slots produces a more natural dialog flow between the user and your assist
 
     - **Not found**: Displayed if the information provided by the user is not understood, or is not provided in the expected format. If the slot is filled successfully, or the user input is understood and handled by a slot handler, then this statement is never displayed.
 
-    For information about how to define conditions and associated actions for Found and Not found responses, see [Adding conditions to Found and Not found responses](#dialog-slots-handler-next-steps).
+    For information about how to define conditions and associated actions for *Found* and *Not found* responses, see [Adding conditions to Found and Not found responses](#dialog-slots-handler-next-steps).
 
 1.  **Make a slot optional or disable it under certain conditions**. You can optionally configure a slot in these ways:
 
