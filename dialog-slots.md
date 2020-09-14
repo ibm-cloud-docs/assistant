@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-03"
+lastupdated: "2020-09-14"
 
 keywords: slot, slots
 
@@ -108,15 +108,6 @@ Using slots produces a more natural dialog flow between the user and your assist
 
     - [**Text**](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-simple-text)
 
-
-    - If you want different follow-up statements to be shown based on whether the user provides the information you need in response to the initial slot prompt, you can edit the slot (by clicking the **Edit slot** ![Edit slot](images/edit-slot.png) icon) and define the follow-up statements:
-
-      - **Found**: Displayed after the user provides the expected information.
-
-      - **Not found**: Displayed if the information provided by the user is not understood, or is not provided in the expected format. If the slot is filled successfully, or the user input is understood and handled by a slot handler, then this statement is never displayed.
-
-      For information about how to define conditions and associated actions for Found and Not found responses, see [Adding conditions to Found and Not found responses](#dialog-slots-handler-next-steps).
-
     This table shows example slot values for a node that helps users place a pizza order by collecting two pieces of information, the pizza size and delivery time.
 
     <table>
@@ -143,6 +134,14 @@ Using slots produces a more natural dialog flow between the user and your assist
       <td>What time did you want it delivered? We need at least a half hour to prepare it.</td>
     </tr>
     </table>
+
+1.  **Add slot value validation**: If you want different follow-up statements to be shown based on whether the user provides the information you need in response to the initial slot prompt, you can edit the slot (by clicking the **Edit slot** ![Edit slot](images/edit-slot.png) icon) and define the follow-up statements:
+
+    - **Found**: Displayed after the user provides the expected information.
+
+    - **Not found**: Displayed if the information provided by the user is not understood, or is not provided in the expected format. If the slot is filled successfully, or the user input is understood and handled by a slot handler, then this statement is never displayed.
+
+    For information about how to define conditions and associated actions for *Found* and *Not found* responses, see [Adding conditions to Found and Not found responses](#dialog-slots-handler-next-steps).
 
 1.  **Make a slot optional or disable it under certain conditions**. You can optionally configure a slot in these ways:
 

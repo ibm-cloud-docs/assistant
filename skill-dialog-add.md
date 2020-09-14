@@ -126,7 +126,7 @@ To download a dialog skill, complete the following steps:
 
 You can export a skill by using the API also. Include the `export=true` parameter with the request. See the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1#getworkspace){: external} for more details.
 
-For information about how to download a specific skill version, see [Downloading a skill version](/docs/assistant?topic=assistant-versions-export).
+For information about how to download a specific skill version, see [Downloading a skill version](/docs/assistant?topic=assistant-versions#versions-export).
 
 ## Overwriting a skill
 {: #skill-dialog-add-overwrite}
