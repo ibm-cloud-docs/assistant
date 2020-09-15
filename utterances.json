@@ -88,6 +88,11 @@
     "can't view assistant user conversations",
     "user conversations in analytics says No user statements found",
     "access do I need to view analytics",
+    "How do i find my conversations",
+    "want to find my conversations",
+    "want to find my conversations in Assistant",
+    "Where is the Analytics page",
+    "view the Analytics page in assistant",
     "Where can i find the analytics page",
     "unable to see analytics page for WA",
     "cant access the analytics in Assistant"
@@ -103,6 +108,9 @@
     "can't veiw my assistant API details",
     "unable to see my service credentials in WA",
     "credential page never refreshes in Assistant",
+    "how can i get the URL for my chatbot in watson",
+    "get the URL for my chatbot",
+    "get the service credentials for my chatbot",
     "can't see the apikey details in assistant",
     "in Assistant cant access the api keys"
   ],
@@ -190,6 +198,9 @@
     "multiple webhook urls in a skill",
     "one webhook URL for a dialog skill",
     "how many url entries are allowed in a webhook",
+    "Can I have multiple webhooks in an asssistant",
+    "multiple webhooks in an assistant",
+    "multiple webhooks for one assistant",
     "many urls for each webhook in assistant",
     "two webhooks per assistant skill",
     "more than one webhook per skill"
