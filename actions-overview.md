@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-09-16"
 
 subcollection: assistant
 
@@ -69,7 +69,7 @@ Step conditions are how your assistant knows whether to include a step in the cu
 For example, you might have an *Open an account* action. In one step the assistant can ask, *Do you want me to help you open an account?* and allow the customer to answer with *Yes* or *No*. In the next step, you can add a step condition that checks whether the customer answered *No* in the previous step. If so, the assistant says, *OK. Let me know if there's something else I can help you with.* and ends that branch of the conversation in the action. Then, you can add one or more additional steps to walk the customer through the process of opening an account.
 
 ## Customer responses
-{: #actions-overview-step-conditions}
+{: #actions-overview-step-responses}
 
 When you define the customer response for a step, you identify the type of data that the assistant expects to find in a reply. If the assistant asks for a number, you define a customer response of type *Numbers*. If the customer does not provide a number in the reply, the conversation stops. The assistant cannot complete a task on the customer's behalf if it doesn't have the data it needs to do so. 
 
