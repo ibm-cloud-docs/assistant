@@ -670,7 +670,7 @@ If you do more testing, you might find that the dialog isn't very helpful in sce
 
 1.  Type `true` into the **If assistant recognizes** field of this node.
 
-1.  Enable conditional responses by clicking **Customize**, scrolling down, and then switching the *Multiple responses* toggle to **On**.
+1.  Enable conditional responses by clicking **Customize**, scrolling down, and then setting the **Multiple conditioned responses** switch to **On**.
 
 1.  Click **Apply**.
 
@@ -759,7 +759,7 @@ If, at run time, the user triggers this node and provides a name, then you will 
 If you know the user's name, you should include it in your greeting message. To do so, add conditional responses, and include a variation of the greeting that includes the user's name.
 
 1.  Find the `#General_Greetings` node in the dialog tree, and click to open it in the edit view.
-1.  Click **Customize**, scroll down, and then switch the *Multiple responses* toggle to **On**.
+1.  Click **Customize**, scroll down, and then set the **Multiple conditioned responses** switch to **On**.
 
     ![Shows that the conditional responses setting has been enabled.](images/gs-ass-turn-on-mcr.png)
 1.  Click **Apply**.

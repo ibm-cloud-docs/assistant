@@ -260,7 +260,7 @@ If you upload a JSON file that contains repeating name values, then only the fir
 
     By default, all search query matches, regardless of the confidence score of the match, are returned as search results. You can limit the search results to include only matches with a confidence score of 20% or higher in {{site.data.keyword.discoveryshort}}. 
     
-    To enable the beta feature that filters the results, toggle the *Refine results to return more selective answers* switch to **On**.
+    To enable the beta feature that filters the results, set the **Refine results to return more selective answers** switch to **On**.
 
 1.  Click **Try it** to open the "Try it out" pane for testing. Enter a test message to see the results that are returned when your configuration choices are applied to the search. Make adjustments as necessary.
 
@@ -433,4 +433,4 @@ You might want to do so temporarily, while you are setting up the integration. O
 To prevent the search skill from being triggered, complete the following steps:
 
 1.  From the **Assistants** page, click the menu for your assistant, and then choose **Settings**.
-1.  Open the *Search Skill* page, and then click to switch the toggle to **Disabled**.
+1.  Open the *Search Skill* page, and then click to set the switch to **Disabled**.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-13"
+lastupdated: "2020-09-16"
 
 subcollection: assistant
 
@@ -56,7 +56,7 @@ To set up a Zendesk service desk integration, complete the following steps:
 
 1.  Create a web chat integration. For more information, see [Integrating the web chat with your website](/docs/assistant?topic=assistant-deploy-web-chat).
 
-1.  From the web chat integration page in {{site.data.keyword.conversationshort}}, switch the **Allow transfers to live agents** toggle to **On**, and then choose **Zendesk** as the service desk type, and then click **Next**.
+1.  From the web chat integration page in {{site.data.keyword.conversationshort}}, set the **Allow transfers to live agents** switch to **On**, and then choose **Zendesk** as the service desk type, and then click **Next**.
 1.  {: #deploy-zendesk-get-account-key}Add the account key for your Zendesk account, and then click **Next**.
 
     To get the account key for your Zendesk account, follow these steps:
@@ -195,7 +195,7 @@ Before you can secure the Zendesk connection, complete the following required ta
 
 To secure the Zendesk connection, complete the following steps:
 
-1.  {: #deploy-zendesk-secure-task}In the *Authenticate users* section, set the toggle to **On**.
+1.  {: #deploy-zendesk-secure-task}In the *Authenticate users* section, set the switch to **On**.
 
 1.  Paste the secret that you copied from the Zendesk setup page into the **Zendesk shared secret** field.
 
@@ -215,6 +215,6 @@ To secure the Zendesk connection, complete the following steps:
     ```
     {: codeblock}
 
-    After writing a function that ensures that name and email values are always provided, set the *Authenticate anonymous user chat transfers* toggle to **On**.
+    After writing a function that ensures that name and email values are always provided, set the *Authenticate anonymous user chat transfers* switch to **On**.
 
 If you haven't yet, update your dialog to make sure it understands when users request to speak to a person, and can transfer the conversation properly. For more information, see [Adding transfer support to your dialog](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-dialog-prereq).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-09-16"
 
 keywords: context, context variable, digression, disambiguation, autocorrection, spelling correction, spell check, confidence 
 
@@ -727,13 +727,13 @@ To change the digression behavior for an individual node, complete the following
 
     - **All node types**: Choose whether to allow users to digress away from the current node before they reach the end of the current dialog branch.
 
-    - **All nodes that have children**: Choose whether you want the conversation to come back to the current node after a digression if the current node's response has already been displayed and its child nodes are incidental to the node's goal. Set the *Allow return from digressions triggered after this node's response* toggle to **No** to prevent the dialog from returning to the current node and continuing to process its branch.
+    - **All nodes that have children**: Choose whether you want the conversation to come back to the current node after a digression if the current node's response has already been displayed and its child nodes are incidental to the node's goal. Set the **Allow return from digressions triggered after this node's response** switch to **No** to prevent the dialog from returning to the current node and continuing to process its branch.
 
       For example, if the user asks, `Do you sell cupcakes?` and the response, `We offer cupcakes in a variety of flavors and sizes` is displayed before the user changes subjects, you might not want the dialog to return to where it left off. Especially, if the child nodes only address possible follow-up questions from the user and can safely be ignored.
 
       However, if the node relies on its child nodes to address the question, then you might want to force the conversation to return and continue processing the nodes in the current branch. For example, the initial response might be, `We offer cupcakes in all shapes and sizes. Which menu do you want to see: gluten-free, dairy-free, or regular?` If the user changes subjects at this point, you might want the dialog to return so the user can pick a menu type and get the information they wanted.
 
-    - **Nodes with slots**: Choose whether you want to allow users to digress away from the node before all of the slots are filled. Set the *Allow digressions away while slot filling* toggle to **Yes** to enable digressions away.
+    - **Nodes with slots**: Choose whether you want to allow users to digress away from the node before all of the slots are filled. Set the **Allow digressions away while slot filling** switch to **Yes** to enable digressions away.
 
       If enabled, when the conversation returns from the digression, the prompt for the next unfilled slot is displayed to encourage the user to continue providing information. If disabled, then any inputs that the user submits which do not contain a value that can fill a slot are ignored. However, you can address unsolicited questions that you anticipate your users might ask while they interact with the node by defining slot handlers. See [Adding slots](/docs/assistant?topic=assistant-dialog-slots#dialog-slots-add) for more information.
 
@@ -826,10 +826,10 @@ To disable digressions into a root node altogether, complete the following steps
 
 1.  Click to open the root node that you want to edit.
 1.  Click **Customize**, and then click the **Digressions** tab.
-1.  Set the *Allow digressions into this node* toggle to **Off**.
+1.  Set the **Allow digressions into this node** switch to **Off**.
 1.  Click **Apply**.
 
-If you decide that you want to prevent digressions into several root nodes, but do not want to edit each one individually, you can add the nodes to a folder. From the *Customize* page of the folder, you can set the *Allow digressions into this node* toggle to **Off** to apply the configuration to all of the nodes at once. See [Organizing the dialog with folders](/docs/assistant?topic=assistant-dialog-tasks#dialog-tasks-folders) for more information.
+If you decide that you want to prevent digressions into several root nodes, but do not want to edit each one individually, you can add the nodes to a folder. From the *Customize* page of the folder, you can set the **Allow digressions into this node** switch to **Off** to apply the configuration to all of the nodes at once. See [Organizing the dialog with folders](/docs/assistant?topic=assistant-dialog-tasks#dialog-tasks-folders) for more information.
 
 ### Digression tutorial
 {: #dialog-runtime-digression-tutorial}
@@ -887,7 +887,7 @@ To turn autocorrection on or off, complete the following steps:
 
 1.  Click the **Skills** icon ![Skills menu icon](images/nav-skills-icon.png), and then open your skill.
 1.  From the Skills menu, click **Options**, and then click **Autocorrection**.
-1.  Click the toggle to enable or disable the feature.
+1.  Click the switch to enable or disable the feature.
 
 ### Testing autocorrection
 {: #dialog-runtime-spell-check-test}
@@ -1070,7 +1070,7 @@ You can disable disambiguation for the entire dialog or for an individual dialog
 - To disable disambiguation entirely: 
 
   - From the Skills menu, click **Options**. 
-  - On the *Disambiguation* page, switch the toggle to **Off**.
+  - On the *Disambiguation* page, set the switch to **Off**.
 
 - To disable disambiguation for a single dialog node: 
 
@@ -1082,7 +1082,7 @@ You can disable disambiguation for the entire dialog or for an individual dialog
 
     ![Shows the expanded disambiguation settings section where the toggle is.](images/disambig-node-level-toggle.png)
 
-  - Switch the *Show node name* toggle to **Off**.
+  - Set the **Show node name** switch to **Off**.
 
   - ![Plus or Premium plan only](images/plus.png) If you added a node summary description to the **external node name** field instead of the *name* field, remove it.
   

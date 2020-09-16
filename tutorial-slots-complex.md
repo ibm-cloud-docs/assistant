@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-12"
+lastupdated: "2020-09-16"
 
 subcollection: assistant
 
@@ -635,7 +635,7 @@ Adding a node with slots is powerful because it keeps users on track with provid
 
 1.  Now, you need to edit the node-level response to make it recognize when a user wants to exit the process rather than make a reservation. Add a conditional response for the node.
 
-    From the edit view of the node with slots, click **Customize**, click the **Multiple responses** toggle to turn it **on**, and then click **Apply**.
+    From the edit view of the node with slots, click **Customize**, set the **Multiple conditioned responses** switch to turn it **On**, and then click **Apply**.
 
     ![Shows the Multiple responses toggle after it is turned on](images/slots-multi-responses.png)
 

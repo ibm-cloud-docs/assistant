@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-03"
+lastupdated: "2020-09-16"
 
 subcollection: assistant
 
@@ -88,7 +88,7 @@ To enable autolearning, complete the following steps:
     Do not change the assistant without first considering the impact of this change. When you swap the assistant to observe, it changes the live assistant that is used as the data source for the recommendations feature also.
     {: important}
 
-1.  Click the *Enable Autolearning* toggle to turn the feature **On**.
+1.  Set the **Enable Autolearning** switch to **On**.
 
 <!--## Advanced configuration
 {: #autolearn-v1}

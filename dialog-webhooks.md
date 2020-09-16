@@ -132,9 +132,9 @@ To use a webhook from a dialog node, you must enable webhooks on the node, and t
 
 1.  Click to open the dialog node, and then click **Customize**.
 
-1.  Scroll down to the *Webhooks* section, and switch the toggle to **On**, and then click **Apply**.
+1.  Scroll down to the webhook section. Set the **Callout to webhooks** switch to **On**, and then click **Apply**.
 
-    If you did not have it enabled already, the *Multiple conditional responses* setting is switched on automatically and you cannot disable it. This setting is enabled to support adding different responses depending on the success or failure of the Webhook call. If you had a response specified for the node already, it becomes the first conditional response.
+    If you did not have it enabled already, the **Multiple conditioned responses** switch is set to **On** automatically and you cannot disable it. This setting is enabled to support adding different responses depending on the success or failure of the Webhook call. If you had a response specified for the node already, it becomes the first conditional response.
     {: note}
 
 1.  Add any data that you want to pass to the external application as key and value pairs in the *Parameters* section.
@@ -308,7 +308,7 @@ The following tips will help you call a {{site.data.keyword.openwhisk_short}} we
 
 1.  Click to open the dialog node from which you want to call the web action, and then click **Customize**.
 
-1.  Scroll down to the *Webhooks* section, and switch the toggle to **On**, and then click **Apply**.
+1.  Scroll down to the webhook section. Set the **Callout to webhooks** switch to **On**, and then click **Apply**.
 
 1.  Add any data that you want to pass to the external application as key and value pairs in the *Parameters* section.
 

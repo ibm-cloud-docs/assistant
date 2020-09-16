@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-12"
+lastupdated: "2020-09-16"
 
 subcollection: assistant
 
@@ -96,7 +96,7 @@ In this step, you will edit the digression setting for the restaurant booking no
 
     ![Shows the digression settings for the Restaurant booking node.](images/tut-dig-resto-settings.png)
 
-1.  Change the **Allow digressions away** toggle from on to **off**, and then click **Apply**.
+1.  Set the **Allow digressions away** switch to **Off**, and then click **Apply**.
 
 1.  Click ![Close](images/close.png) to close the node edit view.
 
