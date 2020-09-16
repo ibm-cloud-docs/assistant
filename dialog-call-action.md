@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-09-16"
 
 subcollection: assistant
 
@@ -62,7 +62,7 @@ Before you start this task, open the target action and make a note of the follow
 To take an action that is defined in an actions skill, complete the following steps:
 
 1.  From the dialog node, click **Customize**.
-1.  Toggle the *Call out* feature switch to **On**.
+1.  Set the **Call out** feature switch to **On**.
 1.  Select **Call an action skill**.
 
     When you add a call to an action, multiple conditional responses are enabled for the dialog node automatically.

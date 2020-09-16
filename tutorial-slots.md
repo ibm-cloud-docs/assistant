@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-29"
+lastupdated: "2020-09-16"
 
 subcollection: assistant
 
@@ -112,7 +112,7 @@ The node you add will collect the information required to make a reservation at 
 1.  Click the More icon ![More options](images/kabob.png) on the **#General_Greetings** node, and then select **Add node below**.
 1.  Start typing `#reservation` in the condition field, and then select it from the list.
     This node will be evaluated if the user input matches the `#reservation` intent.
-1.  Click **Customize**, click the **Slots** toggle to turn it **on**, and then click **Apply**.
+1.  Click **Customize**, set the **Slots** switch to **On**, and then click **Apply**.
 
     ![Shows the customize dialog where you turn on slots.](images/slots-toggle-on.png)
 1.  Define the following slots:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-09-16"
 
 keywords: entity, entity value, contextual entity, dictionary entity, pattern entity, entity synonym, annotate mentions
 
@@ -156,7 +156,7 @@ Dictionary-based entites are those for which you define specific terms, synonyms
 
     1. Continue adding synonyms as desired. When you're finished accepting recommendations, click the **X** to close the recommendations panel.
 
-1.  If you want your assistant to recognize terms with syntax that is similar to the entity value and synonyms you specify, but without requiring an exact match, click the **Fuzzy Matching** toggle to turn it on. 
+1.  If you want your assistant to recognize terms with syntax that is similar to the entity value and synonyms you specify, but without requiring an exact match, set the **Fuzzy Matching** switch to **On**. 
 
     For example, if you add `apple` as a value for a `@fruit` entity, and a user enters `apples` or `appel`, if fuzzy matching is enabled, your assistant will recognize the word as a `@fruit` mention. For more information, see [How fuzzy matching works](#entities-fuzzy-matching).
 
@@ -385,7 +385,7 @@ System entities are centrally maintained, so any updates are available automatic
     - To see more information about a system entity, including examples of matching input, click the entity in the list.
     - For details about the available system entities, see [System entities](/docs/assistant?topic=assistant-new-system-entities).
 
-1.  Click the toggle switch next to a system entity to enable or disable it.
+1.  Set the switch for each system entity that you want to use to **On**.
 
 After you enable system entities, {{site.data.keyword.conversationshort}} begins to retrain. After training is complete, you can use the entities.
 
@@ -399,7 +399,7 @@ The number of entities, entity values, and synonyms that you can create depends 
 | Premium | 1,000 | 100,000 | 100,000 |
 | Plus | 1,000 | 100,000 |                   100,000 |
 | Standard (legacy) | 1,000 | 100,000 | 100,000 |
-| Lite, Plus Trial | 25 | 100,000 | 100,000 |
+| Lite, Plus Trial | 100 | 100,000 | 100,000 |
 {: caption="Plan details" caption-side="top"}
 
 System entities that you enable for use count toward your plan usage totals.

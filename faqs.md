@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-10"
+lastupdated: "2020-09-16"
 
 subcollection: assistant
 
@@ -151,7 +151,7 @@ If you want to copy dialog nodes from one skill into another skill, follow these
 {: #faqs-delete-workspace}
 {: faq}
 
-Regularly [back up data](/docs/assistant?topic=assistant-backup) to prevent problems that might arise from inadvertent deletions. If you do not have a backup, there is a short window of time during which a deleted skill might be recoverable. Immediately following the deletion, [open a case](/docs/get-support?topic=get-support-open-case#opentechcase) with Support to determine if the data can be recovered. Include the following information in your case: 
+Regularly [back up data](/docs/assistant?topic=assistant-backup) to prevent problems that might arise from inadvertent deletions. If you do not have a backup, there is a short window of time during which a deleted skill might be recoverable. Immediately following the deletion, [open a case](/docs/get-support?topic=get-support-open-case) with Support to determine if the data can be recovered. Include the following information in your case: 
 
 - skill ID
 - instance ID or name

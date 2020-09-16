@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-14"
+lastupdated: "2020-09-16"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -688,7 +688,7 @@ This single node now provides the equivalent function of four separate nodes.
 
 To add conditional responses to a node, complete the following steps:
 
-1.  Click **Customize**, and then click the **Multiple conditioned responses** toggle to turn it **On**.
+1.  Click **Customize**, and set the **Multiple conditioned responses** switch to **On**.
 
     The node response section changes to show a pair of condition and response fields. You can add a condition and a response into them.
 1.  To customize a response further, click the **Edit response** ![Edit response](images/edit-slot.png) icon next to the response.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-10"
+lastupdated: "2020-09-16"
 
 subcollection: assistant
 
@@ -428,7 +428,7 @@ Queries you submit through the Preview pane generate `/message` API calls, but t
 If you add only an actions skill to the assistant, the action skill starts the conversation. If you add both a dialog skill and actions skill to an assistant, the dialog skill starts the conversation. You must add calls from the dialog to actions in the actions skill. Only then can your asssistant understand and respond to requests that are addressed by actions that are defined in the actions skill.
 {: important}
 
-You can [call actions in the actions skill from the dialog skill](/docs/assistant?topic=assistant-dialog-call-actions). To test how an action behaves when it is called from a dialog skill, test it from the assistant that uses both of the skills together. You cannot recreate the interaction from the Preview pane of the actions skill. First, add the actions and dialog skills to an assistant. Then, you can create a *Preview link* integration to test how the two skills interact with one another. Queries you submit through the *Preview link* integration do incur charges. For more information about the *Preview link* integration, see [Testing your assistant from a web page](/docs/assistant?topic=assistant-deploy-web-link).
+You can [call actions in the actions skill from the dialog skill](/docs/assistant?topic=assistant-dialog-call-action). To test how an action behaves when it is called from a dialog skill, test it from the assistant that uses both of the skills together. You cannot recreate the interaction from the Preview pane of the actions skill. First, add the actions and dialog skills to an assistant. Then, you can create a *Preview link* integration to test how the two skills interact with one another. Queries you submit through the *Preview link* integration do incur charges. For more information about the *Preview link* integration, see [Testing your assistant from a web page](/docs/assistant?topic=assistant-deploy-web-link).
 
 ## Action limits
 {: #actions-limits}

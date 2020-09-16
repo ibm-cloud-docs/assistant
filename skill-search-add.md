@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-09-03"
+lastupdated: "2020-09-16"
 
 subcollection: assistant
 
@@ -256,7 +256,11 @@ If you upload a JSON file that contains repeating name values, then only the fir
     </tr>
     </table>
 
-1.  The search results that get returned are limited to matches with a confidence score of 20% or higher in {{site.data.keyword.discoveryshort}}. If you want to disable the 0.2 confidence threshold so that all matches are returned, regardless of their confidence scores, then toggle the *Refine results to return more selective answers* switch to **Off**.
+1.  Decide whether to be more selective with the answers that are returned.
+
+    By default, all search query matches, regardless of the confidence score of the match, are returned as search results. You can limit the search results to include only matches with a confidence score of 20% or higher in {{site.data.keyword.discoveryshort}}. 
+    
+    To enable the beta feature that filters the results, set the **Refine results to return more selective answers** switch to **On**.
 
 1.  Click **Try it** to open the "Try it out" pane for testing. Enter a test message to see the results that are returned when your configuration choices are applied to the search. Make adjustments as necessary.
 
@@ -264,7 +268,7 @@ If you upload a JSON file that contains repeating name values, then only the fir
 
 If you want to change the configuration of the search result card later, open the search skill again, and make edits. You do not need to save changes as you make them; they are automatically applied. When you are happy with the search results, click **Save** to finish configuring the search skill.
 
-If you decide you want to connect to a different {{site.data.keyword.discoveryshort}} service instance or data collection, then create a new search skill and configure it to connect to the other instance. You **cannot** change the service instance or data collection details for a search skill after you create it.
+If you decide you want to connect to a different {{site.data.keyword.discoveryshort}} service instance or data collection, then create a new search skill and configure it to connect to the other instance. You *cannot* change the service instance or data collection details for a search skill after you create it.
 {: important}
 
 ### Tips for collection field selection
@@ -429,4 +433,4 @@ You might want to do so temporarily, while you are setting up the integration. O
 To prevent the search skill from being triggered, complete the following steps:
 
 1.  From the **Assistants** page, click the menu for your assistant, and then choose **Settings**.
-1.  Open the *Search Skill* page, and then click to switch the toggle to **Disabled**.
+1.  Open the *Search Skill* page, and then click to set the switch to **Disabled**.
