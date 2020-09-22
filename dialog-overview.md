@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-09-22"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -388,7 +388,7 @@ In addition to the default response type of **Text**, for which you specify the 
   This response type is available to users of Plus or Premium plans only.
   {: note}
 
-To add a rich response, complete the following step:
+To add a rich response, complete the following steps:
 
 1.  Click the dropdown menu in the **Assistant responds** field to choose a response type, and then provide any required information.
 
@@ -409,7 +409,7 @@ To add a rich response, complete the following step:
 
     You might want to add multiple response types to a single response to provide a richer answer to a user query. For example, if a user asks for store locations, you could show a map and display a button for each store location that the user can click to get address details. To build that type of response, you can use a combination of image, options, and text response types. Another example is using a text response type before a pause response type so you can warn users before pausing the dialog.
 
-    You cannot add more than 5 response types to a single response. If you define three conditional responses for a dialog node, each conditional response can have no more than 5 response types added to it.
+    You cannot add more than 5 response types to a single response. This means that if you define three conditioned responses for a dialog node, each conditioned response can have no more than 5 response types added to it.
     {: note}
 
     A single dialog node cannot have more than one **Connect to human agent** or more than one **Search skill** response type.
@@ -420,30 +420,49 @@ To add a rich response, complete the following step:
 ### Adding a *Connect to human agent* response type
 {: #dialog-overview-add-connect-to-human-agent}
 
-If your client application is able to transfer a conversation to a person, such as a customer support agent, then you can add a *Connect to human agent* response type to initiate a transfer. Some of the built-in integrations, such as web chat and Intercom, support making transfers to service desk agents. If you are using a custom application, you must program the application to recognize when this response type is triggered.
-
-Consider adding support for transferring a customer to an agent in the following scenarios:
-
-- Any time a user asks to speak to a person. 
-
-  Create an intent that can recognize when a customer asks to speak to someone. After defining the intent, you can add a root-level dialog node that conditions on the intent. As the dialog node response, add a connect to human agent response type. At run time, if a user says he wants to speak to someone, this node is triggered and a transfer is initiated on the user's behalf.
-
-  You don't need to create an intent yourself. The **General** content catalog has a prebuilt intent named `General_Connect_to_Agent`. You can add the catalog to your skill, and use the `General_Connect_to_Agent` intent as the dialog node condition.
-  {: tip}
-
-- When the conversation covers a topic that is sensitive in nature, you can trigger a transfer. 
-
-  For example, an insurance company might want questions about bereavement benefits always to be handled by a person. Or, if a customer wants to close their account, you might want to transfer the conversation to a respresentative who is authorized to offer incentives to keep the customer's business.
-
-It is the responsibility of the external service to display a message that is shown to the user that explains that the conversation is being transferred. The dialog does not manage that communication itself.
+If your client application is able to transfer a conversation to a person, such as a customer support agent, then you can add a *Connect to human agent* response type to initiate the transfer. Some of the built-in integrations, such as web chat and Intercom, support making transfers to service desk agents. If you are using a custom application, you must program the application to recognize when this response type is triggered.
 
 To add a *Connect to human agent* response type, complete the following steps:
 
 1.  From the dialog node where you want to add the response type, click the dropdown menu in the **Assistant responds** field, and then choose **Connect to human agent**.
 
-1.  **Optional**. Add a message to share with the human agent to whom the conversation is transferred.
+1.  **Optional**. Add a message to share with the human agent to whom the conversation is transferred in the **Message to human agent** field.
+1.  Add a message to show to the customer to explain that they are being transferred. 
 
-The dialog transfer does not occur when you are testing nodes with this response type in the "Try it out" pane. You must access a node that uses this response type from a test deployment to see how your users will experience it.
+    You can add a message to show when agents are available and a message to show when agents are unavailable:
+
+    - **Response when agents are online**
+    - **Response when no agents are online**
+
+    **Web chat integration only**: The text you add to the **Response when agents are online** and **Response when no agents are online** fields are used for transfers in web chat version 3 and later. If you don't add your own messages, the messages that are specified in the [language source file](https://github.com/watson-developer-cloud/assistant-web-chat/tree/master/languages){: external} are used. 
+    
+    If you use this response type in multiple fields and want to use the same custom text each time, but don't want to have to add it to each node, you can change the default text that is used by the web chat by editing the language source file. Look for the `default_agent_availableMessage` and `default_agent_unavailableMessage` values. For more information about how to change web chat text, see [Languages](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-instance-methods#languages){: external}.
+
+1.  **Optional**: If the channel where you deploy the assistant is integrated with a service desk, you can add initial routing information to pass with the transfer request.
+
+    - Pick the integration type from the **Service desk routing** field.
+    - Add routing information that is meaningful to the service desk you are using.
+
+      <table>
+      <caption>Service desk routing options</caption>
+      <tr>
+      <th>Service desk type</th>
+      <th>Routing information</th>
+      <th>Description</th>
+      </tr>
+      <tr>
+      <td>Salesforce</td>
+      <td>Button ID</td>
+      <td>Specify a valid button ID from your Salesforce deployment. For more information, see <a href="https://cloud.ibm.com/docs/assistant?topic=assistant-deploy-salesforce#deploy-salesforce-routing">Adding routing logic for Salesforce transfers</a>.</td>
+      </tr>
+      <tr>
+      <td>Zendesk</td>
+      <td>Department</td>
+      <td>Specify a valid department name from your Zendesk account. For more information, see <a href="https://cloud.ibm.com/docs/assistant?topic=assistant-deploy-zendesk#deploy-zendesk-routing">Adding routing logic for Zendesk transfers</a>.</td>
+      </tr>
+      </table>
+
+The dialog transfer does not occur when you test dialog nodes with this response type in the "Try it out" pane of the dialog skill. You must access a node that uses this response type from an assistant-level integration, such as the Preview link, to see how your users will experience it.
 
 ### Adding an *Image* response type
 {: #dialog-overview-add-image}
@@ -688,7 +707,7 @@ This single node now provides the equivalent function of four separate nodes.
 
 To add conditional responses to a node, complete the following steps:
 
-1.  Click **Customize**, and set the **Multiple conditioned responses** switch to **On**.
+1.  Click **Customize**, and then set the **Multiple conditioned responses** switch to **On**.
 
     The node response section changes to show a pair of condition and response fields. You can add a condition and a response into them.
 1.  To customize a response further, click the **Edit response** ![Edit response](images/edit-slot.png) icon next to the response.

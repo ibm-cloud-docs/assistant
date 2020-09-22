@@ -435,11 +435,11 @@ You can [call actions in the actions skill from the dialog skill](/docs/assistan
 
 The number of actions you can create per skill depends on your plan type.
 
-| Plan     | Actions per skill | Customer says phrases per skill |
-|------------------|------------------:|-------------------:|
-| Premium          |             2,000 |             25,000 |
-| Plus             |             2,000 |             25,000 |
-| Lite, Plus Trial |               100 |             25,000 |
+| Plan     | Actions per skill | Steps per skill | Customer says phrases per skill |
+|----------|------------------:|----------------:|--------------------------------:|
+| Premium          |     2,000 |           5,000 |                          25,000 |
+| Plus             |     2,000 |           5,000 |                          25,000 |
+| Lite, Plus Trial         100 |           1,000 |                          25,000 |
 {: caption="Plan details" caption-side="top"}
 
 The default actions that are created for you automatically do count toward the total.

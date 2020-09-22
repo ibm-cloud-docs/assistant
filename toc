@@ -45,6 +45,7 @@ Watson Assistant (Managed)
             dialog-overview.md
             dialog-tips.md
             dialog-tasks.md
+            dialog-support.md
 
         entities.md
 

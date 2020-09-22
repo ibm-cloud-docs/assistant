@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-09-21"
 
 subcollection: assistant
 
@@ -134,10 +134,9 @@ If you have a Discovery service Lite plan, you are given an opportunity to upgra
 
       - To create a collection from data that is stored in a type of data source for which {{site.data.keyword.discoveryshort}} provides built-in support, pick a data source type.
 
-        1.  Provide the required information for the data source you choose, and then click **Connect**.
+        1.  **For some data collection types**: Provide the required information for the data source you choose, and then click **Connect**.
 
             For a list of the supported data types and details on how to set up access to them, see [Connecting to data sources](/docs/discovery?topic=discovery-sources){: external}.
-        1.  Indicate the frequency with which you want data from the data source to be synchronized with the collection you are creating in {{site.data.keyword.discoveryshort}}.
         1.  Specify the information that you want to extract from the data source and include in your {{site.data.keyword.discoveryshort}} collection.
 
             The options that are displayed differ depending on the data source type.
@@ -147,13 +146,17 @@ If you have a Discovery service Lite plan, you are given an opportunity to upgra
             - For file repositories, you specify directories or files.
             - For a web crawl data source, specify the base URL of a website that you want to crawl. The web page that you specify and any pages that it links to are crawled and a document is created per web page.
 
-            Give Watson a few minutes to start creating documents. As soon as the source starts to be ingested, the number of documents displayed on the {{site.data.keyword.discoveryshort}} details page increases. You might need to refresh the page. 
+              Optionally, select the **Apply FAQ extraction** checkbox to enable a beta feature that allows the {{site.data.keyword.discoveryshort}} service to extract question and answer pairs that it identifies on the website. If the answers to common questions are identified ahead of time, your assistant can more quickly find and return a concise answer when a customer asks a similar question.
             
             To get help with creating data sources, see [Troubleshooting](#skill-search-add-troubleshoot).
 
-        1.  Click **Save and sync objects**.
+        1.  Indicate the frequency with which you want data from the data source to be synchronized with the collection you are creating in {{site.data.keyword.discoveryshort}}.
+        
+        1.  Click **Save & Sync**.
 
-            The data collection is created. After the process completes, a summary page is displayed in {{site.data.keyword.discoveryshort}}, which is hosted in a separate web browser tab.
+            Give Watson a few minutes to start creating documents. As soon as the source starts to be ingested, the number of documents displayed on the {{site.data.keyword.discoveryshort}} details page increases. You might need to refresh the page.
+
+            After the digestion process is completed, a summary page is displayed in {{site.data.keyword.discoveryshort}}, which is hosted in a separate web browser tab.
 
       - To create a collection by uploading documents, click **Upload documents**.
 
@@ -256,11 +259,16 @@ If you upload a JSON file that contains repeating name values, then only the fir
     </tr>
     </table>
 
+1.  Specify the number of results to return.
+
+    The top three results are returned automatically. Can you choose to show fewer or more (up to 10) results in the response.
+
+    By default, customers can choose to see more results. If you don't want to give customers this choice, clear the **Include link for customers to view up to 10 results** checkbox.
 1.  Decide whether to be more selective with the answers that are returned.
 
     By default, all search query matches, regardless of the confidence score of the match, are returned as search results. You can limit the search results to include only matches with a confidence score of 20% or higher in {{site.data.keyword.discoveryshort}}. 
     
-    To enable the beta feature that filters the results, set the **Refine results to return more selective answers** switch to **On**.
+    To enable the beta feature that filters the results, toggle the *Refine results to return more selective answers* switch to **On**.
 
 1.  Click **Try it** to open the "Try it out" pane for testing. Enter a test message to see the results that are returned when your configuration choices are applied to the search. Make adjustments as necessary.
 
@@ -433,4 +441,4 @@ You might want to do so temporarily, while you are setting up the integration. O
 To prevent the search skill from being triggered, complete the following steps:
 
 1.  From the **Assistants** page, click the menu for your assistant, and then choose **Settings**.
-1.  Open the *Search Skill* page, and then click to set the switch to **Disabled**.
+1.  Open the *Search Skill* page, and then click to switch the toggle to **Disabled**.

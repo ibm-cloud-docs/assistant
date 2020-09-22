@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-09-22"
 
 subcollection: assistant
 
@@ -74,6 +74,14 @@ You can include special characters, such as hyphens or periods, in context varia
 - Parentheses `()`
 - More than one apostrophe `''`
 - Quotation marks `"`
+
+When you refer to a context variable in a text response or a dialog node condition, you can use the short syntax. 
+
+For example, `Hello, $name`. If the `$name` context variable contains `Sam`, then the response is shown as `Hello, Sam`.
+
+If you want to reference a context variable by using the full syntax in a text response, be sure to surround the context variable in `<? ?>`. For example, `Hello, <? context['name'] ?>`.
+
+If you want to reference a context variable that has multiple fields, such as `$context.integrations.chat.browser_info.page_url`. To use the full sytnax, specify `<? context['integrations']['chat']['browser_info']['page_url'] ?>`.
 
 ### Shorthand syntax for entities
 {: #expression-language-shorthand-entities}
