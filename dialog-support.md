@@ -42,7 +42,7 @@ Design your dialog to recognize customer requests for help and address them. Add
 
 For example, you might add one of the following intents:
 
-- `#call_support`: Recognizes user intent examples such as `How do I reach support?` or `What's your toll-free number?`. The dialog node conditions on this intent and responds with: `Call 1-800-555-0123 to reach a call center agents at any time.`
+- `#call_support`: Recognizes user intent examples such as `How do I reach support?` or `What's your toll-free number?`. The dialog node conditions on this intent and responds with: `Call 1-800-555-0123 to reach a call center agent at any time.`
 - `#open_support_ticket`: Recognizes user intent example such as `How do I get help?` or `Who can help me with an issue I'm having?`. The dialog node conditions on this intent and responds with: `Go to [Support Center](https://example.com/support) and open a support ticket.`
 
 If you deploy your assistant with an integration that has built-in service desk support, you can use the special *Connect to human agent* response type in your dialog response to initiate a transfer.
@@ -54,7 +54,7 @@ Design your dialog so that it can transfer customers to human agents. Consider a
 
 - Any time a user asks to speak to a person. 
 
-  Create an intent that can recognize when a customer asks to speak to someone. After defining the intent, you can add a root-level dialog node that conditions on the intent. As the dialog node response, add a connect to human agent response type. At run time, if a user says he wants to speak to someone, this node is triggered and a transfer is initiated on the user's behalf.
+  Create an intent that can recognize when a customer asks to speak to someone. After defining the intent, you can add a root-level dialog node that conditions on the intent. As the dialog node response, add a *Connect to human agent* response type. At run time, if the user asks to speak to someone, this node is triggered and a transfer is initiated on the user's behalf.
 
 - When the conversation broaches a topic that is sensitive in nature, you can start a transfer. 
 
