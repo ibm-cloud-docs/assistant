@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-19"
+lastupdated: "2020-09-22"
 
 subcollection: assistant
 
@@ -26,12 +26,12 @@ subcollection: assistant
 # Defining responses using the JSON editor
 {: #dialog-responses-json}
 
-In some situations, you might need to define responses using the JSON editor. (For more information about dialog responses, see [Responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-responses)). Editing the response JSON gives you direct access to the data that will be returned to the communication channel or custom application.
+In some situations, you might need to define responses using the JSON editor. (For more information about dialog responses, see [Responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-responses)). Editing the response JSON gives you direct access to the data that will be returned to the integration or custom client.
 
 ## Generic JSON format
 {: #dialog-responses-json-generic}
 
-The generic JSON format for responses is used to specify responses that are intended for any channel. This format can accommodate various response types that are supported by Slack and Facebook integrations, and can also be implemented by a custom client application. (This is the format that is used by default for dialog responses defined using the {{site.data.keyword.conversationshort}} tool.)
+The generic JSON format for responses is used to specify responses that are intended for any integration or custom client. This format can accommodate various response types that are supported by multiple integrations, and can also be implemented by a custom client application. (This is the format that is used by default for dialog responses defined using the {{site.data.keyword.conversationshort}} tool.)
 
 For information about how to open the JSON editor for a dialog node response from the tool, see [Context variables in the JSON editor](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-context-var-json).
 
@@ -92,22 +92,22 @@ To specify an interactive response in the generic JSON format, insert the approp
 
 For more information about how to specify each supported response type using JSON objects, see [Response types](#dialog-responses-json-response-types).
 
-If you are using the {{site.data.keyword.conversationshort}} connector, the response is converted at run time into the format expected by the channel (Slack or Facebook Messenger). If the response contains multiple media types or attachments, the generic response is converted into a series of separate message payloads as needed. The connector then sends each message payload to the channel in a separate message.
+If you are using an integration, the response is converted at run time into the format expected by the channel. If the response contains multiple media types or attachments, the generic response is converted into a series of separate message payloads as needed. These are sent to the channel in separate messages.
 
-**Note:** When a response is split into multiple messages, the {{site.data.keyword.conversationshort}} connector sends these messages to the channel in sequence. It is the responsibility of the channel to deliver these messages to the end user; this can be affected by network or server issues.
+**Note:** When a response is split into multiple messages, the integration sends these messages to the channel in sequence. It is the responsibility of the channel to deliver these messages to the end user; this can be affected by network or server issues.
 
 If you are building your own client application, your app must implement each response type as appropriate. For more information, see [Implementing responses](/docs/assistant?topic=assistant-api-dialog-responses).
 
 ## Native JSON format
 {: #dialog-responses-json-native}
 
-In addition to the generic JSON format, the dialog node JSON also supports channel-specific responses written using the native Slack and Facebook Messenger formats. These formats are also supported by the {{site.data.keyword.conversationshort}} connector. You might want to use the native JSON formats if you know your workspace will only be integrated with one channel type, and you need to specify a response type that is not currently supported by the generic JSON format.
+In addition to the generic JSON format, the dialog node JSON also supports channel-specific responses written using the native JSON format for a specific channel (such as Slack or Facebook Messenger). You might want to use the native JSON format to specify a response type that is not currently supported by the generic JSON format. By checking the integration-specific context (`context.integrations`), a dialog node can determine the originating integration and then send appropriate native JSON responses.
 
-You can specify native JSON for Slack or Facebook using the appropriate field in the dialog node response:
+You can specify native JSON for Slack or Facebook using the `output.integrations` object in the dialog node response. Each child of `output.integrations` represents output intended for a specific integration:
 
-- `output.slack`: insert any JSON you want to be included in the `attachment` field of the Slack response. For more information about the Slack JSON format, see the Slack [documentation](https://api.slack.com/messaging/composing){: external}.
+- `output.integrations.slack`: any JSON response you want to be included in the `attachment` field of a response intended for Slack. For more information about the Slack JSON format, see the Slack [documentation](https://api.slack.com/messaging/composing){: external}.
 
-- `output.facebook`: insert any JSON you want included in the `message.attachment.payload` field of the Facebook response. For more information about the Facebook JSON format, see the Facebook [documentation](https://developers.facebook.com/docs/messenger-platform/send-messages/templates){: external}.
+- `output.integrations.facebook`: any JSON you want included in the `message` field of a response intended for Facebook Messenger. For more information about the Facebook JSON format, see the Facebook [documentation](https://developers.facebook.com/docs/messenger-platform/send-messages/templates){: external}.
 
 ## Response types
 {: #dialog-responses-json-response-types}
