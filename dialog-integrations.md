@@ -60,16 +60,16 @@ For example, if you passed the value `"mvp:true"` in the JSON payload, you can a
 
 When you use the web chat integration, information about the web browser that your customer is using to access the web chat is automatically collected and stored. The information is stored in the `context.integrations.chat.browser_info` object. 
 
-You can design your dialog to take advantage of details about the web browser in use. The following properties are taken from the Javascript `window` object that is created to render the chat window in the web browser:
+You can design your dialog to take advantage of details about the web browser in use. The following properties are taken from the `window` object that represents the window in which the web chat is running:
 
 - `browser_name`: The browser name, such as `chrome`, `edge`, or `firefox`.
 - `browser_version`: The browser version, such as `80.0.0`.
 - `browser_OS`: The operating system of the customer's computer, such as `Mac OS`.
 - `language`: The default locale code of the browser, such as `en-US`.
-- `page_url`: Full URL of the web page in which the web chat is embedded.
-- `screen_resolution`: Specifies the height and width of the browser window in which the web page is displayed. For example: `width: 1440, height: 900`.
+- `page_url`: Full URL of the web page in which the web chat is embedded. For example: `https://www.example.com/products`
+- `screen_resolution`: Specifies the height and width of the browser window in which the web page is displayed. For example: `width: 1440, height: 900`
 - `user_agent`: Content from the User-Agent request header. For example: `Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:80.0) Gecko/20100101 Firefox/80.0`
-- `client_ip_address`: IP address of the customer's computer.
+- `client_ip_address`: IP address of the customer's computer. For example: `183.49.92.42`
 
 ### Example: Using page URL information in your dialog
 {: #dialog-integrations-chat-browser-info-example}
