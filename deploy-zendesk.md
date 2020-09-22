@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-09-22"
 
 subcollection: assistant
 
@@ -217,4 +217,28 @@ To secure the Zendesk connection, complete the following steps:
 
     After writing a function that ensures that name and email values are always provided, set the *Authenticate anonymous user chat transfers* switch to **On**.
 
-If you haven't yet, update your dialog to make sure it understands when users request to speak to a person, and can transfer the conversation properly. For more information, see [Adding transfer support to your dialog](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-dialog-prereq).
+If you haven't yet, update your dialog to make sure it understands when users request to speak to a person, and can transfer the conversation properly. For more information, see [Adding chat transfer support](/docs/assistant?topic=assistant-dialog-support#dialog-support-transfers).
+
+## Adding routing logic for transfers
+{: #deploy-zendesk-routing}
+
+When you enable transfers to the Zendesk service desk, no routing preferences are specified. The conversation is sent to any available agent.
+
+You can specify a routing preference for specific topics of conversation in your dialog. When specified, the chat is transferred to the department that you specify. You can choose a department that you know has agents who are best able to address the topic. For example, your dialog might have a root dialog node that conditions on a `#close_account` intent. For that branch of the conversation only, you can transfer customers to agents in the Sales department who are authorized to offer incentives as a way to retain customers.
+
+Before you perform this procedure, determine which department you want users to be routed to.
+
+To add custom routing logic, complete the following steps:
+
+1.  From the Dialog page, find the root dialog node for the branch of the conversation that you want to route to a specific Zendesk department.
+
+1.  Find the dialog node in the branch where you want the transfer to take place, and then add the *Connect to human agent* response type as the dialog node response type.
+
+    For more information, see [Adding a *Connect to human agent* response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-connect-to-human-agent).
+
+1.  After you add the response type and customize the transfer messages, select *Zendesk* from the **Service desk routing** field.
+
+1.  In the **Department** field, add the department to which you want the assistant to transfer customers who want to discuss this topic. For example, `sales`.
+
+    Be sure to specify the exact right syntax for the department name. The value is not validated by the service as you add it to your dialog.
+    {: note}

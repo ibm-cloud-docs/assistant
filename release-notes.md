@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-03"
+lastupdated: "2020-09-22"
 
 subcollection: assistant
 
@@ -60,6 +60,24 @@ The change log lists changes that were made this year ordered by the date they w
 
 For more information about what's new in the web chat integration, see the [Web Chat release notes](/docs/assistant?topic=assistant-release-notes-chat).
 {: tip}
+
+## 22 September 2020
+{: #22September2020}
+<!--1.112-->
+
+- **Search skill improvements**: The following improvements were made to the search skill:
+
+  - **Control the number of search results**: You can now customize the number of search results that are shown in a response from the search skill. For more information, see [Configure the search](/docs/assistant?topic=assistant-skill-search-add#skill-search-add-configure).
+
+  - **FAQ extraction is available for web crawl data collections**: When you create a web crawl data collection type, you can now enable the FAQ extraction beta feature. FAQ extraction allows the {{site.data.keyword.discoveryshort}} service to identify question and answer pairs that it finds as it crawls the website. For more information, see [Create a data collection](/docs/assistant?topic=assistant-skill-search-add#skill-search-add-create-discovery-collection).
+
+- **Chat transfer improvements**: When you add the *Connect to human agent* response type to a dialog node, you can now define messages to show to your customers during the transfer, and can specify service desk agent routing preferences. For more information, see [Adding a *Connect to human agent* response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-connect-to-human-agent).
+
+## 16 September 2020
+{: #16September2020}
+<!--1.111-->
+
+- **Search skill refinement change**: The search refinement beta feature that was added in [June](#24June2020) now is disabled by default. Enable the feature to refine the search results that are returned from the {{site.data.keyword.discoveryshort}} service. For more information, see [Configure the search](/docs/assistant?topic=assistant-skill-search-add#skill-search-add-configure).
 
 ## 25 August 2020
 {: #25August2020}

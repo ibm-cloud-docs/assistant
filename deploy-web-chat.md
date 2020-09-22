@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-09-22"
 
 subcollection: assistant
 
@@ -82,16 +82,13 @@ To add the assistant to a web page on your company website, complete the followi
 
 1.  **Optional**: To configure support for transferring conversations to a service desk agent, click the **Live agent** tab. For more information, see [Adding service desk support](#deploy-web-chat-haa).
 
-1.  **Optional**: To secure the web chat, click the **Security** tab. For more information, see [Securing the web chat](#deploy-web-chat-security). 
+1.  **Optional**: To give your customers a way to reset the conversation if they get stuck, turn on suggestions. Click the **Suggestions** tab. For more information, see [Showing more suggestions](#deploy-web-chat-alternate).
+
+1.  **Optional**: To secure the web chat, click the **Security** tab. For more information, see [Securing the web chat](#deploy-web-chat-security).
 
 1.  Click the **Embed** tab.
 
     A code snippet is displayed that defines the chat window implementation. You will add this code snippet to your web page. The code snippet contains an HTML script element. The script calls JavaScript code that is hosted on an IBM site. The code creates an instance of a widget that communicates with the assistant. The generated code includes a region and unique integration ID. Do not change these parameter values.
-
-1.  To give your customers a way to reset the conversation if they get stuck, turn on suggestions.
-
-    Only enable suggestions if your web chat is connected to a service desk solution. For more information, see [Showing more suggestions](#deploy-web-chat-alternate).
-    {: note}
 
 1.  Copy the `script` HTML element.
 
@@ -181,13 +178,37 @@ A developer can customize the home screen even more:
 ## Showing more suggestions ![Beta](images/beta.png)
 {: #deploy-web-chat-alternate}
 
-*Suggestions* give your customers a way to try something else when the current exchange with the assistant isn't delivering what they expect. A question mark icon ![Question mark icon](images/question-mark.png) is displayed in the web chat that customers can click at any time to see other topics that might be of interest or to connect to a service desk agent. Customers can click a suggested topic to submit it as input or click the *x* icon to close the suggestions list.
+*Suggestions* give your customers a way to try something else when the current exchange with the assistant isn't delivering what they expect. A question mark icon ![Question mark icon](images/question-mark.png) is displayed in the web chat that customers can click at any time to see other topics that might be of interest or, if configured, to request support. Customers can click a suggested topic to submit it as input or click the **X** icon to close the suggestions list.
 
-The suggestions are shown also in situations where the customer might otherwise become frustrated. For example, if a customer uses different wording to ask the same question multiple times in succession, and the same dialog node is triggered each time, then related topic suggestions are shown instead of the triggered node's response. The list of suggestions gives the customer a quick way to get the conversation back on track or get help from a person.
+The suggestions are shown automatically in situations where the customer might otherwise become frustrated. For example, if a customer uses different wording to ask the same question multiple times in succession, and the same dialog node is triggered each time, then related topic suggestions are shown instead of the triggered node's response. The suggestions that are offered give the customer a quick way to get the conversation back on track.
 
 The suggestions list is populated with dialog nodes that condition on intents that are related in some way to the matched intent. The intents are ones that the AI model considered to be possible alternatives, but that didn't meet the high confidence threshold that is required for a node to be listed as a disambiguation option. Any dialog node with a node name (or external node name) can be shown as a suggestion, unless its **Show node name** setting is set to **Off**.
 
-Only enable suggestions if your web chat is connected to [a service desk solution](#deploy-web-chat-haa).
+To enable suggestions, complete the following steps:
+
+1.  Open the *Suggestion* tab, and set the switch to **On**.
+
+    The *Include a connection to support* section is displayed where you can configure whether and how to give customers the ability to connect with support.
+1.  Decide when you want an option to connect with support to be shown in the suggestions list. The choices are:
+
+    - **Always**: Always shows the option to get support in the list of suggestions. 
+    - **Never**: Never shows the option to get support in the list of suggestions.
+    - **After one failed attempt**: Adds the option to the list only if the customer reached a node with an anything_else condition in the previous conversation turn or reaches the same dialog node for a second time in succession.
+
+1.  In the **Option label** field, add a label for the option.
+
+    The text in the **Option label** field has two functions:
+    
+    - The text is shown in the suggestions list as an option for customers to select.
+    - When selected by a customer, the text is sent to your assistant as a new message. The label must be able to function as input that your dialog understands and knows how to handle.
+    
+    By default, the option label `Connect with agent` is used. If your web chat is integrated with a service desk, this message initiates a conversation transfer, as long as your dialog is designed to handle transfer requests.
+    
+    If your web chat is not integrated with a service desk, you can change the option label to a message that helps your customers reach whatever form of support you do offer. If you offer a toll-free support line, you might add `Get the support line phone number`. Or if you offer an online support request form, you might add `Open a support ticket`.
+    
+    Whether you use the default option label or add your own, make sure your dialog is designed to recognize the message and respond to it appropriately. For more information, see [Connecting customers with support](/docs/assistant?topic=assistant-dialog-support).
+
+For web chat version 2.4, you cannot enable suggestions unless your web chat is connected to [a service desk solution](#deploy-web-chat-haa).
 
 ## Dialog considerations
 {: #deploy-web-chat-dialog}
@@ -521,39 +542,7 @@ The following service desk offerings are supported:
 1.   {: #deploy-web-chat-zendesk}[Zendesk](/docs/assistant?topic=assistant-deploy-zendesk)
 1.   {: #deploy-web-chat-salesforce}[Salesforce](/docs/assistant?topic=assistant-deploy-salesforce)
 
-After you set up the service desk integration, you must update your dialog to ensure it understands user requests to speak to someone, and can transfer the conversation properly.
-
-## Adding transfer support to your dialog
-{: #deploy-web-chat-dialog-prereq}
-
-If no dialog skill is associated with your assistant, create one or add one to your assistant now. See [Building a dialog](/docs/assistant?topic=assistant-dialog-overview) for more details.
-
-The web chat integration shows a **Connect to agent** button in situations where the assistant anticipates that customers might need extra help. You can make edits to your dialog to support the following additional use cases:
-
-- Recognize when a customer explicitly asks to speak to a person.
-- Program sensitive topics to be handled primarily by an agent to deliver a more personalized experience.
-
-Complete these steps in your dialog skill so the assistant can pass the conversation to a service desk agent:
-
-1.  Add an intent to your skill that can recognize a user's request to speak to a human.
-
-    You can create your own intent or add the prebuilt intent named `#General_Connect_to_Agent` that is provided with the **General** content catalog.
-
-1.  Add a root node to your dialog that conditions on the intent that you created in the previous step. Choose **Connect to human agent** as the response type.
-
-1.  To ensure that a useful summary is provided to service desk agents when a conversation is transferred to them, fill in the **external node name** field of the root node of each dialog branch.
-
-      ![Screen capture of the field in the node edit view where you add the node purpose summary.](images/disambig-node-purpose.png)
-
-      Every dialog branch can be processed by the assistant while it chats with a customer, including branches with root nodes in folders. Add a summary of the purpose of the dialog branch to the root node of each branch. For example, *Find a store*.
-
-1.  If a child node in any dialog branch conditions on a follow-up request or question that you do not want the assistant to handle, add a **Connect to human agent** response type to the node.
-
-    For example, you might want to add this response type to nodes that cover sensitive issues that only a human should handle or that track when an assistant repeatedly fails to understand a user.
-
-    At run time, if the conversation reaches this child node, the dialog is passed to a human agent at that point.
-
-Your dialog is now ready to support transfers from your assistant to service desk agents.
+After you set up the service desk integration, you must update your dialog to ensure it understands user requests to speak to someone, and can transfer the conversation properly. For more information, see [Adding chat transfer support](/docs/assistant?topic=assistant-dialog-support#dialog-support-transfers).
 
 ## Web chat integration limits
 {: #deploy-web-chat-limits}
