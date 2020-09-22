@@ -177,4 +177,4 @@ To add custom routing logic, complete the following steps:
     Be sure to specify the exact right syntax for the `button_id` value. The value is not validated by the service as you add it to your dialog.
     {: note}
 
-If the special routing that you apply fails to deliver the message for any reason, the transferred message is treated like a new message in Salesforce. The basic Salesforce routing rules are followed, not the default routing that you specified in the integration setup page.
+If the special routing that you apply fails to deliver the message for any reason, the routing preference that is specified in the Salesforce service desk setup page is used. If both routing preferences fail, the transferred message is treated like a new message in Salesforce. The standard Salesforce routing rules are followed.
