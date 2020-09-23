@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-22"
+lastupdated: "2020-09-23"
 
 subcollection: assistant
 
@@ -149,9 +149,24 @@ Update your dialog to make sure it understands when users request to speak to a 
 ## Adding routing logic for transfers
 {: #deploy-salesforce-routing}
 
-When you enable transfers to the Salesforce service desk, you also copy and paste code snippets from Salesforce into the service desk transfer setup page. These code snippets define how transferred conversations are handled within Salesforce. Routing rules are included in the initial transfer configuration. The routing rules identify the agents to whom messages from the assistant are transferred by default. 
+When you enable transfers to the Salesforce service desk, the default routing preference that you specify is used. However, there might be times when you want to route a customer to a different Salesforce agent queue. For example, your dialog might have a root dialog node that conditions on a `#close_account` intent. For that branch of the conversation only, you want to transfer customers to agents in the sales queue who are authorized to offer incentives as a way to retain customers. You can direct transfers to specific agent queues by adding routing logic to your dialog.
 
-You can apply different routing rules to specific topics of conversation in your dialog to send customers to the group of agents who are most capable of addressing the topic. For example, your dialog might have a root dialog node that conditions on a `#close_account` intent. For that branch of the conversation only, you want to transfer customers to agents who are authorized to offer incentives to retain customers.
+You can specify alternate routing preferences based on:
+
+- browser information
+- the current topic of conversation
+
+### Routing based on browser information
+{: #deploy-salesforce-routing-browser-info}
+
+When a customer interacts with the web chat, information about the current web browser session is collected. For example, the URL of the current page is collected. You can use this information to add custom routing rules to your dialog. For example, if the customer is on the Products page when a transfer to a human is requested, you might want to route the chat transfer to a queue with agents who are experts in your product portfolio. If the customer is on the Returns page, you might want to route the chat transfer to a queue with agents who know how to help customers return merchandise. 
+
+For more information, see [Web chat: Accessing browser information](/docs/assistant?topic=assistant-dialog-integrations#dialog-integrations-chat-browser-info).
+
+### Routing by topic
+{: #deploy-salesforce-routing-topic}
+
+When you enable transfers to the Salesforce service desk, you copy and paste code snippets from Salesforce into the service desk transfer setup page. These code snippets define how transferred conversations are handled within Salesforce. Routing rules are included in the initial transfer configuration. The routing rules identify the queue of agents to which messages from the assistant are transferred by default.
 
 The code that you add to the setup page when you configure the service desk integration shares the following required information with {{site.data.keyword.conversationshort}}:
 
@@ -164,7 +179,7 @@ To override the default routing rules, you must specify a new value for the `but
 
 To add custom routing logic, complete the following steps:
 
-1.  From the Dialog page, find the root dialog node for the branch of the conversation that you want to route to a specific group of Salesforce agents which is distinct from the default group.
+1.  From the *Dialog* page, find the root dialog node for the branch of the conversation that you want to route to a specific group of Salesforce agents which is distinct from the default group.
 
 1.  Find the dialog node in the branch where you want the transfer to take place, and then add the *Connect to human agent* response type as the dialog node response type.
 
