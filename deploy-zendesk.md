@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-22"
+lastupdated: "2020-09-23"
 
 subcollection: assistant
 
@@ -222,15 +222,30 @@ If you haven't yet, update your dialog to make sure it understands when users re
 ## Adding routing logic for transfers
 {: #deploy-zendesk-routing}
 
-When you enable transfers to the Zendesk service desk, no routing preferences are specified. The conversation is sent to any available agent.
+When you enable transfers to the Zendesk service desk, no routing preferences are specified. The conversation is sent to any available agent. However, there might be times when you want to route a customer to a specific Zendesk department. For example, your dialog might have a root dialog node that conditions on a `#close_account` intent. For that branch of the conversation only, you want to transfer customers to agents in the Sales department who are authorized to offer incentives as a way to retain customers. You can direct transfers to specific departments by adding routing logic to your dialog.
 
-You can specify a routing preference for specific topics of conversation in your dialog. When specified, the chat is transferred to the department that you specify. You can choose a department that you know has agents who are best able to address the topic. For example, your dialog might have a root dialog node that conditions on a `#close_account` intent. For that branch of the conversation only, you can transfer customers to agents in the Sales department who are authorized to offer incentives as a way to retain customers.
+You can specify alternate routing preferences based on:
+
+- browser information
+- the current topic of conversation
+
+### Routing based on browser information
+{: #deploy-zendesk-routing-browser-info}
+
+When a customer interacts with the web chat, information about the current web browser session is collected. For example, the URL of the current page is collected. You can use this information to add custom routing rules to your dialog. For example, if the customer is on the Products page when a transfer to a human is requested, you might want to route the chat transfer to agents who are experts in your product portfolio. If the customer is on the Returns page, you might want to route the chat transfer to agents who know how to help customers return merchandise. 
+
+For more information, see [Web chat: Accessing browser information](/docs/assistant?topic=assistant-dialog-integrations#dialog-integrations-chat-browser-info).
+
+### Routing by topic
+{: #deploy-zendesk-routing-topic}
+
+You can specify a routing preference for specific topics of conversation in your dialog. When specified, the chat is transferred to the department that you designate. You can choose a department that you know has agents who are best able to address the topic.
 
 Before you perform this procedure, determine which department you want users to be routed to.
 
 To add custom routing logic, complete the following steps:
 
-1.  From the Dialog page, find the root dialog node for the branch of the conversation that you want to route to a specific Zendesk department.
+1.  From the *Dialog* page, find the root dialog node for the branch of the conversation that you want to route to a specific Zendesk department.
 
 1.  Find the dialog node in the branch where you want the transfer to take place, and then add the *Connect to human agent* response type as the dialog node response type.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-22"
+lastupdated: "2020-09-23"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -429,9 +429,9 @@ To add a *Connect to human agent* response type, complete the following steps:
 1.  **Optional**. Add a message to share with the human agent to whom the conversation is transferred in the **Message to human agent** field.
 1.  Add a message to show to the customer to explain that they are being transferred. 
 
-    You can add a message to show when agents are available and a message to show when agents are unavailable.
+    You can add a message to show when agents are available and a message to show when agents are unavailable. Each message can be up to 100 characters in length.
 
-    **Web chat integration only**: The text you add to the **Response when agents are online** and **Response when no agents are online** fields is used for transfers in web chat version 3 and later. If you don't add your own messages, the hint text (the grayed out text that is displayed as example messages) is used.
+    **Web chat built-in service desk integrations only**: The text you add to the *Response when agents are online* and *Response when no agents are online* fields is used for transfers in web chat version 3 and later. If you don't add your own messages, the hint text (the grayed out text that is displayed as the example messages) is used.
     
     If you use this response type in multiple nodes and want to use the same custom text each time, but don't want to have to edit each node individually, you can change the default text that is used by the web chat. To change the default messages, edit the [language source file](https://github.com/watson-developer-cloud/assistant-web-chat/tree/master/languages){: external}. Look for the `default_agent_availableMessage` and `default_agent_unavailableMessage` values. For more information about how to change web chat text, see [Languages](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-instance-methods#languages){: external}.
     {: tip}
