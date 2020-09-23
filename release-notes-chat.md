@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-22"
+lastupdated: "2020-09-23"
 
 subcollection: assistant
 
@@ -39,6 +39,8 @@ If you want to evaluate changes that are introduced in a web chat release before
 *Release date: 22 September 2020*
 
 - **Choose when a link to support is included in suggestions**: The Suggestions beta feature has moved to its own tab. Now you can enable suggestions even if your web chat is not set up to connect to a service desk solution. That's because now you can control if and when the option to connect to customer support is available from the suggestions list. For more information, see [Showing more suggestions](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-alternate).
+
+- **Search result format change**: To support the ability to show more than 3 search results in a response, the search skill response type format changed. If you are using `pre:receive` or `receive` handlers to process search results, you might need to update your code. The `results` property was replaced by the `primary_results` and `additional_results` properties. For more information about the new search skill response type format, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#message){: external}.
 
 ## 2.4.0
 {: #2.4.0}
