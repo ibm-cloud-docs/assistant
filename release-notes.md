@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-22"
+lastupdated: "2020-09-24"
 
 subcollection: assistant
 
@@ -35,7 +35,7 @@ API requests require a version parameter that takes a date in the format `versio
 Send the version parameter with every API request. {{site.data.keyword.conversationshort}} uses the API version for the date you specify, or the most recent version before that date. Don't default to the current date. Instead, specify a date that matches a version that is compatible with your app, and don't change it until your app is ready for a later version.
 
 - The current version for v1 is `2020-04-01`.
-- The current version for v2 is `2020-04-01`.
+- The current version for v2 is `2020-09-24`.
 - The dialog skill "Try it out" pane uses version `2018-07-10`.
 - The search skill "Try it out" pane uses {{site.data.keyword.discoveryshort}} v1 API version `2018-12-03`.
 
@@ -64,6 +64,14 @@ For more information about what's new in the web chat integration, see the [Web 
 ## 22 September 2020
 {: #22September2020}
 <!--1.112-->
+
+- **New API version**: The current v2 API version is now `2020-09-24`. In this version, the structure of the `search` response type has changed. The `results` property has been removed and replaced with two new properties:
+
+  - `primary_results` property includes the search results that should be displayed in the initial response to a user query.
+
+  - `additional_results` property includes search results that can be displayed if the user wants to see more.
+
+  The search skill configuration determines how many search results are included in the `primary_results` and `additional_results` properties.
 
 - **Search skill improvements**: The following improvements were made to the search skill:
 
