@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-24"
+lastupdated: "2020-09-23"
 
 subcollection: assistant
 
@@ -30,7 +30,7 @@ subcollection: assistant
 Find out what's new in {{site.data.keyword.conversationfull}}.
 {: shortdesc}
 
-This topic describes the new features, changes, and bug fixes for the core product. For more information about what's new in the web chat integration, see the [Web Chat release notes](/docs/assistant?topic=assistant-release-notes-chat).
+This topic describes the new features, changes, and bug fixes in each release of the product. For more information about changes in the web chat integration, see the [Web Chat release notes](/docs/assistant?topic=assistant-release-notes-chat).
 
 ## Service API Versioning
 {: #release-notes-api-version}
@@ -41,8 +41,6 @@ Send the version parameter with every API request. {{site.data.keyword.conversat
 
 - The current version for v1 is `2020-04-01`.
 - The current version for v2 is `2020-09-24`.
-- The dialog skill "Try it out" pane uses version `2018-07-10`.
-- The search skill "Try it out" pane uses {{site.data.keyword.discoveryshort}} v1 API version `2018-12-03`.
 
 ## Beta features
 {: #release-notes-beta}
@@ -63,6 +61,14 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 The change log lists changes that were made this year ordered by the date they were released.
 
+## 24 September 2020
+{: #24September2020}
+<!--1.113-->
+
+- **Introducing the containment metric!**: Want a quick way to see where you assistant is losing customers? Enable the new containment metric to find out. The containment metric measures the rate at which your assistant is able to address a customer's goal without human intervention. For conversations that are not contained, you can review the logs to understand what led customers to seek help outside of the assistant. For the metric to work, you must design your dialog to flag requests for additional support when they occur. For more information, see [Graphs and statistics](/docs/assistant?topic=assistant-logs-overview#logs-overview-containment).
+
+- **Chat transfer improvements**: When you add the *Connect to human agent* response type to a dialog node, you can now define messages to show to your customers during the transfer, and can specify service desk agent routing preferences. For more information, see [Adding a *Connect to human agent* response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-connect-to-human-agent).
+
 ## 22 September 2020
 {: #22September2020}
 <!--1.112-->
@@ -70,7 +76,6 @@ The change log lists changes that were made this year ordered by the date they w
 - **New API version**: The current v2 API version is now `2020-09-24`. In this version, the structure of the `search` response type has changed. The `results` property has been removed and replaced with two new properties:
 
   - `primary_results` property includes the search results that should be displayed in the initial response to a user query.
-
   - `additional_results` property includes search results that can be displayed if the user wants to see more.
 
   The search skill configuration determines how many search results are included in the `primary_results` and `additional_results` properties.
@@ -80,8 +85,6 @@ The change log lists changes that were made this year ordered by the date they w
   - **Control the number of search results**: You can now customize the number of search results that are shown in a response from the search skill. For more information, see [Configure the search](/docs/assistant?topic=assistant-skill-search-add#skill-search-add-configure).
 
   - **FAQ extraction is available for web crawl data collections**: When you create a web crawl data collection type, you can now enable the FAQ extraction beta feature. FAQ extraction allows the {{site.data.keyword.discoveryshort}} service to identify question and answer pairs that it finds as it crawls the website. For more information, see [Create a data collection](/docs/assistant?topic=assistant-skill-search-add#skill-search-add-create-discovery-collection).
-
-- **Chat transfer improvements**: When you add the *Connect to human agent* response type to a dialog node, you can now define messages to show to your customers during the transfer, and can specify service desk agent routing preferences. For more information, see [Adding a *Connect to human agent* response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-connect-to-human-agent).
 
 ## 16 September 2020
 {: #16September2020}

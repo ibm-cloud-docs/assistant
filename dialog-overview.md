@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-23"
+lastupdated: "2020-09-24"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -421,6 +421,9 @@ To add a rich response, complete the following steps:
 {: #dialog-overview-add-connect-to-human-agent}
 
 If your client application is able to transfer a conversation to a person, such as a customer support agent, then you can add a *Connect to human agent* response type to initiate the transfer. Some of the built-in integrations, such as web chat and Intercom, support making transfers to service desk agents. If you are using a custom application, you must program the application to recognize when this response type is triggered.
+
+If you want to take advantage of the *containment* metric to track your assistant's success rate, add this response type to your dialog or use an alternate method to identify when customers are directed to outside support. For more information, see [Measuring containment](/docs/assistant?topic=assistant-dialog-support#dialog-support-containment).
+{: tip}
 
 To add a *Connect to human agent* response type, complete the following steps:
 

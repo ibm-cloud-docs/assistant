@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-02"
+lastupdated: "2020-09-24"
 
 subcollection: assistant
 
@@ -31,27 +31,18 @@ The Overview page provides a summary of the interactions between users and your 
 
 Use the metrics to answer questions like:
 
-* Which days had the largest or smallest numbers of conversations in the last month?
 * What was the average number of conversations per week during the last month?
+* How often did customers need to go elsewhwere for support?
 * Which intents appeared most often last week?
 * Which entity values were recognized the most times during February?
+* Which days had the largest or smallest numbers of conversations in the last month?
 
 To see metrics information, select **Overview** in the navigation bar.
-
-  ![Overview page](images/oview.png)
 
 ## Controls
 {: #logs-overview-controls}
 
 You can use the following controls to filter the information:
-
-- *Intents* and *Entities* filters - Use either of these drop-down filters to show data for a specific intent or entity in your skill.
-
-  **Important** - The intent and entities filters are populated by the intents and entities in the ***skill***, and not what is in the data source. If you have [selected a data source](/docs/assistant?topic=assistant-logs#logs-deploy-id) other than the skill, you might not see an intent or entity from your data source logs as an option in the filters, unless those intents and entities are also in the skill.
-
-- *Refresh data* - Allows you to refresh the Overview page statistics immediately. The Overview page shows when the data that it displays was last updated. You can select **Refresh data** if you think that newer data might be available.
-
-  The statistics represent external traffic (from users or API calls) that has interacted with your assistant; they do not include interactions from the *Try it out* pane in the tool.
 
 - *Time period control* - Use this control to choose the period for which data is displayed. This control affects all data shown on the page: not just the number of conversations displayed in the graph, but also the statistics displayed along with the graph, and the lists of top intents and entities.
 
@@ -68,38 +59,57 @@ You can use the following controls to filter the information:
 
     ![Time period control](images/oview-time2.png)
 
-## Graphs and statistics
-{: #logs-overview-graphs}
+- *Intents* and *Entities* filters - Use either of these drop-down filters to show data for a specific intent or entity in your skill.
 
-Several statistical scorecards provide log data for your application:
+  The intent and entities filters are populated by the intents and entities in the skill, and not what is in the data source. If you have [selected a data source](/docs/assistant?topic=assistant-logs#logs-deploy-id) other than the skill, you might not see an intent or entity from your data source logs as an option in the filters, unless those intents and entities are also in the skill.
+  {: important}
 
-* *Total conversations* - The total number of conversations between active users and your application that occur during the selected time period.
+- *Refresh data*: Select **Refresh data** to refresh the data that is used in the page metrics.
 
-  A single conversation consists of messages that an active user sends to your application, and the messages your application sends to the user to initiate the conversation or reply.
+  The statistics show traffic from customers who interact with your assistant; they do not include interactions from the *Try it out* pane.
+
+## Scorecards
+{: #logs-overview-scorecards}
+
+The scorecards give you a quick view of your metrics. Scroll to see full interactive graphs later in the page.
+
+![Shows the scorecards that are displayed at the start of the Analytics page](images/scorecard.png)
+
+- *Total conversations*: The total number of conversations between active users and your assistant that occur during the selected time period.
+
+  A single conversation consists of messages that an active user sends to your assistant, and the messages your assistant sends to the user to initiate the conversation or respond.
   
   If your assistant starts by saying "Hi, how can I help you?", and then the user closes the browser without responding, that message is included in the total conversation count.
 
   The total conversations metric is not used for billing purposes. An exchange with a user is not considered a billable conversation until the user submits a message.
   {: important}
 
-* *Avg. msg. per conversation* - The total messages received during the selected time period divided by the total conversations during the selected time period, as shown in the corresponding graph.
-* *Max. conversations* - The maximum number of conversations for a single data point within the selected time period.
-* *Weak understanding* - The number of individual messages with weak understanding. These messages are not classified by an intent, and do not contain any known entities. These can be useful in identifying potential dialog problems.
+- *Avg. msg. per conversation*: The total messages received during the selected time period divided by the total conversations during the selected time period, as shown in the corresponding graph.
+- *Max. conversations*: The maximum number of conversations for a single data point within the selected time period.
+- *Weak understanding*: The number of individual messages with weak understanding. These messages are not classified by an intent, and do not contain any known entities. Reviewing unrecognized messages can help you to identify potential dialog problems.
 
-Detailed graphs provide additional information:
+## Graphs and statistics
+{: #logs-overview-graphs}
 
-* *Total conversations* - The total number of conversations between active users and your application during the selected time period.
+Detailed graphs provide additional information. Click a data point on the graphs to see more detail.
 
-  While viewing the ***Conversations*** graph, you can click on an individual data point to see the numeric value, as shown here:
+![Single data point](images/oview-point.png)
 
-  ![Single data point](images/oview-point.png)
+- *Containment*: Number of conversations in which the assistant is able to satisfy the customer's request without human intervention.
 
-* *Avg. msg. per conversation* - The total messages received during the selected time period divided by the total conversations during the selected time period.
-* *Total messages* - The total number of messages received from active users over the selected time period.
-* *Active users* - The number of unique users who have engaged with your application within the selected time period.
-* *Avg. conversations per user* - The total conversations during the selected time period divided by the total unique users during the selected time period.
+  - The volume graph shows the total number of conversations per day and how many of the conversations were contained and not contained.
+  - The trend graph shows the percentage of daily conversations that were contained. This graph helps you to see if the assistant is getting better or worse at containing conversations over time. 
 
-  Statistics for *Active users* and *Avg. conversations per user* require a unique `user_id` parameter. See [Enabling user metrics](/docs/assistant?topic=assistant-logs-resources#logs-resources-user-id) for more information.
+  ![Shows the two containment metrics for volume and trend](images/containment-metric.png)
+
+  The containment metric requires that your dialog flag requests for external support when they occur. For more information, see [Measuring containment](/docs/assistant?topic=assistant-dialog-support#dialog-support-containment).
+- *Total conversations*: The total number of conversations between active users and your assistant during the selected time period.
+- *Average messages per conversation* - The total messages received during the selected time period divided by the total conversations during the selected time period.
+- *Total messages* - The total number of messages received from active users over the selected time period.
+- *Active users* - The number of unique users who have engaged with your assistant within the selected time period.
+- *Average conversations per user* - The total conversations divided by the total number of unique users during the selected time period.
+
+  Statistics for *Active users* and *Average conversations per user* require a unique `user_id` parameter. See [Enabling user metrics](/docs/assistant?topic=assistant-logs-resources#logs-resources-user-id) for more information.
   {: important}
 
 ## Top Intents and Top Entities
@@ -107,8 +117,8 @@ Detailed graphs provide additional information:
 
 You can also view the intents and entities that were recognized most often during the specified time period.
 
-* *Top intents* - Intents are shown in a simple list. In addition to seeing the number of times an intent was recognized, you can select an intent to open the **User conversations** page with the date range filtered to match the data you are viewing, and the intent filtered to match the selected intent.
+- *Top intents* - Intents are shown in a simple list. In addition to seeing the number of times an intent was recognized, you can select an intent to open the **User conversations** page with the date range filtered to match the data you are viewing, and the intent filtered to match the selected intent.
 
-* *Top entities* are also shown in a list. For each entity you can select from the **Values** column to see a list of the most common values that were identified for this entity during the time period. You can also select an entity to open the **User conversations** page with the date range filtered to match the data you are viewing, and the entity filtered to match the selected entity.
+- *Top entities* are also shown in a list. For each entity you can select from the **Values** column to see a list of the most common values that were identified for this entity during the time period. You can also select an entity to open the **User conversations** page with the date range filtered to match the data you are viewing, and the entity filtered to match the selected entity.
 
 See [Improve your skill](/docs/assistant?topic=assistant-logs) for tips on how to edit intents and entities based on discoveries you make by reviewing the intents and entities that your assistant recognizes.
