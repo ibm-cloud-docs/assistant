@@ -31,7 +31,7 @@ Find out what's new in the web chat integration.
 
 The web chat change log lists changes ordered by version number. For more information about the web chat, see [Integrating the web chat with your website](/docs/assistant?topic=assistant-deploy-web-chat).
 
-For information about new features and improvement to the core {{site.data.keyword.conversationshort}} product, see [Release notes](/docs/assistant?topic=assistant-release-notes).
+For information about new features and improvements to the core {{site.data.keyword.conversationshort}} product, see [Release notes](/docs/assistant?topic=assistant-release-notes).
 
 ## Controlling the version
 {: #release-notes-chat-version}
