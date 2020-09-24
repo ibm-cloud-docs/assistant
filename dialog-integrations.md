@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-22"
+lastupdated: "2020-09-24"
 
 keywords: integration settings
 
@@ -80,13 +80,13 @@ You might embed the web chat in multiple pages on your website. Let's say you wa
 
 - Condition: `$integrations.chat.browser_info.page_url.contains('insurance.html')`
 - Response type: *Connect to human agent*
-- Button ID: `Z23453e25vv` (The button that routes to the insurance experts group)
+- Button ID: `Z23453e25vv` (The button that routes to the insurance experts agent queue)
 
 **Conditioned response 2**
 
 - Condition: `$integrations.chat.browser_info.page_url.contains('invest.html')`
 - Response type: *Connect to human agent*
-- Button ID: `Z23453j24ty` (The button that routes to the investment experts group)
+- Button ID: `Z23453j24ty` (The button that routes to the investment experts agent queue)
 
 For more information about implementing chat transfers, see [Adding a *Connect to human agent* response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-connect-to-human-agent). For more information about the `contains()` SpEL expression method, see [Expression language methods](https://cloud.ibm.com/docs/assistant?topic=assistant-dialog-methods#dialog-methods-strings-contains).
 
