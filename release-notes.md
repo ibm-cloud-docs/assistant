@@ -27,6 +27,11 @@ subcollection: assistant
 # Watson Assistant release notes
 {: #release-notes}
 
+Find out what's new in {{site.data.keyword.conversationfull}}.
+{: shortdesc}
+
+This topic describes the new features, changes, and bug fixes for the core product. For more information about what's new in the web chat integration, see the [Web Chat release notes](/docs/assistant?topic=assistant-release-notes-chat).
+
 ## Service API Versioning
 {: #release-notes-api-version}
 
@@ -57,9 +62,6 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #release-notes-tooling-changes}
 
 The change log lists changes that were made this year ordered by the date they were released.
-
-For more information about what's new in the web chat integration, see the [Web Chat release notes](/docs/assistant?topic=assistant-release-notes-chat).
-{: tip}
 
 ## 22 September 2020
 {: #22September2020}
