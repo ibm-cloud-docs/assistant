@@ -61,7 +61,7 @@ You can use the following controls to filter the information:
 
 - *Intents* and *Entities* filters - Use either of these drop-down filters to show data for a specific intent or entity in your skill.
 
-  The intent and entities filters are populated by the intents and entities in the ***skill***, and not what is in the data source. If you have [selected a data source](/docs/assistant?topic=assistant-logs#logs-deploy-id) other than the skill, you might not see an intent or entity from your data source logs as an option in the filters, unless those intents and entities are also in the skill.
+  The intent and entities filters are populated by the intents and entities in the skill, and not what is in the data source. If you have [selected a data source](/docs/assistant?topic=assistant-logs#logs-deploy-id) other than the skill, you might not see an intent or entity from your data source logs as an option in the filters, unless those intents and entities are also in the skill.
   {: important}
 
 - *Refresh data*: Select **Refresh data** to refresh the data that is used in the page metrics.
@@ -86,7 +86,7 @@ The scorecards give you a quick view of your metrics. Scroll to see full interac
 
 - *Avg. msg. per conversation*: The total messages received during the selected time period divided by the total conversations during the selected time period, as shown in the corresponding graph.
 - *Max. conversations*: The maximum number of conversations for a single data point within the selected time period.
-- *Weak understanding*: The number of individual messages with weak understanding. These messages are not classified by an intent, and do not contain any known entities. These can be useful in identify potential dialog problems.
+- *Weak understanding*: The number of individual messages with weak understanding. These messages are not classified by an intent, and do not contain any known entities. Reviewing unrecognized messages can help you to identify potential dialog problems.
 
 ## Graphs and statistics
 {: #logs-overview-graphs}

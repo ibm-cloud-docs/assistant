@@ -57,7 +57,7 @@ Design your dialog so that it can transfer customers to human agents. Consider a
 
 - Any time a user asks to speak to a person. 
 
-  Create an intent that can recognize when a customer asks to speak to someone. After defining the intent, you can add a root-level dialog node that conditions on the intent. As the dialog node response, add a connect to human agent response type. At run time, if the user asks to speak to someone, this node is triggered and a transfer is initiated on the user's behalf.
+  Create an intent that can recognize when a customer asks to speak to someone. After defining the intent, you can add a root-level dialog node that conditions on the intent. As the dialog node response, add a *Connect to human agent* response type. At run time, if the user asks to speak to someone, this node is triggered and a transfer is initiated on the user's behalf.
 
 - When the conversation broaches a topic that is sensitive in nature, you can start a transfer. 
 
