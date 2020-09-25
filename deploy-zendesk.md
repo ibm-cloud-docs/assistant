@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-23"
+lastupdated: "2020-09-25"
 
 subcollection: assistant
 
@@ -123,6 +123,8 @@ Update your dialog to make sure it understands when users request to speak to a 
 
 ## Securing the transfer to Zendesk
 {: #deploy-zendesk-secure}
+
+When you add security to your Zendesk integration, you ensure that the visitors you are helping are legitimate customer. Enabling visitor authentication also enables support for cross-domain traffic and cross-browser identification. For more information, see the [Zendesk documentation](https://support.zendesk.com/hc/en-us/articles/360022185314-Enabling-authenticated-visitors-in-the-Chat-widget).
 
 Before you can secure the Zendesk connection, complete the following required tasks:
 
