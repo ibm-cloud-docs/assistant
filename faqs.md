@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-09-24"
 
 subcollection: assistant
 
@@ -126,6 +126,12 @@ If you cannot view the API details or service credentials, it is likely that you
 {: faq}
 
 To edit skills, you must have Writer service access to the service instance and a platform role of at least Viewer. For more information about access roles and how to request an access role change, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).
+
+## Where can I find an example for creating my first assistant?
+{: #faqs-get-started}
+{: faq}
+
+Follow the steps in the [Getting started with {{site.data.keyword.conversationshort}}](/docs/assistant?topic=assistant-getting-started) tutorial for a product introduction and to get help creating your first assistant.
 
 ## Can I export the user conversations from the Analytics page?
 {: #faqs-export-conversation}
