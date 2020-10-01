@@ -115,7 +115,7 @@ You can customize how these lists are displayed and handled.
 ### Options list
 {: #dialog-sms-actions-options}
 
-The dialog supports an `option` response type, which shows the customer multiple options to choose from. The options are shown as buttons or in a list. You can customize how the options that are defined for an option response type are shown to customers and the ways in which a customer can select an option by adding the `vgwActSetOptionsConfig` action command.
+The dialog supports an `option` response type, which shows the customer multiple options to choose from. You can customize how the options that are defined for an option response type are shown to customers and the ways in which a customer can select an option by adding the `vgwActSetOptionsConfig` action command.
 
 The following example shows how to customize the option response type.
 
@@ -183,7 +183,7 @@ For example, `Which of these items do you want to insure? Enter 1 for Boat Enter
 ### Disambiguation list
 {: #dialog-sms-actions-disambiguation}
 
-When the dialog is confident that more than one dialog node is the right one to process in response to a customer query, disambiguation is triggered. Disambiguation asks the customer to clarify which path they want to follow to get an answer. For more information, see [Disambiguation](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
+When the dialog is confident that more than one dialog node might be the right one to process in response to a customer query, disambiguation is triggered. Disambiguation asks the customer to clarify which path they want to follow to get an answer. For more information, see [Disambiguation](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
 
 You can customize how the disambiguation list choices are displayed and how a customer can select a disambiguation choice by adding the `smsActSetDisambiguationConfig` action command. 
 
@@ -207,7 +207,7 @@ You might want to define the customization in the welcome node or another node t
 ```
 {: codeblock}
 
-When displayed, the assistant shows the introductory text that is configured for disambiguation, such as, `Did you mean?`. Then it lists the choices from the disambiguation list as numbered choices.
+When displayed, the assistant shows the introductory text that is configured for disambiguation, such as `Did you mean?`. Then it lists the choices from the disambiguation list as numbered choices.
 
 The `prefixText` parameter prepends a number to the text specified in a `label`. The list choices are numbered sequentially and are displayed to the user in the order in which they appear in the list. The user can type a number to pick one of the choices.
 

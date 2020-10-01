@@ -101,12 +101,14 @@ If you want your assistant to be able to switch between voice and text during a 
 
 Click the *Advanced options* tab to make any of the following customizations to the messaging behavior:
 
-- **Initiate conversation from inbound messages**: Only disable this setting if you want to limit messaging support to allow messages that are sent in the context of an ongoing phone integration conversation only, and not allow customers to start a message exchange with the assistant outside of a phone call.
+- **Initiate conversation from inbound messages**: Disable this option if you want to limit messaging support to allow messages that are sent in the context of an ongoing phone integration conversation only, and not allow customers to start a message exchange with the assistant outside of a phone call.
 - **Default failure message**: Add a message to send to the customer if the SMS connection fails.
 - **Base URL**: This URL is the REST API endpoint for the SMS service you are using.
 
 ## Optimize your dialog for messaging
 {: #deploy-sms-dialog}
+
+For the best customer experience, design your dialog with the capabilities of the Twilio integration in mind:
 
 - Do not include HTML elements in your text responses.
 - You can include search skill response types in dialog nodes that the phone integration will send as a message. The message includes the introductory text (*I searched my knowledge base* and so on), and then the body of only the first search result.
