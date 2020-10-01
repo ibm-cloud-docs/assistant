@@ -124,7 +124,7 @@ You can specify the following parameter values for the `vgwActCollectDTMF` comma
 - `dtmfCount`: The number of DTMF digits to collect.
 - `dtmfMinCount`: The minimum number of DTMF digits to collect when you configure your DTMF collection to accept a range of entries.
 - `dtmfMaxCount`: The maximum number of DTMF digits to collect when you configure your DTMF collection to accept a range of entries. After this number of digits is collected, a conversation turn is initiated.
-- `dtmfInterDigitTimeoutCount`: The amount of time in milliseconds to wait for a new DTMF digit after a DTMF digit is received. During an active DTMF collection, this timeout activates when the first DTMF collection is received. When the inter-digit timout is active, it deactivates the `vgwPostResponseTimeout` timer. If `dtmfInterDigitTimeoutCount` isn't specified, the post response timer resets after receiving each DTMF digit, and stays active until either the `vgwPostResponseTimeout` is met or after the collection is completed.
+- `dtmfInterDigitTimeoutCount`: The amount of time in milliseconds to wait for a new DTMF digit after a DTMF digit is received. During an active DTMF collection, this timeout activates when the first DTMF collection is received. When the inter-digit timeout is active, it deactivates the `vgwPostResponseTimeout` timer. If `dtmfInterDigitTimeoutCount` isn't specified, the post-response timer resets after receiving each DTMF digit, and it stays active until either the `vgwPostResponseTimeout` is met or the collection is completed.
 
 You can add a child node that conditions on the `@sys-number` system entity or a pattern entity named `@account_number` that recognizes the number pattern. The child node can save the number that is submitted by the customer in a context variable and show the appropriate response.
 
@@ -141,7 +141,7 @@ You can customize how these lists are displayed and handled.
 #### Options response type
 {: #dialog-voice-actions-option-response}
 
-The dialog supports an `option` response type, which shows the customer multiple choices to pick from. The choices are shown as buttons or in a list. You can customize how the options that are defined for an option response type are read and the ways in which a customer can select an option by adding the `vgwActSetOptionsConfig` command.
+The dialog supports an `option` response type, which shows the customer multiple choices to pick from. You can customize how the options that are defined for an `option` response are read and the ways in which a customer can select an option by adding the `vgwActSetOptionsConfig` command.
 
 To configure what the assistant says before each option, add a `prefixText` parameter. Use `%s` to represent the number corresponding to the option; it is replaced with the actual number at run time.
 
@@ -230,12 +230,12 @@ You can use the `matchWord` parameter to specify the utterances to map to the op
 
 When read, the assistant says, `Press or say one for Boat`. And if the customer says `first`, it is mapped to option 1.
 
-The configuration that you apply to the `option` response type in one node is applied to any other option response types that are processed in subsequent dialog nodes during the same session.
+The configuration that you apply to the `option` response type in one node is applied to any other option responses that are processed in subsequent dialog nodes during the same session.
 
 #### Disambiguation
 {: #dialog-voice-actions-disambiguation}
 
-When the dialog is confident that more than one dialog node is the right one to process in response to a customer query, disambiguation is triggered. Disambiguation asks the customer to clarify which path they want to follow to get an answer. For more information, see [Disambiguation](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
+When the dialog is confident that more than one dialog node might be the right one to process in response to a customer query, disambiguation is triggered. Disambiguation asks the customer to clarify which path they want to follow to get an answer. For more information, see [Disambiguation](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
 
 You can customize how the disambiguation options are displayed and how a customer can select a disambiguation option by adding the `vgwActSetDisambiguationConfig` command. 
 
@@ -324,9 +324,13 @@ You can specify the following parameter values for the `vgwActTransfer` command:
   ```
  
 - `transferHeaderVal`: The value of the custom header field that is defined by the `transferHeader` parameter.
+
 - `transferTarget`: The SIP trunk or telephone Uniform Resource Identifier (URI) of the call center service to which the call will be transferred. For example, `sip:12345556789\\@myhost.com` or `tel:+18883334444`.
+
 - `transferMethod`: Specify `REFER` to indicate that you want to send a SIP `REFER` REST API request.
+
 - `uuiData`: Add to send User-to-User Information (UUI) data. For more information about UUI data, see [RFC 7433](https://tools.ietf.org/html/rfc7433){: external}.
+
 - `uuiSendMethod`: The method by which to send the UUI data. The following methods are supported:
 
   - `uuiHeader`: Sends UUI data in a `User-to-User` header field. This options is used by default.
@@ -334,6 +338,7 @@ You can specify the following parameter values for the `vgwActTransfer` command:
   - `referToURL`: Sends UUI data in a `Refer-To` header field.
     
   If data is sent in a `Contact` or `Refer-To` header field, the data is encoded as a URI header. If the `Refer-To` header value is a telephone URI, the UUI data is sent as a URL parameter.
+
 - `acceptTransferRejectCodes`: A comma-separated list of the error codes that are treated as successful responses when the phone integration processes `NOTIFY` requests during a call transfer.
 
 The following JSON block illustrates how to transfer a call to your call center:
