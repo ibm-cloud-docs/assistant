@@ -268,7 +268,7 @@ When read, the assistant says, `Did you mean?`. Then it reads each choice in the
 
 Before you add in-context SMS messages, you must set up the *Twilio messaging* integration. For more information, see [Integrating with *Twilio messaging*](/docs/assistant?topic=assistant-deploy-sms).
 
-There are lots of times when it is useful to be able to send a text message in the context of an ongoing conversation. For example, maybe you want the customer to share a street address. Rather than trying to transcribe the audio as a person rattles off an address and risk possible mistakes, you can ask the customer to send it in a text message instead. Or maybe you want to verify the user's identify before you perform a transaction on the user's behalf. You can send a text with a passcode and ask the person to read the code so the assistant can confirm that the two codes match before proceeding.
+There are lots of times when it is useful to be able to send a text message in the context of an ongoing conversation. For example, maybe you want the customer to share a street address. Rather than trying to transcribe the audio as a person rattles off an address and risk possible mistakes, you can ask the customer to send it in a text message instead.
 
 Whenever you exchange a text with a customer in the context of a conversation, the dialog initiates the SMS message exchange. It sends a text message to the user and asks for the user to respond to it.
 
@@ -446,6 +446,15 @@ You can specify the following parameter values for the `vgwActTransfer` command:
 - `url`: URL to a publicly-accessible audio file. The audio file must be single channel (mono), PCM-encoded, and have a 8,000 Hz sampling rate with 16 bits per sample. The file format must be `.wav`.
 - `playURLInLoop`: Specify `Yes` or `No` to indicate whether to repeatedly restart the audio play back after it finishes. The default value is `No`.
 
+If you expect the hold to last more than 5 seconds, set the `vgwConversationResponseTimeout` context variable to a higher number. Specify a number in milliseconds. For example, you might set it to 15 seconds:
+
+```
+"vgwConversationResponseTimeout": 15000
+```
+{: codeblock}
+
+If your dialog subsequently processes a node with the `vgwActForceNoInputTurn` command, the command does not work unless the `playURLInLoop` parameter is set to `Yes`.
+
 ## Applying advanced speech services to specific topics
 {: #dialog-voice-actions-speech-advanced}
 
@@ -610,6 +619,8 @@ To have the assistant end the call, use the `vgwActHangup` command.
 
 If you want to run more than one command in succession, you can use a `vgwActionSequence` command.
 
+For example, when you use the `vgwActCollectDTMF`, it does not wait to unpause Speech before collecting DTMF tones; it runs in the background. To stop transcribing audio before you start to collect keypad tones, use the following set of commands together in a sequence.
+
 ```json
 {
   "output": {
@@ -617,19 +628,24 @@ If you want to run more than one command in succession, you can use a `vgwAction
     ]
   },
   "context" : {
-    "vgwActionSequence": [ 
-      { 
-      "command": "vgwActPauseSTT" 
-      }, 
-      { 
-      "command": "vgwActCollectDTMF", 
-      "parameters": { 
-        "dtmfTermKey": "#" 
-      } 
-      }, 
-      { 
-      "command": "vgwActPlayText" 
-      } 
+    "vgwActionSequence": [
+          {
+        "command": "vgwActPauseSTT"
+      },
+        {
+        "command": "vgwActPlayText"
+      },
+      {
+        "command": "vgwActCollectDTMF",
+        "parameters": {
+          "dtmfTermKey": "#",
+          "dtmfMinCount": "1",
+          "dtmfInterDigitTimeoutCount": "2000"
+        }
+      },
+      {
+        "command": "vgwActUnPauseSTT"
+      }
     ] 
   } 
  }

@@ -111,6 +111,7 @@ Click the *Advanced options* tab to make any of the following customizations to 
 For the best customer experience, design your dialog with the capabilities of the Twilio integration in mind:
 
 - Do not include HTML elements in your text responses.
+- The Twilio messaging integration does not support chat transfers that are initiated with the *Connect to human agent* response type.
 - You can include search skill response types in dialog nodes that the phone integration will send as a message. The message includes the introductory text (*I searched my knowledge base* and so on), and then the body of only the first search result.
 
 For reference documentation, see [Handling Twilio messaging interactions](/docs/assistant?topic=assistant-dialog-sms-actions).

@@ -26,7 +26,7 @@ subcollection: assistant
 # Integrating with phone ![Beta](images/beta.png)
 {: #deploy-phone}
 
-Add a phone integration so your assistant can answer the phone when your customers call.
+Add a phone integration so your assistant can answer when your customers call.
 {: shortdesc}
 
 When your customer makes a phone call through a Session Initiation Protocol (SIP) trunk that you configure, the phone integration answers. The integration converts output from your dialog from text to voice by using the {{site.data.keyword.texttospeechfull}} service. The audio is sent to the telephone network through the SIP trunk. When the customer replies, voice is converted to text by using the {{site.data.keyword.speechtotextfull}} service.
@@ -256,6 +256,8 @@ Incoming calls to your assistant follow this path:
 
 ## Phone integration limits
 {: #deploy-phone-limits}
+
+Any speech service charges that are incurred by the phone integration are included in the usage costs of the {{site.data.keyword.conversationshort}} service plan. Plan usage is measured based on the number of monthly active users.
 
 The number of concurrent calls that your assistant can participate in at one time depends on your plan type.
 

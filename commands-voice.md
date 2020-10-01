@@ -23,14 +23,16 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Phone integration command reference ![Beta](images/beta.png)
+# Phone integration reference ![Beta](images/beta.png)
 {: #commands-voice}
 
-Add actions to the message `context` object to manage the flow of conversations with customers who interact with your assistant over the telephone.
+Add action commands to the message `context` object to manage the flow of conversations with customers who interact with your assistant over the telephone.
 {: shortdesc}
 
-The phone integration is offered as a beta feature.
+The phone integration is available as a beta feature.
 {: note}
+
+Learn about the supported commands and reserved context variables that are used by the phone integration.
 
 ## Supported commands
 {: #commands-voice-actions}
