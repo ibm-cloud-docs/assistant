@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-30"
+lastupdated: "2020-10-01"
 
 subcollection: assistant
 
@@ -141,7 +141,7 @@ You can customize how these lists are displayed and handled.
 #### Options response type
 {: #dialog-voice-actions-option-response}
 
-The dialog supports an `option` response type, which shows the customer multiple choices to pick from. The choices are shown as buttons or in a list. You can customize how the options that are defined for an option response type are read and the ways in which a customer can select an option by adding the `vgwActSetOptionsConfig` action command.
+The dialog supports an `option` response type, which shows the customer multiple choices to pick from. The choices are shown as buttons or in a list. You can customize how the options that are defined for an option response type are read and the ways in which a customer can select an option by adding the `vgwActSetOptionsConfig` command.
 
 To configure what the assistant says before each option, add a `prefixText` parameter. Use `%s` to represent the number corresponding to the option; it is replaced with the actual number at run time.
 
@@ -237,7 +237,7 @@ The configuration that you apply to the `option` response type in one node is ap
 
 When the dialog is confident that more than one dialog node is the right one to process in response to a customer query, disambiguation is triggered. Disambiguation asks the customer to clarify which path they want to follow to get an answer. For more information, see [Disambiguation](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
 
-You can customize how the disambiguation options are displayed and how a customer can select a disambiguation option by adding the `vgwActSetDisambiguationConfig` action command. 
+You can customize how the disambiguation options are displayed and how a customer can select a disambiguation option by adding the `vgwActSetDisambiguationConfig` command. 
 
 You might want to define the customization in the welcome node or another node that is triggered early in the conversation so it is applied any time disambiguation is triggered.
 
@@ -300,6 +300,8 @@ To send a specific message from a dialog node, add the `vgwActSendSMS` command.
 }
 ```
 {: codeblock}
+
+The customer's reply text is stored in the `$vgwSmsMessage` or `$vgwSMSMedia` context variable, depending on whether they reply with text or other media. You can add child nodes that condition on these context variables and respond appropriately based on the content of the customer's text. For example, if you ask for an address, your child node can check for reply text by using the `$vgwSmsMessage` node condition, and then save the user's input to an `$address` context variable.
 
 ## Transferring a call to a human agent
 {: #dialog-voice-actions-transfer}
@@ -448,12 +450,12 @@ You can apply the following speech customizations to specific dialog nodes:
 - [Use a custom language model](#dialog-voice-actions-custom-language)
 - [Use a custom grammar](#dialog-voice-actions-custom-grammar)
 
-To make any of these types of changes, edit the speech service configuration by adding the `vgwActSetSTTConfig` action command to your dialog node. The configuration decisions you make in the dialog node override the configuration that is specified in the integration setup page. The changes you apply persist for the remainder of the conversation, unless you override them again.
+To make any of these types of changes, edit the speech service configuration by adding the `vgwActSetSTTConfig` command to your dialog node. The configuration decisions you make in the dialog node override the configuration that is specified in the integration setup page. The changes you apply persist for the remainder of the conversation, unless you override them again.
 
 ### Change the assistant's voice
 {: #dialog-voice-actions-change-voice}
 
-You can change the voice of your assistant when it covers certain topics in the dialog that warrant it. For example, let's say you have a topic that applies only to your British customers. For that branch of conversation, you might want your assistant to speak with a British accent. To change the voice that is used, add the `vgwActSetTTSConfig` action command to the root dialog node of the branch where you want the custom voice to be used.
+You can change the voice of your assistant when it covers certain topics in the dialog that warrant it. For example, let's say you have a topic that applies only to your British customers. For that branch of conversation, you might want your assistant to speak with a British accent. To change the voice that is used, add the `vgwActSetTTSConfig` command to the root dialog node of the branch where you want the custom voice to be used.
 
 ```json
 {
@@ -480,16 +482,18 @@ In the `voice` parameter, specify the voice model that you want to use. For more
 The model you specify must be one that is supported by the {{site.data.keyword.texttospeechshort}} service instance that is configured for use with the integration.
 {: note}
 
-The custom voice that you specify for this dialog branch is used by each subsequent dialog node that is processed during the session unless you add another `vgwActSetTTSConfig` action command to reset the voice model back to the default model.
+The custom voice that you specify for this dialog branch is used by each subsequent dialog node that is processed during the session unless you add another `vgwActSetTTSConfig` command to reset the voice model back to the default model.
 
 ### Using a custom language model
 {: #dialog-voice-actions-custom-language}
 
-When you set up the phone integration, you can configure the integration to use a custom language model all the time. However, you might want to use a standard language model most of the time, and specify a custom language model to use only for specific topics that your assistant is designed to help customers with. You can apply a custom language model for a specific dialog branch only. For example, you might want to use a custom model that specializes in medical terms for a dialog branch that helps with medical bills. 
+When you set up the phone integration, you can configure the integration to use a custom language model all the time. However, you might want to use a standard language model most of the time, and specify a custom language model to use only for specific topics that your assistant is designed to help customers with. You can apply a custom language model for a specific dialog branch only. 
+
+For example, you might want to use a custom model that specializes in medical terms for a dialog branch that helps with medical bills only. 
 
 For more information, see [Creating a custom language model](/docs/speech-to-text?topic=speech-to-text-languageCreate){: external}.
 
-To apply a custom language model to a specific dialog branch, use the `vgwActSetSTTConfig` action command.
+To apply a custom language model to a specific dialog branch, use the `vgwActSetSTTConfig` command.
 
 ```json
 {
@@ -506,7 +510,8 @@ To apply a custom language model to a specific dialog branch, use the `vgwActSet
                   "model": "en-US_NarrowbandModel",
                   "profanity_filter": true,
                   "smart_formatting": true,
-                  "customization_id": "81d3630-ba58-11e7-aa4b-41bcd3f6f24d"
+                  "customization_id": "81d3630-ba58-11e7-aa4b-41bcd3f6f24d",
+                  "acoustic-customization_id": "e4766090-ba51-11e7-be33-99bd3ac8fa93"
               }
           }
     }
@@ -515,14 +520,23 @@ To apply a custom language model to a specific dialog branch, use the `vgwActSet
 ```
 {: codeblock}
 
+You can also apply an acoustic model that you might have trained to deal with background noise, accents, or other things that are associated with the quality or noise of the signal. 
+
 ### Using a custom grammar
 {: #dialog-voice-actions-custom-grammar}
 
-The {{site.data.keyword.speechtotextshort}} service supports the use of grammars. A grammar uses a formal language specification to define a set of production rules for transcribing strings. For example, when you need to recognize specific words or phrases, such as `yes` or `no`, or a list of names, using grammars can be an effective approach.
+The {{site.data.keyword.speechtotextshort}} service supports the use of grammars. A grammar allows you to configure the audio to match specific characteristics only.
+
+You can think of it this way: 
+
+- A custom language model expands the service's base vocabulary.
+- A grammar restricts the words that the service can recognize from that vocabulary. 
+
+When you use a grammar with a custom language model for speech recognition, the service can recognize only words, phrases, and strings that are recognized by the grammar. For example, maybe you want to accept only a yes or no response. You can define a grammar that allows only those options.
 
 For more information, see [Using grammars with custom language models](/docs/speech-to-text?topic=speech-to-text-grammars){: external}.
 
-To specify a custom grammar for a dialog node, add the following action command: 
+To specify a custom grammar for a dialog node, add the following command: 
 
 ```json
 {
@@ -534,6 +548,7 @@ To specify a custom grammar for a dialog node, add the following action command:
     "vgwAction": {
       "command": "vgwActSetSTTConfig",
       "parameters": {
+        "x-watson-learning-opt-out": true,
         "updateMethod": "mergeOnce",
         "config": {
           "grammar_name": "names-abnf",
@@ -588,9 +603,7 @@ To have the assistant end the call, use the `vgwActHangup` command.
 ## Defining a sequence of actions
 {: #dialog-voice-actions-sequence}
 
-If you want to run more than one command in succession, you can use a `vgwActionSequence` action command.
-
-For example:
+If you want to run more than one command in succession, you can use a `vgwActionSequence` command.
 
 ```json
 {

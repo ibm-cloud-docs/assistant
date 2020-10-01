@@ -60,7 +60,7 @@ You must have Manager service level access to the instance. For more information
 
 1. On the phone integration setup page, add the phone number that you created through your SIP trunk provider in the previous step to the **Phone number** field.
 
-     Specify the number by using the international phone number format: `+1 958 555 0123`. Do *not* surround the area code with parentheses, such as`(958)`.
+     Specify the number by using the international phone number format: `+1 958 555 0123`. Do *not* surround the area code with parentheses, such as (958).
     
      The phone number must be unique per phone integration. If you use Twilio as the SIP trunk provider, you can use the same phone number for the phone and text messaging integrations.
 
@@ -82,13 +82,13 @@ You must have Manager service level access to the instance. For more information
     
     If you want to use a model that was created in a different service instance, click **More options** to show all service instances that you can access as options. For example, if you created specialized custom models that you want your assistant to use, you can find and select them.
 
-    - **{{site.data.keyword.speechtotextshort}}**: Optionally choose a {{site.data.keyword.speechtotextshort}} service language model to use to define the language for your assistant to use when it speaks to customers.
+    - **{{site.data.keyword.speechtotextshort}}**: Optionally choose a different {{site.data.keyword.speechtotextshort}} service language model to use to define the language for your assistant to use when it speaks to customers.
 
       For example, indicate whether to use British or American English. The list shows options from {{site.data.keyword.speechtotextshort}} service instances that you can access. 
       
       For more information about language models, see [Languages and models](https://cloud.ibm.com/docs/speech-to-text?topic=speech-to-text-models){: external} in the {{site.data.keyword.speechtotextshort}} documentation.
 
-    - **{{site.data.keyword.texttospeechshort}}**: Optionally choose a {{site.data.keyword.texttospeechshort}} service voice model to use a different voice for your assistant. 
+    - **{{site.data.keyword.texttospeechshort}}**: Optionally choose a different {{site.data.keyword.texttospeechshort}} service voice model to use a different voice for your assistant. 
 
       The list shows options from {{site.data.keyword.texttospeechshort}} service instances that you can access. 
       
@@ -127,12 +127,12 @@ You can add security to the phone connection by selecting one or both of the fol
 - **Enable secure trunking**: Select this option to use Secure Real-Time Transfer Protocol (SRTP) to secure the audio that is transmitted over the phone. For more information about RTP, see [Call routing details](#deploy-phone-route).
 - **Enable SIP authentication**: Select this option if you want the session initiation to be done over SIP Secure (SIPS). 
 
-  SIPS applies TLS (Transport Layer Security) to the connection. When SIPS is enabled, all inbound traffic, meaning requests from the SIP trunking provider to your assistant, must be authenticated. After selecting this option, allow the service credentials (API key) for your {{site.data.keyword.conversationshort}} service instance to be used for authentication.
+  SIPS applies TLS (Transport Layer Security) to the connection. When SIPS is enabled, all inbound traffic, meaning requests from the SIP trunk provider to your assistant, must be authenticated. After selecting this option, allow the service credentials (API key) for your {{site.data.keyword.conversationshort}} service instance to be used for authentication.
 
-  If you use Twilio as your SIP trunking provider, do not enable SIP authentication. Twilio does not support SIP authentication of originating calls.
+  If you use Twilio as your SIP trunk provider, do not enable SIP authentication. Twilio does not support SIP authentication of originating calls.
   {: important}
 
-### Apply advanced SIP trunking configuration settings
+### Apply advanced SIP trunk configuration settings
 {: #deploy-phone-sip-trunk-config}
 
 - **SIP INVITE headers to extract**: List headers that you want to use in your dialog. 
@@ -221,7 +221,7 @@ You can ask for help setting up an account with another SIP trunk provider by op
 
 The SIP trunk provider sets up a SIP trunk for your voice traffic, and manages access from allowed IP addresses. Most of the major SIP trunk providers have existing relationships with IBM. Therefore, the network configuration that is required to support the SIP trunk connection typically can be handled for you with minimal effort.
 
-1. Create a [{{site.data.keyword.Bluemix_notm}} case](https://cloud.ibm.com/unifiedsupport/cases/form)
+1. Create a [{{site.data.keyword.Bluemix_notm}} case](https://cloud.ibm.com/unifiedsupport/cases/form){: external}.
 
 1. Click **Customer success** as the case type.
 
@@ -239,8 +239,8 @@ The SIP trunk provider sets up a SIP trunk for your voice traffic, and manages a
 
 Incoming calls to your assistant follow this path: 
 
-1.  A customer calls the toll-free number that is managed by your Session Initiation Protocol (SIP) trunking provider.
-1.  The SIP trunking service sends a SIP `INVITE` HTTP request to your assistant's phone integration to establish a connection. 
+1.  A customer calls the customer support phone number that is managed by your Session Initiation Protocol (SIP) trunk provider.
+1.  The SIP trunk service sends a SIP `INVITE` HTTP request to your assistant's phone integration to establish a connection. 
 1.  The phone integration connects to the speech services that are required to support the interaction.
 1.  After the services are ready, the connection is established, and audio is sent over the Real-time Transport Protocol (RTP). 
 
@@ -249,13 +249,13 @@ Incoming calls to your assistant follow this path:
 1.  The dialog processes the input and calculates the best response.
 1.  The dialog text response is sent to the {{site.data.keyword.texttospeechshort}} service to be converted to audio.
 1.  The audio is sent back to the caller over the existing connection.
-1.  If the caller asks to speak to a person, the assistant can transfer the person to a call center. A SIP `REFER` request is sent to the SIP trunking provider so it can transfer the call to the call center SIP URI that is specified in the dialog node where the transfer action is configured.
+1.  If the caller asks to speak to a person, the assistant can transfer the person to a call center. A SIP `REFER` request is sent to the SIP trunk provider so it can transfer the call to the call center SIP URI that is specified in the dialog node where the transfer action is configured.
 1.  When one of the participants of the call hangs up, a SIP `BYE` HTTP request is sent to the other participant.
 
 ## Phone integration limits
 {: #deploy-phone-limits}
 
-The number of calls that your assistant can participate in at one time depends on your plan type.
+The number of concurrent calls that your assistant can participate in at one time depends on your plan type.
 
 | Plan             |  Concurrent calls |
 |------------------|------------------:|
@@ -274,7 +274,7 @@ Log events that are generated by the integration are automatically forwarded to 
 
 For more information about setting up an instance, see [Provisioning an instance](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-provision){: external}.
 
-No other components from your assistant write logs to the IBM Log Analysis with LogDNA dashboard currently.
+Currently, the phone and Twilio messaging integrations are the only components of your assistant that write logs to the IBM Log Analysis with LogDNA dashboard.
 {: note}
 
 After you create the instance, you can click **View LogDNA** to see the phone integration logs.

@@ -63,11 +63,13 @@ The change log lists changes that were made this year ordered by the date they w
 
 ## 1 October 2020
 {: #1October2020}
-<!--1.114-->
 
-- **Introducing the *Phone* integration!**: Your customers are calling; now your assistant can answer. Add a phone integration to enable your assistant to answer customer support calls. This beta feature connects to your existing Session Initiation Protocol (SIP) trunk, which routes incoming calls to your assistant. For more information, see [Integrating with phone](/docs/assistant?topic=assistant-deploy-phone).
+- **Introducing the *Phone* integration!**: Your customers are calling; now your assistant can answer. Add a phone integration to enable your assistant to answer customer support calls. The integration connects to your existing Session Initiation Protocol (SIP) trunk, which routes incoming calls to your assistant. For more information, see [Integrating with phone](/docs/assistant?topic=assistant-deploy-phone).
 
-- **Introducing the *Twilio messaging* integration!**: Enable your assistant to receive and respond to questions that customers submit by using SMS text messaging. When you enable both new integrations, your assistant can send text messages to a customer in the context of an ongoing phone conversation. For more information about this beta feature, see [Integrating with Twilio messaging ](/docs/assistant?topic=assistant-deploy-sms).
+- **Introducing the *Twilio messaging* integration!**: Enable your assistant to receive and respond to questions that customers submit by using SMS text messaging. When you enable both new integrations, your assistant can send text messages to a customer in the context of an ongoing phone conversation. For more information, see [Integrating with Twilio messaging ](/docs/assistant?topic=assistant-deploy-sms).
+
+The *Phone* and *Twilio messaging* integrations are available as beta features in {{site.data.keyword.conversationshort}} service instances that are hosted in Dallas, Frankfurt, and Washington, DC.
+{: note}
 
 ## 24 September 2020
 {: #24September2020}
