@@ -29,7 +29,7 @@ subcollection: assistant
 Add a phone integration so your assistant can answer the phone when your customers call.
 {: shortdesc}
 
-When your customer makes a phone call through a Session Initiation Protocol (SIP) trunk that you configure, the phone integration answers. The integration converts the dialog that your assistant follows as it interacts with your customers from text to voice by using the {{site.data.keyword.texttospeechfull}} service. The audio is sent to the telephone network through the SIP trunk. When the customer replies, voice is converted to text by using the {{site.data.keyword.speechtotextfull}} service.
+When your customer makes a phone call through a Session Initiation Protocol (SIP) trunk that you configure, the phone integration answers. The integration converts output from your dialog from text to voice by using the {{site.data.keyword.texttospeechfull}} service. The audio is sent to the telephone network through the SIP trunk. When the customer replies, voice is converted to text by using the {{site.data.keyword.speechtotextfull}} service.
 
 This integration type is available as a beta feature in the Dallas, Frankfurt, and Washington, DC locations.
 {: note}
@@ -53,7 +53,7 @@ You must have Manager service level access to the instance. For more information
 
 1. If you don't have a SIP trunk configured, [work with a SIP trunk provider](#deploy-phone-sip-providers) to set up a SIP trunk now.
 
-    A SIP trunk is equivalent to an analog telephone line, except it uses the voice over Internet protocol (VoIP) to transmit voice data and can support multiple concurrent calls. The trunk can connect to the public switched telephone network (PSTN) or your company's on-premises private branch exchange (PBX).
+    A SIP trunk is equivalent to an analog telephone line, except it uses Voice over Internet Protocol (VoIP) to transmit voice data and can support multiple concurrent calls. The trunk can connect to the public switched telephone network (PSTN) or your company's on-premises private branch exchange (PBX).
 
     - You will need to provide the SIP URI for your assistant during the SIP trunk setup process.
     - Create a phone number through your SIP provider, and then assign it to your SIP trunk.
@@ -77,7 +77,7 @@ You must have Manager service level access to the instance. For more information
     
     The models that are chosen automatically use the same language as the assistant to which you are adding the integration. You can choose to use different models if you want.
 
-    If you want to use instances that are dedicated to handling speech services for your assistant only, create the instances first. Likewise, if you want to use a plan other than Plus. You must create the instances before you set up the integration. Then, you can choose the existing instances from the list.
+    If you want to use instances that are dedicated to handling speech services for your assistant only, or if you want to use a plan other than Plus, create the instances first. You must create the instances before you set up the integration. Then, you can choose the existing instances from the list.
     {: tip}
     
     If you want to use a model that was created in a different service instance, click **More options** to show all service instances that you can access as options. For example, if you created specialized custom models that you want your assistant to use, you can find and select them.
@@ -163,8 +163,10 @@ For whichever call center service you use, you will need to provide the call cen
 ## Optimize your dialog for voice
 {: #deploy-phone-dialog}
 
+For the best customer experience, design your dialog with the capabilities of the phone integration in mind:
+
 - Do not include HTML elements in your dialog text responses.
-- The voice integration does not support chat transfers that are initiated with the *Connect to human agent* response type.
+- The phone integration does not support chat transfers that are initiated with the *Connect to human agent* response type.
 - You can include search skill response types in dialog nodes that the phone integration will read. The introductory message (*I searched my knowledge base* and so on), and then the body of only the first search result is read.
 
   Your search results must be short. Be sure to test the search results that are returned and curate the data collection that you use as necessary.
