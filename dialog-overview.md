@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-24"
+lastupdated: "2020-09-30"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -611,6 +611,8 @@ To add an *Option* response type, complete the following steps:
     ![Shows a small options list in the preview link that is displayed as a drop-down menu.](images/options-dropdown.png)
 
     Some integration types, such as the web chat, reflect your preference. Other integration types, such as Slack, do not honor your preference when it renders the options.
+
+If you need to be able to populate the list of options with different values based on some other factors, you can design a dynamic options list. For more information, see the [How to Dynamically Add Response Options to Dialog Nodes](https://medium.com/ibm-watson/how-to-dynamically-add-response-options-to-dialog-nodes-in-watson-assistant-e14c5e08beca){: external} blog post.
 
 ### Adding a *Pause* response type
 {: #dialog-overview-add-pause}

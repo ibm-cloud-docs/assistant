@@ -55,6 +55,8 @@ Watson Assistant (Managed)
             dialog-slots.md
             dialog-webhooks.md
             dialog-integrations.md
+            dialog-voice-actions.md
+            dialog-sms-actions.md
             dialog-actions-client.md
             dialog-responses-json.md
 
@@ -73,6 +75,8 @@ Watson Assistant (Managed)
         deploy-intercom.md
         deploy-facebook.md
         deploy-slack.md
+        deploy-phone.md
+        deploy-sms.md
         deploy-custom-app.md
         deploy-integration-delete.md
 
@@ -124,6 +128,8 @@ Watson Assistant (Managed)
     dialog-methods.md
     expression-language.md
     filter-reference.md
+    commands-voice.md
+    commands-sms.md
     services-information.md
 
     {: .topicgroup}
