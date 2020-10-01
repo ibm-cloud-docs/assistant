@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-30"
+lastupdated: "2020-10-01"
 
 subcollection: assistant
 
@@ -23,14 +23,16 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Twilio messaging integration command reference ![Beta](images/beta.png)
+# Twilio messaging integration reference ![Beta](images/beta.png)
 {: #commands-sms}
 
-Add actions to the message `context` object to manage the flow of conversations with customers who interact with your assistant by submitting SMS messages over the telephone.
+Add action commands to the message `context` object to manage the flow of conversations with customers who interact with your assistant by submitting SMS messages over the telephone.
 {: shortdesc}
 
-The Twilio messaging integration is offered as a beta feature.
+The Twilio messaging integration is available as a beta feature.
 {: note}
+
+Learn about the supported commands and reserved context variables that are used by the Twilio messaging integration.
 
 ## Supported commands
 {: #commands-sms-actions}
@@ -40,7 +42,7 @@ Each action consists of a `command` property, followed by an optional `parameter
 | Action command | Description | Parameters |
 | ----- | ----- | ----- |
 | `smsActForceNoInputTurn` | Forces a new turn in the conversation without waiting for input from the user. The Twilio messaging integration sends a message request with `smsNoInputTurn` in the text field so that you can map this request to an intent in your dialog. | None |
-| `terminateSession` | Terminates the associated session. | None |
+| `terminateSession` | Ends the current SMS session. Use this command to ensure that the subsequent text message starts a new assistant-level session which does not retain any context values from the current session. | None |
 | `smsActSendMedia` | Enables MMS messaging.  | `mediaURL`: Specifies a JSON array of publicly accessible media URLs that are sent to the user. |
 | `smsActSetDisambiguationConfig` | Configures how to handle the choices that are displayed in a disambiguation list. | <ul><li>`prefixText`: Text to include before each option. For example, `Press %s for` where `%s` represents the number corresponding to a list choice; this is replaced with the actual number at run time.</li></ul> |
 | `smsActSetOptionsConfig` | Configures how to handle option response types. | <ul><li>`prefixText`: Text to include before each option. For example, `Press %s for` where `%s` represents the number corresponding to a list choice; this is replaced with the actual number at run time.</li></ul> |
@@ -67,6 +69,6 @@ Table 2 describes the context variables that are set from your dialog. Table 3 d
 | Context variable name | Description |
 | --------------------- | ----------- |
 | `smsError` | When the integration fails to send an SMS message, this variable contains details about the error that occurred.  |
-| `smsSessionID` | The Globally Unique Identifier (GUID) for the related SMS Gateway session. |
+| `smsSessionID` | The globally unique identifier (GUID) for the related SMS Gateway session. |
 | `smsMedia` | The `arraylist` of `mediaURL` and corresponding `mediaContentType`. This context variable is cleared at the end of each conversation turn. |
 {: caption="Table 3. Voice context variables set by the integration" caption-side="top"}
