@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-01"
+lastupdated: "2020-10-02"
 
 subcollection: assistant
 
@@ -80,7 +80,7 @@ You must have Manager service level access to the instance. For more information
     If you want to use instances that are dedicated to handling speech services for your assistant only, or if you want to use a plan other than Plus, create the instances first. You must create the instances before you set up the integration. Then, you can choose the existing instances from the list.
     {: tip}
     
-    If you want to use a model that was created in a different service instance, click **More options** to show all service instances that you can access as options. For example, if you created specialized custom models that you want your assistant to use, you can find and select them.
+    If you want to use a model that was created in a different service instance, click **More options** to show all service instances that you can access as options. <!--For example, if you created specialized custom models that you want your assistant to use, you can find and select them.-->
 
     - **{{site.data.keyword.speechtotextshort}}**: Optionally choose a different {{site.data.keyword.speechtotextshort}} service language model to use to define the language for your assistant to use when it speaks to customers.
 
