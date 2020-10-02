@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-10-02"
 
 keywords: context, context variable, digression, disambiguation, autocorrection, spelling correction, spell check, confidence 
 
@@ -168,13 +168,14 @@ Define a context variable by adding the variable name to the **Variable** field 
 
 1.  Click to open the dialog node to which you want to add a context variable.
 
-1.  Click the Options icon ![Advanced response](images/kabob.png) that is associated with the node response, and then click **Open context editor**.
+1.  Go to the *Assistant responds* section and click the menu icon ![overflow menu icon](images/more-icon.png).
 
-      ![Shows how to access the JSON editor associated with a standard node response.](images/contextvar-json-response.png)
+      If you're using multiple conditioned responses, you must click the *Customize response* icon ![gear icon](images/customize-response-icon.png) to see the menu that is associated with the response.
+      {: tip}
 
-      If the **Multiple responses** setting is **On** for the node, then you must first click the **Edit response** ![Edit response](images/edit-slot.png) icon for the response with which you want to associate the context variable.
+1.  Click **Open context editor**.
 
-      ![Shows how to access the JSON editor associated with a standard node that has multiple conditional responses enabled for it.](images/contextvar-json-multi-response.png)
+      ![Shows the Open context editor menu option selected from the list](images/open-context-editor.png)
 
 1.  Add the variable name and value pair to the **Variable** and **Value** fields.
 
