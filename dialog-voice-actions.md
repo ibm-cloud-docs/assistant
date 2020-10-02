@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-01"
+lastupdated: "2020-10-02"
 
 subcollection: assistant
 
@@ -36,11 +36,11 @@ Before you add customizations to your dialog that support phone interactions, yo
 
 You can perform the following types of actions:
 
-- [Enable keypad entry](#dialog-voice-actions-dtmf)
 - [Send a text message during a phone conversation](#dialog-voice-actions-sms)
 - [Transfer a call to a human agent](#dialog-voice-actions-transfer)
 - [Play hold music or a voice recording](#dialog-voice-actions-hold-music)
 - [Apply advanced speech services to specific topics ](#dialog-voice-actions-speech-advanced)
+- [Enable keypad entry](#dialog-voice-actions-dtmf)
 - [End the call](#dialog-voice-actions-hangup)
 
 In some cases, you might want to combine actions. For example, to enable two-factor authentication, you can both enable support for phone keypad entry and send a text message from the same dialog node.
@@ -81,54 +81,7 @@ To add a JSON code block to a dialog node, complete the following steps:
     ```
     {: codeblock}
 
-## Enabling keypad entry
-{: #dialog-voice-actions-dtmf}
-
-If you want customers to be able to send information by typing it on their phone keypad instead of speaking, you can add support for phone keypad entry. The best way to implement this type of support is to enable dual-tone multifrequency (DTMF) signaling. DTMF is a system that interprets the tones that are generated when a user presses keys on a push-button phone. The tones have a specific frequency and duration that can be interpreted by the phone network.
-
-To start listening for tones as the user presses phone keys, add the `vgwActCollectDTMF` command to the dialog node:
-
-```json
-{
-  "output": {
-      "generic": [
-      {
-        "values": [
-          {
-            "text": "Enter your 7-digit account number by using the phone keypad."
-          }
-        ],
-        "response_type": "text",
-        "selection_policy": "sequential"
-      }
-    ]
-  },
-  "context": {
-    "vgwAction": {
-      "command": "vgwActCollectDTMF",
-      "parameters": {
-        "dtmfTermKey": "#",
-        "dtmfCount": 7,
-        "dtmfIgnoreSpeech": true
-      }      
-    }
-  }
-}
-```
-{: codeblock}
-
-You can specify the following parameter values for the `vgwActCollectDTMF` command:
-
-- `dtmfTermKey`: Specifies the termination key that signals the end of DTMF input.
-- `dtmfIgnoreSpeech` Optionally add and set to true if you want to ignore any audio that is sent while the key presses are being registered.
-- `dtmfCount`: The number of DTMF digits to collect.
-- `dtmfMinCount`: The minimum number of DTMF digits to collect when you configure your DTMF collection to accept a range of entries.
-- `dtmfMaxCount`: The maximum number of DTMF digits to collect when you configure your DTMF collection to accept a range of entries. After this number of digits is collected, a conversation turn is initiated.
-- `dtmfInterDigitTimeoutCount`: The amount of time in milliseconds to wait for a new DTMF digit after a DTMF digit is received. During an active DTMF collection, this timeout activates when the first DTMF collection is received. When the inter-digit timeout is active, it deactivates the `vgwPostResponseTimeout` timer. If `dtmfInterDigitTimeoutCount` isn't specified, the post-response timer resets after receiving each DTMF digit, and it stays active until either the `vgwPostResponseTimeout` is met or the collection is completed.
-
-You can add a child node that conditions on the `@sys-number` system entity or a pattern entity named `@account_number` that recognizes the number pattern. The child node can save the number that is submitted by the customer in a context variable and show the appropriate response.
-
-### Customizing lists
+## Customizing lists
 {: #dialog-voice-actions-lists}
 
 Your assistant automatically says a number before each option in an option response or a disambiguation list that is displayed to the customer. The options are numbered sequentially and played to the user in the order in which they appear in the list. The customer can press a number on the keypad or say the respective number to choose one of the available options.
@@ -138,7 +91,7 @@ You can customize how these lists are displayed and handled.
 - [Options response type](#dialog-voice-actions-option-response)
 - [Disambiguation](#dialog-voice-actions-disambiguation)
 
-#### Options response type
+### Options response type
 {: #dialog-voice-actions-option-response}
 
 The dialog supports an `option` response type, which shows the customer multiple choices to pick from. You can customize how the options that are defined for an `option` response are read and the ways in which a customer can select an option by adding the `vgwActSetOptionsConfig` command.
@@ -232,7 +185,7 @@ When read, the assistant says, `Press or say one for Boat`. And if the customer 
 
 The configuration that you apply to the `option` response type in one node is applied to any other option responses that are processed in subsequent dialog nodes during the same session.
 
-#### Disambiguation
+### Disambiguation
 {: #dialog-voice-actions-disambiguation}
 
 When the dialog is confident that more than one dialog node might be the right one to process in response to a customer query, disambiguation is triggered. Disambiguation asks the customer to clarify which path they want to follow to get an answer. For more information, see [Disambiguation](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
@@ -416,10 +369,12 @@ The following context variables are designed to help you recognize when a failur
 
   You initially define the message in the **Transfer failure message** field when you configure the phone integration. If you want to customize the message for a specific branch of the conversation, you can add this variable and specify a new message for it in the dialog node.
 
-### Playing hold music or a voice recording
+## Playing hold music or a voice recording
 {: #dialog-voice-actions-hold-music}
 
-To play hold music while you transfer a call or to play a recorded message, use the `vgwActPlayUrl` command.
+To play hold music or to play a recorded message, use the `vgwActPlayUrl` command.
+
+You cannot play hold music during a call transfer. But, you might want to play hold music if your dialog needs time to perform processing of some kind, such as calling a client-side action or making a call to a webhook. You can look for places where the dialog uses the *Pause* response type to find nodes where this command might be useful.
 
 ```json
 {
@@ -441,19 +396,17 @@ To play hold music while you transfer a call or to play a recorded message, use 
 ```
 {: codeblock}
 
-You can specify the following parameter values for the `vgwActTransfer` command:
+You can specify the following parameter values for the `vgwActPlayUrl` command:
 
 - `url`: URL to a publicly-accessible audio file. The audio file must be single channel (mono), PCM-encoded, and have a 8,000 Hz sampling rate with 16 bits per sample. The file format must be `.wav`.
 - `playURLInLoop`: Specify `Yes` or `No` to indicate whether to repeatedly restart the audio play back after it finishes. The default value is `No`.
 
-If you expect the hold to last more than 5 seconds, set the `vgwConversationResponseTimeout` context variable to a higher number. Specify a number in milliseconds. For example, you might set it to 15 seconds:
+If your dialog subsequently processes a node with the `vgwActForceNoInputTurn` command, it won't work unless the `playURLInLoop` parameter is set to `Yes`. If you expect the hold to last more than 5 seconds, set the `vgwConversationResponseTimeout` context variable to a higher number. Specify a number in milliseconds. For example, you might set it to 15 seconds:
 
 ```
 "vgwConversationResponseTimeout": 15000
 ```
 {: codeblock}
-
-If your dialog subsequently processes a node with the `vgwActForceNoInputTurn` command, the command does not work unless the `playURLInLoop` parameter is set to `Yes`.
 
 ## Applying advanced speech services to specific topics
 {: #dialog-voice-actions-speech-advanced}
@@ -585,6 +538,83 @@ where the `updateMethod` parameter defines how changes to the configuration are 
 | mergeOnce | Merges the configuration for one turn of the conversation, and then reverts to the previous configuration. |
 {: caption="Table 2. Available options to update properties when using updateMethod." caption-side="top"}
 
+## Enabling keypad entry
+{: #dialog-voice-actions-dtmf}
+
+If you want customers to be able to send information by typing it on their phone keypad instead of speaking, you can add support for phone keypad entry. The best way to implement this type of support is to enable dual-tone multifrequency (DTMF) signaling. DTMF is a system that interprets the tones that are generated when a user presses keys on a push-button phone. The tones have a specific frequency and duration that can be interpreted by the phone network.
+
+To start listening for tones as the user presses phone keys, add the `vgwActCollectDTMF` command to the dialog node:
+
+```json
+{
+  "output": {
+      "generic": [
+      {
+        "values": [
+          {
+            "text": "Enter your 7-digit account number by using the phone keypad."
+          }
+        ],
+        "response_type": "text",
+        "selection_policy": "sequential"
+      }
+    ]
+  },
+  "context": {
+    "vgwAction": {
+      "command": "vgwActCollectDTMF",
+      "parameters": {
+        "dtmfTermKey": "#",
+        "dtmfCount": 7,
+        "dtmfIgnoreSpeech": true
+      }      
+    }
+  }
+}
+```
+{: codeblock}
+
+You can specify the following parameter values for the `vgwActCollectDTMF` command:
+
+- `dtmfTermKey`: Specifies the termination key that signals the end of DTMF input.
+- `dtmfIgnoreSpeech` Optionally add and set to true if you want to ignore any audio that is sent while the key presses are being registered.
+- `dtmfCount`: The number of DTMF digits to collect.
+- `dtmfMinCount`: The minimum number of DTMF digits to collect when you configure your DTMF collection to accept a range of entries.
+- `dtmfMaxCount`: The maximum number of DTMF digits to collect when you configure your DTMF collection to accept a range of entries. After this number of digits is collected, a conversation turn is initiated.
+- `dtmfInterDigitTimeoutCount`: The amount of time in milliseconds to wait for a new DTMF digit after a DTMF digit is received. During an active DTMF collection, this timeout activates when the first DTMF collection is received. When the inter-digit timeout is active, it deactivates the `vgwPostResponseTimeout` timer. If `dtmfInterDigitTimeoutCount` isn't specified, the post-response timer resets after receiving each DTMF digit, and it stays active until either the `vgwPostResponseTimeout` is met or the collection is completed.
+
+You can add a child node that conditions on the `@sys-number` system entity or a pattern entity named `@account_number` that recognizes the number pattern. The child node can save the number that is submitted by the customer in a context variable and show the appropriate response.
+
+When you use the `vgwActCollectDTMF`, you might want to pause Speech to Text before collecting DTMF tones. To stop transcribing audio before you start to collect keypad tones, you can use the following set of commands together in a sequence. Don't pause Speech to Text if you want users to be able to say or press a key. To allow customers to optionally speak an answer, use the `dtmfIgnoreSpeech` parameter instead.
+
+```json
+{
+  "output": {
+    "generic": [
+    ]
+  },
+  "context" : {
+    "vgwActionSequence": [
+          {
+        "command": "vgwActPauseSTT"
+      },
+      {
+        "command": "vgwActCollectDTMF",
+        "parameters": {
+          "dtmfTermKey": "#",
+          "dtmfMinCount": "1",
+          "dtmfInterDigitTimeoutCount": "2000"
+        }
+      },
+        {
+        "command": "vgwActPlayText"
+      }
+    ] 
+  } 
+ }
+```
+{: codeblock}
+
 ## End the call
 {: #dialog-voice-actions-hangup}
 
@@ -619,8 +649,6 @@ To have the assistant end the call, use the `vgwActHangup` command.
 
 If you want to run more than one command in succession, you can use a `vgwActionSequence` command.
 
-For example, when you use the `vgwActCollectDTMF`, it does not wait to unpause Speech before collecting DTMF tones; it runs in the background. To stop transcribing audio before you start to collect keypad tones, use the following set of commands together in a sequence.
-
 ```json
 {
   "output": {
@@ -629,25 +657,20 @@ For example, when you use the `vgwActCollectDTMF`, it does not wait to unpause S
   },
   "context" : {
     "vgwActionSequence": [
-          {
-        "command": "vgwActPauseSTT"
-      },
         {
-        "command": "vgwActPlayText"
-      },
-      {
-        "command": "vgwActCollectDTMF",
-        "parameters": {
-          "dtmfTermKey": "#",
-          "dtmfMinCount": "1",
-          "dtmfInterDigitTimeoutCount": "2000"
+          "command": "<command-name>",
+          "parameters": {
+            "<first-parameter>": "<parameter-value>"
+          }
+        },
+        {
+          "command": "<command-name>",
+          "parameters": {
+            "<first-parameter>": "<parameter-value>"
+          }
         }
-      },
-      {
-        "command": "vgwActUnPauseSTT"
-      }
-    ] 
-  } 
- }
+    ]
+  }
+}
 ```
 {: codeblock}
