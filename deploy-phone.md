@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-02"
+lastupdated: "2020-10-06"
 
 subcollection: assistant
 
@@ -257,7 +257,7 @@ Incoming calls to your assistant follow this path:
 ## Phone integration limits
 {: #deploy-phone-limits}
 
-Any speech service charges that are incurred by the phone integration are included in the usage costs of the {{site.data.keyword.conversationshort}} service plan. Plan usage is measured based on the number of monthly active users.
+Any speech service charges that are incurred by the phone integration are included in the usage costs of the {{site.data.keyword.conversationshort}} service plan. Plan usage is measured based on the number of monthly active users, where a user is identified by the unique caller phone number. An MD5 hash is applied to the customer phone number and the 128-bit hash value is used for billing purposes.
 
 The number of concurrent calls that your assistant can participate in at one time depends on your plan type.
 
