@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-30"
+lastupdated: "2020-10-06"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -156,7 +156,7 @@ You can use one or more of the following artifacts in any combination to define 
 
   For response conditions, this artifact type can be used alone. You can change the response based on a specific context variable value. For example, `$city:Boston` checks whether the `$city` context variable contains the value, `Boston`. If so, the response is returned.
   
-  For more information about context variables, see [Context variables](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-context).
+  For more information about context variables, see [Context variables](/docs/assistant?topic=assistant-dialog-runtime-context).
 
 - **Entity**: The node is used when any value or synonym for the entity is recognized in the user input. Use the syntax, `@entity_name`. For example, `@city` checks whether any of the city names that are defined for the @city entity were detected in the user input. If so, the node or response is processed.
 
@@ -221,7 +221,7 @@ If you want to provide a text response, simply enter the text that you want your
 
 ![Shows a node that shows a user ask, Where are you located, and the dialog response is, We have no brick and mortar stores! But, with an internet connection, you can shop us from anywhere.](images/response-simple.png)
 
-To include a context variable value in the response, use the syntax `$variable_name` to specify it. See [Context variables](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-context) for more information. For example, if you know that the $user context variable is set to the current user's name before a node is processed, then you can refer to it in the text response of the node like this:
+To include a context variable value in the response, use the syntax `$variable_name` to specify it. See [Context variables](/docs/assistant?topic=assistant-dialog-runtime-context) for more information. For example, if you know that the $user context variable is set to the current user's name before a node is processed, then you can refer to it in the text response of the node like this:
 
 ```
 Hello $user
@@ -702,7 +702,7 @@ A single dialog node can provide different responses, each one triggered by a di
 
 The node still has a main condition, which is the condition for using the node and processing the conditions and responses that it contains.
 
-In this example, your assistant uses information that it collected earlier about the user's location to tailor its response, and provide information about the store nearest the user. See [Context variables](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-context) for more information about how to store information collected from the user.
+In this example, your assistant uses information that it collected earlier about the user's location to tailor its response, and provide information about the store nearest the user. See [Context variables](/docs/assistant?topic=assistant-dialog-runtime-context) for more information about how to store information collected from the user.
 
 ![Shows a node that shows a user ask, Where are you located, and the dialog has three different responses depending on conditions that use info from the $state context variable to specify locations in those states.](images/multiple-responses.png)
 

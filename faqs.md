@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-24"
+lastupdated: "2020-10-06"
 
 subcollection: assistant
 
@@ -38,7 +38,7 @@ Find answers to frequently-asked questions and quick fixes for common problems.
 |------|------------|
 | Assistant | Container for your skills. You add skills to an assistant, and then deploy the assistant when you are ready to start helping your customers. [Learn more](/docs/assistant?topic=assistant-assistants). |
 | Content catalog | A set of prebuilt intents that are categorized by subject, such as customer care. You can add these intents to your skill and start using them immediately. Or you can edit them to complement other intents that you create. [Learn more](/docs/assistant?topic=assistant-catalog). |
-| Context variable | A variable that you can use to collect information during a conversation, and reference it later in the same conversation. For example, you might want to ask for the customer's name and then address the person by name later on. [Learn more](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-context-variables).|
+| Context variable | A variable that you can use to collect information during a conversation, and reference it later in the same conversation. For example, you might want to ask for the customer's name and then address the person by name later on. [Learn more](/docs/assistant?topic=assistant-dialog-runtime-context#dialog-runtime-context-variables).|
 | Dialog | The component where you build the conversation that your assistant has with your customers. For each defined intent, you can author the response your assistant should return. [Learn more](/docs/assistant?topic=assistant-dialog-overview). |
 | Digression | A feature that gives the user the power to direct the conversation. It prevents customers from getting stuck in a dialog thread; they can switch topics whenever they choose. [Learn more](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-digressions). |
 | Disambiguation | A feature that enables the assistant to ask customers to clarify their meaning when the assistant isn't sure what a user wants to do next. [Learn more](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation). |

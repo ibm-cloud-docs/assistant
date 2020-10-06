@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-10-06"
 
 keywords: dialog node limits, copying a node, moving a node, adding a folder
 
@@ -79,7 +79,7 @@ Queries you submit through the "Try it out" pane generate `/message` API calls, 
     1.  To add a context variable, specify the variable name, and press **Enter**.
     1.  To define a default value for the context variable, find the context variable you added in the list, and then specify a value for it.
 
-    See [Context variables](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-context) for more information.
+    See [Context variables](/docs/assistant?topic=assistant-dialog-runtime-context) for more information.
 
 1.  Continue to interact with the dialog to see how the conversation flows through it.
 

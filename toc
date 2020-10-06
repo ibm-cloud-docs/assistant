@@ -43,6 +43,10 @@ Watson Assistant (Managed)
             dialog-build.md
             dialog-plan.md
             dialog-overview.md
+            dialog-runtime-context.md
+            dialog-runtime.md
+            dialog-runtime-spell-check.md
+            dialog-slots.md
             dialog-tips.md
             dialog-tasks.md
             dialog-support.md
@@ -51,8 +55,6 @@ Watson Assistant (Managed)
 
         {: .topicgroup}
         Advanced dialog tasks
-            dialog-runtime.md
-            dialog-slots.md
             dialog-webhooks.md
             dialog-integrations.md
             dialog-voice-actions.md

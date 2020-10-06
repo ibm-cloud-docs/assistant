@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-24"
+lastupdated: "2020-10-06"
 
 keywords: integration settings
 
@@ -32,7 +32,7 @@ subcollection: assistant
 Use the JSON editor in dialog to access information that is submitted from the web chat integration.
 {: shortdesc}
 
-The `context` object that is passed as part of the v2 `/message` API request contains an `integrations` object. This object makes it possible to pass information that is specific to a single integration type in the context. For more information about context variables, see [Context variables](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-context-variables).
+The `context` object that is passed as part of the v2 `/message` API request contains an `integrations` object. This object makes it possible to pass information that is specific to a single integration type in the context. For more information about context variables, see [Context variables](/docs/assistant?topic=assistant-dialog-runtime-context#dialog-runtime-context-variables).
 
 The `integrations` object is available from the v2 API in version `2020-04-01` or later only.
 {: important} 

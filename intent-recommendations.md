@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-10-06"
 
 subcollection: assistant
 
@@ -149,7 +149,7 @@ If you choose to correct spelling and grammar in the user examples, follow these
 Doing a copy edit is not required. If there are misspellings in your training data, the autocorrection tool accepts the misspelled words at run time and is still able to classify input successfully. You might be perpetuating a misspelling, but doing so has limited impact on the overall performance of your assistant.
 {: note}
 
-For more information about how autocorrection works, see [Correcting user input](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check) -->
+For more information about how autocorrection works, see [Correcting user input](/docs/assistant?topic=assistant-dialog-runtime-spell-check) -->
 
 ## Getting intent recommendations
 {: #intent-recommendations-get-intent-recommendations-task}
