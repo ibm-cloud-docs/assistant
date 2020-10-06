@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-05-28"
+lastupdated: "2020-10-06"
 
 subcollection: assistant
 
@@ -44,7 +44,7 @@ The first table shows the level of support for all features, except those relate
 
 Table 1. Feature support details
 
-| Language | **Defining [intents](/docs/assistant?topic=assistant-intents)**, **[entities](/docs/assistant?topic=assistant-entities)**, and **[dialog](/docs/assistant?topic=assistant-dialog-build)** | **[Autocorrection](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check)** |
+| Language | **Defining [intents](/docs/assistant?topic=assistant-intents)**, **[entities](/docs/assistant?topic=assistant-entities)**, and **[dialog](/docs/assistant?topic=assistant-dialog-build)** | **[Autocorrection](/docs/assistant?topic=assistant-dialog-runtime-spell-check)** |
 |:---:|:---:|:---:|
 | **English (en)**                   | GA | GA |
 | **Arabic (ar)**                    | GA | NA |

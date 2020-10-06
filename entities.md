@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-10-06"
 
 keywords: entity, entity value, contextual entity, dictionary entity, pattern entity, entity synonym, annotate mentions
 
@@ -209,7 +209,7 @@ To add an entity that recognizes a pattern:
 
 1.  Click **Add value** and repeat the process to add more entity values.
 
-When you use pattern entities to find patterns in user input, you often need a way to store the part of the user input text that matches the pattern. To do so, you can use a context variable. For more information, see [Defining a context variable](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-context-var-define).
+When you use pattern entities to find patterns in user input, you often need a way to store the part of the user input text that matches the pattern. To do so, you can use a context variable. For more information, see [Defining a context variable](/docs/assistant?topic=assistant-dialog-runtime-context#dialog-runtime-context-var-define).
 
 For example, your dialog might ask users for their email addresses. The dialog node condition will contain a condition similar to `@contactInfo:email`. You can use the following syntax in the dialog node's response section to define a context variable that captures and stores the user's email address text:
 
@@ -259,7 +259,7 @@ For English, fuzzy matching prevents the capturing of some common, valid English
 
 Your fuzzy matching setting has no impact on synonym recommendations. Even if fuzzy matching is enabled, synonyms are suggested for the exact value you specify only, not the value and slight variations of the value.
 
-To understand how fuzzy matching and autocorrection are related to one another, see the [autocorrection documentation](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-spell-check-vs-fuzzy-matching).
+To understand how fuzzy matching and autocorrection are related to one another, see the [autocorrection documentation](/docs/assistant?topic=assistant-dialog-runtime-spell-check#dialog-runtime-spell-check-vs-fuzzy-matching).
 
 ## Adding contextual entities
 {: #entities-create-annotation-based}
