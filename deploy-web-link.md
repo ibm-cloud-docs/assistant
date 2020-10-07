@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-11"
+lastupdated: "2020-10-06"
 
 subcollection: assistant
 
@@ -25,10 +25,10 @@ subcollection: assistant
 # Testing your assistant from a web page
 {: #deploy-web-link}
 
-If you do not disable the preview link, then the assistant is immediately available for testing from a web page.
+If you do not disable the preview link when you create an assistant, the assistant is immediately available for testing from a web page.
 {: shortdesc}
 
-The assistant is implemented as a chat widget embedded in a simple IBM-branded web page automatically. You can test the dialog skill that you added to the assistant by entering text into the chat window. You can also share the URL of the page with others to enlist help in testing and getting feedback about the assistant.
+The assistant is implemented as a chat widget embedded in a simple IBM-branded web page automatically. You can test the skills that you added to the assistant by entering text into the chat window. You can also share the URL of the page with others to enlist help in testing and getting feedback about the assistant.
 
 Unlike when you test using the "Try it out" pane, any API calls that result from your interactions with the assistant hosted by the preview link URL do incur charges.
 
@@ -53,7 +53,7 @@ To test the assistant from a web-hosted chat widget, complete the following step
 
     No responses are returned until after you create a dialog skill and add it to the assistant.
 
-    The dialog flow for the current session is restarted after 60 minutes of inactivity (5 minutes for Lite plans). This means that if a user stops interacting with the assistant, after 60 (or 5) minutes, any context variable values that were set during the previous conversation are set to null or back to their default values.
+    The dialog flow for the current session is restarted after the inactivity period is passed. The inactivity period can range from 5 minutes to 7 days depending on what you configure for your service plan type. This means that if a user stops interacting with the assistant, after the intactivity time frame passes, any context variable values that were set during the previous conversation are set to null or back to their default values. For more information, see [Changing the inactivity timeout setting](/docs/assistant?topic=assistant-assistant-settings#assistant-settings-change-timeout).
 
 1.  After testing, you can close the browser tab to exit the public web page.
 

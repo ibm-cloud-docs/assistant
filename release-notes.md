@@ -61,6 +61,9 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 The change log lists changes that were made this year ordered by the date they were released.
 
+To remove a notification about a new feature that is displayed in a banner, you can hover over the end of the banner. A close button is displayed that you can click to close the notification banner.
+{: tip}
+
 ## 1 October 2020
 {: #1October2020}
 

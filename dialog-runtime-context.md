@@ -27,7 +27,7 @@ subcollection: assistant
 {:gif: data-image-type='gif'}
 {:video: .video}
 
-# Personalize the dialog with context variables
+# Personalizing the dialog with context
 {: #dialog-runtime-context}
 
 To personalize the conversation, your assistant can collect information from the customer and then refer back to it later in the conversation.
