@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-10-07"
 
 subcollection: assistant
 
@@ -28,7 +28,7 @@ subcollection: assistant
 If you do not disable the preview link when you create an assistant, the assistant is immediately available for testing from a web page.
 {: shortdesc}
 
-The assistant is implemented as a chat widget embedded in a simple IBM-branded web page automatically. You can test the skills that you added to the assistant by entering text into the chat window. You can also share the URL of the page with others to enlist help in testing and getting feedback about the assistant.
+The preview link renders your assistant as a web chat integration that is embedded in a simple IBM-branded web page. You can test the skills that you added to the assistant by entering text into the chat window. You can also share the URL of the page with others to enlist help in testing and getting feedback about the assistant.
 
 Unlike when you test using the "Try it out" pane, any API calls that result from your interactions with the assistant hosted by the preview link URL do incur charges.
 

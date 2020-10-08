@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-05-27"
+lastupdated: "2020-10-08"
 
 subcollection: assistant
 
@@ -33,9 +33,6 @@ Teach your dialog skill to recognize when a user asks about topics that it is no
 
 To teach your assistant about subjects it should ignore, you can review your user conversation logs to mark utterances that discuss off-topic subjects as irrelevant.
 
-The **Mark as irrelevant** option is not available in all languages. See [supported languages](/docs/assistant?topic=assistant-language-support) for details.
-{: note}
-
 Intents that are marked as irrelevant are saved as counterexamples in the JSON workspace, and are included as part of the training data. They teach your assistant to explicitly not answer utterances of this type.
 
 Be certain before you designate an input as irrelevant.
@@ -45,7 +42,7 @@ Be certain before you designate an input as irrelevant.
 
 You can mark an intent as irrelevant directly from the *Try it out* pane also.
 
-  ![Mark as irrelevant screen capture](images/irrelevant.png)
+![Mark as irrelevant screen capture](images/irrelevant.png)
 
 ## Enabling irrelevance detection
 {: #irrelevance-detection-enable}
@@ -82,7 +79,7 @@ Irrelevance detection is designed to bridge any gaps you might have in your coun
 
 The supplemental method examines the structure of the new utterance and compares it to the structure of the user example utterances in your training data. This alternate approach helps skills that have few or no counterexamples recognize irrelevant utterances. It is likely to have less of an effect for skills that have a sufficient number of counterexamples defined already. 
 
-Note that the new method relies on structural information that is based on data from outside your skill. So, while the new method can be useful as you are starting out, to build an assistant that provides a more customized experience, you want it to use information from data that is derived from within the application's domain. The way to ensure that your assistant does so is by adding your own counterexamples. For more information, see [Teaching your skill about topics to ignore](/docs/assistant?topic=assistant-logs#logs-mark-irrelevant).
+Note that the new method relies on structural information that is based on data from outside your skill. So, while the new method can be useful as you are starting out, to build an assistant that provides a more customized experience, you want it to use information from data that is derived from within the application's domain. The way to ensure that your assistant does so is by adding your own counterexamples.
 
 ## Counterexample limits
 {: #irrelevance-detection-limits}
