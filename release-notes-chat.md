@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-24"
+lastupdated: "2020-10-07"
 
 subcollection: assistant
 
@@ -37,6 +37,13 @@ For information about new features and improvements to the core {{site.data.keyw
 {: #release-notes-chat-version}
 
 If you want to evaluate changes that are introduced in a web chat release before you apply them to your deployment, you can version your web chat. For more information, see [Versioning](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=key-concepts#versioning)
+
+## 3.1.0
+{: #3.1.0}
+
+*Release date: 8 October 2020*
+
+- **Suggestions now allow for trial and error**: If customers select a suggestion and find that the response is not helpful, they can scroll back to the suggestions list and try a different suggestion.
 
 ## 3.0.0
 {: #3.0.0}
