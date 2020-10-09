@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-08"
+lastupdated: "2020-10-09"
 
 keywords: context, context variable
 
@@ -446,6 +446,7 @@ Alternatively you can delete the context variable in your application logic.
 In general, if a node sets the value of a context variable that is already set, then the previous value is overwritten by the new value.
 
 #### Updating a complex JSON object
+{: #dialog-runtime-context-update-json-complex}
 
 Previous values are overwritten for all JSON types except a JSON object. If the context variable is a complex type such as JSON object, a JSON merge procedure is used to update the variable. The merge operation adds any newly defined properties and overwrites any existing properties of the object.
 
@@ -492,6 +493,7 @@ The result is this context:
 See [Expression language methods](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-objects) for more information about methods you can perform on objects.
 
 #### Updating arrays
+{: #dialog-runtime-context-update-arrays}
 
 If your dialog context data contains an array of values, you can update the array by appending values, removing a value, or replacing all the values.
 

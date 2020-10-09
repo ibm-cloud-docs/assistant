@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-09-24"
+lastupdated: "2020-10-09"
 
 subcollection: assistant
 
@@ -44,8 +44,8 @@ For example, you might add an intent and use it in a dialog node like the intent
 
 | Intent name | Intent user example 1 | Intent user example 2 | Response from dialog node that conditions on intent |
 |--------|-----------------------|-----------------------|-----------------------------------------------------|
-| `#call_support` | *How do I reach support?* | *What's your toll-free number?* | *Call 1-800-555-0123 to reach a call center agent at any time.* |
-| `#support_ticket` | *How do I get help?* | *Who can help me with an issue I'm having?* |  *Go to [Support Center](https://example.com/support) and open a support ticket.* |
+| `#call_support` | *How do I reach support?* | *What's your toll-free number?* | *`Call 1-800-555-0123 to reach a call center agent at any time.`* |
+| `#support_ticket` | *How do I get help?* | *Who can help me with an issue I'm having?* |  *`Go to [Support Center](https://example.com/support) and open a support ticket.`* |
 {: caption="Alternative support request intent examples" caption-side="top"}
 
 If you deploy your assistant with an integration that has built-in service desk support, you can use the special *Connect to human agent* response type in your dialog response to initiate a transfer.

@@ -145,7 +145,7 @@ To create actions, complete the following steps:
 
     The name can be up to 64 characters in length. A longer example message that is used as the name by default will be truncated to 64 characters.
 
-    In some situations, the action name is shown to customers or service desk personnel to express the purpose of the action. The name can be shown in a disambiguation list or in a chat summary, for example. It is worth taking some time to give the action a name that is concise and accurate.
+    In some situations, the action name is shown to customers or service desk personnel to express the purpose of the action. The name can be shown in a disambiguation list or in a chat summary, for example. It is worth taking some time to give the action a name that is concise and accurate. For more information, see [Disambiguation](#actions-disambiguation).
     {: tip}
 
 1.  Click **Save**, and then click **Close**.
@@ -429,6 +429,55 @@ If you add only an actions skill to the assistant, the action skill starts the c
 {: important}
 
 You can [call actions in the actions skill from the dialog skill](/docs/assistant?topic=assistant-dialog-call-action). To test how an action behaves when it is called from a dialog skill, test it from the assistant that uses both of the skills together. You cannot recreate the interaction from the Preview pane of the actions skill. First, add the actions and dialog skills to an assistant. Then, you can create a *Preview link* integration to test how the two skills interact with one another. Queries you submit through the *Preview link* integration do incur charges. For more information about the *Preview link* integration, see [Testing your assistant from a web page](/docs/assistant?topic=assistant-deploy-web-link).
+
+## Disambiguation
+{: #actions-disambiguation}
+
+Disambiguation occurs when your assistant finds that more than one action can fulfill a customer's request, and asks the customer for clarification. Instead of guessing which action to take, your assistant shows a list of the possible actions to the customer, and asks the customer to pick the right one.
+
+![Shows a sample conversation between a user and the assistant, where the assistant asks for clarification from the user.](images/disambig-demo.png)
+
+Every custom action is eligible for disambiguation. The default actions are not.
+
+When an action is displayed in the disambiguation list, it is represented by the text from its name field. If you don't specify a name for an action, the first example message that you add to it is used as the action name automatically.
+
+### Customizing disambiguation
+{: #actions-disambiguation-config}
+
+You can control things like the wording your assistant uses to introduce the disambiguation list and whether a *None of the above* choice is offered.
+
+To customize disambiguation, complete the following steps:
+
+1.  From the actions skill main page, click the *Skill settings* icon ![Gear icon](images/gear-icon.png) in the page header.
+
+1.  You can make the following changes:
+
+    - **Assistant says**: Edit the text that is displayed before the list of disambiguation choices. 
+    
+      The default text is *Did you mean:* You can change it to something else, such as *What do you want to do?* or *Pick what to do next*.
+    - **Label for the fallback choice**: Edit the label that is displayed for the choice that customers can click when none of the other choices are quite right. When a user picks this choice, the *Retry when no intent matches* default action is taken next.
+    
+      The label *None of the above* is used if you don't change it.  
+      
+      This fallback choice gives customers a way to get out of the disambiguation process if it's not helping them. If you don't want to give customers a fallback choice, remove the text from the field.
+
+1.  Optionally, review and improve your action names. 
+
+    If an action name is too long or doesn't reflect the purpose of the action, edit it. Use a name that is concise and represents the overall goal of the action.
+
+### Disabling disambiguation
+{: #actions-disambiguation-disable}
+
+To disable disambiguation for all actions:
+
+1.  From the actions skill main page, click the *Skill settings* icon ![Gear icon](images/gear-icon.png) in the page header.
+1.  Set the disambiguation switch to **Off**.
+1.  Click **Save**, and then click **Close**.
+
+To disable disambiguation for a single action:
+
+1.  From the actions skill main page, look in the *Custom actions* table for the action that you never want shown as a disambiguation option.
+1.  From the action's *Click to view actions* menu ![Overflow menu](images/more-options.png), choose **Don't disambiguate**. 
 
 ## Action limits
 {: #actions-limits}
