@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-08"
+lastupdated: "2020-10-09"
 
 subcollection: assistant
 
@@ -35,14 +35,16 @@ To teach your assistant about subjects it should ignore, you can review your use
 
 Intents that are marked as irrelevant are saved as counterexamples in the JSON workspace, and are included as part of the training data. They teach your assistant to explicitly not answer utterances of this type.
 
+While testing your dialog, you can mark an intent as irrelevant directly from the *Try it out* pane.
+
+![Mark as irrelevant screen capture](images/irrelevant.png)
+
 Be certain before you designate an input as irrelevant.
 
 - There is no way to access or change the inputs from the user interface later.
 - The only way to reverse the identification of an input as being irrelevant is to use the same input in a test integration channel, and then explicitly assign it to an intent.
 
-You can mark an intent as irrelevant directly from the *Try it out* pane also.
-
-![Mark as irrelevant screen capture](images/irrelevant.png)
+Often there are subjects that you expect customers to ask and that you want your assistant to address eventually, but that you aren't ready to fully implement yet. Instead of adding those topics as counterexamples which can be hard to find later, capture the customer input examples as new intents. But don't link dialog nodes to the intents until you're ready. If customers ask about one of these topics in the meantime, the anything_else node is triggered to explain that the assistant can't help with the current request, but can help them with other things.
 
 ## Enabling irrelevance detection
 {: #irrelevance-detection-enable}

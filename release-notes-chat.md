@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-07"
+lastupdated: "2020-10-08"
 
 subcollection: assistant
 
@@ -43,7 +43,7 @@ If you want to evaluate changes that are introduced in a web chat release before
 
 *Release date: 8 October 2020*
 
-- **Suggestions now allow for trial and error**: If customers select a suggestion and find that the response is not helpful, they can scroll back to the suggestions list and try a different suggestion.
+- **Suggestions now allow for trial and error**: If customers select a suggestion and find that the response is not helpful, they can open the suggestions list again and try a different suggestion.
 
 ## 3.0.0
 {: #3.0.0}

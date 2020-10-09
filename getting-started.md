@@ -2,11 +2,15 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-10"
+lastupdated: "2020-10-08"
 
 keywords: assistant, omnichannel, virtual agent, virtual assistant, chatbot, conversation, watson assistant, watson conversation
 
 subcollection: assistant
+content-type: tutorial
+services:
+account-plan:
+completion-time: 10m
 
 ---
 
@@ -26,7 +30,7 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:hide-dashboard: .hide-dashboard}
 {:download: .download}
-{:gif: data-image-type='gif' width="600"}
+{:video: .video}
  
 # Getting started with {{site.data.keyword.conversationshort}}
 {: #getting-started}
@@ -52,18 +56,22 @@ You need a service instance to start.
 ## Step 1: Open Watson Assistant
 {: #getting-started-launch-tool}
 
-After you create a {{site.data.keyword.conversationshort}} service instance, you land on the **Manage** page of the {{site.data.keyword.conversationshort}} dashboard.
+After you create a {{site.data.keyword.conversationshort}} service instance, you land on the **Manage** page.
 {: hide-dashboard}
 
 1.  Click **Launch {{site.data.keyword.conversationshort}}**. If you're prompted to log in, provide your {{site.data.keyword.cloud_notm}} credentials.
 
-A new browser tab or window opens and the Assistants page of {{site.data.keyword.conversationshort}} is displayed.
+A new browser tab or window opens and {{site.data.keyword.conversationshort}} is displayed.
 
-- An assistant named **My first assistant** is created for you automatically. An *assistant* is a cognitive bot to which you add skills that enable it to interact with your customers in useful ways.
+- An assistant named **My first assistant** is created for you automatically. An *assistant* is a chatbot. You add skills to your assistant so it can interact with your customers in useful ways.
 
-- A dialog skill named **My first skill** is added to the assistant for you automatically. A *dialog skill* is a container for the artifacts that define the flow of a conversation that your assistant can have with your customers.
+- A dialog skill named **My first skill** is added to the assistant for you automatically. A *dialog skill* is a container for the artifacts that define the flow of conversations that your assistant has with your customers.
 
-![Shows the My first assistant with the My first skill added to it](images/gs-my-first-skill.png)
+The dialog skill is opened and the *Intents* page is displayed.
+
+![Shows the Intents page of My first skill](images/gs-intents-page.png)
+
+If available in your location, a tour begins that you can step through to learn about the product. Follow the tour; it provides a great overview of the product.
 
 If an assistant and skill are not created automatically, complete Steps 2 and 3. Otherwise, [skip to Step 4: Add intents from a content catalog](#getting-started-add-catalog).
 
@@ -98,24 +106,14 @@ A *dialog skill* is a container for the artifacts that define the flow of a conv
 
 1.  Click **Create dialog skill**.
 
-    The skill is created and you return to the assistant page.
-
-    ![Finish creating the skill](images/gs-my-first-skill.png)
-
-1.  Click to open the skill you just created.
+    The skill is created and opens to the *Intents* page.
 
 ## Step 4: Add intents from a content catalog
 {: #getting-started-add-catalog}
 
-When you open the *My first skill*, you land on the *Intents* page.
+The Intents page is where you start to train your assistant. In this tutorial, you will add training data that was built by IBM to your skill. Prebuilt intents are available from the content catalog. You will give your assistant access to the **General** content catalog so your dialog can greet users, and end conversations with them.
 
-![Shows the Intents page of My first skill](images/gs-intents-page.png)
-
-If available in your location, a tour begins that you can step through to learn about the product. Follow the tour; it provides a great overview of the product.
-
-Add training data that was built by IBM to your skill by adding intents from a content catalog. In particular, you will give your assistant access to the **General** content catalog so your dialog can greet users, and end conversations with them.
-
-1.  Click the **Content Catalog** tab.
+1.  Click **Content Catalog** from the Skills menu.
 
 1.  Find **General** in the list, and then click **Add to skill**.
 
@@ -129,14 +127,16 @@ You successfully started to build your training data by adding prebuilt content 
 ## Step 5: Build a dialog
 {: #getting-started-build-dialog}
 
-A [dialog](/docs/assistant?topic=assistant-dialog-overview) defines the flow of your conversation in the form of a logic tree. It matches intents (what users say) to responses (what the bot says back). Each node of the tree has a condition that triggers it, based on user input.
+A [dialog](/docs/assistant?topic=assistant-dialog-overview) defines the flow of your conversation in the form of a logic tree. It matches intents (what users say) to responses (what your virtual assistant says back). Each node of the tree has a condition that triggers it, based on user input.
 
 We'll create a simple dialog that handles greeting and ending intents, each with a single node.
 
 ### Adding a start node
 
 1.  From the Skills menu, click **Dialog**.
-1.  Click **Create dialog**. You see two nodes:
+
+    The following two dialog nodes are created for you automatically:
+
     - **Welcome**: Contains a greeting that is displayed to your users when they first engage with the assistant.
     - **Anything else**: Contains phrases that are used to reply to users when their input is not recognized.
 
@@ -159,13 +159,18 @@ You can test your dialog at any time to verify the dialog. Let's test it now.
 
 Now let's add nodes between the `Welcome` node and the `Anything else` node that handle our intents.
 
-1.  Click the More icon ![More options](images/kabob.png) on the **Welcome** node, and then select **Add node below**.
+1.  Click **Add node**.
+1.  In the node name field, type `Greet customers`.
 1.  In the **If assistant recognizes** field of this node, start to type `#General_Greetings`. Then, select the **`#General_Greetings`** option.
 1.  Add the response text, `Good day to you!`
 
     ![Editing the general greeting node.](images/gs-add-greeting-node.png)
 1.  Click ![Close](images/close.png) to close the edit view.
-1.  Click the More icon ![More options](images/kabob.png) on this node, and then select **Add node below** to create a peer node. In the peer node, specify `#General_Ending` in the **If assistant recognizes** field, and `OK. See you later.` as the response text.
+1.  Click **Add node** to create a peer node. 
+1.  Name the peer node `Say goodbye` and specify `#General_Ending` in the **If assistant recognizes** field. 
+1.  Add `OK. See you later.` as the response text.
+
+    ![Editing the general ending node.](images/gs-add-ending-node.png)
 1.  Click ![Close](images/close.png) to close the edit view.
 
    ![Dialog after the ending node is added.](images/gs-ending-node-added.png)
@@ -183,7 +188,7 @@ You built a simple dialog to recognize and respond to both greeting and ending i
     - `good morning`
     - `sayonara`
 
-    ![Testing the dialog in the Try it out pane](images/gs-try-it.gif){: gif}
+    ![Testing the dialog in the Try it out pane](images/gs-try-it.mp4){: video controls loop}
 
     {{site.data.keyword.watson}} can recognize your intents even when your input doesn't exactly match the examples that you included. The dialog uses intents to identify the purpose of the user's input regardless of the precise wording used, and then responds in the way you specify.
 
@@ -198,14 +203,13 @@ Now that you have an assistant that can participate in a simple conversational e
 
 1.  Click the **Assistants** icon ![Assistants menu icon](images/nav-ass-icon.png) to open a list of your assistants.
 1.  Find the *My first assistant* assistant, and open it.
-1.  Test your assistant with a preview link integration. 
+1.  Test your assistant with a *Preview link* integration. 
 
-    The preview link integration builds your assistant into a chat widget that is hosted by an IBM-branded web page. You can open the web page and chat with your assistant to test it out. 
+    The *Preview link* integration is created for your automatically. It builds your assistant into a chat widget that is hosted by an IBM-branded web page. You can open the web page and chat with your assistant to test it out.
     
-1.  If a *My first assistant* assistant was created for you, then you must add a preview link integration. From the *Integrations* area, click **Add integration**, and then click **Preview link**. Click **Create**.
+1.  From the Integrations section, click the **Preview link** tile. 
 
-    When you you create an assistant yourself, you can skip this step. A preview link integration is added to the assistant for you automatically. Click the preview link integration tile to open it.
-
+    ![Assistant page where the Integrations section has the Preview link and Web chat tiles](images/gs-ass-integrations.png)
 1.  Click the URL that is displayed on the page.
 
     The test web page opens in a new tab. You can start submitting message to see how your assistant responds. 
