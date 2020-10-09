@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-08"
+lastupdated: "2020-10-09"
 
 subcollection: assistant
 
@@ -64,8 +64,8 @@ The change log lists changes that were made this year ordered by the date they w
 To remove a notification about a new feature that is displayed in a banner, you can hover over the end of the banner. A close button is displayed that you can click to close the notification banner.
 {: tip}
 
-## 8 October 2020
-{: #8October2020}
+## 9 October 2020
+{: #9October2020}
 
 **Search skill update**: Support was added for a new version of the {{site.data.keyword.discoveryshort}} API which adds the following capabilities:
 
