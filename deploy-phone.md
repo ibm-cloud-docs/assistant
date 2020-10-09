@@ -82,7 +82,7 @@ You must have Manager service level access to the instance. For more information
     
     If you want to use a model that was created in a different service instance, click **More options** to show all service instances that you can access as options. <!--For example, if you created specialized custom models that you want your assistant to use, you can find and select them.-->
 
-    If you created specialized custom models that you want your assistant to use, choose the service instance that hosts the custom model now, and you can configure your dialog to use them later. For more information, see [Using a custom language model](/docs/assistant?topic=assistant-dialog-voice-actions#dialog-voice-actions-custom-language).
+    If you created specialized custom models that you want your assistant to use, choose the service instance that hosts the custom models now, and you can configure your dialog to use them later. For more information, see [Using a custom language model](/docs/assistant?topic=assistant-dialog-voice-actions#dialog-voice-actions-custom-language).
     {: note}
 
     - **{{site.data.keyword.speechtotextshort}}**: Optionally choose a different {{site.data.keyword.speechtotextshort}} service language model to use to define the language for your assistant to use when it speaks to customers.

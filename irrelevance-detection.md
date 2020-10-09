@@ -44,7 +44,7 @@ Be certain before you designate an input as irrelevant.
 - There is no way to access or change the inputs from the user interface later.
 - The only way to reverse the identification of an input as being irrelevant is to use the same input in a test integration channel, and then explicitly assign it to an intent.
 
-Often there are subjects that you expect customers to ask and that you want your assistant to address eventually, but that you aren't ready to fully implement yet. Instead of adding those topics as counterexamples which can be hard to find later, capture the customer input examples as new intents. But, don't link dialog nodes to the intents until you're ready. If customers ask about one of these topics in the meantime, the anything_else node is triggered to explain that the assistant can't help with the current request, but can help them with other things.
+Often there are subjects that you expect customers to ask and that you want your assistant to address eventually, but that you aren't ready to fully implement yet. Instead of adding those topics as counterexamples which can be hard to find later, capture the customer input examples as new intents. But don't link dialog nodes to the intents until you're ready. If customers ask about one of these topics in the meantime, the anything_else node is triggered to explain that the assistant can't help with the current request, but can help them with other things.
 
 ## Enabling irrelevance detection
 {: #irrelevance-detection-enable}
