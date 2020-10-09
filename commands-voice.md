@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-01"
+lastupdated: "2020-10-09"
 
 subcollection: assistant
 
@@ -117,7 +117,7 @@ Table 2 describes the context variables that are set from your dialog. Table 3 d
 | `vgwSIPToURI` | SIP To URI | The SIP To URI associated with the conversation session.|
 | `vgwSMSContext` | String | The context extracted from the opaque data, `smsOpaqueData`, received from Twilio. |
 | `vgwSMSMessage` | String | The SMS message received from the caller. |
-| `vgwSMSMedia` | JSON array | The MMS message received from the caller.<br/><br/><code>{<br/>&nbsp;&nbsp;"vgwSMSMedia ": [<br/>&nbsp;&nbsp;&nbsp;&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mediaURL": "https://api.example.com/2015-01-01/Accounts/AC0123456789abcdef9876543210fedcba/Messages/<br/>MM4a2645684e43ea4bc4a0f3cba7763c61/Media/MEd84f995dfafb30b0e9e5739622dec4ad",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mediaContentType": "image/jpeg"<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;]<br/>}</code> |
+| `vgwSMSMedia` | JSON array | The MMS message received from the caller.<br/><br/><code>{<br/>&nbsp;&nbsp;"vgwSMSMedia ": [<br/>&nbsp;&nbsp;&nbsp;&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mediaURL": "`https://api.example.com/2015-01-01/Accounts/AC0123456789abcdef9876543210fedcba/Messages/`<br/>MM4a2645684e43ea4bc4a0f3cba7763c61/Media/MEd84f995dfafb30b0e9e5739622dec4ad",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mediaContentType": "image/jpeg"<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;]<br/>}</code> |
 | `vgwSMSUserPhoneNumber` | String | The phone number that the SMS message was received from. |
 | `vgwSTTProvider` | String | The name of the provider that is used for the call. The context variable is set if the provider name is configured. CHECK |
 | `vgwSTTResponse` | JSON object | The final response from the {{site.data.keyword.speechtotextshort}} service in JSON format, including the transcript and confidence score for the top hypothesis and any alternatives.<p>The format matches exactly the format that is received from the {{site.data.keyword.speechtotextshort}} service:</p><p><code>{<br/>&nbsp;&nbsp;"result_index": 0,<br/>&nbsp;&nbsp;"warnings": [<br/>&nbsp;&nbsp;&nbsp;&nbsp;"Unknown arguments: continuous."<br/>&nbsp;&nbsp;],<br/>&nbsp;&nbsp;"results": [<br/>&nbsp;&nbsp;&nbsp;&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"final": true,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"alternatives": [<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"transcript": "Hello world",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"confidence": 0.758<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"transcript": "Hello wooled",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"confidence": 0.358<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;]<br/>}.</code></p> |

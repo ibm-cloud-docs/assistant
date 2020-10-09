@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-25"
+lastupdated: "2020-10-09"
 
 subcollection: assistant
 
@@ -116,11 +116,6 @@ The product user interface is slightly different from the interface that is show
 
 ![Setting up a Zendesk service desk connection](https://www.youtube.com/embed/hegheiqUqiM){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
-## Adding transfer support to your dialog
-{: #deploy-zendesk-dialog-prereq}
-
-Update your dialog to make sure it understands when users request to speak to a person, and can transfer the conversation properly. For more information, see [Adding transfer support to your dialog](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-dialog-prereq).
-
 ## Securing the transfer to Zendesk
 {: #deploy-zendesk-secure}
 
@@ -220,6 +215,11 @@ To secure the Zendesk connection, complete the following steps:
     After writing a function that ensures that name and email values are always provided, set the *Authenticate anonymous user chat transfers* switch to **On**.
 
 If you haven't yet, update your dialog to make sure it understands when users request to speak to a person, and can transfer the conversation properly. For more information, see [Adding chat transfer support](/docs/assistant?topic=assistant-dialog-support#dialog-support-transfers).
+
+## Adding transfer support to your dialog
+{: #deploy-zendesk-dialog-prereq}
+
+Update your dialog to make sure it understands when users request to speak to a person, and can transfer the conversation properly. For more information, see [Adding chat transfer support](/docs/assistant?topic=assistant-dialog-support#dialog-support-transfers).
 
 ## Adding routing logic for transfers
 {: #deploy-zendesk-routing}
