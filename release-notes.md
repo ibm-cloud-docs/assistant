@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-10-08"
 
 subcollection: assistant
 
@@ -64,6 +64,15 @@ The change log lists changes that were made this year ordered by the date they w
 To remove a notification about a new feature that is displayed in a banner, you can hover over the end of the banner. A close button is displayed that you can click to close the notification banner.
 {: tip}
 
+## 8 October 2020
+{: #8October2020}
+
+**Search skill update**: Support was added for a new version of the {{site.data.keyword.discoveryshort}} API which adds the following capabilities:
+
+  - The search skill can now connect to existing Premium {{site.data.keyword.discoveryshort}} service instances. 
+
+  - When you connect to a Box, Sharepoint, or Web crawl data collection, the result content fields are automatically populated for you. The **Title** now uses the `title` field from the source document instead of the `extracted_metadata.title` field, which provides better results.
+
 ## 1 October 2020
 {: #1October2020}
 
@@ -71,8 +80,10 @@ To remove a notification about a new feature that is displayed in a banner, you 
 
 - **Introducing the *Twilio messaging* integration!**: Enable your assistant to receive and respond to questions that customers submit by using SMS text messaging. When you enable both new integrations, your assistant can send text messages to a customer in the context of an ongoing phone conversation. For more information, see [Integrating with Twilio messaging ](/docs/assistant?topic=assistant-deploy-sms).
 
-The *Phone* and *Twilio messaging* integrations are available as beta features in {{site.data.keyword.conversationshort}} service instances that are hosted in Dallas, Frankfurt, and Washington, DC.
-{: note}
+  The *Phone* and *Twilio messaging* integrations are available as beta features in {{site.data.keyword.conversationshort}} service instances that are hosted in Dallas, Frankfurt, and Washington, DC.
+  {: note}
+
+- **The web chat integration is added to new assistants automatically**: Much like the *Preview link* integration, the *Web chat* integration now is added to the *My first assistant* assistant that is created for new users automatically.
 
 ## 24 September 2020
 {: #24September2020}

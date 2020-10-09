@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-10-08"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -42,9 +42,9 @@ To learn more about the overall process for creating a dialog, watch the followi
 
 To create a dialog, complete the following steps:
 
-1.  From the Skills menu, click **Dialog**, and then click **Create dialog**.
+1.  From the Skills menu, click **Dialog**.
 
-    When you open the dialog editor for the first time, the following nodes are created for you:
+    The following nodes are created for you automatically:
 
     - **Welcome**: The first node. It contains a greeting that is displayed to your users when they first engage with your assistant. You can edit the greeting.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-10-08"
 
 keywords: context, context variable
 
@@ -34,7 +34,7 @@ To personalize the conversation, your assistant can collect information from the
 {: shortdesc}
 
 ## Anatomy of a dialog call
-{: #dialog-runtime-message-anatomy}
+{: #dialog-runtime-context-message-anatomy}
 
 Each user input is passed to the dialog as a `/message` API call. Replies that users make in response to prompts from the dialog that ask them for more information are included. A single `/message` API call is equivalent to a single dialog turn, which consists of an input from the customer and a corresponding response from the dialog.
 
@@ -50,7 +50,7 @@ The body of the `/message` API call request and response includes the following 
   ```
   {: codeblock}
 
-  See [Retaining information across dialog turns](#dialog-runtime-context) for more information.
+  See [Retaining information across dialog turns](#dialog-runtime-context-dialog) for more information.
 
 - `input`: The string of text that was submitted by the user. The text string can contain up to 2,048 characters. The following example shows how the `input` object is represented in the dialog JSON editor:
 
@@ -112,7 +112,7 @@ There are response types other than a text response that you can define. See [Re
 You can learn more about the `/message` API call from the [API reference](https://{DomainName}/apidocs/assistant/assistant-v2){: external}.
 
 ### Retaining information across dialog turns
-{: #dialog-runtime-context}
+{: #dialog-runtime-context-dialog}
 
 The dialog in a dialog skill is stateless, meaning that it does not retain information from one interaction with the user to the next. When you add a dialog skill to an assistant and deploy it, the assistant saves the context from one message call and then re-submits it on the next request throughout the current session. The current session lasts for as long a user interacts with the assistant plus the designated session inactivity time frame. The maximum session inactivity time allowed ranges from 5 minutes to 7 days, depending on your plan type. If you do not add the dialog skill to an assistant, it is your responsibility as the custom application developer to maintain any continuing information that the application needs.
 
@@ -410,7 +410,7 @@ Learn more:
 
 - [Deleting a context variable in JSON](#dialog-runtime-context-delete-json)
 - [Updating a context variable value in JSON](#dialog-runtime-context-update-json)
-- [Setting one context variable equal to another](#dialog-runtime-var-equals-var)
+- [Setting one context variable equal to another](#dialog-runtime-context-var-equals-var)
 
 ### Deleting a context variable in JSON
 {: #dialog-runtime-context-delete-json}
@@ -642,7 +642,7 @@ Choose one of these actions to update the array. In each case, we see the array 
 See [Expression language methods](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-arrays) for more information about methods you can perform on arrays.
 
 ### Setting one context variable equal to another
-{: #dialog-runtime-var-equals-var}
+{: #dialog-runtime-context-var-equals-var}
 
 When you set one context variable equal to another context variable, you define a pointer from one to the other. If the value of one of the variables subsequently changes, then the value of the other variable is changed also.
 

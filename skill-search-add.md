@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-09-22"
+lastupdated: "2020-10-08"
 
 subcollection: assistant
 
@@ -91,8 +91,6 @@ The remaining steps differ depending on whether you have access to an existing {
 
 1.  Choose the {{site.data.keyword.discoveryshort}} service instance that you want to extract information from.
 {: #choose-d-instance}
-
-    Any {{site.data.keyword.discoveryshort}} service instances that you have access to are displayed in the list. Service instances that use the v2 API are listed but cannot be selected. The search skill does not support the {{site.data.keyword.discoveryshort}} v2 API currently.
 
     If you see a warning that some of your {{site.data.keyword.discoveryshort}} service instances do not have credentials set, it means that you can access at least one instance that you never opened from the {{site.data.keyword.cloud_notm}} dashboard directly yourself. You must access a service instance for credentials to be created for it. And credentials must exist before {{site.data.keyword.conversationshort}} can establish a connection to the {{site.data.keyword.discoveryshort}} service instance on your behalf. If you think a {{site.data.keyword.discoveryshort}} service instance is missing from the list, open the instance from the {{site.data.keyword.cloud}} dashboard directly to generate credentials for it.
     {: note}
