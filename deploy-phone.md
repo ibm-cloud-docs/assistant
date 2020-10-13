@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-09"
+lastupdated: "2020-10-13"
 
 subcollection: assistant
 
@@ -38,6 +38,10 @@ This integration type is available as a beta feature in the Dallas, Frankfurt, a
 {: #deploy-phone-setup}
 
 You must have Manager service level access to the instance. For more information about access levels, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).
+
+To watch a video that walks through the setup process, see [Phone and SMS Integration](https://community.ibm.com/community/user/watsonapps/viewdocument/phone-and-sms-integration?CommunityKey=7a3dc5ba-3018-452d-9a43-a49dc6819633&tab=librarydocuments){: external} in the *IBM Watson Apps Community*.
+
+To set up the integration, complete the following steps:
 
 1. From the Assistants page, click to open the assistant tile that you want to deploy.
 
