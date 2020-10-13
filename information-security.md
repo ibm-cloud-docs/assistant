@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-19"
+lastupdated: "2020-10-13"
 
 subcollection: assistant
 
@@ -122,11 +122,11 @@ Use the v1 `/logs` method `filter` parameter to search an application log for sp
 
 ``` sh
 curl -X GET -u "apikey:3Df... ...Y7Pc9" \
-"{url}/v1/workspaces/{workspaceID}/logs?version=2018-09-20&filter=customer_id::my_best_customer"
+"{url}/v2/assistants/{assistant_id}/logs?version=2020-04-01&filter=customer_id::my_best_customer"
 ```
 {: pre}
 
-where {url} is the appropriate URL for your instance. For more details, see [Service endpoint](https://cloud.ibm.com/apidocs/assistant/assistant-v1#service-endpoint){: external}.
+where {url} is the appropriate URL for your instance. For more details, see [Service endpoint](/apidocs/assistant/assistant-v2#service-endpoint){: external}.
 
 See the [Filter query reference](/docs/assistant?topic=assistant-filter-reference) for additional details.
 
@@ -143,14 +143,14 @@ As an example, to delete any message data associated with a user that has the cu
 
 ```sh
 curl -X DELETE -u "apikey:3Df... ...Y7Pc9" \
-"{url}/v1/user_data?customer_id=abc&version=2018-09-20"
+"{url}/v2/user_data?customer_id=abc&version=2020-04-01"
 ```
 {: pre}
 
-where {url} is the appropriate URL for your instance. For more details, see [Service endpoint](https://cloud.ibm.com/apidocs/assistant/assistant-v1#service-endpoint){: external}.
+where {url} is the appropriate URL for your instance. For more details, see [Service endpoint](/apidocs/assistant/assistant-v2#service-endpoint){: external}.
 
 An empty JSON object `{}` is returned.
 
-For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#deleteuserdata).
+For more information, see the [API reference](/apidocs/assistant/assistant-v2#deleteuserdata).
 
 **Note:** Delete requests are processed in batches and may take up to 24 hours to complete.
