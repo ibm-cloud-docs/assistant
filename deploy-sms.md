@@ -45,7 +45,7 @@ If you don't have a text messaging phone number, set up a Twilio messaging accou
 
 1.  Go to the [Twilio website](https://www.twilio.com/){: external}.
 1.  Create an account or start a free trial.
-1.  From the *All products and Services* menu, click *Phone numbers*.
+1.  From the *All Products and Services* menu ![Twilio All products and services icon](images/twilio-products.png), click *Phone numbers*.
 1.  Follow the instructions to get a phone number.
 
     When you get a Twilio phone number, it supports voice, SMS, and MMS automatically. Your new phone number is listed as an active number.
@@ -74,7 +74,7 @@ Keep the Twilio web page open in a web browser tab so you can refer to it again 
 
 1.  Scroll to the *Setup instructions* section, and then copy the value from the **Webhook URI (uniform resource identifier)** field.
 
-1.  Go to your Twilio account web page. From the *All products and Services* menu, click *Phone Numbers*. 
+1.  Go to your Twilio account web page. From the *All Products and Services* menu, click *Phone Numbers*. 
 
 1.  From the *Active Numbers* page, click your phone number. In the *Messaging* section, find the *Webhook* field that defines what to do when *a message comes in*. Paste the value that you copied from the *Webhook URI* field into it.
 

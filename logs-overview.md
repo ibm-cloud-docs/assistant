@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-24"
+lastupdated: "2020-10-13"
 
 subcollection: assistant
 
@@ -103,6 +103,9 @@ Detailed graphs provide additional information. Click a data point on the graphs
   ![Shows the two containment metrics for volume and trend](images/containment-metric.png)
 
   The containment metric requires that your dialog flag requests for external support when they occur. For more information, see [Measuring containment](/docs/assistant?topic=assistant-dialog-support#dialog-support-containment).
+
+  The containment metric is available to Lite, Plus Trial, Plus, or Premium plan users.
+  {: note}
 - *Total conversations*: The total number of conversations between active users and your assistant during the selected time period.
 - *Average messages per conversation* - The total messages received during the selected time period divided by the total conversations during the selected time period.
 - *Total messages* - The total number of messages received from active users over the selected time period.
