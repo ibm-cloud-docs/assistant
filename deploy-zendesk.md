@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-09"
+lastupdated: "2020-10-14"
 
 subcollection: assistant
 
@@ -97,7 +97,7 @@ To set up a Zendesk service desk integration, complete the following steps:
     - Install the Watson Assistant Zendesk app to your Zendesk Chat subdomain as a new private app. 
     
       - From the Chat dashboard navigation pane, expand *Settings*, and then click *Account*
-      - Open the *Apps* tab.
+      - Open the *App* tab.
       - Click *Upload private app*, and then browse for the application file that you downloaded earlier.    
       - When credentials are requested, paste the Watson Assistant Zendesk app credentials that you copied earlier.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-02"
+lastupdated: "2020-10-15"
 
 subcollection: assistant
 
@@ -120,7 +120,7 @@ To start a chat with the assistant, complete the following steps:
 1.  Click the application that you created from the Apps section.
 1.  Chat with the assistant.
 
-The Welcome node of your dialog is not processed by the Slack integration. The welcome message is not displayed in the slack channel like it is in the "Try it out" pane or in the preview link integration web page. It is not triggered from here because nodes with the `welcome` special condition are skipped in dialog flows that are started by users. Slack waits for the user to initiate the conversation. If you need to set default values for context variables at the start of your conversation, do not set them in the welcome node.
+The Welcome node of your dialog is not processed by the Slack integration. The welcome message is not displayed in the slack channel like it is in the "Try it out" pane or in the preview link integration web page. It is not triggered from here because nodes with the `welcome` special condition are skipped in dialog flows that are started by users. Slack waits for the user to initiate the conversation. For more information about how to set context variable values consistently at the start of a conversation, see [Starting the dialog](/docs/assistant?topic=assistant-dialog-start).
 {: note}
 
 The dialog flow for the current session is restarted after 60 minutes of inactivity (5 minutes for Lite and Standard plans). This means that if a user stops interacting with the assistant, after 60 (or 5) minutes, any context variable values that were set during the previous conversation are set to null or back to their default values.

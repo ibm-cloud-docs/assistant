@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-10-13"
 
 subcollection: assistant
 
@@ -468,16 +468,20 @@ To customize disambiguation, complete the following steps:
 ### Disabling disambiguation
 {: #actions-disambiguation-disable}
 
+Every custom action is used during disambiguation automatically. The default actions are not.
+
 To disable disambiguation for all actions:
 
 1.  From the actions skill main page, click the *Skill settings* icon ![Gear icon](images/gear-icon.png) in the page header.
 1.  Set the disambiguation switch to **Off**.
 1.  Click **Save**, and then click **Close**.
 
-To disable disambiguation for a single action:
+To prevent a single action from being used during disambiguation:
 
 1.  From the actions skill main page, look in the *Custom actions* table for the action that you never want shown as a disambiguation option.
-1.  From the action's *Click to view actions* menu ![Overflow menu](images/more-options.png), choose **Don't disambiguate**. 
+1.  From the action's *Click to view actions* menu ![Overflow menu](images/more-options.png), choose **Don't disambiguate**.
+
+    If the action is configured to not be used during disambiguation already, *Disambiguate* is shown in the menu instead. Only click *Disambiguate* if you want the action to be used during disambiguation.
 
 ## Action limits
 {: #actions-limits}
@@ -488,7 +492,7 @@ The number of actions you can create per skill depends on your plan type.
 |----------|------------------:|----------------:|--------------------------------:|
 | Premium          |     2,000 |           5,000 |                          25,000 |
 | Plus             |     2,000 |           5,000 |                          25,000 |
-| Lite, Plus Trial         100 |           1,000 |                          25,000 |
+| Lite, Plus Trial |       100 |           1,000 |                          25,000 |
 {: caption="Plan details" caption-side="top"}
 
 The default actions that are created for you automatically do count toward the total.
