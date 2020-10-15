@@ -80,6 +80,7 @@ Watson Assistant (Managed)
         deploy-phone.md
         deploy-sms.md
         deploy-custom-app.md
+        dialog-start.md
         deploy-integration-delete.md
 
     {: .topicgroup}
@@ -159,6 +160,7 @@ Watson Assistant (Managed)
     Developer community
         [Stack Overflow](https://stackoverflow.com/questions/tagged/watson-assistant)
         [WDC Slack channel](http://wdc-slack-inviter.mybluemix.net/)
+        [IBM Watson Apps Community](https://community.ibm.com/community/user/watsonapps/communities/community-home?CommunityKey=7a3dc5ba-3018-452d-9a43-a49dc6819633)
 
     accessibility.md
     {: .navgroup-end}
