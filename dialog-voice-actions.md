@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-02"
+lastupdated: "2020-10-16"
 
 subcollection: assistant
 
@@ -43,7 +43,7 @@ You can perform the following types of actions:
 - [Enable keypad entry](#dialog-voice-actions-dtmf)
 - [End the call](#dialog-voice-actions-hangup)
 
-In some cases, you might want to combine actions. For example, to enable two-factor authentication, you can both enable support for phone keypad entry and send a text message from the same dialog node.
+In some cases, you might want to combine actions. For example, to enable two-factor authentication, you can both enable support for phone keypad entry and send a text message from the same dialog node. For more information about combining actions, see [Defining a sequence of actions](#dialog-voice-actions-sequence).
 
 For command reference documentation, see [Phone integration commands reference](/docs/assistant?topic=assistant-commands-voice).
 
@@ -59,7 +59,7 @@ To add a JSON code block to a dialog node, complete the following steps:
 1.  From the *Assistant responds* section, click the menu ![Overflow menu](images/more-icon.png), and then choose **Open JSON editor**.
 
     ![Shows the Assistant responds section of a dialog node with the user selecting the Open JSON editor from the options icon.](images/open-json-editor.png)
-1.  Add the action command JSON code block to the `context` object. (If no `context` object exists, add one. The `context` object is a peer to the `output` object.)
+1.  Add the action command JSON code block to the `context` object. (If the `context` object doesn't exist, add it. The `context` object is a peer to the `output` object.)
 
     For example:
 

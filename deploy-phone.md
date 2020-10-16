@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-16"
 
 subcollection: assistant
 
@@ -178,6 +178,8 @@ For the best customer experience, design your dialog with the capabilities of th
 
   Your search results must be short. Be sure to test the search results that are returned and curate the data collection that you use as necessary.
 
+If you want to use one dialog for an assistant that you deploy to many different platforms, add custom responses per integration type. You can add a conditioned response that tells the assistant to show the response only when the phone integration is being used. For more information, see [Building integration-specific responses](/docs/assistant?topic=assistant-dialog-integrations#dialog-integrations-condition-by-type).
+
 For more information about how to implement common actions from your dialog, see [Handling phone integrations](/docs/assistant?topic=assistant-dialog-voice-actions).
 
 ## Supported SIP trunk providers
@@ -254,10 +256,9 @@ Incoming calls to your assistant follow this path:
 1.  After the services are ready, the connection is established, and audio is sent over the Real-time Transport Protocol (RTP). 
 
     RTP is a network protocol for delivering audio and video over IP networks.
-1.  The audio is converted to text by the {{site.data.keyword.speechtotextshort}} service and is sent to your assistant's dialog skill for evaluation.
-1.  The dialog processes the input and calculates the best response.
-1.  The dialog text response is sent to the {{site.data.keyword.texttospeechshort}} service to be converted to audio.
-1.  The audio is sent back to the caller over the existing connection.
+1.  The welcome node of the dialog is processed. The response text is sent to the {{site.data.keyword.texttospeechshort}} service to be converted to audio and the audio is sent to the caller.
+1.  When the customer says something, the audio is converted to text by the {{site.data.keyword.speechtotextshort}} service and is sent to your assistant's dialog skill for evaluation.
+1.  The dialog processes the input and calculates the best response. The response text from the dialog node is sent to the {{site.data.keyword.texttospeechshort}} service to be converted to audio and the audio is sent back to the caller over the existing connection.
 1.  If the caller asks to speak to a person, the assistant can transfer the person to a call center. A SIP `REFER` request is sent to the SIP trunk provider so it can transfer the call to the call center SIP URI that is specified in the dialog node where the transfer action is configured.
 1.  When one of the participants of the call hangs up, a SIP `BYE` HTTP request is sent to the other participant.
 
