@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-16"
 
 subcollection: assistant
 
@@ -382,26 +382,28 @@ There is no option to skip to a later step. Instead of jumping directly to a lat
 ### Default actions explained
 {: #actions-builtin}
 
+A pair of built-in actions are created for you automatically. Because these actions are built in, they behave slightly differently from the actions that you add yourself. For example, you cannot delete or disable the default actions. However, you can customize the response text that is displayed by these actions or add steps to them to incorporate other interactions.
+
 The following actions are created for you automatically:
 
 - **Greet customer**: Triggered when the assistant starts a conversation with a customer. 
 
   For example, when the web chat is opened by a customer from their company website, this action defines how the assistant will greet the user. Use this action to define how you want the assistant to introduce itself to the customer and set the tone as it initiates a conversation.
 
-  This action is skipped in integrations where the customer starts the conversation with the assistant and not the other way around. For example, in the Slack integration, the assistant doesn't say anything until a customer addresses the assistant.
-  {: note}
+  You might want to add a global variable to the *Greet customers* action response text so you can greet the customer by name.
+  {: tip}
+
+  This action is skipped in integrations where the customer starts the conversation with the assistant and not the other way around. For example, in the *Slack* and *Facebook* integrations, the assistant doesn't say anything until a customer addresses the assistant. In the *Web chat* integration, if you choose to add the home screen, then the greeting that is defined in this action is replaced by the greeting you specify for the home screen.
 - **Retry when no action matches**: Triggered when a customer's request cannot be satisfied by any of the defined actions.
 
-  For example, your assistant might know how to help with product orders, but not travel plans. If a customer asks for help with travel plans, your assistant must be able to convey that it understands what the customer wants, but that it can't help with that particular task. Ideally, your assistant can direct the customer to other resources that might help with the task, or can explain other tasks it can help with to keep the conversation going, and headed in a positive direction.
+  For example, your assistant might know how to help with product orders, but not travel plans. If a customer asks for help with travel plans, your assistant must be able to convey that it understands what the customer wants, but that it can't help with that particular task. Ideally, your assistant can direct the customer to other resources that might help with the task, or can explain other tasks it can help with to keep the conversation going and headed in a positive direction.
 
   If there are common topics that your customers ask about, but that you don't want the assistant to help them with, you can add example messages to the *Additional retry examples* step. Add variations of the wording that customers use to articulate requests or questions that you want your assistant to ignore.
 
   These examples are stored in the underlying language model as counterexamples.
   {: tip}
 
-You can customize the response text that is displayed by these actions or add steps to them to incorporate other interactions. For example, you might want to add a global variable to the *Greet customers* action response text so you can greet the customer by name. From the *Actions* page, click **Default**, and then click an action to open it for editing.
-
-You cannot delete these default actions. You can disable the *Greet customer* action.
+To edit a default action, from the *Actions* page, click **Default**, and then click an action to open it for editing.
 
 ## Testing your action
 {: #actions-test}
