@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-10-16"
 
 keywords: integration settings
 
@@ -36,6 +36,74 @@ The `context` object that is passed as part of the v2 `/message` API request con
 
 The `integrations` object is available from the v2 API in version `2020-04-01` or later only.
 {: important} 
+
+To take advantage of the `context.integrations` object, you can create context variables that are named as follows to get and set values for different integrations:
+
+| Integration type | Context variable syntax |
+|------------------|-------------------------|
+| Intercom         | `$integrations.intercom` |
+| Phone | `$integrations.voice_telephony` |
+| Salesforce service desk from web chat | `$integrations.salesforce` |
+| Twilio messaging | `$integrations.text_messaging` |
+| Web Chat         | `$integrations.chat` |
+| Zendesk service desk from web chat | `integrations.zendesk` |
+{: caption="Integration-specific context variables" caption-side="top"}
+
+<!-- | Facebook         | `$integrations.facebook` | -->
+<!-- | Generic service desk connection from Web Chat | `$integrations.service_desk` |-->
+<!-- | Slack            | `$integrations.slack` | -->
+<!-- | Whatsapp | `$integrations.twilio_whatsapp` |-->
+The following sections describe how to use integration-specific context variables to do common tasks.
+
+## Building different dialog branches for different integrations
+{: #dialog-integrations-condition-by-type}
+
+Create a single dialog that is optimized to use the best features offered by each channel or client interface in which it is deployed.
+
+You can customize the conversation in the following ways:
+
+- To add an entire dialog branch that is only processed by a specific integration type, add the appropriate integration type context variable, such as `$integrations.facebook`, to the *If assistant recognizes* field of the dialog root node.
+- To add a single dialog node that is only processed by a specific integration type, add the appropriate integration type context variable, such as `$integrations.facebook`, to the *If assistant recognizes* field of the dialog child node.
+- To add slightly different responses for a single dialog node based on the integration type, complete the following steps:
+
+  - From the node's edit view, click **Customize** and then set the *Multiple conditioned responses* switch to **On**. Click **Apply**.
+  - In the dialog node response section, add the appropriate condition and corresponding response for each custom response type.
+
+    The following examples show how to specify a hypertext link in the best format for the integration where the text response will be displayed. For the *Web chat* integration, which supports Markdown formatting, you can include a link label in the response text to make the response look nicer. For the *Twilio messaging* integration, you can skip the formatting that makes sense in a web page, and add the straight URL.
+
+    <table>
+    <caption>Custom conditioned responses</caption>
+    <tr>
+      <th>Integration type</th>
+      <th>Condition</th>
+      <th>Sample text response</th>
+    </tr>
+    <tr>
+      <td>Twilio messaging</td>
+      <td>`$integrations.text_messaging`</td>
+      <td>For more information, go to https://www.ibm.com.</td>
+    </tr>
+    <tr>
+      <td>Web chat</td>
+      <td>`$integrations.chat`</td>
+      <td>For more information, go to [the ibm.com site](https://www.ibm.com).</td>
+    </tr>
+    <tr>
+      <td>Response to show if no other conditions are met.</td>
+      <td>`true`</td>
+      <td>For more information, go to ibm.com.</td>
+    </tr>
+    </table>
+
+The rich response types often behave differently when they are displayed in different built-in integrations. For more information about these unique behaviors, see the following topics:
+
+<!--- [Facebook](/docs/assistant?topic=assistant-deploy-facebook#deploy-facebook-dialog)-->
+- [Intercom](/docs/assistant?topic=assistant-deploy-intercom#deploy-intercom-dialog)
+- [Phone](/docs/assistant?topic=assistant-deploy-phone#deploy-phone-dialog)
+- [Preview link](/docs/assistant?topic=assistant-deploy-web-link#deploy-web-link-dialog)
+<!--- [Slack](/docs/assistant?topic=assistant-deploy-slack#deploy-slack-dialog)-->
+- [Twilio messaging](/docs/assistant?topic=assistant-deploy-sms#deploy-sms-dialog)
+- [Web chat](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-dialog)
 
 ## Web chat: Accessing sensitive data
 {: #dialog-integrations-chat-private}
