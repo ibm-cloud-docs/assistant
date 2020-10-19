@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-16"
+lastupdated: "2020-10-19"
 
 keywords: integration settings
 
@@ -62,8 +62,8 @@ Create a single dialog that is optimized to use the best features offered by eac
 
 You can customize the conversation in the following ways:
 
-- To add an entire dialog branch that is only processed by a specific integration type, add the appropriate integration type context variable, such as `$integrations.facebook`, to the *If assistant recognizes* field of the dialog root node.
-- To add a single dialog node that is only processed by a specific integration type, add the appropriate integration type context variable, such as `$integrations.facebook`, to the *If assistant recognizes* field of the dialog child node.
+- To add an entire dialog branch that is only processed by a specific integration type, add the appropriate integration type context variable, such as `$integrations.chat`, to the *If assistant recognizes* field of the dialog root node.
+- To add a single dialog node that is only processed by a specific integration type, add the appropriate integration type context variable, such as `$integrations.zendesk`, to the *If assistant recognizes* field of the dialog child node.
 - To add slightly different responses for a single dialog node based on the integration type, complete the following steps:
 
   - From the node's edit view, click **Customize** and then set the *Multiple conditioned responses* switch to **On**. Click **Apply**.
