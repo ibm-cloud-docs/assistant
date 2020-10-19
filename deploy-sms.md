@@ -118,6 +118,6 @@ For the best customer experience, design your dialog with the capabilities of th
 - The Twilio messaging integration does not support chat transfers that are initiated with the *Connect to human agent* response type.
 - You can include search skill response types in dialog nodes that the phone integration will send as a message. The message includes the introductory text (*I searched my knowledge base* and so on), and then the body of only the first search result.
 
-If you want to use one dialog for an assistant that you deploy to many different platforms, add custom responses per integration type. You can add a conditioned response that tells the assistant to show the response only when the Twilio messaging integration is being used. For more information, see [Building integration-specific responses](/docs/assistant?topic=assistant-dialog-integrations#dialog-integrations-condition-by-type).
+If you want to use the same dialog for an assistant that you deploy to many different platforms, add custom responses per integration type. You can add a conditioned response that tells the assistant to show the response only when the Twilio messaging integration is being used. For more information, see [Building integration-specific responses](/docs/assistant?topic=assistant-dialog-integrations#dialog-integrations-condition-by-type).
 
 For reference documentation, see [Handling Twilio messaging interactions](/docs/assistant?topic=assistant-dialog-sms-actions).
