@@ -119,7 +119,7 @@ The product user interface is slightly different from the interface that is show
 ## Securing the transfer to Zendesk
 {: #deploy-zendesk-secure}
 
-When you add security to your Zendesk integration, you ensure that the visitors you are helping are legitimate customer. Enabling visitor authentication also enables support for cross-domain traffic and cross-browser identification. For more information, see the [Zendesk documentation](https://support.zendesk.com/hc/en-us/articles/360022185314-Enabling-authenticated-visitors-in-the-Chat-widget).
+When you add security to your Zendesk integration, you ensure that the visitors you are helping are legitimate customers. Enabling visitor authentication also enables support for cross-domain traffic and cross-browser identification. For more information, see the [Zendesk documentation](https://support.zendesk.com/hc/en-us/articles/360022185314-Enabling-authenticated-visitors-in-the-Chat-widget).
 
 Before you can secure the Zendesk connection, complete the following required tasks:
 
@@ -213,8 +213,6 @@ To secure the Zendesk connection, complete the following steps:
     {: codeblock}
 
     After writing a function that ensures that name and email values are always provided, set the *Authenticate anonymous user chat transfers* switch to **On**.
-
-If you haven't yet, update your dialog to make sure it understands when users request to speak to a person, and can transfer the conversation properly. For more information, see [Adding chat transfer support](/docs/assistant?topic=assistant-dialog-support#dialog-support-transfers).
 
 ## Adding transfer support to your dialog
 {: #deploy-zendesk-dialog-prereq}
