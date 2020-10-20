@@ -247,7 +247,7 @@ The built-in integrations support the following Markdown syntax elements:
 | Hypertext link | `Contact us at [ibm.com](https://www.ibm.com).` | Contact us at [ibm.com](https://www.ibm.com). |
 {: caption="Supported markdown syntax" caption-side="top"}
 
-If you specify a straight phone number in the text response, it is not converted to a telephone link anywhere except in a web chat integration that is accessed from a mobile device.
+If you don't code a link when you specify a phone number in a text response, it is not converted to a telephone link anywhere except in a web chat integration that is accessed from a mobile device.
 
 The "Try it out" pane does not support Markdown syntax currently. For testing purposes, you can use the *Preview link* integration to see how the Markdown syntax is rendered.
 
