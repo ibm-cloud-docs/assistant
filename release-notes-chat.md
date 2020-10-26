@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-08"
+lastupdated: "2020-10-26"
 
 subcollection: assistant
 
@@ -37,6 +37,13 @@ For information about new features and improvements to the core {{site.data.keyw
 {: #release-notes-chat-version}
 
 If you want to evaluate changes that are introduced in a web chat release before you apply them to your deployment, you can version your web chat. For more information, see [Versioning](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=key-concepts#versioning)
+
+## 3.1.1
+{: #3.1.1}
+
+*Release date: 22 October 2020*
+
+- **Accessibility improvement**: Changed how the announcement text is generated to prevent announcements from being duplicated. Announcement text is hidden text that is provided for use by screen readers to indicate when dynamic web page changes occur.
 
 ## 3.1.0
 {: #3.1.0}
