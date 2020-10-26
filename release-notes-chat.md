@@ -43,7 +43,7 @@ If you want to evaluate changes that are introduced in a web chat release before
 
 *Release date: 22 October 2020*
 
-- **Accessibility improvement**: Changed how the announcement text is generated to prevent announcements from being duplicated. Announcment text is hidden text that is provided for use by screen readers to indicate when dynamic web page changes occur.
+- **Accessibility improvement**: Changed how the announcement text is generated to prevent announcements from being duplicated. Announcement text is hidden text that is provided for use by screen readers to indicate when dynamic web page changes occur.
 
 ## 3.1.0
 {: #3.1.0}
