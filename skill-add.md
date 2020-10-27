@@ -39,7 +39,7 @@ You can add one skill of each type to your assistant:
 
 - **Search skill** ![Plus or Premium plan only](images/plus.png): For a given user query, uses the {{site.data.keyword.discoveryfull}} service to search a data source of your self-service content and return an answer.
 
-  You can add a search skill to an assistant as the only skill or you can add a search skill to an assistant that has a dialog skill associated with it. You cannot add a search skill to an assistant that only has an action skill.
+  You can add a search skill to an assistant as the only skill or you can add a search skill to an assistant that has a dialog skill associated with it. You cannot add a search skill to an assistant that only has an actions skill.
 
   Only users of Plus or Premium plans can create this type of skill.
   {: important}

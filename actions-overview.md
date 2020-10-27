@@ -42,7 +42,7 @@ The body of the action is composed of one or more *steps* that elicit the inform
 
 An action is processed when a customer submits a message that the action is designed to understand and address. The order in which an action is placed in the actions list does not impact the priority that is given to the action.
 
-Actions that you define are called *custom* actions. There are a few actions that are provided by IBM automatically; these actions are called *default* actions.
+There are a few actions that are provided by IBM automatically; these actions are called *system* actions.
 
 ## Steps
 {: #actions-overview-steps}
