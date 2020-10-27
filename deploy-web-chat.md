@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-10-16"
+lastupdated: "2020-10-26"
 
 subcollection: assistant
 
@@ -402,6 +402,9 @@ To enable security, complete the following steps:
 
     Add the token to the web chat code snippet that you embed in your website page. Specify the token in the `identityToken` property.
 
+    Starting with web chat version **3.2.0**, this step is optional. You do not have to add the `identityToken` property initially. You can skip this step as long as you perform the next step where you add the `identityTokenExpired` event. The event is fired when the web chat is first opened, and if a token wasn't provided, it obtains one from your handler at that time.
+    {: note}
+
     For example:
 
     ```html
@@ -426,7 +429,7 @@ To enable security, complete the following steps:
     
     The JSON Web Token is automatically included on each subsequent request that is sent from the web chat until it expires.
 
-1.  You can add an event that is triggered when your token expires. The event has a callback you can use to update the token and process any messages that were added to a queue to wait to be processed while the token was expired.
+1.  You can add an event that is triggered when your token expires, or (starting with web chat version 3.2.0) when no token is specified initially. The event has a callback you can use to update the token and process any messages that were added to a queue to wait to be processed while the token was expired.
 
     For example:
 

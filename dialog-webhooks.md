@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-10-27"
 
 subcollection: assistant
 
@@ -132,7 +132,9 @@ To use a webhook from a dialog node, you must enable webhooks on the node, and t
 
 1.  Click to open the dialog node, and then click **Customize**.
 
-1.  Scroll down to the webhook section. Set the **Callout to webhooks** switch to **On**, and then click **Apply**.
+1.  Scroll down to the webhook section. Set the **Callout to webhooks/actions skill** switch to **On**.
+
+1.  Select **Call a webhook**, and then click **Apply**.
 
     If you did not have it enabled already, the **Multiple conditioned responses** switch is set to **On** automatically and you cannot disable it. This setting is enabled to support adding different responses depending on the success or failure of the Webhook call. If you had a response specified for the node already, it becomes the first conditional response.
     {: note}

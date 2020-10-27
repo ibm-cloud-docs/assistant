@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-10-27"
 
 subcollection: assistant
 
@@ -40,9 +40,6 @@ When you want your assistant to get its answer from your existing help content, 
 
 ## Actions skill ![Beta](images/beta.png)
 {: #skills-choose-actions}
-
-The actions skill feature is being offered as a beta feature. The feature might be unstable, might change frequently, and might be discontinued with short notice. This beta feature also might not provide the same level of performance or compatibility that generally available features provide and is not intended for use in a production environment.
-{: important}
 
 The actions skill is the best choice when you want to approach the assistant with a focus on content. The actions skill offers the following benefits:
 

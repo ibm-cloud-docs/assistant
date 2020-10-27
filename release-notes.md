@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-09"
+lastupdated: "2020-10-27"
 
 subcollection: assistant
 
@@ -63,6 +63,20 @@ The change log lists changes that were made this year ordered by the date they w
 
 To remove a notification about a new feature that is displayed in a banner, you can hover over the end of the banner. A close button is displayed that you can click to close the notification banner.
 {: tip}
+
+## 27 October 2020
+{: #27October2020}
+<!--1.120-->
+
+The following updates are available to service instances that are hosted in all data centers except Dallas and Washington, DC:
+
+- **Introducing the *actions skill*!**: The actions skill is the latest step in the continuing evolution of {{site.data.keyword.conversationshort}} as a software as a service application. The actions skill is designed to make it simple enough for *anyone* to build a virtual assistant. We've removed the need to navigate between intents, entities, and dialog to create conversational flows. Building can all now be done in one simple and intuitive interface.
+
+  The actions skill is available as a beta feature. For more information, see [Adding an actions skill](/docs/assistant?topic=assistant-skill-actions-add).
+
+- **Web chat integration is created automatically**: When you create a new assistant, a web chat integration is created for you automatically (in addition to the preview link integration, which was created previously). These integrations are added also to the assistant that is auto-generated (named *My first assistant*) when you create a new service instance. For more information, see [Integrating the web chat with your website](/docs/assistant?topic=assistant-deploy-web-chat).
+
+- **Text messaging integration was renamed**: The *Twilio messaging* integration was renamed to *SMS with Twilio*.
 
 ## 9 October 2020
 {: #9October2020}

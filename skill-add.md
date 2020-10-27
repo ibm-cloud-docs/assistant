@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-08-21"
+lastupdated: "2020-10-27"
 
 subcollection: assistant
 
@@ -28,16 +28,31 @@ subcollection: assistant
 Customize your assistant by adding to it the skills it needs to satisfy your customers' goals.
 {: shortdesc}
 
-You can create the following types of skills:
+You can add one skill of each type to your assistant:
+
+- **Actions skill** ![Plus or Premium plan only](images/plus.png) ![Beta](images/beta.png): Offers a simple interface where you can build a conversational flow for your assistant to follow.
+
+  Only users of Plus or Premium plans can create this type of skill.
+  {: important}
 
 - **Dialog skill**: Uses Watson natural language processing and machine learning technologies to understand user questions and requests, and respond to them with answers that are authored by you.
 
 - **Search skill** ![Plus or Premium plan only](images/plus.png): For a given user query, uses the {{site.data.keyword.discoveryfull}} service to search a data source of your self-service content and return an answer.
 
+  You can add a search skill to an assistant as the only skill or you can add a search skill to an assistant that has a dialog skill associated with it. You cannot add a search skill to an assistant that only has an action skill.
+
   Only users of Plus or Premium plans can create this type of skill.
   {: important}
-  
-Typically, you create a skill of each type first. Then, as you build a dialog for the dialog skill, you decide when to initiate the search skill. For some questions or requests, a hard-coded or programmatically-derived response (that is defined in the dialog skill) is sufficient. For others, you might want to provide a more robust response by returning a full passage of related information (that is extracted from an external data source by using the search skill).
+
+If you aren't sure which type of skill to create, and especially can't decide between creating an actions or dialog skill, see [Choosing skills](/docs/assistant?topic=assistant-skills-choose).
+{: tip}
+
+## Actions skill
+{: #skill-add-actions-skill}
+
+An actions skill contains actions that represent the tasks you want your assistant to help your customers with.
+
+Each action contains a series of steps that represent individual exchanges with a customer. Building the conversation that your assistant has with your customers is fundamentally about deciding which steps, or which user interactions, are required to complete an action. After you identify the list of steps, you can then focus on writing engaging content to turn each interaction into a positive experience for your customer.
 
 ## Dialog skill
 {: #skill-add-dialog-skill}
@@ -62,8 +77,6 @@ To enable your dialog skill to handle more nuanced questions, define entities an
 
 As you add information, the skill uses this unique data to build a machine learning model that can recognize these and similar user inputs. Each time you add or change the training data, the training process is triggered to ensure that the underlying model stays up-to-date as your customer needs and the topics they want to discuss change.
 
-For help creating a dialog skill, see [Creating a dialog skill](/docs/assistant?topic=assistant-skill-dialog-add).
-
 ## Search skill ![Plus or Premium plan only](images/plus.png)
 {: #skill-add-search-skill}
 
@@ -77,13 +90,12 @@ The following diagram illustrates how user input is processed when both a dialog
 
 ![Diagram of how a question gets routed to the search skill.](images/search-skill-diagram.png)
 
-For help creating a search skill, see [Creating a search skill](/docs/assistant?topic=assistant-skill-search-add).
-
 ## Creating a skill
 {: #skill-add-task}
 
 You can add one skill of each skill type to an assistant.
 
+- [Actions skill](/docs/assistant?topic=assistant-skill-actions-add)
 - [Dialog Skill](/docs/assistant?topic=assistant-skill-dialog-add)
 - [Search Skill](/docs/assistant?topic=assistant-skill-search-add)
 

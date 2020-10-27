@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-10-08"
+lastupdated: "2020-10-27"
 
 subcollection: assistant
 
@@ -352,7 +352,9 @@ The search skill cannot interact with customers until it is added to an assistan
 ### Adding the skill to an assistant
 {: #skill-search-add-to-assistant}
 
-You can add one skill to an assistant. Open the assistant tile and add the skill to the assistant from there. You cannot choose the assistant that will use the skill from within the skill configuration page.
+You can add one skill of each type to an assistant. Open the assistant tile and add the skill to the assistant from there. You cannot choose the assistant that will use the skill from within the skill configuration page.
+
+You can add only a search skill to an assistant or you can add a search skill to an assistant that has a dialog skill associated with it. You cannot add a search skill to an assistant that only has an action skill, and not a dialog skill.
 
 One search skill can be used by more than one assistant.
 

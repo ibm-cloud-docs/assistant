@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-10-27"
 
 subcollection: assistant
 
@@ -30,9 +30,6 @@ subcollection: assistant
 
 Learn how the actions skill makes it easier to construct an engaging conversation.
 {: shortdesc}
-
-The actions skill feature is being offered as a beta feature. The feature might be unstable, might change frequently, and might be discontinued with short notice. This beta feature also might not provide the same level of performance or compatibility that generally available features provide and is not intended for use in a production environment.
-{: important}
 
 ## Actions
 {: #actions-overview-actions}
@@ -84,14 +81,14 @@ The variable is named after the step in which the data that is stored in the var
 
 Variables exist for the duration of a single action.
 
-## Global variables
+## Session variables
 {: #actions-overview-step-variables-global}
 
-A global variable is a variable that you can set and use across all actions.
+A session variable is a variable that you can set and use across all actions. A session variable exists for the duration of a single session. A session is what we call an instance of a conversation between the assistant and a customer.
 
-When you define a global variable, you give it a short name, such as `membership status`. You can use this name later to reference the variable when you set its value from within a step.
+When you define a session variable, you give it a short name, such as `membership status`. You can use this name later to reference the variable when you set its value from within a step.
 
-Client applications or dialog skills that call an action can set the value of a global variable that is used by the action when the action is triggered.
+Client applications or dialog skills that call an action can set the value of a session variable that is used by the action when the action is triggered.
 
 ## Expressions
 {: #actions-overview-step-expressions}

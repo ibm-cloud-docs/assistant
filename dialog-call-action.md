@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-10-27"
 
 subcollection: assistant
 
@@ -28,9 +28,6 @@ subcollection: assistant
 
 A dialog node in a dialog skill can call an action in an actions skill to perform a task and then return to the dialog. The actions skill that you want to call must be added to the same assistant to which your dialog skill is added.
 {: shortdesc}
-
-The actions skill feature is being offered as a beta feature. The feature might be unstable, might change frequently, and might be discontinued with short notice. This beta feature also might not provide the same level of performance or compatibility that generally available features provide and is not intended for use in a production environment.
-{: important}
 
 From a single dialog node, you can make a call to either a webhook or an actions skill, not both. Choose the approach that best suits your needs:
 

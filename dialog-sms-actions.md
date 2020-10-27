@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-01"
+lastupdated: "2020-10-19"
 
 subcollection: assistant
 
@@ -23,23 +23,23 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Handling Twilio messaging interactions ![Beta](images/beta.png)
+# Handling SMS with Twilio interactions ![Beta](images/beta.png)
 {: #dialog-sms-actions}
 
 Learn about common actions you can use to manage the flow of conversations that your assistant has with customers by using SMS text messaging.
 {: shortdesc}
 
-The Twilio messaging integration is available as a beta feature.
+The SMS with Twilio integration is available as a beta feature.
 {: note}
 
-Before you add customizations to your dialog that support SMS messaging interactions, you must set up the Twilio messaging integration. For more information, see [Integrating with Twilio messaging](/docs/assistant?topic=assistant-deploy-sms).
+Before you add customizations to your dialog that support SMS messaging interactions, you must set up the SMS with Twilio integration. For more information, see [Integrating with SMS with Twilio](/docs/assistant?topic=assistant-deploy-sms).
 
 You can perform the following types of actions:
 
 - [Sending multimedia content over text](#dialog-sms-actions-mms)
 - [Customizing lists](#dialog-sms-actions-lists)
 
-For command reference documentation, see [Twilio messaging integration commands reference](/docs/assistant?topic=assistant-commands-sms).
+For command reference documentation, see [SMS with Twilio integration commands reference](/docs/assistant?topic=assistant-commands-sms).
 
 ## Adding SMS-based actions to your dialog
 {: #dialog-sms-actions-add}
