@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-16"
+lastupdated: "2020-10-19"
 
 subcollection: assistant
 
@@ -23,7 +23,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Integrating with *Twilio messaging* ![Beta](images/beta.png)
+# Integrating with *SMS with Twilio* ![Beta](images/beta.png)
 {: #deploy-sms}
 
 Add a text messaging integration so your assistant can exchange messages with your customers.
@@ -41,7 +41,7 @@ This integration type is available as a beta feature in the Dallas, Frankfurt, a
 
 - You must have Manager service level access to the instance. For more information about access levels, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).
 
-If you don't have a text messaging phone number, set up a Twilio messaging account and get a phone number.
+If you don't have a text messaging phone number, set up a SMS with Twilio account and get a phone number.
 
 1.  Go to the [Twilio website](https://www.twilio.com/){: external}.
 1.  Create an account or start a free trial.
@@ -64,7 +64,7 @@ To set up the integration, complete the following steps:
 
 1.  From the Integrations section, click **Add integration**.
 
-1.  Click **Twilio messaging**.
+1.  Click **SMS with Twilio**.
 
 1.  Click **Create**.
 
@@ -115,9 +115,9 @@ Click the *Advanced options* tab to make any of the following customizations to 
 For the best customer experience, design your dialog with the capabilities of the Twilio integration in mind:
 
 - Do not include HTML elements in your text responses.
-- The Twilio messaging integration does not support chat transfers that are initiated with the *Connect to human agent* response type.
+- The SMS with Twilio integration does not support chat transfers that are initiated with the *Connect to human agent* response type.
 - You can include search skill response types in dialog nodes that the phone integration will send as a message. The message includes the introductory text (*I searched my knowledge base* and so on), and then the body of only the first search result.
 
-If you want to use the same dialog for an assistant that you deploy to many different platforms, add custom responses per integration type. You can add a conditioned response that tells the assistant to show the response only when the Twilio messaging integration is being used. For more information, see [Building integration-specific responses](/docs/assistant?topic=assistant-dialog-integrations#dialog-integrations-condition-by-type).
+If you want to use the same dialog for an assistant that you deploy to many different platforms, add custom responses per integration type. You can add a conditioned response that tells the assistant to show the response only when the SMS with Twilio integration is being used. For more information, see [Building integration-specific responses](/docs/assistant?topic=assistant-dialog-integrations#dialog-integrations-condition-by-type).
 
-For reference documentation, see [Handling Twilio messaging interactions](/docs/assistant?topic=assistant-dialog-sms-actions).
+For reference documentation, see [Handling SMS with Twilio interactions](/docs/assistant?topic=assistant-dialog-sms-actions).

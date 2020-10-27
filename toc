@@ -26,7 +26,14 @@ Watson Assistant (Managed)
     Creating your assistant
         assistants.md
         assistant-add.md
-        skill-add.md        
+        skill-add.md
+        skills-choose.md
+
+    {: .topicgroup}
+    Creating an actions skill
+        skill-actions-add.md
+        actions.md
+        actions-overview.md
 
     {: .topicgroup}
     Creating a dialog skill
@@ -56,6 +63,7 @@ Watson Assistant (Managed)
         {: .topicgroup}
         Advanced dialog tasks
             dialog-webhooks.md
+            dialog-call-action.md
             dialog-integrations.md
             dialog-voice-actions.md
             dialog-sms-actions.md
@@ -115,14 +123,6 @@ Watson Assistant (Managed)
     {: .topicgroup}
     Early access program
         beta.md
-
-        {: .topicgroup}
-        Actions skill
-            skill-actions-add.md
-            actions.md
-            dialog-call-action.md
-            skills-choose.md
-            actions-overview.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}

@@ -32,7 +32,7 @@ subcollection: assistant
 Use the JSON editor in dialog to access information that is submitted from the web chat integration.
 {: shortdesc}
 
-The `context` object that is passed as part of the v2 `/message` API request contains an `integrations` object. This object makes it possible to pass information that is specific to a single integration type in the context. For more information about context variables, see [Context variables](/docs/assistant?topic=assistant-dialog-runtime-context#dialog-runtime-context-variables).
+Starting with API version `2020-04-01`, the `context` object that is passed as part of the v2 `/message` API request contains an `integrations` object. This object makes it possible to pass information that is specific to a single integration type in the context. For more information about context variables, see [Context variables](/docs/assistant?topic=assistant-dialog-runtime-context#dialog-runtime-context-variables).
 
 The `integrations` object is available from the v2 API in version `2020-04-01` or later only.
 {: important} 
@@ -43,7 +43,7 @@ To take advantage of the `context.integrations` object, you can create context v
 |------------------|-------------------------|
 | Phone | `$integrations.voice_telephony` |
 | Salesforce service desk from web chat | `$integrations.salesforce` |
-| Twilio messaging | `$integrations.text_messaging` |
+| SMS with Twilio | `$integrations.text_messaging` |
 | Web chat (and Preview link) | `$integrations.chat` |
 | Zendesk service desk from web chat | `integrations.zendesk` |
 {: caption="Integration-specific context variables" caption-side="top"}
@@ -53,6 +53,8 @@ To take advantage of the `context.integrations` object, you can create context v
 <!-- | Intercom         | `$integrations.intercom` | -->
 <!-- | Slack            | `$integrations.slack` | -->
 <!-- | Whatsapp | `$integrations.twilio_whatsapp` |-->
+
+<!--If you previously set up a connector to integrate with Facebook or Slack, you can use context variables. If you update you API calls to use the `2020-04-01` version of the v2 `/message` API, you can use `$integrations.facebook` and `$integrations.slack` for Facebook and Slack.-->
 The following sections describe how to use integration-specific context variables to do common tasks.
 
 ## Building integration-specific responses
@@ -69,7 +71,7 @@ You can customize the conversation in the following ways:
   - From the node's edit view, click **Customize** and then set the *Multiple conditioned responses* switch to **On**. Click **Apply**.
   - In the dialog node response section, add the appropriate condition and corresponding response for each custom response type.
 
-    The following examples show how to specify a hypertext link in the best format for the integration where the text response will be displayed. For the *Web chat* integration, which supports Markdown formatting, you can include a link label in the response text to make the response look nicer. For the *Twilio messaging* integration, you can skip the formatting that makes sense in a web page, and add the straight URL.
+    The following examples show how to specify a hypertext link in the best format for the integration where the text response will be displayed. For the *Web chat* integration, which supports Markdown formatting, you can include a link label in the response text to make the response look nicer. For the *SMS with Twilio* integration, you can skip the formatting that makes sense in a web page, and add the straight URL.
 
     <table>
     <caption>Custom conditioned responses</caption>
@@ -79,7 +81,7 @@ You can customize the conversation in the following ways:
       <th>Sample text response</th>
     </tr>
     <tr>
-      <td>Twilio messaging</td>
+      <td>SMS with Twilio</td>
       <td>`$integrations.text_messaging`</td>
       <td>`For more information, go to https://www.ibm.com.`</td>
     </tr>
@@ -102,7 +104,7 @@ The rich response types often behave differently when they are displayed in diff
 - [Phone](/docs/assistant?topic=assistant-deploy-phone#deploy-phone-dialog)
 - [Preview link](/docs/assistant?topic=assistant-deploy-web-link#deploy-web-link-dialog)
 <!--- [Slack](/docs/assistant?topic=assistant-deploy-slack#deploy-slack-dialog)-->
-- [Twilio messaging](/docs/assistant?topic=assistant-deploy-sms#deploy-sms-dialog)
+- [SMS with Twilio](/docs/assistant?topic=assistant-deploy-sms#deploy-sms-dialog)
 - [Web chat](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-dialog)
 
 ## Web chat: Accessing sensitive data

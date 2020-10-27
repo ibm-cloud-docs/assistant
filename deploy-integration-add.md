@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-10-19"
 
 subcollection: assistant
 
@@ -53,7 +53,11 @@ Follow these steps to add integrations to your assistant:
 
 1.  Go to the Integrations section.
 
-    **What is the Preview Link integration?** When you create an assistant yourself, a test web site is provisioned for you automatically (unless you choose not to enable the preview link). It has a simple chat widget interface that you can use to interact with your assistant for testing purposes. You can also share the URL to this IBM-branded site with your teammembers.
+    **Why do I have *Preview link* and *Web chat* integrations?** These integrations are provisioned for you automatically (unless you choose not to enable them). 
+    
+    The preview link embeds your assistant as a simple chat widget in an IBM-branded web page where you can test your assistant.
+
+    The web chat is a chat window that you can embed in one or more pages on your website to share your assistant with your customers.
 
 1.  Click **Add integration**.
 
@@ -67,7 +71,7 @@ Follow these steps to add integrations to your assistant:
     - [Facebook Messenger](/docs/assistant?topic=assistant-deploy-facebook)
     - [Slack](/docs/assistant?topic=assistant-deploy-slack)
     - [Phone](/docs/assistant?topic=assistant-deploy-phone)
-    - [Twilio messaging](/docs/assistant?topic=assistant-deploy-sms)
+    - [SMS with Twilio](/docs/assistant?topic=assistant-deploy-sms)
     - [Custom application](/docs/assistant?topic=assistant-deploy-custom-app)
     - [Voice Agent (Telephony)](https://cloud.ibm.com/catalog/services/voice-agent-with-watson){: external}
 

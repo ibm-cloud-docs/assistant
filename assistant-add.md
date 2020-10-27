@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-10-19"
 
 subcollection: assistant
 
@@ -42,26 +42,22 @@ Follow these steps to create an assistant:
     - **Name**: A name no more than 100 characters in length. A name is required.
     - **Description**: An optional description no more than 200 characters in length.
 
-    An IBM-branded public web page is created for you automatically that you and your team can use to test your assistant. If you do not want the preview web page to be created, deselect the **Enable preview link** checkbox. 
+    The following integrations are created for you automatically, unless you choose to disable them by deselecting the checkboxes:
+
+    - **Web chat**: Creates a chat widget that you can embed in your company website to deploy your assistant in minutes.
+
+    - **Preview link**: Creates an IBM-branded public web page that you and your team can use to test your assistant.
     
-    A preview link integration is not added to the assistant named `My first assistant` that is created for you automatically in some cases. It is also not added if you have private endpoints enabled for the service instance.
+    These integrations are not added if you have private endpoints enabled for the service instance.
+    {: note}
 
 1.  Click **Create assistant**.
 
-1.  Add a skill to the assistant by choosing one of the following skill types to add.
+1.  Add a skill to the assistant.
 
     **Note**: You can choose to add an existing skill or create a new one.
 
-    - **Add Dialog Skill**: Uses Watson natural language processing and machine learning technologies to understand user questions and requests, and respond to them with answers that are authored by you.
-
-      When you add a dialog skill from here, you get the development version. If you want to add a specific dialog skill version, add it from the skill's *Versions* page instead.
-
-    - **Add Search Skill** ![Plus or Premium plan only](images/plus.png): For a given user query, uses the {{site.data.keyword.discoveryfull}} service to retrieve information from a data source that you identify and shares any relevant information that it finds as the response to the user.
-
-      This option is only visible if you are a Plus or Premium plan user.
-      {: note}
-
-    See [Creating a skill](/docs/assistant?topic=assistant-skill-add).
+    See [Adding a skill to an assistant](/docs/assistant?topic=assistant-skill-add).
 
 ## Assistant limits
 {: #assistant-add-limits}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-16"
+lastupdated: "2020-10-26"
 
 subcollection: assistant
 
@@ -30,11 +30,6 @@ subcollection: assistant
 
 Actions represent the discrete tasks or questions that your assistant is designed to help customers with.
 {: shortdesc}
-
-The actions skill feature is being offered as a beta feature. The feature might be unstable, might change frequently, and might be discontinued with short notice. This beta feature also might not provide the same level of performance or compatibility that generally available features provide and is not intended for use in a production environment.
-{: important}
-
-For more information about how to join the early access program, see [Participate in the early access program](/docs/assistant?topic=assistant-feedback#feedback-beta).
 
 To start quickly, add simple actions, such as ones that capture questions that require a text response only.
 
@@ -150,7 +145,7 @@ To create actions, complete the following steps:
 
 1.  Click **Save**, and then click **Close**.
 
-    Your action is displayed in the *custom* actions list. Two *default* actions are created for you automatically. To learn more about them, see [Default actions explained](#actions-builtin).
+    Your action is displayed in the *custom* actions list. Two *default* actions are created for you automatically. To learn more about them, see [System actions explained](#actions-builtin).
 
 1.  Add more actions to your skill to address other customer needs. To add another action, click **New action**.
 
@@ -235,7 +230,7 @@ To add a step condition, complete the following steps:
     What you can condition on changes as you add more steps to the action. The most likely information you will want to condition on is shown as a suggestion that you can edit or remove.
 
     - From the first step, the option to add a condition is not available. The first step is reserved for defining the goal of the action.
-    - From the second step, only any global variables that you defined are shown as possible conditions. For more information about global variables, see [Defining global variables](#actions-variables-global).
+    - From the second step, only any session variables that you defined are shown as possible conditions. For more information about session variables, see [Defining session variables](#actions-variables-global).
     - When the action has more than two steps, the possibilities for conditions to add become more varied. They include:
     
       - A variable that is created from data that is saved when the customer replies to an earlier step
@@ -248,9 +243,9 @@ To add a step condition, complete the following steps:
 
         `What type of account?` `is` `Savings`
 
-      - A global variable
+      - A session variable
 
-        For more information, see [Defining global variables](#actions-variables-global).
+        For more information, see [Defining session variables](#actions-variables-global).
       - An expression
       
         Use expressions to define more complex conditions. For more information about expressions, see [Defining expressions](#actions-expressions).
@@ -264,7 +259,7 @@ To add a step condition, complete the following steps:
 
     Specify whether all or any of the conditions must be met for the step to be included in the conversational flow.
 
-1.  To add more than one group of conditions, after adding one group, click **Add new conditional group**.
+1.  To add more than one group of conditions, after adding one group, click **Add new group**.
 
     Define one or more conditions in the new group. Each conditional group is numbered. Between each group, choose **and** or **or** to indicate whether the conditions in both conditional groups or only one of them must be met for the step to be included in the conversational flow.
 
@@ -281,48 +276,50 @@ To reference a variable in a text response:
 1.  When the cursor is at the place where you want the assistant to populate the data it saved earlier, add a variable reference. Click the variable icon or add a dollar sign ($) character to see a list of variables to choose from.
 1.  Click a variable to add a reference to it in the text.
 
-### Defining global variables
+### Defining session variables
 {: #actions-variables-global}
 
-Global variables are variables that you can set, change, or reference from any step of any action in your skill. All other variables exist for the duration of one action only.
+Session variables are variables that you can set, change, or reference from any step of any action in your skill. All other variables exist for the duration of one action only.
 
-You can use global variables to pass information from:
+You can use session variables to pass information from:
 
 - an external client application to the actions skill
 - one action to another action within the same actions skill
 - a dialog skill to an action when the action is called from a dialog node
 - an actions skill to a dialog skill as a return variable
 
-To add a global variable, complete the following steps:
+To add a session variable, complete the following steps:
 
 1.  Do one of the following things:
 
-    - From within a step, click **Set variable**. Click **New global variable**.
-    - From the main actions skill page, click to open the *Global variables* page. Click **New global variable**. 
+    - From within a step, click **Set variable**. Click **New session variable**.
+    - From the main actions skill page, click to open the *Session variables* page. Click **New session variable**. 
 
-      If you can't see the **New global variable** button, you might need to close the Preview pane.
+      If you can't see the **New session variable** button, you might need to close the Preview pane.
       {: tip}
-1.  Add a name for the global variable. 
+1.  Add a name for the session variable. 
 
     As you add the name, an ID is generated for you. Any spaces in the name are replaced with underscores (_) in the ID.
 1.  **Optional**: Add a description.
 1.  Click **Apply**.
-1.  If it's not already set, set the global variable value.
+1.  If it's not already set, set the session variable value.
 
-    - Add a step to collect the data that you want to store in the global variable.
+    - Add a step to collect the data that you want to store in the session variable.
     - In a later step, click **Set variable**.
-    - Click the global variable name, and then set it to the step variable for the step that collects the data.
+    - Click the session variable name, and then set it to the step variable for the step that collects the data.
 
-      For example, this choice sets the `membership status` global variable value:
+      For example, this choice sets the `membership status` session variable value:
 
       Set `membership status` to `Are you a member of our rewards program?`
 
-When you reference a global variable elsewhere, such in a step condition expression, you refer to it by its variable ID. For example, to specify the global variable `membership_status` in an expression, use the syntax `${membership_status}`.
+When you reference a session variable elsewhere, such in a step condition expression, you refer to it by its variable ID. For example, to specify the session variable `membership_status` in an expression, use the syntax `${membership_status}`.
+
+A session variable exists for the duration of a single session. A session is what we call an instance of a conversation between the assistant and a customer. Although the value of a session variable value can be accessed from any action in your skill, it must be referenced during the same session or within the inactivity timeout window of the session in which its value is set. When the session or timeout window ends, the session variable is reset to null. For more information about the inactivity timeout window, see [Working with your assistant](/docs/assistant?topic=assistant-assistant-settings#assistant-settings-change-timeout). 
 
 ### Defining expressions
 {: #actions-expressions}
 
-Use expressions to define values independent of values that are collected in steps or defined in global variables. You can use an expression to define a step condition or to define the value of a global variable.
+Use expressions to define values independent of values that are collected in steps or defined in session variables. You can use an expression to define a step condition or to define the value of a session variable.
 
 Use an expression to do simple math equations, for example. Maybe a customer has $200 in a savings account and wants to transfer $150 from it to a new checking account. The funds transfer fee is $3, and the bank charges a fee when a savings account contains less than $50. You can add a step that warns the user that the requested transfer will bring the savings account balance below the $50 minimum and incur a fee. The step conditions on an expression like this:
 
@@ -333,9 +330,9 @@ ${savings} - (${Step_232} + ${transfer_fee}) < 50
 
 where:
 
-- `${savings}` represents a global variable that stores the customer's savings account total.
+- `${savings}` represents a session variable that stores the customer's savings account total.
 - `${Step_232}` represents the step that asks for the amount the customer wants to transfer.
-- `${transfer_fee}` represents a global variable that specifies the fee for a funds transfer. 
+- `${transfer_fee}` represents a session variable that specifies the fee for a funds transfer. 
 
 In this scenario, the step condition is met, so the step is processed. A message is shown that warns the user that if the transfer is completed, the savings account balance will fall below the $50 minimum and incur the fee.
 
@@ -349,11 +346,11 @@ To use an expression to define a complex step condition:
 
 1.  Add the expression that you want to use.
 
-To use an expression to define a global variable value:
+To use an expression to define a session variable value:
 
 1.  From the step, click **Set variable**.
 
-1.  Choose the global variable that you want to define a value for. 
+1.  Choose the session variable that you want to define a value for. 
 
 1.  From the list of sources to derive the value from, click **Expression**.
 
@@ -379,10 +376,10 @@ For each step, you can define what happens next. The choice you make defines how
 There is no option to skip to a later step. Instead of jumping directly to a later step, control the flow through the intervening steps with step conditions.
 {: note}
 
-### Default actions explained
+### System actions explained
 {: #actions-builtin}
 
-A pair of built-in actions are created for you automatically. Because these actions are built in, they behave slightly differently from the actions that you add yourself. For example, you cannot delete or disable the default actions. However, you can customize the response text that is displayed by these actions or add steps to them to incorporate other interactions.
+A pair of built-in actions are created for you automatically. Because these actions are built in, they behave slightly differently from the actions that you add yourself. For example, you cannot delete or disable the system actions. However, you can customize the response text that is displayed by these actions or add steps to them to incorporate other interactions.
 
 The following actions are created for you automatically:
 
@@ -390,7 +387,7 @@ The following actions are created for you automatically:
 
   For example, when the web chat is opened by a customer from their company website, this action defines how the assistant will greet the user. Use this action to define how you want the assistant to introduce itself to the customer and set the tone as it initiates a conversation.
 
-  You might want to add a global variable to the *Greet customers* action response text so you can greet the customer by name.
+  You might want to add a session variable to the *Greet customers* action response text so you can greet the customer by name.
   {: tip}
 
   This action is skipped in integrations where the customer starts the conversation with the assistant and not the other way around. For example, in the *Slack* and *Facebook* integrations, the assistant doesn't say anything until a customer addresses the assistant. In the *Web chat* integration, if you choose to add the home screen, then the greeting that is defined in this action is replaced by the greeting you specify for the home screen.
@@ -439,7 +436,7 @@ Disambiguation occurs when your assistant finds that more than one action can fu
 
 ![Shows a sample conversation between a user and the assistant, where the assistant asks for clarification from the user.](images/disambig-demo.png)
 
-Every custom action is eligible for disambiguation. The default actions are not.
+Every action that you add is eligible for disambiguation. The system actions are not.
 
 When an action is displayed in the disambiguation list, it is represented by the text from its name field. If you don't specify a name for an action, the first example message that you add to it is used as the action name automatically.
 
@@ -470,7 +467,7 @@ To customize disambiguation, complete the following steps:
 ### Disabling disambiguation
 {: #actions-disambiguation-disable}
 
-Every custom action is used during disambiguation automatically. The default actions are not.
+Every action that you add is used during disambiguation automatically. The system actions are not.
 
 To disable disambiguation for all actions:
 
@@ -480,7 +477,7 @@ To disable disambiguation for all actions:
 
 To prevent a single action from being used during disambiguation:
 
-1.  From the actions skill main page, look in the *Custom actions* table for the action that you never want shown as a disambiguation option.
+1.  From the actions skill main page, look in the *Actions* table for the action that you never want shown as a disambiguation option.
 1.  From the action's *Click to view actions* menu ![Overflow menu](images/more-options.png), choose **Don't disambiguate**.
 
     If the action is configured to not be used during disambiguation already, *Disambiguate* is shown in the menu instead. Only click *Disambiguate* if you want the action to be used during disambiguation.
@@ -497,7 +494,7 @@ The number of actions you can create per skill depends on your plan type.
 | Lite, Plus Trial |       100 |           1,000 |                          25,000 |
 {: caption="Plan details" caption-side="top"}
 
-The default actions that are created for you automatically do count toward the total.
+The system actions that are created for you automatically do count toward the total.
 
 ## What to do next
 {: #actions-next-steps}
