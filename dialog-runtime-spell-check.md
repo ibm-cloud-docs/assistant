@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-10-28"
 
 keywords: autocorrection, spelling correction, spell check
 
@@ -46,6 +46,9 @@ When your assistant evaluates whether to correct the spelling of a word, it does
 {: #dialog-runtime-spell-check-disable}
 
 Autocorrection helps your assistant understand user input. It is enabled automatically for some languages and available, but disabled in others.
+
+You can disable autocorrection in your dialog skill, but not in your actions skill.
+{: note}
 
 If you decide to disable it, you must turn it off entirely. You cannot disable autocorrection for a single word or phrase. 
 

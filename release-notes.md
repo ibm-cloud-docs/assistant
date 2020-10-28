@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-27"
+lastupdated: "2020-10-28"
 
 subcollection: assistant
 
@@ -68,7 +68,7 @@ To remove a notification about a new feature that is displayed in a banner, you 
 {: #27October2020}
 <!--1.120-->
 
-The following updates are available to service instances that are hosted in all data centers except Dallas and Washington, DC:
+The following updates are available to service instances that are hosted in all data centers except Washington, DC:
 
 - **Introducing the *actions skill*!**: The actions skill is the latest step in the continuing evolution of {{site.data.keyword.conversationshort}} as a software as a service application. The actions skill is designed to make it simple enough for *anyone* to build a virtual assistant. We've removed the need to navigate between intents, entities, and dialog to create conversational flows. Building can all now be done in one simple and intuitive interface.
 

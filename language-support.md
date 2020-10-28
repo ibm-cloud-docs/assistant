@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-08"
+lastupdated: "2020-10-28"
 
 subcollection: assistant
 
@@ -44,21 +44,21 @@ The first table shows the level of support for all features, except those relate
 
 Table 1. Feature support details
 
-| Language | **Defining [intents](/docs/assistant?topic=assistant-intents)**, **[entities](/docs/assistant?topic=assistant-entities)**, and **[dialog](/docs/assistant?topic=assistant-dialog-build)** | **[Autocorrection](/docs/assistant?topic=assistant-dialog-runtime-spell-check)** |
+| Language | **Defining [intents](/docs/assistant?topic=assistant-intents)**, **[entities](/docs/assistant?topic=assistant-entities)**, and **[dialog](/docs/assistant?topic=assistant-dialog-build) for a dialog skill** | [**Actions skill**](/docs/assistant?topic=assistant-skill-actions-add) | **[Autocorrection](/docs/assistant?topic=assistant-dialog-runtime-spell-check)** |
 |:---:|:---:|:---:|
-| **English (en)**                   | GA | GA |
-| **Arabic (ar)**                    | GA | NA |
-| **Chinese (Simplified) (zh-cn)**   | GA | NA |
-| **Chinese (Traditional) (zh-tw)**  | GA | NA |
-| **Czech (cs)**                     | GA | NA |
-| **Dutch (nl)**                     | GA | NA |
-| **French (fr)**                    | GA | Beta |
-| **German (de)**                    | GA | NA |
-| **Italian (it)**                   | GA | NA |
-| **Japanese (ja)**                  | GA | NA |
-| **Korean (ko)**                    | GA | NA |
-| **Portuguese (Brazilian) (pt-br)** | GA | NA |
-| **Spanish (es)**                   | GA | NA |
+| **English (en)**                   | GA | Beta | GA |
+| **Arabic (ar)**                    | GA | Beta | NA |
+| **Chinese (Simplified) (zh-cn)**   | GA | Beta | NA |
+| **Chinese (Traditional) (zh-tw)**  | GA | Beta | NA |
+| **Czech (cs)**                     | GA | Beta | NA |
+| **Dutch (nl)**                     | GA | Beta | NA |
+| **French (fr)**                    | GA | Beta | Beta |
+| **German (de)**                    | GA | Beta | NA |
+| **Italian (it)**                   | GA | Beta | NA |
+| **Japanese (ja)**                  | GA | Beta | NA |
+| **Korean (ko)**                    | GA | Beta | NA |
+| **Portuguese (Brazilian) (pt-br)** | GA | Beta | NA |
+| **Spanish (es)**                   | GA | Beta | NA |
 {: caption="Feature support details" caption-side="top"}
 
 Table 2a. Intent feature support details

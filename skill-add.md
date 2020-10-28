@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-10-27"
+lastupdated: "2020-10-28"
 
 subcollection: assistant
 
@@ -30,10 +30,7 @@ Customize your assistant by adding to it the skills it needs to satisfy your cus
 
 You can add one skill of each type to your assistant:
 
-- **Actions skill** ![Plus or Premium plan only](images/plus.png) ![Beta](images/beta.png): Offers a simple interface where you can build a conversational flow for your assistant to follow.
-
-  Only users of Plus or Premium plans can create this type of skill.
-  {: important}
+- **Actions skill** ![Beta](images/beta.png): Offers a simple interface where you can build a conversational flow for your assistant to follow.
 
 - **Dialog skill**: Uses Watson natural language processing and machine learning technologies to understand user questions and requests, and respond to them with answers that are authored by you.
 
@@ -44,7 +41,7 @@ You can add one skill of each type to your assistant:
   Only users of Plus or Premium plans can create this type of skill.
   {: important}
 
-If you aren't sure which type of skill to create, and especially can't decide between creating an actions or dialog skill, see [Choosing skills](/docs/assistant?topic=assistant-skills-choose).
+If you can't decide between creating an actions or dialog skill, see [Choosing skills](/docs/assistant?topic=assistant-skills-choose).
 {: tip}
 
 ## Actions skill

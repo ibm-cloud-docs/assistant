@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-27"
+lastupdated: "2020-10-28"
 
 subcollection: assistant
 
@@ -64,19 +64,25 @@ Over time, the actions skill will have greater feature parity with the dialog sk
 |---------|---------------|--------------|
 | Keep track of context | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Automatic reset of context | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| System entity detection | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| @sys-number detection | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Detection of other system entities | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Contextual entities | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Collect info, as with slots | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Options response type | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Collect numbers | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Connect to human agent response type | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Free text response type | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Image response type | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Search skill response type | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Rich text editor for text responses | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Response validation | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Data type-specific validation | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| User input validation | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Support multiple users with notifications on simultaneous updates | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Use SpEL expressions | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Step logic validation | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Disambiguation | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Digression support | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Spelling correction | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Spelling correction | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Webhook support | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 {: row-headers}
 {: class="comparison-table"}
