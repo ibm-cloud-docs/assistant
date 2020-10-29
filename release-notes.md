@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-28"
+lastupdated: "2020-10-29"
 
 subcollection: assistant
 
@@ -64,11 +64,9 @@ The change log lists changes that were made this year ordered by the date they w
 To remove a notification about a new feature that is displayed in a banner, you can hover over the end of the banner. A close button is displayed that you can click to close the notification banner.
 {: tip}
 
-## 27 October 2020
-{: #27October2020}
-<!--1.120-->
-
-The following updates are available to service instances that are hosted in all data centers except Washington, DC:
+## 28 October 2020
+{: #28October2020}
+<!--1.120.1: updates hit most geos on 27 oct, dallas on 28 oct, and dc on 29 oct-->
 
 - **Introducing the *actions skill*!**: The actions skill is the latest step in the continuing evolution of {{site.data.keyword.conversationshort}} as a software as a service application. The actions skill is designed to make it simple enough for *anyone* to build a virtual assistant. We've removed the need to navigate between intents, entities, and dialog to create conversational flows. Building can all now be done in one simple and intuitive interface.
 
