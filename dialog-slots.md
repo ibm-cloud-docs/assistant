@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-10-29"
 
 keywords: slot, slots
 
@@ -435,7 +435,7 @@ When a user input is evaluated, the slot with the first slot condition to match 
 
     **Solution**: In logic that is unique to the slots feature, when two system entities are recognized in a single user input, the one with the larger span is used. Therefore, even though your assistant recognizes both system entities in the text, only the system entity with the longer span (`@sys-date` with `2017-05-02`) is registered and applied to the slot.
 
-    This workaround is not necessary if you are using the revised system entities. With the updated entities, a date reference is considered to be a `@sys-date` mention only, and is not also treated as a `@sys-number` mention. For more details, see [New system entities](/docs/assistant?topic=assistant-new-system-entities).
+    This workaround is not necessary if you are using the revised system entities. With the updated entities, a date reference is considered to be a `@sys-date` mention only, and is not also treated as a `@sys-number` mention. For more details, see [System entities](/docs/assistant?topic=assistant-system-entities).
   {: note}
 
 ### Adding conditions to Found and Not found responses
