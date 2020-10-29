@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-28"
+lastupdated: "2020-10-29"
 
 subcollection: assistant
 
@@ -120,7 +120,7 @@ Table 3. Entity feature support details
 
 Table 4. System entity feature support details
 
-| Language | **[New system entities](/docs/assistant?topic=assistant-new-system-entities)** | **[Legacy system entities](/docs/assistant?topic=assistant-system-entities)** |
+| Language | **[System entities](/docs/assistant?topic=assistant-system-entities)** | **[Legacy system entities](/docs/assistant?topic=assistant-legacy-system-entities)** |
 |:---|:---:|:---:|
 | **English (en)**                   | GA | Deprecated |
 | **Arabic (ar)**                    | GA | Deprecated |

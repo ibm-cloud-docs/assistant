@@ -137,8 +137,8 @@ Watson Assistant (Managed)
 
     {: .topicgroup}
     System entities
-        new-system-entities.md
         system-entities.md
+        legacy-system-entities.md
         time-zones.md
         sys-date-festivals.md
 
