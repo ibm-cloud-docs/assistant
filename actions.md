@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-26"
+lastupdated: "2020-10-29"
 
 subcollection: assistant
 
@@ -30,6 +30,8 @@ subcollection: assistant
 
 Actions represent the discrete tasks or questions that your assistant is designed to help customers with.
 {: shortdesc}
+
+To learn more about the benefits of using an actions skill, [read this blog post on Medium.com](https://medium.com/ibm-watson/why-is-it-still-so-hard-to-build-a-useful-chatbot-daa46da6a00e){: external}.
 
 To start quickly, add simple actions, such as ones that capture questions that require a text response only.
 
