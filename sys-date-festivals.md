@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-05-21"
+lastupdated: "2020-10-29"
 
 subcollection: assistant
 
@@ -25,10 +25,10 @@ subcollection: assistant
 # Festivals
 {: #sys-date-festivals}
 
-The new `@sys-date` system entity recognizes dates that fall on national holidays in different geographic regions.
+The `@sys-date` system entity recognizes dates that fall on national holidays in different geographic regions.
 {: shortdesc}
 
-The following sections list the holidays that are recognized for different locales.
+The following sections list the holidays that [`@sys-date`](/docs/assistant?topic=assistant-system-entities#system-entities-sys-date) recognizes for different locales.
 
 ## Holidays (en-us)
 {: #sys-date-festivals-enus}

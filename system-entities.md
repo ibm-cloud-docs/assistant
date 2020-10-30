@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-29"
+lastupdated: "2020-10-30"
 
 subcollection: assistant
 
@@ -39,13 +39,15 @@ In January 2020, this new version of the system entities was introduced. These r
 - Arabic, Chinese, Korean, and Japanese dialog skills that were created before 27 May 2020 use the legacy version of the system entities. 
 - Dialog skills in all other languages that were created before 10 March 2020 use the legacy API format by default.
 
-Update any skills that continue to use the legacy system entities. To do so, complete the following steps:
+Starting 29 October 2020, only the new system entities API version is supported for English, Brazilian Portuguese, Czech, Dutch, French, German, Italian, and Spanish dialog skills. The option to switch to using the legacy version is no longer available.
+
+**For Arabic, Chinese, Korean, and Japanese dialog skills only**: Update any skills that continue to use the legacy system entities. To do so, complete the following steps:
 
 1.  Go to **Options>System Entities**.
-1.  Do one of the following things:
 
-    - For Arabic, Chinese, Korean, and Japanese dialog skills, select **Use new system entities**. 
-    - For all other language skills, select **Use new system entities API format**.
+    This option is not available in English, Brazilian Portuguese, Czech, Dutch, French, German, Italian, and Spanish dialog skills.
+    {: note}
+1.  Select **Use new system entities**. 
 
 For information about how to use contextual entities to identify people and location names, see the [Detecting Names And Locations With Watson Assistant](https://medium.com/ibm-watson/detecting-names-and-locations-with-watson-assistant-e3e1fa2a8427){: external} blog post on Medium.
 
