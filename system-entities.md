@@ -37,9 +37,9 @@ In January 2020, this new version of the system entities was introduced. These r
 
 - The new system entities are enabled automatically in new dialog skills of all languages.
 - Arabic, Chinese, Korean, and Japanese dialog skills that were created before 27 May 2020 use the legacy version of the system entities. 
-- Dialog skills in all other languages that were created before 10 March 2020 use the legacy API format by default.
+- Dialog skills in all other languages that were created before 10 March 2020 use the legacy version of the system entities by default.
 
-Starting 29 October 2020, only the new system entities API version is supported for English, Brazilian Portuguese, Czech, Dutch, French, German, Italian, and Spanish dialog skills. The option to switch to using the legacy version is no longer available.
+Starting 29 October 2020, only the new version of the system entities is supported for English, Brazilian Portuguese, Czech, Dutch, French, German, Italian, and Spanish dialog skills. The option to switch to using the legacy version is no longer available.
 
 **For Arabic, Chinese, Korean, and Japanese dialog skills only**: Update any skills that continue to use the legacy system entities. To do so, complete the following steps:
 
