@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-26"
+lastupdated: "2020-11-02"
 
 subcollection: assistant
 
@@ -37,6 +37,13 @@ For information about new features and improvements to the core {{site.data.keyw
 {: #release-notes-chat-version}
 
 If you want to evaluate changes that are introduced in a web chat release before you apply them to your deployment, you can version your web chat. For more information, see [Versioning](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=key-concepts#versioning)
+
+## 3.2.1
+{: #3.2.1}
+
+*Release date: 2 November 2020*
+
+- **Bug fix**: Fixing a bug that prevented the web chat integration preview from working after security was enabled.
 
 ## 3.2.0
 {: #3.2.0}

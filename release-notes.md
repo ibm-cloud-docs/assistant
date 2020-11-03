@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-29"
+lastupdated: "2020-11-03"
 
 subcollection: assistant
 
@@ -63,6 +63,16 @@ The change log lists changes that were made this year ordered by the date they w
 
 To remove a notification about a new feature that is displayed in a banner, you can hover over the end of the banner. A close button is displayed that you can click to close the notification banner.
 {: tip}
+
+## 3 November 2020
+{: #3November2020}
+<!--1.122-->
+
+- **Suggestions are now generally available**: The Suggestions feature that is available for the web chat integration is generally available and is enabled by default when you create a new web chat integration. For more information, see [Showing more suggestions](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-alternate).
+
+- **New languages supported by the dialog analysis notebook**:  The *Dialog skill analysis notebook* was updated with language support for French, German, Spanish, Czech, Italian, and Portuguese. For more information, see [Analysis notebooks](/docs/assistant?topic=assistant-logs-resources#logs-resources-jupyter-logs).
+
+- **Visit the learning center!**: Click the **Learning center** link that is displayed in the header of the dialog skill pages to find helpful product tours. The tours guide you through the steps to follow to complete a range of tasks, from adding your first intent to enhancing your dialog with slots. The **Additional resources** page has links to relevant documentation topics and how-to videos. You can search the resource link titles to find what you're looking for quickly.
 
 ## 29 October 2020
 {: #29October2020}
