@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-10-26"
+lastupdated: "2020-11-03"
 
 subcollection: assistant
 
@@ -82,7 +82,7 @@ To add the assistant to a web page on your company website, complete the followi
 
 1.  **Optional**: To configure support for transferring conversations to a service desk agent, click the **Live agent** tab. For more information, see [Adding service desk support](#deploy-web-chat-haa).
 
-1.  **Optional**: To give your customers a way to reset the conversation if they get stuck, turn on suggestions. Click the **Suggestions** tab. For more information, see [Showing more suggestions](#deploy-web-chat-alternate).
+1.  **Optional**: The web chat gives your customers a way to reset the conversation if they get stuck by showing them a list of suggestions. Suggestions are enabled automatically. You can control how often suggestions are displayed and what they include. Click the **Suggestions** tab. For more information, see [Showing more suggestions](#deploy-web-chat-alternate).
 
 1.  **Optional**: To secure the web chat, click the **Security** tab. For more information, see [Securing the web chat](#deploy-web-chat-security).
 
@@ -175,7 +175,7 @@ A developer can customize the home screen even more:
 - You can use the web chat API to add other elements to the home screen page. For more information, see the [instance.writeableElements() method](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-instance-methods#writeableelements){: external} documentation.
 - For information about CSS helper classes that you can use to change the home screen style, see the [prebuilt templates](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-render#html){: external} documentation.
 
-## Showing more suggestions ![Beta](images/beta.png)
+## Showing more suggestions
 {: #deploy-web-chat-alternate}
 
 *Suggestions* give your customers a way to try something else when the current exchange with the assistant isn't delivering what they expect. A question mark icon ![Question mark icon](images/question-mark.png) is displayed in the web chat that customers can click at any time to see other topics that might be of interest or, if configured, to request support. Customers can click a suggested topic to submit it as input or click the **X** icon to close the suggestions list. 
@@ -186,9 +186,11 @@ The suggestions are shown automatically in situations where the customer might o
 
 The suggestions list is populated with dialog nodes that condition on intents that are related in some way to the matched intent. The intents are ones that the AI model considered to be possible alternatives, but that didn't meet the high confidence threshold that is required for a node to be listed as a disambiguation option. Any dialog node with a node name (or external node name) can be shown as a suggestion, unless its **Show node name** setting is set to **Off**.
 
-To enable suggestions, complete the following steps:
+To customize suggestions, complete the following steps:
 
-1.  Open the *Suggestion* tab, and set the switch to **On**.
+1.  Open the *Suggestion* tab.
+
+    Suggestions are enabled automatically for new web chat integrations. If it's not enabled, set the Suggestions switch to **On**.
 
     The *Include a connection to support* section is displayed where you can configure whether and how to give customers the ability to connect with support.
 1.  Decide when you want an option to connect with support to be shown in the suggestions list. The choices are:
