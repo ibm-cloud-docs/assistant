@@ -188,9 +188,9 @@ The suggestions list is populated with dialog nodes that condition on intents th
 
 To customize suggestions, complete the following steps:
 
-1.  Open the *Suggestion* tab.
+1.  Open the *Suggestions* tab.
 
-    Suggestions are enabled automatically for new web chat integrations. If it's not enabled, set the Suggestions switch to **On**.
+    The Suggestions feature is enabled automatically for new web chat integrations. If it's not enabled, set the Suggestions switch to **On**.
 
     The *Include a connection to support* section is displayed where you can configure whether and how to give customers the ability to connect with support.
 1.  Decide when you want an option to connect with support to be shown in the suggestions list. The choices are:

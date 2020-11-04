@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-11-04"
 
 subcollection: assistant
 
@@ -32,7 +32,7 @@ The Overview page provides a summary of the interactions between users and your 
 Use the metrics to answer questions like:
 
 * What was the average number of conversations per week during the last month?
-* How often did customers need to go elsewhwere for support?
+* How often did customers need to go elsewhere for support?
 * Which intents appeared most often last week?
 * Which entity values were recognized the most times during February?
 * Which days had the largest or smallest numbers of conversations in the last month?
