@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-11-02"
+lastupdated: "2020-11-04"
 
 subcollection: assistant
 
@@ -80,7 +80,7 @@ To set up the integration, complete the following steps:
 
 1.  Go to your Twilio account web page. From the *All Products and Services* menu, click *Phone Numbers*. 
 
-1.  From the *Active Numbers* page, click your phone number. In the *Messaging* section, find the *Webhook* field that defines what to do when *a message comes in*. Paste the value that you copied from the *Webhook URI* field into it.
+1.  From the *Active Numbers* page, click your phone number. Scroll to the *Messaging* section, and then find the *Webhook* field that defines what to do when *a message comes in*. Paste the value that you copied from the *Webhook URI* field into it.
 
 1.  From the Twilio site, click the home icon to go to your project dashboard. 
 
