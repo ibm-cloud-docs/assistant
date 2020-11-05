@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-01"
+lastupdated: "2020-11-05"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
@@ -72,11 +72,14 @@ The following features are available only to users of Premium plans.
 
 The following features are available only to users of Plus or Premium plans. ![Plus or Premium plan only](images/plus.png)
 
-- [Private endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints)
+- [Autolearning](/docs/assistant?topic=assistant-autolearn)
 - [Intent conflict resolution](/docs/assistant?topic=assistant-intents#intents-resolve-conflicts)
 - [Intent recommendations and intent user example recommendations](/docs/assistant?topic=assistant-intent-recommendations)
 - [Intercom integration](/docs/assistant?topic=assistant-deploy-intercom)
+- [Phone integration](/docs/assistant?topic=assistant-deploy-phone)
+- [Private endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints)
 - [Search skill](/docs/assistant?topic=assistant-skill-search-add)
+- [SMS with Twilio integration](/docs/assistant?topic=assistant-deploy-phone)
 
 The plan type of the service instance you are currently using is displayed in the page header. You can upgrade from one plan type to another. For more information, see [Upgrading](/docs/assistant?topic=assistant-upgrade).
 
