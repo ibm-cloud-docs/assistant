@@ -44,7 +44,7 @@ Watson Assistant (Managed)
             catalog.md
             intents.md
             intent-recommendations.md
-        
+
         {: .topicgroup}
         Adding a dialog
             dialog-build.md
@@ -106,7 +106,6 @@ Watson Assistant (Managed)
         security.md
         recovery.md
         backup.md
-        /watson/watson-migrate
         upgrade.md
 
     {: .topicgroup}

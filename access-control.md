@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-10"
+lastupdated: "2020-11-06"
 
 subcollection: assistant
 
@@ -34,9 +34,6 @@ Maybe you want one development team to have access to a test assistant and anoth
 {: #access-control-prereqs}
 
 For each person to whom you grant access to your {{site.data.keyword.conversationshort}} service instance, decide whether you want to give the person a role with instance-level or resource-level access. Instance-level access applies to all of the assistants and skills in a single service instance. Resource-level access applies to individual skills and assistants within a service instance only.
-
-Resource-level roles can be defined for service instances that are managed by Identity and Access Management (IAM) only, not instances managed by Cloud Foundry.
-{: note}
 
 ## Granting users access to your resources
 {: #access-control-task}
