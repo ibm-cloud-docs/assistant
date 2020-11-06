@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-11-06"
 
 subcollection: assistant
 
@@ -27,7 +27,7 @@ subcollection: assistant
 # FAQ
 {: #faqs}
 
-Find answers to frequently-asked questions and quick fixes for common problems. 
+Find answers to frequently-asked questions and quick fixes for common problems.
 {: shortdesc}
 
 ## What's a...
@@ -54,7 +54,7 @@ Find answers to frequently-asked questions and quick fixes for common problems.
 {: #faqs-cannot-login}
 {: faq}
 
-If you are having trouble logging in to a service instance or see messages about tokens, such as `unable to fetch access token` or `400 bad request - header or cookie too large`, it might mean that you need to clear your browser cache. Open a private browser window, and then try again. 
+If you are having trouble logging in to a service instance or see messages about tokens, such as `unable to fetch access token` or `400 bad request - header or cookie too large`, it might mean that you need to clear your browser cache. Open a private browser window, and then try again.
 
 - If accessing the page by using a private browsing window fixes the issue, then consider always using a private window or clear the cache of your browser. You can typically find an option for clearing the cache or deleting cookies in the browser's privacy and security settings.
 - If accessing the page by using a private browsing window doesn't fix the issue, then try deleting the API key for the instance and creating a new one.
@@ -76,7 +76,6 @@ The 401 response code is returned for many reasons, including:
 
 - You exceeded the API call limit for your plan for this month. For example, for Lite plans, the monthly limit for API calls 10,000 messages per month. If you reach your limit for the month, but the logs show that you have made fewer calls than the limit, remember that the Lite plan stores log information for 7 days only. The 401 response will go away as soon as the next billing cycle begins, which is the first day of the calendar month.
 - You are trying to use an instance-level API key that you created in one data center location to connect to a service instance that is hosted from another location. You must create an API key in the same data center location where your service instance is hosted.
-- Your service instance might be using Cloud Foundry for resource management. If you authenticate with a username and password, then it is likely that you are still using Cloud Foundry. If so, you must migrate the instance so it uses {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) instead. For more details, see [Migrating Watson services from Cloud Foundry](/docs/assistant?topic=watson-migrate).
 
 ## I'm getting a `403` response
 {: #faqs-getting-403}
@@ -92,7 +91,7 @@ The full message is, `Assistants could not be loaded at this time. Unable to fet
 
 This message is displayed for a few reasons:
 
-- Your {{site.data.keyword.cloud}} refresh tokens might have expired. Log out and then log back in to {{site.data.keyword.cloud_notm}} to generate fresh tokens. 
+- Your {{site.data.keyword.cloud}} refresh tokens might have expired. Log out and then log back in to {{site.data.keyword.cloud_notm}} to generate fresh tokens.
 - Make sure that the IBM ID that you logged in with has access to this service instance. To confirm, you can go to the [{{site.data.keyword.cloud_notm}} resources list](https://cloud.ibm.com/resources), and then log in with the same IBM ID. You should see this service instance listed as one of your available services.
 
 ## Getting `Authentication Required` or `Sign in` message
@@ -101,11 +100,9 @@ This message is displayed for a few reasons:
 
 You are being asked for credentials to access a {{site.data.keyword.conversationshort}} service instance that you have been able to access without trouble in the past. You might see, `Authentication Required: {service-url} is requesting your username and password.` or just a `Sign in` dialog box with fields for a username and password.
 
-This message is displayed for service instances that have not been migrated from Cloud Foundry. If you have not migrated your instance, you must do so now. See [Migrating Watson services from Cloud Foundry](/docs/services/assistant?topic=watson-migrate).
+This message can be displayed for service instances that were migrated from Cloud Foundry, but for which access roles were not subsequently updated. After the migration, the service instance owner must update the user permissions to ensure that anyone who needs access to the instance is assigned to the appropriate Platform and Service access roles.
 
-It can also be displayed for service instances that were migrated from Cloud Foundry, but for which access roles were not subsequently updated. After the migration, the service instance owner must update the user permissions to ensure that anyone who needs access to the instance is assigned to the appropriate Platform and Service access roles.
-
-To regain access to the service instance, ask the service instance owner to review your access permissions. Ask to be given at least a service access role of Writer. 
+To regain access to the service instance, ask the service instance owner to review your access permissions. Ask to be given at least a service access role of Writer.
 
 After your access roles are fixed, be sure to use the correct web address, the URL of the migrated service instance, to open it.
 
@@ -143,21 +140,21 @@ You cannot directly export conversations from the User conversation page.  You c
 {: #faqs-nodes}
 {: faq}
 
-No, you cannot export and import dialog nodes from the product user interface. 
+No, you cannot export and import dialog nodes from the product user interface.
 
 If you want to copy dialog nodes from one skill into another skill, follow these steps:
 
-1.  Download as JSON files both the dialog skill that you want to copy the dialog nodes from and the dialog skill that you want to copy the nodes to. 
-1.  In a text editor, open the JSON file for the dialog skill that you want to copy the dialog nodes from. 
+1.  Download as JSON files both the dialog skill that you want to copy the dialog nodes from and the dialog skill that you want to copy the nodes to.
+1.  In a text editor, open the JSON file for the dialog skill that you want to copy the dialog nodes from.
 1.  Find the `dialog_nodes` array, and copy it.
 1.  In a text editor, open the JSON file for the dialog skill that you want to copy the dialog nodes to, and then paste the `dialog_nodes` array into it.
 1.  Import the JSON file that you edited in the previous step to create a new dialog skill with the dialog nodes you wanted.
 
-## Is it possible to recover a deleted skill?  
+## Is it possible to recover a deleted skill?
 {: #faqs-delete-workspace}
 {: faq}
 
-Regularly [back up data](/docs/assistant?topic=assistant-backup) to prevent problems that might arise from inadvertent deletions. If you do not have a backup, there is a short window of time during which a deleted skill might be recoverable. Immediately following the deletion, [open a case](/docs/get-support?topic=get-support-open-case) with Support to determine if the data can be recovered. Include the following information in your case: 
+Regularly [back up data](/docs/assistant?topic=assistant-backup) to prevent problems that might arise from inadvertent deletions. If you do not have a backup, there is a short window of time during which a deleted skill might be recoverable. Immediately following the deletion, [open a case](/docs/get-support?topic=get-support-open-case) with Support to determine if the data can be recovered. Include the following information in your case:
 
 - skill ID
 - instance ID or name
@@ -203,7 +200,7 @@ No. The service that you call from the webhook must return a response in 8 secon
 {: #faqs-query-cancel}
 {: faq}
 
-This message is displayed when the skill import stops because artifacts in the skill, such as dialog nodes or synonyms, exceed the plan limits. For information about how to address this problem, see [Troubleshooting skill import issues](/docs/assistant-data?topic=assistant-data-skill-dialog-add#skill-dialog-add-import-errors).  
+This message is displayed when the skill import stops because artifacts in the skill, such as dialog nodes or synonyms, exceed the plan limits. For information about how to address this problem, see [Troubleshooting skill import issues](/docs/assistant-data?topic=assistant-data-skill-dialog-add#skill-dialog-add-import-errors).
 
 If a timeout occurs due to the size of the skill but no plan limits are exceeded, you can reduce the number of elements that are imported at a time by completing the following steps:
 
