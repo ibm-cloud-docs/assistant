@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-20"
+lastupdated: "2020-11-09"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -417,6 +417,9 @@ To add a rich response, complete the following steps:
     A single dialog node cannot have more than one **Connect to human agent** or more than one **Search skill** response type.
     {: note}
 
+    Do not add more than one option response type to a single dialog node.
+    {: note}
+
 1.  If you added more than one response type, you can click the **Move** up or down arrows to arrange the response types in the order you want your assistant to process them.
 
 ### Adding a *Connect to human agent* response type
@@ -612,7 +615,10 @@ To add an *Option* response type, complete the following steps:
 
     ![Shows a small options list in the preview link that is displayed as a drop-down menu.](images/options-dropdown.png)
 
-    Some integration types, such as the web chat, reflect your preference. Other integration types, such as Slack, do not honor your preference when it renders the options.
+    Some integration types, such as the web chat, reflect your preference. Other integration types, such as Slack, do not reflect your preference when they render the options.
+
+Do not add more than one option response type to a single dialog node because both lists are displayed at once, but the customer can choose an option from only one of them.
+{: important}
 
 If you need to be able to populate the list of options with different values based on some other factors, you can design a dynamic options list. For more information, see the [How to Dynamically Add Response Options to Dialog Nodes](https://medium.com/ibm-watson/how-to-dynamically-add-response-options-to-dialog-nodes-in-watson-assistant-e14c5e08beca){: external} blog post.
 

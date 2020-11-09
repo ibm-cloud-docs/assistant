@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-11-06"
+lastupdated: "2020-11-09"
 
 subcollection: assistant
 
@@ -36,9 +36,10 @@ Find answers to frequently-asked questions and quick fixes for common problems.
 
 | Term | Definition |
 |------|------------|
+| Action | An action that you add to an actions skill represents a discrete task or question that your assistant is designed to help customers with. [Learn more](/docs/assistant?topic=assistant-actions-overview#actions-overview-actions). |
 | Assistant | Container for your skills. You add skills to an assistant, and then deploy the assistant when you are ready to start helping your customers. [Learn more](/docs/assistant?topic=assistant-assistants). |
 | Content catalog | A set of prebuilt intents that are categorized by subject, such as customer care. You can add these intents to your skill and start using them immediately. Or you can edit them to complement other intents that you create. [Learn more](/docs/assistant?topic=assistant-catalog). |
-| Context variable | A variable that you can use to collect information during a conversation, and reference it later in the same conversation. For example, you might want to ask for the customer's name and then address the person by name later on. [Learn more](/docs/assistant?topic=assistant-dialog-runtime-context#dialog-runtime-context-variables).|
+| Context variable | A variable that you can use to collect information during a conversation, and reference it later in the same conversation. For example, you might want to ask for the customer's name and then address the person by name later on. A context variable is used by the dialog skill. [Learn more](/docs/assistant?topic=assistant-dialog-runtime-context#dialog-runtime-context-variables).|
 | Dialog | The component where you build the conversation that your assistant has with your customers. For each defined intent, you can author the response your assistant should return. [Learn more](/docs/assistant?topic=assistant-dialog-overview). |
 | Digression | A feature that gives the user the power to direct the conversation. It prevents customers from getting stuck in a dialog thread; they can switch topics whenever they choose. [Learn more](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-digressions). |
 | Disambiguation | A feature that enables the assistant to ask customers to clarify their meaning when the assistant isn't sure what a user wants to do next. [Learn more](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation). |
@@ -47,7 +48,8 @@ Find answers to frequently-asked questions and quick fixes for common problems.
 | Skill | Does the work of the assistant. A dialog skill has the training data and dialog that your assistant uses to chat with customers. A search skill is configured to search the appropriate external data sources for answers to customer inquiries. [Learn more](/docs/assistant?topic=assistant-skill-add). |
 | Skill version | Versions are snapshots of a skill that you can create at key points during the development lifecycle. You can deploy one version to production, while you continue to make and test improvements that you make to another version of the skill. [Learn more](/docs/assistant?topic=assistant-versions). |
 | Slots | A special set of fields that you can add to a dialog node that enable the assistant to collect necessary pieces of information from the customer. For example, the assistant can require a customer to provide valid date and location details before it gets weather forecast information on the customer's behalf. [Learn more](/docs/assistant?topic=assistant-dialog-slots). |
-| System entity | Prebuilt entities that recognize references to common things like dates and numbers. You can add these to your skill and start using them immediately. [Learn more](/docs/assistant?topic=assistant-system-entities). |
+| Step | A step that you add to an action represents a single interaction or exchange of information with a customer, a turn in the conversation. [Learn more](/docs/assistant?topic=assistant-actions-overview#actions-overview-steps). |
+| System entity | Prebuilt entities that recognize references to common things like dates and numbers. You can add these to your skill and start using them immediately. [Learn more](/docs/assistant?topic=assistant-system-entities). | Variable | A variable is data that a customer shares with the assistant, which is collected and saved so it can be referenced later. In an actions skill, you can collect *action* and *session* variables. [Learn more](/docs/assistant?topic=assistant-actions-overview#actions-overview-step-variables). | 
 | Webhook | A mechanism for calling out to an external program as part of the dialog. For example, if a customer asks the assistant to translate a string from English to French, the dialog can call an external language translation service to translate the phrase and return the translation to the customer in the course of the conversation. [Learn more](/docs/assistant?topic=assistant-dialog-webhooks). |
 
 ## I can't log in
@@ -160,11 +162,11 @@ Regularly [back up data](/docs/assistant?topic=assistant-backup) to prevent prob
 - instance ID or name
 - region where the service instance is hosted from which the skill was deleted
 
-## Can I change a Plus Trial or a Standard plan to a Lite plan?
+## Can I change my plan to a Lite plan?
 {: #faqs-downgrade-plan}
 {: faq}
 
-No, you cannot change from a Plus Trial or Standard plan to a Lite plan. And you cannot upgrade from a Plus Trial to a Standard plan. For more information, see [Upgrading](/docs/assistant?topic=assistant-upgrade).
+No, you cannot change from a Plus Trial, Plus, or Standard plan to a Lite plan. And you cannot upgrade from a Plus Trial to a Standard plan. For more information, see [Upgrading](/docs/assistant?topic=assistant-upgrade).
 
 ## Can I change from a Standard plan to a Premium plan?
 {: #faqs-upgrade-plan}

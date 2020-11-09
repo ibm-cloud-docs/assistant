@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-29"
+lastupdated: "2020-11-09"
 
 subcollection: assistant
 
@@ -268,14 +268,18 @@ To add a step condition, complete the following steps:
 ### Adding and referencing variables
 {: #actions-variables}
 
-When customers reply to your assistant, they share information about themselves and what they want. Your assistant pays attention and remembers this information by storing the data as *variables*. Your assistant can show that it listens when you reference these variables in subsequent responses. 
+When customers reply to your assistant, they share information about themselves and what they want. Your assistant pays attention and remembers this information by storing the data as *variables*. Your assistant can show that it listens when you reference these variables in subsequent responses.
 
-For example, your assistant might ask the customer about her favorite color in step 3 and remember it in step 10, when she's choosing a dress to buy. We all like considerate people who listen and remember the things we share with them. Why not create an assistant that exhibits this kind of thoughtful behavior? 
+For each step that collects information from the customer, an action variable is created automatically. Each action variable is named after the step in which the data it stores is collected.
+
+For example, your assistant might ask the customer about her favorite color in step 3 and reference it in step 10, when she's choosing a dress to buy. Step 10 can reference the data that was collected in step 3 by adding a reference to the variable named *3. What's your favorite color?*
+
+We all like considerate people who listen and remember the things we share with them. Why not create an assistant that exhibits this kind of thoughtful behavior?
 
 To reference a variable in a text response:
 
 1.  In the text response field, add the text for the response. 
-1.  When the cursor is at the place where you want the assistant to populate the data it saved earlier, add a variable reference. Click the variable icon or add a dollar sign ($) character to see a list of variables to choose from.
+1.  When the cursor is at the place where you want the assistant to populate the data it saved earlier, add a variable reference. Click the *Insert a variable* icon (![Insert a variable icon](images/action-variable-icon.png)) or add a dollar sign ($) character to see a list of variables to choose from.
 1.  Click a variable to add a reference to it in the text.
 
 ### Defining session variables
