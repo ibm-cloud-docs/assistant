@@ -414,10 +414,10 @@ To add a rich response, complete the following steps:
     You cannot add more than 5 response types to a single response. This means that if you define three conditioned responses for a dialog node, each conditioned response can have no more than 5 response types added to it.
     {: note}
 
-    A single dialog node cannot have more than one **Connect to human agent** or more than one **Search skill** response type.
+    You cannot add more than one **Connect to human agent** or more than one **Search skill** response type to a single dialog node.
     {: note}
 
-    Do not add more than one option response type to a single dialog node.
+    Do not add more than one option response type to a single dialog node because both lists are displayed at once, but the customer can choose an option from only one of them.
     {: note}
 
 1.  If you added more than one response type, you can click the **Move** up or down arrows to arrange the response types in the order you want your assistant to process them.
