@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-11-10"
+lastupdated: "2020-11-13"
 
 subcollection: assistant
 
@@ -119,7 +119,7 @@ While you wait for WhatsApp to approve your request, you can test the integratio
 
 Do not use the Twilio sandbox in production. Sandbox sessions expire after 3 days.
 
-1.  To create a sandbox, go to the [Twilio Try WhatsApp](https://www.twilio.com/console/sms/whatsapp/learn) web page. An *Activate your sandbox* modal is displayed. Agree to have a sandbox created, and confirm your choice.
+1.  To create a sandbox, go to the [Twilio Try WhatsApp](https://www.twilio.com/console/sms/whatsapp/learn) web page. An *Activate your sandbox* prompt is displayed. Agree to have a sandbox created, and confirm your choice.
 
 1.  Follow the instructions to create the sandbox.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-11-06"
+lastupdated: "2020-11-13"
 
 subcollection: assistant
 
@@ -73,7 +73,7 @@ This design results in a dialog that works like this:
 
 The *Anything else* node is designed to recognize the `anything_else` special condition, which understands when user input does not match any of the intents in the skill's training data.
 
-- Don't delete the *Anything else* node. You might not recognize it's value at first, but it serves an important function. It prevents your assistant from going silent and failing to respond at all to your customers. The *Anything else* node is what enables your assistant to - if nothing else - say, `I'm sorry, I didn't understand.` or `I can't help you with that.`
+- Don't delete the *Anything else* node. You might not recognize its value at first, but it serves an important function. It prevents your assistant from going silent and failing to respond at all to your customers. The *Anything else* node is what enables your assistant to - if nothing else - say, `I'm sorry, I didn't understand.` or `I can't help you with that.`
 
 - Don't change the name of the *Anything else* node. If you want the skill's analytics to be able to recognize topics that your dialog couldn't address, keep the node name as-is. The *coverage metric* looks for occurrences of a node named *Anything else* being processed in the user conversation logs. It uses this metric to determine the frequency with which your dialog is unable to match user requests to intents that can address them.
 

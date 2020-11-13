@@ -74,7 +74,7 @@ The following features are available in service instances hosted in all data cen
 
 - **Deploy your assistant to WhatsApp**: Make your assistant available through Whatsapp messaging so it can exchange messages with your customers where they are. This beta integration creates a connection between your assistant and WhatsApp by using Twilio as a provider. For more information, see [Integrating with WhatsApp](/docs/assistant?topic=assistant-deploy-whatsapp).
 
-- **Try out the enhanced intent detection model**: The new model, which is being offered as a beta feature in English language dialog skills, is faster and more accurate. It combines traditional machine learning, transfer learning, and deep learning techniques in a cohesive model that is highly responsive at run time. For more information, see [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).
+- **Try out the enhanced intent detection model**: The new model, which is being offered as a beta feature in English-language dialog skills, is faster and more accurate. It combines traditional machine learning, transfer learning, and deep learning techniques in a cohesive model that is highly responsive at run time. For more information, see [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).
 
 ## 3 November 2020
 {: #3November2020}

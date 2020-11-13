@@ -33,7 +33,7 @@ Enable the new intent detection model to improve your assistant's ability to und
 
 The new intent detection model is faster and more accurate. It combines traditional machine learning, transfer learning, and deep learning techniques in a cohesive model that is highly responsive at run time. The new model is highly effective in skills with a small training data set. 
 
-New English-language service instances use the new intent recognition model automatically. It is disabled for existing skills. You can turn it on for your existing skills to start taking advantage of the improved performance that it offers. However, be aware that switching this feature on in an existing skill will result in visible changes to the confidence scores associated with your existing intents.
+New English-language service instances use the new intent recognition model automatically. It is disabled for existing skills. You can turn it on for your existing skills to start taking advantage of the improved performance that it offers. However, be aware that switching this feature on in an existing skill will result in noticeable changes to the confidence scores associated with your existing intents.
 
 The new model is available as a beta feature for English dialog skills only.
 {: note}
@@ -49,4 +49,4 @@ To enable the new intent detection model, complete the following steps:
 
 Test the new intent detection capabilities in the "Try it out" pane. 
 
-If you don't like the results that you get with the new model, you can switch back to using the classic version of the model. Alternatively, you can leave it on and make dialog changes to accommodate any differences in your assitant's behavior that you want to address.
+If you don't like the results that you get with the new model, you can switch back to using the classic version of the model. Alternatively, you can leave it on and make dialog changes to accommodate any differences in your assistant's behavior that you want to address.
