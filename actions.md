@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-09"
+lastupdated: "2020-11-13"
 
 subcollection: assistant
 
@@ -147,7 +147,7 @@ To create actions, complete the following steps:
 
 1.  Click **Save**, and then click **Close**.
 
-    Your action is displayed in the *custom* actions list. Two *default* actions are created for you automatically. To learn more about them, see [System actions explained](#actions-builtin).
+    Your action is displayed in the *custom* actions list. Two *system* actions are created for you automatically. To learn more about them, see [System actions explained](#actions-builtin).
 
 1.  Add more actions to your skill to address other customer needs. To add another action, click **New action**.
 
@@ -298,12 +298,15 @@ To add a session variable, complete the following steps:
 
 1.  Do one of the following things:
 
-    - From within a step, click **Set variable**. Click **New session variable**.
+    - From within a step, click the *step options* ![overflow menu](images/step-options.png) icon, and then choose **Set variable values**. Click **Set new value**, and then click **New session variable**.
+
+      The option to create a new session variable is only available starting from step 2.
+      {: tip}
     - From the main actions skill page, click to open the *Session variables* page. Click **New session variable**. 
 
       If you can't see the **New session variable** button, you might need to close the Preview pane.
-      {: tip}
-1.  Add a name for the session variable. 
+      {: tip} 
+1.  Add a name for the session variable.
 
     As you add the name, an ID is generated for you. Any spaces in the name are replaced with underscores (_) in the ID.
 1.  **Optional**: Add a description.
@@ -311,12 +314,14 @@ To add a session variable, complete the following steps:
 1.  If it's not already set, set the session variable value.
 
     - Add a step to collect the data that you want to store in the session variable.
-    - In a later step, click **Set variable**.
-    - Click the session variable name, and then set it to the step variable for the step that collects the data.
+    - In a later step, click the *step options* ![overflow menu](images/step-options.png) icon, and then choose **Set variable values**. Click **Set new value**.
+    - Choose the session variable name, and then set it to the step variable for the step that collects the data.
 
       For example, this choice sets the `membership status` session variable value:
 
-      Set `membership status` to `Are you a member of our rewards program?`
+      Set `membership status` to `4. Are you a member of our rewards program?`
+
+      Alternatively, you can use an expression to define the session variable value. For more information about expressions, see [Defining expressions](#actions-expressions).
 
 When you reference a session variable elsewhere, such in a step condition expression, you refer to it by its variable ID. For example, to specify the session variable `membership_status` in an expression, use the syntax `${membership_status}`.
 
@@ -354,7 +359,7 @@ To use an expression to define a complex step condition:
 
 To use an expression to define a session variable value:
 
-1.  From the step, click **Set variable**.
+1.  From the step, click the *step options* ![overflow menu](images/step-options.png) icon, and then choose **Set variable values**. Click **Set new value**.
 
 1.  Choose the session variable that you want to define a value for. 
 
@@ -406,7 +411,7 @@ The following actions are created for you automatically:
   These examples are stored in the underlying language model as counterexamples.
   {: tip}
 
-To edit a default action, from the *Actions* page, click **Default**, and then click an action to open it for editing.
+To edit a system action, from the *Actions* page, click **System actions**, and then click an action to open it for editing.
 
 ## Testing your action
 {: #actions-test}
@@ -460,7 +465,7 @@ To customize disambiguation, complete the following steps:
     - **Assistant says**: Edit the text that is displayed before the list of disambiguation choices. 
     
       The default text is *Did you mean:* You can change it to something else, such as *What do you want to do?* or *Pick what to do next*.
-    - **Label for the fallback choice**: Edit the label that is displayed for the choice that customers can click when none of the other choices are quite right. When a user picks this choice, the *Retry when no intent matches* default action is taken next.
+    - **Label for the fallback choice**: Edit the label that is displayed for the choice that customers can click when none of the other choices are quite right. When a user picks this choice, the *Retry when no intent matches* system action is taken next.
     
       The label *None of the above* is used if you don't change it.  
       
