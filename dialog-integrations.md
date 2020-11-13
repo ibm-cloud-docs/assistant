@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-30"
+lastupdated: "2020-11-13"
 
 keywords: integration settings
 
@@ -45,7 +45,6 @@ To take advantage of the `context.integrations` object, you can create context v
 | Salesforce service desk from web chat | `$integrations.salesforce` |
 | SMS with Twilio | `$integrations.text_messaging` |
 | Web chat (and Preview link) | `$integrations.chat` |
-| WhatsApp with Twilio | `$integrations.twilio_whatsapp` |
 | Zendesk service desk from web chat | `$integrations.zendesk` |
 {: caption="Integration-specific context variables" caption-side="top"}
 
@@ -53,6 +52,7 @@ To take advantage of the `context.integrations` object, you can create context v
 <!-- | Generic service desk connection from Web Chat | `$integrations.service_desk` |-->
 <!-- | Intercom         | `$integrations.intercom` | -->
 <!-- | Slack            | `$integrations.slack` | -->
+<!-- | WhatsApp with Twilio | `$integrations.twilio_whatsapp` | -->
 
 <!--If you previously set up a connector to integrate with Facebook or Slack, you can use context variables. If you update you API calls to use the `2020-04-01` version of the v2 `/message` API, you can use `$integrations.facebook` and `$integrations.slack` for Facebook and Slack.-->
 The following sections describe how to use integration-specific context variables to do common tasks.
