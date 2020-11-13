@@ -45,6 +45,7 @@ To take advantage of the `context.integrations` object, you can create context v
 | Salesforce service desk from web chat | `$integrations.salesforce` |
 | SMS with Twilio | `$integrations.text_messaging` |
 | Web chat (and Preview link) | `$integrations.chat` |
+| WhatsApp with Twilio | `$integrations.twilio_whatsapp` |
 | Zendesk service desk from web chat | `$integrations.zendesk` |
 {: caption="Integration-specific context variables" caption-side="top"}
 
@@ -52,7 +53,6 @@ To take advantage of the `context.integrations` object, you can create context v
 <!-- | Generic service desk connection from Web Chat | `$integrations.service_desk` |-->
 <!-- | Intercom         | `$integrations.intercom` | -->
 <!-- | Slack            | `$integrations.slack` | -->
-<!-- | Whatsapp | `$integrations.twilio_whatsapp` |-->
 
 <!--If you previously set up a connector to integrate with Facebook or Slack, you can use context variables. If you update you API calls to use the `2020-04-01` version of the v2 `/message` API, you can use `$integrations.facebook` and `$integrations.slack` for Facebook and Slack.-->
 The following sections describe how to use integration-specific context variables to do common tasks.
@@ -106,6 +106,7 @@ The rich response types often behave differently when they are displayed in diff
 <!--- [Slack](/docs/assistant?topic=assistant-deploy-slack#deploy-slack-dialog)-->
 - [SMS with Twilio](/docs/assistant?topic=assistant-deploy-sms#deploy-sms-dialog)
 - [Web chat](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-dialog)
+- [WhatsApp with Twilio](/docs/assistant?topic=assistant-deploy-whatsapp#deploy-whatsapp-dialog)
 
 ## Web chat: Accessing sensitive data
 {: #dialog-integrations-chat-private}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-29"
+lastupdated: "2020-11-13"
 
 subcollection: assistant
 
@@ -30,15 +30,6 @@ subcollection: assistant
 To deploy your skill, add it to an assistant, and then add integrations to the assistant that publish your bot to the channels where your customers go for help.
 {: shortdesc}
 
-## How service desk platform integrations work
-{: #deploy-integration-service-desk-integrations}
-
-Watch this 3-minute video to learn more about integrating your assistant with a service desk platform, such as Intercom.
-
-![Overview of how service desk integrations work](https://www.youtube.com/embed/pJSCZLQVgCY){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-To learn about how service desk integrations with your assistant can benefit your business, [read this blog post](https://medium.com/ibm-watson/contact-center-post-394dff427c8){: external}.
-
 ## Add an integration
 {: #deploy-integration-add-task}
 
@@ -65,14 +56,18 @@ Follow these steps to add integrations to your assistant:
 
     - [Preview link](/docs/assistant?topic=assistant-deploy-web-link)
     - [Web chat](/docs/assistant?topic=assistant-deploy-web-chat)
-    - [Web chat with Salesforce support](/docs/assistant?topic=assistant-deploy-salesforce)
-    - [Web chat with Zendesk support](/docs/assistant?topic=assistant-deploy-zendesk)
-    - [Intercom](/docs/assistant?topic=assistant-deploy-intercom)  ![Plus or Premium plan only](images/plus.png)
     - [Facebook Messenger](/docs/assistant?topic=assistant-deploy-facebook)
     - [Slack](/docs/assistant?topic=assistant-deploy-slack)
     - [Phone](/docs/assistant?topic=assistant-deploy-phone)
     - [SMS with Twilio](/docs/assistant?topic=assistant-deploy-sms)
+    - [WhatsApp with Twilio](/docs/assistant?topic=assistant-deploy-whatsapp)
     - [Custom application](/docs/assistant?topic=assistant-deploy-custom-app)
+
+    Service desk integrations:
+
+    - [Web chat with Salesforce support](/docs/assistant?topic=assistant-deploy-salesforce)
+    - [Web chat with Zendesk support](/docs/assistant?topic=assistant-deploy-zendesk)
+    - [Intercom](/docs/assistant?topic=assistant-deploy-intercom)  ![Plus or Premium plan only](images/plus.png)
 
 1.  Follow the instructions that are provided on the screen to complete the integration process.
 
@@ -80,6 +75,15 @@ After you integrate the assistant, test it from the target channel to ensure tha
 
 ![Plus or Premium plan only](images/plus.png) For environments where private endpoints are in use, keep in mind that these integrations send traffic over the internet. For more information, see [Private network endpoints](https://cloud.ibm.com/docs/assistant?topic=assistant-security#security-private-endpoints).
 {: note}
+
+## How service desk platform integrations work
+{: #deploy-integration-service-desk-integrations}
+
+Watch this 3-minute video to learn more about integrating your assistant with a service desk platform, such as Intercom.
+
+![Overview of how service desk integrations work](https://www.youtube.com/embed/pJSCZLQVgCY){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
+To learn about how service desk integrations with your assistant can benefit your business, [read this blog post](https://medium.com/ibm-watson/contact-center-post-394dff427c8){: external}.
 
 ## Integration limits
 {: #deploy-integration-add-limits}

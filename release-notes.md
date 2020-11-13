@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-11-03"
+lastupdated: "2020-11-13"
 
 subcollection: assistant
 
@@ -63,6 +63,18 @@ The change log lists changes that were made this year ordered by the date they w
 
 To remove a notification about a new feature that is displayed in a banner, you can hover over the end of the banner. A close button is displayed that you can click to close the notification banner.
 {: tip}
+
+## 13 November 2020
+{: #13November2020}
+<!--1.125-->
+
+The following features are available in service instances hosted in all data center locations except Dallas.
+
+- **Introducing the coverage metric!**: Want a quick way to see how your dialog is doing at responding to customer queries? Enable the new coverage metric to find out. The coverage metric measures the rate at which your dialog is confident that it can address a customer's request per message. For conversations that are not covered, you can review the logs to learn more about what the customer wanted. For the metric to work, you must design your dialog to include an *Anything else* node that is processed when no other dialog node intents are matched. For more information, see [Graphs and statistics](/docs/assistant?topic=assistant-logs-overview#logs-overview-graphs).
+
+- **Deploy your assistant to WhatsApp**: Make your assistant available through Whatsapp messaging so it can exchange messages with your customers where they are. This beta integration creates a connection between your assistant and WhatsApp by using Twilio as a provider. For more information, see [Integrating with WhatsApp](/docs/assistant?topic=assistant-deploy-whatsapp).
+
+- **Try out the enhanced intent detection model**: The new model, which is being offered as a beta feature in English language dialog skills, is faster and more accurate. It combines traditional machine learning, transfer learning, and deep learning techniques in a cohesive model that is highly responsive at run time. For more information, see [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).
 
 ## 3 November 2020
 {: #3November2020}

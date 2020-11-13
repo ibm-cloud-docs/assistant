@@ -98,14 +98,25 @@ Detailed graphs provide additional information. Click a data point on the graphs
 - *Containment*: Number of conversations in which the assistant is able to satisfy the customer's request without human intervention.
 
   - The volume graph shows the total number of conversations per day and how many of the conversations were contained and not contained.
-  - The trend graph shows the percentage of daily conversations that were contained. This graph helps you to see if the assistant is getting better or worse at containing conversations over time. 
+  - The trend graph shows the percentage of daily conversations that were contained. This graph helps you to see if the assistant is getting better or worse at containing conversations over time.
 
   ![Shows the two containment metrics for volume and trend](images/containment-metric.png)
 
   The containment metric requires that your dialog flag requests for external support when they occur. For more information, see [Measuring containment](/docs/assistant?topic=assistant-dialog-support#dialog-support-containment).
+- *Coverage*: Number of conversations in which the assistant is confident that it can address a customer's request.
 
-  The containment metric is available to Lite, Plus Trial, Plus, or Premium plan users.
+  - The volume graph shows the total number of conversations per day and how many of the conversations were covered (meaning intents in your dialog understood user requests and were able to address them), and not covered (meaning the input did not match an intent in the dialog and was processed by the *Anything else* node instead).
+  - The trend graph shows the percentage of daily conversations that were covered. This graph helps you to see if your dialog is getting better or worse at covering conversations over time.
+
+  ![Shows the two coverage metrics for volume and trend](images/coverage-metric.png)
+
+  The coverage metric requires that your dialog contain an *Anything else* node. For more information, see [Ending the conversation gracefully](/docs/assistant?topic=assistant-dialog-start#dialog-start-anything-else).
+
+  If your coverage rate is low, consider using intent recommendations to help you fill in the gaps in your coverage. For more information, see [Getting help with intents](/docs/assistant?topic=assistant-intent-recommendations).
+
+  The containment and coverage metrics are available to Lite, Plus Trial, Plus, or Premium plan users.
   {: note}
+
 - *Total conversations*: The total number of conversations between active users and your assistant during the selected time period.
 - *Average messages per conversation* - The total messages received during the selected time period divided by the total conversations during the selected time period.
 - *Total messages* - The total number of messages received from active users over the selected time period.
