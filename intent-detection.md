@@ -28,20 +28,22 @@ subcollection: assistant
 # Improved intent recognition ![Beta](images/beta.png)
 {: #intent-detection}
 
-Enable the new intent detection model to improve your assistant's ability to understand what customers want.
+The new intent detection model improves your assistant's ability to understand what customers want.
 {: shortdesc}
 
-The new intent detection model is faster and more accurate. It combines traditional machine learning, transfer learning, and deep learning techniques in a cohesive model that is highly responsive at run time. The new model is highly effective in skills with a small training data set. 
+The new intent detection model is faster and more accurate. It combines traditional machine learning, transfer learning, and deep learning techniques in a cohesive model that is highly responsive at run time. The new model is highly effective in skills with a small training data set.
 
-New English-language service instances use the new intent recognition model automatically. It is disabled for existing skills. You can turn it on for your existing skills to start taking advantage of the improved performance that it offers. However, be aware that switching this feature on in an existing skill will result in noticeable changes to the confidence scores associated with your existing intents.
+New English-language service instances use the new intent recognition model automatically. It is disabled for existing dialog skills. You can turn it on for your existing dialog skills to start taking advantage of the improved performance that it offers. However, be aware that switching this feature on in an existing dialog skill will result in noticeable changes to the confidence scores associated with your existing intents.
 
-The new model is available as a beta feature for English dialog skills only.
+The new model is available as a beta feature for English dialog and actions skills only.
 {: note}
 
 ## Enabling the new intent detection model
 {: #intent-detection-task}
 
-To enable the new intent detection model, complete the following steps:
+The new model is used by action skills automatically and cannot be disabled.
+
+To enable the new intent detection model in a dialog skill, complete the following steps:
 
 1.  From the Skills page, open your skill.
 1.  From the skill menu, click **Options**.
