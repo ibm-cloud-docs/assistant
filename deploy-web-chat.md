@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-11-03"
+lastupdated: "2020-11-13"
 
 subcollection: assistant
 
@@ -160,6 +160,9 @@ Customers often don't know how to interact with your assistant at first. They ar
 1.  Add a greeting that is engaging and invites the user to interact with your assistant.
 
     A greeting is required and replaces the greeting that is specified in the welcome node of the dialog.
+    
+    Do not reference context variables in the message. The home screen cannot access contextual information.
+    {: note}
 
 1.  Add three conversation starter messages.
 

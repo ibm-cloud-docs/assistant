@@ -44,12 +44,14 @@ Watson Assistant (Managed)
             catalog.md
             intents.md
             intent-recommendations.md
+            intent-detection.md
 
         {: .topicgroup}
         Adding a dialog
             dialog-build.md
             dialog-plan.md
             dialog-overview.md
+            dialog-start.md
             dialog-runtime-context.md
             dialog-runtime.md
             dialog-runtime-spell-check.md
@@ -87,8 +89,8 @@ Watson Assistant (Managed)
         deploy-slack.md
         deploy-phone.md
         deploy-sms.md
+        deploy-whatsapp.md
         deploy-custom-app.md
-        dialog-start.md
         deploy-integration-delete.md
 
     {: .topicgroup}
