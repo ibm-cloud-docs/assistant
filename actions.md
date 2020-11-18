@@ -464,7 +464,7 @@ To customize disambiguation, complete the following steps:
 
     - **Assistant says**: Edit the text that is displayed before the list of disambiguation choices. 
     
-      The default text is *Did you mean:* You can change it to something else, such as *What do you want to do?* or *Pick what to do next*.
+      The default text is *Did you mean*. You can change it to something else, such as *What do you want to do?* or *Pick what to do next*.
     - **Label for the fallback choice**: Edit the label that is displayed for the choice that customers can click when none of the other choices are quite right. When a user picks this choice, the *Retry when no intent matches* system action is taken next.
     
       The label *None of the above* is used if you don't change it.  
