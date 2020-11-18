@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-11-17"
+lastupdated: "2020-11-18"
 
 subcollection: assistant
 
@@ -172,7 +172,9 @@ Customers often don't know how to interact with your assistant at first. They ar
 
     You must test each message that you add as a conversation starter. Use only questions that the assistant understands and knows how to answer well.
 
-     All three conversation starters are required.
+    If your assistant has multiple skills attached to it, the dialog skill orchestrates the incoming messages. If you want an action that you created to respond to a conversation starter message, make sure your dialog is set up to call the action. For more information, see [Calling an actions skill from a dialog](/docs/assistant?topic=assistant-dialog-call-action).
+
+    All three conversation starters are required.
 
 A developer can customize the home screen even more:
 
