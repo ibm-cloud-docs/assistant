@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-11-09"
+lastupdated: "2020-11-17"
 
 subcollection: assistant
 
@@ -49,7 +49,8 @@ Find answers to frequently-asked questions and quick fixes for common problems.
 | Skill version | Versions are snapshots of a skill that you can create at key points during the development lifecycle. You can deploy one version to production, while you continue to make and test improvements that you make to another version of the skill. [Learn more](/docs/assistant?topic=assistant-versions). |
 | Slots | A special set of fields that you can add to a dialog node that enable the assistant to collect necessary pieces of information from the customer. For example, the assistant can require a customer to provide valid date and location details before it gets weather forecast information on the customer's behalf. [Learn more](/docs/assistant?topic=assistant-dialog-slots). |
 | Step | A step that you add to an action represents a single interaction or exchange of information with a customer, a turn in the conversation. [Learn more](/docs/assistant?topic=assistant-actions-overview#actions-overview-steps). |
-| System entity | Prebuilt entities that recognize references to common things like dates and numbers. You can add these to your skill and start using them immediately. [Learn more](/docs/assistant?topic=assistant-system-entities). | Variable | A variable is data that a customer shares with the assistant, which is collected and saved so it can be referenced later. In an actions skill, you can collect *action* and *session* variables. [Learn more](/docs/assistant?topic=assistant-actions-overview#actions-overview-step-variables). | 
+| System entity | Prebuilt entities that recognize references to common things like dates and numbers. You can add these to your skill and start using them immediately. [Learn more](/docs/assistant?topic=assistant-system-entities). |
+| Variable | A variable is data that a customer shares with the assistant, which is collected and saved so it can be referenced later. In an actions skill, you can collect *action* and *session* variables. [Learn more](/docs/assistant?topic=assistant-actions-overview#actions-overview-step-variables). | 
 | Webhook | A mechanism for calling out to an external program as part of the dialog. For example, if a customer asks the assistant to translate a string from English to French, the dialog can call an external language translation service to translate the phrase and return the translation to the customer in the course of the conversation. [Learn more](/docs/assistant?topic=assistant-dialog-webhooks). |
 
 ## I can't log in

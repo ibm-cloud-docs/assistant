@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-11-13"
+lastupdated: "2020-11-17"
 
 subcollection: assistant
 
@@ -36,6 +36,8 @@ When you create a web chat integration, code is generated that calls a script th
 To learn more about web chat, watch the following 3-minute video.
 
 ![Web chat overview](https://www.youtube.com/embed/52bpMKVigGU){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
+To learn more about how web chat can help your business, read [this Medium blog post](https://medium.com/ibm-watson/building-an-engaging-virtual-assistant-cf39cd0c3730){: external}.
 
 ## Create a web chat instance to add to your website
 {: #deploy-web-chat-task}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-10-19"
+lastupdated: "2020-11-17"
 
 subcollection: assistant
 
@@ -48,7 +48,7 @@ Follow these steps to create an assistant:
 
     - **Preview link**: Creates an IBM-branded public web page that you and your team can use to test your assistant.
     
-    These integrations are not added if you have private endpoints enabled for the service instance.
+    These integrations are added to assistants in service instances that are configured to use private endpoints. You might choose to disable these integrations to prevent data from being transferred over the public internet.
     {: note}
 
 1.  Click **Create assistant**.
