@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-29"
+lastupdated: "2020-11-18"
 
 subcollection: assistant
 
@@ -63,21 +63,21 @@ Table 1. Feature support details
 
 Table 2a. Intent feature support details
 
-| Language | **[Content Catalog](/docs/assistant?topic=assistant-catalog)** | **[Irrelevance detection](/docs/assistant?topic=assistant-irrelevance-detection)** |
+| Language | **[Content Catalog](/docs/assistant?topic=assistant-catalog)** | **[Irrelevance detection](/docs/assistant?topic=assistant-irrelevance-detection)** | **[Intent detection](/docs/assistant?topic=assistant-intent-detection)** |
 |:---:|:---:|:---:|
-| **English (en)**                   | GA | GA |
-| **Arabic (ar)**                    | GA (except Covid-19) | NA |
-| **Chinese (Simplified) (zh-cn)**   | NA | NA |
-| **Chinese (Traditional) (zh-tw)**  | NA | NA |
-| **Czech (cs)**                     | NA | NA |
-| **Dutch (nl)**                     | NA | NA |
-| **French (fr)**                    | GA | NA |
-| **German (de)**                    | GA (except Covid-19) | NA |
-| **Italian (it)**                   | GA (except Covid-19) | NA |
-| **Japanese (ja)**                  | GA (except Covid-19) | NA |
-| **Korean (ko)**                    | NA | NA |
-| **Portuguese (Brazilian) (pt-br)** | GA | NA |
-| **Spanish (es)**                   | GA | NA |
+| **English (en)**                   | GA | GA | Beta |
+| **Arabic (ar)**                    | GA (except Covid-19) | NA | NA |
+| **Chinese (Simplified) (zh-cn)**   | NA | NA | NA |
+| **Chinese (Traditional) (zh-tw)**  | NA | NA | NA |
+| **Czech (cs)**                     | NA | NA | NA |
+| **Dutch (nl)**                     | NA | NA | NA |
+| **French (fr)**                    | GA | NA | NA |
+| **German (de)**                    | GA (except Covid-19) | NA | NA |
+| **Italian (it)**                   | GA (except Covid-19) | NA | NA |
+| **Japanese (ja)**                  | GA (except Covid-19) | NA | NA |
+| **Korean (ko)**                    | NA | NA | NA |
+| **Portuguese (Brazilian) (pt-br)** | GA | NA | NA |
+| **Spanish (es)**                   | GA | NA | NA |
 {: caption="Intent feature support details" caption-side="top"}
 
 Table 2b. Intent feature support details continued
