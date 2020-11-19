@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-11-17"
+lastupdated: "2020-11-19"
 
 subcollection: assistant
 
@@ -38,19 +38,27 @@ Find answers to frequently-asked questions and quick fixes for common problems.
 |------|------------|
 | Action | An action that you add to an actions skill represents a discrete task or question that your assistant is designed to help customers with. [Learn more](/docs/assistant?topic=assistant-actions-overview#actions-overview-actions). |
 | Assistant | Container for your skills. You add skills to an assistant, and then deploy the assistant when you are ready to start helping your customers. [Learn more](/docs/assistant?topic=assistant-assistants). |
+| Condition | Logic that is defined in the *If assistant recognizes* section of a dialog node that determines whether the node is processed. The dialog node conditions is equivalent to an If statement in If-Then-Else programming logic.
 | Content catalog | A set of prebuilt intents that are categorized by subject, such as customer care. You can add these intents to your skill and start using them immediately. Or you can edit them to complement other intents that you create. [Learn more](/docs/assistant?topic=assistant-catalog). |
 | Context variable | A variable that you can use to collect information during a conversation, and reference it later in the same conversation. For example, you might want to ask for the customer's name and then address the person by name later on. A context variable is used by the dialog skill. [Learn more](/docs/assistant?topic=assistant-dialog-runtime-context#dialog-runtime-context-variables).|
 | Dialog | The component where you build the conversation that your assistant has with your customers. For each defined intent, you can author the response your assistant should return. [Learn more](/docs/assistant?topic=assistant-dialog-overview). |
 | Digression | A feature that gives the user the power to direct the conversation. It prevents customers from getting stuck in a dialog thread; they can switch topics whenever they choose. [Learn more](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-digressions). |
 | Disambiguation | A feature that enables the assistant to ask customers to clarify their meaning when the assistant isn't sure what a user wants to do next. [Learn more](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation). |
 | Entity | Information in the user input that is related to the user's purpose. An intent represents the action a user wants to do. An entity represents the object of that action. [Learn more](/docs/assistant?topic=assistant-entities). |
-| Intent | The goal that is expressed in the user input, such as answering a question or processing a bill payment. [Learn more](/docs/assistant?topic=assistant-intents) |
-| Skill | Does the work of the assistant. A dialog skill has the training data and dialog that your assistant uses to chat with customers. A search skill is configured to search the appropriate external data sources for answers to customer inquiries. [Learn more](/docs/assistant?topic=assistant-skill-add). |
+| Integrations | Ways you can deploy your assistant to existing platforms or social media channels. [Learn more](/docs/assistant?topic=assistant-deploy-integration-add). |
+| Intent | The goal that is expressed in the user input, such as answering a question or processing a bill payment. [Learn more](/docs/assistant?topic=assistant-intents). |
+| Message | A single turn within a conversation that includes a single call to the `/message` API endpoint and its corresponding response. |
+| Monthly active user (MAU) | A single unique user who interacts with an assistant one or many times in a given month. |
+| Preview link | An integration that builds embeds your assistant in a chat window that is displayed on an IBM-branded web page. From the preview link integration, you can test how a conversation flows through any and all skills that are attached to your assistant, from end-to-end. [Learn more](/docs/assistant?topic=assistant-deploy-web-link). |
+| Response | Logic that is defined in the *Assistant responds* section of a dialog node that determines how the assistant responds to the user. When the node's condition evaluates to true, the response is processed. The response can consist of an answer, a follow-up question, a webhook that sends a programmatic request to an external service, or slots which represent pieces of information that you need the user to provide before the assistant can help. The dialog node response is equivalent to a Then statement in If-Then-Else programming logic. |
+| Skill | Does the work of the assistant. A dialog skill has the training data and dialog that your assistant uses to chat with customers. An actions skill is a new way to build a conversation. Actions offers step-by-step flows for a range of simple or complex conversations and is made so that anybody can build. A search skill is configured to search the appropriate external data sources for answers to customer inquiries. [Learn more](/docs/assistant?topic=assistant-skill-add). |
 | Skill version | Versions are snapshots of a skill that you can create at key points during the development lifecycle. You can deploy one version to production, while you continue to make and test improvements that you make to another version of the skill. [Learn more](/docs/assistant?topic=assistant-versions). |
 | Slots | A special set of fields that you can add to a dialog node that enable the assistant to collect necessary pieces of information from the customer. For example, the assistant can require a customer to provide valid date and location details before it gets weather forecast information on the customer's behalf. [Learn more](/docs/assistant?topic=assistant-dialog-slots). |
 | Step | A step that you add to an action represents a single interaction or exchange of information with a customer, a turn in the conversation. [Learn more](/docs/assistant?topic=assistant-actions-overview#actions-overview-steps). |
 | System entity | Prebuilt entities that recognize references to common things like dates and numbers. You can add these to your skill and start using them immediately. [Learn more](/docs/assistant?topic=assistant-system-entities). |
-| Variable | A variable is data that a customer shares with the assistant, which is collected and saved so it can be referenced later. In an actions skill, you can collect *action* and *session* variables. [Learn more](/docs/assistant?topic=assistant-actions-overview#actions-overview-step-variables). | 
+| Try it out | A chat window that you use to test as you build. For example, from the dialog skill's "Try it out" pane, you can mimic the behavior of a customer and enter a query to see how the assistant responds. You can test only the current skill; you cannot test your assistant and all attached skills from end-to-end. [Learn more](/docs/assistant?topic=assistant-dialog-tasks). |  
+| Variable | A variable is data that a customer shares with the assistant, which is collected and saved so it can be referenced later. In an actions skill, you can collect *action* and *session* variables. [Learn more](/docs/assistant?topic=assistant-actions-overview#actions-overview-step-variables). |
+| Web chat | An integration that you can use to embed your assistant in your company website. [Learn more](/docs/assistant?topic=assistant-deploy-web-chat). |
 | Webhook | A mechanism for calling out to an external program as part of the dialog. For example, if a customer asks the assistant to translate a string from English to French, the dialog can call an external language translation service to translate the phrase and return the translation to the customer in the course of the conversation. [Learn more](/docs/assistant?topic=assistant-dialog-webhooks). |
 
 ## I can't log in
