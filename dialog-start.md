@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-11-13"
+lastupdated: "2020-11-19"
 
 subcollection: assistant
 
@@ -80,7 +80,3 @@ The *Anything else* node is designed to recognize the `anything_else` special co
   You can configure your assistant to redirect queries to the search skill if the dialog is unable to address the request. When a customer's message reaches the *Anything else* node in your dialog, the message is sent to the search skill to find a relevant answer in your configured data collections. Messages that trigger search in this way are registered by the coverage metric as messages that are *not* covered. For more information about searching for an answer when your dialog can't provide a response, see [Search triggers](/docs/assistant?topic=assistant-skill-search-add#skill-search-add-trigger).
 
   For more information about the coverage metric, see [Graphs and statistics](/docs/assistant?topic=assistant-logs-overview#logs-overview-graphs).
-
-If you spend time training your assistant to ignore certain topics of conversation, consider adding a separate dialog node earlier in the tree that recognizes the `irrelevant` special condition. 
-
-In the text response for the *Irrelevant* node, you can state plainly that your assistant understands the request, but is not designed to help with queries of this type. Doing so frees you up to use language in the *Anything else* node that encourages the customer to reword the question and ask again. This approach also prevents the Coverage metric from counting topics that you have chosen explicitly not to cover in its `Total not covered messages` totals.
