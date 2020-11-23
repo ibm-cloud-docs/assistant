@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-11-13"
+lastupdated: "2020-11-23"
 
 subcollection: assistant
 
@@ -53,11 +53,11 @@ If you don't have one, set up a Twilio messaging account and get a phone number.
 
 WhatsApp has a rigorous process that they use to review all businesses that want to interact with customers over their network. WhatsApp, which is owned by Facebook, requires that you register your business with the Facebook business directory.
 
-1.  To register, go to the [Facebook Business Manager](https://business.facebook.com/overview) website, and click *Create account* and follow the instructions to create an account.
+1.  To register, go to the [Facebook Business Manager](https://business.facebook.com/overview){: external} website, and click *Create account* and follow the instructions to create an account.
 
 1.  Make a note of your Facebook Business Manager ID. You will need this in the next step.
 
-1.  Submit the *Request to enable your Twilio numbers for WhatsApp* form from the [Twilio API for WhatsApp](https://www.twilio.com/whatsapp/request-access) web page.
+1.  Submit the *Request to enable your Twilio numbers for WhatsApp* form from the [Twilio API for WhatsApp](https://www.twilio.com/whatsapp/request-access){: external} web page.
 
     Tips for specifying the following values:
 
@@ -119,7 +119,7 @@ While you wait for WhatsApp to approve your request, you can test the integratio
 
 Do not use the Twilio sandbox in production. Sandbox sessions expire after 3 days.
 
-1.  To create a sandbox, go to the [Twilio Try WhatsApp](https://www.twilio.com/console/sms/whatsapp/learn) web page. An *Activate your sandbox* prompt is displayed. Agree to have a sandbox created, and confirm your choice.
+1.  To create a sandbox, go to the [Twilio Try WhatsApp](https://www.twilio.com/console/sms/whatsapp/learn){: external} web page. An *Activate your sandbox* prompt is displayed. Agree to have a sandbox created, and confirm your choice.
 
 1.  Follow the instructions to create the sandbox.
 
