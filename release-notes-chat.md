@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-11-02"
+lastupdated: "2020-11-23"
 
 subcollection: assistant
 
@@ -50,7 +50,7 @@ If you want to evaluate changes that are introduced in a web chat release before
 
 *Release date: 26 October 2020*
 
-- **Accessibility improvement**: If you enable security, you no longer need to include the `identityToken` property when the web chat is loaded on a web page. If a token is not initially provided, the existing identityTokenExpired event will be fired when the web chat is first opened to obtain one from your handler.
+- **Security improvement**: If you enable security, you no longer need to include the `identityToken` property when the web chat is loaded on a web page. If a token is not initially provided, the existing identityTokenExpired event will be fired when the web chat is first opened to obtain one from your handler.
 
 - **Starter kit update**: The starter kit now allow you to customize the timeout that occurs when the web chat integration checks whether any service desk agents are online.
 
