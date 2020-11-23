@@ -38,6 +38,15 @@ For information about new features and improvements to the core {{site.data.keyw
 
 If you want to evaluate changes that are introduced in a web chat release before you apply them to your deployment, you can version your web chat. For more information, see [Versioning](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=key-concepts#versioning)
 
+## 3.3.0
+{: #3.3.0}
+
+*Release date: 23 November 2020*
+
+- Added support for passing contextual information to a service desk agent from web chat.
+- You can now customize a `user_defined` response type. For more information, see the [Custom response type tutorial](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=tutorials-user-defined-response).
+- Bug fixes.
+
 ## 3.2.1
 {: #3.2.1}
 
