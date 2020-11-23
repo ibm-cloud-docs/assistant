@@ -89,6 +89,7 @@ Watson Assistant (Managed)
         deploy-slack.md
         deploy-phone.md
         deploy-sms.md
+        deploy-whatsapp.md
         deploy-custom-app.md
         deploy-integration-delete.md
 
