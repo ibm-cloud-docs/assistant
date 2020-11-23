@@ -80,7 +80,7 @@ The following features are available only to users of Plus or Premium plans. ![P
 - [Private endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints)
 - [Search skill](/docs/assistant?topic=assistant-skill-search-add)
 - [SMS with Twilio integration](/docs/assistant?topic=assistant-deploy-phone) ![Beta](images/beta.png)
-<!-- [WhatsApp with Twilio integration](/docs/assistant?topic=assistant-deploy-whatsapp) ![Beta](images/beta.png) -->
+- [WhatsApp with Twilio integration](/docs/assistant?topic=assistant-deploy-whatsapp) ![Beta](images/beta.png)
 
 The plan type of the service instance you are currently using is displayed in the page header. You can upgrade from one plan type to another. For more information, see [Upgrading](/docs/assistant?topic=assistant-upgrade).
 

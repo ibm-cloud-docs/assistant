@@ -60,6 +60,7 @@ Follow these steps to add integrations to your assistant:
     - [Slack](/docs/assistant?topic=assistant-deploy-slack)
     - [Phone](/docs/assistant?topic=assistant-deploy-phone)
     - [SMS with Twilio](/docs/assistant?topic=assistant-deploy-sms)
+    - [WhatsApp with Twilio](/docs/assistant?topic=assistant-deploy-whatsapp)
     - [Custom application](/docs/assistant?topic=assistant-deploy-custom-app)
 
     Service desk integrations:

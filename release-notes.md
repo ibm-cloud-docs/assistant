@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-11-13"
+lastupdated: "2020-11-23"
 
 subcollection: assistant
 
@@ -63,6 +63,12 @@ The change log lists changes that were made this year ordered by the date they w
 
 To remove a notification about a new feature that is displayed in a banner, you can hover over the end of the banner. A close button is displayed that you can click to close the notification banner.
 {: tip}
+
+## 23 November 2020
+{: #23November2020}
+<!--1.125.1-->
+
+- **Deploy your assistant to WhatsApp!**: Make your assistant available through Whatsapp messaging so it can exchange messages with your customers where they are. This beta integration creates a connection between your assistant and WhatsApp by using Twilio as a provider. For more information, see [Integrating with WhatsApp](/docs/assistant?topic=assistant-deploy-whatsapp).
 
 ## 13 November 2020
 {: #13November2020}
