@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-30"
+lastupdated: "2020-11-24"
 
 keywords: integration settings
 
@@ -45,7 +45,7 @@ To take advantage of the `context.integrations` object, you can create context v
 | Salesforce service desk from web chat | `$integrations.salesforce` |
 | SMS with Twilio | `$integrations.text_messaging` |
 | Web chat (and Preview link) | `$integrations.chat` |
-| WhatsApp with Twilio | `$integrations.twilio_whatsapp` |
+| WhatsApp with Twilio | `$integrations.whatsapp` |
 | Zendesk service desk from web chat | `$integrations.zendesk` |
 {: caption="Integration-specific context variables" caption-side="top"}
 
