@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-13"
+lastupdated: "2020-11-24"
 
 subcollection: assistant
 
@@ -40,7 +40,7 @@ To start quickly, add simple actions, such as ones that capture questions that r
 
 Here's an example. A customer named Sally wants to know your store hours. The action you build so your assistant can help Sally might look like this:
 
-- **Example messages**
+- Example messages
 
   - Get store hours
   - What are your store hours?
@@ -49,7 +49,7 @@ Here's an example. A customer named Sally wants to know your store hours. The ac
   - when does the store in Boston open tomorrow?
   - What time does your downtown store close?
 
-- **Steps**
+- Steps
 
   1.  **Assistant says** *We are open from 9:00 AM until 6:00 PM Monday through Saturday.*
 
@@ -116,7 +116,7 @@ To create actions, complete the following steps:
 
 1.  If the customer's goal is not satistified by this first step, add another one. Click **New step**.
 
-    To insert a step between existing steps, select the step immediately above the place where you want to add the step, and then click **New step**. The step is added and the numbers of the following steps are adjusted automatically to account for the inserted step.
+    To insert a step between existing steps, select the step immediately before the place where you want to add the step, and then click **New step**. The step is added and the numbers of the following steps are adjusted automatically to account for the inserted step.
 
 1.  **Optional**: If you want a step to be taken only when a requirement that you define is met, add a condition to the step. 
 
@@ -454,7 +454,7 @@ When an action is displayed in the disambiguation list, it is represented by the
 ### Customizing disambiguation
 {: #actions-disambiguation-config}
 
-You can control things like the wording your assistant uses to introduce the disambiguation list and whether a *None of the above* choice is offered.
+You can control things like the wording your assistant uses to introduce the disambiguation list.
 
 To customize disambiguation, complete the following steps:
 

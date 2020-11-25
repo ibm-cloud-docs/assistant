@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-15"
+lastupdated: "2020-11-24"
 
 subcollection: assistant
 
@@ -108,6 +108,8 @@ The rich responses that you add to a dialog are displayed in a Slack channel as 
   - If the options are displayed in a drop-down list, then each option value must be 75 characters or fewer in length. When a list includes 5 or more options, it is displayed in a drop-down list automatically.
 
 - **Pause**: This response type pauses the assistant's activity in the Slack channel. However, no visible indicator is shown to indicate that the assistant is paused, whether you choose to show typing or not.
+
+- **Search skill**: The response type is supported, but you must test and curate your search results to ensure that each result is as concise as possible. The combined length of the title, body, and URL of the search result must be less than or equal to 2,990 characters.
 
 See [Rich responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more information about response types.
 
