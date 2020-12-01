@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-10-28"
+lastupdated: "2020-12-01"
 
 subcollection: assistant
 
@@ -40,6 +40,8 @@ You can add one skill of each type to your assistant:
 
   Only users of Plus or Premium plans can create this type of skill.
   {: important}
+
+If you add both a dialog skill and an actions skill to your assistant, the dialog skill is used. You can configure your dialog skill to process individual actions from your actions skill by following the steps in [Calling an actions skill from a dialog](/docs/assistant?topic=assistant-dialog-call-action).
 
 If you can't decide between creating an actions or dialog skill, see [Choosing skills](/docs/assistant?topic=assistant-skills-choose).
 {: tip}

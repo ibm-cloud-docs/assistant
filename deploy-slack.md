@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-11-24"
+lastupdated: "2020-12-01"
 
 subcollection: assistant
 
@@ -90,6 +90,9 @@ When integrated, depending on the events that you configure the assistant to sup
 
     - `message.im`: Listens for message events that are posted in a direct message channel.
     - `app_mention`: Listens for only message events that mention your app or bot.
+
+      Choose the *app_mention* entry in normal font, *not* the app_mention entry that is in bold font.
+      {: note}
 
 1.  Click *Save Changes*.
 
