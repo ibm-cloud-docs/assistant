@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-12-04"
 
 subcollection: assistant
 
@@ -31,7 +31,7 @@ Learn how to find and open assistants and skills that you created or can access.
 
 Assistants and skills are created within a {{site.data.keyword.conversationshort}} service instance. To continue working with a skill or assistant, open the service instance that contains the skill or assistant. If you can't remember the service instance name, you can switch between instances from within the {{site.data.keyword.conversationshort}} user interface.
 
-1.  Go to the [{{site.data.keyword.Bluemix_notm}} Resource list)](https://cloud.ibm.com){: external}.
+1.  Go to the [{{site.data.keyword.Bluemix_notm}} Resource list](https://cloud.ibm.com){: external}.
 
 1.  Log in.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-11-23"
+lastupdated: "2020-12-03"
 
 subcollection: assistant
 
@@ -37,6 +37,15 @@ For information about new features and improvements to the core {{site.data.keyw
 {: #release-notes-chat-version}
 
 If you want to evaluate changes that are introduced in a web chat release before you apply them to your deployment, you can version your web chat. For more information, see [Versioning](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=key-concepts#versioning)
+
+## 3.3.1
+{: #3.3.1}
+
+*Release date: 3 December 2020*
+
+- The translated strings in the [language files](https://github.com/watson-developer-cloud/assistant-web-chat/tree/main/languages){: external} were revised and improved.
+- An error message is shown now if a Java Web Token (JWT) that is provided with an incoming message is invalid. If the first JWT fails when the web chat opens, an error message is displayed in place of the web chat window that says, `There was an error communicating with Watson Assistant`. If the initial JWT is valid, but the token for a subsequent message is invalid, a more discreet error message is displayed in response to the insecure input.
+- Bug fixes.
 
 ## 3.3.0
 {: #3.3.0}

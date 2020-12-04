@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-30"
+lastupdated: "2020-12-01"
 
 keywords: digression, disambiguation, confidence 
 
@@ -65,6 +65,8 @@ Learn more
 - [Disabling disambiguation](#dialog-runtime-disambig-disable)
 - [Handling none of the above](#dialog-runtime-handle-none)
 - [Testing disambiguation](#dialog-runtime-disambig-test)
+
+For information about how disambiguation works with actions skills, see [Disambiguation](/docs/assistant?topic=assistant-actions#actions-disambiguation).
 
 ### Disambiguation example
 {: #dialog-runtime-disambig-example}
@@ -129,7 +131,7 @@ To edit the disambiguation settings, complete the following steps:
 
 Next, you must decide which dialog nodes you want to make eligible for disambiguation. From the Skills menu, click **Dialog**.
 
-### Choosing nodes to disable
+### Choosing nodes to not show as disambiguation options
 {: #dialog-runtime-disambig-choose-nodes}
 
 All nodes are eligible to be included in the disambiguation list. 
@@ -137,24 +139,24 @@ All nodes are eligible to be included in the disambiguation list.
   - Nodes at any level of the tree hierarchy are included.
   - Nodes that condition on intents, entities, special conditions, context variables, or any combination of these values are included.
 
-Consider preventing some nodes from being included in the list by disabling disambiguation on them.
+Consider hiding some nodes from the disambiguation list.
 
-- **Disable root nodes with `welcome` and `anything_else` conditions**
+- **Hide root nodes with `welcome` and `anything_else` conditions**
 
   Unless you added extra functionality to these nodes, they typically are not useful options to include in a disambiguation list.
 
-- **Disable jumped-to utility nodes**
+- **Hide jumped-to utility nodes**
 
   The text that is displayed in the disambiguation list is populated from the node name (or external node name) of the *last node that is processed* in the branch where the node condition is matched.
   {: important}
 
   You do not want the name of a utility node, such as one that thanks the user, or says goodbye, or asks for feedback on answer quality to be shown in the disambiguation list instead of a phrase that describes the purpose of the matched root node.
   
-  For example, maybe a root node with the matching intent condition of `#store-location` jumps to a node that asks users if they are satisfied with the response. If the `#check_satisfaction` node has a node name and has disambiguation enabled, then the name for that jumped-to node is displayed in the disambiguation list. As a result, `Check satisfaction` is displayed in the disambiguation list to represent the `#store-location` branch instead of the `Get store location` name from the root node. Prevent a jumped-to node from misrepresenting a disambiguation list option by disabling disambiguation on jumped-to nodes.
+  For example, maybe a root node with the matching intent condition of `#store-location` jumps to a node that asks users if they are satisfied with the response. If the `#check_satisfaction` node has a node name and has disambiguation enabled, then the name for that jumped-to node is displayed in the disambiguation list. As a result, `Check satisfaction` is displayed in the disambiguation list to represent the `#store-location` branch instead of the `Get store location` name from the root node.
 
-- **Disable root nodes that condition on an entity or context variable only**
+- **Hide root nodes that condition on an entity or context variable only**
 
-  Again, unless you have a specific function in mind, disable disambiguation on these root nodes. While only a node with a matched intent can trigger disambiguation, once it's triggered, any node with a condition that matches is included in the disambiguation list. When such nodes opt in to disambiguation, the order of nodes in the tree hierarchy can become significant in unexpected ways.
+  Only a node with a matched intent can trigger disambiguation. However, once it's triggered, any node with a condition that matches is included in the disambiguation list. When your dialog includes nodes that condition on entities, for example, the order of nodes in the tree hierarchy can become significant in unexpected ways.
 
   - The order of nodes impacts whether disambiguation is triggered at all
   
@@ -164,17 +166,17 @@ Consider preventing some nodes from being included in the list by disabling disa
   
     Sometimes a node is not listed as a disambiguation option as expected. This can happen if a condition value is also referenced by a node that is *not* eligible for inclusion in the disambiguation list for some reason. For example, an entity mention might trigger a node that is situated earlier in the dialog tree but is not enabled for disambiguation. If the same entity is the only condition for a node that *is* enabled for disambiguation, but is situated lower in the tree, then it might not be added as a disambiguation option because your assistant never reaches it. If it matched against the earlier node and was omitted, your assistant might not process the later node.
 
-### Disabling disambiguation
+### Hiding nodes from disambiguation altogether
 {: #dialog-runtime-disambig-disable}
 
-You can disable disambiguation for the entire dialog or for an individual dialog node.
+You can prevent every node in a dialog or an individual dialog node from being included in the disambiguation list.
 
 - To disable disambiguation entirely: 
 
   - From the Skills menu, click **Options**. 
   - On the *Disambiguation* page, set the switch to **Off**.
 
-- To disable disambiguation for a single dialog node: 
+- To prevent a single dialog node from being included in the disambiguation list: 
 
   - From the Skills menu, click **Dialog**. Click the node to open it in the edit view.
 
@@ -196,6 +198,50 @@ For each node, test scenarios in which you expect the node to be included in the
 
 {{site.data.keyword.conversationshort}} can recognize intent conflicts, which occur when two or more intents have user examples that overlap. [Resolve any such conflicts](/docs/assistant?topic=assistant-intents#intents-resolve-conflicts) first to ensure that the intents themselves are as unique as possible, which helps your assistant attain better intent confidence scores.
 {: tip}
+
+#### Prioritizing a node over disambiguation
+{: #dialog-runtime-prevent-disambiguation}
+
+Some nodes are important enough to your customer's satisfaction that you want them to be returned on their own, outside of a disambiguation list, when the assistant is confident enough that the node will meet a customer need.
+
+For example, you might have a node that matches the `#stolen_card` intent. Whenever an incoming message suggests that a customer wants to report a stolen credit card, you don't want your assistant's response to be lost in a disambiguation list of options. You want the assistant to respond with a single answer that assures the customer that it can address this urgent matter.
+
+To design your dialog to prioritize a single node over disambiguation, complete the following steps:
+
+1.  In the node that conditions on the intent, enable multiple conditioned responses (Customize > Multiple conditioned responses).
+1.  Add a conditioned response with the following condition:
+
+    `intent.confidence > n`
+
+    where `n` is a confidence score that makes sense for your training data. For example:
+
+    `intent.confidence > 0.7`
+
+1.  Move the response up to be first in the list of conditioned responses.
+1.  Click the gear icon to customize the conditioned response.
+1.  From the *Assistant responds* section, open the context editor.
+1.  Add the following context variable:
+
+    <table>
+        <caption>Context variable details</caption>
+        <tr>
+          <th>Variable</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td>`system`</td>
+          <td>`{"prevent_disambiguation":true}`</td>
+        </tr>
+      </table>
+
+1.  Click **Save**.
+
+    Alternatively, you can add a root-level node with a condition such as the following:
+
+    `#stolen_card && intent.confidence > 0.7`
+
+    Place this node higher in the tree than the node that conditions on `#stolen_card`, which allows the node to be included in a disambiguation list.
+1.  Test your dialog. Make sure that the node's response is returned instead of a disambiguation list when the appropriate confidence score threshold is met.
 
 ### Handling none of the above
 {: #dialog-runtime-handle-none}

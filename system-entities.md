@@ -2,9 +2,11 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-30"
+lastupdated: "2020-12-01"
 
 subcollection: assistant
+
+keywords: system entity, sys-number, sys-date, sys-time
 
 ---
 
@@ -36,16 +38,15 @@ For information about how to add system entities to your dialog skill, see [Crea
 In January 2020, this new version of the system entities was introduced. These revised system entities offer better date and time understanding and can classify mentions with more precision. For more information about the legacy version, see [Legacy system entities](/docs/assistant?topic=assistant-legacy-system-entities).
 
 - The new system entities are enabled automatically in new dialog skills of all languages.
-- Arabic, Chinese, Korean, and Japanese dialog skills that were created before 27 May 2020 use the legacy version of the system entities. 
-- Dialog skills in all other languages that were created before 10 March 2020 use the legacy version of the system entities by default.
+- Only Korean dialog skills that were created before 27 May 2020 continue to use the legacy version of the system entities.
 
-Starting 29 October 2020, only the new version of the system entities is supported for English, Brazilian Portuguese, Czech, Dutch, French, German, Italian, and Spanish dialog skills. The option to switch to using the legacy version is no longer available.
+As of December 2020, only the new version of the system entities is supported for Arabic, Brazilian Portuguese, Chinese, Czech, Dutch, English, French, German, Italian, Japanese, and Spanish dialog skills. The option to switch to using the legacy version is no longer available. 
 
-**For Arabic, Chinese, Korean, and Japanese dialog skills only**: Update any skills that continue to use the legacy system entities. To do so, complete the following steps:
+**For Korean dialog skills only**: Update any skills that continue to use the legacy system entities. To do so, complete the following steps:
 
 1.  Go to **Options>System Entities**.
 
-    This option is not available in English, Brazilian Portuguese, Czech, Dutch, French, German, Italian, and Spanish dialog skills.
+    This option is available only in Korean dialog skills.
     {: note}
 1.  Select **Use new system entities**. 
 
