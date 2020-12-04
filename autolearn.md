@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-12-02"
 
 subcollection: assistant
 
@@ -24,13 +24,13 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Empower your skill to learn automatically ![Beta](images/beta.png)
+# Empower your skill to learn automatically
 {: #autolearn}
 
 Use autolearning to enable your skill to learn from interactions between your customers and your assistants.
 {: shortdesc}
 
-![Plus or Premium plan only](images/plus.png) This beta feature is available to Plus or Premium plan users with English-language dialog skills only.
+![Plus or Premium plan only](images/plus.png) This feature is available to Plus or Premium plan users with English-language dialog skills only.
 {: note}
 
 When customers interact with your assistant, they often make choices. If your underlying dialog skill pays attention, it can learn from these user decisions over time.
@@ -53,7 +53,7 @@ Autolearning uses observations of actions that are made by only your customers t
 Autolearn gains insights from the following user action:
 
 - The choice made from a list of disambiguation options that is displayed for an utterance
-<!-- The choice made from a list of more options that is included with the response in web chat integrations-->
+<!-- The choice made from a list of suggestions that is included with the response in web chat integrations-->
 
 These customer interactions occur in the context of one of the product's built-in integrations, such as the web chat, or in a custom application. To say that your skill *observes* the choices that users make means that it analyzes logs of the exchanges after the interactions take place. It does not mean that the skill watches the clicks that users make within the client-facing app in real time.
 
@@ -70,41 +70,55 @@ You can enable autolearning when the following conditions are met:
   {: note}
 - You have at least one deployed assistant that is actively interacting with customers and has accumulated log data that the skill can learn from.
 
-<!--Autolearning is optimized for use with the built-in web chat integration. This integration, in particular, has a *more options* feature which increases the opportunities for users to make choices, and therefore for the skill to learn from them.
+<!--Autolearning is optimized for use with the built-in web chat integration. This integration, in particular, has a *Suggestions* feature which increases the opportunities for users to make choices, and therefore for the skill to learn from them.
 {: tip}-->
 
 To enable autolearning, complete the following steps:
 
-1.  From the Skills menu, click **Options**, and then click **Autolearning**.
-1.  Click **Select assistant**, choose an assistant, and then click **Save**.
+1.  From the Skills menu, click **Analytics**, and then click **Autolearning**.
+1.  In the *Disambiguation* section, if disambiguation is off, click **Turn on**. 
 
-    Choose an assistant that is live, meaning it is deployed in a production environment and is actively engaging with customers.
+    You are taken to the *Options>Disambiguation* page where you can click the switch to turn disambiguation On. Return to the *Analytics>Autolearning* page.
+
+    For more information about disambiguation, see [Disambiguation](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
+
+1.  In the *Observing assistant* section, click **Select assistant**.
+
+    Choose an assistant that is live, meaning it is deployed in a production environment and is actively engaging with customers. Click **Save**.
 
     An assistant is selected already if you are using the logs from a live assistant to get intent and intent user example recommendations. The assistant that you connect your skill to for getting recommendations is automatically used. While you can add one dialog skill to more than one assistant, you can only connect one live assistant to a dialog skill to use its logs as a data source. Both features must use log data from the same assistant. For more information about the recommendations features, see [Get help defining intents](/docs/assistant?topic=assistant-intent-recommendations).
-      {: note}
+    {: note}
 
     To change the assistant that is used as the source for observation, click **Change assistant**, choose an assistant, and then click **Save**.
 
     Do not change the assistant without first considering the impact of this change. When you swap the assistant to observe, it changes the live assistant that is used as the data source for the recommendations feature also.
     {: important}
 
-1.  Set the **Enable Autolearning** switch to **On**.
+1.  In the *Autolearning* section, click the switch to turn autolearning **On**.
 
-<!--## Advanced configuration
-{: #autolearn-v1}
-
-If you have an advanced use case where more than one assistant submits production message traffic for a skill, you still can enable autolearning. From the Autolearning page where you enable the feature, expand the **Advanced** section, and then select **Observe all messages**. When you do so, you indicate that you want your skill to observe and learn from every `POST` request that is sent to the `/message` API endpoint for this skill.
-
-When you configure autolearning to use all messages, you must be sure to flag any requests that are not customer-generated that are sent to the service. Do not mix test utterances with legitimate, customer-generated utterances. You might run manual or automated tests of your skill, for example. You must prevent this canned data from skewing the insights that can otherwise be gained from analyzing choices that are made by real customers. 
-
-Build your test framework in such a way that each test message is identified as a test message and does not feed the autolearning algorithm. To do so, include the `auto_learn.learn:false` property in each test request. For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#message){: external}.-->
-
-##Tracking customer effort
+##Tracking the impact of autolearning
 {: #autolearn-track}
 
-To track the impact that autolearning has over time, use the **Customer Effort Analysis Notebook**. The notebook analyzes a metric called *Customer Effort*, which captures the effort that your customers must expend to get an answer to a question or find the solution to a problem. 
+Review visualizations that illustrate the impact that autolearning is having on the performance of your assistant.
 
-Autolearning works in tandem with disambiguation. (For more information about disambiguation, see [Disambiguation](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).) The Customer Effort metric measures how your customers respond to the options that are presented by disambiguation. For example, if your customer chooses the third option in a list of choices, the effort expended is considered to be higher than the effort expended to choose the first option. Likewise, if a customer chooses **None of the above** to signify that none of the options address a need, then the effort metric is even higher. Use this notebook to plot the Customer Effort metric values graphically, so you have a visual indication of how the metric changes over time. You can also see related information such as disambiguation volume and which dialog nodes are most frequently included as disambiguation list options.
+To view the graphs, open the Autolearning analytics page. From the skill menu, click to expand **Analytics**, and then click **Autolearning**.
+
+![Shows the Modifications graph for autolearning](/images/autolearn-modifications.png)
+
+The following graphs are available:
+
+- **Modifications**: Shows the percentage of responses that were modified by autolearning in the selected time frame.
+
+  Click **View modifications** to walk through specific cases that show you how the assistant responded because autolearning was enabled as opposed to how it would have responded had autolearning not been enabled. You can review the cases to judge for yourself whether the change that was made by autolearning was appropriate and helpful or not.
+- **Single answer percentage**: Shows the number of autolearning modifications that resulted in a single answer response. 
+
+  The goal of autolearning is to limit the effort that a customer has to expend to reach the best answer. As autolearning observes user behavior, it learns about which answer is most often the best. First, it moves the best answer to the top of the disambiguation list. Next, it reduces the number of other options in the list. Ultimately, it is able to replace the disambiguation list entirely with the single, best answer. The higher the percentage of single answers, the better.
+- **Average list length**: Shows the number of options that were shown in a disambiguation list after autolearning made a modification. The lower the number of options, the better because it means that your customer was able to expend less effort to find the best answer.
+
+### Using Python notebooks to track customer effort
+{: #autolearn-track-via-notebooks}
+
+For more in-depth analysis of the impact that autolearning has over time, you can use the **Customer Effort Analysis Notebook**. The notebook analyzes a metric called *Customer Effort*, which captures the effort that your customers must expend to get an answer to a question or find the solution to a problem.
 
 You can use the notebook from [GitHub](https://github.com/watson-developer-cloud/assistant-improve-recommendations-notebook/blob/master/notebook/Customer%20Effort%20Notebook.ipynb){: external}<!-- or use the notebook with Watson Studio-->.
 

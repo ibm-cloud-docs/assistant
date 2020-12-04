@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-11-13"
+lastupdated: "2020-12-01"
 
 subcollection: assistant
 
@@ -60,14 +60,18 @@ Follow these steps to add integrations to your assistant:
     - [Slack](/docs/assistant?topic=assistant-deploy-slack)
     - [Phone](/docs/assistant?topic=assistant-deploy-phone)
     - [SMS with Twilio](/docs/assistant?topic=assistant-deploy-sms)
-    - [WhatsApp with Twilio](/docs/assistant?topic=assistant-deploy-whatsapp)
     - [Custom application](/docs/assistant?topic=assistant-deploy-custom-app)
 
-    Service desk integrations:
+    Built-in service desk integrations:
 
     - [Web chat with Salesforce support](/docs/assistant?topic=assistant-deploy-salesforce)
     - [Web chat with Zendesk support](/docs/assistant?topic=assistant-deploy-zendesk)
     - [Intercom](/docs/assistant?topic=assistant-deploy-intercom)  ![Plus or Premium plan only](images/plus.png)
+
+    Service desk reference implementations:
+
+    - [Web chat with Genesys Cloud support](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/genesys){: external}
+    - [Web chat with Twilio Flex support](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/flex){: external}
 
 1.  Follow the instructions that are provided on the screen to complete the integration process.
 

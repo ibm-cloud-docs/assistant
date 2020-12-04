@@ -2,11 +2,10 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-21"
+lastupdated: "2020-12-01"
 
 subcollection: assistant
 
-keywords: system entity, sys-number, sys-date, sys-time
 ---
 
 {:shortdesc: .shortdesc}
@@ -31,18 +30,18 @@ Learn about system entities that are provided by IBM for you to use out of the b
 
 New and improved versions of the numeric system entities are generally available for dialog skills in all languages. The new versions of the numeric system entities provide superior number recognition with higher precision. For more information, see [New system entities](/docs/assistant?topic=assistant-system-entities).
 
-This legacy version of the system entities is being deprecated. Support will end for Arabic, Simplified Chinese, Traditional Chinese, Japanese, and Korean language dialog skills in November 2020.
+This legacy version of the system entities is being deprecated. Support will end for Korean language dialog skills in March 2021.
 {: deprecated}
 
-Switch to using the new system entities now. To do so, complete the following steps:
+Switch to using the new system entities in Korean dialog skills that continue to use legacy system entities now. To do so, complete the following steps:
 
 1.  Go to **Options>System Entities**.
-1.  Do one of the following things:
 
-    - For Arabic, Chinese, Korean, and Japanese dialog skills, select **Use new system entities**. 
-    - For all other language skills, select **Use new system entities API format**.
+    This option is available only in Korean dialog skills.
+1.  Select **Use new system entities**.
 
 This topic describes the legacy versions of the numeric system entities.
+{: note}
 
 ## @sys-currency entity
 {: #legacy-system-entities-sys-currency}

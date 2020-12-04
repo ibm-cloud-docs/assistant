@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-11-19"
+lastupdated: "2020-12-01"
 
 subcollection: assistant
 
@@ -558,13 +558,15 @@ The following service desk offerings are supported:
 - {: #deploy-web-chat-zendesk}[Zendesk](/docs/assistant?topic=assistant-deploy-zendesk)
 - {: #deploy-web-chat-salesforce}[Salesforce](/docs/assistant?topic=assistant-deploy-salesforce)
 
-In addition, the [Web chat service desk extension starter kit](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter) enables you to develop your own service desk integrations. Fully functional reference implementations are provided for the following service desks:
+Fully functional reference implementations are provided for the following service desks:
 
 - [Twilio Flex](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/flex){: external}
 - [Genesys Cloud](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/genesys){: external}
 
 The starter kit reference implementations, while functional, are examples only, and have not been vetted for production use. You should perform robust testing before deploying these integrations in production.
 {: important}
+
+- [Bring your own]((https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter): A web chat service desk extension starter kit that enables you to develop your own service desk integrations. 
 
 After you set up the service desk integration, you must update your dialog to ensure it understands user requests to speak to someone, and can transfer the conversation properly. For more information, see [Adding chat transfer support](/docs/assistant?topic=assistant-dialog-support#dialog-support-transfers).
 

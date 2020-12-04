@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-11-23"
+lastupdated: "2020-12-04"
 
 subcollection: assistant
 
@@ -63,6 +63,27 @@ The change log lists changes that were made this year ordered by the date they w
 
 To remove a notification about a new feature that is displayed in a banner, you can hover over the end of the banner. A close button is displayed that you can click to close the notification banner.
 {: tip}
+
+## 4 December 2020
+{: #4December2020}
+<!--1.127-->
+
+- **Introducing more service desk options for web chat**: When you deploy your assistant by using the web chat integration, there are now reference implementations that you can use for the following service desks:
+
+  - Twilio Flex
+  - Genesys Cloud
+
+  Alternatively, you can bring your own service desk by using the service desk extension starter kit.
+
+  For more information, see [Adding service desk support](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-haa).
+
+- **Autolearning is generally available**: The feature has been moved and improved. Go to the *Analytics>Autolearning* page to enable the feature and see visualizations that illustrate how autolearning impacts your assistant's performance over time. For more information, see [Empower your skill to learn automatically](/docs/assistant?topic=assistant-autolearn).
+
+- **System entities language support change**: The new system entities are now used by all skills except Korean-language dialog skills. If you have a Korean skill that uses the older version of the system entities, update it. The legacy version will stop being supported for Korean skills in March 2021. For more information, see [Legacy system entities](/docs/assistant?topic=assistant-legacy-system-entities).
+
+- **Disambiguation selection enhancement**: When a customer chooses an option from a disambiguation list, the corresponding intent is submitted. With this latest release, a confidence score of 1.0 is assigned to the intent. Previously, the original confidence score of the option was used.
+
+- **Skill import improvements**: Importing of large skills from JSON data is now processed in the background. When you import a JSON file to create a skill, the new skill tile appears immediately. However, depending on the size of the skill, it might not be available for several minutes while the import is being processed. During this time, the skill cannot be opened for editing or added to an assistant, and the skill tile shows the text **Processing**.
 
 ## 23 November 2020
 {: #23November2020}
