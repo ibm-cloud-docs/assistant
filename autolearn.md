@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-12-02"
+lastupdated: "2020-12-04"
 
 subcollection: assistant
 
@@ -24,13 +24,13 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Empower your skill to learn automatically
+# Empower your skill to learn automatically ![Beta](images/beta.png)
 {: #autolearn}
 
 Use autolearning to enable your skill to learn from interactions between your customers and your assistants.
 {: shortdesc}
 
-![Plus or Premium plan only](images/plus.png) This feature is available to Plus or Premium plan users with English-language dialog skills only.
+![Plus or Premium plan only](images/plus.png) This beta feature is available to Plus or Premium plan users with English-language dialog skills only.
 {: note}
 
 When customers interact with your assistant, they often make choices. If your underlying dialog skill pays attention, it can learn from these user decisions over time.
