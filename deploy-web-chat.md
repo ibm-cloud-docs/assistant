@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-12-01"
+lastupdated: "2020-12-08"
 
 subcollection: assistant
 
@@ -566,7 +566,7 @@ Fully functional reference implementations are provided for the following servic
 The starter kit reference implementations, while functional, are examples only, and have not been vetted for production use. You should perform robust testing before deploying these integrations in production.
 {: important}
 
-- [Bring your own]((https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter): A web chat service desk extension starter kit that enables you to develop your own service desk integrations. 
+- [Bring your own]((https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter){: external}: A web chat service desk extension starter kit that enables you to develop your own service desk integrations. 
 
 After you set up the service desk integration, you must update your dialog to ensure it understands user requests to speak to someone, and can transfer the conversation properly. For more information, see [Adding chat transfer support](/docs/assistant?topic=assistant-dialog-support#dialog-support-transfers).
 
@@ -580,5 +580,5 @@ The usage is measured differently depending on the plan type. For Lite plans, us
 | Premium    |              Unlimited MAU |
 | Plus       |              Unlimited MAU |
 | Plus Trial |                  5,000 MAU |
-| Lite       |                 10,000 API |
+| Lite       | 10,000 API (approximately 1,000 MAU) |
 {: caption="Plan details" caption-side="top"}
