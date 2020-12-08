@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-12-01"
+lastupdated: "2020-12-08"
 
 subcollection: assistant
 
@@ -64,14 +64,15 @@ Follow these steps to add integrations to your assistant:
 
     Built-in service desk integrations:
 
+    - [Intercom](/docs/assistant?topic=assistant-deploy-intercom)  ![Plus or Premium plan only](images/plus.png)
     - [Web chat with Salesforce support](/docs/assistant?topic=assistant-deploy-salesforce)
     - [Web chat with Zendesk support](/docs/assistant?topic=assistant-deploy-zendesk)
-    - [Intercom](/docs/assistant?topic=assistant-deploy-intercom)  ![Plus or Premium plan only](images/plus.png)
 
-    Service desk reference implementations:
+    Web chat service desk reference implementations:
 
-    - [Web chat with Genesys Cloud support](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/genesys){: external}
-    - [Web chat with Twilio Flex support](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/flex){: external}
+    - [Genesys Cloud](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/genesys){: external}
+    - [Twilio Flex](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/flex){: external}
+    - [Bring your own (starter kit)](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/genesys){: external}
 
 1.  Follow the instructions that are provided on the screen to complete the integration process.
 
