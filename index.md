@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-29"
+lastupdated: "2020-12-09"
 
 keywords: chatbot, live chatbot, omnichannel
 
@@ -132,7 +132,7 @@ US Health Insurance Portability and Accountability Act (HIPAA) support is availa
 
 To learn more about service terms and data security, read the following information:
 
-- [Service terms](https://www-03.ibm.com/software/sla/sladb.nsf/sla/saas?OpenDocument){: external} and search for the {{site.data.keyword.conversationshort}} offering
+- [Service terms](https://www-03.ibm.com/software/sla/sladb.nsf/sla/saas?OpenDocument){: external} (Search for the {{site.data.keyword.conversationshort}} offering)
 - [Data Processing and Protection Datasheet](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/softwareReqsForProduct?deliverableId=DF7F84500FA711E69DCADF455C6AF151){: external}
 - [Information security](/docs/assistant?topic=assistant-information-security)
 - [IBM Cloud Data security and privacy](https://www.ibm.com/software/sla/sladb.nsf/sla/csdsp?OpenDocument){: external}

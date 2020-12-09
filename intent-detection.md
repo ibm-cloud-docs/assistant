@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-11-13"
+lastupdated: "2020-12-09"
 
 subcollection: assistant
 
@@ -35,13 +35,15 @@ The new intent detection model is faster and more accurate. It combines traditio
 
 New English-language service instances use the new intent recognition model automatically. It is disabled for existing dialog skills. You can turn it on for your existing dialog skills to start taking advantage of the improved performance that it offers. However, be aware that switching this feature on in an existing dialog skill will result in noticeable changes to the confidence scores associated with your existing intents.
 
+You can learn more about the model by reading the [Benchmarking Intent Detection for Task-Oriented Dialog Systems](https://arxiv.org/abs/2012.03929){: external} benchmarking paper on the Cornell University website.
+
 The new model is available as a beta feature for English dialog and actions skills only.
 {: note}
 
 ## Enabling the new intent detection model
 {: #intent-detection-task}
 
-The new model is used by action skills automatically and cannot be disabled.
+The new model is the only model that is available for use in actions skills.
 
 To enable the new intent detection model in a dialog skill, complete the following steps:
 
