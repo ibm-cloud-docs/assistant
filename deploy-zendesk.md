@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-29"
+lastupdated: "2020-12-10"
 
 subcollection: assistant
 
@@ -116,6 +116,8 @@ The product user interface is slightly different from the interface that is show
 {: note}
 
 ![Setting up a Zendesk service desk connection](https://www.youtube.com/embed/hegheiqUqiM){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
+To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=hegheiqUqiM&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 ## Securing the transfer to Zendesk
 {: #deploy-zendesk-secure}

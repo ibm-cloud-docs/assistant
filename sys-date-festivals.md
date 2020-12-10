@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-29"
+lastupdated: "2020-12-10"
 
 subcollection: assistant
 
@@ -32,8 +32,6 @@ The following sections list the holidays that [`@sys-date`](/docs/assistant?topi
 
 ## Holidays (en-us)
 {: #sys-date-festivals-enus}
-
-Table 1. US English holidays
 
 | Holiday name | String to use to check for a festival match |
 |--------------|---------------------------------------------|
@@ -68,8 +66,6 @@ Table 1. US English holidays
 
 ## Holidays (en-ca)
 {: #sys-date-festivals-enca}
-
-Table 2. Canadian holidays
 
 | Holiday name | String to use to check for a festival match |
 |--------------|---------------------------------------------|
@@ -106,8 +102,6 @@ Table 2. Canadian holidays
 ## Holidays (pt-br)
 {: #sys-date-festivals-ptbr}
 
-Table 3. Brazilian holidays
-
 | Holiday name | String to use to check for a festival match |
 |--------------|---------------------------------------------|
 | New Year's Day | `newyearsday` |
@@ -140,8 +134,6 @@ Table 3. Brazilian holidays
 
 ## Holidays (en-gb)
 {: #sys-date-festivals-engb}
-
-Table 4. British English holidays
 
 | Holiday name | String to use to check for a festival match |
 |--------------|---------------------------------------------|
@@ -179,8 +171,6 @@ Table 4. British English holidays
 ## Holidays (cs-cz)
 {: #sys-date-festivals-cscz}
 
-Table 5. Czech holidays
-
 | Holiday name | String to use to check for a festival match |
 |--------------|---------------------------------------------|
 | New Year's Day | `newyearsday` |
@@ -209,8 +199,6 @@ Table 5. Czech holidays
 ## Holidays (nl-nl)
 {: #sys-date-festivals-nlnl}
 
-Table 6. Dutch holidays
-
 | Holiday name | String to use to check for a festival match |
 |--------------|---------------------------------------------|
 | New Year's Day | `newyearsday` |
@@ -232,8 +220,6 @@ Table 6. Dutch holidays
 
 ## Holidays (fr-fr)
 {: #sys-date-festivals-frfr}
-
-Table 7. French holidays
 
 | Holiday name | String to use to check for a festival match |
 |--------------|---------------------------------------------|
@@ -259,8 +245,6 @@ Table 7. French holidays
 
 ## Holidays (de-de)
 {: #sys-date-festivals-dede}
-
-Table 8. German holidays
 
 | Holiday name | String to use to check for a festival match |
 |--------------|---------------------------------------------|
@@ -308,8 +292,6 @@ Table 8. German holidays
 ## Holidays (it-it)
 {: #sys-date-festivals-itit}
 
-Table 9. Italian holidays
-
 | Holiday name | String to use to check for a festival match |
 |--------------|---------------------------------------------|
 | New Year's Day | `newyearsday` |
@@ -332,8 +314,6 @@ Table 9. Italian holidays
 
 ## Holidays (pt-pt)
 {: #sys-date-festivals-ptpt}
-
-Table 10. Portuguese holidays
 
 | Holiday name | String to use to check for a festival match |
 |--------------|---------------------------------------------|
@@ -361,8 +341,6 @@ Table 10. Portuguese holidays
 ## Holidays (sk-sk)
 {: #sys-date-festivals-sksk}
 
-Table 11. Slovak holidays
-
 | Holiday name | String to use to check for a festival match |
 |--------------|---------------------------------------------|
 | Republic Day | `republicday` |
@@ -387,8 +365,6 @@ Table 11. Slovak holidays
 
 ## Holidays (es-es)
 {: #sys-date-festivals-eses}
-
-Table 12. Spanish (Castillian) holidays
 
 | Holiday name | String to use to check for a festival match |
 |--------------|---------------------------------------------|
@@ -438,8 +414,6 @@ Table 12. Spanish (Castillian) holidays
 ## Holidays (ar-ar)
 {: #sys-date-festivals-arar}
 
-Table 13. Arabic holidays
-
 | Holiday name | String to use to check for a festival match |
 |--------------|---------------------------------------------|
 | new year | `newyear` |
@@ -459,8 +433,6 @@ Table 13. Arabic holidays
 
 ## Holidays (iw-il)
 {: #sys-date-festivals-iwil}
-
-Table 14. Hebrew holidays
 
 | Holiday name | String to use to check for a festival match |
 |--------------|---------------------------------------------|
@@ -510,8 +482,6 @@ Table 14. Hebrew holidays
 ## Holidays (hi-in)
 {: #sys-date-festivals-hiin}
 
-Table 15. Hindi holidays
-
 | Holiday name | String to use to check for a festival match |
 |--------------|---------------------------------------------|
 | new year | `newyear` |
@@ -540,8 +510,6 @@ Table 15. Hindi holidays
 ## Holidays (zh-cn)
 {: #sys-date-festivals-zhcn}
 
-Table 16. Chinese (Simplified ) holidays
-
 | Holiday name | String to use to check for a festival match |
 |--------------|---------------------------------------------|
 | New Year's Day | `newyearsday` |
@@ -568,8 +536,6 @@ Table 16. Chinese (Simplified ) holidays
 ## Holidays (zh-tw)
 {: #sys-date-festivals-zhtw}
 
-Table 17. Chinese (Traditional) holidays
-
 | Holiday name | String to use to check for a festival match |
 |--------------|---------------------------------------------|
 | New Year's Day | `newyearsday` |
@@ -595,8 +561,6 @@ Table 17. Chinese (Traditional) holidays
 
 ## Holidays (ja-jp)
 {: #sys-date-festivals-jajp}
-
-Table 18. Japanese holidays
 
 | Holiday name | String to use to check for a festival match |
 |--------------|---------------------------------------------|
@@ -646,8 +610,6 @@ Table 18. Japanese holidays
 
 ## Holidays (ko-kr)
 {: #sys-date-festivals-kokr}
-
-Table 19. Korean holidays
 
 | Holiday name | String to use to check for a festival match |
 |--------------|---------------------------------------------|

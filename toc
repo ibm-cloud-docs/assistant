@@ -81,13 +81,17 @@ Watson Assistant (Managed)
     Deploying
         deploy-integration-add.md
         deploy-web-link.md
-        deploy-web-chat.md
-        deploy-salesforce.md
-        deploy-zendesk.md
-        deploy-intercom.md
+
+        {: .topicgroup}
+        Web chat
+            deploy-web-chat.md
+            deploy-salesforce.md
+            deploy-zendesk.md
+        
         deploy-facebook.md
-        deploy-slack.md
+        deploy-intercom.md
         deploy-phone.md
+        deploy-slack.md
         deploy-sms.md
         deploy-whatsapp.md
         deploy-custom-app.md
