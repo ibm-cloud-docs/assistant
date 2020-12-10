@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-09"
+lastupdated: "2020-12-10"
 
 keywords: context, context variable
 
@@ -190,8 +190,8 @@ The following table shows some examples of how to define name and value pairs fo
 |:---------------|-------------------------------|------------|
 | dessert        | "cake"                        | String     |
 | age            | 18                            | Number     |
-| toppings_array | ["onions","olives"]            | JSON Array |
-| full_name      | {"first":"John","last":"Doe"} | JSON Object |
+| toppings_array | `["onions","olives"]`            | JSON Array |
+| full_name      | `{"first":"John","last":"Doe"}` | JSON Object |
 
 To subsequently refer to these context variables, use the syntax `$name` where *name* is the name of the context variable that you defined.
 
@@ -213,6 +213,7 @@ To store the entire string that was provided by the user as input, use `input.te
 | Variable | Value            |
 |----------|------------------|
 | repeat   | `<?input.text?>` |
+{: caption="Capturing user input" caption-side="top"}
 
 For example, the user input is, `I want to order a device.` If the node response is, `You said: $repeat`, then the response would be displayed as, `You said: I want to order a device.`
 
@@ -221,6 +222,7 @@ To store the value of an entity in a context variable, use this syntax:
 | Variable | Value            |
 |----------|------------------|
 | place    | `@place`         |
+{: caption="Capturing an entity mention" caption-side="top"}
 
 For example, the user input is, `I want to go to Paris.` If your `@place` entity recognizes `Paris`, then your assistant saves `Paris` in the `$place` context variable.
 
@@ -229,12 +231,14 @@ To store the value of a string that you extract from the user's input, you can i
 | Variable | Value                               |
 |----------|-------------------------------------|
 | number   | `<?input.text.extract('[\d]+',0)?>` |
+{: caption="Using a String method" caption-side="top"}
 
 To store the value of a pattern entity, append .literal to the entity name. Using this syntax ensures that the exact span of text from user input that matched the specified pattern is stored in the variable.
 
 | Variable | Value                  |
 |----------|------------------------|
 | email    | `<? @email.literal ?>` |
+{: caption="Capturing a pattern entity value" caption-side="top"}
 
 For example, the user input is `Contact me at joe@example.com.` Your entity named `@email` recognizes the `name@domain.com` email format. By configuring the context variable to store `@email.literal`, you indicate that you want to store the part of the input that matched the pattern. If you omit the `.literal` property from the value expression, then the entity value name that you specified for the pattern is returned instead of the segment of user input that matched the pattern.
 
@@ -248,6 +252,7 @@ To delete a context variable, set the variable to null.
 | Variable   | Value            |
 |------------|------------------|
 | order_form | `null`           |
+{: caption="Nulling a context variable" caption-side="top"}
 
 Alternatively you can delete the context variable in your application logic. For information about how to remove the variable entirely, see [Deleting a context variable in JSON](#dialog-runtime-context-delete-json).
 
@@ -276,14 +281,16 @@ When you define multiple variables to be processed together, the order in which 
 
 | Variable        | Value            |
 |-----------------|------------------|
-| user_input      | <? input.text ?> |
-| contains_yes    | <? $user_input.contains('Yes') ?> |
+| user_input      | `<? input.text ?>` |
+| contains_yes    | `<? $user_input.contains('Yes') ?>` |
+{: caption="Using two context variables to check for a value in user input" caption-side="top"}
 
 Instead, use a slightly more complex expression to avoid having to rely on the value of the first variable in your list (user_input) being evaluated before the second variable (contains_yes) is evaluated.
 
 | Variable      | Value            |
 |---------------|------------------|
-| contains_yes  | <? input.text.contains('Yes') ?> |
+| contains_yes  | `<? input.text.contains('Yes') ?>` |
+{: caption="Using a single context variable" caption-side="top"}
 
 ### Adding context variables to a node with slots
 {: #dialog-runtime-context-var-slots}

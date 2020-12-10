@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-12-09"
+lastupdated: "2020-12-10"
 
 subcollection: assistant
 
@@ -44,6 +44,7 @@ The new model is available as a beta feature for English dialog and actions skil
 {: #intent-detection-task}
 
 The new model is the only model that is available for use in actions skills.
+{: note}
 
 To enable the new intent detection model in a dialog skill, complete the following steps:
 
@@ -53,4 +54,4 @@ To enable the new intent detection model in a dialog skill, complete the followi
 
 Test the new intent detection capabilities in the "Try it out" pane. 
 
-If you don't like the results that you get with the new model, you can switch back to using the classic version of the model. Alternatively, you can leave it on and make dialog changes to accommodate any differences in your assistant's behavior that you want to address.
+If you don't like the results that you get with the new model, you can switch back to using the classic version of the model in your dialog skill. Alternatively, you can leave it on and make dialog changes to accommodate any differences in your assistant's behavior that you want to address.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-23"
+lastupdated: "2020-12-10"
 
 subcollection: assistant
 
@@ -140,6 +140,8 @@ When you test the service desk integration, make sure there is at least one agen
 Watch the following 5-minute video to watch someone set up a connection to a Salesforce service desk.
 
 ![Setting up a Salesforce service desk connection](https://www.youtube.com/embed/mUx-qvZH-qo){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
+To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=mUx-qvZH-qo&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 ## Adding transfer support to your dialog
 {: #deploy-salesforce-dialog-prereq}
