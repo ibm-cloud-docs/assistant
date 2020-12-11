@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-29"
+lastupdated: "2020-12-11"
 
 keywords: entity, entity value, contextual entity, dictionary entity, pattern entity, entity synonym, annotate mentions
 
@@ -40,6 +40,8 @@ Finally, you can add multiple responses to your dialog tree with wording that di
 To learn more about how to create entities, watch the following 2-minute video.
 
 ![Working with entities](https://www.youtube.com/embed/SKEKWEqM4LE){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
+To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=SKEKWEqM4LE&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 ## Entity evaluation overview
 {: #entities-described}
@@ -345,6 +347,8 @@ Using an intent's user examples to define contextual entities does not affect th
 The following video demonstrates how to annotate entity mentions.
 
 ![Annotating entity mentions](https://www.youtube.com/embed/3WjzJpLsnhQ){: video output="iframe" id="youtubeplayer0" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
+To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=3WjzJpLsnhQ&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 **Tutorial**: To walk through a tutorial that shows you how to define contextual entities before you add your own, go to [Tutorial: Defining contextual entities](https://www.ibm.com/cloud/architecture/demo/try-watson-assistant-contextual-entities){: external}.
 

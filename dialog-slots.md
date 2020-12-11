@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-29"
+lastupdated: "2020-12-11"
 
 keywords: slot, slots
 
@@ -33,6 +33,8 @@ subcollection: assistant
 Add slots to a dialog node to gather multiple pieces of information from a user within that node. Slots collect information at the user's pace. Details that a user provides up front are saved, and your assistant asks only for the missing details it needs to fulfill the request.
 
 ![Adding slots to a node](https://www.youtube.com/embed/kMLyKfmO9wI){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
+To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=kMLyKfmO9wI&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 ## Why add slots?
 {: #dialog-slots-why}

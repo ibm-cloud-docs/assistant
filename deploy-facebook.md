@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-15"
+lastupdated: "2020-12-11"
 
 subcollection: assistant
 
@@ -43,11 +43,11 @@ There is currently no mechanism for identifying users who interact with the assi
 
 1.  Follow the instructions that are provided on the screen to complete the integration process.
 
-If you want to follow along as someone else walks through the deployment steps, watch this video.
+If you want to follow along as someone else walks through the deployment steps, watch this 8-minute video.
 
 ![Walkthrough of the Facebook deployment steps](https://www.youtube.com/embed/8o-FFU5sYNM){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
-Duration: 8 minutes
+To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=8o-FFU5sYNM&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 ## Dialog considerations
 {: #deploy-facebook-dialog}

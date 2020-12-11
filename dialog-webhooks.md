@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-10-27"
+lastupdated: "2020-12-11"
 
 subcollection: assistant
 
@@ -34,6 +34,8 @@ A webhook is a mechanism that allows you to call out to an external program base
 Watch this video to learn more, including how to set up orchestration to call more than one external service from a dialog.
 
 ![Webhooks demo](https://www.youtube.com/embed/j8TBqD2rx2o){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
+To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=j8TBqD2rx2o&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 You can use a webhook to do the following types of things:
 

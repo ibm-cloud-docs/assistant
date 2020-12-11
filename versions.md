@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-19"
+lastupdated: "2020-12-11"
 
 subcollection: assistant
 
@@ -38,6 +38,8 @@ If you have a free (Lite) plan, you cannot create skill versions.
 This 2 1/2 minute video describes how using versions can help you.
 
 ![Creating skill versions](https://www.youtube.com/embed/FDolnBxvcZ8){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
+To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=FDolnBxvcZ8&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 To learn more about how versions can improve the workflow you use to build an assistant, [read this blog post](https://medium.com/ibm-watson/watson-assistant-versions-announcement-d60869b1f5f){: external}.
 

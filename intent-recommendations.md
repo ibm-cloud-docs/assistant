@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-12-11"
 
 subcollection: assistant
 
@@ -43,6 +43,8 @@ Customer needs are represented in {{site.data.keyword.conversationshort}} as *in
 The following video provides a 3-minute overview of intent and intent user example recommendations.
 
 ![Intent recommendations overview](https://www.youtube.com/embed/bBTSnsD8yLA){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
+To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=bBTSnsD8yLA&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 To learn more about how intent recommendations can help you build a useful bot faster, [read this blog post](https://medium.com/ibm-watson/let-watson-train-your-virtual-assistant-57bd53b12bc3){: external}.
 

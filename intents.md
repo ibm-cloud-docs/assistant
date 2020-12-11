@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-12-11"
 
 keywords: intent, intent conflicts, annotate
 
@@ -34,6 +34,8 @@ subcollection: assistant
 To learn more about creating intents, watch the following 2 1/2-minute video.
 
 ![Working with intents](https://www.youtube.com/embed/nGoFi0MB94Y){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
+To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=nGoFi0MB94Y&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 ## Intent creation overview
 {: #intents-described}
@@ -342,6 +344,8 @@ To resolve conflicts:
 You can watch the following video to learn more.
 
 ![Intent conflict resolution overview](https://www.youtube.com/embed/9gQtjCBxjdc){: video output="iframe" id="youtubeplayer0" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
+To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=9gQtjCBxjdc&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 ## Deleting intents
 {: #intents-delete}
