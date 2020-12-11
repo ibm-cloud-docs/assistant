@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-28"
+lastupdated: "2020-12-11"
 
 subcollection: assistant
 
@@ -73,7 +73,7 @@ Over time, the actions skill will have greater feature parity with the dialog sk
 | Connect to human agent response type | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Free text response type | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Image response type | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Search skill response type | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Search skill response type | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Rich text editor for text responses | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Response validation | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | User input validation | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |

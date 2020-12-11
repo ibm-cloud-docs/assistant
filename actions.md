@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-24"
+lastupdated: "2020-12-11"
 
 subcollection: assistant
 
@@ -382,10 +382,53 @@ For each step, you can define what happens next. The choice you make defines how
 | Continue to next step | Processes the next step in the steps list. As always, the conditions for the next step are evaluated first to determine whether to show the step's response to the customer. |
 | End the action | Indicates that this action is complete. Any variable values that were defined based on choices that the customer made as she stepped through the action are reset. This option can be applied to more than one step in a single action because an action can define more than one branch of a conversation. For example, the open an account action might have one conversational flow for creating a checking account and a separate one for creating a savings account. Each branch might have its own final step. Identifying the final step helps analytical tools that follow a customer's progress through an action to identify the success or failure of the action. |
 | Return to step | Processes a step that is listed earlier in the current action. The step might be one that the customer already completed or one that was skipped previously based on its step conditions. Any variable values that were defined based on choices that the customer made in the intervening steps in the action are reset. This option is only available from a step that comes third or later in the steps list. |
+| Search for the answer | Finds a useful response from existing help content and knowledge bases that you own. The actions skill calls your search skill, which connects to {{site.data.keyword.discoveryshort}} to perform an AI-driven search of your data. Requires a search skill to be connected to your assistant. For more information about the search skill, see [Creating a search skill](/docs/assistant?topic=assistant-skill-search-add). You can optionally [configure the search](#actioins-what-next-search).  |
 {: caption="What to do next options" caption-side="top"}
 
 There is no option to skip to a later step. Instead of jumping directly to a later step, control the flow through the intervening steps with step conditions.
 {: note}
+
+#### Configuring the search for an answer
+{: #actions-what-next-search}
+
+To configure the search that is performed in {{site.data.keyword.discoveryshort}, complete the following steps:
+
+1.  Click **Edit settings**.
+
+1.  Add values to one or both of the following fields:
+
+    - **Custom query**. Add a word or phrase that you want to submit to {{site.data.keyword.discoveryshort}} as the query string for the search.
+
+      For example, you can specify a string such as, `What cities do you fly to?`. For a more dynamic string, you can include a variable. For example, `Do you have flights to ${destination}?`
+      
+      You are effectively defining the value that is used by the {{site.data.keyword.discoveryshort}} API as the `natural_language_query` parameter. For more information, see [Query parameters](/docs/discovery?topic=discovery-query-parameters#nlq){: external}.
+
+      If you don't specify a text string, the action skill sends the most-recently-submitted user message as the search string. If you want to use the original customer message that triggered the action as the query string instead, you need to plan ahead. You can follow these steps:
+  
+      - Create a session variable to store the initial user input. For example, named `original message`.
+      - In Step 1, meaning the first step after the original action trigger, set the value of your session variable. For more information about session variables, see [Defining session variables](#actions-variables-global).
+      - Use an expression that looks like this: `<? input.text ?>`. 
+  
+        This expression captures all of the text that is present in the message request that was just sumbitted by the cusstomer.
+      - Add the session variable to the *Custom query* field. For example: `${original_message}`
+
+    - **Customer filter**: Add a text string that defines information that must be present in any of the search results that are returned. 
+    
+      You are effectively defining the value that is used by the {{site.data.keyword.discoveryshort}} API as the `filter` parameter. For more information, see [Query parameters](/docs/discovery?topic=discovery-query-parameters#filter){: external}.
+
+      The syntax to use for the filter value is not intuitive. Here are a few examples of common use cases:
+
+      - To indicate that you want to return only documents with positive sentiment detected, for example, specify `enriched_text.sentiment.document.label:positive`.
+
+      - To filter results to includes only documents that the ingestion process identified as containing the entity `Boston, MA`, specify `enriched_text.entities.text:"Boston, MA"`.
+
+      - To filter results to includes only documents that the ingestion process identified as containing a city name that you saved in a context variable named `$destination`, you can specify `enriched_text.entities.text:$destination`.
+
+    If you add both a query and a filter value, the filter parameter is applied first to filter the data collection documents and cache the results. The query parameter then ranks the cached results.
+
+1.  If you want the search for an answer to be the last step in the action, select **End the action after returning results**.
+
+1.  Click **Apply**.
 
 ### System actions explained
 {: #actions-builtin}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-12-04"
+lastupdated: "2020-12-11"
 
 subcollection: assistant
 
@@ -78,6 +78,8 @@ To remove a notification about a new feature that is displayed in a banner, you 
   For more information, see [Adding service desk support](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-haa).
 
 - **Autolearning has been moved and improved**: Go to the *Analytics>Autolearning* page to enable the feature and see visualizations that illustrate how autolearning impacts your assistant's performance over time. For more information, see [Empower your skill to learn automatically](/docs/assistant?topic=assistant-autolearn).
+
+- **Search from actions skill**: The actions skill now supports triggering a search that uses your associated search skill from within an action step. For more information, see [Deciding what to do next](/docs/assistant?topic=assistant-actions#actions-what-next).
 
 - **System entities language support change**: The new system entities are now used by all skills except Korean-language dialog skills. If you have a Korean skill that uses the older version of the system entities, update it. The legacy version will stop being supported for Korean skills in March 2021. For more information, see [Legacy system entities](/docs/assistant?topic=assistant-legacy-system-entities).
 
