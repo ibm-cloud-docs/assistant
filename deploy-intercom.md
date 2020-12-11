@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-12-11"
 
 subcollection: assistant
 
@@ -129,6 +129,8 @@ The following 4-minute video illustrates the steps.
 
 ![Quick Setup](https://www.youtube.com/embed/SkbFWNScueU){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
+To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=SkbFWNScueU&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
+
 ## Connecting the assistant to Intercom
 {: #deploy-intercom-connect}
 
@@ -142,11 +144,15 @@ Human agents can assign messages to the assistant by using Intercom's assignment
 
   ![Auto Assign](https://www.youtube.com/embed/4M9wu8NHxcY){: video output="iframe" id="youtubeplayer2" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
+  To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=4M9wu8NHxcY&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
+
 - Manual reassignment made by a human agent at run time.
 
   The following under 3-minute video illustrates the steps.
 
   ![Manual Assign](https://www.youtube.com/embed/jAnolyUJAIA){: video output="iframe" id="youtubeplayer3" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
+  To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=jAnolyUJAIA&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 See the [Intercom documentation](https://www.intercom.com/help/en/articles/199-assign-conversations-to-teammates-and-teams){: external} for more details.
 
@@ -195,6 +201,8 @@ To set up routing assignments for escalations from the assistant to a human, com
 The following 3-minute video illustrates the steps.
 
 ![Topic-based escalation routing](https://www.youtube.com/embed/dTwJZOqdzII){: video output="iframe" id="youtubeplayer0" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
+To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=dTwJZOqdzII&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 ## Give the assistant permission to monitor and answer user queries
 {: #deploy-intercom-config-action}
@@ -246,6 +254,8 @@ As your dialog changes, you will likely return to the Intercom integration page 
 The following 3-minute video illustrates the steps.
 
 ![Inbox Monitoring](https://www.youtube.com/embed/fFKjWUfIftw){: video output="iframe" id="youtubeplayer1" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
+To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=fFKjWUfIftw&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 ## Testing the integration
 {: #deploy-intercom-try}

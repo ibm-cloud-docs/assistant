@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-12-01"
+lastupdated: "2020-12-11"
 
 keywords: digression, disambiguation, confidence 
 
@@ -110,6 +110,8 @@ The following video explains the benefits of using disambiguation. A few things 
 - You can also set a maximum number of options to display in the disambiguation list.
 
   ![Disambiguation overview](https://www.youtube.com/embed/VVyklAXlmbA){: video output="iframe" id="youtubeplayer0" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
+  To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=VVyklAXlmbA&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 ### Editing the disambiguation configuration
 {: #dialog-runtime-disambig-edit}
@@ -312,6 +314,8 @@ With digression settings, you can allow the conversation to return to the dialog
 Watch this video to learn more.
 
 ![Digressions overview](https://www.youtube.com/embed/I3K7mQ46K3o){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
+To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=I3K7mQ46K3o&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 - [Before you begin](#dialog-runtime-digression-prereqs)
 - [Customizing digressions](#dialog-runtime-enable-digressions)

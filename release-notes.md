@@ -942,8 +942,6 @@ The following updates are available in all locations except Dallas currently.
 
   The following video provides a 2-minute overview of the updated {{site.data.keyword.conversationshort}} tool.
 
-  ![Product overview](https://www.youtube.com/embed/OkW7gnHrw30){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
   - **Preview links from London instances**: If your service instance is hosted in London, then you must edit the preview link URL. The URL includes a region code for the region where the instance is hosted. Because instances in London are syndicated to Dallas, you must replace the `eu-gb` reference in the URL with `us-south` for the preview web page to render properly.
 
 ### 8 November 2018

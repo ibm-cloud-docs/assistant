@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-12-11"
 
 keywords: dialog overview
 
@@ -38,6 +38,8 @@ The dialog matches intents (what users say) to responses (what the bot says back
 ![Dialog overview](https://www.youtube.com/embed/XkhAMe9gSFU){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 Note: The video is 15 minutes in duration; the first 5 minutes cover how to add a node.
+
+To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=XkhAMe9gSFU&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 The dialog is represented graphically in {{site.data.keyword.conversationshort}} as a tree. Create a branch to process each intent that you want your conversation to handle. A branch is composed of multiple nodes.
 

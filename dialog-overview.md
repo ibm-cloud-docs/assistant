@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-11-09"
+lastupdated: "2020-12-11"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -36,6 +36,8 @@ The dialog defines what your assistant says in response to customers.
 To learn more about the overall process for creating a dialog, watch the following 3 1/2-minute video.
 
 ![Working with dialog](https://www.youtube.com/embed/dEILVc86d3Y){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
+To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=dEILVc86d3Y&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 ## Creating a dialog
 {: #dialog-overview-task}
@@ -707,6 +709,8 @@ Test this response type from the preview link or another assistant-level integra
 A single dialog node can provide different responses, each one triggered by a different condition.  Use this approach to address multiple scenarios in a single node.
 
 ![Adding conditional responses](https://www.youtube.com/embed/Q5_-f7_Iyvg){: video output="iframe" id="youtubeplayer0" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
+To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=Q5_-f7_Iyvg&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 The node still has a main condition, which is the condition for using the node and processing the conditions and responses that it contains.
 
