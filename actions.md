@@ -397,9 +397,13 @@ To configure the search that is performed in {{site.data.keyword.discoveryshort}
 
 1.  Add values to one or both of the following fields:
 
-    - **Custom query**. Add a word or phrase that you want to submit to {{site.data.keyword.discoveryshort}} as the query string for the search. If you don't specify a text string, the action skill sends the most-recently-submitted user message as the search string.
+    - **Custom query**. Add a word or phrase that you want to submit to {{site.data.keyword.discoveryshort}} as the query string for the search.
 
-      If you want to use the original customer message that triggered this action as the query string, you need to plan ahead. You can follow these steps:
+      For example, you can specify a string such as, `What cities do you fly to?`. You can include variables in your text string. For example, `Do you have flights to $destination?` 
+      
+      You are effectively defining the value that is used by the {{site.data.keyword.discoveryshort}} API as the `natural_language_query` parameter. For more information, see [Query parameters](/docs/discovery?topic=discovery-query-parameters#nlq){: external}.
+
+      If you don't specify a text string, the action skill sends the most-recently-submitted user message as the search string. If you want to use the original customer message that triggered the action as the query string instead, you need to plan ahead. You can follow these steps:
   
       - Create a session variable to store the initial user input. For example, named `original message`.
       - In Step 1, meaning the first step after the original action trigger, set the value of your session variable. For more information about session variables, see [Defining session variables](#actions-variables-global).
@@ -408,7 +412,9 @@ To configure the search that is performed in {{site.data.keyword.discoveryshort}
         This expression captures all of the text that is present in the message request that was just sumbitted by the cusstomer.
       - Add the session variable to the *Custom query* field. For example: `${original_message}`
 
-    - **Customer filter**: Add a text string that defines information that must be present in any of the search results that are returned. You are effectively defining the value that is used by the {{site.data.keyword.discoveryshort}} API as the `filter` parameter. For more information, see [Query parameters](/docs/discovery?topic=discovery-query-parameters#filter){: external}.
+    - **Customer filter**: Add a text string that defines information that must be present in any of the search results that are returned. 
+    
+      You are effectively defining the value that is used by the {{site.data.keyword.discoveryshort}} API as the `filter` parameter. For more information, see [Query parameters](/docs/discovery?topic=discovery-query-parameters#filter){: external}.
 
       The syntax to use for the filter value is not intuitive. Here are a few examples of common use cases:
 
