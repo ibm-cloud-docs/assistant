@@ -422,8 +422,6 @@ To configure the search that is performed in {{site.data.keyword.discoveryshort}
 
       - To filter results to includes only documents that the ingestion process identified as containing the entity `Boston, MA`, specify `enriched_text.entities.text:"Boston, MA"`.
 
-      - To filter results to includes only documents that the ingestion process identified as containing a product name that was mentioned by the customer, you can specify `enriched_text.entities.text:@product`.
-
       - To filter results to includes only documents that the ingestion process identified as containing a city name that you saved in a context variable named `$destination`, you can specify `enriched_text.entities.text:$destination`.
 
     If you add both a query and a filter value, the filter parameter is applied first to filter the data collection documents and cache the results. The query parameter then ranks the cached results.
