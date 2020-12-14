@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-12-11"
+lastupdated: "2020-12-14"
 
 subcollection: assistant
 
@@ -63,6 +63,14 @@ The change log lists changes that were made this year ordered by the date they w
 
 To remove a notification about a new feature that is displayed in a banner, you can hover over the end of the banner. A close button is displayed that you can click to close the notification banner.
 {: tip}
+
+## 14 December 2020
+{: #14December2020}
+<!--1.128-->
+
+- **Increased Phone and SMS with Twilio integrations availability**: These beta SMS and voice capabilities are now available from service instances that are hosted in Seoul, Tokyo, London, and Sydney.
+- **Improved JSON editor**: The JSON editor that is included with the dialog skill was updated to use JSON syntax highlighting and to allow you to expand and collapse objects.
+- **Connect to agent from actions skill**: The actions skill now supports transferring a customer to an agent from within an action step. For more information, see [Deciding what to do next](/docs/assistant?topic=assistant-actions#actions-what-next).
 
 ## 4 December 2020
 {: #4December2020}
