@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-12-11"
+lastupdated: "2020-12-14"
 
 subcollection: assistant
 
@@ -379,10 +379,11 @@ For each step, you can define what happens next. The choice you make defines how
 
 | Option | Description |
 |--------|-------------|
+| Connect to agent | Transfers the conversation to a member of your support team. Requires that you have a service desk capability configured from whatever type of integration you use to deploy your assistant. For example, if you deploy your assistant by using the web chat integration, you must have enabled service desk support with Salesforce, Zendesk, or another provider. You can optionally [add messages to show when a transfer occurs](#actions-what-next-haa). |
 | Continue to next step | Processes the next step in the steps list. As always, the conditions for the next step are evaluated first to determine whether to show the step's response to the customer. |
 | End the action | Indicates that this action is complete. Any variable values that were defined based on choices that the customer made as she stepped through the action are reset. This option can be applied to more than one step in a single action because an action can define more than one branch of a conversation. For example, the open an account action might have one conversational flow for creating a checking account and a separate one for creating a savings account. Each branch might have its own final step. Identifying the final step helps analytical tools that follow a customer's progress through an action to identify the success or failure of the action. |
 | Return to step | Processes a step that is listed earlier in the current action. The step might be one that the customer already completed or one that was skipped previously based on its step conditions. Any variable values that were defined based on choices that the customer made in the intervening steps in the action are reset. This option is only available from a step that comes third or later in the steps list. |
-| Search for the answer | Finds a useful response from existing help content and knowledge bases that you own. The actions skill calls your search skill, which connects to {{site.data.keyword.discoveryshort}} to perform an AI-driven search of your data. Requires a search skill to be connected to your assistant. For more information about the search skill, see [Creating a search skill](/docs/assistant?topic=assistant-skill-search-add). You can optionally [configure the search](#actioins-what-next-search).  |
+| Search for the answer | Finds a useful response from existing help content and knowledge bases that you own. The actions skill calls your search skill, which connects to {{site.data.keyword.discoveryshort}} to perform an AI-driven search of your data. Requires a search skill to be connected to your assistant. For more information about the search skill, see [Creating a search skill](/docs/assistant?topic=assistant-skill-search-add). You can optionally [configure the search](#actions-what-next-search).  |
 {: caption="What to do next options" caption-side="top"}
 
 There is no option to skip to a later step. Instead of jumping directly to a later step, control the flow through the intervening steps with step conditions.
@@ -429,6 +430,20 @@ To configure the search that is performed in {{site.data.keyword.discoveryshort}
 1.  If you want the search for an answer to be the last step in the action, select **End the action after returning results**.
 
 1.  Click **Apply**.
+
+#### Adding messages to show when a transfer occurs
+{: #actions-what-next-haa}
+
+When you choose the *Connect to agent* option, a settings window is displayed where you can customize messages. Complete the following steps:
+
+1.  Add messages to show to your customers:
+
+    - **Response if agents are online**: Add a message to let customers know that they are being transferred to a human agent. If you know that your support site queue lasts 2 minutes, for example, you might want to warn customers that there could be a 2-minute wait.
+    - **Response if agents are offline**: Inform customers that nobody is available to speak to them right now, and, if possible, give them an alternative action to take in the meantime.
+
+1.  **Optional**: Add a message to show to the agent that the conversation is transferred to:
+
+    - **Message to agent**: Let the human agent know what the assistant was helping the customer with at the time that the transfer occurred. For example, if the current step is part of an action that helps customers open an account, you might add text such as, `The customer needs help with opening an account.`
 
 ### System actions explained
 {: #actions-builtin}

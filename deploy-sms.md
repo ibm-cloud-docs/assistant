@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-11-04"
+lastupdated: "2020-12-14"
 
 subcollection: assistant
 
@@ -33,7 +33,7 @@ The Short Messaging Service (SMS) supports text-only messages. Typically, SMS re
 
 Customers send text messages to your Twilio-hosted phone number. Twilio uses a messaging webhook that you set up to send a POST request with the text message body to your assistant. Each response from the assistant is sent back to Twilio to be converted to an outbound SMS message that is sent to the customer. The responses are sent to the Twilio API for processing. You provide your Twilio account SID and project authentication token information, which serve as your Twilio API access credentials.
 
-This integration is available as a beta feature in the Dallas, Frankfurt, and Washington, DC locations.
+This integration is available as a beta feature.
 {: note}
 
 ## Before you begin
