@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-11-18"
+lastupdated: "2020-12-15"
 
 subcollection: assistant
 
@@ -37,34 +37,36 @@ In the following tables, the level of language and feature support is indicated 
 Your assistant might be able to identify intents in unsupported languages depending on the complexity of your data, but if the language is not listed here it is not officially supported and results cannot be guaranteed.
 {: note}
 
-The first table shows the level of support for all features, except those related to intents and entities, which are shown in the second and third tables.
-
 ## Feature support details
 {: #language-support-tables}
 
-Table 1. Feature support details
+The following tables illustrate the level of language support available for product features.
 
-| Language | **Defining [intents](/docs/assistant?topic=assistant-intents)**, **[entities](/docs/assistant?topic=assistant-entities)**, and **[dialog](/docs/assistant?topic=assistant-dialog-build) for a dialog skill** | [**Actions skill**](/docs/assistant?topic=assistant-skill-actions-add) | **[Autocorrection](/docs/assistant?topic=assistant-dialog-runtime-spell-check)** |
+### Skill support details
+{: #language-support-skills}
+
+| Language | [**Actions skill**](/docs/assistant?topic=assistant-skill-actions-add) |[**Dialog skill**](/docs/assistant?topic=assistant-skill-dialog-add) | [**Search skill**](/docs/assistant?topic=assistant-skill-search-add) |
 |:---:|:---:|:---:|
-| **English (en)**                   | GA | Beta | GA |
-| **Arabic (ar)**                    | GA | Beta | NA |
-| **Chinese (Simplified) (zh-cn)**   | GA | Beta | NA |
-| **Chinese (Traditional) (zh-tw)**  | GA | Beta | NA |
-| **Czech (cs)**                     | GA | Beta | NA |
-| **Dutch (nl)**                     | GA | Beta | NA |
-| **French (fr)**                    | GA | Beta | Beta |
-| **German (de)**                    | GA | Beta | NA |
-| **Italian (it)**                   | GA | Beta | NA |
-| **Japanese (ja)**                  | GA | Beta | NA |
-| **Korean (ko)**                    | GA | Beta | NA |
-| **Portuguese (Brazilian) (pt-br)** | GA | Beta | NA |
-| **Spanish (es)**                   | GA | Beta | NA |
-{: caption="Feature support details" caption-side="top"}
+| **English (en)**                   | Beta | GA | GA |
+| **Arabic (ar)**                    | Beta | GA | GA |
+| **Chinese (Simplified) (zh-cn)**   | Beta | GA | GA |
+| **Chinese (Traditional) (zh-tw)**  | Beta | GA | GA |
+| **Czech (cs)**                     | Beta | GA | GA |
+| **Dutch (nl)**                     | Beta | GA | GA |
+| **French (fr)**                    | Beta | GA | GA |
+| **German (de)**                    | Beta | GA | GA |
+| **Italian (it)**                   | Beta | GA | GA |
+| **Japanese (ja)**                  | Beta | GA | GA |
+| **Korean (ko)**                    | Beta | GA | GA |
+| **Portuguese (Brazilian) (pt-br)** | Beta | GA | GA |
+| **Spanish (es)**                   | Beta | GA | GA |
+{: caption="Table 1. Skill support details" caption-side="top"}
 
-Table 2a. Intent feature support details
+### Intent feature support details
+{: #language-support-intents}
 
-| Language | **[Content Catalog](/docs/assistant?topic=assistant-catalog)** | **[Irrelevance detection](/docs/assistant?topic=assistant-irrelevance-detection)** | **[Intent detection](/docs/assistant?topic=assistant-intent-detection)** |
-|:---:|:---:|:---:|
+| Language | **[Content Catalog](/docs/assistant?topic=assistant-catalog)** | **[Irrelevance detection](/docs/assistant?topic=assistant-irrelevance-detection)** | **[Enhanced intent detection](/docs/assistant?topic=assistant-intent-detection)** |
+|:---:|:---:|:---:|:---:|
 | **English (en)**                   | GA | GA | Beta |
 | **Arabic (ar)**                    | GA (except Covid-19) | NA | NA |
 | **Chinese (Simplified) (zh-cn)**   | NA | NA | NA |
@@ -78,9 +80,10 @@ Table 2a. Intent feature support details
 | **Korean (ko)**                    | NA | NA | NA |
 | **Portuguese (Brazilian) (pt-br)** | GA | NA | NA |
 | **Spanish (es)**                   | GA | NA | NA |
-{: caption="Intent feature support details" caption-side="top"}
+{: caption="Table 2. Intent feature support details" caption-side="top"}
 
-Table 2b. Intent feature support details continued
+### Recommendations feature support details continued
+{: #language-support-recommendations}
 
 | Language | **[User example recommendations](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations-task)** | **[Intent recommendations](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-intent-recommendations-task)** |
 |:---:|:---:|:---:|
@@ -97,28 +100,50 @@ Table 2b. Intent feature support details continued
 | **Korean (ko)**                    | NA | NA |
 | **Portuguese (Brazilian) (pt-br)** | NA | NA |
 | **Spanish (es)**                   | NA | NA |
-{: caption="Intent feature support details continued" caption-side="top"}
+{: caption="Table 3. Recommendations feature support details continued" caption-side="top"}
 
-Table 3. Entity feature support details
+### User input processing support details
+{: #language-support-input}
 
-| Language | **[Entity fuzzy matching](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Contextual entities](/docs/assistant?topic=assistant-entities#entities-create-annotation-based)** | **[Synonym recommendations](/docs/assistant?topic=assistant-entities#entities-synonyms)** |
+| Language | **[Entity fuzzy matching (*Misspelling only*)](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Entity fuzzy matching (*Stemming*, *Partial match*)](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Autocorrection](/docs/assistant?topic=assistant-dialog-runtime-spell-check)** |
 |:---:|:---:|:---:|:---:|
 | **English (en)**                   | GA | GA | GA |
-| **Arabic (ar)**                    | GA (Misspelling only) | NA | NA |
+| **Arabic (ar)**                    | GA | NA | NA |
 | **Chinese (Simplified) (zh-cn)**   | NA | NA | NA |
 | **Chinese (Traditional) (zh-tw)**  | NA | NA | NA |
-| **Czech (cs)**                     | GA | NA | NA |
-| **Dutch (nl)**                     | GA (Misspelling only) | NA | NA |
-| **French (fr)**                    | GA | Beta | GA |
-| **German (de)**                    | GA | NA | NA |
-| **Italian (it)**                   | GA (Misspelling only) | NA | NA |
-| **Japanese (ja)**                  | GA (Misspelling only) | NA | GA |
-| **Korean (ko)**                    | GA (Misspelling only) | NA | NA |
-| **Portuguese (Brazilian) (pt-br)** | GA (Misspelling only) | NA | NA |
-| **Spanish (es)**                   | GA (Misspelling only) | NA | GA |
-{: caption="Entity feature support details" caption-side="top"}
+| **Czech (cs)**                     | GA | GA | NA |
+| **Dutch (nl)**                     | GA | NA | NA |
+| **French (fr)**                    | GA | GA | Beta |
+| **German (de)**                    | GA | GA | NA |
+| **Italian (it)**                   | GA | NA | NA |
+| **Japanese (ja)**                  | GA | NA | NA |
+| **Korean (ko)**                    | GA | NA | NA |
+| **Portuguese (Brazilian) (pt-br)** | GA | NA | NA |
+| **Spanish (es)**                   | GA | NA | NA |
+{: caption="Table 4. User input processing support details" caption-side="top"}
 
-Table 4. System entity feature support details
+### Entity feature support details
+{: #language-support-entities}
+
+| Language | **[Contextual entities](/docs/assistant?topic=assistant-entities#entities-create-annotation-based)** | **[Synonym recommendations](/docs/assistant?topic=assistant-entities#entities-synonyms)** |
+|:---:|:---:|:---:|
+| **English (en)**                   | GA | GA |
+| **Arabic (ar)**                    | NA | NA |
+| **Chinese (Simplified) (zh-cn)**   | NA | NA |
+| **Chinese (Traditional) (zh-tw)**  | NA | NA |
+| **Czech (cs)**                     | NA | NA |
+| **Dutch (nl)**                     | NA | NA |
+| **French (fr)**                    | Beta | GA |
+| **German (de)**                    | NA | NA |
+| **Italian (it)**                   | NA | NA |
+| **Japanese (ja)**                  | NA | GA |
+| **Korean (ko)**                    | NA | NA |
+| **Portuguese (Brazilian) (pt-br)** | NA | NA |
+| **Spanish (es)**                   | NA | GA |
+{: caption="Table 5. Entity feature support details" caption-side="top"}
+
+### System entity feature support details
+{: #language-support-system-entities}
 
 | Language | **[System entities](/docs/assistant?topic=assistant-system-entities)** | **[Legacy system entities](/docs/assistant?topic=assistant-legacy-system-entities)** |
 |:---|:---:|:---:|
@@ -135,7 +160,7 @@ Table 4. System entity feature support details
 | **Korean (ko)**                    | GA | Deprecated |
 | **Portuguese (Brazilian) (pt-br)** | GA | Deprecated |
 | **Spanish (es)**                   | GA | Deprecated |
-{: caption="System entity feature support details" caption-side="top"}
+{: caption="Table 6. System entity feature support details" caption-side="top"}
 
 The {{site.data.keyword.conversationshort}} service supports multiple languages as noted, but the tool interface itself (descriptions, labels, etc.) is in English. All supported languages can be input and trained through the English interface.
 {: note}

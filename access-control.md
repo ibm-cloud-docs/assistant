@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-06"
+lastupdated: "2020-12-14"
 
 subcollection: assistant
 
@@ -83,7 +83,7 @@ For each person to whom you grant access to your {{site.data.keyword.conversatio
 
 1.  Click **Invite** to finish the process.
 
-When more people contribute to the development of a dialog skill, unintended changes can occur, including skill deletions. Only one person can edit an intent, entity, or a dialog node at a time. If multiple people work on the same item at the same time, then the changes that are made by the person who saves their changes last are the only changes applied. Changes that are made at the same time by someone else and that are saved first are not retained. Coordinate the updates that you plan to make with your team members to prevent anyone from losing their work. Also, consider creating backup copies of your dialog skill regularly, so you can roll back to an earlier version if necessary. To create a backup, [download the skill as a JSON file](/docs/services/assistant?topic=assistant-skill-dialog-add#skill-dialog-add-download).
+When more people contribute to the development of a dialog skill, unintended changes can occur, including skill deletions. Only one person can edit an intent, entity, or a dialog node at a time. If multiple people work on the same item at the same time, then the changes that are made by the person who saves their changes last are the only changes applied. Changes that are made at the same time by someone else and that are saved first are not retained. Coordinate the updates that you plan to make with your team members to prevent anyone from losing their work. Also, consider creating backup copies of your dialog skill regularly, so you can roll back to an earlier version if necessary. To create a backup, [download the skill as a JSON file](/docs/services/assistant?topic=assistant-skill-dialog-add#skill-dialog-add-download). If you use an actions skill, each team member can work on a single action at a time.
 {: tip}
 
 ## Popular role assignments
@@ -153,7 +153,7 @@ Choose a service role for the user that will apply to all of the skills and assi
 |------|---------------------------------------|
 | **Reader** | Open and read all assistants and skills in the service instance, but not edit them. |
 | **Writer** | Read, edit, delete, or create assistants and skill in the service instance. |
-| **Manager** | Read, edit, delete, or create assistants and skill in the service instance; view all dialog skill conversation logs; access the v1 API for all skills in the instance. |
+| **Manager** | Read, edit, delete, or create assistants and skills in the service instance; view all conversation logs; access the v1 API for all skills in the instance. |
 {: caption="Table 2. Global service role details" caption-side="top"}
 <!--| Logs | View conversation logs for all of the dialog skills in the service instance. |
 | Creator | Create new assistants and skills. |-->
@@ -238,9 +238,9 @@ The following table shows the UI and API actions that can be performed by differ
 | Create, edit, or delete an integration | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Add, swap, or remove skills | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Swap skill versions for an assistant | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Revert to a previous skill version | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Save or delete skill versions | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Export a skill or skill version | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Revert to a previous dialog skill version | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Save or delete dialog skill versions | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Export a skill or dialog skill version | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Duplicate a skill | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Change bidirectional preferences | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Open and view intents and intent examples | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
@@ -252,17 +252,19 @@ The following table shows the UI and API actions that can be performed by differ
 | Export entities | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Enable system entities and fuzzy matching | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Add contextual entities | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Open and view dialog nodes | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Add, move, edit, or delete dialog nodes or folders | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Change dialog node settings | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Open and view dialog nodes or action steps | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Add, move, edit, or delete dialog nodes, dialog folders, or action steps | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Change dialog node or action step settings | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Test and set context in dialog skill "Try it out" pane | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Test in actions skill Preview pane | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Test in search skill "Try it out" pane | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Improve data from dialog skill "Try it out" pane | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | View analytics | | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | View intent and intent example recommendations | | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | v1 runtime API (`/message` endpoint) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | v2 runtime API (`session` and `/message` endpoints) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| v1 authoring and logs API (all but `/message` endpoint) | | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| v1 authoring API (all but `/message` endpoint) | | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| v1 and v2 logs API | | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Table 5. Action privileges per service role" caption-side="top"}
