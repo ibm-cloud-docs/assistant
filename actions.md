@@ -441,9 +441,14 @@ When you choose the *Connect to agent* option, a settings window is displayed wh
     - **Response if agents are online**: Add a message to let customers know that they are being transferred to a human agent. If you know that your support site queue lasts 2 minutes, for example, you might want to warn customers that there could be a 2-minute wait.
     - **Response if agents are offline**: Inform customers that nobody is available to speak to them right now, and, if possible, give them an alternative action to take in the meantime.
 
+    If you're using web chat, the hint text (the grayed-out text that is displayed as the example messages) is used if you don't specify your own messages.
+
 1.  **Optional**: Add a message to show to the agent that the conversation is transferred to:
 
     - **Message to agent**: Let the human agent know what the assistant was helping the customer with at the time that the transfer occurred. For example, if the current step is part of an action that helps customers open an account, you might add text such as, `The customer needs help with opening an account.`
+
+    Each message can be up to 100 characters in length.
+    {: note}
 
 ### System actions explained
 {: #actions-builtin}
