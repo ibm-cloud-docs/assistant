@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-08-19"
+lastupdated: "2020-12-16"
 
 keywords: import workspace, import JSON, export JSON
 
@@ -65,8 +65,8 @@ To add a skill, complete the following steps:
 
 1.  Specify the details for the skill:
 
-    - **Name**: A name no more than 100 characters in length. A name is required.
-    - **Description**: An optional description no more than 200 characters in length.
+    - **Name**: A name no more than 64 characters in length. A name is required.
+    - **Description**: An optional description no more than 128 characters in length.
     - **Language**: The language of the user input the skill will be trained to understand. The default value is English.
 
 After you create the dialog skill, it appears as a tile on the Skills page. Now, you can start identifying the user goals that you want the dialog skill to address.
