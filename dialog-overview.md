@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-12-11"
+lastupdated: "2020-12-15"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -54,6 +54,8 @@ To create a dialog, complete the following steps:
     {: note}
 
     - **Anything else**: The final node. It contains phrases that are used to reply to users when their input is not recognized. You can replace the responses that are provided or add more responses with a similar meaning to add variety to the conversation. You can also choose whether you want your assistant to return each response that is defined in turn or return them in random order.
+
+    For more information about these built-in nodes, see [Starting and ending the dialog](/docs/assistant?topic=assistant-dialog-start).
 1.  To add more nodes to the dialog tree, click **Add node**.
 
     Your new node is added after the *Welcome* node and before the *Anything else* node.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-12-14"
+lastupdated: "2020-12-15"
 
 subcollection: assistant
 
@@ -400,18 +400,22 @@ To configure the search that is performed in {{site.data.keyword.discoveryshort}
 
     - **Custom query**. Add a word or phrase that you want to submit to {{site.data.keyword.discoveryshort}} as the query string for the search.
 
-      For example, you can specify a string such as, `What cities do you fly to?`. For a more dynamic string, you can include a variable. For example, `Do you have flights to ${destination}?`
+      For example, you can specify a string such as, `What cities do you fly to?`. 
+      
+      For a more dynamic string, you can include a variable. For example, `Do you have flights to ${destination}?`
       
       You are effectively defining the value that is used by the {{site.data.keyword.discoveryshort}} API as the `natural_language_query` parameter. For more information, see [Query parameters](/docs/discovery?topic=discovery-query-parameters#nlq){: external}.
 
-      If you don't specify a text string, the action skill sends the most-recently-submitted user message as the search string. If you want to use the original customer message that triggered the action as the query string instead, you need to plan ahead. You can follow these steps:
+      If you don't specify a text string, the action skill sends the most-recently-submitted user message as the search string. 
+      
+      If you want to use the original customer message that triggered the action as the query string instead, you need to plan ahead. You can follow these steps:
   
-      - Create a session variable to store the initial user input. For example, named `original message`.
-      - In Step 1, meaning the first step after the original action trigger, set the value of your session variable. For more information about session variables, see [Defining session variables](#actions-variables-global).
-      - Use an expression that looks like this: `<? input.text ?>`. 
+      1. Create a session variable to store the initial user input. For example, named `original message`.
+      1. In Step 1, meaning the first step after the action trigger, set the value of the session variable. For more information about session variables, see [Defining session variables](#actions-variables-global).
+      1. Set the value of the variable by using an expression that looks like this: `<? input.text ?>`. 
   
-        This expression captures all of the text that is present in the message request that was just sumbitted by the cusstomer.
-      - Add the session variable to the *Custom query* field. For example: `${original_message}`
+        This expression captures the complete message that was submitted by the customer. As a result, your variable captures the customer message that triggered this action.
+      1. Add the session variable to the *Custom query* field. For example: `${original_message}`
 
     - **Customer filter**: Add a text string that defines information that must be present in any of the search results that are returned. 
     
@@ -419,11 +423,11 @@ To configure the search that is performed in {{site.data.keyword.discoveryshort}
 
       The syntax to use for the filter value is not intuitive. Here are a few examples of common use cases:
 
-      - To indicate that you want to return only documents with positive sentiment detected, for example, specify `enriched_text.sentiment.document.label:positive`.
+      - To indicate that you want to return only documents with positive sentiment, for example, specify `enriched_text.sentiment.document.label:positive`.
 
-      - To filter results to includes only documents that the ingestion process identified as containing the entity `Boston, MA`, specify `enriched_text.entities.text:"Boston, MA"`.
+      - To filter results to includes only documents that mention `Boston, MA`, specify `enriched_text.entities.text:"Boston, MA"`.
 
-      - To filter results to includes only documents that the ingestion process identified as containing a city name that you saved in a context variable named `$destination`, you can specify `enriched_text.entities.text:$destination`.
+      - To filter results to includes only documents that mention a city name that you saved in a context variable named `$destination`, you can specify `enriched_text.entities.text:$destination`.
 
     If you add both a query and a filter value, the filter parameter is applied first to filter the data collection documents and cache the results. The query parameter then ranks the cached results.
 
