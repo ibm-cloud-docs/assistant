@@ -2,14 +2,13 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-08"
+lastupdated: "2020-12-22"
 
 keywords: assistant, omnichannel, virtual agent, virtual assistant, chatbot, conversation, watson assistant, watson conversation
 
 subcollection: assistant
 content-type: tutorial
-services:
-account-plan:
+account-plan: lite
 completion-time: 10m
 
 ---
@@ -31,9 +30,12 @@ completion-time: 10m
 {:hide-dashboard: .hide-dashboard}
 {:download: .download}
 {:video: .video}
+{:step: data-tutorial-type='step'}
  
 # Getting started with {{site.data.keyword.conversationshort}}
 {: #getting-started}
+{: toc-content-type="tutorial"}
+{: toc-completion-time="10m"}
 
 In this short tutorial, we introduce {{site.data.keyword.conversationfull}} and walk you through the process of creating your first assistant.
 {: shortdesc}
@@ -55,6 +57,7 @@ You need a service instance to start.
 
 ## Step 1: Open Watson Assistant
 {: #getting-started-launch-tool}
+{: step}
 
 After you create a {{site.data.keyword.conversationshort}} service instance, you land on the **Manage** page.
 {: hide-dashboard}
@@ -77,6 +80,7 @@ If an assistant and skill are not created automatically, complete Steps 2 and 3.
 
 ## Step 2: Create an assistant
 {: #getting-started-create-assistant}
+{: step}
 
 An *assistant* is a cognitive bot to which you add skills that enable it to interact with your customers in useful ways.
 
@@ -90,6 +94,7 @@ An *assistant* is a cognitive bot to which you add skills that enable it to inte
 
 ## Step 3: Create a dialog skill
 {: #getting-started-add-skill}
+{: step}
 
 A *dialog skill* is a container for the artifacts that define the flow of a conversation that your assistant can have with your customers.
 
@@ -110,6 +115,7 @@ A *dialog skill* is a container for the artifacts that define the flow of a conv
 
 ## Step 4: Add intents from a content catalog
 {: #getting-started-add-catalog}
+{: step}
 
 The Intents page is where you start to train your assistant. In this tutorial, you will add training data that was built by IBM to your skill. Prebuilt intents are available from the content catalog. You will give your assistant access to the **General** content catalog so your dialog can greet users, and end conversations with them.
 
@@ -126,6 +132,7 @@ You successfully started to build your training data by adding prebuilt content 
 
 ## Step 5: Build a dialog
 {: #getting-started-build-dialog}
+{: step}
 
 A [dialog](/docs/assistant?topic=assistant-dialog-overview) defines the flow of your conversation in the form of a logic tree. It matches intents (what users say) to responses (what your virtual assistant says back). Each node of the tree has a condition that triggers it, based on user input.
 
@@ -198,6 +205,7 @@ That's it. You created a simple conversation with two intents and a dialog to re
 
 ## Step 6: Integrate the assistant
 {: #getting-started-integrate-assistant}
+{: step}
 
 Now that you have an assistant that can participate in a simple conversational exchange, test it.
 

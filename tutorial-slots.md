@@ -2,9 +2,12 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-12-22"
 
 subcollection: assistant
+content-type: tutorial
+account-plan: lite
+completion-time: 30m
 
 ---
 
@@ -21,9 +24,12 @@ subcollection: assistant
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
+{:step: data-tutorial-type='step'}
 
 # Adding a node with slots to a dialog
 {: #tutorial-slots}
+{: toc-content-type="tutorial"}
+{: toc-completion-time="30m"}
 
 In this tutorial, you will add slots to a dialog node to collect multiple pieces of information from a user within a single node. The node you create will collect the information that is needed to make a restaurant reservation.
 {: shortdesc}
@@ -52,6 +58,7 @@ You can also start with a new dialog skill if you want. Just be sure to create t
 
 ## Step 1: Add intents and examples
 {: #tutorial-slots-add-intent}
+{: step}
 
 Add an intent on the Intents tab. An intent is the purpose or goal that is expressed in user input. You will add a #reservation intent that recognizes user input that indicates that the user wants to make a restaurant reservation.
 
@@ -87,6 +94,7 @@ Add an intent on the Intents tab. An intent is the purpose or goal that is expre
 
 ## Step 2: Add entities
 {: #tutorial-slots-add-entity}
+{: step}
 
 An entity definition includes a set of entity *values* that represent vocabulary that is often used in the context of a given intent. By defining entities, you can help your assistant identify references in the user input that are related to intents of interest. In this step, you will enable system entities that can recognize references to time, date, and numbers.
 
@@ -101,6 +109,7 @@ You have successfully enabled the @sys-date, @sys-time, and @sys-number system e
 
 ## Step 3: Add a dialog node with slots
 {: #tutorial-slots-add-dialog-with-slots}
+{: step}
 
 A dialog node represents the start of a thread of dialog between your assistant and the user. It contains a condition that must be met for the node to be processed by your assistant. At a minimum, it also contains a response. For example, a node condition might look for the `#hello` intent in user input, and respond with, `Hi. How can I help you?` This example is the simplest form of a dialog node, one that contains a single condition and a single response. You can define complex dialogs by adding conditional responses to a single node, adding child nodes that prolong the exchange with the user, and much more. (If you want to learn more about complex dialogs, you can complete the [Building a complex dialog](/docs/assistant?topic=assistant-tutorial) tutorial.)
 
@@ -150,6 +159,7 @@ The node you add will collect the information required to make a reservation at 
 
 ## Step 4: Test the dialog
 {: #tutorial-slots-test}
+{: step}
 
 1.  Select the ![Ask Watson](images/ask_watson.png) icon to open the chat pane.
 1.  Type `i want to make a reservation`.

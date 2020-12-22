@@ -2,9 +2,12 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-12-22"
 
 subcollection: assistant
+content-type: tutorial
+account-plan: lite
+completion-time: 2h
 
 ---
 
@@ -21,9 +24,12 @@ subcollection: assistant
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
+{:step: data-tutorial-type='step'}
 
 # Improving a dialog node with slots
 {: #tutorial-slots-complex}
+{: toc-content-type="tutorial"}
+{: toc-completion-time="2h"}
 
 In this tutorial, you will enhance a simple node with slots that collects the information necessary to make a restaurant reservation.
 {: shortdesc}
@@ -50,6 +56,7 @@ Before you begin, complete the [Adding a node with slots to a dialog](/docs/assi
 
 ## Step 1: Improve the format of the responses
 {: #tutorial-slots-complex-fix-format}
+{: step}
 
 When the date and time system entity values are saved, they are converted into a standardized format. This standardized format is useful for performing calculations on the values, but you might not want to expose this reformatting to users. In this step, you will reformat the date (`2017-12-29`) and time (`17:00:00`) values that are referenced by the dialog.
 
@@ -129,6 +136,7 @@ You have successfully improved the format that the dialog uses when it reference
 
 ## Step 2: Ask for everything at once
 {: #tutorial-slots-complex-ask-for-everything}
+{: step}
 
 Now that you have tested the dialog more than once, you might have noticed that it can be annoying to have to answer one slot prompt at a time. To prevent users from having to provide one piece of information at a time, you can ask for every piece of information that you need up front. Doing so gives the user a chance to provide all or some of the information in a single input.
 
@@ -163,6 +171,7 @@ If the user provides any one of the slot values in their initial input, then the
 
 ## Step 3: Treat zeros properly
 {: #tutorial-slots-complex-recognize-zero}
+{: step}
 
 When you use the `sys-number` system entity in a slot condition, it does not deal with zeros properly. Instead of setting the context variable that you define for the slot to 0, your assistant sets the context variable to false. As a result, the slot does not think it is full and prompts the user for a number again and again until the user specifies a number other than zero.
 
@@ -263,6 +272,7 @@ You have successfully formatted the number slot so that it treats zeros properly
 
 ## Step 4: Validate user input
 {: #tutorial-slots-complex-slot-conditions}
+{: step}
 
 So far, we have assumed that the user will provide the appropriate value types for the slots. That is not always the case in reality. You can account for times when users might provide an invalid value by adding conditional responses to slots. In this step, you will use conditional slot responses to perform the following tasks:
 
@@ -394,6 +404,7 @@ To validate user input, complete the following steps:
 
 ## Step 5: Add a confirmation slot
 {: #tutorial-slots-complex-confirmation-slot}
+{: step}
 
 You might want to design your dialog to call an external reservation system and actually book a reservation for the user in the system. Before your application takes this action, you probably want to confirm with the user that the dialog has understood the details of the reservation correctly. You can do so by adding a confirmation slot to the node.
 
@@ -547,6 +558,7 @@ If you add more slots later, you must edit these conditions to account for the a
 
 ## Step 6: Reset the slot context variable values
 {: #tutorial-slots-complex-reset-variables}
+{: step}
 
 You might have noticed that before each test, you must clear the context variable values that were created during the previous test. You must do so because the node with slots only prompts users for information that it considers to be missing. If the slot context variables are all filled with valid values, no prompts are displayed. The same is true for the dialog at run time. You must build into the dialog a mechanism by which you reset the slot context variables to null so that the slots can be filled anew by the next user. To do so, you are going to add a parent node to the node with slots that sets the context variables to null.
 
@@ -589,6 +601,7 @@ You might have noticed that before each test, you must clear the context variabl
 
 ## Step 7: Give users a way to exit the process
 {: #tutorial-slots-complex-handler}
+{: step}
 
 Adding a node with slots is powerful because it keeps users on track with providing the information you need to give them a meaningful response or perform an action on their behalf. However, there might be times when a user is in the middle of providing reservation details, but decides to not go through with placing the reservation. You must give users a way to exit the process gracefully. You can do so by adding a slot handler that can detect a user's desire to exit the process, and exit the node without saving any values that were collected.
 
@@ -697,6 +710,8 @@ Adding a node with slots is powerful because it keeps users on track with provid
     </table>
 
 ## Step 8: Apply a valid value if the user fails to provide one after several attempts
+{: #tutorial-slots-complex-counter}
+{: step}
 
 In some cases, a user might not understand what you are asking for. They might respond again and again with the wrong types of values. To plan for this possibility, you can add a counter to the slot, and after 3 failed attempts by the user to provide a valid value, you can apply a value to the slot on the user's behalf and move on.
 
@@ -820,7 +835,8 @@ For the $time information, you will define a follow-up statement that is display
 | Watson  | You seem to be having trouble choosing a time. I will make the reservation at 8PM for you.  How many people will be dining? |
 
 ## Step 9: Connect to an external service
-{: #tutorial-slots-complex-action}
+{: #tutorial-slots-complex-webhook}
+{: step}
 
 Now that your dialog can collect and confirm a user's reservation details, you can call an external service to actually reserve a table in the restaurant's system or through a multi-restaurant online reservations service. See [Making programmatic calls from a dialog node](/docs/assistant?topic=assistant-dialog-webhooks) for more details.
 
