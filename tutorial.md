@@ -2,9 +2,12 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-12-22"
 
 subcollection: assistant
+content-type: tutorial
+account-plan: lite
+completion-time: 2h
 
 ---
 
@@ -22,9 +25,12 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 {:gif: data-image-type='gif'}
+{:step: data-tutorial-type='step'}
 
 # Building a complex dialog
 {: #tutorial}
+{: toc-content-type="tutorial"}
+{: toc-completion-time="2h"}
 
 In this tutorial, you will use the {{site.data.keyword.conversationshort}} service to create a dialog for an assistant that helps users with inquiries about a fictitious restaurant called *Truck Stop Gourmand*.
 {: shortdesc}
@@ -53,8 +59,9 @@ Before you begin, complete the [Getting Started tutorial](/docs/assistant?topic=
 
 You will use the dialog skill that you created, and add nodes to the simple dialog that you built as part of the getting started exercise.
 
-## Step 1: Plan the dialog
+## Plan the dialog
 {: #tutorial-plan}
+{: step}
 
 You are building an assistant for a restaurant named *Truck Stop Gourmand* that has one location and a thriving cake-baking business. You want the simple assistant to answer user questions about the restaurant, its menu, and to cancel customer cake orders. Therefore, you need to create intents that handle inquiries related to the following subjects:
 
@@ -64,8 +71,9 @@ You are building an assistant for a restaurant named *Truck Stop Gourmand* that 
 
 You'll start by creating intents that represent these subjects, and then build a dialog that responds to user questions about them.
 
-## Step 2: Answer questions about the restaurant
+## Answer questions about the restaurant
 {: #tutorial-add-about-intent}
+{: step}
 
 Add an intent that recognizes when customers ask for details about the restaurant itself. An intent is the purpose or goal expressed in user input. The `#General_About_You` intent that is provided with the *General* content catalog serves a similar function, but its user examples are designed to focus on queries about the assistant as opposed to the business that is using the assistant to help its customers. So, you will add your own intent.
 
@@ -157,8 +165,9 @@ The `#about_restaurant` intent is designed to recognize a variety of general que
 
 For general, low-hanging fruit types of questions, a single, general answer is suitable.
 
-## Step 3: Answer questions about the menu
+## Answer questions about the menu
 {: #tutorial-menu}
+{: step}
 
 A key question from potential restaurant customers is about the menu. The Truck Stop Gourmand restaurant changes the menu daily. In addition to its standard menu, it has vegetarian and cake shop menus. When a user asks about the menu, the dialog needs to find out which menu to share, and then provide a hyperlink to the menu that is kept up to date daily on the restaurant's website. You never want to hard-code information into a dialog node if that information changes regularly.
 
@@ -392,8 +401,9 @@ Well done. You have succesfully added an intent and entity that can recognize us
 
 The `#menu` intent represents a common, key need of potential restaurant customers. Due to its importance and popularity, you added a more complex section to the dialog to address it well.
 
-## Step 4: Manage cake orders
+## Manage cake orders
 {: #tutorial-manage-orders}
+{: step}
 
 Customers place orders in person, over the phone, or by using the order form on the website. After the order is placed, users can cancel the order through the virtual assistant. First, define an entity that can recognize order numbers. Then, add an intent that recognizes when users want to cancel a cake order.
 
@@ -698,8 +708,9 @@ Now, when you test, you can provide a set of number or a mix of numbers and text
 Another way you can address this type of scenario is to add a node with slots. See the [Adding a node with slots to a dialog](/docs/assistant?topic=assistant-tutorial-slots) tutorial to learn more about using slots.
 {:tip}
 
-## Step 5: Add the personal touch
+## Add the personal touch
 {: #tutorial-get-username}
+{: step}
 
 If the user shows interest in the bot itself, you want the virtual assistant to recognize that curiosity and engage with the user in a more personal way. You might remember the `#General_About_You` intent, which is provided with the *General* content catalog, that we considered using earlier, before you added your own custom `#about_restaurant` intent. It is built to recognize just such questions from the user. Add a node that conditions on this intent. In your response, you can ask for the user's name and save it to a $username variable that you can use elsewhere in the dialog, if available.
 
@@ -799,8 +810,9 @@ Test whether your assistant can recognize and save a user's name, and then refer
 
 You can add a conditional response that conditions on and includes the user's name for any other responses where personalization would add value to the conversation.
 
-## Step 6: Test the assistant from your web page integration
+## Test the assistant from your web page integration
 {: #tutorial-integrate-assistant}
+{: step}
 
 Now that you have built a more sophisticated version of the assistant, return to the public web page that you deployed as part of the previous tutorial, and then test the new capabilities you added.
 
