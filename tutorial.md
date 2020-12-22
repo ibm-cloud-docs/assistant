@@ -59,7 +59,7 @@ Before you begin, complete the [Getting Started tutorial](/docs/assistant?topic=
 
 You will use the dialog skill that you created, and add nodes to the simple dialog that you built as part of the getting started exercise.
 
-## Step 1: Plan the dialog
+## Plan the dialog
 {: #tutorial-plan}
 {: step}
 
@@ -71,7 +71,7 @@ You are building an assistant for a restaurant named *Truck Stop Gourmand* that 
 
 You'll start by creating intents that represent these subjects, and then build a dialog that responds to user questions about them.
 
-## Step 2: Answer questions about the restaurant
+## Answer questions about the restaurant
 {: #tutorial-add-about-intent}
 {: step}
 
@@ -165,7 +165,7 @@ The `#about_restaurant` intent is designed to recognize a variety of general que
 
 For general, low-hanging fruit types of questions, a single, general answer is suitable.
 
-## Step 3: Answer questions about the menu
+## Answer questions about the menu
 {: #tutorial-menu}
 {: step}
 
@@ -401,7 +401,7 @@ Well done. You have succesfully added an intent and entity that can recognize us
 
 The `#menu` intent represents a common, key need of potential restaurant customers. Due to its importance and popularity, you added a more complex section to the dialog to address it well.
 
-## Step 4: Manage cake orders
+## Manage cake orders
 {: #tutorial-manage-orders}
 {: step}
 
@@ -708,7 +708,7 @@ Now, when you test, you can provide a set of number or a mix of numbers and text
 Another way you can address this type of scenario is to add a node with slots. See the [Adding a node with slots to a dialog](/docs/assistant?topic=assistant-tutorial-slots) tutorial to learn more about using slots.
 {:tip}
 
-## Step 5: Add the personal touch
+## Add the personal touch
 {: #tutorial-get-username}
 {: step}
 
@@ -810,7 +810,7 @@ Test whether your assistant can recognize and save a user's name, and then refer
 
 You can add a conditional response that conditions on and includes the user's name for any other responses where personalization would add value to the conversation.
 
-## Step 6: Test the assistant from your web page integration
+## Test the assistant from your web page integration
 {: #tutorial-integrate-assistant}
 {: step}
 

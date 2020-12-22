@@ -54,7 +54,7 @@ This tutorial will take approximately 2 to 3 hours to complete.
 
 Before you begin, complete the [Adding a node with slots to a dialog](/docs/assistant?topic=assistant-tutorial-slots). You must complete the first slots tutorial before you begin this one because you will build on the node with slots that you create in the first tutorial.
 
-## Step 1: Improve the format of the responses
+## Improve the format of the responses
 {: #tutorial-slots-complex-fix-format}
 {: step}
 
@@ -134,7 +134,7 @@ When the date and time system entity values are saved, they are converted into a
 
 You have successfully improved the format that the dialog uses when it references context variable values in its responses. The dialog now uses `Friday, December 29` instead of the more technical, `2017-12-29`. And it uses `5:00 PM` instead of `17:00:00`. To learn about other SpEL methods you can use with date and time values, see [Methods to process values](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-date-time).
 
-## Step 2: Ask for everything at once
+## Ask for everything at once
 {: #tutorial-slots-complex-ask-for-everything}
 {: step}
 
@@ -169,7 +169,7 @@ In this step, you will learn how to prompt for everything at once.
 If the user provides any one of the slot values in their initial input, then the prompt that asks for everything is not displayed. For example, the initial input from the user might be, `I want to make a reservation for this Friday night.` In this case, the initial prompt is skipped because you do not want to ask for information that the user already provided - the date (`Friday`), in this example. The dialog shows the prompt for the next empty slot instead.
 {: note}
 
-## Step 3: Treat zeros properly
+## Treat zeros properly
 {: #tutorial-slots-complex-recognize-zero}
 {: step}
 
@@ -270,7 +270,7 @@ When you use the `sys-number` system entity in a slot condition, it does not dea
 
 You have successfully formatted the number slot so that it treats zeros properly. Of course, you might not want the node to accept a zero as a valid number of guests. You will learn how to validate values that are specified by users in the next step.
 
-## Step 4: Validate user input
+## Validate user input
 {: #tutorial-slots-complex-slot-conditions}
 {: step}
 
@@ -402,7 +402,7 @@ To validate user input, complete the following steps:
     </tr>
     </table>
 
-## Step 5: Add a confirmation slot
+## Add a confirmation slot
 {: #tutorial-slots-complex-confirmation-slot}
 {: step}
 
@@ -556,7 +556,7 @@ You might want to design your dialog to call an external reservation system and 
 
 If you add more slots later, you must edit these conditions to account for the associated context variables for the additional slots. If you do not include a confirmation slot, you can specify `!all_slots_filled` only, and it would remain valid no matter how many slots you add later.
 
-## Step 6: Reset the slot context variable values
+## Reset the slot context variable values
 {: #tutorial-slots-complex-reset-variables}
 {: step}
 
@@ -599,7 +599,7 @@ You might have noticed that before each test, you must clear the context variabl
 
     When a user input matches the `#reservation` intent, this node is triggered. The slot context variables are all set to null, and then the dialog jumps directly to the node with slots to process it.
 
-## Step 7: Give users a way to exit the process
+## Give users a way to exit the process
 {: #tutorial-slots-complex-handler}
 {: step}
 
@@ -709,7 +709,7 @@ Adding a node with slots is powerful because it keeps users on track with provid
     </tr>
     </table>
 
-## Step 8: Apply a valid value if the user fails to provide one after several attempts
+## Apply a valid value if the user fails to provide one after several attempts
 {: #tutorial-slots-complex-counter}
 {: step}
 
@@ -834,7 +834,7 @@ For the $time information, you will define a follow-up statement that is display
 | You     | purple |
 | Watson  | You seem to be having trouble choosing a time. I will make the reservation at 8PM for you.  How many people will be dining? |
 
-## Step 9: Connect to an external service
+## Connect to an external service
 {: #tutorial-slots-complex-webhook}
 {: step}
 

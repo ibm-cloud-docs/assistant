@@ -56,7 +56,7 @@ Before you begin, complete the [Getting Started tutorial](/docs/assistant?topic=
 You can also start with a new dialog skill if you want. Just be sure to create the skill before you begin this tutorial.
 {: note}
 
-## Step 1: Add intents and examples
+## Add intents and examples
 {: #tutorial-slots-add-intent}
 {: step}
 
@@ -92,7 +92,7 @@ Add an intent on the Intents tab. An intent is the purpose or goal that is expre
 
 1.  Click the **Close** ![Close arrow](images/close_arrow.png) icon to finish adding the `#reservation` intent and its example utterances.
 
-## Step 2: Add entities
+## Add entities
 {: #tutorial-slots-add-entity}
 {: step}
 
@@ -107,7 +107,7 @@ An entity definition includes a set of entity *values* that represent vocabulary
 
 You have successfully enabled the @sys-date, @sys-time, and @sys-number system entities. Now you can use them in your dialog.
 
-## Step 3: Add a dialog node with slots
+## Add a dialog node with slots
 {: #tutorial-slots-add-dialog-with-slots}
 {: step}
 
@@ -157,7 +157,7 @@ The node you add will collect the information required to make a reservation at 
 
 1.  Click ![Close](images/close.png) to close the node edit view.
 
-## Step 4: Test the dialog
+## Test the dialog
 {: #tutorial-slots-test}
 {: step}
 

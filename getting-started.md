@@ -55,7 +55,7 @@ You need a service instance to start.
 1.  {: hide-dashboard} Sign up for a free {{site.data.keyword.cloud_notm}} account or log in.
 1.  {: hide-dashboard} Click **Create**.
 
-## Step 1: Open Watson Assistant
+## Open Watson Assistant
 {: #getting-started-launch-tool}
 {: step}
 
@@ -78,7 +78,7 @@ If available in your location, a tour begins that you can step through to learn 
 
 If an assistant and skill are not created automatically, complete Steps 2 and 3. Otherwise, [skip to Step 4: Add intents from a content catalog](#getting-started-add-catalog).
 
-## Step 2: Create an assistant
+## Create an assistant
 {: #getting-started-create-assistant}
 {: step}
 
@@ -92,7 +92,7 @@ An *assistant* is a cognitive bot to which you add skills that enable it to inte
     ![Finish creating the new assistant](images/gs-create-assistant-done.png)
 1.  Click **Create assistant**.
 
-## Step 3: Create a dialog skill
+## Create a dialog skill
 {: #getting-started-add-skill}
 {: step}
 
@@ -113,7 +113,7 @@ A *dialog skill* is a container for the artifacts that define the flow of a conv
 
     The skill is created and opens to the *Intents* page.
 
-## Step 4: Add intents from a content catalog
+## Add intents from a content catalog
 {: #getting-started-add-catalog}
 {: step}
 
@@ -130,7 +130,7 @@ The Intents page is where you start to train your assistant. In this tutorial, y
 
 You successfully started to build your training data by adding prebuilt content from {{site.data.keyword.IBM_notm}}.
 
-## Step 5: Build a dialog
+## Build a dialog
 {: #getting-started-build-dialog}
 {: step}
 
@@ -203,7 +203,7 @@ You built a simple dialog to recognize and respond to both greeting and ending i
 
 That's it. You created a simple conversation with two intents and a dialog to recognize them.
 
-## Step 6: Integrate the assistant
+## Integrate the assistant
 {: #getting-started-integrate-assistant}
 {: step}
 
