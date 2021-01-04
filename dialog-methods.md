@@ -113,7 +113,7 @@ Make this update:
 ```
 {: codeblock}
 
-Result: The method itself returns null. However, the first array is updated to include the values from the second array.
+Result: The method itself returns `null`. However, the first array is updated to include the values from the second array.
 
 ```json
 {
@@ -208,7 +208,7 @@ Result: `true` because the array contains the element `ham`.
 ### JSONArray.containsIgnoreCase(Object value)
 {: #dialog-methods-arrays-contains-ignore-case}
 
-This method returns true if the input JSONArray contains the input value regardless of whether the strings are in uppercase or lowercase.
+This method returns `true` if the input JSONArray contains the input value, regardless of whether the value is specified in uppercase or lowercase letters.
 
 For this Dialog runtime context which is set by a previous node or external application:
 
@@ -1882,7 +1882,7 @@ Results: The condition is `true`.
 ### String.equals(String)
 {: #dialog-methods-strings-equals}
 
-This method returns true if the specified string equals the input string exactly.
+This method returns `true` if the specified string equals the input string exactly.
 
 Input: "Yes"
 
@@ -1902,7 +1902,7 @@ If the input is `Yes.`, then the result is `false` because the user included a p
 ### String.equalsIgnoreCase(String)
 {: #dialog-methods-strings-equals-ignore-case}
 
-This method returns true if the specified string equals the input string regardless of whether the case of the letters match.
+This method returns `true` if the specified string equals the input string, regardless of whether the case of the letters match.
 
 Input: "yes"
 

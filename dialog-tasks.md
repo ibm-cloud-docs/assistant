@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2015, 2020
+  years: 2015, 2021
 lastupdated: "2020-10-06"
 
 keywords: dialog node limits, copying a node, moving a node, adding a folder
