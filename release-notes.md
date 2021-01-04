@@ -67,7 +67,7 @@ The change log lists changes that were made this year ordered by the date they w
 - **Dialog methods updates**: Documentation and examples were added for the following supported dialog methods:
 
   - `JSONArray.addAll(JSONArray)`
-  - `JSONArray.containsIgnoreCase(String)`
+  - `JSONArray.containsIgnoreCase(value)`
   - `String.equals(String)`
   - `String.equalsIgnoreCase(String)`
 

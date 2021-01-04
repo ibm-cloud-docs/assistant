@@ -85,7 +85,7 @@ The following sections describe methods you can use to process values. They are 
 
 You cannot use these methods to check for a value in an array in a node condition or response condition within the same node in which you set the array values.
 
-### JSONArray.addAll(object)
+### JSONArray.addAll(JSONArray)
 {: #dialog-methods-arrays-addall}
 
 This method appends one array to another.
