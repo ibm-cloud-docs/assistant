@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-12-11"
+  years: 2019, 2021
+lastupdated: "2021-01-04"
 
 subcollection: assistant
 
@@ -266,11 +266,6 @@ The *Multiple conditioned responses* section is editable again. You can choose t
 
 To change the external service that you call from dialog nodes, edit the webhook details defined on the Webhooks page of the **Options** tab. If the new service expects different parameters to be passed to it, be sure to update any dialog nodes that call it.
 
-<!--## Calling IBM Cloud Functions
-{: #dialog-webhooks-cf}
-
-You write the webhook URL and provide headers differently based on whether you are calling a standard action or a web action.-->
-
 ## Calling an IBM Cloud Functions web action
 {: #dialog-webhooks-cf-web-action}
 
@@ -354,93 +349,3 @@ The following tips will help you call a {{site.data.keyword.openwhisk_short}} we
     </table>
 
 1.  When you are done, click the X to close the node. Your changes are automatically saved.
-
-<!--### Calling a standard action
-{: #dialog-webhooks-cf-action}
-
-You can make a call to an action that is managed by Cloud Foundry, but not to an action that uses token-based Identity and Access Management (IAM) authentication.
-
-The {{site.data.keyword.openwhisk_short}} actions support both synchronous or asynchronous calls. However, you cannot make an asynchronous call to a {{site.data.keyword.openwhisk_short}} action with a webhook. When you send an asynchronous request, only an activation ID is returned.
-
-To make a synchronous call to a {{site.data.keyword.openwhisk_short}} action that is managed by Cloud Foundry, complete the following steps:
-
-1.  From the skill where you want to add the webhook, click the **Options** tab.
-
-1.  Click **Webhooks**.
-
-1.  In the **URL** field, specify the URL for the action. 
-
-    Append a `?blocking=true` parameter to the action URL to force a synchronous call to be made.
-
-    This syntax sends a synchronous request:
-
-    ```bash
-    https://us-south.functions.cloud.ibm.com/api/v1/namespaces/my_org_dev/actions/Hello%20World?blocking=true
-    ```
-    {: codeblock}
-
-    When you call an action, you must provide the API Key that is associated with the action as a header, which is described in the next step.
-
-1.  Provide authorization details with the request.
-
-    To call a {{site.data.keyword.openwhisk_short}} action that is managed by Cloud Foundry, complete the following steps:
-
-    1.  Get the API Key. From the {{site.data.keyword.openwhisk_short}} Endpoint page, find the CURL section and click the eye icon to show the key details. Copy the `user ID:password` key that is listed after the `-u` parameter in the curl command.
-    
-    1.  Click **Add authorization**, add your credentials to the **User name** and **Password** fields, and then click **Save**. 
-
-    The credentials are encoded and a header is generated and added to the page for you. 
-    
-    ![Shows the URL field and Headers section of the Options page.](images/webhook-to-cfaction.png)
-
-    <!-- - If you are calling a {{site.data.keyword.openwhisk_short}} action that is managed by IBM Cloud Identity and Access Management (IAM) instead of CLoud Foundry, then you must provide an IAM bearer token to authenticate the request. 
-    
-      1. Follow the instructions in [Passing an IBM Cloud IAM token to authenticate with a service's API](/docs/iam?topic=iam-iamapikeysforservices#token_auth). 
-      
-      1. To pass the IAM bearer token, use a header like this:
-    
-         <table>
-         <caption>Header example</caption>
-           <tr>
-             <th>Header name</th>
-             <th>Header value</th>
-           </tr>
-           <tr>
-             <td>Authorization</td>
-             <td>Bearer `<IAM token>`</td>
-           </tr>
-         </table>
-
-    Your webhook details are saved automatically.
-
-1.  Click the **Dialog** tab.
-
-1.  Click to open the dialog node from which you want to call the web action, and then click **Customize**.
-
-1.  Scroll down to the *Webhooks* section, and switch the toggle to **On**, and then click **Apply**.
-
-1.  Add any data that you want to pass to the external application as key and value pairs in the *Parameters* section.
-
-    When you call a {{site.data.keyword.openwhisk_short}} action, you *can* pass parameters with the same key as parameters that are defined as part of the action. The parameters are not reserved like they are for web actions.
-
-1.  You can edit the dialog node response to include only the section of the response that you want to display to users. 
-
-    For example, in the conditional responses section, you can use an expression with the syntax `$webhook_result.response.result.message` to extract the returned message only.
-
-    <table>
-    <caption>Conditional responses example</caption>
-      <tr>
-        <th>Condition</th>
-        <th>Response</th>
-      </tr>
-      <tr>
-        <td>$webhook_result_1</td>
-        <td>The application returned "$webhook_result.response.result.message".</td>
-      </tr>
-      <tr>
-        <td>anything_else</td>
-        <td>The call to the external application failed. Please try again later.</td>
-      </tr>
-    </table>
-
-1.  When you are done, click the X to close the node. Your changes are automatically saved.-->

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-08-17"
+  years: 2015, 2021
+lastupdated: "2021-01-04"
 
 subcollection: assistant
 
@@ -85,6 +85,45 @@ The following sections describe methods you can use to process values. They are 
 
 You cannot use these methods to check for a value in an array in a node condition or response condition within the same node in which you set the array values.
 
+### JSONArray.addAll(object)
+{: #dialog-methods-arrays-addall}
+
+This method appends one array to another.
+
+For this dialog runtime context:
+
+```json
+{
+  "context": {
+    "toppings_array": ["onion", "olives"],
+    "more_toppings": ["mushroom","pepperoni"]
+  }
+}
+```
+{: codeblock}
+
+Make this update:
+
+```json
+{
+  "context": {
+    "toppings_array": "<? $toppings_array.addAll($more_toppings) ?>"
+  }
+}
+```
+{: codeblock}
+
+Result: The method itself returns null. However, the first array is updated to include the values from the second array.
+
+```json
+{
+  "context": {
+    "toppings_array": ["onion", "olives", "mushroom", "pepperoni"]
+  }
+}
+```
+{: codeblock}
+
 ### JSONArray.append(object)
 {: #dialog-methods-arrays-append}
 
@@ -164,7 +203,32 @@ $toppings_array.contains('ham')
 ```
 {: codeblock}
 
-Result: `True` because the array contains the element ham.
+Result: `true` because the array contains the element `ham`.
+
+### JSONArray.containsIgnoreCase(Object value)
+{: #dialog-methods-arrays-contains-ignore-case}
+
+This method returns true if the input JSONArray contains the input value regardless of whether the strings are in uppercase or lowercase.
+
+For this Dialog runtime context which is set by a previous node or external application:
+
+```json
+{
+  "context": {
+    "toppings_array": ["onion", "olives", "ham"]
+  }
+}
+```
+{: codeblock}
+
+Dialog node or response condition:
+
+```json
+$toppings_array.containsIgnoreCase('HAM')
+```
+{: codeblock}
+
+Result: `true` because the array contains the element `ham` and the case is ignored.
 
 ### JSONArray.containsIntent(String intent_name, Double min_score, [Integer top_n])
 {: #dialog-methods-arrays-containsIntent}
@@ -1814,6 +1878,46 @@ This syntax:
 {: codeblock}
 
 Results: The condition is `true`.
+
+### String.equals(String)
+{: #dialog-methods-strings-equals}
+
+This method returns true if the specified string equals the input string exactly.
+
+Input: "Yes"
+
+This syntax:
+
+```json
+{
+  "conditions": "input.text.equals('Yes')"
+}
+```
+{: codeblock}
+
+Results: The condition is `true`.
+
+If the input is `Yes.`, then the result is `false` because the user included a period and the expression expects only the exact text, `Yes` without any punctuation.
+
+### String.equalsIgnoreCase(String)
+{: #dialog-methods-strings-equals-ignore-case}
+
+This method returns true if the specified string equals the input string regardless of whether the case of the letters match.
+
+Input: "yes"
+
+This syntax:
+
+```json
+{
+  "conditions": "input.text.equalsIgnoreCase('Yes')"
+}
+```
+{: codeblock}
+
+Results: The condition is `true`.
+
+If the input is `Yes.`, then the result is `false` because the user included a period and the expression expects only the text, `Yes`, in uppercase or lowercase letters without any punctuation.
 
 ### String.extract(String regexp, Integer groupIndex)
 {: #dialog-methods-strings-extract}

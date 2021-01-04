@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-09-22"
+  years: 2015, 2021
+lastupdated: "2021-01-04"
 
 subcollection: assistant
 
@@ -155,17 +155,36 @@ While testing your dialog, you can see details of the entities that are recogniz
 ```
 {: codeblock}
 
-For the user input, *Hello now*, your assistant recognizes the @sys-date and @sys-time system entities, so the response contains these entity objects:
+For the user input, *today*, your assistant recognizes the @sys-date system entity, so the response contains this entity object:
 
 ```json
-[
-{"entity":"sys-date","location":[6,9],"value":"2017-08-07",
-  "confidence":1,"metadata":{"calendar_type":"GREGORIAN",
-  "timezone":"America/New_York"}},
-{"entity":"sys-time","location":[6,9],"value":"15:01:00",
-  "confidence":1,"metadata":{"calendar_type":"GREGORIAN",
-  "timezone":"America/New_York"}}
-]
+ [
+   {
+     "entity":"sys-date",
+     "location":[0,5],
+     "value":"2020-12-30",
+     "confidence":1.0,
+     "metadata":
+     {
+       "calendar_type":"GREGORIAN",
+       "timezone":"America/New_York"
+     },
+     "interpretation":
+     {
+       "timezone":"America/New_York",
+       "relative_day":0,
+       "granularity":"day",
+       "calendar_type":"GREGORIAN"
+      }
+    }
+  ]
+```
+{: codeblock}
+
+If you want to include text in the response, use the `toJson()` method in the expression to cast the returned entities list into a JSON object. For example:
+
+```
+Recognized entities are: <? entities.toJson() ?>
 ```
 {: codeblock}
 
@@ -255,6 +274,13 @@ For the user input, *Hello now*, your assistant finds an exact match with the #g
 [{"intent":"greeting","confidence":1},
 {"intent":"yes","confidence":0},
 {"intent":"pizza-order","confidence":0}]
+```
+{: codeblock}
+
+If you want to include text in the response, use the `toJson()` method in the expression to cast the returned intents list into a JSON object. For example:
+
+```
+Recognized intents are: <? intents.toJson() ?>
 ```
 {: codeblock}
 

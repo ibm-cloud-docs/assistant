@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-12-17"
+  years: 2015, 2021
+lastupdated: "2021-01-04"
 
 subcollection: assistant
 
@@ -60,6 +60,18 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #release-notes-tooling-changes}
 
 The change log lists changes that were made this year ordered by the date they were released.
+
+## 4 January 2021
+{: #4January2021}
+
+- **Dialog methods updates**: Documentation and examples were added for the following supported dialog methods:
+
+  - `JSONArray.addAll(JSONArray)`
+  - `JSONArray.containsIgnoreCase(String)`
+  - `String.equals(String)`
+  - `String.equalsIgnoreCase(String)`
+
+  For more information, see [Expression language methods](/docs/assistant?topic=assistant-dialog-methods).
 
 ## 17 December 2020
 {: #17December2020}
