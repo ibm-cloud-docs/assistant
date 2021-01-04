@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-04"
+  years: 2020, 2021
+lastupdated: "2021-01-04"
 
 subcollection: assistant
 
@@ -24,7 +24,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Empower your skill to learn automatically ![Beta](images/beta.png)
+# Enable your skill to improve itself with autolearning ![Beta](images/beta.png)
 {: #autolearn}
 
 Use autolearning to enable your skill to learn from interactions between your customers and your assistants.
