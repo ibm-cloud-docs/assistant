@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-10-06"
+lastupdated: "2021-01-05"
 
 keywords: dialog node limits, copying a node, moving a node, adding a folder
 
@@ -119,7 +119,7 @@ You can duplicate a node to create an exact copy of it as a peer node directly a
 
 When you duplicate a node that has child nodes, the child nodes are duplicated also. The copied child nodes have the exact same names as the original child nodes. The only way to distinguish a copied child node from an original child node is the `copy` reference in the parent node name.
 
-1.  On the node you want to copy, click the **More** ![More icon](images/kabob.png) icon, and then select **Duplicate**.
+1.  On the node you want to copy, click the **More** ![More icon](images/kebab.png) icon, and then select **Duplicate**.
 1.  Consider renaming the copied nodes or editing their conditions to make them distinct.
 
 ## Moving a dialog node
@@ -129,7 +129,7 @@ Each node that you create can be moved elsewhere in the dialog tree.
 
 You might want to move a previously created node to another area of the flow to change the conversation. You can move nodes to become siblings or peers in another branch.
 
-1.  On the node you want to move, click the **More** ![More icon](images/kabob.png) icon, and then select **Move**.
+1.  On the node you want to move, click the **More** ![More icon](images/kebab.png) icon, and then select **Move**.
 1.  Select a target node that is located in the tree near where you want to move this node. Choose whether to place this node before or after the target node, or to make it a child of the target node.
 
 ## Organizing the dialog with folders
@@ -158,9 +158,9 @@ To add a folder to a dialog tree, complete the following steps:
 
     The folder is added to the end of the dialog tree, just before the **Anything else** node. Unless an existing node in the tree is selected, in which case, it is added after the selected node.
 
-    If you want to add the folder elsewhere in the tree, from the node before the spot where you want to add it, click the **More** ![More icon](images/kabob.png) icon, and then select **Add folder**.
+    If you want to add the folder elsewhere in the tree, from the node before the spot where you want to add it, click the **More** ![More icon](images/kebab.png) icon, and then select **Add folder**.
 
-    You can add a folder after a child node within an existing dialog branch. To do so, click the **More** ![More icon](images/kabob.png) icon on the child node, and then select  **Add folder**.
+    You can add a folder after a child node within an existing dialog branch. To do so, click the **More** ![More icon](images/kebab.png) icon on the child node, and then select  **Add folder**.
 
     The folder is opened in edit view.
 
@@ -174,12 +174,12 @@ To add a folder to a dialog tree, complete the following steps:
 
     - To add existing dialog nodes to the folder, you must move them to the folder one at a time.
 
-      On the node that you want to move, click the **More** ![More icon](images/kabob.png) icon, select **Move**, and then click the folder. Select **To folder** as the move-to target.
+      On the node that you want to move, click the **More** ![More icon](images/kebab.png) icon, select **Move**, and then click the folder. Select **To folder** as the move-to target.
 
       As you move nodes, they are added at the start of the tree within the folder. Therefore, if you want to retain the order of a set of consecutive root dialog nodes, for example, move them starting with the last node first.
       {: tip}
 
-    - To add a new dialog node to the folder, click the **More** ![More icon](images/kabob.png) icon on the folder, and then select **Add node to folder**.
+    - To add a new dialog node to the folder, click the **More** ![More icon](images/kebab.png) icon on the folder, and then select **Add node to folder**.
 
       The dialog node is added to the end of the dialog tree within the folder.
 
@@ -192,7 +192,7 @@ To delete a folder, complete the following steps:
 
 1.  From the tree view of the **Dialog** tab, find the folder that you want to delete.
 
-1.  Click the **More** ![More icon](images/kabob.png) icon on the folder, and then select **Delete**.
+1.  Click the **More** ![More icon](images/kebab.png) icon on the folder, and then select **Delete**.
 
 1.  Do one of the following things:
 

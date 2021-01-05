@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-12-22"
+  years: 2015, 2021
+lastupdated: "2021-01-05"
 
 subcollection: assistant
 content-type: tutorial
@@ -62,7 +62,7 @@ When the date and time system entity values are saved, they are converted into a
 
 1.  To reformat the $date context variable value, click the **Edit response** ![Edit response](images/edit-slot.png) icon for the @sys-date slot.
 
-1.  From the **More** ![More icon](images/kabob.png) menu, select **Open JSON editor**, and then edit the JSON that defines the context variable. Add a method that reformats the date so that it converts the `2017-12-29` value into a full day of the week, followed by the full month and day. Edit the JSON as follows:
+1.  From the **More** ![More icon](images/kebab.png) menu, select **Open JSON editor**, and then edit the JSON that defines the context variable. Add a method that reformats the date so that it converts the `2017-12-29` value into a full day of the week, followed by the full month and day. Edit the JSON as follows:
 
     ```json
     {
@@ -79,7 +79,7 @@ When the date and time system entity values are saved, they are converted into a
 
 1.  To change the format in which the time value is stored in the $time context variable to use the hour, minutes and indicate AM or PM, click the **Edit response** ![Edit response](images/edit-slot.png) icon for the @sys-time slot.
 
-1.  From the **More** ![More icon](images/kabob.png) menu, select **Open JSON editor**, and then edit the JSON that defines the context variable so that it reads as follows:
+1.  From the **More** ![More icon](images/kebab.png) menu, select **Open JSON editor**, and then edit the JSON that defines the context variable so that it reads as follows:
 
     ```json
     {
@@ -213,7 +213,7 @@ When you use the `sys-number` system entity in a slot condition, it does not dea
 
 1.  To ensure that the slot treats zeros properly, change the slot condition from `@sys-number` to `@sys-number >= 0`.
 
-1.  Open the slot to edit it by clicking the **Edit slot** ![Edit slot](images/edit-slot.png) icon. From the **Options** ![More icon](images/kabob.png) menu, open the JSON editor.
+1.  Open the slot to edit it by clicking the **Edit slot** ![Edit slot](images/edit-slot.png) icon. From the **Options** ![More icon](images/kebab.png) menu, open the JSON editor.
 
 1.  Change the context variable value.
 
@@ -286,7 +286,7 @@ To validate user input, complete the following steps:
 
 1.  From the edit view of the node with slots, click the **Edit slot** ![Edit slot](images/edit-slot.png) icon for the `@sys-date` slot.
 
-1.  From the **Options** ![More icon](images/kabob.png) menu in the *Configure slot 1* header, select **Enable conditional responses**.
+1.  From the **Options** ![More icon](images/kebab.png) menu in the *Configure slot 1* header, select **Enable conditional responses**.
 
 1.  In the **Found** section, add a conditional response by clicking the **Edit response** ![Edit response](images/edit-slot.png) icon.
 
@@ -324,7 +324,7 @@ To validate user input, complete the following steps:
 
 1.  From the edit view of the node with slots, click the **Edit slot** ![Edit slot](images/edit-slot.png) icon for the `@sys-time` slot.
 
-1.  From the **Options** ![More icon](images/kabob.png) menu in the *Configure slot 2* header, select **Enable conditional responses**.
+1.  From the **Options** ![More icon](images/kebab.png) menu in the *Configure slot 2* header, select **Enable conditional responses**.
 
 1.  In the **Found** section, add a conditional response by clicking the **Edit response** ![Edit response](images/edit-slot.png) icon.
 
@@ -374,7 +374,7 @@ To validate user input, complete the following steps:
 
 1.  From the edit view of the node with slots, click the **Edit slot** ![Edit slot](images/edit-slot.png) icon for the `@sys-number` slot.
 
-1.  From the **Options** ![More icon](images/kabob.png) menu in the *Configure slot 3* header, select **Enable conditional responses**.
+1.  From the **Options** ![More icon](images/kebab.png) menu in the *Configure slot 3* header, select **Enable conditional responses**.
 
 1.  In the **Found** section, add a conditional response by clicking the ![Edit response](images/edit-slot.png) icon, and then add the following condition and response:
 
@@ -462,11 +462,11 @@ You might want to design your dialog to call an external reservation system and 
 
     For example, the user might be answering the number of guests slot, and say something like, `Yes, there will be 5 of us.` You do not want the `Yes` included in this response to accidentally fill the confirmation slot. By adding the `slot_in_focus` property to the condition, a yes or no indicated by the user is applied to this slot only when the user is answering the prompt for this slot specifically.
 
-1.  Click the **Edit slot** ![Edit slot](images/edit-slot.png) icon. From the **Options** ![More icon](images/kabob.png) menu in the *Configure slot 4* header, select **Enable conditional responses**.
+1.  Click the **Edit slot** ![Edit slot](images/edit-slot.png) icon. From the **Options** ![More icon](images/kebab.png) menu in the *Configure slot 4* header, select **Enable conditional responses**.
 
 1.  In the **Found** prompt, add a condition that checks for a No response (`#no`). Use the response, `Alright. Let's start over. I'll try to keep up this time.` Otherwise, you can assume the user confirmed the reservation details and proceed with making the reservation.
 
-    When the `#no` intent is found, you also must reset the context variables that you saved earlier to null, so you can ask for the information again. You can reset the context variable values by using the JSON editor. Click the **Edit response** ![Edit response](images/edit-slot.png) icon for the conditional response you just added. From the **Options**  ![Advanced response](images/kabob.png) menu, click **Open JSON editor**. Add a `context` block that sets the slot context variables to `null`, as shown.
+    When the `#no` intent is found, you also must reset the context variables that you saved earlier to null, so you can ask for the information again. You can reset the context variable values by using the JSON editor. Click the **Edit response** ![Edit response](images/edit-slot.png) icon for the conditional response you just added. From the **Options**  ![Advanced response](images/kebab.png) menu, click **Open JSON editor**. Add a `context` block that sets the slot context variables to `null`, as shown.
 
     ```json
     {
@@ -562,11 +562,11 @@ If you add more slots later, you must edit these conditions to account for the a
 
 You might have noticed that before each test, you must clear the context variable values that were created during the previous test. You must do so because the node with slots only prompts users for information that it considers to be missing. If the slot context variables are all filled with valid values, no prompts are displayed. The same is true for the dialog at run time. You must build into the dialog a mechanism by which you reset the slot context variables to null so that the slots can be filled anew by the next user. To do so, you are going to add a parent node to the node with slots that sets the context variables to null.
 
-1.  From the tree view of the dialog, click the **More** ![More icon](images/kabob.png) icon on the node with slots, and then select **Add node above**.
+1.  From the tree view of the dialog, click the **More** ![More icon](images/kebab.png) icon on the node with slots, and then select **Add node above**.
 
 1.  Specify `#reservation` as the condition for the new node. (This is the same condition that is used by the node with slots, but you will change the condition for the node with slots later in this procedure.)
 
-1.  Click the **Options** ![More icon](images/kabob.png) icon next to the node response, and then click **Open JSON editor**. Add an entry for each slot context variable that you defined in the node with slots, and set it equal to `null`.
+1.  Click the **Options** ![More icon](images/kebab.png) icon next to the node response, and then click **Open JSON editor**. Add an entry for each slot context variable that you defined in the node with slots, and set it equal to `null`.
 
     ```json
     {
@@ -587,7 +587,7 @@ You might have noticed that before each test, you must clear the context variabl
 
 1.  Change the node condition from `#reservation` to `($date == null && $time == null)`, and then close the node edit view by clicking ![Close](images/close.png).
 
-1.  Click the **More** ![More icon](images/kabob.png) icon on the node with slots, and then select **Move**.
+1.  Click the **More** ![More icon](images/kebab.png) icon on the node with slots, and then select **Move**.
 
     ![Shows the dialog tree. The user is clicking the Move action on the node with slots.](images/slots-move-node.png)
 
@@ -719,7 +719,7 @@ For the $time information, you will define a follow-up statement that is display
 
 1.  Create a context variable that can keep track of how many times the user provides a value that does not match the value type that the slot expects. You want the context variable to be initialized and set to 0 before the node with slots is processed, so you will add it to the parent `#reservation` node.
 
-1.  Click to edit the `#reservation` node. Open the JSON editor associated with the node response, by clicking the **Options** ![More icon](images/kabob.png) icon in the response section, and choosing **Open JSON editor**. Add a context variable called `counter` to the existing `"context"` block, after the `confirmation` variable. Set the `counter` variable equal to `0`.
+1.  Click to edit the `#reservation` node. Open the JSON editor associated with the node response, by clicking the **Options** ![More icon](images/kebab.png) icon in the response section, and choosing **Open JSON editor**. Add a context variable called `counter` to the existing `"context"` block, after the `confirmation` variable. Set the `counter` variable equal to `0`.
 
        ```json
        {
@@ -739,7 +739,7 @@ For the $time information, you will define a follow-up statement that is display
 
 1.  Click the **Edit slot** ![Edit slot](images/edit-slot.png) icon for the `@sys-time` slot.
 
-1.  From the **Options** ![More icon](images/kabob.png) menu in the *Configure slot 2* header, select **Enable conditional responses**.
+1.  From the **Options** ![More icon](images/kebab.png) menu in the *Configure slot 2* header, select **Enable conditional responses**.
 
 1.  In the **Not found** section, add a conditional response.
 
@@ -757,7 +757,7 @@ For the $time information, you will define a follow-up statement that is display
 
 1.  Add a 1 to the `counter` variable each time this response is triggered. Remember, this response is only triggered when the user does not provide a valid time value. Click the **Edit response** ![Edit response](images/edit-slot.png) icon.
 
-1.  Click the **Options** ![More icon](images/kabob.png) icon, and select **Open JSON editor**. Add the following context variable definition.
+1.  Click the **Options** ![More icon](images/kebab.png) icon, and select **Open JSON editor**. Add the following context variable definition.
 
     ```json
     {

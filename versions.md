@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-12-11"
+  years: 2019, 2021
+lastupdated: "2021-01-05"
 
 subcollection: assistant
 
@@ -69,7 +69,7 @@ If you have trouble creating the version, check that your skill does not have an
 {: #versions-deploy}
 
 1.  From the skill menu, click **Versions**.
-1.  Click the ![Click to view actions](images/kebab-react.png) icon from the version you want to deploy, and then choose **Assign**.
+1.  Click the ![Click to view actions](images/kebab.png) icon from the version you want to deploy, and then choose **Assign**.
 
     A list of assistants to which you can link this version is displayed. The list is limited to those assistants that don't have any skills associated with them, or that are associated with a different version of this skill.
 1.  Click the checkbox for one or more of the assistants, and then click **Assign**.
@@ -110,7 +110,7 @@ You cannot edit a saved version. To achieve the same goal, you can use a saved v
     Save a version of the skill now. Otherwise, your work will be lost when you follow these steps.
     {: important}
 
-1.  From the version you want to edit, click the **Skill actions** ![Skill actions](images/kebab-react.png) icon, and then choose **Revert to this version** and confirm the action.
+1.  From the version you want to edit, click the **Skill actions** ![Skill actions](images/kebab.png) icon, and then choose **Revert to this version** and confirm the action.
 
     The page refreshes to revert to the state that the skill was in when the version was created.
 
@@ -127,7 +127,7 @@ You can download a dialog skill version in JSON format. You might want to downlo
 To download a dialog skill version, complete the following steps:
 
 1.  From the skill menu, click **Versions**.
-1.  Click the ![Click to view actions](images/kebab-react.png) icon from the version you want to download, and then choose **Export**.
+1.  Click the ![Click to view actions](images/kebab.png) icon from the version you want to download, and then choose **Export**.
 1.  Specify a name for the JSON file and where to save it, and then click **Save**.
 
 For more information about how to replace a skill, see [Overwriting a skill](/docs/assistant?topic=assistant-skill-dialog-add#skill-dialog-add-overwrite).

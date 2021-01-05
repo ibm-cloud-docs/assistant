@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-12-10"
+lastupdated: "2021-01-05"
 
 keywords: context, context variable
 
@@ -302,9 +302,9 @@ For more information about slots, see [Gathering information with slots](/docs/a
     - To add a context variable that is processed after a response condition for a slot is met, perform the following steps:
 
       1.  Click the *Edit slot* icon ![Edit response](images/edit-slot.png).
-      1.  Click the *Options* icon ![Advanced response](images/kabob.png), and then select **Enable conditional responses**.
+      1.  Click the *Options* icon ![Advanced response](images/kebab.png), and then select **Enable conditional responses**.
       1.  Click the *Edit response* icon ![Edit response](images/edit-slot.png) next to the response with which you want to associate the context variable.
-      1.  Click the *Options* icon ![Advanced response](images/kabob.png) in the response section, and then click **Open context editor**.
+      1.  Click the *Options* icon ![Advanced response](images/kebab.png) in the response section, and then click **Open context editor**.
       1.  Add the variable name and value pair to the **Variable** and **Value** fields.
 
       ![Shows how to access the JSON editor associated with the conditional response for a slot.](images/contextvar-json-slot-multi-response.png)
@@ -312,7 +312,7 @@ For more information about slots, see [Gathering information with slots](/docs/a
     - To add a context variable that is set or updated after a slot condition is met, complete the following steps:
 
       1.  Click the *Edit slot* icon ![Edit response](images/edit-slot.png).
-      1.  From the *Options* ![Advanced response](images/kabob.png) menu in the *Configure slot* view header, click **Open JSON editor**.
+      1.  From the *Options* ![Advanced response](images/kebab.png) menu in the *Configure slot* view header, click **Open JSON editor**.
       1.  Add the variable name and value pair in JSON format.
 
           ```json
@@ -369,7 +369,7 @@ To define a context variable in JSON format, complete the following steps:
     Any existing context variable values that are defined for this node are displayed in a set of corresponding **Variable** and **Value** fields. If you do not want them to be displayed in the edit view of the node, you must close the context editor. You can close the editor from the same menu that is used to open the JSON editor; the following steps describe how to access the menu.
     {: note}
 
-1.  Click the *Options* icon ![Advanced response](images/kabob.png) that is associated with the response, and then click **Open JSON editor**.
+1.  Click the *Options* icon ![Advanced response](images/kebab.png) that is associated with the response, and then click **Open JSON editor**.
 
     ![Shows how to access the JSON editor associated with a standard node response.](images/contextvar-json-response.png)
 

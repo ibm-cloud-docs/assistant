@@ -90,7 +90,7 @@ To delete an assistant, follow these steps:
 
 1.  From the Assistants page, find the assistant that you want to delete.
 
-1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Delete**. Confirm the deletion.
+1.  Click the ![open and close list of options](images/kebab.png) icon, and then choose **Delete**. Confirm the deletion.
 
 ## Renaming an assistant
 {: #assistant-add-rename}
@@ -101,7 +101,7 @@ To rename an assistant, follow these steps:
 
 1.  From the Assistants tab, find the assistant that you want to rename.
 
-1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Rename**.
+1.  Click the ![open and close list of options](images/kebab.png) icon, and then choose **Rename**.
 
 1.  Edit the name, and then click **Rename** to save your changes.
 
@@ -112,7 +112,7 @@ You can add one skill of each skill type to an assistant. If you want to change 
 
 1.  From the Assistants page, open the assistant.
 
-1.  Click the ![open and close list of options](images/kabob-beta.png) icon for the skill you want to swap, and then choose **Swap skill**.
+1.  Click the ![open and close list of options](images/kebab.png) icon for the skill you want to swap, and then choose **Swap skill**.
 
     To swap the current dialog skill for a different version of the skill, choose **Change skill version**.
 

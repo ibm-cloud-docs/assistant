@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2015, 2020
+  years: 2015, 2021
 lastupdated: "2020-11-13"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
