@@ -99,7 +99,7 @@ You can change the name of an assistant and its associated description after you
 
 To rename an assistant, follow these steps:
 
-1.  From the Assistants tab, find the assistant that you want to rename.
+1.  From the Assistants page, find the assistant that you want to rename.
 
 1.  Click the ![open and close list of options](images/kebab.png) icon, and then choose **Rename**.
 
