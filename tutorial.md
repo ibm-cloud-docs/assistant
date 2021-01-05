@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-12-22"
+  years: 2015, 2021
+lastupdated: "2021-01-05"
 
 subcollection: assistant
 content-type: tutorial
@@ -116,7 +116,7 @@ Add a dialog node that recognizes when the user input maps to the intent that yo
 
     You will add a node that checks for questions about the restaurant after this initial greeting node to reflect the flow you might expect to encounter in a normal conversation. For example, `Hello.` then `Tell me about yourself.`
 
-1.  Click the **More** ![More options](images/kabob.png) icon on the `#General_Greetings` node, and then select **Add node below**.
+1.  Click the **More** ![More options](images/kebab.png) icon on the `#General_Greetings` node, and then select **Add node below**.
 
     ![Shows the Add node below menu opened from the #General_Greetings dialog node.](images/gs-ass-dialog-add-about-restaurant.png)
 1.  Start to type `#about_restaurant` into the **If assistant recognizes** field of this node. Then select the `#about_restaurant` option.
@@ -212,7 +212,7 @@ Add a dialog node that recognizes when the user input maps to the intent that yo
 
     You will add a node that checks for questions about the menu after this node.
 
-1.  Click the **More** ![More options](images/kabob.png) icon on the `#about_restaurant` node, and then select **Add node below**.
+1.  Click the **More** ![More options](images/kebab.png) icon on the `#about_restaurant` node, and then select **Add node below**.
 
     ![Shows a dialog node being added after the #about_restaurant node.](images/gs-ass-dialog-add-menu.png)
 
@@ -330,7 +330,7 @@ In this step, you will add child nodes to the dialog node that checks for the `#
 
     You will add a child node to handle each menu type option that you added to the `#menu` node.
 
-1.  Click the **More** ![More options](images/kabob.png) icon on the `#menu` node, and then select **Add child node**.
+1.  Click the **More** ![More options](images/kebab.png) icon on the `#menu` node, and then select **Add child node**.
 
     ![Shows a child node being added to the #menu dialog node.](images/gs-ass-add-child-node.png)
 
@@ -342,7 +342,7 @@ In this step, you will add child nodes to the dialog node that checks for the `#
 
 1.  Click ![Close](images/close.png) to close the edit view.
 
-1.  Click the **More** ![More options](images/kabob.png) icon on the `@menu:standard` node, and then select **Add node below**.
+1.  Click the **More** ![More options](images/kebab.png) icon on the `@menu:standard` node, and then select **Add node below**.
 
 1.  Start to type `@menu:vegetarian` into the **If assistant recognizes** field of this node. Then select the `@menu:vegetarian` option.
 
@@ -352,7 +352,7 @@ In this step, you will add child nodes to the dialog node that checks for the `#
 
 1.  Click ![Close](images/close.png) to close the edit view.
 
-1.  Click the **More** ![More options](images/kabob.png) icon on the `@menu:vegetarian` node, and then select **Add node below**.
+1.  Click the **More** ![More options](images/kebab.png) icon on the `@menu:vegetarian` node, and then select **Add node below**.
 
 1.  Start to type `@menu:cake` into the **If assistant recognizes** field of this node. Then select the `@menu:cake` option.
 
@@ -364,7 +364,7 @@ In this step, you will add child nodes to the dialog node that checks for the `#
 
 1.  The standard menu is likely to be requested most often, so move it to the end of the child nodes list. Placing it last can help prevent it from being triggered accidentally when someone asks for a specialty menu instead the standard menu. 
 
-    Click the **More** ![More options](images/kabob.png) icon on the `@menu:standard` node, and then select **Move**.
+    Click the **More** ![More options](images/kebab.png) icon on the `@menu:standard` node, and then select **Move**.
 
     ![Shows the @menu:standard node being moved to come after the @menu:cake node.](images/gs-ass-move-standard-menu-node.png)
 
@@ -489,7 +489,7 @@ Before you perform an action on the user's behalf, you must get confirmation tha
 Now, add a dialog node that can handle requests to cancel a cake order.
 
 1.  Click the **Dialog** tab.
-1.  Find the `#menu` node. Click the **More** ![More options](images/kabob.png) icon on the `#menu` node, and then select **Add node below**.
+1.  Find the `#menu` node. Click the **More** ![More options](images/kebab.png) icon on the `#menu` node, and then select **Add node below**.
 1.  Start to type `#cancel_order` into the **If assistant recognizes** field of this node. Then select the `#cancel_order` option.
 1.  Add the following message in the response text field:
 
@@ -502,7 +502,7 @@ Now, add a dialog node that can handle requests to cancel a cake order.
 
     Before you can actually cancel the order, you need to know the order number. The user might specify the order number in the original request. So, to avoid asking for the order number again, check for a number with the order number pattern in the original input. To do so, define a context variable that would save the order number if it is specified.
 
-1.  You define a context variable in the context editor. From the response section of the node, click the **More** ![More options](images/kabob.png) icon, and then select **Open context editor**.
+1.  You define a context variable in the context editor. From the response section of the node, click the **More** ![More options](images/kebab.png) icon, and then select **Open context editor**.
 
     ![Shows the Open context editor menu option from the node edit view.](images/gs-ass-open-context-editor.png)
 1.  Enter the following context variable name and value pair:
@@ -526,7 +526,7 @@ Now, add a dialog node that can handle requests to cancel a cake order.
 1.  Click ![Close](images/close.png) to close the edit view.
 
     Now, add child nodes that either ask for the order number or get confirmation from the user that she wants to cancel an order with the detected order number.
-1.  Click the **More** ![More options](images/kabob.png) icon on the `#cancel_order` node, and then select **Add child node**.
+1.  Click the **More** ![More options](images/kebab.png) icon on the `#cancel_order` node, and then select **Add child node**.
 
     ![Shows the menu on the #cancel_order node with the Add child node menu option selected.](images/gs-ass-add-child-to-cancel.png)
 1.  Add a label to the node to distinguish it from other child nodes you will be adding. In the name field, add `Ask for order number`. Type `true` into the **If assistant recognizes** field of this node.
@@ -542,9 +542,9 @@ Now, add a dialog node that can handle requests to cancel a cake order.
 1.  Click ![Close](images/close.png) to close the edit view.
 
     Now, add another child node that informs the user that you are canceling the order.
-1.  Click the **More** ![More options](images/kabob.png) icon on the `Ask for order number` node, and then select **Add child node**.
+1.  Click the **More** ![More options](images/kebab.png) icon on the `Ask for order number` node, and then select **Add child node**.
 1.  Type `@order_number` into the **If assistant recognizes** field of this node.
-1.  Open the context editor. Click the **More** ![More options](images/kabob.png) icon, and select **Open context editor**.
+1.  Open the context editor. Click the **More** ![More options](images/kebab.png) icon, and select **Open context editor**.
 1.  Enter the following context variable name and value pair:
 
     <table>
@@ -570,7 +570,7 @@ Now, add a dialog node that can handle requests to cancel a cake order.
 
     ![Shows the order number child node details.](images/gs-ass-order-number-child.png)
 1.  Click ![Close](images/close.png) to close the edit view.
-1.  Add another node to capture the case where a user provides a number, but it is not a valid order number. Click the **More** ![More options](images/kabob.png) icon on the `@order_number` node, and then select **Add node below**.
+1.  Add another node to capture the case where a user provides a number, but it is not a valid order number. Click the **More** ![More options](images/kebab.png) icon on the `@order_number` node, and then select **Add node below**.
 1.  Type `true` into the **If assistant recognizes** field of this node.
 1.  Add the following message in the response text field:
 
@@ -582,7 +582,7 @@ Now, add a dialog node that can handle requests to cancel a cake order.
     ![Shows the node that responds when the user does not provide a valid order number.](images/gs-ass-cant-help-you.png)
 1.  Click ![Close](images/close.png) to close the edit view.
 
-1.  Add a node after the initial order cancellation request node that responds in the case where the user provides the order number in the initial request, so you don't have to ask for it again. Click the **More** ![More options](images/kabob.png) icon on the `#cancel_order` node, and then select **Add child node**.
+1.  Add a node after the initial order cancellation request node that responds in the case where the user provides the order number in the initial request, so you don't have to ask for it again. Click the **More** ![More options](images/kebab.png) icon on the `#cancel_order` node, and then select **Add child node**.
 1.  Add a label to the node to distinguish it from other child nodes. In the name field, add `Number provided`. Type `@order_number` into the **If assistant recognizes** field of this node.
 1.  Add the following message in the response text field:
 
@@ -595,7 +595,7 @@ Now, add a dialog node that can handle requests to cancel a cake order.
 1.  Click ![Close](images/close.png) to close the edit view.
 
     You must add child nodes that check for the user's response to your confirmation question.
-1.  Click the **More** ![More options](images/kabob.png) icon on the `Number provided` node, and then select **Add child node**.
+1.  Click the **More** ![More options](images/kebab.png) icon on the `Number provided` node, and then select **Add child node**.
 1.  Type `#yes` into the **If assistant recognizes** field of this node.
 
 1.  Add the following message in the response text field:
@@ -608,7 +608,7 @@ Now, add a dialog node that can handle requests to cancel a cake order.
     ![Shows the node that responds when the user confirms that they want to cancel the order.](images/gs-ass-yes-child-node.png)
 1.  Click ![Close](images/close.png) to close the edit view.
 
-1.  Click the **More** ![More options](images/kabob.png) icon on the `#yes` node, and then select **Add node below**.
+1.  Click the **More** ![More options](images/kebab.png) icon on the `#yes` node, and then select **Add node below**.
 
 1.  Type `true` into the **If assistant recognizes** field of this node.
 
@@ -621,7 +621,7 @@ Now, add a dialog node that can handle requests to cancel a cake order.
 
     ![Shows choosing the Ask for order number node condition as the jump to target.](images/gs-ass-true-jump-to-destination.png)
 1.  Click ![Close](images/close.png) to close the edit view.
-1.  Move the *Number provided* node before the *Ask for order number* node. Click the **More** ![More options](images/kabob.png) icon on the `Number provided` node, and then select **Move**. Select the *Ask for order number* node, and then click **Above node**.
+1.  Move the *Number provided* node before the *Ask for order number* node. Click the **More** ![More options](images/kebab.png) icon on the `Number provided` node, and then select **Move**. Select the *Ask for order number* node, and then click **Above node**.
 
     ![Shows moving the Number provided child node before the Ask for order number node.](images/gs-ass-reorder-cancel-order-children.png)
 1.  Force the conversation to evaluate the child nodes under the `#cancel_order` node at run time. Click to open the `#cancel_order` node in the edit view, and then, in the `And finally` section, select `Skip user input`.
@@ -663,7 +663,7 @@ If you do more testing, you might find that the dialog isn't very helpful in sce
 
 1.  Find the `@order_number` node that is a child of the *Ask order number* node.
 
-1.  Click the **More** ![More options](images/kabob.png) icon on the `@order_number` node, and then select **Add node below**.
+1.  Click the **More** ![More options](images/kebab.png) icon on the `@order_number` node, and then select **Add node below**.
 
 1.  In the condition field, add `input.text.find('\d')`, which is a SpEL expression that says if you find one or more numbers in the user input, trigger this response.
 
@@ -676,7 +676,7 @@ If you do more testing, you might find that the dialog isn't very helpful in sce
 
 1.  Click ![Close](images/close.png) to close the edit view.
 
-1.  Click the **More** ![More options](images/kabob.png) icon on the `input.text.find('\d')` node, and then select **Add child node**.
+1.  Click the **More** ![More options](images/kebab.png) icon on the `input.text.find('\d')` node, and then select **Add child node**.
 
 1.  Type `true` into the **If assistant recognizes** field of this node.
 
@@ -721,7 +721,7 @@ Add a dialog node that can recognize the user's interest in the bot, and respond
 
 1.  Click the **Dialog** tab.
 1.  Find the `Welcome` node in the dialog tree.
-1.  Click the **More** ![More options](images/kabob.png) icon on the `Welcome` node, and then select **Add node below**.
+1.  Click the **More** ![More options](images/kebab.png) icon on the `Welcome` node, and then select **Add node below**.
 1.  Start to type `#General_About_You` into the **If assistant recognizes** field of this node. Then select the `#General_About_You` option.
 1.  Add the following message in the response text field:
 
@@ -733,7 +733,7 @@ Add a dialog node that can recognize the user's interest in the bot, and respond
 
     ![Shows the #General_About_You node being added.](images/gs-ass-add-about-you-node.png)
 1.  Click ![Close](images/close.png) to close the edit view.
-1.  Click the **More** ![More options](images/kabob.png) icon on the `#General_About_You` node, and then select **Add child node**.
+1.  Click the **More** ![More options](images/kebab.png) icon on the `#General_About_You` node, and then select **Add child node**.
 1.  In the **If assistant recognizes** field of this node, enter `true`.
 1.  Add the following message in the response text field:
 
@@ -742,7 +742,7 @@ Add a dialog node that can recognize the user's interest in the bot, and respond
     ```
     {: codeblock}
 
-1.  To capture the name that the user provides, add a context variable to the node. Click the **More** ![More options](images/kabob.png) icon, and select **Open context editor**.
+1.  To capture the name that the user provides, add a context variable to the node. Click the **More** ![More options](images/kebab.png) icon, and select **Open context editor**.
 1.  Enter the following context variable name and value pair:
 
     <table>

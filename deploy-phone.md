@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2020-12-14"
+lastupdated: "2021-01-05"
 
 subcollection: assistant
 
@@ -172,13 +172,15 @@ For whichever call center service you use, you will need to provide the call cen
 
 For the best customer experience, design your dialog with the capabilities of the phone integration in mind:
 
-- Do not include HTML elements in your dialog text responses.
-- The phone integration does not support chat transfers that are initiated with the *Connect to human agent* response type.
+- Do not include HTML elements in your dialog text responses. To add formatting, use Markdown. For more information, see [Simple text response](https://cloud.ibm.com/docs/assistant?topic=assistant-dialog-overview#dialog-overview-simple-text).
+- The phone integration does not support chat transfers that are initiated with the *Connect to human agent* response type. Use the [vgwActTransfer](/docs/assistant?topic=assistant-dialog-voice-actions#dialog-voice-actions-transfer) command instead.
 - You can include search skill response types in dialog nodes that the phone integration will read. The introductory message (*I searched my knowledge base* and so on), and then the body of only the first search result is read.
 
   The search skill response (meaning the introductory message plus the body of the first search result) must be less than 5,000 characters long or the response will not be read at all. Be sure to test the search results that are returned and curate the data collection that you use as necessary.
 
-If you want to use the same dialog for an assistant that you deploy to many different platforms, add custom responses per integration type. You can add a conditioned response that tells the assistant to show the response only when the phone integration is being used. For more information, see [Building integration-specific responses](/docs/assistant?topic=assistant-dialog-integrations#dialog-integrations-condition-by-type).
+For more information about dialog response types, see [Rich responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia).
+
+If you want to use the same dialog for an assistant that you deploy to many different platforms, you can add custom responses per integration type. Add a conditioned response that tells the assistant to show the response only when the phone integration is being used. For more information, see [Building integration-specific responses](/docs/assistant?topic=assistant-dialog-integrations#dialog-integrations-condition-by-type).
 
 For more information about how to implement common actions from your dialog, see [Handling phone integrations](/docs/assistant?topic=assistant-dialog-voice-actions).
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2020-12-04"
+lastupdated: "2021-01-05"
 
 subcollection: assistant
 
@@ -84,7 +84,7 @@ When a chat session is reset, the dialog loses any contextual information that i
 
 To change the timeout, complete the following steps:
 
-1.  Click the menu for your assistant ![open and close list of options](images/kabob-beta.png), and then choose **Settings**.
+1.  Click the menu for your assistant ![open and close list of options](images/kebab.png), and then choose **Settings**.
 
 1.  Change the time specified in the **Timeout limit** field.
 

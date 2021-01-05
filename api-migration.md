@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-08-19"
+lastupdated: "2021-01-05"
 
 subcollection: assistant
 
@@ -56,7 +56,7 @@ The v2 runtime API sends messages to an assistant, which routes the messages to 
 
   For more information about creating assistants, see [Creating an assistant](/docs/assistant?topic=assistant-assistant-add).
 
-1. After your new assistant is created, click the ![Menu](images/kebab-react.png) menu and then select **Settings**.
+1. After your new assistant is created, click the ![Menu](images/kebab.png) menu and then select **Settings**.
 
 1. On the **Assistant Settings** page, find the assistant ID. Your application will use this ID (instead of a workspace ID) to communicate with the assistant. The service credentials are the same for both the v1 and v2 APIs.
 

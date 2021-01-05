@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-12-16"
+  years: 2018, 2021
+lastupdated: "2021-01-05"
 
 keywords: import workspace, import JSON, export JSON
 
@@ -120,7 +120,7 @@ To download a dialog skill, complete the following steps:
 
 1.  Find the dialog skill tile on the Skills page or on the configuration page of an assistant that uses the skill.
 
-1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Export**.
+1.  Click the ![open and close list of options](images/kebab.png) icon, and then choose **Export**.
 
 1.  Specify a name for the JSON file and where to save it, and then click **Save**.
 
@@ -139,7 +139,7 @@ To overwrite a skill, complete the following steps:
 
 1.  Find the dialog skill that you want to replace.
 
-1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Import**. 
+1.  Click the ![open and close list of options](images/kebab.png) icon, and then choose **Import**. 
 
 1.  Drag a file or click **Drag and drop file here or click to select a file** and select the JSON file you want to overwrite your skill with.
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-12-11"
+  years: 2018, 2021
+lastupdated: "2021-01-05"
 
 subcollection: assistant
 
@@ -127,8 +127,8 @@ To delete a skill, complete the following steps:
 
     - Check with the owner of the assistant that is using the skill before you remove the skill from it.
     - Open the Assistants page, and then click to open the assistant tile.
-    - Find the tile for the skill that you want to delete. Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Remove**.
+    - Find the tile for the skill that you want to delete. Click the ![open and close list of options](images/kebab.png) icon, and then choose **Remove**.
     - Repeat the previous steps for any other assistants that use the skill.
     - Return to the Skills page and find the tile for the skill that you want to delete.
 
-1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Delete**. Confirm the deletion.
+1.  Click the ![open and close list of options](images/kebab.png) icon, and then choose **Delete**. Confirm the deletion.

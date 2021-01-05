@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-12-15"
+lastupdated: "2021-01-05"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -123,7 +123,7 @@ To create a dialog, complete the following steps:
 
     ![Plus or Premium plan only](images/plus.png) The *external node name* field is only displayed to Plus or Premium plan users. See [Disambiguation](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation) for more details.
 
-1.  To add more nodes, select a node in the tree, and then click the **More** ![More icon](images/kabob.png) icon.
+1.  To add more nodes, select a node in the tree, and then click the **More** ![More icon](images/kebab.png) icon.
 
     - To create a peer node that is checked next if the condition for the existing node is not met, select **Add node below**.
     - To create a peer node that is checked before the condition for the existing node is checked, select **Add node above**.

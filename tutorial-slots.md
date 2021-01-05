@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-12-22"
+  years: 2015, 2021
+lastupdated: "2021-01-05"
 
 subcollection: assistant
 content-type: tutorial
@@ -118,7 +118,7 @@ The node that you will add in this step is one that contains slots. Slots provid
 The node you add will collect the information required to make a reservation at a restaurant.
 
 1.  Click the **Dialogs** tab to open the dialog tree.
-1.  Click the More icon ![More options](images/kabob.png) on the **#General_Greetings** node, and then select **Add node below**.
+1.  Click the More icon ![More options](images/kebab.png) on the **#General_Greetings** node, and then select **Add node below**.
 1.  Start typing `#reservation` in the condition field, and then select it from the list.
     This node will be evaluated if the user input matches the `#reservation` intent.
 1.  Click **Customize**, set the **Slots** switch to **On**, and then click **Apply**.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-08-19"
+lastupdated: "2021-01-05"
 
 subcollection: assistant
 
@@ -44,7 +44,7 @@ You cannot export the following data:
 
 If you want to store logs of conversations that users have had with your assistant, you can use the `/logs` API to export your log data. See [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1#listlogs) for details.
 
-To get the workspace ID for a skill, from the skill tile, click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **View API Details**.
+To get the workspace ID for a skill, from the skill tile, click the ![open and close list of options](images/kebab.png) icon, and then choose **View API Details**.
 {: tip}
 
 Logs are stored for a different amount of time depending on your service plan. For example, Lite plans provide logs from the past 7 days only. See [Log limits](/docs/assistant?topic=assistant-logs#logs-limits) for more information.
@@ -58,7 +58,7 @@ To back up dialog skill data, export the skill as a JSON file, and store the JSO
 
 1.  Find the dialog skill tile on the Skills page or on the configuration page of an assistant that uses the skill.
 
-1.  Click the ![open and close list of options](images/kabob-beta.png) icon, and then choose **Export**.
+1.  Click the ![open and close list of options](images/kebab.png) icon, and then choose **Export**.
 
 1.  Specify a name for the JSON file and where to save it, and then click **Save**.
 

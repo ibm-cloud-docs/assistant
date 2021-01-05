@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-01-29"
+lastupdated: "2021-01-05"
 
 subcollection: assistant
 
@@ -57,7 +57,7 @@ To make a programmatic call to a client application from a dialog node, complete
 
       ![Shows how to access the JSON editor associated with a standard node response.](images/contextvar-json-response.png)
 
-      If the **Multiple responses** setting is **On** for the node, then you must click the **Edit response** ![Edit response](images/edit-slot.png) icon for the **Options** ![Advanced response](images/kabob.png) menu to be visible.
+      If the **Multiple responses** setting is **On** for the node, then you must click the **Edit response** ![Edit response](images/edit-slot.png) icon for the **Options** ![Advanced response](images/kebab.png) menu to be visible.
 
       ![Shows how to access the JSON editor that is associated with a standard node that has multiple conditional responses that are enabled for it.](images/contextvar-json-multi-response.png)
 
@@ -70,7 +70,7 @@ To make a programmatic call to a client application from a dialog node, complete
 
         ![Shows how to access the JSON editor associated with a slot condition.](images/contextvar-json-slot-condition.png)
 
-      - To make a programmatic call that runs after the slot is successfully filled, open the JSON editor that is associated with the Found response. To do so, from the **Options** ![Options icon](images/kabob.png) menu for the slot, click **Enable conditional responses**. For the Found response, click the **Edit response** ![Edit response](images/edit-slot.png) icon. From the **Options** ![Options icon](images/kabob.png) menu for the Found response, click **Open JSON editor**.
+      - To make a programmatic call that runs after the slot is successfully filled, open the JSON editor that is associated with the Found response. To do so, from the **Options** ![Options icon](images/kebab.png) menu for the slot, click **Enable conditional responses**. For the Found response, click the **Edit response** ![Edit response](images/edit-slot.png) icon. From the **Options** ![Options icon](images/kebab.png) menu for the Found response, click **Open JSON editor**.
 
         ![Shows how to access the JSON editor associated with the conditional response for a slot.](images/contextvar-json-slot-multi-response.png)
 
