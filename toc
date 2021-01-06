@@ -21,51 +21,51 @@ Watson Assistant (Managed)
 
     {: .navgroup id="howto"}
     {: .topicgroup}
-    Creating your assistant
+    Creating an assistant
         assistants.md
         dev-process.md
         assistant-add.md
         skill-add.md
         skills-choose.md
 
-        {: .topicgroup}
-        Creating an actions skill
-            skill-actions-add.md
-            actions.md
-            actions-overview.md
+    {: .topicgroup}
+    Creating an actions skill
+        skill-actions-add.md
+        actions.md
+        actions-overview.md
+
+    {: .topicgroup}
+    Creating a dialog skill
+        skill-dialog-add.md
 
         {: .topicgroup}
-        Creating a dialog skill
-            skill-dialog-add.md
+        Adding intents
+            catalog.md
+            intents.md
+            intent-recommendations.md
+            intent-detection.md
 
-            {: .topicgroup}
-            Adding intents
-                catalog.md
-                intents.md
-                intent-recommendations.md
-                intent-detection.md
+        {: .topicgroup}
+        Adding a dialog
+            dialog-build.md
+            dialog-plan.md
+            dialog-overview.md
+            dialog-start.md
+            dialog-runtime-context.md
+            dialog-runtime.md
+            dialog-runtime-spell-check.md
+            dialog-slots.md
+            dialog-tips.md
+            dialog-tasks.md
+            dialog-support.md
+            dialog-call-action.md
 
-            {: .topicgroup}
-            Adding a dialog
-                dialog-build.md
-                dialog-plan.md
-                dialog-overview.md
-                dialog-start.md
-                dialog-runtime-context.md
-                dialog-runtime.md
-                dialog-runtime-spell-check.md
-                dialog-slots.md
-                dialog-tips.md
-                dialog-tasks.md
-                dialog-support.md
-                dialog-call-action.md
+        entities.md
+        versions.md
 
-            entities.md
-            versions.md
-
-        skill-search-add.md
-        deploy-web-link.md
-        assistant-settings.md
+    skill-search-add.md
+    deploy-web-link.md
+    assistant-settings.md
 
     {: .topicgroup}
     Deploying with web chat
@@ -94,7 +94,7 @@ Watson Assistant (Managed)
         logs-resources.md
 
     {: .topicgroup}
-    Administering
+    Administrative tasks
         access-control.md
         information-security.md
         security.md
@@ -112,7 +112,6 @@ Watson Assistant (Managed)
 
         {: .topicgroup}
         Dialog skill development
-            dialog-call-action.md
             dialog-integrations.md
             dialog-voice-actions.md
             dialog-sms-actions.md
