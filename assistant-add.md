@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2020-11-17"
+lastupdated: "2021-01-05"
 
 subcollection: assistant
 
@@ -103,7 +103,7 @@ To rename an assistant, follow these steps:
 
 1.  Click the ![open and close list of options](images/kebab.png) icon, and then choose **Rename**.
 
-1.  Edit the name, and then click **Rename** to save your changes.
+1.  Edit the name, and then click **Save**.
 
 ### Changing the skill that is associated with the assistant
 {: #assistant-add-swap-skill}
