@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-04"
+lastupdated: "2021-01-06"
 
 subcollection: assistant
 
@@ -60,6 +60,12 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #release-notes-tooling-changes}
 
 The change log lists changes that were made this year ordered by the date they were released.
+
+## 6 January 2021
+{: #6January2021}
+<!--1.130-->
+
+- **Import and export UI changes**: The label on buttons for importing intents and entities changed from *Import* to *Upload*. The label on buttons for exporting intents and entities changed from *Export* to *Download*.
 
 ## 4 January 2021
 {: #4January2021}
