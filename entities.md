@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-12-11"
+lastupdated: "2021-01-06"
 
 keywords: entity, entity value, contextual entity, dictionary entity, pattern entity, entity synonym, annotate mentions
 
@@ -446,30 +446,30 @@ Entities containing your search term, with corresponding examples, are shown.
 
 ![Entity search return](images/entities-search-results.png)
 
-## Exporting entities
+## Downloading entities
 {: #entities-export}
 
-You can export a number of entities to a CSV file, so you can then import and reuse them for another {{site.data.keyword.conversationshort}} application.
+You can download a number of entities to a CSV file, so you can then upload and reuse them in another {{site.data.keyword.conversationshort}} application.
 
-- Pattern information is included in the CSV export. Any string wrapped with `/` will be considered a pattern (as opposed to a synonym).
-- Annotations associated with contexual entities are not exported. You must export the entire dialog skill to capture both the entity value and any associated annotations.
+- Pattern information is included in the downloaded CSV file. Any string wrapped with `/` will be considered a pattern (as opposed to a synonym).
+- Annotations associated with contexual entities are not downloaded. You must download the entire dialog skill to capture both the entity value and any associated annotations.
 
 1.  Go to the **Entities** page
 
-    - To export all entities, meaning the entities that are listed on this and any additional pages, do not select any individual entities. Instead, click the *Export* icon. ![Export option](images/export-c10.png)
+    - To download all entities, meaning the entities that are listed on this and any additional pages, do not select any individual entities. Instead, click the *Download* icon ![Download option](images/download.png).
 
-    - To export the entities that are listed on the current page only, select the checkbox in the header. This action selects all of the entities on the current page. Click **Export**.
+    - To download the entities that are listed on the current page only, select the checkbox in the header. This action selects all of the entities on the current page. Click the *Download* icon ![Download option](images/download.png).
 
-    - To export one or more specific entities, select the entities that you want to export, and then click **Export**.
+    - To download one or more specific entities, select the entities that you want to download, and then click the *Download* icon ![Download option](images/download.png).
 
-1.  Specify the name and location in which to store the CSV file that is generated.
+1.  Specify the name and location in which to store the CSV file that is generated, and then click **Save**.
 
-## Importing entities
+## Uploading entities
 {: #entities-import}
 
-If you have a large number of entities, you might find it easier to import them from a comma-separated value (CSV) file than to define them one by one.
+If you have a large number of entities, you might find it easier to upload them from a comma-separated value (CSV) file than to define them one by one.
 
-Entity annotations are not included in the import of an entity CSV file. You must import the entire dialog skill to retain the associated annotations for a contextual entity in that skill. If you export and import entities only, then any contextual entities that you exported are treated as dictionary-based entities after you import them.
+Entity annotations are not included in the upload of an entity CSV file. You must upload the entire dialog skill to retain the associated annotations for a contextual entity in that skill. If you download and upload entities only, then any contextual entities that you downloaded are treated as dictionary-based entities after you upload them.
 {: note}
 
 1.  Collect the entities into a CSV file, or export them from a spreadsheet to a CSV file. The required format for each line in the file is as follows:
@@ -497,7 +497,7 @@ Entity annotations are not included in the import of an entity CSV file. You mus
     ```
     {: screen}
 
-    Importing a CSV file also supports patterns. Any string wrapped with `/` will be considered a pattern (as opposed to a synonym).
+    Uploading a CSV file also supports patterns. Any string wrapped with `/` will be considered a pattern (as opposed to a synonym).
 
     ```
     ContactInfo,localPhone,/(\d{3})-(\d{4})/
@@ -508,16 +508,16 @@ Entity annotations are not included in the import of an entity CSV file. You mus
     ```
     {: screen}
 
-    Save the CSV file with UTF-8 encoding and no byte order mark (BOM). The maximum CSV file size is 10MB. If your CSV file is larger, consider splitting it into multiple files and importing them separately.  Open your dialog skill and then click the **Entities** tab.
+    Save the CSV file with UTF-8 encoding and no byte order mark (BOM). The maximum CSV file size is 10MB. If your CSV file is larger, consider splitting it into multiple files and uploading them separately.  Open your dialog skill and then click the **Entities** tab.
     {: tip}
 
-1.  Click the import icon.
+1.  Click the upload icon ![Upload icon](images/upload.png).
 
-    ![Import](images/import-entity.png)
+1.  Drag a file, or browse to select a file from your computer, and then click **Upload**.
 
-1.  Drag a file, or browse to select a file from your computer. The file is validated and imported, and the system begins to train itself on the new data.
+    The file is validated and uploaded, and the system begins to train itself on the new data.
 
-You can view the imported entities on the Entities tab. You might need to refresh the page to see the new entities.
+You can view the uploaded entities on the Entities tab. You might need to refresh the page to see the new entities.
 
 ## Deleting entities
 {: #entities-delete}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2020-12-10"
+lastupdated: "2021-01-06"
 
 subcollection: assistant
 
@@ -25,7 +25,7 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
 
-# Integrating the web chat with your website
+# Adding the web chat to your website
 {: #deploy-web-chat}
 
 Add your assistant to your company website as a web chat widget that can help your customers with common questions and tasks, and can transfer customers to human agents.

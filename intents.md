@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-12-11"
+lastupdated: "2021-01-06"
 
 keywords: intent, intent conflicts, annotate
 
@@ -246,29 +246,27 @@ Use the Search feature to find user examples, intent names, and descriptions.
 
     ![Shows the results from a search for intents](images/intent-search-results.png)
 
-## Exporting intents
+## Downloading intents
 {: #intents-export}
 
-You can export a number of intents to a CSV file, so you can then import and reuse them for another {{site.data.keyword.conversationshort}} application.
+You can download a number of intents to a CSV file, so you can then upload and reuse them in another {{site.data.keyword.conversationshort}} application.
 
 1.  Go to the **Intents** page.
 
-    - To export all intents, meaning the intents listed on this and any additional pages, do not select any individual intents. Instead, click the *Export all intents* icon. ![Export option](images/export-c10.png)
+    - To download all intents, meaning the intents listed on this and any additional pages, do not select any individual intents. Instead, click the *Download all intents* icon. ![Download all intents icon](images/download-all.png)
 
-    - To export the intents that are listed on the current page only, select the checkbox in the header. This action selects all of the intents on the current page. Click **Export**.
+    - To download the intents that are listed on the current page only, select the checkbox in the header. This action selects all of the intents on the current page. Click the *Download* icon. ![Download icon](images/download.png)
 
-    - To export one or more specific intents, select the intents that you want to export, and then click **Export**.
+    - To download one or more specific intents, select the intents that you want to download, and then click the *Download* icon. ![Download icon](images/download.png).
 
-      ![Shows that two intents are selected and the export icon is in focus](images/intent-export.png)
+1.  Specify the name and location in which to store the CSV file that is generated, and then click **Save**.
 
-1.  Specify the name and location in which to store the CSV file that is generated.
-
-## Importing intents and examples
+## Uploading intents and examples
 {: #intents-import}
 
-If you have a large number of intents and examples, you might find it easier to import them from a comma-separated value (CSV) file than to define them one by one. Be sure to remove any personal data from the user examples that you include in the file.
+If you have a large number of intents and examples, you might find it easier to upload them from a comma-separated value (CSV) file than to define them one by one. Be sure to remove any personal data from the user examples that you include in the file.
 
-Alternatively, you can upload a file with raw user utterances (from call center logs, for example) and let Watson find candidates for user examples from the data. See [Adding examples from log files](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations-task) for more information. This feature is available to Plus or Premium plan users only.
+Alternatively, you can upload a file with raw user utterances (from call center logs, for example) and let Watson find candidates for user examples from the data. For more information, see [Adding examples from log files](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations-task). This feature is available to Plus or Premium plan users only.
 
 1.  Collect the intents and examples into a CSV file, or export them from a spreadsheet to a CSV file. The required format for each line in the file is as follows:
 
@@ -290,13 +288,17 @@ Alternatively, you can upload a file with raw user utterances (from call center 
 
     **Important:** Save the CSV file with UTF-8 encoding and no byte order mark (BOM).
 
-1.  From the **Intents** page, click the *Import* icon ![Import icon](images/importGA.png), and then drag a file or browse to select a file from your computer.
+1.  From the **Intents** page, click the *Upload* icon ![Upload icon](images/upload.png).
+    
+1.  Drag a file or browse to select a file from your computer.
 
-    **Important:** The maximum CSV file size is 10 MB. If your CSV file is larger, consider splitting it into multiple files and importing them separately.
+    **Important:** The maximum CSV file size is 10 MB. If your CSV file is larger, consider splitting it into multiple files and uploading them separately.
 
-    The file is validated and imported, and the system begins to train itself on the new data.
+1.  Click **Upload**.
 
-You can view the imported intents and the corresponding examples on the **Intents** tab. You might need to refresh the page to see the new intents and examples.
+    The file is validated and uploaded, and the system begins to train itself on the new data.
+
+You can view the uploaded intents and the corresponding examples on the **Intents** tab. You might need to refresh the page to see the new intents and examples.
 
 ## Resolving intent conflicts ![Plus or Premium only](images/plus.png)
 {: #intents-resolve-conflicts}
