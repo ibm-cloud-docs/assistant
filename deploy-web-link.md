@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-10-19"
+lastupdated: "2021-01-06"
 
 subcollection: assistant
 
@@ -22,7 +22,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Testing your assistant with the preview link
+# Testing your assistant
 {: #deploy-web-link}
 
 If you do not disable the preview link when you create an assistant, the assistant is immediately available for testing from a web page.

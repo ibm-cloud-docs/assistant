@@ -20,74 +20,63 @@ Watson Assistant (Managed)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    dev-process.md
 
     {: .topicgroup}
     Creating your assistant
         assistants.md
+        dev-process.md
         assistant-add.md
         skill-add.md
         skills-choose.md
 
-    {: .topicgroup}
-    Creating an actions skill
-        skill-actions-add.md
-        actions.md
-        actions-overview.md
-
-    {: .topicgroup}
-    Creating a dialog skill
-        skill-dialog-add.md
+        {: .topicgroup}
+        Creating an actions skill
+            skill-actions-add.md
+            actions.md
+            actions-overview.md
 
         {: .topicgroup}
-        Adding intents
-            catalog.md
-            intents.md
-            intent-recommendations.md
-            intent-detection.md
+        Creating a dialog skill
+            skill-dialog-add.md
 
-        {: .topicgroup}
-        Adding a dialog
-            dialog-build.md
-            dialog-plan.md
-            dialog-overview.md
-            dialog-start.md
-            dialog-runtime-context.md
-            dialog-runtime.md
-            dialog-runtime-spell-check.md
-            dialog-slots.md
-            dialog-tips.md
-            dialog-tasks.md
-            dialog-support.md
+            {: .topicgroup}
+            Adding intents
+                catalog.md
+                intents.md
+                intent-recommendations.md
+                intent-detection.md
 
-        entities.md
+            {: .topicgroup}
+            Adding a dialog
+                dialog-build.md
+                dialog-plan.md
+                dialog-overview.md
+                dialog-start.md
+                dialog-runtime-context.md
+                dialog-runtime.md
+                dialog-runtime-spell-check.md
+                dialog-slots.md
+                dialog-tips.md
+                dialog-tasks.md
+                dialog-support.md
+                dialog-call-action.md
 
-        {: .topicgroup}
-        Advanced dialog tasks
-            dialog-webhooks.md
-            dialog-call-action.md
-            dialog-integrations.md
-            dialog-voice-actions.md
-            dialog-sms-actions.md
-            dialog-actions-client.md
-            dialog-responses-json.md
+            entities.md
+            versions.md
 
-        versions.md
-
-    skill-search-add.md
-    assistant-settings.md
-
-    {: .topicgroup}
-    Deploying
-        deploy-integration-add.md
+        skill-search-add.md
         deploy-web-link.md
+        assistant-settings.md
 
-        {: .topicgroup}
-        Web chat
-            deploy-web-chat.md
-            deploy-salesforce.md
-            deploy-zendesk.md
-        
+    {: .topicgroup}
+    Deploying with web chat
+        deploy-web-chat.md
+        deploy-salesforce.md
+        deploy-zendesk.md
+
+    {: .topicgroup}
+    Deploying to other platforms
+        deploy-integration-add.md
         deploy-facebook.md
         deploy-intercom.md
         deploy-phone.md
@@ -115,15 +104,32 @@ Watson Assistant (Managed)
         upgrade.md
 
     {: .topicgroup}
-    Using the API
-        api-overview.md
-        api-methods.md
-        api-client.md
-        api-migration.md
-        api-context.md
-        api-dialog-responses.md
-        api-dialog-modify.md
-        /watson/watson-using-sdks
+    Advanced development
+        develop.md
+
+        {: .topicgroup}
+        Using webhooks
+            dialog-webhooks.md
+
+        {: .topicgroup}
+        Dialog skill development
+            dialog-call-action.md
+            dialog-integrations.md
+            dialog-voice-actions.md
+            dialog-sms-actions.md
+            dialog-actions-client.md
+            dialog-responses-json.md
+
+        {: .topicgroup}
+        Custom UI development
+            api-overview.md
+            api-methods.md
+            api-client.md
+            api-migration.md
+            api-context.md
+            api-dialog-responses.md
+            api-dialog-modify.md
+            /watson/watson-using-sdks
 
     {: .topicgroup}
     Early access program
@@ -132,6 +138,13 @@ Watson Assistant (Managed)
 
     {: .navgroup id="reference"}
     [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2)
+
+    {: .topicgroup}
+    API reference for web chat
+        [watsonAssistantChatOptions object parameters](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-configuration)
+        [Instance methods](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-instance-methods)
+        [Events](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events)
+
     at-events.md
     dialog-methods.md
     expression-language.md

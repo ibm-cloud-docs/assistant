@@ -111,6 +111,19 @@ The number of skills you can create depends on your {{site.data.keyword.conversa
 
 `*` After 30 days of inactivity, an unused skill in a Lite plan service instance might be deleted to free up space.
 
+## Renaming a skill
+{: #skill-add-rename}
+
+You can change the name of a skill and its associated description after you create the skill.
+
+To rename an skill, follow these steps:
+
+1.  From the Skills page, find the skill that you want to rename.
+
+1.  Click the ![open and close list of options](images/kebab.png) icon, and then choose **Rename**.
+
+1.  Edit the name, and then click **Save** to save your changes.
+
 ## Deleting a skill
 {: #skill-add-delete}
 

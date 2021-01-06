@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-01-06"
 
 keywords: slot, slots
 
@@ -576,8 +576,9 @@ Here's a sample of JSON that defines a handler for the pizza example. Note that,
 
 **Important**: Take into account the logic used in conditions that are evaluated before this condition so you can build distinct conditions. When a user input is received, the conditions are evaluated in the following order:
 
-- Current slot level Found conditions.
 - Slot handlers in the order they are listed.
+- First slot condition.
+- Current slot level Found conditions.
 - If digressions away are allowed, root level node conditions are checked for a match (except the final `anything else` node in the dialog tree root or a root folder).
 - Current slot level Not found conditions.
 - Final `anything else` node condition.

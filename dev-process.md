@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-04-24"
+lastupdated: "2021-01-06"
 
 subcollection: assistant
 
@@ -22,7 +22,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Development process
+# Creation workflow
 {: #dev-process}
 
 Use {{site.data.keyword.conversationshort}} to leverage AI as you build, deploy, and incrementally improve a conversational assistant.
@@ -30,7 +30,7 @@ Use {{site.data.keyword.conversationshort}} to leverage AI as you build, deploy,
 
 ![Shows the flow of development steps starting with developing training data and ending with deploying to production](images/dev-process.png)
 
-## Workflow
+## Development process
 {: #dev-process-workflow}
 
 The typical workflow for an assistant project includes the following steps:
