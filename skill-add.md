@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-01-06"
 
 subcollection: assistant
 
@@ -122,7 +122,7 @@ To rename an skill, follow these steps:
 
 1.  Click the ![open and close list of options](images/kebab.png) icon, and then choose **Rename**.
 
-1.  Edit the name, and then click **Save** to save your changes.
+1.  Edit the name, and then click **Save**.
 
 ## Deleting a skill
 {: #skill-add-delete}
