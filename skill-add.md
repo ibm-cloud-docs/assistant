@@ -116,7 +116,7 @@ The number of skills you can create depends on your {{site.data.keyword.conversa
 
 You can change the name of a skill and its associated description after you create the skill.
 
-To rename an skill, follow these steps:
+To rename a skill, follow these steps:
 
 1.  From the Skills page, find the skill that you want to rename.
 
