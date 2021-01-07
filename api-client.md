@@ -48,7 +48,7 @@ If you want to try this example yourself, first you need to set up the required 
 
 To access the {{site.data.keyword.conversationshort}} service REST APIs, your application needs to be able to authenticate with {{site.data.keyword.Bluemix}} and connect to the right assistant. You'll need to copy the service credentials and assistant ID and paste them into your application code. You'll also need the URL for the location of your service instance (for example, `https://api.us-south.assistant.watson.cloud.ibm.com`).
 
-To access the service credentials and the assistant ID from the {{site.data.keyword.conversationshort}} tool, go to the **Assistants** tab and click the ![Menu](images/kebab-react.png) menu for the assistant you want to connect to. Select **Settings** and then navigate to the **API details** page to see the details for the assistant, including the URL, assistant ID, and API key.
+To access the service credentials and the assistant ID from the {{site.data.keyword.conversationshort}} tool, go to the **Assistants** page and click the ![Menu](images/kebab.png) menu for the assistant you want to connect to. Select **Settings** and then navigate to the **API details** page to see the details for the assistant, including the URL, assistant ID, and API key.
 
 ## Communicating with the {{site.data.keyword.conversationshort}} service
 {: #api-client-communicate}
@@ -192,7 +192,7 @@ The first step is to create a the service object, a sort of wrapper for the {{si
 
 You use the service object for sending input to, and receiving output from, the service. When you create the service object, you specify the authentication credentials from the service key, as well as the version of the {{site.data.keyword.conversationshort}} API you are using.
 
-In this Node.js example, the seervice object is an instance of `AssistantV2`, stored in the variable `assistant`. The Watson SDKs for other languages provide equivalent mechanisms for instantiating a service object.
+In this Node.js example, the service object is an instance of `AssistantV2`, stored in the variable `assistant`. The Watson SDKs for other languages provide equivalent mechanisms for instantiating a service object.
 {: javascript}
 
 In this Python example, the service object is an instance of `watson_developer_cloud.AssistantV2`, stored in the variable `assistant`. The Watson SDKs for other languages provide equivalent mechanisms for instantiating a service object.
@@ -458,9 +458,9 @@ Welcome to the Watson Assistant example!
 ```
 {: screen}
 
-The {{site.data.keyword.conversationshort}} service is detecting the correct `#hello` and `#goodbye` intents, and yet every turn of the conversation returns the welcome message from the conversation_start node (`Welcome to the {{site.data.keyword.conversationshort}} example!`).
+The {{site.data.keyword.conversationshort}} service is detecting the correct `#hello` and `#goodbye` intents, and yet every turn of the conversation returns the welcome message from the `conversation_start` node (`Welcome to the {{site.data.keyword.conversationshort}} example!`).
 
-This is happening because we are using the stateless `message` method, which means that it is the responsibility of our client application to maintain state information for the conversation. Because we are not yet doing anything to maintain state, the {{site.data.keyword.conversationshort}} service sees every round of user input as the first turn of a new conversation, triggering the conversation_start node.
+This is happening because we are using the stateless `message` method, which means that it is the responsibility of our client application to maintain state information for the conversation. Because we are not yet doing anything to maintain state, the {{site.data.keyword.conversationshort}} service sees every round of user input as the first turn of a new conversation, triggering the `conversation_start` node.
 
 ## Maintaining state
 
