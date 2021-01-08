@@ -31,7 +31,7 @@ subcollection: assistant
 Learn more about the web chat that you can add to your company website.
 {: shortdesc}
 
-For more information about how to deploy the web chat, see [Integrating the web chat with your website](deploy-web-chat.md).
+For more information about how to deploy the web chat, see [Integrating the web chat with your website](/docs/assistant?topic=assistant-deploy-web-chat).
 
 ## Browser support
 {: #web-chat-basics-browsers}
