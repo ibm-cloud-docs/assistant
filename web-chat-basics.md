@@ -149,5 +149,5 @@ The web chat integration is enabled for [Web Content Accessibility 2.1 Level AA]
 
 To learn more about advanced tasks you can perform with the web chat, read the following topics:
 
-- [Securing the web chat](web-chat-security.md)
-- [Applying advanced customizations](web-chat-config.md)
+- [Securing the web chat](/docs/assistant?topic=assistant-web-chat-security)
+- [Applying advanced customizations](/docs/assistant?topic=assistant-web-chat-config)
