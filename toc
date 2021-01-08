@@ -119,6 +119,12 @@ Watson Assistant (Managed)
             dialog-responses-json.md
 
         {: .topicgroup}
+        Web chat development
+            web-chat-basics.md
+            web-chat-config.md
+            web-chat-security.md
+
+        {: .topicgroup}
         Custom UI development
             api-overview.md
             api-methods.md
