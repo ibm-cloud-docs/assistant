@@ -31,7 +31,7 @@ subcollection: assistant
 Learn more about the web chat that you can add to your company website.
 {: shortdesc}
 
-For more information about how to deploy the web chat, see [Integrating the web chat with your website](deploy-web-chat.md).
+For more information about how to deploy the web chat, see [Integrating the web chat with your website](/docs/assistant?topic=assistant-deploy-web-chat).
 
 ## Browser support
 {: #web-chat-basics-browsers}
@@ -149,5 +149,5 @@ The web chat integration is enabled for [Web Content Accessibility 2.1 Level AA]
 
 To learn more about advanced tasks you can perform with the web chat, read the following topics:
 
-- [Securing the web chat](web-chat-security.md)
-- [Applying advanced customizations](web-chat-config.md)
+- [Securing the web chat](/docs/assistant?topic=assistant-web-chat-security)
+- [Applying advanced customizations](/docs/assistant?topic=assistant-web-chat-config)
