@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-07"
+lastupdated: "2021-01-08"
 
 subcollection: assistant
 
@@ -35,7 +35,7 @@ Configure the web chat to authenticate users and send private data from your emb
 
 All messages that are sent from the web chat are encrypted. When you enable security, your assistant takes an additional step to verify that messages originate from the web chat that is embedded in your website only.
 
-The web chat uses an RSA signature with SHA-256 to encrypt communication. RS256 cryptography is a sophisticated type of RSA encryption. An RSA key pair includes a private and a public key. The RSA private key is used to generate digital signatures, and the RSA public key is used to verify digital signatures. The complexity of the RSA algorithm that is used to scramble the message makes it nearly impossible to unscramble the message without the key.
+The web chat uses an RSA signature with SHA-256 (RS256) to encrypt communication. RS256 signatures use a sophisticated type of RSA encryption. An RSA key pair includes a private and a public key. The RSA private key is used to generate digital signatures, and the RSA public key is used to verify digital signatures. The complexity of the RSA algorithm that is used to scramble the message makes it nearly impossible to unscramble the message without the key.
 
 The following diagram illustrates the requests that are sent back and forth to authenticate a request.
 
@@ -107,7 +107,7 @@ To enable security, complete the following steps:
 
 1.  Add your public key to the **Your public key** field.
     
-    The public key that you add is used to verify that data which claims to come from your web chat instance *is* coming from your web chat instance. 
+    The public key that you add is used to verify that data that claims to come from your web chat instance *is* coming from your web chat instance. 
     
 1.  To prove that a message is coming from your website, each message that is submitted from your web chat implementation must include the JSON Web Token (JWT) that you created earlier.
 
@@ -140,7 +140,7 @@ To enable security, complete the following steps:
     
     The JSON Web Token is automatically included on each subsequent request that is sent from the web chat until it expires.
 
-1.  You can add an event that is triggered when your token expires, or (starting with web chat version 3.2.0) when no token is specified initially. The event has a callback you can use to update the token and process any messages that were added to a queue to wait to be processed while the token was expired.
+1.  You can add an event that is triggered when your token expires, or (starting with web chat version 3.2.0) when no token is specified initially. The event has a callback you can use to update the token and to process any messages that were queued for processing during the time the token was expired.
 
     For example:
 
@@ -273,7 +273,7 @@ If you do not perform a full page reload when a customer logs out, call the `ins
 ## Updating site security policies
 {: #web-chat-security-csp}
 
-If your website uses a `Content-Security-Policy` (CSP), you must update it to grant permission to the web chat.
+If your website uses a Content Security Policy (CSP), you must update it to grant permission to the web chat.
 
 The following table lists the values to add to your CSP.
 
@@ -325,4 +325,4 @@ window.watsonAssistantChatOptions = {
 
 The web chat integration undergoes tests and scans on a regular basis to find and address potential security issues, such as cross-site scripting (XSS) vulnerabilities.
 
-Be sure to run your own security reviews to see how web chat fits in with your current web site structure and policies. Web chat is hosted on your site and can inherit any vulnerabilities that your site has. Only serve content over HTTPS, use a content security policy (CSP), and implement other basic web security precautions.
+Be sure to run your own security reviews to see how the web chat fits in with your current website structure and policies. The web chat is hosted on your site and can inherit any vulnerabilities that your site has. Only serve content over HTTPS, use Content Security Policy (CSP), and implement other basic web security precautions.
