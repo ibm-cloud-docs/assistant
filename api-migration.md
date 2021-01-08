@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-01-07"
 
 subcollection: assistant
 
@@ -44,6 +44,9 @@ All communication with an assistant takes place within the context of a _session
 
 State data persists until you explicitly delete the session, or until the session times out because of inactivity.
 
+If you prefer to manage state yourself, the v2 API also provides a stateless `message` method that functions more like the v1 API. If you use the stateless `message` method, you do not need to explicitly create or delete sessions, and your app is responsible for maintaining context. For more information about the stateless `message` method, see the [API Reference](https://{DomainName}/apidocs/assistant/assistant-v2#messagestateless).
+{: note}
+
 If you have an existing application that uses the v1 API to send user input directly to a workspace, migrating your app to use the v2 API is a straightforward process.
 
 ## Set up an assistant
@@ -67,7 +70,7 @@ The v2 runtime API sends messages to an assistant, which routes the messages to 
 
 After you have created an assistant, you can update your client application to use the v2 runtime API instead of the v1 runtime API.
 
-1. Before sending the first message in a conversation, use the v2 [**Create a session**](https://cloud.ibm.com/apidocs/assistant/assistant-v2#createsession){: external} method to create a session. Save the returned session ID:
+1. Before sending the first message in a conversation, use the v2 [**Create a session**](https://{DomainName}/apidocs/assistant/assistant-v2#createsession){: external} method to create a session. Save the returned session ID:
 
   ```javascript
   service
@@ -97,7 +100,7 @@ After you have created an assistant, you can update your client application to u
   {: codeblock}
   {: java}
 
-1. Use the v2 [**Send user input to assistant**](https://cloud.ibm.com/apidocs/assistant/assistant-v2#message){: external} method to send user input to the assistant. Instead of specifying the workspace ID as you did with the v1 API, you specify the assistant ID and the session ID:
+1. Use the v2 [**Send user input to assistant**](https://{DomainName}/apidocs/assistant/assistant-v2#message){: external} method to send user input to the assistant. Instead of specifying the workspace ID as you did with the v1 API, you specify the assistant ID and the session ID:
 
   ```javascript
   service
@@ -134,7 +137,7 @@ After you have created an assistant, you can update your client application to u
 
   The basic message structure has not changed; in particular, the user input is still sent as `input.text`.
 
-1. After a conversation ends, use the v2 [**Delete session**](https://cloud.ibm.com/apidocs/assistant/assistant-v2#deletesession){: external} method to delete the session.
+1. After a conversation ends, use the v2 [**Delete session**](https://{DomainName}/apidocs/assistant/assistant-v2#deletesession){: external} method to delete the session.
 
   ```javascript
   service
@@ -183,7 +186,7 @@ Your application might need to be updated to handle the v2 runtime response form
 
   However, keep in mind that state data, including conversation context, is now maintained by the assistant, so your application might not need to access the context at all (see [Let the assistant maintain state](#api-migration-state)).
 
-Refer to the v2 [API Reference ](https://cloud.ibm.com/apidocs/assistant/assistant-v2#message){: external} for complete documentation of the v2 response format.
+Refer to the v2 [API Reference ](https://{DomainName}/apidocs/assistant/assistant-v2#message){: external} for complete documentation of the v2 response format.
 
 ## Let the assistant maintain state
 {: #api-migration-state}
