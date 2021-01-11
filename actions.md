@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2020-12-15"
+lastupdated: "2021-01-11"
 
 subcollection: assistant
 
@@ -93,7 +93,9 @@ To create actions, complete the following steps:
 
 1.  If you ask a follow-up question, define the type of data that you want to collect from customers when they reply. Click **Define customer response**.
 
-    Choose one of the supported data types. For more information about the supported types, see [Applying reply constraints](#actions-response-types).
+    Choose one of the supported data types, and then click **Select**. 
+    
+    For more information about the supported types, see [Applying reply constraints](#actions-response-types).
 
     When the customer makes a choice or submits a value, the assistant automatically checks whether the type of data that is submittted is valid. 
     
