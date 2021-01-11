@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-11"
 
 subcollection: assistant
 
@@ -32,7 +32,7 @@ Tailor the web chat to match your website and brand, and to behave in ways that 
 {: shortdesc}
 
 ## API overview
-{ #web-chat-config-api}
+{: #web-chat-config-api}
 
 The following APIs are available:
 

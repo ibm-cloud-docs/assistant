@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-11-24"
+lastupdated: "2021-01-11"
 
 keywords: integration settings
 
@@ -111,7 +111,7 @@ The rich response types often behave differently when they are displayed in diff
 ## Web chat: Accessing sensitive data
 {: #dialog-integrations-chat-private}
 
-If you enable security for the web chat, you can configure your web chat implementation to send encrypted data to the dialog. Payload data that is sent from web chat is stored in a private context variable named `context.integrations.chat.private.user_payload`. No private variables are sent from the dialog to any integrations. For more information about how to pass data, see [Passing sensitive data](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-security-encrypt).
+If you enable security for the web chat, you can configure your web chat implementation to send encrypted data to the dialog. Payload data that is sent from web chat is stored in a private context variable named `context.integrations.chat.private.user_payload`. No private variables are sent from the dialog to any integrations. For more information about how to pass data, see [Passing sensitive data](/docs/assistant?topic=assistant-web-chat-security#web-chat-security-encrypt).
 
 To access the payload data, you can reference the `context.integrations.chat.private.user_payload` object from the dialog node condition. 
 
@@ -164,7 +164,7 @@ For more information about implementing chat transfers, see [Adding a *Connect t
 ## Web chat: Reusing the JWT for webhook authentication
 {: #dialog-integrations-chat-jwt}
 
-You can use the same JSON Web Token (JWT) that was used to secure your web chat to authenticate webhook calls. If you specify a token in the `identityToken` property when you add the web chat to your web page, the token is stored in a private variable named `context.integrations.chat.private.jwt`. For more information about passing a JWT, see [Enable security](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-security-task).
+You can use the same JSON Web Token (JWT) that was used to secure your web chat to authenticate webhook calls. If you specify a token in the `identityToken` property when you add the web chat to your web page, the token is stored in a private variable named `context.integrations.chat.private.jwt`. For more information about passing a JWT, see [Enable security](/docs/assistant?topic=assistant-web-chat-security#web-chat-security-task).
 
 1.  From your dialog skill, open the **Options>Webhooks** page.
 1.  Click **Add authentication**. 
