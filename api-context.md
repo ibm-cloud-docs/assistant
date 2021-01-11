@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-08-20"
+lastupdated: "2021-01-11"
 
 subcollection: assistant
 
@@ -166,7 +166,7 @@ MessageContextGlobal globalContext = new MessageContextGlobal.Builder()
   
 // build user-defined context variables, put in skill-specific context for main skill
 Map<String, Object> userDefinedContext = new HashMap<>();
-userDefinedContext.put("account_num","123456");
+userDefinedContext.put("account_number","123456");
 MessageContextSkill mainSkillContext = new MessageContextSkill.Builder()
   .userDefined(userDefinedContext)
   .build();
