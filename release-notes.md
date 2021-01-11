@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-06"
+lastupdated: "2021-01-08"
 
 subcollection: assistant
 
@@ -253,6 +253,8 @@ The following features are available in service instances hosted in all data cen
 - **Support ended for @sys-location and @sys-person**: The person and location system entities, which were available as a beta feature in English dialog skills only, are no longer supported. You cannot enable them. If your dialog uses them, they are ignored by the service. 
 
   Use contextual entities to teach your skill to recognize the context in which such names are used. For more information about contextual entities, see [Annotation-based method](/docs/assistant?topic=assistant-entities#entities-annotations-overview).
+
+  For more information about how to use contextual entites to identify names of people, see the [Detecting Names And Locations With Watson Assistant](https://medium.com/ibm-watson/detecting-names-and-locations-with-watson-assistant-e3e1fa2a8427){: external} blog post on Medium.
 
 - **How legacy numeric system entities are processed has changed**: All new dialog skills use the new system entities automatically. 
 

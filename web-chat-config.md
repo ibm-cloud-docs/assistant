@@ -31,9 +31,16 @@ subcollection: assistant
 Tailor the web chat to match your website and brand, and to behave in ways that meet your business needs.
 {: shortdesc}
 
-When the embedded web chat widget starts, a configuration object is used to define the widget. By editing the configuration object, you can customize the appearance and behavior of the web chat before it is rendered. The API provides instance methods that you can call to perform tasks before a conversation between the assistant and your customer begins or after it ends. The API also defines a set of events that your website can listen for and then take custom actions.
+## API overview
+{ #web-chat-config-api}
 
-A developer can use the API to customize the web chat in the following ways:
+The following APIs are available:
+
+- **Configuration object**: When the embedded web chat widget starts, a configuration object named `watsonAssistantChatOptions` is used to define the widget. By editing the configuration object, you can customize the appearance and behavior of the web chat before it is rendered.
+- **Runtime methods**: Use the instance methods to perform tasks before a conversation between the assistant and your customer begins or after it ends.
+- **Events**: Your website can listen for these events, and then take custom actions.
+
+A developer can use these APIs to customize the web chat in the following ways:
 
 - [Change how the web chat opens and closes](#web-chat-config-open-close)
 - [Change the conversation](#web-chat-config-convo)
@@ -73,7 +80,7 @@ You can make simple changes to the color of things like the text font and web ch
 The web chat is embedded directly on your page, not inside an iframe. Therefore, the cascading style sheet (CSS) rules for your website can sometimes override the web chat CSS rules. The web chat applies aggressive CSS resets, but the resets can be affected if your website uses the `!important` property in elements where style is defined.
 {: note}
 
-## Passing values
+### Passing values
 {: #web-chat-config-context}
 
 Here are some common tasks you might want to perform:
@@ -83,7 +90,7 @@ Here are some common tasks you might want to perform:
 
 For a tutorial that describes how to set context values from the web chat, see [Setting context](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=tutorials-setting-context){: external}.
 
-### Setting and passing context variable values
+#### Setting and passing context variable values
 {: #web-chat-config-set-context}
 
 A context variable is a variable that you can use to pass information to your assistant before a conversation starts. It can also collect information during a conversation, and reference it later in the same conversation. For example, you might want to ask for the customer's name and then address the person by name later on.
@@ -127,7 +134,7 @@ If you enable security, you can encrypt the data that you pass to your dialog. F
 If you're using a Lite plan, remember that a session ends if there's no interaction with the user after 5 minutes. When the session ends, any contextual information that you pass or collect is reset. 
 {: important} 
 
-### Adding user identity information
+#### Adding user identity information
 {: #web-chat-config-userid}
 
 If you do not enable security, and you want to perform tasks where you need to know the user who submitted the input, then you must pass the user ID to the web chat integration.

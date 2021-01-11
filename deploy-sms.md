@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2020-12-14"
+lastupdated: "2021-01-08"
 
 subcollection: assistant
 
@@ -74,8 +74,6 @@ To set up the integration, complete the following steps:
 
     The phone number must be unique per phone integration. If you use Twilio as the SIP trunk provider, you can use the same phone number for your phone and text messaging integrations.
 
-    If you get a *Forbidden* message, it means the phone number cannot be verified. Make sure the number fully matches the SMS phone number.
-
 1.  Scroll to the *Setup instructions* section, and then copy the value from the **Webhook URI (uniform resource identifier)** field.
 
 1.  Go to your Twilio account web page. From the *All Products and Services* menu, click *Phone Numbers*. 
@@ -121,3 +119,10 @@ For the best customer experience, design your dialog with the capabilities of th
 If you want to use the same dialog for an assistant that you deploy to many different platforms, add custom responses per integration type. You can add a conditioned response that tells the assistant to show the response only when the SMS with Twilio integration is being used. For more information, see [Building integration-specific responses](/docs/assistant?topic=assistant-dialog-integrations#dialog-integrations-condition-by-type).
 
 For reference documentation, see [Handling SMS with Twilio interactions](/docs/assistant?topic=assistant-dialog-sms-actions).
+
+## Troubleshooting
+{: #deploy-sms-troubleshoot}
+
+Find solutions to problems that you might encounter while using the integration.
+
+- If you get a *Forbidden* message, it means the phone number that you specified when you configured the integration cannot be verified. Make sure the number fully matches the SMS phone number.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-12-01"
+lastupdated: "2021-01-08"
 
 subcollection: assistant
 
@@ -192,18 +192,6 @@ For the input `at 6 pm` @sys-time returns these values:
 For information about processing date and time values, see the [Date and time method reference](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-date-time).
 {: tip}
 
-## @sys-location entity  ![Beta feature](images/beta.png)
-{: #legacy-system-entities-sys-location}
-
-The @sys-location system entity extracted place names (country, state or province, city, town, and so on) from the user's input.
-
-Support for this system entity was removed on 15 July 2020. The new system entities feature does not include an entity that recognizes location names.
-{: deprecated}
-
-A powerful alternative to using the `@sys-location` system entity is to use a contextual entity for identifying proper nouns, such as locations. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/assistant?topic=assistant-entities#entities-annotations-overview).
-
-For more information about how to use contextual entites to identify locations, see the [Detecting Names And Locations With Watson Assistant](https://medium.com/ibm-watson/detecting-names-and-locations-with-watson-assistant-e3e1fa2a8427) blog post on Medium.
-
 ## @sys-number entity
 {: #legacy-system-entities-sys-number}
 
@@ -312,15 +300,3 @@ You get equivalent results for other supported languages.
 - If you use the @sys-percentage entity as a node condition and the user specifies `0%` as the value, the value is recognized as a percentage properly, but the condition is evaluated to the number zero not the percentage 0%. As a result, the `null` in the condition is evaluated to false and the node is not processed. To check for percentages in a way that handles zero percentages properly, use the expression `@sys-percentage OR @sys-percentage == 0` in the node condition instead.
 
 - If you input a value like `1-2%`, the values `1%` and `2%` are returned as system entities.
-
-## @sys-person entity ![Beta feature](images/beta.png)
-{: #legacy-system-entities-sys-person}
-
-The @sys-person system entity extracted names from the user's input. 
-
-Support for this system entity was removed on 15 July 2020. The new system entities feature does not include an entity that recognizes people's names.
-{: deprecated}
-
-A powerful alternative to using the `@sys-person` system entity is to use a contextual entity for identifying proper nouns, such as names. For more information, see [Annotation-based method](https://cloud.ibm.com/docs/assistant?topic=assistant-entities#entities-annotations-overview).
-
-For more information about how to use contextual entites to identify names of people, see the [Detecting Names And Locations With Watson Assistant](https://medium.com/ibm-watson/detecting-names-and-locations-with-watson-assistant-e3e1fa2a8427){: external} blog post on Medium.
