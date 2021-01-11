@@ -157,7 +157,7 @@ For example, in one node you might ask users for their name, and in a later node
 
 ![Shows an introductions node that asks the user for their name, and stores it as a context variable. The next node refers to the user by name by using the $username context variable.](images/set-context-username.png)
 
-In this example, the system entity @sys-person is used to extract the user's name from the input if the user provides one. In the JSON editor, the username context variable is defined and set to the @sys-person value. In a subsequent node, the $username context variable is included in the response to address the user by name.
+In this example, the system entity @name is used to extract the user's name from the input if the user provides one. In the JSON editor, the username context variable is defined and set to the @name value. In a subsequent node, the $username context variable is included in the response to address the user by name.
 
 ### Defining a context variable
 {: #dialog-runtime-context-var-define}
