@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-01-14"
 
 subcollection: assistant
 
@@ -231,6 +231,13 @@ You cannot enable SIP authentication if you choose Twilio as your SIP trunk prov
 {: #deploy-phone-request-setup}
 
 You can ask for help setting up an account with another SIP trunk provider by opening a support request.
+
+IBM has established relationships with the following SIP trunk providers:
+
+- [Five9](https://www.five9.com/connect/voip-call-center-solution)
+- [Genesys](https://www.genesys.com/en-sg/definitions/what-is-a-trunk)
+- [Vonage](https://www.vonage.com/communications-apis/sip-trunking/)
+- [Voximplant](https://voximplant.com/)
 
 The SIP trunk provider sets up a SIP trunk for your voice traffic, and manages access from allowed IP addresses. Most of the major SIP trunk providers have existing relationships with IBM. Therefore, the network configuration that is required to support the SIP trunk connection typically can be handled for you with minimal effort.
 
