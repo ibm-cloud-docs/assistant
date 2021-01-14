@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-07"
+lastupdated: "2021-01-14"
 
 subcollection: assistant
 
@@ -64,7 +64,7 @@ To request a client action from a dialog node, complete the following steps:
 
 1.  In the dialog node from which you want to request the client action, open the JSON editor for the node response.
 
-  ![Shows how to access the JSON editor associated with a standard noderesponse.](images/contextvar-json-response.png
+  ![Shows how to access the JSON editor associated with a standard noderesponse.](images/contextvar-json-response.png)
 
 1.  Use the following syntax to define the client action you want to request.
 
