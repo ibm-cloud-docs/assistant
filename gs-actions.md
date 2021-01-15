@@ -89,7 +89,7 @@ In the step you add, you'll define the greeting that your assistant will return 
 
 1.  Click **Save**.
 
-Congratulations! You created a simple turn in a conversation. Now. let's see if it works.
+Congratulations! You created a simple turn in a conversation. Now, let's see if it works.
 
 ## Test the action
 {: #gs-actions-test-say-hello}
