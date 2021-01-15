@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-11"
 
 subcollection: assistant
 
@@ -68,18 +68,6 @@ To set up the integration, complete the following steps:
 
 1.  Click **Create**.
 
-1.  Add the messaging phone number that you created previously to the **Phone number** field.
-
-    Specify the number by using the international phone number format: `+1 958 555 0123`. Do *not* include parentheses (`(958)`).
-
-    The phone number must be unique per phone integration. If you use Twilio as the SIP trunk provider, you can use the same phone number for your phone and text messaging integrations.
-
-1.  Scroll to the *Setup instructions* section, and then copy the value from the **Webhook URI (uniform resource identifier)** field.
-
-1.  Go to your Twilio account web page. From the *All Products and Services* menu, click *Phone Numbers*. 
-
-1.  From the *Active Numbers* page, click your phone number. Scroll to the *Messaging* section, and then find the *Webhook* field that defines what to do when *a message comes in*. Paste the value that you copied from the *Webhook URI* field into it.
-
 1.  From the Twilio site, click the home icon to go to your project dashboard. 
 
     Copy the following values and store them temporarily, so you can paste them into the phone integration setup page in the next step.
@@ -93,6 +81,14 @@ To set up the integration, complete the following steps:
 
     - **Account SID**
     - **Auth token**
+
+1.  Scroll to the *Setup instructions* section, and then copy the value from the **Webhook URI (uniform resource identifier)** field.
+
+1.  Go to your Twilio account web page. From the *All Products and Services* menu, click *Phone Numbers*. 
+
+1.  From the *Active Numbers* page, click your phone number. Scroll to the *Messaging* section, and then find the *Webhook* field that defines what to do when *a message comes in*. 
+
+    Paste the value that you copied from the *Webhook URI* field into it.
 
 1.  Click **Save and exit**.
 
