@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-04"
+lastupdated: "2021-01-14"
 
 subcollection: assistant
 
@@ -1415,7 +1415,7 @@ For information about system entities that can recognize and extract numbers fro
 
 If you want the service to recognize specific number formats in user input, such as order number references, consider creating a pattern entity to capture it. See [Creating entities](/docs/assistant?topic=assistant-entities) for more details.
 
-If you want to change the decimal placement for a number, to reformat a number as a currency value, for example, see the [String format() method](#java.lang.String).
+If you want to change the decimal placement for a number, to reformat a number as a currency value, for example, see the [String format() method](#dialog-methods-strings-java-lang-String-format).
 
 ### toDouble()
 {: #dialog-methods-numbers-toDouble}

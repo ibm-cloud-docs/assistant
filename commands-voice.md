@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-04"
+lastupdated: "2021-01-11"
 
 subcollection: assistant
 
@@ -106,7 +106,7 @@ Table 2 describes the context variables that are set from your dialog. Table 3 d
 | `vgwHangupReason` | String | When a hangup is initiated either by the caller or because of an error, this variable is sent to {{site.data.keyword.conversationshort}} to indicate why the call was disconnected. The text in the message request that is sent to {{site.data.keyword.conversationshort}} also includes "vgwHangUp". |
 | `vgwIsOutboundCall` | `Yes` or `No` | Indicates whether the call is an outbound call. |
 | `vgwIsDTMF` | `Yes` or `No` | Indicates whether the input to {{site.data.keyword.conversationshort}} is dual-tone multi-frequency signaling (DTMF). |
-| `vgwNetworkWarnings` | JSON array | An array of network warnings that occurred during the {{site.data.keyword.conversationshort}} turn. To send network warnings, RTCP must be enabled. CHECK |
+| `vgwNetworkWarnings` | JSON array | An array of network warnings that occurred during the {{site.data.keyword.conversationshort}} turn. To send network warnings, RTCP must be enabled. |
 | `vgwReceivedOnChannel` | `SMS` | If an utterance is received over the SMS channel, this variable presents and is set to `SMS`. |
 | `vgwSessionID` | User-defined value | A custom session ID header pulled from the SIP `INVITE` request. The value represents the global session ID that is used in all the phone integration audit logs related to the session. |
 | `vgwSIPCallID` | SIP Call-ID | The SIP call ID associated with the conversation session. |
@@ -119,7 +119,7 @@ Table 2 describes the context variables that are set from your dialog. Table 3 d
 | `vgwSMSMessage` | String | The SMS message received from the caller. |
 | `vgwSMSMedia` | JSON array | The MMS message received from the caller.<br/><br/><code>{<br/>&nbsp;&nbsp;"vgwSMSMedia ": [<br/>&nbsp;&nbsp;&nbsp;&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mediaURL": "`https://api.example.com/2015-01-01/Accounts/AC0123456789abcdef9876543210fedcba/Messages/`<br/>MM4a2645684e43ea4bc4a0f3cba7763c61/Media/MEd84f995dfafb30b0e9e5739622dec4ad",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mediaContentType": "image/jpeg"<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;]<br/>}</code> |
 | `vgwSMSUserPhoneNumber` | String | The phone number that the SMS message was received from. |
-| `vgwSTTProvider` | String | The name of the provider that is used for the call. The context variable is set if the provider name is configured. CHECK |
+| `vgwSTTProvider` | String | The name of the provider that is used for the call. The context variable is set if the provider name is configured. |
 | `vgwSTTResponse` | JSON object | The final response from the {{site.data.keyword.speechtotextshort}} service in JSON format, including the transcript and confidence score for the top hypothesis and any alternatives.<p>The format matches exactly the format that is received from the {{site.data.keyword.speechtotextshort}} service:</p><p><code>{<br/>&nbsp;&nbsp;"result_index": 0,<br/>&nbsp;&nbsp;"warnings": [<br/>&nbsp;&nbsp;&nbsp;&nbsp;"Unknown arguments: continuous."<br/>&nbsp;&nbsp;],<br/>&nbsp;&nbsp;"results": [<br/>&nbsp;&nbsp;&nbsp;&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"final": true,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"alternatives": [<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"transcript": "Hello world",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"confidence": 0.758<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"transcript": "Hello wooled",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"confidence": 0.358<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;]<br/>}.</code></p> |
 | `vgwTransferReason` | String | Indicates the reason why a call was transferred. |
 | `vgwTTSProvider` | String | The name of the provider that is used for the call. The context variable is set if the provider name is configured. |
