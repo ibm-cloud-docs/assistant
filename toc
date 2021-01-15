@@ -5,7 +5,12 @@
 Watson Assistant (Managed)
 
     {: .navgroup id="learn"}
-    getting-started.md
+    {: .topicgroup}
+    Getting started
+        getting-started.md
+        gs-dialog.md
+        gs-actions.md
+
     index.md
     tool-overview.md
     [Demo: Banking Assistant](https://watson-conversation-duo-dev.ng.bluemix.net/)
