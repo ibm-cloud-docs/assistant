@@ -6,7 +6,7 @@ Watson Assistant (Managed)
 
     {: .navgroup id="learn"}
     {: .topicgroup}
-    Getting started
+    Getting started tutorial
         getting-started.md
         gs-dialog.md
         gs-actions.md
