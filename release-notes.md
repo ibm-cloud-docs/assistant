@@ -65,7 +65,7 @@ The change log lists changes that were made this year ordered by the date they w
 {: #15January2021}
 <!--1.131-->
 
-- **Webhooks were added that can run on each message**: A set of new webhooks are available that you can use to perform preprocessing tasks on incoming messages and postprocessing tasks on the corresponding responses. Premium users can also use the new log webhook to log each message with an external service. For more information, see [Webhook overview](/docs/assistant?topic=assistant-webhook-overview).
+- **Use new webhooks to process messages!**: A set of new webhooks are available that you can use to perform preprocessing tasks on incoming messages and postprocessing tasks on the corresponding responses. Premium users can also use the new log webhook to log each message with an external service. For more information, see [Webhook overview](/docs/assistant?topic=assistant-webhook-overview).
 
 - **New service desk support reference implementation**: You can use the reference implementation details to integrate the web chat with the NICE inContact service desk. For more information, see [Adding service desk support](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-haa).
 

@@ -44,7 +44,7 @@ The log webhook works with the following v2 APIs only:
 
 The log webhook does not return anything to your assistant. You can use the log webhook method as an alternative to the built-in analytics feature to handle logging yourself. For more information about the built-in analytics support, see [Metrics overview](/docs/assistant?topic=assistant-logs-overview).
 
-![Plus or Premium plan only](images/plus.png) For environments where private endpoints are in use, keep in mind that a webhook sends traffic over the internet. For more information, see [Private network endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints).
+For environments where private endpoints are in use, keep in mind that a webhook sends traffic over the internet. For more information, see [Private network endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints).
 {: note}
 
 ## Defining the webhook
