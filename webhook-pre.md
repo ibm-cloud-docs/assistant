@@ -89,7 +89,7 @@ To add the webhook details, complete the following steps:
 
 1.  In the **URL** field, add the URL for the external application to which you want to send HTTP POST request callouts.
 
-    For example, you might write a Cloud Function web action that checks whether a message is in a language other than English, and if so, send it to the Language Translator service to covert it to English. Specify the URL for your web action.
+    For example, you might write a Cloud Functions web action that checks whether a message is in a language other than English, and if so, send it to the Language Translator service to covert it to English. Specify the URL for your web action.
 
     ```bash
     https://us-south.functions.cloud.ibm.com/api/v1/web/my_org_dev/default/translateToEnglish.json
@@ -169,5 +169,5 @@ If you decide you do not want to preprocess customer input, complete the followi
 
 1.  Do one of the following things:
 
-    - To change the webhook that you want to call, click **Delete webhook** to delete the currently-specified URL and secret. You can then add a new URL and other details.
+    - To change the webhook that you want to call, click **Delete webhook** to delete the currently specified URL and secret. You can then add a new URL and other details.
     - To stop calling a webhook to process every incoming message, click the *Pre-message webhook* switch to disable the webhook altogether.

@@ -115,5 +115,5 @@ If you decide you do not want to log messages programmatically, complete the fol
 
 1.  Do one of the following things:
 
-    - To change the webhook that you want to call, click **Delete webhook** to delete the currently-specified URL and secret. You can then add a new URL and other details.
+    - To change the webhook that you want to call, click **Delete webhook** to delete the currently specified URL and secret. You can then add a new URL and other details.
     - To stop calling a webhook to log every message and response, click the *Log webhook* switch to disable the webhook altogether.

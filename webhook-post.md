@@ -217,5 +217,5 @@ If you decide you do not want to process message responses, complete the followi
 
 1.  Do one of the following things:
 
-    - To change the webhook that you want to call, click **Delete webhook** to delete the currently-specified URL and secret. You can then add a new URL and other details.
+    - To change the webhook that you want to call, click **Delete webhook** to delete the currently specified URL and secret. You can then add a new URL and other details.
     - To stop calling a webhook to process every message response, click the *Post-message webhook* switch to disable the webhook altogether.
