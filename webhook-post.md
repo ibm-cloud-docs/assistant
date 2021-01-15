@@ -37,14 +37,11 @@ The postmessage webhook works with the v2 `/message` API only (stateless and sta
 
 You can use a postmessage webhook to do the following types of things:
 
-- When a skill's response contains an ID with a certain format, pass the ID to an external database to retrieve a stored response.
+- When a skill's response contains a custom ID instead of text, pass the ID to an external database to retrieve a stored text response.
 
-You can use this webhook in coordination with the premessage webhook. For example, you might use the postmessage to add back personally identifiable information that was stripped from the customer's input by the premessage webhook. Or you might use the premessage webhook to translate the customer's input to the language of the skill, and use the postmessage webhook to translate the response back into the customer's native language before is is returned. For more information, see [Making a call before processing a message](/docs/assistant?topic=assistant-webhook-pre).
+You can use this webhook in coordination with the premessage webhook. For example, if you used the premessage webhook to strip personally identifiable information from the customer's input, you can use the postmessage webhook to add it back. Or if you use the premessage webhook to translate the customer's input to the language of the skill, you can use the postmessage webhook to translate the response back into the customer's native language before is is returned. For more information, see [Making a call before processing a message](/docs/assistant?topic=assistant-webhook-pre).
 
 If you want to perform a one-time action when certain conditions are met during a conversation, use a dialog webhook instead. For more information about the dialog webhook, see [Making a programmatic call from dialog](/docs/assistant?topic=assistant-dialog-webhooks).
-
-You cannot use a webhook to call a {{site.data.keyword.openwhisk_short}} action that uses token-based Identity and Access Management (IAM) authentication. However, you can make a call to a secured {{site.data.keyword.openwhisk_short}} web action.
-{: important}
 
 ![Plus or Premium plan only](images/plus.png) For environments where private endpoints are in use, keep in mind that a webhook sends traffic over the internet. For more information, see [Private network endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints).
 {: note}
@@ -59,11 +56,11 @@ The programmatic call to the external service must meet these requirements:
 - The call must be a POST HTTP request.
 - The format of the request and response must be in JSON. For example: `Content-Type: application/json`.
 
-Use an external service that can execute and return a result in less than 8 seconds. Otherwise, the customer will experience a lag in the conversational exchange.
-{: tip}
-
 Do not set up and test your webhook in a production environment where the assistant is deployed and is interacting with customers.
 {: important}
+
+Use an external service that can execute and return a result in less than 8 seconds. Otherwise, the customer will experience a lag in the conversational exchange.
+{: tip}
 
 To add the webhook details, complete the following steps:
 
@@ -96,6 +93,9 @@ To add the webhook details, complete the following steps:
     {: codeblock}
 
     You must specify a URL that uses the SSL protocol, so specify a URL that begins with `https`.
+
+    You cannot use a webhook to call a {{site.data.keyword.openwhisk_short}} action that uses token-based Identity and Access Management (IAM) authentication. However, you can make a call to a secured {{site.data.keyword.openwhisk_short}} web action.
+    {: important}
 
 1.  In the **Secret** field, add a private key to pass with the request that can be used to authenticate with the external service.
 
