@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-14"
+lastupdated: "2021-01-15"
 
 subcollection: assistant
 
@@ -51,24 +51,31 @@ To set up the integration, complete the following steps:
 
 1. Click **Create**.
 
-1. Scroll to the *SIP Trunking configuration* section, and then copy the value from the **SIP uniform resource identifier (URI)** field. 
-
-    You will provide this value to your SIP trunk provider when you configure the trunk in the next step. 
-
-1. If you don't have a SIP trunk configured, [work with a SIP trunk provider](#deploy-phone-sip-providers) to set up a SIP trunk now.
+1. If you don't have a SIP trunk configured, [work with a SIP trunk provider](#deploy-phone-sip-providers) to set up a SIP trunk now. Otherwise, skip this step. 
 
     A SIP trunk is equivalent to an analog telephone line, except it uses Voice over Internet Protocol (VoIP) to transmit voice data and can support multiple concurrent calls. The trunk can connect to the public switched telephone network (PSTN) or your company's on-premises private branch exchange (PBX).
 
-    - You will need to provide the SIP URI for your assistant during the SIP trunk setup process.
-    - Create a phone number through your SIP provider, and then assign it to your SIP trunk.
+    - Scroll to the *SIP Trunking configuration* section, and then copy the value from the **SIP uniform resource identifier (URI)** field. 
 
-1. On the phone integration setup page, add the phone number that you created through your SIP trunk provider in the previous step to the **Phone number** field.
-
-     Specify the number by using the international phone number format: `+1 958 555 0123`. Do *not* surround the area code with parentheses, such as (958).
+      You will need to provide the SIP URI for your assistant during the SIP trunk setup process.
     
-     The phone number must be unique per phone integration. If you use Twilio as the SIP trunk provider, you can use the same phone number for the phone and text messaging integrations.
+    - Create a phone number through your SIP provider, and then assign it to your SIP trunk. 
 
-     If you get a *Forbidden* message, it means the phone number cannot be verified. Make sure the number fully matches the SIP trunk phone number.
+1.  In the *Phone number* section of the phone integration setup page, add one or more phone numbers.
+
+    You might have only the one phone that you created through your SIP trunk provider in the previous step, or you might have a set of numbers.
+
+    Click **Manage**.
+
+    - To add phone numbers one by one, click the *add phone number* icon (![Add phone number][images/phone-integ-add-number.png]), and then specify the phone number and an optional description.
+
+      Specify the number by using the international phone number format: `+1 958 555 0123`. Do *not* surround the area code with parentheses, such as (958).
+
+    - To import a set of phone numbers that are stored in a comma separated value (CSV) file, click the *import CSV file* icon (![Add phone number][images/phone-integ-import-number.png]), and then find the CSV file that contains the list of phone numbers.
+
+     The phone numbers must be unique per phone integration. If you use Twilio as the SIP trunk provider, you can use the same phone number for the phone and text messaging integrations.
+
+     Click **Save**.
 
 1. Review the speech services that will be used by the phone integration.
 
@@ -288,6 +295,13 @@ The number of concurrent calls that your assistant can participate in at one tim
 
 ## Troubleshooting the phone integration
 {: #deploy-phone-troubleshooting}
+
+Find solutions to problems that you might encounter while using the integration.
+
+- If you get a *Forbidden* message, it means the phone number that you specified when you configured the integration cannot be verified. Make sure the number fully matches the SIP trunk phone number.
+
+### Viewing logs
+{: #deploy-phone-logs}
 
 The log events that occur in the components that are used by the phone integration are written to IBM Log Analysis with LogDNA. To check the logs, create an instance and configure the platform logs to observe the region where your service instance is hosted.
 

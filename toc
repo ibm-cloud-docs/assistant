@@ -113,7 +113,11 @@ Watson Assistant (Managed)
 
         {: .topicgroup}
         Using webhooks
+            webhook-overview.md
             dialog-webhooks.md
+            webhook-pre.md
+            webhook-post.md
+            webhook-log.md
 
         {: .topicgroup}
         Dialog skill development
