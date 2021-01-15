@@ -215,7 +215,7 @@ When you use the `sys-number` system entity in a slot condition, it does not dea
 
 1.  Now, you will change the context variable that is stored for the number. 
 
-    The slot condition is used both 1. to check the user input for a number value, and 2. to store that number in a context variable. Now that you have edited the condition in the **Check for** field, you will find mentions of the number zero.
+    The slot condition is used both to check the user input for a number value, and to store that number in a context variable. Now that you have edited the condition in the **Check for** field, you will find mentions of the number zero.
     
     However, you want to save only the number, and store it in the context variable. Therefore, open the slot to edit it by clicking the **Edit slot** ![Edit slot](images/edit-slot.png) icon. From the **Options** ![More icon](images/kebab.png) menu, open the JSON editor.
 
