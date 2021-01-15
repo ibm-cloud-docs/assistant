@@ -73,11 +73,15 @@ To add the webhook details, complete the following steps:
 
 1.  In the **Secret** field, add a token to pass with the request that can be used to authenticate with the external service.
 
-    The secret must be specified as a text string, such as `purpleunicorn`. It cannot be a context variable.
+    The secret must be specified as a text string, such as `purple unicorn`.  Maximum length is 1,024 characters. You cannot specify a context variable.
 
     It is the responsibility of the external service to check for and verify the secret. If the external service does not require a secret, you can leave this field empty.
 
+    It is the responsibility of the external service to check for and verify the secret. If the external service does not require a token, specify any string you want. You cannot leave this field empty.
+
 1.  In the Headers section, add any headers that you want to pass to the service one at a time by clicking **Add header**.
+
+    The service automatically sends an `Authorization` header with a JWT; you do not need to add one.
 
 Your webhook details are saved automatically.
 
@@ -86,11 +90,17 @@ Your webhook details are saved automatically.
 
 To authenticate the webhook request, verify the JSON Web Token (JWT) that is sent with the request. The webhook microservice automatically generates a JWT and sends it in the `Authorization` header with each webhook call. It is your responsibility to add code to the external service that verifies the JWT.
 
-For example, if you specify `purpleunicorn` in the **Secret** field, you might add code similar to this:
+For example, if you specify `purple unicorn` in the **Secret** field, you might add code similar to this:
 
 ```javascript
-token = request.headers.authentication
-jwt.verify(token, 'purpleunicorn')
+const jwt = require('jsonwebtoken');
+...
+const token = request.headers.authentication; // grab the "Authentication" header
+try {
+  const decoded = jwt.verify(token, 'purple unicorn');
+} catch(err) {
+  // error thrown if token is invalid
+}
 ```
 {: codeblock}
 
@@ -103,4 +113,7 @@ If you decide you do not want to log messages programmatically, complete the fol
 
 1.  Click **Webhooks > Log webhook**.
 
-1.  Set the *Log webhook* switch to **Disabled**.
+1.  Do one of the following things:
+
+    - To change the webhook that you want to call, click **Delete webhook** to delete the currently-specified URL and secret. You can then add a new URL and other details.
+    - To stop calling a webhook to log every message and response, click the *Log webhook* switch to disable the webhook altogether.

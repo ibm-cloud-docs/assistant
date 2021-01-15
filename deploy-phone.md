@@ -63,7 +63,7 @@ To set up the integration, complete the following steps:
 
 1.  In the *Phone number* section of the phone integration setup page, add one or more phone numbers.
 
-    You might have only the one phone that you created through your SIP trunk provider in the previous step, or you might have a set of numbers.
+    You might have only the one phone number that you created through your SIP trunk provider in the previous step, or you might have a set of numbers.
 
     Click **Manage**.
 
@@ -71,7 +71,7 @@ To set up the integration, complete the following steps:
 
       Specify the number by using the international phone number format: `+1 958 555 0123`. Do *not* surround the area code with parentheses, such as (958).
 
-    - To import a set of phone numbers that are stored in a comma separated value (CSV) file, click the *import CSV file* icon (![Add phone number][images/phone-integ-import-number.png]), and then find the CSV file that contains the list of phone numbers.
+    - To import a set of phone numbers that are stored in a comma-separated values (CSV) file, click the *import CSV file* icon (![Add phone number][images/phone-integ-import-number.png]), and then find the CSV file that contains the list of phone numbers.
 
      The phone numbers must be unique per phone integration. If you use Twilio as the SIP trunk provider, you can use the same phone number for the phone and text messaging integrations.
 

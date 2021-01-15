@@ -69,7 +69,7 @@ The change log lists changes that were made this year ordered by the date they w
 
 - **New service desk support reference implementation**: You can use the reference implementation details to integrate the web chat with the NICE inContact service desk. For more information, see [Adding service desk support](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-haa).
 
-- **Phone and *SMS with Twilio* integration updates**: The phone integration now enables you to specify more than one phone number, and the numbers can be imported from a comma separated value (CSV) file. The *SMS with Twilio* integration no longer requires you to add your SMS phone number to the setup page.
+- **Phone and *SMS with Twilio* integration updates**: The phone integration now enables you to specify more than one phone number, and the numbers can be imported from a comma-separated values (CSV) file. The *SMS with Twilio* integration no longer requires you to add your SMS phone number to the setup page.
 
 ## 6 January 2021
 {: #6January2021}
