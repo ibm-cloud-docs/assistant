@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-01-15"
 
 subcollection: assistant
 content-type: tutorial
@@ -213,7 +213,11 @@ When you use the `sys-number` system entity in a slot condition, it does not dea
 
 1.  To ensure that the slot treats zeros properly, change the slot condition from `@sys-number` to `@sys-number >= 0`.
 
-1.  Open the slot to edit it by clicking the **Edit slot** ![Edit slot](images/edit-slot.png) icon. From the **Options** ![More icon](images/kebab.png) menu, open the JSON editor.
+1.  Now, you will change the context variable that is stored for the number. 
+
+    The slot condition is used both to check the user input for a number value, and to store that number in a context variable. Now that you have edited the condition in the **Check for** field, you will find mentions of the number zero.
+    
+    However, you want to save only the number, and store it in the context variable. Therefore, open the slot to edit it by clicking the **Edit slot** ![Edit slot](images/edit-slot.png) icon. From the **Options** ![More icon](images/kebab.png) menu, open the JSON editor.
 
 1.  Change the context variable value.
 
@@ -241,8 +245,10 @@ When you use the `sys-number` system entity in a slot condition, it does not dea
 
 1.  Save your changes. 
 
-    You must edit the context variable value in the JSON editor. Do not edit the value in the slot's **Check for** field. The **Check for** field must remain set to `@sys-number >= 0`. When you edit the value in the JSON editor, you are effectively changing only what to save in the context variable. However, you do not want to change what to look for in the input. These two values will be different. That is how you want it to be.
-    {: important}
+    You must edit the context variable value in the JSON editor. Do not edit the value in the slot's **Check for** field. The **Check for** field must remain set to `@sys-number >= 0`.
+    { :important}
+    
+    When you edit the value in the JSON editor, you are effectively changing only what to save in the context variable. However, you do not want to change what to look for in the input. These two values will be different. That is how you want it to be.
 
 1.  Test the node again. Open the "Try it out" pane, and click **Clear** to delete the slot context variable values that you specified when you tested the node with slots earlier. To see the impact of the changes you made, use the following script:
 
