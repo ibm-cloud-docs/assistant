@@ -35,7 +35,8 @@ Learn more about what's possible in the following sections.
 {: #skill-develop-dialog}
 
 - [Adding custom dialog flow for integrations](/docs/assistant?topic=assistant-dialog-integrations)
+- [Defining responses using the JSON editor](/docs/assistant?topic=assistant-dialog-responses-json)
 - [Handling phone interactions](/docs/assistant?topic=assistant-dialog-voice-actions)
 - [Handling *SMS with Twilio* interactions](/docs/assistant?topic=assistant-dialog-sms-actions)
+- [Making a programmatic call from dialog](/docs/assistant?topic=assistant-dialog-webhooks)
 - [Requesting client actions](/docs/assistant?topic=assistant-dialog-actions-client)
-- [Defining responses using the JSON editor](/docs/assistant?topic=assistant-dialog-responses-json)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-12-10"
+lastupdated: "2021-01-20"
 
 subcollection: assistant
 
@@ -478,34 +478,6 @@ The following sections list the holidays that [`@sys-date`](/docs/assistant?topi
 | Hanukkah VII | `hanukkahvii` |
 | Hanukkah VIII | `hanukkahviii` |
 {: caption="Hebrew holidays" caption-side="top"}
-
-## Holidays (hi-in)
-{: #sys-date-festivals-hiin}
-
-| Holiday name | String to use to check for a festival match |
-|--------------|---------------------------------------------|
-| new year | `newyear` |
-| Inauguration | `inauguration` |
-| Martin Luther King | `luther` |
-| Washington | `washington` |
-| president | `president` |
-| Valentine | `valentine` |
-| Women | `women` |
-| patrick | `patrick` |
-| fool | `fool` |
-| earth | `earth` |
-| Memorial | `memorial` |
-| mother | `mother` |
-| Father | `father` |
-| Independence | `independence` |
-| Labor | `labor` |
-| Columbus | `columbus` |
-| Veterans | `veterans` |
-| Thanksgiving | `thanksgiving` |
-| easter | `easter` |
-| halloween | `halloween` |
-| christmas | `christmas` |
-{: caption="Hindi holidays" caption-side="top"}
 
 ## Holidays (zh-cn)
 {: #sys-date-festivals-zhcn}
