@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-11"
+lastupdated: "2021-01-21"
 
 subcollection: assistant
 
@@ -40,7 +40,7 @@ To start quickly, add simple actions, such as ones that capture questions that r
 
 Here's an example. A customer named Sally wants to know your store hours. The action you build so your assistant can help Sally might look like this:
 
-- Example messages
+- Training examples
 
   - Get store hours
   - What are your store hours?
@@ -62,9 +62,9 @@ Before you can create actions, you must create an actions skill. For more inform
 
 To create actions, complete the following steps:
 
-1.  Click **New action**.
- 
-1.  In the **Example messages** field, add phrases that your customers might use to articulate this request or question.
+1.  Open the actions skill, and click **Create a new action**.
+
+1.  In the **Training examples** field, add phrases that your customers might use to articulate this request or question.
 
     Type a phrase, and then press return to add another phrase. 
     

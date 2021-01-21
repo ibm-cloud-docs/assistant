@@ -121,6 +121,7 @@ Watson Assistant (Managed)
 
         {: .topicgroup}
         Dialog skill development
+            skill-develop.md
             dialog-integrations.md
             dialog-voice-actions.md
             dialog-sms-actions.md

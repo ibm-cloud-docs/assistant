@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-21"
 
 subcollection: assistant
 
@@ -204,6 +204,56 @@ The following sample shows how a simple request body is formatted.
             }
         }
     }
+}
+```
+{: codeblock}
+
+## Example
+{: #webhook-post-example}
+
+This example shows you how to add `y'all` to the end of each response from the assistant.
+
+In the postmessage webhook configuration page, the following values are specified:
+
+- **URL**: https://us-south.functions.appdomain.cloud/api/v1/web/e97d2516-5ce4-4fd9-9d05-acc3dd8ennn/southernize/add_southern_charm
+- **Secret**: none
+- **Header name**: Content-Type
+- **Header value**: application/json
+
+The postmessage webhook calls an IBM Cloud Functions web action name `add_southern_charm`.
+
+The node.js code in the `add_southern_charm` web action looks as follows:
+
+```javascript
+function main(params) {
+	console.log(JSON.stringify(params))
+  if (params.payload.output.generic[0].text !== '') {
+      //Get the length of the input text
+        var length = params.payload.output.generic[0].text.length;
+        //create a substring that removes the last character from the input string, which is typically punctuation.
+        var revision = params.payload.output.generic[0].text.substring(0,length-1);
+        const response = {
+            body : {
+                payload : {
+                    output : {
+                        generic : [
+                              {
+                                  //Replace the input text with your shortened revision and append y'all to it.
+                                "response_type": "text",
+                                "text": revision + ', ' + 'y\'all.'
+                              }
+                        ],
+                    },
+                },
+            },
+        };
+        return response;
+  }
+  else {
+    return { 
+        body : params
+    }
+  }
 }
 ```
 {: codeblock}

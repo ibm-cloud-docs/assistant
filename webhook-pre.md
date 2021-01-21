@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-21"
 
 subcollection: assistant
 
@@ -161,6 +161,176 @@ The payload contains the request body of the `/message` (stateful and stateless)
 }
 ```
 {: codeblock}
+
+## Example 1
+{: #webhook-pre-example1}
+
+This example shows you how to check the language of the input text, and append the language info to the input text string.
+
+In the premessage webhook configuration page, the following values are specified:
+
+- **URL**: https://us-south.functions.appdomain.cloud/api/v1/web/e97d2516-5ce4-4fd9-9d05-acc3dd8ennn/default/check_language
+- **Secret**: none
+- **Header name**: Content-Type
+- **Header value**: application/json
+
+The premessage webhook calls an IBM Cloud Functions web action name `check_language`.
+
+The node.js code in the `check_language` web action looks as follows.
+
+```javascript
+let rp = require("request-promise");
+
+function main(params) {
+console.log(JSON.stringify(params))
+if (params.payload.input.text !== '') {
+  // Send a request to the Watson Language Translator service to check the language of the input text.
+const options = { method: 'POST',
+  url: 'https://api.us-south.language-translator.watson.cloud.ibm.com/instances/572b37be-09f4-4704-b693-3bc63869nnnn/v3/identify?version=2018-05-01',
+  auth: {
+           'username': 'apikey',
+           'password': 'nnn'
+       },
+headers: {
+    "Content-Type":"text/plain"
+},
+  body: [
+          params.payload.input.text
+  ],
+  json: true,
+};
+     return rp(options)
+    .then(res => {
+        params.payload.context.skills["main skill"].user_defined["language"] = res.languages[0].language;
+        console.log(JSON.stringify(params))
+        //Append "in" plus "the language code" to the input text, surrounded by parentheses.
+        const response = {
+            body : {
+                payload : {
+                    input : {
+                        text : params.payload.input.text + ' ' + '(in ' + res.languages[0].language + ')'
+                    },
+                },
+            },
+        };
+        return response;
+})
+}
+return { 
+    body : params
+}
+};
+```
+{: codeblock}
+
+To test the webhook, open an integration such as the preview link. Submit the text `Buenas dias`. The assistant probably won't understand the input, and will return the response from your *Anything else* node. However, if you go to the Analytics page of your skill and open the User conversations page, you can see what was submitted. Check the most recent user conversation. The log will show that the user input is `Buenas dias (in es)`. The `es` in parentheses represents the language code for Spanish, so the webhook worked and recognized that the submitted text was a Spanish phrase.
+
+![Shows the Analytics>User conversations page with a logged conversation with Buenas dias (in es) input](images/webhook-check-language.png)
+
+## Example 2
+{: webhook-pre-example2}
+
+This example shows you how to check the language of the incoming message, and if it's not English, translate it into English before submitting it to the assistant. Doing so can be useful if the assistant's conversational skill is in English.
+
+Define a sequence of web actions in IBM Cloud Functions. The first action in the sequence checks the language of the incoming text. The second action in the sequence translates the text from its original language into English.
+
+In the premessage webhook configuration page, the following values are specified:
+
+- **URL**: https://us-south.functions.appdomain.cloud/api/v1/web/e97d2516-5ce4-4fd9-9d05-acc3dd8ennn/default/translation_sequence
+- **Secret**: none
+- **Header name**: Content-Type
+- **Header value**: application/json
+
+You can reuse the code that checks the language of input from the previous example, with one edit, as the first action in your sequence.
+
+The node.js code for the first action in your sequence looks as follows:
+
+```javascript
+let rp = require("request-promise");
+
+function main(params) {
+console.log(JSON.stringify(params))
+if (params.payload.input.text !== '') {
+const options = { method: 'POST',
+  url: 'https://api.us-south.language-translator.watson.cloud.ibm.com/instances/572b37be-09f4-4704-b693-3bc63869nnnn/v3/identify?version=2018-05-01',
+  auth: {
+           'username': 'apikey',
+           'password': 'nnn'
+       },
+headers: {
+    "Content-Type":"text/plain"
+},
+  body: [
+          params.payload.input.text
+  ],
+  json: true,
+};
+     return rp(options)
+    .then(res => {
+      //Set the language property of the incoming message to the language that was identified by Watson Language Translator. 
+        params.payload.context.skills["main skill"].user_defined["language"] = res.languages[0].language;
+        console.log(JSON.stringify(params))
+        return params;
+})
+}
+else {
+    params.payload.context.skills["main skill"].user_defined["language"] = 'none'
+    return params
+}
+};
+```
+{: codeblock}
+
+The second action in the sequence sends the text to the Watson Language Translator service to translate the input text from the language that was identified in the previous web action into English. The translated string is then sent to your assistant instead of the original text.
+
+The node.js code for the second action in your sequence looks as follows:
+
+```javascript
+let rp = require("request-promise");
+
+function main(params) {
+console.log(JSON.stringify(params))
+//If the the incoming message is not null and is not English, translate it.
+if ((params.payload.input.text !== '') && (params.payload.context.skills["main skill"].user_defined.language !== 'en')) {
+const options = { method: 'POST',
+  url: 'https://api.us-south.language-translator.watson.cloud.ibm.com/instances/572b37be-09f4-4704-b693-3bc63869nnnn/v3/translate?version=2018-05-01',
+  auth: {
+           'username': 'apikey',
+           'password': 'nnn'
+       },
+       //The body includes the parameters that are required by the Language Translator service, the text to translate and the target language to translate it into.
+  body: { 
+      text: [ 
+          params.payload.input.text
+          ],
+          target: 'en' 
+  },
+  json: true 
+};
+     return rp(options)
+    .then(res => {
+        params.payload.context.skills["main skill"].user_defined["original_input"] = params.payload.input.text;
+        //Build the response body by setting the result from the translation as the new input text value.
+        const response = {
+            body : {
+                payload : {
+                    input : {
+                        text : res.translations[0].translation
+                    },
+                },
+            },
+        };
+    return response;
+})
+}
+return { 
+    body : params
+}
+};
+```
+{: codeblock}
+
+When you test the webhook in the preview link integration, you can submit `Buenas dias`, and the assistant responds as if you said `Good day` in English.
 
 ## Troubleshooting the webhook
 {: #webhook-pre-ts}

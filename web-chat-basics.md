@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-21"
 
 subcollection: assistant
 
@@ -30,6 +30,10 @@ subcollection: assistant
 
 Learn more about the web chat that you can add to your company website.
 {: shortdesc}
+
+Web chat is a code snippet that you can immediately embed in your website. 
+
+When you build a custom user interface for your assistant, you spend a lot of time and effort writing code to solve typical UI problems. For example, you must keep up with browser support changes, manage scrolling behavior, validate input, and design the layout and styling. The time you spend designing and maintaing a UI can be better spent building a quality assistant instead. When you use the web chat integration, you can rely on us to manage the user interface, so you can focus on designing conversational exchanges that address the unique business needs of your customers. Cutting-edge functionality from IBM Design and Research is incorporated into the web chat to deliver an exceptional user experience.
 
 For more information about how to deploy the web chat, see [Integrating the web chat with your website](/docs/assistant?topic=assistant-deploy-web-chat).
 
@@ -136,6 +140,24 @@ For more information about billing, see [User-based plans explained](/docs/assis
 For more information about MAU limits per plan, see [Web chat integration limits](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-limits).
 
 For more information about deleting a user's data, see [Labeling and deleting data](/docs/assistant?topic=assistant-information-security#information-security-gdpr-wa).
+
+## Human agent service integration
+{: #web-chat-basics-haa}
+
+You can configure the web chat to transfer a customer to a human customer support agent if the customer asks for help from a person. The following service desk integrations are supported:
+
+Built-in service desk integrations:
+
+- [Intercom](/docs/assistant?topic=assistant-deploy-intercom)  ![Plus or Premium plan only](images/plus.png)
+- [Web chat with Salesforce support](/docs/assistant?topic=assistant-deploy-salesforce)
+- [Web chat with Zendesk support](/docs/assistant?topic=assistant-deploy-zendesk)
+
+Web chat service desk reference implementations:
+
+- [Genesys Cloud](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/genesys){: external}
+- [NICE inContact](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/incontact){: external}
+- [Twilio Flex](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/flex){: external}
+- [Bring your own (starter kit)](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/genesys){: external}
 
 ## Accessibility
 {: #web-chat-basics-accessibility}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-11-13"
+lastupdated: "2021-01-21"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
@@ -72,7 +72,7 @@ The following features are available only to users of Premium plans.
 
 The following features are available only to users of Plus or Premium plans. ![Plus or Premium plan only](images/plus.png)
 
-- [Autolearning](/docs/assistant?topic=assistant-autolearn)
+- [Autolearning](/docs/assistant?topic=assistant-autolearn) ![Beta](images/beta.png)
 - [Intent conflict resolution](/docs/assistant?topic=assistant-intents#intents-resolve-conflicts)
 - [Intent recommendations and intent user example recommendations](/docs/assistant?topic=assistant-intent-recommendations)
 - [Intercom integration](/docs/assistant?topic=assistant-deploy-intercom)

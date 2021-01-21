@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-11"
+lastupdated: "2021-01-21"
 
 subcollection: assistant
 
@@ -50,6 +50,8 @@ To add the assistant to a web page on your company website, complete the followi
 
 1.  From the *Integrations* section, click the **Web chat** tile.
 
+    The web chat integration is added to your assistant automatically. If you don't see a web chat tile, add the web chat integration by clicking **Add integration**, and then choosing the **Web chat** tile.
+
 1.  **Optional**: Change the web chat integration name from *Web chat* to something more descriptive.
 
 1.  Click **Create** to create a web chat instance.
@@ -79,6 +81,9 @@ To add the assistant to a web page on your company website, complete the followi
       The image file must be between 64 x 64 and 100 x 100 pixels in size. 
 
     Style changes you make are immediately applied to the preview that is shown on the page, so you can see how your choices impact the style of the chat UI.
+
+    If the message `There is an error with the message you just sent, but feel free to ask me something else.` is displayed in the preview, it might mean that you do not have a conversational skill added to your assistant. You must add one before you can chat with the assistant. Otherwise, you might want to check if your assistant has a premessage or postmessage webhook enabled that isn't working properly.
+    {: tip} 
 
 1.  **Optional**: Add a home screen to the chat window. Click the **Home screen** tab to turn on the feature.
 
