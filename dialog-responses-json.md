@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-10-06"
+lastupdated: "2021-01-21"
 
 subcollection: assistant
 
@@ -166,8 +166,7 @@ Displays a set of buttons or a drop-down list users can use to choose an option.
 | options       | list   | A list of key/value pairs specifying the options from which the user can choose. | Y |
 | options[].label | string | The user-facing label for the option. | Y     |
 | options[].value | object | An object defining the response that will be sent to the {{site.data.keyword.conversationshort}} service if the user selects the option. | Y |
-| options[].value.input | object | An input object that includes the input text corresponding to the option. | N |
-| options[].value.input.text | string | The text that will be sent to your assistant for the option. | N |
+| options[].value.input | object | An object that includes the message input corresponding to the option, including input text and any other field that is a valid part of a {{site.data.keyword.conversationshort}} message. For more information about the structure of message input, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2?curl=#message){: external}. | N |
 
 #### Example
 {: #dialog-responses-json-option-example}
@@ -175,7 +174,7 @@ Displays a set of buttons or a drop-down list users can use to choose an option.
 This example displays two options:
 
 - Option 1 (labeled `Buy something`) sends a simple string message (`Place order`), which is sent to the workspace as the input text.
-- Option 2 (labeled `Exit`) sends a complex message that includes both input text and an array of intents. The response can include any field that is a valid part of a {{site.data.keyword.conversationshort}} message. (For more information about the structure of message input, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2?curl=#message){: external}.)
+- Option 2 (labeled `Exit`) sends a complex message that includes both input text and an array of intents.
 
 ```json
 {
