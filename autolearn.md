@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-04"
+lastupdated: "2021-01-21"
 
 subcollection: assistant
 
@@ -96,7 +96,7 @@ To enable autolearning, complete the following steps:
 
 1.  In the *Autolearning* section, click the switch to turn autolearning **On**.
 
-##Tracking the impact of autolearning
+## Tracking the impact of autolearning
 {: #autolearn-track}
 
 Review visualizations that illustrate the impact that autolearning is having on the performance of your assistant.
@@ -110,10 +110,10 @@ The following graphs are available:
 - **Modifications**: Shows the percentage of responses that were modified by autolearning in the selected time frame.
 
   Click **View modifications** to walk through specific cases that show you how the assistant responded because autolearning was enabled as opposed to how it would have responded had autolearning not been enabled. You can review the cases to judge for yourself whether the change that was made by autolearning was appropriate and helpful or not.
-- **Single answer percentage**: Shows the number of autolearning modifications that resulted in a single answer response. 
+- **Single answer percentage**: Shows the number of times your assistant was able to answer a customer's question with a single response.
 
   The goal of autolearning is to limit the effort that a customer has to expend to reach the best answer. As autolearning observes user behavior, it learns about which answer is most often the best. First, it moves the best answer to the top of the disambiguation list. Next, it reduces the number of other options in the list. Ultimately, it is able to replace the disambiguation list entirely with the single, best answer. The higher the percentage of single answers, the better.
-- **Average list length**: Shows the number of options that were shown in a disambiguation list after autolearning made a modification. The lower the number of options, the better because it means that your customer was able to expend less effort to find the best answer.
+- **Average list length**: Shows the number of options that were shown in a disambiguation list. The lower the number of options, the better because it means that your customer was able to expend less effort to find the best answer.
 
 ### Using Python notebooks to track customer effort
 {: #autolearn-track-via-notebooks}

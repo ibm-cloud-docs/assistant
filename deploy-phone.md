@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-21"
 
 subcollection: assistant
 
@@ -23,16 +23,13 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Integrating with phone ![Beta](images/beta.png)
+# Integrating with phone
 {: #deploy-phone}
 
 Add a phone integration so your assistant can answer when your customers call.
 {: shortdesc}
 
 When your customer makes a phone call through a Session Initiation Protocol (SIP) trunk that you configure, the phone integration answers. The integration converts output from your dialog from text to voice by using the {{site.data.keyword.texttospeechfull}} service. The audio is sent to the telephone network through the SIP trunk. When the customer replies, voice is converted to text by using the {{site.data.keyword.speechtotextfull}} service.
-
-This integration is available as a beta feature.
-{: note}
 
 ## Set up the integration
 {: #deploy-phone-setup}
@@ -63,15 +60,20 @@ To set up the integration, complete the following steps:
 
 1.  In the *Phone number* section of the phone integration setup page, add one or more phone numbers.
 
-    You might have only the one phone number that you created through your SIP trunk provider in the previous step, or you might have a set of numbers.
+    You might have only the one phone that you created through your SIP trunk provider in the previous step, or you might have a set of numbers.
 
-    Click **Manage**.
+    Click **Add**.
 
-    - To add phone numbers one by one, click the *add phone number* icon (![Add phone number][images/phone-integ-add-number.png]), and then specify the phone number and an optional description.
+    Add a phone number and an optional description, and then click the checkmark icon ![checkmark icon](images/phone-checkmark-save.png) to save the number.
 
-      Specify the number by using the international phone number format: `+1 958 555 0123`. Do *not* surround the area code with parentheses, such as (958).
+    Specify the number by using the international phone number format: `+1 958 555 0123`. Do *not* surround the area code with parentheses, such as (958).
 
-    - To import a set of phone numbers that are stored in a comma-separated values (CSV) file, click the *import CSV file* icon (![Add phone number][images/phone-integ-import-number.png]), and then find the CSV file that contains the list of phone numbers.
+    - To add more phone numbers one by one, click the *add phone number* icon (![Add phone number][images/phone-integ-add-number.png]), and then specify the phone number and an optional description. Repeat to add more numbers.
+
+    - To import a set of phone numbers that are stored in a comma-separated value (CSV) file, click the *Upload a CSV file* icon (![Add phone number][images/phone-integ-import-number.png]), and then find the CSV file that contains the list of phone numbers.
+
+      The phone numbers you upload will replace any existing numbers in the table.
+      {: important}
 
      The phone numbers must be unique per phone integration. If you use Twilio as the SIP trunk provider, you can use the same phone number for the phone and text messaging integrations.
 
@@ -88,12 +90,12 @@ To set up the integration, complete the following steps:
     
     The models that are chosen automatically use the same language as the assistant to which you are adding the integration. You can choose to use different models if you want.
 
-    If you want to use instances that are dedicated to handling speech services for your assistant only, or if you want to use a plan other than Plus, create the instances first. You must create the instances before you set up the integration. Then, you can choose the existing instances from the list.
+    If you want to use instances that are dedicated to handling speech services for your assistant only, or if you want to use a plan other than Plus, create the instances first. You must create the instances in the same data center location before you set up the integration. Then, you can choose the existing instances from the list.
     {: tip}
     
     If you want to use a model that was created in a different service instance, click **More options** to show all service instances that you can access as options. <!--For example, if you created specialized custom models that you want your assistant to use, you can find and select them.-->
 
-    If you created specialized custom models that you want your assistant to use, choose the service instance that hosts the custom models now, and you can configure your dialog to use them later. For more information, see [Using a custom language model](/docs/assistant?topic=assistant-dialog-voice-actions#dialog-voice-actions-custom-language).
+    If you created specialized custom models that you want your assistant to use, choose the service instance that hosts the custom models now, and you can configure your dialog to use them later. The service instance must be hosted in the same location as your {{site.data.keyword.conversationshort}} service instance. For more information, see [Using a custom language model](/docs/assistant?topic=assistant-dialog-voice-actions#dialog-voice-actions-custom-language).
     {: note}
 
     - **{{site.data.keyword.speechtotextshort}}**: Optionally choose a different {{site.data.keyword.speechtotextshort}} service language model to use to define the language for your assistant to use when it speaks to customers.
@@ -108,7 +110,7 @@ To set up the integration, complete the following steps:
       
       For more information about voice options, and to listen to audio samples, see [Languages and voices](https://cloud.ibm.com/docs/text-to-speech?topic=text-to-speech-voices){: external} in the {{site.data.keyword.texttospeechshort}} documentation.
 
-    Regardless of the instances you choose to use, any speech service charges that are incurred by the phone integration are included in usage costs of the {{site.data.keyword.conversationshort}} service plan. After the instances are created, you can access them directly from the IBM Cloud dashboard. Any API calls that are made to the instances outside of your assistant are charged separately as speech service usage costs.
+    Regardless of the instances you choose to use, any speech service charges that are incurred by the phone integration are included in the usage costs of {{site.data.keyword.conversationshort}}. After the instances are created, you can access them directly from the IBM Cloud dashboard. Any use of the speech service instances that occurs outside of your assistant are charged separately as speech service usage costs.
     {: important}
 
 1. Click **Save and exit**.
@@ -281,7 +283,9 @@ Incoming calls to your assistant follow this path:
 ## Phone integration limits
 {: #deploy-phone-limits}
 
-Any speech service charges that are incurred by the phone integration are included in the usage costs of the {{site.data.keyword.conversationshort}} service plan. Plan usage is measured based on the number of monthly active users, where a user is identified by the caller's unique phone number. An MD5 hash is applied to the phone number and the 128-bit hash value is used for billing purposes.
+Any speech service charges that are incurred by the phone integration are included in the usage costs of {{site.data.keyword.conversationshort}}.
+
+Plan usage is measured based on the number of monthly active users, where a user is identified by the caller's unique phone number. An MD5 hash is applied to the phone number and the 128-bit hash value is used for billing purposes.
 
 The number of concurrent calls that your assistant can participate in at one time depends on your plan type.
 

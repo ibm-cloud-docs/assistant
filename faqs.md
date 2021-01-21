@@ -2,9 +2,11 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-11-19"
+lastupdated: "2021-01-21"
 
 subcollection: assistant
+
+content-type: faq
 
 ---
 

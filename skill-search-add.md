@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-01-21"
 
 subcollection: assistant
 
@@ -70,12 +70,16 @@ If you create a Discovery instance first, do not add the pre-enriched data sourc
 ## Create the search skill
 {: #skill-search-add-task}
 
-1.  Click the **Skills** icon ![Skills menu icon](images/nav-skills-icon.png), and then click **Create skill**.
+1.  From the assistant where you want to add the skill, click **Add search skill**.
 
-1.  Click the *Search skill* tile, and then click **Next**.
-
-    You can only select the Search skill if you are a Plus or Premium plan user.
+    You can only add a search skill if you are a Plus or Premium plan user.
     {: note}
+
+1.  Take one of the following actions:
+
+    - To create a new search skill, stay on the *Create skill* tab.
+
+    - If you have created a search skill already, the *Add existing skill* tab is displayed, and you can click to add an existing skill.
 
 1.  Specify the details for the new skill:
     - **Name**: A name no more than 64 characters in length. A name is required.
