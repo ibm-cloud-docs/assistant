@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-19"
+lastupdated: "2021-01-21"
 
 subcollection: assistant
 
@@ -24,16 +24,13 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
 
-# Making a call after processing a message ![Beta](images/beta.png)
+# Making a call after processing a message
 {: #webhook-post}
 
 Make a call to an external service or application every time a response is rendered by the assistant.
 {: shortdesc}
 
 A webhook is a mechanism that allows you to call out to an external program based on events in your program. You can add a postmessage webhook to your assistant if you want the webhook to be triggered before each message response is returned to the customer.
-
-The postmessage webhook is available as a beta feature.
-{: note}
 
 The postmessage webhook works with the v2 `/message` API only (stateless and stateful). For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#message).
 {: important}
@@ -207,6 +204,56 @@ The following sample shows how a simple request body is formatted.
             }
         }
     }
+}
+```
+{: codeblock}
+
+## Example
+{: #webhook-post-example}
+
+This example shows you how to add `y'all` to the end of each response from the assistant.
+
+In the postmessage webhook configuration page, the following values are specified:
+
+- **URL**: https://us-south.functions.appdomain.cloud/api/v1/web/e97d2516-5ce4-4fd9-9d05-acc3dd8ennn/southernize/add_southern_charm
+- **Secret**: none
+- **Header name**: Content-Type
+- **Header value**: application/json
+
+The postmessage webhook calls an IBM Cloud Functions web action name `add_southern_charm`.
+
+The node.js code in the `add_southern_charm` web action looks as follows:
+
+```javascript
+function main(params) {
+	console.log(JSON.stringify(params))
+  if (params.payload.output.generic[0].text !== '') {
+      //Get the length of the input text
+        var length = params.payload.output.generic[0].text.length;
+        //create a substring that removes the last character from the input string, which is typically punctuation.
+        var revision = params.payload.output.generic[0].text.substring(0,length-1);
+        const response = {
+            body : {
+                payload : {
+                    output : {
+                        generic : [
+                              {
+                                  //Replace the input text with your shortened revision and append y'all to it.
+                                "response_type": "text",
+                                "text": revision + ', ' + 'y\'all.'
+                              }
+                        ],
+                    },
+                },
+            },
+        };
+        return response;
+  }
+  else {
+    return { 
+        body : params
+    }
+  }
 }
 ```
 {: codeblock}
