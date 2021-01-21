@@ -70,9 +70,9 @@ The change log lists changes that were made this year ordered by the date they w
   - [Integrating with phone](/docs/assistant?topic=assistant-deploy-phone)
   - [Integrating with *SMS with Twilio*](/docs/assistant?topic=assistant-deploy-sms)
 
-- ***Preview link* change**: When you create a preview link, you can now test your skill from a chat window that is embedded in the page. Or, you can copy the URL that is provided, and open it in a web browser to see an IBM-branded web page with the web chat embedded in it. You can share the URL to the public IBM web page with others to get help with testing or for demoing purposes. For more information, see [Testing your assistant](/docs/assistant?topic=assistant-deploy-web-link).
+- ***Preview link* change**: When you create a preview link, you can now test your skill from a chat window that is embedded in the page. You can also copy the URL that is provided, and open it in a web browser to see an IBM-branded web page with the web chat embedded in it. You can share the URL to the public IBM web page with others to get help with testing or for demoing purposes. For more information, see [Testing your assistant](/docs/assistant?topic=assistant-deploy-web-link).
 
-- **Import and export UI changes**: The label on buttons for importing skills changed from *Import* to *Upload* and the label on buttons for exporting skills changed from *Export* to *Download*.
+- **Import and export UI changes**: The label on buttons for importing skills changed from *Import* to *Upload*, and the label on buttons for exporting skills changed from *Export* to *Download*.
 
 - **Coverage metric change**: The coverage metric now looks for nodes that were processed with a node condition that includes the `anything_else` special condition instead of nodes that are named `Anything else`. For more information, see [Starting and ending the dialog](/docs/assistant?topic=assistant-dialog-start).
 

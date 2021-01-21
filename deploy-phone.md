@@ -64,7 +64,7 @@ To set up the integration, complete the following steps:
 
     Click **Add**.
 
-    Add a phone number, an optional description, and then click the checkmark icon to save the number.
+    Add a phone number and an optional description, and then click the checkmark icon ![checkmark icon](images/phone-checkmark-save.png) to save the number.
 
     Specify the number by using the international phone number format: `+1 958 555 0123`. Do *not* surround the area code with parentheses, such as (958).
 
@@ -95,7 +95,7 @@ To set up the integration, complete the following steps:
     
     If you want to use a model that was created in a different service instance, click **More options** to show all service instances that you can access as options. <!--For example, if you created specialized custom models that you want your assistant to use, you can find and select them.-->
 
-    If you created specialized custom models that you want your assistant to use, choose the service instance that hosts the custom models now, and you can configure your dialog to use them later. The service instance must be hosted in the same location as your assistant service instance. For more information, see [Using a custom language model](/docs/assistant?topic=assistant-dialog-voice-actions#dialog-voice-actions-custom-language).
+    If you created specialized custom models that you want your assistant to use, choose the service instance that hosts the custom models now, and you can configure your dialog to use them later. The service instance must be hosted in the same location as your {{site.data.keyword.conversationshort}} service instance. For more information, see [Using a custom language model](/docs/assistant?topic=assistant-dialog-voice-actions#dialog-voice-actions-custom-language).
     {: note}
 
     - **{{site.data.keyword.speechtotextshort}}**: Optionally choose a different {{site.data.keyword.speechtotextshort}} service language model to use to define the language for your assistant to use when it speaks to customers.
@@ -110,7 +110,7 @@ To set up the integration, complete the following steps:
       
       For more information about voice options, and to listen to audio samples, see [Languages and voices](https://cloud.ibm.com/docs/text-to-speech?topic=text-to-speech-voices){: external} in the {{site.data.keyword.texttospeechshort}} documentation.
 
-    Regardless of the instances you choose to use, any speech service charges that are incurred by the phone integration are included in the usage costs of {{site.data.keyword.conversationshort}}. After the instances are created, you can access them directly from the IBM Cloud dashboard. Any use of the speech instances that occurs outside of your assistant are charged separately as speech service usage costs.
+    Regardless of the instances you choose to use, any speech service charges that are incurred by the phone integration are included in the usage costs of {{site.data.keyword.conversationshort}}. After the instances are created, you can access them directly from the IBM Cloud dashboard. Any use of the speech service instances that occurs outside of your assistant are charged separately as speech service usage costs.
     {: important}
 
 1. Click **Save and exit**.

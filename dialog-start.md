@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-19"
+lastupdated: "2021-01-21"
 
 subcollection: assistant
 
@@ -79,7 +79,7 @@ You might not recognize its value at first, but it serves some important functio
 
 The *Anything else* node provides the following benefits:
 
-- It prevents your assistant from ever going silent and failing to respond at all to your customers. The *Anything else* node is what enables your assistant to - if nothing else - say, `I'm sorry, I didn't understand.` or `I can't help you with that.`
+- It prevents your assistant from ever going silent and failing to respond at all to your customers. The *Anything else* node is what enables your assistant to (if nothing else) say, `I'm sorry, I didn't understand.` or `I can't help you with that.`
 
 - The skill's analytics feature uses this node to learn about the topics that your dialog can't address. The *coverage metric* looks for occurrences of nodes with the `anything_else` condition being processed in the user conversation logs. It uses this information to determine the frequency with which your dialog is able to match user requests to intents that can address them. The node is registered by the metric if it conditions on `anything_else` alone or when it's used in combination with another condition, such as `anything_else && #positive_feedback`.
 
