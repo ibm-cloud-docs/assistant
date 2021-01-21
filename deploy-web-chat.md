@@ -50,7 +50,7 @@ To add the assistant to a web page on your company website, complete the followi
 
 1.  From the *Integrations* section, click the **Web chat** tile.
 
-    The web chat integration is added to your assistant automatically. If you don't see a web chat tile, add the web chat integration by click **Add integration**, and then choosing the **Web chat** tile.
+    The web chat integration is added to your assistant automatically. If you don't see a web chat tile, add the web chat integration by clicking **Add integration**, and then choosing the **Web chat** tile.
 
 1.  **Optional**: Change the web chat integration name from *Web chat* to something more descriptive.
 
