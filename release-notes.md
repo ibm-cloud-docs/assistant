@@ -61,6 +61,21 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 The change log lists changes that were made this year ordered by the date they were released.
 
+## 19 January 2021
+{: #19January2021}
+<!--1.132-->
+
+- **The *Phone* and *SMS with Twilio* integrations are now generally available!**: For more information, see:
+
+  - [Integrating with phone](/docs/assistant?topic=assistant-deploy-phone)
+  - [Integrating with *SMS with Twilio*](/docs/assistant?topic=assistant-deploy-sms)
+
+- ***Preview link* change**: When you create a preview link, you can now test your skill from a chat window that is embedded in the page. Or, you can copy the URL that is provided, and open it in a web browser to see an IBM-branded web page with the web chat embedded in it. You can share the URL to the public IBM web page with others to get help with testing or for demoing purposes. For more information, see [Testing your assistant](/docs/assistant?topic=assistant-deploy-web-link).
+
+- **Import and export UI changes**: The label on buttons for importing skills changed from *Import* to *Upload* and the label on buttons for exporting skills changed from *Export* to *Download*.
+
+- **Coverage metric change**: The coverage metric now looks for nodes that were processed with a node condition that includes the `anything_else` special condition instead of nodes that are named `Anything else`. For more information, see [Starting and ending the dialog](/docs/assistant?topic=assistant-dialog-start).
+
 ## 15 January 2021
 {: #15January2021}
 <!--1.131-->
@@ -249,7 +264,7 @@ The following features are available in service instances hosted in all data cen
 
 - **Skill menu actions moved**: The menu that was displayed in the header of the skill while you were working with a skill was removed. The actions that were available from the menu, such as import and export, are still available. Go to the Skills page, and click the menu on the skill tile. 
 
-  The import skill process was updated to support overwriting an existing skill on import. For more information, see [Overwriting a skill](/docs/assistant?topic=assistant-skill-dialog-add#skill-dialog-add-overwrite).
+  The import skill process was updated to support overwriting an existing skill on import. For more information, see [Overwriting a skill](/docs/assistant?topic=assistant-skill-tasks#skill-tasks-overwrite).
 
 - **A few dialog issues were addressed**: 
 

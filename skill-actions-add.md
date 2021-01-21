@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2020-12-16"
+lastupdated: "2021-01-19"
 
 subcollection: assistant
 
@@ -40,20 +40,20 @@ Each action contains a series of steps that represent individual exchanges with 
 
 To add an actions skill, complete the following steps:
 
-1.  Click **Create Skill**.
-
-1.  Select the **Actions skill**, and then click **Next**.
+1.  From the assistant where you want to add the skill, click **Add an actions skill**.
 
 1.  Take one of the following actions:
 
-    - To add an actions skill that was downloaded previously to this service instance, you can import it as a JSON file. Click **Import skill**. Drag a file or click **Drag and drop file here or click to select a file** and select the actions skill JSON file you want to import.
+    - To create a new actions skill, stay on the *Create skill* tab.
 
-      The imported JSON file must use UTF-8 encoding, without byte order mark (BOM) encoding. The JSON cannot contain tabs, newlines, or carriage returns.
+    - To add an actions skill that was downloaded previously to this service instance, you can upload it as a JSON file. Open the *Upload skill* tab. Drag a file or click **Drag and drop file here or click to select a file** and select the actions skill JSON file you want to upload.
+
+      The uploaded JSON file must use UTF-8 encoding, without byte order mark (BOM) encoding. The JSON cannot contain tabs, newlines, or carriage returns.
       {: important}
 
-      Click **Import**.
+      Click **Upload**.
 
-    - To create a new actions skill, stay on the *Create skill* tab.
+    - If you have created an actions skill already, the *Add existing skill* tab is displayed, and you can click to add an existing skill.
 
 1.  Specify the details for the skill:
 
@@ -67,4 +67,4 @@ To add an actions skill, complete the following steps:
 
 If you add only an actions skill to the assistant, the action skill starts the conversation. If you add both a dialog skill and actions skill to an assistant, the dialog skill starts the conversation. And actions are recognized only if you configure the dialog skill to call them.
 
-Add actions to your skill. For more information, see [Adding actions](/docs/assistant?topic=assistant-actions).
+Add actions to your actions skill. For more information, see [Adding actions](/docs/assistant?topic=assistant-actions).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-11-19"
+lastupdated: "2021-01-19"
 
 subcollection: assistant
 
@@ -73,10 +73,19 @@ This design results in a dialog that works like this:
 
 The *Anything else* node is designed to recognize the `anything_else` special condition, which understands when user input does not match any of the intents that are used as conditions in a dialog's nodes.
 
-- Don't delete the *Anything else* node. You might not recognize its value at first, but it serves an important function. It prevents your assistant from going silent and failing to respond at all to your customers. The *Anything else* node is what enables your assistant to - if nothing else - say, `I'm sorry, I didn't understand.` or `I can't help you with that.`
+Don't delete the *Anything else* node. 
 
-- Don't change the name of the *Anything else* node. If you want the skill's analytics to be able to recognize topics that your dialog couldn't address, keep the node name as-is. The *coverage metric* looks for occurrences of a node named *Anything else* being processed in the user conversation logs. It uses this metric to determine the frequency with which your dialog is able to match user requests to intents that can address them.
+You might not recognize its value at first, but it serves some important functions. If you did delete it, don't panic. You can add it back. Just add a dialog node to the end of your dialog tree, and add the `anything_else` special condition to its *If assistant recognizes* field.
 
-  You can configure your assistant to redirect queries to the search skill if the dialog is unable to address the request. When a customer's message reaches the *Anything else* node in your dialog, the message is sent to the search skill to find a relevant answer in your configured data collections. Messages that trigger search in this way are registered by the coverage metric as messages that are *not* covered. For more information about searching for an answer when your dialog can't provide a response, see [Search triggers](/docs/assistant?topic=assistant-skill-search-add#skill-search-add-trigger).
+The *Anything else* node provides the following benefits:
+
+- It prevents your assistant from ever going silent and failing to respond at all to your customers. The *Anything else* node is what enables your assistant to - if nothing else - say, `I'm sorry, I didn't understand.` or `I can't help you with that.`
+
+- The skill's analytics feature uses this node to learn about the topics that your dialog can't address. The *coverage metric* looks for occurrences of nodes with the `anything_else` condition being processed in the user conversation logs. It uses this information to determine the frequency with which your dialog is able to match user requests to intents that can address them. The node is registered by the metric if it conditions on `anything_else` alone or when it's used in combination with another condition, such as `anything_else && #positive_feedback`.
 
   For more information about the coverage metric, see [Graphs and statistics](/docs/assistant?topic=assistant-logs-overview#logs-overview-graphs).
+
+- If you want your assistant to redirect queries to the search skill when the dialog is unable to address them, this node recognizes when it's time to initiate the search. It's when a customer's message reaches the `anything_else` node that the message is sent to the search skill to find a relevant answer in your configured data collections. For more information about searching for an answer, see [Search triggers](/docs/assistant?topic=assistant-skill-search-add#skill-search-add-trigger).
+
+  Messages that trigger search in this way are still registered by the coverage metric as messages that are *not* covered.
+  {: note}

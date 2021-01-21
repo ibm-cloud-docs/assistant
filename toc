@@ -69,6 +69,7 @@ Watson Assistant (Managed)
         versions.md
 
     skill-search-add.md
+    skill-tasks.md
     deploy-web-link.md
     assistant-settings.md
 

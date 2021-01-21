@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-06"
+lastupdated: "2021-01-19"
 
 subcollection: assistant
 
@@ -28,9 +28,9 @@ subcollection: assistant
 If you do not disable the preview link when you create an assistant, the assistant is immediately available for testing from a web page.
 {: shortdesc}
 
-The preview link renders your assistant as a web chat integration that is embedded in a simple IBM-branded web page. You can test the skills that you added to the assistant by entering text into the chat window. You can also share the URL of the page with others to enlist help in testing and getting feedback about the assistant.
+The preview link renders your assistant as a web chat and embeds it in a Preview page. You can test the skills that you added to the assistant by entering text into the chat window. The Preview link integration also embeds the chat window in a simple IBM-branded web page. You can copy and paste the web page URL into a web browser and share the page with others to enlist help in testing and getting feedback about the assistant.
 
-Unlike when you test using the "Try it out" pane, any API calls that result from your interactions with the assistant hosted by the preview link URL do incur charges.
+Unlike when you test using the "Try it out" pane, any API calls that result from your interactions with the assistant hosted by the preview link integration do incur charges.
 
 ## Using the preview link integration to test your assistant
 {: #deploy-web-link-try}
@@ -43,21 +43,23 @@ To test the assistant from a web-hosted chat widget, complete the following step
 
     If you did not enable the preview link when you created the assistant, then click **Add integration**, and then click the **Preview link** integration tile.
 
-1.  **Optional**: Change the preview web page name and description.
+1.  In the *Assistant preview* window, submit test utterances to see how the assistant responds.
 
-1.  Click the URL link that is displayed to open the test page.
+    If the *Connect to agent* response is displayed, it means you do not have a conversational skill added to your assistant. You must add one before you can chat with the assistant.
 
-    A separate web browser tab opens that contains a chat window where you can interact with your assistant.
+1.  You can click the **Restart conversation** button to start a conversation over.
 
-1.  Submit test utterances to see how the assistant responds.
+    This action is useful if you want to test different routes through a single conversational flow. Or if you set or change context variable values in a dialog skill and want to see how specifying different values affects the conversation.
 
-    No responses are returned until after you create a dialog skill and add it to the assistant.
+    The conversation is restarted after the assistant's inactivity period elapses. The inactivity period can range from 5 minutes to 7 days depending on what you configure for your service plan type. After the intactivity time frame passes, any context variable values that were set during the conversation are set to null or back to their default values. For more information, see [Changing the inactivity timeout setting](/docs/assistant?topic=assistant-assistant-settings#assistant-settings-change-timeout).
 
-    The dialog flow for the current session is restarted after the inactivity period is passed. The inactivity period can range from 5 minutes to 7 days depending on what you configure for your service plan type. This means that if a user stops interacting with the assistant, after the intactivity time frame passes, any context variable values that were set during the previous conversation are set to null or back to their default values. For more information, see [Changing the inactivity timeout setting](/docs/assistant?topic=assistant-assistant-settings#assistant-settings-change-timeout).
+1.  To share the page with others, copy and paste the *Share this link* URL into a web browser.
+
+    An IBM-branded web page is displayed that contains a chat window where you can interact with your assistant.
 
 1.  After testing, you can close the browser tab to exit the public web page.
 
-1.  Click **Save Changes** to save any edits you made to the preview link integration and close the page, or click **X** to close the page without saving.
+1.  Click **X** to close the Preview link page.
 
 ## Dialog considerations
 {: #deploy-web-link-dialog}
@@ -77,10 +79,12 @@ If you accidentally deleted the preview link integration that is created automat
 
 1.  From the Assistant tab, click to open the tile for the assistant that you want to deploy.
 
-1.  Go to the **Integrations** section, and then click **Add integration**.
+1.  Click **Add integration**.
 
 1.  Click the **Preview link** integration tile.
 
-1.  Optionally edit the preview link integration name and description, and then click **Create**.
+    A preview page is displayed and a new preview web page is created for you.
 
-    A URL is added to the page. Click it to open the preview web page.
+1.  Click `x` to close the preview page.
+
+The integration is named *Preview*. You cannot change the name.
