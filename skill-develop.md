@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-19"
+lastupdated: "2021-01-21"
 
 subcollection: assistant
 
@@ -26,7 +26,7 @@ subcollection: assistant
 # Advanced skill development
 {: #skill-develop}
 
-A developer can extend the capabilities of your skills by using tools that are provided within the product or the product APIs or a combination of both.
+A developer can extend the capabilities of a skill.
 {: shortdesc}
 
 Learn more about what's possible in the following sections.

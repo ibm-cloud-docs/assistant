@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-19"
+lastupdated: "2021-01-21"
 
 subcollection: assistant
 
@@ -31,7 +31,7 @@ subcollection: assistant
 Learn more about the web chat that you can add to your company website.
 {: shortdesc}
 
-Web chat is a framework-agnostic code snippet you can immediately embed in your website. 
+Web chat is a code snippet that you can immediately embed in your website. 
 
 When you build a custom user interface for your assistant, you spend a lot of time and effort writing code to solve typical UI problems. For example, you must keep up with browser support changes, manage scrolling behavior, validate input, and design the layout and styling. The time you spend designing and maintaing a UI can be better spent building a quality assistant instead. When you use the web chat integration, you can rely on us to manage the user interface, so you can focus on designing conversational exchanges that address the unique business needs of your customers. Cutting-edge functionality from IBM Design and Research is incorporated into the web chat to deliver an exceptional user experience.
 
