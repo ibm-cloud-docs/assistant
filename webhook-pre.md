@@ -223,16 +223,16 @@ return {
 ```
 {: codeblock}
 
-To test the webhook, open an integration such as the preview link or web chat integration. Submit the text `Buenas dias`. The assistant probably won't understand the input, and will return the response from your *Anything else* node. However, if you go to the Analytics page of your skill and open the User conversation page, you can see what was submitted. Check the most recent user conversation. The log will show that the user input is `Buenas dias (in es)`. `es` is the language code for Spanish.
+To test the webhook, open an integration such as the preview link. Submit the text `Buenas dias`. The assistant probably won't understand the input, and will return the response from your *Anything else* node. However, if you go to the Analytics page of your skill and open the User conversations page, you can see what was submitted. Check the most recent user conversation. The log will show that the user input is `Buenas dias (in es)`. The `es` in parentheses represents the language code for Spanish, so the webhook worked and recognized that the submitted text was a Spanish phrase.
 
 ![Shows the Analytics>User conversations page with a logged conversation with Buenas dias (in es) input](images/webhook-check-language.png)
 
 ## Example 2
 {: webhook-pre-example2}
 
-This example shows you how to check the language of the incoming message, and it it's not English, translate it into English before submitting it to the assistant.
+This example shows you how to check the language of the incoming message, and if it's not English, translate it into English before submitting it to the assistant. Doing so can be useful if the assistant's conversational skill is in English.
 
-Define a sequence of web actions in IBM Cloud Functions. The first action checks the language of the incoming text. The second action in the sequence translates the text from into English.
+Define a sequence of web actions in IBM Cloud Functions. The first action in the sequence checks the language of the incoming text. The second action in the sequence translates the text from its original language into English.
 
 In the premessage webhook configuration page, the following values are specified:
 
@@ -241,7 +241,7 @@ In the premessage webhook configuration page, the following values are specified
 - **Header name**: Content-Type
 - **Header value**: application/json
 
-You can reuse the code that checks the language of input from the previous example, with one small edit, as the first action in your sequence.
+You can reuse the code that checks the language of input from the previous example, with one edit, as the first action in your sequence.
 
 The node.js code for the first action in your sequence looks as follows:
 
@@ -281,7 +281,7 @@ else {
 ```
 {: codeblock}
 
-The second action in the sequence sends the text to the Watson Language Translator service to translate the input text from the language that was identified in the previous web action into English. The translated string is then sent to your assistant instead of the original text in the non-English language.
+The second action in the sequence sends the text to the Watson Language Translator service to translate the input text from the language that was identified in the previous web action into English. The translated string is then sent to your assistant instead of the original text.
 
 The node.js code for the second action in your sequence looks as follows:
 
@@ -330,7 +330,7 @@ return {
 ```
 {: codeblock}
 
-When you test the webhook in the web chat or preview link integration, you can submit `Buenas dias`, and the assistant responds as if you said `Good day` in English.
+When you test the webhook in the preview link integration, you can submit `Buenas dias`, and the assistant responds as if you said `Good day` in English.
 
 ## Troubleshooting the webhook
 {: #webhook-pre-ts}

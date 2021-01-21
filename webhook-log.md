@@ -30,7 +30,7 @@ subcollection: assistant
 Make a call to an external service or application every time a customer submits input to log the conversation.
 {: shortdesc}
 
-This feature is available for users of Premium plans only.
+The log webhook is available for users of Premium plans only.
 {: note}
 
 A webhook is a mechanism that allows you to call out to an external program based on events in your program. 
