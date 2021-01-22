@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-21"
+lastupdated: "2021-01-22"
 
 subcollection: assistant
 
@@ -23,13 +23,16 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Integrating with phone
+# Integrating with phone ![Plus or Premium plan only](images/plus.png)
 {: #deploy-phone}
 
 Add a phone integration so your assistant can answer when your customers call.
 {: shortdesc}
 
 When your customer makes a phone call through a Session Initiation Protocol (SIP) trunk that you configure, the phone integration answers. The integration converts output from your dialog from text to voice by using the {{site.data.keyword.texttospeechfull}} service. The audio is sent to the telephone network through the SIP trunk. When the customer replies, voice is converted to text by using the {{site.data.keyword.speechtotextfull}} service.
+
+This feature is available only to Plus or Premium plan users.
+{: note}
 
 ## Set up the integration
 {: #deploy-phone-setup}
