@@ -98,7 +98,7 @@ To set up the integration, complete the following steps:
     If you created specialized custom models that you want your assistant to use, choose the service instance that hosts the custom models now, and you can configure your dialog to use them later. The service instance must be hosted in the same location as your {{site.data.keyword.conversationshort}} service instance. For more information, see [Using a custom language model](/docs/assistant?topic=assistant-dialog-voice-actions#dialog-voice-actions-custom-language).
     {: note}
 
-    - **{{site.data.keyword.speechtotextshort}}**: Optionally choose a different {{site.data.keyword.speechtotextshort}} service language model to use to define the language for your assistant to use when it speaks to customers.
+    - **{{site.data.keyword.speechtotextshort}}**: Optionally choose a different {{site.data.keyword.speechtotextshort}} service language model to use to define the language your assistant will use when it transcribes what customers say.
 
       For example, indicate whether to use British or American English. The list shows options from {{site.data.keyword.speechtotextshort}} service instances that you can access. 
       

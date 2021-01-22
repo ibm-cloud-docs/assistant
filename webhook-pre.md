@@ -330,7 +330,7 @@ return {
 ```
 {: codeblock}
 
-When you test the webhook in the preview link integration, you can submit `Buenas dias`, and the assistant responds as if you said `Good day` in English.
+When you test the webhook in the preview link integration, you can submit `Buenas dias`, and the assistant responds as if you said `Good morning` in English. In fact, when you check the *Analytics>User conversations* page, the log shows that the user input was `Good morning`.
 
 ## Troubleshooting the webhook
 {: #webhook-pre-ts}
