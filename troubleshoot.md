@@ -6,8 +6,6 @@ lastupdated: "2021-01-21"
 
 subcollection: assistant
 
-content-type: troubleshoot
-
 ---
 
 {:shortdesc: .shortdesc}
