@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-19"
+lastupdated: "2021-01-22"
 
 subcollection: assistant
 
@@ -23,7 +23,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Integrating with *SMS with Twilio*
+# Integrating with *SMS with Twilio* ![Plus or Premium plan only](images/plus.png)
 {: #deploy-sms}
 
 Add a text messaging integration so your assistant can exchange messages with your customers.
@@ -32,6 +32,9 @@ Add a text messaging integration so your assistant can exchange messages with yo
 The Short Messaging Service (SMS) supports text-only messages. Typically, SMS restricts the text message length to 160 characters. The Multimedia Messaging Service (MMS) supports sending images and text messages that are over 160 characters in length. When you create a phone number with Twilio, MMS message support is included automatically.
 
 Customers send text messages to your Twilio-hosted phone number. Twilio uses a messaging webhook that you set up to send a POST request with the text message body to your assistant. Each response from the assistant is sent back to Twilio to be converted to an outbound SMS message that is sent to the customer. The responses are sent to the Twilio API for processing. You provide your Twilio account SID and project authentication token information, which serve as your Twilio API access credentials.
+
+This feature is available only to Plus or Premium plan users.
+{: note}
 
 ## Before you begin
 {: #deploy-sms-service-setup}
