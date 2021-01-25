@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-21"
+lastupdated: "2021-01-25"
 
 subcollection: assistant
 
@@ -320,12 +320,11 @@ const options = { method: 'POST',
                 },
             },
         };
-    return response;
 })
 }
 return { 
     body : params
-}
+    }
 };
 ```
 {: codeblock}
@@ -344,6 +343,9 @@ The following error codes can help you track down the cause of issues you might 
 | 422 Webhook responded with `[500]` status code | There's a problem with the external service you called. The code failed or the external server refused the request. |
 | 500 Processor Exception : `[connections to all backends failing]` | An error occurred in the webhook microservice. It could not connect to backend services. |
 {: caption="Error code details" caption-side="top"}
+
+If you call an IBM Cloud Functions web action, use the logging capability in Cloud Functions to help you troubleshoot your code. You can [download the command line interface](https://cloud.ibm.com/functions/learn/cli){: external}, and then enable logging with the [activation polling command](https://cloud.ibm.com/docs/cloud-functions-cli-plugin?topic=cloud-functions-cli-plugin-functions-cli#cli_activation_poll){: external}.
+{: tip}
 
 ## Removing the webhook
 {: #webhook-pre-delete}

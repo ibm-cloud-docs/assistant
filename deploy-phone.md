@@ -89,12 +89,15 @@ To set up the integration, complete the following steps:
     - {{site.data.keyword.speechtotextshort}}
     - {{site.data.keyword.texttospeechshort}}
 
-    If you have instances of the {{site.data.keyword.speechtotextshort}} and {{site.data.keyword.texttospeechshort}} services, they are configured for use with your phone integration automatically. 
+    If you have instances of the {{site.data.keyword.speechtotextshort}} and {{site.data.keyword.texttospeechshort}} services in paid plans, they are configured for use with your phone integration automatically.
+
+    If you have Lite plan instances of the speech services, the automatic creation process is not started.
+    {: note}
+
+    If you want to use instances that are dedicated to handling speech services for your assistant only, or if you want to use a paid plan other than Plus, create the instances first. You must create the instances in the same data center location before you set up the integration. Then, you can choose the existing instances from the list.
+    {: tip}
     
     The models that are chosen automatically use the same language as the assistant to which you are adding the integration. You can choose to use different models if you want.
-
-    If you want to use instances that are dedicated to handling speech services for your assistant only, or if you want to use a plan other than Plus, create the instances first. You must create the instances in the same data center location before you set up the integration. Then, you can choose the existing instances from the list.
-    {: tip}
     
     If you want to use a model that was created in a different service instance, click **More options** to show all service instances that you can access as options. <!--For example, if you created specialized custom models that you want your assistant to use, you can find and select them.-->
 
