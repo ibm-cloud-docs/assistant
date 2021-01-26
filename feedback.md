@@ -32,7 +32,7 @@ We value your opinion and want to hear it.
 ## Share your ideas
 {: #feedback-ideas-portal}
 
-Many of the pages where you configure or use beta and newly avaialable features contain a **Send us feedback** link. Click the link to open a simple feedback form that is hosted by Asana. You can share your opinion and submit it to the product team for consideration. We learn so much from your insights and suggestions.
+Many of the pages where you configure or use beta and newly avaialable features contain a **Send us feedback** link. Click the link to open a simple feedback form that is hosted by Asana. You can share your opinion and submit it to the product team for consideration. We appreciate your insights and suggestions.
 
 To share ideas or suggest new features for the {{site.data.keyword.conversationfull}} service, go to the [IBM Data and AI Ideas Portal](https://ibm-data-and-ai.ideas.aha.io/?project=ASSISTANT){: external}.
 
