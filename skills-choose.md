@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-11"
+lastupdated: "2021-01-26"
 
 subcollection: assistant
 
@@ -25,10 +25,10 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:table: .aria-labeledby="caption"}
 
-# Choosing skills
+# Choosing a conversational skill
 {: #skills-choose}
 
-Choose the right type of skill for your use case. 
+Choose the right type of conversational skill for your use case. 
 {: shortdesc}
 
 When you build the flow of conversation between your assistant and your customers, there are two skill types to choose from:

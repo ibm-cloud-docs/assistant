@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-25"
+lastupdated: "2021-01-26"
 
 subcollection: assistant
 
@@ -95,7 +95,7 @@ To add the webhook details, complete the following steps:
 
     You must specify a URL that uses the SSL protocol, so specify a URL that begins with `https`.
 
-    You cannot use a webhook to call a {{site.data.keyword.openwhisk_short}} action that uses token-based Identity and Access Management (IAM) authentication. However, you can make a call to a secured {{site.data.keyword.openwhisk_short}} web action.
+    You cannot use a webhook to call a {{site.data.keyword.openwhisk_short}} action that uses token-based Identity and Access Management (IAM) authentication. However, you can make a call to a {{site.data.keyword.openwhisk_short}} web action or a secured web action.
     {: important}
 
 1.  In the **Secret** field, add a private key to pass with the request that can be used to authenticate with the external service.
@@ -125,6 +125,32 @@ To add the webhook details, complete the following steps:
     The service automatically sends an `Authorization` header with a JWT; you do not need to add one.
 
 Your webhook details are saved automatically.
+
+## Testing the webhook
+{: #webhook-pre-test}
+
+Do extensive testing of your webhook before you enable it for an assistant that is being used in a production environment.
+{: important}
+
+Your assistant must have a conversational skill added to it before your webhook can do anything useful. The webhook is triggered when a message is sent to your assistant to be processed by the associated skill.
+
+If you enable the setting that returns an error when the webhook call fails, the processing of the assistant is halted entirely if the webhook encounters any issues. Take steps to test the process that you are calling on a regular basis so you will be alerted if the external service is down, and can take actions to prevent all of the incoming messages from failing to be recieved.
+
+If you call an {{site.data.keyword.openwhisk_short}} web action, you can use the logging capability in {{site.data.keyword.openwhisk_short}} to help you troubleshoot your code. You can [download the command line interface](https://cloud.ibm.com/functions/learn/cli){: external}, and then enable logging with the [activation polling command](https://cloud.ibm.com/docs/cloud-functions-cli-plugin?topic=cloud-functions-cli-plugin-functions-cli#cli_activation_poll){: external}.
+{: tip}
+
+## Troubleshooting the webhook
+{: #webhook-pre-ts}
+
+The following error codes can help you track down the cause of issues you might encounter. If you have a web chat integration, for example, you will know that your webhook has an issue if every test message you submit returns a message such as, `There is an error with the message you just sent, but feel free to ask me something else.` If this message is displayed, use a REST API tool, such as cURL, to send a test `/message` API request, so you can see the error code and full message that is returned.
+
+| Error code and message | Description |
+|------------|-------------|
+| 422 Webhook responded with invalid JSON body | The webhook's HTTP response body could not be parsed as JSON. |
+| 422 Error validating webhook response | The webhook's HTTP response body was not a valid `/message` body. |
+| 422 Webhook responded with `[500]` status code | There's a problem with the external service you called. The code failed or the external server refused the request. |
+| 500 Processor Exception : `[connections to all backends failing]` | An error occurred in the webhook microservice. It could not connect to backend services. |
+{: caption="Error code details" caption-side="top"}
 
 ## Webhook security
 {: #webhook-pre-security}
@@ -330,22 +356,6 @@ return {
 {: codeblock}
 
 When you test the webhook in the preview link integration, you can submit `Buenas dias`, and the assistant responds as if you said `Good morning` in English. In fact, when you check the *Analytics>User conversations* page, the log shows that the user input was `Good morning`.
-
-## Troubleshooting the webhook
-{: #webhook-pre-ts}
-
-The following error codes can help you track down the cause of issues you might encounter. If you have a web chat integration, for example, you will know that your webhook has an issue if every test message you submit returns a message such as, `There is an error with the message you just sent, but feel free to ask me something else.` If this message is displayed, use a REST API tool, such as cURL, to send a test `/message` API request, so you can see the error code and full message that is returned.
-
-| Error code and message | Description |
-|------------|-------------|
-| 422 Webhook responded with invalid JSON body | The webhook's HTTP response body could not be parsed as JSON. |
-| 422 Error validating webhook response | The webhook's HTTP response body was not a valid `/message` body. |
-| 422 Webhook responded with `[500]` status code | There's a problem with the external service you called. The code failed or the external server refused the request. |
-| 500 Processor Exception : `[connections to all backends failing]` | An error occurred in the webhook microservice. It could not connect to backend services. |
-{: caption="Error code details" caption-side="top"}
-
-If you call an IBM Cloud Functions web action, use the logging capability in Cloud Functions to help you troubleshoot your code. You can [download the command line interface](https://cloud.ibm.com/functions/learn/cli){: external}, and then enable logging with the [activation polling command](https://cloud.ibm.com/docs/cloud-functions-cli-plugin?topic=cloud-functions-cli-plugin-functions-cli#cli_activation_poll){: external}.
-{: tip}
 
 ## Removing the webhook
 {: #webhook-pre-delete}

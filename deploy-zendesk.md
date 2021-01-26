@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2020-12-10"
+lastupdated: "2021-01-26"
 
 subcollection: assistant
 
@@ -25,7 +25,7 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
 
-# Integrating the web chat with Zendesk
+# Integrating with Zendesk
 {: #deploy-zendesk}
 
 Integrate your web chat with a Zendesk service desk solution so your customers always get the help they need.

@@ -78,10 +78,10 @@ Watson Assistant (Managed)
         deploy-web-chat.md
         deploy-salesforce.md
         deploy-zendesk.md
-        [Integrating the web chat with Genesys Cloud](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/genesys)
-        [Inegrating the web chat with NICE inContact](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/incontact)
-        [Integrating the web chat with Twilio Flex](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/flex)
-        [Integrating the web chat with your own service desk](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter)
+        [Integrating with Genesys Cloud](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/genesys)
+        [Inegrating with NICE inContact](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/incontact)
+        [Integrating with Twilio Flex](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/flex)
+        [Integrating with your own service desk](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter)
 
     {: .topicgroup}
     Deploying to other platforms
