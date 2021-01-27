@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-01-27"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -393,6 +393,8 @@ In addition to the default response type of **Text**, for which you specify the 
 
   This response type is available to users of Plus or Premium plans only.
   {: note}
+
+- **User-defined**: If you use the JSON editor to define the response, you can create your own user-defined response type. For more information, see [Defining responses using the JSON editor](/docs/assistant?topic=assistant-dialog-responses-json).
 
 To add a rich response, complete the following steps:
 

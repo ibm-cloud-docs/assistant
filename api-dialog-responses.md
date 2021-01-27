@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-21"
+lastupdated: "2021-01-27"
 
 subcollection: assistant
 
@@ -60,7 +60,7 @@ It is the reponsibility of your client application to handle all response types 
 ## Response types
 {: #api-dialog-responses-types}
 
-Each element of a response is of one of the supported response types (currently `image`, `option`, `pause`, `text`, and `suggestion`). Each response type is specified using a different set of JSON properties, so the properties included for each response will vary depending upon response type. For complete information about the response model of the `/message` API, see the [API Reference](https://{DomainName}/apidocs/assistant/assistant-v2#message){: external}.)
+Each element of a response is of one of the supported response types (currently `image`, `option`, `pause`, `text`, `suggestion`, and `user_defined`). Each response type is specified using a different set of JSON properties, so the properties included for each response will vary depending upon response type. For complete information about the response model of the `/message` API, see the [API Reference](https://{DomainName}/apidocs/assistant/assistant-v2#message){: external}.)
 
 This section describes the available response types and how they are represented in the `/message` API response JSON. (If you are using the Watson SDK, you can use the interfaces provided for your language to access the same objects.)
 
@@ -130,7 +130,7 @@ The `pause` response type instructs the application to wait for a specified inte
 
 This pause might be requested by the dialog to allow time for a request to complete, or simply to mimic the appearance of a human agent who might pause between responses. The pause can be of any duration up to 10 seconds.
 
-A `pause` response is typically sent in combination with other responses. Your application should pause for the interval specified by the `time` property (in milliseconds) before displaying the next response in the array. The optional `typing` property requests that the client application show an `assistant is typing` indicator, if supported, in order to simulate a human agent.
+A `pause` response is typically sent in combination with other responses. Your application should pause for the interval specified by the `time` property (in milliseconds) before displaying the next response in the array. The optional `typing` property requests that the client application show a "user is typing" indicator, if supported, in order to simulate a human agent.
 
 ### Option
 {: #api-dialog-responses-option}
@@ -332,6 +332,37 @@ For each search result, the `title`, `body`, and `url` properties include conten
 In addition, the `header` property provides a message to display to the user about the results of the search. In the case of a successful search, `header` provides introductory text to be displayed before the search results (for example, `I found the following information that might be helpful.`). Different message text indicates that the search did not return any results, or that the connection to the Discovery service failed. You can customize these messages in the search skill configuration.
 
 For more information about search skills, see [Creating a search skill](/docs/assistant?topic=assistant-skill-search-add).
+
+### User-defined
+{: #api-dialog-responses-user-defined}
+
+A user-defined response type can contain up to 5000 KB of data to support a type of a response you have implemented in your client. For example, you might define a user-defined response type to display a special color-coded card, or to format data in a table or graphic.
+
+The `user_defined` property of the response is an object that can contain any valid JSON data:
+
+```json
+{
+  "output": {
+    "generic":[
+      {
+        "response_type": "user_defined",
+        "user_defined": {
+          "field_1": "String value",
+          "array_1": [
+            1,
+            2
+          ],
+          "object_1": {
+            "property_1": "Another string value"
+          }
+        }
+      }
+    ]
+  }
+}
+```
+
+Your application can parse and display the data in any way you choose.
 
 ## Example: Implementing option responses
 {: #api-dialog-option-example}

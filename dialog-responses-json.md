@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-21"
+lastupdated: "2021-01-27"
 
 subcollection: assistant
 
@@ -94,7 +94,8 @@ For more information about how to specify each supported response type using JSO
 
 If you are using an integration, the response is converted at run time into the format expected by the channel. If the response contains multiple media types or attachments, the generic response is converted into a series of separate message payloads as needed. These are sent to the channel in separate messages.
 
-**Note:** When a response is split into multiple messages, the integration sends these messages to the channel in sequence. It is the responsibility of the channel to deliver these messages to the end user; this can be affected by network or server issues.
+When a response is split into multiple messages, the integration sends these messages to the channel in sequence. It is the responsibility of the channel to deliver these messages to the end user; this can be affected by network or server issues.
+{: note}
 
 If you are building your own client application, your app must implement each response type as appropriate. For more information, see [Implementing responses](/docs/assistant?topic=assistant-api-dialog-responses).
 
@@ -283,4 +284,47 @@ This examples displays a greeting message to the user.
     ]
   }
 }  
+```
+
+### User-defined
+{: #dialog-responses-json-user-defined}
+
+A custom response type containing any JSON data the client or integration knows how to handle. For example, you might customize the web chat to display a special kind of card, or build a custom application to format responses using a table or chart.
+
+The user-defined response type is not displayed unless you have implemented code specifically to handle it. For more information about customizing the web chat, see [Applying advanced customizations](/docs/assistant?topic=assistant-web-chat-config). For more information about handling responses in a custom client app, see [Implementing responses](/docs/assistant?topic=assistant-api-dialog-responses).
+{: note}
+
+#### Fields
+{: #dialog-responses-json-user-defined-fields}
+
+| Name          | Type   | Description        | Required? |
+|---------------|--------|--------------------|-----------|
+| response_type | enum   | `user_defined`            | Y         |
+| user_defined  | int    | An object containing any data the client or integration knows how to handle. This object can contain any valid JSON data, but it cannot exceed a total size of 5000 bytes. | Y |
+
+#### Example
+{: #dialog-responses-json-user-defined-example}
+
+This examples shows a generic example of a user-defined response. The `user_defined` object can contain any valid JSON data.
+
+```json
+{
+  "output": {
+    "generic":[
+      {
+        "response_type": "user_defined",
+        "user_defined": {
+          "field_1": "String value",
+          "array_1": [
+            1,
+            2
+          ],
+          "object_1": {
+            "property_1": "Another string value"
+          }
+        }
+      }
+    ]
+  }
+}
 ```
