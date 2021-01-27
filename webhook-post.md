@@ -71,18 +71,16 @@ To add the webhook details, complete the following steps:
 
 1.  Click **Webhooks > Post-message webhook**.
 
-    The postmessage webhook is enabled by default.
+1.  Set the *Post-message webhook* switch to **Enabled**.
 
 1.  Decide whether to return an error if the webhook call fails.
 
     When enabled, everything stops until the processing step is completed successfully.
     {: important}
 
-    If you have a critical postprocessing step that must be taken before you want to allow the response to be sent to the customer, then keep this setting enabled.
+    - If you have a critical postprocessing step that must be taken before you want to allow the response to be sent to the customer, then enable this setting.
 
-    If you disable this setting, then the assistant ignores any errors it encounters and continues to process the response without taking the processing step.
-
-    If the postprocessing step is helpful but not critical, consider disabling this setting.
+    - When this setting is disabled, the assistant ignores any errors it encounters and continues to process the response without taking the processing step. If the postprocessing step is helpful but not critical, consider keeping this setting disabled.
 
 1.  In the **URL** field, add the URL for the external application to which you want to send HTTP POST request callouts.
 

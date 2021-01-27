@@ -72,20 +72,18 @@ To add the webhook details, complete the following steps:
 
 1.  Click **Webhooks > Pre-message webhook**.
 
-    The premessage webhook is enabled by default.
+1.  Set the *Pre-message webhook* switch to **Enabled**.
 
 1.  Decide whether to return an error if the webhook call fails.
 
     When enabled, everything stops until the preprocessing step is completed successfully.
     {: important}
 
-    If you have a critical preprocessing step that must be taken before you want to allow the message to be processed by the assistant, then keep this setting enabled.
+    - If you have a critical preprocessing step that must be taken before you want to allow the message to be processed by the assistant, enable this setting.
 
-    Take steps to test the process that you are calling on a regular basis so you will know if it's down, and can change this setting to prevent all of your message calls from failing.
+      Take steps to test the process that you are calling on a regular basis so you will know if it's down, and can change this setting to prevent all of your message calls from failing.
 
-    If you disable this setting, then the assistant ignores any errors it encounters and continues to process the incoming message without taking the preprocessing step.
-
-    If the preprocessing step is helpful but not critical, consider disabling this setting.
+    - When this setting is disabled, the assistant ignores any errors it encounters and continues to process the incoming message without taking the preprocessing step. If the preprocessing step is helpful but not critical, consider keeping this setting disabled.
 
 1.  In the **URL** field, add the URL for the external application to which you want to send HTTP POST request callouts.
 
