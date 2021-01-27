@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-22"
+lastupdated: "2021-01-27"
 
 subcollection: assistant
 
@@ -23,7 +23,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Integrating with *SMS with Twilio* ![Plus or Premium plan only](images/plus.png)
+# Integrating with *SMS with Twilio*
 {: #deploy-sms}
 
 Add a text messaging integration so your assistant can exchange messages with your customers.
@@ -33,7 +33,7 @@ The Short Messaging Service (SMS) supports text-only messages. Typically, SMS re
 
 Customers send text messages to your Twilio-hosted phone number. Twilio uses a messaging webhook that you set up to send a POST request with the text message body to your assistant. Each response from the assistant is sent back to Twilio to be converted to an outbound SMS message that is sent to the customer. The responses are sent to the Twilio API for processing. You provide your Twilio account SID and project authentication token information, which serve as your Twilio API access credentials.
 
-This feature is available only to Plus or Premium plan users.
+This feature is available only to Plus plan users.
 {: note}
 
 ## Before you begin
