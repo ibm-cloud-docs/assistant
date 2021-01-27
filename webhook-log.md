@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-21"
+lastupdated: "2021-01-27"
 
 subcollection: assistant
 
@@ -24,13 +24,13 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
 
-# Logging messages with a webhook ![Premium only](images/premium0.png)
+# Logging messages with a webhook ![Beta](images/beta.png)
 {: #webhook-log}
 
 Make a call to an external service or application every time a customer submits input to log the conversation.
 {: shortdesc}
 
-The log webhook is available for users of Premium plans only.
+The log webhook is available as a beta feature.
 {: note}
 
 A webhook is a mechanism that allows you to call out to an external program based on events in your program. 
@@ -63,6 +63,8 @@ To add the webhook details, complete the following steps:
 1.  Click **Webhooks > Log webhook**.
 
 1.  Set the *Log webhook* switch to **Enabled**.
+
+    If you cannot enable the webhook, you might need to upgrade your service plan.
 
 1.  In the **URL** field, add the URL for the external application to which you want to send HTTP POST request callouts.
 

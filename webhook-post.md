@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-26"
+lastupdated: "2021-01-27"
 
 subcollection: assistant
 
@@ -24,13 +24,16 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
 
-# Making a call after processing a message
+# Making a call after processing a message ![Beta](images/beta.png)
 {: #webhook-post}
 
 Make a call to an external service or application every time a response is rendered by the assistant.
 {: shortdesc}
 
 A webhook is a mechanism that allows you to call out to an external program based on events in your program. You can add a postmessage webhook to your assistant if you want the webhook to be triggered before each message response is returned to the customer.
+
+The postmessage webhook is available as a beta feature.
+{: note}
 
 The postmessage webhook works with the v2 `/message` API only (stateless and stateful). For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#message).
 {: important}

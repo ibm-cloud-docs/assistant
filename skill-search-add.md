@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-01-21"
+lastupdated: "2021-01-27"
 
 subcollection: assistant
 
@@ -84,6 +84,11 @@ If you create a Discovery instance first, do not add the pre-enriched data sourc
 1.  Specify the details for the new skill:
     - **Name**: A name no more than 64 characters in length. A name is required.
     - **Description**: An optional description no more than 128 characters in length.
+
+    Next, you will connect to a {{site.data.keyword.discoveryshort}} service instance.
+
+    - If you don't have an instance, a {{site.data.keyword.discoveryshort}} service instance is created for you automatically. A Lite plan instance is provisioned no matter what type of {{site.data.keyword.conversationshort}} service plan you have.
+    - If you want to use {{site.data.keyword.discoveryshort}} features that are available with the v2 API only, create your own Premium plan {{site.data.keyword.discoveryshort}} instance before you continue.
 
 1.  Click **Continue**.
 

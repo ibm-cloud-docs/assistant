@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-12-15"
+lastupdated: "2021-01-27"
 
 subcollection: assistant
 
@@ -93,13 +93,13 @@ The following tables illustrate the level of language support available for prod
 | **Chinese (Traditional) (zh-tw)**  | NA | NA |
 | **Czech (cs)**                     | NA | NA |
 | **Dutch (nl)**                     | NA | NA |
-| **French (fr)**                    | NA | NA |
-| **German (de)**                    | NA | NA |
-| **Italian (it)**                   | NA | NA |
+| **French (fr)**                    | NA | GA |
+| **German (de)**                    | NA | GA |
+| **Italian (it)**                   | NA | GA |
 | **Japanese (ja)**                  | GA | NA |
 | **Korean (ko)**                    | NA | NA |
-| **Portuguese (Brazilian) (pt-br)** | NA | NA |
-| **Spanish (es)**                   | NA | NA |
+| **Portuguese (Brazilian) (pt-br)** | NA | GA |
+| **Spanish (es)**                   | NA | GA |
 {: caption="Table 3. Recommendations feature support details continued" caption-side="top"}
 
 ### User input processing support details
