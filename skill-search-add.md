@@ -88,7 +88,7 @@ If you create a Discovery instance first, do not add the pre-enriched data sourc
     Next, you will connect to a {{site.data.keyword.discoveryshort}} service instance.
 
     - If you don't have an instance, a {{site.data.keyword.discoveryshort}} service instance is created for you automatically. A Lite plan instance is provisioned no matter what type of {{site.data.keyword.conversationshort}} service plan you have.
-    - If you want to use {{site.data.keyword.discoveryshort}} features that are available with the v2 API only, create your own Premium plan {{site.data.keyword.discoveryshort}} instance before you continue.
+    - If you want to use {{site.data.keyword.discoveryshort}} features that are only available with the {{site.data.keyword.discoveryshort}} v2 API, create your own Premium plan {{site.data.keyword.discoveryshort}} instance before you continue.
 
 1.  Click **Continue**.
 

@@ -61,7 +61,7 @@ To set up the integration, complete the following steps:
     
     - Create a phone number through your SIP provider, and then assign it to your SIP trunk. 
 
-1.  In the Phone number section of the phone integration setup page, add one or more phone numbers.
+1.  In the *Phone number* section of the phone integration setup page, add one or more phone numbers.
 
     You might have only the one phone that you created through your SIP trunk provider in the previous step, or you might have a set of numbers.
 
@@ -75,7 +75,7 @@ To set up the integration, complete the following steps:
 
       - To add more phone numbers one by one, click the *add phone number* icon (![Add phone number][images/phone-integ-add-number.png]), and then specify the phone number and an optional description. Repeat to add more numbers.
 
-      - To import a set of phone numbers that are stored in a comma-separated value (CSV) file, click the *Upload a CSV file* icon (![Add phone number][images/phone-integ-import-number.png]), and then find the CSV file that contains the list of phone numbers.
+      - To import a set of phone numbers that are stored in a comma-separated values (CSV) file, click the *Upload a CSV file* icon (![Add phone number][images/phone-integ-import-number.png]), and then find the CSV file that contains the list of phone numbers.
 
       The phone numbers you upload will replace any existing numbers in the table.
       {: important}
