@@ -23,7 +23,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Integrating with phone
+# Integrating with phone ![Plus or Premium plan only](images/plus.png)
 {: #deploy-phone}
 
 Add a phone integration so your assistant can answer when your customers call.
@@ -65,15 +65,17 @@ To set up the integration, complete the following steps:
 
     You might have only the one phone that you created through your SIP trunk provider in the previous step, or you might have a set of numbers.
 
-    Click **Add**.
+    - If you have one phone number, add it to the field.
 
-    Add a phone number and an optional description, and then click the checkmark icon ![checkmark icon](images/phone-checkmark-save.png) to save the number.
+      Specify the number by using the international phone number format: `+1 958 555 0123`. Do *not* surround the area code with parentheses, such as (958).
 
-    Specify the number by using the international phone number format: `+1 958 555 0123`. Do *not* surround the area code with parentheses, such as (958).
+    - If you have multiple phone numbers, click **Add**.
 
-    - To add more phone numbers one by one, click the *add phone number* icon (![Add phone number][images/phone-integ-add-number.png]), and then specify the phone number and an optional description. Repeat to add more numbers.
+      Add a phone number and an optional description, and then click the checkmark icon ![checkmark icon](images/phone-checkmark-save.png) to save the number.
 
-    - To import a set of phone numbers that are stored in a comma-separated value (CSV) file, click the *Upload a CSV file* icon (![Add phone number][images/phone-integ-import-number.png]), and then find the CSV file that contains the list of phone numbers.
+      - To add more phone numbers one by one, click the *add phone number* icon (![Add phone number][images/phone-integ-add-number.png]), and then specify the phone number and an optional description. Repeat to add more numbers.
+
+      - To import a set of phone numbers that are stored in a comma-separated values (CSV) file, click the *Upload a CSV file* icon (![Add phone number][images/phone-integ-import-number.png]), and then find the CSV file that contains the list of phone numbers.
 
       The phone numbers you upload will replace any existing numbers in the table.
       {: important}

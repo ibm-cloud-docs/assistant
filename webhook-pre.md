@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-26"
+lastupdated: "2021-01-27"
 
 subcollection: assistant
 
@@ -24,13 +24,16 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
 
-# Making a call before processing a message
+# Making a call before processing a message ![Beta](images/beta.png)
 {: #webhook-pre}
 
 Make a call to an external service or application every time a customer submits input. The external service can process the message before it is processed by your assistant.
 {: shortdesc}
 
 A webhook is a mechanism that allows you to call out to an external program based on events in your program. Add a premessage webhook to your assistant if you want the webhook to be triggered before each incoming message is processed by your assistant.
+
+The premessage webhook is available as a beta feature.
+{: note}
 
 The premessage webhook works with the v2 `/message` API only (stateless and stateful). For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#message).
 {: important}

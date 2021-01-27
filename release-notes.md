@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-21"
+lastupdated: "2021-01-27"
 
 subcollection: assistant
 
@@ -61,6 +61,16 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 The change log lists changes that were made this year ordered by the date they were released.
 
+## 27 January 2021
+{: #27January2021}
+<!--1.133-->
+
+- **Language support was expanded for intent recommendations**: The intent recommendations feature is now supported in Brazilian Portuguese, French, German, Italian, and Spanish dialog skills. For more information, see [Supported languages](/docs/assistant?topic=assistant-language-support).
+
+- **German language improvements**: A word decomposition function was added to the intent and entity recognition models for German-language dialog skills. 
+
+  A characteristic of the German language is that some words are formed by concatenating separate words to form a single compound word. For example, "festnetznummer" (landline number) concatenates the words "festnetz" (landline) and "nummer" (number). When your customers chat with your assistant, they might write a compound word as a single word, as hyphenated words, or as separate words. Previously, the variants resulted in different intent confidence scores and different entity mention counts based on your training data. With the addition of the word decomposition function, the models now treat all compound word variants as equivalent. This update means you no longer need to add examples of every variant of the compound words to your training data.
+
 ## 19 January 2021
 {: #19January2021}
 <!--1.132-->
@@ -80,7 +90,7 @@ The change log lists changes that were made this year ordered by the date they w
 {: #15January2021}
 <!--1.131-->
 
-- **Use new webhooks to process messages!**: A set of new webhooks are available that you can use to perform preprocessing tasks on incoming messages and postprocessing tasks on the corresponding responses. Premium users can also use the new log webhook to log each message with an external service. For more information, see [Webhook overview](/docs/assistant?topic=assistant-webhook-overview).
+- **Use new webhooks to process messages!**: A set of new webhooks is available as a beta feature. You can use the webhooks to perform preprocessing tasks on incoming messages and postprocessing tasks on the corresponding responses. You can use the new log webhook to log each message with an external service. For more information, see [Webhook overview](/docs/assistant?topic=assistant-webhook-overview).
 
 - **New service desk support reference implementation**: You can use the reference implementation details to integrate the web chat with the NICE inContact service desk. For more information, see [Adding service desk support](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-haa).
 
