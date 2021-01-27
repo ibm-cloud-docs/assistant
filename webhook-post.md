@@ -127,7 +127,7 @@ Your webhook details are saved automatically.
 Do extensive testing of your webhook before you enable it for an assistant that is being used in a production environment.
 {: important}
 
-Your assistant must have a conversational skill added to it before your webhook can do anything useful. The webhook is triggered only when a message has been processed by your skill, and a response is ready to be returned.
+Your assistant must have a skill added to it before your webhook can do anything useful. The webhook is triggered only when a message has been processed by your skill, and a response is ready to be returned.
 
 If you enable the setting that returns an error when the webhook call fails, the processing of the assistant is halted entirely if the webhook encounters any issues. Take steps to test the process that you are calling on a regular basis so you will be alerted if the external service is down, and can take actions to prevent all of the message responses from failing to be returned.
 

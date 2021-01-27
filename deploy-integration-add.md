@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-26"
+lastupdated: "2021-01-27"
 
 subcollection: assistant
 
@@ -58,8 +58,8 @@ Follow these steps to add integrations to your assistant:
     - [Web chat](/docs/assistant?topic=assistant-deploy-web-chat)
     - [Facebook Messenger](/docs/assistant?topic=assistant-deploy-facebook)
     - [Slack](/docs/assistant?topic=assistant-deploy-slack)
-    - [Phone](/docs/assistant?topic=assistant-deploy-phone) ![Plus or Premium plan only](images/plus.png)
-    - [SMS with Twilio](/docs/assistant?topic=assistant-deploy-sms) ![Plus or Premium plan only](images/plus.png)
+    - [Phone](/docs/assistant?topic=assistant-deploy-phone)
+    - [SMS with Twilio](/docs/assistant?topic=assistant-deploy-sms)
     - [WhatsApp with Twilio](/docs/assistant?topic=assistant-deploy-whatsapp) ![Beta](images/beta.png)
     - [Custom application](/docs/assistant?topic=assistant-deploy-custom-app)
 
