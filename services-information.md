@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-27"
+lastupdated: "2021-01-28"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
@@ -65,11 +65,6 @@ Information about the artifact limits per plan is available from the topics that
 ### Plus and Premium plan features
 {: #services-information-premium}
 
-The following features are available only to users of Premium plans.
-
-- [Activity tracker](/docs/assistant?topic=assistant-at-events)
-- [v2 Logs API](/apidocs/assistant/assistant-v2#listlogs){: external}
-
 The following features are available only to users of Plus or Premium plans. ![Plus or Premium plan only](images/plus.png)
 
 - [Autolearning](/docs/assistant?topic=assistant-autolearn) ![Beta](images/beta.png)
@@ -84,6 +79,12 @@ The following features are available only to users of Plus plans.
 
 - [Phone integration](/docs/assistant?topic=assistant-deploy-phone)
 - [SMS with Twilio integration](/docs/assistant?topic=assistant-deploy-phone)
+
+The following features are available only to users of Premium plans.
+
+- [Activity tracker](/docs/assistant?topic=assistant-at-events)
+- [v2 Logs API](/apidocs/assistant/assistant-v2#listlogs){: external}
+- [Bring your own key](/docs/assistant?topic=assistant-security#security-byok)
 
 The plan type of the service instance you are currently using is displayed in the page header. You can upgrade from one plan type to another. For more information, see [Upgrading](/docs/assistant?topic=assistant-upgrade).
 
