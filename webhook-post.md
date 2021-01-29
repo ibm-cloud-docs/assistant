@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-27"
+lastupdated: "2021-01-29"
 
 subcollection: assistant
 
@@ -220,8 +220,8 @@ The following sample shows how a simple request body is formatted.
 ```
 {: codeblock}
 
-## Example
-{: #webhook-post-example}
+## Example 1
+{: #webhook-post-example1}
 
 This example shows you how to add `y'all` to the end of each response from the assistant.
 
@@ -267,6 +267,97 @@ function main(params) {
     }
   }
 }
+```
+{: codeblock}
+
+## Example 2
+{: #webhook-post-example-translate-back}
+
+This example shows you how to translate a message response back to the customer's native language. It only works if you perform the steps in [Example 2](/docs/assistant?topic=assistant-webhook-pre#webhook-pre-example-translate) to define a premessage webhook that translates the original message into English.
+
+Define a sequence of web actions in IBM Cloud Functions. The first action in the sequence checks for the language of the original incoming text, which you stored in a context variable named `original_input` in the premessage webhook code. The second action in the sequence translates the dialog response text from English into the original language that was used by the customer.
+
+In the premessage webhook configuration page, the following values are specified:
+
+- **URL**: https://us-south.functions.appdomain.cloud/api/v1/web/e97d2516-5ce4-4fd9-9d05-acc3dd8ennn/default/response-translation_sequence
+- **Secret**: none
+- **Header name**: Content-Type
+- **Header value**: application/json
+
+The node.js code for the first web action in your sequence looks as follows:
+
+```javascript
+let rp = require("request-promise");
+
+function main(params) {
+console.log(JSON.stringify(params))
+
+if (params.payload.output.generic[0].text !== '') {
+const options = { method: 'POST',
+  url: 'https://api.us-south.language-translator.watson.cloud.ibm.com/instances/572b37be-09f4-4704-b693-3bc63869nnnn/v3/identify?version=2018-05-01',
+  auth: {
+           'username': 'apikey',
+           'password': 'nnnn'
+       },
+headers: {
+    "Content-Type":"text/plain"
+},
+  body: [
+          params.payload.context.skills['main skill'].user_defined.original_input
+  ],
+  json: true,
+};
+     return rp(options)
+    .then(res => {
+      //Set the language property of the incoming message to the language that was identified by Watson Language Translator. 
+        params.payload.context.skills['main skill'].user_defined['language'] = res.languages[0].language;
+        console.log(JSON.stringify(params))
+        return params;
+})
+}
+else {
+    params.payload.context.skills['main skill'].user_defined['language'] = 'none';
+    return param
+}
+};
+```
+{: codeblock}
+
+The second web action in the sequence looks as follows:
+
+```javascript
+let rp = require("request-promise");
+
+function main(params) {
+console.log(JSON.stringify(params))
+  if ((params.payload.context.skills["main skill"].user_defined.language !== 'en') && (params.payload.context.skills["main skill"].user_defined.language !== 'none')) {
+  const options = { method: 'POST',
+  url: 'https://api.us-south.language-translator.watson.cloud.ibm.com/instances/572b37be-09f4-4704-b693-3bc638696273/v3/translate?version=2018-05-01',
+  auth: {
+           'username': 'apikey',
+           'password': 'HuQbwdgRUqAWrC1miOjbad0aL22aoVIRSgg1XmvXok34'
+       },
+  body: { 
+      text: [ 
+          params.payload.output.generic[0].text
+          ],
+          target: params.payload.context.skills["main skill"].user_defined.language
+  },
+  json: true 
+  };
+     return rp(options)
+    .then(res => {
+        params.payload.context.skills["main skill"].user_defined["original_output"] = params.payload.output.generic[0].text;
+        params.payload.output.generic[0].text = res.translations[0].translation;
+        return {
+          body : params
+        }
+})
+}
+return { 
+  body : params
+}
+};
 ```
 {: codeblock}
 
