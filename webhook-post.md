@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-29"
+lastupdated: "2021-02-01"
 
 subcollection: assistant
 
@@ -332,10 +332,10 @@ function main(params) {
 console.log(JSON.stringify(params))
   if ((params.payload.context.skills["main skill"].user_defined.language !== 'en') && (params.payload.context.skills["main skill"].user_defined.language !== 'none')) {
   const options = { method: 'POST',
-  url: 'https://api.us-south.language-translator.watson.cloud.ibm.com/instances/572b37be-09f4-4704-b693-3bc638696273/v3/translate?version=2018-05-01',
+  url: 'https://api.us-south.language-translator.watson.cloud.ibm.com/instances/572b37be-09f4-4704-b693-3bc63869nnnn/v3/translate?version=2018-05-01',
   auth: {
            'username': 'apikey',
-           'password': 'HuQbwdgRUqAWrC1miOjbad0aL22aoVIRSgg1XmvXok34'
+           'password': 'nnn'
        },
   body: { 
       text: [ 
