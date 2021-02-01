@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-29"
+lastupdated: "2021-02-01"
 
 subcollection: assistant
 
@@ -198,20 +198,39 @@ For the best customer experience, design your dialog with the capabilities of th
 
 For more information about dialog response types, see [Rich responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia).
 
-If you want to use the same dialog for an assistant that you deploy to many different platforms, you can add custom responses per integration type. Add a conditioned response that tells the assistant to show the response only when the phone integration is being used. For more information, see [Building integration-specific responses](/docs/assistant?topic=assistant-dialog-integrations#dialog-integrations-condition-by-type).
-
 For more information about how to implement common actions from your dialog, see [Handling phone integrations](/docs/assistant?topic=assistant-dialog-voice-actions).
 
-## Supported SIP trunk providers
+If you want to use the same dialog for an assistant that you deploy to many different platforms, you can add custom responses per integration type. Add a conditioned response that tells the assistant to show the response only when the phone integration is being used. For more information, see [Building integration-specific responses](/docs/assistant?topic=assistant-dialog-integrations#dialog-integrations-condition-by-type).
+
+## Bring your own SIP trunk
 {: #deploy-phone-sip-providers}
 
-The following SIP trunk providers are supported:
+You are responsible for setting up the SIP trunk that will be used by the phone integration. Find a provider and create a SIP trunk account. Your account will be charged for the phone integration's use of the SIP trunk.
 
-- [Twilio](#deploy-phone-twilio-setup)
-- [Other third-party providers](#deploy-phone-request-setup)
+The following table lists the fully qualified domain names and IP addresses are used for SIP connections.
 
-You need a credit card to create an account with a third-party provider. Your account is charged for the phone integration's use of the SIP trunk that you configure.
-{: note}
+| Location | Domain name | IP address |
+|----------|------|------------|
+| Dallas | public.0001.voip.us-south.assistant.watson.cloud.ibm.com | 150.239.30.146 |
+| Dallas | public.0002.voip.us-south.assistant.watson.cloud.ibm.com | 169.63.5.162 |
+| Dallas | public.0003.voip.us-south.assistant.watson.cloud.ibm.com | 67.228.108.82 |
+| Frankfurt | public.0001.voip.eu-de.assistant.watson.cloud.ibm.com | 169.50.56.146 |
+| Frankfurt | public.0002.voip.eu-de.assistant.watson.cloud.ibm.com | 161.156.178.162 |
+| Frankfurt | public.0003.voip.eu-de.assistant.watson.cloud.ibm.com | 149.81.86.82 |
+| London | public.0001.voip.eu-gb.assistant.watson.cloud.ibm.com | 158.175.99.34 |
+| London | public.0002.voip.eu-gb.assistant.watson.cloud.ibm.com | 141.125.102.34 |
+| London | public.0003.voip.eu-gb.assistant.watson.cloud.ibm.com | 158.176.120.162 |
+| Seoul | public.0001.voip.kr-seo.assistant.watson.cloud.ibm.com | 169.56.85.50 |
+| Sydney | public.0001.voip.au-syd.assistant.watson.cloud.ibm.com | 168.1.47.2 |
+| Sydney | public.0002.voip.au-syd.assistant.watson.cloud.ibm.com | 168.1.106.130 |
+| Sydney | public.0003.voip.au-syd.assistant.watson.cloud.ibm.com | 135.90.86.50 |
+| Tokyo | public.0001.voip.jp-tok.assistant.watson.cloud.ibm.com | 161.202.149.162 |
+| Tokyo | public.0002.voip.jp-tok.assistant.watson.cloud.ibm.com | 128.168.105.178 |
+| Tokyo | public.0003.voip.jp-tok.assistant.watson.cloud.ibm.com | 165.192.69.82 |
+| Washington, DC | public.0001.voip.us-east.assistant.watson.cloud.ibm.com | 52.116.100.158 |
+| Washington, DC | public.0002.voip.us-east.assistant.watson.cloud.ibm.com | 169.59.136.194 |
+| Washington, DC | public.0003.voip.us-east.assistant.watson.cloud.ibm.com | 169.61.70.162 |
+{: caption="SIP network information" caption-side="top"}
 
 ### Creating a Twilio SIP trunk
 {: #deploy-phone-twilio-setup}
