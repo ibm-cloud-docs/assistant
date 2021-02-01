@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2020-10-19"
+lastupdated: "2021-02-01"
 
 subcollection: assistant
 
@@ -23,14 +23,11 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Handling SMS with Twilio interactions ![Beta](images/beta.png)
+# Handling SMS with Twilio interactions
 {: #dialog-sms-actions}
 
 Learn about common actions you can use to manage the flow of conversations that your assistant has with customers by using SMS text messaging.
 {: shortdesc}
-
-The SMS with Twilio integration is available as a beta feature.
-{: note}
 
 Before you add customizations to your dialog that support SMS messaging interactions, you must set up the SMS with Twilio integration. For more information, see [Integrating with SMS with Twilio](/docs/assistant?topic=assistant-deploy-sms).
 
@@ -43,6 +40,12 @@ For command reference documentation, see [SMS with Twilio integration commands r
 
 ## Adding SMS-based actions to your dialog
 {: #dialog-sms-actions-add}
+
+When calling messaging-specific actions from a dialog, follow these guidelines:
+
+- Define the action within the `context` object, not the `output` object of the dialog node JSON snippet.
+- Define only one action or one sequence per conversation turn.
+- Do not jump from a dialog node with an action configured for it to another dialog node with an action configured for it.
 
 To enable text messaging-specific actions, you must add a JSON code block to the dialog node where you want the action to trigger. 
 

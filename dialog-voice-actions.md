@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2020-10-16"
+lastupdated: "2021-02-01"
 
 subcollection: assistant
 
@@ -23,14 +23,11 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Handling phone interactions ![Beta](images/beta.png)
+# Handling phone interactions
 {: #dialog-voice-actions}
 
 Learn about common actions you can use to manage the flow of conversations that your assistant has with customers over the telephone.
 {: shortdesc}
-
-The phone integration is available as a beta feature.
-{: note}
 
 Before you add customizations to your dialog that support phone interactions, you must set up the phone integration. For more information, see [Integrating with phone](/docs/assistant?topic=assistant-deploy-phone).
 
@@ -49,6 +46,12 @@ For command reference documentation, see [Phone integration commands reference](
 
 ## Adding phone-based actions to your dialog
 {: #dialog-voice-actions-add}
+
+When calling voice-specific actions from a dialog, follow these guidelines:
+
+- Define the action within the context object, not the output object of the dialog node JSON snippet.
+- Define only one action or one sequence per dialog turn.
+- Do not jump from a dialog node with an action configured for it to another dialog node with an action configured for it.
 
 To enable voice-specific actions, you must add a JSON code block to the dialog node where you want the action to trigger. 
 
