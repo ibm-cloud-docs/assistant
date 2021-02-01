@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-02-01"
 
 subcollection: assistant
 
@@ -23,14 +23,11 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# *SMS with Twilio* integration reference ![Beta](images/beta.png)
+# *SMS with Twilio* integration reference
 {: #commands-sms}
 
 Add action commands to the message `context` object to manage the flow of conversations with customers who interact with your assistant by submitting SMS messages over the telephone.
 {: shortdesc}
-
-The *SMS with Twilio* integration is available as a beta feature.
-{: note}
 
 Learn about the supported commands and reserved context variables that are used by the *SMS with Twilio* integration.
 
