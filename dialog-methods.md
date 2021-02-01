@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-14"
+lastupdated: "2021-02-01"
 
 subcollection: assistant
 
@@ -1789,7 +1789,7 @@ Result:
 ### com.google.gson.JsonObject support
 {: #dialog-methods-objects-com-google-gson-JsonObject}
 
-In addition to the built-in methods, you can use standard methods of the `com.google.gson.JsonObject` class.
+In addition to the built-in methods, some of the standard methods of the `com.google.gson.JsonObject` class are also supported.
 
 ## Strings
 {: #dialog-methods-strings}
