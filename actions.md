@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-21"
+lastupdated: "2021-02-02"
 
 subcollection: assistant
 
@@ -155,6 +155,14 @@ To create actions, complete the following steps:
 
     If you can't see the **New action** button, you might need to close the Preview pane.
     {: tip}
+
+### Deleting a step
+{: #actions-step-delete}
+
+To delete a step, complete the following steps:
+
+1.  Open the step that you want to delete.
+1.  Click the *Step options* icon ![Overflow menu](images/kebab.png), and then choose **Delete step**.
 
 ### Applying reply constraints
 {: #actions-response-types}
