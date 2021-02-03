@@ -54,6 +54,9 @@ To add the assistant to a web page on your company website, complete the followi
 
 1.  **Optional**: Change the web chat integration name from *Web chat* to something more descriptive.
 
+    A preview pane is displayed that shows you what the web chat looks like when it is embedded in a web page. If a message is displayed that starts with, `There is an error`, it means you haven't added a conversational skill to your assistant yet. After you add a skill, you can test the conversation from the preview pane.
+    {: tip}
+
 1.  Click **Create** to create a web chat instance.
 
 1.  **Optional**: Customize the style of the chat window. You can make the following changes:
@@ -81,9 +84,6 @@ To add the assistant to a web page on your company website, complete the followi
       The image file must be between 64 x 64 and 100 x 100 pixels in size. 
 
     Style changes you make are immediately applied to the preview that is shown on the page, so you can see how your choices impact the style of the chat UI.
-
-    If the message `There is an error with the message you just sent, but feel free to ask me something else.` is displayed in the preview, it might mean that you do not have a conversational skill added to your assistant. You must add one before you can chat with the assistant. Otherwise, you might want to check if your assistant has a premessage or postmessage webhook enabled that isn't working properly.
-    {: tip} 
 
 1.  **Optional**: Add a home screen to the chat window. Click the **Home screen** tab to turn on the feature.
 

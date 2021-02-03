@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-01-27"
+lastupdated: "2021-02-02"
 
 subcollection: assistant
 
@@ -88,7 +88,7 @@ If you create a Discovery instance first, do not add the pre-enriched data sourc
     Next, you will connect to a {{site.data.keyword.discoveryshort}} service instance.
 
     - If you don't have an instance, a {{site.data.keyword.discoveryshort}} service instance is created for you automatically. A Lite plan instance is provisioned no matter what type of {{site.data.keyword.conversationshort}} service plan you have.
-    - If you want to use {{site.data.keyword.discoveryshort}} features that are only available with the {{site.data.keyword.discoveryshort}} v2 API, create your own Premium plan {{site.data.keyword.discoveryshort}} instance before you continue.
+    - If you want to use {{site.data.keyword.discoveryshort}} features that are only available with the {{site.data.keyword.discoveryshort}} v2 API, create a {{site.data.keyword.discoveryshort}} instance that uses v2 before you continue.
 
 1.  Click **Continue**.
 
@@ -182,7 +182,11 @@ If you have a Discovery service Lite plan, you are given an opportunity to upgra
 
             No ongoing synchronization of uploaded documents is available. If you want to pick up changes that are made to a document, upload a later version of the document.
 
-Wait for the collection to be fully ingested before you return to {{site.data.keyword.conversationshort}}.
+    Wait for the collection to be fully ingested before you return to {{site.data.keyword.conversationshort}}.
+
+1.  From the {{site.data.keyword.discoveryshort}} instance, click **Finish setup in Watson Assistant**.
+
+    If you need to, select the service instance again. Select the data collection if it's not selected automatically.
 
 ### Data collection creation example
 {: #skill-search-add-json-collection-example}
@@ -205,9 +209,7 @@ If you upload a JSON file that contains repeating name values, then only the fir
 ## Configure the search
 {: #skill-search-add-configure}
 
-1.  From the {{site.data.keyword.discoveryshort}} instance, click **Finish setup in Watson Assistant**.
-
-1.  On the {{site.data.keyword.conversationshort}} search skill page, click **Configure**.
+1.  On the {{site.data.keyword.conversationshort}} search skill page, click **Next**.
 
 1.  Choose the {{site.data.keyword.discoveryshort}} collection fields from which you want to extract text to include in the search result that is returned to the user.
 
