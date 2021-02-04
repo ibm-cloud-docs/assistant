@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2020-11-23"
+lastupdated: "2021-02-03"
 
 subcollection: assistant
 
@@ -174,4 +174,4 @@ For the best customer experience, design your dialog with the capabilities of th
 | Bold | `There's *no* crying in baseball.` | There's **no** crying in baseball. |
 {: caption="Supported Markdown syntax" caption-side="top"}
 
-If you want to use the same dialog for an assistant that you deploy to many different platforms, add custom responses per integration type. You can add a conditioned response that tells the assistant to show the response only when the *WhatsApp with Twilio* integration is being used. For more information, see [Building integration-specific responses](/docs/assistant?topic=assistant-dialog-integrations#dialog-integrations-condition-by-type).
+<!-- If you want to use the same dialog for an assistant that you deploy to many different platforms, add custom responses per integration type. You can add a conditioned response that tells the assistant to show the response only when the *WhatsApp with Twilio* integration is being used. For more information, see [Building integration-specific responses](/docs/assistant?topic=assistant-dialog-integrations#dialog-integrations-condition-by-type). -->

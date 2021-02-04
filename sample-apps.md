@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-09-14"
+lastupdated: "2021-02-03"
 
 keywords: sample applications, sample apps
 
@@ -25,7 +25,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Sample apps
+# Samples and resources
 {: #sample-apps}
 
 Explore our sample applications to understand what you can develop with {{site.data.keyword.conversationshort}}.
