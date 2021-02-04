@@ -55,7 +55,7 @@ This diagram illustrates how the product delivers an exceptional, omnichannel cu
 
 - The **assistant** receives a message from a customer and sends it down the appropriate resolution path. 
 
-  If you want to preprocess an incoming message, this is where you would inject logic to call an external service that can process the message before the assistant routes it. Likewise, you can process a response from the assistant before it is returned to the customer.
+  If you want to preprocess incoming messages, this is where you would inject logic to call an external service that can process the messages before the assistant routes them. Likewise, you can process responses from the assistant before they are returned to the customer.
 
 - The assistant chooses the appropriate resolution from among these options:
 
@@ -63,11 +63,11 @@ This diagram illustrates how the product delivers an exceptional, omnichannel cu
 
   - A **search skill** leverages existing FAQ or other curated content that you own to find relevant answers to customer questions.
 
-  - If a customer want more personalized help or wants to discuss a sensitive subject, the assistant can connect the customer with someone from your support team through the web chat integration.
+  - If a customer wants more personalized help or wants to discuss a sensitive subject, the assistant can connect the customer with someone from your support team through the web chat integration.
 
 For more information about the architecture, read the [How to Make Chatbot Orchestration Easier](https://medium.com/ibm-watson/how-to-make-chatbot-orchestration-easier-c8ed61620b8d){: external} blog on Medium.com.
 
-To see how {{site.data.keyword.conversationshort}} is helping enterprises cut costs and improve customer satisfaction today, [read the Watson blog](https://www.ibm.com/blogs/watson/2020/03/independent-study-finds-ibm-watson-assistant-customers-accrued-23-9-million-in-benefits/){: external}.
+To see how {{site.data.keyword.conversationshort}} is helping enterprises cut costs and improve customer satisfaction today, read the [Independent study finds IBM Watson Assistant customers can accrue $23.9 million in benefits](https://www.ibm.com/blogs/watson/2020/03/independent-study-finds-ibm-watson-assistant-customers-accrued-23-9-million-in-benefits/){: external} blog on ibm.com.
 
 This documentation describes managed instances of {{site.data.keyword.conversationshort}} that are offered in IBM Cloud or in Cloud Pak for Data as a Service. If you are interested in on-premises or installed deployments, see [this documentation](/docs/assistant-data?topic=assistant-data-index).
 {: note}
