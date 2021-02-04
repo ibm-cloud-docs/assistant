@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-02-02"
 
 keywords: context, context variable
 
@@ -615,38 +615,38 @@ Choose one of these actions to update the array. In each case, we see the array 
 
 - **Overwrite**: To overwrite the values in an array, simply set the array to the new values:
 
-    For this Dialog runtime context:
+  For this Dialog runtime context:
 
-        ```json
-        {
-          "context": {
-            "toppings_array": ["onion", "olives"]
-          }
-        }
-        ```
-        {: codeblock}
+  ```json
+  {
+    "context": {
+      "toppings_array": ["onion", "olives"]
+    }
+  }
+  ```
+  {: codeblock}
 
-    Make this update:
+  Make this update:
 
-        ```json
-        {
-          "context": {
-            "toppings_array": ["ketchup", "tomatoes"]
-          }
-        }
-        ```
-        {: codeblock}
+  ```json
+  {
+    "context": {
+      "toppings_array": ["ketchup", "tomatoes"]
+    }
+  }
+  ```
+  {: codeblock}
 
-    Result:
+  Result:
 
-        ```json
-        {
-          "context": {
-            "toppings_array": ["ketchup", "tomatoes"]
-          }
-        }
-        ```
-        {: codeblock}
+  ```json
+  {
+    "context": {
+      "toppings_array": ["ketchup", "tomatoes"]
+    }
+  }
+  ```
+  {: codeblock}
 
 See [Expression language methods](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-arrays) for more information about methods you can perform on arrays.
 

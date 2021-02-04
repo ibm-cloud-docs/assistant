@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-12-09"
+lastupdated: "2021-02-04"
 
 keywords: chatbot, live chatbot, omnichannel
 
@@ -42,74 +42,41 @@ Use {{site.data.keyword.conversationfull}} to build your own branded live chatbo
 ## How it works
 {: #index-how-it-works}
 
-This diagram illustrates how the product delivers an omnichannel customer experience:
+This diagram illustrates how the product delivers an exceptional, omnichannel customer experience:
 
-![Flow diagram of the service](images/service-ovw.png)
+![Flow diagram of the service](images/arch-detail.png)
 
-- Users interact with the assistant through one or more of these **integration** points:
+- Customers interact with the assistant through one or more of these channels:
 
-  - A virtual assistant that you publish directly to an existing social media messaging platform, such as Slack or Facebook Messenger.
-  - A web chat that you embed in your company website that can answer customer questions directly and can transfer complex requests to a customer support representative.
-  - A custom application that you develop, such as a mobile app or a robot with a voice interface.
+  - An existing social media messaging platform, such as Slack, Facebook Messenger, or WhatsApp
+  - A phone call or text message
+  - A web chat that you embed in your company website and that can transfer complex requests to a customer support representative.
+  - A custom application that you develop, such as a mobile app or a robot with a voice interface
 
-- The **assistant** receives user input and routes it to the dialog skill.
+- The **assistant** receives a message from a customer and sends it down the appropriate resolution path. 
 
-- The **dialog skill** interprets the user input further, then directs the flow of the conversation. The dialog gathers any information it needs to respond or perform a transaction on the user's behalf.
+  If you want to preprocess incoming messages, this is where you would inject logic to call an external service that can process the messages before the assistant routes them. Likewise, you can process responses from the assistant before they are returned to the customer.
 
-- Any questions that cannot be answered by the dialog skill are sent to the **search skill**, which finds relevant answers by searching the company knowledge bases that you configure for the purpose.
+- The assistant chooses the appropriate resolution from among these options:
 
-To see how {{site.data.keyword.conversationshort}} is helping enterprises cut costs and improve customer satisfaction today, [read the Watson blog](https://www.ibm.com/blogs/watson/2020/03/independent-study-finds-ibm-watson-assistant-customers-accrued-23-9-million-in-benefits/){: external}.
+  - A **conversational skill** interprets the customer's message further, then directs the flow of the conversation. The skill gathers any information it needs to respond or perform a transaction on the customer's behalf.
+
+  - A **search skill** leverages existing FAQ or other curated content that you own to find relevant answers to customer questions.
+
+  - If a customer wants more personalized help or wants to discuss a sensitive subject, the assistant can connect the customer with someone from your support team through the web chat integration.
+
+For more information about the architecture, read the [How to Make Chatbot Orchestration Easier](https://medium.com/ibm-watson/how-to-make-chatbot-orchestration-easier-c8ed61620b8d){: external} blog on Medium.com.
+
+To see how {{site.data.keyword.conversationshort}} is helping enterprises cut costs and improve customer satisfaction today, read the [Independent study finds IBM Watson Assistant customers can accrue $23.9 million in benefits](https://www.ibm.com/blogs/watson/2020/03/independent-study-finds-ibm-watson-assistant-customers-accrued-23-9-million-in-benefits/){: external} blog on ibm.com.
 
 This documentation describes managed instances of {{site.data.keyword.conversationshort}} that are offered in IBM Cloud or in Cloud Pak for Data as a Service. If you are interested in on-premises or installed deployments, see [this documentation](/docs/assistant-data?topic=assistant-data-index).
 {: note}
 
-## Implementation steps
-{: #index-implementation}
-
-This diagram shows the implementation in more detail:
-
-![Flow diagram of the service](images/service-ovw-details.png)
-
-Here's how you implement your assistant:
-
-1.  Create an assistant.
-
-1.  Add a skill to your assistant.
-
-    Depending on your service plan, you can add the following types of skills:
-
-    - To create an AI-driven conversational flow, add a dialog skill.  
-  
-      Use the intuitive graphical product to define the training data and dialog for the conversation between your assistant and your customers. The training data consists of the following artifacts:
-
-      - **Intents**: Goals that you anticipate your users have when they interact with your assistant. Define one intent for each goal that can be identified in a user's input. For example, you might define an intent that is named *store_hours* that answers questions about store hours. For each intent, you add sample utterances that reflect the input customers might use to ask for the information they need, such as, `What time do you open?`
-
-        Or use prebuilt **content catalogs** that are provided by IBM to get started with data that addresses common customer goals.
-
-      - **Dialog**: Use the dialog editor to build a dialog flow that incorporates your intents. The dialog flow is represented graphically as a tree. You can add a branch to process each of the intents that you want your assistant to handle.
-
-      - **Entities**: An entity represents a term or object that provides context for an intent. For example, an entity might be a city name that helps your dialog to distinguish which store the user wants to know store hours for. After you add entities, update your dialog to use them. Add dialog nodes that handle the many possible permutations of a request based on the entities that are found in the user input.
-
-      As you add training data, a natural language classifier is automatically added to the skill. The classifier model is trained to understand the types of requests that you teach your assistant to listen for and respond to.
-
-    - To embed existing help content, add a search skill. ![Plus or Premium plan only](images/plus.png)
-
-      Take advantage of data collections that you create in {{site.data.keyword.discoveryfull}} to provide answers to customer questions. When a customer asks a question that the dialog is not designed to answer, your assistant can search for relevant information from the configured data sources, extract the information, and return it as the assistant's response.
-
-1.  Bring the assistant to your customers where they are by adding integrations. 
-
-    Add a built-in channel integration to deploy the configured assistant directly to a social media or messaging channel. Build your own client application as the user interface for the assistant. Or add the built-in web chat integration to your company website. From the web chat you can transfer customers who ask to speak to someone to your existing service desk personnel.
-
-    Your deployed assistant is hosted by {{site.data.keyword.cloud}}, the IBM cloud computing platform. (For more information, see [Platform overview](/docs/overview?topic=overview-whatis-platform){: external}.)
-
 Read more about these implementation steps by following these links:
 
-- [Assistant overview](/docs/assistant?topic=assistant-assistants)
-- [Search skill overview](/docs/assistant?topic=assistant-skill-search-add)
-- [Intent creation overview](/docs/assistant?topic=assistant-intents#intents-described)
-- [Dialog overview](/docs/assistant?topic=assistant-dialog-build)
-- [Entity creation overview](/docs/assistant?topic=assistant-entities#entities-described)
-- [Adding integrations](/docs/assistant?topic=assistant-deploy-integration-add)
+- [Creating an assistant](/docs/assistant?topic=assistant-assistant-add)
+- [Adding skills to your assistant](/docs/assistant?topic=assistant-skill-add)
+- [Deploying your assistant](/docs/assistant?topic=assistant-deploy-integration-add)
 
 ## Browser support
 {: #index-browser-support}
