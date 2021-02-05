@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-01"
+lastupdated: "2021-02-04"
 
 subcollection: assistant
 
@@ -258,6 +258,23 @@ To send a specific message from a dialog node, add the `vgwActSendSMS` command.
 {: codeblock}
 
 The customer's reply text is stored in the `$vgwSmsMessage` or `$vgwSMSMedia` context variable, depending on whether they reply with text or other media. You can add child nodes that condition on these context variables and respond appropriately based on the content of the customer's text. For example, if you ask for an address, your child node can check for reply text by using the `$vgwSmsMessage` node condition, and then save the user's input to an `$address` context variable.
+
+If your *SMS with Twilio* integration supports more than one SMS phone number, be sure to specify the phone number that you want to use to send the text message. Otherwise, the text is sent using the same phone number that was called.
+
+``` json
+{
+  "context": {
+    "vgwAction": {
+      "command": "vgwActSendSMS",
+      "parameters": {
+        "message": "Hey, this is Watson Assistant. To send me your street address, respond to this text message with your address.",
+        "tenantPhoneNumber":"18885550123"
+      }
+    }
+  }
+}
+```
+{: codeblock}
 
 ## Transferring a call to a human agent
 {: #dialog-voice-actions-transfer}

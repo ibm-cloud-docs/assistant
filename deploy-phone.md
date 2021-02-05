@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-01"
+lastupdated: "2021-02-03"
 
 subcollection: assistant
 
@@ -202,8 +202,18 @@ For more information about how to implement common actions from your dialog, see
 
 If you want to use the same dialog for an assistant that you deploy to many different platforms, you can add custom responses per integration type. Add a conditioned response that tells the assistant to show the response only when the phone integration is being used. For more information, see [Building integration-specific responses](/docs/assistant?topic=assistant-dialog-integrations#dialog-integrations-condition-by-type).
 
-## Bring your own SIP trunk
+## Setting up a SIP trunk
 {: #deploy-phone-sip-providers}
+
+You can set up a SIP trunk in the following ways:
+
+- [Bring your own SIP trunk](#deploy-phone-byost)
+- [Create a Twilio SIP trunk](#deploy-phone-twilio-setup)
+- [Use other third-party providers](#deploy-phone-request-setup)
+- [Migrate from Voice Agent with Watson](#deploy-phone-migrate-from-va)
+
+### Bring your own SIP trunk
+{: #deploy-phone-byost}
 
 You are responsible for setting up the SIP trunk that will be used by the phone integration. Find a provider and create a SIP trunk account. Your account will be charged for the phone integration's use of the SIP trunk.
 
@@ -238,8 +248,6 @@ The following table lists the fully qualified domain names and IP addresses are 
 To set up a Twilio SIP trunk, complete the following steps: 
 
 1.  Create a Twilio account on the [Twilio website](https://www.twilio.com/sip-trunking){: external}.
-
-1.  Create a SIP trunk with your Twilio account.
 
 1.  From the Twilio website, go to the *Elastic SIP Trunking* dashboard.
 
@@ -291,6 +299,27 @@ The SIP trunk provider sets up a SIP trunk for your voice traffic, and manages a
    - Your {{site.data.keyword.conversationshort}} service name
    - Network diagram with IP address or SIP trunk provider information
 
+### Migrating from Voice Agent with Watson
+{: #deploy-phone-migrate-from-va}
+
+If you created an {{site.data.keyword.iva_full}} service instance in IBM Cloud to enable customers to connect to an assistant over the phone, use the phone integration instead. You can use the same SIP account and phone number that you configured for use with {{site.data.keyword.iva_short}} in the phone integration.
+
+The phone integration provides a more seamless integration with your assistant. However, the integration currently does not support the following functions:
+
+- Outbound calling
+- Configuring backup locations
+- Event forwarding to save call detail reports in the IBM Cloudant for IBM Cloud database service <!-- Use the CDR API instead. -->
+- Reviewing the usage summary page. Use logDNA instead. For more information, see [Viewing logs](#deploy-phone-logs).
+
+To migrate from {{site.data.keyword.iva_short}} to the {{site.data.keyword.conversationshort}} phone integration, complete the following steps:
+
+1.  From the {{site.data.keyword.iva_short}} page, copy the phone number or numbers that you used for your SIP account.
+1.  When you set up the {{site.data.keyword.conversationshort}} phone integration, add the phone number or set of numbers that you copied in the previous step.
+1.  From the phone integration setup page, copy the *SIP uniform resource identifier (URI)*. 
+1.  In your SIP trunk account, replace the {{site.data.keyword.iva_short}} URI that you specified previously with the URI that you copied from the phone integration setup page in the previous step. 
+
+    For example, if you use a Twilio SIP trunk, you would add the assistant's *SIP uniform resource identifier (URI)* to the Twilio *Origination SIP URI* field.
+
 ### Call routing details
 {: #deploy-phone-route}
 
@@ -311,7 +340,7 @@ Incoming calls to your assistant follow this path:
 ## Phone integration limits
 {: #deploy-phone-limits}
 
-Any speech service charges that are incurred by the phone integration are included in the usage costs of {{site.data.keyword.conversationshort}}.
+Any speech service charges that are incurred by the phone integration are included in the usage costs of {{site.data.keyword.conversationshort}}. Use of Speech services outside of the phone integration do incur costs.
 
 Plan usage is measured based on the number of monthly active users, where a user is identified by the caller's unique phone number. An MD5 hash is applied to the phone number and the 128-bit hash value is used for billing purposes.
 

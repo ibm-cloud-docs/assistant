@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-29"
+lastupdated: "2021-02-03"
 
 subcollection: assistant
 
@@ -39,8 +39,6 @@ This feature is available only to Plus plan users.
 ## Before you begin
 {: #deploy-sms-service-setup}
 
-- You must have Manager service level access to the instance. For more information about access levels, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).
-
 If you don't have a text messaging phone number, set up a SMS with Twilio account and get a phone number.
 
 1.  Go to the [Twilio website](https://www.twilio.com/){: external}.
@@ -53,10 +51,27 @@ If you don't have a text messaging phone number, set up a SMS with Twilio accoun
 Keep the Twilio web page open in a web browser tab so you can refer to it again later.
 {: tip}
 
+### Migrating from Voice Agent with Watson
+{: #deploy-sms-migrate-from-va}
+
+If you created an {{site.data.keyword.iva_full}} service instance in IBM Cloud to enable customers to exchange text messages with an assistant, use the *SMS with Twilio* integration instead.
+
+The *SMS with Twilio* integration provides a more seamless integration with your assistant and supports as many Twilio phone numbers as needed. However, the integration currently does not support the following functions:
+
+- Starting an SMS-only interaction with an outgoing text
+- Configuring backup locations
+- Reviewing the usage summary page. Use logDNA instead. For more information, see [Viewing logs](#deploy-phone-logs).
+
+To migrate from {{site.data.keyword.iva_short}} to the {{site.data.keyword.conversationshort}} *SMS with Twilio* integration, complete the following step:
+
+1.  Do one of the following things:
+
+    - If your {{site.data.keyword.iva_short}} service instance uses an SMS service provider other than Twilio, you cannot continue to use it. You must create an SMS account with Twilio first. Complete the [Before you begin](#deploy-sms-service-setup) steps to create the account. Next, set up the integration.
+    
+    - If your {{site.data.keyword.iva_short}} service instance uses Twilio as its SMS provider, you can go directly to setting up the integration.
+
 ## Set up the integration
 {: #deploy-sms-setup}
-
-To watch a video that walks through the setup process, see [Phone and SMS Integration](https://community.ibm.com/community/user/watsonapps/viewdocument/phone-and-sms-integration?CommunityKey=7a3dc5ba-3018-452d-9a43-a49dc6819633&tab=librarydocuments){: external} in the *IBM Watson Apps Community*.
 
 To set up the integration, complete the following steps:
 
@@ -70,12 +85,12 @@ To set up the integration, complete the following steps:
 
 1.  From the Twilio site, click the home icon to go to your project dashboard. 
 
-    Copy the following values and store them temporarily, so you can paste them into the phone integration setup page in the next step.
+    Copy the following values and store them temporarily, so you can paste them into the *SMS with Twilio* integration setup page in the next step.
 
     - Account SID
     - Auth token
 
-1.  Return to the phone integration setup page. 
+1.  Return to the *SMS with Twilio* integration setup page. 
 
     Paste the values that you copied in the previous step into the fields with the corresponding names in the *Twilio account information* section.
 
@@ -84,13 +99,19 @@ To set up the integration, complete the following steps:
 
 1.  Scroll to the *Setup instructions* section, and then copy the value from the **Webhook URI (uniform resource identifier)** field.
 
+    You will add this URI to the webhook configuration in Twilio. If you want to support more than one phone number, you must add the URI to the webhook for each phone number separately.
+
 1.  Go to your Twilio account web page. From the *All Products and Services* menu, click *Phone Numbers*. 
 
-1.  From the *Active Numbers* page, click your phone number. Scroll to the *Messaging* section, and then find the *Webhook* field that defines what to do when *a message comes in*. 
+1.  From the *Active Numbers* page, click one of your phone numbers. Scroll to the *Messaging* section, and then find the *Webhook* field that defines what to do when *a message comes in*. 
 
     Paste the value that you copied from the *Webhook URI* field into it.
 
+1.  If you want to support multiple phone numbers, repeat the previous step for each phone number that you want to use.
+
 1.  Click **Save and exit**.
+
+To watch a video that walks through the setup process, see [Phone and SMS Integration](https://community.ibm.com/community/user/watsonapps/viewdocument/phone-and-sms-integration?CommunityKey=7a3dc5ba-3018-452d-9a43-a49dc6819633&tab=librarydocuments){: external} in the *IBM Watson Apps Community*.
 
 If you want your assistant to be able to switch between voice and text during a customer interaction, enable both the phone and text messaging integrations. The integrations do not need to use the same third-party service provider. For more information, see [Integrating with phone](/docs/assistant?topic=assistant-deploy-phone).
 
