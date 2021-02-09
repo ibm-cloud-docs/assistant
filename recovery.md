@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-01-29"
+lastupdated: "2020-02-09"
 
 subcollection: assistant
 
@@ -23,7 +23,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# High availability and disaster recovery
+# Understanding high availability and disaster recovery for {{site.data.keyword.conversationshort}}
 {: #recovery}
 
 {{site.data.keyword.conversationfull}} is highly available within multiple {{site.data.keyword.cloud}} locations (for example, Dallas and Washington, DC). However, recovering from potential disasters that affect an entire location requires planning and preparation.
