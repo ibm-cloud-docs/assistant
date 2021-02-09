@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-06"
+lastupdated: "2021-02-09"
 
 keywords: intent, intent conflicts, annotate
 
@@ -73,6 +73,8 @@ Start with a few intents, and test them as you iteratively expand the scope of t
 
     A number sign `#` is prepended to the intent name automatically to help identify the term as an intent. You do not need to add it.
     {: tip}
+
+    Keep the name as short as possible. It's easier to read in the "Try it out" pane and conversation logs if you keep the intent name short and concise.
 
     Optionally add a description of the intent in the **Description** field.
 
