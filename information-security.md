@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-10-13"
+lastupdated: "2021-02-09"
 
 subcollection: assistant
 
@@ -23,7 +23,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Information security
+# Securing your data
 {: #information-security}
 
 IBM is committed to providing our clients and partners with innovative data privacy, security and governance solutions.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-01-06"
+lastupdated: "2021-02-09"
 
 subcollection: assistant
 
@@ -28,20 +28,24 @@ subcollection: assistant
 Customize your assistant by adding to it the skills it needs to satisfy your customers' goals.
 {: shortdesc}
 
-You can add one skill of each type to your assistant:
+Conversational skills return responses that are authored by you to answer common questions, while a search skill searches for and returns passages from existing self-service content.
 
-- **Actions skill** ![Beta](images/beta.png): Offers a simple interface where you can build a conversational flow for your assistant to follow.
+You can add the following types of skills to your assistant:
 
-- **Dialog skill**: Uses Watson natural language processing and machine learning technologies to understand user questions and requests, and respond to them with answers that are authored by you.
+- *Conversational skills*: Understand and address questions or requests that your customers typically ask about. You provide information about the subjects or tasks that your users need help with, and how they ask about them, and the product dynamically builds a machine learning model that is tailored to understand the same and similar user requests.
 
-- **Search skill** ![Plus or Premium plan only](images/plus.png): For a given user query, uses the {{site.data.keyword.discoveryfull}} service to search a data source of your self-service content and return an answer.
+  - **Actions skill** ![Beta](images/beta.png): Offers a simple interface where anyone can build a conversational flow for your assistant to follow. The complex process of training data creation occurs behind the scenes automatically.  [Learn more](#skill-add-actions-skill)
+
+  - **Dialog skill**: Offers a set of editors that you use to define both your training data and the conversation. The conversation is represented as a dialog tree. You use the graphical dialog editor to create a script of sorts for your assistant to read from when it interacts with your customers. The dialog keys off the common customer goals that you teach it to recognize, and provides useful responses. [Learn more](#skill-add-dialog-skill)
+
+  If you can't decide which type of conversational skill to create, see [Choosing a conversational skill](/docs/assistant?topic=assistant-skills-choose).
+
+- **Search skill** ![Plus or Premium plan only](images/plus.png): Leverages information from existing corporate knowledge bases or other collections of content authored by subject matter experts to address unanticipated or more nuanced customer inquiries. For a given user query, uses the {{site.data.keyword.discoveryfull}} service to search a data source of your self-service content and return an answer. [Learn more](#skill-add-search-skill)
 
   Only users of Plus or Premium plans can create this type of skill.
   {: important}
 
 If you add both a dialog skill and an actions skill to your assistant, the dialog skill is used. You can configure your dialog skill to process individual actions from your actions skill by following the steps in [Calling an actions skill from a dialog](/docs/assistant?topic=assistant-dialog-call-action).
-
-If you can't decide between creating an actions or dialog skill, see [Choosing skills](/docs/assistant?topic=assistant-skills-choose).
 {: tip}
 
 ## Actions skill
@@ -50,6 +54,8 @@ If you can't decide between creating an actions or dialog skill, see [Choosing s
 An actions skill contains actions that represent the tasks you want your assistant to help your customers with.
 
 Each action contains a series of steps that represent individual exchanges with a customer. Building the conversation that your assistant has with your customers is fundamentally about deciding which steps, or which user interactions, are required to complete an action. After you identify the list of steps, you can then focus on writing engaging content to turn each interaction into a positive experience for your customer.
+
+![Diagram of a simple exchange between a customer and an actions skill step.](images/action-skill-explained.png)
 
 ## Dialog skill
 {: #skill-add-dialog-skill}
@@ -81,7 +87,7 @@ When Watson Assistant doesn't have an explicit solution to a problem, it routes 
 
 If you already use the {{site.data.keyword.discoveryshort}} service, you can mine your existing data collections for source material that you can share with customers to address their questions.
 
-However, you do not need to have a {{site.data.keyword.discoveryshort}} service instance. If you choose to create a search skill, a free instance of {{site.data.keyword.discoveryshort}} is provisioned for you. You can then create a collection from a data source and configure your search skill to search this collection to find answers to customer queries.
+However, you do not need to have a {{site.data.keyword.discoveryshort}} service instance. If you choose to create a search skill, a free instance of {{site.data.keyword.discoveryshort}} is provisioned for you. You can then create a collection from a data source and configure your search skill to search this collection for answers to customer queries.
 
 The following diagram illustrates how user input is processed when both a dialog skill and a search skill are added to an assistant. Any questions that the dialog is not designed to answer are sent to the search skill, which finds a relevant response from a {{site.data.keyword.discoveryshort}} data collection.
 
@@ -110,38 +116,3 @@ The number of skills you can create depends on your {{site.data.keyword.conversa
 {: caption="Plan details" caption-side="top"}
 
 `*` After 30 days of inactivity, an unused skill in a Lite plan service instance might be deleted to free up space.
-
-## Renaming a skill
-{: #skill-add-rename}
-
-You can change the name of a skill and its associated description after you create the skill.
-
-To rename a skill, follow these steps:
-
-1.  From the Skills page, find the skill that you want to rename.
-
-1.  Click the ![open and close list of options](images/kebab.png) icon, and then choose **Rename**.
-
-1.  Edit the name, and then click **Save**.
-
-## Deleting a skill
-{: #skill-add-delete}
-
-You can delete any skill that you can access, unless it is being used by an assistant. If it is in use, you must remove it from the assistant that is using it before you can delete it.
-
-Be sure to check with anyone else who might be using the skill before you delete it.
-{: tip}
-
-To delete a skill, complete the following steps:
-
-1.  Find out whether the skill is being used by any assistants. From the Skills page, find the tile for the skill that you want to delete. The **Assistants** field lists the assistants that currently use the skill.
-
-1.  If the skill you want to delete is associated with an assistant, then remove it from the assistant by completing the following steps:
-
-    - Check with the owner of the assistant that is using the skill before you remove the skill from it.
-    - Open the Assistants page, and then click to open the assistant tile.
-    - Find the tile for the skill that you want to delete. Click the ![open and close list of options](images/kebab.png) icon, and then choose **Remove**.
-    - Repeat the previous steps for any other assistants that use the skill.
-    - Return to the Skills page and find the tile for the skill that you want to delete.
-
-1.  Click the ![open and close list of options](images/kebab.png) icon, and then choose **Delete**. Confirm the deletion.

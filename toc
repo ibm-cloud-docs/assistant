@@ -105,12 +105,14 @@ Watson Assistant (Managed)
 
     {: .topicgroup}
     Administrative tasks
+        backup.md
+        upgrade.md
+
+    {: .topicgroup}
+    Enhancing security
         access-control.md
         information-security.md
         security.md
-        recovery.md
-        backup.md
-        upgrade.md
 
     {: .topicgroup}
     Advanced development
@@ -171,6 +173,7 @@ Watson Assistant (Managed)
     commands-voice.md
     commands-sms.md
     services-information.md
+    recovery.md
 
     {: .topicgroup}
     System entities

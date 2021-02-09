@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-14"
+lastupdated: "2021-02-09"
 
 keywords: assistant, omnichannel, virtual agent, virtual assistant, chatbot, conversation, watson assistant, watson conversation
 
@@ -84,7 +84,7 @@ The type of skill that is added is different for different users. The skill will
 
   If you have a dialog skill, continue the tutorial by reading [Getting started with a dialog skill](/docs/assistant?topic=assistant-gs-dialog).
 
-Only if an assistant and skill are not created for you, complete Steps 2 and 3.
+Only if an assistant and skill are not created for you, complete Steps 2 and 3. (A skill is created and added to the assistant for you only on first use of the product. When you create an assistant later, you can choose the skills you want to add to it.)
 {: important}
 
 ## Create an assistant

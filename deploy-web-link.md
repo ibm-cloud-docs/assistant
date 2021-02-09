@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-19"
+lastupdated: "2021-02-09"
 
 subcollection: assistant
 
@@ -46,6 +46,7 @@ To test the assistant from a web-hosted chat widget, complete the following step
 1.  In the *Assistant preview* window, submit test utterances to see how the assistant responds.
 
     If the *Connect to agent* response is displayed, it means you do not have a conversational skill added to your assistant. You must add one before you can chat with the assistant.
+    {: important}
 
 1.  You can click the **Restart conversation** button to start a conversation over.
 

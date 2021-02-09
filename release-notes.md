@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-05"
+lastupdated: "2021-02-09"
 
 subcollection: assistant
 
@@ -181,7 +181,7 @@ The following features are available in service instances hosted in all data cen
 
 - **New languages supported by the dialog analysis notebook**:  The *Dialog skill analysis notebook* was updated with language support for French, German, Spanish, Czech, Italian, and Portuguese. For more information, see [Analysis notebooks](/docs/assistant?topic=assistant-logs-resources#logs-resources-jupyter-logs).
 
-- **Visit the learning center!**: Click the **Learning center** link that is displayed in the header of the dialog skill pages to find helpful product tours. The tours guide you through the steps to follow to complete a range of tasks, from adding your first intent to enhancing your dialog with slots. The **Additional resources** page has links to relevant documentation topics and how-to videos. You can search the resource link titles to find what you're looking for quickly.
+- **Visit the learning center!**: Click the **Learning center** link that is displayed in the header of the skill pages to find helpful product tours. The tours guide you through the steps to follow to complete a range of tasks, from adding your first intent to a dialog skill to enhancing the conversation in an actions skill. The **Additional resources** page has links to relevant documentation topics and how-to videos. You can search the resource link titles to find what you're looking for quickly. You must open a skill for the *Learning center* link to be displayed in the page header.
 
 ## 29 October 2020
 {: #29October2020}
