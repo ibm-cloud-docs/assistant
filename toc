@@ -108,7 +108,6 @@ Watson Assistant (Managed)
         access-control.md
         information-security.md
         security.md
-        recovery.md
         backup.md
         upgrade.md
 
@@ -165,6 +164,7 @@ Watson Assistant (Managed)
         [Events](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events)
 
     at-events.md
+    recovery.md
     dialog-methods.md
     expression-language.md
     filter-reference.md
