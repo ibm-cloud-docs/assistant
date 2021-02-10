@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-26"
+lastupdated: "2021-02-09"
 
 subcollection: assistant
 
@@ -57,7 +57,7 @@ To add the assistant to a web page on your company website, complete the followi
     A preview pane is displayed that shows you what the web chat looks like when it is embedded in a web page. If a message is displayed that starts with, `There is an error`, it means you haven't added a conversational skill to your assistant yet. After you add a skill, you can test the conversation from the preview pane.
     {: tip}
 
-1.  Click **Create** to create a web chat instance.
+1.  If the web chat was not created for you automatically, click **Create** to create a web chat instance.
 
 1.  **Optional**: Customize the style of the chat window. You can make the following changes:
 

@@ -170,10 +170,10 @@ Watson Assistant (Managed)
     dialog-methods.md
     expression-language.md
     filter-reference.md
+    recovery.md
     commands-voice.md
     commands-sms.md
     services-information.md
-    recovery.md
 
     {: .topicgroup}
     System entities

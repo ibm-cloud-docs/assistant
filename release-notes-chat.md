@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-03"
+lastupdated: "2021-02-10"
 
 subcollection: assistant
 
@@ -44,6 +44,10 @@ If you want to evaluate changes that are introduced in a web chat release before
 *Release date: 2 February 2021*
 
 - Made an accessibility enhancement to the chat history. Now, you can use keys to navigate the messages by clicking the chat history, pressing Enter, and then using the arrow keys to move from one message to the next.
+- The `instance.updateAssistantInputFieldVisibility()` method was added. You can use it to hide or show the text input field. For example, you might use the `pre:receive` event to check whether an options response type is being returned and if so, hide the text field so the user is forced to pick one of the available options only.
+- The `instance.getState()` method was added. You can use it to check for specific conditions, such as `isWebChatOpen`, before you perform an action that might rely on the condition being true.
+
+For more information about the new methods, see [Instance methods](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-instance-methods){: external}.
 
 ## 3.3.2
 {: #3.3.2}
