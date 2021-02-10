@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-01"
+lastupdated: "2021-02-09"
 
 subcollection: assistant
 
@@ -34,7 +34,8 @@ Before you add customizations to your dialog that support SMS messaging interact
 You can perform the following types of actions:
 
 - [Sending multimedia content over text](#dialog-sms-actions-mms)
-- [Customizing lists](#dialog-sms-actions-lists)
+- [Customizing lists in a text message](#dialog-sms-actions-lists)
+- [Sending a text message during a phone conversation](/docs/assistant?topic=assistant-dialog-voice-actions#dialog-voice-actions-sms)
 
 For command reference documentation, see [SMS with Twilio integration commands reference](/docs/assistant?topic=assistant-commands-sms).
 
