@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-08-19"
+lastupdated: "2021-02-10"
 
 subcollection: assistant
 
@@ -63,30 +63,11 @@ First, review the definitions of terms that are associated with {{site.data.keyw
 
 User metrics allow you to see, for example, the number of unique users who have engaged with your assistant, or the average number of conversations per user over a given time interval on the [Overview page](/docs/assistant?topic=assistant-logs-overview). User metrics are enabled by using a unique `User ID` parameter.
 
-To specify the `User ID` for a message sent using the `/message` API, include the `user_id` property in your global [context](https://cloud.ibm.com/apidocs/assistant/assistant-v2#message){: external}, as in this example:
+To specify the `User ID` for a message sent using the `/message` API, include the `user_id` property in the request body. For more information about the `user_id` property, see the API reference documentation:
 
-```json
-"context": {
-  "global": {
-    "system": {
-      "user_id": "{UserID}"
-    }
-  }
-}
-```
-{: codeblock}
-
-If your application is still using the older [v1 runtime API](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#message){: external}, the context format is different:
-{: note}
-
-```json
-"context" : {
-  "metadata" : {
-       "user_id": "{UserID}"
-  }
-}
-```
-{: codeblock}
+- [v2 stateless /message](https://cloud.ibm.com/apidocs/assistant-v2/assistant-v2#messagestateless)
+- [v2 stateful /message](https://cloud.ibm.com/apidocs/assistant-v2/assistant-v2#message)
+- [v1 /message](https://cloud.ibm.com/apidocs/assistant/assistant-v1#message)
 
 ## Associating message data with a user for deletion
 {: #logs-resources-customer_id}

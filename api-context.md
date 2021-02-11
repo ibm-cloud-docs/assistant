@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-11"
+lastupdated: "2021-02-11"
 
 subcollection: assistant
 
@@ -215,6 +215,7 @@ The output from this request includes not only the usual output, but also the co
     ],
     "entities": []
   },
+  "user_id": "my_user_id",
   "context": {
     "global": {
       "system": {

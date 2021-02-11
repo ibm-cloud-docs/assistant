@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-27"
+lastupdated: "2021-02-11"
 
 subcollection: assistant
 
@@ -48,7 +48,8 @@ By default, responses from a dialog node are specified in the `output.generic` o
       }
     ],
     "text" : ["OK, here's a picture of a dog."]
-  }
+  },
+  "user_id": "faf4a112-f09f-4a95-a0be-43c496e6ac9a"
 }
 ```
 
@@ -81,7 +82,8 @@ The `text` response type is used for ordinary text responses from the dialog:
         "text": "OK, you want to fly to Boston next Monday."
       }
     ]
-  }
+  },
+  "user_id": "faf4a112-f09f-4a95-a0be-43c496e6ac9a"
 }
 ```
 
@@ -103,7 +105,8 @@ The `image` response type instructs the client application to display an image, 
         "description": "This is an example image"
       }
     ]
-  }
+  },
+  "user_id": "faf4a112-f09f-4a95-a0be-43c496e6ac9a"
 }
 ```
 
@@ -124,7 +127,8 @@ The `pause` response type instructs the application to wait for a specified inte
         "typing": false
       }
     ]
-  }
+  },
+  "user_id": "faf4a112-f09f-4a95-a0be-43c496e6ac9a"
 }
 ```
 
@@ -166,7 +170,8 @@ The `option` response type instructs the client application to display a user in
         ]
       }
     ]
-  }
+  },
+  "user_id": "faf4a112-f09f-4a95-a0be-43c496e6ac9a"
 }
 ```
 
@@ -267,7 +272,8 @@ The `suggestion` response type is used by the disambiguation feature to suggest 
         ]
       }
     ],
-  }
+  },
+  "user_id": "faf4a112-f09f-4a95-a0be-43c496e6ac9a"
 }
 ```
 
@@ -316,14 +322,7 @@ The `search` response type is used by a search skill to return the results from 
       }
     ]
   },
-  "context": {
-    "global": {
-      "system": {
-        "turn_count": 1
-      },
-      "session_id": "58e1b04e-f4bb-469a-9e4c-dffe1d4ebf23"
-    }
-  }
+  "user_id": "58e1b04e-f4bb-469a-9e4c-dffe1d4ebf23"
 }
 ```
 
@@ -358,7 +357,8 @@ The `user_defined` property of the response is an object that can contain any va
         }
       }
     ]
-  }
+  },
+  "user_id": "faf4a112-f09f-4a95-a0be-43c496e6ac9a"
 }
 ```
 
@@ -433,7 +433,8 @@ When the workspace recognizes the `#menu` intent, the dialog responds with an `o
       }
     ],
     "entities": []
-  }
+  },
+  "user_id": "faf4a112-f09f-4a95-a0be-43c496e6ac9a"
 }
 ```
 
