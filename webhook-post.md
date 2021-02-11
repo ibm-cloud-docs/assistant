@@ -197,6 +197,7 @@ The following sample shows how a simple request body is formatted.
             }
         ]
     },
+    "user_id": "test user",
     "context": {
         "global": {
             "system": {
