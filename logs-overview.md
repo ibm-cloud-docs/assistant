@@ -77,7 +77,7 @@ The scorecards give you a quick view of your metrics. Scroll to see full interac
 
 - *Total conversations*: The total number of conversations between active users and your assistant that occur during the selected time period.
 
-  This number doesn't always match the number of conversations that are displayed in the *User conversations* page. This mismatch occurs because the total conversations metric counts any time the welcome message is displayed to a user, even if the user doesn't respond, as a conversation. The *User conversations* page only includes conversations in which both the assistant and customer participate.
+  This number doesn't always match the number of conversations that are displayed in the *User conversations* page. This mismatch occurs because the total conversations metric counts any time the welcome message is displayed to a user, even if the user doesn't respond. The *User conversations* page only includes conversations in which both the assistant and customer participate.
   {: important}
 
   The total conversations metric is not used for billing purposes. An exchange with a user is not considered a billable conversation until the customer submits a message.
