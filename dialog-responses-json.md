@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-27"
+lastupdated: "2021-02-11"
 
 subcollection: assistant
 
@@ -300,7 +300,7 @@ The user-defined response type is not displayed unless you have implemented code
 | Name          | Type   | Description        | Required? |
 |---------------|--------|--------------------|-----------|
 | response_type | enum   | `user_defined`            | Y         |
-| user_defined  | int    | An object containing any data the client or integration knows how to handle. This object can contain any valid JSON data, but it cannot exceed a total size of 5000 bytes. | Y |
+| user_defined  | object | An object containing any data the client or integration knows how to handle. This object can contain any valid JSON data, but it cannot exceed a total size of 5000 bytes. | Y |
 
 #### Example
 {: #dialog-responses-json-user-defined-example}
