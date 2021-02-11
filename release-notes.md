@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-09"
+lastupdated: "2021-02-11"
 
 subcollection: assistant
 
@@ -60,6 +60,19 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #release-notes-tooling-changes}
 
 The change log lists changes that were made this year ordered by the date they were released.
+
+## 11 February 2021
+{: #11February2021}
+<!--1.135-->
+
+- **The `user_id` value is easier to access**: The `user_id` property is used for billing purposes. Previously, it was available from the context object as follows:
+
+  - v2: `context.global.system.user_id`
+  - v1: `context.metadata.user_id`
+
+  The property is now specified at the root of the `/message` request in addition to the context object. The built-in integrations typically set this property for you. If you're using a custom application and don't specify a `user_id`, the `user_id` is set to the `session_id` (v2) or `conversation_id`(v1) value.
+
+- **Digression bug fix**: Fixed a bug where digression setting changes that were made to a node with slots were not being saved.
 
 ## 5 February 2021
 {: #5February2021}

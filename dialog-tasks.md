@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-02-11"
 
 keywords: dialog node limits, copying a node, moving a node, adding a folder
 
@@ -72,7 +72,10 @@ Queries you submit through the "Try it out" pane generate `/message` API calls, 
 
     Any context variables that you defined in the dialog are displayed.
 
-    In addition, a `$timezone` context variable is listed. The *Try it out* pane user interface gets user locale information from the web browser and uses it to set the `$timezone` context variable. This context variable makes it easier to deal with time references in test dialog exchanges. Consider doing something similar in your user application. If not specified, Greenwich Mean Time (GMT) is used.
+    In addition, the following context variables are listed:
+    
+    - `$timezone`: The *Try it out* pane gets user locale information from the web browser and uses it to set the `$timezone` context variable. This context variable makes it easier to deal with time references in test dialog exchanges.
+    - `$metadata`: This context variable contains a user ID name and value pair. Because no `user_id` is specified by default in the *Try it out* pane, the `conversation_id` is used as the `user_id` value. At run time, the ID value is typically passed to the assistant from whatever integration you are using. If you design a custom application, you set this value yourself.
 
     You can add a variable and set its value to see how the dialog responds in the next test dialog turn. This capability is helpful if, for example, the dialog is set up to show different responses based on a context variable value that is provided by the user.
 
