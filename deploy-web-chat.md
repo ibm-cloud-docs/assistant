@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-09"
+lastupdated: "2021-02-10"
 
 subcollection: assistant
 
@@ -79,11 +79,13 @@ To add the assistant to a web page on your company website, complete the followi
       - Border of the drop-down list field as the user chooses an option
       - Typing indicator that is shown to repesent a pause response
 
-    - **Assistant image**: This image is displayed in the web chat header along with the assistant name to represent your assistant or organization. Specify the URL for a publicly accessible hosted image, such as a company or brand logo or an assistant avatar.
-    
-      The image file must be between 64 x 64 and 100 x 100 pixels in size. 
-
     Style changes you make are immediately applied to the preview that is shown on the page, so you can see how your choices impact the style of the chat UI.
+
+1.  If you want to add an image that represents your assistant or organization to the web chat header, click **Add an avatar image**. 
+
+    Specify the URL for a publicly accessible hosted image, such as a company or brand logo or an assistant avatar. The image file must be between 64 x 64 and 100 x 100 pixels in size.
+
+    Click **Save**.
 
 1.  **Optional**: Add a home screen to the chat window. Click the **Home screen** tab to turn on the feature.
 

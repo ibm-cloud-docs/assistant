@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-02"
+lastupdated: "2021-02-11"
 
 subcollection: assistant
 
@@ -118,6 +118,9 @@ To create actions, complete the following steps:
 
 1.  If the customer's goal is not satistified by this first step, add another one. Click **New step**.
 
+    If you can't see the **New step** button, you might need to minimize the Preview pane.
+    {: tip}
+
     To insert a step between existing steps, select the step immediately before the place where you want to add the step, and then click **New step**. The step is added and the numbers of the following steps are adjusted automatically to account for the inserted step.
 
 1.  **Optional**: If you want a step to be taken only when a requirement that you define is met, add a condition to the step. 
@@ -153,7 +156,7 @@ To create actions, complete the following steps:
 
 1.  Add more actions to your skill to address other customer needs. To add another action, click **New action**.
 
-    If you can't see the **New action** button, you might need to close the Preview pane.
+    If you can't see the **New action** button, you might need to minimize the Preview pane.
     {: tip}
 
 ### Deleting a step

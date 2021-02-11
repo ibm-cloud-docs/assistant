@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-11-04"
+lastupdated: "2021-02-11"
 
 subcollection: assistant
 
@@ -77,16 +77,17 @@ The scorecards give you a quick view of your metrics. Scroll to see full interac
 
 - *Total conversations*: The total number of conversations between active users and your assistant that occur during the selected time period.
 
-  A single conversation consists of messages that an active user sends to your assistant, and the messages your assistant sends to the user to initiate the conversation or respond.
-  
-  If your assistant starts by saying "Hi, how can I help you?", and then the user closes the browser without responding, that message is included in the total conversation count.
-
-  The total conversations metric is not used for billing purposes. An exchange with a user is not considered a billable conversation until the user submits a message.
+  This number doesn't always match the number of conversations that are displayed in the *User conversations* page. This mismatch occurs because the total conversations metric counts any time the welcome message is displayed to a user, even if the user doesn't respond. The *User conversations* page only includes conversations in which both the assistant and customer participate.
   {: important}
+
+  The total conversations metric is not used for billing purposes. An exchange with a user is not considered a billable conversation until the customer submits a message.
 
 - *Avg. msg. per conversation*: The total messages received during the selected time period divided by the total conversations during the selected time period, as shown in the corresponding graph.
 - *Max. conversations*: The maximum number of conversations for a single data point within the selected time period.
 - *Weak understanding*: The number of individual messages with weak understanding. These messages are not classified by an intent, and do not contain any known entities. Reviewing unrecognized messages can help you to identify potential dialog problems.
+
+Once the numbers in the scorecard metrics hit the 3,000 and above range, the totals are approximated to prevent performance lags in the page.
+{: note}
 
 ## Graphs and statistics
 {: #logs-overview-graphs}
