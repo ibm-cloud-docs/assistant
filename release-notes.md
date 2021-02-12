@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-11"
+lastupdated: "2021-02-12"
 
 subcollection: assistant
 
@@ -60,6 +60,12 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #release-notes-tooling-changes}
 
 The change log lists changes that were made this year ordered by the date they were released.
+
+## 18 February 2021
+{: #18February2021}
+<!--1.136-->
+
+- **Search skill improvement**: You can configure the search skill to highlight text in the search result passage that {{site.data.keyword.discoveryshort}} determines to be the exact answer to the customer's question.
 
 ## 11 February 2021
 {: #11February2021}
