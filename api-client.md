@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-07"
+lastupdated: "2021-02-12"
 
 subcollection: assistant
 
@@ -680,6 +680,12 @@ public class AssistantSimpleExample {
 The only change from the previous example is that we are now storing the context received from the dialog in a variable called `context`, and we're sending it back with the next round of user input:
 {: javascript }
 
+The only change from the previous example is that we are now storing the context received from the dialog in a variable called `context`, and we're sending it back with the next round of user input:
+{: python }
+
+The only change from the previous example is that we are now storing the context received from the dialog in a variable called `context`, and we're including it as part of the message options along with the next round of user input:
+{: java}
+
 ```javascript
   assistant
     .messageStateless({
@@ -691,9 +697,6 @@ The only change from the previous example is that we are now storing the context
 {: codeblock}
 {: javascript }
 
-The only change from the previous example is that we are now storing the context received from the dialog in a variable called `context`, and we're sending it back with the next round of user input:
-{: python }
-
 ```python
 response = assistant.message_stateless(
     assistant_id,
@@ -703,9 +706,6 @@ response = assistant.message_stateless(
 ```
 {: codeblock }
 {: python }
-
-The only change from the previous example is that we are now storing the context received from the dialog in a variable called `context`, and we're including it as part of the message options along with the next round of user input:
-{: java}
 
 ```java
 MessageStatelessOptions messageOptions = new MessageStatelessOptions.Builder(assistantId)
@@ -754,7 +754,8 @@ This version of our example client app adds support for these two actions. Our d
 
 To keep things simple, we're simulating the call to an external weather service with a simple
 <span class="ph style-scope doc-content" data-hd-programlang="python">`get_weather_forecast`</span>
-<span class="ph style-scope doc-content" data-hd-programlang="python">`getWeatherForecast`</span>
+<span class="ph style-scope doc-content" data-hd-programlang="java">`getWeatherForecast`</span>
+<span class="ph style-scope doc-content" data-hd-programlang="javascript">`getWeatherForecast`</span>
 stub function. This function only knows how to predict the weather in Boston, and it assumes that it's always sunny.
 
 ```javascript

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-11"
+lastupdated: "2021-02-12"
 
 subcollection: assistant
 
@@ -565,7 +565,6 @@ function processResponse(response) {
 }
 ```
 {: codeblock}
-{: javascript}
 
 Let's take a closer look at the code that outputs the response from the assistant. Now, instead of assuming a `text` response, the application supports both the `text` and `option` response types:
 
@@ -594,7 +593,6 @@ Let's take a closer look at the code that outputs the response from the assistan
     }
 ```
 {: codeblock}
-{: javascript}
 
 If `response_type`=`text`, we just display the output, as before. But if `response_type`=`option`, we have to do a bit more work. First we display the value of the `title` property, which serves as lead-in text to introduce the list of options; then we list the options, using the value of the `label` property to identify each one. (A real-world application would show these labels in a drop-down list or as the labels on clickable buttons.)
 
@@ -756,7 +754,6 @@ function processResponse(response) {
 }
 ```
 {: codeblock}
-{: javascript}
 
 All we have to do is use the `value.input` object from the selected response as the next round of message input, rather than building a new `input` object using text input. The assistant then responds exactly as it would if the user had typed the input text directly.
 
