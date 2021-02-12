@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-21"
+lastupdated: "2021-02-12"
 
 subcollection: assistant
 
@@ -29,8 +29,8 @@ subcollection: assistant
 Get help with solving issues that you encounter while using the product.
 {: shortdesc}
 
-If you cannot find a solution to the issue you are having, try the resources available from the **Developer community** section of the table of contents.
+For answers to frequently asked questions, see the [FAQ](/docs/assistant?topic=assistant-faqs).
 
-Scan the list of known error messages to see if you can find a quick solution. See [FAQ](/docs/assistant?topic=assistant-faqs).
+Find answers to common questions or ask questions where experts and other community members can answer by visiting the [Watson Assistant Community forum](https://community.ibm.com/community/user/watsonapps/communities/community-home/digestviewer?communitykey=7a3dc5ba-3018-452d-9a43-a49dc6819633&tab=digestviewer){: external}.
 
 If your service plan covers it, you can get help by creating a case from [IBM Cloud Support](https://cloud.ibm.com/unifiedsupport/supportcenter){: external}.
