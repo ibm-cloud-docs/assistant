@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-11"
+lastupdated: "2021-02-12"
 
 subcollection: assistant
 
@@ -26,47 +26,16 @@ subcollection: assistant
 # Metrics overview
 {: #logs-overview}
 
-The Overview page provides a summary of the interactions between users and your assistant. You can view the amount of traffic for a given time period, as well as the intents and entities that were recognized most often in user conversations.
+The Overview page provides a summary of the interactions between users and your assistant.
 {: shortdesc}
 
-Use the metrics to answer questions like:
+Analytics help you to understand the following things:
 
-* What was the average number of conversations per week during the last month?
-* How often did customers need to go elsewhere for support?
-* Which intents appeared most often last week?
-* Which entity values were recognized the most times during February?
-* Which days had the largest or smallest numbers of conversations in the last month?
+- *What do customers want help with today?*
+- *Is your assistant understanding and addressing customer needs?*
+- *How can you make your assistant better?*
 
 To see metrics information, select **Overview** in the navigation bar.
-
-## Controls
-{: #logs-overview-controls}
-
-You can use the following controls to filter the information:
-
-- *Time period control* - Use this control to choose the period for which data is displayed. This control affects all data shown on the page: not just the number of conversations displayed in the graph, but also the statistics displayed along with the graph, and the lists of top intents and entities.
-
-  The statistics can cover a longer time period than the period for which logs of conversations are retained.
-  {: note}
-
-  ![Time period control](images/oview-time.png)
-
-  You can choose whether to view data for a single day, a week, a month, or a quarter. In each case, the data points on the graph adjust to an appropriate measurement period. For example, when viewing a graph for a day, the data is presented in hourly values, but when viewing a graph for a week, the data is shown by day. A week always runs from Sunday through Saturday. 
-  
-  You can create custom time periods also, such as a week that runs from Thursday to the following Wednesday, or a month that begins on any date other than the first.
-
-  The time shown for each conversation is localized to reflect the time zone of your browser. However, API log calls are always shown in UTC time. As a result, if you choose a single day view, for example, the time shown in the visualization might differ from the timestamp specified in the log for the same conversation.
-
-    ![Time period control](images/oview-time2.png)
-
-- *Intents* and *Entities* filters - Use either of these drop-down filters to show data for a specific intent or entity in your skill.
-
-  The intent and entities filters are populated by the intents and entities in the skill, and not what is in the data source. If you have [selected a data source](/docs/assistant?topic=assistant-logs#logs-deploy-id) other than the skill, you might not see an intent or entity from your data source logs as an option in the filters, unless those intents and entities are also in the skill.
-  {: important}
-
-- *Refresh data*: Select **Refresh data** to refresh the data that is used in the page metrics.
-
-  The statistics show traffic from customers who interact with your assistant; they do not include interactions from the *Try it out* pane.
 
 ## Scorecards
 {: #logs-overview-scorecards}
@@ -118,14 +87,43 @@ Detailed graphs provide additional information. Click a data point on the graphs
   The containment and coverage metrics are available to Lite, Plus Trial, Plus, or Premium plan users.
   {: note}
 
-- *Total conversations*: The total number of conversations between active users and your assistant during the selected time period.
+- *Total conversations*: The total number of conversations between active users and your assistant during the selected time period. This number counts exchanges in which the welcome message is displayed to a user, even if the user doesn't respond.
 - *Average messages per conversation* - The total messages received during the selected time period divided by the total conversations during the selected time period.
 - *Total messages* - The total number of messages received from active users over the selected time period.
 - *Active users* - The number of unique users who have engaged with your assistant within the selected time period.
 - *Average conversations per user* - The total conversations divided by the total number of unique users during the selected time period.
 
-  Statistics for *Active users* and *Average conversations per user* require a unique `user_id` parameter. See [Enabling user metrics](/docs/assistant?topic=assistant-logs-resources#logs-resources-user-id) for more information.
+  Statistics for *Active users* and *Average conversations per user* require a unique `user_id` parameter to be specified with the messages. This value is typically specified by all integrations because it is used for billing purposes. For more information, see [User-based plans explained](/docs/assistant?topic=assistant-services-information#services-information-user-based-plans).
   {: important}
+
+## Controls
+{: #logs-overview-controls}
+
+You can use the following controls to filter the information:
+
+- *Time period control* - Use this control to choose the period for which data is displayed. This control affects all data shown on the page: not just the number of conversations displayed in the graph, but also the statistics displayed along with the graph, and the lists of top intents and entities.
+
+  The statistics can cover a longer time period than the period for which logs of conversations are retained.
+  {: note}
+
+  ![Time period control](images/oview-time.png)
+
+  You can choose whether to view data for a single day, a week, a month, or a quarter. In each case, the data points on the graph adjust to an appropriate measurement period. For example, when viewing a graph for a day, the data is presented in hourly values, but when viewing a graph for a week, the data is shown by day. A week always runs from Sunday through Saturday. 
+  
+  You can create custom time periods also, such as a week that runs from Thursday to the following Wednesday, or a month that begins on any date other than the first.
+
+  The time shown for each conversation is localized to reflect the time zone of your browser. However, API log calls are always shown in UTC time. As a result, if you choose a single day view, for example, the time shown in the visualization might differ from the timestamp specified in the log for the same conversation.
+
+    ![Time period control](images/oview-time2.png)
+
+- *Intents* and *Entities* filters - Use either of these drop-down filters to show data for a specific intent or entity in your skill.
+
+  The intent and entities filters are populated by the intents and entities in the skill, and not what is in the data source. If you have [selected a data source](/docs/assistant?topic=assistant-logs#logs-deploy-id) other than the skill, you might not see an intent or entity from your data source logs as an option in the filters, unless those intents and entities are also in the skill.
+  {: important}
+
+- *Refresh data*: Select **Refresh data** to refresh the data that is used in the page metrics.
+
+  The statistics show traffic from customers who interact with your assistant; they do not include interactions from the *Try it out* pane.
 
 ## Top Intents and Top Entities
 {: #logs-overview-tops}
