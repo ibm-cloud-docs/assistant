@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-10"
+lastupdated: "2021-02-18"
 
 subcollection: assistant
 
@@ -37,6 +37,13 @@ For information about new features and improvements to the core {{site.data.keyw
 {: #release-notes-chat-version}
 
 If you want to evaluate changes that are introduced in a web chat release before you apply them to your deployment, you can version your web chat. For more information, see [Versioning](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=key-concepts#versioning)
+
+## 3.5.0
+{: #3.5.0}
+
+*Release date: 17 February 2021*
+
+- **Session history (beta)**: Web chat session history (beta) is now available. This feature makes it possible to maintain conversation history and context when customers refresh the page or navigate to a different page on the same website. For more information about this beta feature, see [Session history (beta)](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=tutorials-session-history).
 
 ## 3.4.1
 {: #3.4.1}
