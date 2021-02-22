@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-14"
+lastupdated: "2021-02-22"
 
 subcollection: assistant
 content-type: tutorial
@@ -148,7 +148,7 @@ Now that you have an assistant that can participate in a simple conversational e
 1.  Find the *My first assistant* assistant, and open it.
 1.  Test your assistant with a *Preview link* integration. 
 
-    The *Preview link* integration is created for your automatically. It builds your assistant into a chat widget that is hosted by an IBM-branded web page. You can open the web page and chat with your assistant to test it out.
+    The *Preview link* integration is created for you automatically. It builds your assistant into a chat widget that is hosted by an IBM-branded web page. You can open the web page and chat with your assistant to test it out.
     
 1.  From the Integrations section, click the **Preview link** tile. 
 
