@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-02-22"
 
 keywords: slot, slots
 
@@ -203,7 +203,7 @@ The following slot properties can help you check and set values in slot context 
 | `event.current_value`  | Current value of the context variable for this slot. See [Replacing a slot context variable value](#dialog-slots-found-handler-event-properties) for a usage example for this property and the event.previous_value property. |
 | `event.previous_value` | Previous value of the context variable for this slot. |
 | `has_skipped_slots`    | True if any of the slots or slot handlers that are configured with a next step option that skips slots was processed. See [Adding conditions to Found and Not found responses](#slot-handler-next-steps) for more information about next step options for slots and [Handling requests to exit a process](#dialog-slots-node-level-handler) for information about next step options for slot handlers. |
-| `slot_in_focus`        | Forces the slot condition to be applied to the current slot only. See [Getting confirmation](#dialog-slots-get-confirmation) for more details. |
+| `slot_in_focus`        | Forces the slot condition to be applied to the current slot only. See [Getting confirmation](#dialog-slots-get-confirmation) for more details. You can use this property to collect and store the exact words that are submitted by a customer. See [Collecting summary information from the customer](#dialog-slots-get-confirmation). |
 {: caption="Slot properties" caption-side="top"}
 
 Consider using these approaches for handling common tasks.
@@ -213,6 +213,7 @@ Consider using these approaches for handling common tasks.
 - [Reformatting values](#dialog-slots-reformat-values)
 - [Dealing with zeros](#dialog-slots-zero)
 - [Getting confirmation](#dialog-slots-get-confirmation)
+- [Collecting summary information from the customer](#dialog-slots-get-summary)
 - [Replacing a slot context variable value](#dialog-slots-found-handler-event-properties)
 - [Avoiding number confusion](#dialog-slots-avoid-slot-confusion)
 - [Adding conditions to Found and Not found responses](#dialog-slots-handler-next-steps)
@@ -390,6 +391,46 @@ In the **Found** prompt, add a condition that checks for a No response (#no). Wh
 }
 ```
 {: codeblock}
+
+### Collecting summary information from the customer
+{: #dialog-slots-get-summary}
+
+You might want to prompt a user to supply free form text in a dialog node with slots that you can save and refer to later. To do so, follow these steps:
+
+1.  In the *Check for* field, add the following special property: `slot_in_focus`.
+1.  Optionally, change the context variable name for the slot in the *Save it as* field. For example, you might want to change it to something like `summary`.
+1.  In the *If not present, ask* field, ask the user to provide open-ended information. For example, `Can you summarize the problem?`
+1.  To store the input in the customer's exact words, edit what is saved by using the JSON editor.
+1.  Open the slot to edit it by clicking the **Edit slot** ![Edit slot](images/edit-slot.png) icon. From the **Options** ![More icon](images/kebab.png) menu, open the JSON editor.
+
+1.  Change the context variable value.
+
+    The value will look like this:
+
+    ```json
+    {
+      "context": {
+        "summary": "slot_in_focus"
+      }
+    }
+    ```
+    {: codeblock}
+
+    Change the value that is saved in the `$summary` context variable. You want to capture and store whatever text the user submits. To do so, use a SpEL expression that captures the input text.
+
+    ```json
+    {
+      "context": {
+        "summary": "<? input.text ?>"
+      }
+    }
+    ```
+    {: codeblock}
+
+1.  Save your changes. 
+
+The change you made to the context variable value is not reflected in the *Check for* field. You must reopen the JSON editor to see what will be saved.
+{: note}
 
 ### Replacing a slot context variable value
 {: #dialog-slots-found-handler-event-properties}

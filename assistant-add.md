@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-02-22"
 
 subcollection: assistant
 
@@ -41,15 +41,6 @@ Follow these steps to create an assistant:
 
     - **Name**: A name no more than 100 characters in length. A name is required.
     - **Description**: An optional description no more than 200 characters in length.
-
-    The following integrations are created for you automatically, unless you choose to disable them by deselecting the checkboxes:
-
-    - **Web chat**: Creates a chat widget that you can embed in your company website to deploy your assistant in minutes.
-
-    - **Preview link**: Creates an IBM-branded public web page that you and your team can use to test your assistant.
-    
-    These integrations are added to assistants in service instances that are configured to use private endpoints. You might choose to disable these integrations to prevent data from being transferred over the public internet.
-    {: note}
 
 1.  Click **Create assistant**.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-09"
+lastupdated: "2021-02-22"
 
 subcollection: assistant
 
@@ -76,7 +76,7 @@ Do not add personal data to the training data (entities and intents, including u
 
 If you need to remove a customer's message data from a {{site.data.keyword.conversationshort}} instance, you can do so based on the customer ID of the client, as long as you associate the message with a customer ID when the message is sent to {{site.data.keyword.conversationshort}}.
 
-- The preview link and automatic Facebook integrations do not support the labeling and therefore deletion of data based on customer ID. These integration types should not be used in a solution that must support the ability to delete data based on a customer ID.
+- The preview and automatic Facebook integrations do not support the labeling and therefore deletion of data based on customer ID. These integration types should not be used in a solution that must support the ability to delete data based on a customer ID.
 - For Intercom, the `customer_id` is the `user_id` prepended with `intercom_`. The Intercom `user_id` property is the `id` of the `author` message object in the Conversation Model that is defined by Intercom.
   
   - To get the ID, open the channel from a web browser. Open the web developer tools to view the console. Look for `author`.

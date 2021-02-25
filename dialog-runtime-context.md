@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-02"
+lastupdated: "2021-02-25"
 
 keywords: context, context variable
 
@@ -33,85 +33,7 @@ subcollection: assistant
 To personalize the conversation, your assistant can collect information from the customer and then refer back to it later in the conversation.
 {: shortdesc}
 
-## Anatomy of a dialog call
-{: #dialog-runtime-context-message-anatomy}
-
-Each user input is passed to the dialog as a `/message` API call. Replies that users make in response to prompts from the dialog that ask them for more information are included. A single `/message` API call is equivalent to a single dialog turn, which consists of an input from the customer and a corresponding response from the dialog.
-
-The body of the `/message` API call request and response includes the following objects:
-
-- `context`: Contains variables that are meant to be persisted. For the dialog to subsequently reference information that is submitted by the user, you must store the information in the context object. For example, the dialog can collect the user's name and then refer to the user by name in subsequent nodes. The following example shows how the context object is represented in the dialog JSON editor:
-
-  ```json
-  {
-    "context" : {
-      "user_name" : "<? @name.literal ?>"
-    }
-  ```
-  {: codeblock}
-
-  See [Retaining information across dialog turns](#dialog-runtime-context-dialog) for more information.
-
-- `input`: The string of text that was submitted by the user. The text string can contain up to 2,048 characters. The following example shows how the `input` object is represented in the dialog JSON editor:
-
-  ```json
-  {
-    "input" : {
-      "text" : "Where's your nearest store?"
-    }
-  ```
-  {: codeblock}
-
-- `output`: The dialog response to return to the user. The following example shows how the output object is represented in the dialog JSON editor:
-
-  ```json
-  {
-  "output": {
-    "generic": [
-      {
-        "values": [
-          {
-            "text": "This is my response text."
-          }
-        ],
-        "response_type": "text",
-        "selection_policy": "sequential"
-      }
-    ]
-  }
-  }
-  ```
-  {: codeblock}
-
-In the resulting API `/message` response, the text response is formatted as follows:
-
-```json
-{
-   "text": "This is my response text.",
-   "response_type": "text"
-}
-```
-
-The following `output` object JSON format is supported for backwards compatibility. With the introduction of rich response types, the `output.text` structure was augmented with the `output.generic` structure to facilitate supporting other types of responses in addition to text. Use the new format when you create new nodes to give yourself more flexibility, because you can subsequently change the response type, if needed.
-{: note}
-
-  ```json
-  {
-  "output": {
-    "text": {
-      "values": [
-        "This is my response text."
-      ]
-    }
-  }
-  ```
-  {: codeblock}
-
-There are response types other than a text response that you can define. See [Responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-responses) for more details.
-
-You can learn more about the `/message` API call from the [API reference](https://{DomainName}/apidocs/assistant/assistant-v2){: external}.
-
-### Retaining information across dialog turns
+## Retaining information across dialog turns
 {: #dialog-runtime-context-dialog}
 
 The dialog in a dialog skill is stateless, meaning that it does not retain information from one interaction with the user to the next. When you add a dialog skill to an assistant and deploy it, the assistant saves the context from one message call and then re-submits it on the next request throughout the current session. The current session lasts for as long a user interacts with the assistant plus the designated session inactivity time frame. The maximum session inactivity time allowed ranges from 5 minutes to 7 days, depending on your plan type. If you do not add the dialog skill to an assistant, it is your responsibility as the custom application developer to maintain any continuing information that the application needs.
@@ -673,3 +595,81 @@ For example, to create a copy of the values of an array at a certain point of th
  }
  ```
 {: codeblock}
+
+## Anatomy of a dialog call
+{: #dialog-runtime-context-message-anatomy}
+
+Each user input is passed to the dialog as a `/message` API call. Replies that users make in response to prompts from the dialog that ask them for more information are included. A single `/message` API call is equivalent to a single dialog turn, which consists of an input from the customer and a corresponding response from the dialog.
+
+The body of the `/message` API call request and response includes the following objects:
+
+- `context`: Contains variables that are meant to be persisted. For the dialog to subsequently reference information that is submitted by the user, you must store the information in the context object. For example, the dialog can collect the user's name and then refer to the user by name in subsequent nodes. The following example shows how the context object is represented in the dialog JSON editor:
+
+  ```json
+  {
+    "context" : {
+      "user_name" : "<? @name.literal ?>"
+    }
+  ```
+  {: codeblock}
+
+  See [Retaining information across dialog turns](#dialog-runtime-context-dialog) for more information.
+
+- `input`: The string of text that was submitted by the user. The text string can contain up to 2,048 characters. The following example shows how the `input` object is represented in the dialog JSON editor:
+
+  ```json
+  {
+    "input" : {
+      "text" : "Where's your nearest store?"
+    }
+  ```
+  {: codeblock}
+
+- `output`: The dialog response to return to the user. The following example shows how the output object is represented in the dialog JSON editor:
+
+  ```json
+  {
+  "output": {
+    "generic": [
+      {
+        "values": [
+          {
+            "text": "This is my response text."
+          }
+        ],
+        "response_type": "text",
+        "selection_policy": "sequential"
+      }
+    ]
+  }
+  }
+  ```
+  {: codeblock}
+
+In the resulting API `/message` response, the text response is formatted as follows:
+
+```json
+{
+   "text": "This is my response text.",
+   "response_type": "text"
+}
+```
+
+The following `output` object JSON format is supported for backwards compatibility. With the introduction of rich response types, the `output.text` structure was augmented with the `output.generic` structure to facilitate supporting other types of responses in addition to text. Use the new format when you create new nodes to give yourself more flexibility, because you can subsequently change the response type, if needed.
+{: note}
+
+  ```json
+  {
+  "output": {
+    "text": {
+      "values": [
+        "This is my response text."
+      ]
+    }
+  }
+  ```
+  {: codeblock}
+
+There are response types other than a text response that you can define. See [Responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-responses) for more details.
+
+You can learn more about the `/message` API call from the [API reference](https://{DomainName}/apidocs/assistant/assistant-v2){: external}.

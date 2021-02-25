@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-29"
+lastupdated: "2021-02-22"
 
 subcollection: assistant
 
@@ -24,16 +24,13 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
 
-# Making a call before processing a message ![Beta](images/beta.png)
+# Making a call before processing a message
 {: #webhook-pre}
 
 Make a call to an external service or application every time a customer submits input. The external service can process the message before it is processed by your assistant.
 {: shortdesc}
 
 A webhook is a mechanism that allows you to call out to an external program based on events in your program. Add a premessage webhook to your assistant if you want the webhook to be triggered before each incoming message is processed by your assistant.
-
-The premessage webhook is available as a beta feature.
-{: note}
 
 The premessage webhook works with the v2 `/message` API only (stateless and stateful). For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#message).
 {: important}
@@ -58,6 +55,7 @@ You can define one webhook URL to use for preprocessing every incoming message.
 The programmatic call to the external service must meet these requirements:
 
 - The call must be a POST HTTP request.
+- The call must be completed in 8 seconds or less.
 - The format of the request and response must be in JSON. For example: `Content-Type: application/json`.
 
 Do not set up and test your webhook in a production environment where the assistant is deployed and is interacting with customers.
@@ -250,7 +248,7 @@ return {
 ```
 {: codeblock}
 
-To test the webhook, open an integration such as the preview link. Submit the text `Buenas dias`. The assistant probably won't understand the input, and will return the response from your *Anything else* node. However, if you go to the Analytics page of your skill and open the User conversations page, you can see what was submitted. Check the most recent user conversation. The log will show that the user input is `Buenas dias (in es)`. The `es` in parentheses represents the language code for Spanish, so the webhook worked and recognized that the submitted text was a Spanish phrase.
+To test the webhook, open an integration such as the preview integration. Submit the text `Buenas dias`. The assistant probably won't understand the input, and will return the response from your *Anything else* node. However, if you go to the Analytics page of your skill and open the User conversations page, you can see what was submitted. Check the most recent user conversation. The log will show that the user input is `Buenas dias (in es)`. The `es` in parentheses represents the language code for Spanish, so the webhook worked and recognized that the submitted text was a Spanish phrase.
 
 ![Shows the Analytics>User conversations page with a logged conversation with Buenas dias (in es) input](images/webhook-check-language.png)
 
@@ -361,7 +359,7 @@ return {
 ```
 {: codeblock}
 
-When you test the webhook in the preview link integration, you can submit `Buenas dias`, and the assistant responds as if you said `Good morning` in English. In fact, when you check the *Analytics>User conversations* page, the log shows that the user input was `Good morning`.
+When you test the webhook in the preview integration, you can submit `Buenas dias`, and the assistant responds as if you said `Good morning` in English. In fact, when you check the *Analytics>User conversations* page, the log shows that the user input was `Good morning`.
 
 You can add a postmessage webhook to translate the message's response back into the customer's native language before it is displayed. For more information see [Example 2](/docs/assistant?topic=assistant-webhook-post#webhook-post-example-translate-back).
 

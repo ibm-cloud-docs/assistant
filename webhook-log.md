@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-27"
+lastupdated: "2021-02-22"
 
 subcollection: assistant
 
@@ -24,14 +24,11 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
 
-# Logging messages with a webhook ![Beta](images/beta.png)
+# Logging messages with a webhook
 {: #webhook-log}
 
 Make a call to an external service or application every time a customer submits input to log the conversation.
 {: shortdesc}
-
-The log webhook is available as a beta feature.
-{: note}
 
 A webhook is a mechanism that allows you to call out to an external program based on events in your program. 
 

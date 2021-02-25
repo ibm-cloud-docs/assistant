@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-24"
 
 keywords: chatbot, live chatbot, omnichannel
 
@@ -36,7 +36,7 @@ Use {{site.data.keyword.conversationfull}} to build your own branded live chatbo
 | *Create AI-driven conversational flows* | Your assistant leverages industry-leading AI capabilities to understand questions that your customers ask in natural language. It uses machine learning models that are custom built from your data to deliver accurate answers in real time. |
 | *Embed existing help content* | You already know the answers to customer questions? Put your subject matter expertise to work. Add a search skill to give your assistant access to corporate data collections that it can mine for answers. |
 | *Connect to your customer service teams* | If customers need more help or want to discuss a topic that requires a personal touch, connect them to human agents from your existing service desk provider. |
-| *Bring the assistant to your customers, where they are* | Configure one or more built-in integrations to quickly publish your assistant in popular social media channels like Slack, Facebook Messenger, or Intercom. Add your assistant as a chat widget to your company website, or build your own custom app. |
+| *Bring the assistant to your customers, where they are* | Configure one or more built-in integrations to quickly publish your assistant on popular social media platforms such as Slack, Facebook Messenger, Intercom, or WhatsApp. Turn the assistant into a member of your customer support call center team, where it can answer the phone and address simple requests so its human teammates can focus on more nuanced customer needs. Make your assistant the go-to help resource for customers by adding it as a chat widget to your company website. If none of the built-in integrations fit your needs, use the APIs to build your own custom app. |
 | *Track customer engagement and satisfaction* | Use built-in metrics to analyze logs from conversations between customers and your assistant to gauge how well it's doing and identify areas for improvement. |
 
 ## How it works
@@ -55,7 +55,7 @@ This diagram illustrates how the product delivers an exceptional, omnichannel cu
 
 - The **assistant** receives a message from a customer and sends it down the appropriate resolution path. 
 
-  If you want to preprocess incoming messages, this is where you would inject logic to call an external service that can process the messages before the assistant routes them. Likewise, you can process responses from the assistant before they are returned to the customer.
+  If you want to preprocess incoming messages, this is where you would use webhooks to inject logic that calls an external service that can process the messages before the assistant routes them. Likewise, you can process responses from the assistant before they are returned to the customer.
 
 - The assistant chooses the appropriate resolution from among these options:
 
@@ -83,7 +83,7 @@ Read more about these implementation steps by following these links:
 
 The {{site.data.keyword.conversationshort}} application (where you create assistants and skills) requires the same level of browser software as is required by {{site.data.keyword.Bluemix_notm}}. For more information, see {{site.data.keyword.Bluemix_notm}} [Prerequisites](/docs/overview?topic=overview-prereqs-platform#browsers-platform){: external}. 
 
-For information about the web browsers that are supported by the web chat integration, see [Browser Support](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=key-concepts#browsersupport){: external}.
+For information about the web browsers that are supported by the web chat integration, see [Browser Support](/docs/assistant?topic=assistant-web-chat-basics#web-chat-basics-browsers).
 
 ## Language support
 {: #index-lang-support}
