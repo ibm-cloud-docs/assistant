@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-03"
+lastupdated: "2021-02-22"
 
 keywords: integration settings
 
@@ -44,7 +44,7 @@ To take advantage of the `context.integrations` object, you can create context v
 | Phone | `$integrations.voice_telephony` |
 | Salesforce service desk from web chat | `$integrations.salesforce` |
 | SMS with Twilio | `$integrations.text_messaging` |
-| Web chat (and Preview link) | `$integrations.chat` |
+| Web chat (and Preview) | `$integrations.chat` |
 | Zendesk service desk from web chat | `$integrations.zendesk` |
 {: caption="Integration-specific context variables" caption-side="top"}
 
@@ -102,7 +102,7 @@ The rich response types often behave differently when they are displayed in diff
 <!--- [Facebook](/docs/assistant?topic=assistant-deploy-facebook#deploy-facebook-dialog)-->
 <!-- - [Intercom](/docs/assistant?topic=assistant-deploy-intercom#deploy-intercom-dialog) -->
 - [Phone](/docs/assistant?topic=assistant-deploy-phone#deploy-phone-dialog)
-- [Preview link](/docs/assistant?topic=assistant-deploy-web-link#deploy-web-link-dialog)
+- [Preview](/docs/assistant?topic=assistant-deploy-web-link#deploy-web-link-dialog)
 <!--- [Slack](/docs/assistant?topic=assistant-deploy-slack#deploy-slack-dialog)-->
 - [SMS with Twilio](/docs/assistant?topic=assistant-deploy-sms#deploy-sms-dialog)
 - [Web chat](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-dialog)

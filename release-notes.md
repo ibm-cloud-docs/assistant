@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-11"
+lastupdated: "2021-02-25"
 
 subcollection: assistant
 
@@ -60,6 +60,19 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #release-notes-tooling-changes}
 
 The change log lists changes that were made this year ordered by the date they were released.
+
+## 25 February 2021
+{: #25February2021}
+<!--1.137-->
+
+- **Search skill improvement**: You can configure the search skill to highlight text in the search result passage that {{site.data.keyword.discoveryshort}} determines to be the exact answer to the customer's question.
+- **Integration changes**: The following changes were made to the integrations:
+
+  - The *Web chat* and *Preview* integrations are no longer added automatically to every new assistant.
+  
+    The integrations continue to be added to the *My first assistant* that is generated for you automatically when you first create a new service instance.
+  - The name of *Preview link* integration changed to *Preview*.
+- **Message and log webhooks are generally available**: The premessage, postmessage, and log webhooks are now generally available. For more information about them, see [Webhook overview](/docs/assistant?topic=assistant-webhook-overview).
 
 ## 11 February 2021
 {: #11February2021}
@@ -194,7 +207,7 @@ The following features are available in service instances hosted in all data cen
 
 - **New languages supported by the dialog analysis notebook**:  The *Dialog skill analysis notebook* was updated with language support for French, German, Spanish, Czech, Italian, and Portuguese. For more information, see [Analysis notebooks](/docs/assistant?topic=assistant-logs-resources#logs-resources-jupyter-logs).
 
-- **Visit the learning center!**: Click the **Learning center** link that is displayed in the header of the skill pages to find helpful product tours. The tours guide you through the steps to follow to complete a range of tasks, from adding your first intent to a dialog skill to enhancing the conversation in an actions skill. The **Additional resources** page has links to relevant documentation topics and how-to videos. You can search the resource link titles to find what you're looking for quickly. You must open a skill for the *Learning center* link to be displayed in the page header.
+- **Visit the learning center!**: Click the **Learning center** link that is displayed in the header of the skill pages to find helpful product tours. The tours guide you through the steps to follow to complete a range of tasks, from adding your first intent to a dialog skill to enhancing the conversation in an actions skill. The **Additional resources** page has links to relevant documentation topics and how-to videos. You can search the resource link titles to find what you're looking for quickly.
 
 ## 29 October 2020
 {: #29October2020}

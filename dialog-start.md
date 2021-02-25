@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-21"
+lastupdated: "2021-02-25"
 
 subcollection: assistant
 
@@ -37,13 +37,13 @@ When you add a dialog to your dialog skill, the following dialog nodes are added
 ## Starting the conversation
 {: #dialog-start-welcome}
 
-The response you define for the welcome node in the dialog is displayed to initiate a conversation from the "Try it out" pane, and from other integrations, like *Web chat* or *Preview link*. However, it is not displayed from the *Slack* and *Facebook* integrations because nodes with the `welcome` special condition are skipped in dialog flows that are started by users. Assistants that are deployed to messaging channels typically wait for users to initiate conversations with them, not the other way around.
+The response you define for the Welcome node in the dialog is displayed to initiate a conversation from the "Try it out" pane, and from other integrations, like *Web chat* or *Preview*. However, it is not displayed from the *Slack* and *Facebook* integrations because nodes with the `welcome` special condition are skipped in dialog flows that are started by users. Assistants that are deployed to messaging channels typically wait for users to initiate conversations with them, not the other way around.
 
 Unlike the `welcome` special condition, the `conversation_start` special condition is always triggered at the start of a dialog. You can use a combination of nodes with these two special conditions (`welcome` and `conversation_start`) to manage the start of your dialog in a consistent way.
 
 For more information, see [Special conditions](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-special-conditions).
 
-You cannot use the built-in welcome node to start a dialog in the Slack and Facebook integrations. Use this workaround instead.
+You cannot use the built-in Welcome node to start a dialog in the Slack and Facebook integrations. Use this workaround instead.
 {: tip}
 
 Complete the following steps to manage the dialog start:

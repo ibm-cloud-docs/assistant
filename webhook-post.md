@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-01"
+lastupdated: "2021-02-22"
 
 subcollection: assistant
 
@@ -24,7 +24,7 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
 
-# Making a call after processing a message ![Beta](images/beta.png)
+# Making a call after processing a message
 {: #webhook-post}
 
 Make a call to an external service or application every time a response is rendered by the assistant.
@@ -32,15 +32,10 @@ Make a call to an external service or application every time a response is rende
 
 A webhook is a mechanism that allows you to call out to an external program based on events in your program. You can add a postmessage webhook to your assistant if you want the webhook to be triggered before each message response is returned to the customer.
 
-The postmessage webhook is available as a beta feature.
-{: note}
-
 The postmessage webhook works with the v2 `/message` API only (stateless and stateful). For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#message).
 {: important}
 
-You can use a postmessage webhook to do the following types of things:
-
-- When a skill's response contains a custom ID instead of text, pass the ID to an external database to retrieve a stored text response.
+You can use a postmessage webhook to do things like extract custom responses from an external content repository. For example, you can define a conversational skill with custom IDs in the response instead of text. The postmessage webhook can pass the ID to an external database to retrieve a stored text response.
 
 You can use this webhook in coordination with the premessage webhook. For example, if you used the premessage webhook to strip personally identifiable information from the customer's input, you can use the postmessage webhook to add it back. Or if you use the premessage webhook to translate the customer's input to the language of the skill, you can use the postmessage webhook to translate the response back into the customer's native language before is is returned. For more information, see [Making a call before processing a message](/docs/assistant?topic=assistant-webhook-pre).
 
@@ -57,6 +52,7 @@ You can define one webhook URL to use for processing every message response befo
 The programmatic call to the external service must meet these requirements:
 
 - The call must be a POST HTTP request.
+- The call must be completed in 8 seconds or less.
 - The format of the request and response must be in JSON. For example: `Content-Type: application/json`.
 
 Do not set up and test your webhook in a production environment where the assistant is deployed and is interacting with customers.

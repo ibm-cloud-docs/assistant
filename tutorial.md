@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-02-22"
 
 subcollection: assistant
 content-type: tutorial
@@ -817,10 +817,10 @@ You can add a conditional response that conditions on and includes the user's na
 Now that you have built a more sophisticated version of the assistant, return to the public web page that you deployed as part of the previous tutorial, and then test the new capabilities you added.
 
 1.  Open the assistant.
-1.  From the *Integrations* area, click **Preview link**.
-1.  Click the URL that is displayed on the page.
+1.  From the *Integrations* area, click **Preview**.
+1.  Copy and paste the URL that is displayed on the page into a web browser.
 
-    The page opens in a new tab.
+    An IBM-branded page is displayed with your assistant embedded in it as a chat window.
 1.  Repeat a few of the test utterances that you submited to the "Try it out" pane to see how the assistant behaves in a real integration.
 
     Unlike when you send test utterances to your assistant from the "Try it out" pane, standard usage charges apply to API calls that result from utterances that are submited to the chat widget.

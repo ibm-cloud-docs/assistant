@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-27"
+lastupdated: "2021-02-22"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -253,9 +253,9 @@ The built-in integrations support the following Markdown syntax elements:
 
 If you don't code a link when you specify a phone number in a text response, it is not converted to a telephone link anywhere except in a web chat integration that is accessed from a mobile device.
 
-The "Try it out" pane does not support Markdown syntax currently. For testing purposes, you can use the *Preview link* integration to see how the Markdown syntax is rendered.
+The "Try it out" pane does not support Markdown syntax currently. For testing purposes, you can use the *Preview* integration to see how the Markdown syntax is rendered.
 
-The "Try it out" pane, and *preview link* and *web chat* integrations support HTML syntax. The *Slack* and *Facebook* integrations do not. 
+The "Try it out" pane, and *preview* and *web chat* integrations support HTML syntax. The *Slack* and *Facebook* integrations do not. 
 
 #### Learn more about simple responses
 {: #dialog-overview-variety}
@@ -474,7 +474,7 @@ To add a *Connect to human agent* response type, complete the following steps:
       </tr>
       </table>
 
-The dialog transfer does not occur when you test dialog nodes with this response type in the "Try it out" pane of the dialog skill. You must access a node that uses this response type from an assistant-level integration, such as the Preview link, to see how your users will experience it.
+The dialog transfer does not occur when you test dialog nodes with this response type in the "Try it out" pane of the dialog skill. You must access a node that uses this response type from an assistant-level integration, such as the Preview, to see how your users will experience it.
 
 ### Adding an *Image* response type
 {: #dialog-overview-add-image}
@@ -539,7 +539,7 @@ Add an option response type when you want to give the customer a set of options 
 
 Most integrations display the options as buttons if there are only a few items (4 or fewer, for example).
       
-![Shows a small options list in the preview link that is displayed as buttons.](images/options-buttons.png)
+![Shows a small options list in the Preview that is displayed as buttons.](images/options-buttons.png)
 
 Otherwise, the options are displayed as a list.
 
@@ -619,7 +619,7 @@ To add an *Option* response type, complete the following steps:
 
     When you define an options list with only 3 items, the options are typically displayed as buttons. When you add a preference property that indicates `dropdown` as the preference, for example, you can see in the "Try it out" pane that the list is displayed as a drop-down list instead.
 
-    ![Shows a small options list in the preview link that is displayed as a drop-down menu.](images/options-dropdown.png)
+    ![Shows a small options list in the Preview that is displayed as a drop-down menu.](images/options-dropdown.png)
 
     Some integration types, such as the web chat, reflect your preference. Other integration types, such as Slack, do not reflect your preference when they render the options.
 
@@ -705,7 +705,7 @@ To add a *Search skill* response type, complete the following steps:
     ```
     {: codeblock}  
 
-Test this response type from the preview link or another assistant-level integration. You cannot test it from the dialog skill's "Try it out" pane. For more information about testing dialog and search skills together, see [Testing your assistant from a web page](/docs/assistant?topic=assistant-deploy-web-link).
+Test this response type from the preview or another assistant-level integration. You cannot test it from the dialog skill's "Try it out" pane. For more information about testing dialog and search skills together, see [Testing your assistant from a web page](/docs/assistant?topic=assistant-deploy-web-link).
 
 ### Conditional responses
 {: #dialog-overview-multiple}

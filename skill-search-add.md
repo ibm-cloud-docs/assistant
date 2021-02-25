@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-02-02"
+lastupdated: "2021-02-23"
 
 subcollection: assistant
 
@@ -34,7 +34,7 @@ This feature is available only to Plus or Premium plan users.
 
 Add a search skill to your assistant to prevent the assistant from having to say things like, `I'm sorry. I can't help you with that`. Instead, the assistant can query existing company documents or data to see whether any useful information can be found and shared with the customer.
 
-![Shows a search result in the preview link integration](images/search-skill-preview-link.png)
+![Shows a search result in the Preview integration](images/search-skill-preview-link.png)
 
 The following 4-minute video provides an overview of the search skill.
 
@@ -185,7 +185,6 @@ If you have a Discovery service Lite plan, you are given an opportunity to upgra
     Wait for the collection to be fully ingested before you return to {{site.data.keyword.conversationshort}}.
 
 1.  From the {{site.data.keyword.discoveryshort}} instance, click **Finish setup in Watson Assistant**.
-
     If you need to, select the service instance again. Select the data collection if it's not selected automatically.
 
 ### Data collection creation example
@@ -270,6 +269,13 @@ If you upload a JSON file that contains repeating name values, then only the fir
     </tr>
     </table>
 
+1.  Choose whether to enable the **Emphasize the answer** beta feature. 
+
+    This option is available only if your {{site.data.keyword.discoveryshort}} instance uses the v2 {{site.data.keyword.discoveryshort}} API.
+    {: note}
+
+    When you enable this feature, the sentence that is determined by {{site.data.keyword.discoveryshort}} to be the exact answer to the customer's question is highlighted in the block of text that is displayed to the customer as the search result. For more information about the feature, see the [{{site.data.keyword.discoveryshort}} documentation](/docs/discovery-data?topic=discovery-data-projects#conversational){: external}.
+
 1.  Specify the number of results to return.
 
     The top three results are returned automatically. Can you choose to show fewer or more (up to 10) results in the response.
@@ -281,7 +287,7 @@ If you upload a JSON file that contains repeating name values, then only the fir
     
     To enable the beta feature that filters the results, toggle the *Refine results to return more selective answers* switch to **On**.
 
-1.  Click **Try it** to open the "Try it out" pane for testing. Enter a test message to see the results that are returned when your configuration choices are applied to the search. Make adjustments as necessary.
+1.  Click **Preview** to open the Preview pane for testing. Enter a test message to see the results that are returned when your configuration choices are applied to the search. Make adjustments as necessary.
 
 1.  Click **Create**.
 
@@ -327,7 +333,7 @@ Review this information for help with performing common tasks.
 
     For more tips about improving results, read the [Improve your natural language query results from Watson Discovery](https://developer.ibm.com/blogs/improving-your-natural-language-query-results-from-watson-discovery/){: external} blog post.
 
-- **My response text is surrounded by brackets**: If you notice that your response text is surrounded by brackets and quotation marks (`["My response text"]`) when you test it from the Preview link integration, for example, you might need to change the source field that you're using in the configuration. The unexpected formatting indicates that the value is stored in the source document as an array. Any field that you extract text from must contain a value with a String data type, not an Array data type. When the chat integration shows a response that is extracted from a field that stores the data as an array, it does a straight conversion of the array value into a string, which produces a response that includes the array syntax.
+- **My response text is surrounded by brackets**: If you notice that your response text is surrounded by brackets and quotation marks (`["My response text"]`) when you test it from the Preview integration, for example, you might need to change the source field that you're using in the configuration. The unexpected formatting indicates that the value is stored in the source document as an array. Any field that you extract text from must contain a value with a String data type, not an Array data type. When the chat integration shows a response that is extracted from a field that stores the data as an array, it does a straight conversion of the array value into a string, which produces a response that includes the array syntax.
 
   For example, maybe the field in the source document contains an array with a single text value as its only array element:
 
@@ -373,46 +379,42 @@ One search skill can be used by more than one assistant.
 
 1.  From the Assistants page, click to open the tile for the assistant to which you want to add the skill.
 
-1.  Click **Add Search Skill**.
+1.  Click **Add search skill**.
 
 1.  Click **Add existing skill**.
 
     Click the skill that you want to add from the available skills that are displayed.
-
-After you add a search skill to an assistant, it is automatically enabled for the assistant as follows:
-
-- If the assistant has only a search skill, any user input that is submitted to one of the assistant's integration channels triggers the search skill.
-
-- If the assistant has both a dialog skill and a search skill, any user input triggers the dialog skill first. The dialog addresses any user input that it has a high confidence it can answer correctly. Any queries that would normally trigger the `anything_else` node in the dialog tree are sent to the search skill instead.
-
-  You can prevent the search from being triggered from the `anything_else` node by following the steps in [Disabling search](#search-skill-add-disable).
-  {: note}
-
-- If you want a specific search query to be triggered for specific questions, add a search skill response type to the appropriate dialog node. See [Adding a *Search skill* response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-search-skill) for more details.
 
 ## Search triggers
 {: #skill-search-add-trigger}
 
 The search skill is triggered in the following ways:
 
-- **Anything else node**: Searches an external data source for a relevant answer when none of the dialog nodes can address the user's query.
+- **From a specific dialog node or action step**: This approach is useful if you want to narrow down a user query before you trigger a search. 
 
-  Instead of showing a standard message, such as `I don't know how to help you with that.` the assistant can say, `Maybe this information can help:` followed by the passage returned by the search. If a search skill is linked to your assistant, then whenever the `anything_else` node is triggered, rather than displaying the node response, a search occurs instead. The assistant passes the user input as the query to your search skill, and returns the search results as the response.
+  For example, the conversational flow might collect information about the type of device a customer wants to buy. When you know the device model, you can then send a model keyword in the query that is submitted to the search skill to get better results.
+
+  Trigger the search only at a specific point in a conversation in one of the following ways:
+
+  - Dialog skill: Add a *search skill* response type to a dialog node. When the node is processed, your assistant retrieves a passage from an external data source and returns it as the response to a particular question. This type of search occurs only when the individual dialog node is processed. For more information, see [Adding a search skill response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-search-skill).
+
+  - Actions skill: In the *And then* field of the step where you want the search to be triggered, choose **Search for the answer**. For more information, see [Configuring the search for an answer](/docs/assistant?topic=assistant-actions#actions-what-next-search).
+
+- **From the dialog skill's *Anything else* node**: If the assistant has a dialog skill and a search skill, any user input triggers the dialog skill first. The dialog addresses user input that it has a high confidence it can answer correctly. Any queries that would normally trigger the `anything_else` node in the dialog tree are sent to the search skill instead.
+
+  For example, instead of showing a standard message, such as `I don't know how to help you with that.` the assistant can say, `Maybe this information can help:`. The assistant passes the user input as the query to your search skill, and returns the search results as the response.
 
   You can prevent the search from being triggered from the `anything_else` node by following the steps in [Disabling search](#search-skill-add-disable).
   {: note}
 
-- **Search response type**: If you add a search response type to a dialog node, then your assistant retrieves a passage from an external data source and returns it as the response to a particular question. This type of search occurs only when the individual dialog node is processed.
-
-  This approach is useful if you want to narrow down a user query before you trigger a search. For example, the dialog branch might collect information about the type of device the customer wants to buy. When you know the make and model, you can then send a model keyword in the query that is submitted to the search skill, and get better results.
-- **Search skill only**: If only a search skill is linked to an assistant, and no dialog skill is linked to the assistant, then a search query is sent to the {{site.data.keyword.discoveryshort}} service when any user input is received from one of the assistant's integration channels.
+- **When only a search skill is used**: If only a search skill is linked to an assistant, and no conversational skill is configured, then a search query is sent to the {{site.data.keyword.discoveryshort}} service when any user input is received from one of the assistant's integration channels.
 
 ## Test the search skill
 {: #search-skill-add-test}
 
 After you configure the search, you can send test queries to see the search results that get returned from {{site.data.keyword.discoveryshort}} by using the "Try it out" pane of the search skill.
 
-To test the full experience that customers will have when they ask questions that are either answered by the dialog or trigger a search, use a channel integration, such as the preview link.
+To test the full experience that customers will have when they ask questions that are either answered by the dialog or trigger a search, use an assistant-level integration, such as the preview integration.
 
 You cannot test the full end-to-end user experience from the dialog "Try it out" pane. The search skill is configured separately and attached to an assistant. The dialog skill has no way of knowing the details of the search, and therefore cannot show search results in its "Try it out" pane.
 {: important}
@@ -454,4 +456,4 @@ You might want to do so temporarily, while you are setting up the integration. O
 To prevent the search skill from being triggered, complete the following steps:
 
 1.  From the **Assistants** page, click the menu for your assistant, and then choose **Settings**.
-1.  Open the *Search Skill* page, and then click to switch the toggle to **Disabled**.
+1.  Open the *Search skill* page, and then set the switch to **Disabled**.

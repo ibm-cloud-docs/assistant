@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-11"
+lastupdated: "2021-02-22"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
@@ -127,7 +127,7 @@ Billing is managed per monthly active user per service instance. If a single use
 ### Test activity charges
 {: #services-information-billing-testing}
 
-When testing your skills and assistants, any messages that you submit in the "Try it out" pane are not charged. However, test messages that you send from the preview link integration are charged. For the preview link, a random `user_id` is generated and stored in a cookie. The multiple interactions that a single tester has with the assistant embedded in the preview link are recognized as coming from a single user and are charged accordingly. If you are doing your own test, running a scripted regression test for example, use a single `user_id` for all of the calls within your regression test. Other uses are flagged as abuse.
+When testing your skills and assistants, any messages that you submit in the "Try it out" pane are not charged. However, test messages that you send from the preview integration are charged. For the preview integration, a random `user_id` is generated and stored in a cookie. The multiple interactions that a single tester has with the assistant embedded in the preview integration are recognized as coming from a single user and are charged accordingly. If you are doing your own test, running a scripted regression test for example, use a single `user_id` for all of the calls within your regression test. Other uses are flagged as abuse.
 
 ### Handling anonymous users
 {: #services-information-billing-anonymous}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-21"
+lastupdated: "2021-02-22"
 
 subcollection: assistant
 
@@ -51,7 +51,7 @@ Find answers to frequently-asked questions and quick fixes for common problems.
 | Intent | The goal that is expressed in the user input, such as answering a question or processing a bill payment. [Learn more](/docs/assistant?topic=assistant-intents). |
 | Message | A single turn within a conversation that includes a single call to the `/message` API endpoint and its corresponding response. |
 | Monthly active user (MAU) | A single unique user who interacts with an assistant one or many times in a given month. |
-| Preview link | An integration that embeds your assistant in a chat window that is displayed on an IBM-branded web page. From the preview link integration, you can test how a conversation flows through any and all skills that are attached to your assistant, from end to end. [Learn more](/docs/assistant?topic=assistant-deploy-web-link). |
+| Preview | An integration that embeds your assistant in a chat window that is displayed on an IBM-branded web page. From the preview integration, you can test how a conversation flows through any and all skills that are attached to your assistant, from end to end. [Learn more](/docs/assistant?topic=assistant-deploy-web-link). |
 | Response | Logic that is defined in the *Assistant responds* section of a dialog node that determines how the assistant responds to the user. When the node's condition evaluates to true, the response is processed. The response can consist of an answer, a follow-up question, a webhook that sends a programmatic request to an external service, or slots which represent pieces of information that you need the user to provide before the assistant can help. The dialog node response is equivalent to a Then statement in If-Then-Else programming logic. |
 | Skill | Does the work of the assistant. A dialog skill has the training data and dialog that your assistant uses to chat with customers. An actions skill is a new way to build a conversation. Actions offer step-by-step flows for a conversations and are made so that anybody can build them. A search skill is configured to search the appropriate external data sources for answers to customer questions. [Learn more](/docs/assistant?topic=assistant-skill-add). |
 | Skill version | Versions are snapshots of a skill that you can create at key points during the development lifecycle. You can deploy one version to production, while you continue to make and test improvements that you make to another version of the skill. [Learn more](/docs/assistant?topic=assistant-versions). |

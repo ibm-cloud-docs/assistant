@@ -48,16 +48,21 @@ To add the assistant to a web page on your company website, complete the followi
 
 1.  From the Assistants page, click to open the assistant tile that you want to deploy to your site.
 
-1.  From the *Integrations* section, click the **Web chat** tile.
+1.  From the *Integrations* section, click **Add integration**, and then choose the **Web chat** tile.
 
-    The web chat integration is added to your assistant automatically. If you don't see a web chat tile, add the web chat integration by clicking **Add integration**, and then choosing the **Web chat** tile.
+    The web chat integration is added to your first assistant automatically. If you're using the *My first assistant*, click the **Web chat** tile to open the integration that was added for you.
 
 1.  **Optional**: Change the web chat integration name from *Web chat* to something more descriptive.
 
     A preview pane is displayed that shows you what the web chat looks like when it is embedded in a web page. If a message is displayed that starts with, `There is an error`, it means you haven't added a conversational skill to your assistant yet. After you add a skill, you can test the conversation from the preview pane.
     {: tip}
 
-1.  If the web chat was not created for you automatically, click **Create** to create a web chat instance.
+1.  Click **Create** to create a web chat instance.
+
+    You can skip this step if the web chat integration was created for you automatically.
+
+    ![Plus or Premium plan only](images/plus.png) For environments where private endpoints are in use, keep in mind that the web chat integration sends traffic over the internet. For more information, see [Private network endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints).
+    {: note}
 
 1.  **Optional**: Customize the style of the chat window. You can make the following changes:
 
