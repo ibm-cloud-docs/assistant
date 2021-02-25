@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-02-25"
 
 subcollection: assistant
 
@@ -87,7 +87,7 @@ To add a JSON code block to a dialog node, complete the following steps:
 ### Applying a setting to the entire conversation
 {: #dialog-voice-actions-welcome}
 
-To apply a customization, such as changing the assistant's voice, from the very start of the conversation, specify the action command in a node that you add before the wecome node. In the new node's *If assistant recognizes* field, add the `conversation_start` special condition. For more information, see [Starting the conversation](/docs/assistant?topic=assistant-dialog-start#dialog-start-welcome).
+To apply a customization, such as changing the assistant's voice, from the very start of the conversation, specify the action command in a node that you add before the Welcome node. In the new node's *If assistant recognizes* field, add the `conversation_start` special condition. For more information, see [Starting the conversation](/docs/assistant?topic=assistant-dialog-start#dialog-start-welcome).
 
 ## Customizing lists
 {: #dialog-voice-actions-lists}
