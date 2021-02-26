@@ -252,7 +252,7 @@ intents.containsIntent("General_Ending", 0.8, 2)
 ```
 {: codeblock}
 
-### JSONArray.containsMultipleIntents([Double min_score], [Integer top_n], String intent_name1, String intent_name2, ...)
+### JSONArray.containsMultipleIntents([Double min_score], [Integer top_n], String intent_name1, ... , String intent_name*n*)
 {: #dialog-methods-arrays-containsMultipleIntents}
 
 This method returns `true` if the `intents` JSONArray contains all of the specified intents.
