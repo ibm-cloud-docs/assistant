@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-02-26"
 
 subcollection: assistant
 
@@ -34,7 +34,10 @@ This feature is available only to Plus or Premium plan users.
 
 Add a search skill to your assistant to prevent the assistant from having to say things like, `I'm sorry. I can't help you with that`. Instead, the assistant can query existing company documents or data to see whether any useful information can be found and shared with the customer.
 
-![Shows a search result in the Preview integration](images/search-skill-preview-link.png)
+![Shows a search result in the Preview integration](images/search-preview-example.png)
+
+To show the exact answer highlighted in bold font, enable the *Emphasize the answer* feature that is available with {{site.data.keyword.discoveryshort}} v2 instances.
+{: tip}
 
 The following 4-minute video provides an overview of the search skill.
 
@@ -412,7 +415,7 @@ The search skill is triggered in the following ways:
 ## Test the search skill
 {: #search-skill-add-test}
 
-After you configure the search, you can send test queries to see the search results that get returned from {{site.data.keyword.discoveryshort}} by using the "Try it out" pane of the search skill.
+After you configure the search, you can send test queries to see the search results that get returned from {{site.data.keyword.discoveryshort}} by using the Preview pane of the search skill.
 
 To test the full experience that customers will have when they ask questions that are either answered by the dialog or trigger a search, use an assistant-level integration, such as the preview integration.
 

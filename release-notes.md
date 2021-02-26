@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-02-26"
 
 subcollection: assistant
 
@@ -65,13 +65,13 @@ The change log lists changes that were made this year ordered by the date they w
 {: #25February2021}
 <!--1.137-->
 
-- **Search skill improvement**: You can configure the search skill to highlight text in the search result passage that {{site.data.keyword.discoveryshort}} determines to be the exact answer to the customer's question.
+- **Search skill can emphasize the answer**: You can configure the search skill to highlight text in the search result passage that {{site.data.keyword.discoveryshort}} determines to be the exact answer to the customer's question. For more information, see [Creating a search skill](/docs/assistant?topic=assistant-skill-search-add).
 - **Integration changes**: The following changes were made to the integrations:
 
+  - The name of *Preview link* integration changed to *Preview*.
   - The *Web chat* and *Preview* integrations are no longer added automatically to every new assistant.
   
     The integrations continue to be added to the *My first assistant* that is generated for you automatically when you first create a new service instance.
-  - The name of *Preview link* integration changed to *Preview*.
 - **Message and log webhooks are generally available**: The premessage, postmessage, and log webhooks are now generally available. For more information about them, see [Webhook overview](/docs/assistant?topic=assistant-webhook-overview).
 
 ## 11 February 2021
