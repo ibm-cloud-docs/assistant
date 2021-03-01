@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-01"
 
 subcollection: assistant
 
@@ -252,7 +252,7 @@ intents.containsIntent("General_Ending", 0.8, 2)
 ```
 {: codeblock}
 
-### JSONArray.containsMultipleIntents([Double min_score], [Integer top_n], String intent_name1, ... , String intent_name*n*)
+<!--### JSONArray.containsMultipleIntents([Double min_score], [Integer top_n], String intent_name1, ... , String intent_name*n*)
 {: #dialog-methods-arrays-containsMultipleIntents}
 
 This method returns `true` if the `intents` JSONArray contains all of the specified intents.
@@ -278,7 +278,7 @@ intents.containsMultipleIntents(0.0, 2,"eCommerce_Cancel_Product_Order", "Custom
 {: codeblock}
 
 If the confidence score of the second intent is within about 55% of the confidence score of the top intent,disambiguation will be triggered and this node will not be processed. This behavior occurs even if you position the dialog node with this condition in the dialog tree before the two nodes that condition on the intents that are included in the disambiguation list.
-{: note}
+{: note}-->
 
 ### JSONArray.filter(temp, "temp.property operator comparison_value")
 {: #dialog-methods-arrays-filter}
