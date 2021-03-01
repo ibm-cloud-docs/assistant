@@ -95,7 +95,7 @@ Language support by feature is detailed in the [Supported languages](/docs/assis
 
 See [IBM Cloud Terms and Notices](/docs/overview/terms-of-use?topic=overview-terms){: external} for information about the terms of service.
 
-US Health Insurance Portability and Accountability Act (HIPAA) support is available for Enterprise plans that are hosted in the Washington, DC location created on or after 1 April 2019. For more information, see [Enabling EU and HIPAA supported settings](/docs/account?topic=account-eu-hipaa-supported#eu-hipaa-supported){: external}.
+US Health Insurance Portability and Accountability Act (HIPAA) support is available with *Enterprise with Data Isolation* plans that are hosted in the Washington, DC location created on or after 1 April 2019. For more information, see [Enabling EU and HIPAA supported settings](/docs/account?topic=account-eu-hipaa-supported#eu-hipaa-supported){: external}.
 
 To learn more about service terms and data security, read the following information:
 

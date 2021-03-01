@@ -51,7 +51,7 @@ The length of time for which messages are retained depends on your {{site.data.k
   Enterprise                           | Last 30 days
   Premium (legacy)                     | Last 90 days
   Plus                                 | Last 30 days
-  Plus Trial                           | Last 30 days
+  Trial                                | Last 30 days
   Lite                                 | Last 7 days
 
 ## Filtering messages
@@ -142,7 +142,7 @@ To add the deployment ID, v1 API users include the deployment property inside th
 ```
 {: codeblock}
 
-![Enterprise plan only](images/enterprise.png) For Enterprise plan {{site.data.keyword.conversationshort}} instances that use the v1 API and specify a deployment ID with each /message call, you can ask IBM to configure your instances to allow you to access log data from deployed applications across different instances. (If your instances use the v2 API, you cannot get log data from across different instances.)
+For an Enterprise with Data Isolation plan, you can ask IBM to configure your instances to allow you to access log data from deployed applications across different instances. Each instance must the v1 API and specify a deployment ID with each /message call. (If your instances use the v2 API, you cannot get log data from across different instances.)
 
 If log sharing is enabled, only someone with Manager service access to the current instance can view logs. The person can view logs from all of the instances that are being shared. Logs from across all of the participating instances are displayed, regardless of the current user's service level access to the other instances. Similarly, when someone with Manager service access to an instance sends a GET request to the v1 `/logs` API endpoint, logs from all instances that participate in log sharing are returned, regardless of the user's service level access to each instance.
 {: note}
