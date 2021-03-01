@@ -23,7 +23,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Integrating with phone ![Plus or higher plan only](images/plus.png)
+# Integrating with phone ![Plus or higher plans only](images/plus.png)
 {: #deploy-phone}
 
 Add a phone integration so your assistant can answer when your customers call.

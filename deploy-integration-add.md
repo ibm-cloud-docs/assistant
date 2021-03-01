@@ -65,7 +65,7 @@ Follow these steps to add integrations to your assistant:
 
     Built-in service desk integrations:
 
-    - [Intercom](/docs/assistant?topic=assistant-deploy-intercom)  ![Plus or higher plan only](images/plus.png)
+    - [Intercom](/docs/assistant?topic=assistant-deploy-intercom)  ![Plus or higher plans only](images/plus.png)
     - [Web chat with Salesforce support](/docs/assistant?topic=assistant-deploy-salesforce)
     - [Web chat with Zendesk support](/docs/assistant?topic=assistant-deploy-zendesk)
 

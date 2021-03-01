@@ -61,7 +61,7 @@ To add the assistant to a web page on your company website, complete the followi
 
     You can skip this step if the web chat integration was created for you automatically.
 
-    ![Plus or higher plan only](images/plus.png) For environments where private endpoints are in use, keep in mind that the web chat integration sends traffic over the internet. For more information, see [Private network endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints).
+    ![Plus or higher plans only](images/plus.png) For environments where private endpoints are in use, keep in mind that the web chat integration sends traffic over the internet. For more information, see [Private network endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints).
     {: note}
 
 1.  **Optional**: Customize the style of the chat window. You can make the following changes:

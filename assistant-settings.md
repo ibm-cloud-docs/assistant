@@ -75,7 +75,7 @@ If you have a Writer or Reader service access role to the instance and want to u
 If the assistant ID is not displayed, you can copy it from the URL of the assistant web page. The assistant ID is listed just after `/assistants/{assistantID}`. Similarly, you can get the skill ID from the URL of the skill page. The skill ID is listed just after `/skills/{skillID}`.
 {: tip}
 
-## Changing the inactivity timeout setting ![Plus or higher plan only](images/plus.png)
+## Changing the inactivity timeout setting ![Plus or higher plans only](images/plus.png)
 {: #assistant-settings-change-timeout}
 
 When a user interacts with your assistant through one of the built-in integrations, the chat session ends after a specific period of time passes in which the user does not interact with the assistant. You can specify the amount of time to wait before a chat session is reset by changing the inactivity timeout setting.
