@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-03-01"
 
 subcollection: assistant
 
@@ -178,12 +178,6 @@ Regularly [back up data](/docs/assistant?topic=assistant-backup) to prevent prob
 {: faq}
 
 No, you cannot change from a Plus Trial, Plus, or Standard plan to a Lite plan. And you cannot upgrade from a Plus Trial to a Standard plan. For more information, see [Upgrading](/docs/assistant?topic=assistant-upgrade).
-
-## Can I change from a Standard plan to a Premium plan?
-{: #faqs-upgrade-plan}
-{: faq}
-
-Yes, you can upgrade to a Premium plan. However, you cannot do an in-place upgrade of your service instance. After a Premium instance is provisioned, you must export dialog skills from the old plan and import them to the new plan instance. For more information, see [Upgrading](/docs/assistant?topic=assistant-upgrade).
 
 ## How long are log files kept for a workspace?
 {: #faqs-assistant-logs}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2020-12-11"
+lastupdated: "2021-03-01"
 
 subcollection: assistant
 
@@ -24,13 +24,13 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
 
-# Getting help with intents ![Plus or Premium plan only](images/plus.png)
+# Getting help with intents ![Plus or higher plans only](images/plus.png)
 {: #intent-recommendations}
 
 Have Watson analyze your chat transcript log data to find the most common and frequently expressed customer needs related to your business. Watson can then recommend intents and intent user examples that you can use to train your assistant so it can recognize the same and similar requests in the future.
 {: shortdesc}
 
-This feature is available to Plus or Premium plan users only.
+This feature is available to users of paid plans only.
 {: note}
 
 Watson can recommend some initial intents for you to start with. If you already created some intents, Watson can analyze your logs and compare its findings with your existing intents. Based on what it learns, Watson can identify gaps in your training data and suggest new intents to fill them.
@@ -97,7 +97,7 @@ To use assistant chat logs as the source for your intent and intent user example
 - The assistant must have exchanged messages with a customer within the log retention time period. Logs are stored for a number of days, the total of which is determined by your service plan type. If no customer interactions take place within the retention period, then there is no log data available to use as a recommendation source. For more information about log limits, see [Log limits](/docs/assistant?topic=assistant-logs#logs-limits).
 - The assistant log must contain at least 3,000 messages.
 
-{{site.data.keyword.Bluemix_dedicated_notm}}: You cannot get intent recommendations from logs. You can see the option to link to a connected log, but the data source always indicates that there are 0 logs available. To use an assistant log as the source for your intent recommendations, switch to a Premium plan. Alternatively, you can add the user utterances from the logs to a CSV file, upload it, and choose the logs CSV file as the data source.
+{{site.data.keyword.Bluemix_dedicated_notm}}: You cannot get intent recommendations from logs. You can see the option to link to a connected log, but the data source always indicates that there are 0 logs available. To use an assistant log as the source for your intent recommendations, switch to an Enterprise plan. Alternatively, you can add the user utterances from the logs to a CSV file, upload it, and choose the logs CSV file as the data source.
 
 ### Getting recommendations from a CSV log file
 {: #intent-recommendations-log-files-add}

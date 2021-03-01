@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-03-01"
 
 subcollection: assistant
 
@@ -75,7 +75,7 @@ If you have a Writer or Reader service access role to the instance and want to u
 If the assistant ID is not displayed, you can copy it from the URL of the assistant web page. The assistant ID is listed just after `/assistants/{assistantID}`. Similarly, you can get the skill ID from the URL of the skill page. The skill ID is listed just after `/skills/{skillID}`.
 {: tip}
 
-## Changing the inactivity timeout setting ![Plus or Premium plan only](images/plus.png)
+## Changing the inactivity timeout setting ![Plus or higher plan only](images/plus.png)
 {: #assistant-settings-change-timeout}
 
 When a user interacts with your assistant through one of the built-in integrations, the chat session ends after a specific period of time passes in which the user does not interact with the assistant. You can specify the amount of time to wait before a chat session is reset by changing the inactivity timeout setting.
@@ -97,9 +97,9 @@ The length allowed for an inactivity timeout differs by service instance plan ty
 
 | Service plan | Chat session default inactivity period | Chat session maximum inactivity period |
 |--------------|--------------------------------:|----------------------------:|
-| Premium      |                          1 hour |          168 hours (7 days) |
+| Premium (legacy) |                      1 hour |          168 hours (7 days) |
+| Enterprise   |                          1 hour |          168 hours (7 days) |
 | Plus         |                          1 hour |                    24 hours |
-| Standard (legacy) |                  5 minutes |                   5 minutes |
 | Plus Trial   |                       5 minutes |                   5 minutes |
 | Lite         |                       5 minutes |                   5 minutes |
 {: caption="Service plan details" caption-side="top"}

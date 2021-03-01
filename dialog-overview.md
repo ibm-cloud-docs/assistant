@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-03-01"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -121,7 +121,7 @@ To create a dialog, complete the following steps:
 
 1.  **Optional**: If you want this node to be considered when users are shown a set of node choices at run time, and asked to pick the one that best matches their goal, then add a short description of the user goal handled by this node to the **external node name** field. For example, *Open an account*.
 
-    ![Plus or Premium plan only](images/plus.png) The *external node name* field is only displayed to Plus or Premium plan users. See [Disambiguation](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation) for more details.
+    ![Plus or higher plans only](images/plus.png) The *external node name* field is only displayed only to users of paid plans. See [Disambiguation](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation) for more details.
 
 1.  To add more nodes, select a node in the tree, and then click the **More** ![More icon](images/kebab.png) icon.
 
@@ -389,9 +389,9 @@ In addition to the default response type of **Text**, for which you specify the 
 - **Image**: Embeds an image into the response. The source image file must be hosted somewhere and have a URL that you can use to reference it. It cannot be a file that is stored in a directory that is not publicly accessible.
 - **Option**: Adds a list of one or more options. When a user clicks one of the options, an associated user input value is sent to your assistant. How options are rendered can differ depending on the number of options and where you deploy the dialog.
 - **Pause**: Forces the application to wait for a specified number of milliseconds before continuing with processing. You can choose to show an indicator that the assistant is working on typing a response. Use this response type if you need to perform an action that might take some time.
-- **Search skill**: ![Plus or Premium plan only](images/plus.png) Searches an external data source for relevant information to return to the user. The data source that is searched is a {{site.data.keyword.discoveryshort}} service data collection that you configure when you add a search skill to the assistant that uses this dialog skill.
+- **Search skill**: ![Plus or higher plans only](images/plus.png) Searches an external data source for relevant information to return to the user. The data source that is searched is a {{site.data.keyword.discoveryshort}} service data collection that you configure when you add a search skill to the assistant that uses this dialog skill.
 
-  This response type is available to users of Plus or Premium plans only.
+  This response type is available only to users of paid plans.
   {: note}
 
 - **User-defined**: If you use the JSON editor to define the response, you can create your own user-defined response type. For more information, see [Defining responses using the JSON editor](/docs/assistant?topic=assistant-dialog-responses-json).
@@ -406,9 +406,9 @@ To add a rich response, complete the following steps:
     - [**Image**](#dialog-overview-add-image)
     - [**Option**](#dialog-overview-add-option)
     - [**Pause**](#dialog-overview-add-pause)
-    - [**Search skill**](#dialog-overview-add-search-skill) ![Plus or Premium plan only](images/plus.png) 
+    - [**Search skill**](#dialog-overview-add-search-skill) ![Plus or higher plans only](images/plus.png) 
     
-      This response type is only visible to Plus or Premium plan users.
+      This response type is only visible to users of paid plans.
       {: note}
 
     - [**Text**](#dialog-overview-simple-text)
@@ -646,7 +646,7 @@ To add a *Pause* response type, complete the following steps:
 
 This response type does not render in the "Try it out" pane. You must access a node that uses this response type from a test deployment to see how your users will experience it. For more information, see [Testing your assistant from a web page](/docs/assistant?topic=assistant-deploy-web-link).
 
-### Adding a *Search skill* response type ![Plus or Premium plan only](images/plus.png)
+### Adding a *Search skill* response type ![Plus or higher plan only](images/plus.png)
 {: #dialog-overview-add-search-skill}
 
 If you have existing customer-facing material, such as an FAQ, a product catalog, or sales material that can answer questions that customers often ask, put that information to use. You can trigger a search of the existing material in real time to get the latest and most up-to-date answer for your customers. 

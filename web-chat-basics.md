@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-21"
+lastupdated: "2021-03-01"
 
 subcollection: assistant
 
@@ -148,7 +148,7 @@ You can configure the web chat to transfer a customer to a human customer suppor
 
 Built-in service desk integrations:
 
-- [Intercom](/docs/assistant?topic=assistant-deploy-intercom)  ![Plus or Premium plan only](images/plus.png)
+- [Intercom](/docs/assistant?topic=assistant-deploy-intercom)  ![Plus or higher plans only](images/plus.png)
 - [Web chat with Salesforce support](/docs/assistant?topic=assistant-deploy-salesforce)
 - [Web chat with Zendesk support](/docs/assistant?topic=assistant-deploy-zendesk)
 

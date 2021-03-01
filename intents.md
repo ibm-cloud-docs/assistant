@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-09"
+lastupdated: "2021-03-01"
 
 keywords: intent, intent conflicts, annotate
 
@@ -54,7 +54,7 @@ To read a transcript of the video, [open the video on YouTube.com](https://www.y
 
 Start with a few intents, and test them as you iteratively expand the scope of the application.
 
-![Plus or Premium plan only](images/plus.png) If you already have chat transcripts from a call center or customer inquiries that you collected from an online application, put that data to work for you. Share the real customer utterances with Watson and let Watson recommend the best intents and intent user examples for your needs. See [Get help defining intents](/docs/assistant?topic=assistant-intent-recommendations) for more details.
+![Plus or higher plans only](images/plus.png) If you already have chat transcripts from a call center or customer inquiries that you collected from an online application, put that data to work for you. Share the real customer utterances with Watson and let Watson recommend the best intents and intent user examples for your needs. See [Get help defining intents](/docs/assistant?topic=assistant-intent-recommendations) for more details.
 
 ## Creating intents
 {: #intents-create-task}
@@ -102,7 +102,7 @@ Start with a few intents, and test them as you iteratively expand the scope of t
     Provide at least five examples for each intent.
     {: important}
 
-    ![Plus or Premium plan only](images/plus.png) To get help with user example creation, see [Get intent user example recommendations](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations-task).
+    ![Plus or higher plans only](images/plus.png) To get help with user example creation, see [Get intent user example recommendations](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations-task).
 
 1.  When you are done adding examples, click ![Close arrow](images/close_arrow.png) to finish creating the intent.
 
@@ -209,9 +209,9 @@ The number of intents and examples you can create depends on your {{site.data.ke
 
 | Plan     | Intents per skill | Examples per skill |
 |------------------|------------------:|-------------------:|
-| Premium          |             2,000 |             25,000 |
+| Premium (legacy) |             2,000 |             25,000 |
+| Enterprise       |             2,000 |             25,000 |
 | Plus             |             2,000 |             25,000 |
-| Standard (legacy) |            2,000 |             25,000 |
 | Lite, Plus Trial |               100 |             25,000 |
 {: caption="Plan details" caption-side="top"}
 
@@ -268,7 +268,7 @@ You can download a number of intents to a CSV file, so you can then upload and r
 
 If you have a large number of intents and examples, you might find it easier to upload them from a comma-separated value (CSV) file than to define them one by one. Be sure to remove any personal data from the user examples that you include in the file.
 
-Alternatively, you can upload a file with raw user utterances (from call center logs, for example) and let Watson find candidates for user examples from the data. For more information, see [Adding examples from log files](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations-task). This feature is available to Plus or Premium plan users only.
+Alternatively, you can upload a file with raw user utterances (from call center logs, for example) and let Watson find candidates for user examples from the data. For more information, see [Adding examples from log files](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations-task). This feature is available only to users of paid plans.
 
 1.  Collect the intents and examples into a CSV file, or export them from a spreadsheet to a CSV file. The required format for each line in the file is as follows:
 
@@ -302,10 +302,10 @@ Alternatively, you can upload a file with raw user utterances (from call center 
 
 You can view the uploaded intents and the corresponding examples on the **Intents** tab. You might need to refresh the page to see the new intents and examples.
 
-## Resolving intent conflicts ![Plus or Premium only](images/plus.png)
+## Resolving intent conflicts ![Plus or higher plans only](images/plus.png)
 {: #intents-resolve-conflicts}
 
-This feature is available only to Plus or Premium users.
+This feature is available only to users of paid plans.
 {: note}
 
 The {{site.data.keyword.conversationshort}} application detects a conflict when two or more intent examples in *separate* intents are so similar that {{site.data.keyword.conversationshort}} is confused as to which intent to use.

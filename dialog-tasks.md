@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-11"
+lastupdated: "2021-03-01"
 
 keywords: dialog node limits, copying a node, moving a node, adding a folder
 
@@ -211,9 +211,9 @@ The number of dialog nodes you can create per skill depends on your plan type.
 
 | Plan     | Dialog nodes per skill     |
 |------------------|---------------------------:|
-| Premium          |                    100,000 |
+| Premium (legacy) |                    100,000 |
+| Enterprise       |                    100,000 |
 | Plus             |                    100,000 |
-| Standard (legacy) |                   100,000 |
 | Plus Trial       |                     25,000 |
 | Lite             |                     25,000 |
 {: caption="Plan details" caption-side="top"}

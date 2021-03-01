@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-12-11"
+lastupdated: "2021-03-01"
 
 keywords: digression, disambiguation, confidence 
 
@@ -190,9 +190,9 @@ You can prevent every node in a dialog or an individual dialog node from being i
 
   - Set the **Show node name** switch to **Off**.
 
-  - ![Plus or Premium plan only](images/plus.png) If you added a node summary description to the **external node name** field instead of the *name* field, remove it.
+  - ![Plus or higher plans only](images/plus.png) If you added a node summary description to the **external node name** field instead of the *name* field, remove it.
   
-    The *external node name* field serves two purposes. It provides information about the node to customers when it is included in a disambiguation list. It also describes the node in a chat summary that is shared with service desk agents when a conversation is transferred to a person. The *external node name* field is only visible in skills that are part of a Plus or Premium plan instance. If the *external node name* field contains text, its text is used, whether or not there is text in the *name* field.
+    The *external node name* field serves two purposes. It provides information about the node to customers when it is included in a disambiguation list. It also describes the node in a chat summary that is shared with service desk agents when a conversation is transferred to a person. The *external node name* field is only visible in skills that are part of a paid plan instance. If the *external node name* field contains text, its text is used, whether or not there is text in the *name* field.
 
     ![Shows the external node name field.](images/disambig-external-node-name.png)    
 

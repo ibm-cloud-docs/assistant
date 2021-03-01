@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-10"
+lastupdated: "2021-03-01"
 
 subcollection: assistant
 
@@ -61,7 +61,7 @@ To add the assistant to a web page on your company website, complete the followi
 
     You can skip this step if the web chat integration was created for you automatically.
 
-    ![Plus or Premium plan only](images/plus.png) For environments where private endpoints are in use, keep in mind that the web chat integration sends traffic over the internet. For more information, see [Private network endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints).
+    ![Plus or higher plan only](images/plus.png) For environments where private endpoints are in use, keep in mind that the web chat integration sends traffic over the internet. For more information, see [Private network endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints).
     {: note}
 
 1.  **Optional**: Customize the style of the chat window. You can make the following changes:
@@ -284,7 +284,8 @@ The usage is measured differently depending on the plan type. For Lite plans, us
 
 | Plan       |              Maximum usage |
 |------------|---------------------------:|
-| Premium    |              Unlimited MAU |
+| Premium (legacy) |        Unlimited MAU |
+| Enterprise |              Unlimited MAU |
 | Plus       |              Unlimited MAU |
 | Plus Trial |                  5,000 MAU |
 | Lite       | 10,000 API (approximately 1,000 MAU) |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-04"
+lastupdated: "2021-03-01"
 
 subcollection: assistant
 
@@ -50,7 +50,7 @@ You cannot use a webhook to call a {{site.data.keyword.openwhisk_short}} action 
 
 For information about how to call a client application, see [Calling a client application from a dialog node](/docs/assistant?topic=assistant-dialog-actions-client).
 
-![Plus or Premium plan only](images/plus.png) For environments where private endpoints are in use, keep in mind that a webhook sends traffic over the internet. For more information, see [Private network endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints).
+![Plus or higher plans only](images/plus.png) For environments where private endpoints are in use, keep in mind that a webhook sends traffic over the internet. For more information, see [Private network endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints).
 {: note}
 
 ## Defining the webhook

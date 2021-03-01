@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-03-01"
 
 subcollection: assistant
 
@@ -46,7 +46,7 @@ To test the assistant from a web-hosted chat widget, complete the following step
 
     The preview integration is added to your first assistant automatically. If you're using the *My first assistant*, click the **Preview** tile to open the integration that was added for you.
 
-    ![Plus or Premium plan only](images/plus.png) For environments where private endpoints are in use, keep in mind that the preview integration sends traffic over the internet. For more information, see [Private network endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints).
+    ![Plus or higher plan only](images/plus.png) For environments where private endpoints are in use, keep in mind that the preview integration sends traffic over the internet. For more information, see [Private network endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints).
     {: note}
 
 1.  In the *Assistant preview* window, submit test utterances to see how the assistant responds.

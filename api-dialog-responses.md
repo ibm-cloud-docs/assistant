@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-03-01"
 
 subcollection: assistant
 
@@ -184,7 +184,7 @@ For an example of implementing `option` responses in a simple client application
 ### Suggestion
 {: #api-dialog-responses-suggestion}
 
-This feature is available only to Plus or Premium plan users.
+This feature is available only to users with a paid plan.
 {: tip}
 
 The `suggestion` response type is used by the disambiguation feature to suggest possible matches when it isn't clear what the user wants to do. A `suggestion` response includes an array of `suggestions`, each one corresponding to a possible matching dialog node:
@@ -284,7 +284,7 @@ For more information about the disambiguation feature, see [Disambiguation](/doc
 ### Search
 {: #api-dialog-responses-search}
 
-This feature is available only to Plus or Premium plan users.
+This feature is available only to users with a paid plan.
 {: tip}
 
 The `search` response type is used by a search skill to return the results from a Watson Discovery search. A `search` response includes an array of `results`, each of which provides information about a match returned from the Discovery search query:

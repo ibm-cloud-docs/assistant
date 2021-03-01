@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-03-01"
 
 keywords: slot, slots
 
@@ -103,9 +103,9 @@ Using slots produces a more natural dialog flow between the user and your assist
     - [**Image**](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-image)
     - [**Option**](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-option)
     - [**Pause**](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-pause)
-    - [**Search skill**](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-search-skill) ![Plus or Premium plan only](images/plus.png) 
+    - [**Search skill**](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-search-skill) ![Plus or higher plans only](images/plus.png) 
     
-      This response type is only visible to Plus or Premium plan users.
+      This response type is visible only to users of paid plans.
       {: note}
 
     - [**Text**](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-simple-text)

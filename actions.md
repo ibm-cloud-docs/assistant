@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-03-01"
 
 subcollection: assistant
 
@@ -580,7 +580,8 @@ The number of actions you can create per skill depends on your plan type.
 
 | Plan     | Actions per skill | Steps per skill | Customer says phrases per skill |
 |----------|------------------:|----------------:|--------------------------------:|
-| Premium          |     2,000 |           5,000 |                          25,000 |
+| Enterprise       |     2,000 |           5,000 |                          25,000 |
+| Premium (legacy) |     2,000 |           5,000 |                          25,000 |
 | Plus             |     2,000 |           5,000 |                          25,000 |
 | Lite, Plus Trial |       100 |           1,000 |                          25,000 |
 {: caption="Plan details" caption-side="top"}
