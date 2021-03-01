@@ -104,6 +104,6 @@ The number of integrations you can create in a single service instance depends o
 | Enterprise       |                        100 |
 | Premium (legacy) |                        100 |
 | Plus             |                        100 |
-| Plus Trial       |                        100 |
+| Trial            |                        100 |
 | Lite             |                        100 |
 {: caption="Service plan details" caption-side="top"}

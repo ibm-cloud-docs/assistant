@@ -212,7 +212,7 @@ The number of intents and examples you can create depends on your {{site.data.ke
 | Enterprise       |             2,000 |             25,000 |
 | Premium (legacy) |             2,000 |             25,000 |
 | Plus             |             2,000 |             25,000 |
-| Lite, Plus Trial |               100 |             25,000 |
+| Lite, Trial      |               100 |             25,000 |
 {: caption="Plan details" caption-side="top"}
 
 ## Editing intents

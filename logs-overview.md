@@ -84,7 +84,7 @@ Detailed graphs provide additional information. Click a data point on the graphs
 
   If your coverage rate is low, consider using intent recommendations to help you fill in the gaps in your coverage. For more information, see [Getting help with intents](/docs/assistant?topic=assistant-intent-recommendations).
 
-  The containment and coverage metrics are available to Lite, Plus Trial, Plus, or Enterprise plan users.
+  The containment and coverage metrics are available to Plus or Enterprise plan users.
   {: note}
 
 - *Total conversations*: The total number of conversations between active users and your assistant during the selected time period. This number counts exchanges in which the welcome message is displayed to a user, even if the user doesn't respond.

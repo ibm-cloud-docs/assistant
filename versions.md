@@ -87,7 +87,7 @@ The number of versions you can create for a single skill depends on your {{site.
 | Enterprise       |                 50 |
 | Premium (legacy) |                 50 |
 | Plus             |                 10 |
-| Plus Trial       |                 10 |
+| Trial            |                 10 |
 | Lite             |                  0 |
 {: caption="Service plan details" caption-side="top"}
 

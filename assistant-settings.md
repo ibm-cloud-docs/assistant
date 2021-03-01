@@ -100,6 +100,6 @@ The length allowed for an inactivity timeout differs by service instance plan ty
 | Enterprise   |                          1 hour |          168 hours (7 days) |
 | Premium (legacy) |                      1 hour |          168 hours (7 days) |
 | Plus         |                          1 hour |                    24 hours |
-| Plus Trial   |                       5 minutes |                   5 minutes |
+| Trial        |                       5 minutes |                   5 minutes |
 | Lite         |                       5 minutes |                   5 minutes |
 {: caption="Service plan details" caption-side="top"}
