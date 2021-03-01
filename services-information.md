@@ -65,7 +65,7 @@ Information about the artifact limits per plan is available from the topics that
 ### Paid plan features
 {: #services-information-paid}
 
-The following features are available only to users of paid plans. ![Plus or higher plans only](images/plus.png)
+The following features are available only to users of a Plus or Enterprise plan. ![Plus or higher plans only](images/plus.png)
 
 - [Autolearning](/docs/assistant?topic=assistant-autolearn) ![Beta](images/beta.png)
 - [Intent conflict resolution](/docs/assistant?topic=assistant-intents#intents-resolve-conflicts)
