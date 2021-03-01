@@ -97,8 +97,8 @@ The length allowed for an inactivity timeout differs by service instance plan ty
 
 | Service plan | Chat session default inactivity period | Chat session maximum inactivity period |
 |--------------|--------------------------------:|----------------------------:|
-| Premium (legacy) |                      1 hour |          168 hours (7 days) |
 | Enterprise   |                          1 hour |          168 hours (7 days) |
+| Premium (legacy) |                      1 hour |          168 hours (7 days) |
 | Plus         |                          1 hour |                    24 hours |
 | Plus Trial   |                       5 minutes |                   5 minutes |
 | Lite         |                       5 minutes |                   5 minutes |

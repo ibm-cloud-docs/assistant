@@ -209,8 +209,8 @@ The number of intents and examples you can create depends on your {{site.data.ke
 
 | Plan     | Intents per skill | Examples per skill |
 |------------------|------------------:|-------------------:|
-| Premium (legacy) |             2,000 |             25,000 |
 | Enterprise       |             2,000 |             25,000 |
+| Premium (legacy) |             2,000 |             25,000 |
 | Plus             |             2,000 |             25,000 |
 | Lite, Plus Trial |               100 |             25,000 |
 {: caption="Plan details" caption-side="top"}

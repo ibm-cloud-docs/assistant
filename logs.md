@@ -47,9 +47,9 @@ The length of time for which messages are retained depends on your {{site.data.k
 
   Service plan                         | Chat message retention
   ------------------------------------ | ------------------------------------
-  Premium (legacy)                     | Last 90 days
   Enterprise with Data Isolation       | Last 90 days
   Enterprise                           | Last 30 days
+  Premium (legacy)                     | Last 90 days
   Plus                                 | Last 30 days
   Plus Trial                           | Last 30 days
   Lite                                 | Last 7 days

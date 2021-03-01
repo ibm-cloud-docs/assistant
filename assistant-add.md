@@ -57,8 +57,8 @@ The number of assistants you can create depends on your {{site.data.keyword.conv
 
 | Plan | Assistants per service instance |
 |--------------|--------------------------------:|
-| Premium (legacy) |                         100 |
 | Enterprise   |                             100 |
+| Premium (legacy) |                         100 |
 | Plus         |                             100 |
 | Plus Trial   |                             100 |
 | Lite*        |                             100 |

@@ -109,8 +109,8 @@ The number of skills you can create depends on your {{site.data.keyword.conversa
 
 | Plan     | Maximum number of skills of each type per service instance |
 |------------------|----------------------------:|
-| Premium (legacy) |                         100 |
 | Enterprise       |                         100 |
+| Premium (legacy) |                         100 |
 | Plus             |                          50 |
 | Standard (legacy) |                         20 |
 | Lite`*`, Plus Trial |                        5 |
