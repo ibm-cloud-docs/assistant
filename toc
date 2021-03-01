@@ -117,6 +117,7 @@ Watson Assistant (Managed)
     {: .topicgroup}
     Advanced development
         develop.md
+        message-anatomy.md
 
         {: .topicgroup}
         Using webhooks
