@@ -51,7 +51,7 @@ The length of time for which messages are retained depends on your {{site.data.k
   Enterprise                           | Last 30 days
   Premium (legacy)                     | Last 90 days
   Plus                                 | Last 30 days
-  Plus Trial                           | Last 30 days
+  Trial                                | Last 30 days
   Lite                                 | Last 7 days
 
 ## Filtering messages
