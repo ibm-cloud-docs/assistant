@@ -35,6 +35,7 @@ For more information about {{site.data.keyword.Bluemix_notm}} security, see [Sec
 {: #security-byok}
 
 This feature is available with Enterprise with Data Isolation plans that are hosted in Dallas or Washington, DC only.
+{: note}
 
 When you integrate with {{site.data.keyword.keymanagementservicefull}}, you can encrypt {{site.data.keyword.conversationshort}} data in Enterprise with Data Isolation plan instances with encryption keys that you create or import.
 
