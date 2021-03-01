@@ -113,7 +113,7 @@ The number of skills you can create depends on your {{site.data.keyword.conversa
 | Premium (legacy) |                         100 |
 | Plus             |                          50 |
 | Standard (legacy) |                         20 |
-| Lite`*`, Plus Trial |                        5 |
+| Lite`*`, Trial   |                           5 |
 {: caption="Plan details" caption-side="top"}
 
 `*` After 30 days of inactivity, an unused skill in a Lite plan service instance might be deleted to free up space.

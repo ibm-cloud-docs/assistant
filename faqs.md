@@ -177,7 +177,7 @@ Regularly [back up data](/docs/assistant?topic=assistant-backup) to prevent prob
 {: #faqs-downgrade-plan}
 {: faq}
 
-No, you cannot change from a Plus Trial, Plus, or Standard plan to a Lite plan. And you cannot upgrade from a Plus Trial to a Standard plan. For more information, see [Upgrading](/docs/assistant?topic=assistant-upgrade).
+No, you cannot change from a Trial, Plus, or Standard plan to a Lite plan. And you cannot upgrade from a Trial to a Standard plan. For more information, see [Upgrading](/docs/assistant?topic=assistant-upgrade).
 
 ## How long are log files kept for a workspace?
 {: #faqs-assistant-logs}

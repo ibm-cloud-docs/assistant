@@ -354,7 +354,7 @@ The number of concurrent calls that your assistant can participate in at one tim
 |------------------|------------------:|
 | Enterprise       |               500 |
 | Plus             |               100 |
-| Plus Trial       |                 5 |
+| Trial            |                 5 |
 {: caption="Plan details" caption-side="top"}
 
 ## Troubleshooting the phone integration

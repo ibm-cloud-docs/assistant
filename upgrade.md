@@ -36,13 +36,13 @@ You can explore the {{site.data.keyword.conversationshort}} [service plan option
 
 The page header shows the plan you are using today.
 
-![Shows that the Plus Trial plan is displayed in the page header](images/plan-in-header.png)
+![Shows that the Trial plan is displayed in the page header](images/plan-in-header.png)
 
 To upgrade your plan, complete these steps:
 
 1. Do one of the following things:
 
-   - **Plus Trial plan only**: The number of days that are left in your trial is displayed in the page header. To upgrade your plan, click **Upgrade** from the page header before your trial period ends.
+   - **Trial plan only**: The number of days that are left in your trial is displayed in the page header. To upgrade your plan, click **Upgrade** from the page header before your trial period ends.
    - For all other plan types, click the *User* icon ![user icon](images/user-icon.png) from the page header, and then choose **Upgrade Plan** from the menu.
 
 1. From here, you can see other available plan options. For most plan types, you can step through the upgrade process yourself.
@@ -51,7 +51,7 @@ To upgrade your plan, complete these steps:
 
     - When you upgrade from a legacy Standard plan, you change the metrics that are used for billing purposes. Instead of basing billing on API usage, the Plus plan bases billing on the number of monthly active users. If you built a custom app to deploy your assistant, you might need to update the app. Ensure that the API calls from the app include user ID information. For more information, see [User-based plans explained](/docs/assistant?topic=assistant-services-information#services-information-user-based-plans).
 
-    - You cannot change from a Plus Trial plan to a Lite plan.
+    - You cannot change from a Trial plan to a Lite plan.
 
 For answers to common questions about subscriptions, see the [How you're charged](/docs/billing-usage?topic=billing-usage-charges){: external}.
 

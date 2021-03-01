@@ -287,6 +287,6 @@ The usage is measured differently depending on the plan type. For Lite plans, us
 | Enterprise |              Unlimited MAU |
 | Premium (legacy) |        Unlimited MAU |
 | Plus       |              Unlimited MAU |
-| Plus Trial |                  5,000 MAU |
+| Trial      |                  5,000 MAU |
 | Lite       | 10,000 API (approximately 1,000 MAU) |
 {: caption="Plan details" caption-side="top"}

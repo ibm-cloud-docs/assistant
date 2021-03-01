@@ -214,7 +214,7 @@ The number of dialog nodes you can create per skill depends on your plan type.
 | Enterprise       |                    100,000 |
 | Premium (legacy) |                    100,000 |
 | Plus             |                    100,000 |
-| Plus Trial       |                     25,000 |
+| Trial            |                     25,000 |
 | Lite             |                     25,000 |
 {: caption="Plan details" caption-side="top"}
 

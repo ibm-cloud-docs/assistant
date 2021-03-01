@@ -74,16 +74,17 @@ The change log lists changes that were made this year ordered by the date they w
 
 - **Introducing the *Voice add-on***: Use of the voice capabilities that are provided by the *Phone* integration is charged separately, in addition to your service plan charges. Purchase the voice add-on package to use speech services.
 
-- **Plus plan price change**: Our pricing has been revised to reflect the slew of new features that help you to transform your assistant into an omnichannel SaaS application.
+- **Other plan changes**: Our pricing has been revised to reflect the slew of new features that help you to transform your assistant into an omnichannel SaaS application.
 
   Starting on 1 March 2021, the Plus plan starts at $140 per month and includes your first 1,000 monthly users. You pay $14 for each additional 100 active users per month. Purchase the Voice add-on to add voice capabilities to your assistant for an additional $9 per 100 users per month.
 
   Today the Premium plan is being retired. Existing Premium plan users are not impacted. They can continue to work in their Premium instances and create instances up to the 30-instance limit. New users do not see the Premium plan as an option when they create a service instance.
 
+  The Plus Trial plan was renamed to Trial.
+
 - **SOC 2 compliance**: {{site.data.keyword.conversationshort}} is SOC 2 Type 2 compliant, so you know your data is secure. 
 
   The System and Organization Controls framework, developed by the American Institute of Certified Public Accountants (AICPA), is a standard for controls that protect information stored in the cloud. SOC 2 reports provide details about the nature of internal controls that are implemented to protect customer-owned data. For more information, see [IBM Cloud compliance programs](https://www.ibm.com/cloud/compliance/global){: external}.
-
 
 ## 25 February 2021
 {: #25February2021}

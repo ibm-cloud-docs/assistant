@@ -583,7 +583,7 @@ The number of actions you can create per skill depends on your plan type.
 | Enterprise       |     2,000 |           5,000 |                          25,000 |
 | Premium (legacy) |     2,000 |           5,000 |                          25,000 |
 | Plus             |     2,000 |           5,000 |                          25,000 |
-| Lite, Plus Trial |       100 |           1,000 |                          25,000 |
+| Lite, Trial |       100 |           1,000 |                          25,000 |
 {: caption="Plan details" caption-side="top"}
 
 The system actions that are created for you automatically do count toward the total.
