@@ -120,7 +120,7 @@ To set up the integration, complete the following steps:
       
       For more information about voice options, and to listen to audio samples, see [Languages and voices](https://cloud.ibm.com/docs/text-to-speech?topic=text-to-speech-voices){: external} in the {{site.data.keyword.texttospeechshort}} documentation.
 
-    Regardless of the instances you choose to use, any speech service charges that are incurred by the phone integration are included in usage costs of the *Voice add-on* plan. After the instances are created, you can access them directly from the IBM Cloud dashboard. Any use of the speech instances that occurs outside of your assistant are charged separately as speech service usage costs.
+    Regardless of the instances you choose to use, any speech service charges that are incurred by the phone integration are billed with the {{site.data.keyword.conversationshort}} service plan as *voice add-on* charges. After the instances are created, you can access them directly from the IBM Cloud dashboard. Any use of the speech instances that occurs outside of your assistant are charged separately as speech service usage costs.
     {: important}
 
 1. Click **Save and exit**.
@@ -344,7 +344,7 @@ Incoming calls to your assistant follow this path:
 ## Phone integration limits
 {: #deploy-phone-limits}
 
-Any speech service charges that are incurred by the phone integration are included in usage costs of the *Voice add-on* plan. The Voice add-on package is charged separately and in addition to your service plan charges. 
+Any speech service charges that are incurred by the phone integration are included as *Voice add-on* charges in your {{site.data.keyword.conversationshort}} service plan usage. The Voice add-on use is charged separately and in addition to your service plan charges. 
 
 Plan usage is measured based on the number of monthly active users, where a user is identified by the caller's unique phone number. An MD5 hash is applied to the phone number and the 128-bit hash value is used for billing purposes.
 
