@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-03-01"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
@@ -43,7 +43,7 @@ Explore the {{site.data.keyword.conversationshort}} [service plan options](https
 Find out more about what is included with the plans.
 
 - [Artifact limits per plan](#services-information-limits)
-- [Plus and Premium plan features](#services-information-premium)
+- [Plus and higher plan features](#services-information-paid)
 
 ### Artifact limits per plan
 {: #services-information-limits}
@@ -62,25 +62,22 @@ Information about the artifact limits per plan is available from the topics that
 - [Versions](/docs/assistant?topic=assistant-versions#versions-limits)
 - [Web chat integration](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-limits)
 
-### Plus and Premium plan features
-{: #services-information-premium}
+### Paid plan features
+{: #services-information-paid}
 
-The following features are available only to users of Plus or Premium plans. ![Plus or Premium plan only](images/plus.png)
+The following features are available only to users of paid plans. ![Plus or higher plans only](images/plus.png)
 
 - [Autolearning](/docs/assistant?topic=assistant-autolearn) ![Beta](images/beta.png)
 - [Intent conflict resolution](/docs/assistant?topic=assistant-intents#intents-resolve-conflicts)
 - [Intent recommendations and intent user example recommendations](/docs/assistant?topic=assistant-intent-recommendations)
 - [Intercom integration](/docs/assistant?topic=assistant-deploy-intercom)
+- [Phone integration](/docs/assistant?topic=assistant-deploy-phone)
 - [Private endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints)
 - [Search skill](/docs/assistant?topic=assistant-skill-search-add)
+- [SMS with Twilio integration](/docs/assistant?topic=assistant-deploy-phone)
 - [WhatsApp with Twilio integration](/docs/assistant?topic=assistant-deploy-whatsapp) ![Beta](images/beta.png)
 
-The following features are available only to users of Plus plans.
-
-- [Phone integration](/docs/assistant?topic=assistant-deploy-phone)
-- [SMS with Twilio integration](/docs/assistant?topic=assistant-deploy-phone)
-
-The following features are available only to users of Premium plans.
+The following features are available only to users of Enterprise plans. ![Enterprise plan only](images/enterprise.png)
 
 - [Activity tracker](/docs/assistant?topic=assistant-at-events)
 - [v2 Logs API](/apidocs/assistant/assistant-v2#listlogs){: external}
@@ -91,7 +88,7 @@ The plan type of the service instance you are currently using is displayed in th
 ## User-based plans explained
 {: #services-information-user-based-plans}
 
-Unlike API-based plans, which measure usage by the number of API calls made during a month, the Plus and Premium plans measure usage by the number of monthly active users.
+Unlike API-based plans, which measure usage by the number of API calls made during a month, the Plus and Enterprise plans measure usage by the number of monthly active users.
 
 For example, you can pay $120 for the Plus plan, which covers from 0 to 1,000 monthly active users per service instance per billing period. A Plus plan service instance supports up to 100 assistants. For more details about what is supported by this plan and other plans, see the [artifact limits](#services-information-limits) information.
 

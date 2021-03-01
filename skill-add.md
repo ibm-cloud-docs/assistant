@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-02-09"
+lastupdated: "2021-03-01"
 
 subcollection: assistant
 
@@ -43,9 +43,9 @@ You can add the following types of skills to your assistant:
   If you add both a dialog skill and an actions skill to your assistant, the dialog skill is used. You can configure your dialog skill to process individual actions from your actions skill by following the steps in [Calling an actions skill from a dialog](/docs/assistant?topic=assistant-dialog-call-action).
   {: tip}
 
-- **Search skill** ![Plus or Premium plan only](images/plus.png): Leverages information from existing corporate knowledge bases or other collections of content authored by subject matter experts to address unanticipated or more nuanced customer inquiries. For a given user query, uses the {{site.data.keyword.discoveryfull}} service to search a data source of your self-service content and return an answer. [Learn more](#skill-add-search-skill)
+- **Search skill** ![Plus or higher plans only](images/plus.png): Leverages information from existing corporate knowledge bases or other collections of content authored by subject matter experts to address unanticipated or more nuanced customer inquiries. For a given user query, uses the {{site.data.keyword.discoveryfull}} service to search a data source of your self-service content and return an answer. [Learn more](#skill-add-search-skill)
 
-  Only users of Plus or Premium plans can create this type of skill.
+  Only users paid plans can create this type of skill.
   {: important}
 
 ## Actions skill
@@ -80,7 +80,7 @@ To enable your dialog skill to handle more nuanced questions, define entities an
 
 As you add information, the skill uses this unique data to build a machine learning model that can recognize these and similar user inputs. Each time you add or change the training data, the training process is triggered to ensure that the underlying model stays up-to-date as your customer needs and the topics they want to discuss change.
 
-## Search skill ![Plus or Premium plan only](images/plus.png)
+## Search skill ![Plus or higher plans only](images/plus.png)
 {: #skill-add-search-skill}
 
 When Watson Assistant doesn't have an explicit solution to a problem, it routes the user question to a search skill to find an answer from across your disparate sources of self-service content. The search skill interacts with the {{site.data.keyword.discoveryfull}} service to extract this information from a configured data collection.
@@ -109,7 +109,8 @@ The number of skills you can create depends on your {{site.data.keyword.conversa
 
 | Plan     | Maximum number of skills of each type per service instance |
 |------------------|----------------------------:|
-| Premium          |                         100 |
+| Enterprise       |                         100 |
+| Premium (legacy) |                         100 |
 | Plus             |                          50 |
 | Standard (legacy) |                         20 |
 | Lite`*`, Plus Trial |                        5 |

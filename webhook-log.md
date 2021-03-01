@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-03-01"
 
 keywords: log webhook
 
@@ -26,7 +26,7 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
 
-# Logging messages with a webhook
+# Logging messages with a webhook ![Enterprise plan only](images/enterprise.png)
 {: #webhook-log}
 
 Make a call to an external service or application every time a customer submits input to log the conversation.
@@ -35,6 +35,9 @@ Make a call to an external service or application every time a customer submits 
 A webhook is a mechanism that allows you to call out to an external program based on events in your program. 
 
 Add a log webhook to your assistant if you want to log each incoming message and its corresponding response. The log webhook is triggered after the `/message` response is returned. It sends a `GET` request the v2 `/logs` API.
+
+This feature is available only to Enterprise plan users.
+{: note}
 
 The log webhook works with the following v2 APIs only:
 

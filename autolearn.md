@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-27"
+lastupdated: "2021-03-01"
 
 subcollection: assistant
 
@@ -129,7 +129,7 @@ For more information about this notebook and others that you can use to improve 
 
 Observations are made of only your customers` choices to improve only your skills. The observed insights are not reused by IBM or shared in any way.
 
-This observed user choices data is separate from the log data for which metrics are displayed in the Analytics page. User conversation log data in all but Premium plan service instances is used by IBM for general service improvements. You can opt out of such use by specifying an opt-out header in your `/message` API requests. For more information, see [Opting out of logging](/docs/assistant?topic=assistant-information-security#information-security-log-opt-out).
+This observed user choices data is separate from the log data for which metrics are displayed in the Analytics page. User conversation log data in all but Enterprise plan service instances is used by IBM for general service improvements. You can opt out of such use by specifying an opt-out header in your `/message` API requests. For more information, see [Opting out of logging](/docs/assistant?topic=assistant-information-security#information-security-log-opt-out).
 
 You can limit how the service uses data in the following ways:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-08"
+lastupdated: "2021-03-01"
 
 subcollection: assistant
 
@@ -23,7 +23,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Integrating with phone ![Plus or Premium plan only](images/plus.png)
+# Integrating with phone ![Plus or higher plans only](images/plus.png)
 {: #deploy-phone}
 
 Add a phone integration so your assistant can answer when your customers call.
@@ -31,8 +31,10 @@ Add a phone integration so your assistant can answer when your customers call.
 
 When your customer makes a phone call through a Session Initiation Protocol (SIP) trunk that you configure, the phone integration answers. The integration converts output from your dialog from text to voice by using the {{site.data.keyword.texttospeechfull}} service. The audio is sent to the telephone network through the SIP trunk. When the customer replies, voice is converted to text by using the {{site.data.keyword.speechtotextfull}} service.
 
-This feature is available only to Plus plan users.
-{: note}
+This feature is available only to Plus or Enterprise plan users.
+
+The voice capabilities that are provided by this integration are charged separately and in addition to your service plan charges.
+{: important}
 
 ## Set up the integration
 {: #deploy-phone-setup}
@@ -118,7 +120,7 @@ To set up the integration, complete the following steps:
       
       For more information about voice options, and to listen to audio samples, see [Languages and voices](https://cloud.ibm.com/docs/text-to-speech?topic=text-to-speech-voices){: external} in the {{site.data.keyword.texttospeechshort}} documentation.
 
-    Regardless of the instances you choose to use, any speech service charges that are incurred by the phone integration are included in the usage costs of {{site.data.keyword.conversationshort}}. After the instances are created, you can access them directly from the IBM Cloud dashboard. Any use of the speech service instances that occurs outside of your assistant are charged separately as speech service usage costs.
+    Regardless of the instances you choose to use, any speech service charges that are incurred by the phone integration are included in usage costs of the *Voice add-on* plan. After the instances are created, you can access them directly from the IBM Cloud dashboard. Any use of the speech instances that occurs outside of your assistant are charged separately as speech service usage costs.
     {: important}
 
 1. Click **Save and exit**.
@@ -342,7 +344,7 @@ Incoming calls to your assistant follow this path:
 ## Phone integration limits
 {: #deploy-phone-limits}
 
-Any speech service charges that are incurred by the phone integration are included in the usage costs of {{site.data.keyword.conversationshort}}. Use of Speech services outside of the phone integration do incur costs.
+Any speech service charges that are incurred by the phone integration are included in usage costs of the *Voice add-on* plan. The Voice add-on package is charged separately and in addition to your service plan charges. 
 
 Plan usage is measured based on the number of monthly active users, where a user is identified by the caller's unique phone number. An MD5 hash is applied to the phone number and the 128-bit hash value is used for billing purposes.
 
@@ -350,11 +352,10 @@ The number of concurrent calls that your assistant can participate in at one tim
 
 | Plan             |  Concurrent calls |
 |------------------|------------------:|
+| Enterprise       |               500 |
 | Plus             |               100 |
 | Plus Trial       |                 5 |
 {: caption="Plan details" caption-side="top"}
-
-<!--| Enterprise       |               500 |-->
 
 ## Troubleshooting the phone integration
 {: #deploy-phone-troubleshooting}

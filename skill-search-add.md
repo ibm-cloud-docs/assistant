@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-01"
 
 subcollection: assistant
 
@@ -23,13 +23,13 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
 
-# Creating a search skill ![Plus or Premium plan only](images/plus.png)
+# Creating a search skill ![Plus or higher plan only](images/plus.png)
 {: #skill-search-add}
 
 An assistant uses a *search skill* to route complex customer inquiries to the {{site.data.keyword.discoveryfull}} service. {{site.data.keyword.discoveryshort}} treats the user input as a search query. It finds information that is relevant to the query from an external data source and returns it to the assistant.
 {: shortdesc}
 
-This feature is available only to Plus or Premium plan users.
+This feature is available only to paid plan users.
 {: note}
 
 Add a search skill to your assistant to prevent the assistant from having to say things like, `I'm sorry. I can't help you with that`. Instead, the assistant can query existing company documents or data to see whether any useful information can be found and shared with the customer.
@@ -75,7 +75,7 @@ If you create a Discovery instance first, do not add the pre-enriched data sourc
 
 1.  From the assistant where you want to add the skill, click **Add search skill**.
 
-    You can only add a search skill if you are a Plus or Premium plan user.
+    You can only add a search skill if you are a user with a paid plan.
     {: note}
 
 1.  Take one of the following actions:

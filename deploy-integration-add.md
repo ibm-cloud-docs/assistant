@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-03-01"
 
 subcollection: assistant
 
@@ -65,7 +65,7 @@ Follow these steps to add integrations to your assistant:
 
     Built-in service desk integrations:
 
-    - [Intercom](/docs/assistant?topic=assistant-deploy-intercom)  ![Plus or Premium plan only](images/plus.png)
+    - [Intercom](/docs/assistant?topic=assistant-deploy-intercom)  ![Plus or higher plans only](images/plus.png)
     - [Web chat with Salesforce support](/docs/assistant?topic=assistant-deploy-salesforce)
     - [Web chat with Zendesk support](/docs/assistant?topic=assistant-deploy-zendesk)
 
@@ -80,7 +80,7 @@ Follow these steps to add integrations to your assistant:
 
 After you integrate the assistant, test it from the target channel to ensure that the assistant works as expected.
 
-![Plus or Premium plan only](images/plus.png) For environments where private endpoints are in use, keep in mind that these integrations send traffic over the internet. For more information, see [Private network endpoints](https://cloud.ibm.com/docs/assistant?topic=assistant-security#security-private-endpoints).
+![Plus or higher plans only](images/plus.png) For environments where private endpoints are in use, keep in mind that these integrations send traffic over the internet. For more information, see [Private network endpoints](https://cloud.ibm.com/docs/assistant?topic=assistant-security#security-private-endpoints).
 {: note}
 
 ## How service desk platform integrations work
@@ -101,9 +101,9 @@ The number of integrations you can create in a single service instance depends o
 
 | Service plan     | Integrations per assistant |
 |------------------|---------------------------:|
-| Premium          |                        100 |
+| Enterprise       |                        100 |
+| Premium (legacy) |                        100 |
 | Plus             |                        100 |
-| Standard (legacy) |                       100 |
 | Plus Trial       |                        100 |
 | Lite             |                        100 |
 {: caption="Service plan details" caption-side="top"}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-03-01"
 
 subcollection: assistant
 
@@ -57,9 +57,9 @@ The number of assistants you can create depends on your {{site.data.keyword.conv
 
 | Plan | Assistants per service instance |
 |--------------|--------------------------------:|
-| Premium      |                             100 |
+| Enterprise   |                             100 |
+| Premium (legacy) |                         100 |
 | Plus         |                             100 |
-| Standard (legacy) |                        100 |
 | Plus Trial   |                             100 |
 | Lite*        |                             100 |
 {: caption="Plan details" caption-side="top"}
