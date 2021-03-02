@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-02"
 
 subcollection: assistant
 
@@ -39,7 +39,7 @@ For example, when a customer asks a question that the assistant isn't sure it un
 
 The advantage of enabling your skill to apply what it learns from observing customer choices is clear. As your skill learns over time, your customers get the best answer more often and in fewer clicks.
 
-To learn more about how this feaature can benefit you, read the [Building the complete virtual assistant with Watson Assistant](https://www.ibm.com/blogs/watson/2020/05/building-the-complete-virtual-assistant-with-watson-assistant/){: external} blog post.
+To learn more about how this feature can benefit you, read the [Building the complete virtual assistant with Watson Assistant](https://www.ibm.com/blogs/watson/2020/05/building-the-complete-virtual-assistant-with-watson-assistant/){: external} blog post.
 
 Before your skill can learn from customer behavior, it must observe customer behavior. You can give it real user conversation data to learn from by connecting your skill to a live assistant. When you connect to an assistant, the logs from conversations that occur between the assistant and your customers serve as the data source for observation. 
 
@@ -127,13 +127,12 @@ For more information about this notebook and others that you can use to improve 
 ## Learning from your data
 {: #autolearn-data}
 
-Observations are made of only your customers` choices to improve only your skills. The observed insights are not reused by IBM or shared in any way.
+Observations are made of only your customers` choices to improve only your skills. These observations are not reused by IBM or shared in any way.
 
-This observed user choices data is separate from the log data for which metrics are displayed in the Analytics page. User conversation log data in all but Enterprise plan service instances is used by IBM for general service improvements. You can opt out of such use by specifying an opt-out header in your `/message` API requests. For more information, see [Opting out of logging](/docs/assistant?topic=assistant-information-security#information-security-log-opt-out).
+This observed user choices data is separate from the log data for which metrics are displayed in the Analytics page. The observation data is also separate from the information that is collected in all but Enterprise plan service instances and used by IBM for general service improvements. You can opt out of such use by specifying an opt-out header in your `/message` API requests. For more information, see [Opting out of logging](/docs/assistant?topic=assistant-information-security#information-security-log-opt-out).
 
-You can limit how the service uses data in the following ways:
+You can limit how the service uses your data to improve your assistant in the following ways:
 
-- To prevent IBM from using your log data for general {{site.data.keyword.conversationshort}} service improvements, you must specify an opt-out header.
 - To prevent your own skill from applying what it learns by observing user choices to your skill, you must turn off the autolearning feature.
 - To prevent your skill from observing user choices, disconnect the live assistant from the skill. 
 

@@ -27,7 +27,7 @@ subcollection: assistant
 {:table: .aria-labeledby="caption"}
 {:video: .video}
 
-# Building a conversational flow
+# Creating a dialog
 {: #dialog-overview}
 
 The dialog defines what your assistant says in response to customers.
