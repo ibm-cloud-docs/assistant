@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-12-11"
+lastupdated: "2021-03-02"
 
 keywords: dialog overview
 
@@ -27,13 +27,13 @@ subcollection: assistant
 {:table: .aria-labeledby="caption"}
 {:video: .video}
 
-# Dialog overview
+# How your dialog is processed
 {: #dialog-build}
 
 The dialog uses the intents that are identified in the user's input, plus context from the application, to interact with the user and ultimately provide a useful response.
 {: shortdesc}
 
-The dialog matches intents (what users say) to responses (what the bot says back). The response might be the answer to a question such as `Where can I get some gas?` or the execution of a command, such as turning on the radio. The intent and entity might be enough information to identify the correct response, or the dialog might ask the user for more input that is needed to respond correctly. For example, if a user asks, `Where can I get some food?` you might want to clarify whether they want a restaurant or a grocery store, to dine in or take out, and so on. You can ask for more details in a text response and create one or more child nodes to process the new input.
+The dialog matches intents (what users say they want to do) to responses (what the bot says back). The response might be the answer to a question such as `What are your store hours?` or the execution of a command, such as placing an order. The intent and entity might be enough information to identify the correct response, or the dialog might ask the user for more input that is needed to respond correctly. For example, if a user asks, `Where can I get some food?` you might want to clarify whether they want a restaurant or a grocery store, to dine in or take out, and so on. You can ask for more details in a text response and create one or more child nodes to process the new input.
 
 ![Dialog overview](https://www.youtube.com/embed/XkhAMe9gSFU){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
