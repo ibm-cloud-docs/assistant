@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-02"
 
 subcollection: assistant
 
@@ -24,7 +24,7 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
 
-# Creating skill versions
+# Managing workflow with versions
 {: #versions}
 
 Versions help you manage the workflow of a dialog skill development project.

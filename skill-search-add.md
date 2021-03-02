@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-02"
 
 subcollection: assistant
 
@@ -26,8 +26,10 @@ subcollection: assistant
 # Creating a search skill ![Plus or higher plan only](images/plus.png)
 {: #skill-search-add}
 
-An assistant uses a *search skill* to route complex customer inquiries to the {{site.data.keyword.discoveryfull}} service. {{site.data.keyword.discoveryshort}} treats the user input as a search query. It finds information that is relevant to the query from an external data source and returns it to the assistant.
+Put your subject matter expertise to work by adding a search skill. The search skill gives your assistant access to corporate data collections that it can mine for answers.
 {: shortdesc}
+
+When a *search skill* is added, your assistant can route complex customer inquiries to the {{site.data.keyword.discoveryfull}} service. {{site.data.keyword.discoveryshort}} treats the user input as a search query. It finds information that is relevant to the query from an external data source and returns it to the assistant.
 
 This feature is available only to paid plan users.
 {: note}

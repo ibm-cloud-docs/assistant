@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-02"
 
 subcollection: assistant
 
@@ -22,7 +22,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Adding a skill to an assistant
+# Adding skills to your assistant
 {: #skill-add}
 
 Customize your assistant by adding to it the skills it needs to satisfy your customers' goals.

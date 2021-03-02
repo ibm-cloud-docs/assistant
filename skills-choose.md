@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-26"
+lastupdated: "2021-03-02"
 
 subcollection: assistant
 
@@ -62,24 +62,22 @@ Over time, the actions skill will have greater feature parity with the dialog sk
 
 | Feature | Actions skill | Dialog skill |
 |---------|---------------|--------------|
-| Keep track of context | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Automatic reset of context | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| @sys-number detection | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Detection of other system entities | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Contextual entities | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Keep track of context | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Collect info, as with slots | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Options response type | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Collect numbers | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Connect to human agent response type | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Contextual entities | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Collect numbers (@sys-number detection) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Detection of other system entities | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Connect to human agent response type | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Free text response type | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Image response type | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Options response type | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Search skill response type | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Rich text editor for text responses | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Response validation | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | User input validation | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Step logic validation | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Support multiple users by notifying them when simultaneous edits are made to the skill | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Use SpEL expressions | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Step logic validation | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Disambiguation | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Digression support | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Spelling correction | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
