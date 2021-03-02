@@ -44,14 +44,14 @@ Watson Assistant (Managed)
         skill-dialog-add.md
 
         {: .topicgroup}
-        Adding intents
+        Defining goals for your assistant to address
             catalog.md
             intents.md
             intent-recommendations.md
             intent-detection.md
 
         {: .topicgroup}
-        Adding a dialog
+        Building a conversational flow
             dialog-build.md
             dialog-plan.md
             dialog-overview.md
