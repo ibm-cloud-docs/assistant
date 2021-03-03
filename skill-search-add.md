@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-03-02"
+lastupdated: "2021-03-03"
 
 subcollection: assistant
 
@@ -23,7 +23,7 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
 
-# Creating a search skill ![Plus or higher plan only](images/plus.png)
+# Embedding existing help content ![Plus or higher plan only](images/plus.png)
 {: #skill-search-add}
 
 Put your subject matter expertise to work by adding a search skill. The search skill gives your assistant access to corporate data collections that it can mine for answers.

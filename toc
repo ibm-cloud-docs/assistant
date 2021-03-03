@@ -33,13 +33,13 @@ Watson Assistant (Managed)
         skills-choose.md
 
     {: .topicgroup}
-    Creating an actions skill
+    Building a conversation with actions
         skill-actions-add.md
         actions.md
         actions-overview.md
 
     {: .topicgroup}
-    Creating a dialog skill
+    Building a conversation with a dialog tree
         skill-dialog-add.md
         dev-process.md
 
