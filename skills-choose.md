@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-02"
+lastupdated: "2021-03-03"
 
 subcollection: assistant
 
@@ -81,7 +81,7 @@ Over time, the actions skill will have greater feature parity with the dialog sk
 | Disambiguation | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Digression support | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Spelling correction | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Webhook support | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Webhook (mid-conversation) support | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Conversational flow skill feature support" caption-side="top"}

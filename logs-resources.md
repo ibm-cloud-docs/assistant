@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-03-03"
 
 subcollection: assistant
 
@@ -105,6 +105,9 @@ Again, the [Watson Assistant Continuous Improvement Best Practices Guide](https:
 {: #logs-resources-api}
 
 You can use the `/logs` API to list events from the transcripts of conversations that occurred between your users and your assistant. For conversations created by using the v2 `/message` API, use the instance-level endpoint to [list log events in all workspaces](https://cloud.ibm.com/apidocs/assistant/assistant-v1#listalllogs){: external}, and then filter by Assistant ID. For more information about filtering logs, see [Filter query reference](/docs/assistant?topic=assistant-filter-reference).
+
+The API logs messages that are exchanged in conversations that are defined by a dialog skill only.
+{: important}
 
 The number of days that logs are stored differs by service plan type. See [Log limits](/docs/assistant?topic=assistant-logs#logs-limits) for details.
 

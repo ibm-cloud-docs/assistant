@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-03"
 
 subcollection: assistant
 
@@ -64,7 +64,7 @@ The change log lists changes that were made this year ordered by the date they w
 ## 1 March 2021
 {: #1March2021}
 
-- **Introducing the *Enterprise* plan!**: The *Enterprise* plan adds more security and scalability to our top tier plan. And it adds support for voice calls natively in addition to our digital channel options.
+- **Introducing the *Enterprise* plan!**: The Enterprise plan includes all of the market differentiating features of the Plus plan, but with higher capacity limits, additional security features, custom onboarding support to get you going, and a lower overall cost at higher volumes.
 
   To have a dedicated environment provisioned for your business, request the *Enterprise with Data Isolation* plan. To submit a request online, go to [http://ibm.biz/contact-wa-enterprise](http://ibm.biz/contact-wa-enterprise){: external}.
 
