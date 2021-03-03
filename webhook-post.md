@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-03"
 
 keywords: post webhook, postwebhook, post-webhook
 
@@ -116,7 +116,7 @@ To add the webhook details, complete the following steps:
       </tr>
     </table>
 
-    The service automatically sends an `Authorization` header with a JWT; you do not need to add one.
+    The service automatically sends an `Authorization` header with a JWT; you do not need to add one. If you want to handle authorization yourself, add your own authorization header and it will be used instead.
 
 Your webhook details are saved automatically.
 

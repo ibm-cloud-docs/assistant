@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-02"
 
 subcollection: assistant
 
@@ -259,7 +259,7 @@ This method returns `true` if the `intents` JSONArray contains all of the specif
 
 You can optionally add the `min_score` parameter to check whether all of the intents have a confidence score over the threshold. Also, you can optionally specify a `top_n` parameter to check whether all of the listed intents are included within that number of top elements in the array.
 
-You can specify a `min_score` parameter without a `top_n` parameter. However, you cannot specify a `top_n` parameter without also specifying a `min_score` parameter. Specifying zero precent (`0.0`) for the minimum score is allowed. The `top_n` parameter is ignored if you specify a negative number.
+You can specify up to 10 intent names. You can specify a `min_score` parameter without a `top_n` parameter. However, you cannot specify a `top_n` parameter without also specifying a `min_score` parameter. Specifying zero precent (`0.0`) for the minimum score is allowed. The `top_n` parameter is ignored if you specify a negative number.
 
 Returns `false` if the specified intents are not in the array, do not all have confidence scores that are equal to or greater than the minimum confidence score, or the index values of all the intents are lower than the specified index location.
 

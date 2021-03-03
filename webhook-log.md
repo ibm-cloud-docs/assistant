@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-03"
 
 keywords: log webhook
 
@@ -36,8 +36,8 @@ A webhook is a mechanism that allows you to call out to an external program base
 
 Add a log webhook to your assistant if you want to log each incoming message and its corresponding response. The log webhook is triggered after the `/message` response is returned. It sends a `GET` request the v2 `/logs` API.
 
-This feature is available only to Enterprise plan users.
-{: note}
+This feature is available only to Enterprise plan users. You can log messages that are exchanged in conversations that are defined by a dialog skill only.
+{: important}
 
 The log webhook works with the following v2 APIs only:
 
@@ -89,7 +89,7 @@ To add the webhook details, complete the following steps:
 
 1.  In the Headers section, add any headers that you want to pass to the service one at a time by clicking **Add header**.
 
-    The service automatically sends an `Authorization` header with a JWT; you do not need to add one.
+    The service automatically sends an `Authorization` header with a JWT; you do not need to add one. If you want to handle authorization yourself, add your own authorization header and it will be used instead.
 
 Your webhook details are saved automatically.
 
