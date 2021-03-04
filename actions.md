@@ -217,6 +217,8 @@ Guide the customer to provide the right type of information by adding a customer
 
   The benefit of choosing not to always ask is that the assistant doesn't ask for information that has already been submitted by the customer. For example, if the original message from the customer is `I want to buy a blue shirt`, your assistant skips Step 3 altogether because it already knows the customer's shirt color preference.
 
+  Another benefit of choosing not to always ask is that you give customers the ability to change their mind. In the middle of a multi-step process, the customer can change a choice they made previously by specifying a different option from the prior step.
+
   When you use the built-in integrations, if you define 5 or fewer options, they are displayed as buttons. For more than 5 options, a list is displayed. If you are using a custom client application, you must specify how you want the options to be displayed.
 
 #### Customizing validation
