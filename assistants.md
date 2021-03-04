@@ -43,7 +43,7 @@ It might be valuable for your assistant to answer a simple question that is aske
 Choose a narrow set of user goals first. After your assistant is live, you can use built-in tools to gain insights from the incoming traffic that will tell you what areas to focus on next.
 
 ## Give the right type of answer to meet the need
-{: #assistants-plan-intents}
+{: #assistants-plan-responses}
 
 A conversational exchange is what your assistant does best, but your assistant can do other things too. The best response to a question might be a single answer with a link somewhere else. Think about the right way to answer customer questions; don't try to fit everything into one type of conversational exchange.
 
@@ -82,12 +82,16 @@ Is your assistant an optimist or a pessimist, a shy intellectual type, or an upb
 
 Never misrepresent the assistant as being a human. If users believe the assistant is a person, then find out it's not, they are likely to distrust it. In fact, some US states have laws that require chat bots to identify themselves as chat bots.
 
-## Choose a conversational skill type
+## Who will build your assistant?
 {: #assistants-plan-conversation}
 
-*Which conversational skill type should I use?*
+Assemble a team with people who understand your customers and their needs, people who know how to interact with customers to reach the best outcomes. These subject matter experts can focus on designing an engaging conversational flow. In fact, the actions skill is designed with this type of expert in mind. The team can simultaneously build a conversational flow by defining discrete actions.
 
-Use both. Leverage advanced capabilities that are available from a dialog skill and build individual actions to perform finite tasks that you want to support. You can call the actions from your dialog skill.
+If you have data scientists or teammembers with programming skills, you can take advantage of some advanced capabilities that require varying levels of development expertise. This set of users might prefer to build the conversational flow with a dialog skill because there is greater visibility into the individual components that make up the training data. 
+
+So, which conversational skill type *should* you use?
+
+Use both. Leverage advanced capabilities that are available from a dialog skill and build individual actions to perform finite tasks that you want to support. You can call the actions in your actions skill from your dialog skill.
 
 For more information, see [Choosing a conversational skill](/docs/assistant?topic=assistant-skills-choose).
 
@@ -104,5 +108,8 @@ Give your assistant access to this information by adding a search skill to your 
 If you start small, and choose the goals with the highest impact first, you'll have room and time to grow the expertise of your assistant. The built-in metrics of active user conversations help you understand what your customers are asking about and how well your assistant is able to meet their needs. 
 
 Nothing beats real customer data. It will tell you what areas to tackle next.
+
+## Ready to start building?
+{: #assistants-plan-build}
 
 See [Creating assistants](/docs/assistant?topic=assistant-assistant-add) to get started.

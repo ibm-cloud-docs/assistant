@@ -45,8 +45,8 @@ Watson Assistant (Managed)
 
         {: .topicgroup}
         Defining goals for your assistant to address
-            catalog.md
             intents.md
+            catalog.md
             intent-recommendations.md
             intent-detection.md
 
@@ -55,13 +55,13 @@ Watson Assistant (Managed)
             dialog-build.md
             dialog-overview.md
             dialog-start.md
+            dialog-support.md
+            dialog-tips.md
             dialog-runtime-context.md
+            dialog-tasks.md
             dialog-runtime.md
             dialog-runtime-spell-check.md
             dialog-slots.md
-            dialog-tips.md
-            dialog-tasks.md
-            dialog-support.md
             dialog-call-action.md
             
         entities.md
