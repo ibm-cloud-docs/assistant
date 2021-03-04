@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-27"
+lastupdated: "2021-03-03"
 
 subcollection: assistant
 
@@ -25,22 +25,41 @@ subcollection: assistant
 # Supported languages
 {: #language-support}
 
-The {{site.data.keyword.conversationshort}} service supports the languages listed. Individual features are supported to a greater or lesser extent for each language.
+{{site.data.keyword.conversationshort}} supports individual features to varying degrees per language.
 {: shortdesc}
+
+{{site.data.keyword.conversationshort}} has classifier models that are designed specifically to support conversational skills in the following languages:
+
+| Language | Language code |
+|----------|---------------|
+| Arabic | ar |
+| Chinese (Simplified | zh-cn |
+| Chinese (Traditional) | zh-tw |
+| Czech | cs |
+| Dutch | nl |
+| English | en-us |
+| French | fr |
+| German | de |
+| Italian | it |
+| Japanese | ja |
+| Korean | ko |
+| Portuguese (Brazilian) | pt-br |
+| Spanish | es |
+| Universal`*` | xx |
+{: caption="Table 1. Supported languages" caption-side="top"}
+
+`*` If you want to support conversations in a language for which {{site.data.keyword.conversationshort}} doesn't have a dedicated model, such as Russian, use the *Universal* language model. For more information, see [Adding support for global audiences](/docs/assistant?topic=assistant-assistant-language).
+
+## Feature support details
+{: #language-support-tables}
+
+The following tables illustrate the level of language support available for product features.
 
 In the following tables, the level of language and feature support is indicated by these codes:
 
 - GA: The feature is generally available and supported for this language. Note that features might continue to be updated even after they are generally available.
 - Beta: The feature is supported only as a Beta release, and is still undergoing testing before it is made generally available in this language.
 - NA: Indicates that a feature is not available in this language.
-
-Your assistant might be able to identify intents in unsupported languages depending on the complexity of your data, but if the language is not listed here it is not officially supported and results cannot be guaranteed.
-{: note}
-
-## Feature support details
-{: #language-support-tables}
-
-The following tables illustrate the level of language support available for product features.
 
 ### Skill support details
 {: #language-support-skills}
@@ -60,7 +79,8 @@ The following tables illustrate the level of language support available for prod
 | **Korean (ko)**                    | Beta | GA | GA |
 | **Portuguese (Brazilian) (pt-br)** | Beta | GA | GA |
 | **Spanish (es)**                   | Beta | GA | GA |
-{: caption="Table 1. Skill support details" caption-side="top"}
+| **Universal (xx)**                 | Beta | Beta | Beta |
+{: caption="Table 2. Skill support details" caption-side="top"}
 
 ### Intent feature support details
 {: #language-support-intents}
@@ -80,7 +100,8 @@ The following tables illustrate the level of language support available for prod
 | **Korean (ko)**                    | NA | NA | NA |
 | **Portuguese (Brazilian) (pt-br)** | GA | NA | NA |
 | **Spanish (es)**                   | GA | NA | NA |
-{: caption="Table 2. Intent feature support details" caption-side="top"}
+| **Universal (xx)**                 | NA | Beta | Beta |
+{: caption="Table 3. Intent feature support details" caption-side="top"}
 
 ### Recommendations feature support details continued
 {: #language-support-recommendations}
@@ -100,27 +121,29 @@ The following tables illustrate the level of language support available for prod
 | **Korean (ko)**                    | NA | NA |
 | **Portuguese (Brazilian) (pt-br)** | NA | GA |
 | **Spanish (es)**                   | NA | GA |
-{: caption="Table 3. Recommendations feature support details continued" caption-side="top"}
+| **Universal (xx)**                 | NA | NA |
+{: caption="Table 4. Recommendations feature support details continued" caption-side="top"}
 
 ### User input processing support details
 {: #language-support-input}
 
-| Language | **[Entity fuzzy matching (*Misspelling only*)](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Entity fuzzy matching (*Stemming*, *Partial match*)](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Autocorrection](/docs/assistant?topic=assistant-dialog-runtime-spell-check)** |
-|:---:|:---:|:---:|:---:|
-| **English (en)**                   | GA | GA | GA |
-| **Arabic (ar)**                    | GA | NA | NA |
-| **Chinese (Simplified) (zh-cn)**   | NA | NA | NA |
-| **Chinese (Traditional) (zh-tw)**  | NA | NA | NA |
-| **Czech (cs)**                     | GA | GA | NA |
-| **Dutch (nl)**                     | GA | NA | NA |
-| **French (fr)**                    | GA | GA | Beta |
-| **German (de)**                    | GA | GA | NA |
-| **Italian (it)**                   | GA | NA | NA |
-| **Japanese (ja)**                  | GA | NA | NA |
-| **Korean (ko)**                    | GA | NA | NA |
-| **Portuguese (Brazilian) (pt-br)** | GA | NA | NA |
-| **Spanish (es)**                   | GA | NA | NA |
-{: caption="Table 4. User input processing support details" caption-side="top"}
+| Language | **[Entity fuzzy matching](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Fuzzy matching (*Misspelling*)](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Fuzzy matching (*Stemming*, *Partial match*)](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Autocorrection](/docs/assistant?topic=assistant-dialog-runtime-spell-check)** |
+|:---:|:---:|:---:|:---:|:---:|
+| **English (en)**                   | GA | GA | GA | GA |
+| **Arabic (ar)**                    | GA | GA | NA | NA |
+| **Chinese (Simplified) (zh-cn)**   | NA | NA | NA | NA |
+| **Chinese (Traditional) (zh-tw)**  | NA | NA | NA | NA |
+| **Czech (cs)**                     | GA | GA | GA | NA |
+| **Dutch (nl)**                     | GA | GA | NA | NA |
+| **French (fr)**                    | GA | GA | GA | Beta |
+| **German (de)**                    | GA | GA | GA | NA |
+| **Italian (it)**                   | GA | GA | NA | NA |
+| **Japanese (ja)**                  | GA | GA | NA | NA |
+| **Korean (ko)**                    | GA | GA | NA | NA |
+| **Portuguese (Brazilian) (pt-br)** | GA | GA | NA | NA |
+| **Spanish (es)**                   | GA | GA | NA | NA |
+| **Universal (xx)**                 | Beta | NA | NA | NA |
+{: caption="Table 5. User input processing support details" caption-side="top"}
 
 ### Entity feature support details
 {: #language-support-entities}
@@ -140,7 +163,8 @@ The following tables illustrate the level of language support available for prod
 | **Korean (ko)**                    | NA | NA |
 | **Portuguese (Brazilian) (pt-br)** | NA | NA |
 | **Spanish (es)**                   | NA | GA |
-{: caption="Table 5. Entity feature support details" caption-side="top"}
+| **Universal (xx)**                 | NA | NA |
+{: caption="Table 6. Entity feature support details" caption-side="top"}
 
 ### System entity feature support details
 {: #language-support-system-entities}
@@ -160,7 +184,8 @@ The following tables illustrate the level of language support available for prod
 | **Korean (ko)**                    | GA | Deprecated |
 | **Portuguese (Brazilian) (pt-br)** | GA | Deprecated |
 | **Spanish (es)**                   | GA | Deprecated |
-{: caption="Table 6. System entity feature support details" caption-side="top"}
+| **Universal (xx)**                 | Beta | NA |
+{: caption="Table 7. System entity feature support details" caption-side="top"}
 
 The {{site.data.keyword.conversationshort}} service supports multiple languages as noted, but the tool interface itself (descriptions, labels, etc.) is in English. All supported languages can be input and trained through the English interface.
 {: note}
@@ -170,31 +195,40 @@ GB18030 compliance: GB18030 is a Chinese standard that specifies an extended cod
 ## Changing a skill language
 {: #language-support-change-language}
 
-Once a skill has been created, its language cannot be modified. If it is necessary to change the supported language of a skill, the user should download the skill. Then, edit the resulting JSON file in a text editor, searching for a JSON property called `language`.
+Once a skill has been created, its language cannot be modified. If it is necessary to change the supported language of a skill, you can do so by editing the skill's underlying JSON. 
 
-The `language` property should be set to the original language of the skill; for example, English would be `en`. Modify the value of this property, changing it to the desired language (`fr` for French, `de` for German, etc.). Save the changes to the JSON file, and import the modified file into your {{site.data.keyword.conversationshort}} service instance.
+To change the skill language, take the following steps:
+
+1.  Download the skill that you want to edit.
+1.  Open the downloaded skill JSON file in a text editor.
+1.  Search for the property named `language`.
+
+    The `language` property is set to the original language of the skill. For example, the language property is `en` for an English skill. 
+    
+1.  Change the value of this property to the language you want to use instead. For example, change it to `fr` for French or `de` for German. 
+1.  Save the changes to the JSON file, and then upload the edited file, overwriting the existing skill.
 
 ## Configuring bidirectional languages
 {: #language-support-configure-bidirectional}
 
-For bidirectional languages, for example Arabic, you can change your skill preferences. 
+For bidirectional languages, such as Arabic, you can change your skill preferences.
 
 1.  From your skill tile, click the *Actions* drop-down menu, and then select **Language Preferences**.
 
-    This option is only available for skills that are configured to use a bidirectional language, such as Arabic.
+    This option is only available for skills that are configured to use a bidirectional language.
     {: note}
 
 1.  Select from the following options for your skill:
 
-- **GUI Direction**: Specifies the layout direction of elements, such as buttons or menus, in the graphical user interface. Choose `LTR` (left-to-right) or `RTL` (right-to-left). If not specified, the tool follows the web browser GUI direction setting.
-- **Text Direction**: Specifies the direction of typed text. Choose `LTR` (left-to-right) or `RTL` (right-to-left), or select `Auto` which will automatically choose the text direction based on your system settings. The `None` option will display left-to-right text.
-- **Numeric Shaping**: Specifies which form of numerals to use when presenting regular digits. Choose from `Nominal`, `Arabic-Indic`, or `Arabic-European`. The `None` option will display Western numerals.
-- **Calendar Type**: Specifies how you choose filtering dates in the skill UI. Choose `Islamic-Civil`, `Islamic-Tabular`, `Islamic-Umm al-Qura`, or `Gregorian`.
+    - **GUI Direction**: Specifies the layout direction of elements, such as buttons or menus, in the graphical user interface. Choose `LTR` (left-to-right) or `RTL` (right-to-left). If not specified, the tool follows the web browser GUI direction setting.
+    - **Text Direction**: Specifies the direction of typed text. Choose `LTR` (left-to-right) or `RTL` (right-to-left), or select `Auto` which will automatically choose the text direction based on your system settings. The `None` option will display left-to-right text.
+    - **Numeric Shaping**: Specifies which form of numerals to use when presenting regular digits. Choose from `Nominal`, `Arabic-Indic`, or `Arabic-European`. The `None` option will display Western numerals.
+    - **Calendar Type**: Specifies how you choose filtering dates in the skill UI. Choose `Islamic-Civil`, `Islamic-Tabular`, `Islamic-Umm al-Qura`, or `Gregorian`.
 
-  This setting is not reflected in the "Try it out" panel.
-  {: note}
+    This setting is not reflected in the "Try it out" panel.
+    {: note}
 
-![Bidi options](images/bidi-options.png)
+    ![Bidi options](images/bidi-options.png)
 
 1.  Click the **X** to close the page. Your changes are saved automatically.
 

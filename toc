@@ -28,6 +28,7 @@ Watson Assistant (Managed)
     {: .topicgroup}
     Creating an assistant
         assistants.md
+        assistant-language.md
         assistant-add.md
         skill-add.md
         skills-choose.md
@@ -182,6 +183,7 @@ Watson Assistant (Managed)
         legacy-system-entities.md
         time-zones.md
         sys-date-festivals.md
+        sys-currency-details.md
 
     language-support.md
     {: .navgroup-end}
