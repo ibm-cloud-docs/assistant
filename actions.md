@@ -178,7 +178,7 @@ Guide the customer to provide the right type of information by adding a customer
 
   If your action asks for a number more than once, always show the step response text or your assistant can get confused. 
   
-  For example, you might have an action that helps with hotel bookings. One step asks for the number of guests and another step asks for the number of nights. If you skip asking, the assistant can confuse the number that applies to guests with the number that applies to nights. The actions skill cannot currently determine from context which number belongs to which step. 
+  For example, you might have an action that helps with hotel bookings. One step asks for the number of guests and another step asks for the number of nights. If you skip asking, the assistant can mistake the number that applies to guests for being the number that applies to nights. The actions skill cannot currently determine from context which number belongs to which step. 
   
   Click **Edit response**, select **Always ask for this number, regardless of earlier messages**, and then click **Apply**.
 
