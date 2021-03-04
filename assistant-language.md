@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-02"
+lastupdated: "2021-03-04"
 
 keywords: global support, universal language, universal model, another language
 
@@ -56,9 +56,9 @@ A skill that uses the universal language model applies a set of shared linguisti
 The universal language model is available as a beta feature.
 {: note}
 
-The universal language classifier can adapt to a single language per skill. It cannot be used to support multiple languages within a single skill. However, you can use the universal language model in one skill to support one language, Russian, for example, and in another skill to support another language, such as Hindi. The key is to add enough training examples or intent user examples in your target language to teach the model about the unique syntactic and grammatical rules of the language.
+The universal language classifier can adapt to a single language per skill. It cannot be used to support multiple languages within a single skill. However, you can use the universal language model in one skill to support one language, such as Russian, and in another skill to support another language, such as Hindi. The key is to add enough training examples or intent user examples in your target language to teach the model about the unique syntactic and grammatical rules of the language.
 
-Use the universal language model when you want to create a conversation in a language for which no dedicated language model is available. And the language is unique enough that an existing model is insufficient.
+Use the universal language model when you want to create a conversation in a language for which no dedicated language model is available, and which is unique enough that an existing model is insufficient.
 
 For more information about feature support in the universal language model, see [Supported languages](/docs/assistant?topic=assistant-language-support).
 

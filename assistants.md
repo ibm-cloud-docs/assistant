@@ -45,7 +45,7 @@ Choose a narrow set of user goals first. After your assistant is live, you can u
 ## Give the right type of answer to meet the need
 {: #assistants-plan-intents}
 
-A conversational exchange is what your assistant does best. But, your assistant can do other things too. The best response to a question might be a single answer with a link somewhere else. Think about the right way to answer customer questions; don't try to fit everything into one type of conversational exchange.
+A conversational exchange is what your assistant does best, but your assistant can do other things too. The best response to a question might be a single answer with a link somewhere else. Think about the right way to answer customer questions; don't try to fit everything into one type of conversational exchange.
 
 Here are some examples:
 
@@ -53,8 +53,8 @@ Here are some examples:
 - The customer wants to activate a credit card. Your assistant can use a conversational flow and a webhook call to verify the user's identity, and then submit the request to activate the card on the user's behalf.
 - The customer wants to complete a simple task that involves a complicated application. Your assistant can link them to a 2-minute video that illustrates how to complete the task.
 - The customer has a question about an insurance plan after the death of a loved one. Your assistant can connect the customer directly to a person who can show empathy and patience as the matter is addressed.
-- The customer has a problem that requires a long and involved procedure to fix. Instead of trying to walk the customer through the procedure step-by-step in conversation, your assistant can link to a help center that documents the full procedure in detail.
-- The customer calls support and your assistant answers. The assistant needs a lot of detail from the customer before it can help. Instead of trying to prompt the customer for each piece of information and transcribe it properly, your assistant can switch to SMS text messaging. After years of interacting with bad interactive voice response systems, many customers are more likely to yell `Agent` over and over than to engage in a long exchange. But, if you give them a chance to explain something in writing, they do so willingly.
+- The customer has a problem that requires a long and involved procedure to fix. Instead of trying to walk the customer through the procedure step by step in conversation, your assistant can link to a help center that documents the full procedure in detail.
+- The customer calls support and your assistant answers. The assistant needs a lot of detail from the customer before it can help. Instead of trying to prompt the customer for each piece of information and transcribe it properly, your assistant can switch to SMS text messaging. After years of interacting with bad interactive voice response systems, many customers are more likely to yell `Agent` over and over than to engage in a long exchange. But if you give them a chance to explain something in writing, they do so willingly.
 
 ## How will customers find your assistant?
 {: #assistants-plan-deployment}
@@ -75,7 +75,7 @@ Decide whether and how you want to handle more than one spoken language. For mor
 ## Does your assistant see the glass as half full?
 {: #assistants-plan-personality}
 
-Is your assistant an optimist or a pessimist, a shy intellectual type, or an upbeat sidekick? Choose a personality for your assistant, and then write conversations that reflect that personality. Don't overdo it. Don't sacrifice usability for the sake of keeping your assistant in character. But, strive to present a consistent tone and attitude.
+Is your assistant an optimist or a pessimist, a shy intellectual type, or an upbeat sidekick? Choose a personality for your assistant, and then write conversations that reflect that personality. Don't overdo it. Don't sacrifice usability for the sake of keeping your assistant in character. But strive to present a consistent tone and attitude.
 
 ## Choose a conversational skill type
 {: #assistants-plan-conversation}
