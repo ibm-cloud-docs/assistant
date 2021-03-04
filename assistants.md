@@ -51,11 +51,11 @@ The following table lists some examples.
 
 | Customer need | Best type of response |
 |---------------|-----------------------|
-| Information about your store location. | Your assistant answers with text (the store address) and an image (an area map). |
-| To activate a credit card. | Your assistant can use a conversational flow and a webhook call to verify the user's identity, and then submit the request to activate the card on the user's behalf. |
-| To complete a simple task that involves a complicated application. | Your assistant can link them to a 2-minute video that illustrates how to complete the task. |
-| To learn about insurance plan details after the death of a loved one. | Your assistant can connect the customer directly to a person who can show empathy and patience as the matter is addressed. |
-| To solve a problem that requires a long and involved procedure to fix. | Instead of trying to walk the customer through the procedure step by step in conversation, your assistant can link to a help center that documents the full procedure in detail. |
+| Get information about your store location. | Your assistant answers with text (the store address) and an image (an area map). |
+| Activate a credit card. | Your assistant can use a conversational flow and a webhook call to verify the user's identity, and then submit the request to activate the card on the user's behalf. |
+| Complete a simple task that involves a complicated application. | Your assistant can link them to a 2-minute video that illustrates how to complete the task. |
+| Learn about insurance plan details after the death of a loved one. | Your assistant can connect the customer directly to a person who can show empathy and patience as the matter is addressed. |
+| Solve a problem that requires a long and involved procedure to fix. | Instead of trying to walk the customer through the procedure step by step in conversation, your assistant can link to a help center that documents the full procedure in detail. |
 | The customer calls support and your assistant answers. | The assistant needs a lot of detail from the customer before it can help. Instead of trying to prompt the customer for each piece of information and transcribe it properly, your assistant can switch to SMS text messaging. After years of interacting with bad interactive voice response systems, many customers are more likely to yell `Agent` over and over than to engage in a long exchange. But if you give them a chance to explain something in writing, they do so willingly. |
 {: caption="Example of optimal response types" caption-side="top"}
 
