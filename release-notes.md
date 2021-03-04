@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-03-04"
 
 subcollection: assistant
 
@@ -60,6 +60,14 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #release-notes-tooling-changes}
 
 The change log lists changes that were made this year ordered by the date they were released.
+
+## 4 March 2021
+{: #4March2021}
+<!--1.138-->
+
+- **Support for every language!**: You now can build an assistant in any language you want to support. If a dedicated language model is not available for your target language, create a skill that uses the universal language model. The universal model applies a set of shared linguistic characteristics and rules from multiple languages as a starting point. It then learns from training data written in the target language that you add to it. 
+
+  The universal model is available as a beta feature. For more information, see [Understanding the universal language model](/docs/assistant?topic=assistant-assistant-language#assistant-language-universal).
 
 ## 1 March 2021
 {: #1March2021}

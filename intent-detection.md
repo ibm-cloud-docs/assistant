@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-12-11"
+lastupdated: "2021-02-25"
 
 subcollection: assistant
 
@@ -43,7 +43,7 @@ The new model is available as a beta feature for English dialog and actions skil
 ## Enabling the new intent detection model
 {: #intent-detection-task}
 
-The new model is the only model that is available for use in actions skills.
+The new model is the only model that is available for use in actions skills and skills that use the universal language model.
 {: note}
 
 To enable the new intent detection model in a dialog skill, complete the following steps:

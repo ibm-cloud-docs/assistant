@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-12-01"
+lastupdated: "2021-03-04"
 
 subcollection: assistant
 
@@ -100,6 +100,8 @@ Equivalent results are returned for other supported languages and national curre
 {: #system-entities-currency-usage-tips}
 
 If you use the `@sys-currency` entity as a node condition and the user specifies `$0` as the value, the value is recognized as a currency properly, but the condition is evaluated to the number zero, not the currency zero. As a result, the `null` in the condition is evaluated to false and the node is not processed. To check for currency values in a way that handles zeros properly, use the expression `@sys-currency OR @sys-currency == 0` in the node condition instead.
+
+For more information about currencies that are recognized per language, see [Currency support](/docs/assistant?topic=assistant-sys-currency-details).
 
 ## @sys-date
 {: #system-entities-sys-date}
