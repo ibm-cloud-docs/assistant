@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-04"
 
 keywords: message call, message objects
 
@@ -107,6 +107,8 @@ The following `output` object JSON format is supported for backwards compatibili
 There are response types other than a text response that you can define. See [Responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-responses) for more details.
 
 For more information about the `/message` API call, see the [API reference](https://{DomainName}/apidocs/assistant/assistant-v2){: external}.
+
+For information about how to refer to these message objects within a conversation, see [Expressions for accessing objects](/docs/assistant?topic=assistant-expression-language).
 
 ## Viewing API call details
 {: #message-anatomy-inspect-api}

@@ -12,6 +12,7 @@ Watson Assistant (Managed)
         gs-actions.md
 
     index.md
+    assistants.md
     tool-overview.md
     [Demo: Banking Assistant](https://watson-conversation-duo-dev.ng.bluemix.net/)
     sample-apps.md
@@ -27,8 +28,6 @@ Watson Assistant (Managed)
     {: .navgroup id="howto"}
     {: .topicgroup}
     Creating an assistant
-        assistants.md
-        assistant-language.md
         assistant-add.md
         skill-add.md
         skills-choose.md
@@ -53,7 +52,6 @@ Watson Assistant (Managed)
 
         {: .topicgroup}
         Building a conversational flow
-            dialog-plan.md
             dialog-build.md
             dialog-overview.md
             dialog-start.md
@@ -73,6 +71,7 @@ Watson Assistant (Managed)
     skill-tasks.md
     deploy-web-link.md
     assistant-settings.md
+    assistant-language.md
 
     {: .topicgroup}
     Deploying with web chat
@@ -118,7 +117,6 @@ Watson Assistant (Managed)
     {: .topicgroup}
     Advanced development
         develop.md
-        message-anatomy.md
 
         {: .topicgroup}
         Using webhooks
@@ -131,6 +129,7 @@ Watson Assistant (Managed)
         {: .topicgroup}
         Dialog skill development
             skill-develop.md
+            message-anatomy.md
             dialog-integrations.md
             dialog-voice-actions.md
             dialog-sms-actions.md
