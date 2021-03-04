@@ -42,6 +42,8 @@ Send the version parameter with every API request. {{site.data.keyword.conversat
 - The current version for v1 is `2020-04-01`.
 - The current version for v2 is `2020-09-24`.
 
+The dialog skill "Try it out" pane uses the v1 API. The Preview panes in the search and actions skills, and the built-in integrations use the v2 API.
+
 ## Beta features
 {: #release-notes-beta}
 
