@@ -102,7 +102,7 @@ The answer to many a common question is already documented somewhere in your org
 
 Give your assistant access to this information by adding a search skill to your assistant. The search skill uses {{site.data.keyword.conversationshort}} to return smart answers to natural language questions.
 
-## Expand its responsibilities
+## Expand your assistant's responsibilities
 {: #assistants-plan-expand}
 
 If you start small, and choose the goals with the highest impact first, you'll have room and time to grow the expertise of your assistant. The built-in metrics of active user conversations help you understand what your customers are asking about and how well your assistant is able to meet their needs. 
