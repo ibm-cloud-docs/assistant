@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-01-19"
+lastupdated: "2021-03-04"
 
-keywords: import workspace, import JSON, export JSON, upload JSON, download JSON
+keywords: import workspace, import JSON, export JSON, upload JSON, download JSON, collaborate
 
 subcollection: assistant
 
