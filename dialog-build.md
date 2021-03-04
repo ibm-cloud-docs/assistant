@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-02"
+lastupdated: "2021-03-04"
 
 keywords: dialog overview
 
@@ -107,4 +107,4 @@ The dialog tree in this diagram contains two root dialog nodes. A typical dialog
 ## Ready to get started?
 {: #dialog-build-start}
 
-For more information, see [Building a dialog](/docs/assistant?topic=assistant-dialog-overview).
+For more information, see [Creating a dialog](/docs/assistant?topic=assistant-dialog-overview).

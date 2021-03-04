@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-03-04"
 
 subcollection: assistant
 
@@ -22,7 +22,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Creation workflow
+# Dialog creation workflow
 {: #dev-process}
 
 Use {{site.data.keyword.conversationshort}} to leverage AI as you build, deploy, and incrementally improve a conversational assistant.
