@@ -100,7 +100,7 @@ For more information, see [Choosing a conversational skill](/docs/assistant?topi
 
 The answer to many a common question is already documented somewhere in your organization's technical information collateral. If only you could find it! 
 
-Give your assistant access to this information by adding a search skill to your assistant. The search skill uses {{site.data.keyword.conversationshort}} to return smart answers to natural language questions.
+Give your assistant access to this information by adding a search skill to your assistant. The search skill uses {{site.data.keyword.discoveryshort}} to return smart answers to natural language questions.
 
 ## Expand your assistant's responsibilities
 {: #assistants-plan-expand}
@@ -112,4 +112,4 @@ Nothing beats real customer data. It will tell you what areas to tackle next.
 ## Ready to start building?
 {: #assistants-plan-build}
 
-See [Creating assistants](/docs/assistant?topic=assistant-assistant-add) to get started.
+See [Creating an assistant](/docs/assistant?topic=assistant-assistant-add) to get started.
