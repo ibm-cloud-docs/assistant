@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-04"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
@@ -50,6 +50,7 @@ Find out more about what is included with the plans.
 
 Information about the artifact limits per plan is available from the topics that describe how to create the artifacts, so you can refer to the limits when you need to know them. Here are links to the topics:
 
+- [Actions](/docs/assistant?topic=assistant-actions#actions-limits)
 - [Assistants](/docs/assistant?topic=assistant-assistant-add#assistant-add-limits)
 - [Counterexamples](/docs/assistant?topic=assistant-irrelevance-detection#irrelevance-detection-limits)
 - [Dialog nodes](/docs/assistant?topic=assistant-dialog-tasks#dialog-tasks-node-limits)
