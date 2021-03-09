@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-03-09"
 
 subcollection: assistant
 content-type: tutorial
@@ -197,6 +197,6 @@ Now that you have an actions skill that can maintain a simple conversational exc
 ## Next steps
 {: #gs-actions-next-steps}
 
-This tutorial is built around a simple example. For a real application, you need to define some more complex echanges. When you have a polished version of the assistant, you can integrate it with web sites or channels, such as Slack, that your customers already use. As traffic increases between the assistant and your customers, you can use the tools that are provided in the **Analytics** page to analyze real conversations, and identify areas for improvement.
+This tutorial is built around a simple example. For a real application, you need to define some more complex exchanges. When you have a polished version of the assistant, you can integrate it with web sites or channels, such as Slack, that your customers already use. As traffic increases between the assistant and your customers, you can use the tools that are provided in the **Analytics** page to analyze real conversations, and identify areas for improvement.
 
 - Check out more [sample apps](/docs/assistant?topic=assistant-sample-apps) to get ideas.
