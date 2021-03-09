@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-03-08"
 
 subcollection: assistant
 
@@ -160,7 +160,7 @@ If you have a Discovery service Lite plan, you are given an opportunity to upgra
             - For file repositories, you specify directories or files.
             - For a web crawl data source, specify the base URL of a website that you want to crawl. The web page that you specify and any pages that it links to are crawled and a document is created per web page.
             
-            Optionally, select the **Apply FAQ extraction** checkbox to enable a beta feature that allows the {{site.data.keyword.discoveryshort}} service to extract question and answer pairs that it identifies in the data collection. If the answers to common questions are identified ahead of time, your assistant can more quickly find and return a concise answer when a customer asks a similar question.
+            Optionally, select the **Apply FAQ extraction** checkbox to enable a beta feature that is available in v2 {{site.data.keyword.discoveryshort}} instances. The FAQ extraction feature allows the {{site.data.keyword.discoveryshort}} service to extract question and answer pairs that it identifies in the data collection. If the answers to common questions are identified ahead of time, your assistant can more quickly find and return a concise answer when a customer asks a similar question.
             
             To get help with creating data sources, see [Troubleshooting](#skill-search-add-troubleshoot).
 
