@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-26"
+lastupdated: "2021-03-10"
 
 subcollection: assistant
 
@@ -99,7 +99,7 @@ To set up a Salesforce service desk integration, complete the following steps:
 
       - **Data Type**: Text
       - **Field Label**: `x-watson-assistant-session`
-      - **Field Length**: 36
+      - **Field Length**: 255
 
     - **Token**: Stores a {{site.data.keyword.conversationshort}} authentication token that secures the communication between Salesforce and your assistant.
 
