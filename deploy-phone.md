@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-11"
 
 subcollection: assistant
 
@@ -95,11 +95,14 @@ To set up the integration, complete the following steps:
 
     If you have instances of the {{site.data.keyword.speechtotextshort}} and {{site.data.keyword.texttospeechshort}} services in paid plans, they are configured for use with your phone integration automatically.
 
-    If you have Lite plan instances of the speech services, the automatic creation process is not started.
-    {: note}
+    Stop and create speech service instances yourself before you finish setting up the integration in the following cases:
 
-    If you want to use instances that are dedicated to handling speech services for your assistant only, or if you want to use a paid plan other than Plus, create the instances first. You must create the instances in the same data center location before you set up the integration. Then, you can choose the existing instances from the list.
-    {: tip}
+    - If you have Lite plan instances of the speech services, the automatic creation process is not started. Consider deleting the lite plan instances or create Plus plan instances of the services.
+    - If you want to use instances that are dedicated to handling speech services for your assistant only, and your existing instance is already in use by other applciations.
+    - If you want to use a paid plan other than Plus.
+    - If you have an Enterprise with Data Isolation {{site.data.keyword.conversationshort}} plan, create Premium plan instances of the speech services so you can select them during the setup process.
+    
+    Create the speech instances in the same data center location before you set up the integration. Then, you can choose the existing instances from the list.
     
     The models that are chosen automatically use the same language as the assistant to which you are adding the integration. You can choose to use different models if you want.
     
@@ -150,12 +153,12 @@ If, after you transfer the caller to a human agent, the connection to the human 
 
 You can add security to the phone connection by selecting one or both of the following configuration options:
 
-- **Enable secure trunking**: Select this option to use Secure Real-Time Transfer Protocol (SRTP) to secure the audio that is transmitted over the phone. For more information about RTP, see [Call routing details](#deploy-phone-route).
+- **Force secure trunking**: Select this option to use Secure Real-Time Transfer Protocol (SRTP) to secure the audio that is transmitted over the phone. For more information about RTP, see [Call routing details](#deploy-phone-route).
 - **Enable SIP authentication**: Select this option if you want the session initiation to be done over SIP Secure (SIPS). 
 
   SIPS applies TLS (Transport Layer Security) to the connection. When SIPS is enabled, all inbound traffic, meaning requests from the SIP trunk provider to your assistant, must be authenticated. After selecting this option, allow the service credentials (API key) for your {{site.data.keyword.conversationshort}} service instance to be used for authentication.
 
-  If you use Twilio as your SIP trunk provider, do not enable SIP authentication. Twilio does not support SIP authentication of originating calls.
+  If you use Twilio as your SIP trunk provider, do not enable SIP authentication.
   {: important}
 
 ### Apply advanced SIP trunk configuration settings
