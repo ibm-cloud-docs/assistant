@@ -39,9 +39,7 @@ Add a log webhook to your assistant if you want to log each incoming message and
 This feature is available only to Enterprise plan users. You can log messages that are exchanged in conversations that are defined by a dialog skill only.
 {: important}
 
-The log webhook works with the following v2 API only:
-
-- `/message` (stateless and stateful). For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#message){: external}.
+The log webhook works only with the v2 `/message` API (stateless and stateful). For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#message){: external}.
 
 The log webhook does not return anything to your assistant. You can use the log webhook method as an alternative to the built-in analytics feature to handle logging yourself. For more information about the built-in analytics support, see [Metrics overview](/docs/assistant?topic=assistant-logs-overview).
 
