@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-04"
+lastupdated: "2021-03-11"
 
 subcollection: assistant
 
@@ -62,6 +62,12 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #release-notes-tooling-changes}
 
 The change log lists changes that were made this year ordered by the date they were released.
+
+## 11 March 2021
+{: #11March2021}
+<!--1.139 and json editor is shown in actions-->
+
+- **Actions skill improvement**: Updated the page where you configure a step with an *Options* reply constraint. Now it's clearer that you have a choice to make about whether to always ask for the option value or to skip asking. For more information, see [Apply reply constraints](/docs/assistant?topic=assistant-actions#actions-response-types).
 
 ## 4 March 2021
 {: #4March2021}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-04"
+lastupdated: "2021-03-11"
 
 subcollection: assistant
 
@@ -213,11 +213,17 @@ Guide the customer to provide the right type of information by adding a customer
 
   To select an option at run time, users can click an option button or list item, such as *Green*. Or they can type `Green` or one of its synonyms, such as `lime`.
 
-  If your action asks for the same type of data in more than one step, select the **Always ask for this** option in the later step. For example, if Step 3 asks for the shirt color that the customer wants to buy and step 5 asks for the tie color, click **Always ask for this** in Step 5. Otherwise, the color that the customer specifies for the shirt in Step 3 is used automatically for the tie. And who wants to wear the same color shirt and tie together?
+  For each response in which you show options, you can decide whether to explicitly ask for the information or to skip asking and apply information that the customer shared previously.
 
-  The benefit of choosing not to always ask is that the assistant doesn't ask for information that has already been submitted by the customer. For example, if the original message from the customer is `I want to buy a blue shirt`, your assistant skips Step 3 altogether because it already knows the customer's shirt color preference.
+  *When should I skip asking?*
+  
+  The benefit of choosing not to always ask is that the assistant won't ask for information that has already been submitted by the customer. For example, if the original message from the customer is `I want to buy a blue shirt`, your assistant skips Step 3 altogether because it already knows the customer's shirt color preference.
 
-  Another benefit of choosing not to always ask is that you give customers the ability to change their mind. In the middle of a multistep process, the customer can change a choice they made previously by specifying a different option from the prior step.
+  Another benefit of choosing not to ask is that you give customers the ability to change their mind. In the middle of a multistep process, the customer can change a choice they made previously by specifying a different option from the prior step. Subsequent changes to a step value can't be made if the options response is set to **Always ask for this information, regardless of earlier messages**.
+  
+  *When should I ask?*
+
+  If your action asks for the same type of data in more than one step, select the **Always ask for this information, regardless of earlier messages** option in the later step. This prevents your assistant from assuming the wrong things. For example, if Step 3 asks for the shirt color that the customer wants to buy and step 5 asks for the tie color, click **Always ask for this** in Step 5. Otherwise, the color that the customer specifies for the shirt in Step 3 is used automatically for the tie. And who wants to wear the same color shirt and tie together?
 
   When you use the built-in integrations, if you define 5 or fewer options, they are displayed as buttons. For more than 5 options, a list is displayed. If you are using a custom client application, you must specify how you want the options to be displayed.
 
