@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-03-11"
 
 subcollection: assistant
 
@@ -127,12 +127,12 @@ In the following tables, the level of language and feature support is indicated 
 ### User input processing support details
 {: #language-support-input}
 
-| Language | **[Entity fuzzy matching](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Fuzzy matching (*Misspelling*)](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Fuzzy matching (*Stemming*, *Partial match*)](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Autocorrection](/docs/assistant?topic=assistant-dialog-runtime-spell-check)** |
+| Language | **[Dictionary-based entity support](/docs/assistant?topic=assistant-entities#entities-create-dictionary-based)** | **[Fuzzy matching (*Misspelling*)](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Fuzzy matching (*Stemming*, *Partial match*)](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Autocorrection](/docs/assistant?topic=assistant-dialog-runtime-spell-check)** |
 |:---:|:---:|:---:|:---:|:---:|
 | **English (en)**                   | GA | GA | GA | GA |
 | **Arabic (ar)**                    | GA | GA | NA | NA |
-| **Chinese (Simplified) (zh-cn)**   | NA | NA | NA | NA |
-| **Chinese (Traditional) (zh-tw)**  | NA | NA | NA | NA |
+| **Chinese (Simplified) (zh-cn)**   | GA | NA | NA | NA |
+| **Chinese (Traditional) (zh-tw)**  | GA | NA | NA | NA |
 | **Czech (cs)**                     | GA | GA | GA | NA |
 | **Dutch (nl)**                     | GA | GA | NA | NA |
 | **French (fr)**                    | GA | GA | GA | Beta |
