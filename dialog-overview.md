@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-17"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -386,6 +386,7 @@ You can return responses with multimedia or interactive elements such as images 
 In addition to the default response type of **Text**, for which you specify the text to return to the user as a response, the following response types are supported:
 
 - **Connect to human agent**: The dialog calls a service that you designate, typically a service that manages human agent support ticket queues, to transfer the conversation to a person. You can optionally include a message that summarizes the user's issue to be provided to the human agent.
+- **Channel transfer**: The dialog requests that the conversation be transferred to a different channel (for example, from the Slack integration to the web chat integration).
 - **Image**: Embeds an image into the response. The source image file must be hosted somewhere and have a URL that you can use to reference it. It cannot be a file that is stored in a directory that is not publicly accessible.
 - **Option**: Adds a list of one or more options. When a user clicks one of the options, an associated user input value is sent to your assistant. How options are rendered can differ depending on the number of options and where you deploy the dialog.
 - **Pause**: Forces the application to wait for a specified number of milliseconds before continuing with processing. You can choose to show an indicator that the assistant is working on typing a response. Use this response type if you need to perform an action that might take some time.
@@ -396,6 +397,8 @@ In addition to the default response type of **Text**, for which you specify the 
 
 - **User-defined**: If you use the JSON editor to define the response, you can create your own user-defined response type. For more information, see [Defining responses using the JSON editor](/docs/assistant?topic=assistant-dialog-responses-json).
 
+Different integrations have different capabilities for displaying rich responses. If you want to define different responses that are customized for different channels, you can do so by editing the response using the JSON editor. For more information, see [Targeting specific integrations](/docs/assistant?topic=assistant-dialog-responses-json#dialog-responses-json-target-integrations).
+
 To add a rich response, complete the following steps:
 
 1.  Click the dropdown menu in the **Assistant responds** field to choose a response type, and then provide any required information.
@@ -403,6 +406,7 @@ To add a rich response, complete the following steps:
     For more information, see the following sections:
 
     - [**Connect to human agent**](#dialog-overview-add-connect-to-human-agent)
+    - [**Channel transfer**](#dialog-overview-add-channel-transfer)
     - [**Image**](#dialog-overview-add-image)
     - [**Option**](#dialog-overview-add-option)
     - [**Pause**](#dialog-overview-add-pause)
@@ -475,6 +479,35 @@ To add a *Connect to human agent* response type, complete the following steps:
       </table>
 
 The dialog transfer does not occur when you test dialog nodes with this response type in the "Try it out" pane of the dialog skill. You must access a node that uses this response type from an assistant-level integration, such as the Preview, to see how your users will experience it.
+
+### Adding a *Channel transfer* response type
+{: #dialog-overview-add-channel-transfer}
+
+If your assistant uses multiple integrations to support different channels for interaction with users, there might be some situations when a customer begins a conversation in one channel but then needs to transfer to a different channel.
+
+The most common such situation is transferring a conversation to the web chat integration, in order to take advantage of web chat features such as service desk integration.
+
+Currently, the web chat is the only supported target for a channel transfer.
+{: note}
+
+Only the following integrations can initiate a channel transfer:
+  - Slack
+  - Facebook Messenger
+  - WhatsApp
+
+Other integrations ignore the *Channel transfer* response type.
+
+To add a *Channel transfer* response type, complete the following steps:
+
+1.  From the dialog node where you want to add the response type, click the dropdown menu in the **Assistant responds** field, and then choose **Channel transfer**.
+
+1.  **Optional**. In the **Message before link to web chat** field, edit the introductory message to display to the user (in the originating channel) before the link that initiates the transfer. By default, this message is `OK, click this link for additional help. Chat will continue on a new web page.`
+
+1. In the **URL to web chat** field, type the URL for your website where the web chat widget is embedded.
+
+In the integration that processes the *Channel transfer* response, the introductory message is displayed, followed by a link to the URL you specify. The user must then click the link to initiate the transfer.
+
+When a conversation is transferred from one channel to another, the session history and context are preserved, so the destination channel can continue the conversation from where it left off. Note that the message output that contains the *Channel transfer* response is processed first by the channel that initiates the transfer, and then by the target channel. If the output contains multiple responses (perhaps using different response types), these will be processed by both channels (before and after the transfer). If you want to target individual responses to specific channels, you can do so by editing the response using the JSON editor. For more information, see [Targeting specific integrations](/docs/assistant?topic=assistant-dialog-responses-json#dialog-responses-json-target-integrations).
 
 ### Adding an *Image* response type
 {: #dialog-overview-add-image}
