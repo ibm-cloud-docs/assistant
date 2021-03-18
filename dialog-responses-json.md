@@ -304,7 +304,7 @@ Requests that the conversation be transferred to a different integration.
 #### Example
 {: #dialog-responses-json-channel-transfer-example}
 
-This example requests a transfer from Slack to web chat. In addition to the `channel_transfer` response, the output also includes a `text` response to be displayed by the web chat integration after the transfer. The use of the `channels` array ensures that the `channel_transfer` response is handled only by the Slack integration (before the transfer), and the `text` response only by the web chat integration (after the transfer). For more information about using `channels` to target specific integrations, see [Targeting specific integrations](#dialog-responses-json-target-integrations).
+This example requests a transfer from Slack to web chat. In addition to the `channel_transfer` response, the output also includes a `text` response to be displayed by the web chat integration after the transfer. The use of the `channels` array ensures that the `channel_transfer` response is handled only by the Slack integration (before the transfer), and the `connect_to_agent` response only by the web chat integration (after the transfer). For more information about using `channels` to target specific integrations, see [Targeting specific integrations](#dialog-responses-json-target-integrations).
 
 ```json
 {
@@ -314,10 +314,10 @@ This example requests a transfer from Slack to web chat. In addition to the `cha
         "response_type": "channel_transfer",
         "channels": [
           {
-            "channel": "slack"
+            "channel": "whatsapp"
           }
         ],
-        "message_to_user": "Click the link to transfer this conversation from Slack to the web chat.",
+        "message_to_user": "Click the link to connect with an agent using our website.",
         "transfer_info": {
           "target": {
             "chat": {
@@ -327,17 +327,26 @@ This example requests a transfer from Slack to web chat. In addition to the `cha
         }
       },
       {
-        "response_type": "text",
+        "response_type": "connect_to_agent",
         "channels": [
           {
             "channel": "chat"
           }
         ],
-        "values": [
-          {
-            "text": "Welcome to the web chat. Where were we?"
+        "message_to_human_agent": "User asked to speak to an agent.",
+        "agent_available": {
+          "message": "Please wait while I connect you to an agent."
+        },
+        "agent_unavailable": {
+          "message": "I'm sorry, but no agents are online at the moment. Please try again later."
+        },
+        "transfer_info": {
+          "target": {
+            "zendesk": {
+              "department": "Payments department"
+            }
           }
-        ]
+        }
       }
     ]
   }
