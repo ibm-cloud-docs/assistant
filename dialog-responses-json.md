@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-11"
+lastupdated: "2021-03-18"
 
 subcollection: assistant
 
@@ -286,6 +286,73 @@ This examples displays a greeting message to the user.
 }  
 ```
 
+### Channel transfer
+{: #dialog-responses-json-channel-transfer}
+
+Requests that the conversation be transferred to a different integration.
+
+#### Fields
+{: #{: #dialog-responses-json-channel-transfer-fields}
+
+| Name          | Type   | Description        | Required? |
+|---------------|--------|--------------------|-----------|
+| response_type | enum   | `channel_transfer` | Y         |
+| message_to_user | string | A message to display to the user before the link for initiating the transfer. | Y |
+| transfer_info | object | Information used by an integration to transfer the conversation to a different channel. | Y |
+| transfer_info.target.chat | string | The URL for the website hosting the web chat to which the conversation is to be transferred. | Y |
+
+#### Example
+{: #dialog-responses-json-channel-transfer-example}
+
+This example requests a transfer from Slack to web chat. In addition to the `channel_transfer` response, the output also includes a `text` response to be displayed by the web chat integration after the transfer. The use of the `channels` array ensures that the `channel_transfer` response is handled only by the Slack integration (before the transfer), and the `connect_to_agent` response only by the web chat integration (after the transfer). For more information about using `channels` to target specific integrations, see [Targeting specific integrations](#dialog-responses-json-target-integrations).
+
+```json
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "channel_transfer",
+        "channels": [
+          {
+            "channel": "whatsapp"
+          }
+        ],
+        "message_to_user": "Click the link to connect with an agent using our website.",
+        "transfer_info": {
+          "target": {
+            "chat": {
+              "url": "https://example.com/webchat"
+            }
+          }
+        }
+      },
+      {
+        "response_type": "connect_to_agent",
+        "channels": [
+          {
+            "channel": "chat"
+          }
+        ],
+        "message_to_human_agent": "User asked to speak to an agent.",
+        "agent_available": {
+          "message": "Please wait while I connect you to an agent."
+        },
+        "agent_unavailable": {
+          "message": "I'm sorry, but no agents are online at the moment. Please try again later."
+        },
+        "transfer_info": {
+          "target": {
+            "zendesk": {
+              "department": "Payments department"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
+```
+
 ### User-defined
 {: #dialog-responses-json-user-defined}
 
@@ -299,7 +366,7 @@ The user-defined response type is not displayed unless you have implemented code
 
 | Name          | Type   | Description        | Required? |
 |---------------|--------|--------------------|-----------|
-| response_type | enum   | `user_defined`            | Y         |
+| response_type | enum   | `user_defined`     | Y         |
 | user_defined  | object | An object containing any data the client or integration knows how to handle. This object can contain any valid JSON data, but it cannot exceed a total size of 5000 bytes. | Y |
 
 #### Example
@@ -328,3 +395,67 @@ This examples shows a generic example of a user-defined response. The `user_defi
   }
 }
 ```
+
+## Targeting specific integrations
+{: #dialog-responses-json-target-integrations}
+
+If you plan to use integrations to deploy your assistant to multiple channels, you might want to send different responses to different integrations.
+
+This mechanism is useful if your dialog flow does not change based on the integration in use, and if you cannot know in advance what integration the response will be sent to at run time. By using `channels`, you can define a single dialog node that supports all integrations, while still customizing the output for each channel. For example, you might want to customize the text formatting, or even send different response types, based on what the channel supports.
+
+Using `channels` is particularly useful in conjunction with the `channel_transfer` response type. Because the message output is processed both by the channel initiating the transfer and by the target channel, you can use `channels` to define responses that will only be displayed by one or the other. (For more information, and an example, see [Channel transfer](#dialog-responses-json-channel-transfer).)
+
+To specify the integrations for which a response is intended, include the optional `channels` array as part of the response object. All response types support the `channels` array. This array contains one or more objects using the following syntax:
+
+```json
+{
+  "channel": "<channel_name>"
+}
+```
+
+The value of `<channel_name>` can be any of the following strings:
+
+- **`chat`**: Web chat
+- **`slack`**: Slack
+- **`facebook`**: Facebook Messenger
+- **`intercom`**: Intercom
+- **`whatsapp`**: WhatsApp
+
+Currently, the `channels` array is not supported by the phone integration or the SMS with Twilio integration. If your assistant is deployed to either of these integrations, do not use `channels` to target responses.
+{: note}
+
+The following example shows dialog node output that contains two responses: one intended for the web chat integration and one intended for the Slack and Facebook integrations.
+
+```json
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "text",
+        "channels": [
+          {
+            "channel": "chat"
+          }
+        ],
+        "text" : "This output is intended for the <strong>web chat</strong>."
+      },
+      {
+        "response_type": "text",
+        "channels": [
+          {
+            "channel": "slack"
+          },
+          {
+            "channel": "facebook"
+          }
+        ],
+        "text" : "This output is intended for either Slack or Facebook."
+      }
+    ]
+  }
+}
+```
+
+If the `channels` array is present, it must contain at least one channel object. Any integration that is not listed ignores the response. If the `channels` array is absent, all integrations handle the response.
+
+**Note:** If you need to change the logic of your dialog flow based on which integration is in use, or based on context data that is specific to a particular integration, see [Adding custom dialog flows for integrations](/docs/assistant?topic=assistant-dialog-integrations).

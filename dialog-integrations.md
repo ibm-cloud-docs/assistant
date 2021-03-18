@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-03-18"
 
 keywords: integration settings
 
@@ -57,7 +57,7 @@ To take advantage of the `context.integrations` object, you can create context v
 <!--If you previously set up a connector to integrate with Facebook or Slack, you can use context variables. If you update you API calls to use the `2020-04-01` version of the v2 `/message` API, you can use `$integrations.facebook` and `$integrations.slack` for Facebook and Slack.-->
 The following sections describe how to use integration-specific context variables to do common tasks.
 
-## Building integration-specific responses
+## Building integration-specific dialog flow
 {: #dialog-integrations-condition-by-type}
 
 Create a single dialog that is optimized to use the best features offered by each channel or client interface in which it is deployed.
@@ -107,6 +107,9 @@ The rich response types often behave differently when they are displayed in diff
 - [SMS with Twilio](/docs/assistant?topic=assistant-deploy-sms#deploy-sms-dialog)
 - [Web chat](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-dialog)
 <!-- [WhatsApp with Twilio](/docs/assistant?topic=assistant-deploy-whatsapp#deploy-whatsapp-dialog) -->
+
+If you need to provide customized responses for different channels, and you do not need to modify your dialog flow based on which integration is in use, you can also use the `channels` array to target your responses to specific integrations. For more information, see [Targeting specific integrations](/docs/assistant?topic=assistant-dialog-responses-json#dialog-responses-json-target-integrations).
+{: note}
 
 ## Web chat: Accessing sensitive data
 {: #dialog-integrations-chat-private}
