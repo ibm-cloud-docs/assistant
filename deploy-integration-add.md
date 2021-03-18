@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-04"
+lastupdated: "2021-03-18"
 
 keywords: deploy, deploying
 
@@ -35,9 +35,6 @@ To deploy your skill, add it to an assistant, and then add integrations to the a
 ## Add an integration
 {: #deploy-integration-add-task}
 
-There is currently no way to pass an ongoing conversation from one integration channel to another.
-{: important}
-
 Follow these steps to add integrations to your assistant:
 
 1.  Click the **Assistants** icon ![Assistants menu icon](images/nav-ass-icon.png).
@@ -67,7 +64,7 @@ Follow these steps to add integrations to your assistant:
 
     Built-in service desk integrations:
 
-    - [Intercom](/docs/assistant?topic=assistant-deploy-intercom)  ![Plus or higher plans only](images/plus.png)
+    - [Intercom](/docs/assistant?topic=assistant-deploy-intercom)
     - [Web chat with Salesforce support](/docs/assistant?topic=assistant-deploy-salesforce)
     - [Web chat with Zendesk support](/docs/assistant?topic=assistant-deploy-zendesk)
 
