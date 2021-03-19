@@ -68,7 +68,7 @@ The change log lists changes that were made this year ordered by the date they w
 <!--1.140-->
 - **Channel transfer response type**: Dialog skills now include a channel transfer response type. If your assistant uses multiple integrations to support different channels for interaction with users, there might be some situations when a customer begins a conversation in one channel but then needs to transfer to a different channel. The most common such situation is transferring a conversation to the web chat integration, to take advantage of web chat features such as service desk integration. For more information, see [Adding a Channel transfer response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-channel-transfer).
 
-- **Intercom and WhatsApp integrations now available in Lite plan**: The integrations for Intercom and WhatsApp are now available in the Lite plan for Watson Assistant. For more information, see [Integrating with Intercom](docs/assistant?topic=assistant-deploy-intercom) and [Integrating with WhatsApp](/docs/assistant?topic=assistant-deploy-whatsapp). 
+- **Intercom and WhatsApp integrations now available in Lite plan**: The integrations for Intercom and WhatsApp are now available in the Lite plan for Watson Assistant. For more information, see [Integrating with Intercom](/docs/assistant?topic=assistant-deploy-intercom) and [Integrating with WhatsApp](/docs/assistant?topic=assistant-deploy-whatsapp). 
 
 ## 11 March 2021
 {: #11March2021}
