@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-19"
 
 subcollection: assistant
 
@@ -142,13 +142,13 @@ In the following tables, the level of language and feature support is indicated 
 | **Korean (ko)**                    | GA | GA | NA | NA |
 | **Portuguese (Brazilian) (pt-br)** | GA | GA | NA | NA |
 | **Spanish (es)**                   | GA | GA | NA | NA |
-| **Universal (xx)**                 | Beta | NA | NA | NA |
+| **Universal (xx)**                 | Beta | Beta | NA | NA |
 {: caption="Table 5. User input processing support details" caption-side="top"}
 
 ### Entity feature support details
 {: #language-support-entities}
 
-| Language | **[Contextual entities](/docs/assistant?topic=assistant-entities#entities-create-annotation-based)** | **[Synonym recommendations](/docs/assistant?topic=assistant-entities#entities-synonyms)** |
+| Language | **[Contextual entities](/docs/assistant?topic=assistant-entities#entities-create-annotation-based)** | **[Synonym recommendations](/docs/assistant?topic=assistant-entities#entities-create-dictionary-based)** |
 |:---:|:---:|:---:|
 | **English (en)**                   | GA | GA |
 | **Arabic (ar)**                    | NA | NA |

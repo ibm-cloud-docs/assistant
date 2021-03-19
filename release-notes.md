@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-18"
+lastupdated: "2021-03-19"
 
 subcollection: assistant
 
@@ -1147,7 +1147,7 @@ The following updates are available in all locations except Dallas currently.
   When you access the tool with an Internet Explorer web browser, you cannot label entity mentions in intent user examples nor edit user example text.
   {: note}
 
-- **Entity recommendations**: Watson can now recommend synonyms for your entity values. The recommender finds related synonyms based on contextual similarity extracted from a vast body of existing information, including large sources of written text, and uses natural language processing techniques to identify words similar to the existing synonyms in your entity value. For more information see [Synonyms](/docs/assistant?topic=assistant-entities#entities-synonyms).
+- **Entity recommendations**: Watson can now recommend synonyms for your entity values. The recommender finds related synonyms based on contextual similarity extracted from a vast body of existing information, including large sources of written text, and uses natural language processing techniques to identify words similar to the existing synonyms in your entity value. For more information see [Synonyms](/docs/assistant?topic=assistant-entities#entities-create-dictionary-based).
 
 - **New API version**: The current API version is now `2018-07-10`. This version introduces the following changes:
 

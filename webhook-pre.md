@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-03-19"
 
 keywords: pre webhook, prewebhook, pre-webhook
 
@@ -196,7 +196,7 @@ This example shows you how to check the language of the input text, and append t
 
 In the premessage webhook configuration page, the following values are specified:
 
-- **URL**: https://us-south.functions.appdomain.cloud/api/v1/web/e97d2516-5ce4-4fd9-9d05-acc3dd8ennn/default/check_language
+- **URL**: `https://us-south.functions.appdomain.cloud/api/v1/web/e97d2516-5ce4-4fd9-9d05-acc3dd8ennn/default/check_language`
 - **Secret**: none
 - **Header name**: Content-Type
 - **Header value**: application/json
@@ -263,7 +263,7 @@ Define a sequence of web actions in IBM Cloud Functions. The first action in the
 
 In the premessage webhook configuration page, the following values are specified:
 
-- **URL**: https://us-south.functions.appdomain.cloud/api/v1/web/e97d2516-5ce4-4fd9-9d05-acc3dd8ennn/default/translation_sequence
+- **URL**: `https://us-south.functions.appdomain.cloud/api/v1/web/e97d2516-5ce4-4fd9-9d05-acc3dd8ennn/default/translation_sequence`
 - **Secret**: none
 - **Header name**: Content-Type
 - **Header value**: application/json

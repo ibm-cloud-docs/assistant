@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-19"
 
 keywords: digression, disambiguation, confidence 
 
@@ -292,7 +292,7 @@ To test disambiguation, complete the following steps:
 
       This SpEL expression shows the entities that were detected in the user input as an array. The array includes the entity name, location of the entity mention within the user input string, the entity mention string, and the level of confidence that your assistant has that the term is a mention of the entity type specified.
 
-    - To see details for all of the artifacts at once, including other properties, such as the value of a given context variable at the time of the call, you can inspect the entire API response. See [Viewing API call details](/docs/assistant?topic=assistant-dialog-tips#dialog-tips-inspect-api).
+    - To see details for all of the artifacts at once, including other properties, such as the value of a given context variable at the time of the call, you can inspect the entire API response. See [Viewing API call details](/docs/assistant?topic=assistant-message-anatomy#message-anatomy-inspect-api).
 
 1.  Temporarily remove the description you added to the *name* field (or *external node name* field) for at least one of the nodes that you anticipate will be listed as a disambiguation option.
 

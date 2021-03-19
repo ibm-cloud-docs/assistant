@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-26"
+lastupdated: "2021-03-19"
 
 subcollection: assistant
 
@@ -126,7 +126,7 @@ When you add security to your Zendesk integration, you ensure that the visitors 
 
 Before you can secure the Zendesk connection, complete the following required tasks:
 
-1.  {: #deploy-zendesk-secure-prereqs}Secure the web chat. For more information see [Enable security](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-security-task).
+1.  {: #deploy-zendesk-secure-prereqs}Secure the web chat. For more information see [Securing the web chat](/docs/assistant?topic=assistant-web-chat-security).
 1.  Encrypt sensitive information that you pass to the web chat. 
 
     When you enable security in Zendesk, you must provide the name and email address of the current user with each request. Configure the web chat to pass this information in the payload.
@@ -143,7 +143,7 @@ Before you can secure the Zendesk connection, complete the following required ta
     ```
     {: codeblock}
 
-    For more information, see [Passing sensitive data](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-security-encrypt).
+    For more information, see [Passing sensitive data](/docs/assistant?topic=assistant-web-chat-security#web-chat-security-encrypt).
 
     Zendesk also expects `iat` and `external_id` name and value pairs. However, there's no need for you to provide this information. IBM automatically provides a JWT that contains these values.
 

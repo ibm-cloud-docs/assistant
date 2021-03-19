@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-03-04"
+lastupdated: "2021-03-19"
 
 subcollection: assistant
 
@@ -73,7 +73,7 @@ Understanding where you will deploy the assistant before you begin can help you 
 ## What languages does your assistant speak?
 {: #assistants-plan-global}
 
-Decide whether and how you want to handle more than one spoken language. For more information about ways to approach language support, see [Adding support for global audiences](/docs/assistant?topic=assistant-language).
+Decide whether and how you want to handle more than one spoken language. For more information about ways to approach language support, see [Adding support for global audiences](/docs/assistant?topic=assistant-assistant-language).
 
 ## Does your assistant see the glass as half full?
 {: #assistants-plan-personality}
