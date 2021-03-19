@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-18"
+lastupdated: "2021-03-19"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
@@ -120,7 +120,7 @@ The built-in integrations derive the user ID in the following ways:
 
 - For Facebook integrations, the `user_id` property is set to the sender ID that Facebook provides in its payload.
 - For Slack integrations, the `user_id` property is a concatenation of the team ID, such as `T09LVDR7Y`, and the member ID of the user, such has `W4F8K9JNF`. For example: `T09LVDR7YW4F8K9JNF`.
-- For web chat, you can set the value of the `user_id` property. For more information, see [Adding user identity information](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-userid).
+- For web chat, you can set the value of the `user_id` property.
 
 Billing is managed per monthly active user per service instance. If a single user interacts with assistants that are hosted by different service instances that belong to the same plan, each interaction is treated as a separate use. You are billed for the user's interaction with each service instance separately.
 

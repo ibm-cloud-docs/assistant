@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-03-19"
 
 keywords: post webhook, postwebhook, post-webhook
 
@@ -226,7 +226,7 @@ This example shows you how to add `y'all` to the end of each response from the a
 
 In the postmessage webhook configuration page, the following values are specified:
 
-- **URL**: https://us-south.functions.appdomain.cloud/api/v1/web/e97d2516-5ce4-4fd9-9d05-acc3dd8ennn/southernize/add_southern_charm
+- **URL**: `https://us-south.functions.appdomain.cloud/api/v1/web/e97d2516-5ce4-4fd9-9d05-acc3dd8ennn/southernize/add_southern_charm`
 - **Secret**: none
 - **Header name**: Content-Type
 - **Header value**: application/json
@@ -278,7 +278,7 @@ Define a sequence of web actions in IBM Cloud Functions. The first action in the
 
 In the premessage webhook configuration page, the following values are specified:
 
-- **URL**: https://us-south.functions.appdomain.cloud/api/v1/web/e97d2516-5ce4-4fd9-9d05-acc3dd8ennn/default/response-translation_sequence
+- **URL**: `https://us-south.functions.appdomain.cloud/api/v1/web/e97d2516-5ce4-4fd9-9d05-acc3dd8ennn/default/response-translation_sequence`
 - **Secret**: none
 - **Header name**: Content-Type
 - **Header value**: application/json
