@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-11"
+lastupdated: "2021-03-22"
 
 subcollection: assistant
 
@@ -147,8 +147,8 @@ print(json.dumps(response, indent=2))
 
 ```java
 MessageInputOptions inputOptions = new MessageInputOptions.Builder()
-      .returnContext(true)
-      .build();
+  .returnContext(true)
+  .build();
 
 MessageInput input = new MessageInput.Builder()
   .messageType("text")
@@ -163,14 +163,14 @@ MessageContextGlobalSystem system = new MessageContextGlobalSystem.Builder()
 MessageContextGlobal globalContext = new MessageContextGlobal.Builder()
   .system(system)
   .build();
-  
+
 // build user-defined context variables, put in skill-specific context for main skill
 Map<String, Object> userDefinedContext = new HashMap<>();
 userDefinedContext.put("account_number","123456");
 MessageContextSkill mainSkillContext = new MessageContextSkill.Builder()
   .userDefined(userDefinedContext)
   .build();
-MessageContextSkills skillsContext = new MessageContextSkills();
+Map<String, MessageContextSkill> skillsContext = new HashMap<>();
 skillsContext.put("main skill", mainSkillContext);
 
 MessageContext context = new MessageContext.Builder()
