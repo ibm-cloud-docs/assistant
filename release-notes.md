@@ -61,7 +61,12 @@ Existing models that you have trained will not be immediately impacted, but expi
 ## Change log
 {: #release-notes-tooling-changes}
 
-The change log lists changes that were made this year ordered by the date they were released.
+The change log lists changes that were made this year, ordered by the date they were released.
+
+## 23 March 2021
+{: #23March2021}
+<!--1.141-->
+- **Actions skill improvement**: Actions have a new toolbar making it easier to send feedback, access settings, save, and close.
 
 ## 17 March 2021
 {: #17March2021}
