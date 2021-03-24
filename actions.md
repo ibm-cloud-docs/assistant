@@ -109,7 +109,7 @@ To create actions, complete the following steps:
 
 1.  Test the action as you build it. 
 
-    Click **Save** to save your latest changes first. With autosave enabled, many changes are saved automatically. But to be sure that changes you *just* made are applied, save them explicitly.
+    Click the **Save** icon to save your latest changes first. With Auto-save that is enabled in Action Settings changes are saved automatically. But to be sure that changes you *just* made are applied, save them explicitly.
     {: tip}
     
     Open the Preview pane to submit test input and see how your assistant responds.
@@ -150,9 +150,9 @@ To create actions, complete the following steps:
     In some situations, the action name is shown to customers or service desk personnel to express the purpose of the action. The name can be shown in a disambiguation list or in a chat summary, for example. It is worth taking some time to give the action a name that is concise and accurate. For more information, see [Disambiguation](#actions-disambiguation).
     {: tip}
 
-1.  Click **Save**, and then click **Close**.
+1.  Click the **Save** icon, and then click the **Close** icon.
 
-    Your action is displayed in the *custom* actions list. Two *system* actions are created for you automatically. To learn more about them, see [System actions explained](#actions-builtin).
+    Your action is displayed in the *Your actions* list. Two *system* actions are created for you automatically. To learn more about them, see [System actions explained](#actions-builtin).
 
 1.  Add more actions to your skill to address other customer needs. To add another action, click **New action**.
 
@@ -574,18 +574,27 @@ To customize disambiguation, complete the following steps:
 
 Every action that you add is used during disambiguation automatically. The system actions are not.
 
+You can disable disambiguation for all actions.
+
 To disable disambiguation for all actions:
 
-1.  From the actions skill main page, click the *Skill settings* icon ![Gear icon](images/gear-icon.png) in the page header.
-1.  Set the disambiguation switch to **Off**.
+1.  From the actions skill main page, click the **Skill settings** icon ![Gear icon](images/gear-icon.png) in the page header.
+1.  Set the disambiguation switch to off.
 1.  Click **Save**, and then click **Close**.
 
-To prevent a single action from being used during disambiguation:
+You can also prevent a single action from being used during disambiguation.
 
-1.  From the actions skill main page, look in the *Actions* table for the action that you never want shown as a disambiguation option.
-1.  From the action's *Click to view actions* menu ![Overflow menu](images/more-options.png), choose **Don't disambiguate**.
+To prevent disambiguation on the actions skill main page:
 
-    If the action is configured to not be used during disambiguation already, *Disambiguate* is shown in the menu instead. Only click *Disambiguate* if you want the action to be used during disambiguation.
+1.  From the actions skill main page, look in the Actions table for the action that you never want shown as a disambiguation option.
+1.  From the action's **Action settings** icon ![](images/kebab.png), choose **Don't disambiguate**.
+
+    If the action is configured to not be used during disambiguation already, **Disambiguate** is shown in the menu instead. Click **Disambiguate** if you want the action to be used during disambiguation.
+
+To prevent disambiguation when you are working on action steps:
+
+1.  Click the **Action settings** icon. 
+1.  In Action Settings, toggle the **Disambiguation** switch to off.
 
 ## Action limits
 {: #actions-limits}
