@@ -109,7 +109,7 @@ To create actions, complete the following steps:
 
 1.  Test the action as you build it. 
 
-    Click the **Save** icon to save your latest changes first. With Auto-save that is enabled in Action Settings changes are saved automatically. But to be sure that changes you *just* made are applied, save them explicitly.
+    Click the **Save** icon to save your latest changes first. With Auto-save enabled in Action Settings, changes are saved automatically. But to be sure that changes you *just* made are applied, save them explicitly.
     {: tip}
     
     Open the Preview pane to submit test input and see how your assistant responds.
