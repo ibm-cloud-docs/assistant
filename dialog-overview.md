@@ -240,6 +240,7 @@ If you include one of these special characters in a text response, escape it by 
 |-------------------|----------|---------|
 | `$` | Context variable | `The transaction fee is \$2.` |
 | `@` | Entity | `Send us your feedback at feedback\@example.com.` |
+| `#` | Intent | `We are the \#1 seller of lobster rolls in Maine.` |
 {: caption="Special characters to escape in responses" caption-side="top"}
 
 The built-in integrations support the following Markdown syntax elements:
