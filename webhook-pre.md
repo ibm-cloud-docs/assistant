@@ -250,9 +250,9 @@ return {
 ```
 {: codeblock}
 
-To test the webhook, open an integration such as the preview integration. Submit the text `Buenas dias`. The assistant probably won't understand the input, and will return the response from your *Anything else* node. However, if you go to the Analytics page of your skill and open the User conversations page, you can see what was submitted. Check the most recent user conversation. The log will show that the user input is `Buenas dias (in es)`. The `es` in parentheses represents the language code for Spanish, so the webhook worked and recognized that the submitted text was a Spanish phrase.
+To test the webhook, open an integration such as the preview integration. Submit the text `Buenos días`. The assistant probably won't understand the input, and will return the response from your *Anything else* node. However, if you go to the Analytics page of your skill and open the User conversations page, you can see what was submitted. Check the most recent user conversation. The log will show that the user input is `Buenos días (in es)`. The `es` in parentheses represents the language code for Spanish, so the webhook worked and recognized that the submitted text was a Spanish phrase.
 
-![Shows the Analytics>User conversations page with a logged conversation with Buenas dias (in es) input](images/webhook-check-language.png)
+![Shows the Analytics>User conversations page with a logged conversation with Buenos días (in es) input](images/webhook-check-language.png)
 
 ## Example 2
 {: #webhook-pre-example-translate}
@@ -361,7 +361,7 @@ return {
 ```
 {: codeblock}
 
-When you test the webhook in the preview integration, you can submit `Buenas dias`, and the assistant responds as if you said `Good morning` in English. In fact, when you check the *Analytics>User conversations* page, the log shows that the user input was `Good morning`.
+When you test the webhook in the preview integration, you can submit `Buenos días`, and the assistant responds as if you said `Good morning` in English. In fact, when you check the *Analytics>User conversations* page, the log shows that the user input was `Good morning`.
 
 You can add a postmessage webhook to translate the message's response back into the customer's native language before it is displayed. For more information see [Example 2](/docs/assistant?topic=assistant-webhook-post#webhook-post-example-translate-back).
 
