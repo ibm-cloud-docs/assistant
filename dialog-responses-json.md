@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-18"
+lastupdated: "2021-03-26"
 
 subcollection: assistant
 
@@ -125,7 +125,7 @@ Displays an image specified by a URL.
 
 | Name          | Type   | Description                        | Required? |
 |---------------|--------|------------------------------------|-----------|
-| response_type | enum   | `image`                            | Y         |
+| response_type | string | `image`                            | Y         |
 | source        | string | The URL of the image. The specified image must be in .jpg, .gif, or .png format. | Y |
 | title         | string | The title to show before the image.| N         |
 | description   | string | The text of the description that accompanies the image. | N |
@@ -160,10 +160,10 @@ Displays a set of buttons or a drop-down list users can use to choose an option.
 
 | Name          | Type   | Description                         | Required? |
 |---------------|--------|-------------------------------------|-----------|
-| response_type | enum   | `option`                            | Y         |
+| response_type | string | `option`                            | Y         |
 | title         | string | The title to show before the options. | Y       |
 | description   | string | The text of the description that accompanies the options. | N |
-| preference    | enum   | The preferred type of control to display, if supported by the channel (`dropdown` or `button`). The {{site.data.keyword.conversationshort}} connector currently supports only `button`.| N |
+| preference    | string | The preferred type of control to display, if supported by the channel (`dropdown` or `button`). The {{site.data.keyword.conversationshort}} connector currently supports only `button`.| N |
 | options       | list   | A list of key/value pairs specifying the options from which the user can choose. | Y |
 | options[].label | string | The user-facing label for the option. | Y     |
 | options[].value | object | An object defining the response that will be sent to the {{site.data.keyword.conversationshort}} service if the user selects the option. | Y |
@@ -225,7 +225,7 @@ Pauses before sending the next message to the channel, and optionally sends a "u
 
 | Name          | Type   | Description        | Required? |
 |---------------|--------|--------------------|-----------|
-| response_type | enum   | `pause`            | Y         |
+| response_type | string | `pause`            | Y         |
 | time          | int    | How long to pause, in milliseconds. | Y |
 | typing        | boolean | Whether to send the "user is typing" event during the pause. Ignored if the channel does not support this event. | N |
 
@@ -258,7 +258,7 @@ Displays text. To add variety, you can specify multiple alternative text respons
 
 | Name          | Type   | Description        | Required? |
 |---------------|--------|--------------------|-----------|
-| response_type | enum   | `text`             | Y         |
+| response_type | string | `text`             | Y         |
 | values        | list   | A list of one or more objects defining text response. | Y |
 | values.[_n_].text   | string | The text of a response. This can include newline characters (`\n`) and Markdown tagging, if supported by the channel. (Any formatting not supported by the channel is ignored.) | N |
 | selection_policy | string | How a response is selected from the list, if more than one response is specified. The possible values are `sequential`, `random`, and `multiline`. | N |
@@ -286,6 +286,83 @@ This examples displays a greeting message to the user.
 }  
 ```
 
+### Search skill
+{: #dialog-responses-json-search-skill}
+
+Calls the search skill linked to the assistant to retrieve results that are relevant to the user's query.
+
+#### Fields
+{: #dialog-responses-json-search-skill-fields}
+
+| Name          | Type   | Description        | Required? |
+|---------------|--------|--------------------|-----------|
+| response_type | string | `search`           | Y         |
+| query         | string | The text to use for the search query. This string can be empty, in which case the user input is used as the query. | Y |
+| filter        | string | An optional filter that narrows the set of documents to be searched. | N |
+| query_type    | string | The type of search query to use (`natural_language` or `discovery_query_language`). | Y |
+| discovery_version | string | The version of the Discovery service API to use. The default is `2018-12-03`. | N |
+
+#### Example
+{: #dialog-responses-json-search-skill-example}
+
+This examples uses the user input text to send a natural-language query to the search skill.
+
+```json
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "search_skill",
+        "query": "",
+        "query_type": "natural_language"
+      }
+    ]
+  }
+}
+```
+
+### Connect to agent
+{: #dialog-responses-json-connect-to-agent}
+
+Requests that the conversation be transferred to a human service desk agent for help.
+
+#### Fields
+{: #{: #dialog-responses-json-channel-transfer-fields}
+
+| Name                   | Type   | Description        | Required? |
+|------------------------|--------|--------------------|-----------|
+| response_type          | string | `connect_to_agent` | Y         |
+| message_to_human_agent | string | A message to display to the human agent to whom the conversation is being transferred. | Y |
+| agent_available        | string | A message to display to the user when agents are available.                            | Y |
+| agent_unavailable      | string | A message to display to the user when no agents are available.                         | Y |
+| transfer_info          | object | Information used by the web chat service desk integrations for routing the transfer.   | N |
+| transfer_info.target.zendesk.department | string | A valid department from your Zendesk account.                         | N |
+| transfer_info.target.salesforce.button_id | string | A valid button ID from your Salesforce deployment.                  | N |
+
+#### Example
+{: #dialog-responses-json-connect-to-agent-example}
+
+This example requests a transfer to a human agent and specifies messages to be displayed both to the user and to the agent at the time of transfer.
+
+```json
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "connect_to_agent",
+        "message_to_human_agent": "User asked to speak to an agent.",
+        "agent_available": {
+          "message": "Please wait while I connect you to an agent."
+        },
+        "agent_unavailable": {
+          "message": "I'm sorry, but no agents are online at the moment. Please try again later."
+        }
+      }
+    ]
+  }
+}
+```
+
 ### Channel transfer
 {: #dialog-responses-json-channel-transfer}
 
@@ -296,7 +373,7 @@ Requests that the conversation be transferred to a different integration.
 
 | Name          | Type   | Description        | Required? |
 |---------------|--------|--------------------|-----------|
-| response_type | enum   | `channel_transfer` | Y         |
+| response_type | string | `channel_transfer` | Y         |
 | message_to_user | string | A message to display to the user before the link for initiating the transfer. | Y |
 | transfer_info | object | Information used by an integration to transfer the conversation to a different channel. | Y |
 | transfer_info.target.chat | string | The URL for the website hosting the web chat to which the conversation is to be transferred. | Y |
@@ -366,7 +443,7 @@ The user-defined response type is not displayed unless you have implemented code
 
 | Name          | Type   | Description        | Required? |
 |---------------|--------|--------------------|-----------|
-| response_type | enum   | `user_defined`     | Y         |
+| response_type | string | `user_defined`     | Y         |
 | user_defined  | object | An object containing any data the client or integration knows how to handle. This object can contain any valid JSON data, but it cannot exceed a total size of 5000 bytes. | Y |
 
 #### Example
