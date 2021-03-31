@@ -424,7 +424,7 @@ There is no option to skip to a later step. Instead of jumping directly to a lat
 #### Configuring the search for an answer
 {: #actions-what-next-search}
 
-To configure the search that is performed in {{site.data.keyword.discoveryshort}, complete the following steps:
+To configure the search that is performed in {{site.data.keyword.discoveryshort}}, complete the following steps:
 
 1.  Click **Edit settings**.
 
