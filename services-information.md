@@ -74,7 +74,6 @@ The following features are available only to users of a Plus or Enterprise plan.
 - [Phone integration](/docs/assistant?topic=assistant-deploy-phone)
 - [Private endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints)
 - [Search skill](/docs/assistant?topic=assistant-skill-search-add)
-- [SMS with Twilio integration](/docs/assistant?topic=assistant-deploy-phone)
 
 The following features are available only to users of Enterprise plans. ![Enterprise plan only](images/enterprise.png)
 
