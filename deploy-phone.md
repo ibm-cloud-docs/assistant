@@ -31,10 +31,7 @@ Add a phone integration so your assistant can answer when your customers call.
 
 When your customer makes a phone call through a Session Initiation Protocol (SIP) trunk that you configure, the phone integration answers. The integration converts output from your dialog from text to voice by using the {{site.data.keyword.texttospeechfull}} service. The audio is sent to the telephone network through the SIP trunk. When the customer replies, voice is converted to text by using the {{site.data.keyword.speechtotextfull}} service.
 
-This feature is available only to Plus or Enterprise plan users.
-
-The voice capabilities that are provided by this integration are charged separately and in addition to your service plan charges.
-{: important}
+This feature is available only to Plus or Enterprise plan users. Note that {{site.data.keyword.speechtotextshort}} and {{site.data.keyword.texttospeechshort}} charges are included in the cost of a [monthly active user](/docs/assistant?topic=assistant-services-information#services-information-user-based-plans) (MAU).
 
 ## Set up the integration
 {: #deploy-phone-setup}
