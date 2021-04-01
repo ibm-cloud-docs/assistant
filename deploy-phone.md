@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-31"
+lastupdated: "2021-04-01"
 
 subcollection: assistant
 
@@ -384,7 +384,7 @@ After you create the instance, get log information by completing the following s
 1.  Go to the [IBM Cloud Logging](https://cloud.ibm.com/observe/logging) page.
 1.  Click *Configure platform logs*.
 1.  Select the region and instance, and then click *Select*.
-1.  To open the IBM Log Analysis console, click **Open Dashboard**.
+1.  To open the IBM Log Analysis console, click **View {{site.data.keyword.la_full_notm}}**.
 1.  The source name of the log events is *Watson*.
 
     You can apply filters or search the logs by values such as a phone number or instance ID.
