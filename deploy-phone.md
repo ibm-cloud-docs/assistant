@@ -311,7 +311,7 @@ The following table lists the fully qualified domain names and IP addresses that
 
 If you created an {{site.data.keyword.iva_full}} service instance in IBM Cloud to enable customers to connect to an assistant over the phone, use the phone integration instead. You can use the same SIP account and phone number that you configured for use with {{site.data.keyword.iva_short}} in the phone integration.
 
-The phone integration provides a more seamless integration with your assistant, however, the integration currently does not support the following functions:
+The phone integration provides a more seamless integration with your assistant. However, the integration currently does not support the following functions:
 
 - Outbound calling
 - Configuring backup locations
