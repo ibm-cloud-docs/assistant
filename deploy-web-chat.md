@@ -48,7 +48,7 @@ To add the assistant to a web page on your company website, complete the followi
 
 1.  From the Assistants page, click to open the assistant tile that you want to deploy to your site.
 
-1.  From the *Integrations* section, click **Add integration**, and then choose the **Web chat** tile.
+1.  From the *Integrations* section, either click **Integrate web chat**, or click **Add integration**, and then choose the **Web chat** tile.
 
     The web chat integration is added to your first assistant automatically. If you're using the *My first assistant*, click the **Web chat** tile to open the integration that was added for you.
 
@@ -106,11 +106,14 @@ To add the assistant to a web page on your company website, complete the followi
 
     A code snippet is displayed that defines the chat window implementation. You will add this code snippet to your web page. The code snippet contains an HTML script element. The script calls JavaScript code that is hosted on an IBM site. The code creates an instance of a widget that communicates with the assistant. The generated code includes a region and unique integration ID. Do not change these parameter values.
 
-1.  Copy the `script` HTML element.
+1.  Copy the `script` HTML element. You add this script to your website in the next section, [Deploy your assistant in production](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-snippet).
 
 1.  If you made any customizations, click **Save and exit**. Otherwise, click **Close**.
 
     The web chat instance is created as soon as you click the *Create* button, and does not need to be saved.
+
+## Deploy your assistant in production
+{: #deploy-web-chat-snippet}
 
 1.  Open the HTML source for a web page on your website where you want the chat window to be displayed. Paste the code snippet into the page.
 
