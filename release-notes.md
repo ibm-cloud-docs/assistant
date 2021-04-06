@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-04-06"
 
 subcollection: assistant
 
@@ -62,6 +62,87 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #release-notes-tooling-changes}
 
 The change log lists changes that were made this year, ordered by the date they were released.
+
+
+## 6 April 2021
+{: #6April2021}
+
+- **Service API endpoint change**: As explained in [December 2019](#12December2019), as part of work done to fully support IAM authentication, the endpoint you use to access your {{site.data.keyword.conversationshort}} service programmatically is changing. The old endpoint URLs are deprecated and **will be retired on 26 May 2021**. Update your API calls to use the new URLs.
+
+  The pattern for the endpoint URL changes from `gateway-{location}.watsonplatform.net/assistant/api/` to `api.{location}.assistant.watson.cloud.ibm.com/`. The domain, location, and offering identifier are different in the new endpoint. For more information, see [Updating endpoint URLs from watsonplatform.net](/docs/watson?topic=watson-endpoint-change){: external}.
+
+  - If your service instance API credentials show the old endpoint, create a new credential and start using it today. After you update your custom applications to use the new credential, you can delete the old one.
+
+  - For a web chat integration, you might need to take action depending on when and how you created your integration. 
+  
+    - If you tied your deployment to a specific web chat version by using the `clientVersion` parameter and specified a version earlier than version 3.3.0, update the parameter value to use version 3.3.0 or later. Web chat integrations that use the latest or 3.3.0 and later versions will not be impacted by the endpoint deprecation.
+  
+    - If you created your web chat integration before May 2020, check the code snippet that you embedded in your web page to see if it refers to `watsonplatform.net`. If so, you must edit the code snippet to use the new URL syntax. For example, change the following URL:
+
+      ```html
+      <script src="https://assistant-web.watsonplatform.net/loadWatsonAssistantChat.js"></script>
+      ```
+
+      The correct syntax to use for the source service URL looks like this:
+
+      ```
+      src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js"
+      ```
+
+    - If your web chat integration connects to a Salesforce service desk, then you must edit the API call that is included in the code snippet that you added to the Visualforce Page that you created in Salesforce. From Salesforce, search for *Visualforce Pages*, and find your page. In the `<iframe>` snippet that you pasted into the page, make the following change:
+
+      Replace: `src=“https://assistant-integrations-{location}.watsonplatform.net/public/salesforceweb”` with a url with this syntax: 
+      
+      ```
+      src="https://integrations.{location}.assistant.watson.appdomain.cloud/public/salesforceweb/{integration-id}/agent_application?version=2020-09-24"
+      ```
+      {: codeblock}
+
+      From the Web chat integration Salesforce live agent setup page, find the *Visualforce page markup* field. Look for the `src` parameter in the `<iframe>` element. It contains the full URL to use, including the appropriate `{location}` and `{integration-id}` values for your instance.
+
+  - For a Slack integration that is over 7 months old, make sure the Request URL is using the proper endpoint. 
+  
+    - Go to the [Slack API](https://api.slack.com/){: external} web page. Click *Your Apps* to find your assistant app. Click *Event Subscriptions* from the navigation pane.
+    - Edit the Request URL.
+
+      For example, if the URL has the syntax: `https://assistant-slack-{location}.watsonplatform.net/public/message`, change it to have this syntax: 
+      
+      ```
+      https://integrations.{location}.assistant.watson.appdomain.cloud/public/slack/{integration-id}/message?version=2020-09-24
+      ```
+      {: codeblock}
+
+      Check the *Generated request URL* field in the Slack integration setup page for the full URL to use, which includes the appropriate `{location}` and `{integration-id}` values for your instance.
+
+  - For a Facebook Messenger integration that is over 7 months old, make sure the Callback URL is using the proper endpoint. 
+  
+    - Go to the [Facebook for Developers](https://developers.facebook.com/apps/){: external} web page.
+    - Open your app, and then select *Messenger>Settings* from the navigation pane. 
+    - Scroll down to the *Webhooks* section and edit the *Callback URL* field.
+    
+      For example, if the URL has the syntax: `https://assistant-facebook-{location}.watsonplatform.net/public/message/`, change it to have this syntax:
+      
+      ```
+      https://integrations.{location}.assistant.watson.appdomain.cloud/public/facebook/{integration-id}/message?version=2020-09-24
+      ```
+      {: codeblock}
+
+      Check the *Generated callback URL* field in the Facebook Messenger integration setup page for the full URL to use, which includes the appropriate `{location}` and `{integration-id}` values for your instance.
+
+  - For a Phone integration, if you connect to existing speech service instances, make sure those speech services use credentials that were generated with the latest endpoint syntax (a URL that starts with `https://api.{location}.speech-to-text.watson.cloud.ibm.com/`).
+
+  - For a search skill, if you connect to an existing {{site.data.keyword.discoveryshort}} service instance, make sure the {{site.data.keyword.discoveryshort}} service uses credentials that were generated with the supported syntax (a URL that starts with `https://api.{location}.discovery.watson.cloud.ibm.com/`).
+
+  - If you are using [Jupyter notebooks](/docs/assistant?topic=assistant-logs-resources#logs-resources-jupyter-logs) to do advanced analytics, check your Jupyter notebook files to make sure they don't specify URLs with the old `watsonplatform.net` syntax. If so, update your files.
+
+  - No action is required for the following integration types: 
+  
+    - Intercom
+    - SMS with Twilio
+    - WhatsApp with Twilio
+    - Zendesk service desk connection from web chat
+
+  If you need more time to complete your implementation work, contact Erik Didriksen (edidrik@us.ibm.com) and Jerre Schoudt (jschoudt@us.ibm.com) to request an extension. Be ready to share the implementation plan you will follow to meet your requested extension date.
 
 ## 23 March 2021
 {: #23March2021}
