@@ -142,6 +142,8 @@ The change log lists changes that were made this year, ordered by the date they 
     - WhatsApp with Twilio
     - Zendesk service desk connection from web chat
 
+  If you need more time to complete your implementation work, contact Erik Didriksen (edidrik@us.ibm.com) and Jerre Schoudt (jschoudt@us.ibm.com to request an extension. Be ready to share the implementation plan you will follow to meet your requested extension date.
+
 ## 23 March 2021
 {: #23March2021}
 <!--1.141-->
