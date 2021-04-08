@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-03"
+lastupdated: "2021-04-08"
 
 subcollection: assistant
 
@@ -23,7 +23,7 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Integrating with WhatsApp ![Beta](images/beta.png)
+# Integrating with WhatsApp
 {: #deploy-whatsapp}
 
 Integrate with Whatsapp messaging so your assistant can exchange messages with your customers where they are.
@@ -32,9 +32,6 @@ Integrate with Whatsapp messaging so your assistant can exchange messages with y
 Many customers use WhatsApp because it provides fast, simple, secure messaging for free, and is available on phones all over the world. WhatsApp uses the phone Internet connection to send messages so customers can avoid SMS fees.
 
 This integration creates a connection between your assistant and WhatsApp by using Twilio as a provider.
-
-This integration is available as a beta feature.
-{: note}
 
 ## Before you begin
 {: #deploy-whatsapp-twilio-setup}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-18"
+lastupdated: "2021-04-08"
 
 keywords: deploy, deploying
 
@@ -59,7 +59,7 @@ Follow these steps to add integrations to your assistant:
     - [Slack](/docs/assistant?topic=assistant-deploy-slack)
     - [Phone](/docs/assistant?topic=assistant-deploy-phone)
     - [SMS with Twilio](/docs/assistant?topic=assistant-deploy-sms)
-    - [WhatsApp with Twilio](/docs/assistant?topic=assistant-deploy-whatsapp) ![Beta](images/beta.png)
+    - [WhatsApp with Twilio](/docs/assistant?topic=assistant-deploy-whatsapp)
     - [Custom application](/docs/assistant?topic=assistant-deploy-custom-app)
 
     Built-in service desk integrations:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-18"
+lastupdated: "2021-04-08"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -448,7 +448,7 @@ To add a *Connect to human agent* response type, complete the following steps:
 1.  **Optional**. Add a message to share with the human agent to whom the conversation is transferred in the **Message to human agent** field.
 1.  Add a message to show to the customer to explain that they are being transferred. 
 
-    You can add a message to show when agents are available and a message to show when agents are unavailable. Each message can be up to 100 characters in length.
+    You can add a message to show when agents are available and a message to show when agents are unavailable. Each message can be up to 320 characters in length.
 
     **Web chat built-in service desk integrations only**: The text you add to the *Response when agents are online* and *Response when no agents are online* fields is used for transfers in web chat version 3 and later. If you don't add your own messages, the hint text (the grayed out text that is displayed as the example messages) is used.
     
