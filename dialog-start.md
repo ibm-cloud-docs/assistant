@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-04-08"
 
 subcollection: assistant
 
@@ -37,28 +37,33 @@ When you add a dialog to your dialog skill, the following dialog nodes are added
 ## Starting the conversation
 {: #dialog-start-welcome}
 
-The response you define for the Welcome node in the dialog is displayed to initiate a conversation from the "Try it out" pane, and from other integrations, like *Web chat* or *Preview*. However, it is not displayed from the *Slack* and *Facebook* integrations because nodes with the `welcome` special condition are skipped in dialog flows that are started by users. Assistants that are deployed to messaging channels typically wait for users to initiate conversations with them, not the other way around.
+The Welcome node is defined using the `welcome` special condition, which is triggered when the assistant, rather than the user, starts the conversation. This happens when the integration or client application starts the session with an empty message and then waits for the assistant to greet the user, as in the following situations:
 
-Unlike the `welcome` special condition, the `conversation_start` special condition is always triggered at the start of a dialog. You can use a combination of nodes with these two special conditions (`welcome` and `conversation_start`) to manage the start of your dialog in a consistent way.
+- *Preview* integration
+- "Try it out" pane
+- *Web chat* integration with home screen disabled
+
+However, the Welcome node is skipped in situations when the user initiates the conversation by sending a message, such as with the *Slack* and *Facebook* integrations. It is also skipped when using the *Web chat* integration with the home screen enabled, because in this situation the home screen provides the greeting. (Note that the home screen is enabled by default.)
+
+Unlike the `welcome` special condition, the `conversation_start` special condition is always triggered at the start of a conversation. You can use a combination of nodes with these two special conditions (`welcome` and `conversation_start`) to manage the start of your dialog in a consistent way.
 
 For more information, see [Special conditions](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-special-conditions).
 
-You cannot use the built-in Welcome node to start a dialog in the Slack and Facebook integrations. Use this workaround instead.
-{: tip}
+### Setting initial context
 
-Complete the following steps to manage the dialog start:
+If you need to set initial context variables at the beginning of each conversation, make sure you do so in a way that works with all of the integrations you plan to use. Do not use the Welcome node to set initial context variables unless you are certain your dialog will only be accessed in situations where the `welcome` special condition is triggered.
+
+A safer and more consistent approach is to always set any initial context in a node defined using the `conversation_start` special condition, which is always triggered. You can use this node in addition to a Welcome node that displays a greeting.
+
+To manage the start of any conversation regardless of integration, follow these steps:
 
 1.  Add a dialog node above the Welcome node that is automatically added to the top of the dialog tree when you create the dialog.
 
-1.  Set the node condition for this newly added node to `conversation_start`, which is a special condition as described earlier.
+1.  Set the node condition for this newly added node to `conversation_start`. This node will be reliably triggered at the beginning of any conversation.
 
 1.  Define any context variables that you want to set with default values for the dialog in the `conversation_start` node.
 
-    Be sure to define context variables in the conversation_start node because it is always processed regardless of who starts the conversation.
-
-1.  Do not define a text response for this node.
-
-1.  Configure this node to jump to the `Welcome` node directly below it in the dialog tree, and choose **If assistant recognizes (condition)**.
+1.  Do not define a text response for this node. Instead, configure this node to jump to the `Welcome` node directly below it in the dialog tree, and choose **If assistant recognizes (condition)**.
 
 ![Screenshot of the dialog tree with a conversation_start node jumping to a welcome node below it.](images/dialog-start.png)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-04-08"
 
 subcollection: assistant
 
@@ -92,9 +92,11 @@ To add the assistant to a web page on your company website, complete the followi
 
     Click **Save**.
 
-1.  **Optional**: Add a home screen to the chat window. Click the **Home screen** tab to turn on the feature.
+1.  Configure the home screen for the chat window.
 
-    The home screen helps to ease your customers into a conversation with your assistant. You can add a greeting and a list of quick conversation starter questions for customers to click. For more information, see [Adding a home screen](#deploy-web-chat-home-screen).
+    The home screen helps to ease your customers into a conversation with your assistant. You can add a greeting and a list of quick conversation starter questions for customers to click. For more information, see [Configuring the home screen](#deploy-web-chat-home-screen).
+
+    If you don't want to use a home screen, go to the **Home screen** tab and toggle the switch to **Off**.
 
 1.  **Optional**: To configure support for transferring conversations to a service desk agent, click the **Live agent** tab. For more information, see [Adding service desk support](#deploy-web-chat-haa).
 
@@ -168,20 +170,14 @@ To add the assistant to a web page on your company website, complete the followi
 
 A developer can use APIs to apply more advanced customizations to the style of the web chat. For more information, see [Applying advanced customizations](/docs/assistant?topic=assistant-web-chat-config).
 
-## Adding a home screen ![Beta](images/beta.png)
+## Configuring the home screen
 {: #deploy-web-chat-home-screen}
 
-Customers often don't know how to interact with your assistant at first. They aren't sure how to format a question or what types of things they can ask. Don't make them guess. Show them by adding a home screen to the web chat window.
+By default, the web chat window shows a home screen that can welcome users and tell them how to interact with the assistant. The home screen replaces any greeting that would otherwise be sent by a Welcome node in a dialog skill, or by the *Greet customer* system action in an actions skill. (If you prefer to use a Welcome node or a *Greet customer* system action instead of the home screen, you can disable the home screen on the **Home screen** tab.)
 
 ![An example of the home screen](images/home-screen.png)
 
-1.  From the Home screen tab, turn the home screen feature **On**.
-1.  Add a greeting that is engaging and invites the user to interact with your assistant.
-
-    A greeting is required and replaces the greeting that is specified in the welcome node of the dialog.
-    
-    Do not reference context variables in the message. The home screen cannot access contextual information.
-    {: note}
+1.  Add a greeting that is engaging and invites the user to interact with your assistant. A greeting is required.
 
 1.  Add three conversation starter messages.
 
