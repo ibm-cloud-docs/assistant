@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-03"
+lastupdated: "2021-04-08"
 
 subcollection: assistant
 
@@ -60,7 +60,7 @@ The *SMS with Twilio* integration provides a more seamless integration with your
 
 - Starting an SMS-only interaction with an outgoing text
 - Configuring backup locations
-- Reviewing the usage summary page. Use logDNA instead. For more information, see [Viewing logs](#deploy-phone-logs).
+- Reviewing the usage summary page. Use IBM Log Analysis instead. For more information, see [Viewing logs](/docs/assistant?topic=assistant-deploy-phone#deploy-phone-logs).
 
 To migrate from {{site.data.keyword.iva_short}} to the {{site.data.keyword.conversationshort}} *SMS with Twilio* integration, complete the following step:
 
