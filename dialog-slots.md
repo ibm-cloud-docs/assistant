@@ -95,7 +95,7 @@ Using slots produces a more natural dialog flow between the user and your assist
 
     - **Prompt**: Write a statement that elicits the piece of the information you need from the user. After displaying this prompt, the conversation pauses and your assistant waits for the user to respond.
 
-      If you want the prompt to be something other than a text response, you can change the response type by clicking the **Customize slot** ![Customize slot](images/edit-slot.png) icon. Click **Text** to choose a different response type. 
+      If you want the prompt to be something other than a text response, you can change the response type by clicking the **Edit slot** ![Edit slot](images/edit-slot.png) icon. Click **Text** to choose a different response type. 
       
       Response type options:
 
@@ -137,7 +137,7 @@ Using slots produces a more natural dialog flow between the user and your assist
     </tr>
     </table>
 
-1.  **Add slot value validation**: If you want different follow-up statements to be shown based on whether the user provides the information you need in response to the initial slot prompt, you can edit the slot (by clicking the **Customize slot** ![Customize slot](images/edit-slot.png) icon) and define the follow-up statements:
+1.  **Add slot value validation**: If you want different follow-up statements to be shown based on whether the user provides the information you need in response to the initial slot prompt, you can edit the slot (by clicking the **Edit slot** ![Edit slot](images/edit-slot.png) icon) and define the follow-up statements:
 
     - **Found**: Displayed after the user provides the expected information.
 
@@ -288,7 +288,7 @@ To ensure that a slot condition that checks for number mentions deals with zeros
     
     What you check for in the input is also what is saved in the slot context variable. However, in this case, you want only the number (such as `5`) to be saved. You do not want to save `5 > = 0`. To change what is saved, you must edit the value of the context variable.
 
-1.  Open the slot to edit it by clicking the **Customize slot** ![Customize slot](images/edit-slot.png) icon. From the **Options** ![More icon](images/kebab.png) menu, open the JSON editor.
+1.  Open the slot to edit it by clicking the **Edit slot** ![Edit slot](images/edit-slot.png) icon. From the **Options** ![More icon](images/kebab.png) menu, open the JSON editor.
 
 1.  Change the context variable value.
 
@@ -401,7 +401,7 @@ You might want to prompt a user to supply free form text in a dialog node with s
 1.  Optionally, change the context variable name for the slot in the *Save it as* field. For example, you might want to change it to something like `summary`.
 1.  In the *If not present, ask* field, ask the user to provide open-ended information. For example, `Can you summarize the problem?`
 1.  To store the input in the customer's exact words, edit what is saved by using the JSON editor.
-1.  Open the slot to edit it by clicking the **Customize slot** ![Customize slot](images/edit-slot.png) icon. From the **Options** ![More icon](images/kebab.png) menu, open the JSON editor.
+1.  Open the slot to edit it by clicking the **Edit slot** ![Edit slot](images/edit-slot.png) icon. From the **Options** ![More icon](images/kebab.png) menu, open the JSON editor.
 
 1.  Change the context variable value.
 
@@ -486,7 +486,7 @@ When a user input is evaluated, the slot with the first slot condition to match 
 
 For each slot, you can use conditional responses with associated actions to help you extract the information you need from the user. To do so, follow these steps:
 
-1.  Click the **Customize slot** ![Customize slot](images/edit-slot.png) icon for the slot to which you want to add conditional Found and Not found responses.
+1.  Click the **Edit slot** ![Edit slot](images/edit-slot.png) icon for the slot to which you want to add conditional Found and Not found responses.
 1.  From the **More** ![More icon](images/kebab.png) menu, select **Enable conditional responses**.
 1.  Enter the condition and the response to display if the condition is met.
 
