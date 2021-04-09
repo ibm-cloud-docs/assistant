@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-05"
+lastupdated: "2021-04-08"
 
 subcollection: assistant
 content-type: tutorial
@@ -118,13 +118,13 @@ The node that you will add in this step is one that contains slots. Slots provid
 The node you add will collect the information required to make a reservation at a restaurant.
 
 1.  Click the **Dialogs** tab to open the dialog tree.
-1.  Click the More icon ![More options](images/kebab.png) on the **#General_Greetings** node, and then select **Add node below**.
-1.  Start typing `#reservation` in the condition field, and then select it from the list.
+1.  Click the More icon ![More options](images/kebab.png) on the **Welcome** node, and then select **Add node below**.
+1.  Start typing `#reservation` in the **If assistant recognizes** field, and then select it from the list.
     This node will be evaluated if the user input matches the `#reservation` intent.
 1.  Click **Customize**, set the **Slots** switch to **On**, and then click **Apply**.
 
     ![Shows the customize dialog where you turn on slots.](images/slots-toggle-on.png)
-1.  Define the following slots:
+1.  In the **Then check for** section, add the following slots:
 
     <table>
     <caption>Slot details</caption>
@@ -141,7 +141,7 @@ The node you add will collect the information required to make a reservation at 
     <tr>
       <td>@sys-time</td>
       <td>$time</td>
-      <td>What time do you want the reservation to be made for?</td>
+      <td>What time do you want for the reservation?</td>
     </tr>
     </tr>
     <tr>
@@ -151,7 +151,7 @@ The node you add will collect the information required to make a reservation at 
     </tr>
     </table>
 
-1.  As the response, specify `OK. I am making you a reservation for $guests on $date at $time.`
+1.  In the **Assistant responds** section, enter the text response `OK. I am making you a reservation for $guests on $date at $time.`
 
     ![Shows what each slot and the response look like in the tool when filled in as specified.](images/slots-simple-node.png)
 
@@ -161,7 +161,7 @@ The node you add will collect the information required to make a reservation at 
 {: #tutorial-slots-test}
 {: step}
 
-1.  Select the ![Ask Watson](images/ask_watson.png) icon to open the chat pane.
+1.  Click **Try it**.
 1.  Type `i want to make a reservation`.
 
     The assistant recognizes the #reservation intent, and it responds with the prompt for the first slot, `What day would you like to come in?`.
