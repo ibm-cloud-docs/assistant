@@ -33,7 +33,7 @@ subcollection: assistant
 | Language | Language code |
 |----------|---------------|
 | Arabic | ar |
-| Chinese (Simplified | zh-cn |
+| Chinese (Simplified) | zh-cn |
 | Chinese (Traditional) | zh-tw |
 | Czech | cs |
 | Dutch | nl |
