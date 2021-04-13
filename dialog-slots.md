@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-04-13"
 
 keywords: slot, slots
 
@@ -139,9 +139,12 @@ Using slots produces a more natural dialog flow between the user and your assist
 
 1.  **Add slot value validation**: If you want different follow-up statements to be shown based on whether the user provides the information you need in response to the initial slot prompt, you can edit the slot (by clicking the **Customize slot** ![Customize slot](images/edit-slot.png) icon) and define the follow-up statements:
 
-    - **Found**: Displayed after the user provides the expected information.
-
-    - **Not found**: Displayed if the information provided by the user is not understood, or is not provided in the expected format. If the slot is filled successfully, or the user input is understood and handled by a slot handler, then this statement is never displayed.
+    **Found**: Displayed after the user provides the expected information.
+  
+    **Not found**: Displayed only if the information provided by the user is not understood, which means all of the following are true:
+      - None of the active slots in the node are filled successfully
+      - No slot handlers are understood
+      - If digressions away are enabled for the node, no top-level dialog nodes are triggered as a digression from slot filling
 
     For information about how to define conditions and associated actions for *Found* and *Not found* responses, see [Adding conditions to Found and Not found responses](#dialog-slots-handler-next-steps).
 
@@ -490,9 +493,9 @@ For each slot, you can use conditional responses with associated actions to help
 1.  From the **More** ![More icon](images/kebab.png) menu, select **Enable conditional responses**.
 1.  Enter the condition and the response to display if the condition is met.
 
-    **Found example**: The slot is expecting the time for a dinner reservation. You might use @sys-time in the *Check for* field to capture it. To prevent an invalid time from being saved, you can add a conditional response that checks whether the time provided is before the restaurant's last seating time, for example. `@sys-time.after('21:00:00')` The corresponding response might be something like, *Our last seating is at 9PM.*
-
-    **Not found example**: The slot is expecting a @location entity that accepts a specific set of cities where the restaurant chain has restaurants. The Not found condition might check for @city in case the user specifies a valid city, but one in which the chain has no sites. The corresponding response might be, *We have no restaurants in that location.*
+    **Found example**: A slot is expecting the time for a dinner reservation. You might use @sys-time in the *Check for* field to capture it. To prevent an invalid time from being saved, you can add a conditional response that checks whether the time provided is before the restaurant's last seating time, for example, `@sys-time.after('21:00:00')`. The corresponding response might be something like, *Our last seating is at 9PM.*
+    
+    **Not found example**: The slot is expecting a @sys-number entity for the number of pizzas in a takeout order. The Not found condition of `true` might be used to display a message prompting the user, just in case a number isn't provided in the conversation, for example: `We need to know how many pizzas you want.`
 
 1.  If you want to customize what happens next if the condition is met, then click the **Edit response** ![Edit response](images/edit-slot.png) icon.
 
