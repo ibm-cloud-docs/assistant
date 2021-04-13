@@ -495,7 +495,7 @@ For each slot, you can use conditional responses with associated actions to help
 
     **Found example**: A slot is expecting the time for a dinner reservation. You might use @sys-time in the *Check for* field to capture it. To prevent an invalid time from being saved, you can add a conditional response that checks whether the time provided is before the restaurant's last seating time, for example, `@sys-time.after('21:00:00')`. The corresponding response might be something like, *Our last seating is at 9PM.*
     
-    **Not found example**: The slot is expecting a @sys-number entity for the number of pizzas in a takeout order. The Not found condition of `true` might be used to display a message prompting the user, just in case a number isn't provided in the conversation, for example: `We need to know how many pizzas you want.`
+    **Not found example**: The slot is expecting a @sys-number entity for the number of pizzas in a takeout order. The Not found condition of `true` might be used to display a message prompting the user, just in case a number isn't provided in the conversation (for example, `We need to know how many pizzas you want.`).
 
 1.  If you want to customize what happens next if the condition is met, then click the **Edit response** ![Edit response](images/edit-slot.png) icon.
 
