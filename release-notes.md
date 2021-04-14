@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-14"
 
 subcollection: assistant
 
@@ -62,6 +62,11 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #release-notes-tooling-changes}
 
 The change log lists changes that were made this year, ordered by the date they were released.
+
+## 14 April 2021
+{: #14April2021}
+<!--1.144-->
+- **Actions skill improvement**: Actions now include a free text response type, allowing you to capture special instructions or requests that a customer wants to pass along.
 
 ## 8 April 2021
 {: #8April2021}

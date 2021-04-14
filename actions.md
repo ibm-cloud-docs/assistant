@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-04-14"
 
 subcollection: assistant
 
@@ -172,16 +172,6 @@ To delete a step, complete the following steps:
 
 Guide the customer to provide the right type of information by adding a customer response type definition. The following response types are supported:
 
-- **Numbers**: Collects a single numeric value. 
-
-  The customer can specify the number value in either numerals (`100`) or words (`one hundred`). Negative and decimal values are recognized, but percent values (`2%` or `2 percent`) are not. If you expect the user to provide a percent value, add an instruction to ask that percent values be specified in decimals (use `0.02` to specify `2%`).
-
-  If your action asks for a number more than once, always show the step response text or your assistant can get confused. 
-  
-  For example, you might have an action that helps with hotel bookings. One step asks for the number of guests and another step asks for the number of nights. If you skip asking, the assistant can mistake the number that applies to guests for being the number that applies to nights. The actions skill cannot currently determine from context which number belongs to which step. 
-  
-  Click **Edit response**, select **Always ask for this number, regardless of earlier messages**, and then click **Apply**.
-
 - **Options**: Presents a set of acceptable answers that customers can choose from.
     
   You can help your assistant recognize variations of an option value that customers might enter. For each option that you add, add synonyms in a comma-separated list.
@@ -226,6 +216,20 @@ Guide the customer to provide the right type of information by adding a customer
   If your action asks for the same type of data in more than one step, select the **Always ask for this information, regardless of earlier messages** option in the later step. This prevents your assistant from assuming the wrong things. For example, if Step 3 asks for the shirt color that the customer wants to buy and step 5 asks for the tie color, click **Always ask for this** in Step 5. Otherwise, the color that the customer specifies for the shirt in Step 3 is used automatically for the tie. And who wants to wear the same color shirt and tie together?
 
   When you use the built-in integrations, if you define 5 or fewer options, they are displayed as buttons. For more than 5 options, a list is displayed. If you are using a custom client application, you must specify how you want the options to be displayed.
+
+- **Free text**: Users can write any response in text.
+
+  Used for ordinary text responses, such as capturing special instructions or requests that a customer wants to pass along.
+
+- **Number**: Collects a single numeric value. 
+
+  The customer can specify the number value in either numerals (`100`) or words (`one hundred`). Negative and decimal values are recognized, but percent values (`2%` or `2 percent`) are not. If you expect the user to provide a percent value, add an instruction to ask that percent values be specified in decimals (use `0.02` to specify `2%`).
+
+  If your action asks for a number more than once, always show the step response text or your assistant can get confused. 
+  
+  For example, you might have an action that helps with hotel bookings. One step asks for the number of guests and another step asks for the number of nights. If you skip asking, the assistant can mistake the number that applies to guests for being the number that applies to nights. The actions skill cannot currently determine from context which number belongs to which step. 
+  
+  Click **Edit response**, select **Always ask for this number, regardless of earlier messages**, and then click **Apply**.
 
 #### Customizing validation
 {: #actions-response-types-validation}

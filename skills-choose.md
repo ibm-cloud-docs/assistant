@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-04"
+lastupdated: "2021-04-14"
 
 subcollection: assistant
 
@@ -69,7 +69,7 @@ Over time, the actions skill will have greater feature parity with the dialog sk
 | Collect numbers (@sys-number detection) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Detection of other system entities | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Connect to human agent response type | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Free text response type | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Free text response type | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Image response type | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Options response type | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Search skill response type | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
