@@ -219,7 +219,7 @@ Guide the customer to provide the right type of information by adding a customer
 
 - **Free text**: Users can write any response in text.
 
-  Used for ordinary text responses, for example, to capture special instructions or requests that a customer wants to pass along.
+  Used for ordinary text responses, such as capturing special instructions or requests that a customer wants to pass along.
 
 - **Number**: Collects a single numeric value. 
 
