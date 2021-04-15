@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-01"
+lastupdated: "2021-04-14"
 
 subcollection: assistant
 
@@ -65,6 +65,10 @@ Table 2 describes the context variables that are set from your dialog. Table 3 d
 
 | Context variable name | Description |
 | --------------------- | ----------- |
+| `smsTenantPhoneNumber` | The integration tenant phone number that the user is messaging. |
+| `smsUserPhoneNumber` | The phone number of the user that is exchanging messages with the integration. |
+| `smsUserData` | Data in JSON format to be passed verbatim to the service orchestration engine or Watson Assistant service. This variable is sent only if the session is started from the integration tenant and the data is sent through the REST API. |
+| `smsSessionTimeoutCount` | The session timeout value. This variable is sent only if the timeout value is defined through the REST API. |
 | `smsError` | When the integration fails to send an SMS message, this variable contains details about the error that occurred.  |
 | `smsSessionID` | The globally unique identifier (GUID) for the related SMS Gateway session. |
 | `smsMedia` | The `arraylist` of `mediaURL` and corresponding `mediaContentType`. This context variable is cleared at the end of each conversation turn. |
