@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-04"
+lastupdated: "2021-04-16"
 
 subcollection: assistant
 
@@ -32,23 +32,8 @@ Learn about system entities that are provided by IBM for you to use out of the b
 
 For information about how to add system entities to your dialog skill, see [Creating entities](/docs/assistant?topic=assistant-entities#entities-enable-system-entities).
 
-## Replacing legacy system entities
-{: #system-entities-legacy}
-
-In January 2020, this new version of the system entities was introduced. These revised system entities offer better date and time understanding and can classify mentions with more precision. For more information about the legacy version, see [Legacy system entities](/docs/assistant?topic=assistant-legacy-system-entities).
-
-- The new system entities are enabled automatically in new dialog skills of all languages.
-- Only Korean dialog skills that were created before 27 May 2020 continue to use the legacy version of the system entities.
-
-As of December 2020, only the new version of the system entities is supported for Arabic, Brazilian Portuguese, Chinese, Czech, Dutch, English, French, German, Italian, Japanese, and Spanish dialog skills. The option to switch to using the legacy version is no longer available. 
-
-**For Korean dialog skills only**: Update any skills that continue to use the legacy system entities. To do so, complete the following steps:
-
-1.  Go to **Options>System Entities**.
-
-    This option is available only in Korean dialog skills.
-    {: note}
-1.  Select **Use new system entities**. 
+In January 2020, a new version of the system entities was introduced. As of April 2021, only the new version of the system entities is supported for all languages. The option to switch to using the legacy version is no longer available. 
+{: note}
 
 For information about how to use contextual entities to identify people and location names, see the [Detecting Names And Locations With Watson Assistant](https://medium.com/ibm-watson/detecting-names-and-locations-with-watson-assistant-e3e1fa2a8427){: external} blog post on Medium.
 
