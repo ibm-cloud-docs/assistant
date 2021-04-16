@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-04-16"
 
 subcollection: assistant
 
@@ -65,7 +65,7 @@ Each element of a response is of one of the supported response types (currently 
 
 This section describes the available response types and how they are represented in the `/message` API response JSON. (If you are using the Watson SDK, you can use the interfaces provided for your language to access the same objects.)
 
-The examples in this section show the format of the JSON data returned from the `/message API` at run time. Keep in mind that this is different from the JSON format used to define responses within a dialog node. For more information, see [Defining responses using the JSON editor](/docs/assistant?topic=assistant-dialog-responses-json)).
+The examples in this section show the format of the JSON data returned from the `/message API` at run time, and is different from the JSON format used to define responses within a dialog node. You can use the format in the examples to update `output.generic` with [webhooks](/docs/assistant?topic=assistant-dialog-webhooks#dialog-webhooks-outputgeneric). To update `output.generic` using the JSON editor, see [Defining responses using the JSON editor](/docs/assistant?topic=assistant-dialog-responses-json)).
 {: note}
 
 ### Text

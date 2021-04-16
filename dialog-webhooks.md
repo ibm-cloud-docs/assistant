@@ -349,3 +349,8 @@ The following tips will help you call a {{site.data.keyword.openwhisk_short}} we
     </table>
 
 1.  When you are done, click the X to close the node. Your changes are automatically saved.
+
+## Updating output.generic with a webhook
+{: #dialog-webhooks-outputgeneric}
+
+You can use a webhook to update `output.generic` and provide dynamic responses. The blog article [How to Dynamically Add Response Options to Dialog Nodes in Watson Assistant](https://medium.com/ibm-data-ai/how-to-dynamically-add-response-options-to-dialog-nodes-in-watson-assistant-e14c5e08beca) shows you how.
