@@ -78,6 +78,8 @@ The change log lists changes that were made this year, ordered by the date they 
 
 - **Connect to human agent response type allows more text**: In a dialog skill, the response type *Connect to human agent* now allows 320 characters in the *Response when agents are online* and *Response when no agents are online* fields. The previous limit was 100 characters.
 
+- **Legacy system entities deprecated**: In January 2020, a new version of the system entities was introduced. As of April 2021, only the new version of the system entities is supported for all languages. The option to switch to using the legacy version is no longer available.  
+
 ## 6 April 2021
 {: #6April2021}
 
