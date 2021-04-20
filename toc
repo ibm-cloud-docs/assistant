@@ -135,6 +135,7 @@ Watson Assistant (Managed)
             dialog-sms-actions.md
             dialog-actions-client.md
             dialog-responses-json.md
+            api-dialog-modify.md
 
         {: .topicgroup}
         Web chat development
@@ -150,7 +151,6 @@ Watson Assistant (Managed)
             api-migration.md
             api-context.md
             api-dialog-responses.md
-            api-dialog-modify.md
             /watson/watson-using-sdks
 
     {: .topicgroup}
