@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-16"
+lastupdated: "2021-04-22"
 
 subcollection: assistant
 
@@ -62,6 +62,25 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #release-notes-tooling-changes}
 
 The change log lists changes that were made this year, ordered by the date they were released.
+
+## 21 April 2021
+{: #21April2021}
+<!--1.145-->
+- **Preview button for testing your assistant**: For testing your assistant, the new Preview button replaces the previous Preview tile in Integrations.
+
+  ![New preview button](images/rn-preview-button.png)
+
+- **New checklist with steps to go live**: Each assistant includes a checklist that you can use to ensure you're ready to go live.
+
+  ![New steps to go live checklist](images/rn-steps-to-go-live.png)
+
+- **Actions skill improvement**: Actions now include currency and percentage response types.
+
+- **Learn what's new**: The *What's new* choice on the help menu opens a list of highlighting recent features.
+
+  ![What's new choice on help menu](images/rn-whats-new.png)
+
+
 
 ## 14 April 2021
 {: #14April2021}
