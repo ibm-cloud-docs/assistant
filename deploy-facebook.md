@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-04-21"
 
 subcollection: assistant
 
@@ -45,7 +45,7 @@ There is currently no mechanism for identifying users who interact with the assi
 
 If you want to follow along as someone else walks through the deployment steps, watch this 8-minute video.
 
-![Walkthrough of the Facebook deployment steps](https://www.youtube.com/embed/8o-FFU5sYNM){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+![Walkthrough of the Facebook deployment steps](https://www.youtube.com/embed/YyZO7TnA5I0){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=8o-FFU5sYNM&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
