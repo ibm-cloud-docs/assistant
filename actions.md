@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-04-22"
 
 subcollection: assistant
 
@@ -223,13 +223,17 @@ Guide the customer to provide the right type of information by adding a customer
 
 - **Number**: Collects a single numeric value. 
 
-  The customer can specify the number value in either numerals (`100`) or words (`one hundred`). Negative and decimal values are recognized, but percent values (`2%` or `2 percent`) are not. If you expect the user to provide a percent value, add an instruction to ask that percent values be specified in decimals (use `0.02` to specify `2%`).
+  The customer can specify the number value in either numerals (`100`) or words (`one hundred`). Negative and decimal values are recognized.
 
   If your action asks for a number more than once, always show the step response text or your assistant can get confused. 
   
   For example, you might have an action that helps with hotel bookings. One step asks for the number of guests and another step asks for the number of nights. If you skip asking, the assistant can mistake the number that applies to guests for being the number that applies to nights. The actions skill cannot currently determine from context which number belongs to which step. 
   
   Click **Edit response**, select **Always ask for this number, regardless of earlier messages**, and then click **Apply**.
+
+- **Currency**: For currency values in user input. The currency can be expressed with a currency symbol or currency-specific terms, such as `20 cents`, `five dollars`, or `$10`.
+
+- **Percent**: For percentages in user input. The percentage can be expressed in an utterance with the percent symbol or written out using the word `percent`, such as `15%` or `10 percent`.
 
 #### Customizing validation
 {: #actions-response-types-validation}
@@ -536,7 +540,7 @@ Queries you submit through the Preview pane generate `/message` API calls, but t
 If you add only an actions skill to the assistant, the action skill starts the conversation. If you add both a dialog skill and actions skill to an assistant, the dialog skill starts the conversation. You must add calls from the dialog to actions in the actions skill. Only then can your asssistant understand and respond to requests that are addressed by actions that are defined in the actions skill.
 {: important}
 
-You can [call actions in the actions skill from the dialog skill](/docs/assistant?topic=assistant-dialog-call-action). To test how an action behaves when it is called from a dialog skill, test it from the assistant that uses both of the skills together. You cannot recreate the interaction from the Preview pane of the actions skill. First, add the actions and dialog skills to an assistant. Then, you can create a *Preview* integration to test how the two skills interact with one another. Queries you submit through the *Preview* integration do incur charges. For more information about the *Preview* integration, see [Testing your assistant from a web page](/docs/assistant?topic=assistant-deploy-web-link).
+You can [call actions in the actions skill from the dialog skill](/docs/assistant?topic=assistant-dialog-call-action). To test how an action behaves when it is called from a dialog skill, test it from the assistant that uses both of the skills together. You cannot recreate the interaction from the Preview pane of the actions skill. First, add the actions and dialog skills to an assistant. Then, you can use the *Preview* button to test how the two skills interact with one another. Queries you submit through the *Preview* button do incur charges. For more information about the *Preview* button, see [Testing your assistant from a web page](/docs/assistant?topic=assistant-deploy-web-link).
 
 ## Disambiguation
 {: #actions-disambiguation}

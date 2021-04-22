@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-04-22"
 
 subcollection: assistant
 
@@ -25,28 +25,25 @@ subcollection: assistant
 # Testing your assistant
 {: #deploy-web-link}
 
-Use the *Preview* integration to test your assistant.
+Use *Preview* to test your assistant.
 {: shortdesc}
 
-The preview renders your assistant as a web chat and embeds it in a preview web page. You can test the skills that you added to the assistant by entering text into the chat window. The Preview integration also embeds the chat window in a simple IBM-branded web page. You can copy and paste the web page URL into a web browser and share the page with others to enlist help in testing and getting feedback about the assistant.
+The preview renders your assistant as a web chat and embeds it in a preview web page. You can test the skills that you added to the assistant by entering text into the chat window. The preview also embeds the chat window in a simple IBM-branded web page. You can copy and paste the web page URL into a web browser and share the page with others to enlist help in testing and getting feedback about the assistant.
 
-Unlike when you test using the "Try it out" pane, any API calls that result from your interactions with the assistant hosted by the preview integration do incur charges.
+Unlike when you test using the "Try it out" pane, any API calls that result from your interactions with the assistant hosted by the preview do incur charges.
 
-The name of the integration changed in February 2021. If you created a service instance earlier than that, your integration might be named *Preview link*.
-{: note}
-
-## Using the Preview integration to test your assistant
+## Using Preview to test your assistant
 {: #deploy-web-link-try}
 
 To test the assistant from a web-hosted chat widget, complete the following steps:
 
 1.  From the Assistants page, click to open the assistant tile that you want to test.
 
-1.  From the *Integrations* section, click **Add integration**, and then choose the **Preview** tile.
+1.  Click **Preview**.
 
-    The preview integration is added to your first assistant automatically. If you're using the *My first assistant*, click the **Preview** tile to open the integration that was added for you.
+    ![Preview button](images/preview-button.png)
 
-    ![Plus or higher plans only](images/plus.png) For environments where private endpoints are in use, keep in mind that the preview integration sends traffic over the internet. For more information, see [Private network endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints).
+    ![Plus or higher plans only](images/plus.png) For environments where private endpoints are in use, keep in mind that the preview sends traffic over the internet. For more information, see [Private network endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints).
     {: note}
 
 1.  In the *Assistant preview* window, submit test utterances to see how the assistant responds.
@@ -78,20 +75,3 @@ The rich responses that you add to a dialog are displayed in the web-hosted chat
 - **Pause**: This response type pauses the assistant's activity in the chat widget. However, activity does not resume after the pause until another response is triggered. Whenever you include a `pause` response type, add another, different response type, such as `text`, after it.
 
 See [Rich responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more information about response types.
-
-## Adding a preview integration
-{: #deploy-web-link-add-more}
-
-If you want to create another, separate public web page, you can add another preview integration.
-
-1.  From the Assistant tab, click to open the tile for the assistant that you want to deploy.
-
-1.  Click **Add integration**.
-
-1.  Click the **Preview** integration tile.
-
-    A preview page is displayed and a new preview web page is created for you.
-
-1.  Click `x` to close the preview page.
-
-The integration is named *Preview*. You cannot change the name.

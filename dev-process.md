@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-04"
+lastupdated: "2021-04-22"
 
 subcollection: assistant
 
@@ -57,7 +57,7 @@ The typical workflow for an assistant project includes the following steps:
     Saving a version when you reach a development milestone gives you something you can go back to if subsequent changes you make to the skill decrease its effectiveness. See [Creating skill versions](/docs/assistant?topic=assistant-versions).
 1.  Deploy the version of the assistant into a test environment, and test it.
 
-    If you use the preview integration, you can share the URL with others to get their help with testing.
+    If you use the preview, you can share the URL with others to get their help with testing.
 1.  Use metrics from the Analytics tab to find areas for improvement, and make adjustments.
 
     If you need to test alternative approaches to addressing an issue, create a version for each solution, so you can deploy and test each one independently, and compare the results.
