@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-26"
+lastupdated: "2021-04-22"
 
 subcollection: assistant
 
@@ -36,14 +36,14 @@ Many of the pages where you configure or use beta and newly available features c
 
 To share ideas or suggest new features for the {{site.data.keyword.conversationfull}} service, go to the [IBM Data and AI Ideas Portal](https://ibm-data-and-ai.ideas.aha.io/?project=ASSISTANT){: external}.
 
-## Did the documentation help?
+<!--## Did the documentation help?
 {: #feedback-doc}
 
 To provide feedback about the documentation, click the **FEEDBACK** button that is displayed along the edge of the page you are reading and want to comment about.
 
   **Note**: The **FEEDBACK** button is not available when you access the documentation site from mobile devices.
 
-Rate and comment about whether the topic is helpful by clicking **Yes** or **No** at the end of the topic.
+Rate and comment about whether the topic is helpful by clicking **Yes** or **No** at the end of the topic.-->
 
 ## Participate in the early access program
 {: #feedback-beta}
