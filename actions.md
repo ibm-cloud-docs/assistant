@@ -223,13 +223,17 @@ Guide the customer to provide the right type of information by adding a customer
 
 - **Number**: Collects a single numeric value. 
 
-  The customer can specify the number value in either numerals (`100`) or words (`one hundred`). Negative and decimal values are recognized, but percent values (`2%` or `2 percent`) are not. If you expect the user to provide a percent value, add an instruction to ask that percent values be specified in decimals (use `0.02` to specify `2%`).
+  The customer can specify the number value in either numerals (`100`) or words (`one hundred`). Negative and decimal values are recognized.
 
   If your action asks for a number more than once, always show the step response text or your assistant can get confused. 
   
   For example, you might have an action that helps with hotel bookings. One step asks for the number of guests and another step asks for the number of nights. If you skip asking, the assistant can mistake the number that applies to guests for being the number that applies to nights. The actions skill cannot currently determine from context which number belongs to which step. 
   
   Click **Edit response**, select **Always ask for this number, regardless of earlier messages**, and then click **Apply**.
+
+- **Currency**: For currency values in user input. The currency can be expressed with a currency symbol or currency-specific terms, such as `20 cents`, `five dollars`, or `$10`.
+
+- **Percent**: For percentages in user input. The percentage can be expressed in an utterance with the percent symbol or written out using the word percent, such as `15%` or `10 percent`.
 
 #### Customizing validation
 {: #actions-response-types-validation}
