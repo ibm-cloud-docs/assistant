@@ -233,7 +233,7 @@ Guide the customer to provide the right type of information by adding a customer
 
 - **Currency**: For currency values in user input. The currency can be expressed with a currency symbol or currency-specific terms, such as `20 cents`, `five dollars`, or `$10`.
 
-- **Percent**: For percentages in user input. The percentage can be expressed in an utterance with the percent symbol or written out using the word percent, such as `15%` or `10 percent`.
+- **Percent**: For percentages in user input. The percentage can be expressed in an utterance with the percent symbol or written out using the word `percent`, such as `15%` or `10 percent`.
 
 #### Customizing validation
 {: #actions-response-types-validation}
