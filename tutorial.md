@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-04-22"
 
 subcollection: assistant
 content-type: tutorial
@@ -817,8 +817,8 @@ You can add a conditional response that conditions on and includes the user's na
 Now that you have built a more sophisticated version of the assistant, return to the public web page that you deployed as part of the previous tutorial, and then test the new capabilities you added.
 
 1.  Open the assistant.
-1.  From the *Integrations* area, click **Preview**.
-1.  Copy and paste the URL that is displayed on the page into a web browser.
+1.  Click **Preview**.
+1.  Copy and paste the URL from *Share this link* into a web browser.
 
     An IBM-branded page is displayed with your assistant embedded in it as a chat window.
 1.  Repeat a few of the test utterances that you submited to the "Try it out" pane to see how the assistant behaves in a real integration.

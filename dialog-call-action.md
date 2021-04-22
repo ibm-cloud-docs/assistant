@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-04-22"
 
 subcollection: assistant
 
@@ -115,7 +115,7 @@ To take an action that is defined in an actions skill, complete the following st
 
 1.  Click **X** to close the dialog node. Your changes are saved automatically.
 
-Test the interaction between the skills. You cannot test from the "Try it out" pane of the dialog skill, nor from the Preview pane of the action skill. You must test from an assistant-level integration, such as the Preview integration. For more information, see [Testing your assistant from a web page](/docs/assistant?topic=assistant-deploy-web-link).
+Test the interaction between the skills. You cannot test from the "Try it out" pane of the dialog skill, nor from the Preview pane of the action skill. You must use the *Preview* button for the assistant. For more information, see [Testing your assistant from a web page](/docs/assistant?topic=assistant-deploy-web-link).
 
 ## When to call an action from a dialog skill
 {: dialog-call-action-when}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-03-08"
+lastupdated: "2021-04-22"
 
 subcollection: assistant
 
@@ -36,7 +36,7 @@ This feature is available only to paid plan users.
 
 Add a search skill to your assistant to prevent the assistant from having to say things like, `I'm sorry. I can't help you with that`. Instead, the assistant can query existing company documents or data to see whether any useful information can be found and shared with the customer.
 
-![Shows a search result in the Preview integration](images/search-preview-example.png)
+![Shows a search result in the Preview](images/search-preview-example.png)
 
 To show the exact answer highlighted in bold font, enable the *Emphasize the answer* feature that is available with {{site.data.keyword.discoveryshort}} v2 instances.
 {: tip}
@@ -338,7 +338,7 @@ Review this information for help with performing common tasks.
 
     For more tips about improving results, read the [Improve your natural language query results from Watson Discovery](https://developer.ibm.com/blogs/improving-your-natural-language-query-results-from-watson-discovery/){: external} blog post.
 
-- **My response text is surrounded by brackets**: If you notice that your response text is surrounded by brackets and quotation marks (`["My response text"]`) when you test it from the Preview integration, for example, you might need to change the source field that you're using in the configuration. The unexpected formatting indicates that the value is stored in the source document as an array. Any field that you extract text from must contain a value with a String data type, not an Array data type. When the chat integration shows a response that is extracted from a field that stores the data as an array, it does a straight conversion of the array value into a string, which produces a response that includes the array syntax.
+- **My response text is surrounded by brackets**: If you notice that your response text is surrounded by brackets and quotation marks (`["My response text"]`) when you test it from the Preview, for example, you might need to change the source field that you're using in the configuration. The unexpected formatting indicates that the value is stored in the source document as an array. Any field that you extract text from must contain a value with a String data type, not an Array data type. When the chat integration shows a response that is extracted from a field that stores the data as an array, it does a straight conversion of the array value into a string, which produces a response that includes the array syntax.
 
   For example, maybe the field in the source document contains an array with a single text value as its only array element:
 
@@ -419,7 +419,7 @@ The search skill is triggered in the following ways:
 
 After you configure the search, you can send test queries to see the search results that get returned from {{site.data.keyword.discoveryshort}} by using the Preview pane of the search skill.
 
-To test the full experience that customers will have when they ask questions that are either answered by the dialog or trigger a search, use an assistant-level integration, such as the preview integration.
+To test the full experience that customers will have when they ask questions that are either answered by the dialog or trigger a search, use the *Preview* button for your assistant.
 
 You cannot test the full end-to-end user experience from the dialog "Try it out" pane. The search skill is configured separately and attached to an assistant. The dialog skill has no way of knowing the details of the search, and therefore cannot show search results in its "Try it out" pane.
 {: important}

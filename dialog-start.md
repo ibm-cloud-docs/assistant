@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-22"
 
 subcollection: assistant
 
@@ -39,7 +39,7 @@ When you add a dialog to your dialog skill, the following dialog nodes are added
 
 The Welcome node is defined using the `welcome` special condition, which is triggered when the assistant, rather than the user, starts the conversation. This happens when the integration or client application starts the session with an empty message and then waits for the assistant to greet the user, as in the following situations:
 
-- *Preview* integration
+- *Preview* for the assistant
 - "Try it out" pane
 - *Web chat* integration with home screen disabled
 

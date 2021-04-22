@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-22"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -254,9 +254,9 @@ The built-in integrations support the following Markdown syntax elements:
 
 If you don't code a link when you specify a phone number in a text response, it is not converted to a telephone link anywhere except in a web chat integration that is accessed from a mobile device.
 
-The "Try it out" pane does not support Markdown syntax currently. For testing purposes, you can use the *Preview* integration to see how the Markdown syntax is rendered.
+The "Try it out" pane does not support Markdown syntax currently. For testing purposes, you can use the assistant *Preview* to see how the Markdown syntax is rendered.
 
-The "Try it out" pane, and *preview* and *web chat* integrations support HTML syntax. The *Slack* and *Facebook* integrations do not. 
+The "Try it out" pane, assistant *Preview*, and *web chat* integration support HTML syntax. The *Slack* and *Facebook* integrations do not. 
 
 #### Learn more about simple responses
 {: #dialog-overview-variety}
@@ -479,7 +479,7 @@ To add a *Connect to human agent* response type, complete the following steps:
       </tr>
       </table>
 
-The dialog transfer does not occur when you test dialog nodes with this response type in the "Try it out" pane of the dialog skill. You must access a node that uses this response type from an assistant-level integration, such as the Preview, to see how your users will experience it.
+The dialog transfer does not occur when you test dialog nodes with this response type in the "Try it out" pane of the dialog skill. You must access a node that uses this response type from the *Preview* button for the assistant to see how your users will experience it.
 
 ### Adding a *Channel transfer* response type
 {: #dialog-overview-add-channel-transfer}
@@ -739,7 +739,7 @@ To add a *Search skill* response type, complete the following steps:
     ```
     {: codeblock}  
 
-Test this response type from the preview or another assistant-level integration. You cannot test it from the dialog skill's "Try it out" pane. For more information about testing dialog and search skills together, see [Testing your assistant from a web page](/docs/assistant?topic=assistant-deploy-web-link).
+Test this response type from the assistant *Preview*. You cannot test it from the dialog skill's "Try it out" pane. For more information about testing dialog and search skills together, see [Testing your assistant from a web page](/docs/assistant?topic=assistant-deploy-web-link).
 
 ### Conditional responses
 {: #dialog-overview-multiple}

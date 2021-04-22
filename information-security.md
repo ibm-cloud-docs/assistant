@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-04-22"
 
 subcollection: assistant
 
@@ -80,7 +80,7 @@ Removing message data must be an occasional event only for individual customer I
 {: note}
 
 
-- The preview and automatic Facebook integrations do not support the labeling and therefore deletion of data based on customer ID. These integration types should not be used in a solution that must support the ability to delete data based on a customer ID.
+- The assistant preview and automatic Facebook integration do not support the labeling and therefore deletion of data based on customer ID. They should not be used in a solution that must support the ability to delete data based on a customer ID.
 - For Intercom, the `customer_id` is the `user_id` prepended with `intercom_`. The Intercom `user_id` property is the `id` of the `author` message object in the Conversation Model that is defined by Intercom.
   
   - To get the ID, open the channel from a web browser. Open the web developer tools to view the console. Look for `author`.
