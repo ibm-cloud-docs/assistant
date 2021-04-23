@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-23"
 
 keywords: deploy, deploying
 
@@ -43,9 +43,7 @@ Follow these steps to add integrations to your assistant:
 
 1.  Go to the Integrations section.
 
-    **Why do I have *Preview* and *Web chat* integrations?** These integrations are provisioned and added automatically to your first assistant only.
-    
-    The preview embeds your assistant as a simple chat widget in an IBM-branded web page where you can test your assistant.
+    **Why do I have the *Web chat* integration?** This integration is provisioned and added automatically to your first assistant only.
 
     The web chat is a chat window that you can embed in one or more pages on your website to share your assistant with your customers.
 
@@ -53,7 +51,6 @@ Follow these steps to add integrations to your assistant:
 
 1.  Click the tile for the channel with which you want to integrate the assistant. The options include:
 
-    - [Preview](/docs/assistant?topic=assistant-deploy-web-link)
     - [Web chat](/docs/assistant?topic=assistant-deploy-web-chat)
     - [Facebook Messenger](/docs/assistant?topic=assistant-deploy-facebook)
     - [Slack](/docs/assistant?topic=assistant-deploy-slack)
