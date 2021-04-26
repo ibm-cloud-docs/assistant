@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-22"
+lastupdated: "2021-04-26"
 
 subcollection: assistant
 
@@ -158,3 +158,8 @@ An empty JSON object `{}` is returned.
 For more information, see the [API reference](/apidocs/assistant/assistant-v2#deleteuserdata).
 
 **Note:** Delete requests are processed in batches and may take up to 24 hours to complete.
+
+## Web chat usage data
+{: #web-chat-data}
+
+The Watson Assistant web chat sends limited usage data to the [Amplitude service](https://amplitude.com/){: external}. When the web chat widget is being interacted with by a user, we track the features that are being used, and events such as how many times the widget is opened and how many users start conversations. This information does not include Assistant training data or the content of any chat interactions. The information being sent to Amplitude is not Content as defined in the Cloud Service Agreement (CSA); it is Account Usage Information as described in Section 9.d of the CSA and is handled accordingly as described in the [IBM Privacy Statement](https://www.ibm.com/privacy){: external}. The purpose of this information gathering is limited to establishing statistics about use and effectiveness of the web chat and making general improvements.
