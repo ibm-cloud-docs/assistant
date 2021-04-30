@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-30"
 
 subcollection: assistant
 
@@ -66,15 +66,15 @@ To add the assistant to a web page on your company website, complete the followi
 
 1.  **Optional**: Customize the style of the chat window. You can make the following changes:
 
-    - **Public assistant name**. Name by which the assistant is known to users. This name is displayed in the header of the chat window. The name can be up to 18 characters in length. 
+    - **Assistant's name as known by customers**: The name by which the assistant is known to users. This name is displayed in the header of the chat window. The name can be up to 18 characters in length.
 
-    - **Primary color**. Sets the color of the web chat header.
+    - **Primary color**: The color of the web chat header.
 
       Click the white dot to open a color switcher where you can choose a color. The color is saved as an HTML color code, such as `#FF33FC` for pink and `#329A1D` for green. Alternatively, you can add an HTML color code directly to the field to set the color.
 
-    - **Secondary color**: Sets the color of the user input message bubble.
+    - **Secondary color**: The color of the user input message bubble.
 
-    - **Accent color**. Sets the color of interactive elements, including:
+    - **Accent color**: The color of interactive elements, including:
 
       - Chat launcher button that is embedded in your web page
       - Send button associated with the input text field
@@ -85,6 +85,8 @@ To add the assistant to a web page on your company website, complete the followi
       - Typing indicator that is shown to repesent a pause response
 
     Style changes you make are immediately applied to the preview that is shown on the page, so you can see how your choices impact the style of the chat UI.
+
+    - **IBM Watermark**: Enables or disables the **Built with IBM Watson** watermark displayed in the web chat window. The watermark is always enabled for any new web chat integrations on Lite plans.
 
 1.  If you want to add an image that represents your assistant or organization to the web chat header, click **Add an avatar image**. 
 

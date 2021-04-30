@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-20"
+lastupdated: "2021-04-30"
 
 subcollection: assistant
 
@@ -37,6 +37,21 @@ For information about new features and improvements to the core {{site.data.keyw
 {: #release-notes-chat-version}
 
 If you want to evaluate changes that are introduced in a web chat release before you apply them to your deployment, you can set a version of your web chat. For more information, see [Versioning](/docs/assistant?topic=assistant-web-chat-basics#web-chat-basics-versions).
+
+## 4.2.0
+{: #4.2.0}
+
+*Release date: 27 April 2021*
+
+- **Conversation starters in suggestions**: The conversation starters you configure for the home screen are now shown as suggestions. If suggestions are enabled, the conversation starters appear in a new section titled **People are also interested in**. This provides an easy way for customers to change the subject or start the conversation over. For more information about the suggestions feature, see [Showing more suggestions](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-alternate). For more information about the home screen, see [Configuring the home screen](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-home-screen).
+
+- **`onError` callback**: The new `onError` callback option in the web chat configuration enables you to specify a callback function that is called if errors occur in the web chat. This makes it possible for you to handle any errors or outages that occur with the web chat. For more information, see [Listening for errors](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-configuration#onerror-detail){: external}.
+
+- **Session ID available in widget state**: The state information returned by the `getState()` instance method now includes the session ID for the current conversation. For more information, see [instance.getState()](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-instance-methods#getState){: external}.
+
+- **IBM watermark**: The web chat can now display a **Built with IBM Watson** watermark to users. This watermark is always enabled for any new web chat integrations on Lite plans. For more information, see [Create a web chat instance to add to your website](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-task).
+
+- **Fixes to rendering of list items**: The rendering of HTML list items in the web chat widget has been updated.
 
 ## 4.1.0
 {: #4.1.0}
