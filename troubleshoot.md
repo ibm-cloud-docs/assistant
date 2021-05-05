@@ -24,7 +24,7 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 
 # Getting help
-{: #troublehoot}
+{: #troubleshoot}
 
 Get help with solving issues that you encounter while using the product.
 {: shortdesc}
