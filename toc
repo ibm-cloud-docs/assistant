@@ -74,25 +74,34 @@ Watson Assistant (Managed)
     assistant-language.md
 
     {: .topicgroup}
-    Deploying with web chat
-        deploy-web-chat.md
-        deploy-salesforce.md
-        deploy-zendesk.md
-        [Integrating with Genesys Cloud](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/genesys)
-        [Inegrating with NICE inContact](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/incontact)
-        [Integrating with Twilio Flex](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/flex)
-        [Integrating with your own service desk](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter)
+    Deploying
+        deploy-overview.md
 
-    {: .topicgroup}
-    Deploying to other platforms
-        deploy-integration-add.md
-        deploy-facebook.md
-        deploy-intercom.md
-        deploy-phone.md
-        deploy-slack.md
-        deploy-sms.md
-        deploy-whatsapp.md
-        deploy-custom-app.md
+        {: .topicgroup}
+        Deploying to your website
+            deploy-web-chat.md
+            deploy-salesforce.md
+            deploy-zendesk.md
+            [Integrating with Genesys Cloud](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/genesys)
+            [Inegrating with NICE inContact](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/incontact)
+            [Integrating with Twilio Flex](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/flex)
+            [Integrating with your own service desk](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter)
+
+        {: .topicgroup}
+        Deploying for phone
+            deploy-phone.md
+            deploy-phone-flex.md
+    
+        {: .topicgroup}
+        Deploying to other platforms
+            deploy-integration-add.md
+            deploy-facebook.md
+            deploy-intercom.md
+            deploy-slack.md
+            deploy-sms.md
+            deploy-whatsapp.md
+            deploy-custom-app.md
+        
         deploy-integration-delete.md
 
     {: .topicgroup}
