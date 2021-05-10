@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-16"
+lastupdated: "2021-05-10"
 
 subcollection: assistant
 
@@ -281,29 +281,29 @@ The SIP trunk provider sets up a SIP trunk for your voice traffic, and manages a
 
 If you choose to use a SIP trunk carrier that IBM does not have an established relationship with, you can do so.
 
-The following table lists the fully qualified domain names and IP addresses that are used for SIP connections.
+The following table lists the fully qualified domain names that are used for SIP connections.
 
-| Location | Domain name | IP address |
+| Location | Domain name |
 |----------|------|------------|
-| Dallas | public.0001.voip.us-south.assistant.watson.cloud.ibm.com | 150.239.30.146 |
-| Dallas | public.0002.voip.us-south.assistant.watson.cloud.ibm.com | 169.63.5.162 |
-| Dallas | public.0003.voip.us-south.assistant.watson.cloud.ibm.com | 67.228.108.82 |
-| Frankfurt | public.0001.voip.eu-de.assistant.watson.cloud.ibm.com | 169.50.56.146 |
-| Frankfurt | public.0002.voip.eu-de.assistant.watson.cloud.ibm.com | 161.156.178.162 |
-| Frankfurt | public.0003.voip.eu-de.assistant.watson.cloud.ibm.com | 149.81.86.82 |
-| London | public.0001.voip.eu-gb.assistant.watson.cloud.ibm.com | 158.175.99.34 |
-| London | public.0002.voip.eu-gb.assistant.watson.cloud.ibm.com | 141.125.102.34 |
-| London | public.0003.voip.eu-gb.assistant.watson.cloud.ibm.com | 158.176.120.162 |
-| Seoul | public.0001.voip.kr-seo.assistant.watson.cloud.ibm.com | 169.56.85.50 |
-| Sydney | public.0001.voip.au-syd.assistant.watson.cloud.ibm.com | 168.1.47.2 |
-| Sydney | public.0002.voip.au-syd.assistant.watson.cloud.ibm.com | 168.1.106.130 |
-| Sydney | public.0003.voip.au-syd.assistant.watson.cloud.ibm.com | 135.90.86.50 |
-| Tokyo | public.0001.voip.jp-tok.assistant.watson.cloud.ibm.com | 161.202.149.162 |
-| Tokyo | public.0002.voip.jp-tok.assistant.watson.cloud.ibm.com | 128.168.105.178 |
-| Tokyo | public.0003.voip.jp-tok.assistant.watson.cloud.ibm.com | 165.192.69.82 |
-| Washington, DC | public.0001.voip.us-east.assistant.watson.cloud.ibm.com | 52.116.100.158 |
-| Washington, DC | public.0002.voip.us-east.assistant.watson.cloud.ibm.com | 169.59.136.194 |
-| Washington, DC | public.0003.voip.us-east.assistant.watson.cloud.ibm.com | 169.61.70.162 |
+| Dallas | public.0001.voip.us-south.assistant.watson.cloud.ibm.com |
+| Dallas | public.0002.voip.us-south.assistant.watson.cloud.ibm.com |
+| Dallas | public.0003.voip.us-south.assistant.watson.cloud.ibm.com |
+| Frankfurt | public.0001.voip.eu-de.assistant.watson.cloud.ibm.com |
+| Frankfurt | public.0002.voip.eu-de.assistant.watson.cloud.ibm.com |
+| Frankfurt | public.0003.voip.eu-de.assistant.watson.cloud.ibm.com |
+| London | public.0001.voip.eu-gb.assistant.watson.cloud.ibm.com |
+| London | public.0002.voip.eu-gb.assistant.watson.cloud.ibm.com |
+| London | public.0003.voip.eu-gb.assistant.watson.cloud.ibm.com |
+| Seoul | public.0001.voip.kr-seo.assistant.watson.cloud.ibm.com |
+| Sydney | public.0001.voip.au-syd.assistant.watson.cloud.ibm.com |
+| Sydney | public.0002.voip.au-syd.assistant.watson.cloud.ibm.com |
+| Sydney | public.0003.voip.au-syd.assistant.watson.cloud.ibm.com |
+| Tokyo | public.0001.voip.jp-tok.assistant.watson.cloud.ibm.com |
+| Tokyo | public.0002.voip.jp-tok.assistant.watson.cloud.ibm.com |
+| Tokyo | public.0003.voip.jp-tok.assistant.watson.cloud.ibm.com |
+| Washington, DC | public.0001.voip.us-east.assistant.watson.cloud.ibm.com |
+| Washington, DC | public.0002.voip.us-east.assistant.watson.cloud.ibm.com |
+| Washington, DC | public.0003.voip.us-east.assistant.watson.cloud.ibm.com |
 {: caption="SIP network information" caption-side="top"}
 
 ### Migrating from Voice Agent with Watson
