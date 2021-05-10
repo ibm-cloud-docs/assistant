@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-30"
+lastupdated: "2021-05-10"
 
 subcollection: assistant
 
@@ -37,6 +37,13 @@ For information about new features and improvements to the core {{site.data.keyw
 {: #release-notes-chat-version}
 
 If you want to evaluate changes that are introduced in a web chat release before you apply them to your deployment, you can set a version of your web chat. For more information, see [Versioning](/docs/assistant?topic=assistant-web-chat-basics#web-chat-basics-versions).
+
+## 4.2.1
+{: #4.2.1}
+
+*Release date: 6 May 2021*
+
+- **Service URLs updated**: The URLs used by the web chat to communicate with the Assistant service have been updated to remove the dependency on the deprecated `watsonplatform.net` domain. This change applies retroactively to version 3.3.0 and all subsequent web chat releases.
 
 ## 4.2.0
 {: #4.2.0}
