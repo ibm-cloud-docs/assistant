@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-05-11"
 
 subcollection: assistant
 
@@ -57,13 +57,14 @@ For information about how to call a client application, see [Calling a client ap
 {: #dialog-webhooks-create}
 
 You can define one webhook URL for a dialog skill, and then call the webhook from one or more dialog nodes.
-
+If the external service supports only GET requests, a workaround would be to create an intermediate service that accepts a POST request from the dialog, makes a GET request to the target service, and then returns the response to the dialog.
 The programmatic call to the external service must meet these requirements:
 
 - The call must be a POST HTTP request.
-- The format of the request and response must be in JSON. For example: `Content-Type: application/json`.
+- The request body must be a JSON object (`Content-Type: application/json`).
+- Any URL parameters must be hardcoded in the webhook configuration. If you need to specify URL parameters dynamically using runtime values, consider creating an intermediate service that acceps a JSON payload containing these runtime values. The intermediate service can then make a request to the target service, passing these values as URL parameters, and then return the response to the dialog.
+- The response must be a JSON object (`Accept: application/json`).
 - The call must return in **8 seconds or less**.
-
   For less efficient services that you need to call, you can manage the call through a client application and pass the information to the dialog as a separate step. For more information, see [Calling a client application from a dialog node](/docs/assistant?topic=assistant-dialog-actions-client).
   {: tip}
 
@@ -86,7 +87,7 @@ To add the webhook details, complete the following steps:
 
 1.  In the Headers section, add any headers that you want to pass to the service one at a time by clicking **Add header**.
 
-    For example, add a header that indicates that you want the resulting value to be returned in JSON format.
+    For example, this header indicates that the request is in JSON format.
 
     <table>
     <caption>Header example</caption>
@@ -325,7 +326,7 @@ The following tips will help you call a {{site.data.keyword.openwhisk_short}} we
       </tr>
     </table>
 
-    When calling a {{site.data.keyword.openwhisk_short}} web action, you cannot pass parameters with the same key as parameters that are defined as part of the web action. See [Protected parameters](/docs/openwhisk?topic=openwhisk-actions_web#protected-parameters){: external} for more details.
+    When calling a {{site.data.keyword.openwhisk_short}} web action, you cannot pass parameters with the same key as parameters that are defined as part of the web action. See [Protected parameters](/docs/openwhisk?topic=openwhisk-actions_web#actions_web_protect_parameters){: external} for more details.
     {: note}
 
 1.  You can edit the dialog node response to include only the section of the response that you want to display to users. 
