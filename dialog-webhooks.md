@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-05-12"
 
 subcollection: assistant
 
@@ -57,16 +57,19 @@ For information about how to call a client application, see [Calling a client ap
 {: #dialog-webhooks-create}
 
 You can define one webhook URL for a dialog skill, and then call the webhook from one or more dialog nodes.
-If the external service supports only GET requests, a workaround would be to create an intermediate service that accepts a POST request from the dialog, makes a GET request to the target service, and then returns the response to the dialog.
+
 The programmatic call to the external service must meet these requirements:
 
 - The call must be a POST HTTP request.
 - The request body must be a JSON object (`Content-Type: application/json`).
-- Any URL parameters must be hardcoded in the webhook configuration. If you need to specify URL parameters dynamically using runtime values, consider creating an intermediate service that acceps a JSON payload containing these runtime values. The intermediate service can then make a request to the target service, passing these values as URL parameters, and then return the response to the dialog.
 - The response must be a JSON object (`Accept: application/json`).
 - The call must return in **8 seconds or less**.
-  For less efficient services that you need to call, you can manage the call through a client application and pass the information to the dialog as a separate step. For more information, see [Calling a client application from a dialog node](/docs/assistant?topic=assistant-dialog-actions-client).
-  {: tip}
+
+If your external service supports only GET requests, or if you need to specify URL parameters dynamically at run time, consider creating an intermediate service that accepts a POST request with a JSON payload containing any runtime values. The intermediate service can then make a request to the target service, passing these values as URL parameters, and then return the response to the dialog.
+{: tip}
+
+If you need to call a service that might not return within 8 seconds, you can manage the call through a custom client application and pass the information to the dialog as a separate step. For more information, see [Calling a client application from a dialog node](/docs/assistant?topic=assistant-dialog-actions-client).
+{: tip}
 
 To add the webhook details, complete the following steps:
 
