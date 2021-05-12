@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-05-12"
 
 subcollection: assistant
 
@@ -43,7 +43,7 @@ If you want to evaluate changes that are introduced in a web chat release before
 
 *Release date: 6 May 2021*
 
-- **Service URLs updated**: The URLs used by the web chat to communicate with the Assistant service have been updated to remove the dependency on the deprecated `watsonplatform.net` domain. This change applies retroactively to version 3.3.0 and all subsequent web chat releases.
+- **Service URLs updated**: The URLs used by the web chat to communicate with the Assistant service have been updated to remove the dependency on the deprecated `watsonplatform.net` domain. This change applies retroactively to version 3.3.0 and all subsequent web chat releases. Make sure the system that hosts the web chat widget has access to the new URL; for more information, see [Deploy your assistant in production](/docs/assistant?topic=assistant-deploy-web-chat#ddeploy-web-chat-snippet).
 
 ## 4.2.0
 {: #4.2.0}
