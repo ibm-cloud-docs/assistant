@@ -62,7 +62,6 @@ The programmatic call to the external service must meet these requirements:
 
 - The call must be a POST HTTP request.
 - The request body must be a JSON object (`Content-Type: application/json`).
-- Any URL parameters must be hardcoded in the webhook configuration.
 - The response must be a JSON object (`Accept: application/json`).
 - The call must return in **8 seconds or less**.
 
