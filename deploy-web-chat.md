@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-30"
+lastupdated: "2021-05-12"
 
 subcollection: assistant
 
@@ -118,6 +118,11 @@ To add the assistant to a web page on your company website, complete the followi
 
 ## Deploy your assistant in production
 {: #deploy-web-chat-snippet}
+
+1. If the system that hosts your website has limited Internet access (for example, if you use a proxy or firewall), make sure the following URLs are accessible:
+
+    - `https://web-chat.global.assistant.watson.appdomain.cloud`: Hosts the code for the web chat widget, and is referenced by the script you embed on your website.
+    - `https://integrations.{location}.assistant.watson.appdomain.cloud`: Hosts the web chat server, which handles communication with your assistant. Replace `{location}` with the location of the data center where your service instance is located, which is part of the service endpoint URL. For more information, see [Finding and updating the endpoint URL](/docs/watson?topic=watson-endpoint-change#endpoint-find-update){: external}.
 
 1.  Open the HTML source for a web page on your website where you want the chat window to be displayed. Paste the code snippet into the page.
 
