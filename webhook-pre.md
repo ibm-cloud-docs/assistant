@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-23"
+lastupdated: "2021-05-18"
 
 keywords: pre webhook, prewebhook, pre-webhook
 
@@ -57,14 +57,14 @@ You can define one webhook URL to use for preprocessing every incoming message.
 The programmatic call to the external service must meet these requirements:
 
 - The call must be a POST HTTP request.
-- The call must be completed in 8 seconds or less.
-- The format of the request and response must be in JSON. For example: `Content-Type: application/json`.
+- The request body must be a JSON object (`Content-Type: application/json`).
+- The call must return in **8 seconds or less**.
+
+If your external service supports only GET requests, or if you need to specify URL parameters dynamically at run time, consider creating an intermediate service that accepts a POST request with a JSON payload containing any runtime values. The intermediate service can then make a request to the target service, passing these values as URL parameters, and then return the response to the dialog.
+{: tip}
 
 Do not set up and test your webhook in a production environment where the assistant is deployed and is interacting with customers.
 {: important}
-
-Use an external service that can execute and return a result in less than 8 seconds. Otherwise, the customer will experience a lag in the conversational exchange.
-{: tip}
 
 To add the webhook details, complete the following steps:
 
@@ -172,7 +172,7 @@ try {
 ```
 {: codeblock}
 
-## Example request body
+## Request body
 {: #webhook-pre-request-body}
 
 It is useful to know the format of the request body of the premessage webhook so that your external code can process it.
@@ -188,6 +188,24 @@ The payload contains the request body of the `/message` (stateful and stateless)
 }
 ```
 {: codeblock}
+
+## Response body
+{: #webhook-pre-response}
+
+The service that receives the POST request from the webhook must return a JSON object (`Accept: application/json`).
+
+The response body must have the following structure:
+
+```json
+{
+  "body": {
+    ...
+  }
+}
+```
+{: codeblock}
+
+The `body` object in the response should contain the message payload (the object that was received as the content of the `payload` object in the request body). Your code can modify property values in the message payload it received (for example, to update property values, or to add or remove context variables); but the message payload returned to the service must conform to the schema for a request to the `message` method. For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#message).
 
 ## Example 1
 {: #webhook-pre-example1}
