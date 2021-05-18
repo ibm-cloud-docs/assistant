@@ -198,14 +198,14 @@ The response body must have the following structure:
 
 ```json
 {
-  "body": {
+  "payload": {
     ...
   }
 }
 ```
 {: codeblock}
 
-The `body` object in the response should contain the message payload (the object that was received as the content of the `payload` object in the request body). Your code can modify property values in the message payload it received (for example, to update property values, or to add or remove context variables); but the message payload returned to the service must conform to the schema for a request to the `message` method. For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#message).
+The `payload` object in the response should contain the `payload` object that was received in the request body. Your code can modify property values in the message payload it received (for example, to update property values, or to add or remove context variables); but the message payload returned to the service must conform to the schema for a request to the `message` method. For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#message).
 
 ## Example 1
 {: #webhook-pre-example1}
