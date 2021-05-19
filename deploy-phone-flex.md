@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-07"
+lastupdated: "2021-05-19"
 
 subcollection: assistant
 
@@ -64,7 +64,7 @@ If you don't already have a Twilio Flex project, you can create one by following
 
 1. On the welcome page, select Flex as the Twilio product for your new project. Fill out the questionnaire and then click **Get Started with Twilio**.
 
-    After your Flex project has been provisioned, return to the Twilio console at [https://www.twilio.com/console]{: external}. Make sure you have selected the correct project from the drop-down list.
+    After your Flex project has been provisioned, return to the [Twilio console](https://www.twilio.com/console){: external}. Make sure you have selected the correct project from the drop-down list.
 
 1. In the navigation menu, click the **All Products & Services** icon.
 
