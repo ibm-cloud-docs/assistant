@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-22"
+lastupdated: "2021-05-21"
 
 subcollection: assistant
 
@@ -414,11 +414,13 @@ For each step, you can define what happens next. The choice you make defines how
 
 | Option | Description |
 |--------|-------------|
-| Connect to agent | Transfers the conversation to a member of your support team. Requires that you have a service desk capability configured from whatever type of integration you use to deploy your assistant. For example, if you deploy your assistant by using the web chat integration, you must have enabled service desk support with Salesforce, Zendesk, or another provider. You can optionally [add messages to show when a transfer occurs](#actions-what-next-haa). |
+
 | Continue to next step | Processes the next step in the steps list. As always, the conditions for the next step are evaluated first to determine whether to show the step's response to the customer. |
-| End the action | Indicates that this action is complete. Any variable values that were defined based on choices that the customer made as she stepped through the action are reset. This option can be applied to more than one step in a single action because an action can define more than one branch of a conversation. For example, the open an account action might have one conversational flow for creating a checking account and a separate one for creating a savings account. Each branch might have its own final step. Identifying the final step helps analytical tools that follow a customer's progress through an action to identify the success or failure of the action. |
-| Return to step | Processes a step that is listed earlier in the current action. The step might be one that the customer already completed or one that was skipped previously based on its step conditions. Any variable values that were defined based on choices that the customer made in the intervening steps in the action are reset. This option is only available from a step that comes third or later in the steps list. |
+| Return to a previous step | Processes a step that is listed earlier in the current action. The step might be one that the customer already completed or one that was skipped previously based on its step conditions. Any variable values that were defined based on choices that the customer made in the intervening steps in the action are reset. This option is only available from a step that comes third or later in the steps list. |
+| Go to another action | Switch conversation flow to another action to perform a certain task. |
 | Search for the answer | Finds a useful response from existing help content and knowledge bases that you own. The actions skill calls your search skill, which connects to {{site.data.keyword.discoveryshort}} to perform an AI-driven search of your data. Requires a search skill to be connected to your assistant. For more information about the search skill, see [Creating a search skill](/docs/assistant?topic=assistant-skill-search-add). You can optionally [configure the search](#actions-what-next-search).  |
+| Connect to agent | Transfers the conversation to a member of your support team. Requires that you have a service desk capability configured from whatever type of integration you use to deploy your assistant. For example, if you deploy your assistant by using the web chat integration, you must have enabled service desk support with Salesforce, Zendesk, or another provider. You can optionally [add messages to show when a transfer occurs](#actions-what-next-haa). |
+| End the action | Indicates that this action is complete. Any variable values that were defined based on choices that the customer made as she stepped through the action are reset. This option can be applied to more than one step in a single action because an action can define more than one branch of a conversation. For example, the open an account action might have one conversational flow for creating a checking account and a separate one for creating a savings account. Each branch might have its own final step. Identifying the final step helps analytical tools that follow a customer's progress through an action to identify the success or failure of the action. |
 {: caption="What to do next options" caption-side="top"}
 
 There is no option to skip to a later step. Instead of jumping directly to a later step, control the flow through the intervening steps with step conditions.
