@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-05-20"
 
 subcollection: assistant
 
@@ -63,8 +63,8 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 The change log lists changes that were made this year, ordered by the date they were released.
 
-## 21 May 2021
-{: #21May2021}
+## 20 May 2021
+{: #20May2021}
 <!--1.148-->
 - **Actions skill improvement**: Actions now include a new choice on what to do next in a step. You can now choose **Go to another action**, which allows you to switch the conversation flow to another action to perform a certain task.
 
