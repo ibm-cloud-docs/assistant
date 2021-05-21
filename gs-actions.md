@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-09"
+lastupdated: "2021-05-21"
 
 subcollection: assistant
 content-type: tutorial
@@ -95,13 +95,13 @@ Congratulations! You created a simple turn in a conversation. Now, let's see if 
 {: #gs-actions-test-say-hello}
 {: step}
 
-You test the action by entering a salutation into the Preview panel. The Preview panel simulates what the customer's experience would be if they were interacting with the assistant.
+You test the action by entering a salutation into the "Preview" pane, which simulates what the customer's experience would be if they were interacting with the assistant.
 
-1.  In the text field of the Preview panel, type `hello there`, and then submit it.
+1.  In the text field of the "Preview" pane, type `hello there`, and then submit it.
 
     You are submitting a greeting that doesn't exactly match any of the training examples you added earlier. However, the examples you provided should have taught your assistant to understand what a typical greeting looks like.
 
-    The assistant responds with `Good day to you!` The preview panel also identifies the action that was recognized, by returning *Hello*.
+    The assistant responds with `Good day to you!` The preview also identifies the action that was recognized, by returning *Hello*.
 
 You did it! 
 
@@ -117,7 +117,7 @@ Let's make sure your assistant is able to say goodbye to your customers when app
 
     You are returned to a page where you can see your new *Hello* action listed in an Actions table.
 
-1.  Minimize the Preview panel, and then click **New action**.
+1.  Minimize the "Preview" panel, and then click **New action**.
 
 1.  Add examples of phrases that customers might use to indicate that they want to end the conversation.
 
@@ -152,7 +152,7 @@ This time, the action is named `Goodbye`, which is a good name, so we won't both
 
 Let's make sure the action is able to recognize when a customer wants to end the conversation.
 
-1.  Click **Preview** to open the Preview panel.
+1.  Click **Preview** to open the "Preview" panel.
 
 1.  Click the refresh icon ![Refresh icon](images/preview-refresh-icon.png) to restart the conversation.
 
@@ -164,35 +164,26 @@ Let's make sure the action is able to recognize when a customer wants to end the
 
 You have successfully created two actions that understand two different customer intentions and can respond to them properly.
 
-## Integrate the assistant
+## Preview the assistant
 {: #gs-actions-integrate-assistant}
 {: step}
 
-Now that you have an actions skill that can maintain a simple conversational exchange, let's add it to an assistant.
+Now that you have an actions skill that can maintain a simple conversational exchange, let's see how it works in the assistant.
 
 1.  Click the **Assistants** icon ![Assistants menu icon](images/nav-ass-icon.png) to open a list of your assistants.
 1.  Find the *My first assistant* assistant, and open it.
-1.  Test your assistant with a *Preview link* integration. 
+1.  Click **Preview** to open the Preview page, which shows your assistant embedded in a simple IBM-hosted web page.
 
-    The *Preview link* integration is created for you automatically. It builds your assistant into a chat widget that is hosted by an IBM-branded web page. You can open the web page and chat with your assistant to test it out.
-    
-1.  From the Integrations section, click the **Preview link** tile. 
-
-    ![Assistant page where the Integrations section has the Preview link and Web chat tiles](images/gs-actions-integrations.png)
-1.  Click the URL that is displayed on the page.
-
-    The test web page opens in a new tab. You can start submitting message to see how your assistant responds. 
-
-    With a Lite plan, you can use the service for free. With other plans, you are charged for messages that you submit from the preview link integration. You can review metrics about the test user conversations from the Analytics page. You are not charged for messages that you submit from the "Try it out" pane, and the exchanges you have there are not logged.
+    You can also use the URL displayed under **Share this link** to preview the assistant from another browser window or another computer. Previewing the assistant using this URL might incur charges, depending on your service plan. For more information, see [Testing your assistant](/docs/assistant?topic=assistant-deploy-web-link).
     {: note}
 
-1.  Type `hello` into the text field, and watch your assistant respond. 
+1.  In the "Assistant preview" pane, type `hello` into the text field. Press Enter, and watch your assistant respond.
 
-    ![The widget in the preview link integration showing a single dialog exchange.](images/gs-test-from-preview-link.png)
+    ![The widget in the assistant preview, showing a single dialog exchange.](images/gs-test-from-preview-link.png)
 
     You can share the URL with others who might want to try out your assistant.
 
-1.  After testing, close the web page. Click the **X** to close the preview link integration page.
+1.  After testing, click the **X** to close the Preview page.
 
 ## Next steps
 {: #gs-actions-next-steps}
