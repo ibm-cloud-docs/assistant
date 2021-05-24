@@ -66,7 +66,7 @@ The change log lists changes that were made this year, ordered by the date they 
 ## 20 May 2021
 {: #20May2021}
 <!--1.148-->
-- **Actions skill improvement**: Actions now include a new choice on what to do next in a step. You can now choose **Go to another action**, which allows you to switch the conversation flow to another action to perform a certain task.
+- **Actions skill improvement**: Actions now include a new choice, **Go to another action**, for what to do next in a step. You can call one action from another action, to switch the conversation flow to another action to perform a certain task. If you have a portion of an action that can be applied across multiple use cases you can build it once and call to it from each action. This new option is available in the **And then** section of each step. For more information, see [Deciding what to do next](https://test.cloud.ibm.com/docs/assistant?topic=assistant-actions#actions-what-next).
 
 ## 21 April 2021
 {: #21April2021}
