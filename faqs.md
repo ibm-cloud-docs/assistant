@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-22"
+lastupdated: "2021-05-24"
 
 subcollection: assistant
 
@@ -228,3 +228,8 @@ curl -X POST -H "content-type: application/json" -H "accept: application/json" -
 {: faq}
 
 If the training process gets stuck, first check whether there is an outage for the service by going to the [Cloud status page](https://cloud.ibm.com/status){: external}. You can start a new training process to stop the current process and start over. To do so, add a new intent or entity, and then delete it. This action starts a new training process.
+
+## Is there a range of IP addresses that are being used by a webhook?
+{: #faqs-webhook-ip}
+{: faq}
+Unfortunately, the IP address ranges from which Watson Assistant may call a webhook URL are subject to change, which in turn prevent using them in any static firewall configuration. Please use the https transport and specify an authorization header to control access to the webhook.
