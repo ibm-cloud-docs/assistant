@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-22"
+lastupdated: "2021-05-25"
 
 subcollection: assistant
 
@@ -61,9 +61,9 @@ To manage the start of any conversation regardless of integration, follow these 
 
 1.  Set the node condition for this newly added node to `conversation_start`. This node will be reliably triggered at the beginning of any conversation.
 
-1.  Define any context variables that you want to set with default values for the dialog in the `conversation_start` node.
+1.  In the `conversation_start` node, define any default values for context variables, and call any webhooks you need to call at the beginning of every conversation.
 
-1.  Do not define a text response for this node. Instead, configure this node to jump to the `Welcome` node directly below it in the dialog tree, and choose **If assistant recognizes (condition)**.
+1.  Do not define a text response for this node. Instead, configure this node to jump to the `Welcome` node directly below it in the dialog tree (or whichever other node you want to process first), and choose **If assistant recognizes (condition)**.
 
 ![Screenshot of the dialog tree with a conversation_start node jumping to a welcome node below it.](images/dialog-start.png)
 
