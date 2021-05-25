@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-22"
+lastupdated: "2021-05-21"
 
 subcollection: assistant
 
@@ -25,14 +25,14 @@ subcollection: assistant
 # Testing your assistant
 {: #deploy-web-link}
 
-Use *Preview* to test your assistant.
+Use the assistant preview to test your assistant.
 {: shortdesc}
 
-The preview renders your assistant as a web chat and embeds it in a preview web page. You can test the skills that you added to the assistant by entering text into the chat window. The preview also embeds the chat window in a simple IBM-branded web page. You can copy and paste the web page URL into a web browser and share the page with others to enlist help in testing and getting feedback about the assistant.
+The assistant preview renders your assistant as a web chat embedded in a preview web page. You can test the skills that you added to the assistant by entering text into the chat window. You can copy and paste the web page URL into a web browser and share the page with others to enlist help in testing and getting feedback about the assistant.
 
-Unlike when you test using the "Try it out" pane, any API calls that result from your interactions with the assistant hosted by the preview do incur charges.
+Unlike when you test a skill using the "Try it out" pane, any API calls that result from your interactions with the assistant hosted by the assistant preview might incur charges.
 
-## Using Preview to test your assistant
+## Using the assistant preview to test your assistant
 {: #deploy-web-link-try}
 
 To test the assistant from a web-hosted chat widget, complete the following steps:
@@ -46,7 +46,7 @@ To test the assistant from a web-hosted chat widget, complete the following step
     ![Plus or higher plans only](images/plus.png) For environments where private endpoints are in use, keep in mind that the preview sends traffic over the internet. For more information, see [Private network endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints).
     {: note}
 
-1.  In the *Assistant preview* window, submit test utterances to see how the assistant responds.
+1.  In the "Assistant preview" pane, submit test utterances to see how the assistant responds.
 
     If the *Connect to agent* response is displayed, it means you do not have a conversational skill added to your assistant. You must add one before you can chat with the assistant.
     {: important}
@@ -59,11 +59,12 @@ To test the assistant from a web-hosted chat widget, complete the following step
 
 1.  To test the assistant from a separate web page, copy and paste the *Share this link* URL into a web browser.
 
-    An IBM-branded web page is displayed that contains a chat window where you can interact with your assistant. You can share the page with others by sending them the *Share this link* URL.
+    A simple IBM-branded web page is displayed that contains a chat window where you can interact with your assistant. You can share the page with others by sending them the *Share this link* URL.
 
-1.  After testing, you can close the browser tab to exit the public web page.
+    Previewing your assistant within the {{site.data.keyword.conversationshort}} user interface does not incur any charges. If you use the *Share this link* URL to preview the assistant from elsewhere, you might be charged for messages that you submit, according to the terms of your plan. You can review metrics about the test user conversations from the Analytics page.
+    {: important}
 
-1.  Click **X** to close the Preview integration setup page.
+1.  Click **X** to close the Preview page.
 
 ## Dialog considerations
 {: #deploy-web-link-dialog}

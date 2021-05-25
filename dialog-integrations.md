@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-23"
+lastupdated: "2021-05-21"
 
 keywords: integration settings
 
@@ -97,7 +97,7 @@ You can customize the conversation in the following ways:
     </tr>
     </table>
 
-The rich response types often behave differently when they are displayed in different built-in integrations or in the assistant preview panel. For more information about these unique behaviors, see the following topics:
+The rich response types often behave differently when they are displayed in different built-in integrations or in the assistant preview. For more information about these unique behaviors, see the following topics:
 
 - [Web chat](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-dialog)
 <!--- [Facebook](/docs/assistant?topic=assistant-deploy-facebook#deploy-facebook-dialog)-->
