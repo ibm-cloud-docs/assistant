@@ -373,5 +373,14 @@
     "training taking forever in WA",
     "training data seems stuck in Assistant",
     "training data take a long time"
-  ]
+  ],
+  "faqs-webhook-ip": [
+		"range of ip addresses for webhook in Watson Assistant",
+		"ip address for a WA webhook", 
+		"what IP range goes in my firewall for web hooks", 
+		"for firewall I need to know the IP that Assistant webhook calls are initiated from", 
+		"are there static IP ranges for Watson Assistant webhooks",
+		"I need an ip range for Assistant",
+		"is there an ip range for Watson Assistant"
+	]
 }
