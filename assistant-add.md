@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-05-27"
 
 subcollection: assistant
 
@@ -99,7 +99,7 @@ To rename an assistant, follow these steps:
 ### Changing the skill that is associated with the assistant
 {: #assistant-add-swap-skill}
 
-You can add one skill of each skill type to an assistant. If you want to change a skill that your assistant is using, you can swap one skill for another skill.
+You can add one conversation skill (actions or dialog) and one search skill to an assistant. If you want to change a skill that your assistant is using, you can swap one conversation skill or one search skill for another skill.
 
 1.  From the Assistants page, open the assistant.
 

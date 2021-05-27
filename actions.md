@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-20"
+lastupdated: "2021-05-27"
 
 subcollection: assistant
 
@@ -164,8 +164,9 @@ To create actions, complete the following steps:
 
 To delete a step, complete the following steps:
 
-1.  Open the step that you want to delete.
-1.  Click the *Step options* icon ![Overflow menu](images/kebab.png), and then choose **Delete step**.
+1.  Select or hover on the step that you want to delete.
+1.  Click the *Delete* icon.
+1.  In the confirmation dialog, choose **Delete**.
 
 ### Applying reply constraints
 {: #actions-response-types}
@@ -333,13 +334,13 @@ To add a session variable, complete the following steps:
 
 1.  Do one of the following things:
 
-    - From within a step, click the *step options* ![overflow menu](images/step-options.png) icon, and then choose **Set variable values**. Click **Set new value**, and then click **New session variable**.
+    - From within a step, choose the **Set variable values** icon. Click **Set new value**, and then click **New variable**.
 
       The option to create a new session variable is only available starting from step 2.
       {: tip}
-    - From the main actions skill page, click to open the *Session variables* page. Click **New session variable**. 
+    - From the main actions skill page, click to open the *Variables - Created by you* page. Click **New variable**. 
 
-      If you can't see the **New session variable** button, you might need to close the Preview pane.
+      If you can't see the **New variable** button, you might need to close the Preview pane.
       {: tip} 
 1.  Add a name for the session variable.
 
@@ -349,7 +350,7 @@ To add a session variable, complete the following steps:
 1.  If it's not already set, set the session variable value.
 
     - Add a step to collect the data that you want to store in the session variable.
-    - In a later step, click the *step options* ![overflow menu](images/step-options.png) icon, and then choose **Set variable values**. Click **Set new value**.
+    - In a later step, choose the **Set variable values** icon, and then choose **Set variable values**. Click **Set new value**.
     - Choose the session variable name, and then set it to the step variable for the step that collects the data.
 
       For example, this choice sets the `membership status` session variable value:
@@ -394,7 +395,7 @@ To use an expression to define a complex step condition:
 
 To use an expression to define a session variable value:
 
-1.  From the step, click the *step options* ![overflow menu](images/step-options.png) icon, and then choose **Set variable values**. Click **Set new value**.
+1.  From the step, choose the **Set variable values** icon, and then choose **Set variable values**. Click **Set new value**.
 
 1.  Choose the session variable that you want to define a value for. 
 

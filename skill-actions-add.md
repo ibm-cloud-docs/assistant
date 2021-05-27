@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-19"
+lastupdated: "2021-05-27"
 
 subcollection: assistant
 
@@ -40,7 +40,7 @@ Each action contains a series of steps that represent individual exchanges with 
 
 To add an actions skill, complete the following steps:
 
-1.  From the assistant where you want to add the skill, click **Add an actions skill**.
+1.  From the assistant where you want to add the skill, click **Add an actions or dialog skill**.
 
 1.  Take one of the following actions:
 
@@ -65,6 +65,6 @@ To add an actions skill, complete the following steps:
 
 1.  Click **Create actions skill**.
 
-If you add only an actions skill to the assistant, the action skill starts the conversation. If you add both a dialog skill and actions skill to an assistant, the dialog skill starts the conversation. And actions are recognized only if you configure the dialog skill to call them.
+<!-- If you add only an actions skill to the assistant, the action skill starts the conversation. If you add both a dialog skill and actions skill to an assistant, the dialog skill starts the conversation. And actions are recognized only if you configure the dialog skill to call them. -->
 
 Add actions to your actions skill. For more information, see [Adding actions](/docs/assistant?topic=assistant-actions).
