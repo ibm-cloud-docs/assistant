@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-22"
+lastupdated: "2021-05-27"
 
 subcollection: assistant
 content-type: tutorial
@@ -44,7 +44,7 @@ A *dialog skill* uses Watson natural language processing and machine learning te
 {: #gs-dialog-prerequisites}
 {: hide-dashboard}
 
-This tutorial is a continuation of the **Getting started** tutorial. Be sure to complete it before you continue. See [Getting started](/docs/assistant?topic=assistant-getting-started).
+This tutorial is a continuation of the **Getting started with Watson Assistant** tutorial. Be sure to complete it before you continue. See [Getting started with Watson Assistant](/docs/assistant?topic=assistant-getting-started).
 
 If available in your location, a tour begins that you can step through to learn about the product. Follow the tour; it provides a great overview of the product. Otherwise, you can complete the following steps.
 
@@ -53,6 +53,8 @@ If available in your location, a tour begins that you can step through to learn 
 {: step}
 
 The Intents page is where you start to train your assistant. In this tutorial, you will add training data that was built by IBM to your skill. Prebuilt intents are available from the content catalog. You will give your assistant access to the **General** content catalog so your dialog can greet users, and end conversations with them.
+
+1.  Make sure your **My first skill** is open.
 
 1.  Click **Content Catalog** from the Skills menu.
 

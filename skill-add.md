@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-03-02"
+lastupdated: "2021-05-27"
 
 subcollection: assistant
 
@@ -40,8 +40,8 @@ You can add the following types of skills to your assistant:
 
   If you can't decide which type of conversational skill to create, see [Choosing a conversational skill](/docs/assistant?topic=assistant-skills-choose).
 
-  If you add both a dialog skill and an actions skill to your assistant, the dialog skill is used. You can configure your dialog skill to process individual actions from your actions skill by following the steps in [Calling an actions skill from a dialog](/docs/assistant?topic=assistant-dialog-call-action).
-  {: tip}
+  <!-- If you add both a dialog skill and an actions skill to your assistant, the dialog skill is used. You can configure your dialog skill to process individual actions from your actions skill by following the steps in [Calling an actions skill from a dialog](/docs/assistant?topic=assistant-dialog-call-action).
+  {: tip}-->
 
 - **Search skill** ![Plus or higher plans only](images/plus.png): Leverages information from existing corporate knowledge bases or other collections of content authored by subject matter experts to address unanticipated or more nuanced customer inquiries. For a given user query, uses the {{site.data.keyword.discoveryfull}} service to search a data source of your self-service content and return an answer. [Learn more](#skill-add-search-skill)
 
@@ -96,10 +96,13 @@ The following diagram illustrates how user input is processed when both a dialog
 ## Creating a skill
 {: #skill-add-task}
 
-You can add one skill of each skill type to an assistant.
+You can add one conversation skill (actions or dialog) and one search skill to an assistant.
 
+### Conversation
 - [Actions skill](/docs/assistant?topic=assistant-skill-actions-add)
 - [Dialog Skill](/docs/assistant?topic=assistant-skill-dialog-add)
+
+### Search
 - [Search Skill](/docs/assistant?topic=assistant-skill-search-add)
 
 ## Skill limits

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-05-27"
 
 subcollection: assistant
 
@@ -91,8 +91,8 @@ Over time, the actions skill will have greater feature parity with the dialog sk
 
 For some functions, there is parity but you follow different steps to implement the behavior you want.
 
-- **Jump-to**: In an actions skill, you cannot jump from one action to another. However, you can jump from one step to another. In a dialog skill, you use a jump-to to skip to a specific dialog node in the same branch of the conversation. With an actions skill, you can jump to a different step within an action also. However, to do so, you use conditions on the intervening steps to prevent them from being processed, rather than using an explicit jump-to. The benefit of this approach is that it's easier to anticipate the path of a conversation and follow it later if there are not multiple jump-tos sprinkled throughout the flow. 
+- **Jump-to**: In an actions skill, you can jump from one step to another. In a dialog skill, you use a jump-to to skip to a specific dialog node in the same branch of the conversation. With an actions skill, you can jump to a different step within an action also. However, to do so, you use conditions on the intervening steps to prevent them from being processed, rather than using an explicit jump-to. The benefit of this approach is that it's easier to anticipate the path of a conversation and follow it later if there are not multiple jump-tos sprinkled throughout the flow. 
 - **Slots**: In a dialog skill, you add slots to a dialog node to call out a set of values that you want to collect from the user, and that you will take and store in any order. In the actions skill, every step in the action acts like a slot. If the user provides information that address step 10 when answering the question to step 1, both step 1 and step 10 are filled. In fact, if you want step 10 to ask the question explicitly, you must select the **Always as for this** option on step 10.
 
-*Want to get started with actions, but need features that are available only from dialog skills right now?* Use both. Call an action from your dialog skill to perform a discrete task. For more information, see [Calling an actions skill from dialog](/docs/assistant?topic=assistant-dialog-call-action).
-{: important}
+<!-- *Want to get started with actions, but need features that are available only from dialog skills right now?* Use both. Call an action from your dialog skill to perform a discrete task. For more information, see [Calling an actions skill from dialog](/docs/assistant?topic=assistant-dialog-call-action).
+{: important} -->

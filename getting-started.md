@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-09"
+lastupdated: "2021-05-27"
 
 keywords: assistant, omnichannel, virtual agent, virtual assistant, chatbot, conversation, watson assistant, watson conversation
 
@@ -68,19 +68,17 @@ A new browser tab or window opens and {{site.data.keyword.conversationshort}} is
 
 An assistant named **My first assistant** is created for you automatically. An *assistant* is a chatbot. You add skills to your assistant so it can interact with your customers in useful ways.
 
-A skill named **My first skill** is added to the assistant for you automatically.
+A skill named **My first skill** is added to the assistant for you automatically. The type of skill that is added is different for different users. The skill will be either a dialog skill or an actions skill.
 
-The type of skill that is added is different for different users. The skill will be either a dialog skill or an actions skill.
+- If *Actions* is displayed as the first item, you have an actions skill.
 
-- If *Actions* is displayed as the first item in the page navigation, you have an actions skill.
-
-  ![Shows the actions skill initial page](images/gs-actions-skill.png)
+  ![Shows the actions skill](images/gs-actions-skill.png)
 
   If you have an actions skill, continue the tutorial by reading [Getting started with an actions skill](/docs/assistant?topic=assistant-gs-actions).
 
-- If *Intents* is displayed as the first item in the page navigation, you have a dialog skill.
+- If *Dialog* is displayed as the first item, you have a dialog skill.
 
-  ![Shows the Intents page of My first skill](images/gs-intents-page.png)
+  ![Shows the dialog skill](images/gs-dialog-skill.png)
 
   If you have a dialog skill, continue the tutorial by reading [Getting started with a dialog skill](/docs/assistant?topic=assistant-gs-dialog).
 
@@ -99,6 +97,7 @@ An *assistant* is a cognitive bot to which you add skills that enable it to inte
 1.  Name the assistant `My first assistant`.
 
     ![Finish creating the new assistant](images/gs-create-assistant-done.png)
+
 1.  Click **Create assistant**.
 
 ## Create a dialog skill
@@ -107,19 +106,20 @@ An *assistant* is a cognitive bot to which you add skills that enable it to inte
 
 A *dialog skill* is a container for the artifacts that define the flow of a conversation that your assistant can have with your customers.
 
-1.  Click the *My first assistant* tile to open the assistant.
+1.  Click **Add an actions or dialog skill**.
 
-1.  Click **Add dialog skill**.
-
-    ![Shows the Add skill button from the home page](images/gs-add-dialog-skill.png)
+    ![Add actions or dialog skill button](images/gs-addskill.png)
 
 1.  Give your skill the name `My first skill`.
+
 1.  **Optional**. If the dialog you plan to build will use a language other than English, then choose the appropriate language from the list.
+
+1.  For skill type, choose Dialog.
 
     ![Finish creating the skill](images/gs-add-skill-done.png)
 
-1.  Click **Create dialog skill**.
+1.  Click **Create skill**.
 
-    The skill is created and opens to the *Intents* page.
+    The skill is created and appears in your assistant.
 
 To continue with the tutorial, see [Getting started with a dialog skill](/docs/assistant?topic=assistant-gs-dialog).

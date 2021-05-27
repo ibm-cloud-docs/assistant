@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-05-20"
+lastupdated: "2021-05-27"
 
 subcollection: assistant
 
@@ -62,6 +62,16 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #release-notes-tooling-changes}
 
 The change log lists changes that were made this year, ordered by the date they were released.
+
+## 27 May 2021
+{: #27May2021}
+<!--1.149-->
+- **Change to conversation skill choices**: When adding skills to new or existing assistant, the conversation skill choices have been combined, so that you pick from either an actions skill or a dialog skill. 
+
+  With this change:
+  - New assistants can use up to two skills, either actions and search or dialog and search. Previously, new assistants could use up to three skills: actions, dialog, and search.
+  - Existing assistants that already use an actions skill and a dialog skill together can continue to use both.
+  - The ability to use actions and dialog skills together in a new assistant is planned for 2H 2021.
 
 ## 20 May 2021
 {: #20May2021}
