@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-06-02"
 
 keywords: post webhook, postwebhook, post-webhook
 
@@ -367,7 +367,7 @@ If you decide you do not want to process message responses, complete the followi
 
 1.  From the assistant overview page, click the ![Overflow menu](images/kebab.png) icon, and then choose **Settings**.
 
-1.  Click **Webhooks > Pre-message webhook**.
+1.  Click **Webhooks > Post-message webhook**.
 
 1.  Do one of the following things:
 
