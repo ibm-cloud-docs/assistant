@@ -62,7 +62,6 @@ Watson Assistant (Managed)
             dialog-runtime.md
             dialog-runtime-spell-check.md
             dialog-slots.md
-            dialog-call-action.md
             
         entities.md
         versions.md

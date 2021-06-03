@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-03-04"
+lastupdated: "2021-06-03"
 
 keywords: import workspace, import JSON, export JSON, upload JSON, download JSON, collaborate
 
@@ -40,9 +40,9 @@ You can create a skill from scratch, use a sample skill that is provided by IBM,
 
 To add a skill, complete the following steps:
 
-1.  From the assistant where you want to add the skill, click **Add dialog skill**.
+1.  From the assistant where you want to add the skill, click **Add an actions or dialog skill**.
 
-1.  Take one of the following actions:
+1.  Do one of the following:
 
     - To create a new dialog skill, remain on the *Create skill* tab.
     - To add a sample skill that is provided with the product as a starting point for your own skill or as an example to explore before you create one yourself, open the *Use sample skill* tab, and then click the sample you want to use.
@@ -68,6 +68,10 @@ To add a skill, complete the following steps:
     - **Name**: A name no more than 64 characters in length. A name is required.
     - **Description**: An optional description no more than 128 characters in length.
     - **Language**: The language of the user input the skill will be trained to understand. The default value is English.
+
+1.  For **Skill type**, choose Dialog.
+
+1.  Click **Create skill**.
 
 After you create the dialog skill, it appears as a tile on the Skills page. Now, you can start identifying the user goals that you want the dialog skill to address.
 
@@ -103,7 +107,7 @@ You can add one dialog skill to an assistant. You must open the assistant tile a
 
 1.  From the Assistants page, click to open the tile for the assistant to which you want to add the skill.
 
-1.  Click **Add Dialog Skill**.
+1.  Click **Add an actions or dialog skill**.
 
 1.  Click **Add existing skill**.
 
