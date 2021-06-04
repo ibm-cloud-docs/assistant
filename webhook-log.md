@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-03"
+lastupdated: "2021-06-04"
 
 keywords: log webhook
 
@@ -40,7 +40,8 @@ Add a log webhook to your assistant if you want to use an external service to lo
 
 - **Messages and responses**: The log webhook is triggered each time the assistant responds to user input. You can use this option as an alternative to the built-in analytics feature to handle logging yourself. (For more information about the built-in analytics support, see [Metrics overview](/docs/assistant?topic=assistant-logs-overview).)
   
-  Currently, only messages that are exchanged with a dialog skill can be logged. The log webhook is not supported for API clients that use the v1 `/message` method.{: external}.
+  The log webhook is not supported for API clients that use the v1 `/message` method.
+  {: note}
 
 - **Call detail records (CDRs)**: The log webhook is triggered after each telephone call a user makes to your assistant using the phone integration. A Call Detail Record (CDR) is a summary report that documents the details of a telephone call, including phone numbers, call length, latency, and other diagnostic information. CDR records are only available for assistants that use the phone integration.
 
