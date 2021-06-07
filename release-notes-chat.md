@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-05-12"
+lastupdated: "2021-06-07"
 
 subcollection: assistant
 
@@ -37,6 +37,14 @@ For information about new features and improvements to the core {{site.data.keyw
 {: #release-notes-chat-version}
 
 If you want to evaluate changes that are introduced in a web chat release before you apply them to your deployment, you can set a version of your web chat. For more information, see [Versioning](/docs/assistant?topic=assistant-web-chat-basics#web-chat-basics-versions).
+
+## 4.3.0
+{: #4.3.0}
+
+*Release date: 7 June 2021*
+
+- **Search suggestions**: If a search skill is configured for your assistant, the suggestions include a new **View related content** section. This section contains search results that are relevant to the user input.
+- **Focus trap**: A new `enableFocusTrap` option enables maintaining focus inside the web chat widget while it is open. For more information, see [Configuration options object](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-configuration#configurationobject){: external}.
 
 ## 4.2.1
 {: #4.2.1}
