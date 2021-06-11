@@ -232,4 +232,17 @@ If the training process gets stuck, first check whether there is an outage for t
 ## Is there a range of IP addresses that are being used by a webhook?
 {: #faqs-webhook-ip}
 {: faq}
+
 Unfortunately, the IP address ranges from which Watson Assistant may call a webhook URL are subject to change, which in turn prevent using them in any static firewall configuration. Please use the https transport and specify an authorization header to control access to the webhook.
+
+## How do I see my monthly active users in Watson Assistant?
+{: #faqs-see-mau}
+{: faq}
+
+To see your monthly active users (MAU) do the following:
+1.  Sign in to https://cloud.ibm.com
+1.  Click on the **Manage** menu, then choose **Billing and usage**.
+1.  Click on **Usage**.
+1.  For Watson Assistant, select **View Plans**.
+1.  Under Time Frame, select the month you need.
+1.  Select your Plus plans or Plus Trial plans to see monthly active users and the API calls.
