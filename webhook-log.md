@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-04"
+lastupdated: "2021-06-11"
 
 keywords: log webhook
 
@@ -156,9 +156,9 @@ The `payload` object contains the event data to be logged. The structure of the 
 ### Message event payload
 {: #webhook-log-request-body-message}
 
-For `message_logged` events, the `payload` object contains data about a message sent to the assistant from an integration or client application, and the response returned. The structure of the `payload` object for a message event is the same as that of a log object returned by a GET request to the v2 `/logs` method. For more information about the log payload, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#listlogs).
+For `message_logged` events, the `payload` object contains data about a message request sent to the assistant and the message response returned to the integration or client application. For more information about the fields that are part of message requests and responses, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#message).
 
-Any fields that are not defined in the API reference documentation are subject to change.
+The log webhook payload might include data that is not currently supported by the API (for example, data returned from actions skills). Any fields that are not defined in the API reference documentation are subject to change.
 {: important}
 
 ### CDR event payload
