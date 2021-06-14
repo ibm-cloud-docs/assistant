@@ -382,5 +382,15 @@
 		"are there static IP ranges for Watson Assistant webhooks",
 		"I need an ip range for Assistant",
 		"is there an ip range for Watson Assistant"
+	],
+  "faqs-see-mau": [
+		"How do I see my monthly active users in Watson Assistant",
+		"where are monthly active users", 
+		"list monthly active users", 
+		"I can't find monthly active users", 
+		"what is my total monthly active users",
+		"I need to see monthly active users",
+    "check monthly active users",
+		"is there a list of monthly active users"
 	]
 }
