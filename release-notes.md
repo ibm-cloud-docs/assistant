@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-05-27"
+lastupdated: "2021-06-04"
 
 subcollection: assistant
 
@@ -62,6 +62,11 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #release-notes-tooling-changes}
 
 The change log lists changes that were made this year, ordered by the date they were released.
+
+## 3 June 2021
+{: #3June2021}
+<!--1.150-->
+- **Log webhook support for actions and search skills**: The log webhook now supports messages exchanged with actions skills and search skills, in addition to dialog skills. For more information, see [Logging activity with a webhook](/docs/assistant?topic=assistant-webhook-log).
 
 ## 27 May 2021
 {: #27May2021}
