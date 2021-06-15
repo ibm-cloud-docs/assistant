@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-27"
+lastupdated: "2021-06-15"
 
 subcollection: assistant
 
@@ -25,7 +25,7 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:table: .aria-labeledby="caption"}
 
-# Adding actions ![Beta](images/beta.png)
+# Adding actions <!--![Beta](images/beta.png)-->
 {: #actions}
 
 Actions represent the discrete tasks or questions that your assistant is designed to help customers with.

@@ -38,7 +38,7 @@ When you build the flow of conversation between your assistant and your customer
 
 When you want your assistant to get its answer from your existing help content, use a *search skill*. The search skill can be added to an assistant along with a conversational flow skill. For more information, see [Creating a search skill](/docs/assistant?topic=assistant-skill-search-add).
 
-## Actions skill ![Beta](images/beta.png)
+## Actions skill <!--![Beta](images/beta.png)-->
 {: #skills-choose-actions}
 
 The actions skill is the best choice when you want to approach the assistant with a focus on content. The actions skill offers the following benefits:

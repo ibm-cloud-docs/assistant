@@ -34,7 +34,7 @@ You can add the following types of skills to your assistant:
 
 - *Conversational skills*: Understand and address questions or requests that your customers typically ask about. You provide information about the subjects or tasks that your users need help with, and how they ask about them, and the product dynamically builds a machine learning model that is tailored to understand the same and similar user requests.
 
-  - **Actions skill** ![Beta](images/beta.png): Offers a simple interface where anyone can build a conversational flow for your assistant to follow. The complex process of training data creation occurs behind the scenes automatically.  [Learn more](#skill-add-actions-skill)
+  - **Actions skill** <!--![Beta](images/beta.png)-->: Offers a simple interface where anyone can build a conversational flow for your assistant to follow. The complex process of training data creation occurs behind the scenes automatically.  [Learn more](#skill-add-actions-skill)
 
   - **Dialog skill**: Offers a set of editors that you use to define both your training data and the conversation. The conversation is represented as a dialog tree. You use the graphical dialog editor to create a script of sorts for your assistant to read from when it interacts with your customers. The dialog keys off the common customer goals that you teach it to recognize, and provides useful responses. [Learn more](#skill-add-dialog-skill)
 
