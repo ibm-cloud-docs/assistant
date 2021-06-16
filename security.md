@@ -29,7 +29,7 @@ subcollection: assistant
 Learn more about strategies that are available for you to use to ensure that your {{site.data.keyword.conversationshort}} data remains secure and protected in the cloud.
 {: shortdesc}
 
-<!--For more information about {{site.data.keyword.Bluemix_notm}} security, see [Security architecture](https://www.ibm.com/cloud/architecture/architectures/securityArchitecture/watson-security){: external}.-->
+For more information about {{site.data.keyword.Bluemix_notm}} security, see [Security architecture](https://www.ibm.com/cloud/architecture/architecture/practices/watson-security-architecture/){: external}.
 
 <!--## Bring your own key
 {: #security-byok}
@@ -70,5 +70,5 @@ For implementation details, see [Public and private network endpoints](/docs/wat
 {: #security-related}
 
 - [Information security](/docs/assistant?topic=assistant-information-security): Describes strategies for complying with data protection regulations, such as GDPR and HIPAA. 
-<!--- [Security architecture](https://www.ibm.com/cloud/architecture/architectures/securityArchitecture/watson-security){: external}: Describes the security components that are needed for secure cloud development, deployment, and operations.-->
+[Security architecture](https://www.ibm.com/cloud/architecture/architecture/practices/watson-security-architecture/){: external}: Describes the security components that are needed for secure cloud development, deployment, and operations.
 - [IBM Cloud compliance programs](https://www.ibm.com/cloud/compliance){: external}: Describes how to manage regulatory compliance and internal governance requirements with IBM Cloud services.
