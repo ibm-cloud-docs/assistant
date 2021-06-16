@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-04"
+lastupdated: "2021-06-16"
 
 keywords: global support, universal language, universal model, another language
 
@@ -48,13 +48,10 @@ Your customers come from all around the globe. You need an assistant that can ta
 
   For example, use the web chat integration with your French-speaking assistant to deploy to a French-language page on your website. Deploy your German-speaking assistant to the German page of your website. Maybe you have a support phone number for French customers. You can configure your French-speaking assistant to answer those calls, and configure another phone number that German customers can use.
 
-## Understanding the universal language model ![Beta](images/beta.png) 
+## Understanding the universal language model 
 {: #assistant-language-universal}
 
 A skill that uses the universal language model applies a set of shared linguistic characteristics and rules from multiple languages as a starting point. It then learns from the training data that you add to it.
-
-The universal language model is available as a beta feature.
-{: note}
 
 The universal language classifier can adapt to a single language per skill. It cannot be used to support multiple languages within a single skill. However, you can use the universal language model in one skill to support one language, such as Russian, and in another skill to support another language, such as Hindi. The key is to add enough training examples or intent user examples in your target language to teach the model about the unique syntactic and grammatical rules of the language.
 
