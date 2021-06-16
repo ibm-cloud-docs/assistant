@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-06-16"
 
 subcollection: assistant
 
@@ -29,9 +29,9 @@ subcollection: assistant
 Learn more about strategies that are available for you to use to ensure that your {{site.data.keyword.conversationshort}} data remains secure and protected in the cloud.
 {: shortdesc}
 
-For more information about {{site.data.keyword.Bluemix_notm}} security, see [Security architecture](https://www.ibm.com/cloud/architecture/architectures/securityArchitecture/watson-security){: external}.
+<!--For more information about {{site.data.keyword.Bluemix_notm}} security, see [Security architecture](https://www.ibm.com/cloud/architecture/architectures/securityArchitecture/watson-security){: external}.-->
 
-## Bring your own key
+<!--## Bring your own key
 {: #security-byok}
 
 This feature is available with Enterprise with Data Isolation plans that are hosted in Dallas or Washington, DC only.
@@ -47,7 +47,7 @@ For implementation details, see [Protecting sensitive information in your {{site
 - Do not delete your key or your {{site.data.keyword.keymanagementserviceshort}} instance. The key is required to access your data and only you manage it. IBM cannot help you retrieve your data if you accidentally delete your key.
 - You cannot delete the first {{site.data.keyword.conversationshort}} service instance that you create with your Enterprise with Data Isolation plan. The access policies for your Enterprise with Data Isolation instances are derived from the first instance that you add. In fact, each time you create an instance in this Enterprise with Data Isolation plan, you must set the **Encrypted with a Key Protect root key** option to **Yes**, and then specify the key protect instance details for this plan.
 
-For existing customers, a new Enterprise with Data Isolation slot must be provisioned for you before you can use {{site.data.keyword.keymanagementserviceshort}}. (A Enterprise with Data Isolation slot is a collection of Kubernetes deployments of a {{site.data.keyword.conversationshort}} service.) Your data must be migrated to the newly provisioned slot. You also must create a new resource group and use it with your new Enterprise with Data Isolation instances.
+For existing customers, a new Enterprise with Data Isolation slot must be provisioned for you before you can use {{site.data.keyword.keymanagementserviceshort}}. (A Enterprise with Data Isolation slot is a collection of Kubernetes deployments of a {{site.data.keyword.conversationshort}} service.) Your data must be migrated to the newly provisioned slot. You also must create a new resource group and use it with your new Enterprise with Data Isolation instances.-->
 
 ## Private network endpoints
 {: #security-private-endpoints}
@@ -70,5 +70,5 @@ For implementation details, see [Public and private network endpoints](/docs/wat
 {: #security-related}
 
 - [Information security](/docs/assistant?topic=assistant-information-security): Describes strategies for complying with data protection regulations, such as GDPR and HIPAA. 
-- [Security architecture](https://www.ibm.com/cloud/architecture/architectures/securityArchitecture/watson-security){: external}: Describes the security components that are needed for secure cloud development, deployment, and operations.
+<!--- [Security architecture](https://www.ibm.com/cloud/architecture/architectures/securityArchitecture/watson-security){: external}: Describes the security components that are needed for secure cloud development, deployment, and operations.-->
 - [IBM Cloud compliance programs](https://www.ibm.com/cloud/compliance){: external}: Describes how to manage regulatory compliance and internal governance requirements with IBM Cloud services.
