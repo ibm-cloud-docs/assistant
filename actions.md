@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-15"
+lastupdated: "2021-06-16"
 
 subcollection: assistant
 
@@ -218,10 +218,6 @@ Guide the customer to provide the right type of information by adding a customer
 
   When you use the built-in integrations, if you define 5 or fewer options, they are displayed as buttons. For more than 5 options, a list is displayed. If you are using a custom client application, you must specify how you want the options to be displayed.
 
-- **Free text**: Users can write any response in text.
-
-  Used for ordinary text responses, such as capturing special instructions or requests that a customer wants to pass along.
-
 - **Number**: Collects a single numeric value. 
 
   The customer can specify the number value in either numerals (`100`) or words (`one hundred`). Negative and decimal values are recognized.
@@ -232,9 +228,34 @@ Guide the customer to provide the right type of information by adding a customer
   
   Click **Edit response**, select **Always ask for this number, regardless of earlier messages**, and then click **Apply**.
 
+- **Date**: Collect and track dates and date ranges.
+
+  Valid format examples:
+  
+  - Today
+  - Friday
+  - Now
+  - 10/30/2020
+  - October 30th, 2020
+  - October 30th
+
+- **Time**: Collect and track time-based information.
+
+  Valid format examples:
+  - 12:45PM
+  - 10:30
+  - 6am
+  - Now
+  - at 10
+  - from 5pm
+
 - **Currency**: For currency values in user input. The currency can be expressed with a currency symbol or currency-specific terms, such as `20 cents`, `five dollars`, or `$10`.
 
 - **Percent**: For percentages in user input. The percentage can be expressed in an utterance with the percent symbol or written out using the word `percent`, such as `15%` or `10 percent`.
+
+- **Free text**: Users can write any response in text.
+
+  Used for ordinary text responses, such as capturing special instructions or requests that a customer wants to pass along.
 
 #### Customizing validation
 {: #actions-response-types-validation}

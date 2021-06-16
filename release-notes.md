@@ -63,6 +63,15 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 The change log lists changes that were made this year, ordered by the date they were released.
 
+## 16 June 2021
+{: #16June2021}
+<!--1.152-->
+- **Actions skill now generally available**: As of this release, the beta program has ended, and actions skills are available for general use.
+
+  An actions skill contains actions that represent the tasks you want your assistant to help your customers with. Each action contains a series of steps that represent individual exchanges with a customer. Building the conversation that your assistant has with your customers is fundamentally about deciding which steps, or which user interactions, are required to complete an action. After you identify the list of steps, you can then focus on writing engaging content to turn each interaction into a positive experience for your customer.
+
+- **Actions skill improvement**: With this release, actions now include date and time response types, allowing you to collect dates and times information from customers as they answer questions or make requests.
+
 ## 3 June 2021
 {: #3June2021}
 <!--1.150-->
