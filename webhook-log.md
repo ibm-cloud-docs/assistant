@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-11"
+lastupdated: "2021-06-17"
 
 keywords: log webhook
 
@@ -29,7 +29,7 @@ subcollection: assistant
 # Logging activity with a webhook ![Enterprise plan only](images/enterprise.png)
 {: #webhook-log}
 
-You can log activity by making a call to an external service or application every time a customer submits input to log the conversation.
+You can log activity by making a call to an external service or application every time a customer submits input to the assistant.
 {: shortdesc}
 
 A webhook is a mechanism that allows you to call out to an external program based on events in your program.
