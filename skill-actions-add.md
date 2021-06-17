@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-03"
+lastupdated: "2021-06-16"
 
 subcollection: assistant
 
@@ -25,7 +25,7 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:table: .aria-labeledby="caption"}
 
-# Adding an actions skill ![Beta](images/beta.png)
+# Adding an actions skill <!--![Beta](images/beta.png)-->
 {: #skill-actions-add}
 
 Add an actions skill to design a content-rich dialog for your assistant.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-06-16"
 
 subcollection: assistant
 
@@ -66,20 +66,20 @@ In the following tables, the level of language and feature support is indicated 
 
 | Language | [**Actions skill**](/docs/assistant?topic=assistant-skill-actions-add) |[**Dialog skill**](/docs/assistant?topic=assistant-skill-dialog-add) | [**Search skill**](/docs/assistant?topic=assistant-skill-search-add) |
 |:---:|:---:|:---:|
-| **English (en)**                   | Beta | GA | GA |
-| **Arabic (ar)**                    | Beta | GA | GA |
-| **Chinese (Simplified) (zh-cn)**   | Beta | GA | GA |
-| **Chinese (Traditional) (zh-tw)**  | Beta | GA | GA |
-| **Czech (cs)**                     | Beta | GA | GA |
-| **Dutch (nl)**                     | Beta | GA | GA |
-| **French (fr)**                    | Beta | GA | GA |
-| **German (de)**                    | Beta | GA | GA |
-| **Italian (it)**                   | Beta | GA | GA |
-| **Japanese (ja)**                  | Beta | GA | GA |
-| **Korean (ko)**                    | Beta | GA | GA |
-| **Portuguese (Brazilian) (pt-br)** | Beta | GA | GA |
-| **Spanish (es)**                   | Beta | GA | GA |
-| **Universal (xx)**                 | Beta | Beta | Beta |
+| **English (en)**                   | GA | GA | GA |
+| **Arabic (ar)**                    | GA | GA | GA |
+| **Chinese (Simplified) (zh-cn)**   | GA | GA | GA |
+| **Chinese (Traditional) (zh-tw)**  | GA | GA | GA |
+| **Czech (cs)**                     | GA | GA | GA |
+| **Dutch (nl)**                     | GA | GA | GA |
+| **French (fr)**                    | GA | GA | GA |
+| **German (de)**                    | GA | GA | GA |
+| **Italian (it)**                   | GA | GA | GA |
+| **Japanese (ja)**                  | GA | GA | GA |
+| **Korean (ko)**                    | GA | GA | GA |
+| **Portuguese (Brazilian) (pt-br)** | GA | GA | GA |
+| **Spanish (es)**                   | GA | GA | GA |
+| **Universal (xx)**                 | GA | GA | GA |
 {: caption="Table 2. Skill support details" caption-side="top"}
 
 ### Intent feature support details
@@ -100,7 +100,7 @@ In the following tables, the level of language and feature support is indicated 
 | **Korean (ko)**                    | NA | NA | NA |
 | **Portuguese (Brazilian) (pt-br)** | GA | NA | NA |
 | **Spanish (es)**                   | GA | NA | NA |
-| **Universal (xx)**                 | NA | Beta | Beta |
+| **Universal (xx)**                 | NA | GA | GA |
 {: caption="Table 3. Intent feature support details" caption-side="top"}
 
 ### Recommendations feature support details continued
@@ -142,7 +142,7 @@ In the following tables, the level of language and feature support is indicated 
 | **Korean (ko)**                    | GA | GA | NA | NA |
 | **Portuguese (Brazilian) (pt-br)** | GA | GA | NA | NA |
 | **Spanish (es)**                   | GA | GA | NA | NA |
-| **Universal (xx)**                 | Beta | Beta | NA | NA |
+| **Universal (xx)**                 | GA | GA | NA | NA |
 {: caption="Table 5. User input processing support details" caption-side="top"}
 
 ### Entity feature support details
@@ -184,7 +184,7 @@ In the following tables, the level of language and feature support is indicated 
 | **Korean (ko)**                    | GA | Deprecated |
 | **Portuguese (Brazilian) (pt-br)** | GA | Deprecated |
 | **Spanish (es)**                   | GA | Deprecated |
-| **Universal (xx)**                 | Beta | NA |
+| **Universal (xx)**                 | GA | NA |
 {: caption="Table 7. System entity feature support details" caption-side="top"}
 
 The {{site.data.keyword.conversationshort}} service supports multiple languages as noted, but the tool interface itself (descriptions, labels, etc.) is in English. All supported languages can be input and trained through the English interface.

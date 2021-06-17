@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2020-10-27"
+lastupdated: "2021-06-16"
 
 subcollection: assistant
 
@@ -25,7 +25,7 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:table: .aria-labeledby="caption"}
 
-# Actions skill overview ![Beta](images/beta.png)
+# Actions skill overview <!--![Beta](images/beta.png)-->
 {: #actions-overview}
 
 Learn how the actions skill makes it easier to construct an engaging conversation.

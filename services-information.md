@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-22"
+lastupdated: "2021-06-16"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
@@ -81,9 +81,9 @@ The following features are available only to users of Enterprise plans. ![Enterp
 - [v2 Logs API](/apidocs/assistant/assistant-v2#listlogs){: external}
 - [Log webhook](/docs/assistant?topic=assistant-webhook-log)
 
-The following feature is available only to users of the Enterprise with Data Isolation plan
+<!--The following feature is available only to users of the Enterprise with Data Isolation plan
 
-- [Bring your own key](/docs/assistant?topic=assistant-security#security-byok)
+- [Bring your own key](/docs/assistant?topic=assistant-security#security-byok)-->
 
 The plan type of the service instance you are currently using is displayed in the page header. You can upgrade from one plan type to another. For more information, see [Upgrading](/docs/assistant?topic=assistant-upgrade).
 
