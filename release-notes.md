@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-16"
+lastupdated: "2021-06-17"
 
 subcollection: assistant
 
@@ -63,8 +63,8 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 The change log lists changes that were made this year, ordered by the date they were released.
 
-## 16 June 2021
-{: #16June2021}
+## 17 June 2021
+{: #17June2021}
 <!--1.152-->
 - **Actions skill now generally available**: As of this release, the beta program has ended, and actions skills are available for general use.
 
