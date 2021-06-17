@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-16"
+lastupdated: "2021-06-17"
 
 subcollection: assistant
 
@@ -80,6 +80,11 @@ You can save information that the customer shares with the assistant as a *varia
 The variable is named after the step in which the data that is stored in the variable is collected from the customer. For example, let's say the variable in which the account type is stored is collected from the customer in Step 5, which asks `What type of account?`. When the variable is subsequently referenced in a step text response, the variable is represented as `5. What type of account?` When the variable is shown in the steps list for the action, its name is shortened to `$Step 5`.
 
 Variables exist for the duration of a single action.
+
+### Built-in variables
+{: #actions-overview-step-built-in-variables}
+
+Each assistant also includes some common and useful pre-defined, built-in variables that you can use in any of your actions. **Set by assistant** variables include `Now`, `Current time`, and `Current date`. **Set by integration** variables are `Timezone` and `Locale` and are available to use when connected to a webhook or integration.
 
 ## Session variables
 {: #actions-overview-step-variables-global}

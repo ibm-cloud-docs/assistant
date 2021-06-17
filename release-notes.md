@@ -70,7 +70,14 @@ The change log lists changes that were made this year, ordered by the date they 
 
   An actions skill contains actions that represent the tasks you want your assistant to help your customers with. Each action contains a series of steps that represent individual exchanges with a customer. Building the conversation that your assistant has with your customers is fundamentally about deciding which steps, or which user interactions, are required to complete an action. After you identify the list of steps, you can then focus on writing engaging content to turn each interaction into a positive experience for your customer. For more information, see [Actions skill overview](/docs/assistant?topic=assistant-actions-overview).
 
-- **Actions skill improvement**: With this release, actions now include date and time response types, allowing you to collect dates and times information from customers as they answer questions or make requests. For more information, see [response types](/docs/assistant?topic=assistant-actions#actions-response-types).
+- **Date and time response types**: New to action skills, these response types allow you to collect date and time information from customers as they answer questions or make requests. For more information, see [Response types](/docs/assistant?topic=assistant-actions#actions-response-types).
+
+- **New built-in variables**: Two kinds of built-in variables are now available for action skills. 
+  - **Set by assistant** variables include the common and essential variables `Now`, `Current time`, and `Current date`. 
+  
+  - **Set by integration** variables are `Timezone` and `Locale` and are available to use when connected to a webhook or integration.
+
+    For more information, see [Adding and referencing variables](/docs/assistant?topic=assistant-actions#actions-variables)
 
 - **Universal language modeal now generally available**: You now can build an assistant in any language you want to support. If a dedicated language model is not available for your target language, create a skill that uses the universal language model. The universal model applies a set of shared linguistic characteristics and rules from multiple languages as a starting point. It then learns from training data written in the target language that you add to it. For more information, see [Understanding the universal language model](/docs/assistant?topic=assistant-assistant-language#assistant-language-universal).
 

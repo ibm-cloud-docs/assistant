@@ -168,7 +168,7 @@ To delete a step, complete the following steps:
 1.  Click the *Delete* icon.
 1.  In the confirmation dialog, choose **Delete**.
 
-### Applying reply constraints
+### Applying response types
 {: #actions-response-types}
 
 Guide the customer to provide the right type of information by adding a customer response type definition. The following response types are supported:
@@ -327,11 +327,26 @@ To add a step condition, complete the following steps:
 
 When customers reply to your assistant, they share information about themselves and what they want. Your assistant pays attention and remembers this information by storing the data as *variables*. Your assistant can show that it listens when you reference these variables in subsequent responses.
 
-For each step that collects information from the customer, an action variable is created automatically. Each action variable is named after the step in which the data it stores is collected.
+For each step that collects information from the customer, an action variable is created automatically. Each action variable you create is named after the step in which the data it stores is collected.
 
 For example, your assistant might ask the customer about her favorite color in step 3 and reference it in step 10, when she's choosing a dress to buy. Step 10 can reference the data that was collected in step 3 by adding a reference to the variable named *3. What's your favorite color?*
 
 We all like considerate people who listen and remember the things we share with them. Why not create an assistant that exhibits this kind of thoughtful behavior?
+
+In addition to creating variables, you can choose from a set of built-in variables.
+
+| Set by assistant variables | Description |
+|----------|---------------|
+| Now | The current date and time in user timezone. Example: 2020-04-01T11:17:00Z |
+| Current time | The current time in user timezone without date. Example: 11:17:00Z |
+| Current date | The current date in user timezone without time. Example: 2020-04-01Z |
+{: caption="Set by assistant variables" caption-side="top"}
+
+| Set by integration variables | Description |
+|----------|---------------|
+| Timezone | User timezone that can be passed in by API client as context.global.system.timezone. Defaults to UTC. Example: UTC, Europe/Paris, or -05:00 |
+| Locale | User locale that affects understanding and formatting of dates, times and numbers. Example: en-gb |
+{: caption="Available when connected to a webhook or integration" caption-side="top"}
 
 To reference a variable in a text response:
 
