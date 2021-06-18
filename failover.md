@@ -117,7 +117,7 @@ You should plan for both full and partial service outages. A good first step is 
 ### Monitoring
 {: #failover-webchat-monitoring}
 
-Web chat provides a "onError" listening feature that allows the host page to detect specific types of outage errors, in particular: INITIAL_CONFIG, OPEN_CONFIG, and MESSAGE_COMMUNICATION errors.
+Web chat provides an `onError` listening feature that allows the host page to detect specific types of outage errors, in particular INITIAL_CONFIG, OPEN_CONFIG, and MESSAGE_COMMUNICATION errors.
 
 You can find the documentation for this feature here: https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-configuration#onerror-detail
 
