@@ -52,7 +52,7 @@ Watson Assistant instances in one region are unaware of instances in a second re
 ### Analytics
 {: #failover-analytics}
 
-Watson Assistant analytics provides overview statistics on the number of interactions with users and containment rates. Analytics doesn't cumulate statistics across regions. With an active/passive topology, this approach to analytics should be sufficient. However, using an active/active topology likely requires using [webhooks](/docs/assistant?topic=assistant-webhook-log) to gather interaction data, and build custom data warehouses and reports to understand total usage.
+Watson Assistant analytics provide overview statistics on the number of interactions with users and containment rates. Analytics doesn't cumulate statistics across regions. With an active/passive topology, this approach to analytics should be sufficient. However, using an active/active topology likely requires using [webhooks](/docs/assistant?topic=assistant-webhook-log) to gather interaction data, and build custom data warehouses and reports to understand total usage.
 
 ### Recommendations
 {: #failover-recommendations}
