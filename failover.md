@@ -165,7 +165,7 @@ For a successful failover, ensure the following:
 
 While it does not affect the runtime flow (calling /message), if you are using IBM Access Control (IAM), make sure IAM policies are appropriately synchronized across the regions as well if you are using fine-grained access control. 
 
-Note that IAM is a global service, but the custom resources (assistants/skills) used by assistant access control means each region, which has specific resources, requires specific policies.
+Note that IAM is a global service, but the custom resources (assistants and skills) used by {{site.data.keyword.conversationshort}} access control means each region, which has specific resources, requires specific policies.
 
 For an **active/passive** topology, some form of a [circuit break pattern](https://martinfowler.com/bliki/CircuitBreaker.html) can be used. A single service instance in a given region is used exclusively unless errors are detected. At that point, the system can respond by updating the relevant failover metadata to route traffic to the service instance in the other region. Once a failover happens, you can decide to continue using the new region as the active instance, or if you want to resume using the initial region once it has stabilized. 
 
