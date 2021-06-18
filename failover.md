@@ -176,4 +176,4 @@ For an **active/active** topology, some form of a load balancing can be used, wh
 Failover for the v2 stateful API is similar to stateless, with these details to consider:
 - The state of a given conversation is persisted by {{site.data.keyword.conversationshort}} in a database that is tied to a particular region.  As such, a failover for the stateful v2 /message may more disruptive.
 - For an **active/passive** topology, you should assume that all in-progress conversations are ended.
-- For an **active/active** topology, given the persistence constraints (region-locked) of the v2 stateful /message architecture, all turns (/message API calls) of a given conversation (session) should occur within the same region.
+- For an **active/active** topology, given the region-locked persistence constraints of the v2 stateful /message architecture, all turns (/message API calls) of a given conversation (session) should occur within the same region.
