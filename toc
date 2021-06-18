@@ -179,6 +179,7 @@ Watson Assistant (Managed)
     dialog-methods.md
     expression-language.md
     filter-reference.md
+    failover.md
     recovery.md
     commands-voice.md
     commands-sms.md
