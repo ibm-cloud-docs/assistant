@@ -76,7 +76,7 @@ IBM calculates your bill based on the IBM Cloud Account. Watson Assistant calcul
 - The same MAU used in 2 different assistant resources in the **same** service instance counts as 1 MAU
 - The same MAU used in 2 different assistant resources in **different** service instances counts as 2 MAUs
 
-Note for an **active/active** topology, under the worst case scenario, the MAU count could end up being doubled for a given billing period.
+Note that for an **active/active** topology, under the worst case scenario, the MAU count could end up being doubled for a given billing period.
 
 ## Phone integration
 {: #failover-phone}
