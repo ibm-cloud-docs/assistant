@@ -47,7 +47,7 @@ There are pros and cons to both approaches, and considerations specific to Watso
 ## Considerations
 {: #failover-considerations}
 
-Watson Assistant instances in one region are unaware of instances in a second region, which can affect some of features and capabilities in Watson Assistant.
+Watson Assistant instances in one region are unaware of instances in a second region, which can affect some features and capabilities in Watson Assistant.
 
 ### Analytics
 {: #failover-analytics}
