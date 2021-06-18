@@ -35,7 +35,7 @@ This document explains some actions you can take to increase the availability of
 
 IBM Watson Assistant instances are deployed across multizone regions (MZRs) in all data centers (except Seoul, Korea) and can withstand the loss of any individual zone within an MZR. However, regional outages can occur and while IBM strives to keep these to a minimum, you may want to consider moving traffic to a different region for your business-critical applications.
 
-To achieve this, you should have a copy of your Watson Assistant instance in a different MZR, for example, have your assistant deployed in US East and US South. You need to purchase a second service instance of Watson Assistant, and second instances of the necessary assistants and skills need to be instantiated. You need to implement change management controls to synchronize the changes between the two regions. Watson Assistant and Speech services have APIs available to export and import the definitions.
+To achieve this, you should have a copy of your Watson Assistant instance in a different MZR (for example, have your assistant deployed in US East and US South). To do this, you must purchase a second service instance of Watson Assistant, and second instances of the necessary assistants and skills need to be instantiated. You must implement change management controls to synchronize the changes between the two regions. Watson Assistant and Speech services have APIs available to export and import the definitions.
 
 With two instances, there are two topologies to consider:
 
