@@ -155,7 +155,7 @@ To avoid an unnecessary failover between regions, make sure a robust retry mecha
 ### Failover for v1 and v2 stateless API
 
 For a successful failover, ensure the following:
-- Synchronize training data changes across regions. Avoid pushing changes delayed over a large window of time (such as days) to mitigate risk of algorithm changes being deployed by Watson Assistant in between regions being updated.
+- Training data changes should be synchronized across regions. Avoid pushing changes delayed over a large window of time (such as days) to mitigate risk of algorithm changes being deployed by Watson Assistant in between regions being updated.
 - The same IBM Cloud account should be used for the service instances across regions to maintain a single overall bill for services.
 - The client applications should support:
   - Watson Assistant API hostname
