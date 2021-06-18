@@ -163,7 +163,7 @@ For a successful failover, ensure the following:
   - v1: workspace_id
   - v2: assistant_id
 
-While it does not affect the runtime flow (calling /message), if you are using IBM Access Control (IAM), make sure IAM policies are appropriately synchronized across the regions as well if you are using fine-grained access control. 
+Although it does not affect the runtime flow of calling /message, if you are using fine-grained access control using IBM Access Control (IAM), make sure the IAM policies are appropriately synchronized across the regions. 
 
 Note that IAM is a global service, but the custom resources (assistants and skills) used by {{site.data.keyword.conversationshort}} access control means each region, which has specific resources, requires specific policies.
 
