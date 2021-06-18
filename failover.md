@@ -39,7 +39,7 @@ To achieve this, you should have a copy of your Watson Assistant instance in a d
 
 With two instances, there are two topologies to consider:
 
-- **Active/active**: Both instances always serving traffic with the load sprayed between the two 
+- **Active/active**: Both instances always serving traffic with the load sprayed between the two.
 - **Active/passive**: One instance is active and the passive site only receives traffic in the event of a failover.  
 
 There are pros and cons to both approaches, and considerations specific to Watson Assistant are detailed in the sections that follow.
