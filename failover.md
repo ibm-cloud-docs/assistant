@@ -86,7 +86,7 @@ A Watson Assistant phone integration in one region is unaware of a phone integra
 ### Monitoring
 {: #failover-phone-monitoring}
 
-SIP trunking providers can be configured to actively health check the Watson Assistant session border controllers (SBCs) by sending periodic SIP OPTIONS messages to each zone within a region. A failure to receive a response from one of the zones being health checked can be used to either provide notification of a failure to trigger a manual failover, or it can be used to automate removal of the failed zone from the route list.
+SIP trunking providers can be configured to actively health-check the Watson Assistant session border controllers (SBCs) by sending periodic SIP OPTIONS messages to each zone within a region. A failure to receive a response from one of the zones being health-checked can be used to either provide notification of a failure to trigger a manual failover, or it can be used to automate removal of the failed zone from the route list.
 
 ### Failover
 {: #failover-phone-failover}
