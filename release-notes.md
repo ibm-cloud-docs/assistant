@@ -79,7 +79,7 @@ The change log lists changes that were made this year, ordered by the date they 
 
     For more information, see [Adding and referencing variables](/docs/assistant?topic=assistant-actions#actions-variables).
 
-- **Universal language modeal now generally available**: You now can build an assistant in any language you want to support. If a dedicated language model is not available for your target language, create a skill that uses the universal language model. The universal model applies a set of shared linguistic characteristics and rules from multiple languages as a starting point. It then learns from training data written in the target language that you add to it. For more information, see [Understanding the universal language model](/docs/assistant?topic=assistant-assistant-language#assistant-language-universal).
+- **Universal language model now generally available**: You now can build an assistant in any language you want to support. If a dedicated language model is not available for your target language, create a skill that uses the universal language model. The universal model applies a set of shared linguistic characteristics and rules from multiple languages as a starting point. It then learns from training data written in the target language that you add to it. For more information, see [Understanding the universal language model](/docs/assistant?topic=assistant-assistant-language#assistant-language-universal).
 
 ## 3 June 2021
 {: #3June2021}
