@@ -131,7 +131,7 @@ Handling a failover for web chat is simple assuming you have set up an additiona
 - If you are using Salesforce or ZenDesk integrations for connecting to human agents, update the configuration within those systems to make sure they can communicate with the correct integration. Follow the instructions on the **Live agent** tab in the web chat configuration for setting up those systems. This is only needed for obtaining the conversation history for the agent.
 - If you have web chat security enabled and you are using encrypted payloads, the IBM-provided public key used for the encryption may be different depending on region. If so, you need to update the system that generates the JSON Web Token (JWT) to use the correct key.
 
-You can set up an active/active configuration of web chat by using different integration IDs in your embed scripts, and by ensuring the web chat integration is "sticky" by user, otherwise if the user fails over to a different integration, the conversation history may be lost.
+You can set up an active/active configuration of web chat by using different integration IDs in your embed scripts, and by ensuring the web chat integration is "sticky" by user. Otherwise, if the user fails over to a different integration, the conversation history might be lost.
 
 ## API
 {: #failover-api}
