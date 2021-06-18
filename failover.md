@@ -149,7 +149,7 @@ With either aggregation approach, exceeding a defined threshold could trigger a 
 - Consecutive-based: X calls in a row return a non-200 response code
 - Limit-based: X calls return a non-200 response in a given timeframe
 
-To avoid an unnecessary failover between regions, ensure a robust retry mechanism is present when calling the /message endpoint.
+To avoid an unnecessary failover between regions, make sure a robust retry mechanism is present when calling the /message endpoint.
 
 
 ### Failover for v1 and v2 stateless API
