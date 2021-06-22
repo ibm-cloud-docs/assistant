@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-22"
+lastupdated: "2021-06-22"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -519,9 +519,9 @@ To add an *Image* response type, complete the following steps:
 
 1.  Choose **Image**.
 
-1.  Add the full URL to the hosted image file into the **Image source** field. 
+1.  Add the full URL to the hosted image file into the **Image source** field.
 
-    The image must be in .jpg, .gif, or .png format. The image file must be stored in a location that is publicly addressable by URL.
+    The image must be in .jpg, .gif, or .png format. The image file must be stored in a location that is publicly addressable by an `https:` URL.
 
     For example: `https://www.example.com/assets/common/logo.png`.
 

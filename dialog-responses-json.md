@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-26"
+lastupdated: "2021-06-22"
 
 subcollection: assistant
 
@@ -51,7 +51,7 @@ To specify an interactive response in the generic JSON format, insert the approp
       },
       {
         "response_type": "image",
-        "source": "http://example.com/image.jpg",
+        "source": "https://example.com/image.jpg",
         "title": "Example image",
         "description": "Some description for the image."
       },
@@ -126,7 +126,7 @@ Displays an image specified by a URL.
 | Name          | Type   | Description                        | Required? |
 |---------------|--------|------------------------------------|-----------|
 | response_type | string | `image`                            | Y         |
-| source        | string | The URL of the image. The specified image must be in .jpg, .gif, or .png format. | Y |
+| source        | string | The `https:` URL of the image. The specified image must be in .jpg, .gif, or .png format. | Y |
 | title         | string | The title to show before the image.| N         |
 | description   | string | The text of the description that accompanies the image. | N |
 
@@ -141,7 +141,7 @@ This example displays an image with a title and descriptive text.
     "generic":[
       {
         "response_type": "image",
-        "source": "http://example.com/image.jpg",
+        "source": "https://example.com/image.jpg",
         "title": "Example image",
         "description": "An example image returned as part of a multimedia response."
       }
