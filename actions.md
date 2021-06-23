@@ -575,10 +575,10 @@ As you make changes, test the action at any time to see whether the resulting in
 
 Queries you submit through the Preview pane generate `/message` API calls, but they are not logged and do not incur charges.
 
-If you add only an actions skill to the assistant, the action skill starts the conversation. If you add both a dialog skill and actions skill to an assistant, the dialog skill starts the conversation. You must add calls from the dialog to actions in the actions skill. Only then can your asssistant understand and respond to requests that are addressed by actions that are defined in the actions skill.
+<!--If you add only an actions skill to the assistant, the action skill starts the conversation. If you add both a dialog skill and actions skill to an assistant, the dialog skill starts the conversation. You must add calls from the dialog to actions in the actions skill. Only then can your asssistant understand and respond to requests that are addressed by actions that are defined in the actions skill.
 {: important}
 
-You can [call actions in the actions skill from the dialog skill](/docs/assistant?topic=assistant-dialog-call-action). To test how an action behaves when it is called from a dialog skill, test it from the assistant that uses both of the skills together. You cannot recreate the interaction from the Preview pane of the actions skill. First, add the actions and dialog skills to an assistant. Then, you can use the *Preview* button to test how the two skills interact with one another. Queries you submit through the *Preview* button do incur charges. For more information about the *Preview* button, see [Testing your assistant from a web page](/docs/assistant?topic=assistant-deploy-web-link).
+You can [call actions in the actions skill from the dialog skill](/docs/assistant?topic=assistant-dialog-call-action). To test how an action behaves when it is called from a dialog skill, test it from the assistant that uses both of the skills together. You cannot recreate the interaction from the Preview pane of the actions skill. First, add the actions and dialog skills to an assistant. Then, you can use the *Preview* button to test how the two skills interact with one another. Queries you submit through the *Preview* button do incur charges. For more information about the *Preview* button, see [Testing your assistant from a web page](/docs/assistant?topic=assistant-deploy-web-link).-->
 
 ## Disambiguation
 {: #actions-disambiguation}
