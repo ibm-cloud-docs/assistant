@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-06-23"
 
 subcollection: assistant
 
@@ -104,6 +104,7 @@ Table 2 describes the context variables that are set from your dialog. Table 3 d
 | `vgwIsOutboundCall` | `Yes` or `No` | Indicates whether the call is an outbound call. |
 | `vgwIsDTMF` | `Yes` or `No` | Indicates whether the input to {{site.data.keyword.conversationshort}} is dual-tone multi-frequency signaling (DTMF). |
 | `vgwNetworkWarnings` | JSON array | An array of network warnings that occurred during the {{site.data.keyword.conversationshort}} turn. To send network warnings, RTCP must be enabled. |
+| `vgwPhoneUserPhoneNumber` | String | The phone number that the call was received from. |
 | `vgwReceivedOnChannel` | `SMS` | If an utterance is received over the SMS channel, this variable presents and is set to `SMS`. |
 | `vgwSessionID` | User-defined value | A custom session ID header pulled from the SIP `INVITE` request. The value represents the global session ID that is used in all the phone integration audit logs related to the session. |
 | `vgwSIPCallID` | SIP Call-ID | The SIP call ID associated with the conversation session. |
