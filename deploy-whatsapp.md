@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-06-24"
 
 subcollection: assistant
 
@@ -26,7 +26,7 @@ subcollection: assistant
 # Integrating with WhatsApp
 {: #deploy-whatsapp}
 
-Integrate with Whatsapp messaging so your assistant can exchange messages with your customers where they are.
+Integrate with WhatsApp messaging so your assistant can exchange messages with your customers where they are.
 {: shortdesc}
 
 Many customers use WhatsApp because it provides fast, simple, secure messaging for free, and is available on phones all over the world. WhatsApp uses the phone Internet connection to send messages so customers can avoid SMS fees.

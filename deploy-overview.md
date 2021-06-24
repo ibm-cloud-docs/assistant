@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-07"
+lastupdated: "2021-06-24"
 
 subcollection: assistant
 
@@ -37,7 +37,7 @@ In most cases, an assistant is deployed using one of these integrations:
 
 - [**Web chat integration**](/docs/assistant?topic=assistant-deploy-web-chat): The web chat integration provides a secure and highly customizable widget you can add to your website. You can configure how and where the web chat widget appears, and you can use theming to align it with your branding and website design. If a customer needs help from a person, the web chat integration can transfer the conversation to an agent.
 
-- [**Phone integration**](/docs/assistant?topic=assistant-deploy-phone): The phone integration enables your assistant to converse with customers on the phone, using the the {{site.data.keyword.ibmwatson_notm}} {{site.data.keyword.texttospeechshort}} and {{site.data.keyword.speechtotextshort}} services. If your customer asks to speak to a person, the phone integration can transfer the call to an agent.
+- [**Phone integration**](/docs/assistant?topic=assistant-deploy-phone): The phone integration enables your assistant to converse with customers on the phone, using the {{site.data.keyword.ibmwatson_notm}} {{site.data.keyword.texttospeechshort}} and {{site.data.keyword.speechtotextshort}} services. If your customer asks to speak to a person, the phone integration can transfer the call to an agent.
 
 ## Other channels
 
