@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-07-01"
 
 subcollection: assistant
 
@@ -26,7 +26,7 @@ subcollection: assistant
 # Metrics overview
 {: #logs-overview}
 
-The Overview page provides a summary of the interactions between users and your assistant.
+The overview page provides a summary of the interactions between users and your assistant.
 {: shortdesc}
 
 Analytics help you to understand the following things:
@@ -36,6 +36,9 @@ Analytics help you to understand the following things:
 - *How can you make your assistant better?*
 
 To see metrics information, select **Overview** in the navigation bar.
+
+After the numbers in metrics hit the 3,000 and above range, the totals are approximated to prevent performance lags in the page.
+{: note}
 
 ## Scorecards
 {: #logs-overview-scorecards}
@@ -54,9 +57,6 @@ The scorecards give you a quick view of your metrics. Scroll to see full interac
 - *Avg. msg. per conversation*: The total messages received during the selected time period divided by the total conversations during the selected time period, as shown in the corresponding graph.
 - *Max. conversations*: The maximum number of conversations for a single data point within the selected time period.
 - *Weak understanding*: The number of individual messages with weak understanding. These messages are not classified by an intent, and do not contain any known entities. Reviewing unrecognized messages can help you to identify potential dialog problems.
-
-Once the numbers in the scorecard metrics hit the 3,000 and above range, the totals are approximated to prevent performance lags in the page.
-{: note}
 
 ## Graphs and statistics
 {: #logs-overview-graphs}
@@ -108,8 +108,8 @@ You can use the following controls to filter the information:
 
   ![Time period control](images/oview-time.png)
 
-  You can choose whether to view data for a single day, a week, a month, or a quarter. In each case, the data points on the graph adjust to an appropriate measurement period. For example, when viewing a graph for a day, the data is presented in hourly values, but when viewing a graph for a week, the data is shown by day. A week always runs from Sunday through Saturday. 
-  
+  You can choose whether to view data for a single day, a week, a month, or a quarter. In each case, the data points on the graph adjust to an appropriate measurement period. For example, when viewing a graph for a day, the data is presented in hourly values, but when viewing a graph for a week, the data is shown by day. A week always runs from Sunday through Saturday.
+
   You can create custom time periods also, such as a week that runs from Thursday to the following Wednesday, or a month that begins on any date other than the first.
 
   The time shown for each conversation is localized to reflect the time zone of your browser. However, API log calls are always shown in UTC time. As a result, if you choose a single day view, for example, the time shown in the visualization might differ from the timestamp specified in the log for the same conversation.
@@ -125,7 +125,7 @@ You can use the following controls to filter the information:
 
   The statistics show traffic from customers who interact with your assistant; they do not include interactions from the *Try it out* pane.
 
-## Top Intents and Top Entities
+## Top intents and top entities
 {: #logs-overview-tops}
 
 You can also view the intents and entities that were recognized most often during the specified time period.
