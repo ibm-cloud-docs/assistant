@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2020, 2021
+  years: 2020, 2021, 2022
 lastupdated: "2021-02-09"
 
 subcollection: assistant
