@@ -90,12 +90,6 @@ The 401 response code is returned for many reasons, including:
 - You exceeded the API call limit for your plan for this month. For example, for Lite plans, the monthly limit for API calls 10,000 messages per month. If you reach your limit for the month, but the logs show that you have made fewer calls than the limit, remember that the Lite plan stores log information for 7 days only. The 401 response will go away as soon as the next billing cycle begins, which is the first day of the calendar month.
 - You are trying to use an instance-level API key that you created in one data center location to connect to a service instance that is hosted from another location. You must create an API key in the same data center location where your service instance is hosted.
 
-## I'm getting a `403` response
-{: #faqs-getting-403}
-{: faq}
-
-You are using a valid API Key, but it is not the correct key for the service instance that you are trying to access programmatically.
-
 ## Getting `Unable to fetch access token for account` message
 {: #faqs-cannot-fetch-token}
 {: faq}
