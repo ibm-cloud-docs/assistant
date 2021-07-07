@@ -363,8 +363,8 @@ You can use session variables to pass information from:
 
 - an external client application to the actions skill
 - one action to another action within the same actions skill
-<!--- a dialog skill to an action when the action is called from a dialog node
-- an actions skill to a dialog skill as a return variable-->
+<!-- a dialog skill to an action when the action is called from a dialog node-->
+<!-- an actions skill to a dialog skill as a return variable-->
 
 To add a session variable, complete the following steps:
 
