@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-16"
+lastupdated: "2021-07-08"
 
 subcollection: assistant
 
@@ -45,6 +45,8 @@ To add an actions skill, complete the following steps:
 1.  Take one of the following actions:
 
     - To create a new actions skill, stay on the *Create skill* tab.
+
+    - To add the actions sample skill that is provided with the product as a starting point for your own skill or as an example to explore before you create one yourself, open the *Use sample skill* tab, and then click the sample labeled **TYPE: Actions**. You can skip the remaining steps.
 
     - To add an actions skill that was downloaded previously to this service instance, you can upload it as a JSON file. Open the *Upload skill* tab. Drag a file or click **Drag and drop file here or click to select a file** and select the actions skill JSON file you want to upload.
 
