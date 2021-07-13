@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-07-13"
 
 subcollection: assistant
 
@@ -164,9 +164,20 @@ You can add security to the phone connection by selecting one or both of the fol
 ### Apply advanced SIP trunk configuration settings
 {: #deploy-phone-sip-trunk-config}
 
-- **SIP INVITE headers to extract**: List headers that you want to use in your dialog. 
+- **SIP INVITE headers to extract**: List headers that you want to use in your dialog.
 
-  The SIP request often sends INVITE headers with information about the request that is used by the SIP network. For example, many companies use Interactive Voice Response (IVR) systems that pass information about an incoming call by using headers. If you want to make use of any of these headers, list the header names here. When provided, the header value is stored as a context variable (`$vgwSIPCustomInviteHeader`) that can be referenced by your dialog. For example, you can check the header value in a dialog node condition to determine whether to process a branch or not. Or you might pass custom headers, such as a `session_id` that you can use subsequently to find all the messages from a single call in the assistant logs. Header titles do not include spaces.
+  The SIP request often sends INVITE headers with information about the request that is used by the SIP network. For example, many companies use Interactive Voice Response (IVR) systems that pass information about an incoming call by using headers. If you want to make use of any of these headers, list the header names here.
+  
+  The specified headers, if present in the request, are stored in the context variable `vgwSIPCustomInviteHeaders`. This variable is an array in which each key/value pair represents a header from the request, as in this example:
+
+    ```json
+    "vgwSIPCustomInviteHeaders": {
+      "X-customer-name": "my_name",
+      "X-account-number": "12345"
+    }
+    ```
+
+  You can then reference these headers in your dialog. For example, you might check the header value in a dialog node condition to determine whether to process a branch. You can also use these headers when searching the Assistant logs; for example, you might search for a custom header to find all the messages associated with particular account.
 
 - **Disable the ring that callers will hear while the assistant is contacted**: Choose whether you want the caller to hear a signal that indicates that the assistant is being contacted. 
 
