@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-17"
+lastupdated: "2021-07-16"
 
 subcollection: assistant
 
@@ -39,8 +39,8 @@ API requests require a version parameter that takes a date in the format `versio
 
 Send the version parameter with every API request. {{site.data.keyword.conversationshort}} uses the API version for the date you specify, or the most recent version before that date. Don't default to the current date. Instead, specify a date that matches a version that is compatible with your app, and don't change it until your app is ready for a later version.
 
-- The current version for v1 is `2020-04-01`.
-- The current version for v2 is `2020-09-24`.
+- The current version for v1 is `2021-06-14`.
+- The current version for v2 is `2021-06-14`.
 
 The dialog skill "Try it out" pane uses the v1 API. The Preview panes in the search and actions skills, and the built-in integrations use the v2 API.
 
@@ -62,6 +62,17 @@ Existing models that you have trained will not be immediately impacted, but expi
 {: #release-notes-tooling-changes}
 
 The change log lists changes that were made this year, ordered by the date they were released.
+
+## 16 July 2021
+{: #16July2021}
+
+- **New API version**: The current API version (v1 and v2) is now `2021-06-14`. The following changes were made with this version:
+  - The `metadata` property of entities detected at run time is deprecated. For detailed information about detected system entities, see the `interpretation` property.
+  - The data types of certain entity mentions are no longer automatically converted:
+    - Numbers in scientific notation (such as `1E10`), which were previously converted to numbers
+    - Boolean values (such as `false`), which were previously converted to booleans
+
+    These values are now returned as strings.
 
 ## 17 June 2021
 {: #17June2021}
