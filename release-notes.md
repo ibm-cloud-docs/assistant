@@ -66,6 +66,8 @@ The change log lists changes that were made this year, ordered by the date they 
 ## 16 July 2021
 {: #16July2021}
 
+- **Logging API changes**: The internal storage and processing of logs has changed. Some undocumented fields or filters might no longer be available. (Undocumented features are not officially supported and might change without notice.)
+
 - **New API version**: The current API version (v1 and v2) is now `2021-06-14`. The following changes were made with this version:
   - The `metadata` property of entities detected at run time is deprecated. For detailed information about detected system entities, see the `interpretation` property.
   - The data types of certain entity mentions are no longer automatically converted:
