@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-08-19"
+lastupdated: "2021-07-19"
 
 subcollection: assistant
 
@@ -155,6 +155,8 @@ If your application is still using the v1 API, you can query and filter logs usi
 
 With the v1 /logs API, you can filter on the following fields:
 
+- `language`
+- `meta.message.entities_count`
 - `request.context.metadata.deployment`
 - `request.context.system.assistant_id`
 - `request.input.text`
@@ -162,7 +164,6 @@ With the v1 /logs API, you can filter on the following fields:
 - `response.input.text`
 - `response.intents`
 - `response.top_intent`
-- `meta.message.entities_count`
 - `workspace_id`
 
 Filtering on other fields is not currently supported.
