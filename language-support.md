@@ -87,7 +87,7 @@ In the following tables, the level of language and feature support is indicated 
 
 | Language | **[Content Catalog](/docs/assistant?topic=assistant-catalog)** | **[Irrelevance detection](/docs/assistant?topic=assistant-irrelevance-detection)** | **[Enhanced intent detection](/docs/assistant?topic=assistant-intent-detection)** |
 |:---:|:---:|:---:|:---:|
-| **English (en)**                   | GA | GA | Beta |
+| **English (en)**                   | GA | GA | GA |
 | **Arabic (ar)**                    | GA (except Covid-19) | NA | NA |
 | **Chinese (Simplified) (zh-cn)**   | NA | NA | NA |
 | **Chinese (Traditional) (zh-tw)**  | NA | NA | NA |
