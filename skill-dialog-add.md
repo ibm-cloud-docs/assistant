@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-06-03"
+lastupdated: "2021-07-08"
 
 keywords: import workspace, import JSON, export JSON, upload JSON, download JSON, collaborate
 
@@ -45,9 +45,7 @@ To add a skill, complete the following steps:
 1.  Do one of the following:
 
     - To create a new dialog skill, remain on the *Create skill* tab.
-    - To add a sample skill that is provided with the product as a starting point for your own skill or as an example to explore before you create one yourself, open the *Use sample skill* tab, and then click the sample you want to use.
-
-      The sample skill is added to your list of skills. It is not associated with any assistants. Skip the remaining steps in this procedure.
+    - To add the dialog sample skill that is provided with the product as a starting point for your own skill or as an example to explore before you create one yourself, open the *Use sample skill* tab, and then click the sample labeled **TYPE: Dialog**. You can skip the remaining steps.
 
     - To add a skill that was downloaded previously, you can upload it as a JSON file. Open the *Upload skill* tab. Drag a file or click **Drag and drop file here or click to select a file** and select the JSON file you want to upload.
 
