@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-07-22"
 
 subcollection: assistant
 
@@ -120,6 +120,7 @@ Filtering is not available for all fields. You can filter on the following field
 - `response.output.entities`
 - `response.output.intents`
 - `response_timestamp`
+- `session_id`
 - `skill_id`
 - `snapshot`
 
@@ -139,13 +140,12 @@ The following examples illustrate various types of queries using this syntax.
 | The user input text contains the word "order" or a grammatical variant (for example, `orders` or `ordering`. | `request.input.text:order` |
 | An intent name in the response exactly matches `place_order`. | `response.output.intents:intent::place_order` |
 | An entity name in the response exactly matches `beverage`.  | `response.output.entities:entity::beverage` |
+| No intent name in the response exactly matches `order`. | `response.intents:intent::!order` |
 | The user input text does not contain the word "order" or a grammatical variant. | `request.input.text:!order` |
-<!--| The name of the detected intent with the highest confidence does not exactly match `hello`. | `response.top_intent::!hello` |-->
 | The user input text contains the string `!hello`. | `request.input.text:\!hello` |
 | The user input text contains the string `IBM Watson`. | `request.input.text:"IBM Watson"` |
 | The user input text contains a string that has no more than 2 single-character differences from `Watson`. | `request.input.text:Watson~2` |
 | The user input text contains a string consisting of `comm`, followed by zero or more additional characters, followed by `s`. | `request.input.text:comm*s` |
-| The user input text is not empty. | `request.input.text::!""` |
 | An intent name in the response exactly matches either `hello` or `goodbye`. | <code>response.output.intents:intent::(hello&#124;goodbye)</code> |
 | An intent name in the response exactly matches `order`, and an entity name in the response exactly matches `beverage`. | `[response.output.intents:intent::order,response.output.entities:entity::beverage]` |
 
@@ -160,6 +160,7 @@ With the v1 /logs API, you can filter on the following fields:
 - `request.context.metadata.deployment`
 - `request.context.system.assistant_id`
 - `request.input.text`
+- `response.context.conversation_id`
 - `response.entities`
 - `response.input.text`
 - `response.intents`
