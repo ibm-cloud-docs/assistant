@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-07-27"
 
 subcollection: assistant
 
@@ -90,8 +90,6 @@ To set up a Zendesk service desk integration, complete the following steps:
       On Safari, the application files are extracted from the ZIP file into a folder. To keep the file archived as a .zip file, so you can upload it later, edit the Safari preferences. Clear the *Open safe files after downloading* checkbox.
       {: note}
 
-    - Copy the credentials that are generated for you in the **Watson Assistant Zendesk app credentials** field. You will need them in a later step.
-
     - Log in to Zendesk with a user ID that has administrative privileges.
 
     - Install the Watson Assistant Zendesk app to your Zendesk Chat subdomain as a new private app. 
@@ -99,8 +97,7 @@ To set up a Zendesk service desk integration, complete the following steps:
       - First, make sure the Zendesk Agent Workspace is not enabled for your account: From the Zendesk navigation pane, go to *Settings*, and then click *Agents*. Deselect the *Enable the Zendesk Agent Workspace* checkbox. 
       - Then download the app. From the Chat dashboard navigation pane, expand *Settings*, and then click *Account*.
       - Open the *App* tab.
-      - Click *Upload private app*, and then browse for the application file that you downloaded earlier.    
-      - When credentials are requested, paste the Watson Assistant Zendesk app credentials that you copied earlier.
+      - Click *Upload private app*, and then browse for the application file that you downloaded earlier.
 
       ![Screen capture of the Zendesk Account page where you can upload a private app.](images/zd-upload-app.png)
 

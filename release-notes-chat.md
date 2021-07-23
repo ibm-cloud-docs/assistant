@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-25"
+lastupdated: "2021-07-27"
 
 subcollection: assistant
 
@@ -37,6 +37,22 @@ For information about new features and improvements to the core {{site.data.keyw
 {: #release-notes-chat-version}
 
 If you want to evaluate changes that are introduced in a web chat release before you apply them to your deployment, you can set a version of your web chat. For more information, see [Versioning](/docs/assistant?topic=assistant-web-chat-basics#web-chat-basics-versions).
+
+## 4.5.0
+{: #4.5.0}
+
+*Release date: 22 July 2021*
+
+- A new `scrollToMessage` method is available for scrolling the web chat view to a specified message in the chat history. For more information, see [instance.scrollToMessage()](https://web-chat.assistant.test.watson.cloud.ibm.com/docs.html?to=api-instance-methods#scrollToMessage){: external}.
+- A new `pre:open` event is available. This event is fired when the web chat window is opened, but before the welcome message or chat history are loaded. For more information, see [window:pre:open](https://web-chat.assistant.test.watson.cloud.ibm.com/docs.html?to=api-events#windowpreopen){: external}.
+- A new chat history widget is available for embedding in service desk agent UIs. This new widget is based on a read-only view of the standard web chat widget. For information about using the new chat history widget in integrations built using the starter kit, see [Embedded agent application](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/blob/main/docs/AGENT_APP.md){: external}.
+
+## 4.4.1
+{: #4.4.1}
+
+*Release date: 6 July 2021*
+
+- Bug fixes.
 
 ## 4.4.0
 {: #4.4.0}
