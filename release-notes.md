@@ -65,7 +65,7 @@ The change log lists changes that were made this year, ordered by the date they 
 
 ## 27 July 2021
 {: #27July2021}
-<!--1.58.0-->
+<!--1.158.0-->
 
 - **Salesforce and Zendesk deployment changes**: The Salesforce and Zendesk integrations have been updated to use the [new chat history widget](/docs/assistant?topic=assistant-release-notes-chat#4.5.0). The updated deployment process applies to all new deployments, including any redeployments of existing Salesforce and Zendesk connections. However, existing deployments are not affected and do not need to be modified or redeployed at this time.
 
