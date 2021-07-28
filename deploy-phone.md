@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-13"
+lastupdated: "2021-07-28"
 
 subcollection: assistant
 
@@ -154,11 +154,11 @@ If, after you transfer the caller to a human agent, the connection to the human 
 You can add security to the phone connection by selecting one or both of the following configuration options:
 
 - **Force secure trunking**: Select this option to use Secure Real-Time Transfer Protocol (SRTP) to secure the audio that is transmitted over the phone. For more information about RTP, see [Call routing details](#deploy-phone-route).
-- **Enable SIP authentication**: Select this option if you want the session initiation to be done over SIP Secure (SIPS). 
+- **Enable SIP authentication**: Select this option if you want to require SIP digest authentication. 
 
-  SIPS applies TLS (Transport Layer Security) to the connection. When SIPS is enabled, all inbound traffic, meaning requests from the SIP trunk provider to your assistant, must be authenticated. After selecting this option, allow the service credentials (API key) for your {{site.data.keyword.conversationshort}} service instance to be used for authentication.
+  When SIP authentication is required, all inbound traffic (meaning requests from the SIP provider to your assistant) are authenticated using SIP digest authentication, and must be sent using Transport Layer Security (TLS). If this option is selected, the SIP digest user name and password must be configured, and the SIP trunk being used to connect to Assistant must be configured to use only TLS.
 
-  If you use Twilio as your SIP trunk provider, do not enable SIP authentication.
+  If you use Twilio as your SIP trunk provider, you cannot enable SIP authentication for outbound SIP trunks to Watson Assistant.
   {: important}
 
 ### Apply advanced SIP trunk configuration settings
@@ -247,7 +247,7 @@ To set up a Twilio SIP trunk, complete the following steps:
 
     You can get the SIP URI for your phone integration from the phone integration configuration page.
 
-1.  If you plan to support call transfers, enable the public switched telephone network (PSTN) option also.
+1.  If you plan to support call transfers, enable Call Transfer (SIP REFER) in your SIP trunk. If you expect to transfer calls to the public switched telephone network (PSTN), also enable PSTN Transfer on your trunk.
 
 1.  Select *Numbers* from the navigation bar for your SIP trunk, and then do one of the following things:
   
