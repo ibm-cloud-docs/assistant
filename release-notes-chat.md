@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-07-27"
+lastupdated: "2021-07-29"
 
 subcollection: assistant
 
@@ -41,7 +41,7 @@ If you want to evaluate changes that are introduced in a web chat release before
 ## 4.5.0
 {: #4.5.0}
 
-*Release date: 22 July 2021*
+*Release date: 29 July 2021*
 
 - A new `scrollToMessage` method is available for scrolling the web chat view to a specified message in the chat history. For more information, see [instance.scrollToMessage()](https://web-chat.assistant.test.watson.cloud.ibm.com/docs.html?to=api-instance-methods#scrollToMessage){: external}.
 - A new `pre:open` event is available. This event is fired when the web chat window is opened, but before the welcome message or chat history are loaded. For more information, see [window:pre:open](https://web-chat.assistant.test.watson.cloud.ibm.com/docs.html?to=api-events#windowpreopen){: external}.

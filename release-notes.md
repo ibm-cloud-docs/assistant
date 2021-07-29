@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-07-27"
+lastupdated: "2021-07-29"
 
 subcollection: assistant
 
@@ -63,8 +63,8 @@ Existing models that you have trained will not be immediately impacted, but expi
 
 The change log lists changes that were made this year, ordered by the date they were released.
 
-## 27 July 2021
-{: #27July2021}
+## 29 July 2021
+{: #29July2021}
 <!--1.158.0-->
 
 - **Salesforce and Zendesk deployment changes**: The Salesforce and Zendesk integrations have been updated to use the [new chat history widget](/docs/assistant?topic=assistant-release-notes-chat#4.5.0). The updated deployment process applies to all new deployments, including any redeployments of existing Salesforce and Zendesk connections. However, existing deployments are not affected and do not need to be modified or redeployed at this time.
