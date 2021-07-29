@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-10"
+lastupdated: "2021-07-29"
 
 subcollection: assistant
 
@@ -95,16 +95,10 @@ To set up a Salesforce service desk integration, complete the following steps:
 
     From the Salesforce **Data>Objects and Fields>Object Manager>Chat Transcript>Fields & Relationships** page, create the following custom fields:
 
-    - **Session**: Stores a session ID that tracks ongoing conversations.
-
-      - **Data Type**: Text
-      - **Field Label**: `x-watson-assistant-session`
-      - **Field Length**: 255
-
     - **Token**: Stores a {{site.data.keyword.conversationshort}} authentication token that secures the communication between Salesforce and your assistant.
 
       - **Data Type**: Text Area (Long)
-      - **Field Label**: `x-watson-assistant-token`
+      - **Field Label**: `x-watson-assistant-key`
       - **Field Length**: Specify the maximum length allowed to ensure it can hold a token that might contain over 100,000 characters.
 
 1.  Create a Visualforce page.
