@@ -395,6 +395,9 @@ To add a session variable, complete the following steps:
       Set `membership status` to `4. Are you a member of our rewards program?`
 
       Alternatively, you can use an expression to define the session variable value. For more information about expressions, see [Defining expressions](#actions-expressions).
+1.  When using a session variable in a response, you can set a fallback value. This lets you to define a value for a session variable if a user-defined value isn't found.
+
+    ![Fallback value for session variables](images/rn-fallback-value.png)
 
 When you reference a session variable elsewhere, such in a step condition expression, you refer to it by its variable ID. For example, to specify the session variable `membership_status` in an expression, use the syntax `${membership_status}`.
 
