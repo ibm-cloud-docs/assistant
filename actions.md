@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-07"
+lastupdated: "2021-08-02"
 
 subcollection: assistant
 
@@ -381,6 +381,7 @@ To add a session variable, complete the following steps:
 1.  Add a name for the session variable.
 
     As you add the name, an ID is generated for you. Any spaces in the name are replaced with underscores (_) in the ID.
+1.  **Optional**: Add an initial value. This sets the starting value for the variable at the beginning of a user session, until changed in any action step.
 1.  **Optional**: Add a description.
 1.  Click **Apply**.
 1.  If it's not already set, set the session variable value.
