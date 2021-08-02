@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-07-29"
+lastupdated: "2021-08-02"
 
 subcollection: assistant
 
@@ -68,6 +68,10 @@ The change log lists changes that were made this year, ordered by the date they 
 <!--1.158.0-->
 
 - **Salesforce and Zendesk deployment changes**: The Salesforce and Zendesk integrations have been updated to use the [new chat history widget](/docs/assistant?topic=assistant-release-notes-chat#4.5.0). The updated deployment process applies to all new deployments, including any redeployments of existing Salesforce and Zendesk connections. However, existing deployments are not affected and do not need to be modified or redeployed at this time.
+
+- **Fallback value for session variables**: In action skills, you can now set a fallback value for session variables. This feature you to define a value for a session variable if a user-defined value isn't found.
+
+  ![Fallback value for session variables](images/rn-fallback-value.png)
 
 ## 16 July 2021
 {: #16July2021}
