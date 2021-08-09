@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-08-10"
+lastupdated: "2021-08-02"
 
 subcollection: assistant
 
@@ -54,7 +54,7 @@ IBM releases services, features, and language support for your evaluation that a
 
 The {{site.data.keyword.conversationshort}} algorithms may be periodically refined and updated based on feedback, scientific enhancements, and additional factors, in order to continuously enhance the performance. Updates to the model will be communicated in these release notes.
 
-Existing models that you have trained will not be immediately impacted, but models older than 6 months will be automatically retrained to have our latest technologies applied to them.
+Existing models that you have trained will not be immediately impacted, but expired models will be updated to the current model, if you have not already done so, after 60 days of a new model becoming available.
 
 **Note:** This updating statement applies to Generally Available (GA) languages and features only.
 
@@ -62,11 +62,6 @@ Existing models that you have trained will not be immediately impacted, but mode
 {: #release-notes-tooling-changes}
 
 The change log lists changes that were made this year, ordered by the date they were released.
-
-## 23 August 2021
-{: #23Aug2021}
-
-**Automatic retrain of old skills and workspaces**: IBM Watson Assistant was released as a service in July 2016. Since then, users have been creating and updating skills to meet their virtual assistant needs. Behind the scenes, Watson Assistant creates machine learning (ML) models to perform a variety of tasks on the user's behalf. As of August 23, 2021, Watson Assistant will enable continuous retraining. The Watson Assistant service will continually monitor all ML models, and will automatically retrain those models that have not been retrained within 6 months of the time the retrain job runs. For more information, see [Automatic retrain of old skills and workspaces](/docs/assistant?topic=assistant-skill-auto-retrain).
 
 ## 29 July 2021
 {: #29July2021}
