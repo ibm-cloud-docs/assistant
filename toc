@@ -176,6 +176,7 @@ Watson Assistant (Managed)
         [Events](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events)
 
     at-events.md
+    skill-auto-retrain.md
     dialog-methods.md
     expression-language.md
     filter-reference.md
