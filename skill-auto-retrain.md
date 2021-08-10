@@ -37,3 +37,4 @@ As of August 23, 2021, {{site.data.keyword.conversationshort}} will enable conti
 
 In most cases, this retraining will be seamless from an end-user point of view. The same inputs will result in the same intents and entities being detected. In some cases, the retraining might cause changes in accuracy.
 {: note}
+
