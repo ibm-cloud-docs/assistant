@@ -66,7 +66,7 @@ The change log lists changes that were made this year, ordered by the date they 
 ## 23 August 2021
 {: #23Aug2021}
 
-**Automatic retrain of old skills and workspaces**: IBM Watson Assistant was released as a service in July 2016. Since then, users have been creating and updating skills to meet their virtual assistant needs. Behind the scenes, Watson Assistant creates machine learning (ML) models to perform a variety of tasks on the user's behalf. As of August 23, 2021, Watson Assistant will enable continuous retraining. The Watson Assistant service will continually monitor all ML models, and will automatically retrain those models that have not been retrained within 6 months of the time the retrain job runs. For more information, see [Automatic retrain of old skills and workspaces](/docs/assistant?topic=assistant-skill-auto-retrain).
+**Automatic retraining of old skills and workspaces**: As of August 23, 2021, {{site.data.keyword.conversationshort}} will enable automatic retraining of existing skills in order to take advantage of updated algorithms. The Watson Assistant service will continually monitor all ML models, and will automatically retrain those models that have not been retrained within the previous 6 months. For more information, see [Automatic retraining of old skills and workspaces](/docs/assistant?topic=assistant-skill-auto-retrain).
 
 ## 29 July 2021
 {: #29July2021}
