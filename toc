@@ -82,7 +82,7 @@ Watson Assistant (Managed)
             deploy-salesforce.md
             deploy-zendesk.md
             [Integrating with Genesys Cloud](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/genesys)
-            [Inegrating with NICE inContact](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/incontact)
+            [Integrating with NICE inContact](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/incontact)
             [Integrating with Twilio Flex](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/flex)
             [Integrating with your own service desk](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter)
 
