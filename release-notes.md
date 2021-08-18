@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-08-10"
+lastupdated: "2021-08-19"
 
 subcollection: assistant
 
@@ -66,7 +66,20 @@ The change log lists changes that were made this year, ordered by the date they 
 ## 23 August 2021
 {: #23Aug2021}
 
-**Automatic retraining of old skills and workspaces**: As of August 23, 2021, {{site.data.keyword.conversationshort}} will enable automatic retraining of existing skills in order to take advantage of updated algorithms. The {{site.data.keyword.conversationshort}} service will continually monitor all ML models, and will automatically retrain those models that have not been retrained within the previous 6 months. For more information, see [Automatic retraining of old skills and workspaces](/docs/assistant?topic=assistant-skill-auto-retrain).
+- **Automatic retraining of old skills and workspaces**: As of August 23, 2021, {{site.data.keyword.conversationshort}} will enable automatic retraining of existing skills in order to take advantage of updated algorithms. The {{site.data.keyword.conversationshort}} service will continually monitor all ML models, and will automatically retrain those models that have not been retrained within the previous 6 months. For more information, see [Automatic retraining of old skills and workspaces](/docs/assistant?topic=assistant-skill-auto-retrain).
+
+## 19 August 2021
+{: #19Aug2021}
+
+- **Actions preview now includes debug mode and variable values**: When previewing your actions, you can use **debug mode** and **variable values** to ensure your assistant is working the way you expect.
+
+  **Debug mode** allows you to go to the corresponding step by clicking on a step locator next to each message. It shows you the confidence score of top three possible action when the input triggers an action. You can also follow the step in the action editor along with the conversation flow.
+
+  ![Debug mode](images/rn-debug-confidence.png)
+
+  **Variable values** shows you a list of the variables and their values of current action and the session variables. You can check and edit variables during the conversation flow.
+
+  ![Variable values](images/rn-variable-values.png)
 
 ## 29 July 2021
 {: #29July2021}
