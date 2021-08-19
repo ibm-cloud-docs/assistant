@@ -166,7 +166,7 @@ The following example shows how to customize the option response type.
   }
 }
 ```
-{:codeblock}
+{: codeblock}
 
 First the value specified in the `title` attribute is displayed to the user. Then, the text specified in each `label` attribute. For example, `Which of these items do you want to insure? 1.Boat 2.Car 3.House`
 
@@ -180,7 +180,7 @@ To configure what the assistant shows before each option, edit the `prefixText` 
   }
 }
 ```
-{:codeblock}
+{: codeblock}
 
 For example, `Which of these items do you want to insure? Enter 1 for Boat Enter 2 for Car Enter 3 for House`
 
@@ -220,14 +220,14 @@ For example, if label is configured as follows:
 ```
 "label": "I'd like to order a drink."
 ```
-{:codeblock}
+{: codeblock}
 
 The assistant sends this message to the user:
 
 ```
 1. I'd like to order a drink.
 ```
-{:codeblock}
+{: codeblock}
 
 You can configure the text that will be prepended to each label. In the `prefixText` attribute, `%s` represents the number corresponding to the suggestion; it is replaced with the actual number at run time.
 
@@ -248,4 +248,4 @@ When `prefixText` is set to `Enter %s for:`, the following output is sent to the
 ```
 Enter 1 for: I'd like to order a drink.
 ```
-{:codeblock}
+{: codeblock}

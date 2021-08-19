@@ -68,7 +68,7 @@ To set up a Salesforce service desk integration, complete the following steps:
 
 1.  From the web chat integration page in {{site.data.keyword.conversationshort}}, set the **Allow transfers to live agents** switch to **On**, and then choose **Salesforce** as the service desk type. Click **Next**.
 
-1.  {: #deploy-salesforce-get-deployment-info}For {{site.data.keyword.conversationshort}} to connect to a Salesforce service desk, it needs information about your organization's Salesforce chat deployment and button implementations. Specifically, it needs the API endpoint, organization ID, deployment ID, and button ID. The service can derive the values that it needs from code snippets that you copy and paste to this configuration page.
+1.  For {{site.data.keyword.conversationshort}} to connect to a Salesforce service desk, it needs information about your organization's Salesforce chat deployment and button implementations. Specifically, it needs the API endpoint, organization ID, deployment ID, and button ID. The service can derive the values that it needs from code snippets that you copy and paste to this configuration page. {: #deploy-salesforce-get-deployment-info}
 
     In a separate browser tab or window, open your Salesforce account settings page. Log in with a user ID that has administrative privileges. You must switch back and forth between your Salesforce and {{site.data.keyword.conversationshort}} web chat integration setup pages. It's easier to do so if you have both pages open at once.
     {: tip}
@@ -82,9 +82,9 @@ To set up a Salesforce service desk integration, complete the following steps:
       Go to the Salesforce **Feature Settings>Service>Chat>Chat Buttons & Invitations** page. Find your organization's button implementation. Scroll to the end of the page, and then copy the *Chat Button Code* snippet.
     - Paste the chat button code snippet into the **Chat button code** field in the {{site.data.keyword.conversationshort}} Salesforce configuration page, and then click **Next**.
 
-1.  {: #deploy-salesforce-add-visualforce-page}Add a chat app that enables the Salesforce agent to see a history of the chat. To do so, create a Visualforce page, and then add a chat app to the page.
+1.  Add a chat app that enables the Salesforce agent to see a history of the chat. To do so, create a Visualforce page, and then add a chat app to the page. {: #deploy-salesforce-add-visualforce-page}
 
-1.  {: #deploy-salesforce-add-custom-fields}Add custom fields to the Salesforce chat transcript layout.
+1.  Add custom fields to the Salesforce chat transcript layout. {: #deploy-salesforce-add-custom-fields}
 
     This is a one-time task. If the fields already exist for your organization, you can skip this step.
     {: note}
@@ -108,7 +108,7 @@ To set up a Salesforce service desk integration, complete the following steps:
     - From the web chat integration page in {{site.data.keyword.conversationshort}}, copy the code snippet from the Visualforce page markup field.
     - Switch to your Salesforce web page. Search for **Visualforce Pages**. Create a page. Add a label and name to the page. Select the *Available for Lightning Experience, Lightning Communities, and the mobile app* checkbox. Paste the code snippet that you copied in the previous step into the page markup field.
 
-1.  {: #deploy-salesforce-add-page-to-layout}Add the Visualforce page that you created to the Salesforce chat app.
+1.  Add the Visualforce page that you created to the Salesforce chat app. {: #deploy-salesforce-add-page-to-layout}
 
     To ensure the Salesforce agents can see history of the chat between the customer and your assistant, you must add the page that you created earlier into the console that they use to keep track of their work. See [Create and Configure Lightning Experience Record Pages](https://help.salesforce.com/articleView?id=lightning_app_builder_customize_lex_pages.htm&type=5){: external}.
     

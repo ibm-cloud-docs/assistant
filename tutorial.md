@@ -706,7 +706,7 @@ If you do more testing, you might find that the dialog isn't very helpful in sce
 Now, when you test, you can provide a set of number or a mix of numbers and text as input, and the dialog reminds you of the correct order number format. You have successfully tested your dialog, found a weakness in it, and corrected it.
 
 Another way you can address this type of scenario is to add a node with slots. See the [Adding a node with slots to a dialog](/docs/assistant?topic=assistant-tutorial-slots) tutorial to learn more about using slots.
-{:tip}
+{: tip}
 
 ## Add the personal touch
 {: #tutorial-get-username}

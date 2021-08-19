@@ -93,7 +93,7 @@ To use assistant chat logs as the source for your intent and intent user example
 - The application with which you deploy the assistant must use the v2 `/message` API. The log of an assistant that receives user input through the v1 `/message` API cannot be used as a recommendation source. 
 
   All of the built-in integrations use the v2 API. See [Adding integrations](/docs/assistant?topic=assistant-deploy-integration-add).
-  {:tip}
+  {: tip}
 - The assistant must have exchanged messages with a customer within the log retention time period. Logs are stored for a number of days, the total of which is determined by your service plan type. If no customer interactions take place within the retention period, then there is no log data available to use as a recommendation source. For more information about log limits, see [Log limits](/docs/assistant?topic=assistant-logs#logs-limits).
 - The assistant log must contain at least 3,000 messages.
 

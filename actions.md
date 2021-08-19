@@ -80,7 +80,7 @@ To create actions, complete the following steps:
     {: note}
 
     If you've ever created an intent and added intent user examples in a dialog skill, then this step might feel familiar. An intent is added to the underlying language model based on what you add to this step.
-    {:tip}
+    {: tip}
 
 1.  Click **New step**.
 

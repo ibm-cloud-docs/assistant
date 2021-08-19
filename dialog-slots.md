@@ -71,7 +71,7 @@ Using slots produces a more natural dialog flow between the user and your assist
 
     For more information about the **Prompt for everything** checkbox, see [Asking for everything at once](#dialog-slots-prompt-for-everything).
 
-1.  {: #dialog-slots-response-types}Add a slot for each unit of required information.
+1.  Add a slot for each unit of required information. {: #dialog-slots-response-types}
 
     For each slot, specify these details:
 
