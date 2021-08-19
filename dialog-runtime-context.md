@@ -102,7 +102,7 @@ Define a context variable by adding the variable name to the **Variable** field 
     - The `name` can contain any upper- and lowercase alphabetic characters, numeric characters (0-9), and underscores.
 
       You can include other characters, such as periods and hyphens, in the name. However, if you do, then you must specify the shorthand syntax `$(variable-name)` every time you subsequently reference the variable. See [Expressions for accessing objects](/docs/assistant?topic=assistant-expression-language#expression-language-shorthand-syntax) for more details.
-      {:tip}
+      {: tip}
 
     - The `value` can be any supported JSON type, such as a simple string variable, a number, a JSON array, or a JSON object.
 
@@ -259,7 +259,7 @@ The name and value pair must meet these requirements:
 - The `name` can contain any upper- and lowercase alphabetic characters, numeric characters (0-9), and underscores.
 
   You can include other characters, such as periods and hyphens, in the name. However, if you do, then you must specify the shorthand syntax `$(variable-name)` every time you subsequently reference the variable. See [Expressions for accessing objects](/docs/assistant?topic=assistant-expression-language#expression-language-shorthand-syntax) for more details.
-  {:tip}
+  {: tip}
 
 - The `value` can be any supported JSON type, such as a simple string variable, a number, a JSON array, or a JSON object.
 

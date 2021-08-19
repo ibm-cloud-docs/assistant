@@ -47,13 +47,13 @@ In this short tutorial, we introduce {{site.data.keyword.conversationfull}} and 
 You need a service instance to start.
 {: hide-dashboard}
 
-1.  {: hide-dashboard} Go to the [{{site.data.keyword.conversationshort}}](https://cloud.ibm.com/catalog/services/watson-assistant){: external} page in the {{site.data.keyword.cloud}} catalog.
+1.  Go to the [{{site.data.keyword.conversationshort}}](https://cloud.ibm.com/catalog/services/watson-assistant){: external} page in the {{site.data.keyword.cloud}} catalog. {: hide-dashboard}
 
     The service instance will be created in the **default** resource group if you do not choose a different one, and it *cannot* be changed later. This group is sufficient for the purposes of trying out the product.
 
     If you're creating an instance for more robust use, then learn more about [resource groups](/docs/account?topic=account-account_setup){: external}.
-1.  {: hide-dashboard} Sign up for a free {{site.data.keyword.cloud_notm}} account or log in.
-1.  {: hide-dashboard} Click **Create**.
+1.  Sign up for a free {{site.data.keyword.cloud_notm}} account or log in. {: hide-dashboard}
+1.  Click **Create**. {: hide-dashboard}
 
 ## Open Watson Assistant
 {: #getting-started-launch-tool}

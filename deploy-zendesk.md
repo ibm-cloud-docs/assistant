@@ -57,7 +57,7 @@ To set up a Zendesk service desk integration, complete the following steps:
 1.  Create a web chat integration. For more information, see [Integrating the web chat with your website](/docs/assistant?topic=assistant-deploy-web-chat).
 
 1.  From the web chat integration page in {{site.data.keyword.conversationshort}}, set the **Allow transfers to live agents** switch to **On**, and then choose **Zendesk** as the service desk type, and then click **Next**.
-1.  {: #deploy-zendesk-get-account-key}Add the account key for your Zendesk account, and then click **Next**.
+1.  Add the account key for your Zendesk account, and then click **Next**. {: #deploy-zendesk-get-account-key}
 
     To get the account key for your Zendesk account, follow these steps:
 
@@ -79,7 +79,7 @@ To set up a Zendesk service desk integration, complete the following steps:
 
     - Return to the setup page in {{site.data.keyword.conversationshort}}, and then paste the key into the field.
 
-1.  {: #deploy-zendesk-add-private-app}Install the {{site.data.keyword.conversationshort}} private application in your Zendesk Chat subdomain.
+1.  Install the {{site.data.keyword.conversationshort}} private application in your Zendesk Chat subdomain. {: #deploy-zendesk-add-private-app}
 
     When you create a Zendesk Chat account, you specify a subdomain. Afterward, your Zendesk console is available from a URL with the syntax: `<subdomain>.zendesk.com`. For example, `ibm.zendesk.com`.
     
@@ -123,7 +123,7 @@ When you add security to your Zendesk integration, you ensure that the visitors 
 
 Before you can secure the Zendesk connection, complete the following required tasks:
 
-1.  {: #deploy-zendesk-secure-prereqs}Secure the web chat. For more information see [Securing the web chat](/docs/assistant?topic=assistant-web-chat-security).
+1.  Secure the web chat. For more information see [Securing the web chat](/docs/assistant?topic=assistant-web-chat-security). {: #deploy-zendesk-secure-prereqs}
 1.  Encrypt sensitive information that you pass to the web chat. 
 
     When you enable security in Zendesk, you must provide the name and email address of the current user with each request. Configure the web chat to pass this information in the payload.
@@ -192,11 +192,11 @@ Before you can secure the Zendesk connection, complete the following required ta
 
 To secure the Zendesk connection, complete the following steps:
 
-1.  {: #deploy-zendesk-secure-task}In the *Authenticate users* section, set the switch to **On**.
+1.  In the *Authenticate users* section, set the switch to **On**. {: #deploy-zendesk-secure-task}
 
 1.  Paste the secret that you copied from the Zendesk setup page into the **Zendesk shared secret** field.
 
-1.  {: #deploy-zendesk-secure-anonymous}Decide whether to allow unidentified users to access Zendesk.
+1.  Decide whether to allow unidentified users to access Zendesk. {: #deploy-zendesk-secure-anonymous}
 
     The web chat integration allows anonymous users to initiate chats. However, as soon as you enable visitor authentication, Zendesk requires that the name and email of each user be provided. If you try to connect without passing the required information, the connection will be refused. 
 

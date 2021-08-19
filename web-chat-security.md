@@ -53,7 +53,7 @@ The process you use to add the web chat to your website is simple. Its simplicit
 
 Before you enable security, complete the following steps:
 
-1.  {: #deploy-web-chat-security-origin}Create a RS256 private/public key pair.
+1.  Create a RS256 private/public key pair. {: #deploy-web-chat-security-origin}
 
     You can use a tool such as the OpenSSL command line or PuTTYgen.
 

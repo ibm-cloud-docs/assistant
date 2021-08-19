@@ -123,7 +123,7 @@ Dictionary-based entites are those for which you define specific terms, synonyms
 
     **Important:** Don't include sensitive or personal information in entity names or values. The names and values can be exposed in URLs in an app.
 
-1.  {: #entities-synonyms}Add synonyms for the value. For example, you might add `NYC` and `The Big Apple` as synonyms for `New York City`.
+1.  Add synonyms for the value. For example, you might add `NYC` and `The Big Apple` as synonyms for `New York City`. {: #entities-synonyms}
 
     A synonym can be any string up to 64 characters in length.
 
