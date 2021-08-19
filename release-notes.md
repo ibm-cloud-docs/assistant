@@ -81,6 +81,11 @@ The change log lists changes that were made this year, ordered by the date they 
 
   ![Variable values](images/rn-variable-values.png)
 
+## 17 August 2021
+{: #17August2021}
+
+- **New service desk support reference implementation**: You can use the reference implementation details to integrate the web chat with the Oracle B2C Service service desk. For more information, see [Adding service desk support](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-haa).
+
 ## 29 July 2021
 {: #29July2021}
 <!--1.158.0-->

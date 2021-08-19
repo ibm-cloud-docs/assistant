@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-12"
+lastupdated: "2021-08-19"
 
 subcollection: assistant
 
@@ -267,14 +267,15 @@ Delight your customers with 360-degree support by integrating your web chat with
 
 The following service desk offerings are supported:
 
-- {: #deploy-web-chat-zendesk}[Zendesk](/docs/assistant?topic=assistant-deploy-zendesk)
-- {: #deploy-web-chat-salesforce}[Salesforce](/docs/assistant?topic=assistant-deploy-salesforce)
+- [Zendesk](/docs/assistant?topic=assistant-deploy-zendesk) {: #deploy-web-chat-zendesk}
+- [Salesforce](/docs/assistant?topic=assistant-deploy-salesforce) {: #deploy-web-chat-salesforce}
 
 Fully functional reference implementations are provided for the following service desks:
 
 - [Genesys Cloud](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/genesys){: external}
 - [NICE inContact](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/incontact){: external}
 - [Twilio Flex](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/flex){: external}
+- [Oracle B2C Service](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/oracle){: external}
 
 The starter kit reference implementations, while functional, are examples only, and have not been vetted for production use. You should perform robust testing before deploying these integrations in production.
 {: important}

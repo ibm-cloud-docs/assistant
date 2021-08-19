@@ -84,6 +84,7 @@ Watson Assistant (Managed)
             [Integrating with Genesys Cloud](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/genesys)
             [Integrating with NICE inContact](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/incontact)
             [Integrating with Twilio Flex](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/flex)
+            [Integrating with Oracle B2C Service](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/oracle)
             [Integrating with your own service desk](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter)
 
         {: .topicgroup}
