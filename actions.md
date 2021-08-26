@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-02"
+lastupdated: "2021-08-26"
 
 subcollection: assistant
 
@@ -618,6 +618,9 @@ To customize disambiguation, complete the following steps:
 1.  Optionally, review and improve your action names. 
 
     If an action name is too long or doesn't reflect the purpose of the action, edit it. Use a name that is concise and represents the overall goal of the action.
+
+You can use the API to modify additional disambiguation settings. These settings include the disambiguation sensitivity, which affects how often disambiguation is triggered and how many choices are included. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#updateworkspace){: external}.
+{: tip}
 
 ### Disabling disambiguation
 {: #actions-disambiguation-disable}

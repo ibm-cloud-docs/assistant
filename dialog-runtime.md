@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-08-26"
 
 keywords: digression, disambiguation, confidence 
 
@@ -129,7 +129,10 @@ To edit the disambiguation settings, complete the following steps:
 
 1.  If you want to limit the number of disambiguation options that can be displayed to a user, then in the **Maximum number of suggestions** field, specify a number between 2 and 5. 
 
-    Your changes are automatically saved.
+Your changes are automatically saved.
+
+You can use the API to modify additional disambiguation settings. These settings include the disambiguation sensitivity, which affects how often disambiguation is triggered and how many choices are included. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#updateworkspace){: external}.
+{: tip}
 
 Next, you must decide which dialog nodes you want to make eligible for disambiguation. From the Skills menu, click **Dialog**.
 
