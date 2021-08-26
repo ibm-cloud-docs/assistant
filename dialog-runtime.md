@@ -131,7 +131,7 @@ To edit the disambiguation settings, complete the following steps:
 
 Your changes are automatically saved.
 
-You can use the API to modify additional disambiguation settings. These settings include the disambiguation sensitivity, which affects how often disambiguation is triggered and how many choices are included. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#updateworkspace){: external}
+You can use the API to modify additional disambiguation settings. These settings include the disambiguation sensitivity, which affects how often disambiguation is triggered and how many choices are included. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#updateworkspace){: external}.
 {: tip}
 
 Next, you must decide which dialog nodes you want to make eligible for disambiguation. From the Skills menu, click **Dialog**.
