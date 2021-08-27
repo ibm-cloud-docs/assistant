@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-27"
 
 subcollection: assistant
 
@@ -65,6 +65,8 @@ The change log lists changes that were made this year, ordered by the date they 
 
 ## 23 August 2021
 {: #23Aug2021}
+
+- Intent detection for the English language has been updated with the addition of new word-piece algorithms. These algorithms improve tolerance for out-of-vocabulary words and misspelling. This change affects only English-language assistants, and only if the enhanced intent recognition model is enabled. (For more information about the enhanced intent recognition model, and how to determine whether it is enabled, see [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).)
 
 - **Automatic retraining of old skills and workspaces**: As of August 23, 2021, {{site.data.keyword.conversationshort}} will enable automatic retraining of existing skills in order to take advantage of updated algorithms. The {{site.data.keyword.conversationshort}} service will continually monitor all ML models, and will automatically retrain those models that have not been retrained within the previous 6 months. For more information, see [Automatic retraining of old skills and workspaces](/docs/assistant?topic=assistant-skill-auto-retrain).
 
