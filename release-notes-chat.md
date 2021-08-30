@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-07-29"
+lastupdated: "2021-08-30"
 
 subcollection: assistant
 
@@ -37,6 +37,13 @@ For information about new features and improvements to the core {{site.data.keyw
 {: #release-notes-chat-version}
 
 If you want to evaluate changes that are introduced in a web chat release before you apply them to your deployment, you can set a version of your web chat. For more information, see [Versioning](/docs/assistant?topic=assistant-web-chat-basics#web-chat-basics-versions).
+
+## 4.5.1
+{: #4.5.1}
+
+*Release date: 30 August 2021*
+
+- Bug fixes for the interactive launcher beta feature. (For more information about this feature, see the `launcherBeta` configuration option at [Configuration options object](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-configuration#configurationobject){: external}.)
 
 ## 4.5.0
 {: #4.5.0}
