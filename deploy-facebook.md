@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-08-31"
 
 subcollection: assistant
 
@@ -47,7 +47,7 @@ If you want to follow along as someone else walks through the deployment steps, 
 
 ![Walkthrough of the Facebook deployment steps](https://www.youtube.com/embed/YyZO7TnA5I0){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
-To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=8o-FFU5sYNM&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
+To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=YyZO7TnA5I0&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 ## Dialog considerations
 {: #deploy-facebook-dialog}
