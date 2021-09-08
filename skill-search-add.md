@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-04-22"
+lastupdated: "2021-09-08"
 
 subcollection: assistant
 
@@ -274,7 +274,7 @@ If you upload a JSON file that contains repeating name values, then only the fir
     </tr>
     </table>
 
-1.  Choose whether to enable the **Emphasize the answer** beta feature. 
+1.  Choose whether to enable **Emphasize the answer**. 
 
     This option is available only if your {{site.data.keyword.discoveryshort}} instance uses the v2 {{site.data.keyword.discoveryshort}} API.
     {: note}
