@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-28"
+lastupdated: "2021-09-08"
 
 subcollection: assistant
 
@@ -26,10 +26,17 @@ subcollection: assistant
 # Integrating with phone ![Plus or higher plans only](images/plus.png)
 {: #deploy-phone}
 
-Add a phone integration so your assistant can answer when your customers call.
+By adding the phone integration to your assistant, you can make your assistant available to customers over the phone.
 {: shortdesc}
 
-When your customer makes a phone call through a Session Initiation Protocol (SIP) trunk that you configure, the phone integration answers. The integration converts output from your dialog from text to voice by using the {{site.data.keyword.texttospeechfull}} service. The audio is sent to the telephone network through the SIP trunk. When the customer replies, voice is converted to text by using the {{site.data.keyword.speechtotextfull}} service.
+When you add the phone integration to your assistant, you can automatically generate a working phone number that is automatically connected to your assistant. Or, if you prefer, you can connect the assistant to your existing infrastructure by configuring an existing Session Initiation Protocol (SIP) trunk.
+
+A SIP trunk is equivalent to an analog telephone line, except it uses Voice over Internet Protocol (VoIP) to transmit voice data and can support multiple concurrent calls. The trunk can connect to the public switched telephone network (PSTN) or your company's on-premises private branch exchange (PBX). If you choose to generate a free phone number for your assistant, a SIP trunk is automatically provisioned from IntelePeer. You can also choose to use an existing SIP trunk from a provider such as IntelePeer, Genesys, or Twilio.
+
+Generating a free phone number is available only with new phone integrations. If you have an existing phone integration and you want to switch to a free phone number, you must delete the existing integration and create a new one.
+{: note}
+
+When your customer makes a phone call using the telephone number connected to your assistant, the phone integration answers. The integration converts output from your assistant into voice audio by using the {{site.data.keyword.texttospeechfull}} service. The audio is sent to the telephone network through the SIP trunk. When the customer replies, the voice input is converted into text by using the {{site.data.keyword.speechtotextfull}} service.
 
 This feature is available only to Plus or Enterprise plan users. Note that {{site.data.keyword.speechtotextshort}} and {{site.data.keyword.texttospeechshort}} charges are included in the cost of a [monthly active user](/docs/assistant?topic=assistant-services-information#services-information-user-based-plans) (MAU).
 
@@ -41,61 +48,66 @@ Depending on the architecture of your existing telephony infrastructure, there a
 
 You must have Manager service level access to the instance. For more information about access levels, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).
 
-To watch a video that walks through the setup process, see [Phone and SMS Integration](https://community.ibm.com/community/user/watsonapps/viewdocument/phone-and-sms-integration?CommunityKey=7a3dc5ba-3018-452d-9a43-a49dc6819633&tab=librarydocuments){: external} in the *IBM Watson Apps Community*.
+<!--To watch a video that walks through the setup process, see [Phone and SMS Integration](https://community.ibm.com/community/user/watsonapps/viewdocument/phone-and-sms-integration?CommunityKey=7a3dc5ba-3018-452d-9a43-a49dc6819633&tab=librarydocuments){: external} in the *IBM Watson Apps Community*.-->
 
 To set up the integration, complete the following steps:
 
-1. From the Assistants page, click to open the assistant tile that you want to deploy.
+1. In the **Integrations** section on the main page for your assistant, click **Add integration**.
 
-1. From the Integrations section, click **Add integration**.
-
-1. Click **Phone**.
+1. On the **Add integration** page, click **Phone**.
 
 1. Click **Create**.
 
-1. If you don't have a SIP trunk configured, [work with a SIP trunk provider](#deploy-phone-sip-providers) to set up a SIP trunk now. Otherwise, skip this step. 
+1. Choose whether you want to generate a free phone number for your assistant or connect to an existing SIP trunk:
 
-    A SIP trunk is equivalent to an analog telephone line, except it uses Voice over Internet Protocol (VoIP) to transmit voice data and can support multiple concurrent calls. The trunk can connect to the public switched telephone network (PSTN) or your company's on-premises private branch exchange (PBX).
+    - To generate a free phone number for your assistant, click **Generate a free phone number**.
 
-    - Scroll to the *SIP Trunking configuration* section, and then copy the value from the **SIP uniform resource identifier (URI)** field. 
+    - To use an existing phone number you have already configured with a [SIP trunk provider](#deploy-phone-sip-providers), click **Use an existing phone number with an external provider**.
 
-      You will need to provide the SIP URI for your assistant during the SIP trunk setup process.
-    
-    - Create a phone number through your SIP provider, and then assign it to your SIP trunk. 
+    Click **Next**.
 
-1.  In the *Phone number* section of the phone integration setup page, add one or more phone numbers.
+1. If you are using an existing phone number, follow the instructions to configure the SIP trunk. (If you are generating a free phone number, skip this step).
 
-    You might have only the one phone that you created through your SIP trunk provider in the previous step, or you might have a set of numbers.
+    1. On the **Bring your own SIP trunk** page, copy the SIP URI and assign it to your SIP trunk. Click **Next**.
 
-    - If you have one phone number, add it to the field.
+    1. On the **Phone number** page, specify the phone number of the SIP trunk. Specify the number by using the international phone number format: `+1 958 555 0123`. Do not surround the area code with parentheses.
 
-      Specify the number by using the international phone number format: `+1 958 555 0123`. Do *not* surround the area code with parentheses, such as (958).
+      Currently, only one primary phone number can be added during initial setup of the phone integration. You can add more phone numbers in the phone integration settings later.
 
-    - If you have multiple phone numbers, click **Add**.
+      Click **Next**.
 
-      Add a phone number and an optional description, and then click the checkmark icon ![checkmark icon](images/phone-checkmark-save.png) to save the number.
+1. On the **Speech to Text** page, select the instance of the {{site.data.keyword.speechtotextshort}} service you want to use for the phone integration.
 
-      - To add more phone numbers one by one, click the *add phone number* icon (![Add phone number][images/phone-integ-add-number.png]), and then specify the phone number and an optional description. Repeat to add more numbers.
+    - If you have existing {{site.data.keyword.speechtotextshort}} instances, select the instance you want to use from the list.
 
-      - To import a set of phone numbers that are stored in a comma-separated values (CSV) file, click the *Upload a CSV file* icon (![Add phone number][images/phone-integ-import-number.png]), and then find the CSV file that contains the list of phone numbers.
+    - If you do not have any existing {{site.data.keyword.speechtotextshort}} instances, click **Create new instance** to create a new Plus instance.
 
-      The phone numbers you upload will replace any existing numbers in the table.
-      {: important}
+1. In the **Choose your Speech to Text language model** field, select the language model you want to use.
 
-     The phone numbers must be unique per phone integration. If you use Twilio as the SIP trunk provider, you can use the same phone number for the phone and text messaging integrations.
+    The list of language models is automatically filtered to use the same language as your assistant. To see all language models, toggle the **Filter models based on assistant language** switch to **Off**.
 
-     Click **Save**.
+    If you created specialized custom models that you want your assistant to use, choose the {{site.data.keyword.speechtotextshort}} service instance that hosts the custom models now, and you can configure your assistant to use them later. The {{site.data.keyword.speechtotextshort}} service instance must be hosted in the same location as your {{site.data.keyword.conversationshort}} service instance. For more information, see [Using a custom language model](/docs/assistant?topic=assistant-dialog-voice-actions#dialog-voice-actions-custom-language).
+    {: note}
 
-1. Review the speech services that will be used by the phone integration.
+    For more information about language models, see [Languages and models](https://cloud.ibm.com/docs/speech-to-text?topic=speech-to-text-models){: external} in the {{site.data.keyword.speechtotextshort}} documentation.
 
-    If you don't have existing instances of the speech services, a Plus plan instance of each of the following services is created for you:
+    Click **Next**.
 
-    - {{site.data.keyword.speechtotextshort}}
-    - {{site.data.keyword.texttospeechshort}}
+1. On the **Text to Speech** page, select the instance of the {{site.data.keyword.texttospeechshort}} service you want to use for the phone integration.
 
-    If you have instances of the {{site.data.keyword.speechtotextshort}} and {{site.data.keyword.texttospeechshort}} services in paid plans, they are configured for use with your phone integration automatically.
+    - If you have existing {{site.data.keyword.texttospeechshort}} instances, select the instance you want to use from the list.
 
-    Stop and create speech service instances yourself before you finish setting up the integration in the following cases:
+    - If you do not have any existing {{site.data.keyword.texttospeechshort}} instances, click **Create new instance** to create a new Standard instance.
+
+1. In the **Choose your Text to Speech voice** field, select the voice you want to use.
+
+    The list of voices is automatically filtered to use the same language as your assistant. To see all voices, toggle the **Filter voices based on assistant language** switch to **Off**.
+
+    For more information about voice options, and to listen to audio samples, see [Languages and voices](https://cloud.ibm.com/docs/text-to-speech?topic=text-to-speech-voices){: external} in the {{site.data.keyword.texttospeechshort}} documentation.
+
+    Click **Next**.
+
+<!--   Stop and create speech service instances yourself before you finish setting up the integration in the following cases:
 
     - If you have Lite plan instances of the speech services, the automatic creation process is not started. Consider deleting the lite plan instances or create Plus plan instances of the services.
     - If you want to use instances that are dedicated to handling speech services for your assistant only, and your existing instance is already in use by other applciations.
@@ -104,31 +116,48 @@ To set up the integration, complete the following steps:
     
     Create the speech instances in the same data center location before you set up the integration. Then, you can choose the existing instances from the list.
     
-    The models that are chosen automatically use the same language as the assistant to which you are adding the integration. You can choose to use different models if you want.
-    
-    If you want to use a model that was created in a different service instance, click **More options** to show all service instances that you can access as options. <!--For example, if you created specialized custom models that you want your assistant to use, you can find and select them.-->
+    If you want to use a model that was created in a different service instance, click **More options** to show all service instances that you can access as options. <!--For example, if you created specialized custom models that you want your assistant to use, you can find and select them.
 
-    If you created specialized custom models that you want your assistant to use, choose the service instance that hosts the custom models now, and you can configure your dialog to use them later. The service instance must be hosted in the same location as your {{site.data.keyword.conversationshort}} service instance. For more information, see [Using a custom language model](/docs/assistant?topic=assistant-dialog-voice-actions#dialog-voice-actions-custom-language).
-    {: note}
 
-    - **{{site.data.keyword.speechtotextshort}}**: Optionally choose a different {{site.data.keyword.speechtotextshort}} service language model to use to define the language your assistant will use when it transcribes what customers say.
+
+    <!-- - **{{site.data.keyword.speechtotextshort}}**: Optionally choose a different {{site.data.keyword.speechtotextshort}} service language model to use to define the language your assistant will use when it transcribes what customers say.
 
       For example, indicate whether to use British or American English. The list shows options from {{site.data.keyword.speechtotextshort}} service instances that you can access. 
       
-      For more information about language models, see [Languages and models](https://cloud.ibm.com/docs/speech-to-text?topic=speech-to-text-models){: external} in the {{site.data.keyword.speechtotextshort}} documentation.
 
     - **{{site.data.keyword.texttospeechshort}}**: Optionally choose a different {{site.data.keyword.texttospeechshort}} service voice model to use a different voice for your assistant. 
 
       The list shows options from {{site.data.keyword.texttospeechshort}} service instances that you can access. 
       
-      For more information about voice options, and to listen to audio samples, see [Languages and voices](https://cloud.ibm.com/docs/text-to-speech?topic=text-to-speech-voices){: external} in the {{site.data.keyword.texttospeechshort}} documentation.
 
-    Regardless of the instances you choose to use, any speech service charges that are incurred by the phone integration are billed with the {{site.data.keyword.conversationshort}} service plan as *voice add-on* charges. After the instances are created, you can access them directly from the IBM Cloud dashboard. Any use of the speech instances that occurs outside of your assistant are charged separately as speech service usage costs.
-    {: important}
+-->
 
-1. Click **Save and exit**.
+Any speech service charges that are incurred by the phone integration are billed with the {{site.data.keyword.conversationshort}} service plan as *voice add-on* charges. After the instances are created, you can access them directly from the IBM Cloud dashboard. Any use of the speech instances that occurs outside of your assistant are charged separately as speech service usage costs.
+{: important}
 
-If you want your assistant to be able to switch between voice and text during a customer interaction, enable both the phone and SMS with Twilio integrations. The integrations do not need to use the same third-party service provider. For more information, see [Integrating with *SMS with Twilio*](/docs/assistant?topic=assistant-deploy-sms).
+The phone integration setup is now complete. On the **Phone** page, you can click the tabs to view or edit the phone integration.
+
+If you chose to generate a free telephone number, your new number is displayed on the **Phone number** tab immediately. However, provisioning the new number so it is ready to use might take several minutes.
+{: note}
+
+## Adding more phone numbers
+
+If you are using existing phone numbers you configured using a SIP trunk provider, you can add multiple numbers to the same phone integration.
+
+If you generated a free phone number, you cannot add more numbers.
+{: note}
+
+To add more phone numbers:
+
+1. In the phone integration settings, go to the **Phone number** tab.
+
+1. Use one of the following methods to add phone numbers:
+
+    - To add phone numbers one by one, type each number in the table, along with an optional description. Click the checkmark icon ![checkmark icon](images/phone-checkmark-save.png) to save each number.
+
+    - To import a set of phone numbers that are stored in a comma-separated values (CSV) file, click the *Upload a CSV file* icon (![Add phone number][images/phone-integ-import-number.png]), and then find the CSV file that contains the list of phone numbers.
+
+      The phone numbers you upload will replace any existing numbers in the table.
 
 ## Advanced configuration options
 {: #deploy-phone-advanced}
