@@ -155,7 +155,7 @@ To add more phone numbers:
 
     - To add phone numbers one by one, type each number in the table, along with an optional description. Click the checkmark icon ![checkmark icon](images/phone-checkmark-save.png) to save each number.
 
-    - To import a set of phone numbers that are stored in a comma-separated values (CSV) file, click the *Upload a CSV file* icon (![Add phone number][images/phone-integ-import-number.png]), and then find the CSV file that contains the list of phone numbers.
+    - To import a set of phone numbers that are stored in a comma-separated values (CSV) file, click the *Upload a CSV file* icon (![Add phone number](images/phone-integ-import-number.png)), and then find the CSV file that contains the list of phone numbers.
 
       The phone numbers you upload will replace any existing numbers in the table.
 
