@@ -66,7 +66,7 @@ The change log lists changes that were made this year, ordered by the date they 
 <!--## 13 September 2021
 {: #13Sep2021}
 
-- **Disambiguation feature updates**: The disambiguation feature now includes improved features:
+- **Disambiguation feature updates**: The dialog skill disambiguation feature now includes improved features:
     - **Increased control**: The frequency and depth of disambiguation can now be controlled by using the **sensitivity** parameter in the create workspace API. There are 5 levels of sensitivity:
         - `high`
         - `medium_high`
@@ -80,16 +80,32 @@ The change log lists changes that were made this year, ordered by the date they 
 
     These new features may affect various metrics, such as disambiguation rate and click rates, as well as influence conversation-level key performance indicators such as containment. 
     
-    If the new disambiguation algorithm works differently than expected for your assistant, you can adjust it using the sensitivity parameter in the create workspace API. For more information, see [Create workspace](/apidocs/assistant/assistant-v1#createworkspace).
+    If the new disambiguation algorithm works differently than expected for your assistant, you can adjust it using the sensitivity parameter in the update workspace API. For more information, see [Update workspace](/apidocs/assistant/assistant-v1#updateworkspace).-->
 
 ## 9 September 2021
 {: #09Sep2021}
 
+- **Dialog skill "Try it out" improvements**: For dialog skills, the **Try it out** pane now uses the [React](https://reactjs.org/) UI framework similar to the rest of the Watson Assistant user interface. You shouldn't see any change in behavior or functionality. As a part of the update, dialog skill error handling has been improved within the "Try it out" pane. This update will be implemented incrementally, starting with service instances in the Tokyo and Seoul data centers.
+
 - **Enhanced intent detection for French, Italian, and Spanish dialog skills**: The new intent detection model improves your assistant's ability to understand what customers want. This model is now available in dialog skills using French, Italian, and Spanish. For more information, see [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).
 
-- **Change to the irrelevance detection option**: As of this release, new dialog skills no longer include the option to choose between the **Enhanced** or **Existing** irrelevance detection. The enhanced irrelevance detection is enabled by default. For more information, see [Defining what's irrelevant](/docs/assistant?topic=assistant-irrelevance-detection). 
+- **Change to the irrelevance detection option**: As of this release, new English dialog skills no longer include the option to choose between the **Enhanced** or **Existing** irrelevance detection. By default, intent detection and irrelevance detection are paired like this:
 
-  If necessary, you can use the [Update Workspace API](/apidocs/assistant/assistant-v1?curl=#updateworkspace) to choose irrelevance detection by changing the **off_topic** setting.-->
+    - If you use the dialog skill options to choose enhanced intent detection, it is automatically paired with enhanced irrelevance detection.
+    - If you use the dialog skill options to choose existing intent detection, it is automatically paired with existing irrelevance detection.
+
+    For more information, see [Defining what's irrelevant](/docs/assistant?topic=assistant-irrelevance-detection) and [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).
+    
+    If necessary, you can use the [Update workspace API](/apidocs/assistant/assistant-v1?curl=#updateworkspace) to set your English-language assistant to one of the four combinations of intent and irrelevance detection:
+
+    - Enhanced intent recognition and enhanced irrelevance detection
+    - Enhanced intent recognition and existing irrelevance detection
+    - Existing intent recognition and enhanced irrelevance detection
+    - Existing intent recognition and existing irrelevance detection
+
+    For French, Italian, and Spanish, you can use the API to set your assistant to these combinations:
+    - Enhanced intent recognition and enhanced irrelevance detection
+    - Existing intent recognition and existing irrelevance detection
 
 ## 2 September 2021
 {: #02Sep2021}
@@ -103,7 +119,7 @@ The change log lists changes that were made this year, ordered by the date they 
 
 - **Intent detection updates**: Intent detection for the English language has been updated with the addition of new word-piece algorithms. These algorithms improve tolerance for out-of-vocabulary words and misspelling. This change affects only English-language assistants, and only if the enhanced intent recognition model is enabled. (For more information about the enhanced intent recognition model, and how to determine whether it is enabled, see [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).)
 
-- **Automatic retraining of old skills and workspaces**: As of August 23, 2021, {{site.data.keyword.conversationshort}} will enable automatic retraining of existing skills in order to take advantage of updated algorithms. The {{site.data.keyword.conversationshort}} service will continually monitor all ML models, and will automatically retrain those models that have not been retrained within the previous 6 months. For more information, see [Automatic retraining of old skills and workspaces](/docs/assistant?topic=assistant-skill-auto-retrain).
+- **Automatic retraining of old skills and workspaces**: As of August 23, 2021, {{site.data.keyword.conversationshort}} enabled automatic retraining of existing skills in order to take advantage of updated algorithms. The {{site.data.keyword.conversationshort}} service will continually monitor all ML models, and will automatically retrain those models that have not been retrained within the previous 6 months. For more information, see [Automatic retraining of old skills and workspaces](/docs/assistant?topic=assistant-skill-auto-retrain).
 
 ## 19 August 2021
 {: #19Aug2021}

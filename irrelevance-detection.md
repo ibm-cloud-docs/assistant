@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-10-09"
+lastupdated: "2021-09-09"
 
 subcollection: assistant
 
@@ -53,13 +53,24 @@ The *irrelevance detection* feature helps your dialog skill recognize subjects t
 
 To learn more about the benefits of this feature, read the [Why Zero-Effort Irrelevance is Relevant](https://medium.com/ibm-watson/enhanced-offtopic-90b2dadf0ef1){: external} blog post.
 
-Irrelevance detection is enabled automatically for all new English-language dialog skills only. It is disabled for existing skills. You might choose not to enable it if you already dedicated time and effort to training your skill to recognize irrelevant user inputs.
+Irrelevance detection is enabled automatically for all new English, French, Italian, and Spanish skills. If you use the dialog skill options to choose enhanced intent detection, it is automatically paired with enhanced irrelevance detection. If you use the dialog skill options to choose existing intent detection, it is automatically paired with existing irrelevance detection. For more information, see [Defining what's irrelevant](/docs/assistant?topic=assistant-irrelevance-detection). 
 
-To enable the enhanced irrelevance detection feature, complete the following steps:
+For existing English-language skills created before September 2021, you have the option to enable the enhanced irrelevance detection feature in your skill's **Options**. Complete the following steps:
 
 1.  From the Skills page, open your skill.
 1.  From the skill menu, click **Options**.
 1.  On the *Irrelevance detection* page, choose **Enhanced**.
+
+If necessary, you can use the [Update workspace API](/apidocs/assistant/assistant-v1?curl=#updateworkspace) to set your English-language assistant to one of the four combinations of intent and irrelevance detection:
+
+- Enhanced intent recognition and enhanced irrelevance detection
+- Enhanced intent recognition and existing irrelevance detection
+- Existing intent recognition and enhanced irrelevance detection
+- Existing intent recognition and existing irrelevance detection
+
+For French, Italian, and Spanish, you can use the API to set your assistant to these combinations:
+  - Enhanced intent recognition and enhanced irrelevance detection
+  - Existing intent recognition and existing irrelevance detection
 
 To test the new detection mechanism in the "Try it out" pane, submit one or more utterances that have absolutely nothing to do with your training data. The new mechanism helps your skill to correctly recognize that the test utterances do not map to any of the intents defined in your training data, and classifies them as being `Irrelevant`.
 

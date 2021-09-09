@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-26"
+lastupdated: "2021-09-09"
 
 subcollection: assistant
 
@@ -584,70 +584,60 @@ Queries you submit through the Preview pane generate `/message` API calls, but t
 
 You can [call actions in the actions skill from the dialog skill](/docs/assistant?topic=assistant-dialog-call-action). To test how an action behaves when it is called from a dialog skill, test it from the assistant that uses both of the skills together. You cannot recreate the interaction from the Preview pane of the actions skill. First, add the actions and dialog skills to an assistant. Then, you can use the *Preview* button to test how the two skills interact with one another. Queries you submit through the *Preview* button do incur charges. For more information about the *Preview* button, see [Testing your assistant from a web page](/docs/assistant?topic=assistant-deploy-web-link).-->
 
-## Disambiguation
+## Asking clarifying questions
 {: #actions-disambiguation}
 
-Disambiguation occurs when your assistant finds that more than one action can fulfill a customer's request, and asks the customer for clarification. Instead of guessing which action to take, your assistant shows a list of the possible actions to the customer, and asks the customer to pick the right one.
+When your assistant finds that more than one action might fulfill a customer's request, it can automatically ask for clarification. Instead of guessing which action to take, your assistant shows a list of the possible actions to the customer, and asks the customer to pick the right one.
 
 ![Shows a sample conversation between a user and the assistant, where the assistant asks for clarification from the user.](images/disambig-demo.png)
 
-Every action that you add is eligible for disambiguation. The system actions are not.
+Any **Created by you** action that might match the customer's input can be included in the choices listed by a clarifying question. The **Set by assistant** actions are never included.
 
-When an action is displayed in the disambiguation list, it is represented by the text from its name field. If you don't specify a name for an action, the first example message that you add to it is used as the action name automatically.
+In the assistant output, the possible actions are listed by name. The default name for an action is the text of the first example message that you add to it (such as `I want to open an account`), but you can change this name to something more descriptive.
 
-### Customizing disambiguation
+### Customizing clarification
 {: #actions-disambiguation-config}
 
-You can control things like the wording your assistant uses to introduce the disambiguation list.
+You can control things like the wording your assistant uses to introduce the clarification list.
 
-To customize disambiguation, complete the following steps:
+To customize clarification, complete the following steps:
 
-1.  From the actions skill main page, click the *Skill settings* icon ![Gear icon](images/gear-icon.png) in the page header.
+1.  From the Actions page, click the *Settings* icon ![Gear icon](images/gear-icon.png) in the page header.
 
-1.  You can make the following changes:
+1.  On the **Ask clarifying question** tab, you can make the following changes:
 
-    - **Assistant says**: Edit the text that is displayed before the list of disambiguation choices. 
+    - In the **Assistant says** field, edit the text that is displayed before the list of clarification choices. 
     
-      The default text is *Did you mean*. You can change it to something else, such as *What do you want to do?* or *Pick what to do next*.
-    - **Label for the fallback choice**: Edit the label that is displayed for the choice that customers can click when none of the other choices are quite right. When a user picks this choice, the *Retry when no intent matches* system action is taken next.
+      The default text is *Did you mean:*. You can change it to something else, such as *What do you want to do?* or *Pick what to do next*.
+    - In the **Label for a fallback choice** field, edit the label that is displayed for the choice that customers can click when none of the other choices are quite right. When a user picks this choice, the *Retry when no intent matches* system action is taken next.
     
       The label *None of the above* is used if you don't change it.  
       
-      This fallback choice gives customers a way to get out of the disambiguation process if it's not helping them. If you don't want to give customers a fallback choice, remove the text from the field.
+      This fallback choice gives customers a way to get out of the clarification process if it's not helping them. If you don't want to give customers a fallback choice, remove the text from the field.
 
 1.  Optionally, review and improve your action names. 
 
-    If an action name is too long or doesn't reflect the purpose of the action, edit it. Use a name that is concise and represents the overall goal of the action.
+    If an action name is too long or doesn't reflect the purpose of the action, edit it. Use a name that is concise and represents the overall goal of the action, such as `Open an account` or `Cancel an order`.
 
-You can use the API to modify additional disambiguation settings. These settings include the disambiguation sensitivity, which affects how often disambiguation is triggered and how many choices are included. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#updateworkspace){: external}.
-{: tip}
-
-### Disabling disambiguation
+### Disabling clarifying questions
 {: #actions-disambiguation-disable}
 
-Every action that you add is used during disambiguation automatically. The system actions are not.
+<!-- Every action that you add is used during clarification automatically. The system actions are not. -->
 
-You can disable disambiguation for all actions.
+You can disable clarifying questions for all actions.
 
-To disable disambiguation for all actions:
+To disable clarification for all actions:
 
-1.  From the actions skill main page, click the **Skill settings** icon ![Gear icon](images/gear-icon.png) in the page header.
-1.  Set the disambiguation switch to off.
+1.  From the Actions page, click the **Settings** icon ![Gear icon](images/gear-icon.png) in the page header.
+1.  On the **Ask clarifying question** tab, set the switch to off.
 1.  Click **Save**, and then click **Close**.
 
-You can also prevent a single action from being used during disambiguation.
+### Excluding an action from clarifying questions
 
-To prevent disambiguation on the actions skill main page:
+You can also prevent a single action from being included in the list of choices during clarification. To exclude an action from clarification:
 
-1.  From the actions skill main page, look in the Actions table for the action that you never want shown as a disambiguation option.
-1.  From the action's **Action settings** icon ![](images/kebab.png), choose **Don't disambiguate**.
-
-    If the action is configured to not be used during disambiguation already, **Disambiguate** is shown in the menu instead. Click **Disambiguate** if you want the action to be used during disambiguation.
-
-To prevent disambiguation when you are working on action steps:
-
-1.  Click the **Action settings** icon. 
-1.  In Action Settings, toggle the **Disambiguation** switch to off.
+1.  From the action editor, click the **Action settings** icon.
+1.  On the Action Settings window, toggle the **Ask clarifying question** switch to off.
 
 ## Action limits
 {: #actions-limits}
