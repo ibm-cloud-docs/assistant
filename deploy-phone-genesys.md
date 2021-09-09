@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-08"
+lastupdated: "2021-09-09"
 
 subcollection: assistant
 
@@ -109,7 +109,7 @@ To integrate your assistant with Genesys Cloud, follow these steps:
       To create a PSTN number you can give to your clients, you must create a Direct Inward Dialing (DID) or Bring Your Own Carrier (BYOC) number. For more information about how to do this, see the Genesys documentation.
       {: note}
 
-    - 1. In the **Classification** field, type a classification name (for example, `Watson`).
+    - In the **Classification** field, type a classification name (for example, `Watson`).
     
     Click **Save Number Plans**.
 
