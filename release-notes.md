@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-09"
 
 subcollection: assistant
 
@@ -63,10 +63,45 @@ Existing models that you have trained will not be immediately impacted, but mode
 
 The change log lists changes that were made this year, ordered by the date they were released.
 
+<!--## 13 September 2021
+{: #13Sep2021}
+
+- **Disambiguation feature updates**: The disambiguation feature now includes improved features:
+    - **Increased control**: The frequency and depth of disambiguation can now be controlled by using the **sensitivity** parameter in the create workspace API. There are 5 levels of sensitivity:
+        - `high`
+        - `medium_high`
+        - `medium`
+        - `medium_low`
+        - `low`
+        
+        The default (`auto`) is `medium_high` if this option is not set.
+  
+    - **More predictable**: The new disambiguation feature is more stable and predictable. The choices shown may sometimes vary slightly to enable learning and analytics, but the order and depth of disambiguation is largely stable.
+
+    These new features may affect various metrics, such as disambiguation rate and click rates, as well as influence conversation-level key performance indicators such as containment. 
+    
+    If the new disambiguation algorithm works differently than expected for your assistant, you can adjust it using the sensitivity parameter in the create workspace API. For more information, see [Create workspace](/apidocs/assistant/assistant-v1#createworkspace).
+
+## 9 September 2021
+{: #09Sep2021}
+
+- **Enhanced intent detection for French, Italian, and Spanish dialog skills**: The new intent detection model improves your assistant's ability to understand what customers want. This model is now available in dialog skills using French, Italian, and Spanish. For more information, see [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).
+
+- **Change to the irrelevance detection option**: As of this release, new dialog skills no longer include the option to choose between the **Enhanced** or **Existing** irrelevance detection. The enhanced irrelevance detection is enabled by default. For more information, see [Defining what's irrelevant](/docs/assistant?topic=assistant-irrelevance-detection). 
+
+  If necessary, you can use the [Update Workspace API](/apidocs/assistant/assistant-v1?curl=#updateworkspace) to choose irrelevance detection by changing the **off_topic** setting.-->
+
+## 2 September 2021
+{: #02Sep2021}
+
+- **Deploy your assistant on the phone in minutes**: We have partnered with [IntelePeer](https://intelepeer.com/) to enable you to generate a phone number for free within the phone integration. Simply choose to generate a free number when following the prompts to create a phone integration, finish the setup, and a number is assigned to your assistant. These numbers are robust and ready for production.
+
+- **Connect to your existing service desks**: We have added step-by-step documentation for connecting to [Genesys](/docs/assistant?topic=assistant-deploy-phone-genesys) and [Twilio Flex](/docs/assistant?topic=assistant-deploy-phone-flex) over the phone. Easily hand off to your live agents when your customers require telephony support from your service team. Watson Assistant deploys on the phone via SIP, so most phone based service desks can easily be integrated via SIP trunking standards.
+
 ## 23 August 2021
 {: #23Aug2021}
 
-- Intent detection for the English language has been updated with the addition of new word-piece algorithms. These algorithms improve tolerance for out-of-vocabulary words and misspelling. This change affects only English-language assistants, and only if the enhanced intent recognition model is enabled. (For more information about the enhanced intent recognition model, and how to determine whether it is enabled, see [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).)
+- **Intent detection updates**: Intent detection for the English language has been updated with the addition of new word-piece algorithms. These algorithms improve tolerance for out-of-vocabulary words and misspelling. This change affects only English-language assistants, and only if the enhanced intent recognition model is enabled. (For more information about the enhanced intent recognition model, and how to determine whether it is enabled, see [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).)
 
 - **Automatic retraining of old skills and workspaces**: As of August 23, 2021, {{site.data.keyword.conversationshort}} will enable automatic retraining of existing skills in order to take advantage of updated algorithms. The {{site.data.keyword.conversationshort}} service will continually monitor all ML models, and will automatically retrain those models that have not been retrained within the previous 6 months. For more information, see [Automatic retraining of old skills and workspaces](/docs/assistant?topic=assistant-skill-auto-retrain).
 
