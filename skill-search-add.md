@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-09-08"
+lastupdated: "2021-09-09"
 
 subcollection: assistant
 
@@ -108,7 +108,7 @@ The remaining steps differ depending on whether you have access to an existing {
 1.  Choose the {{site.data.keyword.discoveryshort}} service instance that you want to extract information from.
 {: #choose-d-instance}
 
-    If you see a warning that some of your {{site.data.keyword.discoveryshort}} service instances do not have credentials set, it means that you can access at least one instance that you never opened from the {{site.data.keyword.cloud_notm}} dashboard directly yourself. You must access a service instance for credentials to be created for it. And credentials must exist before {{site.data.keyword.conversationshort}} can establish a connection to the {{site.data.keyword.discoveryshort}} service instance on your behalf. If you think a {{site.data.keyword.discoveryshort}} service instance is missing from the list, open the instance from the {{site.data.keyword.cloud}} dashboard directly to generate credentials for it.
+    If you see a warning that some of your {{site.data.keyword.discoveryshort}} service instances do not have credentials set, it means that you can access at least one instance that you never opened from the {{site.data.keyword.cloud_notm}} dashboard directly yourself. You must access a service instance for credentials to be created for it, and credentials must exist before {{site.data.keyword.conversationshort}} can establish a connection to the {{site.data.keyword.discoveryshort}} service instance on your behalf. If you think a {{site.data.keyword.discoveryshort}} service instance is missing from the list, open the instance from the {{site.data.keyword.cloud}} dashboard directly to generate credentials for it.
     {: note}
 
 1.  Indicate the data collection to use, by doing one of the following things:
@@ -137,8 +137,6 @@ The remaining steps differ depending on whether you have access to an existing {
 
 1.  Review the terms and conditions for using the instance, and then click **Accept** to continue.
 
-1.  [Create a data collection](#skill-search-add-create-discovery-collection).
-
 ## Create a data collection
 {: #skill-search-add-create-discovery-collection}
 
@@ -148,10 +146,10 @@ If you have a Discovery service Lite plan, you are given an opportunity to upgra
 
       - To create a collection from data that is stored in a type of data source for which {{site.data.keyword.discoveryshort}} provides built-in support, pick a data source type.
 
-        1.  **For some data collection types**: Provide the required information for the data source you choose, and then click **Connect**.
+        - **For some data collection types**: Provide the required information for the data source you choose, and then click **Connect**.
 
             For a list of the supported data types and details on how to set up access to them, see [Connecting to data sources](/docs/discovery?topic=discovery-sources){: external}.
-        1.  Specify the information that you want to extract from the data source and include in your {{site.data.keyword.discoveryshort}} collection.
+         - Specify the information that you want to extract from the data source and include in your {{site.data.keyword.discoveryshort}} collection.
 
             The options that are displayed differ depending on the data source type.
 
@@ -164,9 +162,9 @@ If you have a Discovery service Lite plan, you are given an opportunity to upgra
             
             To get help with creating data sources, see [Troubleshooting](#skill-search-add-troubleshoot).
 
-        1.  Indicate the frequency with which you want data from the data source to be synchronized with the collection you are creating in {{site.data.keyword.discoveryshort}}.
+        - Indicate the frequency with which you want data from the data source to be synchronized with the collection you are creating in {{site.data.keyword.discoveryshort}}.
         
-        1.  Click **Save & Sync**.
+        - Click **Save & Sync**.
 
             Give Watson a few minutes to start creating documents. As soon as the source starts to be ingested, the number of documents displayed on the {{site.data.keyword.discoveryshort}} details page increases. You might need to refresh the page.
 
@@ -174,13 +172,13 @@ If you have a Discovery service Lite plan, you are given an opportunity to upgra
 
       - To create a collection by uploading documents, click **Upload documents**.
 
-        1.  First, you define the collection, and then you upload the documents. Provide the following information:
+        - First, you define the collection, and then you upload the documents. Provide the following information:
 
             - Collection name. The name must be unique for this service instance.
             - Language. Select the language of the files that you are adding to this collection. For information about the languages supported by {{site.data.keyword.discoveryshort}}, see [Language support](/docs/discovery?topic=discovery-language-support){: external}.
 
               If you are uploading a PDF document and want to extract party, nature, and category information from it, then expand the **Advanced** section and click **Use the Default Contract Configuration with this collection**. See [Collection requirements](/docs/discovery?topic=discovery-element-classification#element-collection){: external} for more details.
-        1.  Upload documents.
+        - Upload documents.
 
             Supported file types include PDF, HTML, JSON, and DOC files. See [Adding content](/docs/discovery?topic=discovery-addcontent){: external} for more details.
             {: note}
