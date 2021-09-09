@@ -91,6 +91,7 @@ Watson Assistant (Managed)
         Deploying for phone
             deploy-phone.md
             deploy-phone-flex.md
+            deploy-phone-genesys.md
     
         {: .topicgroup}
         Deploying to other platforms
