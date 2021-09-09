@@ -61,7 +61,7 @@ For existing English-language skills created before September 2021, you have the
 1.  From the skill menu, click **Options**.
 1.  On the *Irrelevance detection* page, choose **Enhanced**.
 
-f necessary, you can use the [Update workspace API](/apidocs/assistant/assistant-v1?curl=#updateworkspace) to set your English-language assistant to one of the four combinations of intent and irrelevance detection:
+If necessary, you can use the [Update workspace API](/apidocs/assistant/assistant-v1?curl=#updateworkspace) to set your English-language assistant to one of the four combinations of intent and irrelevance detection:
 
 - Enhanced intent recognition and enhanced irrelevance detection
 - Enhanced intent recognition and existing irrelevance detection
