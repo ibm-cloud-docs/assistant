@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-09"
+lastupdated: "2021-09-10"
 
 subcollection: assistant
 
@@ -67,7 +67,8 @@ The change log lists changes that were made this year, ordered by the date they 
 {: #13Sep2021}
 
 - **Disambiguation feature updates**: The dialog skill disambiguation feature now includes improved features:
-    - **Increased control**: The frequency and depth of disambiguation can now be controlled by using the **sensitivity** parameter in the create workspace API. There are 5 levels of sensitivity:
+
+    - **Increased control**: The frequency and depth of disambiguation can now be controlled by using the **sensitivity** parameter in the [workspace API](/apidocs/assistant/assistant-v1#updateworkspace). There are 5 levels of sensitivity:
         - `high`
         - `medium_high`
         - `medium`
@@ -80,12 +81,7 @@ The change log lists changes that were made this year, ordered by the date they 
 
     These new features may affect various metrics, such as disambiguation rate and click rates, as well as influence conversation-level key performance indicators such as containment. 
     
-    If the new disambiguation algorithm works differently than expected for your assistant, you can adjust it using the sensitivity parameter in the update workspace API. For more information, see [Update workspace](/apidocs/assistant/assistant-v1#updateworkspace).-->
-
-## 9 September 2021
-{: #09Sep2021}
-
-- **Dialog skill "Try it out" improvements**: For dialog skills, the **Try it out** pane now uses the [React](https://reactjs.org/) UI framework similar to the rest of the Watson Assistant user interface. You shouldn't see any change in behavior or functionality. As a part of the update, dialog skill error handling has been improved within the "Try it out" pane. This update will be implemented incrementally, starting with service instances in the Tokyo and Seoul data centers.
+    If the new disambiguation algorithm works differently than expected for your assistant, you can adjust it using the sensitivity parameter in the update workspace API. For more information, see [Update workspace](/apidocs/assistant/assistant-v1#updateworkspace).
 
 - **Enhanced intent detection for French, Italian, and Spanish dialog skills**: The new intent detection model improves your assistant's ability to understand what customers want. This model is now available in dialog skills using French, Italian, and Spanish. For more information, see [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).
 
@@ -94,8 +90,8 @@ The change log lists changes that were made this year, ordered by the date they 
     - If you use the dialog skill options to choose enhanced intent detection, it is automatically paired with enhanced irrelevance detection.
     - If you use the dialog skill options to choose existing intent detection, it is automatically paired with existing irrelevance detection.
 
-    For more information, see [Defining what's irrelevant](/docs/assistant?topic=assistant-irrelevance-detection) and [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).
-    
+    For more information, see [Defining what's irrelevant](/docs/assistant?topic=assistant-irrelevance-detection) and [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection). 
+
     If necessary, you can use the [Update workspace API](/apidocs/assistant/assistant-v1?curl=#updateworkspace) to set your English-language assistant to one of the four combinations of intent and irrelevance detection:
 
     - Enhanced intent recognition and enhanced irrelevance detection
@@ -105,7 +101,12 @@ The change log lists changes that were made this year, ordered by the date they 
 
     For French, Italian, and Spanish, you can use the API to set your assistant to these combinations:
     - Enhanced intent recognition and enhanced irrelevance detection
-    - Existing intent recognition and existing irrelevance detection
+    - Existing intent recognition and existing irrelevance detection-->
+
+## 9 September 2021
+{: #09Sep2021}
+
+- **Dialog skill "Try it out" improvements**: For dialog skills, the **Try it out** pane now uses the [React](https://reactjs.org/) UI framework similar to the rest of the Watson Assistant user interface. You shouldn't see any change in behavior or functionality. As a part of the update, dialog skill error handling has been improved within the "Try it out" pane. This update will be implemented incrementally, starting with service instances in the Tokyo and Seoul data centers.
 
 ## 2 September 2021
 {: #02Sep2021}
@@ -126,13 +127,13 @@ The change log lists changes that were made this year, ordered by the date they 
 
 - **Actions preview now includes debug mode and variable values**: When previewing your actions, you can use **debug mode** and **variable values** to ensure your assistant is working the way you expect.
 
-  **Debug mode** allows you to go to the corresponding step by clicking on a step locator next to each message. It shows you the confidence score of top three possible action when the input triggers an action. You can also follow the step in the action editor along with the conversation flow.
+    **Debug mode** allows you to go to the corresponding step by clicking on a step locator next to each message. It shows you the confidence score of top three possible action when the input triggers an action. You can also follow the step in the action editor along with the conversation flow.
 
-  ![Debug mode](images/rn-debug-confidence.png)
+    ![Debug mode](images/rn-debug-confidence.png)
 
-  **Variable values** shows you a list of the variables and their values of current action and the session variables. You can check and edit variables during the conversation flow.
+    **Variable values** shows you a list of the variables and their values of current action and the session variables. You can check and edit variables during the conversation flow.
 
-  ![Variable values](images/rn-variable-values.png)
+    ![Variable values](images/rn-variable-values.png)
 
 ## 17 August 2021
 {: #17August2021}
@@ -141,13 +142,14 @@ The change log lists changes that were made this year, ordered by the date they 
 
 ## 29 July 2021
 {: #29July2021}
+
 <!--1.158.0-->
 
 - **Salesforce and Zendesk deployment changes**: The Salesforce and Zendesk integrations have been updated to use the [new chat history widget](/docs/assistant?topic=assistant-release-notes-chat#4.5.0). The updated deployment process applies to all new deployments, including any redeployments of existing Salesforce and Zendesk connections. However, existing deployments are not affected and do not need to be modified or redeployed at this time.
 
 - **Fallback value for session variables**: In action skills, you can now set a fallback value for session variables. This feature lets you to define a value for a session variable if a user-defined value isn't found. To learn more, see [Defining session variables](/docs/assistant?topic=assistant-actions#actions-variables-global)
 
-  ![Fallback value for session variables](images/rn-fallback-value.png)
+    ![Fallback value for session variables](images/rn-fallback-value.png)
 
 ## 16 July 2021
 {: #16July2021}
@@ -155,26 +157,28 @@ The change log lists changes that were made this year, ordered by the date they 
 - **Logging API changes**: The internal storage and processing of logs has changed. Some undocumented fields or filters might no longer be available. (Undocumented features are not officially supported and might change without notice.)
 
 - **New API version**: The current API version (v1 and v2) is now `2021-06-14`. The following changes were made with this version:
-  - The `metadata` property of entities detected at run time is deprecated. For detailed information about detected system entities, see the `interpretation` property.
-  - The data types of certain entity mentions are no longer automatically converted:
-    - Numbers in scientific notation (such as `1E10`), which were previously converted to numbers
-    - Boolean values (such as `false`), which were previously converted to booleans
+
+    - The `metadata` property of entities detected at run time is deprecated. For detailed information about detected system entities, see the `interpretation` property.
+    - The data types of certain entity mentions are no longer automatically converted:
+        - Numbers in scientific notation (such as `1E10`), which were previously converted to numbers
+        - Boolean values (such as `false`), which were previously converted to booleans
 
     These values are now returned as strings.
 
 ## 17 June 2021
 {: #17June2021}
+
 <!--1.152-->
 - **Actions skill now generally available**: As of this release, the beta program has ended, and actions skills are available for general use.
 
-  An actions skill contains actions that represent the tasks you want your assistant to help your customers with. Each action contains a series of steps that represent individual exchanges with a customer. Building the conversation that your assistant has with your customers is fundamentally about deciding which steps, or which user interactions, are required to complete an action. After you identify the list of steps, you can then focus on writing engaging content to turn each interaction into a positive experience for your customer. For more information, see [Actions skill overview](/docs/assistant?topic=assistant-actions-overview).
+    An actions skill contains actions that represent the tasks you want your assistant to help your customers with. Each action contains a series of steps that represent individual exchanges with a customer. Building the conversation that your assistant has with your customers is fundamentally about deciding which steps, or which user interactions, are required to complete an action. After you identify the list of steps, you can then focus on writing engaging content to turn each interaction into a positive experience for your customer. For more information, see [Actions skill overview](/docs/assistant?topic=assistant-actions-overview).
 
 - **Date and time response types**: New to action skills, these response types allow you to collect date and time information from customers as they answer questions or make requests. For more information, see [Response types](/docs/assistant?topic=assistant-actions#actions-response-types).
 
 - **New built-in variables**: Two kinds of built-in variables are now available for action skills. 
-  - **Set by assistant** variables include the common and essential variables `Now`, `Current time`, and `Current date`. 
+    - **Set by assistant** variables include the common and essential variables `Now`, `Current time`, and `Current date`. 
   
-  - **Set by integration** variables are `Timezone` and `Locale` and are available to use when connected to a webhook or integration.
+    - **Set by integration** variables are `Timezone` and `Locale` and are available to use when connected to a webhook or integration.
 
     For more information, see [Adding and referencing variables](/docs/assistant?topic=assistant-actions#actions-variables).
 
@@ -182,50 +186,56 @@ The change log lists changes that were made this year, ordered by the date they 
 
 ## 3 June 2021
 {: #3June2021}
+
 <!--1.150-->
 - **Log webhook support for actions and search skills**: The log webhook now supports messages exchanged with actions skills and search skills, in addition to dialog skills. For more information, see [Logging activity with a webhook](/docs/assistant?topic=assistant-webhook-log).
 
 ## 27 May 2021
 {: #27May2021}
+
 <!--1.149-->
 - **Change to conversation skill choices**: When adding skills to new or existing assistant, the conversation skill choices have been combined, so that you pick from either an actions skill or a dialog skill. 
 
-  With this change:
-  - New assistants can use up to two skills, either actions and search or dialog and search. Previously, new assistants could use up to three skills: actions, dialog, and search.
-  - Existing assistants that already use an actions skill and a dialog skill together can continue to use both.
-  - The ability to use actions and dialog skills together in a new assistant is planned for 2H 2021.
+    With this change:
+    - New assistants can use up to two skills, either actions and search or dialog and search. Previously, new assistants could use up to three skills: actions, dialog, and search.
+    - Existing assistants that already use an actions skill and a dialog skill together can continue to use both.
+    - The ability to use actions and dialog skills together in a new assistant is planned for 2H 2021.
 
 ## 20 May 2021
 {: #20May2021}
+
 <!--1.148-->
 - **Actions skill improvement**: Actions now include a new choice, **Go to another action**, for what to do next in a step. You can call one action from another action, to switch the conversation flow to another action to perform a certain task. If you have a portion of an action that can be applied across multiple use cases you can build it once and call to it from each action. This new option is available in the **And then** section of each step. For more information, see [Deciding what to do next](/docs/assistant?topic=assistant-actions#actions-what-next).
 
 ## 21 April 2021
 {: #21April2021}
+
 <!--1.145-->
 - **Preview button for testing your assistant**: For testing your assistant, the new Preview button replaces the previous Preview tile in Integrations.
 
-  ![New preview button](images/rn-preview-button.png)
+    ![New preview button](images/rn-preview-button.png)
 
 - **New checklist with steps to go live**: Each assistant includes a checklist that you can use to ensure you're ready to go live.
 
-  ![New steps to go live checklist](images/rn-steps-to-go-live.png)
+    ![New steps to go live checklist](images/rn-steps-to-go-live.png)
 
 - **Actions skill improvement**: Actions now include currency and percentage response types.
 
 - **Learn what's new**: The *What's new* choice on the help menu opens a list of highlighting recent features.
 
-  ![What's new choice on help menu](images/rn-whats-new.png)
+    ![What's new choice on help menu](images/rn-whats-new.png)
 
 
 
 ## 14 April 2021
 {: #14April2021}
+
 <!--1.144-->
 - **Actions skill improvement**: Actions now include a free text response type, allowing you to capture special instructions or requests that a customer wants to pass along.
 
 ## 8 April 2021
 {: #8April2021}
+
 <!--1.143-->
 
 - **Deploy your assistant to WhatsApp - now generally available**: Make your assistant available through Whatsapp messaging so it can exchange messages with your customers where they are. This integration, which is now generally available, creates a connection between your assistant and WhatsApp by using Twilio as a provider. For more information, see [Integrating with WhatsApp](/docs/assistant?topic=assistant-deploy-whatsapp). 
@@ -234,93 +244,95 @@ The change log lists changes that were made this year, ordered by the date they 
 
 - **Connect to human agent response type allows more text**: In a dialog skill, the response type *Connect to human agent* now allows 320 characters in the *Response when agents are online* and *Response when no agents are online* fields. The previous limit was 100 characters.
 
-- **Legacy system entities deprecated**: In January 2020, a new version of the system entities was introduced. As of April 2021, only the new version of the system entities is supported for all languages. The option to switch to using the legacy version is no longer available.  
+- **Legacy system entities deprecated**: In January 2020, a new version of the system entities was introduced. As of April 2021, only the new version of the system entities is supported for all languages. The option to switch to using the legacy version is no longer available.    
 
 ## 6 April 2021
 {: #6April2021}
 
 - **Service API endpoint change**: As explained in [December 2019](#12December2019), as part of work done to fully support IAM authentication, the endpoint you use to access your {{site.data.keyword.conversationshort}} service programmatically is changing. The old endpoint URLs are deprecated and **will be retired on 26 May 2021**. Update your API calls to use the new URLs.
 
-  The pattern for the endpoint URL changes from `gateway-{location}.watsonplatform.net/assistant/api/` to `api.{location}.assistant.watson.cloud.ibm.com/`. The domain, location, and offering identifier are different in the new endpoint. For more information, see [Updating endpoint URLs from watsonplatform.net](/docs/watson?topic=watson-endpoint-change){: external}.
+    The pattern for the endpoint URL changes from `gateway-{location}.watsonplatform.net/assistant/api/` to `api.{location}.assistant.watson.cloud.ibm.com/`. The domain, location, and offering identifier are different in the new endpoint. For more information, see [Updating endpoint URLs from watsonplatform.net](/docs/watson?topic=watson-endpoint-change){: external}.
 
-  - If your service instance API credentials show the old endpoint, create a new credential and start using it today. After you update your custom applications to use the new credential, you can delete the old one.
+    - If your service instance API credentials show the old endpoint, create a new credential and start using it today. After you update your custom applications to use the new credential, you can delete the old one.
 
-  - For a web chat integration, you might need to take action depending on when and how you created your integration. 
+    - For a web chat integration, you might need to take action depending on when and how you created your integration. 
   
-    - If you tied your deployment to a specific web chat version by using the `clientVersion` parameter and specified a version earlier than version 3.3.0, update the parameter value to use version 3.3.0 or later. Web chat integrations that use the latest or 3.3.0 and later versions will not be impacted by the endpoint deprecation.
+        - If you tied your deployment to a specific web chat version by using the `clientVersion` parameter and specified a version earlier than version 3.3.0, update the parameter value to use version 3.3.0 or later. Web chat integrations that use the latest or 3.3.0 and later versions will not be impacted by the endpoint deprecation.
   
-    - If you created your web chat integration before May 2020, check the code snippet that you embedded in your web page to see if it refers to `watsonplatform.net`. If so, you must edit the code snippet to use the new URL syntax. For example, change the following URL:
+        - If you created your web chat integration before May 2020, check the code snippet that you embedded in your web page to see if it refers to `watsonplatform.net`. If so, you must edit the code snippet to use the new URL syntax. For example, change the following URL:
 
-      ```html
-      <script src="https://assistant-web.watsonplatform.net/loadWatsonAssistantChat.js"></script>
-      ```
+            ```html
+             <script src="https://assistant-web.watsonplatform.net/loadWatsonAssistantChat.js"></script>
+            ```
 
-      The correct syntax to use for the source service URL looks like this:
+            The correct syntax to use for the source service URL looks like this:
 
-      ```
-      src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js"
-      ```
+            ```code
+            src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js"
+            ```
 
     - If your web chat integration connects to a Salesforce service desk, then you must edit the API call that is included in the code snippet that you added to the Visualforce Page that you created in Salesforce. From Salesforce, search for *Visualforce Pages*, and find your page. In the `<iframe>` snippet that you pasted into the page, make the following change:
 
       Replace: `src=“https://assistant-integrations-{location}.watsonplatform.net/public/salesforceweb”` with a url with this syntax: 
       
-      ```
-      src="https://integrations.{location}.assistant.watson.appdomain.cloud/public/salesforceweb/{integration-id}/agent_application?version=2020-09-24"
-      ```
-      {: codeblock}
+        ```code
+        src="https://integrations.{location}.assistant.watson.appdomain.cloud/public/salesforceweb/{integration-id}/agent_application?version=2020-09-24"
+        ```
+        {: codeblock}
 
       From the Web chat integration Salesforce live agent setup page, find the *Visualforce page markup* field. Look for the `src` parameter in the `<iframe>` element. It contains the full URL to use, including the appropriate `{location}` and `{integration-id}` values for your instance.
 
-  - For a Slack integration that is over 7 months old, make sure the Request URL is using the proper endpoint. 
+    - For a Slack integration that is over 7 months old, make sure the Request URL is using the proper endpoint. 
   
-    - Go to the [Slack API](https://api.slack.com/){: external} web page. Click *Your Apps* to find your assistant app. Click *Event Subscriptions* from the navigation pane.
-    - Edit the Request URL.
+        - Go to the [Slack API](https://api.slack.com/){: external} web page. Click *Your Apps* to find your assistant app. Click *Event Subscriptions* from the navigation pane.
+        - Edit the Request URL.
 
       For example, if the URL has the syntax: `https://assistant-slack-{location}.watsonplatform.net/public/message`, change it to have this syntax: 
       
-      ```
+      ```code
       https://integrations.{location}.assistant.watson.appdomain.cloud/public/slack/{integration-id}/message?version=2020-09-24
       ```
       {: codeblock}
 
       Check the *Generated request URL* field in the Slack integration setup page for the full URL to use, which includes the appropriate `{location}` and `{integration-id}` values for your instance.
 
-  - For a Facebook Messenger integration that is over 7 months old, make sure the Callback URL is using the proper endpoint. 
+    - For a Facebook Messenger integration that is over 7 months old, make sure the Callback URL is using the proper endpoint. 
   
-    - Go to the [Facebook for Developers](https://developers.facebook.com/apps/){: external} web page.
-    - Open your app, and then select *Messenger>Settings* from the navigation pane. 
-    - Scroll down to the *Webhooks* section and edit the *Callback URL* field.
+        - Go to the [Facebook for Developers](https://developers.facebook.com/apps/){: external} web page.
+        - Open your app, and then select *Messenger>Settings* from the navigation pane. 
+        - Scroll down to the *Webhooks* section and edit the *Callback URL* field.
     
-      For example, if the URL has the syntax: `https://assistant-facebook-{location}.watsonplatform.net/public/message/`, change it to have this syntax:
+          For example, if the URL has the syntax: `https://assistant-facebook-{location}.watsonplatform.net/public/message/`, change it to have this syntax:
       
-      ```
-      https://integrations.{location}.assistant.watson.appdomain.cloud/public/facebook/{integration-id}/message?version=2020-09-24
-      ```
-      {: codeblock}
+          ```code
+          https://integrations.{location}.assistant.watson.appdomain.cloud/public/facebook/{integration-id}/message?version=2020-09-24
+          ```
+          {: codeblock}
 
-      Check the *Generated callback URL* field in the Facebook Messenger integration setup page for the full URL to use, which includes the appropriate `{location}` and `{integration-id}` values for your instance.
+          Check the *Generated callback URL* field in the Facebook Messenger integration setup page for the full URL to use, which includes the appropriate `{location}` and `{integration-id}` values for your instance.
 
-  - For a Phone integration, if you connect to existing speech service instances, make sure those speech services use credentials that were generated with the latest endpoint syntax (a URL that starts with `https://api.{location}.speech-to-text.watson.cloud.ibm.com/`).
+    - For a Phone integration, if you connect to existing speech service instances, make sure those speech services use credentials that were generated with the latest endpoint syntax (a URL that starts with `https://api.{location}.speech-to-text.watson.cloud.ibm.com/`).
 
-  - For a search skill, if you connect to an existing {{site.data.keyword.discoveryshort}} service instance, make sure the {{site.data.keyword.discoveryshort}} service uses credentials that were generated with the supported syntax (a URL that starts with `https://api.{location}.discovery.watson.cloud.ibm.com/`).
+    - For a search skill, if you connect to an existing {{site.data.keyword.discoveryshort}} service instance, make sure the {{site.data.keyword.discoveryshort}} service uses credentials that were generated with the supported syntax (a URL that starts with `https://api.{location}.discovery.watson.cloud.ibm.com/`).
 
-  - If you are using [Jupyter notebooks](/docs/assistant?topic=assistant-logs-resources#logs-resources-jupyter-logs) to do advanced analytics, check your Jupyter notebook files to make sure they don't specify URLs with the old `watsonplatform.net` syntax. If so, update your files.
+    - If you are using [Jupyter notebooks](/docs/assistant?topic=assistant-logs-resources#logs-resources-jupyter-logs) to do advanced analytics, check your Jupyter notebook files to make sure they don't specify URLs with the old `watsonplatform.net` syntax. If so, update your files.
 
-  - No action is required for the following integration types: 
+    - No action is required for the following integration types: 
   
-    - Intercom
-    - SMS with Twilio
-    - WhatsApp with Twilio
-    - Zendesk service desk connection from web chat
+        - Intercom
+        - SMS with Twilio
+        - WhatsApp with Twilio
+        - Zendesk service desk connection from web chat
 
 ## 23 March 2021
 {: #23March2021}
+
 <!--1.141-->
 - **Actions skill improvement**: Actions have a new toolbar making it easier to send feedback, access settings, save, and close.
 
 ## 17 March 2021
 {: #17March2021}
+
 <!--1.140-->
 - **Channel transfer response type**: Dialog skills now include a channel transfer response type. If your assistant uses multiple integrations to support different channels for interaction with users, there might be some situations when a customer begins a conversation in one channel but then needs to transfer to a different channel. The most common such situation is transferring a conversation to the web chat integration, to take advantage of web chat features such as service desk integration. For more information, see [Adding a Channel transfer response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-channel-transfer).
 
@@ -328,35 +340,38 @@ The change log lists changes that were made this year, ordered by the date they 
 
 ## 16 March 2021
 {: #16March2021}
+
 <!--web chat-->
 
 - **Session history now generally available**: Session history allows your web chats to maintain conversation history and context when users refresh a page or change to a different page on the same website. It is enabled by default. For more information about this feature, see [Session history](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=tutorials-session-history){: external}.
     
-  Session history persists within only one browser tab, not across multiple tabs. The dialog provides an option for links to open in a new tab or the same tab. See [this example](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=tutorials-session-history#Tutorial1) for more information on how to format links to open in the same tab.
-  
-  Session history saves changes that are made to messages with the [pre:receive event](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events#prereceive) so that messages still look the same on rerender. This data is only saved for the length of the session. If you prefer to discard the data, set `event.updateHistory = false;` so the message is rerendered without the changes that were made in the pre:receive event.
+    Session history persists within only one browser tab, not across multiple tabs. The dialog provides an option for links to open in a new tab or the same tab. See [this example](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=tutorials-session-history#Tutorial1) for more information on how to format links to open in the same tab.
+    
+    Session history saves changes that are made to messages with the [pre:receive event](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events#prereceive) so that messages still look the same on rerender. This data is only saved for the length of the session. If you prefer to discard the data, set `event.updateHistory = false;` so the message is rerendered without the changes that were made in the pre:receive event.
 
-  [instance.updateHistoryUserDefined()](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-instance-methods#updateHistoryUserDefined) provides a way to save state for any message response. With the state saved, a response can be rerendered with the same state. This saved state is available in the `history.user_defined` section of the message response on reload. The data is saved during the user session. When the session expires, the data is discarded.
-  
-  Two new history events, [history:begin](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events#historybegin) and [history:end](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events#historyend) announce the beginning and end of the history of a reloaded session. These events can be used to view the messages that are being reloaded. The history:begin event allows you to edit the messages before they are displayed.
+    [instance.updateHistoryUserDefined()](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-instance-methods#updateHistoryUserDefined) provides a way to save state for any message response. With the state saved, a response can be rerendered with the same state. This saved state is available in the `history.user_defined` section of the message response on reload. The data is saved during the user session. When the session expires, the data is discarded.
+    
+    Two new history events, [history:begin](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events#historybegin) and [history:end](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events#historyend) announce the beginning and end of the history of a reloaded session. These events can be used to view the messages that are being reloaded. The history:begin event allows you to edit the messages before they are displayed.
 
-  See this example for more information on saving the state of [customResponse](https://web-chat.global.assistant.watson.cloud.ibm.com/testfest.html?to=api-events#customresponse) types in session history.
+    See this example for more information on saving the state of [customResponse](https://web-chat.global.assistant.watson.cloud.ibm.com/testfest.html?to=api-events#customresponse) types in session history.
 
 - **Channel switching**: You can now create a dialog response type to functionally generate a connect-to-agent response within channels other than web chat. If a user is in a channel such as Slack or Facebook, they can trigger a channel transfer response type. The user receives a link that forwards them to your organization's website where a connection to an agent response can be started within web chat. For more information, see [Adding a Channel transfer response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-channel-transfer).
 
 ## 11 March 2021
 {: #11March2021}
+
 <!--1.139 and json editor is shown in actions-->
 
 - **Actions skill improvement**: Updated the page where you configure a step with an *Options* reply constraint. Now it's clearer that you have a choice to make about whether to always ask for the option value or to skip asking. For more information, see [Apply reply constraints](/docs/assistant?topic=assistant-actions#actions-response-types).
 
 ## 4 March 2021
 {: #4March2021}
+
 <!--1.138-->
 
 - **Support for every language!**: You now can build an assistant in any language you want to support. If a dedicated language model is not available for your target language, create a skill that uses the universal language model. The universal model applies a set of shared linguistic characteristics and rules from multiple languages as a starting point. It then learns from training data written in the target language that you add to it. 
 
-  The universal model is available as a beta feature. For more information, see [Understanding the universal language model](/docs/assistant?topic=assistant-assistant-language#assistant-language-universal).
+    The universal model is available as a beta feature. For more information, see [Understanding the universal language model](/docs/assistant?topic=assistant-assistant-language#assistant-language-universal).
 
 - **Actions skill improvement**: Now you can indicate whether or not to ask for a number when you apply a number reply constraint to a step. Test how changes to this setting might help speed up a customer's interaction. Under the right circumstances, it can be useful to let a number mention be recognized and stored without having to explicitly ask the customer for it. For more information, see [Applying reply constraints](/docs/assistant?topic=assistant-actions#actions-response-types).
 
@@ -365,72 +380,77 @@ The change log lists changes that were made this year, ordered by the date they 
 
 - **Introducing the *Enterprise* plan!**: The Enterprise plan includes all of the market differentiating features of the Plus plan, but with higher capacity limits, additional security features, custom onboarding support to get you going, and a lower overall cost at higher volumes.
 
-  To have a dedicated environment provisioned for your business, request the *Enterprise with Data Isolation* plan. To submit a request online, go to [http://ibm.biz/contact-wa-enterprise](http://ibm.biz/contact-wa-enterprise){: external}.
+    To have a dedicated environment provisioned for your business, request the *Enterprise with Data Isolation* plan. To submit a request online, go to [http://ibm.biz/contact-wa-enterprise](http://ibm.biz/contact-wa-enterprise){: external}.
 
-  The Enterprise plan is replacing the Premium plan. The Premium plan is being retired today. Existing Premium plan users are not impacted. They can continue to work in their Premium instances and create instances up to the 30-instance limit. New users do not see the Premium plan as an option when they create a service instance.
+    The Enterprise plan is replacing the Premium plan. The Premium plan is being retired today. Existing Premium plan users are not impacted. They can continue to work in their Premium instances and create instances up to the 30-instance limit. New users do not see the Premium plan as an option when they create a service instance.
 
-  For more information, see the [Pricing](https://www.ibm.com/cloud/watson-assistant/pricing/){: external} page.
+    For more information, see the [Pricing](https://www.ibm.com/cloud/watson-assistant/pricing/){: external} page.
 
 - **Other plan changes**: Our pricing has been revised to reflect the features we've added that help you build an assistant that functions as a powerful omnichannel SaaS application.
 
-  Starting on 1 March 2021, the Plus plan starts at $140 per month and includes your first 1,000 monthly users. You pay $14 for each additional 100 active users per month. Use of the voice capabilities that are provided by the *Phone* integration are available for an additional $9 per 100 users per month.
+    Starting on 1 March 2021, the Plus plan starts at $140 per month and includes your first 1,000 monthly users. You pay $14 for each additional 100 active users per month. Use of the voice capabilities that are provided by the *Phone* integration are available for an additional $9 per 100 users per month.
 
-  The Plus Trial plan was renamed to Trial.
+    The Plus Trial plan was renamed to Trial.
 
 - **SOC 2 compliance**: {{site.data.keyword.conversationshort}} is SOC 2 Type 2 compliant, so you know your data is secure. 
 
-  The System and Organization Controls framework, developed by the American Institute of Certified Public Accountants (AICPA), is a standard for controls that protect information stored in the cloud. SOC 2 reports provide details about the nature of internal controls that are implemented to protect customer-owned data. For more information, see [IBM Cloud compliance programs](https://www.ibm.com/cloud/compliance/global){: external}.
+    The System and Organization Controls framework, developed by the American Institute of Certified Public Accountants (AICPA), is a standard for controls that protect information stored in the cloud. SOC 2 reports provide details about the nature of internal controls that are implemented to protect customer-owned data. For more information, see [IBM Cloud compliance programs](https://www.ibm.com/cloud/compliance/global){: external}.
 
 ## 25 February 2021
 {: #25February2021}
+
 <!--1.137-->
 
 - **Search skill can emphasize the answer**: You can configure the search skill to highlight text in the search result passage that {{site.data.keyword.discoveryshort}} determines to be the exact answer to the customer's question. For more information, see [Creating a search skill](/docs/assistant?topic=assistant-skill-search-add).
 - **Integration changes**: The following changes were made to the integrations:
 
-  - The name of *Preview link* integration changed to *Preview*.
-  - The *Web chat* and *Preview* integrations are no longer added automatically to every new assistant.
-  
-    The integrations continue to be added to the *My first assistant* that is generated for you automatically when you first create a new service instance.
+    - The name of *Preview link* integration changed to *Preview*.
+    - The *Web chat* and *Preview* integrations are no longer added automatically to every new assistant.
+    
+        The integrations continue to be added to the *My first assistant* that is generated for you automatically when you first create a new service instance.
 - **Message and log webhooks are generally available**: The premessage, postmessage, and log webhooks are now generally available. For more information about them, see [Webhook overview](/docs/assistant?topic=assistant-webhook-overview).
 
 ## 11 February 2021
 {: #11February2021}
+
 <!--1.135-->
 
 - **The `user_id` value is easier to access**: The `user_id` property is used for billing purposes. Previously, it was available from the context object as follows:
 
-  - v2: `context.global.system.user_id`
-  - v1: `context.metadata.user_id`
+    - v2: `context.global.system.user_id`
+    - v1: `context.metadata.user_id`
 
-  The property is now specified at the root of the `/message` request in addition to the context object. The built-in integrations typically set this property for you. If you're using a custom application and don't specify a `user_id`, the `user_id` is set to the `session_id` (v2) or `conversation_id`(v1) value.
+    The property is now specified at the root of the `/message` request in addition to the context object. The built-in integrations typically set this property for you. If you're using a custom application and don't specify a `user_id`, the `user_id` is set to the `session_id` (v2) or `conversation_id`(v1) value.
 
 - **Digression bug fix**: Fixed a bug where digression setting changes that were made to a node with slots were not being saved.
 
 ## 5 February 2021
 {: #5February2021}
+
 <!--1.134-->
 
 - **Documentation update**: The phone and *SMS with Twilio* deployment documentation was updated to include instructions for migrating from {{site.data.keyword.iva_short}}. For more information, see [Integrating with phone](/docs/assistant?topic=assistant-deploy-phone#deploy-phone-migrate-from-va) and [Integrating with *SMS with Twilio*](/docs/assistant?topic=assistant-deploy-sms#deploy-sms-migrate-from-va).
 
 ## 27 January 2021
 {: #27January2021}
+
 <!--1.133-->
 
 - **Language support was expanded for intent recommendations**: The intent recommendations feature is now supported in Brazilian Portuguese, French, German, Italian, and Spanish dialog skills. For more information, see [Supported languages](/docs/assistant?topic=assistant-language-support).
 
 - **German language improvements**: A word decomposition function was added to the intent and entity recognition models for German-language dialog skills. 
 
-  A characteristic of the German language is that some words are formed by concatenating separate words to form a single compound word. For example, "festnetznummer" (landline number) concatenates the words "festnetz" (landline) and "nummer" (number). When your customers chat with your assistant, they might write a compound word as a single word, as hyphenated words, or as separate words. Previously, the variants resulted in different intent confidence scores and different entity mention counts based on your training data. With the addition of the word decomposition function, the models now treat all compound word variants as equivalent. This update means you no longer need to add examples of every variant of the compound words to your training data.
+    A characteristic of the German language is that some words are formed by concatenating separate words to form a single compound word. For example, "festnetznummer" (landline number) concatenates the words "festnetz" (landline) and "nummer" (number). When your customers chat with your assistant, they might write a compound word as a single word, as hyphenated words, or as separate words. Previously, the variants resulted in different intent confidence scores and different entity mention counts based on your training data. With the addition of the word decomposition function, the models now treat all compound word variants as equivalent. This update means you no longer need to add examples of every variant of the compound words to your training data.
 
 ## 19 January 2021
 {: #19January2021}
+
 <!--1.132-->
 
 - **The *Phone* and *SMS with Twilio* integrations are now generally available!**: For more information, see:
 
-  - [Integrating with phone](/docs/assistant?topic=assistant-deploy-phone)
-  - [Integrating with *SMS with Twilio*](/docs/assistant?topic=assistant-deploy-sms)
+    - [Integrating with phone](/docs/assistant?topic=assistant-deploy-phone)
+    - [Integrating with *SMS with Twilio*](/docs/assistant?topic=assistant-deploy-sms)
 
 - ***Preview link* change**: When you create a preview link, you can now test your skill from a chat window that is embedded in the page. You can also copy the URL that is provided, and open it in a web browser to see an IBM-branded web page with the web chat embedded in it. You can share the URL to the public IBM web page with others to get help with testing or for demoing purposes. For more information, see [Testing your assistant](/docs/assistant?topic=assistant-deploy-web-link).
 
@@ -440,6 +460,7 @@ The change log lists changes that were made this year, ordered by the date they 
 
 ## 15 January 2021
 {: #15January2021}
+
 <!--1.131-->
 
 - **Use new webhooks to process messages!**: A set of new webhooks is available as a beta feature. You can use the webhooks to perform preprocessing tasks on incoming messages and postprocessing tasks on the corresponding responses. You can use the new log webhook to log each message with an external service. For more information, see [Webhook overview](/docs/assistant?topic=assistant-webhook-overview).
@@ -450,6 +471,7 @@ The change log lists changes that were made this year, ordered by the date they 
 
 ## 6 January 2021
 {: #6January2021}
+
 <!--1.130-->
 
 - **Import and export UI changes**: The label on buttons for importing intents and entities changed from *Import* to *Upload*. The label on buttons for exporting intents and entities changed from *Export* to *Download*.
@@ -459,21 +481,23 @@ The change log lists changes that were made this year, ordered by the date they 
 
 - **Dialog methods updates**: Documentation and examples were added for the following supported dialog methods:
 
-  - `JSONArray.addAll(JSONArray)`
-  - `JSONArray.containsIgnoreCase(value)`
-  - `String.equals(String)`
-  - `String.equalsIgnoreCase(String)`
+    - `JSONArray.addAll(JSONArray)`
+    - `JSONArray.containsIgnoreCase(value)`
+    - `String.equals(String)`
+    - `String.equalsIgnoreCase(String)`
 
-  For more information, see [Expression language methods](/docs/assistant?topic=assistant-dialog-methods).
+    For more information, see [Expression language methods](/docs/assistant?topic=assistant-dialog-methods).
 
 ## 17 December 2020
 {: #17December2020}
+
 <!--1.129-->
 
 - **Accessibility improvements**: The product was updated to provide enhanced accessibility features.
 
 ## 14 December 2020
 {: #14December2020}
+
 <!--1.128-->
 
 - **Increased Phone and SMS with Twilio integrations availability**: These beta SMS and voice capabilities are now available from service instances that are hosted in Seoul, Tokyo, London, and Sydney.
@@ -482,16 +506,17 @@ The change log lists changes that were made this year, ordered by the date they 
 
 ## 4 December 2020
 {: #4December2020}
+
 <!--1.127-->
 
 - **Introducing more service desk options for web chat**: When you deploy your assistant by using the web chat integration, there are now reference implementations that you can use for the following service desks:
 
-  - Twilio Flex
-  - Genesys Cloud
+    - Twilio Flex
+    - Genesys Cloud
 
-  Alternatively, you can bring your own service desk by using the service desk extension starter kit.
+    Alternatively, you can bring your own service desk by using the service desk extension starter kit.
 
-  For more information, see [Adding service desk support](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-haa).
+    For more information, see [Adding service desk support](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-haa).
 
 - **Autolearning has been moved and improved**: Go to the *Analytics>Autolearning* page to enable the feature and see visualizations that illustrate how autolearning impacts your assistant's performance over time. For more information, see [Empower your skill to learn automatically](/docs/assistant?topic=assistant-autolearn).
 
@@ -505,12 +530,14 @@ The change log lists changes that were made this year, ordered by the date they 
 
 ## 23 November 2020
 {: #23November2020}
+
 <!--1.125.1-->
 
 - **Deploy your assistant to WhatsApp!**: Make your assistant available through Whatsapp messaging so it can exchange messages with your customers where they are. This beta integration creates a connection between your assistant and WhatsApp by using Twilio as a provider. For more information, see [Integrating with WhatsApp](/docs/assistant?topic=assistant-deploy-whatsapp).
 
 ## 13 November 2020
 {: #13November2020}
+
 <!--1.125-->
 
 The following features are available in service instances hosted in all data center locations except Dallas.
@@ -521,27 +548,30 @@ The following features are available in service instances hosted in all data cen
 
 ## 3 November 2020
 {: #3November2020}
+
 <!--1.122-->
 
 - **Suggestions are now generally available**: The Suggestions feature that is available for the web chat integration is generally available and is enabled by default when you create a new web chat integration. For more information, see [Showing more suggestions](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-alternate).
 
-- **New languages supported by the dialog analysis notebook**:  The *Dialog skill analysis notebook* was updated with language support for French, German, Spanish, Czech, Italian, and Portuguese. For more information, see [Analysis notebooks](/docs/assistant?topic=assistant-logs-resources#logs-resources-jupyter-logs).
+- **New languages supported by the dialog analysis notebook**: The *Dialog skill analysis notebook* was updated with language support for French, German, Spanish, Czech, Italian, and Portuguese. For more information, see [Analysis notebooks](/docs/assistant?topic=assistant-logs-resources#logs-resources-jupyter-logs).
 
 - **Visit the learning center!**: Click the **Learning center** link that is displayed in the header of the skill pages to find helpful product tours. The tours guide you through the steps to follow to complete a range of tasks, from adding your first intent to a dialog skill to enhancing the conversation in an actions skill. The **Additional resources** page has links to relevant documentation topics and how-to videos. You can search the resource link titles to find what you're looking for quickly.
 
 ## 29 October 2020
 {: #29October2020}
+
 <!--1.121-->
 
 - **System entity support changes**: For English, Brazilian Portuguese, Czech, Dutch, French, German, Italian, and Spanish dialog skills only the new system entities API version is supported. For backward compatibility, both the `interpretation` and `metadata` attributes are included with the recognized entity object. The new system entity version is enabled automatically for dialog skills in the Arabic, Chinese, Korean, and Japanese languages. You can choose to use the legacy version of the system entities API by switching to it from the **Options>System Entities** page. This settings page is not displayed in English, Brazilian Portuguese, Czech, Dutch, French, German, Italian, and Spanish dialog skills because use of the legacy version of the API is no longer supported for those languages. For more information about the new system entities, see [System entities](/docs/assistant?topic=assistant-system-entities).
 
 ## 28 October 2020
 {: #28October2020}
+
 <!--1.120.1: updates hit most geos on 27 oct, dallas on 28 oct, and dc on 29 oct-->
 
 - **Introducing the *actions skill*!**: The actions skill is the latest step in the continuing evolution of {{site.data.keyword.conversationshort}} as a software as a service application. The actions skill is designed to make it simple enough for *anyone* to build a virtual assistant. We've removed the need to navigate between intents, entities, and dialog to create conversational flows. Building can all now be done in one simple and intuitive interface.
 
-  The actions skill is available as a beta feature. For more information, see [Adding an actions skill](/docs/assistant?topic=assistant-skill-actions-add).
+    The actions skill is available as a beta feature. For more information, see [Adding an actions skill](/docs/assistant?topic=assistant-skill-actions-add).
 
 - **Web chat integration is created automatically**: When you create a new assistant, a web chat integration is created for you automatically (in addition to the preview link integration, which was created previously). These integrations are added also to the assistant that is auto-generated (named *My first assistant*) when you create a new service instance. For more information, see [Integrating the web chat with your website](/docs/assistant?topic=assistant-deploy-web-chat).
 
@@ -552,24 +582,25 @@ The following features are available in service instances hosted in all data cen
 
 **Search skill update**: Support was added for a new version of the {{site.data.keyword.discoveryshort}} API which adds the following capabilities:
 
-  - The search skill can now connect to existing Premium {{site.data.keyword.discoveryshort}} service instances. 
+- The search skill can now connect to existing Premium {{site.data.keyword.discoveryshort}} service instances. 
 
-  - When you connect to a Box, Sharepoint, or Web crawl data collection, the result content fields are automatically populated for you. The **Title** now uses the `title` field from the source document instead of the `extracted_metadata.title` field, which provides better results.
+- When you connect to a Box, Sharepoint, or Web crawl data collection, the result content fields are automatically populated for you. The **Title** now uses the `title` field from the source document instead of the `extracted_metadata.title` field, which provides better results.
 
 ## 1 October 2020
 {: #1October2020}
 
 - **Introducing the *Phone* integration!**: Your customers are calling; now your assistant can answer. Add a phone integration to enable your assistant to answer customer support calls. The integration connects to your existing Session Initiation Protocol (SIP) trunk, which routes incoming calls to your assistant. For more information, see [Integrating with phone](/docs/assistant?topic=assistant-deploy-phone).
 
-- **Introducing the *Twilio messaging* integration!**: Enable your assistant to receive and respond to questions that customers submit by using SMS text messaging. When you enable both new integrations, your assistant can send text messages to a customer in the context of an ongoing phone conversation. For more information, see [Integrating with Twilio messaging ](/docs/assistant?topic=assistant-deploy-sms).
+- **Introducing the *Twilio messaging* integration!**: Enable your assistant to receive and respond to questions that customers submit by using SMS text messaging. When you enable both new integrations, your assistant can send text messages to a customer in the context of an ongoing phone conversation. For more information, see [Integrating with Twilio messaging](/docs/assistant?topic=assistant-deploy-sms).
 
-  The *Phone* and *Twilio messaging* integrations are available as beta features in {{site.data.keyword.conversationshort}} service instances that are hosted in Dallas, Frankfurt, and Washington, DC.
-  {: note}
+    The *Phone* and *Twilio messaging* integrations are available as beta features in {{site.data.keyword.conversationshort}} service instances that are hosted in Dallas, Frankfurt, and Washington, DC.
+    {: note}
 
 - **The web chat integration is added to new assistants automatically**: Much like the *Preview link* integration, the *Web chat* integration now is added to the *My first assistant* assistant that is created for new users automatically.
 
 ## 24 September 2020
 {: #24September2020}
+
 <!--1.113-->
 
 - **Introducing the containment metric!**: Want a quick way to see how often your assistant has to ask for help? Enable the new containment metric to find out. The containment metric measures the rate at which your assistant is able to address a customer's goal without human intervention. For conversations that are not contained, you can review the logs to understand what led customers to seek help outside of the assistant. For the metric to work, you must design your dialog to flag requests for additional support when they occur. For more information, see [Graphs and statistics](/docs/assistant?topic=assistant-logs-overview#logs-overview-graphs).
@@ -578,29 +609,32 @@ The following features are available in service instances hosted in all data cen
 
 ## 22 September 2020
 {: #22September2020}
+
 <!--1.112-->
 
 - **New API version**: The current v2 API version is now `2020-09-24`. In this version, the structure of the `search` response type has changed. The `results` property has been removed and replaced with two new properties:
 
-  - `primary_results` property includes the search results that should be displayed in the initial response to a user query.
-  - `additional_results` property includes search results that can be displayed if the user wants to see more.
+    - `primary_results` property includes the search results that should be displayed in the initial response to a user query.
+    - `additional_results` property includes search results that can be displayed if the user wants to see more.
 
-  The search skill configuration determines how many search results are included in the `primary_results` and `additional_results` properties.
+    The search skill configuration determines how many search results are included in the `primary_results` and `additional_results` properties.
 
 - **Search skill improvements**: The following improvements were made to the search skill:
 
-  - **Control the number of search results**: You can now customize the number of search results that are shown in a response from the search skill. For more information, see [Configure the search](/docs/assistant?topic=assistant-skill-search-add#skill-search-add-configure).
+    - **Control the number of search results**: You can now customize the number of search results that are shown in a response from the search skill. For more information, see [Configure the search](/docs/assistant?topic=assistant-skill-search-add#skill-search-add-configure).
 
-  - **FAQ extraction is available for web crawl data collections**: When you create a web crawl data collection type, you can now enable the FAQ extraction beta feature. FAQ extraction allows the {{site.data.keyword.discoveryshort}} service to identify question and answer pairs that it finds as it crawls the website. For more information, see [Create a data collection](/docs/assistant?topic=assistant-skill-search-add#skill-search-add-create-discovery-collection).
+    - **FAQ extraction is available for web crawl data collections**: When you create a web crawl data collection type, you can now enable the FAQ extraction beta feature. FAQ extraction allows the {{site.data.keyword.discoveryshort}} service to identify question and answer pairs that it finds as it crawls the website. For more information, see [Create a data collection](/docs/assistant?topic=assistant-skill-search-add#skill-search-add-create-discovery-collection).
 
 ## 16 September 2020
 {: #16September2020}
+
 <!--1.111-->
 
 - **Search skill refinement change**: The search refinement beta feature that was added in [June](#24June2020) now is disabled by default. Enable the feature to refine the search results that are returned from the {{site.data.keyword.discoveryshort}} service. For more information, see [Configure the search](/docs/assistant?topic=assistant-skill-search-add#skill-search-add-configure).
 
 ## 25 August 2020
 {: #25August2020}
+
 <!--1.108-->
 
 - **Give the web chat integration a try!**: You can now use the web chat integration with a Lite plan. Previously, the web chat was available to Plus or higher plans only. For more information, see [Integrating the web chat with your website](/docs/assistant?topic=assistant-deploy-web-chat).
@@ -612,6 +646,7 @@ The following features are available in service instances hosted in all data cen
 
 ## 5 August 2020
 {: #5August2020}
+
 <!--1.105-->
 
 - **Enable your skill to improve itself**: Try the new **autolearning** beta feature to empower your skill to improve itself automatically over time. Your skill observes customer choices to understand which choices are most often the best. As its confidence grows, your skill presents better options to get the right answers to your customers with fewer clicks. For more information, see [Empower your skill to learn over time](/docs/assistant?topic=assistant-autolearn).
@@ -620,50 +655,54 @@ The following features are available in service instances hosted in all data cen
 
 ## 29 July 2020
 {: #29July2020}
+
 <!--1.104-->
 
 - **The @sys-location and @sys-person system entities were removed**: The `@sys-location` and `@sys-person` system entities are no longer listed on the *System entities* page. If your dialog uses one of these entities, a red `Entity not created` notification is displayed to inform you that the entity is not recognized.
 
 - **Skill menu actions moved**: The menu that was displayed in the header of the skill while you were working with a skill was removed. The actions that were available from the menu, such as import and export, are still available. Go to the Skills page, and click the menu on the skill tile. 
 
-  The import skill process was updated to support overwriting an existing skill on import. For more information, see [Overwriting a skill](/docs/assistant?topic=assistant-skill-tasks#skill-tasks-overwrite).
+    The import skill process was updated to support overwriting an existing skill on import. For more information, see [Overwriting a skill](/docs/assistant?topic=assistant-skill-tasks#skill-tasks-overwrite).
 
 - **A few dialog issues were addressed**: 
 
-  - Fixed an issue with adding a jump-to from a conditional response in one node to a conditional response in another node.
-  - The page now responds better when you scroll horizontally to see multiple levels of child nodes.
+    - Fixed an issue with adding a jump-to from a conditional response in one node to a conditional response in another node.
+    - The page now responds better when you scroll horizontally to see multiple levels of child nodes.
 
 ## 15 July 2020
 {: #15July2020}
+
 <!--1.102-->
 
 - **Support ended for @sys-location and @sys-person**: The person and location system entities, which were available as a beta feature in English dialog skills only, are no longer supported. You cannot enable them. If your dialog uses them, they are ignored by the service. 
 
-  Use contextual entities to teach your skill to recognize the context in which such names are used. For more information about contextual entities, see [Annotation-based method](/docs/assistant?topic=assistant-entities#entities-annotations-overview).
+    Use contextual entities to teach your skill to recognize the context in which such names are used. For more information about contextual entities, see [Annotation-based method](/docs/assistant?topic=assistant-entities#entities-annotations-overview).
 
-  For more information about how to use contextual entites to identify names of people, see the [Detecting Names And Locations With Watson Assistant](https://medium.com/ibm-watson/detecting-names-and-locations-with-watson-assistant-e3e1fa2a8427){: external} blog post on Medium.
+    For more information about how to use contextual entites to identify names of people, see the [Detecting Names And Locations With Watson Assistant](https://medium.com/ibm-watson/detecting-names-and-locations-with-watson-assistant-e3e1fa2a8427){: external} blog post on Medium.
 
 - **How legacy numeric system entities are processed has changed**: All new dialog skills use the new system entities automatically. 
 
-  For existing skills that use legacy numeric system entities, how the entities are processed now differs based on the skill language. 
+    For existing skills that use legacy numeric system entities, how the entities are processed now differs based on the skill language. 
 
-  - Arabic, Chinese, Korean, and Japanese dialog skills that use legacy numeric system entities function the same as before. 
-  - If you choose to continue to use the legacy system entities in European-language dialog skills, a new legacy API format is used. The new legacy API format simulates the legacy system entities behavior. In particular, it returns a `metadata` object and does not stop the service from idenfifying multiple system entities for the same input string. In addition, it returns an `interpretation` object, which was introduced with the new version of system entities. Review the `interpretation` object to see the useful information that is returned by the new version.
+    - Arabic, Chinese, Korean, and Japanese dialog skills that use legacy numeric system entities function the same as before. 
+    - If you choose to continue to use the legacy system entities in European-language dialog skills, a new legacy API format is used. The new legacy API format simulates the legacy system entities behavior. In particular, it returns a `metadata` object and does not stop the service from idenfifying multiple system entities for the same input string. In addition, it returns an `interpretation` object, which was introduced with the new version of system entities. Review the `interpretation` object to see the useful information that is returned by the new version.
 
-  Update your skills to use the new system entities from the **Options>System Entities** page.
+    Update your skills to use the new system entities from the **Options>System Entities** page.
 
 - **Web chat security is generally available**: Enable the security feature of web chat so that you can verify that messages sent to your assistant come from only your customers and can pass sensitive information to your assistant. 
 
-  When configuring the JWT, you no longer need to specify the Authentication Context Class Reference (acr) claim.
+    When configuring the JWT, you no longer need to specify the Authentication Context Class Reference (acr) claim.
 
 ## 1 July 2020
 {: #1July2020}
+
 <!--1.101.3-->
 
 - **Salesforce support is generally available**: Integrate your web chat with Salesforce so your assistant can transfer customers who asks to speak to a person to a Salesforce agent who can answer their questions. For more information, see [Integrating with Salesforce](/docs/assistant?topic=assistant-deploy-salesforce).
 
 ## 24 June 2020
 {: #24June2020}
+
 <!--1.101-->
 
 - **Getting intent recommendations from assistant logs is generally available**: Use the chat log from one of your production assistants as the source for intent and intent user example recommendations. For more information, see [Getting help defining intents](/docs/assistant?topic=assistant-intent-recommendations).
@@ -672,14 +711,16 @@ The following features are available in service instances hosted in all data cen
 
 ## 3 June 2020
 {: #3June2020}
+
 <!--1.99-->
 
 - **Zendesk support is generally available**: Integrate your web chat with Zendesk so your assistant can transfer customers who asks to speak to a person to a Zendesk agent who can answer their questions. And now you can secure the connection to Zendesk. For more information, see [Adding support for transfers](/docs/assistant?topic=assistant-deploy-zendesk).
 
--  **Pricing plan changes**: We continue to revamp the overall service plan structure for {{site.data.keyword.conversationshort}}. In April, we announced [a new low cost entry point](#1April2020) for the Plus plan. Today, the Standard plan is being retired. Existing Standard plan users are not impacted; they can continue to work in their Standard instances.  New users do not see the Standard plan as an option when they create a service instance. For more information, see the [Pricing](https://www.ibm.com/cloud/watson-assistant/pricing/){: external} page.
+- **Pricing plan changes**: We continue to revamp the overall service plan structure for {{site.data.keyword.conversationshort}}. In April, we announced [a new low cost entry point](#1April2020) for the Plus plan. Today, the Standard plan is being retired. Existing Standard plan users are not impacted; they can continue to work in their Standard instances. New users do not see the Standard plan as an option when they create a service instance. For more information, see the [Pricing](https://www.ibm.com/cloud/watson-assistant/pricing/){: external} page.
 
 ## 27 May 2020
 {: #27May2020}
+
 <!--1.98-->
 
 - **Full language support for new system entities**: The new version of the system entities is generally available in dialog skills of all languages, including Arabic, Chinese (Simplified), Chinese (Traditional), Korean, and Japanese. For more information, see [Supported languages](/docs/assistant?topic=assistant-language-support).
@@ -691,6 +732,7 @@ The following features are available in service instances hosted in all data cen
 
 ## 21 May 2020
 {: #21May2020}
+
 <!--1.97-->
 
 - **Preview link URL change**: The URL for the preview link was changed. If you previously shared the link with teammates, provide them with the new URL.
@@ -702,6 +744,7 @@ The following features are available in service instances hosted in all data cen
 
 ## 14 May 2020
 {: #14May2020}
+
 <!--1.96-->
 
 - **Get skill owner information**: The email address of the person who owns the service instance that you are using is displayed from the User account menu. This information is especially helpful if you want to contact the instance owner to request access changes. For more information about access control, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).
@@ -715,14 +758,16 @@ The following features are available in service instances hosted in all data cen
 
 ## 30 April 2020
 {: #30April2020}
+
 <!--1.95.1-->
 
--  **Web chat is generally available!**: Add your assistant to your company website as a web chat widget that can help your customers with common questions and tasks. Service desk transfer support continues to be a beta feature. For more information, see [Integrating with your own website](/docs/assistant?topic=assistant-deploy-web-chat).
+- **Web chat is generally available!**: Add your assistant to your company website as a web chat widget that can help your customers with common questions and tasks. Service desk transfer support continues to be a beta feature. For more information, see [Integrating with your own website](/docs/assistant?topic=assistant-deploy-web-chat).
 
 - **Secure your web chat**: Enable the beta security feature of web chat so that you can verify that messages sent to your assistant come from only your customers and can pass sensitive information to your assistant.
 
 ## 27 April 2020
 {: #27April2020}
+
 <!--1.95-->
 
 - **Add personality to your assistant in web chat**: You can add an assistant image to the web chat header to brand the window. You can add an avatar image that represents your assistant or a brand logo, for example. For more information, see [Integrating with your own web site](/docs/assistant?topic=assistant-deploy-web-chat).
@@ -734,17 +779,17 @@ The following features are available in service instances hosted in all data cen
 
 - **Fuzzy matching support was expanded**: Added support for stemming and misspelling in French, German, and Czech dialog skills. This enhancement means that the assistant can recognize an entity value that is defined in its singular form but mentioned in its plural form in user input. It also can recognize conjugated forms of a verb that is specified as an entity value.
 
-  For example, if your French-language dialog skill has an entity value of `animal`, it recognizes the plural form of the word (`animaux`) when it is mentioned in user input. If your German-language dialog skill has the root verb `haben` as an entity value, it recognizes conjugated forms of the verb (`hast`) in user input as mentions of the entity.
+    For example, if your French-language dialog skill has an entity value of `animal`, it recognizes the plural form of the word (`animaux`) when it is mentioned in user input. If your German-language dialog skill has the root verb `haben` as an entity value, it recognizes conjugated forms of the verb (`hast`) in user input as mentions of the entity.
 
 ## 2 April 2020
 {: #2April2020}
 
 - **New and improved access control**: Now, when you give other people access to your {{site.data.keyword.conversationshort}} resources, you have more control over the level of access they have to individual skills and assistants. You can give one person read-only access to a production skill and manager-level access to a development skill, for example. For more information, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).
 
-  Can't see Analytics anymore? If you cannot do things that you could do before, you might not have appropriate access. Ask the service instance owner to change your service access role. For more information, see [How to keep your access](/docs/assistant?topic=assistant-access-control#access-control-prep).
-  {: important}
+    Can't see Analytics anymore? If you cannot do things that you could do before, you might not have appropriate access. Ask the service instance owner to change your service access role. For more information, see [How to keep your access](/docs/assistant?topic=assistant-access-control#access-control-prep).
+    {: important}
 
-  If you can't access the API Details for a skill or assistant anymore, you might not have the access role that is required to use the instance-level API credentials. You can use a personal API key instead. For more information, see [Getting API information](/docs/assistant?topic=assistant-assistant-settings#assistant-settings-api-details).
+    If you can't access the API Details for a skill or assistant anymore, you might not have the access role that is required to use the instance-level API credentials. You can use a personal API key instead. For more information, see [Getting API information](/docs/assistant?topic=assistant-assistant-settings#assistant-settings-api-details).
 
 ## 1 April 2020
 {: #1April2020}
@@ -757,21 +802,22 @@ The following features are available in service instances hosted in all data cen
 
     - An `integrations` property was added to the V2 `/message` context. The service now expects the `context.integrations` property to conform to a specific schema in which the allowed values are as follows:
 
-      - `chat`
-      - `facebook`
-      - `intercom`
-      - `liveengage`
-      - `salesforce`
-      - `slack`
-      - `service_desk`
-      - `text_messaging`
-      - `voice_telephony`
-      - `zendesk`
+        - `chat`
+        - `facebook`
+        - `intercom`
+        - `liveengage`
+        - `salesforce`
+        - `slack`
+        - `service_desk`
+        - `text_messaging`
+        - `voice_telephony`
+        - `zendesk`
 
     If your app uses a `context.integrations` property that does not conform to the schema, a 400 error code will be returned.
 
 ## 31 March 2020
 {: #31March2020}
+
 <!--web chat 1.5.1-->
 
 - **The web chat integration was updated**: The update adds an `isTrackingEnabled` parameter. You can add this parameter and set it to `false` to add the `X-Watson-Learning-Opt-Out` header to each `/message` request that originates from the web chat. For more information about the header, see [Data collection](https://cloud.ibm.com/apidocs/assistant/assistant-v2#data-collection){: external}. For more information about the parameter, see [Configuration](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-configuration){: external}.
@@ -781,10 +827,11 @@ The following features are available in service instances hosted in all data cen
 
 - **The Covid-19 content catalog is available in Brazilian Portuguese, French, and Spanish**: The content catalog defines a group of intents that recognize the common types of questions people ask about the novel coronavirus. You can use the catalog to jump-start development of chatbots that can answer questions about the virus and help to minimize the anxiety and misinformation associated with it. For more information about how to add a content catalog to your skill, see [Using content catalogs](/docs/assistant?topic=assistant-catalog).
 
-  ![Shows a list of the intents associated with the COVID-19 content catalog.](images/covid-19-catalog.png)
+    ![Shows a list of the intents associated with the COVID-19 content catalog.](images/covid-19-catalog.png)
 
 ## 19 March 2020
 {: #19March2020}
+
 <!--1.93.1-->
 
 - **A Covid-19 content catalog is available**: The English-only content catalog defines a group of intents that recognize the common types of questions people ask about the novel coronavirus. The World Health Organization characterized COVID-19 as a pandemic on 11 March 2020. You can use the catalog to jump-start development of chatbots that can answer questions about the virus and help to minimize the anxiety and misinformation associated with it. For more information about how to add a content catalog to your skill, see [Using content catalogs](/docs/assistant?topic=assistant-catalog).
@@ -798,6 +845,7 @@ The following features are available in service instances hosted in all data cen
 
 ## 16 March 2020
 {: #16March2020}
+
 <!--1.93-->
 
 - **Instructions updated for Slack integrations**: The steps required to set up a Slack integration have changed to reflect permission assignment changes that were made by Slack. For more information, see [Integrating with Slack](/docs/assistant?topic=assistant-deploy-slack).
@@ -806,6 +854,7 @@ The following features are available in service instances hosted in all data cen
 
 ## 10 March 2020
 {: #10March2020}
+
 <!--1.92-->
 
 - **Contextual entity support is generally available**: You can add contextual entities to English-language dialog skills. For more information about contextual entities, see [Creating entities](/docs/assistant?topic=assistant-entities#entities-annotations-overview).
@@ -826,34 +875,35 @@ The following technologies are being deprecated:
 
 - **Legacy version of numeric system entities**
 
-  We released a whole new infrastructure for our numeric system entities across all languages except Chinese, Korean, Japanese and Arabic. The updated `@sys-number`, `@sys-date`, `@sys-time`, `@sys-currency`, and `@sys-percentage` entities provide superior number recognition with higher precision. For more information about the new system entities, see [System entity details](/docs/assistant?topic=assistant-system-entities).
+    We released a whole new infrastructure for our numeric system entities across all languages except Chinese, Korean, Japanese and Arabic. The updated `@sys-number`, `@sys-date`, `@sys-time`, `@sys-currency`, and `@sys-percentage` entities provide superior number recognition with higher precision. For more information about the new system entities, see [System entity details](/docs/assistant?topic=assistant-system-entities).
 
-  The old version of the numeric system entities will stop being supported in June 2020 for English, Brazilian Portuguese, Czech, Dutch, French, German, Italian, and Spanish dialog skills.
-  
-  ***Action***: In each dialog skill where you use numeric system entities, go to the **Options>System entities** page and turn on the new system entities. Take some time to test the new version of system entities with your own dialogs to make sure they continue to work as expected. As you adopt the new system entities, share your feedback about your experience with the new technology.
+    The old version of the numeric system entities will stop being supported in June 2020 for English, Brazilian Portuguese, Czech, Dutch, French, German, Italian, and Spanish dialog skills.
+    
+    ***Action***: In each dialog skill where you use numeric system entities, go to the **Options>System entities** page and turn on the new system entities. Take some time to test the new version of system entities with your own dialogs to make sure they continue to work as expected. As you adopt the new system entities, share your feedback about your experience with the new technology.
 
 - **Person and location system entities**
 
-  The `@sys-person` and `@sys-location` system entities, which were available in English as a beta only, are being deprecated. Consider using contextual entities as a way to capture these types of proper nouns. Instead of trying to add a dictionary-based entity that covers every permutation of the names for people or cities, for example, you can teach your skill to recognize the context in which such names are used. For more information about contextual entities, see [Annotation-based method](/docs/assistant?topic=assistant-entities#entities-annotations-overview).
+    The `@sys-person` and `@sys-location` system entities, which were available in English as a beta only, are being deprecated. Consider using contextual entities as a way to capture these types of proper nouns. Instead of trying to add a dictionary-based entity that covers every permutation of the names for people or cities, for example, you can teach your skill to recognize the context in which such names are used. For more information about contextual entities, see [Annotation-based method](/docs/assistant?topic=assistant-entities#entities-annotations-overview).
 
-  ***Action***: Remove references to `@sys-person` and `@sys-location` from your dialogs. Turn off the `@sys-person` and `@sys-location` system entities to prevent yourself or others from adding them to a dialog inadvertently.
+    ***Action***: Remove references to `@sys-person` and `@sys-location` from your dialogs. Turn off the `@sys-person` and `@sys-location` system entities to prevent yourself or others from adding them to a dialog inadvertently.
 
 - **Irrelevance detection**
 
-  We revised the irrelevance detection classification algorithm to make it even smarter out of the box. Now, even before you begin to teach the system about irrelevant requests, it is able to recognize user input that your skill is not designed to address. For more information, see [Irrelevance detection](/docs/assistant?topic=assistant-irrelevance-detection).
+    We revised the irrelevance detection classification algorithm to make it even smarter out of the box. Now, even before you begin to teach the system about irrelevant requests, it is able to recognize user input that your skill is not designed to address. For more information, see [Irrelevance detection](/docs/assistant?topic=assistant-irrelevance-detection).
 
-  ***Action***: In each dialog skill, go to the **Options>Irrelevance detection** page and turn on the new classification model. Make sure everything works as well, if not better, than it did before. Share your feedback.
+    ***Action***: In each dialog skill, go to the **Options>Irrelevance detection** page and turn on the new classification model. Make sure everything works as well, if not better, than it did before. Share your feedback.
 
 - **Old API version dates**
 
-  v1 API versions that are dated on or before `2017-02-03` are being deprecated. When you send calls to the service with earlier API version dates, they will receive properly formatted and valid responses for a time, so you can gracefully transition to using the later API versions. However, the confidence scores and other results that are sent in the response will reflect those generated by a more recent version of the API.
+    v1 API versions that are dated on or before `2017-02-03` are being deprecated. When you send calls to the service with earlier API version dates, they will receive properly formatted and valid responses for a time, so you can gracefully transition to using the later API versions. However, the confidence scores and other results that are sent in the response will reflect those generated by a more recent version of the API.
 
-  ***Action***: Do some testing of calls with the latest version to verify that things work as expected. Some functionality has changed over the last few years. After testing, change the version date on any API calls that you make from your applications. 
-  
-  For more information about the latest supported versions, see [Service API versioning](#release-notes-api-version). To learn about some of the changes that were introduced with each API version update, you can search these release notes for *New API version* entries.
+    ***Action***: Do some testing of calls with the latest version to verify that things work as expected. Some functionality has changed over the last few years. After testing, change the version date on any API calls that you make from your applications. 
+    
+    For more information about the latest supported versions, see [Service API versioning](#release-notes-api-version). To learn about some of the changes that were introduced with each API version update, you can search these release notes for *New API version* entries.
 
 ## 6 March 2020
 {: #6March2020}
+
 <!--1.91.1-->
 
 - **Transfer a web chat conversation to a human agent**: Delight your customers with 360-degree support by integrating your web chat with a third-party service desk solution. When a customer asks to speak to a person, you can connect them to an agent through a service desk solution, such as Zendesk or Salesforce. Service desk support is a beta feature. For more information, see [Adding support for transfers](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-haa).
@@ -870,6 +920,7 @@ The following technologies are being deprecated:
 
 ## 26 February 2020
 {: #26February2020}
+
 <!--1.90-->
 
 - **Slot `Save it as` field retains your edits**: When you edit what gets saved for a slot by using the JSON editor to edit the value of the context variable to be something other than what is specified in the **Check for** field, your changes are kept even if someone subsequently clicks the **Save it as** field.
@@ -881,12 +932,13 @@ The following technologies are being deprecated:
 
 ## 14 February 2020
 {: #14February2020}
+
 <!--1.89-->
 
 - **Get intent recommendations from an assistant log**: You can now use the chat log from one of your production assistants as the source for intent and intent user example recommendations. See [Getting help defining intents](/docs/assistant?topic=assistant-intent-recommendations). This capability is a beta feature.
 
-  With the introduction of this feature, how CSV log files are stored also changed. Previously, a log CSV file that you uploaded to one skill was shared by all of the skills in that service instance. Now, a CSV file that you upload to one skill is available for use only by that one skill. For existing instances with CSV files, the shared CSV files are available to each of the skills in the instance. You can delete a CSV file from a skill that doesn't use it by managing the recommendation sources for the skill.
-  {: important}
+    With the introduction of this feature, how CSV log files are stored also changed. Previously, a log CSV file that you uploaded to one skill was shared by all of the skills in that service instance. Now, a CSV file that you upload to one skill is available for use only by that one skill. For existing instances with CSV files, the shared CSV files are available to each of the skills in the instance. You can delete a CSV file from a skill that doesn't use it by managing the recommendation sources for the skill.
+    {: important}
 
 - **More web chat color settings**: You can now specify the color of more elements of the web chat integration. For example, you can define one color for the web chat window header. You can define a different color for the user message bubble. And another color for interactive components, such as the launcher button for the chat.
 
@@ -906,6 +958,7 @@ The following technologies are being deprecated:
 
 ## 4 February 2020
 {: #4February2020}
+
 <!--1.88-->
 
 - **Product user interface makeover**: The UI has been updated to be more intuitive, responsive, and consistent across its pages. While the look and feel of the UI elements has changed, their function has not.
@@ -913,12 +966,14 @@ The following technologies are being deprecated:
 
 ## 24 January 2020
 {: #24January2020}
+
 <!--1.87.4-->
 
 - **New system entities are now generally available in multiple languages**: The new and improved numeric system entities are now generally available in all supported languages, except Arabic, Chinese, Japanese, and Korean, where they are available as a beta feature. They are not used by your dialog skill unless you enable them from the **Options>System entities** page. For more information, see [New system entities](/docs/assistant?topic=assistant-system-entities).
 
 ## 14 January 2020
 {: #14January2020}
+
 <!--1.87.2-->
 
 - **Fixed an error message that was displayed when opening an instance**: An error that was displayed when you launched {{site.data.keyword.conversationshort}} from the {{site.data.keyword.cloud}} dashboard has been fixed. Previously, an error message that said, `Module 'ui-router' is not available! You either misspelled the module name or forgot to load it` would sometimes be displayed.
