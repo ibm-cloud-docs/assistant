@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-08"
+lastupdated: "2021-09-10"
 
 subcollection: assistant
 
@@ -61,6 +61,9 @@ To set up the integration, complete the following steps:
 1. Choose whether you want to generate a free phone number for your assistant or connect to an existing SIP trunk:
 
     - To generate a free phone number for your assistant, click **Generate a free phone number**.
+
+      Generating a free phone number is supported only for {{site.data.keyword.conversationshort}} instances in the Dallas and Washington DC data centers.
+      {: note}
 
     - To use an existing phone number you have already configured with a [SIP trunk provider](#deploy-phone-sip-providers), click **Use an existing phone number with an external provider**.
 
