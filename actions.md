@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-09"
+lastupdated: "2021-09-13"
 
 subcollection: assistant
 
@@ -42,16 +42,16 @@ Here's an example. A customer named Sally wants to know your store hours. The ac
 
 - Training examples
 
-  - Get store hours
-  - What are your store hours?
-  - What time do you open
-  - Can you tell me your weekday hours?
-  - when does the store in Boston open tomorrow?
-  - What time does your downtown store close?
+    - Get store hours
+    - What are your store hours?
+    - What time do you open
+    - Can you tell me your weekday hours?
+    - when does the store in Boston open tomorrow?
+    - What time does your downtown store close?
 
 - Steps
 
-  1.  **Assistant says** *We are open from 9:00 AM until 6:00 PM Monday through Saturday.*
+    1.  **Assistant says** *We are open from 9:00 AM until 6:00 PM Monday through Saturday.*
 
 When you are ready to start building a real assistant, you will need to do some prep work first. Spend time researching the most common requests that your customers need help with. Determine which of the requests you want your assistant to handle on behalf of your company. Start small.
 
@@ -175,79 +175,66 @@ Guide the customer to provide the right type of information by adding a customer
 
 - **Options**: Presents a set of acceptable answers that customers can choose from.
     
-  You can help your assistant recognize variations of an option value that customers might enter. For each option that you add, add synonyms in a comma-separated list.
+    You can help your assistant recognize variations of an option value that customers might enter. For each option that you add, add synonyms in a comma-separated list.
 
-  For example, you might define the following options:
+    For example, you might define the following options:
 
-  <table>
-        <caption>Options example</caption>
-        <tr>
-          <th>Option value</th>
-          <th>Synonyms</th>
-        </tr>
-        <tr>
-          <td>Blue</td>
-          <td>aqua, turquoise, navy</td>
-        </tr>
-        <tr>
-          <td>Red</td>
-          <td>burgundy, crimson, sangria</td>
-        </tr>
-        <tr>
-          <td>Green</td>
-          <td>lime, olive, forest</td>
-        </tr>
-  </table>
+    | Option value | Synonyms |
+    |--------|--------|
+    | Blue | aqua, turquoise, navy |
+    | Red | burgundy, crimson, sangria |
+    | Green | lime, olive, forest |
+    {: caption="Options example" caption-side="top"}
 
-  If you've built a dialog skill before, this process might remind you of defining an entity. In fact, an entity is added to the underlying language model based on the options you add.
-  {: tip}
+    If you've built a dialog skill before, this process might remind you of defining an entity. In fact, an entity is added to the underlying language model based on the options you add.
+    {: tip}
 
-  To select an option at run time, users can click an option button or list item, such as *Green*. Or they can type `Green` or one of its synonyms, such as `lime`.
+    To select an option at run time, users can click an option button or list item, such as *Green*. Or they can type `Green` or one of its synonyms, such as `lime`.
 
-  For each response in which you show options, you can decide whether to explicitly ask for the information or to skip asking and apply information that the customer shared previously.
+    For each response in which you show options, you can decide whether to explicitly ask for the information or to skip asking and apply information that the customer shared previously.
 
-  *When should I skip asking?*
+    *When should I skip asking?*
   
-  The benefit of choosing not to always ask is that the assistant won't ask for information that has already been submitted by the customer. For example, if the original message from the customer is `I want to buy a blue shirt`, your assistant skips Step 3 altogether because it already knows the customer's shirt color preference.
+    The benefit of choosing not to always ask is that the assistant won't ask for information that has already been submitted by the customer. For example, if the original message from the customer is `I want to buy a blue shirt`, your assistant skips Step 3 altogether because it already knows the customer's shirt color preference.
 
-  Another benefit of choosing not to ask is that you give customers the ability to change their mind. In the middle of a multistep process, the customer can change a choice they made previously by specifying a different option from the prior step. Subsequent changes to a step value can't be made if the options response is set to **Always ask for this information, regardless of earlier messages**.
+    Another benefit of choosing not to ask is that you give customers the ability to change their mind. In the middle of a multistep process, the customer can change a choice they made previously by specifying a different option from the prior step. Subsequent changes to a step value can't be made if the options response is set to **Always ask for this information, regardless of earlier messages**.
   
-  *When should I ask?*
+    *When should I ask?*
 
-  If your action asks for the same type of data in more than one step, select the **Always ask for this information, regardless of earlier messages** option in the later step. This prevents your assistant from assuming the wrong things. For example, if Step 3 asks for the shirt color that the customer wants to buy and step 5 asks for the tie color, click **Always ask for this** in Step 5. Otherwise, the color that the customer specifies for the shirt in Step 3 is used automatically for the tie. And who wants to wear the same color shirt and tie together?
+    If your action asks for the same type of data in more than one step, select the **Always ask for this information, regardless of earlier messages** option in the later step. This prevents your assistant from assuming the wrong things. For example, if Step 3 asks for the shirt color that the customer wants to buy and step 5 asks for the tie color, click **Always ask for this** in Step 5. Otherwise, the color that the customer specifies for the shirt in Step 3 is used automatically for the tie. And who wants to wear the same color shirt and tie together?
 
-  When you use the built-in integrations, if you define 5 or fewer options, they are displayed as buttons. For more than 5 options, a list is displayed. If you are using a custom client application, you must specify how you want the options to be displayed.
+    When you use the built-in integrations, if you define 5 or fewer options, they are displayed as buttons. For more than 5 options, a list is displayed. If you are using a custom client application, you must specify how you want the options to be displayed.
 
 - **Number**: Collects a single numeric value. 
 
-  The customer can specify the number value in either numerals (`100`) or words (`one hundred`). Negative and decimal values are recognized.
+    The customer can specify the number value in either numerals (`100`) or words (`one hundred`). Negative and decimal values are recognized.
 
-  If your action asks for a number more than once, always show the step response text or your assistant can get confused. 
+    If your action asks for a number more than once, always show the step response text or your assistant can get confused. 
   
-  For example, you might have an action that helps with hotel bookings. One step asks for the number of guests and another step asks for the number of nights. If you skip asking, the assistant can mistake the number that applies to guests for being the number that applies to nights. The actions skill cannot currently determine from context which number belongs to which step. 
+    For example, you might have an action that helps with hotel bookings. One step asks for the number of guests and another step asks for the number of nights. If you skip asking, the assistant can mistake the number that applies to guests for being the number that applies to nights. The actions skill cannot currently determine from context which number belongs to which step. 
   
-  Click **Edit response**, select **Always ask for this number, regardless of earlier messages**, and then click **Apply**.
+    Click **Edit response**, select **Always ask for this number, regardless of earlier messages**, and then click **Apply**.
 
 - **Date**: Collect and track dates and date ranges.
 
-  Valid format examples:
+    Valid format examples:
   
-  - Today
-  - Friday
-  - Now
-  - 10/30/2020
-  - October 30th, 2020
-  - October 30th
+    - Today
+    - Friday
+    - Now
+    - 10/30/2020
+    - October 30th, 2020
+    - October 30th
 
 - **Time**: Collect and track time-based information.
 
-  Valid format examples:
-  - 12:45PM
-  - 10:30
-  - 6am
-  - Now
-  - at 10
-  - from 5pm
+    Valid format examples:
+    - 12:45PM
+    - 10:30
+    - 6am
+    - Now
+    - at 10
+    - from 5pm
 
 - **Currency**: For currency values in user input. The currency can be expressed with a currency symbol or currency-specific terms, such as `20 cents`, `five dollars`, or `$10`.
 
@@ -255,7 +242,7 @@ Guide the customer to provide the right type of information by adding a customer
 
 - **Free text**: Users can write any response in text.
 
-  Used for ordinary text responses, such as capturing special instructions or requests that a customer wants to pass along.
+    Used for ordinary text responses, such as capturing special instructions or requests that a customer wants to pass along.
 
 #### Customizing validation
 {: #actions-response-types-validation}
@@ -374,10 +361,12 @@ To add a session variable, complete the following steps:
 
       The option to create a new session variable is only available starting from step 2.
       {: tip}
+    
     - From the main actions skill page, click to open the *Variables - Created by you* page. Click **New variable**. 
 
       If you can't see the **New variable** button, you might need to close the Preview pane.
       {: tip} 
+
 1.  Add a name for the session variable.
 
     As you add the name, an ID is generated for you. Any spaces in the name are replaced with underscores (_) in the ID.
@@ -410,7 +399,7 @@ Use expressions to define values independent of values that are collected in ste
 
 Use an expression to do simple math equations, for example. Maybe a customer has $200 in a savings account and wants to transfer $150 from it to a new checking account. The funds transfer fee is $3, and the bank charges a fee when a savings account contains less than $50. You can add a step that warns the user that the requested transfer will bring the savings account balance below the $50 minimum and incur a fee. The step conditions on an expression like this:
 
-```
+```code
 ${savings} - (${Step_232} + ${transfer_fee}) < 50
 ```
 {: codeblock}
@@ -531,31 +520,40 @@ When you choose the *Connect to agent* option, a settings window is displayed wh
     Each message can be up to 100 characters in length.
     {: note}
 
-### System actions explained
+### Set by assistant actions explained
 {: #actions-builtin}
 
-A pair of built-in actions are created for you automatically. Because these actions are built in, they behave slightly differently from the actions that you add yourself. For example, you cannot delete or disable the system actions. However, you can customize the response text that is displayed by these actions or add steps to them to incorporate other interactions.
+**Set by assistant**actions are created for you automatically. Because these actions are built in, they behave slightly differently from the actions that you add yourself. For example, you cannot delete or disable these actions. However, you can customize the response text that is displayed by these actions or add steps to them to incorporate other interactions.
 
 The following actions are created for you automatically:
 
 - **Greet customer**: Triggered when the assistant starts a conversation with a customer. 
 
-  For example, when the web chat is opened by a customer from their company website, this action defines how the assistant will greet the user. Use this action to define how you want the assistant to introduce itself to the customer and set the tone as it initiates a conversation.
+    For example, when the web chat is opened by a customer from their company website, this action defines how the assistant will greet the user. Use this action to define how you want the assistant to introduce itself to the customer and set the tone as it initiates a conversation.
 
-  You might want to add a session variable to the *Greet customers* action response text so you can greet the customer by name.
-  {: tip}
+    You might want to add a session variable to the *Greet customers* action response text so you can greet the customer by name.
+    {: tip}
 
-  This action is skipped in integrations where the customer starts the conversation with the assistant and not the other way around. For example, in the *Slack* and *Facebook* integrations, the assistant doesn't say anything until a customer addresses the assistant. In the *Web chat* integration, if you choose to add the home screen, then the greeting that is defined in this action is replaced by the greeting you specify for the home screen.
-- **Retry when no action matches**: Triggered when a customer's request cannot be satisfied by any of the defined actions.
+    This action is skipped in integrations where the customer starts the conversation with the assistant and not the other way around. For example, in the *Slack* and *Facebook* integrations, the assistant doesn't say anything until a customer addresses the assistant. In the *Web chat* integration, if you choose to add the home screen, then the greeting that is defined in this action is replaced by the greeting you specify for the home screen.
 
-  For example, your assistant might know how to help with product orders, but not travel plans. If a customer asks for help with travel plans, your assistant must be able to convey that it understands what the customer wants, but that it can't help with that particular task. Ideally, your assistant can direct the customer to other resources that might help with the task, or can explain other tasks it can help with to keep the conversation going and headed in a positive direction.
+    **Fallback**: Provides a way to automatically connect customers to a human agent if they need more help. This action helps you to handle errors in the conversation, and is triggered by these conditions: 
 
-  If there are common topics that your customers ask about, but that you don't want the assistant to help them with, you can add example messages to the *Additional retry examples* step. Add variations of the wording that customers use to articulate requests or questions that you want your assistant to ignore.
+    - Step validation failed: The customer repeatedly gave answers that were not valid for the expected customer response type.
+    - Agent requested: The customer directly asked to be connected to a human agent.
+    - No action matches: The customer repeatedly made requests or asked questions that the assistant did not understand.
 
-  These examples are stored in the underlying language model as counterexamples.
-  {: tip}
+    You can edit the Fallback action to modify the conversation your users have with the assistant when errors occur. For example, you might want to add steps or modify step conditions to provide more control over how specific error conditions are handled.
 
-To edit a system action, from the *Actions* page, click **System actions**, and then click an action to open it for editing.
+- **No action matches**: Triggered when a customer's request cannot be satisfied by any of the defined actions.
+
+    For example, your assistant might know how to help with product orders, but not travel plans. If a customer asks for help with travel plans, your assistant must be able to convey that it understands what the customer wants, but that it can't help with that particular task. Ideally, your assistant can direct the customer to other resources that might help with the task, or can explain other tasks it can help with to keep the conversation going and headed in a positive direction.
+
+    If there are common topics that your customers ask about, but that you don't want the assistant to help them with, you can add example messages to the *Additional retry examples* step. Add variations of the wording that customers use to articulate requests or questions that you want your assistant to ignore.
+
+    These examples are stored in the underlying language model as counterexamples.
+    {: tip}
+
+To edit these actions, from the *Actions* page, click **Actions - Set by assistant**, and then click an action to open it for editing.
 
 ## Testing your action
 {: #actions-test}
@@ -638,6 +636,52 @@ You can also prevent a single action from being included in the list of choices 
 
 1.  From the action editor, click the **Action settings** icon.
 1.  On the Action Settings window, toggle the **Ask clarifying question** switch to off.
+
+## Changing the topic of the conversation
+{: #actions-change-topic}
+
+In general, an action is designed to lead a customer through a particular process without any interruptions. In real life, however, conversations almost never follow such a simple flow. In the middle of a conversation, customers might get distracted, ask questions about related issues, misunderstand something, or just change their minds about what they want to do.
+
+The **Change conversation topic** feature enables your assistant to handle these digressions, dynamically responding to the user by changing the conversation topic as needed.
+
+### How changing the topic works
+
+This example shows a customer changing the conversation topic while entering credit-card information. When the assistant asks `What is your CVV number?`, the customer (who is new to credit cards) asks what a CVV is. The assistant is designed to handle this possibility, so it switches to a different action that answers the customer's question. It then continues where it left off.
+
+![Example: changing the conversation topic](images/changing-topic-example.gif)
+
+The assistant determines when to change the conversation topic as follows:
+
+1. When the assistant asks a question and receives a response, it first validates the response to see if it answers the question. In the CVV example, the assistant expects a number as a response.
+
+1. If the input is not recognized as an answer to the question, the assistant then evaluates the input to see if it matches the **Customer starts with** examples of any other action of the assistant. (Changing the topic cannot switch the conversation to a different assistant.)
+
+    If the input does not answer the question, and it does not match any existing action of the assistant, a step validation error results.
+    {: note}
+
+1. If the input matches a different action, the assistant switches to the matching action. The assistant will only change to the new action if it has a confidence score match of 20% or higher. In the example, the customer's response (`What's a CVV number?`) is not a valid response, but it does match another action that is designed to answer this question. The matching action is triggered, answering the customer's question.
+
+1. After the second action completes, the assistant returns to the original action, continuing with the step where the customer changed the topic. In the example, after answering the customer's question, the assistant returns to the original action and repeats the question `What is your CVV number?`.
+
+## Enabling and disabling changing the topic
+
+By default, the **Change conversation topic** feature is enabled for all assistants and actions. You don't have to do anything to take advantage of this feature.
+
+However, some processes are best completed without interruption, so you might want to disable this feature. You can do this either for the entire assistant, or just for an individual action.
+
+To disable changing the topic for the entire skill:
+
+1. From the **Skill** page of the assistant, click the **Skill Settings** icon ![Gear icon](images/gear-icon.png).
+
+1. In the settings window, click the **Change conversation topic** tab.
+
+1. Toggle the switch to **Off**.
+
+To disable changing the topic for an individual action:
+
+1. While editing the action, click the click the **Action Settings** icon ![Gear icon](images/gear-icon.png).
+
+1. In the Action Settings window, toggle the **Change conversation topic** switch to **Off**.
 
 ## Action limits
 {: #actions-limits}

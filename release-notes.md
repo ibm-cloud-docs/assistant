@@ -108,6 +108,20 @@ The change log lists changes that were made this year, ordered by the date they 
 ## 9 September 2021
 {: #09Sep2021}
 
+- **Actions skill improvements**: Actions skills now include these new features:
+
+    - **Change conversation topic**: In general, an action is designed to lead a customer through a particular process without any interruptions. In real life, however, conversations almost never follow such a simple flow. In the middle of a conversation, customers might get distracted, ask questions about related issues, misunderstand something, or just change their minds about what they want to do. The **Change conversation topic** feature enables your assistant to handle these digressions, dynamically responding to the user by changing the conversation topic as needed. For more information, see [Changing the topic of the conversation](/docs/assistant?topic=assistant-actions#actions-change-topic).
+
+    - **Fallback action**: The built-in action, *Fallback*, provides a way to automatically connect customers to a human agent if they need more help. This action helps you to handle errors in the conversation, and is triggered by these conditions: 
+        - Step validation failed: The customer repeatedly gave answers that were not valid for the expected customer response type.
+        - Agent requested: The customer directly asked to be connected to a human agent.
+        - No action matches: The customer repeatedly made requests or asked questions that the assistant did not understand.
+        
+        ![Fallback action](/images/fallback-action.png)
+        
+        For more information, see [Set by assistant actions](/docs/assistant?topic=assistant-actions#actions-builtin)
+
+
 - **Dialog skill "Try it out" improvements**: For dialog skills, the **Try it out** pane now uses the [React](https://reactjs.org/) UI framework similar to the rest of the Watson Assistant user interface. You shouldn't see any change in behavior or functionality. As a part of the update, dialog skill error handling has been improved within the "Try it out" pane. This update will be implemented incrementally, starting with service instances in the Tokyo and Seoul data centers.
 
 ## 2 September 2021
