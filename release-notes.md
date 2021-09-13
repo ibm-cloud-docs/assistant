@@ -66,7 +66,7 @@ The change log lists changes that were made this year, ordered by the date they 
 ## 13 September 2021
 {: #13Sep2021}
 
-- **Dialog skill "Try it out" improvements**: For dialog skills, the **Try it out** pane now uses the [React](https://reactjs.org/) UI framework similar to the rest of the Watson Assistant user interface. You shouldn't see any change in behavior or functionality. As a part of the update, dialog skill error handling has been improved within the "Try it out" pane. This update was enabled on September 9th, 2021 in the Tokyo and Seoul data centers. On September 13, 2021, the update was enable in the London, Sydney, and Washington, D.C. data centers.
+- **Dialog skill "Try it out" improvements**: For dialog skills, the **Try it out** pane now uses the [React](https://reactjs.org/) UI framework similar to the rest of the Watson Assistant user interface. You shouldn't see any change in behavior or functionality. As a part of the update, dialog skill error handling has been improved within the "Try it out" pane. This update was enabled on September 9th, 2021 in the Tokyo and Seoul data centers. On September 13, 2021, the update was enabled in the London, Sydney, and Washington, D.C. data centers.
 
 - **Disambiguation feature updates**: The dialog skill disambiguation feature now includes improved features:
 
