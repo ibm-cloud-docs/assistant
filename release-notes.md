@@ -63,8 +63,10 @@ Existing models that you have trained will not be immediately impacted, but mode
 
 The change log lists changes that were made this year, ordered by the date they were released.
 
-<!--## 13 September 2021
+## 13 September 2021
 {: #13Sep2021}
+
+- **Dialog skill "Try it out" improvements**: For dialog skills, the **Try it out** pane now uses the [React](https://reactjs.org/) UI framework similar to the rest of the Watson Assistant user interface. You shouldn't see any change in behavior or functionality. As a part of the update, dialog skill error handling has been improved within the "Try it out" pane. This update was enabled on September 9th, 2021 in the Tokyo and Seoul data centers. On September 13, 2021, the update was enable in the London, Sydney, and Washington, D.C. data centers.
 
 - **Disambiguation feature updates**: The dialog skill disambiguation feature now includes improved features:
 
@@ -83,7 +85,7 @@ The change log lists changes that were made this year, ordered by the date they 
     
     If the new disambiguation algorithm works differently than expected for your assistant, you can adjust it using the sensitivity parameter in the update workspace API. For more information, see [Update workspace](/apidocs/assistant/assistant-v1#updateworkspace).
 
-- **Enhanced intent detection for French, Italian, and Spanish dialog skills**: The new intent detection model improves your assistant's ability to understand what customers want. This model is now available in dialog skills using French, Italian, and Spanish. For more information, see [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).
+<!--- **Enhanced intent detection for French, Italian, and Spanish dialog skills**: The new intent detection model improves your assistant's ability to understand what customers want. This model is now available in dialog skills using French, Italian, and Spanish. For more information, see [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).
 
 - **Change to the irrelevance detection option**: As of this release, new English dialog skills no longer include the option to choose between the **Enhanced** or **Existing** irrelevance detection. By default, intent detection and irrelevance detection are paired like this:
 
