@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-11"
+lastupdated: "2021-09-14"
 
 subcollection: assistant
 
@@ -118,7 +118,9 @@ The name that is specified for the skill (`main skill`) is a hardcoded name that
 
   setTimeout(function(){
     const t=document.createElement('script');
-    t.src='https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js';
+    t.src='https://web-chat.global.assistant.dev.watson.appdomain.cloud/versions/' +
+      (window.watsonAssistantChatOptions.clientVersion || 'latest') +
+      '/WatsonAssistantChatEntry.js';
     document.head.appendChild(t);});
 
 </script>
@@ -168,7 +170,9 @@ In the following example, the user ID `L12345` is added to the script.
     };
   setTimeout(function(){
     const t=document.createElement('script');
-    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    t.src='https://web-chat.global.assistant.dev.watson.appdomain.cloud/versions/' +
+      (window.watsonAssistantChatOptions.clientVersion || 'latest') +
+      '/WatsonAssistantChatEntry.js';
     document.head.appendChild(t);
   });
 </script>

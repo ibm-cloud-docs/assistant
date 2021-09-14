@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-09-14"
 
 subcollection: assistant
 
@@ -66,7 +66,7 @@ To add the assistant to a web page on your company website, complete the followi
 
 1.  **Optional**: Customize the style of the chat window. You can make the following changes:
 
-    - **Assistant's name as known by customers**: The name by which the assistant is known to users. This name is displayed in the header of the chat window. The name can be up to 18 characters in length.
+    - **Assistant's name as known by customers**: The name by which the assistant is known to users. This name is displayed in the header of the chat window. The name can be up to 64 characters in length.
 
     - **Primary color**: The color of the web chat header.
 
