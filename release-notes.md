@@ -63,6 +63,11 @@ Existing models that you have trained will not be immediately impacted, but mode
 
 The change log lists changes that were made this year, ordered by the date they were released.
 
+## 15 September 2021
+{: #15Sep2021}
+
+- **Dialog skill "Try it out" improvement**: For dialog skills, the **Try it out** pane now includes runtime warnings in addition to runtime errors.
+
 ## 13 September 2021
 {: #13Sep2021}
 
