@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-09-16"
 
 subcollection: assistant
 
@@ -38,6 +38,28 @@ For information about new features and improvements to the core {{site.data.keyw
 
 If you want to evaluate changes that are introduced in a web chat release before you apply them to your deployment, you can set a version of your web chat. For more information, see [Versioning](/docs/assistant?topic=assistant-web-chat-basics#web-chat-basics-versions).
 
+## 5.0.0
+{: #5.0.0}
+
+*Release date: 16 August 2021*
+
+- **New response types**: The web chat now supports the new `video`, `audio`, and `iframe` response types. For more information about these response types, see [Rich responses](/docs/assistant?topic=assistant-dialog-overview##dialog-overview-multimedia).
+
+- **Link to start web chat**: You can now create a set of HTML links that go directly to your web chat and start conversations on specific topics. For example, you might want to send an email inviting customers to update their account information; you can include a link that opens the web chat on your site and sends the initial message `I want to update my account`. For more information, see [Creating links to web chat](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-configuration#pageLinks){: external}.
+
+- **CSS improvements**: Support for CSS styles has been improved to change the way the web chat resets styles in areas where you can include your own custom content, such as user-defined responses and writeable elements. The new approach better protects custom content from accidental style overrides. For more information about custom content and CSS classes, see [Theming &amp; custom content](https://web-chat.global.assistant.watson.cloud.ibm.com/testfest.html?to=api-render){: external}.
+
+    If you have any custom content (such as user-defined responses or writeable elements), verify that any styling is still rendering as you expect. Consider using the new [`ibm-web-chat--default-styles` class](https://web-chat.global.assistant.watson.cloud.ibm.com/testfest.html?to=api-render#helper_classes){: external} to maintain consistency with the web chat default styles.
+    {: note}
+
+- **Support for Carbon components**: As part of the new styling support, you can now use [Carbon components](https://www.carbondesignsystem.com/components/overview/){: external} in user-defined responses and web chat writeable elements. These components will inherit any theming customizations you have made to the web chat.
+
+- **New embedded script**: The embedded script you use to add the web chat to your website has been updated to avoid unexpected code changes when you lock on to a web chat version. (For more information about web chat versioning, see [Versioning](/docs/assistant?topic=assistant-web-chat-basics#web-chat-basics-versions).) The previous version of the script will continue to work but is now deprecated. If you want to upgrade your existing web chat deployments to use the new script, copy the updated code snippet from the **Embed** tab of the web chat integration settings. (Remember to reapply any customizations you have made.)
+- **Removal of deprecated methods and events**:
+    - The `error` event has been replaced by the `onError` method in the [configuration object](https://web-chat.global.assistant.watson.cloud.ibm.com/testfest.html?to=api-configuration#configurationobject){: external}. 
+    - The `getID` method has been removed.
+- Microsoft Internet Explorer 11 is no longer a supported browser.
+
 ## 4.5.1
 {: #4.5.1}
 
@@ -50,8 +72,8 @@ If you want to evaluate changes that are introduced in a web chat release before
 
 *Release date: 29 July 2021*
 
-- A new `scrollToMessage` method is available for scrolling the web chat view to a specified message in the chat history. For more information, see [instance.scrollToMessage()](https://web-chat.assistant.test.watson.cloud.ibm.com/docs.html?to=api-instance-methods#scrollToMessage){: external}.
-- A new `pre:open` event is available. This event is fired when the web chat window is opened, but before the welcome message or chat history are loaded. For more information, see [window:pre:open](https://web-chat.assistant.test.watson.cloud.ibm.com/docs.html?to=api-events#windowpreopen){: external}.
+- A new `scrollToMessage` method is available for scrolling the web chat view to a specified message in the chat history. For more information, see [instance.scrollToMessage()](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-instance-methods#scrollToMessage){: external}.
+- A new `pre:open` event is available. This event is fired when the web chat window is opened, but before the welcome message or chat history are loaded. For more information, see [window:pre:open](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events#windowpreopen){: external}.
 - A new chat history widget is available for embedding in service desk agent UIs. This new widget is based on a read-only view of the standard web chat widget. For information about using the new chat history widget in integrations built using the starter kit, see [Embedded agent application](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/blob/main/docs/AGENT_APP.md){: external}.
 
 ## 4.4.1

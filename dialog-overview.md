@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-22"
+lastupdated: "2021-09-16"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -389,6 +389,9 @@ In addition to the default response type of **Text**, for which you specify the 
 - **Connect to human agent**: The dialog calls a service that you designate, typically a service that manages human agent support ticket queues, to transfer the conversation to a person. You can optionally include a message that summarizes the user's issue to be provided to the human agent.
 - **Channel transfer**: The dialog requests that the conversation be transferred to a different channel (for example, from the Slack integration to the web chat integration).
 - **Image**: Embeds an image into the response. The source image file must be hosted somewhere and have a URL that you can use to reference it. It cannot be a file that is stored in a directory that is not publicly accessible.
+- **Video**: Embeds a video player into the response. The source video must be hosted somewhere, either as a playable video on a supported video streaming service or as a video file with a URL that you can use to reference it. It cannot be a file that is stored in a directory that is not publicly accessible.
+- **Audio**: Embeds an audio clip into the response. The source audio file must be hosted somewhere and have a URL that you can use to reference it. It cannot be a file that is stored in a directory that is not publicly accessible.
+- **iframe**: Embeds content from an external website, such as a form or other interactive component, directly within the chat. The source content must be publicly accessible using HTTP, and must be embeddable as an HTML `iframe` element.
 - **Option**: Adds a list of one or more options. When a user clicks one of the options, an associated user input value is sent to your assistant. How options are rendered can differ depending on the number of options and where you deploy the dialog.
 - **Pause**: Forces the application to wait for a specified number of milliseconds before continuing with processing. You can choose to show an indicator that the assistant is working on typing a response. Use this response type if you need to perform an action that might take some time.
 - **Search skill**: ![Plus or higher plans only](images/plus.png) Searches an external data source for relevant information to return to the user. The data source that is searched is a {{site.data.keyword.discoveryshort}} service data collection that you configure when you add a search skill to the assistant that uses this dialog skill.
@@ -531,6 +534,118 @@ To add an *Image* response type, complete the following steps:
 
     Some integration channels ignore titles or descriptions.
     {: note}
+
+### Adding a *Video* response type
+{: #dialog-overview-add-video}
+
+Include videos in your response to share how-to demonstrations, promotional clips, and so forth. In the web chat, a video response renders as an embedded video player.
+
+To add a *Video* response type, complete the following steps:
+
+1.  Choose **Video**.
+
+1.  Add the full URL to the hosted video into the **Video source** field:
+
+    - To link directly to a video file, specify the URL to a file in any standard format such as MPEG or AVI. In the web chat, the linked video will render as an embedded video player.
+
+      HLS (`.m3u8`) and DASH (MPD) streaming videos are not supported.
+      {: note}
+
+    - To link to a video hosted on a supported video hosting service, specify the URL to the video. In the web chat, the linked video will render using the embeddable player for the hosting service.
+
+      Specify the URL you would use to view the video in your browser (for example, `https://www.youtube.com/watch?v=52bpMKVigGU`). You do not need to convert the URL to an embeddable form; the web chat will do this automatically.
+      {: note}
+
+      You can embed videos hosted on the following services:
+      - [YouTube](https://youtube.com){: external}
+      - [Facebook](https://facebook.com){: external}
+      - [Vimeo](https://vimeo.com){: external}
+      - [Twitch](https://twitch.tv){: external}
+      - [Streamable](https://streamable.com){: external}
+      - [Wistia](https://wistia.com){: external}
+      - [Vidyard](https://vidyard.com){: external}
+
+    If you want to display a video title and description above the embedded video in the response, then add them in the fields provided.
+
+    Some integration channels ignore titles or descriptions.
+    {: note}
+
+    If you want to scale the video to a specific display size, specify a number in the **Base height** field.
+
+### Adding an *Audio* response type
+{: #dialog-overview-add-audio}
+
+Include audio clips in your response to share spoken-word or other audible content. In the web chat, a video response renders as an embedded video player. In the phone integration, an audio response plays over the phone.
+
+To add an *Audio* response type, complete the following steps:
+
+1.  Choose **Audio**.
+
+1.  Add the full URL to the hosted audio clip into the **Audio source** field:
+
+    - To link directly to an audio file, specify the URL to a file in any standard format such as MP3 or WAV. In the web chat, the linked audio clip will render as an embedded audio player.
+
+    - To link to an audio clip on a supported audio hosting service, specify the URL to the audio clip. In the web chat, the linked audio clip will render using the embeddable player for the hosting service.
+
+      Specify the URL you would use to access the audio file in your browser (for example, `https://soundcloud.com/ibmresearch/fallen-star-amped`). You do not need to convert the URL to an embeddable form; the web chat will do this automatically.
+      {: note}
+
+      You can embed audio hosted on the following services:
+      - [SoundCloud](https://soundcloud.com){: external}
+      - [Mixcloud](https://mixcloud.com){: external}
+
+    If you want to display a title and description above the embedded audio player in the response, then add them in the fields provided.
+
+    Some integration channels ignore titles or descriptions.
+    {: note}
+
+    If you want the audio clip to loop indefinitely, select **On** in the **Loop** field. For example, you might want to use this option to play music while a user waits on the phone. (By default, the audio plays only once and then stops.)
+
+    The **Loop** option is currently supported only by the phone integration. This option has no effect if you are using the web chat integration or any other channel.
+    {: note}
+
+### Adding an *iframe* response type
+{: #dialog-overview-add-iframe}
+
+Include iframes in your response to embed content from another website directly inside the chat window as an HTML `iframe` element. An iframe response is useful if you want to enable customers to perform some interaction with an external service without leaving the chat. For example, you might use an *iframe* response to display the following within the web chat:
+
+- An interactive map on [Google Maps](https://www.google.com/maps){: external}
+- A survey using [SurveyMonkey](https://www.surveymonkey.com/){: external}
+- A form for making reservations through [OpenTable](https://www.opentable.com/){: external}
+- A scheduling form using [Calendly](https://calendly.com/){: external}
+
+In the web chat, an iframe response renders as a preview card that describes the embedded content. Customers can click this card to display the frame and interact with the content.
+
+To add an *iframe* response type, complete the following steps:
+
+1.  Choose **iframe**.
+
+1.  Add the full URL to the external content in the **iframe source** field.
+
+    The URL must specify content that is embeddable in an HTML `iframe` element. Different sites have varying restrictions for embedding content, and different processes for generating embeddable URLs. An embeddable URL is one that can be specified as the value of the `src` attribute of the `iframe` element.
+
+    For example, to embed an interactive map using Google Maps, you can use the Google Maps Embed API. (For more information, see [The Maps Embed API overview](https://developers.google.com/maps/documentation/embed/get-started){: external}.) Other sites have different processes for creating embeddable content.
+
+1.  Optionally add a descriptive title in the **Title** field.
+
+    In the web chat, this title will be displayed in the preview card before the customer clicks to render the external content. (If you do not specify a title, the web chat will attempt to retrieve metadata from the specified URL and display the title of the content as specified at the source.)
+
+In the "Try it out" pane, the iframe is rendered immediately, without the preview card. To see how the web chat renders your response, use the assistant **Preview** page.
+{: note}
+
+#### Technical details: &lt;iframe&gt; sandboxing
+
+Content loaded in an iframe by the web chat is _sandboxed_, meaning that it has restricted permissions that reduce security vulnerabilities. The web chat uses the `sandbox` attribute of the `iframe` element to grant only the following permissions:
+
+| Permission          | Description |
+|---------------------|-------------|
+| `allow-downloads`   | Allows downloading files from the network, if the download is initiated by the user. |
+| `allow-forms`       | Allows submitting forms. |
+| `allow-scripts`     | Allows running scripts, but _not_ opening pop-up windows. |
+| `allow-same-origin` | Allows the content to access its own data storage (such as cookies), and allows only very limited access to JavaScript APIs. |
+
+A script running inside a sandboxed iframe cannot make changes to any content content outside the iframe, _if_ the outer page and the iframe have different origins. Be careful if you use an *iframe* response to embed content that has the same origin as the the page where your web chat widget is hosted; in this situation the embedded content can defeat the sandboxing and gain access to content outside the frame. For more information about this potential vulnerability, see the `sandbox` attribute [documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#attr-sandbox){: external}.
+{: note}
 
 ### Adding an *Option* response type
 {: #dialog-overview-add-option}
