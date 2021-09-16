@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-13"
+lastupdated: "2021-09-15"
 
 subcollection: assistant
 
@@ -62,6 +62,19 @@ Existing models that you have trained will not be immediately impacted, but mode
 {: #release-notes-tooling-changes}
 
 The change log lists changes that were made this year, ordered by the date they were released.
+
+## 15 September 2021
+{: #15Sep2021}
+
+- **Dialog skill "Try it out" improvements**: The **Try it out** pane now includes these changes:
+
+    - It now includes runtime warnings in addition to runtime errors.
+
+    - For dialog skills, the **Try it out** pane now uses the [React](https://reactjs.org/) UI framework similar to the rest of the Watson Assistant user interface. You shouldn't see any change in behavior or functionality. As a part of the update, dialog skill error handling has been improved within the "Try it out" pane. This update was enabled on these dates:
+    
+        - September 9, 2021 in the Tokyo and Seoul data centers
+        - September 13, 2021 in the London, Sydney, and Washington, D.C. data centers
+        - September 15, 2021 in the Dallas and Frankfurt data centers
 
 ## 13 September 2021
 {: #13Sep2021}

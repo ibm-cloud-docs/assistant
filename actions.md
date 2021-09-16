@@ -523,7 +523,7 @@ When you choose the *Connect to agent* option, a settings window is displayed wh
 ### Set by assistant actions explained
 {: #actions-builtin}
 
-**Set by assistant**actions are created for you automatically. Because these actions are built in, they behave slightly differently from the actions that you add yourself. For example, you cannot delete or disable these actions. However, you can customize the response text that is displayed by these actions or add steps to them to incorporate other interactions.
+**Set by assistant** actions are created for you automatically. Because these actions are built in, they behave slightly differently from the actions that you add yourself. For example, you cannot delete or disable these actions. However, you can customize the response text that is displayed by these actions or add steps to them to incorporate other interactions.
 
 The following actions are created for you automatically:
 
