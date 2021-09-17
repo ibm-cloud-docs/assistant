@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-09-17"
 
 subcollection: assistant
 
@@ -48,7 +48,6 @@ The following list specifies the minimum required browser software for the web c
 - Apple Safari
 - Mobile Safari
 - Chrome for Android
-- Microsoft Internet Explorer 11 (most recent version only)
 - Microsoft Edge (Chromium and non-Chromium)
 - Mozilla Firefox
 - Firefox ESR (most recent ESR only)
