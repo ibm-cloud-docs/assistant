@@ -63,7 +63,7 @@ Existing models that you have trained will not be immediately impacted, but mode
 
 The change log lists changes that were made this year, ordered by the date they were released.
 
-## September 16 2021
+## 16 September 2021
 {: #16Sep2021}
 
 **Enhanced intent detection for French, Italian, and Spanish dialog skills**: The new intent detection model improves your assistant's ability to understand what customers want. This model is now available in dialog skills using French, Italian, and Spanish. For more information, see [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).
