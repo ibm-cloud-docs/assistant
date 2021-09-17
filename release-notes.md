@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-17"
 
 subcollection: assistant
 
@@ -63,6 +63,29 @@ Existing models that you have trained will not be immediately impacted, but mode
 
 The change log lists changes that were made this year, ordered by the date they were released.
 
+## September 16 2021
+{: #16Sep2021}
+
+**Enhanced intent detection for French, Italian, and Spanish dialog skills**: The new intent detection model improves your assistant's ability to understand what customers want. This model is now available in dialog skills using French, Italian, and Spanish. For more information, see [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).
+
+- **Change to the irrelevance detection option**: As of this release, new English dialog skills no longer include the option to choose between the **Enhanced** or **Existing** irrelevance detection. By default, intent detection and irrelevance detection are paired like this:
+
+    - If you use the dialog skill options to choose enhanced intent detection, it is automatically paired with enhanced irrelevance detection.
+    - If you use the dialog skill options to choose existing intent detection, it is automatically paired with existing irrelevance detection.
+
+    For more information, see [Defining what's irrelevant](/docs/assistant?topic=assistant-irrelevance-detection) and [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection). 
+
+    If necessary, you can use the [Update workspace API](/apidocs/assistant/assistant-v1?curl=#updateworkspace) to set your English-language assistant to one of the four combinations of intent and irrelevance detection:
+
+    - Enhanced intent recognition and enhanced irrelevance detection
+    - Enhanced intent recognition and existing irrelevance detection
+    - Existing intent recognition and enhanced irrelevance detection
+    - Existing intent recognition and existing irrelevance detection
+
+    For French, Italian, and Spanish, you can use the API to set your assistant to these combinations:
+    - Enhanced intent recognition and enhanced irrelevance detection
+    - Existing intent recognition and existing irrelevance detection
+
 ## 15 September 2021
 {: #15Sep2021}
 
@@ -97,26 +120,6 @@ The change log lists changes that were made this year, ordered by the date they 
     These new features may affect various metrics, such as disambiguation rate and click rates, as well as influence conversation-level key performance indicators such as containment. 
     
     If the new disambiguation algorithm works differently than expected for your assistant, you can adjust it using the sensitivity parameter in the update workspace API. For more information, see [Update workspace](/apidocs/assistant/assistant-v1#updateworkspace).
-
-<!--- **Enhanced intent detection for French, Italian, and Spanish dialog skills**: The new intent detection model improves your assistant's ability to understand what customers want. This model is now available in dialog skills using French, Italian, and Spanish. For more information, see [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).
-
-- **Change to the irrelevance detection option**: As of this release, new English dialog skills no longer include the option to choose between the **Enhanced** or **Existing** irrelevance detection. By default, intent detection and irrelevance detection are paired like this:
-
-    - If you use the dialog skill options to choose enhanced intent detection, it is automatically paired with enhanced irrelevance detection.
-    - If you use the dialog skill options to choose existing intent detection, it is automatically paired with existing irrelevance detection.
-
-    For more information, see [Defining what's irrelevant](/docs/assistant?topic=assistant-irrelevance-detection) and [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection). 
-
-    If necessary, you can use the [Update workspace API](/apidocs/assistant/assistant-v1?curl=#updateworkspace) to set your English-language assistant to one of the four combinations of intent and irrelevance detection:
-
-    - Enhanced intent recognition and enhanced irrelevance detection
-    - Enhanced intent recognition and existing irrelevance detection
-    - Existing intent recognition and enhanced irrelevance detection
-    - Existing intent recognition and existing irrelevance detection
-
-    For French, Italian, and Spanish, you can use the API to set your assistant to these combinations:
-    - Enhanced intent recognition and enhanced irrelevance detection
-    - Existing intent recognition and existing irrelevance detection-->
 
 ## 9 September 2021
 {: #09Sep2021}
