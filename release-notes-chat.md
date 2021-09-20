@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-16"
+lastupdated: "2021-09-20"
 
 subcollection: assistant
 
@@ -38,10 +38,17 @@ For information about new features and improvements to the core {{site.data.keyw
 
 If you want to evaluate changes that are introduced in a web chat release before you apply them to your deployment, you can set a version of your web chat. For more information, see [Versioning](/docs/assistant?topic=assistant-web-chat-basics#web-chat-basics-versions).
 
+## 5.0.1
+{: #5.0.1}
+
+*Release date: 20 September 2021*
+
+- Bug fixes.
+
 ## 5.0.0
 {: #5.0.0}
 
-*Release date: 16 August 2021*
+*Release date: 16 September 2021*
 
 - **New response types**: The web chat now supports the new `video`, `audio`, and `iframe` response types. For more information about these response types, see [Rich responses](/docs/assistant?topic=assistant-dialog-overview##dialog-overview-multimedia).
 
