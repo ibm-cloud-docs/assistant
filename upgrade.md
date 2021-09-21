@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-09-21"
 
 subcollection: assistant
 
@@ -54,5 +54,3 @@ To upgrade your plan, complete these steps:
     - You cannot change from a Trial plan to a Lite plan.
 
 For answers to common questions about subscriptions, see the [How you're charged](/docs/billing-usage?topic=billing-usage-charges){: external}.
-
-Still have questions? [Fill out this form](https://cloud.ibm.com/docs/assistant?topic=assistant-upgrade&focusArea=CDP%20-%20DataAI%20-%20Watson%20Assistant%20CSM&schedulerform){: external} to schedule a consultation with IBM.
