@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-16"
+lastupdated: "2021-09-21"
 
 keywords: assistant, omnichannel, virtual agent, virtual assistant, chatbot, conversation, watson assistant, watson conversation
 
@@ -42,25 +42,24 @@ In this short tutorial, we introduce {{site.data.keyword.conversationfull}} and 
 
 ## Before you begin
 {: #getting-started-prerequisites}
-{: hide-dashboard}
+
 
 You need a service instance to start.
-{: hide-dashboard}
 
-1.  Go to the [{{site.data.keyword.conversationshort}}](https://cloud.ibm.com/catalog/services/watson-assistant){: external} page in the {{site.data.keyword.cloud}} catalog. {: hide-dashboard}
+
+1.  Go to the [{{site.data.keyword.conversationshort}}](https://cloud.ibm.com/catalog/services/watson-assistant){: external} page in the {{site.data.keyword.cloud}} catalog.
 
     The service instance will be created in the **default** resource group if you do not choose a different one, and it *cannot* be changed later. This group is sufficient for the purposes of trying out the product.
 
     If you're creating an instance for more robust use, then learn more about [resource groups](/docs/account?topic=account-account_setup){: external}.
-1.  Sign up for a free {{site.data.keyword.cloud_notm}} account or log in. {: hide-dashboard}
-1.  Click **Create**. {: hide-dashboard}
+1.  Sign up for a free {{site.data.keyword.cloud_notm}} account or log in.
+1.  Click **Create**.
 
 ## Open Watson Assistant
 {: #getting-started-launch-tool}
 {: step}
 
 After you create a {{site.data.keyword.conversationshort}} service instance, you land on the **Manage** page.
-{: hide-dashboard}
 
 1.  Click **Launch {{site.data.keyword.conversationshort}}**. If you're prompted to log in, provide your {{site.data.keyword.cloud_notm}} credentials.
 
