@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 subcollection: assistant
 
@@ -66,7 +66,7 @@ The change log lists changes that were made this year, ordered by the date they 
 ## 21 September 2021
 {: #21Sep2021}
 
-- **Analytics Overview change**: To improve readibility, the Values column has been removed from **Top entities** on the **Analytics Overview** page. Top Entities continues to provide counts of entity types. For more information, see [Top intents and top entities](/docs/assistant?topic=assistant-logs-overview#logs-overview-tops)
+- **Analytics Overview change**: To improve reliability, the Values column has been removed from **Top entities** on the **Analytics Overview** page. Top Entities continues to provide counts of entity types. For more information, see [Top intents and top entities](/docs/assistant?topic=assistant-logs-overview#logs-overview-tops)
 
 ## 16 September 2021
 {: #16Sep2021}
