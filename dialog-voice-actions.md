@@ -1,8 +1,13 @@
+
+
+
+
+
 ---
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-09-25"
 
 subcollection: assistant
 
@@ -37,192 +42,47 @@ You can perform the following types of actions:
 - [Transfer a call to a human agent](#dialog-voice-actions-transfer)
 - [Play hold music or a voice recording](#dialog-voice-actions-hold-music)
 - [Apply advanced speech services to specific topics ](#dialog-voice-actions-speech-advanced)
+- [Apply advanced {{site.data.keyword.texttospeechshort}} services to specific topics ](#dialog-voice-actions-text-advanced)
 - [Enable keypad entry](#dialog-voice-actions-dtmf)
 - [End the call](#dialog-voice-actions-hangup)
+- [Adding actions to your dialog or action](#dialog-voice-legacy-actions-add})
+- [Defining a sequence of actions](#dialog-voice-actions-sequence})
 
-In some cases, you might want to combine actions. For example, to enable two-factor authentication, you can both enable support for phone keypad entry and send a text message from the same dialog node. For more information about combining actions, see [Defining a sequence of actions](#dialog-voice-actions-sequence).
+
+
+In some cases, you might want to combine actions. For example, to enable two-factor authentication, you can both enable support for phone keypad entry and send a text message from the same dialog node or step in the Action. For more information about combining actions, see [Defining a sequence of actions](#dialog-voice-actions-sequence).
 
 For command reference documentation, see [Phone integration commands reference](/docs/assistant?topic=assistant-commands-voice).
 
-## Adding phone-based actions to your dialog
+## Adding phone-based custom actions to your dialog or action 
 {: #dialog-voice-actions-add}
 
-When calling voice-specific actions from a dialog, follow these guidelines:
+When calling voice-specific actions from a dialog node or a step in the Action, you need to define the action within the `generic` array.
 
-- Define the action within the context object, not the output object of the dialog node JSON snippet.
-- Define only one action or one sequence per dialog turn.
-- Do not jump from a dialog node with an action configured for it to another dialog node with an action configured for it.
-
-To enable voice-specific actions, you must add a JSON code block to the dialog node where you want the action to trigger. 
+To enable voice-specific actions, you must add a JSON code block to the dialog node or step in the Action where you want the action to trigger. 
 
 To add a JSON code block to a dialog node, complete the following steps:
 
 1.  From your dialog skill, go to the *Dialog* page.
-1.  Open the dialog node where you want to call the action.
-1.  From the *Assistant responds* section, click the menu ![Overflow menu](images/more-icon.png), and then choose **Open JSON editor**.
+2.  Open the dialog node where you want to call the action.
+3.  From the *Assistant responds* section, click the menu ![Overflow menu](images/more-icon.png), and then choose **Open JSON editor**.
 
     ![Shows the Assistant responds section of a dialog node with the user selecting the Open JSON editor from the options icon.](images/open-json-editor.png)
-1.  Add the action command JSON code block to the `context` object. (If the `context` object doesn't exist, add it. The `context` object is a peer to the `output` object.)
+4.  Add the action command JSON code block to the `generic` array. 
 
-    For example:
 
-    ```json
-    {
-      "output": {
-        "generic": [
-        ]
-      },
-      "context": {
-        "vgwAction": {
-          "command": "<command-name>",
-          "parameters": {
-            "<first-parameter>": "<parameter-value>"
-          }
-        }
-      }
-    }
-    ```
-    {: codeblock}
+To add a JSON code block to a step in the Action, complete the following steps:
+
+1.  From your action skill, open the step where you want to call the action.
+2.  Click the `</>`  button to switch to the **JSON editor**.
 
 ### Applying a setting to the entire conversation
 {: #dialog-voice-actions-welcome}
 
 To apply a customization, such as changing the assistant's voice, from the very start of the conversation, specify the action command in a node that you add before the Welcome node. In the new node's *If assistant recognizes* field, add the `conversation_start` special condition. For more information, see [Starting the conversation](/docs/assistant?topic=assistant-dialog-start#dialog-start-welcome).
+In the Action, specify the action command in `Customer starts with`.
 
-## Customizing lists
-{: #dialog-voice-actions-lists}
 
-Your assistant automatically says a number before each option in an option response or a disambiguation list that is displayed to the customer. The options are numbered sequentially and played to the user in the order in which they appear in the list. The customer can press a number on the keypad or say the respective number to choose one of the available options.
-
-You can customize how these lists are displayed and handled.
-
-- [Options response type](#dialog-voice-actions-option-response)
-- [Disambiguation](#dialog-voice-actions-disambiguation)
-
-### Options response type
-{: #dialog-voice-actions-option-response}
-
-The dialog supports an `option` response type, which shows the customer multiple choices to pick from. You can customize how the options that are defined for an `option` response are read and the ways in which a customer can select an option by adding the `vgwActSetOptionsConfig` command.
-
-To configure what the assistant says before each option, add a `prefixText` parameter. Use `%s` to represent the number corresponding to the option; it is replaced with the actual number at run time.
-
-The following example shows how to customize the option response type.
-
-```json
-{
-  "output": {
-    "generic": [
-      {
-      "title": "Which of these items do you want to insure?",
-      "options": [
-      {
-        "label": "Boat",
-        "value": {
-          "input": {
-            "text": "I want to buy boat insurance."
-          }
-        },
-          "label": "Car",
-          "value": {
-            "input": {
-              "text": "I want to buy car insurance."
-            }
-          },
-          "label": "House",
-          "value": {
-            "input": {
-              "text": "I want to buy house insurance."
-            }
-          }
-        }
-      ],
-      "description": "Insurance types.",
-      "response_type": "option"
-      }
-    ]
-  },
-  "context": {
-    "vgwAction": {
-      "command": "vgwActSetOptionsConfig",
-      "parameters": {
-        "prefixText": "Press or say %s for.",
-        "matchWord": ["one","two", "three"],
-        "disableSpeech" : false
-      }
-    }
-  }
-}
-```
-{: codeblock}
-
-When the option response is read to the customer, the assistant says the option list title (`Which of these items do you want to insure?`), and then reads each option, starting with `Press or say one for Boat`.
-
-If you want to disable a spoken response and prefer for the user to press a number key in response, you can set `disableSpeech` to `true`. For example:
-
-```json
-  "vgwAction": {
-      "command": "vgwActSetOptionsConfig",
-      "parameters": {
-        "prefixText": "Press %s for.",
-        "matchWord": ["one","two", "three"],
-        "disableSpeech" : true
-      }
-    }
-  }
-  ```
-  {: codeblock}
-
-When read, the assistant says, `Press one for Boat`.
-
-You can use the `matchWord` parameter to specify the utterances to map to the options in the list. For example:
-
-```json
-  "vgwAction": {
-      "command": "vgwActSetOptionsConfig",
-      "parameters": {
-        "prefixText": "Press or say %s for.",
-        "matchWord": ["first","second", "third"],
-        "disableSpeech" : false
-      }
-    }
-  }
-  ```
-  {: codeblock}
-
-When read, the assistant says, `Press or say one for Boat`. And if the customer says `first`, it is mapped to option 1.
-
-The configuration that you apply to the `option` response type in one node is applied to any other option responses that are processed in subsequent dialog nodes during the same session.
-
-### Disambiguation
-{: #dialog-voice-actions-disambiguation}
-
-When the dialog is confident that more than one dialog node might be the right one to process in response to a customer query, disambiguation is triggered. Disambiguation asks the customer to clarify which path they want to follow to get an answer. For more information, see [Disambiguation](/docs/assistant?topic=assistant-dialog-runtime#dialog-runtime-disambiguation).
-
-You can customize how the disambiguation options are displayed and how a customer can select a disambiguation option by adding the `vgwActSetDisambiguationConfig` command. 
-
-You might want to define the customization in the welcome node or another node that is triggered early in the conversation so it is applied any time disambiguation is triggered.
-
-```json
-{
-  "output": {
-      "generic": [
-      ]
-  },
-  "context": {
-    "vgwAction": {
-      "command": "vgwActSetDisambiguationConfig",
-      "parameters": {
-        "prefixText": "Press or say %s for.",
-        "matchWord": ["one","two", "three"],
-        "disableSpeech": false
-      }
-    }
-  }
-}
-```
-{: codeblock}
-
-When read, the assistant says, `Did you mean?`. Then it reads each choice in the disambiguation list, starting with `Press or say 1 for cancel an order`
 
 ## Sending a text message during a phone conversation
 {: #dialog-voice-actions-sms}
@@ -233,289 +93,415 @@ There are lots of times when it is useful to be able to send a text message in t
 
 Whenever you exchange a text with a customer in the context of a conversation, the dialog initiates the SMS message exchange. It sends a text message to the user and asks for the user to respond to it.
 
-To send a specific message from a dialog node, add the `vgwActSendSMS` command.
+To send a specific message from a dialog node or a step in the Action, add the `vgwActSendSMS` command.
 
 ```json
 {
- "output": {
+  "output": {
     "generic": [
       {
+        "response_type": "text",
         "values": [
           {
             "text": "I will send you a text message now."
           }
         ],
-        "response_type": "text",
         "selection_policy": "sequential"
+      },
+      {
+        "response_type": "user_defined",
+        "user_defined": {
+          "vgwAction": {
+            "command": "vgwActSendSMS",
+            "parameters": {
+              "message": "Hey, this is Watson Assistant. To send me your street address, respond to this text message with your address."
+            }
+          }
+        }
       }
     ]
-  },
-  "context": {
-    "vgwAction": {
-      "command": "vgwActSendSMS",
-      "parameters": {
-        "message": "Hey, this is Watson Assistant. To send me your street address, respond to this text message with your address."
-      }
-    }
   }
 }
 ```
 {: codeblock}
-
-The customer's reply text is stored in the `$vgwSmsMessage` or `$vgwSMSMedia` context variable, depending on whether they reply with text or other media. You can add child nodes that condition on these context variables and respond appropriately based on the content of the customer's text. For example, if you ask for an address, your child node can check for reply text by using the `$vgwSmsMessage` node condition, and then save the user's input to an `$address` context variable.
 
 If your *SMS with Twilio* integration supports more than one SMS phone number, be sure to specify the phone number that you want to use to send the text message. Otherwise, the text is sent using the same phone number that was called.
 
+The customer's reply text is sent in the `input.text`field. 
+
+
 ``` json
 {
+  "input": {
+    "message_type": "text",
+    "text": "1545 Lexington Ave."
+  },
   "context": {
-    "vgwAction": {
-      "command": "vgwActSendSMS",
-      "parameters": {
-        "message": "Hey, this is Watson Assistant. To send me your street address, respond to this text message with your address.",
-        "tenantPhoneNumber":"18885550123"
+    "integrations": {
+      "text_messaging": {
+        "private": {
+          "user_phone_number": "+18594213456"
+        },
+        "assistant_phone_number": "+18882346789"
       }
     }
   }
 }
 ```
 {: codeblock}
+
+
+  
+**Inbound context related to the text_messaging channel**
+
+Note that in this case the `input.text` is assumed to hold the text input received directly from the SMS channel.
+
+|context name | details | value | legacy mapping |
+| :------ |:-----:|:-----:|:-----:|
+| private.user_phone_number | Phone number associated with Cade and the SMS related message. Note that this is marked as private to prevent this information from being saved with Session History.| string| n/a|
+| assistant_phone_number | Phone number associated with the Watson Assistant side that received the SMS message. | string | n/a|
+
 
 ## Transferring a call to a human agent
 {: #dialog-voice-actions-transfer}
 
-When you configure the phone integration, you can optionally define a default message and routing information to transfer calls to human agents in a call center when a connection fails. If you want to define specific behavior for a given dialog branch, you can add the `vgwActTransfer` command to do so.
+When you configure the phone integration, you can optionally define a default message and routing information to transfer calls to human agents in a call center when a connection fails. If you want to define specific behavior for a given dialog branch, you can add the `Connect to human agent` response type to do so.
 
-Typically, you want to add call transfer support from any dialog node with a *Connect to human agent* response type.
+The message defined in `Response when agents are online` will be played to the caller before a transfer is initiated. Subsequently, if the call transfer fails, the message defined under `Response when no agents are online` will be synthesized and played to the caller.  The Phone Integration will not use `Message to human agent` field, but it will be previewed to the agent if the WebChat AgentApp is used.
 
-You can specify the following parameter values for the `vgwActTransfer` command:
-
-- `transferHeader`: A custom header field that is added to the SIP request.
-
-  Alternatively, you can specify more than one custom field by adding a `transferHeaders` parameter and defining the customer headers as a JSON object. For example:
-
-  ```
-  {
-    "Custom-Header1": "123",
-    "Custom-Header2": "456"
-    }
-  ```
+You can add the phone integration specific parameters to the `Connect to human agent` response type using the JSON editor. When you click **Open JSON editor**, you should see something similar to the following example:
  
-- `transferHeaderVal`: The value of the custom header field that is defined by the `transferHeader` parameter.
-
-- `transferTarget`: The SIP trunk or telephone Uniform Resource Identifier (URI) of the call center service to which the call will be transferred. For example, `sip:12345556789\\@myhost.com` or `tel:+18883334444`.
-
-- `transferMethod`: Specify `REFER` to indicate that you want to send a SIP `REFER` REST API request.
-
-- `uuiData`: Add to send User-to-User Information (UUI) data. For more information about UUI data, see [RFC 7433](https://tools.ietf.org/html/rfc7433){: external}.
-
-- `uuiSendMethod`: The method by which to send the UUI data. The following methods are supported:
-
-  - `uuiHeader`: Sends UUI data in a `User-to-User` header field. This options is used by default.
-  - `contactHeader`: Sends UUI data in a `Contact` header field.
-  - `referToURL`: Sends UUI data in a `Refer-To` header field.
-    
-  If data is sent in a `Contact` or `Refer-To` header field, the data is encoded as a URI header. If the `Refer-To` header value is a telephone URI, the UUI data is sent as a URL parameter.
-
-- `acceptTransferRejectCodes`: A comma-separated list of the error codes that are treated as successful responses when the phone integration processes `NOTIFY` requests during a call transfer.
-
-The following JSON block illustrates how to transfer a call to your call center:
-
 ```json
-
- "output": {
+{
+  "output": {
     "generic": [
       {
-        "values": [
-          {
-            "text": "This customer would like to speak to someone."
-          }
-        ],
-        "response_type": "text",
-        "selection_policy": "sequential"
+        "response_type": "connect_to_agent",
+        "transfer_info": {
+          "target": {}
+        },
+        "agent_available": {
+          "message": "I'll transfer you to an agent"
+        },
+        "agent_unavailable": {
+          "message": "Sorry, I could not find an agent."
+        }
       }
     ]
-  },
-  "context": {
-    "context_connect_to_agent":"true",
-    "vgwAction": {
-      "command": "vgwActTransfer",
-      "parameters": {
-        "transferHeader": "User-to-User",
-        "transferHeaderVal": "12a345b6c7d8901234e5;encoding=hex;purpose=first;content=example",
-        "transferTarget": "tel:+18883334444"
-      }
-    }
   }
 }
 ```
 {: codeblock}
+
+The `Connect to human agent` response type supports the ability to specify the target transfer information under the `transfer_info` parameter.
+
+A more complete example of a transfer **utilizing** all of the configurable parameters is:
+
+  
+
+```json
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "connect_to_agent",
+        "transfer_info": {
+          "target": {
+            "service_desk": {
+              "sip": {
+                "uri": "sip:user\\@domain.com",
+                "accept_transfer_reject_codes": [
+                  "410",
+                  "202"
+                ],
+                "transfer_headers": [
+                  {
+                    "name": "Customer-Header1",
+                    "value": "Some-Custom-Info"
+                  },
+                  {
+                    "name": "User-To-User",
+                    "value": "XXXXXX"
+                  }
+                ],
+                "transfer_headers_send_method": "refer_to_header"
+              }
+            }
+          },
+          "agent_available": {
+            "message": "I'll transfer you to an agent"
+          },
+          "agent_unavailable": {
+            "message": "Sorry, I could not find an agent."
+          },
+          "message_to_human_agent": "The caller needs help resetting their password"
+        }
+      }
+    ]
+  }
+}
+```
+{: codeblock}
+
+Full list of the phone integration parameters.
+
+
+| Parameter | Default | Description |
+| ---- | ---- | ---- |
+| `service_desk.sip.uri` | N/A | The SIP or telephone URI to transfer the call to, such as `sip:12345556789\\@myhost.com` or `tel:+18883334444` |
+| `service_desk.sip.notify_codes_to_accept` | N/A | A list of the error codes that are treated as a successful response when Voice Gateway processes NOTIFY requests during a call transfer. |
+| `service_desk.sip.transfer_headers` | N/A | A list of custom header field name and value pairs to be added to a transfer request. |
+| `service_desk.sip.transfer_headers_send_method` | `custom_header` | The method by which the SIP Transfer Headers are sent. <ul><li>`custom_header`: Sends the transfer headers as part of the SIP message. Default. </li><li>`contact_header`: Sends the transfer headers in the Contact Header field.</li><li>`refer_to_header`: Sends the transfer headers in the `Refer-To` header field.</li>|
+
 
 If you define a SIP URI as the transfer target, escape the at sign (`@`) in the URI by adding two backslashes (`\\`) in front of it.
 
 ```json
-    "transferTarget": "sip:12345556789\\@myhost.com"
+    "uri": "sip:12345556789\\@myhost.com"
 ```
 {: codeblock}
 
-The following JSON block illustrates how to send User-to-User data in the contactHeader field:
 
-```json
-{
-  "output": {
-      "generic": [
-      ]
-  },
-  "context": {
-    "vgwAction": {
-      "command": "vgwActTransfer",
-      "parameters": {
-        "transferTarget": "sip:+18883334444\\@example.com",
-        "uuiData": "59a390f3d2b7310023a2;encoding=hex;purpose=abc;content=123",
-        "uuiSendMethod": "contactHeader"
-      }
-    }
-  }
-}
+
+###  Passing Watson Assistant Metadata in SIP Signaling
+
+Generally there's two kinds of metadata values to be aware of:
+
+- `User-To-User`: This will be defined by Deb, it's custom user data that will be appended in the SIP REFER message used to transfer
+
+- `X-Watson-Assistant-Session-History-Key`: Contains a key that can be used by the Web Chat agent app to obtain information about the call such as the Session History.
+
+Also, the value of the SIP header will be restricted to 1024 bytes.
+
+Additionally, how the data is presented in the SIP REFER message depends on the value of `transfer_headers_send_method`. For example:
+
+
+####  `custom_header`
+
+The metadata is appended to the SIP REFER message as headers:
+
+```
+REFER sip:b@atlanta.example.com SIP/2.0
+Via: SIP/2.0/UDP agenta.atlanta.example.com;branch=z9hG4bK2293940223
+To: <sip:b@atlanta.example.com>
+From: <sip:a@atlanta.example.com>;tag=193402342
+Call-ID: 898234234@agenta.atlanta.example.com
+CSeq: 23 REFER
+Max-Forwards: 7
+Refer-To: sip:user@domain.com
+X-Watson-Assistant-Token: 8f817472-8c57-4117-850d-fdf4fd23ba7
+User-To-User: 637573746f6d2d757365722d746f2d75736572;encoding=hex
+Contact: sip:a@atlanta.example.co
+Content-Length: 0
 ```
 {: codeblock}
 
-### Handling call transfer failures
-{: #dialog-voice-actions-transfer-failure}
+####  `refer_to_header`
 
-Add a child node to the node with the `vgwActTransfer` command that checks for chat transfer failures. Add `$vgwCallTransferFailed` as the child node condition. You can specify a message to return in this case.
+  The metadata is passed into the `Refer-To` header as query parameters per the [SIP RFC 3261](https://tools.ietf.org/html/rfc3261)
 
-The following context variables are designed to help you recognize when a failure occurs and return a message to let the customer know what's going on.
+```
+REFER sip:b@atlanta.example.com SIP/2.0
+Via: SIP/2.0/UDP agenta.atlanta.example.com;branch=z9hG4bK2293940223
+To: <sip:b@atlanta.example.com>
+From: <sip:a@atlanta.example.com>;tag=193402342
+Call-ID: 898234234@agenta.atlanta.example.com
+CSeq: 23 REFER
+Max-Forwards: 70
+Refer-To: sip:user@domain.com?User-To-User=637573746f6d2d757365722d746f2d75736572%3Bencoding%3Dhex&X-Watson-Assistant-Token=8f817472-8c57-4117-850d-fdf4fd23ba79
+Contact: sip:a@atlanta.example.com
+Content-Length: 0
 
-- `$vgwDisconnectCallOnTransferFailure`: This context variable indicates whether to disconnect the call when a transfer fails.
+```
+{: codeblock}
 
-  You initially specify your preference in the **Disconnect call on transfer failure** field when you configure the phone integration. You can change the value if you want to change the behavior for a specific branch of the dialog. You can add this variable to the dialog node and specify a new value for it. The supported options are `Yes` or `No`.
-- `$vgwTransferFailedMessage`: This context variable specifies the message to display to users if a call transfer fails.
+####  Domain Concepts
 
-  You initially define the message in the **Transfer failure message** field when you configure the phone integration. If you want to customize the message for a specific branch of the conversation, you can add this variable and specify a new message for it in the dialog node.
+
+- `SIP URIs`: Typically SIP URIs are used for identifying SIP devices and generally follow the pattern: `sip:[user]@[hostname]`.
+
+- `User-to-User Information`: Generally data that is used to identify a call accross multiple applications. Generally this is shared in a SIP header `User-To-User`, but there are other methods of sharing the data per [RFC7433](https://tools.ietf.org/html/rfc7433)
+
+- `Notify Codes`: During a call transfer that through a SIP REFER, the calling device typically sends `SIP NOTIFY` events to let the service know how the transfer is progressing. There are cases where some call devices send non-OK codes (2xx) such as `410 Gone` that need to be accepted as 'successful' transfers.
+
 
 ## Playing hold music or a voice recording
 {: #dialog-voice-actions-hold-music}
 
-To play hold music or to play a recorded message, use the `vgwActPlayUrl` command.
+To play hold music or to play a recorded message, use the `audio` response type.
 
-You cannot play hold music during a call transfer. But, you might want to play hold music if your dialog needs time to perform processing of some kind, such as calling a client-side action or making a call to a webhook. You can look for places where the dialog uses the *Pause* response type to find nodes where this command might be useful.
+You cannot play hold music during a call transfer. But, you might want to play hold music if your dialog needs time to perform processing of some kind, such as calling a client-side action or making a call to a webhook. You can look for places where the dialog uses the *Pause* response type to find nodes where this response type might be useful.
 
-```json
-{
-  "output": {
-      "generic": [
-      ]
-  },
-  "context": {
-    "vgwAction": {
-      "command": "vgwActPlayUrl",
-      "parameters": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Random_composition3.wav",
-        "playURLInLoop": "Yes"
-        }
-      }
-    }
-  }
-}
-```
-{: codeblock}
 
-You can specify the following parameter values for the `vgwActPlayUrl` command:
+You can specify the following parameter values for the `audio` response type:
 
-- `url`: URL to a publicly-accessible audio file. The audio file must be single channel (mono), PCM-encoded, and have a 8,000 Hz sampling rate with 16 bits per sample. The file format must be `.wav`.
-- `playURLInLoop`: Specify `Yes` or `No` to indicate whether to repeatedly restart the audio play back after it finishes. The default value is `No`.
+- `Audio source`: URL to a publicly-accessible audio file. The audio file must be single channel (mono), PCM-encoded, and have a 8,000 Hz sampling rate with 16 bits per sample. The file format must be `.wav`.
+- `Loop`: Select `On` or `Off` to indicate whether to repeatedly restart the audio play back after it finishes. The default value is `Off`.
 
-If your dialog subsequently processes a node with the `vgwActForceNoInputTurn` command, it won't work unless the `playURLInLoop` parameter is set to `Yes`. If you expect the hold to last more than 5 seconds, set the `vgwConversationResponseTimeout` context variable to a higher number. Specify a number in milliseconds. For example, you might set it to 15 seconds:
 
-```
-"vgwConversationResponseTimeout": 15000
-```
-{: codeblock}
 
 ## Applying advanced speech services to specific topics
 {: #dialog-voice-actions-speech-advanced}
 
 You can apply the following speech customizations to specific dialog nodes:
 
-- [Change the assistant's voice](#dialog-voice-actions-change-voice)
 - [Use a custom language model](#dialog-voice-actions-custom-language)
 - [Use a custom grammar](#dialog-voice-actions-custom-grammar)
 
-To make any of these types of changes, edit the speech service configuration by adding the `vgwActSetSTTConfig` command to your dialog node. The configuration decisions you make in the dialog node override the configuration that is specified in the integration setup page. The changes you apply persist for the remainder of the conversation, unless you override them again.
+To make any of these types of changes, edit the speech service configuration by adding the `speech_to_text` response type to your dialog or step in the Actions. The configuration decisions you make in the dialog node override the configuration that is specified in the integration setup page. The changes you apply persist for the remainder of the conversation, unless you override them again.
 
-### Change the assistant's voice
-{: #dialog-voice-actions-change-voice}
-
-You can change the voice of your assistant when it covers certain topics in the dialog that warrant it. For example, let's say you have a topic that applies only to your British customers. For that branch of conversation, you might want your assistant to speak with a British accent. To change the voice that is used, add the `vgwActSetTTSConfig` command to the root dialog node of the branch where you want the custom voice to be used.
-
-```json
-{
-  "output": {
-      "generic": [
-      ]
-  },
-  "context": {
-    "vgwAction": {
-      "command": "vgwActSetTTSConfig",
-      "parameters": {
-        "config": {
-            "voice": "en-GB_KateV3Voice"
-        }
-      }
-    }
-  }
-}
-```
-{: codeblock}
-
-In the `voice` parameter, specify the voice model that you want to use. For more information about voice model options, see [Supported languages and voices](/docs/text-to-speech?topic=text-to-speech-voices#languageVoices){: external}.
-
-The model you specify must be one that is supported by the {{site.data.keyword.texttospeechshort}} service instance that is configured for use with the integration.
-{: note}
-
-The custom voice that you specify for this dialog branch is used by each subsequent dialog node that is processed during the session unless you add another `vgwActSetTTSConfig` command to reset the voice model back to the default model.
-
-### Using a custom language model
-{: #dialog-voice-actions-custom-language}
-
-When you set up the phone integration, you can configure the integration to use a custom language model all the time. However, you might want to use a standard language model most of the time, and specify a custom language model to use only for specific topics that your assistant is designed to help customers with. You can apply a custom language model for a specific dialog branch only. 
-
-For example, you might want to use a custom model that specializes in medical terms for a dialog branch that helps with medical bills only. 
-
-For more information, see [Creating a custom language model](/docs/speech-to-text?topic=speech-to-text-languageCreate){: external}.
-
-To apply a custom language model to a specific dialog branch, use the `vgwActSetSTTConfig` command.
 
 ```json
 {
   "output": {
     "generic": [
-    ]
-  },
-  "context": {
-    "vgwAction": {
-      "command": "vgwActSetSTTConfig",
-      "parameters": {
-              "config": {
-                  "x-watson-learning-opt-out": true,
-                  "model": "en-US_NarrowbandModel",
-                  "profanity_filter": true,
-                  "smart_formatting": true,
-                  "customization_id": "81d3630-ba58-11e7-aa4b-41bcd3f6f24d",
-                  "acoustic-customization_id": "e4766090-ba51-11e7-be33-99bd3ac8fa93"
-              }
+      {
+        "response_type": "speech_to_text",
+        "command_info": {
+          "type": "<command type>",
+          "parameters": {
+            "parameter name1": "parameter value",
+            "parameter name2": "parameter value"
           }
-    }
+        }
+      }
+    ]
   }
 }
 ```
 {: codeblock}
 
-You can also apply an acoustic model that you might have trained to deal with background noise, accents, or other things that are associated with the quality or noise of the signal. 
 
-### Using a custom grammar
-{: #dialog-voice-actions-custom-grammar}
+Each command type along with its related parameters are described below.
+
+
+
+### **command_info.type** : *configure*
+
+Applies a set of parameters to pass to the {{site.data.keyword.speechtotextshort}} service. Allows a user to dynamically define the parameters based on the dialog flow. For instance, a user can choose a specific customization ID or grammar at a specific point in the dialog flow or step in the Action.
+
+  
+|parameter name|parameter value| required (yes/no) | default |
+| :------ |:-----:| :-----: | :-----: |
+|narrowband_recognize|{{site.data.keyword.speechtotextshort}} service when using narrowband audio. This config object is opaque to {{site.data.keyword.conversationshort}} and passed straight through to the {{site.data.keyword.speechtotextshort}} engine. For a full list of parameters see the [WebSockets API reference for {{site.data.keyword.speechtotextshort}} Service](https://cloud.ibm.com/apidocs/speech-to-text#websocket_methods). Note that {{site.data.keyword.conversationshort}} is only validating the key and not the value here. | no | Config defined via UI or environment variables. 
+|broadband_recognize|{{site.data.keyword.speechtotextshort}} service when using broadband audio. This config object is opaque to {{site.data.keyword.conversationshort}} and passed straight through to the {{site.data.keyword.speechtotextshort}} engine. For a full list of parameters see the [WebSockets API reference for {{site.data.keyword.speechtotextshort}} Service](https://cloud.ibm.com/apidocs/speech-to-text#websocket_methods). Note that {{site.data.keyword.conversationshort}} is only validating the key and not the value here.| no | Config defined via UI or environment variables. |
+|band_preference|Defines which audio band to prefer when negotiating audio codecs in the session (*narrowband* or *broadband*). Set to *broadband* to use broadband audio when possible.|no|*narrowband*|
+|update_strategy|Specifies the update strategy to choose when setting the speech configuration. Possible values include: *replace*, *replace_once*, *merge* or *merge_once* | no | *replace* |
+
+
+  
+**Config Related Parameters**
+
+The parameters that you can set under *narrowband_recognize* and *broadband_recognize* reflect the parameters that are made available by the {{site.data.keyword.speechtotextshort}} WebSocket interface. The WebSocket API sends two types of parameters: query parameters, which are sent when Voice Gateway connects to the service, and message parameters, which are sent as JSON after the connection is established. For example, *model* and *customization_id* are query parameters, and *smart_formatting* is a WebSocket message parameter. For a full list of parameters, see the WebSockets API reference for {{site.data.keyword.speechtotextshort}} Service.
+
+  
+You can define the following query parameters for the Media Relay's connection to the {{site.data.keyword.speechtotextshort}} service. Any other parameter that you define under *narrowband* or *broadband* is passed through on the WebSocket message request.
+  
+
+- model
+- acoustic_customization_id
+- version
+- x-watson-learning-opt-out
+- base_model_version
+- language_customization_id
+
+Note: The following parameters from the {{site.data.keyword.speechtotextshort}} service can't be modified because they have fixed values that are used by the Media Relay.
+
+  
+- action
+- content-type
+- interim_results
+- continuous
+- inactivity_timeout
+  
+
+**Using update_strategy**
+
+  
+You can use the update_strategy property in dynamic configuration to define how changes to the configuration are made, by either replacing the configuration or merging new configuration properties, and specifying whether these changes occur for the duration of the call or one conversation turn. This table describes this in more detail:
+
+|value|description |
+| :------ |:-----:|
+|*replace*|Replaces the configuration for the duration of the call.|
+|*replace_once*|Replaces the configuration once, so the configuration is used for only the following conversation turn. Then, it reverts to the previous configuration.|
+|*merge*|Merges the configuration with the existing configuration for the duration of the call.|
+|*merge_once*|Merges the configuration for one turn of the conversation, and then reverts to the previous configuration.|
+
+  
+
+
+**Updating fields that are not root level**
+
+  
+When configuring dynamically from {{site.data.keyword.conversationshort}} using this speech command, it's important to note that only the root level fields, such as *narrowband* or *broadband*, are updated. If they are omitted from the action, the original configuration settings persist. You can use the different **update_strategy** properties for *merge* and *merge_once* to merge config fields with the existing configuration.
+
+
+  
+
+###  Examples
+
+**Example: Setting the {{site.data.keyword.speechtotextshort}} language model to Spanish (es-ES_NarrowbandModel)**
+
+
+In this example, the language model is switched to Spanish and smart formatting is enabled.
+
+
+```json
+
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "speech_to_text",
+        "command_info": {
+          "type": "configure",
+          "parameters": {
+            "narrowband_recognize": {
+              "model": "es-ES_NarrowbandModel",
+              "smart_formatting": true
+            }
+          }
+        }
+      }
+    ]
+  }
+}
+
+```
+ {: codeblock}
+
+**Example: Using the merge_once method to update the {{site.data.keyword.speechtotextshort}} recognizeBody property**
+
+
+The following example shows how to specify the use of a customization language model for a single conversational turn. This is done through the use of update_strategy set to merge_once and specifying in the configuration parameters the id of the custom language model.
+
+  
+
+```json
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "speech_to_text",
+        "command_info": {
+          "type": "configure",
+          "parameters": {
+            "update_strategy": "merge_once",
+            "narrowband_recognize": {
+              "customization_id": "ao45vohgFuxyOQRgztu-02I10ut7aJcM-AdInT-VWgj3V"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
+
+```
+{: codeblock}
+
+
+**Example: Using a custom grammar**
 
 The {{site.data.keyword.speechtotextshort}} service supports the use of grammars. A grammar allows you to configure the audio to match specific characteristics only.
 
@@ -534,120 +520,382 @@ To specify a custom grammar for a dialog node, add the following command:
 {
   "output": {
     "generic": [
-    ]
-  },
-  "context": {
-    "vgwAction": {
-      "command": "vgwActSetSTTConfig",
-      "parameters": {
-        "x-watson-learning-opt-out": true,
-        "updateMethod": "mergeOnce",
-        "config": {
-          "grammar_name": "names-abnf",
-          "language_customization_id": "81d3630-ba58-11e7-aa4b-41bcd3f6f24d"
+      {
+        "response_type": "speech_to_text",
+        "command_info": {
+          "type": "configure",
+          "parameters": {
+            "update_strategy": "merge_once",
+            "narrowband_recognize": {
+              "x-watson-learning-opt-out": true,
+              "grammar_name": "names-abnf",
+              "language_customization_id": "81d3630-ba58-11e7-aa4b-41bcd3f6f24d"
+            }
+          }
         }
       }
-    }
+    ]
   }
 }
 ```
 {: codeblock}
 
-where the `updateMethod` parameter defines how changes to the configuration are applied. They can be applied by either replacing the configuration or merging new configuration properties, and specifying whether these changes occur for the duration of the call or a single conversation turn.
 
-| JSON property  | Description |
-| -------------- | -------------------- |
-| replace | Replaces the configuration for the duration of the call. |
-| replaceOnce | Replaces the configuration once, so the configuration is used for only the following conversation turn. Then, it reverts to the previous configuration. |
-| merge | Merges the configuration with the existing configuration for the duration of the call. |
-| mergeOnce | Merges the configuration for one turn of the conversation, and then reverts to the previous configuration. |
-{: caption="Table 2. Available options to update properties when using updateMethod." caption-side="top"}
+## Applying advanced {{site.data.keyword.texttospeechshort}} services to specific topics ](#dialog-voice-actions-text-advanced)
+
+
+```json
+
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "text_to_speech",
+        "command_info": {
+          "type": "<command type>",
+          "parameters": {
+            "parameter name": "parameter value",
+            "parameter name": "parameter value"
+          }
+        }
+      }
+    ]
+  }
+}
+```  
+{: codeblock}
+
+Each command type along with its related parameters are described below.
+
+  
+
+### **command_info.type** : *configure*
+  
+
+Applies a set of parameters to pass to the {{site.data.keyword.texttospeechshort}} service. Watson Assistant allows a user to dynamically define the parameters based on the dialog flow. For instance, you can choose a specific voice at a specific point in the dialog flow or step in the Action.
+
+  
+
+|parameter name|parameter value| required (yes/no) | default |
+| :------ |:-----:| :-----: | :-----: |
+|synthesize|Parameters for the {{site.data.keyword.texttospeechshort}} service. See [WebSockets API reference for Watson Text to Speech Service](https://cloud.ibm.com/apidocs/text-to-speech#websocket_methods).Note that WA is only validating the key and not the value here.|yes|n/a|
+|update_method|Specifies the update strategy to choose when setting the speech configuration. Possible values include: *replace*, *replace_once*, *merge* or *merge_once* | no | *replace* |
+
+  
+
+**Using update_strategy**
+
+You can use the update_method property in dynamic configuration to define how changes to the configuration are made, by either replacing the configuration or merging new configuration properties, and specifying whether these changes occur for the duration of the call or one conversation turn. This table describes this in more detail:
+
+  
+|value|description |
+| :------ |:-----:|
+|*replace*|Replaces the configuration for the duration of the call.|
+|*replace_once*|Replaces the configuration once, so the configuration is used for only the following conversation turn. Then, it reverts to the previous configuration.|
+|*merge*|Merges the configuration with the existing configuration for the duration of the call.|
+|*merge_once*|Merges the configuration for one turn of the conversation, and then reverts to the previous configuration.|
+
+  
+
+**Config Related Parameters**
+
+
+The parameters that you can set under *synthesize* reflect the parameters that are made available by the Text To Speech WebSocket interface. The WebSocket API sends two types of parameters: query parameters, which are sent when Voice Gateway connects to the service, and message parameters, which are sent as JSON after the connection is established. For a full list of parameters, see the WebSockets API reference for {{site.data.keyword.texttospeechshort}} service.
+
+  
+
+### **command_info.type** : *disable_barge_in*
+
+Disables speech barge-in so that playback isn't interrupted when the caller speaks over top of the played back audio.
+
+No parameters.
+
+  
+
+### **command_info.type** : *enable_barge_in*
+
+Enables speech barge-in so that callers can interrupt playback by speaking.
+
+No parameters.
+  
+
+  
+
+###  Examples
+
+  
+
+**Example: Setting the {{site.data.keyword.texttospeechshort}} voice (en-US_LisaVoice)**
+
+  
+
+In this example, the voice is set to en-US_LisaVoice.
+
+```json
+
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "text_to_speech",
+        "command_info": {
+          "type": "configure",
+          "parameters": {
+            "synthesize": {
+              "voice": "en-US_LisaVoice"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
+
+```
+{: codeblock}
+
+In the `voice` parameter, specify the voice model that you want to use. For more information about voice model options, see [Supported languages and voices](/docs/text-to-speech?topic=text-to-speech-voices#languageVoices){: external}.
+
+The model you specify must be one that is supported by the {{site.data.keyword.texttospeechshort}} service instance that is configured for use with the integration.
+{: note}
+
+The custom voice that you specify for this dialog branch is used by each subsequent dialog node that is processed during the session unless you add another `text_to_speech` response type to reset the voice model back to the default model.
 
 ## Enabling keypad entry
 {: #dialog-voice-actions-dtmf}
 
 If you want customers to be able to send information by typing it on their phone keypad instead of speaking, you can add support for phone keypad entry. The best way to implement this type of support is to enable dual-tone multifrequency (DTMF) signaling. DTMF is a system that interprets the tones that are generated when a user presses keys on a push-button phone. The tones have a specific frequency and duration that can be interpreted by the phone network.
 
-To start listening for tones as the user presses phone keys, add the `vgwActCollectDTMF` command to the dialog node:
-
-```json
-{
-  "output": {
-      "generic": [
-      {
-        "values": [
-          {
-            "text": "Enter your 7-digit account number by using the phone keypad."
-          }
-        ],
-        "response_type": "text",
-        "selection_policy": "sequential"
-      }
-    ]
-  },
-  "context": {
-    "vgwAction": {
-      "command": "vgwActCollectDTMF",
-      "parameters": {
-        "dtmfTermKey": "#",
-        "dtmfCount": 7,
-        "dtmfIgnoreSpeech": true
-      }      
-    }
-  }
-}
-```
-{: codeblock}
-
-You can specify the following parameter values for the `vgwActCollectDTMF` command:
-
-- `dtmfTermKey`: Specifies the termination key that signals the end of DTMF input.
-- `dtmfIgnoreSpeech` Optionally add and set to true if you want to ignore any audio that is sent while the key presses are being registered.
-- `dtmfCount`: The number of DTMF digits to collect.
-- `dtmfMinCount`: The minimum number of DTMF digits to collect when you configure your DTMF collection to accept a range of entries.
-- `dtmfMaxCount`: The maximum number of DTMF digits to collect when you configure your DTMF collection to accept a range of entries. After this number of digits is collected, a conversation turn is initiated.
-- `dtmfInterDigitTimeoutCount`: The amount of time in milliseconds to wait for a new DTMF digit after a DTMF digit is received. During an active DTMF collection, this timeout activates when the first DTMF collection is received. When the inter-digit timeout is active, it deactivates the `vgwPostResponseTimeout` timer. If `dtmfInterDigitTimeoutCount` isn't specified, the post-response timer resets after receiving each DTMF digit, and it stays active until either the `vgwPostResponseTimeout` is met or the collection is completed.
-
-You can add a child node that conditions on the `@sys-number` system entity or a pattern entity named `@account_number` that recognizes the number pattern. The child node can save the number that is submitted by the customer in a context variable and show the appropriate response.
-
-When you use the `vgwActCollectDTMF`, you might want to pause Speech to Text before collecting DTMF tones. To stop transcribing audio before you start to collect keypad tones, you can use the following set of commands together in a sequence. Don't pause Speech to Text if you want users to be able to say or press a key. To allow customers to optionally speak an answer, use the `dtmfIgnoreSpeech` parameter instead.
+To start listening for tones as the user presses phone keys, add the `dtmf` response type to the dialog node:
 
 ```json
 {
   "output": {
     "generic": [
-    ]
-  },
-  "context" : {
-    "vgwActionSequence": [
-          {
-        "command": "vgwActPauseSTT"
-      },
       {
-        "command": "vgwActCollectDTMF",
-        "parameters": {
-          "dtmfTermKey": "#",
-          "dtmfMinCount": "1",
-          "dtmfInterDigitTimeoutCount": "2000"
-        }
-      },
-        {
-        "command": "vgwActPlayText"
+        "response_type": "dtmf",
+        "command_info": {
+          "type": "<command type>",
+          "parameters": {
+            "parameter name": "parameter value",
+            "parameter name": "parameter value"
+          }
+        },
+        "channels": [
+          {
+            "channel": "voice_telephony"
+          }
+        ]
       }
-    ] 
-  } 
- }
+    ]
+  }
+}
 ```
 {: codeblock}
+
+Each command type along with its related parameters are described below.
+
+### **command_info.type** : *collect*
+
+Instructs to collect dual-tone multi-frequency signaling (DTMF) input from a user.
+
+
+|parameter name|details| required (yes/no) | default |
+| :------ |:-----:| :-----: | :-----: |
+| termination_key | The DTMF termination key, which signals the end of DTMF input. For example, "#". | no | n/a |
+| count | The number of DTMF digits to collect. | Only required if termintation_key or minimum_count and maximum_count aren't defined. Must be a positive integer and be a number no larger than 100. | n/a|
+| minimum_count | The minimum number of DTMF digits to collect when the DTMF collection is setup to accept a range of entries. Must be a positive integrer with a minimum value of 1 and a maximum value less than *maximum_count*. | Only required if terminatation_key or count is not defined. | n/a|
+| maximum_count | The maximum number of DTMF digits to collect when the DTMF collection is setup to accept a range of entries. When this number of digits is collected, a conversation turn is initiated. Must be a positive integer and be a number no larger than 100.| Only required if termintation_key or count is not defined. | n/a|
+| inter_digit_timeout_count | The amount of time in milliseconds to wait for a new DTMF digit after a DTMF digit is received. During an active DTMF collection, this timeout activates when the first DTMF collection is received. When the inter-digit timeout is active, it deactivates the post response timeout timer. If the inter_digit_timeout_count parameter isn't specified, the post response timer resets after receiving each DTMF digit, and stays active until either the post response timeout count is met or the collection completes. This value is a positive integer and should be set no higher than 100000 (or 100 secs). | no | n/a |
+|ignore_speech | When set to true, speech is automatically disabled on the reception of a DTMF digit until either the collection completes or a timeout occurs. | no | false |
+| stop_after_collection | Indicates whether to *stop* DTMF input when the DTMF collection completes. All DTMF input is ignored until it's reenabled by the *start* response_type. | no | false |
+
+  
+
+###  **command_info.type** : *disable_barge_in*
+
+Disables DTMF barge-in so that playback from the Phone integration isn't interrupted when callers press keys. Keys pressed during playback will be ignored if this is enabled.
+
+
+No parameters.
+  
+
+### **command_info.type** : *enable_barge_in*
+
+Enables DTMF barge-in so that callers can interrupt playback from the Phone integration by pressing a key.
+  
+
+No parameters.
+  
+
+###  **command_info.type** : *send*
+
+This command provides a way to send DTMF outbound.
+
+  
+Parameter names:
+
+|parameter name|details| required (yes/no) | default |
+| :------ |:-----:| :-----: | :-----: |
+| digits | An array of JSON objects where each element represents a DTMF tone to be sent to a caller. See next table for the supported DTMF object attributes. | yes | n/a |
+| send_interval | An interval in milliseconds (ms) to wait before sending the next DTMF tone in the list. | no | 200 |
+
+  
+
+`digit` object attributes:
+
+ 
+|parameter name|details| required (yes/no) | default 
+| :------ |:-----:| :-----: | :-----: 
+| code | The event code to send. The supported range is 0 - 15. See table below for the supported DTMF codes. | yes | n/a 
+| duration | The duration of the event in milliseconds (ms). | no | 200 
+| volume | The power level of the tone in dBm0. The supported range is 0 to -63 dBm0. | no | 0 |  
+
+
+Supported event codes:
+
+ 
+|event|code 
+| :------ | :-----: |
+| 0 - 9 | 0 - 9 
+| * | 10 |
+| # | 11 |
+| A - D | 12 - 15 |
+
+  
+
+  
+
+###  Examples
+
+  
+
+**Example of a dtmf collect response:**
+
+  
+
+```json
+
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "dtmf",
+        "command_info": {
+          "type": "collect",
+          "parameters": {
+            "termination_key": "#",
+            "count": "16",
+            "ignore_speech": true
+          }
+        },
+        "channels": [
+          {
+            "channel": "voice_telephony"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+```
+{: codeblock}
+
+**Example of a dtmf send response:**
+
+  
+
+```json
+
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "dtmf",
+        "command_info": {
+          "type": "send",
+          "parameters": {
+            "digits": [
+              {
+                "code": "9",
+                "volume": -8
+              },
+              {
+                "code": "11"
+              }
+            ],
+            "send_interval": 100
+          }
+        },
+        "channels": [
+          {
+            "channel": "voice_telephony"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+```
+{: codeblock}
+
+
 
 ## End the call
 {: #dialog-voice-actions-hangup}
 
-To have the assistant end the call, use the `vgwActHangup` command.
+To have the assistant end the call, use the `end_session` command.
 
 ```json
 {
- "output": {
+  "output": {
+    "generic": [
+      {
+        "response_type": "end_session"
+      }
+    ]
+  }
+}
+```
+{: codeblock}
+
+
+## Adding actions to your dialog or action 
+{: #dialog-voice-legacy-actions-add}
+
+When calling voice-specific actions from a dialog node or a step in the Action, you need to define the action within the `generic` array using a `JSON editor`. 
+
+    For example:
+
+```json
+{
+  "generic": [
+    {
+      "values": [
+    {
+      "response_type": "user_defined",
+      "user_defined": {
+        "vgwAction": {
+          "command": "<action name>"
+        }
+      }
+    }
+  ]
+}   
+ ```
+ {: codeblock}
+
+
+## Defining a sequence of actions
+{: #dialog-voice-actions-sequence}
+
+If you want to run more than one command in succession, you can have multiple response_types in the **generic** array.
+
+```json
+{
+  "output": {
     "generic": [
       {
         "values": [
@@ -657,43 +905,10 @@ To have the assistant end the call, use the `vgwActHangup` command.
         ],
         "response_type": "text",
         "selection_policy": "sequential"
+      },
+      {
+        "response_type": "end_session"
       }
-    ]
-  },
-  "context": {
-    "vgwAction": {
-      "command": "vgwActHangup"
-    }
-  }
-}
-```
-{: codeblock}
-
-## Defining a sequence of actions
-{: #dialog-voice-actions-sequence}
-
-If you want to run more than one command in succession, you can use a `vgwActionSequence` command.
-
-```json
-{
-  "output": {
-    "generic": [
-    ]
-  },
-  "context" : {
-    "vgwActionSequence": [
-        {
-          "command": "<command-name>",
-          "parameters": {
-            "<first-parameter>": "<parameter-value>"
-          }
-        },
-        {
-          "command": "<command-name>",
-          "parameters": {
-            "<first-parameter>": "<parameter-value>"
-          }
-        }
     ]
   }
 }
