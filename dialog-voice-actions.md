@@ -156,7 +156,7 @@ Note that in this case the `input.text` is assumed to hold the text input receiv
 
 |context name | details | value | legacy mapping |
 | :------ |:-----:|:-----:|:-----:|
-| private.user_phone_number | Phone number associated with Cade and the SMS related message. Note that this is marked as private to prevent this information from being saved with Session History.| string| n/a|
+| private.user_phone_number | Phone number associated with a user and the SMS related message. Note that this is marked as private to prevent this information from being saved with Session History.| string| n/a|
 | assistant_phone_number | Phone number associated with the Watson Assistant side that received the SMS message. | string | n/a|
 
 
@@ -540,6 +540,9 @@ To specify a custom grammar for a dialog node, add the following command:
 
 
 ## Applying advanced {{site.data.keyword.texttospeechshort}} services to specific topics ](#dialog-voice-actions-text-advanced)
+
+
+You can apply a set of parameters to pass to the {{site.data.keyword.texttospeechshort}} service. {{site.data.keyword.conversationshort}} allows a user to dynamically define the parameters based on the dialog flow. For instance, you can choose a specific voice at a specific point in the dialog flow or step in the Action. 
 
 
 ```json
