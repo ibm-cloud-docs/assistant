@@ -45,8 +45,6 @@ You can perform the following types of actions:
 - [Apply advanced {{site.data.keyword.texttospeechshort}} services to specific topics ](#dialog-voice-actions-text-advanced)
 - [Enable keypad entry](#dialog-voice-actions-dtmf)
 - [End the call](#dialog-voice-actions-hangup)
-- [Adding actions to your dialog or action](#dialog-voice-legacy-actions-add})
-- [Defining a sequence of actions](#dialog-voice-actions-sequence})
 
 
 
@@ -54,12 +52,12 @@ In some cases, you might want to combine actions. For example, to enable two-fac
 
 For command reference documentation, see [Phone integration commands reference](/docs/assistant?topic=assistant-commands-voice).
 
-## Adding phone-based custom actions to your dialog or action 
+## Adding phone-based custom response types to your dialog or action 
 {: #dialog-voice-actions-add}
 
 When calling voice-specific actions from a dialog node or a step in the Action, you need to define the action within the `generic` array.
 
-To enable voice-specific actions, you must add a JSON code block to the dialog node or step in the Action where you want the action to trigger. 
+To enable voice-specific response type, you must add a JSON code block to the dialog node or step in the Action where you want the action to trigger. 
 
 To add a JSON code block to a dialog node, complete the following steps:
 
@@ -886,6 +884,29 @@ When calling voice-specific actions from a dialog node or a step in the Action, 
 }   
  ```
  {: codeblock}
+ 
+ 
+ ```json
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "user_defined",
+        "user_defined": {
+          "vgwAction": {
+            "command": "vgwActSendSMS",
+            "parameters": {
+              "message": "Hey, this is Watson Assistant. To send me your street address, respond to this text message with your address."
+            }
+          }
+        }
+      }
+    ]
+  }
+}
+```
+ {: codeblock}
+
 
 
 ## Defining a sequence of actions
