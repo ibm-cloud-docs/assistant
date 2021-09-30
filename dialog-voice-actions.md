@@ -863,6 +863,40 @@ To have the assistant end the call, use the `end_session` command.
 {: codeblock}
 
 
+You can pass SIP specific custom headers with the SIP BYE request message that gets generated when the Voice Gateway recieves this response type. 
+
+An example that includes custom sip headers is shown here:
+
+```json
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "end_session",
+        "channel_options": {
+          "voice_telephony": {
+            "sip": {
+              "headers": [
+                {
+                  "name": "Customer-Header1",
+                  "value": "Some-Custom-Info"
+                },
+                {
+                  "name": "User-To-User",
+                  "value": "XXXXXX"
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}
+```
+{: codeblock}
+
+
 ## Adding actions to your dialog or action 
 {: #dialog-voice-legacy-actions-add}
 
