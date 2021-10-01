@@ -865,7 +865,7 @@ To have the assistant end the call, use the `end_session` command.
 
 You can pass SIP-specific custom headers with the SIP `BYE` request message that is generated when the phone integration recieves this response type. 
 
-An example that includes custom sip headers is shown here:
+An example that includes custom SIP headers is shown here:
 
 ```json
 {
