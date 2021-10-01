@@ -64,7 +64,6 @@ See how to use various response types to perform phone integration specific comm
 
 The following table describes the context variables that have special meaning in the context of the phone integration. They should not be used for any purpose other than the documented use.
 
-Table 2 describes the context variables that are set from your dialog or actions. Table 3 describes the context variables that you can set by the phone channel.
 
 ### Table 2. Context variables that are set by your dialog or actions
 {: #commands-voice-context-variables-set-by-dialog}
