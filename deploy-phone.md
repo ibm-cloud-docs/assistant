@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-30"
 
 subcollection: assistant
 
@@ -327,7 +327,7 @@ If you choose to use a SIP trunk carrier that IBM does not have an established r
 The following table lists the fully qualified domain names that are used for SIP connections.
 
 | Location | Domain name |
-|----------|------|------------|
+|----------|-------------|
 | Dallas | public.0001.voip.us-south.assistant.watson.cloud.ibm.com |
 | Dallas | public.0002.voip.us-south.assistant.watson.cloud.ibm.com |
 | Dallas | public.0003.voip.us-south.assistant.watson.cloud.ibm.com |
