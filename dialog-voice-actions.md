@@ -863,7 +863,7 @@ To have the assistant end the call, use the `end_session` command.
 {: codeblock}
 
 
-You can pass SIP specific custom headers with the SIP BYE request message that gets generated when the Voice Gateway recieves this response type. 
+You can pass SIP-specific custom headers with the SIP `BYE` request message that is generated when the phone integration recieves this response type. 
 
 An example that includes custom sip headers is shown here:
 
