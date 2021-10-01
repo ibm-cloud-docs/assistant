@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-16"
+lastupdated: "2021-10-01"
 
 subcollection: assistant
 
@@ -297,3 +297,6 @@ The usage is measured differently depending on the plan type. For Lite plans, us
 | Trial      |                  5,000 MAU |
 | Lite       | 10,000 API (approximately 1,000 MAU) |
 {: caption="Plan details" caption-side="top"}
+
+ For more information about how the web chat widget tracks MAUs, see [Billing](/docs/assistant?topic=assistant-web-chat-basics#web-chat-basics-billing).
+
