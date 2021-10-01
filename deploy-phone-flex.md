@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-10-01"
 
 subcollection: assistant
 
@@ -36,9 +36,9 @@ To use this integration pattern, make sure you have the following:
 
 - {{site.data.keyword.conversationshort}} Plus or Enterprise Plan (required for phone integration)
 - A Twilio account with the following products:
-  - Twilio Flex
-  - Twilio Voice with Programmable Voice API
-  - Twilio Studio
+    - Twilio Flex
+    - Twilio Voice with Programmable Voice API
+    - Twilio Studio
 
 ## Adding the {{site.data.keyword.conversationshort}} phone integration
 
@@ -126,20 +126,20 @@ Now we need to configure the call flow to direct inbound calls to the assistant 
 
 1. Replace the template in your `/receive-call` function with the following code:
 
-  ```javascript
-  exports.handler = function(context, event, callback) {
-    const VoiceResponse = require('twilio').twiml.VoiceResponse;  constresponse     = new VoiceResponse();
-    const dial = response.dial({
-      answerOnBridge: "true",
-      referUrl: "https://watson-flex-test-7074.twil.io/refer-handler"
-    });
-    dial.sip('sip:{phone_number}@{sip_uri_hostname};secure=true');  consolelog    (response.toString());
-    return callback(null, response);
-  }
-  ```
+    ```javascript
+    exports.handler = function(context, event, callback) {
+      const VoiceResponse = require('twilio').twiml.VoiceResponse;  constresponse     = new VoiceResponse();
+      const dial = response.dial({
+        answerOnBridge: "true",
+        referUrl: "https://watson-flex-test-7074.twil.io/refer-handler"
+      });
+      dial.sip('sip:{phone_number}@{sip_uri_hostname};secure=true');  consolelog    (response.toString());
+      return callback(null, response);
+    }
+    ```
 
-  - Replace `{phone_number}` with the phone number you assigned to your assistant in the phone integration.
-  - Replace `{sip_uri_hostname}` with the hostname portion of your  assistant's phone integration SIP URI (everything that comes after `sips:`).. Note that Twilio does not support `SIPS` URIs, but does support secure SIP trunking by appending `;secure=true` to the SIP URI.
+    - Replace `{phone_number}` with the phone number you assigned to your assistant in the phone integration.
+    - Replace `{sip_uri_hostname}` with the hostname portion of your  assistant's phone integration SIP URI (everything that comes after `sips:`).. Note that Twilio does not support `SIPS` URIs, but does support secure SIP trunking by appending `;secure=true` to the SIP URI.
 
 1. Click **Save**.
 
@@ -154,11 +154,11 @@ We also need to configure the call flow to handle calls being transferred from t
 1. In your Studio Flow, create an **Enqueue Call** widget by dragging one onto your canvas from the widget library.
 
 1. For your **Enqueue Call** widget, configure the following settings:
-  - For **QUEUE OR TASKROUTER TASK**, select the task router you created.
-  - For **TASK ROUTER WORKSPACE**, select the task router you created.
-  - For **TASK ROUTER WORKFLOW**, select the routing location you want your assistant to transfer calls to.
+    - For **QUEUE OR TASKROUTER TASK**, select the task router you created.
+    - For **TASK ROUTER WORKSPACE**, select the task router you created.
+    - For **TASK ROUTER WORKFLOW**, select the routing location you want your assistant to transfer calls to.
 
-  You can leave the other fields blank for now.
+    You can leave the other fields blank for now.
 
 1. Connect the Return point from your TWIML REDIRECT widget to your ENQUEUE CALL widget
 
@@ -181,7 +181,7 @@ We also need to configure the call flow to handle calls being transferred from t
     }
     ```
 
-  Replace `{webhook_url}` with the **WEBHOOK URL** value you copied from the **Trigger** widget in your Studio Flow.
+    Replace `{webhook_url}` with the **WEBHOOK URL** value you copied from the **Trigger** widget in your Studio Flow.
 
 1. Click **Save**.
 
@@ -255,8 +255,8 @@ Your assistant should now be able to answer phone calls to your phone number and
 
 1. Set your agent status as **Available**.
 
-  Your agent profile must be configured to include the required skills for the call to be routed from your assistant.
-  {: note}
+    Your agent profile must be configured to include the required skills for the call to be routed from your assistant.
+    {: note}
 
 1. Call your phone number. When the assistant responds, ask for an agent.
 
