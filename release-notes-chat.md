@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-20"
+lastupdated: "2021-10-01"
 
 subcollection: assistant
 
@@ -37,6 +37,13 @@ For information about new features and improvements to the core {{site.data.keyw
 {: #release-notes-chat-version}
 
 If you want to evaluate changes that are introduced in a web chat release before you apply them to your deployment, you can set a version of your web chat. For more information, see [Versioning](/docs/assistant?topic=assistant-web-chat-basics#web-chat-basics-versions).
+
+## 5.0.2
+{: #5.0.2}
+
+*Release date: 4 October 2021*
+
+- Bug fixes.
 
 ## 5.0.1
 {: #5.0.1}
