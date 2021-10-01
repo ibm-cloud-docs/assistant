@@ -137,9 +137,9 @@ The web chat uses the following methods to track users:
 ### Apple devices
 {: #web-chat-billing-apple}
 
-On Apple devices, the Intelligent Tracking Prevention feature automatically deletes any client-side cookie that is not accessed for a period of 7 days. This means that if an anonymous customer accesses your website and then visits again two weeks later, the two visits are treated as two different MAUs.
+On Apple devices, the Intelligent Tracking Prevention feature automatically deletes any client-side cookie after 7 days. This means that if an anonymous customer accesses your website and then visits again two weeks later, the two visits are treated as two different MAUs.
 
-To avoid this problem, use a server-side first-party cookie in your web application. For example, when an anonymous user visits your website, your website for the first time, you can generate a unique user ID and store it in a server-side cookie with any expiration date you choose. Then, your code can use the [`updateUserID()`](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-instance-methods#updateuserid){: external} instance method to set the user ID. You can then use the same cookie cookie to set the same user ID for this customer on any future visits until it expires.
+To avoid this problem, use a server-side first-party cookie in your web application. For example, when an anonymous user visits your website for the first time, you can generate a unique user ID and store it in a server-side cookie with any expiration date you choose. Then, your code can use the [`updateUserID()`](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-instance-methods#updateuserid){: external} instance method to set the user ID. You can then use the same cookie to set the same user ID for this customer on any future visits until it expires.
 
 ### More information
 
