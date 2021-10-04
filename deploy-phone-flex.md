@@ -88,7 +88,7 @@ To create the call flow:
 
 1. Select **Start From Scratch** and then click **Next**.
 
-1. At this point you should have a Trigger widget at the top of your flow canvas.
+1. At this point you should have a **Trigger** widget at the top of your flow canvas.
 
 ## Configuring the phone number
 
@@ -116,19 +116,19 @@ To create the call flow:
 
 ## Test your phone number
 
-At this point you can now test that your phone number is connected to your flow by triggering a Say/Play widget in the Twilio Flex Flow editor.
+You can now test that your phone number is connected to your flow by triggering a **Say/Play** widget in the Twilio Flex Flow editor.
 
-1. Pull a Say/Play widget onto your flow canvas.
+1. Drag a **Say/Play** widget onto your flow canvas.
 
-1. Configure the Say/Play widget with a simple phrase like "I'm alive.".
+1. Configure the Say/Play widget with a simple phrase like `I'm alive.`.
 
-1. Connect the incoming call trigger to your Say/Play widget.
+1. Connect the **Incoming call** node on your **Trigger** widget to your **Say/Play** widget.
 
-1. Call your phone number and you should here your Twilio flow respond with "I'm alive."
+1. Call your phone number. You should hear your Twilio flow respond with your test phrase.
 
-1. Assuming this works you can now delete the Say/Play widget and move to the next step. 
+1. Delete the **Say/Play** widget and continue to the next step. 
 
-1. If this doesn't work double check your phone number configuration to make sure its attached to your flow.
+1. If this test did not work as expected, double check your phone number configuration to make sure its attached to your flow.
 
 ## Creating a Twilio function to handle incoming calls
 
@@ -167,25 +167,25 @@ Now we need to configure the call flow to direct inbound calls to the assistant 
 
 ## Redirecting to the incoming call handler 
 
-In this section you will use a Twmil REDIRECT widget in your Flow editer to call out to the call-recieve Twiml function created in the previous section.
+In this section you will use a TwiML **Redirect**** widget in your Studio Flow editor to call out to the `/call-recieve` function created in the previous section.
 
-1.  Add a Twiml REDIRECT widget to your flow canvas. 
+1.  Add a **TwiML Redirect** widget to your Studio Flow canvas. 
 
-1. Connect the Incoming Call trigger to your REDIRECT widget.
+1. Connect the Incoming Call trigger to your **TwiML Redirect** widget.
 
-1. Configure the REDIRECT widget with the receive-call Function URL (created in the previous section).
+1. Configure the **TwiML Rediret** widget with the URL for the `/receive-call` function you created in the previous section.
 
-1. Now your flow should redirect to Watson when receiving an inbound call. 
+1. Your flow should now redirect to {{site.data.keyword.conversationshort}} when receiving an inbound call. 
 
-1. If the fails, make sure you deployed your receive-call Function.
+1. If the redirect fails, make sure you deployed your `/receive-call` function.
 
 ## Creating a Twilio function to handle transfers from assistant
 
-We also need to configure the call flow to handle calls being transferred from the assistant back to Twilio Flex, for cases when when customers ask to speak to an agent. To show this we will use a Say/Play after the REDIRECT widget to show that the call is transferred back to the Flow from Watson. Note that there are many things like queuing the call for a live agent that can happen at this point. These will be discussed below.
+We also need to configure the call flow to handle calls being transferred from the assistant back to Twilio Flex, for cases when when customers ask to speak to an agent. To show this, we will use a **Say/Play** after the **TwiML Redirect** widget to show that the call is transferred back to the flow from {{site.data.keyword.conversationshort}}. Note that there are many things like queuing the call for a live agent that can happen at this point. These will be discussed below.
 
-1. In your Studio Flow, create a new Say/Play and configure it with a phrase like "Transfer from Watsom complete".
+1. Add a new **Say/Play** widget to your canvas and configure it with a phrase like `Transfer from Watsom complete`.
 
-1. Connect the the **Return** node on the REDIRECT widget to your Say/Play widget.
+1. Connect the **Return** node on the **TwiML Redirect** widget to your **Say/Play** widget.
 
 1. Click the **Trigger** widget.
 
@@ -216,7 +216,7 @@ We also need to configure the call flow to handle calls being transferred from t
 
 1. Click **Deploy All**.
 
-1. After you create this refer-handler, copy the Function URL back into the receive-call handler's **referUrl** field.
+1. After you create this refer-handler, copy the function URL back into the `/receive-call` handler's **referUrl** field.
 
 ## Configuring the assistant to transfer calls to Twilio Flex
 
@@ -230,7 +230,7 @@ Now we need to configure the assistant to transfer calls to Twilio Flex when a c
 
 1. Open the JSON editor for the response.
 
-1. In the JSON editor, add a [`connect_to_agent` respone type](https://cloud.ibm.com/docs/assistant?topic=assistant-commands-voice) to the response, specifying your phone number as the `sip.uri`:
+1. In the JSON editor, add a [`connect_to_agent` response](https://cloud.ibm.com/docs/assistant?topic=assistant-commands-voice), specifying your phone number as the `sip.uri`:
 
 ```json
 {
@@ -282,6 +282,6 @@ Your assistant should now be able to answer phone calls to your phone number and
 
 1. Call your phone number. When the assistant responds, ask for an agent.
 
-1. At this pint you should hear the phrase configured in the Say/Play widget (e.g. "Transfer from Watsom complete").
+1. At this point you should hear the phrase configured in the **Say/Play** widget (such as "Transfer from Watson complete").
 
-1. If this fails use the console log to follow the flow of the call as it moves from the Flow, to the call-receive handler, to Watson, to the refer-handler and back to your Flex flow.
+1. If the transfer fails, use the console log to follow the flow of the call as it moves from the flow to the `/call-receive` handler, to {{site.data.keyword.conversationshort}}, to the refer-handler and back to your Twilio Flex flow.
