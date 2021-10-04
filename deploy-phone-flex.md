@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-10-01"
 
 subcollection: assistant
 
@@ -36,9 +36,9 @@ To use this integration pattern, make sure you have the following:
 
 - {{site.data.keyword.conversationshort}} Plus or Enterprise Plan (required for phone integration)
 - A Twilio account with the following products:
-  - Twilio Flex
-  - Twilio Voice with Programmable Voice API
-  - Twilio Studio
+    - Twilio Flex
+    - Twilio Voice with Programmable Voice API
+    - Twilio Studio
 
 ## Adding the {{site.data.keyword.conversationshort}} phone integration
 
@@ -158,8 +158,8 @@ Now we need to configure the call flow to direct inbound calls to the assistant 
   }
   ```
 
-  - Replace `{phone_number}` with the phone number you assigned to your assistant in the phone integration.
-  - Replace `{sip_uri_hostname}` with the hostname portion of your  assistant's phone integration SIP URI (everything that comes after `sips:`).. Note that Twilio does not support `SIPS` URIs, but does support secure SIP trunking by appending `;secure=true` to the SIP URI.
+    - Replace `{phone_number}` with the phone number you assigned to your assistant in the phone integration.
+    - Replace `{sip_uri_hostname}` with the hostname portion of your  assistant's phone integration SIP URI (everything that comes after `sips:`).. Note that Twilio does not support `SIPS` URIs, but does support secure SIP trunking by appending `;secure=true` to the SIP URI.
 
 1. Click **Save**.
 
@@ -210,7 +210,7 @@ We also need to configure the call flow to handle calls being transferred from t
     }
     ```
 
-  Replace `{webhook_url}` with the **WEBHOOK URL** value you copied from the **Trigger** widget in your Studio Flow.
+    Replace `{webhook_url}` with the **WEBHOOK URL** value you copied from the **Trigger** widget in your Studio Flow.
 
 1. Click **Save**.
 
