@@ -153,7 +153,7 @@ Now we need to configure the call flow to direct inbound calls to the assistant 
         referUrl: "https://watson-flex-test-7074.twil.io/refer-handler"
       });
       dial.sip('sip:{phone_number}@{sip_uri_hostname};secure=true');  
-      consolelog (response.toString());
+      console.log (response.toString());
       return callback(null, response);
     }
     ```
@@ -230,7 +230,7 @@ Now we need to configure the assistant to transfer calls to Twilio Flex when a c
 
 1. Open the JSON editor for the response.
 
-1. In the JSON editor, add a [`connect_to_agent` response](https://cloud.ibm.com/docs/assistant?topic=assistant-commands-voice), specifying your phone number as the `sip.uri`:
+1. In the JSON editor, add a [`connect_to_agent` response](https://cloud.ibm.com/docs/assistant?topic=assistant-commands-voice), specifying your phone number as the `sip.uri` (replace `{phone_number}` with the phone number of your SIP trunk):
 
 ```json
 {
@@ -242,7 +242,7 @@ Now we need to configure the assistant to transfer calls to Twilio Flex when a c
             "target": {
               "service_desk": {
                 "sip": {
-                  "uri": "sip:queue@flex.twilio.com",
+                  "uri": "sip:+{phone_number}@flex.twilio.com",
                   "transfer_headers_send_method": "refer_to_header"
                 }
               }
