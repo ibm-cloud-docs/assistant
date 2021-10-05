@@ -88,6 +88,8 @@ To create the call flow:
 
 1. Select **Start From Scratch** and then click **Next**.
 
+1. At this point you should have a **Trigger** widget at the top of your flow canvas.
+
 ## Configuring the phone number
 
 1. In the navigation menu, click the **All Products & Services** icon.
@@ -112,6 +114,22 @@ To create the call flow:
 
 1. Click **Save and exit**.
 
+## Test your phone number
+
+You can now test that your phone number is connected to your flow by triggering a **Say/Play** widget in the Twilio Flex Flow editor.
+
+1. Drag a **Say/Play** widget onto your flow canvas.
+
+1. Configure the Say/Play widget with a simple phrase like `I'm alive.`.
+
+1. Connect the **Incoming call** node on your **Trigger** widget to your **Say/Play** widget.
+
+1. Call your phone number. You should hear your Twilio flow respond with your test phrase.
+
+1. Delete the **Say/Play** widget and continue to the next step. 
+
+1. If this test did not work as expected, double check your phone number configuration to make sure its attached to your flow.
+
 ## Creating a Twilio function to handle incoming calls
 
 Now we need to configure the call flow to direct inbound calls to the assistant using a Twilio function. Follow these steps:
@@ -126,17 +144,19 @@ Now we need to configure the call flow to direct inbound calls to the assistant 
 
 1. Replace the template in your `/receive-call` function with the following code:
 
-    ```javascript
-    exports.handler = function(context, event, callback) {
-      const VoiceResponse = require('twilio').twiml.VoiceResponse;  constresponse     = new VoiceResponse();
-      const dial = response.dial({
-        answerOnBridge: "true",
-        referUrl: "https://watson-flex-test-7074.twil.io/refer-handler"
-      });
-      dial.sip('sip:{phone_number}@{sip_uri_hostname};secure=true');  consolelog    (response.toString());
-      return callback(null, response);
-    }
-    ```
+  ```javascript
+  exports.handler = function(context, event, callback) {
+    const VoiceResponse = require('twilio').twiml.VoiceResponse;  
+    const response = new VoiceResponse();
+    const dial = response.dial({
+      answerOnBridge: "true",
+      referUrl: "https://watson-flex-test-7074.twil.io/refer-handler"
+    });
+    dial.sip('sip:{phone_number}@{sip_uri_hostname};secure=true');  
+    consolelog (response.toString());
+    return callback(null, response);
+  }
+  ```
 
     - Replace `{phone_number}` with the phone number you assigned to your assistant in the phone integration.
     - Replace `{sip_uri_hostname}` with the hostname portion of your  assistant's phone integration SIP URI (everything that comes after `sips:`).. Note that Twilio does not support `SIPS` URIs, but does support secure SIP trunking by appending `;secure=true` to the SIP URI.
@@ -145,22 +165,27 @@ Now we need to configure the call flow to direct inbound calls to the assistant 
 
 1. Click **Deploy All**.
 
+## Redirecting to the incoming call handler 
+
+In this section you will use a TwiML **Redirect**** widget in your Studio Flow editor to call out to the `/call-recieve` function created in the previous section.
+
+1.  Add a **TwiML Redirect** widget to your Studio Flow canvas. 
+
+1. Connect the Incoming Call trigger to your **TwiML Redirect** widget.
+
+1. Configure the **TwiML Rediret** widget with the URL for the `/receive-call` function you created in the previous section.
+
+1. Your flow should now redirect to {{site.data.keyword.conversationshort}} when receiving an inbound call. 
+
+1. If the redirect fails, make sure you deployed your `/receive-call` function.
+
 ## Creating a Twilio function to handle transfers from assistant
 
-We also need to configure the call flow to handle calls being transferred from the assistant back to Twilio Flex, for cases when when customers ask to speak to an agent.
+We also need to configure the call flow to handle calls being transferred from the assistant back to Twilio Flex, for cases when when customers ask to speak to an agent. To show this, we will use a **Say/Play** after the **TwiML Redirect** widget to show that the call is transferred back to the flow from {{site.data.keyword.conversationshort}}. Note that there are many things like queuing the call for a live agent that can happen at this point. These will be discussed below.
 
-1. In Twilio Flex, create the appropriate task routing for handling your calls. For more information, see the Twilio Flex [documentation](https://www.twilio.com/docs/flex/quickstart/flex-routing-skills).
+1. Add a new **Say/Play** widget to your canvas and configure it with a phrase like `Transfer from Watsom complete`.
 
-1. In your Studio Flow, create an **Enqueue Call** widget by dragging one onto your canvas from the widget library.
-
-1. For your **Enqueue Call** widget, configure the following settings:
-    - For **QUEUE OR TASKROUTER TASK**, select the task router you created.
-    - For **TASK ROUTER WORKSPACE**, select the task router you created.
-    - For **TASK ROUTER WORKFLOW**, select the routing location you want your assistant to transfer calls to.
-
-    You can leave the other fields blank for now.
-
-1. Connect the Return point from your TWIML REDIRECT widget to your ENQUEUE CALL widget
+1. Connect the **Return** node on the **TwiML Redirect** widget to your **Say/Play** widget.
 
 1. Click the **Trigger** widget.
 
@@ -172,12 +197,16 @@ We also need to configure the call flow to handle calls being transferred from t
 
     ```javascript
     exports.handler = function(context, event, callback) {
-      const VoiceResponse = require('twilio').twiml.VoiceResponse;  const response     = new VoiceResponse();
+      const VoiceResponse = require('twilio').twiml.VoiceResponse;  
+      const response = new VoiceResponse();
       console.log("ReferTransferTarget: " + event.ReferTransferTarget);
-      var customHeaders = event.ReferTransferTarget.split("?");  console.log    ("Custom Headers: " + customHeaders[1].replace(">",""));
+      var customHeaders = event.ReferTransferTarget.split("?");  
+      console.log ("Custom Headers: " + customHeaders[1].replace(">",""));
       response.redirect({
             method: 'POST'
-        }, '{webhook_url}?FlowEvent=return&'+customHeaders[1].replace(">",""));      console.log(response.toString());  return callback(null, response);
+        }, '{webhook_url}?FlowEvent=return&'+customHeaders[1].replace(">",""));      
+      console.log(response.toString());  
+      return callback(null, response);
     }
     ```
 
@@ -186,6 +215,8 @@ We also need to configure the call flow to handle calls being transferred from t
 1. Click **Save**.
 
 1. Click **Deploy All**.
+
+1. After you create this refer-handler, copy the function URL back into the `/receive-call` handler's **referUrl** field.
 
 ## Configuring the assistant to transfer calls to Twilio Flex
 
@@ -199,31 +230,33 @@ Now we need to configure the assistant to transfer calls to Twilio Flex when a c
 
 1. Open the JSON editor for the response.
 
-1. In the JSON editor, add a [`vgwActTransfer` command](https://cloud.ibm.com/docs/assistant?topic=assistant-commands-voice) to the response, specifying your phone number as the `transferTarget` target field:
+1. In the JSON editor, add a [`connect_to_agent` response](https://cloud.ibm.com/docs/assistant?topic=assistant-commands-voice), specifying your phone number as the `sip.uri`:
 
 ```json
 {
-  "output": {
-    "generic": [
-      {
-        "values": [
-          {
-            "text": "Transferring you to an agent."
-          }
-        ],
-        "response_type": "text",
-        "selection_policy": "sequential"
-      }
-    ],
-    "vgwAction": {
-      "command": "vgwActTransfer",
-      "parameters": {
-        "uuiData": "1",
-        "uuiSendMethod": "referToURL",
-        "transferTarget": "sip:+1234\\@wa-flex-test.sip.twilio.com"
-      }
-    }
-  }
+  "output": {
+    "generic": [
+      {
+          "response_type": "connect_to_agent",
+          "transfer_info": {
+            "target": {
+              "service_desk": {
+                "sip": {
+                  "uri": "sip:queue@flex.twilio.com",
+                  "transfer_headers_send_method": "refer_to_header"
+                }
+              }
+            }
+          },
+          "agent_available": {
+            "message": "Ok, I'm transferring you to an agent"
+          },
+          "agent_unavailable": {
+            "message": ""
+          }
+      }
+    ]
+  }
 }
 ```
 
@@ -245,19 +278,10 @@ where `redirect_1` is the name of your redirect widget. For example, if you set 
 
 ## Test your assistant
 
-Your assistant should now be able to answer phone calls to your phone number and transfer calls to an agent using Twilio Flex. To test your assistant:
-
-1. In the Twilio console navigation menu, click the **All Products & Services** icon.
-
-1. Click **Flex**.
-
-1. On the Flex Overview page, click **Launch Flex**.
-
-1. Set your agent status as **Available**.
-
-    Your agent profile must be configured to include the required skills for the call to be routed from your assistant.
-    {: note}
+Your assistant should now be able to answer phone calls to your phone number and transfer calls back to your Twilio Flex flow. To test your assistant:
 
 1. Call your phone number. When the assistant responds, ask for an agent.
 
-1. In the Twilio Flex agent dashboard, accept the incoming call.
+1. At this point you should hear the phrase configured in the **Say/Play** widget (such as "Transfer from Watson complete").
+
+1. If the transfer fails, use the console log to follow the flow of the call as it moves from the flow to the `/call-receive` handler, to {{site.data.keyword.conversationshort}}, to the refer-handler and back to your Twilio Flex flow.
