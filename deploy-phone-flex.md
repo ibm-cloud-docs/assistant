@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-05"
 
 subcollection: assistant
 
@@ -144,19 +144,19 @@ Now we need to configure the call flow to direct inbound calls to the assistant 
 
 1. Replace the template in your `/receive-call` function with the following code:
 
-  ```javascript
-  exports.handler = function(context, event, callback) {
-    const VoiceResponse = require('twilio').twiml.VoiceResponse;  
-    const response = new VoiceResponse();
-    const dial = response.dial({
-      answerOnBridge: "true",
-      referUrl: "https://watson-flex-test-7074.twil.io/refer-handler"
-    });
-    dial.sip('sip:{phone_number}@{sip_uri_hostname};secure=true');  
-    consolelog (response.toString());
-    return callback(null, response);
-  }
-  ```
+    ```javascript
+    exports.handler = function(context, event, callback) {
+      const VoiceResponse = require('twilio').twiml.VoiceResponse;  
+      const response = new VoiceResponse();
+      const dial = response.dial({
+        answerOnBridge: "true",
+        referUrl: "https://watson-flex-test-7074.twil.io/refer-handler"
+      });
+      dial.sip('sip:{phone_number}@{sip_uri_hostname};secure=true');  
+      consolelog (response.toString());
+      return callback(null, response);
+    }
+    ```
 
     - Replace `{phone_number}` with the phone number you assigned to your assistant in the phone integration.
     - Replace `{sip_uri_hostname}` with the hostname portion of your  assistant's phone integration SIP URI (everything that comes after `sips:`).. Note that Twilio does not support `SIPS` URIs, but does support secure SIP trunking by appending `;secure=true` to the SIP URI.
