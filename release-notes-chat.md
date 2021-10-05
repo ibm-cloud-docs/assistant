@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-05"
 
 subcollection: assistant
 
@@ -43,6 +43,7 @@ If you want to evaluate changes that are introduced in a web chat release before
 
 *Release date: 4 October 2021*
 
+- A [new tutorial](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=tutorials-react-portals){: external} is now available that shows how to use Carbon components to customize user-defined responses and writeable elements.
 - Bug fixes.
 
 ## 5.0.1
