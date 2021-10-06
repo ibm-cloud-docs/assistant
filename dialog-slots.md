@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-09-27"
 
 keywords: slot, slots
 
@@ -112,30 +112,11 @@ Using slots produces a more natural dialog flow between the user and your assist
 
     This table shows example slot values for a node that helps users place a pizza order by collecting two pieces of information, the pizza size and delivery time.
 
-    <table>
-    <caption>Example slots for pizza order</caption>
-    <tr>
-      <th>Check for</th>
-      <th>Save it as</th>
-      <th>Prompt</th>
-      <th>Follow-up if found</th>
-      <th>Follow-up if not found</th>
-    </tr>
-    <tr>
-      <td>@size</td>
-      <td>$size</td>
-      <td>What size pizza would you like?</td>
-      <td>$size it is.</td>
-      <td>What size did you want? We have small, medium, and large.</td>
-    </tr>
-    <tr>
-      <td>@sys-time</td>
-      <td>$time</td>
-      <td>When do you need the pizza by?</td>
-      <td>For delivery by $time.</td>
-      <td>What time did you want it delivered? We need at least a half hour to prepare it.</td>
-    </tr>
-    </table>
+    | Check for | Save it as | Prompt | Follow-up if found | Follow-up if not found |
+    | --- | --- | --- | --- | --- |
+    | @size | $size | What size pizza would you like? | $size it is. | What size did you want? We have small, medium, and large. |
+    | @sys-time | $time | When do you need the pizza by? | For delivery by $time. | What time did you want it delivered? We need at least a half hour to prepare it. |
+    {: caption="Example slots for pizza order" caption-side="top"}
 
 1.  **Add slot value validation**: If you want different follow-up statements to be shown based on whether the user provides the information you need in response to the initial slot prompt, you can edit the slot (by clicking the **Customize slot** ![Customize slot](images/edit-slot.png) icon) and define the follow-up statements:
 
@@ -152,20 +133,11 @@ Using slots produces a more natural dialog flow between the user and your assist
 
     - **Optional**: To make a slot optional, add a slot without a prompt. Your assistant does not ask the user for the information, but it does look for the information in the user input, and saves the value if the user provides it. For example, you might add a slot that captures dietary restriction informations in case the user specifies any. However, you don't want to ask all users for dietary information since it is irrelevant in most cases.
 
-       <table>
-       <caption>Optional slot</caption>
-       <tr>
-          <th>Information</th>
-          <th>Check for</th>
-          <th>Save it as</th>
-       </tr>
-       <tr>
-          <td>Wheat restriction</td>
-          <td>@dietary</td>
-          <td>$dietary</td>
-      </tr>
-      </table>
-
+    | Information | Check for | Save it as |
+    | --- | --- | --- |
+    | Wheat restriction | @dietary | $dietary |
+    {: caption="Optional slot" caption-side="top"}
+      
       If you make a slot optional, only reference its context variable in the node-level response text if you can word it such that it makes sense even if no value is provided for the slot. For example, you might word a summary statement like this, `I am ordering a $size $dietary pizza for delivery at $time.` The resulting text makes sense whether the dietary restriction information, such as `gluten-free` or `dairy-free`, is provided or not. The result is either, `I am ordering a large gluten-free pizza for delivery at 3:00PM.` or `I am ordering a large pizza for delivery at 3:00PM.`
       {: tip}
 
@@ -173,6 +145,7 @@ Using slots produces a more natural dialog flow between the user and your assist
 
       You can condition on the value of a context variable from an earlier slot because the order in which the slots are listed is the order in which they are evaluated. However, only condition on a slot context variable that you can be confident will contain a value when this slot is evaluated. The earlier slot must be a required slot, for example.
     {: tip}
+
 1.  **Keep users on track**. You can optionally define slot handlers that provide responses to questions users might ask during the interaction that are tangential to the purpose of the node.
 
     For example, the user might ask about the tomato sauce recipe or where you get your ingredients. To handle such off-topic questions, click the **Manage handlers** link and add a condition and response for each anticipated question.
@@ -242,23 +215,10 @@ You can ask for a list of items and save them in one slot.
 
 For example, you might want to ask users whether they want toppings on their pizza. To do so define an entity (@toppings), and the accepted values for it (pepperoni, cheese, mushroom, and so on). Add a slot that asks the user about toppings. Use the values property of the entity type to capture multiple values, if provided.
 
-<table>
-<caption>Multiple value slot</caption>
-<tr>
-  <th>Check for</th>
-  <th>Save it as</th>
-  <th>Prompt</th>
-  <th>Follow-up if found</th>
-  <th>Follow-up if not found</th>
-</tr>
-<tr>
-  <td>@toppings.values</td>
-  <td>$toppings</td>
-  <td>Any toppings on that?</td>
-  <td>Great addition.</td>
-  <td>What toppings would you like? We offer ...</td>
-</tr>
-</table>
+| Check for | Save it as | Prompt | Follow-up if found | Follow-up if not found | 
+| --- | --- | --- | --- | --- |
+| @toppings.values | $toppings | Any toppings on that? | Great addition. | What toppings would you like? We offer ... |
+{: caption="Multiple value slot" caption-side="top"}
 
 To reference the user-specified toppings later, use the `<? $entity-name.join(',') ?>` syntax to list each item in the toppings array and separate the values with a comma. For example, `I am ordering you a $size pizza with <? $toppings.join(',') ?> for delivery by $time.`
 
@@ -329,23 +289,10 @@ If you do not want to accept a zero as the number value, then you can add a cond
 
 Add a slot after the others that asks the user to confirm that the information you have collected is accurate and complete. The slot can look for responses that match the #yes or #no intent.
 
-<table>
-<caption>Confirmation slot</caption>
-<tr>
-  <th>Check for</th>
-  <th>Save it as</th>
-  <th>Prompt</th>
-  <th>Follow-up if found</th>
-  <th>Follow-up if not found</th>
-</tr>
-<tr>
-  <td>#yes || #no</td>
-  <td>$confirmation</td>
-  <td>I'm going to order you a `$size` pizza for delivery at `$time`. Should I go ahead?</td>
-  <td>Your pizza is on its way!</td>
-  <td>see *Complex response*</td>
-</tr>
-</table>
+| Check for | Save it as | Prompt | Follow-up if found | Follow-up if not found | 
+| --- | --- | --- | --- | --- |
+| #yes || #no | $confirmation | I'm going to order you a `$size` pizza for delivery at `$time`. Should I go ahead? | Your pizza is on its way! | see *Complex response* |
+{: caption="Confirmation slot" caption-side="top"}
 
 **Complex response** Because users might include affirmative or negative statements at other times during the dialog (*Oh yes, we want the pizza delivered at 5pm*) or (*no guests tonight, let's make it a small*), use the `slot_in_focus` property to make it clear in the slot condition that you are looking for a Yes or No response to the prompt for this slot only.
 
@@ -482,7 +429,7 @@ When a user input is evaluated, the slot with the first slot condition to match 
     **Solution**: In logic that is unique to the slots feature, when two system entities are recognized in a single user input, the one with the larger span is used. Therefore, even though your assistant recognizes both system entities in the text, only the system entity with the longer span (`@sys-date` with `2017-05-02`) is registered and applied to the slot.
 
     This workaround is not necessary if you are using the revised system entities. With the updated entities, a date reference is considered to be a `@sys-date` mention only, and is not also treated as a `@sys-number` mention. For more details, see [System entities](/docs/assistant?topic=assistant-system-entities).
-  {: note}
+    {: note}
 
 ### Adding conditions to Found and Not found responses
 {: #dialog-slots-handler-next-steps}
@@ -565,8 +512,8 @@ To respond differently after 3 attempts, add another Not found condition like th
   "context": {
     "size": "medium"
   }
-  ```
-  {: codeblock}
+    ```
+    {: codeblock}
 
 This Not found condition is more precise than the Not found catchall condition, which defaults to `true`. Therefore, you must move this response so it comes before the original conditional response or it will never be triggered. Select the conditional response and use the up arrow to move it up.
 

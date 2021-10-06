@@ -149,7 +149,8 @@ If you have a Discovery service Lite plan, you are given an opportunity to upgra
         - **For some data collection types**: Provide the required information for the data source you choose, and then click **Connect**.
 
             For a list of the supported data types and details on how to set up access to them, see [Connecting to data sources](/docs/discovery?topic=discovery-sources){: external}.
-         - Specify the information that you want to extract from the data source and include in your {{site.data.keyword.discoveryshort}} collection.
+
+        - Specify the information that you want to extract from the data source and include in your {{site.data.keyword.discoveryshort}} collection.
 
             The options that are displayed differ depending on the data source type.
 
@@ -248,29 +249,12 @@ If you upload a JSON file that contains repeating name values, then only the fir
 
 1.  Draft different messages to share with users based on the successfulness of the search.
 
-    <table>
-    <caption>Search result messages</caption>
-    <tr>
-      <th>Field name</th>
-      <th>Scenario</th>
-      <th>Example message</th>
-    </tr>
-    <tr>
-      <td>Message</td>
-      <td>Search results are returned</td>
-      <td>I found this information that might be helpful: </td>
-    </tr>
-    <tr>
-      <td>No results found</td>
-      <td>No search results are found</td>
-      <td>I searched my knowledge base for information that might address your query, but did not find anything useful to share.</td>
-    </tr>
-    <tr>
-      <td>Error message</td>
-      <td>I was unable to complete the search for some reason</td>
-      <td>I might have information that could help address your query, but am unable to search my knowledge base at the moment.</td>
-    </tr>
-    </table>
+    | Field name | Scenario | Example message |
+    | --- | --- | --- |
+    | Message | Search results are returned | `I found this information that might be helpful:` |
+    | No results found | No search results are found | `I searched my knowledge base for information that might address your query, but did not find anything useful to share.` |
+    | Error message | I was unable to complete the search for some reason | `I might have information that could help address your query, but am unable to search my knowledge base at the moment.` |
+    {: caption="Search result messages" caption-side="top"}
 
 1.  Choose whether to enable **Emphasize the answer**. 
 
@@ -322,13 +306,13 @@ Review this information for help with performing common tasks.
 
 - **Configuring search results for uploaded documents**: If you are using a collection of uploaded documents and cannot get the correct search results or the results are not concise enough, consider using *Smart Document Understanding* when you create the data collection. 
 
-  This feature enables you to annotate documents based on text formatting. For example, you can teach {{site.data.keyword.discoveryshort}} that any text in 28-point bold font is a document title. If you apply this information to the collection when you ingest it, you can later use the *title* field as the source for the title section of your search result. 
+    This feature enables you to annotate documents based on text formatting. For example, you can teach {{site.data.keyword.discoveryshort}} that any text in 28-point bold font is a document title. If you apply this information to the collection when you ingest it, you can later use the *title* field as the source for the title section of your search result. 
   
-  You can also use Smart Document Understanding to split up large documents into segments that are easier to search. For more information, see the the [Smart Document Understanding](/docs/discovery?topic=discovery-sdu) topic in the {{site.data.keyword.discoveryshort}} documentation.
+    You can also use Smart Document Understanding to split up large documents into segments that are easier to search. For more information, see the the [Smart Document Understanding](/docs/discovery?topic=discovery-sdu) topic in the {{site.data.keyword.discoveryshort}} documentation.
 
 - **Improve search results**: If you don't like the results you are seeing, review this information for help.
 
-  - Call the search skill from a dialog node, and specify filter details. 
+    - Call the search skill from a dialog node, and specify filter details. 
 
     From a dialog node search skill response, you can specify a full {{site.data.keyword.discoveryshort}} query syntax filter to help narrow the results. 
     
@@ -338,31 +322,31 @@ Review this information for help with performing common tasks.
 
 - **My response text is surrounded by brackets**: If you notice that your response text is surrounded by brackets and quotation marks (`["My response text"]`) when you test it from the Preview, for example, you might need to change the source field that you're using in the configuration. The unexpected formatting indicates that the value is stored in the source document as an array. Any field that you extract text from must contain a value with a String data type, not an Array data type. When the chat integration shows a response that is extracted from a field that stores the data as an array, it does a straight conversion of the array value into a string, which produces a response that includes the array syntax.
 
-  For example, maybe the field in the source document contains an array with a single text value as its only array element:
+    For example, maybe the field in the source document contains an array with a single text value as its only array element:
 
-  ```json
-  "title": ["a single array element"]
-  ```
-  {: codeblock}
+    ```json
+    "title": ["a single array element"]
+     ```
+     {: codeblock}
 
-  The array value is converted by the {{site.data.keyword.conversationshort}} into this string value:
+    The array value is converted by the {{site.data.keyword.conversationshort}} into this string value:
 
-  ```json
-  "title": "[\"a single array element\"]"
-  ```
-  {: codeblock}
+    ```json
+    "title": "[\"a single array element\"]"
+    ```
+    {: codeblock}
 
-  As a result, the string is returned in this format in the chat; the surrounding brackets and quotation marks are displayed:
+    As a result, the string is returned in this format in the chat; the surrounding brackets and quotation marks are displayed:
 
-  ```
-  ["a single array element"]
-  ```
-  {: codeblock}
+    ```code
+    ["a single array element"]
+    ```
+    {: codeblock}
 
-  If you see this happening, consider choosing a different collection field from which to extract search results.
+    If you see this happening, consider choosing a different collection field from which to extract search results.
   
-  The {{site.data.keyword.discoveryshort}} document `highlight` field stores values in an array.
-  {: note}
+    The {{site.data.keyword.discoveryshort}} document `highlight` field stores values in an array.
+    {: note}
 
 ## Next steps
 {: #skill-search-add-next-steps}
@@ -395,20 +379,20 @@ The search skill is triggered in the following ways:
 
 - **From a specific dialog node or action step**: This approach is useful if you want to narrow down a user query before you trigger a search. 
 
-  For example, the conversational flow might collect information about the type of device a customer wants to buy. When you know the device model, you can then send a model keyword in the query that is submitted to the search skill to get better results.
+    For example, the conversational flow might collect information about the type of device a customer wants to buy. When you know the device model, you can then send a model keyword in the query that is submitted to the search skill to get better results.
 
-  Trigger the search only at a specific point in a conversation in one of the following ways:
+    Trigger the search only at a specific point in a conversation in one of the following ways:
 
-  - Dialog skill: Add a *search skill* response type to a dialog node. When the node is processed, your assistant retrieves a passage from an external data source and returns it as the response to a particular question. This type of search occurs only when the individual dialog node is processed. For more information, see [Adding a search skill response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-search-skill).
+    - Dialog skill: Add a *search skill* response type to a dialog node. When the node is processed, your assistant retrieves a passage from an external data source and returns it as the response to a particular question. This type of search occurs only when the individual dialog node is processed. For more information, see [Adding a search skill response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-search-skill).
 
-  - Actions skill: In the *And then* field of the step where you want the search to be triggered, choose **Search for the answer**. For more information, see [Configuring the search for an answer](/docs/assistant?topic=assistant-actions#actions-what-next-search).
+    - Actions skill: In the *And then* field of the step where you want the search to be triggered, choose **Search for the answer**. For more information, see [Configuring the search for an answer](/docs/assistant?topic=assistant-actions#actions-what-next-search).
 
 - **From the dialog skill's *Anything else* node**: If the assistant has a dialog skill and a search skill, any user input triggers the dialog skill first. The dialog addresses user input that it has a high confidence it can answer correctly. Any queries that would normally trigger the `anything_else` node in the dialog tree are sent to the search skill instead.
 
-  For example, instead of showing a standard message, such as `I don't know how to help you with that.` the assistant can say, `Maybe this information can help:`. The assistant passes the user input as the query to your search skill, and returns the search results as the response.
+    For example, instead of showing a standard message, such as `I don't know how to help you with that.` the assistant can say, `Maybe this information can help:`. The assistant passes the user input as the query to your search skill, and returns the search results as the response.
 
-  You can prevent the search from being triggered from the `anything_else` node by following the steps in [Disabling search](#search-skill-add-disable).
-  {: note}
+    You can prevent the search from being triggered from the `anything_else` node by following the steps in [Disabling search](#search-skill-add-disable).
+    {: note}
 
 - **When only a search skill is used**: If only a search skill is linked to an assistant, and no conversational skill is configured, then a search query is sent to the {{site.data.keyword.discoveryshort}} service when any user input is received from one of the assistant's integration channels.
 
