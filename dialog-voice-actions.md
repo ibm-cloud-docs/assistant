@@ -225,19 +225,20 @@ A more complete example of a transfer **utilizing** all of the configurable para
                 "transfer_headers_send_method": "refer_to_header"
               }
             }
-          },
-          "agent_available": {
-            "message": "I'll transfer you to an agent"
-          },
-          "agent_unavailable": {
-            "message": "Sorry, I could not find an agent."
-          },
-          "message_to_human_agent": "The caller needs help resetting their password"
-        }
+          }
+        },
+        "agent_available": {
+          "message": "I'll transfer you to an agent"
+        },
+        "agent_unavailable": {
+          "message": "Sorry, I could not find an agent."
+        },
+        "message_to_human_agent": "The caller needs help resetting their password"
       }
     ]
   }
 }
+
 ```
 {: codeblock}
 
