@@ -31,122 +31,54 @@ subcollection: assistant
 # Handling phone interactions
 {: #dialog-voice-actions}
 
-Learn about common actions you can use to manage the flow of conversations that your assistant has with customers over the telephone.
+Learn about common commands you can use to manage the flow of conversations that your assistant has with customers over the telephone.
 {: shortdesc}
 
 Before you add customizations to your dialog that support phone interactions, you must set up the phone integration. For more information, see [Integrating with phone](/docs/assistant?topic=assistant-deploy-phone).
 
-You can perform the following types of actions:
+You can perform the following types of commands:
 
-- [Send a text message during a phone conversation](#dialog-voice-actions-sms)
+- [Apply advanced commands to the {{site.data.keyword.speechtotextshort}} service ](#dialog-voice-actions-speech-advanced)
+- [Apply advanced commands to the {{site.data.keyword.texttospeechshort}} services ](#dialog-voice-actions-text-advanced)
 - [Transfer a call to a human agent](#dialog-voice-actions-transfer)
 - [Play hold music or a voice recording](#dialog-voice-actions-hold-music)
-- [Apply advanced speech services to specific topics ](#dialog-voice-actions-speech-advanced)
-- [Apply advanced {{site.data.keyword.texttospeechshort}} services to specific topics ](#dialog-voice-actions-text-advanced)
 - [Enable keypad entry](#dialog-voice-actions-dtmf)
 - [End the call](#dialog-voice-actions-hangup)
+- [Send a text message during a phone conversation](#dialog-voice-actions-sms)
 
 
 
-In some cases, you might want to combine actions. For example, to enable two-factor authentication, you can both enable support for phone keypad entry and send a text message from the same dialog node or step in the Action. For more information about combining actions, see [Defining a sequence of actions](#dialog-voice-actions-sequence).
+In some cases, you might want to combine commands. For example, to enable two-factor authentication, you can both enable support for phone keypad entry and send a text message from the same dialog node or step in the actions. For more information about combining commands, see [Defining a sequence of phone commands](#dialog-voice-actions-sequence).
 
 For command reference documentation, see [Phone integration commands reference](/docs/assistant?topic=assistant-commands-voice).
 
-## Adding phone-based custom response types to your dialog or action 
+## Adding phone-based custom response types to your dialog or actions 
 {: #dialog-voice-actions-add}
 
-When calling voice-specific actions from a dialog node or a step in the Action, you need to define the action within the `generic` array.
+When calling voice-specific commands from a dialog node or a step in the actions, you need to define the command within the `output.generic` array.
 
-To enable voice-specific response type, you must add a JSON code block to the dialog node or step in the Action where you want the action to trigger. 
+To enable voice-specific response type, you must add a JSON code block to the dialog node or step in the actions where you want the command to trigger. 
 
 To add a JSON code block to a dialog node, complete the following steps:
 
 1.  From your dialog skill, go to the *Dialog* page.
-2.  Open the dialog node where you want to call the action.
+2.  Open the dialog node where you want to initiate the command.
 3.  From the *Assistant responds* section, click the menu ![Overflow menu](images/more-icon.png), and then choose **Open JSON editor**.
 
     ![Shows the Assistant responds section of a dialog node with the user selecting the Open JSON editor from the options icon.](images/open-json-editor.png)
-4.  Add the action command JSON code block to the `generic` array. 
+4.  Add the command JSON code block to the `output.generic` array. 
 
 
-To add a JSON code block to a step in the Action, complete the following steps:
+To add a JSON code block to a step in the actions, complete the following steps:
 
-1.  From your action skill, open the step where you want to call the action.
+1.  From your actions, open the step where you want to initiate the command.
 2.  Click the `</>`  button to switch to the **JSON editor**.
 
 ### Applying a setting to the entire conversation
 {: #dialog-voice-actions-welcome}
 
-To apply a customization, such as changing the assistant's voice, from the very start of the conversation, specify the action command in a node that you add before the Welcome node. In the new node's *If assistant recognizes* field, add the `conversation_start` special condition. For more information, see [Starting the conversation](/docs/assistant?topic=assistant-dialog-start#dialog-start-welcome).
-In the Action, specify the action command in `Customer starts with`.
-
-
-
-## Sending a text message during a phone conversation
-{: #dialog-voice-actions-sms}
-
-Before you add in-context SMS messages, you must set up the *Twilio messaging* integration. For more information, see [Integrating with *Twilio messaging*](/docs/assistant?topic=assistant-deploy-sms).
-
-There are lots of times when it is useful to be able to send a text message in the context of an ongoing conversation. For example, maybe you want the customer to share a street address. Rather than trying to transcribe the audio as a person rattles off an address and risk possible mistakes, you can ask the customer to send it in a text message instead.
-
-Whenever you exchange a text with a customer in the context of a conversation, the dialog initiates the SMS message exchange. It sends a text message to the user and asks for the user to respond to it.
-
-To send a specific message from a dialog node or a step in the Action, add the `vgwActSendSMS` command.
-
-```json
-{
-  "output": {
-    "generic": [
-      {
-        "response_type": "text",
-        "values": [
-          {
-            "text": "I will send you a text message now."
-          }
-        ],
-        "selection_policy": "sequential"
-      },
-      {
-        "response_type": "user_defined",
-        "user_defined": {
-          "vgwAction": {
-            "command": "vgwActSendSMS",
-            "parameters": {
-              "message": "Hey, this is Watson Assistant. To send me your street address, respond to this text message with your address."
-            }
-          }
-        }
-      }
-    ]
-  }
-}
-```
-{: codeblock}
-
-If your *SMS with Twilio* integration supports more than one SMS phone number, be sure to specify the phone number that you want to use to send the text message. Otherwise, the text is sent using the same phone number that was called.
-
-The customer's reply text is sent in the `input.text`field. 
-
-
-``` json
-{
-  "input": {
-    "message_type": "text",
-    "text": "1545 Lexington Ave."
-  },
-  "context": {
-    "integrations": {
-      "text_messaging": {
-        "private": {
-          "user_phone_number": "+18594213456"
-        },
-        "assistant_phone_number": "+18882346789"
-      }
-    }
-  }
-}
-```
-{: codeblock}
+To apply a customization, such as changing the assistant's voice, from the very start of the conversation, specify the command in a node that you add before the Welcome node. In the new node's *If assistant recognizes* field, add the `conversation_start` special condition. For more information, see [Starting the conversation](/docs/assistant?topic=assistant-dialog-start#dialog-start-welcome).
+In the actions, specify the command in `Customer starts with`.
 
 
   
@@ -159,187 +91,7 @@ Note that in this case the `input.text` is assumed to hold the text input receiv
 | private.user_phone_number | Phone number associated with a user and the SMS related message. Note that this is marked as private to prevent this information from being saved with Session History.| string| n/a|
 | assistant_phone_number | Phone number associated with the Watson Assistant side that received the SMS message. | string | n/a|
 
-
-## Transferring a call to a human agent
-{: #dialog-voice-actions-transfer}
-
-When you configure the phone integration, you can optionally define a default message and routing information to transfer calls to human agents in a call center when a connection fails. If you want to define specific behavior for a given dialog branch, you can add the `Connect to human agent` response type to do so.
-
-The message defined in `Response when agents are online` will be played to the caller before a transfer is initiated. Subsequently, if the call transfer fails, the message defined under `Response when no agents are online` will be synthesized and played to the caller.  The Phone Integration will not use `Message to human agent` field, but it will be previewed to the agent if the WebChat AgentApp is used.
-
-You can add the phone integration specific parameters to the `Connect to human agent` response type using the JSON editor. When you click **Open JSON editor**, you should see something similar to the following example:
- 
-```json
-{
-  "output": {
-    "generic": [
-      {
-        "response_type": "connect_to_agent",
-        "transfer_info": {
-          "target": {}
-        },
-        "agent_available": {
-          "message": "I'll transfer you to an agent"
-        },
-        "agent_unavailable": {
-          "message": "Sorry, I could not find an agent."
-        }
-      }
-    ]
-  }
-}
-```
-{: codeblock}
-
-The `Connect to human agent` response type supports the ability to specify the target transfer information under the `transfer_info` parameter.
-
-A more complete example of a transfer **utilizing** all of the configurable parameters is:
-
-  
-
-```json
-{
-  "output": {
-    "generic": [
-      {
-        "response_type": "connect_to_agent",
-        "transfer_info": {
-          "target": {
-            "service_desk": {
-              "sip": {
-                "uri": "sip:user\\@domain.com",
-                "accept_transfer_reject_codes": [
-                  "410",
-                  "202"
-                ],
-                "transfer_headers": [
-                  {
-                    "name": "Customer-Header1",
-                    "value": "Some-Custom-Info"
-                  },
-                  {
-                    "name": "User-To-User",
-                    "value": "XXXXXX"
-                  }
-                ],
-                "transfer_headers_send_method": "refer_to_header"
-              }
-            }
-          }
-        },
-        "agent_available": {
-          "message": "I'll transfer you to an agent"
-        },
-        "agent_unavailable": {
-          "message": "Sorry, I could not find an agent."
-        },
-        "message_to_human_agent": "The caller needs help resetting their password"
-      }
-    ]
-  }
-}
-
-```
-{: codeblock}
-
-Full list of the phone integration parameters.
-
-
-| Parameter | Default | Description |
-| ---- | ---- | ---- |
-| `service_desk.sip.uri` | N/A | The SIP or telephone URI to transfer the call to, such as `sip:12345556789\\@myhost.com` or `tel:+18883334444` |
-| `service_desk.sip.notify_codes_to_accept` | N/A | A list of the error codes that are treated as a successful response when Voice Gateway processes NOTIFY requests during a call transfer. |
-| `service_desk.sip.transfer_headers` | N/A | A list of custom header field name and value pairs to be added to a transfer request. |
-| `service_desk.sip.transfer_headers_send_method` | `custom_header` | The method by which the SIP Transfer Headers are sent. <ul><li>`custom_header`: Sends the transfer headers as part of the SIP message. Default. </li><li>`contact_header`: Sends the transfer headers in the Contact Header field.</li><li>`refer_to_header`: Sends the transfer headers in the `Refer-To` header field.</li>|
-
-
-If you define a SIP URI as the transfer target, escape the at sign (`@`) in the URI by adding two backslashes (`\\`) in front of it.
-
-```json
-    "uri": "sip:12345556789\\@myhost.com"
-```
-{: codeblock}
-
-
-
-###  Passing Watson Assistant Metadata in SIP Signaling
-
-Generally there's two kinds of metadata values to be aware of:
-
-- `User-To-User`: This will be defined by Deb, it's custom user data that will be appended in the SIP REFER message used to transfer
-
-- `X-Watson-Assistant-Session-History-Key`: Contains a key that can be used by the Web Chat agent app to obtain information about the call such as the Session History.
-
-Also, the value of the SIP header will be restricted to 1024 bytes.
-
-Additionally, how the data is presented in the SIP REFER message depends on the value of `transfer_headers_send_method`. For example:
-
-
-####  `custom_header`
-
-The metadata is appended to the SIP REFER message as headers:
-
-```
-REFER sip:b@atlanta.example.com SIP/2.0
-Via: SIP/2.0/UDP agenta.atlanta.example.com;branch=z9hG4bK2293940223
-To: <sip:b@atlanta.example.com>
-From: <sip:a@atlanta.example.com>;tag=193402342
-Call-ID: 898234234@agenta.atlanta.example.com
-CSeq: 23 REFER
-Max-Forwards: 7
-Refer-To: sip:user@domain.com
-X-Watson-Assistant-Token: 8f817472-8c57-4117-850d-fdf4fd23ba7
-User-To-User: 637573746f6d2d757365722d746f2d75736572;encoding=hex
-Contact: sip:a@atlanta.example.co
-Content-Length: 0
-```
-{: codeblock}
-
-####  `refer_to_header`
-
-  The metadata is passed into the `Refer-To` header as query parameters per the [SIP RFC 3261](https://tools.ietf.org/html/rfc3261)
-
-```
-REFER sip:b@atlanta.example.com SIP/2.0
-Via: SIP/2.0/UDP agenta.atlanta.example.com;branch=z9hG4bK2293940223
-To: <sip:b@atlanta.example.com>
-From: <sip:a@atlanta.example.com>;tag=193402342
-Call-ID: 898234234@agenta.atlanta.example.com
-CSeq: 23 REFER
-Max-Forwards: 70
-Refer-To: sip:user@domain.com?User-To-User=637573746f6d2d757365722d746f2d75736572%3Bencoding%3Dhex&X-Watson-Assistant-Token=8f817472-8c57-4117-850d-fdf4fd23ba79
-Contact: sip:a@atlanta.example.com
-Content-Length: 0
-
-```
-{: codeblock}
-
-####  Domain Concepts
-
-
-- `SIP URIs`: Typically SIP URIs are used for identifying SIP devices and generally follow the pattern: `sip:[user]@[hostname]`.
-
-- `User-to-User Information`: Generally data that is used to identify a call accross multiple applications. Generally this is shared in a SIP header `User-To-User`, but there are other methods of sharing the data per [RFC7433](https://tools.ietf.org/html/rfc7433)
-
-- `Notify Codes`: During a call transfer that through a SIP REFER, the calling device typically sends `SIP NOTIFY` events to let the service know how the transfer is progressing. There are cases where some call devices send non-OK codes (2xx) such as `410 Gone` that need to be accepted as 'successful' transfers.
-
-
-## Playing hold music or a voice recording
-{: #dialog-voice-actions-hold-music}
-
-To play hold music or to play a recorded message, use the `audio` response type.
-
-You cannot play hold music during a call transfer. But, you might want to play hold music if your dialog needs time to perform processing of some kind, such as calling a client-side action or making a call to a webhook. You can look for places where the dialog uses the *Pause* response type to find nodes where this response type might be useful.
-
-
-You can specify the following parameter values for the `audio` response type:
-
-- `Audio source`: URL to a publicly-accessible audio file. The audio file must be single channel (mono), PCM-encoded, and have a 8,000 Hz sampling rate with 16 bits per sample. The file format must be `.wav`.
-- `Loop`: Select `On` or `Off` to indicate whether to repeatedly restart the audio play back after it finishes. The default value is `Off`.
-
-
-
-## Applying advanced speech services to specific topics
+## Applying advanced commands to the speech to text service
 {: #dialog-voice-actions-speech-advanced}
 
 You can apply the following speech customizations to specific dialog nodes:
@@ -347,7 +99,8 @@ You can apply the following speech customizations to specific dialog nodes:
 - [Use a custom language model](#dialog-voice-actions-custom-language)
 - [Use a custom grammar](#dialog-voice-actions-custom-grammar)
 
-To make any of these types of changes, edit the speech service configuration by adding the `speech_to_text` response type to your dialog or step in the Actions. The configuration decisions you make in the dialog node override the configuration that is specified in the integration setup page. The changes you apply persist for the remainder of the conversation, unless you override them again.
+To make any of these types of changes, edit the speech service configuration by adding the `speech_to_text` response type to your dialog or step in the actions. By default,the configuration decisions you make in the dialog node override the configuration that is specified in the integration setup page. The `update_strategy` parameter determines the update strategy when setting the speech configuration.
+The changes you apply persist for the remainder of the conversation, unless you override them again.
 
 
 ```json
@@ -377,7 +130,7 @@ Each command type along with its related parameters are described below.
 
 ### **command_info.type** : *configure*
 
-Applies a set of parameters to pass to the {{site.data.keyword.speechtotextshort}} service. Allows a user to dynamically define the parameters based on the dialog flow. For instance, a user can choose a specific customization ID or grammar at a specific point in the dialog flow or step in the Action.
+Applies a set of parameters to pass to the {{site.data.keyword.speechtotextshort}} service. Allows a user to dynamically define the parameters based on the dialog flow. For instance, a user can choose a specific customization ID or grammar at a specific point in the dialog flow or step in the actions.
 
   
 |parameter name|parameter value| required (yes/no) | default |
@@ -432,7 +185,7 @@ You can use the update_strategy property in dynamic configuration to define how 
 **Updating fields that are not root level**
 
   
-When configuring dynamically from {{site.data.keyword.conversationshort}} using this speech command, it's important to note that only the root level fields, such as *narrowband* or *broadband*, are updated. If they are omitted from the action, the original configuration settings persist. You can use the different **update_strategy** properties for *merge* and *merge_once* to merge config fields with the existing configuration.
+When configuring dynamically from {{site.data.keyword.conversationshort}} using this speech command, it's important to note that only the root level fields, such as *narrowband* or *broadband*, are updated. If they are omitted from the command, the original configuration settings persist. You can use the different **update_strategy** properties for *merge* and *merge_once* to merge config fields with the existing configuration.
 
 
   
@@ -540,10 +293,11 @@ To specify a custom grammar for a dialog node, add the following command:
 {: codeblock}
 
 
-## Applying advanced {{site.data.keyword.texttospeechshort}} services to specific topics ](#dialog-voice-actions-text-advanced)
+## Applying advanced commands to the {{site.data.keyword.texttospeechshort}} services 
+{: #dialog-voice-actions-text-advanced}
 
 
-You can apply a set of parameters to pass to the {{site.data.keyword.texttospeechshort}} service. {{site.data.keyword.conversationshort}} allows a user to dynamically define the parameters based on the dialog flow. For instance, you can choose a specific voice at a specific point in the dialog flow or step in the Action. 
+You can apply a set of parameters to pass to the {{site.data.keyword.texttospeechshort}} service. {{site.data.keyword.conversationshort}} allows a user to dynamically define the parameters based on the dialog flow. For instance, you can choose a specific voice at a specific point in the dialog flow or step in the actions. 
 
 
 ```json
@@ -574,7 +328,7 @@ Each command type along with its related parameters are described below.
 ### **command_info.type** : *configure*
   
 
-Applies a set of parameters to pass to the {{site.data.keyword.texttospeechshort}} service. Watson Assistant allows a user to dynamically define the parameters based on the dialog flow. For instance, you can choose a specific voice at a specific point in the dialog flow or step in the Action.
+Applies a set of parameters to pass to the {{site.data.keyword.texttospeechshort}} service. Watson Assistant allows a user to dynamically define the parameters based on the dialog flow. For instance, you can choose a specific voice at a specific point in the dialog flow or step in the actions.
 
   
 
@@ -663,10 +417,168 @@ The model you specify must be one that is supported by the {{site.data.keyword.t
 
 The custom voice that you specify for this dialog branch is used by each subsequent dialog node that is processed during the session unless you add another `text_to_speech` response type to reset the voice model back to the default model.
 
+
+## Transferring a call to a human agent
+{: #dialog-voice-actions-transfer}
+
+When you configure the phone integration, you can optionally define a default message and routing information to transfer calls to human agents in a call center when a connection fails. If you want to define specific behavior for a given dialog branch, you can add the `Connect to human agent` response type to do so.
+
+The message defined in `Response when agents are online` will be played to the caller before a transfer is initiated. Subsequently, if the call transfer fails, the message defined under `Response when no agents are online` will be synthesized and played to the caller.  The Phone Integration will not use `Message to human agent` field, but it will be previewed to the agent if the WebChat AgentApp is used.
+
+You can add the phone integration specific parameters to the `Connect to human agent` response type using the JSON editor.
+
+The `Connect to human agent` response type supports the ability to specify the target transfer information under the `transfer_info` parameter.
+
+A more complete example of a transfer **utilizing** all of the configurable parameters is:
+
+  
+
+```json
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "connect_to_agent",
+        "transfer_info": {
+          "target": {
+            "service_desk": {
+              "sip": {
+                "uri": "sip:user\\@domain.com",
+                "accept_transfer_reject_codes": [
+                  "410",
+                  "202"
+                ],
+                "transfer_headers": [
+                  {
+                    "name": "Customer-Header1",
+                    "value": "Some-Custom-Info"
+                  },
+                  {
+                    "name": "User-To-User",
+                    "value": "XXXXXX"
+                  }
+                ],
+                "transfer_headers_send_method": "refer_to_header"
+              }
+            }
+          }
+        },
+        "agent_available": {
+          "message": "I'll transfer you to an agent"
+        },
+        "agent_unavailable": {
+          "message": "Sorry, I could not find an agent."
+        },
+        "message_to_human_agent": "The caller needs help resetting their password"
+      }
+    ]
+  }
+}
+```
+{: codeblock}
+
+Full list of the phone integration parameters.
+
+
+| Parameter | Default | Description |
+| ---- | ---- | ---- |
+| `service_desk.sip.uri` | N/A | The SIP or telephone URI to transfer the call to, such as `sip:12345556789\\@myhost.com` or `tel:+18883334444` |
+| `service_desk.sip.notify_codes_to_accept` | N/A | A list of the error codes that are treated as a successful response when Voice Gateway processes NOTIFY requests during a call transfer. |
+| `service_desk.sip.transfer_headers` | N/A | A list of custom header field name and value pairs to be added to a transfer request. |
+| `service_desk.sip.transfer_headers_send_method` | `custom_header` | The method by which the SIP Transfer Headers are sent. <ul><li>`custom_header`: Sends the transfer headers as part of the SIP message. Default. </li><li>`contact_header`: Sends the transfer headers in the Contact Header field.</li><li>`refer_to_header`: Sends the transfer headers in the `Refer-To` header field.</li>|
+
+
+If you define a SIP URI as the transfer target, escape the at sign (`@`) in the URI by adding two backslashes (`\\`) in front of it.
+
+```json
+    "uri": "sip:12345556789\\@myhost.com"
+```
+{: codeblock}
+
+
+
+###  Passing Watson Assistant Metadata in SIP Signaling
+
+Generally there's two kinds of metadata values to be aware of:
+
+- `User-To-User`: This will be defined by Deb, it's custom user data that will be appended in the SIP REFER message used to transfer
+
+- `X-Watson-Assistant-Session-History-Key`: Contains a key that can be used by the Web Chat agent app to obtain information about the call such as the Session History.
+
+Also, the value of the SIP header will be restricted to 1024 bytes.
+
+Additionally, how the data is presented in the SIP REFER message depends on the value of `transfer_headers_send_method`. For example:
+
+
+####  `custom_header`
+
+The metadata is appended to the SIP REFER message as headers:
+
+```
+REFER sip:b@atlanta.example.com SIP/2.0
+Via: SIP/2.0/UDP agenta.atlanta.example.com;branch=z9hG4bK2293940223
+To: <sip:b@atlanta.example.com>
+From: <sip:a@atlanta.example.com>;tag=193402342
+Call-ID: 898234234@agenta.atlanta.example.com
+CSeq: 23 REFER
+Max-Forwards: 7
+Refer-To: sip:user@domain.com
+X-Watson-Assistant-Token: 8f817472-8c57-4117-850d-fdf4fd23ba7
+User-To-User: 637573746f6d2d757365722d746f2d75736572;encoding=hex
+Contact: sip:a@atlanta.example.co
+Content-Length: 0
+```
+{: codeblock}
+
+####  `refer_to_header`
+
+  The metadata is passed into the `Refer-To` header as query parameters per the [SIP RFC 3261](https://tools.ietf.org/html/rfc3261)
+
+```
+REFER sip:b@atlanta.example.com SIP/2.0
+Via: SIP/2.0/UDP agenta.atlanta.example.com;branch=z9hG4bK2293940223
+To: <sip:b@atlanta.example.com>
+From: <sip:a@atlanta.example.com>;tag=193402342
+Call-ID: 898234234@agenta.atlanta.example.com
+CSeq: 23 REFER
+Max-Forwards: 70
+Refer-To: sip:user@domain.com?User-To-User=637573746f6d2d757365722d746f2d75736572%3Bencoding%3Dhex&X-Watson-Assistant-Token=8f817472-8c57-4117-850d-fdf4fd23ba79
+Contact: sip:a@atlanta.example.com
+Content-Length: 0
+
+```
+{: codeblock}
+
+####  Domain Concepts
+
+
+- `SIP URIs`: Typically SIP URIs are used for identifying SIP devices and generally follow the pattern: `sip:[user]@[hostname]`.
+
+- `User-to-User Information`: Generally data that is used to identify a call across multiple applications. This is shared in a SIP header `User-To-User`, but there are other methods of sharing the data per [RFC7433](https://tools.ietf.org/html/rfc7433)
+
+- `Notify Codes`: During a call transfer that through a SIP REFER, the calling device typically sends `SIP NOTIFY` events to let the service know how the transfer is progressing. There are cases where some call devices send non-OK codes (2xx) such as `410 Gone` that need to be accepted as 'successful' transfers.
+
+
+## Playing hold music or a voice recording
+{: #dialog-voice-actions-hold-music}
+
+To play hold music or to play a recorded message, use the `audio` response type.
+
+You cannot play hold music during a call transfer. But, you might want to play hold music if your dialog needs time to perform processing of some kind, such as calling a client-side action or making a call to a webhook. You can look for places where the dialog uses the *pause* response type to find nodes where this response type might be useful.
+
+
+You can specify the following parameter values for the `audio` response type:
+
+- `Audio source`: URL to a publicly-accessible audio file. The audio file must be single channel (mono), PCM-encoded, and have a 8,000 Hz sampling rate with 16 bits per sample. The file format must be `.wav`.
+- `Loop`: Select `On` or `Off` to indicate whether to repeatedly restart the audio play back after it finishes. The default value is `Off`.
+
+
+
+
 ## Enabling keypad entry
 {: #dialog-voice-actions-dtmf}
 
-If you want customers to be able to send information by typing it on their phone keypad instead of speaking, you can add support for phone keypad entry. The best way to implement this type of support is to enable dual-tone multifrequency (DTMF) signaling. DTMF is a system that interprets the tones that are generated when a user presses keys on a push-button phone. The tones have a specific frequency and duration that can be interpreted by the phone network.
+If you want customers to be able to send information by typing it on their phone keypad instead of speaking, you can add support for phone keypad entry. The best way to implement this type of support is to enable dual-tone multifrequency (DTMF) signaling. DTMF is a protocol used to transmit tones that are generated when a user presses keys on a push-button phone. The tones have a specific frequency and duration that can be interpreted by the phone network.
 
 To start listening for tones as the user presses phone keys, add the `dtmf` response type to the dialog node:
 
@@ -898,36 +810,30 @@ An example that includes custom SIP headers is shown here:
 {: codeblock}
 
 
-## Adding actions to your dialog or action 
-{: #dialog-voice-legacy-actions-add}
+## Sending a text message during a phone conversation
+{: #dialog-voice-actions-sms}
 
-When calling voice-specific actions from a dialog node or a step in the Action, you need to define the action within the `generic` array using a `JSON editor`. 
+Before you can send a SMS message in the context of a phone call, you must set up the *SMS with Twilio* integration. For more information, see [Integrating with *SMS with Twilio*](/docs/assistant?topic=assistant-deploy-sms).
 
-    For example:
+There are lots of times when it is useful to be able to send a text message in the context of an ongoing conversation. For example, maybe you want the customer to share a street address. Rather than trying to transcribe the audio as a person rattles off an address and risk possible mistakes, you can ask the customer to send it in a text message instead.
+
+Whenever you exchange a text with a customer in the context of a conversation, the dialog initiates the SMS message exchange. It sends a text message to the user and asks for the user to respond to it.
+
+To send a specific message from a dialog node or a step in the actions, add the `vgwActSendSMS` command.
 
 ```json
 {
-  "generic": [
-    {
-      "values": [
-    {
-      "response_type": "user_defined",
-      "user_defined": {
-        "vgwAction": {
-          "command": "<action name>"
-        }
-      }
-    }
-  ]
-}   
- ```
- {: codeblock}
- 
- 
- ```json
-{
   "output": {
     "generic": [
+      {
+        "response_type": "text",
+        "values": [
+          {
+            "text": "I will send you a text message now."
+          }
+        ],
+        "selection_policy": "sequential"
+      },
       {
         "response_type": "user_defined",
         "user_defined": {
@@ -943,14 +849,40 @@ When calling voice-specific actions from a dialog node or a step in the Action, 
   }
 }
 ```
- {: codeblock}
+{: codeblock}
+
+If your *SMS with Twilio* integration supports more than one SMS phone number, be sure to specify the phone number that you want to use to send the text message. Otherwise, the text is sent using the same phone number that was called.
+
+The customer's reply text is sent in the `input.text`field. 
+
+
+``` json
+{
+  "input": {
+    "message_type": "text",
+    "text": "1545 Lexington Ave."
+  },
+  "context": {
+    "integrations": {
+      "text_messaging": {
+        "private": {
+          "user_phone_number": "+18594213456"
+        },
+        "assistant_phone_number": "+18882346789"
+      }
+    }
+  }
+}
+```
+{: codeblock}
 
 
 
-## Defining a sequence of actions
+
+## Defining a sequence of phone commands
 {: #dialog-voice-actions-sequence}
 
-If you want to run more than one command in succession, you can have multiple response_types in the **generic** array.
+If you want to run more than one command in succession, you can have multiple response_types in the `output.generic` array. These commands will be processed in the order that they are inserted into the array.
 
 ```json
 {
