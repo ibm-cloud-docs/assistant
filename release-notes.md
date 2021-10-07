@@ -68,7 +68,7 @@ The change log lists changes that were made this year, ordered by the date they 
 {: release-note}
 
 The new Watson Assistant
-:   The new Watson Assistant is now available! This new experience, focused on using **actions** to build customer conversations, is designed to make it simple enough for *anyone* to build a virtual assistant. Building, testing,  publishing, and analyzing your assistant can all now be done in one simple and intuitive interface.
+:   The new Watson Assistant is now available! This new experience, focused on using **actions** to build customer conversations, is designed to make it simple enough for *anyone* to build a virtual assistant. Building, testing, publishing, and analyzing your assistant can all now be done in one simple and intuitive interface.
 
     - New **navigation** provides a workflow for building, previewing, publishing, and analyzing your assistant. 
     - Each assistant has a **home page** with a task list to help you get started. 
