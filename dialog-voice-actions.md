@@ -38,8 +38,8 @@ Before you add customizations to your dialog that support phone interactions, yo
 
 You can perform the following types of commands:
 
-- [Apply advanced commands to the {{site.data.keyword.speechtotextshort}} service ](#dialog-voice-actions-speech-advanced)
-- [Apply advanced commands to the {{site.data.keyword.texttospeechshort}} services ](#dialog-voice-actions-text-advanced)
+- [Apply advanced settings to the {{site.data.keyword.speechtotextshort}} service ](#dialog-voice-actions-speech-advanced)
+- [Apply advanced settings to the {{site.data.keyword.texttospeechshort}} service ](#dialog-voice-actions-text-advanced)
 - [Transfer a call to a human agent](#dialog-voice-actions-transfer)
 - [Play hold music or a voice recording](#dialog-voice-actions-hold-music)
 - [Enable keypad entry](#dialog-voice-actions-dtmf)
@@ -81,12 +81,12 @@ To apply a customization, such as changing the assistant's voice, from the very 
 In the actions, specify the command in `Customer starts with`.
 
 
-## Applying advanced commands to the speech to text service
+## Applying advanced settings to the speech to text service
 {: #dialog-voice-actions-speech-advanced}
 
 You can apply the following speech customizations to specific dialog nodes:
 
-- [Use a custom language model](#dialog-voice-actions-custom-language)
+- [Use a custom language model](#dialog-voice-actions-custom-language) **TODO broken link**
 - [Use a custom grammar](#dialog-voice-actions-custom-grammar)
 
 To make any of these types of changes, edit the speech service configuration by adding the `speech_to_text` response type to your dialog or step in the actions. By default,the configuration decisions you make in the dialog node override the configuration that is specified in the integration setup page. The `update_strategy` parameter determines the update strategy when setting the speech configuration. 
@@ -244,6 +244,8 @@ The following example shows how to specify the use of a customization language m
 
 
 **Example: Using a custom grammar**
+{: #dialog-voice-actions-custom-grammar}
+
 
 The {{site.data.keyword.speechtotextshort}} service supports the use of grammars. A grammar allows you to configure the audio to match specific characteristics only.
 
@@ -283,7 +285,7 @@ To specify a custom grammar for a dialog node, add the following command:
 {: codeblock}
 
 
-## Applying advanced commands to the {{site.data.keyword.texttospeechshort}} services 
+## Applying advanced settings to the {{site.data.keyword.texttospeechshort}} service
 {: #dialog-voice-actions-text-advanced}
 
 
