@@ -3,6 +3,7 @@
 
 
 
+
 ---
 
 copyright:
@@ -74,19 +75,13 @@ To add a JSON code block to a step in the actions, complete the following steps:
 1.  From your actions, open the step where you want to initiate the command.
 2.  Click the `</>`  button to switch to the **JSON editor**.
 
-### Applying a setting to the entire conversation
-{: #dialog-voice-actions-welcome}
 
-To apply a customization, such as changing the assistant's voice, from the very start of the conversation, specify the command in a node that you add before the Welcome node. In the new node's *If assistant recognizes* field, add the `conversation_start` special condition. For more information, see [Starting the conversation](/docs/assistant?topic=assistant-dialog-start#dialog-start-welcome).
-In the actions, specify the command in `Customer starts with`.
-
-
-## Applying advanced settings to the speech to text service
+## Applying advanced settings to the {{site.data.keyword.speechtotextshort}} service
 {: #dialog-voice-actions-speech-advanced}
 
 You can apply the following speech customizations to specific dialog nodes:
 
-- [Use a custom language model](#dialog-voice-actions-custom-language) **TODO broken link**
+- [Use a custom language model](#dialog-voice-actions-custom-language) 
 - [Use a custom grammar](#dialog-voice-actions-custom-grammar)
 
 To make any of these types of changes, edit the speech service configuration by adding the `speech_to_text` response type to your dialog or step in the actions. By default,the configuration decisions you make in the dialog node override the configuration that is specified in the integration setup page. The `update_strategy` parameter determines the update strategy when setting the speech configuration. 
@@ -134,7 +129,7 @@ Applies a set of parameters to pass to the {{site.data.keyword.speechtotextshort
   
 **Config Related Parameters**
 
-The parameters that you can set under *narrowband_recognize* and *broadband_recognize* reflect the parameters that are made available by the {{site.data.keyword.speechtotextshort}} WebSocket interface. The WebSocket API sends two types of parameters: query parameters, which are sent when Voice Gateway connects to the service, and message parameters, which are sent as JSON after the connection is established. For example, *model* and *customization_id* are query parameters, and *smart_formatting* is a WebSocket message parameter. For a full list of parameters, see the WebSockets API reference for {{site.data.keyword.speechtotextshort}} Service.
+The parameters that you can set under *narrowband_recognize* and *broadband_recognize* reflect the parameters that are made available by the {{site.data.keyword.speechtotextshort}} WebSocket interface. The WebSocket API sends two types of parameters: query parameters, which are sent when phone integration connects to the service, and message parameters, which are sent as JSON after the connection is established. For example, *model* is a query parameters, and *smart_formatting* is a WebSocket message parameter. For a full list of parameters, see the WebSockets API reference for {{site.data.keyword.speechtotextshort}} service.
 
   
 You can define the following query parameters for the Media Relay's connection to the {{site.data.keyword.speechtotextshort}} service. Any other parameter that you define under *narrowband* or *broadband* is passed through on the WebSocket message request.
@@ -177,8 +172,89 @@ You can use the update_strategy property in dynamic configuration to define how 
   
 When configuring dynamically from {{site.data.keyword.conversationshort}} using this speech command, it's important to note that only the root level fields, such as *narrowband* or *broadband*, are updated. If they are omitted from the command, the original configuration settings persist. You can use the different **update_strategy** properties for *merge* and *merge_once* to merge config fields with the existing configuration.
 
+### Using a custom language model 
+{: #dialog-voice-actions-custom-language}
 
-  
+
+When you set up the phone integration, you can configure the integration to use a custom language model all the time. However, you might want to use a standard language model most of the time, and specify a custom language model to use only for specific topics that your assistant is designed to help customers with. You can apply a custom language model for a specific node in your dialog or a step in actions. 
+
+For example, you might want to use a custom model that specializes in medical terms for a dialog branch that helps with medical bills only. 
+
+For more information, see [Creating a custom language model](/docs/speech-to-text?topic=speech-to-text-languageCreate){: external}.
+
+To apply a custom language model to a specific node, use the `speech_to_text` command.
+
+```json
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "speech_to_text",
+        "command_info": {
+          "type": "configure",
+          "parameters": {
+            "narrowband_recognize": {
+              "x-watson-learning-opt-out": true,
+              "model": "en-US_NarrowbandModel",
+              "profanity_filter": true,
+              "smart_formatting": true,
+              "language_customization_id": "81d3630-ba58-11e7-aa4b-41bcd3f6f24d",
+              "acoustic_customization_id": "e4766090-ba51-11e7-be33-99bd3ac8fa93"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
+```
+{: codeblock}
+
+You can also apply an acoustic model that you might have trained to deal with background noise, accents, or other things that are associated with the quality or noise of the signal. 
+
+
+
+### Using a custom grammar
+{: #dialog-voice-actions-custom-grammar}
+
+
+The {{site.data.keyword.speechtotextshort}} service supports the use of grammars. A grammar allows you to configure the audio to match specific characteristics only.
+
+You can think of it this way: 
+
+- A custom language model expands the service's base vocabulary.
+- A grammar restricts the words that the service can recognize from that vocabulary. 
+
+When you use a grammar with a custom language model for speech recognition, the service can recognize only words, phrases, and strings that are recognized by the grammar. For example, maybe you want to accept only a yes or no response. You can define a grammar that allows only those options.
+
+For more information, see [Using grammars with custom language models](/docs/speech-to-text?topic=speech-to-text-grammars){: external}.
+
+To specify a custom grammar for a dialog node, add the following command: 
+
+```json
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "speech_to_text",
+        "command_info": {
+          "type": "configure",
+          "parameters": {
+            "update_strategy": "merge_once",
+            "narrowband_recognize": {
+              "x-watson-learning-opt-out": true,
+              "grammar_name": "names-abnf",
+              "language_customization_id": "81d3630-ba58-11e7-aa4b-41bcd3f6f24d"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
+```
+{: codeblock}
+
 
 ###  Examples
 
@@ -230,7 +306,7 @@ The following example shows how to specify the use of a customization language m
           "parameters": {
             "update_strategy": "merge_once",
             "narrowband_recognize": {
-              "customization_id": "ao45vohgFuxyOQRgztu-02I10ut7aJcM-AdInT-VWgj3V"
+              "language_customization_id": "ao45vohgFuxyOQRgztu-02I10ut7aJcM-AdInT-VWgj3V" 
             }
           }
         }
@@ -243,46 +319,6 @@ The following example shows how to specify the use of a customization language m
 {: codeblock}
 
 
-**Example: Using a custom grammar**
-{: #dialog-voice-actions-custom-grammar}
-
-
-The {{site.data.keyword.speechtotextshort}} service supports the use of grammars. A grammar allows you to configure the audio to match specific characteristics only.
-
-You can think of it this way: 
-
-- A custom language model expands the service's base vocabulary.
-- A grammar restricts the words that the service can recognize from that vocabulary. 
-
-When you use a grammar with a custom language model for speech recognition, the service can recognize only words, phrases, and strings that are recognized by the grammar. For example, maybe you want to accept only a yes or no response. You can define a grammar that allows only those options.
-
-For more information, see [Using grammars with custom language models](/docs/speech-to-text?topic=speech-to-text-grammars){: external}.
-
-To specify a custom grammar for a dialog node, add the following command: 
-
-```json
-{
-  "output": {
-    "generic": [
-      {
-        "response_type": "speech_to_text",
-        "command_info": {
-          "type": "configure",
-          "parameters": {
-            "update_strategy": "merge_once",
-            "narrowband_recognize": {
-              "x-watson-learning-opt-out": true,
-              "grammar_name": "names-abnf",
-              "language_customization_id": "81d3630-ba58-11e7-aa4b-41bcd3f6f24d"
-            }
-          }
-        }
-      }
-    ]
-  }
-}
-```
-{: codeblock}
 
 
 ## Applying advanced settings to the {{site.data.keyword.texttospeechshort}} service
@@ -348,7 +384,7 @@ You can use the update_method property in dynamic configuration to define how ch
 **Config Related Parameters**
 
 
-The parameters that you can set under *synthesize* reflect the parameters that are made available by the Text To Speech WebSocket interface. The WebSocket API sends two types of parameters: query parameters, which are sent when Voice Gateway connects to the service, and message parameters, which are sent as JSON after the connection is established. For a full list of parameters, see the WebSockets API reference for {{site.data.keyword.texttospeechshort}} service.
+The parameters that you can set under *synthesize* reflect the parameters that are made available by the Text To Speech WebSocket interface. The WebSocket API sends two types of parameters: query parameters, which are sent when phone integration connects to the service, and message parameters, which are sent as JSON after the connection is established. For a full list of parameters, see the WebSockets API reference for {{site.data.keyword.texttospeechshort}} service.
 
   
 
@@ -367,17 +403,15 @@ Enables speech barge-in so that callers can interrupt playback by speaking.
 No parameters.
   
 
-  
-
-###  Examples
 
   
 
-**Example: Setting the {{site.data.keyword.texttospeechshort}} voice (en-US_LisaVoice)**
-
+### Change the assistant's voice
+{: #dialog-voice-actions-change-voice}
   
 
-In this example, the voice is set to en-US_LisaVoice.
+You can change the voice of your assistant when it covers certain topics in the dialog that warrant it. For example, let's say you have a topic that applies only to your British customers. For that branch of conversation, you might want your assistant to speak with a British accent.
+
 
 ```json
 
@@ -390,7 +424,7 @@ In this example, the voice is set to en-US_LisaVoice.
           "type": "configure",
           "parameters": {
             "synthesize": {
-              "voice": "en-US_LisaVoice"
+              "voice": "en-GB_KateV3Voice"
             }
           }
         }
@@ -475,7 +509,7 @@ Full list of the phone integration parameters.
 | Parameter | Default | Description |
 | ---- | ---- | ---- |
 | `service_desk.sip.uri` | N/A | The SIP or telephone URI to transfer the call to, such as `sip:12345556789\\@myhost.com` or `tel:+18883334444` |
-| `service_desk.sip.notify_codes_to_accept` | N/A | A list of the error codes that are treated as a successful response when Voice Gateway processes NOTIFY requests during a call transfer. |
+| `service_desk.sip.notify_codes_to_accept` | N/A | A list of the error codes that are treated as a successful response when phone integration processes NOTIFY requests during a call transfer. |
 | `service_desk.sip.transfer_headers` | N/A | A list of custom header field name and value pairs to be added to a transfer request. |
 | `service_desk.sip.transfer_headers_send_method` | `custom_header` | The method by which the SIP Transfer Headers are sent. <ul><li>`custom_header`: Sends the transfer headers as part of the SIP message. Default. </li><li>`contact_header`: Sends the transfer headers in the Contact Header field.</li><li>`refer_to_header`: Sends the transfer headers in the `Refer-To` header field.</li>|
 
@@ -493,18 +527,18 @@ If you define a SIP URI as the transfer target, escape the at sign (`@`) in the 
 
 Generally there's two kinds of metadata values to be aware of:
 
-- `User-To-User`: This will be defined by Deb, it's custom user data that will be appended in the `SIP REFER` message used to transfer
+- `User-To-User`: This will be defined by Deb, it's custom user data that will be appended in the SIP `REFER` message used to transfer
 
 - `X-Watson-Assistant-Session-History-Key`: Contains a key that can be used by the Web Chat agent app to obtain information about the call such as the Session History.
 
 Also, the value of the SIP header will be restricted to 1024 bytes.
 
-Additionally, how the data is presented in the `SIP REFER` message depends on the value of `transfer_headers_send_method`. For example:
+Additionally, how the data is presented in the SIP `REFER` message depends on the value of `transfer_headers_send_method`. For example:
 
 
 ####  `custom_header`
 
-The metadata is appended to the `SIP REFER` message as headers:
+The metadata is appended to the SIP `REFER` message as headers:
 
 ```
 REFER sip:b@atlanta.example.com SIP/2.0
@@ -548,7 +582,7 @@ Content-Length: 0
 
 - `User-to-User Information`: Generally data that is used to identify a call across multiple applications. This is shared in a SIP header `User-To-User`, but there are other methods of sharing the data per [RFC7433](https://tools.ietf.org/html/rfc7433)
 
-- `Notify Codes`: During a call transfer that is initiated through a `SIP REFER`, the calling device typically sends `SIP NOTIFY` events to let the service know how the transfer is progressing. There are cases where some call devices send non-OK codes (2xx) such as `410 Gone` that need to be accepted as 'successful' transfers.
+- `Notify Codes`: During a call transfer that is initiated through a SIP `REFER`, the calling device typically sends SIP `NOTIFY` events to let the service know how the transfer is progressing. There are cases where some call devices send non-OK codes (2xx) such as `410 Gone` that need to be accepted as 'successful' transfers.
 
 
 ## Playing hold music or a voice recording
@@ -845,37 +879,28 @@ To send a specific message from a dialog node or a step in the actions, add the 
 
 If your *SMS with Twilio* integration supports more than one SMS phone number, be sure to specify the phone number that you want to use to send the text message. Otherwise, the text is sent using the same phone number that was called.
 
-The customer's reply text is sent in the `input.text`field. 
+After receiving a SMS message, a turn is initiated with a "vgwSMSMessage" text update to indicate that a SMS message was received from the caller.
+The customer's reply text is sent in the `vgwSMSMessage`context variable. 
 
+If a SMS message can't be sent to the caller, a turn is initiated with a "vgwSMSFailed" text to indicate that a SMS message can't be sent the caller. You can create an intent for "vgwSMSFailed" to handle the failure message with an appropriate response. 
 
 ``` json
 {
   "input": {
     "message_type": "text",
-    "text": "1545 Lexington Ave."
+    "text": "vgwSMSMessage"
   },
   "context": {
-    "integrations": {
-      "text_messaging": {
-        "private": {
-          "user_phone_number": "+18594213456"
-        },
-        "assistant_phone_number": "+18882346789"
+    "skills": {
+      "main skill": {
+        "user_defined": {
+          "vgwSMSMessage": "1545 Lexington Ave."
+        }
       }
     }
-  }
 }
 ```
 {: codeblock}
-
-**Inbound context related to the text_messaging channel**
-
-Note that in this case the `input.text` is assumed to hold the text input received directly from the SMS channel.
-
-|context name | details | value | legacy mapping |
-| :------ |:-----:|:-----:|:-----:|
-| private.user_phone_number | Phone number associated with a user and the SMS related message. Note that this is marked as private to prevent this information from being saved with Session History.| string| n/a|
-| assistant_phone_number | Phone number associated with the Watson Assistant side that received the SMS message. | string | n/a|
 
 
 
