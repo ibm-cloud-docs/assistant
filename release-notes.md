@@ -75,7 +75,7 @@ The new Watson Assistant
     - Build conversations with **actions**, which represent the tasks you want your assistant to help your customers with. Each action contains a series of steps that represent individual exchanges with a customer. 
     - A new way to **publish** lets you review and debug your work in a draft environment before going live to your customers.
     - Use a new suite of **analytics** to improve your assistant. Review which actions are being completed to see what your customers want help with, determine if your assistant understands and addresses customer needs, and decide how can you make your assistant better.
-    - New **[documentation](/docs//docs/watson-assistant)** focuses on the workflow of building, deploying, and improving your assistant.
+    - New **[documentation](/docs/watson-assistant){: external}** focuses on the workflow of building, deploying, and improving your assistant.
 
     You can easily switch to the new Watson Assistant and try it out. Visit the user account menu for your Watson Assistant instance, then choose **Switch to new experience**. 
 
