@@ -81,16 +81,6 @@ To apply a customization, such as changing the assistant's voice, from the very 
 In the actions, specify the command in `Customer starts with`.
 
 
-  
-**Inbound context related to the text_messaging channel**
-
-Note that in this case the `input.text` is assumed to hold the text input received directly from the SMS channel.
-
-|context name | details | value | legacy mapping |
-| :------ |:-----:|:-----:|:-----:|
-| private.user_phone_number | Phone number associated with a user and the SMS related message. Note that this is marked as private to prevent this information from being saved with Session History.| string| n/a|
-| assistant_phone_number | Phone number associated with the Watson Assistant side that received the SMS message. | string | n/a|
-
 ## Applying advanced commands to the speech to text service
 {: #dialog-voice-actions-speech-advanced}
 
@@ -99,7 +89,7 @@ You can apply the following speech customizations to specific dialog nodes:
 - [Use a custom language model](#dialog-voice-actions-custom-language)
 - [Use a custom grammar](#dialog-voice-actions-custom-grammar)
 
-To make any of these types of changes, edit the speech service configuration by adding the `speech_to_text` response type to your dialog or step in the actions. By default,the configuration decisions you make in the dialog node override the configuration that is specified in the integration setup page. The `update_strategy` parameter determines the update strategy when setting the speech configuration.
+To make any of these types of changes, edit the speech service configuration by adding the `speech_to_text` response type to your dialog or step in the actions. By default,the configuration decisions you make in the dialog node override the configuration that is specified in the integration setup page. The `update_strategy` parameter determines the update strategy when setting the speech configuration. 
 The changes you apply persist for the remainder of the conversation, unless you override them again.
 
 
@@ -501,18 +491,18 @@ If you define a SIP URI as the transfer target, escape the at sign (`@`) in the 
 
 Generally there's two kinds of metadata values to be aware of:
 
-- `User-To-User`: This will be defined by Deb, it's custom user data that will be appended in the SIP REFER message used to transfer
+- `User-To-User`: This will be defined by Deb, it's custom user data that will be appended in the `SIP REFER` message used to transfer
 
 - `X-Watson-Assistant-Session-History-Key`: Contains a key that can be used by the Web Chat agent app to obtain information about the call such as the Session History.
 
 Also, the value of the SIP header will be restricted to 1024 bytes.
 
-Additionally, how the data is presented in the SIP REFER message depends on the value of `transfer_headers_send_method`. For example:
+Additionally, how the data is presented in the `SIP REFER` message depends on the value of `transfer_headers_send_method`. For example:
 
 
 ####  `custom_header`
 
-The metadata is appended to the SIP REFER message as headers:
+The metadata is appended to the `SIP REFER` message as headers:
 
 ```
 REFER sip:b@atlanta.example.com SIP/2.0
@@ -556,7 +546,7 @@ Content-Length: 0
 
 - `User-to-User Information`: Generally data that is used to identify a call across multiple applications. This is shared in a SIP header `User-To-User`, but there are other methods of sharing the data per [RFC7433](https://tools.ietf.org/html/rfc7433)
 
-- `Notify Codes`: During a call transfer that through a SIP REFER, the calling device typically sends `SIP NOTIFY` events to let the service know how the transfer is progressing. There are cases where some call devices send non-OK codes (2xx) such as `410 Gone` that need to be accepted as 'successful' transfers.
+- `Notify Codes`: During a call transfer that is initiated through a `SIP REFER`, the calling device typically sends `SIP NOTIFY` events to let the service know how the transfer is progressing. There are cases where some call devices send non-OK codes (2xx) such as `410 Gone` that need to be accepted as 'successful' transfers.
 
 
 ## Playing hold music or a voice recording
@@ -876,6 +866,14 @@ The customer's reply text is sent in the `input.text`field.
 ```
 {: codeblock}
 
+**Inbound context related to the text_messaging channel**
+
+Note that in this case the `input.text` is assumed to hold the text input received directly from the SMS channel.
+
+|context name | details | value | legacy mapping |
+| :------ |:-----:|:-----:|:-----:|
+| private.user_phone_number | Phone number associated with a user and the SMS related message. Note that this is marked as private to prevent this information from being saved with Session History.| string| n/a|
+| assistant_phone_number | Phone number associated with the Watson Assistant side that received the SMS message. | string | n/a|
 
 
 
