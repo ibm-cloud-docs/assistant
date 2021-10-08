@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-09"
+lastupdated: "2021-09-27"
 
 subcollection: assistant
 
@@ -93,18 +93,18 @@ To get you started quickly, consider applying these roles at first.
 
 - To give someone the same level of access to a {{site.data.keyword.conversationshort}} service instance as you have, assign the user to the following roles:
 
-  - Instance platform role: **Administrator**
-  - Instance service role: **Manager**
+    - Instance platform role: **Administrator**
+    - Instance service role: **Manager**
 
 - To give someone manager access to a specific set of resources, but read-only access to everything else, assign the user to the following roles:
 
-  - Instance platform role: **Viewer**
-  - Instance service role: **Reader**
+    - Instance platform role: **Viewer**
+    - Instance service role: **Reader**
 
-  Then, for each assistant or skill that you want the person to be able to manage, add another role assignment like this:
+    Then, for each assistant or skill that you want the person to be able to manage, add another role assignment like this:
 
-  - Instance platform role: **Viewer**
-  - For an individual assistant or skill, assign the **Manager** role.
+    - Instance platform role: **Viewer**
+    - For an individual assistant or skill, assign the **Manager** role.
 
 ## Understanding roles
 {: #access-control-iam-roles}
@@ -155,6 +155,7 @@ Choose a service role for the user that will apply to all of the skills and assi
 | **Writer** | Read, edit, delete, or create assistants and skill in the service instance. |
 | **Manager** | Read, edit, delete, or create assistants and skills in the service instance; view all conversation logs; access the v1 API for all skills in the instance. |
 {: caption="Table 2. Global service role details" caption-side="top"}
+
 <!--| Logs | View conversation logs for all of the dialog skills in the service instance. |
 | Creator | Create new assistants and skills. |-->
 
@@ -174,6 +175,7 @@ You cannot assign someone to a resource-level role that has fewer privileges tha
 | Writer | Read, edit, delete, or create an assistant or skill. |
 | Manager | Read, edit, delete, or create an assistant or skill, and view conversation logs. |
 {: caption="Table 3. Resource service role details" caption-side="top"}
+
 <!--| Administrator | Invite others to collaborate on the specific assistant or skill, but not read or edit it. |
 | Logs | View conversation logs for the specific assistant or skill, but not edit anything. |-->
 
@@ -184,21 +186,21 @@ Anyone who creates an assistant or skill is automatically granted the Manager se
 
 - Reader
 
-  The following screen capture shows you what someone with Reader service access to a resource sees on the Dialog page.
+    The following screen capture shows you what someone with Reader service access to a resource sees on the Dialog page.
 
-  ![Shows the dialog page with disabled buttons.](images/access-control-read-only.png)
+    ![Shows the dialog page with disabled buttons.](images/access-control-read-only.png)
 
-  Most buttons, such as **Add node**, **Add folder**, and **Save new version** are disabled. There is no Analytics option in the navigation. The "Try it out" pane is available.
-  {: note}
+    Most buttons, such as **Add node**, **Add folder**, and **Save new version** are disabled. There is no Analytics option in the navigation. The "Try it out" pane is available.
+    {: note}
 
 - Writer
 
-  This screen capture shows you what someone with Writer service access to a resource sees on the same page.
+    This screen capture shows you what someone with Writer service access to a resource sees on the same page.
 
-  ![Shows the dialog page with buttons enabled, but no Analytics option in nav.](images/access-control-writer.png)
+    ![Shows the dialog page with buttons enabled, but no Analytics option in nav.](images/access-control-writer.png)
 
-  All of the buttons are available. There is no Analytics option in the navigation.
-  {: note}
+    All of the buttons are available. There is no Analytics option in the navigation.
+    {: note}
 
 ## Common role assignments
 {: #access-control-common-roles}
@@ -307,7 +309,7 @@ Act now to get the service instance owner to change your access level.
 
     You can copy, edit, and then paste the following text into an email or message that you send to the instance owner.
 
-    ```
+    ```code
     You are the owner of the {service instance name} {{site.data.keyword.conversationshort}} service instance. 
     I am currently a {role-you-have} of the instance. 
     Please change my service access role to {role-you-want}.

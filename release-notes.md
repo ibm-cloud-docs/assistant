@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-10-07"
 
 subcollection: assistant
 
@@ -62,6 +62,22 @@ Existing models that you have trained will not be immediately impacted, but mode
 {: #release-notes-tooling-changes}
 
 The change log lists changes that were made this year, ordered by the date they were released.
+
+## 07 October 2021
+{: #assistant-07Oct2021}
+{: release-note}
+
+The new Watson Assistant
+:   The new Watson Assistant is now available! This new experience, focused on using **actions** to build customer conversations, is designed to make it simple enough for *anyone* to build a virtual assistant. Building, testing, publishing, and analyzing your assistant can all now be done in one simple and intuitive interface.
+
+    - New **navigation** provides a workflow for building, previewing, publishing, and analyzing your assistant. 
+    - Each assistant has a **home page** with a task list to help you get started. 
+    - Build conversations with **actions**, which represent the tasks you want your assistant to help your customers with. Each action contains a series of steps that represent individual exchanges with a customer. 
+    - A new way to **publish** lets you review and debug your work in a draft environment before going live to your customers.
+    - Use a new suite of **analytics** to improve your assistant. Review which actions are being completed to see what your customers want help with, determine if your assistant understands and addresses customer needs, and decide how can you make your assistant better.
+    - New **[documentation](/docs/watson-assistant){: external}** focuses on the workflow of building, deploying, and improving your assistant.
+
+    You can easily switch to the new Watson Assistant and try it out. Visit the user account menu for your Watson Assistant instance, then choose **Switch to new experience**. 
 
 ## 21 September 2021
 {: #21Sep2021}
