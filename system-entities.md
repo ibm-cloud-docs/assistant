@@ -24,6 +24,8 @@ keywords: system entity, sys-number, sys-date, sys-time
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
+{{site.data.content.newlink}}
+
 # System entities
 {: #system-entities}
 

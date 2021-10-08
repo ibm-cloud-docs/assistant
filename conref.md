@@ -25,6 +25,8 @@ content-type: conref
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
+{{site.data.content.newlink}}
+
 # Content references for watson-assistant
 {: #assistant-conref}
 

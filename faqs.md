@@ -26,6 +26,8 @@ content-type: faq
 {:swift: .ph data-hd-programlang='swift'}
 {:faq: data-hd-content-type='faq'}
 
+{{site.data.content.newlink}}
+
 # FAQ
 {: #faqs}
 

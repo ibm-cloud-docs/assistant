@@ -22,6 +22,8 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
+{{site.data.content.newlink}}
+
 # Requesting client actions ![BETA](images/beta.png)
 {: #dialog-actions-client}
 

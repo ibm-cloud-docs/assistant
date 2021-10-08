@@ -26,6 +26,8 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:table: .aria-labeledby="caption"}
 
+{{site.data.content.newlink}}
+
 # Adding custom dialog flows for integrations
 {: #dialog-integrations}
 

@@ -26,6 +26,8 @@ completion-time: 2h
 {:swift: .ph data-hd-programlang='swift'}
 {:step: data-tutorial-type='step'}
 
+{{site.data.content.newlink}}
+
 # Improving a dialog node with slots
 {: #tutorial-slots-complex}
 {: toc-content-type="tutorial"}

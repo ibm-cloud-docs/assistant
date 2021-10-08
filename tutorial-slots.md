@@ -26,6 +26,8 @@ completion-time: 30m
 {:swift: .ph data-hd-programlang='swift'}
 {:step: data-tutorial-type='step'}
 
+{{site.data.content.newlink}}
+
 # Adding a node with slots to a dialog
 {: #tutorial-slots}
 {: toc-content-type="tutorial"}
