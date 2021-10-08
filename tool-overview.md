@@ -16,6 +16,8 @@ subcollection: assistant
 {:table: .aria-labeledby="caption"}
 {:video: .video}
 
+{{site.data.content.newlink}}
+
 # Videos
 {: #tool-overview}
 

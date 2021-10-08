@@ -26,6 +26,8 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
 
+{{site.data.content.newlink}}
+
 # Logging activity with a webhook ![Enterprise plan only](images/enterprise.png)
 {: #webhook-log}
 

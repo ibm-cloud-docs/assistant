@@ -24,6 +24,8 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
 
+{{site.data.content.newlink}}
+
 # Webhook overview
 {: #webhook-overview}
 

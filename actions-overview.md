@@ -25,6 +25,8 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:table: .aria-labeledby="caption"}
 
+{{site.data.content.newlink}}
+
 # Actions skill overview <!--![Beta](images/beta.png)-->
 {: #actions-overview}
 

@@ -24,6 +24,8 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
 
+{{site.data.content.newlink}}
+
 # Watson Assistant release notes
 {: #release-notes}
 

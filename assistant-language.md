@@ -27,6 +27,8 @@ subcollection: assistant
 {:gif: data-image-type='gif'}
 {:video: .video}
 
+{{site.data.content.newlink}}
+
 # Adding support for global audiences
 {: #assistant-language}
 

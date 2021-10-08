@@ -29,6 +29,8 @@ completion-time: 10m
 {:download: .download}
 {:video: .video}
 {:step: data-tutorial-type='step'}
+
+{{site.data.content.newlink}}
  
 # Getting started with an actions skill
 {: #gs-actions}

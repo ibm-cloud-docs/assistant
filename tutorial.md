@@ -27,6 +27,8 @@ completion-time: 2h
 {:gif: data-image-type='gif'}
 {:step: data-tutorial-type='step'}
 
+{{site.data.content.newlink}}
+
 # Building a complex dialog
 {: #tutorial}
 {: toc-content-type="tutorial"}

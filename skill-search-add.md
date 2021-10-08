@@ -23,6 +23,8 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
 
+{{site.data.content.newlink}}
+
 # Embedding existing help content ![Plus or higher plan only](images/plus.png)
 {: #skill-search-add}
 

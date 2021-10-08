@@ -25,7 +25,9 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:table: .aria-labeledby="caption"}
 
-# Adding an actions skill <!--![Beta](images/beta.png)-->
+{{site.data.content.newlink}}
+
+# Adding an actions skill 
 {: #skill-actions-add}
 
 Add an actions skill to design a content-rich dialog for your assistant.

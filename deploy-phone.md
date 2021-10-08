@@ -23,6 +23,8 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
+{{site.data.content.newlink}}
+
 # Integrating with phone ![Plus or higher plans only](images/plus.png)
 {: #deploy-phone}
 
