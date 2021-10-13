@@ -112,13 +112,12 @@ The following table describes the context variables that have special meaning in
 
 | Context variable name | Expected value | Description |
 | -------------- | ------ | ----------- |
-| `user_phone_number` | String | The phone number that the call was received from. |
 | `sip_call_id` | SIP Call-ID | The SIP call ID associated with the {{site.data.keyword.conversationshort}} session. |
 | `sip_custom_invite_headers` | User-defined value | A user-defined list of SIP headers that are pulled from the initial SIP `INVITE` request and passed to the {{site.data.keyword.conversationshort}} service. For example: "`sip_custom_invite_headers`": {<br>&nbsp;&nbsp;"Custom-Header1": "123",<br>&nbsp;&nbsp;"Custom-Header2": "456"<br>}</code> |
 | `private.sip_from_uri` | SIP From URI | The SIP From URI associated with the {{site.data.keyword.conversationshort}} service.|
 | `private.sip_request_uri` | SIP Request URI | The SIP request URI that started the conversation session. |
 | `private.sip_to_uri` | SIP To URI | The SIP To URI associated with the conversation session.|
-| `private.user_phone_number` | String | The phone number that the SMS message was received from. |
+| `private.user_phone_number` | String | The phone number that the call was received from. |
 | `assistant_phone_number` | String | The phone number associated with the Watson Assistant side that received the phone call.| 
 {: caption="Table 3. Context variables set by the phone channel" caption-side="top"}
 
