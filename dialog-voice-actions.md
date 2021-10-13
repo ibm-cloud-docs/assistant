@@ -56,9 +56,9 @@ For command reference documentation, see [Phone integration commands reference](
 ## Adding phone-based custom response types to your dialog or actions 
 {: #dialog-voice-actions-add}
 
-When calling voice-specific commands from a dialog node or a step in the actions, you need to define the command within the `output.generic` array.
+When initiating voice-specific commands from a dialog node or a step in the actions, you need to define the command within the `output.generic` array.
 
-To enable voice-specific response type, you must add a JSON code block to the dialog node or step in the actions where you want the command to trigger. 
+To enable voice-specific response type, you must add a JSON code block to the dialog node or to the step in the actions where you want the command to trigger. 
 
 To add a JSON code block to a dialog node, complete the following steps:
 
@@ -84,8 +84,7 @@ You can apply the following speech customizations to specific dialog nodes:
 - [Use a custom language model](#dialog-voice-actions-custom-language) 
 - [Use a custom grammar](#dialog-voice-actions-custom-grammar)
 
-To make any of these types of changes, edit the speech service configuration by adding the `speech_to_text` response type to your dialog or step in the actions. By default,the configuration decisions you make in the dialog node override the configuration that is specified in the integration setup page. The `update_strategy` parameter determines the update strategy when setting the speech configuration. 
-The changes you apply persist for the remainder of the conversation, unless you override them again.
+To make any of these types of changes, edit the speech service configuration by adding the `speech_to_text` response type to your dialog or to the step in the actions. By default, the changes you apply persist for the remainder of the conversation, unless you override them again or you change this behavior by specifying an `update_strategy`.
 
 
 ```json
@@ -363,13 +362,13 @@ Applies a set of parameters to pass to the {{site.data.keyword.texttospeechshort
 |parameter name|parameter value| required (yes/no) | default |
 | :------ |:-----:| :-----: | :-----: |
 |synthesize|Parameters for the {{site.data.keyword.texttospeechshort}} service. See [WebSockets API reference for Watson Text to Speech Service](https://cloud.ibm.com/apidocs/text-to-speech#websocket_methods).Note that WA is only validating the key and not the value here.|yes|n/a|
-|update_method|Specifies the update strategy to choose when setting the speech configuration. Possible values include: *replace*, *replace_once*, *merge* or *merge_once* | no | *replace* |
+|update_strategy|Specifies the update strategy to choose when setting the speech configuration. Possible values include: *replace*, *replace_once*, *merge* or *merge_once* | no | *replace* |
 
   
 
 **Using update_strategy**
 
-You can use the update_method property in dynamic configuration to define how changes to the configuration are made, by either replacing the configuration or merging new configuration properties, and specifying whether these changes occur for the duration of the call or one conversation turn. This table describes this in more detail:
+You can use the update_strategy property in dynamic configuration to define how changes to the configuration are made, by either replacing the configuration or merging new configuration properties, and specifying whether these changes occur for the duration of the call or one conversation turn. This table describes this in more detail:
 
   
 |value|description |
@@ -447,9 +446,9 @@ The custom voice that you specify for this dialog branch is used by each subsequ
 ## Transferring a call to a human agent
 {: #dialog-voice-actions-transfer}
 
-When you configure the phone integration, you can optionally define a default message and routing information to transfer calls to human agents in a call center when a connection fails. If you want to define specific behavior for a given dialog branch, you can add the `Connect to human agent` response type to do so.
+When you configure the phone integration, you can optionally define a default message and routing information to transfer calls to human agents in a call center when a connection fails. If you want to define specific behavior for a given dialog branch, you can add the `Connect to human agent` response type to do so. When a `Connect to human agent` response type is sent to the phone channel a SIP transfer as defined by [RFC 5589](https://datatracker.ietf.org/doc/html/rfc5589#section-6.1) is initiated using the SIP `REFER` message.
 
-The message defined in `Response when agents are online` will be played to the caller before a transfer is initiated. Subsequently, if the call transfer fails, the message defined under `Response when no agents are online` will be synthesized and played to the caller.  The Phone Integration will not use `Message to human agent` field, but it will be previewed to the agent if the WebChat AgentApp is used.
+The message defined in `Response when agents are online` (`agent_available.message`) will be played to the caller before a transfer is initiated. Subsequently, if the call transfer fails, the message defined under `Response when no agents are online` (`agent_unavailable.message`) will be synthesized and played to the caller. 
 
 You can add the phone integration specific parameters to the `Connect to human agent` response type using the JSON editor.
 
@@ -470,17 +469,13 @@ A more complete example of a transfer **utilizing** all of the configurable para
             "service_desk": {
               "sip": {
                 "uri": "sip:user\\@domain.com",
-                "accept_transfer_reject_codes": [
-                  "410",
-                  "202"
-                ],
                 "transfer_headers": [
                   {
                     "name": "Customer-Header1",
                     "value": "Some-Custom-Info"
                   },
                   {
-                    "name": "User-To-User",
+                    "name": "User-to-User",
                     "value": "XXXXXX"
                   }
                 ],
@@ -514,7 +509,8 @@ Full list of the phone integration parameters.
 | `service_desk.sip.transfer_headers_send_method` | `custom_header` | The method by which the SIP Transfer Headers are sent. <ul><li>`custom_header`: Sends the transfer headers as part of the SIP message. Default. </li><li>`contact_header`: Sends the transfer headers in the Contact Header field.</li><li>`refer_to_header`: Sends the transfer headers in the `Refer-To` header field.</li>|
 
 
-If you define a SIP URI as the transfer target, escape the at sign (`@`) in the URI by adding two backslashes (`\\`) in front of it.
+If you define a SIP URI as the transfer target, escape the at sign (`@`) in the URI by adding two backslashes (`\\`) in front of it. This is to prevent the string from being recognized as part of the entity shorthand syntax.
+
 
 ```json
     "uri": "sip:12345556789\\@myhost.com"
@@ -525,16 +521,14 @@ If you define a SIP URI as the transfer target, escape the at sign (`@`) in the 
 
 ###  Passing Watson Assistant Metadata in SIP Signaling
 
-Generally there's two kinds of metadata values to be aware of:
+In order to load the conversational history between the caller and Watson Assistant, there will be a value set in the `User-to-User` header as a key that can be used with the WebChat Agent App.
+If `User-to-User` is specified in the list of `transfer_headers`, the session history key will instead be sent in the `X-Watson-Assistant-Session-History-Key` header.
 
-- `User-To-User`: This will be defined by Deb, it's custom user data that will be appended in the SIP `REFER` message used to transfer
+The value of the SIP header will be restricted to 1024 bytes.
 
-- `X-Watson-Assistant-Session-History-Key`: Contains a key that can be used by the Web Chat agent app to obtain information about the call such as the Session History.
+Additionally, how the data is presented in the SIP `REFER` message depends on the value of `transfer_headers_send_method`(as defined in [Generic Service Desk SIP Parameters](#generic-service-desk-sip-parameters)). 
 
-Also, the value of the SIP header will be restricted to 1024 bytes.
-
-Additionally, how the data is presented in the SIP `REFER` message depends on the value of `transfer_headers_send_method`. For example:
-
+For example:
 
 ####  `custom_header`
 
@@ -550,15 +544,38 @@ CSeq: 23 REFER
 Max-Forwards: 7
 Refer-To: sip:user@domain.com
 X-Watson-Assistant-Token: 8f817472-8c57-4117-850d-fdf4fd23ba7
-User-To-User: 637573746f6d2d757365722d746f2d75736572;encoding=hex
+User-to-User: dev::latest::212033::0a64c30d-c558-4055-85ad-ef75ad6cc29d::978f1fd7-4e24-47d8-adb0-24a8a6eff69e::b5ffd6c2-902f-4658-b586-e3fc170a6cf3::7ad616a350cc48078f17e3ee3df551de;encoding=ascii
 Contact: sip:a@atlanta.example.co
 Content-Length: 0
+
 ```
 {: codeblock}
 
+
+If a custom `User-to-User` header is specified, then the session history key will be set in the `X-Watson-Assistant-Session-History-Key` header.
+
+```
+REFER sip:b@atlanta.example.com SIP/2.0
+Via: SIP/2.0/UDP agenta.atlanta.example.com;branch=z9hG4bK2293940223
+To: <sip:b@atlanta.example.com>
+From: <sip:a@atlanta.example.com>;tag=193402342
+Call-ID: 898234234@agenta.atlanta.example.com
+CSeq: 93809823 REFER
+Max-Forwards: 70
+Refer-To: sip:user@domain.com
+    User-to-User: 637573746f6d2d757365722d746f2d75736572;encoding=hex;
+X-Watson-Assistant-Session-History-Key: dev::latest::212033::0a64c30d-c558-4055-85ad-ef75ad6cc29d::978f1fd7-4e24-47d8-adb0-24a8a6eff69e::b5ffd6c2-902f-4658-b586-e3fc170a6cf3::7ad616a350cc48078f17e3ee3df551de
+Contact: sip:a@atlanta.example.com
+Content-Length: 0
+
+```
+{: codeblock}
+
+
 ####  `refer_to_header`
 
-  The metadata is passed into the `Refer-To` header as query parameters per the [SIP RFC 3261](https://tools.ietf.org/html/rfc3261)
+
+The metadata is passed into the `Refer-To` header as query parameters per the [SIP RFC 3261](https://tools.ietf.org/html/rfc3261)
 
 ```
 REFER sip:b@atlanta.example.com SIP/2.0
@@ -568,21 +585,38 @@ From: <sip:a@atlanta.example.com>;tag=193402342
 Call-ID: 898234234@agenta.atlanta.example.com
 CSeq: 23 REFER
 Max-Forwards: 70
-Refer-To: sip:user@domain.com?User-To-User=637573746f6d2d757365722d746f2d75736572%3Bencoding%3Dhex&X-Watson-Assistant-Token=8f817472-8c57-4117-850d-fdf4fd23ba79
+Refer-To: sip:user@domain.com?User-to-User=dev::latest::893499::dff9c274-adc4-4f63-93de-781166760bf8::978f1fd7-4e24-47d8-adb0-24a8a6eff69e::b5ffd6c2-902f-4658-b586-e3fc170a6cf3::7ad616a350cc48078f17e3ee3df551de%3Bencoding%3Dascii
 Contact: sip:a@atlanta.example.com
 Content-Length: 0
 
 ```
 {: codeblock}
 
+
+If a custom `User-to-User` header is specified, then the session history key will be set in the `X-Watson-Assistant-Session-History-Key` header.
+
+```
+REFER sip:b@atlanta.example.com SIP/2.0
+Via: SIP/2.0/UDP agenta.atlanta.example.com;branch=z9hG4bK2293940223
+To: <sip:b@atlanta.example.com>
+From: <sip:a@atlanta.example.com>;tag=193402342
+Call-ID: 898234234@agenta.atlanta.example.com
+CSeq: 93809823 REFER
+Max-Forwards: 70
+Refer-To: sip:user@domain.com?User-to-User=637573746f6d2d757365722d746f2d75736572%3Bencoding%3Dhe&X-Watson-Assistant-Session-History-Key=dev::latest::893499::dff9c274-adc4-4f63-93de-781166760bf8::978f1fd7-4e24-47d8-adb0-24a8a6eff69e::b5ffd6c2-902f-4658-b586-e3fc170a6cf3::7ad616a350cc48078f17e3ee3df551de
+Contact: sip:a@atlanta.example.com
+Content-Length: 0
+
+```
+{: codeblock}
+
+
 ####  Domain Concepts
 
 
 - `SIP URIs`: Typically SIP URIs are used for identifying SIP devices and generally follow the pattern: `sip:[user]@[hostname]`.
 
-- `User-to-User Information`: Generally data that is used to identify a call across multiple applications. This is shared in a SIP header `User-To-User`, but there are other methods of sharing the data per [RFC7433](https://tools.ietf.org/html/rfc7433)
-
-- `Notify Codes`: During a call transfer that is initiated through a SIP `REFER`, the calling device typically sends SIP `NOTIFY` events to let the service know how the transfer is progressing. There are cases where some call devices send non-OK codes (2xx) such as `410 Gone` that need to be accepted as 'successful' transfers.
+- `User-to-User Information`: Generally data that is used to identify a call across multiple applications. This is shared in a SIP header `User-to-User`, but there are other methods of sharing the data per [RFC7433](https://tools.ietf.org/html/rfc7433).
 
 
 ## Playing hold music or a voice recording
@@ -590,14 +624,42 @@ Content-Length: 0
 
 To play hold music or to play a recorded message, use the `audio` response type.
 
-You cannot play hold music during a call transfer. But, you might want to play hold music if your dialog needs time to perform processing of some kind, such as calling a client-side action or making a call to a webhook. You can look for places where the dialog uses the *pause* response type to find nodes where this response type might be useful.
+You cannot play hold music during a call transfer. But, you might want to play hold music if your dialog needs time to perform processing of some kind, such as calling a client-side action or making a call to a webhook. 
 
+```
+{
+  "output": {
+    "generic": [
+      {
+        "user_defined": {
+          "vgwAction": {
+            "command": "vgwActForceNoInputTurn"
+          }
+        },
+        "response_type": "user_defined"
+      },
+      {
+        "source": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Random_composition3.wav",
+        "response_type": "audio",
+        "channel_options": {
+          "voice_telephony": {
+            "loop": true
+          }
+        }
+      }
+    ]
+  }
+}
+```
+{: codeblock}
 
 You can specify the following parameter values for the `audio` response type:
 
-- `Audio source`: URL to a publicly-accessible audio file. The audio file must be single channel (mono), PCM-encoded, and have a 8,000 Hz sampling rate with 16 bits per sample. The file format must be `.wav`.
-- `Loop`: Select `On` or `Off` to indicate whether to repeatedly restart the audio play back after it finishes. The default value is `Off`.
+`source`: URL to a publicly-accessible audio file. The audio file must be single channel (mono), PCM-encoded, and have a 8,000 Hz sampling rate with 16 bits per sample. The file format must be .wav.
 
+`channel_options.voice_telephony.loop`: Specify `true` or `false` to indicate whether to repeatedly restart the audio play back after it finishes. The default value is `false`.
+
+When setting `channel_options.voice_telephony.loop` to `true`, add `vgwActForceNoInputTurn` to the `output.generic` array as shown in the example above. This will force the phone integration to initiate a turn with a `vgwNoInputTurn` text without waiting for an input from the caller. In the `vgwNoInputTurn` turn you can initiate a  transaction while the caller is on hold. When the `vgwNoInputTurn` turn completes, the looped audio stops.
 
 
 
@@ -821,7 +883,7 @@ An example that includes custom SIP headers is shown here:
                   "value": "Some-Custom-Info"
                 },
                 {
-                  "name": "User-To-User",
+                  "name": "User-to-User",
                   "value": "XXXXXX"
                 }
               ]
@@ -877,7 +939,7 @@ To send a specific message from a dialog node or a step in the actions, add the 
 ```
 {: codeblock}
 
-If your *SMS with Twilio* integration supports more than one SMS phone number, be sure to specify the phone number that you want to use to send the text message. Otherwise, the text is sent using the same phone number that was called.
+If your *SMS with Twilio* integration supports more than one SMS phone number  or you are using a non-Twilio SIP trunk, be sure to specify the phone number that you want to use to send the text message. Otherwise, the text is sent using the same phone number that was called.
 
 After receiving a SMS message, a turn is initiated with a "vgwSMSMessage" text update to indicate that a SMS message was received from the caller.
 The customer's reply text is sent in the `vgwSMSMessage`context variable. 
