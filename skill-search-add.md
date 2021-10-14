@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-09-09"
+lastupdated: "2021-10-14"
 
 subcollection: assistant
 
@@ -257,6 +257,8 @@ If you upload a JSON file that contains repeating name values, then only the fir
     | No results found | No search results are found | `I searched my knowledge base for information that might address your query, but did not find anything useful to share.` |
     | Error message | I was unable to complete the search for some reason | `I might have information that could help address your query, but am unable to search my knowledge base at the moment.` |
     {: caption="Search result messages" caption-side="top"}
+
+1. **Extract FAQ pairs** is applied automatically. Frequently asked questions content is identified automatically and used to give more precise results.
 
 1.  Choose whether to enable **Emphasize the answer**. 
 
