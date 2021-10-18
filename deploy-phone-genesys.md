@@ -58,13 +58,15 @@ To integrate your assistant with Genesys Cloud, follow these steps:
 
     - In the **Inbound SIP Termination Identifier** field, specify any name you want to use (for example, `Watson`). This value will not be used for now, but it is required by Genesys Cloud.
 
+    - In the **Protocol** field, select *TLS*.
+
     ![Genesys create trunk](images/phone-genesys-create-trunk.png)
 
 1. Under **Outbound**, scroll to the **SIP Servers or Proxies** section. Specify the following information:
 
     - In the **Hostname or IP Address** field, type the SIP URI (not including `sips:`) from your Watson Assistant phone integration settings.
 
-    - In the **Port** field, type `5060`.
+    - In the **Port** field, type `5061`.
     
     Click the **`+`** button.
 
@@ -94,7 +96,11 @@ To integrate your assistant with Genesys Cloud, follow these steps:
 
   ![Genesys select codec](images/phone-genesys-select-codec.png)
 
-1. Under **Protocol**, enable **Take Back and Transfer**.
+1. Under **Protocol**
+  - In the **Header/Invite** section, toggle the **Conversation Headers** switch to **Enabled**
+  - Enable **Take Back and Transfer**.
+
+  ![Genesys configure protocol](images/phone-genesys-configure-protocol.png)
 
 1. Click **Save External Trunk**.
 
@@ -196,6 +202,10 @@ Now that your Genesys Cloud environment can connect to Watson Assistant, you can
 
       ![Genesys task](images/phone-genesys-task.png)
 
+    1. From your toolbox, under **Data**, drag **Set Participant Data** widget into the first action. Click on the widget and specify an attribute name **uuiData** and for value to assign, choose the type to be an "Expression" and enter `Call.UUIData` as the value.
+
+      ![Genesys Set participant data widget](images/phone-genesys-set-participant-data-widget.png)
+
     1. From your toolbox, under **Transfer**, drag the **Transfer to ACD** widget into the first action.
 
       ![Genesys transfer widget](images/phone-genesys-transfer-widget.png)
@@ -230,3 +240,8 @@ Now that your Genesys Cloud environment can connect to Watson Assistant, you can
   {: note}
 
 1. Make a test call and say something that initiates a transfer to an agent. In your Genesys Cloud console, you should see the transfer take place.
+
+
+###  Share the conversation history with service desk agents 
+
+To enable the service desk agent to get a quick view of the conversation history between the visitor and the assistant, setup the Watson Assistant Agent App app for your Genesys Pure Cloud Environment. [Learn more](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/genesys-agent-app/src/genesys/agentApp)
