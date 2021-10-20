@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-10-20"
 
 subcollection: assistant
 
@@ -405,7 +405,6 @@ The `connect_to_agent` response type supports the following phone-specific prope
 | Parameter | Default | Description |
 |-----------|---------|-------------|
 | `service_desk.sip.uri` | N/A | The SIP or telephone URI to transfer the call to, such as `sip:12345556789\\@myhost.com` or `tel:+18883334444` |
-| `service_desk.sip.notify_codes_to_accept` | N/A | A list of the error codes that are treated as a successful response when the phone integration processes `NOTIFY` requests during a call transfer |
 | `service_desk.sip.transfer_headers` | N/A | A list of custom header field name/value pairs to be added to a transfer request |
 | `service_desk.sip.transfer_headers_send_method` | `custom_header` | The method by which the SIP transfer headers are sent: \n - `custom_header`: Sends the transfer headers as part of the SIP message. This is the default value. \n - `contact_header`: Sends the transfer headers in the `Contact` header. \n - `refer_to_header`: Sends the transfer headers in the `Refer-To` header. |
 
@@ -437,7 +436,7 @@ Max-Forwards: 7
 Refer-To: sip:user@domain.com
 X-Watson-Assistant-Token: 8f817472-8c57-4117-850d-fdf4fd23ba7
 User-to-User: dev::latest::212033::0a64c30d-c558-4055-85ad-ef75ad6cc29d::978f1fd7-4e24-47d8-adb0-24a8a6eff69e::b5ffd6c2-902f-4658-b586-e3fc170a6cf3::7ad616a350cc48078f17e3ee3df551de;encoding=ascii
-Contact: sip:a@atlanta.example.co
+Contact: sip:a@atlanta.example.com
 Content-Length: 0
 ```
 {: codeblock}
@@ -454,7 +453,7 @@ Call-ID: 898234234@agenta.atlanta.example.com
 CSeq: 93809823 REFER
 Max-Forwards: 70
 Refer-To: sip:user@domain.com
-    User-to-User: 637573746f6d2d757365722d746f2d75736572;encoding=hex;
+User-to-User: 637573746f6d2d757365722d746f2d75736572;encoding=hex;
 X-Watson-Assistant-Session-History-Key: dev::latest::212033::0a64c30d-c558-4055-85ad-ef75ad6cc29d::978f1fd7-4e24-47d8-adb0-24a8a6eff69e::b5ffd6c2-902f-4658-b586-e3fc170a6cf3::7ad616a350cc48078f17e3ee3df551de
 Contact: sip:a@atlanta.example.com
 Content-Length: 0
@@ -776,7 +775,7 @@ If your *SMS with Twilio* integration supports more than one SMS phone number, o
 
 After the assistant receives an SMS message, a new conversation turn is initiated with the text input `vgwSMSMessage`. This input indicates that a message was received from the caller. The text of the customer's message is included as the value of the `vgwSMSMessage`context variable. 
 
-If the assistant is unabel to send an SMS message to the caller, a new turn is initiated with the text input `vgwSMSFailed`. This input indicates that an SMS message could not be sent the caller. You can design your dialog or actions to handle such a failure by creating intents or actions that are triggered by the input text `vgwSMSFailed`.
+If the assistant is unable to send an SMS message to the caller, a new turn is initiated with the text input `vgwSMSFailed`. This input indicates that an SMS message could not be sent the caller. You can design your dialog or actions to handle such a failure by creating intents or actions that are triggered by the input text `vgwSMSFailed`.
 
 ``` json
 {
