@@ -159,6 +159,16 @@ To add an icon to your web page, complete the following steps:
 ## Dialog considerations
 {: #deploy-whatsapp-dialog}
 
+The rich responses that you add to the dialog are displayed in WhatsApp as expected, with the following exceptions:
+
+- **Image**: This response type embeds an image in the response. A title and description are displayed before the image.
+
+- **Audio**: This response type embeds audio from various file formats in the response. A title and description are not displayed, whether or not you specify them. WhatsApp automatically shows a preview of content on supported platforms (such as SoundCloud and Mixcloud). 
+
+- **Video**: This response type embeds a native video from various file formats in the response. A title and description are not displayed, whether or not you specify them. WhatsApp automatically shows a preview of content on supported platforms (such as YouTube and Vimeo).
+
+- The **iframe** response type is not supported.
+
 For the best customer experience, design your dialog with the capabilities of the WhatsApp integration in mind:
 
 - A text response that contains more than 1,600 characters is broken up into multiple responses.
