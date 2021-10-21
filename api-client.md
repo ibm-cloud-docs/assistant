@@ -26,6 +26,8 @@ subcollection: assistant
 {:note: .note}
 {:tip: .tip}
 
+{{site.data.content.newlink}}
+
 # Building a custom client
 {: #api-client}
 

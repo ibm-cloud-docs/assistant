@@ -1,16 +1,18 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2020-01-29"
+  years: 2021
+lastupdated: "2021-10-07"
 
-subcollection: assistant
+subcollection: watson-assistant
 
+content-type: conref
 
 ---
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:deprecated: .deprecated}
 {:important: .important}
 {:note: .note}
@@ -25,10 +27,9 @@ subcollection: assistant
 
 {{site.data.content.newlink}}
 
-# Integrating with a custom application
-{: #deploy-custom-app}
+# Content references for watson-assistant
+{: #assistant-conref}
 
-If the available integration channels do not meet your needs, you can build your own client application as the interface between the assistant and your users.
-{: shortdesc}
-
-See [API overview](/docs/assistant?topic=assistant-api-overview) for more information.
+This documentation is for the **classic IBM Watson Assistant** experience. To see the documentation for the new Watson Assistant, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
+{: important}
+{: #newlink}

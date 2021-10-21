@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-02"
+lastupdated: "2021-09-27"
 
 subcollection: assistant
 
@@ -23,6 +23,8 @@ subcollection: assistant
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
+
+{{site.data.content.newlink}}
 
 # Enable your skill to improve itself with autolearning ![Beta](images/beta.png)
 {: #autolearn}
@@ -66,8 +68,9 @@ You can enable autolearning when the following conditions are met:
 
 - Disambiguation is enabled for the skill.
 
-  Disambiguation is enabled automatically for new skills.
-  {: note}
+    Disambiguation is enabled automatically for new skills.
+    {: note}
+
 - You have at least one deployed assistant that is actively interacting with customers and has accumulated log data that the skill can learn from.
 
 <!--Autolearning is optimized for use with the built-in web chat integration. This integration, in particular, has a *Suggestions* feature which increases the opportunities for users to make choices, and therefore for the skill to learn from them.
@@ -109,10 +112,10 @@ The following graphs are available:
 
 - **Modifications**: Shows the percentage of responses that were modified by autolearning in the selected time frame.
 
-  Click **View modifications** to walk through specific cases that show you how the assistant responded because autolearning was enabled as opposed to how it would have responded had autolearning not been enabled. You can review the cases to judge for yourself whether the change that was made by autolearning was appropriate and helpful or not.
+    Click **View modifications** to walk through specific cases that show you how the assistant responded because autolearning was enabled as opposed to how it would have responded had autolearning not been enabled. You can review the cases to judge for yourself whether the change that was made by autolearning was appropriate and helpful or not.
 - **Single answer percentage**: Shows the number of times your assistant was able to answer a customer's question with a single response.
 
-  The goal of autolearning is to limit the effort that a customer has to expend to reach the best answer. As autolearning observes user behavior, it learns about which answer is most often the best. First, it moves the best answer to the top of the disambiguation list. Next, it reduces the number of other options in the list. Ultimately, it is able to replace the disambiguation list entirely with the single, best answer. The higher the percentage of single answers, the better.
+    The goal of autolearning is to limit the effort that a customer has to expend to reach the best answer. As autolearning observes user behavior, it learns about which answer is most often the best. First, it moves the best answer to the top of the disambiguation list. Next, it reduces the number of other options in the list. Ultimately, it is able to replace the disambiguation list entirely with the single, best answer. The higher the percentage of single answers, the better.
 - **Average list length**: Shows the number of options that were shown in a disambiguation list. The lower the number of options, the better because it means that your customer was able to expend less effort to find the best answer.
 
 ### Using Python notebooks to track customer effort
@@ -136,5 +139,5 @@ You can limit how the service uses your data to improve your assistant in the fo
 - To prevent your own skill from applying what it learns by observing user choices to your skill, you must turn off the autolearning feature.
 - To prevent your skill from observing user choices, disconnect the live assistant from the skill. 
 
-  Don't disconnect a live assistant if its logs are being used as the source of intent and intent user example recommendations.
-  {: tip}
+    Don't disconnect a live assistant if its logs are being used as the source of intent and intent user example recommendations.
+    {: tip}

@@ -23,6 +23,8 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
+{{site.data.content.newlink}}
+
 # Modifying a dialog using the API
 {: #api-dialog-modify}
 

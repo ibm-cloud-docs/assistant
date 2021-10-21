@@ -24,6 +24,8 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
 
+{{site.data.content.newlink}}
+
 # Getting help with intents ![Plus or higher plans only](images/plus.png)
 {: #intent-recommendations}
 

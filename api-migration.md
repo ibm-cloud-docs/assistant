@@ -26,6 +26,8 @@ subcollection: assistant
 {:note: .note}
 {:tip: .tip}
 
+{{site.data.content.newlink}}
+
 # Migrating to the v2 API
 {: #api-migration}
 

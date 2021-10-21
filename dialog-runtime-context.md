@@ -27,6 +27,8 @@ subcollection: assistant
 {:gif: data-image-type='gif'}
 {:video: .video}
 
+{{site.data.content.newlink}}
+
 # Personalizing the dialog with context
 {: #dialog-runtime-context}
 

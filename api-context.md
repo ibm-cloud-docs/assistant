@@ -26,6 +26,8 @@ subcollection: assistant
 {:note: .note}
 {:tip: .tip}
 
+{{site.data.content.newlink}}
+
 # Accessing context data
 {: #api-client-get-context}
 

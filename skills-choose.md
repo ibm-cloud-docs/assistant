@@ -25,6 +25,8 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:table: .aria-labeledby="caption"}
 
+{{site.data.content.newlink}}
+
 # Choosing a conversational skill
 {: #skills-choose}
 

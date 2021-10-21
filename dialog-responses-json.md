@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-22"
+lastupdated: "2021-10-21"
 
 subcollection: assistant
 
@@ -22,6 +22,8 @@ subcollection: assistant
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
+
+{{site.data.content.newlink}}
 
 # Defining responses using the JSON editor
 {: #dialog-responses-json}
@@ -121,7 +123,7 @@ The following response types are supported by the generic JSON format.
 Displays an image specified by a URL.
 
 #### Fields
-{: #{: #dialog-responses-json-image-fields}
+{: #dialog-responses-json-image-fields}
 
 | Name          | Type   | Description                        | Required? |
 |---------------|--------|------------------------------------|-----------|
@@ -129,6 +131,7 @@ Displays an image specified by a URL.
 | source        | string | The `https:` URL of the image. The specified image must be in .jpg, .gif, or .png format. | Y |
 | title         | string | The title to show before the image.| N         |
 | description   | string | The text of the description that accompanies the image. | N |
+| alt_text      | string | Descriptive text that can be used for screen readers or other situations where the image cannot be seen. | N |
 
 #### Example
 {: #dialog-responses-json-image-example}
@@ -144,6 +147,116 @@ This example displays an image with a title and descriptive text.
         "source": "https://example.com/image.jpg",
         "title": "Example image",
         "description": "An example image returned as part of a multimedia response."
+      }
+    ]
+  }
+}
+```
+
+### Video
+{: #dialog-responses-json-video}
+
+Displays a video specified by a URL.
+
+#### Fields
+{: #dialog-responses-json-video-fields}
+
+| Name          | Type   | Description                        | Required? |
+|---------------|--------|------------------------------------|-----------|
+| response_type | string | `video`                            | Y         |
+| source        | string | The `https:` URL of the video. The URL can specify either a video file or a streaming video on a supported hosting service. For more information, see [Adding a *Video* response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-video). | Y |
+| title         | string | The title to show before the video.| N         |
+| description   | string | The text of the description that accompanies the video. | N |
+| alt_text      | string | Descriptive text that can be used for screen readers or other situations where the video cannot be seen. | N |
+| channel_options.chat.dimensions.base_height | string | The base height (in pixels) to use to scale the video to a specific display size. | N |
+
+#### Example
+{: #dialog-responses-json-video-example}
+
+This example displays an video with a title and descriptive text.
+
+```json
+{
+  "output": {
+    "generic":[
+      {
+        "response_type": "video",
+        "source": "https://example.com/videos/example-video.mp4",
+        "title": "Example video",
+        "description": "An example video returned as part of a multimedia response."
+      }
+    ]
+  }
+}
+```
+
+### Audio
+{: #dialog-responses-json-audio}
+
+Plays an audio clip specified by a URL.
+
+#### Fields
+{: #dialog-responses-json-audio-fields}
+
+| Name          | Type   | Description                        | Required? |
+|---------------|--------|------------------------------------|-----------|
+| response_type | string | `audio`                            | Y         |
+| source        | string | The `https:` URL of the audio clip. The URL can specify either an audio file or an audio clip on a supported hosting service. For more information, see [Adding an *Audio* response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-audio). | Y |
+| title         | string | The title to show before the audio player.| N  |
+| description   | string | The text of the description that accompanies the audio player. | N |
+| alt_text      | string | Descriptive text that can be used for screen readers or other situations where the audio player cannot be seen. | N |
+| channel_options.voice_telephony.loop | string | Whether the audio clip should repeat indefinitely (phone integration only). | N |
+
+#### Example
+{: #dialog-responses-json-audio-example}
+
+This example plays an audio clip with a title and descriptive text.
+
+```json
+{
+  "output": {
+    "generic":[
+      {
+        "response_type": "audio",
+        "source": "https://example.com/audio/example-file.mp3",
+        "title": "Example audio file",
+        "description": "An example audio clip returned as part of a multimedia response."
+      }
+    ]
+  }
+}
+```
+
+### iframe
+{: #dialog-responses-json-iframe}
+
+Embeds content from an external website as an HTML `iframe` element.
+
+#### Fields
+{: #dialog-responses-json-iframe-fields}
+
+| Name          | Type   | Description                        | Required? |
+|---------------|--------|------------------------------------|-----------|
+| response_type | string | `iframe`                           | Y         |
+| source        | string | The URL of the external content. The URL must specify content that is embeddable in an HTML `iframe` element. For more information, see [Adding an *iframe* response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-iframe). | Y |
+| title         | string | The title to show before the embedded content.| N |
+| description   | string | The text of the description that accompanies the embedded content. | N |
+| image_url     | string | The URL of an image that shows a preview of the embedded content. | N |
+
+#### Example
+{: #dialog-responses-json-iframe-example}
+
+This example embeds an iframe with a title and description.
+
+```json
+{
+  "output": {
+    "generic":[
+      {
+        "response_type": "iframe",
+        "source": "https://example.com/embeddable/example",
+        "title": "Example iframe",
+        "description": "An example of embeddable content returned as an iframe response."
       }
     ]
   }

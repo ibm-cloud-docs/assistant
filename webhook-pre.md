@@ -26,6 +26,8 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
 
+{{site.data.content.newlink}}
+
 # Making a call before processing a message
 {: #webhook-pre}
 

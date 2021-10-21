@@ -26,6 +26,8 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
 
+{{site.data.content.newlink}}
+
 # Adding integrations
 {: #deploy-integration-add}
 

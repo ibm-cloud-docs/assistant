@@ -23,6 +23,8 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
+{{site.data.content.newlink}}
+
 # Handling SMS with Twilio interactions
 {: #dialog-sms-actions}
 
