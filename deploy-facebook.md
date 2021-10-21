@@ -60,6 +60,12 @@ The rich responses that you add to the dialog are displayed in a Facebook app as
 
 - **Image**: This response type embeds an image in the response. A title and description are not displayed before the image, whether or not you specify them.
 
+- **Audio**: This response type embeds audio from various file formats in the response. A title and description are not displayed, whether or not you specify them.
+
+- **Video**: This response type embeds a native video from various file formats in the response. A title and description are not displayed, whether or not you specify them.
+
+- **iframe**: This response type inserts an embeddable third-party link in the response that displays interactive content (such as forms or maps). A title is displayed in the preview card. A description is not displayed, whether or not you specify it.
+
 - **Option**: This response type shows a list of options that the user can choose from.
 
   - A title is **required** and is displayed before the list of options.
@@ -82,4 +88,3 @@ To start a chat with the assistant, complete the following steps:
 The Welcome node of your dialog is not processed by the Facebook Messenger integration. The welcome message is not displayed in the Facebook chat like it is in the "Try it out" pane or in the assistant preview. It is not triggered from here because nodes with the `welcome` special condition are skipped in dialog flows that are started by users. Facebook Messenger waits for the user to initiate the conversation. For more information about how to set context variable values consistently at the start of a conversation, see [Starting the dialog](/docs/assistant?topic=assistant-dialog-start).
 {: note}
 
-The dialog flow for the current session is restarted after 60 minutes of inactivity (5 minutes for Lite and Standard plans). This means that if a user stops interacting with the assistant, after 60 (or 5) minutes, any context variable values that were set during the previous conversation are set to null or back to their default values.
