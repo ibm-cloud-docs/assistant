@@ -23,6 +23,8 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
+{{site.data.content.newlink}}
+
 # Integrating with *SMS with Twilio*
 {: #deploy-sms}
 
@@ -131,7 +133,8 @@ For the best customer experience, design your dialog with the capabilities of th
 
 - Do not include HTML elements in your text responses.
 - The SMS with Twilio integration does not support chat transfers that are initiated with the *Connect to human agent* response type.
-- The pause response type is ignored. If you want to add a pause, use a [vgwConversationResponseTimeout](/docs/assistant?topic=assistant-commands-sms#commands-sms-context-variables) context variable instead.
+- The **pause** response type is ignored. If you want to add a pause, use a [vgwConversationResponseTimeout](/docs/assistant?topic=assistant-commands-sms#commands-sms-context-variables) context variable instead.
+- **Image**, **Audio**, **Video** response types allow sending a message containing media. A title and description are sent along with the attachment. Note that depending on the carrier and device of the end user these messages may not be successfully received. For a list of the supported content types, see [Accepted Content Types for Media](https://www.twilio.com/docs/sms/accepted-mime-types){: external}.
 - You can include search skill response types in dialog nodes that the phone integration will send as a message. The message includes the introductory text (*I searched my knowledge base* and so on), and then the body of only the first search result.
 
 If you want to use the same dialog for an assistant that you deploy to many different platforms, add custom responses per integration type. You can add a conditioned response that tells the assistant to show the response only when the SMS with Twilio integration is being used. For more information, see [Building integration-specific responses](/docs/assistant?topic=assistant-dialog-integrations#dialog-integrations-condition-by-type).

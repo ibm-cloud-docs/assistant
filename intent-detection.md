@@ -25,6 +25,8 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:gif: data-image-type='gif'}
 
+{{site.data.content.newlink}}
+
 # Improved intent recognition ![Beta](images/beta.png)
 {: #intent-detection}
 

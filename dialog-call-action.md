@@ -23,7 +23,9 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Calling an actions skill from a dialog <!--![Beta](images/beta.png)-->
+{{site.data.content.newlink}}
+
+# Calling an actions skill from a dialog
 {: #dialog-call-action}
 
 A dialog node in a dialog skill can call an action in an actions skill to perform a task and then return to the dialog. The actions skill that you want to call must be added to the same assistant to which your dialog skill is added.

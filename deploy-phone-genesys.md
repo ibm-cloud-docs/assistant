@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-09"
+lastupdated: "2021-09-23"
 
 subcollection: assistant
 
@@ -24,6 +24,8 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
+
+{{site.data.content.newlink}}
 
 # Integrating with phone and Genesys Cloud
 {: #deploy-phone-genesys}
@@ -73,14 +75,14 @@ To integrate your assistant with Genesys Cloud, follow these steps:
 
 1. Under **SIP Access Control**, add the IP addresses for the data center where your assistant is located:
 
-    | Data center | IP addresses                                          |
-    |-------------|-------------------------------------------------------|
-    | US-South    | 67.228.108.82<br/>169.63.5.162<br/>150.239.30.146     |
-    | US-East     | 52.116.100.158<br/>169.61.70.162<br/>169.59.136.194   |
-    | EU-DE       | 161.156.178.162<br/>169.50.56.146<br/>149.81.86.82    |
-    | EU-GB       | 158.176.120.162<br/>141.125.102.34<br/>158.175.99.34  |
-    | AU-SYD      | 168.1.47.2<br/>135.90.86.50<br/>168.1.106.130         |
-    | JP-TOK      | 165.192.69.82<br/>128.168.105.178<br/>161.202.149.162 |
+    | Data center | IP addresses                                    |
+    |-------------|-------------------------------------------------|
+    | US-South    | 67.228.108.82\n169.63.5.162\n150.239.30.146     |
+    | US-East     | 52.116.100.158\n169.61.70.162\n169.59.136.194   |
+    | EU-DE       | 161.156.178.162\n169.50.56.146\n149.81.86.82    |
+    | EU-GB       | 158.176.120.162\n141.125.102.34\n158.175.99.34  |
+    | AU-SYD      | 168.1.47.2\n135.90.86.50\n168.1.106.130         |
+    | JP-TOK      | 165.192.69.82\n128.168.105.178\n161.202.149.162 |
 
 1. Under **Identity**, specify the following information:
 

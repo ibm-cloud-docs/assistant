@@ -29,6 +29,8 @@ subcollection: assistant
 {:note: .note}
 {:tip: .tip}
 
+{{site.data.content.newlink}}
+
 # API methods summary
 {: #api-methods}
 

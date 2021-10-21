@@ -23,6 +23,8 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
+{{site.data.content.newlink}}
+
 # Integrating with Slack
 {: #deploy-slack}
 
@@ -104,6 +106,14 @@ When integrated, depending on the events that you configure the assistant to sup
 The rich responses that you add to a dialog are displayed in a Slack channel as expected, with the following exceptions:
 
 - **Connect to human agent**: This response type is ignored.
+
+- **Image**: This response type embeds an image in the response. A title and description are displayed before the image. Slack will automatically show a preview of the image. 
+
+- **Audio**: This response type embeds audio from various file formats in the response. A title and description are displayed before the attachment. Slack will automatically show a preview of the content for supported formats. 
+
+- **Video**: This response type embeds a native video from various file formats in the response. A title and description are displayed before the attachment. Slack will automatically show a preview of the content for supported formats. 
+
+- **iframe** This response type is not supported.
 
 - **Option**: This response type shows a list of options that the user can choose from.
 

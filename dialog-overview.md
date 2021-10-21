@@ -27,6 +27,8 @@ subcollection: assistant
 {:table: .aria-labeledby="caption"}
 {:video: .video}
 
+{{site.data.content.newlink}}
+
 # Creating a dialog
 {: #dialog-overview}
 

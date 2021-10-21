@@ -25,6 +25,8 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
 
+{{site.data.content.newlink}}
+
 # Connecting customers with support
 {: #dialog-support}
 

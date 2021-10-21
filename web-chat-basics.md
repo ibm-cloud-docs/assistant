@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-10-01"
 
 subcollection: assistant
 
@@ -24,6 +24,8 @@ subcollection: assistant
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 {:video: .video}
+
+{{site.data.content.newlink}}
 
 # Web chat overview
 {: #web-chat-basics}
@@ -133,6 +135,15 @@ The web chat uses the following methods to track users:
 
 - You can pass in a de—identified user ID either as part of a secure JWT or as a string passed to `instance.updateUserID` method. If you are using advanced security features, the user ID is derived from the sub claim in the JWT.
 - If you do not pass an identifier for the user when the session begins, the web chat creates one for you. It creates a first-party cookie with a generated anonymous ID. The cookie remains active for 45 days. If the same user returns to your site later in the month and chats with your assistant again, the web chat integration recognizes the user. And you are charged only once when the same anonymous user interacts with your assistant multiple times in a single month.
+
+### Apple devices
+{: #web-chat-billing-apple}
+
+On Apple devices, the Intelligent Tracking Prevention feature automatically deletes any client-side cookie after 7 days. This means that if an anonymous customer accesses your website and then visits again two weeks later, the two visits are treated as two different MAUs.
+
+To avoid this problem, use a server-side first-party cookie in your web application. For example, when an anonymous user visits your website for the first time, you can generate a unique user ID and store it in a server-side cookie with any expiration date you choose. Then, your code can use the [`updateUserID()`](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-instance-methods#updateuserid){: external} instance method to set the user ID. You can then use the same cookie to set the same user ID for this customer on any future visits until it expires.
+
+### More information
 
 For more information about billing, see [User-based plans explained](/docs/assistant?topic=assistant-services-information#services-information-user-based-plans).
 

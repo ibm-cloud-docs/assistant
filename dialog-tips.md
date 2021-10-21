@@ -24,6 +24,8 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:gif: data-image-type='gif'}
 
+{{site.data.content.newlink}}
+
 # Conversation building tips
 {: #dialog-tips}
 

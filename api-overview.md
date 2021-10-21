@@ -26,6 +26,8 @@ subcollection: assistant
 {:note: .note}
 {:tip: .tip}
 
+{{site.data.content.newlink}}
+
 # {{site.data.keyword.conversationshort}} API overview
 {: #api-overview}
 

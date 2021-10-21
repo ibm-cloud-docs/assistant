@@ -25,6 +25,8 @@ subcollection: assistant
 {:swift: .ph data-hd-programlang='swift'}
 {:gif: data-image-type='gif'}
 
+{{site.data.content.newlink}}
+
 # Defining what's irrelevant
 {: #irrelevance-detection}
 
