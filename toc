@@ -21,7 +21,6 @@ Watson Assistant (Managed)
     Release notes
         release-notes.md
         release-notes-chat.md
-
     {: .navgroup-end}
 
     {: .navgroup id="tutorial"}
