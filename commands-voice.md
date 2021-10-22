@@ -38,7 +38,7 @@ You can use response types to send commands to the phone integration.
 
 | Command    | Response type | Description | Parameters |
 |------------|---------------|-------------|------------|
-| Play text  | `text`        | Plays text as voice output. | `text`: the text to play |
+|            | `text`        | Plays text as voice output. | `text`: the text to play |
 | Play audio | `audio`       | Plays an audio file. The file must be single channel (mono) and PCM-encoded, and it must be sampled at 8,000 Hz with 16 bits per sample. | - `source`: The URL of the audio file to play. Required. \n - `channel_options.voice_telephony.loop`: Set to `true` or `false` to indicate whether to play the audio in a loop. The default value is `false`. |
 |`Collect DTMF` | `dtmf` | Instructs the phone integration to collect dual-tone multi-frequency signaling (DTMF) input.  | <br/><ul><li> `command_info.type` : `collect`</li><li>  `command_info.parameters` : For the list of the parameters used for the `collect` command type, see [Enabling keypad entry](/docs/assistant?topic=dialog-voice-actions#dialog-voice-actions-dtmf)</li></ul></li></ul> |
 | `Disable DTMF barge-in` |`dtmf`| Disables DTMF barge-in so that playback from the phone integration isn't interrupted when callers press keys. |`command_info.type` : `disable_barge_in`|

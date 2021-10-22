@@ -117,7 +117,7 @@ You can specify native JSON for Slack or Facebook using the `output.integrations
 
 The following response types are supported by the generic JSON format.
 
-### Image
+### `image`
 {: #dialog-responses-json-image}
 
 Displays an image specified by a URL.
@@ -153,7 +153,7 @@ This example displays an image with a title and descriptive text.
 }
 ```
 
-### Video
+### `video`
 {: #dialog-responses-json-video}
 
 Displays a video specified by a URL.
@@ -190,7 +190,7 @@ This example displays an video with a title and descriptive text.
 }
 ```
 
-### Audio
+### `audio`
 {: #dialog-responses-json-audio}
 
 Plays an audio clip specified by a URL.
@@ -227,7 +227,7 @@ This example plays an audio clip with a title and descriptive text.
 }
 ```
 
-### iframe
+### `iframe`
 {: #dialog-responses-json-iframe}
 
 Embeds content from an external website as an HTML `iframe` element.
@@ -263,7 +263,7 @@ This example embeds an iframe with a title and description.
 }
 ```
 
-### Option
+### `option`
 {: #dialog-responses-json-option}
 
 Displays a set of buttons or a drop-down list users can use to choose an option. The specified value is then sent to the workspace as user input.
@@ -328,7 +328,7 @@ This example displays two options:
 }
 ```
 
-### Pause
+### `pause`
 {: #dialog-responses-json-pause}
 
 Pauses before sending the next message to the channel, and optionally sends a "user is typing" event (for channels that support it).
@@ -361,7 +361,7 @@ This examples sends the "user is typing" event while pausing for 5 seconds.
 }
 ```
 
-### Text
+### `text`
 {: #dialog-responses-json-text}
 
 Displays text. To add variety, you can specify multiple alternative text responses. If you specify multiple responses, you can choose to rotate sequentially through the list, choose a response randomly, or output all specified responses.
@@ -399,7 +399,7 @@ This examples displays a greeting message to the user.
 }  
 ```
 
-### Search skill
+### `search`
 {: #dialog-responses-json-search-skill}
 
 Calls the search skill linked to the assistant to retrieve results that are relevant to the user's query.
@@ -434,13 +434,13 @@ This examples uses the user input text to send a natural-language query to the s
 }
 ```
 
-### Connect to agent
+### `connect_to_agent`
 {: #dialog-responses-json-connect-to-agent}
 
 Requests that the conversation be transferred to a human service desk agent for help.
 
 #### Fields
-{: #{: #dialog-responses-json-channel-transfer-fields}
+{: #dialog-responses-json-channel-transfer-fields}
 
 | Name                   | Type   | Description        | Required? |
 |------------------------|--------|--------------------|-----------|
@@ -476,13 +476,13 @@ This example requests a transfer to a human agent and specifies messages to be d
 }
 ```
 
-### Channel transfer
+### `channel_transfer`
 {: #dialog-responses-json-channel-transfer}
 
 Requests that the conversation be transferred to a different integration.
 
 #### Fields
-{: #{: #dialog-responses-json-channel-transfer-fields}
+{: #dialog-responses-json-channel-transfer-fields}
 
 | Name          | Type   | Description        | Required? |
 |---------------|--------|--------------------|-----------|
@@ -543,7 +543,47 @@ This example requests a transfer from Slack to web chat. In addition to the `cha
 }
 ```
 
-### User-defined
+### `dtmf`
+{: #dialog-responses-json-dtmf}
+
+#### Fields
+{: #dialog-responses-json-dtmf-fields}
+
+| Name          | Type   | Description        | Required? |
+|---------------|--------|--------------------|-----------|
+| response_type | string | `dtmf`             | Y         |
+| message_to_user | string | A message to display to the user before the link for initiating the transfer. | Y |
+
+#### Example
+
+### `stop_activities`
+{: #dialog-responses-json-stop-activities}
+
+#### Fields
+
+#### Example
+
+### `start_activities`
+{: #dialog-responses-json-start-activities}
+
+#### Fields
+
+#### Example
+
+### `text_to_speech`
+{: #dialog-responses-json-text-to-speech}
+
+#### Fields
+
+#### Example
+
+### `speech_to_text`
+
+#### Fields
+
+#### Example
+
+### `user_defined`
 {: #dialog-responses-json-user-defined}
 
 A custom response type containing any JSON data the client or integration knows how to handle. For example, you might customize the web chat to display a special kind of card, or build a custom application to format responses using a table or chart.
