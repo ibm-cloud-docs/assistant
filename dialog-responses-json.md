@@ -546,13 +546,20 @@ This example requests a transfer from Slack to web chat. In addition to the `cha
 ### `dtmf`
 {: #dialog-responses-json-dtmf}
 
+Sends commands to the phone integration to control input or output using dual-tone multi-frequency (DTMF) signals. (DTMF is a protocol used to transmit the tones that are generated when a user presses keys on a push-button phone.)
+
 #### Fields
 {: #dialog-responses-json-dtmf-fields}
 
 | Name          | Type   | Description        | Required? |
 |---------------|--------|--------------------|-----------|
 | response_type | string | `dtmf`             | Y         |
-| message_to_user | string | A message to display to the user before the link for initiating the transfer. | Y |
+| command_info  | object | Information specifying the DTMF command to send to the phone integration. | Y |
+| command_info.type | string | The DTMF command to send. The following commands are supported: - `collect` \n - `disable_barge_in` \n - `enable_barge_in` \n - `send` | Y |
+| command_info.parameters | object | Parameters related to the DTMF command. | N |
+| command_info.parameters.termination_key | string | The DTMF termination key that signals the end of DTMF input (for example, `#`). Used with the `collect` command. | N |
+| command_info.parameters.count | number | The number of DTMF digits to collect. Must be an integer between 1 and 100. Used with the `collect` command. | Required only if `termination_key`, or `minimum_count` and `maximum_count`, are not specified. |
+| command_info.parameters.minimum_count | The minimum number of DTMF digits to collect. Used along with `maximum_count` to define a range for the number of digits to collect. This number must be a positive integer between 1 and `maximum_count`. | Required only if `termination_key` and `count` are not specified. |
 
 #### Example
 
