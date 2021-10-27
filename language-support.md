@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-16"
+lastupdated: "2021-10-27"
 
 subcollection: assistant
 
@@ -66,8 +66,8 @@ In the following tables, the level of language and feature support is indicated 
 ### Skill support details
 {: #language-support-skills}
 
-| Language | [**Actions skill**](/docs/assistant?topic=assistant-skill-actions-add) |[**Dialog skill**](/docs/assistant?topic=assistant-skill-dialog-add) | [**Search skill**](/docs/assistant?topic=assistant-skill-search-add) |
-|:---:|:---:|:---:|
+| Language | [**Actions skill**](/docs/assistant?topic=assistant-skill-actions-add) | [**Dialog skill**](/docs/assistant?topic=assistant-skill-dialog-add) | [**Search skill**](/docs/assistant?topic=assistant-skill-search-add) |
+|:---:|:---:|:---:|:---:|
 | **English (en)**                   | GA | GA | GA |
 | **Arabic (ar)**                    | GA | GA | GA |
 | **Chinese (Simplified) (zh-cn)**   | GA | GA | GA |
@@ -95,13 +95,13 @@ In the following tables, the level of language and feature support is indicated 
 | **Chinese (Traditional) (zh-tw)**  | NA | NA | NA |
 | **Czech (cs)**                     | NA | NA | NA |
 | **Dutch (nl)**                     | NA | NA | NA |
-| **French (fr)**                    | GA | NA | NA |
+| **French (fr)**                    | GA | NA | GA |
 | **German (de)**                    | GA (except Covid-19) | NA | NA |
-| **Italian (it)**                   | GA (except Covid-19) | NA | NA |
+| **Italian (it)**                   | GA (except Covid-19) | NA | GA |
 | **Japanese (ja)**                  | GA (except Covid-19) | NA | NA |
 | **Korean (ko)**                    | NA | NA | NA |
 | **Portuguese (Brazilian) (pt-br)** | GA | NA | NA |
-| **Spanish (es)**                   | GA | NA | NA |
+| **Spanish (es)**                   | GA | NA | GA |
 | **Universal (xx)**                 | NA | GA | GA |
 {: caption="Table 3. Intent feature support details" caption-side="top"}
 
