@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-10-21"
+lastupdated: "2021-11-01"
 
 subcollection: assistant
 
@@ -34,6 +34,9 @@ In some situations, you might need to define responses using the JSON editor. (F
 {: #dialog-responses-json-generic}
 
 The generic JSON format for responses is used to specify responses that are intended for any integration or custom client. This format can accommodate various response types that are supported by multiple integrations, and can also be implemented by a custom client application. (This is the format that is used by default for dialog responses defined using the {{site.data.keyword.conversationshort}} tool.)
+
+You can also specify responses using the native format used by the target channel. For more information, see [Native JSON format](#dialog-responses-json-native).
+{: note}
 
 For information about how to open the JSON editor for a dialog node response from the tool, see [Context variables in the JSON editor](/docs/assistant?topic=assistant-dialog-runtime-context#dialog-runtime-context-var-json).
 
@@ -101,16 +104,70 @@ When a response is split into multiple messages, the integration sends these mes
 
 If you are building your own client application, your app must implement each response type as appropriate. For more information, see [Implementing responses](/docs/assistant?topic=assistant-api-dialog-responses).
 
-## Native JSON format
-{: #dialog-responses-json-native}
+## Targeting specific integrations
+{: #dialog-responses-json-target-integrations}
 
-In addition to the generic JSON format, the dialog node JSON also supports channel-specific responses written using the native JSON format for a specific channel (such as Slack or Facebook Messenger). You might want to use the native JSON format to specify a response type that is not currently supported by the generic JSON format. By checking the integration-specific context (`context.integrations`), a dialog node can determine the originating integration and then send appropriate native JSON responses.
+If you plan to use integrations to deploy your assistant to multiple channels, you might want to send different responses to different integrations. The `channels` property of the generic response object provides a way to do this.
 
-You can specify native JSON for Slack or Facebook using the `output.integrations` object in the dialog node response. Each child of `output.integrations` represents output intended for a specific integration:
+This mechanism is useful if your dialog flow does not change based on the integration in use, and if you cannot know in advance what integration the response will be sent to at run time. By using `channels`, you can define a single dialog node that supports all integrations, while still customizing the output for each channel. For example, you might want to customize the text formatting, or even send different response types, based on what the channel supports.
 
-- `output.integrations.slack`: any JSON response you want to be included in the `attachment` field of a response intended for Slack. For more information about the Slack JSON format, see the Slack [documentation](https://api.slack.com/messaging/composing){: external}.
+Using `channels` is particularly useful in conjunction with the `channel_transfer` response type. Because the message output is processed both by the channel initiating the `transfer` and by the target channel, you can use `channels` to define responses that will only be displayed by one or the other. (For more information, and an example, see [Channel transfer](#dialog-responses-json-channel-transfer).)
 
-- `output.integrations.facebook`: any JSON you want included in the `message` field of a response intended for Facebook Messenger. For more information about the Facebook JSON format, see the Facebook [documentation](https://developers.facebook.com/docs/messenger-platform/send-messages/templates){: external}.
+To specify the integrations for which a response is intended, include the optional `channels` array as part of the response object. All response types support the `channels` array. This array contains one or more objects using the following syntax:
+
+```json
+{
+  "channel": "<channel_name>"
+}
+```
+
+The value of `<channel_name>` can be any of the following strings:
+
+- **`chat`**: Web chat
+- **`voice_telephony`**: Phone
+- **`slack`**: Slack
+- **`facebook`**: Facebook Messenger
+- **`intercom`**: Intercom
+- **`whatsapp`**: WhatsApp
+
+Currently, the `channels` array is not supported by the SMS with Twilio integration. If your assistant is deployed to this integrations, do not use `channels` to target responses.
+{: note}
+
+The following example shows dialog node output that contains two responses: one intended for the web chat integration and one intended for the Slack and Facebook integrations.
+
+```json
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "text",
+        "channels": [
+          {
+            "channel": "chat"
+          }
+        ],
+        "text" : "This output is intended for the <strong>web chat</strong>."
+      },
+      {
+        "response_type": "text",
+        "channels": [
+          {
+            "channel": "slack"
+          },
+          {
+            "channel": "facebook"
+          }
+        ],
+        "text" : "This output is intended for either Slack or Facebook."
+      }
+    ]
+  }
+}
+```
+
+If the `channels` array is present, it must contain at least one channel object. Any integration that is not listed ignores the response. If the `channels` array is absent, all integrations handle the response.
+
+**Note:** If you need to change the logic of your dialog flow based on which integration is in use, or based on context data that is specific to a particular integration, see [Adding custom dialog flows for integrations](/docs/assistant?topic=assistant-dialog-integrations).
 
 ## Response types
 {: #dialog-responses-json-response-types}
@@ -548,22 +605,6 @@ This example requests a transfer from Slack to web chat. In addition to the `cha
 
 Sends commands to the phone integration to control input or output using dual-tone multi-frequency (DTMF) signals. (DTMF is a protocol used to transmit the tones that are generated when a user presses keys on a push-button phone.)
 
-The `command_info.type` field specifies the DTMF command to send. The following commands are supported:
-
-`collect`
-: Collect DTMF keypad input
-
-`disable_barge_in`
-: Disables DTMF barge-in so that playback from the phone integration is not interrupted when the customer presses a key.
-
-`enable_barge_in`
-: Enables DTMF barge-in so that the customer can interrupt playback from the phone integration by pressing a key.
-
-`send`
-: Sends DTMF signals.
-
-For detailed information about how to use each of these commands, see [Handling phone interactions](/docs/assistant?topic=dialog-voice-actions).
-
 #### Fields
 {: #dialog-responses-json-dtmf-fields}
 
@@ -571,14 +612,21 @@ For detailed information about how to use each of these commands, see [Handling 
 |---------------|--------|--------------------|-----------|
 | response_type | string | `dtmf`             | Y         |
 | command_info  | object | Information specifying the DTMF command to send to the phone integration. | Y |
-| command_info.type | string | The DTMF command to send. | Y |
+| command_info.type | string | The DTMF command to send (`collect`, `disable_barge_in`, `enable_barge_in`, or `send`). | Y |
 | command_info.parameters | object | See [Handling phone interactions](/docs/assistant?topic=dialog-voice-actions) | N |
+
+The `command_info.type` field can specify any of the following supported commands:
+
+- `collect`: Collects DTMF keypad input.
+- `disable_barge_in`: Disables DTMF barge-in so that playback from the phone integration is not interrupted when the customer presses a key.
+- `enable_barge_in`: Enables DTMF barge-in so that the customer can interrupt playback from the phone integration by pressing a key.
+- `send`: Sends DTMF signals.
+
+For detailed information about how to use each of these commands, see [Handling phone interactions](/docs/assistant?topic=dialog-voice-actions).
 
 #### Example
 
-This example instructs the phone integration to collect DTMF keypad input from the customer.
-
-This example shows the `dtmf` response type with the `collect` command, used to collect DTMF input.
+This example shows the `dtmf` response type with the `collect` command, used to collect DTMF input. For more information, including examples of other DTMF commands, see [Handling phone interactions](/docs/assistant?topic=dialog-voice-actions).
 
 ```json
 {
@@ -609,29 +657,195 @@ This example shows the `dtmf` response type with the `collect` command, used to 
 ### `stop_activities`
 {: #dialog-responses-json-stop-activities}
 
+Sends a command to a channel integration to stop one or more activities that are specific to that channel. The activities remain stopped until they are restarted using the `start_activities` response type.
+
+Currently, only the phone integration supports the `stop_activities` response type.
+{: note}
+
 #### Fields
+{: #dialog-responses-json-stop-activities-fields}
+
+| Name          | Type   | Description        | Required? |
+|---------------|--------|--------------------|-----------|
+| response_type | string | `stop_activities`  | Y         |
+| activities    | list   | A list of objects identifying the activities to stop. | Y |
+| activities[].type | string | The name of the activity to stop. | Y |
+
+Currently, the following activities for the phone integration can be stopped:
+
+- `speech_to_text_recognition`: Stops recognizing speech. All streaming audio to the {{site.data.keyword.speechtotextshort}} service is stopped.
+- `dtmf_collection`: Stops processing of inbound DTMF signals.
 
 #### Example
+
+This example uses the `stop_activities` response type to stop recognizing speech. Because this command is specific to the phone integration, the `channels` property specifies `voice_telephony` only.
+
+```json
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "stop_activities",
+        "activities": [
+          {
+            "type": "speech_to_text_recognition"
+          }
+        ],
+        "channels":[
+          {
+            "channel":"voice_telephony"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+{: codeblock}
 
 ### `start_activities`
 {: #dialog-responses-json-start-activities}
 
+Sends a command to a channel integration to start one or more activities that are specific to that channel. You can use this response type to restart any activity you previously stopped using the `stop_activities` response type.
+
+Currently, only the phone integration supports the `start_activities` response type.
+{: note}
+
 #### Fields
+{: #dialog-responses-json-start-activities-fields}
+
+| Name          | Type   | Description        | Required? |
+|---------------|--------|--------------------|-----------|
+| response_type | string | `start_activities` | Y         |
+| activities    | list   | A list of objects identifying the activities to start. | Y |
+| activities[].type | string | The name of the activity to start. | Y |
+
+Currently, the following activities for the phone integration can be started:
+
+- `speech_to_text_recognition`: Starts recognizing speech. Streaming audio to the {{site.data.keyword.speechtotextshort}} service is resumed.
+- `dtmf_collection`: Starts processing of inbound DTMF signals.
 
 #### Example
+
+This example uses the `start_activities` response type to restart recognizing speech. Because this command is specific to the phone integration, the `channels` property specifies `voice_telephony` only.
+
+```json
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "start_activities",
+        "activities": [
+          {
+            "type": "speech_to_text_recognition"
+          }
+        ],
+        "channels":[
+          {
+            "channel": "voice_telephony"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+{: codeblock}
 
 ### `text_to_speech`
 {: #dialog-responses-json-text-to-speech}
 
+Sends a command to the {{site.data.keyword.texttospeechshort}} service instance used by the phone integration. These commands can dynamically change the configuration or behavior of the service during a conversation.
+
 #### Fields
+{: #dialog-responses-json-text-to-speech-fields}
+
+| Name          | Type   | Description        | Required? |
+|---------------|--------|--------------------|-----------|
+| response_type | string | `text_to_speech`   | Y         |
+| command_info  | object | Information specifying the command to send to the {{site.data.keyword.texttospeechshort}}. | Y |
+| command_info.type | string | The command to send (`configure`, `disable_barge_in`, or `enable_barge_in`). | Y |
+| command_info.parameters | object | See [Applying advanced settings to the {{site.data.keyword.texttospeechshort}} service](/docs/assistant?topic=dialog-voice-actions#dialog-voice-actions-text-advanced) | N |
+
+The `command_info.type` field can specify any of the following supported commands:
+
+- `configure`: Dynamically updates the {{site.data.keyword.texttospeechshort}} configuration. Configuration changes can be applied only to the next conversation turn, or for the rest of the session.
+- `disable_barge_in`: Disables speech barge-in so that playback from the phone integration is not interrupted when the customer speaks.
+- `enable_barge_in`: Enables speech barge-in so that the customer can interrupt playback from the phone integration by speaking.
+
+For detailed information about how to use each of these commands, see [Applying advanced settings to the {{site.data.keyword.texttospeechshort}} service](/docs/assistant?topic=dialog-voice-actions#dialog-voice-actions-text-advanced).
 
 #### Example
+
+This example uses the `text_to_speech` response type with the `configure` command to change the voice used by the {{site.data.keyword.texttospeechshort}} service.
+
+```json
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "text_to_speech",
+        "command_info": {
+          "type": "configure",
+          "parameters" : {
+            "synthesize": {
+              "voice": "en-US_LisaVoice"
+            }          
+          }
+        }
+      }
+    ]
+  }
+}
+```
+{: codeblock}
 
 ### `speech_to_text`
+{: #dialog-responses-json-speech-to-text}
+
+Sends a command to the {{site.data.keyword.speechtotextshort}} service instance used by the phone integration. These commands can dynamically change the configuration or behavior of the service during a conversation.
 
 #### Fields
+{: #dialog-responses-json-speech-to-text-fields}
+
+| Name          | Type   | Description        | Required? |
+|---------------|--------|--------------------|-----------|
+| response_type | string | `speech_to_text`   | Y         |
+| command_info  | object | Information specifying the command to send to the {{site.data.keyword.speechtotextshort}}. | Y |
+| command_info.type | string | The command to send (currently only the `configure` command is supported). | Y |
+| command_info.parameters | object | See [Applying advanced settings to the {{site.data.keyword.speechtotextshort}} service](/docs/assistant?topic=dialog-voice-actions#dialog-voice-actions-speech-advanced) | N |
+
+The `command_info.type` field can specify any of the following supported commands:
+
+- `configure`: Dynamically updates the {{site.data.keyword.speechtotextshort}} configuration. Configuration changes can be applied only to the next conversation turn, or for the rest of the session.
+
+For detailed information about how to this command, see [Applying advanced settings to the {{site.data.keyword.speechtotextshort}} service](/docs/assistant?topic=dialog-voice-actions#dialog-voice-actions-speech-advanced).
 
 #### Example
+
+This example uses the `speech_to_text` response type with the `configure` command to change the language model used by the {{site.data.keyword.texttospeechshort}} service to Spanish, and to enable smart formatting.
+
+```json
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "speech_to_text",
+        "command_info": {
+          "type": "configure",
+          "parameters": {
+            "narrowband_recognize": {
+              "model": "es-ES_NarrowbandModel",
+              "smart_formatting": true
+            }
+          }
+        }
+      }
+    ]
+  }
+}
+```
+{: codeblock}
 
 ### `user_defined`
 {: #dialog-responses-json-user-defined}
@@ -676,66 +890,13 @@ This examples shows a generic example of a user-defined response. The `user_defi
 }
 ```
 
-## Targeting specific integrations
-{: #dialog-responses-json-target-integrations}
+## Native JSON format
+{: #dialog-responses-json-native}
 
-If you plan to use integrations to deploy your assistant to multiple channels, you might want to send different responses to different integrations.
+In addition to the generic JSON format, the dialog node JSON also supports channel-specific responses written using the native JSON format for a specific channel (such as Slack or Facebook Messenger). You might want to use the native JSON format to specify a response type that is not currently supported by the generic JSON format. By checking the integration-specific context (`context.integrations`), a dialog node can determine the originating integration and then send appropriate native JSON responses.
 
-This mechanism is useful if your dialog flow does not change based on the integration in use, and if you cannot know in advance what integration the response will be sent to at run time. By using `channels`, you can define a single dialog node that supports all integrations, while still customizing the output for each channel. For example, you might want to customize the text formatting, or even send different response types, based on what the channel supports.
+You can specify native JSON for Slack or Facebook using the `output.integrations` object in the dialog node response. Each child of `output.integrations` represents output intended for a specific integration:
 
-Using `channels` is particularly useful in conjunction with the `channel_transfer` response type. Because the message output is processed both by the channel initiating the transfer and by the target channel, you can use `channels` to define responses that will only be displayed by one or the other. (For more information, and an example, see [Channel transfer](#dialog-responses-json-channel-transfer).)
+- `output.integrations.slack`: any JSON response you want to be included in the `attachment` field of a response intended for Slack. For more information about the Slack JSON format, see the Slack [documentation](https://api.slack.com/messaging/composing){: external}.
 
-To specify the integrations for which a response is intended, include the optional `channels` array as part of the response object. All response types support the `channels` array. This array contains one or more objects using the following syntax:
-
-```json
-{
-  "channel": "<channel_name>"
-}
-```
-
-The value of `<channel_name>` can be any of the following strings:
-
-- **`chat`**: Web chat
-- **`slack`**: Slack
-- **`facebook`**: Facebook Messenger
-- **`intercom`**: Intercom
-- **`whatsapp`**: WhatsApp
-
-Currently, the `channels` array is not supported by the phone integration or the SMS with Twilio integration. If your assistant is deployed to either of these integrations, do not use `channels` to target responses.
-{: note}
-
-The following example shows dialog node output that contains two responses: one intended for the web chat integration and one intended for the Slack and Facebook integrations.
-
-```json
-{
-  "output": {
-    "generic": [
-      {
-        "response_type": "text",
-        "channels": [
-          {
-            "channel": "chat"
-          }
-        ],
-        "text" : "This output is intended for the <strong>web chat</strong>."
-      },
-      {
-        "response_type": "text",
-        "channels": [
-          {
-            "channel": "slack"
-          },
-          {
-            "channel": "facebook"
-          }
-        ],
-        "text" : "This output is intended for either Slack or Facebook."
-      }
-    ]
-  }
-}
-```
-
-If the `channels` array is present, it must contain at least one channel object. Any integration that is not listed ignores the response. If the `channels` array is absent, all integrations handle the response.
-
-**Note:** If you need to change the logic of your dialog flow based on which integration is in use, or based on context data that is specific to a particular integration, see [Adding custom dialog flows for integrations](/docs/assistant?topic=assistant-dialog-integrations).
+- `output.integrations.facebook`: any JSON you want included in the `message` field of a response intended for Facebook Messenger. For more information about the Facebook JSON format, see the Facebook [documentation](https://developers.facebook.com/docs/messenger-platform/send-messages/templates){: external}.

@@ -38,12 +38,12 @@ You can use response types to send commands to the phone integration.
 
 | Command    | Response type | Description | Parameters |
 |------------|---------------|-------------|------------|
-|            | `text`        | Plays text as voice output. | `text`: the text to play |
-| Play audio | `audio`       | Plays an audio file. The file must be single channel (mono) and PCM-encoded, and it must be sampled at 8,000 Hz with 16 bits per sample. | - `source`: The URL of the audio file to play. Required. \n - `channel_options.voice_telephony.loop`: Set to `true` or `false` to indicate whether to play the audio in a loop. The default value is `false`. |
-|`Collect DTMF` | `dtmf` | Instructs the phone integration to collect dual-tone multi-frequency signaling (DTMF) input.  | <br/><ul><li> `command_info.type` : `collect`</li><li>  `command_info.parameters` : For the list of the parameters used for the `collect` command type, see [Enabling keypad entry](/docs/assistant?topic=dialog-voice-actions#dialog-voice-actions-dtmf)</li></ul></li></ul> |
-| `Disable DTMF barge-in` |`dtmf`| Disables DTMF barge-in so that playback from the phone integration isn't interrupted when callers press keys. |`command_info.type` : `disable_barge_in`|
-|`Enable DTMF barge-in`|`dtmf`| Enables DTMF barge-in so that callers can interrupt playback from the phone integration by pressing a key. | `command_info.type` : `enable_barge_in`|
-|`Send DTMF` | `dtmf` | Provides a way to send DTMF outbound.  | <br/><ul><li> `command_info.type` : `send`</li><li>  `command_info.parameters` : For the list of the parameters used for the `send` command type, see [Enabling keypad entry](/docs/assistant?topic=dialog-voice-actions#dialog-voice-actions-dtmf). </li></ul></li></ul> |
+
+
+
+
+
+
 | `Stop DTMF processing` | `stop_activities`|Disables DTMF input. All DTMF input is ignored until it's reenabled by the `Start DTMF processing` command.  |`activities[].type` : `dtmf_collection`|
 |`Start DTMF processing` | `start_activities`|Reenables DTMF input that was disabled by the `stop_activities` command. | `activities[].type` : `dtmf_collection`|
 |`Disable speech barge-in` |`text_to_speech`| Disables speech barge-in so that playback from the phone integration isn't interrupted when callers speak. | `command_info.type` : `disable_barge_in`|
