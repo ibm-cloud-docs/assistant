@@ -627,7 +627,7 @@ This example shows the `dtmf` response type with the `collect` command, used to 
           "type": "collect",
           "parameters": {
             "termination_key": "#",
-            "count": "16",
+            "count": 16,
             "ignore_speech": true
           }
         },

@@ -548,6 +548,22 @@ This example requests a transfer from Slack to web chat. In addition to the `cha
 
 Sends commands to the phone integration to control input or output using dual-tone multi-frequency (DTMF) signals. (DTMF is a protocol used to transmit the tones that are generated when a user presses keys on a push-button phone.)
 
+The `command_info.type` field specifies the DTMF command to send. The following commands are supported:
+
+`collect`
+: Collect DTMF keypad input
+
+`disable_barge_in`
+: Disables DTMF barge-in so that playback from the phone integration is not interrupted when the customer presses a key.
+
+`enable_barge_in`
+: Enables DTMF barge-in so that the customer can interrupt playback from the phone integration by pressing a key.
+
+`send`
+: Sends DTMF signals.
+
+For detailed information about how to use each of these commands, see [Handling phone interactions](/docs/assistant?topic=dialog-voice-actions).
+
 #### Fields
 {: #dialog-responses-json-dtmf-fields}
 
@@ -555,13 +571,40 @@ Sends commands to the phone integration to control input or output using dual-to
 |---------------|--------|--------------------|-----------|
 | response_type | string | `dtmf`             | Y         |
 | command_info  | object | Information specifying the DTMF command to send to the phone integration. | Y |
-| command_info.type | string | The DTMF command to send. The following commands are supported: - `collect` \n - `disable_barge_in` \n - `enable_barge_in` \n - `send` | Y |
-| command_info.parameters | object | Parameters related to the DTMF command. | N |
-| command_info.parameters.termination_key | string | The DTMF termination key that signals the end of DTMF input (for example, `#`). Used with the `collect` command. | N |
-| command_info.parameters.count | number | The number of DTMF digits to collect. Must be an integer between 1 and 100. Used with the `collect` command. | Required only if `termination_key`, or `minimum_count` and `maximum_count`, are not specified. |
-| command_info.parameters.minimum_count | The minimum number of DTMF digits to collect. Used along with `maximum_count` to define a range for the number of digits to collect. This number must be a positive integer between 1 and `maximum_count`. | Required only if `termination_key` and `count` are not specified. |
+| command_info.type | string | The DTMF command to send. | Y |
+| command_info.parameters | object | See [Handling phone interactions](/docs/assistant?topic=dialog-voice-actions) | N |
 
 #### Example
+
+This example instructs the phone integration to collect DTMF keypad input from the customer.
+
+This example shows the `dtmf` response type with the `collect` command, used to collect DTMF input.
+
+```json
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "dtmf",
+        "command_info": {
+          "type": "collect",
+          "parameters": {
+            "termination_key": "#",
+            "count": 16,
+            "ignore_speech": true
+          }
+        },
+        "channels": [
+          {
+            "channel": "voice_telephony"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+{: codeblock}
 
 ### `stop_activities`
 {: #dialog-responses-json-stop-activities}
