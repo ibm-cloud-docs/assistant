@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-20"
+lastupdated: "2021-11-02"
 
 subcollection: assistant
 
@@ -43,7 +43,7 @@ You can use response types to perform the following phone-specific actions:
 
 In some cases, you might want to combine response types to perform multiple actions. For example, you might want to implement two-factor authentication by requesting phone keypad entry and sending a text message from the same dialog node or step. For more information, see [Defining a sequence of phone actions](#dialog-voice-actions-sequence).
 
-For reference information about phone-specific repsonse types and related context variables, see [Phone integration rereference](/docs/assistant?topic=assistant-commands-voice).
+For reference information about phone-specific repsonse types and related context variables, see [Phone context variables](/docs/assistant?topic=assistant-phone-context).
 
 ## Adding phone-specific responses to your dialog or actions 
 {: #dialog-voice-actions-add}

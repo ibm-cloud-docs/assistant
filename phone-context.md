@@ -26,7 +26,7 @@ subcollection: assistant
 {{site.data.content.newlink}}
 
 # Phone integration context variables
-{: #commands-voice}
+{: #phone-context}
 
 You can use context variables to manage the flow of conversations with customers who interact with your assistant over the telephone.
 {: shortdesc}
@@ -34,7 +34,7 @@ You can use context variables to manage the flow of conversations with customers
 The following tables describe the context variables that have special meaning in the context of the phone integration. They should not be used for any purpose other than the documented use.
 
 ## Context variables that are set by your dialog or actions
-{: #commands-voice-context-variables-set-by-dialog}
+{: #phone-context-variables-set-by-dialog}
 
 | Name | Description | Default |
 |-----------------------|----------------|------------|
@@ -71,7 +71,7 @@ The following tables describe the context variables that have special meaning in
 {: codeblock}
 
 ## Context variables that are set by the phone channel
-{: #commands-voice-context-variables-set-by-phone-channel}
+{: #phone-context-variables-set-by-phone-channel}
 
 | Name | Description |
 |------|-------------|
@@ -85,7 +85,7 @@ The following tables describe the context variables that have special meaning in
 {: caption="Context variables set by the phone channel" caption-side="top"}
 
 ## Input parameters that are set by the phone channel
-{: #commands-voice-input-parameters-set-by-phone-channel}
+{: #phone-context-input-parameters-set-by-phone-channel}
 
 The following input parameters are only valid for the current conversation turn.
 

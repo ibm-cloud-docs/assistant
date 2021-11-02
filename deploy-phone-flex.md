@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-05"
+lastupdated: "2021-11-02"
 
 subcollection: assistant
 
@@ -232,7 +232,7 @@ Now we need to configure the assistant to transfer calls to Twilio Flex when a c
 
 1. Open the JSON editor for the response.
 
-1. In the JSON editor, add a [`connect_to_agent` response](https://cloud.ibm.com/docs/assistant?topic=assistant-commands-voice), specifying your phone number as the `sip.uri` (replace `{phone_number}` with the phone number of your SIP trunk):
+1. In the JSON editor, add a [`connect_to_agent` response](https://cloud.ibm.com/docs/assistant?topic=assistant-phone-context), specifying your phone number as the `sip.uri` (replace `{phone_number}` with the phone number of your SIP trunk):
 
 ```json
 {
