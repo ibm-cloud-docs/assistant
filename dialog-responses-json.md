@@ -125,13 +125,11 @@ The value of `<channel_name>` can be any of the following strings:
 
 - **`chat`**: Web chat
 - **`voice_telephony`**: Phone
+- **`text_messaging`**: SMS with Twilio
 - **`slack`**: Slack
 - **`facebook`**: Facebook Messenger
 - **`intercom`**: Intercom
 - **`whatsapp`**: WhatsApp
-
-Currently, the `channels` array is not supported by the SMS with Twilio integration. If your assistant is deployed to this integrations, do not use `channels` to target responses.
-{: note}
 
 The following example shows dialog node output that contains two responses: one intended for the web chat integration and one intended for the Slack and Facebook integrations.
 
@@ -792,7 +790,12 @@ This example uses the `text_to_speech` response type with the `configure` comman
               "voice": "en-US_LisaVoice"
             }          
           }
-        }
+        },
+        "channels":[
+          {
+            "channel": "voice_telephony"
+          }
+        ]
       }
     ]
   }
@@ -839,7 +842,43 @@ This example uses the `speech_to_text` response type with the `configure` comman
               "smart_formatting": true
             }
           }
-        }
+        },
+        "channels":[
+          {
+            "channel": "voice_telephony"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+{: codeblock}
+
+### `end_session`
+{: #dialog-responses-json-end-session}
+
+Sends a command to the channel ending the session. This response type instructs the phone integration to hang up the call.
+
+#### Fields
+{: #dialog-responses-json-end-session-fields}
+
+| Name          | Type   | Description        | Required? |
+|---------------|--------|--------------------|-----------|
+| response_type | string | `end_session`      | Y         |
+
+For the phone integration, you can use the `channel_options` object to include custom headers with the SIP `BYE` request that is generated. For more information, see [End the call](/docs/assistant?topic=dialog-voice-actions#dialog-voice-actions-hangup).
+
+#### Example
+
+This example uses the `end_session` response type to end a conversation.
+
+```json
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "end_session"
       }
     ]
   }
