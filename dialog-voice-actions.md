@@ -48,7 +48,7 @@ For reference information about phone-specific repsonse types and related contex
 ## Adding phone-specific responses to your dialog or actions 
 {: #dialog-voice-actions-add}
 
-To initiate a voice-specific interactions from a dialog node or a step in an action, add a response within the `output.generic` array using the appropriate response type.
+To initiate a voice-specific interaction from a dialog node or a step in an action, add a response within the `output.generic` array using the appropriate response type.
 
 Although many response types can be specified using the {{site.data.keyword.conversationshort}} user interface, phone-specific response types must currently be added using the JSON editor.
 {: note}
