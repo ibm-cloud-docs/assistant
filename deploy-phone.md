@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-02"
+lastupdated: "2021-11-03"
 
 subcollection: assistant
 
@@ -241,7 +241,7 @@ For the best customer experience, design your dialog with the capabilities of th
 
 - Do not include HTML elements in your dialog text responses. To add formatting, use Markdown. For more information, see [Simple text response](https://cloud.ibm.com/docs/assistant?topic=assistant-dialog-overview#dialog-overview-simple-text).
 - The phone integration does not support chat transfers that are initiated with the *Connect to human agent* response type. Use the [vgwActTransfer](/docs/assistant?topic=assistant-dialog-voice-actions#dialog-voice-actions-transfer) command instead.
-<!-- - The pause response type is ignored. If you want to add a pause, use a [vgwConversationResponseTimeout](/docs/assistant?topic=assistant-commands-voice) context variable instead. -->
+- The *pause* response type is not supported. If you want to add a pause, use the `turn_settings.timeout_count` context variable (for more information, see [Context variables that are set by your dialog or actions](/docs/assistant?topic=assistant-phone-context#phone-context-variables-set-by-dialog)).
 - You can include search skill response types in dialog nodes that the phone integration will read. The introductory message (*I searched my knowledge base* and so on), and then the body of only the first search result is read.
 
   The search skill response (meaning the introductory message plus the body of the first search result) must be less than 5,000 characters long or the response will not be read at all. Be sure to test the search results that are returned and curate the data collection that you use as necessary.

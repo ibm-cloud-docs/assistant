@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-02"
+lastupdated: "2021-11-03"
 
 subcollection: assistant
 
@@ -39,8 +39,9 @@ The following tables describe the context variables that have special meaning in
 | Name | Type | Description | Default |
 |------|------|-------------|---------|
 | `final_utterance_timeout_count` | Number | The time (in milliseconds) that the phone integration waits to receive a final utterance from the {{site.data.keyword.speechtotextshort}} service. The timeout occurs if the phone integration does not receive a final utterance within the specified time limit, even if hypotheses continue to be generated. When the timeout occurs, the phone integration sends {{site.data.keyword.conversationshort}} a text update that includes the word `vgwFinalUtteranceTimeout` to indicate that no final utterance was received. | N/A |
-| `post_response_timeout_count` | Number | The time (in milliseconds) to wait for a new utterance after the response is played back to the caller. When this timeout occurs, the phone integration channel sends a message request to {{site.data.keyword.conversationshort}} that sets the context variable `input.integrations.voice_telephony.post_response_timeout_occurred` to `true`. | 7000 |
-| `cdr_custom_data` | object |  Any JSON key/value pairs to collect and store with the CDR record at the end of the phone call. Each time this object is received, it is merged with any previously received `cdr_custom_data` context. | N/A |
+| `post_response_timeout_count` | Number | The time (in milliseconds) to wait for a new utterance after the response is played back to the caller. When this timeout occurs, the phone integration channel sends a text message to the assistant that includes the word `vgwPostResponseTimeout` and sets the context variable `input.integrations.voice_telephony.post_response_timeout_occurred` to `true`. | 7000 |
+| `turn_settings.timeout_count` | Number | The time (in milliseconds) to wait for a response from {{site.data.keyword.conversationshort}}. If this time is exceeded, the phone integration tries again to contact {{site.data.keyword.conversationshort}}. If the service still can't be reached, the call fails. | N/A |
+| `cdr_custom_data` | object | Any JSON key/value pairs to collect and store with the CDR record at the end of the phone call. Each time this object is received, it is merged with any previously received `cdr_custom_data` context. | N/A |
 {: caption="Voice context variables set by the dialog or actions" caption-side="top"}
 
 ### Example
@@ -59,6 +60,9 @@ The following tables describe the context variables that have special meaning in
     "integrations": {
       "voice_telephony": {
         "post_response_timeout_count": 10000,
+        "turn_settings": {
+          "timeout_count": 5000
+        },
         "cdr_custom_data": {
           "key1": "value1",
           "key2": "value2"
@@ -76,7 +80,7 @@ The following tables describe the context variables that have special meaning in
 | Name | Type | Description |
 |------|------|-------------|
 | `sip_call_id` | string | The SIP call ID associated with the {{site.data.keyword.conversationshort}} session. |
-| `sip_custom_invite_headers` | list | A user-defined list of key/value pairs defining SIP headers that are pulled from the initial SIP `INVITE` request and passed to the {{site.data.keyword.conversationshort}} service (for example, `{"Custom-Header1": "123"}`). |
+| `sip_custom_invite_headers` | object | A JSON object containing key/value pairs defining SIP headers that are pulled from the initial SIP `INVITE` request and passed to the {{site.data.keyword.conversationshort}} service (for example, `{"Custom-Header1": "123"}`). |
 | `private.sip_from_uri` | string | The SIP `From` URI associated with the {{site.data.keyword.conversationshort}} service. |
 | `private.sip_request_uri` | string | The SIP request URI that started the conversation session. |
 | `private.sip_to_uri` | string | The SIP `To` URI associated with the conversation session. |
