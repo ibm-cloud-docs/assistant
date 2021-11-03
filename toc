@@ -16,6 +16,11 @@ Watson Assistant (Managed)
     tool-overview.md
     [Demo: Banking Assistant](https://watson-conversation-duo-dev.ng.bluemix.net/)
     sample-apps.md
+
+    {: .topicgroup}
+    Release notes
+        release-notes.md
+        release-notes-chat.md
     {: .navgroup-end}
 
     {: .navgroup id="tutorial"}
@@ -201,12 +206,6 @@ Watson Assistant (Managed)
 
     {: .navgroup id="help"}
     faqs.md
-
-    {: .topicgroup}
-    Release notes
-        release-notes.md
-        release-notes-chat.md
-
     troubleshoot.md
     feedback.md
 

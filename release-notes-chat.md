@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-10-05"
+lastupdated: "2021-10-28"
 
 subcollection: assistant
 
@@ -39,6 +39,13 @@ For information about new features and improvements to the core {{site.data.keyw
 {: #release-notes-chat-version}
 
 If you want to evaluate changes that are introduced in a web chat release before you apply them to your deployment, you can set a version of your web chat. For more information, see [Versioning](/docs/assistant?topic=assistant-web-chat-basics#web-chat-basics-versions).
+
+## 5.1.0
+{: #5.1.0}
+
+*Release date: 28 October 2021*
+
+- **Custom Panels**: The web chat now supports customizable panels you can use to display any custom HTML content (for example, a feedback form or a multistep process). Your code can use instance methods to dynamically populate a custom panel, as well as open and close it. For more information, see [Custom Panels](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-instance-methods#custompanels){: external}.
 
 ## 5.0.2
 {: #5.0.2}
