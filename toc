@@ -184,7 +184,7 @@ Watson Assistant (Managed)
     filter-reference.md
     failover.md
     recovery.md
-    commands-voice.md
+    phone-context.md
     commands-sms.md
     services-information.md
 

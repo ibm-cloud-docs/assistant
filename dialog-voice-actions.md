@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-20"
+lastupdated: "2021-11-03"
 
 subcollection: assistant
 
@@ -43,7 +43,7 @@ You can use response types to perform the following phone-specific actions:
 
 In some cases, you might want to combine response types to perform multiple actions. For example, you might want to implement two-factor authentication by requesting phone keypad entry and sending a text message from the same dialog node or step. For more information, see [Defining a sequence of phone actions](#dialog-voice-actions-sequence).
 
-For reference information about phone-specific repsonse types and related context variables, see [Phone integration rereference](/docs/assistant?topic=assistant-commands-voice).
+For reference information about phone-specific repsonse types and related context variables, see [Phone context variables](/docs/assistant?topic=assistant-phone-context).
 
 ## Adding phone-specific responses to your dialog or actions 
 {: #dialog-voice-actions-add}
@@ -627,7 +627,7 @@ This example shows the `dtmf` response type with the `collect` command, used to 
           "type": "collect",
           "parameters": {
             "termination_key": "#",
-            "count": "16",
+            "count": 16,
             "ignore_speech": true
           }
         },
@@ -770,6 +770,15 @@ To send a specific message from a dialog node or action step, use the `user_defi
 }
 ```
 {: codeblock}
+
+You can specify any of the following parameters in the `parameters` object:
+
+| Parameter         | Type   | Description |
+|-------------------|--------|-------------|
+| message           | string | The text of the SMS message to send. Required. |
+| mediaURL          | list   | A list of URLs for media files to be sent with the message as MMS attachments. Optional. |
+| tenantPhoneNumber | string | The phone number that is associated with the tenant. The format of the number must match the format that is required by the SMS provider. If no `tenantPhoneNumber` value is provided, the tenant ID from the phone integration configuration for the active call is used. Optional. |
+| userPhoneNumber   | string | The phone number to send the SMS message to. The format of the number must match the format that is required by the SMS provider. If no `userPhoneNumber` value is provided, the voice caller's phone number from `From` header of the incoming SIP `INVITE` request is used. Optional. |
 
 If your *SMS with Twilio* integration supports more than one SMS phone number, or you are using a non-Twilio SIP trunk, be sure to specify the phone number that you want to use to send the text message. Otherwise, the text is sent using the same phone number that was called.
 
