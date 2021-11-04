@@ -203,6 +203,12 @@ We also need to configure the call flow to handle calls being transferred from t
 
     ```javascript
     exports.handler = function(context, event, callback) {
+      // This function handler will handle the SIP REFER back from the Watson Assistant Phone Integration.
+      // Before handing the call back to Twilio, it will extract the session history key from the
+      // User-to-User header that's part of the SIP REFER Refer-To header. This session history key
+      // is a string that is used to load the agent application in order to share the transcripts of the caller
+      // with Watson Assistant to the agent.
+      // See https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/blob/main/docs/AGENT_APP.md
       const VoiceResponse = require('twilio').twiml.VoiceResponse;
       
       const STUDIO_WEBHOOK_URL = '{webhook_url}';
@@ -226,15 +232,16 @@ We also need to configure the call flow to handle calls being transferred from t
           sipHeaders[name] = value;
         }
 
-        // Find session history key
         const USER_TO_USER_HEADER = 'User-to-User';
         
+        // Extracts the User-to-User header value
         const uuiData = sipHeaders[USER_TO_USER_HEADER];
         
         if (uuiData) {
           const decodedUUIData = decodeURIComponent(uuiData);
-            const sessionHistoryKey = decodedUUIData.split(';')[0];
-            studioWebhookReturnUrl = `${studioWebhookReturnUrl}&SessionHistoryKey=${sessionHistoryKey}`;
+          const sessionHistoryKey = decodedUUIData.split(';')[0];
+          // Passes the session history key back to Twilio Studio through a query parameter.
+          studioWebhookReturnUrl = `${studioWebhookReturnUrl}&SessionHistoryKey=${sessionHistoryKey}`;
         }    
       }
 
