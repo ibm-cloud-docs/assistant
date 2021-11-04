@@ -166,6 +166,7 @@ Watson Assistant (Managed)
             api-migration.md
             api-context.md
             api-dialog-responses.md
+            api-input-attachments.md
             /watson/watson-using-sdks
 
     {: .topicgroup}
