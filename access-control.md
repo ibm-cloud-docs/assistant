@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-11-04"
 
 subcollection: assistant
 
@@ -111,7 +111,7 @@ To get you started quickly, consider applying these roles at first.
 ## Understanding roles
 {: #access-control-iam-roles}
 
-Access to {{site.data.keyword.conversationshort}}, its service instances and all of the resources that are used by the service is managed by {{site.data.keyword.cloud}}. To share a service instance with other users and control access to the instance, you must use the {{site.data.keyword.cloud_notm}} Identify and Access Management user interface. 
+Access to {{site.data.keyword.conversationshort}}, its service instances and all of the resources that are used by the service is managed by {{site.data.keyword.cloud}}. To share a service instance with other users and control access to the instance, you must use the {{site.data.keyword.cloud_notm}} Identity and Access Management user interface. 
 
 {{site.data.keyword.cloud_notm}} breaks down access definitions into the following role types:
 
