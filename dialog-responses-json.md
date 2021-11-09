@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-11-03"
+lastupdated: "2021-11-09"
 
 subcollection: assistant
 
@@ -611,7 +611,7 @@ Sends commands to the phone integration to control input or output using dual-to
 | response_type | string | `dtmf`             | Y         |
 | command_info  | object | Information specifying the DTMF command to send to the phone integration. | Y |
 | command_info.type | string | The DTMF command to send (`collect`, `disable_barge_in`, `enable_barge_in`, or `send`). | Y |
-| command_info.parameters | object | See [Handling phone interactions](/docs/assistant?topic=dialog-voice-actions) | N |
+| command_info.parameters | object | See [Handling phone interactions](/docs/assistant?topic=assistant-dialog-voice-actions) | N |
 
 The `command_info.type` field can specify any of the following supported commands:
 
@@ -620,11 +620,11 @@ The `command_info.type` field can specify any of the following supported command
 - `enable_barge_in`: Enables DTMF barge-in so that the customer can interrupt playback from the phone integration by pressing a key.
 - `send`: Sends DTMF signals.
 
-For detailed information about how to use each of these commands, see [Handling phone interactions](/docs/assistant?topic=dialog-voice-actions).
+For detailed information about how to use each of these commands, see [Handling phone interactions](/docs/assistant?topic=assistant-dialog-voice-actions).
 
 #### Example
 
-This example shows the `dtmf` response type with the `collect` command, used to collect DTMF input. For more information, including examples of other DTMF commands, see [Handling phone interactions](/docs/assistant?topic=dialog-voice-actions).
+This example shows the `dtmf` response type with the `collect` command, used to collect DTMF input. For more information, including examples of other DTMF commands, see [Handling phone interactions](/docs/assistant?topic=assistant-dialog-voice-actions).
 
 ```json
 {
@@ -763,7 +763,7 @@ Sends a command to the {{site.data.keyword.texttospeechshort}} service instance 
 | response_type | string | `text_to_speech`   | Y         |
 | command_info  | object | Information specifying the command to send to the {{site.data.keyword.texttospeechshort}}. | Y |
 | command_info.type | string | The command to send (`configure`, `disable_barge_in`, or `enable_barge_in`). | Y |
-| command_info.parameters | object | See [Applying advanced settings to the {{site.data.keyword.texttospeechshort}} service](/docs/assistant?topic=dialog-voice-actions#dialog-voice-actions-text-advanced) | N |
+| command_info.parameters | object | See [Applying advanced settings to the {{site.data.keyword.texttospeechshort}} service](/docs/assistant?topic=assistant-dialog-voice-actions#dialog-voice-actions-text-advanced) | N |
 
 The `command_info.type` field can specify any of the following supported commands:
 
@@ -771,7 +771,7 @@ The `command_info.type` field can specify any of the following supported command
 - `disable_barge_in`: Disables speech barge-in so that playback from the phone integration is not interrupted when the customer speaks.
 - `enable_barge_in`: Enables speech barge-in so that the customer can interrupt playback from the phone integration by speaking.
 
-For detailed information about how to use each of these commands, see [Applying advanced settings to the {{site.data.keyword.texttospeechshort}} service](/docs/assistant?topic=dialog-voice-actions#dialog-voice-actions-text-advanced).
+For detailed information about how to use each of these commands, see [Applying advanced settings to the {{site.data.keyword.texttospeechshort}} service](/docs/assistant?topic=assistant-dialog-voice-actions#dialog-voice-actions-text-advanced).
 
 #### Example
 
@@ -816,13 +816,13 @@ Sends a command to the {{site.data.keyword.speechtotextshort}} service instance 
 | response_type | string | `speech_to_text`   | Y         |
 | command_info  | object | Information specifying the command to send to the {{site.data.keyword.speechtotextshort}}. | Y |
 | command_info.type | string | The command to send (currently only the `configure` command is supported). | Y |
-| command_info.parameters | object | See [Applying advanced settings to the {{site.data.keyword.speechtotextshort}} service](/docs/assistant?topic=dialog-voice-actions#dialog-voice-actions-speech-advanced) | N |
+| command_info.parameters | object | See [Applying advanced settings to the {{site.data.keyword.speechtotextshort}} service](/docs/assistant?topic=assistant-dialog-voice-actions#dialog-voice-actions-speech-advanced) | N |
 
 The `command_info.type` field can specify any of the following supported commands:
 
 - `configure`: Dynamically updates the {{site.data.keyword.speechtotextshort}} configuration. Configuration changes can be applied only to the next conversation turn, or for the rest of the session.
 
-For detailed information about how to this command, see [Applying advanced settings to the {{site.data.keyword.speechtotextshort}} service](/docs/assistant?topic=dialog-voice-actions#dialog-voice-actions-speech-advanced).
+For detailed information about how to this command, see [Applying advanced settings to the {{site.data.keyword.speechtotextshort}} service](/docs/assistant?topic=assistant-dialog-voice-actions#dialog-voice-actions-speech-advanced).
 
 #### Example
 
@@ -867,7 +867,7 @@ Sends a command to the channel ending the session. This response type instructs 
 |---------------|--------|--------------------|-----------|
 | response_type | string | `end_session`      | Y         |
 
-For the phone integration, you can use the `channel_options` object to include custom headers with the SIP `BYE` request that is generated. For more information, see [End the call](/docs/assistant?topic=dialog-voice-actions#dialog-voice-actions-hangup).
+For the phone integration, you can use the `channel_options` object to include custom headers with the SIP `BYE` request that is generated. For more information, see [End the call](/docs/assistant?topic=assistant-dialog-voice-actions#dialog-voice-actions-hangup).
 
 #### Example
 
