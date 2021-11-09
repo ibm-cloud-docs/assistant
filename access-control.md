@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-04"
+lastupdated: "2021-11-05"
 
 subcollection: assistant
 
@@ -56,11 +56,9 @@ For each person to whom you grant access to your {{site.data.keyword.conversatio
     If you plan to grant specific resource-level access to different team members, then add one person at a time.
     {: tip}
 
-1.  Expand *Assign users additional resources*, and then click **IAM services**.
-1.  In the *No access* field, choose **Watson Assistant**. 
+1.  Expand *Assign users additional access*, and then click **IAM services**.
 
-    You must choose **Account** as the resource group.
-    {: important}
+1.  In the *Which service do you want to assign access to?* field, choose **Watson Assistant**. 
 
 1.  Optionally select a specific region and service instance to share with this user. 
 

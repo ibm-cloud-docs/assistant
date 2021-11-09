@@ -50,7 +50,7 @@ The new {{site.data.keyword.conversationshort}}
     - Use a new suite of **analytics** to improve your assistant. Review which actions are being completed to see what your customers want help with, determine if your assistant understands and addresses customer needs, and decide how can you make your assistant better.
     - New **[documentation](/docs/watson-assistant){: external}** focuses on the workflow of building, deploying, and improving your assistant.
 
-    You can easily switch to the new {{site.data.keyword.conversationshort}} and try it out. Visit the user account menu for your {{site.data.keyword.conversationshort}} instance, then choose **Switch to new experience**. 
+    You can easily switch to the new {{site.data.keyword.conversationshort}} and try it out. Visit the **Manage** menu for your {{site.data.keyword.conversationshort}} instance, then choose **Switch to new experience**. 
 
 ## 21 September 2021
 {: #assistant-sep212021}
@@ -74,7 +74,7 @@ Change to the irrelevance detection option
 
     For more information, see [Defining what's irrelevant](/docs/assistant?topic=assistant-irrelevance-detection) and [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection). 
 
-    If necessary, you can use the [Update workspace API](/apidocs/assistant/assistant-v1?curl=#updateworkspace) to set your English-language assistant to one of the four combinations of intent and irrelevance detection:
+    If necessary, you can use the [Update workspace API](/apidocs/assistant/assistant-v1?curl=#updateworkspace){: external} to set your English-language assistant to one of the four combinations of intent and irrelevance detection:
 
     - Enhanced intent recognition and enhanced irrelevance detection
     - Enhanced intent recognition and existing irrelevance detection
@@ -94,7 +94,7 @@ Dialog skill "Try it out" improvements
 
     - It now includes runtime warnings in addition to runtime errors.
 
-    - For dialog skills, the **Try it out** pane now uses the [React](https://reactjs.org/) UI framework similar to the rest of the {{site.data.keyword.conversationshort}} user interface. You shouldn't see any change in behavior or functionality. As a part of the update, dialog skill error handling has been improved within the "Try it out" pane. This update was enabled on these dates:
+    - For dialog skills, the **Try it out** pane now uses the [React](https://reactjs.org/){: external} UI framework similar to the rest of the {{site.data.keyword.conversationshort}} user interface. You shouldn't see any change in behavior or functionality. As a part of the update, dialog skill error handling has been improved within the "Try it out" pane. This update was enabled on these dates:
     
         - September 9, 2021 in the Tokyo and Seoul data centers
         - September 13, 2021 in the London, Sydney, and Washington, D.C. data centers
@@ -105,12 +105,12 @@ Dialog skill "Try it out" improvements
 {: release-note}
 
 Dialog skill "Try it out" improvements
-:   For dialog skills, the **Try it out** pane now uses the [React](https://reactjs.org/) UI framework similar to the rest of the {{site.data.keyword.conversationshort}} user interface. You shouldn't see any change in behavior or functionality. As a part of the update, dialog skill error handling has been improved within the "Try it out" pane. This update was enabled on September 9, 2021 in the Tokyo and Seoul data centers. On September 13, 2021, the update was enabled in the London, Sydney, and Washington, D.C. data centers.
+:   For dialog skills, the **Try it out** pane now uses the [React](https://reactjs.org/){: external} UI framework similar to the rest of the {{site.data.keyword.conversationshort}} user interface. You shouldn't see any change in behavior or functionality. As a part of the update, dialog skill error handling has been improved within the "Try it out" pane. This update was enabled on September 9, 2021 in the Tokyo and Seoul data centers. On September 13, 2021, the update was enabled in the London, Sydney, and Washington, D.C. data centers.
 
 Disambiguation feature updates
 :   The dialog skill disambiguation feature now includes improved features:
 
-    - **Increased control**: The frequency and depth of disambiguation can now be controlled by using the **sensitivity** parameter in the [workspace API](/apidocs/assistant/assistant-v1#updateworkspace). There are 5 levels of sensitivity:
+    - **Increased control**: The frequency and depth of disambiguation can now be controlled by using the **sensitivity** parameter in the [workspace API](/apidocs/assistant/assistant-v1#updateworkspace){: external}. There are 5 levels of sensitivity:
         - `high`
         - `medium_high`
         - `medium`
@@ -123,7 +123,7 @@ Disambiguation feature updates
 
     These new features may affect various metrics, such as disambiguation rate and click rates, as well as influence conversation-level key performance indicators such as containment. 
     
-    If the new disambiguation algorithm works differently than expected for your assistant, you can adjust it using the sensitivity parameter in the update workspace API. For more information, see [Update workspace](/apidocs/assistant/assistant-v1#updateworkspace).
+    If the new disambiguation algorithm works differently than expected for your assistant, you can adjust it using the sensitivity parameter in the update workspace API. For more information, see [Update workspace](/apidocs/assistant/assistant-v1#updateworkspace){: external}.
 
 ## 9 September 2021
 {: #assistant-sep092021}
@@ -303,7 +303,7 @@ Legacy system entities deprecated
 {: release-note}
 
 Service API endpoint change
-:   As explained in [December 2019](#dec122019), as part of work done to fully support IAM authentication, the endpoint you use to access your {{site.data.keyword.conversationshort}} service programmatically is changing. The old endpoint URLs are deprecated and **will be retired on 26 May 2021**. Update your API calls to use the new URLs.
+:   As explained in [December 2019](#assistant-dec122019), as part of work done to fully support IAM authentication, the endpoint you use to access your {{site.data.keyword.conversationshort}} service programmatically is changing. The old endpoint URLs are deprecated and **will be retired on 26 May 2021**. Update your API calls to use the new URLs.
 
     The pattern for the endpoint URL changes from `gateway-{location}.watsonplatform.net/assistant/api/` to `api.{location}.assistant.watson.cloud.ibm.com/`. The domain, location, and offering identifier are different in the new endpoint. For more information, see [Updating endpoint URLs from watsonplatform.net](/docs/watson?topic=watson-endpoint-change){: external}.
 
@@ -402,15 +402,15 @@ Intercom and WhatsApp integrations now available in Lite plan
 Session history now generally available
 :   Session history allows your web chats to maintain conversation history and context when users refresh a page or change to a different page on the same website. It is enabled by default. For more information about this feature, see [Session history](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=tutorials-session-history){: external}.
     
-    Session history persists within only one browser tab, not across multiple tabs. The dialog provides an option for links to open in a new tab or the same tab. See [this example](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=tutorials-session-history#Tutorial1) for more information on how to format links to open in the same tab.
+    Session history persists within only one browser tab, not across multiple tabs. The dialog provides an option for links to open in a new tab or the same tab. See [this example](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=tutorials-session-history#Tutorial1){: external} for more information on how to format links to open in the same tab.
     
-    Session history saves changes that are made to messages with the [pre:receive event](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events#prereceive) so that messages still look the same on rerender. This data is only saved for the length of the session. If you prefer to discard the data, set `event.updateHistory = false;` so the message is rerendered without the changes that were made in the pre:receive event.
+    Session history saves changes that are made to messages with the [pre:receive event](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events#prereceive){: external} so that messages still look the same on rerender. This data is only saved for the length of the session. If you prefer to discard the data, set `event.updateHistory = false;` so the message is rerendered without the changes that were made in the pre:receive event.
 
-    [instance.updateHistoryUserDefined()](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-instance-methods#updateHistoryUserDefined) provides a way to save state for any message response. With the state saved, a response can be rerendered with the same state. This saved state is available in the `history.user_defined` section of the message response on reload. The data is saved during the user session. When the session expires, the data is discarded.
+    [instance.updateHistoryUserDefined()](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-instance-methods#updateHistoryUserDefined){: external} provides a way to save state for any message response. With the state saved, a response can be rerendered with the same state. This saved state is available in the `history.user_defined` section of the message response on reload. The data is saved during the user session. When the session expires, the data is discarded.
     
-    Two new history events, [history:begin](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events#historybegin) and [history:end](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events#historyend) announce the beginning and end of the history of a reloaded session. These events can be used to view the messages that are being reloaded. The history:begin event allows you to edit the messages before they are displayed.
+    Two new history events, [history:begin](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events#historybegin){: external} and [history:end](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events#historyend){: external} announce the beginning and end of the history of a reloaded session. These events can be used to view the messages that are being reloaded. The history:begin event allows you to edit the messages before they are displayed.
 
-    See this example for more information on saving the state of [customResponse](https://web-chat.global.assistant.watson.cloud.ibm.com/testfest.html?to=api-events#customresponse) types in session history.
+    See this example for more information on saving the state of [customResponse](https://web-chat.global.assistant.watson.cloud.ibm.com/testfest.html?to=api-events#customresponse){: external} types in session history.
 
 Channel switching
 :   You can now create a dialog response type to functionally generate a connect-to-agent response within channels other than web chat. If a user is in a channel such as Slack or Facebook, they can trigger a channel transfer response type. The user receives a link that forwards them to your organization's website where a connection to an agent response can be started within web chat. For more information, see [Adding a Channel transfer response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-channel-transfer).
@@ -837,6 +837,7 @@ New system entities are enabled automatically
 ## 22 May 2020
 {: #assistant-may222020}
 {: release-note}
+
 Spelling correction in v2 API
 :   The v2 `message` API now supports spelling correction options. For more information see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#message){: external}.
 
@@ -1041,9 +1042,6 @@ March 2020 deprecation notice
         v1 API versions that are dated on or before `2017-02-03` are being deprecated. When you send calls to the service with earlier API version dates, they will receive properly formatted and valid responses for a time, so you can gracefully transition to using the later API versions. However, the confidence scores and other results that are sent in the response will reflect those generated by a more recent version of the API.
 
         ***Action***: Do some testing of calls with the latest version to verify that things work as expected. Some functionality has changed over the last few years. After testing, change the version date on any API calls that you make from your applications. 
-    
-        For more information about the latest supported versions, see [Service API versioning](#release-notes-api-version). To learn about some of the changes that were introduced with each API version update, you can search these release notes for *New API version* entries.
-
 
 ## 28 February 2020
 {: #assistant-feb282020}
@@ -1140,7 +1138,7 @@ Full support for IBM Cloud IAM
 
         These URLs do not introduce a breaking change. The new URLs work both for your existing service instances and for new instances. The original URLs continue to work on your existing service instances for at least one year (until December 2020).
 
-    - For more information, see [Authenticating to Watson services](/docs/watson?topic=watson-iam).
+    - For more information, see [Authenticating to Watson services](/docs/watson?topic=watson-iam){: external}.
 
 ## 26 November 2019
 {: #assistant-nov262019}
@@ -1245,10 +1243,10 @@ Inactivity timeout increase
 :   The maximum inactivity timeout can now be extended to up to 7 days for Premium plans. See [Changing the inactivity timeout setting](/docs/assistant?topic=assistant-assistant-settings).
 
 Pattern entity fix
-:   A change that was introduced in the previous release which changed all alphabetic characters to lowercase at the time an entity value was added has been fixed. The case of any alphabetic characters that are part of a pattern entity value are no longer changed when the value is added. <!--30545-->
+:   A change that was introduced in the previous release which changed all alphabetic characters to lowercase at the time an entity value was added has been fixed. The case of any alphabetic characters that are part of a pattern entity value are no longer changed when the value is added. 
 
 Dialog text response syntax fix
-:   Fixed a bug in which the format of a dialog response reverted to an earlier version of the JSON syntax. Standard text responses were being saved as `output.text` instead of `output.generic`. For more information about the `output` object, see [Anatomy of a dialog call](/docs/assistant?topic=assistant-dialog-runtime-context). <!--30176-->
+:   Fixed a bug in which the format of a dialog response reverted to an earlier version of the JSON syntax. Standard text responses were being saved as `output.text` instead of `output.generic`. For more information about the `output` object, see [Anatomy of a dialog call](/docs/assistant?topic=assistant-dialog-runtime-context). 
 
 ## 13 September 2019 
 {: #assistant-sep132019}
@@ -1614,7 +1612,7 @@ Entity synonym recommendations are available in more languages
 {: release-note}
 
 New API version
-:   The current API version is now `2018-09-20`. In this version, the `errors[].path` attribute of the error object that is returned by the API is expressed as a [JSON Pointer](https://tools.ietf.org/html/rfc6901) instead of in dot notation form.
+:   The current API version is now `2018-09-20`. In this version, the `errors[].path` attribute of the error object that is returned by the API is expressed as a [JSON Pointer](https://tools.ietf.org/html/rfc6901){: external} instead of in dot notation form.
 
 Web actions support
 :   You can now call {{site.data.keyword.openwhisk_short}} web actions from a dialog node. See [Making programmatic calls from a dialog node](/docs/assistant?topic=assistant-dialog-actions-client) for more details.
@@ -1754,7 +1752,7 @@ Search dialogs
 {: release-note}
 
 Introducing {{site.data.keyword.conversationfull}}
-:   {{site.data.keyword.ibmwatson}} Conversation has been renamed. It is now called {{site.data.keyword.conversationfull}}. The name change reflects the fact that {{site.data.keyword.conversationshort}} is expanding to provide prebuilt content and tools that help you more easily share the virtual assistants you build. Read [this blog post](https://www.ibm.com/blogs/watson/2018/03/the-future-of-watson-conversation-watson-assistant/) for more details.
+:   {{site.data.keyword.ibmwatson}} Conversation has been renamed. It is now called {{site.data.keyword.conversationfull}}. The name change reflects the fact that {{site.data.keyword.conversationshort}} is expanding to provide prebuilt content and tools that help you more easily share the virtual assistants you build. Read [this blog post](https://www.ibm.com/blogs/watson/2018/03/the-future-of-watson-conversation-watson-assistant/){: external} for more details.
 
 New REST APIs and SDKs are available for {{site.data.keyword.conversationshort}}
 :   The new APIs are functionally identical to the existing Conversation APIs, which continue to be supported. For more information about the {{site.data.keyword.conversationshort}} APIs, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1){: external}.
@@ -1911,7 +1909,7 @@ Dialog updates
 {: release-note}
 
 Updates to Simplified Chinese
-:   Language support has been enhanced for Simplified Chinese. This includes intent classification improvements using character-level word embeddings, and the availability of system entities. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied; see [Updated models](#release-notes-updated-models) for more information.
+:   Language support has been enhanced for Simplified Chinese. This includes intent classification improvements using character-level word embeddings, and the availability of system entities. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied.
 
 Updates to Spanish
 :   Improvements have been made to Spanish intent classification, for very large datasets.
@@ -1921,7 +1919,7 @@ Updates to Spanish
 {: release-note}
 
 Updates to Korean
-:   Language support has been enhanced for Korean. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied; see [Updated models](#release-notes-updated-models) for more information.
+:   Language support has been enhanced for Korean. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied.
 
 ## 3 October 2017
 {: #assistant-oct032017}
@@ -1961,7 +1959,7 @@ Dialog node names
 {: release-note}
 
 Updates to Korean, Japanese, and Italian
-:   Language support has been enhanced for Korean, Japanese, and Italian. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied; see [Updated models](#release-notes-updated-models) for more information.
+:   Language support has been enhanced for Korean, Japanese, and Italian. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied.
 
 ## 10 August 2017
 {: #assistant-aug102017}
@@ -2043,14 +2041,14 @@ Test in Slack
 :   You can use the new **Test in Slack** tool to quickly deploy your workspace as a Slack bot user for testing purposes. This tool is available only for the {{site.data.keyword.Bluemix_notm}} US South region.
 
 Updates to Arabic
-:   Arabic language support has been enhanced to include absolute scoring per intent, and the ability to mark intents as irrelevant; please see the [Supported languages](/docs/assistant?topic=assistant-language-support) topic for additional details. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied; see [Updated models](#release-notes-updated-models) for more information.
+:   Arabic language support has been enhanced to include absolute scoring per intent, and the ability to mark intents as irrelevant; please see the [Supported languages](/docs/assistant?topic=assistant-language-support) topic for additional details. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied.
 
 ## 23 June 2017
 {: #assistant-jun232017}
 {: release-note}
 
 Updates to Korean
-:   Korean language support has been enhanced; please see the [Supported languages](/docs/assistant?topic=assistant-language-support) topic for additional details. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied; see [Updated models](#release-notes-updated-models) for more information.
+:   Korean language support has been enhanced; please see the [Supported languages](/docs/assistant?topic=assistant-language-support) topic for additional details. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied.
 
 ## 22 June 2017
 {: #assistant-jun222017}
