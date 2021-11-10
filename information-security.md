@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-08-25"
+lastupdated: "2021-11-01"
 
 subcollection: assistant
 
@@ -60,12 +60,12 @@ Do not add personal health information (PHI) to the training data (entities and 
 
 IBM uses log data, Enterprise plan data excluded, to continually learn from and improve the {{site.data.keyword.conversationshort}} product. The logged data is not shared or made public.
 
-To prevent IBM from using your log data for general service improvements, complete one of the following tasks: 
+To prevent IBM from using your log data for general service improvements, complete one of the following tasks:
 
 - If you are using a custom application, for each API `/message` request, set the `X-Watson-Learning-Opt-Out` header parameter to `true`.
 
   For more information, see [Data collection](https://cloud.ibm.com/apidocs/assistant/assistant-v2#data-collection){: external}.
-- If you are using the web chat integration, add the `learningOptOut` parameter to the script that you embed in your web page, and set it to `true`. 
+- If you are using the web chat integration, add the `learningOptOut` parameter to the script that you embed in your web page, and set it to `true`.
 
   For more information, see [Configuration](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-configuration){: external}.
 
@@ -84,14 +84,14 @@ Removing message data must be an occasional event only for individual customer I
 
 - The assistant preview and automatic Facebook integration do not support the labeling and therefore deletion of data based on customer ID. They should not be used in a solution that must support the ability to delete data based on a customer ID.
 - For Intercom, the `customer_id` is the `user_id` prepended with `intercom_`. The Intercom `user_id` property is the `id` of the `author` message object in the Conversation Model that is defined by Intercom.
-  
+
   - To get the ID, open the channel from a web browser. Open the web developer tools to view the console. Look for `author`.
 
   The full customer ID looks like this: `customer_id=intercom_5c499e5535ddf5c7fa2d72b3`.
 - For Slack, the `customer_id` is the `user_id` prepended with `slack_`. The Slack `user_id` property is a concatenation of the team ID, such as `T09LVDR7Y`, and the member ID of the user, such has `W4F8K9JNF`. For example: `T09LVDR7YW4F8K9JNF`.
 
   - To get the team ID, open the channel from a web browser. Open the web developer tools to view the console. Look for `[BOOT] Initial team ID`.
-  - You can copy the member ID from the user's Slack profile. 
+  - You can copy the member ID from the user's Slack profile.
   - To get the IDs programmatically, use the Slack API. For more information, see [Overview](https://api.slack.com/apis){: external}.
   The full customer ID looks like this: `customer_id=slack_T09LVDR7YW4F8K9JNF`.
 - For the web chat integration, the service takes the `user_id` that is passed in and adds it as the `customer_id` parameter value to the `X-Watson-Metadata` header with each request.
@@ -117,7 +117,7 @@ where {url} is the appropriate URL for your instance. For more details, see [Ser
 The `customer_id` string cannot include the semicolon (`;`) or equal sign (`=`) characters. You are responsible for ensuring that each `customer ID` property is unique across your customers.
 {: note}
 
-You can pass multiple **customer ID** values with semicolon-separated `customer_id={value}` pairs. For example: `'X-Watson-Metadata: customer_id=abc;customer_id=xyz'`
+Only the first **customer ID** value that is passed in the `X-Watson-Metadata` header is used as the `customer_id` string for the message log. This **customer ID** value can be deleted with `DELETE /user_data` v1 API calls.
 
 If you add a search skill to an assistant, user input that is submitted to the assistant is passed to the {{site.data.keyword.discoveryshort}} service as a search query. If the {{site.data.keyword.conversationshort}} integration provides a customer ID, then the resulting `/message` API request includes the customer ID in the header, and the ID is passed through to the {{site.data.keyword.discoveryshort}} `/query` API request. To delete any query data that is associated with a specific customer, you must send a separate delete request directly to the {{site.data.keyword.discoveryshort}} service instance that is linked your the assistant. See the {{site.data.keyword.discoveryshort}} [information security](/docs/discovery/information-security?topic=discovery-information-security) topic for details.
 
