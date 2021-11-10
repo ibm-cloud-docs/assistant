@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-10-07"
+lastupdated: "2021-11-10"
 
 subcollection: assistant
 
@@ -35,6 +35,16 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: shortdesc}
 
 For information about changes to the web chat integration, see the [Web Chat release notes](/docs/assistant?topic=assistant-release-notes-chat).
+
+On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
+{: note}
+
+## 09 November 2021
+{: #assistant-nov092021}
+{: release-note}
+
+New phone response types
+:   New response types are available for controlling the configuration and behavior of the phone integration. These response types replace most of the older `vgw` actions, which are now deprecated. (The `vgw` actions will continue to work, so existing skills do not need to be changed.) For more information, see [Handling phone interactions](/docs/assistant?topic=assistant-dialog-voice-actions).
 
 ## 07 October 2021
 {: #assistant-oct072021}
