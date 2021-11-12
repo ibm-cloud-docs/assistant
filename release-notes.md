@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-12"
 
 subcollection: assistant
 
@@ -45,6 +45,13 @@ On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversat
 
 New phone response types
 :   New response types are available for controlling the configuration and behavior of the phone integration. These response types replace most of the older `vgw` actions, which are now deprecated. (The `vgw` actions will continue to work, so existing skills do not need to be changed.) For more information, see [Handling phone interactions](/docs/assistant?topic=assistant-dialog-voice-actions).
+
+## 04 November 2021
+{: #assistant-nov042021}
+{: release-note}
+
+Actions enhancement: Add variables to links
+: In an actions skill, when including a link in an assistant response, you can now access and use variables. In the URL field for a link, type a dollar sign (`$`) character to see a list of variables to choose from.
 
 ## 07 October 2021
 {: #assistant-oct072021}

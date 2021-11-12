@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-13"
+lastupdated: "2021-11-12"
 
 subcollection: assistant
 
@@ -337,10 +337,14 @@ In addition to creating variables, you can choose from a set of built-in variabl
 | Locale | User locale that affects understanding and formatting of dates, times and numbers. Example: en-gb |
 {: caption="Available when connected to a webhook or integration" caption-side="top"}
 
-To reference a variable in a text response:
+To reference a variable in a response:
 
-1.  In the text response field, add the text for the response. 
-1.  When the cursor is at the place where you want the assistant to populate the data it saved earlier, add a variable reference. Click the *Insert a variable* icon (![Insert a variable icon](images/action-variable-icon.png)) or add a dollar sign ($) character to see a list of variables to choose from.
+1.  In the response field, add the text for the response. 
+
+1.  When the cursor is at the place where you want the assistant to populate the data it saved earlier, add a variable reference. Click the *Insert a variable* icon (![Insert a variable icon](images/action-variable-icon.png)) or add a dollar sign (`$`) character to see a list of variables to choose from. 
+
+    You can also use variables in links. In the URL field for a link, type a dollar sign (`$`) character to see a list of variables to choose from.
+
 1.  Click a variable to add a reference to it in the text.
 
 ### Defining session variables
