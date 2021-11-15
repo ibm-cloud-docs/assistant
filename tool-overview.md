@@ -15,6 +15,17 @@ subcollection: assistant
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 {:video: .video}
+{:new_window: target="_blank"}
+{:external: target="_blank" .external}
+{:deprecated: .deprecated}
+{:important: .important}
+{:note: .note}
+{:tip: .tip}
+{:pre: .pre}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:java: .ph data-hd-programlang='java'}
+{:python: .ph data-hd-programlang='python'}
+{:swift: .ph data-hd-programlang='swift'}
 
 {{site.data.content.newlink}}
 
