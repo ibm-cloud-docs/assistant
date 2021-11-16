@@ -57,7 +57,7 @@ Actions enhancement: Add variables to links
 {: #assistant-oct142021}
 {: release-note}
 
-`vgwHangUp` message no longer set
+`vgwHangUp` message no longer sent
 :   Previously, the phone integration sent a message containing the text `vgwHangUp` to the assistant when a call was ended by the caller. This message is no longer sent.
 
 ## 07 October 2021
