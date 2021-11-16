@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-16"
 
 subcollection: assistant
 
@@ -52,6 +52,13 @@ New phone response types
 
 Actions enhancement: Add variables to links
 : In an actions skill, when including a link in an assistant response, you can now access and use variables. In the URL field for a link, type a dollar sign (`$`) character to see a list of variables to choose from.
+
+## 14 October 2021
+{: #assistant-oct142021}
+{: release-note}
+
+`vgwHangUp` message no longer set
+:   Previously, the phone integration sent a message containing the text `vgwHangUp` to the assistant when a call was ended by the caller. This message is no longer sent.
 
 ## 07 October 2021
 {: #assistant-oct072021}
