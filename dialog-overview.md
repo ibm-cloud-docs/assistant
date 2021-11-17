@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-16"
+lastupdated: "2021-09-17"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -627,6 +627,8 @@ To add an *iframe* response type, complete the following steps:
     The URL must specify content that is embeddable in an HTML `iframe` element. Different sites have varying restrictions for embedding content, and different processes for generating embeddable URLs. An embeddable URL is one that can be specified as the value of the `src` attribute of the `iframe` element.
 
     For example, to embed an interactive map using Google Maps, you can use the Google Maps Embed API. (For more information, see [The Maps Embed API overview](https://developers.google.com/maps/documentation/embed/get-started){: external}.) Other sites have different processes for creating embeddable content.
+
+    For technical details about using `Content-Security-Policy: frame-src` to allow embedding of your website content, see [CSP: frame-src](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-src){: external}.
 
 1.  Optionally add a descriptive title in the **Title** field.
 
