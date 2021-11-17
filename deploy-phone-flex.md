@@ -92,7 +92,7 @@ To create the call flow:
 
 1. At this point you should have a **Trigger** widget at the top of your flow canvas.
 
-1. Click the Trigger widget.
+1. Click the **Trigger** widget.
 
 1. Make note of the value from the WEBHOOK URL field. You will need this value in a subsequent step.
 
