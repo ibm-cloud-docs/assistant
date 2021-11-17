@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-23"
+lastupdated: "2021-11-17"
 
 subcollection: assistant
 
@@ -94,13 +94,11 @@ To integrate your assistant with Genesys Cloud, follow these steps:
 
 1. Under **Media**, remove **Opus** from the **Preferred Codec List**. Click **Select a Codec** and then select **g729** to add it to the list. Leave **PCMU** as the first item in the list.
 
-  ![Genesys select codec](images/phone-genesys-select-codec.png)
+    ![Genesys select codec](images/phone-genesys-select-codec.png)
 
 1. Under **Protocol**
-  - In the **Header/Invite** section, toggle the **Conversation Headers** switch to **Enabled**
-  - Enable **Take Back and Transfer**.
-
-  ![Genesys configure protocol](images/phone-genesys-configure-protocol.png)
+    - In the **Header/Invite** section, toggle the **Conversation Headers** switch to **Enabled**
+    - Enable **Take Back and Transfer**.
 
 1. Click **Save External Trunk**.
 
@@ -131,13 +129,13 @@ To integrate your assistant with Genesys Cloud, follow these steps:
 
     - Toggle the **State** switch to **Enabled**.
 
-  ![Genesys outbound route](images/phone-genesys-outbound-route.png)
+    ![Genesys outbound route](images/phone-genesys-outbound-route.png)
 
 1. Click **Save Outbound Routes**.
 
 1. Go to the **Simulate Call** tab and click the **Simulate Call** button. The trunk should be shown as operational. (No actual call is made during simulation.)
 
-  ![Genesys simulate call](images/phone-genesys-simulate-call.png)
+    ![Genesys simulate call](images/phone-genesys-simulate-call.png)
 
 1. Go to **Phone Management** and click **Create new**. Specify the following information:
 
@@ -232,9 +230,9 @@ Now that your Genesys Cloud environment can connect to Watson Assistant, you can
 
 1. Make sure your assistant is configured with at least one dialog node that transfers calls to an agent. For more information about how to do this, see [Transferring a call to a human agent](/docs/assistant?topic=assistant-dialog-voice-actions#dialog-voice-actions-transfer).
 
-  For the `transferTarget` parameter, use the DID number you created in Genesys Cloud, as well as the inbound SIP URI from your Genesys trunk. Use the following format:
+    For the `transferTarget` parameter, use the DID number you created in Genesys Cloud, as well as the inbound SIP URI from your Genesys trunk. Use the following format:
 
-  ```sip:+18883334444\\@example.com```
+    ```sip:+18883334444\\@example.com```
 
   Make sure you use the `\\` escape characters so Watson Assistant does not misinterpret the `@` as part of the entity shorthand syntax.
   {: note}
@@ -245,3 +243,4 @@ Now that your Genesys Cloud environment can connect to Watson Assistant, you can
 ###  Share the conversation history with service desk agents 
 
 To enable the service desk agent to get a quick view of the conversation history between the visitor and the assistant, set up the {{site.data.keyword.conversationshort}} Agent App app for your Genesys Pure Cloud Environment. For more information, see the documentation for the [Genesys starter kit](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/genesys/agentApp){: external}.
+
