@@ -88,3 +88,6 @@ To start a chat with the assistant, complete the following steps:
 The Welcome node of your dialog is not processed by the Facebook Messenger integration. The welcome message is not displayed in the Facebook chat like it is in the "Try it out" pane or in the assistant preview. It is not triggered from here because nodes with the `welcome` special condition are skipped in dialog flows that are started by users. Facebook Messenger waits for the user to initiate the conversation. For more information about how to set context variable values consistently at the start of a conversation, see [Starting the dialog](/docs/assistant?topic=assistant-dialog-start).
 {: note}
 
+
+You can upload media files or even documents to the chat. Files shared in the chat can be intercepted and processed by a configured premessage webhook. For more details, see [Processing media sent to {{site.data.keyword.conversationshort}} with input attachments](/docs/assistant?topic=assistant-input-attachments).
+

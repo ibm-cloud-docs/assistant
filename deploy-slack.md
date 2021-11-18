@@ -138,4 +138,7 @@ To start a chat with the assistant, complete the following steps:
 The Welcome node of your dialog is not processed by the Slack integration. The welcome message is not displayed in the Slack channel like it is in the "Try it out" pane or in the assistant preview. It is not triggered from here because nodes with the `welcome` special condition are skipped in dialog flows that are started by users. Slack waits for the user to initiate the conversation. For more information about how to set context variable values consistently at the start of a conversation, see [Starting the dialog](/docs/assistant?topic=assistant-dialog-start).
 {: note}
 
+You can upload media files or even documents to the chat. Files shared in the chat can be intercepted and processed by a configured premessage webhook. For more details, see [Processing media sent to {{site.data.keyword.conversationshort}} with input attachments](/docs/assistant?topic=assistant-input-attachments).
+
+
 The dialog flow for the current session is restarted after 60 minutes of inactivity (5 minutes for Lite and Standard plans). This means that if a user stops interacting with the assistant, after 60 (or 5) minutes, any context variable values that were set during the previous conversation are set to null or back to their default values.
