@@ -38,6 +38,7 @@ You can use response types to perform the following phone-specific actions:
 - [Transfer a call to a human agent](#dialog-voice-actions-transfer)
 - [Play hold music or a voice recording](#dialog-voice-actions-hold-music)
 - [Enable keypad entry](#dialog-voice-actions-dtmf)
+- [Transfer the caller to a web chat](#dialog-voice-actions-transfer-channel)
 - [End the call](#dialog-voice-actions-hangup)
 - [Send a text message during a phone conversation](#dialog-voice-actions-sms)
 
@@ -677,6 +678,45 @@ This example shows the `dtmf` response type with the `send` command, used to sen
 }
 ```
 {: codeblock}
+
+## Transfering the caller to a web chat
+{: #dialog-voice-actions-transfer-channel}
+
+You can transfer the caller from the current phone call to a web chat session by using the `channel_transfer` response type. The {{site.data.keyword.conversationshort}} sends an SMS message to the caller that includes a URL that, when clicked, loads the {{site.data.keyword.conversationshort}} web chat widget into the smart phone's browser and displays not only the history of the phone call they just had but starts the process of collecting the information needed to complete the transaction. At this point the caller can simply hang up the phone and complete their task using the web chat.
+The response type can be used only when the `SMS with Twilio` integration is configured on {{site.data.keyword.conversationshort}}.
+
+
+```json
+{
+  "output": {
+    "generic": [
+      {
+        "response_type": "text",
+        "values": [
+          {
+            "text": "I will send you a text message now with a link to our website."
+          }
+        ],
+        "selection_policy": "sequential"
+      },
+      {
+        "response_type": "channel_transfer",
+        "message_to_user": "Click the link to connect with an agent using our website.",
+        "transfer_info": {
+          "target": {
+            "chat": {
+              "url": "https://example.com/webchat"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
+```
+{: codeblock}
+
+
 
 ## End the call
 {: #dialog-voice-actions-hangup}
