@@ -52,13 +52,31 @@ The following table describes the context variables that have special meaning in
 
 Table 2 describes the context variables that you can set by the *SMS with Twilio* integration.
 
-### Table 3. Context variables that are set by the integration
+### Table 2. Context variables that are set by the integration
 {: #commands-sms-context-variables-set-by-integration}
 
 | Context variable name | Description |
 | --------------------- | ----------- |
-| `smsTenantPhoneNumber` | The integration tenant phone number that the user is messaging. |
-| `smsUserPhoneNumber` | The phone number of the user that is exchanging messages with the integration. |
-| `smsSessionID` | The globally unique identifier (GUID) for the related SMS Gateway session. |
-| `smsMedia` | The `arraylist` of `mediaURL` and corresponding `mediaContentType`. This context variable is cleared at the end of each conversation turn. |
-{: caption="Table 3. SMS context variables set by the integration" caption-side="top"}
+| `assistant_phone_number` | The phone number associated with the Watson Assistant side that received the text message. |
+| `private.user_phone_number` | The phone number that the text message was received from. |
+{: caption="Table 2. SMS context variables set by the integration" caption-side="top"}
+
+Example:
+
+```json
+{
+  "context" : {
+   "global" : {...},
+   "skills" : {...},
+   "integrations" : {
+      "text_messaging": {
+          "private":{
+            "user_phone_number":"+12223456789",
+          }
+          "assistant_phone_number":"+18883456789"
+      }
+    }
+  }
+}
+```
+{: codeblock}
