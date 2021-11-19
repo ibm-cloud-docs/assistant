@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-08-20"
+lastupdated: "2021-11-19"
 
 subcollection: assistant
 
@@ -22,8 +22,6 @@ subcollection: assistant
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
-
-{{site.data.content.newlink}}
 
 # Filter query reference
 {: #filter-reference}
@@ -96,6 +94,7 @@ Similarly, you can filter on intents or entities sent as part of the request, as
 
 `response.top_intent::goodbye`
 -->
+
 ### Filtering by other fields
 {: #filter-reference-fields}
 
