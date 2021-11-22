@@ -1,0 +1,268 @@
+toc:
+  properties:
+    subcollection: assistant
+    category: ai
+    audience: service
+    href: /docs/assistant?topic=assistant-getting-started
+    product-page: https://www.ibm.com/cloud/watson-assistant/
+    path: assistant
+    label: Watson Assistant (Managed)
+
+  entries: 
+  - navgroup: 
+      id: learn
+      topics:
+      - topicgroup: 
+          label: Getting started tutorial
+          topics:
+          - getting-started.md
+          - gs-dialog.md
+          - gs-actions.md
+      - index.md
+      - assistants.md
+      - tool-overview.md
+      - link:
+          label: Banking Assistant
+          href: https://watson-conversation-duo-dev.ng.bluemix.net
+      - sample-apps.md
+      - topicgroup:
+          label: Release notes
+          topics:
+          - release-notes.md
+          - release-notes-chat.md
+
+  - navgroup:
+      id: tutorial
+      topics:
+      - tutorial.md
+      - tutorial-slots.md
+      - tutorial-slots-complex.md
+      - tutorial-digressions.md
+
+  - navgroup:
+      id: howto
+      topics:
+      - topicgroup: 
+          label: Creating an assistant
+          topics:
+          - assistant-add.md
+          - skill-add.md
+          - skills-choose.md
+      - topicgroup: 
+          label: Building a conversation with actions
+          topics:
+          - skill-actions-add.md
+          - actions.md
+          - actions-overview.md
+      - topicgroup: 
+          label: Building a conversation with a dialog tree
+          topics:
+          - skill-dialog-add.md
+          - dev-process.md
+          - topicgroup:
+              label: Defining goals for your assistant to address
+              topics:
+              - intents.md
+              - catalog.md
+              - intent-recommendations.md
+              - intent-detection.md
+          - topicgroup:
+              label: Building a conversational flow
+              topics:
+              - dialog-build.md
+              - dialog-overview.md
+              - dialog-start.md
+              - dialog-support.md
+              - dialog-tips.md
+              - dialog-runtime-context.md
+              - dialog-tasks.md
+              - dialog-runtime.md
+              - dialog-runtime-spell-check.md
+              - dialog-slots.md
+          - entities.md
+          - versions.md
+      - skill-search-add.md
+      - skill-tasks.md
+      - deploy-web-link.md
+      - assistant-settings.md
+      - assistant-language.md
+      - topicgroup:
+          label: Deploying
+          topics:
+          - deploy-overview.md
+          - topicgroup:
+             label: Deploying to your website
+             topics:
+             - deploy-web-chat.md
+             - deploy-salesforce.md
+             - deploy-zendesk.md
+             links:
+              - link:
+                  label: Integrating with Genesys Cloud
+                  href: https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/genesys
+              - link:
+                  label: Integrating with NICE inContact
+                  href: https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/incontact
+              - link:
+                  label: Integrating with Twilio Flex
+                  href: https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/flex
+              - link:
+                  label: Integrating with Oracle B2C Service
+                  href: https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/oracle
+              - link: 
+                  label: Integrating with your own service desk
+                  href: https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter
+          - topicgroup:
+             label: Deploying for phone
+             topics:
+             - deploy-phone.md
+             - deploy-phone-flex.md
+             - deploy-phone-genesys.md
+          - topicgroup:
+             label: Deploying to other platforms
+             topics:
+             - deploy-integration-add.md
+             - deploy-facebook.md
+             - deploy-intercom.md
+             - deploy-slack.md
+             - deploy-sms.md
+             - deploy-whatsapp.md
+             - deploy-custom-app.md
+          - deploy-integration-delete.md
+          - topicgroup:
+               label: Analytics
+               topics:
+               - logs-overview.md
+               - logs.md
+               - autolearn.md
+               - irrelevance-detection.md
+               - logs-resources.md
+          - topicgroup:
+               label: Administrative tasks
+               topics:
+               - backup.md
+               - upgrade.md
+          - topicgroup:
+               label: Enhancing security
+               topics: 
+                - access-control.md
+                - information-security.md
+                - security.md
+          - topicgroup:
+                label: Advanced development
+                topics:
+                - develop.md
+          - topicgroup:
+                label: Using webhooks
+                topics:
+                 - webhook-overview.md
+                 - dialog-webhooks.md
+                 - webhook-pre.md
+                 - webhook-post.md
+                 - webhook-log.md
+          - topicgroup:
+                label: Dialog skill development
+                topics:
+                - skill-develop.md
+                - message-anatomy.md
+                - dialog-integrations.md
+                - dialog-voice-actions.md
+                - dialog-sms-actions.md
+                - dialog-actions-client.md
+                - dialog-responses-json.md
+                - api-dialog-modify.md
+          - topicgroup:
+                label: Web chat development
+                topics:
+                - web-chat-basics.md
+                - web-chat-config.md
+                - web-chat-security.md
+          - topicgroup:
+                label: Custom UI development
+                topics:
+                - api-overview.md
+                - api-methods.md
+                - api-client.md
+                - api-migration.md
+                - api-context.md
+                - api-dialog-responses.md
+                - api-input-attachments.md
+                - /watson/watson-using-sdks
+          - topicgroup:
+                label: Early access program
+                topics:
+                - beta.md
+
+  - navgroup:
+      id: reference
+      topics:
+      - link:
+          label: API reference
+          href: https://cloud.ibm.com/apidocs/assistant/assistant-v2
+      - topicgroup:
+          label: API reference for web chat
+          links:
+            - link:
+                label: watsonAssistantChatOptions object parameters
+                href: https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-configuration
+            - link:
+                label: Instance methods
+                href: https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-instance-methods
+            - link:
+                label: Events
+                href: https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events
+      - at-events.md
+      - skill-auto-retrain.md
+      - dialog-methods.md
+      - expression-language.md
+      - filter-reference.md
+      - failover.md
+      - recovery.md
+      - phone-context.md
+      - commands-sms.md
+      - services-information.md
+      - topicgroup:
+          label: System entities
+          topics:
+          - system-entities.md
+          - legacy-system-entities.md
+          - time-zones.md
+          - sys-date-festivals.md
+          - sys-currency-details.md
+      - language-support.md
+
+  - navgroup:
+      id: help
+      topics:
+      - faqs.md
+      - troubleshoot.md
+      - feedback.md
+      - topicgroup:
+          label: Developer community
+          links:
+            - link:
+                label: Stack Overflow
+                href: https://stackoverflow.com/questions/tagged/watson-assistant
+            - link:
+                label: WDC Slack channel]
+                href: http://wdc-slack-inviter.mybluemix.net/
+            - link: 
+                label: IBM Watson Apps Community
+                href: https://community.ibm.com/community/user/watsonapps/communities/community-home?CommunityKey=7a3dc5ba-3018-452d-9a43-a49dc6819
+      - accessibility.md
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
