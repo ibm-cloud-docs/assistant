@@ -92,9 +92,9 @@ To create the call flow:
 
 1. At this point you should have a **Trigger** widget at the top of your flow canvas.
 
-1. Click the Trigger widget.
+1. Click the **Trigger** widget.
 
-1. Make note of the value from the WEBHOOK URL field. You will need this value in a subsequent step.
+1. Make note of the value from the **WEBHOOK URL** field. You will need this value in a subsequent step.
 
 
 ## Configuring the phone number
@@ -335,4 +335,4 @@ Your assistant should now be able to answer phone calls to your phone number and
  
 
 ###  Share the conversation history with service desk agents 
-To enable the service desk agent to get a quick view of the conversation history between the visitor and the assistant, setup the Watson Assistant Agent App app for your Twilio Flex Environment. [Learn more](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/twilio-agentapp/src/flex/agentApp)
+To enable the service desk agent to get a quick view of the conversation history between the visitor and the assistant, set up the Watson Assistant Agent App app for your Twilio Flex environment. For more information, see the documentation for the [Twilio Flex Watson Assistant Agent App](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/twilio-agentapp/src/flex/agentApp){: external}.
