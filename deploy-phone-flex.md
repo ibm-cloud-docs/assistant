@@ -94,7 +94,7 @@ To create the call flow:
 
 1. Click the **Trigger** widget.
 
-1. Make note of the value from the WEBHOOK URL field. You will need this value in a subsequent step.
+1. Make note of the value from the **WEBHOOK URL** field. You will need this value in a subsequent step.
 
 
 ## Configuring the phone number
