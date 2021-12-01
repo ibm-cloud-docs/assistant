@@ -55,7 +55,7 @@ New phone response types
 :   New response types are available for controlling the configuration and behavior of the phone integration. These response types replace most of the older `vgw` actions, which are now deprecated. (The `vgw` actions will continue to work, so existing skills do not need to be changed.) For more information, see [Handling phone interactions](/docs/assistant?topic=assistant-dialog-voice-actions).
 
 Rich response types
-:   You can now add rich responses that include elements such as audio, video or iFrame to your dialog. See [Rich responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia) for more information.
+:   Your assistant can now send responses that include elements such as audio, video, or embedded `iframe` content. For more information, see [Rich responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia).
 
 ## 04 November 2021
 {: #assistant-nov042021}

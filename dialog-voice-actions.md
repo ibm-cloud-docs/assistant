@@ -38,7 +38,7 @@ You can use response types to perform the following phone-specific actions:
 - [Transfer a call to a human agent](#dialog-voice-actions-transfer)
 - [Play hold music or a voice recording](#dialog-voice-actions-hold-music)
 - [Enable keypad entry](#dialog-voice-actions-dtmf)
-- [Transfer the caller to a web chat](#dialog-voice-actions-transfer-channel)
+- [Transfer the caller to the web chat integration](#dialog-voice-actions-transfer-channel)
 - [End the call](#dialog-voice-actions-hangup)
 - [Send a text message during a phone conversation](#dialog-voice-actions-sms)
 
@@ -679,11 +679,13 @@ This example shows the `dtmf` response type with the `send` command, used to sen
 ```
 {: codeblock}
 
-## Transfering the caller to a web chat
+## Transfering the caller to a the web chat integration
 {: #dialog-voice-actions-transfer-channel}
 
-You can transfer the caller from the current phone call to a web chat session by using the `channel_transfer` response type. The {{site.data.keyword.conversationshort}} sends an SMS message to the caller that includes a URL that, when clicked, loads the {{site.data.keyword.conversationshort}} web chat widget into the smart phone's browser and displays not only the history of the phone call they just had but starts the process of collecting the information needed to complete the transaction. At this point the caller can simply hang up the phone and complete their task using the web chat.
-The response type can be used only when the `SMS with Twilio` integration is configured on {{site.data.keyword.conversationshort}}.
+You can transfer the caller from the current phone call to a web chat session by using the `channel_transfer` response type. The assistant sends an SMS message to the caller that includes a URL that the caller can tap to load the web chat widget in the phone's browser. The web chat session displays the history of the phone call and can start the process of collecting information needed to complete the transaction. This can be useful in situations where the customer can provide information more easily in writing than by speaking (for example, changing an address).
+
+After the transfer has successfully completed, the caller can hang up the phone and continue the copnversation using the web chat.
+The `channel_transfer` response type can be used with the phone integration only if the *SMS with Twilio* integration is also configured for the assistant.
 
 
 ```json
