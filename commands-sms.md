@@ -52,14 +52,14 @@ The following table describes the context variables that have special meaning in
 
 Table 2 describes the context variables that you can set by the *SMS with Twilio* integration.
 
-### Table 2. Context variables that are set by the integration
+### Context variables that are set by the integration
 {: #commands-sms-context-variables-set-by-integration}
 
 | Context variable name | Description |
 | --------------------- | ----------- |
-| `assistant_phone_number` | The phone number associated with the Watson Assistant side that received the text message. |
+| `assistant_phone_number` | The phone number associated with the assistant that received the text message. |
 | `private.user_phone_number` | The phone number that the text message was received from. |
-{: caption="Table 2. SMS context variables set by the integration" caption-side="top"}
+{: caption="SMS context variables set by the integration" caption-side="top"}
 
 Example:
 
