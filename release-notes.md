@@ -39,6 +39,13 @@ For information about changes to the web chat integration, see the [Web Chat rel
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
 
+## 3 December 2021
+{: #assistant-dec032021}
+{: release-note}
+
+Configure webhook timeout
+:   From the **Pre-message webhook** and **Post-message webhook** configuration pages, you can configure the webhook timeout length from a minimum of 1 second to a maximum of 30 seconds. For more information, see [Webhook overview](/docs/assistant?topic=assistant-webhook-overview).
+
 ## 9 November 2021
 {: #assistant-nov092021}
 {: release-note}
