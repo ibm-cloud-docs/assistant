@@ -39,7 +39,7 @@ For information about changes to the web chat integration, see the [Web Chat rel
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
 
-## 09 November 2021
+## 9 November 2021
 {: #assistant-nov092021}
 {: release-note}
 
@@ -49,7 +49,7 @@ New phone response types
 Rich response types
 :   Your assistant can now send responses that include elements such as audio, video, or embedded `iframe` content. For more information, see [Rich responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia).
 
-## 04 November 2021
+## 4 November 2021
 {: #assistant-nov042021}
 {: release-note}
 
@@ -63,7 +63,7 @@ Actions enhancement: Add variables to links
 `vgwHangUp` message no longer sent
 :   Previously, the phone integration sent a message containing the text `vgwHangUp` to the assistant when a call was ended by the caller. This message is no longer sent.
 
-## 07 October 2021
+## 7 October 2021
 {: #assistant-oct072021}
 {: release-note}
 
