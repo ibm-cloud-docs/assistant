@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-18"
+lastupdated: "2021-12-03"
 
 keywords: pre webhook, prewebhook, pre-webhook
 
@@ -60,7 +60,7 @@ The programmatic call to the external service must meet these requirements:
 
 - The call must be a POST HTTP request.
 - The request body must be a JSON object (`Content-Type: application/json`).
-- The call must return in **8 seconds or less**.
+- The call must return in 30 seconds or less.
 
 If your external service supports only GET requests, or if you need to specify URL parameters dynamically at run time, consider creating an intermediate service that accepts a POST request with a JSON payload containing any runtime values. The intermediate service can then make a request to the target service, passing these values as URL parameters, and then return the response to the dialog.
 {: tip}
@@ -108,6 +108,8 @@ To add the webhook details, complete the following steps:
     It is the responsibility of the external service to check for and verify the secret. If the external service does not require a token, specify any string you want. You cannot leave this field empty.
 
     For more information about how this field is used, see [Webhook security](#webhook-pre-security).
+
+1. In the **Timeout** field, specify the length of time (in seconds) you want the assistant to wait for a response from the webhook before returning an error. The timeout duration cannot be shorter than 1 second or longer than 30 seconds.
 
 1.  In the Headers section, add any headers that you want to pass to the service one at a time by clicking **Add header**.
 
