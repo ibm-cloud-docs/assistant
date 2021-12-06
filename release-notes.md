@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-12-03"
+lastupdated: "2021-12-06"
 
 subcollection: assistant
 
@@ -45,6 +45,15 @@ On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversat
 
 Configure webhook timeout
 :   From the **Pre-message webhook** and **Post-message webhook** configuration pages, you can configure the webhook timeout length from a minimum of 1 second to a maximum of 30 seconds. For more information, see [Webhook overview](/docs/assistant?topic=assistant-webhook-overview).
+
+## 27 November 2021
+{: #assistant-nov272021}
+{: release-note}
+
+New API version
+:   The current API version is now `2021-11-27`. This version introduces the following changes:
+
+    - The `output.text` object is no longer returned in `message` responses. All responses, including text responses, are returned only in the `output.generic` array.
 
 ## 9 November 2021
 {: #assistant-nov092021}
