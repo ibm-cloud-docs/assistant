@@ -679,7 +679,7 @@ This example shows the `dtmf` response type with the `send` command, used to sen
 ```
 {: codeblock}
 
-## Transfering the caller to a the web chat integration
+## Transfering the caller to the web chat integration
 {: #dialog-voice-actions-transfer-channel}
 
 You can transfer the caller from the current phone call to a web chat session by using the `channel_transfer` response type. The assistant sends an SMS message to the caller that includes a URL that the caller can tap to load the web chat widget in the phone's browser. The web chat session displays the history of the phone call and can start the process of collecting information needed to complete the transaction. This can be useful in situations where the customer can provide information more easily in writing than by speaking (for example, changing an address).
