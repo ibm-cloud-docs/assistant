@@ -92,6 +92,11 @@ To create the call flow:
 
 1. At this point you should have a **Trigger** widget at the top of your flow canvas.
 
+1. Click the **Trigger** widget.
+
+1. Make note of the value from the **WEBHOOK URL** field. You will need this value in a subsequent step.
+
+
 ## Configuring the phone number
 
 1. In the navigation menu, click the **All Products & Services** icon.
@@ -148,19 +153,18 @@ Now we need to configure the call flow to direct inbound calls to the assistant 
 
     ```javascript
     exports.handler = function(context, event, callback) {
-      const VoiceResponse = require('twilio').twiml.VoiceResponse;  
+      const VoiceResponse = require('twilio').twiml.VoiceResponse;  
       const response = new VoiceResponse();
-      const dial = response.dial({
-        answerOnBridge: "true",
-        referUrl: "https://watson-flex-test-7074.twil.io/refer-handler"
-      });
-      dial.sip('sip:{phone_number}@{sip_uri_hostname};secure=true');  
-      console.log (response.toString());
-      return callback(null, response);
+      const dial = response.dial({
+        answerOnBridge: "true",
+        referUrl: "/refer-handler"
+      });
+      const calledPhoneNumber = event.Called;
+      dial.sip(`sip:${calledPhoneNumber}@{sip_uri_hostname};secure=true`);  
+      return callback(null, response);
     }
     ```
 
-    - Replace `{phone_number}` with the phone number you assigned to your assistant in the phone integration.
     - Replace `{sip_uri_hostname}` with the hostname portion of your  assistant's phone integration SIP URI (everything that comes after `sips:`).. Note that Twilio does not support `SIPS` URIs, but does support secure SIP trunking by appending `;secure=true` to the SIP URI.
 
 1. Click **Save**.
@@ -171,11 +175,11 @@ Now we need to configure the call flow to direct inbound calls to the assistant 
 
 In this section you will use a TwiML **Redirect**** widget in your Studio Flow editor to call out to the `/call-recieve` function created in the previous section.
 
-1.  Add a **TwiML Redirect** widget to your Studio Flow canvas. 
+1. Add a **TwiML Redirect** widget to your Studio Flow canvas. 
 
 1. Connect the Incoming Call trigger to your **TwiML Redirect** widget.
 
-1. Configure the **TwiML Rediret** widget with the URL for the `/receive-call` function you created in the previous section.
+1. Configure the **TwiML Redirect** widget with the URL for the `/receive-call` function you created in the previous section.
 
 1. Your flow should now redirect to {{site.data.keyword.conversationshort}} when receiving an inbound call. 
 
@@ -199,15 +203,56 @@ We also need to configure the call flow to handle calls being transferred from t
 
     ```javascript
     exports.handler = function(context, event, callback) {
-      const VoiceResponse = require('twilio').twiml.VoiceResponse;  
+      // This function handler will handle the SIP REFER back from the Watson Assistant Phone Integration.
+      // Before handing the call back to Twilio, it will extract the session history key from the
+      // User-to-User header that's part of the SIP REFER Refer-To header. This session history key
+      // is a string that is used to load the agent application in order to share the transcripts of the caller
+      // with Watson Assistant to the agent.
+      // See https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/blob/main/docs/AGENT_APP.md
+      const VoiceResponse = require('twilio').twiml.VoiceResponse;
+      
+      const STUDIO_WEBHOOK_URL = '{webhook_url}';
+      
+      let studioWebhookReturnUrl = `${STUDIO_WEBHOOK_URL}?FlowEvent=return`;
+      
       const response = new VoiceResponse();
-      console.log("ReferTransferTarget: " + event.ReferTransferTarget);
-      var customHeaders = event.ReferTransferTarget.split("?");  
-      console.log ("Custom Headers: " + customHeaders[1].replace(">",""));
-      response.redirect({
-            method: 'POST'
-        }, '{webhook_url}?FlowEvent=return&'+customHeaders[1].replace(">",""));      
-      console.log(response.toString());  
+      console.log("ReferTransferTarget: " + event.ReferTransferTarget);
+      
+      const referToSipUriHeaders = event.ReferTransferTarget.split("?")[1];
+      console.log(referToSipUriHeaders);
+      if (referToSipUriHeaders) {
+        const sanitizedReferToSipUriHeaders = referToSipUriHeaders.replace(">", "");
+        console.log("Custom Headers: " + sanitizedReferToSipUriHeaders);
+        
+        const sipHeadersList = sanitizedReferToSipUriHeaders.split("&");
+        
+        const sipHeaders = {};
+        for (const sipHeaderSet of sipHeadersList) {
+          const [name, value] = sipHeaderSet.split('=');
+          sipHeaders[name] = value;
+        }
+
+        const USER_TO_USER_HEADER = 'User-to-User';
+        
+        // Extracts the User-to-User header value
+        const uuiData = sipHeaders[USER_TO_USER_HEADER];
+        
+        if (uuiData) {
+          const decodedUUIData = decodeURIComponent(uuiData);
+          const sessionHistoryKey = decodedUUIData.split(';')[0];
+          // Passes the session history key back to Twilio Studio through a query parameter.
+          studioWebhookReturnUrl = `${studioWebhookReturnUrl}&SessionHistoryKey=${sessionHistoryKey}`;
+        }    
+      }
+
+      response.redirect(
+        { method: 'POST' },
+        studioWebhookReturnUrl
+      );
+
+      // This callback is what is returned in response to this function being invoked.
+      // It's really important! E.g. you might respond with TWiML here for a voice or SMS response.
+      // Or you might return JSON data to a studio flow. Don't forget it!
       return callback(null, response);
     }
     ```
@@ -287,3 +332,7 @@ Your assistant should now be able to answer phone calls to your phone number and
 1. At this point you should hear the phrase configured in the **Say/Play** widget (such as "Transfer from Watson complete").
 
 1. If the transfer fails, use the console log to follow the flow of the call as it moves from the flow to the `/call-receive` handler, to {{site.data.keyword.conversationshort}}, to the refer-handler and back to your Twilio Flex flow.
+ 
+
+###  Share the conversation history with service desk agents 
+To enable the service desk agent to get a quick view of the conversation history between the visitor and the assistant, set up the Watson Assistant Agent App app for your Twilio Flex environment. For more information, see the documentation for the [Twilio Flex Watson Assistant Agent App](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/twilio-agentapp/src/flex/agentApp){: external}.
