@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-03"
+lastupdated: "2021-12-09"
 
 subcollection: assistant
 
@@ -311,7 +311,7 @@ Enables speech barge-in so that callers can interrupt playback by speaking.
 
 No parameters.
 
-### Change the assistant's voice
+### Changing the assistant's voice
 {: #dialog-voice-actions-change-voice}
 
 You can change the voice of your assistant when it covers certain topics in the conversation that warrant it. For example, you might want to use a voice with a British accent for a branch of the conversation that applies only to customers in the UK.
@@ -679,10 +679,10 @@ This example shows the `dtmf` response type with the `send` command, used to sen
 ```
 {: codeblock}
 
-## Transfering the caller to the web chat integration
+## Transferring the conversation to the web chat integration
 {: #dialog-voice-actions-transfer-channel}
 
-You can transfer the caller from the current phone call to a web chat session by using the `channel_transfer` response type. The assistant sends an SMS message to the caller that includes a URL that the caller can tap to load the web chat widget in the phone's browser. The web chat session displays the history of the phone call and can start the process of collecting information needed to complete the transaction. This can be useful in situations where the customer can provide information more easily in writing than by speaking (for example, changing an address).
+You can transfer the caller from the current phone call to a [web chat](/docs/assistant?topic=assistant-deploy-web-chat) session by using the `channel_transfer` response type. The assistant sends an SMS message to the caller that includes a URL that the caller can tap to load the web chat widget in the phone's browser. The web chat session displays the history of the phone call and can start the process of collecting information needed to complete the transaction. This can be useful in situations where the customer can provide information more easily in writing than by speaking (for example, changing an address).
 
 After the transfer has successfully completed, the caller can hang up the phone and continue the copnversation using the web chat.
 The `channel_transfer` response type can be used with the phone integration only if the *SMS with Twilio* integration is also configured for the assistant.
@@ -718,9 +718,7 @@ The `channel_transfer` response type can be used with the phone integration only
 ```
 {: codeblock}
 
-
-
-## End the call
+## Ending the call
 {: #dialog-voice-actions-hangup}
 
 You can instruct your assistant end a phone call by using the `end_session` response type, as shown in this example.
