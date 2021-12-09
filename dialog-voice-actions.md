@@ -38,7 +38,7 @@ You can use response types to perform the following phone-specific actions:
 - [Transfer a call to a human agent](#dialog-voice-actions-transfer)
 - [Play hold music or a voice recording](#dialog-voice-actions-hold-music)
 - [Enable keypad entry](#dialog-voice-actions-dtmf)
-- [Transfer the caller to the web chat integration](#dialog-voice-actions-transfer-channel)
+- [Transfer the conversation to the web chat integration](#dialog-voice-actions-transfer-channel)
 - [End the call](#dialog-voice-actions-hangup)
 - [Send a text message during a phone conversation](#dialog-voice-actions-sms)
 
