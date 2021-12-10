@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-18"
+lastupdated: "2021-12-10"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -574,6 +574,9 @@ To add a *Video* response type, complete the following steps:
 
     If you want to scale the video to a specific display size, specify a number in the **Base height** field.
 
+1.  The **Video** response type is supported in the web chat, Facebook, WhatsApp, Slack, and SMS integrations. 
+
+
 ### Adding an *Audio* response type
 {: #dialog-overview-add-audio}
 
@@ -606,6 +609,9 @@ To add an *Audio* response type, complete the following steps:
     The **Loop** option is currently supported only by the phone integration. This option has no effect if you are using the web chat integration or any other channel.
     {: note}
 
+1.  The **Audio** response type is supported in the web chat, Facebook, WhatsApp, Slack, SMS, and phone integrations. 
+
+
 ### Adding an *iframe* response type
 {: #dialog-overview-add-iframe}
 
@@ -633,6 +639,9 @@ To add an *iframe* response type, complete the following steps:
 1.  Optionally add a descriptive title in the **Title** field.
 
     In the web chat, this title will be displayed in the preview card before the customer clicks to render the external content. (If you do not specify a title, the web chat will attempt to retrieve metadata from the specified URL and display the title of the content as specified at the source.)
+    
+1.  The **iframe** response type is supported in the web chat and Facebook integrations.
+
 
 In the "Try it out" pane, the iframe is rendered immediately, without the preview card. To see how the web chat renders your response, use the assistant **Preview** page.
 {: note}
