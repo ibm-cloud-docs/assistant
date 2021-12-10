@@ -39,6 +39,13 @@ For information about changes to the web chat integration, see the [Web Chat rel
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
 
+## 10 December 2021
+{: #assistant-dec102021}
+{: release-note}
+
+Channel transfer in **Phone** integration
+:  The phone integration now supports the `channel_transfer` response type. For more information, see [Handling phone interactions](/docs/assistant?topic=assistant-dialog-voice-actions#dialog-voice-actions-transfer-channel).
+
 ## 3 December 2021
 {: #assistant-dec032021}
 {: release-note}
