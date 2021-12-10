@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-11-22"
 
 subcollection: assistant
 
@@ -117,15 +117,6 @@ The following graphs are available:
 
     The goal of autolearning is to limit the effort that a customer has to expend to reach the best answer. As autolearning observes user behavior, it learns about which answer is most often the best. First, it moves the best answer to the top of the disambiguation list. Next, it reduces the number of other options in the list. Ultimately, it is able to replace the disambiguation list entirely with the single, best answer. The higher the percentage of single answers, the better.
 - **Average list length**: Shows the number of options that were shown in a disambiguation list. The lower the number of options, the better because it means that your customer was able to expend less effort to find the best answer.
-
-### Using Python notebooks to track customer effort
-{: #autolearn-track-via-notebooks}
-
-For more in-depth analysis of the impact that autolearning has over time, you can use the **Customer Effort Analysis Notebook**. The notebook analyzes a metric called *Customer Effort*, which captures the effort that your customers must expend to get an answer to a question or find the solution to a problem.
-
-You can use the notebook from [GitHub](https://github.com/watson-developer-cloud/assistant-improve-recommendations-notebook/blob/master/notebook/Customer%20Effort%20Notebook.ipynb){: external}<!-- or use the notebook with Watson Studio-->.
-
-For more information about this notebook and others that you can use to improve your assistant, see [Jupyter notebooks](https://cloud.ibm.com/docs/assistant?topic=assistant-logs-resources#logs-resources-jupyter-notebooks).
 
 ## Learning from your data
 {: #autolearn-data}

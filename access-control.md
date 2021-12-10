@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-05"
+lastupdated: "2021-12-07"
 
 subcollection: assistant
 
@@ -208,10 +208,10 @@ Anyone who creates an assistant or skill is automatically granted the Manager se
 | Goal | Instance-level platform role | Instance-level service roles | Resource-level service roles |
 |------|------------------------------|------------------------------|-----------------------------|
 | Make someone a service instance co-owner | Administrator | Manager | N/A |
-| Give someone reader access to only one skill or assistant in an instance | Viewer | Reader | Reader |
+| Give someone reader access to only one skill or assistant in an instance | Viewer, Reader | Reader | Reader |
 | Allow someone to edit and view logs of all the skills and assistants in the service instance | Viewer | Manager | N/A |
-| Allow someone to edit a skill or assistant in the service instance, but not view logs | Viewer | Writer | Writer |
-| Give someone full access to only one skill or assistant in an instance | Viewer | Reader | Manager |
+| Allow someone to edit a skill or assistant in the service instance, but not view logs | Viewer, Reader | Writer | Writer |
+| Give someone full access to only one skill or assistant in an instance | Viewer, Reader | Reader | Manager |
 {: caption="Table 4. Common role assignments" caption-side="top"}
 
 N/A stands for no assignment, meaning no role of the type is assigned.

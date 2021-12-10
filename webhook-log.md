@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-17"
+lastupdated: "2021-11-19"
 
 keywords: log webhook
 
@@ -42,8 +42,8 @@ Add a log webhook to your assistant if you want to use an external service to lo
 
 - **Messages and responses**: The log webhook is triggered each time the assistant responds to user input. You can use this option as an alternative to the built-in analytics feature to handle logging yourself. (For more information about the built-in analytics support, see [Metrics overview](/docs/assistant?topic=assistant-logs-overview).)
   
-  The log webhook is not supported for API clients that use the v1 `/message` method.
-  {: note}
+    The log webhook is not supported for API clients that use the v1 `/message` method.
+    {: note}
 
 - **Call detail records (CDRs)**: The log webhook is triggered after each telephone call a user makes to your assistant using the phone integration. A Call Detail Record (CDR) is a summary report that documents the details of a telephone call, including phone numbers, call length, latency, and other diagnostic information. CDR records are only available for assistants that use the phone integration.
 
@@ -69,26 +69,26 @@ To add the webhook details, complete the following steps:
 
 1. Set the *Log webhook* switch to **Enabled**.
 
-  If you cannot enable the webhook, you might need to upgrade your service plan.
+    If you cannot enable the webhook, you might need to upgrade your service plan.
 
 1. In the **URL** field, add the URL for the external application to which you want to send HTTP POST request callouts.
 
-  For example, to write the message to the 
+    For example, to write the message to the 
 
-  ```bash
-  https://www.mycompany.com/my_log_service
-  ```
-  {: codeblock}
+    ```bash
+    https://www.mycompany.com/my_log_service
+    ```
+    {: codeblock}
 
-  You must specify a URL that uses the SSL protocol, so specify a URL that begins with `https`.
+    You must specify a URL that uses the SSL protocol, so specify a URL that begins with `https`.
 
 1. In the **Secret** field, add a token to pass with the request that can be used to authenticate with the external service.
 
-  The secret must be specified as a text string, such as `purple unicorn`.  Maximum length is 1,024 characters. You cannot specify a context variable.
+    The secret must be specified as a text string, such as `purple unicorn`.  Maximum length is 1,024 characters. You cannot specify a context variable.
 
-  It is the responsibility of the external service to check for and verify the secret. If the external service does not require a secret, you can leave this field empty.
+    It is the responsibility of the external service to check for and verify the secret. If the external service does not require a secret, you can leave this field empty.
 
-  It is the responsibility of the external service to check for and verify the secret. If the external service does not require a token, specify any string you want. You cannot leave this field empty.
+    It is the responsibility of the external service to check for and verify the secret. If the external service does not require a token, specify any string you want. You cannot leave this field empty.
 
 1. Click the appropriate checkboxes to select which kinds of activity you want to log:
 
@@ -139,7 +139,7 @@ try {
 
 The request body the webhook sends to the external service is a JSON object with the following structure:
 
-```
+```text
 {
   "event": {
     "name": "{event_type}"
@@ -170,235 +170,480 @@ For `cdr_logged` events, the `payload` object contains data about a Call Detail 
 
 ```json
 {
-  "payload": {
-    "active_calls": 1,
-    "assistant_interaction_summaries": [
-      {
-        "assistant_id": "21f4fd4f-a85c-40eb-a29c-d69a31e3d800",
-        "session_id": "2a3b6954-ea7a-40ab-9729-e85fcf2c786f",
-        "start_timestamp": "2021-04-21T16:31:06.696Z",
-        "stop_timestamp": "2021-04-21T16:31:28.345Z",
-        "turns": [
-          {
-            "assistant": {
-              "log_id": "928409de-0ca1-4e77-b855-764233f8142b",
-              "response_milliseconds": 156
-            },
-            "request": {
-              "type": "start"
-            },
-            "response": [
-              {
-                "barge_in_occurred": true,
-                "streaming_statistics": {
-                  "response_milliseconds": 301,
-                  "start_timestamp": "2021-04-21T16:31:08.352Z",
-                  "stop_timestamp": "2021-04-21T16:31:12.149Z",
-                  "transaction_id": "3dce431c-fb2f-4b62-9fce-585f4e06fe00"
-                },
-                "type": "text_to_speech"
-              }
-            ]
-          },
-          {
-            "assistant": {
-              "log_id": "d8bc82b8-9bad-4b3b-a771-d8f0e7f359ae",
-              "response_milliseconds": 181
-            },
-            "request": {
-              "streaming_statistics": {
-                "confidence": 0.99,
-                "echo_detected": false,
-                "response_milliseconds": 624,
-                "start_timestamp": "2021-04-21T16:31:12.147Z",
-                "stop_timestamp": "1970-01-01T00:00:00Z",
-                "transaction_id": "a4e97d73-c676-4b56-9f9c-785bb8781059"
-              },
-              "type": "speech_to_text"
-            },
-            "response": [
-              {
-                "barge_in_occurred": true,
-                "streaming_statistics": {
-                  "response_milliseconds": 325,
-                  "start_timestamp": "2021-04-21T16:31:12.682Z",
-                  "stop_timestamp": "2021-04-21T16:31:15.049Z",
-                  "transaction_id": "9d819ffe-f9a2-4e95-956b-0036d2d6d6a5"
-                },
-                "type": "text_to_speech"
-              }
-            ]
-          },
-          {
-            "assistant": {
-              "log_id": "e4118c32-6f79-4837-a5fc-e18f3aadbdb2",
-              "response_milliseconds": 157
-            },
-            "request": {
-              "streaming_statistics": {
-                "confidence": 0.98,
-                "echo_detected": false,
-                "response_milliseconds": 1005,
-                "start_timestamp": "2021-04-21T16:31:15.048Z",
-                "stop_timestamp": "1970-01-01T00:00:00Z",
-                "transaction_id": "a4e97d73-c676-4b56-9f9c-785bb8781059"
-              },
-              "type": "speech_to_text"
-            },
-            "response": [
-              {
-                "barge_in_occurred": false,
-                "streaming_statistics": {
-                  "response_milliseconds": 0,
-                  "start_timestamp": "2021-04-21T16:31:15.230Z",
-                  "stop_timestamp": "2021-04-21T16:31:17.389Z",
-                  "transaction_id": "8f925d45-75e3-48bc-be28-92848d39567d"
-                },
-                "type": "text_to_speech"
-              }
-            ]
-          },
-          {
-            "assistant": {
-              "log_id": "3784a688-5c67-453e-ba57-a6472d0b9607",
-              "response_milliseconds": 102
-            },
-            "request": {
-              "streaming_statistics": {
-                "confidence": 0.98,
-                "echo_detected": false,
-                "response_milliseconds": 1207,
-                "start_timestamp": "2021-04-21T16:31:18.929Z",
-                "stop_timestamp": "1970-01-01T00:00:00Z",
-                "transaction_id": "a4e97d73-c676-4b56-9f9c-785bb8781059"
-              },
-              "type": "speech_to_text"
-            },
-            "response": [
-              {
-                "barge_in_occurred": true,
-                "streaming_statistics": {
-                  "response_milliseconds": 298,
-                  "start_timestamp": "2021-04-21T16:31:19.348Z",
-                  "stop_timestamp": "2021-04-21T16:31:24.204Z",
-                  "transaction_id": "6f65ad6a-cae0-46cc-829b-f5c6d1fdaed3"
-                },
-                "type": "text_to_speech"
-              }
-            ]
-          },
-          {
-            "assistant": {
-              "log_id": "899e062c-3fcb-4bf5-b142-cc8ab0d57b9d",
-              "response_milliseconds": 97
-            },
-            "request": {
-              "streaming_statistics": {
-                "confidence": 0.98,
-                "echo_detected": false,
-                "response_milliseconds": 1401,
-                "start_timestamp": "2021-04-21T16:31:24.204Z",
-                "stop_timestamp": "1970-01-01T00:00:00Z",
-                "transaction_id": "a4e97d73-c676-4b56-9f9c-785bb8781059"
-              },
-              "type": "speech_to_text"
-            },
-            "response": [
-              {
-                "barge_in_occurred": true,
-                "streaming_statistics": {
-                  "response_milliseconds": 320,
-                  "start_timestamp": "2021-04-21T16:31:24.648Z",
-                  "stop_timestamp": "2021-04-21T16:31:28.178Z",
-                  "transaction_id": "5a3393bd-8c64-42e7-9874-ff2a721c7771"
-                },
-                "type": "text_to_speech"
-              }
-            ]
-          },
-          {
-            "assistant": {
-              "log_id": "6b2cd0ec-55e7-4ab5-8714-9ebc7f387254",
-              "response_milliseconds": 163
-            },
-            "request": {
-              "streaming_statistics": {
-                "confidence": 0.87,
-                "echo_detected": false,
-                "response_milliseconds": 1354,
-                "start_timestamp": "2021-04-21T16:31:28.177Z",
-                "stop_timestamp": "1970-01-01T00:00:00Z",
-                "transaction_id": "a4e97d73-c676-4b56-9f9c-785bb8781059"
-              },
-              "type": "speech_to_text"
-            },
-            "response": []
-          },
-          {
-            "assistant": {
-              "log_id": "80585f84-a1fe-4bcf-8737-737b01ed00e3",
-              "response_milliseconds": 0
-            },
-            "request": {
-              "type": "hangup"
-            },
-            "response": []
-          }
-        ]
-      }
-    ],
-    "call": {
-      "end_reason": "callerHangup",
-      "milliseconds_elapsed": 21906,
-      "outbound": false,
-      "security": {
-        "media_encrypted": false,
-        "signaling_encrypted": true,
-        "sip_authenticated": false
-      },
-      "start_timestamp": "2021-04-21T16:31:07.609Z",
-      "stop_timestamp": "2021-04-21T16:31:29.515Z"
+  "primary_phone_number": "+18005550123",
+  "global_session_id": "9caa8bad-aaa8-4a5a-a4b5-62bccc703d15",
+  "failure_occurred": false,
+  "transfer_occurred": false,
+  "active_calls": 0,
+  "warnings_and_errors": [
+    {
+      "code": "CWSMR0033W",
+      "message": "CWSMR0033W: The inbound RTP audio stream jitter of 43 ms exceeds the maximum jitter threshold of 30 ms."
     },
-    "failure_occurred": false,
-    "global_session_id": "17465345_115257202@10.90.150.99",
-    "max_response_milliseconds": {
-      "assistant": 181,
-      "speech_to_text": 1401,
-      "text_to_speech": 325
+    {
+      "code": "CWSMR0070W",
+      "message": "CWSMR0070W: A request to the Watson Speech To Text service failed for the following reason = Unexpected server response: 403, response headers = {\"strict-transport-security\":\"max-age=31536000; includeSubDomains;\",\"content-length\":\"157\",\"content-type\":\"application/json\",\"x-dp-watson-tran-id\":\"23860083-88b6-41d7-9130-30bbfebe647e\",\"x-request-id\":\"23860083-88b6-41d7-9130-30bbfebe647e\",\"x-global-transaction-id\":\"6c764df3-81db-41bb-a14f-62384facffca\",\"server\":\"watson-gateway\",\"x-edgeconnect-midmile-rtt\":\"1\",\"x-edgeconnect-origin-mex-latency\":\"28\",\"date\":\"Thu, 13 May 2021 20:31:12 GMT\",\"connection\":\"keep-alive\"}, response body = {\"code\":403,\"trace\":\"23860083-88b6-41d7-9130-30bbfebe647e\",\"error\":\"Forbidden\",\"more_info\":\"[https://cloud.ibm.com/docs/watson?topic=watson-forbidden-error](https://cloud.ibm.com/docs/watson?topic=watson-forbidden-error)\"}, x-global-transaction-id = 6c764df3-81db-41bb-a14f-62384facffca. The Media Relay will reattempt to send the request."
+    }
+  ],
+  "realtime_transport_network_summary": {
+    "inbound_stream": {
+      "average_jitter": 4,
+      "canonical_name": "b74f3689-1ae8-4a0a-bde3-adf5b488553e",
+      "maximum_jitter": 18,
+      "packets_lost": 0,
+      "packets_transmitted": 952,
+      "tool_name": ""
     },
-    "primary_phone_number": "+18005550123",    "realtime_transport_network_summary": {
-      "inbound_stream": {
-        "average_jitter": 4,
-        "canonical_name": "b74f3689-1ae8-4a0a-bde3-adf5b488553e",
-        "maximum_jitter": 18,
-        "packets_lost": 0,
-        "packets_transmitted": 952,
-        "tool_name": ""
-      },
-      "outbound_stream": {
-        "average_jitter": 0,
-        "canonical_name": "voice.gateway",
-        "maximum_jitter": 0,
-        "packets_lost": 0,
-        "packets_transmitted": 838,
-        "tool_name": "IBM Voice Gateway/1.0.7.0"
-      }
-    },
-    "session_initiation_protocol": {
-      "headers": {
-        "call_id": "17465345_115257202@10.90.150.99",
-        "from_uri": "sip:+18885550456@pstn.twilio.com",
-        "to_uri": "sip:+18005550123@public.voip.us-south.assistant.test.watson.cloud.ibm.com"
-      },
-      "invite_arrival_time": "2021-04-21T16:31:06.078Z",
-      "setup_milliseconds": 1531
-    },
-    "transfer_occurred": false,
-    "warnings_and_errors": []
+    "outbound_stream": {
+      "average_jitter": 0,
+      "canonical_name": "voice.gateway",
+      "maximum_jitter": 0,
+      "packets_lost": 0,
+      "packets_transmitted": 838,
+      "tool_name": "IBM Voice Gateway/1.0.7.0"
+    }
   },
-  "event": {
-    "name": "cdr_logged"
-  }
+  "call": {
+    "start_timestamp": "2021-10-12T20:54:02.591Z",
+    "stop_timestamp": "2021-10-12T20:54:20.375Z",
+    "milliseconds_elapsed": 17784,
+    "outbound": false,
+    "end_reason": "assistant_hangup",
+    "security": {
+      "media_encrypted": false,
+      "signaling_encrypted": false,
+      "sip_authenticated": false
+    }
+  },
+  "session_initiation_protocol": {
+    "invite_arrival_time": "2021-10-12T20:54:00.565Z",
+    "setup_milliseconds": 2026,
+    "headers": {
+      "call_id": "17465345_115257202@10.90.150.99",
+      "from_uri": "sip:+18885550456@pstn.twilio.com",
+      "to_uri": "sip:+18005550123@public.voip.us-south.assistant.test.watson.cloud.ibm.com"
+    }
+  },
+  "max_response_milliseconds": {
+    "assistant": 339,
+    "text_to_speech": 535,
+    "speech_to_text": 0
+  },
+  "assistant_interaction_summaries": [
+    {
+      "session_id": "7874ec3a-1330-4180-afe1-46bfb220af5b",
+      "assistant_id": "97f16ba4-ad94-41af-aa6c-33cd56ad5e7e",
+      "turns": [
+        {
+          "assistant": {
+            "log_id": "58bebfd1-0118-419b-a555-b152a1efbbe8",
+            "response_milliseconds": 339,
+            "start_timestamp": "2021-10-12T20:54:00.722Z"
+          },
+          "request": {
+            "type": "start"
+          },
+          "response": [
+            {
+              "barge_in_occurred": true,
+              "streaming_statistics": {
+                "response_milliseconds": 301,
+                "start_timestamp": "2021-10-12T20:54:00.722Z",
+                "stop_timestamp": "2021-10-12T20:54:01.023Z",
+                "transaction_id": "3dce431c-fb2f-4b62-9fce-585f4e06fe00"
+              },
+              "type": "text_to_speech"
+            }
+          ]
+        },
+        {
+          "assistant": {
+            "log_id": "38f36bfb-c2aa-4600-9418-6ab422664e31",
+            "response_milliseconds": 158,
+            "start_timestamp": "2021-10-12T20:54:05.621Z"
+          },
+          "request": {
+            "type": "dtmf"
+          },
+          "response": [
+            {
+              "type": "disable_speech_barge_in"
+            },
+            {
+              "type": "text_to_speech",
+              "barge_in_occurred": false,
+              "streaming_statistics": {
+                "transaction_id": "af4c47c3-5cc4-43c8-9b9c-81d6f997c52f",
+                "start_timestamp": "2021-10-12T20:54:06.321Z",
+                "stop_timestamp": "2021-10-12T20:54:14.338Z",
+                "response_milliseconds": 535
+              }
+            },
+            {
+              "type": "enable_speech_barge_in"
+            },
+            {
+              "type": "text_to_speech",
+              "barge_in_occurred": true,
+              "streaming_statistics": {
+                "transaction_id": "eafdd846-2829-4e1a-8068-b1035510b1e1",
+                "start_timestamp": "2021-10-12T20:54:14.795Z",
+                "stop_timestamp": "2021-10-12T20:54:20.388Z",
+                "response_milliseconds": 447
+              }
+            }
+          ]
+        },
+        {
+          "assistant": {
+            "log_id": "07d74b35-0205-43e4-923c-1e43e1cb429c",
+            "response_milliseconds": 0,
+            "start_timestamp": "2021-10-12T20:54:20.377Z"
+          },
+          "request": {
+            "type": "hangup"
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
 }
+
 ```
 {: codeblock}
+
+The  `payload`  JSON object for a call detail record event contains the following keys:
+
+| Key | Type | Description |
+| --- | --- | --- |
+| `primary_phone_number` | string | The phone number that was called. |
+| `global_session_id` | string | The unique session identifier. |
+| `failure_occurred` | boolean|Indicates whether a failure occurred during the call. | 
+| `failure_details` |  string | Details about a failure. | 
+| `transfer_occurred` | boolean | Indicates whether an attempt was made to transfer a call |
+| `active_calls` | Number | Number of active calls when the call started. |
+| `x-global-sip-trunk-call-id` | string | The value of the SIP trunk call ID header extracted from the initial SIP `INVITE` request. The following SIP trunk call ID headers are supported:  \n *X-Twilio-CallSid*  \n *X-SID*  \n *X-Global-SIP-Trunk-Call-ID* |
+| `call` | JSON object | Contains information about the call. |
+| `session_initiation_protocol` | JSON object | SIP protocol related details. |
+| `max_response_milliseconds` |JSON object | Maximum latency for various services used during the call. |
+| `assistant_interaction_summaries` | JSON array | Details about the {{site.data.keyword.conversationshort}} transactions that took place during the call. |
+| `injected_custom_data` | JSON object | A JSON object that contains a set of key/value pairs. Extracted from the 	`cdr_custom_data` context variable. |
+| `warnings_and_errors` | JSON array | An array of warnings and errors that were logged during the call. |
+| `realtime_transport_network_summary` | JSON object | When RTCP is enabled, the `realtime_transport_network_summary` object provides statistics for the inbound stream in the `inbound_stream` object and statistics for the outbound stream in the `outbound_stream` object. |
+{: caption="Keys for the payload object" caption-side="top"}
+
+The `call` object contains the following keys:
+
+| Key | Type | Description |
+| --- | --- | --- |
+| `start_timestamp` | string. Time in the ISO format `yyyy-MM-ddTHH:mm:ss.SSSZ`| Time when the call started. |
+| `stop_timestamp` | string. Time in the ISO format `yyyy-MM-ddTHH:mm:ss.SSSZ` | Time when the call ended. |
+| `milliseconds_elapsed` | number | Length of the call in milliseconds. |
+| `end_reason` | string | Call end reason:  \n *assistant_transfer*  \n *assistant_hangup*  \n *caller_hangup*  \n *failed* |
+| `security.media_encrypted` | boolean | Indicates whether the media was encrypted. |
+| `security.signaling_encrypted` | boolean | Indicates whether the SIP signaling was encrypted. |
+| `security.sip_authenticated` | boolean | Indicates whether SIP authentication was used to challenge the authentication of the caller. |
+{: caption="Keys for the call object" caption-side="top"}
+
+The `session_initiation_protocol` object contains the following keys:
+
+| Key | Type | Description |
+| --- | --- | --- |
+| `invite_arrival_timestamp` | string. Time in the ISO format `yyyy-MM-ddTHH:mm:ss.SSSZ` | Time when the `INVITE` request arrived. |
+| `setup_milliseconds` | number | Time it took to set up the call in milliseconds. Specifically, the field shows the time between when the initial SIP `INVITE` request was received and when the final SIP `ACK` request was received. |
+| `headers.call_id` | string | The SIP `Call-ID` header field pulled from the SIP `INVITE` related to the call. |
+| `headers.from_uri` | string | SIP URI from the initial SIP INVITE `From` field |
+| `headers.to_uri` | string | SIP URI from the initial SIP INVITE `To` field |
+{: caption="Keys for the session_initiation_protocol object" caption-side="top"}
+
+The `assistant_interaction_summaries` object contains the following keys:
+
+| Key | Type | Description |
+| --- | --- | --- |
+| `assistant_id` | string | The unique identifier of the assistant. |
+| `session_id` | string | The unique identifier of the session. |
+| `turns` | JSON array | An array of the {{site.data.keyword.conversationshort}} transactions that took place during the conversation. |
+{: caption="Keys for the assistant_interaction_summaries object" caption-side="top"}
+
+The `turn` object contains the following keys:
+
+| Key | Type | Description |
+| --- | --- | --- |
+| `assistant.log_id` | string | A unique identifier for the logged transaction. Can be used to correlate between message logs and CDR events. |
+| `assistant.start_timestamp` | string. Time in the ISO format `yyyy-MM-ddTHH:mm:ss.SSSZ` | Time when the request was sent to {{site.data.keyword.conversationshort}}. |
+| `assistant.response_milliseconds` | number | Time between when the request was sent and when the response was received from {{site.data.keyword.conversationshort}}. |
+| `request` | JSON object | A request sent to {{site.data.keyword.conversationshort}}. |
+| `response` | JSON array | An array of the `response` objects associated with the request. |
+{: caption="Keys for the turn object" caption-side="top"}
+
+The `request` object contains the following keys:
+
+| Key | Type | Description |
+| --- | --- | --- |
+| `type` | string | The request type: *start* - an initial request to {{site.data.keyword.conversationshort}} *speech_to_text* - a request is triggered on speech recognition  \n *dtmf* - a request is triggered when DTMF collection completes  \n *sms* - a request is triggered when a SMS message is received from the caller  \n *post_response_timeout* - a request is triggered when the post response timer expires  \n *redirect* - a request is triggered when a call is redirected  \n *transfer* - a request is triggered when a call is transferred  \n *transfer_failed* - a request is triggered when a call transfer fails  \n *final_utterance_timeout* - a request is triggered when the final utterance timer expires  \n *no_input_turn* - a request is triggered when `no inpout turn` is enabled  \n *sms_failure* - a request is triggered when a SMS message can't be sent to the caller  \n *speech_to_text_result_filtered* - a request is triggered when an utterance is filtered due to low confidence level  \n *mrcp_recognition_unsuccessful* - a request is triggered when the MRCP recognition completes without a final utterance  \n *network_warning* - a request is triggered when a network error is detected  \n *media_capability_change* - a request is triggered when media capabilities change in the middle of a call |
+|`streaming_statistics`| JSON object|Contains information and statistics related to the {{site.data.keyword.speechtotextshort}} recognition. |
+{: caption="Keys for the request object" caption-side="top"}
+
+The `request.streaming_statistics` object contains the following keys:
+
+| Key | Type | Description |
+| --- | --- | --- |
+| `transaction_id` | string | A unique identifier of the transaction. |
+| `start_timestamp` | string. Time in the ISO format `yyyy-MM-ddTHH:mm:ss.SSSZ` | Time when the transaction started. |
+| `stop_timestamp` | string. Time in the ISO format `yyyy-MM-ddTHH:mm:ss.SSSZ` |  Time when the transaction ended. |
+| `response_milliseconds` | number | Latency in milliseconds between when silence is detected in the caller's speech and a final result from {{site.data.keyword.speechtotextshort}} is received. |
+| `echo_detected` | boolean|Indicates whether an echo was detected. The value can be `true` or `false`. |
+| `confidence` | number | The confidence score of the final utterance. |
+{: caption="Keys for the request.streaming_statistics object" caption-side="top"}
+
+The `response` object contains the following keys:
+
+| Key | Type | Description |
+| --- | --- | --- |
+| `type` | string | The response type:  \n *text_to_speech* - a command to play an utterance to the caller  \n *sms* - a command to send a SMS to the caller  \n *url* - a command to play an audio file to the caller  \n *transfer* - a command to transfer a call  \n *text_to_speech_config* - a command to change {{site.data.keyword.texttospeechshort}} settings  \n *speech_to_text_config* - a command to change the {{site.data.keyword.speechtotextshort}} settings  \n *pause_speech_to_text* - a command to stop speech recognition    \n *unpause_speech_to_text* - a command to start speech recognition  \n *pause_dtmf* - a command to stop DTMF recognition  \n *unpause_dtmf* - a command to start speech recognition  \n _enable_speech_barge_in_ - a command to enable speech barge-in so that callers can interrupt playback by speaking  \n *disable_speech_barge_in* - a command to disable speech barge-in so that playback isn't interrupted when callers speak over top of the played back audio  \n *enable_dtmf_barge_in* - a command to enables DTMF barge-in so that callers can interrupt playback from the phone integration by pressing a key.  \n *disable_dtmf_barge_in* - a command to disable DTMF barge-in so that playback from the phone integration isn't interrupted when callers press keys.  \n *dtmf* - a command to send DTMFs to the caller  \n *hangup* - a command to disconnect a call |
+| `barge_in_occurred` | boolean|Indicates whether barge-in occurred during the turn. |
+| `streaming_statistics` | JSON object | Contains information and statistics related to the {{site.data.keyword.texttospeechshort}} synthesis and playback. |
+{: caption="Keys for the response object" caption-side="top"}
+
+The `response.streaming_statistics` object contains the following keys:
+
+| Key | Type | Description |
+| --- | --- | --- |
+| `transaction_id` | string | A unique identifier of the transaction. |
+| `start_timestamp` | string. Time in the ISO format `yyyy-MM-ddTHH:mm:ss.SSSZ` | Time when the transaction started. |
+| `stop_timestamp` | string. Time in the ISO format `yyyy-MM-ddTHH:mm:ss.SSSZ` | Time when the transaction ended. |
+| `response_milliseconds` | number | Time in milliseconds between when a text utterance is sent to the {{site.data.keyword.texttospeechshort}} service and when the phone integration receives the first packet of synthesized audio. |
+{: caption="Keys for the response.streaming_statistics object" caption-side="top"}
+
+The `max_response_milliseconds` object contains the following keys:
+
+| Key | Type | Description |
+| --- | --- | --- |
+| `assistant` | number | Maximum round-trip latency in milliseconds, calculated from all {{site.data.keyword.conversationshort}} requests related to the call. |
+| `text_to_speech` | number | Maximum time in milliseconds between when a text utterance is sent to the {{site.data.keyword.texttospeechshort}} service and when the phone integration receives the first packet of synthesized audio. Calculated from all the {{site.data.keyword.texttospeechshort}} requests related to this call. |
+| `speech_to_text` | number|Maximum latency in milliseconds between when silence is detected in the user's speech and a final result from {{site.data.keyword.speechtotextshort}} is received. This value is calculated from all the {{site.data.keyword.speechtotextshort}} recognition results related to this call. |
+{: caption="Keys for the max_response_milliseconds object" caption-side="top"}
+
+
+#### Mapping between CDR and Watson Assistant response types
+{: #webhook-log-cdr-response-type-mapping}
+
+| CDR response type | Watson Assistant response type |
+| --- | --- |
+| `text_to_speech` | `text` |
+| `url` | `audio` |
+| `dtmf` | `dtmf`, `command_info.type` : `send` |
+| `sms` | `user_defined`,  `vgwAction.command` : `vgwActSendSMS`|
+| `transfer` | `connect_to_agent` |
+| `text_to_speech_config` | `text_to_speech`, `command_info.type` : `configure` |
+| `speech_to_text_config` | `speech_to_text`, `command_info.type` : `configure` |
+| `unpause_speech_to_text` | `start_activities`, `type`:`speech_to_text_recognition` |
+| `pause_speech_to_text` | `stop_activities`, `type`:`speech_to_text_recognition` |
+| `unpause_dtmf` | `start_activities`, `type`:`dtmf_collection`|
+| `pause_dtmf` | `stop_activities`, `type`:`dtmf_collection` |
+| `enable_speech_barge_in` | `text_to_speech`, `command_info.type` : `enable_barge_in` |
+| `disable_speech_barge_in` | `text_to_speech`, `command_info.type` : `disable_barge_in` |
+| `enable_dtmf_barge_in` | `dtmf`, `command_info.type` : `enable_barge_in` |
+| `disable_dtmf_barge_in` | `dtmf`, `command_info.type` : `disable_barge_in` |
+| `hangup` | `end_session` |
+{: caption="Mapping between CDR and Watson Assistant response types" caption-side="top"}
+
+
+#### Warning details
+{: #webhook-log-cdr-warning-details}
+
+The  `warnings_and_errors`  object contains warnings and errors that were logged during the call, listed in order of occurrence. Warnings for the following conditions are included:
+
+-   Messages when utterances are filtered out by the confidence score threshold.
+-  {{site.data.keyword.texttospeechshort}} underflows, which is when {{site.data.keyword.texttospeechshort}} synthesis can't keep up with the phone integration streaming rate and audio might skip.
+-   RTP network warnings, such as high packet loss or high average jitter, if RTCP is enabled.
+
+```plaintext
+
+  "warnings_and_errors": [
+    {
+      "message": "CWSMR0032W: A Watson Speech to Text final utterance has a confidence score of 0.1, which does not meet the confidence score threshold of 0.2. The utterance will be ignored.",
+      "id": "CWSMR0032W"
+    },
+    {
+      "message": "CWSMR0031W: The synthesis stream from the Watson Text To Speech service can't keep up with the playback rate to the caller, so audio might skip. transaction ID=a1b2c3d4e5",
+      "id": "CWSMR0031W"
+    }
+  ]
+```
+
+The object for each warning contains the following keys:
+
+| Key | Type | Description |
+| --- | --- | --- |
+| `message` | string | The text of the warning message that was logged. |
+| `id` | string | The unique message identifier. |
+{: caption="Keys for the warnings_and_errors object" caption-side="top"}
+
+#### RTP network summary details
+{: #webhook-log-cdr-rtp-network-summary-details}
+
+When RTCP is enabled, each  `realtime_transport_network_summary`  object provides statistics for the inbound stream in the  `inbound_stream`  object and statistics for the outbound stream in the  `outbound_stream`  object.
+
+```json
+"realtime_transport_network_summary": {
+  "inbound_stream": {
+      "maximum_jitter": 5,
+      "average_jitter": 1,
+      "packets_lost": 0,
+      "packets_transmitted": 1000,
+      "canonical_name": "user@example.com",
+      "tool_name": "User SIP Phone"
+   },
+  "outbound_stream": {
+      "maximum_jitter": 5,
+      "average_jitter": 1,
+      "packets_lost": 0,
+      "packets_transmitted": 2000,
+      "canonical_name": "voice.gateway@127.0.0.1",
+      "tool_name": "IBM Voice Gateway/1.0.0.5"
+   }
+}
+
+```     
+{: codeblock}
+
+
+The objects for each stream contain the following keys:
+
+
+| Key | Type | Description |
+| --- | --- | --- |
+| `maximum_jitter` | Number | Maximum jitter during the call |
+| `average_jitter` | Number | Average jitter, calculated over the call duration |
+| `packets_lost` | Number | An estimate of the number of packets that were lost during the call |
+| `packets_transmitted` | Number | An estimate of the total number of packets that were transmitted during the call |
+| `canonical_name` | string | A unique identifier for the sender of the stream, typically in  *@* format |
+| `tool_name` | string | The name of the application or tool where the stream originated. For Voice Gateway, the default is `IBM Voice Gateway/`. |
+{: caption="Keys for RTP network summary details"  caption-side="top"}
+
+
+#### Injecting custom values into call detail record events
+{: #webhook-log-cdr-custom-data}
+
+By including the  `cdr_custom_data`  context variable in your Watson Assistant dialog or actions, you can add custom data to your Call Detail Records. Each time this object is received it will merge with any previously received `cdr_custom_data` . You can record data related to various activities that are happening during a call. This includes ways to identify completion of specific tasks.
+
+```plaintext
+  "context": {
+    "integrations": {
+      "voice_telephony": {
+        "cdr_custom_data": {
+          "key1": "value1",
+          "key2": "value2"
+        }
+      }
+    }
+  }
+
+```
+{: codeblock}
+
+
+When generating a CDR report, the custom data is included in the  `injected_custom_data`  field. For example, in the following CDR report, the  `key1`  and  `key2`  are added to the  `injected_custom_data`  field.
+
+```plaintext
+{
+  "payload": {
+  ...
+    "injected_custom_data": {
+      "key1": "value1",
+      "key2": "value2"
+    }
+  ...
+  }
+}
+
+```
+{: codeblock}
+
+
+##### Merging CDR data
+{: #webhook-log-cdr-merging-custom-data}
+
+During a call, if the  `cdr_custom_data`  context variable is received multiple times, the data is merged in the  `injected_custom_data`  field.
+
+In the first call, values for  `key1`  and  `key2`  are defined.
+
+
+```plaintext
+  "context": {
+    "integrations": {
+      "voice_telephony": {
+        "cdr_custom_data": {
+          "key1": "value1",
+          "key2": "value2"
+        }
+      }
+    }
+  }
+
+```
+{: codeblock}
+
+
+In the second call, values for  `key1`  and  `key3`  are defined.
+
+
+```plaintext
+  "context": {
+    "integrations": {
+      "voice_telephony": {
+        "cdr_custom_data": {
+          "key1": "value11",
+          "key3": "valu3"
+        }
+      }
+    }
+  }
+
+```
+{: codeblock}
+
+
+
+After these calls, the following code example shows how the custom CDR data is merged in the  `injected_custom_data`  field.
+
+```plaintext
+{
+  "payload": {
+  ...
+    "injected_custom_data": {
+      "key1": "value11",
+      "key2": "value2",
+      "key3": "value3"
+    }
+  ...
+  }
+}
+
+```
+{: codeblock}
+
+##### Removing custom CDR data
+{: #webhook-log-cdr-removing-custom-data}
+
+To remove a key from the CDR custom data, set the  `cdr_custom_data`  context variable with that key set to  `""`.
+
+The following example shows that to remove the  `key1`  field from the custom CDR data, you would overwrite the  `key1`  value with a blank,  `""`
+
+```plaintext
+  "context": {
+    "integrations": {
+      "voice_telephony": {
+        "cdr_custom_data": {
+          "key1": ""
+        }
+      }
+    }
+  }
+
+```
+{: codeblock}
+
+

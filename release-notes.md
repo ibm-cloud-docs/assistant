@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-11-16"
+lastupdated: "2021-12-06"
 
 subcollection: assistant
 
@@ -39,14 +39,33 @@ For information about changes to the web chat integration, see the [Web Chat rel
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
 
-## 09 November 2021
+## 3 December 2021
+{: #assistant-dec032021}
+{: release-note}
+
+Configure webhook timeout
+:   From the **Pre-message webhook** and **Post-message webhook** configuration pages, you can configure the webhook timeout length from a minimum of 1 second to a maximum of 30 seconds. For more information, see [Webhook overview](/docs/assistant?topic=assistant-webhook-overview).
+
+## 27 November 2021
+{: #assistant-nov272021}
+{: release-note}
+
+New API version
+:   The current API version is now `2021-11-27`. This version introduces the following changes:
+
+    - The `output.text` object is no longer returned in `message` responses. All responses, including text responses, are returned only in the `output.generic` array.
+
+## 9 November 2021
 {: #assistant-nov092021}
 {: release-note}
 
 New phone response types
 :   New response types are available for controlling the configuration and behavior of the phone integration. These response types replace most of the older `vgw` actions, which are now deprecated. (The `vgw` actions will continue to work, so existing skills do not need to be changed.) For more information, see [Handling phone interactions](/docs/assistant?topic=assistant-dialog-voice-actions).
 
-## 04 November 2021
+Rich response types
+:   Your assistant can now send responses that include elements such as audio, video, or embedded `iframe` content. For more information, see [Rich responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia).
+
+## 4 November 2021
 {: #assistant-nov042021}
 {: release-note}
 
@@ -60,7 +79,7 @@ Actions enhancement: Add variables to links
 `vgwHangUp` message no longer sent
 :   Previously, the phone integration sent a message containing the text `vgwHangUp` to the assistant when a call was ended by the caller. This message is no longer sent.
 
-## 07 October 2021
+## 7 October 2021
 {: #assistant-oct072021}
 {: release-note}
 
@@ -96,7 +115,7 @@ Change to the irrelevance detection option
     - If you use the dialog skill options to choose enhanced intent detection, it is automatically paired with enhanced irrelevance detection.
     - If you use the dialog skill options to choose existing intent detection, it is automatically paired with existing irrelevance detection.
 
-    For more information, see [Defining what's irrelevant](/docs/assistant?topic=assistant-irrelevance-detection) and [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection). 
+    For more information, see [Defining what's irrelevant](/docs/assistant?topic=assistant-irrelevance-detection) and [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).
 
     If necessary, you can use the [Update workspace API](/apidocs/assistant/assistant-v1?curl=#updateworkspace){: external} to set your English-language assistant to one of the four combinations of intent and irrelevance detection:
 
@@ -119,7 +138,7 @@ Dialog skill "Try it out" improvements
     - It now includes runtime warnings in addition to runtime errors.
 
     - For dialog skills, the **Try it out** pane now uses the [React](https://reactjs.org/){: external} UI framework similar to the rest of the {{site.data.keyword.conversationshort}} user interface. You shouldn't see any change in behavior or functionality. As a part of the update, dialog skill error handling has been improved within the "Try it out" pane. This update was enabled on these dates:
-    
+
         - September 9, 2021 in the Tokyo and Seoul data centers
         - September 13, 2021 in the London, Sydney, and Washington, D.C. data centers
         - September 15, 2021 in the Dallas and Frankfurt data centers
@@ -140,13 +159,13 @@ Disambiguation feature updates
         - `medium`
         - `medium_low`
         - `low`
-        
+
         The default (`auto`) is `medium_high` if this option is not set.
-  
+
     - **More predictable**: The new disambiguation feature is more stable and predictable. The choices shown may sometimes vary slightly to enable learning and analytics, but the order and depth of disambiguation is largely stable.
 
-    These new features may affect various metrics, such as disambiguation rate and click rates, as well as influence conversation-level key performance indicators such as containment. 
-    
+    These new features may affect various metrics, such as disambiguation rate and click rates, as well as influence conversation-level key performance indicators such as containment.
+
     If the new disambiguation algorithm works differently than expected for your assistant, you can adjust it using the sensitivity parameter in the update workspace API. For more information, see [Update workspace](/apidocs/assistant/assistant-v1#updateworkspace){: external}.
 
 ## 9 September 2021
@@ -158,11 +177,11 @@ Actions skill improvements
 
     - **Change conversation topic**: In general, an action is designed to lead a customer through a particular process without any interruptions. In real life, however, conversations almost never follow such a simple flow. In the middle of a conversation, customers might get distracted, ask questions about related issues, misunderstand something, or just change their minds about what they want to do. The **Change conversation topic** feature enables your assistant to handle these digressions, dynamically responding to the user by changing the conversation topic as needed. For more information, see [Changing the topic of the conversation](/docs/assistant?topic=assistant-actions#actions-change-topic).
 
-    - **Fallback action**: The built-in action, *Fallback*, provides a way to automatically connect customers to a human agent if they need more help. This action helps you to handle errors in the conversation, and is triggered by these conditions: 
+    - **Fallback action**: The built-in action, *Fallback*, provides a way to automatically connect customers to a human agent if they need more help. This action helps you to handle errors in the conversation, and is triggered by these conditions:
         - Step validation failed: The customer repeatedly gave answers that were not valid for the expected customer response type.
         - Agent requested: The customer directly asked to be connected to a human agent.
         - No action matches: The customer repeatedly made requests or asked questions that the assistant did not understand.
-        
+
         For more information, see [Set by assistant actions](/docs/assistant?topic=assistant-actions#actions-builtin)
 
 
@@ -247,9 +266,9 @@ Date and time response types
 :   New to action skills, these response types allow you to collect date and time information from customers as they answer questions or make requests. For more information, see [Response types](/docs/assistant?topic=assistant-actions#actions-response-types).
 
 New built-in variables
-:   Two kinds of built-in variables are now available for action skills. 
+:   Two kinds of built-in variables are now available for action skills.
 
-    - **Set by assistant** variables include the common and essential variables `Now`, `Current time`, and `Current date`. 
+    - **Set by assistant** variables include the common and essential variables `Now`, `Current time`, and `Current date`.
     - **Set by integration** variables are `Timezone` and `Locale` and are available to use when connected to a webhook or integration.
 
     For more information, see [Adding and referencing variables](/docs/assistant?topic=assistant-actions#actions-variables).
@@ -269,7 +288,7 @@ Log webhook support for actions and search skills
 {: release-note}
 
 Change to conversation skill choices
-:   When adding skills to new or existing assistant, the conversation skill choices have been combined, so that you pick from either an actions skill or a dialog skill. 
+:   When adding skills to new or existing assistant, the conversation skill choices have been combined, so that you pick from either an actions skill or a dialog skill.
 
     With this change:
     - New assistants can use up to two skills, either actions and search or dialog and search. Previously, new assistants could use up to three skills: actions, dialog, and search.
@@ -311,7 +330,7 @@ Actions skill improvement
 {: release-note}
 
 Deploy your assistant to WhatsApp - now generally available
-:   Make your assistant available through Whatsapp messaging so it can exchange messages with your customers where they are. This integration, which is now generally available, creates a connection between your assistant and WhatsApp by using Twilio as a provider. For more information, see [Integrating with WhatsApp](/docs/assistant?topic=assistant-deploy-whatsapp). 
+:   Make your assistant available through Whatsapp messaging so it can exchange messages with your customers where they are. This integration, which is now generally available, creates a connection between your assistant and WhatsApp by using Twilio as a provider. For more information, see [Integrating with WhatsApp](/docs/assistant?topic=assistant-deploy-whatsapp).
 
 Web chat home screen now generally available
 :   Ease your customers into the conversation by adding a home screen to your web chat window. The home screen greets your customers and shows conversation starter messages that customers can click to easily start chatting with the assistant. For more information about the home screen feature, see [Configuring the home screen](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-home-screen). The home screen feature is now enabled by default for all new web chat deployments. Also, you can now access context variables from the home screen. Note that initial context must be set using a `conversation_start` node. For more information, see [Starting the conversation](/docs/assistant?topic=assistant-dialog-start#dialog-start-welcome).
@@ -333,10 +352,10 @@ Service API endpoint change
 
     - If your service instance API credentials show the old endpoint, create a new credential and start using it today. After you update your custom applications to use the new credential, you can delete the old one.
 
-    - For a web chat integration, you might need to take action depending on when and how you created your integration. 
-  
+    - For a web chat integration, you might need to take action depending on when and how you created your integration.
+
         - If you tied your deployment to a specific web chat version by using the `clientVersion` parameter and specified a version earlier than version 3.3.0, update the parameter value to use version 3.3.0 or later. Web chat integrations that use the latest or 3.3.0 and later versions will not be impacted by the endpoint deprecation.
-  
+
         - If you created your web chat integration before May 2020, check the code snippet that you embedded in your web page to see if it refers to `watsonplatform.net`. If so, you must edit the code snippet to use the new URL syntax. For example, change the following URL:
 
             ```html
@@ -351,8 +370,8 @@ Service API endpoint change
 
     - If your web chat integration connects to a Salesforce service desk, then you must edit the API call that is included in the code snippet that you added to the Visualforce Page that you created in Salesforce. From Salesforce, search for *Visualforce Pages*, and find your page. In the `<iframe>` snippet that you pasted into the page, make the following change:
 
-      Replace: `src=“https://assistant-integrations-{location}.watsonplatform.net/public/salesforceweb”` with a url with this syntax: 
-      
+      Replace: `src=“https://assistant-integrations-{location}.watsonplatform.net/public/salesforceweb”` with a url with this syntax:
+
         ```code
         src="https://integrations.{location}.assistant.watson.appdomain.cloud/public/salesforceweb/{integration-id}/agent_application?version=2020-09-24"
         ```
@@ -360,13 +379,13 @@ Service API endpoint change
 
       From the Web chat integration Salesforce live agent setup page, find the *Visualforce page markup* field. Look for the `src` parameter in the `<iframe>` element. It contains the full URL to use, including the appropriate `{location}` and `{integration-id}` values for your instance.
 
-    - For a Slack integration that is over 7 months old, make sure the Request URL is using the proper endpoint. 
-  
+    - For a Slack integration that is over 7 months old, make sure the Request URL is using the proper endpoint.
+
         - Go to the [Slack API](https://api.slack.com/){: external} web page. Click *Your Apps* to find your assistant app. Click *Event Subscriptions* from the navigation pane.
         - Edit the Request URL.
 
-      For example, if the URL has the syntax: `https://assistant-slack-{location}.watsonplatform.net/public/message`, change it to have this syntax: 
-      
+      For example, if the URL has the syntax: `https://assistant-slack-{location}.watsonplatform.net/public/message`, change it to have this syntax:
+
       ```code
       https://integrations.{location}.assistant.watson.appdomain.cloud/public/slack/{integration-id}/message?version=2020-09-24
       ```
@@ -374,14 +393,14 @@ Service API endpoint change
 
       Check the *Generated request URL* field in the Slack integration setup page for the full URL to use, which includes the appropriate `{location}` and `{integration-id}` values for your instance.
 
-    - For a Facebook Messenger integration that is over 7 months old, make sure the Callback URL is using the proper endpoint. 
-  
+    - For a Facebook Messenger integration that is over 7 months old, make sure the Callback URL is using the proper endpoint.
+
         - Go to the [Facebook for Developers](https://developers.facebook.com/apps/){: external} web page.
-        - Open your app, and then select *Messenger>Settings* from the navigation pane. 
+        - Open your app, and then select *Messenger>Settings* from the navigation pane.
         - Scroll down to the *Webhooks* section and edit the *Callback URL* field.
-    
+
           For example, if the URL has the syntax: `https://assistant-facebook-{location}.watsonplatform.net/public/message/`, change it to have this syntax:
-      
+
           ```code
           https://integrations.{location}.assistant.watson.appdomain.cloud/public/facebook/{integration-id}/message?version=2020-09-24
           ```
@@ -395,8 +414,8 @@ Service API endpoint change
 
     - If you are using [Jupyter notebooks](/docs/assistant?topic=assistant-logs-resources#logs-resources-jupyter-logs) to do advanced analytics, check your Jupyter notebook files to make sure they don't specify URLs with the old `watsonplatform.net` syntax. If so, update your files.
 
-    - No action is required for the following integration types: 
-  
+    - No action is required for the following integration types:
+
         - Intercom
         - SMS with Twilio
         - WhatsApp with Twilio
@@ -417,7 +436,7 @@ Channel transfer response type
 :   Dialog skills now include a channel transfer response type. If your assistant uses multiple integrations to support different channels for interaction with users, there might be some situations when a customer begins a conversation in one channel but then needs to transfer to a different channel. The most common such situation is transferring a conversation to the web chat integration, to take advantage of web chat features such as service desk integration. For more information, see [Adding a Channel transfer response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-channel-transfer).
 
 Intercom and WhatsApp integrations now available in Lite plan
-:   The integrations for Intercom and WhatsApp are now available in the Lite plan for {{site.data.keyword.conversationshort}}. For more information, see [Integrating with Intercom](/docs/assistant?topic=assistant-deploy-intercom) and [Integrating with WhatsApp](/docs/assistant?topic=assistant-deploy-whatsapp). 
+:   The integrations for Intercom and WhatsApp are now available in the Lite plan for {{site.data.keyword.conversationshort}}. For more information, see [Integrating with Intercom](/docs/assistant?topic=assistant-deploy-intercom) and [Integrating with WhatsApp](/docs/assistant?topic=assistant-deploy-whatsapp).
 
 ## 16 March 2021
 {: #assistant-mar162021}
@@ -425,13 +444,13 @@ Intercom and WhatsApp integrations now available in Lite plan
 
 Session history now generally available
 :   Session history allows your web chats to maintain conversation history and context when users refresh a page or change to a different page on the same website. It is enabled by default. For more information about this feature, see [Session history](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=tutorials-session-history){: external}.
-    
+
     Session history persists within only one browser tab, not across multiple tabs. The dialog provides an option for links to open in a new tab or the same tab. See [this example](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=tutorials-session-history#Tutorial1){: external} for more information on how to format links to open in the same tab.
-    
+
     Session history saves changes that are made to messages with the [pre:receive event](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events#prereceive){: external} so that messages still look the same on rerender. This data is only saved for the length of the session. If you prefer to discard the data, set `event.updateHistory = false;` so the message is rerendered without the changes that were made in the pre:receive event.
 
     [instance.updateHistoryUserDefined()](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-instance-methods#updateHistoryUserDefined){: external} provides a way to save state for any message response. With the state saved, a response can be rerendered with the same state. This saved state is available in the `history.user_defined` section of the message response on reload. The data is saved during the user session. When the session expires, the data is discarded.
-    
+
     Two new history events, [history:begin](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events#historybegin){: external} and [history:end](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events#historyend){: external} announce the beginning and end of the history of a reloaded session. These events can be used to view the messages that are being reloaded. The history:begin event allows you to edit the messages before they are displayed.
 
     See this example for more information on saving the state of [customResponse](https://web-chat.global.assistant.watson.cloud.ibm.com/testfest.html?to=api-events#customresponse){: external} types in session history.
@@ -451,7 +470,7 @@ Actions skill improvement
 {: release-note}
 
 Support for every language!
-:   You now can build an assistant in any language you want to support. If a dedicated language model is not available for your target language, create a skill that uses the universal language model. The universal model applies a set of shared linguistic characteristics and rules from multiple languages as a starting point. It then learns from training data written in the target language that you add to it. 
+:   You now can build an assistant in any language you want to support. If a dedicated language model is not available for your target language, create a skill that uses the universal language model. The universal model applies a set of shared linguistic characteristics and rules from multiple languages as a starting point. It then learns from training data written in the target language that you add to it.
 
     The universal model is available as a beta feature. For more information, see [Understanding the universal language model](/docs/assistant?topic=assistant-assistant-language#assistant-language-universal).
 
@@ -479,7 +498,7 @@ Other plan changes
     The Plus Trial plan was renamed to Trial.
 
 SOC 2 compliance
-:   {{site.data.keyword.conversationshort}} is SOC 2 Type 2 compliant, so you know your data is secure. 
+:   {{site.data.keyword.conversationshort}} is SOC 2 Type 2 compliant, so you know your data is secure.
 
     The System and Organization Controls framework, developed by the American Institute of Certified Public Accountants (AICPA), is a standard for controls that protect information stored in the cloud. SOC 2 reports provide details about the nature of internal controls that are implemented to protect customer-owned data. For more information, see [IBM Cloud compliance programs](https://www.ibm.com/cloud/compliance/global){: external}.
 
@@ -495,7 +514,7 @@ Integration changes
 
     - The name of *Preview link* integration changed to *Preview*.
     - The *Web chat* and *Preview* integrations are no longer added automatically to every new assistant.
-    
+
         The integrations continue to be added to the *My first assistant* that is generated for you automatically when you first create a new service instance.
 
 Message and log webhooks are generally available
@@ -531,7 +550,7 @@ Language support was expanded for intent recommendations
 :   The intent recommendations feature is now supported in Brazilian Portuguese, French, German, Italian, and Spanish dialog skills. For more information, see [Supported languages](/docs/assistant?topic=assistant-language-support).
 
 German language improvements
-:   A word decomposition function was added to the intent and entity recognition models for German-language dialog skills. 
+:   A word decomposition function was added to the intent and entity recognition models for German-language dialog skills.
 
     A characteristic of the German language is that some words are formed by concatenating separate words to form a single compound word. For example, "festnetznummer" (landline number) concatenates the words "festnetz" (landline) and "nummer" (number). When your customers chat with your assistant, they might write a compound word as a single word, as hyphenated words, or as separate words. Previously, the variants resulted in different intent confidence scores and different entity mention counts based on your training data. With the addition of the word decomposition function, the models now treat all compound word variants as equivalent. This update means you no longer need to add examples of every variant of the compound words to your training data.
 
@@ -699,7 +718,7 @@ Text messaging integration was renamed
 Search skill update
 :   Support was added for a new version of the {{site.data.keyword.discoveryshort}} API which adds the following capabilities:
 
-    - The search skill can now connect to existing Premium {{site.data.keyword.discoveryshort}} service instances. 
+    - The search skill can now connect to existing Premium {{site.data.keyword.discoveryshort}} service instances.
 
     - When you connect to a Box, Sharepoint, or Web crawl data collection, the result content fields are automatically populated for you. The **Title** now uses the `title` field from the source document instead of the `extracted_metadata.title` field, which provides better results.
 
@@ -786,7 +805,7 @@ The @sys-location and @sys-person system entities were removed
 :   The `@sys-location` and `@sys-person` system entities are no longer listed on the *System entities* page. If your dialog uses one of these entities, a red `Entity not created` notification is displayed to inform you that the entity is not recognized.
 
 Skill menu actions moved
-:   The menu that was displayed in the header of the skill while you were working with a skill was removed. The actions that were available from the menu, such as import and export, are still available. Go to the Skills page, and click the menu on the skill tile. 
+:   The menu that was displayed in the header of the skill while you were working with a skill was removed. The actions that were available from the menu, such as import and export, are still available. Go to the Skills page, and click the menu on the skill tile.
 
     The import skill process was updated to support overwriting an existing skill on import. For more information, see [Overwriting a skill](/docs/assistant?topic=assistant-skill-tasks#skill-tasks-overwrite).
 
@@ -800,24 +819,24 @@ Dialog issues were addressed
 {: release-note}
 
 Support ended for @sys-location and @sys-person
-:   The person and location system entities, which were available as a beta feature in English dialog skills only, are no longer supported. You cannot enable them. If your dialog uses them, they are ignored by the service. 
+:   The person and location system entities, which were available as a beta feature in English dialog skills only, are no longer supported. You cannot enable them. If your dialog uses them, they are ignored by the service.
 
     Use contextual entities to teach your skill to recognize the context in which such names are used. For more information about contextual entities, see [Annotation-based method](/docs/assistant?topic=assistant-entities#entities-annotations-overview).
 
     For more information about how to use contextual entites to identify names of people, see the [Detecting Names And Locations With {{site.data.keyword.conversationshort}}](https://medium.com/ibm-watson/detecting-names-and-locations-with-watson-assistant-e3e1fa2a8427){: external} blog post on Medium.
 
 How legacy numeric system entities are processed has changed
-:   All new dialog skills use the new system entities automatically. 
+:   All new dialog skills use the new system entities automatically.
 
-    For existing skills that use legacy numeric system entities, how the entities are processed now differs based on the skill language. 
+    For existing skills that use legacy numeric system entities, how the entities are processed now differs based on the skill language.
 
-    - Arabic, Chinese, Korean, and Japanese dialog skills that use legacy numeric system entities function the same as before. 
+    - Arabic, Chinese, Korean, and Japanese dialog skills that use legacy numeric system entities function the same as before.
     - If you choose to continue to use the legacy system entities in European-language dialog skills, a new legacy API format is used. The new legacy API format simulates the legacy system entities behavior. In particular, it returns a `metadata` object and does not stop the service from idenfifying multiple system entities for the same input string. In addition, it returns an `interpretation` object, which was introduced with the new version of system entities. Review the `interpretation` object to see the useful information that is returned by the new version.
 
     Update your skills to use the new system entities from the **Options>System Entities** page.
 
 Web chat security is generally available
-:   Enable the security feature of web chat so that you can verify that messages sent to your assistant come from only your customers and can pass sensitive information to your assistant. 
+:   Enable the security feature of web chat so that you can verify that messages sent to your assistant come from only your customers and can pass sensitive information to your assistant.
 
     When configuring the JWT, you no longer need to specify the Authentication Context Class Reference (acr) claim.
 
@@ -1046,7 +1065,7 @@ March 2020 deprecation notice
         We released a whole new infrastructure for our numeric system entities across all languages except Chinese, Korean, Japanese and Arabic. The updated `@sys-number`, `@sys-date`, `@sys-time`, `@sys-currency`, and `@sys-percentage` entities provide superior number recognition with higher precision. For more information about the new system entities, see [System entity details](/docs/assistant?topic=assistant-system-entities).
 
         The old version of the numeric system entities will stop being supported in June 2020 for English, Brazilian Portuguese, Czech, Dutch, French, German, Italian, and Spanish dialog skills.
-    
+
         ***Action***: In each dialog skill where you use numeric system entities, go to the **Options>System entities** page and turn on the new system entities. Take some time to test the new version of system entities with your own dialogs to make sure they continue to work as expected. As you adopt the new system entities, share your feedback about your experience with the new technology.
 
     - **Person and location system entities**
@@ -1065,7 +1084,7 @@ March 2020 deprecation notice
 
         v1 API versions that are dated on or before `2017-02-03` are being deprecated. When you send calls to the service with earlier API version dates, they will receive properly formatted and valid responses for a time, so you can gracefully transition to using the later API versions. However, the confidence scores and other results that are sent in the response will reflect those generated by a more recent version of the API.
 
-        ***Action***: Do some testing of calls with the latest version to verify that things work as expected. Some functionality has changed over the last few years. After testing, change the version date on any API calls that you make from your applications. 
+        ***Action***: Do some testing of calls with the latest version to verify that things work as expected. Some functionality has changed over the last few years. After testing, change the version date on any API calls that you make from your applications.
 
 ## 28 February 2020
 {: #assistant-feb282020}
@@ -1169,14 +1188,14 @@ Full support for IBM Cloud IAM
 {: release-note}
 
 Disambiguation is available to everyone
-:   Disambiguation is now available to users of every plan type. 
+:   Disambiguation is now available to users of every plan type.
 
     The following changes were made to how it functions:
 
     - The text that you add to the dialog **node name** field now matters.
-  
+
     - The text in the node name field might be shown to customers. The disambiguation feature shows it to customers if the assistant needs to ask them to clarify their meaning. The text you add as the node name must identify the purpose of the node clearly and succinctly, such as *Place an order* or *Get plan information*.
-  
+
         If the *External node name* field exists and contains a summary of the node's purpose, then its summary is shown in the disambiguation list instead. Otherwise, the dialog node name content is shown.
 
       - Disambiguation is enabled automatically for all nodes. You can disable it for the entire dialog or for individual dialog nodes.
@@ -1214,7 +1233,7 @@ Testing improvement
 :   You can now see the top three intents that were recognized in a test user input from the "Try it out" pane. For more details, see [Testing your dialog](/docs/assistant?topic=assistant-dialog-tasks#dialog-tasks-test).
 
 Error message when opening an instance
-:   When you launch {{site.data.keyword.conversationshort}} from the {{site.data.keyword.cloud}} dashboard, you might see an error message that says, `Module 'ui-router' is not available! You either misspelled the module name or forgot to load it.` You can ignore the message. Refresh the web browser page to close the notification. 
+:   When you launch {{site.data.keyword.conversationshort}} from the {{site.data.keyword.cloud}} dashboard, you might see an error message that says, `Module 'ui-router' is not available! You either misspelled the module name or forgot to load it.` You can ignore the message. Refresh the web browser page to close the notification.
 
 ## 16 October 2019
 {: #assistant-oct162019}
@@ -1239,9 +1258,9 @@ Change to switching service instances
 :   Where you go to switch service instances has changed. See [Switching the service instance](/docs/assistant?topic=assistant-assistant-settings#assistant-settings-switch-instance).
 
 Known issue: Cannot rename search skills
-:   You currently cannot rename a search skill after you create it. 
- 
-## 9 October 2019 
+:   You currently cannot rename a search skill after you create it.
+
+## 9 October 2019
 {: #assistant-oct092019}
 {: release-note}
 
@@ -1252,14 +1271,14 @@ New system entities changes
 
     - The `part_of_day` property of the `@sys-time` entity now returns a time range instead of a single time value.
 
-## 23 September 2019 
+## 23 September 2019
 {: #assistant-sep232019}
 {: release-note}
 
 Dallas updates
 :   The updates from 20 September are now available to service instances hosted in Dallas.
 
-## 20 September 2019 
+## 20 September 2019
 {: #assistant-sep202019}
 {: release-note}
 
@@ -1267,12 +1286,12 @@ Inactivity timeout increase
 :   The maximum inactivity timeout can now be extended to up to 7 days for Premium plans. See [Changing the inactivity timeout setting](/docs/assistant?topic=assistant-assistant-settings).
 
 Pattern entity fix
-:   A change that was introduced in the previous release which changed all alphabetic characters to lowercase at the time an entity value was added has been fixed. The case of any alphabetic characters that are part of a pattern entity value are no longer changed when the value is added. 
+:   A change that was introduced in the previous release which changed all alphabetic characters to lowercase at the time an entity value was added has been fixed. The case of any alphabetic characters that are part of a pattern entity value are no longer changed when the value is added.
 
 Dialog text response syntax fix
-:   Fixed a bug in which the format of a dialog response reverted to an earlier version of the JSON syntax. Standard text responses were being saved as `output.text` instead of `output.generic`. For more information about the `output` object, see [Anatomy of a dialog call](/docs/assistant?topic=assistant-dialog-runtime-context). 
+:   Fixed a bug in which the format of a dialog response reverted to an earlier version of the JSON syntax. Standard text responses were being saved as `output.text` instead of `output.generic`. For more information about the `output` object, see [Anatomy of a dialog call](/docs/assistant?topic=assistant-dialog-runtime-context).
 
-## 13 September 2019 
+## 13 September 2019
 {: #assistant-sep132019}
 {: release-note}
 
@@ -1324,9 +1343,9 @@ Improved dialog page responsiveness
 {: release-note}
 
 Search skill and autocorrection are generally available
-:   The search skill and spelling autocorrection features, which were previously available as beta features, are now generally available. 
+:   The search skill and spelling autocorrection features, which were previously available as beta features, are now generally available.
 
-    - Search skills can be created by users of Plus or Premium plans only. 
+    - Search skills can be created by users of Plus or Premium plans only.
 
     - You can enable autocorrection for English-language dialog skills only. It is enabled automatically for new English-language dialog skills.
 
@@ -1379,13 +1398,13 @@ A Plus Trial plan is available
 {: release-note}
 
 Updated navigation
-:   The home page was removed, and the order of the Assistants and Skills tabs was reversed. The new tab order encourages you to start your development work by creating an assistant, and then a skill. 
+:   The home page was removed, and the order of the Assistants and Skills tabs was reversed. The new tab order encourages you to start your development work by creating an assistant, and then a skill.
 
 Disambiguation settings have moved
 :   The toggle to enable disamibugation, which is a feature that is available to Plus and Premium plan users only, has moved. The **Settings** button was removed from the **Dialog** page. You can now enable disambiguation and configure it from the skill's **Options** tab.
 
 An introductory tour is now available
-:   A short product tour is now displayed when a new service instance is created. Brand new users are also given help as they start development. A new assistant is created for them automatically. Informational popups are displayed to introduce the product user interface features, and guide the new user toward taking the key first step of creating a dialog skill. 
+:   A short product tour is now displayed when a new service instance is created. Brand new users are also given help as they start development. A new assistant is created for them automatically. Informational popups are displayed to introduce the product user interface features, and guide the new user toward taking the key first step of creating a dialog skill.
 
 ## 10 April 2019
 {: #assistant-apr102019}
@@ -1437,9 +1456,9 @@ New API version
     - The order in which conditions are evaluated in nodes with slots has changed. Previously, if you had a node with slots that allowed for digressions away, the `anything_else` root node was triggered before any of the slot level Not found conditions could be evaluated. The order of operations has been changed to address this behavior. Now, when a user digresses away from a node with slots, all the root nodes except the `anything_else` node are processed. Next, the slot level Not found conditions are evaluated. And, finally, the root level `anything_else` node is processed. To better understand the full order of operations for a node with slots, see [Slot usage tips](/docs/assistant?topic=assistant-dialog-slots#dialog-slots-node-level-handler).
 
     - Strings that begin with a number sign (#) in the `context` or `output` objects of a message are no longer treated as intent references.
-  
+
       Previously, these strings were treated as intents automatically. For example, if you specified a context variable, such as `"color":"#FFFFFF"`, then the hex color code (#FFFFFF) would be treated as an intent. Your assistant would check whether an intent named #FFFFFF was detected in the user's input, and if not, would replace #FFFFFF with `false`. This replacement no longer occurs.
-  
+
       Similarly, if you included a number sign (#) in the text string in a node response, you used to have to escape it by preceding it with a back slash (`\`). For example, `We are the \#1 seller of lobster rolls in Maine.` You no longer need to escape the `#` symbol in a text response.
 
       This change does not apply to node or condtional response conditions. Any strings that begin with a number sign (#) which are specified in conditions continue to be treated as intent references. Also, you can use SpEL expression syntax to force the system to treat a string in the `context` or `output` objects of a message as an intent. For example, specify the intent as `<? #intent-name ?>`.
@@ -1589,7 +1608,7 @@ Major user interface revision
     - **Built-in integrations**: Instead of going to the **Deploy** tab to deploy your workspace, you add your dialog skill to an assistant, and add integrations to the assistant through which the skill is made available to your users. You do not need to build a custom front-end application and manage the conversation state from one call to the next. However, you can still do so if you want to. See [Adding integrations](/docs/assistant?topic=assistant-deploy-integration-add) for more information.
 
     - **New major API version**: A V2 version of the API is available. This version provides access to methods you can use to interact with an assistant at run time. No more passing context with each API call; the session state is managed for you as part of the assistant layer.
-  
+
     What is presented in the tooling as a dialog skill is effectively a wrapper for a V1 workspace. There are currently no API methods for authoring skills and assistants with the V2 API. However, you can continue to use the V1 API for authoring workspaces. See [API Overview](/docs/assistant?topic=assistant-api-overview) for more details.
 
     - **Switching data sources**: It is now easier to improve the model in one skill with user conversation logs from a different skill. You do not need to rely on deployment IDs, but can simply pick the name of the assistant to which a skill was added and deployed to use its data. See [Improving across assistants](/docs/assistant?topic=assistant-logs#logs-deploy-id).

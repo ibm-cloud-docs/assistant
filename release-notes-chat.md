@@ -67,7 +67,7 @@ If you want to evaluate changes that are introduced in a web chat release before
 
 *Release date: 16 September 2021*
 
-- **New response types**: The web chat now supports the new `video`, `audio`, and `iframe` response types. For more information about these response types, see [Rich responses](/docs/assistant?topic=assistant-dialog-overview##dialog-overview-multimedia).
+- **New response types**: The web chat now supports the new `video`, `audio`, and `iframe` response types. For more information about these response types, see [Rich responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-multimedia).
 
 - **Link to start web chat**: You can now create a set of HTML links that go directly to your web chat and start conversations on specific topics. For example, you might want to send an email inviting customers to update their account information; you can include a link that opens the web chat on your site and sends the initial message `I want to update my account`. For more information, see [Creating links to web chat](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-configuration#pageLinks){: external}.
 

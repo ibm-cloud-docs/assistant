@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-12-03"
 
 keywords: post webhook, postwebhook, post-webhook
 
@@ -56,14 +56,11 @@ You can define one webhook URL to use for processing every message response befo
 The programmatic call to the external service must meet these requirements:
 
 - The call must be a POST HTTP request.
-- The call must be completed in 8 seconds or less.
+- The call must be completed in 30 seconds or less.
 - The format of the request and response must be in JSON. For example: `Content-Type: application/json`.
 
 Do not set up and test your webhook in a production environment where the assistant is deployed and is interacting with customers.
 {: important}
-
-Use an external service that can execute and return a result in less than 8 seconds. Otherwise, the customer will experience a lag in the conversational exchange.
-{: tip}
 
 To add the webhook details, complete the following steps:
 
@@ -101,6 +98,8 @@ To add the webhook details, complete the following steps:
     The key must be specified as a text string, such as `purple unicorn`. Maximum length is 1,024 characters. You cannot specify a context variable.
 
     It is the responsibility of the external service to check for and verify the secret. If the external service does not require a token, specify any string you want. You cannot leave this field empty.
+
+1. In the **Timeout** field, specify the length of time (in seconds) you want the assistant to wait for a response from the webhook before returning an error. The timeout duration cannot be shorter than 1 second or longer than 30 seconds.
 
 1.  In the Headers section, add any headers that you want to pass to the service one at a time by clicking **Add header**.
 

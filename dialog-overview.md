@@ -634,6 +634,8 @@ To add an *iframe* response type, complete the following steps:
 
     For example, to embed an interactive map using Google Maps, you can use the Google Maps Embed API. (For more information, see [The Maps Embed API overview](https://developers.google.com/maps/documentation/embed/get-started){: external}.) Other sites have different processes for creating embeddable content.
 
+    For technical details about using `Content-Security-Policy: frame-src` to allow embedding of your website content, see [CSP: frame-src](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-src){: external}.
+
 1.  Optionally add a descriptive title in the **Title** field.
 
     In the web chat, this title will be displayed in the preview card before the customer clicks to render the external content. (If you do not specify a title, the web chat will attempt to retrieve metadata from the specified URL and display the title of the content as specified at the source.)
