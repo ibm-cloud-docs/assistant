@@ -1,3 +1,4 @@
+
 ---
 
 copyright:
@@ -202,10 +203,10 @@ You can add security to the phone connection by selecting one or both of the fol
 
   The SIP request often sends INVITE headers with information about the request that is used by the SIP network. For example, many companies use Interactive Voice Response (IVR) systems that pass information about an incoming call by using headers. If you want to make use of any of these headers, list the header names here.
   
-  The specified headers, if present in the request, are stored in the context variable `vgwSIPCustomInviteHeaders`. This variable is an array in which each key/value pair represents a header from the request, as in this example:
+  The specified headers, if present in the request, are stored in the context variable `sip_custom_invite_headers`. This variable is an array in which each key/value pair represents a header from the request, as in this example:
 
     ```json
-    "vgwSIPCustomInviteHeaders": {
+    "sip_custom_invite_headers": {
       "X-customer-name": "my_name",
       "X-account-number": "12345"
     }
@@ -240,7 +241,8 @@ For whichever call center service you use, you will need to provide the call cen
 For the best customer experience, design your dialog with the capabilities of the phone integration in mind:
 
 - Do not include HTML elements in your dialog text responses. To add formatting, use Markdown. For more information, see [Simple text response](https://cloud.ibm.com/docs/assistant?topic=assistant-dialog-overview#dialog-overview-simple-text).
-- The phone integration does not support chat transfers that are initiated with the *Connect to human agent* response type. Use the [vgwActTransfer](/docs/assistant?topic=assistant-dialog-voice-actions#dialog-voice-actions-transfer) command instead.
+- Use the *Connect to human agent* response type to initiate a transfer to a human agent. For more information, see [Transferring a call to a human agent](/docs/assistant?topic=assistant-dialog-voice-actions#dialog-voice-actions-transfer).	
+- Use the *Channel transfer* response type to initiate a transfer to the web chat integration. For more information, see [Transferring the caller to the web chat integration](/docs/assistant?topic=assistant-dialog-voice-actions#dialog-voice-actions-transfer-channel).	
 - The *pause* response type is not supported. If you want to add a pause, use the `turn_settings.timeout_count` context variable (for more information, see [Context variables that are set by your dialog or actions](/docs/assistant?topic=assistant-phone-context#phone-context-variables-set-by-dialog)).
 - You can include search skill response types in dialog nodes that the phone integration will read. The introductory message (*I searched my knowledge base* and so on), and then the body of only the first search result is read.
 
