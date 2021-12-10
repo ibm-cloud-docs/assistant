@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-12-09"
+lastupdated: "2021-12-10"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
