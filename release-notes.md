@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-12-06"
+  years: 2015, 2022
+lastupdated: "2022-01-05"
 
 subcollection: assistant
 
@@ -38,6 +38,13 @@ For information about changes to the web chat integration, see the [Web Chat rel
 
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
+
+## 24 December 2021
+{: #assistant-dec242021}
+{: release-note}
+
+Apache Log4j security vulnerability updates
+:   {{site.data.keyword.conversationshort}} upgraded to using Log4j version 2.17.0, which addresses all of the Critical severity and High severity Log4j CVEs, specifically CVE-2021-45105, CVE-2021-45046, and CVE-2021-44228.
 
 ## 10 December 2021
 {: #assistant-dec102021}
