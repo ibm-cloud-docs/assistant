@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-05-27"
+  years: 2018, 2022
+lastupdated: "2022-01-11"
 
 subcollection: assistant
 
@@ -22,8 +22,6 @@ subcollection: assistant
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
-
-{{site.data.content.newlink}}
 
 # Creating an assistant
 {: #assistant-add}
@@ -55,20 +53,9 @@ Follow these steps to create an assistant:
 ## Assistant limits
 {: #assistant-add-limits}
 
-The number of assistants you can create depends on your {{site.data.keyword.conversationshort}} plan type.
+The number of assistants you can create depends on your {{site.data.keyword.conversationshort}} [plan type](https://www.ibm.com/products/watson-assistant/pricing/){: external}. There is also a limit of 100 assistants per service instance.
 
-| Plan | Assistants per service instance |
-|--------------|--------------------------------:|
-| Enterprise   |                             100 |
-| Premium (legacy) |                         100 |
-| Plus         |                             100 |
-| Trial        |                             100 |
-| Lite*        |                             100 |
-{: caption="Plan details" caption-side="top"}
-
-*After 30 days of inactivity, an unused assistant in a Lite plan service instance might be deleted to free up space.
-
-See [Changing the inactivity timeout setting](/docs/assistant?topic=assistant-assistant-settings) for more information on the subject.
+After 30 days of inactivity, an unused assistant in a Lite plan service instance might be deleted to free up space. See [Changing the inactivity timeout setting](/docs/assistant?topic=assistant-assistant-settings) for more information on the subject.
 
 You can connect one skill of each type to your assistant. The number of skills you can build differs depending on the plan you have. See [Skill limits](/docs/assistant?topic=assistant-skill-add#skill-add-limits) for more details.
 
