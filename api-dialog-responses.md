@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-04-16"
+  years: 2015, 2022
+lastupdated: "2022-01-12"
 
 subcollection: assistant
 
@@ -113,6 +113,89 @@ The `image` response type instructs the client application to display an image, 
 ```
 
 Your application is responsible for retrieving the image specified by the `source` property and displaying it to the user. If the optional `title` and `description` are provided, your application can display them in whatever way is appropriate (for example, rendering the title after the image and the description as hover text).
+
+### Video
+{: #api-dialog-responses-video}
+
+The `video` response type instructs the client application to display a video, optionally accompanied by a `title`, `description` and `alt_text` for accessibility:
+
+```json
+{
+  "output": {
+    "generic":[
+      {
+        "response_type": "video",
+        "source": "http://example.com/video.mp4",
+        "title": "Video example",
+        "description": "This is an example video",
+        "alt_text": "A video showing a great example",
+        "channel_options": {
+          "chat": {
+            "dimensions": {
+              "base_height": 180
+            }
+          }
+        }
+      }
+    ]
+  },
+  "user_id": "faf4a112-f09f-4a95-a0be-43c496e6ac9a"
+}
+```
+
+Your application is responsible for retrieving the video specified by the `source` property and displaying it to the user. If the optional `title` and `description` are provided, your application can display them in whatever way is appropriate.
+
+The optional `channel_options.chat.dimensions.base_height` property takes a number signifying the amount of pixels the video should be rendered at a width of 360 pixels. Your app should use this value to maintain the proper aspect ratio of the video if it is rendered in a nonstandard size. 
+
+### Audio
+{: #api-dialog-responses-audio}
+
+The `audio` response type instructs the client application to play an audio file:
+
+```json
+{
+  "output": {
+    "generic":[
+      {
+        "response_type": "audio",
+        "source": "http://example.com/audio.mp3",
+        "channel_options": {
+          "voice_telephony": {
+            "loop": true
+          }
+        }
+      }
+    ]
+  },
+  "user_id": "faf4a112-f09f-4a95-a0be-43c496e6ac9a"
+}
+```
+
+Your application is responsible for playing the audio file.
+
+The optional `channel_options.voice_telephony.loop` property takes a boolean signifying if the audio file should be played as a continuous loop. (This option is typically used for hold music that might need to continue for an undefined time.)
+
+### iframe
+{: #api-dialog-responses-iframe}
+
+The `iframe` response type instructs the client application to display content in an embedded `iframe` element, optionally accompanied by a title:
+
+```json
+{
+  "output": {
+    "generic":[
+      {
+        "response_type": "iframe",
+        "source": "http://example.com/iframe.html",
+        "title": "My IFrame"
+      }
+    ]
+  },
+  "user_id": "faf4a112-f09f-4a95-a0be-43c496e6ac9a"
+}
+```
+
+Your application is responsible for displaying the `iframe` content. Content in an embedded `iframe` is useful for displaying third-party content, or for content from your own site that you do not want to reauthor using the [`user_defined`](#api-dialog-responses-user-defined) response type.
 
 ### Pause
 {: #api-dialog-responses-pause}
