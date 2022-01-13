@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-11-12"
+  years: 2020, 2022
+lastupdated: "2022-01-13"
 
 subcollection: assistant
 
@@ -27,7 +27,7 @@ subcollection: assistant
 
 {{site.data.content.newlink}}
 
-# Adding actions <!--![Beta](images/beta.png)-->
+# Adding actions
 {: #actions}
 
 Actions represent the discrete tasks or questions that your assistant is designed to help customers with.
@@ -203,9 +203,17 @@ Guide the customer to provide the right type of information by adding a customer
   
     *When should I ask?*
 
-    If your action asks for the same type of data in more than one step, select the **Always ask for this information, regardless of earlier messages** option in the later step. This prevents your assistant from assuming the wrong things. For example, if Step 3 asks for the shirt color that the customer wants to buy and step 5 asks for the tie color, click **Always ask for this** in Step 5. Otherwise, the color that the customer specifies for the shirt in Step 3 is used automatically for the tie. And who wants to wear the same color shirt and tie together?
+    If your action asks for the same type of data in more than one step, select the **Always ask for this information, regardless of earlier messages** setting in the later step. This prevents your assistant from assuming the wrong things. For example, if Step 3 asks for the shirt color that the customer wants to buy and step 5 asks for the tie color, click **Always ask for this** in Step 5. Otherwise, the color that the customer specifies for the shirt in Step 3 is used automatically for the tie. And who wants to wear the same color shirt and tie together?
 
     When you use the built-in integrations, if you define 5 or fewer options, they are displayed as buttons. For more than 5 options, a list is displayed. If you are using a custom client application, you must specify how you want the options to be displayed.
+
+    If you have a very long list of options, such as all the states in the U.S., you can choose to not show options in a list. This can be useful to prevent a phone integration from reading a long list of options to the customer. 
+
+    To disable the list:
+
+    1. In the options customer response, click the **Settings** icon.
+
+    1. Move the **List options** toggle to off.
 
 - **Number**: Collects a single numeric value. 
 

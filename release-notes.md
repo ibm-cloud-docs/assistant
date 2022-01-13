@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-01-05"
+lastupdated: "2022-01-13"
 
 subcollection: assistant
 
@@ -38,6 +38,13 @@ For information about changes to the web chat integration, see the [Web Chat rel
 
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
+
+## 13 January 2022
+{: #assistant-jan132022}
+{: release-note}
+
+New setting for options customer response type
+:    In actions, a new **List options** setting allows you to enable or disable the options customer response from appearing in a list. This can be useful to prevent a phone integration from reading a long list of options to the customer. As part of this change, all customer response types now have a **Settings** icon. **Allow skipping** has moved from **Edit Response** and is now found in the new settings. For more information, see [Applying response types](/docs/assistant?topic=assistant-actions#actions-response-types).
 
 ## 24 December 2021
 {: #assistant-dec242021}
