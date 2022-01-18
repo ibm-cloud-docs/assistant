@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-09"
+  years: 2020, 2022
+lastupdated: "2022-01-18"
 
 subcollection: assistant
 
@@ -585,7 +585,7 @@ Instructs the phone integration to collect dual-tone multi-frequency signaling (
 | `minimum_count` | The minimum number of DTMF digits to collect. This property is used along with `maximum_count` to define a range for the number of digits to collect. This value must be a positive integer with a minimum value of 1 and a maximum value less than `maximum_count`. | Required if `terminatation_key` and `count` are not defined. | n/a |
 | `maximum_count` | The maximum number of DTMF digits to collect. This property is used along with `minimum_count` to define a range for the number of digits to collect. When this number of digits is collected, a conversation turn is initiated. This value must be a positive integer no greater than 100. | Required if `termintation_key` and `count` are not defined. | n/a |
 | `inter_digit_timeout_count` | The amount of time (in milliseconds) to wait for a new DTMF digit after a DTMF digit is received. During an active DTMF collection, this timeout activates when the first DTMF collection is received. When the inter-digit timeout is active, it deactivates the post-response timeout timer. If the `inter_digit_timeout_count` parameter is not specified, the post-response timer resets after receiving each DTMF digit, and it stays active until either the post-response timeout count is met or the collection completes. This value is a positive integer no higher than 100,000 (or 100 seconds). | no | n/a |
-| `ignore_speech` | Whether to disable speech recognition during collection of DTMF digits, until either the collection completes or a timeout occurs. | no | false |
+| `ignore_speech` | Whether to disable speech recognition during collection of DTMF digits, until either the collection completes or a timeout occurs. If this parameter is `true`, speech recognition is disabled automatically when the first DTMF signal is received. | no | false |
 | `stop_after_collection` | Whether to stop DTMF input when the DTMF collection completes. After this command, all DTMF input is ignored until it is reenabled using the `start` response type. | no | false |
 
 ###  `command_info.type` : `disable_barge_in`
