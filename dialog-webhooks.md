@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-05-12"
+  years: 2019, 2022
+lastupdated: "2022-01-19"
 
 subcollection: assistant
 
@@ -148,6 +148,9 @@ To use a webhook from a dialog node, you must enable webhooks on the node, and t
     {: note}
 
 1.  Add any data that you want to pass to the external application as key and value pairs in the *Parameters* section.
+
+    Parameters are passed as request body properties. You cannot specify query parameters or URL parameters in a dialog node. These parameters can only be configired with static values as part of the webhook definition. For more information, see [Defining the webhook](https://cloud.ibm.com/docs/assistant?topic=assistant-dialog-webhooks#dialog-webhooks-create).
+    {: note}
 
     For example, if you call the Language Translator service, you must provide values for the following parameters:
 
