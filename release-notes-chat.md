@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-10-28"
+  years: 2015, 2022
+lastupdated: "2022-01-19"
 
 subcollection: assistant
 
@@ -39,6 +39,56 @@ For information about new features and improvements to the core {{site.data.keyw
 {: #release-notes-chat-version}
 
 If you want to evaluate changes that are introduced in a web chat release before you apply them to your deployment, you can set a version of your web chat. For more information, see [Versioning](/docs/assistant?topic=assistant-web-chat-basics#web-chat-basics-versions).
+
+## 6.0.0
+{: #6.0.0}
+
+*Release date: 19 January 2022*
+
+- **API version**: The web chat now uses the `2021-11-27` version of the {{site.data.keyword.conversationshort}} API. Previously it used the `2020-09-24` API version. For information about API changes that have been introduced since the `2020-09-24` version, see the release notes for [27 November 2021](/docs/assistant?topic=assistant-release-notes#assistant-nov272021) and [16 July 2021](/docs/assistant?topic=assistant-release-notes#assistant-jul162021).
+
+- **Launcher**: The new web chat launcher welcomes and engages customers so they know where to find help if they need it. For more information, see [Launcher appearance and behavior](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-launcher).
+
+- **Home screen**: The web chat home screen has been updated to have a more modern look. For more information about the home screen, see [Configuring the home screen](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-home-screen).
+
+- **Agent events**: New events are now fired by the web chat when interacting with a human agent using a service desk integration. If you are using a custom service desk integration based on the [starter kit](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter){: external}, you can use these events to create a pre-chat form before the agent escalation occurs, to create a post-chat form after the agent conversation ends, or to specify what happens if an agent isn’t available (like create a ticket submission form). For more information, see [Agent events summary](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events#summary){: external}.
+
+- **Markdown support**: The web chat now fully supports common Markdown formatting in messages received from an assistant. You might need to review existing assistant output that contains strings that might be recognized as Markdown. (For example, a line of text that begins with a greater-than (`>`) character is interpreted as a block quote.)
+
+- **Time zone**: The time zone set in the context by the web chat no longer overrides any time zone set by the assistant.
+
+- **Locale**: Any locale configured for the web chat is now sent to the assistant as part of the context.
+
+- **Window open events**: The `window:pre:open` and `window:open` events now fire any time the chat window is opened, regardless of the reason. In previous releases, these events only fired if the window was opened by the customer clicking on the built-in launcher. Other methods of opening the chat window, such as session history or custom launchers, did not fire these events.
+
+    The event data passed to the listener has a new `reason` property that indicates the reason the window was opened. If you want to preserve the previous behavior, you can modify your handler to check this property:
+
+    ```javascript
+    instance.on({ type: "window:open", handler: event => {
+      if (event.data.reason === 'default_launcher') {
+        // Previous code.
+      }
+    }});
+    ```
+
+    For more information, see [Window open reasons](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events#windowopenreasons){: external}.
+
+- **hideCloseButton property renamed**: The `hideCloseButton` property for custom panels has been renamed `hideBackButton`. The behavior of the property has not changed. For more information, see [customPanel.open()](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-instance-methods#custompanelopen){: external}.
+
+## 5.1.2
+{: #5.1.2}
+
+*Release date: 11 December 2021*
+
+- Bug fix for Salesforce integration.
+
+## 5.1.1
+{: #5.1.1}
+
+*Release date: 5 November 2021*
+
+- **"User is typing" support**: The web chat now supports displaying the "user is typing" message for service desks. This feature is supported for the Salesforce and Zendesk integrations, as well as any [starter kit](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter){: external} integration that implements it.
+- Bug fixes.
 
 ## 5.1.0
 {: #5.1.0}
