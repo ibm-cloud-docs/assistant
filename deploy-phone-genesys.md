@@ -155,6 +155,8 @@ To integrate your assistant with Genesys Cloud, follow these steps:
 
     - Complete the phone integration setup process. (For more information, see [Integrating with phone](/docs/assistant?topic=assistant-deploy-phone#deploy-phone).)
 
+    - After the phone integration is setup, go to the **SIP trunk** tab and uncheck the **Don't place callers on hold while transferring to a live agent** option.
+
 1. In the Genesys Cloud console, click the circle in the upper left corner. Select **Phone**, and then choose the phone you created in the **Phone management** section. Set yourself as available. The phone icon on the left should now be active.
 
 1. Click **`+`** to start a new call. Specify the number you assigned to Watson Assistant and then click **Dial**. You should now hear your assistant speak.!
