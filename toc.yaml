@@ -99,16 +99,16 @@ toc:
              links:
               - link:
                   label: Integrating with Genesys Cloud
-                  href: https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/genesys
+                  href: https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/genesys/webChat
               - link:
                   label: Integrating with NICE inContact
-                  href: https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/incontact
+                  href: https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/incontact/webChat
               - link:
                   label: Integrating with Twilio Flex
-                  href: https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/flex
+                  href: https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/flex/webChat
               - link:
                   label: Integrating with Oracle B2C Service
-                  href: https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/middleware/oracle
+                  href: https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/oracle/webChat
               - link: 
                   label: Integrating with your own service desk
                   href: https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter
