@@ -46,7 +46,7 @@ On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversat
 All instances now default to new experience
 :    All new instances of {{site.data.keyword.conversationshort}} now direct users to the new product experience by default.
 
-    {{site.data.keyword.conversationshort}} has been completely overhauled to simplify the end-to-end process of building and deploying a virtual assistant, reducing time to launch and enabling nontechnical authors to create virtual assistants without involving developers. For more information about the new {{site.data.keyword.conversationshort}}, and instructions for switching between the new and old experiences, see [Welcome to the new {{site.data.keyword.conversationshort}}](/docs/watson-assistant?topic=watson-assistant-welcome-new-assistant#welcome-new-assistant-switch-experience).
+    {{site.data.keyword.conversationshort}} has been completely overhauled to simplify the end-to-end process of building and deploying a virtual assistant, reducing time to launch and enabling nontechnical authors to create virtual assistants without involving developers. For more information about the new {{site.data.keyword.conversationshort}}, and instructions for switching between the new and old experiences, see [Welcome to the new {{site.data.keyword.conversationshort}}](/docs/watson-assistant?topic=watson-assistant-welcome-new-assistant){: external}.
 
     If you would like to send us feedback on the new experience, please use [this form](https://form.asana.com/?k=vvRdQAmGMFAeEGRryhTA2w&d=8612789739828){: external}.
 
