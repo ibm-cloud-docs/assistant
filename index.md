@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2022-02-17"
 
 keywords: chatbot, live chatbot, omnichannel
 
@@ -50,22 +50,22 @@ This diagram illustrates how the product delivers an exceptional, omnichannel cu
 
 - Customers interact with the assistant through one or more of these channels:
 
-  - An existing social media messaging platform, such as Slack, Facebook Messenger, or WhatsApp
-  - A phone call or text message
-  - A web chat that you embed in your company website and that can transfer complex requests to a customer support representative.
-  - A custom application that you develop, such as a mobile app or a robot with a voice interface
+    - An existing social media messaging platform, such as Slack, Facebook Messenger, or WhatsApp
+    - A phone call or text message
+    - A web chat that you embed in your company website and that can transfer complex requests to a customer support representative.
+    - A custom application that you develop, such as a mobile app or a robot with a voice interface
 
 - The **assistant** receives a message from a customer and sends it down the appropriate resolution path. 
 
-  If you want to preprocess incoming messages, this is where you would use webhooks to inject logic that calls an external service that can process the messages before the assistant routes them. Likewise, you can process responses from the assistant before they are returned to the customer.
+    If you want to preprocess incoming messages, this is where you would use webhooks to inject logic that calls an external service that can process the messages before the assistant routes them. Likewise, you can process responses from the assistant before they are returned to the customer.
 
 - The assistant chooses the appropriate resolution from among these options:
 
-  - A **conversational skill** interprets the customer's message further, then directs the flow of the conversation. The skill gathers any information it needs to respond or perform a transaction on the customer's behalf.
+    - A **conversational skill** interprets the customer's message further, then directs the flow of the conversation. The skill gathers any information it needs to respond or perform a transaction on the customer's behalf.
 
-  - A **search skill** leverages existing FAQ or other curated content that you own to find relevant answers to customer questions.
+    - A **search skill** leverages existing FAQ or other curated content that you own to find relevant answers to customer questions.
 
-  - If a customer wants more personalized help or wants to discuss a sensitive subject, the assistant can connect the customer with someone from your support team through the web chat integration.
+    - If a customer wants more personalized help or wants to discuss a sensitive subject, the assistant can connect the customer with someone from your support team through the web chat integration.
 
 For more information about the architecture, read the [How to Make Chatbot Orchestration Easier](https://medium.com/ibm-watson/how-to-make-chatbot-orchestration-easier-c8ed61620b8d){: external} blog on Medium.com.
 
@@ -97,7 +97,7 @@ Language support by feature is detailed in the [Supported languages](/docs/assis
 
 See [IBM Cloud Terms and Notices](/docs/overview/terms-of-use?topic=overview-terms){: external} for information about the terms of service.
 
-US Health Insurance Portability and Accountability Act (HIPAA) support is available with *Enterprise with Data Isolation* plans that are hosted in the Washington, DC location created on or after 1 April 2019. For more information, see [Enabling EU and HIPAA supported settings](/docs/account?topic=account-eu-hipaa-supported#eu-hipaa-supported){: external}.
+US Health Insurance Portability and Accountability Act (HIPAA) support is available with *Enterprise with Data Isolation* plans that are hosted in the Washington, DC location created on or after 1 April 2019. For more information, see [Enabling HIPAA support for your account](/docs/account?topic=account-enabling-hipaa){: external}.
 
 To learn more about service terms and data security, read the following information:
 

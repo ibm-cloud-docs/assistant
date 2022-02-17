@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-11-01"
+lastupdated: "2022-02-17"
 
 subcollection: assistant
 
@@ -51,7 +51,7 @@ Learn more about IBM's own GDPR readiness journey and our GDPR capabilities and 
 ## Health Insurance Portability and Accountability Act (HIPAA)
 {: #information-security-hipaa}
 
-US Health Insurance Portability and Accountability Act (HIPAA) support is available for Enterprise plans that are hosted in the Washington, DC or Dallas locations. For more information, see [Enabling EU and HIPAA supported settings](/docs/account?topic=account-eu-hipaa-supported#eu-hipaa-supported){: external}.
+US Health Insurance Portability and Accountability Act (HIPAA) support is available for Enterprise plans that are hosted in the Washington, DC or Dallas locations. For more information, see [Enabling HIPAA support for your account](/docs/account?topic=account-enabling-hipaa){: external}.
 
 Do not add personal health information (PHI) to the training data (entities and intents, including user examples) that you create. In particular, be sure to remove any PHI from files that contain real user utterances that you upload to mine for intent or intent user example recommendations.
 
@@ -64,10 +64,10 @@ To prevent IBM from using your log data for general service improvements, comple
 
 - If you are using a custom application, for each API `/message` request, set the `X-Watson-Learning-Opt-Out` header parameter to `true`.
 
-  For more information, see [Data collection](https://cloud.ibm.com/apidocs/assistant/assistant-v2#data-collection){: external}.
+    For more information, see [Data collection](https://cloud.ibm.com/apidocs/assistant/assistant-v2#data-collection){: external}.
 - If you are using the web chat integration, add the `learningOptOut` parameter to the script that you embed in your web page, and set it to `true`.
 
-  For more information, see [Configuration](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-configuration){: external}.
+    For more information, see [Configuration](https://integrations.us-south.assistant.watson.cloud.ibm.com/web/developer-documentation/api-configuration){: external}.
 
 ## Labeling and deleting data in Watson Assistant
 {: #information-security-gdpr-wa}
@@ -85,15 +85,16 @@ Removing message data must be an occasional event only for individual customer I
 - The assistant preview and automatic Facebook integration do not support the labeling and therefore deletion of data based on customer ID. They should not be used in a solution that must support the ability to delete data based on a customer ID.
 - For Intercom, the `customer_id` is the `user_id` prepended with `intercom_`. The Intercom `user_id` property is the `id` of the `author` message object in the Conversation Model that is defined by Intercom.
 
-  - To get the ID, open the channel from a web browser. Open the web developer tools to view the console. Look for `author`.
+    - To get the ID, open the channel from a web browser. Open the web developer tools to view the console. Look for `author`.
 
-  The full customer ID looks like this: `customer_id=intercom_5c499e5535ddf5c7fa2d72b3`.
+    The full customer ID looks like this: `customer_id=intercom_5c499e5535ddf5c7fa2d72b3`.
+
 - For Slack, the `customer_id` is the `user_id` prepended with `slack_`. The Slack `user_id` property is a concatenation of the team ID, such as `T09LVDR7Y`, and the member ID of the user, such has `W4F8K9JNF`. For example: `T09LVDR7YW4F8K9JNF`.
 
-  - To get the team ID, open the channel from a web browser. Open the web developer tools to view the console. Look for `[BOOT] Initial team ID`.
-  - You can copy the member ID from the user's Slack profile.
-  - To get the IDs programmatically, use the Slack API. For more information, see [Overview](https://api.slack.com/apis){: external}.
-  The full customer ID looks like this: `customer_id=slack_T09LVDR7YW4F8K9JNF`.
+    - To get the team ID, open the channel from a web browser. Open the web developer tools to view the console. Look for `[BOOT] Initial team ID`.
+    - You can copy the member ID from the user's Slack profile.
+    - To get the IDs programmatically, use the Slack API. For more information, see [Overview](https://api.slack.com/apis){: external}. The full customer ID looks like this: `customer_id=slack_T09LVDR7YW4F8K9JNF`.
+
 - For the web chat integration, the service takes the `user_id` that is passed in and adds it as the `customer_id` parameter value to the `X-Watson-Metadata` header with each request.
 
 ### Before you begin
