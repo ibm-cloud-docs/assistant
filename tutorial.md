@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-22"
+lastupdated: "2022-02-23"
 
 subcollection: assistant
 content-type: tutorial
@@ -124,10 +124,10 @@ Add a dialog node that recognizes when the user input maps to the intent that yo
 1.  Start to type `#about_restaurant` into the **If assistant recognizes** field of this node. Then select the `#about_restaurant` option.
 1.  Add the following text as the response.
 
-   To copy the text, click the copy icon that is associated with the text block ![Indicates you can copy the code block.](images/cloud-copy.png):
+    To copy the text, click the ![Indicates you can copy the code block.](images/cloud-copy.png) copy icon that is associated with the text block:
 
     ```
-    Truck Stop Gourmand is the brain child of Gloria and Fred Smith. What started out as a food truck in 2004 has expanded into a thriving restaurant. We now have one brick and mortar restaurant in downtown Portland. The bigger kitchen brought with it new chefs, but each one is faithful to the philosophy that made the Smith food truck so popular to begin with: deliver fresh, local produce in inventive and delicious ways. Join us for lunch or dinner seven days a week. Or order a cake from our bakery.
+    Truck Stop Gourmand is the brainchild of Gloria and Fred Smith. What started out as a food truck in 2004 has expanded into a thriving restaurant. We now have one brick-and-mortar restaurant in downtown Portland. The bigger kitchen brought with it new chefs, but each one is faithful to the philosophy that made the Smith food truck so popular to begin with: deliver fresh, local produce in inventive and delicious ways. Join us for lunch or dinner seven days a week. Or order a cake from our bakery.
     ```
     {: codeblock}
 
@@ -429,7 +429,7 @@ You want the assistant to recognize order numbers, so you will create a pattern 
 
 1.  Click **Add value**.
 
-    ![Shows that the pattern value was added.](images/gs-ass-entity-value-added.png)
+    ![Shows that the pattern value was added.](images/gs-ass-entity-added-pattern.png)
 
 1.  Click the **Close** ![Close arrow](images/close_arrow.png) icon to finish adding the `@order_number` entity.
 
@@ -509,18 +509,10 @@ Now, add a dialog node that can handle requests to cancel a cake order.
     ![Shows the Open context editor menu option from the node edit view.](images/gs-ass-open-context-editor.png)
 1.  Enter the following context variable name and value pair:
 
-    <table>
-    <caption>Order number context variable details</caption>
-
-    <tr>
-      <th>Variable</th>
-      <th>Value</th>
-    </tr>
-    <tr>
-      <td>$ordernumber</td>
-      <td><? @order_number.literal ?></td>
-    </tr>
-    </table>
+    | Variable | Value |
+    |----------|-------|
+    | $ordernumber | `<? @order_number.literal ?>` |
+    {: caption="Order number context variable details" caption-side="bottom"}
 
     The context variable value (`<? @order_number.literal ?>`) is a SpEL expression that captures the number that the user specifies that matches the pattern defined by the @order_number pattern entity. It saves it to the `$ordernumber` variable.
 
@@ -549,24 +541,17 @@ Now, add a dialog node that can handle requests to cancel a cake order.
 1.  Open the context editor. Click the **More** ![More options](images/kebab.png) icon, and select **Open context editor**.
 1.  Enter the following context variable name and value pair:
 
-    <table>
-    <caption>Order number context variable details</caption>
-
-    <tr>
-      <th>Variable</th>
-      <th>Value</th>
-    </tr>
-    <tr>
-      <td>$ordernumber</td>
-      <td><? @order_number.literal ?></td>
-    </tr>
-    </table>
+    | Variable | Value |
+    |----------|-------|
+    | $ordernumber | `<? @order_number.literal ?>` |
+    {: caption="Order number context variable details" caption-side="bottom"}
 
     The context variable value (`<? @order_number.literal ?>`) is a SpEL expression that captures the number that the user specifies that matches the pattern defined by the @order_number pattern entity. It saves it to the `$ordernumber` variable.
+
 1.  Add the following message in the response text field:
 
     ```
-    Ok. The order $ordernumber is canceled. We hope we get the opportunity to bake a cake for you sometime soon.
+    OK. The order $ordernumber is canceled. We hope we get the opportunity to bake a cake for you sometime soon.
     ```
     {: codeblock}
 
@@ -603,7 +588,7 @@ Now, add a dialog node that can handle requests to cancel a cake order.
 1.  Add the following message in the response text field:
 
     ```
-    Ok. The order $ordernumber is canceled. We hope we get the opportunity to bake a cake for you sometime soon.
+    OK. The order $ordernumber is canceled. We hope we get the opportunity to bake a cake for you sometime soon.
     ```
     {: codeblock}
 
@@ -643,7 +628,7 @@ Test whether your assistant can recognize character patterns that match the patt
 
 1.  Enter, `Yes`.
 
-    Your assistant recognizes the `#yes` intent and responds with, `Ok. The order TW12345 is canceled. We hope we get the opportunity to bake a cake for you sometime soon.`
+    Your assistant recognizes the `#yes` intent and responds with, `OK. The order TW12345 is canceled. We hope we get the opportunity to bake a cake for you sometime soon.`
 
     ![Shows the Try it out pane test of the cancel order number node when the user provides the order number in the initial input.](images/gs-ass-test-cancel-order-number-provided.png)
 
@@ -689,7 +674,7 @@ If you do more testing, you might find that the dialog isn't very helpful in sce
 1.  In the newly-added *If assistant recognizes* field, type `@order_number`, and in the *Respond with* field, type:
 
     ```
-    Ok. The order $ordernumber is canceled. We hope we get the opportunity to bake a cake for you sometime soon.
+    OK. The order $ordernumber is canceled. We hope we get the opportunity to bake a cake for you sometime soon.
     ```
     {: codeblock}
 
@@ -747,18 +732,10 @@ Add a dialog node that can recognize the user's interest in the bot, and respond
 1.  To capture the name that the user provides, add a context variable to the node. Click the **More** ![More options](images/kebab.png) icon, and select **Open context editor**.
 1.  Enter the following context variable name and value pair:
 
-    <table>
-    <caption>User name context variable details</caption>
-
-    <tr>
-      <th>Variable</th>
-      <th>Value</th>
-    </tr>
-    <tr>
-      <td>username</td>
-      <td><? input.text ?></td>
-    </tr>
-    </table>
+    | Variable | Value |
+    |----------|-------|
+    | username | `<? input.text ?>` |
+    {: caption="User name context variable details" caption-side="bottom"}
 
     The context variable value (`<? input.text ?>`) is a SpEL expression that captures the user name as it is specified by the user, and then saves it to the `$username` context variable.
 
