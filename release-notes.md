@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-03-03"
 
 subcollection: assistant
 
@@ -40,7 +40,7 @@ On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversat
 {: note}
 
 ## 9 February 2022
-{: #watson-assistant-feb092022}
+{: #assistant-feb092022}
 {: release-note}
 
 All instances now default to new experience
@@ -49,6 +49,13 @@ All instances now default to new experience
     {{site.data.keyword.conversationshort}} has been completely overhauled to simplify the end-to-end process of building and deploying a virtual assistant, reducing time to launch and enabling nontechnical authors to create virtual assistants without involving developers. For more information about the new {{site.data.keyword.conversationshort}}, and instructions for switching between the new and old experiences, see [Welcome to the new {{site.data.keyword.conversationshort}}](/docs/watson-assistant?topic=watson-assistant-welcome-new-assistant){: external}.
 
     If you would like to send us feedback on the new experience, please use [this form](https://form.asana.com/?k=vvRdQAmGMFAeEGRryhTA2w&d=8612789739828){: external}.
+
+## 4 February 2022
+{: #assistant-feb042022}
+{: release-note}
+
+Fuzzy matching updates
+:   Interactions between the stemming and misspelling fuzzy matching features are not allowed. Improve fuzzy matching behavior by limiting the interactions between different fuzzy matching features. This change applies to the following languages: English, French, German, and Czech. For more information, see [How fuzzy matching works](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching).
 
 ## 13 January 2022
 {: #assistant-jan132022}

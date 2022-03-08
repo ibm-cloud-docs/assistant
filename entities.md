@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-03-19"
+  years: 2015, 2022
+lastupdated: "2022-03-03"
 
 keywords: entity, entity value, contextual entity, dictionary entity, pattern entity, entity synonym, annotate mentions
 
@@ -160,7 +160,7 @@ Dictionary-based entites are those for which you define specific terms, synonyms
 
     1. Continue adding synonyms as desired. When you're finished accepting recommendations, click the **X** to close the recommendations panel.
 
-1.  If you want your assistant to recognize terms with syntax that is similar to the entity value and synonyms you specify, but without requiring an exact match, set the **Fuzzy Matching** switch to **On**. 
+1.  If you want your assistant to recognize terms with syntax that is similar to the entity value and synonyms you specify, but without requiring an exact match, set the **Fuzzy Matching** switch to **On**.
 
     For example, if you add `apple` as a value for a `@fruit` entity, and a user enters `apples` or `appel`, if fuzzy matching is enabled, your assistant will recognize the word as a `@fruit` mention. For more information, see [How fuzzy matching works](#entities-fuzzy-matching).
 
@@ -203,7 +203,7 @@ To add an entity that recognizes a pattern:
       The regular expression engine is loosely based on the Java regular expression engine. You will see an error if you try to upload an unsupported pattern, either by using the API or from within the {{site.data.keyword.conversationshort}} user interface.
 
     For example, for entity *ContactInfo*, the patterns for phone, email, and website values can be defined as follows:
-    
+
     - Phone
       - `localPhone`: `(\d{3})-(\d{4})`, e.g. 426-4968
       - `fullUSphone`: `(\d{3})-(\d{3})-(\d{4})`, e.g. 800-426-4968
@@ -222,7 +222,7 @@ For example, your dialog might ask users for their email addresses. The dialog n
 | email    | `<? @contactInfo.literal ?>` |
 {: caption="Saving a pattern" caption-side="top"}
 
-This syntax indicates that you want to find the part of the user input that matches the email pattern and save that subset of text into a context variable named `email`. 
+This syntax indicates that you want to find the part of the user input that matches the email pattern and save that subset of text into a context variable named `email`.
 
 #### Capture groups
 {: #entities-capture-group}
@@ -253,17 +253,17 @@ Fuzzy matching has these components:
 
 - *Stemming* - The feature recognizes the stem form of entity values that have several grammatical forms. For example, the stem of 'bananas' would be 'banana', while the stem of 'running' would be 'run'.
 - *Misspelling* - The feature is able to map user input to the appropriate corresponding entity despite the presence of misspellings or slight syntactical differences. For example, if you define *giraffe* as a synonym for an animal entity, and the user input contains the terms *giraffes* or *girafe*, the fuzzy match is able to map the term to the animal entity correctly.
-- *Partial match* - With partial matching, the feature automatically suggests substring-based synonyms present in the user-defined entities, and assigns a lower confidence score as compared to the exact entity match. 
+- *Partial match* - With partial matching, the feature automatically suggests substring-based synonyms present in the user-defined entities, and assigns a lower confidence score as compared to the exact entity match.
 
   The partial match component is supported only in English-language dialog skills.
   {: note}
 
 For English, fuzzy matching prevents the capturing of some common, valid English words as fuzzy matches for a given entity. This feature uses standard English dictionary words. You can also define an English entity value/synonym, and fuzzy matching will match only your defined entity value/synonym. For example, fuzzy matching may match the term `unsure` with `insurance`; but if you have `unsure` defined as a value/synonym for an entity like `@option`, then `unsure` will always be matched to `@option`, and not to `insurance`.
-{: note}
 
-Your fuzzy matching setting has no impact on synonym recommendations. Even if fuzzy matching is enabled, synonyms are suggested for the exact value you specify only, not the value and slight variations of the value.
+Interactions between the stemming and misspelling fuzzy matching features are not allowed. Specifically, if either an entity or the input is stemmed, misspelling fuzzy matching does not work. For example, assume that the entity is `@lending` and the input word is `pending`. During entity stemming, `@lending` produces `lend`. During input stemming, `pending` produces `pend`. In this case, `lend` does not match to `pend` because the entity and input were stemmed. This change applies to the following languages: English, French, German, and Czech.
+{: important}
 
-To understand how fuzzy matching and autocorrection are related to one another, see the [autocorrection documentation](/docs/assistant?topic=assistant-dialog-runtime-spell-check#dialog-runtime-spell-check-vs-fuzzy-matching).
+Your fuzzy matching setting has no impact on synonym recommendations. Even if fuzzy matching is enabled, synonyms are suggested for the exact value you specify only, not the value and slight variations of the value. To understand how fuzzy matching and autocorrection are related to one another, see the [autocorrection documentation](/docs/assistant?topic=assistant-dialog-runtime-spell-check#dialog-runtime-spell-check-vs-fuzzy-matching).
 
 ## Adding contextual entities
 {: #entities-create-annotation-based}
@@ -286,7 +286,7 @@ Using an intent's user examples to define contextual entities does not affect th
 
     ![Select the #buy_supplies intent](images/oe-intent.png)
 
-1.  Click **Annotate entities**, and then review the intent examples for potential entity mentions. 
+1.  Click **Annotate entities**, and then review the intent examples for potential entity mentions.
 
     ![Shows the Annotate entities toggle](images/oe-annotate.png)
 
@@ -300,7 +300,7 @@ Using an intent's user examples to define contextual entities does not affect th
 
     ![Search box with search parameter prod](images/oe-tokens-clicked.png)
 
-1.  Enter the entity name to search for. You do not need to include the starting `@` symbol. 
+1.  Enter the entity name to search for. You do not need to include the starting `@` symbol.
 
     Do one of the following things:
 
