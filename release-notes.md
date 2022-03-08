@@ -54,7 +54,7 @@ All instances now default to new experience
 {: #assistant-feb042022}
 {: release-note}
 
-Limit interactions between different fuzzy matching features
+Fuzzy matching updates
 :   Interactions between the stemming and misspelling fuzzy matching features are not allowed. Improve fuzzy matching behavior by limiting the interactions between different fuzzy matching features. This change applies to the following languages: English, French, German, and Czech. For more information, see [How fuzzy matching works](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching).
 
 ## 13 January 2022
