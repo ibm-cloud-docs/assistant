@@ -39,6 +39,13 @@ For information about changes to the web chat integration, see the [Web Chat rel
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
 
+## 14 March 2022
+{: #assistant-mar142022}
+{: release-note}
+
+Closed entity matching with accent-normalized values in French
+:   Closed entities exact matches in French are completed using accent-normalized values or synonyms. For example, if you define a closed entity with a value or synonym with accent marks (for example, garçon or déjà), then variants without accent marks are also recognized (garcon or deja). Likewise, if a closed entity value or synonym is defined without accent marks, then user inputs with accent marks are also recognized. For more information about defining entities, see [Defining information to look for in customer input](/docs/assistant?topic=assistant-entities).
+
 ## 1 March 2022
 {: #assistant-mar012022}
 {: release-note}
@@ -69,7 +76,7 @@ Fuzzy matching updates
 {: release-note}
 
 New setting for options customer response type
-:    In actions, a new **List options** setting allows you to enable or disable the options customer response from appearing in a list. This can be useful to prevent a phone integration from reading a long list of options to the customer. As part of this change, all customer response types now have a **Settings** icon. **Allow skipping** has moved from **Edit Response** and is now found in the new settings. For more information, see [Applying response types](/docs/assistant?topic=assistant-actions#actions-response-types).
+:    In actions, a new **List options** setting allows you to enable or disable the options customer response from appearing in a list. This can be useful to prevent a phone integration from reading a long list of options to the customer. As part of this change, all customer response types now have a **Settings** icon. **Allow skipping** has moved from **Edit Response** and is now found in the new settings.
 
 ## 24 December 2021
 {: #assistant-dec242021}
@@ -132,14 +139,14 @@ Actions enhancement: Add variables to links
 The new {{site.data.keyword.conversationshort}}
 :   The new {{site.data.keyword.conversationshort}} is now available! This new experience, focused on using **actions** to build customer conversations, is designed to make it simple enough for *anyone* to build a virtual assistant. Building, testing, publishing, and analyzing your assistant can all now be done in one simple and intuitive interface.
 
-    - New **navigation** provides a workflow for building, previewing, publishing, and analyzing your assistant. 
-    - Each assistant has a **home page** with a task list to help you get started. 
-    - Build conversations with **actions**, which represent the tasks you want your assistant to help your customers with. Each action contains a series of steps that represent individual exchanges with a customer. 
+    - New **navigation** provides a workflow for building, previewing, publishing, and analyzing your assistant.
+    - Each assistant has a **home page** with a task list to help you get started.
+    - Build conversations with **actions**, which represent the tasks you want your assistant to help your customers with. Each action contains a series of steps that represent individual exchanges with a customer.
     - A new way to **publish** lets you review and debug your work in a draft environment before going live to your customers.
     - Use a new suite of **analytics** to improve your assistant. Review which actions are being completed to see what your customers want help with, determine if your assistant understands and addresses customer needs, and decide how can you make your assistant better.
     - New **[documentation](/docs/watson-assistant){: external}** focuses on the workflow of building, deploying, and improving your assistant.
 
-    You can easily switch to the new {{site.data.keyword.conversationshort}} and try it out. Visit the **Manage** menu for your {{site.data.keyword.conversationshort}} instance, then choose **Switch to new experience**. 
+    You can easily switch to the new {{site.data.keyword.conversationshort}} and try it out. Visit the **Manage** menu for your {{site.data.keyword.conversationshort}} instance, then choose **Switch to new experience**.
 
 ## 21 September 2021
 {: #assistant-sep212021}
@@ -221,15 +228,12 @@ Disambiguation feature updates
 Actions skill improvements
 :   Actions skills now include these new features:
 
-    - **Change conversation topic**: In general, an action is designed to lead a customer through a particular process without any interruptions. In real life, however, conversations almost never follow such a simple flow. In the middle of a conversation, customers might get distracted, ask questions about related issues, misunderstand something, or just change their minds about what they want to do. The **Change conversation topic** feature enables your assistant to handle these digressions, dynamically responding to the user by changing the conversation topic as needed. For more information, see [Changing the topic of the conversation](/docs/assistant?topic=assistant-actions#actions-change-topic).
+    - **Change conversation topic**: In general, an action is designed to lead a customer through a particular process without any interruptions. In real life, however, conversations almost never follow such a simple flow. In the middle of a conversation, customers might get distracted, ask questions about related issues, misunderstand something, or just change their minds about what they want to do. The **Change conversation topic** feature enables your assistant to handle these digressions, dynamically responding to the user by changing the conversation topic as needed.
 
     - **Fallback action**: The built-in action, *Fallback*, provides a way to automatically connect customers to a human agent if they need more help. This action helps you to handle errors in the conversation, and is triggered by these conditions:
         - Step validation failed: The customer repeatedly gave answers that were not valid for the expected customer response type.
         - Agent requested: The customer directly asked to be connected to a human agent.
         - No action matches: The customer repeatedly made requests or asked questions that the assistant did not understand.
-
-        For more information, see [Set by assistant actions](/docs/assistant?topic=assistant-actions#actions-builtin)
-
 
 Dialog skill "Try it out" improvements
 :   For dialog skills, the **Try it out** pane now uses the [React](https://reactjs.org/){: external} UI framework similar to the rest of the {{site.data.keyword.conversationshort}} user interface. You shouldn't see any change in behavior or functionality. As a part of the update, dialog skill error handling has been improved within the "Try it out" pane. This update will be implemented incrementally, starting with service instances in the Tokyo and Seoul data centers.
@@ -280,7 +284,7 @@ Salesforce and Zendesk deployment changes
 :   The Salesforce and Zendesk integrations have been updated to use the [new chat history widget](/docs/assistant?topic=assistant-release-notes-chat#4.5.0). The updated deployment process applies to all new deployments, including any redeployments of existing Salesforce and Zendesk connections. However, existing deployments are not affected and do not need to be modified or redeployed at this time.
 
 Fallback value for session variables
-:   In action skills, you can now set a fallback value for session variables. This feature lets you to define a value for a session variable if a user-defined value isn't found. To learn more, see [Defining session variables](/docs/assistant?topic=assistant-actions#actions-variables-global)
+:   In action skills, you can now set a fallback value for session variables. This feature lets you to define a value for a session variable if a user-defined value isn't found.
 
 ## 16 July 2021
 {: #assistant-jul162021}
@@ -306,18 +310,16 @@ New API version
 Actions skill now generally available
 :   As of this release, the beta program has ended, and actions skills are available for general use.
 
-    An actions skill contains actions that represent the tasks you want your assistant to help your customers with. Each action contains a series of steps that represent individual exchanges with a customer. Building the conversation that your assistant has with your customers is fundamentally about deciding which steps, or which user interactions, are required to complete an action. After you identify the list of steps, you can then focus on writing engaging content to turn each interaction into a positive experience for your customer. For more information, see [Actions skill overview](/docs/assistant?topic=assistant-actions-overview).
+    An actions skill contains actions that represent the tasks you want your assistant to help your customers with. Each action contains a series of steps that represent individual exchanges with a customer. Building the conversation that your assistant has with your customers is fundamentally about deciding which steps, or which user interactions, are required to complete an action. After you identify the list of steps, you can then focus on writing engaging content to turn each interaction into a positive experience for your customer.
 
 Date and time response types
-:   New to action skills, these response types allow you to collect date and time information from customers as they answer questions or make requests. For more information, see [Response types](/docs/assistant?topic=assistant-actions#actions-response-types).
+:   New to action skills, these response types allow you to collect date and time information from customers as they answer questions or make requests.
 
 New built-in variables
 :   Two kinds of built-in variables are now available for action skills.
 
     - **Set by assistant** variables include the common and essential variables `Now`, `Current time`, and `Current date`.
     - **Set by integration** variables are `Timezone` and `Locale` and are available to use when connected to a webhook or integration.
-
-    For more information, see [Adding and referencing variables](/docs/assistant?topic=assistant-actions#actions-variables).
 
 Universal language model now generally available
 :   You now can build an assistant in any language you want to support. If a dedicated language model is not available for your target language, create a skill that uses the universal language model. The universal model applies a set of shared linguistic characteristics and rules from multiple languages as a starting point. It then learns from training data written in the target language that you add to it. For more information, see [Understanding the universal language model](/docs/assistant?topic=assistant-assistant-language#assistant-language-universal).
@@ -346,7 +348,7 @@ Change to conversation skill choices
 {: release-note}
 
 Actions skill improvement
-: Actions now include a new choice, **Go to another action**, for what to do next in a step. Also called a subaction, this feature lets you can call one action from another action, to switch the conversation flow to another action to perform a certain task. If you have a portion of an action that can be applied across multiple use cases you can build it once and call to it from each action. This new option is available in the **And then** section of each step. For more information, see [Deciding what to do next](/docs/assistant?topic=assistant-actions#actions-what-next).
+: Actions now include a new choice, **Go to another action**, for what to do next in a step. Also called a subaction, this feature lets you can call one action from another action, to switch the conversation flow to another action to perform a certain task. If you have a portion of an action that can be applied across multiple use cases you can build it once and call to it from each action. This new option is available in the **And then** section of each step.
 
 ## 21 April 2021
 {: #assistant-apr212021}
@@ -509,7 +511,7 @@ Channel switching
 {: release-note}
 
 Actions skill improvement
-:   Updated the page where you configure a step with an *Options* reply constraint. Now it's clearer that you have a choice to make about whether to always ask for the option value or to skip asking. For more information, see [Apply reply constraints](/docs/assistant?topic=assistant-actions#actions-response-types).
+:   Updated the page where you configure a step with an *Options* reply constraint. Now it's clearer that you have a choice to make about whether to always ask for the option value or to skip asking.
 
 ## 4 March 2021
 {: #assistant-mar042021}
@@ -521,7 +523,7 @@ Support for every language!
     The universal model is available as a beta feature. For more information, see [Understanding the universal language model](/docs/assistant?topic=assistant-assistant-language#assistant-language-universal).
 
 Actions skill improvement
-:   Now you can indicate whether or not to ask for a number when you apply a number reply constraint to a step. Test how changes to this setting might help speed up a customer's interaction. Under the right circumstances, it can be useful to let a number mention be recognized and stored without having to explicitly ask the customer for it. For more information, see [Applying reply constraints](/docs/assistant?topic=assistant-actions#actions-response-types).
+:   Now you can indicate whether or not to ask for a number when you apply a number reply constraint to a step. Test how changes to this setting might help speed up a customer's interaction. Under the right circumstances, it can be useful to let a number mention be recognized and stored without having to explicitly ask the customer for it.
 
 ## 1 March 2021
 {: #assistant-mar012021}
@@ -671,7 +673,7 @@ Improved JSON editor
 :   The JSON editor in the dialog skill was updated. The editor now uses JSON syntax highlighting and allows you to expand and collapse objects.
 
 Connect to agent from actions skill
-:   The actions skill now supports transferring a customer to an agent from within an action step. For more information, see [Deciding what to do next](/docs/assistant?topic=assistant-actions#actions-what-next).
+:   The actions skill now supports transferring a customer to an agent from within an action step.
 
 ## 4 December 2020
 {: #assistant-dec042020}
@@ -691,7 +693,7 @@ Autolearning has been moved and improved
 :   Go to the *Analytics>Autolearning* page to enable the feature and see visualizations that illustrate how autolearning impacts your assistant's performance over time. For more information, see [Empower your skill to learn automatically](/docs/assistant?topic=assistant-autolearn).
 
 Search from actions skill
-:   The actions skill now supports triggering a search that uses your associated search skill from within an action step. For more information, see [Deciding what to do next](/docs/assistant?topic=assistant-actions#actions-what-next).
+:   The actions skill now supports triggering a search that uses your associated search skill from within an action step.
 
 System entities language support change
 :   The new system entities are now used by all skills except Korean-language dialog skills. If you have a Korean skill that uses the older version of the system entities, update it. The legacy version will stop being supported for Korean skills in March 2021. For more information, see [Legacy system entities](/docs/assistant?topic=assistant-legacy-system-entities).
@@ -748,8 +750,6 @@ System entity support changes
 
 Introducing the *actions skill*!
 :   The actions skill is the latest step in the continuing evolution of {{site.data.keyword.conversationshort}} as a software as a service application. The actions skill is designed to make it simple enough for *anyone* to build a virtual assistant. We've removed the need to navigate between intents, entities, and dialog to create conversational flows. Building can all now be done in one simple and intuitive interface.
-
-    The actions skill is available as a beta feature. For more information, see [Adding an actions skill](/docs/assistant?topic=assistant-skill-actions-add).
 
 Web chat integration is created automatically
 :   When you create a new assistant, a web chat integration is created for you automatically (in addition to the preview link integration, which was created previously). These integrations are added also to the assistant that is auto-generated (named *My first assistant*) when you create a new service instance. For more information, see [Integrating the web chat with your website](/docs/assistant?topic=assistant-deploy-web-chat).
@@ -1179,7 +1179,7 @@ Track API events
 New API version
 :   The current API version is now `2020-02-05`. The following changes were made with this version:
 
-    - When a dialog node's response type is `connect-to-agent`, the node's `title` is used as the `topic` value. Previously, `user_label` was used.
+    - When a dialog node's response type is `connect-to-agent`, the node's `title` is used as the `topic` value. Previously, `user_label` was used.
 
     - The `alternate_intents` property is stored as a Boolean value instead of a String.
 
