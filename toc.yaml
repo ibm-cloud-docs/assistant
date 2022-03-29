@@ -3,7 +3,7 @@ toc:
     subcollection: assistant
     category: ai
     audience: service
-    href: /docs/assistant?topic=assistant-getting-started
+    href: /docs/assistant
     product-page: https://www.ibm.com/cloud/watson-assistant/
     path: assistant
     label: Watson Assistant (Managed)
@@ -12,13 +12,13 @@ toc:
   - navgroup: 
       id: learn
       topics:
+      - welcome-classic-assistant.md
+      - index.md
       - topicgroup: 
           label: Getting started tutorial
           topics:
           - getting-started.md
           - gs-dialog.md
-          - gs-actions.md
-      - index.md
       - assistants.md
       - tool-overview.md
       - link:
@@ -47,13 +47,6 @@ toc:
           topics:
           - assistant-add.md
           - skill-add.md
-          - skills-choose.md
-      - topicgroup: 
-          label: Building a conversation with actions
-          topics:
-          - skill-actions-add.md
-          - actions.md
-          - actions-overview.md
       - topicgroup: 
           label: Building a conversation with a dialog tree
           topics:
@@ -243,12 +236,9 @@ toc:
             - link:
                 label: Stack Overflow
                 href: https://stackoverflow.com/questions/tagged/watson-assistant
-            - link:
-                label: WDC Slack channel]
-                href: http://wdc-slack-inviter.mybluemix.net/
             - link: 
                 label: IBM Watson Apps Community
-                href: https://community.ibm.com/community/user/watsonapps/communities/community-home?CommunityKey=7a3dc5ba-3018-452d-9a43-a49dc6819
+                href: https://community.ibm.com/community/user/watsonapps/communities/community-home?CommunityKey=7a3dc5ba-3018-452d-9a43-a49dc6819633
       - accessibility.md
 
 
