@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-12-13"
+  years: 2018, 2022
+lastupdated: "2022-03-29"
 
 subcollection: assistant
 
@@ -141,12 +141,14 @@ If you decide not to continue using the Plus plan and don't want to pay for it, 
 
 1. Click **Finish**. Give {{site.data.keyword.discoveryshort}} a few minutes to start creating documents. You can use the **Manage collections** page within the project to see the progress.
 
+    After the digestion process is completed, a summary page is displayed in {{site.data.keyword.discoveryshort}}, which is hosted in a separate web browser tab.
+
 1.  Wait for the collection to be fully ingested, then click **Back to {{site.data.keyword.conversationshort}}**.
 
 ## Configure the search
 {: #skill-search-add-configure}
 
-1.  On the {{site.data.keyword.conversationshort}} search skill page, ensure the {{site.data.keyword.discoveryshort}} instance and project you want to use is selected, then click **Next**.
+1.  On the {{site.data.keyword.conversationshort}} search skill page, ensure the {{site.data.keyword.discoveryshort}} project you want to use is selected, then click **Next**.
 
 1.  In the **Configure result content** section, review the {{site.data.keyword.discoveryshort}} fields and examples that are used in the search results shown to your customers. You can accept the defaults, or customize them as you want.
 
@@ -192,6 +194,9 @@ If you decide not to continue using the Plus plan and don't want to pay for it, 
 
 1.  The **Extract FAQ pairs** section displays if the feature is enabled in your {{site.data.keyword.discoveryshort}} collection. Frequently asked questions content is identified automatically and used to give more precise results.
 
+    This option is available only if your {{site.data.keyword.discoveryshort}} instance uses the v2 {{site.data.keyword.discoveryshort}} API.
+    {: note}
+
 1.  Choose whether to enable **Emphasize the answer**. 
 
     This option is available only if your {{site.data.keyword.discoveryshort}} instance uses the v2 {{site.data.keyword.discoveryshort}} API.
@@ -210,9 +215,6 @@ If you decide not to continue using the Plus plan and don't want to pay for it, 
 1.  Click **Preview** to open the Preview pane for testing. Enter a test message to see the results that are returned when your configuration choices are applied to the search. Make adjustments as necessary.
 
 1.  Click **Create**.
-
-## Edit the search skill configuration
-{: #skill-search-edit-config}
 
 If you want to change the configuration of the search result card later, open the search skill again, and make edits. You do not need to save changes as you make them; they are automatically applied. When you are happy with the search results, click **Save** to finish configuring the search skill.
 
@@ -305,7 +307,7 @@ The search skill is triggered in the following ways:
 
     - Dialog skill: Add a *search skill* response type to a dialog node. When the node is processed, your assistant retrieves a passage from an external data source and returns it as the response to a particular question. This type of search occurs only when the individual dialog node is processed. For more information, see [Adding a search skill response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-search-skill).
 
-    - Actions skill: In the *And then* field of the step where you want the search to be triggered, choose **Search for the answer**. For more information, see [Configuring the search for an answer](/docs/assistant?topic=assistant-actions#actions-what-next-search).
+    - Actions skill: In the *And then* field of the step where you want the search to be triggered, choose **Search for the answer**.
 
 - **From the dialog skill's *Anything else* node**: If the assistant has a dialog skill and a search skill, any user input triggers the dialog skill first. The dialog addresses user input that it has a high confidence it can answer correctly. Any queries that would normally trigger the `anything_else` node in the dialog tree are sent to the search skill instead.
 
