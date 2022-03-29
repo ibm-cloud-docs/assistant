@@ -12,13 +12,13 @@ toc:
   - navgroup: 
       id: learn
       topics:
-      - welcome-classic-assistant.md
       - index.md
       - topicgroup: 
           label: Getting started tutorial
           topics:
           - getting-started.md
           - gs-dialog.md
+          - gs-actions.md
       - assistants.md
       - tool-overview.md
       - link:
@@ -47,6 +47,13 @@ toc:
           topics:
           - assistant-add.md
           - skill-add.md
+          - skills-choose.md
+      - topicgroup: 
+          label: Building a conversation with actions
+          topics:
+          - skill-actions-add.md
+          - actions.md
+          - actions-overview.md
       - topicgroup: 
           label: Building a conversation with a dialog tree
           topics:
