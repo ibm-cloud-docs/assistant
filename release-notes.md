@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-30"
 
 subcollection: assistant
 
@@ -38,6 +38,13 @@ For information about changes to the web chat integration, see the [Web Chat rel
 
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
+
+## 25 March 2022
+{: #assistant-mar252022}
+{: release-note}
+
+Improved irrelevance detection for Dutch
+:   Irrelevance detection for Dutch disregards any punctuation in an input sentence. For example, you can now expect the same confidence score for the following two inputs: `ik ben een kleine krijger?` and `ik ben een kleine krijger`. In this example, the question mark (`?`) doesn't affect the confidence score.
 
 ## 14 March 2022
 {: #assistant-mar142022}
