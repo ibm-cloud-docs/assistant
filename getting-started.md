@@ -48,7 +48,7 @@ This series of articles is a tutorial about the new experience:
 
 This documentation for the new experience also helps you get started:
 - [Planning your assistant](/docs/watson-assistant?topic=watson-assistant-plan-assistant){: external}
-- [Overview: Editing actions](docs/watson-assistant?topic=watson-assistant-build-actions-overview){: external}
+- [Overview: Editing actions](/docs/watson-assistant?topic=watson-assistant-build-actions-overview){: external}
 
 ### Getting started with a dialog skill
 
