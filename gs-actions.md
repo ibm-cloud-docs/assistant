@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-05-21"
+  years: 2015, 2022
+lastupdated: "2022-04-01"
 
 subcollection: assistant
 content-type: tutorial
@@ -41,12 +41,6 @@ In this short tutorial, we help you use an actions skill to build your first con
 {: shortdesc}
 
 An *actions skill* contains actions that represent the tasks you want your assistant to help your customers with.
-
-## Before you begin
-{: #gs-actions-prerequisites}
-{: hide-dashboard}
-
-This tutorial is a continuation of the **Getting started** tutorial. Be sure to complete it before you continue. See [Getting started](/docs/assistant?topic=assistant-getting-started).
 
 ## Add an action
 {: #gs-actions-add-action-hello}

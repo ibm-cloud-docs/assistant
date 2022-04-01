@@ -1,15 +1,13 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-09-21"
+  years: 2015, 2022
+lastupdated: "2022-04-01"
 
 keywords: assistant, omnichannel, virtual agent, virtual assistant, chatbot, conversation, watson assistant, watson conversation
 
 subcollection: assistant
-content-type: tutorial
-account-plan: lite
-completion-time: 10m
+
 
 ---
 
@@ -32,95 +30,26 @@ completion-time: 10m
 {:video: .video}
 {:step: data-tutorial-type='step'}
 
-{{site.data.content.newlink}}
- 
-# Getting started with {{site.data.keyword.conversationshort}}
+# Getting started with the new {{site.data.keyword.conversationshort}}
 {: #getting-started}
-{: toc-content-type="tutorial"}
-{: toc-completion-time="10m"}
 
-In this short tutorial, we introduce {{site.data.keyword.conversationfull}} and walk you through the process of creating your first assistant.
-{: shortdesc}
+We recommend getting started with the new {{site.data.keyword.conversationshort}} experience, focused on using **actions** to build customer conversations. It's designed to make it simple enough for *anyone* to build a virtual assistant. Building, testing,  publishing, and analyzing your assistant can all now be done in one simple and intuitive interface.
 
-## Before you begin
-{: #getting-started-prerequisites}
+## Getting started with the new {{site.data.keyword.conversationshort}}
+{: getting-started-series}
 
+This series of articles is a tutorial about the new experience:
 
-You need a service instance to start.
+- [Plan it](https://www.ibm.com/blogs/watson/2021/11/getting-started-with-the-new-watson-assistant-plan-it/){: external}
+- [Part I: The build guide](https://www.ibm.com/blogs/watson/2021/12/getting-started-with-the-new-watson-assistant-part-i-the-build-guide/){: external}
+- [Part II: Refine your assistant](https://www.ibm.com/blogs/watson/2021/12/getting-started-with-the-new-watson-assistant-part-ii-refine-your-assistant/){: external}
+- [Part III: Test and deploy](https://www.ibm.com/blogs/watson/2022/01/getting-started-with-the-new-watson-assistant-part-iii-test-and-deploy/){: external}
+- [Part IV: preview, draft, publish, live](https://www.ibm.com/blogs/watson/2022/02/getting-started-with-the-new-watson-assistant-part-iv-preview-draft-publish-live/){: external}
 
+This documentation for the new experience also helps you get started:
+- [Planning your assistant](/docs/watson-assistant?topic=watson-assistant-plan-assistant){: external}
+- [Overview: Editing actions](/docs/watson-assistant?topic=watson-assistant-build-actions-overview){: external}
 
-1.  Go to the [{{site.data.keyword.conversationshort}}](https://cloud.ibm.com/catalog/services/watson-assistant){: external} page in the {{site.data.keyword.cloud}} catalog.
+### Getting started with a dialog skill
 
-    The service instance will be created in the **default** resource group if you do not choose a different one, and it *cannot* be changed later. This group is sufficient for the purposes of trying out the product.
-
-    If you're creating an instance for more robust use, then learn more about [resource groups](/docs/account?topic=account-account_setup){: external}.
-1.  Sign up for a free {{site.data.keyword.cloud_notm}} account or log in.
-1.  Click **Create**.
-
-## Open Watson Assistant
-{: #getting-started-launch-tool}
-{: step}
-
-After you create a {{site.data.keyword.conversationshort}} service instance, you land on the **Manage** page.
-
-1.  Click **Launch {{site.data.keyword.conversationshort}}**. If you're prompted to log in, provide your {{site.data.keyword.cloud_notm}} credentials.
-
-A new browser tab or window opens and {{site.data.keyword.conversationshort}} is displayed.
-
-An assistant named **My first assistant** is created for you automatically. An *assistant* is a chatbot. You add skills to your assistant so it can interact with your customers in useful ways.
-
-A skill named **My first skill** is added to the assistant for you automatically. The type of skill that is added is different for different users. The skill will be either a dialog skill or an actions skill.
-
-- If *Actions* is displayed as the first item, you have an actions skill.
-
-  ![Shows the actions skill](images/gs-actions-skill.png)
-
-  If you have an actions skill, continue the tutorial by reading [Getting started with an actions skill](/docs/assistant?topic=assistant-gs-actions).
-
-- If *Dialog* is displayed as the first item, you have a dialog skill.
-
-  ![Shows the dialog skill](images/gs-dialog-skill.png)
-
-  If you have a dialog skill, continue the tutorial by reading [Getting started with a dialog skill](/docs/assistant?topic=assistant-gs-dialog).
-
-Only if an assistant and skill are not created for you, complete Steps 2 and 3. (A skill is created and added to the assistant for you only on first use of the product. When you create an assistant later, you can choose the skills you want to add to it.)
-{: important}
-
-## Create an assistant
-{: #getting-started-create-assistant}
-{: step}
-
-An *assistant* is a cognitive bot to which you add skills that enable it to interact with your customers in useful ways.
-
-1.  Click the **Assistants** icon ![Assistants menu icon](images/nav-ass-icon.png), and then click **Create assistant**.
-
-    ![Create assistant button on the Assistants page.](images/gs-create-assistant.png)
-1.  Name the assistant `My first assistant`.
-
-    ![Finish creating the new assistant](images/gs-create-assistant-done.png)
-
-1.  Click **Create assistant**.
-
-## Create a dialog skill
-{: #getting-started-add-skill}
-{: step}
-
-A *dialog skill* is a container for the artifacts that define the flow of a conversation that your assistant can have with your customers.
-
-1.  Click **Add an actions or dialog skill**.
-
-    ![Add actions or dialog skill button](images/gs-addskill.png)
-
-1.  Give your skill the name `My first skill`.
-
-1.  **Optional**. If the dialog you plan to build will use a language other than English, then choose the appropriate language from the list.
-
-1.  For skill type, choose Dialog.
-
-    ![Finish creating the skill](images/gs-add-skill-done.png)
-
-1.  Click **Create skill**.
-
-    The skill is created and appears in your assistant.
-
-To continue with the tutorial, see [Getting started with a dialog skill](/docs/assistant?topic=assistant-gs-dialog).
+In the classic experience, you built a conversation using a dialog-based approach. If you need to learn that method, see the tutorial [Getting started with a dialog skill](/docs/assistant?topic=assistant-gs-dialog).

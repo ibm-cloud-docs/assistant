@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-05-27"
+  years: 2015, 2022
+lastupdated: "2022-04-01"
 
 subcollection: assistant
 content-type: tutorial
@@ -42,13 +42,43 @@ In this short tutorial, we help you use a dialog skill to build your first conve
 
 A *dialog skill* uses Watson natural language processing and machine learning technologies to understand user questions and requests, and respond to them with answers that are authored by you.
 
-## Before you begin
-{: #gs-dialog-prerequisites}
-{: hide-dashboard}
+## Create an assistant
+{: #getting-started-create-assistant}
+{: step}
 
-This tutorial is a continuation of the **Getting started with Watson Assistant** tutorial. Be sure to complete it before you continue. See [Getting started with Watson Assistant](/docs/assistant?topic=assistant-getting-started).
+An *assistant* is a cognitive bot to which you add skills that enable it to interact with your customers in useful ways.
 
-If available in your location, a tour begins that you can step through to learn about the product. Follow the tour; it provides a great overview of the product. Otherwise, you can complete the following steps.
+1.  Click the **Assistants** icon ![Assistants menu icon](images/nav-ass-icon.png), and then click **Create assistant**.
+
+    ![Create assistant button on the Assistants page.](images/gs-create-assistant.png)
+
+1.  Name the assistant `My first assistant`.
+
+    ![Finish creating the new assistant](images/gs-create-assistant-done.png)
+
+1.  Click **Create assistant**.
+
+## Create a dialog skill
+{: #getting-started-add-skill}
+{: step}
+
+A *dialog skill* is a container for the artifacts that define the flow of a conversation that your assistant can have with your customers.
+
+1.  Click **Add an actions or dialog skill**.
+
+    ![Add actions or dialog skill button](images/gs-addskill.png)
+
+1.  Give your skill the name `My first skill`.
+
+1.  **Optional**. If the dialog you plan to build will use a language other than English, then choose the appropriate language from the list.
+
+1.  For skill type, choose Dialog.
+
+    ![Finish creating the skill](images/gs-add-skill-done.png)
+
+1.  Click **Create skill**.
+
+    The skill is created and appears in your assistant.
 
 ## Add intents from a content catalog
 {: #gs-dialog-add-catalog}
@@ -78,6 +108,7 @@ A [dialog](/docs/assistant?topic=assistant-dialog-overview) defines the flow of 
 We'll create a simple dialog that handles greeting and ending intents, each with a single node.
 
 ### Adding a start node
+{: #gs-adding-a-start-node}
 
 1.  From the Skills menu, click **Dialog**.
 
@@ -87,41 +118,55 @@ We'll create a simple dialog that handles greeting and ending intents, each with
     - **Anything else**: Contains phrases that are used to reply to users when their input is not recognized.
 
     ![A new dialog with two built-in nodes](images/gs-new-dialog.png)
+
 1.  Click the **Welcome** node to open it in the edit view.
+
 1.  Replace the default response with the text, `Welcome to the Watson Assistant tutorial!`.
 
     ![Editing the welcome node response](images/gs-edit-welcome-node.png)
+
 1.  Click ![Close](images/close.png) to close the edit view.
 
 You created a dialog node that is triggered by the `welcome` condition. (`welcome` is a special condition that functions like an intent, but does not begin with a `#`.) It is triggered when a new conversation starts. Your node specifies that when a new conversation starts, the system should respond with the welcome message that you add to the response section of this first node.
 
 ### Testing the start node
+{: #gs-testing-the-start-node}
 
 You can test your dialog at any time to verify the dialog. Let's test it now.
 
 - Click the ![Try it](images/try-it.png) icon to open the "Try it out" pane. You should see your welcome message.
 
 ### Adding nodes to handle intents
+{: #gs-adding-nodes-to-handle-intents}
 
 Now let's add nodes between the `Welcome` node and the `Anything else` node that handle our intents.
 
 1.  Click **Add node**.
+
 1.  In the node name field, type `Greet customers`.
+
 1.  In the **If assistant recognizes** field of this node, start to type `#General_Greetings`. Then, select the **`#General_Greetings`** option.
+
 1.  Add the response text, `Good day to you!`
 
     ![Editing the general greeting node.](images/gs-add-greeting-node.png)
+
 1.  Click ![Close](images/close.png) to close the edit view.
+
 1.  Click **Add node** to create a peer node. 
+
 1.  Name the peer node `Say goodbye` and specify `#General_Ending` in the **If assistant recognizes** field. 
+
 1.  Add `OK. See you later.` as the response text.
 
     ![Editing the general ending node.](images/gs-add-ending-node.png)
+
 1.  Click ![Close](images/close.png) to close the edit view.
 
    ![Dialog after the ending node is added.](images/gs-ending-node-added.png)
 
 ### Testing intent recognition
+{: #gs-testing-intent-recognition}
 
 You built a simple dialog to recognize and respond to both greeting and ending inputs. Let's see how well it works.
 
@@ -139,6 +184,7 @@ You built a simple dialog to recognize and respond to both greeting and ending i
     {{site.data.keyword.watson}} can recognize your intents even when your input doesn't exactly match the examples that you included. The dialog uses intents to identify the purpose of the user's input regardless of the precise wording used, and then responds in the way you specify.
 
 ### Result of building a dialog
+{: #gs-result-of-building-a-dialog}
 
 That's it. You created a simple conversation with two intents and a dialog to recognize them.
 
