@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-06"
 
 subcollection: assistant
 
@@ -39,6 +39,13 @@ For information about changes to the web chat integration, see the [Web Chat rel
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
 
+## 5 April 2022
+{: #assistant-apr052022}
+{: release-note}
+
+Dialog feature available in the new {{site.data.keyword.conversationshort}}
+:   The dialog feature is available in the new {{site.data.keyword.conversationshort}} experience. If you have a dialog-based assistant that was built using the classic {{site.data.keyword.conversationshort}}, you can now migrate your dialog skill to the new {{site.data.keyword.conversationshort}} experience. For more information, see [Migrating to the new experience](/docs/watson-assistant?topic=watson-assistant-migrate-overview){: external}.
+
 ## 25 March 2022
 {: #assistant-mar252022}
 {: release-note}
@@ -46,12 +53,24 @@ On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversat
 Improved irrelevance detection for Dutch
 :   Irrelevance detection for Dutch disregards any punctuation in an input sentence. For example, you can now expect the same confidence score for the following two inputs: `ik ben een kleine krijger?` and `ik ben een kleine krijger`. In this example, the question mark (`?`) doesn't affect the confidence score.
 
+Improved enhanced intent detection
+:   The exact match in enhanced intent detection now better handles small differences between training examples and runtime utterances when the differences do not change the meaning of a sentence.
+
+   For example, suppose in your training examples, `covid-19` is in the `#covid` intent and `@doctortype_facilitytype around Palm Beach` is in the `#find_provide_master` intent. In this example, the `@doctortype_facilitytype` direct entity reference contains entity values, including `hospital`. At run time, `covid19` is predicted as 100% confident for the `#covid` intent, and `hospital around palm beach` is predicted as 100% confident for the `#find_provide_master` intent.
+
+   This update applies to the following languages: English, French, Spanish, Italian, and the universal language model. For more information, see [Accessing intents](/docs/assistant?topic=assistant-expression-language#expression-language-intent).
+
 ## 14 March 2022
 {: #assistant-mar142022}
 {: release-note}
 
 Closed entity matching with accent-normalized values in French
 :   Closed entities exact matches in French are completed using accent-normalized values or synonyms. For example, if you define a closed entity with a value or synonym with accent marks (for example, garçon or déjà), then variants without accent marks are also recognized (garcon or deja). Likewise, if a closed entity value or synonym is defined without accent marks, then user inputs with accent marks are also recognized. For more information about defining entities, see [Defining information to look for in customer input](/docs/assistant?topic=assistant-entities).
+
+Pattern entities do not prevent spelling autocorrection
+:   Pattern entities that match all characters and words that are usually used to count input words do not prevent spelling autocorrection. For example, if a customer defines the `^..{0,19}$` pattern entity that matches the first 20 characters of an input, then the entity match does not affect spelling autocorrection. In this example, an input of `cancl transaction` is autocorrected to `cancel transaction`.
+
+   This change applies to the following languages: English and French. For more information, see [Correcting user input](/docs/assistant?topic=assistantdialog-runtime-spell-check#dialog-runtime-spell-check-rules).
 
 ## 1 March 2022
 {: #assistant-mar012022}
