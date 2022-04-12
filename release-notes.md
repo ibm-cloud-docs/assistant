@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-04-06"
+lastupdated: "2022-04-12"
 
 subcollection: assistant
 
@@ -59,6 +59,13 @@ Improved enhanced intent detection
    For example, suppose in your training examples, `covid-19` is in the `#covid` intent and `@doctortype_facilitytype around Palm Beach` is in the `#find_provide_master` intent. In this example, the `@doctortype_facilitytype` direct entity reference contains entity values, including `hospital`. At run time, `covid19` is predicted as 100% confident for the `#covid` intent, and `hospital around palm beach` is predicted as 100% confident for the `#find_provide_master` intent.
 
    This update applies to the following languages: English, French, Spanish, Italian, and the universal language model. For more information, see [Accessing intents](/docs/assistant?topic=assistant-expression-language#expression-language-intent).
+
+## 23 March 2022
+{: #assistant-mar232022}
+{: release-note}
+
+Fuzzy matching updates
+:   Previously, an update was made so that interactions between the stemming and misspelling fuzzy matching features were not allowed. This change applied to the following languages: English, French, German, and Czech. This was updated so that this change applies only to the English language. For more information, see [How fuzzy matching works](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching).
 
 ## 14 March 2022
 {: #assistant-mar142022}
