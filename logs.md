@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-03-01"
+  years: 2015, 2022
+lastupdated: "2022-04-21"
 
 keywords: mark as irrelevant, counterexample, data source, deployment ID, log retention
 
@@ -71,7 +71,7 @@ You can filter messages by *Search user statements*, *Intents*, *Entities*, and 
 
 ![Entities drop-down menu](images/entities_filter.png)
 
-Messages might take some time to update. Allow at least 30 minutes after a user's interaction with your assistant before attempting to filter for that content.
+<!-- Messages might take some time to update. Allow at least 30 minutes after a user's interaction with your assistant before attempting to filter for that content. -->
 
 ## Viewing individual messages
 {: #logs-see-message}

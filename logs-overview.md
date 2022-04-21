@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2022-01-27"
+  years: 2015, 2022
+lastupdated: "2022-04-21"
 
 subcollection: assistant
 
@@ -37,7 +37,7 @@ Analytics help you to understand the following things:
 - *Is your assistant understanding and addressing customer needs?*
 - *How can you make your assistant better?*
 
-To see metrics information, select **Overview** in the navigation bar.
+To see metrics information, select **Overview** in the navigation bar. The information in Analytics is not immediately updated after a user interacts with your assistant. {{site.data.keyword.conversationshort}} prepares the data for Analytics in the background.
 
 After the numbers in metrics hit the 3,000 and above range, the totals are approximated to prevent performance lags in the page.
 {: note}
