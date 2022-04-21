@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-03-24"
+lastupdated: "2022-04-19"
 
 subcollection: assistant
 
@@ -39,6 +39,17 @@ For information about new features and improvements to the core {{site.data.keyw
 {: #release-notes-chat-version}
 
 If you want to evaluate changes that are introduced in a web chat release before you apply them to your deployment, you can set a version of your web chat. For more information, see [Versioning](/docs/assistant?topic=assistant-web-chat-basics#web-chat-basics-versions).
+
+## 6.4.0
+{: #6.4.0}
+
+*Release date: 18 April 2022*
+
+- **Date picker**: If you configure a step to collect a **Date** customer response, the step now uses the new `date` response type to request that the web chat display a graphical date picker the customer can use to select a date, as an alternative to typing the date in the input field. Existing steps do not automatically inherit this behavior; if you want to use the date picker, you must delete the existing Date response and then re-add it.
+
+- **Skip "connect to agent" card**: A new `serviceDesk.skipConnectAgentCard` configuration option is available. If this option is enabled, the web chat immediately connects to an agent when it receives a _Connect to agent_ response, without first displaying a card and waiting for the user to click.
+
+- **Close button**: A new `showCloseAndRestartButton` configuration option specifies whether the web chat interface shows an **`X`** (Close) button in addition to the existing **`-`** (Minimize) button. A customer can click this button to close the web chat, end the conversation, and end any conversation with a human agent. The chat transcript is also cleared, but any transcript of a conversation with a human agent is preserved.
 
 ## 6.3.0
 {: #6.3.0}
