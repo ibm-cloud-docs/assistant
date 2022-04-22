@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-09-17"
+  years: 2015, 2022
+lastupdated: "2022-04-22"
 
 subcollection: assistant
 
@@ -55,7 +55,7 @@ The *irrelevance detection* feature helps your dialog skill recognize subjects t
 
 To learn more about the benefits of this feature, read the [Why Zero-Effort Irrelevance is Relevant](https://medium.com/ibm-watson/enhanced-offtopic-90b2dadf0ef1){: external} blog post.
 
-Irrelevance detection is enabled automatically for all new English, French, Italian, and Spanish skills. If you use the dialog skill options to choose enhanced intent detection, it is automatically paired with enhanced irrelevance detection. If you use the dialog skill options to choose existing intent detection, it is automatically paired with existing irrelevance detection. For more information, see [Defining what's irrelevant](/docs/assistant?topic=assistant-irrelevance-detection). 
+Irrelevance detection is enabled automatically for all new English, French, Italian, and Spanish skills. If you use the dialog skill options to choose enhanced intent detection, it is automatically paired with enhanced irrelevance detection. If you use the dialog skill options to choose existing intent detection, it is automatically paired with existing irrelevance detection. For more information, see [Defining what's irrelevant](/docs/assistant?topic=assistant-irrelevance-detection).
 
 For existing English-language skills created before September 2021, you have the option to enable the enhanced irrelevance detection feature in your skill's **Options**. Complete the following steps:
 
@@ -86,13 +86,13 @@ The algorithmic models that help your assistant understand what your users say a
   You teach your assistant about these subjects by defining intents and providing lots of sample user utterances that articulate the intents so your assistant can recognize these and similar requests as examples of input for it to handle.
 - Subjects you want the assistant to ignore. For example, questions about politics for an assistant that makes pet grooming appointments exclusively.
 
-  You teach your assistant about subjects to ignore by marking utterances that discuss subjects which are out of scope for your application as being irrelevant. Such utterances become counterexamples for the model. 
+  You teach your assistant about subjects to ignore by marking utterances that discuss subjects which are out of scope for your application as being irrelevant. Such utterances become counterexamples for the model.
 
 The best way to build an assistant that understands your domain and the specific needs of your customers is to take the time to build good training data, especially data that includes counterexamples.
 
-Irrelevance detection is designed to bridge any gaps you might have in your counterexample data as you start to build your skill. When enabled, an alternative method for evaluating the relevance of a newly submitted utterance is triggered in addition to the standard method. 
+Irrelevance detection is designed to bridge any gaps you might have in your counterexample data as you start to build your skill. When enabled, an alternative method for evaluating the relevance of a newly submitted utterance is triggered in addition to the standard method.
 
-The supplemental method examines the structure of the new utterance and compares it to the structure of the user example utterances in your training data. This alternate approach helps skills that have few or no counterexamples recognize irrelevant utterances. It is likely to have less of an effect for skills that have a sufficient number of counterexamples defined already. 
+The supplemental method examines the structure of the new utterance and compares it to the structure of the user example utterances in your training data. This alternate approach helps skills that have few or no counterexamples recognize irrelevant utterances.
 
 Note that the new method relies on structural information that is based on data from outside your skill. So, while the new method can be useful as you are starting out, to build an assistant that provides a more customized experience, you want it to use information from data that is derived from within the application's domain. The way to ensure that your assistant does so is by adding your own counterexamples.
 
