@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-27"
 
 subcollection: assistant
 
@@ -77,7 +77,7 @@ Closed entity matching with accent-normalized values in French
 Pattern entities do not prevent spelling autocorrection
 :   Pattern entities that match all characters and words that are usually used to count input words do not prevent spelling autocorrection. For example, if a customer defines the `^..{0,19}$` pattern entity that matches the first 20 characters of an input, then the entity match does not affect spelling autocorrection. In this example, an input of `cancl transaction` is autocorrected to `cancel transaction`.
 
-   This change applies to the following languages: English and French. For more information, see [Correcting user input](/docs/assistant?topic=assistantdialog-runtime-spell-check#dialog-runtime-spell-check-rules).
+   This change applies to the following languages: English and French. For more information, see [Correcting user input](/docs/assistant?topic=assistant-dialog-runtime-spell-check#dialog-runtime-spell-check-rules).
 
 ## 1 March 2022
 {: #assistant-mar012022}
