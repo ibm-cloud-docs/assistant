@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2022-04-25"
 
 subcollection: assistant
 
@@ -132,7 +132,7 @@ Click the *Advanced options* tab to make any of the following customizations to 
 For the best customer experience, design your dialog with the capabilities of the Twilio integration in mind:
 
 - Do not include HTML elements in your text responses.
-- You can send media files or even documents in your response. These files can be intercepted and processed by a configured premessage webhook. For more details, see [Processing media sent to {{site.data.keyword.conversationshort}} with input attachments](/docs/assistant?topic=assistant-input-attachments).
+- You can send media files or even documents in your response. These files can be intercepted and processed by a configured premessage webhook. For more details, see [Processing input attachments](/docs/assistant?topic=assistant-api-input-attachments).
 - The SMS with Twilio integration does not support chat transfers that are initiated with the *Connect to human agent* response type.
 - The **pause** response type is ignored. If you want to add a pause, use a [vgwConversationResponseTimeout](/docs/assistant?topic=assistant-commands-sms#commands-sms-context-variables) context variable instead.
 - **Image**, **Audio**, **Video** response types allow sending a message containing media. A title and description are sent along with the attachment. Note that depending on the carrier and device of the end user these messages may not be successfully received. For a list of the supported content types, see [Accepted Content Types for Media](https://www.twilio.com/docs/sms/accepted-mime-types){: external}.
