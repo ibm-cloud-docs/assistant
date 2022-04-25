@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-24"
+lastupdated: "2022-08-25"
 
 subcollection: assistant
 
@@ -172,7 +172,7 @@ The rich responses that you add to the dialog are displayed in WhatsApp as expec
 For the best customer experience, design your dialog with the capabilities of the WhatsApp integration in mind:
 
 - A text response that contains more than 1,600 characters is broken up into multiple responses.
-- You can upload media files or even documents to the chat. Files shared in the chat can be intercepted and processed by a configured premessage webhook. For more details, see [Processing media sent to {{site.data.keyword.conversationshort}} with input attachments](/docs/assistant?topic=assistant-input-attachments).
+- You can upload media files or even documents to the chat. Files shared in the chat can be intercepted and processed by a configured premessage webhook. For more details, see [Processing input attachments](/docs/assistant?topic=assistant-api-input-attachments).
 - Do not include HTML elements in your text responses.
 - The WhatsApp with Twilio integration does not support chat transfers that are initiated with the *Connect to human agent* response type.
 - If you use Markdown syntax, see the *Supported Markdown syntax* table.

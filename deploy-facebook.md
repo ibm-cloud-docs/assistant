@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-08-31"
+lastupdated: "2022-04-25"
 
 subcollection: assistant
 
@@ -89,5 +89,4 @@ The Welcome node of your dialog is not processed by the Facebook Messenger integ
 {: note}
 
 
-You can upload media files or even documents to the chat. Files shared in the chat can be intercepted and processed by a configured premessage webhook. For more details, see [Processing media sent to {{site.data.keyword.conversationshort}} with input attachments](/docs/assistant?topic=assistant-input-attachments).
-
+You can upload media files or even documents to the chat. Files shared in the chat can be intercepted and processed by a configured premessage webhook. For more details, see [Processing input attachments](/docs/assistant?topic=assistant-api-input-attachments).
