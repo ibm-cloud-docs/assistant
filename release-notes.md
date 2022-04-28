@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-04-28"
 
 subcollection: assistant
 
@@ -38,6 +38,13 @@ For information about changes to the web chat integration, see the [Web Chat rel
 
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
+
+## 28 April 2022
+{: #assistant-apr282022}
+{: release-note}
+
+Assistant preview link can be disabled
+:   Assistant preview now includes a toggle to disable the preview link. This allows you to stop access to the preview link if necessary. For more information, see [Using the assistant preview to test your assistant](/docs/assistant?topic=assistant-deploy-web-link#deploy-web-link-try).
 
 ## 5 April 2022
 {: #assistant-apr052022}
