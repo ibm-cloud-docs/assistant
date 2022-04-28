@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-01-08"
+  years: 2019, 2022
+lastupdated: "2022-04-28"
 
 subcollection: assistant
 
@@ -55,13 +55,13 @@ The process you use to add the web chat to your website is simple. Its simplicit
 
 Before you enable security, complete the following steps:
 
-1.  Create a RS256 private/public key pair. {: #deploy-web-chat-security-origin}
+1. Create a RS256 private/public key pair. {: #deploy-web-chat-security-origin}
 
     You can use a tool such as the OpenSSL command line or PuTTYgen.
 
     - For example, to create the key pair: `openssl genrsa -out key.pem 2048`
     
-1.  Use your private key to sign a JSON Web Token (JWT). You will pass the token with the messages that are sent from your website as proof of their origin.
+1. Use your private key to sign a JSON Web Token (JWT). You will pass the token with the messages that are sent from your website as proof of their origin.
 
     The JWT payload must specify values for the following claims:
 
@@ -105,13 +105,13 @@ Before you enable security, complete the following steps:
 
 To enable security, complete the following steps:
 
-1.  From the **Security** tab of the web chat integration setup page in {{site.data.keyword.conversationshort}}, set the **Secure your web chat** switch to **On**.
+1. From the **Security** tab of the web chat integration setup page in {{site.data.keyword.conversationshort}}, set the **Secure your web chat** switch to **On**.
 
-1.  Add your public key to the **Your public key** field.
+1. Add your public key to the **Your public key** field.
     
     The public key that you add is used to verify that data that claims to come from your web chat instance *is* coming from your web chat instance. 
     
-1.  To prove that a message is coming from your website, each message that is submitted from your web chat implementation must include the JSON Web Token (JWT) that you created earlier.
+1. To prove that a message is coming from your website, each message that is submitted from your web chat implementation must include the JSON Web Token (JWT) that you created earlier.
 
     Add the token to the web chat code snippet that you embed in your website page. Specify the token in the `identityToken` property.
 
@@ -142,7 +142,7 @@ To enable security, complete the following steps:
     
     The JSON Web Token is automatically included on each subsequent request that is sent from the web chat until it expires.
 
-1.  You can add an event that is triggered when your token expires, or (starting with web chat version 3.2.0) when no token is specified initially. The event has a callback you can use to update the token and to process any messages that were queued for processing during the time the token was expired.
+1. You can add an event that is triggered when your token expires, or (starting with web chat version 3.2.0) when no token is specified initially. The event has a callback you can use to update the token and to process any messages that were queued for processing during the time the token was expired.
 
     For example:
 
@@ -183,8 +183,8 @@ Use this method to send sensitive information in messages that come from your we
 
 For example, you might start a business process for a VIP customer that is different from the process you start for less important customers. You likely do not want non-VIPs to know that they are categorized as such. But you must pass this informataion to your dialog because it changes the route of the conversation. You can pass the customer MVP status as an encrypted variable. This private context variable will be available for use by the dialog, but not by anything else.
 
-1.  From the web chat configuration page, copy the public key from the **IBM provided public key** field.
-1.  From your website, write a function that signs a JSON Web Token.
+1. From the web chat configuration page, copy the public key from the **IBM provided public key** field.
+1. From your website, write a function that signs a JSON Web Token.
 
     For example, the following NodeJS code snippet shows a function that accepts a userID and payload content and sends it to the web chat. If a payload is provided, its content is encrypted and signed with the IBM public key.
 
@@ -218,7 +218,7 @@ For example, you might start a business process for a VIP customer that is diffe
     ```
     {: codeblock}
 
-1.   The encrypted user payload is decrypted and then saved to the `context.integrations.chat.private.user_payload` object. 
+1. The encrypted user payload is decrypted and then saved to the `context.integrations.chat.private.user_payload` object. 
 
     For information about how to access the payload data from the dialog, see [Web chat: Accessing sensitive data](/docs/assistant?topic=assistant-dialog-integrations#dialog-integrations-chat-private). You might want to access the payload, for example, to get the customer importance information or single sign-on credentials that you can subsequently use to authenticate a webhook.
 
@@ -227,8 +227,8 @@ For example, you might start a business process for a VIP customer that is diffe
 
 To authenticate and specify a unique ID for each customer, add the user ID information to the token.
 
-1.  From the web chat configuration page, copy the public key from the **IBM provided public key** field. You will specify this value as the `PUBLIC_IBM_RSA_KEY` later.
-1.  From your website, write a function that signs a JSON Web Token.
+1. From the web chat configuration page, copy the public key from the **IBM provided public key** field. You will specify this value as the `PUBLIC_IBM_RSA_KEY` later.
+1. From your website, write a function that signs a JSON Web Token.
 
     The function must accept a UserID parameter and set the userID as the `sub` claim value.
 
