@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-05-21"
+lastupdated: "2022-04-28"
 
 subcollection: assistant
 
@@ -61,7 +61,7 @@ To test the assistant from a web-hosted chat widget, complete the following step
 
 1.  To test the assistant from a separate web page, copy and paste the *Share this link* URL into a web browser.
 
-    A simple IBM-branded web page is displayed that contains a chat window where you can interact with your assistant. You can share the page with others by sending them the *Share this link* URL.
+    A simple IBM-branded web page is displayed that contains a chat window where you can interact with your assistant. You can share the page with others by sending them the *Share this link* URL. If necessary, you can click the toggle on the Preview page to disable the link.
 
     Previewing your assistant within the {{site.data.keyword.conversationshort}} user interface does not incur any charges. If you use the *Share this link* URL to preview the assistant from elsewhere, you might be charged for messages that you submit, according to the terms of your plan. You can review metrics about the test user conversations from the Analytics page.
     {: important}
