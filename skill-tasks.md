@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-01-06"
+lastupdated: "2022-04-29"
 
 subcollection: assistant
 
@@ -42,6 +42,17 @@ To rename a skill, follow these steps:
 1.  Click the ![open and close list of options](images/kebab.png) icon, and then choose **Rename**.
 
 1.  Edit the name, and then click **Save**.
+
+## Duplicating a skill
+{: #skill-tasks-duplicate}
+
+You can duplicate a skill to make a copy of it.
+
+To duplicate a skill, follow these steps:
+
+1.  From the Skills page, find the skill that you want to duplicate.
+
+1.  Click the ![open and close list of options](images/kebab.png) icon, and then choose **Duplicate**. The copied skill has the word `copy` added to the end of its name.
 
 ## Deleting a skill
 {: #skill-tasks-delete}
