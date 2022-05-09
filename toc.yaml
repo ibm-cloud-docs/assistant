@@ -46,7 +46,6 @@ toc:
           topics:
           - assistant-add.md
           - skill-add.md
-          - skills-choose.md
       - topicgroup: 
           label: Building a conversation with a dialog tree
           topics:
