@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-10-27"
+  years: 2015, 2022
+lastupdated: "2022-05-12"
 
 subcollection: assistant
 
@@ -91,16 +91,16 @@ In the following tables, the level of language and feature support is indicated 
 |:---:|:---:|:---:|:---:|
 | **English (en)**                   | GA | GA | GA |
 | **Arabic (ar)**                    | GA (except Covid-19) | NA | NA |
-| **Chinese (Simplified) (zh-cn)**   | NA | NA | NA |
+| **Chinese (Simplified) (zh-cn)**   | NA | NA | GA |
 | **Chinese (Traditional) (zh-tw)**  | NA | NA | NA |
 | **Czech (cs)**                     | NA | NA | NA |
 | **Dutch (nl)**                     | NA | NA | NA |
 | **French (fr)**                    | GA | NA | GA |
-| **German (de)**                    | GA (except Covid-19) | NA | NA |
+| **German (de)**                    | GA (except Covid-19) | NA | GA |
 | **Italian (it)**                   | GA (except Covid-19) | NA | GA |
 | **Japanese (ja)**                  | GA (except Covid-19) | NA | NA |
 | **Korean (ko)**                    | NA | NA | NA |
-| **Portuguese (Brazilian) (pt-br)** | GA | NA | NA |
+| **Portuguese (Brazilian) (pt-br)** | GA | NA | GA |
 | **Spanish (es)**                   | GA | NA | GA |
 | **Universal (xx)**                 | NA | GA | GA |
 {: caption="Table 3. Intent feature support details" caption-side="top"}
@@ -197,7 +197,7 @@ GB18030 compliance: GB18030 is a Chinese standard that specifies an extended cod
 ## Changing a skill language
 {: #language-support-change-language}
 
-Once a skill has been created, its language cannot be modified. If it is necessary to change the supported language of a skill, you can do so by editing the skill's underlying JSON. 
+Once a skill has been created, its language cannot be modified. If it is necessary to change the supported language of a skill, you can do so by editing the skill's underlying JSON.
 
 To change the skill language, take the following steps:
 
@@ -205,9 +205,9 @@ To change the skill language, take the following steps:
 1.  Open the downloaded skill JSON file in a text editor.
 1.  Search for the property named `language`.
 
-    The `language` property is set to the original language of the skill. For example, the language property is `en` for an English skill. 
-    
-1.  Change the value of this property to the language you want to use instead. For example, change it to `fr` for French or `de` for German. 
+    The `language` property is set to the original language of the skill. For example, the language property is `en` for an English skill.
+
+1.  Change the value of this property to the language you want to use instead. For example, change it to `fr` for French or `de` for German.
 1.  Save the changes to the JSON file, and then upload the edited file, overwriting the existing skill.
 
 ## Configuring bidirectional languages
