@@ -39,13 +39,6 @@ For information about changes to the web chat integration, see the [Web Chat rel
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
 
-## 12 May 2022
-{: #assistant-may122022}
-{: release-note}
-
-Enhanced intent detection available for Portuguese, German, and Simplified Chinese
-:   Enhanced intent detection is now available for Portuguese, German, and Simplified Chinese. The enhanced intent detection model improves your assistant's ability to understand what customers want. For more information, see [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).
-
 ## 28 April 2022
 {: #assistant-apr282022}
 {: release-note}
