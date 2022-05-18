@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-18"
 
 subcollection: assistant
 
@@ -39,12 +39,18 @@ For information about changes to the web chat integration, see the [Web Chat rel
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
 
-## 12 May 2022
-{: #assistant-may122022}
+## 18 May 2022
+{: #assistant-may182022}
 {: release-note}
 
-Enhanced intent detection available for Portuguese, German, and Simplified Chinese
-:   Enhanced intent detection is now available for Portuguese, German, and Simplified Chinese. The enhanced intent detection model improves your assistant's ability to understand what customers want. For more information, see [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).
+Language support improvements
+:   Entity recognition and intent classification for Japanese and Korean languages changed to improve the reliability of {{site.data.keyword.conversationshort}}. You might see minor differences in how {{site.data.keyword.conversationshort}} handles entity recognition and intent classification. This change affects {{site.data.keyword.conversationshort}} workspaces that are trained after May 18, 2022. Workspaces that were trained before May 18, 2022 maintain the same behavior.
+
+  Any visible changes are most likely to be seen in dictionary-based or pattern-based entity matching. For more information about defining entities, see [Defining information to look for in customer input](/docs/assistant?topic=assistant-entities). As a suggested practice, you can test your dialog skill with your current test framework to determine whether your workspace is impacted before you update your production workspace.
+
+  If entity values or synonyms that previously matched no longer match, you can update the entity and add a synonym with white space between the tokens, for example:
+    - Japanese: Add “見 た” as a synonym for “見た”
+    - Korean: Add “見 た” as a synonym for “見た”
 
 ## 28 April 2022
 {: #assistant-apr282022}
