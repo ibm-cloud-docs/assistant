@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-05-18"
+lastupdated: "2022-05-19"
 
 subcollection: assistant
 
@@ -39,6 +39,17 @@ For information about changes to the web chat integration, see the [Web Chat rel
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
 
+## 19 May 2022
+{: #assistant-may192022}
+{: release-note}
+
+Sign out due to inactivity setting
+:   {{site.data.keyword.conversationshort}} now uses the **Sign out due to inactivity setting** from Identity & Access Management (IAM). {{site.data.keyword.cloud_notm}} account owners can select the time it takes before an inactive user is signed out and their credentials are required again. The default is 2 hours.
+
+   An inactive user will see two messages. The first message alerts them about an upcoming session expiration and provides a choice to renew. If they remain inactive, a second session expiration message appears and they will need to log in again.
+
+   For more information, see [Setting the sign out due to inactivity duration](/docs/account?topic=account-iam-work-sessions&interface=ui#sessions-inactivity){: external}.
+
 ## 18 May 2022
 {: #assistant-may182022}
 {: release-note}
@@ -51,6 +62,9 @@ Language support improvements
   If entity values or synonyms that previously matched no longer match, you can update the entity and add a synonym with white space between the tokens, for example:
     - Japanese: Add “見 た” as a synonym for “見た”
     - Korean: Add “見 た” as a synonym for “見た”
+
+Enhanced intent detection available for Portuguese, German, and Simplified Chinese
+:   Enhanced intent detection is now available for Portuguese, German, and Simplified Chinese. The enhanced intent detection model improves your assistant's ability to understand what customers want. For more information, see [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).
 
 ## 28 April 2022
 {: #assistant-apr282022}
