@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-05-19"
+lastupdated: "2022-05-23"
 
 subcollection: assistant
 
@@ -61,7 +61,7 @@ Language support improvements
 
   If entity values or synonyms that previously matched no longer match, you can update the entity and add a synonym with white space between the tokens, for example:
     - Japanese: Add “見 た” as a synonym for “見た”
-    - Korean: Add “見 た” as a synonym for “見た”
+    - Korean: Add “잘 자 요” as a synonym for “잘자요”
 
 Enhanced intent detection available for Portuguese, German, and Simplified Chinese
 :   Enhanced intent detection is now available for Portuguese, German, and Simplified Chinese. The enhanced intent detection model improves your assistant's ability to understand what customers want. For more information, see [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).
