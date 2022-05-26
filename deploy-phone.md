@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-03"
+lastupdated: "2022-05-26"
 
 subcollection: assistant
 
@@ -292,7 +292,7 @@ To set up a Twilio SIP trunk, complete the following steps:
   
 1.  Assign the number to the SIP trunk you created by going back to the SIP trunk and clicking the number sign (#) icon.
 
-If you use a Lite or Trial Twilio account for testing purposes, then be sure to verify the transfer target. For more information, see the [Twilio documentation](https://support.twilio.com/hc/en-us/articles/223136107-How-does-Twilio-s-Free-Trial-work-){: external}.
+If you use a Lite or Trial Twilio account for testing purposes, then be sure to verify the transfer target.
 
 You cannot enable SIP authentication if you choose Twilio as your SIP trunk provider. Twilio doesn't support SIPS for originating calls.
 

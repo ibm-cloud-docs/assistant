@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-02"
+lastupdated: "2022-05-26"
 
 subcollection: assistant
 
@@ -335,4 +335,4 @@ Your assistant should now be able to answer phone calls to your phone number and
  
 
 ###  Share the conversation history with service desk agents 
-To enable the service desk agent to get a quick view of the conversation history between the visitor and the assistant, set up the Watson Assistant Agent App app for your Twilio Flex environment. For more information, see the documentation for the [Twilio Flex Watson Assistant Agent App](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/twilio-agentapp/src/flex/agentApp){: external}.
+To enable the service desk agent to get a quick view of the conversation history between the visitor and the assistant, set up the Watson Assistant Agent App app for your Twilio Flex environment. For more information, see the documentation for the [Twilio Flex Watson Assistant Agent App](https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/flex/agentApp){: external}.
