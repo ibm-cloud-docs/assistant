@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-29"
+lastupdated: "2022-05-26"
 
 subcollection: assistant
 
@@ -103,7 +103,7 @@ To set up a Zendesk service desk integration, complete the following steps:
 
       ![Screen capture of the Zendesk Account page where you can upload a private app.](images/zd-upload-app.png)
 
-      For more information, see [Uploading and installing a private app in Zendesk Chat](https://develop.zendesk.com/hc/en-us/articles/360001069347-Uploading-and-installing-a-private-app){: external}.
+      For more information, see [Uploading and installing a private app in Zendesk Chat](https://developer.zendesk.com/documentation/apps/getting-started/uploading-and-installing-a-private-app/){: external}.
 
 1.  Click **Save and exit** to finish setting up the connection to the Zendesk Chat service desk.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-22"
+lastupdated: "2022-05-26"
 
 subcollection: assistant
 
@@ -71,6 +71,3 @@ Do not add an existing instance that you are using to do any real work to the ea
 
     If you are approved for participation in the early access program, it is the service instance that you request program access from that is upgraded to include new features.
 
-1.  After you get a chance to try out the new features, let us know what you think.
-
-    To share your feedback, join the [Watson Developer Community on Slack](http://wdc-slack-inviter.mybluemix.net/){: external}. Add your first impressions and suggestions to the **#assistant-early-access** channel.

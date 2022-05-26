@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2020-10-27"
+lastupdated: "2022-05-26"
 
 subcollection: assistant
 
@@ -44,8 +44,3 @@ If you were testing a feature, but it is not listed here, it probably means that
 
 To find out how to request access, see [Participate in the early access program](/docs/assistant?topic=assistant-feedback#feedback-beta).
 {: preview}
-
-## Tell us what you think
-{: #beta-feedback}
-
-To share your feedback, join the [Watson Developer Community on Slack](http://wdc-slack-inviter.mybluemix.net/){: external}. Add your first impressions and suggestions to the **#assistant-early-access** channel.
