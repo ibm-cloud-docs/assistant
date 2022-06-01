@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-05-26"
+lastupdated: "2022-06-01"
 
 subcollection: assistant
 
@@ -34,7 +34,7 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.conversationfull}}.
 {: shortdesc}
 
-For information about changes to the web chat integration, see the [Web Chat release notes](/docs/assistant?topic=assistant-release-notes-chat).
+For information about changes to the web chat integration, see the [Web Chat release notes](/docs/watson-assistant?topic=watson-assistant-release-notes-chat){: external}.
 
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}

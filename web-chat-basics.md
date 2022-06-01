@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-10-01"
+  years: 2019, 2022
+lastupdated: "2022-06-01"
 
 subcollection: assistant
 
@@ -124,7 +124,7 @@ To test the updates in a version release of web chat before you apply the versio
 1.  Test the web chat, and make adjustments to the configuration if necessary.
 1.  Update your production deployment to use the latest version and apply any other configuration changes that you determined to be necessary after testing.
 
-For more information about features that were introduced in previous web chat versions, see the [Web chat release notes](/docs/assistant?topic=assistant-release-notes-chat).
+For more information about features that were introduced in previous web chat versions, see the [Web chat release notes](/docs/watson-assistant?topic=watson-assistant-release-notes-chat){: external}.
 
 ## Billing
 {: #web-chat-basics-billing}
