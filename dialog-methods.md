@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-02"
+lastupdated: "2022-06-02"
 
 subcollection: assistant
 
@@ -1074,7 +1074,7 @@ For example:
 ### now(String time zone)
 {: #dialog-methods-dates-now}
 
-Returns a string with the current date and time in the format `yyyy-MM-dd HH:mm:ss`. Optionally specify a `timezone` value to get the current date and time for a specific time zone.
+Returns a string with the current date and time in the format `yyyy-MM-dd HH:mm:ss`. Optionally specify a `timezone` value to get the current date and time for a specific time zone, with a returned string in the format `yyyy-MM-dd HH:mm:ss VV`.
 
 - Static function.
 - The other date/time methods can be invoked on date-time values that are returned by this function and it can be passed in as their argument.
