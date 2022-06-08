@@ -28,7 +28,7 @@ toc:
           label: Release notes
           topics:
           - release-notes.md
-          - release-notes-chat.md
+          - /watson-assistant/watson-assistant-release-notes-chat
 
   - navgroup:
       id: tutorial
