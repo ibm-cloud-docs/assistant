@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-26"
+lastupdated: "2022-06-10"
 
 subcollection: assistant
 
@@ -49,7 +49,8 @@ Depending on the architecture of your existing telephony infrastructure, there a
 ## Set up the integration
 {: #deploy-phone-setup}
 
-You must have Manager service level access to the instance. For more information about access levels, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).
+You must have Manager role access to the instance and Viewer role access to the resource group. For more information about access levels, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).
+{: note}
 
 <!--To watch a video that walks through the setup process, see [Phone and SMS Integration](https://community.ibm.com/community/user/watsonapps/viewdocument/phone-and-sms-integration?CommunityKey=7a3dc5ba-3018-452d-9a43-a49dc6819633&tab=librarydocuments){: external} in the *IBM Watson Apps Community*.-->
 
