@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-12"
+lastupdated: "2022-06-13"
 
 subcollection: assistant
 
@@ -460,7 +460,7 @@ Welcome to the Watson Assistant example!
 ```
 {: screen}
 
-The {{site.data.keyword.conversationshort}} service is detecting the correct `#hello` and `#goodbye` intents, and yet every turn of the conversation returns the welcome message from the `conversation_start` node (`Welcome to the {{site.data.keyword.conversationshort}} example!`).
+The {{site.data.keyword.conversationshort}} service is detecting the correct `#hello` and `#goodbye` intents, and yet every turn of the conversation returns the welcome message from the `conversation_start` node (`Welcome to the Watson Assistant example!`).
 
 This is happening because we are using the stateless `message` method, which means that it is the responsibility of our client application to maintain state information for the conversation. Because we are not yet doing anything to maintain state, the {{site.data.keyword.conversationshort}} service sees every round of user input as the first turn of a new conversation, triggering the `conversation_start` node.
 
