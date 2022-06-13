@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-01-12"
+lastupdated: "2022-06-13"
 
 subcollection: assistant
 
@@ -455,7 +455,7 @@ Your application can parse and display the data in any way you choose.
 To show how a client application might handle option responses, which prompt the user to select from a list of choices, we can extend the client example described in [Building a client application](/docs/assistant?topic=assistant-api-client). This is a simplified client app that uses standard input and output to handle three intents (sending a greeting, showing the current time, and exiting from the app):
 
 ```
-Welcome to the {{site.data.keyword.conversationshort}} example!
+Welcome to the Watson Assistant example!
 >> hello
 Good day to you.
 >> what time is it?
