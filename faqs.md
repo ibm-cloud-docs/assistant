@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-08-05"
+lastupdated: "2022-06-16"
 
 subcollection: assistant
 
@@ -249,4 +249,4 @@ To see your monthly active users (MAU) do the following:
 
 You see the error `New Off Topic not supported` after editing the JSON file for a dialog skill and changing the skill language from English to another language.
 
-To resolve this issue, modify the JSON file by setting `off_topic` to `false`. Off-topic, or irrelvant detection, is only supported for English-language dialog skills. For more information about this feature, see [Defining what's irrelevant](/docs/assistant?topic=assistant-irrelevance-detection).
+To resolve this issue, modify the JSON file by setting `off_topic` to `false`. For more information about this feature, see [Defining what's irrelevant](/docs/assistant?topic=assistant-irrelevance-detection).

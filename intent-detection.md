@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-05-19"
+lastupdated: "2022-06-16"
 
 subcollection: assistant
 
@@ -27,47 +27,14 @@ subcollection: assistant
 
 {{site.data.content.newlink}}
 
-# Improved intent recognition
+# Algorithms versions
 {: #intent-detection}
 
-The new intent detection model improves your assistant's ability to understand what customers want.
+**Algorithms versions** allows you to choose which version of {{site.data.keyword.conversationshort}} algorithms to apply to your future trainings. 
 {: shortdesc}
 
-The new intent detection model is faster and more accurate. It combines traditional machine learning, transfer learning, and deep learning techniques in a cohesive model that is highly responsive at run time. The new model is highly effective in skills with a small training data set.
+In the **Options** section of a dialog skill, you can choose to use the more stable and fully supported version of algorithms by selecting **Baseline**. This is the latest mature version that you may want to use for your live assistant. Or, you can choose **Beta** to preview and test what is coming. The capability in the beta version at any given time is likely to become the baseline version later on.
 
-New service instances use the new intent recognition model automatically. It is disabled for existing dialog skills. You can turn it on for your existing dialog skills to start taking advantage of the improved performance that it offers. However, be aware that switching this feature on in an existing dialog skill will result in noticeable changes to the confidence scores associated with your existing intents.
+The baseline and beta versions are labeled with dates, for example, **Baseline (2022-06-01)** or **Beta (2022-06-10)**. This refers to the release of a specific baseline or beta version. You can consult the [{{site.data.keyword.conversationshort}} release notes](/docs/watson-assistant?topic=watson-assistant-watson-assistant-release-notes){: external} for details of updates made in that algorithms version release.
 
-You can learn more about the model by reading the [Watson Assistant improves intent detection accuracy, leads against AI vendors cited in published study](https://www.ibm.com/blogs/watson/2020/12/watson-assistant-improves-intent-detection-accuracy-leads-against-ai-vendors-cited-in-published-study/){: external} blog post, which has a link to a downloadable benchmarking paper.
-
-The new model is available for:
--  Chinese (Simplified), English, French, German, Italian, Portuguese, and Spanish dialog skills
--  Actions skills
-
-## Enabling the new intent detection model
-{: #intent-detection-task}
-
-The new model is the only model that is available for use in actions skills and skills that use the universal language model.
-{: note}
-
-To enable the new intent detection model in a dialog skill, complete the following steps:
-
-1.  From the Skills page, open your dialog skill.
-1.  From the skill menu, click **Options**.
-1.  On the *Intent detection* page, choose **Enhanced version**.
-
-If you use the dialog skill options to choose enhanced intent detection, it is automatically paired with enhanced irrelevance detection. If you use the dialog skill options to choose existing intent detection, it is automatically paired with existing irrelevance detection. For more information, see [Defining what's irrelevant](/docs/assistant?topic=assistant-irrelevance-detection).
-
-If necessary, you can use the [Update workspace API](/apidocs/assistant/assistant-v1?curl=#updateworkspace) to set your English-language assistant to one of the four combinations of intent and irrelevance detection:
-
-- Enhanced intent recognition and enhanced irrelevance detection
-- Enhanced intent recognition and existing irrelevance detection
-- Existing intent recognition and enhanced irrelevance detection
-- Existing intent recognition and existing irrelevance detection
-
-For French, Italian, and Spanish, you can use the API to set your assistant to these combinations:
-  - Enhanced intent recognition and enhanced irrelevance detection
-  - Existing intent recognition and existing irrelevance detection
-
-Test the new intent detection capabilities in the "Try it out" pane.
-
-If you don't like the results that you get with the new model, you can switch back to using the classic version of the model in your dialog skill. Alternatively, you can leave it on and make dialog changes to accommodate any differences in your assistant's behavior that you want to address.
+Algorithm version options are currently available for Chinese (Simplified), English, French, German, Italian, Portuguese, Spanish and the Universal Language model. Other languages use default algorithm versions.

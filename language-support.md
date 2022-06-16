@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-05-19"
+lastupdated: "2022-06-16"
 
 subcollection: assistant
 
@@ -87,25 +87,25 @@ In the following tables, the level of language and feature support is indicated 
 ### Intent feature support details
 {: #language-support-intents}
 
-| Language | **[Content Catalog](/docs/assistant?topic=assistant-catalog)** | **[Irrelevance detection](/docs/assistant?topic=assistant-irrelevance-detection)** | **[Enhanced intent detection](/docs/assistant?topic=assistant-intent-detection)** |
-|:---:|:---:|:---:|:---:|
-| **English (en)**                   | GA | GA | GA |
-| **Arabic (ar)**                    | GA (except Covid-19) | NA | NA |
-| **Chinese (Simplified) (zh-cn)**   | NA | NA | GA |
-| **Chinese (Traditional) (zh-tw)**  | NA | NA | NA |
-| **Czech (cs)**                     | NA | NA | NA |
-| **Dutch (nl)**                     | NA | NA | NA |
-| **French (fr)**                    | GA | NA | GA |
-| **German (de)**                    | GA (except Covid-19) | NA | GA |
-| **Italian (it)**                   | GA (except Covid-19) | NA | GA |
-| **Japanese (ja)**                  | GA (except Covid-19) | NA | NA |
-| **Korean (ko)**                    | NA | NA | NA |
-| **Portuguese (Brazilian) (pt-br)** | GA | NA | GA |
-| **Spanish (es)**                   | GA | NA | GA |
-| **Universal (xx)**                 | NA | GA | GA |
+| Language | **[Content Catalog](/docs/assistant?topic=assistant-catalog)** | **[Algorithms versions](/docs/assistant?topic=assistant-intent-detection)** |
+|:---:|:---:|:---:|
+| **English (en)**                   | GA | GA |
+| **Arabic (ar)**                    | GA (except Covid-19) | NA |
+| **Chinese (Simplified) (zh-cn)**   | NA | GA |
+| **Chinese (Traditional) (zh-tw)**  | NA | NA |
+| **Czech (cs)**                     | NA | NA |
+| **Dutch (nl)**                     | NA | NA |
+| **French (fr)**                    | GA | GA |
+| **German (de)**                    | GA (except Covid-19) | GA |
+| **Italian (it)**                   | GA (except Covid-19) | GA |
+| **Japanese (ja)**                  | GA (except Covid-19) | NA |
+| **Korean (ko)**                    | NA | NA |
+| **Portuguese (Brazilian) (pt-br)** | GA | GA |
+| **Spanish (es)**                   | GA | GA |
+| **Universal (xx)**                 | NA | GA |
 {: caption="Table 3. Intent feature support details" caption-side="top"}
 
-### Recommendations feature support details continued
+### Recommendations feature support details
 {: #language-support-recommendations}
 
 | Language | **[User example recommendations](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations-task)** | **[Intent recommendations](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-intent-recommendations-task)** |
@@ -124,7 +124,7 @@ In the following tables, the level of language and feature support is indicated 
 | **Portuguese (Brazilian) (pt-br)** | NA | GA |
 | **Spanish (es)**                   | NA | GA |
 | **Universal (xx)**                 | NA | NA |
-{: caption="Table 4. Recommendations feature support details continued" caption-side="top"}
+{: caption="Table 4. Recommendations feature support details" caption-side="top"}
 
 ### User input processing support details
 {: #language-support-input}
