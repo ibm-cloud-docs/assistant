@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-06-01"
+lastupdated: "2022-06-16"
 
 subcollection: assistant
 
@@ -38,6 +38,16 @@ For information about changes to the web chat integration, see the [Web Chat rel
 
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
+
+## 16 June 2022
+{: #assistant-jun162022}
+{: release-note}
+
+Algorithms versions 
+:   Algorithms versions allows you to choose which version of {{site.data.keyword.conversationshort}} algorithms to apply to your future trainings. In the **Options** section of a dialog skill, **Algorithm Versions** replaces **Intent Detection**. You can choose to use the more stable and fully supported version of algorithms by selecting **Baseline**. This is the latest mature version that you may want to use for your live assistant. Or, you can choose **Beta** to preview and test what is coming. For more information, see [Algorithm versions](/docs/assistant?topic=assistant-intent-detection).
+
+Algorithm beta version (2022-06-10)
+:   Algorithm beta version (2022-06-10) includes a new irrelevance detection algorithm to improve off-topic detection accuracy. Utterances with similar meanings are expected to have more similar confidences in comparison to previous irrelevance detection algorithms. For example, in the Customer Care Sample Skill, the training utterance `please suggest route from times square` has 100% confidence at runtime. Currently in IBM Cloud, the utterance `please suggest route from central park` gets a low confidence and could be flagged as irrelevant. With beta version (2022-06-10), the same utterance is expected to be predicted correctly as #Customer_Care_Store_Location with a ~46% confidence.
 
 ## 19 May 2022
 {: #assistant-may192022}
