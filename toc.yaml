@@ -180,10 +180,6 @@ toc:
                 - api-dialog-responses.md
                 - api-input-attachments.md
                 - /watson/watson-using-sdks
-          - topicgroup:
-                label: Early access program
-                topics:
-                - beta.md
 
   - navgroup:
       id: reference
@@ -236,8 +232,8 @@ toc:
                 label: Stack Overflow
                 href: https://stackoverflow.com/questions/tagged/watson-assistant
             - link: 
-                label: IBM Watson Apps Community
-                href: https://community.ibm.com/community/user/watsonapps/communities/community-home?CommunityKey=7a3dc5ba-3018-452d-9a43-a49dc6819633
+                label: IBM Watson Natural Language AI Community
+                href: https://community.ibm.com/community/user/watsonai/communities/community-home?CommunityKey=7a3dc5ba-3018-452d-9a43-a49dc6819633
       - accessibility.md
 
 
