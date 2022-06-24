@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-06-16"
+lastupdated: "2022-06-24"
 
 subcollection: assistant
 
@@ -39,11 +39,18 @@ For information about changes to the web chat integration, see the [Web Chat rel
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
 
+## 24 June 2022
+{: #assistant-jun242022}
+{: release-note}
+
+Algorithms versions available in more languages
+:   Algorithms version options are now available in Chinese (Traditional), Japanese, and Korean. Algorithms versions allows you to choose which version of {{site.data.keyword.conversationshort}} algorithms to apply to your future trainings. For more information, see [Algorithm versions](/docs/assistant?topic=assistant-intent-detection).
+
 ## 16 June 2022
 {: #assistant-jun162022}
 {: release-note}
 
-Algorithms versions 
+Algorithms versions
 :   Algorithms versions allows you to choose which version of {{site.data.keyword.conversationshort}} algorithms to apply to your future trainings. In the **Options** section of a dialog skill, **Algorithm Versions** replaces **Intent Detection**. You can choose to use the more stable and fully supported version of algorithms by selecting **Baseline**. This is the latest mature version that you may want to use for your live assistant. Or, you can choose **Beta** to preview and test what is coming. For more information, see [Algorithm versions](/docs/assistant?topic=assistant-intent-detection).
 
 Algorithm beta version (2022-06-10)

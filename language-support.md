@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-06-16"
+lastupdated: "2022-06-24"
 
 subcollection: assistant
 
@@ -92,14 +92,14 @@ In the following tables, the level of language and feature support is indicated 
 | **English (en)**                   | GA | GA |
 | **Arabic (ar)**                    | GA (except Covid-19) | NA |
 | **Chinese (Simplified) (zh-cn)**   | NA | GA |
-| **Chinese (Traditional) (zh-tw)**  | NA | NA |
+| **Chinese (Traditional) (zh-tw)**  | NA | GA |
 | **Czech (cs)**                     | NA | NA |
 | **Dutch (nl)**                     | NA | NA |
 | **French (fr)**                    | GA | GA |
 | **German (de)**                    | GA (except Covid-19) | GA |
 | **Italian (it)**                   | GA (except Covid-19) | GA |
-| **Japanese (ja)**                  | GA (except Covid-19) | NA |
-| **Korean (ko)**                    | NA | NA |
+| **Japanese (ja)**                  | GA (except Covid-19) | GA |
+| **Korean (ko)**                    | NA | GA |
 | **Portuguese (Brazilian) (pt-br)** | GA | GA |
 | **Spanish (es)**                   | GA | GA |
 | **Universal (xx)**                 | NA | GA |
