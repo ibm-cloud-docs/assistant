@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-03-04"
+  years: 2015, 2022
+lastupdated: "2022-07-22"
 
 keywords: message call, message objects
 
@@ -90,21 +90,6 @@ In the resulting API `/message` response, the text response is formatted as foll
    "response_type": "text"
 }
 ```
-
-The following `output` object JSON format is supported for backwards compatibility. With the introduction of rich response types, the `output.text` structure was augmented with the `output.generic` structure to facilitate supporting other types of responses in addition to text. Use the new format when you create new nodes to give yourself more flexibility, because you can subsequently change the response type, if needed.
-{: note}
-
-  ```json
-  {
-  "output": {
-    "text": {
-      "values": [
-        "This is my response text."
-      ]
-    }
-  }
-  ```
-  {: codeblock}
 
 There are response types other than a text response that you can define. See [Responses](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-responses) for more details.
 
