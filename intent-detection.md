@@ -37,4 +37,4 @@ In the **Options** section of a dialog skill, you can choose to use the more sta
 
 The baseline and beta versions are labeled with dates such as **Baseline (2022-06-01)** or **Beta (2022-06-10)**. This refers to the release of a specific baseline or beta version. You can consult the [{{site.data.keyword.conversationshort}} release notes](/docs/watson-assistant?topic=watson-assistant-watson-assistant-release-notes){: external} for details of updates made in that algorithms version release.
 
-Algorithm version options are available for all supported languages.
+Algorithm version options are currently available for Arabic, Chinese (Simplified), Chinese (Traditional), Czech, Dutch, English, French, German, Japanese, Korean, Italian, Portuguese, and Spanish. The universal language model uses default algorithm versions.
