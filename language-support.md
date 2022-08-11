@@ -90,11 +90,11 @@ In the following tables, the level of language and feature support is indicated 
 | Language | **[Content Catalog](/docs/assistant?topic=assistant-catalog)** | **[Algorithms versions](/docs/assistant?topic=assistant-intent-detection)** |
 |:---:|:---:|:---:|
 | **English (en)**                   | GA | GA |
-| **Arabic (ar)**                    | GA (except Covid-19) | NA |
+| **Arabic (ar)**                    | GA (except Covid-19) | GA |
 | **Chinese (Simplified) (zh-cn)**   | NA | GA |
 | **Chinese (Traditional) (zh-tw)**  | NA | GA |
-| **Czech (cs)**                     | NA | NA |
-| **Dutch (nl)**                     | NA | NA |
+| **Czech (cs)**                     | NA | GA |
+| **Dutch (nl)**                     | NA | GA |
 | **French (fr)**                    | GA | GA |
 | **German (de)**                    | GA (except Covid-19) | GA |
 | **Italian (it)**                   | GA (except Covid-19) | GA |
