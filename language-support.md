@@ -102,7 +102,7 @@ In the following tables, the level of language and feature support is indicated 
 | **Korean (ko)**                    | NA | GA |
 | **Portuguese (Brazilian) (pt-br)** | GA | GA |
 | **Spanish (es)**                   | GA | GA |
-| **Universal (xx)**                 | NA | GA |
+| **Universal (xx)**                 | NA | NA |
 {: caption="Table 3. Intent feature support details" caption-side="top"}
 
 ### Recommendations feature support details
