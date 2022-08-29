@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2022-06-02"
+lastupdated: "2022-08-29"
 
 subcollection: assistant
 
@@ -1051,6 +1051,13 @@ To define a new array that will be filled in with values that are provided by us
 Several methods are available to work with date and time.
 
 For information about how to recognize and extract date and time information from user input, see [@sys-date and @sys-time entities](/docs/assistant?topic=assistant-system-entities#system-entities-sys-date-time).
+
+The following string formats are supported for date-time literals on which the methods below may be invoked.
+
+- For time only: `HH:mm:ss` or `HH:mm`
+- For date only: `yyyy-MM-dd`
+- For date and time: `yyyy-MM-dd HH:mm:ss`
+- For date and time with time zone: `yyyy-MM-dd HH:mm:ss VV`. The V symbol is from the [DateTimeFormatter](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/format/DateTimeFormatter.html){: external} and represents time zone in IANA Time Zone Database (TZDB) format, for example, Europe/London.
 
 ### .after(String date or time)
 {: #dialog-methods-dates-after}
