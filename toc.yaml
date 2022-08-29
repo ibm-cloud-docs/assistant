@@ -8,12 +8,12 @@ toc:
     path: assistant
     label: Classic Watson Assistant
 
-  entries: 
-  - navgroup: 
+  entries:
+  - navgroup:
       id: learn
       topics:
       - index.md
-      - topicgroup: 
+      - topicgroup:
           label: Getting started tutorial
           topics:
           - getting-started.md
@@ -41,12 +41,12 @@ toc:
   - navgroup:
       id: howto
       topics:
-      - topicgroup: 
+      - topicgroup:
           label: Creating an assistant
           topics:
           - assistant-add.md
           - skill-add.md
-      - topicgroup: 
+      - topicgroup:
           label: Building a conversation with a dialog tree
           topics:
           - skill-dialog-add.md
@@ -101,7 +101,7 @@ toc:
               - link:
                   label: Integrating with Oracle B2C Service
                   href: https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/oracle/webChat
-              - link: 
+              - link:
                   label: Integrating with your own service desk
                   href: https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter
           - topicgroup:
@@ -136,7 +136,7 @@ toc:
                - upgrade.md
           - topicgroup:
                label: Enhancing security
-               topics: 
+               topics:
                 - access-control.md
                 - information-security.md
                 - security.md
@@ -224,30 +224,13 @@ toc:
       topics:
       - faqs.md
       - troubleshoot.md
-      - feedback.md
       - topicgroup:
           label: Developer community
           links:
             - link:
                 label: Stack Overflow
                 href: https://stackoverflow.com/questions/tagged/watson-assistant
-            - link: 
+            - link:
                 label: IBM Watson Natural Language AI Community
                 href: https://community.ibm.com/community/user/watsonai/communities/community-home?CommunityKey=7a3dc5ba-3018-452d-9a43-a49dc6819633
       - accessibility.md
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

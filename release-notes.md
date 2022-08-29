@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-06-16"
+lastupdated: "2022-08-11"
 
 subcollection: assistant
 
@@ -39,11 +39,35 @@ For information about changes to the web chat integration, see the [Web Chat rel
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
 
+## 11 August 2022
+{: #assistant-aug112022}
+{: release-note}
+
+Algorithms versions available in more languages
+:   Algorithms version options are now available in Arabic, Czech, and Dutch. Algorithms versions allows you to choose which version of {{site.data.keyword.conversationshort}} algorithms to apply to your future trainings. For more information, see [Algorithm versions](/docs/assistant?topic=assistant-intent-detection).
+
+Improved enhanced intent detection available in more languages
+:   Previously, the exact match in enhanced intent detection was improved to better handle small differences between training examples and runtime utterances when the differences do not change the meaning of a sentence. For example, suppose in your training examples, `covid-19` is in the `#covid` intent and `@doctortype_facilitytype around Palm Beach` is in the `#find_provide_master` intent. In this example, the `@doctortype_facilitytype` direct entity reference contains entity values, including `hospital`. At run time, `covid19` is predicted as 100% confident for the `#covid` intent, and `hospital around palm beach` is predicted as 100% confident for the `#find_provide_master` intent.
+
+   This update now includes the following languages: Arabic, Czech, and Dutch. For more information, see [Accessing intents](/docs/assistant?topic=assistant-expression-language#expression-language-intent).
+
+## 24 June 2022
+{: #assistant-jun242022}
+{: release-note}
+
+Algorithms versions available in more languages
+:   Algorithms version options are now available in Chinese (Traditional), Japanese, and Korean. Algorithms versions allows you to choose which version of {{site.data.keyword.conversationshort}} algorithms to apply to your future trainings. For more information, see [Algorithm versions](/docs/assistant?topic=assistant-intent-detection).
+
+Improved enhanced intent detection available in more languages
+:   Previously, the exact match in enhanced intent detection was improved to better handle small differences between training examples and runtime utterances when the differences do not change the meaning of a sentence. For example, suppose in your training examples, `covid-19` is in the `#covid` intent and `@doctortype_facilitytype around Palm Beach` is in the `#find_provide_master` intent. In this example, the `@doctortype_facilitytype` direct entity reference contains entity values, including `hospital`. At run time, `covid19` is predicted as 100% confident for the `#covid` intent, and `hospital around palm beach` is predicted as 100% confident for the `#find_provide_master` intent.
+
+   This update now includes the following languages: Chinese (Simplified), Chinese (Traditional), German, Japanese, Korean, and Portuguese. For more information, see [Accessing intents](/docs/assistant?topic=assistant-expression-language#expression-language-intent).
+
 ## 16 June 2022
 {: #assistant-jun162022}
 {: release-note}
 
-Algorithms versions 
+Algorithms versions
 :   Algorithms versions allows you to choose which version of {{site.data.keyword.conversationshort}} algorithms to apply to your future trainings. In the **Options** section of a dialog skill, **Algorithm Versions** replaces **Intent Detection**. You can choose to use the more stable and fully supported version of algorithms by selecting **Baseline**. This is the latest mature version that you may want to use for your live assistant. Or, you can choose **Beta** to preview and test what is coming. For more information, see [Algorithm versions](/docs/assistant?topic=assistant-intent-detection).
 
 Algorithm beta version (2022-06-10)
