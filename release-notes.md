@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-09-12"
 
 subcollection: assistant
 
@@ -38,6 +38,15 @@ For information about changes to the web chat integration, see the [Web Chat rel
 
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
+
+## 12 September 2022
+{: #assistant-sep122022}
+{: release-note}
+
+Fix for fuzzy matching in German
+:   In some cases, German closed entities were incorrectly matching shorter values over longer values. For example, suppose that you defined two entity values, `Pflege` and `Pflegegeld` in one entity. If a customer accidentally input `Pflegegelb`, the assistant would incorrectly match with `Pflege` rather than `Pflegegeld`.
+
+  With this fix, the `Pflegegelb` input value would correctly match `Pflegegeld`, not `Pflege`. For more information, see [How fuzzy matching works](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching).
 
 ## 11 August 2022
 {: #assistant-aug112022}
