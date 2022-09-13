@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-09-13"
+lastupdated: "2022-09-12"
 
 subcollection: assistant
 
@@ -39,8 +39,8 @@ For information about changes to the web chat integration, see the [Web Chat rel
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
 
-## 13 September 2022
-{: #assistant-sep132022}
+## 12 September 2022
+{: #assistant-sep122022}
 {: release-note}
 
 Fix for fuzzy matching in German
