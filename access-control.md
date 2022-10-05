@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-07"
+lastupdated: "2022-10-05"
 
 subcollection: assistant
 
@@ -233,7 +233,7 @@ The following table shows the UI and API actions that can be performed by differ
 
 | Action | Reader | Writer | Manager |
 |--------|--------|--------|---------|
-| Open and view an assistant, skill, or integration | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Open and view an assistant or skill | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | View API details for an assistant or skill | | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Create an assistant or skill | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Rename, edit, delete an assistant or skill | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
