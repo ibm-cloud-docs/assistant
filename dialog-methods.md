@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2022-08-29"
+lastupdated: "2022-10-06"
 
 subcollection: assistant
 
@@ -696,7 +696,7 @@ For example, you have a context variable that contains an array with a list of f
 ```json
 "flights": [
       {
-        "flight": "DL1040",
+        "flight": "AZ1040",
         "origin": "JFK",
         "carrier": "Alitalia",
         "duration": 485,
@@ -718,7 +718,7 @@ For example, you have a context variable that contains an array with a list of f
         "departure_time": "07:00"
       },
       {
-        "flight": "DL4379",
+        "flight": "VS4379",
         "origin": "BOS",
         "carrier": "Virgin Atlantic",
         "duration": 385,
@@ -739,7 +739,7 @@ The available flights are <? $flights.joinToArray("%e.flight%") ?>.
 ```
 {: codeblock}
 
-The dialog node response is `The available flights are ["DL1040","DL1710","DL4379"].`
+The dialog node response is `The available flights are ["AZ1040","DL1710","VS4379"].`
 
 To display the array as text, use the `join` method in the expression like this:
 
@@ -748,7 +748,7 @@ The available flights are <? $flights.joinToArray("%e.flight%").join(", ") ?>.
 ```
 {: codeblock}
 
-The response is, `The available flights are DL1040, DL1710, DL4379.`
+The response is, `The available flights are AZ1040, DL1710, VS4379.`
 
 #### Complex template
 {: #dialog-methods-complex-template}
@@ -776,7 +776,7 @@ The response looks like this:
 
 ```
 The flight info is
-Flight number: DL1040
+Flight number: AZ1040
 Airline: Alitalia
 Departure date: 2019-02-02
 Departure time: 16:45
@@ -788,7 +788,7 @@ Departure date: 2019-02-02
 Departure time: 07:00
 Arrival time: 10:19
 
-Flight number: DL4379
+Flight number: VS4379
 Airline: Virgin Atlantic
 Departure date: 2019-02-02
 Departure time: 21:40
@@ -823,16 +823,16 @@ This is the dialog node response:
 ```json
 [
   {
-    "arrival":"Flight DL1040 arrives on 2019-02-03 at 07:00.",
-    "departure":"Flight DL1040 departs on 2019-02-02 at 16:45."
+    "arrival":"Flight AZ1040 arrives on 2019-02-03 at 07:00.",
+    "departure":"Flight AZ1040 departs on 2019-02-02 at 16:45."
     },
   {
     "arrival":"Flight DL1710 arrives on 2019-02-02 at 10:19.",
     "departure":"Flight DL1710 departs on 2019-02-02 at 07:00."
     },
   {
-    "arrival":"Flight DL4379 arrives on 2019-02-03 at 09:05.",
-    "departure":"Flight DL4379 departs on 2019-02-02 at 21:40."
+    "arrival":"Flight VS4379 arrives on 2019-02-03 at 09:05.",
+    "departure":"Flight VS4379 departs on 2019-02-02 at 21:40."
     }
   ]
   ```
@@ -1081,7 +1081,7 @@ For example:
 ### now(String time zone)
 {: #dialog-methods-dates-now}
 
-Returns a string with the current date and time in the format `yyyy-MM-dd HH:mm:ss`. Optionally specify a `timezone` value to get the current date and time for a specific time zone, with a returned string in the format `yyyy-MM-dd HH:mm:ss VV`.
+Returns a string with the current date and time in the format `yyyy-MM-dd HH:mm:ss`. Optionally specify a `timezone` value to get the current date and time for a specific time zone, with a returned string in the format `yyyy-MM-dd HH:mm:ss 'GMT'XXX`.
 
 - Static function.
 - The other date/time methods can be invoked on date-time values that are returned by this function and it can be passed in as their argument.
