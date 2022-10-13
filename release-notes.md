@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-09-12"
+lastupdated: "2022-10-13"
 
 subcollection: assistant
 
@@ -38,6 +38,17 @@ For information about changes to the web chat integration, see the [Web Chat rel
 
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
+
+## 12 October 2022
+{: #assistant-oct122022}
+{: release-note}
+
+`now(String timezone)` method output includes time zone offset
+:   The string returned from the `now(String timezone)` method now includes the time zone offset (such as `-05:00`). The new format is `yyyy-MM-dd HH:mm:ss 'GMT'XXX` (where `XXX` represents the time zone offset). This change enables accurate time zone computations when used with other date and time methods such as `before`, `after`, and `reformatDateTime`.
+
+    If you have an existing action or dialog that depends on the previous format, you can adapt it by reformatting the output using `now(timezone).reformatDateTime('yyyy-MM-dd HH:mm:ss')`.
+    
+    For more information, see [Expression language methods]((https://cloud.ibm.com/docs/assistant?topic=assistant-dialog-methods#dialog-methods-date-time).
 
 ## 12 September 2022
 {: #assistant-sep122022}
