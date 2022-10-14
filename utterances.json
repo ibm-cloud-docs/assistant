@@ -68,19 +68,6 @@
     "fix a 401 error for assistant",
     "401 error code in WA"
   ],
-  "faqs-getting-403": [
-    "403 response code is being returned in Assistant",
-    "what does a 403 response mean in Assistant",
-    "403 forbidden error although i put in my api key correctly into Assistant",
-    "Assistant gives 403 forbidden error although i put in my api key correctly",
-    "403 response code in Chatbot",
-    "403 response code for watson assistant",
-    "chatbot giving 403 response code",
-    "what does 403 response code mean in Assistant",
-    "getting a 403 error in Assistant",
-    "why am I getting 403 error for WA",
-    "403 error code in WA"
-  ],
   "faqs-cannot-fetch-token": [
     "Assistants could not be loaded at this time",
     "error that assistant could not be loaded at this time",
@@ -182,30 +169,18 @@
   "faqs-get-started": [
     "have questions about watson assistant",
     "How can i create a assistant",
-    "can I create a skill",
     "know more about watson assistant",
     "how to start with watson assistant",
-    "how to add skill to asistant in watson assistant",
     "am trying to make a watson assistant",
-    "How to I build a Chat bot without programing",
     "How to get started with Watson Assistant",
     "how do I create my own chatbot",
     "i want to create a chatbot",
-    "cant setup watson assistant",
-    "where is how to build chatbots",
     "creating a Watson Assistant",
-    "Watson Assistant",
-    "Assistant",
-    "where is Watson Assistant",
-    "need to create an instance of watson assistant",
-    "chatbot create",
+    "where is Watson Assistant"
     "trying to create a Watson Assistant service",
     "how do I create an assistant service",
     "want to create a free chatbot", 
     "Can I create a chatbot for free using Lite plan",
-    "where should i click to build a chatbot",
-    "looking for conversation services", 
-    "conversation tutorial",
     "tutorial to build a chatbot",
     "getting started with Watson Assistant",
     "example for creating an assistant",
@@ -214,7 +189,6 @@
     "How to build a chatbot",
     "i want to make chatbot",
     "i want to make chatbot so tell me how",
-    "searching for ibm watson assistant",
     "how to make chatbot"
   ],
   "faqs-export-conversation": [
@@ -375,22 +349,22 @@
     "training data take a long time"
   ],
   "faqs-webhook-ip": [
-		"range of ip addresses for webhook in Watson Assistant",
-		"ip address for a WA webhook", 
-		"what IP range goes in my firewall for web hooks", 
-		"for firewall I need to know the IP that Assistant webhook calls are initiated from", 
-		"are there static IP ranges for Watson Assistant webhooks",
-		"I need an ip range for Assistant",
-		"is there an ip range for Watson Assistant"
-	],
+    "range of ip addresses for webhook in Watson Assistant",
+    "ip address for a WA webhook", 
+    "what IP range goes in my firewall for web hooks", 
+    "for firewall I need to know the IP that Assistant webhook calls are initiated from", 
+    "are there static IP ranges for Watson Assistant webhooks",
+    "I need an ip range for Assistant",
+    "is there an ip range for Watson Assistant"
+  ],
   "faqs-see-mau": [
-		"How do I see my monthly active users in Watson Assistant",
-		"where are monthly active users", 
-		"list monthly active users", 
-		"I can't find monthly active users", 
-		"what is my total monthly active users",
-		"I need to see monthly active users",
+    "How do I see my monthly active users in Watson Assistant",
+    "where are monthly active users", 
+    "list monthly active users", 
+    "I can't find monthly active users", 
+    "what is my total monthly active users",
+    "I need to see monthly active users",
     "check monthly active users",
-		"is there a list of monthly active users"
-	]
+    "is there a list of monthly active users"
+  ]
 }
