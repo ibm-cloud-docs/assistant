@@ -20,9 +20,6 @@ toc:
           - gs-dialog.md
       - assistants.md
       - tool-overview.md
-      - link:
-          label: Banking Assistant
-          href: https://watson-conversation-duo-dev.ng.bluemix.net
       - sample-apps.md
       - topicgroup:
           label: Release notes
