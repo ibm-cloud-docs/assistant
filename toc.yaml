@@ -54,7 +54,9 @@ toc:
               - intents.md
               - catalog.md
               - intent-recommendations.md
-              - intent-detection.md
+              - link:
+                  label: Algorithm version
+                  href: /watson-assistant/watson-assistant-algorithm-version
           - topicgroup:
               label: Building a conversational flow
               topics:
