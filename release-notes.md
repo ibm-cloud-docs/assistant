@@ -63,8 +63,8 @@ Fix for fuzzy matching in German
 {: #assistant-aug112022}
 {: release-note}
 
-Algorithms versions available in more languages
-:   Algorithms version options are now available in Arabic, Czech, and Dutch. Algorithms versions allows you to choose which version of {{site.data.keyword.conversationshort}} algorithms to apply to your future trainings. For more information, see [Algorithm versions](/docs/assistant?topic=assistant-intent-detection).
+Algorithm version options available in more languages
+:   Algorithm version options are now available in Arabic, Czech, and Dutch. This allows you to choose which {{site.data.keyword.conversationshort}} algorithm to apply to your future trainings. For more information, see [Algorithm version](/docs/watson-assistant?topic=watson-assistant-algorithm-version){: external}.
 
 Improved enhanced intent detection available in more languages
 :   Previously, the exact match in enhanced intent detection was improved to better handle small differences between training examples and runtime utterances when the differences do not change the meaning of a sentence. For example, suppose in your training examples, `covid-19` is in the `#covid` intent and `@doctortype_facilitytype around Palm Beach` is in the `#find_provide_master` intent. In this example, the `@doctortype_facilitytype` direct entity reference contains entity values, including `hospital`. At run time, `covid19` is predicted as 100% confident for the `#covid` intent, and `hospital around palm beach` is predicted as 100% confident for the `#find_provide_master` intent.
@@ -75,8 +75,8 @@ Improved enhanced intent detection available in more languages
 {: #assistant-jun242022}
 {: release-note}
 
-Algorithms versions available in more languages
-:   Algorithms version options are now available in Chinese (Traditional), Japanese, and Korean. Algorithms versions allows you to choose which version of {{site.data.keyword.conversationshort}} algorithms to apply to your future trainings. For more information, see [Algorithm versions](/docs/assistant?topic=assistant-intent-detection).
+Algorithm version options available in more languages
+:   Algorithm version options are now available in Chinese (Traditional), Japanese, and Korean. This allows you to choose which {{site.data.keyword.conversationshort}} algorithm to apply to your future trainings. For more information, see [Algorithm version](/docs/watson-assistant?topic=watson-assistant-algorithm-version){: external}.
 
 Improved enhanced intent detection available in more languages
 :   Previously, the exact match in enhanced intent detection was improved to better handle small differences between training examples and runtime utterances when the differences do not change the meaning of a sentence. For example, suppose in your training examples, `covid-19` is in the `#covid` intent and `@doctortype_facilitytype around Palm Beach` is in the `#find_provide_master` intent. In this example, the `@doctortype_facilitytype` direct entity reference contains entity values, including `hospital`. At run time, `covid19` is predicted as 100% confident for the `#covid` intent, and `hospital around palm beach` is predicted as 100% confident for the `#find_provide_master` intent.
@@ -87,8 +87,8 @@ Improved enhanced intent detection available in more languages
 {: #assistant-jun162022}
 {: release-note}
 
-Algorithms versions
-:   Algorithms versions allows you to choose which version of {{site.data.keyword.conversationshort}} algorithms to apply to your future trainings. In the **Options** section of a dialog skill, **Algorithm Versions** replaces **Intent Detection**. You can choose to use the more stable and fully supported version of algorithms by selecting **Baseline**. This is the latest mature version that you may want to use for your live assistant. Or, you can choose **Beta** to preview and test what is coming. For more information, see [Algorithm versions](/docs/assistant?topic=assistant-intent-detection).
+Algorithm version
+:   Algorithm version allows you to choose which {{site.data.keyword.conversationshort}} algorithm to apply to your future trainings. In the **Options** section of a dialog skill, **Algorithm Version** replaces **Intent Detection**. For more information, see [Algorithm version](/docs/watson-assistant?topic=watson-assistant-algorithm-version){: external}.
 
 Algorithm beta version (2022-06-10)
 :   Algorithm beta version (2022-06-10) includes a new irrelevance detection algorithm to improve off-topic detection accuracy. Utterances with similar meanings are expected to have more similar confidences in comparison to previous irrelevance detection algorithms. For example, in the Customer Care Sample Skill, the training utterance `please suggest route from times square` has 100% confidence at runtime. Currently in IBM Cloud, the utterance `please suggest route from central park` gets a low confidence and could be flagged as irrelevant. With beta version (2022-06-10), the same utterance is expected to be predicted correctly as #Customer_Care_Store_Location with a ~46% confidence.
@@ -118,7 +118,7 @@ Language support improvements
     - Korean: Add “잘 자 요” as a synonym for “잘자요”
 
 Enhanced intent detection available for Portuguese, German, and Simplified Chinese
-:   Enhanced intent detection is now available for Portuguese, German, and Simplified Chinese. The enhanced intent detection model improves your assistant's ability to understand what customers want. For more information, see [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).
+:   Enhanced intent detection is now available for Portuguese, German, and Simplified Chinese. The enhanced intent detection model improves your assistant's ability to understand what customers want.
 
 ## 28 April 2022
 {: #assistant-apr282022}
@@ -281,15 +281,13 @@ Analytics Overview change
 {: release-note}
 
 Enhanced intent detection for French, Italian, and Spanish dialog skills
-:   The new intent detection model improves your assistant's ability to understand what customers want. This model is now available in dialog skills using French, Italian, and Spanish. For more information, see [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).
+:   The new intent detection model improves your assistant's ability to understand what customers want. This model is now available in dialog skills using French, Italian, and Spanish.
 
 Change to the irrelevance detection option
 :   As of this release, new English dialog skills no longer include the option to choose between the **Enhanced** or **Existing** irrelevance detection. By default, intent detection and irrelevance detection are paired like this:
 
     - If you use the dialog skill options to choose enhanced intent detection, it is automatically paired with enhanced irrelevance detection.
     - If you use the dialog skill options to choose existing intent detection, it is automatically paired with existing irrelevance detection.
-
-    For more information, see [Defining what's irrelevant](/docs/assistant?topic=assistant-irrelevance-detection) and [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).
 
     If necessary, you can use the [Update workspace API](/apidocs/assistant/assistant-v1?curl=#updateworkspace){: external} to set your English-language assistant to one of the four combinations of intent and irrelevance detection:
 
@@ -374,7 +372,7 @@ Connect to your existing service desks
 {: release-note}
 
 Intent detection updates
-:   Intent detection for the English language has been updated with the addition of new word-piece algorithms. These algorithms improve tolerance for out-of-vocabulary words and misspelling. This change affects only English-language assistants, and only if the enhanced intent recognition model is enabled. (For more information about the enhanced intent recognition model, and how to determine whether it is enabled, see [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).)
+:   Intent detection for the English language has been updated with the addition of new word-piece algorithms. These algorithms improve tolerance for out-of-vocabulary words and misspelling. This change affects only English-language assistants, and only if the enhanced intent recognition model is enabled.
 
 Automatic retraining of old skills and workspaces
 :   As of August 23, 2021, {{site.data.keyword.conversationshort}} enabled automatic retraining of existing skills in order to take advantage of updated algorithms. The {{site.data.keyword.conversationshort}} service will continually monitor all ML models, and will automatically retrain those models that have not been retrained within the previous 6 months. For more information, see [Automatic retraining of old skills and workspaces](/docs/assistant?topic=assistant-skill-auto-retrain).
@@ -843,7 +841,7 @@ Introducing the coverage metric!
 :   Want a quick way to see how your dialog is doing at responding to customer queries? Enable the new coverage metric to find out. The coverage metric measures the rate at which your dialog is confident that it can address a customer's request per message. For conversations that are not covered, you can review the logs to learn more about what the customer wanted. For the metric to work, you must design your dialog to include an *Anything else* node that is processed when no other dialog node intents are matched. For more information, see [Graphs and statistics](/docs/assistant?topic=assistant-logs-overview#logs-overview-graphs).
 
 Try out the enhanced intent detection model
-:   The new model, which is being offered as a beta feature in English-language dialog and actions skills, is faster and more accurate. It combines traditional machine learning, transfer learning, and deep learning techniques in a cohesive model that is highly responsive at run time. For more information, see [Improved intent recognition](/docs/assistant?topic=assistant-intent-detection).
+:   The new model, which is being offered as a beta feature in English-language dialog and actions skills, is faster and more accurate. It combines traditional machine learning, transfer learning, and deep learning techniques in a cohesive model that is highly responsive at run time.
 
 ## 3 November 2020
 {: #assistant-nov032020}

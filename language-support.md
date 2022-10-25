@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-10-25"
 
 subcollection: assistant
 
@@ -21,6 +21,7 @@ subcollection: assistant
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
+{:external: target="_blank" .external}
 
 {{site.data.content.newlink}}
 
@@ -87,7 +88,7 @@ In the following tables, the level of language and feature support is indicated 
 ### Intent feature support details
 {: #language-support-intents}
 
-| Language | **[Content Catalog](/docs/assistant?topic=assistant-catalog)** | **[Algorithms versions](/docs/assistant?topic=assistant-intent-detection)** |
+| Language | **[Content Catalog](/docs/assistant?topic=assistant-catalog)** | **[Algorithm version](/docs/watson-assistant?topic=watson-assistant-algorithm-version )** |
 |:---:|:---:|:---:|
 | **English (en)**                   | GA | GA |
 | **Arabic (ar)**                    | GA (except Covid-19) | GA |
