@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2022-10-05"
+lastupdated: "2022-10-25"
 
 subcollection: assistant
 
@@ -237,7 +237,7 @@ The following table shows the UI and API actions that can be performed by differ
 | View API details for an assistant or skill | | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Create an assistant or skill | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Rename, edit, delete an assistant or skill | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Create, edit, or delete an integration | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Open, view, create, edit, or delete an integration | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Add, swap, or remove skills | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Swap skill versions for an assistant | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Revert to a previous dialog skill version | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
