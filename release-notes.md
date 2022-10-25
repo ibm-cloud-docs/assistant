@@ -40,7 +40,7 @@ On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversat
 {: note}
 
 ## 12 October 2022
-{: #watson-assistant-oct122022}
+{: #assistant-oct122022}
 {: release-note}
 
 `now(String timezone)` method output includes time zone offset
