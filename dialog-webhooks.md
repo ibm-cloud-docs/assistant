@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-19"
+lastupdated: "2022-11-03"
 
 subcollection: assistant
 
@@ -65,7 +65,7 @@ The programmatic call to the external service must meet these requirements:
 - The call must be a POST HTTP request.
 - The request body must be a JSON object (`Content-Type: application/json`).
 - The response must be a JSON object (`Accept: application/json`).
-- The call must return in **8 seconds or less**.
+- The call must return in **8 seconds or less**. If invoked more than once in a single message call through [dialog nodes](#dialog-webhooks-dialog-node-callout), all of those invocations must return in 8 seconds or less.
 
 If your external service supports only GET requests, or if you need to specify URL parameters dynamically at run time, consider creating an intermediate service that accepts a POST request with a JSON payload containing any runtime values. The intermediate service can then make a request to the target service, passing these values as URL parameters, and then return the response to the dialog.
 {: tip}
