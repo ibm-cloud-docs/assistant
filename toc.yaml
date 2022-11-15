@@ -198,7 +198,9 @@ toc:
             - link:
                 label: Events
                 href: https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events
-      - at-events.md
+      - link:
+          label: Using IBM Cloud Activity Tracker to audit user activity
+          href: /watson-assistant?topic=watson-assistant-admin-auditing
       - skill-auto-retrain.md
       - dialog-methods.md
       - expression-language.md
