@@ -25,7 +25,7 @@ toc:
           label: Release notes
           topics:
           - release-notes.md
-          - /watson-assistant/watson-assistant-release-notes-chat
+          - include: ../watson-assistant/release-notes-chat.md
 
   - navgroup:
       id: tutorial
@@ -54,9 +54,7 @@ toc:
               - intents.md
               - catalog.md
               - intent-recommendations.md
-              - link:
-                  label: Algorithm version
-                  href: /watson-assistant/watson-assistant-algorithm-version
+              - include: ../watson-assistant/algorithm-version.md
           - topicgroup:
               label: Building a conversational flow
               topics:
@@ -173,12 +171,12 @@ toc:
                 topics:
                 - api-overview.md
                 - api-methods.md
-                - api-client.md
+                - include: /watson-assistant/api-client.md
                 - api-migration.md
                 - api-context.md
                 - api-dialog-responses.md
                 - api-input-attachments.md
-                - /watson/watson-using-sdks
+                - include: /watson/getting-started-sdks.md
 
   - navgroup:
       id: reference
@@ -198,9 +196,7 @@ toc:
             - link:
                 label: Events
                 href: https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events
-      - link:
-          label: Using IBM Cloud Activity Tracker to audit user activity
-          href: /watson-assistant?topic=watson-assistant-admin-auditing
+      - include: ../watson-assistant/admin-auditing.md
       - skill-auto-retrain.md
       - dialog-methods.md
       - expression-language.md
