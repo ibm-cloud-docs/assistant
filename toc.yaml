@@ -171,12 +171,12 @@ toc:
                 topics:
                 - api-overview.md
                 - api-methods.md
-                - include: /watson-assistant/api-client.md
+                - include: ../watson-assistant/api-client.md
                 - api-migration.md
                 - api-context.md
                 - api-dialog-responses.md
                 - api-input-attachments.md
-                - include: /watson/getting-started-sdks.md
+                - include: ../watson/getting-started-sdks.md
 
   - navgroup:
       id: reference
