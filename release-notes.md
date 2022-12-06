@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-13"
+lastupdated: "2022-12-06"
 
 subcollection: assistant
 
@@ -38,6 +38,13 @@ For information about changes to the web chat integration, see the [Web Chat rel
 
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
+
+## 6 December 2022
+{: #assistant-dec062022}
+{: release-note}
+
+`String.toJson()` expression method
+:   The new [`String.toJson()`](/docs/assistant?topic=assistant-dialog-methods#dialog-methods-strings-toJson) method parses a string containing JSON data and returns a JSON object or array.
 
 ## 12 October 2022
 {: #assistant-oct122022}
