@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2022-10-06"
+lastupdated: "2022-12-06"
 
 subcollection: assistant
 
@@ -2199,6 +2199,30 @@ Results in this output:
 }
 ```
 {: codeblock}
+
+### String.toJson()
+{: #dialog-methods-strings-toJson}
+
+This method parses a string that contains JSON data and returns a JSON object or array, as in this example:
+
+```
+${json_var}.toJson()
+```
+
+If the session variable `${json_var}` contains the following string:
+
+```string
+"{ \"firstname\": \"John\", \"lastname\": \"Doe\" }"
+```
+
+the `toJson()` method returns the following object:
+
+```json
+{
+  "firstname": "John",
+  "lastname": "Doe"
+}
+```
 
 ### String.toLowerCase()
 {: #dialog-methods-strings-toLowerCase}
