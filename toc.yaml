@@ -20,7 +20,6 @@ toc:
           - gs-dialog.md
       - assistants.md
       - tool-overview.md
-      - sample-apps.md
       - topicgroup:
           label: Release notes
           topics:
