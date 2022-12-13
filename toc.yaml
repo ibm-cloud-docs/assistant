@@ -134,8 +134,7 @@ toc:
                label: Enhancing security
                topics:
                 - access-control.md
-                - information-security.md
-                - security.md
+                - include: ../watson-assistant/admin-securing.md
           - topicgroup:
                 label: Advanced development
                 topics:
@@ -204,7 +203,7 @@ toc:
       - recovery.md
       - phone-context.md
       - commands-sms.md
-      - services-information.md
+      - include: ../watson-assistant/admin-managing-plan.md
       - topicgroup:
           label: System entities
           topics:
