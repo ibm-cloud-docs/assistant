@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-12-14"
 
 subcollection: assistant
 
@@ -89,7 +89,7 @@ Detailed graphs provide additional information. Click a data point on the graphs
 - *Active users* - The number of unique users who have engaged with your assistant within the selected time period.
 - *Average conversations per user* - The total conversations divided by the total number of unique users during the selected time period.
 
-    Statistics for *Active users* and *Average conversations per user* require a unique `user_id` parameter to be specified with the messages. This value is typically specified by all integrations because it is used for billing purposes. For more information, see [User-based plans explained](/docs/assistant?topic=assistant-services-information#services-information-user-based-plans).
+    Statistics for *Active users* and *Average conversations per user* require a unique `user_id` parameter to be specified with the messages. This value is typically specified by all integrations because it is used for billing purposes. For more information, see [User-based plans explained](/docs/assistant?topic=assistant-admin-managing-plan#admin-managing-plan-user-based).
     {: important}
 
 ## Controls

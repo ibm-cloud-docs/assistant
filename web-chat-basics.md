@@ -145,7 +145,7 @@ To avoid this problem, use a server-side first-party cookie in your web applicat
 
 ### More information
 
-For more information about billing, see [User-based plans explained](/docs/assistant?topic=assistant-services-information#services-information-user-based-plans).
+For more information about billing, see [User-based plans explained](/docs/assistant?topic=assistant-admin-managing-plan#admin-managing-plan-user-based).
 
 For more information about MAU limits per plan, see [Web chat integration limits](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-limits).
 
