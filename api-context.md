@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2022-12-14"
 
 subcollection: assistant
 
@@ -41,7 +41,7 @@ You can choose whether you want the context to be maintained by your application
 
   A session ID is automatically generated at the beginning of the conversation, but no session data is stored by the service. With the stateless `message` API, the context is always included with each message response. For more information, see the [v2 API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#messagestateless){: external}.
 
-**Important:** One use of the context is to specify a unique user ID for each end user who interacts with the assistant. For user-based plans, this ID is used for billing purposes. (For more information, see [User-based plans](/docs/assistant?topic=assistant-services-information#services-information-user-based-plans).)
+**Important:** One use of the context is to specify a unique user ID for each end user who interacts with the assistant. For user-based plans, this ID is used for billing purposes. (For more information, see [User-based plans](/docs/assistant?topic=assistant-admin-managing-plan#admin-managing-plan-user-based).)
 
 There are two types of context:
 

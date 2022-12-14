@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-12-14"
 
 subcollection: assistant
 content-type: tutorial
@@ -222,5 +222,3 @@ This tutorial is built around a simple example. For a real application, you need
 
     - Add more dialog nodes to design complex conversational exchanges. See [Building a complex dialog](/docs/assistant?topic=assistant-tutorial).
     - Learn techniques for getting customers to share information that the assistant needs before it can provide a useful response. See [Adding a node with slots](/docs/assistant?topic=assistant-tutorial-slots).
-
-- Check out more [sample apps](/docs/assistant?topic=assistant-sample-apps) to get ideas.

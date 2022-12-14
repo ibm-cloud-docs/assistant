@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-12-14"
 
 subcollection: assistant
 
@@ -41,7 +41,7 @@ Generating a free phone number is available only with new phone integrations. If
 
 When your customer makes a phone call using the telephone number connected to your assistant, the phone integration answers. The integration converts output from your assistant into voice audio by using the {{site.data.keyword.texttospeechfull}} service. The audio is sent to the telephone network through the SIP trunk. When the customer replies, the voice input is converted into text by using the {{site.data.keyword.speechtotextfull}} service.
 
-This feature is available only to Plus or Enterprise plan users. Note that {{site.data.keyword.speechtotextshort}} and {{site.data.keyword.texttospeechshort}} charges are included in the cost of a [monthly active user](/docs/assistant?topic=assistant-services-information#services-information-user-based-plans) (MAU).
+This feature is available only to Plus or Enterprise plan users. Note that {{site.data.keyword.speechtotextshort}} and {{site.data.keyword.texttospeechshort}} charges are included in the cost of a [monthly active user](/docs/assistant?topic=assistant-admin-managing-plan#admin-managing-plan-user-based) (MAU).
 
 Depending on the architecture of your existing telephony infrastructure, there are multiple ways you might integrate it with Watson Assistant. For more information about common integration patterns, read the blog post [Hey Watson, can I have your number?](https://medium.com/ibm-watson/hey-watson-can-i-have-your-number-7de8fc7621ed) on Medium.
 {: tip}

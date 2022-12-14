@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2022-12-14"
 
 subcollection: assistant
 
@@ -51,8 +51,10 @@ To upgrade your plan, complete these steps:
 
     - If you upgrade to an Enterprise with Data Isolation plan, you cannot do an in-place upgrade of your service instance. An Enterprise with Data Isolation plan instance must be provisioned for you first. After the service instance is provisioned, you must export your dialog skills from the old plan instance, and import them into the new plan instance. For more information, see [Backing up and restoring data](/docs/assistant?topic=assistant-backup).
 
-    - When you upgrade from a legacy Standard plan, you change the metrics that are used for billing purposes. Instead of basing billing on API usage, the Plus plan bases billing on the number of monthly active users. If you built a custom app to deploy your assistant, you might need to update the app. Ensure that the API calls from the app include user ID information. For more information, see [User-based plans explained](/docs/assistant?topic=assistant-services-information#services-information-user-based-plans).
+    - When you upgrade from a legacy Standard plan, you change the metrics that are used for billing purposes. Instead of basing billing on API usage, the Plus plan bases billing on the number of monthly active users. If you built a custom app to deploy your assistant, you might need to update the app. Ensure that the API calls from the app include user ID information. For more information, see [User-based plans explained](/docs/assistant?topic=assistant-admin-managing-plan#admin-managing-plan-user-based).
 
     - You cannot change from a Trial plan to a Lite plan.
 
 For answers to common questions about subscriptions, see the [How you're charged](/docs/billing-usage?topic=billing-usage-charges){: external}.
+
+Still have questions? [Fill out this form](https://cloud.ibm.com/docs/assistant?topic=assistant-upgrade&focusArea=CDP%20-%20DataAI%20-%20Watson%20Assistant%20CSM&schedulerform){: external} to schedule a consultation with IBM.
