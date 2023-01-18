@@ -65,7 +65,7 @@ toc:
               - dialog-runtime-context.md
               - dialog-tasks.md
               - dialog-runtime.md
-              - dialog-runtime-spell-check.md
+              - include: ../watson/autocorrection.md
               - dialog-slots.md
           - entities.md
           - versions.md
