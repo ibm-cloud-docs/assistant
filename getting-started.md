@@ -30,6 +30,8 @@ subcollection: assistant
 {:video: .video}
 {:step: data-tutorial-type='step'}
 
+{{site.data.content.newlink}}
+
 # Getting started with {{site.data.keyword.conversationshort}}
 {: #getting-started}
 
