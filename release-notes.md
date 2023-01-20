@@ -39,6 +39,13 @@ For information about changes to the web chat integration, see the [Web Chat rel
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
 
+## 18 January 2023
+{: #assistant-jan182023}
+{: release-note}
+
+Algorithm version stability improvement
+:   As of this date, the **Latest (01 Jun 2022)** and **Beta** algorithm versions now have more stable behavior across retrained models, in the presence of overlapping entities (the same entity value belonging to more than one entity type). Previously, when there were overlapping entities definitions, confidences could differ across different retraining. With this improvement, you can expect to see similar confidences. For more information, see [Algorithm version](/docs/watson-assistant?topic=watson-assistant-algorithm-version).
+
 ## 11 January 2023
 {: #assistant-jan112023}
 {: release-note}
