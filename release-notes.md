@@ -44,7 +44,7 @@ On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversat
 {: release-note}
 
 Algorithm version 01-Jun-2022 uses enhanced intent detection by default
-:   As of this date, the latest algorithm version dated 01-Jun-2022 now uses enhanced intent detection by default. You can notice small changes in intent detection behavior when changes are made to an assistant that previously didn't have enhanced intent detection enabled. For more information, see For more information, see [Algorithm version](/docs/assistant?topic=assistant-algorithm-version).
+:   As of this date, the latest algorithm version dated 01-Jun-2022 now uses enhanced intent detection by default. You can notice small changes in intent detection behavior when changes are made to an assistant that previously didn't have enhanced intent detection enabled. For more information, see [Algorithm version](/docs/assistant?topic=assistant-algorithm-version).
 
 ## 6 December 2022
 {: #assistant-dec062022}
