@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-12-14"
+  years: 2015, 2023
+lastupdated: "2023-01-26"
 
 subcollection: assistant
 
@@ -77,8 +77,6 @@ Detailed graphs provide additional information. Click a data point on the graphs
     ![Shows the two coverage metrics for volume and trend](images/coverage-metric.png)
 
     The coverage metric requires that your dialog contain an *Anything else* node. For more information, see [Ending the conversation gracefully](/docs/assistant?topic=assistant-dialog-start#dialog-start-anything-else).
-
-    If your coverage rate is low, consider using intent recommendations to help you fill in the gaps in your coverage. For more information, see [Getting help with intents](/docs/assistant?topic=assistant-intent-recommendations).
 
     The containment and coverage metrics are available to Plus or Enterprise plan users.
     {: note}

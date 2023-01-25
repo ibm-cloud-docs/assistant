@@ -52,7 +52,6 @@ toc:
               topics:
               - intents.md
               - catalog.md
-              - intent-recommendations.md
               - include: ../watson-assistant/algorithm-version.md
           - topicgroup:
               label: Building a conversational flow

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-10-25"
+  years: 2015, 2023
+lastupdated: "2023-01-26"
 
 subcollection: assistant
 
@@ -106,31 +106,10 @@ In the following tables, the level of language and feature support is indicated 
 | **Universal (xx)**                 | NA | NA |
 {: caption="Table 3. Intent feature support details" caption-side="top"}
 
-### Recommendations feature support details
-{: #language-support-recommendations}
-
-| Language | **[User example recommendations](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations-task)** | **[Intent recommendations](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-intent-recommendations-task)** |
-|:---:|:---:|:---:|
-| **English (en)**                   | GA | GA |
-| **Arabic (ar)**                    | NA | NA |
-| **Chinese (Simplified) (zh-cn)**   | NA | NA |
-| **Chinese (Traditional) (zh-tw)**  | NA | NA |
-| **Czech (cs)**                     | NA | NA |
-| **Dutch (nl)**                     | NA | NA |
-| **French (fr)**                    | NA | GA |
-| **German (de)**                    | NA | GA |
-| **Italian (it)**                   | NA | GA |
-| **Japanese (ja)**                  | GA | NA |
-| **Korean (ko)**                    | NA | NA |
-| **Portuguese (Brazilian) (pt-br)** | NA | GA |
-| **Spanish (es)**                   | NA | GA |
-| **Universal (xx)**                 | NA | NA |
-{: caption="Table 4. Recommendations feature support details" caption-side="top"}
-
 ### User input processing support details
 {: #language-support-input}
 
-| Language | **[Dictionary-based entity support](/docs/assistant?topic=assistant-entities#entities-create-dictionary-based)** | **[Fuzzy matching (*Misspelling*)](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Fuzzy matching (*Stemming*, *Partial match*)](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Autocorrection](/docs/assistant?topic=assistant-dialog-runtime-spell-check)** |
+| Language | **[Dictionary-based entity support](/docs/assistant?topic=assistant-entities#entities-create-dictionary-based)** | **[Fuzzy matching (*Misspelling*)](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Fuzzy matching (*Stemming*, *Partial match*)](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Autocorrection](/docs/assistant?topic=assistant-autocorrection)** |
 |:---:|:---:|:---:|:---:|:---:|
 | **English (en)**                   | GA | GA | GA | GA |
 | **Arabic (ar)**                    | GA | GA | NA | NA |
@@ -146,7 +125,7 @@ In the following tables, the level of language and feature support is indicated 
 | **Portuguese (Brazilian) (pt-br)** | GA | GA | NA | NA |
 | **Spanish (es)**                   | GA | GA | NA | NA |
 | **Universal (xx)**                 | GA | GA | NA | NA |
-{: caption="Table 5. User input processing support details" caption-side="top"}
+{: caption="Table 4. User input processing support details" caption-side="top"}
 
 ### Entity feature support details
 {: #language-support-entities}
@@ -167,7 +146,7 @@ In the following tables, the level of language and feature support is indicated 
 | **Portuguese (Brazilian) (pt-br)** | NA | NA |
 | **Spanish (es)**                   | NA | GA |
 | **Universal (xx)**                 | NA | NA |
-{: caption="Table 6. Entity feature support details" caption-side="top"}
+{: caption="Table 5. Entity feature support details" caption-side="top"}
 
 ### System entity feature support details
 {: #language-support-system-entities}
@@ -188,7 +167,7 @@ In the following tables, the level of language and feature support is indicated 
 | **Portuguese (Brazilian) (pt-br)** | GA | Deprecated |
 | **Spanish (es)**                   | GA | Deprecated |
 | **Universal (xx)**                 | GA | NA |
-{: caption="Table 7. System entity feature support details" caption-side="top"}
+{: caption="Table 6. System entity feature support details" caption-side="top"}
 
 The {{site.data.keyword.conversationshort}} service supports multiple languages as noted, but the tool interface itself (descriptions, labels, etc.) is in English. All supported languages can be input and trained through the English interface.
 {: note}
@@ -251,3 +230,4 @@ You are expected to train the system with the proper characters and accents. For
 Although not an accent mark, the same applies to words using, for example, the Spanish letter `ñ` vs. the letter `n`, such as "uña" vs. "una". In this case the letter `ñ` is not simply an `n` with an accent; it is a unique, Spanish-specific letter.
 
 You can enable fuzzy matching if you think your customers will not use the appropriate accents, or misspell words (including, for example, putting a `n` instead of a `ñ`), or you can explicitly include them in the training examples.
+
