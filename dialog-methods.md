@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2022-12-06"
+  years: 2015, 2023
+lastupdated: "2023-02-08"
 
 subcollection: assistant
 
@@ -681,17 +681,22 @@ The flights that fit your criteria are:
 
 Result: `The flights that match your criteria are: OK123,LH421,TS4156.`
 
-### JSONArray.joinToArray(template)
+### JSONArray.joinToArray(template, retainDataType)
 {: #dialog-methods-arrays-joinToArray}
 
-This method applies the format that you define in a template to the array, and returns an array that is formatted according to your specifications. This method is useful for applying formatting to array values that you want to return in a dialog response, for example.
+This method extracts information from each item in the array and builds a new array that is formatted according to the template you specify. The template can be a string, a JSON object, or an array. The method returns an array of strings, an array of objects, or an array of arrays, depending on the type of template.
 
-The template can be specified as a String, JSON Object, or JSON Array. To reference values from the array that you are editing in the template, follow these syntax conventions:
+This method is useful for formatting information as a string you can return as part of the output of a dialog node, or for transforming data into a different structure so you can use it with an external API.
 
-- `%`: Represents the start or end of an element or element property that you want to return from the array being edited.
-- `e`: Temporarily represents the array element to which you want to apply the formatting. This temporary variable name cannot be changed from `e`.
+In the template, you can reference values from the source array using the following syntax:
 
-For example, you have a context variable that contains an array with a list of flight details for three flights.
+```text
+%e.{property}%
+```
+
+where `{property}` represents the name of the property in the source array.
+
+For example, suppose your assistant has stored an array containing flight details in a context variable. The stored data might look like this:
 
 ```json
 "flights": [
@@ -732,50 +737,40 @@ For example, you have a context variable that contains an array with a list of f
 ```
 {: codeblock}
 
-You want to return just the list of flight codes. To extract only the value of the `flight` element from each array and return it in a list, you can use the following expression:
+To build an array of strings that describe these flights in a user-readable form, you might use the following expression:
 
+```text
+${Flight_data}.joinToArray("Flight %e.flight% to %e.destination%", true)
 ```
-The available flights are <? $flights.joinToArray("%e.flight%") ?>.
-```
-{: codeblock}
 
-The dialog node response is `The available flights are ["AZ1040","DL1710","VS4379"].`
+This expression would return the following array of strings: `["Flight AZ1040 to FCO","Flight DL1710 to LAX","Flight VS4379 to LHR"]`.
 
-To display the array as text, use the `join` method in the expression like this:
+The optional `retainDataType` parameter specifies whether the method should preserve the data type of all input values in the returned array. If `retainDataType` is set to `false` or omitted, in some situations, strings in the input array might be converted to numbers in the returned array. For example, if the selected values from the input array are `"1"`, `"2"`, and `"3"`, the returned array might be `[ 1, 2, 3 ]`. To avoid unexpected type conversions, specify `true` for this parameter.
 
-```
-The available flights are <? $flights.joinToArray("%e.flight%").join(", ") ?>.
-```
-{: codeblock}
+#### Complex templates
+{: #join-to-array-complex-template}
 
-The response is, `The available flights are AZ1040, DL1710, VS4379.`
+A more complex template might contain formatting that displays the information in a legible layout. For a complex template, you might want to store the template in a context variable, which you can then pass to the `joinToArray` method instead of a string.
 
-#### Complex template
-{: #dialog-methods-complex-template}
+For example, this complex template contains a subset of the array elements, adding labels and formatting:
 
-To create a more complex template, instead of specifying the template details in the method parameter directly, you can create a context variable.
-
-This template context variable contains a subset of the array elements and adds labels in front of them, so the information will be displayed in a legible list in the response:
-
-```json
-"template": "<br/>Flight number: %e.flight% <br/> Airline: %e.carrier% <br/> Departure date: %e.departure_date% <br/> Departure time: %e.departure_time% <br/> Arrival time: %e.arrival_time% <br/>"
+```text
+<br/>Flight number: %e.flight% <br/> Airline: %e.carrier% <br/> Departure date: %e.departure_date% <br/> Departure time: %e.departure_time% <br/> Arrival time: %e.arrival_time% <br/>
 ```
 {: codeblock}
 
-The `<br/>` HTML tag for a line break is *not* rendered by some of the integration channels, including Facebook and Slack.
+Make sure any formatting you use in your template is supported by the channel integration that will be displaying the assistant output.
 {: note}
 
-Use this expression in the dialog node response to apply the template defined in `$template` to the array in `$flights`.
+If you create a context variable called `Template`, and assign this template as its value, you can then use that variable in your expressions:
 
+```text
+${Flight_data}.joinToArray(${Template})
 ```
-The flight info is <? $flights.joinToArray($template).join(" ") ?>
-```
-{: codeblock}
 
-The response looks like this:
+At run time, the response would look like this:
 
-```
-The flight info is
+```text
 Flight number: AZ1040
 Airline: Alitalia
 Departure date: 2019-02-02
@@ -796,48 +791,22 @@ Arrival time: 09:05
 ```
 {: screen}
 
-The advantage of using this method is that it doesn't matter how often the values in the array change or whether the number of elements in the array increases. As long as each array element contains at least the subset of properties that are referenced by the template, then the expression works.
+#### JSON Object templates
+{: #join-to-array-object-template}
 
-#### JSON Object template example
-{: #dialog-methods-object-template}
+Instead of a string, you can define a template as a JSON object. This provides a way to standardize the formatting of information from different systems, or to transform data into the format required for an external service.
 
-In this example, the template context variable is defined as a JSON object that extracts the flight number, and arrival and departure dates and times from each of the flight elements specified in the array in the `$flights` context variable. You could use this approach to apply standard formatting to flight details for flights that are managed by two different carriers, and who format flight information differently in their web services, for example.
+In this example, a template is defined as a JSON object that extracts flight details from the elements specified in the array stored in the `Flight data` context variable:
 
 ```json
-"template": {
-      "departure": "Flight %e.flight% departs on %e.departure_date% at %e.departure_time%.",
-      "arrival": "Flight %e.flight% arrives on %e.arrival_date% at %e.arrival_time%."
-    }
+{
+  "departure": "Flight %e.flight% departs on %e.departure_date% at %e.departure_time%.",
+  "arrival": "Flight %e.flight% arrives on %e.arrival_date% at %e.arrival_time%."
+}
 ```
 {: codeblock}
 
-You might want to design your custom client application to read the objects from the returned array, and format the values properly for your assistant's response. Your dialog node response can return the flight arrival details object as an array by using this expression:
-
-```
-<? $flights.joinToArray($template) ?>
-```
-{: screen}
-
-This is the dialog node response:
-
-```json
-[
-  {
-    "arrival":"Flight AZ1040 arrives on 2019-02-03 at 07:00.",
-    "departure":"Flight AZ1040 departs on 2019-02-02 at 16:45."
-    },
-  {
-    "arrival":"Flight DL1710 arrives on 2019-02-02 at 10:19.",
-    "departure":"Flight DL1710 departs on 2019-02-02 at 07:00."
-    },
-  {
-    "arrival":"Flight VS4379 arrives on 2019-02-03 at 09:05.",
-    "departure":"Flight VS4379 departs on 2019-02-02 at 21:40."
-    }
-  ]
-  ```
-
-Notice that the order of the `arrival` and `departure` elements is swapped in the response. The service typically reorders elements in a JSON Object. If you want the elements to be returned in a specific order, define the template by using a JSON Array or String value instead.
+Using this template, the `joinToArray()` method returns a new array of objects with the specified structure.
 
 ### JSONArray.remove(Integer)
 {: #dialog-methods-arrays-remove}
@@ -2209,7 +2178,7 @@ This method parses a string that contains JSON data and returns a JSON object or
 ${json_var}.toJson()
 ```
 
-If the session variable `${json_var}` contains the following string:
+If the context variable `${json_var}` contains the following string:
 
 ```string
 "{ \"firstname\": \"John\", \"lastname\": \"Doe\" }"
