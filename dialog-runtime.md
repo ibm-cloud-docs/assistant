@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-08-26"
+  years: 2015, 2023
+lastupdated: "2023-02-16"
 
 keywords: digression, disambiguation, confidence 
 
@@ -110,10 +110,6 @@ The following video explains the benefits of using disambiguation. A few things 
 
 - You enable disambiguation from the *Options* page instead of a **Settings** link from the *Dialog* page.
 - You can also set a maximum number of options to display in the disambiguation list.
-
-  ![Disambiguation overview](https://www.youtube.com/embed/VVyklAXlmbA){: video output="iframe" id="youtubeplayer0" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-  To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=VVyklAXlmbA&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 ### Editing the disambiguation configuration
 {: #dialog-runtime-disambig-edit}
@@ -315,12 +311,6 @@ After you finish testing, remove any SpEL expressions that you appended to node 
 A digression occurs when a user is in the middle of a dialog flow that is designed to address one goal, and abruptly switches topics to initiate a dialog flow that is designed to address a different goal. The dialog has always supported the user's ability to change subjects. If none of the nodes in the dialog branch that is being processed match the goal of the user's latest input, the conversation goes back out to the tree to check the root node conditions for an appropriate match. The digression settings that are available per node give you the ability to tailor this behavior even more.
 
 With digression settings, you can allow the conversation to return to the dialog flow that was interrupted when the digression occurred. For example, the user might be ordering a new phone, but switches topics to ask about tablets. Your dialog can answer the question about tablets, and then bring the user back to where they left off in the process of ordering a phone. Allowing digressions to occur and return gives your users more control over the flow of the conversation at run time. They can change topics, follow a dialog flow about the unrelated topic to its end, and then return to where they were before. The result is a dialog flow that more closely simulates a human-to-human conversation.
-
-Watch this video to learn more.
-
-![Digressions overview](https://www.youtube.com/embed/I3K7mQ46K3o){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=I3K7mQ46K3o&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 - [Before you begin](#dialog-runtime-digression-prereqs)
 - [Customizing digressions](#dialog-runtime-enable-digressions)

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-12-10"
+  years: 2015, 2023
+lastupdated: "2023-02-16"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -34,12 +34,6 @@ subcollection: assistant
 
 The dialog defines what your assistant says in response to customers.
 {: shortdesc}
-
-To learn more about the overall process for creating a dialog, watch the following 3 1/2-minute video.
-
-![Working with dialog](https://www.youtube.com/embed/dEILVc86d3Y){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=dEILVc86d3Y&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 ## Creating a dialog
 {: #dialog-overview-task}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-04-11"
+  years: 2015, 2023
+lastupdated: "2022-02-16"
 
 keywords: entity, entity value, contextual entity, dictionary entity, pattern entity, entity synonym, annotate mentions
 
@@ -38,12 +38,6 @@ If intents represent verbs (the action a user wants to do), entities represent n
 Recognizing entities in the user's input helps you to craft more useful, targeted responses. For example, you might have a `#buy_something` intent. When a user makes a request that triggers the `#buy_something` intent, the assistant's response should reflect an understanding of what the *something* is that the customer wants to buy. You can add a `@product` entity, and then use it to extract information from the user input about the product that the customer is interested in. (The `@` prepended to the entity name helps to clearly identify it as an entity.)
 
 Finally, you can add multiple responses to your dialog tree with wording that differs based on the `@product` value that is detected in the user's request.
-
-To learn more about how to create entities, watch the following 2-minute video.
-
-![Working with entities](https://www.youtube.com/embed/SKEKWEqM4LE){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=SKEKWEqM4LE&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 ## Entity evaluation overview
 {: #entities-described}

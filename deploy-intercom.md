@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-03-01"
+  years: 2015, 2023
+lastupdated: "2023-02-16"
 
 subcollection: assistant
 
@@ -123,12 +123,6 @@ See [Rich responses](/docs/assistant?topic=assistant-dialog-overview#dialog-over
 1.  Click **Intercom**.
 
     Follow the instructions that are provided on the screen. The following sections help you with the steps.
-
-The following 4-minute video illustrates the steps.
-
-![Quick Setup](https://www.youtube.com/embed/SkbFWNScueU){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=SkbFWNScueU&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 ## Connecting the assistant to Intercom
 {: #deploy-intercom-connect}
