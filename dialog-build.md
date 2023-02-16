@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-03-04"
+  years: 2015, 2023
+lastupdated: "2021-02-16"
 
 keywords: dialog overview
 
@@ -36,12 +36,6 @@ The dialog uses the intents that are identified in the user's input, plus contex
 {: shortdesc}
 
 The dialog matches intents (what users say they want to do) to responses (what the bot says back). The response might be the answer to a question such as `What are your store hours?` or the execution of a command, such as placing an order. The intent and entity might be enough information to identify the correct response, or the dialog might ask the user for more input that is needed to respond correctly. For example, if a user asks, `Where can I get some food?` you might want to clarify whether they want a restaurant or a grocery store, to dine in or take out, and so on. You can ask for more details in a text response and create one or more child nodes to process the new input.
-
-![Dialog overview](https://www.youtube.com/embed/XkhAMe9gSFU){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-Note: The video is 15 minutes in duration; the first 5 minutes cover how to add a node.
-
-To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=XkhAMe9gSFU&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 The dialog is represented graphically in {{site.data.keyword.conversationshort}} as a tree. Create a branch to process each intent that you want your conversation to handle. A branch is composed of multiple nodes.
 

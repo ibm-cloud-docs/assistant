@@ -19,7 +19,6 @@ toc:
           - getting-started.md
           - gs-dialog.md
       - assistants.md
-      - tool-overview.md
       - topicgroup:
           label: Release notes
           topics:
