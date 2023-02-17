@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2022
-lastupdated: "2022-03-29"
+  years: 2018, 2023
+lastupdated: "2023-02-16"
 
 subcollection: assistant
 
@@ -46,11 +46,7 @@ Add a search skill to your assistant to prevent the assistant from having to say
 To show the exact answer highlighted in bold font, enable the *Emphasize the answer* feature that is available with {{site.data.keyword.discoveryshort}} v2 instances.
 {: tip}
 
-The following 4-minute video provides an overview of the search skill.
-
-![Search skill overview](https://www.youtube.com/embed/_UgRPaxipgI){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=_UgRPaxipgI&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
+Watch [Adding Search to Your Assistant](https://vimeo.com/799536293){: external}, a 4-minute video that provides an overview of the search integration.
 
 To learn more about how search skill can benefit your business, [read this blog post](https://medium.com/ibm-watson/adding-search-to-watson-assistant-99e4e81839e5){: external}.
 
@@ -137,8 +133,6 @@ If you decide not to continue using the Plus plan and don't want to pay for it, 
 
 1. On the **Let's create a collection for your data** pages, enter the information on how to connect to your data and configure your collection. The information you need to enter is different depending on the data source. For example, you need to enter your authentication credentials for services such as Salesforce, Sharepoint, and Box. For web crawl, you specify the website where your existing information resides.
 
-    Optionally, select the **Apply FAQ extraction** checkbox. This feature allows the {{site.data.keyword.discoveryshort}} service to extract question and answer pairs that it identifies in the data collection. If the answers to common questions are identified ahead of time, your assistant can more quickly find and return a concise answer when a customer asks a similar question.
-
 1. Click **Finish**. Give {{site.data.keyword.discoveryshort}} a few minutes to start creating documents. You can use the **Manage collections** page within the project to see the progress.
 
     After the digestion process is completed, a summary page is displayed in {{site.data.keyword.discoveryshort}}, which is hosted in a separate web browser tab.
@@ -191,11 +185,6 @@ If you decide not to continue using the Plus plan and don't want to pay for it, 
     | No results found | No search results are found | `I searched my knowledge base for information that might address your query, but did not find anything useful to share.` |
     | Connectivity issue | I was unable to complete the search for some reason | `I might have information that could help address your query, but am unable to search my knowledge base at the moment.` |
     {: caption="Search result messages" caption-side="top"}
-
-1.  The **Extract FAQ pairs** section displays if the feature is enabled in your {{site.data.keyword.discoveryshort}} collection. Frequently asked questions content is identified automatically and used to give more precise results.
-
-    This option is available only if your {{site.data.keyword.discoveryshort}} instance uses the v2 {{site.data.keyword.discoveryshort}} API.
-    {: note}
 
 1.  Choose whether to enable **Emphasize the answer**. 
 
