@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-16"
+lastupdated: "2023-02-20"
 
 subcollection: assistant
 
@@ -133,7 +133,9 @@ To set up a Salesforce service desk integration, complete the following steps:
 
 When you test the service desk integration, make sure there is at least one agent with `Available` status.
 
-Watch [Connecting Salesforce to Your Assistant](https://vimeo.com/799537304){: external}, a 5-minute video that provides an overview of setting up a connection to a Salesforce service desk.
+Watch a 5-minute video that provides an overview of setting up a connection to a Salesforce service desk:
+
+![Salesforce Integration: {{site.data.keyword.conversationshort}}](https://video.ibm.com/embed/channel/23952663/video/wa-salesforce){: video output="iframe" data-script="none" id="watsonmediaplayer" width="480" height="270" scrolling="no" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" style="border: 0 none transparent;"}
 
 ## Adding transfer support to your dialog
 {: #deploy-salesforce-dialog-prereq}
