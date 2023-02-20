@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-16"
+lastupdated: "2023-02-20"
 
 subcollection: assistant
 
@@ -109,7 +109,9 @@ To set up a Zendesk service desk integration, complete the following steps:
 
 When you test the service desk integration, make sure there is at least one agent with `Online` status. Agent status is set to `Invisible` unless it is explicitly changed.
 
-Watch [Connecting Zendesk to Your Assistant](https://vimeo.com/799537903){: external}, a 4-minute video that provides an overview of setting up a connection to a Zendesk service desk.
+Watch a 4-minute video that provides an overview of setting up a connection to a Zendesk service desk:
+
+![Zendesk Integration: {{site.data.keyword.conversationshort}}](https://video.ibm.com/embed/channel/23952663/video/wa-zendesk){: video output="iframe" data-script="none" id="watsonmediaplayer" width="480" height="270" scrolling="no" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" style="border: 0 none transparent;"}
 
 The product user interface is slightly different from the interface that is shown in the video. However, the main steps are the same.
 {: note}
