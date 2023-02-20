@@ -84,7 +84,7 @@ After you integrate the assistant, test it from the target channel to ensure tha
 ## How service desk platform integrations work
 {: #deploy-integration-service-desk-integrations}
 
-Watch a 4-minute video a 4-minute video about integrating your assistant with a live agent integration, such as Zendesk:
+Watch a 4-minute video about integrating your assistant with a live agent integration, such as Zendesk:
 
 ![Zendesk Integration: {{site.data.keyword.conversationshort}}](https://video.ibm.com/embed/channel/23952663/video/wa-zendesk){: video output="iframe" data-script="none" id="watsonmediaplayer" width="480" height="270" scrolling="no" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" style="border: 0 none transparent;"}
 
