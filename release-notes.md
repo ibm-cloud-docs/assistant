@@ -40,11 +40,11 @@ On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversat
 {: note}
 
 ## 26 January 2023
-{: #assistant-jan182023}
+{: #assistant-jan262023}
 {: release-note}
 
 Intent recommendations and intent user example recommendations discontinued
-:   As of this release, intent recommendations and intent user example recommendations are discontinued. **Intent recommendations** has been removed from the **Intents** page and **Recommended examples** has been removed from intents.
+:   As of this release, intent recommendations and intent user example recommendations are discontinued. **Intent recommendations** has been removed from the **Intents** page and **Recommended examples** has been removed from intents. In the new {{site.data.keyword.conversationshort}} experience, you can [use unrecognized requests to get action recommendations](/docs/watson-assistant?topic=watson-assistant-analytics-recognition){: external}.
 
 ## 18 January 2023
 {: #assistant-jan182023}
