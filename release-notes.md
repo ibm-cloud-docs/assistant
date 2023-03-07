@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-03-02"
+lastupdated: "2023-03-07"
 
 subcollection: assistant
 
@@ -39,6 +39,20 @@ For information about changes to the web chat integration, see the [Web Chat rel
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
 
+## 6 March 2023
+{: #assistant-mar062023}
+{: release-note}
+
+Improvements to algorithm version beta
+:   Improvements to the current *Beta* algorithm version include:
+   - Relevant examples are expected to get higher confidence
+   - For Spanish-language assistants, intent detection is improved in the presence of direct entity references
+   - Intent detection is more stable regarding occurrence of numerics, such as postal codes
+   - Intent detection now accounts for fuzzy closed entity mentions
+   - For German-language assistants, intent detection is more robust in the presence of umlauts 
+
+   For more information, see [Algorithm version](/docs/watson-assistant?topic=watson-assistant-algorithm-version){: external}.
+
 ## 26 January 2023
 {: #assistant-jan262023}
 {: release-note}
@@ -51,14 +65,14 @@ Intent recommendations and intent user example recommendations discontinued
 {: release-note}
 
 Algorithm version stability improvement
-:   As of this date, the **Latest (01 Jun 2022)** and **Beta** algorithm versions now have more stable behavior across retrained models, in the presence of overlapping entities (the same entity value belonging to more than one entity type). Previously, when there were overlapping entities definitions, confidences could differ across different retraining. With this improvement, you can expect to see similar confidences. For more information, see [Algorithm version](/docs/watson-assistant?topic=watson-assistant-algorithm-version).
+:   As of this date, the **Latest (01 Jun 2022)** and **Beta** algorithm versions now have more stable behavior across retrained models, in the presence of overlapping entities (the same entity value belonging to more than one entity type). Previously, when there were overlapping entities definitions, confidences could differ across different retraining. With this improvement, you can expect to see similar confidences. For more information, see [Algorithm version](/docs/watson-assistant?topic=watson-assistant-algorithm-version){: external}.
 
 ## 11 January 2023
 {: #assistant-jan112023}
 {: release-note}
 
 Algorithm version 01-Jun-2022 uses enhanced intent detection by default
-:   As of this date, the algorithm version **Latest (01-Jun-2022)** now uses enhanced intent detection by default. Before this change, some skills that did not include a specific algorithm version selection inadvertently used **Previous (01-Jan-2022)**. You can notice small changes in intent detection behavior when changes are made to an assistant that previously didn't have enhanced intent detection enabled. For more information, see [Algorithm version](/docs/watson-assistant?topic=watson-assistant-algorithm-version).
+:   As of this date, the algorithm version **Latest (01-Jun-2022)** now uses enhanced intent detection by default. Before this change, some skills that did not include a specific algorithm version selection inadvertently used **Previous (01-Jan-2022)**. You can notice small changes in intent detection behavior when changes are made to an assistant that previously didn't have enhanced intent detection enabled. For more information, see [Algorithm version](/docs/watson-assistant?topic=watson-assistant-algorithm-version){: external}.
 
 ## 6 December 2022
 {: #assistant-dec062022}
