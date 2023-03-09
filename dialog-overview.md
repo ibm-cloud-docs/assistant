@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-02-16"
+lastupdated: "2023-03-09"
 
 keywords: building a dialog, condition, response, options, jump, jump-to, multiline, response variations
 
@@ -867,10 +867,6 @@ Test this response type from the assistant *Preview*. You cannot test it from th
 {: #dialog-overview-multiple}
 
 A single dialog node can provide different responses, each one triggered by a different condition.  Use this approach to address multiple scenarios in a single node.
-
-![Adding conditional responses](https://www.youtube.com/embed/Q5_-f7_Iyvg){: video output="iframe" id="youtubeplayer0" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=Q5_-f7_Iyvg&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 The node still has a main condition, which is the condition for using the node and processing the conditions and responses that it contains.
 
