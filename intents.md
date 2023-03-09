@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-01-07"
+  years: 2015, 2023
+lastupdated: "2023-03-09"
 
 keywords: intent, intent conflicts, annotate
 
@@ -35,9 +35,7 @@ subcollection: assistant
 
 To learn more about creating intents, watch the following 2 1/2-minute video.
 
-![Working with intents](https://www.youtube.com/embed/nGoFi0MB94Y){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=nGoFi0MB94Y&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
+![Intents: {{site.data.keyword.conversationshort}}](https://video.ibm.com/embed/channel/23952663/video/wa-intents){: video output="iframe" data-script="none" id="watsonmediaplayer" width="480" height="270" scrolling="no" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" style="border: 0 none transparent;"}
 
 ## Intent creation overview
 {: #intents-described}
