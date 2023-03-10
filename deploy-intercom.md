@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-02-16"
+lastupdated: "2023-03-09"
 
 subcollection: assistant
 
@@ -133,19 +133,7 @@ Human agents can assign messages to the assistant by using Intercom's assignment
 
 - Automatic assignment of inbound conversations to a teammate or team inbox based on some criteria
 
-  The following 1 1/2-minute video illustrates the steps.
-
-  ![Auto Assign](https://www.youtube.com/embed/4M9wu8NHxcY){: video output="iframe" id="youtubeplayer2" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-  To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=4M9wu8NHxcY&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
-
 - Manual reassignment made by a human agent at run time.
-
-  The following under 3-minute video illustrates the steps.
-
-  ![Manual Assign](https://www.youtube.com/embed/jAnolyUJAIA){: video output="iframe" id="youtubeplayer3" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-  To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=jAnolyUJAIA&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 See the [Intercom documentation](https://www.intercom.com/help/en/articles/199-assign-conversations-to-teammates-and-teams){: external} for more details.
 
