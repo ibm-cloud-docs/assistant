@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2022-02-16"
+lastupdated: "2023-03-10"
 
 keywords: entity, entity value, contextual entity, dictionary entity, pattern entity, entity synonym, annotate mentions
 
@@ -339,12 +339,6 @@ Using an intent's user examples to define contextual entities does not affect th
     {: note}
 
     If you do not want your contextual entities to use this expanded understanding of entity values, select all the user examples in the *Annotation* view for that entity, and then click **Delete**.
-
-<!--The following video demonstrates how to annotate entity mentions.
-
-![Annotating entity mentions](https://www.youtube.com/embed/3WjzJpLsnhQ){: video output="iframe" id="youtubeplayer0" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=3WjzJpLsnhQ&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.-->
 
 **Tutorial**: To walk through a tutorial that shows you how to define contextual entities before you add your own, go to [Tutorial: Defining contextual entities](https://www.ibm.com/cloud/architecture/demo/try-watson-assistant-contextual-entities){: external}.
 

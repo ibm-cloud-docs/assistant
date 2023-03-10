@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-03-09"
+lastupdated: "2023-03-10"
 
 keywords: intent, intent conflicts, annotate
 
@@ -343,12 +343,6 @@ To resolve conflicts:
     The *Reset* reverts your changes. Click the **x** to close the page without submitting your changes.
 
 1.  Repeat the previous steps to resolve other intents with conflicts.
-
-You can watch the following video to learn more.
-
-![Intent conflict resolution overview](https://www.youtube.com/embed/9gQtjCBxjdc){: video output="iframe" id="youtubeplayer0" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=9gQtjCBxjdc&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 ## Deleting intents
 {: #intents-delete}
