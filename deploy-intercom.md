@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-03-09"
+lastupdated: "2023-03-10"
 
 subcollection: assistant
 
@@ -179,12 +179,6 @@ To set up routing assignments for escalations from the assistant to a human, com
 
 1.  After adding rules, click **Return to overview** to exit the page.
 
-The following 3-minute video illustrates the steps.
-
-![Topic-based escalation routing](https://www.youtube.com/embed/dTwJZOqdzII){: video output="iframe" id="youtubeplayer0" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=dTwJZOqdzII&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
-
 ## Give the assistant permission to monitor and answer user queries
 {: #deploy-intercom-config-action}
 
@@ -231,12 +225,6 @@ To configure how you want the assistant to handle specific dialog branches, defi
 1.  After adding rules, click **Return to overview** to exit the page.
 
 As your dialog changes, you will likely return to the Intercom integration page to make incremental changes to these rules.
-
-The following 3-minute video illustrates the steps.
-
-![Inbox Monitoring](https://www.youtube.com/embed/fFKjWUfIftw){: video output="iframe" id="youtubeplayer1" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=fFKjWUfIftw&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
 
 ## Testing the integration
 {: #deploy-intercom-try}

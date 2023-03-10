@@ -344,12 +344,6 @@ To resolve conflicts:
 
 1.  Repeat the previous steps to resolve other intents with conflicts.
 
-You can watch the following video to learn more.
-
-![Intent conflict resolution overview](https://www.youtube.com/embed/9gQtjCBxjdc){: video output="iframe" id="youtubeplayer0" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=9gQtjCBxjdc&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
-
 ## Deleting intents
 {: #intents-delete}
 
