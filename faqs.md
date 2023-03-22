@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2022-06-16"
+  years: 2015, 2023
+lastupdated: "2023-03-22"
 
 subcollection: assistant
 
@@ -197,7 +197,7 @@ No, you can define only one webhook URL for a dialog skill. For more information
 {: #faqs-webhook-timeout}
 {: faq}
 
-No. The service that you call from the webhook must return a response in 8 seconds or less, or the call is canceled. You cannot increase this time limit. For more information about strategies for handling complex actions with a webhook, watch the video in [Making a programmatic call from dialog](/docs/assistant?topic=assistant-dialog-webhooks).
+No. The service that you call from the webhook must return a response in 8 seconds or less, or the call is canceled. You cannot increase this time limit.
 
 ## I received the message “Query cancelled” when importing a skill
 {: #faqs-query-cancel}
