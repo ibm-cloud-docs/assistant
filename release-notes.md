@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-03-23"
 
 subcollection: assistant
 
@@ -38,6 +38,26 @@ For information about changes to the web chat integration, see the [Web Chat rel
 
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
+
+## 16 March 2023
+{: #watson-assistant-mar162023}
+{: release-note}
+
+New algorithm version **Latest (20 Dec 2022)** provides improved irrelevance detection 
+:   A new algorithm version is available. The **Latest (20 Dec 2022)** version includes a new irrelevance detection implementation to improve off-topic detection accuracy.
+
+   Improvements include:
+   - Relevant user inputs are expected to get higher confidence, so they are less likely to be considered irrelevant or require clarification
+   - Irrelevance detection is improved in the presence of direct entity references
+   - Irrelevance detection is more stable across small changes to input
+   - Intent detection is more stable regarding occurrence of numerics, such as postal codes
+   - For German-language assistants, intent detection is more robust in the presence of umlauts 
+
+   This algorithm was first introduced as the **Beta** version in June 2022. Since then, support for more languages has been added. This algorithm version was stabilized in December 2022 with minor enhancements since that time.
+
+   With this new release, the June 1, 2022 version is now labeled as **Previous (01 Jun 2022)**. The oldest release labeled as **01 Jan 2022** is no longer available for training. As of now, the new **Beta** version has the same behavior as the **Latest (20 Dec 2022)** version. Updates to the **Beta** version will be released soon.
+
+   For more information, see [Algorithm version and training](/docs/watson-assistant?topic=watson-assistant-algorithm-version).{: external}
 
 ## 6 March 2023
 {: #assistant-mar062023}
