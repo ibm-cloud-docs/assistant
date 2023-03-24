@@ -139,7 +139,7 @@ Do extensive testing of your webhook before you enable it for an assistant that 
 
 Your assistant must have a skill added to it before your webhook can do anything useful. The webhook is triggered when a message is sent to your assistant to be processed by the associated skill.
 
-If you enable the setting that returns an error when the webhook call fails, the processing of the assistant is halted entirely if the webhook encounters any issues. Take steps to test the process that you are calling on a regular basis so you will be alerted if the external service is down, and can take actions to prevent all of the incoming messages from failing to be recieved.
+If you enable the setting that returns an error when the webhook call fails, the processing of the assistant is halted entirely if the webhook encounters any issues. Take steps to test the process that you are calling on a regular basis so you will be alerted if the external service is down, and can take actions to prevent all of the incoming messages from failing to be received.
 
 If you call an {{site.data.keyword.openwhisk_short}} web action, you can use the logging capability in {{site.data.keyword.openwhisk_short}} to help you troubleshoot your code. You can [download the command line interface](https://cloud.ibm.com/functions/learn/cli){: external}, and then enable logging with the [activation polling command](https://cloud.ibm.com/docs/cloud-functions-cli-plugin?topic=cloud-functions-cli-plugin-functions-cli#cli_activation_poll){: external}.
 {: tip}

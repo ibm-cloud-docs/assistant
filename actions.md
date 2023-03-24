@@ -99,7 +99,7 @@ To create actions, complete the following steps:
     
     For more information about the supported types, see [Applying reply constraints](#actions-response-types).
 
-    When the customer makes a choice or submits a value, the assistant automatically checks whether the type of data that is submittted is valid. 
+    When the customer makes a choice or submits a value, the assistant automatically checks whether the type of data that is submitted is valid. 
     
     The assistant checks whether the customer made a valid choice from the list of options or supplied a number when a number was requested. If not, the assistant lets the customer know, and explains what is expected. You can customize the message that is shown and how many times validation runs by clicking **Edit validation**. For more information, see [Customizing validation](#actions-response-types-validation).
     
@@ -118,7 +118,7 @@ To create actions, complete the following steps:
 
     For more information, see [Testing your action](#actions-test).
 
-1.  If the customer's goal is not satistified by this first step, add another one. Click **New step**.
+1.  If the customer's goal is not satisfied by this first step, add another one. Click **New step**.
 
     If you can't see the **New step** button, you might need to minimize the Preview pane.
     {: tip}
@@ -257,7 +257,7 @@ Guide the customer to provide the right type of information by adding a customer
 #### Customizing validation
 {: #actions-response-types-validation}
 
-When you apply contraints to the ways in which customers can reply, validation occurs automatically. Validation helps customers understand what is expected from them. For example, if the assistant expects a number, and the customer provides a sentence of text with no discernible number in it, you can show a message that explains that the assistant needs a number.
+When you apply constraints to the ways in which customers can reply, validation occurs automatically. Validation helps customers understand what is expected from them. For example, if the assistant expects a number, and the customer provides a sentence of text with no discernible number in it, you can show a message that explains that the assistant needs a number.
 
 To customize the validation for a step, complete the following steps:
 
@@ -364,8 +364,8 @@ You can use session variables to pass information from:
 
 - an external client application to the actions skill
 - one action to another action within the same actions skill
-<!-- a dialog skill to an action when the action is called from a dialog node-->
-<!-- an actions skill to a dialog skill as a return variable-->
+
+
 
 To add a session variable, complete the following steps:
 
@@ -591,10 +591,7 @@ As you make changes, test the action at any time to see whether the resulting in
 
 Queries you submit through the Preview pane generate `/message` API calls, but they are not logged and do not incur charges.
 
-<!--If you add only an actions skill to the assistant, the action skill starts the conversation. If you add both a dialog skill and actions skill to an assistant, the dialog skill starts the conversation. You must add calls from the dialog to actions in the actions skill. Only then can your asssistant understand and respond to requests that are addressed by actions that are defined in the actions skill.
-{: important}
 
-You can [call actions in the actions skill from the dialog skill](/docs/assistant?topic=assistant-dialog-call-action). To test how an action behaves when it is called from a dialog skill, test it from the assistant that uses both of the skills together. You cannot recreate the interaction from the Preview pane of the actions skill. First, add the actions and dialog skills to an assistant. Then, you can use the *Preview* button to test how the two skills interact with one another. Queries you submit through the *Preview* button do incur charges. For more information about the *Preview* button, see [Testing your assistant from a web page](/docs/assistant?topic=assistant-deploy-web-link).-->
 
 ## Asking clarifying questions
 {: #actions-disambiguation}
@@ -634,7 +631,7 @@ To customize clarification, complete the following steps:
 ### Disabling clarifying questions
 {: #actions-disambiguation-disable}
 
-<!-- Every action that you add is used during clarification automatically. The system actions are not. -->
+
 
 You can disable clarifying questions for all actions.
 
