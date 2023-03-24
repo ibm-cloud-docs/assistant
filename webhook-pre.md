@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-12-03"
+  years: 2019, 2023
+lastupdated: "2023-03-24"
 
 keywords: pre webhook, prewebhook, pre-webhook
 
@@ -10,23 +10,7 @@ subcollection: assistant
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:external: target="_blank" .external}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
-{:tip: .tip}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:swift: .ph data-hd-programlang='swift'}
-{:video: .video}
-
-{{site.data.content.newlink}}
+{{site.data.keyword.attribute-definition-list}}
 
 # Making a call before processing a message
 {: #webhook-pre}
@@ -48,7 +32,7 @@ You can use this webhook in coordination with the postmessage webhook. For examp
 
 If you want to perform a one-time action when certain conditions are met during a conversation, use a dialog webhook instead. For more information about the dialog webhook, see [Making a programmatic call from dialog](/docs/assistant?topic=assistant-dialog-webhooks).
 
-![Plus or higher plans only](images/plus.png) For environments where private endpoints are in use, keep in mind that a webhook sends traffic over the internet. For more information, see [Private network endpoints](/docs/assistant?topic=assistant-security#security-private-endpoints).
+For environments where private endpoints are in use, keep in mind that a webhook sends traffic over the internet.
 {: note}
 
 ## Defining the webhook
@@ -107,6 +91,9 @@ To add the webhook details, complete the following steps:
 
     It is the responsibility of the external service to check for and verify the secret. If the external service does not require a token, specify any string you want. You cannot leave this field empty.
 
+    If you want to see the secret as you enter it, click on the **Show password** icon ![view icon](../../icons/view.svg) before you start typing. After you save the secret, the string is replaced by asterisks and can't be viewed again.
+    {: note}
+
     For more information about how this field is used, see [Webhook security](#webhook-pre-security).
 
 1. In the **Timeout** field, specify the length of time (in seconds) you want the assistant to wait for a response from the webhook before returning an error. The timeout duration cannot be shorter than 1 second or longer than 30 seconds.
@@ -115,19 +102,15 @@ To add the webhook details, complete the following steps:
 
     For example, if the external application that you call returns a response, it might be able to send a response in multiple different formats. The webhook requires that the response is formatted in JSON. The following table illustrates how to add a header that indicates that you want the resulting value to be returned in JSON format.
 
-    <table>
-    <caption>Header example</caption>
-      <tr>
-      <th>Header name</th>
-      <th>Header value</th>
-      </tr>
-      <tr>
-      <td>Content-Type</td>
-      <td>application/json</td>
-      </tr>
-    </table>
+    | Header name    | Header value       |
+    |----------------|--------------------|
+    | `Content-Type` | `application/json` |
+    {: caption="Header example" caption-side="top"}
 
     The service automatically sends an `Authorization` header with a JWT; you do not need to add one.  If you want to handle authorization yourself, add your own authorization header and it will be used instead.
+
+    After you save the header value, the string is replaced by asterisks and can't be viewed again. 
+    {: note}
 
 Your webhook details are saved automatically.
 
@@ -147,7 +130,7 @@ If you call an {{site.data.keyword.openwhisk_short}} web action, you can use the
 ## Troubleshooting the webhook
 {: #webhook-pre-ts}
 
-The following error codes can help you track down the cause of issues you might encounter. If you have a web chat integration, for example, you will know that your webhook has an issue if every test message you submit returns a message such as, `There is an error with the message you just sent, but feel free to ask me something else.` If this message is displayed, use a REST API tool, such as cURL, to send a test `/message` API request, so you can see the error code and full message that is returned.
+The following error codes can help you track down the cause of issues you might encounter. If you have a web chat integration, for example, you will know that your webhook has an issue if every test message you submit returns a message such as `There is an error with the message you just sent, but feel free to ask me something else.` If this message is displayed, use a REST API tool, such as cURL, to send a test `/message` API request, so you can see the error code and full message that is returned.
 
 | Error code and message | Description |
 |------------|-------------|
