@@ -118,7 +118,7 @@ To create actions, complete the following steps:
 
     For more information, see [Testing your action](#actions-test).
 
-1.  If the customer's goal is not satistified by this first step, add another one. Click **New step**.
+1.  If the customer's goal is not satisfied by this first step, add another one. Click **New step**.
 
     If you can't see the **New step** button, you might need to minimize the Preview pane.
     {: tip}
@@ -257,7 +257,7 @@ Guide the customer to provide the right type of information by adding a customer
 #### Customizing validation
 {: #actions-response-types-validation}
 
-When you apply contraints to the ways in which customers can reply, validation occurs automatically. Validation helps customers understand what is expected from them. For example, if the assistant expects a number, and the customer provides a sentence of text with no discernible number in it, you can show a message that explains that the assistant needs a number.
+When you apply constraints to the ways in which customers can reply, validation occurs automatically. Validation helps customers understand what is expected from them. For example, if the assistant expects a number, and the customer provides a sentence of text with no discernible number in it, you can show a message that explains that the assistant needs a number.
 
 To customize the validation for a step, complete the following steps:
 
