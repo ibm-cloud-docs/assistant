@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-11-19"
+  years: 2019, 2023
+lastupdated: "2023-03-24"
 
 keywords: log webhook
 
@@ -10,33 +10,19 @@ subcollection: assistant
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:external: target="_blank" .external}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
-{:tip: .tip}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:swift: .ph data-hd-programlang='swift'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
-{{site.data.content.newlink}}
-
-# Logging activity with a webhook ![Enterprise plan only](images/enterprise.png)
+# Logging activity with a webhook
 {: #webhook-log}
+
+[Plus]{: tag-green}[Enterprise]{: tag-purple}
 
 You can log activity by making a call to an external service or application every time a customer submits input to the assistant.
 {: shortdesc}
 
 A webhook is a mechanism that allows you to call out to an external program based on events in your program.
 
-This feature is available only to Enterprise plan users.
+This feature is available only to Plus and Enterprise plan users.
 
 Add a log webhook to your assistant if you want to use an external service to log {{site.data.keyword.conversationshort}} activity. You can log two kinds of activity:
 
@@ -90,6 +76,9 @@ To add the webhook details, complete the following steps:
 
     It is the responsibility of the external service to check for and verify the secret. If the external service does not require a token, specify any string you want. You cannot leave this field empty.
 
+    If you want to see the secret as you enter it, click on the **Show password** icon ![view icon](../../icons/view.svg) before you start typing. After you save the secret, the string is replaced by asterisks and can't be viewed again.
+    {: note}
+
 1. Click the appropriate checkboxes to select which kinds of activity you want to log:
 
     - To log messages and responses, select **Subscribe to conversation logs**.
@@ -98,6 +87,9 @@ To add the webhook details, complete the following steps:
 1. In the Headers section, add any headers that you want to pass to the service one at a time by clicking **Add header**.
 
     The service automatically sends an `Authorization` header with a JWT; you do not need to add one. If you want to handle authorization yourself, add your own authorization header and it will be used instead.
+
+    After you save the header value, the string is replaced by asterisks and can't be viewed again. 
+    {: note}
 
 Your webhook details are saved automatically.
 
@@ -319,9 +311,9 @@ The  `payload`  JSON object for a call detail record event contains the followin
 | --- | --- | --- |
 | `primary_phone_number` | string | The phone number that was called. |
 | `global_session_id` | string | The unique session identifier. |
-| `failure_occurred` | boolean|Indicates whether a failure occurred during the call. | 
+| `failure_occurred` | Boolean | Indicates whether a failure occurred during the call. | 
 | `failure_details` |  string | Details about a failure. | 
-| `transfer_occurred` | boolean | Indicates whether an attempt was made to transfer a call |
+| `transfer_occurred` | Boolean | Indicates whether an attempt was made to transfer a call |
 | `active_calls` | Number | Number of active calls when the call started. |
 | `x-global-sip-trunk-call-id` | string | The value of the SIP trunk call ID header extracted from the initial SIP `INVITE` request. The following SIP trunk call ID headers are supported:  \n *X-Twilio-CallSid*  \n *X-SID*  \n *X-Global-SIP-Trunk-Call-ID* |
 | `call` | JSON object | Contains information about the call. |
@@ -341,9 +333,9 @@ The `call` object contains the following keys:
 | `stop_timestamp` | string. Time in the ISO format `yyyy-MM-ddTHH:mm:ss.SSSZ` | Time when the call ended. |
 | `milliseconds_elapsed` | number | Length of the call in milliseconds. |
 | `end_reason` | string | Call end reason:  \n *assistant_transfer*  \n *assistant_hangup*  \n *caller_hangup*  \n *failed* |
-| `security.media_encrypted` | boolean | Indicates whether the media was encrypted. |
-| `security.signaling_encrypted` | boolean | Indicates whether the SIP signaling was encrypted. |
-| `security.sip_authenticated` | boolean | Indicates whether SIP authentication was used to challenge the authentication of the caller. |
+| `security.media_encrypted` | Boolean | Indicates whether the media was encrypted. |
+| `security.signaling_encrypted` | Boolean | Indicates whether the SIP signaling was encrypted. |
+| `security.sip_authenticated` | Boolean | Indicates whether SIP authentication was used to challenge the authentication of the caller. |
 {: caption="Keys for the call object" caption-side="top"}
 
 The `session_initiation_protocol` object contains the following keys:
@@ -381,7 +373,7 @@ The `request` object contains the following keys:
 
 | Key | Type | Description |
 | --- | --- | --- |
-| `type` | string | The request type: *start* - an initial request to {{site.data.keyword.conversationshort}} *speech_to_text* - a request is triggered on speech recognition  \n *dtmf* - a request is triggered when DTMF collection completes  \n *sms* - a request is triggered when a SMS message is received from the caller  \n *post_response_timeout* - a request is triggered when the post response timer expires  \n *redirect* - a request is triggered when a call is redirected  \n *transfer* - a request is triggered when a call is transferred  \n *transfer_failed* - a request is triggered when a call transfer fails  \n *final_utterance_timeout* - a request is triggered when the final utterance timer expires  \n *no_input_turn* - a request is triggered when `no inpout turn` is enabled  \n *sms_failure* - a request is triggered when a SMS message can't be sent to the caller  \n *speech_to_text_result_filtered* - a request is triggered when an utterance is filtered due to low confidence level  \n *mrcp_recognition_unsuccessful* - a request is triggered when the MRCP recognition completes without a final utterance  \n *network_warning* - a request is triggered when a network error is detected  \n *media_capability_change* - a request is triggered when media capabilities change in the middle of a call |
+| `type` | string | The request type: \n *start* - an initial request to {{site.data.keyword.conversationshort}} \n *speech_to_text* - a request is triggered on speech recognition  \n *dtmf* - a request is triggered when DTMF collection completes  \n *sms* - a request is triggered when a SMS message is received from the caller  \n *post_response_timeout* - a request is triggered when the post response timer expires  \n *redirect* - a request is triggered when a call is redirected  \n *transfer* - a request is triggered when a call is transferred  \n *transfer_failed* - a request is triggered when a call transfer fails  \n *final_utterance_timeout* - a request is triggered when the final utterance timer expires  \n *no_input_turn* - a request is triggered when `no inpout turn` is enabled  \n *sms_failure* - a request is triggered when a SMS message can't be sent to the caller  \n *speech_to_text_result_filtered* - a request is triggered when an utterance is filtered due to low confidence level  \n *mrcp_recognition_unsuccessful* - a request is triggered when the MRCP recognition completes without a final utterance  \n *network_warning* - a request is triggered when a network error is detected  \n *media_capability_change* - a request is triggered when media capabilities change in the middle of a call |
 |`streaming_statistics`| JSON object|Contains information and statistics related to the {{site.data.keyword.speechtotextshort}} recognition. |
 {: caption="Keys for the request object" caption-side="top"}
 
@@ -393,7 +385,7 @@ The `request.streaming_statistics` object contains the following keys:
 | `start_timestamp` | string. Time in the ISO format `yyyy-MM-ddTHH:mm:ss.SSSZ` | Time when the transaction started. |
 | `stop_timestamp` | string. Time in the ISO format `yyyy-MM-ddTHH:mm:ss.SSSZ` |  Time when the transaction ended. |
 | `response_milliseconds` | number | Latency in milliseconds between when silence is detected in the caller's speech and a final result from {{site.data.keyword.speechtotextshort}} is received. |
-| `echo_detected` | boolean|Indicates whether an echo was detected. The value can be `true` or `false`. |
+| `echo_detected` | Boolean | Indicates whether an echo was detected. The value can be `true` or `false`. |
 | `confidence` | number | The confidence score of the final utterance. |
 {: caption="Keys for the request.streaming_statistics object" caption-side="top"}
 
@@ -401,8 +393,8 @@ The `response` object contains the following keys:
 
 | Key | Type | Description |
 | --- | --- | --- |
-| `type` | string | The response type:  \n *text_to_speech* - a command to play an utterance to the caller  \n *sms* - a command to send a SMS to the caller  \n *url* - a command to play an audio file to the caller  \n *transfer* - a command to transfer a call  \n *text_to_speech_config* - a command to change {{site.data.keyword.texttospeechshort}} settings  \n *speech_to_text_config* - a command to change the {{site.data.keyword.speechtotextshort}} settings  \n *pause_speech_to_text* - a command to stop speech recognition    \n *unpause_speech_to_text* - a command to start speech recognition  \n *pause_dtmf* - a command to stop DTMF recognition  \n *unpause_dtmf* - a command to start speech recognition  \n _enable_speech_barge_in_ - a command to enable speech barge-in so that callers can interrupt playback by speaking  \n *disable_speech_barge_in* - a command to disable speech barge-in so that playback isn't interrupted when callers speak over top of the played back audio  \n *enable_dtmf_barge_in* - a command to enables DTMF barge-in so that callers can interrupt playback from the phone integration by pressing a key.  \n *disable_dtmf_barge_in* - a command to disable DTMF barge-in so that playback from the phone integration isn't interrupted when callers press keys.  \n *dtmf* - a command to send DTMFs to the caller  \n *hangup* - a command to disconnect a call |
-| `barge_in_occurred` | boolean|Indicates whether barge-in occurred during the turn. |
+| `type` | string | The response type:  \n *text_to_speech* - a command to play an utterance to the caller  \n *sms* - a command to send a SMS to the caller  \n *url* - a command to play an audio file to the caller  \n *transfer* - a command to transfer a call  \n *text_to_speech_config* - a command to change {{site.data.keyword.texttospeechshort}} settings  \n *speech_to_text_config* - a command to change the {{site.data.keyword.speechtotextshort}} settings  \n *pause_speech_to_text* - a command to stop speech recognition    \n *unpause_speech_to_text* - a command to start speech recognition  \n *pause_dtmf* - a command to stop DTMF recognition  \n *unpause_dtmf* - a command to start speech recognition  \n _enable_speech_barge_in_ - a command to enable speech barge-in so that callers can interrupt playback by speaking  \n *disable_speech_barge_in* - a command to disable speech barge-in so that playback isn't interrupted when callers speak over top of the played back audio  \n *enable_dtmf_barge_in* - a command to enables DTMF barge-in so that callers can interrupt playback from the phone integration by pressing a key.  \n *disable_dtmf_barge_in* - a command to disable DTMF barge-in so that playback from the phone integration isn't interrupted when callers press keys  \n *dtmf* - a command to send DTMFs to the caller  \n *hangup* - a command to disconnect a call |
+| `barge_in_occurred` | Boolean | Indicates whether barge-in occurred during the turn. |
 | `streaming_statistics` | JSON object | Contains information and statistics related to the {{site.data.keyword.texttospeechshort}} synthesis and playback. |
 {: caption="Keys for the response object" caption-side="top"}
 
