@@ -41,7 +41,6 @@ On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversat
 
 ## 16 March 2023
 {: #watson-assistant-mar162023}
-
 {: release-note}
 
 New algorithm version **Latest (20 Dec 2022)** provides improved irrelevance detection 
