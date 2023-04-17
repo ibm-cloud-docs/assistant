@@ -120,7 +120,6 @@ toc:
                topics:
                - logs-overview.md
                - logs.md
-               - autolearn.md
                - irrelevance-detection.md
                - logs-resources.md
           - topicgroup:
