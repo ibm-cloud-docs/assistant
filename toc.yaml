@@ -23,7 +23,9 @@ toc:
           label: Release notes
           topics:
           - release-notes.md
-          - include: ../watson-assistant/release-notes-chat.md
+          - link:
+          label: Web chat release notes
+          href: https://cloud.ibm.com/docs/watson-assistant?topic=watson-assistant-release-notes-chat
 
   - navgroup:
       id: tutorial
