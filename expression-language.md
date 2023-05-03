@@ -230,7 +230,7 @@ In the following examples, the skill contains an airport entity that includes a 
   or
   `So you want to go to @airport.literal ...`
 
-  Both formats evaluate to `So you want to go to Kennedy Airport...' in the response.
+  Both formats evaluate to `So you want to go to Kennedy Airport...` in the response.
 
 - Expressions like `@airport:(JFK)` or `@airport.contains('JFK')` always refer to the **value** of the entity (`JFK` in this example).
 - To be more restrictive about which terms are identified as airports in the input when fuzzy matching is enabled, you can specify this expression in a node condition, for example: `@airport && @airport.confidence > 0.7`. The node will only execute if your assistant is 70% confident that the input text contains an airport reference.

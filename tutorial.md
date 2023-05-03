@@ -644,7 +644,7 @@ Test whether your assistant can recognize character patterns that match the patt
     ![Shows the Try it out pane test of the cancel order number node when the user doesn't know the order number.](images/gs-ass-test-cancel-order-number-unknown.png)
 
 ### Add nodes to clarify order number format
-{: #tutorial-clarify-order-number format}
+{: #tutorial-clarify-order-number-format}
 
 If you do more testing, you might find that the dialog isn't very helpful in scenarios where the user does not remember the order number format. The user might include only the numbers or the letters too, but forget that they are meant to be uppercase. So, it would be a nice touch to give them a hint in such cases, correct? If you want to be kind, add another node to the dialog tree that checks for numbers in the user input.
 

@@ -55,7 +55,7 @@ Autolearning uses observations of actions that are made by only your customers t
 Autolearn gains insights from the following user action:
 
 - The choice made from a list of disambiguation options that is displayed for an utterance
-<!-- The choice made from a list of suggestions that is included with the response in web chat integrations-->
+
 
 These customer interactions occur in the context of one of the product's built-in integrations, such as the web chat, or in a custom application. To say that your skill *observes* the choices that users make means that it analyzes logs of the exchanges after the interactions take place. It does not mean that the skill watches the clicks that users make within the client-facing app in real time.
 
@@ -73,8 +73,7 @@ You can enable autolearning when the following conditions are met:
 
 - You have at least one deployed assistant that is actively interacting with customers and has accumulated log data that the skill can learn from.
 
-<!--Autolearning is optimized for use with the built-in web chat integration. This integration, in particular, has a *Suggestions* feature which increases the opportunities for users to make choices, and therefore for the skill to learn from them.
-{: tip}-->
+
 
 To enable autolearning, complete the following steps:
 
@@ -121,7 +120,7 @@ The following graphs are available:
 ## Learning from your data
 {: #autolearn-data}
 
-Observations are made of only your customers` choices to improve only your skills. These observations are not reused by IBM or shared in any way.
+Observations are made of only your customers' choices to improve only your skills. These observations are not reused by IBM or shared in any way.
 
 This observed user choices data is separate from the log data for which metrics are displayed in the Analytics page. The observation data is also separate from the information that is collected in all but Enterprise plan service instances and used by IBM for general service improvements. You can opt out of such use by specifying an opt-out header in your `/message` API requests. For more information, see [Opting out of logging](/docs/assistant?topic=assistant-information-security#information-security-log-opt-out).
 
