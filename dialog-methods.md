@@ -254,33 +254,7 @@ intents.containsIntent("General_Ending", 0.8, 2)
 ```
 {: codeblock}
 
-<!--### JSONArray.containsMultipleIntents([Double min_score], [Integer top_n], String intent_name1, ... , String intent_name*n*)
-{: #dialog-methods-arrays-containsMultipleIntents}
 
-This method returns `true` if the `intents` JSONArray contains all of the specified intents.
-
-You can optionally add the `min_score` parameter to check whether all of the intents have a confidence score over the threshold. Also, you can optionally specify a `top_n` parameter to check whether all of the listed intents are included within that number of top elements in the array.
-
-You can specify up to 10 intent names. You can specify a `min_score` parameter without a `top_n` parameter. However, you cannot specify a `top_n` parameter without also specifying a `min_score` parameter. Specifying zero precent (`0.0`) for the minimum score is allowed. The `top_n` parameter is ignored if you specify a negative number.
-
-Returns `false` if the specified intents are not in the array, do not all have confidence scores that are equal to or greater than the minimum confidence score, or the index values of all the intents are lower than the specified index location.
-
-The service automatically generates an `intents` array that lists the intents that the service detects in the input whenever user input is submitted. The array lists all intents that are detected by the service in order of highest confidence first.
-
-You can use this method in a node condition to not only check for the presence of a set of intents in the array, but to set a confidence score threshold that must be met before the node can be processed and its response returned.
-
-For example, use the following expression in a node condition when you want to trigger the dialog node only when the following conditions are met:
-
-- The `eCommerce_Cancel_Product_Order` and `Customer_Care_Cancel_Account` intents are present.
-- The intents are listed at the top two intents in the array.
-
-```bash
-intents.containsMultipleIntents(0.0, 2,"eCommerce_Cancel_Product_Order", "Customer_Care_Cancel_Account")
-```
-{: codeblock}
-
-If the confidence score of the second intent is within about 55% of the confidence score of the top intent,disambiguation will be triggered and this node will not be processed. This behavior occurs even if you position the dialog node with this condition in the dialog tree before the two nodes that condition on the intents that are included in the disambiguation list.
-{: note}-->
 
 ### JSONArray.filter(temp, "temp.property operator comparison_value")
 {: #dialog-methods-arrays-filter}
@@ -302,27 +276,27 @@ The filter expression consists of the following values:
       <th>Description</th>
     </tr>
     <tr>
-      <td>`==`</td>
+      <td><code>==</code></td>
       <td>Is equal to</td>
     </tr>
     <tr>
-      <td>`>`</td>
+      <td><code>></code></td>
       <td>Is greater than</td>
     </tr>
     <tr>
-      <td>`<`</td>
+      <td><code><</code></td>
       <td>Is less than</td>
     </tr>
     <tr>
-      <td>`>=`</td>
+      <td><code>>=</code></td>
       <td>Is greater than or equal to</td>
     </tr>
     <tr>
-      <td>`<=`</td>
+      <td><code><=</code></td>
       <td>Is less than or equal to</td>
     </tr>
     <tr>
-      <td>`!=`</td>
+      <td><code>!=</code></td>
       <td>Is not equal to</td>
     </tr>
     </table>
