@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-05-04"
 
 subcollection: assistant
 
@@ -24,6 +24,18 @@ For information about changes to the web chat integration, see the [Web Chat rel
 
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
+
+## 3 May 2023
+{: #assistant-may032023}
+{: release-note}
+Algorithm version **Beta** provides improved intent detection and action matching
+:   The algorithm version **Beta** now provides improved intent detection and action matching. It includes a new foundation model that is trained using a transformer architecture to improve intent detection and action matching for English.
+
+   Improvements include:
+   - Improved robustness to variations in user inputs such as typos and different inflection forms
+   - Less training data required to reach the same level of performance compared to previous algorithms
+
+   For more information, see [Algorithm version and training](/docs/watson-assistant?topic=watson-assistant-algorithm-version).{: external}
 
 ## 16 April 2023
 {: #assistant-apr162023}
