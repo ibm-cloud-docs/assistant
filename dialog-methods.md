@@ -2,25 +2,13 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-05-08"
 
 subcollection: assistant
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
-{:tip: .tip}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:swift: .ph data-hd-programlang='swift'}
+{{site.data.keyword.attribute-definition-list}}
 
 {{site.data.content.newlink}}
 
@@ -1087,7 +1075,8 @@ Returns a formatted string according to the specified format:
 
 To return the day of the week:
 
-- `E` for Tuesday
+- `EEEE` for Tuesday
+- `E` for Tue
 - `u` for day index (1 = Monday, ..., 7 = Sunday)
 
 For example, this context variable definition creates a $time variable that saves the value 17:30:00 as *5:30 PM*.
