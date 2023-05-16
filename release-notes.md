@@ -40,7 +40,7 @@ Changes to the date and number formats in assistant responses
 
    These changes are the result of migrating the {{site.data.keyword.conversationshort}} platform to Java 17, where locale values are updated by using specifications in [CLDR 39](https://cldr.unicode.org/index/downloads/cldr-39){: external}. 
    
-   To avoid or minimize the impact of similar changes in the future, you can use [Display formats](/docs/watson-assistant?topic=watson-assistant-actions-global-settings#actions-global-settings-display-formats).
+   To avoid or minimize the impact of similar changes in the future, you can use [Actions display formats](/docs/watson-assistant?topic=watson-assistant-actions-global-settings#actions-global-settings-display-formats){: external}.
 
 ## 15 May 2023
 {: #watson-assistant-may152023}
