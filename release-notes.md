@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-05-04"
+lastupdated: "2023-05-16"
 
 subcollection: assistant
 
@@ -24,6 +24,29 @@ For information about changes to the web chat integration, see the [Web Chat rel
 
 On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
 {: note}
+
+## 22 May 2023
+{: #watson-assistant-may222023}
+{: release-note}
+
+Changes to the date and number formats in assistant responses
+:   Beginning 22 May 2023, customers might see changes to the date and number formats in assistant responses.
+
+   Examples of date changes include removed or added periods, such as:
+   -  In Spanish, `18 abr. 2021` changes to `18 abr 2021`
+   -  In Portuguese, `18 de abr` changes to `18 de abr.`
+
+   The delimiter character changes for numbers in some languages. For example, in French, nonbreaking space (NBSP) changes to narrow no-break space (NNBSP).
+
+   These changes are the result of migrating the {{site.data.keyword.conversationshort}} platform to Java 17, where locale values are updated by using specifications in [CLDR 39](https://cldr.unicode.org/index/downloads/cldr-39){: external}. 
+   
+   To avoid or minimize the impact of similar changes in the future, you can use [Display formats](/docs/watson-assistant?topic=watson-assistant-actions-global-settings#actions-global-settings-display-formats).
+
+## 15 May 2023
+{: #watson-assistant-may152023}
+{: release-note}
+Change to dialog skill context variables named `request`
+:   If your dialog skill used a context variable that is named `request`, it was removed from the response payload of any `/message` calls in the V1 or V2 API, or through the {{site.data.keyword.conversationshort}} user interface. After 15 May 2023, this behavior changes. {{site.data.keyword.conversationshort}} doesn't context variables that are named `request` from the response payload anymore.
 
 ## 3 May 2023
 {: #assistant-may032023}
