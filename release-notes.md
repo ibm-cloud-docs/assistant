@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-05-16"
+lastupdated: "2023-05-23"
 
 subcollection: assistant
 
@@ -63,8 +63,8 @@ Algorithm version **Beta** provides improved intent detection and action matchin
 ## 16 April 2023
 {: #assistant-apr162023}
 {: release-note}
-Autolearning beta for classic experience replaced
-:   As of this release, the *autolearning* beta for the classic experience has been removed from the **Analytics** section in dialog skills. In the new experience, you can test a new and improved autolearning beta. For more information, see [Using autolearning to improve assistant responses](/docs/watson-assistant?topic=watson-assistant-autolearn){: external}.
+Autolearning beta for dialog skills removed
+:   As of this release, the *autolearning* beta has been removed from the **Analytics** section in dialog skills. In the new experience, you can test a new and improved autolearning beta. For more information, see [Using autolearning to improve assistant responses](/docs/watson-assistant?topic=watson-assistant-autolearn){: external}.
 
 ## 16 March 2023
 {: #assistant-mar162023}
