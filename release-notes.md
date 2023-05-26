@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-05-24"
+lastupdated: "2023-05-25"
 
 subcollection: assistant
 
@@ -42,15 +42,24 @@ Changes to the date and number formats in assistant responses
    
    To avoid or minimize the impact of similar changes in the future, you can use [Actions display formats](/docs/watson-assistant?topic=watson-assistant-actions-global-settings#actions-global-settings-display-formats){: external}.
 
+## 18 May 2023
+{: #watson-assistant-may182023}
+{: release-note}
+
+Differences in contextual entity detection for dialog skills with few annotations
+:   If you have 10 to 20 examples of contextual entities in your dialog skill, you might see differences in the entities detected due to updates made to address critical vulnerabilities. The impact of these differences is limited to only newly-trained models. Existing models are unaffected. You can mitigate these differences by annotating more examples. For more information, see [Annotation-based method](/docs/assistant?topic=assistant-entities#entities-annotations-overview). 
+
 ## 15 May 2023
 {: #watson-assistant-may152023}
 {: release-note}
+
 Change to dialog skill context variables named `request`
 :   If your dialog skill used a context variable that is named `request`, it was removed from the response payload of any `/message` calls in the V1 or V2 API, or through the {{site.data.keyword.conversationshort}} user interface. After 15 May 2023, this behavior changes. {{site.data.keyword.conversationshort}} doesn't remove context variables that are named `request` from the response payload anymore.
 
 ## 3 May 2023
 {: #assistant-may032023}
 {: release-note}
+
 Algorithm version **Beta** provides improved intent detection and action matching
 :   The algorithm version **Beta** now provides improved intent detection and action matching. It includes a new foundation model that is trained using a transformer architecture to improve intent detection and action matching for English.
 
@@ -63,6 +72,7 @@ Algorithm version **Beta** provides improved intent detection and action matchin
 ## 16 April 2023
 {: #assistant-apr162023}
 {: release-note}
+
 Autolearning beta for dialog skills removed
 :   As of this release, the *autolearning* beta has been removed from the **Analytics** section in dialog skills. In the new experience, you can test a new and improved autolearning beta. For more information, see [Using autolearning to improve assistant responses](/docs/watson-assistant?topic=watson-assistant-autolearn){: external}.
 
