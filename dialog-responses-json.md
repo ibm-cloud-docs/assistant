@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-11-09"
+  years: 2015, 2023
+lastupdated: "2023-06-01"
 
 subcollection: assistant
 
@@ -464,16 +464,18 @@ Calls the search skill linked to the assistant to retrieve results that are rele
 
 | Name          | Type   | Description        | Required? |
 |---------------|--------|--------------------|-----------|
-| response_type | string | `search`           | Y         |
+| response_type | string | `search_skill`     | Y         |
 | query         | string | The text to use for the search query. This string can be empty, in which case the user input is used as the query. | Y |
 | filter        | string | An optional filter that narrows the set of documents to be searched. | N |
 | query_type    | string | The type of search query to use (`natural_language` or `discovery_query_language`). | Y |
 | discovery_version | string | The version of the Discovery service API to use. The default is `2018-12-03`. | N |
 
+You can author a `search_skill` response_type that calls out to your search skill, and then return a `search` response_type that you can render in a different format. Go to Message > Response > output > MessageOutput > generic > RuntimeResponseTypeSearch in [Watson Assistant v2 API](https://cloud.ibm.com/apidocs/assistant-v2#message-response) to view how response_type `search` renders when `search_skill` response is processed..
+
 #### Example
 {: #dialog-responses-json-search-skill-example}
 
-This examples uses the user input text to send a natural-language query to the search skill.
+This example uses the user input text to send a natural-language query to the search skill.
 
 ```json
 {
@@ -492,7 +494,7 @@ This examples uses the user input text to send a natural-language query to the s
 ### `connect_to_agent`
 {: #dialog-responses-json-connect-to-agent}
 
-Requests that the conversation be transferred to a human service desk agent for help.
+Requests that the conversation be transferred to a service desk agent for help.
 
 #### Fields
 {: #dialog-responses-json-channel-transfer-fields}
@@ -500,7 +502,7 @@ Requests that the conversation be transferred to a human service desk agent for 
 | Name                   | Type   | Description        | Required? |
 |------------------------|--------|--------------------|-----------|
 | response_type          | string | `connect_to_agent` | Y         |
-| message_to_human_agent | string | A message to display to the human agent to whom the conversation is being transferred. | Y |
+| message_to_human_agent | string | A message to display to the live agent to whom the conversation is being transferred. | Y |
 | agent_available        | string | A message to display to the user when agents are available.                            | Y |
 | agent_unavailable      | string | A message to display to the user when no agents are available.                         | Y |
 | transfer_info          | object | Information used by the web chat service desk integrations for routing the transfer.   | N |
@@ -510,7 +512,7 @@ Requests that the conversation be transferred to a human service desk agent for 
 #### Example
 {: #dialog-responses-json-connect-to-agent-example}
 
-This example requests a transfer to a human agent and specifies messages to be displayed both to the user and to the agent at the time of transfer.
+This example requests a transfer to a live agent and specifies messages to be displayed both to the user and to the agent at the time of transfer.
 
 ```json
 {
