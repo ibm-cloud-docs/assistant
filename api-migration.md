@@ -1,35 +1,23 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-01-07"
+  years: 2015, 2023
+lastupdated: "2023-06-16"
 
 subcollection: assistant
 
 
 ---
 
-{:curl: .ph data-hd-programlang='curl'}
-{:external: target="_blank" .external}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:swift: data-hd-programlang='swift'}
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:download: .download}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 {{site.data.content.newlink}}
 
 # Migrating to the v2 API
 {: #api-migration}
+
+This documentation has moved. For the most up-to-date version, see [Migrating to the v2 API](/docs/watson-assistant?topic=watson-assistant-api-migration){: external}.
+{: attention}
 
 The Assistant v2 runtime API, which supports the use of assistants and skills, was introduced in November 2018. This API offers significant advantages over the v1 runtime API, including automatic state management, ease of deployment, skill versioning, and the availability of new features such as the search skill.
 
