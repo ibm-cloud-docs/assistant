@@ -1,35 +1,23 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2022-12-14"
+  years: 2015, 2023
+lastupdated: "2023-06-16"
 
 subcollection: assistant
 
 
 ---
 
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:swift: data-hd-programlang='swift'}
-{:new_window: target="_blank"}
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:download: .download}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
 {{site.data.content.newlink}}
 
 # Accessing context data
 {: #api-client-get-context}
+
+This documentation has moved. For the most up-to-date version, see [Accessing context data in dialog](/docs/watson-assistant?topic=watson-assistant-api-client-get-context){: external}.
+{: attention}
 
 The *context* is an object containing variables that persist throughout a conversation and can be shared by the dialog and the client application. Both the dialog and the client application can read and write context variables.
 
