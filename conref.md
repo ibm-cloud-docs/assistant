@@ -30,6 +30,6 @@ content-type: conref
 # Content references for watson-assistant
 {: #assistant-conref}
 
-This documentation is for the **classic IBM Watson Assistant** experience. To see the documentation for the new Watson Assistant, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
+This documentation is for the **classic {{site.data.keyword.conversationshort}}** experience. To see the documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
 {: important}
 {: #newlink}

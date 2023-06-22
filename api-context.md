@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-06-16"
+lastupdated: "2023-06-22"
 
 subcollection: assistant
 
@@ -11,13 +11,11 @@ subcollection: assistant
 
 {{site.data.keyword.attribute-definition-list}}
 
-{{site.data.content.newlink}}
+This documentation for the **classic {{site.data.keyword.conversationshort}}** experience has moved. For the most up-to-date version, see [Accessing context data in dialog](/docs/watson-assistant?topic=watson-assistant-api-client-get-context){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
+{: attention}
 
 # Accessing context data
 {: #api-client-get-context}
-
-This documentation has moved. For the most up-to-date version, see [Accessing context data in dialog](/docs/watson-assistant?topic=watson-assistant-api-client-get-context){: external}.
-{: attention}
 
 The *context* is an object containing variables that persist throughout a conversation and can be shared by the dialog and the client application. Both the dialog and the client application can read and write context variables.
 

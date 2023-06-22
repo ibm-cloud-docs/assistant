@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-06-16"
+lastupdated: "2023-06-22"
 
 subcollection: assistant
 
@@ -11,7 +11,8 @@ subcollection: assistant
 
 {{site.data.keyword.attribute-definition-list}}
 
-{{site.data.content.newlink}}
+This documentation for the **classic {{site.data.keyword.conversationshort}}** experience has moved. For the most up-to-date version, see [Migrating to the v2 API](/docs/watson-assistant?topic=watson-assistant-api-migration){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
+{: attention}
 
 # Migrating to the v2 API
 {: #api-migration}
