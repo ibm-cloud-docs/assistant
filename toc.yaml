@@ -7,7 +7,6 @@ toc:
     product-page: https://www.ibm.com/cloud/watson-assistant/
     path: assistant
     label: Classic Watson Assistant
-
   entries:
   - navgroup:
       id: learn
@@ -26,7 +25,6 @@ toc:
           - link:
               label: Web chat release notes
               href: https://cloud.ibm.com/docs/watson-assistant?topic=watson-assistant-release-notes-chat
-
   - navgroup:
       id: tutorial
       topics:
@@ -34,7 +32,6 @@ toc:
       - tutorial-slots.md
       - tutorial-slots-complex.md
       - tutorial-digressions.md
-
   - navgroup:
       id: howto
       topics:
@@ -106,6 +103,7 @@ toc:
              - deploy-phone.md
              - deploy-phone-flex.md
              - deploy-phone-genesys.md
+             - dialog-voice-actions.md
           - topicgroup:
              label: Deploying to other platforms
              topics:
@@ -152,7 +150,6 @@ toc:
                 - skill-develop.md
                 - message-anatomy.md
                 - dialog-integrations.md
-                - dialog-voice-actions.md
                 - dialog-sms-actions.md
                 - dialog-actions-client.md
                 - dialog-responses-json.md
@@ -174,7 +171,6 @@ toc:
                 - api-dialog-responses.md
                 - api-input-attachments.md
                 - include: ../watson/getting-started-sdks.md
-
   - navgroup:
       id: reference
       topics:
@@ -212,7 +208,6 @@ toc:
           - sys-date-festivals.md
           - sys-currency-details.md
       - language-support.md
-
   - navgroup:
       id: help
       topics:
