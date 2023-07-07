@@ -40,7 +40,7 @@ If you find that a domain-specific term is being corrected that shouldn't be, yo
 
 If you are using actions in your assistant, follow these steps to disable autocorrection:
 
-1. On the **Actions** page, click **Global settings** ![Global settings](images/gear-icon-black.png).
+1. On the **Actions** page, click **Global settings** !![Gear icon](../../icons/settings.svg).
 
 1. Click the **Autocorrection** tab.
 

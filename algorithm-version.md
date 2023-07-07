@@ -26,7 +26,7 @@ There are three choices:
 
 To choose an algorithm version for actions:
 
-1. On the **Actions** page, click **Global settings** ![Gear icon](images/gear-icon-black.png).
+1. On the **Actions** page, click **Global settings** ![Gear icon](../../icons/settings.svg).
 
 1. Click the **Algorithm Version** tab.
 
