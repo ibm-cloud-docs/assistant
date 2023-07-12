@@ -130,7 +130,7 @@ Follow the steps in the [Getting started with {{site.data.keyword.conversationsh
 {: #faqs-export-conversation}
 {: faq}
 
-You cannot directly export conversations from the User conversation page.  You can, however, use the `/logs` API to list events from the transcripts of conversations that occurred between your users and your assistant. For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1#listlogs){: external} and the [Filter query reference](/docs/assistant?topic=assistant-filter-reference). Or, you can use a Python script to export logs. For more information, see [export_logs_py](https://github.com/watson-developer-cloud/community/blob/master/watson-assistant/export_logs_py.py).
+You cannot directly export conversations from the User conversation page.  You can, however, use the `/logs` API to list events from the transcripts of conversations that occurred between your users and your assistant. For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1#listlogs){: external} and the [Filter query reference](/docs/assistant?topic=assistant-filter-reference). Or, you can use a Python script to export logs. For more information, see [export_logs_py](https://github.com/watson-developer-cloud/community/blob/master/watson-assistant/export_logs_py.py){: external}.
 
 ## Can I export and import dialog nodes?
 {: #faqs-nodes}
