@@ -22,9 +22,7 @@ toc:
           label: Release notes
           topics:
           - release-notes.md
-          - link:
-              label: Web chat release notes
-              href: https://cloud.ibm.com/docs/watson-assistant?topic=watson-assistant-release-notes-chat
+          - release-notes-chat.md
   - navgroup:
       id: tutorial
       topics:
@@ -50,7 +48,7 @@ toc:
               topics:
               - intents.md
               - catalog.md
-              - include: ../watson-assistant/algorithm-version.md
+              - algorithm-version.md
           - topicgroup:
               label: Building a conversational flow
               topics:
@@ -62,7 +60,7 @@ toc:
               - dialog-runtime-context.md
               - dialog-tasks.md
               - dialog-runtime.md
-              - include: ../watson-assistant/autocorrection.md
+              - autocorrection.md
               - dialog-slots.md
           - entities.md
           - versions.md
@@ -131,7 +129,7 @@ toc:
                label: Enhancing security
                topics:
                 - access-control.md
-                - include: ../watson-assistant/admin-securing.md
+                - admin-securing.md
           - topicgroup:
                 label: Advanced development
                 topics:
@@ -198,7 +196,7 @@ toc:
       - recovery.md
       - phone-context.md
       - commands-sms.md
-      - include: ../watson-assistant/admin-managing-plan.md
+      - admin-managing-plan.md
       - topicgroup:
           label: System entities
           topics:

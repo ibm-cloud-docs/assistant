@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-07-07"
 
 subcollection: assistant
 
@@ -12,7 +12,8 @@ content-type: release-note
 
 {{site.data.keyword.attribute-definition-list}}
 
-{{site.data.content.newlink}}
+The release notes for the **classic {{site.data.keyword.conversationshort}}** experience has moved. For the most up-to-date version, see [Release notes for Watson Assistant](/docs/watson-assistant?topic=watson-assistant-watson-assistant-release-notes){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
+{: attention}
 
 # Release notes for {{site.data.keyword.conversationshort}}
 {: #release-notes}

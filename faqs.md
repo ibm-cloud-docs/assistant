@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-03-22"
+  years: 2015,  2023
+lastupdated: "2023-07-12"
 
 subcollection: assistant
 
@@ -10,23 +10,10 @@ content-type: faq
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:external: target="_blank" .external}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
-{:tip: .tip}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:swift: .ph data-hd-programlang='swift'}
-{:faq: data-hd-content-type='faq'}
+{{site.data.keyword.attribute-definition-list}}
 
-{{site.data.content.newlink}}
+This documentation for the **classic {{site.data.keyword.conversationshort}}** experience has moved. For the most up-to-date version, see [FAQs for {{site.data.keyword.conversationfull}}](/docs/watson-assistant?topic=watson-assistant-watson-assistant-faqs){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
+{: attention}
 
 # FAQ
 {: #faqs}
@@ -143,7 +130,7 @@ Follow the steps in the [Getting started with {{site.data.keyword.conversationsh
 {: #faqs-export-conversation}
 {: faq}
 
-You cannot directly export conversations from the User conversation page.  You can, however, use the `/logs` API to list events from the transcripts of conversations that occurred between your users and your assistant. For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1#listlogs){: external} and the [Filter query reference](/docs/assistant?topic=assistant-filter-reference).
+You cannot directly export conversations from the User conversation page.  You can, however, use the `/logs` API to list events from the transcripts of conversations that occurred between your users and your assistant. For more information, see the [API reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1#listlogs){: external} and the [Filter query reference](/docs/assistant?topic=assistant-filter-reference). Or, you can use a Python script to export logs. For more information, see [export_logs_py](https://github.com/watson-developer-cloud/community/blob/master/watson-assistant/export_logs_py.py).
 
 ## Can I export and import dialog nodes?
 {: #faqs-nodes}
@@ -174,6 +161,12 @@ Regularly [back up data](/docs/assistant?topic=assistant-backup) to prevent prob
 {: faq}
 
 No, you cannot change from a Trial, Plus, or Standard plan to a Lite plan. And you cannot upgrade from a Trial to a Standard plan. For more information, see [Upgrading](/docs/assistant?topic=assistant-upgrade).
+
+## How many Lite plan instances of {{site.data.keyword.conversationshort}} can I create?
+{: #faqs-lite-plans}
+{: faq}
+
+You can have only one Lite plan instance of {{site.data.keyword.conversationshort}} per resource group.
 
 ## How long are log files kept for a workspace?
 {: #faqs-assistant-logs}
@@ -250,3 +243,9 @@ To see your monthly active users (MAU) do the following:
 You see the error `New Off Topic not supported` after editing the JSON file for a dialog skill and changing the skill language from English to another language.
 
 To resolve this issue, modify the JSON file by setting `off_topic` to `false`. For more information about this feature, see [Defining what's irrelevant](/docs/assistant?topic=assistant-irrelevance-detection).
+
+## Is it possible to increase the number of intents per skill
+{: #faqs-intents-number}
+{: faq}
+
+No, it is not possible to increase the number of intents per skill.
