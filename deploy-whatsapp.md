@@ -1,29 +1,17 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2022-08-25"
+  years: 2020, 2023
+lastupdated: "2023-07-12"
 
 subcollection: assistant
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:external: target="_blank" .external}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
-{:tip: .tip}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:swift: .ph data-hd-programlang='swift'}
+{{site.data.keyword.attribute-definition-list}}
 
-{{site.data.content.newlink}}
+This documentation for the **classic {{site.data.keyword.conversationshort}}** experience has moved. For the most up-to-date version, see [Integrating with WhatsApp](/docs/watson-assistant?topic=watson-assistant-deploy-whatsapp){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
+{: attention}
 
 # Integrating with WhatsApp
 {: #deploy-whatsapp}
@@ -54,7 +42,7 @@ WhatsApp has a rigorous process that they use to review all businesses that want
 
 1.  To register, go to the [Facebook Business Manager](https://business.facebook.com/overview){: external} website, and click *Create account* and follow the instructions to create an account.
 
-1.  Make a note of your Facebook Business Manager ID. You will need this in the next step.
+1.  Get your Facebook Business Manager ID. In [Settings](https://business.facebook.com/settings){: external}, click the **Business info** tab. The Facebook Business Manager ID is at the top of the page.
 
 1.  Submit the *Request to enable your Twilio numbers for WhatsApp* form from the [Twilio API for WhatsApp](https://www.twilio.com/whatsapp/request-access){: external} web page.
 
@@ -184,4 +172,4 @@ For the best customer experience, design your dialog with the capabilities of th
 | Bold | `There's *no* crying in baseball.` | There's **no** crying in baseball. |
 {: caption="Supported Markdown syntax" caption-side="top"}
 
-<!-- If you want to use the same dialog for an assistant that you deploy to many different platforms, add custom responses per integration type. You can add a conditioned response that tells the assistant to show the response only when the *WhatsApp with Twilio* integration is being used. For more information, see [Building integration-specific responses](/docs/assistant?topic=assistant-dialog-integrations#dialog-integrations-condition-by-type). -->
+
