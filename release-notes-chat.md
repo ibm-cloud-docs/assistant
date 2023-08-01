@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-07"
+lastupdated: "2023-08-01"
 
 subcollection: assistant
 
@@ -10,23 +10,11 @@ subcollection: assistant
 
 {{site.data.keyword.attribute-definition-list}}
 
-The release notes for the **classic {{site.data.keyword.conversationshort}}** experience has moved. For the most up-to-date version, see [Web chat release notes](/docs/watson-assistant?topic=watson-assistant-release-notes-chat){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
-{: attention}
-
 # Web chat release notes
 {: #release-notes-chat}
 
-Find out what's new in the web chat integration.
-{: shortdesc}
-
-The web chat changelog lists changes ordered by version number. For more information about the web chat, see [Integrating the web chat with your website](/docs/watson-assistant?topic=watson-assistant-deploy-web-chat).
-
-For information about new features and improvements to the core {{site.data.keyword.conversationshort}} product, see [Release notes](/docs/watson-assistant?topic=watson-assistant-release-notes).
-
-## Controlling the web chat version
-{: #release-notes-chat-version}
-
-If you want to evaluate changes that are introduced in a web chat release before you apply them to your deployment, you can set a version of your web chat. For more information, see [Controlling the web chat version](/docs/watson-assistant?topic=watson-assistant-web-chat-develop-versions).
+The release notes for the **classic {{site.data.keyword.conversationshort}}** experience have moved. All release notes for Web chat for {{site.data.keyword.conversationshort}} can be found here: [Web chat release notes](/docs/watson-assistant?topic=watson-assistant-release-notes-chat){: external}.
+{: attention}
 
 ## 7.4.0
 {: #7.4.0}
