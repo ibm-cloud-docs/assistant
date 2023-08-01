@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-07"
+lastupdated: "2023-08-01"
 
 subcollection: assistant
 
@@ -12,19 +12,11 @@ content-type: release-note
 
 {{site.data.keyword.attribute-definition-list}}
 
-The release notes for the **classic {{site.data.keyword.conversationshort}}** experience has moved. For the most up-to-date version, see [Release notes for Watson Assistant](/docs/watson-assistant?topic=watson-assistant-watson-assistant-release-notes){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
-{: attention}
-
 # Release notes for {{site.data.keyword.conversationshort}}
 {: #release-notes}
 
-Use these release notes to learn about the latest updates to {{site.data.keyword.conversationfull}}.
-{: shortdesc}
-
-For information about changes to the web chat integration, see the [Web Chat release notes](/docs/watson-assistant?topic=watson-assistant-release-notes-chat){: external}.
-
-On [7 October 2021](#assistant-oct072021), the new {{site.data.keyword.conversationshort}} experience became available. This documentation applies to the classic {{site.data.keyword.conversationshort}}.
-{: note}
+The release notes for the **classic {{site.data.keyword.conversationshort}}** experience have moved. All release notes for {{site.data.keyword.conversationshort}} can be found here: [Release notes for {{site.data.keyword.conversationshort}}](/docs/watson-assistant?topic=watson-assistant-watson-assistant-release-notes){: external}.
+{: attention}
 
 ## 22 May 2023
 {: #watson-assistant-may222023}
