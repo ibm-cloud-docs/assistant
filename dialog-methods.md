@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-05-08"
+lastupdated: "2023-08-02"
 
 subcollection: assistant
 
@@ -257,37 +257,15 @@ The filter expression consists of the following values:
 
     Supported operators are:
 
-    <table>
-    <caption>Supported filter operators</caption>
-    <tr>
-      <th>Operator</th>
-      <th>Description</th>
-    </tr>
-    <tr>
-      <td><code>==</code></td>
-      <td>Is equal to</td>
-    </tr>
-    <tr>
-      <td><code>></code></td>
-      <td>Is greater than</td>
-    </tr>
-    <tr>
-      <td><code><</code></td>
-      <td>Is less than</td>
-    </tr>
-    <tr>
-      <td><code>>=</code></td>
-      <td>Is greater than or equal to</td>
-    </tr>
-    <tr>
-      <td><code><=</code></td>
-      <td>Is less than or equal to</td>
-    </tr>
-    <tr>
-      <td><code>!=</code></td>
-      <td>Is not equal to</td>
-    </tr>
-    </table>
+    | Operator | Description |
+    | --- | --- |
+    | `==` | Is equal to |
+    | `>` | Is greater than |
+    | `<` | Is less than |
+    | `>=` | Is greater than or equal to |
+    | `<=` | Is less than or equal to |
+    | `!=` | Is not equal to |
+    {: caption="Supported filter operators" caption-side="bottom"}
 
 - `comparison_value`: Value that you want to compare each array element property value against. To specify a value that can change depending on the user input, use a context variable or entity as the value. If you specify a value that can vary, add logic to guarantee that the `comparison_value` value is valid at evaluation time or an error will occur.
 
