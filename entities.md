@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-03-10"
+lastupdated: "2023-08-04"
 
 keywords: entity, entity value, contextual entity, dictionary entity, pattern entity, entity synonym, annotate mentions
 
@@ -10,21 +10,7 @@ subcollection: assistant
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:external: target="_blank" .external}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
-{:tip: .tip}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:swift: .ph data-hd-programlang='swift'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
 {{site.data.content.newlink}}
 
@@ -49,7 +35,7 @@ Your assistant detects entities in the user input by using one of the following 
 
 Your assistant looks for terms in the user input that match the values, synonyms, or patterns you define for the entity.
 
-- **Synonym entity**: You define a category of terms as an entity (`color`), and then one or more values in that category (`blue`). For each value you specify a bunch of synonyms (`aqua`, `navy`). You can also pick synonyms to add from recommendations made to you by Watson.
+- **Synonym entity**: You define a category of terms as an entity (`color`), and then one or more values in that category (`blue`). For each value you specify a bunch of synonyms (`aqua`, `navy`).
 
     At run time, your assistant recognizes terms in the user input that exactly match the values or synonyms that you defined for the entity as mentions of that entity.
 - **Pattern entity**: You define a category of terms as an entity (`contact_info`), and then one or more values in that category (`email`). For each value, you specify a regular expression that defines the textual pattern of mentions of that value type. For an `email` entity value, you might want to specify a regular expression that defines a `text@text.com` pattern.
@@ -126,33 +112,6 @@ Dictionary-based entites are those for which you define specific terms, synonyms
     If you want to define a pattern for your assistant to look for in user input, such as a product order number or email address, define a pattern value instead. See [Adding entities that recognize patterns](#entities-patterns) for more details.
 
     **Note:** You can add *either* synonyms or patterns for a single entity value, not both.
-
-    Watson can also recommend synonyms for your entity values. The recommender finds related synonyms based on contextual similarity extracted from a vast body of existing information, including large sources of written text, and uses natural language processing techniques to identify words similar to the existing synonyms in your entity value.
-
-1.  To see synonym recommendations from Watson, click **Recommend synonyms**. Otherwise, skip this step.
-
-    Synonym recommendations are listed. The terms are displayed in lowercase, but your assistant recognizes mentions of the synonyms whether they are specified in lowercase or uppercase.
-
-    The more coherent your entity value synonyms are, the more relevant and better focused your recommendations will be. For example, if you have several words that are focused on a theme, you will get better suggestions than if you have one or two random words.
-    {: tip}
-
-    ![Shows synonym recommendations for the word apple](images/entities-recommended-synonyms.png)
-
-    1. Select any synonyms you want to include, and then click **Add selected**.
-
-       You must click the **Add selected** button for any synonyms you selected to be added. If you move to the next set without clicking this button first, your selections will be lost.
-
-       The synonyms are added to your entity, and Watson suggests more synonyms.
-
-       If you receive no additional synonym recommendations, it could be because your entity is already well defined, or it contains content that the recommender is not currently able to expand upon.
-       {: tip}
-
-       If you choose not to select a recommended synonym, the system will treat that as a term you are not interested in, and will alter the next set of recommendations you see when you press **Add selected** or **Next set**. This inference only persists while you are choosing synonyms; information about skipped synonyms is not used for any other purpose by your assistant.
-       {: note}
-
-       ![Shows a set of synonym recommendations that will be added to the entity value](images/entities-synonyms-added.png)
-
-    1. Continue adding synonyms as desired. When you're finished accepting recommendations, click the **X** to close the recommendations panel.
 
 1.  If you want your assistant to recognize terms with syntax that is similar to the entity value and synonyms you specify, but without requiring an exact match, set the **Fuzzy Matching** switch to **On**.
 
@@ -256,8 +215,6 @@ For English, fuzzy matching prevents the capturing of some common, valid English
 
 Interactions between the stemming and misspelling fuzzy matching features are not allowed. Specifically, if either an entity or the input is stemmed, misspelling fuzzy matching does not work. For example, assume that the entity is `@lending` and the input word is `pending`. During entity stemming, `@lending` produces `lend`. During input stemming, `pending` produces `pend`. In this case, `lend` does not match to `pend` because the entity and input were stemmed. This change applies to only the English language.
 {: important}
-
-Your fuzzy matching setting has no impact on synonym recommendations. Even if fuzzy matching is enabled, synonyms are suggested for the exact value you specify only, not the value and slight variations of the value. To understand how fuzzy matching and autocorrection are related to one another, see the [autocorrection documentation](/docs/assistant?topic=assistant-autocorrection#autocorrection-vs-fuzzy-matching).
 
 ## Adding contextual entities
 {: #entities-create-annotation-based}

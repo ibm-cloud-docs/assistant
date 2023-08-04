@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-08-01"
+lastupdated: "2023-08-04"
 
 subcollection: assistant
 
@@ -1924,9 +1924,6 @@ Contextual entities (Beta)
 :   Contextual entities are entities that you define by labeling mentions of the entity type that occur in intent user examples. These entity types teach your assistant not only terms of interest, but also the context in which terms of interest typically appear in user utterances, enabling your assistant to recognize never-seen-before entity mentions based solely on how they are referenced in user input. For example, if you annotate the intent user example, `I want a flight to Boston` by labeling `Boston` as a `@destination` entity, then your assistant can recognize `Chicago` as a `@destination` mention in a user input that says, `I want a flight to Chicago.` This feature is currently available for English only. See [Adding contextual entities](/docs/assistant?topic=assistant-entities#entities-create-annotation-based) for more information.
 
     When you access the tool with an Internet Explorer web browser, you cannot label entity mentions in intent user examples nor edit user example text.
-
-Entity recommendations
-:   Watson can now recommend synonyms for your entity values. The recommender finds related synonyms based on contextual similarity extracted from a vast body of existing information, including large sources of written text, and uses natural language processing techniques to identify words similar to the existing synonyms in your entity value. For more information see [Synonyms](/docs/assistant?topic=assistant-entities#entities-create-dictionary-based).
 
 New API version
 :   The current API version is now `2018-07-10`. This version introduces the following changes:
