@@ -36,7 +36,7 @@ subcollection: assistant
 | Portuguese (Brazilian) | pt-br |
 | Spanish | es |
 | Universal`*` | xx |
-{: caption="Table 1. Supported languages" caption-side="top"}
+{: caption="Table 1. Supported languages" caption-side="bottom"}
 
 `*` If you want to support conversations in a language for which {{site.data.keyword.conversationshort}} doesn't have a dedicated model, such as Russian, use the *Universal* language model. For more information, see [Adding support for global audiences](/docs/assistant?topic=assistant-assistant-language).
 
@@ -70,7 +70,7 @@ In the following tables, the level of language and feature support is indicated 
 | **Portuguese (Brazilian) (pt-br)** | GA | GA | GA |
 | **Spanish (es)**                   | GA | GA | GA |
 | **Universal (xx)**                 | GA | GA | GA |
-{: caption="Table 2. Skill support details" caption-side="top"}
+{: caption="Table 2. Skill support details" caption-side="bottom"}
 
 ### Intent feature support details
 {: #language-support-intents}
@@ -91,7 +91,7 @@ In the following tables, the level of language and feature support is indicated 
 | **Portuguese (Brazilian) (pt-br)** | GA | GA |
 | **Spanish (es)**                   | GA | GA |
 | **Universal (xx)**                 | NA | NA |
-{: caption="Table 3. Intent feature support details" caption-side="top"}
+{: caption="Table 3. Intent feature support details" caption-side="bottom"}
 
 ### User input processing support details
 {: #language-support-input}
@@ -112,13 +112,13 @@ In the following tables, the level of language and feature support is indicated 
 | **Portuguese (Brazilian) (pt-br)** | GA | GA | NA | NA |
 | **Spanish (es)**                   | GA | GA | NA | NA |
 | **Universal (xx)**                 | GA | GA | NA | NA |
-{: caption="Table 4. User input processing support details" caption-side="top"}
+{: caption="Table 4. User input processing support details" caption-side="bottom"}
 
 ### Entity feature support details
 {: #language-support-entities}
 
 | Language | **[Contextual entities](/docs/assistant?topic=assistant-entities#entities-create-annotation-based)** |
-|:---:|:---:|:---:|
+|:---:|:---:|
 | **English (en)**                   | GA |
 | **Arabic (ar)**                    | NA |
 | **Chinese (Simplified) (zh-cn)**   | NA |
@@ -133,7 +133,7 @@ In the following tables, the level of language and feature support is indicated 
 | **Portuguese (Brazilian) (pt-br)** | NA |
 | **Spanish (es)**                   | NA |
 | **Universal (xx)**                 | NA |
-{: caption="Table 5. Entity feature support details" caption-side="top"}
+{: caption="Table 5. Entity feature support details" caption-side="bottom"}
 
 ### System entity feature support details
 {: #language-support-system-entities}
@@ -154,7 +154,7 @@ In the following tables, the level of language and feature support is indicated 
 | **Portuguese (Brazilian) (pt-br)** | GA | Deprecated |
 | **Spanish (es)**                   | GA | Deprecated |
 | **Universal (xx)**                 | GA | NA |
-{: caption="Table 6. System entity feature support details" caption-side="top"}
+{: caption="Table 6. System entity feature support details" caption-side="bottom"}
 
 The {{site.data.keyword.conversationshort}} service supports multiple languages as noted, but the tool interface itself (descriptions, labels, etc.) is in English. All supported languages can be input and trained through the English interface.
 {: note}
