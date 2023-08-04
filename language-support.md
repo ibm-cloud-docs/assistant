@@ -2,26 +2,13 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-01-26"
+lastupdated: "2023-08-04"
 
 subcollection: assistant
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
-{:tip: .tip}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:swift: .ph data-hd-programlang='swift'}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 {{site.data.content.newlink}}
 
@@ -130,22 +117,22 @@ In the following tables, the level of language and feature support is indicated 
 ### Entity feature support details
 {: #language-support-entities}
 
-| Language | **[Contextual entities](/docs/assistant?topic=assistant-entities#entities-create-annotation-based)** | **[Synonym recommendations](/docs/assistant?topic=assistant-entities#entities-create-dictionary-based)** |
+| Language | **[Contextual entities](/docs/assistant?topic=assistant-entities#entities-create-annotation-based)** |
 |:---:|:---:|:---:|
-| **English (en)**                   | GA | GA |
-| **Arabic (ar)**                    | NA | NA |
-| **Chinese (Simplified) (zh-cn)**   | NA | NA |
-| **Chinese (Traditional) (zh-tw)**  | NA | NA |
-| **Czech (cs)**                     | NA | NA |
-| **Dutch (nl)**                     | NA | NA |
-| **French (fr)**                    | Beta | GA |
-| **German (de)**                    | NA | NA |
-| **Italian (it)**                   | NA | NA |
-| **Japanese (ja)**                  | NA | GA |
-| **Korean (ko)**                    | NA | NA |
-| **Portuguese (Brazilian) (pt-br)** | NA | NA |
-| **Spanish (es)**                   | NA | GA |
-| **Universal (xx)**                 | NA | NA |
+| **English (en)**                   | GA |
+| **Arabic (ar)**                    | NA |
+| **Chinese (Simplified) (zh-cn)**   | NA |
+| **Chinese (Traditional) (zh-tw)**  | NA |
+| **Czech (cs)**                     | NA |
+| **Dutch (nl)**                     | NA |
+| **French (fr)**                    | Beta |
+| **German (de)**                    | NA |
+| **Italian (it)**                   | NA |
+| **Japanese (ja)**                  | NA |
+| **Korean (ko)**                    | NA |
+| **Portuguese (Brazilian) (pt-br)** | NA |
+| **Spanish (es)**                   | NA |
+| **Universal (xx)**                 | NA |
 {: caption="Table 5. Entity feature support details" caption-side="top"}
 
 ### System entity feature support details

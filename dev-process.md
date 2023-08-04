@@ -2,25 +2,13 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-01-26"
+lastupdated: "2023-08-04"
 
 subcollection: assistant
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
-{:tip: .tip}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:swift: .ph data-hd-programlang='swift'}
+{{site.data.keyword.attribute-definition-list}}
 
 {{site.data.content.newlink}}
 
@@ -43,9 +31,6 @@ The typical workflow for an assistant project includes the following steps:
 1.  Define any entities that are needed to more clearly understand the user's meaning. For example, you might add an `@product` entity that you can use with the `#place_order` intent to understand what product the customer wants to buy.
 
     Mine existing intent user examples for common entity value mentions. Using annotations to define entities captures not only the text of the entity value, but the context in which the entity value is typically used in a sentence.
-
-    For dictionary-based entities, you can use synonym recommendations to expand your entity definitions.
-    {: tip}
 
 1.  Test each function that you add to the assistant in the "Try it" pane, incrementally, as you go.
 1.  When you have a working assistant that can successfully handle key tasks, add an integration that deploys the assistant to a development environment. Test the deployed assistant and make refinements.
