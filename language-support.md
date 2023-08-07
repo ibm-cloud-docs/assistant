@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-08-04"
+lastupdated: "2023-08-07"
 
 subcollection: assistant
 
@@ -55,7 +55,7 @@ In the following tables, the level of language and feature support is indicated 
 {: #language-support-skills}
 
 | Language | [**Actions skill**](/docs/assistant?topic=assistant-skill-actions-add) | [**Dialog skill**](/docs/assistant?topic=assistant-skill-dialog-add) | [**Search skill**](/docs/assistant?topic=assistant-skill-search-add) |
-|:---:|:---:|:---:|:---:|
+|:---|:---:|:---:|:---:|
 | **English (en)**                   | GA | GA | GA |
 | **Arabic (ar)**                    | GA | GA | GA |
 | **Chinese (Simplified) (zh-cn)**   | GA | GA | GA |
@@ -76,7 +76,7 @@ In the following tables, the level of language and feature support is indicated 
 {: #language-support-intents}
 
 | Language | **[Content Catalog](/docs/assistant?topic=assistant-catalog)** | **[Algorithm version](/docs/watson-assistant?topic=watson-assistant-algorithm-version )** |
-|:---:|:---:|:---:|
+|:---|:---:|:---:|
 | **English (en)**                   | GA | GA |
 | **Arabic (ar)**                    | GA (except Covid-19) | GA |
 | **Chinese (Simplified) (zh-cn)**   | NA | GA |
@@ -97,7 +97,7 @@ In the following tables, the level of language and feature support is indicated 
 {: #language-support-input}
 
 | Language | **[Dictionary-based entity support](/docs/assistant?topic=assistant-entities#entities-create-dictionary-based)** | **[Fuzzy matching (*Misspelling*)](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Fuzzy matching (*Stemming*, *Partial match*)](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Autocorrection](/docs/assistant?topic=assistant-autocorrection)** |
-|:---:|:---:|:---:|:---:|:---:|
+|:---|:---:|:---:|:---:|:---:|
 | **English (en)**                   | GA | GA | GA | GA |
 | **Arabic (ar)**                    | GA | GA | NA | NA |
 | **Chinese (Simplified) (zh-cn)**   | GA | NA | NA | NA |
@@ -118,7 +118,7 @@ In the following tables, the level of language and feature support is indicated 
 {: #language-support-entities}
 
 | Language | **[Contextual entities](/docs/assistant?topic=assistant-entities#entities-create-annotation-based)** |
-|:---:|:---:|
+|:---|:---:|
 | **English (en)**                   | GA |
 | **Arabic (ar)**                    | NA |
 | **Chinese (Simplified) (zh-cn)**   | NA |
