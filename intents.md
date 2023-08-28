@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-03-10"
+lastupdated: "2023-08-28"
 
 keywords: intent, intent conflicts, annotate
 
@@ -10,20 +10,7 @@ subcollection: assistant
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
-{:tip: .tip}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:swift: .ph data-hd-programlang='swift'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
 {{site.data.content.newlink}}
 
@@ -53,8 +40,6 @@ To learn more about creating intents, watch the following 2 1/2-minute video.
     The examples that you provide are used by your assistant to build a machine learning model that can recognize the same and similar types of utterances and map them to the appropriate intent.
 
 Start with a few intents, and test them as you iteratively expand the scope of the application.
-
-![Plus or higher plans only](images/plus.png) If you already have chat transcripts from a call center or customer inquiries that you collected from an online application, put that data to work for you. Share the real customer utterances with Watson and let Watson recommend the best intents and intent user examples for your needs. See [Get help defining intents](/docs/assistant?topic=assistant-intent-recommendations) for more details.
 
 ## Creating intents
 {: #intents-create-task}
@@ -101,8 +86,6 @@ Start with a few intents, and test them as you iteratively expand the scope of t
 
     Provide at least five examples for each intent.
     {: important}
-
-    ![Plus or higher plans only](images/plus.png) To get help with user example creation, see [Get intent user example recommendations](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations-task).
 
 1.  When you are done adding examples, click ![Close arrow](images/close_arrow.png) to finish creating the intent.
 
@@ -266,8 +249,6 @@ You can download a number of intents to a CSV file, so you can then upload and r
 {: #intents-import}
 
 If you have a large number of intents and examples, you might find it easier to upload them from a comma-separated value (CSV) file than to define them one by one. Be sure to remove any personal data from the user examples that you include in the file.
-
-Alternatively, you can upload a file with raw user utterances (from call center logs, for example) and let Watson find candidates for user examples from the data. For more information, see [Adding examples from log files](/docs/assistant?topic=assistant-intent-recommendations#intent-recommendations-get-example-recommendations-task). This feature is available only to users of paid plans.
 
 1.  Collect the intents and examples into a CSV file, or export them from a spreadsheet to a CSV file. The required format for each line in the file is as follows:
 
