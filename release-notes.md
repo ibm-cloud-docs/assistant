@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-08-04"
+lastupdated: "2023-08-29"
 
 subcollection: assistant
 
@@ -747,7 +747,7 @@ Introducing the *Enterprise* plan!
 
     The Enterprise plan is replacing the Premium plan. The Premium plan is being retired today. Existing Premium plan users are not impacted. They can continue to work in their Premium instances and create instances up to the 30-instance limit. New users do not see the Premium plan as an option when they create a service instance.
 
-    For more information, see the [Pricing](https://www.ibm.com/cloud/watson-assistant/pricing/){: external} page.
+    For more information, see the [Pricing](https://www.ibm.com/products/watsonx-assistant/pricing){: external} page.
 
 Other plan changes
 :   Our pricing has been revised to reflect the features we've added that help you build an assistant that functions as a powerful omnichannel SaaS application.
@@ -1116,7 +1116,7 @@ Zendesk support is generally available
 :   Integrate your web chat with Zendesk so your assistant can transfer customers who asks to speak to a person to a Zendesk agent who can answer their questions. And now you can secure the connection to Zendesk. For more information, see [Adding support for transfers](/docs/assistant?topic=assistant-deploy-zendesk).
 
 Pricing plan changes
-:   We continue to revamp the overall service plan structure for {{site.data.keyword.conversationshort}}. In April, we announced [a new low cost entry point](#1April2020) for the Plus plan. Today, the Standard plan is being retired. Existing Standard plan users are not impacted; they can continue to work in their Standard instances. New users do not see the Standard plan as an option when they create a service instance. For more information, see the [Pricing](https://www.ibm.com/cloud/watson-assistant/pricing/){: external} page.
+:   We continue to revamp the overall service plan structure for {{site.data.keyword.conversationshort}}. In April, we announced [a new low cost entry point](#1April2020) for the Plus plan. Today, the Standard plan is being retired. Existing Standard plan users are not impacted; they can continue to work in their Standard instances. New users do not see the Standard plan as an option when they create a service instance. For more information, see the [Pricing](https://www.ibm.com/products/watsonx-assistant/pricing){: external} page.
 
 ## 27 May 2020
 {: #assistant-may272020}
@@ -1811,7 +1811,7 @@ User-based Premium plan
 
     Existing Premium plan service instances are not impacted by this change; they continue to use API-based billing methods. Only existing Premium plan users will see the API-based plan listed as the *Premium (API)* plan option.
 
-    See {{site.data.keyword.conversationshort}} [service plan options](https://www.ibm.com/cloud/watson-assistant/pricing/){: external} for more information about all available service plans.
+    See {{site.data.keyword.conversationshort}} [service plan options](https://www.ibm.com/products/watsonx-assistant/pricing){: external} for more information about all available service plans.
 
 ## 20 November 2018
 {: #assistant-nov202018}

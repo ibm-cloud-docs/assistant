@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-08-04"
+lastupdated: "2023-08-29"
 
 subcollection: assistant
 
@@ -22,7 +22,7 @@ Learn how to upgrade your service plan.
 ## Upgrading your plan
 {: #upgrade-plan}
 
-You can explore the {{site.data.keyword.conversationshort}} [service plan options](https://www.ibm.com/cloud/watson-assistant/pricing/){: external} to decide which plan is best for you.
+You can explore the {{site.data.keyword.conversationshort}} [service plan options](https://www.ibm.com/products/watsonx-assistant/pricing){: external} to decide which plan is best for you.
 
 The page header shows the plan you are using today.
 
