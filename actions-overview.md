@@ -27,7 +27,7 @@ subcollection: assistant
 
 {{site.data.content.newlink}}
 
-# Actions skill overview <!--![Beta](images/beta.png)-->
+# Actions skill overview 
 {: #actions-overview}
 
 Learn how the actions skill makes it easier to construct an engaging conversation.

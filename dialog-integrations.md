@@ -50,13 +50,11 @@ To take advantage of the `context.integrations` object, you can create context v
 | Zendesk service desk from web chat | `$integrations.zendesk` |
 {: caption="Integration-specific context variables" caption-side="top"}
 
-<!-- | Facebook         | `$integrations.facebook` | -->
-<!-- | Generic service desk connection from Web Chat | `$integrations.service_desk` |-->
-<!-- | Intercom         | `$integrations.intercom` | -->
-<!-- | Slack            | `$integrations.slack` | -->
-<!-- | WhatsApp with Twilio | `$integrations.whatsapp` | -- >
 
-<!--If you previously set up a connector to integrate with Facebook or Slack, you can use context variables. If you update you API calls to use the `2020-04-01` version of the v2 `/message` API, you can use `$integrations.facebook` and `$integrations.slack` for Facebook and Slack.-->
+
+
+
+
 The following sections describe how to use integration-specific context variables to do common tasks.
 
 ## Building integration-specific dialog flow
@@ -102,12 +100,12 @@ You can customize the conversation in the following ways:
 The rich response types often behave differently when they are displayed in different built-in integrations or in the assistant preview. For more information about these unique behaviors, see the following topics:
 
 - [Web chat](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-dialog)
-<!--- [Facebook](/docs/assistant?topic=assistant-deploy-facebook#deploy-facebook-dialog)-->
-<!-- - [Intercom](/docs/assistant?topic=assistant-deploy-intercom#deploy-intercom-dialog) -->
+
+
 - [Phone](/docs/assistant?topic=assistant-deploy-phone#deploy-phone-dialog)
-<!--- [Slack](/docs/assistant?topic=assistant-deploy-slack#deploy-slack-dialog)-->
+
 - [SMS with Twilio](/docs/assistant?topic=assistant-deploy-sms#deploy-sms-dialog)
-<!-- [WhatsApp with Twilio](/docs/assistant?topic=assistant-deploy-whatsapp#deploy-whatsapp-dialog) -->
+
 - [Assistant preview](/docs/assistant?topic=assistant-deploy-web-link#deploy-web-link-dialog)
 
 If you need to provide customized responses for different channels, and you do not need to modify your dialog flow based on which integration is in use, you can also use the `channels` array to target your responses to specific integrations. For more information, see [Targeting specific integrations](/docs/assistant?topic=assistant-dialog-responses-json#dialog-responses-json-target-integrations).

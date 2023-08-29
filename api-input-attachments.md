@@ -138,28 +138,4 @@ print(json.dumps(response, indent=2))
 {: codeblock}
 {: python}
 
-<!-- Commenting out java block
-```java
-MessageInputAttachments inputAttachments = new MessageInputAttachments.Builder()
-  .attachment("https://yourphoto.com/yourphoto.jpeg", "image/jpeg")
-  .build();
 
-MessageInput input = new MessageInput.Builder()
-  .messageType("text")
-  .text("Hello")
-  .attachments(inputAttachments)
-  .build();
-
-MessageOptions options = new MessageOptions.Builder()
-  .assistantId("{assistant_id}")
-  .sessionId("{session_id}")
-  .input(input)
-  .build();
-
-MessageResponse response = service.message(options).execute().getResult();
-
-System.out.println(response);
-```
-{: codeblock}
-{: java}
--->

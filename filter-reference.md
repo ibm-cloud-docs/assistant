@@ -90,10 +90,7 @@ Similarly, you can filter on intents or entities sent as part of the request, as
 
 `request.input.intents:intent::hello`
 
-<!--Filtering on intents operates on all detected intents. To filter only on the detected intent with the highest confidence, you can use the `response.top_intent` shorthand syntax. For example:
 
-`response.top_intent::goodbye`
--->
 
 ### Filtering by other fields
 {: #filter-reference-fields}
@@ -107,7 +104,7 @@ To filter on another field in the log data, specify the location as a path ident
     }
   }
 ```
-<!-- {data-copy=false} -->
+
 
 Filtering is not available for all fields. You can filter on the following fields:
 
