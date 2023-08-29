@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-07-07"
+lastupdated: "2023-08-29"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
@@ -31,7 +31,7 @@ The metrics that are used for billing purposes differ based on your plan type. Y
 
 For answers to common questions about subscriptions, see [How you're charged](/docs/billing-usage?topic=billing-usage-charges){: external}.
 
-Explore the {{site.data.keyword.conversationshort}} [service plan options](https://www.ibm.com/cloud/watson-assistant/pricing/){: external}.
+Explore the {{site.data.keyword.conversationshort}} [service plan options](https://www.ibm.com/cloud/watson-assistant/pricing){: external}.
 
 ### Paid plan features
 {: #admin-managing-plan-paid}
@@ -56,8 +56,6 @@ The plan type of the service instance you are currently using is displayed in th
 {: #admin-managing-plan-user-based}
 
 Unlike API-based plans, which measure usage by the number of API calls made during a month, the Plus and Enterprise plans measure usage by the number of monthly active users.
-
-
 
 A *monthly active user (MAU)* is any unique user who has at least one meaningful interaction with your assistant or custom application over the calendar billing month. A meaningful interaction is an exchange in which a user sends a request to your service and your service responds. Welcome messages that are displayed at the start of a conversation are not charged.
 
