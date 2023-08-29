@@ -39,7 +39,7 @@ You can use a webhook to do the following types of things:
 - Interact with an external web service to get information. For example, you might check on the expected arrival time for a flight from an air traffic service or get a forecast from a weather service.
 - Send requests to an external application, such as a restaurant reservation site, to complete a simple transaction on the user's behalf.
 - Trigger a SMS notification.
-- Trigger a {{site.data.keyword.openwhisk}} web action.
+- Trigger an {{site.data.keyword.openwhisk}} web action.
 
 You cannot use a webhook to call a {{site.data.keyword.openwhisk_short}} action that uses token-based Identity and Access Management (IAM) authentication. However, you can make a call to a secured {{site.data.keyword.openwhisk_short}} web action. For more information, see [Calling an IBM {{site.data.keyword.openwhisk_short}} web action](#dialog-webhooks-cf-web-action).
 {: important}

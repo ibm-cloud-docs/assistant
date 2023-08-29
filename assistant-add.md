@@ -43,7 +43,7 @@ Follow these steps to create an assistant:
 ## Assistant limits
 {: #assistant-add-limits}
 
-The number of assistants you can create depends on your {{site.data.keyword.conversationshort}} [plan type](https://www.ibm.com/products/watson-assistant/pricing){: external}. There is also a limit of 100 assistants per service instance.
+The number of assistants you can create depends on your {{site.data.keyword.conversationshort}} [plan type](https://www.ibm.com/products/watsonx-assistant/pricing){: external}. There is also a limit of 100 assistants per service instance.
 
 After 30 days of inactivity, an unused assistant in a Lite plan service instance might be deleted to free up space. See [Changing the inactivity timeout setting](/docs/assistant?topic=assistant-assistant-settings) for more information on the subject.
 
