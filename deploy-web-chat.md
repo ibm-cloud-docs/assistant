@@ -133,7 +133,7 @@ To add the assistant to a web page on your company website, complete the followi
     <body>
         <title>My Test Page</title>
         <p>The body of my page.</p>
-        <!-- copied script elements -->
+        
         </body>
     </html>
     ```

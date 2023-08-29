@@ -40,7 +40,7 @@ When you build the flow of conversation between your assistant and your customer
 
 When you want your assistant to get its answer from your existing help content, use a *search skill*. The search skill can be added to an assistant along with a conversational flow skill. For more information, see [Creating a search skill](/docs/assistant?topic=assistant-skill-search-add).
 
-## Actions skill <!--![Beta](images/beta.png)-->
+## Actions skill 
 {: #skills-choose-actions}
 
 The actions skill is the best choice when you want to approach the assistant with a focus on content. The actions skill offers the following benefits:
@@ -96,5 +96,4 @@ For some functions, there is parity but you follow different steps to implement 
 - **Jump-to**: In an actions skill, you can jump from one step to another. In a dialog skill, you use a jump-to to skip to a specific dialog node in the same branch of the conversation. With an actions skill, you can jump to a different step within an action also. However, to do so, you use conditions on the intervening steps to prevent them from being processed, rather than using an explicit jump-to. The benefit of this approach is that it's easier to anticipate the path of a conversation and follow it later if there are not multiple jump-tos sprinkled throughout the flow. 
 - **Slots**: In a dialog skill, you add slots to a dialog node to call out a set of values that you want to collect from the user, and that you will take and store in any order. In the actions skill, every step in the action acts like a slot. If the user provides information that address step 10 when answering the question to step 1, both step 1 and step 10 are filled. In fact, if you want step 10 to ask the question explicitly, you must select the **Always as for this** option on step 10.
 
-<!-- *Want to get started with actions, but need features that are available only from dialog skills right now?* Use both. Call an action from your dialog skill to perform a discrete task. For more information, see [Calling an actions skill from dialog](/docs/assistant?topic=assistant-dialog-call-action).
-{: important} -->
+

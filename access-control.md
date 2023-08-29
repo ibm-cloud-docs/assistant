@@ -156,8 +156,7 @@ Choose a service role for the user that will apply to all of the skills and assi
 | **Manager** | Read, edit, delete, or create assistants and skills in the service instance; view all conversation logs; access the v1 API for all skills in the instance. |
 {: caption="Table 2. Global service role details" caption-side="top"}
 
-<!--| Logs | View conversation logs for all of the dialog skills in the service instance. |
-| Creator | Create new assistants and skills. |-->
+
 
 #### Resource-level service roles
 {: #access-control-resource-service-roles}
@@ -176,8 +175,7 @@ You cannot assign someone to a resource-level role that has fewer privileges tha
 | Manager | Read, edit, delete, or create an assistant or skill, and view conversation logs. |
 {: caption="Table 3. Resource service role details" caption-side="top"}
 
-<!--| Administrator | Invite others to collaborate on the specific assistant or skill, but not read or edit it. |
-| Logs | View conversation logs for the specific assistant or skill, but not edit anything. |-->
+
 
 Anyone who creates an assistant or skill is automatically granted the Manager service role to that resource.
 
@@ -216,10 +214,7 @@ Anyone who creates an assistant or skill is automatically granted the Manager se
 
 N/A stands for no assignment, meaning no role of the type is assigned.
 
-<!--### Role assignments for lifecycle stages
-{: #access-control-lifecycle-roles}
 
-Use resource-level role assignments to limit who can edit live assistants that are interacting with your customers in a production environment. And protect customer data by limiting who can view analytics and user conversation logs.-->
 
 ## Resource-level role impact on available actions
 {: #access-control-ui-impact}

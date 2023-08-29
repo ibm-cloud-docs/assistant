@@ -52,7 +52,7 @@ Depending on the architecture of your existing telephony infrastructure, there a
 You must have Manager role access to the instance and Viewer role access to the resource group. For more information about access levels, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).
 {: note}
 
-<!--To watch a video that walks through the setup process, see [Phone and SMS Integration](https://community.ibm.com/community/user/watsonapps/viewdocument/phone-and-sms-integration?CommunityKey=7a3dc5ba-3018-452d-9a43-a49dc6819633&tab=librarydocuments){: external} in the *IBM Watson Apps Community*.-->
+
 
 To set up the integration, complete the following steps:
 
@@ -114,30 +114,7 @@ To set up the integration, complete the following steps:
 
     Click **Next**.
 
-<!--   Stop and create speech service instances yourself before you finish setting up the integration in the following cases:
 
-    - If you have Lite plan instances of the speech services, the automatic creation process is not started. Consider deleting the lite plan instances or create Plus plan instances of the services.
-    - If you want to use instances that are dedicated to handling speech services for your assistant only, and your existing instance is already in use by other applciations.
-    - If you want to use a paid plan other than Plus.
-    - If you have an Enterprise with Data Isolation {{site.data.keyword.conversationshort}} plan, create Premium plan instances of the speech services so you can select them during the setup process.
-    
-    Create the speech instances in the same data center location before you set up the integration. Then, you can choose the existing instances from the list.
-    
-    If you want to use a model that was created in a different service instance, click **More options** to show all service instances that you can access as options. <!--For example, if you created specialized custom models that you want your assistant to use, you can find and select them.
-
-
-
-    <!-- - **{{site.data.keyword.speechtotextshort}}**: Optionally choose a different {{site.data.keyword.speechtotextshort}} service language model to use to define the language your assistant will use when it transcribes what customers say.
-
-      For example, indicate whether to use British or American English. The list shows options from {{site.data.keyword.speechtotextshort}} service instances that you can access. 
-      
-
-    - **{{site.data.keyword.texttospeechshort}}**: Optionally choose a different {{site.data.keyword.texttospeechshort}} service voice model to use a different voice for your assistant. 
-
-      The list shows options from {{site.data.keyword.texttospeechshort}} service instances that you can access. 
-      
-
--->
 
 Any speech service charges that are incurred by the phone integration are billed with the {{site.data.keyword.conversationshort}} service plan as *voice add-on* charges. After the instances are created, you can access them directly from the IBM Cloud dashboard. Any use of the speech instances that occurs outside of your assistant are charged separately as speech service usage costs.
 {: important}
@@ -363,7 +340,7 @@ The phone integration provides a more seamless integration with your assistant. 
 
 - Outbound calling
 - Configuring backup locations
-- Event forwarding to save call detail reports in the IBM Cloudant for IBM Cloud database service <!-- Use the CDR API instead. -->
+- Event forwarding to save call detail reports in the IBM Cloudant for IBM Cloud database service 
 - Reviewing the usage summary page. Use IBM Log Analysis instead. For more information, see [Viewing logs](#deploy-phone-logs).
 
 To migrate from {{site.data.keyword.iva_short}} to the {{site.data.keyword.conversationshort}} phone integration, complete the following steps:

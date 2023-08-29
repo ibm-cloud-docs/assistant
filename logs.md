@@ -71,7 +71,7 @@ You can filter messages by *Search user statements*, *Intents*, *Entities*, and 
 
 ![Entities drop-down menu](images/entities_filter.png)
 
-<!-- Messages might take some time to update. Allow at least 30 minutes after a user's interaction with your assistant before attempting to filter for that content. -->
+
 
 ## Viewing individual messages
 {: #logs-see-message}
