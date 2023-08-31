@@ -27,7 +27,7 @@ subcollection: assistant
 # Managing access
 {: #access-control}
 
-You can give other people access to your {{site.data.keyword.conversationshort}} resources, and control the level of access they get.
+You can give other people access to your {{site.data.keyword.assistant_classic_short}} resources, and control the level of access they get.
 {: shortdesc}
 
 Maybe you want one development team to have access to a test assistant and another development team to have access to a production assistant. And you want data scientists to be able to view analytics for user conversation logs from both assistants. And maybe you want a writer to be able to author the dialogue that is used by your assistant to converse with your customers. To manage who can do what with your skills and assistants, you can assign different access roles to different people.
@@ -35,7 +35,7 @@ Maybe you want one development team to have access to a test assistant and anoth
 ## Before you grant access to others
 {: #access-control-prereqs}
 
-For each person to whom you grant access to your {{site.data.keyword.conversationshort}} service instance, decide whether you want to give the person a role with instance-level or resource-level access. Instance-level access applies to all of the assistants and skills in a single service instance. Resource-level access applies to individual skills and assistants within a service instance only.
+For each person to whom you grant access to your {{site.data.keyword.assistant_classic_short}} service instance, decide whether you want to give the person a role with instance-level or resource-level access. Instance-level access applies to all of the assistants and skills in a single service instance. Resource-level access applies to individual skills and assistants within a service instance only.
 
 ## Granting users access to your resources
 {: #access-control-task}
@@ -91,7 +91,7 @@ When more people contribute to the development of a dialog skill, unintended cha
 
 To get you started quickly, consider applying these roles at first.
 
-- To give someone the same level of access to a {{site.data.keyword.conversationshort}} service instance as you have, assign the user to the following roles:
+- To give someone the same level of access to a {{site.data.keyword.assistant_classic_short}} service instance as you have, assign the user to the following roles:
 
     - Instance platform role: **Administrator**
     - Instance service role: **Manager**
@@ -109,7 +109,7 @@ To get you started quickly, consider applying these roles at first.
 ## Understanding roles
 {: #access-control-iam-roles}
 
-Access to {{site.data.keyword.conversationshort}}, its service instances and all of the resources that are used by the service is managed by {{site.data.keyword.cloud}}. To share a service instance with other users and control access to the instance, you must use the {{site.data.keyword.cloud_notm}} Identity and Access Management user interface. 
+Access to {{site.data.keyword.assistant_classic_short}}, its service instances and all of the resources that are used by the service is managed by {{site.data.keyword.cloud}}. To share a service instance with other users and control access to the instance, you must use the {{site.data.keyword.cloud_notm}} Identity and Access Management user interface. 
 
 {{site.data.keyword.cloud_notm}} breaks down access definitions into the following role types:
 
@@ -138,7 +138,7 @@ At a minimum, you must give someone *Viewer* platform access to a service instan
 ### Service roles
 {: #access-control-service-roles}
 
-A service role controls what a person can do in {{site.data.keyword.conversationshort}}.
+A service role controls what a person can do in {{site.data.keyword.assistant_classic_short}}.
 
 When you assign a service role, you can decide whether to apply the service role to an instance, which effectively applies to every assistant and skill in the instance, or to a specific resource, such as one skill or one assistant.
 
@@ -219,7 +219,7 @@ N/A stands for no assignment, meaning no role of the type is assigned.
 ## Resource-level role impact on available actions
 {: #access-control-ui-impact}
 
-The {{site.data.keyword.conversationshort}} user interface and API comply with the access roles that are defined for a service instance. When someone logs in to the user interface, it adjusts to show only what the current user can access, and it disables functions that the user does not have permissions to do. (For example, a person who is assigned to the Reader role for a dialog skill cannot create or edit entities, intents, or dialog nodes in the skill because the **Create {resource}** and **Edit** functions are disabled.) Similarly, the API allows access only to resources and methods that are permitted for the role that is associated with the specified API key.
+The {{site.data.keyword.assistant_classic_short}} user interface and API comply with the access roles that are defined for a service instance. When someone logs in to the user interface, it adjusts to show only what the current user can access, and it disables functions that the user does not have permissions to do. (For example, a person who is assigned to the Reader role for a dialog skill cannot create or edit entities, intents, or dialog nodes in the skill because the **Create {resource}** and **Edit** functions are disabled.) Similarly, the API allows access only to resources and methods that are permitted for the role that is associated with the specified API key.
 
 If you cannot access the API Details page for a skill or assistant, you might not have the access that is required to use the instance-level API credentials. You can use a personal API key instead. For more information, see [Getting API information](/docs/assistant?topic=assistant-assistant-settings#assistant-settings-api-details).
 {: note}
@@ -273,20 +273,20 @@ The following table shows the UI and API actions that can be performed by differ
 ## Access control improvements
 {: #access-control-new}
 
-Before April 2020, the service access role assignments that were defined for a {{site.data.keyword.conversationshort}} service instance in the IBM Cloud dashboard were not applied. Users with either Reader- or Writer-level service access to an instance effectively had Manager-level access. This behavior changed for all data centers as of 2 April 2020. With the access control improvements released, service-level access role assignments are recognized by the product.
+Before April 2020, the service access role assignments that were defined for a {{site.data.keyword.assistant_classic_short}} service instance in the IBM Cloud dashboard were not applied. Users with either Reader- or Writer-level service access to an instance effectively had Manager-level access. This behavior changed for all data centers as of 2 April 2020. With the access control improvements released, service-level access role assignments are recognized by the product.
 
 ## How to keep your access
 {: #access-control-prep}
 
 Now that service level access control is supported for instances in your data center, if you have the wrong service level access role to an instance, you might be unable to do things you could do before. 
 
-- If you have Manager service access to a {{site.data.keyword.conversationshort}} service, then no action is required. You have the same privileges and can do the same actions within the product now that service-level access control is enabled.
+- If you have Manager service access to a {{site.data.keyword.assistant_classic_short}} service, then no action is required. You have the same privileges and can do the same actions within the product now that service-level access control is enabled.
 - If you have a Reader or Writer service access role, then what you can do has changed.
 
 ### I'm a Reader
 {: #access-control-prep-reader}
 
-With a Reader role, you cannot take any actions in the {{site.data.keyword.conversationshort}} application user interface. You can view only the assistants and skills pages. You cannot edit, create, or delete anything, and cannot view analytics.
+With a Reader role, you cannot take any actions in the {{site.data.keyword.assistant_classic_short}} application user interface. You can view only the assistants and skills pages. You cannot edit, create, or delete anything, and cannot view analytics.
 
 ### I'm a Writer
 {: #access-control-prep-writer}
@@ -305,7 +305,7 @@ Act now to get the service instance owner to change your access level.
     You can copy, edit, and then paste the following text into an email or message that you send to the instance owner.
 
     ```code
-    You are the owner of the {service instance name} {{site.data.keyword.conversationshort}} service instance. 
+    You are the owner of the {service instance name} {{site.data.keyword.assistant_classic_short}} service instance. 
     I am currently a {role-you-have} of the instance. 
     Please change my service access role to {role-you-want}.
     For instructions, see https://cloud.ibm.com/docs/assistant?topic=assistant-access-control#access-control-admin-prep.
@@ -315,7 +315,7 @@ Act now to get the service instance owner to change your access level.
 ## Prevent your collaborators from losing their access
 {: #access-control-admin-prep}
 
-When you create a {{site.data.keyword.conversationshort}} service instance, you are assigned to a Manager service access role automatically. Your access has not changed. 
+When you create a {{site.data.keyword.assistant_classic_short}} service instance, you are assigned to a Manager service access role automatically. Your access has not changed. 
 
 If you invited people to your service instance and assigned them to a Reader or Writer service access role, then perform the following steps now.
 
