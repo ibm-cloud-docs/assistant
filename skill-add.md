@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-08-25"
+lastupdated: "2023-09-01"
 
 subcollection: assistant
 
@@ -67,7 +67,7 @@ As you add information, the skill uses this unique data to build a machine learn
 
 [Plus]{: tag-green}[Enterprise]{: tag-purple}
 
-When {{site.data.keyword.conversationshort}} doesn't have an explicit solution to a problem, it routes the user question to a search skill to find an answer from across your disparate sources of self-service content. The search skill interacts with the {{site.data.keyword.discoveryfull}} service to extract this information from a configured data collection.
+When {{site.data.keyword.assistant_classic_short}} doesn't have an explicit solution to a problem, it routes the user question to a search skill to find an answer from across your disparate sources of self-service content. The search skill interacts with the {{site.data.keyword.discoveryfull}} service to extract this information from a configured data collection.
 
 If you already use the {{site.data.keyword.discoveryshort}} service, you can mine your existing data collections for source material that you can share with customers to address their questions.
 
@@ -78,7 +78,7 @@ The following diagram illustrates how user input is processed when both a dialog
 ## Skill limits
 {: #skill-add-limits}
 
-The number of skills you can create depends on your {{site.data.keyword.conversationshort}} plan type. Any sample dialog skills that are available for you to use do not count toward your limit unless you use them. A skill version does not count as a skill.
+The number of skills you can create depends on your {{site.data.keyword.assistant_classic_short}} plan type. Any sample dialog skills that are available for you to use do not count toward your limit unless you use them. A skill version does not count as a skill.
 
 | Plan | Maximum number of skills of each type per service instance |
 | --- | --- |

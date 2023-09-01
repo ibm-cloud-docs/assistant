@@ -28,7 +28,7 @@ subcollection: assistant
 # Using built-in intents
 {: #catalog}
 
-***Content Catalogs*** provide an easy way to add common intents to your {{site.data.keyword.conversationshort}} dialog skill.
+***Content Catalogs*** provide an easy way to add common intents to your {{site.data.keyword.assistant_classic_short}} dialog skill.
 {: shortdesc}
 
 Intents you add from the catalog are meant to provide a starting point. Add to or edit the catalog intents to tailor them for your use case.

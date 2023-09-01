@@ -68,21 +68,21 @@ To set up a Salesforce service desk integration, complete the following steps:
 
 1.  Create a web chat integration. For more information, see [Integrating the web chat with your website](/docs/assistant?topic=assistant-deploy-web-chat).
 
-1.  From the web chat integration page in {{site.data.keyword.conversationshort}}, set the **Allow transfers to live agents** switch to **On**, and then choose **Salesforce** as the service desk type. Click **Next**.
+1.  From the web chat integration page in {{site.data.keyword.assistant_classic_short}}, set the **Allow transfers to live agents** switch to **On**, and then choose **Salesforce** as the service desk type. Click **Next**.
 
-1.  For {{site.data.keyword.conversationshort}} to connect to a Salesforce service desk, it needs information about your organization's Salesforce chat deployment and button implementations. Specifically, it needs the API endpoint, organization ID, deployment ID, and button ID. The service can derive the values that it needs from code snippets that you copy and paste to this configuration page. {: #deploy-salesforce-get-deployment-info}
+1.  For {{site.data.keyword.assistant_classic_short}} to connect to a Salesforce service desk, it needs information about your organization's Salesforce chat deployment and button implementations. Specifically, it needs the API endpoint, organization ID, deployment ID, and button ID. The service can derive the values that it needs from code snippets that you copy and paste to this configuration page. {: #deploy-salesforce-get-deployment-info}
 
-    In a separate browser tab or window, open your Salesforce account settings page. Log in with a user ID that has administrative privileges. You must switch back and forth between your Salesforce and {{site.data.keyword.conversationshort}} web chat integration setup pages. It's easier to do so if you have both pages open at once.
+    In a separate browser tab or window, open your Salesforce account settings page. Log in with a user ID that has administrative privileges. You must switch back and forth between your Salesforce and {{site.data.keyword.assistant_classic_short}} web chat integration setup pages. It's easier to do so if you have both pages open at once.
     {: tip}
 
     - Get the deployment code for your Salesforce Agent Configuration chat deployment. 
     
       Go to the Salesforce **Feature Settings>Service>Chat>Deployments** page. Find your organization's deployment. Scroll to the end of the chat deployment configuration page and copy the *Deployment Code* snippet.
-    - Paste the deployment code snippet into the **Deployment code** field in the {{site.data.keyword.conversationshort}} Salesforce configuration page.
+    - Paste the deployment code snippet into the **Deployment code** field in the {{site.data.keyword.assistant_classic_short}} Salesforce configuration page.
     - Get the Chat Button code. 
     
       Go to the Salesforce **Feature Settings>Service>Chat>Chat Buttons & Invitations** page. Find your organization's button implementation. Scroll to the end of the page, and then copy the *Chat Button Code* snippet.
-    - Paste the chat button code snippet into the **Chat button code** field in the {{site.data.keyword.conversationshort}} Salesforce configuration page, and then click **Next**.
+    - Paste the chat button code snippet into the **Chat button code** field in the {{site.data.keyword.assistant_classic_short}} Salesforce configuration page, and then click **Next**.
 
 1.  Add a chat app that enables the Salesforce agent to see a history of the chat. To do so, create a Visualforce page, and then add a chat app to the page. {: #deploy-salesforce-add-visualforce-page}
 
@@ -97,7 +97,7 @@ To set up a Salesforce service desk integration, complete the following steps:
 
     From the Salesforce **Data>Objects and Fields>Object Manager>Chat Transcript>Fields & Relationships** page, create the following custom fields:
 
-    - **Token**: Stores a {{site.data.keyword.conversationshort}} authentication token that secures the communication between Salesforce and your assistant.
+    - **Token**: Stores a {{site.data.keyword.assistant_classic_short}} authentication token that secures the communication between Salesforce and your assistant.
 
       - **Data Type**: Text Area (Long)
       - **Field Label**: `x-watson-assistant-key`
@@ -107,7 +107,7 @@ To set up a Salesforce service desk integration, complete the following steps:
 
     Visualforce pages are the mechanism that Salesforce provides for you to customize a live agent's console by adding your own pages to it. A Visualforce page is similar to a standard web page, but it provides ways for you to access, display, and update your organization’s data. Pages can be referenced and invoked by using a unique URL, just as HTML pages on a traditional web server can be. See [Create Visualforce Pages](https://help.salesforce.com/articleView?id=pages_creating.htm&type=5){: external}
 
-    - From the web chat integration page in {{site.data.keyword.conversationshort}}, copy the code snippet from the Visualforce page markup field.
+    - From the web chat integration page in {{site.data.keyword.assistant_classic_short}}, copy the code snippet from the Visualforce page markup field.
     - Switch to your Salesforce web page. Search for **Visualforce Pages**. Create a page. Add a label and name to the page. Select the *Available for Lightning Experience, Lightning Communities, and the mobile app* checkbox. Paste the code snippet that you copied in the previous step into the page markup field.
 
 1.  Add the Visualforce page that you created to the Salesforce chat app. {: #deploy-salesforce-add-page-to-layout}
@@ -129,13 +129,13 @@ To set up a Salesforce service desk integration, complete the following steps:
     - Select user profiles to give the appropriate set of users access to the page. Limit the group to include only those who you want to be able to view chat history information in the page. 
     - Click *Next*, and then click *Save*.
 
-1.  From the Salesforce configuration page in {{site.data.keyword.conversationshort}}, click **Save and exit** to finish setting up the connection.
+1.  From the Salesforce configuration page in {{site.data.keyword.assistant_classic_short}}, click **Save and exit** to finish setting up the connection.
 
 When you test the service desk integration, make sure there is at least one agent with `Available` status.
 
 Watch a 5-minute video that provides an overview of setting up a connection to a Salesforce service desk:
 
-![Salesforce Integration: {{site.data.keyword.conversationshort}}](https://video.ibm.com/embed/channel/23952663/video/wa-salesforce){: video output="iframe" data-script="none" id="watsonmediaplayer" width="480" height="270" scrolling="no" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" style="border: 0 none transparent;"}
+![Salesforce Integration: {{site.data.keyword.assistant_classic_short}}](https://video.ibm.com/embed/channel/23952663/video/wa-salesforce){: video output="iframe" data-script="none" id="watsonmediaplayer" width="480" height="270" scrolling="no" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" style="border: 0 none transparent;"}
 
 ## Adding transfer support to your dialog
 {: #deploy-salesforce-dialog-prereq}
@@ -164,7 +164,7 @@ For more information, see [Web chat: Accessing browser information](/docs/assist
 
 When you enable transfers to the Salesforce service desk, you copy and paste code snippets from Salesforce into the service desk transfer setup page. These code snippets define how transferred conversations are handled within Salesforce. Routing rules are included in the initial transfer configuration. The routing rules identify the queue of agents to which messages from the assistant are transferred by default.
 
-The code that you add to the setup page when you configure the service desk integration shares the following required information with {{site.data.keyword.conversationshort}}:
+The code that you add to the setup page when you configure the service desk integration shares the following required information with {{site.data.keyword.assistant_classic_short}}:
 
 - `organization_id`: Unique ID of the organization. A company can have more than one organization set up in Salesforce.
 - `chat_api_endpoint`: Salesforce API endpoint that is used by the integration to communicate with Salesforce.

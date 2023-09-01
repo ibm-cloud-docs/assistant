@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-08-04"
+lastupdated: "2023-09-01"
 
 keywords: entity, entity value, contextual entity, dictionary entity, pattern entity, entity synonym, annotate mentions
 
@@ -153,7 +153,7 @@ To add an entity that recognizes a pattern:
       - Conditional branches (for example `(?(cond)true)`)
     - When a pattern entity starts or ends with a Unicode character, and includes word boundaries, for example `\bš\b`, the pattern match does not match the word boundary correctly. In this example, for input `š zkouška`, the match returns `Group 0: 6-7 š` (`š zkou`**`š`**`ka`), instead of the correct `Group 0: 0-1 š` (**`š`** `zkouška`).
 
-      The regular expression engine is loosely based on the Java regular expression engine. You will see an error if you try to upload an unsupported pattern, either by using the API or from within the {{site.data.keyword.conversationshort}} user interface.
+      The regular expression engine is loosely based on the Java regular expression engine. You will see an error if you try to upload an unsupported pattern, either by using the API or from within the {{site.data.keyword.assistant_classic_short}} user interface.
 
     For example, for entity *ContactInfo*, the patterns for phone, email, and website values can be defined as follows:
 
@@ -322,7 +322,7 @@ If you have an intent example with an annotation, and another word in that examp
 ## Enabling system entities
 {: #entities-enable-system-entities}
 
-{{site.data.keyword.conversationshort}} provides a number of *system entities*, which are common entities that you can use for any application. Enabling a system entity makes it possible to quickly populate your skill with training data that is common to many use cases.
+{{site.data.keyword.assistant_classic_short}} provides a number of *system entities*, which are common entities that you can use for any application. Enabling a system entity makes it possible to quickly populate your skill with training data that is common to many use cases.
 
 System entities can be used to recognize a broad range of values for the object types they represent. For example, the `@sys-number` system entity matches any numerical value, including whole numbers, decimal fractions, or even numbers written out as words.
 
@@ -338,12 +338,12 @@ System entities are centrally maintained, so any updates are available automatic
 
 1.  Set the switch for each system entity that you want to use to **On**.
 
-After you enable system entities, {{site.data.keyword.conversationshort}} begins to retrain. After training is complete, you can use the entities.
+After you enable system entities, {{site.data.keyword.assistant_classic_short}} begins to retrain. After training is complete, you can use the entities.
 
 ## Entity limits
 {: #entities-limits}
 
-The number of entities, entity values, and synonyms that you can create depends on your {{site.data.keyword.conversationshort}} service plan:
+The number of entities, entity values, and synonyms that you can create depends on your {{site.data.keyword.assistant_classic_short}} service plan:
 
 | Plan      | Entities per skill | Entity values per skill | Entity synonyms per skill |
 |-----------|-------------------:|------------------------:|--------------------------:|
@@ -396,7 +396,7 @@ Entities containing your search term, with corresponding examples, are shown.
 ## Downloading entities
 {: #entities-export}
 
-You can download a number of entities to a CSV file, so you can then upload and reuse them in another {{site.data.keyword.conversationshort}} application.
+You can download a number of entities to a CSV file, so you can then upload and reuse them in another {{site.data.keyword.assistant_classic_short}} application.
 
 - Pattern information is included in the downloaded CSV file. Any string wrapped with `/` will be considered a pattern (as opposed to a synonym).
 - Annotations associated with contexual entities are not downloaded. You must download the entire dialog skill to capture both the entity value and any associated annotations.

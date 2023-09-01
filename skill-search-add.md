@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-08-09"
+lastupdated: "2023-09-01"
 
 subcollection: assistant
 
@@ -10,7 +10,7 @@ subcollection: assistant
 
 {{site.data.keyword.attribute-definition-list}}
 
-This documentation for the **classic {{site.data.keyword.conversationshort}}** experience has moved. For the most up-to-date version, see [{{site.data.keyword.discoveryfull}} search integration setup](/docs/watson-assistant?topic=watson-assistant-search-add){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
+This documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [{{site.data.keyword.discoveryfull}} search integration setup](/docs/watson-assistant?topic=watson-assistant-search-add){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
 {: attention}
 
 # Use a search skill to embed existing help content ![Plus or higher plan only](images/plus.png)
@@ -33,7 +33,7 @@ To show the exact answer highlighted in bold font, enable the *Emphasize the ans
 
 Watch a 4-minute video that provides an overview of the search skill:
 
-![Search Integration: {{site.data.keyword.conversationshort}}](https://video.ibm.com/embed/channel/23952663/video/wa-search){: video output="iframe" data-script="none" id="watsonmediaplayer" width="480" height="270" scrolling="no" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" style="border: 0 none transparent;"}
+![Search Integration: {{site.data.keyword.assistant_classic_short}}](https://video.ibm.com/embed/channel/23952663/video/wa-search){: video output="iframe" data-script="none" id="watsonmediaplayer" width="480" height="270" scrolling="no" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" style="border: 0 none transparent;"}
 
 To learn more about how search skill can benefit your business, [read this blog post](https://medium.com/ibm-watson/adding-search-to-watson-assistant-99e4e81839e5){: external}.
 
@@ -96,7 +96,7 @@ If you decide not to continue using the Plus plan and don't want to pay for it, 
 1.  Choose the {{site.data.keyword.discoveryshort}} instance that you want to connect to.
 {: #choose-d-instance}
 
-    If you see a warning that some of your {{site.data.keyword.discoveryshort}} service instances do not have credentials set, it means that you can access at least one instance that you never opened from the {{site.data.keyword.cloud_notm}} dashboard directly yourself. You must access a service instance for credentials to be created for it, and credentials must exist before {{site.data.keyword.conversationshort}} can establish a connection to the {{site.data.keyword.discoveryshort}} service instance on your behalf. If you think a {{site.data.keyword.discoveryshort}} service instance is missing from the list, open the instance from the {{site.data.keyword.cloud}} dashboard directly to generate credentials for it.
+    If you see a warning that some of your {{site.data.keyword.discoveryshort}} service instances do not have credentials set, it means that you can access at least one instance that you never opened from the {{site.data.keyword.cloud_notm}} dashboard directly yourself. You must access a service instance for credentials to be created for it, and credentials must exist before {{site.data.keyword.assistant_classic_short}} can establish a connection to the {{site.data.keyword.discoveryshort}} service instance on your behalf. If you think a {{site.data.keyword.discoveryshort}} service instance is missing from the list, open the instance from the {{site.data.keyword.cloud}} dashboard directly to generate credentials for it.
     {: note}
 
 1.  Indicate the collection to use, by doing one of the following things:
@@ -124,12 +124,12 @@ If you decide not to continue using the Plus plan and don't want to pay for it, 
 
     After the digestion process is completed, a summary page is displayed in {{site.data.keyword.discoveryshort}}, which is hosted in a separate web browser tab.
 
-1.  Wait for the collection to be fully ingested, then click **Back to {{site.data.keyword.conversationshort}}**.
+1.  Wait for the collection to be fully ingested, then click **Back to {{site.data.keyword.assistant_classic_short}}**.
 
 ## Configure the search
 {: #skill-search-add-configure}
 
-1.  On the {{site.data.keyword.conversationshort}} search skill page, ensure the {{site.data.keyword.discoveryshort}} project you want to use is selected, then click **Next**.
+1.  On the {{site.data.keyword.assistant_classic_short}} search skill page, ensure the {{site.data.keyword.discoveryshort}} project you want to use is selected, then click **Next**.
 
 1.  In the **Configure result content** section, review the {{site.data.keyword.discoveryshort}} fields and examples that are used in the search results shown to your customers. You can accept the defaults, or customize them as you want.
 
@@ -231,7 +231,7 @@ Review this information for help with performing common tasks.
      ```
      {: codeblock}
 
-    The array value is converted by the {{site.data.keyword.conversationshort}} into this string value:
+    The array value is converted by the {{site.data.keyword.assistant_classic_short}} into this string value:
 
     ```json
     "title": "[\"a single array element\"]"

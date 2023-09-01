@@ -66,7 +66,7 @@ To set up the integration, complete the following steps:
 
     - To generate a free phone number for your assistant, click **Generate a free phone number**.
 
-      Generating a free phone number is supported only for {{site.data.keyword.conversationshort}} instances in the Dallas and Washington DC data centers.
+      Generating a free phone number is supported only for {{site.data.keyword.assistant_classic_short}} instances in the Dallas and Washington DC data centers.
       {: note}
 
     - To use an existing phone number you have already configured with a [SIP trunk provider](#deploy-phone-sip-providers), click **Use an existing phone number with an external provider**.
@@ -93,7 +93,7 @@ To set up the integration, complete the following steps:
 
     The list of language models is automatically filtered to use the same language as your assistant. To see all language models, toggle the **Filter models based on assistant language** switch to **Off**.
 
-    If you created specialized custom models that you want your assistant to use, choose the {{site.data.keyword.speechtotextshort}} service instance that hosts the custom models now, and you can configure your assistant to use them later. The {{site.data.keyword.speechtotextshort}} service instance must be hosted in the same location as your {{site.data.keyword.conversationshort}} service instance. For more information, see [Using a custom language model](/docs/assistant?topic=assistant-dialog-voice-actions#dialog-voice-actions-custom-language).
+    If you created specialized custom models that you want your assistant to use, choose the {{site.data.keyword.speechtotextshort}} service instance that hosts the custom models now, and you can configure your assistant to use them later. The {{site.data.keyword.speechtotextshort}} service instance must be hosted in the same location as your {{site.data.keyword.assistant_classic_short}} service instance. For more information, see [Using a custom language model](/docs/assistant?topic=assistant-dialog-voice-actions#dialog-voice-actions-custom-language).
     {: note}
 
     For more information about language models, see [Languages and models](https://cloud.ibm.com/docs/speech-to-text?topic=speech-to-text-models){: external} in the {{site.data.keyword.speechtotextshort}} documentation.
@@ -116,7 +116,7 @@ To set up the integration, complete the following steps:
 
 
 
-Any speech service charges that are incurred by the phone integration are billed with the {{site.data.keyword.conversationshort}} service plan as *voice add-on* charges. After the instances are created, you can access them directly from the IBM Cloud dashboard. Any use of the speech instances that occurs outside of your assistant are charged separately as speech service usage costs.
+Any speech service charges that are incurred by the phone integration are billed with the {{site.data.keyword.assistant_classic_short}} service plan as *voice add-on* charges. After the instances are created, you can access them directly from the IBM Cloud dashboard. Any use of the speech instances that occurs outside of your assistant are charged separately as speech service usage costs.
 {: important}
 
 The phone integration setup is now complete. On the **Phone** page, you can click the tabs to view or edit the phone integration.
@@ -298,7 +298,7 @@ The SIP trunk provider sets up a SIP trunk for your voice traffic, and manages a
 
    - Company Name
    - Your {{site.data.keyword.Bluemix_notm}} account ID
-   - Your {{site.data.keyword.conversationshort}} service name
+   - Your {{site.data.keyword.assistant_classic_short}} service name
    - Network diagram with IP address or SIP trunk provider information
 
 ### Bring your own SIP trunk
@@ -343,10 +343,10 @@ The phone integration provides a more seamless integration with your assistant. 
 - Event forwarding to save call detail reports in the IBM Cloudant for IBM Cloud database service 
 - Reviewing the usage summary page. Use IBM Log Analysis instead. For more information, see [Viewing logs](#deploy-phone-logs).
 
-To migrate from {{site.data.keyword.iva_short}} to the {{site.data.keyword.conversationshort}} phone integration, complete the following steps:
+To migrate from {{site.data.keyword.iva_short}} to the {{site.data.keyword.assistant_classic_short}} phone integration, complete the following steps:
 
 1.  From the {{site.data.keyword.iva_short}} page, copy the phone number or numbers that you used for your SIP account.
-1.  When you set up the {{site.data.keyword.conversationshort}} phone integration, add the phone number or set of numbers that you copied in the previous step.
+1.  When you set up the {{site.data.keyword.assistant_classic_short}} phone integration, add the phone number or set of numbers that you copied in the previous step.
 1.  From the phone integration setup page, copy the *SIP uniform resource identifier (URI)*. 
 1.  In your SIP trunk account, replace the {{site.data.keyword.iva_short}} URI that you specified previously with the URI that you copied from the phone integration setup page in the previous step. 
 
@@ -372,7 +372,7 @@ Incoming calls to your assistant follow this path:
 ## Phone integration limits
 {: #deploy-phone-limits}
 
-Any speech service charges that are incurred by the phone integration are included as *Voice add-on* charges in your {{site.data.keyword.conversationshort}} service plan usage. The Voice add-on use is charged separately and in addition to your service plan charges. 
+Any speech service charges that are incurred by the phone integration are included as *Voice add-on* charges in your {{site.data.keyword.assistant_classic_short}} service plan usage. The Voice add-on use is charged separately and in addition to your service plan charges. 
 
 Plan usage is measured based on the number of monthly active users, where a user is identified by the caller's unique phone number. An MD5 hash is applied to the phone number and the 128-bit hash value is used for billing purposes.
 

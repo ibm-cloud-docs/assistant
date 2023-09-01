@@ -38,9 +38,9 @@ The following tables describe the context variables that have special meaning in
 
 | Name | Type | Description | Default |
 |------|------|-------------|---------|
-| `final_utterance_timeout_count` | Number | The time (in milliseconds) that the phone integration waits to receive a final utterance from the {{site.data.keyword.speechtotextshort}} service. The timeout occurs if the phone integration does not receive a final utterance within the specified time limit, even if hypotheses continue to be generated. When the timeout occurs, the phone integration sends {{site.data.keyword.conversationshort}} a text update that includes the word `vgwFinalUtteranceTimeout` to indicate that no final utterance was received. | N/A |
+| `final_utterance_timeout_count` | Number | The time (in milliseconds) that the phone integration waits to receive a final utterance from the {{site.data.keyword.speechtotextshort}} service. The timeout occurs if the phone integration does not receive a final utterance within the specified time limit, even if hypotheses continue to be generated. When the timeout occurs, the phone integration sends {{site.data.keyword.assistant_classic_short}} a text update that includes the word `vgwFinalUtteranceTimeout` to indicate that no final utterance was received. | N/A |
 | `post_response_timeout_count` | Number | The time (in milliseconds) to wait for a new utterance after the response is played back to the caller. When this timeout occurs, the phone integration channel sends a text message to the assistant that includes the word `vgwPostResponseTimeout` and sets the context variable `input.integrations.voice_telephony.post_response_timeout_occurred` to `true`. | 7000 |
-| `turn_settings.timeout_count` | Number | The time (in milliseconds) to wait for a response from {{site.data.keyword.conversationshort}}. If this time is exceeded, the phone integration tries again to contact {{site.data.keyword.conversationshort}}. If the service still can't be reached, the call fails. | N/A |
+| `turn_settings.timeout_count` | Number | The time (in milliseconds) to wait for a response from {{site.data.keyword.assistant_classic_short}}. If this time is exceeded, the phone integration tries again to contact {{site.data.keassistant_classic_shortnshort}}. If the service still can't be reached, the call fails. | N/A |
 | `cdr_custom_data` | object | Any JSON key/value pairs to collect and store with the CDR record at the end of the phone call. Each time this object is received, it is merged with any previously received `cdr_custom_data` context. | N/A |
 {: caption="Voice context variables set by the dialog or actions" caption-side="top"}
 
@@ -79,9 +79,9 @@ The following tables describe the context variables that have special meaning in
 
 | Name | Type | Description |
 |------|------|-------------|
-| `sip_call_id` | string | The SIP call ID associated with the {{site.data.keyword.conversationshort}} session. |
-| `sip_custom_invite_headers` | object | A JSON object containing key/value pairs defining SIP headers that are pulled from the initial SIP `INVITE` request and passed to the {{site.data.keyword.conversationshort}} service (for example, `{"Custom-Header1": "123"}`). |
-| `private.sip_from_uri` | string | The SIP `From` URI associated with the {{site.data.keyword.conversationshort}} service. |
+| `sip_call_id` | string | The SIP call ID associated with the {{site.data.keyword.assistant_classic_short}} session. |
+| `sip_custom_invite_headers` | object | A JSON object containing key/value pairs defining SIP headers that are pulled from the initial SIP `INVITE` request and passed to the {{site.data.keyword.assistant_classic_short}} service (for example, `{"Custom-Header1": "123"}`). |
+| `private.sip_from_uri` | string | The SIP `From` URI associated with the {{site.data.keyword.assistant_classic_short}} service. |
 | `private.sip_request_uri` | string | The SIP request URI that started the conversation session. |
 | `private.sip_to_uri` | string | The SIP `To` URI associated with the conversation session. |
 | `private.user_phone_number` | string | The phone number that the call was received from. |
@@ -99,7 +99,7 @@ The following input parameters are only valid for the current conversation turn.
 | `barge_in_occurred` | boolean | Whether barge-in occurred. |
 | `final_utterance_timeout_occurred` | `true` or `false` | Whether the final utterance timeout expired. |
 | `dtmf_collection_succeeded` | boolean | Whether the DTMF collection succeeded or failed. When `true`, a DTMF collection succeeded, and returns the expected number of digits. When `false`, a DTMF collection failed to collect the specified number of digits. Even when `dtmf_collection_succeeded` is `false`, all collected digits are passed to the dialog in the input string of the turn request. |
-| `is_dtmf` | boolean | Whether the input to {{site.data.keyword.conversationshort}} is dual-tone multi-frequency signaling (DTMF). |
+| `is_dtmf` | boolean | Whether the input to {{site.data.keyword.assistant_classic_short}} is dual-tone multi-frequency signaling (DTMF). |
 | `speech_to_text_result` | object | The final response from the {{site.data.keyword.speechtotextshort}} service in JSON format, including the transcript and confidence score for the top hypothesis and any alternatives. The format matches exactly the format that is received from the {{site.data.keyword.speechtotextshort}} service. (For more information, see the [{{site.data.keyword.speechtotextshort}} API documentation](https://cloud.ibm.com/apidocs/speech-to-text#recognize){: external}.) |
 {: caption="Input parameters set by the phone channel" caption-side="top"}
 

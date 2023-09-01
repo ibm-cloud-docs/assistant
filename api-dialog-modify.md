@@ -28,7 +28,7 @@ subcollection: assistant
 # Modifying a dialog using the API
 {: #api-dialog-modify}
 
-The {{site.data.keyword.conversationshort}} REST API supports modifying your dialog programmatically, without using the {{site.data.keyword.conversationshort}} tool. You can use the /dialog_nodes API to create, delete, or modify dialog nodes.
+The {{site.data.keyword.assistant_classic_short}} REST API supports modifying your dialog programmatically, without using the {{site.data.keyword.assistant_classic_short}} tool. You can use the /dialog_nodes API to create, delete, or modify dialog nodes.
 
 Remember that the dialog is a tree of interconnected nodes, and that it must conform to certain rules in order to be valid. This means that any change you make to a dialog node might have cascading effects on other nodes, or on the structure of your dialog. Before using the /dialog_nodes API to modify your dialog, make sure you understand how your changes will affect the rest of the dialog. You can make a backup copy of the current dialog by exporting the conversational skill in which it resides. See [Downloading a skill](/docs/assistant?topic=assistant-skill-tasks#skill-tasks-download) for details.
 

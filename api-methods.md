@@ -34,7 +34,7 @@ subcollection: assistant
 # API methods summary
 {: #api-methods}
 
-The following tables list the methods that are available using the {{site.data.keyword.conversationshort}} APIs.
+The following tables list the methods that are available using the {{site.data.keyword.assistant_classic_short}} APIs.
 
 ## Runtime methods
 {: #api-methods-runtime}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-08-16"
+lastupdated: "2023-09-01"
 
 subcollection: assistant
 
@@ -15,10 +15,10 @@ subcollection: assistant
 # Supported languages
 {: #language-support}
 
-{{site.data.keyword.conversationshort}} supports individual features to varying degrees per language.
+{{site.data.keyword.assistant_classic_short}} supports individual features to varying degrees per language.
 {: shortdesc}
 
-{{site.data.keyword.conversationshort}} has classifier models that are designed specifically to support conversational skills in the following languages:
+{{site.data.keyword.assistant_classic_short}} has classifier models that are designed specifically to support conversational skills in the following languages:
 
 | Language | Language code |
 |----------|---------------|
@@ -38,7 +38,7 @@ subcollection: assistant
 | Universal`*` | xx |
 {: caption="Table 1. Supported languages" caption-side="bottom"}
 
-`*` If you want to support conversations in a language for which {{site.data.keyword.conversationshort}} doesn't have a dedicated model, such as Russian, use the *Universal* language model. For more information, see [Adding support for global audiences](/docs/assistant?topic=assistant-assistant-language).
+`*` If you want to support conversations in a language for which {{site.data.keyword.assistant_classic_short}} doesn't have a dedicated model, such as Russian, use the *Universal* language model. For more information, see [Adding support for global audiences](/docs/assistant?topic=assistant-assistant-language).
 
 ## Feature support details
 {: #language-support-tables}
@@ -156,10 +156,10 @@ In the following tables, the level of language and feature support is indicated 
 | **Universal (xx)**                 | GA | NA |
 {: caption="Table 6. System entity feature support details" caption-side="bottom"}
 
-The {{site.data.keyword.conversationshort}} service supports multiple languages as noted, but the tool interface itself (descriptions, labels, etc.) is in English. All supported languages can be input and trained through the English interface.
+The {{site.data.keyword.assistant_classic_short}} service supports multiple languages as noted, but the tool interface itself (descriptions, labels, etc.) is in English. All supported languages can be input and trained through the English interface.
 {: note}
 
-GB18030 compliance: GB18030 is a Chinese standard that specifies an extended code page for use in the Chinese market. This code page standard is important for the software industry because the China National Information Technology Standardization Technical Committee has mandated that any software application that is released for the Chinese market after September 1, 2001, be enabled for GB18030. The {{site.data.keyword.conversationshort}} service supports this encoding, and is certified GB18030-compliant
+GB18030 compliance: GB18030 is a Chinese standard that specifies an extended code page for use in the Chinese market. This code page standard is important for the software industry because the China National Information Technology Standardization Technical Committee has mandated that any software application that is released for the Chinese market after September 1, 2001, be enabled for GB18030. The {{site.data.keyword.assistant_classic_short}} service supports this encoding, and is certified GB18030-compliant
 
 ## Changing a skill language
 {: #language-support-change-language}
@@ -204,7 +204,7 @@ For bidirectional languages, such as Arabic, you can change your skill preferenc
 ## Working with accented characters
 {: #language-support-accents}
 
-In a conversational setting, users might or might not use accents while interacting with the {{site.data.keyword.conversationshort}} service. As such, both accented and non-accented versions of words might be treated the same for intent detection and entity recognition.
+In a conversational setting, users might or might not use accents while interacting with the {{site.data.keyword.assistant_classic_short}} service. As such, both accented and non-accented versions of words might be treated the same for intent detection and entity recognition.
 
 However for some languages, like Spanish, some accents can alter the meaning of the entity. Thus, for entity detection, although the original entity might implicitly have an accent, your assistant can also match the non-accented version of the same entity, but with a slightly lower confidence score.
 

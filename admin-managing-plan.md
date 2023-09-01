@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-08-29"
+lastupdated: "2023-09-01"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
@@ -12,7 +12,7 @@ subcollection: watson-assistant
 
 {{site.data.keyword.attribute-definition-list}}
 
-This documentation for the **classic {{site.data.keyword.conversationshort}}** experience has moved. For the most up-to-date version, see [Managing your plan](/docs/watson-assistant?topic=watson-assistant-admin-managing-plan){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
+This documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [Managing your plan](/docs/watson-assistant?topic=watson-assistant-admin-managing-plan){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
 {: attention}
 
 # Managing your plan
@@ -25,13 +25,13 @@ This topic provides:
 ## Plan information
 {: #admin-managing-plan-information}
 
-Billing for the use of {{site.data.keyword.conversationshort}} is managed through your {{site.data.keyword.cloud}} account.
+Billing for the use of {{site.data.keyword.assistant_classic_short}} is managed through your {{site.data.keyword.cloud}} account.
 
 The metrics that are used for billing purposes differ based on your plan type. You can be billed based on the number of API calls made to a service instance or on the number of active users who interact with the instance.
 
 For answers to common questions about subscriptions, see [How you're charged](/docs/billing-usage?topic=billing-usage-charges){: external}.
 
-Explore the {{site.data.keyword.conversationshort}} [service plan options](https://www.ibm.com/products/watsonx-assistant/pricing){: external}.
+Explore the {{site.data.keyword.assistant_classic_short}} [service plan options](https://www.ibm.com/products/watsonx-assistant/pricing){: external}.
 
 ### Paid plan features
 {: #admin-managing-plan-paid}
@@ -64,7 +64,7 @@ A unique user is recognized by the user ID that is associated with the person th
 ### Specifying the user ID with the REST API
 {: #admin-managing-plan-userid-api}
 
-If you are using a custom client with the {{site.data.keyword.conversationshort}} API, you must set the `user_id` property in the message payload your client sends to the `message` method. The `user_id` property is specified at the root of the request body, as in this example:
+If you are using a custom client with the {{site.data.keyword.assistant_classic_short}} API, you must set the `user_id` property in the message payload your client sends to the `message` method. The `user_id` property is specified at the root of the request body, as in this example:
 
 ```json
 {
@@ -98,7 +98,7 @@ If you are using a custom client application and do not set a `user_id` value, t
 
 For example, if the same person chats with your assistant on three separate occasions over the same billing period, how you represent that user in the API call impacts how the interactions are billed. If you identify the user interaction with a `user_id`, it counts as one use. If you identify the user interaction with a `session_id`, then it counts as three uses (because there is a separate session that is created for each interaction).
 
-Design any custom applications to capture a unique `user_id` or `session_id` and pass the information to {{site.data.keyword.conversationshort}}. Choose a non-human-identifiable ID that doesn't change throughout the customer lifecycle. For example, don't use a person's email address as the user ID. In fact, the `user_id` syntax must meet the requirements for header fields as defined in [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2){: external}.
+Design any custom applications to capture a unique `user_id` or `session_id` and pass the information to {{site.data.keyword.assistant_classic_short}}. Choose a non-human-identifiable ID that doesn't change throughout the customer lifecycle. For example, don't use a person's email address as the user ID. In fact, the `user_id` syntax must meet the requirements for header fields as defined in [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2){: external}.
 
 The built-in integrations derive the user ID in the following ways: 
 
@@ -128,7 +128,7 @@ If an anonymous user logs in and later is identified as being the same person wh
 
 {{site.data.keyword.cloud_notm}} has a network of global data centers that provide performance benefits to its cloud services. See [{{site.data.keyword.cloud_notm}} global data centers](https://www.ibm.com/cloud/data-centers/){: external} for more details.
 
-You can create {{site.data.keyword.conversationshort}} service instances that are hosted in the following data center locations:
+You can create {{site.data.keyword.assistant_classic_short}} service instances that are hosted in the following data center locations:
 
 | Location    | Location code | API location |
 |-------------|---------------|--------------|
@@ -144,7 +144,7 @@ You can create {{site.data.keyword.conversationshort}} service instances that ar
 ## Upgrading your plan
 {: #admin-managing-plan-upgrade}
 
-You can explore the {{site.data.keyword.conversationshort}} [service plan options](https://www.ibm.com/products/watsonx-assistant/pricing/){: external} to decide which plan is best for you.
+You can explore the {{site.data.keyword.assistant_classic_short}} [service plan options](https://www.ibm.com/products/watsonx-assistant/pricing/){: external} to decide which plan is best for you.
 
 The page header shows the plan you are using today. To upgrade your plan, complete these steps:
 

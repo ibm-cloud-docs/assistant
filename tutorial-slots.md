@@ -53,7 +53,7 @@ This tutorial will take approximately 30 minutes to complete.
 ### Prerequisite
 {: #tutorial-slots-prereqs}
 
-Before you begin, complete the [Getting Started tutorial](/docs/assistant?topic=assistant-getting-started). You will use the {{site.data.keyword.conversationshort}} tutorial skill that you created, and add nodes to the simple dialog that you built as part of the getting started exercise.
+Before you begin, complete the [Getting Started tutorial](/docs/assistant?topic=assistant-getting-started). You will use the {{site.data.keyword.assistant_classic_short}} tutorial skill that you created, and add nodes to the simple dialog that you built as part of the getting started exercise.
 
 You can also start with a new dialog skill if you want. Just be sure to create the skill before you begin this tutorial.
 {: note}

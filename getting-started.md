@@ -32,7 +32,7 @@ subcollection: assistant
 
 {{site.data.content.newlink}}
 
-# Getting started with {{site.data.keyword.conversationshort}}
+# Getting started with {{site.data.keyword.assistant_classic_short}}
 {: #getting-started}
 
 Learn how to get started with {{site.data.keyword.conversationshort}}. 

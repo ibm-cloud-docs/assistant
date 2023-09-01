@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015,  2023
-lastupdated: "2023-07-12"
+lastupdated: "2023-09-01"
 
 subcollection: assistant
 
@@ -12,7 +12,7 @@ content-type: faq
 
 {{site.data.keyword.attribute-definition-list}}
 
-This documentation for the **classic {{site.data.keyword.conversationshort}}** experience has moved. For the most up-to-date version, see [FAQs for {{site.data.keyword.conversationfull}}](/docs/watson-assistant?topic=watson-assistant-watson-assistant-faqs){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
+This documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [FAQs for {{site.data.keyword.conversationfull}}](/docs/watson-assistant?topic=watson-assistant-watson-assistant-faqs){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
 {: attention}
 
 # FAQ
@@ -94,7 +94,7 @@ This message is displayed for a few reasons:
 {: #faqs-authentication-required}
 {: faq}
 
-You are being asked for credentials to access a {{site.data.keyword.conversationshort}} service instance that you have been able to access without trouble in the past. You might see, `Authentication Required: {service-url} is requesting your username and password.` or just a `Sign in` dialog box with fields for a username and password.
+You are being asked for credentials to access a {{site.data.keyword.assistant_classic_short}} service instance that you have been able to access without trouble in the past. You might see, `Authentication Required: {service-url} is requesting your username and password.` or just a `Sign in` dialog box with fields for a username and password.
 
 This message can be displayed for service instances that were migrated from Cloud Foundry, but for which access roles were not subsequently updated. After the migration, the service instance owner must update the user permissions to ensure that anyone who needs access to the instance is assigned to the appropriate Platform and Service access roles.
 
@@ -124,7 +124,7 @@ To edit skills, you must have Writer service access to the service instance and 
 {: #faqs-get-started}
 {: faq}
 
-Follow the steps in the [Getting started with {{site.data.keyword.conversationshort}}](/docs/assistant?topic=assistant-getting-started) tutorial for a product introduction and to get help creating your first assistant.
+Follow the steps in the [Getting started with {{site.data.keyword.assistant_classic_short}}](/docs/assistant?topic=assistant-getting-started) tutorial for a product introduction and to get help creating your first assistant.
 
 ## Can I export the user conversations from the Analytics page?
 {: #faqs-export-conversation}
@@ -162,11 +162,11 @@ Regularly [back up data](/docs/assistant?topic=assistant-backup) to prevent prob
 
 No, you cannot change from a Trial, Plus, or Standard plan to a Lite plan. And you cannot upgrade from a Trial to a Standard plan. For more information, see [Upgrading](/docs/assistant?topic=assistant-upgrade).
 
-## How many Lite plan instances of {{site.data.keyword.conversationshort}} can I create?
+## How many Lite plan instances of {{site.data.keyword.assistant_classic_short}} can I create?
 {: #faqs-lite-plans}
 {: faq}
 
-You can have only one Lite plan instance of {{site.data.keyword.conversationshort}} per resource group.
+You can have only one Lite plan instance of {{site.data.keyword.assistant_classic_short}} per resource group.
 
 ## How long are log files kept for a workspace?
 {: #faqs-assistant-logs}

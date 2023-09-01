@@ -28,15 +28,15 @@ subcollection: assistant
 # High availability and disaster recovery
 {: #recovery}
 
-{{site.data.keyword.conversationfull}} is highly available within multiple {{site.data.keyword.cloud}} locations (for example, Dallas and Washington, DC). However, recovering from potential disasters that affect an entire location requires planning and preparation.
+{{site.data.keyword.assistant_classic_full}} is highly available within multiple {{site.data.keyword.cloud}} locations (for example, Dallas and Washington, DC). However, recovering from potential disasters that affect an entire location requires planning and preparation.
 {: shortdesc}
 
-You are responsible for understanding your configuration, customization, and usage of {{site.data.keyword.conversationshort}}. You are also responsible for being ready to re-create an instance of the service in a new location and to restore your data in any location. See [How do I ensure zero downtime?](/docs/overview?topic=overview-zero-downtime#zero-downtime){: external} for more information.
+You are responsible for understanding your configuration, customization, and usage of {{site.data.keyword.assistant_classic_short}}. You are also responsible for being ready to re-create an instance of the service in a new location and to restore your data in any location. See [How do I ensure zero downtime?](/docs/overview?topic=overview-zero-downtime#zero-downtime){: external} for more information.
 
 ## High availability
 {: #recovery-ha}
 
-{{site.data.keyword.conversationshort}} supports high availability with no single point of failure. The service achieves high availability automatically and transparently by using the multi-zone region feature provided by {{site.data.keyword.cloud_notm}}.
+{{site.data.keyword.assistant_classic_short}} supports high availability with no single point of failure. The service achieves high availability automatically and transparently by using the multi-zone region feature provided by {{site.data.keyword.cloud_notm}}.
 
 {{site.data.keyword.cloud_notm}} enables multiple zones that do not share a single point of failure within a single location. It also provides automatic load balancing across the zones within a region.
 

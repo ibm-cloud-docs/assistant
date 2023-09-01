@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-06-22"
+lastupdated: "2023-09-01"
 
 subcollection: assistant
 
@@ -11,7 +11,7 @@ subcollection: assistant
 
 {{site.data.keyword.attribute-definition-list}}
 
-This documentation for the **classic {{site.data.keyword.conversationshort}}** experience has moved. For the most up-to-date version, see [Accessing context data in dialog](/docs/watson-assistant?topic=watson-assistant-api-client-get-context){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
+This documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [Accessing context data in dialog](/docs/watson-assistant?topic=watson-assistant-api-client-get-context){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
 {: attention}
 
 # Accessing context data
@@ -19,7 +19,7 @@ This documentation for the **classic {{site.data.keyword.conversationshort}}** e
 
 The *context* is an object containing variables that persist throughout a conversation and can be shared by the dialog and the client application. Both the dialog and the client application can read and write context variables.
 
-You can choose whether you want the context to be maintained by your application or by the {{site.data.keyword.conversationshort}} service:
+You can choose whether you want the context to be maintained by your application or by the {{site.data.keyword.assistant_classic_short}} service:
 
 - If you use the stateful v2 `message` API, the context is automatically maintained by the assistant on a per-session basis. Your application must explicitly create a session at the beginning of each conversation; the context is stored by the service as part of the session and is not returned in message responses unless you request it. For more information, see the [v2 API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2#message){: external}.
 
@@ -35,7 +35,7 @@ There are two types of context:
 
 - **Skill-specific context**: context variables specific to a particular skill, including any user-defined variables needed by your application. Currently, only one skill (named `main skill`) is supported.
 
-User-defined context variables that you specify in a dialog node are part of the `user_defined` object within the skill context when accessed using the API. Note that this structure differs from the `context` structure that appears in the JSON editor in the {{site.data.keyword.conversationshort}} user interface. For example, you might specify the following in the JSON editor:
+User-defined context variables that you specify in a dialog node are part of the `user_defined` object within the skill context when accessed using the API. Note that this structure differs from the `context` structure that appears in the JSON editor in the {{site.data.keyword.assistant_classic_short}} user interface. For example, you might specify the following in the JSON editor:
 
 ```json
 "context": {
@@ -184,7 +184,7 @@ In this example request, the application specifies a value for `user_id` as part
 
 You can specify any variable name you want to use for a user-defined context variable. If the specified variable already exists, it is overwritten with the new value; if not, a new variable is added to the context.
 
-The output from this request includes not only the usual output, but also the context, showing that the specified values have been added. If you are using the stateless `message` method, this context data must be stored locally and sent back to the {{site.data.keyword.conversationshort}} service as part of the next message. If you are using the stateful `message` method, this context is stored automatically and will persist for the life of the session.
+The output from this request includes not only the usual output, but also the context, showing that the specified values have been added. If you are using the stateless `message` method, this context data must be stored locally and sent back to the {{site.data.keyword.assistant_classic_short}} service as part of the next message. If you are using the stateful `message` method, this context is stored automatically and will persist for the life of the session.
 
 ```json
 {

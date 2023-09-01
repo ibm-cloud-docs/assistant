@@ -30,7 +30,7 @@ subcollection: assistant
 # Adding a dialog skill
 {: #skill-dialog-add}
 
-The natural-language processing for the {{site.data.keyword.conversationshort}} service is defined in a *dialog skill*, which is a container for all of the artifacts that define a conversation flow.
+The natural-language processing for the {{site.data.keyword.assistant_classic_short}} service is defined in a *dialog skill*, which is a container for all of the artifacts that define a conversation flow.
 {: shortdesc}
 
 You can add one dialog skill to an assistant. See [Skill limits](/docs/assistant?topic=assistant-skill-add#skill-add-limits) for information about limits per plan.
@@ -139,7 +139,7 @@ To share a dialog skill with other people, you must give them access to the serv
 
 1.  Expand the *Assign users additional resources* section, and then click **IAM Services**.
 
-1.  In the *No access* field, choose {{site.data.keyword.conversationshort}}.
+1.  In the *No access* field, choose {{site.data.keyword.assistant_classic_short}}.
 
     The *Account* resource group is used unless you change it.
 

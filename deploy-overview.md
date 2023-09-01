@@ -43,7 +43,7 @@ In most cases, an assistant is deployed using one of these integrations:
 
 ## Other channels
 
-In addition to the web chat and phone integrations, {{site.data.keyword.conversationshort}} provides integrations you can use to deploy your assistant to numerous other channels:
+In addition to the web chat and phone integrations, {{site.data.keyword.assistant_classic_short}} provides integrations you can use to deploy your assistant to numerous other channels:
 
 - [Facebook Messenger](/docs/assistant?topic=assistant-deploy-facebook)
 - [Intercom](/docs/assistant?topic=assistant-deploy-intercom)

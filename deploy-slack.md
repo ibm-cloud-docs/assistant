@@ -50,7 +50,7 @@ When integrated, depending on the events that you configure the assistant to sup
 
 1.  Go to the [Your Apps](https://api.slack.com/apps){: external} page on the Slack website, and then click the app you want to use.
 
-    Open the Slack app in a new browser tab, so you can easily switch back and forth between the Slack app settings page and {{site.data.keyword.conversationshort}} Slack integration configuration page.
+    Open the Slack app in a new browser tab, so you can easily switch back and forth between the Slack app settings page and {{site.data.keyword.assistant_classic_short}} Slack integration configuration page.
     {: tip}
 
 1.  From the settings page for your Slack app, open the **App Home** page.
@@ -78,11 +78,11 @@ When integrated, depending on the events that you configure the assistant to sup
 
 1.  Go to the *OAuth and Permissions* page in Slack, copy the *Bot User OAuth Access Token*.
 
-1.  From the {{site.data.keyword.conversationshort}} Slack integration configuration page, paste the token that you copied in the previous step into both the **OAuth access token** and **Bot user OAuth access token** fields.
+1.  From the {{site.data.keyword.assistant_classic_short}} Slack integration configuration page, paste the token that you copied in the previous step into both the **OAuth access token** and **Bot user OAuth access token** fields.
 
 1.  On the Slack app settings page, go to the *Basic Information* page, and then find the *App Credentials* section. Copy the app credential verification token.
 
-1.  From the {{site.data.keyword.conversationshort}} Slack integration configuration page, paste the verification token that you copied in the previous step into the **Verification token** field. 
+1.  From the {{site.data.keyword.assistant_classic_short}} Slack integration configuration page, paste the verification token that you copied in the previous step into the **Verification token** field. 
 
 1.  Click **Generate request URL**, and then copy the generated request URL.
 

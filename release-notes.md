@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-08-29"
+lastupdated: "2023-09-01"
 
 subcollection: assistant
 
@@ -12,10 +12,10 @@ content-type: release-note
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Release notes for {{site.data.keyword.conversationshort}}
+# Release notes for {{site.data.keyword.assistant_classic_short}}
 {: #release-notes}
 
-The release notes for the **classic {{site.data.keyword.conversationshort}}** experience have moved. All release notes for {{site.data.keyword.conversationshort}} can be found here: [Release notes for {{site.data.keyword.conversationshort}}](/docs/watson-assistant?topic=watson-assistant-watson-assistant-release-notes){: external}.
+The release notes for the **classic {{site.data.keyword.assistant_classic_short}}** experience have moved. All release notes for {{site.data.keyword.assistant_classic_short}} can be found here: [Release notes for {{site.data.keyword.conversationshort}}](/docs/watson-assistant?topic=watson-assistant-watson-assistant-release-notes){: external}.
 {: attention}
 
 ## 22 May 2023
@@ -31,7 +31,7 @@ Changes to the date and number formats in assistant responses
 
    The delimiter character changes for numbers in some languages. For example, in French, nonbreaking space (NBSP) changes to narrow no-break space (NNBSP).
 
-   These changes are the result of migrating the {{site.data.keyword.conversationshort}} platform to Java 17, where locale values are updated by using specifications in [CLDR 39](https://cldr.unicode.org/index/downloads/cldr-39){: external}. 
+   These changes are the result of migrating the {{site.data.keyword.assistant_classic_short}} platform to Java 17, where locale values are updated by using specifications in [CLDR 39](https://cldr.unicode.org/index/downloads/cldr-39){: external}. 
    
    To avoid or minimize the impact of similar changes in the future, you can use [Actions display formats](/docs/watson-assistant?topic=watson-assistant-actions-global-settings#actions-global-settings-display-formats){: external}.
 
@@ -47,7 +47,7 @@ Differences in contextual entity detection for dialog skills with few annotation
 {: release-note}
 
 Change to dialog skill context variables named `request`
-:   If your dialog skill used a context variable that is named `request`, it was removed from the response payload of any `/message` calls in the V1 or V2 API, or through the {{site.data.keyword.conversationshort}} user interface. After 15 May 2023, this behavior changes. {{site.data.keyword.conversationshort}} doesn't remove context variables that are named `request` from the response payload anymore.
+:   If your dialog skill used a context variable that is named `request`, it was removed from the response payload of any `/message` calls in the V1 or V2 API, or through the {{site.data.keyword.assistant_classic_short}} user interface. After 15 May 2023, this behavior changes. {{site.data.keyword.assistant_classic_short}} doesn't remove context variables that are named `request` from the response payload anymore.
 
 ## 3 May 2023
 {: #assistant-may032023}
@@ -156,7 +156,7 @@ Fix for fuzzy matching in German
 {: release-note}
 
 Algorithm version options available in more languages
-:   Algorithm version options are now available in Arabic, Czech, and Dutch. This allows you to choose which {{site.data.keyword.conversationshort}} algorithm to apply to your future trainings. For more information, see [Algorithm version](/docs/watson-assistant?topic=watson-assistant-algorithm-version){: external}.
+:   Algorithm version options are now available in Arabic, Czech, and Dutch. This allows you to choose which {{site.data.keyword.assistant_classic_short}} algorithm to apply to your future trainings. For more information, see [Algorithm version](/docs/watson-assistant?topic=watson-assistant-algorithm-version){: external}.
 
 Improved enhanced intent detection available in more languages
 :   Previously, the exact match in enhanced intent detection was improved to better handle small differences between training examples and runtime utterances when the differences do not change the meaning of a sentence. For example, suppose in your training examples, `covid-19` is in the `#covid` intent and `@doctortype_facilitytype around Palm Beach` is in the `#find_provide_master` intent. In this example, the `@doctortype_facilitytype` direct entity reference contains entity values, including `hospital`. At run time, `covid19` is predicted as 100% confident for the `#covid` intent, and `hospital around palm beach` is predicted as 100% confident for the `#find_provide_master` intent.
@@ -168,7 +168,7 @@ Improved enhanced intent detection available in more languages
 {: release-note}
 
 Algorithm version options available in more languages
-:   Algorithm version options are now available in Chinese (Traditional), Japanese, and Korean. This allows you to choose which {{site.data.keyword.conversationshort}} algorithm to apply to your future trainings. For more information, see [Algorithm version](/docs/watson-assistant?topic=watson-assistant-algorithm-version){: external}.
+:   Algorithm version options are now available in Chinese (Traditional), Japanese, and Korean. This allows you to choose which {{site.data.keyword.assistant_classic_short}} algorithm to apply to your future trainings. For more information, see [Algorithm version](/docs/watson-assistant?topic=watson-assistant-algorithm-version){: external}.
 
 Improved enhanced intent detection available in more languages
 :   Previously, the exact match in enhanced intent detection was improved to better handle small differences between training examples and runtime utterances when the differences do not change the meaning of a sentence. For example, suppose in your training examples, `covid-19` is in the `#covid` intent and `@doctortype_facilitytype around Palm Beach` is in the `#find_provide_master` intent. In this example, the `@doctortype_facilitytype` direct entity reference contains entity values, including `hospital`. At run time, `covid19` is predicted as 100% confident for the `#covid` intent, and `hospital around palm beach` is predicted as 100% confident for the `#find_provide_master` intent.
@@ -180,7 +180,7 @@ Improved enhanced intent detection available in more languages
 {: release-note}
 
 Algorithm version
-:   Algorithm version allows you to choose which {{site.data.keyword.conversationshort}} algorithm to apply to your future trainings. In the **Options** section of a dialog skill, **Algorithm Version** replaces **Intent Detection**. For more information, see [Algorithm version](/docs/watson-assistant?topic=watson-assistant-algorithm-version){: external}.
+:   Algorithm version allows you to choose which {{site.data.keyword.assistant_classic_short}} algorithm to apply to your future trainings. In the **Options** section of a dialog skill, **Algorithm Version** replaces **Intent Detection**. For more information, see [Algorithm version](/docs/watson-assistant?topic=watson-assistant-algorithm-version){: external}.
 
 Algorithm beta version (2022-06-10)
 :   Algorithm beta version (2022-06-10) includes a new irrelevance detection algorithm to improve off-topic detection accuracy. Utterances with similar meanings are expected to have more similar confidences in comparison to previous irrelevance detection algorithms. For example, in the Customer Care Sample Skill, the training utterance `please suggest route from times square` has 100% confidence at runtime. Currently in IBM Cloud, the utterance `please suggest route from central park` gets a low confidence and could be flagged as irrelevant. With beta version (2022-06-10), the same utterance is expected to be predicted correctly as #Customer_Care_Store_Location with a ~46% confidence.
@@ -190,7 +190,7 @@ Algorithm beta version (2022-06-10)
 {: release-note}
 
 Sign out due to inactivity setting
-:   {{site.data.keyword.conversationshort}} now uses the **Sign out due to inactivity setting** from Identity & Access Management (IAM). {{site.data.keyword.cloud_notm}} account owners can select the time it takes before an inactive user is signed out and their credentials are required again. The default is 2 hours.
+:   {{site.data.keyword.assistant_classic_short}} now uses the **Sign out due to inactivity setting** from Identity & Access Management (IAM). {{site.data.keyword.cloud_notm}} account owners can select the time it takes before an inactive user is signed out and their credentials are required again. The default is 2 hours.
 
    An inactive user will see two messages. The first message alerts them about an upcoming session expiration and provides a choice to renew. If they remain inactive, a second session expiration message appears and they will need to log in again.
 
@@ -201,7 +201,7 @@ Sign out due to inactivity setting
 {: release-note}
 
 Language support improvements
-:   Entity recognition and intent classification for Japanese and Korean languages changed to improve the reliability of {{site.data.keyword.conversationshort}}. You might see minor differences in how {{site.data.keyword.conversationshort}} handles entity recognition and intent classification. This change affects {{site.data.keyword.conversationshort}} workspaces that are trained after May 18, 2022. Workspaces that were trained before May 18, 2022 maintain the same behavior.
+:   Entity recognition and intent classification for Japanese and Korean languages changed to improve the reliability of {{site.data.keyword.assistant_classic_short}}. You might see minor differences in how {{site.data.keyword.assistant_classic_short}} handles entity recognition and intent classification. This change affects {{site.data.keassistant_classic_shortnshort}} workspaces that are trained after May 18, 2022. Workspaces that were trained before May 18, 2022 maintain the same behavior.
 
   Any visible changes are most likely to be seen in dictionary-based or pattern-based entity matching. For more information about defining entities, see [Defining information to look for in customer input](/docs/assistant?topic=assistant-entities). As a suggested practice, you can test your dialog skill with your current test framework to determine whether your workspace is impacted before you update your production workspace.
 
@@ -224,7 +224,7 @@ Assistant preview link can be disabled
 {: release-note}
 
 Dialog feature available in the new {{site.data.keyword.conversationshort}}
-:   The dialog feature is available in the new {{site.data.keyword.conversationshort}} experience. If you have a dialog-based assistant that was built using the classic {{site.data.keyword.conversationshort}}, you can now migrate your dialog skill to the new {{site.data.keyword.conversationshort}} experience. For more information, see [Migrating to the new experience](/docs/watson-assistant?topic=watson-assistant-migrate-overview){: external}.
+:   The dialog feature is available in the new {{site.data.keyword.conversationshort}} experience. If you have a dialog-based assistant that was built using the classic {{site.data.keyword.assistant_classic_short}}, you can now migrate your dialog skill to the new {{site.data.keyword.assistant_classic_short}} experience. For more information, see [Migrating to the new experience](/docs/watson-assistant?topic=watson-assistant-migrate-overview){: external}.
 
 ## 25 March 2022
 {: #assistant-mar252022}
@@ -271,9 +271,9 @@ Enhanced irrelevance detection update
 {: release-note}
 
 All instances now default to new experience
-:    All new instances of {{site.data.keyword.conversationshort}} now direct users to the new product experience by default.
+:    All new instances of {{site.data.keyword.assistant_classic_short}} now direct users to the new product experience by default.
 
-    {{site.data.keyword.conversationshort}} has been completely overhauled to simplify the end-to-end process of building and deploying a virtual assistant, reducing time to launch and enabling nontechnical authors to create virtual assistants without involving developers. For more information about the new {{site.data.keyword.conversationshort}}, and instructions for switching between the new and old experiences, see [Welcome to the new {{site.data.keyword.conversationshort}}](/docs/watson-assistant?topic=watson-assistant-welcome-new-assistant){: external}.
+    {{site.data.keyword.assistant_classic_short}} has been completely overhauled to simplify the end-to-end process of building and deploying a virtual assistant, reducing time to launch and enabling nontechnical authors to create virtual assistants without involving developers. For more information about the new {{site.data.keyword.conversationshort}}, and instructions for switching between the new and old experiences, see [Welcome to the new {{site.data.keyword.conversationshort}}](/docs/watson-assistant?topic=watson-assistant-welcome-new-assistant){: external}.
 
     If you would like to send us feedback on the new experience, please use [this form](https://form.asana.com/?k=vvRdQAmGMFAeEGRryhTA2w&d=8612789739828){: external}.
 
@@ -296,7 +296,7 @@ New setting for options customer response type
 {: release-note}
 
 Apache Log4j security vulnerability updates
-:   {{site.data.keyword.conversationshort}} upgraded to using Log4j version 2.17.0, which addresses all of the Critical severity and High severity Log4j CVEs, specifically CVE-2021-45105, CVE-2021-45046, and CVE-2021-44228.
+:   {{site.data.keyword.assistant_classic_short}} upgraded to using Log4j version 2.17.0, which addresses all of the Critical severity and High severity Log4j CVEs, specifically CVE-2021-45105, CVE-2021-45046, and CVE-2021-44228.
 
 ## 10 December 2021
 {: #assistant-dec102021}
@@ -359,7 +359,7 @@ The new {{site.data.keyword.conversationshort}}
     - Use a new suite of **analytics** to improve your assistant. Review which actions are being completed to see what your customers want help with, determine if your assistant understands and addresses customer needs, and decide how can you make your assistant better.
     - New **[documentation](/docs/watson-assistant){: external}** focuses on the workflow of building, deploying, and improving your assistant.
 
-    You can easily switch to the new {{site.data.keyword.conversationshort}} and try it out. Visit the **Manage** menu for your {{site.data.keyword.conversationshort}} instance, then choose **Switch to new experience**.
+    You can easily switch to the new {{site.data.keyword.conversationshort}} and try it out. Visit the **Manage** menu for your {{site.data.keyword.assistant_classic_short}} instance, then choose **Switch to new experience**.
 
 ## 21 September 2021
 {: #assistant-sep212021}
@@ -401,7 +401,7 @@ Dialog skill "Try it out" improvements
 
     - It now includes runtime warnings in addition to runtime errors.
 
-    - For dialog skills, the **Try it out** pane now uses the [React](https://reactjs.org/){: external} UI framework similar to the rest of the {{site.data.keyword.conversationshort}} user interface. You shouldn't see any change in behavior or functionality. As a part of the update, dialog skill error handling has been improved within the "Try it out" pane. This update was enabled on these dates:
+    - For dialog skills, the **Try it out** pane now uses the [React](https://reactjs.org/){: external} UI framework similar to the rest of the {{site.data.keyword.assistant_classic_short}} user interface. You shouldn't see any change in behavior or functionality. As a part of the update, dialog skill error handling has been improved within the "Try it out" pane. This update was enabled on these dates:
 
         - September 9, 2021 in the Tokyo and Seoul data centers
         - September 13, 2021 in the London, Sydney, and Washington, D.C. data centers
@@ -412,7 +412,7 @@ Dialog skill "Try it out" improvements
 {: release-note}
 
 Dialog skill "Try it out" improvements
-:   For dialog skills, the **Try it out** pane now uses the [React](https://reactjs.org/){: external} UI framework similar to the rest of the {{site.data.keyword.conversationshort}} user interface. You shouldn't see any change in behavior or functionality. As a part of the update, dialog skill error handling has been improved within the "Try it out" pane. This update was enabled on September 9, 2021 in the Tokyo and Seoul data centers. On September 13, 2021, the update was enabled in the London, Sydney, and Washington, D.C. data centers.
+:   For dialog skills, the **Try it out** pane now uses the [React](https://reactjs.org/){: external} UI framework similar to the rest of the {{site.data.keyword.assistant_classic_short}} user interface. You shouldn't see any change in behavior or functionality. As a part of the update, dialog skill error handling has been improved within the "Try it out" pane. This update was enabled on September 9, 2021 in the Tokyo and Seoul data centers. On September 13, 2021, the update was enabled in the London, Sydney, and Washington, D.C. data centers.
 
 Disambiguation feature updates
 :   The dialog skill disambiguation feature now includes improved features:
@@ -447,7 +447,7 @@ Actions skill improvements
         - No action matches: The customer repeatedly made requests or asked questions that the assistant did not understand.
 
 Dialog skill "Try it out" improvements
-:   For dialog skills, the **Try it out** pane now uses the [React](https://reactjs.org/){: external} UI framework similar to the rest of the {{site.data.keyword.conversationshort}} user interface. You shouldn't see any change in behavior or functionality. As a part of the update, dialog skill error handling has been improved within the "Try it out" pane. This update will be implemented incrementally, starting with service instances in the Tokyo and Seoul data centers.
+:   For dialog skills, the **Try it out** pane now uses the [React](https://reactjs.org/){: external} UI framework similar to the rest of the {{site.data.keyword.assistant_classic_short}} user interface. You shouldn't see any change in behavior or functionality. As a part of the update, dialog skill error handling has been improved within the "Try it out" pane. This update will be implemented incrementally, starting with service instances in the Tokyo and Seoul data centers.
 
 ## 2 September 2021
 {: #assistant-sep022021}
@@ -457,7 +457,7 @@ Deploy your assistant on the phone in minutes
 :   We have partnered with [IntelePeer](https://intelepeer.com/){: external} to enable you to generate a phone number for free within the phone integration. Simply choose to generate a free number when following the prompts to create a phone integration, finish the setup, and a number is assigned to your assistant. These numbers are robust and ready for production.
 
 Connect to your existing service desks
-:   We have added step-by-step documentation for connecting to [Genesys](/docs/assistant?topic=assistant-deploy-phone-genesys) and [Twilio Flex](/docs/assistant?topic=assistant-deploy-phone-flex) over the phone. Easily hand off to your live agents when your customers require telephony support from your service team. {{site.data.keyword.conversationshort}} deploys on the phone via SIP, so most phone based service desks can easily be integrated via SIP trunking standards.
+:   We have added step-by-step documentation for connecting to [Genesys](/docs/assistant?topic=assistant-deploy-phone-genesys) and [Twilio Flex](/docs/assistant?topic=assistant-deploy-phone-flex) over the phone. Easily hand off to your live agents when your customers require telephony support from your service team. {{site.data.keyword.assistant_classic_short}} deploys on the phone via SIP, so most phone based service desks can easily be integrated via SIP trunking standards.
 
 ## 23 August 2021
 {: #assistant-aug232021}
@@ -467,7 +467,7 @@ Intent detection updates
 :   Intent detection for the English language has been updated with the addition of new word-piece algorithms. These algorithms improve tolerance for out-of-vocabulary words and misspelling. This change affects only English-language assistants, and only if the enhanced intent recognition model is enabled.
 
 Automatic retraining of old skills and workspaces
-:   As of August 23, 2021, {{site.data.keyword.conversationshort}} enabled automatic retraining of existing skills in order to take advantage of updated algorithms. The {{site.data.keyword.conversationshort}} service will continually monitor all ML models, and will automatically retrain those models that have not been retrained within the previous 6 months. For more information, see [Automatic retraining of old skills and workspaces](/docs/assistant?topic=assistant-skill-auto-retrain).
+:   As of August 23, 2021, {{site.data.keyword.assistant_classic_short}} enabled automatic retraining of existing skills in order to take advantage of updated algorithms. The {{site.data.keassistant_classic_shortnshort}} service will continually monitor all ML models, and will automatically retrain those models that have not been retrained within the previous 6 months. For more information, see [Automatic retraining of old skills and workspaces](/docs/assistant?topic=assistant-skill-auto-retrain).
 
 ## 19 August 2021
 {: #assistant-aug192021}
@@ -605,7 +605,7 @@ Legacy system entities deprecated
 {: release-note}
 
 Service API endpoint change
-:   As explained in [December 2019](#assistant-dec122019), as part of work done to fully support IAM authentication, the endpoint you use to access your {{site.data.keyword.conversationshort}} service programmatically is changing. The old endpoint URLs are deprecated and **will be retired on 26 May 2021**. Update your API calls to use the new URLs.
+:   As explained in [December 2019](#assistant-dec122019), as part of work done to fully support IAM authentication, the endpoint you use to access your {{site.data.keyword.assistant_classic_short}} service programmatically is changing. The old endpoint URLs are deprecated and **will be retired on 26 May 2021**. Update your API calls to use the new URLs.
 
     The pattern for the endpoint URL changes from `gateway-{location}.watsonplatform.net/assistant/api/` to `api.{location}.assistant.watson.cloud.ibm.com/`. The domain, location, and offering identifier are different in the new endpoint. For more information, see [Updating endpoint URLs from watsonplatform.net](/docs/watson?topic=watson-endpoint-change){: external}.
 
@@ -695,7 +695,7 @@ Channel transfer response type
 :   Dialog skills now include a channel transfer response type. If your assistant uses multiple integrations to support different channels for interaction with users, there might be some situations when a customer begins a conversation in one channel but then needs to transfer to a different channel. The most common such situation is transferring a conversation to the web chat integration, to take advantage of web chat features such as service desk integration. For more information, see [Adding a Channel transfer response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-channel-transfer).
 
 Intercom and WhatsApp integrations now available in Lite plan
-:   The integrations for Intercom and WhatsApp are now available in the Lite plan for {{site.data.keyword.conversationshort}}. For more information, see [Integrating with Intercom](/docs/assistant?topic=assistant-deploy-intercom) and [Integrating with WhatsApp](/docs/assistant?topic=assistant-deploy-whatsapp).
+:   The integrations for Intercom and WhatsApp are now available in the Lite plan for {{site.data.keyword.assistant_classic_short}}. For more information, see [Integrating with Intercom](/docs/assistant?topic=assistant-deploy-intercom) and [Integrating with WhatsApp](/docs/assistant?topic=assistant-deploy-whatsapp).
 
 ## 16 March 2021
 {: #assistant-mar162021}
@@ -757,7 +757,7 @@ Other plan changes
     The Plus Trial plan was renamed to Trial.
 
 SOC 2 compliance
-:   {{site.data.keyword.conversationshort}} is SOC 2 Type 2 compliant, so you know your data is secure.
+:   {{site.data.keyword.assistant_classic_short}} is SOC 2 Type 2 compliant, so you know your data is secure.
 
     The System and Organization Controls framework, developed by the American Institute of Certified Public Accountants (AICPA), is a standard for controls that protect information stored in the cloud. SOC 2 reports provide details about the nature of internal controls that are implemented to protect customer-owned data. For more information, see [IBM Cloud compliance programs](https://www.ibm.com/cloud/compliance/global){: external}.
 
@@ -957,7 +957,7 @@ System entity support changes
 {: release-note}
 
 Introducing the *actions skill*!
-:   The actions skill is the latest step in the continuing evolution of {{site.data.keyword.conversationshort}} as a software as a service application. The actions skill is designed to make it simple enough for *anyone* to build a virtual assistant. We've removed the need to navigate between intents, entities, and dialog to create conversational flows. Building can all now be done in one simple and intuitive interface.
+:   The actions skill is the latest step in the continuing evolution of {{site.data.keyword.assistant_classic_short}} as a software as a service application. The actions skill is designed to make it simple enough for *anyone* to build a virtual assistant. We've removed the need to navigate between intents, entities, and dialog to create conversational flows. Building can all now be done in one simple and intuitive interface.
 
 Web chat integration is created automatically
 :   When you create a new assistant, a web chat integration is created for you automatically (in addition to the preview link integration, which was created previously). These integrations are added also to the assistant that is auto-generated (named *My first assistant*) when you create a new service instance. For more information, see [Integrating the web chat with your website](/docs/assistant?topic=assistant-deploy-web-chat).
@@ -986,7 +986,7 @@ Introducing the *Phone* integration!
 Introducing the *Twilio messaging* integration!
 :   Enable your assistant to receive and respond to questions that customers submit by using SMS text messaging. When you enable both new integrations, your assistant can send text messages to a customer in the context of an ongoing phone conversation. For more information, see [Integrating with Twilio messaging](/docs/assistant?topic=assistant-deploy-sms).
 
-    The *Phone* and *Twilio messaging* integrations are available as beta features in {{site.data.keyword.conversationshort}} service instances that are hosted in Dallas, Frankfurt, and Washington, DC.
+    The *Phone* and *Twilio messaging* integrations are available as beta features in {{site.data.keyword.assistant_classic_short}} service instances that are hosted in Dallas, Frankfurt, and Washington, DC.
 
 The web chat integration is added to new assistants automatically
 :   Much like the *Preview link* integration, the *Web chat* integration now is added to the *My first assistant* assistant that is created for new users automatically.
@@ -1077,7 +1077,7 @@ Support ended for @sys-location and @sys-person
 
     Use contextual entities to teach your skill to recognize the context in which such names are used. For more information about contextual entities, see [Annotation-based method](/docs/assistant?topic=assistant-entities#entities-annotations-overview).
 
-    For more information about how to use contextual entites to identify names of people, see the [Detecting Names And Locations With {{site.data.keyword.conversationshort}}](https://medium.com/ibm-watson/detecting-names-and-locations-with-watson-assistant-e3e1fa2a8427){: external} blog post on Medium.
+    For more information about how to use contextual entites to identify names of people, see the [Detecting Names And Locations With {{site.data.keyword.assistant_classic_short}}](https://medium.com/ibm-watson/detecting-names-and-locations-with-watson-assistant-e3e1fa2a8427){: external} blog post on Medium.
 
 How legacy numeric system entities are processed has changed
 :   All new dialog skills use the new system entities automatically.
@@ -1116,7 +1116,7 @@ Zendesk support is generally available
 :   Integrate your web chat with Zendesk so your assistant can transfer customers who asks to speak to a person to a Zendesk agent who can answer their questions. And now you can secure the connection to Zendesk. For more information, see [Adding support for transfers](/docs/assistant?topic=assistant-deploy-zendesk).
 
 Pricing plan changes
-:   We continue to revamp the overall service plan structure for {{site.data.keyword.conversationshort}}. In April, we announced [a new low cost entry point](#1April2020) for the Plus plan. Today, the Standard plan is being retired. Existing Standard plan users are not impacted; they can continue to work in their Standard instances. New users do not see the Standard plan as an option when they create a service instance. For more information, see the [Pricing](https://www.ibm.com/products/watsonx-assistant/pricing){: external} page.
+:   We continue to revamp the overall service plan structure for {{site.data.keyword.assistant_classic_short}}. In April, we announced [a new low cost entry point](#1April2020) for the Plus plan. Today, the Standard plan is being retired. Existing Standard plan users are not impacted; they can continue to work in their Standard instances. New users do not see the Standard plan as an option when they create a service instance. For more information, see the [Pricing](https://www.ibm.com/products/watsonx-assistant/pricing){: external} page.
 
 ## 27 May 2020
 {: #assistant-may272020}
@@ -1200,7 +1200,7 @@ Fuzzy matching support was expanded
 {: release-note}
 
 New and improved access control
-:   Now, when you give other people access to your {{site.data.keyword.conversationshort}} resources, you have more control over the level of access they have to individual skills and assistants. You can give one person read-only access to a production skill and manager-level access to a development skill, for example. For more information, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).
+:   Now, when you give other people access to your {{site.data.keyword.assistant_classic_short}} resources, you have more control over the level of access they have to individual skills and assistants. You can give one person read-only access to a production skill and manager-level access to a development skill, for example. For more information, see [Managing access to resources](/docs/assistant?topic=assistant-access-control).
 
     Can't see Analytics anymore? If you cannot do things that you could do before, you might not have appropriate access. Ask the service instance owner to change your service access role. For more information, see [How to keep your access](/docs/assistant?topic=assistant-access-control#access-control-prep).
 
@@ -1263,7 +1263,7 @@ Fixed a problem with missing User Conversation data
 {: release-note}
 
 Technology preview is discontinued
-:   The technology preview user interface was replaced with the {{site.data.keyword.conversationshort}} standard user interface. If you used an Actions page to create actions and steps for your skill previously, you cannot access the Actions page anymore. Instead, use the Intents and Dialog pages to work with your skill.
+:   The technology preview user interface was replaced with the {{site.data.keyword.assistant_classic_short}} standard user interface. If you used an Actions page to create actions and steps for your skill previously, you cannot access the Actions page anymore. Instead, use the Intents and Dialog pages to work with your skill.
 
 ## 16 March 2020
 {: #assistant-mar162020}
@@ -1307,7 +1307,7 @@ Known issue accessing logs
 {: release-note}
 
 March 2020 deprecation notice
-:   To help us continue to improve and expand the capabilities of the assistants you build with {{site.data.keyword.conversationshort}}, we are deprecating some of the older technologies. Support for the older technologies will end in June 2020. Take action now to test and adopt the new technologies, so your skills and assistants will be ready when the old technologies stop being supported.
+:   To help us continue to improve and expand the capabilities of the assistants you build with {{site.data.keyword.assistant_classic_short}}, we are deprecating some of the older technologies. Support for the older technologies will end in June 2020. Take action now to test and adopt the new technologies, so your skills and assistants will be ready when the old technologies stop being supported.
 
     The following technologies are being deprecated:
 
@@ -1363,7 +1363,7 @@ More web chat color settings
 {: release-note}
 
 Track API events
-:   Premium plan users can now use the Activity Tracker service to track how users and applications interact with {{site.data.keyword.conversationfull}} in {{site.data.keyword.cloud}}. See [Activity Tracker events](/docs/assistant?topic=assistant-at-events).
+:   Premium plan users can now use the Activity Tracker service to track how users and applications interact with {{site.data.keyword.assistant_classic_full}} in {{site.data.keyword.cloud}}. See [Activity Tracker events](/docs/assistant?topic=assistant-at-events).
 
 ## 5 February 2020
 {: #assistant-feb052020}
@@ -1398,17 +1398,17 @@ New system entities are now generally available in multiple languages
 {: release-note}
 
 Fixed an error message that was displayed when opening an instance
-:   An error that was displayed when you launched {{site.data.keyword.conversationshort}} from the {{site.data.keyword.cloud}} dashboard has been fixed. Previously, an error message that said, `Module 'ui-router' is not available! You either misspelled the module name or forgot to load it` would sometimes be displayed.
+:   An error that was displayed when you launched {{site.data.keyword.assistant_classic_short}} from the {{site.data.keyword.cloud}} dashboard has been fixed. Previously, an error message that said, `Module 'ui-router' is not available! You either misspelled the module name or forgot to load it` would sometimes be displayed.
 
 ## 12 December 2019
 {: #assistant-dec122019}
 {: release-note}
 
 Support for private network endpoints
-:   Users of Premium plans can create private network endpoints to connect to {{site.data.keyword.conversationshort}} over a private network. Connections to private network endpoints do not require public internet access. For more information, see [Protecting sensitive information](/docs/assistant?topic=assistant-security).
+:   Users of Premium plans can create private network endpoints to connect to {{site.data.keyword.assistant_classic_short}} over a private network. Connections to private network endpoints do not require public internet access. For more information, see [Protecting sensitive information](/docs/assistant?topic=assistant-security).
 
 Full support for IBM Cloud IAM
-:   {{site.data.keyword.conversationshort}} now supports the full implementation of {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). API keys for Watson services are no longer limited to a single service instance. You can create access policies and API keys that apply to more than one service, and you can grant access between services.
+:   {{site.data.keyword.assistant_classic_short}} now supports the full implementation of {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). API keys for Watson services are no longer limited to a single service instance. You can create access policies and API keys that apply to more than one service, and you can grant access between services.
 
     - To support this change, the API service endpoints use a different domain and include the service instance ID. The pattern is `api.{location}.{offering}.watson.cloud.ibm.com/instances/{instance_id}`.
 
@@ -1449,7 +1449,7 @@ Slot prompt JSON editor
 :   You can now use the context or JSON editors for the slot response field where you define the question that your assistant asks to get information it needs from the customer. For more information about slots, see [Gathering information with slots](/docs/assistant?topic=assistant-dialog-slots).
 
 New South Korea location
-:   You can now create {{site.data.keyword.conversationshort}} instances in the Seoul location. As with other locations, the {{site.data.keyword.cloud_notm}} Seoul location uses token-based Identity and Access Management (IAM) authentication.
+:   You can now create {{site.data.keyword.assistant_classic_short}} instances in the Seoul location. As with other locations, the {{site.data.keyword.cloud_notm}} Seoul location uses token-based Identity and Access Management (IAM) authentication.
 
 Technology preview
 :   A technology preview experience was released. A select set of new users are being presented with a new user interface that takes a different approach to building an assistant.
@@ -1472,7 +1472,7 @@ Testing improvement
 :   You can now see the top three intents that were recognized in a test user input from the "Try it out" pane. For more details, see [Testing your dialog](/docs/assistant?topic=assistant-dialog-tasks#dialog-tasks-test).
 
 Error message when opening an instance
-:   When you launch {{site.data.keyword.conversationshort}} from the {{site.data.keyword.cloud}} dashboard, you might see an error message that says, `Module 'ui-router' is not available! You either misspelled the module name or forgot to load it.` You can ignore the message. Refresh the web browser page to close the notification.
+:   When you launch {{site.data.keyword.assistant_classic_short}} from the {{site.data.keyword.cloud}} dashboard, you might see an error message that says, `Module 'ui-router' is not available! You either misspelled the module name or forgot to load it.` You can ignore the message. Refresh the web browser page to close the notification.
 
 ## 16 October 2019
 {: #assistant-oct162019}
@@ -1593,7 +1593,7 @@ Search skill and autocorrection are generally available
 {: release-note}
 
 Missing skills issue is resolved
-:   In some cases, workspaces that were created through the API only were not being displayed when you opened the {{site.data.keyword.conversationshort}} user interface. This issue has been addressed. All workspaces that you create by using the API are displayed as dialog skills when you open the user interface.
+:   In some cases, workspaces that were created through the API only were not being displayed when you opened the {{site.data.keyword.assistant_classic_short}} user interface. This issue has been addressed. All workspaces that you create by using the API are displayed as dialog skills when you open the user interface.
 
 ## 23 July 2019
 {: #assistant-ju23l2019}
@@ -1613,7 +1613,7 @@ Dialog search issue
 :   In some skills, the search function is not working in the Dialog page. A new user interface library, which increases the page responsiveness, is being rolled out to existing service instances in phases. This search issue affects only dialog skills for which the new library is not yet enabled.
 
 Missing skills issue
-:   In some cases, workspaces that were created through the API only are not being displayed when you open the {{site.data.keyword.conversationshort}} user interface. Normally, these workspaces are displayed as dialog skills. If you do not see your skills from the UI, don't worry; they are not gone. Contact support to report the issue, so the team can enable the workspaces to be displayed properly.
+:   In some cases, workspaces that were created through the API only are not being displayed when you open the {{site.data.keyword.assistant_classic_short}} user interface. Normally, these workspaces are displayed as dialog skills. If you do not see your skills from the UI, don't worry; they are not gone. Contact support to report the issue, so the team can enable the workspaces to be displayed properly.
 
 ## 15 July 2019
 {: #assistant-jul152019}
@@ -1708,7 +1708,7 @@ Slack integration enhancement
 {: release-note}
 
 Integrate with Intercom
-:   Intercom, a leading customer service messaging platform, has partnered with IBM to add a new agent to the team, a virtual {{site.data.keyword.conversationshort}}. You can integrate your assistant with an Intercom application to enable the app to seamlessly pass user conversations between your assistant and human support agents. This integration is available to Plus and Premium plan users only. See [Integrating with Intercom](/docs/assistant?topic=assistant-deploy-intercom) for more details.
+:   Intercom, a leading customer service messaging platform, has partnered with IBM to add a new agent to the team, a virtual {{site.data.keyword.assistant_classic_short}}. You can integrate your assistant with an Intercom application to enable the app to seamlessly pass user conversations between your assistant and human support agents. This integration is available to Plus and Premium plan users only. See [Integrating with Intercom](/docs/assistant?topic=assistant-deploy-intercom) for more details.
 
 ## 8 February 2019
 {: #assistant-feb082019}
@@ -1756,7 +1756,7 @@ New methods for working with arrays
 {: release-note}
 
 London data center
-:   You can now create {{site.data.keyword.conversationshort}} service instances that are hosted in the London data center without syndication. See [Data centers](/docs/assistant?topic=assistant-services-information#services-information-regions) for more details.
+:   You can now create {{site.data.keyword.assistant_classic_short}} service instances that are hosted in the London data center without syndication. See [Data centers](/docs/assistant?topic=assistant-services-information#services-information-regions) for more details.
 
 Dialog node limit changes
 :   The dialog node limit was temporarily changed from 100,000 to 500 for new Standard plan instances. This limit change was later reversed. If you created a Standard plan instance during the time frame in which the limit was in effect, your dialogs might be impacted. The limit was in effect for skills created between 10 December and 12 December 2018. The lower limits will be removed from all impacted instances in January. If you need to have the lower limit lifted before then, open a support ticket.
@@ -1811,7 +1811,7 @@ User-based Premium plan
 
     Existing Premium plan service instances are not impacted by this change; they continue to use API-based billing methods. Only existing Premium plan users will see the API-based plan listed as the *Premium (API)* plan option.
 
-    See {{site.data.keyword.conversationshort}} [service plan options](https://www.ibm.com/products/watsonx-assistant/pricing){: external} for more information about all available service plans.
+    See {{site.data.keyword.assistant_classic_short}} [service plan options](https://www.ibm.com/products/watsonx-assistant/pricing){: external} for more information about all available service plans.
 
 ## 20 November 2018
 {: #assistant-nov202018}
@@ -1825,7 +1825,7 @@ User-based Premium plan
 {: release-note}
 
 Major user interface revision
-:   The {{site.data.keyword.conversationshort}} service has a new look and added features.
+:   The {{site.data.keyword.assistant_classic_short}} service has a new look and added features.
 
     This version of the tool was evaluated by beta program participants over the past several months.
 
@@ -1833,7 +1833,7 @@ Major user interface revision
 
     **Where are my workspaces?** Any workspaces that you created previously are now listed in your service instance as skills. Click the **Skills** tab to see them. For more information, see [Adding skills to your assistant](/docs/assistant?topic=assistant-skill-add).
 
-    - **Assistants**: You can now publish your skill in just two steps. Add your skill to an assistant, and then set up one or more integrations with which to deploy your skill. The assistant adds a layer of function to your skill that enables {{site.data.keyword.conversationshort}} to orchestrate and manage the flow of information for you. See [Assistants](/docs/assistant?topic=assistant-assistants).
+    - **Assistants**: You can now publish your skill in just two steps. Add your skill to an assistant, and then set up one or more integrations with which to deploy your skill. The assistant adds a layer of function to your skill that enables {{site.data.keyword.assistant_classic_short}} to orchestrate and manage the flow of information for you. See [Assistants](/docs/assistant?topic=assistant-assistants).
 
     - **Built-in integrations**: Instead of going to the **Deploy** tab to deploy your workspace, you add your dialog skill to an assistant, and add integrations to the assistant through which the skill is made available to your users. You do not need to build a custom front-end application and manage the conversation state from one call to the next. However, you can still do so if you want to. See [Adding integrations](/docs/assistant?topic=assistant-deploy-integration-add) for more information.
 
@@ -1850,14 +1850,14 @@ Major user interface revision
 {: release-note}
 
 Japanese data center
-:   You can now create {{site.data.keyword.conversationshort}} service instances that are hosted in the Tokyo data center. See [Data centers](/docs/assistant?topic=assistant-services-information#services-information-regions) for more details.
+:   You can now create {{site.data.keyword.assistant_classic_short}} service instances that are hosted in the Tokyo data center. See [Data centers](/docs/assistant?topic=assistant-services-information#services-information-regions) for more details.
 
 ## 30 October 2018
 {: #assistant-oct302018}
 {: release-note}
 
 New API authentication process
-:   The {{site.data.keyword.conversationshort}} service transitioned from using Cloud Foundry to using token-based Identity and Access Management (IAM) authentication in the following regions:
+:   The {{site.data.keyword.assistant_classic_short}} service transitioned from using Cloud Foundry to using token-based Identity and Access Management (IAM) authentication in the following regions:
 
     - Dallas (us-south)
     - Frankfurt (eu-de)
@@ -1877,8 +1877,8 @@ Entity synonym recommendations are available in more languages
 {: #assistant-sep262018}
 {: release-note}
 
-{{site.data.keyword.conversationfull}} is available in {{site.data.keyword.icpfull}}
-:   {{site.data.keyword.conversationfull}} is available in {{site.data.keyword.icpfull}}
+{{site.data.keyword.assistant_classic_full}} is available in {{site.data.keyword.icpfull}}
+:   {{site.data.keyword.assistant_classic_full}} is available in {{site.data.keyword.icpfull}}
 
 ## 21 September 2018
 {: #assistant-sep212018}
@@ -1957,10 +1957,10 @@ Language updates for system entities
 {: release-note}
 
 Washington, DC data center opens
-:   You can now create {{site.data.keyword.conversationshort}} service instances that are hosted in the Washington, DC data center. See [Data centers](/docs/assistant?topic=assistant-services-information#services-information-regions) for more details.
+:   You can now create {{site.data.keyword.assistant_classic_short}} service instances that are hosted in the Washington, DC data center. See [Data centers](/docs/assistant?topic=assistant-services-information#services-information-regions) for more details.
 
 New API authentication process
-:   The {{site.data.keyword.conversationshort}} service has a new API authentication process for service instances that are hosted in the following regions:
+:   The {{site.data.keyword.assistant_classic_short}} service has a new API authentication process for service instances that are hosted in the following regions:
 
     - Washington, DC (us-east) as of 14 June 2018
     - Sydney, Australia (au-syd) as of 7 May 2018
@@ -1973,7 +1973,7 @@ New API authentication process
 
     When you use any of the Watson SDKs, you can pass the API key and let the SDK manage the lifecycle of the tokens. For more information and examples, see [Authentication](https://cloud.ibm.com/apidocs/assistant/assistant-v2#authentication){: external} in the API reference.
 
-    If you are not sure which type of authentication to use, view the {{site.data.keyword.conversationshort}} credentials by clicking the service instance from the Services section of the [{{site.data.keyword.Bluemix_notm}} Resource List](https://cloud.ibm.com){: external}.
+    If you are not sure which type of authentication to use, view the {{site.data.keyword.assistant_classic_short}} credentials by clicking the service instance from the Services section of the [{{site.data.keyword.Bluemix_notm}} Resource List](https://cloud.ibm.com){: external}.
 
 ## 25 May 2018
 {: #assistant-may252018}
@@ -2008,7 +2008,7 @@ Information security
 {: release-note}
 
 Sydney, Australia data center opens
-:   You can now create {{site.data.keyword.conversationshort}} service instances that are hosted in the Sydney, Australia data center. See [IBM Cloud global data centers](https://www.ibm.com/cloud/data-centers/){: external} for more details.
+:   You can now create {{site.data.keyword.assistant_classic_short}} service instances that are hosted in the Sydney, Australia data center. See [IBM Cloud global data centers](https://www.ibm.com/cloud/data-centers/){: external} for more details.
 
 ## 4 April 2018
 {: #assistant-apr042018}
@@ -2021,11 +2021,11 @@ Search dialogs
 {: #assistant-mar152018}
 {: release-note}
 
-Introducing {{site.data.keyword.conversationfull}}
-:   {{site.data.keyword.ibmwatson}} Conversation has been renamed. It is now called {{site.data.keyword.conversationfull}}. The name change reflects the fact that {{site.data.keyword.conversationshort}} is expanding to provide prebuilt content and tools that help you more easily share the virtual assistants you build. Read [this blog post](https://www.ibm.com/blogs/watson/2018/03/the-future-of-watson-conversation-watson-assistant/){: external} for more details.
+Introducing {{site.data.keyword.assistant_classic_full}}
+:   {{site.data.keyword.ibmwatson}} Conversation has been renamed. It is now called {{site.data.keyword.assistant_classic_full}}. The name change reflects the fact that {{site.data.keyword.assistant_classic_short}} is expanding to provide prebuilt content and tools that help you more easily share the virtual assistants you build. Read [this blog post](https://www.ibm.com/blogs/watson/2018/03/the-future-of-watson-conversation-watson-assistant/){: external} for more details.
 
-New REST APIs and SDKs are available for {{site.data.keyword.conversationshort}}
-:   The new APIs are functionally identical to the existing Conversation APIs, which continue to be supported. For more information about the {{site.data.keyword.conversationshort}} APIs, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1){: external}.
+New REST APIs and SDKs are available for {{site.data.keyword.assistant_classic_short}}
+:   The new APIs are functionally identical to the existing Conversation APIs, which continue to be supported. For more information about the {{site.data.keyword.assistant_classic_short}} APIs, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1){: external}.
 
 Dialog enhancements
 :   The following features were added to the dialog tool:
@@ -2080,7 +2080,7 @@ Dutch system entities (Beta)
 {: #assistant-jan292018}
 {: release-note}
 
-- The {{site.data.keyword.conversationshort}} REST API now supports new request parameters:
+- The REST API now supports new request parameters:
     - Use the `append` parameter when updating a workspace to indicate whether the new workspace data should be added to the existing data, rather than replacing it. For more information, see [Update workspace](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#update-workspace){: external}.
     - Use the `nodes_visited_details` parameter when sending a message to indicate whether the response should include additional diagnostic information about the nodes that were visited during processing of the message. For more information, see [Send message](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#message){: external}.
 
@@ -2096,7 +2096,7 @@ Unable to retrieve list of workspaces
 {: release-note}
 
 Log data access across instances (Premium users only)
-:   If you are a {{site.data.keyword.conversationshort}} Premium user, your premium instances can optionally be configured to allow access to log data from workspaces across your different premium instances.
+:   If you are a Premium user, your premium instances can optionally be configured to allow access to log data from workspaces across your different premium instances.
 
 Copy nodes
 :   You can now duplicate a node to make a copy of it and its children. This feature is helpful if you build a node with useful logic that you want to reuse elsewhere in your dialog. See [Copying a dialog node](/docs/assistant?topic=assistant-dialog-tasks#dialog-tasks-copy-node) for more information.
@@ -2109,7 +2109,7 @@ Capture groups in pattern entities
 {: release-note}
 
 {{site.data.keyword.openwhisk}} integration (Beta)
-:   Call {{site.data.keyword.openwhisk}} (formerly IBM OpenWhisk) actions directly from a dialog node. This feature enables you to, for example, call an action to retrieve weather information from within a dialog node, and then condition on the returned information in the dialog response. Currently, you can call an action from a {{site.data.keyword.openwhisk_short}} instance that is hosted in the US South region from {{site.data.keyword.conversationshort}} instances that are hosted in the US South region. See [Making programmatic calls from a dialog node](/docs/assistant?topic=assistant-dialog-actions-client) for more details.
+:   Call {{site.data.keyword.openwhisk}} (formerly IBM OpenWhisk) actions directly from a dialog node. This feature enables you to, for example, call an action to retrieve weather information from within a dialog node, and then condition on the returned information in the dialog response. Currently, you can call an action from a {{site.data.keyword.openwhisk_short}} instance that is hosted in the US South region from instances that are hosted in the US South region. See [Making programmatic calls from a dialog node](/docs/assistant?topic=assistant-dialog-actions-client) for more details.
 
 ## 5 December 2017
 {: #assistant-dec052017}
@@ -2137,14 +2137,14 @@ Improving understanding of user input across workspaces
 {: release-note}
 
 GB18030 compliance
-:   GB18030 is a Chinese standard that specifies an extended code page for use in the Chinese market. This code page standard is important for the software industry because the China National Information Technology Standardization Technical Committee has mandated that any software application that is released for the Chinese market after September 1, 2001, be enabled for GB18030. The {{site.data.keyword.conversationshort}} service supports this encoding, and is certified GB18030-compliant.
+:   GB18030 is a Chinese standard that specifies an extended code page for use in the Chinese market. This code page standard is important for the software industry because the China National Information Technology Standardization Technical Committee has mandated that any software application that is released for the Chinese market after September 1, 2001, be enabled for GB18030. The service supports this encoding, and is certified GB18030-compliant.
 
 ## 9 November 2017
 {: #assistant-nov092017}
 {: release-note}
 
 Intent examples can directly reference entities
-:   You can now specify an entity reference directly in an intent example. That entity reference, along with all its values or synonyms, is used by the {{site.data.keyword.conversationshort}} service classifier for training the intent. For more information, see [*Entity as example*](/docs/assistant?topic=assistant-intents#intents-entity-as-example) in the [Intents](/docs/assistant?topic=assistant-intents) topic.
+:   You can now specify an entity reference directly in an intent example. That entity reference, along with all its values or synonyms, is used by the service classifier for training the intent. For more information, see [*Entity as example*](/docs/assistant?topic=assistant-intents#intents-entity-as-example) in the [Intents](/docs/assistant?topic=assistant-intents) topic.
 
     Currently, you can only directly reference closed entities that you define. You cannot directly reference [pattern entities](/docs/assistant?topic=assistant-entities#entities-patterns) or [system entities](/docs/assistant?topic=assistant-system-entities).
 
@@ -2152,8 +2152,8 @@ Intent examples can directly reference entities
 {: #assistant-nov082017}
 {: release-note}
 
-{{site.data.keyword.conversationshort}} connector
-:   You can use the new {{site.data.keyword.conversationshort}} connector tool to connect your workspace to a Slack or Facebook Messenger app that you own, making it available as a chat bot that Slack or Facebook Messenger users can interact with. This tool is available only for the {{site.data.keyword.Bluemix_notm}} US South region.
+New connector tool
+:   You can use the new connector tool to connect your workspace to a Slack or Facebook Messenger app that you own, making it available as a chat bot that Slack or Facebook Messenger users can interact with. This tool is available only for the {{site.data.keyword.Bluemix_notm}} US South region.
 
 ## 3 November 2017
 {: #assistant-nov032017}
@@ -2179,7 +2179,7 @@ Dialog updates
 {: release-note}
 
 Updates to Simplified Chinese
-:   Language support has been enhanced for Simplified Chinese. This includes intent classification improvements using character-level word embeddings, and the availability of system entities. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied.
+:   Language support has been enhanced for Simplified Chinese. This includes intent classification improvements using character-level word embeddings, and the availability of system entities. Note that the service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied.
 
 Updates to Spanish
 :   Improvements have been made to Spanish intent classification, for very large datasets.
@@ -2189,7 +2189,7 @@ Updates to Spanish
 {: release-note}
 
 Updates to Korean
-:   Language support has been enhanced for Korean. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied.
+:   Language support has been enhanced for Korean. Note that the service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied.
 
 ## 3 October 2017
 {: #assistant-oct032017}
@@ -2229,14 +2229,14 @@ Dialog node names
 {: release-note}
 
 Updates to Korean, Japanese, and Italian
-:   Language support has been enhanced for Korean, Japanese, and Italian. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied.
+:   Language support has been enhanced for Korean, Japanese, and Italian. Note that the service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied.
 
 ## 10 August 2017
 {: #assistant-aug102017}
 {: release-note}
 
 Accent normalization
-:   In a conversational setting, users may or may not use accents while interacting with the {{site.data.keyword.conversationshort}} service. As such, an update has been made to the algorithm so that accented and non-accented versions of words are treated the same for intent detection and entity recognition.
+:   In a conversational setting, users may or may not use accents while interacting with the service. As such, an update has been made to the algorithm so that accented and non-accented versions of words are treated the same for intent detection and entity recognition.
 
     However, for some languages like Spanish, some accents can alter the meaning of the entity. Thus, for entity detection, although the original entity may implicitly have an accent, your assistant can also match the non-accented version of the same entity, but with a slightly lower confidence score.
 
@@ -2253,14 +2253,14 @@ Accent normalization
     **Note:** Accent normalization is enabled for Portuguese, Spanish, French, and Czech.
 
 Workspace opt-out flag
-:   The {{site.data.keyword.conversationshort}} REST API now supports an opt-out flag for workspaces. This flag indicates that workspace training data such as intents and entities are not to be used by IBM for general service improvements. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#data-collection){: external}
+:   The {{site.data.keyword.assistant_classic_short}} REST API now supports an opt-out flag for workspaces. This flag indicates that workspace training data such as intents and entities are not to be used by IBM for general service improvements. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#data-collection){: external}
 
 ## 7 August 2017
 {: #assistant-aug072017}
 {: release-note}
 
 `Next` and `last` date interpretation
-:   The {{site.data.keyword.conversationshort}} service treats `last` and `next` dates as referring to the most immediate last or next day referenced, which may be in either the same or a previous week. See the [system entities](/docs/assistant?topic=assistant-system-entities#system-entities-sys-date-time) topic for additional information.
+:   The service treats `last` and `next` dates as referring to the most immediate last or next day referenced, which may be in either the same or a previous week. See the [system entities](/docs/assistant?topic=assistant-system-entities#system-entities-sys-date-time) topic for additional information.
 
 ## 3 August 2017
 {: #assistant-aug032017}
@@ -2287,7 +2287,7 @@ Updates
 {: release-note}
 
 REST API now supports access to dialog nodes
-:   The {{site.data.keyword.conversationshort}} REST API now supports access to dialog nodes. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#listdialognodes){: external}.
+:   The REST API now supports access to dialog nodes. For more information, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v1?curl=#listdialognodes){: external}.
 
 ## 14 July 2017
 {: #assistant-jul142017}
@@ -2311,14 +2311,14 @@ Test in Slack
 :   You can use the new **Test in Slack** tool to quickly deploy your workspace as a Slack bot user for testing purposes. This tool is available only for the {{site.data.keyword.Bluemix_notm}} US South region.
 
 Updates to Arabic
-:   Arabic language support has been enhanced to include absolute scoring per intent, and the ability to mark intents as irrelevant; please see the [Supported languages](/docs/assistant?topic=assistant-language-support) topic for additional details. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied.
+:   Arabic language support has been enhanced to include absolute scoring per intent, and the ability to mark intents as irrelevant; please see the [Supported languages](/docs/assistant?topic=assistant-language-support) topic for additional details. Note that the service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied.
 
 ## 23 June 2017
 {: #assistant-jun232017}
 {: release-note}
 
 Updates to Korean
-:   Korean language support has been enhanced; please see the [Supported languages](/docs/assistant?topic=assistant-language-support) topic for additional details. Note that the {{site.data.keyword.conversationshort}} service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied.
+:   Korean language support has been enhanced; please see the [Supported languages](/docs/assistant?topic=assistant-language-support) topic for additional details. Note that the service learning models may have been updated as part of this enhancement, and when you retrain your model any changes will be applied.
 
 ## 22 June 2017
 {: #assistant-jun222017}
@@ -2338,7 +2338,7 @@ Arabic support
 :   Language support for Arabic is now generally available. For details, see [Configuring bidirectional languages](/docs/assistant?topic=assistant-language-support#language-support-configure-bidirectional).
 
 Language updates
-:   The {{site.data.keyword.conversationshort}} service algorithms have been updated to improve overall language support. See the [Supported languages](/docs/assistant?topic=assistant-language-support) topic for details.
+:   The service algorithms have been updated to improve overall language support. See the [Supported languages](/docs/assistant?topic=assistant-language-support) topic for details.
 
 ## 16 June 2017
 {: #assistant-jun162017}
@@ -2379,10 +2379,10 @@ Updates
 {: release-note}
 
 Learn
-:   A new *Learn about {{site.data.keyword.conversationfull}}* page is available that provides getting started information and links to service documentation and other useful resources. To open the page, click the icon in the page header.
+:   A new *Learn about* page is available that provides getting started information and links to service documentation and other useful resources. To open the page, click the icon in the page header.
 
 Bulk export and delete
-:   You can now simultaneously export a number of intents or entities to a CSV file, so you can then import and reuse them for another {{site.data.keyword.conversationshort}} application. You can also simultaneously select a number of entities or intents for deletion in bulk.
+:   You can now simultaneously export a number of intents or entities to a CSV file, so you can then import and reuse them for another application. You can also simultaneously select a number of entities or intents for deletion in bulk.
 
 Updates to Korean
 :   Korean tokenizers have been updated to address informal language support. IBM continues to work on improvements to entity recognition and classification.
@@ -2454,7 +2454,7 @@ Fuzzy matching for entities
 Updates
 :   This release includes the following updates:
 
-    - The {{site.data.keyword.conversationshort}} REST API now supports access to the following resources:
+    - The REST API now supports access to the following resources:
         - entities
         - entity values
         - entity value synonyms
@@ -2470,14 +2470,14 @@ Updates
 
     - The option to mark user input as irrelevant is now available for all supported languages. This is a beta feature.
 
-    - A new Credentials tab provides a single place where you can find all of the information you need for connecting your application to a workspace (such as the {{site.data.keyword.conversationshort}} credentials and workspace ID), as well as other deployment options. To access the Credentials tab for your workspace, click the icon and select **Credentials**.
+    - A new Credentials tab provides a single place where you can find all of the information you need for connecting your application to a workspace, as well as other deployment options. To access the Credentials tab for your workspace, click the icon and select **Credentials**.
 
 ## 9 March 2017
 {: #assistant-mar092017}
 {: release-note}
 
 REST API updates
-:   The {{site.data.keyword.conversationshort}} REST API now supports access to the following resources:
+:   The REST API now supports access to the following resources:
 
     - workspaces
     - intents
@@ -2563,7 +2563,7 @@ Updates
 Updates
 :   This release includes the following updates:
 
-    - The {{site.data.keyword.conversationshort}} service now provides system entities, which are common entities that can be used across any use case. For details, see [Defining entities](/docs/assistant?topic=assistant-entities) and search for `Enabling system entities`.
+    - The service now provides system entities, which are common entities that can be used across any use case. For details, see [Defining entities](/docs/assistant?topic=assistant-entities) and search for `Enabling system entities`.
     - You can now view a history of conversations with users on the Improve page. You can use this to understand your bot's behavior. For details, see [Improving your skill](/docs/assistant?topic=assistant-logs).
     - You can now import entities from a comma-separated value (CSV) file, which helps with when you have a large number of entities. For details, see [Defining entities](/docs/assistant?topic=assistant-entities) and search for `Importing entities`.
 
@@ -2600,4 +2600,4 @@ General Availability
 {: release-note}
 
 Experimental release
-:   This Experimental release of the {{site.data.keyword.conversationshort}} introduces the user interface and enables you to work with workspaces, intents, and examples.
+:   This Experimental release of introduces the user interface and enables you to work with workspaces, intents, and examples.

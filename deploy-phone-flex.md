@@ -36,13 +36,13 @@ You can use the phone integration to help your customers over the phone and tran
 
 To use this integration pattern, make sure you have the following:
 
-- {{site.data.keyword.conversationshort}} Plus or Enterprise Plan (required for phone integration)
+- {{site.data.keyword.assistant_classic_short}} Plus or Enterprise Plan (required for phone integration)
 - A Twilio account with the following products:
     - Twilio Flex
     - Twilio Voice with Programmable Voice API
     - Twilio Studio
 
-## Adding the {{site.data.keyword.conversationshort}} phone integration
+## Adding the {{site.data.keyword.assistant_classic_short}} phone integration
 
 If you have not already added the phone integration to your assistant, follow these steps:
 
@@ -115,7 +115,7 @@ To create the call flow:
 
     - For **PRIMARY HANDLER FAILS**, select **Studio Flow**. Select your flow from the drop-down list.
 
-1. Go to the {{site.data.keyword.conversationshort}} user interface, open the phone integration settings for your assistant.
+1. Go to the {{site.data.keyword.assistant_classic_short}} user interface, open the phone integration settings for your assistant.
 
 1. In the **Phone number** field, type the phone number you configured in Flex Studio.
 
@@ -181,13 +181,13 @@ In this section you will use a TwiML **Redirect**** widget in your Studio Flow e
 
 1. Configure the **TwiML Redirect** widget with the URL for the `/receive-call` function you created in the previous section.
 
-1. Your flow should now redirect to {{site.data.keyword.conversationshort}} when receiving an inbound call. 
+1. Your flow should now redirect to {{site.data.keyword.assistant_classic_short}} when receiving an inbound call. 
 
 1. If the redirect fails, make sure you deployed your `/receive-call` function.
 
 ## Creating a Twilio function to handle transfers from assistant
 
-We also need to configure the call flow to handle calls being transferred from the assistant back to Twilio Flex, for cases when when customers ask to speak to an agent. To show this, we will use a **Say/Play** after the **TwiML Redirect** widget to show that the call is transferred back to the flow from {{site.data.keyword.conversationshort}}. Note that there are many things like queuing the call for a live agent that can happen at this point. These will be discussed below.
+We also need to configure the call flow to handle calls being transferred from the assistant back to Twilio Flex, for cases when when customers ask to speak to an agent. To show this, we will use a **Say/Play** after the **TwiML Redirect** widget to show that the call is transferred back to the flow from {{site.data.keyword.assistant_classic_short}}. Note that there are many things like queuing the call for a live agent that can happen at this point. These will be discussed below.
 
 1. Add a new **Say/Play** widget to your canvas and configure it with a phrase like `Transfer from Watsom complete`.
 
@@ -269,7 +269,7 @@ We also need to configure the call flow to handle calls being transferred from t
 
 Now we need to configure the assistant to transfer calls to Twilio Flex when a customer asks to speak to an agent. Follow these steps:
 
-1. In the {{site.data.keyword.conversationshort}} user interface, open the dialog skill of your assistant.
+1. In the {{site.data.keyword.assistant_classic_short}} user interface, open the dialog skill of your assistant.
 
 1. Add a node with the condition you want to trigger your assistant to transfer customers to an agent.
 
@@ -307,7 +307,7 @@ Now we need to configure the assistant to transfer calls to Twilio Flex when a c
 }
 ```
 
-Note that this example does not show how to use the context passed from {{site.data.keyword.conversationshort}} to Twilio Flex. You can reference the User-to-User information from within the Twilio Flex flow as follows:
+Note that this example does not show how to use the context passed from {{site.data.keyword.assistant_classic_short}} to Twilio Flex. You can reference the User-to-User information from within the Twilio Flex flow as follows:
 
 ```json
 {
@@ -331,7 +331,7 @@ Your assistant should now be able to answer phone calls to your phone number and
 
 1. At this point you should hear the phrase configured in the **Say/Play** widget (such as "Transfer from Watson complete").
 
-1. If the transfer fails, use the console log to follow the flow of the call as it moves from the flow to the `/call-receive` handler, to {{site.data.keyword.conversationshort}}, to the refer-handler and back to your Twilio Flex flow.
+1. If the transfer fails, use the console log to follow the flow of the call as it moves from the flow to the `/call-receive` handler, to {{site.data.keyword.assistant_classic_short}}, to the refer-handler and back to your Twilio Flex flow.
  
 
 ###  Share the conversation history with service desk agents 

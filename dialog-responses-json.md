@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-06-01"
+lastupdated: "2023-09-01"
 
 subcollection: assistant
 
@@ -33,7 +33,7 @@ In some situations, you might need to define responses using the JSON editor. (F
 ## Generic JSON format
 {: #dialog-responses-json-generic}
 
-The generic JSON format for responses is used to specify responses that are intended for any integration or custom client. This format can accommodate various response types that are supported by multiple integrations, and can also be implemented by a custom client application. (This is the format that is used by default for dialog responses defined using the {{site.data.keyword.conversationshort}} tool.)
+The generic JSON format for responses is used to specify responses that are intended for any integration or custom client. This format can accommodate various response types that are supported by multiple integrations, and can also be implemented by a custom client application. (This is the format that is used by default for dialog responses defined using the {{site.data.keyword.assistant_classic_short}} tool.)
 
 You can also specify responses using the native format used by the target channel. For more information, see [Native JSON format](#dialog-responses-json-native).
 {: note}
@@ -331,11 +331,11 @@ Displays a set of buttons or a drop-down list users can use to choose an option.
 | response_type | string | `option`                            | Y         |
 | title         | string | The title to show before the options. | Y       |
 | description   | string | The text of the description that accompanies the options. | N |
-| preference    | string | The preferred type of control to display, if supported by the channel (`dropdown` or `button`). The {{site.data.keyword.conversationshort}} connector currently supports only `button`.| N |
+| preference    | string | The preferred type of control to display, if supported by the channel (`dropdown` or `button`). The {{site.data.keyword.assistant_classic_short}} connector currently supports only `button`.| N |
 | options       | list   | A list of key/value pairs specifying the options from which the user can choose. | Y |
 | options[].label | string | The user-facing label for the option. | Y     |
-| options[].value | object | An object defining the response that will be sent to the {{site.data.keyword.conversationshort}} service if the user selects the option. | Y |
-| options[].value.input | object | An object that includes the message input corresponding to the option, including input text and any other field that is a valid part of a {{site.data.keyword.conversationshort}} message. For more information about the structure of message input, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2?curl=#message){: external}. | N |
+| options[].value | object | An object defining the response that will be sent to the {{site.data.keyword.assistant_classic_short}} service if the user selects the option. | Y |
+| options[].value.input | object | An object that includes the message input corresponding to the option, including input text and any other field that is a valid part of a {{site.data.keyword.assistant_classic_short}} message. For more information about the structure of message input, see the [API Reference](https://cloud.ibm.com/apidocs/assistant/assistant-v2?curl=#message){: external}. | N |
 
 #### Example
 {: #dialog-responses-json-option-example}

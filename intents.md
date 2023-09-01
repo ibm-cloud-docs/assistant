@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-08-28"
+lastupdated: "2023-09-01"
 
 keywords: intent, intent conflicts, annotate
 
@@ -17,12 +17,12 @@ subcollection: assistant
 # Creating intents
 {: #intents}
 
-***Intents*** are purposes or goals that are expressed in a customer's input, such as answering a question or processing a bill payment. By recognizing the intent expressed in a customer's input, the {{site.data.keyword.conversationshort}} service can choose the correct dialog flow for responding to it.
+***Intents*** are purposes or goals that are expressed in a customer's input, such as answering a question or processing a bill payment. By recognizing the intent expressed in a customer's input, the {{site.data.keyword.assistant_classic_short}} service can choose the correct dialog flow for responding to it.
 {: shortdesc}
 
 To learn more about creating intents, watch the following 2 1/2-minute video.
 
-![Intents: {{site.data.keyword.conversationshort}}](https://video.ibm.com/embed/channel/23952663/video/wa-intents){: video output="iframe" data-script="none" id="watsonmediaplayer" width="480" height="270" scrolling="no" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" style="border: 0 none transparent;"}
+![Intents: {{site.data.keyword.assistant_classic_short}}](https://video.ibm.com/embed/channel/23952663/video/wa-intents){: video output="iframe" data-script="none" id="watsonmediaplayer" width="480" height="270" scrolling="no" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" style="border: 0 none transparent;"}
 
 ## Intent creation overview
 {: #intents-described}
@@ -75,7 +75,7 @@ Start with a few intents, and test them as you iteratively expand the scope of t
     To learn about the impact of including references to entities in your user examples, see [How entity references are treated](#intents-entity-references).
     {: tip}
 
-    Intent names and example text can be exposed in URLs when an application interacts with {{site.data.keyword.conversationshort}}. Do not include sensitive or personal information in these artifacts.
+    Intent names and example text can be exposed in URLs when an application interacts with {{site.data.keyword.assistant_classic_short}}. Do not include sensitive or personal information in these artifacts.
     {: important}
 
 1.  Click **Add example** to save the user example.
@@ -139,7 +139,7 @@ If you choose to reference an entity as an intent example (for example, `@PhoneM
 
 In practice, this means that if you have previously trained most of your intents based on direct references (*Galaxy S8*), and you now use entity references (`@PhoneModelName`) for just one intent, the change impacts your previous training. If you do choose to use `@Entity` references, you must replace all previous direct references with `@Entity` references.
 
-Defining one example intent with an `@Entity` that has 10 values that are defined for it **does not** equate to specifying that example intent 10 times. The {{site.data.keyword.conversationshort}} service does not give that much weight to that one example intent syntax.
+Defining one example intent with an `@Entity` that has 10 values that are defined for it **does not** equate to specifying that example intent 10 times. The {{site.data.keyword.assistant_classic_short}} service does not give that much weight to that one example intent syntax.
 
 ## Testing your intents
 {: #intents-test}
@@ -180,14 +180,14 @@ If your intents are not being correctly recognized, consider making the followin
 ## Absolute scoring
 {: #intents-absolute-scoring}
 
-The {{site.data.keyword.conversationshort}} service scores each intent’s confidence independently, not in relation to other intents. This approach adds flexibility; multiple intents can be detected in a single user input. It also means that the system might not return an intent at all. If the top intent has a low confidence score (less than 0.2), the top intent is included in the intents array that is returned by the API, but any nodes that condition on the intent are not triggered. If you want to detect the case when no intents with good confidence scores were detected, use the `irrelevant` special condition in your dialog node. See [Special conditions](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-special-conditions) for more information.
+The {{site.data.keyword.assistant_classic_short}} service scores each intent’s confidence independently, not in relation to other intents. This approach adds flexibility; multiple intents can be detected in a single user input. It also means that the system might not return an intent at all. If the top intent has a low confidence score (less than 0.2), the top intent is included in the intents array that is returned by the API, but any nodes that condition on the intent are not triggered. If you want to detect the case when no intents with good confidence scores were detected, use the `irrelevant` special condition in your dialog node. See [Special conditions](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-special-conditions) for more information.
 
 As intent confidence scores change, your dialogs might need restructuring. For example, if a dialog node uses an intent in its condition, and the intent's confidence score starts to consistently drop below 0.2, the dialog node stops being processed. If the confidence score changes, the behavior of the dialog can also change.
 
 ## Intent limits
 {: #intents-limits}
 
-The number of intents and examples you can create depends on your {{site.data.keyword.conversationshort}} plan type:
+The number of intents and examples you can create depends on your {{site.data.keyword.assistant_classic_short}} plan type:
 
 | Plan     | Intents per skill | Examples per skill |
 |------------------|------------------:|-------------------:|
@@ -233,7 +233,7 @@ Use the Search feature to find user examples, intent names, and descriptions.
 ## Downloading intents
 {: #intents-export}
 
-You can download a number of intents to a CSV file, so you can then upload and reuse them in another {{site.data.keyword.conversationshort}} application.
+You can download a number of intents to a CSV file, so you can then upload and reuse them in another {{site.data.keyword.assistant_classic_short}} application.
 
 1.  Go to the **Intents** page.
 
@@ -288,7 +288,7 @@ You can view the uploaded intents and the corresponding examples on the **Intent
 This feature is available only to users of paid plans.
 {: note}
 
-The {{site.data.keyword.conversationshort}} application detects a conflict when two or more intent examples in *separate* intents are so similar that {{site.data.keyword.conversationshort}} is confused as to which intent to use.
+The {{site.data.keyword.assistant_classic_short}} application detects a conflict when two or more intent examples in *separate* intents are so similar that {{site.data.keassistant_classic_shortnshort}} is confused as to which intent to use.
 
 To resolve conflicts:
 

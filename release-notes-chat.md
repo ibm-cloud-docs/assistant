@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-08-01"
+lastupdated: "2023-09-01"
 
 subcollection: assistant
 
@@ -13,7 +13,7 @@ subcollection: assistant
 # Web chat release notes
 {: #release-notes-chat}
 
-The release notes for the **classic {{site.data.keyword.conversationshort}}** experience have moved. All release notes for Web chat for {{site.data.keyword.conversationshort}} can be found here: [Web chat release notes](/docs/watson-assistant?topic=watson-assistant-release-notes-chat){: external}.
+The release notes for the **classic {{site.data.keyword.assistant_classic_short}}** experience have moved. All release notes for Web chat for {{site.data.keyword.assistant_classic_short}} can be found here: [Web chat release notes](/docs/watson-assistant?topic=watson-assistant-release-notes-chat){: external}.
 {: attention}
 
 ## 7.4.0
@@ -165,7 +165,7 @@ For more information about the journeys beta feature, see [Guiding customers wit
 
 *Release date: 25 July 2022*
 
-- A new `servers` property is now available in the web chat configuration options. You can use this property to set up a proxy between your users' browsers and {{site.data.keyword.conversationshort}}. For more information, see [Setting up a proxy](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-configuration#serversconfig){: external}.
+- A new `servers` property is now available in the web chat configuration options. You can use this property to set up a proxy between your users' browsers and {{site.data.keyword.assistant_classic_short}}. For more information, see [Setting up a proxy](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-configuration#serversconfig){: external}.
 
 ## 6.5.2
 {: #6.5.2}
@@ -265,7 +265,7 @@ For more information about the journeys beta feature, see [Guiding customers wit
 
 *Release date: 19 January 2022*
 
-- **API version**: The web chat now uses the `2021-11-27` version of the {{site.data.keyword.conversationshort}} API. Previously it used the `2020-09-24` API version. For information about API changes that have been introduced since the `2020-09-24` version, see the release notes for [27 November 2021](/docs/watson-assistant?topic=watson-assistant-watson-assistant-release-notes#watson-assistant-nov272021) and [16 July 2021](https://cloud.ibm.com/docs/watson-assistant?topic=watson-assistant-watson-assistant-release-notes#watson-assistant-jul162021).
+- **API version**: The web chat now uses the `2021-11-27` version of the {{site.data.keyword.assistant_classic_short}} API. Previously it used the `2020-09-24` API version. For information about API changes that have been introduced since the `2020-09-24` version, see the release notes for [27 November 2021](/docs/watson-assistant?topic=watson-assistant-watson-assistant-release-notes#watson-assistant-nov272021) and [16 July 2021](https://cloud.ibm.com/docs/watson-assistant?topic=watson-assistant-watson-assistant-release-notes#watson-assistant-jul162021).
 
 - **Launcher**: The new web chat launcher welcomes and engages customers so they know where to find help if they need it. For more information, see [Launcher appearance and behavior](/docs/watson-assistant?topic=watson-assistant-web-chat-overview#web-chat-architecture-launcher).
 

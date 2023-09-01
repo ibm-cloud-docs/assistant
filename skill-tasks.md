@@ -79,7 +79,7 @@ To delete a skill, complete the following steps:
 ## Downloading a skill
 {: #skill-tasks-download}
 
-You can download a dialog or actions skill in JSON format. You might want to download a skill if you want to use the same skill in a different instance of the {{site.data.keyword.conversationshort}} service. You can download a dialog skill from one instance and upload it to another instance as a new skill, for example.
+You can download a dialog or actions skill in JSON format. You might want to download a skill if you want to use the same skill in a different instance of the {{site.data.keyword.assistant_classic_short}} service. You can download a dialog skill from one instance and upload it to another instance as a new skill, for example.
 
 You cannot download a search skill.
 

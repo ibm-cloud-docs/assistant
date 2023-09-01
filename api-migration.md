@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-07"
+lastupdated: "2023-09-01"
 
 subcollection: assistant
 
@@ -11,7 +11,7 @@ subcollection: assistant
 
 {{site.data.keyword.attribute-definition-list}}
 
-This documentation for the **classic {{site.data.keyword.conversationshort}}** experience has moved. For the most up-to-date version, see [Migrating to the v2 API](/docs/watson-assistant?topic=watson-assistant-api-migration){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
+This documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [Migrating to the v2 API](/docs/watson-assistant?topic=watson-assistant-api-migration){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
 {: attention}
 
 # Migrating to the v2 API
@@ -28,7 +28,7 @@ The v2 API currently supports only runtime interaction with an existing assistan
 
 With the v2 API, your client app communicates with an assistant, rather than directly with a workspace. An assistant is a new orchestration layer that offers several new capabilities, including automatic state management, skill versioning, easier deployment, and (for Plus and Premium plans) search skills. Your existing workspace (now referred to as a _dialog skill_) continues to function as before, but the new capabilities are provided by the new assistant layer.
 
-All communication with an assistant takes place within the context of a _session_, which maintains conversation state throughout the duration of the conversation. State data, including any context variables that are defined by your dialog or client application, are automatically stored by {{site.data.keyword.conversationshort}}, without any action required on the part of your application.
+All communication with an assistant takes place within the context of a _session_, which maintains conversation state throughout the duration of the conversation. State data, including any context variables that are defined by your dialog or client application, are automatically stored by {{site.data.keyword.assistant_classic_short}}, without any action required on the part of your application.
 
 State data persists until you explicitly delete the session, or until the session times out because of inactivity.
 
@@ -39,9 +39,9 @@ If you have an existing application that uses the v1 API to send user input dire
 
 ## Set up an assistant
 
-The v2 runtime API sends messages to an assistant, which routes the messages to your dialog skill (formerly workspace). To set up an assistant, use the {{site.data.keyword.conversationshort}} user interface:
+The v2 runtime API sends messages to an assistant, which routes the messages to your dialog skill (formerly workspace). To set up an assistant, use the {{site.data.keyword.assistant_classic_short}} user interface:
 
-1. Click the **Skills** tab. Verify that your workspace is shown as an available skill. (All existing workspaces for your service instance are automatically converted to skills in the {{site.data.keyword.conversationshort}} user interface. This conversion does not make any change to the underlying workspace.)
+1. Click the **Skills** tab. Verify that your workspace is shown as an available skill. (All existing workspaces for your service instance are automatically converted to skills in the {{site.data.keyword.assistant_classic_short}} user interface. This conversion does not make any change to the underlying workspace.)
 
 1. Click the **Assistants** tab. Click **Create assistant** to create a new assistant. When prompted to add skills, click **Add dialog skill** and select the dialog skill that corresponds to your workspace.
 
@@ -51,7 +51,7 @@ The v2 runtime API sends messages to an assistant, which routes the messages to 
 
 1. On the **Assistant Settings** page, find the assistant ID. Your application will use this ID (instead of a workspace ID) to communicate with the assistant. The service credentials are the same for both the v1 and v2 APIs.
 
-  Currently, there is no API support for retrieving an assistant ID. To find the assistant ID, you must use the {{site.data.keyword.conversationshort}} user interface.
+  Currently, there is no API support for retrieving an assistant ID. To find the assistant ID, you must use the {{site.data.keyword.assistant_classic_short}} user interface.
   {: note}
 
 ## Call the v2 runtime API
@@ -179,11 +179,11 @@ Refer to the v2 [API Reference ](https://{DomainName}/apidocs/assistant/assistan
 ## Let the assistant maintain state
 {: #api-migration-state}
 
-For most applications, you can now remove any code included for the purpose of maintaining state. It is no longer necessary to save the context and send it back to {{site.data.keyword.conversationshort}} with each turn of the conversation. The context is automatically maintained by {{site.data.keyword.conversationshort}} and can be accessed by your dialog as before.
+For most applications, you can now remove any code included for the purpose of maintaining state. It is no longer necessary to save the context and send it back to {{site.data.keyword.assistant_classic_short}} with each turn of the conversation. The context is automatically maintained by {{site.data.keassistant_classic_shortnshort}} and can be accessed by your dialog as before.
 
 Note that with the v2 API, the context is by default not included in responses to the client application. However, your code can still access context variables if necessary:
 
-- You can still send a `context` object as part of the message input. Any context variables you include are stored as part of the context maintained by {{site.data.keyword.conversationshort}}. (If the context variable you send already exists in the context, the new value overwrites the previously stored value.)
+- You can still send a `context` object as part of the message input. Any context variables you include are stored as part of the context maintained by {{site.data.keyword.assistant_classic_short}}. (If the context variable you send already exists in the context, the new value overwrites the previously stored value.)
 
   Make sure the context object you send conforms to the v2 format. All user-defined context variables sent by your application should be part of the skill context; typically, the only global context variable you might need to set is `system.user_id`, which is used by Plus and Premium plans for billing purposes.
 

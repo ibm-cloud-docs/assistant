@@ -63,7 +63,7 @@ To test the assistant from a web-hosted chat widget, complete the following step
 
     A simple IBM-branded web page is displayed that contains a chat window where you can interact with your assistant. You can share the page with others by sending them the *Share this link* URL. If necessary, you can click the toggle on the Preview page to disable the link.
 
-    Previewing your assistant within the {{site.data.keyword.conversationshort}} user interface does not incur any charges. If you use the *Share this link* URL to preview the assistant from elsewhere, you might be charged for messages that you submit, according to the terms of your plan. You can review metrics about the test user conversations from the Analytics page.
+    Previewing your assistant within the {{site.data.keyword.assistant_classic_short}} user interface does not incur any charges. If you use the *Share this link* URL to preview the assistant from elsewhere, you might be charged for messages that you submit, according to the terms of your plan. You can review metrics about the test user conversations from the Analytics page.
     {: important}
 
 1.  Click **X** to close the Preview page.

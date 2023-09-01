@@ -26,7 +26,7 @@ subcollection: assistant
 # Filter query reference
 {: #filter-reference}
 
-The {{site.data.keyword.conversationshort}} service REST API offers powerful log search capabilities through filter queries. You can use the v2 /logs API `filter` parameter to search your skill log for events that match a specified query.
+The {{site.data.keyword.assistant_classic_short}} service REST API offers powerful log search capabilities through filter queries. You can use the v2 /logs API `filter` parameter to search your skill log for events that match a specified query.
 
 The `filter` parameter is a cacheable query that limits the results to those matching the specified filter. You can filter on various objects that are part of the JSON response model (for example, the user input text, the detected intents and entities, or the confidence score).
 
