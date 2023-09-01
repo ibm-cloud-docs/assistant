@@ -167,7 +167,7 @@ For a successful failover, ensure the following:
 
 Although it does not affect the runtime flow of calling /message, if you are using fine-grained access control using IBM Access Control (IAM), make sure the IAM policies are appropriately synchronized across the regions. 
 
-Note that IAM is a global service, but the custom resources (assistants and skills) used by {{site.data.keyword.conversationshort}} access control means each region, which has specific resources, requires specific policies.
+Note that IAM is a global service, but the custom resources (assistants and skills) used by {{site.data.keyword.assistant_classic_short}} access control means each region, which has specific resources, requires specific policies.
 
 For an **active/passive** topology, some form of a [circuit break pattern](https://martinfowler.com/bliki/CircuitBreaker.html) can be used. A single service instance in a given region is used exclusively unless errors are detected. At that point, the system can respond by updating the relevant failover metadata to route traffic to the service instance in the other region. Once a failover happens, you can decide to continue using the new region as the active instance, or if you want to resume using the initial region once it has stabilized. 
 
@@ -176,6 +176,6 @@ For an **active/active** topology, some form of a load balancing can be used, wh
 ### Failover for v2 stateful API
 
 Failover for the v2 stateful API is similar to stateless, with these details to consider:
-- The state of a given conversation is persisted by {{site.data.keyword.conversationshort}} in a database that is tied to a particular region.  As such, a failover for the stateful v2 /message may more disruptive.
+- The state of a given conversation is persisted by {{site.data.keyword.assistant_classic_short}} in a database that is tied to a particular region.  As such, a failover for the stateful v2 /message may more disruptive.
 - For an **active/passive** topology, you should assume that all in-progress conversations are ended.
 - For an **active/active** topology, given the region-locked persistence constraints of the v2 stateful /message architecture, all turns (/message API calls) of a given conversation (session) should occur within the same region.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-18"
+lastupdated: "2023-09-01"
 
 keywords: export, import
 subcollection: assistant
@@ -11,7 +11,7 @@ subcollection: assistant
 
 {{site.data.keyword.attribute-definition-list}}
 
-This documentation for the **classic {{site.data.keyword.conversationshort}}** experience has moved. For the most up-to-date version, see [Backing up and restoring data](/docs/watson-assistant?topic=watson-assistant-admin-backup-restore){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
+This documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [Backing up and restoring data](/docs/watson-assistant?topic=watson-assistant-admin-backup-restore){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
 {: attention}
 
 # Backing up and restoring data
@@ -20,7 +20,7 @@ This documentation for the **classic {{site.data.keyword.conversationshort}}** e
 Back up and restore your data by downloading, and then uploading the data.
 {: shortdesc}
 
-You can download the following data from a {{site.data.keyword.conversationshort}} service instance:
+You can download the following data from a {{site.data.keyword.assistant_classic_short}} service instance:
 
 - Dialog skill training data (intents and entities)
 - Dialog skill dialog
@@ -61,7 +61,7 @@ Alternatively, you can use the `/workspaces` API to export a dialog skill. Inclu
 
 To reinstate a backup copy of an actions or dialog skill that you exported from another service instance or environment, create a new skill by importing the JSON file of the skill you exported.
 
-If the {{site.data.keyword.conversationshort}} service changes between the time you export the skill and import it, due to functional updates which are regularly applied to instances in cloud-hosted continuous delivery environments, your imported skill might function differently than it did before.
+If the {{site.data.keyword.assistant_classic_short}} service changes between the time you export the skill and import it, due to functional updates which are regularly applied to instances in cloud-hosted continuous delivery environments, your imported skill might function differently than it did before.
 {: important}
 
 1.  Click the **Skills** icon ![Skills menu icon](images/nav-skills-icon.png).

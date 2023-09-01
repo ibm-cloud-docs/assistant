@@ -86,14 +86,14 @@ After you integrate the assistant, test it from the target channel to ensure tha
 
 Watch a 4-minute video about integrating your assistant with a live agent integration, such as Zendesk:
 
-![Zendesk Integration: {{site.data.keyword.conversationshort}}](https://video.ibm.com/embed/channel/23952663/video/wa-zendesk){: video output="iframe" data-script="none" id="watsonmediaplayer" width="480" height="270" scrolling="no" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" style="border: 0 none transparent;"}
+![Zendesk Integration: {{site.data.keyword.assistant_classic_short}}](https://video.ibm.com/embed/channel/23952663/video/wa-zendesk){: video output="iframe" data-script="none" id="watsonmediaplayer" width="480" height="270" scrolling="no" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" style="border: 0 none transparent;"}
 
 To learn about how service desk integrations with your assistant can benefit your business, [read this blog post](https://medium.com/ibm-watson/contact-center-post-394dff427c8){: external}.
 
 ## Integration limits
 {: #deploy-integration-add-limits}
 
-The number of integrations you can create in a single service instance depends on your {{site.data.keyword.conversationshort}} plan.
+The number of integrations you can create in a single service instance depends on your {{site.data.keyword.assistant_classic_short}} plan.
 
 | Service plan     | Integrations per assistant |
 |------------------|---------------------------:|

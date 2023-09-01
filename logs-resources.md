@@ -118,27 +118,27 @@ For a Python script you can run to export logs and convert them to CSV format, d
 ## Understanding logs-related terminology
 {: #logs-resources-terminology}
 
-First, review the definitions of terms that are associated with {{site.data.keyword.conversationshort}} logs:
+First, review the definitions of terms that are associated with {{site.data.keyword.assistant_classic_short}} logs:
 
-- ***Assistant***: An application - sometimes referred to as a 'chat bot' - that implements your {{site.data.keyword.conversationshort}} content.
+- ***Assistant***: An application - sometimes referred to as a 'chat bot' - that implements your {{site.data.keyword.assistant_classic_short}} content.
 - ***Assistant ID***: The unique identifier of an assistant.
 - ***Conversation***: A set of messages consisting of the messages that an individual user sends to your assistant, and the messages your assistant sends back.
-- ***Conversation ID***: Unique identifier that is added to individual message calls to link related message exchanges together. App developers using the V1 version of the {{site.data.keyword.conversationshort}} API add this value to the message calls in a conversation by including the ID in the metadata of the context object.
+- ***Conversation ID***: Unique identifier that is added to individual message calls to link related message exchanges together. App developers using the V1 version of the {{site.data.keyword.assistant_classic_short}} API add this value to the message calls in a conversation by including the ID in the metadata of the context object.
 - ***Customer ID***: A unique ID that can be used to label customer data such that it can be subsequently deleted if the customer requests the removal of their data.
-- ***Deployment ID***: A unique label that app developers using the V1 version of the {{site.data.keyword.conversationshort}} API pass with each user message to help identify the deployment environment that produced the message.
-- ***Instance***: Your deployment of {{site.data.keyword.conversationshort}}, accessible with unique credentials. A {{site.data.keyword.conversationshort}} instance might contain multiple assistants.
+- ***Deployment ID***: A unique label that app developers using the V1 version of the {{site.data.keyword.assistant_classic_short}} API pass with each user message to help identify the deployment environment that produced the message.
+- ***Instance***: Your deployment of {{site.data.keyword.assistant_classic_short}}, accessible with unique credentials. A {{site.data.keassistant_classic_shortnshort}} instance might contain multiple assistants.
 - ***Message***: A message is a single utterance a user sends to the assistant.
 - ***Skill ID***: The unique identifier of a skill.
 - ***User***: A user is anyone who interacts with your assistant; often these are your customers.
 - ***User ID***: A unique label that is used to track the level of service usage of a specific user.
 - ***Workspace ID***: The unique identifier of a workspace. Although any workspaces that you created before November 9 are shown as skills in the product user interface, a skill and a workspace are not the same thing. A skill is effectively a wrapper for a V1 workspace.
 
-**Important**: The **User ID** property is *not* equivalent to the **Customer ID** property, though both can be passed with the message. The **User ID** field is used to track levels of usage for billing purposes, whereas the **Customer ID** field is used to support the labeling and subsequent deletion of messages that are associated with end users. Customer ID is used consistently across all Watson services and is specified in the `X-Watson-Metadata` header. User ID is used exclusively by the {{site.data.keyword.conversationshort}} service and is passed in the context object of each /message API call.
+**Important**: The **User ID** property is *not* equivalent to the **Customer ID** property, though both can be passed with the message. The **User ID** field is used to track levels of usage for billing purposes, whereas the **Customer ID** field is used to support the labeling and subsequent deletion of messages that are associated with end users. Customer ID is used consistently across all Watson services and is specified in the `X-Watson-Metadata` header. User ID is used exclusively by the {{site.data.keyword.assistant_classic_short}} service and is passed in the context object of each /message API call.
 
 ## Associating message data with a user for deletion
 {: #logs-resources-customer_id}
 
-There might come a time when you want to completely remove a set of your user's data from a {{site.data.keyword.conversationshort}} instance. When the delete feature is used, then the Overview metrics will no longer reflect those deleted messages; for example, they will have fewer Total Conversations.
+There might come a time when you want to completely remove a set of your user's data from a {{site.data.keyword.assistant_classic_short}} instance. When the delete feature is used, then the Overview metrics will no longer reflect those deleted messages; for example, they will have fewer Total Conversations.
 
 ### Before you begin
 {: #logs-resources-delete-customer-id-prereqs}

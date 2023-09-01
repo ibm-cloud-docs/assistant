@@ -30,7 +30,7 @@ subcollection: assistant
 # Improve your skill
 {: #logs}
 
-The Analytics page of {{site.data.keyword.conversationshort}} provides a history of conversations between users and a deployed assistant. You can use this history to improve how your assistants understand and respond to user requests.
+The Analytics page of {{site.data.keyword.assistant_classic_short}} provides a history of conversations between users and a deployed assistant. You can use this history to improve how your assistants understand and respond to user requests.
 {: shortdesc}
 
 To open a list of individual messages between customers and the assistant that uses this dialog skill, select **User conversations** in the navigation bar.
@@ -45,7 +45,7 @@ The User conversations page displays the total number of *messages* between cust
 ## Log limits
 {: #logs-limits}
 
-The length of time for which messages are retained depends on your {{site.data.keyword.conversationshort}} service plan:
+The length of time for which messages are retained depends on your {{site.data.keyword.assistant_classic_short}} service plan:
 
   Service plan                         | Chat message retention
   ------------------------------------ | ------------------------------------
@@ -97,9 +97,9 @@ Creating a dialog skill is an iterative process. While you develop your skill, y
 
 From the User conversations page, you can analyze actual interactions between the assistant you used to deploy the skill and your users. Based on those interactions, you can make corrections to improve the accuracy with which intents and entities are recognized by your dialog skill. It is difficult to know exactly *how* your users will ask questions, or what random messages they might submit, so it is important to frequently analyze real conversations to improve your dialog skills.
 
-For a {{site.data.keyword.conversationshort}} instance that includes multiple assistants, there might be times when it is useful to use message data from the dialog skill of one assistant to improve the dialog skill used by another assistant within that same instance.
+For a {{site.data.keyword.assistant_classic_short}} instance that includes multiple assistants, there might be times when it is useful to use message data from the dialog skill of one assistant to improve the dialog skill used by another assistant within that same instance.
 
-As an example, say you have a {{site.data.keyword.conversationshort}} instance named *HelpDesk*. You might have both a Production assistant and a Development assistant in your HelpDesk instance. When working in the dialog skill for the Development assistant, you can use logs from the Production assistant messages to improve the Development assistant's dialog skill.
+As an example, say you have a {{site.data.keyword.assistant_classic_short}} instance named *HelpDesk*. You might have both a Production assistant and a Development assistant in your HelpDesk instance. When working in the dialog skill for the Development assistant, you can use logs from the Production assistant messages to improve the Development assistant's dialog skill.
 
 Any edits you then make within the dialog skill for the Development assistant will only affect the Development assistant's dialog skill, even though you’re using data from messages sent to the Production assistant.
 
@@ -169,7 +169,7 @@ If you use data from another data source, any improvements you make to the model
 
     ![Save intent](images/save_intent.png)
 
-    The {{site.data.keyword.conversationshort}} service supports adding user input as an example to an intent *as-is*. If you are using @entity references as examples in your intent training data, and a user message that you want to save contains an entity value or synonym from your training data, then you must edit the message later. After you save it, edit the message from the Intents page to replace the entity that it references. For more information, see [Directly referencing an @Entity as an intent example](/docs/assistant?topic=assistant-intents#intents-entity-as-example).
+    The {{site.data.keyword.assistant_classic_short}} service supports adding user input as an example to an intent *as-is*. If you are using @entity references as examples in your intent training data, and a user message that you want to save contains an entity value or synonym from your training data, then you must edit the message later. After you save it, edit the message from the Intents page to replace the entity that it references. For more information, see [Directly referencing an @Entity as an intent example](/docs/assistant?topic=assistant-intents#intents-entity-as-example).
     {: tip}
 
 ### Adding an entity value or synonym

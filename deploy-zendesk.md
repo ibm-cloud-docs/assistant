@@ -58,7 +58,7 @@ To set up a Zendesk service desk integration, complete the following steps:
 
 1.  Create a web chat integration. For more information, see [Integrating the web chat with your website](/docs/assistant?topic=assistant-deploy-web-chat).
 
-1.  From the web chat integration page in {{site.data.keyword.conversationshort}}, set the **Allow transfers to live agents** switch to **On**, and then choose **Zendesk** as the service desk type, and then click **Next**.
+1.  From the web chat integration page in {{site.data.keyword.assistant_classic_short}}, set the **Allow transfers to live agents** switch to **On**, and then choose **Zendesk** as the service desk type, and then click **Next**.
 1.  Add the account key for your Zendesk account, and then click **Next**. {: #deploy-zendesk-get-account-key}
 
     To get the account key for your Zendesk account, follow these steps:
@@ -79,15 +79,15 @@ To set up a Zendesk service desk integration, complete the following steps:
 
        ![Screen capture of the connection dialog.](images/zd-account-key.png)
 
-    - Return to the setup page in {{site.data.keyword.conversationshort}}, and then paste the key into the field.
+    - Return to the setup page in {{site.data.keyword.assistant_classic_short}}, and then paste the key into the field.
 
-1.  Install the {{site.data.keyword.conversationshort}} private application in your Zendesk Chat subdomain. {: #deploy-zendesk-add-private-app}
+1.  Install the {{site.data.keyword.assistant_classic_short}} private application in your Zendesk Chat subdomain. {: #deploy-zendesk-add-private-app}
 
     When you create a Zendesk Chat account, you specify a subdomain. Afterward, your Zendesk console is available from a URL with the syntax: `<subdomain>.zendesk.com`. For example, `ibm.zendesk.com`.
     
     IBM provides an application that you can install in your Zendesk Chat domain. When a customer asks to speak to a person, your assistant will share a chat summary for the transferred conversation with the Zendesk agent by using this private app.
 
-    - Download the Watson Assistant Zendesk application from the Zendesk Chat setup page in {{site.data.keyword.conversationshort}}.
+    - Download the Watson Assistant Zendesk application from the Zendesk Chat setup page in {{site.data.keyword.assistant_classic_short}}.
 
       On Safari, the application files are extracted from the ZIP file into a folder. To keep the file archived as a .zip file, so you can upload it later, edit the Safari preferences. Clear the *Open safe files after downloading* checkbox.
       {: note}
@@ -111,7 +111,7 @@ When you test the service desk integration, make sure there is at least one agen
 
 Watch a 4-minute video that provides an overview of setting up a connection to a Zendesk service desk:
 
-![Zendesk Integration: {{site.data.keyword.conversationshort}}](https://video.ibm.com/embed/channel/23952663/video/wa-zendesk){: video output="iframe" data-script="none" id="watsonmediaplayer" width="480" height="270" scrolling="no" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" style="border: 0 none transparent;"}
+![Zendesk Integration: {{site.data.keyword.assistant_classic_short}}](https://video.ibm.com/embed/channel/23952663/video/wa-zendesk){: video output="iframe" data-script="none" id="watsonmediaplayer" width="480" height="270" scrolling="no" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" style="border: 0 none transparent;"}
 
 The product user interface is slightly different from the interface that is shown in the video. However, the main steps are the same.
 {: note}

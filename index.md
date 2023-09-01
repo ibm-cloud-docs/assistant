@@ -27,10 +27,10 @@ subcollection: assistant
 
 {{site.data.content.newlink}}
 
-# About Watson Assistant
+# About {{site.data.keyword.assistant_classic_short}}
 {: #index}
 
-Use {{site.data.keyword.conversationfull}} to build your own branded live chatbot into any device, application, or channel. Your chatbot, which is also known as an *assistant*, connects to the customer engagement resources you already use to deliver an engaging, unified problem-solving experience to your customers.
+Use {{site.data.keyword.assistant_classic_full}} to build your own branded live chatbot into any device, application, or channel. Your chatbot, which is also known as an *assistant*, connects to the customer engagement resources you already use to deliver an engaging, unified problem-solving experience to your customers.
 {: shortdesc}
 
 | | |
@@ -69,9 +69,9 @@ This diagram illustrates how the product delivers an exceptional, omnichannel cu
 
 For more information about the architecture, read the [How to Make Chatbot Orchestration Easier](https://medium.com/ibm-watson/how-to-make-chatbot-orchestration-easier-c8ed61620b8d){: external} blog on Medium.com.
 
-To see how {{site.data.keyword.conversationshort}} is helping enterprises cut costs and improve customer satisfaction today, read the [Independent study finds IBM Watson Assistant customers can accrue $23.9 million in benefits](https://www.ibm.com/blogs/watson/2020/03/independent-study-finds-ibm-watson-assistant-customers-accrued-23-9-million-in-benefits/){: external} blog on ibm.com.
+To see how {{site.data.keyword.assistant_classic_short}} is helping enterprises cut costs and improve customer satisfaction today, read the [Independent study finds IBM Watson Assistant customers can accrue $23.9 million in benefits](https://www.ibm.com/blogs/watson/2020/03/independent-study-finds-ibm-watson-assistant-customers-accrued-23-9-million-in-benefits/){: external} blog on ibm.com.
 
-This documentation describes managed instances of {{site.data.keyword.conversationshort}} that are offered in IBM Cloud or in Cloud Pak for Data as a Service. If you are interested in on-premises or installed deployments, see [this documentation](/docs/assistant-data?topic=assistant-data-index).
+This documentation describes managed instances of {{site.data.keyword.assistant_classic_short}} that are offered in IBM Cloud or in Cloud Pak for Data as a Service. If you are interested in on-premises or installed deployments, see [this documentation](/docs/assistant-data?topic=assistant-data-index).
 {: note}
 
 Read more about these implementation steps by following these links:
@@ -83,7 +83,7 @@ Read more about these implementation steps by following these links:
 ## Browser support
 {: #index-browser-support}
 
-The {{site.data.keyword.conversationshort}} application (where you create assistants and skills) requires the same level of browser software as is required by {{site.data.keyword.Bluemix_notm}}. For more information, see {{site.data.keyword.Bluemix_notm}} [Prerequisites](/docs/overview?topic=overview-prereqs-platform#browsers-platform){: external}. 
+The {{site.data.keyword.assistant_classic_short}} application (where you create assistants and skills) requires the same level of browser software as is required by {{site.data.keyword.Bluemix_notm}}. For more information, see {{site.data.keyword.Bluemix_notm}} [Prerequisites](/docs/overview?topic=overview-prereqs-platform#browsers-platform){: external}. 
 
 For information about the web browsers that are supported by the web chat integration, see [Browser Support](/docs/assistant?topic=assistant-web-chat-basics#web-chat-basics-browsers).
 
@@ -101,7 +101,7 @@ US Health Insurance Portability and Accountability Act (HIPAA) support is availa
 
 To learn more about service terms and data security, read the following information:
 
-- [Service terms](https://www-03.ibm.com/software/sla/sladb.nsf/sla/saas?OpenDocument){: external} (Search for the {{site.data.keyword.conversationshort}} offering)
+- [Service terms](https://www-03.ibm.com/software/sla/sladb.nsf/sla/saas?OpenDocument){: external} (Search for the {{site.data.keyword.assistant_classic_short}} offering)
 - [Data Processing and Protection Datasheet](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/softwareReqsForProduct?deliverableId=DF7F84500FA711E69DCADF455C6AF151){: external}
 - [Information security](/docs/assistant?topic=assistant-information-security)
 - [IBM Cloud Data security and privacy](https://www.ibm.com/software/sla/sladb.nsf/sla/csdsp?OpenDocument){: external}

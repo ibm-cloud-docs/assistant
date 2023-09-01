@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-08-29"
+lastupdated: "2023-09-01"
 
 subcollection: assistant
 
@@ -10,7 +10,7 @@ subcollection: assistant
 
 {{site.data.keyword.attribute-definition-list}}
 
-This documentation for the **classic {{site.data.keyword.conversationshort}}** experience has moved. For the most up-to-date version, see [Adding more assistants](/docs/watson-assistant?topic=watson-assistant-assistant-add){: external} and [Renaming or deleting assistants](/docs/watson-assistant?topic=watson-assistant-assistant-rename-delete){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
+This documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [Adding more assistants](/docs/watson-assistant?topic=watson-assistant-assistant-add){: external} and [Renaming or deleting assistants](/docs/watson-assistant?topic=watson-assistant-assistant-rename-delete){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
 {: attention}
 
 # Creating an assistant
@@ -43,7 +43,7 @@ Follow these steps to create an assistant:
 ## Assistant limits
 {: #assistant-add-limits}
 
-The number of assistants you can create depends on your {{site.data.keyword.conversationshort}} [plan type](https://www.ibm.com/products/watsonx-assistant/pricing){: external}. There is also a limit of 100 assistants per service instance.
+The number of assistants you can create depends on your {{site.data.keyword.assistant_classic_short}} [plan type](https://www.ibm.com/products/watsonx-assistant/pricing){: external}. There is also a limit of 100 assistants per service instance.
 
 After 30 days of inactivity, an unused assistant in a Lite plan service instance might be deleted to free up space. See [Changing the inactivity timeout setting](/docs/assistant?topic=assistant-assistant-settings) for more information on the subject.
 

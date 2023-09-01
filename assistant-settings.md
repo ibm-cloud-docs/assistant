@@ -31,7 +31,7 @@ subcollection: assistant
 Learn how to find and open assistants and skills that you created or can access.
 {: shortdesc}
 
-Assistants and skills are created within a {{site.data.keyword.conversationshort}} service instance. To continue working with a skill or assistant, open the service instance that contains the skill or assistant. If you can't remember the service instance name, you can switch between instances from within the {{site.data.keyword.conversationshort}} user interface.
+Assistants and skills are created within a {{site.data.keyword.assistant_classic_short}} service instance. To continue working with a skill or assistant, open the service instance that contains the skill or assistant. If you can't remember the service instance name, you can switch between instances from within the {{site.data.keyword.assistant_classic_short}} user interface.
 
 1.  Go to the [{{site.data.keyword.Bluemix_notm}} Resource list](https://cloud.ibm.com){: external}.
 
@@ -41,7 +41,7 @@ Assistants and skills are created within a {{site.data.keyword.conversationshort
 
 1.  Click a service instance to open it.
 
-1.  Click **Launch {{site.data.keyword.conversationshort}}** from the service instance details page to open the product in a new browser tab or window.
+1.  Click **Launch {{site.data.keyword.assistant_classic_short}}** from the service instance details page to open the product in a new browser tab or window.
 
 1.  Click the appropriate icon from the navigation pane to see a list of your assistants or skills.
 
@@ -53,7 +53,7 @@ If you do not see the skill or assistant you are looking for, you can look for i
 ## Switching the service instance
 {: #assistant-settings-switch-instance}
 
-To switch to a different {{site.data.keyword.conversationshort}} service instance, complete the following steps:
+To switch to a different {{site.data.keyword.assistant_classic_short}} service instance, complete the following steps:
     
 1. From the header of any page in the current instance, click the User icon ![user icon](images/user-icon.png).
 1.  Choose **Switch instance** from the menu.

@@ -32,7 +32,7 @@ subcollection: assistant
 Make a call to an external service or application during a conversation.
 {: shortdesc}
 
-{{site.data.keyword.conversationshort}} supports the following types of webhooks:
+{{site.data.keyword.assistant_classic_short}} supports the following types of webhooks:
 
 - Skill-level webhooks
 

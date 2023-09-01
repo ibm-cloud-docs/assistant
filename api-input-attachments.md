@@ -32,7 +32,7 @@ subcollection: assistant
 If you are building a custom channel application using the REST API, you can add support for sending media files as input attachments.
 {: shortdesc}
 
-The request body of the `message` method supports an `attachments` array, which can specify up to 5 media objects. Media objects sent in the `attachments` array can be intercepted and processed by a configured premessage webhook. ({{site.data.keyword.conversationshort}} itself does not process input attachments.)
+The request body of the `message` method supports an `attachments` array, which can specify up to 5 media objects. Media objects sent in the `attachments` array can be intercepted and processed by a configured premessage webhook. ({{site.data.keyword.assistant_classic_short}} itself does not process input attachments.)
 
 For detailed information about how to access attachments using the API, see the [API reference](/apidocs/assistant/assistant-v2#message){: external}.
 

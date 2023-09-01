@@ -311,7 +311,7 @@ After you set up the service desk integration, you must update your dialog to en
 ## Web chat integration limits
 {: #deploy-web-chat-limits}
 
-The usage is measured differently depending on the plan type. For Lite plans, usage is measured by the number of `/message` calls (API) are sent to the assistant from the web chat integration. For all other plans, usage is measured by the number of monthly active users (MAU) that the web chat interacts with. The maximum number of allowed MAUs differs depending on your {{site.data.keyword.conversationshort}} plan type.
+The usage is measured differently depending on the plan type. For Lite plans, usage is measured by the number of `/message` calls (API) are sent to the assistant from the web chat integration. For all other plans, usage is measured by the number of monthly active users (MAU) that the web chat interacts with. The maximum number of allowed MAUs differs depending on your {{site.data.keyword.assistant_classic_short}} plan type.
 
 | Plan       |              Maximum usage |
 |------------|---------------------------:|

@@ -31,7 +31,7 @@ subcollection: assistant
 IBM strives to provide products with usable access for everyone, regardless of age or ability.
 {: shortdesc}
 
-{{site.data.keyword.conversationfull}} uses standard Windows navigation keys.
+{{site.data.keyword.assistant_classic_full}} uses standard Windows navigation keys.
 
 ## Accessibility features in the product documentation
 {: #accessibility-in-doc}

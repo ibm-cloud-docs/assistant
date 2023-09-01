@@ -64,7 +64,7 @@ The *SMS with Twilio* integration provides a more seamless integration with your
 - Configuring backup locations
 - Reviewing the usage summary page. Use IBM Log Analysis instead. For more information, see [Viewing logs](/docs/assistant?topic=assistant-deploy-phone#deploy-phone-logs).
 
-To migrate from {{site.data.keyword.iva_short}} to the {{site.data.keyword.conversationshort}} *SMS with Twilio* integration, complete the following step:
+To migrate from {{site.data.keyword.iva_short}} to the {{site.data.keyword.assistant_classic_short}} *SMS with Twilio* integration, complete the following step:
 
 1.  Do one of the following things:
 

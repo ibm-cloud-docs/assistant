@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-08-29"
+lastupdated: "2023-09-01"
 
 subcollection: assistant
 
@@ -10,7 +10,7 @@ subcollection: assistant
 
 {{site.data.keyword.attribute-definition-list}}
 
-This documentation for the **classic {{site.data.keyword.conversationshort}}** experience has moved. For the most up-to-date version, see [Upgrading your plan](/docs/watson-assistant?topic=watson-assistant-admin-managing-plan#admin-managing-plan-upgrade){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
+This documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [Upgrading your plan](/docs/watson-assistant?topic=watson-assistant-admin-managing-plan#admin-managing-plan-upgrade){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
 {: attention}
 
 # Upgrading
@@ -22,7 +22,7 @@ Learn how to upgrade your service plan.
 ## Upgrading your plan
 {: #upgrade-plan}
 
-You can explore the {{site.data.keyword.conversationshort}} [service plan options](https://www.ibm.com/products/watsonx-assistant/pricing){: external} to decide which plan is best for you.
+You can explore the {{site.data.keyword.assistant_classic_short}} [service plan options](https://www.ibm.com/products/watsonx-assistant/pricing){: external} to decide which plan is best for you.
 
 The page header shows the plan you are using today.
 

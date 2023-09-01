@@ -76,7 +76,7 @@ Keep track of when this version is deployed to an assistant and for how long. It
 ## Skill version limits
 {: #versions-limits}
 
-The number of versions you can create for a single skill depends on your {{site.data.keyword.conversationshort}} plan.
+The number of versions you can create for a single skill depends on your {{site.data.keyword.assistant_classic_short}} plan.
 
 | Service plan     | Versions per skill |
 |------------------|-------------------:|
@@ -118,7 +118,7 @@ When you open a skill by clicking the skill tile from the assistant page, the de
 ## Downloading a skill version
 {: #versions-export}
 
-You can download a dialog skill version in JSON format. You might want to download a skill version if you want to use a specific version of a dialog skill in a different instance of the {{site.data.keyword.conversationshort}} service, for example. You can download the version from one instance and import it to another instance as a new dialog skill.
+You can download a dialog skill version in JSON format. You might want to download a skill version if you want to use a specific version of a dialog skill in a different instance of the {{site.data.keyword.assistant_classic_short}} service, for example. You can download the version from one instance and import it to another instance as a new dialog skill.
 
 To download a dialog skill version, complete the following steps:
 

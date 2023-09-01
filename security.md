@@ -28,7 +28,7 @@ subcollection: assistant
 # Securing your connection
 {: #security}
 
-Learn more about strategies that are available for you to use to ensure that your {{site.data.keyword.conversationshort}} data remains secure and protected in the cloud.
+Learn more about strategies that are available for you to use to ensure that your {{site.data.keyword.assistant_classic_short}} data remains secure and protected in the cloud.
 {: shortdesc}
 
 For more information about {{site.data.keyword.Bluemix_notm}} security, see [Security architecture](https://www.ibm.com/cloud/architecture/architecture/practices/watson-security-architecture/){: external}.
@@ -38,7 +38,7 @@ For more information about {{site.data.keyword.Bluemix_notm}} security, see [Sec
 ## Private network endpoints
 {: #security-private-endpoints}
 
-You can set up a private network for {{site.data.keyword.conversationshort}} instances that are part of a Plus or Enterprise service plan. Using a private network prevents data from being transferred over the public internet, and ensures greater data isolation.
+You can set up a private network for {{site.data.keyword.assistant_classic_short}} instances that are part of a Plus or Enterprise service plan. Using a private network prevents data from being transferred over the public internet, and ensures greater data isolation.
 
 ![Plus or higher plans only](images/plus.png) This feature is available only to users of paid plans.
 

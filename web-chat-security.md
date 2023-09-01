@@ -105,7 +105,7 @@ Before you enable security, complete the following steps:
 
 To enable security, complete the following steps:
 
-1. From the **Security** tab of the web chat integration setup page in {{site.data.keyword.conversationshort}}, set the **Secure your web chat** switch to **On**.
+1. From the **Security** tab of the web chat integration setup page in {{site.data.keyword.assistant_classic_short}}, set the **Secure your web chat** switch to **On**.
 
 1. Add your public key to the **Your public key** field.
     

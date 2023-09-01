@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-01-18"
+  years: 2020, 2023
+lastupdated: "2023-09-01"
 
 subcollection: assistant
 
@@ -51,7 +51,7 @@ For reference information about phone-specific repsonse types and related contex
 
 To initiate a voice-specific interaction from a dialog node or a step in an action, add a response within the `output.generic` array using the appropriate response type.
 
-Although many response types can be specified using the {{site.data.keyword.conversationshort}} user interface, phone-specific response types must currently be added using the JSON editor.
+Although many response types can be specified using the {{site.data.keyword.assistant_classic_short}} user interface, phone-specific response types must currently be added using the JSON editor.
 {: note}
 
 For more information about using the JSON editor to add responses, see [Defining responses using the JSON editor](/docs/assistant?topic=assistant-dialog-responses-json).
@@ -117,7 +117,7 @@ The following parameters from the {{site.data.keyword.speechtotextshort}} servic
 - `continuous`
 - `inactivity_timeout`
   
-When configuring dynamically from {{site.data.keyword.conversationshort}} using the `configure` command, note that only the root level fields, such as `narrowband` or `broadband`, are updated. If these fields are omitted from the command, the original configuration settings persist. You can use the `update_strategy` values `merge` and `merge_once` to merge configuration parameters with the existing configuration.
+When configuring dynamically from {{site.data.keyword.assistant_classic_short}} using the `configure` command, note that only the root level fields, such as `narrowband` or `broadband`, are updated. If these fields are omitted from the command, the original configuration settings persist. You can use the `update_strategy` values `merge` and `merge_once` to merge configuration parameters with the existing configuration.
 {: note}
 
 ### Using a custom language model 
@@ -418,7 +418,7 @@ If you define a SIP URI as the transfer target, escape the at sign (`@`) in the 
 
 ###  Passing Watson Assistant Metadata in SIP Signaling
 
-To support loading the conversational history between the caller and {{site.data.keyword.conversationshort}}, the phone integration specifies a value for the `User-to-User` header as a key that can be used with the web chat integration. If `User-to-User` is specified in the `transfer_headers` list, the session history key is sent in the `X-Watson-Assistant-Session-History-Key` header.
+To support loading the conversational history between the caller and {{site.data.keyword.assistant_classic_short}}, the phone integration specifies a value for the `User-to-User` header as a key that can be used with the web chat integration. If `User-to-User` is specified in the `transfer_headers` list, the session history key is sent in the `X-Watson-Assistant-Session-History-Key` header.
 
 The value of the SIP header is limited to 1024 bytes.
 

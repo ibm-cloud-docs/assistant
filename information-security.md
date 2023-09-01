@@ -58,7 +58,7 @@ Do not add personal health information (PHI) to the training data (entities and 
 ## Opting out of log data use
 {: #information-security-log-opt-out}
 
-IBM uses log data, Enterprise plan data excluded, to continually learn from and improve the {{site.data.keyword.conversationshort}} product. The logged data is not shared or made public.
+IBM uses log data, Enterprise plan data excluded, to continually learn from and improve the {{site.data.keyword.assistant_classic_short}} product. The logged data is not shared or made public.
 
 To prevent IBM from using your log data for general service improvements, complete one of the following tasks:
 
@@ -76,7 +76,7 @@ Do not add personal data to the training data (entities and intents, including u
 
 Experimental and beta features are not intended for use with a production environment and therefore are not guaranteed to function as expected when labeling and deleting data. Experimental and beta features should not be used when implementing a solution that requires the labeling and deletion of data.
 
-If you need to remove a customer's message data from a {{site.data.keyword.conversationshort}} instance, you can do so based on the customer ID of the client, as long as you associate the message with a customer ID when the message is sent to {{site.data.keyword.conversationshort}}.
+If you need to remove a customer's message data from a {{site.data.keyword.assistant_classic_short}} instance, you can do so based on the customer ID of the client, as long as you associate the message with a customer ID when the message is sent to {{site.data.keassistant_classic_shortnshort}}.
 
 Removing message data must be an occasional event only for individual customer IDs. To disable analytics logs, you can upgrade to an Enterprise with Data Isolation plan.
 {: note}
@@ -120,7 +120,7 @@ The `customer_id` string cannot include the semicolon (`;`) or equal sign (`=`) 
 
 Only the first **customer ID** value that is passed in the `X-Watson-Metadata` header is used as the `customer_id` string for the message log. This **customer ID** value can be deleted with `DELETE /user_data` v1 API calls.
 
-If you add a search skill to an assistant, user input that is submitted to the assistant is passed to the {{site.data.keyword.discoveryshort}} service as a search query. If the {{site.data.keyword.conversationshort}} integration provides a customer ID, then the resulting `/message` API request includes the customer ID in the header, and the ID is passed through to the {{site.data.keyword.discoveryshort}} `/query` API request. To delete any query data that is associated with a specific customer, you must send a separate delete request directly to the {{site.data.keyword.discoveryshort}} service instance that is linked your the assistant. See the {{site.data.keyword.discoveryshort}} [information security](/docs/discovery/information-security?topic=discovery-information-security) topic for details.
+If you add a search skill to an assistant, user input that is submitted to the assistant is passed to the {{site.data.keyword.discoveryshort}} service as a search query. If the {{site.data.keyword.assistant_classic_short}} integration provides a customer ID, then the resulting `/message` API request includes the customer ID in the header, and the ID is passed through to the {{site.data.keyword.discoveryshort}} `/query` API request. To delete any query data that is associated with a specific customer, you must send a separate delete request directly to the {{site.data.keyword.discoveryshort}} service instance that is linked your the assistant. See the {{site.data.keyword.discoveryshort}} [information security](/docs/discovery/information-security?topic=discovery-information-security) topic for details.
 
 ### Querying user data
 {: #information-security-query-customer-id}
@@ -144,9 +144,9 @@ To delete any message log data associated with a specific user that your assista
 
 Only data that was added by using the `POST /message` API endpoint with an associated customer ID can be deleted using this delete method. Data that was added by other methods cannot be deleted based on customer ID. For example, entities and intents that were added from customer conversations, cannot be deleted in this way. Personal Data is not supported for those methods.
 
-**IMPORTANT**: Specifying a `customer_id` will delete *all* messages with that `customer_id` that were received before the delete request, across your entire {{site.data.keyword.conversationshort}} instance, not just within one skill.
+**IMPORTANT**: Specifying a `customer_id` will delete *all* messages with that `customer_id` that were received before the delete request, across your entire {{site.data.keyword.assistant_classic_short}} instance, not just within one skill.
 
-As an example, to delete any message data associated with a user that has the customer ID `abc` from your {{site.data.keyword.conversationshort}} instance, send the following cURL command:
+As an example, to delete any message data associated with a user that has the customer ID `abc` from your {{site.data.keyword.assistant_classic_short}} instance, send the following cURL command:
 
 ```sh
 curl -X DELETE -u "apikey:3Df... ...Y7Pc9" \

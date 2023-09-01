@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-24"
+lastupdated: "2023-09-01"
 
 keywords: log webhook
 
@@ -24,7 +24,7 @@ A webhook is a mechanism that allows you to call out to an external program base
 
 This feature is available only to Plus and Enterprise plan users.
 
-Add a log webhook to your assistant if you want to use an external service to log {{site.data.keyword.conversationshort}} activity. You can log two kinds of activity:
+Add a log webhook to your assistant if you want to use an external service to log {{site.data.keyword.assistant_classic_short}} activity. You can log two kinds of activity:
 
 - **Messages and responses**: The log webhook is triggered each time the assistant responds to user input. You can use this option as an alternative to the built-in analytics feature to handle logging yourself. (For more information about the built-in analytics support, see [Metrics overview](/docs/assistant?topic=assistant-logs-overview).)
   
@@ -319,7 +319,7 @@ The  `payload`  JSON object for a call detail record event contains the followin
 | `call` | JSON object | Contains information about the call. |
 | `session_initiation_protocol` | JSON object | SIP protocol related details. |
 | `max_response_milliseconds` |JSON object | Maximum latency for various services used during the call. |
-| `assistant_interaction_summaries` | JSON array | Details about the {{site.data.keyword.conversationshort}} transactions that took place during the call. |
+| `assistant_interaction_summaries` | JSON array | Details about the {{site.data.keyword.assistant_classic_short}} transactions that took place during the call. |
 | `injected_custom_data` | JSON object | A JSON object that contains a set of key/value pairs. Extracted from the 	`cdr_custom_data` context variable. |
 | `warnings_and_errors` | JSON array | An array of warnings and errors that were logged during the call. |
 | `realtime_transport_network_summary` | JSON object | When RTCP is enabled, the `realtime_transport_network_summary` object provides statistics for the inbound stream in the `inbound_stream` object and statistics for the outbound stream in the `outbound_stream` object. |
@@ -355,7 +355,7 @@ The `assistant_interaction_summaries` object contains the following keys:
 | --- | --- | --- |
 | `assistant_id` | string | The unique identifier of the assistant. |
 | `session_id` | string | The unique identifier of the session. |
-| `turns` | JSON array | An array of the {{site.data.keyword.conversationshort}} transactions that took place during the conversation. |
+| `turns` | JSON array | An array of the {{site.data.keyword.assistant_classic_short}} transactions that took place during the conversation. |
 {: caption="Keys for the assistant_interaction_summaries object" caption-side="top"}
 
 The `turn` object contains the following keys:
@@ -363,9 +363,9 @@ The `turn` object contains the following keys:
 | Key | Type | Description |
 | --- | --- | --- |
 | `assistant.log_id` | string | A unique identifier for the logged transaction. Can be used to correlate between message logs and CDR events. |
-| `assistant.start_timestamp` | string. Time in the ISO format `yyyy-MM-ddTHH:mm:ss.SSSZ` | Time when the request was sent to {{site.data.keyword.conversationshort}}. |
-| `assistant.response_milliseconds` | number | Time between when the request was sent and when the response was received from {{site.data.keyword.conversationshort}}. |
-| `request` | JSON object | A request sent to {{site.data.keyword.conversationshort}}. |
+| `assistant.start_timestamp` | string. Time in the ISO format `yyyy-MM-ddTHH:mm:ss.SSSZ` | Time when the request was sent to {{site.data.keyword.assistant_classic_short}}. |
+| `assistant.response_milliseconds` | number | Time between when the request was sent and when the response was received from {{site.data.keyword.assistant_classic_short}}. |
+| `request` | JSON object | A request sent to {{site.data.keyword.assistant_classic_short}}. |
 | `response` | JSON array | An array of the `response` objects associated with the request. |
 {: caption="Keys for the turn object" caption-side="top"}
 
@@ -373,7 +373,7 @@ The `request` object contains the following keys:
 
 | Key | Type | Description |
 | --- | --- | --- |
-| `type` | string | The request type: \n *start* - an initial request to {{site.data.keyword.conversationshort}} \n *speech_to_text* - a request is triggered on speech recognition  \n *dtmf* - a request is triggered when DTMF collection completes  \n *sms* - a request is triggered when a SMS message is received from the caller  \n *post_response_timeout* - a request is triggered when the post response timer expires  \n *redirect* - a request is triggered when a call is redirected  \n *transfer* - a request is triggered when a call is transferred  \n *transfer_failed* - a request is triggered when a call transfer fails  \n *final_utterance_timeout* - a request is triggered when the final utterance timer expires  \n *no_input_turn* - a request is triggered when `no inpout turn` is enabled  \n *sms_failure* - a request is triggered when a SMS message can't be sent to the caller  \n *speech_to_text_result_filtered* - a request is triggered when an utterance is filtered due to low confidence level  \n *mrcp_recognition_unsuccessful* - a request is triggered when the MRCP recognition completes without a final utterance  \n *network_warning* - a request is triggered when a network error is detected  \n *media_capability_change* - a request is triggered when media capabilities change in the middle of a call |
+| `type` | string | The request type: \n *start* - an initial request to {{site.data.keyword.assistant_classic_short}} \n *speech_to_text* - a request is triggered on speech recognition  \n *dtmf* - a request is triggered when DTMF collection completes  \n *sms* - a request is triggered when a SMS message is received from the caller  \n *post_response_timeout* - a request is triggered when the post response timer expires  \n *redirect* - a request is triggered when a call is redirected  \n *transfer* - a request is triggered when a call is transferred  \n *transfer_failed* - a request is triggered when a call transfer fails  \n *final_utterance_timeout* - a request is triggered when the final utterance timer expires  \n *no_input_turn* - a request is triggered when `no inpout turn` is enabled  \n *sms_failure* - a request is triggered when a SMS message can't be sent to the caller  \n *speech_to_text_result_filtered* - a request is triggered when an utterance is filtered due to low confidence level  \n *mrcp_recognition_unsuccessful* - a request is triggered when the MRCP recognition completes without a final utterance  \n *network_warning* - a request is triggered when a network error is detected  \n *media_capability_change* - a request is triggered when media capabilities change in the middle of a call |
 |`streaming_statistics`| JSON object|Contains information and statistics related to the {{site.data.keyword.speechtotextshort}} recognition. |
 {: caption="Keys for the request object" caption-side="top"}
 
@@ -412,7 +412,7 @@ The `max_response_milliseconds` object contains the following keys:
 
 | Key | Type | Description |
 | --- | --- | --- |
-| `assistant` | number | Maximum round-trip latency in milliseconds, calculated from all {{site.data.keyword.conversationshort}} requests related to the call. |
+| `assistant` | number | Maximum round-trip latency in milliseconds, calculated from all {{site.data.keyword.assistant_classic_short}} requests related to the call. |
 | `text_to_speech` | number | Maximum time in milliseconds between when a text utterance is sent to the {{site.data.keyword.texttospeechshort}} service and when the phone integration receives the first packet of synthesized audio. Calculated from all the {{site.data.keyword.texttospeechshort}} requests related to this call. |
 | `speech_to_text` | number|Maximum latency in milliseconds between when silence is detected in the user's speech and a final result from {{site.data.keyword.speechtotextshort}} is received. This value is calculated from all the {{site.data.keyword.speechtotextshort}} recognition results related to this call. |
 {: caption="Keys for the max_response_milliseconds object" caption-side="top"}

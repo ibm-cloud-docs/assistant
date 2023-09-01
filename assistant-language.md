@@ -40,11 +40,11 @@ Your customers come from all around the globe. You need an assistant that can ta
 
   For more information about webhooks you can use for translation, see [Webhook overview](https://cloud.ibm.com/docs/assistant?topic=assistant-webhook-overview).
 
-- **Most precise solution**: If you have the time and resources, the best user experience can be achieved when you build multiple conversational skills, one for each language that you want to support. {{site.data.keyword.conversationshort}} has built-in support for all languages. Use one of 13 language-specific models or the universal model, which adapts to any other language you want to support.
+- **Most precise solution**: If you have the time and resources, the best user experience can be achieved when you build multiple conversational skills, one for each language that you want to support. {{site.data.keyword.assistant_classic_short}} has built-in support for all languages. Use one of 13 language-specific models or the universal model, which adapts to any other language you want to support.
 
   When you build a skill that is dedicated to a language, a language-specific classifier model is used by the skill. The precision of the model means that your assistant can better understand and recognize the goals of even the most colloquial message from a customer.
 
-  Use the new universal language model to create an assistant that is fluent even in languages that {{site.data.keyword.conversationshort}} doesn't support with built-in models.
+  Use the new universal language model to create an assistant that is fluent even in languages that {{site.data.keyword.assistant_classic_short}} doesn't support with built-in models.
 
   To deploy, attach each language skill to its own assistant that you can deploy in a way that optimizes its use by your target audience.
 

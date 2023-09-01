@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-08-04"
+lastupdated: "2023-09-01"
 
 subcollection: assistant
 
@@ -15,7 +15,7 @@ subcollection: assistant
 # Dialog creation workflow
 {: #dev-process}
 
-Use {{site.data.keyword.conversationshort}} to leverage AI as you build, deploy, and incrementally improve a conversational assistant.
+Use {{site.data.keyword.assistant_classic_short}} to leverage AI as you build, deploy, and incrementally improve a conversational assistant.
 {: shortdesc}
 
 ![Shows the flow of development steps starting with developing training data and ending with deploying to production](images/dev-process.png)

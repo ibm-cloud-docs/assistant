@@ -34,7 +34,7 @@ completion-time: 2h
 {: toc-content-type="tutorial"}
 {: toc-completion-time="2h"}
 
-In this tutorial, you will use the {{site.data.keyword.conversationshort}} service to create a dialog for an assistant that helps users with inquiries about a fictitious restaurant called *Truck Stop Gourmand*.
+In this tutorial, you will use the {{site.data.keyword.assistant_classic_short}} service to create a dialog for an assistant that helps users with inquiries about a fictitious restaurant called *Truck Stop Gourmand*.
 {: shortdesc}
 
 ## Learning objectives
