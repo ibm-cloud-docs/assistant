@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-09-01"
+lastupdated: "2023-05-22"
 
 subcollection: assistant
 
@@ -12,7 +12,7 @@ content-type: release-note
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Release notes for {{site.data.keyword.assistant_classic_short}}
+# Release notes for classic {{site.data.keyword.assistant_classic_short}}
 {: #release-notes}
 
 The release notes for the **classic {{site.data.keyword.assistant_classic_short}}** experience have moved. All release notes for {{site.data.keyword.assistant_classic_short}} can be found here: [Release notes for {{site.data.keyword.conversationshort}}](/docs/watson-assistant?topic=watson-assistant-watson-assistant-release-notes){: external}.
@@ -21,6 +21,9 @@ The release notes for the **classic {{site.data.keyword.assistant_classic_short}
 ## 22 May 2023
 {: #watson-assistant-may222023}
 {: release-note}
+
+Release notes for the **classic {{site.data.keyword.assistant_classic_short}}** experience have moved
+:   As of 22 May 2023, these release notes are no longer being updated. All release notes for both the new {{site.data.keyword.conversationshort}} and the classic {{site.data.keyword.assistant_classic_short}} can be found here: [Release notes for {{site.data.keyword.conversationshort}}](/docs/watson-assistant?topic=watson-assistant-watson-assistant-release-notes){: external}
 
 Changes to the date and number formats in assistant responses
 :   Beginning 22 May 2023, customers might see changes to the date and number formats in assistant responses.
