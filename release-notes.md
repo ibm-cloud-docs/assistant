@@ -24,6 +24,7 @@ The release notes for the **classic {{site.data.keyword.assistant_classic_short}
 
 Release notes for the **classic {{site.data.keyword.assistant_classic_short}}** experience have moved
 :   As of 22 May 2023, these release notes are no longer being updated. All release notes for both the new {{site.data.keyword.conversationshort}} and the classic {{site.data.keyword.assistant_classic_short}} can be found here: [Release notes for {{site.data.keyword.conversationshort}}](/docs/watson-assistant?topic=watson-assistant-watson-assistant-release-notes){: external}
+{: attention}
 
 Changes to the date and number formats in assistant responses
 :   Beginning 22 May 2023, customers might see changes to the date and number formats in assistant responses.
