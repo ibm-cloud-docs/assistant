@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-09-01"
+lastupdated: "2022-12-09"
 
 subcollection: assistant
 
@@ -168,8 +168,7 @@ For implementation details, see [Public and private network endpoints](/docs/wat
 ### Important private network endpoint notes
 {: #security-private-endpoint-notes}
 
-- The integrations that are provided with the product require endpoints that are available on the public internet. Therefore, any built-in integrations you add to your assistant will have public endpoints. If you only want to connect to a client application or messaging channel over the private network, then you must build your own custom client application or channel integration.
-- Before you can use a search integration or search skill, you must create a {{site.data.keyword.discoveryshort}} instance with a private network endpoint. The list of {{site.data.keyword.discoveryshort}} instances that are displayed for you to connect to includes only instances with private network endpoints.
+The integrations that are provided with the product require endpoints that are available on the public internet. Therefore, any built-in integrations you add to your assistant will have public endpoints. If you only want to connect to a client application or messaging channel over the private network, then you must build your own custom client application or channel integration.
 
 ## Related topics
 {: #security-related}
