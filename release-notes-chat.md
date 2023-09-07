@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-09-01"
+lastupdated: "2023-06-12"
 
 subcollection: assistant
 
@@ -13,7 +13,7 @@ subcollection: assistant
 # Web chat release notes
 {: #release-notes-chat}
 
-The release notes for the **classic {{site.data.keyword.assistant_classic_short}}** experience have moved. All release notes for Web chat for {{site.data.keyword.assistant_classic_short}} can be found here: [Web chat release notes](/docs/watson-assistant?topic=watson-assistant-release-notes-chat){: external}.
+Release notes for the **classic {{site.data.keyword.assistant_classic_short}}** experience have moved. All release notes for Web chat for {{site.data.keyword.assistant_classic_short}} can be found here: [Web chat release notes](/docs/watson-assistant?topic=watson-assistant-release-notes-chat){: external}.
 {: attention}
 
 ## 7.4.0

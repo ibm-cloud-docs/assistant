@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-09-01"
+lastupdated: "2022-12-16"
 
 subcollection: assistant
 
@@ -10,7 +10,7 @@ subcollection: assistant
 
 {{site.data.keyword.attribute-definition-list}}
 
-This documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [Automatic retraining](/docs/watson-assistant?topic=watson-assistant-algorithm-version#algorithm-version-auto-retrain){: external} To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
+Documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [Automatic retraining](/docs/watson-assistant?topic=watson-assistant-algorithm-version#algorithm-version-auto-retrain){: external} To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
 {: attention}
 
 # Automatic retrain of old skills and workspaces

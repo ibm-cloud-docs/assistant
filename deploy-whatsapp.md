@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-01"
+lastupdated: "2023-07-23"
 
 subcollection: assistant
 
@@ -10,7 +10,7 @@ subcollection: assistant
 
 {{site.data.keyword.attribute-definition-list}}
 
-This documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [Integrating with WhatsApp](/docs/watson-assistant?topic=watson-assistant-deploy-whatsapp){: external}. To see all documentation for the new {{site.data.keassistant_classic_shortnshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
+Documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [Integrating with WhatsApp](/docs/watson-assistant?topic=watson-assistant-deploy-whatsapp){: external}. To see all documentation for the new {{site.data.keassistant_classic_shortnshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
 {: attention}
 
 # Integrating with WhatsApp
