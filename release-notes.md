@@ -25,7 +25,7 @@ As of 22 May 2023, these release notes are no longer being updated. All release 
 {: release-note}
 
 Changes to the date and number formats in assistant responses
-:   Beginning 22 May 2023, customers might see changes to the date and number formats in assistant responses.
+:   Beginning on 22 May 2023, customers might see changes to the date and number formats in assistant responses.
 
    Examples of date changes include removed or added periods, such as:
    -  In Spanish, `18 abr. 2021` changes to `18 abr 2021`
