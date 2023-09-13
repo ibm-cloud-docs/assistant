@@ -97,7 +97,7 @@ In the following tables, the level of language and feature support is indicated 
 {: #language-support-input}
 
 | Language | **[Dictionary-based entity support](/docs/assistant?topic=assistant-entities#entities-create-dictionary-based)** | **[Fuzzy matching (*Misspelling*)](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Fuzzy matching (*Stemming*)](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Fuzzy matching (*Partial match*)](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Autocorrection](/docs/assistant?topic=assistant-autocorrection)** |
-|:---|:---:|:---:|:---:|:---:|
+| --- | --- | --- | --- | --- | --- |
 | **English (en)**                   | GA | GA | GA | GA | GA |
 | **Arabic (ar)**                    | GA | GA | NA | NA | NA |
 | **Chinese (Simplified) (zh-cn)**   | GA | NA | NA | NA | NA |
