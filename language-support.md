@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-09-01"
+lastupdated: "2023-08-04"
 
 subcollection: assistant
 
@@ -96,22 +96,22 @@ In the following tables, the level of language and feature support is indicated 
 ### User input processing support details
 {: #language-support-input}
 
-| Language | **[Dictionary-based entity support](/docs/assistant?topic=assistant-entities#entities-create-dictionary-based)** | **[Fuzzy matching (*Misspelling*)](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Fuzzy matching (*Stemming*](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Autocorrection](/docs/assistant?topic=assistant-autocorrection)** |
+| Language | **[Dictionary-based entity support](/docs/assistant?topic=assistant-entities#entities-create-dictionary-based)** | **[Fuzzy matching (*Misspelling*)](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Fuzzy matching (*Stemming*)](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Fuzzy matching (*Partial match*)](/docs/assistant?topic=assistant-entities#entities-fuzzy-matching)** | **[Autocorrection](/docs/assistant?topic=assistant-autocorrection)** |
 |:---|:---:|:---:|:---:|:---:|
-| **English (en)**                   | GA | GA | GA | GA |
-| **Arabic (ar)**                    | GA | GA | NA | NA |
-| **Chinese (Simplified) (zh-cn)**   | GA | NA | NA | NA |
-| **Chinese (Traditional) (zh-tw)**  | GA | NA | NA | NA |
-| **Czech (cs)**                     | GA | GA | GA | NA |
-| **Dutch (nl)**                     | GA | GA | NA | NA |
-| **French (fr)**                    | GA | GA | GA | Beta |
-| **German (de)**                    | GA | GA | GA | NA |
-| **Italian (it)**                   | GA | GA | NA | NA |
-| **Japanese (ja)**                  | GA | GA | NA | NA |
-| **Korean (ko)**                    | GA | GA | NA | NA |
-| **Portuguese (Brazilian) (pt-br)** | GA | GA | NA | NA |
-| **Spanish (es)**                   | GA | GA | NA | NA |
-| **Universal (xx)**                 | GA | GA | NA | NA |
+| **English (en)**                   | GA | GA | GA | GA | GA |
+| **Arabic (ar)**                    | GA | GA | NA | NA | NA |
+| **Chinese (Simplified) (zh-cn)**   | GA | NA | NA | NA | NA |
+| **Chinese (Traditional) (zh-tw)**  | GA | NA | NA | NA | NA |
+| **Czech (cs)**                     | GA | GA | GA | NA | NA |
+| **Dutch (nl)**                     | GA | GA | NA | NA | NA |
+| **French (fr)**                    | GA | GA | GA | NA | Beta |
+| **German (de)**                    | GA | GA | GA | NA | NA |
+| **Italian (it)**                   | GA | GA | NA | NA | NA |
+| **Japanese (ja)**                  | GA | GA | NA | NA | NA |
+| **Korean (ko)**                    | GA | GA | NA | NA | NA |
+| **Portuguese (Brazilian) (pt-br)** | GA | GA | NA | NA | NA |
+| **Spanish (es)**                   | GA | GA | NA | NA | NA |
+| **Universal (xx)**                 | GA | GA | NA | NA | NA |
 {: caption="Table 4. User input processing support details" caption-side="bottom"}
 
 ### Entity feature support details
