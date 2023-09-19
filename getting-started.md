@@ -11,26 +11,10 @@ subcollection: assistant
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:external: target="_blank" .external}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
-{:tip: .tip}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:swift: .ph data-hd-programlang='swift'}
-{:hide-dashboard: .hide-dashboard}
-{:download: .download}
-{:video: .video}
-{:step: data-tutorial-type='step'}
+{{site.data.keyword.attribute-definition-list}}
 
-{{site.data.content.newlink}}
+This documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [Getting started with {{site.data.keyword.conversationshort}}](/docs/watson-assistant?topic=watson-assistant-getting-started){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](/docs/watson-assistant){: external}.
+{: attention}
 
 # Getting started with {{site.data.keyword.assistant_classic_short}}
 {: #getting-started}
