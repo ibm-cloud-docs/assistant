@@ -48,7 +48,7 @@ The following tables illustrate the level of language support available for prod
 
 In the following tables, the level of language and feature support is indicated by these codes:
 
-- GA: The feature is generally available and supported for this language. Note that features might continue to be updated even after they are generally available.
+- GA: The feature is generally available and supported for this language. Features might continue to be updated even after they are generally available.
 - Beta: The feature is supported only as a Beta release, and is still undergoing testing before it is made generally available in this language.
 - NA: Indicates that a feature is not available in this language.
 
@@ -139,21 +139,21 @@ In the following tables, the level of language and feature support is indicated 
 ### System entity feature support details
 {: #language-support-system-entities}
 
-| Language | **[System entities](/docs/assistant?topic=assistant-system-entities)** | **[Legacy system entities](/docs/assistant?topic=assistant-legacy-system-entities)** |
+| Language | **[System entities](/docs/assistant?topic=assistant-system-entities)** |
 |:---|:---:|:---:|
-| **English (en)**                   | GA | Deprecated |
-| **Arabic (ar)**                    | GA | Deprecated |
-| **Chinese (Simplified) (zh-cn)**   | GA | Deprecated |
-| **Chinese (Traditional) (zh-tw)**  | GA | Deprecated |
-| **Czech (cs)**                     | GA | Deprecated |
-| **Dutch (nl)**                     | GA | Deprecated |
-| **French (fr)**                    | GA | Deprecated |
-| **German (de)**                    | GA | Deprecated |
-| **Italian (it)**                   | GA | Deprecated |
-| **Japanese (ja)**                  | GA | Deprecated |
-| **Korean (ko)**                    | GA | Deprecated |
-| **Portuguese (Brazilian) (pt-br)** | GA | Deprecated |
-| **Spanish (es)**                   | GA | Deprecated |
+| **English (en)**                   | GA |
+| **Arabic (ar)**                    | GA |
+| **Chinese (Simplified) (zh-cn)**   | GA |
+| **Chinese (Traditional) (zh-tw)**  | GA |
+| **Czech (cs)**                     | GA |
+| **Dutch (nl)**                     | GA |
+| **French (fr)**                    | GA |
+| **German (de)**                    | GA |
+| **Italian (it)**                   | GA |
+| **Japanese (ja)**                  | GA |
+| **Korean (ko)**                    | GA |
+| **Portuguese (Brazilian) (pt-br)** | GA |
+| **Spanish (es)**                   | GA |
 | **Universal (xx)**                 | GA | NA |
 {: caption="Table 6. System entity feature support details" caption-side="bottom"}
 
