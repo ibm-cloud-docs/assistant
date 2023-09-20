@@ -10,7 +10,8 @@ subcollection: assistant
 
 {{site.data.keyword.attribute-definition-list}}
 
-{{site.data.content.newlink}}
+Documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [Supported languages](/docs/watson-assistant?topic=watson-assistant-admin-language-support#admin-language-support-codes){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
+{: attention}
 
 # Supported languages
 {: #language-support}
