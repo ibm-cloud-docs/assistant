@@ -119,6 +119,7 @@ toc:
                - logs-overview.md
                - logs.md
                - irrelevance-detection.md
+               - logs-resources.md
           - topicgroup:
                label: Administrative tasks
                topics:
