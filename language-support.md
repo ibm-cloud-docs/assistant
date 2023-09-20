@@ -140,7 +140,7 @@ In the following tables, the level of language and feature support is indicated 
 {: #language-support-system-entities}
 
 | Language | **[System entities](/docs/assistant?topic=assistant-system-entities)** |
-|:---|:---:|:---:|
+|:---|:---:|
 | **English (en)**                   | GA |
 | **Arabic (ar)**                    | GA |
 | **Chinese (Simplified) (zh-cn)**   | GA |
