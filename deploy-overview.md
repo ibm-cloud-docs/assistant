@@ -37,3 +37,4 @@ In addition to the web chat and phone integrations, {{site.data.keyword.assistan
 - [SMS with Twilio](/docs/assistant?topic=assistant-deploy-sms)
 - [WhatsApp](/docs/assistant?topic=assistant-deploy-whatsapp)
 - A [custom client application](/docs/assistant?topic=assistant-deploy-custom-app)
+
