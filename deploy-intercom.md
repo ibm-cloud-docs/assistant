@@ -219,3 +219,6 @@ As your dialog changes, you will likely return to the Intercom integration page 
 To effectively test your Intercom integration from end-to-end, you must have access to an Intercom end-user application. You already created or edited an Intercom workspace. The workspace must have an associated user interface client. If it does not, see [How do I create an app?](https://www.intercom.com/help/en/articles/1827298-how-do-i-create-an-app){: external} for help with setting one up.
 
 Submit test user queries through a client application that is associated with your Intercom workspace to see how the messages are handled by Intercom. Verify that messages that are meant to be answered by the assistant are generating the appropriate responses, and that the assistant is not responding to messages that it is not configured to answer.
+
+
+

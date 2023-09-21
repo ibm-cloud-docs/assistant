@@ -32,3 +32,4 @@ Visit [Getting started with {{site.data.keyword.conversationshort}}](/docs/watso
 {: getting-started-dialog}
 
 In the classic experience, you build a conversation using a dialog-based approach. If you need to learn that method, see the tutorial [Getting started with a dialog skill](/docs/assistant?topic=assistant-gs-dialog).
+

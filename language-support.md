@@ -219,3 +219,4 @@ Although not an accent mark, the same applies to words using, for example, the S
 
 You can enable fuzzy matching if you think your customers will not use the appropriate accents, or misspell words (including, for example, putting a `n` instead of a `ñ`), or you can explicitly include them in the training examples.
 
+
