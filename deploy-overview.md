@@ -38,3 +38,4 @@ In addition to the web chat and phone integrations, {{site.data.keyword.assistan
 - [WhatsApp](/docs/assistant?topic=assistant-deploy-whatsapp)
 - A [custom client application](/docs/assistant?topic=assistant-deploy-custom-app)
 
+
