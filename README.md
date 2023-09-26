@@ -4,10 +4,6 @@ This repo contains the Markdown source files for the Watson Assistant Classic pr
 
 **Note:** These files document Watson Assistant instances using the "classic" or "old IA" interface. The documentation for the "New Watson Assistant" or "new IA" interface are [here](https://github.ibm.com/cloud-api-docs/watson-assistant).
 
-These files are owned and maintained by the Watson Assistant documentation team:
-- Craig Lordan (clordan@ibm.com)
-- Robert Berry (rrberry@us.ibm.com)
-- Charlotte Holt (charlotte.holt@ibm.com)
 
 ## Contributing
 
