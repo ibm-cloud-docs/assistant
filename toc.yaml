@@ -163,7 +163,7 @@ toc:
                 topics:
                 - api-overview.md
                 - api-methods.md
-                - include: ../watson-assistant/api-client.md
+                - api-client.md
                 - api-migration.md
                 - api-context.md
                 - api-dialog-responses.md
@@ -187,7 +187,7 @@ toc:
             - link:
                 label: Events
                 href: https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-events
-      - include: ../watson-assistant/admin-auditing.md
+      - at-events.md
       - skill-auto-retrain.md
       - dialog-methods.md
       - expression-language.md
