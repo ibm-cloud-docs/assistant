@@ -15,7 +15,7 @@ subcollection: assistant
 
 ## Release notes for the **classic {{site.data.keyword.assistant_classic_short}}** experience have moved
 
-As of 22 June 2023, these release notes are no longer being updated. All release notes for both the new {{site.data.keyword.conversationshort}} and the classic {{site.data.keyword.assistant_classic_short}} can be found here: [Web chat release notes](/docs/watson-assistant?topic=watson-assistant-release-notes-chat){: external}.
+As of 12 June 2023, these release notes are no longer being updated. All release notes for both the new {{site.data.keyword.conversationshort}} and the classic {{site.data.keyword.assistant_classic_short}} can be found here: [Web chat release notes](/docs/watson-assistant?topic=watson-assistant-release-notes-chat){: external}.
 {: attention}
 
 ## 7.4.0
