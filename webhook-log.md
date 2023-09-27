@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-09-01"
+lastupdated: "2023-03-24"
 
 keywords: log webhook
 
@@ -11,6 +11,9 @@ subcollection: assistant
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
+Documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [Logging activity with a webhook](/docs/watson-assistant?topic=watson-assistant-webhook-log){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
+{: attention}
 
 # Logging activity with a webhook
 {: #webhook-log}
