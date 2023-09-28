@@ -10,7 +10,7 @@ subcollection: assistant
 
 {{site.data.keyword.attribute-definition-list}}
 
-Documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [Upgrading your plan](/docs/watson-assistant?topic=watson-assistant-admin-managing-plan#admin-managing-plan-upgrade){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
+Documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [Upgrading your plan](/docs/watson-assistant?topic=watson-assistant-admin-managing-plan#admin-managing-plan-upgrade){: external}.
 {: attention}
 
 # Upgrading
