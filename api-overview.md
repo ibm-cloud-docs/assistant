@@ -11,7 +11,7 @@ subcollection: assistant
 
 {{site.data.keyword.attribute-definition-list}}
 
-Documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [{{site.data.keyword.conversationshort}} API overview](/docs/watson-assistant?topic=watson-assistant-api-overview){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
+Documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [{{site.data.keyword.conversationshort}} API overview](/docs/watson-assistant?topic=watson-assistant-api-overview){: external}.
 {: attention}
 
 # {{site.data.keyword.assistant_classic_short}} API overview
