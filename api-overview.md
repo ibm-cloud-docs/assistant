@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2015, 2021
+  years: 2015, 2023
 lastupdated: "2020-03-12"
 
 subcollection: assistant
@@ -9,24 +9,10 @@ subcollection: assistant
 
 ---
 
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:swift: data-hd-programlang='swift'}
-{:new_window: target="_blank"}
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:download: .download}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
-{:tip: .tip}
+{{site.data.keyword.attribute-definition-list}}
 
-{{site.data.content.newlink}}
+Documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [{{site.data.keyword.conversationshort}} API overview](/docs/watson-assistant?topic=watson-assistant-api-overview){: external}. To see all documentation for the new {{site.data.keyword.conversationshort}}, please go [here](https://cloud.ibm.com/docs/watson-assistant){: external}.
+{: attention}
 
 # {{site.data.keyword.assistant_classic_short}} API overview
 {: #api-overview}
@@ -55,6 +41,6 @@ For details about the v2 API, see the {{site.data.keyword.assistant_classic_shor
 
 The v1 API provides methods that enable an application to create or modify dialog skills, as an alternative to building a skill graphically using the {{site.data.keyword.assistant_classic_short}} user interface. An authoring application uses the API to create and modify skills, intents, entities, dialog nodes, and other artifacts that make up a dialog skill. For more information, see the [v1 API Reference](https://{DomainName}/apidocs/assistant/assistant-v1){: external}.
 
-  **Note:** The v1 authoring methods create and modify workspaces rather than skills. A workspace is a container for the dialog and training data (such as intents and entities) within a dialog skill. If you create a new workspace using the API, it will appear as a new dialog skill in the {{site.data.keyword.assistant_classic_short}} user interface.
+**Note:** The v1 authoring methods create and modify workspaces rather than skills. A workspace is a container for the dialog and training data (such as intents and entities) within a dialog skill. If you create a new workspace using the API, it will appear as a new dialog skill in the {{site.data.keyword.assistant_classic_short}} user interface.
 
 For a list of the available API methods, see [API methods summary](/docs/assistant?topic=assistant-api-methods).
