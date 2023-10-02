@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-09-01"
+lastupdated: "2023-08-03"
 
 subcollection: assistant
 
@@ -10,7 +10,8 @@ subcollection: assistant
 
 {{site.data.keyword.attribute-definition-list}}
 
-{{site.data.content.newlink}}
+Documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [Dialog creation workflow](/docs/watson-assistant?topic=watson-assistant-dev-process){: external}.
+{: attention}
 
 # Dialog creation workflow
 {: #dev-process}
