@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-09-01"
+lastupdated: "2023-01-26"
 
 keywords: intent, intent conflicts, annotate
 
@@ -12,7 +12,8 @@ subcollection: assistant
 
 {{site.data.keyword.attribute-definition-list}}
 
-{{site.data.content.newlink}}
+Documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [Creating intents](/docs/watson-assistant?topic=watson-assistant-intents){: external}.
+{: attention}
 
 # Creating intents
 {: #intents}

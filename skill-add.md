@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-09-01"
+lastupdated: "2021-06-16"
 
 subcollection: assistant
 
@@ -10,7 +10,8 @@ subcollection: assistant
 
 {{site.data.keyword.attribute-definition-list}}
 
-{{site.data.content.newlink}}
+Documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [Adding dialog](/docs/watson-assistant?topic=watson-assistant-skill-dialog-add){: external}.
+{: attention}
 
 # Adding skills to your assistant
 {: #skill-add}
