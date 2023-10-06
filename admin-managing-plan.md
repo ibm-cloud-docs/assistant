@@ -6,7 +6,7 @@ lastupdated: "2023-03-21"
 
 keywords: billing, data centers, MAU, monthly active users, service plans
 
-subcollection: watson-assistant
+subcollection: assistant
 
 ---
 

@@ -4,7 +4,7 @@ copyright:
   years: 2021
 lastupdated: "2021-10-07"
 
-subcollection: watson-assistant
+subcollection: assistant
 
 content-type: conref
 
