@@ -289,22 +289,14 @@ To recognize the different types of menus that customers indicate they want to s
     - cuisine
     - carte du jour
 
-    ![Shows the standard value being added to the @menu entity.](images/gs-ass-add-standard-value.png)
-
 1.  Click **Add value** to add the `@menu:standard` value.
 
 1.  Add `vegetarian` to the **Value name** field, and then add `vegetarian menu` to the **Synonyms** field, and press Enter.
-
-1.  Click **Show recommendations**, and then click the checkbox for *vegan diet*.
-
-1.  Click **Add selected**.
 
 1.  Click the empty *Add synonym* field, and then add these additional synonyms:
 
     - vegan
     - plants-only
-
-    ![Shows the vegetarian value being added to the @menu entity.](images/gs-ass-add-vegetarian-value.png)
 
 1.  Click **Add value** to add the `@menu:vegetarian` value.
 
@@ -315,8 +307,6 @@ To recognize the different types of menus that customers indicate they want to s
     - cake shop menu
     - dessert menu
     - bakery offerings
-
-    ![Shows the cake value being added to the @menu entity.](images/gs-ass-add-cake-value.png)
 
 1.  Click **Add value** to add the `@menu:cake` value.
 
