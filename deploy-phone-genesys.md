@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: “2023-10-10”
+  years: 2021
+lastupdated: “2021-11-17”
 
 subcollection: assistant
 
@@ -10,7 +10,8 @@ subcollection: assistant
 
 {{site.data.keyword.attribute-definition-list}}
 
-{{site.data.content.newlink}}
+Documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [Integrating with phone and Genesys Cloud](/docs/watson-assistant?topic=watson-assistant-deploy-phone-genesys){: external}.
+{: attention}
 
 # Integrating with phone and Genesys Cloud
 {: #deploy-phone-genesys}
