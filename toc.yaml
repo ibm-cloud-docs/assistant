@@ -112,7 +112,6 @@ toc:
              - deploy-sms.md
              - deploy-whatsapp.md
              - deploy-custom-app.md
-          - deploy-integration-delete.md
           - topicgroup:
                label: Analytics
                topics:
@@ -145,7 +144,6 @@ toc:
           - topicgroup:
                 label: Dialog skill development
                 topics:
-                - skill-develop.md
                 - message-anatomy.md
                 - dialog-integrations.md
                 - dialog-sms-actions.md

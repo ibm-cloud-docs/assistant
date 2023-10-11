@@ -11,26 +11,10 @@ completion-time: 10m
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:external: target="_blank" .external}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
-{:tip: .tip}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:swift: .ph data-hd-programlang='swift'}
-{:hide-dashboard: .hide-dashboard}
-{:download: .download}
-{:video: .video}
-{:step: data-tutorial-type='step'}
+{{site.data.keyword.attribute-definition-list}}
 
-{{site.data.content.newlink}}
+Documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [Getting started with dialog](/docs/watson-assistant?topic=watson-assistant-gs-dialog){: external}.
+{: attention}
  
 # Getting started with a dialog skill
 {: #gs-dialog}
