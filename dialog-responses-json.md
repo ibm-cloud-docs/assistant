@@ -2,28 +2,16 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-09-01"
+lastupdated: "2023-06-01"
 
 subcollection: assistant
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:external: target="_blank" .external}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
-{:tip: .tip}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:swift: .ph data-hd-programlang='swift'}
+{{site.data.keyword.attribute-definition-list}}
 
-{{site.data.content.newlink}}
+Documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date versions, see [Defining responses by using the JSON editor](/docs/watson-assistant?topic=watson-assistant-assistant-responses-json){: external} and [Response types reference](/docs/watson-assistant?topic=watson-assistant-response-types-reference){: external}
+{: attention}
 
 # Defining responses using the JSON editor
 {: #dialog-responses-json}
