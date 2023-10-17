@@ -54,8 +54,6 @@ Learn more
 - [Handling none of the above](#dialog-runtime-handle-none)
 - [Testing disambiguation](#dialog-runtime-disambig-test)
 
-For information about how disambiguation works with actions skills, see [Disambiguation](/docs/assistant?topic=assistant-actions#actions-disambiguation).
-
 ### Disambiguation example
 {: #dialog-runtime-disambig-example}
 

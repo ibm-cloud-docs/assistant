@@ -154,7 +154,7 @@ After you have created an assistant, you can update your client application to u
   {: codeblock}
   {: java}
 
-   If you do not explicitly delete the session, it will be automatically deleted after the configured timeout interval. (The timeout duration depends on your plan; for more information, see [Session limits](/docs/assistant?topic=assistant-assistant-settings#assistant-settings-session-limits).)
+   If you do not explicitly delete the session, it will be automatically deleted after the configured timeout interval.
 
 To see examples of the v2 APIs in the context of a simple client application, see [Building a client application](/docs/assistant?topic=assistant-api-client).
 

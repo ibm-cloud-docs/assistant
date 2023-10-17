@@ -86,8 +86,6 @@ Make changes to the dialog to address issues you see when testing:
 - If you determine that the wrong intents or entities are being recognized, you might need to modify your intent or entity definitions.
 - If the correct intents and entities are being recognized, but the wrong nodes are being triggered in your dialog, make sure your conditions are written properly.
 
-If you are ready to put the conversation to work helping your users, integrate your assistant with a messaging platform or custom application. See [Adding integrations](/docs/assistant?topic=assistant-deploy-integration-add).
-
 ## Searching your dialog
 {: #dialog-tasks-search}
 

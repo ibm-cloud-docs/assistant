@@ -10,22 +10,10 @@ subcollection: assistant
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:external: target="_blank" .external}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
-{:tip: .tip}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:swift: .ph data-hd-programlang='swift'}
+{{site.data.keyword.attribute-definition-list}}
 
-{{site.data.content.newlink}}
+Documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [About {{site.data.keyword.conversationshort}}](/docs/watson-assistant?topic=watson-assistant-about){: external}.
+{: attention}
 
 # About {{site.data.keyword.assistant_classic_short}}
 {: #index}
@@ -73,12 +61,6 @@ To see how {{site.data.keyword.assistant_classic_short}} is helping enterprises 
 
 This documentation describes managed instances of {{site.data.keyword.assistant_classic_short}} that are offered in IBM Cloud or in Cloud Pak for Data as a Service. If you are interested in on-premises or installed deployments, see [this documentation](/docs/assistant-data?topic=assistant-data-index).
 {: note}
-
-Read more about these implementation steps by following these links:
-
-- [Creating an assistant](/docs/assistant?topic=assistant-assistant-add)
-- [Adding skills to your assistant](/docs/assistant?topic=assistant-skill-add)
-- [Deploying your assistant](/docs/assistant?topic=assistant-deploy-integration-add)
 
 ## Browser support
 {: #index-browser-support}

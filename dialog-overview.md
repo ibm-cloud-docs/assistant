@@ -786,7 +786,7 @@ To add a *Pause* response type, complete the following steps:
     Add another response type, such as a text response type, after the pause to clearly denote that the pause is over.
     {: tip}
 
-This response type does not render in the "Try it out" pane. You must access a node that uses this response type from a test deployment to see how your users will experience it. For more information, see [Testing your assistant from a web page](/docs/assistant?topic=assistant-deploy-web-link).
+This response type does not render in the "Try it out" pane. You must access a node that uses this response type from a test deployment to see how your users will experience it. 
 
 ### Adding a *Search skill* response type ![Plus or higher plan only](images/plus.png)
 {: #dialog-overview-add-search-skill}
@@ -847,7 +847,7 @@ To add a *Search skill* response type, complete the following steps:
     ```
     {: codeblock}  
 
-Test this response type from the assistant *Preview*. You cannot test it from the dialog skill's "Try it out" pane. For more information about testing dialog and search skills together, see [Testing your assistant from a web page](/docs/assistant?topic=assistant-deploy-web-link).
+Test this response type from the assistant *Preview*. You cannot test it from the dialog skill's "Try it out" pane.
 
 ### Conditional responses
 {: #dialog-overview-multiple}
