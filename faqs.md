@@ -12,7 +12,7 @@ content-type: faq
 
 {{site.data.keyword.attribute-definition-list}}
 
-Documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [FAQs for {{site.data.keyword.conversationfull}}](/docs/watson-assistant?topic=watson-assistant-watson-assistant-faqs){: external}.
+Documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [FAQs for {{site.data.keyword.conversationfull}}](/docs/watson-assistant?topic=watson-assistant-watson-assistant-faqs) and [Glossary](/docs/watson-assistant?topic=watson-assistant-glossary){: external}.
 {: attention}
 
 # FAQ
