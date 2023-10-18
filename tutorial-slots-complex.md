@@ -842,8 +842,3 @@ In the logic that calls the reservation service, be sure to check for `has_skipp
 {: #tutorial-slots-complex-summary}
 
 In this tutorial you tested a node with slots and made changes that optimize how it interacts with real users. For more information about this subject, see [Gathering information with slots](/docs/assistant?topic=assistant-dialog-slots).
-
-## Next steps
-{: #tutorial-slots-complex-deploy}
-
-Deploy your dialog skill by first connecting it to an assistant, and then deploying the assistant. There are several ways you can do this. See [Adding integrations](/docs/assistant?topic=assistant-deploy-integration-add) for more details.

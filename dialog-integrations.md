@@ -93,7 +93,6 @@ The rich response types often behave differently when they are displayed in diff
 
 - [SMS with Twilio](/docs/assistant?topic=assistant-deploy-sms#deploy-sms-dialog)
 
-- [Assistant preview](/docs/assistant?topic=assistant-deploy-web-link#deploy-web-link-dialog)
 
 If you need to provide customized responses for different channels, and you do not need to modify your dialog flow based on which integration is in use, you can also use the `channels` array to target your responses to specific integrations. For more information, see [Targeting specific integrations](/docs/assistant?topic=assistant-dialog-responses-json#dialog-responses-json-target-integrations).
 {: note}

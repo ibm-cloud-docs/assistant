@@ -781,8 +781,3 @@ Now that you have built a more sophisticated version of the assistant, return to
 
     Unlike when you send test utterances to your assistant from the "Try it out" pane, standard usage charges apply to API calls that result from utterances that are submited to the chat widget.
     {: note}
-
-## Next steps
-{: #tutorial-deploy}
-
-Now that you have built and tested your dialog skill, you can share it with customers. Deploy your skill by first connecting it to an assistant, and then deploying the assistant. There are several ways you can do this. See [Adding integrations](/docs/assistant?topic=assistant-deploy-integration-add) for more details.

@@ -219,7 +219,7 @@ Enhanced intent detection available for Portuguese, German, and Simplified Chine
 {: release-note}
 
 Assistant preview link can be disabled
-:   Assistant preview now includes a toggle to disable the preview link. This allows you to stop access to the preview link if necessary. For more information, see [Using the assistant preview to test your assistant](/docs/assistant?topic=assistant-deploy-web-link#deploy-web-link-try).
+:   Assistant preview now includes a toggle to disable the preview link. This allows you to stop access to the preview link if necessary.
 
 ## 5 April 2022
 {: #assistant-apr052022}
@@ -821,7 +821,7 @@ The *Phone* and *SMS with Twilio* integrations are now generally available!
     - [Integrating with *SMS with Twilio*](/docs/assistant?topic=assistant-deploy-sms)
 
 *Preview link* change
-:   When you create a preview link, you can now test your skill from a chat window that is embedded in the page. You can also copy the URL that is provided, and open it in a web browser to see an IBM-branded web page with the web chat embedded in it. You can share the URL to the public IBM web page with others to get help with testing or for demoing purposes. For more information, see [Testing your assistant](/docs/assistant?topic=assistant-deploy-web-link).
+:   When you create a preview link, you can now test your skill from a chat window that is embedded in the page. You can also copy the URL that is provided, and open it in a web browser to see an IBM-branded web page with the web chat embedded in it. You can share the URL to the public IBM web page with others to get help with testing or for demoing purposes.
 
 Import and export UI changes
 :   The label on buttons for importing skills changed from *Import* to *Upload*, and the label on buttons for exporting skills changed from *Export* to *Download*.
@@ -1055,7 +1055,7 @@ The @sys-location and @sys-person system entities were removed
 Skill menu actions moved
 :   The menu that was displayed in the header of the skill while you were working with a skill was removed. The actions that were available from the menu, such as import and export, are still available. Go to the Skills page, and click the menu on the skill tile.
 
-    The import skill process was updated to support overwriting an existing skill on import. For more information, see [Overwriting a skill](/docs/assistant?topic=assistant-skill-tasks#skill-tasks-overwrite).
+    The import skill process was updated to support overwriting an existing skill on import.
 
 Dialog issues were addressed
 :   These dialog issues were addressed:
@@ -1198,7 +1198,7 @@ New and improved access control
 
     Can't see Analytics anymore? If you cannot do things that you could do before, you might not have appropriate access. Ask the service instance owner to change your service access role. For more information, see [How to keep your access](/docs/assistant?topic=assistant-access-control#access-control-prep).
 
-    If you can't access the API Details for a skill or assistant anymore, you might not have the access role that is required to use the instance-level API credentials. You can use a personal API key instead. For more information, see [Getting API information](/docs/assistant?topic=assistant-assistant-settings#assistant-settings-api-details).
+    If you can't access the API Details for a skill or assistant anymore, you might not have the access role that is required to use the instance-level API credentials. You can use a personal API key instead.
 
 ## 1 April 2020
 {: #assistant-apr012020}
@@ -1487,9 +1487,6 @@ UI changes
 Rich response types are supported in a dialog node with slots
 :   You can display a list of options for a user to choose from as the prompt for a slot, for example.
 
-Change to switching service instances
-:   Where you go to switch service instances has changed. See [Switching the service instance](/docs/assistant?topic=assistant-assistant-settings#assistant-settings-switch-instance).
-
 Known issue: Cannot rename search skills
 :   You currently cannot rename a search skill after you create it.
 
@@ -1516,7 +1513,7 @@ Dallas updates
 {: release-note}
 
 Inactivity timeout increase
-:   The maximum inactivity timeout can now be extended to up to 7 days for Premium plans. See [Changing the inactivity timeout setting](/docs/assistant?topic=assistant-assistant-settings).
+:   The maximum inactivity timeout can now be extended to up to 7 days for Premium plans.
 
 Pattern entity fix
 :   A change that was introduced in the previous release which changed all alphabetic characters to lowercase at the time an entity value was added has been fixed. The case of any alphabetic characters that are part of a pattern entity value are no longer changed when the value is added.
@@ -1829,7 +1826,7 @@ Major user interface revision
 
     - **Assistants**: You can now publish your skill in just two steps. Add your skill to an assistant, and then set up one or more integrations with which to deploy your skill. The assistant adds a layer of function to your skill that enables {{site.data.keyword.assistant_classic_short}} to orchestrate and manage the flow of information for you. See [Assistants](/docs/assistant?topic=assistant-assistants).
 
-    - **Built-in integrations**: Instead of going to the **Deploy** tab to deploy your workspace, you add your dialog skill to an assistant, and add integrations to the assistant through which the skill is made available to your users. You do not need to build a custom front-end application and manage the conversation state from one call to the next. However, you can still do so if you want to. See [Adding integrations](/docs/assistant?topic=assistant-deploy-integration-add) for more information.
+    - **Built-in integrations**: Instead of going to the **Deploy** tab to deploy your workspace, you add your dialog skill to an assistant, and add integrations to the assistant through which the skill is made available to your users. You do not need to build a custom front-end application and manage the conversation state from one call to the next. However, you can still do so if you want to.
 
     - **New major API version**: A V2 version of the API is available. This version provides access to methods you can use to interact with an assistant at run time. No more passing context with each API call; the session state is managed for you as part of the assistant layer.
 

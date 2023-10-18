@@ -10,24 +10,10 @@ subcollection: assistant
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:external: target="_blank" .external}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
-{:tip: .tip}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:swift: .ph data-hd-programlang='swift'}
-{:gif: data-image-type='gif'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
-{{site.data.content.newlink}}
+Documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [Adding support for global audiences](/docs/watson-assistant?topic=watson-assistant-admin-language-support){: external}.
+{: attention}
 
 # Adding support for global audiences
 {: #assistant-language}
@@ -70,8 +56,6 @@ To create a skill that uses the universal language model, complete the following
 
 1.  Choose to create either a dialog or actions skill, and then click **Next**.
 
-    For more information, see [Choosing a conversational skill](/docs/assistant?topic=assistant-skills-choose). 
-
 1.  Name your skill, and optionally add a description. From the *Language* field, choose **Another language**.
 
     Remember, if the language you want to support is listed individually, choose it instead of using the universal model. The built-in language models provide optimal language support.
@@ -87,7 +71,7 @@ To create a skill that uses the universal language model, complete the following
 
 Next, start building your conversation.
 
-As you follow the normal steps to design a conversational flow, you teach the universal language model about the language you want your skill to support. It is by adding training data that is written in the target language that the universal model is constructed. For an actions skill, add actions. For a dialog skill, add intents, intent user examples, and entities. The universal language model adapts to understand and support your language of choice.
+As you follow the normal steps to design a conversational flow, you teach the universal language model about the language you want your skill to support. It is by adding training data that is written in the target language that the universal model is constructed. The universal language model adapts to understand and support your language of choice.
 
 ## Integration considerations
 {: #assistant-language-integrations}

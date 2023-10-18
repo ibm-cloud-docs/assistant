@@ -65,9 +65,6 @@ toc:
           - entities.md
           - versions.md
       - skill-search-add.md
-      - skill-tasks.md
-      - deploy-web-link.md
-      - assistant-settings.md
       - assistant-language.md
       - topicgroup:
           label: Deploying
@@ -79,22 +76,6 @@ toc:
              - deploy-web-chat.md
              - deploy-salesforce.md
              - deploy-zendesk.md
-             links:
-              - link:
-                  label: Integrating with Genesys Cloud
-                  href: https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/genesys/webChat
-              - link:
-                  label: Integrating with NICE inContact
-                  href: https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/incontact/webChat
-              - link:
-                  label: Integrating with Twilio Flex
-                  href: https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/flex/webChat
-              - link:
-                  label: Integrating with Oracle B2C Service
-                  href: https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter/tree/main/src/oracle/webChat
-              - link:
-                  label: Integrating with your own service desk
-                  href: https://github.com/watson-developer-cloud/assistant-web-chat-service-desk-starter
           - topicgroup:
              label: Deploying for phone
              topics:
@@ -105,7 +86,6 @@ toc:
           - topicgroup:
              label: Deploying to other platforms
              topics:
-             - deploy-integration-add.md
              - deploy-facebook.md
              - deploy-intercom.md
              - deploy-slack.md

@@ -8,22 +8,10 @@ subcollection: assistant
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:external: target="_blank" .external}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
-{:tip: .tip}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:swift: .ph data-hd-programlang='swift'}
+{{site.data.keyword.attribute-definition-list}}
 
-{{site.data.content.newlink}}
+Documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [Planning your assistant](/docs/watson-assistant?topic=watson-assistant-plan-assistant){: external}.
+{: attention}
 
 # Plan your assistant
 {: #assistants}
@@ -68,8 +56,6 @@ Deploy your assistant where customers can find it with ease. For example, you ca
 
 While the conversational skill is defined in text, customers can talk with your assistant over the phone when you deploy it by using the phone integration.
 
-For more information about ways to deploy the assistant, see [Adding integrations](/docs/assistant?topic=assistant-deploy-integration-add).
-
 Understanding where you will deploy the assistant before you begin can help you author the right types of answers for a given channel or platform.
 
 ## What languages does your assistant speak?
@@ -87,15 +73,9 @@ Never misrepresent the assistant as being a human. If users believe the assistan
 ## Who will build your assistant?
 {: #assistants-plan-conversation}
 
-Assemble a team with people who understand your customers and their needs, people who know how to interact with customers to reach the best outcomes. These subject matter experts can focus on designing an engaging conversational flow. In fact, the actions skill is designed with this type of expert in mind. The team can simultaneously build a conversational flow by defining discrete actions.
+Assemble a team with people who understand your customers and their needs, people who know how to interact with customers to reach the best outcomes. These subject matter experts can focus on designing an engaging conversational flow.
 
 If you have data scientists or team members with programming skills, you can take advantage of some advanced capabilities that require varying levels of development expertise. This set of users might prefer to build the conversational flow with a dialog skill because there is greater visibility into the individual components that make up the training data. 
-
-So, which conversational skill type *should* you use?
-
-Use both. Leverage advanced capabilities that are available from a dialog skill and build individual actions to perform finite tasks that you want to support. You can call the actions in your actions skill from your dialog skill.
-
-For more information, see [Choosing a conversational skill](/docs/assistant?topic=assistant-skills-choose).
 
 ## Do you have existing content to leverage?
 {: #assistants-plan-search}

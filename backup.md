@@ -95,8 +95,6 @@ After you create the skill, it appears as a tile on the Skills page.
 
 You can now re-create your assistant. You can then link your uploaded skills to the assistant, and configure integrations for it.
 
-See [Creating an assistant](/docs/assistant?topic=assistant-assistant-add) and [Adding integrations](/docs/assistant?topic=assistant-deploy-integration-add#deploy-integration-add-task) for more details.
-
 ## Update your client applications
 {: #backup-update-api}
 

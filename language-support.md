@@ -55,22 +55,22 @@ In the following tables, the level of language and feature support is indicated 
 ### Skill support details
 {: #language-support-skills}
 
-| Language | [**Actions skill**](/docs/assistant?topic=assistant-skill-actions-add) | [**Dialog skill**](/docs/assistant?topic=assistant-skill-dialog-add) | [**Search skill**](/docs/assistant?topic=assistant-skill-search-add) |
+| Language | [**Dialog skill**](/docs/assistant?topic=assistant-skill-dialog-add) | [**Search skill**](/docs/assistant?topic=assistant-skill-search-add) |
 |:---|:---:|:---:|:---:|
-| **English (en)**                   | GA | GA | GA |
-| **Arabic (ar)**                    | GA | GA | GA |
-| **Chinese (Simplified) (zh-cn)**   | GA | GA | GA |
-| **Chinese (Traditional) (zh-tw)**  | GA | GA | GA |
-| **Czech (cs)**                     | GA | GA | GA |
-| **Dutch (nl)**                     | GA | GA | GA |
-| **French (fr)**                    | GA | GA | GA |
-| **German (de)**                    | GA | GA | GA |
-| **Italian (it)**                   | GA | GA | GA |
-| **Japanese (ja)**                  | GA | GA | GA |
-| **Korean (ko)**                    | GA | GA | GA |
-| **Portuguese (Brazilian) (pt-br)** | GA | GA | GA |
-| **Spanish (es)**                   | GA | GA | GA |
-| **Universal (xx)**                 | GA | GA | GA |
+| **English (en)**                   | GA | GA |
+| **Arabic (ar)**                    | GA | GA |
+| **Chinese (Simplified) (zh-cn)**   | GA | GA |
+| **Chinese (Traditional) (zh-tw)**  | GA | GA |
+| **Czech (cs)**                     | GA | GA |
+| **Dutch (nl)**                     | GA | GA |
+| **French (fr)**                    | GA | GA |
+| **German (de)**                    | GA | GA |
+| **Italian (it)**                   | GA | GA |
+| **Japanese (ja)**                  | GA | GA |
+| **Korean (ko)**                    | GA | GA |
+| **Portuguese (Brazilian) (pt-br)** | GA | GA |
+| **Spanish (es)**                   | GA | GA |
+| **Universal (xx)**                 | GA | GA |
 {: caption="Table 2. Skill support details" caption-side="bottom"}
 
 ### Intent feature support details

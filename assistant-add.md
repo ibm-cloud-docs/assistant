@@ -45,11 +45,11 @@ Follow these steps to create an assistant:
 
 The number of assistants you can create depends on your {{site.data.keyword.assistant_classic_short}} [plan type](https://www.ibm.com/products/watsonx-assistant/pricing){: external}.
 
-After 30 days of inactivity, an unused assistant in a Lite plan service instance might be deleted to free up space. See [Changing the inactivity timeout setting](/docs/assistant?topic=assistant-assistant-settings) for more information on the subject.
+After 30 days of inactivity, an unused assistant in a Lite plan service instance might be deleted to free up space.
 
 You can connect one skill of each type to your assistant. The number of skills you can build differs depending on the plan you have. See [Skill limits](/docs/assistant?topic=assistant-skill-add#skill-add-limits) for more details.
 
-If you want to create an assistant in a different service instance, you can switch to another service instance. See [Switching the service instance](/docs/assistant?topic=assistant-assistant-settings#assistant-settings-switch-instance).
+If you want to create an assistant in a different service instance, you can switch to another service instance.
 
 ## Deleting an assistant
 {: #assistant-add-delete}
