@@ -8,7 +8,7 @@ subcollection: assistant
 
 ---
 
-{site.data.keyword.attribute-definition-list}}
+{{site.data.keyword.attribute-definition-list}}
 
 Documentation for the **classic {{site.data.keyword.assistant_classic_short}}** experience has moved. For the most up-to-date version, see [Integrating with phone and Twilio Flex](/docs/watson-assistant?topic=watson-assistant-deploy-phone-flex){: external}.
 {: attention}
