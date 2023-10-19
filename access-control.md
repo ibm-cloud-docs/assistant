@@ -51,7 +51,7 @@ For each person to whom you grant access to your {{site.data.keyword.assistant_c
 
 1.  Optionally select a specific region and service instance to share with this user. 
 
-    Otherwise, the user access you define is applied to all of your services instances in all data center locations where you have instances.
+    Otherwise, the user access you define is applied to all of your service instances in all data center locations where you have instances.
 
     Remember, you made a note of the name of the current service instance in an earlier step.
 
