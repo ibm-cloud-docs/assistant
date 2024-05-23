@@ -24,7 +24,7 @@ Tailor the web chat to match your website and brand, and to behave in ways that 
 
 The following APIs are available:
 
-- **Configuration object**: When the embedded web chat widget starts, a configuration object named `watsonAssistantChatOptions` is used to define the widget. By editing the configuration object, you can customize the appearance and behavior of the web chat before it is rendered.
+- **Configuration object**: When the embedded web chat widget starts, a configuration object that is named `watsonAssistantChatOptions` is used to define the widget. By editing the configuration object, you can customize the appearance and behavior of the web chat before it is rendered.
 - **Runtime methods**: Use the instance methods to perform tasks before a conversation between the assistant and your customer begins or after it ends.
 - **Events**: Your website can listen for these events, and then take custom actions.
 
@@ -40,9 +40,9 @@ A developer can use these APIs to customize the web chat in the following ways:
 You can change the color of the launcher icon from the *Style* tab of the web chat configuration page. If you want to make more advanced customizations, you can make the following types of changes:
 
 - Change the launcher icon that is used to open the web chat widget. For a tutorial the shows you how, see [Using a custom launcher](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=tutorials-launcher){: external}.
-- Change how the web chat widget opens. For example, you might want to launch the web chat from some other button or process that exists on your website, or maybe open it in a different location, or at a different size. For a tutorial that shows you how, see [Render to a custom element](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=tutorials-example-element){: external}.
+- Change how the web chat widget opens. For example, you might want to start the web chat from some other button or process that exists on your website, or maybe open it in a different location, or at a different size. For a tutorial that shows you how, see [Render to a custom element](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=tutorials-example-element){: external}.
 - Hide the launcher icon entirely and automatically start the web widget in open state, at its full length. For more information, see the [`openChatByDefault` method](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-configuration#configurationobject){: external}.
-- Hide the close button so users cannnot close the web chat widget. For more information, see the [`hideCloseButton` method](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-configuration#configurationobject){: external}.
+- Hide the close button so users cannot close the web chat widget. For more information, see the [`hideCloseButton` method](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-configuration#configurationobject){: external}.
 
 ## Change the conversation
 {: #web-chat-config-convo}
@@ -65,15 +65,15 @@ You can make simple changes to the color of things like the text font and web ch
 - Apply style settings to user-defined response types. If you enable the web chat to return custom response types, be sure to apply existing or custom CSS classes to them. For more information, see [Custom content](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-render){: external}.
 - Change the style of the home screen that can be displayed when the web chat is opened. For more information about the home screen, see [Adding a home screen](/docs/assistant?topic=assistant-deploy-web-chat#deploy-web-chat-home-screen). For more information about how to customize it, see [HTML content](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-render#html){: external}
   
-The web chat is embedded directly on your page, not inside an iframe. Therefore, the cascading style sheet (CSS) rules for your website can sometimes override the web chat CSS rules. The web chat applies aggressive CSS resets, but the resets can be affected if your website uses the `!important` property in elements where style is defined.
+The web chat is embedded directly on your page, not inside an iframe. Therefore, the cascading stylesheet (CSS) rules for your website can sometimes override the web chat CSS rules. The web chat applies aggressive CSS resets, but the resets can be affected if your website uses the `!important` property in elements where style is defined.
 {: note}
 
 ### Passing values
 {: #web-chat-config-context}
 
-Here are some common tasks you might want to perform:
+Here are some common tasks that you might want to do:
 
-- [Setting and passing context variable values](#web-chat-config-set-context})
+- [Setting and passing context variable values](#web-chat-config-set-context)
 - [Adding user identity information (if you don't enable security)](#web-chat-config-userid)
 
 For a tutorial that describes how to set context values from the web chat, see [Setting context](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=tutorials-setting-context){: external}.
