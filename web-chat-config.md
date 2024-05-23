@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-10-18"
+  years: 2019, 2024
+lastupdated: "2024-05-23"
 
 subcollection: assistant
 
@@ -73,7 +73,7 @@ The web chat is embedded directly on your page, not inside an iframe. Therefore,
 
 Here are some common tasks you might want to perform:
 
-- [Setting and passing context variable values](#web-chat-config-set-context})
+- [Setting and passing context variable values](#web-chat-config-set-context)
 - [Adding user identity information (if you don't enable security)](#web-chat-config-userid)
 
 For a tutorial that describes how to set context values from the web chat, see [Setting context](https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=tutorials-setting-context){: external}.
