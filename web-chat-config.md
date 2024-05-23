@@ -24,7 +24,7 @@ Tailor the web chat to match your website and brand, and to behave in ways that 
 
 The following APIs are available:
 
-- **Configuration object**: When the embedded web chat widget starts, a configuration object named `watsonAssistantChatOptions` is used to define the widget. By editing the configuration object, you can customize the appearance and behavior of the web chat before it is rendered.
+- **Configuration object**: When the embedded web chat widget starts, a configuration object that is named `watsonAssistantChatOptions` is used to define the widget. By editing the configuration object, you can customize the appearance and behavior of the web chat before it is rendered.
 - **Runtime methods**: Use the instance methods to perform tasks before a conversation between the assistant and your customer begins or after it ends.
 - **Events**: Your website can listen for these events, and then take custom actions.
 
