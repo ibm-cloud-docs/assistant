@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2024-05-23"
+
 
 subcollection: assistant
 
@@ -71,7 +71,7 @@ The web chat is embedded directly on your page, not inside an iframe. Therefore,
 ### Passing values
 {: #web-chat-config-context}
 
-Here are some common tasks you might want to perform:
+Here are some common tasks that you might want to do:
 
 - [Setting and passing context variable values](#web-chat-config-set-context)
 - [Adding user identity information (if you don't enable security)](#web-chat-config-userid)
